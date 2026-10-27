@@ -5,11 +5,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000432 RID: 1074
+// Token: 0x02000434 RID: 1076
 [Preserve]
 public abstract class EAIBase
 {
-	// Token: 0x060020E0 RID: 8416 RVA: 0x000C7093 File Offset: 0x000C5293
+	// Token: 0x060020E5 RID: 8421 RVA: 0x000C743F File Offset: 0x000C563F
 	public virtual void Init(EntityAlive _theEntity)
 	{
 		this.executeDelay = 0.5f;
@@ -17,12 +17,12 @@ public abstract class EAIBase
 		this.theEntity = _theEntity;
 	}
 
-	// Token: 0x060020E1 RID: 8417 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020E6 RID: 8422 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetData(Dictionary<string, string> data)
 	{
 	}
 
-	// Token: 0x060020E2 RID: 8418 RVA: 0x000C70B4 File Offset: 0x000C52B4
+	// Token: 0x060020E7 RID: 8423 RVA: 0x000C7460 File Offset: 0x000C5660
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void GetData(Dictionary<string, string> data, string name, ref float value)
 	{
@@ -34,7 +34,7 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x060020E3 RID: 8419 RVA: 0x000C70DC File Offset: 0x000C52DC
+	// Token: 0x060020E8 RID: 8424 RVA: 0x000C7488 File Offset: 0x000C5688
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void GetData(Dictionary<string, string> data, string name, ref int value)
 	{
@@ -46,43 +46,43 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x060020E4 RID: 8420
+	// Token: 0x060020E9 RID: 8425
 	public abstract bool CanExecute();
 
-	// Token: 0x060020E5 RID: 8421 RVA: 0x000C7101 File Offset: 0x000C5301
+	// Token: 0x060020EA RID: 8426 RVA: 0x000C74AD File Offset: 0x000C56AD
 	public virtual bool Continue()
 	{
 		return this.CanExecute();
 	}
 
-	// Token: 0x060020E6 RID: 8422 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060020EB RID: 8427 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool IsContinuous()
 	{
 		return true;
 	}
 
-	// Token: 0x060020E7 RID: 8423 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020EC RID: 8428 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Start()
 	{
 	}
 
-	// Token: 0x060020E8 RID: 8424 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020ED RID: 8429 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Reset()
 	{
 	}
 
-	// Token: 0x060020E9 RID: 8425 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020EE RID: 8430 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Update()
 	{
 	}
 
-	// Token: 0x060020EA RID: 8426 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060020EF RID: 8431 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsPathUsageBlocked(PathEntity _path)
 	{
 		return false;
 	}
 
-	// Token: 0x060020EB RID: 8427 RVA: 0x000C7109 File Offset: 0x000C5309
+	// Token: 0x060020F0 RID: 8432 RVA: 0x000C74B5 File Offset: 0x000C56B5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static Vector3 GetTargetPos(EntityAlive theEntity)
 	{
@@ -93,7 +93,7 @@ public abstract class EAIBase
 		return theEntity.InvestigatePosition;
 	}
 
-	// Token: 0x060020EC RID: 8428 RVA: 0x000C712B File Offset: 0x000C532B
+	// Token: 0x060020F1 RID: 8433 RVA: 0x000C74D7 File Offset: 0x000C56D7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool EntityHasTarget(EntityAlive theEntity)
 	{
@@ -101,7 +101,7 @@ public abstract class EAIBase
 	}
 
 	// Token: 0x170003DA RID: 986
-	// (get) Token: 0x060020ED RID: 8429 RVA: 0x000C7143 File Offset: 0x000C5343
+	// (get) Token: 0x060020F2 RID: 8434 RVA: 0x000C74EF File Offset: 0x000C56EF
 	public GameRandom Random
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -113,7 +113,7 @@ public abstract class EAIBase
 	}
 
 	// Token: 0x170003DB RID: 987
-	// (get) Token: 0x060020EE RID: 8430 RVA: 0x000C7150 File Offset: 0x000C5350
+	// (get) Token: 0x060020F3 RID: 8435 RVA: 0x000C74FC File Offset: 0x000C56FC
 	public float RandomFloat
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -124,7 +124,7 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x060020EF RID: 8431 RVA: 0x000C7162 File Offset: 0x000C5362
+	// Token: 0x060020F4 RID: 8436 RVA: 0x000C750E File Offset: 0x000C570E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int GetRandom(int maxExclusive)
@@ -132,7 +132,7 @@ public abstract class EAIBase
 		return this.manager.random.RandomRange(maxExclusive);
 	}
 
-	// Token: 0x060020F0 RID: 8432 RVA: 0x000C7175 File Offset: 0x000C5375
+	// Token: 0x060020F5 RID: 8437 RVA: 0x000C7521 File Offset: 0x000C5721
 	public override string ToString()
 	{
 		if (this.shortedTypeName == null)
@@ -142,7 +142,7 @@ public abstract class EAIBase
 		return this.shortedTypeName;
 	}
 
-	// Token: 0x060020F1 RID: 8433 RVA: 0x000C7197 File Offset: 0x000C5397
+	// Token: 0x060020F6 RID: 8438 RVA: 0x000C7543 File Offset: 0x000C5743
 	public string GetTypeName()
 	{
 		if (this.cachedTypeName == null)
@@ -152,32 +152,32 @@ public abstract class EAIBase
 		return this.cachedTypeName;
 	}
 
-	// Token: 0x060020F2 RID: 8434 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060020F7 RID: 8439 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EAIBase()
 	{
 	}
 
-	// Token: 0x04001691 RID: 5777
+	// Token: 0x040016A1 RID: 5793
 	public EAIManager manager;
 
-	// Token: 0x04001692 RID: 5778
+	// Token: 0x040016A2 RID: 5794
 	public EntityAlive theEntity;
 
-	// Token: 0x04001693 RID: 5779
+	// Token: 0x040016A3 RID: 5795
 	public float executeWaitTime;
 
-	// Token: 0x04001694 RID: 5780
+	// Token: 0x040016A4 RID: 5796
 	public float executeDelay;
 
-	// Token: 0x04001695 RID: 5781
+	// Token: 0x040016A5 RID: 5797
 	public int MutexBits;
 
-	// Token: 0x04001696 RID: 5782
+	// Token: 0x040016A6 RID: 5798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedTypeName;
 
-	// Token: 0x04001697 RID: 5783
+	// Token: 0x040016A7 RID: 5799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string shortedTypeName;
 }

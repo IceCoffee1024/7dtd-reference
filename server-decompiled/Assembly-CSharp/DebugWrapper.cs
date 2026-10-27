@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x020013ED RID: 5101
+// Token: 0x020013FF RID: 5119
 public abstract class DebugWrapper
 {
-	// Token: 0x0600A003 RID: 40963 RVA: 0x003C5928 File Offset: 0x003C3B28
+	// Token: 0x0600A05B RID: 41051 RVA: 0x003C7D2C File Offset: 0x003C5F2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DebugWrapper(DebugWrapper parent)
 	{
@@ -15,18 +15,18 @@ public abstract class DebugWrapper
 		this.DebugConcurrentModifications = parent != null && parent.DebugConcurrentModifications;
 	}
 
-	// Token: 0x17001314 RID: 4884
-	// (get) Token: 0x0600A004 RID: 40964 RVA: 0x003C5995 File Offset: 0x003C3B95
-	// (set) Token: 0x0600A005 RID: 40965 RVA: 0x003C599D File Offset: 0x003C3B9D
+	// Token: 0x17001320 RID: 4896
+	// (get) Token: 0x0600A05C RID: 41052 RVA: 0x003C7D99 File Offset: 0x003C5F99
+	// (set) Token: 0x0600A05D RID: 41053 RVA: 0x003C7DA1 File Offset: 0x003C5FA1
 	public bool DebugNonMainThreadAccess { get; set; }
 
-	// Token: 0x17001315 RID: 4885
-	// (get) Token: 0x0600A006 RID: 40966 RVA: 0x003C59A6 File Offset: 0x003C3BA6
-	// (set) Token: 0x0600A007 RID: 40967 RVA: 0x003C59AE File Offset: 0x003C3BAE
+	// Token: 0x17001321 RID: 4897
+	// (get) Token: 0x0600A05E RID: 41054 RVA: 0x003C7DAA File Offset: 0x003C5FAA
+	// (set) Token: 0x0600A05F RID: 41055 RVA: 0x003C7DB2 File Offset: 0x003C5FB2
 	public bool DebugConcurrentModifications { get; set; }
 
-	// Token: 0x17001316 RID: 4886
-	// (get) Token: 0x0600A008 RID: 40968 RVA: 0x003C59B7 File Offset: 0x003C3BB7
+	// Token: 0x17001322 RID: 4898
+	// (get) Token: 0x0600A060 RID: 41056 RVA: 0x003C7DBB File Offset: 0x003C5FBB
 	public bool NeedsScope
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -36,7 +36,7 @@ public abstract class DebugWrapper
 		}
 	}
 
-	// Token: 0x0600A009 RID: 40969 RVA: 0x003C59BF File Offset: 0x003C3BBF
+	// Token: 0x0600A061 RID: 41057 RVA: 0x003C7DC3 File Offset: 0x003C5FC3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IDisposable DebugReadScope()
 	{
@@ -51,7 +51,7 @@ public abstract class DebugWrapper
 		return new DebugWrapper.ReadScope(this);
 	}
 
-	// Token: 0x0600A00A RID: 40970 RVA: 0x003C59F3 File Offset: 0x003C3BF3
+	// Token: 0x0600A062 RID: 41058 RVA: 0x003C7DF7 File Offset: 0x003C5FF7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IDisposable DebugReadWriteScope()
 	{
@@ -66,52 +66,52 @@ public abstract class DebugWrapper
 		return new DebugWrapper.ReadWriteScope(this);
 	}
 
-	// Token: 0x0600A00B RID: 40971 RVA: 0x003C5A27 File Offset: 0x003C3C27
+	// Token: 0x0600A063 RID: 41059 RVA: 0x003C7E2B File Offset: 0x003C602B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator<T> DebugEnumerator<T>(IEnumerator<T> enumerator)
 	{
 		return new DebugWrapper.Enumerator<T>(this.DebugReadScope(), enumerator);
 	}
 
-	// Token: 0x0600A00C RID: 40972 RVA: 0x003C5A35 File Offset: 0x003C3C35
+	// Token: 0x0600A064 RID: 41060 RVA: 0x003C7E39 File Offset: 0x003C6039
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator DebugEnumerator(IEnumerator enumerator)
 	{
 		return new DebugWrapper.Enumerator(this.DebugReadScope(), enumerator);
 	}
 
-	// Token: 0x0400793F RID: 31039
+	// Token: 0x04007980 RID: 31104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly AtomicCounter m_readCounter;
 
-	// Token: 0x04007940 RID: 31040
+	// Token: 0x04007981 RID: 31105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly AtomicCounter m_writeCounter;
 
-	// Token: 0x020013EE RID: 5102
+	// Token: 0x02001400 RID: 5120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class DummyScope : IDisposable
 	{
-		// Token: 0x0600A00D RID: 40973 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600A065 RID: 41061 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DummyScope()
 		{
 		}
 
-		// Token: 0x0600A00E RID: 40974 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600A066 RID: 41062 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Dispose()
 		{
 		}
 
-		// Token: 0x04007943 RID: 31043
+		// Token: 0x04007984 RID: 31108
 		public static readonly DebugWrapper.DummyScope Instance = new DebugWrapper.DummyScope();
 	}
 
-	// Token: 0x020013EF RID: 5103
+	// Token: 0x02001401 RID: 5121
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class ReadScope : IDisposable
 	{
-		// Token: 0x0600A010 RID: 40976 RVA: 0x003C5A50 File Offset: 0x003C3C50
+		// Token: 0x0600A068 RID: 41064 RVA: 0x003C7E54 File Offset: 0x003C6054
 		public ReadScope(DebugWrapper wrapper)
 		{
 			this.m_wrapper = wrapper;
@@ -123,21 +123,21 @@ public abstract class DebugWrapper
 			this.m_wrapper.m_readCounter.Increment();
 		}
 
-		// Token: 0x0600A011 RID: 40977 RVA: 0x003C5AB4 File Offset: 0x003C3CB4
+		// Token: 0x0600A069 RID: 41065 RVA: 0x003C7EB8 File Offset: 0x003C60B8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~ReadScope()
 		{
 			this.Dispose(false);
 		}
 
-		// Token: 0x0600A012 RID: 40978 RVA: 0x003C5AE4 File Offset: 0x003C3CE4
+		// Token: 0x0600A06A RID: 41066 RVA: 0x003C7EE8 File Offset: 0x003C60E8
 		public void Dispose()
 		{
 			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x0600A013 RID: 40979 RVA: 0x003C5AF4 File Offset: 0x003C3CF4
+		// Token: 0x0600A06B RID: 41067 RVA: 0x003C7EF8 File Offset: 0x003C60F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Dispose(bool disposing)
 		{
@@ -157,24 +157,24 @@ public abstract class DebugWrapper
 			}
 		}
 
-		// Token: 0x04007944 RID: 31044
+		// Token: 0x04007985 RID: 31109
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DebugWrapper m_wrapper;
 
-		// Token: 0x04007945 RID: 31045
+		// Token: 0x04007986 RID: 31110
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_concurrentModificationNotified;
 
-		// Token: 0x04007946 RID: 31046
+		// Token: 0x04007987 RID: 31111
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_disposed;
 	}
 
-	// Token: 0x020013F0 RID: 5104
+	// Token: 0x02001402 RID: 5122
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class ReadWriteScope : IDisposable
 	{
-		// Token: 0x0600A014 RID: 40980 RVA: 0x003C5B68 File Offset: 0x003C3D68
+		// Token: 0x0600A06C RID: 41068 RVA: 0x003C7F6C File Offset: 0x003C616C
 		public ReadWriteScope(DebugWrapper wrapper)
 		{
 			this.m_wrapper = wrapper;
@@ -194,21 +194,21 @@ public abstract class DebugWrapper
 			this.m_wrapper.m_writeCounter.Increment();
 		}
 
-		// Token: 0x0600A015 RID: 40981 RVA: 0x003C5C14 File Offset: 0x003C3E14
+		// Token: 0x0600A06D RID: 41069 RVA: 0x003C8018 File Offset: 0x003C6218
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~ReadWriteScope()
 		{
 			this.Dispose(false);
 		}
 
-		// Token: 0x0600A016 RID: 40982 RVA: 0x003C5C44 File Offset: 0x003C3E44
+		// Token: 0x0600A06E RID: 41070 RVA: 0x003C8048 File Offset: 0x003C6248
 		public void Dispose()
 		{
 			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x0600A017 RID: 40983 RVA: 0x003C5C54 File Offset: 0x003C3E54
+		// Token: 0x0600A06F RID: 41071 RVA: 0x003C8058 File Offset: 0x003C6258
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Dispose(bool disposing)
 		{
@@ -237,31 +237,31 @@ public abstract class DebugWrapper
 			}
 		}
 
-		// Token: 0x04007947 RID: 31047
+		// Token: 0x04007988 RID: 31112
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DebugWrapper m_wrapper;
 
-		// Token: 0x04007948 RID: 31048
+		// Token: 0x04007989 RID: 31113
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_concurrentModificationNotified;
 
-		// Token: 0x04007949 RID: 31049
+		// Token: 0x0400798A RID: 31114
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_disposed;
 	}
 
-	// Token: 0x020013F1 RID: 5105
+	// Token: 0x02001403 RID: 5123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class Enumerator : IEnumerator, IDisposable
 	{
-		// Token: 0x0600A018 RID: 40984 RVA: 0x003C5CFA File Offset: 0x003C3EFA
+		// Token: 0x0600A070 RID: 41072 RVA: 0x003C80FE File Offset: 0x003C62FE
 		public Enumerator(IDisposable scope, IEnumerator enumerator)
 		{
 			this.m_scope = scope;
 			this.m_enumerator = enumerator;
 		}
 
-		// Token: 0x0600A019 RID: 40985 RVA: 0x003C5D10 File Offset: 0x003C3F10
+		// Token: 0x0600A071 RID: 41073 RVA: 0x003C8114 File Offset: 0x003C6314
 		public void Dispose()
 		{
 			this.m_scope.Dispose();
@@ -273,20 +273,20 @@ public abstract class DebugWrapper
 			disposable.Dispose();
 		}
 
-		// Token: 0x0600A01A RID: 40986 RVA: 0x003C5D32 File Offset: 0x003C3F32
+		// Token: 0x0600A072 RID: 41074 RVA: 0x003C8136 File Offset: 0x003C6336
 		public bool MoveNext()
 		{
 			return this.m_enumerator.MoveNext();
 		}
 
-		// Token: 0x0600A01B RID: 40987 RVA: 0x003C5D3F File Offset: 0x003C3F3F
+		// Token: 0x0600A073 RID: 41075 RVA: 0x003C8143 File Offset: 0x003C6343
 		public void Reset()
 		{
 			this.m_enumerator.Reset();
 		}
 
-		// Token: 0x17001317 RID: 4887
-		// (get) Token: 0x0600A01C RID: 40988 RVA: 0x003C5D4C File Offset: 0x003C3F4C
+		// Token: 0x17001323 RID: 4899
+		// (get) Token: 0x0600A074 RID: 41076 RVA: 0x003C8150 File Offset: 0x003C6350
 		public object Current
 		{
 			get
@@ -295,47 +295,47 @@ public abstract class DebugWrapper
 			}
 		}
 
-		// Token: 0x0400794A RID: 31050
+		// Token: 0x0400798B RID: 31115
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IDisposable m_scope;
 
-		// Token: 0x0400794B RID: 31051
+		// Token: 0x0400798C RID: 31116
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IEnumerator m_enumerator;
 	}
 
-	// Token: 0x020013F2 RID: 5106
+	// Token: 0x02001404 RID: 5124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class Enumerator<T> : IEnumerator<T>, IEnumerator, IDisposable
 	{
-		// Token: 0x0600A01D RID: 40989 RVA: 0x003C5D59 File Offset: 0x003C3F59
+		// Token: 0x0600A075 RID: 41077 RVA: 0x003C815D File Offset: 0x003C635D
 		public Enumerator(IDisposable scope, IEnumerator<T> enumerator)
 		{
 			this.m_scope = scope;
 			this.m_enumerator = enumerator;
 		}
 
-		// Token: 0x0600A01E RID: 40990 RVA: 0x003C5D6F File Offset: 0x003C3F6F
+		// Token: 0x0600A076 RID: 41078 RVA: 0x003C8173 File Offset: 0x003C6373
 		public void Dispose()
 		{
 			this.m_scope.Dispose();
 			this.m_enumerator.Dispose();
 		}
 
-		// Token: 0x0600A01F RID: 40991 RVA: 0x003C5D87 File Offset: 0x003C3F87
+		// Token: 0x0600A077 RID: 41079 RVA: 0x003C818B File Offset: 0x003C638B
 		public bool MoveNext()
 		{
 			return this.m_enumerator.MoveNext();
 		}
 
-		// Token: 0x0600A020 RID: 40992 RVA: 0x003C5D94 File Offset: 0x003C3F94
+		// Token: 0x0600A078 RID: 41080 RVA: 0x003C8198 File Offset: 0x003C6398
 		public void Reset()
 		{
 			this.m_enumerator.Reset();
 		}
 
-		// Token: 0x17001318 RID: 4888
-		// (get) Token: 0x0600A021 RID: 40993 RVA: 0x003C5DA1 File Offset: 0x003C3FA1
+		// Token: 0x17001324 RID: 4900
+		// (get) Token: 0x0600A079 RID: 41081 RVA: 0x003C81A5 File Offset: 0x003C63A5
 		public T Current
 		{
 			get
@@ -344,8 +344,8 @@ public abstract class DebugWrapper
 			}
 		}
 
-		// Token: 0x17001319 RID: 4889
-		// (get) Token: 0x0600A022 RID: 40994 RVA: 0x003C5DAE File Offset: 0x003C3FAE
+		// Token: 0x17001325 RID: 4901
+		// (get) Token: 0x0600A07A RID: 41082 RVA: 0x003C81B2 File Offset: 0x003C63B2
 		public object System.Collections.IEnumerator.Current
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -355,11 +355,11 @@ public abstract class DebugWrapper
 			}
 		}
 
-		// Token: 0x0400794C RID: 31052
+		// Token: 0x0400798D RID: 31117
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IDisposable m_scope;
 
-		// Token: 0x0400794D RID: 31053
+		// Token: 0x0400798E RID: 31118
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IEnumerator<T> m_enumerator;
 	}

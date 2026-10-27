@@ -6,12 +6,12 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A6E RID: 6766
+	// Token: 0x02001A9F RID: 6815
 	[Preserve]
 	public class ContentQueue
 	{
-		// Token: 0x1700198F RID: 6543
-		// (get) Token: 0x0600CD39 RID: 52537 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x170019D7 RID: 6615
+		// (get) Token: 0x0600CE4D RID: 52813 RVA: 0x00020119 File Offset: 0x0001E319
 		[Preserve]
 		public bool IsReady
 		{
@@ -21,7 +21,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD3A RID: 52538 RVA: 0x004AC314 File Offset: 0x004AA514
+		// Token: 0x0600CE4E RID: 52814 RVA: 0x004AFE10 File Offset: 0x004AE010
 		public ContentQueue(SectionType _section, LayerType _layer)
 		{
 			this.section = _section;
@@ -31,7 +31,7 @@ namespace DynamicMusic
 				select e).Count<LayeredContent>();
 		}
 
-		// Token: 0x0600CD3B RID: 52539 RVA: 0x004AC368 File Offset: 0x004AA568
+		// Token: 0x0600CE4F RID: 52815 RVA: 0x004AFE64 File Offset: 0x004AE064
 		public LayeredContent Next()
 		{
 			if (this.queue.Count < this.count / 2)
@@ -44,29 +44,29 @@ namespace DynamicMusic
 			return this.queue.Dequeue();
 		}
 
-		// Token: 0x0600CD3C RID: 52540 RVA: 0x004AC3EF File Offset: 0x004AA5EF
+		// Token: 0x0600CE50 RID: 52816 RVA: 0x004AFEEB File Offset: 0x004AE0EB
 		public void Clear()
 		{
 			this.queue.Clear();
 		}
 
-		// Token: 0x04009BB9 RID: 39865
+		// Token: 0x04009CA2 RID: 40098
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static GameRandom rng = GameRandomManager.Instance.CreateGameRandom();
 
-		// Token: 0x04009BBA RID: 39866
+		// Token: 0x04009CA3 RID: 40099
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SectionType section;
 
-		// Token: 0x04009BBB RID: 39867
+		// Token: 0x04009CA4 RID: 40100
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LayerType layer;
 
-		// Token: 0x04009BBC RID: 39868
+		// Token: 0x04009CA5 RID: 40101
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int count;
 
-		// Token: 0x04009BBD RID: 39869
+		// Token: 0x04009CA6 RID: 40102
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<LayeredContent> queue = new Queue<LayeredContent>();
 	}

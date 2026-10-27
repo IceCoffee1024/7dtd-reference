@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017B4 RID: 6068
+	// Token: 0x020017E5 RID: 6117
 	[Preserve]
 	public class Context
 	{
-		// Token: 0x17001742 RID: 5954
-		// (get) Token: 0x0600BBE9 RID: 48105 RVA: 0x0045B7C4 File Offset: 0x004599C4
+		// Token: 0x1700178A RID: 6026
+		// (get) Token: 0x0600BCFD RID: 48381 RVA: 0x0045F170 File Offset: 0x0045D370
 		public List<string> AIPackages
 		{
 			get
@@ -18,7 +18,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BBEA RID: 48106 RVA: 0x0045B7D1 File Offset: 0x004599D1
+		// Token: 0x0600BCFE RID: 48382 RVA: 0x0045F17D File Offset: 0x0045D37D
 		public Context(EntityAlive _self)
 		{
 			this.Self = _self;
@@ -27,19 +27,19 @@ namespace UAI
 			this.ActionData = default(ActionData);
 		}
 
-		// Token: 0x04008C93 RID: 35987
+		// Token: 0x04008D7C RID: 36220
 		public EntityAlive Self;
 
-		// Token: 0x04008C94 RID: 35988
+		// Token: 0x04008D7D RID: 36221
 		public World World;
 
-		// Token: 0x04008C95 RID: 35989
+		// Token: 0x04008D7E RID: 36222
 		public ConsiderationData ConsiderationData;
 
-		// Token: 0x04008C96 RID: 35990
+		// Token: 0x04008D7F RID: 36223
 		public ActionData ActionData;
 
-		// Token: 0x04008C97 RID: 35991
+		// Token: 0x04008D80 RID: 36224
 		public float updateTimer;
 	}
 }

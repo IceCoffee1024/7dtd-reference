@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000849 RID: 2121
+// Token: 0x02000853 RID: 2131
 [Preserve]
 public class NetPackageSetBlockTexture : NetPackage, IMemoryPoolableObject
 {
-	// Token: 0x06003DC1 RID: 15809 RVA: 0x00188E36 File Offset: 0x00187036
+	// Token: 0x06003DE4 RID: 15844 RVA: 0x00189EDE File Offset: 0x001880DE
 	public NetPackageSetBlockTexture Setup(Vector3i _blockPos, BlockFace _blockFace, int _idx, int _playerIdThatChanged, byte _channel)
 	{
 		this.blockPos = _blockPos;
@@ -16,7 +16,7 @@ public class NetPackageSetBlockTexture : NetPackage, IMemoryPoolableObject
 		return this;
 	}
 
-	// Token: 0x06003DC2 RID: 15810 RVA: 0x00188E5F File Offset: 0x0018705F
+	// Token: 0x06003DE5 RID: 15845 RVA: 0x00189F07 File Offset: 0x00188107
 	public override void read(PooledBinaryReader _br)
 	{
 		this.blockPos = StreamUtils.ReadVector3i(_br);
@@ -26,7 +26,7 @@ public class NetPackageSetBlockTexture : NetPackage, IMemoryPoolableObject
 		this.channel = _br.ReadByte();
 	}
 
-	// Token: 0x06003DC3 RID: 15811 RVA: 0x00188EA0 File Offset: 0x001870A0
+	// Token: 0x06003DE6 RID: 15846 RVA: 0x00189F48 File Offset: 0x00188148
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -37,7 +37,7 @@ public class NetPackageSetBlockTexture : NetPackage, IMemoryPoolableObject
 		_bw.Write(this.channel);
 	}
 
-	// Token: 0x06003DC4 RID: 15812 RVA: 0x00188EF0 File Offset: 0x001870F0
+	// Token: 0x06003DE7 RID: 15847 RVA: 0x00189F98 File Offset: 0x00188198
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world != null && _world.ChunkCache != null)
@@ -51,39 +51,39 @@ public class NetPackageSetBlockTexture : NetPackage, IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06003DC5 RID: 15813 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003DE8 RID: 15848 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Reset()
 	{
 	}
 
-	// Token: 0x06003DC6 RID: 15814 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003DE9 RID: 15849 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x06003DC7 RID: 15815 RVA: 0x00178B59 File Offset: 0x00176D59
+	// Token: 0x06003DEA RID: 15850 RVA: 0x00179AF1 File Offset: 0x00177CF1
 	public static int GetPoolSize()
 	{
 		return 500;
 	}
 
-	// Token: 0x04003249 RID: 12873
+	// Token: 0x04003269 RID: 12905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x0400324A RID: 12874
+	// Token: 0x0400326A RID: 12906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockFace blockFace;
 
-	// Token: 0x0400324B RID: 12875
+	// Token: 0x0400326B RID: 12907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte idx;
 
-	// Token: 0x0400324C RID: 12876
+	// Token: 0x0400326C RID: 12908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerIdThatChanged;
 
-	// Token: 0x0400324D RID: 12877
+	// Token: 0x0400326D RID: 12909
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte channel;
 }

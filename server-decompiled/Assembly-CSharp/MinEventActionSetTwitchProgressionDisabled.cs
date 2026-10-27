@@ -3,20 +3,20 @@ using System.Xml.Linq;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F1 RID: 1777
+// Token: 0x020006F9 RID: 1785
 [Preserve]
 public class MinEventActionSetTwitchProgressionDisabled : MinEventActionTargetedBase
 {
-	// Token: 0x1700058E RID: 1422
-	// (get) Token: 0x060036D2 RID: 14034 RVA: 0x001691D1 File Offset: 0x001673D1
-	// (set) Token: 0x060036D3 RID: 14035 RVA: 0x001691D9 File Offset: 0x001673D9
+	// Token: 0x17000592 RID: 1426
+	// (get) Token: 0x060036E9 RID: 14057 RVA: 0x0016A169 File Offset: 0x00168369
+	// (set) Token: 0x060036EA RID: 14058 RVA: 0x0016A171 File Offset: 0x00168371
 	public bool disabled
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060036D4 RID: 14036 RVA: 0x001691E4 File Offset: 0x001673E4
+	// Token: 0x060036EB RID: 14059 RVA: 0x0016A17C File Offset: 0x0016837C
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -33,7 +33,7 @@ public class MinEventActionSetTwitchProgressionDisabled : MinEventActionTargeted
 		}
 	}
 
-	// Token: 0x060036D5 RID: 14037 RVA: 0x0016923D File Offset: 0x0016743D
+	// Token: 0x060036EC RID: 14060 RVA: 0x0016A1D5 File Offset: 0x001683D5
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);

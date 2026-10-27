@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017AC RID: 6060
+	// Token: 0x020017DD RID: 6109
 	[Preserve]
 	public class UAITaskFleeFromTarget : UAITaskBase
 	{
-		// Token: 0x0600BBC4 RID: 48068 RVA: 0x0045AE58 File Offset: 0x00459058
+		// Token: 0x0600BCD8 RID: 48344 RVA: 0x0045E804 File Offset: 0x0045CA04
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void initializeParameters()
 		{
@@ -19,7 +19,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BBC5 RID: 48069 RVA: 0x0045AE94 File Offset: 0x00459094
+		// Token: 0x0600BCD9 RID: 48345 RVA: 0x0045E840 File Offset: 0x0045CA40
 		public override void Start(Context _context)
 		{
 			base.Start(_context);
@@ -33,7 +33,7 @@ namespace UAI
 			_context.ActionData.Failed = true;
 		}
 
-		// Token: 0x0600BBC6 RID: 48070 RVA: 0x0045AF12 File Offset: 0x00459112
+		// Token: 0x0600BCDA RID: 48346 RVA: 0x0045E8BE File Offset: 0x0045CABE
 		public override void Update(Context _context)
 		{
 			base.Update(_context);
@@ -44,7 +44,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x04008C84 RID: 35972
+		// Token: 0x04008D6D RID: 36205
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float maxFleeDistance;
 	}

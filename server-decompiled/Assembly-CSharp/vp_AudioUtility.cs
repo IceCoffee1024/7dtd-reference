@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015A2 RID: 5538
+// Token: 0x020015B4 RID: 5556
 public static class vp_AudioUtility
 {
-	// Token: 0x0600ACEF RID: 44271 RVA: 0x004070EC File Offset: 0x004052EC
+	// Token: 0x0600AD47 RID: 44359 RVA: 0x004094F0 File Offset: 0x004076F0
 	public static void PlayRandomSound(AudioSource audioSource, List<AudioClip> sounds, Vector2 pitchRange)
 	{
 		if (audioSource == null)
@@ -32,7 +32,7 @@ public static class vp_AudioUtility
 		audioSource.PlayOneShot(audioClip);
 	}
 
-	// Token: 0x0600ACF0 RID: 44272 RVA: 0x0040716A File Offset: 0x0040536A
+	// Token: 0x0600AD48 RID: 44360 RVA: 0x0040956E File Offset: 0x0040776E
 	public static void PlayRandomSound(AudioSource audioSource, List<AudioClip> sounds)
 	{
 		vp_AudioUtility.PlayRandomSound(audioSource, sounds, Vector2.one);

@@ -4,11 +4,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000449 RID: 1097
+// Token: 0x0200044B RID: 1099
 [Preserve]
 public class EAILeap : EAIBase
 {
-	// Token: 0x0600215A RID: 8538 RVA: 0x000C9371 File Offset: 0x000C7571
+	// Token: 0x0600215F RID: 8543 RVA: 0x000C971D File Offset: 0x000C791D
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -16,14 +16,14 @@ public class EAILeap : EAIBase
 		this.executeDelay = 1f + base.RandomFloat;
 	}
 
-	// Token: 0x0600215B RID: 8539 RVA: 0x000C9393 File Offset: 0x000C7593
+	// Token: 0x06002160 RID: 8544 RVA: 0x000C973F File Offset: 0x000C793F
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
 		base.GetData(data, "legs", ref this.legCount);
 	}
 
-	// Token: 0x0600215C RID: 8540 RVA: 0x000C93B0 File Offset: 0x000C75B0
+	// Token: 0x06002161 RID: 8545 RVA: 0x000C975C File Offset: 0x000C795C
 	public override bool CanExecute()
 	{
 		if (this.theEntity.IsDancing)
@@ -68,7 +68,7 @@ public class EAILeap : EAIBase
 		return !Physics.Raycast(position - Origin.position, this.leapV, out raycastHit, this.leapDist - 0.5f, 1082195968);
 	}
 
-	// Token: 0x0600215D RID: 8541 RVA: 0x000C953C File Offset: 0x000C773C
+	// Token: 0x06002162 RID: 8546 RVA: 0x000C98E8 File Offset: 0x000C7AE8
 	public override void Start()
 	{
 		this.abortTime = 5f;
@@ -76,7 +76,7 @@ public class EAILeap : EAIBase
 		this.leapYaw = Mathf.Atan2(this.leapV.x, this.leapV.z) * 57.29578f;
 	}
 
-	// Token: 0x0600215E RID: 8542 RVA: 0x000C958C File Offset: 0x000C778C
+	// Token: 0x06002163 RID: 8547 RVA: 0x000C9938 File Offset: 0x000C7B38
 	public override bool Continue()
 	{
 		if (this.theEntity.bodyDamage.CurrentStun != EnumEntityStunType.None)
@@ -97,38 +97,38 @@ public class EAILeap : EAIBase
 		return true;
 	}
 
-	// Token: 0x0600215F RID: 8543 RVA: 0x000C9626 File Offset: 0x000C7826
+	// Token: 0x06002164 RID: 8548 RVA: 0x000C99D2 File Offset: 0x000C7BD2
 	public override void Update()
 	{
 		this.abortTime -= 0.05f;
 	}
 
-	// Token: 0x06002160 RID: 8544 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002165 RID: 8549 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Reset()
 	{
 	}
 
-	// Token: 0x040016F3 RID: 5875
+	// Token: 0x04001703 RID: 5891
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCollisionMask = 1082195968;
 
-	// Token: 0x040016F4 RID: 5876
+	// Token: 0x04001704 RID: 5892
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int legCount = 2;
 
-	// Token: 0x040016F5 RID: 5877
+	// Token: 0x04001705 RID: 5893
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 leapV;
 
-	// Token: 0x040016F6 RID: 5878
+	// Token: 0x04001706 RID: 5894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float leapDist;
 
-	// Token: 0x040016F7 RID: 5879
+	// Token: 0x04001707 RID: 5895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float leapYaw;
 
-	// Token: 0x040016F8 RID: 5880
+	// Token: 0x04001708 RID: 5896
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float abortTime;
 }

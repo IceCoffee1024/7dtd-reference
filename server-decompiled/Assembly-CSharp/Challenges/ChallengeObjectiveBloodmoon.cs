@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001927 RID: 6439
+	// Token: 0x02001958 RID: 6488
 	[Preserve]
 	public class ChallengeObjectiveBloodmoon : BaseChallengeObjective
 	{
-		// Token: 0x170018FD RID: 6397
-		// (get) Token: 0x0600C69E RID: 50846 RVA: 0x000470B6 File Offset: 0x000452B6
+		// Token: 0x17001945 RID: 6469
+		// (get) Token: 0x0600C7B2 RID: 51122 RVA: 0x00047076 File Offset: 0x00045276
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -17,8 +17,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170018FE RID: 6398
-		// (get) Token: 0x0600C69F RID: 50847 RVA: 0x0048ED3F File Offset: 0x0048CF3F
+		// Token: 0x17001946 RID: 6470
+		// (get) Token: 0x0600C7B3 RID: 51123 RVA: 0x00492733 File Offset: 0x00490933
 		public override string DescriptionText
 		{
 			get
@@ -27,8 +27,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170018FF RID: 6399
-		// (get) Token: 0x0600C6A0 RID: 50848 RVA: 0x0048ED57 File Offset: 0x0048CF57
+		// Token: 0x17001947 RID: 6471
+		// (get) Token: 0x0600C7B4 RID: 51124 RVA: 0x0049274B File Offset: 0x0049094B
 		public override string StatusText
 		{
 			get
@@ -41,12 +41,12 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6A1 RID: 50849 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C7B5 RID: 51125 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C6A2 RID: 50850 RVA: 0x0048ED6C File Offset: 0x0048CF6C
+		// Token: 0x0600C7B6 RID: 51126 RVA: 0x00492760 File Offset: 0x00490960
 		public override void HandleAddHooks()
 		{
 			if (!EntityFactory.EnemySpawnMode)
@@ -67,13 +67,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6A3 RID: 50851 RVA: 0x0048EDDD File Offset: 0x0048CFDD
+		// Token: 0x0600C7B7 RID: 51127 RVA: 0x004927D1 File Offset: 0x004909D1
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.BloodMoonSurvive -= this.Current_BloodMoonSurvive;
 		}
 
-		// Token: 0x0600C6A4 RID: 50852 RVA: 0x0048EDF8 File Offset: 0x0048CFF8
+		// Token: 0x0600C7B8 RID: 51128 RVA: 0x004927EC File Offset: 0x004909EC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_BloodMoonSurvive()
 		{
@@ -86,7 +86,7 @@ namespace Challenges
 			this.CheckObjectiveComplete(true);
 		}
 
-		// Token: 0x0600C6A5 RID: 50853 RVA: 0x0048EE26 File Offset: 0x0048D026
+		// Token: 0x0600C7B9 RID: 51129 RVA: 0x0049281A File Offset: 0x00490A1A
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveBloodmoon();

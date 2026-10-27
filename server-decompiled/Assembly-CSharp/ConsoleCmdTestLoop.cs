@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B3 RID: 691
+// Token: 0x020002B5 RID: 693
 [Preserve]
 public class ConsoleCmdTestLoop : ConsoleCmdAbstract
 {
-	// Token: 0x060013DB RID: 5083 RVA: 0x00079274 File Offset: 0x00077474
+	// Token: 0x060013DF RID: 5087 RVA: 0x00079444 File Offset: 0x00077644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testloop" };
 	}
 
-	// Token: 0x060013DC RID: 5084 RVA: 0x00079284 File Offset: 0x00077484
+	// Token: 0x060013E0 RID: 5088 RVA: 0x00079454 File Offset: 0x00077654
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Test code in a loop";
 	}
 
-	// Token: 0x060013DD RID: 5085 RVA: 0x0007928B File Offset: 0x0007748B
+	// Token: 0x060013E1 RID: 5089 RVA: 0x0007945B File Offset: 0x0007765B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -29,7 +29,7 @@ public class ConsoleCmdTestLoop : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700021D RID: 541
-	// (get) Token: 0x060013DE RID: 5086 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060013E2 RID: 5090 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -38,7 +38,7 @@ public class ConsoleCmdTestLoop : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013DF RID: 5087 RVA: 0x00079294 File Offset: 0x00077494
+	// Token: 0x060013E3 RID: 5091 RVA: 0x00079464 File Offset: 0x00077664
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -263,19 +263,19 @@ public class ConsoleCmdTestLoop : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unknown command " + text);
 	}
 
-	// Token: 0x04000D8E RID: 3470
+	// Token: 0x04000D8F RID: 3471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMeshCount = 10000;
 
-	// Token: 0x04000D8F RID: 3471
+	// Token: 0x04000D90 RID: 3472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mesh[] meshes;
 
-	// Token: 0x04000D90 RID: 3472
+	// Token: 0x04000D91 RID: 3473
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform containerT;
 
-	// Token: 0x04000D91 RID: 3473
+	// Token: 0x04000D92 RID: 3474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform containerBaseT;
 }

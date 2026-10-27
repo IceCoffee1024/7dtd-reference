@@ -4,12 +4,12 @@ using System.IO;
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x02000214 RID: 532
+// Token: 0x02000216 RID: 534
 [Preserve]
 public class ConsoleCmdExportCurrentConfigs : ConsoleCmdAbstract
 {
 	// Token: 0x1700016D RID: 365
-	// (get) Token: 0x06001016 RID: 4118 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x0600101A RID: 4122 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -19,7 +19,7 @@ public class ConsoleCmdExportCurrentConfigs : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700016E RID: 366
-	// (get) Token: 0x06001017 RID: 4119 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600101B RID: 4123 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -29,7 +29,7 @@ public class ConsoleCmdExportCurrentConfigs : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700016F RID: 367
-	// (get) Token: 0x06001018 RID: 4120 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600101C RID: 4124 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -38,28 +38,28 @@ public class ConsoleCmdExportCurrentConfigs : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001019 RID: 4121 RVA: 0x00066D5E File Offset: 0x00064F5E
+	// Token: 0x0600101D RID: 4125 RVA: 0x00066F2E File Offset: 0x0006512E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Exports the current game config XMLs";
 	}
 
-	// Token: 0x0600101A RID: 4122 RVA: 0x00066D65 File Offset: 0x00064F65
+	// Token: 0x0600101E RID: 4126 RVA: 0x00066F35 File Offset: 0x00065135
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Exports all game config XMLs as they are currently used (including applied\npatches from mods) to the folder \"Configs\" in the save folder of the game.\nIf run from the main menu it exports the XUi configs for the menu, if run\nfrom a game session will export all others.";
 	}
 
-	// Token: 0x0600101B RID: 4123 RVA: 0x00066D6C File Offset: 0x00064F6C
+	// Token: 0x0600101F RID: 4127 RVA: 0x00066F3C File Offset: 0x0006513C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "exportcurrentconfigs" };
 	}
 
-	// Token: 0x0600101C RID: 4124 RVA: 0x00066D7C File Offset: 0x00064F7C
+	// Token: 0x06001020 RID: 4128 RVA: 0x00066F4C File Offset: 0x0006514C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.World == null)
@@ -115,7 +115,7 @@ public class ConsoleCmdExportCurrentConfigs : ConsoleCmdAbstract
 		ConsoleCmdExportCurrentConfigs.DumpLoadedXmls(Path.Combine(GameIO.GetApplicationTempPath(), string2, string3, "ConfigsDump"));
 	}
 
-	// Token: 0x0600101D RID: 4125 RVA: 0x00066F4D File Offset: 0x0006514D
+	// Token: 0x06001021 RID: 4129 RVA: 0x0006711D File Offset: 0x0006531D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DumpLoadedXmls(string tempPath)
 	{

@@ -7,12 +7,12 @@ using System.Threading;
 
 namespace ConcurrentCollections
 {
-	// Token: 0x02001AD3 RID: 6867
+	// Token: 0x02001B04 RID: 6916
 	[DebuggerDisplay("Count = {Count}")]
 	public class ConcurrentHashSet<T> : IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable, ICollection<T>
 	{
-		// Token: 0x17001A01 RID: 6657
-		// (get) Token: 0x0600CF2C RID: 53036 RVA: 0x004B13E7 File Offset: 0x004AF5E7
+		// Token: 0x17001A49 RID: 6729
+		// (get) Token: 0x0600D040 RID: 53312 RVA: 0x004B4EE3 File Offset: 0x004B30E3
 		public static int DefaultConcurrencyLevel
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -22,8 +22,8 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x17001A02 RID: 6658
-		// (get) Token: 0x0600CF2D RID: 53037 RVA: 0x004B13F4 File Offset: 0x004AF5F4
+		// Token: 0x17001A4A RID: 6730
+		// (get) Token: 0x0600D041 RID: 53313 RVA: 0x004B4EF0 File Offset: 0x004B30F0
 		public int Count
 		{
 			get
@@ -46,8 +46,8 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x17001A03 RID: 6659
-		// (get) Token: 0x0600CF2E RID: 53038 RVA: 0x004B145C File Offset: 0x004AF65C
+		// Token: 0x17001A4B RID: 6731
+		// (get) Token: 0x0600D042 RID: 53314 RVA: 0x004B4F58 File Offset: 0x004B3158
 		public bool IsEmpty
 		{
 			get
@@ -72,38 +72,38 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF2F RID: 53039 RVA: 0x004B14C4 File Offset: 0x004AF6C4
+		// Token: 0x0600D043 RID: 53315 RVA: 0x004B4FC0 File Offset: 0x004B31C0
 		public ConcurrentHashSet()
 			: this(ConcurrentHashSet<T>.DefaultConcurrencyLevel, 31, true, null)
 		{
 		}
 
-		// Token: 0x0600CF30 RID: 53040 RVA: 0x004B14D5 File Offset: 0x004AF6D5
+		// Token: 0x0600D044 RID: 53316 RVA: 0x004B4FD1 File Offset: 0x004B31D1
 		public ConcurrentHashSet(Action<T> onRemovalFaiuire)
 			: this(ConcurrentHashSet<T>.DefaultConcurrencyLevel, 31, true, null)
 		{
 			this.OnRemovalFailure = onRemovalFaiuire;
 		}
 
-		// Token: 0x0600CF31 RID: 53041 RVA: 0x004B14ED File Offset: 0x004AF6ED
+		// Token: 0x0600D045 RID: 53317 RVA: 0x004B4FE9 File Offset: 0x004B31E9
 		public ConcurrentHashSet(int concurrencyLevel, int capacity)
 			: this(concurrencyLevel, capacity, false, null)
 		{
 		}
 
-		// Token: 0x0600CF32 RID: 53042 RVA: 0x004B14F9 File Offset: 0x004AF6F9
+		// Token: 0x0600D046 RID: 53318 RVA: 0x004B4FF5 File Offset: 0x004B31F5
 		public ConcurrentHashSet(IEnumerable<T> collection)
 			: this(collection, null)
 		{
 		}
 
-		// Token: 0x0600CF33 RID: 53043 RVA: 0x004B1503 File Offset: 0x004AF703
+		// Token: 0x0600D047 RID: 53319 RVA: 0x004B4FFF File Offset: 0x004B31FF
 		public ConcurrentHashSet(IEqualityComparer<T> comparer)
 			: this(ConcurrentHashSet<T>.DefaultConcurrencyLevel, 31, true, comparer)
 		{
 		}
 
-		// Token: 0x0600CF34 RID: 53044 RVA: 0x004B1514 File Offset: 0x004AF714
+		// Token: 0x0600D048 RID: 53320 RVA: 0x004B5010 File Offset: 0x004B3210
 		public ConcurrentHashSet(IEnumerable<T> collection, IEqualityComparer<T> comparer)
 			: this(comparer)
 		{
@@ -114,7 +114,7 @@ namespace ConcurrentCollections
 			this.InitializeFromCollection(collection);
 		}
 
-		// Token: 0x0600CF35 RID: 53045 RVA: 0x004B1532 File Offset: 0x004AF732
+		// Token: 0x0600D049 RID: 53321 RVA: 0x004B502E File Offset: 0x004B322E
 		public ConcurrentHashSet(int concurrencyLevel, IEnumerable<T> collection, IEqualityComparer<T> comparer)
 			: this(concurrencyLevel, 31, false, comparer)
 		{
@@ -125,13 +125,13 @@ namespace ConcurrentCollections
 			this.InitializeFromCollection(collection);
 		}
 
-		// Token: 0x0600CF36 RID: 53046 RVA: 0x004B1554 File Offset: 0x004AF754
+		// Token: 0x0600D04A RID: 53322 RVA: 0x004B5050 File Offset: 0x004B3250
 		public ConcurrentHashSet(int concurrencyLevel, int capacity, IEqualityComparer<T> comparer)
 			: this(concurrencyLevel, capacity, false, comparer)
 		{
 		}
 
-		// Token: 0x0600CF37 RID: 53047 RVA: 0x004B1560 File Offset: 0x004AF760
+		// Token: 0x0600D04B RID: 53323 RVA: 0x004B505C File Offset: 0x004B325C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ConcurrentHashSet(int concurrencyLevel, int capacity, bool growLockArray, IEqualityComparer<T> comparer)
 		{
@@ -160,13 +160,13 @@ namespace ConcurrentCollections
 			this._comparer = comparer ?? EqualityComparer<T>.Default;
 		}
 
-		// Token: 0x0600CF38 RID: 53048 RVA: 0x004B15FA File Offset: 0x004AF7FA
+		// Token: 0x0600D04C RID: 53324 RVA: 0x004B50F6 File Offset: 0x004B32F6
 		public bool Add(T item)
 		{
 			return this.AddInternal(item, this._comparer.GetHashCode(item), true);
 		}
 
-		// Token: 0x0600CF39 RID: 53049 RVA: 0x004B1610 File Offset: 0x004AF810
+		// Token: 0x0600D04D RID: 53325 RVA: 0x004B510C File Offset: 0x004B330C
 		public void Clear()
 		{
 			int num = 0;
@@ -183,7 +183,7 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF3A RID: 53050 RVA: 0x004B1698 File Offset: 0x004AF898
+		// Token: 0x0600D04E RID: 53326 RVA: 0x004B5194 File Offset: 0x004B3394
 		public bool Contains(T item)
 		{
 			int hashCode = this._comparer.GetHashCode(item);
@@ -199,7 +199,7 @@ namespace ConcurrentCollections
 			return false;
 		}
 
-		// Token: 0x0600CF3B RID: 53051 RVA: 0x004B170C File Offset: 0x004AF90C
+		// Token: 0x0600D04F RID: 53327 RVA: 0x004B5208 File Offset: 0x004B3408
 		public bool TryRemove(T item)
 		{
 			int hashCode = this._comparer.GetHashCode(item);
@@ -245,14 +245,14 @@ namespace ConcurrentCollections
 			return false;
 		}
 
-		// Token: 0x0600CF3C RID: 53052 RVA: 0x004B182C File Offset: 0x004AFA2C
+		// Token: 0x0600D050 RID: 53328 RVA: 0x004B5328 File Offset: 0x004B3528
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.GetEnumerator();
 		}
 
-		// Token: 0x0600CF3D RID: 53053 RVA: 0x004B1834 File Offset: 0x004AFA34
+		// Token: 0x0600D051 RID: 53329 RVA: 0x004B5330 File Offset: 0x004B3530
 		public IEnumerator<T> GetEnumerator()
 		{
 			ConcurrentHashSet<T>.Node[] buckets = this._tables.Buckets;
@@ -270,15 +270,15 @@ namespace ConcurrentCollections
 			yield break;
 		}
 
-		// Token: 0x0600CF3E RID: 53054 RVA: 0x004B1843 File Offset: 0x004AFA43
+		// Token: 0x0600D052 RID: 53330 RVA: 0x004B533F File Offset: 0x004B353F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void System.Collections.Generic.ICollection<T>.Add(T item)
 		{
 			this.Add(item);
 		}
 
-		// Token: 0x17001A04 RID: 6660
-		// (get) Token: 0x0600CF3F RID: 53055 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001A4C RID: 6732
+		// (get) Token: 0x0600D053 RID: 53331 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool System.Collections.Generic.ICollection<T>.IsReadOnly
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -288,7 +288,7 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF40 RID: 53056 RVA: 0x004B1850 File Offset: 0x004AFA50
+		// Token: 0x0600D054 RID: 53332 RVA: 0x004B534C File Offset: 0x004B354C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void System.Collections.Generic.ICollection<T>.CopyTo(T[] array, int arrayIndex)
 		{
@@ -323,14 +323,14 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF41 RID: 53057 RVA: 0x004B18F4 File Offset: 0x004AFAF4
+		// Token: 0x0600D055 RID: 53333 RVA: 0x004B53F0 File Offset: 0x004B35F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool System.Collections.Generic.ICollection<T>.Remove(T item)
 		{
 			return this.TryRemove(item);
 		}
 
-		// Token: 0x0600CF42 RID: 53058 RVA: 0x004B1900 File Offset: 0x004AFB00
+		// Token: 0x0600D056 RID: 53334 RVA: 0x004B53FC File Offset: 0x004B35FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InitializeFromCollection(IEnumerable<T> collection)
 		{
@@ -344,7 +344,7 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF43 RID: 53059 RVA: 0x004B1984 File Offset: 0x004AFB84
+		// Token: 0x0600D057 RID: 53335 RVA: 0x004B5480 File Offset: 0x004B3680
 		public bool TryFirst(out T returnValue)
 		{
 			if (this._tables == null || this._tables.Buckets == null || this._tables.Buckets.Length == 0)
@@ -362,7 +362,7 @@ namespace ConcurrentCollections
 			return true;
 		}
 
-		// Token: 0x0600CF44 RID: 53060 RVA: 0x004B1A10 File Offset: 0x004AFC10
+		// Token: 0x0600D058 RID: 53336 RVA: 0x004B550C File Offset: 0x004B370C
 		public bool TryRemoveFirst(out T returnValue)
 		{
 			if (this._tables == null || this._tables.Buckets == null || this._tables.Buckets.Length == 0)
@@ -381,7 +381,7 @@ namespace ConcurrentCollections
 			return true;
 		}
 
-		// Token: 0x0600CF45 RID: 53061 RVA: 0x004B1AA8 File Offset: 0x004AFCA8
+		// Token: 0x0600D059 RID: 53337 RVA: 0x004B55A4 File Offset: 0x004B37A4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool AddInternal(T item, int hashcode, bool acquireLock)
 		{
@@ -438,14 +438,14 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF46 RID: 53062 RVA: 0x004B1BB4 File Offset: 0x004AFDB4
+		// Token: 0x0600D05A RID: 53338 RVA: 0x004B56B0 File Offset: 0x004B38B0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int GetBucket(int hashcode, int bucketCount)
 		{
 			return (hashcode & int.MaxValue) % bucketCount;
 		}
 
-		// Token: 0x0600CF47 RID: 53063 RVA: 0x004B1BBF File Offset: 0x004AFDBF
+		// Token: 0x0600D05B RID: 53339 RVA: 0x004B56BB File Offset: 0x004B38BB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void GetBucketAndLockNo(int hashcode, out int bucketNo, out int lockNo, int bucketCount, int lockCount)
 		{
@@ -453,7 +453,7 @@ namespace ConcurrentCollections
 			lockNo = bucketNo % lockCount;
 		}
 
-		// Token: 0x0600CF48 RID: 53064 RVA: 0x004B1BD4 File Offset: 0x004AFDD4
+		// Token: 0x0600D05C RID: 53340 RVA: 0x004B56D0 File Offset: 0x004B38D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GrowTable(ConcurrentHashSet<T>.Tables tables)
 		{
@@ -545,7 +545,7 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF49 RID: 53065 RVA: 0x004B1E14 File Offset: 0x004B0014
+		// Token: 0x0600D05D RID: 53341 RVA: 0x004B5910 File Offset: 0x004B3B10
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AcquireAllLocks(ref int locksAcquired)
 		{
@@ -553,7 +553,7 @@ namespace ConcurrentCollections
 			this.AcquireLocks(1, this._tables.Locks.Length, ref locksAcquired);
 		}
 
-		// Token: 0x0600CF4A RID: 53066 RVA: 0x004B1E38 File Offset: 0x004B0038
+		// Token: 0x0600D05E RID: 53342 RVA: 0x004B5934 File Offset: 0x004B3B34
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AcquireLocks(int fromInclusive, int toExclusive, ref int locksAcquired)
 		{
@@ -575,7 +575,7 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF4B RID: 53067 RVA: 0x004B1E88 File Offset: 0x004B0088
+		// Token: 0x0600D05F RID: 53343 RVA: 0x004B5984 File Offset: 0x004B3B84
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ReleaseLocks(int fromInclusive, int toExclusive)
 		{
@@ -585,7 +585,7 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x0600CF4C RID: 53068 RVA: 0x004B1EB8 File Offset: 0x004B00B8
+		// Token: 0x0600D060 RID: 53344 RVA: 0x004B59B4 File Offset: 0x004B3BB4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CopyToItems(T[] array, int index)
 		{
@@ -600,38 +600,38 @@ namespace ConcurrentCollections
 			}
 		}
 
-		// Token: 0x04009CBB RID: 40123
+		// Token: 0x04009DA4 RID: 40356
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int DefaultCapacity = 31;
 
-		// Token: 0x04009CBC RID: 40124
+		// Token: 0x04009DA5 RID: 40357
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxLockNumber = 1024;
 
-		// Token: 0x04009CBD RID: 40125
+		// Token: 0x04009DA6 RID: 40358
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IEqualityComparer<T> _comparer;
 
-		// Token: 0x04009CBE RID: 40126
+		// Token: 0x04009DA7 RID: 40359
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool _growLockArray;
 
-		// Token: 0x04009CBF RID: 40127
+		// Token: 0x04009DA8 RID: 40360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int _budget;
 
-		// Token: 0x04009CC0 RID: 40128
+		// Token: 0x04009DA9 RID: 40361
 		[PublicizedFrom(EAccessModifier.Private)]
 		public volatile ConcurrentHashSet<T>.Tables _tables;
 
-		// Token: 0x04009CC1 RID: 40129
+		// Token: 0x04009DAA RID: 40362
 		public Action<T> OnRemovalFailure;
 
-		// Token: 0x02001AD4 RID: 6868
+		// Token: 0x02001B05 RID: 6917
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class Tables
 		{
-			// Token: 0x0600CF4D RID: 53069 RVA: 0x004B1F05 File Offset: 0x004B0105
+			// Token: 0x0600D061 RID: 53345 RVA: 0x004B5A01 File Offset: 0x004B3C01
 			public Tables(ConcurrentHashSet<T>.Node[] buckets, object[] locks, int[] countPerLock)
 			{
 				this.Buckets = buckets;
@@ -639,21 +639,21 @@ namespace ConcurrentCollections
 				this.CountPerLock = countPerLock;
 			}
 
-			// Token: 0x04009CC2 RID: 40130
+			// Token: 0x04009DAB RID: 40363
 			public readonly ConcurrentHashSet<T>.Node[] Buckets;
 
-			// Token: 0x04009CC3 RID: 40131
+			// Token: 0x04009DAC RID: 40364
 			public readonly object[] Locks;
 
-			// Token: 0x04009CC4 RID: 40132
+			// Token: 0x04009DAD RID: 40365
 			public volatile int[] CountPerLock;
 		}
 
-		// Token: 0x02001AD5 RID: 6869
+		// Token: 0x02001B06 RID: 6918
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class Node
 		{
-			// Token: 0x0600CF4E RID: 53070 RVA: 0x004B1F24 File Offset: 0x004B0124
+			// Token: 0x0600D062 RID: 53346 RVA: 0x004B5A20 File Offset: 0x004B3C20
 			public Node(T item, int hashcode, ConcurrentHashSet<T>.Node next)
 			{
 				this.Item = item;
@@ -661,13 +661,13 @@ namespace ConcurrentCollections
 				this.Next = next;
 			}
 
-			// Token: 0x04009CC5 RID: 40133
+			// Token: 0x04009DAE RID: 40366
 			public readonly T Item;
 
-			// Token: 0x04009CC6 RID: 40134
+			// Token: 0x04009DAF RID: 40367
 			public readonly int Hashcode;
 
-			// Token: 0x04009CC7 RID: 40135
+			// Token: 0x04009DB0 RID: 40368
 			public volatile ConcurrentHashSet<T>.Node Next;
 		}
 	}

@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015A1 RID: 5537
+// Token: 0x020015B3 RID: 5555
 public static class vp_3DUtility
 {
-	// Token: 0x0600ACE2 RID: 44258 RVA: 0x00406CC8 File Offset: 0x00404EC8
+	// Token: 0x0600AD3A RID: 44346 RVA: 0x004090CC File Offset: 0x004072CC
 	public static Vector3 HorizontalVector(Vector3 value)
 	{
 		value.y = 0f;
 		return value;
 	}
 
-	// Token: 0x0600ACE3 RID: 44259 RVA: 0x00406CD8 File Offset: 0x00404ED8
+	// Token: 0x0600AD3B RID: 44347 RVA: 0x004090DC File Offset: 0x004072DC
 	public static Vector3 RandomHorizontalDirection()
 	{
 		return (global::UnityEngine.Random.rotation * Vector3.up).normalized;
 	}
 
-	// Token: 0x0600ACE4 RID: 44260 RVA: 0x00406CFC File Offset: 0x00404EFC
+	// Token: 0x0600AD3C RID: 44348 RVA: 0x00409100 File Offset: 0x00407300
 	public static bool OnScreen(Camera camera, Renderer renderer, Vector3 worldPosition, out Vector3 screenPosition)
 	{
 		screenPosition = Vector2.zero;
@@ -29,7 +29,7 @@ public static class vp_3DUtility
 		return screenPosition.z >= 0f;
 	}
 
-	// Token: 0x0600ACE5 RID: 44261 RVA: 0x00406D54 File Offset: 0x00404F54
+	// Token: 0x0600AD3D RID: 44349 RVA: 0x00409158 File Offset: 0x00407358
 	public static bool InLineOfSight(Vector3 from, Transform target, Vector3 targetOffset, int layerMask)
 	{
 		RaycastHit raycastHit;
@@ -37,20 +37,20 @@ public static class vp_3DUtility
 		return raycastHit.collider == null || raycastHit.collider.transform.root == target;
 	}
 
-	// Token: 0x0600ACE6 RID: 44262 RVA: 0x00406DA2 File Offset: 0x00404FA2
+	// Token: 0x0600AD3E RID: 44350 RVA: 0x004091A6 File Offset: 0x004073A6
 	public static bool WithinRange(Vector3 from, Vector3 to, float range, out float distance)
 	{
 		distance = Vector3.Distance(from, to);
 		return distance <= range;
 	}
 
-	// Token: 0x0600ACE7 RID: 44263 RVA: 0x00406DB8 File Offset: 0x00404FB8
+	// Token: 0x0600AD3F RID: 44351 RVA: 0x004091BC File Offset: 0x004073BC
 	public static float DistanceToRay(Ray ray, Vector3 point)
 	{
 		return Vector3.Cross(ray.direction, point - ray.origin).magnitude;
 	}
 
-	// Token: 0x0600ACE8 RID: 44264 RVA: 0x00406DE8 File Offset: 0x00404FE8
+	// Token: 0x0600AD40 RID: 44352 RVA: 0x004091EC File Offset: 0x004073EC
 	public static float LookAtAngle(Vector3 fromPosition, Vector3 fromForward, Vector3 toPosition)
 	{
 		if (Vector3.Cross(fromForward, (toPosition - fromPosition).normalized).y >= 0f)
@@ -60,13 +60,13 @@ public static class vp_3DUtility
 		return -Vector3.Angle(fromForward, (toPosition - fromPosition).normalized);
 	}
 
-	// Token: 0x0600ACE9 RID: 44265 RVA: 0x00406E42 File Offset: 0x00405042
+	// Token: 0x0600AD41 RID: 44353 RVA: 0x00409246 File Offset: 0x00407446
 	public static float LookAtAngleHorizontal(Vector3 fromPosition, Vector3 fromForward, Vector3 toPosition)
 	{
 		return vp_3DUtility.LookAtAngle(vp_3DUtility.HorizontalVector(fromPosition), vp_3DUtility.HorizontalVector(fromForward), vp_3DUtility.HorizontalVector(toPosition));
 	}
 
-	// Token: 0x0600ACEA RID: 44266 RVA: 0x00406E5C File Offset: 0x0040505C
+	// Token: 0x0600AD42 RID: 44354 RVA: 0x00409260 File Offset: 0x00407460
 	public static float AngleAroundAxis(Vector3 dirA, Vector3 dirB, Vector3 axis)
 	{
 		dirA -= Vector3.Project(dirA, axis);
@@ -74,7 +74,7 @@ public static class vp_3DUtility
 		return Vector3.Angle(dirA, dirB) * (float)((Vector3.Dot(axis, Vector3.Cross(dirA, dirB)) < 0f) ? (-1) : 1);
 	}
 
-	// Token: 0x0600ACEB RID: 44267 RVA: 0x00406EA8 File Offset: 0x004050A8
+	// Token: 0x0600AD43 RID: 44355 RVA: 0x004092AC File Offset: 0x004074AC
 	public static Quaternion GetBoneLookRotationInWorldSpace(Quaternion originalRotation, Quaternion parentRotation, Vector3 worldLookDir, float amount, Vector3 referenceLookDir, Vector3 referenceUpDir, Quaternion relativeWorldSpaceDifference)
 	{
 		Vector3 vector = Quaternion.Inverse(parentRotation) * worldLookDir.normalized;
@@ -87,7 +87,7 @@ public static class vp_3DUtility
 		return Quaternion.Lerp(Quaternion.identity, parentRotation * Quaternion.LookRotation(vector3, vector4) * Quaternion.Inverse(parentRotation * Quaternion.LookRotation(referenceLookDir, referenceUpDir)), amount) * originalRotation * relativeWorldSpaceDifference;
 	}
 
-	// Token: 0x0600ACEC RID: 44268 RVA: 0x00406F68 File Offset: 0x00405168
+	// Token: 0x0600AD44 RID: 44356 RVA: 0x0040936C File Offset: 0x0040756C
 	public static GameObject DebugPrimitive(PrimitiveType primitiveType, Vector3 scale, Color color, Vector3 pivotOffset, Transform parent = null)
 	{
 		GameObject gameObject = null;
@@ -125,13 +125,13 @@ public static class vp_3DUtility
 		return gameObject;
 	}
 
-	// Token: 0x0600ACED RID: 44269 RVA: 0x0040707B File Offset: 0x0040527B
+	// Token: 0x0600AD45 RID: 44357 RVA: 0x0040947F File Offset: 0x0040767F
 	public static GameObject DebugPointer(Transform parent = null)
 	{
 		return vp_3DUtility.DebugPrimitive(PrimitiveType.Sphere, new Vector3(0.01f, 0.01f, 3f), new Color(1f, 1f, 0f, 0.75f), Vector3.forward, parent);
 	}
 
-	// Token: 0x0600ACEE RID: 44270 RVA: 0x004070B6 File Offset: 0x004052B6
+	// Token: 0x0600AD46 RID: 44358 RVA: 0x004094BA File Offset: 0x004076BA
 	public static GameObject DebugBall(Transform parent = null)
 	{
 		return vp_3DUtility.DebugPrimitive(PrimitiveType.Sphere, Vector3.one * 0.25f, new Color(1f, 0f, 0f, 0.5f), Vector3.zero, parent);

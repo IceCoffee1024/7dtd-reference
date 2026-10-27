@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020005F9 RID: 1529
+// Token: 0x02000600 RID: 1536
 public enum EquipmentSlotType
 {
-	// Token: 0x04002754 RID: 10068
+	// Token: 0x0400276F RID: 10095
 	None,
-	// Token: 0x04002755 RID: 10069
+	// Token: 0x04002770 RID: 10096
 	Armor,
-	// Token: 0x04002756 RID: 10070
+	// Token: 0x04002771 RID: 10097
 	BiomeGear,
-	// Token: 0x04002757 RID: 10071
+	// Token: 0x04002772 RID: 10098
 	Clothing
 }

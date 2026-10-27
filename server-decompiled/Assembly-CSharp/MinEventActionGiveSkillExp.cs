@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E7 RID: 1767
+// Token: 0x020006EF RID: 1775
 [Preserve]
 public class MinEventActionGiveSkillExp : MinEventActionTargetedBase
 {
-	// Token: 0x0600369F RID: 13983 RVA: 0x0016815C File Offset: 0x0016635C
+	// Token: 0x060036B6 RID: 14006 RVA: 0x00168F44 File Offset: 0x00167144
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -31,13 +31,13 @@ public class MinEventActionGiveSkillExp : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036A0 RID: 13984 RVA: 0x001682A6 File Offset: 0x001664A6
+	// Token: 0x060036B7 RID: 14007 RVA: 0x0016908E File Offset: 0x0016728E
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && this.skill != null && (this.exp != -1 || this.level_percent != -1f);
 	}
 
-	// Token: 0x060036A1 RID: 13985 RVA: 0x001682D8 File Offset: 0x001664D8
+	// Token: 0x060036B8 RID: 14008 RVA: 0x001690C0 File Offset: 0x001672C0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -66,15 +66,15 @@ public class MinEventActionGiveSkillExp : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BE7 RID: 11239
+	// Token: 0x04002C03 RID: 11267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string skill;
 
-	// Token: 0x04002BE8 RID: 11240
+	// Token: 0x04002C04 RID: 11268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int exp = -1;
 
-	// Token: 0x04002BE9 RID: 11241
+	// Token: 0x04002C05 RID: 11269
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float level_percent = -1f;
 }

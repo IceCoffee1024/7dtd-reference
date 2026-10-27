@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200198C RID: 6540
+	// Token: 0x020019BD RID: 6589
 	[Preserve]
 	public class ActionAddQuest : ActionBaseClientAction
 	{
-		// Token: 0x0600C940 RID: 51520 RVA: 0x004995F8 File Offset: 0x004977F8
+		// Token: 0x0600CA54 RID: 51796 RVA: 0x0049CFEC File Offset: 0x0049B1EC
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C941 RID: 51521 RVA: 0x0049962E File Offset: 0x0049782E
+		// Token: 0x0600CA55 RID: 51797 RVA: 0x0049D022 File Offset: 0x0049B222
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddQuest.PropNotify, ref this.Notify);
 		}
 
-		// Token: 0x0600C942 RID: 51522 RVA: 0x00499659 File Offset: 0x00497859
+		// Token: 0x0600CA56 RID: 51798 RVA: 0x0049D04D File Offset: 0x0049B24D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -38,16 +38,16 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009778 RID: 38776
+		// Token: 0x04009861 RID: 39009
 		public string QuestID;
 
-		// Token: 0x04009779 RID: 38777
+		// Token: 0x04009862 RID: 39010
 		public bool Notify = true;
 
-		// Token: 0x0400977A RID: 38778
+		// Token: 0x04009863 RID: 39011
 		public static string PropQuestID = "quest";
 
-		// Token: 0x0400977B RID: 38779
+		// Token: 0x04009864 RID: 39012
 		public static string PropNotify = "notify";
 	}
 }

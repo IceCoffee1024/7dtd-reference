@@ -2,19 +2,19 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000C1E RID: 3102
+// Token: 0x02000C29 RID: 3113
 public class WorldState
 {
-	// Token: 0x170009C3 RID: 2499
-	// (get) Token: 0x06005E3F RID: 24127 RVA: 0x0024CC9E File Offset: 0x0024AE9E
-	// (set) Token: 0x06005E40 RID: 24128 RVA: 0x0024CCA6 File Offset: 0x0024AEA6
+	// Token: 0x170009C9 RID: 2505
+	// (get) Token: 0x06005E64 RID: 24164 RVA: 0x0024E1C6 File Offset: 0x0024C3C6
+	// (set) Token: 0x06005E65 RID: 24165 RVA: 0x0024E1CE File Offset: 0x0024C3CE
 	public string Guid
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06005E41 RID: 24129 RVA: 0x0024CCAF File Offset: 0x0024AEAF
+	// Token: 0x06005E66 RID: 24166 RVA: 0x0024E1D7 File Offset: 0x0024C3D7
 	public WorldState()
 	{
 		this.providerId = EnumChunkProviderId.Disc;
@@ -23,7 +23,7 @@ public class WorldState
 		this.GenerateNewGuid();
 	}
 
-	// Token: 0x06005E42 RID: 24130 RVA: 0x0024CCE4 File Offset: 0x0024AEE4
+	// Token: 0x06005E67 RID: 24167 RVA: 0x0024E20C File Offset: 0x0024C40C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SaveLoad(string _filename, bool _load, bool _warnOnDifferentVersion, bool _infOnDiferentVersion)
 	{
@@ -73,7 +73,7 @@ public class WorldState
 		return flag2;
 	}
 
-	// Token: 0x06005E43 RID: 24131 RVA: 0x0024CDDC File Offset: 0x0024AFDC
+	// Token: 0x06005E68 RID: 24168 RVA: 0x0024E304 File Offset: 0x0024C504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SaveLoad(Stream _stream, bool _load, bool _warnOnDifferentVersion, bool _infOnDiferentVersion)
 	{
@@ -144,8 +144,8 @@ public class WorldState
 					{
 						VersionInformation.EGameReleaseType egameReleaseType = (VersionInformation.EGameReleaseType)binaryReaderOrWriter.ReadWrite(1);
 						int num2 = binaryReaderOrWriter.ReadWrite(3);
-						int num3 = binaryReaderOrWriter.ReadWrite(30);
-						int num4 = binaryReaderOrWriter.ReadWrite(18);
+						int num3 = binaryReaderOrWriter.ReadWrite(40);
+						int num4 = binaryReaderOrWriter.ReadWrite(6);
 						this.gameVersion = new VersionInformation(egameReleaseType, num2, num3, num4);
 					}
 					else
@@ -420,7 +420,7 @@ public class WorldState
 		return flag3;
 	}
 
-	// Token: 0x06005E44 RID: 24132 RVA: 0x0024D7D4 File Offset: 0x0024B9D4
+	// Token: 0x06005E69 RID: 24169 RVA: 0x0024ECFC File Offset: 0x0024CEFC
 	public bool Load(string _filename, bool _warnOnDifferentVersion = true, bool _infOnDiferentVersion = false, bool _makeExtraBackupOnSuccess = false)
 	{
 		WorldState.<>c__DisplayClass33_0 CS$<>8__locals1;
@@ -467,7 +467,7 @@ public class WorldState
 		return false;
 	}
 
-	// Token: 0x06005E45 RID: 24133 RVA: 0x0024D90A File Offset: 0x0024BB0A
+	// Token: 0x06005E6A RID: 24170 RVA: 0x0024EE32 File Offset: 0x0024D032
 	public bool Save(string _filename)
 	{
 		if (SdFile.Exists(_filename) && GameIO.FileSize(_filename) > 0L)
@@ -477,13 +477,13 @@ public class WorldState
 		return this.SaveLoad(_filename, false, false, false);
 	}
 
-	// Token: 0x06005E46 RID: 24134 RVA: 0x0024D93A File Offset: 0x0024BB3A
+	// Token: 0x06005E6B RID: 24171 RVA: 0x0024EE62 File Offset: 0x0024D062
 	public bool Save(Stream _stream)
 	{
 		return this.SaveLoad(_stream, false, false, false);
 	}
 
-	// Token: 0x06005E47 RID: 24135 RVA: 0x0024D948 File Offset: 0x0024BB48
+	// Token: 0x06005E6C RID: 24172 RVA: 0x0024EE70 File Offset: 0x0024D070
 	public void SetFrom(World _world, EnumChunkProviderId _chunkProviderId)
 	{
 		this.gameVersion = Constants.cVersionInformation;
@@ -556,20 +556,20 @@ public class WorldState
 		}
 	}
 
-	// Token: 0x06005E48 RID: 24136 RVA: 0x0024DBFC File Offset: 0x0024BDFC
+	// Token: 0x06005E6D RID: 24173 RVA: 0x0024F124 File Offset: 0x0024D324
 	public void ResetDynamicData()
 	{
 		this.worldTime = 0UL;
 		this.timeInTicks = 0UL;
 	}
 
-	// Token: 0x06005E49 RID: 24137 RVA: 0x0024DC0E File Offset: 0x0024BE0E
+	// Token: 0x06005E6E RID: 24174 RVA: 0x0024F136 File Offset: 0x0024D336
 	public void GenerateNewGuid()
 	{
 		this.Guid = Utils.GenerateGuid();
 	}
 
-	// Token: 0x06005E4B RID: 24139 RVA: 0x0024DC24 File Offset: 0x0024BE24
+	// Token: 0x06005E70 RID: 24176 RVA: 0x0024F14C File Offset: 0x0024D34C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <Load>g__DoExtraBackup|33_0(string sourceFilename, ref WorldState.<>c__DisplayClass33_0 A_1)
@@ -589,89 +589,89 @@ public class WorldState
 		}
 	}
 
-	// Token: 0x0400493B RID: 18747
+	// Token: 0x04004960 RID: 18784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int CurrentSaveVersion = 23;
 
-	// Token: 0x0400493C RID: 18748
+	// Token: 0x04004961 RID: 18785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint version;
 
-	// Token: 0x0400493D RID: 18749
+	// Token: 0x04004962 RID: 18786
 	public string gameVersionString = "";
 
-	// Token: 0x0400493E RID: 18750
+	// Token: 0x04004963 RID: 18787
 	public VersionInformation gameVersion;
 
-	// Token: 0x0400493F RID: 18751
+	// Token: 0x04004964 RID: 18788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float waterLevel;
 
-	// Token: 0x04004940 RID: 18752
+	// Token: 0x04004965 RID: 18789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkSizeX;
 
-	// Token: 0x04004941 RID: 18753
+	// Token: 0x04004966 RID: 18790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkSizeY;
 
-	// Token: 0x04004942 RID: 18754
+	// Token: 0x04004967 RID: 18791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkSizeZ;
 
-	// Token: 0x04004943 RID: 18755
+	// Token: 0x04004968 RID: 18792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkCount;
 
-	// Token: 0x04004944 RID: 18756
+	// Token: 0x04004969 RID: 18793
 	public MemoryStream dynamicSpawnerState;
 
-	// Token: 0x04004945 RID: 18757
+	// Token: 0x0400496A RID: 18794
 	public MemoryStream aiDirectorState;
 
-	// Token: 0x04004946 RID: 18758
+	// Token: 0x0400496B RID: 18795
 	public int activeGameMode;
 
-	// Token: 0x04004947 RID: 18759
+	// Token: 0x0400496C RID: 18796
 	public EnumChunkProviderId providerId;
 
-	// Token: 0x04004948 RID: 18760
+	// Token: 0x0400496D RID: 18797
 	public int seed;
 
-	// Token: 0x04004949 RID: 18761
+	// Token: 0x0400496E RID: 18798
 	public ulong worldTime;
 
-	// Token: 0x0400494A RID: 18762
+	// Token: 0x0400496F RID: 18799
 	public ulong timeInTicks;
 
-	// Token: 0x0400494B RID: 18763
+	// Token: 0x04004970 RID: 18800
 	public int nextEntityID;
 
-	// Token: 0x0400494C RID: 18764
+	// Token: 0x04004971 RID: 18801
 	public long saveDataLimit;
 
-	// Token: 0x0400494D RID: 18765
+	// Token: 0x04004972 RID: 18802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SpawnPointList playerSpawnPoints;
 
-	// Token: 0x0400494E RID: 18766
+	// Token: 0x04004973 RID: 18803
 	public int sleeperVolumesSaveVersion;
 
-	// Token: 0x0400494F RID: 18767
+	// Token: 0x04004974 RID: 18804
 	public MemoryStream sleeperVolumeState;
 
-	// Token: 0x04004950 RID: 18768
+	// Token: 0x04004975 RID: 18805
 	public int triggerVolumesSaveVersion;
 
-	// Token: 0x04004951 RID: 18769
+	// Token: 0x04004976 RID: 18806
 	public MemoryStream triggerVolumeState;
 
-	// Token: 0x04004952 RID: 18770
+	// Token: 0x04004977 RID: 18807
 	public int wallVolumesSaveVersion;
 
-	// Token: 0x04004953 RID: 18771
+	// Token: 0x04004978 RID: 18808
 	public MemoryStream wallVolumeState;
 
-	// Token: 0x04004954 RID: 18772
+	// Token: 0x04004979 RID: 18809
 	public MemoryStream weatherManagerState;
 }

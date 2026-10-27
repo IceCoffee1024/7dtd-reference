@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020010E1 RID: 4321
+// Token: 0x020010F1 RID: 4337
 [Preserve]
 public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 {
-	// Token: 0x06008961 RID: 35169 RVA: 0x00348565 File Offset: 0x00346765
+	// Token: 0x060089B4 RID: 35252 RVA: 0x0034A5E9 File Offset: 0x003487E9
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.CurrentWorkstationInputGrid = this;
 	}
 
-	// Token: 0x06008962 RID: 35170 RVA: 0x00348579 File Offset: 0x00346779
+	// Token: 0x060089B5 RID: 35253 RVA: 0x0034A5FD File Offset: 0x003487FD
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.CurrentWorkstationInputGrid = null;
 	}
 
-	// Token: 0x06008963 RID: 35171 RVA: 0x00348590 File Offset: 0x00346790
+	// Token: 0x060089B6 RID: 35254 RVA: 0x0034A614 File Offset: 0x00348814
 	public bool AcceptsMaterial(MaterialBlock material)
 	{
 		bool flag = false;
@@ -32,7 +32,7 @@ public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 		return flag;
 	}
 
-	// Token: 0x06008964 RID: 35172 RVA: 0x003485C6 File Offset: 0x003467C6
+	// Token: 0x060089B7 RID: 35255 RVA: 0x0034A64A File Offset: 0x0034884A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -41,7 +41,7 @@ public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06008965 RID: 35173 RVA: 0x003485EC File Offset: 0x003467EC
+	// Token: 0x060089B8 RID: 35256 RVA: 0x0034A670 File Offset: 0x00348870
 	public bool HasItems(IList<ItemStack> _itemStacks, int _multiplier = 1)
 	{
 		for (int i = 0; i < _itemStacks.Count; i++)
@@ -54,7 +54,7 @@ public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 		return true;
 	}
 
-	// Token: 0x06008966 RID: 35174 RVA: 0x00348634 File Offset: 0x00346834
+	// Token: 0x060089B9 RID: 35257 RVA: 0x0034A6B8 File Offset: 0x003488B8
 	public void RemoveItems(IList<ItemStack> _itemStacks, int _multiplier = 1, IList<ItemStack> _removedItems = null)
 	{
 		for (int i = 0; i < _itemStacks.Count; i++)
@@ -64,7 +64,7 @@ public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x06008967 RID: 35175 RVA: 0x00348678 File Offset: 0x00346878
+	// Token: 0x060089BA RID: 35258 RVA: 0x0034A6FC File Offset: 0x003488FC
 	public new int AddToItemStackArray(ItemStack _itemStack)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -98,7 +98,7 @@ public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 		return num;
 	}
 
-	// Token: 0x06008968 RID: 35176 RVA: 0x00348700 File Offset: 0x00346900
+	// Token: 0x060089BB RID: 35259 RVA: 0x0034A784 File Offset: 0x00348984
 	public int DecItem(ItemValue _itemValue, int _count, IList<ItemStack> _removedItems = null)
 	{
 		int num = _count;
@@ -140,7 +140,7 @@ public class XUiC_WorkstationInputGrid : XUiC_WorkstationGrid
 		return num - _count;
 	}
 
-	// Token: 0x06008969 RID: 35177 RVA: 0x003487EC File Offset: 0x003469EC
+	// Token: 0x060089BC RID: 35260 RVA: 0x0034A870 File Offset: 0x00348A70
 	public int GetItemCount(ItemValue _itemValue)
 	{
 		ItemStack[] slots = this.GetSlots();

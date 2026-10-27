@@ -2,20 +2,20 @@
 
 namespace MusicUtils
 {
-	// Token: 0x02001A42 RID: 6722
+	// Token: 0x02001A73 RID: 6771
 	public struct Pair<T1, T2> where T1 : IComparable<T1> where T2 : IComparable<T2>
 	{
-		// Token: 0x0600CC6C RID: 52332 RVA: 0x004A9FEE File Offset: 0x004A81EE
+		// Token: 0x0600CD80 RID: 52608 RVA: 0x004ADAEA File Offset: 0x004ABCEA
 		public Pair(T1 _item1, T2 _item2)
 		{
 			this.item1 = _item1;
 			this.item2 = _item2;
 		}
 
-		// Token: 0x04009B18 RID: 39704
+		// Token: 0x04009C01 RID: 39937
 		public T1 item1;
 
-		// Token: 0x04009B19 RID: 39705
+		// Token: 0x04009C02 RID: 39938
 		public T2 item2;
 	}
 }

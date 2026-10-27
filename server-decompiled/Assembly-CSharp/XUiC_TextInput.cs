@@ -6,43 +6,43 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EB2 RID: 3762
+// Token: 0x02000EBD RID: 3773
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_TextInput : XUiController
 {
 	// Token: 0x140000B7 RID: 183
-	// (add) Token: 0x06007493 RID: 29843 RVA: 0x002C38CC File Offset: 0x002C1ACC
-	// (remove) Token: 0x06007494 RID: 29844 RVA: 0x002C3904 File Offset: 0x002C1B04
+	// (add) Token: 0x060074B8 RID: 29880 RVA: 0x002C4E38 File Offset: 0x002C3038
+	// (remove) Token: 0x060074B9 RID: 29881 RVA: 0x002C4E70 File Offset: 0x002C3070
 	public event XUiEvent_InputOnSubmitEventHandler OnSubmitHandler;
 
 	// Token: 0x140000B8 RID: 184
-	// (add) Token: 0x06007495 RID: 29845 RVA: 0x002C393C File Offset: 0x002C1B3C
-	// (remove) Token: 0x06007496 RID: 29846 RVA: 0x002C3974 File Offset: 0x002C1B74
+	// (add) Token: 0x060074BA RID: 29882 RVA: 0x002C4EA8 File Offset: 0x002C30A8
+	// (remove) Token: 0x060074BB RID: 29883 RVA: 0x002C4EE0 File Offset: 0x002C30E0
 	public event XUiEvent_InputOnChangedEventHandler OnChangeHandler;
 
 	// Token: 0x140000B9 RID: 185
-	// (add) Token: 0x06007497 RID: 29847 RVA: 0x002C39AC File Offset: 0x002C1BAC
-	// (remove) Token: 0x06007498 RID: 29848 RVA: 0x002C39E4 File Offset: 0x002C1BE4
+	// (add) Token: 0x060074BC RID: 29884 RVA: 0x002C4F18 File Offset: 0x002C3118
+	// (remove) Token: 0x060074BD RID: 29885 RVA: 0x002C4F50 File Offset: 0x002C3150
 	public event XUiEvent_InputOnAbortedEventHandler OnInputAbortedHandler;
 
 	// Token: 0x140000BA RID: 186
-	// (add) Token: 0x06007499 RID: 29849 RVA: 0x002C3A1C File Offset: 0x002C1C1C
-	// (remove) Token: 0x0600749A RID: 29850 RVA: 0x002C3A54 File Offset: 0x002C1C54
+	// (add) Token: 0x060074BE RID: 29886 RVA: 0x002C4F88 File Offset: 0x002C3188
+	// (remove) Token: 0x060074BF RID: 29887 RVA: 0x002C4FC0 File Offset: 0x002C31C0
 	public event XUiEvent_InputOnSelectedEventHandler OnInputSelectedHandler;
 
 	// Token: 0x140000BB RID: 187
-	// (add) Token: 0x0600749B RID: 29851 RVA: 0x002C3A8C File Offset: 0x002C1C8C
-	// (remove) Token: 0x0600749C RID: 29852 RVA: 0x002C3AC4 File Offset: 0x002C1CC4
+	// (add) Token: 0x060074C0 RID: 29888 RVA: 0x002C4FF8 File Offset: 0x002C31F8
+	// (remove) Token: 0x060074C1 RID: 29889 RVA: 0x002C5030 File Offset: 0x002C3230
 	public event XUiEvent_InputOnErrorEventHandler OnInputErrorHandler;
 
 	// Token: 0x140000BC RID: 188
-	// (add) Token: 0x0600749D RID: 29853 RVA: 0x002C3AFC File Offset: 0x002C1CFC
-	// (remove) Token: 0x0600749E RID: 29854 RVA: 0x002C3B34 File Offset: 0x002C1D34
+	// (add) Token: 0x060074C2 RID: 29890 RVA: 0x002C5068 File Offset: 0x002C3268
+	// (remove) Token: 0x060074C3 RID: 29891 RVA: 0x002C50A0 File Offset: 0x002C32A0
 	public event UIInput.OnClipboard OnClipboardHandler;
 
-	// Token: 0x17000DC2 RID: 3522
-	// (get) Token: 0x0600749F RID: 29855 RVA: 0x002C3B69 File Offset: 0x002C1D69
-	// (set) Token: 0x060074A0 RID: 29856 RVA: 0x002C3B71 File Offset: 0x002C1D71
+	// Token: 0x17000DC8 RID: 3528
+	// (get) Token: 0x060074C4 RID: 29892 RVA: 0x002C50D5 File Offset: 0x002C32D5
+	// (set) Token: 0x060074C5 RID: 29893 RVA: 0x002C50DD File Offset: 0x002C32DD
 	[XuiXmlAttribute("value", false)]
 	public string InitialValue
 	{
@@ -52,9 +52,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DC3 RID: 3523
-	// (get) Token: 0x060074A1 RID: 29857 RVA: 0x002C3B7A File Offset: 0x002C1D7A
-	// (set) Token: 0x060074A2 RID: 29858 RVA: 0x002C3B82 File Offset: 0x002C1D82
+	// Token: 0x17000DC9 RID: 3529
+	// (get) Token: 0x060074C6 RID: 29894 RVA: 0x002C50E6 File Offset: 0x002C32E6
+	// (set) Token: 0x060074C7 RID: 29895 RVA: 0x002C50EE File Offset: 0x002C32EE
 	[XuiXmlAttribute("caret_color", false)]
 	public Color CaretColor
 	{
@@ -64,9 +64,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DC4 RID: 3524
-	// (get) Token: 0x060074A3 RID: 29859 RVA: 0x002C3B8B File Offset: 0x002C1D8B
-	// (set) Token: 0x060074A4 RID: 29860 RVA: 0x002C3B93 File Offset: 0x002C1D93
+	// Token: 0x17000DCA RID: 3530
+	// (get) Token: 0x060074C8 RID: 29896 RVA: 0x002C50F7 File Offset: 0x002C32F7
+	// (set) Token: 0x060074C9 RID: 29897 RVA: 0x002C50FF File Offset: 0x002C32FF
 	[XuiXmlAttribute("selection_color", false)]
 	public Color SelectionColor
 	{
@@ -76,9 +76,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DC5 RID: 3525
-	// (get) Token: 0x060074A5 RID: 29861 RVA: 0x002C3B9C File Offset: 0x002C1D9C
-	// (set) Token: 0x060074A6 RID: 29862 RVA: 0x002C3BA4 File Offset: 0x002C1DA4
+	// Token: 0x17000DCB RID: 3531
+	// (get) Token: 0x060074CA RID: 29898 RVA: 0x002C5108 File Offset: 0x002C3308
+	// (set) Token: 0x060074CB RID: 29899 RVA: 0x002C5110 File Offset: 0x002C3310
 	[XuiXmlAttribute("validation", false)]
 	public UIInput.Validation Validation
 	{
@@ -88,9 +88,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DC6 RID: 3526
-	// (get) Token: 0x060074A7 RID: 29863 RVA: 0x002C3BAD File Offset: 0x002C1DAD
-	// (set) Token: 0x060074A8 RID: 29864 RVA: 0x002C3BB5 File Offset: 0x002C1DB5
+	// Token: 0x17000DCC RID: 3532
+	// (get) Token: 0x060074CC RID: 29900 RVA: 0x002C5119 File Offset: 0x002C3319
+	// (set) Token: 0x060074CD RID: 29901 RVA: 0x002C5121 File Offset: 0x002C3321
 	[XuiXmlAttribute("hide_input", false)]
 	public bool HideInput
 	{
@@ -100,9 +100,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DC7 RID: 3527
-	// (get) Token: 0x060074A9 RID: 29865 RVA: 0x002C3BBE File Offset: 0x002C1DBE
-	// (set) Token: 0x060074AA RID: 29866 RVA: 0x002C3BC6 File Offset: 0x002C1DC6
+	// Token: 0x17000DCD RID: 3533
+	// (get) Token: 0x060074CE RID: 29902 RVA: 0x002C512A File Offset: 0x002C332A
+	// (set) Token: 0x060074CF RID: 29903 RVA: 0x002C5132 File Offset: 0x002C3332
 	[XuiXmlAttribute("on_return", false)]
 	public UIInput.OnReturnKey OnReturnKey
 	{
@@ -112,9 +112,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	} = UIInput.OnReturnKey.Submit;
 
-	// Token: 0x17000DC8 RID: 3528
-	// (get) Token: 0x060074AB RID: 29867 RVA: 0x002C3BCF File Offset: 0x002C1DCF
-	// (set) Token: 0x060074AC RID: 29868 RVA: 0x002C3BD7 File Offset: 0x002C1DD7
+	// Token: 0x17000DCE RID: 3534
+	// (get) Token: 0x060074D0 RID: 29904 RVA: 0x002C513B File Offset: 0x002C333B
+	// (set) Token: 0x060074D1 RID: 29905 RVA: 0x002C5143 File Offset: 0x002C3343
 	[XuiXmlAttribute("character_limit", false)]
 	public int CharacterLimit
 	{
@@ -124,9 +124,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DC9 RID: 3529
-	// (get) Token: 0x060074AD RID: 29869 RVA: 0x002C3BE0 File Offset: 0x002C1DE0
-	// (set) Token: 0x060074AE RID: 29870 RVA: 0x002C3BE8 File Offset: 0x002C1DE8
+	// Token: 0x17000DCF RID: 3535
+	// (get) Token: 0x060074D2 RID: 29906 RVA: 0x002C514C File Offset: 0x002C334C
+	// (set) Token: 0x060074D3 RID: 29907 RVA: 0x002C5154 File Offset: 0x002C3354
 	[XuiXmlAttribute("input_type", false)]
 	public UIInput.KeyboardType InputType
 	{
@@ -136,9 +136,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DCA RID: 3530
-	// (get) Token: 0x060074AF RID: 29871 RVA: 0x002C3BF1 File Offset: 0x002C1DF1
-	// (set) Token: 0x060074B0 RID: 29872 RVA: 0x002C3BF9 File Offset: 0x002C1DF9
+	// Token: 0x17000DD0 RID: 3536
+	// (get) Token: 0x060074D4 RID: 29908 RVA: 0x002C515D File Offset: 0x002C335D
+	// (set) Token: 0x060074D5 RID: 29909 RVA: 0x002C5165 File Offset: 0x002C3365
 	[XuiXmlAttribute("ignore_up_down_keys", false)]
 	public bool IgnoreUpDownKeys
 	{
@@ -148,9 +148,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DCB RID: 3531
-	// (get) Token: 0x060074B1 RID: 29873 RVA: 0x002C3C02 File Offset: 0x002C1E02
-	// (set) Token: 0x060074B2 RID: 29874 RVA: 0x002C3C0A File Offset: 0x002C1E0A
+	// Token: 0x17000DD1 RID: 3537
+	// (get) Token: 0x060074D6 RID: 29910 RVA: 0x002C516E File Offset: 0x002C336E
+	// (set) Token: 0x060074D7 RID: 29911 RVA: 0x002C5176 File Offset: 0x002C3376
 	[XuiXmlAttribute("search_field", false)]
 	public bool IsSearchField
 	{
@@ -160,9 +160,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DCC RID: 3532
-	// (get) Token: 0x060074B3 RID: 29875 RVA: 0x002C3C13 File Offset: 0x002C1E13
-	// (set) Token: 0x060074B4 RID: 29876 RVA: 0x002C3C1B File Offset: 0x002C1E1B
+	// Token: 0x17000DD2 RID: 3538
+	// (get) Token: 0x060074D8 RID: 29912 RVA: 0x002C517F File Offset: 0x002C337F
+	// (set) Token: 0x060074D9 RID: 29913 RVA: 0x002C5187 File Offset: 0x002C3387
 	[XuiXmlAttribute("clear_button", false)]
 	[XuiXmlBinding("clearbutton")]
 	public bool HasClearButton
@@ -173,9 +173,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DCD RID: 3533
-	// (get) Token: 0x060074B5 RID: 29877 RVA: 0x002C3C24 File Offset: 0x002C1E24
-	// (set) Token: 0x060074B6 RID: 29878 RVA: 0x002C3C2C File Offset: 0x002C1E2C
+	// Token: 0x17000DD3 RID: 3539
+	// (get) Token: 0x060074DA RID: 29914 RVA: 0x002C5190 File Offset: 0x002C3390
+	// (set) Token: 0x060074DB RID: 29915 RVA: 0x002C5198 File Offset: 0x002C3398
 	[XuiXmlAttribute("password_field", false)]
 	[XuiXmlBinding("passwordfield")]
 	public bool IsPasswordField
@@ -186,9 +186,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DCE RID: 3534
-	// (get) Token: 0x060074B7 RID: 29879 RVA: 0x002C3C35 File Offset: 0x002C1E35
-	// (set) Token: 0x060074B8 RID: 29880 RVA: 0x002C3C3D File Offset: 0x002C1E3D
+	// Token: 0x17000DD4 RID: 3540
+	// (get) Token: 0x060074DC RID: 29916 RVA: 0x002C51A1 File Offset: 0x002C33A1
+	// (set) Token: 0x060074DD RID: 29917 RVA: 0x002C51A9 File Offset: 0x002C33A9
 	[XuiXmlAttribute("focus_on_open", false)]
 	public bool FocusOnOpen
 	{
@@ -198,9 +198,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DCF RID: 3535
-	// (get) Token: 0x060074B9 RID: 29881 RVA: 0x002C3C46 File Offset: 0x002C1E46
-	// (set) Token: 0x060074BA RID: 29882 RVA: 0x002C3C4E File Offset: 0x002C1E4E
+	// Token: 0x17000DD5 RID: 3541
+	// (get) Token: 0x060074DE RID: 29918 RVA: 0x002C51B2 File Offset: 0x002C33B2
+	// (set) Token: 0x060074DF RID: 29919 RVA: 0x002C51BA File Offset: 0x002C33BA
 	[XuiXmlAttribute("open_vk_on_open", false)]
 	public bool OpenVkOnOpen
 	{
@@ -210,9 +210,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DD0 RID: 3536
-	// (get) Token: 0x060074BB RID: 29883 RVA: 0x002C3C57 File Offset: 0x002C1E57
-	// (set) Token: 0x060074BC RID: 29884 RVA: 0x002C3C5F File Offset: 0x002C1E5F
+	// Token: 0x17000DD6 RID: 3542
+	// (get) Token: 0x060074E0 RID: 29920 RVA: 0x002C51C3 File Offset: 0x002C33C3
+	// (set) Token: 0x060074E1 RID: 29921 RVA: 0x002C51CB File Offset: 0x002C33CB
 	[XuiXmlAttribute("clear_on_open", false)]
 	public bool ClearOnOpen
 	{
@@ -222,9 +222,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x17000DD1 RID: 3537
-	// (get) Token: 0x060074BD RID: 29885 RVA: 0x002C3C68 File Offset: 0x002C1E68
-	// (set) Token: 0x060074BE RID: 29886 RVA: 0x002C3C70 File Offset: 0x002C1E70
+	// Token: 0x17000DD7 RID: 3543
+	// (get) Token: 0x060074E2 RID: 29922 RVA: 0x002C51D4 File Offset: 0x002C33D4
+	// (set) Token: 0x060074E3 RID: 29923 RVA: 0x002C51DC File Offset: 0x002C33DC
 	[XuiXmlAttribute("vk_propagates_events", false)]
 	public bool VkPropagatesEvents
 	{
@@ -234,9 +234,9 @@ public class XUiC_TextInput : XUiController
 		set;
 	} = true;
 
-	// Token: 0x17000DD2 RID: 3538
-	// (get) Token: 0x060074BF RID: 29887 RVA: 0x002C3C79 File Offset: 0x002C1E79
-	// (set) Token: 0x060074C0 RID: 29888 RVA: 0x002C3C81 File Offset: 0x002C1E81
+	// Token: 0x17000DD8 RID: 3544
+	// (get) Token: 0x060074E4 RID: 29924 RVA: 0x002C51E5 File Offset: 0x002C33E5
+	// (set) Token: 0x060074E5 RID: 29925 RVA: 0x002C51ED File Offset: 0x002C33ED
 	[XuiXmlAttribute("close_group_on_tab", false)]
 	public bool CloseGroupOnTab
 	{
@@ -246,7 +246,7 @@ public class XUiC_TextInput : XUiController
 		set;
 	}
 
-	// Token: 0x060074C1 RID: 29889 RVA: 0x002C3C8A File Offset: 0x002C1E8A
+	// Token: 0x060074E6 RID: 29926 RVA: 0x002C51F6 File Offset: 0x002C33F6
 	public static void SelectCurrentSearchField(LocalPlayerUI _playerUi)
 	{
 		if (XUiC_TextInput.currentSearchField != null && !_playerUi.windowManager.IsInputActive() && XUiC_TextInput.currentSearchField.viewComponent.IsActiveInHierarchy)
@@ -255,8 +255,8 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD3 RID: 3539
-	// (get) Token: 0x060074C2 RID: 29890 RVA: 0x002C3CBD File Offset: 0x002C1EBD
+	// Token: 0x17000DD9 RID: 3545
+	// (get) Token: 0x060074E7 RID: 29927 RVA: 0x002C5229 File Offset: 0x002C3429
 	public UIInput UIInput
 	{
 		get
@@ -265,8 +265,8 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD4 RID: 3540
-	// (get) Token: 0x060074C3 RID: 29891 RVA: 0x002C3CC5 File Offset: 0x002C1EC5
+	// Token: 0x17000DDA RID: 3546
+	// (get) Token: 0x060074E8 RID: 29928 RVA: 0x002C5231 File Offset: 0x002C3431
 	public XUiController UIInputController
 	{
 		get
@@ -275,9 +275,9 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD5 RID: 3541
-	// (get) Token: 0x060074C4 RID: 29892 RVA: 0x002C3CCD File Offset: 0x002C1ECD
-	// (set) Token: 0x060074C5 RID: 29893 RVA: 0x002C3CEA File Offset: 0x002C1EEA
+	// Token: 0x17000DDB RID: 3547
+	// (get) Token: 0x060074E9 RID: 29929 RVA: 0x002C5239 File Offset: 0x002C3439
+	// (set) Token: 0x060074EA RID: 29930 RVA: 0x002C5256 File Offset: 0x002C3456
 	public string Text
 	{
 		get
@@ -294,9 +294,9 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD6 RID: 3542
-	// (get) Token: 0x060074C6 RID: 29894 RVA: 0x002C3D11 File Offset: 0x002C1F11
-	// (set) Token: 0x060074C7 RID: 29895 RVA: 0x002C3D1C File Offset: 0x002C1F1C
+	// Token: 0x17000DDC RID: 3548
+	// (get) Token: 0x060074EB RID: 29931 RVA: 0x002C527D File Offset: 0x002C347D
+	// (set) Token: 0x060074EC RID: 29932 RVA: 0x002C5288 File Offset: 0x002C3488
 	public XUiC_TextInput SelectOnTab
 	{
 		get
@@ -325,9 +325,9 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD7 RID: 3543
-	// (get) Token: 0x060074C8 RID: 29896 RVA: 0x002C3D99 File Offset: 0x002C1F99
-	// (set) Token: 0x060074C9 RID: 29897 RVA: 0x002C3DA1 File Offset: 0x002C1FA1
+	// Token: 0x17000DDD RID: 3549
+	// (get) Token: 0x060074ED RID: 29933 RVA: 0x002C5305 File Offset: 0x002C3505
+	// (set) Token: 0x060074EE RID: 29934 RVA: 0x002C530D File Offset: 0x002C350D
 	[XuiXmlAttribute("active_text_color", false)]
 	public Color ActiveTextColor
 	{
@@ -346,9 +346,9 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD8 RID: 3544
-	// (get) Token: 0x060074CA RID: 29898 RVA: 0x002C3DC0 File Offset: 0x002C1FC0
-	// (set) Token: 0x060074CB RID: 29899 RVA: 0x002C3DC8 File Offset: 0x002C1FC8
+	// Token: 0x17000DDE RID: 3550
+	// (get) Token: 0x060074EF RID: 29935 RVA: 0x002C532C File Offset: 0x002C352C
+	// (set) Token: 0x060074F0 RID: 29936 RVA: 0x002C5334 File Offset: 0x002C3534
 	[XuiXmlAttribute("input_enabled", false)]
 	public bool Enabled
 	{
@@ -367,9 +367,9 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DD9 RID: 3545
-	// (get) Token: 0x060074CC RID: 29900 RVA: 0x002C3DE2 File Offset: 0x002C1FE2
-	// (set) Token: 0x060074CD RID: 29901 RVA: 0x002C3DEF File Offset: 0x002C1FEF
+	// Token: 0x17000DDF RID: 3551
+	// (get) Token: 0x060074F1 RID: 29937 RVA: 0x002C534E File Offset: 0x002C354E
+	// (set) Token: 0x060074F2 RID: 29938 RVA: 0x002C535B File Offset: 0x002C355B
 	public bool SupportBbCode
 	{
 		get
@@ -382,8 +382,8 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DDA RID: 3546
-	// (get) Token: 0x060074CE RID: 29902 RVA: 0x002C3DFD File Offset: 0x002C1FFD
+	// Token: 0x17000DE0 RID: 3552
+	// (get) Token: 0x060074F3 RID: 29939 RVA: 0x002C5369 File Offset: 0x002C3569
 	public bool IsSelected
 	{
 		get
@@ -392,8 +392,8 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x17000DDB RID: 3547
-	// (get) Token: 0x060074CF RID: 29903 RVA: 0x002C3E0A File Offset: 0x002C200A
+	// Token: 0x17000DE1 RID: 3553
+	// (get) Token: 0x060074F4 RID: 29940 RVA: 0x002C5376 File Offset: 0x002C3576
 	[XuiXmlBinding("showpassword")]
 	public bool ShowPassword
 	{
@@ -403,7 +403,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074D0 RID: 29904 RVA: 0x002C3E15 File Offset: 0x002C2015
+	// Token: 0x060074F5 RID: 29941 RVA: 0x002C5381 File Offset: 0x002C3581
 	[XuiXmlAttribute("virtual_keyboard_prompt", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeVirtualKeyboardPrompt(string _value)
@@ -411,8 +411,8 @@ public class XUiC_TextInput : XUiController
 		this.virtKeyboardPrompt = Localization.Get(_value, false, null);
 	}
 
-	// Token: 0x17000DDC RID: 3548
-	// (get) Token: 0x060074D1 RID: 29905 RVA: 0x002C3E25 File Offset: 0x002C2025
+	// Token: 0x17000DE2 RID: 3554
+	// (get) Token: 0x060074F6 RID: 29942 RVA: 0x002C5391 File Offset: 0x002C3591
 	[XuiXmlBinding("txt_empty")]
 	public bool IsEmpty
 	{
@@ -423,7 +423,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074D2 RID: 29906 RVA: 0x002C3E35 File Offset: 0x002C2035
+	// Token: 0x060074F7 RID: 29943 RVA: 0x002C53A1 File Offset: 0x002C35A1
 	[XuiXmlAttribute("select_on_tab", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSelectOnTab(string _value)
@@ -437,7 +437,7 @@ public class XUiC_TextInput : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060074D3 RID: 29907 RVA: 0x002C3E58 File Offset: 0x002C2058
+	// Token: 0x060074F8 RID: 29944 RVA: 0x002C53C4 File Offset: 0x002C35C4
 	public override void Init()
 	{
 		base.Init();
@@ -479,7 +479,7 @@ public class XUiC_TextInput : XUiController
 		this.uiInputController.OnSelect += this.inputFieldSelected;
 	}
 
-	// Token: 0x060074D4 RID: 29908 RVA: 0x002C4068 File Offset: 0x002C2268
+	// Token: 0x060074F9 RID: 29945 RVA: 0x002C55D4 File Offset: 0x002C37D4
 	[XuiBindEvent("OnPress", "scrollArea")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ScrollArea_OnPress(XUiController _sender, int _mouseButton)
@@ -487,7 +487,7 @@ public class XUiC_TextInput : XUiController
 		this.SelectOrVirtualKeyboard(true);
 	}
 
-	// Token: 0x060074D5 RID: 29909 RVA: 0x002C4071 File Offset: 0x002C2271
+	// Token: 0x060074FA RID: 29946 RVA: 0x002C55DD File Offset: 0x002C37DD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnShowPassword_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -495,7 +495,7 @@ public class XUiC_TextInput : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060074D6 RID: 29910 RVA: 0x002C408D File Offset: 0x002C228D
+	// Token: 0x060074FB RID: 29947 RVA: 0x002C55F9 File Offset: 0x002C37F9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnClearInput_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -503,7 +503,7 @@ public class XUiC_TextInput : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060074D7 RID: 29911 RVA: 0x002C40A4 File Offset: 0x002C22A4
+	// Token: 0x060074FC RID: 29948 RVA: 0x002C5610 File Offset: 0x002C3810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showVirtualKeyboard()
 	{
@@ -546,7 +546,7 @@ public class XUiC_TextInput : XUiController
 		onInputErrorHandler(this, text);
 	}
 
-	// Token: 0x060074D8 RID: 29912 RVA: 0x002C416C File Offset: 0x002C236C
+	// Token: 0x060074FD RID: 29949 RVA: 0x002C56D8 File Offset: 0x002C38D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void inputFieldSelected(XUiController _sender, bool _selected)
 	{
@@ -563,7 +563,7 @@ public class XUiC_TextInput : XUiController
 		onInputSelectedHandler(this, false);
 	}
 
-	// Token: 0x060074D9 RID: 29913 RVA: 0x002C4190 File Offset: 0x002C2390
+	// Token: 0x060074FE RID: 29950 RVA: 0x002C56FC File Offset: 0x002C38FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator removeSelection()
 	{
@@ -581,7 +581,7 @@ public class XUiC_TextInput : XUiController
 		yield break;
 	}
 
-	// Token: 0x060074DA RID: 29914 RVA: 0x002C41A0 File Offset: 0x002C23A0
+	// Token: 0x060074FF RID: 29951 RVA: 0x002C570C File Offset: 0x002C390C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTextReceived(bool _success, string _text)
 	{
@@ -611,7 +611,7 @@ public class XUiC_TextInput : XUiController
 		this.uiInput.RemoveFocus();
 	}
 
-	// Token: 0x060074DB RID: 29915 RVA: 0x002C4218 File Offset: 0x002C2418
+	// Token: 0x06007500 RID: 29952 RVA: 0x002C5784 File Offset: 0x002C3984
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnSubmit()
 	{
@@ -623,7 +623,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074DC RID: 29916 RVA: 0x002C4250 File Offset: 0x002C2450
+	// Token: 0x06007501 RID: 29953 RVA: 0x002C57BC File Offset: 0x002C39BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator delaySubmitHandler(string _input)
 	{
@@ -636,7 +636,7 @@ public class XUiC_TextInput : XUiController
 		yield break;
 	}
 
-	// Token: 0x060074DD RID: 29917 RVA: 0x002C4266 File Offset: 0x002C2466
+	// Token: 0x06007502 RID: 29954 RVA: 0x002C57D2 File Offset: 0x002C39D2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnChange()
 	{
@@ -653,7 +653,7 @@ public class XUiC_TextInput : XUiController
 		onChangeHandler(this, UIInput.current.value, this.textChangeFromCode);
 	}
 
-	// Token: 0x060074DE RID: 29918 RVA: 0x002C42A4 File Offset: 0x002C24A4
+	// Token: 0x06007503 RID: 29955 RVA: 0x002C5810 File Offset: 0x002C3A10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateScrollPositionToCaret()
 	{
@@ -684,7 +684,7 @@ public class XUiC_TextInput : XUiController
 		xuiV_ScrollView.UpdatePosition();
 	}
 
-	// Token: 0x060074DF RID: 29919 RVA: 0x002C4352 File Offset: 0x002C2552
+	// Token: 0x06007504 RID: 29956 RVA: 0x002C58BE File Offset: 0x002C3ABE
 	public void TriggerOnChangeHandler(bool _changeFromCode = false)
 	{
 		XUiEvent_InputOnChangedEventHandler onChangeHandler = this.OnChangeHandler;
@@ -695,7 +695,7 @@ public class XUiC_TextInput : XUiController
 		onChangeHandler(this, this.uiInput.value, _changeFromCode);
 	}
 
-	// Token: 0x060074E0 RID: 29920 RVA: 0x002C4371 File Offset: 0x002C2571
+	// Token: 0x06007505 RID: 29957 RVA: 0x002C58DD File Offset: 0x002C3ADD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnClipboard(UIInput.ClipboardAction _actionType, string _oldText, int _selStart, int _selEnd, string _actionResultText)
 	{
@@ -707,7 +707,7 @@ public class XUiC_TextInput : XUiController
 		onClipboardHandler(_actionType, _oldText, _selStart, _selEnd, _actionResultText);
 	}
 
-	// Token: 0x060074E1 RID: 29921 RVA: 0x002C438C File Offset: 0x002C258C
+	// Token: 0x06007506 RID: 29958 RVA: 0x002C58F8 File Offset: 0x002C3AF8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -739,7 +739,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074E2 RID: 29922 RVA: 0x002C442B File Offset: 0x002C262B
+	// Token: 0x06007507 RID: 29959 RVA: 0x002C5997 File Offset: 0x002C3B97
 	public override void OnClose()
 	{
 		this.SetSelected(false, false);
@@ -751,7 +751,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074E3 RID: 29923 RVA: 0x002C4450 File Offset: 0x002C2650
+	// Token: 0x06007508 RID: 29960 RVA: 0x002C59BC File Offset: 0x002C3BBC
 	[XuiBindEvent("OnVisiblity", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void visibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
@@ -763,7 +763,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074E4 RID: 29924 RVA: 0x002C4464 File Offset: 0x002C2664
+	// Token: 0x06007509 RID: 29961 RVA: 0x002C59D0 File Offset: 0x002C3BD0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -804,7 +804,7 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x060074E5 RID: 29925 RVA: 0x002C45C7 File Offset: 0x002C27C7
+	// Token: 0x0600750A RID: 29962 RVA: 0x002C5B33 File Offset: 0x002C3D33
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeOnTabLater()
 	{
@@ -825,13 +825,13 @@ public class XUiC_TextInput : XUiController
 		yield break;
 	}
 
-	// Token: 0x060074E6 RID: 29926 RVA: 0x002C45D6 File Offset: 0x002C27D6
+	// Token: 0x0600750B RID: 29963 RVA: 0x002C5B42 File Offset: 0x002C3D42
 	public void SetSelected(bool _selected = true, bool _delayed = false)
 	{
 		ThreadManager.StartCoroutine(this.setSelectedDelayed(_selected, _delayed));
 	}
 
-	// Token: 0x060074E7 RID: 29927 RVA: 0x002C45E6 File Offset: 0x002C27E6
+	// Token: 0x0600750C RID: 29964 RVA: 0x002C5B52 File Offset: 0x002C3D52
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setSelectedDelayed(bool _selected, bool _delayed)
 	{
@@ -850,7 +850,7 @@ public class XUiC_TextInput : XUiController
 		yield break;
 	}
 
-	// Token: 0x060074E8 RID: 29928 RVA: 0x002C4603 File Offset: 0x002C2803
+	// Token: 0x0600750D RID: 29965 RVA: 0x002C5B6F File Offset: 0x002C3D6F
 	public void SelectOrVirtualKeyboard(bool _delayed = false)
 	{
 		if (PlatformManager.NativePlatform.Input.CurrentInputStyle == PlayerInputManager.InputStyle.Keyboard)
@@ -861,7 +861,7 @@ public class XUiC_TextInput : XUiController
 		this.showVirtualKeyboard();
 	}
 
-	// Token: 0x060074E9 RID: 29929 RVA: 0x002C4628 File Offset: 0x002C2828
+	// Token: 0x0600750E RID: 29966 RVA: 0x002C5B94 File Offset: 0x002C3D94
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void parseSelectOnTabName()
 	{
@@ -882,82 +882,82 @@ public class XUiC_TextInput : XUiController
 		}
 	}
 
-	// Token: 0x040056DE RID: 22238
+	// Token: 0x04005703 RID: 22275
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label label;
 
-	// Token: 0x040056DF RID: 22239
+	// Token: 0x04005704 RID: 22276
 	[XuiBindComponent("scrollarea", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController scrollArea;
 
-	// Token: 0x040056E0 RID: 22240
+	// Token: 0x04005705 RID: 22277
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_ScrollView scrollView;
 
-	// Token: 0x040056E1 RID: 22241
+	// Token: 0x04005706 RID: 22278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController uiInputController;
 
-	// Token: 0x040056E2 RID: 22242
+	// Token: 0x04005707 RID: 22279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIInput uiInput;
 
-	// Token: 0x040056E3 RID: 22243
+	// Token: 0x04005708 RID: 22280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput selectOnTab;
 
-	// Token: 0x040056E4 RID: 22244
+	// Token: 0x04005709 RID: 22281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string selectOnTabString;
 
-	// Token: 0x040056E5 RID: 22245
+	// Token: 0x0400570A RID: 22282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool selectOnTabSetFromXML;
 
-	// Token: 0x040056E7 RID: 22247
+	// Token: 0x0400570C RID: 22284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color activeTextColor;
 
-	// Token: 0x040056EA RID: 22250
+	// Token: 0x0400570F RID: 22287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIInput.InputType displayType;
 
-	// Token: 0x040056F1 RID: 22257
+	// Token: 0x04005716 RID: 22294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string virtKeyboardPrompt = "";
 
-	// Token: 0x040056F2 RID: 22258
+	// Token: 0x04005717 RID: 22295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOpen;
 
-	// Token: 0x040056F3 RID: 22259
+	// Token: 0x04005718 RID: 22296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openCompleted;
 
-	// Token: 0x040056F4 RID: 22260
+	// Token: 0x04005719 RID: 22297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool removeFocusOnOpen = true;
 
-	// Token: 0x040056FC RID: 22268
+	// Token: 0x04005721 RID: 22305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly KeyCombo tabCombo = new KeyCombo(new Key[] { Key.Tab });
 
-	// Token: 0x040056FE RID: 22270
+	// Token: 0x04005723 RID: 22307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool textChangeFromCode;
 
-	// Token: 0x040056FF RID: 22271
+	// Token: 0x04005724 RID: 22308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_TextInput currentSearchField;
 
-	// Token: 0x04005700 RID: 22272
+	// Token: 0x04005725 RID: 22309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool enabled = true;
 
-	// Token: 0x04005701 RID: 22273
+	// Token: 0x04005726 RID: 22310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<Vector3> caretWorldCorners = new List<Vector3>(4);
 }

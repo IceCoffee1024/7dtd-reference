@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000AEF RID: 2799
+// Token: 0x02000AFA RID: 2810
 public class EntityGroups
 {
-	// Token: 0x0600533C RID: 21308 RVA: 0x001FF434 File Offset: 0x001FD634
+	// Token: 0x06005361 RID: 21345 RVA: 0x002009B8 File Offset: 0x001FEBB8
 	public static int GetRandomEntityFromGroupMaxTier(string _sEntityGroupName, EntityClass.EntityTierTypes maxTier, ref int lastClassId, bool isEnemy = false, bool isAnimal = false, GameRandom random = null)
 	{
 		List<SEntityClassAndProb> list = EntityGroups.list[_sEntityGroupName];
@@ -61,7 +61,7 @@ public class EntityGroups
 		return num;
 	}
 
-	// Token: 0x0600533D RID: 21309 RVA: 0x001FF5A0 File Offset: 0x001FD7A0
+	// Token: 0x06005362 RID: 21346 RVA: 0x00200B24 File Offset: 0x001FED24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void NormalizeWorkingList(List<SEntityClassAndProb> list)
 	{
@@ -82,7 +82,7 @@ public class EntityGroups
 		}
 	}
 
-	// Token: 0x0600533E RID: 21310 RVA: 0x001FF60C File Offset: 0x001FD80C
+	// Token: 0x06005363 RID: 21347 RVA: 0x00200B90 File Offset: 0x001FED90
 	public static int GetRandomFromGroup(string _sEntityGroupName, ref int lastClassId, GameRandom random = null)
 	{
 		List<SEntityClassAndProb> list = EntityGroups.list[_sEntityGroupName];
@@ -103,7 +103,7 @@ public class EntityGroups
 		return num;
 	}
 
-	// Token: 0x0600533F RID: 21311 RVA: 0x001FF65C File Offset: 0x001FD85C
+	// Token: 0x06005364 RID: 21348 RVA: 0x00200BE0 File Offset: 0x001FEDE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int GetRandomFromGroupList(List<SEntityClassAndProb> grpList, GameRandom random)
 	{
@@ -121,14 +121,14 @@ public class EntityGroups
 		return -1;
 	}
 
-	// Token: 0x06005340 RID: 21312 RVA: 0x001FF6B4 File Offset: 0x001FD8B4
+	// Token: 0x06005365 RID: 21349 RVA: 0x00200C38 File Offset: 0x001FEE38
 	public static bool IsEnemyGroup(string _sEntityGroupName)
 	{
 		List<SEntityClassAndProb> list = EntityGroups.list[_sEntityGroupName];
 		return list != null && list.Count >= 1 && EntityClass.list[list[0].entityClassId].bIsEnemyEntity;
 	}
 
-	// Token: 0x06005341 RID: 21313 RVA: 0x001FF6F8 File Offset: 0x001FD8F8
+	// Token: 0x06005366 RID: 21350 RVA: 0x00200C7C File Offset: 0x001FEE7C
 	public static void Normalize(string _sEntityGroupName, float totalp)
 	{
 		List<SEntityClassAndProb> list = EntityGroups.list[_sEntityGroupName];
@@ -140,7 +140,7 @@ public class EntityGroups
 		}
 	}
 
-	// Token: 0x06005342 RID: 21314 RVA: 0x001FF73E File Offset: 0x001FD93E
+	// Token: 0x06005367 RID: 21351 RVA: 0x00200CC2 File Offset: 0x001FEEC2
 	public static void Cleanup()
 	{
 		if (EntityGroups.list != null)
@@ -149,10 +149,10 @@ public class EntityGroups
 		}
 	}
 
-	// Token: 0x0400410F RID: 16655
+	// Token: 0x04004134 RID: 16692
 	public static DictionarySave<string, List<SEntityClassAndProb>> list = new DictionarySave<string, List<SEntityClassAndProb>>();
 
-	// Token: 0x04004110 RID: 16656
+	// Token: 0x04004135 RID: 16693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<SEntityClassAndProb> workingGroupList;
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Platform;
 
-// Token: 0x020011B2 RID: 4530
+// Token: 0x020011C2 RID: 4546
 public class EntitlementManager
 {
-	// Token: 0x17001184 RID: 4484
-	// (get) Token: 0x06009092 RID: 37010 RVA: 0x00366D68 File Offset: 0x00364F68
+	// Token: 0x1700118F RID: 4495
+	// (get) Token: 0x060090E8 RID: 37096 RVA: 0x00368F7C File Offset: 0x0036717C
 	public static EntitlementManager Instance
 	{
 		get
@@ -32,14 +32,14 @@ public class EntitlementManager
 		}
 	}
 
-	// Token: 0x06009093 RID: 37011 RVA: 0x00366DC8 File Offset: 0x00364FC8
+	// Token: 0x060090E9 RID: 37097 RVA: 0x00368FDC File Offset: 0x003671DC
 	public bool HasEntitlement(object _addressableKey)
 	{
 		EntitlementSetEnum entitlementSet = this.GetEntitlementSet(_addressableKey);
 		return this.HasEntitlement(entitlementSet);
 	}
 
-	// Token: 0x06009094 RID: 37012 RVA: 0x00366DE4 File Offset: 0x00364FE4
+	// Token: 0x060090EA RID: 37098 RVA: 0x00368FF8 File Offset: 0x003671F8
 	public bool HasEntitlement(EntitlementSetEnum _set)
 	{
 		ValueTuple<bool, bool> valueTuple = this.CheckOverride(_set);
@@ -70,14 +70,14 @@ public class EntitlementManager
 		return false;
 	}
 
-	// Token: 0x06009095 RID: 37013 RVA: 0x00366E84 File Offset: 0x00365084
+	// Token: 0x060090EB RID: 37099 RVA: 0x00369098 File Offset: 0x00367298
 	public bool IsAvailableOnPlatform(object _addressableKey)
 	{
 		EntitlementSetEnum setForAsset = this.GetSetForAsset(_addressableKey);
 		return this.IsAvailableOnPlatform(setForAsset);
 	}
 
-	// Token: 0x06009096 RID: 37014 RVA: 0x00366EA0 File Offset: 0x003650A0
+	// Token: 0x060090EC RID: 37100 RVA: 0x003690B4 File Offset: 0x003672B4
 	public bool IsAvailableOnPlatform(EntitlementSetEnum _set)
 	{
 		ValueTuple<bool, bool> valueTuple = this.CheckOverride(_set);
@@ -108,7 +108,7 @@ public class EntitlementManager
 		return false;
 	}
 
-	// Token: 0x06009097 RID: 37015 RVA: 0x00366F40 File Offset: 0x00365140
+	// Token: 0x060090ED RID: 37101 RVA: 0x00369154 File Offset: 0x00367354
 	public unsafe EntitlementSetEnum GetSetForAsset(object addressableKey)
 	{
 		string text = addressableKey as string;
@@ -150,14 +150,14 @@ public class EntitlementManager
 		}
 	}
 
-	// Token: 0x06009098 RID: 37016 RVA: 0x00366FF0 File Offset: 0x003651F0
+	// Token: 0x060090EE RID: 37102 RVA: 0x00369204 File Offset: 0x00367404
 	public bool IsEntitlementPurchasable(object _addressableKey)
 	{
 		EntitlementSetEnum entitlementSet = this.GetEntitlementSet(_addressableKey);
 		return this.IsEntitlementPurchasable(entitlementSet);
 	}
 
-	// Token: 0x06009099 RID: 37017 RVA: 0x0036700C File Offset: 0x0036520C
+	// Token: 0x060090EF RID: 37103 RVA: 0x00369220 File Offset: 0x00367420
 	public bool IsEntitlementPurchasable(EntitlementSetEnum _set)
 	{
 		if (_set == EntitlementSetEnum.None)
@@ -181,7 +181,7 @@ public class EntitlementManager
 		return false;
 	}
 
-	// Token: 0x0600909A RID: 37018 RVA: 0x0036708C File Offset: 0x0036528C
+	// Token: 0x060090F0 RID: 37104 RVA: 0x003692A0 File Offset: 0x003674A0
 	public unsafe EntitlementSetEnum GetEntitlementSet(object addressableKey)
 	{
 		string text = addressableKey as string;
@@ -223,7 +223,7 @@ public class EntitlementManager
 		}
 	}
 
-	// Token: 0x0600909B RID: 37019 RVA: 0x0036713C File Offset: 0x0036533C
+	// Token: 0x060090F1 RID: 37105 RVA: 0x00369350 File Offset: 0x00367550
 	public void OpenStore(EntitlementSetEnum _set, Action<EntitlementSetEnum> _onPurchased)
 	{
 		if (_set == EntitlementSetEnum.None)
@@ -246,7 +246,7 @@ public class EntitlementManager
 		}
 	}
 
-	// Token: 0x0600909C RID: 37020 RVA: 0x003671B8 File Offset: 0x003653B8
+	// Token: 0x060090F2 RID: 37106 RVA: 0x003693CC File Offset: 0x003675CC
 	public string GetEntitlementSetId(EntitlementSetEnum entitlementSet)
 	{
 		if (entitlementSet == EntitlementSetEnum.None)
@@ -268,7 +268,7 @@ public class EntitlementManager
 		return null;
 	}
 
-	// Token: 0x0600909D RID: 37021 RVA: 0x0036723C File Offset: 0x0036543C
+	// Token: 0x060090F3 RID: 37107 RVA: 0x00369450 File Offset: 0x00367650
 	public DateTime? GetAcquiredDate(EntitlementSetEnum entitlementSet)
 	{
 		if (entitlementSet == EntitlementSetEnum.None)
@@ -292,7 +292,7 @@ public class EntitlementManager
 		return null;
 	}
 
-	// Token: 0x0600909E RID: 37022 RVA: 0x003672E4 File Offset: 0x003654E4
+	// Token: 0x060090F4 RID: 37108 RVA: 0x003694F8 File Offset: 0x003676F8
 	public bool IsFetchingEntitlements()
 	{
 		object obj = EntitlementManager.lockObj;
@@ -306,22 +306,22 @@ public class EntitlementManager
 		return false;
 	}
 
-	// Token: 0x0600909F RID: 37023 RVA: 0x00367350 File Offset: 0x00365550
+	// Token: 0x060090F5 RID: 37109 RVA: 0x00369564 File Offset: 0x00367764
 	[return: TupleElementNames(new string[] { "hasOverride", "overrideValue" })]
 	public ValueTuple<bool, bool> CheckOverride(EntitlementSetEnum _set)
 	{
 		return new ValueTuple<bool, bool>(false, false);
 	}
 
-	// Token: 0x04006B07 RID: 27399
+	// Token: 0x04006B1F RID: 27423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object lockObj = new object();
 
-	// Token: 0x04006B08 RID: 27400
+	// Token: 0x04006B20 RID: 27424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EntitlementManager _instance;
 
-	// Token: 0x04006B09 RID: 27401
+	// Token: 0x04006B21 RID: 27425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IList<IEntitlementValidator> entitlementValidators = new List<IEntitlementValidator>();
 }

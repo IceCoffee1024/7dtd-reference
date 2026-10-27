@@ -5,24 +5,24 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A75 RID: 6773
+	// Token: 0x02001AA6 RID: 6822
 	public abstract class SingleClipPlayer : Section, ISection, IPlayable, IFadeable, ICleanable
 	{
-		// Token: 0x0600CD5D RID: 52573 RVA: 0x004AC6E9 File Offset: 0x004AA8E9
+		// Token: 0x0600CE71 RID: 52849 RVA: 0x004B01E5 File Offset: 0x004AE3E5
 		public override void Init()
 		{
 			base.Init();
 			this.LoadRoutine = GameManager.Instance.StartCoroutine(this.InitializationCoroutine());
 		}
 
-		// Token: 0x0600CD5E RID: 52574 RVA: 0x004AC707 File Offset: 0x004AA907
+		// Token: 0x0600CE72 RID: 52850 RVA: 0x004B0203 File Offset: 0x004AE403
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SingleClip GetSingleClip()
 		{
 			return Content.AllContent.OfType<SingleClip>().First<SingleClip>((SingleClip c) => c.Section == base.Sect);
 		}
 
-		// Token: 0x0600CD5F RID: 52575 RVA: 0x004AC724 File Offset: 0x004AA924
+		// Token: 0x0600CE73 RID: 52851 RVA: 0x004B0220 File Offset: 0x004AE420
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual IEnumerator InitializationCoroutine()
 		{
@@ -47,13 +47,13 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CD60 RID: 52576 RVA: 0x004AC733 File Offset: 0x004AA933
+		// Token: 0x0600CE74 RID: 52852 RVA: 0x004B022F File Offset: 0x004AE42F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public SingleClipPlayer()
 		{
 		}
 
-		// Token: 0x04009BCD RID: 39885
+		// Token: 0x04009CB6 RID: 40118
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public SingleClip clip;
 	}

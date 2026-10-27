@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000699 RID: 1689
+// Token: 0x020006A0 RID: 1696
 [Preserve]
 public class PlayerItemCountByTags : TargetedCompareRequirementBase
 {
-	// Token: 0x06003599 RID: 13721 RVA: 0x0016162C File Offset: 0x0015F82C
+	// Token: 0x060035A7 RID: 13735 RVA: 0x00162220 File Offset: 0x00160420
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -22,7 +22,7 @@ public class PlayerItemCountByTags : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)num, this.operation, this.value);
 	}
 
-	// Token: 0x0600359A RID: 13722 RVA: 0x001616AC File Offset: 0x0015F8AC
+	// Token: 0x060035A8 RID: 13736 RVA: 0x001622A0 File Offset: 0x001604A0
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -34,7 +34,7 @@ public class PlayerItemCountByTags : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B4D RID: 11085
+	// Token: 0x04002B68 RID: 11112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> itemTags;
 }

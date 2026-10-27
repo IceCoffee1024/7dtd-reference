@@ -8,16 +8,16 @@ using Webserver.Permissions;
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001B21 RID: 6945
+	// Token: 0x02001B52 RID: 6994
 	public class SessionHandler : AbsHandler
 	{
-		// Token: 0x0600D0EB RID: 53483 RVA: 0x004BD5F9 File Offset: 0x004BB7F9
+		// Token: 0x0600D1FF RID: 53759 RVA: 0x004C10F5 File Offset: 0x004BF2F5
 		public SessionHandler()
 			: base(null, 0)
 		{
 		}
 
-		// Token: 0x0600D0EC RID: 53484 RVA: 0x004BD604 File Offset: 0x004BB804
+		// Token: 0x0600D200 RID: 53760 RVA: 0x004C1100 File Offset: 0x004BF300
 		public override void HandleRequest(RequestContext _context)
 		{
 			if (_context.Request.RemoteEndPoint == null)
@@ -59,7 +59,7 @@ namespace Webserver.UrlHandlers
 			}
 		}
 
-		// Token: 0x0600D0ED RID: 53485 RVA: 0x004BD724 File Offset: 0x004BB924
+		// Token: 0x0600D201 RID: 53761 RVA: 0x004C1220 File Offset: 0x004BF420
 		public static bool HandleUserPassLogin(ConnectionHandler _connectionHandler, RequestContext _context, string _remoteEndpointString)
 		{
 			if (!_context.Request.HasEntityBody)
@@ -118,7 +118,7 @@ namespace Webserver.UrlHandlers
 			return false;
 		}
 
-		// Token: 0x0600D0EE RID: 53486 RVA: 0x004BD8C0 File Offset: 0x004BBAC0
+		// Token: 0x0600D202 RID: 53762 RVA: 0x004C13BC File Offset: 0x004BF5BC
 		public static void HandleSteamLogin(RequestContext _context, string _verificationCallbackUrl)
 		{
 			string text = (WebUtils.IsSslRedirected(_context.Request) ? "https://" : "http://") + _context.Request.UserHostName;
@@ -126,7 +126,7 @@ namespace Webserver.UrlHandlers
 			_context.Response.Redirect(openIdLoginUrl);
 		}
 
-		// Token: 0x0600D0EF RID: 53487 RVA: 0x004BD910 File Offset: 0x004BBB10
+		// Token: 0x0600D203 RID: 53763 RVA: 0x004C140C File Offset: 0x004BF60C
 		public static bool HandleLogout(ConnectionHandler _connectionHandler, RequestContext _context, string _pageBase)
 		{
 			Cookie cookie = new Cookie("sid", "", "/")
@@ -144,7 +144,7 @@ namespace Webserver.UrlHandlers
 			return true;
 		}
 
-		// Token: 0x0600D0F0 RID: 53488 RVA: 0x004BD97C File Offset: 0x004BBB7C
+		// Token: 0x0600D204 RID: 53764 RVA: 0x004C1478 File Offset: 0x004BF678
 		public static bool HandleSteamVerification(ConnectionHandler _connectionHandler, RequestContext _context, string _remoteEndpointString)
 		{
 			ulong num;
@@ -167,7 +167,7 @@ namespace Webserver.UrlHandlers
 			return SessionHandler.HandleUserIdLogin(_connectionHandler, _context, _remoteEndpointString, "Steam OpenID", userIdentifierSteam.ToString(), userIdentifierSteam, null);
 		}
 
-		// Token: 0x0600D0F1 RID: 53489 RVA: 0x004BD9FC File Offset: 0x004BBBFC
+		// Token: 0x0600D205 RID: 53765 RVA: 0x004C14F8 File Offset: 0x004BF6F8
 		public static bool HandleUserIdLogin(ConnectionHandler _connectionHandler, RequestContext _context, string _remoteEndpointString, string _loginName, string _username, PlatformUserIdentifierAbs _userId, PlatformUserIdentifierAbs _crossUserId = null)
 		{
 			try
@@ -207,35 +207,35 @@ namespace Webserver.UrlHandlers
 			return false;
 		}
 
-		// Token: 0x04009E6D RID: 40557
+		// Token: 0x04009F56 RID: 40790
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string pageBasePath = "/app";
 
-		// Token: 0x04009E6E RID: 40558
+		// Token: 0x04009F57 RID: 40791
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string pageErrorPath = "/app/error/";
 
-		// Token: 0x04009E6F RID: 40559
+		// Token: 0x04009F58 RID: 40792
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string steamOpenIdVerifyUrl = "verifysteamopenid";
 
-		// Token: 0x04009E70 RID: 40560
+		// Token: 0x04009F59 RID: 40793
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string steamLoginUrl = "loginsteam";
 
-		// Token: 0x04009E71 RID: 40561
+		// Token: 0x04009F5A RID: 40794
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string steamLoginName = "Steam OpenID";
 
-		// Token: 0x04009E72 RID: 40562
+		// Token: 0x04009F5B RID: 40795
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string steamLoginFailedPage = "SteamLoginFailed";
 
-		// Token: 0x04009E73 RID: 40563
+		// Token: 0x04009F5C RID: 40796
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string userPassLoginUrl = "login";
 
-		// Token: 0x04009E74 RID: 40564
+		// Token: 0x04009F5D RID: 40797
 		public const string userPassLoginName = "User/pass";
 	}
 }

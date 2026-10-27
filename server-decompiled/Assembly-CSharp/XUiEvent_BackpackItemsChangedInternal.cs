@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x0200114C RID: 4428
-// (Invoke) Token: 0x06008BA2 RID: 35746
+// Token: 0x0200115C RID: 4444
+// (Invoke) Token: 0x06008BF6 RID: 35830
 public delegate void XUiEvent_BackpackItemsChangedInternal();

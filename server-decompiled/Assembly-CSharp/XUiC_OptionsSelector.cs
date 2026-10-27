@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FAF RID: 4015
+// Token: 0x02000FBF RID: 4031
 [Preserve]
 public class XUiC_OptionsSelector : XUiController
 {
 	// Token: 0x140000D5 RID: 213
-	// (add) Token: 0x06007E5D RID: 32349 RVA: 0x00300E28 File Offset: 0x002FF028
-	// (remove) Token: 0x06007E5E RID: 32350 RVA: 0x00300E60 File Offset: 0x002FF060
+	// (add) Token: 0x06007EAC RID: 32428 RVA: 0x00302944 File Offset: 0x00300B44
+	// (remove) Token: 0x06007EAD RID: 32429 RVA: 0x0030297C File Offset: 0x00300B7C
 	public event XUiEvent_OnOptionSelectionChanged OnSelectionChanged;
 
-	// Token: 0x17000EE5 RID: 3813
-	// (get) Token: 0x06007E5F RID: 32351 RVA: 0x00300E95 File Offset: 0x002FF095
-	// (set) Token: 0x06007E60 RID: 32352 RVA: 0x00300E9D File Offset: 0x002FF09D
+	// Token: 0x17000EF0 RID: 3824
+	// (get) Token: 0x06007EAE RID: 32430 RVA: 0x003029B1 File Offset: 0x00300BB1
+	// (set) Token: 0x06007EAF RID: 32431 RVA: 0x003029B9 File Offset: 0x00300BB9
 	public int SelectedIndex
 	{
 		get
@@ -27,9 +27,9 @@ public class XUiC_OptionsSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000EE6 RID: 3814
-	// (get) Token: 0x06007E61 RID: 32353 RVA: 0x00300EAD File Offset: 0x002FF0AD
-	// (set) Token: 0x06007E62 RID: 32354 RVA: 0x00300EBA File Offset: 0x002FF0BA
+	// Token: 0x17000EF1 RID: 3825
+	// (get) Token: 0x06007EB0 RID: 32432 RVA: 0x003029C9 File Offset: 0x00300BC9
+	// (set) Token: 0x06007EB1 RID: 32433 RVA: 0x003029D6 File Offset: 0x00300BD6
 	public string Title
 	{
 		get
@@ -42,7 +42,7 @@ public class XUiC_OptionsSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007E63 RID: 32355 RVA: 0x00300EC8 File Offset: 0x002FF0C8
+	// Token: 0x06007EB2 RID: 32434 RVA: 0x003029E4 File Offset: 0x00300BE4
 	public override void Init()
 	{
 		base.Init();
@@ -58,7 +58,7 @@ public class XUiC_OptionsSelector : XUiController
 		this.textArea.ViewComponent.Size = new Vector2i(base.ViewComponent.Size.x - 80, this.textArea.ViewComponent.Size.y);
 	}
 
-	// Token: 0x06007E64 RID: 32356 RVA: 0x00301007 File Offset: 0x002FF207
+	// Token: 0x06007EB3 RID: 32435 RVA: 0x00302B23 File Offset: 0x00300D23
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleSelectionChangedEvent()
 	{
@@ -68,7 +68,7 @@ public class XUiC_OptionsSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007E65 RID: 32357 RVA: 0x00301024 File Offset: 0x002FF224
+	// Token: 0x06007EB4 RID: 32436 RVA: 0x00302B40 File Offset: 0x00300D40
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -90,21 +90,21 @@ public class XUiC_OptionsSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007E66 RID: 32358 RVA: 0x003010C9 File Offset: 0x002FF2C9
+	// Token: 0x06007EB5 RID: 32437 RVA: 0x00302BE5 File Offset: 0x00300DE5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleLeftArrowOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.CycleLeft();
 	}
 
-	// Token: 0x06007E67 RID: 32359 RVA: 0x003010D2 File Offset: 0x002FF2D2
+	// Token: 0x06007EB6 RID: 32438 RVA: 0x00302BEE File Offset: 0x00300DEE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleRightArrowOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.CycleRight();
 	}
 
-	// Token: 0x06007E68 RID: 32360 RVA: 0x003010DC File Offset: 0x002FF2DC
+	// Token: 0x06007EB7 RID: 32439 RVA: 0x00302BF8 File Offset: 0x00300DF8
 	public bool CycleLeft()
 	{
 		this.SelectedIndex -= this.Step;
@@ -124,7 +124,7 @@ public class XUiC_OptionsSelector : XUiController
 		return true;
 	}
 
-	// Token: 0x06007E69 RID: 32361 RVA: 0x00301134 File Offset: 0x002FF334
+	// Token: 0x06007EB8 RID: 32440 RVA: 0x00302C50 File Offset: 0x00300E50
 	public bool CycleRight()
 	{
 		this.SelectedIndex += this.Step;
@@ -144,7 +144,7 @@ public class XUiC_OptionsSelector : XUiController
 		return true;
 	}
 
-	// Token: 0x06007E6A RID: 32362 RVA: 0x00301196 File Offset: 0x002FF396
+	// Token: 0x06007EB9 RID: 32441 RVA: 0x00302CB2 File Offset: 0x00300EB2
 	public void SetIndex(int newIndex)
 	{
 		if (this.SelectedIndex != newIndex)
@@ -154,7 +154,7 @@ public class XUiC_OptionsSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007E6B RID: 32363 RVA: 0x003011AE File Offset: 0x002FF3AE
+	// Token: 0x06007EBA RID: 32442 RVA: 0x00302CCA File Offset: 0x00300ECA
 	public void ClearItems()
 	{
 		this.items.Clear();
@@ -163,7 +163,7 @@ public class XUiC_OptionsSelector : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007E6C RID: 32364 RVA: 0x003011D0 File Offset: 0x002FF3D0
+	// Token: 0x06007EBB RID: 32443 RVA: 0x00302CEC File Offset: 0x00300EEC
 	public int AddItem(string item)
 	{
 		this.items.Add(item);
@@ -172,53 +172,53 @@ public class XUiC_OptionsSelector : XUiController
 		return this.items.Count - 1;
 	}
 
-	// Token: 0x04005DBB RID: 23995
+	// Token: 0x04005DF6 RID: 24054
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController leftArrow;
 
-	// Token: 0x04005DBC RID: 23996
+	// Token: 0x04005DF7 RID: 24055
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController rightArrow;
 
-	// Token: 0x04005DBD RID: 23997
+	// Token: 0x04005DF8 RID: 24056
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController textArea;
 
-	// Token: 0x04005DBE RID: 23998
+	// Token: 0x04005DF9 RID: 24057
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Label lblTitle;
 
-	// Token: 0x04005DBF RID: 23999
+	// Token: 0x04005DFA RID: 24058
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Label lblSelected;
 
-	// Token: 0x04005DC0 RID: 24000
+	// Token: 0x04005DFB RID: 24059
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiView clickable;
 
-	// Token: 0x04005DC1 RID: 24001
+	// Token: 0x04005DFC RID: 24060
 	public XUiC_OptionsSelector.BoundsHandlingTypes BoundsHandling = XUiC_OptionsSelector.BoundsHandlingTypes.Wrap;
 
-	// Token: 0x04005DC2 RID: 24002
+	// Token: 0x04005DFD RID: 24061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int selectedIndex = 1;
 
-	// Token: 0x04005DC3 RID: 24003
+	// Token: 0x04005DFE RID: 24062
 	public int MaxCount = 1;
 
-	// Token: 0x04005DC4 RID: 24004
+	// Token: 0x04005DFF RID: 24063
 	public int Step = 1;
 
-	// Token: 0x04005DC5 RID: 24005
+	// Token: 0x04005E00 RID: 24064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> items = new List<string>();
 
-	// Token: 0x02000FB0 RID: 4016
+	// Token: 0x02000FC0 RID: 4032
 	public enum BoundsHandlingTypes
 	{
-		// Token: 0x04005DC7 RID: 24007
+		// Token: 0x04005E02 RID: 24066
 		Clamp,
-		// Token: 0x04005DC8 RID: 24008
+		// Token: 0x04005E03 RID: 24067
 		Wrap
 	}
 }

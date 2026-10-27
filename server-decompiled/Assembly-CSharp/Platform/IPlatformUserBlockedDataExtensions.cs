@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001C1C RID: 7196
+	// Token: 0x02001C4D RID: 7245
 	public static class IPlatformUserBlockedDataExtensions
 	{
-		// Token: 0x0600D60D RID: 54797 RVA: 0x004CFBD3 File Offset: 0x004CDDD3
+		// Token: 0x0600D721 RID: 55073 RVA: 0x004D36FB File Offset: 0x004D18FB
 		public static bool IsBlocked(this IPlatformUserBlockedData blockedData)
 		{
 			return blockedData.State.IsBlocked();

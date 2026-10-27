@@ -4,12 +4,12 @@ using PrefabVolumes;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010A3 RID: 4259
+// Token: 0x020010B3 RID: 4275
 [Preserve]
 public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 {
-	// Token: 0x17000FEF RID: 4079
-	// (set) Token: 0x06008729 RID: 34601 RVA: 0x0033ADCE File Offset: 0x00338FCE
+	// Token: 0x17000FFA RID: 4090
+	// (set) Token: 0x0600877C RID: 34684 RVA: 0x0033CE52 File Offset: 0x0033B052
 	public Prefab Prefab
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -23,8 +23,8 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x17000FF0 RID: 4080
-	// (set) Token: 0x0600872A RID: 34602 RVA: 0x0033ADFC File Offset: 0x00338FFC
+	// Token: 0x17000FFB RID: 4091
+	// (set) Token: 0x0600877D RID: 34685 RVA: 0x0033CE80 File Offset: 0x0033B080
 	public Vector3i BlockPos
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -35,8 +35,8 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x17000FF1 RID: 4081
-	// (get) Token: 0x0600872B RID: 34603 RVA: 0x0033AE21 File Offset: 0x00339021
+	// Token: 0x17000FFC RID: 4092
+	// (get) Token: 0x0600877E RID: 34686 RVA: 0x0033CEA5 File Offset: 0x0033B0A5
 	public Chunk BlockChunk
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -46,8 +46,8 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x17000FF2 RID: 4082
-	// (get) Token: 0x0600872C RID: 34604 RVA: 0x0033AE44 File Offset: 0x00339044
+	// Token: 0x17000FFD RID: 4093
+	// (get) Token: 0x0600877F RID: 34687 RVA: 0x0033CEC8 File Offset: 0x0033B0C8
 	public List<byte> TriggersIndices
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -79,8 +79,8 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x17000FF3 RID: 4083
-	// (get) Token: 0x0600872D RID: 34605 RVA: 0x0033AE9E File Offset: 0x0033909E
+	// Token: 0x17000FFE RID: 4094
+	// (get) Token: 0x06008780 RID: 34688 RVA: 0x0033CF22 File Offset: 0x0033B122
 	public List<byte> TriggeredByIndices
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -95,7 +95,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600872E RID: 34606 RVA: 0x0033AEB4 File Offset: 0x003390B4
+	// Token: 0x06008781 RID: 34689 RVA: 0x0033CF38 File Offset: 0x0033B138
 	public override void Init()
 	{
 		base.Init();
@@ -161,7 +161,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600872F RID: 34607 RVA: 0x0033B05F File Offset: 0x0033925F
+	// Token: 0x06008782 RID: 34690 RVA: 0x0033D0E3 File Offset: 0x0033B2E3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void triggerExclude_OnPressed(XUiController _controller, int _button)
 	{
@@ -174,7 +174,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008730 RID: 34608 RVA: 0x0033B08F File Offset: 0x0033928F
+	// Token: 0x06008783 RID: 34691 RVA: 0x0033D113 File Offset: 0x0033B313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void triggerOperation_OnPressed(XUiController _controller, int _button)
 	{
@@ -187,7 +187,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008731 RID: 34609 RVA: 0x0033B0BF File Offset: 0x003392BF
+	// Token: 0x06008784 RID: 34692 RVA: 0x0033D143 File Offset: 0x0033B343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void triggerUnlock_OnPressed(XUiController _controller, int _button)
 	{
@@ -200,7 +200,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008732 RID: 34610 RVA: 0x0033B0EF File Offset: 0x003392EF
+	// Token: 0x06008785 RID: 34693 RVA: 0x0033D173 File Offset: 0x0033B373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setChunkModified()
 	{
@@ -208,7 +208,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		this.BlockChunk.isModified = true;
 	}
 
-	// Token: 0x06008733 RID: 34611 RVA: 0x0033B108 File Offset: 0x00339308
+	// Token: 0x06008786 RID: 34694 RVA: 0x0033D18C File Offset: 0x0033B38C
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -218,7 +218,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06008734 RID: 34612 RVA: 0x0033B12D File Offset: 0x0033932D
+	// Token: 0x06008787 RID: 34695 RVA: 0x0033D1B1 File Offset: 0x0033B3B1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggerOnAddTriggersPressed(XUiController _sender, int _mouseButton)
 	{
@@ -227,7 +227,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		this.triggeredByList.RebuildList(false);
 	}
 
-	// Token: 0x06008735 RID: 34613 RVA: 0x0033B154 File Offset: 0x00339354
+	// Token: 0x06008788 RID: 34696 RVA: 0x0033D1D8 File Offset: 0x0033B3D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggersList_SelectionChanged(XUiC_List<XUiC_PrefabTriggerEditorList.PrefabTriggerEntry> _list, XUiC_PrefabTriggerEditorList.PrefabTriggerEntry _previousEntry, XUiC_PrefabTriggerEditorList.PrefabTriggerEntry _newEntry)
 	{
@@ -247,7 +247,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		_newEntry.UiDirty = true;
 	}
 
-	// Token: 0x06008736 RID: 34614 RVA: 0x0033B1A0 File Offset: 0x003393A0
+	// Token: 0x06008789 RID: 34697 RVA: 0x0033D224 File Offset: 0x0033B424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggeredByList_SelectionChanged(XUiC_List<XUiC_PrefabTriggerEditorList.PrefabTriggerEntry> _list, XUiC_PrefabTriggerEditorList.PrefabTriggerEntry _previousEntry, XUiC_PrefabTriggerEditorList.PrefabTriggerEntry _newEntry)
 	{
@@ -267,14 +267,14 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		_newEntry.UiDirty = true;
 	}
 
-	// Token: 0x06008737 RID: 34615 RVA: 0x0029936D File Offset: 0x0029756D
+	// Token: 0x0600878A RID: 34698 RVA: 0x0029A895 File Offset: 0x00298A95
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008738 RID: 34616 RVA: 0x0033B1EA File Offset: 0x003393EA
+	// Token: 0x0600878B RID: 34699 RVA: 0x0033D26E File Offset: 0x0033B46E
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -282,7 +282,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		this.blockTrigger = null;
 	}
 
-	// Token: 0x06008739 RID: 34617 RVA: 0x0008A9BD File Offset: 0x00088BBD
+	// Token: 0x0600878C RID: 34700 RVA: 0x0008ABF1 File Offset: 0x00088DF1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -293,7 +293,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600873A RID: 34618 RVA: 0x0033B200 File Offset: 0x00339400
+	// Token: 0x0600878D RID: 34701 RVA: 0x0033D284 File Offset: 0x0033B484
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -325,7 +325,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x0600873B RID: 34619 RVA: 0x0033B2E4 File Offset: 0x003394E4
+	// Token: 0x0600878E RID: 34702 RVA: 0x0033D368 File Offset: 0x0033B568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleTriggersSetting(byte _triggerLayer, bool _isTriggers, World _world, Vector3i _blockPos)
 	{
@@ -376,7 +376,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		blockTrigger.TriggerUpdated(null);
 	}
 
-	// Token: 0x0600873C RID: 34620 RVA: 0x0033B3D0 File Offset: 0x003395D0
+	// Token: 0x0600878F RID: 34703 RVA: 0x0033D454 File Offset: 0x0033B654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleTriggerVolumeSetting(byte _triggerLayer, bool _isTriggers)
 	{
@@ -402,7 +402,7 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		blockTrigger.TriggerUpdated(null);
 	}
 
-	// Token: 0x0600873D RID: 34621 RVA: 0x0033B430 File Offset: 0x00339630
+	// Token: 0x06008790 RID: 34704 RVA: 0x0033D4B4 File Offset: 0x0033B6B4
 	public static void Show(XUi _xui, Vector3i _blockPos, bool _showTriggers, bool _showTriggeredBy)
 	{
 		XUiC_TriggerProperties childByType = ((XUiWindowGroup)_xui.playerUI.windowManager.GetWindow(XUiC_TriggerProperties.ID)).Controller.GetChildByType<XUiC_TriggerProperties>();
@@ -415,30 +415,30 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		_xui.playerUI.windowManager.Open(XUiC_TriggerProperties.ID, true);
 	}
 
-	// Token: 0x0600873E RID: 34622 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06008791 RID: 34705 RVA: 0x00020119 File Offset: 0x0001E319
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		return true;
 	}
 
-	// Token: 0x0600873F RID: 34623 RVA: 0x0033B4A8 File Offset: 0x003396A8
+	// Token: 0x06008792 RID: 34706 RVA: 0x0033D52C File Offset: 0x0033B72C
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		PrefabVolumeManager.Instance.SelectionBoxMoved(PrefabVolumeAbs.EVolumeType.Trigger, _box, _moveVector);
 	}
 
-	// Token: 0x06008740 RID: 34624 RVA: 0x0033B4B8 File Offset: 0x003396B8
+	// Token: 0x06008793 RID: 34707 RVA: 0x0033D53C File Offset: 0x0033B73C
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		PrefabVolumeManager.Instance.SelectionBoxSized(PrefabVolumeAbs.EVolumeType.Trigger, _box, _dTop, _dBottom, _dNorth, _dSouth, _dEast, _dWest);
 	}
 
-	// Token: 0x06008741 RID: 34625 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008794 RID: 34708 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxMirrored(Vector3i _axis)
 	{
 	}
 
-	// Token: 0x06008742 RID: 34626 RVA: 0x0033B4DC File Offset: 0x003396DC
+	// Token: 0x06008795 RID: 34709 RVA: 0x0033D560 File Offset: 0x0033B760
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		int num;
@@ -446,13 +446,13 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		return PrefabVolumeManager.GetPrefabIdAndVolumeId(_box.name, out num, out prefabInstance) && PrefabVolumeManager.Instance.SelectionBoxDelete(PrefabVolumeAbs.EVolumeType.Trigger, _box, _checkCanDeleteOnly);
 	}
 
-	// Token: 0x06008743 RID: 34627 RVA: 0x0033B509 File Offset: 0x00339709
+	// Token: 0x06008796 RID: 34710 RVA: 0x0033D58D File Offset: 0x0033B78D
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		return _criteria == EnumSelectionBoxAvailabilities.CanShowProperties || _criteria == EnumSelectionBoxAvailabilities.CanResize;
 	}
 
-	// Token: 0x06008744 RID: 34628 RVA: 0x0033B514 File Offset: 0x00339714
+	// Token: 0x06008797 RID: 34711 RVA: 0x0033D598 File Offset: 0x0033B798
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 		SelectionBox selectionBox;
@@ -470,58 +470,58 @@ public class XUiC_TriggerProperties : XUiController, ISelectionBoxCallback
 		_windowManager.Open(this.windowGroup, true);
 	}
 
-	// Token: 0x06008745 RID: 34629 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008798 RID: 34712 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x06008746 RID: 34630 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008799 RID: 34713 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x04006485 RID: 25733
+	// Token: 0x040064C4 RID: 25796
 	public static string ID = "";
 
-	// Token: 0x04006486 RID: 25734
+	// Token: 0x040064C5 RID: 25797
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabTriggerEditorList triggersList;
 
-	// Token: 0x04006487 RID: 25735
+	// Token: 0x040064C6 RID: 25798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabTriggerEditorList triggeredByList;
 
-	// Token: 0x04006488 RID: 25736
+	// Token: 0x040064C7 RID: 25799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TriggerProperties.EOpenedFor openedFor;
 
-	// Token: 0x04006489 RID: 25737
+	// Token: 0x040064C8 RID: 25800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab prefab;
 
-	// Token: 0x0400648A RID: 25738
+	// Token: 0x040064C9 RID: 25801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x0400648B RID: 25739
+	// Token: 0x040064CA RID: 25802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockTrigger blockTrigger;
 
-	// Token: 0x0400648C RID: 25740
+	// Token: 0x040064CB RID: 25803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showTriggers = true;
 
-	// Token: 0x0400648D RID: 25741
+	// Token: 0x040064CC RID: 25804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showTriggeredBy = true;
 
-	// Token: 0x020010A4 RID: 4260
+	// Token: 0x020010B4 RID: 4276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EOpenedFor
 	{
-		// Token: 0x0400648F RID: 25743
+		// Token: 0x040064CE RID: 25806
 		Block,
-		// Token: 0x04006490 RID: 25744
+		// Token: 0x040064CF RID: 25807
 		TriggerVolume
 	}
 }

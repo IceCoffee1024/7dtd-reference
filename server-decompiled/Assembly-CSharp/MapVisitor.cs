@@ -2,21 +2,21 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200145B RID: 5211
+// Token: 0x0200146D RID: 5229
 public class MapVisitor
 {
 	// Token: 0x14000102 RID: 258
-	// (add) Token: 0x0600A35C RID: 41820 RVA: 0x003D290C File Offset: 0x003D0B0C
-	// (remove) Token: 0x0600A35D RID: 41821 RVA: 0x003D2944 File Offset: 0x003D0B44
+	// (add) Token: 0x0600A3B4 RID: 41908 RVA: 0x003D4D10 File Offset: 0x003D2F10
+	// (remove) Token: 0x0600A3B5 RID: 41909 RVA: 0x003D4D48 File Offset: 0x003D2F48
 	public event MapVisitor.VisitChunkDelegate OnVisitChunk;
 
 	// Token: 0x14000103 RID: 259
-	// (add) Token: 0x0600A35E RID: 41822 RVA: 0x003D297C File Offset: 0x003D0B7C
-	// (remove) Token: 0x0600A35F RID: 41823 RVA: 0x003D29B4 File Offset: 0x003D0BB4
+	// (add) Token: 0x0600A3B6 RID: 41910 RVA: 0x003D4D80 File Offset: 0x003D2F80
+	// (remove) Token: 0x0600A3B7 RID: 41911 RVA: 0x003D4DB8 File Offset: 0x003D2FB8
 	public event MapVisitor.VisitMapDoneDelegate OnVisitMapDone;
 
-	// Token: 0x17001367 RID: 4967
-	// (get) Token: 0x0600A360 RID: 41824 RVA: 0x003D29E9 File Offset: 0x003D0BE9
+	// Token: 0x17001373 RID: 4979
+	// (get) Token: 0x0600A3B8 RID: 41912 RVA: 0x003D4DED File Offset: 0x003D2FED
 	public Vector3i ChunkPosStart
 	{
 		get
@@ -25,8 +25,8 @@ public class MapVisitor
 		}
 	}
 
-	// Token: 0x17001368 RID: 4968
-	// (get) Token: 0x0600A361 RID: 41825 RVA: 0x003D29F1 File Offset: 0x003D0BF1
+	// Token: 0x17001374 RID: 4980
+	// (get) Token: 0x0600A3B9 RID: 41913 RVA: 0x003D4DF5 File Offset: 0x003D2FF5
 	public Vector3i ChunkPosEnd
 	{
 		get
@@ -35,8 +35,8 @@ public class MapVisitor
 		}
 	}
 
-	// Token: 0x17001369 RID: 4969
-	// (get) Token: 0x0600A362 RID: 41826 RVA: 0x003D29F9 File Offset: 0x003D0BF9
+	// Token: 0x17001375 RID: 4981
+	// (get) Token: 0x0600A3BA RID: 41914 RVA: 0x003D4DFD File Offset: 0x003D2FFD
 	public Vector3i WorldPosStart
 	{
 		get
@@ -45,8 +45,8 @@ public class MapVisitor
 		}
 	}
 
-	// Token: 0x1700136A RID: 4970
-	// (get) Token: 0x0600A363 RID: 41827 RVA: 0x003D2A1B File Offset: 0x003D0C1B
+	// Token: 0x17001376 RID: 4982
+	// (get) Token: 0x0600A3BB RID: 41915 RVA: 0x003D4E1F File Offset: 0x003D301F
 	public Vector3i WorldPosEnd
 	{
 		get
@@ -55,7 +55,7 @@ public class MapVisitor
 		}
 	}
 
-	// Token: 0x0600A364 RID: 41828 RVA: 0x003D2A4C File Offset: 0x003D0C4C
+	// Token: 0x0600A3BC RID: 41916 RVA: 0x003D4E50 File Offset: 0x003D3050
 	public MapVisitor(Vector3i _worldPos1, Vector3i _worldPos2)
 	{
 		int x = _worldPos1.x;
@@ -66,7 +66,7 @@ public class MapVisitor
 		this.chunkPos2 = new Vector3i(World.toChunkXZ((x <= x2) ? x2 : x), 0, World.toChunkXZ((z <= z2) ? z2 : z));
 	}
 
-	// Token: 0x0600A365 RID: 41829 RVA: 0x003D2AC7 File Offset: 0x003D0CC7
+	// Token: 0x0600A3BD RID: 41917 RVA: 0x003D4ECB File Offset: 0x003D30CB
 	public void Start()
 	{
 		if (!this.hasBeenStarted)
@@ -76,7 +76,7 @@ public class MapVisitor
 		}
 	}
 
-	// Token: 0x0600A366 RID: 41830 RVA: 0x003D2AE9 File Offset: 0x003D0CE9
+	// Token: 0x0600A3BE RID: 41918 RVA: 0x003D4EED File Offset: 0x003D30ED
 	public void Stop()
 	{
 		if (this.hasBeenStarted && this.coroutine != null)
@@ -88,19 +88,19 @@ public class MapVisitor
 		}
 	}
 
-	// Token: 0x0600A367 RID: 41831 RVA: 0x003D2B24 File Offset: 0x003D0D24
+	// Token: 0x0600A3BF RID: 41919 RVA: 0x003D4F28 File Offset: 0x003D3128
 	public bool IsRunning()
 	{
 		return this.coroutine != null;
 	}
 
-	// Token: 0x0600A368 RID: 41832 RVA: 0x003D2B2F File Offset: 0x003D0D2F
+	// Token: 0x0600A3C0 RID: 41920 RVA: 0x003D4F33 File Offset: 0x003D3133
 	public bool HasBeenStarted()
 	{
 		return this.hasBeenStarted;
 	}
 
-	// Token: 0x0600A369 RID: 41833 RVA: 0x003D2B37 File Offset: 0x003D0D37
+	// Token: 0x0600A3C1 RID: 41921 RVA: 0x003D4F3B File Offset: 0x003D313B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator visitCo()
 	{
@@ -160,14 +160,14 @@ public class MapVisitor
 		yield break;
 	}
 
-	// Token: 0x0600A36A RID: 41834 RVA: 0x003D2B46 File Offset: 0x003D0D46
+	// Token: 0x0600A3C2 RID: 41922 RVA: 0x003D4F4A File Offset: 0x003D314A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 chunkPosToBlockPos(int _x, int _z)
 	{
 		return new Vector3((float)this.chunkXZtoBlockXZ(_x), 0f, (float)this.chunkXZtoBlockXZ(_z));
 	}
 
-	// Token: 0x0600A36B RID: 41835 RVA: 0x003D2B62 File Offset: 0x003D0D62
+	// Token: 0x0600A3C3 RID: 41923 RVA: 0x003D4F66 File Offset: 0x003D3166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkXZtoBlockXZ(int _xz)
 	{
@@ -178,31 +178,31 @@ public class MapVisitor
 		return _xz * 16 + 1;
 	}
 
-	// Token: 0x04007A8F RID: 31375
+	// Token: 0x04007AD0 RID: 31440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine coroutine;
 
-	// Token: 0x04007A90 RID: 31376
+	// Token: 0x04007AD1 RID: 31441
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkManager.ChunkObserver observer;
 
-	// Token: 0x04007A91 RID: 31377
+	// Token: 0x04007AD2 RID: 31442
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Vector3i chunkPos1;
 
-	// Token: 0x04007A92 RID: 31378
+	// Token: 0x04007AD3 RID: 31443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Vector3i chunkPos2;
 
-	// Token: 0x04007A93 RID: 31379
+	// Token: 0x04007AD4 RID: 31444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasBeenStarted;
 
-	// Token: 0x0200145C RID: 5212
-	// (Invoke) Token: 0x0600A36D RID: 41837
+	// Token: 0x0200146E RID: 5230
+	// (Invoke) Token: 0x0600A3C5 RID: 41925
 	public delegate void VisitChunkDelegate(Chunk _chunk, int _chunksVisited, int _chunksTotal, float _elapsedSeconds);
 
-	// Token: 0x0200145D RID: 5213
-	// (Invoke) Token: 0x0600A371 RID: 41841
+	// Token: 0x0200146F RID: 5231
+	// (Invoke) Token: 0x0600A3C9 RID: 41929
 	public delegate void VisitMapDoneDelegate(int _chunks, float _elapsedSeconds);
 }

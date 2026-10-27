@@ -8,11 +8,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A5F RID: 6751
+	// Token: 0x02001A90 RID: 6800
 	[Preserve]
 	public class ClipAdapter : IClipAdapter
 	{
-		// Token: 0x0600CCE4 RID: 52452 RVA: 0x004AB140 File Offset: 0x004A9340
+		// Token: 0x0600CDF8 RID: 52728 RVA: 0x004AEC3C File Offset: 0x004ACE3C
 		public float GetSample(int idx, params float[] _params)
 		{
 			if (idx % 4096 == 0)
@@ -23,16 +23,16 @@ namespace DynamicMusic
 			return this.sampleData[idx % 4096];
 		}
 
-		// Token: 0x17001980 RID: 6528
-		// (get) Token: 0x0600CCE5 RID: 52453 RVA: 0x004AB17D File Offset: 0x004A937D
-		// (set) Token: 0x0600CCE6 RID: 52454 RVA: 0x004AB185 File Offset: 0x004A9385
+		// Token: 0x170019C8 RID: 6600
+		// (get) Token: 0x0600CDF9 RID: 52729 RVA: 0x004AEC79 File Offset: 0x004ACE79
+		// (set) Token: 0x0600CDFA RID: 52730 RVA: 0x004AEC81 File Offset: 0x004ACE81
 		public bool IsLoaded
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CCE7 RID: 52455 RVA: 0x004AB18E File Offset: 0x004A938E
+		// Token: 0x0600CDFB RID: 52731 RVA: 0x004AEC8A File Offset: 0x004ACE8A
 		public IEnumerator Load()
 		{
 			using (ClipAdapter.s_LoadMarker.Auto())
@@ -45,7 +45,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CCE8 RID: 52456 RVA: 0x004AB1A0 File Offset: 0x004A93A0
+		// Token: 0x0600CDFC RID: 52732 RVA: 0x004AEC9C File Offset: 0x004ACE9C
 		public void LoadImmediate()
 		{
 			using (ClipAdapter.s_LoadImmediateMarker.Auto())
@@ -56,7 +56,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CCE9 RID: 52457 RVA: 0x004AB208 File Offset: 0x004A9408
+		// Token: 0x0600CDFD RID: 52733 RVA: 0x004AED04 File Offset: 0x004ACF04
 		public void Unload()
 		{
 			MemoryPools.poolFloat.Free(this.sampleData);
@@ -66,13 +66,13 @@ namespace DynamicMusic
 			this.IsLoaded = false;
 		}
 
-		// Token: 0x0600CCEA RID: 52458 RVA: 0x004AB23A File Offset: 0x004A943A
+		// Token: 0x0600CDFE RID: 52734 RVA: 0x004AED36 File Offset: 0x004ACF36
 		public void ParseXml(XElement _xmlNode)
 		{
 			this.path = _xmlNode.GetAttribute("value");
 		}
 
-		// Token: 0x0600CCEB RID: 52459 RVA: 0x004AB254 File Offset: 0x004A9454
+		// Token: 0x0600CDFF RID: 52735 RVA: 0x004AED50 File Offset: 0x004ACF50
 		public void SetPaths(int _num, PlacementType _placement, SectionType _section, LayerType _layer, string stress = "")
 		{
 			this.path = string.Concat(new string[]
@@ -88,27 +88,27 @@ namespace DynamicMusic
 			});
 		}
 
-		// Token: 0x04009B94 RID: 39828
+		// Token: 0x04009C7D RID: 40061
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ProfilerMarker s_LoadMarker = new ProfilerMarker("DynamicMusic.ClipAdapter.Load");
 
-		// Token: 0x04009B95 RID: 39829
+		// Token: 0x04009C7E RID: 40062
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ProfilerMarker s_LoadImmediateMarker = new ProfilerMarker("DynamicMusic.ClipAdapter.LoadImmediate");
 
-		// Token: 0x04009B96 RID: 39830
+		// Token: 0x04009C7F RID: 40063
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int bufferSize = 4096;
 
-		// Token: 0x04009B97 RID: 39831
+		// Token: 0x04009C80 RID: 40064
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string path;
 
-		// Token: 0x04009B98 RID: 39832
+		// Token: 0x04009C81 RID: 40065
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float[] sampleData;
 
-		// Token: 0x04009B99 RID: 39833
+		// Token: 0x04009C82 RID: 40066
 		[PublicizedFrom(EAccessModifier.Private)]
 		public WaveReader reader;
 	}

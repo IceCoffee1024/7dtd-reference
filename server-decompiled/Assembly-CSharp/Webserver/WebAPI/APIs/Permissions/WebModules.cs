@@ -7,11 +7,11 @@ using Webserver.Permissions;
 
 namespace Webserver.WebAPI.APIs.Permissions
 {
-	// Token: 0x02001B13 RID: 6931
+	// Token: 0x02001B44 RID: 6980
 	[Preserve]
 	public class WebModules : AbsRestApi
 	{
-		// Token: 0x0600D092 RID: 53394 RVA: 0x004BB6E0 File Offset: 0x004B98E0
+		// Token: 0x0600D1A6 RID: 53670 RVA: 0x004BF1DC File Offset: 0x004BD3DC
 		[PublicizedFrom(EAccessModifier.Private)]
 		static WebModules()
 		{
@@ -22,8 +22,8 @@ namespace Webserver.WebAPI.APIs.Permissions
 			}
 		}
 
-		// Token: 0x17001A24 RID: 6692
-		// (get) Token: 0x0600D093 RID: 53395 RVA: 0x004BB75A File Offset: 0x004B995A
+		// Token: 0x17001A6C RID: 6764
+		// (get) Token: 0x0600D1A7 RID: 53671 RVA: 0x004BF256 File Offset: 0x004BD456
 		public static AdminWebModules ModulesInstance
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -33,7 +33,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			}
 		}
 
-		// Token: 0x0600D094 RID: 53396 RVA: 0x004BB764 File Offset: 0x004B9964
+		// Token: 0x0600D1A8 RID: 53672 RVA: 0x004BF260 File Offset: 0x004BD460
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -61,7 +61,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.BadRequest, null, null, null);
 		}
 
-		// Token: 0x0600D095 RID: 53397 RVA: 0x004BB81C File Offset: 0x004B9A1C
+		// Token: 0x0600D1A9 RID: 53673 RVA: 0x004BF318 File Offset: 0x004BD518
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeModuleJson(ref JsonWriter _writer, AdminWebModules.WebModule _module)
 		{
@@ -102,7 +102,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D096 RID: 53398 RVA: 0x004BB8F0 File Offset: 0x004B9AF0
+		// Token: 0x0600D1AA RID: 53674 RVA: 0x004BF3EC File Offset: 0x004BD5EC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestPost(RequestContext _context, IDictionary<string, object> _jsonInput, byte[] _jsonInputData)
 		{
@@ -190,7 +190,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.Created, null, null, null);
 		}
 
-		// Token: 0x0600D097 RID: 53399 RVA: 0x004BBAEC File Offset: 0x004B9CEC
+		// Token: 0x0600D1AB RID: 53675 RVA: 0x004BF5E8 File Offset: 0x004BD7E8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestDelete(RequestContext _context)
 		{
@@ -198,8 +198,8 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEmptyResponse(_context, WebModules.ModulesInstance.RemoveModule(requestPath) ? HttpStatusCode.NoContent : HttpStatusCode.NotFound, null, null, null);
 		}
 
-		// Token: 0x17001A25 RID: 6693
-		// (get) Token: 0x0600D098 RID: 53400 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x17001A6D RID: 6765
+		// (get) Token: 0x0600D1AC RID: 53676 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool AllowPostWithId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -209,51 +209,51 @@ namespace Webserver.WebAPI.APIs.Permissions
 			}
 		}
 
-		// Token: 0x0600D099 RID: 53401 RVA: 0x004BAA05 File Offset: 0x004B8C05
+		// Token: 0x0600D1AD RID: 53677 RVA: 0x004BE501 File Offset: 0x004BC701
 		public override int[] DefaultMethodPermissionLevels()
 		{
 			return new int[] { -2147483647, int.MinValue, int.MinValue, -2147483647, int.MinValue };
 		}
 
-		// Token: 0x0600D09A RID: 53402 RVA: 0x004B3AA8 File Offset: 0x004B1CA8
+		// Token: 0x0600D1AE RID: 53678 RVA: 0x004B75A4 File Offset: 0x004B57A4
 		public WebModules()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009E12 RID: 40466
+		// Token: 0x04009EFB RID: 40699
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyModule = "module";
 
-		// Token: 0x04009E13 RID: 40467
+		// Token: 0x04009EFC RID: 40700
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyPermissionLevelGlobal = "permissionLevelGlobal";
 
-		// Token: 0x04009E14 RID: 40468
+		// Token: 0x04009EFD RID: 40701
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyPermissionLevelPerMethod = "permissionLevelPerMethod";
 
-		// Token: 0x04009E15 RID: 40469
+		// Token: 0x04009EFE RID: 40702
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyIsDefault = "isDefault";
 
-		// Token: 0x04009E16 RID: 40470
+		// Token: 0x04009EFF RID: 40703
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyModule = JsonWriter.GetEncodedPropertyNameWithBeginObject("module");
 
-		// Token: 0x04009E17 RID: 40471
+		// Token: 0x04009F00 RID: 40704
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPermissionLevelGlobal = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("permissionLevelGlobal");
 
-		// Token: 0x04009E18 RID: 40472
+		// Token: 0x04009F01 RID: 40705
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPermissionLevelPerMethod = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("permissionLevelPerMethod");
 
-		// Token: 0x04009E19 RID: 40473
+		// Token: 0x04009F02 RID: 40706
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyIsDefault = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("isDefault");
 
-		// Token: 0x04009E1A RID: 40474
+		// Token: 0x04009F03 RID: 40707
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[][] jsonMethodNameKeys = new byte[7][];
 	}

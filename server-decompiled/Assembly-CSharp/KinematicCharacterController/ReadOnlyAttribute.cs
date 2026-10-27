@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D8E RID: 7566
+	// Token: 0x02001DBF RID: 7615
 	public class ReadOnlyAttribute : PropertyAttribute
 	{
 	}

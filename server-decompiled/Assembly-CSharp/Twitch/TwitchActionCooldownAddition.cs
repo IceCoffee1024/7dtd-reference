@@ -2,16 +2,16 @@
 
 namespace Twitch
 {
-	// Token: 0x02001827 RID: 6183
+	// Token: 0x02001858 RID: 6232
 	public class TwitchActionCooldownAddition
 	{
-		// Token: 0x04008FBE RID: 36798
+		// Token: 0x040090A7 RID: 37031
 		public string ActionName;
 
-		// Token: 0x04008FBF RID: 36799
+		// Token: 0x040090A8 RID: 37032
 		public float CooldownTime;
 
-		// Token: 0x04008FC0 RID: 36800
+		// Token: 0x040090A9 RID: 37033
 		public bool IsAction = true;
 	}
 }

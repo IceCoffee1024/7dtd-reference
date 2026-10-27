@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000513 RID: 1299
+// Token: 0x02000515 RID: 1301
 public class RandomPositionGenerator
 {
-	// Token: 0x06002A5E RID: 10846 RVA: 0x0010BE38 File Offset: 0x0010A038
+	// Token: 0x06002A65 RID: 10853 RVA: 0x0010C38C File Offset: 0x0010A58C
 	public static Vector3 CalcAround(EntityAlive _entity, int _maxXZ, int _maxY)
 	{
 		Vector3 vector;
@@ -15,21 +15,21 @@ public class RandomPositionGenerator
 		return vector;
 	}
 
-	// Token: 0x06002A5F RID: 10847 RVA: 0x0010BE68 File Offset: 0x0010A068
+	// Token: 0x06002A66 RID: 10854 RVA: 0x0010C3BC File Offset: 0x0010A5BC
 	public static Vector3 CalcTowards(EntityAlive _entity, int _minXZ, int _maxXZ, int _maxY, Vector3 _position)
 	{
 		Vector3 vector = _position - _entity.position;
 		return RandomPositionGenerator.CalcInDir(_entity, _minXZ, _maxXZ, _maxY, vector, 80f);
 	}
 
-	// Token: 0x06002A60 RID: 10848 RVA: 0x0010BE94 File Offset: 0x0010A094
+	// Token: 0x06002A67 RID: 10855 RVA: 0x0010C3E8 File Offset: 0x0010A5E8
 	public static Vector3 CalcAway(EntityAlive _entity, int _minXZ, int _maxXZ, int _maxY, Vector3 _position)
 	{
 		Vector3 vector = _entity.position - _position;
 		return RandomPositionGenerator.CalcInDir(_entity, _minXZ, _maxXZ, _maxY, vector, 80f);
 	}
 
-	// Token: 0x06002A61 RID: 10849 RVA: 0x0010BEC0 File Offset: 0x0010A0C0
+	// Token: 0x06002A68 RID: 10856 RVA: 0x0010C414 File Offset: 0x0010A614
 	public static Vector3 CalcInDir(EntityAlive _entity, int _minXZ, int _maxXZ, int _maxY, Vector3 _dirV, float _angleMax = 80f)
 	{
 		Vector3 vector;
@@ -40,7 +40,7 @@ public class RandomPositionGenerator
 		return vector;
 	}
 
-	// Token: 0x06002A62 RID: 10850 RVA: 0x0010BEFC File Offset: 0x0010A0FC
+	// Token: 0x06002A69 RID: 10857 RVA: 0x0010C450 File Offset: 0x0010A650
 	public static Vector3 CalcNear(EntityAlive _entity, Vector3 target, int _xzDist, int _yDist)
 	{
 		GameRandom rand = _entity.rand;
@@ -53,7 +53,7 @@ public class RandomPositionGenerator
 		return new Vector3((float)num, (float)num2, (float)num3);
 	}
 
-	// Token: 0x06002A63 RID: 10851 RVA: 0x0010BF68 File Offset: 0x0010A168
+	// Token: 0x06002A6A RID: 10858 RVA: 0x0010C4BC File Offset: 0x0010A6BC
 	public static Vector3 CalcPositionInDirection(Entity _entity, Vector3 _startPos, Vector3 _dirV, float _dist, float _angleMax)
 	{
 		World world = _entity.world;
@@ -115,7 +115,7 @@ public class RandomPositionGenerator
 		return Vector3.zero;
 	}
 
-	// Token: 0x06002A64 RID: 10852 RVA: 0x0010C134 File Offset: 0x0010A334
+	// Token: 0x06002A6B RID: 10859 RVA: 0x0010C688 File Offset: 0x0010A888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool CalcAround(EntityAlive _entity, int _xzDist, int _yDist, bool _canSwim, out Vector3 _destPos)
 	{
@@ -176,7 +176,7 @@ public class RandomPositionGenerator
 		return false;
 	}
 
-	// Token: 0x06002A65 RID: 10853 RVA: 0x0010C324 File Offset: 0x0010A524
+	// Token: 0x06002A6C RID: 10860 RVA: 0x0010C878 File Offset: 0x0010AA78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool CalcDir(EntityAlive _entity, int _distMinXZ, int _distMaxXZ, int _distMaxY, Vector3 _directionVec, float _angleMax, bool _canSwim, out Vector3 _destPos)
 	{

@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000680 RID: 1664
+// Token: 0x02000687 RID: 1671
 [Preserve]
 public class CompareItemMetaFloat : TargetedCompareRequirementBase
 {
-	// Token: 0x06003546 RID: 13638 RVA: 0x001602F8 File Offset: 0x0015E4F8
+	// Token: 0x06003554 RID: 13652 RVA: 0x00160EEC File Offset: 0x0015F0EC
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -30,7 +30,7 @@ public class CompareItemMetaFloat : TargetedCompareRequirementBase
 		return RequirementBase.compareValues(num, this.operation, this.value);
 	}
 
-	// Token: 0x06003547 RID: 13639 RVA: 0x0016036C File Offset: 0x0015E56C
+	// Token: 0x06003555 RID: 13653 RVA: 0x00160F60 File Offset: 0x0015F160
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -42,7 +42,7 @@ public class CompareItemMetaFloat : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B30 RID: 11056
+	// Token: 0x04002B4B RID: 11083
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string metaKey;
 }

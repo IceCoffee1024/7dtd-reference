@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C7A RID: 3194
+// Token: 0x02000C85 RID: 3205
 public static class TileEntityExtensions
 {
-	// Token: 0x060060FD RID: 24829 RVA: 0x00267E94 File Offset: 0x00266094
+	// Token: 0x06006122 RID: 24866 RVA: 0x002693BC File Offset: 0x002675BC
 	public static T GetSelfOrFeature<T>(this ITileEntity _te) where T : class
 	{
 		T t;
@@ -11,7 +11,7 @@ public static class TileEntityExtensions
 		return t;
 	}
 
-	// Token: 0x060060FE RID: 24830 RVA: 0x00267EAC File Offset: 0x002660AC
+	// Token: 0x06006123 RID: 24867 RVA: 0x002693D4 File Offset: 0x002675D4
 	public static bool TryGetSelfOrFeature<T>(this ITileEntity _te, out T _typedTe) where T : class
 	{
 		if (_te == null)

@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000C19 RID: 3097
+// Token: 0x02000C24 RID: 3108
 public interface IChunkCallback
 {
-	// Token: 0x06005DF8 RID: 24056
+	// Token: 0x06005E1D RID: 24093
 	void OnChunkAdded(Chunk _c);
 
-	// Token: 0x06005DF9 RID: 24057
+	// Token: 0x06005E1E RID: 24094
 	void OnChunkBeforeRemove(Chunk _c);
 
-	// Token: 0x06005DFA RID: 24058
+	// Token: 0x06005E1F RID: 24095
 	void OnChunkBeforeSave(Chunk _c);
 }

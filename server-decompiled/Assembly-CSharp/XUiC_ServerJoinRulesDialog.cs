@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200102E RID: 4142
+// Token: 0x0200103E RID: 4158
 [Preserve]
 public class XUiC_ServerJoinRulesDialog : XUiController
 {
-	// Token: 0x06008287 RID: 33415 RVA: 0x0031B258 File Offset: 0x00319458
+	// Token: 0x060082D9 RID: 33497 RVA: 0x0031CF5C File Offset: 0x0031B15C
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class XUiC_ServerJoinRulesDialog : XUiController
 		}
 	}
 
-	// Token: 0x06008288 RID: 33416 RVA: 0x0031B2E9 File Offset: 0x003194E9
+	// Token: 0x060082DA RID: 33498 RVA: 0x0031CFED File Offset: 0x0031B1ED
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -32,7 +32,7 @@ public class XUiC_ServerJoinRulesDialog : XUiController
 		base.GetChildById("btnLeave").SelectCursorElement(false, false);
 	}
 
-	// Token: 0x06008289 RID: 33417 RVA: 0x0031B31A File Offset: 0x0031951A
+	// Token: 0x060082DB RID: 33499 RVA: 0x0031D01E File Offset: 0x0031B21E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLeave_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -40,7 +40,7 @@ public class XUiC_ServerJoinRulesDialog : XUiController
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Disconnect();
 	}
 
-	// Token: 0x0600828A RID: 33418 RVA: 0x0031B342 File Offset: 0x00319542
+	// Token: 0x060082DC RID: 33500 RVA: 0x0031D046 File Offset: 0x0031B246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSpawn_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -48,7 +48,7 @@ public class XUiC_ServerJoinRulesDialog : XUiController
 		GameManager.Instance.DoSpawn();
 	}
 
-	// Token: 0x0600828B RID: 33419 RVA: 0x0031B36C File Offset: 0x0031956C
+	// Token: 0x060082DD RID: 33501 RVA: 0x0031D070 File Offset: 0x0031B270
 	public static void Show(LocalPlayerUI _playerUi, string _confirmationText)
 	{
 		XUiC_ServerJoinRulesDialog childByType = _playerUi.xui.FindWindowGroupByName(XUiC_ServerJoinRulesDialog.ID).GetChildByType<XUiC_ServerJoinRulesDialog>();
@@ -59,10 +59,10 @@ public class XUiC_ServerJoinRulesDialog : XUiController
 		_playerUi.windowManager.Open(XUiC_ServerJoinRulesDialog.ID, true, true);
 	}
 
-	// Token: 0x040060C6 RID: 24774
+	// Token: 0x04006104 RID: 24836
 	public static string ID = "";
 
-	// Token: 0x040060C7 RID: 24775
+	// Token: 0x04006105 RID: 24837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label labelConfirmationText;
 }

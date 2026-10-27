@@ -7,15 +7,15 @@ using UnityEngine.Scripting;
 public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 {
 	// Token: 0x170000DD RID: 221
-	// (get) Token: 0x06000AE9 RID: 2793 RVA: 0x00046751 File Offset: 0x00044951
-	// (set) Token: 0x06000AEA RID: 2794 RVA: 0x00046759 File Offset: 0x00044959
+	// (get) Token: 0x06000AE9 RID: 2793 RVA: 0x00046711 File Offset: 0x00044911
+	// (set) Token: 0x06000AEA RID: 2794 RVA: 0x00046719 File Offset: 0x00044919
 	public SignCanvas Canvas
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06000AEB RID: 2795 RVA: 0x00046764 File Offset: 0x00044964
+	// Token: 0x06000AEB RID: 2795 RVA: 0x00046724 File Offset: 0x00044924
 	public static CanvasRotationMode GetUprightRotation(byte blockRotation)
 	{
 		int num = (int)(blockRotation & 3);
@@ -49,13 +49,13 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		}
 	}
 
-	// Token: 0x06000AEC RID: 2796 RVA: 0x000467C8 File Offset: 0x000449C8
+	// Token: 0x06000AEC RID: 2796 RVA: 0x00046788 File Offset: 0x00044988
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
 	}
 
-	// Token: 0x06000AED RID: 2797 RVA: 0x000467D4 File Offset: 0x000449D4
+	// Token: 0x06000AED RID: 2797 RVA: 0x00046794 File Offset: 0x00044994
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -87,7 +87,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		}
 	}
 
-	// Token: 0x06000AEE RID: 2798 RVA: 0x000468BC File Offset: 0x00044ABC
+	// Token: 0x06000AEE RID: 2798 RVA: 0x0004687C File Offset: 0x00044A7C
 	public override void SetBlockEntityData(BlockEntityData _blockEntityData)
 	{
 		if (_blockEntityData == null || !_blockEntityData.bHasTransform)
@@ -115,14 +115,14 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		}
 	}
 
-	// Token: 0x06000AEF RID: 2799 RVA: 0x0004696C File Offset: 0x00044B6C
+	// Token: 0x06000AEF RID: 2799 RVA: 0x0004692C File Offset: 0x00044B2C
 	public override void OnAdded(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnAdded(_blockPos, _blockValue);
 		this.pendingCanvasState.CanvasRotation = TEFeatureCanvas.GetUprightRotation(_blockValue.rotation);
 	}
 
-	// Token: 0x06000AF0 RID: 2800 RVA: 0x00046990 File Offset: 0x00044B90
+	// Token: 0x06000AF0 RID: 2800 RVA: 0x00046950 File Offset: 0x00044B50
 	public bool TryReplaceSignReference(GlobalSignId from, GlobalSignId to)
 	{
 		SignCanvas.CanvasState canvasState = ((this.Canvas != null) ? this.Canvas.State : this.pendingCanvasState);
@@ -141,7 +141,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		return true;
 	}
 
-	// Token: 0x06000AF1 RID: 2801 RVA: 0x000469FC File Offset: 0x00044BFC
+	// Token: 0x06000AF1 RID: 2801 RVA: 0x000469BC File Offset: 0x00044BBC
 	public override void OnLoad()
 	{
 		base.OnLoad();
@@ -169,7 +169,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		Log.Error(string.Format("TEFeatureCanvas at {0} references sign '{1}', which has no data but is not recorded as ", base.ToWorldPos(), signId) + "deleted. The reference has been left intact in case the data can be restored.");
 	}
 
-	// Token: 0x06000AF2 RID: 2802 RVA: 0x00046AA9 File Offset: 0x00044CA9
+	// Token: 0x06000AF2 RID: 2802 RVA: 0x00046A69 File Offset: 0x00044C69
 	public override void OnDestroy()
 	{
 		base.OnDestroy();
@@ -181,7 +181,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		canvas.Cleanup();
 	}
 
-	// Token: 0x06000AF3 RID: 2803 RVA: 0x00046AC1 File Offset: 0x00044CC1
+	// Token: 0x06000AF3 RID: 2803 RVA: 0x00046A81 File Offset: 0x00044C81
 	public override void OnUnload(World _world)
 	{
 		base.OnUnload(_world);
@@ -193,7 +193,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		canvas.Cleanup();
 	}
 
-	// Token: 0x06000AF4 RID: 2804 RVA: 0x00046ADA File Offset: 0x00044CDA
+	// Token: 0x06000AF4 RID: 2804 RVA: 0x00046A9A File Offset: 0x00044C9A
 	public override void OnRemove(World _world)
 	{
 		base.OnRemove(_world);
@@ -205,20 +205,20 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		canvas.Cleanup();
 	}
 
-	// Token: 0x06000AF5 RID: 2805 RVA: 0x00046AF3 File Offset: 0x00044CF3
+	// Token: 0x06000AF5 RID: 2805 RVA: 0x00046AB3 File Offset: 0x00044CB3
 	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		this.ShowUI(_success);
 		return true;
 	}
 
-	// Token: 0x06000AF6 RID: 2806 RVA: 0x00046AFD File Offset: 0x00044CFD
+	// Token: 0x06000AF6 RID: 2806 RVA: 0x00046ABD File Offset: 0x00044CBD
 	public void ReleaseLock()
 	{
 		LockManager.Instance.UnlockRequestLocal();
 	}
 
-	// Token: 0x06000AF7 RID: 2807 RVA: 0x00046B0C File Offset: 0x00044D0C
+	// Token: 0x06000AF7 RID: 2807 RVA: 0x00046ACC File Offset: 0x00044CCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowUI(bool _lockGranted)
 	{
@@ -231,21 +231,21 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		XUiC_SignGalleryWindow.Open(uiforPrimaryPlayer, this);
 	}
 
-	// Token: 0x06000AF8 RID: 2808 RVA: 0x00046B53 File Offset: 0x00044D53
+	// Token: 0x06000AF8 RID: 2808 RVA: 0x00046B13 File Offset: 0x00044D13
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
 		return Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x06000AF9 RID: 2809 RVA: 0x00046B71 File Offset: 0x00044D71
+	// Token: 0x06000AF9 RID: 2809 RVA: 0x00046B31 File Offset: 0x00044D31
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
 		_addCallback(new BlockActivationCommand("edit", "pen", true, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000AFA RID: 2810 RVA: 0x00046B9C File Offset: 0x00044D9C
+	// Token: 0x06000AFA RID: 2810 RVA: 0x00046B5C File Offset: 0x00044D5C
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -270,7 +270,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		return true;
 	}
 
-	// Token: 0x06000AFB RID: 2811 RVA: 0x00046C18 File Offset: 0x00044E18
+	// Token: 0x06000AFB RID: 2811 RVA: 0x00046BD8 File Offset: 0x00044DD8
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -309,7 +309,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		return base.CommandIs(_commandName, "report");
 	}
 
-	// Token: 0x06000AFC RID: 2812 RVA: 0x00046D0C File Offset: 0x00044F0C
+	// Token: 0x06000AFC RID: 2812 RVA: 0x00046CCC File Offset: 0x00044ECC
 	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
@@ -361,7 +361,7 @@ public class TEFeatureCanvas : TEFeatureAbs, IFeatureSavedInPrefab
 		this.pendingCanvasState = canvasState;
 	}
 
-	// Token: 0x06000AFD RID: 2813 RVA: 0x00046DFC File Offset: 0x00044FFC
+	// Token: 0x06000AFD RID: 2813 RVA: 0x00046DBC File Offset: 0x00044FBC
 	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);

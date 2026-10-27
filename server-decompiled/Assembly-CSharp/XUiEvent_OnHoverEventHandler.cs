@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000EC2 RID: 3778
-// (Invoke) Token: 0x06007559 RID: 30041
+// Token: 0x02000ECD RID: 3789
+// (Invoke) Token: 0x0600757E RID: 30078
 public delegate void XUiEvent_OnHoverEventHandler(XUiController _sender, bool _isOver);

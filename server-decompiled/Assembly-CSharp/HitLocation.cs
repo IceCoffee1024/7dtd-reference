@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006AC RID: 1708
+// Token: 0x020006B3 RID: 1715
 [Preserve]
 public class HitLocation : TargetedCompareRequirementBase
 {
-	// Token: 0x060035D2 RID: 13778 RVA: 0x00162256 File Offset: 0x00160456
+	// Token: 0x060035E0 RID: 13792 RVA: 0x00162E4A File Offset: 0x0016104A
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -21,13 +21,13 @@ public class HitLocation : TargetedCompareRequirementBase
 		return (this.bodyParts & _params.DamageResponse.HitBodyPart) == EnumBodyPartHit.None;
 	}
 
-	// Token: 0x060035D3 RID: 13779 RVA: 0x00162296 File Offset: 0x00160496
+	// Token: 0x060035E1 RID: 13793 RVA: 0x00162E8A File Offset: 0x0016108A
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("{0} hit location: ", this.invert ? "NOT " : "", this.bodyPartNames));
 	}
 
-	// Token: 0x060035D4 RID: 13780 RVA: 0x001622C4 File Offset: 0x001604C4
+	// Token: 0x060035E2 RID: 13794 RVA: 0x00162EB8 File Offset: 0x001610B8
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -44,11 +44,11 @@ public class HitLocation : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B55 RID: 11093
+	// Token: 0x04002B70 RID: 11120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string bodyPartNames = "";
 
-	// Token: 0x04002B56 RID: 11094
+	// Token: 0x04002B71 RID: 11121
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumBodyPartHit bodyParts;
 }

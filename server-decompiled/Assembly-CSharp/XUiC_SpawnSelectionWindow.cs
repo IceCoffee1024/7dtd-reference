@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200108C RID: 4236
+// Token: 0x0200109C RID: 4252
 [Preserve]
 public class XUiC_SpawnSelectionWindow : XUiController
 {
-	// Token: 0x0600864E RID: 34382 RVA: 0x00335555 File Offset: 0x00333755
+	// Token: 0x060086A1 RID: 34465 RVA: 0x003375D9 File Offset: 0x003357D9
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "spawn_sound")
@@ -22,7 +22,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x0600864F RID: 34383 RVA: 0x00335588 File Offset: 0x00333788
+	// Token: 0x060086A2 RID: 34466 RVA: 0x0033760C File Offset: 0x0033580C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -72,7 +72,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x06008650 RID: 34384 RVA: 0x003356B0 File Offset: 0x003338B0
+	// Token: 0x060086A3 RID: 34467 RVA: 0x00337734 File Offset: 0x00335934
 	public override void Init()
 	{
 		base.Init();
@@ -149,7 +149,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008651 RID: 34385 RVA: 0x00335808 File Offset: 0x00333A08
+	// Token: 0x060086A4 RID: 34468 RVA: 0x0033788C File Offset: 0x00335A8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshButtons()
 	{
@@ -180,7 +180,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		this.bHasBackpack = vector3i != Vector3i.zero;
 	}
 
-	// Token: 0x06008652 RID: 34386 RVA: 0x0033589C File Offset: 0x00333A9C
+	// Token: 0x060086A5 RID: 34469 RVA: 0x00337920 File Offset: 0x00335B20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnButtonPressed(SpawnMethod _method, int _nearEntityId = -1)
 	{
@@ -259,7 +259,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		XUiC_ProgressWindow.Open(LocalPlayerUI.primaryUI, Localization.Get("uiLoadCreatingPlayer", false, null), null, true, true, false);
 	}
 
-	// Token: 0x06008653 RID: 34387 RVA: 0x00335A5A File Offset: 0x00333C5A
+	// Token: 0x060086A6 RID: 34470 RVA: 0x00337ADE File Offset: 0x00335CDE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator sendFriendRequest(int _entityId)
 	{
@@ -297,7 +297,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06008654 RID: 34388 RVA: 0x00335A6C File Offset: 0x00333C6C
+	// Token: 0x060086A7 RID: 34471 RVA: 0x00337AF0 File Offset: 0x00335CF0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -318,7 +318,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008655 RID: 34389 RVA: 0x00335B04 File Offset: 0x00333D04
+	// Token: 0x060086A8 RID: 34472 RVA: 0x00337B88 File Offset: 0x00335D88
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -330,14 +330,14 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		((XUiV_Window)base.ViewComponent).ForceVisible(1f);
 	}
 
-	// Token: 0x06008656 RID: 34390 RVA: 0x00335B50 File Offset: 0x00333D50
+	// Token: 0x060086A9 RID: 34473 RVA: 0x00337BD4 File Offset: 0x00335DD4
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.bChooseSpawnPosition = false;
 	}
 
-	// Token: 0x06008657 RID: 34391 RVA: 0x00335B5F File Offset: 0x00333D5F
+	// Token: 0x060086AA RID: 34474 RVA: 0x00337BE3 File Offset: 0x00335DE3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showSpawningComponents()
 	{
@@ -350,7 +350,7 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		Manager.PlayXUiSound(this.spawnReadyClip, 1f);
 	}
 
-	// Token: 0x06008658 RID: 34392 RVA: 0x00335B92 File Offset: 0x00333D92
+	// Token: 0x060086AB RID: 34475 RVA: 0x00337C16 File Offset: 0x00335E16
 	public static void Open(LocalPlayerUI _playerUi, bool _chooseSpawnPosition, bool _enteringGame, bool _firstTimeSpawn = false)
 	{
 		XUiC_SpawnSelectionWindow childByType = _playerUi.xui.FindWindowGroupByName(XUiC_SpawnSelectionWindow.ID).GetChildByType<XUiC_SpawnSelectionWindow>();
@@ -360,62 +360,62 @@ public class XUiC_SpawnSelectionWindow : XUiController
 		_playerUi.windowManager.Open(XUiC_SpawnSelectionWindow.ID, true, true);
 	}
 
-	// Token: 0x06008659 RID: 34393 RVA: 0x00335BCF File Offset: 0x00333DCF
+	// Token: 0x060086AC RID: 34476 RVA: 0x00337C53 File Offset: 0x00335E53
 	public static void Close(LocalPlayerUI _playerUi)
 	{
 		_playerUi.windowManager.Close(XUiC_SpawnSelectionWindow.ID);
 	}
 
-	// Token: 0x0600865A RID: 34394 RVA: 0x00335BE1 File Offset: 0x00333DE1
+	// Token: 0x060086AD RID: 34477 RVA: 0x00337C65 File Offset: 0x00335E65
 	public static bool IsOpenInUI(LocalPlayerUI _playerUi)
 	{
 		return _playerUi.windowManager.IsWindowOpen(XUiC_SpawnSelectionWindow.ID);
 	}
 
-	// Token: 0x0600865B RID: 34395 RVA: 0x00335BF3 File Offset: 0x00333DF3
+	// Token: 0x060086AE RID: 34478 RVA: 0x00337C77 File Offset: 0x00335E77
 	public static XUiC_SpawnSelectionWindow GetWindow(LocalPlayerUI _playerUi)
 	{
 		return _playerUi.xui.FindWindowGroupByName(XUiC_SpawnSelectionWindow.ID).GetChildByType<XUiC_SpawnSelectionWindow>();
 	}
 
-	// Token: 0x040063D9 RID: 25561
+	// Token: 0x04006418 RID: 25624
 	public static string ID = "";
 
-	// Token: 0x040063DA RID: 25562
+	// Token: 0x04006419 RID: 25625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bChooseSpawnPosition;
 
-	// Token: 0x040063DB RID: 25563
+	// Token: 0x0400641A RID: 25626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bEnteringGame;
 
-	// Token: 0x040063DC RID: 25564
+	// Token: 0x0400641B RID: 25627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFirstTimeSpawn;
 
-	// Token: 0x040063DD RID: 25565
+	// Token: 0x0400641C RID: 25628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bHasBedroll;
 
-	// Token: 0x040063DE RID: 25566
+	// Token: 0x0400641D RID: 25629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bHasBackpack;
 
-	// Token: 0x040063DF RID: 25567
+	// Token: 0x0400641E RID: 25630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float delayCountdownTime;
 
-	// Token: 0x040063E0 RID: 25568
+	// Token: 0x0400641F RID: 25631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip spawnReadyClip;
 
-	// Token: 0x040063E1 RID: 25569
+	// Token: 0x04006420 RID: 25632
 	public SpawnMethod spawnMethod;
 
-	// Token: 0x040063E2 RID: 25570
+	// Token: 0x04006421 RID: 25633
 	public SpawnPosition spawnTarget;
 
-	// Token: 0x040063E3 RID: 25571
+	// Token: 0x04006422 RID: 25634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool setCursor;
 }

@@ -4,11 +4,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A1 RID: 1697
+// Token: 0x020006A8 RID: 1704
 [Preserve]
 public class InBiome : TargetedCompareRequirementBase
 {
-	// Token: 0x060035B2 RID: 13746 RVA: 0x00161B08 File Offset: 0x0015FD08
+	// Token: 0x060035C0 RID: 13760 RVA: 0x001626FC File Offset: 0x001608FC
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -26,13 +26,13 @@ public class InBiome : TargetedCompareRequirementBase
 		return this.biomeID != (int)_params.Biome.m_Id;
 	}
 
-	// Token: 0x060035B3 RID: 13747 RVA: 0x00161B5C File Offset: 0x0015FD5C
+	// Token: 0x060035C1 RID: 13761 RVA: 0x00162750 File Offset: 0x00160950
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("{0}in biome {1}", this.invert ? "NOT " : "", this.biomeID));
 	}
 
-	// Token: 0x060035B4 RID: 13748 RVA: 0x00161B90 File Offset: 0x0015FD90
+	// Token: 0x060035C2 RID: 13762 RVA: 0x00162784 File Offset: 0x00160984
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -44,7 +44,7 @@ public class InBiome : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B52 RID: 11090
+	// Token: 0x04002B6D RID: 11117
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomeID;
 }

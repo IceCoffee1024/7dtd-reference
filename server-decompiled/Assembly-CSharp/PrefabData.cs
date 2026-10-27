@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using PrefabVolumes;
 
-// Token: 0x0200092E RID: 2350
+// Token: 0x02000938 RID: 2360
 public class PrefabData
 {
-	// Token: 0x060043B4 RID: 17332 RVA: 0x001A8D68 File Offset: 0x001A6F68
+	// Token: 0x060043D7 RID: 17367 RVA: 0x001A9DEC File Offset: 0x001A7FEC
 	public PrefabData(PathAbstractions.AbstractedLocation _location)
 	{
 		this.POIMarkers = new PrefabMarkerVolumeList(null);
@@ -13,7 +13,7 @@ public class PrefabData
 		this.Name = _location.Name.ToLower();
 	}
 
-	// Token: 0x060043B5 RID: 17333 RVA: 0x001A8DB8 File Offset: 0x001A6FB8
+	// Token: 0x060043D8 RID: 17368 RVA: 0x001A9E3C File Offset: 0x001A803C
 	public bool Init(DynamicProperties properties)
 	{
 		this.size = new Vector3i(-1, -1, -1);
@@ -48,7 +48,7 @@ public class PrefabData
 		return true;
 	}
 
-	// Token: 0x060043B6 RID: 17334 RVA: 0x001A8F48 File Offset: 0x001A7148
+	// Token: 0x060043D9 RID: 17369 RVA: 0x001A9FCC File Offset: 0x001A81CC
 	public List<Marker> RotatePOIMarkers(bool _bLeft, int _rotCount)
 	{
 		Vector3i vector3i = this.size;
@@ -68,7 +68,7 @@ public class PrefabData
 		return list;
 	}
 
-	// Token: 0x060043B7 RID: 17335 RVA: 0x001A8FE0 File Offset: 0x001A71E0
+	// Token: 0x060043DA RID: 17370 RVA: 0x001AA064 File Offset: 0x001A8264
 	public static PrefabData LoadPrefabData(PathAbstractions.AbstractedLocation _location)
 	{
 		if (!SdFile.Exists(_location.FullPathNoExtension + ".xml"))
@@ -88,45 +88,45 @@ public class PrefabData
 		return prefabData;
 	}
 
-	// Token: 0x040036E0 RID: 14048
+	// Token: 0x04003700 RID: 14080
 	public const int ThemeRepeatDistanceDefault = 300;
 
-	// Token: 0x040036E1 RID: 14049
+	// Token: 0x04003701 RID: 14081
 	public const int DuplicateRepeatDistanceDefault = 1000;
 
-	// Token: 0x040036E2 RID: 14050
+	// Token: 0x04003702 RID: 14082
 	public Vector3i size;
 
-	// Token: 0x040036E3 RID: 14051
+	// Token: 0x04003703 RID: 14083
 	public readonly string Name;
 
-	// Token: 0x040036E4 RID: 14052
+	// Token: 0x04003704 RID: 14084
 	public FastTags<TagGroup.Poi> Tags;
 
-	// Token: 0x040036E5 RID: 14053
+	// Token: 0x04003705 RID: 14085
 	public FastTags<TagGroup.Poi> ThemeTags;
 
-	// Token: 0x040036E6 RID: 14054
+	// Token: 0x04003706 RID: 14086
 	public int ThemeRepeatDistance = 300;
 
-	// Token: 0x040036E7 RID: 14055
+	// Token: 0x04003707 RID: 14087
 	public int DuplicateRepeatDistance = 1000;
 
-	// Token: 0x040036E8 RID: 14056
+	// Token: 0x04003708 RID: 14088
 	public byte rotationToFaceNorth;
 
-	// Token: 0x040036E9 RID: 14057
+	// Token: 0x04003709 RID: 14089
 	public float DensityScore;
 
-	// Token: 0x040036EA RID: 14058
+	// Token: 0x0400370A RID: 14090
 	public int DifficultyTier;
 
-	// Token: 0x040036EB RID: 14059
+	// Token: 0x0400370B RID: 14091
 	public int yOffset;
 
-	// Token: 0x040036EC RID: 14060
+	// Token: 0x0400370C RID: 14092
 	public PathAbstractions.AbstractedLocation location;
 
-	// Token: 0x040036ED RID: 14061
+	// Token: 0x0400370D RID: 14093
 	public readonly PrefabMarkerVolumeList POIMarkers;
 }

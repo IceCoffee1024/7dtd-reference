@@ -2,14 +2,14 @@
 
 namespace Platform
 {
-	// Token: 0x02001BE4 RID: 7140
+	// Token: 0x02001C15 RID: 7189
 	public enum SaveRoamingMode
 	{
-		// Token: 0x0400A1E6 RID: 41446
+		// Token: 0x0400A2CF RID: 41679
 		None,
-		// Token: 0x0400A1E7 RID: 41447
+		// Token: 0x0400A2D0 RID: 41680
 		Optional,
-		// Token: 0x0400A1E8 RID: 41448
+		// Token: 0x0400A2D1 RID: 41681
 		Forced
 	}
 }

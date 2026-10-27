@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001615 RID: 5653
+// Token: 0x02001627 RID: 5671
 [Preserve]
 public class vp_FPEarthquake : MonoBehaviour
 {
-	// Token: 0x170014AF RID: 5295
-	// (get) Token: 0x0600B088 RID: 45192 RVA: 0x0041E1D3 File Offset: 0x0041C3D3
+	// Token: 0x170014BB RID: 5307
+	// (get) Token: 0x0600B0E0 RID: 45280 RVA: 0x004205D7 File Offset: 0x0041E7D7
 	public vp_FPPlayerEventHandler FPPlayer
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -21,7 +21,7 @@ public class vp_FPEarthquake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B089 RID: 45193 RVA: 0x0041E1F4 File Offset: 0x0041C3F4
+	// Token: 0x0600B0E1 RID: 45281 RVA: 0x004205F8 File Offset: 0x0041E7F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -31,7 +31,7 @@ public class vp_FPEarthquake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B08A RID: 45194 RVA: 0x0041E210 File Offset: 0x0041C410
+	// Token: 0x0600B0E2 RID: 45282 RVA: 0x00420614 File Offset: 0x0041E814
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -41,7 +41,7 @@ public class vp_FPEarthquake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B08B RID: 45195 RVA: 0x0041E22C File Offset: 0x0041C42C
+	// Token: 0x0600B0E3 RID: 45283 RVA: 0x00420630 File Offset: 0x0041E830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FixedUpdate()
 	{
@@ -51,7 +51,7 @@ public class vp_FPEarthquake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B08C RID: 45196 RVA: 0x0041E240 File Offset: 0x0041C440
+	// Token: 0x0600B0E4 RID: 45284 RVA: 0x00420644 File Offset: 0x0041E844
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateEarthQuake()
 	{
@@ -68,7 +68,7 @@ public class vp_FPEarthquake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B08D RID: 45197 RVA: 0x0041E324 File Offset: 0x0041C524
+	// Token: 0x0600B0E5 RID: 45285 RVA: 0x00420728 File Offset: 0x0041E928
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_CameraEarthQuake()
 	{
@@ -79,16 +79,16 @@ public class vp_FPEarthquake : MonoBehaviour
 		this.FPPlayer.CameraEarthQuake.AutoDuration = vector.z;
 	}
 
-	// Token: 0x0600B08E RID: 45198 RVA: 0x0041E391 File Offset: 0x0041C591
+	// Token: 0x0600B0E6 RID: 45286 RVA: 0x00420795 File Offset: 0x0041E995
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_CameraBombShake(float impact)
 	{
 		this.FPPlayer.CameraEarthQuake.TryStart<Vector3>(new Vector3(impact * 0.5f, impact * 0.5f, 1f));
 	}
 
-	// Token: 0x170014B0 RID: 5296
-	// (get) Token: 0x0600B08F RID: 45199 RVA: 0x0041E3BC File Offset: 0x0041C5BC
-	// (set) Token: 0x0600B090 RID: 45200 RVA: 0x0041E3C4 File Offset: 0x0041C5C4
+	// Token: 0x170014BC RID: 5308
+	// (get) Token: 0x0600B0E7 RID: 45287 RVA: 0x004207C0 File Offset: 0x0041E9C0
+	// (set) Token: 0x0600B0E8 RID: 45288 RVA: 0x004207C8 File Offset: 0x0041E9C8
 	public virtual Vector3 OnValue_CameraEarthQuakeForce
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -103,22 +103,22 @@ public class vp_FPEarthquake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040083F0 RID: 33776
+	// Token: 0x04008431 RID: 33841
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CameraEarthQuakeForce;
 
-	// Token: 0x040083F1 RID: 33777
+	// Token: 0x04008432 RID: 33842
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_Endtime;
 
-	// Token: 0x040083F2 RID: 33778
+	// Token: 0x04008433 RID: 33843
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_Magnitude = Vector2.zero;
 
-	// Token: 0x040083F3 RID: 33779
+	// Token: 0x04008434 RID: 33844
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_FPPlayer;

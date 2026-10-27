@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Webserver
 {
-	// Token: 0x02001AE6 RID: 6886
+	// Token: 0x02001B17 RID: 6935
 	public class LogBuffer
 	{
 		// Token: 0x14000119 RID: 281
-		// (add) Token: 0x0600CFA6 RID: 53158 RVA: 0x004B3BD4 File Offset: 0x004B1DD4
-		// (remove) Token: 0x0600CFA7 RID: 53159 RVA: 0x004B3C08 File Offset: 0x004B1E08
+		// (add) Token: 0x0600D0BA RID: 53434 RVA: 0x004B76D0 File Offset: 0x004B58D0
+		// (remove) Token: 0x0600D0BB RID: 53435 RVA: 0x004B7704 File Offset: 0x004B5904
 		public static event Action<LogBuffer.LogEntry> EntryAdded;
 
-		// Token: 0x0600CFA8 RID: 53160 RVA: 0x004B3C3B File Offset: 0x004B1E3B
+		// Token: 0x0600D0BC RID: 53436 RVA: 0x004B7737 File Offset: 0x004B5937
 		public static void Init()
 		{
 			if (LogBuffer.instance == null)
@@ -21,15 +21,15 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFA9 RID: 53161 RVA: 0x004B3C4E File Offset: 0x004B1E4E
+		// Token: 0x0600D0BD RID: 53437 RVA: 0x004B774A File Offset: 0x004B594A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LogBuffer()
 		{
 			Log.LogCallbacksExtended += this.LogCallback;
 		}
 
-		// Token: 0x17001A0F RID: 6671
-		// (get) Token: 0x0600CFAA RID: 53162 RVA: 0x004B3C7D File Offset: 0x004B1E7D
+		// Token: 0x17001A57 RID: 6743
+		// (get) Token: 0x0600D0BE RID: 53438 RVA: 0x004B7779 File Offset: 0x004B5979
 		public static LogBuffer Instance
 		{
 			get
@@ -43,8 +43,8 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x17001A10 RID: 6672
-		// (get) Token: 0x0600CFAB RID: 53163 RVA: 0x004B3C94 File Offset: 0x004B1E94
+		// Token: 0x17001A58 RID: 6744
+		// (get) Token: 0x0600D0BF RID: 53439 RVA: 0x004B7790 File Offset: 0x004B5990
 		public int OldestLine
 		{
 			get
@@ -59,8 +59,8 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x17001A11 RID: 6673
-		// (get) Token: 0x0600CFAC RID: 53164 RVA: 0x004B3CD8 File Offset: 0x004B1ED8
+		// Token: 0x17001A59 RID: 6745
+		// (get) Token: 0x0600D0C0 RID: 53440 RVA: 0x004B77D4 File Offset: 0x004B59D4
 		public int LatestLine
 		{
 			get
@@ -75,8 +75,8 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x17001A12 RID: 6674
-		// (get) Token: 0x0600CFAD RID: 53165 RVA: 0x004B3D28 File Offset: 0x004B1F28
+		// Token: 0x17001A5A RID: 6746
+		// (get) Token: 0x0600D0C1 RID: 53441 RVA: 0x004B7824 File Offset: 0x004B5A24
 		public int StoredLines
 		{
 			get
@@ -91,7 +91,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x17001A13 RID: 6675
+		// Token: 0x17001A5B RID: 6747
 		public LogBuffer.LogEntry this[int _index]
 		{
 			get
@@ -108,7 +108,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFAF RID: 53167 RVA: 0x004B3DDC File Offset: 0x004B1FDC
+		// Token: 0x0600D0C3 RID: 53443 RVA: 0x004B78D8 File Offset: 0x004B5AD8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LogCallback(string _formattedMsg, string _plainMsg, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 		{
@@ -130,7 +130,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFB0 RID: 53168 RVA: 0x004B3EA4 File Offset: 0x004B20A4
+		// Token: 0x0600D0C4 RID: 53444 RVA: 0x004B79A0 File Offset: 0x004B5BA0
 		public List<LogBuffer.LogEntry> GetRange(ref int _start, int _count, out int _end)
 		{
 			List<LogBuffer.LogEntry> list = this.logEntries;
@@ -182,30 +182,30 @@ namespace Webserver
 			return range;
 		}
 
-		// Token: 0x04009D07 RID: 40199
+		// Token: 0x04009DF0 RID: 40432
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int maxEntries = 3000;
 
-		// Token: 0x04009D08 RID: 40200
+		// Token: 0x04009DF1 RID: 40433
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static LogBuffer instance;
 
-		// Token: 0x04009D09 RID: 40201
+		// Token: 0x04009DF2 RID: 40434
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<LogBuffer.LogEntry> logEntries = new List<LogBuffer.LogEntry>();
 
-		// Token: 0x04009D0A RID: 40202
+		// Token: 0x04009DF3 RID: 40435
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int listOffset;
 
-		// Token: 0x04009D0C RID: 40204
+		// Token: 0x04009DF5 RID: 40437
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<LogBuffer.LogEntry> emptyList = new List<LogBuffer.LogEntry>();
 
-		// Token: 0x02001AE7 RID: 6887
+		// Token: 0x02001B18 RID: 6936
 		public class LogEntry
 		{
-			// Token: 0x0600CFB1 RID: 53169 RVA: 0x004B3FD4 File Offset: 0x004B21D4
+			// Token: 0x0600D0C5 RID: 53445 RVA: 0x004B7AD0 File Offset: 0x004B5CD0
 			public LogEntry(int _messageId, DateTime _timestamp, string _message, string _trace, LogType _type, long _uptime)
 			{
 				this.MessageId = _messageId;
@@ -217,25 +217,25 @@ namespace Webserver
 				this.Uptime = _uptime;
 			}
 
-			// Token: 0x04009D0D RID: 40205
+			// Token: 0x04009DF6 RID: 40438
 			public readonly int MessageId;
 
-			// Token: 0x04009D0E RID: 40206
+			// Token: 0x04009DF7 RID: 40439
 			public readonly DateTime Timestamp;
 
-			// Token: 0x04009D0F RID: 40207
+			// Token: 0x04009DF8 RID: 40440
 			public readonly string IsoTime;
 
-			// Token: 0x04009D10 RID: 40208
+			// Token: 0x04009DF9 RID: 40441
 			public readonly string Message;
 
-			// Token: 0x04009D11 RID: 40209
+			// Token: 0x04009DFA RID: 40442
 			public readonly string Trace;
 
-			// Token: 0x04009D12 RID: 40210
+			// Token: 0x04009DFB RID: 40443
 			public readonly LogType Type;
 
-			// Token: 0x04009D13 RID: 40211
+			// Token: 0x04009DFC RID: 40444
 			public readonly long Uptime;
 		}
 	}

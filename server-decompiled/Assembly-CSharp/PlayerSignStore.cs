@@ -4,24 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000A7A RID: 2682
+// Token: 0x02000A84 RID: 2692
 public static class PlayerSignStore
 {
-	// Token: 0x060050C5 RID: 20677 RVA: 0x001EFED6 File Offset: 0x001EE0D6
+	// Token: 0x060050E9 RID: 20713 RVA: 0x001F0FB2 File Offset: 0x001EF1B2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetStoreDir()
 	{
 		return GameIO.GetPlayerDataDir();
 	}
 
-	// Token: 0x060050C6 RID: 20678 RVA: 0x001EFEDD File Offset: 0x001EE0DD
+	// Token: 0x060050EA RID: 20714 RVA: 0x001F0FB9 File Offset: 0x001EF1B9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetStorePath(string libraryId)
 	{
 		return PlayerSignStore.GetStoreDir() + "/" + libraryId + ".signs";
 	}
 
-	// Token: 0x060050C7 RID: 20679 RVA: 0x001EFEF4 File Offset: 0x001EE0F4
+	// Token: 0x060050EB RID: 20715 RVA: 0x001F0FD0 File Offset: 0x001EF1D0
 	public unsafe static void BuildImage(IList<byte[]> signBlobs, PooledExpandableMemoryStream image)
 	{
 		SignStoreIO.BeginImage(image);
@@ -36,7 +36,7 @@ public static class PlayerSignStore
 		SignStoreIO.FinalizeImage(image, 1313297232U, 3, signBlobs.Count, 0);
 	}
 
-	// Token: 0x060050C8 RID: 20680 RVA: 0x001EFF60 File Offset: 0x001EE160
+	// Token: 0x060050EC RID: 20716 RVA: 0x001F103C File Offset: 0x001EF23C
 	public static void Write(string libraryId, PooledExpandableMemoryStream image)
 	{
 		string storeDir = PlayerSignStore.GetStoreDir();
@@ -47,7 +47,7 @@ public static class PlayerSignStore
 		SignStoreIO.WriteWithBackup(PlayerSignStore.GetStorePath(libraryId), image);
 	}
 
-	// Token: 0x060050C9 RID: 20681 RVA: 0x001EFF90 File Offset: 0x001EE190
+	// Token: 0x060050ED RID: 20717 RVA: 0x001F106C File Offset: 0x001EF26C
 	public static bool TryLoad(string libraryId, List<byte[]> signBlobs, out int version)
 	{
 		string storePath = PlayerSignStore.GetStorePath(libraryId);
@@ -71,7 +71,7 @@ public static class PlayerSignStore
 		return false;
 	}
 
-	// Token: 0x060050CA RID: 20682 RVA: 0x001F0014 File Offset: 0x001EE214
+	// Token: 0x060050EE RID: 20718 RVA: 0x001F10F0 File Offset: 0x001EF2F0
 	public static void PreserveUnreadable(string libraryId)
 	{
 		string storePath = PlayerSignStore.GetStorePath(libraryId);
@@ -79,7 +79,7 @@ public static class PlayerSignStore
 		PlayerSignStore.PreserveFile(storePath + ".bak");
 	}
 
-	// Token: 0x060050CB RID: 20683 RVA: 0x001F0034 File Offset: 0x001EE234
+	// Token: 0x060050EF RID: 20719 RVA: 0x001F1110 File Offset: 0x001EF310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PreserveFile(string path)
 	{
@@ -98,7 +98,7 @@ public static class PlayerSignStore
 		}
 	}
 
-	// Token: 0x060050CC RID: 20684 RVA: 0x001F00A4 File Offset: 0x001EE2A4
+	// Token: 0x060050F0 RID: 20720 RVA: 0x001F1180 File Offset: 0x001EF380
 	public static void GetStoredLibraryIds(HashSet<string> results)
 	{
 		PlayerSignStore.<>c__DisplayClass14_0 CS$<>8__locals1;
@@ -112,7 +112,7 @@ public static class PlayerSignStore
 		PlayerSignStore.<GetStoredLibraryIds>g__AddMatching|14_0(".signs.bak", ref CS$<>8__locals1);
 	}
 
-	// Token: 0x060050CD RID: 20685 RVA: 0x001F00EB File Offset: 0x001EE2EB
+	// Token: 0x060050F1 RID: 20721 RVA: 0x001F11C7 File Offset: 0x001EF3C7
 	public static void DeleteAll(string libraryId)
 	{
 		string storePath = PlayerSignStore.GetStorePath(libraryId);
@@ -120,7 +120,7 @@ public static class PlayerSignStore
 		PlayerSignStore.<DeleteAll>g__DeleteIfPresent|15_0(storePath + ".bak");
 	}
 
-	// Token: 0x060050CE RID: 20686 RVA: 0x001F0108 File Offset: 0x001EE308
+	// Token: 0x060050F2 RID: 20722 RVA: 0x001F11E4 File Offset: 0x001EF3E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryReadFile(string path, out List<byte[]> signBlobs, out int version)
 	{
@@ -139,7 +139,7 @@ public static class PlayerSignStore
 		return true;
 	}
 
-	// Token: 0x060050CF RID: 20687 RVA: 0x001F0140 File Offset: 0x001EE340
+	// Token: 0x060050F3 RID: 20723 RVA: 0x001F121C File Offset: 0x001EF41C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryParseImage(string path, byte[] image, out List<byte[]> signBlobs, out int version)
 	{
@@ -194,7 +194,7 @@ public static class PlayerSignStore
 		return true;
 	}
 
-	// Token: 0x060050D0 RID: 20688 RVA: 0x001F02A0 File Offset: 0x001EE4A0
+	// Token: 0x060050F4 RID: 20724 RVA: 0x001F137C File Offset: 0x001EF57C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <GetStoredLibraryIds>g__AddMatching|14_0(string suffix, ref PlayerSignStore.<>c__DisplayClass14_0 A_1)
@@ -210,7 +210,7 @@ public static class PlayerSignStore
 		}
 	}
 
-	// Token: 0x060050D1 RID: 20689 RVA: 0x001F0313 File Offset: 0x001EE513
+	// Token: 0x060050F5 RID: 20725 RVA: 0x001F13EF File Offset: 0x001EF5EF
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <DeleteAll>g__DeleteIfPresent|15_0(string filePath)
@@ -221,29 +221,29 @@ public static class PlayerSignStore
 		}
 	}
 
-	// Token: 0x04003E4B RID: 15947
+	// Token: 0x04003E6C RID: 15980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const uint kMagic = 1313297232U;
 
-	// Token: 0x04003E4C RID: 15948
+	// Token: 0x04003E6D RID: 15981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cLogTag = "[PlayerSignStore]";
 
-	// Token: 0x04003E4D RID: 15949
+	// Token: 0x04003E6E RID: 15982
 	public const int CurrentVersion = 3;
 
-	// Token: 0x04003E4E RID: 15950
+	// Token: 0x04003E6F RID: 15983
 	public const int MinReadableVersion = 3;
 
-	// Token: 0x04003E4F RID: 15951
+	// Token: 0x04003E70 RID: 15984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cStoreExt = ".signs";
 
-	// Token: 0x04003E50 RID: 15952
+	// Token: 0x04003E71 RID: 15985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cBackupExt = ".bak";
 
-	// Token: 0x04003E51 RID: 15953
+	// Token: 0x04003E72 RID: 15986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cLoadFailedExt = ".loadFailed";
 }

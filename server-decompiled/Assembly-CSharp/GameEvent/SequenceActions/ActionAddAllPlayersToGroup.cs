@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001982 RID: 6530
+	// Token: 0x020019B3 RID: 6579
 	[Preserve]
 	public class ActionAddAllPlayersToGroup : BaseAction
 	{
-		// Token: 0x0600C910 RID: 51472 RVA: 0x00498064 File Offset: 0x00496264
+		// Token: 0x0600CA24 RID: 51748 RVA: 0x0049BA58 File Offset: 0x00499C58
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			List<Entity> list = new List<Entity>();
@@ -20,7 +20,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C911 RID: 51473 RVA: 0x004980E4 File Offset: 0x004962E4
+		// Token: 0x0600CA25 RID: 51749 RVA: 0x0049BAD8 File Offset: 0x00499CD8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -28,7 +28,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddAllPlayersToGroup.PropTwitchNegative, ref this.twitchNegative);
 		}
 
-		// Token: 0x0600C912 RID: 51474 RVA: 0x0049810F File Offset: 0x0049630F
+		// Token: 0x0600CA26 RID: 51750 RVA: 0x0049BB03 File Offset: 0x00499D03
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -39,19 +39,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009729 RID: 38697
+		// Token: 0x04009812 RID: 38930
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string groupName = "";
 
-		// Token: 0x0400972A RID: 38698
+		// Token: 0x04009813 RID: 38931
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool twitchNegative = true;
 
-		// Token: 0x0400972B RID: 38699
+		// Token: 0x04009814 RID: 38932
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupName = "group_name";
 
-		// Token: 0x0400972C RID: 38700
+		// Token: 0x04009815 RID: 38933
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTwitchNegative = "twitch_negative";
 	}

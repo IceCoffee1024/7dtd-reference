@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02001435 RID: 5173
+// Token: 0x02001447 RID: 5191
 public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IEquatable<T>
 {
-	// Token: 0x0600A223 RID: 41507 RVA: 0x003CD768 File Offset: 0x003CB968
+	// Token: 0x0600A27B RID: 41595 RVA: 0x003CFB6C File Offset: 0x003CDD6C
 	public GridCompressedData(int _width, int _height, int _cellSizeX, int _cellSizeY)
 	{
 		if (_width % _cellSizeX != 0)
@@ -26,7 +26,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		this.sameValues = new T[num];
 	}
 
-	// Token: 0x0600A224 RID: 41508 RVA: 0x003CD820 File Offset: 0x003CBA20
+	// Token: 0x0600A27C RID: 41596 RVA: 0x003CFC24 File Offset: 0x003CDE24
 	public void SetValue(int _x, int _y, T value)
 	{
 		int num = _x / this.cellSizeX + _y / this.cellSizeY * this.widthCells;
@@ -45,7 +45,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		array[num2] = value;
 	}
 
-	// Token: 0x0600A225 RID: 41509 RVA: 0x003CD8B8 File Offset: 0x003CBAB8
+	// Token: 0x0600A27D RID: 41597 RVA: 0x003CFCBC File Offset: 0x003CDEBC
 	public void SetValue(int _cellIndex, int _cellX, int _cellY, T _value)
 	{
 		T[] array = this.cells[_cellIndex];
@@ -63,14 +63,14 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		array[num] = _value;
 	}
 
-	// Token: 0x0600A226 RID: 41510 RVA: 0x003CD933 File Offset: 0x003CBB33
+	// Token: 0x0600A27E RID: 41598 RVA: 0x003CFD37 File Offset: 0x003CDF37
 	public void SetSameValue(int _cellIndex, T _value)
 	{
 		this.sameValues[_cellIndex] = _value;
 		this.cells[_cellIndex] = null;
 	}
 
-	// Token: 0x0600A227 RID: 41511 RVA: 0x003CD94C File Offset: 0x003CBB4C
+	// Token: 0x0600A27F RID: 41599 RVA: 0x003CFD50 File Offset: 0x003CDF50
 	public void Fill(T _value)
 	{
 		for (int i = 0; i < this.cells.Length; i++)
@@ -80,7 +80,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		}
 	}
 
-	// Token: 0x0600A228 RID: 41512 RVA: 0x003CD984 File Offset: 0x003CBB84
+	// Token: 0x0600A280 RID: 41600 RVA: 0x003CFD88 File Offset: 0x003CDF88
 	public T GetValue(int _x, int _y)
 	{
 		int num = _x / this.cellSizeX + _y / this.cellSizeY * this.widthCells;
@@ -93,13 +93,13 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		return array[num2];
 	}
 
-	// Token: 0x0600A229 RID: 41513 RVA: 0x003CD9E3 File Offset: 0x003CBBE3
+	// Token: 0x0600A281 RID: 41601 RVA: 0x003CFDE7 File Offset: 0x003CDFE7
 	public T GetValue(int _offs)
 	{
 		return this.GetValue(_offs % this.width, _offs / this.width);
 	}
 
-	// Token: 0x0600A22A RID: 41514 RVA: 0x003CD9FC File Offset: 0x003CBBFC
+	// Token: 0x0600A282 RID: 41602 RVA: 0x003CFE00 File Offset: 0x003CE000
 	public void CheckSameValue(int _cellIndex)
 	{
 		T[] array = this.cells[_cellIndex];
@@ -110,7 +110,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		}
 	}
 
-	// Token: 0x0600A22B RID: 41515 RVA: 0x003CDA40 File Offset: 0x003CBC40
+	// Token: 0x0600A283 RID: 41603 RVA: 0x003CFE44 File Offset: 0x003CE044
 	public void CheckSameValues()
 	{
 		for (int i = 0; i < this.sameValues.Length; i++)
@@ -119,7 +119,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		}
 	}
 
-	// Token: 0x0600A22C RID: 41516 RVA: 0x003CDA68 File Offset: 0x003CBC68
+	// Token: 0x0600A284 RID: 41604 RVA: 0x003CFE6C File Offset: 0x003CE06C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool CheckSameValue(T[] _cell)
 	{
@@ -134,7 +134,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		return true;
 	}
 
-	// Token: 0x0600A22D RID: 41517 RVA: 0x003CDAA4 File Offset: 0x003CBCA4
+	// Token: 0x0600A285 RID: 41605 RVA: 0x003CFEA8 File Offset: 0x003CE0A8
 	public T[] ToArray()
 	{
 		T[] array = new T[this.widthCells * this.cellSizeX * this.heightCells * this.cellSizeY];
@@ -167,7 +167,7 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		return array;
 	}
 
-	// Token: 0x0600A22E RID: 41518 RVA: 0x003CDBA0 File Offset: 0x003CBDA0
+	// Token: 0x0600A286 RID: 41606 RVA: 0x003CFFA4 File Offset: 0x003CE1A4
 	public void FromArray(T[] _pixs)
 	{
 		if (_pixs.Length != this.width * this.height)
@@ -196,35 +196,35 @@ public class GridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IE
 		}
 	}
 
-	// Token: 0x0600A22F RID: 41519 RVA: 0x003CDC9C File Offset: 0x003CBE9C
+	// Token: 0x0600A287 RID: 41607 RVA: 0x003D00A0 File Offset: 0x003CE2A0
 	public int EstimateOwnedBytes()
 	{
 		return 0 + MemoryTracker.GetSize<T>(this.sameValues) + MemoryTracker.GetSize<T>(this.cells);
 	}
 
-	// Token: 0x040079FF RID: 31231
+	// Token: 0x04007A40 RID: 31296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[][] cells;
 
-	// Token: 0x04007A00 RID: 31232
+	// Token: 0x04007A41 RID: 31297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[] sameValues;
 
-	// Token: 0x04007A01 RID: 31233
+	// Token: 0x04007A42 RID: 31298
 	public int cellSizeX;
 
-	// Token: 0x04007A02 RID: 31234
+	// Token: 0x04007A43 RID: 31299
 	public int cellSizeY;
 
-	// Token: 0x04007A03 RID: 31235
+	// Token: 0x04007A44 RID: 31300
 	public int widthCells;
 
-	// Token: 0x04007A04 RID: 31236
+	// Token: 0x04007A45 RID: 31301
 	public int heightCells;
 
-	// Token: 0x04007A05 RID: 31237
+	// Token: 0x04007A46 RID: 31302
 	public int width;
 
-	// Token: 0x04007A06 RID: 31238
+	// Token: 0x04007A47 RID: 31303
 	public int height;
 }

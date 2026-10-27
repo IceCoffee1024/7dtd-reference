@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AB5 RID: 6837
+	// Token: 0x02001AE6 RID: 6886
 	[Preserve]
 	public struct DynamicMusicSystemPassArbiter : IPassArbiter, IGamePrefsChangedListener, IPauseable
 	{
-		// Token: 0x170019CE RID: 6606
-		// (get) Token: 0x0600CE60 RID: 52832 RVA: 0x004AF0C7 File Offset: 0x004AD2C7
+		// Token: 0x17001A16 RID: 6678
+		// (get) Token: 0x0600CF74 RID: 53108 RVA: 0x004B2BC3 File Offset: 0x004B0DC3
 		public bool WillAllowPass
 		{
 			get
@@ -17,8 +17,8 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x170019CF RID: 6607
-		// (set) Token: 0x0600CE61 RID: 52833 RVA: 0x004AF0D9 File Offset: 0x004AD2D9
+		// Token: 0x17001A17 RID: 6679
+		// (set) Token: 0x0600CF75 RID: 53109 RVA: 0x004B2BD5 File Offset: 0x004B0DD5
 		public bool DoesPlayerExist
 		{
 			set
@@ -27,8 +27,8 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x170019D0 RID: 6608
-		// (set) Token: 0x0600CE62 RID: 52834 RVA: 0x004AF0E4 File Offset: 0x004AD2E4
+		// Token: 0x17001A18 RID: 6680
+		// (set) Token: 0x0600CF76 RID: 53110 RVA: 0x004B2BE0 File Offset: 0x004B0DE0
 		public bool IsGameUnPaused
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -38,8 +38,8 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x170019D1 RID: 6609
-		// (set) Token: 0x0600CE63 RID: 52835 RVA: 0x004AF0EF File Offset: 0x004AD2EF
+		// Token: 0x17001A19 RID: 6681
+		// (set) Token: 0x0600CF77 RID: 53111 RVA: 0x004B2BEB File Offset: 0x004B0DEB
 		public bool IsDynamicMusicEnabled
 		{
 			set
@@ -48,7 +48,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CE64 RID: 52836 RVA: 0x004AF0FD File Offset: 0x004AD2FD
+		// Token: 0x0600CF78 RID: 53112 RVA: 0x004B2BF9 File Offset: 0x004B0DF9
 		public DynamicMusicSystemPassArbiter(bool _enabled)
 		{
 			this.BoolContainer = 0;
@@ -56,7 +56,7 @@ namespace DynamicMusic
 			GamePrefs.AddChangeListener(this);
 		}
 
-		// Token: 0x0600CE65 RID: 52837 RVA: 0x004AF11D File Offset: 0x004AD31D
+		// Token: 0x0600CF79 RID: 53113 RVA: 0x004B2C19 File Offset: 0x004B0E19
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetBoolContainer(bool _value, byte _place)
 		{
@@ -68,7 +68,7 @@ namespace DynamicMusic
 			this.BoolContainer &= ~_place;
 		}
 
-		// Token: 0x0600CE66 RID: 52838 RVA: 0x004AF143 File Offset: 0x004AD343
+		// Token: 0x0600CF7A RID: 53114 RVA: 0x004B2C3F File Offset: 0x004B0E3F
 		public void OnGamePrefChanged(EnumGamePrefs _enum)
 		{
 			if (_enum == EnumGamePrefs.OptionsDynamicMusicEnabled)
@@ -77,19 +77,19 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CE67 RID: 52839 RVA: 0x004AF159 File Offset: 0x004AD359
+		// Token: 0x0600CF7B RID: 53115 RVA: 0x004B2C55 File Offset: 0x004B0E55
 		public void OnPause()
 		{
 			this.IsGameUnPaused = false;
 		}
 
-		// Token: 0x0600CE68 RID: 52840 RVA: 0x004AF162 File Offset: 0x004AD362
+		// Token: 0x0600CF7C RID: 53116 RVA: 0x004B2C5E File Offset: 0x004B0E5E
 		public void OnUnPause()
 		{
 			this.IsGameUnPaused = true;
 		}
 
-		// Token: 0x04009C3C RID: 39996
+		// Token: 0x04009D25 RID: 40229
 		[PublicizedFrom(EAccessModifier.Private)]
 		public byte BoolContainer;
 	}

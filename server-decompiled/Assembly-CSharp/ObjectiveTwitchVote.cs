@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020009BD RID: 2493
+// Token: 0x020009C7 RID: 2503
 [Preserve]
 public class ObjectiveTwitchVote : BaseObjective
 {
-	// Token: 0x170007EE RID: 2030
-	// (get) Token: 0x06004939 RID: 18745 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170007F4 RID: 2036
+	// (get) Token: 0x0600495C RID: 18780 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool useUpdateLoop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -18,8 +18,8 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x170007EF RID: 2031
-	// (get) Token: 0x0600493A RID: 18746 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007F5 RID: 2037
+	// (get) Token: 0x0600495D RID: 18781 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ShowInQuestLog
 	{
 		get
@@ -28,20 +28,20 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x0600493B RID: 18747 RVA: 0x001C40B3 File Offset: 0x001C22B3
+	// Token: 0x0600495E RID: 18782 RVA: 0x001C5137 File Offset: 0x001C3337
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveAssemble_keyword", false, null);
 	}
 
-	// Token: 0x0600493C RID: 18748 RVA: 0x001CC498 File Offset: 0x001CA698
+	// Token: 0x0600495F RID: 18783 RVA: 0x001CD56C File Offset: 0x001CB76C
 	public override void SetupDisplay()
 	{
 		base.Description = "";
 		this.StatusText = "";
 	}
 
-	// Token: 0x0600493D RID: 18749 RVA: 0x001CC4B0 File Offset: 0x001CA6B0
+	// Token: 0x06004960 RID: 18784 RVA: 0x001CD584 File Offset: 0x001CB784
 	public override void Update(float updateTime)
 	{
 		TwitchManager twitchManager = TwitchManager.Current;
@@ -72,7 +72,7 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x0600493E RID: 18750 RVA: 0x001CC55F File Offset: 0x001CA75F
+	// Token: 0x06004961 RID: 18785 RVA: 0x001CD633 File Offset: 0x001CB833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void VoteStarted()
 	{
@@ -82,7 +82,7 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x0600493F RID: 18751 RVA: 0x001C41F8 File Offset: 0x001C23F8
+	// Token: 0x06004962 RID: 18786 RVA: 0x001C527C File Offset: 0x001C347C
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -96,7 +96,7 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x06004940 RID: 18752 RVA: 0x001CC58C File Offset: 0x001CA78C
+	// Token: 0x06004963 RID: 18787 RVA: 0x001CD660 File Offset: 0x001CB860
 	public override BaseObjective Clone()
 	{
 		ObjectiveTwitchVote objectiveTwitchVote = new ObjectiveTwitchVote();
@@ -105,45 +105,45 @@ public class ObjectiveTwitchVote : BaseObjective
 		return objectiveTwitchVote;
 	}
 
-	// Token: 0x06004941 RID: 18753 RVA: 0x001CC5B3 File Offset: 0x001CA7B3
+	// Token: 0x06004964 RID: 18788 RVA: 0x001CD687 File Offset: 0x001CB887
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
 		properties.ParseString(ObjectiveTwitchVote.PropVoteType, ref this.voteType);
 	}
 
-	// Token: 0x06004942 RID: 18754 RVA: 0x001CC5CD File Offset: 0x001CA7CD
+	// Token: 0x06004965 RID: 18789 RVA: 0x001CD6A1 File Offset: 0x001CB8A1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
 		parameters.Add("vote_type", this.voteType);
 	}
 
-	// Token: 0x04003A6C RID: 14956
+	// Token: 0x04003A8C RID: 14988
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string voteType = "";
 
-	// Token: 0x04003A6D RID: 14957
+	// Token: 0x04003A8D RID: 14989
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float timeRemaining = 2f;
 
-	// Token: 0x04003A6E RID: 14958
+	// Token: 0x04003A8E RID: 14990
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropVoteType = "vote_type";
 
-	// Token: 0x04003A6F RID: 14959
+	// Token: 0x04003A8F RID: 14991
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ObjectiveTwitchVote.TwitchVoteStates GameEventState;
 
-	// Token: 0x020009BE RID: 2494
+	// Token: 0x020009C8 RID: 2504
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum TwitchVoteStates
 	{
-		// Token: 0x04003A71 RID: 14961
+		// Token: 0x04003A91 RID: 14993
 		Start,
-		// Token: 0x04003A72 RID: 14962
+		// Token: 0x04003A92 RID: 14994
 		Waiting,
-		// Token: 0x04003A73 RID: 14963
+		// Token: 0x04003A93 RID: 14995
 		Complete
 	}
 }

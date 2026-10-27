@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020001C2 RID: 450
 public class BlockToolTerrainAdjust : IBlockTool
 {
-	// Token: 0x06000DB5 RID: 3509 RVA: 0x0005AC80 File Offset: 0x00058E80
+	// Token: 0x06000DB5 RID: 3509 RVA: 0x0005AC20 File Offset: 0x00058E20
 	public BlockToolTerrainAdjust(BlockTools.Brush _brush, NguiWdwTerrainEditor _parentWindow)
 	{
 		this.brush = _brush;
@@ -18,7 +18,7 @@ public class BlockToolTerrainAdjust : IBlockTool
 	{
 	}
 
-	// Token: 0x06000DB7 RID: 3511 RVA: 0x0005ACA8 File Offset: 0x00058EA8
+	// Token: 0x06000DB7 RID: 3511 RVA: 0x0005AC48 File Offset: 0x00058E48
 	public void CheckKeys(ItemInventoryData _data, WorldRayHitInfo _hitInfo, PlayerActionsLocal playerActions)
 	{
 		if (_data == null || _data.actionData == null || _data.actionData[0] == null)
@@ -75,13 +75,13 @@ public class BlockToolTerrainAdjust : IBlockTool
 		return false;
 	}
 
-	// Token: 0x06000DB9 RID: 3513 RVA: 0x0003223F File Offset: 0x0003043F
+	// Token: 0x06000DB9 RID: 3513 RVA: 0x000321FF File Offset: 0x000303FF
 	public string GetDebugOutput()
 	{
 		return "";
 	}
 
-	// Token: 0x06000DBA RID: 3514 RVA: 0x0005AEAB File Offset: 0x000590AB
+	// Token: 0x06000DBA RID: 3514 RVA: 0x0005AE4B File Offset: 0x0005904B
 	public virtual bool ExecuteAttackAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal playerActions)
 	{
 		this.isButtonDown = true;
@@ -89,7 +89,7 @@ public class BlockToolTerrainAdjust : IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000DBB RID: 3515 RVA: 0x0005AEAB File Offset: 0x000590AB
+	// Token: 0x06000DBB RID: 3515 RVA: 0x0005AE4B File Offset: 0x0005904B
 	public bool ExecuteUseAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal playerActions)
 	{
 		this.isButtonDown = true;
@@ -97,7 +97,7 @@ public class BlockToolTerrainAdjust : IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000DBC RID: 3516 RVA: 0x0005AEBC File Offset: 0x000590BC
+	// Token: 0x06000DBC RID: 3516 RVA: 0x0005AE5C File Offset: 0x0005905C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte[] GetLocalDensityMap(WorldBase _world, Vector3i blockTargetPos, Vector3i[] localArea)
 	{
@@ -109,7 +109,7 @@ public class BlockToolTerrainAdjust : IBlockTool
 		return array;
 	}
 
-	// Token: 0x06000DBD RID: 3517 RVA: 0x0005AF0E File Offset: 0x0005910E
+	// Token: 0x06000DBD RID: 3517 RVA: 0x0005AEAE File Offset: 0x000590AE
 	public override string ToString()
 	{
 		return "Dig/Place Terrain";

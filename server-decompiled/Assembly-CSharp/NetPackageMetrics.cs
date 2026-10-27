@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200079D RID: 1949
+// Token: 0x020007A5 RID: 1957
 [Preserve]
 public class NetPackageMetrics
 {
-	// Token: 0x17000619 RID: 1561
-	// (get) Token: 0x06003A27 RID: 14887 RVA: 0x0017A430 File Offset: 0x00178630
+	// Token: 0x1700061D RID: 1565
+	// (get) Token: 0x06003A3E RID: 14910 RVA: 0x0017B3C8 File Offset: 0x001795C8
 	public static NetPackageMetrics Instance
 	{
 		get
@@ -17,7 +17,7 @@ public class NetPackageMetrics
 		}
 	}
 
-	// Token: 0x06003A28 RID: 14888 RVA: 0x0017A438 File Offset: 0x00178638
+	// Token: 0x06003A3F RID: 14911 RVA: 0x0017B3D0 File Offset: 0x001795D0
 	public NetPackageMetrics()
 	{
 		NetPackageMetrics._instance = this;
@@ -29,7 +29,7 @@ public class NetPackageMetrics
 		this.packagesSent = new Dictionary<string, List<PackagesSentInfoEntry>>();
 	}
 
-	// Token: 0x06003A29 RID: 14889 RVA: 0x0017A4C4 File Offset: 0x001786C4
+	// Token: 0x06003A40 RID: 14912 RVA: 0x0017B45C File Offset: 0x0017965C
 	public void ResetStats()
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.ResetNetworkStatistics();
@@ -42,7 +42,7 @@ public class NetPackageMetrics
 		Log.Out("Network stats reset");
 	}
 
-	// Token: 0x06003A2A RID: 14890 RVA: 0x0017A522 File Offset: 0x00178722
+	// Token: 0x06003A41 RID: 14913 RVA: 0x0017B4BA File Offset: 0x001796BA
 	public void SetUpdateLength(float length)
 	{
 		Log.Out("Setting network stat length to " + length.ToString() + " seconds");
@@ -50,13 +50,13 @@ public class NetPackageMetrics
 		this.lastUpdateTime = Time.time;
 	}
 
-	// Token: 0x06003A2B RID: 14891 RVA: 0x0017A551 File Offset: 0x00178751
+	// Token: 0x06003A42 RID: 14914 RVA: 0x0017B4E9 File Offset: 0x001796E9
 	public void RestartTimer()
 	{
 		this.lastUpdateTime = Time.time;
 	}
 
-	// Token: 0x06003A2C RID: 14892 RVA: 0x0017A55E File Offset: 0x0017875E
+	// Token: 0x06003A43 RID: 14915 RVA: 0x0017B4F6 File Offset: 0x001796F6
 	public void RecordForPeriod(float length)
 	{
 		this.active = true;
@@ -68,7 +68,7 @@ public class NetPackageMetrics
 		this.playerCount = global::UnityEngine.Object.FindObjectsOfType<EntityPlayer>().Length;
 	}
 
-	// Token: 0x06003A2D RID: 14893 RVA: 0x0017A59E File Offset: 0x0017879E
+	// Token: 0x06003A44 RID: 14916 RVA: 0x0017B536 File Offset: 0x00179736
 	public void CopyToClipboard()
 	{
 		TextEditor textEditor = new TextEditor();
@@ -77,7 +77,7 @@ public class NetPackageMetrics
 		textEditor.Copy();
 	}
 
-	// Token: 0x06003A2E RID: 14894 RVA: 0x0017A5BC File Offset: 0x001787BC
+	// Token: 0x06003A45 RID: 14917 RVA: 0x0017B554 File Offset: 0x00179754
 	public void CopyToCSV(bool includeDetails = false)
 	{
 		TextEditor textEditor = new TextEditor();
@@ -86,7 +86,7 @@ public class NetPackageMetrics
 		textEditor.Copy();
 	}
 
-	// Token: 0x06003A2F RID: 14895 RVA: 0x0017A5DC File Offset: 0x001787DC
+	// Token: 0x06003A46 RID: 14918 RVA: 0x0017B574 File Offset: 0x00179774
 	public void RegisterReceivedPackage(string packageType, int length)
 	{
 		if (!this.active)
@@ -107,7 +107,7 @@ public class NetPackageMetrics
 		this.receivedNetPackageSizes[packageType].Add(length);
 	}
 
-	// Token: 0x06003A30 RID: 14896 RVA: 0x0017A64C File Offset: 0x0017884C
+	// Token: 0x06003A47 RID: 14919 RVA: 0x0017B5E4 File Offset: 0x001797E4
 	public void RegisterSentPackage(string packageType, int length)
 	{
 		if (!this.active)
@@ -128,7 +128,7 @@ public class NetPackageMetrics
 		this.sentNetPackageSizes[packageType].Add(length);
 	}
 
-	// Token: 0x06003A31 RID: 14897 RVA: 0x0017A6BC File Offset: 0x001788BC
+	// Token: 0x06003A48 RID: 14920 RVA: 0x0017B654 File Offset: 0x00179854
 	public void RegisterPackagesSent(List<NetPackageInfo> packages, int count, long uncompressedSize, long compressedSize, float timeStamp, string client)
 	{
 		if (!this.active)
@@ -152,7 +152,7 @@ public class NetPackageMetrics
 		this.packagesSent[client].Add(packagesSentInfoEntry);
 	}
 
-	// Token: 0x06003A32 RID: 14898 RVA: 0x0017A758 File Offset: 0x00178958
+	// Token: 0x06003A49 RID: 14921 RVA: 0x0017B6F0 File Offset: 0x001798F0
 	public string ProduceCSV(bool includeDetails = false)
 	{
 		string text = "";
@@ -286,7 +286,7 @@ public class NetPackageMetrics
 		return text;
 	}
 
-	// Token: 0x06003A33 RID: 14899 RVA: 0x0017AD58 File Offset: 0x00178F58
+	// Token: 0x06003A4A RID: 14922 RVA: 0x0017BCF0 File Offset: 0x00179EF0
 	public void Update()
 	{
 		if (!this.active)
@@ -367,7 +367,7 @@ public class NetPackageMetrics
 		}
 	}
 
-	// Token: 0x06003A34 RID: 14900 RVA: 0x0017B128 File Offset: 0x00179328
+	// Token: 0x06003A4B RID: 14923 RVA: 0x0017C0C0 File Offset: 0x0017A2C0
 	public void OutputPackageSentDetails(string client, float timestamp)
 	{
 		List<PackagesSentInfoEntry> list;
@@ -395,7 +395,7 @@ public class NetPackageMetrics
 		}
 	}
 
-	// Token: 0x06003A35 RID: 14901 RVA: 0x0017B1D8 File Offset: 0x001793D8
+	// Token: 0x06003A4C RID: 14924 RVA: 0x0017C170 File Offset: 0x0017A370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetOutputPacakageSentDetails(PackagesSentInfoEntry entry)
 	{
@@ -414,67 +414,67 @@ public class NetPackageMetrics
 		return text;
 	}
 
-	// Token: 0x06003A36 RID: 14902 RVA: 0x0017B264 File Offset: 0x00179464
+	// Token: 0x06003A4D RID: 14925 RVA: 0x0017C1FC File Offset: 0x0017A3FC
 	public void AppendClientCSV(string csv)
 	{
 		this.clientCSV = this.clientCSV + "\n\n" + csv;
 	}
 
-	// Token: 0x04002F89 RID: 12169
+	// Token: 0x04002FA5 RID: 12197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NetPackageMetrics _instance;
 
-	// Token: 0x04002F8A RID: 12170
+	// Token: 0x04002FA6 RID: 12198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateLength = 5f;
 
-	// Token: 0x04002F8B RID: 12171
+	// Token: 0x04002FA7 RID: 12199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastUpdateTime;
 
-	// Token: 0x04002F8C RID: 12172
+	// Token: 0x04002FA8 RID: 12200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lastStatsOutput = "";
 
-	// Token: 0x04002F8D RID: 12173
+	// Token: 0x04002FA9 RID: 12201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, int> receivedNetPackageCounts;
 
-	// Token: 0x04002F8E RID: 12174
+	// Token: 0x04002FAA RID: 12202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, List<int>> receivedNetPackageSizes;
 
-	// Token: 0x04002F8F RID: 12175
+	// Token: 0x04002FAB RID: 12203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, int> sentNetPackageCounts;
 
-	// Token: 0x04002F90 RID: 12176
+	// Token: 0x04002FAC RID: 12204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, List<int>> sentNetPackageSizes;
 
-	// Token: 0x04002F91 RID: 12177
+	// Token: 0x04002FAD RID: 12205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerCount;
 
-	// Token: 0x04002F92 RID: 12178
+	// Token: 0x04002FAE RID: 12206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityAliveCount;
 
-	// Token: 0x04002F93 RID: 12179
+	// Token: 0x04002FAF RID: 12207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool active;
 
-	// Token: 0x04002F94 RID: 12180
+	// Token: 0x04002FB0 RID: 12208
 	public string clientCSV = "";
 
-	// Token: 0x04002F95 RID: 12181
+	// Token: 0x04002FB1 RID: 12209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int tick;
 
-	// Token: 0x04002F96 RID: 12182
+	// Token: 0x04002FB2 RID: 12210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, List<PackagesSentInfoEntry>> packagesSent;
 
-	// Token: 0x04002F97 RID: 12183
+	// Token: 0x04002FB3 RID: 12211
 	public bool includeRelPosRot = true;
 }

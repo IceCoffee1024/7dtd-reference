@@ -3,104 +3,104 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000A07 RID: 2567
+// Token: 0x02000A11 RID: 2577
 public interface ISaveDataManager
 {
-	// Token: 0x06004C24 RID: 19492
+	// Token: 0x06004C48 RID: 19528
 	void Init();
 
-	// Token: 0x06004C25 RID: 19493
+	// Token: 0x06004C49 RID: 19529
 	void Cleanup();
 
-	// Token: 0x06004C26 RID: 19494
+	// Token: 0x06004C4A RID: 19530
 	SaveDataWriteMode GetWriteMode();
 
-	// Token: 0x06004C27 RID: 19495
+	// Token: 0x06004C4B RID: 19531
 	void SetWriteMode(SaveDataWriteMode writeMode);
 
-	// Token: 0x06004C28 RID: 19496
+	// Token: 0x06004C4C RID: 19532
 	void RegisterRegionFileManager(RegionFileManager regionFileManager);
 
-	// Token: 0x06004C29 RID: 19497
+	// Token: 0x06004C4D RID: 19533
 	void DeregisterRegionFileManager(RegionFileManager regionFileManager);
 
-	// Token: 0x17000847 RID: 2119
-	// (get) Token: 0x06004C2A RID: 19498
+	// Token: 0x1700084D RID: 2125
+	// (get) Token: 0x06004C4E RID: 19534
 	bool AppliesSaveSizeLimit { get; }
 
-	// Token: 0x06004C2B RID: 19499
+	// Token: 0x06004C4F RID: 19535
 	int CommitAsync();
 
-	// Token: 0x06004C2C RID: 19500
+	// Token: 0x06004C50 RID: 19536
 	bool IsCommitPending(int token);
 
-	// Token: 0x06004C2D RID: 19501
+	// Token: 0x06004C51 RID: 19537
 	void CommitSync();
 
-	// Token: 0x06004C2E RID: 19502
+	// Token: 0x06004C52 RID: 19538
 	IEnumerator CommitCoroutine(Action<double> progressFeedback = null);
 
 	// Token: 0x14000078 RID: 120
-	// (add) Token: 0x06004C2F RID: 19503
-	// (remove) Token: 0x06004C30 RID: 19504
+	// (add) Token: 0x06004C53 RID: 19539
+	// (remove) Token: 0x06004C54 RID: 19540
 	event Action CommitStarted;
 
 	// Token: 0x14000079 RID: 121
-	// (add) Token: 0x06004C31 RID: 19505
-	// (remove) Token: 0x06004C32 RID: 19506
+	// (add) Token: 0x06004C55 RID: 19541
+	// (remove) Token: 0x06004C56 RID: 19542
 	event Action CommitFinished;
 
-	// Token: 0x06004C33 RID: 19507
+	// Token: 0x06004C57 RID: 19543
 	bool ShouldLimitSize();
 
-	// Token: 0x06004C34 RID: 19508
+	// Token: 0x06004C58 RID: 19544
 	void UpdateSizes();
 
-	// Token: 0x06004C35 RID: 19509
+	// Token: 0x06004C59 RID: 19545
 	SaveDataSizes GetSizes();
 
-	// Token: 0x06004C36 RID: 19510
+	// Token: 0x06004C5A RID: 19546
 	Stream ManagedFileOpen(SaveDataManagedPath path, FileMode mode, FileAccess access, FileShare share);
 
-	// Token: 0x06004C37 RID: 19511
+	// Token: 0x06004C5B RID: 19547
 	void ManagedFileDelete(SaveDataManagedPath path);
 
-	// Token: 0x06004C38 RID: 19512
+	// Token: 0x06004C5C RID: 19548
 	bool ManagedFileExists(SaveDataManagedPath path);
 
-	// Token: 0x06004C39 RID: 19513
+	// Token: 0x06004C5D RID: 19549
 	DateTime ManagedFileGetLastWriteTimeUtc(SaveDataManagedPath path);
 
-	// Token: 0x06004C3A RID: 19514
+	// Token: 0x06004C5E RID: 19550
 	SdDirectoryInfo ManagedDirectoryCreateDirectory(SaveDataManagedPath path);
 
-	// Token: 0x06004C3B RID: 19515
+	// Token: 0x06004C5F RID: 19551
 	DateTime ManagedDirectoryGetLastWriteTimeUtc(SaveDataManagedPath path);
 
-	// Token: 0x06004C3C RID: 19516
+	// Token: 0x06004C60 RID: 19552
 	bool ManagedDirectoryExists(SaveDataManagedPath path);
 
-	// Token: 0x06004C3D RID: 19517
+	// Token: 0x06004C61 RID: 19553
 	IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-	// Token: 0x06004C3E RID: 19518
+	// Token: 0x06004C62 RID: 19554
 	IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-	// Token: 0x06004C3F RID: 19519
+	// Token: 0x06004C63 RID: 19555
 	IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-	// Token: 0x06004C40 RID: 19520
+	// Token: 0x06004C64 RID: 19556
 	void ManagedDirectoryDelete(SaveDataManagedPath path, bool recursive);
 
-	// Token: 0x06004C41 RID: 19521
+	// Token: 0x06004C65 RID: 19557
 	long ManagedFileInfoLength(SaveDataManagedPath path);
 
-	// Token: 0x06004C42 RID: 19522
+	// Token: 0x06004C66 RID: 19558
 	IEnumerable<SdDirectoryInfo> ManagedDirectoryInfoEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-	// Token: 0x06004C43 RID: 19523
+	// Token: 0x06004C67 RID: 19559
 	IEnumerable<SdFileInfo> ManagedDirectoryInfoEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-	// Token: 0x06004C44 RID: 19524
+	// Token: 0x06004C68 RID: 19560
 	IEnumerable<SdFileSystemInfo> ManagedDirectoryInfoEnumerateFileSystemInfos(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 }

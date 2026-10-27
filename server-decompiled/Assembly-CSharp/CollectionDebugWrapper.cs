@@ -2,23 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x020013EC RID: 5100
+// Token: 0x020013FE RID: 5118
 public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<T>, IEnumerable<T>, IEnumerable
 {
-	// Token: 0x06009FFA RID: 40954 RVA: 0x003C57B7 File Offset: 0x003C39B7
+	// Token: 0x0600A052 RID: 41042 RVA: 0x003C7BBB File Offset: 0x003C5DBB
 	public CollectionDebugWrapper(ICollection<T> collection)
 		: this(null, collection)
 	{
 	}
 
-	// Token: 0x06009FFB RID: 40955 RVA: 0x003C57C1 File Offset: 0x003C39C1
+	// Token: 0x0600A053 RID: 41043 RVA: 0x003C7BC5 File Offset: 0x003C5DC5
 	public CollectionDebugWrapper(DebugWrapper parent, ICollection<T> collection)
 		: base(parent, collection)
 	{
 		this.m_collection = collection;
 	}
 
-	// Token: 0x06009FFC RID: 40956 RVA: 0x003C57D4 File Offset: 0x003C39D4
+	// Token: 0x0600A054 RID: 41044 RVA: 0x003C7BD8 File Offset: 0x003C5DD8
 	public void Add(T item)
 	{
 		using (base.DebugReadWriteScope())
@@ -27,7 +27,7 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		}
 	}
 
-	// Token: 0x06009FFD RID: 40957 RVA: 0x003C5810 File Offset: 0x003C3A10
+	// Token: 0x0600A055 RID: 41045 RVA: 0x003C7C14 File Offset: 0x003C5E14
 	public void Clear()
 	{
 		using (base.DebugReadWriteScope())
@@ -36,7 +36,7 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		}
 	}
 
-	// Token: 0x06009FFE RID: 40958 RVA: 0x003C584C File Offset: 0x003C3A4C
+	// Token: 0x0600A056 RID: 41046 RVA: 0x003C7C50 File Offset: 0x003C5E50
 	public bool Contains(T item)
 	{
 		bool flag;
@@ -47,7 +47,7 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		return flag;
 	}
 
-	// Token: 0x06009FFF RID: 40959 RVA: 0x003C588C File Offset: 0x003C3A8C
+	// Token: 0x0600A057 RID: 41047 RVA: 0x003C7C90 File Offset: 0x003C5E90
 	public void CopyTo(T[] array, int arrayIndex)
 	{
 		using (base.DebugReadScope())
@@ -56,7 +56,7 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		}
 	}
 
-	// Token: 0x0600A000 RID: 40960 RVA: 0x003C58CC File Offset: 0x003C3ACC
+	// Token: 0x0600A058 RID: 41048 RVA: 0x003C7CD0 File Offset: 0x003C5ED0
 	public bool Remove(T item)
 	{
 		bool flag;
@@ -67,8 +67,8 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		return flag;
 	}
 
-	// Token: 0x17001312 RID: 4882
-	// (get) Token: 0x0600A001 RID: 40961 RVA: 0x003C590C File Offset: 0x003C3B0C
+	// Token: 0x1700131E RID: 4894
+	// (get) Token: 0x0600A059 RID: 41049 RVA: 0x003C7D10 File Offset: 0x003C5F10
 	public int Count
 	{
 		get
@@ -77,8 +77,8 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		}
 	}
 
-	// Token: 0x17001313 RID: 4883
-	// (get) Token: 0x0600A002 RID: 40962 RVA: 0x003C5919 File Offset: 0x003C3B19
+	// Token: 0x1700131F RID: 4895
+	// (get) Token: 0x0600A05A RID: 41050 RVA: 0x003C7D1D File Offset: 0x003C5F1D
 	public bool IsReadOnly
 	{
 		get
@@ -87,7 +87,7 @@ public class CollectionDebugWrapper<T> : EnumerableDebugWrapper<T>, ICollection<
 		}
 	}
 
-	// Token: 0x0400793E RID: 31038
+	// Token: 0x0400797F RID: 31103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ICollection<T> m_collection;
 }

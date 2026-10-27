@@ -2,10 +2,10 @@
 using System.IO;
 using System.Linq;
 
-// Token: 0x020014CD RID: 5325
+// Token: 0x020014DF RID: 5343
 public class StockFileHashes
 {
-	// Token: 0x0600A6A9 RID: 42665 RVA: 0x003E06A4 File Offset: 0x003DE8A4
+	// Token: 0x0600A701 RID: 42753 RVA: 0x003E2AA8 File Offset: 0x003E0CA8
 	public static bool HasStockXMLs()
 	{
 		string applicationPath = GameIO.GetApplicationPath();
@@ -21,7 +21,7 @@ public class StockFileHashes
 		return flag;
 	}
 
-	// Token: 0x04007C1B RID: 31771
+	// Token: 0x04007C5C RID: 31836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static StockFileHashes.HashDef[] hashDefinitions = new StockFileHashes.HashDef[]
 	{
@@ -47,8 +47,8 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/buffs.xml", new byte[]
 		{
-			64, 103, 120, 112, 87, 137, 100, 173, 19, 65,
-			207, 31, 89, 102, 46, 131
+			200, 157, 0, 94, 191, 139, 88, 167, 213, 167,
+			35, 21, 18, 22, 87, 43
 		}),
 		new StockFileHashes.HashDef("Data/Config/challenges.xml", new byte[]
 		{
@@ -62,8 +62,8 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/dialogs.xml", new byte[]
 		{
-			235, 32, 125, 251, 192, 114, 65, 228, 1, 103,
-			115, 141, 117, 159, 142, 168
+			88, 21, 10, 117, 43, 188, 147, 226, 140, 115,
+			39, 177, 236, 49, 207, 228
 		}),
 		new StockFileHashes.HashDef("Data/Config/dmscontent.xml", new byte[]
 		{
@@ -77,8 +77,8 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/entitygroups.xml", new byte[]
 		{
-			240, 188, 156, 135, 68, 154, 217, 111, 209, 126,
-			54, 85, 160, 39, 154, 228
+			186, 34, 23, 51, 87, 164, 189, 219, 93, 41,
+			239, 199, 227, 110, 44, 201
 		}),
 		new StockFileHashes.HashDef("Data/Config/events.xml", new byte[]
 		{
@@ -97,8 +97,8 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/items.xml", new byte[]
 		{
-			206, 59, 17, 219, 191, 163, 11, 124, 242, 157,
-			79, 25, 87, 236, 10, 241
+			184, 248, 96, 142, 176, 133, 47, 134, 20, 229,
+			38, 143, 106, 76, 166, 155
 		}),
 		new StockFileHashes.HashDef("Data/Config/item_modifiers.xml", new byte[]
 		{
@@ -125,7 +125,7 @@ public class StockFileHashes
 			221, 223, 126, 194, 10, 67, 126, 120, 75, 188,
 			233, 72, 150, 146, 41, 136
 		}),
-		new StockFileHashes.HashDef("Data/Config/music.xml", new byte[]
+		new StockFileHashes.HashDef("Data/Config/Music.xml", new byte[]
 		{
 			81, 85, 5, 120, 112, 228, 213, 50, 7, 73,
 			121, 96, 243, 210, 139, 204
@@ -152,8 +152,8 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/progression.xml", new byte[]
 		{
-			35, 166, 202, 202, 89, 51, 47, 108, 146, 110,
-			122, 43, 170, 142, 226, 60
+			182, 75, 68, 171, 126, 228, 50, 194, 140, 208,
+			76, 168, 85, 108, 204, 73
 		}),
 		new StockFileHashes.HashDef("Data/Config/qualityinfo.xml", new byte[]
 		{
@@ -262,8 +262,8 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/XUi_Common/templates.xml", new byte[]
 		{
-			6, 76, 172, 58, 64, byte.MaxValue, 8, 229, 106, 247,
-			116, 221, 21, 59, 160, 45
+			209, 180, 9, 217, 237, 154, 169, 223, 98, 224,
+			12, 206, 74, 134, 202, 4
 		}),
 		new StockFileHashes.HashDef("Data/Config/XUi_InGame/styles.xml", new byte[]
 		{
@@ -272,36 +272,36 @@ public class StockFileHashes
 		}),
 		new StockFileHashes.HashDef("Data/Config/XUi_InGame/templates.xml", new byte[]
 		{
-			225, 73, 105, 228, 146, 83, 13, 131, 134, 247,
-			233, 45, 217, 58, 183, 235
+			8, 5, 170, 98, 190, 186, 97, 178, 15, 26,
+			200, 241, 224, 44, 252, 156
 		}),
 		new StockFileHashes.HashDef("Data/Config/XUi_InGame/windows.xml", new byte[]
 		{
-			96, 229, 44, 205, 58, 104, 226, 226, 206, 127,
-			80, 65, 14, 249, 190, 25
+			238, 193, 96, 194, 190, 111, 74, 70, 187, 126,
+			153, 132, 154, 188, 202, 239
 		}),
 		new StockFileHashes.HashDef("Data/Config/XUi_InGame/xui.xml", new byte[]
 		{
-			236, 112, 225, 29, 48, 206, 188, 115, 126, 216,
-			209, 232, 25, 50, 84, 129
+			13, 109, 146, 18, 118, 101, 55, 172, 68, 237,
+			71, 173, 148, 236, 225, 181
 		})
 	};
 
-	// Token: 0x020014CE RID: 5326
+	// Token: 0x020014E0 RID: 5344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct HashDef
 	{
-		// Token: 0x0600A6AC RID: 42668 RVA: 0x003E0E94 File Offset: 0x003DF094
+		// Token: 0x0600A704 RID: 42756 RVA: 0x003E3298 File Offset: 0x003E1498
 		public HashDef(string _filename, byte[] _hash)
 		{
 			this.filename = _filename;
 			this.hash = _hash;
 		}
 
-		// Token: 0x04007C1C RID: 31772
+		// Token: 0x04007C5D RID: 31837
 		public string filename;
 
-		// Token: 0x04007C1D RID: 31773
+		// Token: 0x04007C5E RID: 31838
 		public byte[] hash;
 	}
 }

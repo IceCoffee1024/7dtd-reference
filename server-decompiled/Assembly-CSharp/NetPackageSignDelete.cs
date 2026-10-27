@@ -1,31 +1,31 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000853 RID: 2131
+// Token: 0x0200085D RID: 2141
 [Preserve]
 public class NetPackageSignDelete : NetPackage
 {
-	// Token: 0x06003DF7 RID: 15863 RVA: 0x00189D4A File Offset: 0x00187F4A
+	// Token: 0x06003E1A RID: 15898 RVA: 0x0018ADF2 File Offset: 0x00188FF2
 	public NetPackageSignDelete Setup(GlobalSignId _signId)
 	{
 		this.signId = _signId;
 		return this;
 	}
 
-	// Token: 0x06003DF8 RID: 15864 RVA: 0x00189D54 File Offset: 0x00187F54
+	// Token: 0x06003E1B RID: 15899 RVA: 0x0018ADFC File Offset: 0x00188FFC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.signId = GlobalSignId.FromStream(_br);
 	}
 
-	// Token: 0x06003DF9 RID: 15865 RVA: 0x00189D62 File Offset: 0x00187F62
+	// Token: 0x06003E1C RID: 15900 RVA: 0x0018AE0A File Offset: 0x0018900A
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		this.signId.ToStream(_bw);
 	}
 
-	// Token: 0x06003DFA RID: 15866 RVA: 0x00189D78 File Offset: 0x00187F78
+	// Token: 0x06003E1D RID: 15901 RVA: 0x0018AE20 File Offset: 0x00189020
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!this.signId.IsValid)
@@ -68,7 +68,7 @@ public class NetPackageSignDelete : NetPackage
 		}
 	}
 
-	// Token: 0x0400326C RID: 12908
+	// Token: 0x0400328C RID: 12940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId signId;
 }

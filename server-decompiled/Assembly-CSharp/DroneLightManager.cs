@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003E1 RID: 993
+// Token: 0x020003E3 RID: 995
 public class DroneLightManager : MonoBehaviour
 {
-	// Token: 0x06001DFB RID: 7675 RVA: 0x000B65A0 File Offset: 0x000B47A0
+	// Token: 0x06001DFF RID: 7679 RVA: 0x000B67B0 File Offset: 0x000B49B0
 	public void InitMaterials(string key)
 	{
 		DroneLightManager.LightEffect lightEffect = this.getLightEffect(key);
@@ -35,7 +35,7 @@ public class DroneLightManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DFC RID: 7676 RVA: 0x000B668C File Offset: 0x000B488C
+	// Token: 0x06001E00 RID: 7680 RVA: 0x000B689C File Offset: 0x000B4A9C
 	public void DisableMaterials(string key)
 	{
 		DroneLightManager.LightEffect lightEffect = this.getLightEffect(key);
@@ -66,7 +66,7 @@ public class DroneLightManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DFD RID: 7677 RVA: 0x000B6768 File Offset: 0x000B4968
+	// Token: 0x06001E01 RID: 7681 RVA: 0x000B6978 File Offset: 0x000B4B78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DroneLightManager.LightEffect getLightEffect(string key)
 	{
@@ -80,20 +80,20 @@ public class DroneLightManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x04001402 RID: 5122
+	// Token: 0x04001412 RID: 5138
 	public DroneLightManager.LightEffect[] LightEffects;
 
-	// Token: 0x020003E2 RID: 994
+	// Token: 0x020003E4 RID: 996
 	[Serializable]
 	public class LightEffect
 	{
-		// Token: 0x04001403 RID: 5123
+		// Token: 0x04001413 RID: 5139
 		public bool startsOn;
 
-		// Token: 0x04001404 RID: 5124
+		// Token: 0x04001414 RID: 5140
 		public Material material;
 
-		// Token: 0x04001405 RID: 5125
+		// Token: 0x04001415 RID: 5141
 		public GameObject[] linkedObjects;
 	}
 }

@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200060D RID: 1549
+// Token: 0x02000614 RID: 1556
 [Preserve]
 public class Blinking : LightState
 {
 	// Token: 0x1700054A RID: 1354
-	// (get) Token: 0x060032AA RID: 12970 RVA: 0x001493F8 File Offset: 0x001475F8
+	// (get) Token: 0x060032B8 RID: 12984 RVA: 0x00149FEC File Offset: 0x001481EC
 	public override float LODThreshold
 	{
 		get
@@ -18,7 +18,7 @@ public class Blinking : LightState
 	}
 
 	// Token: 0x1700054B RID: 1355
-	// (get) Token: 0x060032AB RID: 12971 RVA: 0x001493FF File Offset: 0x001475FF
+	// (get) Token: 0x060032B9 RID: 12985 RVA: 0x00149FF3 File Offset: 0x001481F3
 	public override bool CanBeOn
 	{
 		get
@@ -28,7 +28,7 @@ public class Blinking : LightState
 	}
 
 	// Token: 0x1700054C RID: 1356
-	// (get) Token: 0x060032AC RID: 12972 RVA: 0x00149407 File Offset: 0x00147607
+	// (get) Token: 0x060032BA RID: 12986 RVA: 0x00149FFB File Offset: 0x001481FB
 	public override float Emissive
 	{
 		get
@@ -41,7 +41,7 @@ public class Blinking : LightState
 		}
 	}
 
-	// Token: 0x060032AD RID: 12973 RVA: 0x0014941C File Offset: 0x0014761C
+	// Token: 0x060032BB RID: 12987 RVA: 0x0014A010 File Offset: 0x00148210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator blink()
 	{
@@ -53,21 +53,21 @@ public class Blinking : LightState
 		yield break;
 	}
 
-	// Token: 0x060032AE RID: 12974 RVA: 0x0014942B File Offset: 0x0014762B
+	// Token: 0x060032BC RID: 12988 RVA: 0x0014A01F File Offset: 0x0014821F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		base.StartCoroutine(this.blink());
 	}
 
-	// Token: 0x060032AF RID: 12975 RVA: 0x0014943A File Offset: 0x0014763A
+	// Token: 0x060032BD RID: 12989 RVA: 0x0014A02E File Offset: 0x0014822E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		base.StopAllCoroutines();
 	}
 
-	// Token: 0x04002800 RID: 10240
+	// Token: 0x0400281B RID: 10267
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool switchedOn = true;

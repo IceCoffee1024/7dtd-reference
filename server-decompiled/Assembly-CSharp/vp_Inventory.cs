@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015DD RID: 5597
+// Token: 0x020015EF RID: 5615
 [Serializable]
 public class vp_Inventory : MonoBehaviour
 {
-	// Token: 0x17001461 RID: 5217
-	// (get) Token: 0x0600AEB2 RID: 44722 RVA: 0x00412081 File Offset: 0x00410281
+	// Token: 0x1700146D RID: 5229
+	// (get) Token: 0x0600AF0A RID: 44810 RVA: 0x00414485 File Offset: 0x00412685
 	public Transform Transform
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,8 +21,8 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001462 RID: 5218
-	// (get) Token: 0x0600AEB3 RID: 44723 RVA: 0x004120A3 File Offset: 0x004102A3
+	// Token: 0x1700146E RID: 5230
+	// (get) Token: 0x0600AF0B RID: 44811 RVA: 0x004144A7 File Offset: 0x004126A7
 	public List<vp_UnitBankInstance> UnitBankInstances
 	{
 		get
@@ -31,8 +31,8 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001463 RID: 5219
-	// (get) Token: 0x0600AEB4 RID: 44724 RVA: 0x004120AB File Offset: 0x004102AB
+	// Token: 0x1700146F RID: 5231
+	// (get) Token: 0x0600AF0C RID: 44812 RVA: 0x004144AF File Offset: 0x004126AF
 	public List<vp_UnitBankInstance> InternalUnitBanks
 	{
 		get
@@ -41,9 +41,9 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001464 RID: 5220
-	// (get) Token: 0x0600AEB5 RID: 44725 RVA: 0x004120B3 File Offset: 0x004102B3
-	// (set) Token: 0x0600AEB6 RID: 44726 RVA: 0x004120C5 File Offset: 0x004102C5
+	// Token: 0x17001470 RID: 5232
+	// (get) Token: 0x0600AF0D RID: 44813 RVA: 0x004144B7 File Offset: 0x004126B7
+	// (set) Token: 0x0600AF0E RID: 44814 RVA: 0x004144C9 File Offset: 0x004126C9
 	public float TotalSpace
 	{
 		get
@@ -56,9 +56,9 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001465 RID: 5221
-	// (get) Token: 0x0600AEB8 RID: 44728 RVA: 0x004120E1 File Offset: 0x004102E1
-	// (set) Token: 0x0600AEB7 RID: 44727 RVA: 0x004120CE File Offset: 0x004102CE
+	// Token: 0x17001471 RID: 5233
+	// (get) Token: 0x0600AF10 RID: 44816 RVA: 0x004144E5 File Offset: 0x004126E5
+	// (set) Token: 0x0600AF0F RID: 44815 RVA: 0x004144D2 File Offset: 0x004126D2
 	public float UsedSpace
 	{
 		get
@@ -71,8 +71,8 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001466 RID: 5222
-	// (get) Token: 0x0600AEB9 RID: 44729 RVA: 0x004120F3 File Offset: 0x004102F3
+	// Token: 0x17001472 RID: 5234
+	// (get) Token: 0x0600AF11 RID: 44817 RVA: 0x004144F7 File Offset: 0x004126F7
 	[HideInInspector]
 	public float RemainingSpace
 	{
@@ -82,21 +82,21 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEBA RID: 44730 RVA: 0x0041210C File Offset: 0x0041030C
+	// Token: 0x0600AF12 RID: 44818 RVA: 0x00414510 File Offset: 0x00412710
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.SaveInitialState();
 	}
 
-	// Token: 0x0600AEBB RID: 44731 RVA: 0x00412114 File Offset: 0x00410314
+	// Token: 0x0600AF13 RID: 44819 RVA: 0x00414518 File Offset: 0x00412718
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
 		this.Refresh();
 	}
 
-	// Token: 0x0600AEBC RID: 44732 RVA: 0x0041211C File Offset: 0x0041031C
+	// Token: 0x0600AF14 RID: 44820 RVA: 0x00414520 File Offset: 0x00412720
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -109,7 +109,7 @@ public class vp_Inventory : MonoBehaviour
 		vp_TargetEventReturn<vp_ItemType, int>.Register(this.Transform, "GetItemCount", new Func<vp_ItemType, int>(this.GetItemCount));
 	}
 
-	// Token: 0x0600AEBD RID: 44733 RVA: 0x004121F4 File Offset: 0x004103F4
+	// Token: 0x0600AF15 RID: 44821 RVA: 0x004145F8 File Offset: 0x004127F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -122,14 +122,14 @@ public class vp_Inventory : MonoBehaviour
 		vp_TargetEventReturn<vp_Inventory>.Unregister(this.Transform, "HasInventory", new Func<vp_Inventory>(this.GetInventory));
 	}
 
-	// Token: 0x0600AEBE RID: 44734 RVA: 0x0012AC85 File Offset: 0x00128E85
+	// Token: 0x0600AF16 RID: 44822 RVA: 0x0012B879 File Offset: 0x00129A79
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual vp_Inventory GetInventory()
 	{
 		return this;
 	}
 
-	// Token: 0x0600AEBF RID: 44735 RVA: 0x004122CC File Offset: 0x004104CC
+	// Token: 0x0600AF17 RID: 44823 RVA: 0x004146D0 File Offset: 0x004128D0
 	public virtual bool TryGiveItems(vp_ItemType type, int amount)
 	{
 		bool flag = false;
@@ -144,7 +144,7 @@ public class vp_Inventory : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x0600AEC0 RID: 44736 RVA: 0x004122F4 File Offset: 0x004104F4
+	// Token: 0x0600AF18 RID: 44824 RVA: 0x004146F8 File Offset: 0x004128F8
 	public virtual bool TryGiveItem(vp_ItemType itemType, int id)
 	{
 		if (itemType == null)
@@ -178,7 +178,7 @@ public class vp_Inventory : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AEC1 RID: 44737 RVA: 0x004123A8 File Offset: 0x004105A8
+	// Token: 0x0600AF19 RID: 44825 RVA: 0x004147AC File Offset: 0x004129AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DoAddItem(vp_ItemType type, int id)
 	{
@@ -192,7 +192,7 @@ public class vp_Inventory : MonoBehaviour
 		this.SetDirty();
 	}
 
-	// Token: 0x0600AEC2 RID: 44738 RVA: 0x004123F8 File Offset: 0x004105F8
+	// Token: 0x0600AF1A RID: 44826 RVA: 0x004147FC File Offset: 0x004129FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DoRemoveItem(vp_ItemInstance item)
 	{
@@ -211,7 +211,7 @@ public class vp_Inventory : MonoBehaviour
 		this.SetDirty();
 	}
 
-	// Token: 0x0600AEC3 RID: 44739 RVA: 0x00412468 File Offset: 0x00410668
+	// Token: 0x0600AF1B RID: 44827 RVA: 0x0041486C File Offset: 0x00412A6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DoAddUnitBank(vp_UnitBankType unitBankType, int id, int unitsLoaded)
 	{
@@ -231,7 +231,7 @@ public class vp_Inventory : MonoBehaviour
 		this.SetDirty();
 	}
 
-	// Token: 0x0600AEC4 RID: 44740 RVA: 0x00412510 File Offset: 0x00410710
+	// Token: 0x0600AF1C RID: 44828 RVA: 0x00414914 File Offset: 0x00412B14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DoRemoveUnitBank(vp_UnitBankInstance bank)
 	{
@@ -256,25 +256,25 @@ public class vp_Inventory : MonoBehaviour
 		this.SetDirty();
 	}
 
-	// Token: 0x0600AEC5 RID: 44741 RVA: 0x004125B1 File Offset: 0x004107B1
+	// Token: 0x0600AF1D RID: 44829 RVA: 0x004149B5 File Offset: 0x00412BB5
 	public virtual bool DoAddUnits(vp_UnitBankInstance bank, int amount)
 	{
 		return bank.DoAddUnits(amount);
 	}
 
-	// Token: 0x0600AEC6 RID: 44742 RVA: 0x004125BA File Offset: 0x004107BA
+	// Token: 0x0600AF1E RID: 44830 RVA: 0x004149BE File Offset: 0x00412BBE
 	public virtual bool DoRemoveUnits(vp_UnitBankInstance bank, int amount)
 	{
 		return bank.DoRemoveUnits(amount);
 	}
 
-	// Token: 0x0600AEC7 RID: 44743 RVA: 0x004125C3 File Offset: 0x004107C3
+	// Token: 0x0600AF1F RID: 44831 RVA: 0x004149C7 File Offset: 0x00412BC7
 	public virtual bool TryGiveUnits(vp_UnitType unitType, int amount)
 	{
 		return this.GetItemCap(unitType) != 0 && this.TryGiveUnits(this.GetInternalUnitBank(unitType), amount);
 	}
 
-	// Token: 0x0600AEC8 RID: 44744 RVA: 0x004125E0 File Offset: 0x004107E0
+	// Token: 0x0600AF20 RID: 44832 RVA: 0x004149E4 File Offset: 0x00412BE4
 	public virtual bool TryGiveUnits(vp_UnitBankInstance bank, int amount)
 	{
 		if (bank == null)
@@ -290,14 +290,14 @@ public class vp_Inventory : MonoBehaviour
 		return this.DoAddUnits(bank, amount);
 	}
 
-	// Token: 0x0600AEC9 RID: 44745 RVA: 0x00412650 File Offset: 0x00410850
+	// Token: 0x0600AF21 RID: 44833 RVA: 0x00414A54 File Offset: 0x00412C54
 	public virtual bool TryRemoveUnits(vp_UnitType unitType, int amount)
 	{
 		vp_UnitBankInstance internalUnitBank = this.GetInternalUnitBank(unitType);
 		return internalUnitBank != null && this.DoRemoveUnits(internalUnitBank, amount);
 	}
 
-	// Token: 0x0600AECA RID: 44746 RVA: 0x00412674 File Offset: 0x00410874
+	// Token: 0x0600AF22 RID: 44834 RVA: 0x00414A78 File Offset: 0x00412C78
 	public virtual bool TryGiveUnitBank(vp_UnitBankType unitBankType, int unitsLoaded, int id)
 	{
 		if (unitBankType == null)
@@ -347,7 +347,7 @@ public class vp_Inventory : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AECB RID: 44747 RVA: 0x00412770 File Offset: 0x00410970
+	// Token: 0x0600AF23 RID: 44835 RVA: 0x00414B74 File Offset: 0x00412D74
 	public virtual bool TryRemoveItems(vp_ItemType type, int amount)
 	{
 		bool flag = false;
@@ -362,13 +362,13 @@ public class vp_Inventory : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x0600AECC RID: 44748 RVA: 0x00412797 File Offset: 0x00410997
+	// Token: 0x0600AF24 RID: 44836 RVA: 0x00414B9B File Offset: 0x00412D9B
 	public virtual bool TryRemoveItem(vp_ItemType type, int id)
 	{
 		return this.TryRemoveItem(this.GetItem(type, id));
 	}
 
-	// Token: 0x0600AECD RID: 44749 RVA: 0x004127A7 File Offset: 0x004109A7
+	// Token: 0x0600AF25 RID: 44837 RVA: 0x00414BAB File Offset: 0x00412DAB
 	public virtual bool TryRemoveItem(vp_ItemInstance item)
 	{
 		if (item == null)
@@ -380,7 +380,7 @@ public class vp_Inventory : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AECE RID: 44750 RVA: 0x004127BC File Offset: 0x004109BC
+	// Token: 0x0600AF26 RID: 44838 RVA: 0x00414BC0 File Offset: 0x00412DC0
 	public virtual bool TryRemoveUnitBanks(vp_UnitBankType type, int amount)
 	{
 		bool flag = false;
@@ -395,13 +395,13 @@ public class vp_Inventory : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x0600AECF RID: 44751 RVA: 0x004127E3 File Offset: 0x004109E3
+	// Token: 0x0600AF27 RID: 44839 RVA: 0x00414BE7 File Offset: 0x00412DE7
 	public virtual bool TryRemoveUnitBank(vp_UnitBankType type, int id)
 	{
 		return this.TryRemoveUnitBank(this.GetItem(type, id) as vp_UnitBankInstance);
 	}
 
-	// Token: 0x0600AED0 RID: 44752 RVA: 0x004127F8 File Offset: 0x004109F8
+	// Token: 0x0600AF28 RID: 44840 RVA: 0x00414BFC File Offset: 0x00412DFC
 	public virtual bool TryRemoveUnitBank(vp_UnitBankInstance unitBank)
 	{
 		if (unitBank == null)
@@ -413,25 +413,25 @@ public class vp_Inventory : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AED1 RID: 44753 RVA: 0x0041280D File Offset: 0x00410A0D
+	// Token: 0x0600AF29 RID: 44841 RVA: 0x00414C11 File Offset: 0x00412E11
 	public virtual bool TryReload(vp_ItemType itemType, int unitBankId)
 	{
 		return this.TryReload(this.GetItem(itemType, unitBankId) as vp_UnitBankInstance, -1);
 	}
 
-	// Token: 0x0600AED2 RID: 44754 RVA: 0x00412823 File Offset: 0x00410A23
+	// Token: 0x0600AF2A RID: 44842 RVA: 0x00414C27 File Offset: 0x00412E27
 	public virtual bool TryReload(vp_ItemType itemType, int unitBankId, int amount)
 	{
 		return this.TryReload(this.GetItem(itemType, unitBankId) as vp_UnitBankInstance, amount);
 	}
 
-	// Token: 0x0600AED3 RID: 44755 RVA: 0x00412839 File Offset: 0x00410A39
+	// Token: 0x0600AF2B RID: 44843 RVA: 0x00414C3D File Offset: 0x00412E3D
 	public virtual bool TryReload(vp_UnitBankInstance bank)
 	{
 		return this.TryReload(bank, -1);
 	}
 
-	// Token: 0x0600AED4 RID: 44756 RVA: 0x00412844 File Offset: 0x00410A44
+	// Token: 0x0600AF2C RID: 44844 RVA: 0x00414C48 File Offset: 0x00412E48
 	public virtual bool TryReload(vp_UnitBankInstance bank, int amount)
 	{
 		if (bank == null || bank.IsInternal || bank.ID == -1)
@@ -471,7 +471,7 @@ public class vp_Inventory : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AED5 RID: 44757 RVA: 0x00412910 File Offset: 0x00410B10
+	// Token: 0x0600AF2D RID: 44845 RVA: 0x00414D14 File Offset: 0x00412F14
 	public virtual bool TryDeduct(vp_UnitBankType unitBankType, int unitBankId, int amount)
 	{
 		vp_UnitBankInstance vp_UnitBankInstance = ((unitBankId < 1) ? (this.GetItem(unitBankType) as vp_UnitBankInstance) : (this.GetItem(unitBankType, unitBankId) as vp_UnitBankInstance));
@@ -490,7 +490,7 @@ public class vp_Inventory : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AED6 RID: 44758 RVA: 0x00412974 File Offset: 0x00410B74
+	// Token: 0x0600AF2E RID: 44846 RVA: 0x00414D78 File Offset: 0x00412F78
 	public virtual vp_ItemInstance GetItem(vp_ItemType itemType)
 	{
 		if (this.m_FirstItemsDirty)
@@ -524,7 +524,7 @@ public class vp_Inventory : MonoBehaviour
 		return this.m_GetFirstItemInstanceResult;
 	}
 
-	// Token: 0x0600AED7 RID: 44759 RVA: 0x00412AA4 File Offset: 0x00410CA4
+	// Token: 0x0600AF2F RID: 44847 RVA: 0x00414EA8 File Offset: 0x004130A8
 	public vp_ItemInstance GetItem(vp_ItemType itemType, int id)
 	{
 		if (itemType == null)
@@ -565,7 +565,7 @@ public class vp_Inventory : MonoBehaviour
 		return this.m_GetItemResult;
 	}
 
-	// Token: 0x0600AED8 RID: 44760 RVA: 0x00412B90 File Offset: 0x00410D90
+	// Token: 0x0600AF30 RID: 44848 RVA: 0x00414F94 File Offset: 0x00413194
 	public virtual vp_ItemInstance GetItem(string itemTypeName)
 	{
 		for (int i = 0; i < this.InternalUnitBanks.Count; i++)
@@ -592,7 +592,7 @@ public class vp_Inventory : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600AED9 RID: 44761 RVA: 0x00412C64 File Offset: 0x00410E64
+	// Token: 0x0600AF31 RID: 44849 RVA: 0x00415068 File Offset: 0x00413268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual vp_ItemInstance GetItemFromList(vp_ItemType itemType, int id = -1)
 	{
@@ -613,13 +613,13 @@ public class vp_Inventory : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600AEDA RID: 44762 RVA: 0x00412D1A File Offset: 0x00410F1A
+	// Token: 0x0600AF32 RID: 44850 RVA: 0x0041511E File Offset: 0x0041331E
 	public virtual bool HaveItem(vp_ItemType itemType, int id = -1)
 	{
 		return !(itemType == null) && this.GetItem(itemType, id) != null;
 	}
 
-	// Token: 0x0600AEDB RID: 44763 RVA: 0x00412D34 File Offset: 0x00410F34
+	// Token: 0x0600AF33 RID: 44851 RVA: 0x00415138 File Offset: 0x00413338
 	public virtual vp_UnitBankInstance GetInternalUnitBank(vp_UnitType unitType)
 	{
 		for (int i = 0; i < this.m_InternalUnitBanks.Count; i++)
@@ -640,7 +640,7 @@ public class vp_Inventory : MonoBehaviour
 		return vp_UnitBankInstance2;
 	}
 
-	// Token: 0x0600AEDC RID: 44764 RVA: 0x00412DD8 File Offset: 0x00410FD8
+	// Token: 0x0600AF34 RID: 44852 RVA: 0x004151DC File Offset: 0x004133DC
 	public virtual bool HaveInternalUnitBank(vp_UnitType unitType)
 	{
 		for (int i = 0; i < this.m_InternalUnitBanks.Count; i++)
@@ -653,7 +653,7 @@ public class vp_Inventory : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600AEDD RID: 44765 RVA: 0x00412E54 File Offset: 0x00411054
+	// Token: 0x0600AF35 RID: 44853 RVA: 0x00415258 File Offset: 0x00413458
 	public virtual void Refresh()
 	{
 		for (int i = 0; i < this.m_InternalUnitBanks.Count; i++)
@@ -690,7 +690,7 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEDE RID: 44766 RVA: 0x00412FDC File Offset: 0x004111DC
+	// Token: 0x0600AF36 RID: 44854 RVA: 0x004153E0 File Offset: 0x004135E0
 	public virtual int GetItemCount(vp_ItemType type)
 	{
 		vp_UnitType vp_UnitType = type as vp_UnitType;
@@ -716,7 +716,7 @@ public class vp_Inventory : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600AEDF RID: 44767 RVA: 0x0041306C File Offset: 0x0041126C
+	// Token: 0x0600AF37 RID: 44855 RVA: 0x00415470 File Offset: 0x00413670
 	public virtual void SetItemCount(vp_ItemType type, int amount)
 	{
 		if (type is vp_UnitType)
@@ -741,13 +741,13 @@ public class vp_Inventory : MonoBehaviour
 		this.SpaceEnabled = spaceEnabled;
 	}
 
-	// Token: 0x0600AEE0 RID: 44768 RVA: 0x004130E0 File Offset: 0x004112E0
+	// Token: 0x0600AF38 RID: 44856 RVA: 0x004154E4 File Offset: 0x004136E4
 	public virtual void SetUnitCount(vp_UnitType unitType, int amount)
 	{
 		this.TrySetUnitCount(this.GetInternalUnitBank(unitType), amount);
 	}
 
-	// Token: 0x0600AEE1 RID: 44769 RVA: 0x004130F4 File Offset: 0x004112F4
+	// Token: 0x0600AF39 RID: 44857 RVA: 0x004154F8 File Offset: 0x004136F8
 	public virtual void SetUnitCount(vp_UnitBankInstance bank, int amount)
 	{
 		if (bank == null)
@@ -774,13 +774,13 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEE2 RID: 44770 RVA: 0x0041314A File Offset: 0x0041134A
+	// Token: 0x0600AF3A RID: 44858 RVA: 0x0041554E File Offset: 0x0041374E
 	public virtual bool TrySetUnitCount(vp_UnitType unitType, int amount)
 	{
 		return this.TrySetUnitCount(this.GetInternalUnitBank(unitType), amount);
 	}
 
-	// Token: 0x0600AEE3 RID: 44771 RVA: 0x0041315C File Offset: 0x0041135C
+	// Token: 0x0600AF3B RID: 44859 RVA: 0x00415560 File Offset: 0x00413760
 	public virtual bool TrySetUnitCount(vp_UnitBankInstance bank, int amount)
 	{
 		if (bank == null)
@@ -818,7 +818,7 @@ public class vp_Inventory : MonoBehaviour
 		return this.m_Result;
 	}
 
-	// Token: 0x0600AEE4 RID: 44772 RVA: 0x004131F8 File Offset: 0x004113F8
+	// Token: 0x0600AF3C RID: 44860 RVA: 0x004155FC File Offset: 0x004137FC
 	public virtual int GetItemCap(vp_ItemType type)
 	{
 		if (!this.CapsEnabled)
@@ -839,7 +839,7 @@ public class vp_Inventory : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x0600AEE5 RID: 44773 RVA: 0x0041325C File Offset: 0x0041145C
+	// Token: 0x0600AF3D RID: 44861 RVA: 0x00415660 File Offset: 0x00413860
 	public virtual void SetItemCap(vp_ItemType type, int cap, bool clamp = false)
 	{
 		this.SetDirty();
@@ -880,7 +880,7 @@ public class vp_Inventory : MonoBehaviour
 		goto IL_005B;
 	}
 
-	// Token: 0x0600AEE6 RID: 44774 RVA: 0x0041335C File Offset: 0x0041155C
+	// Token: 0x0600AF3E RID: 44862 RVA: 0x00415760 File Offset: 0x00413960
 	public virtual int GetUnitCount(vp_UnitType unitType)
 	{
 		vp_UnitBankInstance internalUnitBank = this.GetInternalUnitBank(unitType);
@@ -891,7 +891,7 @@ public class vp_Inventory : MonoBehaviour
 		return internalUnitBank.Count;
 	}
 
-	// Token: 0x0600AEE7 RID: 44775 RVA: 0x0041337C File Offset: 0x0041157C
+	// Token: 0x0600AF3F RID: 44863 RVA: 0x00415780 File Offset: 0x00413980
 	public virtual void SaveInitialState()
 	{
 		for (int i = 0; i < this.InternalUnitBanks.Count; i++)
@@ -908,7 +908,7 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEE8 RID: 44776 RVA: 0x00413474 File Offset: 0x00411674
+	// Token: 0x0600AF40 RID: 44864 RVA: 0x00415878 File Offset: 0x00413A78
 	public virtual void Reset()
 	{
 		this.Clear();
@@ -941,7 +941,7 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEE9 RID: 44777 RVA: 0x004136E0 File Offset: 0x004118E0
+	// Token: 0x0600AF41 RID: 44865 RVA: 0x00415AE4 File Offset: 0x00413CE4
 	public virtual void Clear()
 	{
 		for (int i = this.InternalUnitBanks.Count - 1; i > -1; i--)
@@ -958,204 +958,204 @@ public class vp_Inventory : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEEA RID: 44778 RVA: 0x0041376B File Offset: 0x0041196B
+	// Token: 0x0600AF42 RID: 44866 RVA: 0x00415B6F File Offset: 0x00413D6F
 	public virtual void SetTotalSpace(float spaceLimitation)
 	{
 		this.SetDirty();
 		this.TotalSpace = Mathf.Max(0f, spaceLimitation);
 	}
 
-	// Token: 0x0600AEEB RID: 44779 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AF43 RID: 44867 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetDirty()
 	{
 	}
 
-	// Token: 0x0600AEEC RID: 44780 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AF44 RID: 44868 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void ClearItemDictionaries()
 	{
 	}
 
-	// Token: 0x04008211 RID: 33297
+	// Token: 0x04008252 RID: 33362
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Inventory.ItemRecordsSection m_ItemRecords;
 
-	// Token: 0x04008212 RID: 33298
+	// Token: 0x04008253 RID: 33363
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Inventory.ItemCapsSection m_ItemCaps;
 
-	// Token: 0x04008213 RID: 33299
+	// Token: 0x04008254 RID: 33364
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Inventory.SpaceLimitSection m_SpaceLimit;
 
-	// Token: 0x04008214 RID: 33300
+	// Token: 0x04008255 RID: 33365
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04008215 RID: 33301
+	// Token: 0x04008256 RID: 33366
 	[SerializeField]
 	[HideInInspector]
 	public List<vp_ItemInstance> ItemInstances = new List<vp_ItemInstance>();
 
-	// Token: 0x04008216 RID: 33302
+	// Token: 0x04008257 RID: 33367
 	[SerializeField]
 	[HideInInspector]
 	public List<vp_Inventory.ItemCap> m_ItemCapInstances = new List<vp_Inventory.ItemCap>();
 
-	// Token: 0x04008217 RID: 33303
+	// Token: 0x04008258 RID: 33368
 	[SerializeField]
 	[HideInInspector]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<vp_UnitBankInstance> m_UnitBankInstances = new List<vp_UnitBankInstance>();
 
-	// Token: 0x04008218 RID: 33304
+	// Token: 0x04008259 RID: 33369
 	[SerializeField]
 	[HideInInspector]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<vp_UnitBankInstance> m_InternalUnitBanks = new List<vp_UnitBankInstance>();
 
-	// Token: 0x04008219 RID: 33305
+	// Token: 0x0400825A RID: 33370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int UNLIMITED = -1;
 
-	// Token: 0x0400821A RID: 33306
+	// Token: 0x0400825B RID: 33371
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int UNIDENTIFIED = -1;
 
-	// Token: 0x0400821B RID: 33307
+	// Token: 0x0400825C RID: 33372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int MAXCAPACITY = -1;
 
-	// Token: 0x0400821C RID: 33308
+	// Token: 0x0400825D RID: 33373
 	[SerializeField]
 	[HideInInspector]
 	public bool CapsEnabled;
 
-	// Token: 0x0400821D RID: 33309
+	// Token: 0x0400825E RID: 33374
 	[SerializeField]
 	[HideInInspector]
 	public bool SpaceEnabled;
 
-	// Token: 0x0400821E RID: 33310
+	// Token: 0x0400825F RID: 33375
 	[SerializeField]
 	[HideInInspector]
 	public vp_Inventory.Mode SpaceMode;
 
-	// Token: 0x0400821F RID: 33311
+	// Token: 0x04008260 RID: 33376
 	[SerializeField]
 	[HideInInspector]
 	public bool AllowOnlyListed;
 
-	// Token: 0x04008220 RID: 33312
+	// Token: 0x04008261 RID: 33377
 	[SerializeField]
 	[HideInInspector]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float m_TotalSpace = 100f;
 
-	// Token: 0x04008221 RID: 33313
+	// Token: 0x04008262 RID: 33378
 	[SerializeField]
 	[HideInInspector]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float m_UsedSpace;
 
-	// Token: 0x04008222 RID: 33314
+	// Token: 0x04008263 RID: 33379
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Result;
 
-	// Token: 0x04008223 RID: 33315
+	// Token: 0x04008264 RID: 33380
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<vp_Inventory.StartItemRecord> m_StartItems = new List<vp_Inventory.StartItemRecord>();
 
-	// Token: 0x04008224 RID: 33316
+	// Token: 0x04008265 RID: 33381
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_FirstItemsDirty = true;
 
-	// Token: 0x04008225 RID: 33317
+	// Token: 0x04008266 RID: 33382
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_ItemType, vp_ItemInstance> m_FirstItemsOfType = new Dictionary<vp_ItemType, vp_ItemInstance>(100);
 
-	// Token: 0x04008226 RID: 33318
+	// Token: 0x04008267 RID: 33383
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_ItemInstance m_GetFirstItemInstanceResult;
 
-	// Token: 0x04008227 RID: 33319
+	// Token: 0x04008268 RID: 33384
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_ItemDictionaryDirty = true;
 
-	// Token: 0x04008228 RID: 33320
+	// Token: 0x04008269 RID: 33385
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<int, vp_ItemInstance> m_ItemDictionary = new Dictionary<int, vp_ItemInstance>();
 
-	// Token: 0x04008229 RID: 33321
+	// Token: 0x0400826A RID: 33386
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_ItemInstance m_GetItemResult;
 
-	// Token: 0x020015DE RID: 5598
+	// Token: 0x020015F0 RID: 5616
 	[Serializable]
 	public class ItemRecordsSection
 	{
 	}
 
-	// Token: 0x020015DF RID: 5599
+	// Token: 0x020015F1 RID: 5617
 	[Serializable]
 	public class ItemCapsSection
 	{
 	}
 
-	// Token: 0x020015E0 RID: 5600
+	// Token: 0x020015F2 RID: 5618
 	[Serializable]
 	public class SpaceLimitSection
 	{
 	}
 
-	// Token: 0x020015E1 RID: 5601
+	// Token: 0x020015F3 RID: 5619
 	[Serializable]
 	public class ItemCap
 	{
-		// Token: 0x0600AEF1 RID: 44785 RVA: 0x004137FF File Offset: 0x004119FF
+		// Token: 0x0600AF49 RID: 44873 RVA: 0x00415C03 File Offset: 0x00413E03
 		public ItemCap(vp_ItemType type, int cap)
 		{
 			this.Type = type;
 			this.Cap = cap;
 		}
 
-		// Token: 0x0400822A RID: 33322
+		// Token: 0x0400826B RID: 33387
 		[SerializeField]
 		public vp_ItemType Type;
 
-		// Token: 0x0400822B RID: 33323
+		// Token: 0x0400826C RID: 33388
 		[SerializeField]
 		public int Cap;
 	}
 
-	// Token: 0x020015E2 RID: 5602
+	// Token: 0x020015F4 RID: 5620
 	public enum Mode
 	{
-		// Token: 0x0400822D RID: 33325
+		// Token: 0x0400826E RID: 33390
 		Weight,
-		// Token: 0x0400822E RID: 33326
+		// Token: 0x0400826F RID: 33391
 		Volume
 	}
 
-	// Token: 0x020015E3 RID: 5603
+	// Token: 0x020015F5 RID: 5621
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public struct StartItemRecord
 	{
-		// Token: 0x0600AEF2 RID: 44786 RVA: 0x00413815 File Offset: 0x00411A15
+		// Token: 0x0600AF4A RID: 44874 RVA: 0x00415C19 File Offset: 0x00413E19
 		public StartItemRecord(vp_ItemType type, int id, int amount)
 		{
 			this.Type = type;
@@ -1163,13 +1163,13 @@ public class vp_Inventory : MonoBehaviour
 			this.Amount = amount;
 		}
 
-		// Token: 0x0400822F RID: 33327
+		// Token: 0x04008270 RID: 33392
 		public vp_ItemType Type;
 
-		// Token: 0x04008230 RID: 33328
+		// Token: 0x04008271 RID: 33393
 		public int ID;
 
-		// Token: 0x04008231 RID: 33329
+		// Token: 0x04008272 RID: 33394
 		public int Amount;
 	}
 }

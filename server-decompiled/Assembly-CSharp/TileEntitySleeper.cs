@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C8A RID: 3210
+// Token: 0x02000C95 RID: 3221
 public class TileEntitySleeper : TileEntity
 {
-	// Token: 0x060061D2 RID: 25042 RVA: 0x0026C883 File Offset: 0x0026AA83
+	// Token: 0x060061F7 RID: 25079 RVA: 0x0026DDAB File Offset: 0x0026BFAB
 	public TileEntitySleeper(Chunk _chunk)
 		: base(_chunk)
 	{
@@ -13,7 +13,7 @@ public class TileEntitySleeper : TileEntity
 		this.hearingPercent = 1f;
 	}
 
-	// Token: 0x060061D3 RID: 25043 RVA: 0x0026C8B0 File Offset: 0x0026AAB0
+	// Token: 0x060061F8 RID: 25080 RVA: 0x0026DDD8 File Offset: 0x0026BFD8
 	public override TileEntity Clone()
 	{
 		return new TileEntitySleeper(this.chunk)
@@ -26,7 +26,7 @@ public class TileEntitySleeper : TileEntity
 		};
 	}
 
-	// Token: 0x060061D4 RID: 25044 RVA: 0x0026C904 File Offset: 0x0026AB04
+	// Token: 0x060061F9 RID: 25081 RVA: 0x0026DE2C File Offset: 0x0026C02C
 	public override void CopyFrom(TileEntity _other)
 	{
 		TileEntitySleeper tileEntitySleeper = (TileEntitySleeper)_other;
@@ -36,65 +36,65 @@ public class TileEntitySleeper : TileEntity
 		this.hearingPercent = tileEntitySleeper.hearingPercent;
 	}
 
-	// Token: 0x060061D5 RID: 25045 RVA: 0x000F659D File Offset: 0x000F479D
+	// Token: 0x060061FA RID: 25082 RVA: 0x000F6AD5 File Offset: 0x000F4CD5
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Sleeper;
 	}
 
-	// Token: 0x060061D6 RID: 25046 RVA: 0x0026C948 File Offset: 0x0026AB48
+	// Token: 0x060061FB RID: 25083 RVA: 0x0026DE70 File Offset: 0x0026C070
 	public void SetPriorityMultiplier(float _priorityMultiplier)
 	{
 		this.priorityMultiplier = _priorityMultiplier;
 		this.setModified();
 	}
 
-	// Token: 0x060061D7 RID: 25047 RVA: 0x0026C957 File Offset: 0x0026AB57
+	// Token: 0x060061FC RID: 25084 RVA: 0x0026DE7F File Offset: 0x0026C07F
 	public float GetPriorityMultiplier()
 	{
 		return this.priorityMultiplier;
 	}
 
-	// Token: 0x060061D8 RID: 25048 RVA: 0x0026C95F File Offset: 0x0026AB5F
+	// Token: 0x060061FD RID: 25085 RVA: 0x0026DE87 File Offset: 0x0026C087
 	public void SetSightAngle(int _sightAngle)
 	{
 		this.sightAngle = _sightAngle;
 		this.setModified();
 	}
 
-	// Token: 0x060061D9 RID: 25049 RVA: 0x0026C96E File Offset: 0x0026AB6E
+	// Token: 0x060061FE RID: 25086 RVA: 0x0026DE96 File Offset: 0x0026C096
 	public int GetSightAngle()
 	{
 		return this.sightAngle;
 	}
 
-	// Token: 0x060061DA RID: 25050 RVA: 0x0026C976 File Offset: 0x0026AB76
+	// Token: 0x060061FF RID: 25087 RVA: 0x0026DE9E File Offset: 0x0026C09E
 	public void SetSightRange(int _sightRange)
 	{
 		this.sightRange = _sightRange;
 		this.setModified();
 	}
 
-	// Token: 0x060061DB RID: 25051 RVA: 0x0026C985 File Offset: 0x0026AB85
+	// Token: 0x06006200 RID: 25088 RVA: 0x0026DEAD File Offset: 0x0026C0AD
 	public int GetSightRange()
 	{
 		return this.sightRange;
 	}
 
-	// Token: 0x060061DC RID: 25052 RVA: 0x0026C98D File Offset: 0x0026AB8D
+	// Token: 0x06006201 RID: 25089 RVA: 0x0026DEB5 File Offset: 0x0026C0B5
 	public void SetHearingPercent(float _hearingPercent)
 	{
 		this.hearingPercent = _hearingPercent;
 		this.setModified();
 	}
 
-	// Token: 0x060061DD RID: 25053 RVA: 0x0026C99C File Offset: 0x0026AB9C
+	// Token: 0x06006202 RID: 25090 RVA: 0x0026DEC4 File Offset: 0x0026C0C4
 	public float GetHearingPercent()
 	{
 		return this.hearingPercent;
 	}
 
-	// Token: 0x060061DE RID: 25054 RVA: 0x0026C9A4 File Offset: 0x0026ABA4
+	// Token: 0x06006203 RID: 25091 RVA: 0x0026DECC File Offset: 0x0026C0CC
 	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -115,7 +115,7 @@ public class TileEntitySleeper : TileEntity
 		this.sightAngle = (int)_br.ReadInt16();
 	}
 
-	// Token: 0x060061DF RID: 25055 RVA: 0x0026CA04 File Offset: 0x0026AC04
+	// Token: 0x06006204 RID: 25092 RVA: 0x0026DF2C File Offset: 0x0026C12C
 	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -129,23 +129,23 @@ public class TileEntitySleeper : TileEntity
 		_bw.Write((short)this.sightAngle);
 	}
 
-	// Token: 0x04004C8D RID: 19597
+	// Token: 0x04004CB2 RID: 19634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C8E RID: 19598
+	// Token: 0x04004CB3 RID: 19635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float priorityMultiplier;
 
-	// Token: 0x04004C8F RID: 19599
+	// Token: 0x04004CB4 RID: 19636
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sightAngle;
 
-	// Token: 0x04004C90 RID: 19600
+	// Token: 0x04004CB5 RID: 19637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sightRange;
 
-	// Token: 0x04004C91 RID: 19601
+	// Token: 0x04004CB6 RID: 19638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float hearingPercent;
 }

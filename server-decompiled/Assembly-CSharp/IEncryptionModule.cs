@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000793 RID: 1939
+// Token: 0x0200079B RID: 1947
 public interface IEncryptionModule
 {
-	// Token: 0x060039F5 RID: 14837
+	// Token: 0x06003A0C RID: 14860
 	bool EncryptStream(ClientInfo _cInfo, MemoryStream _stream);
 
-	// Token: 0x060039F6 RID: 14838
+	// Token: 0x06003A0D RID: 14861
 	bool DecryptStream(ClientInfo _cInfo, MemoryStream _stream);
 }

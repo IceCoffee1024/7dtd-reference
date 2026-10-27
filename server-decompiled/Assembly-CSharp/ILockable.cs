@@ -40,7 +40,7 @@ public interface ILockable
 	// Token: 0x06000B6D RID: 2925
 	string GetPasswordHash();
 
-	// Token: 0x06000B6E RID: 2926 RVA: 0x00048AD8 File Offset: 0x00046CD8
+	// Token: 0x06000B6E RID: 2926 RVA: 0x00048A98 File Offset: 0x00046C98
 	string GetHashForPassword(string _password)
 	{
 		return _password.GetStableHashCode().ToString("X8");

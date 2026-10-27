@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200098D RID: 2445
+// Token: 0x02000997 RID: 2455
 [Preserve]
 public class ObjectiveBlockActivate : BaseObjective
 {
-	// Token: 0x170007AE RID: 1966
-	// (get) Token: 0x06004718 RID: 18200 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007B4 RID: 1972
+	// (get) Token: 0x0600473B RID: 18235 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -16,30 +16,30 @@ public class ObjectiveBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x06004719 RID: 18201 RVA: 0x001C0DC4 File Offset: 0x001BEFC4
+	// Token: 0x0600473C RID: 18236 RVA: 0x001C1E48 File Offset: 0x001C0048
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveBlockActivate_keyword", false, null);
 		this.localizedName = ((this.ID != "" && this.ID != null) ? Localization.Get(this.ID, false, null) : "Any Block");
 	}
 
-	// Token: 0x0600471A RID: 18202 RVA: 0x001C0E17 File Offset: 0x001BF017
+	// Token: 0x0600473D RID: 18237 RVA: 0x001C1E9B File Offset: 0x001C009B
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.localizedName);
 	}
 
-	// Token: 0x0600471B RID: 18203 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600473E RID: 18238 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void AddHooks()
 	{
 	}
 
-	// Token: 0x0600471C RID: 18204 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600473F RID: 18239 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RemoveHooks()
 	{
 	}
 
-	// Token: 0x0600471D RID: 18205 RVA: 0x001C0E30 File Offset: 0x001BF030
+	// Token: 0x06004740 RID: 18240 RVA: 0x001C1EB4 File Offset: 0x001C00B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockActivate(string blockName)
 	{
@@ -54,7 +54,7 @@ public class ObjectiveBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x0600471E RID: 18206 RVA: 0x001C0E88 File Offset: 0x001BF088
+	// Token: 0x06004741 RID: 18241 RVA: 0x001C1F0C File Offset: 0x001C010C
 	public override void Refresh()
 	{
 		bool flag = base.CurrentValue == 1;
@@ -65,7 +65,7 @@ public class ObjectiveBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x0600471F RID: 18207 RVA: 0x001C0EC0 File Offset: 0x001BF0C0
+	// Token: 0x06004742 RID: 18242 RVA: 0x001C1F44 File Offset: 0x001C0144
 	public override BaseObjective Clone()
 	{
 		ObjectiveBlockActivate objectiveBlockActivate = new ObjectiveBlockActivate();
@@ -73,13 +73,13 @@ public class ObjectiveBlockActivate : BaseObjective
 		return objectiveBlockActivate;
 	}
 
-	// Token: 0x06004720 RID: 18208 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004743 RID: 18243 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
 	}
 
-	// Token: 0x0400395F RID: 14687
+	// Token: 0x0400397F RID: 14719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName = "";
 }

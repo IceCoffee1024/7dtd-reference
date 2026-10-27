@@ -3,28 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
-// Token: 0x020014F5 RID: 5365
+// Token: 0x02001507 RID: 5383
 public class TQueue<T> : ICollection, IEnumerable
 {
-	// Token: 0x0600A839 RID: 43065 RVA: 0x003E9BAB File Offset: 0x003E7DAB
+	// Token: 0x0600A891 RID: 43153 RVA: 0x003EBFAF File Offset: 0x003EA1AF
 	public TQueue()
 	{
 		this.m_Queue = new Queue<T>();
 	}
 
-	// Token: 0x0600A83A RID: 43066 RVA: 0x003E9BD4 File Offset: 0x003E7DD4
+	// Token: 0x0600A892 RID: 43154 RVA: 0x003EBFD8 File Offset: 0x003EA1D8
 	public TQueue(int capacity)
 	{
 		this.m_Queue = new Queue<T>(capacity);
 	}
 
-	// Token: 0x0600A83B RID: 43067 RVA: 0x003E9BFE File Offset: 0x003E7DFE
+	// Token: 0x0600A893 RID: 43155 RVA: 0x003EC002 File Offset: 0x003EA202
 	public TQueue(IEnumerable<T> collection)
 	{
 		this.m_Queue = new Queue<T>(collection);
 	}
 
-	// Token: 0x0600A83C RID: 43068 RVA: 0x003E9C28 File Offset: 0x003E7E28
+	// Token: 0x0600A894 RID: 43156 RVA: 0x003EC02C File Offset: 0x003EA22C
 	public IEnumerator<T> GetEnumerator()
 	{
 		this.LockQ.EnterReadLock();
@@ -46,7 +46,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		yield break;
 	}
 
-	// Token: 0x0600A83D RID: 43069 RVA: 0x003E9C37 File Offset: 0x003E7E37
+	// Token: 0x0600A895 RID: 43157 RVA: 0x003EC03B File Offset: 0x003EA23B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
@@ -69,7 +69,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		yield break;
 	}
 
-	// Token: 0x0600A83E RID: 43070 RVA: 0x003E9C48 File Offset: 0x003E7E48
+	// Token: 0x0600A896 RID: 43158 RVA: 0x003EC04C File Offset: 0x003EA24C
 	public void CopyTo(Array array, int index)
 	{
 		this.LockQ.EnterReadLock();
@@ -83,7 +83,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A83F RID: 43071 RVA: 0x003E9C90 File Offset: 0x003E7E90
+	// Token: 0x0600A897 RID: 43159 RVA: 0x003EC094 File Offset: 0x003EA294
 	public void CopyTo(T[] array, int index)
 	{
 		this.LockQ.EnterReadLock();
@@ -97,8 +97,8 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x170013E5 RID: 5093
-	// (get) Token: 0x0600A840 RID: 43072 RVA: 0x003E9CD4 File Offset: 0x003E7ED4
+	// Token: 0x170013F1 RID: 5105
+	// (get) Token: 0x0600A898 RID: 43160 RVA: 0x003EC0D8 File Offset: 0x003EA2D8
 	public int Count
 	{
 		get
@@ -117,8 +117,8 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x170013E6 RID: 5094
-	// (get) Token: 0x0600A841 RID: 43073 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170013F2 RID: 5106
+	// (get) Token: 0x0600A899 RID: 43161 RVA: 0x00020119 File Offset: 0x0001E319
 	public bool IsSynchronized
 	{
 		get
@@ -127,8 +127,8 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x170013E7 RID: 5095
-	// (get) Token: 0x0600A842 RID: 43074 RVA: 0x003E9D18 File Offset: 0x003E7F18
+	// Token: 0x170013F3 RID: 5107
+	// (get) Token: 0x0600A89A RID: 43162 RVA: 0x003EC11C File Offset: 0x003EA31C
 	public object SyncRoot
 	{
 		get
@@ -137,7 +137,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A843 RID: 43075 RVA: 0x003E9D20 File Offset: 0x003E7F20
+	// Token: 0x0600A89B RID: 43163 RVA: 0x003EC124 File Offset: 0x003EA324
 	public void Enqueue(T item)
 	{
 		this.LockQ.EnterWriteLock();
@@ -151,7 +151,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A844 RID: 43076 RVA: 0x003E9D64 File Offset: 0x003E7F64
+	// Token: 0x0600A89C RID: 43164 RVA: 0x003EC168 File Offset: 0x003EA368
 	public T Dequeue()
 	{
 		this.LockQ.EnterWriteLock();
@@ -167,7 +167,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		return t;
 	}
 
-	// Token: 0x0600A845 RID: 43077 RVA: 0x003E9DA8 File Offset: 0x003E7FA8
+	// Token: 0x0600A89D RID: 43165 RVA: 0x003EC1AC File Offset: 0x003EA3AC
 	public void EnqueueAll(IEnumerable<T> ItemsToQueue)
 	{
 		this.LockQ.EnterWriteLock();
@@ -184,7 +184,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A846 RID: 43078 RVA: 0x003E9E18 File Offset: 0x003E8018
+	// Token: 0x0600A89E RID: 43166 RVA: 0x003EC21C File Offset: 0x003EA41C
 	public void EnqueueAll(TList<T> ItemsToQueue)
 	{
 		this.LockQ.EnterWriteLock();
@@ -202,7 +202,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A847 RID: 43079 RVA: 0x003E9E94 File Offset: 0x003E8094
+	// Token: 0x0600A89F RID: 43167 RVA: 0x003EC298 File Offset: 0x003EA498
 	public TList<T> DequeueAll()
 	{
 		this.LockQ.EnterWriteLock();
@@ -223,7 +223,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		return tlist2;
 	}
 
-	// Token: 0x0600A848 RID: 43080 RVA: 0x003E9EF4 File Offset: 0x003E80F4
+	// Token: 0x0600A8A0 RID: 43168 RVA: 0x003EC2F8 File Offset: 0x003EA4F8
 	public void Clear()
 	{
 		this.LockQ.EnterWriteLock();
@@ -237,7 +237,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A849 RID: 43081 RVA: 0x003E9F38 File Offset: 0x003E8138
+	// Token: 0x0600A8A1 RID: 43169 RVA: 0x003EC33C File Offset: 0x003EA53C
 	public bool Contains(T item)
 	{
 		this.LockQ.EnterReadLock();
@@ -253,7 +253,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		return flag;
 	}
 
-	// Token: 0x0600A84A RID: 43082 RVA: 0x003E9F7C File Offset: 0x003E817C
+	// Token: 0x0600A8A2 RID: 43170 RVA: 0x003EC380 File Offset: 0x003EA580
 	public T Peek()
 	{
 		this.LockQ.EnterReadLock();
@@ -269,7 +269,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		return t;
 	}
 
-	// Token: 0x0600A84B RID: 43083 RVA: 0x003E9FC0 File Offset: 0x003E81C0
+	// Token: 0x0600A8A3 RID: 43171 RVA: 0x003EC3C4 File Offset: 0x003EA5C4
 	public T[] ToArray()
 	{
 		this.LockQ.EnterReadLock();
@@ -285,7 +285,7 @@ public class TQueue<T> : ICollection, IEnumerable
 		return array;
 	}
 
-	// Token: 0x0600A84C RID: 43084 RVA: 0x003EA004 File Offset: 0x003E8204
+	// Token: 0x0600A8A4 RID: 43172 RVA: 0x003EC408 File Offset: 0x003EA608
 	public void TrimExcess()
 	{
 		this.LockQ.EnterWriteLock();
@@ -299,15 +299,15 @@ public class TQueue<T> : ICollection, IEnumerable
 		}
 	}
 
-	// Token: 0x04007CB5 RID: 31925
+	// Token: 0x04007CF6 RID: 31990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Queue<T> m_Queue;
 
-	// Token: 0x04007CB6 RID: 31926
+	// Token: 0x04007CF7 RID: 31991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ReaderWriterLockSlim LockQ = new ReaderWriterLockSlim();
 
-	// Token: 0x04007CB7 RID: 31927
+	// Token: 0x04007CF8 RID: 31992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object objSyncRoot = new object();
 }

@@ -4,11 +4,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006B0 RID: 1712
+// Token: 0x020006B7 RID: 1719
 [Preserve]
 public class HasTrackedEntity : TargetedCompareRequirementBase
 {
-	// Token: 0x060035DF RID: 13791 RVA: 0x00162490 File Offset: 0x00160690
+	// Token: 0x060035ED RID: 13805 RVA: 0x00163084 File Offset: 0x00161284
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -45,13 +45,13 @@ public class HasTrackedEntity : TargetedCompareRequirementBase
 		return flag == !this.invert;
 	}
 
-	// Token: 0x060035E0 RID: 13792 RVA: 0x00162575 File Offset: 0x00160775
+	// Token: 0x060035EE RID: 13806 RVA: 0x00163169 File Offset: 0x00161369
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Is {0} Tracking Entity", this.invert ? "NOT " : ""));
 	}
 
-	// Token: 0x060035E1 RID: 13793 RVA: 0x0016259C File Offset: 0x0016079C
+	// Token: 0x060035EF RID: 13807 RVA: 0x00163190 File Offset: 0x00161390
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -72,11 +72,11 @@ public class HasTrackedEntity : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B58 RID: 11096
+	// Token: 0x04002B73 RID: 11123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> trackerTags;
 
-	// Token: 0x04002B59 RID: 11097
+	// Token: 0x04002B74 RID: 11124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAllTags;
 }

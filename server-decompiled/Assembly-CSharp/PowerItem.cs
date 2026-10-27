@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000912 RID: 2322
+// Token: 0x0200091C RID: 2332
 public class PowerItem
 {
-	// Token: 0x17000737 RID: 1847
-	// (get) Token: 0x060042A3 RID: 17059 RVA: 0x001A29BD File Offset: 0x001A0BBD
+	// Token: 0x1700073D RID: 1853
+	// (get) Token: 0x060042C6 RID: 17094 RVA: 0x001A3A65 File Offset: 0x001A1C65
 	public virtual bool IsPowered
 	{
 		get
@@ -15,20 +15,20 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042A4 RID: 17060 RVA: 0x001A29C5 File Offset: 0x001A0BC5
+	// Token: 0x060042C7 RID: 17095 RVA: 0x001A3A6D File Offset: 0x001A1C6D
 	public PowerItem()
 	{
 		this.Children = new List<PowerItem>();
 	}
 
-	// Token: 0x060042A5 RID: 17061 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060042C8 RID: 17096 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool CanParent(PowerItem newParent)
 	{
 		return true;
 	}
 
-	// Token: 0x17000738 RID: 1848
-	// (get) Token: 0x060042A6 RID: 17062 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x1700073E RID: 1854
+	// (get) Token: 0x060042C9 RID: 17097 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual int InputCount
 	{
 		get
@@ -37,8 +37,8 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x17000739 RID: 1849
-	// (get) Token: 0x060042A7 RID: 17063 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x1700073F RID: 1855
+	// (get) Token: 0x060042CA RID: 17098 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -47,7 +47,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042A8 RID: 17064 RVA: 0x001A29EA File Offset: 0x001A0BEA
+	// Token: 0x060042CB RID: 17099 RVA: 0x001A3A92 File Offset: 0x001A1C92
 	public virtual void AddTileEntity(TileEntityPowered tileEntityPowered)
 	{
 		if (this.TileEntity == null)
@@ -58,7 +58,7 @@ public class PowerItem
 		this.TileEntity.MarkWireDirty();
 	}
 
-	// Token: 0x060042A9 RID: 17065 RVA: 0x001A2A11 File Offset: 0x001A0C11
+	// Token: 0x060042CC RID: 17100 RVA: 0x001A3AB9 File Offset: 0x001A1CB9
 	public void RemoveTileEntity(TileEntityPowered tileEntityPowered)
 	{
 		if (this.TileEntity == tileEntityPowered)
@@ -67,7 +67,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042AA RID: 17066 RVA: 0x001A2A23 File Offset: 0x001A0C23
+	// Token: 0x060042CD RID: 17101 RVA: 0x001A3ACB File Offset: 0x001A1CCB
 	public virtual PowerItem GetRoot()
 	{
 		if (this.Parent != null)
@@ -77,7 +77,7 @@ public class PowerItem
 		return this;
 	}
 
-	// Token: 0x060042AB RID: 17067 RVA: 0x001A2A3C File Offset: 0x001A0C3C
+	// Token: 0x060042CE RID: 17102 RVA: 0x001A3AE4 File Offset: 0x001A1CE4
 	public virtual void read(PooledBinaryReader _br, byte _version)
 	{
 		this.BlockID = _br.ReadUInt16();
@@ -97,13 +97,13 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042AC RID: 17068 RVA: 0x001A2AC8 File Offset: 0x001A0CC8
+	// Token: 0x060042CF RID: 17103 RVA: 0x001A3B70 File Offset: 0x001A1D70
 	public void RemoveSelfFromParent()
 	{
 		PowerManager.Instance.RemoveParent(this);
 	}
 
-	// Token: 0x060042AD RID: 17069 RVA: 0x001A2AD8 File Offset: 0x001A0CD8
+	// Token: 0x060042D0 RID: 17104 RVA: 0x001A3B80 File Offset: 0x001A1D80
 	public virtual void write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(this.BlockID);
@@ -121,19 +121,19 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042AE RID: 17070 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060042D1 RID: 17105 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool PowerChildren()
 	{
 		return true;
 	}
 
-	// Token: 0x060042AF RID: 17071 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060042D2 RID: 17106 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void IsPoweredChanged(bool newPowered)
 	{
 	}
 
-	// Token: 0x060042B0 RID: 17072 RVA: 0x001A2B78 File Offset: 0x001A0D78
+	// Token: 0x060042D3 RID: 17107 RVA: 0x001A3C20 File Offset: 0x001A1E20
 	public virtual void HandlePowerReceived(ref ushort power)
 	{
 		ushort num = (ushort)Mathf.Min((int)this.RequiredPower, (int)power);
@@ -165,7 +165,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042B1 RID: 17073 RVA: 0x001A2C0C File Offset: 0x001A0E0C
+	// Token: 0x060042D4 RID: 17108 RVA: 0x001A3CB4 File Offset: 0x001A1EB4
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public PowerItem GetChild(Vector3 childPosition)
 	{
@@ -180,7 +180,7 @@ public class PowerItem
 		return null;
 	}
 
-	// Token: 0x060042B2 RID: 17074 RVA: 0x001A2C60 File Offset: 0x001A0E60
+	// Token: 0x060042D5 RID: 17109 RVA: 0x001A3D08 File Offset: 0x001A1F08
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool HasChild(Vector3 child)
 	{
@@ -195,12 +195,12 @@ public class PowerItem
 		return false;
 	}
 
-	// Token: 0x060042B3 RID: 17075 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060042D6 RID: 17110 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void HandlePowerUpdate(bool isOn)
 	{
 	}
 
-	// Token: 0x060042B4 RID: 17076 RVA: 0x001A2CA8 File Offset: 0x001A0EA8
+	// Token: 0x060042D7 RID: 17111 RVA: 0x001A3D50 File Offset: 0x001A1F50
 	public virtual void HandleDisconnect()
 	{
 		if (this.isPowered)
@@ -215,7 +215,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042B5 RID: 17077 RVA: 0x001A2CFC File Offset: 0x001A0EFC
+	// Token: 0x060042D8 RID: 17112 RVA: 0x001A3DA4 File Offset: 0x001A1FA4
 	public static PowerItem CreateItem(PowerItem.PowerItemTypes itemType)
 	{
 		switch (itemType)
@@ -247,7 +247,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042B6 RID: 17078 RVA: 0x001A2D88 File Offset: 0x001A0F88
+	// Token: 0x060042D9 RID: 17113 RVA: 0x001A3E30 File Offset: 0x001A2030
 	public virtual void SetValuesFromBlock()
 	{
 		Block block = Block.list[(int)this.BlockID];
@@ -257,7 +257,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042B7 RID: 17079 RVA: 0x001A2DDC File Offset: 0x001A0FDC
+	// Token: 0x060042DA RID: 17114 RVA: 0x001A3E84 File Offset: 0x001A2084
 	public void ClearChildren()
 	{
 		for (int i = 0; i < this.Children.Count; i++)
@@ -270,7 +270,7 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x060042B8 RID: 17080 RVA: 0x001A2E28 File Offset: 0x001A1028
+	// Token: 0x060042DB RID: 17115 RVA: 0x001A3ED0 File Offset: 0x001A20D0
 	public void SendHasLocalChangesToRoot()
 	{
 		this.hasChangesLocal = true;
@@ -280,64 +280,64 @@ public class PowerItem
 		}
 	}
 
-	// Token: 0x0400361F RID: 13855
+	// Token: 0x0400363F RID: 13887
 	public PowerItem Parent;
 
-	// Token: 0x04003620 RID: 13856
+	// Token: 0x04003640 RID: 13888
 	public Vector3i Position;
 
-	// Token: 0x04003621 RID: 13857
+	// Token: 0x04003641 RID: 13889
 	public PowerItem Root;
 
-	// Token: 0x04003622 RID: 13858
+	// Token: 0x04003642 RID: 13890
 	public ushort Depth = ushort.MaxValue;
 
-	// Token: 0x04003623 RID: 13859
+	// Token: 0x04003643 RID: 13891
 	public ushort BlockID;
 
-	// Token: 0x04003624 RID: 13860
+	// Token: 0x04003644 RID: 13892
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool hasChangesLocal;
 
-	// Token: 0x04003625 RID: 13861
+	// Token: 0x04003645 RID: 13893
 	public ushort RequiredPower = 5;
 
-	// Token: 0x04003626 RID: 13862
+	// Token: 0x04003646 RID: 13894
 	public List<PowerItem> Children;
 
-	// Token: 0x04003627 RID: 13863
+	// Token: 0x04003647 RID: 13895
 	public TileEntityPowered TileEntity;
 
-	// Token: 0x04003628 RID: 13864
+	// Token: 0x04003648 RID: 13896
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isPowered;
 
-	// Token: 0x02000913 RID: 2323
+	// Token: 0x0200091D RID: 2333
 	public enum PowerItemTypes
 	{
-		// Token: 0x0400362A RID: 13866
+		// Token: 0x0400364A RID: 13898
 		None,
-		// Token: 0x0400362B RID: 13867
+		// Token: 0x0400364B RID: 13899
 		Consumer,
-		// Token: 0x0400362C RID: 13868
+		// Token: 0x0400364C RID: 13900
 		ConsumerToggle,
-		// Token: 0x0400362D RID: 13869
+		// Token: 0x0400364D RID: 13901
 		Trigger,
-		// Token: 0x0400362E RID: 13870
+		// Token: 0x0400364E RID: 13902
 		Timer,
-		// Token: 0x0400362F RID: 13871
+		// Token: 0x0400364F RID: 13903
 		Generator,
-		// Token: 0x04003630 RID: 13872
+		// Token: 0x04003650 RID: 13904
 		SolarPanel,
-		// Token: 0x04003631 RID: 13873
+		// Token: 0x04003651 RID: 13905
 		BatteryBank,
-		// Token: 0x04003632 RID: 13874
+		// Token: 0x04003652 RID: 13906
 		RangedTrap,
-		// Token: 0x04003633 RID: 13875
+		// Token: 0x04003653 RID: 13907
 		ElectricWireRelay,
-		// Token: 0x04003634 RID: 13876
+		// Token: 0x04003654 RID: 13908
 		TripWireRelay,
-		// Token: 0x04003635 RID: 13877
+		// Token: 0x04003655 RID: 13909
 		PressurePlate
 	}
 }

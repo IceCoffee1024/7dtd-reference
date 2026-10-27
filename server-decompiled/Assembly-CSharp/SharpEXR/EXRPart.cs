@@ -7,12 +7,12 @@ using SharpEXR.ColorSpace;
 
 namespace SharpEXR
 {
-	// Token: 0x020016F5 RID: 5877
+	// Token: 0x02001714 RID: 5908
 	public class EXRPart
 	{
-		// Token: 0x170016E9 RID: 5865
-		// (get) Token: 0x0600B79D RID: 47005 RVA: 0x0044048C File Offset: 0x0043E68C
-		// (set) Token: 0x0600B79E RID: 47006 RVA: 0x00440494 File Offset: 0x0043E694
+		// Token: 0x17001730 RID: 5936
+		// (get) Token: 0x0600B871 RID: 47217 RVA: 0x00442F30 File Offset: 0x00441130
+		// (set) Token: 0x0600B872 RID: 47218 RVA: 0x00442F38 File Offset: 0x00441138
 		public Dictionary<string, float[]> FloatChannels
 		{
 			get
@@ -26,9 +26,9 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170016EA RID: 5866
-		// (get) Token: 0x0600B79F RID: 47007 RVA: 0x0044049D File Offset: 0x0043E69D
-		// (set) Token: 0x0600B7A0 RID: 47008 RVA: 0x004404A5 File Offset: 0x0043E6A5
+		// Token: 0x17001731 RID: 5937
+		// (get) Token: 0x0600B873 RID: 47219 RVA: 0x00442F41 File Offset: 0x00441141
+		// (set) Token: 0x0600B874 RID: 47220 RVA: 0x00442F49 File Offset: 0x00441149
 		public Dictionary<string, Half[]> HalfChannels
 		{
 			get
@@ -42,7 +42,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B7A1 RID: 47009 RVA: 0x004404B0 File Offset: 0x0043E6B0
+		// Token: 0x0600B875 RID: 47221 RVA: 0x00442F54 File Offset: 0x00441154
 		public EXRPart(EXRVersion version, EXRHeader header, OffsetTable offsets)
 		{
 			this.Version = version;
@@ -76,7 +76,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B7A2 RID: 47010 RVA: 0x004405E8 File Offset: 0x0043E7E8
+		// Token: 0x0600B876 RID: 47222 RVA: 0x0044308C File Offset: 0x0044128C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void CheckHasData()
 		{
@@ -86,13 +86,13 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B7A3 RID: 47011 RVA: 0x004405FD File Offset: 0x0043E7FD
+		// Token: 0x0600B877 RID: 47223 RVA: 0x004430A1 File Offset: 0x004412A1
 		public Half[] GetHalfs(ChannelConfiguration channels, bool premultiplied, GammaEncoding gamma)
 		{
 			return this.GetHalfs(channels, premultiplied, gamma, this.HasAlpha);
 		}
 
-		// Token: 0x0600B7A4 RID: 47012 RVA: 0x00440610 File Offset: 0x0043E810
+		// Token: 0x0600B878 RID: 47224 RVA: 0x004430B4 File Offset: 0x004412B4
 		public Half[] GetHalfs(ChannelConfiguration channels, bool premultiplied, GammaEncoding gamma, bool includeAlpha)
 		{
 			ImageSourceFormat imageSourceFormat;
@@ -111,7 +111,7 @@ namespace SharpEXR
 			return this.GetHalfs(imageSourceFormat, channels, premultiplied, gamma);
 		}
 
-		// Token: 0x0600B7A5 RID: 47013 RVA: 0x004406B4 File Offset: 0x0043E8B4
+		// Token: 0x0600B879 RID: 47225 RVA: 0x00443158 File Offset: 0x00441358
 		public Half[] GetHalfs(ImageSourceFormat srcFormat, ChannelConfiguration channels, bool premultiplied, GammaEncoding gamma)
 		{
 			ImageDestFormat imageDestFormat;
@@ -140,13 +140,13 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B7A6 RID: 47014 RVA: 0x0044072D File Offset: 0x0043E92D
+		// Token: 0x0600B87A RID: 47226 RVA: 0x004431D1 File Offset: 0x004413D1
 		public float[] GetFloats(ChannelConfiguration channels, bool premultiplied, GammaEncoding gamma)
 		{
 			return this.GetFloats(channels, premultiplied, gamma, this.HasAlpha);
 		}
 
-		// Token: 0x0600B7A7 RID: 47015 RVA: 0x00440740 File Offset: 0x0043E940
+		// Token: 0x0600B87B RID: 47227 RVA: 0x004431E4 File Offset: 0x004413E4
 		public float[] GetFloats(ChannelConfiguration channels, bool premultiplied, GammaEncoding gamma, bool includeAlpha)
 		{
 			ImageSourceFormat imageSourceFormat;
@@ -165,7 +165,7 @@ namespace SharpEXR
 			return this.GetFloats(imageSourceFormat, channels, premultiplied, gamma);
 		}
 
-		// Token: 0x0600B7A8 RID: 47016 RVA: 0x004407E4 File Offset: 0x0043E9E4
+		// Token: 0x0600B87C RID: 47228 RVA: 0x00443288 File Offset: 0x00441488
 		public float[] GetFloats(ImageSourceFormat srcFormat, ChannelConfiguration channels, bool premultiplied, GammaEncoding gamma)
 		{
 			ImageDestFormat imageDestFormat;
@@ -194,13 +194,13 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B7A9 RID: 47017 RVA: 0x00440860 File Offset: 0x0043EA60
+		// Token: 0x0600B87D RID: 47229 RVA: 0x00443304 File Offset: 0x00441504
 		public byte[] GetBytes(ImageDestFormat destFormat, GammaEncoding gamma)
 		{
 			return this.GetBytes(destFormat, gamma, this.DataWindow.Width * EXRFile.GetBytesPerPixel(destFormat));
 		}
 
-		// Token: 0x0600B7AA RID: 47018 RVA: 0x0044088C File Offset: 0x0043EA8C
+		// Token: 0x0600B87E RID: 47230 RVA: 0x00443330 File Offset: 0x00441530
 		public byte[] GetBytes(ImageDestFormat destFormat, GammaEncoding gamma, int stride)
 		{
 			ImageSourceFormat imageSourceFormat;
@@ -219,13 +219,13 @@ namespace SharpEXR
 			return this.GetBytes(imageSourceFormat, destFormat, gamma, stride);
 		}
 
-		// Token: 0x0600B7AB RID: 47019 RVA: 0x0044094C File Offset: 0x0043EB4C
+		// Token: 0x0600B87F RID: 47231 RVA: 0x004433F0 File Offset: 0x004415F0
 		public byte[] GetBytes(ImageSourceFormat srcFormat, ImageDestFormat destFormat, GammaEncoding gamma)
 		{
 			return this.GetBytes(srcFormat, destFormat, gamma, this.DataWindow.Width * EXRFile.GetBytesPerPixel(destFormat));
 		}
 
-		// Token: 0x0600B7AC RID: 47020 RVA: 0x00440978 File Offset: 0x0043EB78
+		// Token: 0x0600B880 RID: 47232 RVA: 0x0044341C File Offset: 0x0044161C
 		public byte[] GetBytes(ImageSourceFormat srcFormat, ImageDestFormat destFormat, GammaEncoding gamma, int stride)
 		{
 			this.CheckHasData();
@@ -321,7 +321,7 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B7AD RID: 47021 RVA: 0x00440CFC File Offset: 0x0043EEFC
+		// Token: 0x0600B881 RID: 47233 RVA: 0x004437A0 File Offset: 0x004419A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetScanlineBytes(int bytesPerPixel, int destIndex, int srcIndex, bool isHalf, bool destinationAlpha, bool sourceAlpha, Half[] hr, Half[] hg, Half[] hb, Half[] ha, float[] fr, float[] fg, float[] fb, float[] fa, int bitsPerPixel, GammaEncoding gamma, bool premultiplied, bool bgra, byte[] buffer, BinaryWriter writer)
 		{
@@ -607,7 +607,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B7AE RID: 47022 RVA: 0x004416DC File Offset: 0x0043F8DC
+		// Token: 0x0600B882 RID: 47234 RVA: 0x00444180 File Offset: 0x00442380
 		public void Open(string file)
 		{
 			EXRReader exrreader = new EXRReader(new FileStream(file, FileMode.Open, FileAccess.Read), false);
@@ -615,7 +615,7 @@ namespace SharpEXR
 			exrreader.Dispose();
 		}
 
-		// Token: 0x0600B7AF RID: 47023 RVA: 0x00441708 File Offset: 0x0043F908
+		// Token: 0x0600B883 RID: 47235 RVA: 0x004441AC File Offset: 0x004423AC
 		public void Open(Stream stream)
 		{
 			EXRReader exrreader = new EXRReader(new BinaryReader(stream));
@@ -623,7 +623,7 @@ namespace SharpEXR
 			exrreader.Dispose();
 		}
 
-		// Token: 0x0600B7B0 RID: 47024 RVA: 0x0044172E File Offset: 0x0043F92E
+		// Token: 0x0600B884 RID: 47236 RVA: 0x004441D2 File Offset: 0x004423D2
 		public void Close()
 		{
 			this.hasData = false;
@@ -631,14 +631,14 @@ namespace SharpEXR
 			this.FloatChannels.Clear();
 		}
 
-		// Token: 0x0600B7B1 RID: 47025 RVA: 0x0044174D File Offset: 0x0043F94D
+		// Token: 0x0600B885 RID: 47237 RVA: 0x004441F1 File Offset: 0x004423F1
 		public void Open(IEXRReader reader)
 		{
 			this.hasData = true;
 			this.ReadPixelData(reader);
 		}
 
-		// Token: 0x0600B7B2 RID: 47026 RVA: 0x00441760 File Offset: 0x0043F960
+		// Token: 0x0600B886 RID: 47238 RVA: 0x00444204 File Offset: 0x00442404
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ReadPixelBlock(IEXRReader reader, uint offset, int linesPerBlock, List<Channel> sortedChannels)
 		{
@@ -697,13 +697,13 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B7B3 RID: 47027 RVA: 0x004418E0 File Offset: 0x0043FAE0
+		// Token: 0x0600B887 RID: 47239 RVA: 0x00444384 File Offset: 0x00442584
 		public void OpenParallel(string file)
 		{
 			this.Open(file);
 		}
 
-		// Token: 0x0600B7B4 RID: 47028 RVA: 0x004418EC File Offset: 0x0043FAEC
+		// Token: 0x0600B888 RID: 47240 RVA: 0x00444390 File Offset: 0x00442590
 		public void OpenParallel(ParallelReaderCreationDelegate createReader)
 		{
 			IEXRReader iexrreader = createReader();
@@ -711,7 +711,7 @@ namespace SharpEXR
 			iexrreader.Dispose();
 		}
 
-		// Token: 0x0600B7B5 RID: 47029 RVA: 0x00441910 File Offset: 0x0043FB10
+		// Token: 0x0600B889 RID: 47241 RVA: 0x004443B4 File Offset: 0x004425B4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void ReadPixelData(IEXRReader reader)
 		{
@@ -723,8 +723,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170016EB RID: 5867
-		// (get) Token: 0x0600B7B6 RID: 47030 RVA: 0x004419A8 File Offset: 0x0043FBA8
+		// Token: 0x17001732 RID: 5938
+		// (get) Token: 0x0600B88A RID: 47242 RVA: 0x0044444C File Offset: 0x0044264C
 		public bool IsRGB
 		{
 			get
@@ -733,8 +733,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170016EC RID: 5868
-		// (get) Token: 0x0600B7B7 RID: 47031 RVA: 0x00441A23 File Offset: 0x0043FC23
+		// Token: 0x17001733 RID: 5939
+		// (get) Token: 0x0600B88B RID: 47243 RVA: 0x004444C7 File Offset: 0x004426C7
 		public bool HasAlpha
 		{
 			get
@@ -743,30 +743,30 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0400892C RID: 35116
+		// Token: 0x040089DF RID: 35295
 		public readonly EXRVersion Version;
 
-		// Token: 0x0400892D RID: 35117
+		// Token: 0x040089E0 RID: 35296
 		public readonly EXRHeader Header;
 
-		// Token: 0x0400892E RID: 35118
+		// Token: 0x040089E1 RID: 35297
 		public readonly OffsetTable Offsets;
 
-		// Token: 0x0400892F RID: 35119
+		// Token: 0x040089E2 RID: 35298
 		public readonly PartType Type;
 
-		// Token: 0x04008930 RID: 35120
+		// Token: 0x040089E3 RID: 35299
 		public readonly Box2I DataWindow;
 
-		// Token: 0x04008931 RID: 35121
+		// Token: 0x040089E4 RID: 35300
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasData;
 
-		// Token: 0x04008932 RID: 35122
+		// Token: 0x040089E5 RID: 35301
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, float[]> floatChannels;
 
-		// Token: 0x04008933 RID: 35123
+		// Token: 0x040089E6 RID: 35302
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, Half[]> halfChannels;
 	}

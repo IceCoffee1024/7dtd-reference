@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001173 RID: 4467
+// Token: 0x02001183 RID: 4483
 public abstract class XUiV_LabelBase : XUiView_WidgetBased
 {
-	// Token: 0x170010EE RID: 4334
-	// (get) Token: 0x06008DEA RID: 36330 RVA: 0x0035BBA5 File Offset: 0x00359DA5
-	// (set) Token: 0x06008DEB RID: 36331 RVA: 0x0035BBAD File Offset: 0x00359DAD
+	// Token: 0x170010F9 RID: 4345
+	// (get) Token: 0x06008E3E RID: 36414 RVA: 0x0035DC75 File Offset: 0x0035BE75
+	// (set) Token: 0x06008E3F RID: 36415 RVA: 0x0035DC7D File Offset: 0x0035BE7D
 	public NGUIFont UIFont
 	{
 		get
@@ -21,9 +21,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010EF RID: 4335
-	// (get) Token: 0x06008DEC RID: 36332 RVA: 0x0035BBBC File Offset: 0x00359DBC
-	// (set) Token: 0x06008DED RID: 36333 RVA: 0x0035BBC4 File Offset: 0x00359DC4
+	// Token: 0x170010FA RID: 4346
+	// (get) Token: 0x06008E40 RID: 36416 RVA: 0x0035DC8C File Offset: 0x0035BE8C
+	// (set) Token: 0x06008E41 RID: 36417 RVA: 0x0035DC94 File Offset: 0x0035BE94
 	[XuiXmlAttribute("font_size", false)]
 	public int FontSize
 	{
@@ -38,9 +38,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F0 RID: 4336
-	// (get) Token: 0x06008DEE RID: 36334 RVA: 0x0035BBD3 File Offset: 0x00359DD3
-	// (set) Token: 0x06008DEF RID: 36335 RVA: 0x0035BBDB File Offset: 0x00359DDB
+	// Token: 0x170010FB RID: 4347
+	// (get) Token: 0x06008E42 RID: 36418 RVA: 0x0035DCA3 File Offset: 0x0035BEA3
+	// (set) Token: 0x06008E43 RID: 36419 RVA: 0x0035DCAB File Offset: 0x0035BEAB
 	[XuiXmlAttribute("spacing_x", false)]
 	public int SpacingX
 	{
@@ -59,9 +59,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F1 RID: 4337
-	// (get) Token: 0x06008DF0 RID: 36336 RVA: 0x0035BBF4 File Offset: 0x00359DF4
-	// (set) Token: 0x06008DF1 RID: 36337 RVA: 0x0035BBFC File Offset: 0x00359DFC
+	// Token: 0x170010FC RID: 4348
+	// (get) Token: 0x06008E44 RID: 36420 RVA: 0x0035DCC4 File Offset: 0x0035BEC4
+	// (set) Token: 0x06008E45 RID: 36421 RVA: 0x0035DCCC File Offset: 0x0035BECC
 	[XuiXmlAttribute("spacing_y", false)]
 	public int SpacingY
 	{
@@ -80,9 +80,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F2 RID: 4338
-	// (get) Token: 0x06008DF2 RID: 36338 RVA: 0x0035BC15 File Offset: 0x00359E15
-	// (set) Token: 0x06008DF3 RID: 36339 RVA: 0x0035BC1D File Offset: 0x00359E1D
+	// Token: 0x170010FD RID: 4349
+	// (get) Token: 0x06008E46 RID: 36422 RVA: 0x0035DCE5 File Offset: 0x0035BEE5
+	// (set) Token: 0x06008E47 RID: 36423 RVA: 0x0035DCED File Offset: 0x0035BEED
 	[XuiXmlAttribute("effect", false)]
 	public UILabel.Effect Effect
 	{
@@ -97,9 +97,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F3 RID: 4339
-	// (get) Token: 0x06008DF4 RID: 36340 RVA: 0x0035BC2C File Offset: 0x00359E2C
-	// (set) Token: 0x06008DF5 RID: 36341 RVA: 0x0035BC34 File Offset: 0x00359E34
+	// Token: 0x170010FE RID: 4350
+	// (get) Token: 0x06008E48 RID: 36424 RVA: 0x0035DCFC File Offset: 0x0035BEFC
+	// (set) Token: 0x06008E49 RID: 36425 RVA: 0x0035DD04 File Offset: 0x0035BF04
 	[XuiXmlAttribute("effect_color", false)]
 	public Color EffectColor
 	{
@@ -114,9 +114,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F4 RID: 4340
-	// (get) Token: 0x06008DF6 RID: 36342 RVA: 0x0035BC43 File Offset: 0x00359E43
-	// (set) Token: 0x06008DF7 RID: 36343 RVA: 0x0035BC4B File Offset: 0x00359E4B
+	// Token: 0x170010FF RID: 4351
+	// (get) Token: 0x06008E4A RID: 36426 RVA: 0x0035DD13 File Offset: 0x0035BF13
+	// (set) Token: 0x06008E4B RID: 36427 RVA: 0x0035DD1B File Offset: 0x0035BF1B
 	[XuiXmlAttribute("effect_distance", false)]
 	public Vector2 EffectDistance
 	{
@@ -131,9 +131,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F5 RID: 4341
-	// (get) Token: 0x06008DF8 RID: 36344 RVA: 0x0035BC5A File Offset: 0x00359E5A
-	// (set) Token: 0x06008DF9 RID: 36345 RVA: 0x0035BC62 File Offset: 0x00359E62
+	// Token: 0x17001100 RID: 4352
+	// (get) Token: 0x06008E4C RID: 36428 RVA: 0x0035DD2A File Offset: 0x0035BF2A
+	// (set) Token: 0x06008E4D RID: 36429 RVA: 0x0035DD32 File Offset: 0x0035BF32
 	[XuiXmlAttribute("crispness", false)]
 	public UILabel.Crispness Crispness
 	{
@@ -148,9 +148,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F6 RID: 4342
-	// (get) Token: 0x06008DFA RID: 36346 RVA: 0x0035BC71 File Offset: 0x00359E71
-	// (set) Token: 0x06008DFB RID: 36347 RVA: 0x0035BC79 File Offset: 0x00359E79
+	// Token: 0x17001101 RID: 4353
+	// (get) Token: 0x06008E4E RID: 36430 RVA: 0x0035DD41 File Offset: 0x0035BF41
+	// (set) Token: 0x06008E4F RID: 36431 RVA: 0x0035DD49 File Offset: 0x0035BF49
 	[XuiXmlAttribute("color", false)]
 	public Color Color
 	{
@@ -169,9 +169,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F7 RID: 4343
-	// (get) Token: 0x06008DFC RID: 36348 RVA: 0x0035BC97 File Offset: 0x00359E97
-	// (set) Token: 0x06008DFD RID: 36349 RVA: 0x0035BCA4 File Offset: 0x00359EA4
+	// Token: 0x17001102 RID: 4354
+	// (get) Token: 0x06008E50 RID: 36432 RVA: 0x0035DD67 File Offset: 0x0035BF67
+	// (set) Token: 0x06008E51 RID: 36433 RVA: 0x0035DD74 File Offset: 0x0035BF74
 	public float Alpha
 	{
 		get
@@ -189,9 +189,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F8 RID: 4344
-	// (get) Token: 0x06008DFE RID: 36350 RVA: 0x0035BCCC File Offset: 0x00359ECC
-	// (set) Token: 0x06008DFF RID: 36351 RVA: 0x0035BCD4 File Offset: 0x00359ED4
+	// Token: 0x17001103 RID: 4355
+	// (get) Token: 0x06008E52 RID: 36434 RVA: 0x0035DD9C File Offset: 0x0035BF9C
+	// (set) Token: 0x06008E53 RID: 36435 RVA: 0x0035DDA4 File Offset: 0x0035BFA4
 	[XuiXmlAttribute("justify", false)]
 	public NGUIText.Alignment Alignment
 	{
@@ -210,9 +210,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010F9 RID: 4345
-	// (get) Token: 0x06008E00 RID: 36352 RVA: 0x0035BCED File Offset: 0x00359EED
-	// (set) Token: 0x06008E01 RID: 36353 RVA: 0x0035BCF5 File Offset: 0x00359EF5
+	// Token: 0x17001104 RID: 4356
+	// (get) Token: 0x06008E54 RID: 36436 RVA: 0x0035DDBD File Offset: 0x0035BFBD
+	// (set) Token: 0x06008E55 RID: 36437 RVA: 0x0035DDC5 File Offset: 0x0035BFC5
 	[XuiXmlAttribute("upper_case", false)]
 	public bool UpperCase
 	{
@@ -231,9 +231,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010FA RID: 4346
-	// (get) Token: 0x06008E02 RID: 36354 RVA: 0x0035BD0E File Offset: 0x00359F0E
-	// (set) Token: 0x06008E03 RID: 36355 RVA: 0x0035BD16 File Offset: 0x00359F16
+	// Token: 0x17001105 RID: 4357
+	// (get) Token: 0x06008E56 RID: 36438 RVA: 0x0035DDDE File Offset: 0x0035BFDE
+	// (set) Token: 0x06008E57 RID: 36439 RVA: 0x0035DDE6 File Offset: 0x0035BFE6
 	[XuiXmlAttribute("lower_case", false)]
 	public bool LowerCase
 	{
@@ -252,9 +252,9 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010FB RID: 4347
-	// (get) Token: 0x06008E04 RID: 36356 RVA: 0x0035BD2F File Offset: 0x00359F2F
-	// (set) Token: 0x06008E05 RID: 36357 RVA: 0x0035BD37 File Offset: 0x00359F37
+	// Token: 0x17001106 RID: 4358
+	// (get) Token: 0x06008E58 RID: 36440 RVA: 0x0035DDFF File Offset: 0x0035BFFF
+	// (set) Token: 0x06008E59 RID: 36441 RVA: 0x0035DE07 File Offset: 0x0035C007
 	[XuiXmlAttribute("support_bb_code", false)]
 	public bool SupportBbCode
 	{
@@ -273,8 +273,8 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010FC RID: 4348
-	// (get) Token: 0x06008E06 RID: 36358 RVA: 0x0035BD50 File Offset: 0x00359F50
+	// Token: 0x17001107 RID: 4359
+	// (get) Token: 0x06008E5A RID: 36442 RVA: 0x0035DE20 File Offset: 0x0035C020
 	public Vector2 PrintedSize
 	{
 		get
@@ -283,20 +283,20 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008E07 RID: 36359 RVA: 0x0035BD5D File Offset: 0x00359F5D
+	// Token: 0x06008E5B RID: 36443 RVA: 0x0035DE2D File Offset: 0x0035C02D
 	public XUiV_LabelBase(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008E08 RID: 36360 RVA: 0x0035BD8A File Offset: 0x00359F8A
+	// Token: 0x06008E5C RID: 36444 RVA: 0x0035DE5A File Offset: 0x0035C05A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
 		_go.AddComponent<UILabel>();
 	}
 
-	// Token: 0x06008E09 RID: 36361 RVA: 0x0035BD94 File Offset: 0x00359F94
+	// Token: 0x06008E5D RID: 36445 RVA: 0x0035DE64 File Offset: 0x0035C064
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -304,7 +304,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		this.widget = (this.label = this.uiTransform.GetComponent<UILabel>());
 	}
 
-	// Token: 0x06008E0A RID: 36362 RVA: 0x0035BDC4 File Offset: 0x00359FC4
+	// Token: 0x06008E5E RID: 36446 RVA: 0x0035DE94 File Offset: 0x0035C094
 	public override void InitView()
 	{
 		if (this.supportUrls)
@@ -321,7 +321,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		this.updateData();
 	}
 
-	// Token: 0x06008E0B RID: 36363 RVA: 0x0035BE1D File Offset: 0x0035A01D
+	// Token: 0x06008E5F RID: 36447 RVA: 0x0035DEED File Offset: 0x0035C0ED
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
@@ -329,7 +329,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		this.FontSize = 16;
 	}
 
-	// Token: 0x06008E0C RID: 36364 RVA: 0x0035BE35 File Offset: 0x0035A035
+	// Token: 0x06008E60 RID: 36448 RVA: 0x0035DF05 File Offset: 0x0035C105
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHover(bool _isOver)
 	{
@@ -350,7 +350,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		base.OnHover(_isOver);
 	}
 
-	// Token: 0x06008E0D RID: 36365 RVA: 0x0035BE6C File Offset: 0x0035A06C
+	// Token: 0x06008E61 RID: 36449 RVA: 0x0035DF3C File Offset: 0x0035C13C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateUrlTooltip()
 	{
@@ -382,7 +382,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008E0E RID: 36366 RVA: 0x0035BEDE File Offset: 0x0035A0DE
+	// Token: 0x06008E62 RID: 36450 RVA: 0x0035DFAE File Offset: 0x0035C1AE
 	public override void Update(float _dt)
 	{
 		if (this.isOver)
@@ -392,7 +392,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008E0F RID: 36367 RVA: 0x0035BEF8 File Offset: 0x0035A0F8
+	// Token: 0x06008E63 RID: 36451 RVA: 0x0035DFC8 File Offset: 0x0035C1C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -413,7 +413,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		base.updateData();
 	}
 
-	// Token: 0x06008E10 RID: 36368 RVA: 0x0035BFD4 File Offset: 0x0035A1D4
+	// Token: 0x06008E64 RID: 36452 RVA: 0x0035E0A4 File Offset: 0x0035C2A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual string getFormattedText(string _text)
 	{
@@ -428,13 +428,13 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		return _text;
 	}
 
-	// Token: 0x06008E11 RID: 36369 RVA: 0x0035BFF9 File Offset: 0x0035A1F9
+	// Token: 0x06008E65 RID: 36453 RVA: 0x0035E0C9 File Offset: 0x0035C2C9
 	public void BindToUiInput(UIInput _input)
 	{
 		_input.label = this.label;
 	}
 
-	// Token: 0x06008E12 RID: 36370 RVA: 0x0035C007 File Offset: 0x0035A207
+	// Token: 0x06008E66 RID: 36454 RVA: 0x0035E0D7 File Offset: 0x0035C2D7
 	[XuiXmlAttribute("font_face", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeFontFace(string _value)
@@ -446,7 +446,7 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008E13 RID: 36371 RVA: 0x0035C048 File Offset: 0x0035A248
+	// Token: 0x06008E67 RID: 36455 RVA: 0x0035E118 File Offset: 0x0035C318
 	[XuiXmlAttribute("support_urls", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSupportUrls(string _value)
@@ -465,71 +465,71 @@ public abstract class XUiV_LabelBase : XUiView_WidgetBased
 		this.supportedUrlTypes = new HashSet<string>(_value.Split(",", StringSplitOptions.None));
 	}
 
-	// Token: 0x04006869 RID: 26729
+	// Token: 0x040068A9 RID: 26793
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UILabel label;
 
-	// Token: 0x0400686A RID: 26730
+	// Token: 0x040068AA RID: 26794
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public NGUIFont uiFont;
 
-	// Token: 0x0400686B RID: 26731
+	// Token: 0x040068AB RID: 26795
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int fontSize;
 
-	// Token: 0x0400686C RID: 26732
+	// Token: 0x040068AC RID: 26796
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int spacingX = 1;
 
-	// Token: 0x0400686D RID: 26733
+	// Token: 0x040068AD RID: 26797
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int spacingY;
 
-	// Token: 0x0400686E RID: 26734
+	// Token: 0x040068AE RID: 26798
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UILabel.Effect effect;
 
-	// Token: 0x0400686F RID: 26735
+	// Token: 0x040068AF RID: 26799
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color effectColor = new Color32(0, 0, 0, 80);
 
-	// Token: 0x04006870 RID: 26736
+	// Token: 0x040068B0 RID: 26800
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector2 effectDistance;
 
-	// Token: 0x04006871 RID: 26737
+	// Token: 0x040068B1 RID: 26801
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UILabel.Crispness crispness;
 
-	// Token: 0x04006872 RID: 26738
+	// Token: 0x040068B2 RID: 26802
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color color;
 
-	// Token: 0x04006873 RID: 26739
+	// Token: 0x040068B3 RID: 26803
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public NGUIText.Alignment alignment;
 
-	// Token: 0x04006874 RID: 26740
+	// Token: 0x040068B4 RID: 26804
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool upperCase;
 
-	// Token: 0x04006875 RID: 26741
+	// Token: 0x040068B5 RID: 26805
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool lowerCase;
 
-	// Token: 0x04006876 RID: 26742
+	// Token: 0x040068B6 RID: 26806
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool supportBbCode = true;
 
-	// Token: 0x04006877 RID: 26743
+	// Token: 0x040068B7 RID: 26807
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool supportUrls;
 
-	// Token: 0x04006878 RID: 26744
+	// Token: 0x040068B8 RID: 26808
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public HashSet<string> supportedUrlTypes;
 
-	// Token: 0x04006879 RID: 26745
+	// Token: 0x040068B9 RID: 26809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hadTooltipTextFromUrlHover;
 }

@@ -4,10 +4,10 @@ using System.IO;
 
 namespace SDF
 {
-	// Token: 0x020016BE RID: 5822
+	// Token: 0x020016DD RID: 5853
 	public static class SdfReader
 	{
-		// Token: 0x0600B6BC RID: 46780 RVA: 0x0043CADC File Offset: 0x0043ACDC
+		// Token: 0x0600B790 RID: 46992 RVA: 0x0043F580 File Offset: 0x0043D780
 		public static Dictionary<string, SdfTag> Read(Stream fs)
 		{
 			Dictionary<string, SdfTag> dictionary = new Dictionary<string, SdfTag>();

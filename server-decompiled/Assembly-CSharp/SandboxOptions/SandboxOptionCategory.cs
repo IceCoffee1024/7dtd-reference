@@ -2,13 +2,13 @@
 
 namespace SandboxOptions
 {
-	// Token: 0x020018C7 RID: 6343
+	// Token: 0x020018F8 RID: 6392
 	public class SandboxOptionCategory
 	{
-		// Token: 0x04009460 RID: 37984
+		// Token: 0x04009549 RID: 38217
 		public string CategoryName;
 
-		// Token: 0x04009461 RID: 37985
+		// Token: 0x0400954A RID: 38218
 		public string DisplayName;
 	}
 }

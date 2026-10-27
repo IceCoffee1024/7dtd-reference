@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018F5 RID: 6389
+	// Token: 0x02001926 RID: 6438
 	[Preserve]
 	public class RaycastNodeInfo
 	{
-		// Token: 0x0600C53B RID: 50491 RVA: 0x00488B64 File Offset: 0x00486D64
+		// Token: 0x0600C64F RID: 50767 RVA: 0x0048C510 File Offset: 0x0048A710
 		public RaycastNodeInfo(Vector3 pos, float scale = 1f, int depth = 0)
 		{
 			this.Position = pos;
@@ -20,7 +20,7 @@ namespace RaycastPathing
 			this.Center = (this.Min + this.Max) * 0.5f;
 		}
 
-		// Token: 0x0600C53C RID: 50492 RVA: 0x00488BFC File Offset: 0x00486DFC
+		// Token: 0x0600C650 RID: 50768 RVA: 0x0048C5A8 File Offset: 0x0048A7A8
 		public RaycastNodeInfo(Vector3 min, Vector3 max, float scale = 1f, int depth = 0)
 		{
 			this.Position = (min + max) * 0.5f;
@@ -32,25 +32,25 @@ namespace RaycastPathing
 			this.Center = this.Position;
 		}
 
-		// Token: 0x040094EF RID: 38127
+		// Token: 0x040095D8 RID: 38360
 		public readonly Vector3 Position;
 
-		// Token: 0x040094F0 RID: 38128
+		// Token: 0x040095D9 RID: 38361
 		public readonly Vector3i BlockPos;
 
-		// Token: 0x040094F1 RID: 38129
+		// Token: 0x040095DA RID: 38362
 		public readonly float Scale;
 
-		// Token: 0x040094F2 RID: 38130
+		// Token: 0x040095DB RID: 38363
 		public readonly int Depth;
 
-		// Token: 0x040094F3 RID: 38131
+		// Token: 0x040095DC RID: 38364
 		public readonly Vector3 Min;
 
-		// Token: 0x040094F4 RID: 38132
+		// Token: 0x040095DD RID: 38365
 		public readonly Vector3 Max;
 
-		// Token: 0x040094F5 RID: 38133
+		// Token: 0x040095DE RID: 38366
 		public readonly Vector3 Center;
 	}
 }

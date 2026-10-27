@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019DF RID: 6623
+	// Token: 0x02001A10 RID: 6672
 	[Preserve]
 	public class ActionRespawnEntity : BaseAction
 	{
-		// Token: 0x0600CAB3 RID: 51891 RVA: 0x004A2EE3 File Offset: 0x004A10E3
+		// Token: 0x0600CBC7 RID: 52167 RVA: 0x004A69E3 File Offset: 0x004A4BE3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceActions
 			this.AddToGroups = this.addToGroup.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600CAB4 RID: 51892 RVA: 0x004A2F00 File Offset: 0x004A1100
+		// Token: 0x0600CBC8 RID: 52168 RVA: 0x004A6A00 File Offset: 0x004A4C00
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.oldEntityClass == -1 && base.Owner.Target != null && !(base.Owner.Target is EntityPlayer))
@@ -79,7 +79,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CAB5 RID: 51893 RVA: 0x004A3178 File Offset: 0x004A1378
+		// Token: 0x0600CBC9 RID: 52169 RVA: 0x004A6C78 File Offset: 0x004A4E78
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -89,7 +89,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseFloat(ActionRespawnEntity.PropDelay, ref this.delay);
 		}
 
-		// Token: 0x0600CAB6 RID: 51894 RVA: 0x004A31D0 File Offset: 0x004A13D0
+		// Token: 0x0600CBCA RID: 52170 RVA: 0x004A6CD0 File Offset: 0x004A4ED0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -103,55 +103,55 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009966 RID: 39270
+		// Token: 0x04009A4F RID: 39503
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x04009967 RID: 39271
+		// Token: 0x04009A50 RID: 39504
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string addToGroup = "";
 
-		// Token: 0x04009968 RID: 39272
+		// Token: 0x04009A51 RID: 39505
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] AddToGroups;
 
-		// Token: 0x04009969 RID: 39273
+		// Token: 0x04009A52 RID: 39506
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string respawnSound = "";
 
-		// Token: 0x0400996A RID: 39274
+		// Token: 0x04009A53 RID: 39507
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x0400996B RID: 39275
+		// Token: 0x04009A54 RID: 39508
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAddToGroup = "add_to_group";
 
-		// Token: 0x0400996C RID: 39276
+		// Token: 0x04009A55 RID: 39509
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRespawnSound = "respawn_sound";
 
-		// Token: 0x0400996D RID: 39277
+		// Token: 0x04009A56 RID: 39510
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDelay = "delay";
 
-		// Token: 0x0400996E RID: 39278
+		// Token: 0x04009A57 RID: 39511
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int oldEntityClass = -1;
 
-		// Token: 0x0400996F RID: 39279
+		// Token: 0x04009A58 RID: 39512
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int oldEntityID = -1;
 
-		// Token: 0x04009970 RID: 39280
+		// Token: 0x04009A59 RID: 39513
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 oldPosition;
 
-		// Token: 0x04009971 RID: 39281
+		// Token: 0x04009A5A RID: 39514
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 oldRotation;
 
-		// Token: 0x04009972 RID: 39282
+		// Token: 0x04009A5B RID: 39515
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float delay = 3f;
 	}

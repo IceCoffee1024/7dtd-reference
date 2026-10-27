@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000236 RID: 566
+// Token: 0x02000238 RID: 568
 [Preserve]
 public class ConsoleCmdListEntities : ConsoleCmdAbstract
 {
 	// Token: 0x1700019D RID: 413
-	// (get) Token: 0x060010F5 RID: 4341 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060010F9 RID: 4345 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,7 +18,7 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700019E RID: 414
-	// (get) Token: 0x060010F6 RID: 4342 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x060010FA RID: 4346 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -28,7 +28,7 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700019F RID: 415
-	// (get) Token: 0x060010F7 RID: 4343 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x060010FB RID: 4347 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,14 +37,14 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010F8 RID: 4344 RVA: 0x0006C4A8 File Offset: 0x0006A6A8
+	// Token: 0x060010FC RID: 4348 RVA: 0x0006C678 File Offset: 0x0006A878
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "listents", "le" };
 	}
 
-	// Token: 0x060010F9 RID: 4345 RVA: 0x0006C4C0 File Offset: 0x0006A6C0
+	// Token: 0x060010FD RID: 4349 RVA: 0x0006C690 File Offset: 0x0006A890
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		int num = 0;
@@ -83,7 +83,7 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Total of " + GameManager.Instance.World.Entities.Count.ToString() + " in the game");
 	}
 
-	// Token: 0x060010FA RID: 4346 RVA: 0x0006C672 File Offset: 0x0006A872
+	// Token: 0x060010FE RID: 4350 RVA: 0x0006C842 File Offset: 0x0006AA42
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -5,13 +5,13 @@ using System.Text.RegularExpressions;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DD9 RID: 3545
+// Token: 0x02000DE4 RID: 3556
 [Preserve]
 public class XUiC_ServerBrowserDirectConnect : XUiController
 {
-	// Token: 0x17000BF8 RID: 3064
-	// (get) Token: 0x06006BFD RID: 27645 RVA: 0x002A55A3 File Offset: 0x002A37A3
-	// (set) Token: 0x06006BFE RID: 27646 RVA: 0x002A55BB File Offset: 0x002A37BB
+	// Token: 0x17000BFE RID: 3070
+	// (get) Token: 0x06006C22 RID: 27682 RVA: 0x002A6ACB File Offset: 0x002A4CCB
+	// (set) Token: 0x06006C23 RID: 27683 RVA: 0x002A6AE3 File Offset: 0x002A4CE3
 	public string Ip
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -32,9 +32,9 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		}
 	}
 
-	// Token: 0x17000BF9 RID: 3065
-	// (get) Token: 0x06006BFF RID: 27647 RVA: 0x002A55D0 File Offset: 0x002A37D0
-	// (set) Token: 0x06006C00 RID: 27648 RVA: 0x002A55F4 File Offset: 0x002A37F4
+	// Token: 0x17000BFF RID: 3071
+	// (get) Token: 0x06006C24 RID: 27684 RVA: 0x002A6AF8 File Offset: 0x002A4CF8
+	// (set) Token: 0x06006C25 RID: 27685 RVA: 0x002A6B1C File Offset: 0x002A4D1C
 	public int Port
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -55,9 +55,9 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		}
 	}
 
-	// Token: 0x17000BFA RID: 3066
-	// (get) Token: 0x06006C01 RID: 27649 RVA: 0x002A560F File Offset: 0x002A380F
-	// (set) Token: 0x06006C02 RID: 27650 RVA: 0x002A5617 File Offset: 0x002A3817
+	// Token: 0x17000C00 RID: 3072
+	// (get) Token: 0x06006C26 RID: 27686 RVA: 0x002A6B37 File Offset: 0x002A4D37
+	// (set) Token: 0x06006C27 RID: 27687 RVA: 0x002A6B3F File Offset: 0x002A4D3F
 	[XuiXmlBinding("validdata")]
 	public bool ValidData
 	{
@@ -74,7 +74,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		}
 	}
 
-	// Token: 0x06006C03 RID: 27651 RVA: 0x002A5627 File Offset: 0x002A3827
+	// Token: 0x06006C28 RID: 27688 RVA: 0x002A6B4F File Offset: 0x002A4D4F
 	public override void Init()
 	{
 		base.Init();
@@ -82,7 +82,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		this.txtPort.SelectOnTab = this.txtIp;
 	}
 
-	// Token: 0x06006C04 RID: 27652 RVA: 0x002A5654 File Offset: 0x002A3854
+	// Token: 0x06006C29 RID: 27689 RVA: 0x002A6B7C File Offset: 0x002A4D7C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -100,7 +100,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		}
 	}
 
-	// Token: 0x06006C05 RID: 27653 RVA: 0x002A56D0 File Offset: 0x002A38D0
+	// Token: 0x06006C2A RID: 27690 RVA: 0x002A6BF8 File Offset: 0x002A4DF8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -119,7 +119,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		xuiC_Button.SelectCursorElement(true, false);
 	}
 
-	// Token: 0x06006C06 RID: 27654 RVA: 0x002A572E File Offset: 0x002A392E
+	// Token: 0x06006C2B RID: 27691 RVA: 0x002A6C56 File Offset: 0x002A4E56
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -129,7 +129,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		this.confirmed = null;
 	}
 
-	// Token: 0x06006C07 RID: 27655 RVA: 0x002A5750 File Offset: 0x002A3950
+	// Token: 0x06006C2C RID: 27692 RVA: 0x002A6C78 File Offset: 0x002A4E78
 	[XuiBindEvent("OnClipboardHandler", "txtIp")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtIp_OnClipboardHandler(UIInput.ClipboardAction _actionType, string _oldText, int _selStart, int _selEnd, string _actionResultText)
@@ -157,7 +157,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		this.Port = num;
 	}
 
-	// Token: 0x06006C08 RID: 27656 RVA: 0x002A57C0 File Offset: 0x002A39C0
+	// Token: 0x06006C2D RID: 27693 RVA: 0x002A6CE8 File Offset: 0x002A4EE8
 	[XuiBindEvent("OnSubmitHandler", "txtIp")]
 	[XuiBindEvent("OnSubmitHandler", "txtPort")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -166,7 +166,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		this.BtnConnect_OnPressed(_sender, -1);
 	}
 
-	// Token: 0x06006C09 RID: 27657 RVA: 0x002A57CC File Offset: 0x002A39CC
+	// Token: 0x06006C2E RID: 27694 RVA: 0x002A6CF4 File Offset: 0x002A4EF4
 	[XuiBindEvent("OnPress", "btnConnect")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnConnect_OnPressed(XUiController _sender, int _mouseButton)
@@ -233,7 +233,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		}, -1f, false, null);
 	}
 
-	// Token: 0x06006C0A RID: 27658 RVA: 0x002A5833 File Offset: 0x002A3A33
+	// Token: 0x06006C2F RID: 27695 RVA: 0x002A6D5B File Offset: 0x002A4F5B
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
@@ -247,7 +247,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		action();
 	}
 
-	// Token: 0x06006C0B RID: 27659 RVA: 0x002A5864 File Offset: 0x002A3A64
+	// Token: 0x06006C30 RID: 27696 RVA: 0x002A6D8C File Offset: 0x002A4F8C
 	[XuiBindEvent("OnChangeHandler", "txtIp")]
 	[XuiBindEvent("OnChangeHandler", "txtPort")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -257,7 +257,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		this.ValidData = port > 0 && port < 65533 && this.Ip.Length > 0;
 	}
 
-	// Token: 0x06006C0C RID: 27660 RVA: 0x002A589B File Offset: 0x002A3A9B
+	// Token: 0x06006C31 RID: 27697 RVA: 0x002A6DC3 File Offset: 0x002A4FC3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void saveIpPort()
 	{
@@ -269,7 +269,7 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		GamePrefs.Set(EnumGamePrefs.ConnectToServerPort, this.Port);
 	}
 
-	// Token: 0x06006C0D RID: 27661 RVA: 0x002A58C0 File Offset: 0x002A3AC0
+	// Token: 0x06006C32 RID: 27698 RVA: 0x002A6DE8 File Offset: 0x002A4FE8
 	public static void Open(XUi _xui, Action _onConfirmed, Action _onCancelled)
 	{
 		XUiC_ServerBrowserDirectConnect childByType = _xui.GetChildByType<XUiC_ServerBrowserDirectConnect>();
@@ -278,39 +278,39 @@ public class XUiC_ServerBrowserDirectConnect : XUiController
 		_xui.playerUI.windowManager.Open(childByType.windowGroup, false);
 	}
 
-	// Token: 0x040052A8 RID: 21160
+	// Token: 0x040052CD RID: 21197
 	[XuiBindComponent("txtIp", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtIp;
 
-	// Token: 0x040052A9 RID: 21161
+	// Token: 0x040052CE RID: 21198
 	[XuiBindComponent("txtPort", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtPort;
 
-	// Token: 0x040052AA RID: 21162
+	// Token: 0x040052CF RID: 21199
 	[XuiBindComponent("btnConnect", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnConnect;
 
-	// Token: 0x040052AB RID: 21163
+	// Token: 0x040052D0 RID: 21200
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x040052AC RID: 21164
+	// Token: 0x040052D1 RID: 21201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex ipPortMatcher = new Regex("^(.*):(\\d+)$");
 
-	// Token: 0x040052AD RID: 21165
+	// Token: 0x040052D2 RID: 21202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action confirmed;
 
-	// Token: 0x040052AE RID: 21166
+	// Token: 0x040052D3 RID: 21203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action cancelled;
 
-	// Token: 0x040052AF RID: 21167
+	// Token: 0x040052D4 RID: 21204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validData;
 }

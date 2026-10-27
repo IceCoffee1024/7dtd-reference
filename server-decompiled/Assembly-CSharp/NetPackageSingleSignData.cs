@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000852 RID: 2130
+// Token: 0x0200085C RID: 2140
 [Preserve]
 public class NetPackageSingleSignData : NetPackage
 {
-	// Token: 0x06003DF2 RID: 15858 RVA: 0x00189C27 File Offset: 0x00187E27
+	// Token: 0x06003E15 RID: 15893 RVA: 0x0018ACCF File Offset: 0x00188ECF
 	public NetPackageSingleSignData Setup(string _libraryId, byte[] _signBlob)
 	{
 		this.libraryId = _libraryId;
@@ -13,7 +13,7 @@ public class NetPackageSingleSignData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DF3 RID: 15859 RVA: 0x00189C38 File Offset: 0x00187E38
+	// Token: 0x06003E16 RID: 15894 RVA: 0x0018ACE0 File Offset: 0x00188EE0
 	public override void read(PooledBinaryReader _br)
 	{
 		this.libraryId = _br.ReadString();
@@ -27,7 +27,7 @@ public class NetPackageSingleSignData : NetPackage
 		this.signBlob = null;
 	}
 
-	// Token: 0x06003DF4 RID: 15860 RVA: 0x00189C84 File Offset: 0x00187E84
+	// Token: 0x06003E17 RID: 15895 RVA: 0x0018AD2C File Offset: 0x00188F2C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -40,7 +40,7 @@ public class NetPackageSingleSignData : NetPackage
 		}
 	}
 
-	// Token: 0x06003DF5 RID: 15861 RVA: 0x00189CD0 File Offset: 0x00187ED0
+	// Token: 0x06003E18 RID: 15896 RVA: 0x0018AD78 File Offset: 0x00188F78
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (this.signBlob == null)
@@ -55,11 +55,11 @@ public class NetPackageSingleSignData : NetPackage
 		}
 	}
 
-	// Token: 0x0400326A RID: 12906
+	// Token: 0x0400328A RID: 12938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string libraryId;
 
-	// Token: 0x0400326B RID: 12907
+	// Token: 0x0400328B RID: 12939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] signBlob;
 }

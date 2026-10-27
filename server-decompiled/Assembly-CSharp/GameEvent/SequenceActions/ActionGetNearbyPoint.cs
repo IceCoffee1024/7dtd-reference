@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019B5 RID: 6581
+	// Token: 0x020019E6 RID: 6630
 	[Preserve]
 	public class ActionGetNearbyPoint : BaseAction
 	{
-		// Token: 0x0600C9F2 RID: 51698 RVA: 0x0049F148 File Offset: 0x0049D348
+		// Token: 0x0600CB06 RID: 51974 RVA: 0x004A2C48 File Offset: 0x004A0E48
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			Vector3 zero = Vector3.zero;
@@ -25,7 +25,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C9F3 RID: 51699 RVA: 0x0049F1DC File Offset: 0x0049D3DC
+		// Token: 0x0600CB07 RID: 51975 RVA: 0x004A2CDC File Offset: 0x004A0EDC
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -38,7 +38,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionGetNearbyPoint.TargetTypes>(ActionGetNearbyPoint.PropTargetType, ref this.targetType);
 		}
 
-		// Token: 0x0600C9F4 RID: 51700 RVA: 0x0049F268 File Offset: 0x0049D468
+		// Token: 0x0600CB08 RID: 51976 RVA: 0x004A2D68 File Offset: 0x004A0F68
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -54,69 +54,69 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009890 RID: 39056
+		// Token: 0x04009979 RID: 39289
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float minDistance = 8f;
 
-		// Token: 0x04009891 RID: 39057
+		// Token: 0x0400997A RID: 39290
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 12f;
 
-		// Token: 0x04009892 RID: 39058
+		// Token: 0x0400997B RID: 39291
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool safeSpawn;
 
-		// Token: 0x04009893 RID: 39059
+		// Token: 0x0400997C RID: 39292
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool airSpawn;
 
-		// Token: 0x04009894 RID: 39060
+		// Token: 0x0400997D RID: 39293
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float yOffset;
 
-		// Token: 0x04009895 RID: 39061
+		// Token: 0x0400997E RID: 39294
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x04009896 RID: 39062
+		// Token: 0x0400997F RID: 39295
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionGetNearbyPoint.TargetTypes targetType;
 
-		// Token: 0x04009897 RID: 39063
+		// Token: 0x04009980 RID: 39296
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinDistance = "min_distance";
 
-		// Token: 0x04009898 RID: 39064
+		// Token: 0x04009981 RID: 39297
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x04009899 RID: 39065
+		// Token: 0x04009982 RID: 39298
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnInSafe = "safe_spawn";
 
-		// Token: 0x0400989A RID: 39066
+		// Token: 0x04009983 RID: 39299
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnInAir = "air_spawn";
 
-		// Token: 0x0400989B RID: 39067
+		// Token: 0x04009984 RID: 39300
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropYOffset = "yoffset";
 
-		// Token: 0x0400989C RID: 39068
+		// Token: 0x04009985 RID: 39301
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x0400989D RID: 39069
+		// Token: 0x04009986 RID: 39302
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetType = "target_type";
 
-		// Token: 0x020019B6 RID: 6582
+		// Token: 0x020019E7 RID: 6631
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum TargetTypes
 		{
-			// Token: 0x0400989F RID: 39071
+			// Token: 0x04009988 RID: 39304
 			Target,
-			// Token: 0x040098A0 RID: 39072
+			// Token: 0x04009989 RID: 39305
 			TargetGroup_Random
 		}
 	}

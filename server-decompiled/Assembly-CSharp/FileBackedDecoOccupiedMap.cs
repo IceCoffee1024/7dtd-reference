@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000C36 RID: 3126
+// Token: 0x02000C41 RID: 3137
 public class FileBackedDecoOccupiedMap : IDisposable
 {
-	// Token: 0x06005EE0 RID: 24288 RVA: 0x0025264C File Offset: 0x0025084C
+	// Token: 0x06005F05 RID: 24325 RVA: 0x00253B74 File Offset: 0x00251D74
 	public FileBackedDecoOccupiedMap(int _worldWidth, int _worldHeight)
 	{
 		this.width = _worldWidth;
@@ -15,14 +15,14 @@ public class FileBackedDecoOccupiedMap : IDisposable
 		this.cacheLength = this.width * 128;
 	}
 
-	// Token: 0x06005EE1 RID: 24289 RVA: 0x002526A5 File Offset: 0x002508A5
+	// Token: 0x06005F06 RID: 24326 RVA: 0x00253BCD File Offset: 0x00251DCD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetDecoChunkRowCacheStart(int offset)
 	{
 		return offset / this.cacheLength * this.cacheLength;
 	}
 
-	// Token: 0x06005EE2 RID: 24290 RVA: 0x002526B8 File Offset: 0x002508B8
+	// Token: 0x06005F07 RID: 24327 RVA: 0x00253BE0 File Offset: 0x00251DE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Cache(int offset)
 	{
@@ -39,14 +39,14 @@ public class FileBackedDecoOccupiedMap : IDisposable
 		}
 	}
 
-	// Token: 0x06005EE3 RID: 24291 RVA: 0x0025272C File Offset: 0x0025092C
+	// Token: 0x06005F08 RID: 24328 RVA: 0x00253C54 File Offset: 0x00251E54
 	public unsafe EnumDecoOccupied Get(int _offs)
 	{
 		this.Cache(_offs);
 		return (EnumDecoOccupied)(*this.cache.Span[_offs - this.cacheStart]);
 	}
 
-	// Token: 0x06005EE4 RID: 24292 RVA: 0x0025275C File Offset: 0x0025095C
+	// Token: 0x06005F09 RID: 24329 RVA: 0x00253C84 File Offset: 0x00251E84
 	public void CopyDecoChunkRow(int row, EnumDecoOccupied[] from)
 	{
 		int num = this.heightHalf / 128;
@@ -58,7 +58,7 @@ public class FileBackedDecoOccupiedMap : IDisposable
 		}
 	}
 
-	// Token: 0x06005EE5 RID: 24293 RVA: 0x002527D0 File Offset: 0x002509D0
+	// Token: 0x06005F0A RID: 24330 RVA: 0x00253CF8 File Offset: 0x00251EF8
 	public void Dispose()
 	{
 		IBackedArrayHandle backedArrayHandle = this.cacheHandle;
@@ -75,7 +75,7 @@ public class FileBackedDecoOccupiedMap : IDisposable
 		this.occupiedMap = null;
 	}
 
-	// Token: 0x06005EE6 RID: 24294 RVA: 0x00252804 File Offset: 0x00250A04
+	// Token: 0x06005F0B RID: 24331 RVA: 0x00253D2C File Offset: 0x00251F2C
 	public void SaveAsTexture(string path, bool includeFlatAreas = false, List<FlatArea> flatAreas = null)
 	{
 		Color32[] array = new Color32[this.occupiedMap.Length];
@@ -151,39 +151,39 @@ public class FileBackedDecoOccupiedMap : IDisposable
 		global::UnityEngine.Object.Destroy(texture2D);
 	}
 
-	// Token: 0x040049EB RID: 18923
+	// Token: 0x04004A10 RID: 18960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileBackedArray<EnumDecoOccupied> occupiedMap;
 
-	// Token: 0x040049EC RID: 18924
+	// Token: 0x04004A11 RID: 18961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int width;
 
-	// Token: 0x040049ED RID: 18925
+	// Token: 0x04004A12 RID: 18962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int height;
 
-	// Token: 0x040049EE RID: 18926
+	// Token: 0x04004A13 RID: 18963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int heightHalf;
 
-	// Token: 0x040049EF RID: 18927
+	// Token: 0x04004A14 RID: 18964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cacheLength;
 
-	// Token: 0x040049F0 RID: 18928
+	// Token: 0x04004A15 RID: 18965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IBackedArrayHandle cacheHandle;
 
-	// Token: 0x040049F1 RID: 18929
+	// Token: 0x04004A16 RID: 18966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReadOnlyMemory<EnumDecoOccupied> cache;
 
-	// Token: 0x040049F2 RID: 18930
+	// Token: 0x04004A17 RID: 18967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cacheStart;
 
-	// Token: 0x040049F3 RID: 18931
+	// Token: 0x04004A18 RID: 18968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cacheEnd;
 }

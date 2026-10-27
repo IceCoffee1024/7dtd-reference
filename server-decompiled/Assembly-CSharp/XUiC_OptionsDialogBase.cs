@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using InControl;
 
-// Token: 0x02000DBB RID: 3515
+// Token: 0x02000DC6 RID: 3526
 public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditionalClosing
 {
-	// Token: 0x17000BB0 RID: 2992
-	// (get) Token: 0x06006ACE RID: 27342 RVA: 0x0029FE71 File Offset: 0x0029E071
-	// (set) Token: 0x06006ACF RID: 27343 RVA: 0x0029FE79 File Offset: 0x0029E079
+	// Token: 0x17000BB6 RID: 2998
+	// (get) Token: 0x06006AF3 RID: 27379 RVA: 0x002A1399 File Offset: 0x0029F599
+	// (set) Token: 0x06006AF4 RID: 27380 RVA: 0x002A13A1 File Offset: 0x0029F5A1
 	[XuiXmlBinding("unsaved_changes")]
 	public bool UnsavedChanges
 	{
@@ -24,8 +24,8 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x17000BB1 RID: 2993
-	// (get) Token: 0x06006AD0 RID: 27344 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000BB7 RID: 2999
+	// (get) Token: 0x06006AF5 RID: 27381 RVA: 0x00020119 File Offset: 0x0001E319
 	[XuiXmlBinding("support_defaults")]
 	public virtual bool SupportsDefaults
 	{
@@ -36,8 +36,8 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x17000BB2 RID: 2994
-	// (get) Token: 0x06006AD1 RID: 27345 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000BB8 RID: 3000
+	// (get) Token: 0x06006AF6 RID: 27382 RVA: 0x00020119 File Offset: 0x0001E319
 	[XuiXmlBinding("allow_leaving_window")]
 	public virtual bool AllowLeavingWindow
 	{
@@ -48,7 +48,7 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x06006AD2 RID: 27346 RVA: 0x0029FE89 File Offset: 0x0029E089
+	// Token: 0x06006AF7 RID: 27383 RVA: 0x002A13B1 File Offset: 0x0029F5B1
 	[XuiXmlBinding("hovered_custom_attributes")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ObservableDictionary<string, object> bindingCustomAttributes()
@@ -57,9 +57,9 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		return ((xuiC_OptionEntryAbs != null) ? xuiC_OptionEntryAbs.CustomAttributes : null) ?? this.CustomAttributes;
 	}
 
-	// Token: 0x17000BB3 RID: 2995
-	// (get) Token: 0x06006AD3 RID: 27347 RVA: 0x0029FEA7 File Offset: 0x0029E0A7
-	// (set) Token: 0x06006AD4 RID: 27348 RVA: 0x0029FEAF File Offset: 0x0029E0AF
+	// Token: 0x17000BB9 RID: 3001
+	// (get) Token: 0x06006AF8 RID: 27384 RVA: 0x002A13CF File Offset: 0x0029F5CF
+	// (set) Token: 0x06006AF9 RID: 27385 RVA: 0x002A13D7 File Offset: 0x0029F5D7
 	public XUiC_OptionEntryAbs HoveredOption
 	{
 		get
@@ -77,7 +77,7 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x06006AD5 RID: 27349 RVA: 0x0029FECC File Offset: 0x0029E0CC
+	// Token: 0x06006AFA RID: 27386 RVA: 0x002A13F4 File Offset: 0x0029F5F4
 	public override void Init()
 	{
 		base.Init();
@@ -95,14 +95,14 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x06006AD6 RID: 27350 RVA: 0x0029FF62 File Offset: 0x0029E162
+	// Token: 0x06006AFB RID: 27387 RVA: 0x002A148A File Offset: 0x0029F68A
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		GamePrefs.OnGamePrefChanged -= this.OnGamePrefChanged;
 	}
 
-	// Token: 0x06006AD7 RID: 27351 RVA: 0x0029FF7C File Offset: 0x0029E17C
+	// Token: 0x06006AFC RID: 27388 RVA: 0x002A14A4 File Offset: 0x0029F6A4
 	public override void OnOpen()
 	{
 		this.unsavedChanges = false;
@@ -114,7 +114,7 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		this.updateUnsavedState();
 	}
 
-	// Token: 0x06006AD8 RID: 27352 RVA: 0x0029FFE4 File Offset: 0x0029E1E4
+	// Token: 0x06006AFD RID: 27389 RVA: 0x002A150C File Offset: 0x0029F70C
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -126,7 +126,7 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x06006AD9 RID: 27353 RVA: 0x002A0040 File Offset: 0x0029E240
+	// Token: 0x06006AFE RID: 27390 RVA: 0x002A1568 File Offset: 0x0029F768
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -149,19 +149,19 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x06006ADA RID: 27354 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006AFF RID: 27391 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onDirtyUpdate()
 	{
 	}
 
-	// Token: 0x06006ADB RID: 27355 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006B00 RID: 27392 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
 	}
 
-	// Token: 0x06006ADC RID: 27356 RVA: 0x002A00D8 File Offset: 0x0029E2D8
+	// Token: 0x06006B01 RID: 27393 RVA: 0x002A1600 File Offset: 0x0029F800
 	public virtual void TryClose(Action _onClosed, Action _onCancelled)
 	{
 		if (this.unsavedChanges)
@@ -235,7 +235,7 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		onClosed();
 	}
 
-	// Token: 0x06006ADD RID: 27357 RVA: 0x002A0157 File Offset: 0x0029E357
+	// Token: 0x06006B02 RID: 27394 RVA: 0x002A167F File Offset: 0x0029F87F
 	[XuiBindEvent("ValueChanged", "AllOptions")]
 	public void Event_SettingChanged(XUiC_OptionEntryAbs _sender)
 	{
@@ -244,7 +244,7 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		base.RefreshBindingsSelfAndChildren();
 	}
 
-	// Token: 0x06006ADE RID: 27358 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06006B03 RID: 27395 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[XuiBindEvent("OnTabChanged", "TabSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTabChanged(int _tabIndex, XUiC_TabSelectorTab _tab)
@@ -252,28 +252,28 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006ADF RID: 27359 RVA: 0x002A017A File Offset: 0x0029E37A
+	// Token: 0x06006B04 RID: 27396 RVA: 0x002A16A2 File Offset: 0x0029F8A2
 	[XuiBindEvent("OnPress", "btnApply")]
 	public void Event_ApplyOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.saveChanges();
 	}
 
-	// Token: 0x06006AE0 RID: 27360 RVA: 0x002A0182 File Offset: 0x0029E382
+	// Token: 0x06006B05 RID: 27397 RVA: 0x002A16AA File Offset: 0x0029F8AA
 	[XuiBindEvent("OnPress", "btnDefaults")]
 	public void Event_DefaultsOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.resetToDefaults();
 	}
 
-	// Token: 0x06006AE1 RID: 27361 RVA: 0x002A018A File Offset: 0x0029E38A
+	// Token: 0x06006B06 RID: 27398 RVA: 0x002A16B2 File Offset: 0x0029F8B2
 	[XuiBindEvent("OnPress", "btnBack")]
 	public void Event_BackOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.TryClose(null, null);
 	}
 
-	// Token: 0x06006AE2 RID: 27362 RVA: 0x002A0194 File Offset: 0x0029E394
+	// Token: 0x06006B07 RID: 27399 RVA: 0x002A16BC File Offset: 0x0029F8BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateUnsavedState()
 	{
@@ -311,20 +311,20 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		}
 	}
 
-	// Token: 0x06006AE3 RID: 27363 RVA: 0x002A026C File Offset: 0x0029E46C
+	// Token: 0x06006B08 RID: 27400 RVA: 0x002A1794 File Offset: 0x0029F994
 	public void SetChanged()
 	{
 		this.UnsavedChanges = true;
 	}
 
-	// Token: 0x06006AE4 RID: 27364 RVA: 0x00089715 File Offset: 0x00087915
+	// Token: 0x06006B09 RID: 27401 RVA: 0x00089949 File Offset: 0x00087B49
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void closeOptions()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06006AE5 RID: 27365 RVA: 0x002A0278 File Offset: 0x0029E478
+	// Token: 0x06006B0A RID: 27402 RVA: 0x002A17A0 File Offset: 0x0029F9A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void saveChanges()
 	{
@@ -347,19 +347,19 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006AE6 RID: 27366 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006B0B RID: 27403 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void doSaveChangesInternal()
 	{
 	}
 
-	// Token: 0x06006AE7 RID: 27367 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006B0C RID: 27404 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void afterChangesSaved()
 	{
 	}
 
-	// Token: 0x06006AE8 RID: 27368 RVA: 0x002A02FC File Offset: 0x0029E4FC
+	// Token: 0x06006B0D RID: 27405 RVA: 0x002A1824 File Offset: 0x0029FA24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discardChanges()
 	{
@@ -374,13 +374,13 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		this.doDiscardChangesInternal();
 	}
 
-	// Token: 0x06006AE9 RID: 27369 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006B0E RID: 27406 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void doDiscardChangesInternal()
 	{
 	}
 
-	// Token: 0x06006AEA RID: 27370 RVA: 0x002A0354 File Offset: 0x0029E554
+	// Token: 0x06006B0F RID: 27407 RVA: 0x002A187C File Offset: 0x0029FA7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetToDefaults()
 	{
@@ -396,13 +396,13 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006AEB RID: 27371 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006B10 RID: 27408 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void doResetToDefaultsInternal()
 	{
 	}
 
-	// Token: 0x06006AEC RID: 27372 RVA: 0x002A03B4 File Offset: 0x0029E5B4
+	// Token: 0x06006B11 RID: 27409 RVA: 0x002A18DC File Offset: 0x0029FADC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool optionAllowed(XUiC_OptionEntryAbs _option)
 	{
@@ -410,50 +410,50 @@ public abstract class XUiC_OptionsDialogBase : XUiController, IXUiWindowConditio
 		return _option != null && _option.ViewComponent.IsVisible && (!this.tabByOption.TryGetValue(_option, out xuiC_TabSelectorTab) || xuiC_TabSelectorTab.TabVisible);
 	}
 
-	// Token: 0x06006AED RID: 27373 RVA: 0x002A03F0 File Offset: 0x0029E5F0
+	// Token: 0x06006B12 RID: 27410 RVA: 0x002A1918 File Offset: 0x0029FB18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_OptionsDialogBase()
 	{
 	}
 
-	// Token: 0x040051AE RID: 20910
+	// Token: 0x040051D3 RID: 20947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<XUiC_TabSelectorTab, XUiC_OptionEntryAbs[]> optionsByTab = new Dictionary<XUiC_TabSelectorTab, XUiC_OptionEntryAbs[]>();
 
-	// Token: 0x040051AF RID: 20911
+	// Token: 0x040051D4 RID: 20948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<XUiC_OptionEntryAbs, XUiC_TabSelectorTab> tabByOption = new Dictionary<XUiC_OptionEntryAbs, XUiC_TabSelectorTab>();
 
-	// Token: 0x040051B0 RID: 20912
+	// Token: 0x040051D5 RID: 20949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool unsavedChanges;
 
-	// Token: 0x040051B1 RID: 20913
+	// Token: 0x040051D6 RID: 20950
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_TabSelector TabSelector;
 
-	// Token: 0x040051B2 RID: 20914
+	// Token: 0x040051D7 RID: 20951
 	[XuiBindComponent("buttons.btnApply", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnApply;
 
-	// Token: 0x040051B3 RID: 20915
+	// Token: 0x040051D8 RID: 20952
 	[XuiBindComponent("buttons.btnDefaults", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDefaults;
 
-	// Token: 0x040051B4 RID: 20916
+	// Token: 0x040051D9 RID: 20953
 	[XuiBindComponent("buttons.btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;
 
-	// Token: 0x040051B5 RID: 20917
+	// Token: 0x040051DA RID: 20954
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_OptionEntryAbs[] AllOptions;
 
-	// Token: 0x040051B6 RID: 20918
+	// Token: 0x040051DB RID: 20955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionEntryAbs hoveredOption;
 }

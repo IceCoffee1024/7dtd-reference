@@ -8,12 +8,12 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x0200166A RID: 5738
+	// Token: 0x0200167C RID: 5756
 	public class PreviewData : IXMLData
 	{
-		// Token: 0x170015CA RID: 5578
-		// (get) Token: 0x0600B448 RID: 46152 RVA: 0x00436C63 File Offset: 0x00434E63
-		// (set) Token: 0x0600B449 RID: 46153 RVA: 0x00436C6B File Offset: 0x00434E6B
+		// Token: 0x170015D6 RID: 5590
+		// (get) Token: 0x0600B4A0 RID: 46240 RVA: 0x00439067 File Offset: 0x00437267
+		// (set) Token: 0x0600B4A1 RID: 46241 RVA: 0x0043906F File Offset: 0x0043726F
 		public DataItem<int> Zoom
 		{
 			get
@@ -26,9 +26,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015CB RID: 5579
-		// (get) Token: 0x0600B44A RID: 46154 RVA: 0x00436C74 File Offset: 0x00434E74
-		// (set) Token: 0x0600B44B RID: 46155 RVA: 0x00436C7C File Offset: 0x00434E7C
+		// Token: 0x170015D7 RID: 5591
+		// (get) Token: 0x0600B4A2 RID: 46242 RVA: 0x00439078 File Offset: 0x00437278
+		// (set) Token: 0x0600B4A3 RID: 46243 RVA: 0x00439080 File Offset: 0x00437280
 		public DataItem<Vector2> Pos
 		{
 			get
@@ -41,9 +41,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015CC RID: 5580
-		// (get) Token: 0x0600B44C RID: 46156 RVA: 0x00436C85 File Offset: 0x00434E85
-		// (set) Token: 0x0600B44D RID: 46157 RVA: 0x00436C8D File Offset: 0x00434E8D
+		// Token: 0x170015D8 RID: 5592
+		// (get) Token: 0x0600B4A4 RID: 46244 RVA: 0x00439089 File Offset: 0x00437289
+		// (set) Token: 0x0600B4A5 RID: 46245 RVA: 0x00439091 File Offset: 0x00437291
 		public DataItem<Vector3> Rot
 		{
 			get
@@ -56,28 +56,28 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B44E RID: 46158 RVA: 0x0042C337 File Offset: 0x0042A537
+		// Token: 0x0600B4A6 RID: 46246 RVA: 0x0042E73B File Offset: 0x0042C93B
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			return new List<IDataItem>();
 		}
 
-		// Token: 0x04008736 RID: 34614
+		// Token: 0x04008777 RID: 34679
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pZoom;
 
-		// Token: 0x04008737 RID: 34615
+		// Token: 0x04008778 RID: 34680
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<Vector2> pPos;
 
-		// Token: 0x04008738 RID: 34616
+		// Token: 0x04008779 RID: 34681
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<Vector3> pRot;
 
-		// Token: 0x0200166B RID: 5739
+		// Token: 0x0200167D RID: 5757
 		public static class Parser
 		{
-			// Token: 0x0600B450 RID: 46160 RVA: 0x00436C98 File Offset: 0x00434E98
+			// Token: 0x0600B4A8 RID: 46248 RVA: 0x0043909C File Offset: 0x0043729C
 			public static PreviewData Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "PreviewData");
@@ -254,7 +254,7 @@ namespace XMLData.Item
 				return previewData;
 			}
 
-			// Token: 0x04008739 RID: 34617
+			// Token: 0x0400877A RID: 34682
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

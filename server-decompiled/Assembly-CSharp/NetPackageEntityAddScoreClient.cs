@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007D9 RID: 2009
+// Token: 0x020007E3 RID: 2019
 [Preserve]
 public class NetPackageEntityAddScoreClient : NetPackage
 {
-	// Token: 0x17000651 RID: 1617
-	// (get) Token: 0x06003B7A RID: 15226 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000657 RID: 1623
+	// (get) Token: 0x06003B9D RID: 15261 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityAddScoreClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003B7B RID: 15227 RVA: 0x0017F151 File Offset: 0x0017D351
+	// Token: 0x06003B9E RID: 15262 RVA: 0x00180255 File Offset: 0x0017E455
 	public NetPackageEntityAddScoreClient Setup(int _entityId, int _zombieKills, int _playerKills, int _otherTeamNumber, int _conditions)
 	{
 		this.entityId = _entityId;
@@ -26,7 +26,7 @@ public class NetPackageEntityAddScoreClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B7C RID: 15228 RVA: 0x0017F179 File Offset: 0x0017D379
+	// Token: 0x06003B9F RID: 15263 RVA: 0x0018027D File Offset: 0x0017E47D
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackageEntityAddScoreClient : NetPackage
 		this.conditions = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003B7D RID: 15229 RVA: 0x0017F1B8 File Offset: 0x0017D3B8
+	// Token: 0x06003BA0 RID: 15264 RVA: 0x001802BC File Offset: 0x0017E4BC
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -47,7 +47,7 @@ public class NetPackageEntityAddScoreClient : NetPackage
 		_writer.Write(this.conditions);
 	}
 
-	// Token: 0x06003B7E RID: 15230 RVA: 0x0017F20C File Offset: 0x0017D40C
+	// Token: 0x06003BA1 RID: 15265 RVA: 0x00180310 File Offset: 0x0017E510
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -61,23 +61,23 @@ public class NetPackageEntityAddScoreClient : NetPackage
 		}
 	}
 
-	// Token: 0x04003069 RID: 12393
+	// Token: 0x04003089 RID: 12425
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int entityId;
 
-	// Token: 0x0400306A RID: 12394
+	// Token: 0x0400308A RID: 12426
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int zombieKills;
 
-	// Token: 0x0400306B RID: 12395
+	// Token: 0x0400308B RID: 12427
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int playerKills;
 
-	// Token: 0x0400306C RID: 12396
+	// Token: 0x0400308C RID: 12428
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int otherTeamNumber;
 
-	// Token: 0x0400306D RID: 12397
+	// Token: 0x0400308D RID: 12429
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int conditions;
 }

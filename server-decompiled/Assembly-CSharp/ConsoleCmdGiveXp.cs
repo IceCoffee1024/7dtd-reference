@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000227 RID: 551
+// Token: 0x02000229 RID: 553
 [Preserve]
 public class ConsoleCmdGiveXp : ConsoleCmdAbstract
 {
-	// Token: 0x0600109B RID: 4251 RVA: 0x00069C90 File Offset: 0x00067E90
+	// Token: 0x0600109F RID: 4255 RVA: 0x00069E60 File Offset: 0x00068060
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "givexp" };
 	}
 
-	// Token: 0x0600109C RID: 4252 RVA: 0x00069CA0 File Offset: 0x00067EA0
+	// Token: 0x060010A0 RID: 4256 RVA: 0x00069E70 File Offset: 0x00068070
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Give XP to a player";
 	}
 
-	// Token: 0x0600109D RID: 4253 RVA: 0x00069CA7 File Offset: 0x00067EA7
+	// Token: 0x060010A1 RID: 4257 RVA: 0x00069E77 File Offset: 0x00068077
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Give a player experience points\nUsage:\n   givexp <entity id / player name / user id> <number>";
 	}
 
-	// Token: 0x0600109E RID: 4254 RVA: 0x00069CB0 File Offset: 0x00067EB0
+	// Token: 0x060010A2 RID: 4258 RVA: 0x00069E80 File Offset: 0x00068080
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 2)

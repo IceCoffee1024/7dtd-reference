@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001176 RID: 4470
+// Token: 0x02001186 RID: 4486
 public class XUiV_ScrollBar : XUiView
 {
-	// Token: 0x17001108 RID: 4360
-	// (get) Token: 0x06008E32 RID: 36402 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x17001113 RID: 4371
+	// (get) Token: 0x06008E86 RID: 36486 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override UIRect UiRect
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -15,8 +15,8 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x17001109 RID: 4361
-	// (get) Token: 0x06008E33 RID: 36403 RVA: 0x0035C474 File Offset: 0x0035A674
+	// Token: 0x17001114 RID: 4372
+	// (get) Token: 0x06008E87 RID: 36487 RVA: 0x0035E544 File Offset: 0x0035C744
 	public UIScrollBar ScrollBar
 	{
 		get
@@ -25,9 +25,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x1700110A RID: 4362
-	// (get) Token: 0x06008E34 RID: 36404 RVA: 0x0035C47C File Offset: 0x0035A67C
-	// (set) Token: 0x06008E35 RID: 36405 RVA: 0x0035C484 File Offset: 0x0035A684
+	// Token: 0x17001115 RID: 4373
+	// (get) Token: 0x06008E88 RID: 36488 RVA: 0x0035E54C File Offset: 0x0035C74C
+	// (set) Token: 0x06008E89 RID: 36489 RVA: 0x0035E554 File Offset: 0x0035C754
 	[XuiXmlAttribute("thumb_color_hover", false)]
 	public Color32 ThumbColorHover
 	{
@@ -46,9 +46,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x1700110B RID: 4363
-	// (get) Token: 0x06008E36 RID: 36406 RVA: 0x0035C4A2 File Offset: 0x0035A6A2
-	// (set) Token: 0x06008E37 RID: 36407 RVA: 0x0035C4AA File Offset: 0x0035A6AA
+	// Token: 0x17001116 RID: 4374
+	// (get) Token: 0x06008E8A RID: 36490 RVA: 0x0035E572 File Offset: 0x0035C772
+	// (set) Token: 0x06008E8B RID: 36491 RVA: 0x0035E57A File Offset: 0x0035C77A
 	[XuiXmlAttribute("thumb_color_active", false)]
 	public Color32 ThumbColorActive
 	{
@@ -67,9 +67,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x1700110C RID: 4364
-	// (get) Token: 0x06008E38 RID: 36408 RVA: 0x0035C4C8 File Offset: 0x0035A6C8
-	// (set) Token: 0x06008E39 RID: 36409 RVA: 0x0035C4D0 File Offset: 0x0035A6D0
+	// Token: 0x17001117 RID: 4375
+	// (get) Token: 0x06008E8C RID: 36492 RVA: 0x0035E598 File Offset: 0x0035C798
+	// (set) Token: 0x06008E8D RID: 36493 RVA: 0x0035E5A0 File Offset: 0x0035C7A0
 	[XuiXmlAttribute("thumb_color_inactive", false)]
 	public Color32 ThumbColorInactive
 	{
@@ -88,9 +88,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x1700110D RID: 4365
-	// (get) Token: 0x06008E3A RID: 36410 RVA: 0x0035C4EE File Offset: 0x0035A6EE
-	// (set) Token: 0x06008E3B RID: 36411 RVA: 0x0035C4F6 File Offset: 0x0035A6F6
+	// Token: 0x17001118 RID: 4376
+	// (get) Token: 0x06008E8E RID: 36494 RVA: 0x0035E5BE File Offset: 0x0035C7BE
+	// (set) Token: 0x06008E8F RID: 36495 RVA: 0x0035E5C6 File Offset: 0x0035C7C6
 	[XuiXmlAttribute("border_color_active", false)]
 	public Color32 BorderColorActive
 	{
@@ -109,9 +109,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x1700110E RID: 4366
-	// (get) Token: 0x06008E3C RID: 36412 RVA: 0x0035C514 File Offset: 0x0035A714
-	// (set) Token: 0x06008E3D RID: 36413 RVA: 0x0035C51C File Offset: 0x0035A71C
+	// Token: 0x17001119 RID: 4377
+	// (get) Token: 0x06008E90 RID: 36496 RVA: 0x0035E5E4 File Offset: 0x0035C7E4
+	// (set) Token: 0x06008E91 RID: 36497 RVA: 0x0035E5EC File Offset: 0x0035C7EC
 	[XuiXmlAttribute("border_color_inactive", false)]
 	public Color32 BorderColorInactive
 	{
@@ -130,9 +130,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x1700110F RID: 4367
-	// (get) Token: 0x06008E3E RID: 36414 RVA: 0x0035C53A File Offset: 0x0035A73A
-	// (set) Token: 0x06008E3F RID: 36415 RVA: 0x0035C542 File Offset: 0x0035A742
+	// Token: 0x1700111A RID: 4378
+	// (get) Token: 0x06008E92 RID: 36498 RVA: 0x0035E60A File Offset: 0x0035C80A
+	// (set) Token: 0x06008E93 RID: 36499 RVA: 0x0035E612 File Offset: 0x0035C812
 	[XuiXmlAttribute("background_color_active", false)]
 	public Color32 BackgroundColorActive
 	{
@@ -151,9 +151,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x17001110 RID: 4368
-	// (get) Token: 0x06008E40 RID: 36416 RVA: 0x0035C560 File Offset: 0x0035A760
-	// (set) Token: 0x06008E41 RID: 36417 RVA: 0x0035C568 File Offset: 0x0035A768
+	// Token: 0x1700111B RID: 4379
+	// (get) Token: 0x06008E94 RID: 36500 RVA: 0x0035E630 File Offset: 0x0035C830
+	// (set) Token: 0x06008E95 RID: 36501 RVA: 0x0035E638 File Offset: 0x0035C838
 	[XuiXmlAttribute("background_color_inactive", false)]
 	public Color32 BackgroundColorInactive
 	{
@@ -172,9 +172,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x17001111 RID: 4369
-	// (get) Token: 0x06008E42 RID: 36418 RVA: 0x0035C586 File Offset: 0x0035A786
-	// (set) Token: 0x06008E43 RID: 36419 RVA: 0x0035C593 File Offset: 0x0035A793
+	// Token: 0x1700111C RID: 4380
+	// (get) Token: 0x06008E96 RID: 36502 RVA: 0x0035E656 File Offset: 0x0035C856
+	// (set) Token: 0x06008E97 RID: 36503 RVA: 0x0035E663 File Offset: 0x0035C863
 	public float ScrollPosition
 	{
 		get
@@ -188,8 +188,8 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x17001112 RID: 4370
-	// (get) Token: 0x06008E44 RID: 36420 RVA: 0x0035C5A7 File Offset: 0x0035A7A7
+	// Token: 0x1700111D RID: 4381
+	// (get) Token: 0x06008E98 RID: 36504 RVA: 0x0035E677 File Offset: 0x0035C877
 	public override Vector3[] WorldCorners
 	{
 		get
@@ -207,9 +207,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x17001113 RID: 4371
-	// (get) Token: 0x06008E45 RID: 36421 RVA: 0x0035C5CE File Offset: 0x0035A7CE
-	// (set) Token: 0x06008E46 RID: 36422 RVA: 0x0035C5D6 File Offset: 0x0035A7D6
+	// Token: 0x1700111E RID: 4382
+	// (get) Token: 0x06008E99 RID: 36505 RVA: 0x0035E69E File Offset: 0x0035C89E
+	// (set) Token: 0x06008E9A RID: 36506 RVA: 0x0035E6A6 File Offset: 0x0035C8A6
 	public bool BarRequired
 	{
 		get
@@ -227,9 +227,9 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x17001114 RID: 4372
-	// (get) Token: 0x06008E47 RID: 36423 RVA: 0x0035C5EF File Offset: 0x0035A7EF
-	// (set) Token: 0x06008E48 RID: 36424 RVA: 0x0035C5F7 File Offset: 0x0035A7F7
+	// Token: 0x1700111F RID: 4383
+	// (get) Token: 0x06008E9B RID: 36507 RVA: 0x0035E6BF File Offset: 0x0035C8BF
+	// (set) Token: 0x06008E9C RID: 36508 RVA: 0x0035E6C7 File Offset: 0x0035C8C7
 	public bool ThumbHovered
 	{
 		get
@@ -247,13 +247,13 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x06008E49 RID: 36425 RVA: 0x0035A13D File Offset: 0x0035833D
+	// Token: 0x06008E9D RID: 36509 RVA: 0x0035C1E9 File Offset: 0x0035A3E9
 	public XUiV_ScrollBar(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008E4A RID: 36426 RVA: 0x0035C610 File Offset: 0x0035A810
+	// Token: 0x06008E9E RID: 36510 RVA: 0x0035E6E0 File Offset: 0x0035C8E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
@@ -261,7 +261,7 @@ public class XUiV_ScrollBar : XUiView
 		_go.AddComponent<UIScrollBar>();
 	}
 
-	// Token: 0x06008E4B RID: 36427 RVA: 0x0035C620 File Offset: 0x0035A820
+	// Token: 0x06008E9F RID: 36511 RVA: 0x0035E6F0 File Offset: 0x0035C8F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -270,7 +270,7 @@ public class XUiV_ScrollBar : XUiView
 		this.scrollBar.value = 0f;
 	}
 
-	// Token: 0x06008E4C RID: 36428 RVA: 0x0035C650 File Offset: 0x0035A850
+	// Token: 0x06008EA0 RID: 36512 RVA: 0x0035E720 File Offset: 0x0035C920
 	public override void InitView()
 	{
 		base.InitView();
@@ -297,14 +297,14 @@ public class XUiV_ScrollBar : XUiView
 		base.SetDirty();
 	}
 
-	// Token: 0x06008E4D RID: 36429 RVA: 0x0035C74B File Offset: 0x0035A94B
+	// Token: 0x06008EA1 RID: 36513 RVA: 0x0035E81B File Offset: 0x0035CA1B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onHovered(XUiController _sender, bool _isOver)
 	{
 		this.ThumbHovered = _isOver;
 	}
 
-	// Token: 0x06008E4E RID: 36430 RVA: 0x0035C754 File Offset: 0x0035A954
+	// Token: 0x06008EA2 RID: 36514 RVA: 0x0035E824 File Offset: 0x0035CA24
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -312,7 +312,7 @@ public class XUiV_ScrollBar : XUiView
 		this.openFrame = Time.frameCount;
 	}
 
-	// Token: 0x06008E4F RID: 36431 RVA: 0x0035C778 File Offset: 0x0035A978
+	// Token: 0x06008EA3 RID: 36515 RVA: 0x0035E848 File Offset: 0x0035CA48
 	public override void OnVisibilityChanged(bool _visibleInScene)
 	{
 		base.OnVisibilityChanged(_visibleInScene);
@@ -323,7 +323,7 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x06008E50 RID: 36432 RVA: 0x0035C7A0 File Offset: 0x0035A9A0
+	// Token: 0x06008EA4 RID: 36516 RVA: 0x0035E870 File Offset: 0x0035CA70
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -337,7 +337,7 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x06008E51 RID: 36433 RVA: 0x0035C7EE File Offset: 0x0035A9EE
+	// Token: 0x06008EA5 RID: 36517 RVA: 0x0035E8BE File Offset: 0x0035CABE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -346,7 +346,7 @@ public class XUiV_ScrollBar : XUiView
 		base.updateData();
 	}
 
-	// Token: 0x06008E52 RID: 36434 RVA: 0x0035C804 File Offset: 0x0035AA04
+	// Token: 0x06008EA6 RID: 36518 RVA: 0x0035E8D4 File Offset: 0x0035CAD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateScrollColors()
 	{
@@ -361,7 +361,7 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x06008E53 RID: 36435 RVA: 0x0035C8A4 File Offset: 0x0035AAA4
+	// Token: 0x06008EA7 RID: 36519 RVA: 0x0035E974 File Offset: 0x0035CB74
 	public void Connect(XUiEvent_OnScrollEventHandler _onScrolled, EventDelegate.Callback scrollbarChanged)
 	{
 		EventDelegate.Add(this.scrollBar.onChange, scrollbarChanged);
@@ -374,63 +374,63 @@ public class XUiV_ScrollBar : XUiView
 		}
 	}
 
-	// Token: 0x04006881 RID: 26753
+	// Token: 0x040068C1 RID: 26817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIScrollBar scrollBar;
 
-	// Token: 0x04006882 RID: 26754
+	// Token: 0x040068C2 RID: 26818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite thumb;
 
-	// Token: 0x04006883 RID: 26755
+	// Token: 0x040068C3 RID: 26819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite border;
 
-	// Token: 0x04006884 RID: 26756
+	// Token: 0x040068C4 RID: 26820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x04006885 RID: 26757
+	// Token: 0x040068C5 RID: 26821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 thumbColorHover;
 
-	// Token: 0x04006886 RID: 26758
+	// Token: 0x040068C6 RID: 26822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 thumbColorActive;
 
-	// Token: 0x04006887 RID: 26759
+	// Token: 0x040068C7 RID: 26823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 thumbColorInactive;
 
-	// Token: 0x04006888 RID: 26760
+	// Token: 0x040068C8 RID: 26824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 borderColorActive;
 
-	// Token: 0x04006889 RID: 26761
+	// Token: 0x040068C9 RID: 26825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 borderColorInactive;
 
-	// Token: 0x0400688A RID: 26762
+	// Token: 0x040068CA RID: 26826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 backgroundColorActive;
 
-	// Token: 0x0400688B RID: 26763
+	// Token: 0x040068CB RID: 26827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 backgroundColorInactive;
 
-	// Token: 0x0400688C RID: 26764
+	// Token: 0x040068CC RID: 26828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool barRequired;
 
-	// Token: 0x0400688D RID: 26765
+	// Token: 0x040068CD RID: 26829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool thumbHovered;
 
-	// Token: 0x0400688E RID: 26766
+	// Token: 0x040068CE RID: 26830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float onOpenValue;
 
-	// Token: 0x0400688F RID: 26767
+	// Token: 0x040068CF RID: 26831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int openFrame;
 }

@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000610 RID: 1552
+// Token: 0x02000617 RID: 1559
 public enum LightStateType : byte
 {
-	// Token: 0x04002816 RID: 10262
+	// Token: 0x04002831 RID: 10289
 	Static,
-	// Token: 0x04002817 RID: 10263
+	// Token: 0x04002832 RID: 10290
 	Blinking,
-	// Token: 0x04002818 RID: 10264
+	// Token: 0x04002833 RID: 10291
 	Pulsing,
-	// Token: 0x04002819 RID: 10265
+	// Token: 0x04002834 RID: 10292
 	Fluctuating
 }

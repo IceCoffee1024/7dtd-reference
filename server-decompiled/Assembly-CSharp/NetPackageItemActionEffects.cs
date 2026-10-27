@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000803 RID: 2051
+// Token: 0x0200080D RID: 2061
 [Preserve]
 public class NetPackageItemActionEffects : NetPackage
 {
-	// Token: 0x06003C57 RID: 15447 RVA: 0x0018275F File Offset: 0x0018095F
+	// Token: 0x06003C7A RID: 15482 RVA: 0x00183863 File Offset: 0x00181A63
 	public NetPackageItemActionEffects Setup(int _entityId, int _slotIdx, int _actionIdx, ItemActionFiringState _firingState, Vector3 _startPos, Vector3 _direction, int _userData)
 	{
 		this.entityId = _entityId;
@@ -19,7 +19,7 @@ public class NetPackageItemActionEffects : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C58 RID: 15448 RVA: 0x0018279C File Offset: 0x0018099C
+	// Token: 0x06003C7B RID: 15483 RVA: 0x001838A0 File Offset: 0x00181AA0
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -39,7 +39,7 @@ public class NetPackageItemActionEffects : NetPackage
 		this.userData = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003C59 RID: 15449 RVA: 0x00182820 File Offset: 0x00180A20
+	// Token: 0x06003C7C RID: 15484 RVA: 0x00183924 File Offset: 0x00181B24
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -57,7 +57,7 @@ public class NetPackageItemActionEffects : NetPackage
 		_writer.Write(this.userData);
 	}
 
-	// Token: 0x06003C5A RID: 15450 RVA: 0x001828BC File Offset: 0x00180ABC
+	// Token: 0x06003C7D RID: 15485 RVA: 0x001839C0 File Offset: 0x00181BC0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -72,31 +72,31 @@ public class NetPackageItemActionEffects : NetPackage
 		_world.GetGameManager().ItemActionEffectsClient(this.entityId, (int)this.slotIdx, (int)this.actionIdx, (int)this.firingState, this.startPos, this.direction, this.userData);
 	}
 
-	// Token: 0x0400310D RID: 12557
+	// Token: 0x0400312D RID: 12589
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400310E RID: 12558
+	// Token: 0x0400312E RID: 12590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte slotIdx;
 
-	// Token: 0x0400310F RID: 12559
+	// Token: 0x0400312F RID: 12591
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte actionIdx;
 
-	// Token: 0x04003110 RID: 12560
+	// Token: 0x04003130 RID: 12592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionFiringState firingState;
 
-	// Token: 0x04003111 RID: 12561
+	// Token: 0x04003131 RID: 12593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 startPos;
 
-	// Token: 0x04003112 RID: 12562
+	// Token: 0x04003132 RID: 12594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 direction;
 
-	// Token: 0x04003113 RID: 12563
+	// Token: 0x04003133 RID: 12595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int userData;
 }

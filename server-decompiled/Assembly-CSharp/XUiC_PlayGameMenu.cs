@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E3E RID: 3646
+// Token: 0x02000E49 RID: 3657
 [Preserve]
 public class XUiC_PlayGameMenu : XUiController
 {
-	// Token: 0x17000CA8 RID: 3240
-	// (get) Token: 0x06006FA2 RID: 28578 RVA: 0x002B47F8 File Offset: 0x002B29F8
+	// Token: 0x17000CAE RID: 3246
+	// (get) Token: 0x06006FC7 RID: 28615 RVA: 0x002B5D64 File Offset: 0x002B3F64
 	[XuiXmlBinding("has_profile")]
 	public bool HasProfile
 	{
@@ -18,9 +18,9 @@ public class XUiC_PlayGameMenu : XUiController
 		}
 	}
 
-	// Token: 0x17000CA9 RID: 3241
-	// (get) Token: 0x06006FA3 RID: 28579 RVA: 0x002B4807 File Offset: 0x002B2A07
-	// (set) Token: 0x06006FA4 RID: 28580 RVA: 0x002B480F File Offset: 0x002B2A0F
+	// Token: 0x17000CAF RID: 3247
+	// (get) Token: 0x06006FC8 RID: 28616 RVA: 0x002B5D73 File Offset: 0x002B3F73
+	// (set) Token: 0x06006FC9 RID: 28617 RVA: 0x002B5D7B File Offset: 0x002B3F7B
 	[XuiXmlBinding("has_saved_game")]
 	public bool HasSavedGame
 	{
@@ -30,8 +30,8 @@ public class XUiC_PlayGameMenu : XUiController
 		set;
 	}
 
-	// Token: 0x17000CAA RID: 3242
-	// (get) Token: 0x06006FA5 RID: 28581 RVA: 0x002B4818 File Offset: 0x002B2A18
+	// Token: 0x17000CB0 RID: 3248
+	// (get) Token: 0x06006FCA RID: 28618 RVA: 0x002B5D84 File Offset: 0x002B3F84
 	[XuiXmlBinding("online_mode")]
 	public bool OnlineMode
 	{
@@ -54,7 +54,7 @@ public class XUiC_PlayGameMenu : XUiController
 		}
 	}
 
-	// Token: 0x06006FA6 RID: 28582 RVA: 0x002B4868 File Offset: 0x002B2A68
+	// Token: 0x06006FCB RID: 28619 RVA: 0x002B5DD4 File Offset: 0x002B3FD4
 	[XuiBindEvent("WindowSelected", "parentSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onWindowSelected(XUiC_WindowSelector _sender, string _windowId)
@@ -92,28 +92,28 @@ public class XUiC_PlayGameMenu : XUiController
 		}, -1f, false, null);
 	}
 
-	// Token: 0x06006FA7 RID: 28583 RVA: 0x002B4924 File Offset: 0x002B2B24
+	// Token: 0x06006FCC RID: 28620 RVA: 0x002B5E90 File Offset: 0x002B4090
 	public override void Init()
 	{
 		base.Init();
 		XUiC_PlayGameMenu.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006FA8 RID: 28584 RVA: 0x002ADFE9 File Offset: 0x002AC1E9
+	// Token: 0x06006FCD RID: 28621 RVA: 0x002AF555 File Offset: 0x002AD755
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006FA9 RID: 28585 RVA: 0x002B493C File Offset: 0x002B2B3C
+	// Token: 0x06006FCE RID: 28622 RVA: 0x002B5EA8 File Offset: 0x002B40A8
 	public void SetWindow(string _windowName)
 	{
 		this.parentSelector.SetSelected(_windowName);
 		this.explicitlyRequestedWindow = true;
 	}
 
-	// Token: 0x06006FAA RID: 28586 RVA: 0x002B4954 File Offset: 0x002B2B54
+	// Token: 0x06006FCF RID: 28623 RVA: 0x002B5EC0 File Offset: 0x002B40C0
 	public override void OnOpen()
 	{
 		this.HasSavedGame = GameIO.GetPlayerSaves(null, false) > 0;
@@ -142,18 +142,18 @@ public class XUiC_PlayGameMenu : XUiController
 		base.OnOpen();
 	}
 
-	// Token: 0x040054B6 RID: 21686
+	// Token: 0x040054DB RID: 21723
 	public static string ID;
 
-	// Token: 0x040054B7 RID: 21687
+	// Token: 0x040054DC RID: 21724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openedBefore;
 
-	// Token: 0x040054B8 RID: 21688
+	// Token: 0x040054DD RID: 21725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool explicitlyRequestedWindow;
 
-	// Token: 0x040054B9 RID: 21689
+	// Token: 0x040054DE RID: 21726
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WindowSelector parentSelector;

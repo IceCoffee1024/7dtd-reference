@@ -1,34 +1,34 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000B30 RID: 2864
+// Token: 0x02000B3B RID: 2875
 public class ChunkCoordinates
 {
-	// Token: 0x06005623 RID: 22051 RVA: 0x0021171C File Offset: 0x0020F91C
+	// Token: 0x06005648 RID: 22088 RVA: 0x00212C98 File Offset: 0x00210E98
 	public ChunkCoordinates(int _x, int _y, int _z)
 	{
 		this.position = new Vector3i(_x, _y, _z);
 	}
 
-	// Token: 0x06005624 RID: 22052 RVA: 0x00211732 File Offset: 0x0020F932
+	// Token: 0x06005649 RID: 22089 RVA: 0x00212CAE File Offset: 0x00210EAE
 	public ChunkCoordinates(ChunkCoordinates _cc)
 	{
 		this.position = _cc.position;
 	}
 
-	// Token: 0x06005625 RID: 22053 RVA: 0x00211746 File Offset: 0x0020F946
+	// Token: 0x0600564A RID: 22090 RVA: 0x00212CC2 File Offset: 0x00210EC2
 	public override bool Equals(object _obj)
 	{
 		return _obj is ChunkCoordinates && this.position.Equals(((ChunkCoordinates)_obj).position);
 	}
 
-	// Token: 0x06005626 RID: 22054 RVA: 0x00211768 File Offset: 0x0020F968
+	// Token: 0x0600564B RID: 22091 RVA: 0x00212CE4 File Offset: 0x00210EE4
 	public override int GetHashCode()
 	{
 		return this.position.x + this.position.z << 8 + this.position.y << 16;
 	}
 
-	// Token: 0x06005627 RID: 22055 RVA: 0x00211798 File Offset: 0x0020F998
+	// Token: 0x0600564C RID: 22092 RVA: 0x00212D14 File Offset: 0x00210F14
 	public float getDistance(int _x, int _y, int _z)
 	{
 		int num = this.position.x - _x;
@@ -37,7 +37,7 @@ public class ChunkCoordinates
 		return Mathf.Sqrt((float)(num * num + num2 * num2 + num3 * num3));
 	}
 
-	// Token: 0x06005628 RID: 22056 RVA: 0x002117E0 File Offset: 0x0020F9E0
+	// Token: 0x0600564D RID: 22093 RVA: 0x00212D5C File Offset: 0x00210F5C
 	public float getDistanceSquared(int _x, int _y, int _z)
 	{
 		int num = this.position.x - _x;
@@ -46,6 +46,6 @@ public class ChunkCoordinates
 		return (float)(num * num + num2 * num2 + num3 * num3);
 	}
 
-	// Token: 0x040042C4 RID: 17092
+	// Token: 0x040042E9 RID: 17129
 	public Vector3i position;
 }

@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000A22 RID: 2594
+// Token: 0x02000A2C RID: 2604
 public enum SaveDataType
 {
-	// Token: 0x04003C3B RID: 15419
+	// Token: 0x04003C5C RID: 15452
 	User,
-	// Token: 0x04003C3C RID: 15420
+	// Token: 0x04003C5D RID: 15453
 	Saves,
-	// Token: 0x04003C3D RID: 15421
+	// Token: 0x04003C5E RID: 15454
 	SavesLocal,
-	// Token: 0x04003C3E RID: 15422
+	// Token: 0x04003C5F RID: 15455
 	GeneratedWorlds
 }

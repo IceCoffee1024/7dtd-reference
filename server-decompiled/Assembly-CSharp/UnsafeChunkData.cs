@@ -3,11 +3,11 @@ using System.Runtime.CompilerServices;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 
-// Token: 0x02000CD1 RID: 3281
+// Token: 0x02000CDC RID: 3292
 public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, ValueType, IEquatable<T>
 {
-	// Token: 0x17000A90 RID: 2704
-	// (get) Token: 0x06006450 RID: 25680 RVA: 0x00277995 File Offset: 0x00275B95
+	// Token: 0x17000A96 RID: 2710
+	// (get) Token: 0x06006475 RID: 25717 RVA: 0x00278EBD File Offset: 0x002770BD
 	public bool IsCreated
 	{
 		get
@@ -16,7 +16,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		}
 	}
 
-	// Token: 0x06006451 RID: 25681 RVA: 0x002779A4 File Offset: 0x00275BA4
+	// Token: 0x06006476 RID: 25718 RVA: 0x00278ECC File Offset: 0x002770CC
 	public unsafe UnsafeChunkData(AllocatorManager.AllocatorHandle _allocator)
 	{
 		this.allocator = _allocator;
@@ -26,7 +26,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		UnsafeUtility.MemClear((void*)this.sameValues, (long)(UnsafeUtility.SizeOf<T>() * 64));
 	}
 
-	// Token: 0x06006452 RID: 25682 RVA: 0x00277A08 File Offset: 0x00275C08
+	// Token: 0x06006477 RID: 25719 RVA: 0x00278F30 File Offset: 0x00277130
 	public unsafe T Get(int _x, int _y, int _z)
 	{
 		int num = _y / 4;
@@ -41,7 +41,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		return ptr->items[(IntPtr)num4 * (IntPtr)sizeof(T) / (IntPtr)sizeof(T)];
 	}
 
-	// Token: 0x06006453 RID: 25683 RVA: 0x00277A74 File Offset: 0x00275C74
+	// Token: 0x06006478 RID: 25720 RVA: 0x00278F9C File Offset: 0x0027719C
 	public unsafe T Get(int _chunkIndex)
 	{
 		int num = _chunkIndex / 256;
@@ -57,7 +57,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		return ptr->items[(IntPtr)num5 * (IntPtr)sizeof(T) / (IntPtr)sizeof(T)];
 	}
 
-	// Token: 0x06006454 RID: 25684 RVA: 0x00277AEC File Offset: 0x00275CEC
+	// Token: 0x06006479 RID: 25721 RVA: 0x00279014 File Offset: 0x00277214
 	public void CheckSameValues()
 	{
 		for (int i = 0; i < 64; i++)
@@ -66,7 +66,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		}
 	}
 
-	// Token: 0x06006455 RID: 25685 RVA: 0x00277B10 File Offset: 0x00275D10
+	// Token: 0x0600647A RID: 25722 RVA: 0x00279038 File Offset: 0x00277238
 	public unsafe void CheckSameValue(int _layerIndex)
 	{
 		UnsafeChunkData<T>.LayerData* ptr = this.layers + (IntPtr)_layerIndex * (IntPtr)sizeof(UnsafeChunkData<T>.LayerData) / (IntPtr)sizeof(UnsafeChunkData<T>.LayerData);
@@ -91,7 +91,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		}
 	}
 
-	// Token: 0x06006456 RID: 25686 RVA: 0x00277BAC File Offset: 0x00275DAC
+	// Token: 0x0600647B RID: 25723 RVA: 0x002790D4 File Offset: 0x002772D4
 	public unsafe void Set(int _chunkIndex, T _value)
 	{
 		int num = _chunkIndex / 256;
@@ -113,7 +113,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		ptr->items[(IntPtr)num5 * (IntPtr)sizeof(T) / (IntPtr)sizeof(T)] = _value;
 	}
 
-	// Token: 0x06006457 RID: 25687 RVA: 0x00277C68 File Offset: 0x00275E68
+	// Token: 0x0600647C RID: 25724 RVA: 0x00279190 File Offset: 0x00277390
 	public unsafe void Clear()
 	{
 		if (this.layers != null)
@@ -134,7 +134,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		}
 	}
 
-	// Token: 0x06006458 RID: 25688 RVA: 0x00277CE4 File Offset: 0x00275EE4
+	// Token: 0x0600647D RID: 25725 RVA: 0x0027920C File Offset: 0x0027740C
 	public void Dispose()
 	{
 		this.Clear();
@@ -150,7 +150,7 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		}
 	}
 
-	// Token: 0x06006459 RID: 25689 RVA: 0x00277D44 File Offset: 0x00275F44
+	// Token: 0x0600647E RID: 25726 RVA: 0x0027926C File Offset: 0x0027746C
 	public unsafe int CalculateOwnedBytes()
 	{
 		int num = UnsafeUtility.SizeOf<UnsafeChunkData<T>>();
@@ -172,31 +172,31 @@ public struct UnsafeChunkData<[IsUnmanaged] T> : IDisposable where T : struct, V
 		return num;
 	}
 
-	// Token: 0x04004E53 RID: 20051
+	// Token: 0x04004E78 RID: 20088
 	public const int LAYER_SIZE = 1024;
 
-	// Token: 0x04004E54 RID: 20052
+	// Token: 0x04004E79 RID: 20089
 	public const int NUM_LAYERS = 64;
 
-	// Token: 0x04004E55 RID: 20053
+	// Token: 0x04004E7A RID: 20090
 	[NativeDisableUnsafePtrRestriction]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe UnsafeChunkData<T>.LayerData* layers;
 
-	// Token: 0x04004E56 RID: 20054
+	// Token: 0x04004E7B RID: 20091
 	[NativeDisableUnsafePtrRestriction]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe T* sameValues;
 
-	// Token: 0x04004E57 RID: 20055
+	// Token: 0x04004E7C RID: 20092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AllocatorManager.AllocatorHandle allocator;
 
-	// Token: 0x02000CD2 RID: 3282
+	// Token: 0x02000CDD RID: 3293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct LayerData
 	{
-		// Token: 0x04004E58 RID: 20056
+		// Token: 0x04004E7D RID: 20093
 		public unsafe T* items;
 	}
 }

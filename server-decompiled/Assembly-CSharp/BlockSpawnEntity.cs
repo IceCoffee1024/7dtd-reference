@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSpawnEntity : Block
 {
-	// Token: 0x06000945 RID: 2373 RVA: 0x000407AC File Offset: 0x0003E9AC
+	// Token: 0x06000945 RID: 2373 RVA: 0x0004076C File Offset: 0x0003E96C
 	public override void Init()
 	{
 		base.Init();
@@ -18,7 +18,7 @@ public class BlockSpawnEntity : Block
 		this.spawnClasses = base.Properties.Values["SpawnClass"].Split(',', StringSplitOptions.None);
 	}
 
-	// Token: 0x06000946 RID: 2374 RVA: 0x00040810 File Offset: 0x0003EA10
+	// Token: 0x06000946 RID: 2374 RVA: 0x000407D0 File Offset: 0x0003E9D0
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -35,7 +35,7 @@ public class BlockSpawnEntity : Block
 		}
 	}
 
-	// Token: 0x06000947 RID: 2375 RVA: 0x000408EC File Offset: 0x0003EAEC
+	// Token: 0x06000947 RID: 2375 RVA: 0x000408AC File Offset: 0x0003EAAC
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -63,7 +63,7 @@ public class BlockSpawnEntity : Block
 		}
 	}
 
-	// Token: 0x06000948 RID: 2376 RVA: 0x00040964 File Offset: 0x0003EB64
+	// Token: 0x06000948 RID: 2376 RVA: 0x00040924 File Offset: 0x0003EB24
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -81,7 +81,7 @@ public class BlockSpawnEntity : Block
 		}
 	}
 
-	// Token: 0x06000949 RID: 2377 RVA: 0x000409C4 File Offset: 0x0003EBC4
+	// Token: 0x06000949 RID: 2377 RVA: 0x00040984 File Offset: 0x0003EB84
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -127,7 +127,7 @@ public class BlockSpawnEntity : Block
 		return true;
 	}
 
-	// Token: 0x0600094B RID: 2379 RVA: 0x00040B5C File Offset: 0x0003ED5C
+	// Token: 0x0600094B RID: 2379 RVA: 0x00040B1C File Offset: 0x0003ED1C
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -140,7 +140,7 @@ public class BlockSpawnEntity : Block
 		return string.Format(Localization.Get("editBlockSpawnEntity", false, null), text, ((int)meta < this.spawnClasses.Length) ? this.spawnClasses[(int)_blockValue.meta] : "-");
 	}
 
-	// Token: 0x0600094C RID: 2380 RVA: 0x00040BE1 File Offset: 0x0003EDE1
+	// Token: 0x0600094C RID: 2380 RVA: 0x00040BA1 File Offset: 0x0003EDA1
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "edit"))
@@ -155,7 +155,7 @@ public class BlockSpawnEntity : Block
 		return true;
 	}
 
-	// Token: 0x0600094D RID: 2381 RVA: 0x00040C0D File Offset: 0x0003EE0D
+	// Token: 0x0600094D RID: 2381 RVA: 0x00040BCD File Offset: 0x0003EDCD
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = _world.IsEditor();

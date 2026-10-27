@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F3B RID: 3899
+// Token: 0x02000F4A RID: 3914
 [Preserve]
 public class XUiC_DroneWindowGroup : XUiController
 {
-	// Token: 0x17000E5C RID: 3676
-	// (get) Token: 0x060079DE RID: 31198 RVA: 0x002E18E1 File Offset: 0x002DFAE1
-	// (set) Token: 0x060079DF RID: 31199 RVA: 0x002E18EC File Offset: 0x002DFAEC
+	// Token: 0x17000E66 RID: 3686
+	// (get) Token: 0x06007A21 RID: 31265 RVA: 0x002E31D1 File Offset: 0x002E13D1
+	// (set) Token: 0x06007A22 RID: 31266 RVA: 0x002E31DC File Offset: 0x002E13DC
 	public EntityDrone CurrentVehicleEntity
 	{
 		get
@@ -31,7 +31,7 @@ public class XUiC_DroneWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060079E0 RID: 31200 RVA: 0x002E1988 File Offset: 0x002DFB88
+	// Token: 0x06007A23 RID: 31267 RVA: 0x002E3278 File Offset: 0x002E1478
 	public override void Init()
 	{
 		base.Init();
@@ -41,7 +41,7 @@ public class XUiC_DroneWindowGroup : XUiController
 		this.cosmeticGrid = base.GetChildByType<XUiC_ItemCosmeticStackGrid>();
 	}
 
-	// Token: 0x060079E1 RID: 31201 RVA: 0x002E19C0 File Offset: 0x002DFBC0
+	// Token: 0x06007A24 RID: 31268 RVA: 0x002E32B0 File Offset: 0x002E14B0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -65,7 +65,7 @@ public class XUiC_DroneWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060079E2 RID: 31202 RVA: 0x002E1A98 File Offset: 0x002DFC98
+	// Token: 0x06007A25 RID: 31269 RVA: 0x002E3388 File Offset: 0x002E1588
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -79,33 +79,33 @@ public class XUiC_DroneWindowGroup : XUiController
 		this.CurrentVehicleEntity.StopUIInteraction();
 	}
 
-	// Token: 0x060079E3 RID: 31203 RVA: 0x002E1AF1 File Offset: 0x002DFCF1
+	// Token: 0x06007A26 RID: 31270 RVA: 0x002E33E1 File Offset: 0x002E15E1
 	public void OnItemChanged(ItemStack itemStack)
 	{
 		this.grid.CurrentItem = itemStack;
 		this.cosmeticGrid.CurrentItem = itemStack;
 	}
 
-	// Token: 0x04005A44 RID: 23108
+	// Token: 0x04005A77 RID: 23159
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_AssembleDroneWindow assembleWindow;
 
-	// Token: 0x04005A45 RID: 23109
+	// Token: 0x04005A78 RID: 23160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x04005A46 RID: 23110
+	// Token: 0x04005A79 RID: 23161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemDronePartStackGrid grid;
 
-	// Token: 0x04005A47 RID: 23111
+	// Token: 0x04005A7A RID: 23162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemCosmeticStackGrid cosmeticGrid;
 
-	// Token: 0x04005A48 RID: 23112
+	// Token: 0x04005A7B RID: 23163
 	public static string ID = "junkDrone";
 
-	// Token: 0x04005A49 RID: 23113
+	// Token: 0x04005A7C RID: 23164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityDrone currentVehicleEntity;
 }

@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace XMLEditing
 {
-	// Token: 0x02001686 RID: 5766
+	// Token: 0x02001698 RID: 5784
 	public static class OversizedConversionUtils
 	{
-		// Token: 0x170015DF RID: 5599
-		// (get) Token: 0x0600B4AC RID: 46252 RVA: 0x0043863C File Offset: 0x0043683C
+		// Token: 0x170015EB RID: 5611
+		// (get) Token: 0x0600B504 RID: 46340 RVA: 0x0043AA40 File Offset: 0x00438C40
 		public static string OversizedConversionTargetsFilePath
 		{
 			get
@@ -19,7 +19,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B4AD RID: 46253 RVA: 0x00438654 File Offset: 0x00436854
+		// Token: 0x0600B505 RID: 46341 RVA: 0x0043AA58 File Offset: 0x00438C58
 		public static void AutoApplyOversizedConversion(XElement root)
 		{
 			string oversizedConversionTargetsFilePath = OversizedConversionUtils.OversizedConversionTargetsFilePath;
@@ -42,7 +42,7 @@ namespace XMLEditing
 			Debug.Log("Automatic oversized conversion complete.\n\n" + string.Format("targetNames.Count: {0}\n", hashSet.Count) + conversionDebugInfo.CountsToString());
 		}
 
-		// Token: 0x0600B4AE RID: 46254 RVA: 0x00438710 File Offset: 0x00436910
+		// Token: 0x0600B506 RID: 46342 RVA: 0x0043AB14 File Offset: 0x00438D14
 		public static void ApplyOversizedConversion(XElement root, HashSet<string> targetNames, OversizedConversionUtils.ConversionDebugInfo debugInfo = null)
 		{
 			BlockNodeMap blockNodeMap = new BlockNodeMap();
@@ -69,7 +69,7 @@ namespace XMLEditing
 			OversizedConversionUtils.ConvertBlocksToOversized(targetRootNodes, debugInfo);
 		}
 
-		// Token: 0x0600B4AF RID: 46255 RVA: 0x004387D4 File Offset: 0x004369D4
+		// Token: 0x0600B507 RID: 46343 RVA: 0x0043ABD8 File Offset: 0x00438DD8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void FixUndersizedHelpers(BlockNodeMap blockNodes, Dictionary<string, HashSet<string>> replacementMap)
 		{
@@ -178,7 +178,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B4B0 RID: 46256 RVA: 0x00438CC8 File Offset: 0x00436EC8
+		// Token: 0x0600B508 RID: 46344 RVA: 0x0043B0CC File Offset: 0x004392CC
 		public static void ConvertBlocksToOversized(HashSet<BlockNode> targetRootNodes, OversizedConversionUtils.ConversionDebugInfo debugInfo = null)
 		{
 			foreach (BlockNode blockNode in targetRootNodes)
@@ -227,7 +227,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B4B1 RID: 46257 RVA: 0x00438DF8 File Offset: 0x00436FF8
+		// Token: 0x0600B509 RID: 46345 RVA: 0x0043B1FC File Offset: 0x004393FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ConvertToOversizedRecursive(BlockNode targetNode, Vector3 inheritedAutoOffset, OversizedConversionUtils.ConversionDebugInfo debugInfo = null)
 		{
@@ -339,7 +339,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B4B2 RID: 46258 RVA: 0x004391E0 File Offset: 0x004373E0
+		// Token: 0x0600B50A RID: 46346 RVA: 0x0043B5E4 File Offset: 0x004397E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void BakeExplicitModelOffsetRecursive(BlockNode blockNode, OversizedConversionUtils.ConversionDebugInfo debugInfo = null)
 		{
@@ -377,7 +377,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B4B3 RID: 46259 RVA: 0x004392F4 File Offset: 0x004374F4
+		// Token: 0x0600B50B RID: 46347 RVA: 0x0043B6F8 File Offset: 0x004398F8
 		public static void FindMultiBlockDimRootNodes(BlockNodeMap blockNodes, HashSet<string> targetNames, Action<BlockNode> onRootNodeFound)
 		{
 			foreach (string text in targetNames)
@@ -410,20 +410,20 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x02001687 RID: 5767
+		// Token: 0x02001699 RID: 5785
 		public class ConversionDebugInfo
 		{
-			// Token: 0x170015E0 RID: 5600
-			// (get) Token: 0x0600B4B4 RID: 46260 RVA: 0x004393D4 File Offset: 0x004375D4
-			// (set) Token: 0x0600B4B5 RID: 46261 RVA: 0x004393DC File Offset: 0x004375DC
+			// Token: 0x170015EC RID: 5612
+			// (get) Token: 0x0600B50C RID: 46348 RVA: 0x0043B7D8 File Offset: 0x004399D8
+			// (set) Token: 0x0600B50D RID: 46349 RVA: 0x0043B7E0 File Offset: 0x004399E0
 			public OversizedConversionUtils.ConversionDebugInfo.OffsetCounts Offsets
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			} = new OversizedConversionUtils.ConversionDebugInfo.OffsetCounts();
 
-			// Token: 0x170015E1 RID: 5601
-			// (get) Token: 0x0600B4B6 RID: 46262 RVA: 0x004393E5 File Offset: 0x004375E5
+			// Token: 0x170015ED RID: 5613
+			// (get) Token: 0x0600B50E RID: 46350 RVA: 0x0043B7E9 File Offset: 0x004399E9
 			public int ModifiedBlockNodeCount
 			{
 				get
@@ -432,8 +432,8 @@ namespace XMLEditing
 				}
 			}
 
-			// Token: 0x170015E2 RID: 5602
-			// (get) Token: 0x0600B4B7 RID: 46263 RVA: 0x004393F2 File Offset: 0x004375F2
+			// Token: 0x170015EE RID: 5614
+			// (get) Token: 0x0600B50F RID: 46351 RVA: 0x0043B7F6 File Offset: 0x004399F6
 			public int BaseConversionCount
 			{
 				get
@@ -442,7 +442,7 @@ namespace XMLEditing
 				}
 			}
 
-			// Token: 0x0600B4B8 RID: 46264 RVA: 0x004393FC File Offset: 0x004375FC
+			// Token: 0x0600B510 RID: 46352 RVA: 0x0043B800 File Offset: 0x00439A00
 			public void Reset()
 			{
 				this.Offsets.Explicit = 0;
@@ -455,13 +455,13 @@ namespace XMLEditing
 				this.baseConversionCount = 0;
 			}
 
-			// Token: 0x0600B4B9 RID: 46265 RVA: 0x00439463 File Offset: 0x00437663
+			// Token: 0x0600B511 RID: 46353 RVA: 0x0043B867 File Offset: 0x00439A67
 			public void Log()
 			{
 				Debug.Log(this.CountsToString());
 			}
 
-			// Token: 0x0600B4BA RID: 46266 RVA: 0x00439470 File Offset: 0x00437670
+			// Token: 0x0600B512 RID: 46354 RVA: 0x0043B874 File Offset: 0x00439A74
 			public string CountsToString()
 			{
 				return string.Concat(new string[]
@@ -477,19 +477,19 @@ namespace XMLEditing
 				});
 			}
 
-			// Token: 0x0600B4BB RID: 46267 RVA: 0x00439566 File Offset: 0x00437766
+			// Token: 0x0600B513 RID: 46355 RVA: 0x0043B96A File Offset: 0x00439B6A
 			public void OnBlockModified(BlockNode blockNode)
 			{
 				this.modifiedBlockNodes.Add(blockNode);
 			}
 
-			// Token: 0x0600B4BC RID: 46268 RVA: 0x00439575 File Offset: 0x00437775
+			// Token: 0x0600B514 RID: 46356 RVA: 0x0043B979 File Offset: 0x00439B79
 			public void OnBaseBlockConverted(BlockNode node)
 			{
 				this.baseConversionCount++;
 			}
 
-			// Token: 0x0600B4BD RID: 46269 RVA: 0x00439588 File Offset: 0x00437788
+			// Token: 0x0600B515 RID: 46357 RVA: 0x0043B98C File Offset: 0x00439B8C
 			public void OnOriginModelOffsetTypeCalculated(BlockNode.ModelOffsetType modelOffsetType)
 			{
 				int num;
@@ -536,45 +536,45 @@ namespace XMLEditing
 				offsets6.Default = num + 1;
 			}
 
-			// Token: 0x0400875F RID: 34655
+			// Token: 0x040087A0 RID: 34720
 			[PublicizedFrom(EAccessModifier.Private)]
 			public HashSet<BlockNode> modifiedBlockNodes = new HashSet<BlockNode>();
 
-			// Token: 0x04008760 RID: 34656
+			// Token: 0x040087A1 RID: 34721
 			[PublicizedFrom(EAccessModifier.Private)]
 			public int baseConversionCount;
 
-			// Token: 0x02001688 RID: 5768
+			// Token: 0x0200169A RID: 5786
 			public class OffsetCounts
 			{
-				// Token: 0x170015E3 RID: 5603
-				// (get) Token: 0x0600B4BF RID: 46271 RVA: 0x00439658 File Offset: 0x00437858
-				// (set) Token: 0x0600B4C0 RID: 46272 RVA: 0x00439660 File Offset: 0x00437860
+				// Token: 0x170015EF RID: 5615
+				// (get) Token: 0x0600B517 RID: 46359 RVA: 0x0043BA5C File Offset: 0x00439C5C
+				// (set) Token: 0x0600B518 RID: 46360 RVA: 0x0043BA64 File Offset: 0x00439C64
 				public int Explicit { get; set; }
 
-				// Token: 0x170015E4 RID: 5604
-				// (get) Token: 0x0600B4C1 RID: 46273 RVA: 0x00439669 File Offset: 0x00437869
-				// (set) Token: 0x0600B4C2 RID: 46274 RVA: 0x00439671 File Offset: 0x00437871
+				// Token: 0x170015F0 RID: 5616
+				// (get) Token: 0x0600B519 RID: 46361 RVA: 0x0043BA6D File Offset: 0x00439C6D
+				// (set) Token: 0x0600B51A RID: 46362 RVA: 0x0043BA75 File Offset: 0x00439C75
 				public int ShapeNew { get; set; }
 
-				// Token: 0x170015E5 RID: 5605
-				// (get) Token: 0x0600B4C3 RID: 46275 RVA: 0x0043967A File Offset: 0x0043787A
-				// (set) Token: 0x0600B4C4 RID: 46276 RVA: 0x00439682 File Offset: 0x00437882
+				// Token: 0x170015F1 RID: 5617
+				// (get) Token: 0x0600B51B RID: 46363 RVA: 0x0043BA7E File Offset: 0x00439C7E
+				// (set) Token: 0x0600B51C RID: 46364 RVA: 0x0043BA86 File Offset: 0x00439C86
 				public int ShapeModelEntity { get; set; }
 
-				// Token: 0x170015E6 RID: 5606
-				// (get) Token: 0x0600B4C5 RID: 46277 RVA: 0x0043968B File Offset: 0x0043788B
-				// (set) Token: 0x0600B4C6 RID: 46278 RVA: 0x00439693 File Offset: 0x00437893
+				// Token: 0x170015F2 RID: 5618
+				// (get) Token: 0x0600B51D RID: 46365 RVA: 0x0043BA8F File Offset: 0x00439C8F
+				// (set) Token: 0x0600B51E RID: 46366 RVA: 0x0043BA97 File Offset: 0x00439C97
 				public int ShapeExt3dModel { get; set; }
 
-				// Token: 0x170015E7 RID: 5607
-				// (get) Token: 0x0600B4C7 RID: 46279 RVA: 0x0043969C File Offset: 0x0043789C
-				// (set) Token: 0x0600B4C8 RID: 46280 RVA: 0x004396A4 File Offset: 0x004378A4
+				// Token: 0x170015F3 RID: 5619
+				// (get) Token: 0x0600B51F RID: 46367 RVA: 0x0043BAA0 File Offset: 0x00439CA0
+				// (set) Token: 0x0600B520 RID: 46368 RVA: 0x0043BAA8 File Offset: 0x00439CA8
 				public int ShapeOther { get; set; }
 
-				// Token: 0x170015E8 RID: 5608
-				// (get) Token: 0x0600B4C9 RID: 46281 RVA: 0x004396AD File Offset: 0x004378AD
-				// (set) Token: 0x0600B4CA RID: 46282 RVA: 0x004396B5 File Offset: 0x004378B5
+				// Token: 0x170015F4 RID: 5620
+				// (get) Token: 0x0600B521 RID: 46369 RVA: 0x0043BAB1 File Offset: 0x00439CB1
+				// (set) Token: 0x0600B522 RID: 46370 RVA: 0x0043BAB9 File Offset: 0x00439CB9
 				public int Default { get; set; }
 			}
 		}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Token: 0x0200018D RID: 397
 public class TileEntityCompositeData
 {
-	// Token: 0x06000C0A RID: 3082 RVA: 0x0004BE7F File Offset: 0x0004A07F
+	// Token: 0x06000C0A RID: 3082 RVA: 0x0004BE3F File Offset: 0x0004A03F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Init()
 	{
@@ -30,13 +30,13 @@ public class TileEntityCompositeData
 		}, false);
 	}
 
-	// Token: 0x06000C0B RID: 3083 RVA: 0x0004BEBE File Offset: 0x0004A0BE
+	// Token: 0x06000C0B RID: 3083 RVA: 0x0004BE7E File Offset: 0x0004A07E
 	public static void Cleanup()
 	{
 		TileEntityCompositeData.FeaturesByBlock.Clear();
 	}
 
-	// Token: 0x06000C0C RID: 3084 RVA: 0x0004BECC File Offset: 0x0004A0CC
+	// Token: 0x06000C0C RID: 3084 RVA: 0x0004BE8C File Offset: 0x0004A08C
 	public static TileEntityCompositeData ParseBlock(BlockCompositeTileEntity _block)
 	{
 		DynamicProperties dynamicProperties;
@@ -47,7 +47,7 @@ public class TileEntityCompositeData
 		return new TileEntityCompositeData(_block, dynamicProperties);
 	}
 
-	// Token: 0x06000C0D RID: 3085 RVA: 0x0004BF14 File Offset: 0x0004A114
+	// Token: 0x06000C0D RID: 3085 RVA: 0x0004BED4 File Offset: 0x0004A0D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCompositeData(BlockCompositeTileEntity _block, DynamicProperties _compositeProps)
 	{
@@ -108,19 +108,19 @@ public class TileEntityCompositeData
 		TileEntityCompositeData.FeaturesByBlock[_block] = this;
 	}
 
-	// Token: 0x06000C0E RID: 3086 RVA: 0x0004C138 File Offset: 0x0004A338
+	// Token: 0x06000C0E RID: 3086 RVA: 0x0004C0F8 File Offset: 0x0004A2F8
 	public int GetFeatureIndex(ReadOnlyMemory<char> _featureName)
 	{
 		return this.featureIndexByName.GetValueOrDefault(_featureName, -1);
 	}
 
-	// Token: 0x06000C0F RID: 3087 RVA: 0x0004C147 File Offset: 0x0004A347
+	// Token: 0x06000C0F RID: 3087 RVA: 0x0004C107 File Offset: 0x0004A307
 	public int GetFeatureIndex(int _featureNameHash)
 	{
 		return this.featureIndexByHash.GetValueOrDefault(_featureNameHash, -1);
 	}
 
-	// Token: 0x06000C10 RID: 3088 RVA: 0x0004C158 File Offset: 0x0004A358
+	// Token: 0x06000C10 RID: 3088 RVA: 0x0004C118 File Offset: 0x0004A318
 	public int GetFeatureIndex<T>() where T : class
 	{
 		Type typeFromHandle = typeof(T);
@@ -142,25 +142,25 @@ public class TileEntityCompositeData
 		return -1;
 	}
 
-	// Token: 0x06000C11 RID: 3089 RVA: 0x0004C1D0 File Offset: 0x0004A3D0
+	// Token: 0x06000C11 RID: 3089 RVA: 0x0004C190 File Offset: 0x0004A390
 	public bool HasFeature(ReadOnlyMemory<char> _featureName)
 	{
 		return this.GetFeatureIndex(_featureName) >= 0;
 	}
 
-	// Token: 0x06000C12 RID: 3090 RVA: 0x0004C1DF File Offset: 0x0004A3DF
+	// Token: 0x06000C12 RID: 3090 RVA: 0x0004C19F File Offset: 0x0004A39F
 	public bool HasFeature(int _featureNameHash)
 	{
 		return this.GetFeatureIndex(_featureNameHash) >= 0;
 	}
 
-	// Token: 0x06000C13 RID: 3091 RVA: 0x0004C1EE File Offset: 0x0004A3EE
+	// Token: 0x06000C13 RID: 3091 RVA: 0x0004C1AE File Offset: 0x0004A3AE
 	public bool HasFeature<T>() where T : class
 	{
 		return this.GetFeatureIndex<T>() >= 0;
 	}
 
-	// Token: 0x06000C14 RID: 3092 RVA: 0x0004C1FC File Offset: 0x0004A3FC
+	// Token: 0x06000C14 RID: 3092 RVA: 0x0004C1BC File Offset: 0x0004A3BC
 	public bool TryGetFeatureData<T>(out TileEntityFeatureData featureData) where T : class, ITileEntityFeature
 	{
 		int featureIndex = this.GetFeatureIndex<T>();
@@ -173,7 +173,7 @@ public class TileEntityCompositeData
 		return false;
 	}
 
-	// Token: 0x06000C15 RID: 3093 RVA: 0x0004C228 File Offset: 0x0004A428
+	// Token: 0x06000C15 RID: 3093 RVA: 0x0004C1E8 File Offset: 0x0004A3E8
 	public void PrintConfig()
 	{
 		Log.Out("Composite block: " + this.Block.GetBlockName() + ":");
@@ -244,13 +244,13 @@ public class TileEntityCompositeData
 		{
 		}
 
-		// Token: 0x06000C18 RID: 3096 RVA: 0x0004C3D6 File Offset: 0x0004A5D6
+		// Token: 0x06000C18 RID: 3096 RVA: 0x0004C396 File Offset: 0x0004A596
 		public int GetHashCode(ReadOnlyMemory<char> _obj)
 		{
 			return _obj.Span.GetStableHashCode();
 		}
 
-		// Token: 0x06000C19 RID: 3097 RVA: 0x0004C3E4 File Offset: 0x0004A5E4
+		// Token: 0x06000C19 RID: 3097 RVA: 0x0004C3A4 File Offset: 0x0004A5A4
 		public bool Equals(ReadOnlyMemory<char> _x, ReadOnlyMemory<char> _y)
 		{
 			return _x.Span.Equals(_y.Span, StringComparison.Ordinal);

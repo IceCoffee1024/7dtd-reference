@@ -4,12 +4,12 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001559 RID: 5465
+// Token: 0x0200156B RID: 5483
 [Preserve]
 public class vp_Component : MonoBehaviour
 {
-	// Token: 0x1700140F RID: 5135
-	// (get) Token: 0x0600AB26 RID: 43814 RVA: 0x003FE4A4 File Offset: 0x003FC6A4
+	// Token: 0x1700141B RID: 5147
+	// (get) Token: 0x0600AB7E RID: 43902 RVA: 0x004008A8 File Offset: 0x003FEAA8
 	public vp_EventHandler EventHandler
 	{
 		get
@@ -34,8 +34,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001410 RID: 5136
-	// (get) Token: 0x0600AB27 RID: 43815 RVA: 0x003FE5BC File Offset: 0x003FC7BC
+	// Token: 0x1700141C RID: 5148
+	// (get) Token: 0x0600AB7F RID: 43903 RVA: 0x004009C0 File Offset: 0x003FEBC0
 	public Type Type
 	{
 		get
@@ -48,8 +48,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001411 RID: 5137
-	// (get) Token: 0x0600AB28 RID: 43816 RVA: 0x003FE5DE File Offset: 0x003FC7DE
+	// Token: 0x1700141D RID: 5149
+	// (get) Token: 0x0600AB80 RID: 43904 RVA: 0x004009E2 File Offset: 0x003FEBE2
 	public FieldInfo[] Fields
 	{
 		get
@@ -62,8 +62,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001412 RID: 5138
-	// (get) Token: 0x0600AB29 RID: 43817 RVA: 0x003FE601 File Offset: 0x003FC801
+	// Token: 0x1700141E RID: 5150
+	// (get) Token: 0x0600AB81 RID: 43905 RVA: 0x00400A05 File Offset: 0x003FEC05
 	public vp_StateManager StateManager
 	{
 		get
@@ -76,8 +76,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001413 RID: 5139
-	// (get) Token: 0x0600AB2A RID: 43818 RVA: 0x003FE623 File Offset: 0x003FC823
+	// Token: 0x1700141F RID: 5151
+	// (get) Token: 0x0600AB82 RID: 43906 RVA: 0x00400A27 File Offset: 0x003FEC27
 	public vp_State DefaultState
 	{
 		get
@@ -86,8 +86,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001414 RID: 5140
-	// (get) Token: 0x0600AB2B RID: 43819 RVA: 0x003FE62B File Offset: 0x003FC82B
+	// Token: 0x17001420 RID: 5152
+	// (get) Token: 0x0600AB83 RID: 43907 RVA: 0x00400A2F File Offset: 0x003FEC2F
 	public float Delta
 	{
 		get
@@ -96,8 +96,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001415 RID: 5141
-	// (get) Token: 0x0600AB2C RID: 43820 RVA: 0x003FE638 File Offset: 0x003FC838
+	// Token: 0x17001421 RID: 5153
+	// (get) Token: 0x0600AB84 RID: 43908 RVA: 0x00400A3C File Offset: 0x003FEC3C
 	public float SDelta
 	{
 		get
@@ -106,8 +106,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001416 RID: 5142
-	// (get) Token: 0x0600AB2D RID: 43821 RVA: 0x003FE645 File Offset: 0x003FC845
+	// Token: 0x17001422 RID: 5154
+	// (get) Token: 0x0600AB85 RID: 43909 RVA: 0x00400A49 File Offset: 0x003FEC49
 	public Transform Transform
 	{
 		get
@@ -120,8 +120,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001417 RID: 5143
-	// (get) Token: 0x0600AB2E RID: 43822 RVA: 0x003FE667 File Offset: 0x003FC867
+	// Token: 0x17001423 RID: 5155
+	// (get) Token: 0x0600AB86 RID: 43910 RVA: 0x00400A6B File Offset: 0x003FEC6B
 	public Transform Parent
 	{
 		get
@@ -134,8 +134,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001418 RID: 5144
-	// (get) Token: 0x0600AB2F RID: 43823 RVA: 0x003FE68E File Offset: 0x003FC88E
+	// Token: 0x17001424 RID: 5156
+	// (get) Token: 0x0600AB87 RID: 43911 RVA: 0x00400A92 File Offset: 0x003FEC92
 	public Transform Root
 	{
 		get
@@ -148,8 +148,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001419 RID: 5145
-	// (get) Token: 0x0600AB30 RID: 43824 RVA: 0x003FE6B5 File Offset: 0x003FC8B5
+	// Token: 0x17001425 RID: 5157
+	// (get) Token: 0x0600AB88 RID: 43912 RVA: 0x00400AB9 File Offset: 0x003FECB9
 	public AudioSource Audio
 	{
 		get
@@ -162,8 +162,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700141A RID: 5146
-	// (get) Token: 0x0600AB31 RID: 43825 RVA: 0x003FE6D7 File Offset: 0x003FC8D7
+	// Token: 0x17001426 RID: 5158
+	// (get) Token: 0x0600AB89 RID: 43913 RVA: 0x00400ADB File Offset: 0x003FECDB
 	public Collider Collider
 	{
 		get
@@ -176,9 +176,9 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700141B RID: 5147
-	// (get) Token: 0x0600AB32 RID: 43826 RVA: 0x003FE6FC File Offset: 0x003FC8FC
-	// (set) Token: 0x0600AB33 RID: 43827 RVA: 0x003FE768 File Offset: 0x003FC968
+	// Token: 0x17001427 RID: 5159
+	// (get) Token: 0x0600AB8A RID: 43914 RVA: 0x00400B00 File Offset: 0x003FED00
+	// (set) Token: 0x0600AB8B RID: 43915 RVA: 0x00400B6C File Offset: 0x003FED6C
 	public bool Rendering
 	{
 		get
@@ -208,7 +208,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB34 RID: 43828 RVA: 0x003FE7C4 File Offset: 0x003FC9C4
+	// Token: 0x0600AB8C RID: 43916 RVA: 0x00400BC8 File Offset: 0x003FEDC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -220,20 +220,20 @@ public class vp_Component : MonoBehaviour
 		this.StateManager.SetState("Default", base.enabled);
 	}
 
-	// Token: 0x0600AB35 RID: 43829 RVA: 0x003FE7FA File Offset: 0x003FC9FA
+	// Token: 0x0600AB8D RID: 43917 RVA: 0x00400BFE File Offset: 0x003FEDFE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
 		this.ResetState();
 	}
 
-	// Token: 0x0600AB36 RID: 43830 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AB8E RID: 43918 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Init()
 	{
 	}
 
-	// Token: 0x0600AB37 RID: 43831 RVA: 0x003FE802 File Offset: 0x003FCA02
+	// Token: 0x0600AB8F RID: 43919 RVA: 0x00400C06 File Offset: 0x003FEE06
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -243,7 +243,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB38 RID: 43832 RVA: 0x003FE81E File Offset: 0x003FCA1E
+	// Token: 0x0600AB90 RID: 43920 RVA: 0x00400C22 File Offset: 0x003FEE22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -253,7 +253,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB39 RID: 43833 RVA: 0x003FE83A File Offset: 0x003FCA3A
+	// Token: 0x0600AB91 RID: 43921 RVA: 0x00400C3E File Offset: 0x003FEE3E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -264,7 +264,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB3A RID: 43834 RVA: 0x003FE854 File Offset: 0x003FCA54
+	// Token: 0x0600AB92 RID: 43922 RVA: 0x00400C58 File Offset: 0x003FEE58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FixedUpdate()
 	{
@@ -304,13 +304,13 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB3B RID: 43835 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AB93 RID: 43923 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void LateUpdate()
 	{
 	}
 
-	// Token: 0x0600AB3C RID: 43836 RVA: 0x003FE94C File Offset: 0x003FCB4C
+	// Token: 0x0600AB94 RID: 43924 RVA: 0x00400D50 File Offset: 0x003FEF50
 	public void SetState(string state, bool enabled = true, bool recursive = false, bool includeDisabled = false)
 	{
 		this.StateManager.SetState(state, enabled);
@@ -326,7 +326,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB3D RID: 43837 RVA: 0x003FE9CC File Offset: 0x003FCBCC
+	// Token: 0x0600AB95 RID: 43925 RVA: 0x00400DD0 File Offset: 0x003FEFD0
 	public void ActivateGameObject(bool setActive = true)
 	{
 		if (setActive)
@@ -346,20 +346,20 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB3E RID: 43838 RVA: 0x003FEA74 File Offset: 0x003FCC74
+	// Token: 0x0600AB96 RID: 43926 RVA: 0x00400E78 File Offset: 0x003FF078
 	public void ResetState()
 	{
 		this.StateManager.Reset();
 		this.Refresh();
 	}
 
-	// Token: 0x0600AB3F RID: 43839 RVA: 0x003FEA87 File Offset: 0x003FCC87
+	// Token: 0x0600AB97 RID: 43927 RVA: 0x00400E8B File Offset: 0x003FF08B
 	public bool StateEnabled(string stateName)
 	{
 		return this.StateManager.IsEnabled(stateName);
 	}
 
-	// Token: 0x0600AB40 RID: 43840 RVA: 0x003FEA98 File Offset: 0x003FCC98
+	// Token: 0x0600AB98 RID: 43928 RVA: 0x00400E9C File Offset: 0x003FF09C
 	public void RefreshDefaultState()
 	{
 		vp_State vp_State = null;
@@ -397,7 +397,7 @@ public class vp_Component : MonoBehaviour
 		this.m_DefaultState = vp_State;
 	}
 
-	// Token: 0x0600AB41 RID: 43841 RVA: 0x003FEBAD File Offset: 0x003FCDAD
+	// Token: 0x0600AB99 RID: 43929 RVA: 0x00400FB1 File Offset: 0x003FF1B1
 	public void ApplyPreset(vp_ComponentPreset preset)
 	{
 		vp_ComponentPreset.Apply(this, preset);
@@ -405,7 +405,7 @@ public class vp_Component : MonoBehaviour
 		this.Refresh();
 	}
 
-	// Token: 0x0600AB42 RID: 43842 RVA: 0x003FEBC3 File Offset: 0x003FCDC3
+	// Token: 0x0600AB9A RID: 43930 RVA: 0x00400FC7 File Offset: 0x003FF1C7
 	public vp_ComponentPreset Load(string path)
 	{
 		vp_ComponentPreset vp_ComponentPreset = vp_ComponentPreset.LoadFromResources(this, path);
@@ -414,7 +414,7 @@ public class vp_Component : MonoBehaviour
 		return vp_ComponentPreset;
 	}
 
-	// Token: 0x0600AB43 RID: 43843 RVA: 0x003FEBD8 File Offset: 0x003FCDD8
+	// Token: 0x0600AB9B RID: 43931 RVA: 0x00400FDC File Offset: 0x003FF1DC
 	public vp_ComponentPreset Load(TextAsset asset)
 	{
 		vp_ComponentPreset vp_ComponentPreset = vp_ComponentPreset.LoadFromTextAsset(this, asset);
@@ -423,7 +423,7 @@ public class vp_Component : MonoBehaviour
 		return vp_ComponentPreset;
 	}
 
-	// Token: 0x0600AB44 RID: 43844 RVA: 0x003FEBF0 File Offset: 0x003FCDF0
+	// Token: 0x0600AB9C RID: 43932 RVA: 0x00400FF4 File Offset: 0x003FF1F4
 	public void CacheChildren()
 	{
 		this.Children.Clear();
@@ -436,7 +436,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB45 RID: 43845 RVA: 0x003FEC48 File Offset: 0x003FCE48
+	// Token: 0x0600AB9D RID: 43933 RVA: 0x0040104C File Offset: 0x003FF24C
 	public void CacheSiblings()
 	{
 		this.Siblings.Clear();
@@ -449,7 +449,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB46 RID: 43846 RVA: 0x003FEC90 File Offset: 0x003FCE90
+	// Token: 0x0600AB9E RID: 43934 RVA: 0x00401094 File Offset: 0x003FF294
 	public void CacheFamily()
 	{
 		this.Family.Clear();
@@ -462,7 +462,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB47 RID: 43847 RVA: 0x003FECE4 File Offset: 0x003FCEE4
+	// Token: 0x0600AB9F RID: 43935 RVA: 0x004010E8 File Offset: 0x003FF2E8
 	public void CacheRenderers()
 	{
 		this.Renderers.Clear();
@@ -472,7 +472,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB48 RID: 43848 RVA: 0x003FED24 File Offset: 0x003FCF24
+	// Token: 0x0600ABA0 RID: 43936 RVA: 0x00401128 File Offset: 0x003FF328
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void VerifyRenderers()
 	{
@@ -487,7 +487,7 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB49 RID: 43849 RVA: 0x003FED84 File Offset: 0x003FCF84
+	// Token: 0x0600ABA1 RID: 43937 RVA: 0x00401188 File Offset: 0x003FF388
 	public void CacheAudioSources()
 	{
 		this.AudioSources.Clear();
@@ -497,20 +497,20 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB4A RID: 43850 RVA: 0x003FEDC2 File Offset: 0x003FCFC2
+	// Token: 0x0600ABA2 RID: 43938 RVA: 0x004011C6 File Offset: 0x003FF3C6
 	public virtual void Activate()
 	{
 		this.m_DeactivationTimer.Cancel();
 		vp_Utility.Activate(base.gameObject, true);
 	}
 
-	// Token: 0x0600AB4B RID: 43851 RVA: 0x003FEDDB File Offset: 0x003FCFDB
+	// Token: 0x0600ABA3 RID: 43939 RVA: 0x004011DF File Offset: 0x003FF3DF
 	public virtual void Deactivate()
 	{
 		vp_Utility.Activate(base.gameObject, false);
 	}
 
-	// Token: 0x0600AB4C RID: 43852 RVA: 0x003FEDEC File Offset: 0x003FCFEC
+	// Token: 0x0600ABA4 RID: 43940 RVA: 0x004011F0 File Offset: 0x003FF3F0
 	public void DeactivateWhenSilent()
 	{
 		if (this == null)
@@ -535,93 +535,93 @@ public class vp_Component : MonoBehaviour
 		this.Deactivate();
 	}
 
-	// Token: 0x0600AB4D RID: 43853 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600ABA5 RID: 43941 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Refresh()
 	{
 	}
 
-	// Token: 0x04007F40 RID: 32576
+	// Token: 0x04007F81 RID: 32641
 	public bool Persist;
 
-	// Token: 0x04007F41 RID: 32577
+	// Token: 0x04007F82 RID: 32642
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_StateManager m_StateManager;
 
-	// Token: 0x04007F42 RID: 32578
+	// Token: 0x04007F83 RID: 32643
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_EventHandler m_EventHandler;
 
-	// Token: 0x04007F43 RID: 32579
+	// Token: 0x04007F84 RID: 32644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_State m_DefaultState;
 
-	// Token: 0x04007F44 RID: 32580
+	// Token: 0x04007F85 RID: 32645
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Initialized;
 
-	// Token: 0x04007F45 RID: 32581
+	// Token: 0x04007F86 RID: 32646
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04007F46 RID: 32582
+	// Token: 0x04007F87 RID: 32647
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Parent;
 
-	// Token: 0x04007F47 RID: 32583
+	// Token: 0x04007F88 RID: 32648
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Root;
 
-	// Token: 0x04007F48 RID: 32584
+	// Token: 0x04007F89 RID: 32649
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x04007F49 RID: 32585
+	// Token: 0x04007F8A RID: 32650
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Collider m_Collider;
 
-	// Token: 0x04007F4A RID: 32586
+	// Token: 0x04007F8B RID: 32651
 	public List<vp_State> States = new List<vp_State>();
 
-	// Token: 0x04007F4B RID: 32587
+	// Token: 0x04007F8C RID: 32652
 	public List<vp_Component> Children = new List<vp_Component>();
 
-	// Token: 0x04007F4C RID: 32588
+	// Token: 0x04007F8D RID: 32653
 	public List<vp_Component> Siblings = new List<vp_Component>();
 
-	// Token: 0x04007F4D RID: 32589
+	// Token: 0x04007F8E RID: 32654
 	public List<vp_Component> Family = new List<vp_Component>();
 
-	// Token: 0x04007F4E RID: 32590
+	// Token: 0x04007F8F RID: 32655
 	public List<Renderer> Renderers = new List<Renderer>();
 
-	// Token: 0x04007F4F RID: 32591
+	// Token: 0x04007F90 RID: 32656
 	public List<AudioSource> AudioSources = new List<AudioSource>();
 
-	// Token: 0x04007F50 RID: 32592
+	// Token: 0x04007F91 RID: 32657
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Type m_Type;
 
-	// Token: 0x04007F51 RID: 32593
+	// Token: 0x04007F92 RID: 32658
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public FieldInfo[] m_Fields;
 
-	// Token: 0x04007F52 RID: 32594
+	// Token: 0x04007F93 RID: 32659
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_DeactivationTimer = new vp_Timer.Handle();
 
-	// Token: 0x04007F53 RID: 32595
+	// Token: 0x04007F94 RID: 32660
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color prevSkinColor = Color.white;

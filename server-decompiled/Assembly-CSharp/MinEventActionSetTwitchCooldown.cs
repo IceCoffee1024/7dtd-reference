@@ -3,20 +3,20 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F0 RID: 1776
+// Token: 0x020006F8 RID: 1784
 [Preserve]
 public class MinEventActionSetTwitchCooldown : MinEventActionTargetedBase
 {
-	// Token: 0x1700058D RID: 1421
-	// (get) Token: 0x060036CD RID: 14029 RVA: 0x00169110 File Offset: 0x00167310
-	// (set) Token: 0x060036CE RID: 14030 RVA: 0x00169118 File Offset: 0x00167318
+	// Token: 0x17000591 RID: 1425
+	// (get) Token: 0x060036E4 RID: 14052 RVA: 0x0016A0A8 File Offset: 0x001682A8
+	// (set) Token: 0x060036E5 RID: 14053 RVA: 0x0016A0B0 File Offset: 0x001682B0
 	public EntityPlayer.TwitchActionsStates state
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060036CF RID: 14031 RVA: 0x00169124 File Offset: 0x00167324
+	// Token: 0x060036E6 RID: 14054 RVA: 0x0016A0BC File Offset: 0x001682BC
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -33,7 +33,7 @@ public class MinEventActionSetTwitchCooldown : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036D0 RID: 14032 RVA: 0x00169180 File Offset: 0x00167380
+	// Token: 0x060036E7 RID: 14055 RVA: 0x0016A118 File Offset: 0x00168318
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);

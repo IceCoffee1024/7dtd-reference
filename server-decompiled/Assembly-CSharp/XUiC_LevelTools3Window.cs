@@ -4,11 +4,11 @@ using PrefabVolumes;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F74 RID: 3956
+// Token: 0x02000F84 RID: 3972
 [Preserve]
 public class XUiC_LevelTools3Window : XUiController
 {
-	// Token: 0x06007C47 RID: 31815 RVA: 0x002F1854 File Offset: 0x002EFA54
+	// Token: 0x06007C96 RID: 31894 RVA: 0x002F34DC File Offset: 0x002F16DC
 	public override void Init()
 	{
 		base.Init();
@@ -51,7 +51,7 @@ public class XUiC_LevelTools3Window : XUiController
 		}
 	}
 
-	// Token: 0x06007C48 RID: 31816 RVA: 0x002F19D4 File Offset: 0x002EFBD4
+	// Token: 0x06007C97 RID: 31895 RVA: 0x002F365C File Offset: 0x002F185C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -69,7 +69,7 @@ public class XUiC_LevelTools3Window : XUiController
 		this.toggleVolumesConfirmDelete.Value = !GamePrefs.GetBool(EnumGamePrefs.OptionsPoiVolumesSkipDeleteConfirmation);
 	}
 
-	// Token: 0x06007C49 RID: 31817 RVA: 0x002F1A78 File Offset: 0x002EFC78
+	// Token: 0x06007C98 RID: 31896 RVA: 0x002F3700 File Offset: 0x002F1900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool volumeTypeByName(string _name, out XUiC_LevelTools3Window.VolumeTypeDefinition _result)
 	{
@@ -77,7 +77,7 @@ public class XUiC_LevelTools3Window : XUiController
 		return _result != null;
 	}
 
-	// Token: 0x06007C4A RID: 31818 RVA: 0x002F1AB0 File Offset: 0x002EFCB0
+	// Token: 0x06007C99 RID: 31897 RVA: 0x002F3738 File Offset: 0x002F1938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnVolumesCreateOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -91,7 +91,7 @@ public class XUiC_LevelTools3Window : XUiController
 		XUiC_LevelTools3Window.addVolume(volumeTypeDefinition.VolumeType);
 	}
 
-	// Token: 0x06007C4B RID: 31819 RVA: 0x002F1AF8 File Offset: 0x002EFCF8
+	// Token: 0x06007C9A RID: 31898 RVA: 0x002F3780 File Offset: 0x002F1980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnVolumesCreateFromSelectionOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -105,7 +105,7 @@ public class XUiC_LevelTools3Window : XUiController
 		XUiC_LevelTools3Window.addVolumeFromSelection(volumeTypeDefinition.VolumeType);
 	}
 
-	// Token: 0x06007C4C RID: 31820 RVA: 0x002F1B40 File Offset: 0x002EFD40
+	// Token: 0x06007C9B RID: 31899 RVA: 0x002F37C8 File Offset: 0x002F19C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleVolumesShowOnOnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -120,7 +120,7 @@ public class XUiC_LevelTools3Window : XUiController
 		selectionCategory.SetVisible(!selectionCategory.IsVisible());
 	}
 
-	// Token: 0x06007C4D RID: 31821 RVA: 0x002F1B90 File Offset: 0x002EFD90
+	// Token: 0x06007C9C RID: 31900 RVA: 0x002F3818 File Offset: 0x002F1A18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cloneableVolumeSelection(out PrefabVolumeAbs _existingVolume, out int _prefabInstanceId, out int _volumeId)
 	{
@@ -146,7 +146,7 @@ public class XUiC_LevelTools3Window : XUiController
 		return true;
 	}
 
-	// Token: 0x06007C4E RID: 31822 RVA: 0x002F1BEC File Offset: 0x002EFDEC
+	// Token: 0x06007C9D RID: 31901 RVA: 0x002F3874 File Offset: 0x002F1A74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnVolumesDupeOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -160,14 +160,14 @@ public class XUiC_LevelTools3Window : XUiController
 		PrefabVolumeManager.Instance.CloneVolumeServer(prefabVolumeAbs.VolumeType, num, num2, new Vector3i(0, prefabVolumeAbs.size.y + 1, 0));
 	}
 
-	// Token: 0x06007C4F RID: 31823 RVA: 0x002F1C2E File Offset: 0x002EFE2E
+	// Token: 0x06007C9E RID: 31902 RVA: 0x002F38B6 File Offset: 0x002F1AB6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleVolumesConfirmDeleteOnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 		GamePrefs.Set(EnumGamePrefs.OptionsPoiVolumesSkipDeleteConfirmation, !_newValue);
 	}
 
-	// Token: 0x06007C50 RID: 31824 RVA: 0x002F1C40 File Offset: 0x002EFE40
+	// Token: 0x06007C9F RID: 31903 RVA: 0x002F38C8 File Offset: 0x002F1AC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void addVolume(PrefabVolumeAbs.EVolumeType _volumeType)
 	{
@@ -181,7 +181,7 @@ public class XUiC_LevelTools3Window : XUiController
 		PrefabVolumeManager.Instance.AddVolumeServer(_volumeType, vector3i2, vector3i);
 	}
 
-	// Token: 0x06007C51 RID: 31825 RVA: 0x002F1CA8 File Offset: 0x002EFEA8
+	// Token: 0x06007CA0 RID: 31904 RVA: 0x002F3930 File Offset: 0x002F1B30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void addVolumeFromSelection(PrefabVolumeAbs.EVolumeType _volumeType)
 	{
@@ -193,7 +193,7 @@ public class XUiC_LevelTools3Window : XUiController
 		PrefabVolumeManager.Instance.AddVolumeServer(_volumeType, instance.SelectionMin, instance.SelectionSize);
 	}
 
-	// Token: 0x06007C52 RID: 31826 RVA: 0x002F1CE0 File Offset: 0x002EFEE0
+	// Token: 0x06007CA1 RID: 31905 RVA: 0x002F3968 File Offset: 0x002F1B68
 	public static Vector3 getRaycastHitPoint(float _maxDistance = 100f, float _offsetUp = 0f)
 	{
 		Camera finalCamera = GameManager.Instance.World.GetPrimaryPlayer().finalCamera;
@@ -209,10 +209,10 @@ public class XUiC_LevelTools3Window : XUiController
 		return Vector3.zero;
 	}
 
-	// Token: 0x04005C06 RID: 23558
+	// Token: 0x04005C40 RID: 23616
 	public static string ID = "";
 
-	// Token: 0x04005C07 RID: 23559
+	// Token: 0x04005C41 RID: 23617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_LevelTools3Window.VolumeTypeDefinition> volumeTypeDefinitions = new List<XUiC_LevelTools3Window.VolumeTypeDefinition>
 	{
@@ -223,45 +223,45 @@ public class XUiC_LevelTools3Window : XUiController
 		new XUiC_LevelTools3Window.VolumeTypeDefinition("WallVolume", PrefabVolumeAbs.EVolumeType.Wall)
 	};
 
-	// Token: 0x04005C08 RID: 23560
+	// Token: 0x04005C42 RID: 23618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList volumeTypeSelector;
 
-	// Token: 0x04005C09 RID: 23561
+	// Token: 0x04005C43 RID: 23619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnVolumesCreate;
 
-	// Token: 0x04005C0A RID: 23562
+	// Token: 0x04005C44 RID: 23620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnVolumesCreateFromSelection;
 
-	// Token: 0x04005C0B RID: 23563
+	// Token: 0x04005C45 RID: 23621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleVolumesShow;
 
-	// Token: 0x04005C0C RID: 23564
+	// Token: 0x04005C46 RID: 23622
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnVolumesDupe;
 
-	// Token: 0x04005C0D RID: 23565
+	// Token: 0x04005C47 RID: 23623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleVolumesConfirmDelete;
 
-	// Token: 0x02000F75 RID: 3957
+	// Token: 0x02000F85 RID: 3973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class VolumeTypeDefinition
 	{
-		// Token: 0x06007C55 RID: 31829 RVA: 0x002F1E53 File Offset: 0x002F0053
+		// Token: 0x06007CA4 RID: 31908 RVA: 0x002F3ADB File Offset: 0x002F1CDB
 		public VolumeTypeDefinition(string _selectionCategoryName, PrefabVolumeAbs.EVolumeType _volumeType)
 		{
 			this.SelectionCategory = SelectionBoxManager.Instance.GetCategory(_selectionCategoryName);
 			this.VolumeType = _volumeType;
 		}
 
-		// Token: 0x04005C0E RID: 23566
+		// Token: 0x04005C48 RID: 23624
 		public readonly SelectionCategory SelectionCategory;
 
-		// Token: 0x04005C0F RID: 23567
+		// Token: 0x04005C49 RID: 23625
 		public readonly PrefabVolumeAbs.EVolumeType VolumeType;
 	}
 }

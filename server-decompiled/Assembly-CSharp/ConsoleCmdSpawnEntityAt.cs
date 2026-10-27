@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002A1 RID: 673
+// Token: 0x020002A3 RID: 675
 [Preserve]
 public class ConsoleCmdSpawnEntityAt : ConsoleCmdAbstract
 {
-	// Token: 0x0600137E RID: 4990 RVA: 0x000775C3 File Offset: 0x000757C3
+	// Token: 0x06001382 RID: 4994 RVA: 0x00077793 File Offset: 0x00075993
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spawnentityat", "sea" };
 	}
 
-	// Token: 0x0600137F RID: 4991 RVA: 0x000775DB File Offset: 0x000757DB
+	// Token: 0x06001383 RID: 4995 RVA: 0x000777AB File Offset: 0x000759AB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Spawns an entity at a give position";
 	}
 
-	// Token: 0x06001380 RID: 4992 RVA: 0x000775E2 File Offset: 0x000757E2
+	// Token: 0x06001384 RID: 4996 RVA: 0x000777B2 File Offset: 0x000759B2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  1. spawnentityat\n  2. spawnentityat <entityidx> <x> <y> <z>\n  3. spawnentityat <entityidx> <x> <y> <z> <count>\n  4. spawnentityat <entityidx> <x> <y> <z> <count> <rotX> <rotY> <rotZ>\n  5. spawnentityat <entityidx> <x> <y> <z> <count> <rotX> <rotY> <rotZ> <stepX> <stepY> <stepZ>\n  6. spawnentityat <entityidx> <x> <y> <z> <count> <rotX> <rotY> <rotZ> <stepX> <stepY> <stepZ> <spawnerType>\n1. Lists the known entity class names\n2. Spawns the entity with the given class name at the given coordinates\n3. As 2. but spawns <count> instances of that entity type\n4. As 3. but also specifies the rotation of the spawned entities\n5. As 4. but also specify the step distance between entities\n6. As 5. but also specify the spawner source of the entity (Dynamic, StaticSpawner, Biome)";
 	}
 
-	// Token: 0x06001381 RID: 4993 RVA: 0x000775EC File Offset: 0x000757EC
+	// Token: 0x06001385 RID: 4997 RVA: 0x000777BC File Offset: 0x000759BC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

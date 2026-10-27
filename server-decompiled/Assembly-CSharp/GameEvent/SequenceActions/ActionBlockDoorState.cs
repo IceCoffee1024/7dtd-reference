@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A0A RID: 6666
+	// Token: 0x02001A3B RID: 6715
 	[Preserve]
 	public class ActionBlockDoorState : ActionBaseBlockAction
 	{
-		// Token: 0x0600CB8C RID: 52108 RVA: 0x004A67EA File Offset: 0x004A49EA
+		// Token: 0x0600CCA0 RID: 52384 RVA: 0x004AA2E6 File Offset: 0x004A84E6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool AllowInTrader()
 		{
 			return this.traderOnly;
 		}
 
-		// Token: 0x0600CB8D RID: 52109 RVA: 0x004A67F4 File Offset: 0x004A49F4
+		// Token: 0x0600CCA1 RID: 52385 RVA: 0x004AA2F0 File Offset: 0x004A84F0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -43,7 +43,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600CB8E RID: 52110 RVA: 0x004A689C File Offset: 0x004A4A9C
+		// Token: 0x0600CCA2 RID: 52386 RVA: 0x004AA398 File Offset: 0x004A8598
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -57,7 +57,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CB8F RID: 52111 RVA: 0x004A6908 File Offset: 0x004A4B08
+		// Token: 0x0600CCA3 RID: 52387 RVA: 0x004AA404 File Offset: 0x004A8604
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -70,50 +70,50 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009A49 RID: 39497
+		// Token: 0x04009B32 RID: 39730
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBlockDoorState.OpenDoorStates setOpen;
 
-		// Token: 0x04009A4A RID: 39498
+		// Token: 0x04009B33 RID: 39731
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool setLocked;
 
-		// Token: 0x04009A4B RID: 39499
+		// Token: 0x04009B34 RID: 39732
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool traderOnly;
 
-		// Token: 0x04009A4C RID: 39500
+		// Token: 0x04009B35 RID: 39733
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool animate = true;
 
-		// Token: 0x04009A4D RID: 39501
+		// Token: 0x04009B36 RID: 39734
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool handleLock;
 
-		// Token: 0x04009A4E RID: 39502
+		// Token: 0x04009B37 RID: 39735
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSetOpenState = "set_open";
 
-		// Token: 0x04009A4F RID: 39503
+		// Token: 0x04009B38 RID: 39736
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSetLockState = "set_lock";
 
-		// Token: 0x04009A50 RID: 39504
+		// Token: 0x04009B39 RID: 39737
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAnimate = "animate";
 
-		// Token: 0x04009A51 RID: 39505
+		// Token: 0x04009B3A RID: 39738
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTraderOnly = "trader_only";
 
-		// Token: 0x02001A0B RID: 6667
+		// Token: 0x02001A3C RID: 6716
 		public enum OpenDoorStates
 		{
-			// Token: 0x04009A53 RID: 39507
+			// Token: 0x04009B3C RID: 39740
 			Open,
-			// Token: 0x04009A54 RID: 39508
+			// Token: 0x04009B3D RID: 39741
 			Close,
-			// Token: 0x04009A55 RID: 39509
+			// Token: 0x04009B3E RID: 39742
 			Toggle
 		}
 	}

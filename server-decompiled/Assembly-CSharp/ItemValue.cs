@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Token: 0x02000581 RID: 1409
+// Token: 0x02000588 RID: 1416
 public class ItemValue : IEquatable<ItemValue>
 {
 	// Token: 0x170004FF RID: 1279
-	// (get) Token: 0x06002E1B RID: 11803 RVA: 0x001246F2 File Offset: 0x001228F2
+	// (get) Token: 0x06002E28 RID: 11816 RVA: 0x001252CA File Offset: 0x001234CA
 	public static ItemValue None
 	{
 		get
@@ -19,8 +19,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000500 RID: 1280
-	// (get) Token: 0x06002E1C RID: 11804 RVA: 0x001246FB File Offset: 0x001228FB
-	// (set) Token: 0x06002E1D RID: 11805 RVA: 0x00124703 File Offset: 0x00122903
+	// (get) Token: 0x06002E29 RID: 11817 RVA: 0x001252D3 File Offset: 0x001234D3
+	// (set) Token: 0x06002E2A RID: 11818 RVA: 0x001252DB File Offset: 0x001234DB
 	public int type
 	{
 		get
@@ -39,8 +39,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000501 RID: 1281
-	// (get) Token: 0x06002E1E RID: 11806 RVA: 0x0012471C File Offset: 0x0012291C
-	// (set) Token: 0x06002E1F RID: 11807 RVA: 0x00124724 File Offset: 0x00122924
+	// (get) Token: 0x06002E2B RID: 11819 RVA: 0x001252F4 File Offset: 0x001234F4
+	// (set) Token: 0x06002E2C RID: 11820 RVA: 0x001252FC File Offset: 0x001234FC
 	public byte Flags
 	{
 		get
@@ -59,8 +59,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000502 RID: 1282
-	// (get) Token: 0x06002E20 RID: 11808 RVA: 0x0012473D File Offset: 0x0012293D
-	// (set) Token: 0x06002E21 RID: 11809 RVA: 0x00124745 File Offset: 0x00122945
+	// (get) Token: 0x06002E2D RID: 11821 RVA: 0x00125315 File Offset: 0x00123515
+	// (set) Token: 0x06002E2E RID: 11822 RVA: 0x0012531D File Offset: 0x0012351D
 	public byte SelectedAmmoTypeIndex
 	{
 		get
@@ -79,8 +79,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000503 RID: 1283
-	// (get) Token: 0x06002E22 RID: 11810 RVA: 0x0012475E File Offset: 0x0012295E
-	// (set) Token: 0x06002E23 RID: 11811 RVA: 0x00124766 File Offset: 0x00122966
+	// (get) Token: 0x06002E2F RID: 11823 RVA: 0x00125336 File Offset: 0x00123536
+	// (set) Token: 0x06002E30 RID: 11824 RVA: 0x0012533E File Offset: 0x0012353E
 	public float UseTimes
 	{
 		get
@@ -99,8 +99,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000504 RID: 1284
-	// (get) Token: 0x06002E24 RID: 11812 RVA: 0x0012477F File Offset: 0x0012297F
-	// (set) Token: 0x06002E25 RID: 11813 RVA: 0x00124787 File Offset: 0x00122987
+	// (get) Token: 0x06002E31 RID: 11825 RVA: 0x00125357 File Offset: 0x00123557
+	// (set) Token: 0x06002E32 RID: 11826 RVA: 0x0012535F File Offset: 0x0012355F
 	public int Meta
 	{
 		get
@@ -119,8 +119,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000505 RID: 1285
-	// (get) Token: 0x06002E26 RID: 11814 RVA: 0x001247A0 File Offset: 0x001229A0
-	// (set) Token: 0x06002E27 RID: 11815 RVA: 0x001247A8 File Offset: 0x001229A8
+	// (get) Token: 0x06002E33 RID: 11827 RVA: 0x00125378 File Offset: 0x00123578
+	// (set) Token: 0x06002E34 RID: 11828 RVA: 0x00125380 File Offset: 0x00123580
 	public ushort Quality
 	{
 		get
@@ -139,8 +139,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000506 RID: 1286
-	// (get) Token: 0x06002E28 RID: 11816 RVA: 0x001247C1 File Offset: 0x001229C1
-	// (set) Token: 0x06002E29 RID: 11817 RVA: 0x001247C9 File Offset: 0x001229C9
+	// (get) Token: 0x06002E35 RID: 11829 RVA: 0x00125399 File Offset: 0x00123599
+	// (set) Token: 0x06002E36 RID: 11830 RVA: 0x001253A1 File Offset: 0x001235A1
 	public ItemValue.Stat[] Stats
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -148,7 +148,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000507 RID: 1287
-	// (get) Token: 0x06002E2A RID: 11818 RVA: 0x001247D2 File Offset: 0x001229D2
+	// (get) Token: 0x06002E37 RID: 11831 RVA: 0x001253AA File Offset: 0x001235AA
 	public int ModificationCount
 	{
 		get
@@ -161,7 +161,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E2B RID: 11819 RVA: 0x001247E6 File Offset: 0x001229E6
+	// Token: 0x06002E38 RID: 11832 RVA: 0x001253BE File Offset: 0x001235BE
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public ItemValue GetModification(int _index)
 	{
@@ -169,7 +169,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000508 RID: 1288
-	// (get) Token: 0x06002E2C RID: 11820 RVA: 0x001247F0 File Offset: 0x001229F0
+	// (get) Token: 0x06002E39 RID: 11833 RVA: 0x001253C8 File Offset: 0x001235C8
 	public int CosmeticModCount
 	{
 		get
@@ -182,28 +182,28 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E2D RID: 11821 RVA: 0x00124804 File Offset: 0x00122A04
+	// Token: 0x06002E3A RID: 11834 RVA: 0x001253DC File Offset: 0x001235DC
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public ItemValue GetCosmeticMod(int _index)
 	{
 		return this.cosmeticMods[_index];
 	}
 
-	// Token: 0x06002E2E RID: 11822 RVA: 0x0012480E File Offset: 0x00122A0E
+	// Token: 0x06002E3B RID: 11835 RVA: 0x001253E6 File Offset: 0x001235E6
 	public void SetModification(int _index, ItemValue _mod)
 	{
 		this.modifications[_index] = _mod;
 		this.NotifyChanged();
 	}
 
-	// Token: 0x06002E2F RID: 11823 RVA: 0x0012481F File Offset: 0x00122A1F
+	// Token: 0x06002E3C RID: 11836 RVA: 0x001253F7 File Offset: 0x001235F7
 	public void SetCosmeticMod(int _index, ItemValue _mod)
 	{
 		this.cosmeticMods[_index] = _mod;
 		this.NotifyChanged();
 	}
 
-	// Token: 0x06002E30 RID: 11824 RVA: 0x00124830 File Offset: 0x00122A30
+	// Token: 0x06002E3D RID: 11837 RVA: 0x00125408 File Offset: 0x00123608
 	public void SetTextureFull(int _index, long _value)
 	{
 		if (this.textureFullArray[_index] == _value)
@@ -214,7 +214,7 @@ public class ItemValue : IEquatable<ItemValue>
 		this.NotifyChanged();
 	}
 
-	// Token: 0x06002E31 RID: 11825 RVA: 0x00124855 File Offset: 0x00122A55
+	// Token: 0x06002E3E RID: 11838 RVA: 0x0012542D File Offset: 0x0012362D
 	public void ResizeCosmeticMods(int _length)
 	{
 		if (_length == 0)
@@ -228,8 +228,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000509 RID: 1289
-	// (get) Token: 0x06002E32 RID: 11826 RVA: 0x0012487A File Offset: 0x00122A7A
-	// (set) Token: 0x06002E33 RID: 11827 RVA: 0x00124882 File Offset: 0x00122A82
+	// (get) Token: 0x06002E3F RID: 11839 RVA: 0x00125452 File Offset: 0x00123652
+	// (set) Token: 0x06002E40 RID: 11840 RVA: 0x0012545A File Offset: 0x0012365A
 	public ushort Seed
 	{
 		get
@@ -248,8 +248,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x1700050A RID: 1290
-	// (get) Token: 0x06002E34 RID: 11828 RVA: 0x0012489B File Offset: 0x00122A9B
-	// (set) Token: 0x06002E35 RID: 11829 RVA: 0x001248A3 File Offset: 0x00122AA3
+	// (get) Token: 0x06002E41 RID: 11841 RVA: 0x00125473 File Offset: 0x00123673
+	// (set) Token: 0x06002E42 RID: 11842 RVA: 0x0012547B File Offset: 0x0012367B
 	public TextureFullArray TextureFullArray
 	{
 		get
@@ -268,8 +268,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x1700050B RID: 1291
-	// (get) Token: 0x06002E36 RID: 11830 RVA: 0x001248C1 File Offset: 0x00122AC1
-	// (set) Token: 0x06002E37 RID: 11831 RVA: 0x001248CE File Offset: 0x00122ACE
+	// (get) Token: 0x06002E43 RID: 11843 RVA: 0x00125499 File Offset: 0x00123699
+	// (set) Token: 0x06002E44 RID: 11844 RVA: 0x001254A6 File Offset: 0x001236A6
 	public bool Activated
 	{
 		get
@@ -283,7 +283,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x1700050C RID: 1292
-	// (get) Token: 0x06002E38 RID: 11832 RVA: 0x001248ED File Offset: 0x00122AED
+	// (get) Token: 0x06002E45 RID: 11845 RVA: 0x001254C5 File Offset: 0x001236C5
 	public bool WasCombined
 	{
 		get
@@ -293,7 +293,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x1700050D RID: 1293
-	// (get) Token: 0x06002E39 RID: 11833 RVA: 0x001248FA File Offset: 0x00122AFA
+	// (get) Token: 0x06002E46 RID: 11846 RVA: 0x001254D2 File Offset: 0x001236D2
 	public int MaxUseTimes
 	{
 		get
@@ -303,7 +303,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x1700050E RID: 1294
-	// (get) Token: 0x06002E3A RID: 11834 RVA: 0x00124908 File Offset: 0x00122B08
+	// (get) Token: 0x06002E47 RID: 11847 RVA: 0x001254E0 File Offset: 0x001236E0
 	public int MaxUseTimesUI
 	{
 		get
@@ -313,7 +313,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x1700050F RID: 1295
-	// (get) Token: 0x06002E3B RID: 11835 RVA: 0x00124910 File Offset: 0x00122B10
+	// (get) Token: 0x06002E48 RID: 11848 RVA: 0x001254E8 File Offset: 0x001236E8
 	public int MaxUseTimesBase
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -324,7 +324,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E3C RID: 11836 RVA: 0x0012494C File Offset: 0x00122B4C
+	// Token: 0x06002E49 RID: 11849 RVA: 0x00125524 File Offset: 0x00123724
 	public static int ModMaxUseTimes(int _value, ItemValue _iv)
 	{
 		if (_value <= 0)
@@ -342,8 +342,8 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000510 RID: 1296
-	// (get) Token: 0x06002E3D RID: 11837 RVA: 0x00124988 File Offset: 0x00122B88
-	// (set) Token: 0x06002E3E RID: 11838 RVA: 0x001249AB File Offset: 0x00122BAB
+	// (get) Token: 0x06002E4A RID: 11850 RVA: 0x00125560 File Offset: 0x00123760
+	// (set) Token: 0x06002E4B RID: 11851 RVA: 0x00125583 File Offset: 0x00123783
 	public float MaxDurabilityModifier
 	{
 		get
@@ -367,7 +367,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000511 RID: 1297
-	// (get) Token: 0x06002E3F RID: 11839 RVA: 0x001249D0 File Offset: 0x00122BD0
+	// (get) Token: 0x06002E4C RID: 11852 RVA: 0x001255A8 File Offset: 0x001237A8
 	public float PercentUsesLeft
 	{
 		get
@@ -381,7 +381,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E40 RID: 11840 RVA: 0x00124A04 File Offset: 0x00122C04
+	// Token: 0x06002E4D RID: 11853 RVA: 0x001255DC File Offset: 0x001237DC
 	public bool TryGetMetadata(string key, out int value)
 	{
 		object obj;
@@ -394,7 +394,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return true;
 	}
 
-	// Token: 0x06002E41 RID: 11841 RVA: 0x00124A2C File Offset: 0x00122C2C
+	// Token: 0x06002E4E RID: 11854 RVA: 0x00125604 File Offset: 0x00123804
 	public bool TryGetMetadata(string key, out float value)
 	{
 		object obj;
@@ -407,7 +407,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return true;
 	}
 
-	// Token: 0x06002E42 RID: 11842 RVA: 0x00124A58 File Offset: 0x00122C58
+	// Token: 0x06002E4F RID: 11855 RVA: 0x00125630 File Offset: 0x00123830
 	public bool TryGetMetadata(string key, out string value)
 	{
 		object obj;
@@ -420,7 +420,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return true;
 	}
 
-	// Token: 0x06002E43 RID: 11843 RVA: 0x00124A80 File Offset: 0x00122C80
+	// Token: 0x06002E50 RID: 11856 RVA: 0x00125658 File Offset: 0x00123858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetMetadata(string key, out object value, TypedMetadataValue.TypeTag typeTag = TypedMetadataValue.TypeTag.None)
 	{
@@ -444,7 +444,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return true;
 	}
 
-	// Token: 0x06002E44 RID: 11844 RVA: 0x00124ACC File Offset: 0x00122CCC
+	// Token: 0x06002E51 RID: 11857 RVA: 0x001256A4 File Offset: 0x001238A4
 	public bool HasMetadata(string key, TypedMetadataValue.TypeTag typeTag = TypedMetadataValue.TypeTag.None)
 	{
 		if (this.Metadata == null)
@@ -459,7 +459,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return this.Metadata.TryGetValue(key, out typedMetadataValue) && typedMetadataValue.GetTypeTag() == typeTag;
 	}
 
-	// Token: 0x06002E45 RID: 11845 RVA: 0x00124B10 File Offset: 0x00122D10
+	// Token: 0x06002E52 RID: 11858 RVA: 0x001256E8 File Offset: 0x001238E8
 	public object GetMetadata(string key)
 	{
 		if (this.Metadata == null)
@@ -474,31 +474,31 @@ public class ItemValue : IEquatable<ItemValue>
 		return null;
 	}
 
-	// Token: 0x06002E46 RID: 11846 RVA: 0x00124B44 File Offset: 0x00122D44
+	// Token: 0x06002E53 RID: 11859 RVA: 0x0012571C File Offset: 0x0012391C
 	public void SetMetadata(string key, int value)
 	{
 		this.SetMetadata(key, value, TypedMetadataValue.TypeTag.Integer);
 	}
 
-	// Token: 0x06002E47 RID: 11847 RVA: 0x00124B54 File Offset: 0x00122D54
+	// Token: 0x06002E54 RID: 11860 RVA: 0x0012572C File Offset: 0x0012392C
 	public void SetMetadata(string key, float value)
 	{
 		this.SetMetadata(key, value, TypedMetadataValue.TypeTag.Float);
 	}
 
-	// Token: 0x06002E48 RID: 11848 RVA: 0x00124B64 File Offset: 0x00122D64
+	// Token: 0x06002E55 RID: 11861 RVA: 0x0012573C File Offset: 0x0012393C
 	public void SetMetadata(string key, string value)
 	{
 		this.SetMetadata(key, value, TypedMetadataValue.TypeTag.String);
 	}
 
-	// Token: 0x06002E49 RID: 11849 RVA: 0x00124B6F File Offset: 0x00122D6F
+	// Token: 0x06002E56 RID: 11862 RVA: 0x00125747 File Offset: 0x00123947
 	public void SetMetadata(string key, object value, string typeTag)
 	{
 		this.SetMetadata(key, value, TypedMetadataValue.StringToTag(typeTag));
 	}
 
-	// Token: 0x06002E4A RID: 11850 RVA: 0x00124B80 File Offset: 0x00122D80
+	// Token: 0x06002E57 RID: 11863 RVA: 0x00125758 File Offset: 0x00123958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMetadata(string key, object value, TypedMetadataValue.TypeTag typeTag)
 	{
@@ -541,7 +541,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E4B RID: 11851 RVA: 0x00124C54 File Offset: 0x00122E54
+	// Token: 0x06002E58 RID: 11864 RVA: 0x0012582C File Offset: 0x00123A2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMetadata(string key, TypedMetadataValue tmv)
 	{
@@ -572,7 +572,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E4C RID: 11852 RVA: 0x00124CE4 File Offset: 0x00122EE4
+	// Token: 0x06002E59 RID: 11865 RVA: 0x001258BC File Offset: 0x00123ABC
 	public bool RemoveMetaData(string name)
 	{
 		bool flag = false;
@@ -584,7 +584,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000512 RID: 1298
-	// (get) Token: 0x06002E4D RID: 11853 RVA: 0x00124D0C File Offset: 0x00122F0C
+	// (get) Token: 0x06002E5A RID: 11866 RVA: 0x001258E4 File Offset: 0x00123AE4
 	public bool HasQuality
 	{
 		get
@@ -595,7 +595,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000513 RID: 1299
-	// (get) Token: 0x06002E4E RID: 11854 RVA: 0x00124D38 File Offset: 0x00122F38
+	// (get) Token: 0x06002E5B RID: 11867 RVA: 0x00125910 File Offset: 0x00123B10
 	public bool HasModSlots
 	{
 		get
@@ -605,7 +605,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000514 RID: 1300
-	// (get) Token: 0x06002E4F RID: 11855 RVA: 0x00124D44 File Offset: 0x00122F44
+	// (get) Token: 0x06002E5C RID: 11868 RVA: 0x0012591C File Offset: 0x00123B1C
 	public bool IsMod
 	{
 		get
@@ -616,7 +616,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000515 RID: 1301
-	// (get) Token: 0x06002E50 RID: 11856 RVA: 0x00124D68 File Offset: 0x00122F68
+	// (get) Token: 0x06002E5D RID: 11869 RVA: 0x00125940 File Offset: 0x00123B40
 	public bool IsShapeHelperBlock
 	{
 		get
@@ -627,7 +627,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000516 RID: 1302
-	// (get) Token: 0x06002E51 RID: 11857 RVA: 0x00124D94 File Offset: 0x00122F94
+	// (get) Token: 0x06002E5E RID: 11870 RVA: 0x0012596C File Offset: 0x00123B6C
 	public ItemClass ItemClass
 	{
 		get
@@ -646,7 +646,7 @@ public class ItemValue : IEquatable<ItemValue>
 	}
 
 	// Token: 0x17000517 RID: 1303
-	// (get) Token: 0x06002E52 RID: 11858 RVA: 0x00124DE4 File Offset: 0x00122FE4
+	// (get) Token: 0x06002E5F RID: 11871 RVA: 0x001259BC File Offset: 0x00123BBC
 	public ItemClass ItemClassOrMissing
 	{
 		get
@@ -660,18 +660,18 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E53 RID: 11859 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06002E60 RID: 11872 RVA: 0x0000640C File Offset: 0x0000460C
 	public ItemValue()
 	{
 	}
 
-	// Token: 0x06002E54 RID: 11860 RVA: 0x00124E02 File Offset: 0x00123002
+	// Token: 0x06002E61 RID: 11873 RVA: 0x001259DA File Offset: 0x00123BDA
 	public ItemValue(int _type, bool _bCreateDefaultParts = false)
 		: this(_type, 1, 6, _bCreateDefaultParts, null, 1f)
 	{
 	}
 
-	// Token: 0x06002E55 RID: 11861 RVA: 0x00124E14 File Offset: 0x00123014
+	// Token: 0x06002E62 RID: 11874 RVA: 0x001259EC File Offset: 0x00123BEC
 	public ItemValue(int _type, int minQuality, int maxQuality, bool _bCreateDefaultModItems = false, string[] modsToInstall = null, float modInstallDescendingChance = 1f)
 	{
 		this.type = _type;
@@ -727,13 +727,13 @@ public class ItemValue : IEquatable<ItemValue>
 		GameRandomManager.Instance.FreeGameRandom(gameRandom);
 	}
 
-	// Token: 0x06002E56 RID: 11862 RVA: 0x00124F42 File Offset: 0x00123142
+	// Token: 0x06002E63 RID: 11875 RVA: 0x00125B1A File Offset: 0x00123D1A
 	public void BindItemStack(ItemStack _owner)
 	{
 		this.owner = _owner;
 	}
 
-	// Token: 0x06002E57 RID: 11863 RVA: 0x00124F4B File Offset: 0x0012314B
+	// Token: 0x06002E64 RID: 11876 RVA: 0x00125B23 File Offset: 0x00123D23
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NotifyChanged()
 	{
@@ -745,23 +745,32 @@ public class ItemValue : IEquatable<ItemValue>
 		itemStack.OnValueChanged();
 	}
 
-	// Token: 0x06002E58 RID: 11864 RVA: 0x00124F60 File Offset: 0x00123160
+	// Token: 0x06002E65 RID: 11877 RVA: 0x00125B35 File Offset: 0x00123D35
 	public void Clear()
 	{
+		this.ResetFields();
+		this.NotifyChanged();
+	}
+
+	// Token: 0x06002E66 RID: 11878 RVA: 0x00125B44 File Offset: 0x00123D44
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void ResetFields()
+	{
 		this.typeField = 0;
+		this.flags = 0;
 		this.useTimes = 0f;
 		this.quality = 0;
 		this.meta = 0;
 		this.seed = 0;
 		this.selectedAmmoTypeIndex = 0;
+		this.textureFullArray = default(TextureFullArray);
 		this.Stats = null;
 		this.modifications = null;
 		this.cosmeticMods = null;
 		this.Metadata = null;
-		this.NotifyChanged();
 	}
 
-	// Token: 0x06002E59 RID: 11865 RVA: 0x00124FC0 File Offset: 0x001231C0
+	// Token: 0x06002E67 RID: 11879 RVA: 0x00125BB0 File Offset: 0x00123DB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CalcModSlotCount()
 	{
@@ -769,7 +778,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return Utils.FastMin(255, (int)EffectManager.GetValue(PassiveEffects.ModSlots, this, (float)num, null, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, false, false));
 	}
 
-	// Token: 0x06002E5A RID: 11866 RVA: 0x00125004 File Offset: 0x00123204
+	// Token: 0x06002E68 RID: 11880 RVA: 0x00125BF4 File Offset: 0x00123DF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createDefaultModItems(ItemClass ic, GameRandom random, string[] modsToInstall, float modInstallDescendingChance)
 	{
@@ -835,7 +844,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E5B RID: 11867 RVA: 0x001251C4 File Offset: 0x001233C4
+	// Token: 0x06002E69 RID: 11881 RVA: 0x00125DB4 File Offset: 0x00123FB4
 	public void ModifyValue(EntityAlive _entity, ItemValue _originalItemValue, PassiveEffects _passiveEffect, ref float _originalValue, ref float _perc_value, FastTags<TagGroup.Global> _tags, bool _useMods = true, bool _useDurability = false)
 	{
 		if (_originalItemValue == null || !_originalItemValue.Equals(this))
@@ -938,7 +947,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E5C RID: 11868 RVA: 0x0012549C File Offset: 0x0012369C
+	// Token: 0x06002E6A RID: 11882 RVA: 0x0012608C File Offset: 0x0012428C
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSources, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, EntityAlive _entity, ItemValue _originalItemValue, PassiveEffects _passiveEffect, ref float _originalValue, ref float _perc_value, FastTags<TagGroup.Global> _tags)
 	{
 		if (_originalItemValue == null || !_originalItemValue.Equals(this))
@@ -978,7 +987,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E5D RID: 11869 RVA: 0x001255C4 File Offset: 0x001237C4
+	// Token: 0x06002E6B RID: 11883 RVA: 0x001261B4 File Offset: 0x001243B4
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _eventParms)
 	{
 		ItemClass itemClass = this.ItemClass;
@@ -1021,7 +1030,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E5E RID: 11870 RVA: 0x001256A8 File Offset: 0x001238A8
+	// Token: 0x06002E6C RID: 11884 RVA: 0x00126298 File Offset: 0x00124498
 	public ItemValue Clone()
 	{
 		ItemValue itemValue = new ItemValue(this.type, false);
@@ -1057,13 +1066,13 @@ public class ItemValue : IEquatable<ItemValue>
 		return itemValue;
 	}
 
-	// Token: 0x06002E5F RID: 11871 RVA: 0x001257F4 File Offset: 0x001239F4
+	// Token: 0x06002E6D RID: 11885 RVA: 0x001263E4 File Offset: 0x001245E4
 	public bool IsEmpty()
 	{
 		return this.type == 0;
 	}
 
-	// Token: 0x06002E60 RID: 11872 RVA: 0x00125800 File Offset: 0x00123A00
+	// Token: 0x06002E6E RID: 11886 RVA: 0x001263F0 File Offset: 0x001245F0
 	public BlockValue ToBlockValue(bool _allowAlternates = false)
 	{
 		if (this.type >= Block.ItemsStartHere)
@@ -1079,7 +1088,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return blockValue;
 	}
 
-	// Token: 0x06002E61 RID: 11873 RVA: 0x0012585C File Offset: 0x00123A5C
+	// Token: 0x06002E6F RID: 11887 RVA: 0x0012644C File Offset: 0x0012464C
 	public void MergeBest(ItemValue _iv)
 	{
 		this.Flags |= 2;
@@ -1136,19 +1145,19 @@ public class ItemValue : IEquatable<ItemValue>
 		Array.Resize<ItemValue>(ref this.modifications, num5);
 	}
 
-	// Token: 0x06002E62 RID: 11874 RVA: 0x001259A7 File Offset: 0x00123BA7
+	// Token: 0x06002E70 RID: 11888 RVA: 0x00126597 File Offset: 0x00124797
 	public void InitStats(int _count)
 	{
 		this.Stats = new ItemValue.Stat[_count];
 	}
 
-	// Token: 0x06002E63 RID: 11875 RVA: 0x001259B5 File Offset: 0x00123BB5
+	// Token: 0x06002E71 RID: 11889 RVA: 0x001265A5 File Offset: 0x001247A5
 	public void ClearStats()
 	{
 		this.Stats = null;
 	}
 
-	// Token: 0x06002E64 RID: 11876 RVA: 0x001259C0 File Offset: 0x00123BC0
+	// Token: 0x06002E72 RID: 11890 RVA: 0x001265B0 File Offset: 0x001247B0
 	public void RemoveUnusedStats()
 	{
 		if (this.Stats != null)
@@ -1182,13 +1191,13 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E65 RID: 11877 RVA: 0x00125A67 File Offset: 0x00123C67
+	// Token: 0x06002E73 RID: 11891 RVA: 0x00126657 File Offset: 0x00124857
 	public bool HasStats()
 	{
 		return this.Stats != null;
 	}
 
-	// Token: 0x06002E66 RID: 11878 RVA: 0x00125A74 File Offset: 0x00123C74
+	// Token: 0x06002E74 RID: 11892 RVA: 0x00126664 File Offset: 0x00124864
 	public bool HasAnyBoostedStats()
 	{
 		if (this.Stats != null)
@@ -1204,7 +1213,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return false;
 	}
 
-	// Token: 0x06002E67 RID: 11879 RVA: 0x00125AB4 File Offset: 0x00123CB4
+	// Token: 0x06002E75 RID: 11893 RVA: 0x001266A4 File Offset: 0x001248A4
 	public float GetStatPercent(PassiveEffects _type, bool _onlyBoosted)
 	{
 		float num = 1f;
@@ -1215,13 +1224,13 @@ public class ItemValue : IEquatable<ItemValue>
 		return num;
 	}
 
-	// Token: 0x06002E68 RID: 11880 RVA: 0x00125ADA File Offset: 0x00123CDA
+	// Token: 0x06002E76 RID: 11894 RVA: 0x001266CA File Offset: 0x001248CA
 	public void SetStat(int _index, PassiveEffects _type, int _base, int _added)
 	{
 		this.Stats[_index] = new ItemValue.Stat(_type, _base, _added);
 	}
 
-	// Token: 0x06002E69 RID: 11881 RVA: 0x00125AF4 File Offset: 0x00123CF4
+	// Token: 0x06002E77 RID: 11895 RVA: 0x001266E4 File Offset: 0x001248E4
 	public void MergeBestStats(ItemValue _iv)
 	{
 		if (_iv.Stats == null)
@@ -1263,13 +1272,13 @@ public class ItemValue : IEquatable<ItemValue>
 		this.Stats = list.ToArray();
 	}
 
-	// Token: 0x06002E6A RID: 11882 RVA: 0x00125C12 File Offset: 0x00123E12
+	// Token: 0x06002E78 RID: 11896 RVA: 0x00126802 File Offset: 0x00124A02
 	public static bool IsStatLowerBetter(PassiveEffects _type)
 	{
 		return _type == PassiveEffects.StaminaLoss || _type == PassiveEffects.TargetArmor;
 	}
 
-	// Token: 0x06002E6B RID: 11883 RVA: 0x00125C24 File Offset: 0x00123E24
+	// Token: 0x06002E79 RID: 11897 RVA: 0x00126814 File Offset: 0x00124A14
 	public void StatModifyValue(PassiveEffects _passiveEffect, ref float _originalValue, bool onlyBoosted = false)
 	{
 		for (int i = 0; i < this.Stats.Length; i++)
@@ -1285,12 +1294,12 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E6C RID: 11884 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002E7A RID: 11898 RVA: 0x000027FC File Offset: 0x000009FC
 	public void ReadOld(PooledBinaryReader _br)
 	{
 	}
 
-	// Token: 0x06002E6D RID: 11885 RVA: 0x00125C88 File Offset: 0x00123E88
+	// Token: 0x06002E7B RID: 11899 RVA: 0x00126878 File Offset: 0x00124A78
 	public static ItemValue ReadOrNull(PooledBinaryReader _br)
 	{
 		byte b = _br.ReadByte();
@@ -1303,19 +1312,19 @@ public class ItemValue : IEquatable<ItemValue>
 		return itemValue;
 	}
 
-	// Token: 0x06002E6E RID: 11886 RVA: 0x00125CB0 File Offset: 0x00123EB0
+	// Token: 0x06002E7C RID: 11900 RVA: 0x001268A0 File Offset: 0x00124AA0
 	public void Read(PooledBinaryReader _br)
 	{
+		this.ResetFields();
 		byte b = _br.ReadByte();
-		if (b == 0)
+		if (b != 0)
 		{
-			this.type = 0;
-			return;
+			this.ReadData(_br, (int)b);
 		}
-		this.ReadData(_br, (int)b);
+		this.NotifyChanged();
 	}
 
-	// Token: 0x06002E6F RID: 11887 RVA: 0x00125CD8 File Offset: 0x00123ED8
+	// Token: 0x06002E7D RID: 11901 RVA: 0x001268CC File Offset: 0x00124ACC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReadData(PooledBinaryReader _br, int version)
 	{
@@ -1324,33 +1333,33 @@ public class ItemValue : IEquatable<ItemValue>
 		{
 			num = (int)_br.ReadByte();
 		}
-		this.type = (int)_br.ReadUInt16();
+		this.typeField = (int)_br.ReadUInt16();
 		if ((num & 1) > 0)
 		{
-			this.type += Block.ItemsStartHere;
+			this.typeField += Block.ItemsStartHere;
 		}
-		if (version < 8 && this.type >= 32768)
+		if (version < 8 && this.typeField >= 32768)
 		{
-			this.type += 32768;
+			this.typeField += 32768;
 		}
 		ItemClass itemClass = this.ItemClass;
 		if (version > 5)
 		{
-			this.UseTimes = _br.ReadSingle();
+			this.useTimes = _br.ReadSingle();
 		}
 		else
 		{
-			this.UseTimes = (float)_br.ReadUInt16();
+			this.useTimes = (float)_br.ReadUInt16();
 		}
-		this.Quality = _br.ReadUInt16();
+		this.quality = _br.ReadUInt16();
 		if (itemClass != null && itemClass.QualityMin > 0)
 		{
-			this.Quality = (ushort)((byte)Utils.FastMax((int)this.Quality, (int)itemClass.QualityMin));
+			this.quality = (ushort)((byte)Utils.FastMax((int)this.quality, (int)itemClass.QualityMin));
 		}
-		this.Meta = (int)_br.ReadUInt16();
-		if (this.Meta >= 65535)
+		this.meta = (int)_br.ReadUInt16();
+		if (this.meta >= 65535)
 		{
-			this.Meta = -1;
+			this.meta = -1;
 		}
 		if (version > 6)
 		{
@@ -1412,17 +1421,17 @@ public class ItemValue : IEquatable<ItemValue>
 				}
 			}
 		}
-		this.Flags = _br.ReadByte();
+		this.flags = _br.ReadByte();
 		if (version > 2)
 		{
-			this.SelectedAmmoTypeIndex = _br.ReadByte();
+			this.selectedAmmoTypeIndex = _br.ReadByte();
 		}
 		if (version > 3)
 		{
-			this.Seed = _br.ReadUInt16();
-			if (this.type == 0)
+			this.seed = _br.ReadUInt16();
+			if (this.typeField == 0)
 			{
-				this.Seed = 0;
+				this.seed = 0;
 			}
 		}
 		if (version > 8)
@@ -1436,7 +1445,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E70 RID: 11888 RVA: 0x00125F94 File Offset: 0x00124194
+	// Token: 0x06002E7E RID: 11902 RVA: 0x00126B88 File Offset: 0x00124D88
 	public void AdjustForSandboxOptions()
 	{
 		if (!EntityPlayerLocal.PermaDegrationOn)
@@ -1445,7 +1454,7 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E71 RID: 11889 RVA: 0x00125FA9 File Offset: 0x001241A9
+	// Token: 0x06002E7F RID: 11903 RVA: 0x00126B9D File Offset: 0x00124D9D
 	public static void Write(ItemValue _iv, PooledBinaryWriter _bw)
 	{
 		if (_iv == null)
@@ -1456,7 +1465,7 @@ public class ItemValue : IEquatable<ItemValue>
 		_iv.Write(_bw);
 	}
 
-	// Token: 0x06002E72 RID: 11890 RVA: 0x00125FC0 File Offset: 0x001241C0
+	// Token: 0x06002E80 RID: 11904 RVA: 0x00126BB4 File Offset: 0x00124DB4
 	public void Write(PooledBinaryWriter _bw)
 	{
 		if (this.IsEmpty())
@@ -1577,25 +1586,25 @@ public class ItemValue : IEquatable<ItemValue>
 		}
 	}
 
-	// Token: 0x06002E73 RID: 11891 RVA: 0x001262EC File Offset: 0x001244EC
+	// Token: 0x06002E81 RID: 11905 RVA: 0x00126EE0 File Offset: 0x001250E0
 	public bool Equals(ItemValue _other)
 	{
 		return _other != null && (_other.type == this.type && _other.UseTimes == this.UseTimes && _other.Meta == this.Meta && _other.Seed == this.Seed && _other.Quality == this.Quality && _other.SelectedAmmoTypeIndex == this.SelectedAmmoTypeIndex && _other.Activated == this.Activated && ItemValue.Equals(_other.Metadata, this.Metadata) && ItemValue.Equals(_other.Stats, this.Stats) && ItemValue.Equals(_other.cosmeticMods, this.cosmeticMods)) && ItemValue.Equals(_other.modifications, this.modifications);
 	}
 
-	// Token: 0x06002E74 RID: 11892 RVA: 0x001263B5 File Offset: 0x001245B5
+	// Token: 0x06002E82 RID: 11906 RVA: 0x00126FA9 File Offset: 0x001251A9
 	public override bool Equals(object _other)
 	{
 		return _other is ItemValue && this.Equals((ItemValue)_other);
 	}
 
-	// Token: 0x06002E75 RID: 11893 RVA: 0x001263D0 File Offset: 0x001245D0
+	// Token: 0x06002E83 RID: 11907 RVA: 0x00126FC4 File Offset: 0x001251C4
 	public bool EqualsExceptUseTimesAndMeta(ItemValue _other)
 	{
 		return _other != null && (_other.type == this.type && _other.Seed == this.Seed && _other.Quality == this.Quality && _other.SelectedAmmoTypeIndex == this.SelectedAmmoTypeIndex && _other.Activated == this.Activated && ItemValue.Equals(_other.Metadata, this.Metadata) && ItemValue.Equals(_other.Stats, this.Stats) && ItemValue.Equals(_other.cosmeticMods, this.cosmeticMods)) && ItemValue.Equals(_other.modifications, this.modifications);
 	}
 
-	// Token: 0x06002E76 RID: 11894 RVA: 0x00126478 File Offset: 0x00124678
+	// Token: 0x06002E84 RID: 11908 RVA: 0x0012706C File Offset: 0x0012526C
 	public bool EqualsForMerging(ItemValue _other)
 	{
 		if (_other == null)
@@ -1606,7 +1615,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return _other.type == this.type && (!flag || this.UseTimes + _other.UseTimes == 0f || ((float)this.MaxUseTimes == this.UseTimes && (float)_other.MaxUseTimes == _other.UseTimes)) && ItemValue.Equals(_other.Stats, this.Stats);
 	}
 
-	// Token: 0x06002E77 RID: 11895 RVA: 0x001264F4 File Offset: 0x001246F4
+	// Token: 0x06002E85 RID: 11909 RVA: 0x001270E8 File Offset: 0x001252E8
 	public static bool Equals(ItemValue[] _a, ItemValue[] _b)
 	{
 		if (_a == null && _b == null)
@@ -1642,19 +1651,19 @@ public class ItemValue : IEquatable<ItemValue>
 		return true;
 	}
 
-	// Token: 0x06002E78 RID: 11896 RVA: 0x00126555 File Offset: 0x00124755
+	// Token: 0x06002E86 RID: 11910 RVA: 0x00127149 File Offset: 0x00125349
 	public static bool Equals(ItemValue.Stat[] _a, ItemValue.Stat[] _b)
 	{
 		return (_a == null && _b == null) || (_a != null && _b != null && _a.Length == _b.Length && (_a.Length == 0 || _a.SequenceEqual<ItemValue.Stat>(_b)));
 	}
 
-	// Token: 0x06002E79 RID: 11897 RVA: 0x0012657E File Offset: 0x0012477E
+	// Token: 0x06002E87 RID: 11911 RVA: 0x00127172 File Offset: 0x00125372
 	public static bool Equals(object[] _a, object[] _b)
 	{
 		return _a is ItemValue[] && _b is ItemValue[] && ItemValue.Equals((ItemValue[])_a, (ItemValue[])_b);
 	}
 
-	// Token: 0x06002E7A RID: 11898 RVA: 0x001265A4 File Offset: 0x001247A4
+	// Token: 0x06002E88 RID: 11912 RVA: 0x00127198 File Offset: 0x00125398
 	public static bool Equals(Dictionary<string, TypedMetadataValue> _a, Dictionary<string, TypedMetadataValue> _b)
 	{
 		if (_a == null && _b == null)
@@ -1687,19 +1696,19 @@ public class ItemValue : IEquatable<ItemValue>
 		return true;
 	}
 
-	// Token: 0x06002E7B RID: 11899 RVA: 0x00126644 File Offset: 0x00124844
+	// Token: 0x06002E89 RID: 11913 RVA: 0x00127238 File Offset: 0x00125438
 	public override int GetHashCode()
 	{
 		return this.type;
 	}
 
-	// Token: 0x06002E7C RID: 11900 RVA: 0x0012664C File Offset: 0x0012484C
+	// Token: 0x06002E8A RID: 11914 RVA: 0x00127240 File Offset: 0x00125440
 	public int GetItemId()
 	{
 		return this.type - Block.ItemsStartHere;
 	}
 
-	// Token: 0x06002E7D RID: 11901 RVA: 0x0012665A File Offset: 0x0012485A
+	// Token: 0x06002E8B RID: 11915 RVA: 0x0012724E File Offset: 0x0012544E
 	public int GetItemOrBlockId()
 	{
 		if (this.type < Block.ItemsStartHere)
@@ -1709,7 +1718,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return this.type - Block.ItemsStartHere;
 	}
 
-	// Token: 0x06002E7E RID: 11902 RVA: 0x0012667C File Offset: 0x0012487C
+	// Token: 0x06002E8C RID: 11916 RVA: 0x00127270 File Offset: 0x00125470
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -1722,7 +1731,7 @@ public class ItemValue : IEquatable<ItemValue>
 		});
 	}
 
-	// Token: 0x06002E7F RID: 11903 RVA: 0x00126710 File Offset: 0x00124910
+	// Token: 0x06002E8D RID: 11917 RVA: 0x00127304 File Offset: 0x00125504
 	public string GetPropertyOverride(string _propertyName, string _originalValue)
 	{
 		if (this.ModificationCount == 0 && this.CosmeticModCount == 0)
@@ -1759,7 +1768,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return _originalValue;
 	}
 
-	// Token: 0x06002E80 RID: 11904 RVA: 0x001267C8 File Offset: 0x001249C8
+	// Token: 0x06002E8E RID: 11918 RVA: 0x001273BC File Offset: 0x001255BC
 	public bool HasCosmetics()
 	{
 		for (int i = 0; i < this.CosmeticModCount; i++)
@@ -1773,7 +1782,7 @@ public class ItemValue : IEquatable<ItemValue>
 		return false;
 	}
 
-	// Token: 0x06002E81 RID: 11905 RVA: 0x001267FC File Offset: 0x001249FC
+	// Token: 0x06002E8F RID: 11919 RVA: 0x001273F0 File Offset: 0x001255F0
 	public bool HasMods()
 	{
 		for (int i = 0; i < this.ModificationCount; i++)
@@ -1787,99 +1796,99 @@ public class ItemValue : IEquatable<ItemValue>
 		return false;
 	}
 
-	// Token: 0x040023C6 RID: 9158
+	// Token: 0x040023E1 RID: 9185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int EmptySaveVersion = 0;
 
-	// Token: 0x040023C7 RID: 9159
+	// Token: 0x040023E2 RID: 9186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CurrentSaveVersion = 9;
 
-	// Token: 0x040023C8 RID: 9160
+	// Token: 0x040023E3 RID: 9187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte MaxModifications = 255;
 
-	// Token: 0x040023C9 RID: 9161
+	// Token: 0x040023E4 RID: 9188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> noPreinstallCosmeticItemTags = FastTags<TagGroup.Global>.Parse("weapon,tool,armor");
 
-	// Token: 0x040023CA RID: 9162
+	// Token: 0x040023E5 RID: 9189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cFlagsActivated = 1;
 
-	// Token: 0x040023CB RID: 9163
+	// Token: 0x040023E6 RID: 9190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cFlagsWasCombined = 2;
 
-	// Token: 0x040023CC RID: 9164
+	// Token: 0x040023E7 RID: 9191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack owner;
 
-	// Token: 0x040023CD RID: 9165
+	// Token: 0x040023E8 RID: 9192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int typeField;
 
-	// Token: 0x040023CE RID: 9166
+	// Token: 0x040023E9 RID: 9193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte flags;
 
-	// Token: 0x040023CF RID: 9167
+	// Token: 0x040023EA RID: 9194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte selectedAmmoTypeIndex;
 
-	// Token: 0x040023D0 RID: 9168
+	// Token: 0x040023EB RID: 9195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float useTimes;
 
-	// Token: 0x040023D1 RID: 9169
+	// Token: 0x040023EC RID: 9196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int meta;
 
-	// Token: 0x040023D2 RID: 9170
+	// Token: 0x040023ED RID: 9197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort quality;
 
-	// Token: 0x040023D3 RID: 9171
+	// Token: 0x040023EE RID: 9198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, TypedMetadataValue> Metadata;
 
-	// Token: 0x040023D5 RID: 9173
+	// Token: 0x040023F0 RID: 9200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue[] modifications;
 
-	// Token: 0x040023D6 RID: 9174
+	// Token: 0x040023F1 RID: 9201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue[] cosmeticMods;
 
-	// Token: 0x040023D7 RID: 9175
+	// Token: 0x040023F2 RID: 9202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort seed;
 
-	// Token: 0x040023D8 RID: 9176
+	// Token: 0x040023F3 RID: 9203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextureFullArray textureFullArray;
 
-	// Token: 0x040023D9 RID: 9177
+	// Token: 0x040023F4 RID: 9204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cDurabilityMetaName = "DurabilityModifier";
 
-	// Token: 0x040023DA RID: 9178
+	// Token: 0x040023F5 RID: 9205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime baseDate = new DateTime(2013, 10, 1);
 
-	// Token: 0x040023DB RID: 9179
+	// Token: 0x040023F6 RID: 9206
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const byte cFlagsItem = 1;
+	public const byte cStreamFlagItem = 1;
 
-	// Token: 0x040023DC RID: 9180
+	// Token: 0x040023F7 RID: 9207
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const byte cFlagsStats = 2;
+	public const byte cStreamFlagStats = 2;
 
-	// Token: 0x02000582 RID: 1410
+	// Token: 0x02000589 RID: 1417
 	[StructLayout(LayoutKind.Auto)]
 	public struct Stat
 	{
-		// Token: 0x06002E83 RID: 11907 RVA: 0x00126853 File Offset: 0x00124A53
+		// Token: 0x06002E91 RID: 11921 RVA: 0x00127447 File Offset: 0x00125647
 		public Stat(PassiveEffects _type, int _base, int _added)
 		{
 			this.type = _type;
@@ -1887,13 +1896,13 @@ public class ItemValue : IEquatable<ItemValue>
 			this.value = (short)(_base + _added);
 		}
 
-		// Token: 0x040023DD RID: 9181
+		// Token: 0x040023F8 RID: 9208
 		public PassiveEffects type;
 
-		// Token: 0x040023DE RID: 9182
+		// Token: 0x040023F9 RID: 9209
 		public bool isBoosted;
 
-		// Token: 0x040023DF RID: 9183
+		// Token: 0x040023FA RID: 9210
 		public short value;
 	}
 }

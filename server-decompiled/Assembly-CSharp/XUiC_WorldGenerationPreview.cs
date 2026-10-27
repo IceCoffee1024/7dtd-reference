@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02000E5E RID: 3678
+// Token: 0x02000E69 RID: 3689
 [Preserve]
 public class XUiC_WorldGenerationPreview : XUiController
 {
-	// Token: 0x17000CDF RID: 3295
-	// (get) Token: 0x060070BC RID: 28860 RVA: 0x002B8C83 File Offset: 0x002B6E83
-	// (set) Token: 0x060070BD RID: 28861 RVA: 0x002B8C8B File Offset: 0x002B6E8B
+	// Token: 0x17000CE5 RID: 3301
+	// (get) Token: 0x060070E1 RID: 28897 RVA: 0x002BA1EF File Offset: 0x002B83EF
+	// (set) Token: 0x060070E2 RID: 28898 RVA: 0x002BA1F7 File Offset: 0x002B83F7
 	[XuiXmlBinding("ishovered")]
 	public bool IsHovered
 	{
@@ -26,9 +26,9 @@ public class XUiC_WorldGenerationPreview : XUiController
 		}
 	}
 
-	// Token: 0x17000CE0 RID: 3296
-	// (get) Token: 0x060070BE RID: 28862 RVA: 0x002B8C9B File Offset: 0x002B6E9B
-	// (set) Token: 0x060070BF RID: 28863 RVA: 0x002B8CB4 File Offset: 0x002B6EB4
+	// Token: 0x17000CE6 RID: 3302
+	// (get) Token: 0x060070E3 RID: 28899 RVA: 0x002BA207 File Offset: 0x002B8407
+	// (set) Token: 0x060070E4 RID: 28900 RVA: 0x002BA220 File Offset: 0x002B8420
 	[XuiXmlBinding("iscontrolling")]
 	public bool Controlling
 	{
@@ -59,7 +59,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		}
 	}
 
-	// Token: 0x060070C0 RID: 28864 RVA: 0x002B8D52 File Offset: 0x002B6F52
+	// Token: 0x060070E5 RID: 28901 RVA: 0x002BA2BE File Offset: 0x002B84BE
 	public override void Init()
 	{
 		base.Init();
@@ -67,7 +67,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		this.uiPreviewTexture.Controller.OnHover += this.onHover;
 	}
 
-	// Token: 0x060070C1 RID: 28865 RVA: 0x002B8D92 File Offset: 0x002B6F92
+	// Token: 0x060070E6 RID: 28902 RVA: 0x002BA2FE File Offset: 0x002B84FE
 	[XuiBindEvent("OnHover", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onHover(XUiController _sender, bool _isOver)
@@ -75,14 +75,14 @@ public class XUiC_WorldGenerationPreview : XUiController
 		this.IsHovered = _isOver;
 	}
 
-	// Token: 0x060070C2 RID: 28866 RVA: 0x002B8D9B File Offset: 0x002B6F9B
+	// Token: 0x060070E7 RID: 28903 RVA: 0x002BA307 File Offset: 0x002B8507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void worldPreview_OnPress(XUiController _sender, int _button)
 	{
 		this.Controlling = true;
 	}
 
-	// Token: 0x060070C3 RID: 28867 RVA: 0x002B8DA4 File Offset: 0x002B6FA4
+	// Token: 0x060070E8 RID: 28904 RVA: 0x002BA310 File Offset: 0x002B8510
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -115,7 +115,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		transform.position = vector2;
 	}
 
-	// Token: 0x060070C4 RID: 28868 RVA: 0x002B8EF8 File Offset: 0x002B70F8
+	// Token: 0x060070E9 RID: 28905 RVA: 0x002BA464 File Offset: 0x002B8664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 updateMovementUnified(float _dt)
 	{
@@ -133,20 +133,20 @@ public class XUiC_WorldGenerationPreview : XUiController
 		return vector;
 	}
 
-	// Token: 0x060070C5 RID: 28869 RVA: 0x002B8FD5 File Offset: 0x002B71D5
+	// Token: 0x060070EA RID: 28906 RVA: 0x002BA541 File Offset: 0x002B8741
 	public Vector3 GetCameraPosition()
 	{
 		return this.renderTextureSystem.CameraGO.transform.position;
 	}
 
-	// Token: 0x060070C6 RID: 28870 RVA: 0x002B8FEC File Offset: 0x002B71EC
+	// Token: 0x060070EB RID: 28907 RVA: 0x002BA558 File Offset: 0x002B8758
 	public override void OnOpen()
 	{
 		this.renderTextureInit();
 		base.OnOpen();
 	}
 
-	// Token: 0x060070C7 RID: 28871 RVA: 0x002B8FFA File Offset: 0x002B71FA
+	// Token: 0x060070EC RID: 28908 RVA: 0x002BA566 File Offset: 0x002B8766
 	public override void OnClose()
 	{
 		this.Controlling = false;
@@ -158,7 +158,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x060070C8 RID: 28872 RVA: 0x002B9027 File Offset: 0x002B7227
+	// Token: 0x060070ED RID: 28909 RVA: 0x002BA593 File Offset: 0x002B8793
 	public IEnumerator ShowPreview(XUiC_WorldGenerationPreview.PreviewStep _step)
 	{
 		if (this.uiWinGroup.PreviewQualityLevel == XUiC_WorldGenerationWindow.PreviewQuality.NoPreview)
@@ -193,7 +193,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		yield break;
 	}
 
-	// Token: 0x060070C9 RID: 28873 RVA: 0x002B9040 File Offset: 0x002B7240
+	// Token: 0x060070EE RID: 28910 RVA: 0x002BA5AC File Offset: 0x002B87AC
 	public void PreviewInit()
 	{
 		this.previewTextureInit();
@@ -207,7 +207,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		this.resetCamera();
 	}
 
-	// Token: 0x060070CA RID: 28874 RVA: 0x002B9098 File Offset: 0x002B7298
+	// Token: 0x060070EF RID: 28911 RVA: 0x002BA604 File Offset: 0x002B8804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void previewTextureInit()
 	{
@@ -228,7 +228,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		};
 	}
 
-	// Token: 0x060070CB RID: 28875 RVA: 0x002B90F9 File Offset: 0x002B72F9
+	// Token: 0x060070F0 RID: 28912 RVA: 0x002BA665 File Offset: 0x002B8865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void previewTextureCleanup()
 	{
@@ -240,7 +240,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		XUiC_WorldGenerationPreview.previewImage = null;
 	}
 
-	// Token: 0x060070CC RID: 28876 RVA: 0x002B9118 File Offset: 0x002B7318
+	// Token: 0x060070F1 RID: 28913 RVA: 0x002BA684 File Offset: 0x002B8884
 	public void PreviewTextureDraw()
 	{
 		if (!XUiC_WorldGenerationPreview.previewImage || XUiC_WorldGenerationPreview.WorldBuilder == null)
@@ -252,7 +252,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		WorldPreviewTerrain.SetTexture(XUiC_WorldGenerationPreview.previewImage);
 	}
 
-	// Token: 0x060070CD RID: 28877 RVA: 0x002B9153 File Offset: 0x002B7353
+	// Token: 0x060070F2 RID: 28914 RVA: 0x002BA6BF File Offset: 0x002B88BF
 	public void TerrainUpdate()
 	{
 		if (this.terrainPreviewRootObj && XUiC_WorldGenerationPreview.WorldBuilder != null)
@@ -261,13 +261,13 @@ public class XUiC_WorldGenerationPreview : XUiController
 		}
 	}
 
-	// Token: 0x060070CE RID: 28878 RVA: 0x002B916E File Offset: 0x002B736E
+	// Token: 0x060070F3 RID: 28915 RVA: 0x002BA6DA File Offset: 0x002B88DA
 	public void TerrainCleanup()
 	{
 		WorldPreviewTerrain.Cleanup();
 	}
 
-	// Token: 0x060070CF RID: 28879 RVA: 0x002B9175 File Offset: 0x002B7375
+	// Token: 0x060070F4 RID: 28916 RVA: 0x002BA6E1 File Offset: 0x002B88E1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void poiPreviewsCleanup()
 	{
@@ -279,7 +279,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		xuiC_WorldGenerationWindow.CleanupPreviewManager();
 	}
 
-	// Token: 0x060070D0 RID: 28880 RVA: 0x002B9188 File Offset: 0x002B7388
+	// Token: 0x060070F5 RID: 28917 RVA: 0x002BA6F4 File Offset: 0x002B88F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void renderTextureInit()
 	{
@@ -304,7 +304,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		this.renderTextureSystem.SetEnabled(true);
 	}
 
-	// Token: 0x060070D1 RID: 28881 RVA: 0x002B9304 File Offset: 0x002B7504
+	// Token: 0x060070F6 RID: 28918 RVA: 0x002BA870 File Offset: 0x002B8A70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void renderTextureCleanup()
 	{
@@ -313,7 +313,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 		this.renderTextureSystem = null;
 	}
 
-	// Token: 0x060070D2 RID: 28882 RVA: 0x002B932C File Offset: 0x002B752C
+	// Token: 0x060070F7 RID: 28919 RVA: 0x002BA898 File Offset: 0x002B8A98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetCamera()
 	{
@@ -328,75 +328,75 @@ public class XUiC_WorldGenerationPreview : XUiController
 		transform.localRotation = Quaternion.Euler(this.cameraRotX, this.cameraRotY, 0f);
 	}
 
-	// Token: 0x04005552 RID: 21842
+	// Token: 0x04005577 RID: 21879
 	[XuiBindParent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldGenerationWindow uiWinGroup;
 
-	// Token: 0x04005553 RID: 21843
+	// Token: 0x04005578 RID: 21880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTextureSystem renderTextureSystem;
 
-	// Token: 0x04005554 RID: 21844
+	// Token: 0x04005579 RID: 21881
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject terrainPreviewRootObj;
 
-	// Token: 0x04005555 RID: 21845
+	// Token: 0x0400557A RID: 21882
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Texture uiPreviewTexture;
 
-	// Token: 0x04005556 RID: 21846
+	// Token: 0x0400557B RID: 21883
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float cameraRotX;
 
-	// Token: 0x04005557 RID: 21847
+	// Token: 0x0400557C RID: 21884
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float cameraRotY;
 
-	// Token: 0x04005558 RID: 21848
+	// Token: 0x0400557D RID: 21885
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float CurrentFlySpeed = 150f;
 
-	// Token: 0x04005559 RID: 21849
+	// Token: 0x0400557E RID: 21886
 	public static WorldBuilder WorldBuilder;
 
-	// Token: 0x0400555A RID: 21850
+	// Token: 0x0400557F RID: 21887
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D previewImage;
 
-	// Token: 0x0400555B RID: 21851
+	// Token: 0x04005580 RID: 21888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32[] previewColors;
 
-	// Token: 0x0400555C RID: 21852
+	// Token: 0x04005581 RID: 21889
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isHovered;
 
-	// Token: 0x02000E5F RID: 3679
+	// Token: 0x02000E6A RID: 3690
 	public enum PreviewStep
 	{
-		// Token: 0x0400555E RID: 21854
+		// Token: 0x04005583 RID: 21891
 		Start,
-		// Token: 0x0400555F RID: 21855
+		// Token: 0x04005584 RID: 21892
 		Biome,
-		// Token: 0x04005560 RID: 21856
+		// Token: 0x04005585 RID: 21893
 		Terrain,
-		// Token: 0x04005561 RID: 21857
+		// Token: 0x04005586 RID: 21894
 		Done
 	}
 
-	// Token: 0x02000E60 RID: 3680
+	// Token: 0x02000E6B RID: 3691
 	public class PrefabNameHandler : MonoBehaviour
 	{
-		// Token: 0x060070D5 RID: 28885 RVA: 0x002B93B9 File Offset: 0x002B75B9
+		// Token: 0x060070FA RID: 28922 RVA: 0x002BA925 File Offset: 0x002B8B25
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Awake()
 		{
 			this.textMesh = base.transform.GetComponent<TextMesh>();
 		}
 
-		// Token: 0x060070D6 RID: 28886 RVA: 0x002B93CC File Offset: 0x002B75CC
+		// Token: 0x060070FB RID: 28923 RVA: 0x002BA938 File Offset: 0x002B8B38
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnMouseOver(bool _isOver)
 		{
@@ -407,7 +407,7 @@ public class XUiC_WorldGenerationPreview : XUiController
 			base.gameObject.layer = (_isOver ? 11 : 0);
 		}
 
-		// Token: 0x04005562 RID: 21858
+		// Token: 0x04005587 RID: 21895
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public TextMesh textMesh;

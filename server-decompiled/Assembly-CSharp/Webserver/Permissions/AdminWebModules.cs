@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Webserver.Permissions
 {
-	// Token: 0x02001B2C RID: 6956
+	// Token: 0x02001B5D RID: 7005
 	public class AdminWebModules : AdminSectionAbs
 	{
-		// Token: 0x17001A33 RID: 6707
-		// (get) Token: 0x0600D11F RID: 53535 RVA: 0x004BEC4A File Offset: 0x004BCE4A
+		// Token: 0x17001A7B RID: 6779
+		// (get) Token: 0x0600D233 RID: 53811 RVA: 0x004C2746 File Offset: 0x004C0946
 		public static AdminWebModules Instance
 		{
 			get
@@ -19,20 +19,20 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D120 RID: 53536 RVA: 0x004BEC5C File Offset: 0x004BCE5C
+		// Token: 0x0600D234 RID: 53812 RVA: 0x004C2758 File Offset: 0x004C0958
 		public AdminWebModules(AdminTools _parent)
 			: base(_parent, "webmodules")
 		{
 		}
 
-		// Token: 0x0600D121 RID: 53537 RVA: 0x004BECA8 File Offset: 0x004BCEA8
+		// Token: 0x0600D235 RID: 53813 RVA: 0x004C27A4 File Offset: 0x004C09A4
 		public override void Clear()
 		{
 			this.allModulesList.Clear();
 			this.modules.Clear();
 		}
 
-		// Token: 0x0600D122 RID: 53538 RVA: 0x004BECC0 File Offset: 0x004BCEC0
+		// Token: 0x0600D236 RID: 53814 RVA: 0x004C27BC File Offset: 0x004C09BC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ParseElement(XmlElement _childElement)
 		{
@@ -50,7 +50,7 @@ namespace Webserver.Permissions
 			this.modules[webModule.Name] = webModule;
 		}
 
-		// Token: 0x0600D123 RID: 53539 RVA: 0x004BED14 File Offset: 0x004BCF14
+		// Token: 0x0600D237 RID: 53815 RVA: 0x004C2810 File Offset: 0x004C0A10
 		public override void Save(XmlElement _root)
 		{
 			XmlElement xmlElement = _root.AddXmlElement(this.SectionTypeName);
@@ -64,7 +64,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D124 RID: 53540 RVA: 0x004BED84 File Offset: 0x004BCF84
+		// Token: 0x0600D238 RID: 53816 RVA: 0x004C2880 File Offset: 0x004C0A80
 		public void AddModule(AdminWebModules.WebModule _module)
 		{
 			AdminTools parent = this.Parent;
@@ -76,7 +76,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D125 RID: 53541 RVA: 0x004BEDE8 File Offset: 0x004BCFE8
+		// Token: 0x0600D239 RID: 53817 RVA: 0x004C28E4 File Offset: 0x004C0AE4
 		public bool RemoveModule(string _module)
 		{
 			AdminTools parent = this.Parent;
@@ -94,7 +94,7 @@ namespace Webserver.Permissions
 			return flag3;
 		}
 
-		// Token: 0x0600D126 RID: 53542 RVA: 0x004BEE4C File Offset: 0x004BD04C
+		// Token: 0x0600D23A RID: 53818 RVA: 0x004C2948 File Offset: 0x004C0B48
 		public List<AdminWebModules.WebModule> GetModules()
 		{
 			AdminTools parent = this.Parent;
@@ -123,7 +123,7 @@ namespace Webserver.Permissions
 			return list;
 		}
 
-		// Token: 0x0600D127 RID: 53543 RVA: 0x004BEF18 File Offset: 0x004BD118
+		// Token: 0x0600D23B RID: 53819 RVA: 0x004C2A14 File Offset: 0x004C0C14
 		public void AddKnownModule(AdminWebModules.WebModule _module)
 		{
 			if (!_module.IsDefault)
@@ -148,7 +148,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D128 RID: 53544 RVA: 0x004BEFCC File Offset: 0x004BD1CC
+		// Token: 0x0600D23C RID: 53820 RVA: 0x004C2AC8 File Offset: 0x004C0CC8
 		public bool IsKnownModule(string _module)
 		{
 			if (string.IsNullOrEmpty(_module))
@@ -164,7 +164,7 @@ namespace Webserver.Permissions
 			return flag2;
 		}
 
-		// Token: 0x0600D129 RID: 53545 RVA: 0x004BF020 File Offset: 0x004BD220
+		// Token: 0x0600D23D RID: 53821 RVA: 0x004C2B1C File Offset: 0x004C0D1C
 		public bool ModuleAllowedWithLevel(string _module, int _level)
 		{
 			AdminTools parent = this.Parent;
@@ -176,7 +176,7 @@ namespace Webserver.Permissions
 			return flag2;
 		}
 
-		// Token: 0x0600D12A RID: 53546 RVA: 0x004BF070 File Offset: 0x004BD270
+		// Token: 0x0600D23E RID: 53822 RVA: 0x004C2B6C File Offset: 0x004C0D6C
 		public AdminWebModules.WebModule GetModule(string _module)
 		{
 			AdminTools parent = this.Parent;
@@ -196,41 +196,41 @@ namespace Webserver.Permissions
 			return webModule2;
 		}
 
-		// Token: 0x04009EA2 RID: 40610
+		// Token: 0x04009F8B RID: 40843
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, AdminWebModules.WebModule> modules = new CaseInsensitiveStringDictionary<AdminWebModules.WebModule>();
 
-		// Token: 0x04009EA3 RID: 40611
+		// Token: 0x04009F8C RID: 40844
 		public const int MethodLevelInheritGlobal = -2147483648;
 
-		// Token: 0x04009EA4 RID: 40612
+		// Token: 0x04009F8D RID: 40845
 		public const string MethodLevelInheritKeyword = "inherit";
 
-		// Token: 0x04009EA5 RID: 40613
+		// Token: 0x04009F8E RID: 40846
 		public const int MethodLevelNotSupported = -2147483647;
 
-		// Token: 0x04009EA6 RID: 40614
+		// Token: 0x04009F8F RID: 40847
 		public const int PermissionLevelUser = 1000;
 
-		// Token: 0x04009EA7 RID: 40615
+		// Token: 0x04009F90 RID: 40848
 		public const int PermissionLevelGuest = 2000;
 
-		// Token: 0x04009EA8 RID: 40616
+		// Token: 0x04009F91 RID: 40849
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, AdminWebModules.WebModule> knownModules = new CaseInsensitiveStringDictionary<AdminWebModules.WebModule>();
 
-		// Token: 0x04009EA9 RID: 40617
+		// Token: 0x04009F92 RID: 40850
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<AdminWebModules.WebModule> allModulesList = new List<AdminWebModules.WebModule>();
 
-		// Token: 0x04009EAA RID: 40618
+		// Token: 0x04009F93 RID: 40851
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AdminWebModules.WebModule defaultModulePermission = new AdminWebModules.WebModule("", 0, true);
 
-		// Token: 0x02001B2D RID: 6957
+		// Token: 0x02001B5E RID: 7006
 		public readonly struct WebModule
 		{
-			// Token: 0x0600D12B RID: 53547 RVA: 0x004BF0DC File Offset: 0x004BD2DC
+			// Token: 0x0600D23F RID: 53823 RVA: 0x004C2BD8 File Offset: 0x004C0DD8
 			public WebModule(string _name, int _level, bool _isDefault)
 			{
 				this.LevelPerMethod = null;
@@ -239,7 +239,7 @@ namespace Webserver.Permissions
 				this.IsDefault = _isDefault;
 			}
 
-			// Token: 0x0600D12C RID: 53548 RVA: 0x004BF0FC File Offset: 0x004BD2FC
+			// Token: 0x0600D240 RID: 53824 RVA: 0x004C2BF8 File Offset: 0x004C0DF8
 			public WebModule(string _name, int _levelGlobal, int[] _levelPerMethod, bool _isDefault)
 			{
 				if (_levelPerMethod != null && _levelPerMethod.Length != 7)
@@ -262,7 +262,7 @@ namespace Webserver.Permissions
 				this.IsDefault = _isDefault;
 			}
 
-			// Token: 0x0600D12D RID: 53549 RVA: 0x004BF15C File Offset: 0x004BD35C
+			// Token: 0x0600D241 RID: 53825 RVA: 0x004C2C58 File Offset: 0x004C0E58
 			public void ToXml(XmlElement _parent)
 			{
 				bool flag = this.LevelPerMethod != null;
@@ -282,7 +282,7 @@ namespace Webserver.Permissions
 				}
 			}
 
-			// Token: 0x0600D12E RID: 53550 RVA: 0x004BF210 File Offset: 0x004BD410
+			// Token: 0x0600D242 RID: 53826 RVA: 0x004C2D0C File Offset: 0x004C0F0C
 			public static bool TryParse(XmlElement _element, out AdminWebModules.WebModule _result)
 			{
 				_result = default(AdminWebModules.WebModule);
@@ -357,7 +357,7 @@ namespace Webserver.Permissions
 				return true;
 			}
 
-			// Token: 0x0600D12F RID: 53551 RVA: 0x004BF424 File Offset: 0x004BD624
+			// Token: 0x0600D243 RID: 53827 RVA: 0x004C2F20 File Offset: 0x004C1120
 			[MustUseReturnValue]
 			public AdminWebModules.WebModule SetLevelGlobal(int _level)
 			{
@@ -369,7 +369,7 @@ namespace Webserver.Permissions
 				return new AdminWebModules.WebModule(this.Name, _level, array, false);
 			}
 
-			// Token: 0x0600D130 RID: 53552 RVA: 0x004BF46C File Offset: 0x004BD66C
+			// Token: 0x0600D244 RID: 53828 RVA: 0x004C2F68 File Offset: 0x004C1168
 			[MustUseReturnValue]
 			public AdminWebModules.WebModule SetLevelForMethod(ERequestMethod _method, int _level)
 			{
@@ -382,7 +382,7 @@ namespace Webserver.Permissions
 				return new AdminWebModules.WebModule(this.Name, this.LevelGlobal, array, false);
 			}
 
-			// Token: 0x0600D131 RID: 53553 RVA: 0x004BF4B0 File Offset: 0x004BD6B0
+			// Token: 0x0600D245 RID: 53829 RVA: 0x004C2FAC File Offset: 0x004C11AC
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static int[] createDefaultPerMethodArray()
 			{
@@ -394,7 +394,7 @@ namespace Webserver.Permissions
 				return array;
 			}
 
-			// Token: 0x0600D132 RID: 53554 RVA: 0x004BF4DC File Offset: 0x004BD6DC
+			// Token: 0x0600D246 RID: 53830 RVA: 0x004C2FD8 File Offset: 0x004C11D8
 			[MustUseReturnValue]
 			public AdminWebModules.WebModule FixPermissionLevelsFromKnownModule(AdminWebModules.WebModule _knownModule)
 			{
@@ -417,16 +417,16 @@ namespace Webserver.Permissions
 				return this;
 			}
 
-			// Token: 0x04009EAB RID: 40619
+			// Token: 0x04009F94 RID: 40852
 			public readonly string Name;
 
-			// Token: 0x04009EAC RID: 40620
+			// Token: 0x04009F95 RID: 40853
 			public readonly int LevelGlobal;
 
-			// Token: 0x04009EAD RID: 40621
+			// Token: 0x04009F96 RID: 40854
 			public readonly int[] LevelPerMethod;
 
-			// Token: 0x04009EAE RID: 40622
+			// Token: 0x04009F97 RID: 40855
 			public readonly bool IsDefault;
 		}
 	}

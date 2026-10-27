@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x020003A4 RID: 932
+// Token: 0x020003A6 RID: 934
 public class DynamicMeshClientConnection
 {
 	// Token: 0x1700033E RID: 830
-	// (get) Token: 0x06001BAD RID: 7085 RVA: 0x000A49C4 File Offset: 0x000A2BC4
+	// (get) Token: 0x06001BB1 RID: 7089 RVA: 0x000A4BD4 File Offset: 0x000A2DD4
 	public bool TriggerSend
 	{
 		get
@@ -18,7 +18,7 @@ public class DynamicMeshClientConnection
 	}
 
 	// Token: 0x1700033F RID: 831
-	// (get) Token: 0x06001BAE RID: 7086 RVA: 0x000A49F4 File Offset: 0x000A2BF4
+	// (get) Token: 0x06001BB2 RID: 7090 RVA: 0x000A4C04 File Offset: 0x000A2E04
 	public bool HasMessage
 	{
 		get
@@ -27,13 +27,13 @@ public class DynamicMeshClientConnection
 		}
 	}
 
-	// Token: 0x06001BAF RID: 7087 RVA: 0x000A4A04 File Offset: 0x000A2C04
+	// Token: 0x06001BB3 RID: 7091 RVA: 0x000A4C14 File Offset: 0x000A2E14
 	public DynamicMeshClientConnection(int entityId)
 	{
 		this.EntityId = entityId;
 	}
 
-	// Token: 0x06001BB0 RID: 7088 RVA: 0x000A4A94 File Offset: 0x000A2C94
+	// Token: 0x06001BB4 RID: 7092 RVA: 0x000A4CA4 File Offset: 0x000A2EA4
 	public void AddToQueue(DynamicMeshSyncRequest package)
 	{
 		ValueTuple<int, int> valueTuple = new ValueTuple<int, int>(DynamicMeshUnity.RoundRegion(package.Item.WorldPosition.x), DynamicMeshUnity.RoundRegion(package.Item.WorldPosition.z));
@@ -42,7 +42,7 @@ public class DynamicMeshClientConnection
 		this.SendMessage = DynamicMeshServer.AutoSend || this.SendMessage || orAdd.Count == 1;
 	}
 
-	// Token: 0x06001BB1 RID: 7089 RVA: 0x000A4B0C File Offset: 0x000A2D0C
+	// Token: 0x06001BB5 RID: 7093 RVA: 0x000A4D1C File Offset: 0x000A2F1C
 	public bool RequestChunk()
 	{
 		if (this.CurrentRequestedChunk != 9223372036854775807L)
@@ -58,13 +58,13 @@ public class DynamicMeshClientConnection
 		return true;
 	}
 
-	// Token: 0x06001BB2 RID: 7090 RVA: 0x000A4B58 File Offset: 0x000A2D58
+	// Token: 0x06001BB6 RID: 7094 RVA: 0x000A4D68 File Offset: 0x000A2F68
 	public void UpdateItemsToSend(NetPackageDynamicClientArrive package)
 	{
 		DynamicMeshClientConnection.UpdateItemsToSend(this, package);
 	}
 
-	// Token: 0x06001BB3 RID: 7091 RVA: 0x000A4B64 File Offset: 0x000A2D64
+	// Token: 0x06001BB7 RID: 7095 RVA: 0x000A4D74 File Offset: 0x000A2F74
 	public static void UpdateItemsToSend(DynamicMeshClientConnection data, NetPackageDynamicClientArrive package)
 	{
 		if (DynamicMeshManager.Instance == null || DynamicMeshManager.Instance.ItemsDictionary == null)
@@ -111,7 +111,7 @@ public class DynamicMeshClientConnection
 		data.SendMessage = data.ItemsToSend.Count > 0;
 	}
 
-	// Token: 0x06001BB4 RID: 7092 RVA: 0x000A4E44 File Offset: 0x000A3044
+	// Token: 0x06001BB8 RID: 7096 RVA: 0x000A5054 File Offset: 0x000A3254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int ProcessItem(DynamicMeshClientConnection conn, DynamicMeshRegion r, List<DynamicMeshItem> items, NetPackageDynamicClientArrive package, NetPackageRegionMetaData allChunkData)
 	{
@@ -139,30 +139,30 @@ public class DynamicMeshClientConnection
 		return num;
 	}
 
-	// Token: 0x040011D4 RID: 4564
+	// Token: 0x040011E4 RID: 4580
 	public int EntityId;
 
-	// Token: 0x040011D5 RID: 4565
+	// Token: 0x040011E5 RID: 4581
 	public ConcurrentDictionary<ValueTuple<int, int>, ConcurrentQueue<DynamicMeshSyncRequest>> ItemsToSend = new ConcurrentDictionary<ValueTuple<int, int>, ConcurrentQueue<DynamicMeshSyncRequest>>();
 
-	// Token: 0x040011D6 RID: 4566
+	// Token: 0x040011E6 RID: 4582
 	public ConcurrentQueue<long> RequestedChunks = new ConcurrentQueue<long>();
 
-	// Token: 0x040011D7 RID: 4567
+	// Token: 0x040011E7 RID: 4583
 	public List<long> FinalChunks = new List<long>();
 
-	// Token: 0x040011D8 RID: 4568
+	// Token: 0x040011E8 RID: 4584
 	public long CurrentRequestedChunk = long.MaxValue;
 
-	// Token: 0x040011D9 RID: 4569
+	// Token: 0x040011E9 RID: 4585
 	public DateTime RequestTime = DateTime.Now.AddDays(-1.0);
 
-	// Token: 0x040011DA RID: 4570
+	// Token: 0x040011EA RID: 4586
 	public DateTime LastSend = DateTime.Now.AddDays(-1.0);
 
-	// Token: 0x040011DB RID: 4571
+	// Token: 0x040011EB RID: 4587
 	public bool SendMessage;
 
-	// Token: 0x040011DC RID: 4572
+	// Token: 0x040011EC RID: 4588
 	public ValueTuple<int, int> LastKey = ValueTuple.Create<int, int>(0, 0);
 }

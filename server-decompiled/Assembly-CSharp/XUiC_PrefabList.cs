@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FDD RID: 4061
+// Token: 0x02000FED RID: 4077
 [Preserve]
 public class XUiC_PrefabList : XUiController
 {
-	// Token: 0x06007FD0 RID: 32720 RVA: 0x0030994C File Offset: 0x00307B4C
+	// Token: 0x0600801F RID: 32799 RVA: 0x0030B468 File Offset: 0x00309668
 	public override void Init()
 	{
 		base.Init();
@@ -75,7 +75,7 @@ public class XUiC_PrefabList : XUiController
 		this.groupList.SelectedEntryIndex = 0;
 	}
 
-	// Token: 0x06007FD1 RID: 32721 RVA: 0x00309CBC File Offset: 0x00307EBC
+	// Token: 0x06008020 RID: 32800 RVA: 0x0030B7D8 File Offset: 0x003099D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GroupListSelectionChanged(XUiC_List<XUiC_PrefabGroupList.PrefabGroupEntry> _list, XUiC_PrefabGroupList.PrefabGroupEntry _previousEntry, XUiC_PrefabGroupList.PrefabGroupEntry _newEntry)
 	{
@@ -91,14 +91,14 @@ public class XUiC_PrefabList : XUiController
 		}
 	}
 
-	// Token: 0x06007FD2 RID: 32722 RVA: 0x00309CFB File Offset: 0x00307EFB
+	// Token: 0x06008021 RID: 32801 RVA: 0x0030B817 File Offset: 0x00309A17
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FileListOnPageNumberChanged(XUiC_List<XUiC_PrefabFileList.PrefabFileEntry> _list, int _pageNumber)
 	{
 		this.fileList.SelectedEntryIndex = this.fileList.Page * this.fileList.PageLength;
 	}
 
-	// Token: 0x06007FD3 RID: 32723 RVA: 0x00309D1F File Offset: 0x00307F1F
+	// Token: 0x06008022 RID: 32802 RVA: 0x0030B83B File Offset: 0x00309A3B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FileList_SelectionChanged(XUiC_List<XUiC_PrefabFileList.PrefabFileEntry> _list, XUiC_PrefabFileList.PrefabFileEntry _previousEntry, XUiC_PrefabFileList.PrefabFileEntry _newEntry)
 	{
@@ -107,7 +107,7 @@ public class XUiC_PrefabList : XUiController
 		this.updatePreview(_newEntry);
 	}
 
-	// Token: 0x06007FD4 RID: 32724 RVA: 0x00309D48 File Offset: 0x00307F48
+	// Token: 0x06008023 RID: 32803 RVA: 0x0030B864 File Offset: 0x00309A64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePreview(XUiC_PrefabFileList.PrefabFileEntry _newEntry)
 	{
@@ -135,7 +135,7 @@ public class XUiC_PrefabList : XUiController
 		this.prefabPreview.IsVisible = false;
 	}
 
-	// Token: 0x06007FD5 RID: 32725 RVA: 0x00309E00 File Offset: 0x00308000
+	// Token: 0x06008024 RID: 32804 RVA: 0x0030B91C File Offset: 0x00309B1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FileList_OnEntryDoubleClicked(XUiC_List<XUiC_PrefabFileList.PrefabFileEntry> _list, XUiC_PrefabFileList.PrefabFileEntry _entry)
 	{
@@ -145,7 +145,7 @@ public class XUiC_PrefabList : XUiController
 		}
 	}
 
-	// Token: 0x06007FD6 RID: 32726 RVA: 0x00309E16 File Offset: 0x00308016
+	// Token: 0x06008025 RID: 32805 RVA: 0x0030B932 File Offset: 0x00309B32
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLoad_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -155,7 +155,7 @@ public class XUiC_PrefabList : XUiController
 		}
 	}
 
-	// Token: 0x06007FD7 RID: 32727 RVA: 0x00309E40 File Offset: 0x00308040
+	// Token: 0x06008026 RID: 32806 RVA: 0x0030B95C File Offset: 0x00309B5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadPrefab(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -179,7 +179,7 @@ public class XUiC_PrefabList : XUiController
 		PrefabEditModeManager.Instance.LoadVoxelPrefab(location, false, false);
 	}
 
-	// Token: 0x06007FD8 RID: 32728 RVA: 0x00309EF0 File Offset: 0x003080F0
+	// Token: 0x06008027 RID: 32807 RVA: 0x0030BA0C File Offset: 0x00309C0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnPropertiesOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -193,21 +193,21 @@ public class XUiC_PrefabList : XUiController
 		XUiC_PrefabPropertiesEditor.Show(this.xui, XUiC_PrefabPropertiesEditor.EPropertiesFrom.FileBrowserSelection, location);
 	}
 
-	// Token: 0x06007FD9 RID: 32729 RVA: 0x00309F41 File Offset: 0x00308141
+	// Token: 0x06008028 RID: 32808 RVA: 0x0030BA5D File Offset: 0x00309C5D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		XUiC_SaveDirtyPrefab.Show(this.xui, new Action<XUiC_SaveDirtyPrefab.ESelectedAction>(this.savePrefab), XUiC_SaveDirtyPrefab.EMode.ForceSave);
 	}
 
-	// Token: 0x06007FDA RID: 32730 RVA: 0x00309F5B File Offset: 0x0030815B
+	// Token: 0x06008029 RID: 32809 RVA: 0x0030BA77 File Offset: 0x00309C77
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void savePrefab(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
 		this.xui.playerUI.windowManager.Open(XUiC_InGameMenuWindow.ID, true);
 	}
 
-	// Token: 0x06007FDB RID: 32731 RVA: 0x00309F78 File Offset: 0x00308178
+	// Token: 0x0600802A RID: 32810 RVA: 0x0030BA94 File Offset: 0x00309C94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLoadIntoPrefabOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -220,7 +220,7 @@ public class XUiC_PrefabList : XUiController
 		this.xui.playerUI.windowManager.Close(XUiC_InGameMenuWindow.ID);
 	}
 
-	// Token: 0x06007FDC RID: 32732 RVA: 0x00309FEC File Offset: 0x003081EC
+	// Token: 0x0600802B RID: 32811 RVA: 0x0030BB08 File Offset: 0x00309D08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnApplyLoadedPrefabOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -231,14 +231,14 @@ public class XUiC_PrefabList : XUiController
 		GameManager.Instance.World.m_ChunkManager.RemoveAllChunksOnAllClients();
 	}
 
-	// Token: 0x06007FDD RID: 32733 RVA: 0x0008806C File Offset: 0x0008626C
+	// Token: 0x0600802C RID: 32812 RVA: 0x000882A0 File Offset: 0x000864A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCleanOtherPrefabsOnOnPressed(XUiController _sender, int _mouseButton)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06007FDE RID: 32734 RVA: 0x0030A05C File Offset: 0x0030825C
+	// Token: 0x0600802D RID: 32813 RVA: 0x0030BB78 File Offset: 0x00309D78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLoadIntoClipboardOnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -250,14 +250,14 @@ public class XUiC_PrefabList : XUiController
 		this.xui.playerUI.windowManager.Close(XUiC_InGameMenuWindow.ID);
 	}
 
-	// Token: 0x06007FDF RID: 32735 RVA: 0x0030A0BB File Offset: 0x003082BB
+	// Token: 0x0600802E RID: 32814 RVA: 0x0030BBD7 File Offset: 0x00309DD7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnNewOnOnPressed(XUiController _sender, int _mouseButton)
 	{
 		XUiC_SaveDirtyPrefab.Show(this.xui, new Action<XUiC_SaveDirtyPrefab.ESelectedAction>(this.newPrefab), XUiC_SaveDirtyPrefab.EMode.AskSaveIfDirty);
 	}
 
-	// Token: 0x06007FE0 RID: 32736 RVA: 0x0030A0D5 File Offset: 0x003082D5
+	// Token: 0x0600802F RID: 32815 RVA: 0x0030BBF1 File Offset: 0x00309DF1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void newPrefab(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -269,7 +269,7 @@ public class XUiC_PrefabList : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_CreatePoi.ID, true);
 	}
 
-	// Token: 0x06007FE1 RID: 32737 RVA: 0x0030A114 File Offset: 0x00308314
+	// Token: 0x06008030 RID: 32816 RVA: 0x0030BC30 File Offset: 0x00309E30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnWorldPlacePrefabOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -334,7 +334,7 @@ public class XUiC_PrefabList : XUiController
 		this.xui.playerUI.windowManager.Close(XUiC_InGameMenuWindow.ID);
 	}
 
-	// Token: 0x06007FE2 RID: 32738 RVA: 0x0030A2E8 File Offset: 0x003084E8
+	// Token: 0x06008031 RID: 32817 RVA: 0x0030BE04 File Offset: 0x0030A004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnWorldReplacePrefabOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -361,14 +361,14 @@ public class XUiC_PrefabList : XUiController
 		}
 	}
 
-	// Token: 0x06007FE3 RID: 32739 RVA: 0x0030A3AC File Offset: 0x003085AC
+	// Token: 0x06008032 RID: 32818 RVA: 0x0030BEC8 File Offset: 0x0030A0C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnWorldDeletePrefabOnPressed(XUiController _sender, int _mouseButton)
 	{
 		GameManager.Instance.GetDynamicPrefabDecorator().RemoveActivePrefab(GameManager.Instance.World);
 	}
 
-	// Token: 0x06007FE4 RID: 32740 RVA: 0x0030A3C8 File Offset: 0x003085C8
+	// Token: 0x06008033 RID: 32819 RVA: 0x0030BEE4 File Offset: 0x0030A0E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnWorldApplyPrefabChangesOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -383,7 +383,7 @@ public class XUiC_PrefabList : XUiController
 		prefabInstance.UpdateImposterView();
 	}
 
-	// Token: 0x06007FE5 RID: 32741 RVA: 0x0030A420 File Offset: 0x00308620
+	// Token: 0x06008034 RID: 32820 RVA: 0x0030BF3C File Offset: 0x0030A13C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnWorldRevertPrefabChangesOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -398,7 +398,7 @@ public class XUiC_PrefabList : XUiController
 		prefabInstance.UpdateImposterView();
 	}
 
-	// Token: 0x06007FE6 RID: 32742 RVA: 0x0030A480 File Offset: 0x00308680
+	// Token: 0x06008035 RID: 32821 RVA: 0x0030BF9C File Offset: 0x0030A19C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -424,7 +424,7 @@ public class XUiC_PrefabList : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007FE7 RID: 32743 RVA: 0x0030A524 File Offset: 0x00308724
+	// Token: 0x06008036 RID: 32822 RVA: 0x0030C040 File Offset: 0x0030A240
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -442,62 +442,62 @@ public class XUiC_PrefabList : XUiController
 		this.btnWorldRevertPrefabChanges.Enabled = prefabInstance != null && !prefabInstance.IsBBInSyncWithPrefab() && prefabInstance.bPrefabCopiedIntoWorld;
 	}
 
-	// Token: 0x04005ED9 RID: 24281
+	// Token: 0x04005F14 RID: 24340
 	public static string ID = "";
 
-	// Token: 0x04005EDA RID: 24282
+	// Token: 0x04005F15 RID: 24341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabGroupList groupList;
 
-	// Token: 0x04005EDB RID: 24283
+	// Token: 0x04005F16 RID: 24342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabFileList fileList;
 
-	// Token: 0x04005EDC RID: 24284
+	// Token: 0x04005F17 RID: 24343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture prefabPreview;
 
-	// Token: 0x04005EDD RID: 24285
+	// Token: 0x04005F18 RID: 24344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label noPreviewLabel;
 
-	// Token: 0x04005EDE RID: 24286
+	// Token: 0x04005F19 RID: 24345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnLoad;
 
-	// Token: 0x04005EDF RID: 24287
+	// Token: 0x04005F1A RID: 24346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnProperties;
 
-	// Token: 0x04005EE0 RID: 24288
+	// Token: 0x04005F1B RID: 24347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSave;
 
-	// Token: 0x04005EE1 RID: 24289
+	// Token: 0x04005F1C RID: 24348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnLoadIntoPrefab;
 
-	// Token: 0x04005EE2 RID: 24290
+	// Token: 0x04005F1D RID: 24349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnApplyLoadedPrefab;
 
-	// Token: 0x04005EE3 RID: 24291
+	// Token: 0x04005F1E RID: 24350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnWorldPlacePrefab;
 
-	// Token: 0x04005EE4 RID: 24292
+	// Token: 0x04005F1F RID: 24351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnWorldReplacePrefab;
 
-	// Token: 0x04005EE5 RID: 24293
+	// Token: 0x04005F20 RID: 24352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnWorldDeletePrefab;
 
-	// Token: 0x04005EE6 RID: 24294
+	// Token: 0x04005F21 RID: 24353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnWorldApplyPrefabChanges;
 
-	// Token: 0x04005EE7 RID: 24295
+	// Token: 0x04005F22 RID: 24354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnWorldRevertPrefabChanges;
 }

@@ -2,12 +2,12 @@
 using Unity.Jobs;
 using UnityEngine;
 
-// Token: 0x02001DC6 RID: 7622
+// Token: 0x02001DF6 RID: 7670
 [DOTSCompilerGenerated]
 [PublicizedFrom(EAccessModifier.Internal)]
-public class __JobReflectionRegistrationOutput__756963992
+public class __JobReflectionRegistrationOutput__1221567004
 {
-	// Token: 0x0600DFF0 RID: 57328 RVA: 0x004FF100 File Offset: 0x004FD300
+	// Token: 0x0600E104 RID: 57604 RVA: 0x00502C98 File Offset: 0x00500E98
 	public static void CreateJobReflectionData()
 	{
 		try
@@ -23,10 +23,10 @@ public class __JobReflectionRegistrationOutput__756963992
 		}
 	}
 
-	// Token: 0x0600DFF1 RID: 57329 RVA: 0x004FF144 File Offset: 0x004FD344
+	// Token: 0x0600E105 RID: 57605 RVA: 0x00502CDC File Offset: 0x00500EDC
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
 	public static void EarlyInit()
 	{
-		__JobReflectionRegistrationOutput__756963992.CreateJobReflectionData();
+		__JobReflectionRegistrationOutput__1221567004.CreateJobReflectionData();
 	}
 }

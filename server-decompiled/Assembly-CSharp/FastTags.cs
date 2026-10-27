@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x02000723 RID: 1827
+// Token: 0x0200072B RID: 1835
 public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupAbs, new()
 {
-	// Token: 0x17000593 RID: 1427
-	// (get) Token: 0x06003767 RID: 14183 RVA: 0x0016C894 File Offset: 0x0016AA94
+	// Token: 0x17000597 RID: 1431
+	// (get) Token: 0x0600377E RID: 14206 RVA: 0x0016D82C File Offset: 0x0016BA2C
 	public static FastTags<TTagGroup> all
 	{
 		get
@@ -16,7 +16,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		}
 	}
 
-	// Token: 0x06003768 RID: 14184 RVA: 0x0016C89B File Offset: 0x0016AA9B
+	// Token: 0x0600377F RID: 14207 RVA: 0x0016D833 File Offset: 0x0016BA33
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags(ulong[] _bits)
 	{
@@ -24,7 +24,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		this.bits = _bits;
 	}
 
-	// Token: 0x06003769 RID: 14185 RVA: 0x0016C8AB File Offset: 0x0016AAAB
+	// Token: 0x06003780 RID: 14208 RVA: 0x0016D843 File Offset: 0x0016BA43
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags(int _singleBit)
 	{
@@ -32,7 +32,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		this.bits = null;
 	}
 
-	// Token: 0x0600376A RID: 14186 RVA: 0x0016C8BC File Offset: 0x0016AABC
+	// Token: 0x06003781 RID: 14209 RVA: 0x0016D854 File Offset: 0x0016BA54
 	public FastTags(FastTags<TTagGroup> _ft)
 	{
 		if (_ft.bits != null)
@@ -47,7 +47,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		this.singleBit = _ft.singleBit;
 	}
 
-	// Token: 0x0600376B RID: 14187 RVA: 0x0016C90C File Offset: 0x0016AB0C
+	// Token: 0x06003782 RID: 14210 RVA: 0x0016D8A4 File Offset: 0x0016BAA4
 	public static FastTags<TTagGroup> Parse(string _str)
 	{
 		FastTags<TTagGroup> fastTags;
@@ -79,7 +79,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return fastTags;
 	}
 
-	// Token: 0x0600376C RID: 14188 RVA: 0x0016C9FC File Offset: 0x0016ABFC
+	// Token: 0x06003783 RID: 14211 RVA: 0x0016D994 File Offset: 0x0016BB94
 	public static int GetBit(string _tag)
 	{
 		_tag = _tag.Trim();
@@ -104,7 +104,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return num;
 	}
 
-	// Token: 0x0600376D RID: 14189 RVA: 0x0016CA80 File Offset: 0x0016AC80
+	// Token: 0x06003784 RID: 14212 RVA: 0x0016DA18 File Offset: 0x0016BC18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetBit(int _bit, ulong[] _extended)
 	{
@@ -112,19 +112,19 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		_extended[num] |= 1UL << _bit;
 	}
 
-	// Token: 0x0600376E RID: 14190 RVA: 0x0016CAA3 File Offset: 0x0016ACA3
+	// Token: 0x06003785 RID: 14213 RVA: 0x0016DA3B File Offset: 0x0016BC3B
 	public static FastTags<TTagGroup> GetTag(string _tag)
 	{
 		return new FastTags<TTagGroup>(FastTags<TTagGroup>.GetBit(_tag));
 	}
 
-	// Token: 0x0600376F RID: 14191 RVA: 0x0016CAB0 File Offset: 0x0016ACB0
+	// Token: 0x06003786 RID: 14214 RVA: 0x0016DA48 File Offset: 0x0016BC48
 	public static FastTags<TTagGroup> CombineTags(FastTags<TTagGroup> _tags1, FastTags<TTagGroup> _tags2)
 	{
 		return _tags1 | _tags2;
 	}
 
-	// Token: 0x06003770 RID: 14192 RVA: 0x0016CABC File Offset: 0x0016ACBC
+	// Token: 0x06003787 RID: 14215 RVA: 0x0016DA54 File Offset: 0x0016BC54
 	public static FastTags<TTagGroup> CombineTags(FastTags<TTagGroup> _tags1, FastTags<TTagGroup> _tags2, FastTags<TTagGroup> _tags3)
 	{
 		ulong[] array = _tags1.bits;
@@ -169,7 +169,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return new FastTags<TTagGroup>(array4);
 	}
 
-	// Token: 0x06003771 RID: 14193 RVA: 0x0016CC2C File Offset: 0x0016AE2C
+	// Token: 0x06003788 RID: 14216 RVA: 0x0016DBC4 File Offset: 0x0016BDC4
 	public static FastTags<TTagGroup> CombineTags(FastTags<TTagGroup> _tags1, FastTags<TTagGroup> _tags2, FastTags<TTagGroup> _tags3, FastTags<TTagGroup> _tags4)
 	{
 		ulong[] array = _tags1.bits;
@@ -226,7 +226,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return new FastTags<TTagGroup>(array5);
 	}
 
-	// Token: 0x06003772 RID: 14194 RVA: 0x0016CE0C File Offset: 0x0016B00C
+	// Token: 0x06003789 RID: 14217 RVA: 0x0016DDA4 File Offset: 0x0016BFA4
 	public static void CombineTags(FastTags<TTagGroup> _tags1, FastTags<TTagGroup> _tags2, FastTags<TTagGroup> _tags3, FastTags<TTagGroup> _tags4, ref FastTags<TTagGroup> _outTag)
 	{
 		ulong[] array = _tags1.bits;
@@ -295,7 +295,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		_outTag = new FastTags<TTagGroup>(array5);
 	}
 
-	// Token: 0x06003773 RID: 14195 RVA: 0x0016D02C File Offset: 0x0016B22C
+	// Token: 0x0600378A RID: 14218 RVA: 0x0016DFC4 File Offset: 0x0016C1C4
 	public List<string> GetTagNames()
 	{
 		List<string> list = new List<string>();
@@ -328,7 +328,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return list;
 	}
 
-	// Token: 0x06003774 RID: 14196 RVA: 0x0016D0D0 File Offset: 0x0016B2D0
+	// Token: 0x0600378B RID: 14219 RVA: 0x0016E068 File Offset: 0x0016C268
 	public bool Test_AnySet(FastTags<TTagGroup> _other)
 	{
 		if (_other.IsEmpty)
@@ -357,7 +357,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return false;
 	}
 
-	// Token: 0x06003775 RID: 14197 RVA: 0x0016D160 File Offset: 0x0016B360
+	// Token: 0x0600378C RID: 14220 RVA: 0x0016E0F8 File Offset: 0x0016C2F8
 	public bool Test_AllSet(FastTags<TTagGroup> _other)
 	{
 		if (_other.singleBit > 0)
@@ -401,7 +401,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		}
 	}
 
-	// Token: 0x06003776 RID: 14198 RVA: 0x0016D224 File Offset: 0x0016B424
+	// Token: 0x0600378D RID: 14221 RVA: 0x0016E1BC File Offset: 0x0016C3BC
 	public bool Test_Bit(int _bitNum)
 	{
 		if (this.IsEmpty)
@@ -420,7 +420,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return num < this.bits.Length && (this.bits[num] & (1UL << _bitNum)) > 0UL;
 	}
 
-	// Token: 0x06003777 RID: 14199 RVA: 0x0016D280 File Offset: 0x0016B480
+	// Token: 0x0600378E RID: 14222 RVA: 0x0016E218 File Offset: 0x0016C418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool Test_IsOnlyBit(int _bitNum)
 	{
@@ -456,7 +456,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return true;
 	}
 
-	// Token: 0x06003778 RID: 14200 RVA: 0x0016D300 File Offset: 0x0016B500
+	// Token: 0x0600378F RID: 14223 RVA: 0x0016E298 File Offset: 0x0016C498
 	public bool Equals(FastTags<TTagGroup> _other)
 	{
 		if (this.singleBit > 0 && _other.singleBit > 0)
@@ -506,7 +506,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return true;
 	}
 
-	// Token: 0x06003779 RID: 14201 RVA: 0x0016D3E8 File Offset: 0x0016B5E8
+	// Token: 0x06003790 RID: 14224 RVA: 0x0016E380 File Offset: 0x0016C580
 	public FastTags<TTagGroup> Remove(FastTags<TTagGroup> _tagsToRemove)
 	{
 		if (_tagsToRemove.singleBit > 0)
@@ -550,7 +550,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return this;
 	}
 
-	// Token: 0x0600377A RID: 14202 RVA: 0x0016D504 File Offset: 0x0016B704
+	// Token: 0x06003791 RID: 14225 RVA: 0x0016E49C File Offset: 0x0016C69C
 	public static FastTags<TTagGroup>operator |(FastTags<TTagGroup> _a, FastTags<TTagGroup> _b)
 	{
 		if (_b.singleBit > 0)
@@ -621,7 +621,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		}
 	}
 
-	// Token: 0x0600377B RID: 14203 RVA: 0x0016D6A4 File Offset: 0x0016B8A4
+	// Token: 0x06003792 RID: 14226 RVA: 0x0016E63C File Offset: 0x0016C83C
 	public static FastTags<TTagGroup>operator &(FastTags<TTagGroup> _a, FastTags<TTagGroup> _b)
 	{
 		if (_b.singleBit > 0)
@@ -660,8 +660,8 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		}
 	}
 
-	// Token: 0x17000594 RID: 1428
-	// (get) Token: 0x0600377C RID: 14204 RVA: 0x0016D744 File Offset: 0x0016B944
+	// Token: 0x17000598 RID: 1432
+	// (get) Token: 0x06003793 RID: 14227 RVA: 0x0016E6DC File Offset: 0x0016C8DC
 	public bool IsEmpty
 	{
 		get
@@ -686,7 +686,7 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		}
 	}
 
-	// Token: 0x0600377D RID: 14205 RVA: 0x0016D784 File Offset: 0x0016B984
+	// Token: 0x06003794 RID: 14228 RVA: 0x0016E71C File Offset: 0x0016C91C
 	public override string ToString()
 	{
 		string text = string.Empty;
@@ -702,46 +702,46 @@ public readonly struct FastTags<TTagGroup> where TTagGroup : TagGroup.TagsGroupA
 		return text;
 	}
 
-	// Token: 0x04002CA4 RID: 11428
+	// Token: 0x04002CC0 RID: 11456
 	public static readonly FastTags<TTagGroup> none = new FastTags<TTagGroup>(null);
 
-	// Token: 0x04002CA5 RID: 11429
+	// Token: 0x04002CC1 RID: 11457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TTagGroup> allInternal = new FastTags<TTagGroup>(new ulong[] { ulong.MaxValue, ulong.MaxValue, ulong.MaxValue, ulong.MaxValue, ulong.MaxValue, ulong.MaxValue });
 
-	// Token: 0x04002CA6 RID: 11430
+	// Token: 0x04002CC2 RID: 11458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cNumBitsPerField = 64;
 
-	// Token: 0x04002CA7 RID: 11431
+	// Token: 0x04002CC3 RID: 11459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFieldShift = 6;
 
-	// Token: 0x04002CA8 RID: 11432
+	// Token: 0x04002CC4 RID: 11460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly CaseInsensitiveStringDictionary<int> tags = new CaseInsensitiveStringDictionary<int>();
 
-	// Token: 0x04002CA9 RID: 11433
+	// Token: 0x04002CC5 RID: 11461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<int, string> bitTags = new Dictionary<int, string>();
 
-	// Token: 0x04002CAA RID: 11434
+	// Token: 0x04002CC6 RID: 11462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int next;
 
-	// Token: 0x04002CAB RID: 11435
+	// Token: 0x04002CC7 RID: 11463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int singleBit;
 
-	// Token: 0x04002CAC RID: 11436
+	// Token: 0x04002CC8 RID: 11464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ulong[] bits;
 
-	// Token: 0x04002CAD RID: 11437
+	// Token: 0x04002CC9 RID: 11465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<ulong> maskList = new List<ulong>();
 
-	// Token: 0x04002CAE RID: 11438
+	// Token: 0x04002CCA RID: 11466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] tagSeparator = new char[] { ',' };
 }

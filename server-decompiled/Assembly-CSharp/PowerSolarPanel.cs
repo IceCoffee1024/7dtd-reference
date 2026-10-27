@@ -1,20 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000917 RID: 2327
+// Token: 0x02000921 RID: 2337
 public class PowerSolarPanel : PowerSource
 {
-	// Token: 0x1700073F RID: 1855
-	// (get) Token: 0x060042DB RID: 17115 RVA: 0x001A394B File Offset: 0x001A1B4B
-	// (set) Token: 0x060042DC RID: 17116 RVA: 0x001A3953 File Offset: 0x001A1B53
+	// Token: 0x17000745 RID: 1861
+	// (get) Token: 0x060042FE RID: 17150 RVA: 0x001A49F3 File Offset: 0x001A2BF3
+	// (set) Token: 0x060042FF RID: 17151 RVA: 0x001A49FB File Offset: 0x001A2BFB
 	public bool HasLight
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000740 RID: 1856
-	// (get) Token: 0x060042DD RID: 17117 RVA: 0x00081AB0 File Offset: 0x0007FCB0
+	// Token: 0x17000746 RID: 1862
+	// (get) Token: 0x06004300 RID: 17152 RVA: 0x00081CD4 File Offset: 0x0007FED4
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -23,8 +23,8 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x17000741 RID: 1857
-	// (get) Token: 0x060042DE RID: 17118 RVA: 0x001A395C File Offset: 0x001A1B5C
+	// Token: 0x17000747 RID: 1863
+	// (get) Token: 0x06004301 RID: 17153 RVA: 0x001A4A04 File Offset: 0x001A2C04
 	public override string OnSound
 	{
 		get
@@ -33,8 +33,8 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x17000742 RID: 1858
-	// (get) Token: 0x060042DF RID: 17119 RVA: 0x001A3963 File Offset: 0x001A1B63
+	// Token: 0x17000748 RID: 1864
+	// (get) Token: 0x06004302 RID: 17154 RVA: 0x001A4A0B File Offset: 0x001A2C0B
 	public override string OffSound
 	{
 		get
@@ -43,7 +43,7 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x060042E0 RID: 17120 RVA: 0x001A396C File Offset: 0x001A1B6C
+	// Token: 0x06004303 RID: 17155 RVA: 0x001A4A14 File Offset: 0x001A2C14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckLightLevel()
 	{
@@ -68,7 +68,7 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x060042E1 RID: 17121 RVA: 0x001A3A16 File Offset: 0x001A1C16
+	// Token: 0x06004304 RID: 17156 RVA: 0x001A4ABE File Offset: 0x001A2CBE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void TickPowerGeneration()
 	{
@@ -78,7 +78,7 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x060042E2 RID: 17122 RVA: 0x001A3A2C File Offset: 0x001A1C2C
+	// Token: 0x06004305 RID: 17157 RVA: 0x001A4AD4 File Offset: 0x001A2CD4
 	public override void HandleSendPower()
 	{
 		if (base.IsOn)
@@ -127,14 +127,14 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x060042E3 RID: 17123 RVA: 0x001A3B55 File Offset: 0x001A1D55
+	// Token: 0x06004306 RID: 17158 RVA: 0x001A4BFD File Offset: 0x001A2DFD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ShouldClearPower()
 	{
 		return this.sunLight != 15 || !GameManager.Instance.World.IsDaytime();
 	}
 
-	// Token: 0x060042E4 RID: 17124 RVA: 0x001A3B75 File Offset: 0x001A1D75
+	// Token: 0x06004307 RID: 17159 RVA: 0x001A4C1D File Offset: 0x001A2E1D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void RefreshPowerStats()
 	{
@@ -142,7 +142,7 @@ public class PowerSolarPanel : PowerSource
 		this.MaxPower = this.MaxOutput;
 	}
 
-	// Token: 0x060042E5 RID: 17125 RVA: 0x001A3B89 File Offset: 0x001A1D89
+	// Token: 0x06004308 RID: 17160 RVA: 0x001A4C31 File Offset: 0x001A2E31
 	public override void read(PooledBinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
@@ -152,29 +152,29 @@ public class PowerSolarPanel : PowerSource
 		}
 	}
 
-	// Token: 0x060042E6 RID: 17126 RVA: 0x001A3BAC File Offset: 0x001A1DAC
+	// Token: 0x06004309 RID: 17161 RVA: 0x001A4C54 File Offset: 0x001A2E54
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.sunLight);
 	}
 
-	// Token: 0x0400364C RID: 13900
+	// Token: 0x0400366C RID: 13932
 	public ushort InputFromSun;
 
-	// Token: 0x0400364D RID: 13901
+	// Token: 0x0400366D RID: 13933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte sunLight;
 
-	// Token: 0x0400364E RID: 13902
+	// Token: 0x0400366E RID: 13934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastHasLight;
 
-	// Token: 0x0400364F RID: 13903
+	// Token: 0x0400366F RID: 13935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string runningSound = "solarpanel_idle";
 
-	// Token: 0x04003651 RID: 13905
+	// Token: 0x04003671 RID: 13937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lightUpdateTime;
 }

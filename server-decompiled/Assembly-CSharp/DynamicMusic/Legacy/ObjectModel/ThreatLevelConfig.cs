@@ -4,7 +4,7 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic.Legacy.ObjectModel
 {
-	// Token: 0x02001ACF RID: 6863
+	// Token: 0x02001B00 RID: 6912
 	public class ThreatLevelConfig : Dictionary<LayerType, LayerConfig>
 	{
 	}

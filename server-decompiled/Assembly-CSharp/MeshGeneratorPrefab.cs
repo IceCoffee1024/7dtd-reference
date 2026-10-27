@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000648 RID: 1608
+// Token: 0x0200064F RID: 1615
 public class MeshGeneratorPrefab : MeshGenerator
 {
-	// Token: 0x0600347B RID: 13435 RVA: 0x00154990 File Offset: 0x00152B90
+	// Token: 0x06003489 RID: 13449 RVA: 0x00155584 File Offset: 0x00153784
 	public MeshGeneratorPrefab(Prefab _prefab)
 		: base(_prefab)
 	{
 		this.prefab = _prefab;
 	}
 
-	// Token: 0x0600347C RID: 13436 RVA: 0x00154A28 File Offset: 0x00152C28
+	// Token: 0x0600348A RID: 13450 RVA: 0x0015561C File Offset: 0x0015381C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateMesh(Vector3i _worldPos, Vector3 _drawPosOffset, Vector3i _start, Vector3i _end, VoxelMesh[] _meshes, bool _bCalcAmbientLight, bool _bOnlyDistortVertices)
 	{
@@ -19,7 +19,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		this.build(MeshGeneratorPrefab.cVectorAdd + _drawPosOffset, new Vector3i(_start.x, _start.y, _start.z), new Vector3i(_end.x, _end.y, _end.z), _meshes[5]);
 	}
 
-	// Token: 0x0600347D RID: 13437 RVA: 0x00154A8C File Offset: 0x00152C8C
+	// Token: 0x0600348B RID: 13451 RVA: 0x00155680 File Offset: 0x00153880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte getDensity(int _x, int _y, int _z, int _idxInBlockValues = -1)
 	{
@@ -40,7 +40,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return this.prefab.GetDensity(_x, _y, _z);
 	}
 
-	// Token: 0x0600347E RID: 13438 RVA: 0x00154ADA File Offset: 0x00152CDA
+	// Token: 0x0600348C RID: 13452 RVA: 0x001556CE File Offset: 0x001538CE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue getBlockValue(int _x, int _y, int _z)
 	{
@@ -53,14 +53,14 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return this.prefab.GetBlockNoDamage(this.prefab.GetLocalRotation(), _x, _y, _z);
 	}
 
-	// Token: 0x0600347F RID: 13439 RVA: 0x00154B10 File Offset: 0x00152D10
+	// Token: 0x0600348D RID: 13453 RVA: 0x00155704 File Offset: 0x00153904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkCoordinates(int _x, int _y, int _z)
 	{
 		return _x >= 0 && _x < this.prefab.size.x && _y >= 0 && _y < this.prefab.size.y && _z >= 0 && _z < this.prefab.size.z;
 	}
 
-	// Token: 0x06003480 RID: 13440 RVA: 0x00154B68 File Offset: 0x00152D68
+	// Token: 0x0600348E RID: 13454 RVA: 0x0015575C File Offset: 0x0015395C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isTopSoil(int _x, int _z)
 	{
@@ -68,7 +68,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return chunkFromWorldPos != null && chunkFromWorldPos.IsTopSoil(_x & 15, _z & 15);
 	}
 
-	// Token: 0x06003481 RID: 13441 RVA: 0x00154B9C File Offset: 0x00152D9C
+	// Token: 0x0600348F RID: 13455 RVA: 0x00155790 File Offset: 0x00153990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetTerrainHeight(int _x, int _z)
 	{
@@ -80,7 +80,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return (int)chunkFromWorldPos.GetTerrainHeight(_x & 15, _z & 15);
 	}
 
-	// Token: 0x06003482 RID: 13442 RVA: 0x00154BD0 File Offset: 0x00152DD0
+	// Token: 0x06003490 RID: 13456 RVA: 0x001557C4 File Offset: 0x001539C4
 	public void GenerateMeshOffset(Vector3i _worldStartPos, Vector3i _worldEndPos, VoxelMesh[] _meshes)
 	{
 		base.CreateMesh(Vector3i.zero, Vector3.zero, _worldStartPos - new Vector3i(1, 0, 1), _worldEndPos, _meshes, true, false);
@@ -91,7 +91,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		}
 	}
 
-	// Token: 0x06003483 RID: 13443 RVA: 0x00154C54 File Offset: 0x00152E54
+	// Token: 0x06003491 RID: 13457 RVA: 0x00155848 File Offset: 0x00153A48
 	public void GenerateMeshNoTerrain(Vector3i _worldStartPos, Vector3i _worldEndPos, VoxelMesh[] _meshes)
 	{
 		base.CreateMesh(Vector3i.zero, Vector3.zero, _worldStartPos, _worldEndPos, _meshes, true, false);
@@ -101,7 +101,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		}
 	}
 
-	// Token: 0x06003484 RID: 13444 RVA: 0x00154C8C File Offset: 0x00152E8C
+	// Token: 0x06003492 RID: 13458 RVA: 0x00155880 File Offset: 0x00153A80
 	public void GenerateMeshTerrainOnly(Vector3i _worldStartPos, Vector3i _worldEndPos, VoxelMesh[] _meshes)
 	{
 		this.build(Vector3.zero, new Vector3i(_worldStartPos.x, _worldStartPos.y, _worldStartPos.z), new Vector3i(_worldEndPos.x, _worldEndPos.y, _worldEndPos.z), _meshes[5]);
@@ -111,7 +111,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		}
 	}
 
-	// Token: 0x06003485 RID: 13445 RVA: 0x00154CEC File Offset: 0x00152EEC
+	// Token: 0x06003493 RID: 13459 RVA: 0x001558E0 File Offset: 0x00153AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool calcTopSoil(int _x, int _y, int _z)
 	{
@@ -141,7 +141,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return _y > num && this.isTopSoil(_x - 1, _z);
 	}
 
-	// Token: 0x06003486 RID: 13446 RVA: 0x00154D94 File Offset: 0x00152F94
+	// Token: 0x06003494 RID: 13460 RVA: 0x00155988 File Offset: 0x00153B88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetTextureFor(int _x, int _y, int _z, int idx)
 	{
@@ -165,7 +165,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return VoxelMeshTerrain.EncodeTexIds(sideTextureId, sideTextureId2);
 	}
 
-	// Token: 0x06003487 RID: 13447 RVA: 0x00154E1C File Offset: 0x0015301C
+	// Token: 0x06003495 RID: 13461 RVA: 0x00155A10 File Offset: 0x00153C10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void calcLights(int _x, int _y, int _z, out byte _sun, out byte _block)
 	{
@@ -189,14 +189,14 @@ public class MeshGeneratorPrefab : MeshGenerator
 		_block = Utils.FastMax(b3, b4);
 	}
 
-	// Token: 0x06003488 RID: 13448 RVA: 0x00151DF2 File Offset: 0x0014FFF2
+	// Token: 0x06003496 RID: 13462 RVA: 0x001529E6 File Offset: 0x00150BE6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetDeckIndex(int x, int y, int z)
 	{
 		return x * 16 * 4 + y * 4 + z;
 	}
 
-	// Token: 0x06003489 RID: 13449 RVA: 0x00155040 File Offset: 0x00153240
+	// Token: 0x06003497 RID: 13463 RVA: 0x00155C34 File Offset: 0x00153E34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void build(Vector3 _drawPosOffset, Vector3i _start, Vector3i _end, VoxelMesh _mesh)
 	{
@@ -519,7 +519,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		}
 	}
 
-	// Token: 0x0600348A RID: 13450 RVA: 0x00155F78 File Offset: 0x00154178
+	// Token: 0x06003498 RID: 13464 RVA: 0x00156B6C File Offset: 0x00154D6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalculateSecondaryPosition(int level, int buildVertex)
 	{
@@ -586,14 +586,14 @@ public class MeshGeneratorPrefab : MeshGenerator
 		}
 	}
 
-	// Token: 0x0600348B RID: 13451 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x06003499 RID: 13465 RVA: 0x0004E452 File Offset: 0x0004C652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 CalculateNormal(Vector3i coord)
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x0600348C RID: 13452 RVA: 0x001563E8 File Offset: 0x001545E8
+	// Token: 0x0600349A RID: 13466 RVA: 0x00156FDC File Offset: 0x001551DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 CalculateNormal(Vector3i coord0, Vector3i coord1, int t, int u)
 	{
@@ -604,7 +604,7 @@ public class MeshGeneratorPrefab : MeshGenerator
 		return vector3;
 	}
 
-	// Token: 0x0600348D RID: 13453 RVA: 0x00156424 File Offset: 0x00154624
+	// Token: 0x0600349B RID: 13467 RVA: 0x00157018 File Offset: 0x00155218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FindSurfaceCrossingEdge(int level, Vector3i coord0, Vector3i coord1, ref int d0, ref int d1)
 	{
@@ -629,67 +629,67 @@ public class MeshGeneratorPrefab : MeshGenerator
 		}
 	}
 
-	// Token: 0x0400295D RID: 10589
+	// Token: 0x04002978 RID: 10616
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab prefab;
 
-	// Token: 0x0400295E RID: 10590
+	// Token: 0x04002979 RID: 10617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort[,,] deck1 = new ushort[17, 17, 4];
 
-	// Token: 0x0400295F RID: 10591
+	// Token: 0x0400297A RID: 10618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort[,,] deck2 = new ushort[17, 17, 4];
 
-	// Token: 0x04002960 RID: 10592
+	// Token: 0x0400297B RID: 10619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort[][,,] decks = new ushort[2][,,];
 
-	// Token: 0x04002961 RID: 10593
+	// Token: 0x0400297C RID: 10620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transvoxel.BuildVertex[] vertexStorage = new Transvoxel.BuildVertex[8192];
 
-	// Token: 0x04002962 RID: 10594
+	// Token: 0x0400297D RID: 10621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transvoxel.BuildTriangle[] triangleStorage = new Transvoxel.BuildTriangle[8192];
 
-	// Token: 0x04002963 RID: 10595
+	// Token: 0x0400297E RID: 10622
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte[] density = new sbyte[8];
 
-	// Token: 0x04002964 RID: 10596
+	// Token: 0x0400297F RID: 10623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] globalVertexIndex = new int[12];
 
-	// Token: 0x04002965 RID: 10597
+	// Token: 0x04002980 RID: 10624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3 cVectorAdd = new Vector3(0.5f, 0.5f, 0.5f);
 
-	// Token: 0x04002966 RID: 10598
+	// Token: 0x04002981 RID: 10625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue[] blockValues = new BlockValue[8];
 
-	// Token: 0x04002967 RID: 10599
+	// Token: 0x04002982 RID: 10626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool[] bTopSoil = new bool[8];
 
-	// Token: 0x04002968 RID: 10600
+	// Token: 0x04002983 RID: 10627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int startX;
 
-	// Token: 0x04002969 RID: 10601
+	// Token: 0x04002984 RID: 10628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int startZ;
 
-	// Token: 0x0400296A RID: 10602
+	// Token: 0x04002985 RID: 10629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeX;
 
-	// Token: 0x0400296B RID: 10603
+	// Token: 0x04002986 RID: 10630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeZ;
 
-	// Token: 0x0400296C RID: 10604
+	// Token: 0x04002987 RID: 10631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector2i[] adjLightPos = new Vector2i[]
 	{

@@ -5,13 +5,13 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E0C RID: 3596
+// Token: 0x02000E17 RID: 3607
 [Preserve]
 public class XUiC_Credits : XUiController
 {
-	// Token: 0x17000C44 RID: 3140
-	// (get) Token: 0x06006D8A RID: 28042 RVA: 0x002ABE69 File Offset: 0x002AA069
-	// (set) Token: 0x06006D8B RID: 28043 RVA: 0x002ABE71 File Offset: 0x002AA071
+	// Token: 0x17000C4A RID: 3146
+	// (get) Token: 0x06006DAF RID: 28079 RVA: 0x002AD391 File Offset: 0x002AB591
+	// (set) Token: 0x06006DB0 RID: 28080 RVA: 0x002AD399 File Offset: 0x002AB599
 	[XuiXmlAttribute("file", false)]
 	public string CreditsFile
 	{
@@ -21,7 +21,7 @@ public class XUiC_Credits : XUiController
 		set;
 	}
 
-	// Token: 0x06006D8C RID: 28044 RVA: 0x002ABE7C File Offset: 0x002AA07C
+	// Token: 0x06006DB1 RID: 28081 RVA: 0x002AD3A4 File Offset: 0x002AB5A4
 	public override void Init()
 	{
 		base.Init();
@@ -33,7 +33,7 @@ public class XUiC_Credits : XUiController
 		this.getTemplates("creditTemplates", this.creditTemplates, ref this.defaultCreditTemplate);
 	}
 
-	// Token: 0x06006D8D RID: 28045 RVA: 0x002ABF08 File Offset: 0x002AA108
+	// Token: 0x06006DB2 RID: 28082 RVA: 0x002AD430 File Offset: 0x002AB630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void getTemplates(string _parentRectName, Dictionary<string, GameObject> _templatesDict, ref string _defaultTemplateField)
 	{
@@ -54,7 +54,7 @@ public class XUiC_Credits : XUiController
 		}
 	}
 
-	// Token: 0x06006D8E RID: 28046 RVA: 0x0008A7E7 File Offset: 0x000889E7
+	// Token: 0x06006DB3 RID: 28083 RVA: 0x0008AA1B File Offset: 0x00088C1B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBack_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -62,7 +62,7 @@ public class XUiC_Credits : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_MainMenu.ID, true);
 	}
 
-	// Token: 0x06006D8F RID: 28047 RVA: 0x002ABF6C File Offset: 0x002AA16C
+	// Token: 0x06006DB4 RID: 28084 RVA: 0x002AD494 File Offset: 0x002AB694
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -91,7 +91,7 @@ public class XUiC_Credits : XUiController
 		this.creditsPanel.ClipOffset = Vector2.zero;
 	}
 
-	// Token: 0x06006D90 RID: 28048 RVA: 0x002AC074 File Offset: 0x002AA274
+	// Token: 0x06006DB5 RID: 28085 RVA: 0x002AD59C File Offset: 0x002AB79C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -105,7 +105,7 @@ public class XUiC_Credits : XUiController
 		this.creditsPanel.ClipOffset = vector;
 	}
 
-	// Token: 0x06006D91 RID: 28049 RVA: 0x002AC0F8 File Offset: 0x002AA2F8
+	// Token: 0x06006DB6 RID: 28086 RVA: 0x002AD620 File Offset: 0x002AB820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XmlFile loadXml()
 	{
@@ -121,7 +121,7 @@ public class XUiC_Credits : XUiController
 		return null;
 	}
 
-	// Token: 0x06006D92 RID: 28050 RVA: 0x002AC146 File Offset: 0x002AA346
+	// Token: 0x06006DB7 RID: 28087 RVA: 0x002AD66E File Offset: 0x002AB86E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject getTemplate(string _name, string _defaultTemplateName, Dictionary<string, GameObject> _templatesDict)
 	{
@@ -132,7 +132,7 @@ public class XUiC_Credits : XUiController
 		return _templatesDict[_name];
 	}
 
-	// Token: 0x06006D93 RID: 28051 RVA: 0x002AC15C File Offset: 0x002AA35C
+	// Token: 0x06006DB8 RID: 28088 RVA: 0x002AD684 File Offset: 0x002AB884
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadCredits()
 	{
@@ -204,57 +204,57 @@ public class XUiC_Credits : XUiController
 		component2.Reposition();
 	}
 
-	// Token: 0x040053A8 RID: 21416
+	// Token: 0x040053CD RID: 21453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ScrollSpeed = 50;
 
-	// Token: 0x040053A9 RID: 21417
+	// Token: 0x040053CE RID: 21454
 	public static string ID = "";
 
-	// Token: 0x040053AA RID: 21418
+	// Token: 0x040053CF RID: 21455
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;
 
-	// Token: 0x040053AB RID: 21419
+	// Token: 0x040053D0 RID: 21456
 	[XuiBindComponent("creditsGrid", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView creditsGrid;
 
-	// Token: 0x040053AC RID: 21420
+	// Token: 0x040053D1 RID: 21457
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Panel creditsPanel;
 
-	// Token: 0x040053AD RID: 21421
+	// Token: 0x040053D2 RID: 21458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform creditsGridTrans;
 
-	// Token: 0x040053AE RID: 21422
+	// Token: 0x040053D3 RID: 21459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i initialPosition;
 
-	// Token: 0x040053B0 RID: 21424
+	// Token: 0x040053D5 RID: 21461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string defaultCategoryTemplate;
 
-	// Token: 0x040053B1 RID: 21425
+	// Token: 0x040053D6 RID: 21462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string defaultCreditTemplate;
 
-	// Token: 0x040053B2 RID: 21426
+	// Token: 0x040053D7 RID: 21463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, GameObject> categoryTemplates = new CaseInsensitiveStringDictionary<GameObject>();
 
-	// Token: 0x040053B3 RID: 21427
+	// Token: 0x040053D8 RID: 21464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, GameObject> creditTemplates = new CaseInsensitiveStringDictionary<GameObject>();
 
-	// Token: 0x040053B4 RID: 21428
+	// Token: 0x040053D9 RID: 21465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstUpdate;
 
-	// Token: 0x040053B5 RID: 21429
+	// Token: 0x040053DA RID: 21466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool loaded;
 }

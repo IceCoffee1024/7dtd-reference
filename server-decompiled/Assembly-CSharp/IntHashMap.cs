@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02001441 RID: 5185
+// Token: 0x02001453 RID: 5203
 public class IntHashMap
 {
-	// Token: 0x0600A29E RID: 41630 RVA: 0x003D0640 File Offset: 0x003CE840
+	// Token: 0x0600A2F6 RID: 41718 RVA: 0x003D2A44 File Offset: 0x003D0C44
 	public IntHashMap()
 	{
 		this.threshold = 12;
 		this.slots = new IntHashMapEntry[16];
 	}
 
-	// Token: 0x0600A29F RID: 41631 RVA: 0x003D065D File Offset: 0x003CE85D
+	// Token: 0x0600A2F7 RID: 41719 RVA: 0x003D2A61 File Offset: 0x003D0C61
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int computeHash(int _v)
 	{
@@ -18,14 +18,14 @@ public class IntHashMap
 		return _v ^ (_v >> 7) ^ (_v >> 4);
 	}
 
-	// Token: 0x0600A2A0 RID: 41632 RVA: 0x003D0675 File Offset: 0x003CE875
+	// Token: 0x0600A2F8 RID: 41720 RVA: 0x003D2A79 File Offset: 0x003D0C79
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int getSlotIndex(int _p1, int _p2)
 	{
 		return _p1 & (_p2 - 1);
 	}
 
-	// Token: 0x0600A2A1 RID: 41633 RVA: 0x003D067C File Offset: 0x003CE87C
+	// Token: 0x0600A2F9 RID: 41721 RVA: 0x003D2A80 File Offset: 0x003D0C80
 	public object lookup(int _p)
 	{
 		int num = IntHashMap.computeHash(_p);
@@ -39,13 +39,13 @@ public class IntHashMap
 		return null;
 	}
 
-	// Token: 0x0600A2A2 RID: 41634 RVA: 0x003D06C3 File Offset: 0x003CE8C3
+	// Token: 0x0600A2FA RID: 41722 RVA: 0x003D2AC7 File Offset: 0x003D0CC7
 	public bool containsItem(int _item)
 	{
 		return this.lookupEntry(_item) != null;
 	}
 
-	// Token: 0x0600A2A3 RID: 41635 RVA: 0x003D06D0 File Offset: 0x003CE8D0
+	// Token: 0x0600A2FB RID: 41723 RVA: 0x003D2AD4 File Offset: 0x003D0CD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IntHashMapEntry lookupEntry(int _item)
 	{
@@ -60,7 +60,7 @@ public class IntHashMap
 		return null;
 	}
 
-	// Token: 0x0600A2A4 RID: 41636 RVA: 0x003D0714 File Offset: 0x003CE914
+	// Token: 0x0600A2FC RID: 41724 RVA: 0x003D2B18 File Offset: 0x003D0D18
 	public void addKey(int _key, object _value)
 	{
 		int num = IntHashMap.computeHash(_key);
@@ -76,7 +76,7 @@ public class IntHashMap
 		this.insert(num, _key, _value, slotIndex);
 	}
 
-	// Token: 0x0600A2A5 RID: 41637 RVA: 0x003D0778 File Offset: 0x003CE978
+	// Token: 0x0600A2FD RID: 41725 RVA: 0x003D2B7C File Offset: 0x003D0D7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void grow(int _size)
 	{
@@ -91,7 +91,7 @@ public class IntHashMap
 		this.threshold = (int)((float)_size * 0.75f);
 	}
 
-	// Token: 0x0600A2A6 RID: 41638 RVA: 0x003D07C4 File Offset: 0x003CE9C4
+	// Token: 0x0600A2FE RID: 41726 RVA: 0x003D2BC8 File Offset: 0x003D0DC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void copyTo(IntHashMapEntry[] _other)
 	{
@@ -116,7 +116,7 @@ public class IntHashMap
 		}
 	}
 
-	// Token: 0x0600A2A7 RID: 41639 RVA: 0x003D081C File Offset: 0x003CEA1C
+	// Token: 0x0600A2FF RID: 41727 RVA: 0x003D2C20 File Offset: 0x003D0E20
 	public object removeObject(int _key)
 	{
 		IntHashMapEntry intHashMapEntry = this.removeEntry(_key);
@@ -127,7 +127,7 @@ public class IntHashMap
 		return intHashMapEntry.valueEntry;
 	}
 
-	// Token: 0x0600A2A8 RID: 41640 RVA: 0x003D083C File Offset: 0x003CEA3C
+	// Token: 0x0600A300 RID: 41728 RVA: 0x003D2C40 File Offset: 0x003D0E40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IntHashMapEntry removeEntry(int _key)
 	{
@@ -157,7 +157,7 @@ public class IntHashMap
 		return intHashMapEntry2;
 	}
 
-	// Token: 0x0600A2A9 RID: 41641 RVA: 0x003D08BC File Offset: 0x003CEABC
+	// Token: 0x0600A301 RID: 41729 RVA: 0x003D2CC0 File Offset: 0x003D0EC0
 	public void clearMap()
 	{
 		this.versionStamp++;
@@ -169,7 +169,7 @@ public class IntHashMap
 		this.count = 0;
 	}
 
-	// Token: 0x0600A2AA RID: 41642 RVA: 0x003D08FC File Offset: 0x003CEAFC
+	// Token: 0x0600A302 RID: 41730 RVA: 0x003D2D00 File Offset: 0x003D0F00
 	public void map(Action<object> callback)
 	{
 		for (int i = 0; i < this.slots.Length; i++)
@@ -181,7 +181,7 @@ public class IntHashMap
 		}
 	}
 
-	// Token: 0x0600A2AB RID: 41643 RVA: 0x003D0940 File Offset: 0x003CEB40
+	// Token: 0x0600A303 RID: 41731 RVA: 0x003D2D44 File Offset: 0x003D0F44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void insert(int _i1, int _i2, object _object, int _key)
 	{
@@ -195,29 +195,29 @@ public class IntHashMap
 		}
 	}
 
-	// Token: 0x0600A2AC RID: 41644 RVA: 0x003D0992 File Offset: 0x003CEB92
+	// Token: 0x0600A304 RID: 41732 RVA: 0x003D2D96 File Offset: 0x003D0F96
 	public static int getHash(int _v)
 	{
 		return IntHashMap.computeHash(_v);
 	}
 
-	// Token: 0x04007A2B RID: 31275
+	// Token: 0x04007A6C RID: 31340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IntHashMapEntry[] slots;
 
-	// Token: 0x04007A2C RID: 31276
+	// Token: 0x04007A6D RID: 31341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count;
 
-	// Token: 0x04007A2D RID: 31277
+	// Token: 0x04007A6E RID: 31342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int threshold;
 
-	// Token: 0x04007A2E RID: 31278
+	// Token: 0x04007A6F RID: 31343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float growFactor = 0.75f;
 
-	// Token: 0x04007A2F RID: 31279
+	// Token: 0x04007A70 RID: 31344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile int versionStamp;
 }

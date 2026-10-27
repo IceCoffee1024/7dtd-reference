@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Scripting;
 
-// Token: 0x020004B4 RID: 1204
+// Token: 0x020004B6 RID: 1206
 [Preserve]
 public class EntityFallingBlock : Entity
 {
 	// Token: 0x17000435 RID: 1077
-	// (get) Token: 0x060025C9 RID: 9673 RVA: 0x0002F260 File Offset: 0x0002D460
+	// (get) Token: 0x060025D0 RID: 9680 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override Entity.EnumPositionUpdateMovementType positionUpdateMovementType
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,7 +20,7 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025CA RID: 9674 RVA: 0x000E6A0C File Offset: 0x000E4C0C
+	// Token: 0x060025D1 RID: 9681 RVA: 0x000E6E1C File Offset: 0x000E501C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -36,7 +36,7 @@ public class EntityFallingBlock : Entity
 		transform.GetComponent<SphereCollider>().enabled = false;
 	}
 
-	// Token: 0x060025CB RID: 9675 RVA: 0x000E6A68 File Offset: 0x000E4C68
+	// Token: 0x060025D2 RID: 9682 RVA: 0x000E6E78 File Offset: 0x000E5078
 	public override void InitLocation(Vector3 _pos, Vector3 _rot)
 	{
 		base.InitLocation(_pos, _rot);
@@ -54,13 +54,13 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025CC RID: 9676 RVA: 0x000E6B07 File Offset: 0x000E4D07
+	// Token: 0x060025D3 RID: 9683 RVA: 0x000E6F17 File Offset: 0x000E5117
 	public BlockValue GetBlockValue()
 	{
 		return this.blockValue;
 	}
 
-	// Token: 0x060025CD RID: 9677 RVA: 0x000E6B10 File Offset: 0x000E4D10
+	// Token: 0x060025D4 RID: 9684 RVA: 0x000E6F20 File Offset: 0x000E5120
 	public void SetBlockValue(BlockValue _blockValue)
 	{
 		this.blockValue = _blockValue;
@@ -74,32 +74,32 @@ public class EntityFallingBlock : Entity
 		this.myCollider = base.transform.GetComponent<BoxCollider>();
 	}
 
-	// Token: 0x060025CE RID: 9678 RVA: 0x000E6B85 File Offset: 0x000E4D85
+	// Token: 0x060025D5 RID: 9685 RVA: 0x000E6F95 File Offset: 0x000E5195
 	public TextureFullArray GetTextureFull()
 	{
 		return this.textureFull;
 	}
 
-	// Token: 0x060025CF RID: 9679 RVA: 0x000E6B8D File Offset: 0x000E4D8D
+	// Token: 0x060025D6 RID: 9686 RVA: 0x000E6F9D File Offset: 0x000E519D
 	public void SetTextureFull(TextureFullArray _textureFull)
 	{
 		this.textureFull = _textureFull;
 	}
 
-	// Token: 0x060025D0 RID: 9680 RVA: 0x000E6B96 File Offset: 0x000E4D96
+	// Token: 0x060025D7 RID: 9687 RVA: 0x000E6FA6 File Offset: 0x000E51A6
 	public void SetCanvasState(SignCanvas.CanvasState _state)
 	{
 		this.pendingCanvasState = _state;
 	}
 
-	// Token: 0x060025D1 RID: 9681 RVA: 0x000E6B9F File Offset: 0x000E4D9F
+	// Token: 0x060025D8 RID: 9688 RVA: 0x000E6FAF File Offset: 0x000E51AF
 	public void SetStartVelocity(Vector3 _vel, float _angularVel)
 	{
 		this.startVel = _vel;
 		this.startAngularVel = _angularVel;
 	}
 
-	// Token: 0x060025D2 RID: 9682 RVA: 0x000E6BB0 File Offset: 0x000E4DB0
+	// Token: 0x060025D9 RID: 9689 RVA: 0x000E6FC0 File Offset: 0x000E51C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -138,7 +138,7 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025D3 RID: 9683 RVA: 0x000E6D94 File Offset: 0x000E4F94
+	// Token: 0x060025DA RID: 9690 RVA: 0x000E71A4 File Offset: 0x000E53A4
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -245,7 +245,7 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025D4 RID: 9684 RVA: 0x000E718B File Offset: 0x000E538B
+	// Token: 0x060025DB RID: 9691 RVA: 0x000E759B File Offset: 0x000E579B
 	public override void SetDead()
 	{
 		SignCanvas signCanvas = this.signCanvas;
@@ -258,7 +258,7 @@ public class EntityFallingBlock : Entity
 		base.SetDead();
 	}
 
-	// Token: 0x060025D5 RID: 9685 RVA: 0x000E71C4 File Offset: 0x000E53C4
+	// Token: 0x060025DC RID: 9692 RVA: 0x000E75D4 File Offset: 0x000E57D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateMesh()
 	{
@@ -324,7 +324,7 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025D6 RID: 9686 RVA: 0x000E738A File Offset: 0x000E558A
+	// Token: 0x060025DD RID: 9693 RVA: 0x000E779A File Offset: 0x000E599A
 	public override void VisiblityCheck(float _distanceSqr, bool _masterIsZooming)
 	{
 		if (this.meshRenderer)
@@ -333,13 +333,13 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025D7 RID: 9687 RVA: 0x000E73B7 File Offset: 0x000E55B7
+	// Token: 0x060025DE RID: 9694 RVA: 0x000E77C7 File Offset: 0x000E59C7
 	public override bool CanCollideWith(Entity _other)
 	{
 		return _other is EntityAlive;
 	}
 
-	// Token: 0x060025D8 RID: 9688 RVA: 0x000E73C4 File Offset: 0x000E55C4
+	// Token: 0x060025DF RID: 9695 RVA: 0x000E77D4 File Offset: 0x000E59D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTransform()
 	{
@@ -369,7 +369,7 @@ public class EntityFallingBlock : Entity
 		this.qrotation = transform.rotation;
 	}
 
-	// Token: 0x060025D9 RID: 9689 RVA: 0x000E74F0 File Offset: 0x000E56F0
+	// Token: 0x060025E0 RID: 9696 RVA: 0x000E7900 File Offset: 0x000E5B00
 	public void OnContactEvent()
 	{
 		if (this.isGroundHit || this.isEntityRemote)
@@ -390,13 +390,13 @@ public class EntityFallingBlock : Entity
 		this.world.GetGameManager().SpawnParticleEffectServer(new ParticleEffect(text, base.GetPosition(), Quaternion.identity, lightBrightness, colorForSide, this.blockValue.Block.blockMaterial.SurfaceCategory + "hit" + block.Block.blockMaterial.SurfaceCategory, null, 1f, ""), this.entityId, false, false);
 	}
 
-	// Token: 0x060025DA RID: 9690 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060025E1 RID: 9697 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsQRotationUsed()
 	{
 		return true;
 	}
 
-	// Token: 0x060025DB RID: 9691 RVA: 0x000E75DF File Offset: 0x000E57DF
+	// Token: 0x060025E2 RID: 9698 RVA: 0x000E79EF File Offset: 0x000E5BEF
 	public override void OnEntityUnload()
 	{
 		base.OnEntityUnload();
@@ -406,7 +406,7 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x060025DC RID: 9692 RVA: 0x000E760C File Offset: 0x000E580C
+	// Token: 0x060025E3 RID: 9699 RVA: 0x000E7A1C File Offset: 0x000E5C1C
 	public static void ClearFallingBlocksForChunks(HashSetLong chunks)
 	{
 		List<EntityFallingBlock> list = new List<EntityFallingBlock>();
@@ -426,135 +426,135 @@ public class EntityFallingBlock : Entity
 		}
 	}
 
-	// Token: 0x04001C0C RID: 7180
+	// Token: 0x04001C1C RID: 7196
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMaxHitsPerEntity = 3;
 
-	// Token: 0x04001C0D RID: 7181
+	// Token: 0x04001C1D RID: 7197
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMinDamageToCountHit = 1;
 
-	// Token: 0x04001C0E RID: 7182
-	public Transform prefabParticleOnFallT;
-
-	// Token: 0x04001C0F RID: 7183
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Renderer meshRenderer;
-
-	// Token: 0x04001C10 RID: 7184
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Rigidbody rigidBody;
-
-	// Token: 0x04001C11 RID: 7185
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public BlockValue blockValue;
-
-	// Token: 0x04001C12 RID: 7186
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isTerrain;
-
-	// Token: 0x04001C13 RID: 7187
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float terrainScale;
-
-	// Token: 0x04001C14 RID: 7188
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float massKg;
-
-	// Token: 0x04001C15 RID: 7189
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public TextureFullArray textureFull;
-
-	// Token: 0x04001C16 RID: 7190
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isMeshCreated;
-
-	// Token: 0x04001C17 RID: 7191
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public SignCanvas.CanvasState pendingCanvasState;
-
-	// Token: 0x04001C18 RID: 7192
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public SignCanvas signCanvas;
-
-	// Token: 0x04001C19 RID: 7193
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int fallTimeInTicks;
-
-	// Token: 0x04001C1A RID: 7194
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Dictionary<int, int> entityHits = new Dictionary<int, int>(8);
-
-	// Token: 0x04001C1B RID: 7195
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static float lastTimeStartParticleSpawned;
-
-	// Token: 0x04001C1C RID: 7196
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static float lastTimeEndParticleSpawned;
-
-	// Token: 0x04001C1D RID: 7197
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int notMovingCount;
-
 	// Token: 0x04001C1E RID: 7198
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isGroundHit;
+	public Transform prefabParticleOnFallT;
 
 	// Token: 0x04001C1F RID: 7199
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Collider myCollider;
+	public Renderer meshRenderer;
 
 	// Token: 0x04001C20 RID: 7200
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public long chunkKey;
+	public Rigidbody rigidBody;
 
 	// Token: 0x04001C21 RID: 7201
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public static Dictionary<long, List<EntityFallingBlock>> fallingBlocksByChunk = new Dictionary<long, List<EntityFallingBlock>>();
+	public BlockValue blockValue;
 
 	// Token: 0x04001C22 RID: 7202
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 startVel;
+	public bool isTerrain;
 
 	// Token: 0x04001C23 RID: 7203
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float startAngularVel = 0.5f;
+	public float terrainScale;
 
 	// Token: 0x04001C24 RID: 7204
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 interpStartPos;
+	public float massKg;
 
 	// Token: 0x04001C25 RID: 7205
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 interpEndPos;
+	public TextureFullArray textureFull;
 
 	// Token: 0x04001C26 RID: 7206
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isMeshCreated;
+
+	// Token: 0x04001C27 RID: 7207
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public SignCanvas.CanvasState pendingCanvasState;
+
+	// Token: 0x04001C28 RID: 7208
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public SignCanvas signCanvas;
+
+	// Token: 0x04001C29 RID: 7209
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int fallTimeInTicks;
+
+	// Token: 0x04001C2A RID: 7210
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<int, int> entityHits = new Dictionary<int, int>(8);
+
+	// Token: 0x04001C2B RID: 7211
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static float lastTimeStartParticleSpawned;
+
+	// Token: 0x04001C2C RID: 7212
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static float lastTimeEndParticleSpawned;
+
+	// Token: 0x04001C2D RID: 7213
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int notMovingCount;
+
+	// Token: 0x04001C2E RID: 7214
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isGroundHit;
+
+	// Token: 0x04001C2F RID: 7215
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Collider myCollider;
+
+	// Token: 0x04001C30 RID: 7216
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public long chunkKey;
+
+	// Token: 0x04001C31 RID: 7217
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static Dictionary<long, List<EntityFallingBlock>> fallingBlocksByChunk = new Dictionary<long, List<EntityFallingBlock>>();
+
+	// Token: 0x04001C32 RID: 7218
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 startVel;
+
+	// Token: 0x04001C33 RID: 7219
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float startAngularVel = 0.5f;
+
+	// Token: 0x04001C34 RID: 7220
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 interpStartPos;
+
+	// Token: 0x04001C35 RID: 7221
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 interpEndPos;
+
+	// Token: 0x04001C36 RID: 7222
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float interpTime;

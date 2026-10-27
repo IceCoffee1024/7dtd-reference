@@ -4,17 +4,17 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001949 RID: 6473
+	// Token: 0x0200197A RID: 6522
 	[Preserve]
 	public class RequirementObjectiveGroupWindowOpen : BaseRequirementObjectiveGroup
 	{
-		// Token: 0x0600C7EF RID: 51183 RVA: 0x00494523 File Offset: 0x00492723
+		// Token: 0x0600C903 RID: 51459 RVA: 0x00497F17 File Offset: 0x00496117
 		public RequirementObjectiveGroupWindowOpen(string windowOpen)
 		{
 			this.WindowOpen = windowOpen;
 		}
 
-		// Token: 0x0600C7F0 RID: 51184 RVA: 0x00494540 File Offset: 0x00492740
+		// Token: 0x0600C904 RID: 51460 RVA: 0x00497F34 File Offset: 0x00496134
 		public override void CreateRequirements()
 		{
 			if (this.PhaseList == null)
@@ -32,7 +32,7 @@ namespace Challenges
 			this.PhaseList.Add(requirementGroupPhase);
 		}
 
-		// Token: 0x0600C7F1 RID: 51185 RVA: 0x004945AC File Offset: 0x004927AC
+		// Token: 0x0600C905 RID: 51461 RVA: 0x00497FA0 File Offset: 0x004961A0
 		public override bool HasPrerequisiteCondition()
 		{
 			EntityPlayerLocal player = this.Owner.Owner.Player;
@@ -40,13 +40,13 @@ namespace Challenges
 			return window != null && !window.isShowing;
 		}
 
-		// Token: 0x0600C7F2 RID: 51186 RVA: 0x004945FE File Offset: 0x004927FE
+		// Token: 0x0600C906 RID: 51462 RVA: 0x00497FF2 File Offset: 0x004961F2
 		public override BaseRequirementObjectiveGroup Clone()
 		{
 			return new RequirementObjectiveGroupWindowOpen(this.WindowOpen);
 		}
 
-		// Token: 0x04009665 RID: 38501
+		// Token: 0x0400974E RID: 38734
 		public string WindowOpen = "";
 	}
 }

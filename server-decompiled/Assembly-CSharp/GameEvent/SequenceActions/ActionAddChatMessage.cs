@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001984 RID: 6532
+	// Token: 0x020019B5 RID: 6581
 	[Preserve]
 	public class ActionAddChatMessage : ActionBaseClientAction
 	{
-		// Token: 0x0600C91B RID: 51483 RVA: 0x0049845C File Offset: 0x0049665C
+		// Token: 0x0600CA2F RID: 51759 RVA: 0x0049BE50 File Offset: 0x0049A050
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C91C RID: 51484 RVA: 0x00498494 File Offset: 0x00496694
+		// Token: 0x0600CA30 RID: 51760 RVA: 0x0049BE88 File Offset: 0x0049A088
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C91D RID: 51485 RVA: 0x0049850B File Offset: 0x0049670B
+		// Token: 0x0600CA31 RID: 51761 RVA: 0x0049BEFF File Offset: 0x0049A0FF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -44,19 +44,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400973A RID: 38714
+		// Token: 0x04009823 RID: 38947
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string textKey = "";
 
-		// Token: 0x0400973B RID: 38715
+		// Token: 0x04009824 RID: 38948
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string text = "";
 
-		// Token: 0x0400973C RID: 38716
+		// Token: 0x04009825 RID: 38949
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropText = "text";
 
-		// Token: 0x0400973D RID: 38717
+		// Token: 0x04009826 RID: 38950
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTextKey = "text_key";
 	}

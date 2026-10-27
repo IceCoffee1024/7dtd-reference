@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DFE RID: 3582
+// Token: 0x02000E09 RID: 3593
 [Preserve]
 public class XUiC_BlockedPlayersList : XUiController
 {
-	// Token: 0x17000C32 RID: 3122
-	// (get) Token: 0x06006D28 RID: 27944 RVA: 0x002AA53F File Offset: 0x002A873F
+	// Token: 0x17000C38 RID: 3128
+	// (get) Token: 0x06006D4D RID: 27981 RVA: 0x002ABA67 File Offset: 0x002A9C67
 	[XuiXmlBinding("blockedcount")]
 	public int BlockedEntriesCount
 	{
@@ -22,8 +22,8 @@ public class XUiC_BlockedPlayersList : XUiController
 		}
 	}
 
-	// Token: 0x17000C33 RID: 3123
-	// (get) Token: 0x06006D29 RID: 27945 RVA: 0x00178B59 File Offset: 0x00176D59
+	// Token: 0x17000C39 RID: 3129
+	// (get) Token: 0x06006D4E RID: 27982 RVA: 0x00179AF1 File Offset: 0x00177CF1
 	[XuiXmlBinding("blockedmax")]
 	public int MaxBlockedEntries
 	{
@@ -34,8 +34,8 @@ public class XUiC_BlockedPlayersList : XUiController
 		}
 	}
 
-	// Token: 0x17000C34 RID: 3124
-	// (get) Token: 0x06006D2A RID: 27946 RVA: 0x002AA556 File Offset: 0x002A8756
+	// Token: 0x17000C3A RID: 3130
+	// (get) Token: 0x06006D4F RID: 27983 RVA: 0x002ABA7E File Offset: 0x002A9C7E
 	[XuiXmlBinding("recentcount")]
 	public int RecentEntriesCount
 	{
@@ -50,8 +50,8 @@ public class XUiC_BlockedPlayersList : XUiController
 		}
 	}
 
-	// Token: 0x17000C35 RID: 3125
-	// (get) Token: 0x06006D2B RID: 27947 RVA: 0x002AA56D File Offset: 0x002A876D
+	// Token: 0x17000C3B RID: 3131
+	// (get) Token: 0x06006D50 RID: 27984 RVA: 0x002ABA95 File Offset: 0x002A9C95
 	[XuiXmlBinding("recentmax")]
 	public int MaxRecentEntries
 	{
@@ -62,7 +62,7 @@ public class XUiC_BlockedPlayersList : XUiController
 		}
 	}
 
-	// Token: 0x06006D2C RID: 27948 RVA: 0x002AA574 File Offset: 0x002A8774
+	// Token: 0x06006D51 RID: 27985 RVA: 0x002ABA9C File Offset: 0x002A9C9C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -78,7 +78,7 @@ public class XUiC_BlockedPlayersList : XUiController
 		this.updateRecentList();
 	}
 
-	// Token: 0x06006D2D RID: 27949 RVA: 0x002AA5D5 File Offset: 0x002A87D5
+	// Token: 0x06006D52 RID: 27986 RVA: 0x002ABAFD File Offset: 0x002A9CFD
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -96,13 +96,13 @@ public class XUiC_BlockedPlayersList : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006D2E RID: 27950 RVA: 0x002AA608 File Offset: 0x002A8808
+	// Token: 0x06006D53 RID: 27987 RVA: 0x002ABB30 File Offset: 0x002A9D30
 	public void DisplayMessage(string _header, string _message)
 	{
 		XUiC_MessageBoxWindowGroup.ShowOk(this.xui, _header, _message, "", null, false, false, false);
 	}
 
-	// Token: 0x06006D2F RID: 27951 RVA: 0x002AA620 File Offset: 0x002A8820
+	// Token: 0x06006D54 RID: 27988 RVA: 0x002ABB48 File Offset: 0x002A9D48
 	[XuiBindEvent("OnPageChanged", "blockedPager")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBlockedList()
@@ -143,7 +143,7 @@ public class XUiC_BlockedPlayersList : XUiController
 		}
 	}
 
-	// Token: 0x06006D30 RID: 27952 RVA: 0x002AA768 File Offset: 0x002A8968
+	// Token: 0x06006D55 RID: 27989 RVA: 0x002ABC90 File Offset: 0x002A9E90
 	[XuiBindEvent("OnPageChanged", "recentPager")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateRecentList()
@@ -184,32 +184,32 @@ public class XUiC_BlockedPlayersList : XUiController
 		}
 	}
 
-	// Token: 0x04005378 RID: 21368
+	// Token: 0x0400539D RID: 21405
 	[XuiBindComponent("blockList", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Grid blockedPlayerList;
 
-	// Token: 0x04005379 RID: 21369
+	// Token: 0x0400539E RID: 21406
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_PlayersBlockedListEntry[] blockedEntries;
 
-	// Token: 0x0400537A RID: 21370
+	// Token: 0x0400539F RID: 21407
 	[XuiBindComponent("blockedPager", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Paging blockedPager;
 
-	// Token: 0x0400537B RID: 21371
+	// Token: 0x040053A0 RID: 21408
 	[XuiBindComponent("recentList", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Grid recentPlayerList;
 
-	// Token: 0x0400537C RID: 21372
+	// Token: 0x040053A1 RID: 21409
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_PlayersRecentListEntry[] recentEntries;
 
-	// Token: 0x0400537D RID: 21373
+	// Token: 0x040053A2 RID: 21410
 	[XuiBindComponent("recentPager", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Paging recentPager;

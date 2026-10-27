@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018F2 RID: 6386
+	// Token: 0x02001923 RID: 6435
 	[Preserve]
 	public class RaycastPathInfo
 	{
-		// Token: 0x0600C51C RID: 50460 RVA: 0x00488970 File Offset: 0x00486B70
+		// Token: 0x0600C630 RID: 50736 RVA: 0x0048C31C File Offset: 0x0048A51C
 		public RaycastPathInfo(Vector3 start, Vector3 target)
 		{
 			this.Start = start;
@@ -19,8 +19,8 @@ namespace RaycastPathing
 			this.PathEndsIndoors = RaycastPathWorldUtils.IsUnderground(target);
 		}
 
-		// Token: 0x170018C9 RID: 6345
-		// (get) Token: 0x0600C51D RID: 50461 RVA: 0x004889D7 File Offset: 0x00486BD7
+		// Token: 0x17001911 RID: 6417
+		// (get) Token: 0x0600C631 RID: 50737 RVA: 0x0048C383 File Offset: 0x0048A583
 		public Vector3i StartBlockPos
 		{
 			get
@@ -29,8 +29,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018CA RID: 6346
-		// (get) Token: 0x0600C51E RID: 50462 RVA: 0x004889E4 File Offset: 0x00486BE4
+		// Token: 0x17001912 RID: 6418
+		// (get) Token: 0x0600C632 RID: 50738 RVA: 0x0048C390 File Offset: 0x0048A590
 		public Vector3i TargetBlockPos
 		{
 			get
@@ -39,41 +39,41 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018CB RID: 6347
-		// (get) Token: 0x0600C51F RID: 50463 RVA: 0x004889F1 File Offset: 0x00486BF1
-		// (set) Token: 0x0600C520 RID: 50464 RVA: 0x004889F9 File Offset: 0x00486BF9
+		// Token: 0x17001913 RID: 6419
+		// (get) Token: 0x0600C633 RID: 50739 RVA: 0x0048C39D File Offset: 0x0048A59D
+		// (set) Token: 0x0600C634 RID: 50740 RVA: 0x0048C3A5 File Offset: 0x0048A5A5
 		public bool PathStartsIndoors
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170018CC RID: 6348
-		// (get) Token: 0x0600C521 RID: 50465 RVA: 0x00488A02 File Offset: 0x00486C02
-		// (set) Token: 0x0600C522 RID: 50466 RVA: 0x00488A0A File Offset: 0x00486C0A
+		// Token: 0x17001914 RID: 6420
+		// (get) Token: 0x0600C635 RID: 50741 RVA: 0x0048C3AE File Offset: 0x0048A5AE
+		// (set) Token: 0x0600C636 RID: 50742 RVA: 0x0048C3B6 File Offset: 0x0048A5B6
 		public bool PathEndsIndoors
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600C523 RID: 50467 RVA: 0x0019C7E4 File Offset: 0x0019A9E4
+		// Token: 0x0600C637 RID: 50743 RVA: 0x0019D88C File Offset: 0x0019BA8C
 		public static implicit operator bool(RaycastPathInfo exists)
 		{
 			return exists != null;
 		}
 
-		// Token: 0x040094E0 RID: 38112
+		// Token: 0x040095C9 RID: 38345
 		public readonly Vector3 Start;
 
-		// Token: 0x040094E1 RID: 38113
+		// Token: 0x040095CA RID: 38346
 		public readonly Vector3 Target;
 
-		// Token: 0x040094E2 RID: 38114
+		// Token: 0x040095CB RID: 38347
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RaycastNode StartNode;
 
-		// Token: 0x040094E3 RID: 38115
+		// Token: 0x040095CC RID: 38348
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RaycastNode TargetNode;
 	}

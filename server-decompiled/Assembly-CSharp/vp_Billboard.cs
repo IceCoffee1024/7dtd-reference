@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001596 RID: 5526
+// Token: 0x020015A8 RID: 5544
 public class vp_Billboard : MonoBehaviour
 {
-	// Token: 0x0600AC9E RID: 44190 RVA: 0x004053AC File Offset: 0x004035AC
+	// Token: 0x0600ACF6 RID: 44278 RVA: 0x004077B0 File Offset: 0x004059B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -15,7 +15,7 @@ public class vp_Billboard : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC9F RID: 44191 RVA: 0x004053D8 File Offset: 0x004035D8
+	// Token: 0x0600ACF7 RID: 44279 RVA: 0x004077DC File Offset: 0x004059DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -26,10 +26,10 @@ public class vp_Billboard : MonoBehaviour
 		this.m_Transform.localEulerAngles = this.m_Transform.localEulerAngles;
 	}
 
-	// Token: 0x04007FB3 RID: 32691
+	// Token: 0x04007FF4 RID: 32756
 	public Transform m_CameraTransform;
 
-	// Token: 0x04007FB4 RID: 32692
+	// Token: 0x04007FF5 RID: 32757
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_Transform;

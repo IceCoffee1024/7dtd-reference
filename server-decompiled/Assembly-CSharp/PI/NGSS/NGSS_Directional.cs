@@ -4,13 +4,13 @@ using UnityEngine.Rendering;
 
 namespace PI.NGSS
 {
-	// Token: 0x02001B58 RID: 7000
+	// Token: 0x02001B89 RID: 7049
 	[RequireComponent(typeof(Light))]
 	[ExecuteInEditMode]
 	public class NGSS_Directional : MonoBehaviour
 	{
-		// Token: 0x17001A3E RID: 6718
-		// (get) Token: 0x0600D20F RID: 53775 RVA: 0x004C5932 File Offset: 0x004C3B32
+		// Token: 0x17001A86 RID: 6790
+		// (get) Token: 0x0600D323 RID: 54051 RVA: 0x004C945A File Offset: 0x004C765A
 		public Light DirLight
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -24,9 +24,9 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x17001A3F RID: 6719
-		// (get) Token: 0x0600D211 RID: 53777 RVA: 0x004C5960 File Offset: 0x004C3B60
-		// (set) Token: 0x0600D210 RID: 53776 RVA: 0x004C5954 File Offset: 0x004C3B54
+		// Token: 0x17001A87 RID: 6791
+		// (get) Token: 0x0600D325 RID: 54053 RVA: 0x004C9488 File Offset: 0x004C7688
+		// (set) Token: 0x0600D324 RID: 54052 RVA: 0x004C947C File Offset: 0x004C767C
 		public Material mMaterial
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -56,7 +56,7 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x0600D212 RID: 53778 RVA: 0x004C59DC File Offset: 0x004C3BDC
+		// Token: 0x0600D326 RID: 54054 RVA: 0x004C9504 File Offset: 0x004C7704
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisable()
 		{
@@ -79,7 +79,7 @@ namespace PI.NGSS
 			this.RemoveCommandBuffer();
 		}
 
-		// Token: 0x0600D213 RID: 53779 RVA: 0x004C5A44 File Offset: 0x004C3C44
+		// Token: 0x0600D327 RID: 54055 RVA: 0x004C956C File Offset: 0x004C776C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RemoveCommandBuffer()
 		{
@@ -107,7 +107,7 @@ namespace PI.NGSS
 			this._blendDenoiseCB = null;
 		}
 
-		// Token: 0x0600D214 RID: 53780 RVA: 0x004C5B02 File Offset: 0x004C3D02
+		// Token: 0x0600D328 RID: 54056 RVA: 0x004C962A File Offset: 0x004C782A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnEnable()
 		{
@@ -120,7 +120,7 @@ namespace PI.NGSS
 			this.Init();
 		}
 
-		// Token: 0x0600D215 RID: 53781 RVA: 0x004C5B28 File Offset: 0x004C3D28
+		// Token: 0x0600D329 RID: 54057 RVA: 0x004C9650 File Offset: 0x004C7850
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Init()
 		{
@@ -147,7 +147,7 @@ namespace PI.NGSS
 			this.isInitialized = true;
 		}
 
-		// Token: 0x0600D216 RID: 53782 RVA: 0x004C5BAC File Offset: 0x004C3DAC
+		// Token: 0x0600D32A RID: 54058 RVA: 0x004C96D4 File Offset: 0x004C78D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddCommandBuffer()
 		{
@@ -213,14 +213,14 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x0600D217 RID: 53783 RVA: 0x004C5E26 File Offset: 0x004C4026
+		// Token: 0x0600D32B RID: 54059 RVA: 0x004C994E File Offset: 0x004C7B4E
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsNotSupported()
 		{
 			return SystemInfo.graphicsDeviceType == GraphicsDeviceType.OpenGLES2;
 		}
 
-		// Token: 0x0600D218 RID: 53784 RVA: 0x004C5E30 File Offset: 0x004C4030
+		// Token: 0x0600D32C RID: 54060 RVA: 0x004C9958 File Offset: 0x004C7B58
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -312,260 +312,260 @@ namespace PI.NGSS
 			this.isSetup = true;
 		}
 
-		// Token: 0x04009FBF RID: 40895
+		// Token: 0x0400A0A8 RID: 41128
 		[Header("MAIN SETTINGS")]
 		public Shader denoiserShader;
 
-		// Token: 0x04009FC0 RID: 40896
+		// Token: 0x0400A0A9 RID: 41129
 		[Tooltip("If disabled, NGSS Directional shadows replacement will be removed from Graphics settings when OnDisable is called in this component.")]
 		public bool NGSS_KEEP_ONDISABLE = true;
 
-		// Token: 0x04009FC1 RID: 40897
+		// Token: 0x0400A0AA RID: 41130
 		[Tooltip("Check this option if you don't need to update shadows variables at runtime, only once when scene loads.\nUseful to save some CPU cycles.")]
 		public bool NGSS_NO_UPDATE_ON_PLAY;
 
-		// Token: 0x04009FC2 RID: 40898
+		// Token: 0x0400A0AB RID: 41131
 		[Tooltip("Shadows resolution.\nUseQualitySettings = From Quality Settings, SuperLow = 512, Low = 1024, Med = 2048, High = 4096, Ultra = 8192, Mega = 16384.")]
 		public NGSS_Directional.ShadowMapResolution NGSS_SHADOWS_RESOLUTION = NGSS_Directional.ShadowMapResolution.UseQualitySettings;
 
-		// Token: 0x04009FC3 RID: 40899
+		// Token: 0x0400A0AC RID: 41132
 		[Header("BASE SAMPLING")]
 		[Tooltip("Used to test blocker search and early bail out algorithms. Keep it as low as possible, might lead to white noise if too low.\nRecommended values: Mobile = 8, Consoles & VR = 16, Desktop = 24")]
 		[Range(4f, 32f)]
 		public int NGSS_SAMPLING_TEST = 16;
 
-		// Token: 0x04009FC4 RID: 40900
+		// Token: 0x0400A0AD RID: 41133
 		[Tooltip("Number of samplers per pixel used for PCF and PCSS shadows algorithms.\nRecommended values: Mobile = 16, Consoles & VR = 32, Desktop Med = 48, Desktop High = 64, Desktop Ultra = 128")]
 		[Range(8f, 128f)]
 		public int NGSS_SAMPLING_FILTER = 48;
 
-		// Token: 0x04009FC5 RID: 40901
+		// Token: 0x0400A0AE RID: 41134
 		[Tooltip("New optimization that reduces sampling over distance. Interpolates current sampling set (TEST and FILTER) down to 4spp when reaching this distance.")]
 		[Range(0f, 500f)]
 		public float NGSS_SAMPLING_DISTANCE = 75f;
 
-		// Token: 0x04009FC6 RID: 40902
+		// Token: 0x0400A0AF RID: 41135
 		[Header("SHADOW SOFTNESS")]
 		[Tooltip("Overall shadows softness.")]
 		[Range(0f, 3f)]
 		public float NGSS_SHADOWS_SOFTNESS = 1f;
 
-		// Token: 0x04009FC7 RID: 40903
+		// Token: 0x0400A0B0 RID: 41136
 		[Header("PCSS")]
 		[Tooltip("PCSS Requires inline sampling and SM3.5.\nProvides Area Light soft-shadows.\nDisable it if you are looking for PCF filtering (uniform soft-shadows) which runs with SM3.0.")]
 		public bool NGSS_PCSS_ENABLED;
 
-		// Token: 0x04009FC8 RID: 40904
+		// Token: 0x0400A0B1 RID: 41137
 		[Tooltip("How soft shadows are when close to caster.")]
 		[Range(0f, 2f)]
 		public float NGSS_PCSS_SOFTNESS_NEAR = 0.125f;
 
-		// Token: 0x04009FC9 RID: 40905
+		// Token: 0x0400A0B2 RID: 41138
 		[Tooltip("How soft shadows are when far from caster.")]
 		[Range(0f, 2f)]
 		public float NGSS_PCSS_SOFTNESS_FAR = 1f;
 
-		// Token: 0x04009FCA RID: 40906
+		// Token: 0x0400A0B3 RID: 41139
 		[Header("NOISE")]
 		[Tooltip("If zero = 100% noise.\nIf one = 100% dithering.\nUseful when fighting banding.")]
 		[Range(0f, 1f)]
 		public int NGSS_NOISE_TO_DITHERING_SCALE;
 
-		// Token: 0x04009FCB RID: 40907
+		// Token: 0x0400A0B4 RID: 41140
 		[Tooltip("If you set the noise scale value to something less than 1 you need to input a noise texture.\nRecommended noise textures are blue noise signals.")]
 		public Texture2D NGSS_NOISE_TEXTURE;
 
-		// Token: 0x04009FCC RID: 40908
+		// Token: 0x0400A0B5 RID: 41141
 		[Header("DENOISER")]
 		[Tooltip("Separable low pass filter that help fight artifacts and noise in shadows.\nRequires Cascaded Shadows to be enabled in the Editor Graphics Settings.")]
 		public bool NGSS_DENOISER_ENABLED = true;
 
-		// Token: 0x04009FCD RID: 40909
+		// Token: 0x0400A0B6 RID: 41142
 		[Tooltip("How many iterations the Denoiser algorithm should do.")]
 		[Range(1f, 4f)]
 		public int NGSS_DENOISER_PASSES = 1;
 
-		// Token: 0x04009FCE RID: 40910
+		// Token: 0x0400A0B7 RID: 41143
 		[Tooltip("Overall Denoiser softness.")]
 		[Range(0.01f, 1f)]
 		public float NGSS_DENOISER_SOFTNESS = 1f;
 
-		// Token: 0x04009FCF RID: 40911
+		// Token: 0x0400A0B8 RID: 41144
 		[Tooltip("The amount of shadow edges the Denoiser can tolerate during denoising.")]
 		[Range(0.01f, 1f)]
 		public float NGSS_DENOISER_EDGE_SOFTNESS = 1f;
 
-		// Token: 0x04009FD0 RID: 40912
+		// Token: 0x0400A0B9 RID: 41145
 		[Header("BIAS")]
 		[Tooltip("This estimates receiver slope using derivatives and tries to tilt the filtering kernel along it.\nHowever, when doing it in screenspace from the depth texture can leads to shadow artifacts.\nThus it is disabled by default.")]
 		public bool NGSS_RECEIVER_PLANE_BIAS;
 
-		// Token: 0x04009FD1 RID: 40913
+		// Token: 0x0400A0BA RID: 41146
 		[Header("CASCADES")]
 		[Tooltip("Blends cascades at seams intersection.\nAdditional overhead required for this option.")]
 		public bool NGSS_CASCADES_BLENDING = true;
 
-		// Token: 0x04009FD2 RID: 40914
+		// Token: 0x0400A0BB RID: 41147
 		[Tooltip("Tweak this value to adjust the blending transition between cascades.")]
 		[Range(0f, 2f)]
 		public float NGSS_CASCADES_BLENDING_VALUE = 1f;
 
-		// Token: 0x04009FD3 RID: 40915
+		// Token: 0x0400A0BC RID: 41148
 		[Range(0f, 1f)]
 		[Tooltip("If one, softness across cascades will be matched using splits distribution, resulting in realistic soft-ness over distance.\nIf zero the softness distribution will be based on cascade index, resulting in blurrier shadows over distance thus less realistic.")]
 		public float NGSS_CASCADES_SOFTNESS_NORMALIZATION = 1f;
 
-		// Token: 0x04009FD4 RID: 40916
+		// Token: 0x0400A0BD RID: 41149
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssDirSamplingDistanceid = Shader.PropertyToID("NGSS_DIR_SAMPLING_DISTANCE");
 
-		// Token: 0x04009FD5 RID: 40917
+		// Token: 0x0400A0BE RID: 41150
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssTestSamplersDirid = Shader.PropertyToID("NGSS_TEST_SAMPLERS_DIR");
 
-		// Token: 0x04009FD6 RID: 40918
+		// Token: 0x0400A0BF RID: 41151
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssFilterSamplersDirid = Shader.PropertyToID("NGSS_FILTER_SAMPLERS_DIR");
 
-		// Token: 0x04009FD7 RID: 40919
+		// Token: 0x0400A0C0 RID: 41152
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssGlobalSoftnessid = Shader.PropertyToID("NGSS_GLOBAL_SOFTNESS");
 
-		// Token: 0x04009FD8 RID: 40920
+		// Token: 0x0400A0C1 RID: 41153
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssGlobalSoftnessOptimizedid = Shader.PropertyToID("NGSS_GLOBAL_SOFTNESS_OPTIMIZED");
 
-		// Token: 0x04009FD9 RID: 40921
+		// Token: 0x0400A0C2 RID: 41154
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssOptimizedIterationsid = Shader.PropertyToID("NGSS_OPTIMIZED_ITERATIONS");
 
-		// Token: 0x04009FDA RID: 40922
+		// Token: 0x0400A0C3 RID: 41155
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssOptimizedSamplersid = Shader.PropertyToID("NGSS_OPTIMIZED_SAMPLERS");
 
-		// Token: 0x04009FDB RID: 40923
+		// Token: 0x0400A0C4 RID: 41156
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssNoiseToDitheringScaleDirid = Shader.PropertyToID("NGSS_NOISE_TO_DITHERING_SCALE_DIR");
 
-		// Token: 0x04009FDC RID: 40924
+		// Token: 0x0400A0C5 RID: 41157
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssPcssFilterDirMinid = Shader.PropertyToID("NGSS_PCSS_FILTER_DIR_MIN");
 
-		// Token: 0x04009FDD RID: 40925
+		// Token: 0x0400A0C6 RID: 41158
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssPcssFilterDirMaxid = Shader.PropertyToID("NGSS_PCSS_FILTER_DIR_MAX");
 
-		// Token: 0x04009FDE RID: 40926
+		// Token: 0x0400A0C7 RID: 41159
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssCascadesSoftnessNormalizationid = Shader.PropertyToID("NGSS_CASCADES_SOFTNESS_NORMALIZATION");
 
-		// Token: 0x04009FDF RID: 40927
+		// Token: 0x0400A0C8 RID: 41160
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssCascadesCountid = Shader.PropertyToID("NGSS_CASCADES_COUNT");
 
-		// Token: 0x04009FE0 RID: 40928
+		// Token: 0x0400A0C9 RID: 41161
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssCascadesSplitsid = Shader.PropertyToID("NGSS_CASCADES_SPLITS");
 
-		// Token: 0x04009FE1 RID: 40929
+		// Token: 0x0400A0CA RID: 41162
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _ngssCascadeBlendDistanceid = Shader.PropertyToID("NGSS_CASCADE_BLEND_DISTANCE");
 
-		// Token: 0x04009FE2 RID: 40930
+		// Token: 0x0400A0CB RID: 41163
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _denoiseKernelID = Shader.PropertyToID("DenoiseKernel");
 
-		// Token: 0x04009FE3 RID: 40931
+		// Token: 0x0400A0CC RID: 41164
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _denoiseSoftnessID = Shader.PropertyToID("DenoiseSoftness");
 
-		// Token: 0x04009FE4 RID: 40932
+		// Token: 0x0400A0CD RID: 41165
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _denoiseTextureID = Shader.PropertyToID("NGSS_DenoiseTexture");
 
-		// Token: 0x04009FE5 RID: 40933
+		// Token: 0x0400A0CE RID: 41166
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _denoiseEdgeToleranceID = Shader.PropertyToID("DenoiseEdgeTolerance");
 
-		// Token: 0x04009FE6 RID: 40934
+		// Token: 0x0400A0CF RID: 41167
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public CommandBuffer _computeDenoiseCB;
 
-		// Token: 0x04009FE7 RID: 40935
+		// Token: 0x0400A0D0 RID: 41168
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public CommandBuffer _blendDenoiseCB;
 
-		// Token: 0x04009FE8 RID: 40936
+		// Token: 0x0400A0D1 RID: 41169
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool _DENOISER_ENABLED;
 
-		// Token: 0x04009FE9 RID: 40937
+		// Token: 0x0400A0D2 RID: 41170
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _DENOISER_PASSES = 1;
 
-		// Token: 0x04009FEA RID: 40938
+		// Token: 0x0400A0D3 RID: 41171
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool isSetup;
 
-		// Token: 0x04009FEB RID: 40939
+		// Token: 0x0400A0D4 RID: 41172
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool isInitialized;
 
-		// Token: 0x04009FEC RID: 40940
+		// Token: 0x0400A0D5 RID: 41173
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool isGraphicSet;
 
-		// Token: 0x04009FED RID: 40941
+		// Token: 0x0400A0D6 RID: 41174
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Light _DirLight;
 
-		// Token: 0x04009FEE RID: 40942
+		// Token: 0x0400A0D7 RID: 41175
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Material _mMaterial;
 
-		// Token: 0x02001B59 RID: 7001
+		// Token: 0x02001B8A RID: 7050
 		public enum ShadowMapResolution
 		{
-			// Token: 0x04009FF0 RID: 40944
+			// Token: 0x0400A0D9 RID: 41177
 			UseQualitySettings = 256,
-			// Token: 0x04009FF1 RID: 40945
+			// Token: 0x0400A0DA RID: 41178
 			VeryLow = 512,
-			// Token: 0x04009FF2 RID: 40946
+			// Token: 0x0400A0DB RID: 41179
 			Low = 1024,
-			// Token: 0x04009FF3 RID: 40947
+			// Token: 0x0400A0DC RID: 41180
 			Med = 2048,
-			// Token: 0x04009FF4 RID: 40948
+			// Token: 0x0400A0DD RID: 41181
 			High = 4096,
-			// Token: 0x04009FF5 RID: 40949
+			// Token: 0x0400A0DE RID: 41182
 			Ultra = 8192,
-			// Token: 0x04009FF6 RID: 40950
+			// Token: 0x0400A0DF RID: 41183
 			Mega = 16384
 		}
 	}

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001164 RID: 4452
+// Token: 0x02001174 RID: 4468
 public class XUiTweenScale : XUiTweenAbs
 {
-	// Token: 0x17001068 RID: 4200
-	// (get) Token: 0x06008C7C RID: 35964 RVA: 0x00357D88 File Offset: 0x00355F88
-	// (set) Token: 0x06008C7D RID: 35965 RVA: 0x00357D90 File Offset: 0x00355F90
+	// Token: 0x17001073 RID: 4211
+	// (get) Token: 0x06008CD0 RID: 36048 RVA: 0x00359E34 File Offset: 0x00358034
+	// (set) Token: 0x06008CD1 RID: 36049 RVA: 0x00359E3C File Offset: 0x0035803C
 	[XuiXmlAttribute("start", false)]
 	public Vector3 Start
 	{
@@ -24,9 +24,9 @@ public class XUiTweenScale : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x17001069 RID: 4201
-	// (get) Token: 0x06008C7E RID: 35966 RVA: 0x00357DB8 File Offset: 0x00355FB8
-	// (set) Token: 0x06008C7F RID: 35967 RVA: 0x00357DC0 File Offset: 0x00355FC0
+	// Token: 0x17001074 RID: 4212
+	// (get) Token: 0x06008CD2 RID: 36050 RVA: 0x00359E64 File Offset: 0x00358064
+	// (set) Token: 0x06008CD3 RID: 36051 RVA: 0x00359E6C File Offset: 0x0035806C
 	[XuiXmlAttribute("end", false)]
 	public Vector3 End
 	{
@@ -44,7 +44,7 @@ public class XUiTweenScale : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x06008C80 RID: 35968 RVA: 0x00357DE8 File Offset: 0x00355FE8
+	// Token: 0x06008CD4 RID: 36052 RVA: 0x00359E94 File Offset: 0x00358094
 	[XuiXmlAttribute("play_to", false)]
 	public void AttributePlayToEnd(Vector3 _value)
 	{
@@ -63,13 +63,13 @@ public class XUiTweenScale : XUiTweenAbs
 		this.tween.PlayForward();
 	}
 
-	// Token: 0x06008C81 RID: 35969 RVA: 0x00357E5E File Offset: 0x0035605E
+	// Token: 0x06008CD5 RID: 36053 RVA: 0x00359F0A File Offset: 0x0035810A
 	public XUiTweenScale(XUiView _targetView)
 		: base(_targetView)
 	{
 	}
 
-	// Token: 0x06008C82 RID: 35970 RVA: 0x00357E8C File Offset: 0x0035608C
+	// Token: 0x06008CD6 RID: 36054 RVA: 0x00359F38 File Offset: 0x00358138
 	public override void CreateTween(GameObject _uiGameObject)
 	{
 		this.tween = _uiGameObject.AddMissingComponent<TweenScale>();
@@ -78,15 +78,15 @@ public class XUiTweenScale : XUiTweenAbs
 		base.setCommonTweenValues(this.tween);
 	}
 
-	// Token: 0x040067C8 RID: 26568
+	// Token: 0x04006808 RID: 26632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TweenScale tween;
 
-	// Token: 0x040067C9 RID: 26569
+	// Token: 0x04006809 RID: 26633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 start = Vector3.one;
 
-	// Token: 0x040067CA RID: 26570
+	// Token: 0x0400680A RID: 26634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 end = new Vector3(1.25f, 1.25f, 1f);
 }

@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x0200193A RID: 6458
+	// Token: 0x0200196B RID: 6507
 	[Preserve]
 	public class ChallengeObjectiveSurvive : BaseChallengeObjective
 	{
-		// Token: 0x17001926 RID: 6438
-		// (get) Token: 0x0600C772 RID: 51058 RVA: 0x0049229A File Offset: 0x0049049A
+		// Token: 0x1700196E RID: 6510
+		// (get) Token: 0x0600C886 RID: 51334 RVA: 0x00495C8E File Offset: 0x00493E8E
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -17,8 +17,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001927 RID: 6439
-		// (get) Token: 0x0600C773 RID: 51059 RVA: 0x0049229E File Offset: 0x0049049E
+		// Token: 0x1700196F RID: 6511
+		// (get) Token: 0x0600C887 RID: 51335 RVA: 0x00495C92 File Offset: 0x00493E92
 		public override string DescriptionText
 		{
 			get
@@ -27,8 +27,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001928 RID: 6440
-		// (get) Token: 0x0600C774 RID: 51060 RVA: 0x004922B6 File Offset: 0x004904B6
+		// Token: 0x17001970 RID: 6512
+		// (get) Token: 0x0600C888 RID: 51336 RVA: 0x00495CAA File Offset: 0x00493EAA
 		public override string StatusText
 		{
 			get
@@ -37,12 +37,12 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C775 RID: 51061 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C889 RID: 51337 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C776 RID: 51062 RVA: 0x004922E8 File Offset: 0x004904E8
+		// Token: 0x0600C88A RID: 51338 RVA: 0x00495CDC File Offset: 0x00493EDC
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.TimeSurvive += this.Current_TimeSurvive;
@@ -54,13 +54,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C777 RID: 51063 RVA: 0x0049233F File Offset: 0x0049053F
+		// Token: 0x0600C88B RID: 51339 RVA: 0x00495D33 File Offset: 0x00493F33
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.TimeSurvive -= this.Current_TimeSurvive;
 		}
 
-		// Token: 0x0600C778 RID: 51064 RVA: 0x00492357 File Offset: 0x00490557
+		// Token: 0x0600C88C RID: 51340 RVA: 0x00495D4B File Offset: 0x00493F4B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_TimeSurvive(float val)
 		{
@@ -76,7 +76,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C779 RID: 51065 RVA: 0x0049238C File Offset: 0x0049058C
+		// Token: 0x0600C88D RID: 51341 RVA: 0x00495D80 File Offset: 0x00493F80
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveSurvive();

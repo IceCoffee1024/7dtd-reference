@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x020011BB RID: 4539
+// Token: 0x020011CB RID: 4555
 public enum EnumSelOpMode
 {
-	// Token: 0x04006B2F RID: 27439
+	// Token: 0x04006B47 RID: 27463
 	None,
-	// Token: 0x04006B30 RID: 27440
+	// Token: 0x04006B48 RID: 27464
 	Move,
-	// Token: 0x04006B31 RID: 27441
+	// Token: 0x04006B49 RID: 27465
 	Scale,
-	// Token: 0x04006B32 RID: 27442
+	// Token: 0x04006B4A RID: 27466
 	Mirror,
-	// Token: 0x04006B33 RID: 27443
+	// Token: 0x04006B4B RID: 27467
 	Focus
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000B0F RID: 2831
+// Token: 0x02000B1A RID: 2842
 public class BlockUVCoordinates
 {
-	// Token: 0x060053E3 RID: 21475 RVA: 0x00203FA0 File Offset: 0x002021A0
+	// Token: 0x06005408 RID: 21512 RVA: 0x00205524 File Offset: 0x00203724
 	public BlockUVCoordinates(Rect topUvCoordinates, Rect sideUvCoordinates, Rect bottomUvCoordinates)
 	{
 		this.BlockFaceUvCoordinates[0] = topUvCoordinates;
@@ -15,7 +15,7 @@ public class BlockUVCoordinates
 		this.BlockFaceUvCoordinates[5] = sideUvCoordinates;
 	}
 
-	// Token: 0x060053E4 RID: 21476 RVA: 0x00204010 File Offset: 0x00202210
+	// Token: 0x06005409 RID: 21513 RVA: 0x00205594 File Offset: 0x00203794
 	public BlockUVCoordinates(Rect topUvCoordinates, Rect bottomUvCoordinates, Rect northUvCoordinates, Rect southUvCoordinates, Rect westUvCoordinates, Rect eastUvCoordinates)
 	{
 		this.BlockFaceUvCoordinates[0] = topUvCoordinates;
@@ -26,8 +26,8 @@ public class BlockUVCoordinates
 		this.BlockFaceUvCoordinates[5] = eastUvCoordinates;
 	}
 
-	// Token: 0x17000930 RID: 2352
-	// (get) Token: 0x060053E5 RID: 21477 RVA: 0x00204080 File Offset: 0x00202280
+	// Token: 0x17000936 RID: 2358
+	// (get) Token: 0x0600540A RID: 21514 RVA: 0x00205604 File Offset: 0x00203804
 	public Rect[] BlockFaceUvCoordinates
 	{
 		get
@@ -36,7 +36,7 @@ public class BlockUVCoordinates
 		}
 	}
 
-	// Token: 0x040041CC RID: 16844
+	// Token: 0x040041F1 RID: 16881
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Rect[] m_BlockFaceUvCoordinates = new Rect[6];
 }

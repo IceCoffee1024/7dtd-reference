@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001266 RID: 4710
+// Token: 0x02001278 RID: 4728
 public class LightAnim : MonoBehaviour
 {
-	// Token: 0x060095A8 RID: 38312 RVA: 0x00388694 File Offset: 0x00386894
+	// Token: 0x060095FF RID: 38399 RVA: 0x0038AA90 File Offset: 0x00388C90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -18,7 +18,7 @@ public class LightAnim : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095A9 RID: 38313 RVA: 0x00388700 File Offset: 0x00386900
+	// Token: 0x06009600 RID: 38400 RVA: 0x0038AAFC File Offset: 0x00388CFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -37,10 +37,10 @@ public class LightAnim : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04007027 RID: 28711
+	// Token: 0x04007068 RID: 28776
 	public float Duration = 0.5f;
 
-	// Token: 0x04007028 RID: 28712
+	// Token: 0x04007069 RID: 28777
 	public AnimationCurve IntensityCurve = new AnimationCurve(new Keyframe[]
 	{
 		new Keyframe(0f, 0f),
@@ -48,25 +48,25 @@ public class LightAnim : MonoBehaviour
 		new Keyframe(1f, 0f)
 	});
 
-	// Token: 0x04007029 RID: 28713
+	// Token: 0x0400706A RID: 28778
 	public bool DestroyAtEnd;
 
-	// Token: 0x0400702A RID: 28714
+	// Token: 0x0400706B RID: 28779
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light LightRef;
 
-	// Token: 0x0400702B RID: 28715
+	// Token: 0x0400706C RID: 28780
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float intensityStart;
 
-	// Token: 0x0400702C RID: 28716
+	// Token: 0x0400706D RID: 28781
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float time;
 
-	// Token: 0x0400702D RID: 28717
+	// Token: 0x0400706E RID: 28782
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeEnd;

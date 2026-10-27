@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000522 RID: 1314
+// Token: 0x02000526 RID: 1318
 public enum EnumArmorDamageModifier
 {
-	// Token: 0x040020FB RID: 8443
+	// Token: 0x04002112 RID: 8466
 	Disabled,
-	// Token: 0x040020FC RID: 8444
+	// Token: 0x04002113 RID: 8467
 	ItemDegradation
 }

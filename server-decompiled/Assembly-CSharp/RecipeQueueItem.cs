@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020002DB RID: 731
+// Token: 0x020002DD RID: 733
 public class RecipeQueueItem
 {
-	// Token: 0x060014F3 RID: 5363 RVA: 0x0007ECBC File Offset: 0x0007CEBC
+	// Token: 0x060014F7 RID: 5367 RVA: 0x0007EE8C File Offset: 0x0007D08C
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(2);
@@ -39,7 +39,7 @@ public class RecipeQueueItem
 		}
 	}
 
-	// Token: 0x060014F4 RID: 5364 RVA: 0x0007EDA0 File Offset: 0x0007CFA0
+	// Token: 0x060014F8 RID: 5368 RVA: 0x0007EF70 File Offset: 0x0007D170
 	public void Read(PooledBinaryReader _br)
 	{
 		ushort num = _br.ReadUInt16();
@@ -92,7 +92,7 @@ public class RecipeQueueItem
 		}
 	}
 
-	// Token: 0x060014F5 RID: 5365 RVA: 0x0007EEFC File Offset: 0x0007D0FC
+	// Token: 0x060014F9 RID: 5369 RVA: 0x0007F0CC File Offset: 0x0007D2CC
 	public void ReadLegacy(PooledBinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -130,7 +130,7 @@ public class RecipeQueueItem
 		}
 	}
 
-	// Token: 0x060014F6 RID: 5366 RVA: 0x0007F038 File Offset: 0x0007D238
+	// Token: 0x060014FA RID: 5370 RVA: 0x0007F208 File Offset: 0x0007D408
 	public void Clear()
 	{
 		this.Recipe = null;
@@ -148,34 +148,34 @@ public class RecipeQueueItem
 		this.StartingEntityId = -1;
 	}
 
-	// Token: 0x04000DF8 RID: 3576
+	// Token: 0x04000DF9 RID: 3577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort Version = 2;
 
-	// Token: 0x04000DF9 RID: 3577
+	// Token: 0x04000DFA RID: 3578
 	public Recipe Recipe;
 
-	// Token: 0x04000DFA RID: 3578
+	// Token: 0x04000DFB RID: 3579
 	public short Multiplier;
 
-	// Token: 0x04000DFB RID: 3579
+	// Token: 0x04000DFC RID: 3580
 	public float CraftingTimeLeft;
 
-	// Token: 0x04000DFC RID: 3580
+	// Token: 0x04000DFD RID: 3581
 	public float OneItemCraftTime = -1f;
 
-	// Token: 0x04000DFD RID: 3581
+	// Token: 0x04000DFE RID: 3582
 	public bool IsCrafting;
 
-	// Token: 0x04000DFE RID: 3582
+	// Token: 0x04000DFF RID: 3583
 	public ItemValue RepairItem;
 
-	// Token: 0x04000DFF RID: 3583
+	// Token: 0x04000E00 RID: 3584
 	public ushort AmountToRepair;
 
-	// Token: 0x04000E00 RID: 3584
+	// Token: 0x04000E01 RID: 3585
 	public byte Quality;
 
-	// Token: 0x04000E01 RID: 3585
+	// Token: 0x04000E02 RID: 3586
 	public int StartingEntityId = -1;
 }

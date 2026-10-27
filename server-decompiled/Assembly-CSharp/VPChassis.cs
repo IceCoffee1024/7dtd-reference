@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CAB RID: 3243
+// Token: 0x02000CB6 RID: 3254
 [Preserve]
 public class VPChassis : VehiclePart
 {

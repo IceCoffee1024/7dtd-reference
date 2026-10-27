@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200135C RID: 4956
+// Token: 0x0200136E RID: 4974
 public class GameGraphManager
 {
-	// Token: 0x06009C32 RID: 39986 RVA: 0x003AF98E File Offset: 0x003ADB8E
+	// Token: 0x06009C8A RID: 40074 RVA: 0x003B1D92 File Offset: 0x003AFF92
 	public static GameGraphManager Create(EntityPlayerLocal player)
 	{
 		GameGraphManager gameGraphManager = new GameGraphManager();
@@ -14,7 +14,7 @@ public class GameGraphManager
 		return gameGraphManager;
 	}
 
-	// Token: 0x06009C33 RID: 39987 RVA: 0x003AF9A2 File Offset: 0x003ADBA2
+	// Token: 0x06009C8B RID: 40075 RVA: 0x003B1DA6 File Offset: 0x003AFFA6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -25,7 +25,7 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C34 RID: 39988 RVA: 0x003AF9CD File Offset: 0x003ADBCD
+	// Token: 0x06009C8C RID: 40076 RVA: 0x003B1DD1 File Offset: 0x003AFFD1
 	public void Destroy()
 	{
 		if (GameGraphManager.whiteTex)
@@ -34,7 +34,7 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C35 RID: 39989 RVA: 0x003AF9E8 File Offset: 0x003ADBE8
+	// Token: 0x06009C8D RID: 40077 RVA: 0x003B1DEC File Offset: 0x003AFFEC
 	public void Add(string name, GameGraphManager.Graph.Callback callback, int sampleCount, float maxValue, float markerValue = 0f)
 	{
 		GameGraphManager.Graph graph = this.FindGraph(name);
@@ -50,7 +50,7 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C36 RID: 39990 RVA: 0x003AFA34 File Offset: 0x003ADC34
+	// Token: 0x06009C8E RID: 40078 RVA: 0x003B1E38 File Offset: 0x003B0038
 	public void AddCVar(string name, int count, string cvarName, float maxValue, float markerValue = 0f)
 	{
 		GameGraphManager.Graph graph = this.FindGraph(name);
@@ -66,7 +66,7 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C37 RID: 39991 RVA: 0x003AFA80 File Offset: 0x003ADC80
+	// Token: 0x06009C8F RID: 40079 RVA: 0x003B1E84 File Offset: 0x003B0084
 	public void AddPassiveEffect(string name, int count, PassiveEffects passiveEffect, float maxValue, float markerValue = 0f)
 	{
 		GameGraphManager.Graph graph = this.FindGraph(name);
@@ -82,7 +82,7 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C38 RID: 39992 RVA: 0x003AFACC File Offset: 0x003ADCCC
+	// Token: 0x06009C90 RID: 40080 RVA: 0x003B1ED0 File Offset: 0x003B00D0
 	public void AddStat(string name, int count, string statName, float maxValue, float markerValue = 0f)
 	{
 		GameGraphManager.Graph graph = this.FindGraph(name);
@@ -98,13 +98,13 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C39 RID: 39993 RVA: 0x003AFB1A File Offset: 0x003ADD1A
+	// Token: 0x06009C91 RID: 40081 RVA: 0x003B1F1E File Offset: 0x003B011E
 	public void RemoveAll()
 	{
 		this.graphs.Clear();
 	}
 
-	// Token: 0x06009C3A RID: 39994 RVA: 0x003AFB28 File Offset: 0x003ADD28
+	// Token: 0x06009C92 RID: 40082 RVA: 0x003B1F2C File Offset: 0x003B012C
 	public GameGraphManager.Graph FindGraph(string name)
 	{
 		for (int i = 0; i < this.graphs.Count; i++)
@@ -118,7 +118,7 @@ public class GameGraphManager
 		return null;
 	}
 
-	// Token: 0x06009C3B RID: 39995 RVA: 0x003AFB6C File Offset: 0x003ADD6C
+	// Token: 0x06009C93 RID: 40083 RVA: 0x003B1F70 File Offset: 0x003B0170
 	public void Draw()
 	{
 		bool flag = Event.current.type == EventType.Repaint;
@@ -137,33 +137,33 @@ public class GameGraphManager
 		}
 	}
 
-	// Token: 0x06009C3C RID: 39996 RVA: 0x003AFBE7 File Offset: 0x003ADDE7
+	// Token: 0x06009C94 RID: 40084 RVA: 0x003B1FEB File Offset: 0x003B01EB
 	public void SetHeight(int _height)
 	{
 		this.graphHeight = _height;
 		this.graphHeight = Mathf.Clamp(this.graphHeight, 1, 2100);
 	}
 
-	// Token: 0x040075BB RID: 30139
+	// Token: 0x040075FC RID: 30204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D whiteTex;
 
-	// Token: 0x040075BC RID: 30140
+	// Token: 0x040075FD RID: 30205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x040075BD RID: 30141
+	// Token: 0x040075FE RID: 30206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameGraphManager.Graph> graphs = new List<GameGraphManager.Graph>();
 
-	// Token: 0x040075BE RID: 30142
+	// Token: 0x040075FF RID: 30207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int graphHeight = 100;
 
-	// Token: 0x0200135D RID: 4957
+	// Token: 0x0200136F RID: 4975
 	public class Graph
 	{
-		// Token: 0x06009C3E RID: 39998 RVA: 0x003AFC24 File Offset: 0x003ADE24
+		// Token: 0x06009C96 RID: 40086 RVA: 0x003B2028 File Offset: 0x003B0228
 		public Graph(GameGraphManager _manager, string _name, int _count, float _maxValue, float _markerValue)
 		{
 			this.manager = _manager;
@@ -175,14 +175,14 @@ public class GameGraphManager
 			this.values = new float[this.count];
 		}
 
-		// Token: 0x06009C3F RID: 39999 RVA: 0x003AFC84 File Offset: 0x003ADE84
+		// Token: 0x06009C97 RID: 40087 RVA: 0x003B2088 File Offset: 0x003B0288
 		public void AddValue(float value)
 		{
 			this.index = (this.index + 1) % this.count;
 			this.values[this.index] = value;
 		}
 
-		// Token: 0x06009C40 RID: 40000 RVA: 0x003AFCAC File Offset: 0x003ADEAC
+		// Token: 0x06009C98 RID: 40088 RVA: 0x003B20B0 File Offset: 0x003B02B0
 		public void Draw()
 		{
 			Texture whiteTex = GameGraphManager.whiteTex;
@@ -213,7 +213,7 @@ public class GameGraphManager
 			GUI.Label(new Rect(this.pos.x + 1f, this.pos.y + 1f, 256f, 256f), string.Format("{0} {1}", this.name, this.values[this.index]));
 		}
 
-		// Token: 0x06009C41 RID: 40001 RVA: 0x003AFEF8 File Offset: 0x003AE0F8
+		// Token: 0x06009C99 RID: 40089 RVA: 0x003B22FC File Offset: 0x003B04FC
 		public void UpdateValues()
 		{
 			if (GameManager.Instance.World == null)
@@ -284,50 +284,50 @@ public class GameGraphManager
 			}
 		}
 
-		// Token: 0x040075BF RID: 30143
+		// Token: 0x04007600 RID: 30208
 		public string name;
 
-		// Token: 0x040075C0 RID: 30144
+		// Token: 0x04007601 RID: 30209
 		public GameGraphManager.Graph.Callback callback;
 
-		// Token: 0x040075C1 RID: 30145
+		// Token: 0x04007602 RID: 30210
 		public string cvarName;
 
-		// Token: 0x040075C2 RID: 30146
+		// Token: 0x04007603 RID: 30211
 		public PassiveEffects passiveEffect;
 
-		// Token: 0x040075C3 RID: 30147
+		// Token: 0x04007604 RID: 30212
 		public string statName;
 
-		// Token: 0x040075C4 RID: 30148
+		// Token: 0x04007605 RID: 30213
 		public Vector2 pos;
 
-		// Token: 0x040075C5 RID: 30149
+		// Token: 0x04007606 RID: 30214
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameGraphManager manager;
 
-		// Token: 0x040075C6 RID: 30150
+		// Token: 0x04007607 RID: 30215
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int count;
 
-		// Token: 0x040075C7 RID: 30151
+		// Token: 0x04007608 RID: 30216
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float maxValue;
 
-		// Token: 0x040075C8 RID: 30152
+		// Token: 0x04007609 RID: 30217
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float markerValue;
 
-		// Token: 0x040075C9 RID: 30153
+		// Token: 0x0400760A RID: 30218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float[] values;
 
-		// Token: 0x040075CA RID: 30154
+		// Token: 0x0400760B RID: 30219
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int index;
 
-		// Token: 0x0200135E RID: 4958
-		// (Invoke) Token: 0x06009C43 RID: 40003
+		// Token: 0x02001370 RID: 4976
+		// (Invoke) Token: 0x06009C9B RID: 40091
 		public delegate bool Callback(ref float value);
 	}
 }

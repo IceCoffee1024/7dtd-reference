@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D3F RID: 7487
+	// Token: 0x02001D70 RID: 7536
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public struct SanctionsCheckResult
 	{
-		// Token: 0x17001C24 RID: 7204
-		// (get) Token: 0x0600DDF5 RID: 56821 RVA: 0x004F1EB2 File Offset: 0x004F00B2
+		// Token: 0x17001C6C RID: 7276
+		// (get) Token: 0x0600DF09 RID: 57097 RVA: 0x004F5A52 File Offset: 0x004F3C52
 		public readonly DateTime LongestExpiry { get; }
 
-		// Token: 0x17001C25 RID: 7205
-		// (get) Token: 0x0600DDF6 RID: 56822 RVA: 0x004F1EBA File Offset: 0x004F00BA
+		// Token: 0x17001C6D RID: 7277
+		// (get) Token: 0x0600DF0A RID: 57098 RVA: 0x004F5A5A File Offset: 0x004F3C5A
 		public readonly bool HasActiveSanctions { get; }
 
-		// Token: 0x17001C26 RID: 7206
-		// (get) Token: 0x0600DDF7 RID: 56823 RVA: 0x004F1EC2 File Offset: 0x004F00C2
+		// Token: 0x17001C6E RID: 7278
+		// (get) Token: 0x0600DF0B RID: 57099 RVA: 0x004F5A62 File Offset: 0x004F3C62
 		public readonly bool Success { get; }
 
-		// Token: 0x0600DDF8 RID: 56824 RVA: 0x004F1ECC File Offset: 0x004F00CC
+		// Token: 0x0600DF0C RID: 57100 RVA: 0x004F5A6C File Offset: 0x004F3C6C
 		public SanctionsCheckResult(List<EOSSanction> sanctions)
 		{
 			this.Success = true;
@@ -55,7 +55,7 @@ namespace Platform.EOS
 			this.LongestExpiry = eossanction.expiry;
 		}
 
-		// Token: 0x0600DDF9 RID: 56825 RVA: 0x004F2090 File Offset: 0x004F0290
+		// Token: 0x0600DF0D RID: 57101 RVA: 0x004F5C30 File Offset: 0x004F3E30
 		public SanctionsCheckResult(DateTime banUntil, GameUtils.EKickReason reason, int apiResponseEnum, string customReason)
 		{
 			this.KickReason = new GameUtils.KickPlayerData(reason, apiResponseEnum, banUntil, customReason);
@@ -65,7 +65,7 @@ namespace Platform.EOS
 			this.Success = false;
 		}
 
-		// Token: 0x0600DDFA RID: 56826 RVA: 0x004F20CC File Offset: 0x004F02CC
+		// Token: 0x0600DF0E RID: 57102 RVA: 0x004F5C6C File Offset: 0x004F3E6C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetReasonMessage(DateTime banUntil, GameUtils.EKickReason reason, int apiResponseEnum, string customReason)
 		{
@@ -84,7 +84,7 @@ namespace Platform.EOS
 			return Localization.Get("auth_unknown", false, null);
 		}
 
-		// Token: 0x0600DDFB RID: 56827 RVA: 0x004F2104 File Offset: 0x004F0304
+		// Token: 0x0600DF0F RID: 57103 RVA: 0x004F5CA4 File Offset: 0x004F3EA4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetAuthFailedMessage(DateTime banUntil, int apiResponseEnum, string customReason)
 		{
@@ -107,7 +107,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DDFC RID: 56828 RVA: 0x004F2198 File Offset: 0x004F0398
+		// Token: 0x0600DF10 RID: 57104 RVA: 0x004F5D38 File Offset: 0x004F3F38
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string BannedMessage(DateTime banUntil, string customReason)
 		{
@@ -118,10 +118,10 @@ namespace Platform.EOS
 			return Localization.Get("auth_sanctioned_forever", false, null);
 		}
 
-		// Token: 0x0400A782 RID: 42882
+		// Token: 0x0400A86B RID: 43115
 		public GameUtils.KickPlayerData KickReason;
 
-		// Token: 0x0400A783 RID: 42883
+		// Token: 0x0400A86C RID: 43116
 		public string ReasonForSanction;
 	}
 }

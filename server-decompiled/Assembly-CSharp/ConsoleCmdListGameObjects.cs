@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000237 RID: 567
+// Token: 0x02000239 RID: 569
 [Preserve]
 public class ConsoleCmdListGameObjects : ConsoleCmdAbstract
 {
-	// Token: 0x060010FC RID: 4348 RVA: 0x0006C679 File Offset: 0x0006A879
+	// Token: 0x06001100 RID: 4352 RVA: 0x0006C849 File Offset: 0x0006AA49
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdListGameObjects : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001A0 RID: 416
-	// (get) Token: 0x060010FD RID: 4349 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001101 RID: 4353 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -25,7 +25,7 @@ public class ConsoleCmdListGameObjects : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001A1 RID: 417
-	// (get) Token: 0x060010FE RID: 4350 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001102 RID: 4354 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -34,14 +34,14 @@ public class ConsoleCmdListGameObjects : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010FF RID: 4351 RVA: 0x0006C691 File Offset: 0x0006A891
+	// Token: 0x06001103 RID: 4355 RVA: 0x0006C861 File Offset: 0x0006AA61
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "List all active game objects";
 	}
 
-	// Token: 0x06001100 RID: 4352 RVA: 0x0006C698 File Offset: 0x0006A898
+	// Token: 0x06001104 RID: 4356 RVA: 0x0006C868 File Offset: 0x0006AA68
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch();

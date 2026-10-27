@@ -2,11 +2,11 @@
 using DynamicMusic.Legacy;
 using DynamicMusic.Legacy.ObjectModel;
 
-// Token: 0x020003C6 RID: 966
+// Token: 0x020003C8 RID: 968
 public class DynamicMusicManager : IGamePrefsChangedListener
 {
 	// Token: 0x17000365 RID: 869
-	// (get) Token: 0x06001CD8 RID: 7384 RVA: 0x000AE823 File Offset: 0x000ACA23
+	// (get) Token: 0x06001CDC RID: 7388 RVA: 0x000AEA33 File Offset: 0x000ACC33
 	public bool MusicStarted
 	{
 		get
@@ -16,7 +16,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000366 RID: 870
-	// (get) Token: 0x06001CD9 RID: 7385 RVA: 0x000AE838 File Offset: 0x000ACA38
+	// (get) Token: 0x06001CDD RID: 7389 RVA: 0x000AEA48 File Offset: 0x000ACC48
 	public bool MusicStopped
 	{
 		get
@@ -26,7 +26,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000367 RID: 871
-	// (get) Token: 0x06001CDA RID: 7386 RVA: 0x000AE84A File Offset: 0x000ACA4A
+	// (get) Token: 0x06001CDE RID: 7390 RVA: 0x000AEA5A File Offset: 0x000ACC5A
 	public bool IsDynamicMusicPlaying
 	{
 		get
@@ -36,7 +36,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000368 RID: 872
-	// (get) Token: 0x06001CDB RID: 7387 RVA: 0x000AE852 File Offset: 0x000ACA52
+	// (get) Token: 0x06001CDF RID: 7391 RVA: 0x000AEA62 File Offset: 0x000ACC62
 	public bool IsBeforeDuskPlayBan
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -47,7 +47,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000369 RID: 873
-	// (get) Token: 0x06001CDC RID: 7388 RVA: 0x000AE866 File Offset: 0x000ACA66
+	// (get) Token: 0x06001CE0 RID: 7392 RVA: 0x000AEA76 File Offset: 0x000ACC76
 	public bool IsAfterDusk
 	{
 		get
@@ -57,7 +57,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700036A RID: 874
-	// (get) Token: 0x06001CDD RID: 7389 RVA: 0x000AE874 File Offset: 0x000ACA74
+	// (get) Token: 0x06001CE1 RID: 7393 RVA: 0x000AEA84 File Offset: 0x000ACC84
 	public bool IsAfterDuskWindow
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -68,7 +68,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700036B RID: 875
-	// (get) Token: 0x06001CDE RID: 7390 RVA: 0x000AE888 File Offset: 0x000ACA88
+	// (get) Token: 0x06001CE2 RID: 7394 RVA: 0x000AEA98 File Offset: 0x000ACC98
 	public bool IsBeforeDawnPlayBan
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -79,7 +79,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700036C RID: 876
-	// (get) Token: 0x06001CDF RID: 7391 RVA: 0x000AE89C File Offset: 0x000ACA9C
+	// (get) Token: 0x06001CE3 RID: 7395 RVA: 0x000AEAAC File Offset: 0x000ACCAC
 	public bool IsAfterDawn
 	{
 		get
@@ -89,7 +89,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700036D RID: 877
-	// (get) Token: 0x06001CE0 RID: 7392 RVA: 0x000AE8AA File Offset: 0x000ACAAA
+	// (get) Token: 0x06001CE4 RID: 7396 RVA: 0x000AEABA File Offset: 0x000ACCBA
 	public bool IsAfterDawnWindow
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -100,8 +100,8 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700036E RID: 878
-	// (get) Token: 0x06001CE1 RID: 7393 RVA: 0x000AE8BE File Offset: 0x000ACABE
-	// (set) Token: 0x06001CE2 RID: 7394 RVA: 0x000AE8C6 File Offset: 0x000ACAC6
+	// (get) Token: 0x06001CE5 RID: 7397 RVA: 0x000AEACE File Offset: 0x000ACCCE
+	// (set) Token: 0x06001CE6 RID: 7398 RVA: 0x000AEAD6 File Offset: 0x000ACCD6
 	public bool IsInDeadWindow
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -109,8 +109,8 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700036F RID: 879
-	// (get) Token: 0x06001CE3 RID: 7395 RVA: 0x000AE8CF File Offset: 0x000ACACF
-	// (set) Token: 0x06001CE4 RID: 7396 RVA: 0x000AE8D7 File Offset: 0x000ACAD7
+	// (get) Token: 0x06001CE7 RID: 7399 RVA: 0x000AEADF File Offset: 0x000ACCDF
+	// (set) Token: 0x06001CE8 RID: 7400 RVA: 0x000AEAE7 File Offset: 0x000ACCE7
 	public bool IsPlayAllowed
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -118,8 +118,8 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000370 RID: 880
-	// (get) Token: 0x06001CE5 RID: 7397 RVA: 0x000AE8E0 File Offset: 0x000ACAE0
-	// (set) Token: 0x06001CE6 RID: 7398 RVA: 0x000AE8E8 File Offset: 0x000ACAE8
+	// (get) Token: 0x06001CE9 RID: 7401 RVA: 0x000AEAF0 File Offset: 0x000ACCF0
+	// (set) Token: 0x06001CEA RID: 7402 RVA: 0x000AEAF8 File Offset: 0x000ACCF8
 	public float DistanceFromDeadWindow
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -127,15 +127,15 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000371 RID: 881
-	// (get) Token: 0x06001CE7 RID: 7399 RVA: 0x000AE8F1 File Offset: 0x000ACAF1
-	// (set) Token: 0x06001CE8 RID: 7400 RVA: 0x000AE8F9 File Offset: 0x000ACAF9
+	// (get) Token: 0x06001CEB RID: 7403 RVA: 0x000AEB01 File Offset: 0x000ACD01
+	// (set) Token: 0x06001CEC RID: 7404 RVA: 0x000AEB09 File Offset: 0x000ACD09
 	public bool IsPlayerInTraderStation
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06001CE9 RID: 7401 RVA: 0x000AE902 File Offset: 0x000ACB02
+	// Token: 0x06001CED RID: 7405 RVA: 0x000AEB12 File Offset: 0x000ACD12
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicMusicManager()
 	{
@@ -144,7 +144,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		this.UpdateConditions.IsGameUnPaused = true;
 	}
 
-	// Token: 0x06001CEA RID: 7402 RVA: 0x000AE938 File Offset: 0x000ACB38
+	// Token: 0x06001CEE RID: 7406 RVA: 0x000AEB48 File Offset: 0x000ACD48
 	public static void Init(EntityPlayerLocal _epLocal)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Initializing Dynamic Music System");
@@ -160,7 +160,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Finished initializing Dynamic Music System");
 	}
 
-	// Token: 0x06001CEB RID: 7403 RVA: 0x000AE9D4 File Offset: 0x000ACBD4
+	// Token: 0x06001CEF RID: 7407 RVA: 0x000AEBE4 File Offset: 0x000ACDE4
 	public void Tick()
 	{
 		if (this.UpdateConditions.CanUpdate)
@@ -214,7 +214,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06001CEC RID: 7404 RVA: 0x000AEB46 File Offset: 0x000ACD46
+	// Token: 0x06001CF0 RID: 7408 RVA: 0x000AED56 File Offset: 0x000ACF56
 	public void CleanUpDynamicMembers()
 	{
 		if (this.StreamerMaster != null)
@@ -224,14 +224,14 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		this.UpdateConditions.IsDMSInitialized = false;
 	}
 
-	// Token: 0x06001CED RID: 7405 RVA: 0x000AEB67 File Offset: 0x000ACD67
+	// Token: 0x06001CF1 RID: 7409 RVA: 0x000AED77 File Offset: 0x000ACF77
 	public static void Cleanup()
 	{
 		MusicGroup.Cleanup();
 		ConfigSet.Cleanup();
 	}
 
-	// Token: 0x06001CEE RID: 7406 RVA: 0x000AEB74 File Offset: 0x000ACD74
+	// Token: 0x06001CF2 RID: 7410 RVA: 0x000AED84 File Offset: 0x000ACF84
 	public void Event(MinEventTypes _eventType, MinEventParams _eventParms)
 	{
 		if (_eventType <= MinEventTypes.onSelfDied)
@@ -287,19 +287,19 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06001CEF RID: 7407 RVA: 0x000AEC52 File Offset: 0x000ACE52
+	// Token: 0x06001CF3 RID: 7411 RVA: 0x000AEE62 File Offset: 0x000AD062
 	public void OnPlayerDeath()
 	{
 		this.StreamerMaster.Stop();
 	}
 
-	// Token: 0x06001CF0 RID: 7408 RVA: 0x000AEC5F File Offset: 0x000ACE5F
+	// Token: 0x06001CF4 RID: 7412 RVA: 0x000AEE6F File Offset: 0x000AD06F
 	public void OnPlayerFirstSpawned()
 	{
 		this.FrequencyManager.OnPlayerFirstSpawned();
 	}
 
-	// Token: 0x06001CF1 RID: 7409 RVA: 0x000AEC6C File Offset: 0x000ACE6C
+	// Token: 0x06001CF5 RID: 7413 RVA: 0x000AEE7C File Offset: 0x000AD07C
 	public void Pause()
 	{
 		this.UpdateConditions.IsGameUnPaused = false;
@@ -307,7 +307,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		this.FrequencyManager.OnPause();
 	}
 
-	// Token: 0x06001CF2 RID: 7410 RVA: 0x000AEC90 File Offset: 0x000ACE90
+	// Token: 0x06001CF6 RID: 7414 RVA: 0x000AEEA0 File Offset: 0x000AD0A0
 	public void UnPause()
 	{
 		this.UpdateConditions.IsGameUnPaused = true;
@@ -315,26 +315,26 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		this.FrequencyManager.OnUnPause();
 	}
 
-	// Token: 0x06001CF3 RID: 7411 RVA: 0x000AECB4 File Offset: 0x000ACEB4
+	// Token: 0x06001CF7 RID: 7415 RVA: 0x000AEEC4 File Offset: 0x000AD0C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPrimaryPlayerInTraderStation()
 	{
 		return GameManager.Instance.World.IsWithinTraderArea(this.PrimaryLocalPlayer.GetBlockPosition());
 	}
 
-	// Token: 0x06001CF4 RID: 7412 RVA: 0x000AECD0 File Offset: 0x000ACED0
+	// Token: 0x06001CF8 RID: 7416 RVA: 0x000AEEE0 File Offset: 0x000AD0E0
 	public bool IsInDawnOrDuskRange(float _dawnOrDuskTime, float _currentTime)
 	{
 		return this.DistanceFromDawnOrDusk(_dawnOrDuskTime, _currentTime) <= DynamicMusicManager.deadWindow;
 	}
 
-	// Token: 0x06001CF5 RID: 7413 RVA: 0x000AECE4 File Offset: 0x000ACEE4
+	// Token: 0x06001CF9 RID: 7417 RVA: 0x000AEEF4 File Offset: 0x000AD0F4
 	public float DistanceFromDawnOrDusk(float _dawnOrDuskTime, float _currentTime)
 	{
 		return Math.Abs(_dawnOrDuskTime - _currentTime);
 	}
 
-	// Token: 0x06001CF6 RID: 7414 RVA: 0x000AECF0 File Offset: 0x000ACEF0
+	// Token: 0x06001CFA RID: 7418 RVA: 0x000AEF00 File Offset: 0x000AD100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void IGamePrefsChangedListener.OnGamePrefChanged(EnumGamePrefs _enum)
 	{
@@ -345,7 +345,7 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000372 RID: 882
-	// (get) Token: 0x06001CF7 RID: 7415 RVA: 0x000AED2A File Offset: 0x000ACF2A
+	// (get) Token: 0x06001CFB RID: 7419 RVA: 0x000AEF3A File Offset: 0x000AD13A
 	public float TimeToNextDayEvent
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -355,36 +355,36 @@ public class DynamicMusicManager : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x040012D5 RID: 4821
+	// Token: 0x040012E5 RID: 4837
 	public EntityPlayerLocal PrimaryLocalPlayer;
 
-	// Token: 0x040012D6 RID: 4822
+	// Token: 0x040012E6 RID: 4838
 	public ThreatLevelTracker ThreatLevelTracker;
 
-	// Token: 0x040012D7 RID: 4823
+	// Token: 0x040012E7 RID: 4839
 	public FrequencyManager FrequencyManager;
 
-	// Token: 0x040012D8 RID: 4824
+	// Token: 0x040012E8 RID: 4840
 	public TransitionManager TransitionManager;
 
-	// Token: 0x040012D9 RID: 4825
+	// Token: 0x040012E9 RID: 4841
 	public StreamerMaster StreamerMaster;
 
-	// Token: 0x040012DA RID: 4826
+	// Token: 0x040012EA RID: 4842
 	public bool IsMusicPlayingThisTick;
 
-	// Token: 0x040012DB RID: 4827
+	// Token: 0x040012EB RID: 4843
 	public bool WasMusicPlayingLastTick;
 
-	// Token: 0x040012DC RID: 4828
+	// Token: 0x040012EC RID: 4844
 	public static readonly float PlayBanThreshold = 1f;
 
-	// Token: 0x040012DD RID: 4829
+	// Token: 0x040012ED RID: 4845
 	public static readonly float deadWindow = 0.16666667f;
 
-	// Token: 0x040012DE RID: 4830
+	// Token: 0x040012EE RID: 4846
 	public static GameRandom Random;
 
-	// Token: 0x040012DF RID: 4831
+	// Token: 0x040012EF RID: 4847
 	public DMSUpdateConditions UpdateConditions;
 }

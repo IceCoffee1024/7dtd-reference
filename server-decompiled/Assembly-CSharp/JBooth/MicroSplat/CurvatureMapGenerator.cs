@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace JBooth.MicroSplat
 {
-	// Token: 0x02001D7B RID: 7547
+	// Token: 0x02001DAC RID: 7596
 	public class CurvatureMapGenerator
 	{
-		// Token: 0x0600DF2C RID: 57132 RVA: 0x004F96EC File Offset: 0x004F78EC
+		// Token: 0x0600E040 RID: 57408 RVA: 0x004FD28C File Offset: 0x004FB48C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float Horizontal(float dx, float dy, float dxx, float dyy, float dxy)
 		{
@@ -28,7 +28,7 @@ namespace JBooth.MicroSplat
 			return num * 0.5f + 0.5f;
 		}
 
-		// Token: 0x0600DF2D RID: 57133 RVA: 0x004F9768 File Offset: 0x004F7968
+		// Token: 0x0600E041 RID: 57409 RVA: 0x004FD308 File Offset: 0x004FB508
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float Vertical(float dx, float dy, float dxx, float dyy, float dxy)
 		{
@@ -50,7 +50,7 @@ namespace JBooth.MicroSplat
 			return num * 0.5f + 0.5f;
 		}
 
-		// Token: 0x0600DF2E RID: 57134 RVA: 0x004F97E4 File Offset: 0x004F79E4
+		// Token: 0x0600E042 RID: 57410 RVA: 0x004FD384 File Offset: 0x004FB584
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float Average(float dx, float dy, float dxx, float dyy, float dxy)
 		{
@@ -59,7 +59,7 @@ namespace JBooth.MicroSplat
 			return (num + num2) * 0.5f;
 		}
 
-		// Token: 0x0600DF2F RID: 57135 RVA: 0x004F9810 File Offset: 0x004F7A10
+		// Token: 0x0600E043 RID: 57411 RVA: 0x004FD3B0 File Offset: 0x004FB5B0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void UpdateWaterMap(float[,] waterMap, float[,,] outFlow, int width, int height)
 		{
@@ -83,7 +83,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0600DF30 RID: 57136 RVA: 0x004F9914 File Offset: 0x004F7B14
+		// Token: 0x0600E044 RID: 57412 RVA: 0x004FD4B4 File Offset: 0x004FB6B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void CalculateVelocityField(float[,] velocityMap, float[,,] outFlow, int width, int height)
 		{
@@ -102,7 +102,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0600DF31 RID: 57137 RVA: 0x004F9A1C File Offset: 0x004F7C1C
+		// Token: 0x0600E045 RID: 57413 RVA: 0x004FD5BC File Offset: 0x004FB7BC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void NormalizeMap(float[,] map, int width, int height)
 		{
@@ -142,7 +142,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0600DF32 RID: 57138 RVA: 0x004F9AC4 File Offset: 0x004F7CC4
+		// Token: 0x0600E046 RID: 57414 RVA: 0x004FD664 File Offset: 0x004FB864
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void FillWaterMap(float amount, float[,] waterMap, int width, int height)
 		{
@@ -155,7 +155,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0600DF33 RID: 57139 RVA: 0x004F9AF4 File Offset: 0x004F7CF4
+		// Token: 0x0600E047 RID: 57415 RVA: 0x004FD694 File Offset: 0x004FB894
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ComputeOutflow(float[,] waterMap, float[,,] outFlow, float[,] heightMap, int width, int height)
 		{
@@ -213,7 +213,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0600DF34 RID: 57140 RVA: 0x004F9D10 File Offset: 0x004F7F10
+		// Token: 0x0600E048 RID: 57416 RVA: 0x004FD8B0 File Offset: 0x004FBAB0
 		public static void CreateMap(float[,] heights, Texture2D curveMap)
 		{
 			int width = curveMap.width;
@@ -261,30 +261,30 @@ namespace JBooth.MicroSplat
 			curveMap.Apply();
 		}
 
-		// Token: 0x0400A8B3 RID: 43187
+		// Token: 0x0400A99C RID: 43420
 		public static float m_limit = 10000f;
 
-		// Token: 0x0400A8B4 RID: 43188
+		// Token: 0x0400A99D RID: 43421
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int LEFT = 0;
 
-		// Token: 0x0400A8B5 RID: 43189
+		// Token: 0x0400A99E RID: 43422
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int RIGHT = 1;
 
-		// Token: 0x0400A8B6 RID: 43190
+		// Token: 0x0400A99F RID: 43423
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int BOTTOM = 2;
 
-		// Token: 0x0400A8B7 RID: 43191
+		// Token: 0x0400A9A0 RID: 43424
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int TOP = 3;
 
-		// Token: 0x0400A8B8 RID: 43192
+		// Token: 0x0400A9A1 RID: 43425
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float TIME = 0.2f;
 
-		// Token: 0x0400A8B9 RID: 43193
+		// Token: 0x0400A9A2 RID: 43426
 		public static int m_iterations = 8;
 	}
 }

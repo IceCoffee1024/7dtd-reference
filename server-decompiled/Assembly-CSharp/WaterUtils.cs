@@ -1,27 +1,27 @@
 ﻿using System;
 
-// Token: 0x02000CF8 RID: 3320
+// Token: 0x02000D03 RID: 3331
 public static class WaterUtils
 {
-	// Token: 0x06006526 RID: 25894 RVA: 0x0027BFD0 File Offset: 0x0027A1D0
+	// Token: 0x0600654B RID: 25931 RVA: 0x0027D4F8 File Offset: 0x0027B6F8
 	public static int GetVoxelKey2D(int _x, int _z)
 	{
 		return _x * 8976890 + _z * 981131;
 	}
 
-	// Token: 0x06006527 RID: 25895 RVA: 0x0027BFE1 File Offset: 0x0027A1E1
+	// Token: 0x0600654C RID: 25932 RVA: 0x0027D509 File Offset: 0x0027B709
 	public static int GetVoxelKey(int _x, int _y, int _z = 0)
 	{
 		return _x * 8976890 + _y * 981131 + _z;
 	}
 
-	// Token: 0x06006528 RID: 25896 RVA: 0x0027BFF4 File Offset: 0x0027A1F4
+	// Token: 0x0600654D RID: 25933 RVA: 0x0027D51C File Offset: 0x0027B71C
 	public static bool IsChunkSafeToUpdate(Chunk chunk)
 	{
 		return chunk != null && !chunk.NeedsDecoration && !chunk.NeedsCopying && !chunk.IsLocked;
 	}
 
-	// Token: 0x06006529 RID: 25897 RVA: 0x0027C018 File Offset: 0x0027A218
+	// Token: 0x0600654E RID: 25934 RVA: 0x0027D540 File Offset: 0x0027B740
 	public static bool TryOpenChunkForUpdate(ChunkCluster _chunks, long _key, out Chunk _chunk)
 	{
 		bool flag;
@@ -43,21 +43,21 @@ public static class WaterUtils
 		return flag;
 	}
 
-	// Token: 0x0600652A RID: 25898 RVA: 0x0027C074 File Offset: 0x0027A274
+	// Token: 0x0600654F RID: 25935 RVA: 0x0027D59C File Offset: 0x0027B79C
 	public static bool CanWaterFlowThrough(BlockValue _bv)
 	{
 		Block block = _bv.Block;
 		return block != null && block.WaterFlowMask != BlockFaceFlag.All;
 	}
 
-	// Token: 0x0600652B RID: 25899 RVA: 0x0027C09C File Offset: 0x0027A29C
+	// Token: 0x06006550 RID: 25936 RVA: 0x0027D5C4 File Offset: 0x0027B7C4
 	public static bool CanWaterFlowThrough(int _blockId)
 	{
 		Block block = Block.list[_blockId];
 		return block != null && block.WaterFlowMask != BlockFaceFlag.All;
 	}
 
-	// Token: 0x0600652C RID: 25900 RVA: 0x0027C0C3 File Offset: 0x0027A2C3
+	// Token: 0x06006551 RID: 25937 RVA: 0x0027D5EB File Offset: 0x0027B7EB
 	public static int GetWaterLevel(WaterValue waterValue)
 	{
 		if (waterValue.GetMass() > 195)
@@ -67,7 +67,7 @@ public static class WaterUtils
 		return 0;
 	}
 
-	// Token: 0x0600652D RID: 25901 RVA: 0x0027C0D6 File Offset: 0x0027A2D6
+	// Token: 0x06006552 RID: 25938 RVA: 0x0027D5FE File Offset: 0x0027B7FE
 	public static bool IsVoxelOutsideChunk(int _neighborX, int _neighborZ)
 	{
 		return _neighborX < 0 || _neighborX > 15 || _neighborZ < 0 || _neighborZ > 15;

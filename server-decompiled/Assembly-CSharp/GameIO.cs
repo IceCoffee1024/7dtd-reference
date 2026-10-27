@@ -8,10 +8,10 @@ using System.Text.RegularExpressions;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001422 RID: 5154
+// Token: 0x02001434 RID: 5172
 public static class GameIO
 {
-	// Token: 0x0600A182 RID: 41346 RVA: 0x003CAD1B File Offset: 0x003C8F1B
+	// Token: 0x0600A1DA RID: 41434 RVA: 0x003CD11F File Offset: 0x003CB31F
 	public static SdFileInfo[] GetDirectory(string _path, string _pattern)
 	{
 		if (!SdDirectory.Exists(_path))
@@ -21,7 +21,7 @@ public static class GameIO
 		return new SdDirectoryInfo(_path).GetFiles(_pattern);
 	}
 
-	// Token: 0x0600A183 RID: 41347 RVA: 0x003CAD38 File Offset: 0x003C8F38
+	// Token: 0x0600A1DB RID: 41435 RVA: 0x003CD13C File Offset: 0x003CB33C
 	public static long FileSize(string _filePath)
 	{
 		SdFileInfo sdFileInfo = new SdFileInfo(_filePath);
@@ -32,19 +32,19 @@ public static class GameIO
 		return sdFileInfo.Length;
 	}
 
-	// Token: 0x0600A184 RID: 41348 RVA: 0x003CAD5D File Offset: 0x003C8F5D
+	// Token: 0x0600A1DC RID: 41436 RVA: 0x003CD161 File Offset: 0x003CB361
 	public static string GetNormalizedPath(string _path)
 	{
 		return Path.GetFullPath(_path).TrimEnd(GameIO.pathTrimCharacters);
 	}
 
-	// Token: 0x0600A185 RID: 41349 RVA: 0x003CAD6F File Offset: 0x003C8F6F
+	// Token: 0x0600A1DD RID: 41437 RVA: 0x003CD173 File Offset: 0x003CB373
 	public static bool PathsEquals(string _path1, string _path2, bool _ignoreCase)
 	{
 		return string.Equals(GameIO.GetNormalizedPath(_path1), GameIO.GetNormalizedPath(_path2), _ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
 	}
 
-	// Token: 0x0600A186 RID: 41350 RVA: 0x003CAD8C File Offset: 0x003C8F8C
+	// Token: 0x0600A1DE RID: 41438 RVA: 0x003CD190 File Offset: 0x003CB390
 	public static string GetFileExtension(string _filename)
 	{
 		int num;
@@ -55,7 +55,7 @@ public static class GameIO
 		return _filename;
 	}
 
-	// Token: 0x0600A187 RID: 41351 RVA: 0x003CADB8 File Offset: 0x003C8FB8
+	// Token: 0x0600A1DF RID: 41439 RVA: 0x003CD1BC File Offset: 0x003CB3BC
 	public static string RemoveFileExtension(string _filename)
 	{
 		int num;
@@ -66,7 +66,7 @@ public static class GameIO
 		return _filename;
 	}
 
-	// Token: 0x0600A188 RID: 41352 RVA: 0x003CADE5 File Offset: 0x003C8FE5
+	// Token: 0x0600A1E0 RID: 41440 RVA: 0x003CD1E9 File Offset: 0x003CB3E9
 	public static string RemoveExtension(string _filename, string _extension)
 	{
 		if (_filename.Length > _extension.Length && _filename.EndsWith(_extension, StringComparison.InvariantCultureIgnoreCase))
@@ -76,7 +76,7 @@ public static class GameIO
 		return _filename;
 	}
 
-	// Token: 0x0600A189 RID: 41353 RVA: 0x003CAE18 File Offset: 0x003C9018
+	// Token: 0x0600A1E1 RID: 41441 RVA: 0x003CD21C File Offset: 0x003CB41C
 	public static string GetFilenameFromPath(string _filepath)
 	{
 		int num = _filepath.LastIndexOfAny(GameIO.ResourcePathSeparators);
@@ -87,7 +87,7 @@ public static class GameIO
 		return _filepath;
 	}
 
-	// Token: 0x0600A18A RID: 41354 RVA: 0x003CAE4C File Offset: 0x003C904C
+	// Token: 0x0600A1E2 RID: 41442 RVA: 0x003CD250 File Offset: 0x003CB450
 	public static string GetFilenameFromPathWithoutExtension(string _filepath)
 	{
 		int num = _filepath.LastIndexOfAny(GameIO.ResourcePathSeparators);
@@ -111,7 +111,7 @@ public static class GameIO
 		return _filepath;
 	}
 
-	// Token: 0x0600A18B RID: 41355 RVA: 0x003CAEAC File Offset: 0x003C90AC
+	// Token: 0x0600A1E3 RID: 41443 RVA: 0x003CD2B0 File Offset: 0x003CB4B0
 	public static string GetDirectoryFromPath(string _filepath)
 	{
 		int num = _filepath.LastIndexOf('/');
@@ -122,13 +122,13 @@ public static class GameIO
 		return _filepath;
 	}
 
-	// Token: 0x0600A18C RID: 41356 RVA: 0x003CAEDA File Offset: 0x003C90DA
+	// Token: 0x0600A1E4 RID: 41444 RVA: 0x003CD2DE File Offset: 0x003CB4DE
 	public static long GetDirectorySize(string _filepath, bool recursive = true)
 	{
 		return GameIO.GetDirectorySize(new SdDirectoryInfo(_filepath), recursive);
 	}
 
-	// Token: 0x0600A18D RID: 41357 RVA: 0x003CAEE8 File Offset: 0x003C90E8
+	// Token: 0x0600A1E5 RID: 41445 RVA: 0x003CD2EC File Offset: 0x003CB4EC
 	public static long GetDirectorySize(SdDirectoryInfo directoryInfo, bool recursive = true)
 	{
 		long num = 0L;
@@ -150,13 +150,13 @@ public static class GameIO
 		return num;
 	}
 
-	// Token: 0x0600A18E RID: 41358 RVA: 0x003CAF53 File Offset: 0x003C9153
+	// Token: 0x0600A1E6 RID: 41446 RVA: 0x003CD357 File Offset: 0x003CB557
 	public static string GetGameDir(string _relDir)
 	{
 		return GameIO.GetApplicationPath() + "/" + _relDir;
 	}
 
-	// Token: 0x0600A18F RID: 41359 RVA: 0x003CAF68 File Offset: 0x003C9168
+	// Token: 0x0600A1E7 RID: 41447 RVA: 0x003CD36C File Offset: 0x003CB56C
 	public static string GetApplicationPath()
 	{
 		if (GameIO.m_ApplicationPath == null)
@@ -195,7 +195,7 @@ public static class GameIO
 		return GameIO.m_ApplicationPath;
 	}
 
-	// Token: 0x0600A190 RID: 41360 RVA: 0x003CAFCB File Offset: 0x003C91CB
+	// Token: 0x0600A1E8 RID: 41448 RVA: 0x003CD3CF File Offset: 0x003CB5CF
 	public static string GetGamePath()
 	{
 		if (GameIO.m_UnityRuntimePlatform != RuntimePlatform.OSXPlayer && GameIO.m_UnityRuntimePlatform != RuntimePlatform.OSXServer)
@@ -205,13 +205,13 @@ public static class GameIO
 		return GameIO.m_UnityDataPath + "/../..";
 	}
 
-	// Token: 0x0600A191 RID: 41361 RVA: 0x003CAFFD File Offset: 0x003C91FD
+	// Token: 0x0600A1E9 RID: 41449 RVA: 0x003CD401 File Offset: 0x003CB601
 	public static string GetGameExecutablePath()
 	{
 		return GameIO.GetGamePath() + "/" + GameIO.GetGameExecutableName();
 	}
 
-	// Token: 0x0600A192 RID: 41362 RVA: 0x003CB014 File Offset: 0x003C9214
+	// Token: 0x0600A1EA RID: 41450 RVA: 0x003CD418 File Offset: 0x003CB618
 	public static string GetGameExecutableName()
 	{
 		RuntimePlatform unityRuntimePlatform = GameIO.m_UnityRuntimePlatform;
@@ -260,13 +260,13 @@ public static class GameIO
 		throw new ArgumentOutOfRangeException("m_UnityRuntimePlatform");
 	}
 
-	// Token: 0x0600A193 RID: 41363 RVA: 0x003CB14E File Offset: 0x003C934E
+	// Token: 0x0600A1EB RID: 41451 RVA: 0x003CD552 File Offset: 0x003CB752
 	public static string GetLauncherExecutablePath()
 	{
 		return GameIO.GetGamePath() + "/" + GameIO.GetLauncherExecutableName();
 	}
 
-	// Token: 0x0600A194 RID: 41364 RVA: 0x003CB164 File Offset: 0x003C9364
+	// Token: 0x0600A1EC RID: 41452 RVA: 0x003CD568 File Offset: 0x003CB768
 	public static string GetLauncherExecutableName()
 	{
 		RuntimePlatform unityRuntimePlatform = GameIO.m_UnityRuntimePlatform;
@@ -315,7 +315,7 @@ public static class GameIO
 		throw new ArgumentOutOfRangeException("m_UnityRuntimePlatform");
 	}
 
-	// Token: 0x0600A195 RID: 41365 RVA: 0x003CB2A0 File Offset: 0x003C94A0
+	// Token: 0x0600A1ED RID: 41453 RVA: 0x003CD6A4 File Offset: 0x003CB8A4
 	public static string GetApplicationScratchPath()
 	{
 		if (GameIO.m_ApplicationScratchPath == null)
@@ -354,13 +354,13 @@ public static class GameIO
 		return GameIO.m_ApplicationScratchPath;
 	}
 
-	// Token: 0x0600A196 RID: 41366 RVA: 0x003CB30C File Offset: 0x003C950C
+	// Token: 0x0600A1EE RID: 41454 RVA: 0x003CD710 File Offset: 0x003CB910
 	public static string GetApplicationTempPath()
 	{
 		return PlatformApplicationManager.Application.temporaryCachePath;
 	}
 
-	// Token: 0x0600A197 RID: 41367 RVA: 0x003CB318 File Offset: 0x003C9518
+	// Token: 0x0600A1EF RID: 41455 RVA: 0x003CD71C File Offset: 0x003CB91C
 	public static IEnumerator PrecacheFile(string _path, int _doYieldEveryMs = -1, Action<float, long, long> _statusUpdateHandler = null)
 	{
 		if (!SdFile.Exists(_path))
@@ -418,7 +418,7 @@ public static class GameIO
 		yield break;
 	}
 
-	// Token: 0x0600A198 RID: 41368 RVA: 0x003CB338 File Offset: 0x003C9538
+	// Token: 0x0600A1F0 RID: 41456 RVA: 0x003CD73C File Offset: 0x003CB93C
 	public static string GetDocumentPath()
 	{
 		RuntimePlatform unityRuntimePlatform = GameIO.m_UnityRuntimePlatform;
@@ -497,13 +497,13 @@ public static class GameIO
 		return null;
 	}
 
-	// Token: 0x0600A199 RID: 41369 RVA: 0x003CB3F9 File Offset: 0x003C95F9
+	// Token: 0x0600A1F1 RID: 41457 RVA: 0x003CD7FD File Offset: 0x003CB9FD
 	public static string GetDefaultPersistentDataPath()
 	{
 		return GameIO.GetDocumentPath() + "/" + "7 Days To Die".Replace(" ", "");
 	}
 
-	// Token: 0x0600A19A RID: 41370 RVA: 0x003CB420 File Offset: 0x003C9620
+	// Token: 0x0600A1F2 RID: 41458 RVA: 0x003CD824 File Offset: 0x003CBA24
 	public static void InitializeUserDataPaths(string _rootPathOverride = null)
 	{
 		string text = GameIO.GetDefaultPersistentDataPath();
@@ -526,7 +526,7 @@ public static class GameIO
 		GameIO.<InitializeUserDataPaths>g__PopulateCache|36_0(UserDataStorageType.Roaming, text2);
 	}
 
-	// Token: 0x0600A19B RID: 41371 RVA: 0x003CB4CD File Offset: 0x003C96CD
+	// Token: 0x0600A1F3 RID: 41459 RVA: 0x003CD8D1 File Offset: 0x003CBAD1
 	public static bool IsRoamingUserDataPath(string _path)
 	{
 		if (GameIO.m_isRoamingPathRegex == null)
@@ -536,7 +536,7 @@ public static class GameIO
 		return GameIO.m_isRoamingPathRegex.IsMatch(_path);
 	}
 
-	// Token: 0x0600A19C RID: 41372 RVA: 0x003CB4EC File Offset: 0x003C96EC
+	// Token: 0x0600A1F4 RID: 41460 RVA: 0x003CD8F0 File Offset: 0x003CBAF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetCachedUserDataPath(UserDataStorageType _storage, string _folder = "")
 	{
@@ -547,7 +547,7 @@ public static class GameIO
 		return GameIO.m_cachedUserDataPaths[new ValueTuple<UserDataStorageType, string>(_storage, _folder)];
 	}
 
-	// Token: 0x0600A19D RID: 41373 RVA: 0x003CB514 File Offset: 0x003C9714
+	// Token: 0x0600A1F5 RID: 41461 RVA: 0x003CD918 File Offset: 0x003CBB18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetDefaultUserGameDataPath(string _folder = "")
 	{
@@ -560,7 +560,7 @@ public static class GameIO
 		return GameIO.GetUserGameDataPath(PlatformManager.MultiPlatform.UserDataRoaming.DefaultSaveStorage, _folder);
 	}
 
-	// Token: 0x0600A19E RID: 41374 RVA: 0x003CB558 File Offset: 0x003C9758
+	// Token: 0x0600A1F6 RID: 41462 RVA: 0x003CD95C File Offset: 0x003CBB5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetUserGameDataPath(UserDataStorageType _storage, string _folder = "")
 	{
@@ -581,55 +581,55 @@ public static class GameIO
 		return GameIO.GetCachedUserDataPath(_storage, _folder);
 	}
 
-	// Token: 0x0600A19F RID: 41375 RVA: 0x003CB5BE File Offset: 0x003C97BE
+	// Token: 0x0600A1F7 RID: 41463 RVA: 0x003CD9C2 File Offset: 0x003CBBC2
 	public static string GetDeviceLocalUserGameDataDir()
 	{
 		return GameIO.GetUserGameDataPath(UserDataStorageType.DeviceLocal, "");
 	}
 
-	// Token: 0x0600A1A0 RID: 41376 RVA: 0x003CB5CB File Offset: 0x003C97CB
+	// Token: 0x0600A1F8 RID: 41464 RVA: 0x003CD9CF File Offset: 0x003CBBCF
 	public static string GetRoamingUserGameDataDir()
 	{
 		return GameIO.GetUserGameDataPath(UserDataStorageType.Roaming, "");
 	}
 
-	// Token: 0x0600A1A1 RID: 41377 RVA: 0x003CB5D8 File Offset: 0x003C97D8
+	// Token: 0x0600A1F9 RID: 41465 RVA: 0x003CD9DC File Offset: 0x003CBBDC
 	public static string GetUserGameDataDir()
 	{
 		return GameIO.GetDefaultUserGameDataPath("");
 	}
 
-	// Token: 0x0600A1A2 RID: 41378 RVA: 0x003CB5E4 File Offset: 0x003C97E4
+	// Token: 0x0600A1FA RID: 41466 RVA: 0x003CD9E8 File Offset: 0x003CBBE8
 	public static string GetUserGameDataDir(UserDataStorageType _storage)
 	{
 		return GameIO.GetUserGameDataPath(_storage, "");
 	}
 
-	// Token: 0x0600A1A3 RID: 41379 RVA: 0x003CB5F1 File Offset: 0x003C97F1
+	// Token: 0x0600A1FB RID: 41467 RVA: 0x003CD9F5 File Offset: 0x003CBBF5
 	public static string GetSaveGameRootDir()
 	{
 		return GameIO.GetDefaultUserGameDataPath("Saves");
 	}
 
-	// Token: 0x0600A1A4 RID: 41380 RVA: 0x003CB5FD File Offset: 0x003C97FD
+	// Token: 0x0600A1FC RID: 41468 RVA: 0x003CDA01 File Offset: 0x003CBC01
 	public static string GetSaveGameRootDir(UserDataStorageType _storage)
 	{
 		return GameIO.GetUserGameDataPath(_storage, "Saves");
 	}
 
-	// Token: 0x0600A1A5 RID: 41381 RVA: 0x003CB60A File Offset: 0x003C980A
+	// Token: 0x0600A1FD RID: 41469 RVA: 0x003CDA0E File Offset: 0x003CBC0E
 	public static string GetSaveGameDir(string _worldName, UserDataStorageType _storage)
 	{
 		return GameIO.GetSaveGameRootDir(_storage) + "/" + _worldName;
 	}
 
-	// Token: 0x0600A1A6 RID: 41382 RVA: 0x003CB61D File Offset: 0x003C981D
+	// Token: 0x0600A1FE RID: 41470 RVA: 0x003CDA21 File Offset: 0x003CBC21
 	public static string GetSaveGameDir(string _worldName, string _gameName, UserDataStorageType _storage)
 	{
 		return GameIO.GetSaveGameDir(_worldName, _storage) + "/" + _gameName;
 	}
 
-	// Token: 0x0600A1A7 RID: 41383 RVA: 0x003CB631 File Offset: 0x003C9831
+	// Token: 0x0600A1FF RID: 41471 RVA: 0x003CDA35 File Offset: 0x003CBC35
 	public static IEnumerable<string> GetSaveGameDirs(string _worldName)
 	{
 		if (PlatformManager.MultiPlatform.UserDataRoaming.IsSupported)
@@ -647,19 +647,19 @@ public static class GameIO
 		yield break;
 	}
 
-	// Token: 0x0600A1A8 RID: 41384 RVA: 0x003CB641 File Offset: 0x003C9841
+	// Token: 0x0600A200 RID: 41472 RVA: 0x003CDA45 File Offset: 0x003CBC45
 	public static string GetSaveGameDir()
 	{
 		return GameIO.GetSaveGameDir(GamePrefs.GetString(EnumGamePrefs.GameWorld), GamePrefs.GetString(EnumGamePrefs.GameName), (UserDataStorageType)GamePrefs.GetInt(EnumGamePrefs.GameSaveStorageType));
 	}
 
-	// Token: 0x0600A1A9 RID: 41385 RVA: 0x003CB660 File Offset: 0x003C9860
+	// Token: 0x0600A201 RID: 41473 RVA: 0x003CDA64 File Offset: 0x003CBC64
 	public static string GetSaveGameLocalRootDir(UserDataStorageType _storage)
 	{
 		return GameIO.GetUserGameDataPath(_storage, "SavesLocal");
 	}
 
-	// Token: 0x0600A1AA RID: 41386 RVA: 0x003CB670 File Offset: 0x003C9870
+	// Token: 0x0600A202 RID: 41474 RVA: 0x003CDA74 File Offset: 0x003CBC74
 	public static void SetSaveGameLocalGuid(string _guid)
 	{
 		GamePrefs.Set(EnumGamePrefs.GameGuidClient, _guid);
@@ -680,7 +680,7 @@ public static class GameIO
 		GamePrefs.Set(EnumGamePrefs.GameSaveStorageType, 1);
 	}
 
-	// Token: 0x0600A1AB RID: 41387 RVA: 0x003CB6D4 File Offset: 0x003C98D4
+	// Token: 0x0600A203 RID: 41475 RVA: 0x003CDAD8 File Offset: 0x003CBCD8
 	public static string GetSaveGameLocalDir()
 	{
 		string @string = GamePrefs.GetString(EnumGamePrefs.GameGuidClient);
@@ -691,25 +691,25 @@ public static class GameIO
 		return GameIO.GetSaveGameLocalDir((UserDataStorageType)GamePrefs.GetInt(EnumGamePrefs.GameSaveStorageType), @string);
 	}
 
-	// Token: 0x0600A1AC RID: 41388 RVA: 0x003CB70F File Offset: 0x003C990F
+	// Token: 0x0600A204 RID: 41476 RVA: 0x003CDB13 File Offset: 0x003CBD13
 	public static string GetSaveGameLocalDir(UserDataStorageType _storage, string _guid)
 	{
 		return GameIO.GetSaveGameLocalRootDir(_storage) + "/" + _guid;
 	}
 
-	// Token: 0x0600A1AD RID: 41389 RVA: 0x003CB722 File Offset: 0x003C9922
+	// Token: 0x0600A205 RID: 41477 RVA: 0x003CDB26 File Offset: 0x003CBD26
 	public static string GetPlayerDataDir()
 	{
 		return Path.Combine(GameIO.GetSaveGameDir(), "Player");
 	}
 
-	// Token: 0x0600A1AE RID: 41390 RVA: 0x003CB733 File Offset: 0x003C9933
+	// Token: 0x0600A206 RID: 41478 RVA: 0x003CDB37 File Offset: 0x003CBD37
 	public static string GetPlayerDataLocalDir()
 	{
 		return Path.Combine(GameIO.GetSaveGameLocalDir(), "Player");
 	}
 
-	// Token: 0x0600A1AF RID: 41391 RVA: 0x003CB744 File Offset: 0x003C9944
+	// Token: 0x0600A207 RID: 41479 RVA: 0x003CDB48 File Offset: 0x003CBD48
 	public static int GetPlayerSaves(GameIO.FoundSave _foundSave = null, bool includeArchived = false)
 	{
 		GameIO.<>c__DisplayClass58_0 CS$<>8__locals1;
@@ -723,19 +723,19 @@ public static class GameIO
 		return num + GameIO.<GetPlayerSaves>g__SearchSaveDir|58_0(UserDataStorageType.DeviceLocal, ref CS$<>8__locals1);
 	}
 
-	// Token: 0x0600A1B0 RID: 41392 RVA: 0x003CB78B File Offset: 0x003C998B
+	// Token: 0x0600A208 RID: 41480 RVA: 0x003CDB8F File Offset: 0x003CBD8F
 	public static string GetSaveGameRegionDir()
 	{
 		return Path.Combine(GameIO.GetSaveGameDir(), "Region");
 	}
 
-	// Token: 0x0600A1B1 RID: 41393 RVA: 0x003CB79C File Offset: 0x003C999C
+	// Token: 0x0600A209 RID: 41481 RVA: 0x003CDBA0 File Offset: 0x003CBDA0
 	public static bool IsWorldGenerated(string _worldName, UserDataStorageType _storage)
 	{
 		return SdDirectory.Exists(Path.Combine(GameIO.GetUserGameDataDir(_storage), "GeneratedWorlds", _worldName));
 	}
 
-	// Token: 0x0600A1B2 RID: 41394 RVA: 0x003CB7B4 File Offset: 0x003C99B4
+	// Token: 0x0600A20A RID: 41482 RVA: 0x003CDBB8 File Offset: 0x003CBDB8
 	public static bool IsAbsolutePath(string _path)
 	{
 		RuntimePlatform unityRuntimePlatform = GameIO.m_UnityRuntimePlatform;
@@ -810,7 +810,7 @@ public static class GameIO
 		throw new ArgumentOutOfRangeException("_path", _path, "Unsupported platform");
 	}
 
-	// Token: 0x0600A1B3 RID: 41395 RVA: 0x003CB90C File Offset: 0x003C9B0C
+	// Token: 0x0600A20B RID: 41483 RVA: 0x003CDD10 File Offset: 0x003CBF10
 	public static string MakeAbsolutePath(string _path)
 	{
 		if (GameIO.IsAbsolutePath(_path))
@@ -820,7 +820,7 @@ public static class GameIO
 		return GameIO.GetGamePath() + "/" + _path;
 	}
 
-	// Token: 0x0600A1B4 RID: 41396 RVA: 0x003CB928 File Offset: 0x003C9B28
+	// Token: 0x0600A20C RID: 41484 RVA: 0x003CDD2C File Offset: 0x003CBF2C
 	public static string GetOsStylePath(string _path)
 	{
 		if (GameIO.m_UnityRuntimePlatform != RuntimePlatform.WindowsPlayer && GameIO.m_UnityRuntimePlatform != RuntimePlatform.WindowsServer)
@@ -830,7 +830,7 @@ public static class GameIO
 		return _path.Replace("/", "\\");
 	}
 
-	// Token: 0x0600A1B5 RID: 41397 RVA: 0x003CB95C File Offset: 0x003C9B5C
+	// Token: 0x0600A20D RID: 41485 RVA: 0x003CDD60 File Offset: 0x003CBF60
 	public static void CopyDirectory(string _sourceDirectory, string _targetDirectory)
 	{
 		SdDirectoryInfo sdDirectoryInfo = new SdDirectoryInfo(_sourceDirectory);
@@ -838,7 +838,7 @@ public static class GameIO
 		GameIO.CopyAll(sdDirectoryInfo, sdDirectoryInfo2);
 	}
 
-	// Token: 0x0600A1B6 RID: 41398 RVA: 0x003CB97C File Offset: 0x003C9B7C
+	// Token: 0x0600A20E RID: 41486 RVA: 0x003CDD80 File Offset: 0x003CBF80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CopyAll(SdDirectoryInfo _source, SdDirectoryInfo _target)
 	{
@@ -854,7 +854,7 @@ public static class GameIO
 		}
 	}
 
-	// Token: 0x0600A1B7 RID: 41399 RVA: 0x003CB9FC File Offset: 0x003C9BFC
+	// Token: 0x0600A20F RID: 41487 RVA: 0x003CDE00 File Offset: 0x003CC000
 	public static void SafeDirectoryCopy(string _sourceDirectory, string _targetDirectory)
 	{
 		try
@@ -879,7 +879,7 @@ public static class GameIO
 		}
 	}
 
-	// Token: 0x0600A1B8 RID: 41400 RVA: 0x003CBA60 File Offset: 0x003C9C60
+	// Token: 0x0600A210 RID: 41488 RVA: 0x003CDE64 File Offset: 0x003CC064
 	public static void SafeDirectoryMove(string _sourceDirectory, string _targetDirectory)
 	{
 		GameIO.SafeDirectoryCopy(_sourceDirectory, _targetDirectory);
@@ -894,7 +894,7 @@ public static class GameIO
 		}
 	}
 
-	// Token: 0x0600A1B9 RID: 41401 RVA: 0x003CBAA4 File Offset: 0x003C9CA4
+	// Token: 0x0600A211 RID: 41489 RVA: 0x003CDEA8 File Offset: 0x003CC0A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OpenExplorerOnLinux(string _path)
 	{
@@ -918,7 +918,7 @@ public static class GameIO
 		}
 	}
 
-	// Token: 0x0600A1BA RID: 41402 RVA: 0x003CBB20 File Offset: 0x003C9D20
+	// Token: 0x0600A212 RID: 41490 RVA: 0x003CDF24 File Offset: 0x003CC124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OpenExplorerOnMac(string _path)
 	{
@@ -943,7 +943,7 @@ public static class GameIO
 		}
 	}
 
-	// Token: 0x0600A1BB RID: 41403 RVA: 0x003CBBC0 File Offset: 0x003C9DC0
+	// Token: 0x0600A213 RID: 41491 RVA: 0x003CDFC4 File Offset: 0x003CC1C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OpenExplorerOnWin(string _path)
 	{
@@ -960,7 +960,7 @@ public static class GameIO
 		}
 	}
 
-	// Token: 0x0600A1BC RID: 41404 RVA: 0x003CBC30 File Offset: 0x003C9E30
+	// Token: 0x0600A214 RID: 41492 RVA: 0x003CE034 File Offset: 0x003CC234
 	public static void OpenExplorer(string _path)
 	{
 		RuntimePlatform platform = Application.platform;
@@ -1001,7 +1001,7 @@ public static class GameIO
 		Log.Error("Failed opening file browser: Unsupported OS");
 	}
 
-	// Token: 0x0600A1BD RID: 41405 RVA: 0x003CBC98 File Offset: 0x003C9E98
+	// Token: 0x0600A215 RID: 41493 RVA: 0x003CE09C File Offset: 0x003CC29C
 	public static string IsRunningAsSnap()
 	{
 		if (SystemInfo.operatingSystemFamily != OperatingSystemFamily.Linux)
@@ -1018,7 +1018,7 @@ public static class GameIO
 		return environmentVariable;
 	}
 
-	// Token: 0x0600A1BE RID: 41406 RVA: 0x003CBCE0 File Offset: 0x003C9EE0
+	// Token: 0x0600A216 RID: 41494 RVA: 0x003CE0E4 File Offset: 0x003CC2E4
 	public static bool IsRunningInSteamRuntime()
 	{
 		if (SystemInfo.operatingSystemFamily != OperatingSystemFamily.Linux)
@@ -1046,7 +1046,7 @@ public static class GameIO
 		return false;
 	}
 
-	// Token: 0x0600A1BF RID: 41407 RVA: 0x003CBD94 File Offset: 0x003C9F94
+	// Token: 0x0600A217 RID: 41495 RVA: 0x003CE198 File Offset: 0x003CC398
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static string GetPostTerminationAccessiblePath()
 	{
@@ -1058,7 +1058,7 @@ public static class GameIO
 		return text;
 	}
 
-	// Token: 0x0600A1C0 RID: 41408 RVA: 0x003CBDE8 File Offset: 0x003C9FE8
+	// Token: 0x0600A218 RID: 41496 RVA: 0x003CE1EC File Offset: 0x003CC3EC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <InitializeUserDataPaths>g__PopulateCache|36_0(UserDataStorageType _storage, string _rootPath)
@@ -1068,7 +1068,7 @@ public static class GameIO
 		GameIO.m_cachedUserDataPaths.Add(new ValueTuple<UserDataStorageType, string>(_storage, "SavesLocal"), Path.Combine(_rootPath, "SavesLocal"));
 	}
 
-	// Token: 0x0600A1C1 RID: 41409 RVA: 0x003CBE4C File Offset: 0x003CA04C
+	// Token: 0x0600A219 RID: 41497 RVA: 0x003CE250 File Offset: 0x003CC450
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static int <GetPlayerSaves>g__SearchSaveDir|58_0(UserDataStorageType storage, ref GameIO.<>c__DisplayClass58_0 A_1)
@@ -1123,54 +1123,54 @@ public static class GameIO
 		return num;
 	}
 
-	// Token: 0x040079AF RID: 31151
+	// Token: 0x040079F0 RID: 31216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_ApplicationScratchPath;
 
-	// Token: 0x040079B0 RID: 31152
+	// Token: 0x040079F1 RID: 31217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string XB1ScratchPath = "D:";
 
-	// Token: 0x040079B1 RID: 31153
+	// Token: 0x040079F2 RID: 31218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PS4ScratchPath = "/hostapp";
 
-	// Token: 0x040079B2 RID: 31154
+	// Token: 0x040079F3 RID: 31219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static RuntimePlatform m_UnityRuntimePlatform = Application.platform;
 
-	// Token: 0x040079B3 RID: 31155
+	// Token: 0x040079F4 RID: 31220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_UnityDataPath = Application.dataPath;
 
-	// Token: 0x040079B4 RID: 31156
+	// Token: 0x040079F5 RID: 31221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_ApplicationPath;
 
-	// Token: 0x040079B5 RID: 31157
+	// Token: 0x040079F6 RID: 31222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] pathTrimCharacters = new char[] { '/', '\\' };
 
-	// Token: 0x040079B6 RID: 31158
+	// Token: 0x040079F7 RID: 31223
 	public static readonly char[] ResourcePathSeparators = new char[] { '/', '\\', '?' };
 
-	// Token: 0x040079B7 RID: 31159
+	// Token: 0x040079F8 RID: 31224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_lastDeviceLocalRoot;
 
-	// Token: 0x040079B8 RID: 31160
+	// Token: 0x040079F9 RID: 31225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<ValueTuple<UserDataStorageType, string>, string> m_cachedUserDataPaths;
 
-	// Token: 0x040079B9 RID: 31161
+	// Token: 0x040079FA RID: 31226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Regex m_isRoamingPathRegex;
 
-	// Token: 0x040079BA RID: 31162
+	// Token: 0x040079FB RID: 31227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex linuxOsReleaseMatcher = new Regex("^ID=['\"]?([^'\"]+)['\"]?$");
 
-	// Token: 0x02001423 RID: 5155
-	// (Invoke) Token: 0x0600A1C3 RID: 41411
+	// Token: 0x02001435 RID: 5173
+	// (Invoke) Token: 0x0600A21B RID: 41499
 	public delegate void FoundSave(UserDataStorageType storage, string saveName, string worldName, DateTime lastSaved, WorldState worldState, bool isArchived);
 }

@@ -5,11 +5,11 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200048B RID: 1163
+// Token: 0x0200048D RID: 1165
 [Preserve]
 public class EntityBackpack : EntityContainerAbs
 {
-	// Token: 0x060023FE RID: 9214 RVA: 0x000D9FD6 File Offset: 0x000D81D6
+	// Token: 0x06002404 RID: 9220 RVA: 0x000DA35A File Offset: 0x000D855A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -17,7 +17,7 @@ public class EntityBackpack : EntityContainerAbs
 		base.Awake();
 	}
 
-	// Token: 0x060023FF RID: 9215 RVA: 0x000D9FEE File Offset: 0x000D81EE
+	// Token: 0x06002405 RID: 9221 RVA: 0x000DA372 File Offset: 0x000D8572
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -25,7 +25,7 @@ public class EntityBackpack : EntityContainerAbs
 		base.Start();
 	}
 
-	// Token: 0x06002400 RID: 9216 RVA: 0x000DA008 File Offset: 0x000D8208
+	// Token: 0x06002406 RID: 9222 RVA: 0x000DA38C File Offset: 0x000D858C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -40,7 +40,7 @@ public class EntityBackpack : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002401 RID: 9217 RVA: 0x000DA094 File Offset: 0x000D8294
+	// Token: 0x06002407 RID: 9223 RVA: 0x000DA418 File Offset: 0x000D8618
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updatePosition()
 	{
@@ -64,7 +64,7 @@ public class EntityBackpack : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002402 RID: 9218 RVA: 0x000DA1B8 File Offset: 0x000D83B8
+	// Token: 0x06002408 RID: 9224 RVA: 0x000DA53C File Offset: 0x000D873C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateMarkers()
 	{
@@ -84,7 +84,7 @@ public class EntityBackpack : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002403 RID: 9219 RVA: 0x000DA250 File Offset: 0x000D8450
+	// Token: 0x06002409 RID: 9225 RVA: 0x000DA5D4 File Offset: 0x000D87D4
 	public override string GetActivationText()
 	{
 		if (this.bag == null)
@@ -112,7 +112,7 @@ public class EntityBackpack : EntityContainerAbs
 		return string.Format(Localization.Get("lootTooltipTouched", false, null), text, this.LocalizedEntityName);
 	}
 
-	// Token: 0x06002404 RID: 9220 RVA: 0x000DA2E0 File Offset: 0x000D84E0
+	// Token: 0x0600240A RID: 9226 RVA: 0x000DA664 File Offset: 0x000D8864
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void onBackpackRemoved(string reason)
 	{
@@ -150,7 +150,7 @@ public class EntityBackpack : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002405 RID: 9221 RVA: 0x000DA44C File Offset: 0x000D864C
+	// Token: 0x0600240B RID: 9227 RVA: 0x000DA7D0 File Offset: 0x000D89D0
 	public override void OnEntityUnload()
 	{
 		this.LogBackpack("OnEntityUnload markedForUnload {0}, IsDead {1}, IsDespawned {2}", new object[]
@@ -162,7 +162,7 @@ public class EntityBackpack : EntityContainerAbs
 		base.OnEntityUnload();
 	}
 
-	// Token: 0x06002406 RID: 9222 RVA: 0x000DA49A File Offset: 0x000D869A
+	// Token: 0x0600240C RID: 9228 RVA: 0x000DA81E File Offset: 0x000D8A1E
 	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		this.LogBackpack("Write", Array.Empty<object>());
@@ -171,7 +171,7 @@ public class EntityBackpack : EntityContainerAbs
 		this.bag.Write(_bw, _eStreamMode);
 	}
 
-	// Token: 0x06002407 RID: 9223 RVA: 0x000DA4CD File Offset: 0x000D86CD
+	// Token: 0x0600240D RID: 9229 RVA: 0x000DA851 File Offset: 0x000D8A51
 	public override void Read(byte _version, PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_version, _br, _eStreamMode);
@@ -183,13 +183,13 @@ public class EntityBackpack : EntityContainerAbs
 		this.LogBackpack("Read", Array.Empty<object>());
 	}
 
-	// Token: 0x06002408 RID: 9224 RVA: 0x000BD6E1 File Offset: 0x000BB8E1
+	// Token: 0x0600240E RID: 9230 RVA: 0x000BDA8D File Offset: 0x000BBC8D
 	public override string GetLootList()
 	{
 		return this.lootList;
 	}
 
-	// Token: 0x06002409 RID: 9225 RVA: 0x000DA508 File Offset: 0x000D8708
+	// Token: 0x0600240F RID: 9231 RVA: 0x000DA88C File Offset: 0x000D8A8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleNavObject()
 	{
@@ -211,7 +211,7 @@ public class EntityBackpack : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x0600240A RID: 9226 RVA: 0x000DA5C0 File Offset: 0x000D87C0
+	// Token: 0x06002410 RID: 9232 RVA: 0x000DA944 File Offset: 0x000D8B44
 	[Conditional("DEBUG_ENTITYBACKPACK")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogBackpack(string format, params object[] args)
@@ -263,10 +263,10 @@ public class EntityBackpack : EntityContainerAbs
 		Log.Out(format, args);
 	}
 
-	// Token: 0x04001989 RID: 6537
+	// Token: 0x04001999 RID: 6553
 	public int RefPlayerId = -1;
 
-	// Token: 0x0400198A RID: 6538
+	// Token: 0x0400199A RID: 6554
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int safetyCounter;

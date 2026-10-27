@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200097D RID: 2429
+// Token: 0x02000987 RID: 2439
 public class BaseQuestData
 {
-	// Token: 0x06004676 RID: 18038 RVA: 0x001BF428 File Offset: 0x001BD628
+	// Token: 0x06004699 RID: 18073 RVA: 0x001C04AC File Offset: 0x001BE6AC
 	public void AddSharedQuester(int _entityID)
 	{
 		if (!this.entityList.Contains(_entityID))
@@ -18,7 +18,7 @@ public class BaseQuestData
 		}
 	}
 
-	// Token: 0x06004677 RID: 18039 RVA: 0x001BF470 File Offset: 0x001BD670
+	// Token: 0x0600469A RID: 18074 RVA: 0x001C04F4 File Offset: 0x001BE6F4
 	public void RemoveSharedQuester(EntityPlayer _player)
 	{
 		if (this.entityList.Contains(_player.entityId))
@@ -32,53 +32,53 @@ public class BaseQuestData
 		}
 	}
 
-	// Token: 0x06004678 RID: 18040 RVA: 0x001BF4BC File Offset: 0x001BD6BC
+	// Token: 0x0600469B RID: 18075 RVA: 0x001C0540 File Offset: 0x001BE740
 	public bool ContainsEntity(int _entityID)
 	{
 		return this.entityList.Contains(_entityID);
 	}
 
-	// Token: 0x06004679 RID: 18041 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600469C RID: 18076 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetModifier(string _name)
 	{
 	}
 
-	// Token: 0x0600467A RID: 18042 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600469D RID: 18077 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void RemoveFromDictionary()
 	{
 	}
 
-	// Token: 0x0600467B RID: 18043 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600469E RID: 18078 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnCreated()
 	{
 	}
 
-	// Token: 0x0600467C RID: 18044 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600469F RID: 18079 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnAdd(EntityPlayer player)
 	{
 	}
 
-	// Token: 0x0600467D RID: 18045 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060046A0 RID: 18080 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnRemove(EntityPlayer player)
 	{
 	}
 
-	// Token: 0x0600467E RID: 18046 RVA: 0x001BF4CA File Offset: 0x001BD6CA
+	// Token: 0x060046A1 RID: 18081 RVA: 0x001C054E File Offset: 0x001BE74E
 	public void Remove()
 	{
 		this.entityList.Clear();
 		this.OnRemove(null);
 	}
 
-	// Token: 0x040038EB RID: 14571
+	// Token: 0x0400390B RID: 14603
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int questCode;
 
-	// Token: 0x040038EC RID: 14572
+	// Token: 0x0400390C RID: 14604
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<int> entityList = new List<int>();
 }

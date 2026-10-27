@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020014E9 RID: 5353
+// Token: 0x020014FB RID: 5371
 public class TextureAtlas
 {
-	// Token: 0x0600A7BC RID: 42940 RVA: 0x003E7057 File Offset: 0x003E5257
+	// Token: 0x0600A814 RID: 43028 RVA: 0x003E945B File Offset: 0x003E765B
 	public TextureAtlas()
 		: this(true)
 	{
 	}
 
-	// Token: 0x0600A7BD RID: 42941 RVA: 0x003E7060 File Offset: 0x003E5260
+	// Token: 0x0600A815 RID: 43029 RVA: 0x003E9464 File Offset: 0x003E7664
 	public TextureAtlas(bool _bDestroyTextures)
 	{
 		this.bDestroyTextures = _bDestroyTextures;
 	}
 
-	// Token: 0x0600A7BE RID: 42942 RVA: 0x003E707C File Offset: 0x003E527C
+	// Token: 0x0600A816 RID: 43030 RVA: 0x003E9480 File Offset: 0x003E7680
 	public virtual bool LoadTextureAtlas(int _idx, MeshDescriptionCollection _tac, bool _bLoadTextures)
 	{
 		if (_bLoadTextures)
@@ -34,39 +34,39 @@ public class TextureAtlas
 		return true;
 	}
 
-	// Token: 0x0600A7BF RID: 42943 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A817 RID: 43031 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Cleanup()
 	{
 	}
 
-	// Token: 0x04007C84 RID: 31876
+	// Token: 0x04007CC5 RID: 31941
 	public Texture diffuseTexture;
 
-	// Token: 0x04007C85 RID: 31877
+	// Token: 0x04007CC6 RID: 31942
 	public Texture normalTexture;
 
-	// Token: 0x04007C86 RID: 31878
+	// Token: 0x04007CC7 RID: 31943
 	public Texture specularTexture;
 
-	// Token: 0x04007C87 RID: 31879
+	// Token: 0x04007CC8 RID: 31944
 	public Texture emissionTexture;
 
-	// Token: 0x04007C88 RID: 31880
+	// Token: 0x04007CC9 RID: 31945
 	public Texture heightTexture;
 
-	// Token: 0x04007C89 RID: 31881
+	// Token: 0x04007CCA RID: 31946
 	public Texture occlusionTexture;
 
-	// Token: 0x04007C8A RID: 31882
+	// Token: 0x04007CCB RID: 31947
 	public Texture2D maskTexture;
 
-	// Token: 0x04007C8B RID: 31883
+	// Token: 0x04007CCC RID: 31948
 	public Texture2D maskNormalTexture;
 
-	// Token: 0x04007C8C RID: 31884
+	// Token: 0x04007CCD RID: 31949
 	public UVRectTiling[] uvMapping = new UVRectTiling[0];
 
-	// Token: 0x04007C8D RID: 31885
+	// Token: 0x04007CCE RID: 31950
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bDestroyTextures;
 }

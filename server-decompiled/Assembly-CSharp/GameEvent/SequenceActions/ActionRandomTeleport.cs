@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019CA RID: 6602
+	// Token: 0x020019FB RID: 6651
 	[Preserve]
 	public class ActionRandomTeleport : ActionBaseTeleport
 	{
-		// Token: 0x0600CA43 RID: 51779 RVA: 0x004A09CC File Offset: 0x0049EBCC
+		// Token: 0x0600CB57 RID: 52055 RVA: 0x004A44CC File Offset: 0x004A26CC
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -33,7 +33,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InCompleteRefund;
 		}
 
-		// Token: 0x0600CA44 RID: 51780 RVA: 0x004A0A71 File Offset: 0x0049EC71
+		// Token: 0x0600CB58 RID: 52056 RVA: 0x004A4571 File Offset: 0x004A2771
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -42,7 +42,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseInt(ActionRandomTeleport.PropMaxTries, ref this.maxTries);
 		}
 
-		// Token: 0x0600CA45 RID: 51781 RVA: 0x004A0AB0 File Offset: 0x0049ECB0
+		// Token: 0x0600CB59 RID: 52057 RVA: 0x004A45B0 File Offset: 0x004A27B0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -56,31 +56,31 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009903 RID: 39171
+		// Token: 0x040099EC RID: 39404
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float minDistance = 100f;
 
-		// Token: 0x04009904 RID: 39172
+		// Token: 0x040099ED RID: 39405
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 200f;
 
-		// Token: 0x04009905 RID: 39173
+		// Token: 0x040099EE RID: 39406
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int maxTries = 20;
 
-		// Token: 0x04009906 RID: 39174
+		// Token: 0x040099EF RID: 39407
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinDistance = "min_distance";
 
-		// Token: 0x04009907 RID: 39175
+		// Token: 0x040099F0 RID: 39408
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x04009908 RID: 39176
+		// Token: 0x040099F1 RID: 39409
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxTries = "max_tries";
 
-		// Token: 0x04009909 RID: 39177
+		// Token: 0x040099F2 RID: 39410
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3i position;
 	}

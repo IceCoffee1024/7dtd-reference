@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A7 RID: 6567
+	// Token: 0x020019D8 RID: 6616
 	[Preserve]
 	public class ActionDropItems : ActionBaseItemAction
 	{
-		// Token: 0x0600C9BE RID: 51646 RVA: 0x0049C85D File Offset: 0x0049AA5D
+		// Token: 0x0600CAD2 RID: 51922 RVA: 0x004A035D File Offset: 0x0049E55D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnClientActionStarted(EntityPlayer player)
 		{
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			this.replaceItemTag = ((this.itemTags == "") ? FastTags<TagGroup.Global>.none : FastTags<TagGroup.Global>.Parse(this.itemTags));
 		}
 
-		// Token: 0x0600C9BF RID: 51647 RVA: 0x0049C894 File Offset: 0x0049AA94
+		// Token: 0x0600CAD3 RID: 51923 RVA: 0x004A0394 File Offset: 0x0049E594
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnClientActionEnded(EntityPlayer player)
 		{
@@ -33,7 +33,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9C0 RID: 51648 RVA: 0x0049C908 File Offset: 0x0049AB08
+		// Token: 0x0600CAD4 RID: 51924 RVA: 0x004A0408 File Offset: 0x0049E608
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
@@ -104,7 +104,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600C9C1 RID: 51649 RVA: 0x0049CB1A File Offset: 0x0049AD1A
+		// Token: 0x0600CAD5 RID: 51925 RVA: 0x004A061A File Offset: 0x0049E81A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -112,7 +112,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionDropItems.PropDropSound, ref this.DropSound);
 		}
 
-		// Token: 0x0600C9C2 RID: 51650 RVA: 0x0049CB45 File Offset: 0x0049AD45
+		// Token: 0x0600CAD6 RID: 51926 RVA: 0x004A0645 File Offset: 0x0049E845
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -123,23 +123,23 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400981C RID: 38940
+		// Token: 0x04009905 RID: 39173
 		public string ReplacedByItem = "";
 
-		// Token: 0x0400981D RID: 38941
+		// Token: 0x04009906 RID: 39174
 		public string DropSound = "";
 
-		// Token: 0x0400981E RID: 38942
+		// Token: 0x04009907 RID: 39175
 		public static string PropReplacedByItem = "replaced_by_item";
 
-		// Token: 0x0400981F RID: 38943
+		// Token: 0x04009908 RID: 39176
 		public static string PropDropSound = "drop_sound";
 
-		// Token: 0x04009820 RID: 38944
+		// Token: 0x04009909 RID: 39177
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<ItemStack> droppedItems;
 
-		// Token: 0x04009821 RID: 38945
+		// Token: 0x0400990A RID: 39178
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> replaceItemTag = FastTags<TagGroup.Global>.none;
 	}

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000240 RID: 576
+// Token: 0x02000242 RID: 578
 [Preserve]
 public class ConsoleCmdLogLevel : ConsoleCmdAbstract
 {
-	// Token: 0x06001138 RID: 4408 RVA: 0x0006D7FB File Offset: 0x0006B9FB
+	// Token: 0x0600113C RID: 4412 RVA: 0x0006D9CB File Offset: 0x0006BBCB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdLogLevel : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001A9 RID: 425
-	// (get) Token: 0x06001139 RID: 4409 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600113D RID: 4413 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,21 +24,21 @@ public class ConsoleCmdLogLevel : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600113A RID: 4410 RVA: 0x0006D80B File Offset: 0x0006BA0B
+	// Token: 0x0600113E RID: 4414 RVA: 0x0006D9DB File Offset: 0x0006BBDB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Telnet/Web only: Select which types of log messages are shown";
 	}
 
-	// Token: 0x0600113B RID: 4411 RVA: 0x0006D812 File Offset: 0x0006BA12
+	// Token: 0x0600113F RID: 4415 RVA: 0x0006D9E2 File Offset: 0x0006BBE2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Select which types of log messages are shown on the connection\nyou enter this command. By default all log messages are printed\non every connection.\nUsage: loglevel <loglevel name> <true/false>\nLog levels: INF, WRN, ERR, EXC or ALL\nExample: Disable display of WRN messages: loglevel WRN false";
 	}
 
-	// Token: 0x0600113C RID: 4412 RVA: 0x0006D81C File Offset: 0x0006BA1C
+	// Token: 0x06001140 RID: 4416 RVA: 0x0006D9EC File Offset: 0x0006BBEC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_senderInfo.IsLocalGame || _senderInfo.RemoteClientInfo != null)

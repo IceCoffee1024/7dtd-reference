@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001620 RID: 5664
+// Token: 0x02001632 RID: 5682
 public class vp_FPWeaponHandler : vp_WeaponHandler
 {
-	// Token: 0x0600B142 RID: 45378 RVA: 0x00422E3F File Offset: 0x0042103F
+	// Token: 0x0600B19A RID: 45466 RVA: 0x00425243 File Offset: 0x00423443
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_AutoReload()
 	{

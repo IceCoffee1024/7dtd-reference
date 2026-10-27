@@ -4,19 +4,19 @@ using System.Linq;
 
 namespace Platform.XBL.Save.MasterFileTable.V01
 {
-	// Token: 0x02001CA5 RID: 7333
+	// Token: 0x02001CD6 RID: 7382
 	public sealed class Node : IDisposable
 	{
-		// Token: 0x17001B6A RID: 7018
-		// (get) Token: 0x0600D95D RID: 55645 RVA: 0x004DF0E0 File Offset: 0x004DD2E0
-		// (set) Token: 0x0600D95E RID: 55646 RVA: 0x004DF0E8 File Offset: 0x004DD2E8
+		// Token: 0x17001BB2 RID: 7090
+		// (get) Token: 0x0600DA71 RID: 55921 RVA: 0x004E2C30 File Offset: 0x004E0E30
+		// (set) Token: 0x0600DA72 RID: 55922 RVA: 0x004E2C38 File Offset: 0x004E0E38
 		public string Name
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600D95F RID: 55647 RVA: 0x004DF0F1 File Offset: 0x004DD2F1
+		// Token: 0x0600DA73 RID: 55923 RVA: 0x004E2C41 File Offset: 0x004E0E41
 		public Node()
 		{
 			this.Name = string.Empty;
@@ -25,7 +25,7 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			this.Parent = null;
 		}
 
-		// Token: 0x0600D960 RID: 55648 RVA: 0x004DF124 File Offset: 0x004DD324
+		// Token: 0x0600DA74 RID: 55924 RVA: 0x004E2C74 File Offset: 0x004E0E74
 		public override string ToString()
 		{
 			return string.Format("{0}[{1}=\"{2}\", {3}=[{4}], #{5}={6}]", new object[]
@@ -40,7 +40,7 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			});
 		}
 
-		// Token: 0x0600D961 RID: 55649 RVA: 0x004DF1A4 File Offset: 0x004DD3A4
+		// Token: 0x0600DA75 RID: 55925 RVA: 0x004E2CF4 File Offset: 0x004E0EF4
 		public void Write(PooledBinaryWriter writer)
 		{
 			writer.Write(this.Name);
@@ -58,7 +58,7 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			}
 		}
 
-		// Token: 0x0600D962 RID: 55650 RVA: 0x004DF274 File Offset: 0x004DD474
+		// Token: 0x0600DA76 RID: 55926 RVA: 0x004E2DC4 File Offset: 0x004E0FC4
 		public void Read(PooledBinaryReader reader)
 		{
 			this.Name = reader.ReadString();
@@ -78,7 +78,7 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			}
 		}
 
-		// Token: 0x0600D963 RID: 55651 RVA: 0x004DF2F8 File Offset: 0x004DD4F8
+		// Token: 0x0600DA77 RID: 55927 RVA: 0x004E2E48 File Offset: 0x004E1048
 		public void Dispose()
 		{
 			foreach (Node node in this.Children.Values)
@@ -91,19 +91,19 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			this.Name = string.Empty;
 		}
 
-		// Token: 0x0600D964 RID: 55652 RVA: 0x004DF378 File Offset: 0x004DD578
+		// Token: 0x0600DA78 RID: 55928 RVA: 0x004E2EC8 File Offset: 0x004E10C8
 		public bool IsDirectory()
 		{
 			return this.BlobIds.Count == 0;
 		}
 
-		// Token: 0x0600D965 RID: 55653 RVA: 0x004DF388 File Offset: 0x004DD588
+		// Token: 0x0600DA79 RID: 55929 RVA: 0x004E2ED8 File Offset: 0x004E10D8
 		public bool IsFile()
 		{
 			return this.Children.Count == 0;
 		}
 
-		// Token: 0x0600D966 RID: 55654 RVA: 0x004DF398 File Offset: 0x004DD598
+		// Token: 0x0600DA7A RID: 55930 RVA: 0x004E2EE8 File Offset: 0x004E10E8
 		public Node GetChildNode(string name)
 		{
 			Node node;
@@ -114,7 +114,7 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			return node;
 		}
 
-		// Token: 0x0600D967 RID: 55655 RVA: 0x004DF3B8 File Offset: 0x004DD5B8
+		// Token: 0x0600DA7B RID: 55931 RVA: 0x004E2F08 File Offset: 0x004E1108
 		public Node GetOrCreateChildNode(string name)
 		{
 			Node node;
@@ -130,13 +130,13 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			return node;
 		}
 
-		// Token: 0x0400A4FB RID: 42235
+		// Token: 0x0400A5E4 RID: 42468
 		public readonly List<ulong> BlobIds;
 
-		// Token: 0x0400A4FC RID: 42236
+		// Token: 0x0400A5E5 RID: 42469
 		public readonly SortedDictionary<string, Node> Children;
 
-		// Token: 0x0400A4FD RID: 42237
+		// Token: 0x0400A5E6 RID: 42470
 		public Node Parent;
 	}
 }

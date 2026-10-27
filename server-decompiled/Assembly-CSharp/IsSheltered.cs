@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A9 RID: 1705
+// Token: 0x020006B0 RID: 1712
 [Preserve]
 public class IsSheltered : TargetedCompareRequirementBase
 {
-	// Token: 0x060035C8 RID: 13768 RVA: 0x00162030 File Offset: 0x00160230
+	// Token: 0x060035D6 RID: 13782 RVA: 0x00162C24 File Offset: 0x00160E24
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -17,7 +17,7 @@ public class IsSheltered : TargetedCompareRequirementBase
 		return entityPlayerLocal != null && this.invert != entityPlayerLocal.shelterPercent > 0f;
 	}
 
-	// Token: 0x060035C9 RID: 13769 RVA: 0x00162071 File Offset: 0x00160271
+	// Token: 0x060035D7 RID: 13783 RVA: 0x00162C65 File Offset: 0x00160E65
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("{0}sheltered", this.invert ? "NOT " : ""));

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001BDC RID: 7132
-	// (Invoke) Token: 0x0600D4DA RID: 54490
+	// Token: 0x02001C0D RID: 7181
+	// (Invoke) Token: 0x0600D5EE RID: 54766
 	public delegate void UserBlocksChangedCallback(IReadOnlyCollection<PlatformUserIdentifierAbs> _playerIds);
 }

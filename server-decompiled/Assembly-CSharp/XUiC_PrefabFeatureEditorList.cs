@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FCF RID: 4047
+// Token: 0x02000FDF RID: 4063
 [Preserve]
 public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatureEditorList.FeatureEntry>
 {
 	// Token: 0x140000D7 RID: 215
-	// (add) Token: 0x06007F90 RID: 32656 RVA: 0x00308EF4 File Offset: 0x003070F4
-	// (remove) Token: 0x06007F91 RID: 32657 RVA: 0x00308F2C File Offset: 0x0030712C
+	// (add) Token: 0x06007FDF RID: 32735 RVA: 0x0030AA10 File Offset: 0x00308C10
+	// (remove) Token: 0x06007FE0 RID: 32736 RVA: 0x0030AA48 File Offset: 0x00308C48
 	public event XUiC_PrefabFeatureEditorList.FeatureChangedDelegate FeatureChanged;
 
-	// Token: 0x06007F92 RID: 32658
+	// Token: 0x06007FE1 RID: 32737
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool FeatureEnabled(string _featureName);
 
-	// Token: 0x06007F93 RID: 32659 RVA: 0x00308F64 File Offset: 0x00307164
+	// Token: 0x06007FE2 RID: 32738 RVA: 0x0030AA80 File Offset: 0x00308C80
 	public override void Init()
 	{
 		base.Init();
@@ -32,25 +32,25 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 		}
 	}
 
-	// Token: 0x06007F94 RID: 32660 RVA: 0x00308FDF File Offset: 0x003071DF
+	// Token: 0x06007FE3 RID: 32739 RVA: 0x0030AAFB File Offset: 0x00308CFB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleAddEntry(XUiController _sender, int _mouseButton)
 	{
 		this.OnAddFeaturePressed(this.addInput.Text);
 	}
 
-	// Token: 0x06007F95 RID: 32661 RVA: 0x00308FDF File Offset: 0x003071DF
+	// Token: 0x06007FE4 RID: 32740 RVA: 0x0030AAFB File Offset: 0x00308CFB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnAddInputSubmit(XUiController _sender, string _text)
 	{
 		this.OnAddFeaturePressed(this.addInput.Text);
 	}
 
-	// Token: 0x06007F96 RID: 32662
+	// Token: 0x06007FE5 RID: 32741
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void AddNewFeature(string _featureName);
 
-	// Token: 0x06007F97 RID: 32663 RVA: 0x00308FF4 File Offset: 0x003071F4
+	// Token: 0x06007FE6 RID: 32742 RVA: 0x0030AB10 File Offset: 0x00308D10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAddFeaturePressed(string _s)
 	{
@@ -70,7 +70,7 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 		featureChanged(this, _s, true);
 	}
 
-	// Token: 0x06007F98 RID: 32664 RVA: 0x00309044 File Offset: 0x00307244
+	// Token: 0x06007FE7 RID: 32743 RVA: 0x0030AB60 File Offset: 0x00308D60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validGroupName(string _s)
 	{
@@ -78,11 +78,11 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 		return _s.Length > 0 && _s.IndexOf(",", StringComparison.OrdinalIgnoreCase) < 0 && !this.groupsResult.ContainsCaseInsensitive(_s);
 	}
 
-	// Token: 0x06007F99 RID: 32665
+	// Token: 0x06007FE8 RID: 32744
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void ToggleFeature(string _featureName);
 
-	// Token: 0x06007F9A RID: 32666 RVA: 0x00309078 File Offset: 0x00307278
+	// Token: 0x06007FE9 RID: 32745 RVA: 0x0030AB94 File Offset: 0x00308D94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FeatureListSelectionChanged(XUiC_List<XUiC_PrefabFeatureEditorList.FeatureEntry> _list, XUiC_PrefabFeatureEditorList.FeatureEntry _previousEntry, XUiC_PrefabFeatureEditorList.FeatureEntry _newEntry)
 	{
@@ -101,18 +101,18 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 		featureChanged(this, name, this.FeatureEnabled(name));
 	}
 
-	// Token: 0x06007F9B RID: 32667 RVA: 0x003090B7 File Offset: 0x003072B7
+	// Token: 0x06007FEA RID: 32746 RVA: 0x0030ABD3 File Offset: 0x00308DD3
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007F9C RID: 32668
+	// Token: 0x06007FEB RID: 32747
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void GetSupportedFeatures();
 
-	// Token: 0x06007F9D RID: 32669 RVA: 0x003090C8 File Offset: 0x003072C8
+	// Token: 0x06007FEC RID: 32748 RVA: 0x0030ABE4 File Offset: 0x00308DE4
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -126,39 +126,39 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007F9E RID: 32670 RVA: 0x00309154 File Offset: 0x00307354
+	// Token: 0x06007FED RID: 32749 RVA: 0x0030AC70 File Offset: 0x00308E70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_PrefabFeatureEditorList()
 	{
 	}
 
-	// Token: 0x04005EC8 RID: 24264
+	// Token: 0x04005F03 RID: 24323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput addInput;
 
-	// Token: 0x04005EC9 RID: 24265
+	// Token: 0x04005F04 RID: 24324
 	public Prefab EditPrefab;
 
-	// Token: 0x04005ECA RID: 24266
+	// Token: 0x04005F05 RID: 24325
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly List<string> groupsResult = new List<string>();
 
-	// Token: 0x02000FD0 RID: 4048
-	// (Invoke) Token: 0x06007FA0 RID: 32672
+	// Token: 0x02000FE0 RID: 4064
+	// (Invoke) Token: 0x06007FEF RID: 32751
 	public delegate void FeatureChangedDelegate(XUiC_PrefabFeatureEditorList _list, string _featureName, bool _selected);
 
-	// Token: 0x02000FD1 RID: 4049
+	// Token: 0x02000FE1 RID: 4065
 	[Preserve]
 	public class FeatureEntry : XUiListEntry<XUiC_PrefabFeatureEditorList.FeatureEntry>
 	{
-		// Token: 0x06007FA3 RID: 32675 RVA: 0x00309167 File Offset: 0x00307367
+		// Token: 0x06007FF2 RID: 32754 RVA: 0x0030AC83 File Offset: 0x00308E83
 		public FeatureEntry(XUiC_PrefabFeatureEditorList _parentList, string _name)
 		{
 			this.parentList = _parentList;
 			this.Name = _name;
 		}
 
-		// Token: 0x06007FA4 RID: 32676 RVA: 0x0030917D File Offset: 0x0030737D
+		// Token: 0x06007FF3 RID: 32755 RVA: 0x0030AC99 File Offset: 0x00308E99
 		public override int CompareTo(XUiC_PrefabFeatureEditorList.FeatureEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -168,33 +168,33 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 			return string.Compare(this.Name, _otherEntry.Name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06007FA5 RID: 32677 RVA: 0x00309196 File Offset: 0x00307396
+		// Token: 0x06007FF4 RID: 32756 RVA: 0x0030ACB2 File Offset: 0x00308EB2
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.Name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x04005ECB RID: 24267
+		// Token: 0x04005F06 RID: 24326
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_PrefabFeatureEditorList parentList;
 
-		// Token: 0x04005ECC RID: 24268
+		// Token: 0x04005F07 RID: 24327
 		public readonly string Name;
 	}
 
-	// Token: 0x02000FD2 RID: 4050
+	// Token: 0x02000FE2 RID: 4066
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_PrefabFeatureEditorList.FeatureEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007FA6 RID: 32678 RVA: 0x003091AB File Offset: 0x003073AB
+		// Token: 0x06007FF5 RID: 32757 RVA: 0x0030ACC7 File Offset: 0x00308EC7
 		public override void Init()
 		{
 			base.Init();
 			this.parentList = (XUiC_PrefabFeatureEditorList)this.list;
 		}
 
-		// Token: 0x06007FA7 RID: 32679 RVA: 0x003091C4 File Offset: 0x003073C4
+		// Token: 0x06007FF6 RID: 32758 RVA: 0x0030ACE0 File Offset: 0x00308EE0
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -203,7 +203,7 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 			return ((entryData != null) ? entryData.Name : null) ?? "";
 		}
 
-		// Token: 0x06007FA8 RID: 32680 RVA: 0x003091E1 File Offset: 0x003073E1
+		// Token: 0x06007FF7 RID: 32759 RVA: 0x0030ACFD File Offset: 0x00308EFD
 		[XuiXmlBinding("selected")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingSelected()
@@ -211,7 +211,7 @@ public abstract class XUiC_PrefabFeatureEditorList : XUiC_List<XUiC_PrefabFeatur
 			return this.entryData != null && this.parentList.EditPrefab != null && this.parentList.FeatureEnabled(this.entryData.Name);
 		}
 
-		// Token: 0x04005ECD RID: 24269
+		// Token: 0x04005F08 RID: 24328
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_PrefabFeatureEditorList parentList;
 	}

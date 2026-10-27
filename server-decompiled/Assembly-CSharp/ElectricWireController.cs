@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x020003D1 RID: 977
+// Token: 0x020003D3 RID: 979
 public class ElectricWireController : MonoBehaviour
 {
 	// Token: 0x17000389 RID: 905
-	// (get) Token: 0x06001D61 RID: 7521 RVA: 0x000B1687 File Offset: 0x000AF887
-	// (set) Token: 0x06001D62 RID: 7522 RVA: 0x000B1690 File Offset: 0x000AF890
+	// (get) Token: 0x06001D65 RID: 7525 RVA: 0x000B1897 File Offset: 0x000AFA97
+	// (set) Token: 0x06001D66 RID: 7526 RVA: 0x000B18A0 File Offset: 0x000AFAA0
 	public float HealthRatio
 	{
 		get
@@ -34,7 +34,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D63 RID: 7523 RVA: 0x000B1704 File Offset: 0x000AF904
+	// Token: 0x06001D67 RID: 7527 RVA: 0x000B1914 File Offset: 0x000AFB14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setWireDip(bool dip)
 	{
@@ -55,7 +55,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D64 RID: 7524 RVA: 0x000B1774 File Offset: 0x000AF974
+	// Token: 0x06001D68 RID: 7528 RVA: 0x000B1984 File Offset: 0x000AFB84
 	public void Init(DynamicProperties _properties)
 	{
 		if (_properties.Values.ContainsKey("Buff"))
@@ -111,7 +111,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D65 RID: 7525 RVA: 0x000B1954 File Offset: 0x000AFB54
+	// Token: 0x06001D69 RID: 7529 RVA: 0x000B1B64 File Offset: 0x000AFD64
 	public void DamageSelf(float damage)
 	{
 		this.totalDamage += damage;
@@ -133,7 +133,7 @@ public class ElectricWireController : MonoBehaviour
 		GameManager.Instance.World.SetBlockRPC(this.BlockPosition, block);
 	}
 
-	// Token: 0x06001D66 RID: 7526 RVA: 0x000B1A50 File Offset: 0x000AFC50
+	// Token: 0x06001D6A RID: 7530 RVA: 0x000B1C60 File Offset: 0x000AFE60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -161,7 +161,7 @@ public class ElectricWireController : MonoBehaviour
 		this.CollidersThisFrame.Clear();
 	}
 
-	// Token: 0x06001D67 RID: 7527 RVA: 0x000B1B34 File Offset: 0x000AFD34
+	// Token: 0x06001D6B RID: 7531 RVA: 0x000B1D44 File Offset: 0x000AFF44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -179,7 +179,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D68 RID: 7528 RVA: 0x000B1B84 File Offset: 0x000AFD84
+	// Token: 0x06001D6C RID: 7532 RVA: 0x000B1D94 File Offset: 0x000AFF94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerStay(Collider other)
 	{
@@ -197,7 +197,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D69 RID: 7529 RVA: 0x000B1BD4 File Offset: 0x000AFDD4
+	// Token: 0x06001D6D RID: 7533 RVA: 0x000B1DE4 File Offset: 0x000AFFE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerExit(Collider other)
 	{
@@ -215,7 +215,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D6A RID: 7530 RVA: 0x000B1C24 File Offset: 0x000AFE24
+	// Token: 0x06001D6E RID: 7534 RVA: 0x000B1E34 File Offset: 0x000B0034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void touched(Collider collider)
 	{
@@ -271,7 +271,7 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D6B RID: 7531 RVA: 0x000B1E00 File Offset: 0x000B0000
+	// Token: 0x06001D6F RID: 7535 RVA: 0x000B2010 File Offset: 0x000B0210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetGameObjectPath(Entity e, Transform transform)
 	{
@@ -284,7 +284,7 @@ public class ElectricWireController : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06001D6C RID: 7532 RVA: 0x000B1E5C File Offset: 0x000B005C
+	// Token: 0x06001D70 RID: 7536 RVA: 0x000B206C File Offset: 0x000B026C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleParticlesForBroken(bool isBroken)
 	{
@@ -305,87 +305,87 @@ public class ElectricWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400134F RID: 4943
+	// Token: 0x0400135F RID: 4959
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cDipValue = 0.25f;
 
-	// Token: 0x04001350 RID: 4944
+	// Token: 0x04001360 RID: 4960
 	public TileEntityPoweredMeleeTrap TileEntityParent;
 
-	// Token: 0x04001351 RID: 4945
+	// Token: 0x04001361 RID: 4961
 	public TileEntityPoweredMeleeTrap TileEntityChild;
 
-	// Token: 0x04001352 RID: 4946
+	// Token: 0x04001362 RID: 4962
 	public IWireNode WireNode;
 
-	// Token: 0x04001353 RID: 4947
+	// Token: 0x04001363 RID: 4963
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float healthRatio = -1f;
 
-	// Token: 0x04001354 RID: 4948
+	// Token: 0x04001364 RID: 4964
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<string> buffActions;
 
-	// Token: 0x04001355 RID: 4949
+	// Token: 0x04001365 RID: 4965
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static string PropDamageReceived = "Damage_received";
 
-	// Token: 0x04001356 RID: 4950
+	// Token: 0x04001366 RID: 4966
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float damageReceived;
 
-	// Token: 0x04001357 RID: 4951
+	// Token: 0x04001367 RID: 4967
 	public Vector3i BlockPosition;
 
-	// Token: 0x04001358 RID: 4952
+	// Token: 0x04001368 RID: 4968
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Chunk chunk;
 
-	// Token: 0x04001359 RID: 4953
+	// Token: 0x04001369 RID: 4969
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float totalDamage;
 
-	// Token: 0x0400135A RID: 4954
+	// Token: 0x0400136A RID: 4970
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float particleDelay;
 
-	// Token: 0x0400135B RID: 4955
+	// Token: 0x0400136B RID: 4971
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float brokenPercentage;
 
-	// Token: 0x0400135C RID: 4956
+	// Token: 0x0400136C RID: 4972
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float breakingPercentage;
 
-	// Token: 0x0400135D RID: 4957
+	// Token: 0x0400136D RID: 4973
 	public int OwnerEntityID = -1;
 
-	// Token: 0x0400135E RID: 4958
+	// Token: 0x0400136E RID: 4974
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 startPoint;
 
-	// Token: 0x0400135F RID: 4959
+	// Token: 0x0400136F RID: 4975
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 endPoint;
 
-	// Token: 0x04001360 RID: 4960
+	// Token: 0x04001370 RID: 4976
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Collider> CollidersThisFrame;
 
-	// Token: 0x04001361 RID: 4961
+	// Token: 0x04001371 RID: 4977
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastHealthRatio = 1f;

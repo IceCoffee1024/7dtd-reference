@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200084C RID: 2124
+// Token: 0x02000856 RID: 2134
 [Preserve]
 public class NetPackageSharedQuest : NetPackage
 {
-	// Token: 0x06003DD4 RID: 15828 RVA: 0x001891BB File Offset: 0x001873BB
+	// Token: 0x06003DF7 RID: 15863 RVA: 0x0018A263 File Offset: 0x00188463
 	public NetPackageSharedQuest Setup(string _questUniqueId, int _questCode, int _sharedByEntityID)
 	{
 		this.sharedQuestData.questUniqueId = _questUniqueId;
@@ -17,7 +17,7 @@ public class NetPackageSharedQuest : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DD5 RID: 15829 RVA: 0x001891F0 File Offset: 0x001873F0
+	// Token: 0x06003DF8 RID: 15864 RVA: 0x0018A298 File Offset: 0x00188498
 	public NetPackageSharedQuest Setup(string _questUniqueId, int _questCode, int _sharedByEntityID, int _sharedWithEntityID, bool adding)
 	{
 		this.sharedQuestData.questUniqueId = _questUniqueId;
@@ -28,7 +28,7 @@ public class NetPackageSharedQuest : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DD6 RID: 15830 RVA: 0x00189244 File Offset: 0x00187444
+	// Token: 0x06003DF9 RID: 15865 RVA: 0x0018A2EC File Offset: 0x001884EC
 	public NetPackageSharedQuest Setup(NetPackageSharedQuest.SharedQuestData sqd)
 	{
 		this.sharedQuestData.questUniqueId = sqd.questUniqueId;
@@ -45,20 +45,20 @@ public class NetPackageSharedQuest : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DD7 RID: 15831 RVA: 0x00189308 File Offset: 0x00187508
+	// Token: 0x06003DFA RID: 15866 RVA: 0x0018A3B0 File Offset: 0x001885B0
 	public override void read(PooledBinaryReader _br)
 	{
 		this.sharedQuestData.read(_br);
 	}
 
-	// Token: 0x06003DD8 RID: 15832 RVA: 0x00189316 File Offset: 0x00187516
+	// Token: 0x06003DFB RID: 15867 RVA: 0x0018A3BE File Offset: 0x001885BE
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		this.sharedQuestData.write(_bw);
 	}
 
-	// Token: 0x06003DD9 RID: 15833 RVA: 0x0018932C File Offset: 0x0018752C
+	// Token: 0x06003DFC RID: 15868 RVA: 0x0018A3D4 File Offset: 0x001885D4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		int questCode = this.sharedQuestData.questCode;
@@ -203,19 +203,19 @@ public class NetPackageSharedQuest : NetPackage
 		}
 	}
 
-	// Token: 0x04003255 RID: 12885
+	// Token: 0x04003275 RID: 12917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageSharedQuest.SharedQuestData sharedQuestData = new NetPackageSharedQuest.SharedQuestData();
 
-	// Token: 0x0200084D RID: 2125
+	// Token: 0x02000857 RID: 2135
 	public class SharedQuestData
 	{
-		// Token: 0x06003DDB RID: 15835 RVA: 0x0018982D File Offset: 0x00187A2D
+		// Token: 0x06003DFE RID: 15870 RVA: 0x0018A8D5 File Offset: 0x00188AD5
 		public SharedQuestData()
 		{
 		}
 
-		// Token: 0x06003DDC RID: 15836 RVA: 0x0018983C File Offset: 0x00187A3C
+		// Token: 0x06003DFF RID: 15871 RVA: 0x0018A8E4 File Offset: 0x00188AE4
 		public SharedQuestData(string _questUniqueId, int _questCode, string _questID, string _poiName, Vector3 _position, Vector3 _size, Vector3 _returnPos, int _sharedByEntityID, int _sharedWithEntityID, int _questGiverID)
 		{
 			this.questUniqueId = _questUniqueId;
@@ -230,7 +230,7 @@ public class NetPackageSharedQuest : NetPackage
 			this.questGiverID = _questGiverID;
 		}
 
-		// Token: 0x06003DDD RID: 15837 RVA: 0x001898A4 File Offset: 0x00187AA4
+		// Token: 0x06003E00 RID: 15872 RVA: 0x0018A94C File Offset: 0x00188B4C
 		public SharedQuestData(NetPackageSharedQuest.SharedQuestData other)
 		{
 			this.questUniqueId = other.questUniqueId;
@@ -245,7 +245,7 @@ public class NetPackageSharedQuest : NetPackage
 			this.questGiverID = other.questGiverID;
 		}
 
-		// Token: 0x06003DDE RID: 15838 RVA: 0x00189938 File Offset: 0x00187B38
+		// Token: 0x06003E01 RID: 15873 RVA: 0x0018A9E0 File Offset: 0x00188BE0
 		public void read(PooledBinaryReader _br)
 		{
 			this.sharedByEntityID = _br.ReadInt32();
@@ -272,7 +272,7 @@ public class NetPackageSharedQuest : NetPackage
 			this.sharedWithEntityID = _br.ReadInt32();
 		}
 
-		// Token: 0x06003DDF RID: 15839 RVA: 0x00189A00 File Offset: 0x00187C00
+		// Token: 0x06003E02 RID: 15874 RVA: 0x0018AAA8 File Offset: 0x00188CA8
 		public void write(PooledBinaryWriter _bw)
 		{
 			_bw.Write(this.sharedByEntityID);
@@ -299,49 +299,49 @@ public class NetPackageSharedQuest : NetPackage
 			_bw.Write(this.sharedWithEntityID);
 		}
 
-		// Token: 0x04003256 RID: 12886
+		// Token: 0x04003276 RID: 12918
 		public string questID;
 
-		// Token: 0x04003257 RID: 12887
+		// Token: 0x04003277 RID: 12919
 		public string poiName;
 
-		// Token: 0x04003258 RID: 12888
+		// Token: 0x04003278 RID: 12920
 		public Vector3 position;
 
-		// Token: 0x04003259 RID: 12889
+		// Token: 0x04003279 RID: 12921
 		public Vector3 size;
 
-		// Token: 0x0400325A RID: 12890
+		// Token: 0x0400327A RID: 12922
 		public Vector3 returnPos;
 
-		// Token: 0x0400325B RID: 12891
+		// Token: 0x0400327B RID: 12923
 		public int sharedByEntityID;
 
-		// Token: 0x0400325C RID: 12892
+		// Token: 0x0400327C RID: 12924
 		public int sharedWithEntityID;
 
-		// Token: 0x0400325D RID: 12893
+		// Token: 0x0400327D RID: 12925
 		public int questGiverID;
 
-		// Token: 0x0400325E RID: 12894
+		// Token: 0x0400327E RID: 12926
 		public string questUniqueId;
 
-		// Token: 0x0400325F RID: 12895
+		// Token: 0x0400327F RID: 12927
 		public int questCode = -1;
 
-		// Token: 0x04003260 RID: 12896
+		// Token: 0x04003280 RID: 12928
 		public NetPackageSharedQuest.SharedQuestData.SharedQuestEvents questEvent;
 
-		// Token: 0x0200084E RID: 2126
+		// Token: 0x02000858 RID: 2136
 		public enum SharedQuestEvents
 		{
-			// Token: 0x04003262 RID: 12898
+			// Token: 0x04003282 RID: 12930
 			ShareQuest,
-			// Token: 0x04003263 RID: 12899
+			// Token: 0x04003283 RID: 12931
 			RemoveQuest,
-			// Token: 0x04003264 RID: 12900
+			// Token: 0x04003284 RID: 12932
 			AddSharedMember,
-			// Token: 0x04003265 RID: 12901
+			// Token: 0x04003285 RID: 12933
 			RemoveSharedMember
 		}
 	}

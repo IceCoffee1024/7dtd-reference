@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E8A RID: 3722
+// Token: 0x02000E95 RID: 3733
 [Preserve]
 public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struct, IConvertible
 {
-	// Token: 0x17000D46 RID: 3398
-	// (get) Token: 0x060072A5 RID: 29349 RVA: 0x002BEDE4 File Offset: 0x002BCFE4
-	// (set) Token: 0x060072A6 RID: 29350 RVA: 0x002BEDEC File Offset: 0x002BCFEC
+	// Token: 0x17000D4C RID: 3404
+	// (get) Token: 0x060072CA RID: 29386 RVA: 0x002C0350 File Offset: 0x002BE550
+	// (set) Token: 0x060072CB RID: 29387 RVA: 0x002C0358 File Offset: 0x002BE558
 	[XuiXmlAttribute("localization_prefix", false)]
 	public string LocalizationPrefix { get; set; }
 
-	// Token: 0x17000D47 RID: 3399
-	// (get) Token: 0x060072A7 RID: 29351 RVA: 0x002BEDF8 File Offset: 0x002BCFF8
-	// (set) Token: 0x060072A8 RID: 29352 RVA: 0x002BEE28 File Offset: 0x002BD028
+	// Token: 0x17000D4D RID: 3405
+	// (get) Token: 0x060072CC RID: 29388 RVA: 0x002C0364 File Offset: 0x002BE564
+	// (set) Token: 0x060072CD RID: 29389 RVA: 0x002C0394 File Offset: 0x002BE594
 	public TEnum? Min
 	{
 		get
@@ -38,9 +38,9 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D48 RID: 3400
-	// (get) Token: 0x060072A9 RID: 29353 RVA: 0x002BEEC0 File Offset: 0x002BD0C0
-	// (set) Token: 0x060072AA RID: 29354 RVA: 0x002BEEF0 File Offset: 0x002BD0F0
+	// Token: 0x17000D4E RID: 3406
+	// (get) Token: 0x060072CE RID: 29390 RVA: 0x002C042C File Offset: 0x002BE62C
+	// (set) Token: 0x060072CF RID: 29391 RVA: 0x002C045C File Offset: 0x002BE65C
 	public TEnum? Max
 	{
 		get
@@ -63,9 +63,9 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D49 RID: 3401
-	// (get) Token: 0x060072AB RID: 29355 RVA: 0x002BEF88 File Offset: 0x002BD188
-	// (set) Token: 0x060072AC RID: 29356 RVA: 0x002BEF90 File Offset: 0x002BD190
+	// Token: 0x17000D4F RID: 3407
+	// (get) Token: 0x060072D0 RID: 29392 RVA: 0x002C04F4 File Offset: 0x002BE6F4
+	// (set) Token: 0x060072D1 RID: 29393 RVA: 0x002C04FC File Offset: 0x002BE6FC
 	public override TEnum Value
 	{
 		get
@@ -92,8 +92,8 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D4A RID: 3402
-	// (get) Token: 0x060072AD RID: 29357 RVA: 0x002BF029 File Offset: 0x002BD229
+	// Token: 0x17000D50 RID: 3408
+	// (get) Token: 0x060072D2 RID: 29394 RVA: 0x002C0595 File Offset: 0x002BE795
 	public int MinIndex
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -107,8 +107,8 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D4B RID: 3403
-	// (get) Token: 0x060072AE RID: 29358 RVA: 0x002BF050 File Offset: 0x002BD250
+	// Token: 0x17000D51 RID: 3409
+	// (get) Token: 0x060072D3 RID: 29395 RVA: 0x002C05BC File Offset: 0x002BE7BC
 	public int MaxIndex
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -122,9 +122,9 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D4C RID: 3404
-	// (get) Token: 0x060072AF RID: 29359 RVA: 0x002BF083 File Offset: 0x002BD283
-	// (set) Token: 0x060072B0 RID: 29360 RVA: 0x002BF0BC File Offset: 0x002BD2BC
+	// Token: 0x17000D52 RID: 3410
+	// (get) Token: 0x060072D4 RID: 29396 RVA: 0x002C05EF File Offset: 0x002BE7EF
+	// (set) Token: 0x060072D5 RID: 29397 RVA: 0x002C0628 File Offset: 0x002BE828
 	public override double RelativeValue
 	{
 		get
@@ -154,9 +154,9 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D4D RID: 3405
-	// (get) Token: 0x060072B1 RID: 29361 RVA: 0x002BF135 File Offset: 0x002BD335
-	// (set) Token: 0x060072B2 RID: 29362 RVA: 0x002BF144 File Offset: 0x002BD344
+	// Token: 0x17000D53 RID: 3411
+	// (get) Token: 0x060072D6 RID: 29398 RVA: 0x002C06A1 File Offset: 0x002BE8A1
+	// (set) Token: 0x060072D7 RID: 29399 RVA: 0x002C06B0 File Offset: 0x002BE8B0
 	public override long ValueGeneric
 	{
 		get
@@ -173,9 +173,9 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D4E RID: 3406
-	// (get) Token: 0x060072B3 RID: 29363 RVA: 0x002BF164 File Offset: 0x002BD364
-	// (set) Token: 0x060072B4 RID: 29364 RVA: 0x002BF188 File Offset: 0x002BD388
+	// Token: 0x17000D54 RID: 3412
+	// (get) Token: 0x060072D8 RID: 29400 RVA: 0x002C06D0 File Offset: 0x002BE8D0
+	// (set) Token: 0x060072D9 RID: 29401 RVA: 0x002C06F4 File Offset: 0x002BE8F4
 	public override long ValueMinGeneric
 	{
 		get
@@ -192,9 +192,9 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D4F RID: 3407
-	// (get) Token: 0x060072B5 RID: 29365 RVA: 0x002BF1AC File Offset: 0x002BD3AC
-	// (set) Token: 0x060072B6 RID: 29366 RVA: 0x002BF1D0 File Offset: 0x002BD3D0
+	// Token: 0x17000D55 RID: 3413
+	// (get) Token: 0x060072DA RID: 29402 RVA: 0x002C0718 File Offset: 0x002BE918
+	// (set) Token: 0x060072DB RID: 29403 RVA: 0x002C073C File Offset: 0x002BE93C
 	public override long ValueMaxGeneric
 	{
 		get
@@ -211,8 +211,8 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D50 RID: 3408
-	// (get) Token: 0x060072B7 RID: 29367 RVA: 0x002BF1F4 File Offset: 0x002BD3F4
+	// Token: 0x17000D56 RID: 3414
+	// (get) Token: 0x060072DC RID: 29404 RVA: 0x002C0760 File Offset: 0x002BE960
 	public override int IndexElementCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -222,8 +222,8 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x17000D51 RID: 3409
-	// (get) Token: 0x060072B8 RID: 29368 RVA: 0x002BF201 File Offset: 0x002BD401
+	// Token: 0x17000D57 RID: 3415
+	// (get) Token: 0x060072DD RID: 29405 RVA: 0x002C076D File Offset: 0x002BE96D
 	public override int IndexMarkerIndex
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -233,7 +233,7 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x060072B9 RID: 29369 RVA: 0x002BF214 File Offset: 0x002BD414
+	// Token: 0x060072DE RID: 29406 RVA: 0x002C0780 File Offset: 0x002BE980
 	public override void Init()
 	{
 		base.Init();
@@ -247,7 +247,7 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x060072BA RID: 29370 RVA: 0x002BF264 File Offset: 0x002BD464
+	// Token: 0x060072DF RID: 29407 RVA: 0x002C07D0 File Offset: 0x002BE9D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateLabel()
 	{
@@ -259,28 +259,28 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		base.ValueText = ((!string.IsNullOrEmpty(this.LocalizationPrefix)) ? Localization.Get(this.LocalizationPrefix + this.currentValue.ToStringCached<TEnum>(), false, null) : this.currentValue.ToStringCached<TEnum>());
 	}
 
-	// Token: 0x060072BB RID: 29371 RVA: 0x002BF2CE File Offset: 0x002BD4CE
+	// Token: 0x060072E0 RID: 29408 RVA: 0x002C083A File Offset: 0x002BEA3A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDifferentValue(TEnum _oldVal, TEnum _currentValue)
 	{
 		return _oldVal.Ordinal<TEnum>() != _currentValue.Ordinal<TEnum>();
 	}
 
-	// Token: 0x060072BC RID: 29372 RVA: 0x002BF2E1 File Offset: 0x002BD4E1
+	// Token: 0x060072E1 RID: 29409 RVA: 0x002C084D File Offset: 0x002BEA4D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void BackPressed()
 	{
 		this.changeIndex(-1);
 	}
 
-	// Token: 0x060072BD RID: 29373 RVA: 0x002BF2EA File Offset: 0x002BD4EA
+	// Token: 0x060072E2 RID: 29410 RVA: 0x002C0856 File Offset: 0x002BEA56
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ForwardPressed()
 	{
 		this.changeIndex(1);
 	}
 
-	// Token: 0x060072BE RID: 29374 RVA: 0x002BF2F4 File Offset: 0x002BD4F4
+	// Token: 0x060072E3 RID: 29411 RVA: 0x002C0860 File Offset: 0x002BEA60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void changeIndex(int _direction)
 	{
@@ -311,28 +311,28 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		this.Value = this.Elements[num2];
 	}
 
-	// Token: 0x060072BF RID: 29375 RVA: 0x002BF39C File Offset: 0x002BD59C
+	// Token: 0x060072E4 RID: 29412 RVA: 0x002C0908 File Offset: 0x002BEB08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isMax()
 	{
 		return this.currentValue.Ordinal<TEnum>() == this.Max.Value.Ordinal<TEnum>();
 	}
 
-	// Token: 0x060072C0 RID: 29376 RVA: 0x002BF3CC File Offset: 0x002BD5CC
+	// Token: 0x060072E5 RID: 29413 RVA: 0x002C0938 File Offset: 0x002BEB38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isMin()
 	{
 		return this.currentValue.Ordinal<TEnum>() == this.Min.Value.Ordinal<TEnum>();
 	}
 
-	// Token: 0x060072C1 RID: 29377 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060072E6 RID: 29414 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isEmpty()
 	{
 		return false;
 	}
 
-	// Token: 0x060072C2 RID: 29378 RVA: 0x002BF3FC File Offset: 0x002BD5FC
+	// Token: 0x060072E7 RID: 29415 RVA: 0x002C0968 File Offset: 0x002BEB68
 	[XuiXmlAttribute("values", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValues(string _value)
@@ -367,7 +367,7 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x060072C3 RID: 29379 RVA: 0x002BF4B5 File Offset: 0x002BD6B5
+	// Token: 0x060072E8 RID: 29416 RVA: 0x002C0A21 File Offset: 0x002BEC21
 	[XuiXmlAttribute("value_min", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueMin(string _value)
@@ -378,7 +378,7 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x060072C4 RID: 29380 RVA: 0x002BF4D6 File Offset: 0x002BD6D6
+	// Token: 0x060072E9 RID: 29417 RVA: 0x002C0A42 File Offset: 0x002BEC42
 	[XuiXmlAttribute("value_max", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueMax(string _value)
@@ -389,7 +389,7 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x060072C5 RID: 29381 RVA: 0x002BF4F7 File Offset: 0x002BD6F7
+	// Token: 0x060072EA RID: 29418 RVA: 0x002C0A63 File Offset: 0x002BEC63
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void incrementalChangeValue(double _value)
 	{
@@ -404,14 +404,14 @@ public class XUiC_ComboBoxEnum<TEnum> : XUiC_ComboBox<TEnum> where TEnum : struc
 		}
 	}
 
-	// Token: 0x0400564A RID: 22090
+	// Token: 0x0400566F RID: 22127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEnum? min;
 
-	// Token: 0x0400564B RID: 22091
+	// Token: 0x04005670 RID: 22128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEnum? max;
 
-	// Token: 0x0400564C RID: 22092
+	// Token: 0x04005671 RID: 22129
 	public readonly List<TEnum> Elements = new List<TEnum>();
 }

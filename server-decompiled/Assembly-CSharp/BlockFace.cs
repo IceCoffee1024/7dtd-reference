@@ -1,22 +1,22 @@
 ﻿using System;
 
-// Token: 0x020013C7 RID: 5063
+// Token: 0x020013D9 RID: 5081
 public enum BlockFace : byte
 {
-	// Token: 0x040078A9 RID: 30889
+	// Token: 0x040078EA RID: 30954
 	Top,
-	// Token: 0x040078AA RID: 30890
+	// Token: 0x040078EB RID: 30955
 	Bottom,
-	// Token: 0x040078AB RID: 30891
+	// Token: 0x040078EC RID: 30956
 	North,
-	// Token: 0x040078AC RID: 30892
+	// Token: 0x040078ED RID: 30957
 	West,
-	// Token: 0x040078AD RID: 30893
+	// Token: 0x040078EE RID: 30958
 	South,
-	// Token: 0x040078AE RID: 30894
+	// Token: 0x040078EF RID: 30959
 	East,
-	// Token: 0x040078AF RID: 30895
+	// Token: 0x040078F0 RID: 30960
 	Middle,
-	// Token: 0x040078B0 RID: 30896
+	// Token: 0x040078F1 RID: 30961
 	None = 255
 }

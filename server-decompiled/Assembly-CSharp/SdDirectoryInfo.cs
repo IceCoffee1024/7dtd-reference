@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-// Token: 0x02000A0D RID: 2573
+// Token: 0x02000A17 RID: 2583
 public sealed class SdDirectoryInfo : SdFileSystemInfo
 {
-	// Token: 0x06004C8C RID: 19596 RVA: 0x001DA62C File Offset: 0x001D882C
+	// Token: 0x06004CB0 RID: 19632 RVA: 0x001DB714 File Offset: 0x001D9914
 	public SdDirectoryInfo(string path)
 		: this(new DirectoryInfo(path))
 	{
 	}
 
-	// Token: 0x06004C8D RID: 19597 RVA: 0x001DA63A File Offset: 0x001D883A
+	// Token: 0x06004CB1 RID: 19633 RVA: 0x001DB722 File Offset: 0x001D9922
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public SdDirectoryInfo(SaveDataManagedPath saveDataManagedPath)
 		: this(new DirectoryInfo(saveDataManagedPath.GetOriginalPath()), saveDataManagedPath)
 	{
 	}
 
-	// Token: 0x06004C8E RID: 19598 RVA: 0x001DA64E File Offset: 0x001D884E
+	// Token: 0x06004CB2 RID: 19634 RVA: 0x001DB736 File Offset: 0x001D9936
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public SdDirectoryInfo(DirectoryInfo directoryInfo)
 		: base(directoryInfo)
@@ -27,7 +27,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		this.m_directoryInfo = directoryInfo;
 	}
 
-	// Token: 0x06004C8F RID: 19599 RVA: 0x001DA65E File Offset: 0x001D885E
+	// Token: 0x06004CB3 RID: 19635 RVA: 0x001DB746 File Offset: 0x001D9946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SdDirectoryInfo(DirectoryInfo directoryInfo, SaveDataManagedPath saveDataManagedPath)
 		: base(directoryInfo, saveDataManagedPath)
@@ -35,8 +35,8 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		this.m_directoryInfo = directoryInfo;
 	}
 
-	// Token: 0x17000849 RID: 2121
-	// (get) Token: 0x06004C90 RID: 19600 RVA: 0x001DA66F File Offset: 0x001D886F
+	// Token: 0x1700084F RID: 2127
+	// (get) Token: 0x06004CB4 RID: 19636 RVA: 0x001DB757 File Offset: 0x001D9957
 	public override string Name
 	{
 		get
@@ -45,8 +45,8 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x1700084A RID: 2122
-	// (get) Token: 0x06004C91 RID: 19601 RVA: 0x001DA67C File Offset: 0x001D887C
+	// Token: 0x17000850 RID: 2128
+	// (get) Token: 0x06004CB5 RID: 19637 RVA: 0x001DB764 File Offset: 0x001D9964
 	public override string FullName
 	{
 		get
@@ -55,8 +55,8 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x1700084B RID: 2123
-	// (get) Token: 0x06004C92 RID: 19602 RVA: 0x001DA689 File Offset: 0x001D8889
+	// Token: 0x17000851 RID: 2129
+	// (get) Token: 0x06004CB6 RID: 19638 RVA: 0x001DB771 File Offset: 0x001D9971
 	public SdDirectoryInfo Parent
 	{
 		get
@@ -65,7 +65,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x06004C93 RID: 19603 RVA: 0x001DA69B File Offset: 0x001D889B
+	// Token: 0x06004CB7 RID: 19639 RVA: 0x001DB783 File Offset: 0x001D9983
 	public SdDirectoryInfo CreateSubdirectory(string path)
 	{
 		if (base.IsManaged)
@@ -75,14 +75,14 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		return new SdDirectoryInfo(this.m_directoryInfo.CreateSubdirectory(path));
 	}
 
-	// Token: 0x06004C94 RID: 19604 RVA: 0x001DA6BE File Offset: 0x001D88BE
+	// Token: 0x06004CB8 RID: 19640 RVA: 0x001DB7A6 File Offset: 0x001D99A6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SdDirectoryInfo ManagedCreateSubdirectory(string path)
 	{
 		return SdDirectory.CreateDirectory(Path.Combine(this.FullName, path));
 	}
 
-	// Token: 0x06004C95 RID: 19605 RVA: 0x001DA6D1 File Offset: 0x001D88D1
+	// Token: 0x06004CB9 RID: 19641 RVA: 0x001DB7B9 File Offset: 0x001D99B9
 	public void Create()
 	{
 		if (base.IsManaged)
@@ -93,15 +93,15 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		this.m_directoryInfo.Create();
 	}
 
-	// Token: 0x06004C96 RID: 19606 RVA: 0x001DA6ED File Offset: 0x001D88ED
+	// Token: 0x06004CBA RID: 19642 RVA: 0x001DB7D5 File Offset: 0x001D99D5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ManagedCreateDirectory()
 	{
 		SdDirectory.ManagedCreateDirectory(base.ManagedPath);
 	}
 
-	// Token: 0x1700084C RID: 2124
-	// (get) Token: 0x06004C97 RID: 19607 RVA: 0x001DA6FB File Offset: 0x001D88FB
+	// Token: 0x17000852 RID: 2130
+	// (get) Token: 0x06004CBB RID: 19643 RVA: 0x001DB7E3 File Offset: 0x001D99E3
 	public override bool Exists
 	{
 		get
@@ -114,61 +114,61 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x06004C98 RID: 19608 RVA: 0x001DA71C File Offset: 0x001D891C
+	// Token: 0x06004CBC RID: 19644 RVA: 0x001DB804 File Offset: 0x001D9A04
 	public SdFileInfo[] GetFiles(string searchPattern)
 	{
 		return this.EnumerateFiles(searchPattern).ToArray<SdFileInfo>();
 	}
 
-	// Token: 0x06004C99 RID: 19609 RVA: 0x001DA72A File Offset: 0x001D892A
+	// Token: 0x06004CBD RID: 19645 RVA: 0x001DB812 File Offset: 0x001D9A12
 	public SdFileInfo[] GetFiles(string searchPattern, SearchOption searchOption)
 	{
 		return this.EnumerateFiles(searchPattern, searchOption).ToArray<SdFileInfo>();
 	}
 
-	// Token: 0x06004C9A RID: 19610 RVA: 0x001DA739 File Offset: 0x001D8939
+	// Token: 0x06004CBE RID: 19646 RVA: 0x001DB821 File Offset: 0x001D9A21
 	public SdFileInfo[] GetFiles()
 	{
 		return this.EnumerateFiles().ToArray<SdFileInfo>();
 	}
 
-	// Token: 0x06004C9B RID: 19611 RVA: 0x001DA746 File Offset: 0x001D8946
+	// Token: 0x06004CBF RID: 19647 RVA: 0x001DB82E File Offset: 0x001D9A2E
 	public SdDirectoryInfo[] GetDirectories()
 	{
 		return this.EnumerateDirectories().ToArray<SdDirectoryInfo>();
 	}
 
-	// Token: 0x06004C9C RID: 19612 RVA: 0x001DA753 File Offset: 0x001D8953
+	// Token: 0x06004CC0 RID: 19648 RVA: 0x001DB83B File Offset: 0x001D9A3B
 	public SdDirectoryInfo[] GetDirectories(string searchPattern)
 	{
 		return this.EnumerateDirectories(searchPattern).ToArray<SdDirectoryInfo>();
 	}
 
-	// Token: 0x06004C9D RID: 19613 RVA: 0x001DA761 File Offset: 0x001D8961
+	// Token: 0x06004CC1 RID: 19649 RVA: 0x001DB849 File Offset: 0x001D9A49
 	public SdDirectoryInfo[] GetDirectories(string searchPattern, SearchOption searchOption)
 	{
 		return this.EnumerateDirectories(searchPattern, searchOption).ToArray<SdDirectoryInfo>();
 	}
 
-	// Token: 0x06004C9E RID: 19614 RVA: 0x001DA770 File Offset: 0x001D8970
+	// Token: 0x06004CC2 RID: 19650 RVA: 0x001DB858 File Offset: 0x001D9A58
 	public SdFileSystemInfo[] GetFileSystemInfos()
 	{
 		return this.EnumerateFileSystemInfos().ToArray<SdFileSystemInfo>();
 	}
 
-	// Token: 0x06004C9F RID: 19615 RVA: 0x001DA77D File Offset: 0x001D897D
+	// Token: 0x06004CC3 RID: 19651 RVA: 0x001DB865 File Offset: 0x001D9A65
 	public SdFileSystemInfo[] GetFileSystemInfos(string searchPattern)
 	{
 		return this.EnumerateFileSystemInfos(searchPattern).ToArray<SdFileSystemInfo>();
 	}
 
-	// Token: 0x06004CA0 RID: 19616 RVA: 0x001DA78B File Offset: 0x001D898B
+	// Token: 0x06004CC4 RID: 19652 RVA: 0x001DB873 File Offset: 0x001D9A73
 	public SdFileSystemInfo[] GetFileSystemInfos(string searchPattern, SearchOption searchOption)
 	{
 		return this.EnumerateFileSystemInfos(searchPattern, searchOption).ToArray<SdFileSystemInfo>();
 	}
 
-	// Token: 0x06004CA1 RID: 19617 RVA: 0x001DA79C File Offset: 0x001D899C
+	// Token: 0x06004CC5 RID: 19653 RVA: 0x001DB884 File Offset: 0x001D9A84
 	public IEnumerable<SdDirectoryInfo> EnumerateDirectories()
 	{
 		if (base.IsManaged)
@@ -179,7 +179,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 			select new SdDirectoryInfo(x);
 	}
 
-	// Token: 0x06004CA2 RID: 19618 RVA: 0x001DA7F0 File Offset: 0x001D89F0
+	// Token: 0x06004CC6 RID: 19654 RVA: 0x001DB8D8 File Offset: 0x001D9AD8
 	public IEnumerable<SdDirectoryInfo> EnumerateDirectories(string searchPattern)
 	{
 		if (base.IsManaged)
@@ -190,7 +190,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 			select new SdDirectoryInfo(x);
 	}
 
-	// Token: 0x06004CA3 RID: 19619 RVA: 0x001DA840 File Offset: 0x001D8A40
+	// Token: 0x06004CC7 RID: 19655 RVA: 0x001DB928 File Offset: 0x001D9B28
 	public IEnumerable<SdDirectoryInfo> EnumerateDirectories(string searchPattern, SearchOption searchOption)
 	{
 		if (base.IsManaged)
@@ -201,14 +201,14 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 			select new SdDirectoryInfo(x);
 	}
 
-	// Token: 0x06004CA4 RID: 19620 RVA: 0x001DA88F File Offset: 0x001D8A8F
+	// Token: 0x06004CC8 RID: 19656 RVA: 0x001DB977 File Offset: 0x001D9B77
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerable<SdDirectoryInfo> ManagedEnumerateDirectories(string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryInfoEnumerateDirectories(base.ManagedPath, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CA5 RID: 19621 RVA: 0x001DA8A4 File Offset: 0x001D8AA4
+	// Token: 0x06004CC9 RID: 19657 RVA: 0x001DB98C File Offset: 0x001D9B8C
 	public IEnumerable<SdFileInfo> EnumerateFiles()
 	{
 		if (base.IsManaged)
@@ -219,7 +219,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 			select new SdFileInfo(x);
 	}
 
-	// Token: 0x06004CA6 RID: 19622 RVA: 0x001DA8F8 File Offset: 0x001D8AF8
+	// Token: 0x06004CCA RID: 19658 RVA: 0x001DB9E0 File Offset: 0x001D9BE0
 	public IEnumerable<SdFileInfo> EnumerateFiles(string searchPattern)
 	{
 		if (base.IsManaged)
@@ -230,7 +230,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 			select new SdFileInfo(x);
 	}
 
-	// Token: 0x06004CA7 RID: 19623 RVA: 0x001DA948 File Offset: 0x001D8B48
+	// Token: 0x06004CCB RID: 19659 RVA: 0x001DBA30 File Offset: 0x001D9C30
 	public IEnumerable<SdFileInfo> EnumerateFiles(string searchPattern, SearchOption searchOption)
 	{
 		if (base.IsManaged)
@@ -241,14 +241,14 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 			select new SdFileInfo(x);
 	}
 
-	// Token: 0x06004CA8 RID: 19624 RVA: 0x001DA997 File Offset: 0x001D8B97
+	// Token: 0x06004CCC RID: 19660 RVA: 0x001DBA7F File Offset: 0x001D9C7F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerable<SdFileInfo> ManagedEnumerateFiles(string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryInfoEnumerateFiles(base.ManagedPath, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CA9 RID: 19625 RVA: 0x001DA9AB File Offset: 0x001D8BAB
+	// Token: 0x06004CCD RID: 19661 RVA: 0x001DBA93 File Offset: 0x001D9C93
 	public IEnumerable<SdFileSystemInfo> EnumerateFileSystemInfos()
 	{
 		if (base.IsManaged)
@@ -258,7 +258,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		return this.m_directoryInfo.EnumerateFileSystemInfos().Select<FileSystemInfo, SdFileSystemInfo>(new Func<FileSystemInfo, SdFileSystemInfo>(SdDirectoryInfo.WrapFileSystemInfo));
 	}
 
-	// Token: 0x06004CAA RID: 19626 RVA: 0x001DA9DE File Offset: 0x001D8BDE
+	// Token: 0x06004CCE RID: 19662 RVA: 0x001DBAC6 File Offset: 0x001D9CC6
 	public IEnumerable<SdFileSystemInfo> EnumerateFileSystemInfos(string searchPattern)
 	{
 		if (base.IsManaged)
@@ -268,7 +268,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		return this.m_directoryInfo.EnumerateFileSystemInfos(searchPattern).Select<FileSystemInfo, SdFileSystemInfo>(new Func<FileSystemInfo, SdFileSystemInfo>(SdDirectoryInfo.WrapFileSystemInfo));
 	}
 
-	// Token: 0x06004CAB RID: 19627 RVA: 0x001DAA0E File Offset: 0x001D8C0E
+	// Token: 0x06004CCF RID: 19663 RVA: 0x001DBAF6 File Offset: 0x001D9CF6
 	public IEnumerable<SdFileSystemInfo> EnumerateFileSystemInfos(string searchPattern, SearchOption searchOption)
 	{
 		if (base.IsManaged)
@@ -278,14 +278,14 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		return this.m_directoryInfo.EnumerateFileSystemInfos(searchPattern, searchOption).Select<FileSystemInfo, SdFileSystemInfo>(new Func<FileSystemInfo, SdFileSystemInfo>(SdDirectoryInfo.WrapFileSystemInfo));
 	}
 
-	// Token: 0x06004CAC RID: 19628 RVA: 0x001DAA3F File Offset: 0x001D8C3F
+	// Token: 0x06004CD0 RID: 19664 RVA: 0x001DBB27 File Offset: 0x001D9D27
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerable<SdFileSystemInfo> ManagedEnumerateFileSystemInfos(string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryInfoEnumerateFileSystemInfos(base.ManagedPath, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CAD RID: 19629 RVA: 0x001DAA54 File Offset: 0x001D8C54
+	// Token: 0x06004CD1 RID: 19665 RVA: 0x001DBB3C File Offset: 0x001D9D3C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static SdFileSystemInfo WrapFileSystemInfo(FileSystemInfo fileSystemInfo)
 	{
@@ -307,7 +307,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		return sdFileSystemInfo;
 	}
 
-	// Token: 0x06004CAE RID: 19630 RVA: 0x001DAAAC File Offset: 0x001D8CAC
+	// Token: 0x06004CD2 RID: 19666 RVA: 0x001DBB94 File Offset: 0x001D9D94
 	public bool IsDirEmpty()
 	{
 		bool flag;
@@ -318,8 +318,8 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		return flag;
 	}
 
-	// Token: 0x1700084D RID: 2125
-	// (get) Token: 0x06004CAF RID: 19631 RVA: 0x001DAAF4 File Offset: 0x001D8CF4
+	// Token: 0x17000853 RID: 2131
+	// (get) Token: 0x06004CD3 RID: 19667 RVA: 0x001DBBDC File Offset: 0x001D9DDC
 	public SdDirectoryInfo Root
 	{
 		get
@@ -328,7 +328,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x06004CB0 RID: 19632 RVA: 0x001DAB06 File Offset: 0x001D8D06
+	// Token: 0x06004CD4 RID: 19668 RVA: 0x001DBBEE File Offset: 0x001D9DEE
 	public override void Delete()
 	{
 		if (base.IsManaged)
@@ -339,7 +339,7 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		this.m_directoryInfo.Delete();
 	}
 
-	// Token: 0x06004CB1 RID: 19633 RVA: 0x001DAB23 File Offset: 0x001D8D23
+	// Token: 0x06004CD5 RID: 19669 RVA: 0x001DBC0B File Offset: 0x001D9E0B
 	public void Delete(bool recursive)
 	{
 		if (base.IsManaged)
@@ -350,20 +350,20 @@ public sealed class SdDirectoryInfo : SdFileSystemInfo
 		this.m_directoryInfo.Delete(recursive);
 	}
 
-	// Token: 0x06004CB2 RID: 19634 RVA: 0x001DAB41 File Offset: 0x001D8D41
+	// Token: 0x06004CD6 RID: 19670 RVA: 0x001DBC29 File Offset: 0x001D9E29
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ManagedDelete(bool recursive)
 	{
 		SdDirectory.ManagedDelete(base.ManagedPath, recursive);
 	}
 
-	// Token: 0x06004CB3 RID: 19635 RVA: 0x001DAB4F File Offset: 0x001D8D4F
+	// Token: 0x06004CD7 RID: 19671 RVA: 0x001DBC37 File Offset: 0x001D9E37
 	public override string ToString()
 	{
 		return this.m_directoryInfo.ToString();
 	}
 
-	// Token: 0x04003C04 RID: 15364
+	// Token: 0x04003C25 RID: 15397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DirectoryInfo m_directoryInfo;
 }

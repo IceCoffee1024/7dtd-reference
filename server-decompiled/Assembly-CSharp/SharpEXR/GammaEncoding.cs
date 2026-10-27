@@ -2,14 +2,14 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016FB RID: 5883
+	// Token: 0x0200171A RID: 5914
 	public enum GammaEncoding
 	{
-		// Token: 0x0400893F RID: 35135
+		// Token: 0x040089F2 RID: 35314
 		Linear,
-		// Token: 0x04008940 RID: 35136
+		// Token: 0x040089F3 RID: 35315
 		Gamma,
-		// Token: 0x04008941 RID: 35137
+		// Token: 0x040089F4 RID: 35316
 		sRGB
 	}
 }

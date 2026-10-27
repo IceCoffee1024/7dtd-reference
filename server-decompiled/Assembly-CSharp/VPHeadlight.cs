@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CB0 RID: 3248
+// Token: 0x02000CBB RID: 3259
 [Preserve]
 public class VPHeadlight : VehiclePart
 {
-	// Token: 0x06006323 RID: 25379 RVA: 0x002728F8 File Offset: 0x00270AF8
+	// Token: 0x06006348 RID: 25416 RVA: 0x00273E20 File Offset: 0x00272020
 	public override void InitPrefabConnections()
 	{
 		this.headlightT = base.GetTransform();
@@ -71,7 +71,7 @@ public class VPHeadlight : VehiclePart
 		this.curIntensity = -1f;
 	}
 
-	// Token: 0x06006324 RID: 25380 RVA: 0x00272ABC File Offset: 0x00270CBC
+	// Token: 0x06006349 RID: 25417 RVA: 0x00273FE4 File Offset: 0x002721E4
 	public override void SetProperties(DynamicProperties _properties)
 	{
 		base.SetProperties(_properties);
@@ -81,14 +81,14 @@ public class VPHeadlight : VehiclePart
 		this.properties.ParseColorHex("tailEmissive", ref this.tailLightEmissive);
 	}
 
-	// Token: 0x06006325 RID: 25381 RVA: 0x00272B29 File Offset: 0x00270D29
+	// Token: 0x0600634A RID: 25418 RVA: 0x00274051 File Offset: 0x00272251
 	public override void SetMods()
 	{
 		base.SetMods();
 		this.UpdateOn();
 	}
 
-	// Token: 0x06006326 RID: 25382 RVA: 0x00272B37 File Offset: 0x00270D37
+	// Token: 0x0600634B RID: 25419 RVA: 0x0027405F File Offset: 0x0027225F
 	public override void HandleEvent(VehiclePart.Event _event, VehiclePart _part, float _arg)
 	{
 		if (_event == VehiclePart.Event.LightsOn)
@@ -98,7 +98,7 @@ public class VPHeadlight : VehiclePart
 		}
 	}
 
-	// Token: 0x06006327 RID: 25383 RVA: 0x00272B54 File Offset: 0x00270D54
+	// Token: 0x0600634C RID: 25420 RVA: 0x0027407C File Offset: 0x0027227C
 	public override void Update(float _dt)
 	{
 		if (this.IsBroken())
@@ -136,7 +136,7 @@ public class VPHeadlight : VehiclePart
 		this.SetTailLights();
 	}
 
-	// Token: 0x06006328 RID: 25384 RVA: 0x00272C54 File Offset: 0x00270E54
+	// Token: 0x0600634D RID: 25421 RVA: 0x0027417C File Offset: 0x0027237C
 	public void SetTailLights()
 	{
 		float num = 0f;
@@ -163,13 +163,13 @@ public class VPHeadlight : VehiclePart
 		}
 	}
 
-	// Token: 0x06006329 RID: 25385 RVA: 0x00272CFE File Offset: 0x00270EFE
+	// Token: 0x0600634E RID: 25422 RVA: 0x00274226 File Offset: 0x00272426
 	public bool IsOn()
 	{
 		return this.isOn;
 	}
 
-	// Token: 0x0600632A RID: 25386 RVA: 0x00272D06 File Offset: 0x00270F06
+	// Token: 0x0600634F RID: 25423 RVA: 0x0027422E File Offset: 0x0027242E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetOn(bool _isOn)
 	{
@@ -182,7 +182,7 @@ public class VPHeadlight : VehiclePart
 		this.SetTailLights();
 	}
 
-	// Token: 0x0600632B RID: 25387 RVA: 0x00272D28 File Offset: 0x00270F28
+	// Token: 0x06006350 RID: 25424 RVA: 0x00274250 File Offset: 0x00272450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateOn()
 	{
@@ -210,7 +210,7 @@ public class VPHeadlight : VehiclePart
 		}
 	}
 
-	// Token: 0x0600632C RID: 25388 RVA: 0x00272DF6 File Offset: 0x00270FF6
+	// Token: 0x06006351 RID: 25425 RVA: 0x0027431E File Offset: 0x0027251E
 	public float GetLightLevel()
 	{
 		if (!this.isOn)
@@ -220,7 +220,7 @@ public class VPHeadlight : VehiclePart
 		return this.bright * 3f;
 	}
 
-	// Token: 0x0600632D RID: 25389 RVA: 0x00272E14 File Offset: 0x00271014
+	// Token: 0x06006352 RID: 25426 RVA: 0x0027433C File Offset: 0x0027253C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlaySound()
 	{
@@ -235,67 +235,67 @@ public class VPHeadlight : VehiclePart
 		}
 	}
 
-	// Token: 0x04004D4F RID: 19791
+	// Token: 0x04004D74 RID: 19828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRange = 50f;
 
-	// Token: 0x04004D50 RID: 19792
+	// Token: 0x04004D75 RID: 19829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cModBrightPer = 0.58f;
 
-	// Token: 0x04004D51 RID: 19793
+	// Token: 0x04004D76 RID: 19830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform headlightT;
 
-	// Token: 0x04004D52 RID: 19794
+	// Token: 0x04004D77 RID: 19831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Light> lights;
 
-	// Token: 0x04004D53 RID: 19795
+	// Token: 0x04004D78 RID: 19832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material headlightMat;
 
-	// Token: 0x04004D54 RID: 19796
+	// Token: 0x04004D79 RID: 19833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color headLightEmissive;
 
-	// Token: 0x04004D55 RID: 19797
+	// Token: 0x04004D7A RID: 19834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform modT;
 
-	// Token: 0x04004D56 RID: 19798
+	// Token: 0x04004D7B RID: 19835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material modMat;
 
-	// Token: 0x04004D57 RID: 19799
+	// Token: 0x04004D7C RID: 19836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color modMatEmissive;
 
-	// Token: 0x04004D58 RID: 19800
+	// Token: 0x04004D7D RID: 19837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform modOnT;
 
-	// Token: 0x04004D59 RID: 19801
+	// Token: 0x04004D7E RID: 19838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Light> modLights;
 
-	// Token: 0x04004D5A RID: 19802
+	// Token: 0x04004D7F RID: 19839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float bright;
 
-	// Token: 0x04004D5B RID: 19803
+	// Token: 0x04004D80 RID: 19840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color tailLightEmissive;
 
-	// Token: 0x04004D5C RID: 19804
+	// Token: 0x04004D81 RID: 19841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tailLightIntensity = -1f;
 
-	// Token: 0x04004D5D RID: 19805
+	// Token: 0x04004D82 RID: 19842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOn;
 
-	// Token: 0x04004D5E RID: 19806
+	// Token: 0x04004D83 RID: 19843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float curIntensity;
 }

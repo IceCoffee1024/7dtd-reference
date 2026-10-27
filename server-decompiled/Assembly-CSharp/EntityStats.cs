@@ -7,7 +7,7 @@ using SandboxOptions;
 public class EntityStats
 {
 	// Token: 0x1700010B RID: 267
-	// (get) Token: 0x06000E3E RID: 3646 RVA: 0x0005E0AF File Offset: 0x0005C2AF
+	// (get) Token: 0x06000E3E RID: 3646 RVA: 0x0005E04F File Offset: 0x0005C24F
 	public float AmountEnclosed
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -17,20 +17,20 @@ public class EntityStats
 		}
 	}
 
-	// Token: 0x06000E3F RID: 3647 RVA: 0x0005E0B7 File Offset: 0x0005C2B7
+	// Token: 0x06000E3F RID: 3647 RVA: 0x0005E057 File Offset: 0x0005C257
 	public EntityStats()
 	{
 		this.Health = new Stat();
 	}
 
-	// Token: 0x06000E40 RID: 3648 RVA: 0x0005E0D2 File Offset: 0x0005C2D2
+	// Token: 0x06000E40 RID: 3648 RVA: 0x0005E072 File Offset: 0x0005C272
 	public EntityStats(EntityAlive _ea)
 	{
 		this.m_entity = _ea;
 		this.Init();
 	}
 
-	// Token: 0x06000E41 RID: 3649 RVA: 0x0005E0F0 File Offset: 0x0005C2F0
+	// Token: 0x06000E41 RID: 3649 RVA: 0x0005E090 File Offset: 0x0005C290
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Init()
 	{
@@ -43,13 +43,13 @@ public class EntityStats
 		};
 	}
 
-	// Token: 0x06000E42 RID: 3650 RVA: 0x0005E152 File Offset: 0x0005C352
+	// Token: 0x06000E42 RID: 3650 RVA: 0x0005E0F2 File Offset: 0x0005C2F2
 	public virtual void CopyFrom(EntityStats _newStats)
 	{
 		this.Health.CopyFrom(_newStats.Health);
 	}
 
-	// Token: 0x06000E43 RID: 3651 RVA: 0x0005E165 File Offset: 0x0005C365
+	// Token: 0x06000E43 RID: 3651 RVA: 0x0005E105 File Offset: 0x0005C305
 	public virtual EntityStats SimpleClone()
 	{
 		EntityStats entityStats = new EntityStats();
@@ -67,7 +67,7 @@ public class EntityStats
 	{
 	}
 
-	// Token: 0x06000E46 RID: 3654 RVA: 0x0005E180 File Offset: 0x0005C380
+	// Token: 0x06000E46 RID: 3654 RVA: 0x0005E120 File Offset: 0x0005C320
 	public void Tick(ulong worldTime)
 	{
 		if (this.m_entity.isEntityRemote || this.m_entity.IsDead())
@@ -83,7 +83,7 @@ public class EntityStats
 		this.TickWait(worldTime);
 	}
 
-	// Token: 0x06000E47 RID: 3655 RVA: 0x0005E1CC File Offset: 0x0005C3CC
+	// Token: 0x06000E47 RID: 3655 RVA: 0x0005E16C File Offset: 0x0005C36C
 	public virtual void TickWait(ulong worldTime)
 	{
 		float num = 0.5f;
@@ -114,7 +114,7 @@ public class EntityStats
 		}
 	}
 
-	// Token: 0x06000E48 RID: 3656 RVA: 0x0005E2A4 File Offset: 0x0005C4A4
+	// Token: 0x06000E48 RID: 3656 RVA: 0x0005E244 File Offset: 0x0005C444
 	public void UpdateNPCStatsOverTime(float dt)
 	{
 		List<EffectManager.ModifierValuesAndSources> valuesAndSources = EffectManager.GetValuesAndSources(PassiveEffects.HealthChangeOT, null, 0f, this.m_entity, null, default(FastTags<TagGroup.Global>), true, true);
@@ -161,7 +161,7 @@ public class EntityStats
 	{
 	}
 
-	// Token: 0x06000E4A RID: 3658 RVA: 0x0005E400 File Offset: 0x0005C600
+	// Token: 0x06000E4A RID: 3658 RVA: 0x0005E3A0 File Offset: 0x0005C5A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SendStatChangePacket(NetPackageEntityStatChanged.EnumStat enumStat)
 	{
@@ -183,21 +183,21 @@ public class EntityStats
 		this.m_entity.world.entityDistributer.SendPacketToTrackedPlayersAndTrackedEntity(this.m_entity.entityId, num, netPackageEntityStatChanged, enumStat > NetPackageEntityStatChanged.EnumStat.Health);
 	}
 
-	// Token: 0x06000E4B RID: 3659 RVA: 0x0005E486 File Offset: 0x0005C686
+	// Token: 0x06000E4B RID: 3659 RVA: 0x0005E426 File Offset: 0x0005C626
 	public virtual void Read(PooledBinaryReader stream)
 	{
 		stream.ReadInt32();
 		this.Health.Read(stream);
 	}
 
-	// Token: 0x06000E4C RID: 3660 RVA: 0x0005E49B File Offset: 0x0005C69B
+	// Token: 0x06000E4C RID: 3660 RVA: 0x0005E43B File Offset: 0x0005C63B
 	public virtual void Write(PooledBinaryWriter stream)
 	{
 		stream.Write(11);
 		this.Health.Write(stream);
 	}
 
-	// Token: 0x06000E4D RID: 3661 RVA: 0x0005E4B4 File Offset: 0x0005C6B4
+	// Token: 0x06000E4D RID: 3661 RVA: 0x0005E454 File Offset: 0x0005C654
 	public void UpdateSandboxOptions()
 	{
 		this.Stamina.GainSandboxModifier = SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.StaminaRegen);

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000547 RID: 1351
+// Token: 0x0200054B RID: 1355
 public class DamageSource
 {
 	// Token: 0x170004A8 RID: 1192
-	// (get) Token: 0x06002C23 RID: 11299 RVA: 0x00117A0C File Offset: 0x00115C0C
+	// (get) Token: 0x06002C2B RID: 11307 RVA: 0x00117F98 File Offset: 0x00116198
 	public ItemClass ItemClass
 	{
 		get
@@ -18,7 +18,7 @@ public class DamageSource
 		}
 	}
 
-	// Token: 0x06002C24 RID: 11300 RVA: 0x00117A24 File Offset: 0x00115C24
+	// Token: 0x06002C2C RID: 11308 RVA: 0x00117FB0 File Offset: 0x001161B0
 	public DamageSource(EnumDamageSource _dsn, EnumDamageTypes _damageType)
 	{
 		this.damageSource = _dsn;
@@ -26,7 +26,7 @@ public class DamageSource
 		this.DamageTypeTag = FastTags<TagGroup.Global>.Parse(_damageType.ToStringCached<EnumDamageTypes>());
 	}
 
-	// Token: 0x06002C25 RID: 11301 RVA: 0x00117A7C File Offset: 0x00115C7C
+	// Token: 0x06002C2D RID: 11309 RVA: 0x00118008 File Offset: 0x00116208
 	public DamageSource(EnumDamageSource _dsn, EnumDamageTypes _damageType, Vector3 _direction)
 	{
 		this.damageSource = _dsn;
@@ -35,13 +35,13 @@ public class DamageSource
 		this.DamageTypeTag = FastTags<TagGroup.Global>.Parse(_damageType.ToStringCached<EnumDamageTypes>());
 	}
 
-	// Token: 0x06002C26 RID: 11302 RVA: 0x00117AD9 File Offset: 0x00115CD9
+	// Token: 0x06002C2E RID: 11310 RVA: 0x00118065 File Offset: 0x00116265
 	public bool AffectedByArmor()
 	{
 		return this.damageSource == EnumDamageSource.External;
 	}
 
-	// Token: 0x06002C27 RID: 11303 RVA: 0x00117AE4 File Offset: 0x00115CE4
+	// Token: 0x06002C2F RID: 11311 RVA: 0x00118070 File Offset: 0x00116270
 	public EquipmentSlots GetEntityDamageEquipmentSlot(Entity entity)
 	{
 		if (entity.emodel)
@@ -79,7 +79,7 @@ public class DamageSource
 		return EquipmentSlots.Count;
 	}
 
-	// Token: 0x06002C28 RID: 11304 RVA: 0x00117B78 File Offset: 0x00115D78
+	// Token: 0x06002C30 RID: 11312 RVA: 0x00118104 File Offset: 0x00116304
 	public EquipmentSlotGroups GetEntityDamageEquipmentSlotGroup(Entity entity)
 	{
 		if (entity.emodel)
@@ -115,7 +115,7 @@ public class DamageSource
 		return EquipmentSlotGroups.UpperBody;
 	}
 
-	// Token: 0x06002C29 RID: 11305 RVA: 0x00117C08 File Offset: 0x00115E08
+	// Token: 0x06002C31 RID: 11313 RVA: 0x00118194 File Offset: 0x00116394
 	public EnumBodyPartHit GetEntityDamageBodyPart(Entity entity)
 	{
 		if (this.bodyParts != EnumBodyPartHit.None)
@@ -133,7 +133,7 @@ public class DamageSource
 		return EnumBodyPartHit.None;
 	}
 
-	// Token: 0x06002C2A RID: 11306 RVA: 0x00117C54 File Offset: 0x00115E54
+	// Token: 0x06002C32 RID: 11314 RVA: 0x001181E0 File Offset: 0x001163E0
 	public static EnumBodyPartHit TagToBodyPart(string _name)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(_name);
@@ -226,7 +226,7 @@ public class DamageSource
 		return EnumBodyPartHit.None;
 	}
 
-	// Token: 0x06002C2B RID: 11307 RVA: 0x00117DE8 File Offset: 0x00115FE8
+	// Token: 0x06002C33 RID: 11315 RVA: 0x00118374 File Offset: 0x00116574
 	public void GetEntityDamageBodyPartAndEquipmentSlot(Entity entity, out EnumBodyPartHit bodyPartHit, out EquipmentSlots damageSlot)
 	{
 		damageSlot = EquipmentSlots.Count;
@@ -312,7 +312,7 @@ public class DamageSource
 		}
 	}
 
-	// Token: 0x06002C2C RID: 11308 RVA: 0x00117F20 File Offset: 0x00116120
+	// Token: 0x06002C34 RID: 11316 RVA: 0x001184AC File Offset: 0x001166AC
 	public EquipmentSlots GetDamagedEquipmentSlot(Entity entity)
 	{
 		if (entity.emodel)
@@ -411,50 +411,50 @@ public class DamageSource
 		return EquipmentSlots.Chest;
 	}
 
-	// Token: 0x06002C2D RID: 11309 RVA: 0x001180B0 File Offset: 0x001162B0
+	// Token: 0x06002C35 RID: 11317 RVA: 0x0011863C File Offset: 0x0011683C
 	public virtual Vector3 getDirection()
 	{
 		return this.direction;
 	}
 
-	// Token: 0x06002C2E RID: 11310 RVA: 0x001180B8 File Offset: 0x001162B8
+	// Token: 0x06002C36 RID: 11318 RVA: 0x00118644 File Offset: 0x00116844
 	public virtual int getEntityId()
 	{
 		return this.ownerEntityId;
 	}
 
-	// Token: 0x06002C2F RID: 11311 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x06002C37 RID: 11319 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public virtual string getHitTransformName()
 	{
 		return null;
 	}
 
-	// Token: 0x06002C30 RID: 11312 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x06002C38 RID: 11320 RVA: 0x0004E452 File Offset: 0x0004C652
 	public virtual Vector3 getHitTransformPosition()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x06002C31 RID: 11313 RVA: 0x0004E4FE File Offset: 0x0004C6FE
+	// Token: 0x06002C39 RID: 11321 RVA: 0x0004E4BE File Offset: 0x0004C6BE
 	public virtual Vector2 getUVHit()
 	{
 		return Vector2.zero;
 	}
 
-	// Token: 0x06002C32 RID: 11314 RVA: 0x001180C0 File Offset: 0x001162C0
+	// Token: 0x06002C3A RID: 11322 RVA: 0x0011864C File Offset: 0x0011684C
 	public virtual EnumDamageSource GetSource()
 	{
 		return this.damageSource;
 	}
 
-	// Token: 0x06002C33 RID: 11315 RVA: 0x001180C8 File Offset: 0x001162C8
+	// Token: 0x06002C3B RID: 11323 RVA: 0x00118654 File Offset: 0x00116854
 	public virtual EnumDamageTypes GetDamageType()
 	{
 		return this.damageType;
 	}
 
 	// Token: 0x170004A9 RID: 1193
-	// (get) Token: 0x06002C34 RID: 11316 RVA: 0x001180D0 File Offset: 0x001162D0
+	// (get) Token: 0x06002C3C RID: 11324 RVA: 0x0011865C File Offset: 0x0011685C
 	public bool CanStun
 	{
 		get
@@ -463,21 +463,21 @@ public class DamageSource
 		}
 	}
 
-	// Token: 0x06002C35 RID: 11317 RVA: 0x00118102 File Offset: 0x00116302
+	// Token: 0x06002C3D RID: 11325 RVA: 0x0011868E File Offset: 0x0011688E
 	public void SetIgnoreConsecutiveDamages(bool _b)
 	{
 		this.bIgnoreConsecutiveDamages = _b;
 	}
 
-	// Token: 0x06002C36 RID: 11318 RVA: 0x0011810B File Offset: 0x0011630B
+	// Token: 0x06002C3E RID: 11326 RVA: 0x00118697 File Offset: 0x00116897
 	public virtual bool IsIgnoreConsecutiveDamages()
 	{
 		return this.bIgnoreConsecutiveDamages;
 	}
 
 	// Token: 0x170004AA RID: 1194
-	// (get) Token: 0x06002C37 RID: 11319 RVA: 0x00118113 File Offset: 0x00116313
-	// (set) Token: 0x06002C38 RID: 11320 RVA: 0x0011811B File Offset: 0x0011631B
+	// (get) Token: 0x06002C3F RID: 11327 RVA: 0x0011869F File Offset: 0x0011689F
+	// (set) Token: 0x06002C40 RID: 11328 RVA: 0x001186A7 File Offset: 0x001168A7
 	public float DamageMultiplier
 	{
 		get
@@ -490,88 +490,88 @@ public class DamageSource
 		}
 	}
 
-	// Token: 0x040021D3 RID: 8659
+	// Token: 0x040021EA RID: 8682
 	public static readonly DamageSource eat = new DamageSource(EnumDamageSource.External, EnumDamageTypes.Slashing);
 
-	// Token: 0x040021D4 RID: 8660
+	// Token: 0x040021EB RID: 8683
 	public static readonly DamageSource fallingBlock = new DamageSource(EnumDamageSource.External, EnumDamageTypes.Crushing);
 
-	// Token: 0x040021D5 RID: 8661
+	// Token: 0x040021EC RID: 8684
 	public static readonly DamageSource radiation = new DamageSource(EnumDamageSource.External, EnumDamageTypes.Radiation);
 
-	// Token: 0x040021D6 RID: 8662
+	// Token: 0x040021ED RID: 8685
 	public static readonly DamageSource fall = new DamageSource(EnumDamageSource.Internal, EnumDamageTypes.Falling);
 
-	// Token: 0x040021D7 RID: 8663
+	// Token: 0x040021EE RID: 8686
 	public static readonly DamageSource starve = new DamageSource(EnumDamageSource.Internal, EnumDamageTypes.Starvation);
 
-	// Token: 0x040021D8 RID: 8664
+	// Token: 0x040021EF RID: 8687
 	public static readonly DamageSource dehydrate = new DamageSource(EnumDamageSource.Internal, EnumDamageTypes.Dehydration);
 
-	// Token: 0x040021D9 RID: 8665
+	// Token: 0x040021F0 RID: 8688
 	public static readonly DamageSource radiationSickness = new DamageSource(EnumDamageSource.Internal, EnumDamageTypes.Radiation);
 
-	// Token: 0x040021DA RID: 8666
+	// Token: 0x040021F1 RID: 8689
 	public static readonly DamageSource disease = new DamageSource(EnumDamageSource.Internal, EnumDamageTypes.Disease);
 
-	// Token: 0x040021DB RID: 8667
+	// Token: 0x040021F2 RID: 8690
 	public static readonly DamageSource suffocating = new DamageSource(EnumDamageSource.Internal, EnumDamageTypes.Suffocation);
 
-	// Token: 0x040021DC RID: 8668
+	// Token: 0x040021F3 RID: 8691
 	public BuffClass BuffClass;
 
-	// Token: 0x040021DD RID: 8669
+	// Token: 0x040021F4 RID: 8692
 	public ItemValue AttackingItem;
 
-	// Token: 0x040021DE RID: 8670
+	// Token: 0x040021F5 RID: 8693
 	public EnumDamageSource damageSource;
 
-	// Token: 0x040021DF RID: 8671
+	// Token: 0x040021F6 RID: 8694
 	public readonly EnumDamageTypes damageType;
 
-	// Token: 0x040021E0 RID: 8672
+	// Token: 0x040021F7 RID: 8695
 	public EnumBodyPartHit bodyParts;
 
-	// Token: 0x040021E1 RID: 8673
+	// Token: 0x040021F8 RID: 8696
 	public float DismemberChance;
 
-	// Token: 0x040021E2 RID: 8674
+	// Token: 0x040021F9 RID: 8697
 	public EnumDamageBonusType BonusDamageType;
 
-	// Token: 0x040021E3 RID: 8675
+	// Token: 0x040021FA RID: 8698
 	public bool canHitSpecialBodyParts;
 
-	// Token: 0x040021E4 RID: 8676
+	// Token: 0x040021FB RID: 8699
 	public bool bIgnorePartyShare;
 
-	// Token: 0x040021E5 RID: 8677
+	// Token: 0x040021FC RID: 8700
 	public bool bTrapKillXP;
 
-	// Token: 0x040021E6 RID: 8678
+	// Token: 0x040021FD RID: 8701
 	public float KillXPScale = 1f;
 
-	// Token: 0x040021E7 RID: 8679
+	// Token: 0x040021FE RID: 8702
 	public FastTags<TagGroup.Global> DamageTypeTag;
 
-	// Token: 0x040021E8 RID: 8680
+	// Token: 0x040021FF RID: 8703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bIgnoreConsecutiveDamages;
 
-	// Token: 0x040021E9 RID: 8681
+	// Token: 0x04002200 RID: 8704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float damageMultiplier = 1f;
 
-	// Token: 0x040021EA RID: 8682
+	// Token: 0x04002201 RID: 8705
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int ownerEntityId = -1;
 
-	// Token: 0x040021EB RID: 8683
+	// Token: 0x04002202 RID: 8706
 	public int CreatorEntityId = -1;
 
-	// Token: 0x040021EC RID: 8684
+	// Token: 0x04002203 RID: 8707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 direction;
 
-	// Token: 0x040021ED RID: 8685
+	// Token: 0x04002204 RID: 8708
 	public Vector3i BlockPosition;
 }

@@ -8,16 +8,16 @@ using UniLinq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DC1 RID: 3521
+// Token: 0x02000DCC RID: 3532
 [Preserve]
 public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 {
 	// Token: 0x14000095 RID: 149
-	// (add) Token: 0x06006B29 RID: 27433 RVA: 0x002A0EE4 File Offset: 0x0029F0E4
-	// (remove) Token: 0x06006B2A RID: 27434 RVA: 0x002A0F18 File Offset: 0x0029F118
+	// (add) Token: 0x06006B4E RID: 27470 RVA: 0x002A240C File Offset: 0x002A060C
+	// (remove) Token: 0x06006B4F RID: 27471 RVA: 0x002A2440 File Offset: 0x002A0640
 	public static event Action OnSettingsChanged;
 
-	// Token: 0x06006B2B RID: 27435 RVA: 0x002A0F4C File Offset: 0x0029F14C
+	// Token: 0x06006B50 RID: 27472 RVA: 0x002A2474 File Offset: 0x002A0674
 	public override void Init()
 	{
 		base.Init();
@@ -122,7 +122,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		TwitchAuthentication.QRCodeGenerated += this.TwitchAuthentication_QRCodeGenerated;
 	}
 
-	// Token: 0x06006B2C RID: 27436 RVA: 0x002A1649 File Offset: 0x0029F849
+	// Token: 0x06006B51 RID: 27473 RVA: 0x002A2B71 File Offset: 0x002A0D71
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnShowDeviceCode_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -130,14 +130,14 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006B2D RID: 27437 RVA: 0x002A1660 File Offset: 0x0029F860
+	// Token: 0x06006B52 RID: 27474 RVA: 0x002A2B88 File Offset: 0x002A0D88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Combo_OnValueChangedGeneric(XUiController _sender)
 	{
 		base.SetChanged();
 	}
 
-	// Token: 0x06006B2E RID: 27438 RVA: 0x002A1668 File Offset: 0x0029F868
+	// Token: 0x06006B53 RID: 27475 RVA: 0x002A2B90 File Offset: 0x002A0D90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Tabs_OnTabChanged(int _i, XUiC_TabSelectorTab _tab)
 	{
@@ -148,21 +148,21 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006B2F RID: 27439 RVA: 0x002A1660 File Offset: 0x0029F860
+	// Token: 0x06006B54 RID: 27476 RVA: 0x002A2B88 File Offset: 0x002A0D88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboBoxListString_OnValueChanged(XUiController _sender, string _oldValue, string _newValue)
 	{
 		base.SetChanged();
 	}
 
-	// Token: 0x06006B30 RID: 27440 RVA: 0x002A1660 File Offset: 0x0029F860
+	// Token: 0x06006B55 RID: 27477 RVA: 0x002A2B88 File Offset: 0x002A0D88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboPreset_OnValueChanged(XUiController _sender, string _oldValue, string _newValue)
 	{
 		base.SetChanged();
 	}
 
-	// Token: 0x06006B31 RID: 27441 RVA: 0x002A168E File Offset: 0x0029F88E
+	// Token: 0x06006B56 RID: 27478 RVA: 0x002A2BB6 File Offset: 0x002A0DB6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboVoteDayTimeRange_OnValueChanged(XUiController _sender, string _oldValue, string _newValue)
 	{
@@ -170,7 +170,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.tempVoteDayTimeRange = this.comboVoteDayTimeRange.SelectedIndex;
 	}
 
-	// Token: 0x06006B32 RID: 27442 RVA: 0x002A16A7 File Offset: 0x0029F8A7
+	// Token: 0x06006B57 RID: 27479 RVA: 0x002A2BCF File Offset: 0x002A0DCF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SubPoints_OnValueChanged(XUiController _sender, XUiC_OptionsTwitch.PointsGenerationOptions _oldValue, XUiC_OptionsTwitch.PointsGenerationOptions _newValue)
 	{
@@ -178,7 +178,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.tempSubModifier = (int)_newValue;
 	}
 
-	// Token: 0x06006B33 RID: 27443 RVA: 0x002A16B6 File Offset: 0x0029F8B6
+	// Token: 0x06006B58 RID: 27480 RVA: 0x002A2BDE File Offset: 0x002A0DDE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GiftSubPoints_OnValueChanged(XUiController _sender, XUiC_OptionsTwitch.PointsGenerationOptions _oldValue, XUiC_OptionsTwitch.PointsGenerationOptions _newValue)
 	{
@@ -187,7 +187,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.tempGiftSubModifier = (int)_newValue;
 	}
 
-	// Token: 0x06006B34 RID: 27444 RVA: 0x002A16CC File Offset: 0x0029F8CC
+	// Token: 0x06006B59 RID: 27481 RVA: 0x002A2BF4 File Offset: 0x002A0DF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLoginTwitch_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -229,7 +229,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006B35 RID: 27445 RVA: 0x002A17B4 File Offset: 0x0029F9B4
+	// Token: 0x06006B5A RID: 27482 RVA: 0x002A2CDC File Offset: 0x002A0EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnShowExtras_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -242,7 +242,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		XUiC_TwitchWindowSelector.OpenSelectorAndWindow(GameManager.Instance.World.GetPrimaryPlayer(), "Actions", true);
 	}
 
-	// Token: 0x06006B36 RID: 27446 RVA: 0x002A1820 File Offset: 0x0029FA20
+	// Token: 0x06006B5B RID: 27483 RVA: 0x002A2D48 File Offset: 0x002A0F48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnEnableAllExtras_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -261,7 +261,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006B37 RID: 27447 RVA: 0x002A1908 File Offset: 0x0029FB08
+	// Token: 0x06006B5C RID: 27484 RVA: 0x002A2E30 File Offset: 0x002A1030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDisableAllExtras_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -279,14 +279,14 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006B38 RID: 27448 RVA: 0x002A19DC File Offset: 0x0029FBDC
+	// Token: 0x06006B5D RID: 27485 RVA: 0x002A2F04 File Offset: 0x002A1104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnResetPrices_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.twitchManager.ResetPricesToDefault();
 	}
 
-	// Token: 0x06006B39 RID: 27449 RVA: 0x002A19E9 File Offset: 0x0029FBE9
+	// Token: 0x06006B5E RID: 27486 RVA: 0x002A2F11 File Offset: 0x002A1111
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void doSaveChangesInternal()
 	{
@@ -294,7 +294,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.applyChanges();
 	}
 
-	// Token: 0x06006B3A RID: 27450 RVA: 0x002A19F8 File Offset: 0x0029FBF8
+	// Token: 0x06006B5F RID: 27487 RVA: 0x002A2F20 File Offset: 0x002A1120
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void doResetToDefaultsInternal()
 	{
@@ -332,7 +332,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		base.SetChanged();
 	}
 
-	// Token: 0x06006B3B RID: 27451 RVA: 0x002A1B70 File Offset: 0x0029FD70
+	// Token: 0x06006B60 RID: 27488 RVA: 0x002A3098 File Offset: 0x002A1298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TwitchAuthentication_QRCodeGenerated(Texture2D _qrCodeTex, string _userCode, string _verificationUrl)
 	{
@@ -342,7 +342,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006B3C RID: 27452 RVA: 0x002A1B94 File Offset: 0x0029FD94
+	// Token: 0x06006B61 RID: 27489 RVA: 0x002A30BC File Offset: 0x002A12BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateOptions()
 	{
@@ -400,7 +400,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.tempVoteDayTimeRange = this.origVoteDayTimeRange;
 	}
 
-	// Token: 0x06006B3D RID: 27453 RVA: 0x002A2138 File Offset: 0x002A0338
+	// Token: 0x06006B62 RID: 27490 RVA: 0x002A3660 File Offset: 0x002A1860
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getIndexFromCombobox(int _value, XUiC_ComboBoxList<string> _cboList)
 	{
@@ -415,7 +415,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		return -1;
 	}
 
-	// Token: 0x06006B3E RID: 27454 RVA: 0x002A217C File Offset: 0x002A037C
+	// Token: 0x06006B63 RID: 27491 RVA: 0x002A36A4 File Offset: 0x002A18A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getActionSpamDelay(float _actionSpamDelay)
 	{
@@ -437,7 +437,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		return -1;
 	}
 
-	// Token: 0x06006B3F RID: 27455 RVA: 0x002A21E0 File Offset: 0x002A03E0
+	// Token: 0x06006B64 RID: 27492 RVA: 0x002A3708 File Offset: 0x002A1908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getBitPriceModifier(float _bitPriceModifier)
 	{
@@ -466,7 +466,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		return 0;
 	}
 
-	// Token: 0x06006B40 RID: 27456 RVA: 0x002A222C File Offset: 0x002A042C
+	// Token: 0x06006B65 RID: 27493 RVA: 0x002A3754 File Offset: 0x002A1954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float setBitPriceModifier(int _index)
 	{
@@ -492,7 +492,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		return num;
 	}
 
-	// Token: 0x06006B41 RID: 27457 RVA: 0x002A2278 File Offset: 0x002A0478
+	// Token: 0x06006B66 RID: 27494 RVA: 0x002A37A0 File Offset: 0x002A19A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyChanges()
 	{
@@ -542,7 +542,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		onSettingsChanged();
 	}
 
-	// Token: 0x06006B42 RID: 27458 RVA: 0x002A251C File Offset: 0x002A071C
+	// Token: 0x06006B67 RID: 27495 RVA: 0x002A3A44 File Offset: 0x002A1C44
 	public override void OnOpen()
 	{
 		this.twitchManager = TwitchManager.Current;
@@ -665,7 +665,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006B43 RID: 27459 RVA: 0x002A2F04 File Offset: 0x002A1104
+	// Token: 0x06006B68 RID: 27496 RVA: 0x002A442C File Offset: 0x002A262C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupComboBoxListString(XUiC_ComboBoxList<string> _comboBox, string[] _values, int _currentValue, XUiC_ComboBox<string>.XUiEvent_ValueChanged _valueChanged = null)
 	{
@@ -680,7 +680,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		_comboBox.OnValueChanged += _valueChanged;
 	}
 
-	// Token: 0x06006B44 RID: 27460 RVA: 0x002A2F63 File Offset: 0x002A1163
+	// Token: 0x06006B69 RID: 27497 RVA: 0x002A448B File Offset: 0x002A268B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TwitchManager_ConnectionStateChanged(TwitchManager.InitStates _oldState, TwitchManager.InitStates _newState)
 	{
@@ -693,7 +693,7 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006B45 RID: 27461 RVA: 0x002A2F94 File Offset: 0x002A1194
+	// Token: 0x06006B6A RID: 27498 RVA: 0x002A44BC File Offset: 0x002A26BC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -771,8 +771,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		XUi.InGameMenuOpen = false;
 	}
 
-	// Token: 0x17000BBC RID: 3004
-	// (get) Token: 0x06006B46 RID: 27462 RVA: 0x002A341C File Offset: 0x002A161C
+	// Token: 0x17000BC2 RID: 3010
+	// (get) Token: 0x06006B6B RID: 27499 RVA: 0x002A4944 File Offset: 0x002A2B44
 	public TwitchActionPreset ActionPreset
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -782,8 +782,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BBD RID: 3005
-	// (get) Token: 0x06006B47 RID: 27463 RVA: 0x002A3439 File Offset: 0x002A1639
+	// Token: 0x17000BC3 RID: 3011
+	// (get) Token: 0x06006B6C RID: 27500 RVA: 0x002A4961 File Offset: 0x002A2B61
 	public TwitchVotePreset VotePreset
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -793,8 +793,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BBE RID: 3006
-	// (get) Token: 0x06006B48 RID: 27464 RVA: 0x002A3456 File Offset: 0x002A1656
+	// Token: 0x17000BC4 RID: 3012
+	// (get) Token: 0x06006B6D RID: 27501 RVA: 0x002A497E File Offset: 0x002A2B7E
 	public TwitchEventPreset EventPreset
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -804,8 +804,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BBF RID: 3007
-	// (get) Token: 0x06006B49 RID: 27465 RVA: 0x002A3473 File Offset: 0x002A1673
+	// Token: 0x17000BC5 RID: 3013
+	// (get) Token: 0x06006B6E RID: 27502 RVA: 0x002A499B File Offset: 0x002A2B9B
 	[XuiXmlBinding("twitchstatus")]
 	public string TwitchStatus
 	{
@@ -817,8 +817,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC0 RID: 3008
-	// (get) Token: 0x06006B4A RID: 27466 RVA: 0x002A3490 File Offset: 0x002A1690
+	// Token: 0x17000BC6 RID: 3014
+	// (get) Token: 0x06006B6F RID: 27503 RVA: 0x002A49B8 File Offset: 0x002A2BB8
 	[XuiXmlBinding("twitchbuttontext")]
 	public string TwitchButtonText
 	{
@@ -837,8 +837,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC1 RID: 3009
-	// (get) Token: 0x06006B4B RID: 27467 RVA: 0x002A34C7 File Offset: 0x002A16C7
+	// Token: 0x17000BC7 RID: 3015
+	// (get) Token: 0x06006B70 RID: 27504 RVA: 0x002A49EF File Offset: 0x002A2BEF
 	[XuiXmlBinding("onlyconnected")]
 	public bool OnlyConnected
 	{
@@ -850,8 +850,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC2 RID: 3010
-	// (get) Token: 0x06006B4C RID: 27468 RVA: 0x002A34DD File Offset: 0x002A16DD
+	// Token: 0x17000BC8 RID: 3016
+	// (get) Token: 0x06006B71 RID: 27505 RVA: 0x002A4A05 File Offset: 0x002A2C05
 	[XuiXmlBinding("notconnected")]
 	public bool NotConnected
 	{
@@ -863,8 +863,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC3 RID: 3011
-	// (get) Token: 0x06006B4D RID: 27469 RVA: 0x002A34F6 File Offset: 0x002A16F6
+	// Token: 0x17000BC9 RID: 3017
+	// (get) Token: 0x06006B72 RID: 27506 RVA: 0x002A4A1E File Offset: 0x002A2C1E
 	[XuiXmlBinding("notconnecting_console")]
 	public bool NotConnectingConsole
 	{
@@ -876,8 +876,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC4 RID: 3012
-	// (get) Token: 0x06006B4E RID: 27470 RVA: 0x002A3517 File Offset: 0x002A1717
+	// Token: 0x17000BCA RID: 3018
+	// (get) Token: 0x06006B73 RID: 27507 RVA: 0x002A4A3F File Offset: 0x002A2C3F
 	[XuiXmlBinding("connecting_console")]
 	public bool ConnectingConsole
 	{
@@ -889,8 +889,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC5 RID: 3013
-	// (get) Token: 0x06006B4F RID: 27471 RVA: 0x002A353B File Offset: 0x002A173B
+	// Token: 0x17000BCB RID: 3019
+	// (get) Token: 0x06006B74 RID: 27508 RVA: 0x002A4A63 File Offset: 0x002A2C63
 	[XuiXmlBinding("connecting_standalone")]
 	public bool ConnectingStandalone
 	{
@@ -902,8 +902,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC6 RID: 3014
-	// (get) Token: 0x06006B50 RID: 27472 RVA: 0x002A355C File Offset: 0x002A175C
+	// Token: 0x17000BCC RID: 3020
+	// (get) Token: 0x06006B75 RID: 27509 RVA: 0x002A4A84 File Offset: 0x002A2C84
 	[XuiXmlBinding("auth_devicecode")]
 	public string AuthDeviceCode
 	{
@@ -914,8 +914,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC7 RID: 3015
-	// (get) Token: 0x06006B51 RID: 27473 RVA: 0x002A356D File Offset: 0x002A176D
+	// Token: 0x17000BCD RID: 3021
+	// (get) Token: 0x06006B76 RID: 27510 RVA: 0x002A4A95 File Offset: 0x002A2C95
 	[XuiXmlBinding("auth_verificationUrl")]
 	public string AuthVerificationUrl
 	{
@@ -926,8 +926,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC8 RID: 3016
-	// (get) Token: 0x06006B52 RID: 27474 RVA: 0x002A357E File Offset: 0x002A177E
+	// Token: 0x17000BCE RID: 3022
+	// (get) Token: 0x06006B77 RID: 27511 RVA: 0x002A4AA6 File Offset: 0x002A2CA6
 	[XuiXmlBinding("show_devicecode")]
 	public string ShowDeviceCode
 	{
@@ -942,8 +942,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BC9 RID: 3017
-	// (get) Token: 0x06006B53 RID: 27475 RVA: 0x002A359B File Offset: 0x002A179B
+	// Token: 0x17000BCF RID: 3023
+	// (get) Token: 0x06006B78 RID: 27512 RVA: 0x002A4AC3 File Offset: 0x002A2CC3
 	[XuiXmlBinding("hascustomevents")]
 	public bool HasCustomEvents
 	{
@@ -955,8 +955,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCA RID: 3018
-	// (get) Token: 0x06006B54 RID: 27476 RVA: 0x002A35C1 File Offset: 0x002A17C1
+	// Token: 0x17000BD0 RID: 3024
+	// (get) Token: 0x06006B79 RID: 27513 RVA: 0x002A4AE9 File Offset: 0x002A2CE9
 	[XuiXmlBinding("allowactions")]
 	public bool AllowActions
 	{
@@ -968,8 +968,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCB RID: 3019
-	// (get) Token: 0x06006B55 RID: 27477 RVA: 0x002A35EA File Offset: 0x002A17EA
+	// Token: 0x17000BD1 RID: 3025
+	// (get) Token: 0x06006B7A RID: 27514 RVA: 0x002A4B12 File Offset: 0x002A2D12
 	[XuiXmlBinding("allowvotes")]
 	public bool AllowVotes
 	{
@@ -981,8 +981,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCC RID: 3020
-	// (get) Token: 0x06006B56 RID: 27478 RVA: 0x002A3613 File Offset: 0x002A1813
+	// Token: 0x17000BD2 RID: 3026
+	// (get) Token: 0x06006B7B RID: 27515 RVA: 0x002A4B3B File Offset: 0x002A2D3B
 	[XuiXmlBinding("allowevents")]
 	public bool AllowEvents
 	{
@@ -994,8 +994,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCD RID: 3021
-	// (get) Token: 0x06006B57 RID: 27479 RVA: 0x002A363C File Offset: 0x002A183C
+	// Token: 0x17000BD3 RID: 3027
+	// (get) Token: 0x06006B7C RID: 27516 RVA: 0x002A4B64 File Offset: 0x002A2D64
 	[XuiXmlBinding("subvalues")]
 	public string SubValues
 	{
@@ -1010,8 +1010,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCE RID: 3022
-	// (get) Token: 0x06006B58 RID: 27480 RVA: 0x002A365D File Offset: 0x002A185D
+	// Token: 0x17000BD4 RID: 3028
+	// (get) Token: 0x06006B7D RID: 27517 RVA: 0x002A4B85 File Offset: 0x002A2D85
 	[XuiXmlBinding("giftsubvalues")]
 	public string GiftSubValues
 	{
@@ -1026,8 +1026,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCF RID: 3023
-	// (get) Token: 0x06006B59 RID: 27481 RVA: 0x002A367E File Offset: 0x002A187E
+	// Token: 0x17000BD5 RID: 3029
+	// (get) Token: 0x06006B7E RID: 27518 RVA: 0x002A4BA6 File Offset: 0x002A2DA6
 	[XuiXmlBinding("votedaytimerange")]
 	public string VoteDayTimeRange
 	{
@@ -1042,8 +1042,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD0 RID: 3024
-	// (get) Token: 0x06006B5A RID: 27482 RVA: 0x002A36A4 File Offset: 0x002A18A4
+	// Token: 0x17000BD6 RID: 3030
+	// (get) Token: 0x06006B7F RID: 27519 RVA: 0x002A4BCC File Offset: 0x002A2DCC
 	[XuiXmlBinding("action_description")]
 	public string ActionDescription
 	{
@@ -1058,8 +1058,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD1 RID: 3025
-	// (get) Token: 0x06006B5B RID: 27483 RVA: 0x002A36D9 File Offset: 0x002A18D9
+	// Token: 0x17000BD7 RID: 3031
+	// (get) Token: 0x06006B80 RID: 27520 RVA: 0x002A4C01 File Offset: 0x002A2E01
 	[XuiXmlBinding("vote_description")]
 	public string VoteDescription
 	{
@@ -1074,8 +1074,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD2 RID: 3026
-	// (get) Token: 0x06006B5C RID: 27484 RVA: 0x002A370E File Offset: 0x002A190E
+	// Token: 0x17000BD8 RID: 3032
+	// (get) Token: 0x06006B81 RID: 27521 RVA: 0x002A4C36 File Offset: 0x002A2E36
 	[XuiXmlBinding("event_description")]
 	public string EventDescription
 	{
@@ -1090,8 +1090,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD3 RID: 3027
-	// (get) Token: 0x06006B5D RID: 27485 RVA: 0x002A3743 File Offset: 0x002A1943
+	// Token: 0x17000BD9 RID: 3033
+	// (get) Token: 0x06006B82 RID: 27522 RVA: 0x002A4C6B File Offset: 0x002A2E6B
 	[XuiXmlBinding("hasbitevents")]
 	public bool HasBitEvents
 	{
@@ -1103,8 +1103,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD4 RID: 3028
-	// (get) Token: 0x06006B5E RID: 27486 RVA: 0x002A3769 File Offset: 0x002A1969
+	// Token: 0x17000BDA RID: 3034
+	// (get) Token: 0x06006B83 RID: 27523 RVA: 0x002A4C91 File Offset: 0x002A2E91
 	[XuiXmlBinding("hassubevents")]
 	public bool HasSubEvents
 	{
@@ -1116,8 +1116,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD5 RID: 3029
-	// (get) Token: 0x06006B5F RID: 27487 RVA: 0x002A378F File Offset: 0x002A198F
+	// Token: 0x17000BDB RID: 3035
+	// (get) Token: 0x06006B84 RID: 27524 RVA: 0x002A4CB7 File Offset: 0x002A2EB7
 	[XuiXmlBinding("hasgiftsubevents")]
 	public bool HasGiftSubEvents
 	{
@@ -1129,8 +1129,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD6 RID: 3030
-	// (get) Token: 0x06006B60 RID: 27488 RVA: 0x002A37B5 File Offset: 0x002A19B5
+	// Token: 0x17000BDC RID: 3036
+	// (get) Token: 0x06006B85 RID: 27525 RVA: 0x002A4CDD File Offset: 0x002A2EDD
 	[XuiXmlBinding("hascharityevents")]
 	public bool HasCharityEvents
 	{
@@ -1142,8 +1142,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD7 RID: 3031
-	// (get) Token: 0x06006B61 RID: 27489 RVA: 0x002A37DB File Offset: 0x002A19DB
+	// Token: 0x17000BDD RID: 3037
+	// (get) Token: 0x06006B86 RID: 27526 RVA: 0x002A4D03 File Offset: 0x002A2F03
 	[XuiXmlBinding("hasraidevents")]
 	public bool HasRaidEvents
 	{
@@ -1155,8 +1155,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD8 RID: 3032
-	// (get) Token: 0x06006B62 RID: 27490 RVA: 0x002A3801 File Offset: 0x002A1A01
+	// Token: 0x17000BDE RID: 3038
+	// (get) Token: 0x06006B87 RID: 27527 RVA: 0x002A4D29 File Offset: 0x002A2F29
 	[XuiXmlBinding("hashypetrainevents")]
 	public bool HasHypeTrainEvents
 	{
@@ -1168,8 +1168,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BD9 RID: 3033
-	// (get) Token: 0x06006B63 RID: 27491 RVA: 0x002A3827 File Offset: 0x002A1A27
+	// Token: 0x17000BDF RID: 3039
+	// (get) Token: 0x06006B88 RID: 27528 RVA: 0x002A4D4F File Offset: 0x002A2F4F
 	[XuiXmlBinding("hascreatorgoalevents")]
 	public bool HasCreatorGoalEvents
 	{
@@ -1181,8 +1181,8 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BDA RID: 3034
-	// (get) Token: 0x06006B64 RID: 27492 RVA: 0x002A384D File Offset: 0x002A1A4D
+	// Token: 0x17000BE0 RID: 3040
+	// (get) Token: 0x06006B89 RID: 27529 RVA: 0x002A4D75 File Offset: 0x002A2F75
 	[XuiXmlBinding("haschannelpointevents")]
 	public bool HasChannelPointEvents
 	{
@@ -1194,386 +1194,386 @@ public class XUiC_OptionsTwitch : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x040051D4 RID: 20948
+	// Token: 0x040051F9 RID: 20985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x040051D5 RID: 20949
+	// Token: 0x040051FA RID: 20986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TabSelector tabs;
 
-	// Token: 0x040051D6 RID: 20950
+	// Token: 0x040051FB RID: 20987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboOptOutTwitch;
 
-	// Token: 0x040051D7 RID: 20951
+	// Token: 0x040051FC RID: 20988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboUseProgression;
 
-	// Token: 0x040051D8 RID: 20952
+	// Token: 0x040051FD RID: 20989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowCrateSharing;
 
-	// Token: 0x040051D9 RID: 20953
+	// Token: 0x040051FE RID: 20990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<XUiC_OptionsTwitch.TwitchBloodMoonOptions> comboAllowActionsDuringBloodmoon;
 
-	// Token: 0x040051DA RID: 20954
+	// Token: 0x040051FF RID: 20991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<XUiC_OptionsTwitch.TwitchBloodMoonOptions> comboAllowActionsDuringQuests;
 
-	// Token: 0x040051DB RID: 20955
+	// Token: 0x04005200 RID: 20992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowVotesDuringBloodmoon;
 
-	// Token: 0x040051DC RID: 20956
+	// Token: 0x04005201 RID: 20993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowVotesDuringQuests;
 
-	// Token: 0x040051DD RID: 20957
+	// Token: 0x04005202 RID: 20994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowVotesInSafeZone;
 
-	// Token: 0x040051DE RID: 20958
+	// Token: 0x04005203 RID: 20995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<XUiC_OptionsTwitch.PointsGenerationOptions> comboPointsGeneration;
 
-	// Token: 0x040051DF RID: 20959
+	// Token: 0x04005204 RID: 20996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboCooldownPreset;
 
-	// Token: 0x040051E0 RID: 20960
+	// Token: 0x04005205 RID: 20997
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowVisionEffects;
 
-	// Token: 0x040051E1 RID: 20961
+	// Token: 0x04005206 RID: 20998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboActionSpamDelay;
 
-	// Token: 0x040051E2 RID: 20962
+	// Token: 0x04005207 RID: 20999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<TwitchManager.IntegrationSettings> comboActionTwitchIntegrationType;
 
-	// Token: 0x040051E3 RID: 20963
+	// Token: 0x04005208 RID: 21000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboAllowActions;
 
-	// Token: 0x040051E4 RID: 20964
+	// Token: 0x04005209 RID: 21001
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboAllowVotes;
 
-	// Token: 0x040051E5 RID: 20965
+	// Token: 0x0400520A RID: 21002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboAllowEvents;
 
-	// Token: 0x040051E6 RID: 20966
+	// Token: 0x0400520B RID: 21003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboViewerStartingPoints;
 
-	// Token: 0x040051E7 RID: 20967
+	// Token: 0x0400520C RID: 21004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<XUiC_OptionsTwitch.BitAddOptions> comboBitPointsAdd;
 
-	// Token: 0x040051E8 RID: 20968
+	// Token: 0x0400520D RID: 21005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<XUiC_OptionsTwitch.PointsGenerationOptions> comboSubPointsAdd;
 
-	// Token: 0x040051E9 RID: 20969
+	// Token: 0x0400520E RID: 21006
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<XUiC_OptionsTwitch.PointsGenerationOptions> comboGiftSubPointsAdd;
 
-	// Token: 0x040051EA RID: 20970
+	// Token: 0x0400520F RID: 21007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboRaidPointsAdd;
 
-	// Token: 0x040051EB RID: 20971
+	// Token: 0x04005210 RID: 21008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboRaidViewerMinimum;
 
-	// Token: 0x040051EC RID: 20972
+	// Token: 0x04005211 RID: 21009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboMaxDailyVotes;
 
-	// Token: 0x040051ED RID: 20973
+	// Token: 0x04005212 RID: 21010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboVoteTime;
 
-	// Token: 0x040051EE RID: 20974
+	// Token: 0x04005213 RID: 21011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboVoteViewerDefeatReward;
 
-	// Token: 0x040051EF RID: 20975
+	// Token: 0x04005214 RID: 21012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboVoteDayTimeRange;
 
-	// Token: 0x040051F0 RID: 20976
+	// Token: 0x04005215 RID: 21013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboHelperRewardAmount;
 
-	// Token: 0x040051F1 RID: 20977
+	// Token: 0x04005216 RID: 21014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboHelperRewardTime;
 
-	// Token: 0x040051F2 RID: 20978
+	// Token: 0x04005217 RID: 21015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowBitEvents;
 
-	// Token: 0x040051F3 RID: 20979
+	// Token: 0x04005218 RID: 21016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowSubEvents;
 
-	// Token: 0x040051F4 RID: 20980
+	// Token: 0x04005219 RID: 21017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowGiftSubEvents;
 
-	// Token: 0x040051F5 RID: 20981
+	// Token: 0x0400521A RID: 21018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowCharityEvents;
 
-	// Token: 0x040051F6 RID: 20982
+	// Token: 0x0400521B RID: 21019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowRaidEvents;
 
-	// Token: 0x040051F7 RID: 20983
+	// Token: 0x0400521C RID: 21020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowHypeTrainEvents;
 
-	// Token: 0x040051F8 RID: 20984
+	// Token: 0x0400521D RID: 21021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowCreatorGoalEvents;
 
-	// Token: 0x040051F9 RID: 20985
+	// Token: 0x0400521E RID: 21022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool comboAllowChannelPointRedeemEvents;
 
-	// Token: 0x040051FA RID: 20986
+	// Token: 0x0400521F RID: 21023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboBitPrices;
 
-	// Token: 0x040051FB RID: 20987
+	// Token: 0x04005220 RID: 21024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> comboBitPotPercent;
 
-	// Token: 0x040051FC RID: 20988
+	// Token: 0x04005221 RID: 21025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsTwitch.TwitchBloodMoonOptions origAllowActionsDuringBloodmoon;
 
-	// Token: 0x040051FD RID: 20989
+	// Token: 0x04005222 RID: 21026
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsTwitch.TwitchBloodMoonOptions origAllowActionsDuringQuests;
 
-	// Token: 0x040051FE RID: 20990
+	// Token: 0x04005223 RID: 21027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsTwitch.PointsGenerationOptions origPointsGeneration;
 
-	// Token: 0x040051FF RID: 20991
+	// Token: 0x04005224 RID: 21028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origCooldownPresetIndex;
 
-	// Token: 0x04005200 RID: 20992
+	// Token: 0x04005225 RID: 21029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origUseProgression;
 
-	// Token: 0x04005201 RID: 20993
+	// Token: 0x04005226 RID: 21030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowTwitchOptions;
 
-	// Token: 0x04005202 RID: 20994
+	// Token: 0x04005227 RID: 21031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowVisionEffects = true;
 
-	// Token: 0x04005203 RID: 20995
+	// Token: 0x04005228 RID: 21032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowCrateSharing;
 
-	// Token: 0x04005204 RID: 20996
+	// Token: 0x04005229 RID: 21033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origActionSpamDelay = 1;
 
-	// Token: 0x04005205 RID: 20997
+	// Token: 0x0400522A RID: 21034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchManager.IntegrationSettings origIntegrationSetting;
 
-	// Token: 0x04005206 RID: 20998
+	// Token: 0x0400522B RID: 21035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origActionPresetIndex;
 
-	// Token: 0x04005207 RID: 20999
+	// Token: 0x0400522C RID: 21036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origVotePresetIndex;
 
-	// Token: 0x04005208 RID: 21000
+	// Token: 0x0400522D RID: 21037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origEventPresetIndex;
 
-	// Token: 0x04005209 RID: 21001
+	// Token: 0x0400522E RID: 21038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origBitPricesIndex;
 
-	// Token: 0x0400520A RID: 21002
+	// Token: 0x0400522F RID: 21039
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origBitPotPercentIndex;
 
-	// Token: 0x0400520B RID: 21003
+	// Token: 0x04005230 RID: 21040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsTwitch.BitAddOptions origBitPointModifier;
 
-	// Token: 0x0400520C RID: 21004
+	// Token: 0x04005231 RID: 21041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsTwitch.PointsGenerationOptions origSubPointModifier;
 
-	// Token: 0x0400520D RID: 21005
+	// Token: 0x04005232 RID: 21042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsTwitch.PointsGenerationOptions origGiftSubPointModifier;
 
-	// Token: 0x0400520E RID: 21006
+	// Token: 0x04005233 RID: 21043
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origRaidPointAmountIndex;
 
-	// Token: 0x0400520F RID: 21007
+	// Token: 0x04005234 RID: 21044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origRaidViewerMinimumIndex;
 
-	// Token: 0x04005210 RID: 21008
+	// Token: 0x04005235 RID: 21045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origHelperRewardAmountIndex;
 
-	// Token: 0x04005211 RID: 21009
+	// Token: 0x04005236 RID: 21046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origHelperRewardTimeIndex;
 
-	// Token: 0x04005212 RID: 21010
+	// Token: 0x04005237 RID: 21047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origViewerStartingPoints;
 
-	// Token: 0x04005213 RID: 21011
+	// Token: 0x04005238 RID: 21048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origMaxDailyVotes;
 
-	// Token: 0x04005214 RID: 21012
+	// Token: 0x04005239 RID: 21049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origVoteTime;
 
-	// Token: 0x04005215 RID: 21013
+	// Token: 0x0400523A RID: 21050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origVoteDayTimeRange;
 
-	// Token: 0x04005216 RID: 21014
+	// Token: 0x0400523B RID: 21051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int origVoteViewerDefeatReward;
 
-	// Token: 0x04005217 RID: 21015
+	// Token: 0x0400523C RID: 21052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowVotesDuringBloodmoon;
 
-	// Token: 0x04005218 RID: 21016
+	// Token: 0x0400523D RID: 21053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowVotesDuringQuests;
 
-	// Token: 0x04005219 RID: 21017
+	// Token: 0x0400523E RID: 21054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowVotesInSafeZone;
 
-	// Token: 0x0400521A RID: 21018
+	// Token: 0x0400523F RID: 21055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool startedSinceOpened;
 
-	// Token: 0x0400521B RID: 21019
+	// Token: 0x04005240 RID: 21056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchManager twitchManager;
 
-	// Token: 0x0400521C RID: 21020
+	// Token: 0x04005241 RID: 21057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tempSubModifier = 1;
 
-	// Token: 0x0400521D RID: 21021
+	// Token: 0x04005242 RID: 21058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tempGiftSubModifier = 1;
 
-	// Token: 0x0400521E RID: 21022
+	// Token: 0x04005243 RID: 21059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tempVoteDayTimeRange = 2;
 
-	// Token: 0x0400521F RID: 21023
+	// Token: 0x04005244 RID: 21060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowBitEvents = true;
 
-	// Token: 0x04005220 RID: 21024
+	// Token: 0x04005245 RID: 21061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowSubEvents = true;
 
-	// Token: 0x04005221 RID: 21025
+	// Token: 0x04005246 RID: 21062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowGiftSubEvents = true;
 
-	// Token: 0x04005222 RID: 21026
+	// Token: 0x04005247 RID: 21063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowCharityEvents = true;
 
-	// Token: 0x04005223 RID: 21027
+	// Token: 0x04005248 RID: 21064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowRaidEvents = true;
 
-	// Token: 0x04005224 RID: 21028
+	// Token: 0x04005249 RID: 21065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowHypeTrainEvents = true;
 
-	// Token: 0x04005225 RID: 21029
+	// Token: 0x0400524A RID: 21066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowCreatorGoalEvents = true;
 
-	// Token: 0x04005226 RID: 21030
+	// Token: 0x0400524B RID: 21067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool origAllowChannelPointRedemptions = true;
 
-	// Token: 0x04005227 RID: 21031
+	// Token: 0x0400524C RID: 21068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showDeviceCode;
 
-	// Token: 0x04005228 RID: 21032
+	// Token: 0x0400524D RID: 21069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture qrCodeTexControl;
 
-	// Token: 0x04005229 RID: 21033
+	// Token: 0x0400524E RID: 21070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string authCode = "";
 
-	// Token: 0x0400522A RID: 21034
+	// Token: 0x0400524F RID: 21071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string authVerificationUrl = "";
 
-	// Token: 0x02000DC2 RID: 3522
+	// Token: 0x02000DCD RID: 3533
 	public enum TwitchBloodMoonOptions
 	{
-		// Token: 0x0400522C RID: 21036
+		// Token: 0x04005251 RID: 21073
 		Disabled,
-		// Token: 0x0400522D RID: 21037
+		// Token: 0x04005252 RID: 21074
 		Standard,
-		// Token: 0x0400522E RID: 21038
+		// Token: 0x04005253 RID: 21075
 		CooldownOnly
 	}
 
-	// Token: 0x02000DC3 RID: 3523
+	// Token: 0x02000DCE RID: 3534
 	public enum PointsGenerationOptions
 	{
-		// Token: 0x04005230 RID: 21040
+		// Token: 0x04005255 RID: 21077
 		Disabled,
-		// Token: 0x04005231 RID: 21041
+		// Token: 0x04005256 RID: 21078
 		Standard,
-		// Token: 0x04005232 RID: 21042
+		// Token: 0x04005257 RID: 21079
 		Double,
-		// Token: 0x04005233 RID: 21043
+		// Token: 0x04005258 RID: 21080
 		Triple
 	}
 
-	// Token: 0x02000DC4 RID: 3524
+	// Token: 0x02000DCF RID: 3535
 	public enum BitAddOptions
 	{
-		// Token: 0x04005235 RID: 21045
+		// Token: 0x0400525A RID: 21082
 		Standard = 1,
-		// Token: 0x04005236 RID: 21046
+		// Token: 0x0400525B RID: 21083
 		Double,
-		// Token: 0x04005237 RID: 21047
+		// Token: 0x0400525C RID: 21084
 		Triple
 	}
 }

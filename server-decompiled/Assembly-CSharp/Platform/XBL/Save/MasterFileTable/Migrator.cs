@@ -10,10 +10,10 @@ using Platform.XBL.Save.MasterFileTable.V05;
 
 namespace Platform.XBL.Save.MasterFileTable
 {
-	// Token: 0x02001C96 RID: 7318
+	// Token: 0x02001CC7 RID: 7367
 	public static class Migrator
 	{
-		// Token: 0x0600D8AA RID: 55466 RVA: 0x004DBAEC File Offset: 0x004D9CEC
+		// Token: 0x0600D9BE RID: 55742 RVA: 0x004DF63C File Offset: 0x004DD83C
 		public static void ReadMigrate(Stream inputStream, IMigratable newMigratable, string identifier, Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>> migrators)
 		{
 			ushort version = newMigratable.Version;
@@ -56,7 +56,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8AB RID: 55467 RVA: 0x004DBC10 File Offset: 0x004D9E10
+		// Token: 0x0600D9BF RID: 55743 RVA: 0x004DF760 File Offset: 0x004DD960
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNode(Platform.XBL.Save.MasterFileTable.V01.Node oldNode, Platform.XBL.Save.MasterFileTable.V02.Node newNode)
 		{
@@ -72,14 +72,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8AC RID: 55468 RVA: 0x004DBCCC File Offset: 0x004D9ECC
+		// Token: 0x0600D9C0 RID: 55744 RVA: 0x004DF81C File Offset: 0x004DDA1C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateContainerData(Platform.XBL.Save.MasterFileTable.V01.ContainerData oldContainerData, Platform.XBL.Save.MasterFileTable.V02.ContainerData newContainerData)
 		{
 			Migrator.MigrateNode(oldContainerData.RootNode, newContainerData.RootNode);
 		}
 
-		// Token: 0x0600D8AD RID: 55469 RVA: 0x004DBCE0 File Offset: 0x004D9EE0
+		// Token: 0x0600D9C1 RID: 55745 RVA: 0x004DF830 File Offset: 0x004DDA30
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void MigrateFromV1(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -94,7 +94,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8AE RID: 55470 RVA: 0x004DBD40 File Offset: 0x004D9F40
+		// Token: 0x0600D9C2 RID: 55746 RVA: 0x004DF890 File Offset: 0x004DDA90
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNode(Platform.XBL.Save.MasterFileTable.V02.Node oldNode, Platform.XBL.Save.MasterFileTable.V03.Node newNode)
 		{
@@ -108,14 +108,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			newNode.LastWriteTimeUtc = oldNode.LastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D8AF RID: 55471 RVA: 0x004DBDDC File Offset: 0x004D9FDC
+		// Token: 0x0600D9C3 RID: 55747 RVA: 0x004DF92C File Offset: 0x004DDB2C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateContainerData(Platform.XBL.Save.MasterFileTable.V02.ContainerData oldContainerData, Platform.XBL.Save.MasterFileTable.V03.ContainerData newContainerData)
 		{
 			Migrator.MigrateNode(oldContainerData.RootNode, newContainerData.RootNode);
 		}
 
-		// Token: 0x0600D8B0 RID: 55472 RVA: 0x004DBDF0 File Offset: 0x004D9FF0
+		// Token: 0x0600D9C4 RID: 55748 RVA: 0x004DF940 File Offset: 0x004DDB40
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void MigrateFromV2(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -130,7 +130,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8B1 RID: 55473 RVA: 0x004DBE50 File Offset: 0x004DA050
+		// Token: 0x0600D9C5 RID: 55749 RVA: 0x004DF9A0 File Offset: 0x004DDBA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNodeAttributes(Platform.XBL.Save.MasterFileTable.V03.NodeAttributes oldAttributes, out Platform.XBL.Save.MasterFileTable.V04.NodeAttributes newAttributes)
 		{
@@ -141,14 +141,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8B2 RID: 55474 RVA: 0x004DBE6E File Offset: 0x004DA06E
+		// Token: 0x0600D9C6 RID: 55750 RVA: 0x004DF9BE File Offset: 0x004DDBBE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateBlobRef(ulong oldBlobRef, out Platform.XBL.Save.MasterFileTable.V04.BlobRef newBlobRef)
 		{
 			newBlobRef = new Platform.XBL.Save.MasterFileTable.V04.BlobRef(oldBlobRef, 0U);
 		}
 
-		// Token: 0x0600D8B3 RID: 55475 RVA: 0x004DBE7C File Offset: 0x004DA07C
+		// Token: 0x0600D9C7 RID: 55751 RVA: 0x004DF9CC File Offset: 0x004DDBCC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNode(Platform.XBL.Save.MasterFileTable.V03.Node oldNode, Platform.XBL.Save.MasterFileTable.V04.Node newNode)
 		{
@@ -168,14 +168,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			newNode.LastWriteTimeUtc = oldNode.LastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D8B4 RID: 55476 RVA: 0x004DBF48 File Offset: 0x004DA148
+		// Token: 0x0600D9C8 RID: 55752 RVA: 0x004DFA98 File Offset: 0x004DDC98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateContainerData(Platform.XBL.Save.MasterFileTable.V03.ContainerData oldContainerData, Platform.XBL.Save.MasterFileTable.V04.ContainerData newContainerData)
 		{
 			Migrator.MigrateNode(oldContainerData.RootNode, newContainerData.RootNode);
 		}
 
-		// Token: 0x0600D8B5 RID: 55477 RVA: 0x004DBF5C File Offset: 0x004DA15C
+		// Token: 0x0600D9C9 RID: 55753 RVA: 0x004DFAAC File Offset: 0x004DDCAC
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void MigrateFromV3(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -190,7 +190,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8B6 RID: 55478 RVA: 0x004DBFBC File Offset: 0x004DA1BC
+		// Token: 0x0600D9CA RID: 55754 RVA: 0x004DFB0C File Offset: 0x004DDD0C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNodeAttributes(Platform.XBL.Save.MasterFileTable.V04.NodeAttributes oldAttributes, out Platform.XBL.Save.MasterFileTable.V05.NodeAttributes newAttributes)
 		{
@@ -201,7 +201,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8B7 RID: 55479 RVA: 0x004DBFDA File Offset: 0x004DA1DA
+		// Token: 0x0600D9CB RID: 55755 RVA: 0x004DFB2A File Offset: 0x004DDD2A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateBlobRef(Platform.XBL.Save.MasterFileTable.V04.BlobRef oldBlobRef, out Platform.XBL.Save.MasterFileTable.V05.BlobRef newBlobRef)
 		{
@@ -213,7 +213,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			};
 		}
 
-		// Token: 0x0600D8B8 RID: 55480 RVA: 0x004DC008 File Offset: 0x004DA208
+		// Token: 0x0600D9CC RID: 55756 RVA: 0x004DFB58 File Offset: 0x004DDD58
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNode(Platform.XBL.Save.MasterFileTable.V04.Node oldNode, Platform.XBL.Save.MasterFileTable.V05.Node newNode)
 		{
@@ -233,14 +233,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			newNode.LastWriteTimeUtc = oldNode.LastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D8B9 RID: 55481 RVA: 0x004DC0D4 File Offset: 0x004DA2D4
+		// Token: 0x0600D9CD RID: 55757 RVA: 0x004DFC24 File Offset: 0x004DDE24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateContainerData(Platform.XBL.Save.MasterFileTable.V04.ContainerData oldContainerData, Platform.XBL.Save.MasterFileTable.V05.ContainerData newContainerData)
 		{
 			Migrator.MigrateNode(oldContainerData.RootNode, newContainerData.RootNode);
 		}
 
-		// Token: 0x0600D8BA RID: 55482 RVA: 0x004DC0E8 File Offset: 0x004DA2E8
+		// Token: 0x0600D9CE RID: 55758 RVA: 0x004DFC38 File Offset: 0x004DDE38
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void MigrateFromV4(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -255,7 +255,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8BB RID: 55483 RVA: 0x004DC148 File Offset: 0x004DA348
+		// Token: 0x0600D9CF RID: 55759 RVA: 0x004DFC98 File Offset: 0x004DDE98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNodeAttributes(Platform.XBL.Save.MasterFileTable.V05.NodeAttributes oldAttributes, out Platform.XBL.Save.MasterFileTable.Latest.NodeAttributes newAttributes)
 		{
@@ -266,7 +266,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8BC RID: 55484 RVA: 0x004DC166 File Offset: 0x004DA366
+		// Token: 0x0600D9D0 RID: 55760 RVA: 0x004DFCB6 File Offset: 0x004DDEB6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateBlobRef(Platform.XBL.Save.MasterFileTable.V05.BlobRef oldBlobRef, Platform.XBL.Save.MasterFileTable.Latest.BlobRef newBlobRef)
 		{
@@ -275,7 +275,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			newBlobRef.Hash = oldBlobRef.Hash;
 		}
 
-		// Token: 0x0600D8BD RID: 55485 RVA: 0x004DC18C File Offset: 0x004DA38C
+		// Token: 0x0600D9D1 RID: 55761 RVA: 0x004DFCDC File Offset: 0x004DDEDC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateNode(Platform.XBL.Save.MasterFileTable.V05.Node oldNode, Platform.XBL.Save.MasterFileTable.Latest.Node newNode)
 		{
@@ -297,14 +297,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			newNode.LastWriteTimeUtc = oldNode.LastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D8BE RID: 55486 RVA: 0x004DC268 File Offset: 0x004DA468
+		// Token: 0x0600D9D2 RID: 55762 RVA: 0x004DFDB8 File Offset: 0x004DDFB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateContainerData(Platform.XBL.Save.MasterFileTable.V05.ContainerData oldContainerData, Platform.XBL.Save.MasterFileTable.Latest.ContainerData newContainerData)
 		{
 			Migrator.MigrateNode(oldContainerData.RootNode, newContainerData.RootNode);
 		}
 
-		// Token: 0x0600D8BF RID: 55487 RVA: 0x004DC27C File Offset: 0x004DA47C
+		// Token: 0x0600D9D3 RID: 55763 RVA: 0x004DFDCC File Offset: 0x004DDFCC
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void MigrateFromV5ContainerData(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -319,7 +319,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8C0 RID: 55488 RVA: 0x004DC2DC File Offset: 0x004DA4DC
+		// Token: 0x0600D9D4 RID: 55764 RVA: 0x004DFE2C File Offset: 0x004DE02C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateFromV5Node(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -334,7 +334,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		}
 
-		// Token: 0x0600D8C1 RID: 55489 RVA: 0x004DC33C File Offset: 0x004DA53C
+		// Token: 0x0600D9D5 RID: 55765 RVA: 0x004DFE8C File Offset: 0x004DE08C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MigrateFromV5BlobRef(PooledBinaryReader reader, PooledBinaryWriter writer)
 		{
@@ -345,7 +345,7 @@ namespace Platform.XBL.Save.MasterFileTable
 			blobRef2.Write(writer);
 		}
 
-		// Token: 0x0400A4AC RID: 42156
+		// Token: 0x0400A595 RID: 42389
 		public static readonly Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>> s_containerDataMigrators = new Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>>
 		{
 			{
@@ -370,14 +370,14 @@ namespace Platform.XBL.Save.MasterFileTable
 			}
 		};
 
-		// Token: 0x0400A4AD RID: 42157
+		// Token: 0x0400A596 RID: 42390
 		public static readonly Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>> s_nodeMigrators = new Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>> { 
 		{
 			5,
 			new Action<PooledBinaryReader, PooledBinaryWriter>(Migrator.MigrateFromV5Node)
 		} };
 
-		// Token: 0x0400A4AE RID: 42158
+		// Token: 0x0400A597 RID: 42391
 		public static readonly Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>> s_blobRefMigrators = new Dictionary<ushort, Action<PooledBinaryReader, PooledBinaryWriter>> { 
 		{
 			5,

@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C11 RID: 3089
+// Token: 0x02000C1C RID: 3100
 public class BiomeBluffDecoration
 {
-	// Token: 0x06005DC8 RID: 24008 RVA: 0x00248E5F File Offset: 0x0024705F
+	// Token: 0x06005DED RID: 24045 RVA: 0x0024A387 File Offset: 0x00248587
 	public BiomeBluffDecoration(string _name, float _prob, float _minScale, float _maxScale)
 	{
 		this.m_sName = _name;
@@ -12,15 +12,15 @@ public class BiomeBluffDecoration
 		this.m_MaxScale = _maxScale;
 	}
 
-	// Token: 0x040048C3 RID: 18627
+	// Token: 0x040048E8 RID: 18664
 	public string m_sName;
 
-	// Token: 0x040048C4 RID: 18628
+	// Token: 0x040048E9 RID: 18665
 	public float m_Prob;
 
-	// Token: 0x040048C5 RID: 18629
+	// Token: 0x040048EA RID: 18666
 	public float m_MinScale;
 
-	// Token: 0x040048C6 RID: 18630
+	// Token: 0x040048EB RID: 18667
 	public float m_MaxScale;
 }

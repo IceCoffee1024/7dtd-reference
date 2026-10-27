@@ -7,11 +7,11 @@ using System.Xml.Linq;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001216 RID: 4630
+// Token: 0x02001226 RID: 4646
 public class GameStartupHelper
 {
-	// Token: 0x170011CF RID: 4559
-	// (get) Token: 0x060093A7 RID: 37799 RVA: 0x0037CD91 File Offset: 0x0037AF91
+	// Token: 0x170011DA RID: 4570
+	// (get) Token: 0x060093FD RID: 37885 RVA: 0x0037EF05 File Offset: 0x0037D105
 	public static GameStartupHelper Instance
 	{
 		get
@@ -25,13 +25,13 @@ public class GameStartupHelper
 		}
 	}
 
-	// Token: 0x060093A8 RID: 37800 RVA: 0x0037CDA7 File Offset: 0x0037AFA7
+	// Token: 0x060093FE RID: 37886 RVA: 0x0037EF1B File Offset: 0x0037D11B
 	public static string[] GetCommandLineArgs()
 	{
 		return Environment.GetCommandLineArgs();
 	}
 
-	// Token: 0x060093A9 RID: 37801 RVA: 0x0037CDB0 File Offset: 0x0037AFB0
+	// Token: 0x060093FF RID: 37887 RVA: 0x0037EF24 File Offset: 0x0037D124
 	public bool InitCommandLine()
 	{
 		if (this.initCommandLineOk != null)
@@ -61,7 +61,7 @@ public class GameStartupHelper
 		return this.initCommandLineOk.Value;
 	}
 
-	// Token: 0x060093AA RID: 37802 RVA: 0x0037CEBC File Offset: 0x0037B0BC
+	// Token: 0x06009400 RID: 37888 RVA: 0x0037F030 File Offset: 0x0037D230
 	public bool InitGamePrefs()
 	{
 		if (this.initCommandLineOk == null || !this.initCommandLineOk.Value)
@@ -78,7 +78,7 @@ public class GameStartupHelper
 		return this.initGamePrefsOk.Value;
 	}
 
-	// Token: 0x060093AB RID: 37803 RVA: 0x0037CF44 File Offset: 0x0037B144
+	// Token: 0x06009401 RID: 37889 RVA: 0x0037F0B8 File Offset: 0x0037D2B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrintSystemInfo()
 	{
@@ -90,7 +90,7 @@ public class GameStartupHelper
 		Log.Out(string.Format("   Graphics API: {0} (shader level {1:0.0})", SystemInfo.graphicsDeviceVersion, (float)SystemInfo.graphicsShaderLevel / 10f));
 	}
 
-	// Token: 0x060093AC RID: 37804 RVA: 0x0037CFEC File Offset: 0x0037B1EC
+	// Token: 0x06009402 RID: 37890 RVA: 0x0037F160 File Offset: 0x0037D360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ParseCommandLine(string[] _args)
 	{
@@ -128,7 +128,7 @@ public class GameStartupHelper
 		return true;
 	}
 
-	// Token: 0x060093AD RID: 37805 RVA: 0x0037D0D4 File Offset: 0x0037B2D4
+	// Token: 0x06009403 RID: 37891 RVA: 0x0037F248 File Offset: 0x0037D448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ApplyParsedGamePrefs()
 	{
@@ -164,7 +164,7 @@ public class GameStartupHelper
 		return true;
 	}
 
-	// Token: 0x060093AE RID: 37806 RVA: 0x0037D1A0 File Offset: 0x0037B3A0
+	// Token: 0x06009404 RID: 37892 RVA: 0x0037F314 File Offset: 0x0037D514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void printCommandline(string[] _args)
 	{
@@ -189,7 +189,7 @@ public class GameStartupHelper
 		Log.Out(stringBuilder.ToString());
 	}
 
-	// Token: 0x060093AF RID: 37807 RVA: 0x0037D244 File Offset: 0x0037B444
+	// Token: 0x06009405 RID: 37893 RVA: 0x0037F3B8 File Offset: 0x0037D5B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, string> parseRawCommandline(string[] _args)
 	{
@@ -264,7 +264,7 @@ public class GameStartupHelper
 		return dictionary;
 	}
 
-	// Token: 0x060093B0 RID: 37808 RVA: 0x0037D550 File Offset: 0x0037B750
+	// Token: 0x06009406 RID: 37894 RVA: 0x0037F6C4 File Offset: 0x0037D8C4
 	public static string[] RemoveTemporaryArguments(string[] args)
 	{
 		List<string> list = new List<string>();
@@ -277,7 +277,7 @@ public class GameStartupHelper
 		return list.ToArray();
 	}
 
-	// Token: 0x060093B1 RID: 37809 RVA: 0x0037D590 File Offset: 0x0037B790
+	// Token: 0x06009407 RID: 37895 RVA: 0x0037F704 File Offset: 0x0037D904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool LoadConfigFile(string _filename)
 	{
@@ -333,7 +333,7 @@ public class GameStartupHelper
 		return true;
 	}
 
-	// Token: 0x060093B2 RID: 37810 RVA: 0x0037D78C File Offset: 0x0037B98C
+	// Token: 0x06009408 RID: 37896 RVA: 0x0037F900 File Offset: 0x0037DB00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ParsePref(string _name, string _value, bool _quitOnError = true, bool _ignoreCase = false)
 	{
@@ -377,7 +377,7 @@ public class GameStartupHelper
 		return flag;
 	}
 
-	// Token: 0x060093B3 RID: 37811 RVA: 0x0037D844 File Offset: 0x0037BA44
+	// Token: 0x06009409 RID: 37897 RVA: 0x0037F9B8 File Offset: 0x0037DBB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ParseLaunchPref(string trimmedName, ILaunchPref launchPref, string _value, bool _quitOnError = true)
 	{
@@ -389,7 +389,7 @@ public class GameStartupHelper
 		return true;
 	}
 
-	// Token: 0x060093B4 RID: 37812 RVA: 0x0037D86C File Offset: 0x0037BA6C
+	// Token: 0x0600940A RID: 37898 RVA: 0x0037F9E0 File Offset: 0x0037DBE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ParseGamePref(string trimmedName, EnumGamePrefs gpEnum, string _value, bool _quitOnError = true)
 	{
@@ -403,7 +403,7 @@ public class GameStartupHelper
 		return true;
 	}
 
-	// Token: 0x060093B5 RID: 37813 RVA: 0x0037D8B0 File Offset: 0x0037BAB0
+	// Token: 0x0600940B RID: 37899 RVA: 0x0037FA24 File Offset: 0x0037DC24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowConfigError(string _name, string _message, Exception _exc = null, bool _quitOnError = true)
 	{
@@ -432,7 +432,7 @@ public class GameStartupHelper
 		}
 	}
 
-	// Token: 0x060093B6 RID: 37814 RVA: 0x0037D92C File Offset: 0x0037BB2C
+	// Token: 0x0600940C RID: 37900 RVA: 0x0037FAA0 File Offset: 0x0037DCA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDedicatedServerSettings()
 	{
@@ -450,33 +450,33 @@ public class GameStartupHelper
 		this.OpenMainMenuAfterAwake = false;
 	}
 
-	// Token: 0x04006E68 RID: 28264
+	// Token: 0x04006E80 RID: 28288
 	public const string RemoveOnRestartArgFlag = "[REMOVE_ON_RESTART]";
 
-	// Token: 0x04006E69 RID: 28265
+	// Token: 0x04006E81 RID: 28289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex filterPasswordsRegex = new Regex("^(-[^=]*(Password|Secret)[^=]*=).*$", RegexOptions.IgnoreCase);
 
-	// Token: 0x04006E6A RID: 28266
+	// Token: 0x04006E82 RID: 28290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameStartupHelper instance;
 
-	// Token: 0x04006E6B RID: 28267
+	// Token: 0x04006E83 RID: 28291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool? initCommandLineOk;
 
-	// Token: 0x04006E6C RID: 28268
+	// Token: 0x04006E84 RID: 28292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool? initGamePrefsOk;
 
-	// Token: 0x04006E6D RID: 28269
+	// Token: 0x04006E85 RID: 28293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bConfigFileLoaded;
 
-	// Token: 0x04006E6E RID: 28270
+	// Token: 0x04006E86 RID: 28294
 	public bool OpenMainMenuAfterAwake = true;
 
-	// Token: 0x04006E6F RID: 28271
+	// Token: 0x04006E87 RID: 28295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumDictionary<EnumGamePrefs, object> parsedGamePrefs;
 }

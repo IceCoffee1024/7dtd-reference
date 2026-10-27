@@ -1,24 +1,24 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B9D RID: 2973
+// Token: 0x02000BA8 RID: 2984
 [PublicizedFrom(EAccessModifier.Internal)]
 public class ChunkMemoryStreamReader : MemoryStream
 {
-	// Token: 0x0600599E RID: 22942 RVA: 0x00226EE3 File Offset: 0x002250E3
+	// Token: 0x060059C3 RID: 22979 RVA: 0x0022843F File Offset: 0x0022663F
 	public ChunkMemoryStreamReader()
 		: this(new byte[512000])
 	{
 	}
 
-	// Token: 0x0600599F RID: 22943 RVA: 0x00226EF5 File Offset: 0x002250F5
+	// Token: 0x060059C4 RID: 22980 RVA: 0x00228451 File Offset: 0x00226651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkMemoryStreamReader(byte[] _buffer)
 		: base(_buffer)
 	{
 	}
 
-	// Token: 0x060059A0 RID: 22944 RVA: 0x00226EFE File Offset: 0x002250FE
+	// Token: 0x060059C5 RID: 22981 RVA: 0x0022845A File Offset: 0x0022665A
 	public override void Close()
 	{
 		this.Seek(0L, SeekOrigin.Begin);

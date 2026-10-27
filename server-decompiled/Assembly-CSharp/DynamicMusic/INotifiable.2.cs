@@ -2,10 +2,10 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AA5 RID: 6821
+	// Token: 0x02001AD6 RID: 6870
 	public interface INotifiable<T>
 	{
-		// Token: 0x0600CE44 RID: 52804
+		// Token: 0x0600CF58 RID: 53080
 		void Notify(T _state);
 	}
 }

@@ -4,18 +4,18 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000492 RID: 1170
+// Token: 0x02000494 RID: 1172
 [Preserve]
 public class EntityClass
 {
-	// Token: 0x06002426 RID: 9254 RVA: 0x000DB150 File Offset: 0x000D9350
+	// Token: 0x0600242C RID: 9260 RVA: 0x000DB4D4 File Offset: 0x000D96D4
 	public static void Add(string _entityClassname, EntityClass _entityClass)
 	{
 		_entityClass.entityClassName = _entityClassname;
 		EntityClass.list[_entityClassname.GetHashCode()] = _entityClass;
 	}
 
-	// Token: 0x06002427 RID: 9255 RVA: 0x000DB16C File Offset: 0x000D936C
+	// Token: 0x0600242D RID: 9261 RVA: 0x000DB4F0 File Offset: 0x000D96F0
 	public static EntityClass GetEntityClass(int entityClass)
 	{
 		EntityClass entityClass2;
@@ -23,7 +23,7 @@ public class EntityClass
 		return entityClass2;
 	}
 
-	// Token: 0x06002428 RID: 9256 RVA: 0x000DB188 File Offset: 0x000D9388
+	// Token: 0x0600242E RID: 9262 RVA: 0x000DB50C File Offset: 0x000D970C
 	public static string GetEntityClassName(int entityClass)
 	{
 		EntityClass entityClass2;
@@ -34,7 +34,7 @@ public class EntityClass
 		return "null";
 	}
 
-	// Token: 0x06002429 RID: 9257 RVA: 0x000DB1B0 File Offset: 0x000D93B0
+	// Token: 0x0600242F RID: 9263 RVA: 0x000DB534 File Offset: 0x000D9734
 	public static int GetId(string _name)
 	{
 		foreach (KeyValuePair<int, EntityClass> keyValuePair in EntityClass.list.Dict)
@@ -47,13 +47,13 @@ public class EntityClass
 		return -1;
 	}
 
-	// Token: 0x0600242A RID: 9258 RVA: 0x000DB224 File Offset: 0x000D9424
+	// Token: 0x06002430 RID: 9264 RVA: 0x000DB5A8 File Offset: 0x000D97A8
 	public static int FromString(string _s)
 	{
 		return _s.GetHashCode();
 	}
 
-	// Token: 0x0600242C RID: 9260 RVA: 0x000DB2B0 File Offset: 0x000D94B0
+	// Token: 0x06002432 RID: 9266 RVA: 0x000DB634 File Offset: 0x000D9834
 	public EntityClass Init()
 	{
 		this.censorType = 1;
@@ -457,7 +457,7 @@ public class EntityClass
 		return this;
 	}
 
-	// Token: 0x0600242D RID: 9261 RVA: 0x000DC5DC File Offset: 0x000DA7DC
+	// Token: 0x06002433 RID: 9267 RVA: 0x000DC960 File Offset: 0x000DAB60
 	public void CopyFrom(EntityClass _other, HashSet<string> _exclude = null)
 	{
 		foreach (KeyValuePair<string, string> keyValuePair in _other.Properties.Values)
@@ -499,7 +499,7 @@ public class EntityClass
 		}
 	}
 
-	// Token: 0x0600242E RID: 9262 RVA: 0x000DC844 File Offset: 0x000DAA44
+	// Token: 0x06002434 RID: 9268 RVA: 0x000DCBC8 File Offset: 0x000DADC8
 	public static void ParseEntityFlags(string _names, ref EntityFlags optionalValue)
 	{
 		if (_names.Length > 0)
@@ -525,13 +525,13 @@ public class EntityClass
 		}
 	}
 
-	// Token: 0x0600242F RID: 9263 RVA: 0x000DC8A2 File Offset: 0x000DAAA2
+	// Token: 0x06002435 RID: 9269 RVA: 0x000DCC26 File Offset: 0x000DAE26
 	public static void Cleanup()
 	{
 		EntityClass.list.Clear();
 	}
 
-	// Token: 0x06002430 RID: 9264 RVA: 0x000DC8B0 File Offset: 0x000DAAB0
+	// Token: 0x06002436 RID: 9270 RVA: 0x000DCC34 File Offset: 0x000DAE34
 	public void AddDroppedId(EnumDropEvent _eEvent, string _name, int _minCount, int _maxCount, float _prob, float _stickChance, string _toolCategory, string _tag)
 	{
 		List<Block.SItemDropProb> list = (this.itemsToDrop.ContainsKey(_eEvent) ? this.itemsToDrop[_eEvent] : null);
@@ -543,7 +543,7 @@ public class EntityClass
 		list.Add(new Block.SItemDropProb(_name, _minCount, _maxCount, _prob, 1f, _stickChance, _toolCategory, _tag));
 	}
 
-	// Token: 0x06002431 RID: 9265 RVA: 0x000DC910 File Offset: 0x000DAB10
+	// Token: 0x06002437 RID: 9271 RVA: 0x000DCC94 File Offset: 0x000DAE94
 	public int LootDropPick(GameRandom _rand)
 	{
 		int num = 0;
@@ -564,7 +564,7 @@ public class EntityClass
 		return this.lootDrops[num].entityClass;
 	}
 
-	// Token: 0x06002432 RID: 9266 RVA: 0x000DC980 File Offset: 0x000DAB80
+	// Token: 0x06002438 RID: 9272 RVA: 0x000DCD04 File Offset: 0x000DAF04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalculateEntityTier()
 	{
@@ -596,7 +596,7 @@ public class EntityClass
 		this.EntityTier = EntityClass.EntityTierTypes.Normal;
 	}
 
-	// Token: 0x06002433 RID: 9267 RVA: 0x000DCA18 File Offset: 0x000DAC18
+	// Token: 0x06002439 RID: 9273 RVA: 0x000DCD9C File Offset: 0x000DAF9C
 	public EntityClass GetPreviousTierEntity()
 	{
 		if (this.previousTierEntities == null && this.PreviousTierZombieName != "")
@@ -619,7 +619,7 @@ public class EntityClass
 		return this.previousTierEntities[0];
 	}
 
-	// Token: 0x06002434 RID: 9268 RVA: 0x000DCACC File Offset: 0x000DACCC
+	// Token: 0x0600243A RID: 9274 RVA: 0x000DCE50 File Offset: 0x000DB050
 	public static EntityClass GetEntityClassWithinMaxTier(EntityClass ec, EntityClass.EntityTierTypes maxTier)
 	{
 		if (ec.EntityTier <= maxTier)
@@ -637,927 +637,927 @@ public class EntityClass
 		return null;
 	}
 
-	// Token: 0x040019AA RID: 6570
+	// Token: 0x040019BA RID: 6586
 	public static string PropEntityFlags = "EntityFlags";
 
-	// Token: 0x040019AB RID: 6571
+	// Token: 0x040019BB RID: 6587
 	public static string PropEntityType = "EntityType";
 
-	// Token: 0x040019AC RID: 6572
+	// Token: 0x040019BC RID: 6588
 	public static string PropClass = "Class";
 
-	// Token: 0x040019AD RID: 6573
+	// Token: 0x040019BD RID: 6589
 	public static string PropCensor = "Censor";
 
-	// Token: 0x040019AE RID: 6574
+	// Token: 0x040019BE RID: 6590
 	public static string PropMesh = "Mesh";
 
-	// Token: 0x040019AF RID: 6575
+	// Token: 0x040019BF RID: 6591
 	public static string PropMeshFP = "MeshFP";
 
-	// Token: 0x040019B0 RID: 6576
+	// Token: 0x040019C0 RID: 6592
 	public static string PropPrefab = "Prefab";
 
-	// Token: 0x040019B1 RID: 6577
+	// Token: 0x040019C1 RID: 6593
 	public static string PropPrefabCombined = "PrefabCombined";
 
-	// Token: 0x040019B2 RID: 6578
+	// Token: 0x040019C2 RID: 6594
 	public static string PropParent = "Parent";
 
-	// Token: 0x040019B3 RID: 6579
+	// Token: 0x040019C3 RID: 6595
 	public static string PropAvatarController = "AvatarController";
 
-	// Token: 0x040019B4 RID: 6580
+	// Token: 0x040019C4 RID: 6596
 	public static string PropLocalAvatarController = "LocalAvatarController";
 
-	// Token: 0x040019B5 RID: 6581
+	// Token: 0x040019C5 RID: 6597
 	public static string PropSkinTexture = "SkinTexture";
 
-	// Token: 0x040019B6 RID: 6582
+	// Token: 0x040019C6 RID: 6598
 	public static string PropAltMats = "AltMats";
 
-	// Token: 0x040019B7 RID: 6583
+	// Token: 0x040019C7 RID: 6599
 	public static string PropSwapMats = "SwapMats";
 
-	// Token: 0x040019B8 RID: 6584
+	// Token: 0x040019C8 RID: 6600
 	public static string PropMatColor = "MatColor";
 
-	// Token: 0x040019B9 RID: 6585
+	// Token: 0x040019C9 RID: 6601
 	public static string PropRightHandJointName = "RightHandJointName";
 
-	// Token: 0x040019BA RID: 6586
+	// Token: 0x040019CA RID: 6602
 	public static string PropHandItem = "HandItem";
 
-	// Token: 0x040019BB RID: 6587
+	// Token: 0x040019CB RID: 6603
 	public static string PropHandItemCrawler = "HandItemCrawler";
 
-	// Token: 0x040019BC RID: 6588
+	// Token: 0x040019CC RID: 6604
 	public static string PropMaxHealth = "MaxHealth";
 
-	// Token: 0x040019BD RID: 6589
+	// Token: 0x040019CD RID: 6605
 	public static string PropMaxStamina = "MaxStamina";
 
-	// Token: 0x040019BE RID: 6590
+	// Token: 0x040019CE RID: 6606
 	public static string PropSickness = "Sickness";
 
-	// Token: 0x040019BF RID: 6591
+	// Token: 0x040019CF RID: 6607
 	public static string PropGassiness = "Gassiness";
 
-	// Token: 0x040019C0 RID: 6592
+	// Token: 0x040019D0 RID: 6608
 	public static string PropWellness = "Wellness";
 
-	// Token: 0x040019C1 RID: 6593
+	// Token: 0x040019D1 RID: 6609
 	public static string PropFood = "Food";
 
-	// Token: 0x040019C2 RID: 6594
+	// Token: 0x040019D2 RID: 6610
 	public static string PropWater = "Water";
 
-	// Token: 0x040019C3 RID: 6595
+	// Token: 0x040019D3 RID: 6611
 	public static string PropMaxViewAngle = "MaxViewAngle";
 
-	// Token: 0x040019C4 RID: 6596
+	// Token: 0x040019D4 RID: 6612
 	public static string PropWeight = "Weight";
 
-	// Token: 0x040019C5 RID: 6597
+	// Token: 0x040019D5 RID: 6613
 	public static string PropPushFactor = "PushFactor";
 
-	// Token: 0x040019C6 RID: 6598
+	// Token: 0x040019D6 RID: 6614
 	public static string PropTimeStayAfterDeath = "TimeStayAfterDeath";
 
-	// Token: 0x040019C7 RID: 6599
+	// Token: 0x040019D7 RID: 6615
 	public static string PropImmunity = "Immunity";
 
-	// Token: 0x040019C8 RID: 6600
+	// Token: 0x040019D8 RID: 6616
 	public static string PropIsMale = "IsMale";
 
-	// Token: 0x040019C9 RID: 6601
+	// Token: 0x040019D9 RID: 6617
 	public static string PropIsChunkObserver = "IsChunkObserver";
 
-	// Token: 0x040019CA RID: 6602
+	// Token: 0x040019DA RID: 6618
 	public static string PropAIFeralSense = "AIFeralSense";
 
-	// Token: 0x040019CB RID: 6603
+	// Token: 0x040019DB RID: 6619
 	public static string PropAIGroupCircle = "AIGroupCircle";
 
-	// Token: 0x040019CC RID: 6604
+	// Token: 0x040019DC RID: 6620
 	public static string PropAINoiseSeekDist = "AINoiseSeekDist";
 
-	// Token: 0x040019CD RID: 6605
+	// Token: 0x040019DD RID: 6621
 	public static string PropAISeeOffset = "AISeeOffset";
 
-	// Token: 0x040019CE RID: 6606
+	// Token: 0x040019DE RID: 6622
 	public static string PropAIPathCostScale = "AIPathCostScale";
 
-	// Token: 0x040019CF RID: 6607
+	// Token: 0x040019DF RID: 6623
 	public static string PropAITask = "AITask-";
 
-	// Token: 0x040019D0 RID: 6608
+	// Token: 0x040019E0 RID: 6624
 	public static string PropAITargetTask = "AITarget-";
 
-	// Token: 0x040019D1 RID: 6609
+	// Token: 0x040019E1 RID: 6625
 	public static string PropMoveSpeed = "MoveSpeed";
 
-	// Token: 0x040019D2 RID: 6610
+	// Token: 0x040019E2 RID: 6626
 	public static string PropMoveSpeedNight = "MoveSpeedNight";
 
-	// Token: 0x040019D3 RID: 6611
+	// Token: 0x040019E3 RID: 6627
 	public static string PropMoveSpeedAggro = "MoveSpeedAggro";
 
-	// Token: 0x040019D4 RID: 6612
+	// Token: 0x040019E4 RID: 6628
 	public static string PropMoveSpeedRand = "MoveSpeedRand";
 
-	// Token: 0x040019D5 RID: 6613
+	// Token: 0x040019E5 RID: 6629
 	public static string PropMoveSpeedPanic = "MoveSpeedPanic";
 
-	// Token: 0x040019D6 RID: 6614
+	// Token: 0x040019E6 RID: 6630
 	public static string PropMoveSpeedPattern = "MoveSpeedPattern";
 
-	// Token: 0x040019D7 RID: 6615
+	// Token: 0x040019E7 RID: 6631
 	public static string PropSwimSpeed = "SwimSpeed";
 
-	// Token: 0x040019D8 RID: 6616
+	// Token: 0x040019E8 RID: 6632
 	public static string PropSwimStrokeRate = "SwimStrokeRate";
 
-	// Token: 0x040019D9 RID: 6617
+	// Token: 0x040019E9 RID: 6633
 	public static string PropCrouchType = "CrouchType";
 
-	// Token: 0x040019DA RID: 6618
+	// Token: 0x040019EA RID: 6634
 	public static string PropDanceType = "DanceType";
 
-	// Token: 0x040019DB RID: 6619
+	// Token: 0x040019EB RID: 6635
 	public static string PropWalkType = "WalkType";
 
-	// Token: 0x040019DC RID: 6620
+	// Token: 0x040019EC RID: 6636
 	public static string PropCanClimbVertical = "CanClimbVertical";
 
-	// Token: 0x040019DD RID: 6621
+	// Token: 0x040019ED RID: 6637
 	public static string PropCanClimbLadders = "CanClimbLadders";
 
-	// Token: 0x040019DE RID: 6622
+	// Token: 0x040019EE RID: 6638
 	public static string PropJumpDelay = "JumpDelay";
 
-	// Token: 0x040019DF RID: 6623
+	// Token: 0x040019EF RID: 6639
 	public static string PropJumpMaxDistance = "JumpMaxDistance";
 
-	// Token: 0x040019E0 RID: 6624
+	// Token: 0x040019F0 RID: 6640
 	public static string PropIsEnemyEntity = "IsEnemyEntity";
 
-	// Token: 0x040019E1 RID: 6625
+	// Token: 0x040019F1 RID: 6641
 	public static string PropIsAnimalEntity = "IsAnimalEntity";
 
-	// Token: 0x040019E2 RID: 6626
+	// Token: 0x040019F2 RID: 6642
 	public static string PropSoundRandomTime = "SoundRandomTime";
 
-	// Token: 0x040019E3 RID: 6627
+	// Token: 0x040019F3 RID: 6643
 	public static string PropSoundAlertTime = "SoundAlertTime";
 
-	// Token: 0x040019E4 RID: 6628
+	// Token: 0x040019F4 RID: 6644
 	public static string PropSoundRandom = "SoundRandom";
 
-	// Token: 0x040019E5 RID: 6629
+	// Token: 0x040019F5 RID: 6645
 	public static string PropSoundHurt = "SoundHurt";
 
-	// Token: 0x040019E6 RID: 6630
+	// Token: 0x040019F6 RID: 6646
 	public static string PropSoundDistressed = "SoundDistressed";
 
-	// Token: 0x040019E7 RID: 6631
+	// Token: 0x040019F7 RID: 6647
 	public static string PropSoundJump = "SoundJump";
 
-	// Token: 0x040019E8 RID: 6632
+	// Token: 0x040019F8 RID: 6648
 	public static string PropSoundPlayerLandThump = "SoundPlayerLandThump";
 
-	// Token: 0x040019E9 RID: 6633
+	// Token: 0x040019F9 RID: 6649
 	public static string PropSoundHurtSmall = "SoundHurtSmall";
 
-	// Token: 0x040019EA RID: 6634
+	// Token: 0x040019FA RID: 6650
 	public static string PropSoundDrownPain = "SoundDrownPain";
 
-	// Token: 0x040019EB RID: 6635
+	// Token: 0x040019FB RID: 6651
 	public static string PropSoundDrownDeath = "SoundDrownDeath";
 
-	// Token: 0x040019EC RID: 6636
+	// Token: 0x040019FC RID: 6652
 	public static string PropSoundWaterSurface = "SoundWaterSurface";
 
-	// Token: 0x040019ED RID: 6637
+	// Token: 0x040019FD RID: 6653
 	public static string PropSoundDeath = "SoundDeath";
 
-	// Token: 0x040019EE RID: 6638
+	// Token: 0x040019FE RID: 6654
 	public static string PropSoundAttack = "SoundAttack";
 
-	// Token: 0x040019EF RID: 6639
+	// Token: 0x040019FF RID: 6655
 	public static string PropSoundAlert = "SoundAlert";
 
-	// Token: 0x040019F0 RID: 6640
+	// Token: 0x04001A00 RID: 6656
 	public static string PropSoundSense = "SoundSense";
 
-	// Token: 0x040019F1 RID: 6641
+	// Token: 0x04001A01 RID: 6657
 	public static string PropSoundStamina = "SoundStamina";
 
-	// Token: 0x040019F2 RID: 6642
+	// Token: 0x04001A02 RID: 6658
 	public static string PropSoundLiving = "SoundLiving";
 
-	// Token: 0x040019F3 RID: 6643
+	// Token: 0x04001A03 RID: 6659
 	public static string PropSoundSpawn = "SoundSpawn";
 
-	// Token: 0x040019F4 RID: 6644
+	// Token: 0x04001A04 RID: 6660
 	public static string PropSoundLand = "SoundLanding";
 
-	// Token: 0x040019F5 RID: 6645
+	// Token: 0x04001A05 RID: 6661
 	public static string PropSoundStepType = "SoundStepType";
 
-	// Token: 0x040019F6 RID: 6646
+	// Token: 0x04001A06 RID: 6662
 	public static string PropSoundGiveUp = "SoundGiveUp";
 
-	// Token: 0x040019F7 RID: 6647
+	// Token: 0x04001A07 RID: 6663
 	public static string PropSoundExplodeWarn = "SoundExplodeWarn";
 
-	// Token: 0x040019F8 RID: 6648
+	// Token: 0x04001A08 RID: 6664
 	public static string PropSoundTick = "SoundTick";
 
-	// Token: 0x040019F9 RID: 6649
+	// Token: 0x04001A09 RID: 6665
 	public static string PropExplodeDelay = "ExplodeDelay";
 
-	// Token: 0x040019FA RID: 6650
+	// Token: 0x04001A0A RID: 6666
 	public static string PropExplodeHealthThreshold = "ExplodeHealthThreshold";
 
-	// Token: 0x040019FB RID: 6651
+	// Token: 0x04001A0B RID: 6667
 	public static string PropLootList = "LootList";
 
-	// Token: 0x040019FC RID: 6652
+	// Token: 0x04001A0C RID: 6668
 	public static string PropLootDropProb = "LootDropProb";
 
-	// Token: 0x040019FD RID: 6653
+	// Token: 0x04001A0D RID: 6669
 	public static string PropLootDropEntityClass = "LootDropEntityClass";
 
-	// Token: 0x040019FE RID: 6654
+	// Token: 0x04001A0E RID: 6670
 	public static string PropAttackTimeoutDay = "AttackTimeoutDay";
 
-	// Token: 0x040019FF RID: 6655
+	// Token: 0x04001A0F RID: 6671
 	public static string PropAttackTimeoutNight = "AttackTimeoutNight";
 
-	// Token: 0x04001A00 RID: 6656
+	// Token: 0x04001A10 RID: 6672
 	public static string PropMapIcon = "MapIcon";
 
-	// Token: 0x04001A01 RID: 6657
+	// Token: 0x04001A11 RID: 6673
 	public static string PropCompassIcon = "CompassIcon";
 
-	// Token: 0x04001A02 RID: 6658
+	// Token: 0x04001A12 RID: 6674
 	public static string PropTrackerIcon = "TrackerIcon";
 
-	// Token: 0x04001A03 RID: 6659
+	// Token: 0x04001A13 RID: 6675
 	public static string PropCompassUpIcon = "CompassUpIcon";
 
-	// Token: 0x04001A04 RID: 6660
+	// Token: 0x04001A14 RID: 6676
 	public static string PropCompassDownIcon = "CompassDownIcon";
 
-	// Token: 0x04001A05 RID: 6661
+	// Token: 0x04001A15 RID: 6677
 	public static string PropParticleOnSpawn = "ParticleOnSpawn";
 
-	// Token: 0x04001A06 RID: 6662
+	// Token: 0x04001A16 RID: 6678
 	public static string PropParticleOnDeath = "ParticleOnDeath";
 
-	// Token: 0x04001A07 RID: 6663
+	// Token: 0x04001A17 RID: 6679
 	public static string PropParticleOnDestroy = "ParticleOnDestroy";
 
-	// Token: 0x04001A08 RID: 6664
+	// Token: 0x04001A18 RID: 6680
 	public static string PropItemsOnEnterGame = "ItemsOnEnterGame";
 
-	// Token: 0x04001A09 RID: 6665
+	// Token: 0x04001A19 RID: 6681
 	public static string PropFallLandBehavior = "FallLandBehavior";
 
-	// Token: 0x04001A0A RID: 6666
+	// Token: 0x04001A1A RID: 6682
 	public static string PropDestroyBlockBehavior = "DestroyBlockBehavior";
 
-	// Token: 0x04001A0B RID: 6667
+	// Token: 0x04001A1B RID: 6683
 	public static string PropDropInventoryBlock = "DropInventoryBlock";
 
-	// Token: 0x04001A0C RID: 6668
+	// Token: 0x04001A1C RID: 6684
 	public static string PropModelType = "ModelType";
 
-	// Token: 0x04001A0D RID: 6669
+	// Token: 0x04001A1D RID: 6685
 	public static string PropRagdollOnDeathChance = "RagdollOnDeathChance";
 
-	// Token: 0x04001A0E RID: 6670
+	// Token: 0x04001A1E RID: 6686
 	public static string PropHasRagdoll = "HasRagdoll";
 
-	// Token: 0x04001A0F RID: 6671
+	// Token: 0x04001A1F RID: 6687
 	public static string PropMass = "Mass";
 
-	// Token: 0x04001A10 RID: 6672
+	// Token: 0x04001A20 RID: 6688
 	public static string PropSizeScale = "SizeScale";
 
-	// Token: 0x04001A11 RID: 6673
+	// Token: 0x04001A21 RID: 6689
 	public static string PropPhysicsBody = "PhysicsBody";
 
-	// Token: 0x04001A12 RID: 6674
+	// Token: 0x04001A22 RID: 6690
 	public static string PropColliders = "Colliders";
 
-	// Token: 0x04001A13 RID: 6675
+	// Token: 0x04001A23 RID: 6691
 	public static string PropLookAtAngle = "LookAtAngle";
 
-	// Token: 0x04001A14 RID: 6676
+	// Token: 0x04001A24 RID: 6692
 	public static string PropCrouchYOffsetFP = "CrouchYOffsetFP";
 
-	// Token: 0x04001A15 RID: 6677
+	// Token: 0x04001A25 RID: 6693
 	public static string PropRotateToGround = "RotateToGround";
 
-	// Token: 0x04001A16 RID: 6678
+	// Token: 0x04001A26 RID: 6694
 	public static string PropRootMotion = "RootMotion";
 
-	// Token: 0x04001A17 RID: 6679
+	// Token: 0x04001A27 RID: 6695
 	public static string PropExperienceGain = "ExperienceGain";
 
-	// Token: 0x04001A18 RID: 6680
+	// Token: 0x04001A28 RID: 6696
 	public static string PropHasDeathAnim = "HasDeathAnim";
 
-	// Token: 0x04001A19 RID: 6681
+	// Token: 0x04001A29 RID: 6697
 	public static string PropLegCrippleScale = "LegCrippleScale";
 
-	// Token: 0x04001A1A RID: 6682
+	// Token: 0x04001A2A RID: 6698
 	public static string PropLegCrawlerThreshold = "LegCrawlerThreshold";
 
-	// Token: 0x04001A1B RID: 6683
+	// Token: 0x04001A2B RID: 6699
 	public static string PropDismemberMultiplierHead = "DismemberMultiplierHead";
 
-	// Token: 0x04001A1C RID: 6684
+	// Token: 0x04001A2C RID: 6700
 	public static string PropDismemberMultiplierArms = "DismemberMultiplierArms";
 
-	// Token: 0x04001A1D RID: 6685
+	// Token: 0x04001A2D RID: 6701
 	public static string PropDismemberMultiplierLegs = "DismemberMultiplierLegs";
 
-	// Token: 0x04001A1E RID: 6686
+	// Token: 0x04001A2E RID: 6702
 	public static string PropKnockdownKneelDamageThreshold = "KnockdownKneelDamageThreshold";
 
-	// Token: 0x04001A1F RID: 6687
+	// Token: 0x04001A2F RID: 6703
 	public static string PropKnockdownKneelStunDuration = "KnockdownKneelStunDuration";
 
-	// Token: 0x04001A20 RID: 6688
+	// Token: 0x04001A30 RID: 6704
 	public static string PropKnockdownProneDamageThreshold = "KnockdownProneDamageThreshold";
 
-	// Token: 0x04001A21 RID: 6689
+	// Token: 0x04001A31 RID: 6705
 	public static string PropKnockdownProneStunDuration = "KnockdownProneStunDuration";
 
-	// Token: 0x04001A22 RID: 6690
+	// Token: 0x04001A32 RID: 6706
 	public static string PropKnockdownProneRefillRate = "KnockdownProneRefillRate";
 
-	// Token: 0x04001A23 RID: 6691
+	// Token: 0x04001A33 RID: 6707
 	public static string PropKnockdownKneelRefillRate = "KnockdownKneelRefillRate";
 
-	// Token: 0x04001A24 RID: 6692
+	// Token: 0x04001A34 RID: 6708
 	public static string PropArmsExplosionDamageMultiplier = "ArmsExplosionDamageMultiplier";
 
-	// Token: 0x04001A25 RID: 6693
+	// Token: 0x04001A35 RID: 6709
 	public static string PropLegsExplosionDamageMultiplier = "LegsExplosionDamageMultiplier";
 
-	// Token: 0x04001A26 RID: 6694
+	// Token: 0x04001A36 RID: 6710
 	public static string PropChestExplosionDamageMultiplier = "ChestExplosionDamageMultiplier";
 
-	// Token: 0x04001A27 RID: 6695
+	// Token: 0x04001A37 RID: 6711
 	public static string PropHeadExplosionDamageMultiplier = "HeadExplosionDamageMultiplier";
 
-	// Token: 0x04001A28 RID: 6696
+	// Token: 0x04001A38 RID: 6712
 	public static string PropPainResistPerHit = "PainResistPerHit";
 
-	// Token: 0x04001A29 RID: 6697
+	// Token: 0x04001A39 RID: 6713
 	public static string PropArchetype = "Archetype";
 
-	// Token: 0x04001A2A RID: 6698
+	// Token: 0x04001A3A RID: 6714
 	public static string PropSwimOffset = "SwimOffset";
 
-	// Token: 0x04001A2B RID: 6699
+	// Token: 0x04001A3B RID: 6715
 	public static string PropUMARace = "UMARace";
 
-	// Token: 0x04001A2C RID: 6700
+	// Token: 0x04001A3C RID: 6716
 	public static string PropUMAGeneratedModelName = "UMAGeneratedModelName";
 
-	// Token: 0x04001A2D RID: 6701
+	// Token: 0x04001A3D RID: 6717
 	public static string PropNPCID = "NPCID";
 
-	// Token: 0x04001A2E RID: 6702
+	// Token: 0x04001A3E RID: 6718
 	public static string PropModelTransformAdjust = "ModelTransformAdjust";
 
-	// Token: 0x04001A2F RID: 6703
+	// Token: 0x04001A3F RID: 6719
 	public static string PropAIPackages = "AIPackages";
 
-	// Token: 0x04001A30 RID: 6704
+	// Token: 0x04001A40 RID: 6720
 	public static string PropBuffs = "Buffs";
 
-	// Token: 0x04001A31 RID: 6705
+	// Token: 0x04001A41 RID: 6721
 	public static string PropStealthSoundDecayRate = "StealthSoundDecayRate";
 
-	// Token: 0x04001A32 RID: 6706
+	// Token: 0x04001A42 RID: 6722
 	public static string PropSightRange = "SightRange";
 
-	// Token: 0x04001A33 RID: 6707
+	// Token: 0x04001A43 RID: 6723
 	public static string PropSightLightThreshold = "SightLightThreshold";
 
-	// Token: 0x04001A34 RID: 6708
+	// Token: 0x04001A44 RID: 6724
 	public static string PropSleeperSightToSenseMin = "SleeperSightToSenseMin";
 
-	// Token: 0x04001A35 RID: 6709
+	// Token: 0x04001A45 RID: 6725
 	public static string PropSleeperSightToSenseMax = "SleeperSightToSenseMax";
 
-	// Token: 0x04001A36 RID: 6710
+	// Token: 0x04001A46 RID: 6726
 	public static string PropSleeperSightToWakeMin = "SleeperSightToWakeMin";
 
-	// Token: 0x04001A37 RID: 6711
+	// Token: 0x04001A47 RID: 6727
 	public static string PropSleeperSightToWakeMax = "SleeperSightToWakeMax";
 
-	// Token: 0x04001A38 RID: 6712
+	// Token: 0x04001A48 RID: 6728
 	public static string PropSleeperNoiseToSense = "SleeperNoiseToSense";
 
-	// Token: 0x04001A39 RID: 6713
+	// Token: 0x04001A49 RID: 6729
 	public static string PropSleeperNoiseToSenseSoundChance = "SleeperNoiseToSenseSoundChance";
 
-	// Token: 0x04001A3A RID: 6714
+	// Token: 0x04001A4A RID: 6730
 	public static string PropSleeperNoiseToWake = "SleeperNoiseToWake";
 
-	// Token: 0x04001A3B RID: 6715
+	// Token: 0x04001A4B RID: 6731
 	public static string PropSoundSleeperSense = "SoundSleeperSense";
 
-	// Token: 0x04001A3C RID: 6716
+	// Token: 0x04001A4C RID: 6732
 	public static string PropSoundSleeperSnore = "SoundSleeperBackToSleep";
 
-	// Token: 0x04001A3D RID: 6717
+	// Token: 0x04001A4D RID: 6733
 	public static string PropMaxTurnSpeed = "MaxTurnSpeed";
 
-	// Token: 0x04001A3E RID: 6718
+	// Token: 0x04001A4E RID: 6734
 	public static string PropSearchRadius = "SearchRadius";
 
-	// Token: 0x04001A3F RID: 6719
+	// Token: 0x04001A4F RID: 6735
 	public static string PropTags = "Tags";
 
-	// Token: 0x04001A40 RID: 6720
+	// Token: 0x04001A50 RID: 6736
 	public static string PropNavObject = "NavObject";
 
-	// Token: 0x04001A41 RID: 6721
+	// Token: 0x04001A51 RID: 6737
 	public static string PropNavObjectHeadOffset = "NavObjectHeadOffset";
 
-	// Token: 0x04001A42 RID: 6722
+	// Token: 0x04001A52 RID: 6738
 	public static string PropStompsSpikes = "StompsSpikes";
 
-	// Token: 0x04001A43 RID: 6723
+	// Token: 0x04001A53 RID: 6739
 	public static string PropUserSpawnType = "UserSpawnType";
 
-	// Token: 0x04001A44 RID: 6724
+	// Token: 0x04001A54 RID: 6740
 	public static string PropHideInSpawnMenu = "HideInSpawnMenu";
 
-	// Token: 0x04001A45 RID: 6725
+	// Token: 0x04001A55 RID: 6741
 	public static string PropCanBigHead = "CanBigHead";
 
-	// Token: 0x04001A46 RID: 6726
+	// Token: 0x04001A56 RID: 6742
 	public static string PropOnActivateEvent = "ActivateEvent";
 
-	// Token: 0x04001A47 RID: 6727
+	// Token: 0x04001A57 RID: 6743
 	public static string PropCustomCommandName = "CustomCommandName";
 
-	// Token: 0x04001A48 RID: 6728
+	// Token: 0x04001A58 RID: 6744
 	public static string PropCustomCommandIcon = "CustomCommandIcon";
 
-	// Token: 0x04001A49 RID: 6729
+	// Token: 0x04001A59 RID: 6745
 	public static string PropCustomCommandIconColor = "CustomCommandIconColor";
 
-	// Token: 0x04001A4A RID: 6730
+	// Token: 0x04001A5A RID: 6746
 	public static string PropCustomCommandEvent = "CustomCommandEvent";
 
-	// Token: 0x04001A4B RID: 6731
+	// Token: 0x04001A5B RID: 6747
 	public static string PropCustomCommandActivateTime = "CustomCommandActivateTime";
 
-	// Token: 0x04001A4C RID: 6732
+	// Token: 0x04001A5C RID: 6748
 	public static string PropPreviousTierZombie = "PreviousTier";
 
-	// Token: 0x04001A4D RID: 6733
+	// Token: 0x04001A5D RID: 6749
 	public static string PropTokenManager = "TokenManager";
 
-	// Token: 0x04001A4E RID: 6734
+	// Token: 0x04001A5E RID: 6750
 	public static string PropPickupItem = "PickupItem";
 
-	// Token: 0x04001A4F RID: 6735
+	// Token: 0x04001A5F RID: 6751
 	public static string PropPickupStressCvar = "PickupStressCVar";
 
-	// Token: 0x04001A50 RID: 6736
+	// Token: 0x04001A60 RID: 6752
 	public static string PropPickupStressBuff = "PickupStressBuff";
 
-	// Token: 0x04001A51 RID: 6737
+	// Token: 0x04001A61 RID: 6753
 	public static string PropMaxBagSize = "MaxBagSize";
 
-	// Token: 0x04001A52 RID: 6738
+	// Token: 0x04001A62 RID: 6754
 	public static readonly int itemClass = EntityClass.FromString("item");
 
-	// Token: 0x04001A53 RID: 6739
+	// Token: 0x04001A63 RID: 6755
 	public static readonly int fallingBlockClass = EntityClass.FromString("fallingBlock");
 
-	// Token: 0x04001A54 RID: 6740
+	// Token: 0x04001A64 RID: 6756
 	public static readonly int fallingBlocksClass = EntityClass.FromString("fallingBlocks");
 
-	// Token: 0x04001A55 RID: 6741
+	// Token: 0x04001A65 RID: 6757
 	public static readonly int fallingTreeClass = EntityClass.FromString("fallingTree");
 
-	// Token: 0x04001A56 RID: 6742
+	// Token: 0x04001A66 RID: 6758
 	public static readonly int playerMaleClass = EntityClass.FromString("playerMale");
 
-	// Token: 0x04001A57 RID: 6743
+	// Token: 0x04001A67 RID: 6759
 	public static readonly int playerFemaleClass = EntityClass.FromString("playerFemale");
 
-	// Token: 0x04001A58 RID: 6744
+	// Token: 0x04001A68 RID: 6760
 	public static readonly int playerNewMaleClass = EntityClass.FromString("playerNewMale");
 
-	// Token: 0x04001A59 RID: 6745
+	// Token: 0x04001A69 RID: 6761
 	public static readonly int junkDroneClass = EntityClass.FromString("entityJunkDrone");
 
-	// Token: 0x04001A5A RID: 6746
+	// Token: 0x04001A6A RID: 6762
 	public static FastTags<TagGroup.Global> strongTag = FastTags<TagGroup.Global>.Parse("strong");
 
-	// Token: 0x04001A5B RID: 6747
+	// Token: 0x04001A6B RID: 6763
 	public static FastTags<TagGroup.Global> specialTag = FastTags<TagGroup.Global>.Parse("special");
 
-	// Token: 0x04001A5C RID: 6748
+	// Token: 0x04001A6C RID: 6764
 	public static FastTags<TagGroup.Global> feralTag = FastTags<TagGroup.Global>.Parse("feral,animalFeral");
 
-	// Token: 0x04001A5D RID: 6749
+	// Token: 0x04001A6D RID: 6765
 	public static FastTags<TagGroup.Global> radiatedTag = FastTags<TagGroup.Global>.Parse("radiated");
 
-	// Token: 0x04001A5E RID: 6750
+	// Token: 0x04001A6E RID: 6766
 	public static FastTags<TagGroup.Global> eliteTag = FastTags<TagGroup.Global>.Parse("charged,infernal");
 
-	// Token: 0x04001A5F RID: 6751
+	// Token: 0x04001A6F RID: 6767
 	public static FastTags<TagGroup.Global> droneTag = FastTags<TagGroup.Global>.Parse("drone");
 
-	// Token: 0x04001A60 RID: 6752
+	// Token: 0x04001A70 RID: 6768
 	public static FastTags<TagGroup.Global> turretRangedTag = FastTags<TagGroup.Global>.Parse("turretRanged");
 
-	// Token: 0x04001A61 RID: 6753
+	// Token: 0x04001A71 RID: 6769
 	public static FastTags<TagGroup.Global> turretMeleeTag = FastTags<TagGroup.Global>.Parse("turretMelee");
 
-	// Token: 0x04001A62 RID: 6754
+	// Token: 0x04001A72 RID: 6770
 	public static Dictionary<string, Color> sColors = new Dictionary<string, Color>();
 
-	// Token: 0x04001A63 RID: 6755
+	// Token: 0x04001A73 RID: 6771
 	public static DictionarySave<int, EntityClass> list = new DictionarySave<int, EntityClass>();
 
-	// Token: 0x04001A64 RID: 6756
+	// Token: 0x04001A74 RID: 6772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] commaSeparator = new char[] { ',' };
 
-	// Token: 0x04001A65 RID: 6757
+	// Token: 0x04001A75 RID: 6773
 	public DynamicProperties Properties = new DynamicProperties();
 
-	// Token: 0x04001A66 RID: 6758
+	// Token: 0x04001A76 RID: 6774
 	public Type classname;
 
-	// Token: 0x04001A67 RID: 6759
+	// Token: 0x04001A77 RID: 6775
 	public int censorMode;
 
-	// Token: 0x04001A68 RID: 6760
+	// Token: 0x04001A78 RID: 6776
 	public EntityFlags entityFlags;
 
-	// Token: 0x04001A69 RID: 6761
+	// Token: 0x04001A79 RID: 6777
 	public int censorType;
 
-	// Token: 0x04001A6A RID: 6762
+	// Token: 0x04001A7A RID: 6778
 	public string prefabPath;
 
-	// Token: 0x04001A6B RID: 6763
+	// Token: 0x04001A7B RID: 6779
 	public bool IsPrefabCombined;
 
-	// Token: 0x04001A6C RID: 6764
+	// Token: 0x04001A7C RID: 6780
 	public string meshPath;
 
-	// Token: 0x04001A6D RID: 6765
+	// Token: 0x04001A7D RID: 6781
 	public Transform meshFP;
 
-	// Token: 0x04001A6E RID: 6766
+	// Token: 0x04001A7E RID: 6782
 	public string skinTexture;
 
-	// Token: 0x04001A6F RID: 6767
+	// Token: 0x04001A7F RID: 6783
 	public string parentGameObjectName;
 
-	// Token: 0x04001A70 RID: 6768
+	// Token: 0x04001A80 RID: 6784
 	public string entityClassName;
 
-	// Token: 0x04001A71 RID: 6769
+	// Token: 0x04001A81 RID: 6785
 	public EntityClass.UserSpawnType userSpawnType = EntityClass.UserSpawnType.Menu;
 
-	// Token: 0x04001A72 RID: 6770
+	// Token: 0x04001A82 RID: 6786
 	public bool bIsEnemyEntity;
 
-	// Token: 0x04001A73 RID: 6771
+	// Token: 0x04001A83 RID: 6787
 	public bool bIsAnimalEntity;
 
-	// Token: 0x04001A74 RID: 6772
+	// Token: 0x04001A84 RID: 6788
 	public ExplosionData explosionData;
 
-	// Token: 0x04001A75 RID: 6773
+	// Token: 0x04001A85 RID: 6789
 	public Type modelType;
 
-	// Token: 0x04001A76 RID: 6774
+	// Token: 0x04001A86 RID: 6790
 	public float MassKg;
 
-	// Token: 0x04001A77 RID: 6775
+	// Token: 0x04001A87 RID: 6791
 	public float SizeScale;
 
-	// Token: 0x04001A78 RID: 6776
+	// Token: 0x04001A88 RID: 6792
 	public float RagdollOnDeathChance;
 
-	// Token: 0x04001A79 RID: 6777
+	// Token: 0x04001A89 RID: 6793
 	public bool HasRagdoll;
 
-	// Token: 0x04001A7A RID: 6778
+	// Token: 0x04001A8A RID: 6794
 	public string CollidersRagdollAsset;
 
-	// Token: 0x04001A7B RID: 6779
+	// Token: 0x04001A8B RID: 6795
 	public float LookAtAngle;
 
-	// Token: 0x04001A7C RID: 6780
+	// Token: 0x04001A8C RID: 6796
 	public float crouchYOffsetFP;
 
-	// Token: 0x04001A7D RID: 6781
+	// Token: 0x04001A8D RID: 6797
 	public float MaxTurnSpeed;
 
-	// Token: 0x04001A7E RID: 6782
+	// Token: 0x04001A8E RID: 6798
 	public bool RootMotion;
 
-	// Token: 0x04001A7F RID: 6783
+	// Token: 0x04001A8F RID: 6799
 	public bool HasDeathAnim;
 
-	// Token: 0x04001A80 RID: 6784
+	// Token: 0x04001A90 RID: 6800
 	public bool bIsMale;
 
-	// Token: 0x04001A81 RID: 6785
+	// Token: 0x04001A91 RID: 6801
 	public bool bIsChunkObserver;
 
-	// Token: 0x04001A82 RID: 6786
+	// Token: 0x04001A92 RID: 6802
 	public int ExperienceValue;
 
-	// Token: 0x04001A83 RID: 6787
+	// Token: 0x04001A93 RID: 6803
 	public PhysicsBodyLayout PhysicsBody;
 
-	// Token: 0x04001A84 RID: 6788
+	// Token: 0x04001A94 RID: 6804
 	public int DeadBodyHitPoints;
 
-	// Token: 0x04001A85 RID: 6789
+	// Token: 0x04001A95 RID: 6805
 	public List<EntityClass.LootDrop> lootDrops;
 
-	// Token: 0x04001A86 RID: 6790
+	// Token: 0x04001A96 RID: 6806
 	public float LegCrippleScale;
 
-	// Token: 0x04001A87 RID: 6791
+	// Token: 0x04001A97 RID: 6807
 	public float LegCrawlerThreshold;
 
-	// Token: 0x04001A88 RID: 6792
+	// Token: 0x04001A98 RID: 6808
 	public float DismemberMultiplierHead;
 
-	// Token: 0x04001A89 RID: 6793
+	// Token: 0x04001A99 RID: 6809
 	public float DismemberMultiplierArms;
 
-	// Token: 0x04001A8A RID: 6794
+	// Token: 0x04001A9A RID: 6810
 	public float DismemberMultiplierLegs;
 
-	// Token: 0x04001A8B RID: 6795
+	// Token: 0x04001A9B RID: 6811
 	public float LowerLegDismemberThreshold;
 
-	// Token: 0x04001A8C RID: 6796
+	// Token: 0x04001A9C RID: 6812
 	public float LowerLegDismemberBonusChance;
 
-	// Token: 0x04001A8D RID: 6797
+	// Token: 0x04001A9D RID: 6813
 	public float LowerLegDismemberBaseChance;
 
-	// Token: 0x04001A8E RID: 6798
+	// Token: 0x04001A9E RID: 6814
 	public float UpperLegDismemberThreshold;
 
-	// Token: 0x04001A8F RID: 6799
+	// Token: 0x04001A9F RID: 6815
 	public float UpperLegDismemberBonusChance;
 
-	// Token: 0x04001A90 RID: 6800
+	// Token: 0x04001AA0 RID: 6816
 	public float UpperLegDismemberBaseChance;
 
-	// Token: 0x04001A91 RID: 6801
+	// Token: 0x04001AA1 RID: 6817
 	public float LowerArmDismemberThreshold;
 
-	// Token: 0x04001A92 RID: 6802
+	// Token: 0x04001AA2 RID: 6818
 	public float LowerArmDismemberBonusChance;
 
-	// Token: 0x04001A93 RID: 6803
+	// Token: 0x04001AA3 RID: 6819
 	public float LowerArmDismemberBaseChance;
 
-	// Token: 0x04001A94 RID: 6804
+	// Token: 0x04001AA4 RID: 6820
 	public float UpperArmDismemberThreshold;
 
-	// Token: 0x04001A95 RID: 6805
+	// Token: 0x04001AA5 RID: 6821
 	public float UpperArmDismemberBonusChance;
 
-	// Token: 0x04001A96 RID: 6806
+	// Token: 0x04001AA6 RID: 6822
 	public float UpperArmDismemberBaseChance;
 
-	// Token: 0x04001A97 RID: 6807
+	// Token: 0x04001AA7 RID: 6823
 	public float KnockdownKneelDamageThreshold;
 
-	// Token: 0x04001A98 RID: 6808
+	// Token: 0x04001AA8 RID: 6824
 	public float LegsExplosionDamageMultiplier;
 
-	// Token: 0x04001A99 RID: 6809
+	// Token: 0x04001AA9 RID: 6825
 	public float ArmsExplosionDamageMultiplier;
 
-	// Token: 0x04001A9A RID: 6810
+	// Token: 0x04001AAA RID: 6826
 	public float ChestExplosionDamageMultiplier;
 
-	// Token: 0x04001A9B RID: 6811
+	// Token: 0x04001AAB RID: 6827
 	public float HeadExplosionDamageMultiplier;
 
-	// Token: 0x04001A9C RID: 6812
+	// Token: 0x04001AAC RID: 6828
 	public float PainResistPerHit;
 
-	// Token: 0x04001A9D RID: 6813
+	// Token: 0x04001AAD RID: 6829
 	public float PainResistPerHitLowHealth;
 
-	// Token: 0x04001A9E RID: 6814
+	// Token: 0x04001AAE RID: 6830
 	public float PainResistPerHitLowHealthPercent;
 
-	// Token: 0x04001A9F RID: 6815
+	// Token: 0x04001AAF RID: 6831
 	public float SearchRadius;
 
-	// Token: 0x04001AA0 RID: 6816
+	// Token: 0x04001AB0 RID: 6832
 	public float SwimOffset;
 
-	// Token: 0x04001AA1 RID: 6817
+	// Token: 0x04001AB1 RID: 6833
 	public float SightRange;
 
-	// Token: 0x04001AA2 RID: 6818
+	// Token: 0x04001AB2 RID: 6834
 	public Vector2 SleeperSightToSenseMin;
 
-	// Token: 0x04001AA3 RID: 6819
+	// Token: 0x04001AB3 RID: 6835
 	public Vector2 SleeperSightToSenseMax;
 
-	// Token: 0x04001AA4 RID: 6820
+	// Token: 0x04001AB4 RID: 6836
 	public Vector2 SleeperSightToWakeMin;
 
-	// Token: 0x04001AA5 RID: 6821
+	// Token: 0x04001AB5 RID: 6837
 	public Vector2 SleeperSightToWakeMax;
 
-	// Token: 0x04001AA6 RID: 6822
+	// Token: 0x04001AB6 RID: 6838
 	public Vector2 sightLightThreshold;
 
-	// Token: 0x04001AA7 RID: 6823
+	// Token: 0x04001AB7 RID: 6839
 	public Vector2 NoiseAlert;
 
-	// Token: 0x04001AA8 RID: 6824
+	// Token: 0x04001AB8 RID: 6840
 	public Vector2 SleeperNoiseToSense;
 
-	// Token: 0x04001AA9 RID: 6825
+	// Token: 0x04001AB9 RID: 6841
 	public float SleeperNoiseToSenseSoundChance;
 
-	// Token: 0x04001AAA RID: 6826
+	// Token: 0x04001ABA RID: 6842
 	public Vector2 SleeperNoiseToWake;
 
-	// Token: 0x04001AAB RID: 6827
+	// Token: 0x04001ABB RID: 6843
 	public string UMARace;
 
-	// Token: 0x04001AAC RID: 6828
+	// Token: 0x04001ABC RID: 6844
 	public string UMAGeneratedModelName;
 
-	// Token: 0x04001AAD RID: 6829
+	// Token: 0x04001ABD RID: 6845
 	public string[] AltMatNames;
 
-	// Token: 0x04001AAE RID: 6830
+	// Token: 0x04001ABE RID: 6846
 	public string[] MatSwap;
 
-	// Token: 0x04001AAF RID: 6831
+	// Token: 0x04001ABF RID: 6847
 	public EntityClass.ParticleData particleOnSpawn;
 
-	// Token: 0x04001AB0 RID: 6832
+	// Token: 0x04001AC0 RID: 6848
 	public Vector2 KnockdownKneelStunDuration;
 
-	// Token: 0x04001AB1 RID: 6833
+	// Token: 0x04001AC1 RID: 6849
 	public float KnockdownProneDamageThreshold;
 
-	// Token: 0x04001AB2 RID: 6834
+	// Token: 0x04001AC2 RID: 6850
 	public Vector2 KnockdownProneStunDuration;
 
-	// Token: 0x04001AB3 RID: 6835
+	// Token: 0x04001AC3 RID: 6851
 	public Vector2 KnockdownProneRefillRate;
 
-	// Token: 0x04001AB4 RID: 6836
+	// Token: 0x04001AC4 RID: 6852
 	public Vector2 KnockdownKneelRefillRate;
 
-	// Token: 0x04001AB5 RID: 6837
+	// Token: 0x04001AC5 RID: 6853
 	public Vector3 ModelTransformAdjust;
 
-	// Token: 0x04001AB6 RID: 6838
+	// Token: 0x04001AC6 RID: 6854
 	public string ArchetypeName;
 
-	// Token: 0x04001AB7 RID: 6839
+	// Token: 0x04001AC7 RID: 6855
 	public string[] AIPackages;
 
-	// Token: 0x04001AB8 RID: 6840
+	// Token: 0x04001AC8 RID: 6856
 	public bool UseAIPackages;
 
-	// Token: 0x04001AB9 RID: 6841
+	// Token: 0x04001AC9 RID: 6857
 	public Dictionary<EnumDropEvent, List<Block.SItemDropProb>> itemsToDrop = new EnumDictionary<EnumDropEvent, List<Block.SItemDropProb>>();
 
-	// Token: 0x04001ABA RID: 6842
+	// Token: 0x04001ACA RID: 6858
 	public List<string> Buffs;
 
-	// Token: 0x04001ABB RID: 6843
+	// Token: 0x04001ACB RID: 6859
 	public FastTags<TagGroup.Global> Tags;
 
-	// Token: 0x04001ABC RID: 6844
+	// Token: 0x04001ACC RID: 6860
 	public string NavObject = "";
 
-	// Token: 0x04001ABD RID: 6845
+	// Token: 0x04001ACD RID: 6861
 	public Vector3 NavObjectHeadOffset = Vector3.zero;
 
-	// Token: 0x04001ABE RID: 6846
+	// Token: 0x04001ACE RID: 6862
 	public bool CanBigHead = true;
 
-	// Token: 0x04001ABF RID: 6847
+	// Token: 0x04001ACF RID: 6863
 	public int DanceTypeID;
 
-	// Token: 0x04001AC0 RID: 6848
+	// Token: 0x04001AD0 RID: 6864
 	public MinEffectController Effects;
 
-	// Token: 0x04001AC1 RID: 6849
+	// Token: 0x04001AD1 RID: 6865
 	public string PreviousTierZombieName = "";
 
-	// Token: 0x04001AC2 RID: 6850
+	// Token: 0x04001AD2 RID: 6866
 	public string PickupItem = "";
 
-	// Token: 0x04001AC3 RID: 6851
+	// Token: 0x04001AD3 RID: 6867
 	public string PickupStressCvar = "";
 
-	// Token: 0x04001AC4 RID: 6852
+	// Token: 0x04001AD4 RID: 6868
 	public string PickupStressBuff = "";
 
-	// Token: 0x04001AC5 RID: 6853
+	// Token: 0x04001AD5 RID: 6869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityClass[] previousTierEntities;
 
-	// Token: 0x04001AC6 RID: 6854
+	// Token: 0x04001AD6 RID: 6870
 	public EntityClass.EntityTierTypes EntityTier;
 
-	// Token: 0x04001AC7 RID: 6855
+	// Token: 0x04001AD7 RID: 6871
 	public string onActivateEvent = "";
 
-	// Token: 0x04001AC8 RID: 6856
+	// Token: 0x04001AD8 RID: 6872
 	public Dictionary<AITokenType, AITokenConfig> TokenManagerConfig;
 
-	// Token: 0x02000493 RID: 1171
+	// Token: 0x02000495 RID: 1173
 	public enum CensorModeType
 	{
-		// Token: 0x04001ACA RID: 6858
+		// Token: 0x04001ADA RID: 6874
 		None,
-		// Token: 0x04001ACB RID: 6859
+		// Token: 0x04001ADB RID: 6875
 		ZPrefab,
-		// Token: 0x04001ACC RID: 6860
+		// Token: 0x04001ADC RID: 6876
 		Dismemberment,
-		// Token: 0x04001ACD RID: 6861
+		// Token: 0x04001ADD RID: 6877
 		ZPrefabAndDismemberment
 	}
 
-	// Token: 0x02000494 RID: 1172
+	// Token: 0x02000496 RID: 1174
 	public enum UserSpawnType
 	{
-		// Token: 0x04001ACF RID: 6863
+		// Token: 0x04001ADF RID: 6879
 		None,
-		// Token: 0x04001AD0 RID: 6864
+		// Token: 0x04001AE0 RID: 6880
 		Console,
-		// Token: 0x04001AD1 RID: 6865
+		// Token: 0x04001AE1 RID: 6881
 		Menu
 	}
 
-	// Token: 0x02000495 RID: 1173
+	// Token: 0x02000497 RID: 1175
 	public struct LootDrop
 	{
-		// Token: 0x04001AD2 RID: 6866
+		// Token: 0x04001AE2 RID: 6882
 		public int entityClass;
 
-		// Token: 0x04001AD3 RID: 6867
+		// Token: 0x04001AE3 RID: 6883
 		public float weight;
 	}
 
-	// Token: 0x02000496 RID: 1174
+	// Token: 0x02000498 RID: 1176
 	public struct ParticleData
 	{
-		// Token: 0x04001AD4 RID: 6868
+		// Token: 0x04001AE4 RID: 6884
 		public string fileName;
 
-		// Token: 0x04001AD5 RID: 6869
+		// Token: 0x04001AE5 RID: 6885
 		public string shapeMesh;
 	}
 
-	// Token: 0x02000497 RID: 1175
+	// Token: 0x02000499 RID: 1177
 	public enum EntityTierTypes
 	{
-		// Token: 0x04001AD7 RID: 6871
+		// Token: 0x04001AE7 RID: 6887
 		Normal,
-		// Token: 0x04001AD8 RID: 6872
+		// Token: 0x04001AE8 RID: 6888
 		Strong,
-		// Token: 0x04001AD9 RID: 6873
+		// Token: 0x04001AE9 RID: 6889
 		Special,
-		// Token: 0x04001ADA RID: 6874
+		// Token: 0x04001AEA RID: 6890
 		Feral,
-		// Token: 0x04001ADB RID: 6875
+		// Token: 0x04001AEB RID: 6891
 		Radiated,
-		// Token: 0x04001ADC RID: 6876
+		// Token: 0x04001AEC RID: 6892
 		Elite
 	}
 }

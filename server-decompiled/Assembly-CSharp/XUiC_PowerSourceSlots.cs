@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FC8 RID: 4040
+// Token: 0x02000FD8 RID: 4056
 [Preserve]
 public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 {
-	// Token: 0x17000F00 RID: 3840
-	// (get) Token: 0x06007F41 RID: 32577 RVA: 0x00306C5A File Offset: 0x00304E5A
-	// (set) Token: 0x06007F42 RID: 32578 RVA: 0x00306C62 File Offset: 0x00304E62
+	// Token: 0x17000F0B RID: 3851
+	// (get) Token: 0x06007F90 RID: 32656 RVA: 0x00308776 File Offset: 0x00306976
+	// (set) Token: 0x06007F91 RID: 32657 RVA: 0x0030877E File Offset: 0x0030697E
 	public TileEntityPowerSource TileEntity
 	{
 		get
@@ -21,7 +21,7 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007F43 RID: 32579 RVA: 0x00306C7C File Offset: 0x00304E7C
+	// Token: 0x06007F92 RID: 32658 RVA: 0x00308798 File Offset: 0x00306998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRequirements()
 	{
@@ -36,8 +36,8 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x17000F01 RID: 3841
-	// (get) Token: 0x06007F44 RID: 32580 RVA: 0x000601CD File Offset: 0x0005E3CD
+	// Token: 0x17000F0C RID: 3852
+	// (get) Token: 0x06007F93 RID: 32659 RVA: 0x00060491 File Offset: 0x0005E691
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -47,25 +47,25 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x17000F02 RID: 3842
-	// (get) Token: 0x06007F45 RID: 32581 RVA: 0x00306CC5 File Offset: 0x00304EC5
-	// (set) Token: 0x06007F46 RID: 32582 RVA: 0x00306CCD File Offset: 0x00304ECD
+	// Token: 0x17000F0D RID: 3853
+	// (get) Token: 0x06007F94 RID: 32660 RVA: 0x003087E1 File Offset: 0x003069E1
+	// (set) Token: 0x06007F95 RID: 32661 RVA: 0x003087E9 File Offset: 0x003069E9
 	public XUiC_PowerSourceWindowGroup Owner { get; set; }
 
-	// Token: 0x06007F47 RID: 32583 RVA: 0x0030600F File Offset: 0x0030420F
+	// Token: 0x06007F96 RID: 32662 RVA: 0x00307B2B File Offset: 0x00305D2B
 	public virtual void SetSlots(ItemStack[] stacks)
 	{
 		this.items = stacks;
 		base.SetStacks(stacks);
 	}
 
-	// Token: 0x06007F48 RID: 32584 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06007F97 RID: 32663 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool HasRequirement(Recipe recipe)
 	{
 		return true;
 	}
 
-	// Token: 0x06007F49 RID: 32585 RVA: 0x00306CD8 File Offset: 0x00304ED8
+	// Token: 0x06007F98 RID: 32664 RVA: 0x003087F4 File Offset: 0x003069F4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -80,7 +80,7 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		XUiC_PowerSourceSlots.Current = this;
 	}
 
-	// Token: 0x06007F4A RID: 32586 RVA: 0x00306D38 File Offset: 0x00304F38
+	// Token: 0x06007F99 RID: 32665 RVA: 0x00308854 File Offset: 0x00306A54
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -93,7 +93,7 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		XUiC_PowerSourceSlots.Current = (this.xui.CurrentPowerSourceSlots = null);
 	}
 
-	// Token: 0x06007F4B RID: 32587 RVA: 0x00306D94 File Offset: 0x00304F94
+	// Token: 0x06007F9A RID: 32666 RVA: 0x003088B0 File Offset: 0x00306AB0
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetOn(bool isOn)
 	{
@@ -107,7 +107,7 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007F4C RID: 32588 RVA: 0x00306DCC File Offset: 0x00304FCC
+	// Token: 0x06007F9B RID: 32667 RVA: 0x003088E8 File Offset: 0x00306AE8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -117,7 +117,7 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06007F4D RID: 32589 RVA: 0x00306DFC File Offset: 0x00304FFC
+	// Token: 0x06007F9C RID: 32668 RVA: 0x00308918 File Offset: 0x00306B18
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -136,13 +136,13 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F4E RID: 32590 RVA: 0x00306E57 File Offset: 0x00305057
+	// Token: 0x06007F9D RID: 32669 RVA: 0x00308973 File Offset: 0x00306B73
 	public void Refresh()
 	{
 		this.SetSlots(this.tileEntity.ItemSlots);
 	}
 
-	// Token: 0x06007F4F RID: 32591 RVA: 0x00306E6A File Offset: 0x0030506A
+	// Token: 0x06007F9E RID: 32670 RVA: 0x00308986 File Offset: 0x00306B86
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool TryAddItemToSlot(ItemClass itemClass, ItemStack itemStack)
 	{
@@ -158,10 +158,10 @@ public class XUiC_PowerSourceSlots : XUiC_ItemStackGrid
 		return flag;
 	}
 
-	// Token: 0x04005E7E RID: 24190
+	// Token: 0x04005EB9 RID: 24249
 	public static XUiC_PowerSourceSlots Current;
 
-	// Token: 0x04005E7F RID: 24191
+	// Token: 0x04005EBA RID: 24250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowerSource tileEntity;
 }

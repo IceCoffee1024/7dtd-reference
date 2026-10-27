@@ -5,38 +5,38 @@ using UnityEngine;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001AC5 RID: 6853
+	// Token: 0x02001AF6 RID: 6902
 	public class ThreatLevelTracker
 	{
-		// Token: 0x170019F3 RID: 6643
-		// (get) Token: 0x0600CEDF RID: 52959 RVA: 0x004B0538 File Offset: 0x004AE738
-		// (set) Token: 0x0600CEE0 RID: 52960 RVA: 0x004B0540 File Offset: 0x004AE740
+		// Token: 0x17001A3B RID: 6715
+		// (get) Token: 0x0600CFF3 RID: 53235 RVA: 0x004B4034 File Offset: 0x004B2234
+		// (set) Token: 0x0600CFF4 RID: 53236 RVA: 0x004B403C File Offset: 0x004B223C
 		public int DeadEnemies
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019F4 RID: 6644
-		// (get) Token: 0x0600CEE1 RID: 52961 RVA: 0x004B0549 File Offset: 0x004AE749
-		// (set) Token: 0x0600CEE2 RID: 52962 RVA: 0x004B0551 File Offset: 0x004AE751
+		// Token: 0x17001A3C RID: 6716
+		// (get) Token: 0x0600CFF5 RID: 53237 RVA: 0x004B4045 File Offset: 0x004B2245
+		// (set) Token: 0x0600CFF6 RID: 53238 RVA: 0x004B404D File Offset: 0x004B224D
 		public int InactiveEnemies
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019F5 RID: 6645
-		// (get) Token: 0x0600CEE3 RID: 52963 RVA: 0x004B055A File Offset: 0x004AE75A
-		// (set) Token: 0x0600CEE4 RID: 52964 RVA: 0x004B0562 File Offset: 0x004AE762
+		// Token: 0x17001A3D RID: 6717
+		// (get) Token: 0x0600CFF7 RID: 53239 RVA: 0x004B4056 File Offset: 0x004B2256
+		// (set) Token: 0x0600CFF8 RID: 53240 RVA: 0x004B405E File Offset: 0x004B225E
 		public int SleepingEnemies
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019F6 RID: 6646
-		// (get) Token: 0x0600CEE5 RID: 52965 RVA: 0x004B056B File Offset: 0x004AE76B
+		// Token: 0x17001A3E RID: 6718
+		// (get) Token: 0x0600CFF9 RID: 53241 RVA: 0x004B4067 File Offset: 0x004B2267
 		public int ActiveEnemies
 		{
 			get
@@ -49,17 +49,17 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019F7 RID: 6647
-		// (get) Token: 0x0600CEE6 RID: 52966 RVA: 0x004B0597 File Offset: 0x004AE797
-		// (set) Token: 0x0600CEE7 RID: 52967 RVA: 0x004B059F File Offset: 0x004AE79F
+		// Token: 0x17001A3F RID: 6719
+		// (get) Token: 0x0600CFFA RID: 53242 RVA: 0x004B4093 File Offset: 0x004B2293
+		// (set) Token: 0x0600CFFB RID: 53243 RVA: 0x004B409B File Offset: 0x004B229B
 		public float NumericalThreatLevel
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019F8 RID: 6648
-		// (get) Token: 0x0600CEE8 RID: 52968 RVA: 0x004B05A8 File Offset: 0x004AE7A8
+		// Token: 0x17001A40 RID: 6720
+		// (get) Token: 0x0600CFFC RID: 53244 RVA: 0x004B40A4 File Offset: 0x004B22A4
 		public ThreatLevelLegacyType ThreatLevel
 		{
 			get
@@ -72,8 +72,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019F9 RID: 6649
-		// (get) Token: 0x0600CEE9 RID: 52969 RVA: 0x004B05BA File Offset: 0x004AE7BA
+		// Token: 0x17001A41 RID: 6721
+		// (get) Token: 0x0600CFFD RID: 53245 RVA: 0x004B40B6 File Offset: 0x004B22B6
 		public bool IsMusicPlayingThisTick
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -83,8 +83,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019FA RID: 6650
-		// (get) Token: 0x0600CEEA RID: 52970 RVA: 0x004B05C7 File Offset: 0x004AE7C7
+		// Token: 0x17001A42 RID: 6722
+		// (get) Token: 0x0600CFFE RID: 53246 RVA: 0x004B40C3 File Offset: 0x004B22C3
 		public bool IsThreatLevelInExploration
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -94,8 +94,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019FB RID: 6651
-		// (get) Token: 0x0600CEEB RID: 52971 RVA: 0x004B05D6 File Offset: 0x004AE7D6
+		// Token: 0x17001A43 RID: 6723
+		// (get) Token: 0x0600CFFF RID: 53247 RVA: 0x004B40D2 File Offset: 0x004B22D2
 		public bool IsTargetInExploration
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -105,8 +105,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019FC RID: 6652
-		// (get) Token: 0x0600CEEC RID: 52972 RVA: 0x004B05E8 File Offset: 0x004AE7E8
+		// Token: 0x17001A44 RID: 6724
+		// (get) Token: 0x0600D000 RID: 53248 RVA: 0x004B40E4 File Offset: 0x004B22E4
 		public bool IsTargetAboveThreatLevel
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -116,7 +116,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEED RID: 52973 RVA: 0x004B05F8 File Offset: 0x004AE7F8
+		// Token: 0x0600D001 RID: 53249 RVA: 0x004B40F4 File Offset: 0x004B22F4
 		public static void Init(DynamicMusicManager _dmManager)
 		{
 			_dmManager.ThreatLevelTracker = new ThreatLevelTracker();
@@ -127,7 +127,7 @@ namespace DynamicMusic.Legacy
 			_dmManager.ThreatLevelTracker.enemies = new List<Entity>();
 		}
 
-		// Token: 0x0600CEEE RID: 52974 RVA: 0x004B0667 File Offset: 0x004AE867
+		// Token: 0x0600D002 RID: 53250 RVA: 0x004B4163 File Offset: 0x004B2363
 		public void Tick()
 		{
 			if (GameTimer.Instance.ticks % 20UL == 0UL)
@@ -137,7 +137,7 @@ namespace DynamicMusic.Legacy
 			this.TickMoveThreatLevel();
 		}
 
-		// Token: 0x0600CEEF RID: 52975 RVA: 0x004B0688 File Offset: 0x004AE888
+		// Token: 0x0600D003 RID: 53251 RVA: 0x004B4184 File Offset: 0x004B2384
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void TickMoveThreatLevel()
 		{
@@ -159,7 +159,7 @@ namespace DynamicMusic.Legacy
 			this.NumericalThreatLevel = Utils.FastClamp(this.NumericalThreatLevel + 0.0015f, 0f, this.threatLevelTarget);
 		}
 
-		// Token: 0x0600CEF0 RID: 52976 RVA: 0x004B071C File Offset: 0x004AE91C
+		// Token: 0x0600D004 RID: 53252 RVA: 0x004B4218 File Offset: 0x004B2418
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void TickTrackThreatLevel()
 		{
@@ -199,7 +199,7 @@ namespace DynamicMusic.Legacy
 			this.enemies.Clear();
 		}
 
-		// Token: 0x0600CEF1 RID: 52977 RVA: 0x004B087C File Offset: 0x004AEA7C
+		// Token: 0x0600D005 RID: 53253 RVA: 0x004B4378 File Offset: 0x004B2578
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool EnemyIsTargetingPlayer(EntityEnemy _enemy)
 		{
@@ -207,52 +207,52 @@ namespace DynamicMusic.Legacy
 			return attackTarget != null && attackTarget.Equals(this.epLocal);
 		}
 
-		// Token: 0x0600CEF2 RID: 52978 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D006 RID: 53254 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Event(MinEventTypes _eventType, MinEventParams _eventParms)
 		{
 		}
 
-		// Token: 0x04009C7E RID: 40062
+		// Token: 0x04009D67 RID: 40295
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DynamicMusicManager dynamicMusicManager;
 
-		// Token: 0x04009C7F RID: 40063
+		// Token: 0x04009D68 RID: 40296
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cSleeperIncrement = 0.03125f;
 
-		// Token: 0x04009C80 RID: 40064
+		// Token: 0x04009D69 RID: 40297
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cTargetIncrement = 0.25f;
 
-		// Token: 0x04009C81 RID: 40065
+		// Token: 0x04009D6A RID: 40298
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cAlertIncrement = 0.125f;
 
-		// Token: 0x04009C82 RID: 40066
+		// Token: 0x04009D6B RID: 40299
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cInactiveIncrement = 0.0625f;
 
-		// Token: 0x04009C83 RID: 40067
+		// Token: 0x04009D6C RID: 40300
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cBaseIncrement = 0.0015f;
 
-		// Token: 0x04009C88 RID: 40072
+		// Token: 0x04009D71 RID: 40305
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal epLocal;
 
-		// Token: 0x04009C89 RID: 40073
+		// Token: 0x04009D72 RID: 40306
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal somePlayer;
 
-		// Token: 0x04009C8A RID: 40074
+		// Token: 0x04009D73 RID: 40307
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Entity> enemies;
 
-		// Token: 0x04009C8B RID: 40075
+		// Token: 0x04009D74 RID: 40308
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float threatLevelTarget;
 
-		// Token: 0x04009C8C RID: 40076
+		// Token: 0x04009D75 RID: 40309
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3 boundingBoxRange = new Vector3(50f, 50f, 50f);
 	}

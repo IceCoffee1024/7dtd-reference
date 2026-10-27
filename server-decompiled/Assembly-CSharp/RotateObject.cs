@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000554 RID: 1364
+// Token: 0x02000558 RID: 1368
 public class RotateObject : MonoBehaviour
 {
-	// Token: 0x06002C68 RID: 11368 RVA: 0x0011A513 File Offset: 0x00118713
+	// Token: 0x06002C70 RID: 11376 RVA: 0x0011AA9F File Offset: 0x00118C9F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -14,16 +14,16 @@ public class RotateObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C69 RID: 11369 RVA: 0x0011A52E File Offset: 0x0011872E
+	// Token: 0x06002C71 RID: 11377 RVA: 0x0011AABA File Offset: 0x00118CBA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 		this.rotateTransform.localEulerAngles += this.RPM * (Time.deltaTime * 6f);
 	}
 
-	// Token: 0x0400223E RID: 8766
+	// Token: 0x04002255 RID: 8789
 	public Transform rotateTransform;
 
-	// Token: 0x0400223F RID: 8767
+	// Token: 0x04002256 RID: 8790
 	public Vector3 RPM;
 }

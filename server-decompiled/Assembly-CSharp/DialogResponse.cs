@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020002F0 RID: 752
+// Token: 0x020002F2 RID: 754
 public class DialogResponse : BaseStatement
 {
-	// Token: 0x0600157F RID: 5503 RVA: 0x00080E20 File Offset: 0x0007F020
+	// Token: 0x06001583 RID: 5507 RVA: 0x00081044 File Offset: 0x0007F244
 	public DialogResponse(string newID)
 	{
 		this.ID = newID;
 		this.HeaderName = string.Format("Response : {0}", newID);
 	}
 
-	// Token: 0x06001580 RID: 5504 RVA: 0x00080E56 File Offset: 0x0007F056
+	// Token: 0x06001584 RID: 5508 RVA: 0x0008107A File Offset: 0x0007F27A
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static DialogResponse NextStatementEntry(string nextStatementID)
 	{
@@ -20,14 +20,14 @@ public class DialogResponse : BaseStatement
 		return DialogResponse.nextStatementEntry;
 	}
 
-	// Token: 0x06001581 RID: 5505 RVA: 0x00080E8D File Offset: 0x0007F08D
+	// Token: 0x06001585 RID: 5509 RVA: 0x000810B1 File Offset: 0x0007F2B1
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void AddRequirement(BaseDialogRequirement requirement)
 	{
 		this.RequirementList.Add(requirement);
 	}
 
-	// Token: 0x06001582 RID: 5506 RVA: 0x00080E9B File Offset: 0x0007F09B
+	// Token: 0x06001586 RID: 5510 RVA: 0x000810BF File Offset: 0x0007F2BF
 	public string GetRequiredDescription(EntityPlayer player)
 	{
 		if (this.RequirementList.Count == 0)
@@ -37,13 +37,13 @@ public class DialogResponse : BaseStatement
 		return this.RequirementList[0].GetRequiredDescription(player);
 	}
 
-	// Token: 0x04000E6C RID: 3692
+	// Token: 0x04000E7C RID: 3708
 	public List<BaseDialogRequirement> RequirementList = new List<BaseDialogRequirement>();
 
-	// Token: 0x04000E6D RID: 3693
+	// Token: 0x04000E7D RID: 3709
 	public string ReturnStatementID = "";
 
-	// Token: 0x04000E6E RID: 3694
+	// Token: 0x04000E7E RID: 3710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DialogResponse nextStatementEntry = new DialogResponse("__nextStatementEntry");
 }

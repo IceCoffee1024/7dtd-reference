@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200155E RID: 5470
+// Token: 0x02001570 RID: 5488
 [Preserve]
 public class vp_StateManager
 {
-	// Token: 0x0600AB81 RID: 43905 RVA: 0x00400AEC File Offset: 0x003FECEC
+	// Token: 0x0600ABD9 RID: 43993 RVA: 0x00402EF0 File Offset: 0x004010F0
 	public vp_StateManager(vp_Component component, List<vp_State> states)
 	{
 		this.m_States = states;
@@ -48,7 +48,7 @@ public class vp_StateManager
 		this.m_DefaultId = this.m_States.Count - 1;
 	}
 
-	// Token: 0x0600AB82 RID: 43906 RVA: 0x00400C84 File Offset: 0x003FEE84
+	// Token: 0x0600ABDA RID: 43994 RVA: 0x00403088 File Offset: 0x00401288
 	public void ImposeBlockingList(vp_State blocker)
 	{
 		if (blocker == null)
@@ -69,7 +69,7 @@ public class vp_StateManager
 		}
 	}
 
-	// Token: 0x0600AB83 RID: 43907 RVA: 0x00400CF8 File Offset: 0x003FEEF8
+	// Token: 0x0600ABDB RID: 43995 RVA: 0x004030FC File Offset: 0x004012FC
 	public void RelaxBlockingList(vp_State blocker)
 	{
 		if (blocker == null)
@@ -90,7 +90,7 @@ public class vp_StateManager
 		}
 	}
 
-	// Token: 0x0600AB84 RID: 43908 RVA: 0x00400D6C File Offset: 0x003FEF6C
+	// Token: 0x0600ABDC RID: 43996 RVA: 0x00403170 File Offset: 0x00401370
 	public void SetState(string state, bool setEnabled = true)
 	{
 		if (!vp_StateManager.AppPlaying())
@@ -111,7 +111,7 @@ public class vp_StateManager
 		this.m_Component.Refresh();
 	}
 
-	// Token: 0x0600AB85 RID: 43909 RVA: 0x00400DDC File Offset: 0x003FEFDC
+	// Token: 0x0600ABDD RID: 43997 RVA: 0x004031E0 File Offset: 0x004013E0
 	public void Reset()
 	{
 		if (!vp_StateManager.AppPlaying())
@@ -127,7 +127,7 @@ public class vp_StateManager
 		this.CombineStates();
 	}
 
-	// Token: 0x0600AB86 RID: 43910 RVA: 0x00400E60 File Offset: 0x003FF060
+	// Token: 0x0600ABDE RID: 43998 RVA: 0x00403264 File Offset: 0x00401464
 	public void CombineStates()
 	{
 		for (int i = this.m_States.Count - 1; i > -1; i--)
@@ -139,45 +139,45 @@ public class vp_StateManager
 		}
 	}
 
-	// Token: 0x0600AB87 RID: 43911 RVA: 0x00400F21 File Offset: 0x003FF121
+	// Token: 0x0600ABDF RID: 43999 RVA: 0x00403325 File Offset: 0x00401525
 	public bool IsEnabled(string state)
 	{
 		return vp_StateManager.AppPlaying() && this.m_StateIds.TryGetValue(state, out this.m_TargetId) && this.m_States[this.m_TargetId].Enabled;
 	}
 
-	// Token: 0x0600AB88 RID: 43912 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x0600ABE0 RID: 44000 RVA: 0x00020119 File Offset: 0x0001E319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool AppPlaying()
 	{
 		return true;
 	}
 
-	// Token: 0x04007F6A RID: 32618
+	// Token: 0x04007FAB RID: 32683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public vp_Component m_Component;
 
-	// Token: 0x04007F6B RID: 32619
+	// Token: 0x04007FAC RID: 32684
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<vp_State> m_States;
 
-	// Token: 0x04007F6C RID: 32620
+	// Token: 0x04007FAD RID: 32685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, int> m_StateIds;
 
-	// Token: 0x04007F6D RID: 32621
+	// Token: 0x04007FAE RID: 32686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_AppNotPlayingMessage = "Error: StateManager can only be accessed while application is playing.";
 
-	// Token: 0x04007F6E RID: 32622
+	// Token: 0x04007FAF RID: 32687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_DefaultStateNoDisableMessage = "Warning: The 'Default' state cannot be disabled.";
 
-	// Token: 0x04007F6F RID: 32623
+	// Token: 0x04007FB0 RID: 32688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_DefaultId;
 
-	// Token: 0x04007F70 RID: 32624
+	// Token: 0x04007FB1 RID: 32689
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_TargetId;
 }

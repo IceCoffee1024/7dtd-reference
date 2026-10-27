@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000BA4 RID: 2980
+// Token: 0x02000BAF RID: 2991
 public class RegionFileChunkSnapshot : IRegionFileChunkSnapshot, IMemoryPoolableObject
 {
-	// Token: 0x17000990 RID: 2448
-	// (get) Token: 0x060059C1 RID: 22977 RVA: 0x00227A80 File Offset: 0x00225C80
+	// Token: 0x17000996 RID: 2454
+	// (get) Token: 0x060059E6 RID: 23014 RVA: 0x00228FDC File Offset: 0x002271DC
 	public long Size
 	{
 		get
@@ -18,7 +18,7 @@ public class RegionFileChunkSnapshot : IRegionFileChunkSnapshot, IMemoryPoolable
 		}
 	}
 
-	// Token: 0x060059C2 RID: 22978 RVA: 0x00227A94 File Offset: 0x00225C94
+	// Token: 0x060059E7 RID: 23015 RVA: 0x00228FF0 File Offset: 0x002271F0
 	public void Update(Chunk chunk, bool saveIfUnchanged)
 	{
 		if (saveIfUnchanged || chunk.NeedsSaving)
@@ -63,7 +63,7 @@ public class RegionFileChunkSnapshot : IRegionFileChunkSnapshot, IMemoryPoolable
 		}
 	}
 
-	// Token: 0x060059C3 RID: 22979 RVA: 0x00227BCC File Offset: 0x00225DCC
+	// Token: 0x060059E8 RID: 23016 RVA: 0x00229128 File Offset: 0x00227328
 	public void Write(RegionFileChunkWriter writer, string dir, int chunkX, int chunkZ)
 	{
 		if (this.stream != null)
@@ -72,13 +72,13 @@ public class RegionFileChunkSnapshot : IRegionFileChunkSnapshot, IMemoryPoolable
 		}
 	}
 
-	// Token: 0x060059C4 RID: 22980 RVA: 0x00227BEB File Offset: 0x00225DEB
+	// Token: 0x060059E9 RID: 23017 RVA: 0x00229147 File Offset: 0x00227347
 	public void Cleanup()
 	{
 		this.Reset();
 	}
 
-	// Token: 0x060059C5 RID: 22981 RVA: 0x00227BF3 File Offset: 0x00225DF3
+	// Token: 0x060059EA RID: 23018 RVA: 0x0022914F File Offset: 0x0022734F
 	public void Reset()
 	{
 		if (this.stream != null)
@@ -88,10 +88,10 @@ public class RegionFileChunkSnapshot : IRegionFileChunkSnapshot, IMemoryPoolable
 		}
 	}
 
-	// Token: 0x040045C0 RID: 17856
+	// Token: 0x040045E5 RID: 17893
 	public const string EXT = "7rg";
 
-	// Token: 0x040045C1 RID: 17857
+	// Token: 0x040045E6 RID: 17894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledMemoryStream stream;
 }

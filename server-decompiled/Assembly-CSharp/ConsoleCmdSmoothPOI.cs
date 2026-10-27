@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200029E RID: 670
+// Token: 0x020002A0 RID: 672
 [Preserve]
 public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 {
-	// Token: 0x0600136B RID: 4971 RVA: 0x00076BC0 File Offset: 0x00074DC0
+	// Token: 0x0600136F RID: 4975 RVA: 0x00076D90 File Offset: 0x00074F90
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000210 RID: 528
-	// (get) Token: 0x0600136C RID: 4972 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x06001370 RID: 4976 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,7 +23,7 @@ public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600136D RID: 4973 RVA: 0x00076BD0 File Offset: 0x00074DD0
+	// Token: 0x06001371 RID: 4977 RVA: 0x00076DA0 File Offset: 0x00074FA0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!PrefabEditModeManager.Instance.IsActive())
@@ -54,17 +54,17 @@ public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Smoothing action took {0} ms", (DateTime.Now - now).TotalMilliseconds));
 	}
 
-	// Token: 0x0600136E RID: 4974 RVA: 0x00076CB7 File Offset: 0x00074EB7
+	// Token: 0x06001372 RID: 4978 RVA: 0x00076E87 File Offset: 0x00075087
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Smoothens the POI";
 	}
 
-	// Token: 0x0600136F RID: 4975 RVA: 0x00076CBE File Offset: 0x00074EBE
+	// Token: 0x06001373 RID: 4979 RVA: 0x00076E8E File Offset: 0x0007508E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
-		return "\n\t\t\t|Usage:\n\t\t\t|  smoothpoi [mode] [passes]\n\t\t\t|Mode defaults to \"land\", also accepts \"air\".\n            |Passes defaults to 1.\n            |Smoothed area can be restricted with the blue selection.\n\t\t\t".Unindent(true);
+		return "\r\n\t\t\t|Usage:\r\n\t\t\t|  smoothpoi [mode] [passes]\r\n\t\t\t|Mode defaults to \"land\", also accepts \"air\".\r\n            |Passes defaults to 1.\r\n            |Smoothed area can be restricted with the blue selection.\r\n\t\t\t".Unindent(true);
 	}
 }

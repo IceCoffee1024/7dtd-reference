@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000802 RID: 2050
+// Token: 0x0200080C RID: 2060
 [Preserve]
 public class NetPackageInventoryKeepOpen : NetPackage
 {
-	// Token: 0x1700066A RID: 1642
-	// (get) Token: 0x06003C52 RID: 15442 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000670 RID: 1648
+	// (get) Token: 0x06003C75 RID: 15477 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,18 +15,18 @@ public class NetPackageInventoryKeepOpen : NetPackage
 		}
 	}
 
-	// Token: 0x06003C53 RID: 15443 RVA: 0x0012AC85 File Offset: 0x00128E85
+	// Token: 0x06003C76 RID: 15478 RVA: 0x0012B879 File Offset: 0x00129A79
 	public NetPackageInventoryKeepOpen Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003C54 RID: 15444 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003C77 RID: 15479 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _br)
 	{
 	}
 
-	// Token: 0x06003C55 RID: 15445 RVA: 0x00182748 File Offset: 0x00180948
+	// Token: 0x06003C78 RID: 15480 RVA: 0x0018384C File Offset: 0x00181A4C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		LockManager.Instance.ProcessKeepOpen(base.Sender.entityId);

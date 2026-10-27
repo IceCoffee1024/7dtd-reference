@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x02000CE8 RID: 3304
+// Token: 0x02000CF3 RID: 3315
 public struct ScopedChunkWriteAccess : IDisposable
 {
-	// Token: 0x17000A9E RID: 2718
-	// (get) Token: 0x060064D3 RID: 25811 RVA: 0x0027A824 File Offset: 0x00278A24
-	// (set) Token: 0x060064D4 RID: 25812 RVA: 0x0027A82C File Offset: 0x00278A2C
+	// Token: 0x17000AA4 RID: 2724
+	// (get) Token: 0x060064F8 RID: 25848 RVA: 0x0027BD4C File Offset: 0x00279F4C
+	// (set) Token: 0x060064F9 RID: 25849 RVA: 0x0027BD54 File Offset: 0x00279F54
 	public Chunk Chunk
 	{
 		readonly get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060064D5 RID: 25813 RVA: 0x0027A835 File Offset: 0x00278A35
+	// Token: 0x060064FA RID: 25850 RVA: 0x0027BD5D File Offset: 0x00279F5D
 	public ScopedChunkWriteAccess(Chunk chunk)
 	{
 		this.Chunk = chunk;
@@ -24,7 +24,7 @@ public struct ScopedChunkWriteAccess : IDisposable
 		chunk2.EnterWriteLock();
 	}
 
-	// Token: 0x060064D6 RID: 25814 RVA: 0x0027A84E File Offset: 0x00278A4E
+	// Token: 0x060064FB RID: 25851 RVA: 0x0027BD76 File Offset: 0x00279F76
 	public void Dispose()
 	{
 		Chunk chunk = this.Chunk;

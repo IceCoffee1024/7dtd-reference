@@ -3,25 +3,25 @@
 // Token: 0x0200015A RID: 346
 public class BlockTextureData
 {
-	// Token: 0x06000986 RID: 2438 RVA: 0x00041E02 File Offset: 0x00040002
+	// Token: 0x06000986 RID: 2438 RVA: 0x00041DC2 File Offset: 0x0003FFC2
 	public static void InitStatic()
 	{
 		BlockTextureData.list = new BlockTextureData[256];
 	}
 
-	// Token: 0x06000987 RID: 2439 RVA: 0x00041E13 File Offset: 0x00040013
+	// Token: 0x06000987 RID: 2439 RVA: 0x00041DD3 File Offset: 0x0003FFD3
 	public void Init()
 	{
 		BlockTextureData.list[this.ID] = this;
 	}
 
-	// Token: 0x06000988 RID: 2440 RVA: 0x00041E22 File Offset: 0x00040022
+	// Token: 0x06000988 RID: 2440 RVA: 0x00041DE2 File Offset: 0x0003FFE2
 	public static void Cleanup()
 	{
 		BlockTextureData.list = null;
 	}
 
-	// Token: 0x06000989 RID: 2441 RVA: 0x00041E2C File Offset: 0x0004002C
+	// Token: 0x06000989 RID: 2441 RVA: 0x00041DEC File Offset: 0x0003FFEC
 	public static BlockTextureData GetDataByTextureID(int textureID)
 	{
 		for (int i = 0; i < BlockTextureData.list.Length; i++)
@@ -34,7 +34,7 @@ public class BlockTextureData
 		return null;
 	}
 
-	// Token: 0x0600098A RID: 2442 RVA: 0x00041E6C File Offset: 0x0004006C
+	// Token: 0x0600098A RID: 2442 RVA: 0x00041E2C File Offset: 0x0004002C
 	public bool GetLocked(EntityPlayerLocal player)
 	{
 		if (this.LockedByPerk != "")

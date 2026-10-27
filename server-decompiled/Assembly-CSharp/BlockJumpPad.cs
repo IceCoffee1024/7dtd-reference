@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockJumpPad : Block
 {
-	// Token: 0x060007BF RID: 1983 RVA: 0x00036DD5 File Offset: 0x00034FD5
+	// Token: 0x060007BF RID: 1983 RVA: 0x00036D95 File Offset: 0x00034F95
 	public override void OnEntityWalking(WorldBase _world, int _x, int _y, int _z, BlockValue _blockValue, Entity entity)
 	{
 		entity.motion.y = 3f;

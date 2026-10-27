@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000C34 RID: 3124
+// Token: 0x02000C3F RID: 3135
 public enum EnumDecoAllowedSize : byte
 {
-	// Token: 0x040049E7 RID: 18919
+	// Token: 0x04004A0C RID: 18956
 	Any,
-	// Token: 0x040049E8 RID: 18920
+	// Token: 0x04004A0D RID: 18957
 	OnlySmall,
-	// Token: 0x040049E9 RID: 18921
+	// Token: 0x04004A0E RID: 18958
 	None
 }

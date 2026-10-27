@@ -2,10 +2,10 @@
 
 namespace MusicUtils
 {
-	// Token: 0x02001A3E RID: 6718
+	// Token: 0x02001A6F RID: 6767
 	public abstract class Curve
 	{
-		// Token: 0x0600CC63 RID: 52323 RVA: 0x004A9E71 File Offset: 0x004A8071
+		// Token: 0x0600CD77 RID: 52599 RVA: 0x004AD96D File Offset: 0x004ABB6D
 		public Curve(float _start, float _end, float _startX, float _endX)
 		{
 			this.rate = (_end - _start) / (_endX - _startX);
@@ -14,22 +14,22 @@ namespace MusicUtils
 			this.startX = _startX;
 		}
 
-		// Token: 0x0600CC64 RID: 52324
+		// Token: 0x0600CD78 RID: 52600
 		public abstract float GetMixerValue(float _param);
 
-		// Token: 0x04009B0E RID: 39694
+		// Token: 0x04009BF7 RID: 39927
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly float rate;
 
-		// Token: 0x04009B0F RID: 39695
+		// Token: 0x04009BF8 RID: 39928
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly float linearStart;
 
-		// Token: 0x04009B10 RID: 39696
+		// Token: 0x04009BF9 RID: 39929
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly float linearEnd;
 
-		// Token: 0x04009B11 RID: 39697
+		// Token: 0x04009BFA RID: 39930
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly float startX;
 	}

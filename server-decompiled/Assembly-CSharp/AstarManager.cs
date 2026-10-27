@@ -5,10 +5,10 @@ using GamePath;
 using Pathfinding;
 using UnityEngine;
 
-// Token: 0x020008D8 RID: 2264
+// Token: 0x020008E2 RID: 2274
 public class AstarManager : MonoBehaviour
 {
-	// Token: 0x0600411A RID: 16666 RVA: 0x00198C40 File Offset: 0x00196E40
+	// Token: 0x0600413D RID: 16701 RVA: 0x00199CE8 File Offset: 0x00197EE8
 	public static void Init(GameObject obj)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -24,7 +24,7 @@ public class AstarManager : MonoBehaviour
 		new ASPPathFinderThread().StartWorkerThreads();
 	}
 
-	// Token: 0x0600411B RID: 16667 RVA: 0x00198C80 File Offset: 0x00196E80
+	// Token: 0x0600413E RID: 16702 RVA: 0x00199D28 File Offset: 0x00197F28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -40,13 +40,13 @@ public class AstarManager : MonoBehaviour
 		this.OriginChanged();
 	}
 
-	// Token: 0x0600411C RID: 16668 RVA: 0x00198D10 File Offset: 0x00196F10
+	// Token: 0x0600413F RID: 16703 RVA: 0x00199DB8 File Offset: 0x00197FB8
 	public static PathNavigate CreateNavigator(EntityAlive _entity)
 	{
 		return new ASPPathNavigate(_entity);
 	}
 
-	// Token: 0x0600411D RID: 16669 RVA: 0x00198D18 File Offset: 0x00196F18
+	// Token: 0x06004140 RID: 16704 RVA: 0x00199DC0 File Offset: 0x00197FC0
 	public static void Cleanup()
 	{
 		if (!AstarManager.Instance)
@@ -67,7 +67,7 @@ public class AstarManager : MonoBehaviour
 		AstarManager.Instance = null;
 	}
 
-	// Token: 0x0600411E RID: 16670 RVA: 0x00198DB6 File Offset: 0x00196FB6
+	// Token: 0x06004141 RID: 16705 RVA: 0x00199E5E File Offset: 0x0019805E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator Start()
 	{
@@ -159,7 +159,7 @@ public class AstarManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600411F RID: 16671 RVA: 0x00198DC8 File Offset: 0x00196FC8
+	// Token: 0x06004142 RID: 16706 RVA: 0x00199E70 File Offset: 0x00198070
 	public void AddLocation(Vector3 pos3d, int size)
 	{
 		Vector2 vector;
@@ -180,7 +180,7 @@ public class AstarManager : MonoBehaviour
 		location.duration = 4f;
 	}
 
-	// Token: 0x06004120 RID: 16672 RVA: 0x00198E44 File Offset: 0x00197044
+	// Token: 0x06004143 RID: 16707 RVA: 0x00199EEC File Offset: 0x001980EC
 	public void AddLocationLine(Vector3 startPos, Vector3 endPos, int size)
 	{
 		startPos.y = 0f;
@@ -190,7 +190,7 @@ public class AstarManager : MonoBehaviour
 		this.AddLocation(vector, size);
 	}
 
-	// Token: 0x06004121 RID: 16673 RVA: 0x00198E98 File Offset: 0x00197098
+	// Token: 0x06004144 RID: 16708 RVA: 0x00199F40 File Offset: 0x00198140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarManager.Location FindLocation(Vector2 pos, int size)
 	{
@@ -212,7 +212,7 @@ public class AstarManager : MonoBehaviour
 		return location;
 	}
 
-	// Token: 0x06004122 RID: 16674 RVA: 0x00198F00 File Offset: 0x00197100
+	// Token: 0x06004145 RID: 16709 RVA: 0x00199FA8 File Offset: 0x001981A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateGraphs(float deltaTime)
 	{
@@ -271,7 +271,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004123 RID: 16675 RVA: 0x00199100 File Offset: 0x00197300
+	// Token: 0x06004146 RID: 16710 RVA: 0x0019A1A8 File Offset: 0x001983A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Merge(Vector2 pos, int size)
 	{
@@ -296,7 +296,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004124 RID: 16676 RVA: 0x001991A4 File Offset: 0x001973A4
+	// Token: 0x06004147 RID: 16711 RVA: 0x0019A24C File Offset: 0x0019844C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindMoveIndex(AstarVoxelGrid graph)
 	{
@@ -310,7 +310,7 @@ public class AstarManager : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x06004125 RID: 16677 RVA: 0x001991DC File Offset: 0x001973DC
+	// Token: 0x06004148 RID: 16712 RVA: 0x0019A284 File Offset: 0x00198484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateGraphPos(AstarVoxelGrid graph, Vector2 pos)
 	{
@@ -338,7 +338,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004126 RID: 16678 RVA: 0x0019927C File Offset: 0x0019747C
+	// Token: 0x06004149 RID: 16713 RVA: 0x0019A324 File Offset: 0x00198524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateMoveGraph()
 	{
@@ -358,7 +358,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004127 RID: 16679 RVA: 0x001992DC File Offset: 0x001974DC
+	// Token: 0x0600414A RID: 16714 RVA: 0x0019A384 File Offset: 0x00198584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MoveGraphRemove(AstarVoxelGrid graph)
 	{
@@ -373,7 +373,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004128 RID: 16680 RVA: 0x00199314 File Offset: 0x00197514
+	// Token: 0x0600414B RID: 16715 RVA: 0x0019A3BC File Offset: 0x001985BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MoveGraph(AstarVoxelGrid graph, Vector2 pos)
 	{
@@ -383,7 +383,7 @@ public class AstarManager : MonoBehaviour
 		graph.Move(vector2);
 	}
 
-	// Token: 0x06004129 RID: 16681 RVA: 0x00199344 File Offset: 0x00197544
+	// Token: 0x0600414C RID: 16716 RVA: 0x0019A3EC File Offset: 0x001985EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 LocalPosToGridPos(Vector2 pos)
 	{
@@ -394,7 +394,7 @@ public class AstarManager : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x0600412A RID: 16682 RVA: 0x00199390 File Offset: 0x00197590
+	// Token: 0x0600414D RID: 16717 RVA: 0x0019A438 File Offset: 0x00198638
 	public void OriginChanged()
 	{
 		this.worldOrigin = Origin.position;
@@ -406,7 +406,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600412B RID: 16683 RVA: 0x001993FC File Offset: 0x001975FC
+	// Token: 0x0600414E RID: 16718 RVA: 0x0019A4A4 File Offset: 0x001986A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator Scan()
 	{
@@ -418,7 +418,7 @@ public class AstarManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600412C RID: 16684 RVA: 0x0019940C File Offset: 0x0019760C
+	// Token: 0x0600414F RID: 16719 RVA: 0x0019A4B4 File Offset: 0x001986B4
 	public void OnBlockChanged(Vector3i pos, BlockValue bvOld, sbyte densOld, TextureFullArray texOld, BlockValue bvNew)
 	{
 		Block block = bvOld.Block;
@@ -484,7 +484,7 @@ public class AstarManager : MonoBehaviour
 		this.UpdateBlock(pos, flag);
 	}
 
-	// Token: 0x0600412D RID: 16685 RVA: 0x00199620 File Offset: 0x00197820
+	// Token: 0x06004150 RID: 16720 RVA: 0x0019A6C8 File Offset: 0x001988C8
 	public void OnBlockDamaged(BlockValueRef _bvRef, BlockValue _blockValue, int _damage, int _attackerEntityId)
 	{
 		switch (_bvRef.Type)
@@ -500,7 +500,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600412E RID: 16686 RVA: 0x0019965C File Offset: 0x0019785C
+	// Token: 0x06004151 RID: 16721 RVA: 0x0019A704 File Offset: 0x00198904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateBlock(Vector3i blockPos, bool isSlowUpdate)
 	{
@@ -527,7 +527,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600412F RID: 16687 RVA: 0x0019972C File Offset: 0x0019792C
+	// Token: 0x06004152 RID: 16722 RVA: 0x0019A7D4 File Offset: 0x001989D4
 	public static void AddBoundsToUpdate(Bounds _bounds)
 	{
 		if (AstarManager.Instance == null)
@@ -542,7 +542,7 @@ public class AstarManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004130 RID: 16688 RVA: 0x00199790 File Offset: 0x00197990
+	// Token: 0x06004153 RID: 16723 RVA: 0x0019A838 File Offset: 0x00198A38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarManager.Area AddAreaBlock(Vector2i pos)
 	{
@@ -560,7 +560,7 @@ public class AstarManager : MonoBehaviour
 		return area;
 	}
 
-	// Token: 0x06004131 RID: 16689 RVA: 0x001997DC File Offset: 0x001979DC
+	// Token: 0x06004154 RID: 16724 RVA: 0x0019A884 File Offset: 0x00198A84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarManager.Area AddArea(Vector2i pos, bool noNext)
 	{
@@ -594,7 +594,7 @@ public class AstarManager : MonoBehaviour
 		return area;
 	}
 
-	// Token: 0x06004132 RID: 16690 RVA: 0x00199884 File Offset: 0x00197A84
+	// Token: 0x06004155 RID: 16725 RVA: 0x0019A92C File Offset: 0x00198B2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarManager.Area FindArea(Vector2i pos)
 	{
@@ -609,7 +609,7 @@ public class AstarManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06004133 RID: 16691 RVA: 0x001998C8 File Offset: 0x00197AC8
+	// Token: 0x06004156 RID: 16726 RVA: 0x0019A970 File Offset: 0x00198B70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarVoxelGrid AddGraph(int size)
 	{
@@ -634,7 +634,7 @@ public class AstarManager : MonoBehaviour
 		return astarVoxelGrid;
 	}
 
-	// Token: 0x06004134 RID: 16692 RVA: 0x0019999C File Offset: 0x00197B9C
+	// Token: 0x06004157 RID: 16727 RVA: 0x0019AA44 File Offset: 0x00198C44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarVoxelGrid FindClosestGraph(Vector2 pos, int size)
 	{
@@ -660,148 +660,148 @@ public class AstarManager : MonoBehaviour
 		return astarVoxelGrid;
 	}
 
-	// Token: 0x040034FA RID: 13562
+	// Token: 0x0400351A RID: 13594
 	public static AstarManager Instance;
 
-	// Token: 0x040034FB RID: 13563
+	// Token: 0x0400351B RID: 13595
 	public const float cGridHeight = 320f;
 
-	// Token: 0x040034FC RID: 13564
+	// Token: 0x0400351C RID: 13596
 	public const float cGridY = -32f;
 
-	// Token: 0x040034FD RID: 13565
+	// Token: 0x0400351D RID: 13597
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cGridXZSize = 76;
 
-	// Token: 0x040034FE RID: 13566
+	// Token: 0x0400351E RID: 13598
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cMoveDist = 10f;
 
-	// Token: 0x040034FF RID: 13567
+	// Token: 0x0400351F RID: 13599
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCharHeight = 1.8f;
 
-	// Token: 0x04003500 RID: 13568
+	// Token: 0x04003520 RID: 13600
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCharDiameter = 0.3f;
 
-	// Token: 0x04003501 RID: 13569
+	// Token: 0x04003521 RID: 13601
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cLocationFindPer = 0.2f;
 
-	// Token: 0x04003502 RID: 13570
+	// Token: 0x04003522 RID: 13602
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cLocationDuration = 4f;
 
-	// Token: 0x04003503 RID: 13571
+	// Token: 0x04003523 RID: 13603
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cPlayerMergeDist = 19f;
 
-	// Token: 0x04003504 RID: 13572
+	// Token: 0x04003524 RID: 13604
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cPlayerMergeDistSq = 361f;
 
-	// Token: 0x04003505 RID: 13573
+	// Token: 0x04003525 RID: 13605
 	public const float cUpdateDeltaTime = 0.1f;
 
-	// Token: 0x04003506 RID: 13574
+	// Token: 0x04003526 RID: 13606
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AstarPath astar;
 
-	// Token: 0x04003507 RID: 13575
+	// Token: 0x04003527 RID: 13607
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastWorkTime;
 
-	// Token: 0x04003508 RID: 13576
+	// Token: 0x04003528 RID: 13608
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 worldOrigin;
 
-	// Token: 0x04003509 RID: 13577
+	// Token: 0x04003529 RID: 13609
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 worldOriginXZ;
 
-	// Token: 0x0400350A RID: 13578
+	// Token: 0x0400352A RID: 13610
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<AstarManager.Area> areaList = new List<AstarManager.Area>();
 
-	// Token: 0x0400350B RID: 13579
+	// Token: 0x0400352B RID: 13611
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<AstarVoxelGrid> graphList = new List<AstarVoxelGrid>();
 
-	// Token: 0x0400350C RID: 13580
+	// Token: 0x0400352C RID: 13612
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<AstarManager.Location> locations = new List<AstarManager.Location>();
 
-	// Token: 0x0400350D RID: 13581
+	// Token: 0x0400352D RID: 13613
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<AstarManager.MergedLocations> mergedLocations = new List<AstarManager.MergedLocations>();
 
-	// Token: 0x0400350E RID: 13582
+	// Token: 0x0400352E RID: 13614
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<AstarVoxelGrid> moveList = new List<AstarVoxelGrid>();
 
-	// Token: 0x0400350F RID: 13583
+	// Token: 0x0400352F RID: 13615
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AstarVoxelGrid moveCurrent;
 
-	// Token: 0x04003510 RID: 13584
+	// Token: 0x04003530 RID: 13616
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int[] updateBlockOffsets = new int[] { -1, 0, 1, 0, 0, -1, 0, 1 };
 
-	// Token: 0x020008D9 RID: 2265
+	// Token: 0x020008E3 RID: 2275
 	public class Area
 	{
-		// Token: 0x04003511 RID: 13585
+		// Token: 0x04003531 RID: 13617
 		public AstarManager.Area next;
 
-		// Token: 0x04003512 RID: 13586
+		// Token: 0x04003532 RID: 13618
 		public Vector2i pos;
 
-		// Token: 0x04003513 RID: 13587
+		// Token: 0x04003533 RID: 13619
 		public AstarManager.Bounds2i bounds;
 
-		// Token: 0x04003514 RID: 13588
+		// Token: 0x04003534 RID: 13620
 		public bool hasBlocks;
 
-		// Token: 0x04003515 RID: 13589
+		// Token: 0x04003535 RID: 13621
 		public bool isPartial;
 
-		// Token: 0x04003516 RID: 13590
+		// Token: 0x04003536 RID: 13622
 		public bool isSlowUpdate;
 
-		// Token: 0x04003517 RID: 13591
+		// Token: 0x04003537 RID: 13623
 		public float updateDelay;
 	}
 
-	// Token: 0x020008DA RID: 2266
+	// Token: 0x020008E4 RID: 2276
 	public struct Bounds2i
 	{
-		// Token: 0x06004138 RID: 16696 RVA: 0x00199A98 File Offset: 0x00197C98
+		// Token: 0x0600415B RID: 16731 RVA: 0x0019AB40 File Offset: 0x00198D40
 		public bool Contains(Vector2i pos)
 		{
 			return pos.x >= this.min.x && pos.x <= this.max.x && pos.y >= this.min.y && pos.y <= this.max.y;
 		}
 
-		// Token: 0x06004139 RID: 16697 RVA: 0x00199AF4 File Offset: 0x00197CF4
+		// Token: 0x0600415C RID: 16732 RVA: 0x0019AB9C File Offset: 0x00198D9C
 		public void Encapsulate(Vector2i pos)
 		{
 			if (pos.x < this.min.x)
@@ -822,7 +822,7 @@ public class AstarManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x0600413A RID: 16698 RVA: 0x00199B94 File Offset: 0x00197D94
+		// Token: 0x0600415D RID: 16733 RVA: 0x0019AC3C File Offset: 0x00198E3C
 		public Bounds ToBounds()
 		{
 			Bounds bounds = default(Bounds);
@@ -830,35 +830,35 @@ public class AstarManager : MonoBehaviour
 			return bounds;
 		}
 
-		// Token: 0x04003518 RID: 13592
+		// Token: 0x04003538 RID: 13624
 		public Vector2i min;
 
-		// Token: 0x04003519 RID: 13593
+		// Token: 0x04003539 RID: 13625
 		public Vector2i max;
 	}
 
-	// Token: 0x020008DB RID: 2267
+	// Token: 0x020008E5 RID: 2277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Location
 	{
-		// Token: 0x0400351A RID: 13594
+		// Token: 0x0400353A RID: 13626
 		public Vector2 pos;
 
-		// Token: 0x0400351B RID: 13595
+		// Token: 0x0400353B RID: 13627
 		public int size;
 
-		// Token: 0x0400351C RID: 13596
+		// Token: 0x0400353C RID: 13628
 		public float duration;
 	}
 
-	// Token: 0x020008DC RID: 2268
+	// Token: 0x020008E6 RID: 2278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct MergedLocations
 	{
-		// Token: 0x0400351D RID: 13597
+		// Token: 0x0400353D RID: 13629
 		public Vector2 pos;
 
-		// Token: 0x0400351E RID: 13598
+		// Token: 0x0400353E RID: 13630
 		public int size;
 	}
 }

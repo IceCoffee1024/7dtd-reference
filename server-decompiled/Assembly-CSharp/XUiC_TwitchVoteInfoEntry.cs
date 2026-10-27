@@ -2,13 +2,13 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010BA RID: 4282
+// Token: 0x020010CA RID: 4298
 [Preserve]
 public class XUiC_TwitchVoteInfoEntry : XUiController
 {
-	// Token: 0x1700100E RID: 4110
-	// (get) Token: 0x06008833 RID: 34867 RVA: 0x00341F37 File Offset: 0x00340137
-	// (set) Token: 0x06008834 RID: 34868 RVA: 0x00341F3F File Offset: 0x0034013F
+	// Token: 0x17001019 RID: 4121
+	// (get) Token: 0x06008886 RID: 34950 RVA: 0x00343FBB File Offset: 0x003421BB
+	// (set) Token: 0x06008887 RID: 34951 RVA: 0x00343FC3 File Offset: 0x003421C3
 	public TwitchVote Vote
 	{
 		get
@@ -23,17 +23,17 @@ public class XUiC_TwitchVoteInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x1700100F RID: 4111
-	// (get) Token: 0x06008835 RID: 34869 RVA: 0x00341F5E File Offset: 0x0034015E
-	// (set) Token: 0x06008836 RID: 34870 RVA: 0x00341F66 File Offset: 0x00340166
+	// Token: 0x1700101A RID: 4122
+	// (get) Token: 0x06008888 RID: 34952 RVA: 0x00343FE2 File Offset: 0x003421E2
+	// (set) Token: 0x06008889 RID: 34953 RVA: 0x00343FEA File Offset: 0x003421EA
 	public XUiC_TwitchInfoWindowGroup TwitchInfoUIHandler { get; set; }
 
-	// Token: 0x17001010 RID: 4112
-	// (get) Token: 0x06008837 RID: 34871 RVA: 0x00341F6F File Offset: 0x0034016F
-	// (set) Token: 0x06008838 RID: 34872 RVA: 0x00341F77 File Offset: 0x00340177
+	// Token: 0x1700101B RID: 4123
+	// (get) Token: 0x0600888A RID: 34954 RVA: 0x00343FF3 File Offset: 0x003421F3
+	// (set) Token: 0x0600888B RID: 34955 RVA: 0x00343FFB File Offset: 0x003421FB
 	public bool Tracked { get; set; }
 
-	// Token: 0x06008839 RID: 34873 RVA: 0x00341F80 File Offset: 0x00340180
+	// Token: 0x0600888C RID: 34956 RVA: 0x00344004 File Offset: 0x00342204
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -122,14 +122,14 @@ public class XUiC_TwitchVoteInfoEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600883A RID: 34874 RVA: 0x002E0AD8 File Offset: 0x002DECD8
+	// Token: 0x0600888D RID: 34957 RVA: 0x002E23C8 File Offset: 0x002E05C8
 	public override void Init()
 	{
 		base.Init();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600883B RID: 34875 RVA: 0x003421C4 File Offset: 0x003403C4
+	// Token: 0x0600888E RID: 34958 RVA: 0x00344248 File Offset: 0x00342448
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -146,7 +146,7 @@ public class XUiC_TwitchVoteInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600883C RID: 34876 RVA: 0x003421F3 File Offset: 0x003403F3
+	// Token: 0x0600888F RID: 34959 RVA: 0x00344277 File Offset: 0x00342477
 	public override void OnCursorSelected(bool _isActualElement)
 	{
 		base.OnCursorSelected(_isActualElement);
@@ -154,7 +154,7 @@ public class XUiC_TwitchVoteInfoEntry : XUiController
 		this.TwitchInfoUIHandler.SetEntry(this);
 	}
 
-	// Token: 0x0600883D RID: 34877 RVA: 0x002C75E5 File Offset: 0x002C57E5
+	// Token: 0x06008890 RID: 34960 RVA: 0x002C8B51 File Offset: 0x002C6D51
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -162,13 +162,13 @@ public class XUiC_TwitchVoteInfoEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600883E RID: 34878 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06008891 RID: 34961 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	public void Refresh()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600883F RID: 34879 RVA: 0x00342214 File Offset: 0x00340414
+	// Token: 0x06008892 RID: 34962 RVA: 0x00344298 File Offset: 0x00342498
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "enabled_color")
@@ -204,40 +204,40 @@ public class XUiC_TwitchVoteInfoEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0400657E RID: 25982
+	// Token: 0x040065BD RID: 26045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string enabledColor;
 
-	// Token: 0x0400657F RID: 25983
+	// Token: 0x040065BE RID: 26046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string disabledColor;
 
-	// Token: 0x04006580 RID: 25984
+	// Token: 0x040065BF RID: 26047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rowColor;
 
-	// Token: 0x04006581 RID: 25985
+	// Token: 0x040065C0 RID: 26048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hoverColor;
 
-	// Token: 0x04006582 RID: 25986
+	// Token: 0x040065C1 RID: 26049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string positiveColor = "0,0,255";
 
-	// Token: 0x04006583 RID: 25987
+	// Token: 0x040065C2 RID: 26050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string negativeColor = "255,0,0";
 
-	// Token: 0x04006584 RID: 25988
+	// Token: 0x040065C3 RID: 26051
 	public new bool Selected;
 
-	// Token: 0x04006585 RID: 25989
+	// Token: 0x040065C4 RID: 26052
 	public bool IsHovered;
 
-	// Token: 0x04006586 RID: 25990
+	// Token: 0x040065C5 RID: 26053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchVote vote;
 
-	// Token: 0x04006588 RID: 25992
+	// Token: 0x040065C7 RID: 26055
 	public XUiC_TwitchVoteInfoEntryList Owner;
 }

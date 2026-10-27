@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Xml.Linq;
+using BhvrAnalyticsServices.Interfaces;
+using Services;
+using Services.Analytics;
+using Services.Analytics.Events;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D3 RID: 1747
+// Token: 0x020006DA RID: 1754
 [Preserve]
 public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 {
-	// Token: 0x06003662 RID: 13922 RVA: 0x0016641C File Offset: 0x0016461C
+	// Token: 0x06003671 RID: 13937 RVA: 0x00167018 File Offset: 0x00165218
 	public override void Execute(MinEventParams _params)
 	{
 		bool flag = !_params.Self.isEntityRemote | _params.IsLocal;
@@ -53,8 +58,8 @@ public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 			}
 			foreach (string text in array)
 			{
-				BuffClass buff = BuffManager.GetBuff(text);
-				if (buff != null)
+				BuffClass buff3 = BuffManager.GetBuff(text);
+				if (buff3 != null)
 				{
 					if (this.durationAltered && this.cvarRef)
 					{
@@ -64,7 +69,7 @@ public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 						}
 						else
 						{
-							this.duration = buff.InitialDurationMax;
+							this.duration = buff3.InitialDurationMax;
 						}
 					}
 					if (this.durationAltered)
@@ -74,13 +79,46 @@ public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 					else
 					{
 						this.targets[i].Buffs.AddBuff(text, num, flag, false, -1f);
+						EntityPlayerLocal entityPlayerLocal = _params.Self as EntityPlayerLocal;
+						BuffValue buff2 = _params.Buff;
+						if (entityPlayerLocal != null && buff2 != null && !Helper.IsEditingOrPlaytesting())
+						{
+							if (!Helper.IsBuffEventValidOrNew(buff2))
+							{
+								return;
+							}
+							BuffClass buffClass = buff2.BuffClass;
+							IEnumerable<PlayerStateEventData.ActiveConditionData> enumerable = entityPlayerLocal.Buffs.ActiveBuffs.Select<BuffValue, PlayerStateEventData.ActiveConditionData>((BuffValue buff) => new PlayerStateEventData.ActiveConditionData
+							{
+								ConditionName = buff.BuffName,
+								MaxDuration = buffClass.DurationMax,
+								CurrentDuration = buff.DurationInSeconds,
+								DamageType = buffClass.DamageType.ToString(),
+								StackType = buffClass.StackType.ToString(),
+								UpdateRate = buffClass.UpdateRateTicks
+							});
+							PlayerStateEventData playerStateEventData = new PlayerStateEventData
+							{
+								ServerId = Helper.GetServerId(),
+								SaveId = Helper.GetSaveID(),
+								StateTimestamp = DateTime.UtcNow.ToString("O"),
+								ElapsedTime = (int)(entityPlayerLocal.totalTimePlayed * 60f),
+								TriggerReason = PlayerStateEventData.triggerReasons.ConditionReset.ToString(),
+								TriggerSource = buffClass.DamageType.ToString(),
+								ConditionsAdded = null,
+								ConditionsRemoved = null,
+								ActiveConditions = enumerable
+							};
+							Helper.SetUseDateTimeForBuff(buff2, DateTime.UtcNow);
+							ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(playerStateEventData);
+						}
 					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x06003663 RID: 13923 RVA: 0x00166638 File Offset: 0x00164838
+	// Token: 0x06003672 RID: 13938 RVA: 0x00167358 File Offset: 0x00165558
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -101,19 +139,19 @@ public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 		return flag;
 	}
 
-	// Token: 0x04002BAA RID: 11178
+	// Token: 0x04002BC5 RID: 11205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float duration;
 
-	// Token: 0x04002BAB RID: 11179
+	// Token: 0x04002BC6 RID: 11206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool durationAltered;
 
-	// Token: 0x04002BAC RID: 11180
+	// Token: 0x04002BC7 RID: 11207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002BAD RID: 11181
+	// Token: 0x04002BC8 RID: 11208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName = string.Empty;
 }

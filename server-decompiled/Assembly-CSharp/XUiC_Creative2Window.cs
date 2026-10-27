@@ -5,13 +5,13 @@ using GUI_2;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F22 RID: 3874
+// Token: 0x02000F31 RID: 3889
 [Preserve]
 public class XUiC_Creative2Window : XUiController
 {
-	// Token: 0x17000E49 RID: 3657
-	// (get) Token: 0x06007911 RID: 30993 RVA: 0x002DE04A File Offset: 0x002DC24A
-	// (set) Token: 0x06007912 RID: 30994 RVA: 0x002DE052 File Offset: 0x002DC252
+	// Token: 0x17000E53 RID: 3667
+	// (get) Token: 0x06007954 RID: 31060 RVA: 0x002DF93A File Offset: 0x002DDB3A
+	// (set) Token: 0x06007955 RID: 31061 RVA: 0x002DF942 File Offset: 0x002DDB42
 	public int Page
 	{
 		get
@@ -34,7 +34,7 @@ public class XUiC_Creative2Window : XUiController
 		}
 	}
 
-	// Token: 0x06007913 RID: 30995 RVA: 0x002DE08C File Offset: 0x002DC28C
+	// Token: 0x06007956 RID: 31062 RVA: 0x002DF97C File Offset: 0x002DDB7C
 	public override void Init()
 	{
 		base.Init();
@@ -138,7 +138,7 @@ public class XUiC_Creative2Window : XUiController
 		this.currentCreativeMode = (GameManager.Instance.IsEditMode() ? EnumCreativeMode.Dev : EnumCreativeMode.Player);
 	}
 
-	// Token: 0x06007914 RID: 30996 RVA: 0x002DE384 File Offset: 0x002DC584
+	// Token: 0x06007957 RID: 31063 RVA: 0x002DFC74 File Offset: 0x002DDE74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Hideshapes_Changed(XUiController _sender, int _mouseButton)
 	{
@@ -147,7 +147,7 @@ public class XUiC_Creative2Window : XUiController
 		this.RefreshList = true;
 	}
 
-	// Token: 0x06007915 RID: 30997 RVA: 0x002DE3AD File Offset: 0x002DC5AD
+	// Token: 0x06007958 RID: 31064 RVA: 0x002DFC9D File Offset: 0x002DDE9D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleFavoritesChanged(XUiController _sender, int _mouseButton)
 	{
@@ -156,7 +156,7 @@ public class XUiC_Creative2Window : XUiController
 		this.RefreshList = true;
 	}
 
-	// Token: 0x06007916 RID: 30998 RVA: 0x002DE3D8 File Offset: 0x002DC5D8
+	// Token: 0x06007959 RID: 31065 RVA: 0x002DFCC8 File Offset: 0x002DDEC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -182,7 +182,7 @@ public class XUiC_Creative2Window : XUiController
 		}
 	}
 
-	// Token: 0x06007917 RID: 30999 RVA: 0x002DE44D File Offset: 0x002DC64D
+	// Token: 0x0600795A RID: 31066 RVA: 0x002DFD3D File Offset: 0x002DDF3D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SubCategory_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -197,14 +197,14 @@ public class XUiC_Creative2Window : XUiController
 		this.currentFilterExcludeFuncs[1] = this.buildFilter(this.currentSubCategory);
 	}
 
-	// Token: 0x06007918 RID: 31000 RVA: 0x002DE48A File Offset: 0x002DC68A
+	// Token: 0x0600795B RID: 31067 RVA: 0x002DFD7A File Offset: 0x002DDF7A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtInput_OnChange(XUiController _sender, string _text, bool _changeFromCode)
 	{
 		this.RefreshList = true;
 	}
 
-	// Token: 0x06007919 RID: 31001 RVA: 0x002DE493 File Offset: 0x002DC693
+	// Token: 0x0600795C RID: 31068 RVA: 0x002DFD83 File Offset: 0x002DDF83
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DevBlockButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -213,7 +213,7 @@ public class XUiC_Creative2Window : XUiController
 		this.RefreshList = true;
 	}
 
-	// Token: 0x0600791A RID: 31002 RVA: 0x002DE4BC File Offset: 0x002DC6BC
+	// Token: 0x0600795D RID: 31069 RVA: 0x002DFDAC File Offset: 0x002DDFAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SimpleClickButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -226,7 +226,7 @@ public class XUiC_Creative2Window : XUiController
 		}
 	}
 
-	// Token: 0x0600791B RID: 31003 RVA: 0x002DE512 File Offset: 0x002DC712
+	// Token: 0x0600795E RID: 31070 RVA: 0x002DFE02 File Offset: 0x002DE002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -252,7 +252,7 @@ public class XUiC_Creative2Window : XUiController
 		}
 	}
 
-	// Token: 0x0600791C RID: 31004 RVA: 0x002DE540 File Offset: 0x002DC740
+	// Token: 0x0600795F RID: 31071 RVA: 0x002DFE30 File Offset: 0x002DE030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateHeader()
 	{
@@ -273,7 +273,7 @@ public class XUiC_Creative2Window : XUiController
 		this.filterCrumbs = this.headerNameBuilder.ToString();
 	}
 
-	// Token: 0x0600791D RID: 31005 RVA: 0x002DE5E0 File Offset: 0x002DC7E0
+	// Token: 0x06007960 RID: 31072 RVA: 0x002DFED0 File Offset: 0x002DE0D0
 	public void Refresh()
 	{
 		this.updateHeader();
@@ -299,14 +299,14 @@ public class XUiC_Creative2Window : XUiController
 		xuiC_Paging.SetLastPageByElementsAndPageLength(this.itemStacks.Count, this.length);
 	}
 
-	// Token: 0x0600791E RID: 31006 RVA: 0x002DE6E6 File Offset: 0x002DC8E6
+	// Token: 0x06007961 RID: 31073 RVA: 0x002DFFD6 File Offset: 0x002DE1D6
 	public void RefreshView()
 	{
 		this.IsDirty = true;
 		this.creativeGrid.IsDirty = true;
 	}
 
-	// Token: 0x0600791F RID: 31007 RVA: 0x002DE6FC File Offset: 0x002DC8FC
+	// Token: 0x06007962 RID: 31074 RVA: 0x002DFFEC File Offset: 0x002DE1EC
 	public override void OnOpen()
 	{
 		this.isOpening = true;
@@ -323,7 +323,7 @@ public class XUiC_Creative2Window : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuCategory, 0f);
 	}
 
-	// Token: 0x06007920 RID: 31008 RVA: 0x002DE7A3 File Offset: 0x002DC9A3
+	// Token: 0x06007963 RID: 31075 RVA: 0x002E0093 File Offset: 0x002DE293
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -331,7 +331,7 @@ public class XUiC_Creative2Window : XUiController
 		this.xui.CalloutWindow.DisableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuCategory);
 	}
 
-	// Token: 0x06007921 RID: 31009 RVA: 0x002DE7D1 File Offset: 0x002DC9D1
+	// Token: 0x06007964 RID: 31076 RVA: 0x002E00C1 File Offset: 0x002DE2C1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -347,7 +347,7 @@ public class XUiC_Creative2Window : XUiController
 		}
 	}
 
-	// Token: 0x06007922 RID: 31010 RVA: 0x002DE804 File Offset: 0x002DCA04
+	// Token: 0x06007965 RID: 31077 RVA: 0x002E00F4 File Offset: 0x002DE2F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -380,7 +380,7 @@ public class XUiC_Creative2Window : XUiController
 		return true;
 	}
 
-	// Token: 0x06007923 RID: 31011 RVA: 0x002DE8D8 File Offset: 0x002DCAD8
+	// Token: 0x06007966 RID: 31078 RVA: 0x002E01C8 File Offset: 0x002DE3C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass.FilterItem buildFilter(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -492,7 +492,7 @@ public class XUiC_Creative2Window : XUiController
 		}
 	}
 
-	// Token: 0x06007924 RID: 31012 RVA: 0x002DEAFC File Offset: 0x002DCCFC
+	// Token: 0x06007967 RID: 31079 RVA: 0x002E03EC File Offset: 0x002DE5EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupMainCategories(XUiC_CategoryList _categoryList)
 	{
@@ -524,7 +524,7 @@ public class XUiC_Creative2Window : XUiController
 		_categoryList.CategoryChanged += this.CategoryList_CategoryChanged;
 	}
 
-	// Token: 0x06007925 RID: 31013 RVA: 0x002DEC00 File Offset: 0x002DCE00
+	// Token: 0x06007968 RID: 31080 RVA: 0x002E04F0 File Offset: 0x002DE6F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block categoryIsBlockShapes(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -540,14 +540,14 @@ public class XUiC_Creative2Window : XUiController
 		return Block.GetBlockByName(text + ":" + ShapesFromXml.VariantHelperName, false);
 	}
 
-	// Token: 0x06007926 RID: 31014 RVA: 0x002DEC4A File Offset: 0x002DCE4A
+	// Token: 0x06007969 RID: 31081 RVA: 0x002E053A File Offset: 0x002DE73A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool categoryIsOtherShapes(XUiC_CategoryEntry _categoryEntry)
 	{
 		return "autoshapes".EqualsCaseInsensitive(this.categoryFilterType(_categoryEntry)) && "$other".EqualsCaseInsensitive(this.categoryFilterText(_categoryEntry));
 	}
 
-	// Token: 0x06007927 RID: 31015 RVA: 0x002DEC74 File Offset: 0x002DCE74
+	// Token: 0x0600796A RID: 31082 RVA: 0x002E0564 File Offset: 0x002DE764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryFilterType(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -560,7 +560,7 @@ public class XUiC_Creative2Window : XUiController
 		return obj.ToString();
 	}
 
-	// Token: 0x06007928 RID: 31016 RVA: 0x002DECA0 File Offset: 0x002DCEA0
+	// Token: 0x0600796B RID: 31083 RVA: 0x002E0590 File Offset: 0x002DE790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryFilterText(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -573,7 +573,7 @@ public class XUiC_Creative2Window : XUiController
 		return obj.ToString();
 	}
 
-	// Token: 0x06007929 RID: 31017 RVA: 0x002DECCC File Offset: 0x002DCECC
+	// Token: 0x0600796C RID: 31084 RVA: 0x002E05BC File Offset: 0x002DE7BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupSubcategoriesForShapes(Block _shapesHelper)
 	{
@@ -604,127 +604,127 @@ public class XUiC_Creative2Window : XUiController
 		this.subCategoryListShapes.SetCategory(text);
 	}
 
-	// Token: 0x040059C2 RID: 22978
+	// Token: 0x040059F5 RID: 23029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilterTypeAutoshapes = "autoshapes";
 
-	// Token: 0x040059C3 RID: 22979
+	// Token: 0x040059F6 RID: 23030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilterTextAutoshapesOther = "$other";
 
-	// Token: 0x040059C4 RID: 22980
+	// Token: 0x040059F7 RID: 23031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilterTypeItemgroups = "itemgroups";
 
-	// Token: 0x040059C5 RID: 22981
+	// Token: 0x040059F8 RID: 23032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilterTypeBlocktags = "blockfiltertags";
 
-	// Token: 0x040059C6 RID: 22982
+	// Token: 0x040059F9 RID: 23033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilterTypeShapecategory = "shapecategory";
 
-	// Token: 0x040059C7 RID: 22983
+	// Token: 0x040059FA RID: 23034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button simpleClickButton;
 
-	// Token: 0x040059C8 RID: 22984
+	// Token: 0x040059FB RID: 23035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button devBlockButton;
 
-	// Token: 0x040059C9 RID: 22985
+	// Token: 0x040059FC RID: 23036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button favorites;
 
-	// Token: 0x040059CA RID: 22986
+	// Token: 0x040059FD RID: 23037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button hideshapes;
 
-	// Token: 0x040059CB RID: 22987
+	// Token: 0x040059FE RID: 23038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Creative2StackGrid creativeGrid;
 
-	// Token: 0x040059CC RID: 22988
+	// Token: 0x040059FF RID: 23039
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x040059CD RID: 22989
+	// Token: 0x04005A00 RID: 23040
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CategoryList subCategoryListShapes;
 
-	// Token: 0x040059CE RID: 22990
+	// Token: 0x04005A01 RID: 23041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x040059CF RID: 22991
+	// Token: 0x04005A02 RID: 23042
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CategoryEntry currentMainCategory;
 
-	// Token: 0x040059D0 RID: 22992
+	// Token: 0x04005A03 RID: 23043
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CategoryEntry currentSubCategory;
 
-	// Token: 0x040059D1 RID: 22993
+	// Token: 0x04005A04 RID: 23044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOpening;
 
-	// Token: 0x040059D2 RID: 22994
+	// Token: 0x04005A05 RID: 23045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x040059D3 RID: 22995
+	// Token: 0x04005A06 RID: 23046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x040059D4 RID: 22996
+	// Token: 0x04005A07 RID: 23047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool simpleClick;
 
-	// Token: 0x040059D5 RID: 22997
+	// Token: 0x04005A08 RID: 23048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool allowDevBlocks;
 
-	// Token: 0x040059D6 RID: 22998
+	// Token: 0x04005A09 RID: 23049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showDevBlocks;
 
-	// Token: 0x040059D7 RID: 22999
+	// Token: 0x04005A0A RID: 23050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showFavorites;
 
-	// Token: 0x040059D8 RID: 23000
+	// Token: 0x04005A0B RID: 23051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hideShapes;
 
-	// Token: 0x040059D9 RID: 23001
+	// Token: 0x04005A0C RID: 23052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool RefreshList;
 
-	// Token: 0x040059DA RID: 23002
+	// Token: 0x04005A0D RID: 23053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StringBuilder headerNameBuilder = new StringBuilder();
 
-	// Token: 0x040059DB RID: 23003
+	// Token: 0x04005A0E RID: 23054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filterCrumbs;
 
-	// Token: 0x040059DC RID: 23004
+	// Token: 0x04005A0F RID: 23055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ItemClass.FilterItem[] currentFilterExcludeFuncs = new ItemClass.FilterItem[3];
 
-	// Token: 0x040059DD RID: 23005
+	// Token: 0x04005A10 RID: 23056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ItemClass> filteredItems = new List<ItemClass>();
 
-	// Token: 0x040059DE RID: 23006
+	// Token: 0x04005A11 RID: 23057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ItemStack> itemStacks = new List<ItemStack>();
 
-	// Token: 0x040059DF RID: 23007
+	// Token: 0x04005A12 RID: 23058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumCreativeMode currentCreativeMode = EnumCreativeMode.Player;
 
-	// Token: 0x040059E0 RID: 23008
+	// Token: 0x04005A13 RID: 23059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<Block> otherShapeBlocks = new List<Block>();
 }

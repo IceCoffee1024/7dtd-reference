@@ -1,45 +1,45 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000979 RID: 2425
+// Token: 0x02000983 RID: 2435
 [Preserve]
 public class BaseQuestCriteria
 {
-	// Token: 0x0600466E RID: 18030 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004691 RID: 18065 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void HandleVariables()
 	{
 	}
 
-	// Token: 0x0600466F RID: 18031 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06004692 RID: 18066 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool CheckForQuestGiver(EntityNPC entity)
 	{
 		return true;
 	}
 
-	// Token: 0x06004670 RID: 18032 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06004693 RID: 18067 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool CheckForPlayer(EntityPlayer player)
 	{
 		return true;
 	}
 
-	// Token: 0x040038E4 RID: 14564
+	// Token: 0x04003904 RID: 14596
 	public string ID;
 
-	// Token: 0x040038E5 RID: 14565
+	// Token: 0x04003905 RID: 14597
 	public string Value;
 
-	// Token: 0x040038E6 RID: 14566
+	// Token: 0x04003906 RID: 14598
 	public QuestClass OwnerQuestClass;
 
-	// Token: 0x040038E7 RID: 14567
+	// Token: 0x04003907 RID: 14599
 	public BaseQuestCriteria.CriteriaTypes CriteriaType;
 
-	// Token: 0x0200097A RID: 2426
+	// Token: 0x02000984 RID: 2436
 	public enum CriteriaTypes
 	{
-		// Token: 0x040038E9 RID: 14569
+		// Token: 0x04003909 RID: 14601
 		QuestGiver,
-		// Token: 0x040038EA RID: 14570
+		// Token: 0x0400390A RID: 14602
 		Player
 	}
 }

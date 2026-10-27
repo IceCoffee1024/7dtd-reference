@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018EE RID: 6382
+	// Token: 0x0200191F RID: 6431
 	public class Marker : PrefabVolumeAbs<Marker>
 	{
-		// Token: 0x170018B5 RID: 6325
-		// (get) Token: 0x0600C4F3 RID: 50419 RVA: 0x0048819A File Offset: 0x0048639A
+		// Token: 0x170018FD RID: 6397
+		// (get) Token: 0x0600C607 RID: 50695 RVA: 0x0048BB46 File Offset: 0x00489D46
 		public bool PartDirty
 		{
 			get
@@ -18,9 +18,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018B6 RID: 6326
-		// (get) Token: 0x0600C4F4 RID: 50420 RVA: 0x004881A2 File Offset: 0x004863A2
-		// (set) Token: 0x0600C4F5 RID: 50421 RVA: 0x004881AA File Offset: 0x004863AA
+		// Token: 0x170018FE RID: 6398
+		// (get) Token: 0x0600C608 RID: 50696 RVA: 0x0048BB4E File Offset: 0x00489D4E
+		// (set) Token: 0x0600C609 RID: 50697 RVA: 0x0048BB56 File Offset: 0x00489D56
 		public string GroupName
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,8 +39,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018B7 RID: 6327
-		// (get) Token: 0x0600C4F6 RID: 50422 RVA: 0x004881D4 File Offset: 0x004863D4
+		// Token: 0x170018FF RID: 6399
+		// (get) Token: 0x0600C60A RID: 50698 RVA: 0x0048BB80 File Offset: 0x00489D80
 		public Color GroupColor
 		{
 			get
@@ -54,8 +54,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018B8 RID: 6328
-		// (get) Token: 0x0600C4F7 RID: 50423 RVA: 0x00488258 File Offset: 0x00486458
+		// Token: 0x17001900 RID: 6400
+		// (get) Token: 0x0600C60B RID: 50699 RVA: 0x0048BC04 File Offset: 0x00489E04
 		public int GroupId
 		{
 			get
@@ -68,9 +68,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018B9 RID: 6329
-		// (get) Token: 0x0600C4F8 RID: 50424 RVA: 0x004878FD File Offset: 0x00485AFD
-		// (set) Token: 0x0600C4F9 RID: 50425 RVA: 0x00487905 File Offset: 0x00485B05
+		// Token: 0x17001901 RID: 6401
+		// (get) Token: 0x0600C60C RID: 50700 RVA: 0x0048B2A9 File Offset: 0x004894A9
+		// (set) Token: 0x0600C60D RID: 50701 RVA: 0x0048B2B1 File Offset: 0x004894B1
 		public override Vector3i startPos
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,9 +84,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018BA RID: 6330
-		// (get) Token: 0x0600C4FA RID: 50426 RVA: 0x0048790E File Offset: 0x00485B0E
-		// (set) Token: 0x0600C4FB RID: 50427 RVA: 0x0048827A File Offset: 0x0048647A
+		// Token: 0x17001902 RID: 6402
+		// (get) Token: 0x0600C60E RID: 50702 RVA: 0x0048B2BA File Offset: 0x004894BA
+		// (set) Token: 0x0600C60F RID: 50703 RVA: 0x0048BC26 File Offset: 0x00489E26
 		public override Vector3i size
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,8 +104,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018BB RID: 6331
-		// (get) Token: 0x0600C4FC RID: 50428 RVA: 0x000809CD File Offset: 0x0007EBCD
+		// Token: 0x17001903 RID: 6403
+		// (get) Token: 0x0600C610 RID: 50704 RVA: 0x00080BF2 File Offset: 0x0007EDF2
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -114,8 +114,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018BC RID: 6332
-		// (get) Token: 0x0600C4FD RID: 50429 RVA: 0x00488298 File Offset: 0x00486498
+		// Token: 0x17001904 RID: 6404
+		// (get) Token: 0x0600C611 RID: 50705 RVA: 0x0048BC44 File Offset: 0x00489E44
 		public override int SerializedSize
 		{
 			get
@@ -128,9 +128,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018BD RID: 6333
-		// (get) Token: 0x0600C4FE RID: 50430 RVA: 0x00488344 File Offset: 0x00486544
-		// (set) Token: 0x0600C4FF RID: 50431 RVA: 0x0048834C File Offset: 0x0048654C
+		// Token: 0x17001905 RID: 6405
+		// (get) Token: 0x0600C612 RID: 50706 RVA: 0x0048BCF0 File Offset: 0x00489EF0
+		// (set) Token: 0x0600C613 RID: 50707 RVA: 0x0048BCF8 File Offset: 0x00489EF8
 		public Marker.MarkerTypes MarkerType
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -148,9 +148,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018BE RID: 6334
-		// (get) Token: 0x0600C500 RID: 50432 RVA: 0x00488365 File Offset: 0x00486565
-		// (set) Token: 0x0600C501 RID: 50433 RVA: 0x0048836D File Offset: 0x0048656D
+		// Token: 0x17001906 RID: 6406
+		// (get) Token: 0x0600C614 RID: 50708 RVA: 0x0048BD11 File Offset: 0x00489F11
+		// (set) Token: 0x0600C615 RID: 50709 RVA: 0x0048BD19 File Offset: 0x00489F19
 		public FastTags<TagGroup.Poi> Tags
 		{
 			get
@@ -163,9 +163,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018BF RID: 6335
-		// (get) Token: 0x0600C502 RID: 50434 RVA: 0x00488376 File Offset: 0x00486576
-		// (set) Token: 0x0600C503 RID: 50435 RVA: 0x0048837E File Offset: 0x0048657E
+		// Token: 0x17001907 RID: 6407
+		// (get) Token: 0x0600C616 RID: 50710 RVA: 0x0048BD22 File Offset: 0x00489F22
+		// (set) Token: 0x0600C617 RID: 50711 RVA: 0x0048BD2A File Offset: 0x00489F2A
 		public string PartToSpawn
 		{
 			get
@@ -182,9 +182,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018C0 RID: 6336
-		// (get) Token: 0x0600C504 RID: 50436 RVA: 0x0048839C File Offset: 0x0048659C
-		// (set) Token: 0x0600C505 RID: 50437 RVA: 0x004883A4 File Offset: 0x004865A4
+		// Token: 0x17001908 RID: 6408
+		// (get) Token: 0x0600C618 RID: 50712 RVA: 0x0048BD48 File Offset: 0x00489F48
+		// (set) Token: 0x0600C619 RID: 50713 RVA: 0x0048BD50 File Offset: 0x00489F50
 		public byte Rotations
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -202,9 +202,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018C1 RID: 6337
-		// (get) Token: 0x0600C506 RID: 50438 RVA: 0x004883BD File Offset: 0x004865BD
-		// (set) Token: 0x0600C507 RID: 50439 RVA: 0x004883C5 File Offset: 0x004865C5
+		// Token: 0x17001909 RID: 6409
+		// (get) Token: 0x0600C61A RID: 50714 RVA: 0x0048BD69 File Offset: 0x00489F69
+		// (set) Token: 0x0600C61B RID: 50715 RVA: 0x0048BD71 File Offset: 0x00489F71
 		public float PartChanceToSpawn
 		{
 			get
@@ -221,7 +221,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C508 RID: 50440 RVA: 0x004883E4 File Offset: 0x004865E4
+		// Token: 0x0600C61C RID: 50716 RVA: 0x0048BD90 File Offset: 0x00489F90
 		public override void Reset()
 		{
 			base.Reset();
@@ -236,7 +236,7 @@ namespace PrefabVolumes
 			this.partDirty = false;
 		}
 
-		// Token: 0x0600C509 RID: 50441 RVA: 0x00488448 File Offset: 0x00486648
+		// Token: 0x0600C61D RID: 50717 RVA: 0x0048BDF4 File Offset: 0x00489FF4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void CopyValues(PrefabVolumeAbs<Marker> _target, bool _nonBasicOnly = false)
 		{
@@ -253,7 +253,7 @@ namespace PrefabVolumes
 			marker.PartChanceToSpawn = this.PartChanceToSpawn;
 		}
 
-		// Token: 0x0600C50A RID: 50442 RVA: 0x004884B0 File Offset: 0x004866B0
+		// Token: 0x0600C61E RID: 50718 RVA: 0x0048BE5C File Offset: 0x0048A05C
 		public override void Read(PooledBinaryReader _br)
 		{
 			base.Read(_br);
@@ -265,7 +265,7 @@ namespace PrefabVolumes
 			this.PartChanceToSpawn = _br.ReadSingle();
 		}
 
-		// Token: 0x0600C50B RID: 50443 RVA: 0x00488514 File Offset: 0x00486714
+		// Token: 0x0600C61F RID: 50719 RVA: 0x0048BEC0 File Offset: 0x0048A0C0
 		public override void Write(PooledBinaryWriter _bw)
 		{
 			base.Write(_bw);
@@ -277,43 +277,43 @@ namespace PrefabVolumes
 			_bw.Write(this.PartChanceToSpawn);
 		}
 
-		// Token: 0x040094C7 RID: 38087
+		// Token: 0x040095B0 RID: 38320
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Marker.MarkerTypes markerType;
 
-		// Token: 0x040094C8 RID: 38088
+		// Token: 0x040095B1 RID: 38321
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Poi> tags;
 
-		// Token: 0x040094C9 RID: 38089
+		// Token: 0x040095B2 RID: 38322
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int groupId = -1;
 
-		// Token: 0x040094CA RID: 38090
+		// Token: 0x040095B3 RID: 38323
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string groupName;
 
-		// Token: 0x040094CB RID: 38091
+		// Token: 0x040095B4 RID: 38324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color color;
 
-		// Token: 0x040094CC RID: 38092
+		// Token: 0x040095B5 RID: 38325
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string partToSpawn;
 
-		// Token: 0x040094CD RID: 38093
+		// Token: 0x040095B6 RID: 38326
 		[PublicizedFrom(EAccessModifier.Private)]
 		public byte rotations;
 
-		// Token: 0x040094CE RID: 38094
+		// Token: 0x040095B7 RID: 38327
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float partChanceToSpawn = 1f;
 
-		// Token: 0x040094CF RID: 38095
+		// Token: 0x040095B8 RID: 38328
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool partDirty = true;
 
-		// Token: 0x040094D0 RID: 38096
+		// Token: 0x040095B9 RID: 38329
 		public static readonly List<Vector3i> MarkerSizes = new List<Vector3i>
 		{
 			Vector3i.one,
@@ -323,33 +323,33 @@ namespace PrefabVolumes
 			new Vector3i(100, 0, 100)
 		};
 
-		// Token: 0x020018EF RID: 6383
+		// Token: 0x02001920 RID: 6432
 		public enum MarkerTypes : byte
 		{
-			// Token: 0x040094D2 RID: 38098
+			// Token: 0x040095BB RID: 38331
 			None,
-			// Token: 0x040094D3 RID: 38099
+			// Token: 0x040095BC RID: 38332
 			POISpawn,
-			// Token: 0x040094D4 RID: 38100
+			// Token: 0x040095BD RID: 38333
 			RoadExit,
-			// Token: 0x040094D5 RID: 38101
+			// Token: 0x040095BE RID: 38334
 			PartSpawn
 		}
 
-		// Token: 0x020018F0 RID: 6384
+		// Token: 0x02001921 RID: 6433
 		public enum MarkerSize : byte
 		{
-			// Token: 0x040094D7 RID: 38103
+			// Token: 0x040095C0 RID: 38336
 			One,
-			// Token: 0x040094D8 RID: 38104
+			// Token: 0x040095C1 RID: 38337
 			ExtraSmall,
-			// Token: 0x040094D9 RID: 38105
+			// Token: 0x040095C2 RID: 38338
 			Small,
-			// Token: 0x040094DA RID: 38106
+			// Token: 0x040095C3 RID: 38339
 			Medium,
-			// Token: 0x040094DB RID: 38107
+			// Token: 0x040095C4 RID: 38340
 			Large,
-			// Token: 0x040094DC RID: 38108
+			// Token: 0x040095C5 RID: 38341
 			Custom
 		}
 	}

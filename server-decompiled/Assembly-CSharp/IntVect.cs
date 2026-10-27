@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001443 RID: 5187
+// Token: 0x02001455 RID: 5205
 public struct IntVect
 {
-	// Token: 0x0600A2B3 RID: 41651 RVA: 0x003D0A63 File Offset: 0x003CEC63
+	// Token: 0x0600A30B RID: 41739 RVA: 0x003D2E67 File Offset: 0x003D1067
 	public IntVect(int x, int y, int z)
 	{
 		this.m_X = x;
@@ -11,8 +11,8 @@ public struct IntVect
 		this.m_Z = z;
 	}
 
-	// Token: 0x1700133F RID: 4927
-	// (get) Token: 0x0600A2B4 RID: 41652 RVA: 0x003D0A7A File Offset: 0x003CEC7A
+	// Token: 0x1700134B RID: 4939
+	// (get) Token: 0x0600A30C RID: 41740 RVA: 0x003D2E7E File Offset: 0x003D107E
 	public int X
 	{
 		get
@@ -21,8 +21,8 @@ public struct IntVect
 		}
 	}
 
-	// Token: 0x17001340 RID: 4928
-	// (get) Token: 0x0600A2B5 RID: 41653 RVA: 0x003D0A82 File Offset: 0x003CEC82
+	// Token: 0x1700134C RID: 4940
+	// (get) Token: 0x0600A30D RID: 41741 RVA: 0x003D2E86 File Offset: 0x003D1086
 	public int Y
 	{
 		get
@@ -31,8 +31,8 @@ public struct IntVect
 		}
 	}
 
-	// Token: 0x17001341 RID: 4929
-	// (get) Token: 0x0600A2B6 RID: 41654 RVA: 0x003D0A8A File Offset: 0x003CEC8A
+	// Token: 0x1700134D RID: 4941
+	// (get) Token: 0x0600A30E RID: 41742 RVA: 0x003D2E8E File Offset: 0x003D108E
 	public int Z
 	{
 		get
@@ -41,40 +41,40 @@ public struct IntVect
 		}
 	}
 
-	// Token: 0x0600A2B7 RID: 41655 RVA: 0x003D0A94 File Offset: 0x003CEC94
+	// Token: 0x0600A30F RID: 41743 RVA: 0x003D2E98 File Offset: 0x003D1098
 	public override bool Equals(object obj)
 	{
 		IntVect intVect = (IntVect)obj;
 		return intVect.X == this.m_X && intVect.Y == this.m_Y && intVect.Z == this.m_Z;
 	}
 
-	// Token: 0x0600A2B8 RID: 41656 RVA: 0x003D0AD7 File Offset: 0x003CECD7
+	// Token: 0x0600A310 RID: 41744 RVA: 0x003D2EDB File Offset: 0x003D10DB
 	public override int GetHashCode()
 	{
 		return this.m_X * 8976890 + this.m_Y * 981131 + this.m_Z;
 	}
 
-	// Token: 0x0600A2B9 RID: 41657 RVA: 0x003D0AF9 File Offset: 0x003CECF9
+	// Token: 0x0600A311 RID: 41745 RVA: 0x003D2EFD File Offset: 0x003D10FD
 	public static bool operator ==(IntVect one, IntVect other)
 	{
 		return one.X == other.X && one.Y == other.Y && one.Z == other.Z;
 	}
 
-	// Token: 0x0600A2BA RID: 41658 RVA: 0x003D0B2D File Offset: 0x003CED2D
+	// Token: 0x0600A312 RID: 41746 RVA: 0x003D2F31 File Offset: 0x003D1131
 	public static bool operator !=(IntVect one, IntVect other)
 	{
 		return !(one == other);
 	}
 
-	// Token: 0x04007A34 RID: 31284
+	// Token: 0x04007A75 RID: 31349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_X;
 
-	// Token: 0x04007A35 RID: 31285
+	// Token: 0x04007A76 RID: 31350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_Y;
 
-	// Token: 0x04007A36 RID: 31286
+	// Token: 0x04007A77 RID: 31351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_Z;
 }

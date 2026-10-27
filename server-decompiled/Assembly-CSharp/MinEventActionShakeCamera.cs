@@ -5,11 +5,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006EB RID: 1771
+// Token: 0x020006F3 RID: 1779
 [Preserve]
 public class MinEventActionShakeCamera : MinEventActionTargetedBase
 {
-	// Token: 0x060036AF RID: 13999 RVA: 0x0016873C File Offset: 0x0016693C
+	// Token: 0x060036C6 RID: 14022 RVA: 0x00169524 File Offset: 0x00167724
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null || GameManager.Instance == null)
@@ -49,7 +49,7 @@ public class MinEventActionShakeCamera : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036B0 RID: 14000 RVA: 0x001688F8 File Offset: 0x00166AF8
+	// Token: 0x060036C7 RID: 14023 RVA: 0x001696E0 File Offset: 0x001678E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator stopShaking(EntityPlayerLocal target, float time)
 	{
@@ -68,13 +68,13 @@ public class MinEventActionShakeCamera : MinEventActionTargetedBase
 		yield break;
 	}
 
-	// Token: 0x060036B1 RID: 14001 RVA: 0x0016890E File Offset: 0x00166B0E
+	// Token: 0x060036C8 RID: 14024 RVA: 0x001696F6 File Offset: 0x001678F6
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params);
 	}
 
-	// Token: 0x060036B2 RID: 14002 RVA: 0x00168918 File Offset: 0x00166B18
+	// Token: 0x060036C9 RID: 14025 RVA: 0x00169700 File Offset: 0x00167900
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -118,27 +118,27 @@ public class MinEventActionShakeCamera : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BF5 RID: 11253
+	// Token: 0x04002C11 RID: 11281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float shakeSpeed;
 
-	// Token: 0x04002BF6 RID: 11254
+	// Token: 0x04002C12 RID: 11282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float shakeAmplitude;
 
-	// Token: 0x04002BF7 RID: 11255
+	// Token: 0x04002C13 RID: 11283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float shakeTime = 1f;
 
-	// Token: 0x04002BF8 RID: 11256
+	// Token: 0x04002C14 RID: 11284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarNameShakeSpeed;
 
-	// Token: 0x04002BF9 RID: 11257
+	// Token: 0x04002C15 RID: 11285
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarNameShakeAmplitude;
 
-	// Token: 0x04002BFA RID: 11258
+	// Token: 0x04002C16 RID: 11286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarNameShakeTime;
 }

@@ -14,15 +14,15 @@ using Webserver.WebAPI;
 
 namespace Webserver
 {
-	// Token: 0x02001AF0 RID: 6896
+	// Token: 0x02001B21 RID: 6945
 	public class Web : IConsoleServer
 	{
 		// Token: 0x1400011A RID: 282
-		// (add) Token: 0x0600CFC7 RID: 53191 RVA: 0x004B6CF4 File Offset: 0x004B4EF4
-		// (remove) Token: 0x0600CFC8 RID: 53192 RVA: 0x004B6D28 File Offset: 0x004B4F28
+		// (add) Token: 0x0600D0DB RID: 53467 RVA: 0x004BA7F0 File Offset: 0x004B89F0
+		// (remove) Token: 0x0600D0DC RID: 53468 RVA: 0x004BA824 File Offset: 0x004B8A24
 		public static event Action<Web> ServerInitialized;
 
-		// Token: 0x0600CFC9 RID: 53193 RVA: 0x004B6D5C File Offset: 0x004B4F5C
+		// Token: 0x0600D0DD RID: 53469 RVA: 0x004BA858 File Offset: 0x004B8A58
 		public Web()
 		{
 			try
@@ -72,7 +72,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFCA RID: 53194 RVA: 0x004B6F28 File Offset: 0x004B5128
+		// Token: 0x0600D0DE RID: 53470 RVA: 0x004BAA24 File Offset: 0x004B8C24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RegisterDefaultHandlers()
 		{
@@ -89,7 +89,7 @@ namespace Webserver
 			this.RegisterPathHandler("/api/", new ApiHandler());
 		}
 
-		// Token: 0x0600CFCB RID: 53195 RVA: 0x004B6FF4 File Offset: 0x004B51F4
+		// Token: 0x0600D0DF RID: 53471 RVA: 0x004BAAF0 File Offset: 0x004B8CF0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string DetectWebserverFolder()
 		{
@@ -106,7 +106,7 @@ namespace Webserver
 			return text;
 		}
 
-		// Token: 0x0600CFCC RID: 53196 RVA: 0x004B7080 File Offset: 0x004B5280
+		// Token: 0x0600D0E0 RID: 53472 RVA: 0x004BAB7C File Offset: 0x004B8D7C
 		public void RegisterPathHandler(string _urlBasePath, AbsHandler _handler)
 		{
 			using (List<AbsHandler>.Enumerator enumerator = this.handlers.GetEnumerator())
@@ -124,7 +124,7 @@ namespace Webserver
 			_handler.SetBasePathAndParent(this, _urlBasePath);
 		}
 
-		// Token: 0x0600CFCD RID: 53197 RVA: 0x004B7104 File Offset: 0x004B5304
+		// Token: 0x0600D0E1 RID: 53473 RVA: 0x004BAC00 File Offset: 0x004B8E00
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RegisterWebMods(bool _useStaticCache)
 		{
@@ -150,7 +150,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFCE RID: 53198 RVA: 0x004B71C0 File Offset: 0x004B53C0
+		// Token: 0x0600D0E2 RID: 53474 RVA: 0x004BACBC File Offset: 0x004B8EBC
 		public void Disconnect()
 		{
 			if (this.shutdown)
@@ -173,18 +173,18 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFCF RID: 53199 RVA: 0x004B7258 File Offset: 0x004B5458
+		// Token: 0x0600D0E3 RID: 53475 RVA: 0x004BAD54 File Offset: 0x004B8F54
 		public void SendLine(string _line)
 		{
 			this.ConnectionHandler.SendLine(_line);
 		}
 
-		// Token: 0x0600CFD0 RID: 53200 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D0E4 RID: 53476 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 		{
 		}
 
-		// Token: 0x0600CFD1 RID: 53201 RVA: 0x004B7268 File Offset: 0x004B5468
+		// Token: 0x0600D0E5 RID: 53477 RVA: 0x004BAD64 File Offset: 0x004B8F64
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HandleRequest(IAsyncResult _result)
 		{
@@ -269,7 +269,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFD2 RID: 53202 RVA: 0x004B7468 File Offset: 0x004B5668
+		// Token: 0x0600D0E6 RID: 53478 RVA: 0x004BAF64 File Offset: 0x004B9164
 		public void ApplyPathHandler(RequestContext _context)
 		{
 			int i = this.handlers.Count - 1;
@@ -295,7 +295,7 @@ namespace Webserver
 			_context.Response.StatusCode = 404;
 		}
 
-		// Token: 0x0600CFD3 RID: 53203 RVA: 0x004B74E8 File Offset: 0x004B56E8
+		// Token: 0x0600D0E7 RID: 53479 RVA: 0x004BAFE4 File Offset: 0x004B91E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int DoAuthentication(SpaceWizards.HttpListener.HttpListenerRequest _req, out WebConnection _con)
 		{
@@ -337,51 +337,51 @@ namespace Webserver
 			return 2000;
 		}
 
-		// Token: 0x04009D2D RID: 40237
+		// Token: 0x04009E16 RID: 40470
 		public const string DataPath = "Data/Web";
 
-		// Token: 0x04009D2E RID: 40238
+		// Token: 0x04009E17 RID: 40471
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string indexPageUrl = "/app";
 
-		// Token: 0x04009D2F RID: 40239
+		// Token: 0x04009E18 RID: 40472
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<AbsHandler> handlers = new List<AbsHandler>();
 
-		// Token: 0x04009D30 RID: 40240
+		// Token: 0x04009E19 RID: 40473
 		public readonly List<WebMod> WebMods = new List<WebMod>();
 
-		// Token: 0x04009D31 RID: 40241
+		// Token: 0x04009E1A RID: 40474
 		public readonly ConnectionHandler ConnectionHandler;
 
-		// Token: 0x04009D32 RID: 40242
+		// Token: 0x04009E1B RID: 40475
 		public readonly OpenApiHelpers OpenApiHelpers;
 
-		// Token: 0x04009D33 RID: 40243
+		// Token: 0x04009E1C RID: 40476
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SpaceWizards.HttpListener.HttpListener listener = new SpaceWizards.HttpListener.HttpListener();
 
-		// Token: 0x04009D34 RID: 40244
+		// Token: 0x04009E1D RID: 40477
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Version httpProtocolVersion = new Version(1, 1);
 
-		// Token: 0x04009D35 RID: 40245
+		// Token: 0x04009E1E RID: 40478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AsyncCallback handleRequestDelegate;
 
-		// Token: 0x04009D36 RID: 40246
+		// Token: 0x04009E1F RID: 40479
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shutdown;
 
-		// Token: 0x04009D37 RID: 40247
+		// Token: 0x04009E20 RID: 40480
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler authSampler = CustomSampler.Create("Auth", false);
 
-		// Token: 0x04009D38 RID: 40248
+		// Token: 0x04009E21 RID: 40481
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler cookieSampler = CustomSampler.Create("ConCookie", false);
 
-		// Token: 0x04009D39 RID: 40249
+		// Token: 0x04009E22 RID: 40482
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler handlerSampler = CustomSampler.Create("Handler", false);
 	}

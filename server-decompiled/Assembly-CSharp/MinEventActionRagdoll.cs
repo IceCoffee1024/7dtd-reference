@@ -4,11 +4,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006DE RID: 1758
+// Token: 0x020006E6 RID: 1766
 [Preserve]
 public class MinEventActionRagdoll : MinEventActionTargetedBase
 {
-	// Token: 0x06003680 RID: 13952 RVA: 0x00166E88 File Offset: 0x00165088
+	// Token: 0x06003697 RID: 13975 RVA: 0x00167C70 File Offset: 0x00165E70
 	public override void Execute(MinEventParams _params)
 	{
 		DamageResponse damageResponse = DamageResponse.New(false);
@@ -52,7 +52,7 @@ public class MinEventActionRagdoll : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003681 RID: 13953 RVA: 0x0016700C File Offset: 0x0016520C
+	// Token: 0x06003698 RID: 13976 RVA: 0x00167DF4 File Offset: 0x00165FF4
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -91,27 +91,27 @@ public class MinEventActionRagdoll : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BC7 RID: 11207
+	// Token: 0x04002BE3 RID: 11235
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float duration = 2.5f;
 
-	// Token: 0x04002BC8 RID: 11208
+	// Token: 0x04002BE4 RID: 11236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002BC9 RID: 11209
+	// Token: 0x04002BE5 RID: 11237
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName = string.Empty;
 
-	// Token: 0x04002BCA RID: 11210
+	// Token: 0x04002BE6 RID: 11238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float force;
 
-	// Token: 0x04002BCB RID: 11211
+	// Token: 0x04002BE7 RID: 11239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float scaleY;
 
-	// Token: 0x04002BCC RID: 11212
+	// Token: 0x04002BE8 RID: 11240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float massScale;
 }

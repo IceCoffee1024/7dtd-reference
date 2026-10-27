@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001375 RID: 4981
+// Token: 0x02001387 RID: 4999
 public class ParticleChildSpawner : MonoBehaviour
 {
-	// Token: 0x06009CCE RID: 40142 RVA: 0x003B3CD8 File Offset: 0x003B1ED8
+	// Token: 0x06009D26 RID: 40230 RVA: 0x003B60DC File Offset: 0x003B42DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -58,7 +58,7 @@ public class ParticleChildSpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009CCF RID: 40143 RVA: 0x003B3E80 File Offset: 0x003B2080
+	// Token: 0x06009D27 RID: 40231 RVA: 0x003B6284 File Offset: 0x003B4484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -72,35 +72,35 @@ public class ParticleChildSpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400765F RID: 30303
+	// Token: 0x040076A0 RID: 30368
 	[Tooltip("One or more tags separated by commas.\nMatches if any 'Tag' is present")]
 	public string tags;
 
-	// Token: 0x04007660 RID: 30304
+	// Token: 0x040076A1 RID: 30369
 	[Tooltip("Check to require all 'Tags' to be present to match")]
 	public bool HasAllTags;
 
-	// Token: 0x04007661 RID: 30305
+	// Token: 0x040076A2 RID: 30370
 	[Tooltip("One or more tags separated by commas.\nFails to match if any 'Not Tag' is present")]
 	public string notTags;
 
-	// Token: 0x04007662 RID: 30306
+	// Token: 0x040076A3 RID: 30371
 	public ParticleChildSpawner.Data[] particles;
 
-	// Token: 0x02001376 RID: 4982
+	// Token: 0x02001388 RID: 5000
 	[Serializable]
 	public struct Data
 	{
-		// Token: 0x04007663 RID: 30307
+		// Token: 0x040076A4 RID: 30372
 		public string particleName;
 
-		// Token: 0x04007664 RID: 30308
+		// Token: 0x040076A5 RID: 30373
 		public string boneName;
 
-		// Token: 0x04007665 RID: 30309
+		// Token: 0x040076A6 RID: 30374
 		public Vector2 mass;
 
-		// Token: 0x04007666 RID: 30310
+		// Token: 0x040076A7 RID: 30375
 		public GameObject spawnedObj;
 	}
 }

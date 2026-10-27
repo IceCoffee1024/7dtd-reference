@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019DD RID: 6621
+	// Token: 0x02001A0E RID: 6670
 	[Preserve]
 	public class ActionResetSleepers : BaseAction
 	{
-		// Token: 0x0600CAA9 RID: 51881 RVA: 0x004A2AC2 File Offset: 0x004A0CC2
+		// Token: 0x0600CBBD RID: 52157 RVA: 0x004A65C2 File Offset: 0x004A47C2
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			GameManager.Instance.World.ResetSleeperVolumes();
@@ -15,7 +15,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CAAA RID: 51882 RVA: 0x004A2ADE File Offset: 0x004A0CDE
+		// Token: 0x0600CBBE RID: 52158 RVA: 0x004A65DE File Offset: 0x004A47DE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C5C RID: 7260
+	// Token: 0x02001C8D RID: 7309
 	public class AchievementManager : IAchievementManager
 	{
-		// Token: 0x0600D77D RID: 55165 RVA: 0x004D5514 File Offset: 0x004D3714
+		// Token: 0x0600D891 RID: 55441 RVA: 0x004D903C File Offset: 0x004D723C
 		[PublicizedFrom(EAccessModifier.Private)]
 		static AchievementManager()
 		{
@@ -24,7 +24,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D77E RID: 55166 RVA: 0x004D5550 File Offset: 0x004D3750
+		// Token: 0x0600D892 RID: 55442 RVA: 0x004D9078 File Offset: 0x004D7278
 		public void Init(IPlatform _owner)
 		{
 			_owner.User.UserLoggedIn += delegate(IPlatform _sender)
@@ -33,7 +33,7 @@ namespace Platform.XBL
 			};
 		}
 
-		// Token: 0x0600D77F RID: 55167 RVA: 0x004D558D File Offset: 0x004D378D
+		// Token: 0x0600D893 RID: 55443 RVA: 0x004D90B5 File Offset: 0x004D72B5
 		public void ShowAchievementsUi()
 		{
 			SDK.XGameUiShowAchievementsAsync(this.xblUser.UserHandle, 1745806870U, delegate(int _hresult)
@@ -42,13 +42,13 @@ namespace Platform.XBL
 			});
 		}
 
-		// Token: 0x0600D780 RID: 55168 RVA: 0x004D55C4 File Offset: 0x004D37C4
+		// Token: 0x0600D894 RID: 55444 RVA: 0x004D90EC File Offset: 0x004D72EC
 		public bool IsAchievementStatSupported(EnumAchievementDataStat _stat)
 		{
 			return _stat != EnumAchievementDataStat.HighestPlayerLevel;
 		}
 
-		// Token: 0x0600D781 RID: 55169 RVA: 0x004D55E0 File Offset: 0x004D37E0
+		// Token: 0x0600D895 RID: 55445 RVA: 0x004D9108 File Offset: 0x004D7308
 		public void SetAchievementStat(EnumAchievementDataStat _stat, int _value)
 		{
 			if (!_stat.IsSupported())
@@ -89,7 +89,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D782 RID: 55170 RVA: 0x004D574C File Offset: 0x004D394C
+		// Token: 0x0600D896 RID: 55446 RVA: 0x004D9274 File Offset: 0x004D7474
 		public void SetAchievementStat(EnumAchievementDataStat _stat, float _value)
 		{
 			if (!_stat.IsSupported())
@@ -130,12 +130,12 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D783 RID: 55171 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D897 RID: 55447 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ResetStats(bool _andAchievements)
 		{
 		}
 
-		// Token: 0x0600D784 RID: 55172 RVA: 0x004D58BC File Offset: 0x004D3ABC
+		// Token: 0x0600D898 RID: 55448 RVA: 0x004D93E4 File Offset: 0x004D75E4
 		public void UnlockAllAchievements()
 		{
 			for (int i = 0; i < 19; i++)
@@ -158,48 +158,48 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D785 RID: 55173 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D899 RID: 55449 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}
 
-		// Token: 0x0400A3DE RID: 41950
+		// Token: 0x0400A4C7 RID: 42183
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int suppressRepeatedNotSentWarningsTime = 30;
 
-		// Token: 0x0400A3DF RID: 41951
+		// Token: 0x0400A4C8 RID: 42184
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User xblUser;
 
-		// Token: 0x0400A3E0 RID: 41952
+		// Token: 0x0400A4C9 RID: 42185
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly AchievementManager.EDebugLevel debug = AchievementManager.EDebugLevel.Off;
 
-		// Token: 0x0400A3E1 RID: 41953
+		// Token: 0x0400A4CA RID: 42186
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EnumAchievementDataStat, AchievementManager.StatCacheEntry> sentStatsCache = new EnumDictionary<EnumAchievementDataStat, AchievementManager.StatCacheEntry>();
 
-		// Token: 0x0400A3E2 RID: 41954
+		// Token: 0x0400A4CB RID: 42187
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastAchievementsDisabledWarningTime;
 
-		// Token: 0x02001C5D RID: 7261
+		// Token: 0x02001C8E RID: 7310
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum EDebugLevel
 		{
-			// Token: 0x0400A3E4 RID: 41956
+			// Token: 0x0400A4CD RID: 42189
 			Off,
-			// Token: 0x0400A3E5 RID: 41957
+			// Token: 0x0400A4CE RID: 42190
 			Normal,
-			// Token: 0x0400A3E6 RID: 41958
+			// Token: 0x0400A4CF RID: 42191
 			Verbose
 		}
 
-		// Token: 0x02001C5E RID: 7262
+		// Token: 0x02001C8F RID: 7311
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly struct StatCacheEntry
 		{
-			// Token: 0x0600D787 RID: 55175 RVA: 0x004D594A File Offset: 0x004D3B4A
+			// Token: 0x0600D89B RID: 55451 RVA: 0x004D9472 File Offset: 0x004D7672
 			public StatCacheEntry(int _iValue, float _fValue, float _lastSendTime)
 			{
 				this.iValue = _iValue;
@@ -207,13 +207,13 @@ namespace Platform.XBL
 				this.lastSendTime = _lastSendTime;
 			}
 
-			// Token: 0x0400A3E7 RID: 41959
+			// Token: 0x0400A4D0 RID: 42192
 			public readonly int iValue;
 
-			// Token: 0x0400A3E8 RID: 41960
+			// Token: 0x0400A4D1 RID: 42193
 			public readonly float fValue;
 
-			// Token: 0x0400A3E9 RID: 41961
+			// Token: 0x0400A4D2 RID: 42194
 			public readonly float lastSendTime;
 		}
 	}

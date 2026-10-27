@@ -5,12 +5,12 @@ using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02001075 RID: 4213
+// Token: 0x02001085 RID: 4229
 [Preserve]
 public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x17000FC6 RID: 4038
-	// (get) Token: 0x060085AE RID: 34222 RVA: 0x003311CF File Offset: 0x0032F3CF
+	// Token: 0x17000FD1 RID: 4049
+	// (get) Token: 0x06008600 RID: 34304 RVA: 0x00332FE3 File Offset: 0x003311E3
 	public ProgressionValue CurrentSkill
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -24,9 +24,9 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x17000FC7 RID: 4039
-	// (get) Token: 0x060085AF RID: 34223 RVA: 0x00331202 File Offset: 0x0032F402
-	// (set) Token: 0x060085B0 RID: 34224 RVA: 0x0033120A File Offset: 0x0032F40A
+	// Token: 0x17000FD2 RID: 4050
+	// (get) Token: 0x06008601 RID: 34305 RVA: 0x00333016 File Offset: 0x00331216
+	// (set) Token: 0x06008602 RID: 34306 RVA: 0x0033301E File Offset: 0x0033121E
 	public int HoveredLevel
 	{
 		get
@@ -43,7 +43,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060085B1 RID: 34225 RVA: 0x00331224 File Offset: 0x0032F424
+	// Token: 0x06008603 RID: 34307 RVA: 0x00333038 File Offset: 0x00331238
 	public override void Init()
 	{
 		base.Init();
@@ -68,7 +68,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060085B2 RID: 34226 RVA: 0x00331344 File Offset: 0x0032F544
+	// Token: 0x06008604 RID: 34308 RVA: 0x00333158 File Offset: 0x00331358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Entry_OnHover(XUiController _sender, bool _isOver)
 	{
@@ -85,7 +85,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		this.HoveredLevel = -1;
 	}
 
-	// Token: 0x060085B3 RID: 34227 RVA: 0x00331384 File Offset: 0x0032F584
+	// Token: 0x06008605 RID: 34309 RVA: 0x00333198 File Offset: 0x00331398
 	public void SkillChanged()
 	{
 		XUiC_Paging xuiC_Paging = this.pager;
@@ -101,7 +101,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085B4 RID: 34228 RVA: 0x003313FC File Offset: 0x0032F5FC
+	// Token: 0x06008606 RID: 34310 RVA: 0x00333210 File Offset: 0x00331410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSkill()
 	{
@@ -123,14 +123,14 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060085B5 RID: 34229 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06008607 RID: 34311 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Pager_OnPageChanged()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085B6 RID: 34230 RVA: 0x003314C4 File Offset: 0x0032F6C4
+	// Token: 0x06008608 RID: 34312 RVA: 0x003332D8 File Offset: 0x003314D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Entry_OnScroll(XUiController _sender, float _delta)
 	{
@@ -156,7 +156,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060085B7 RID: 34231 RVA: 0x003314F1 File Offset: 0x0032F6F1
+	// Token: 0x06008609 RID: 34313 RVA: 0x00333305 File Offset: 0x00331505
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -167,7 +167,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085B8 RID: 34232 RVA: 0x00331518 File Offset: 0x0032F718
+	// Token: 0x0600860A RID: 34314 RVA: 0x0033332C File Offset: 0x0033152C
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -190,7 +190,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		base.Update(_dt);
 	}
 
-	// Token: 0x060085B9 RID: 34233 RVA: 0x00331654 File Offset: 0x0032F854
+	// Token: 0x0600860B RID: 34315 RVA: 0x00333468 File Offset: 0x00331668
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "hidden_entries_with_paging")
@@ -209,7 +209,7 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x060085BA RID: 34234 RVA: 0x003316F0 File Offset: 0x0032F8F0
+	// Token: 0x0600860C RID: 34316 RVA: 0x00333504 File Offset: 0x00331704
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -340,55 +340,55 @@ public class XUiC_SkillPerkInfoWindow : XUiC_InfoWindow
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04006356 RID: 25430
+	// Token: 0x04006394 RID: 25492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList actionItemList;
 
-	// Token: 0x04006357 RID: 25431
+	// Token: 0x04006395 RID: 25493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hiddenEntriesWithPaging = 1;
 
-	// Token: 0x04006358 RID: 25432
+	// Token: 0x04006396 RID: 25494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_SkillPerkLevel> levelEntries = new List<XUiC_SkillPerkLevel>();
 
-	// Token: 0x04006359 RID: 25433
+	// Token: 0x04006397 RID: 25495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x0400635A RID: 25434
+	// Token: 0x04006398 RID: 25496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int skillsPerPage;
 
-	// Token: 0x0400635B RID: 25435
+	// Token: 0x04006399 RID: 25497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hoveredLevel = -1;
 
-	// Token: 0x0400635C RID: 25436
+	// Token: 0x0400639A RID: 25498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat skillLevelFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x0400635D RID: 25437
+	// Token: 0x0400639B RID: 25499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat maxSkillLevelFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x0400635E RID: 25438
+	// Token: 0x0400639C RID: 25500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> buyCostFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString() + " " + Localization.Get("xuiSkillPoints", false, null));
 
-	// Token: 0x0400635F RID: 25439
+	// Token: 0x0400639D RID: 25501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> expCostFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString() + " " + Localization.Get("RewardExp_keyword", false, null));
 
-	// Token: 0x04006360 RID: 25440
+	// Token: 0x0400639E RID: 25502
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeSubtractionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => _s + ": " + _f.ToCultureInvariantString("0.#") + (_b ? "%" : ""));
 
-	// Token: 0x04006361 RID: 25441
+	// Token: 0x0400639F RID: 25503
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeSetValueFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => _s + ": " + _f.ToCultureInvariantString("0.#"));
 
-	// Token: 0x04006362 RID: 25442
+	// Token: 0x040063A0 RID: 25504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StringBuilder effectsStringBuilder = new StringBuilder();
 }

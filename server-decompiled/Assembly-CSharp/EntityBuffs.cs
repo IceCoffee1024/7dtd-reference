@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 using Platform;
 using Twitch;
 
-// Token: 0x0200065E RID: 1630
+// Token: 0x02000665 RID: 1637
 public class EntityBuffs
 {
-	// Token: 0x060034D2 RID: 13522 RVA: 0x0015D948 File Offset: 0x0015BB48
+	// Token: 0x060034E0 RID: 13536 RVA: 0x0015E53C File Offset: 0x0015C73C
 	public EntityBuffs(EntityAlive _parent)
 	{
 		this.parent = _parent;
@@ -17,7 +17,7 @@ public class EntityBuffs
 		this.TrackedCVars = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 	}
 
-	// Token: 0x060034D3 RID: 13523 RVA: 0x0015D9A0 File Offset: 0x0015BBA0
+	// Token: 0x060034E1 RID: 13537 RVA: 0x0015E594 File Offset: 0x0015C794
 	public void Tick()
 	{
 		int num = this.ActiveBuffs.Count;
@@ -85,7 +85,7 @@ public class EntityBuffs
 		this.parent.MinEventContext.Buff = null;
 	}
 
-	// Token: 0x060034D4 RID: 13524 RVA: 0x0015DBB4 File Offset: 0x0015BDB4
+	// Token: 0x060034E2 RID: 13538 RVA: 0x0015E7A8 File Offset: 0x0015C9A8
 	public void ModifyValue(PassiveEffects _effect, ref float _value, ref float _perc_val, FastTags<TagGroup.Global> _tags)
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -99,7 +99,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034D5 RID: 13525 RVA: 0x0015DC08 File Offset: 0x0015BE08
+	// Token: 0x060034E3 RID: 13539 RVA: 0x0015E7FC File Offset: 0x0015C9FC
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSources, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, PassiveEffects _effect, ref float _value, ref float _perc_val, FastTags<TagGroup.Global> _tags)
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -113,7 +113,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034D6 RID: 13526 RVA: 0x0015DC60 File Offset: 0x0015BE60
+	// Token: 0x060034E4 RID: 13540 RVA: 0x0015E854 File Offset: 0x0015CA54
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _params)
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -127,7 +127,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034D7 RID: 13527 RVA: 0x0015DCAA File Offset: 0x0015BEAA
+	// Token: 0x060034E5 RID: 13541 RVA: 0x0015E89E File Offset: 0x0015CA9E
 	public void FireEvent(MinEventTypes _eventType, BuffClass _buffClass, MinEventParams _params)
 	{
 		if (_buffClass != null)
@@ -136,13 +136,13 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034D8 RID: 13528 RVA: 0x0015DCB7 File Offset: 0x0015BEB7
+	// Token: 0x060034E6 RID: 13542 RVA: 0x0015E8AB File Offset: 0x0015CAAB
 	public EntityBuffs.BuffStatus AddBuff(string _name, int _instigatorId = -1, bool _netSync = true, bool _fromElectrical = false, float _buffDuration = -1f)
 	{
 		return this.AddBuff(_name, Vector3i.zero, _instigatorId, _netSync, _fromElectrical, _buffDuration);
 	}
 
-	// Token: 0x060034D9 RID: 13529 RVA: 0x0015DCCC File Offset: 0x0015BECC
+	// Token: 0x060034E7 RID: 13543 RVA: 0x0015E8C0 File Offset: 0x0015CAC0
 	public EntityBuffs.BuffStatus AddBuff(string _name, Vector3i _instigatorPos, int _instigatorId = -1, bool _netSync = true, bool _fromElectrical = false, float _buffDuration = -1f)
 	{
 		int num = -1;
@@ -255,7 +255,7 @@ public class EntityBuffs
 		return EntityBuffs.BuffStatus.Added;
 	}
 
-	// Token: 0x060034DA RID: 13530 RVA: 0x0015DF60 File Offset: 0x0015C160
+	// Token: 0x060034E8 RID: 13544 RVA: 0x0015EB54 File Offset: 0x0015CD54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddBuffNetwork(string _name, float _duration, Vector3i _instigatorPos, int _instigatorId = -1)
 	{
@@ -268,7 +268,7 @@ public class EntityBuffs
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageAddRemoveBuff, false);
 	}
 
-	// Token: 0x060034DB RID: 13531 RVA: 0x0015DFCC File Offset: 0x0015C1CC
+	// Token: 0x060034E9 RID: 13545 RVA: 0x0015EBC0 File Offset: 0x0015CDC0
 	public void RemoveBuff(string _name, int _instigatorId = -1, bool _netSync = true)
 	{
 		BuffClass buff = BuffManager.GetBuff(_name);
@@ -292,7 +292,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034DC RID: 13532 RVA: 0x0015E054 File Offset: 0x0015C254
+	// Token: 0x060034EA RID: 13546 RVA: 0x0015EC48 File Offset: 0x0015CE48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveBuffNetwork(string _name, int _instigatorId)
 	{
@@ -305,7 +305,7 @@ public class EntityBuffs
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageAddRemoveBuff, false);
 	}
 
-	// Token: 0x060034DD RID: 13533 RVA: 0x0015E0C5 File Offset: 0x0015C2C5
+	// Token: 0x060034EB RID: 13547 RVA: 0x0015ECB9 File Offset: 0x0015CEB9
 	public void SetBuff(string _name, bool _isAdd)
 	{
 		if (_isAdd)
@@ -316,14 +316,14 @@ public class EntityBuffs
 		this.RemoveBuff(_name, -1, true);
 	}
 
-	// Token: 0x060034DE RID: 13534 RVA: 0x0015E0E4 File Offset: 0x0015C2E4
+	// Token: 0x060034EC RID: 13548 RVA: 0x0015ECD8 File Offset: 0x0015CED8
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool HasBuff(string _name)
 	{
 		return this.GetBuff(_name) != null;
 	}
 
-	// Token: 0x060034DF RID: 13535 RVA: 0x0015E0F0 File Offset: 0x0015C2F0
+	// Token: 0x060034ED RID: 13549 RVA: 0x0015ECE4 File Offset: 0x0015CEE4
 	public bool HasBuffByTag(FastTags<TagGroup.Global> _tags)
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -337,7 +337,7 @@ public class EntityBuffs
 		return false;
 	}
 
-	// Token: 0x060034E0 RID: 13536 RVA: 0x0015E13C File Offset: 0x0015C33C
+	// Token: 0x060034EE RID: 13550 RVA: 0x0015ED30 File Offset: 0x0015CF30
 	public BuffValue GetBuff(string _buffName)
 	{
 		BuffClass buff = BuffManager.GetBuff(_buffName);
@@ -361,7 +361,7 @@ public class EntityBuffs
 		return null;
 	}
 
-	// Token: 0x060034E1 RID: 13537 RVA: 0x0015E1A0 File Offset: 0x0015C3A0
+	// Token: 0x060034EF RID: 13551 RVA: 0x0015ED94 File Offset: 0x0015CF94
 	public void OnDeath(EntityAlive _entityThatKilledMe, ItemValue _itemThatKilledMe, bool _blockKilledMe, FastTags<TagGroup.Global> _damageTypeTags)
 	{
 		if (_entityThatKilledMe != null)
@@ -446,7 +446,7 @@ public class EntityBuffs
 		this.Tick();
 	}
 
-	// Token: 0x060034E2 RID: 13538 RVA: 0x0015E4B0 File Offset: 0x0015C6B0
+	// Token: 0x060034F0 RID: 13552 RVA: 0x0015F0A4 File Offset: 0x0015D2A4
 	public void RemoveBuffsByTag(FastTags<TagGroup.Global> tags)
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -460,7 +460,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034E3 RID: 13539 RVA: 0x0015E514 File Offset: 0x0015C714
+	// Token: 0x060034F1 RID: 13553 RVA: 0x0015F108 File Offset: 0x0015D308
 	public void RemoveDeathBuffs(FastTags<TagGroup.Global> excludeTags)
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -474,13 +474,13 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034E4 RID: 13540 RVA: 0x0015E582 File Offset: 0x0015C782
+	// Token: 0x060034F2 RID: 13554 RVA: 0x0015F176 File Offset: 0x0015D376
 	public void AddCustomVar(string _name, float _initialValue)
 	{
 		this.SetCustomVar(_name, _initialValue, true, CVarOperation.set, false);
 	}
 
-	// Token: 0x060034E5 RID: 13541 RVA: 0x0015E58F File Offset: 0x0015C78F
+	// Token: 0x060034F3 RID: 13555 RVA: 0x0015F183 File Offset: 0x0015D383
 	public void RemoveCustomVar(string _name)
 	{
 		if (this.CVars.ContainsKey(_name))
@@ -493,7 +493,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034E6 RID: 13542 RVA: 0x0015E5D0 File Offset: 0x0015C7D0
+	// Token: 0x060034F4 RID: 13556 RVA: 0x0015F1C4 File Offset: 0x0015D3C4
 	public void SetCustomVar(string _name, float _value, bool _netSync = true, CVarOperation _operation = CVarOperation.set, bool _forceSendToClients = false)
 	{
 		bool flag = true;
@@ -552,7 +552,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034E7 RID: 13543 RVA: 0x0015E724 File Offset: 0x0015C924
+	// Token: 0x060034F5 RID: 13557 RVA: 0x0015F318 File Offset: 0x0015D518
 	public void SetCustomVarNetwork(string _name, float _value, CVarOperation _operation = CVarOperation.set)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -563,13 +563,13 @@ public class EntityBuffs
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageModifyCVar>().Setup(this.parent, _name, _value, _operation), false);
 	}
 
-	// Token: 0x060034E8 RID: 13544 RVA: 0x0015E78C File Offset: 0x0015C98C
+	// Token: 0x060034F6 RID: 13558 RVA: 0x0015F380 File Offset: 0x0015D580
 	public bool HasCustomVar(string _name)
 	{
 		return this.CVars.ContainsKey(_name);
 	}
 
-	// Token: 0x060034E9 RID: 13545 RVA: 0x0015E79C File Offset: 0x0015C99C
+	// Token: 0x060034F7 RID: 13559 RVA: 0x0015F390 File Offset: 0x0015D590
 	public float GetCustomVar(string _name)
 	{
 		float num;
@@ -580,25 +580,25 @@ public class EntityBuffs
 		return 0f;
 	}
 
-	// Token: 0x060034EA RID: 13546 RVA: 0x000DB224 File Offset: 0x000D9424
+	// Token: 0x060034F8 RID: 13560 RVA: 0x000DB5A8 File Offset: 0x000D97A8
 	public static int GetCustomVarId(string _name)
 	{
 		return _name.GetHashCode();
 	}
 
-	// Token: 0x060034EB RID: 13547 RVA: 0x0015E7C0 File Offset: 0x0015C9C0
+	// Token: 0x060034F9 RID: 13561 RVA: 0x0015F3B4 File Offset: 0x0015D5B4
 	public void IncrementCustomVar(string _name, float _amount)
 	{
 		this.SetCustomVar(_name, _amount, true, CVarOperation.add, false);
 	}
 
-	// Token: 0x060034EC RID: 13548 RVA: 0x0015E7CD File Offset: 0x0015C9CD
+	// Token: 0x060034FA RID: 13562 RVA: 0x0015F3C1 File Offset: 0x0015D5C1
 	public int CountCustomVars()
 	{
 		return this.CVars.Count;
 	}
 
-	// Token: 0x060034ED RID: 13549 RVA: 0x0015E7DA File Offset: 0x0015C9DA
+	// Token: 0x060034FB RID: 13563 RVA: 0x0015F3CE File Offset: 0x0015D5CE
 	public IEnumerable<KeyValuePair<string, float>> EnumerateCustomVars(string searchString = null, bool startsWith = false)
 	{
 		foreach (KeyValuePair<string, float> keyValuePair in this.CVars)
@@ -624,7 +624,7 @@ public class EntityBuffs
 		yield break;
 	}
 
-	// Token: 0x060034EE RID: 13550 RVA: 0x0015E7F8 File Offset: 0x0015C9F8
+	// Token: 0x060034FC RID: 13564 RVA: 0x0015F3EC File Offset: 0x0015D5EC
 	public void TrackCustomVar(string _name, bool _isTracked)
 	{
 		if (!_isTracked)
@@ -642,7 +642,7 @@ public class EntityBuffs
 		Log.Out("Tracking CVar " + _name + ", it does not exist yet.");
 	}
 
-	// Token: 0x060034EF RID: 13551 RVA: 0x0015E880 File Offset: 0x0015CA80
+	// Token: 0x060034FD RID: 13565 RVA: 0x0015F474 File Offset: 0x0015D674
 	public bool HasImmunity(BuffClass _buffClass)
 	{
 		if (this.parent.IsDead() && _buffClass.RemoveOnDeath)
@@ -668,14 +668,14 @@ public class EntityBuffs
 		return this.parent.rand.RandomFloat <= num;
 	}
 
-	// Token: 0x060034F0 RID: 13552 RVA: 0x0015E92F File Offset: 0x0015CB2F
+	// Token: 0x060034FE RID: 13566 RVA: 0x0015F523 File Offset: 0x0015D723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeBuff(BuffValue _buffValue)
 	{
 		_buffValue.Remove = true;
 	}
 
-	// Token: 0x060034F1 RID: 13553 RVA: 0x0015E938 File Offset: 0x0015CB38
+	// Token: 0x060034FF RID: 13567 RVA: 0x0015F52C File Offset: 0x0015D72C
 	public void Write(PooledBinaryWriter _bw, bool _netSync = false)
 	{
 		_bw.Write(EntityBuffs.Version);
@@ -708,7 +708,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034F2 RID: 13554 RVA: 0x0015EAC8 File Offset: 0x0015CCC8
+	// Token: 0x06003500 RID: 13568 RVA: 0x0015F6BC File Offset: 0x0015D8BC
 	public void Read(PooledBinaryReader _br)
 	{
 		int num = (int)_br.ReadByte();
@@ -756,7 +756,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034F3 RID: 13555 RVA: 0x0015EC08 File Offset: 0x0015CE08
+	// Token: 0x06003501 RID: 13569 RVA: 0x0015F7FC File Offset: 0x0015D9FC
 	public void UnPauseAll()
 	{
 		for (int i = 0; i < this.ActiveBuffs.Count; i++)
@@ -765,7 +765,7 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x060034F4 RID: 13556 RVA: 0x0015EC40 File Offset: 0x0015CE40
+	// Token: 0x06003502 RID: 13570 RVA: 0x0015F834 File Offset: 0x0015DA34
 	public void ClearBuffClassLinks()
 	{
 		foreach (BuffValue buffValue in this.ActiveBuffs)
@@ -777,53 +777,53 @@ public class EntityBuffs
 		}
 	}
 
-	// Token: 0x04002AC7 RID: 10951
+	// Token: 0x04002AE2 RID: 10978
 	public static byte Version = 3;
 
-	// Token: 0x04002AC8 RID: 10952
+	// Token: 0x04002AE3 RID: 10979
 	public EntityAlive parent;
 
-	// Token: 0x04002AC9 RID: 10953
+	// Token: 0x04002AE4 RID: 10980
 	public List<BuffValue> ActiveBuffs;
 
-	// Token: 0x04002ACA RID: 10954
+	// Token: 0x04002AE5 RID: 10981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CaseInsensitiveStringDictionary<float> CVars;
 
-	// Token: 0x04002ACB RID: 10955
+	// Token: 0x04002AE6 RID: 10982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CaseInsensitiveStringDictionary<float> CVarsLastNetSync;
 
-	// Token: 0x04002ACC RID: 10956
+	// Token: 0x04002AE7 RID: 10983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<string> TrackedCVars;
 
-	// Token: 0x04002ACD RID: 10957
+	// Token: 0x04002AE8 RID: 10984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> physicalDamageTypes = FastTags<TagGroup.Global>.Parse("piercing,bashing,slashing,crushing,none,corrosive,barbedwire");
 
-	// Token: 0x04002ACE RID: 10958
+	// Token: 0x04002AE9 RID: 10985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> infection = FastTags<TagGroup.Global>.Parse("infection");
 
-	// Token: 0x04002ACF RID: 10959
+	// Token: 0x04002AEA RID: 10986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> CVarsToSend = new List<string>();
 
-	// Token: 0x0200065F RID: 1631
+	// Token: 0x02000666 RID: 1638
 	public enum BuffStatus
 	{
-		// Token: 0x04002AD1 RID: 10961
+		// Token: 0x04002AEC RID: 10988
 		Added,
-		// Token: 0x04002AD2 RID: 10962
+		// Token: 0x04002AED RID: 10989
 		FailedInvalidName,
-		// Token: 0x04002AD3 RID: 10963
+		// Token: 0x04002AEE RID: 10990
 		FailedImmune,
-		// Token: 0x04002AD4 RID: 10964
+		// Token: 0x04002AEF RID: 10991
 		FailedFriendlyFire,
-		// Token: 0x04002AD5 RID: 10965
+		// Token: 0x04002AF0 RID: 10992
 		FailedEditor,
-		// Token: 0x04002AD6 RID: 10966
+		// Token: 0x04002AF1 RID: 10993
 		FailedGameStat
 	}
 }

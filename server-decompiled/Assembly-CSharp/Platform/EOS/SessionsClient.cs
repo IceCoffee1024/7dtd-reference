@@ -9,11 +9,11 @@ using UnityEngine;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D40 RID: 7488
+	// Token: 0x02001D71 RID: 7537
 	public class SessionsClient : IServerListInterface
 	{
-		// Token: 0x17001C27 RID: 7207
-		// (get) Token: 0x0600DDFD RID: 56829 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x17001C6F RID: 7279
+		// (get) Token: 0x0600DF11 RID: 57105 RVA: 0x00020119 File Offset: 0x0001E319
 		public bool IsPrefiltered
 		{
 			get
@@ -22,21 +22,21 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DDFE RID: 56830 RVA: 0x004F21F4 File Offset: 0x004F03F4
+		// Token: 0x0600DF12 RID: 57106 RVA: 0x004F5D94 File Offset: 0x004F3F94
 		public SessionsClient()
 		{
 			this.compatibilityVersionString = Constants.cVersionInformation.SerializableString;
 			this.compatibilityVersionString = this.compatibilityVersionString.Substring(0, this.compatibilityVersionString.LastIndexOf('.') + 1);
 		}
 
-		// Token: 0x0600DDFF RID: 56831 RVA: 0x004F224E File Offset: 0x004F044E
+		// Token: 0x0600DF13 RID: 57107 RVA: 0x004F5DEE File Offset: 0x004F3FEE
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 			this.owner.Api.ClientApiInitialized += this.apiInitialized;
 		}
 
-		// Token: 0x0600DE00 RID: 56832 RVA: 0x004F2274 File Offset: 0x004F0474
+		// Token: 0x0600DF14 RID: 57108 RVA: 0x004F5E14 File Offset: 0x004F4014
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void apiInitialized()
 		{
@@ -47,7 +47,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE01 RID: 56833 RVA: 0x004F22D0 File Offset: 0x004F04D0
+		// Token: 0x0600DF15 RID: 57109 RVA: 0x004F5E70 File Offset: 0x004F4070
 		public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _sessionSearchErrorCallback)
 		{
 			this.gameServerFoundCallback = _serverFound;
@@ -55,8 +55,8 @@ namespace Platform.EOS
 			this.sessionSearchErrorCallback = _sessionSearchErrorCallback;
 		}
 
-		// Token: 0x17001C28 RID: 7208
-		// (get) Token: 0x0600DE02 RID: 56834 RVA: 0x004F22E7 File Offset: 0x004F04E7
+		// Token: 0x17001C70 RID: 7280
+		// (get) Token: 0x0600DF16 RID: 57110 RVA: 0x004F5E87 File Offset: 0x004F4087
 		public bool IsRefreshing
 		{
 			get
@@ -65,7 +65,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE03 RID: 56835 RVA: 0x004F22F8 File Offset: 0x004F04F8
+		// Token: 0x0600DF17 RID: 57111 RVA: 0x004F5E98 File Offset: 0x004F4098
 		public void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			if (!this.pingCoroutineStarted)
@@ -117,7 +117,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE04 RID: 56836 RVA: 0x004F241C File Offset: 0x004F061C
+		// Token: 0x0600DF18 RID: 57112 RVA: 0x004F5FBC File Offset: 0x004F41BC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void StartSearchInternal(IList<IServerListInterface.ServerFilter> _activeFilters, SessionsClient.ESessionSearchType searchType)
 		{
@@ -165,14 +165,14 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE05 RID: 56837 RVA: 0x004F25A4 File Offset: 0x004F07A4
+		// Token: 0x0600DF19 RID: 57113 RVA: 0x004F6144 File Offset: 0x004F4344
 		public void StopSearch()
 		{
 			this.refreshingSearchTypes.Clear();
 			this.serverPingsToGet.Clear();
 		}
 
-		// Token: 0x0600DE06 RID: 56838 RVA: 0x004F25BC File Offset: 0x004F07BC
+		// Token: 0x0600DF1A RID: 57114 RVA: 0x004F615C File Offset: 0x004F435C
 		public void Disconnect()
 		{
 			this.StopSearch();
@@ -180,7 +180,7 @@ namespace Platform.EOS
 			this.maxResultsCallback = null;
 		}
 
-		// Token: 0x0600DE07 RID: 56839 RVA: 0x004F25D4 File Offset: 0x004F07D4
+		// Token: 0x0600DF1B RID: 57115 RVA: 0x004F6174 File Offset: 0x004F4374
 		public void GetSingleServerDetails(GameServerInfo _serverInfo, EServerRelationType _relation, GameServerFoundCallback _callback)
 		{
 			string value = _serverInfo.GetValue(GameInfoString.UniqueId);
@@ -237,7 +237,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE08 RID: 56840 RVA: 0x004F27A4 File Offset: 0x004F09A4
+		// Token: 0x0600DF1C RID: 57116 RVA: 0x004F6344 File Offset: 0x004F4544
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool setSearchParameters(SessionSearch _searchHandle, IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
@@ -312,7 +312,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DE09 RID: 56841 RVA: 0x004F2A98 File Offset: 0x004F0C98
+		// Token: 0x0600DF1D RID: 57117 RVA: 0x004F6638 File Offset: 0x004F4838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool setSingleSearchParameter(SessionSearch _searchHandle, StringBuilder _sb, string _key, AttributeType _type, ComparisonOp _comparison, string _comparisonString, int _intValue = 0, bool _boolValue = false, string _stringValue = null)
 		{
@@ -386,7 +386,7 @@ namespace Platform.EOS
 			return result == Result.Success;
 		}
 
-		// Token: 0x0600DE0A RID: 56842 RVA: 0x004F2C50 File Offset: 0x004F0E50
+		// Token: 0x0600DF1E RID: 57118 RVA: 0x004F67F0 File Offset: 0x004F49F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void searchFinishedCallback(ref SessionSearchFindCallbackInfo _callbackData)
 		{
@@ -515,7 +515,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE0B RID: 56843 RVA: 0x004F2FB8 File Offset: 0x004F11B8
+		// Token: 0x0600DF1F RID: 57119 RVA: 0x004F6B58 File Offset: 0x004F4D58
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool matchesFilters(GameServerInfo _gameServerInfo, IList<IServerListInterface.ServerFilter> _searchFilters)
 		{
@@ -561,7 +561,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DE0C RID: 56844 RVA: 0x004F3084 File Offset: 0x004F1284
+		// Token: 0x0600DF20 RID: 57120 RVA: 0x004F6C24 File Offset: 0x004F4E24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerInfo parseSession(SessionDetails _sessionDetails, SessionDetailsInfo _sessionDetailsInfo)
 		{
@@ -695,7 +695,7 @@ namespace Platform.EOS
 			return gameServerInfo;
 		}
 
-		// Token: 0x0600DE0D RID: 56845 RVA: 0x004F347C File Offset: 0x004F167C
+		// Token: 0x0600DF21 RID: 57121 RVA: 0x004F701C File Offset: 0x004F521C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool debugLogSessionInfo(uint _sessionIndex, SessionDetails _sessionDetails, SessionDetailsInfo _sessionDetailsInfo, bool _logAttributes = false)
 		{
@@ -774,7 +774,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DE0E RID: 56846 RVA: 0x004F37DC File Offset: 0x004F19DC
+		// Token: 0x0600DF22 RID: 57122 RVA: 0x004F737C File Offset: 0x004F557C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator getServerPingsCo()
 		{
@@ -792,14 +792,14 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DE0F RID: 56847 RVA: 0x004F37EB File Offset: 0x004F19EB
+		// Token: 0x0600DF23 RID: 57123 RVA: 0x004F738B File Offset: 0x004F558B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serverPingCallback(bool _success, string _message, GameServerInfo _gsi)
 		{
 			this.pingRequestsInProgress--;
 		}
 
-		// Token: 0x0600DE10 RID: 56848 RVA: 0x004F37FC File Offset: 0x004F19FC
+		// Token: 0x0600DF24 RID: 57124 RVA: 0x004F739C File Offset: 0x004F559C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <StartSearch>g__AddCrossplayFiltersAndSearch|15_0(List<IServerListInterface.ServerFilter> _filters, bool _allowCrossplay)
@@ -821,7 +821,7 @@ namespace Platform.EOS
 			this.StartSearchInternal(_filters, _allowCrossplay ? SessionsClient.ESessionSearchType.OnlyCrossplatform : SessionsClient.ESessionSearchType.NoCrossplatform);
 		}
 
-		// Token: 0x0600DE11 RID: 56849 RVA: 0x004F38AC File Offset: 0x004F1AAC
+		// Token: 0x0600DF25 RID: 57125 RVA: 0x004F744C File Offset: 0x004F564C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static bool <matchesFilters>g__TestBoolInfo|25_0(IServerListInterface.ServerFilter _filter, ref SessionsClient.<>c__DisplayClass25_0 A_1)
@@ -841,7 +841,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DE12 RID: 56850 RVA: 0x004F3924 File Offset: 0x004F1B24
+		// Token: 0x0600DF26 RID: 57126 RVA: 0x004F74C4 File Offset: 0x004F56C4
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static bool <matchesFilters>g__TestIntInfo|25_1(IServerListInterface.ServerFilter _filter, ref SessionsClient.<>c__DisplayClass25_0 A_1)
@@ -894,7 +894,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DE13 RID: 56851 RVA: 0x004F3AC4 File Offset: 0x004F1CC4
+		// Token: 0x0600DF27 RID: 57127 RVA: 0x004F7664 File Offset: 0x004F5864
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static bool <matchesFilters>g__TestStringInfo|25_2(IServerListInterface.ServerFilter _filter, ref SessionsClient.<>c__DisplayClass25_0 A_1)
@@ -926,74 +926,74 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DE14 RID: 56852 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DF28 RID: 57128 RVA: 0x000027FC File Offset: 0x000009FC
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <matchesFilters>g__LogMismatch|25_3(string _s)
 		{
 		}
 
-		// Token: 0x0400A784 RID: 42884
+		// Token: 0x0400A86D RID: 43117
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A785 RID: 42885
+		// Token: 0x0400A86E RID: 43118
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SessionsInterface sessionsInterface;
 
-		// Token: 0x0400A786 RID: 42886
+		// Token: 0x0400A86F RID: 43119
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<SessionsClient.ESessionSearchType> refreshingSearchTypes = new HashSet<SessionsClient.ESessionSearchType>();
 
-		// Token: 0x0400A787 RID: 42887
+		// Token: 0x0400A870 RID: 43120
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerFoundCallback gameServerFoundCallback;
 
-		// Token: 0x0400A788 RID: 42888
+		// Token: 0x0400A871 RID: 43121
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MaxResultsReachedCallback maxResultsCallback;
 
-		// Token: 0x0400A789 RID: 42889
+		// Token: 0x0400A872 RID: 43122
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ServerSearchErrorCallback sessionSearchErrorCallback;
 
-		// Token: 0x0400A78A RID: 42890
+		// Token: 0x0400A873 RID: 43123
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string compatibilityVersionString;
 
-		// Token: 0x0400A78B RID: 42891
+		// Token: 0x0400A874 RID: 43124
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool pingCoroutineStarted;
 
-		// Token: 0x0400A78C RID: 42892
+		// Token: 0x0400A875 RID: 43125
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int concurrentPingRequests = 8;
 
-		// Token: 0x0400A78D RID: 42893
+		// Token: 0x0400A876 RID: 43126
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int pingRequestsInProgress;
 
-		// Token: 0x0400A78E RID: 42894
+		// Token: 0x0400A877 RID: 43127
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Queue<GameServerInfo> serverPingsToGet = new Queue<GameServerInfo>();
 
-		// Token: 0x02001D41 RID: 7489
+		// Token: 0x02001D72 RID: 7538
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum ESessionSearchType
 		{
-			// Token: 0x0400A790 RID: 42896
+			// Token: 0x0400A879 RID: 43129
 			Single,
-			// Token: 0x0400A791 RID: 42897
+			// Token: 0x0400A87A RID: 43130
 			NoCrossplatform,
-			// Token: 0x0400A792 RID: 42898
+			// Token: 0x0400A87B RID: 43131
 			OnlyCrossplatform
 		}
 
-		// Token: 0x02001D42 RID: 7490
+		// Token: 0x02001D73 RID: 7539
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class SessionSearchArgs
 		{
-			// Token: 0x0600DE15 RID: 56853 RVA: 0x004F3BD0 File Offset: 0x004F1DD0
+			// Token: 0x0600DF29 RID: 57129 RVA: 0x004F7770 File Offset: 0x004F5970
 			public SessionSearchArgs(SessionSearch _searchHandle, MicroStopwatch _stopwatch, GameServerFoundCallback _callback, EServerRelationType _relation, bool _callbackOnFailure, bool _updateRefreshing, SessionsClient.ESessionSearchType _searchType, IList<IServerListInterface.ServerFilter> _activeFilters)
 			{
 				this.SearchHandle = _searchHandle;
@@ -1006,28 +1006,28 @@ namespace Platform.EOS
 				this.SearchFilters = _activeFilters;
 			}
 
-			// Token: 0x0400A793 RID: 42899
+			// Token: 0x0400A87C RID: 43132
 			public readonly SessionSearch SearchHandle;
 
-			// Token: 0x0400A794 RID: 42900
+			// Token: 0x0400A87D RID: 43133
 			public readonly MicroStopwatch Stopwatch;
 
-			// Token: 0x0400A795 RID: 42901
+			// Token: 0x0400A87E RID: 43134
 			public readonly GameServerFoundCallback Callback;
 
-			// Token: 0x0400A796 RID: 42902
+			// Token: 0x0400A87F RID: 43135
 			public readonly EServerRelationType RelationType;
 
-			// Token: 0x0400A797 RID: 42903
+			// Token: 0x0400A880 RID: 43136
 			public readonly bool CallbackOnFailure;
 
-			// Token: 0x0400A798 RID: 42904
+			// Token: 0x0400A881 RID: 43137
 			public readonly bool UpdateRefreshing;
 
-			// Token: 0x0400A799 RID: 42905
+			// Token: 0x0400A882 RID: 43138
 			public readonly SessionsClient.ESessionSearchType SearchType;
 
-			// Token: 0x0400A79A RID: 42906
+			// Token: 0x0400A883 RID: 43139
 			public readonly IList<IServerListInterface.ServerFilter> SearchFilters;
 		}
 	}

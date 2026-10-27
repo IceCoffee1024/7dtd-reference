@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C0E RID: 3086
+// Token: 0x02000C19 RID: 3097
 public class BiomeLayer
 {
-	// Token: 0x06005DC2 RID: 24002 RVA: 0x00248C74 File Offset: 0x00246E74
+	// Token: 0x06005DE7 RID: 24039 RVA: 0x0024A19C File Offset: 0x0024839C
 	public BiomeLayer(int _depth, BiomeBlockDecoration _bb)
 	{
 		this.m_Block = _bb;
@@ -14,13 +14,13 @@ public class BiomeLayer
 		this.MaxResourceProb = 0f;
 	}
 
-	// Token: 0x06005DC3 RID: 24003 RVA: 0x00248CAC File Offset: 0x00246EAC
+	// Token: 0x06005DE8 RID: 24040 RVA: 0x0024A1D4 File Offset: 0x002483D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~BiomeLayer()
 	{
 	}
 
-	// Token: 0x06005DC4 RID: 24004 RVA: 0x00248CD4 File Offset: 0x00246ED4
+	// Token: 0x06005DE9 RID: 24041 RVA: 0x0024A1FC File Offset: 0x002483FC
 	public void AddResource(BiomeBlockDecoration _res)
 	{
 		this.m_Resources.Add(_res);
@@ -29,18 +29,18 @@ public class BiomeLayer
 		this.SumResourceProbs.Add((count > 0) ? (this.SumResourceProbs[count - 1] + _res.prob) : _res.prob);
 	}
 
-	// Token: 0x040048B5 RID: 18613
+	// Token: 0x040048DA RID: 18650
 	public BiomeBlockDecoration m_Block;
 
-	// Token: 0x040048B6 RID: 18614
+	// Token: 0x040048DB RID: 18651
 	public int m_Depth;
 
-	// Token: 0x040048B7 RID: 18615
+	// Token: 0x040048DC RID: 18652
 	public List<BiomeBlockDecoration> m_Resources;
 
-	// Token: 0x040048B8 RID: 18616
+	// Token: 0x040048DD RID: 18653
 	public List<float> SumResourceProbs;
 
-	// Token: 0x040048B9 RID: 18617
+	// Token: 0x040048DE RID: 18654
 	public float MaxResourceProb;
 }

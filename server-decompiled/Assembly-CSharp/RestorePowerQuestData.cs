@@ -1,20 +1,20 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200097E RID: 2430
+// Token: 0x02000988 RID: 2440
 [Preserve]
 public class RestorePowerQuestData : BaseQuestData
 {
-	// Token: 0x17000796 RID: 1942
-	// (get) Token: 0x06004680 RID: 18048 RVA: 0x001BF4F1 File Offset: 0x001BD6F1
-	// (set) Token: 0x06004681 RID: 18049 RVA: 0x001BF4F9 File Offset: 0x001BD6F9
+	// Token: 0x1700079C RID: 1948
+	// (get) Token: 0x060046A3 RID: 18083 RVA: 0x001C0575 File Offset: 0x001BE775
+	// (set) Token: 0x060046A4 RID: 18084 RVA: 0x001C057D File Offset: 0x001BE77D
 	public Vector3i PrefabPosition
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06004682 RID: 18050 RVA: 0x001BF502 File Offset: 0x001BD702
+	// Token: 0x060046A5 RID: 18085 RVA: 0x001C0586 File Offset: 0x001BE786
 	public RestorePowerQuestData(int _questCode, int _entityID, Vector3i _position, string _completeEvent)
 	{
 		this.CompleteEvent = _completeEvent;
@@ -23,20 +23,20 @@ public class RestorePowerQuestData : BaseQuestData
 		this.PrefabPosition = _position;
 	}
 
-	// Token: 0x06004683 RID: 18051 RVA: 0x001BF537 File Offset: 0x001BD737
+	// Token: 0x060046A6 RID: 18086 RVA: 0x001C05BB File Offset: 0x001BE7BB
 	public void UpdatePosition(Vector3i _pos)
 	{
 		this.PrefabPosition = _pos;
 	}
 
-	// Token: 0x06004684 RID: 18052 RVA: 0x001BF540 File Offset: 0x001BD740
+	// Token: 0x060046A7 RID: 18087 RVA: 0x001C05C4 File Offset: 0x001BE7C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void RemoveFromDictionary()
 	{
 		QuestEventManager.Current.BlockActivateQuestDictionary.Remove(this.questCode);
 	}
 
-	// Token: 0x06004685 RID: 18053 RVA: 0x001BF558 File Offset: 0x001BD758
+	// Token: 0x060046A8 RID: 18088 RVA: 0x001C05DC File Offset: 0x001BE7DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnRemove(EntityPlayer player)
 	{
@@ -46,6 +46,6 @@ public class RestorePowerQuestData : BaseQuestData
 		}
 	}
 
-	// Token: 0x040038EE RID: 14574
+	// Token: 0x0400390E RID: 14606
 	public string CompleteEvent = "";
 }

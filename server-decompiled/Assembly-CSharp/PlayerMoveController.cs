@@ -7,11 +7,11 @@ using InControl;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020012D6 RID: 4822
+// Token: 0x020012E8 RID: 4840
 public class PlayerMoveController : MonoBehaviour
 {
-	// Token: 0x17001246 RID: 4678
-	// (get) Token: 0x06009883 RID: 39043 RVA: 0x00398F88 File Offset: 0x00397188
+	// Token: 0x17001252 RID: 4690
+	// (get) Token: 0x060098DB RID: 39131 RVA: 0x0039B38C File Offset: 0x0039958C
 	public bool RunToggleActive
 	{
 		get
@@ -20,8 +20,8 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001247 RID: 4679
-	// (get) Token: 0x06009884 RID: 39044 RVA: 0x000EF6C9 File Offset: 0x000ED8C9
+	// Token: 0x17001253 RID: 4691
+	// (get) Token: 0x060098DC RID: 39132 RVA: 0x000EFAED File Offset: 0x000EDCED
 	public PlayerActionsLocal playerInput
 	{
 		get
@@ -30,7 +30,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009885 RID: 39045 RVA: 0x00398F90 File Offset: 0x00397190
+	// Token: 0x060098DD RID: 39133 RVA: 0x0039B394 File Offset: 0x00399594
 	public void Init()
 	{
 		PlayerMoveController.Instance = this;
@@ -365,7 +365,7 @@ public class PlayerMoveController : MonoBehaviour
 		EAIManager.isAnimFreeze = false;
 	}
 
-	// Token: 0x06009886 RID: 39046 RVA: 0x00399934 File Offset: 0x00397B34
+	// Token: 0x060098DE RID: 39134 RVA: 0x0039BD38 File Offset: 0x00399F38
 	public static void UpdateControlsOptions()
 	{
 		if (PlayerMoveController.Instance != null)
@@ -384,19 +384,19 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009887 RID: 39047 RVA: 0x00399A63 File Offset: 0x00397C63
+	// Token: 0x060098DF RID: 39135 RVA: 0x0039BE67 File Offset: 0x0039A067
 	public static void SetDeadzones()
 	{
 		PlayerMoveController.Instance.playerInput.SetDeadzones(GamePrefs.GetFloat(EnumGamePrefs.OptionsControllerLookAxisDeadzone), GamePrefs.GetFloat(EnumGamePrefs.OptionsControllerMoveAxisDeadzone));
 	}
 
-	// Token: 0x06009888 RID: 39048 RVA: 0x00399A88 File Offset: 0x00397C88
+	// Token: 0x060098E0 RID: 39136 RVA: 0x0039BE8C File Offset: 0x0039A08C
 	public void UpdateInvertMouse(bool _invertMouse)
 	{
 		this.invertMouse = (_invertMouse ? (-1) : 1);
 	}
 
-	// Token: 0x06009889 RID: 39049 RVA: 0x00399A98 File Offset: 0x00397C98
+	// Token: 0x060098E1 RID: 39137 RVA: 0x0039BE9C File Offset: 0x0039A09C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLookSensitivity(float _sensitivity, float _zoomSensitivity, float _zoomAccel, float _vehicleSensitivity, Vector2 _controllerLookSensitivity)
 	{
@@ -407,7 +407,7 @@ public class PlayerMoveController : MonoBehaviour
 		this.controllerLookSensitivity = _controllerLookSensitivity * 10f;
 	}
 
-	// Token: 0x0600988A RID: 39050 RVA: 0x00399AF9 File Offset: 0x00397CF9
+	// Token: 0x060098E2 RID: 39138 RVA: 0x0039BEFD File Offset: 0x0039A0FD
 	public Vector2 GetCameraInputSensitivity()
 	{
 		if (this.playerInput.LastInputType == BindingSourceType.DeviceBindingSource)
@@ -417,19 +417,19 @@ public class PlayerMoveController : MonoBehaviour
 		return this.mouseLookSensitivity;
 	}
 
-	// Token: 0x0600988B RID: 39051 RVA: 0x00399B16 File Offset: 0x00397D16
+	// Token: 0x060098E3 RID: 39139 RVA: 0x0039BF1A File Offset: 0x0039A11A
 	public bool GetControllerVibration()
 	{
 		return this.bControllerVibration;
 	}
 
-	// Token: 0x0600988C RID: 39052 RVA: 0x00399B1E File Offset: 0x00397D1E
+	// Token: 0x060098E4 RID: 39140 RVA: 0x0039BF22 File Offset: 0x0039A122
 	public void UpdateControllerVibration(bool _controllerVibration)
 	{
 		this.bControllerVibration = _controllerVibration;
 	}
 
-	// Token: 0x0600988D RID: 39053 RVA: 0x00399B28 File Offset: 0x00397D28
+	// Token: 0x060098E5 RID: 39141 RVA: 0x0039BF2C File Offset: 0x0039A12C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDestroy()
 	{
@@ -444,7 +444,7 @@ public class PlayerMoveController : MonoBehaviour
 		this.nguiWindowManager = null;
 	}
 
-	// Token: 0x0600988E RID: 39054 RVA: 0x00399B88 File Offset: 0x00397D88
+	// Token: 0x060098E6 RID: 39142 RVA: 0x0039BF8C File Offset: 0x0039A18C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -481,7 +481,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600988F RID: 39055 RVA: 0x00399D00 File Offset: 0x00397F00
+	// Token: 0x060098E7 RID: 39143 RVA: 0x0039C104 File Offset: 0x0039A304
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -492,7 +492,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009890 RID: 39056 RVA: 0x00399D68 File Offset: 0x00397F68
+	// Token: 0x060098E8 RID: 39144 RVA: 0x0039C16C File Offset: 0x0039A36C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateRespawn()
 	{
@@ -831,7 +831,7 @@ public class PlayerMoveController : MonoBehaviour
 		this.bLastRespawnActive = false;
 	}
 
-	// Token: 0x06009891 RID: 39057 RVA: 0x0039ACD4 File Offset: 0x00398ED4
+	// Token: 0x060098E9 RID: 39145 RVA: 0x0039D0D8 File Offset: 0x0039B2D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckWorldReadyForSpawn()
 	{
@@ -854,7 +854,7 @@ public class PlayerMoveController : MonoBehaviour
 		return displayedChunkGameObjectsCount >= num && (DistantTerrain.Instance == null || DistantTerrain.Instance.IsTerrainReady);
 	}
 
-	// Token: 0x06009892 RID: 39058 RVA: 0x0039AD9E File Offset: 0x00398F9E
+	// Token: 0x060098EA RID: 39146 RVA: 0x0039D1A2 File Offset: 0x0039B3A2
 	public void LogCurrentRespawnState()
 	{
 		string text = "[FELLTHROUGHWORLD] Respawn State for player {0} ('{1}'): {2}";
@@ -863,7 +863,7 @@ public class PlayerMoveController : MonoBehaviour
 		Log.Out(string.Format(text, obj, (entityPlayerLocal != null) ? entityPlayerLocal.EntityName : null, this.respawnStateHistory));
 	}
 
-	// Token: 0x06009893 RID: 39059 RVA: 0x0039ADD7 File Offset: 0x00398FD7
+	// Token: 0x060098EB RID: 39147 RVA: 0x0039D1DB File Offset: 0x0039B3DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator initializeHoldingItemLater(float _time)
 	{
@@ -875,7 +875,7 @@ public class PlayerMoveController : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06009894 RID: 39060 RVA: 0x0039ADED File Offset: 0x00398FED
+	// Token: 0x060098EC RID: 39148 RVA: 0x0039D1F1 File Offset: 0x0039B3F1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator showUILater()
 	{
@@ -892,7 +892,7 @@ public class PlayerMoveController : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06009895 RID: 39061 RVA: 0x0039ADFC File Offset: 0x00398FFC
+	// Token: 0x060098ED RID: 39149 RVA: 0x0039D200 File Offset: 0x0039B400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openSpawnWindow(RespawnType _respawnReason)
 	{
@@ -905,7 +905,7 @@ public class PlayerMoveController : MonoBehaviour
 		this.spawnWindowOpened = true;
 	}
 
-	// Token: 0x06009896 RID: 39062 RVA: 0x0039AE64 File Offset: 0x00399064
+	// Token: 0x060098EE RID: 39150 RVA: 0x0039D268 File Offset: 0x0039B468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SpawnPosition findSpawnPosition(SpawnMethod _spawnMethod, SpawnPosition _spawnTarget)
 	{
@@ -990,7 +990,7 @@ public class PlayerMoveController : MonoBehaviour
 		return spawnPosition;
 	}
 
-	// Token: 0x06009897 RID: 39063 RVA: 0x0039B1F7 File Offset: 0x003993F7
+	// Token: 0x060098EF RID: 39151 RVA: 0x0039D5FB File Offset: 0x0039B7FB
 	public IEnumerator FindRespawnSpawnPointRoutine(SpawnMethod _method, SpawnPosition _spawnTarget)
 	{
 		this.waitingForSpawnPointSelection = true;
@@ -1012,7 +1012,7 @@ public class PlayerMoveController : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06009898 RID: 39064 RVA: 0x0039B214 File Offset: 0x00399414
+	// Token: 0x060098F0 RID: 39152 RVA: 0x0039D618 File Offset: 0x0039B818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopMoving()
 	{
@@ -1022,7 +1022,7 @@ public class PlayerMoveController : MonoBehaviour
 		this.entityPlayerLocal.MoveByInput();
 	}
 
-	// Token: 0x06009899 RID: 39065 RVA: 0x0039B254 File Offset: 0x00399454
+	// Token: 0x060098F1 RID: 39153 RVA: 0x0039D658 File Offset: 0x0039B858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateDebugKeys()
 	{
@@ -1145,7 +1145,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600989A RID: 39066 RVA: 0x0039B56C File Offset: 0x0039976C
+	// Token: 0x060098F2 RID: 39154 RVA: 0x0039D970 File Offset: 0x0039BB70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canSwapHeldItem()
 	{
@@ -1158,7 +1158,7 @@ public class PlayerMoveController : MonoBehaviour
 		return !this.entityPlayerLocal.inventory.IsHandSwitching() && !flag;
 	}
 
-	// Token: 0x0600989B RID: 39067 RVA: 0x0039B5DC File Offset: 0x003997DC
+	// Token: 0x060098F3 RID: 39155 RVA: 0x0039D9E0 File Offset: 0x0039BBE0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -2038,7 +2038,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600989C RID: 39068 RVA: 0x0039D83C File Offset: 0x0039BA3C
+	// Token: 0x060098F4 RID: 39156 RVA: 0x0039FC40 File Offset: 0x0039DE40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleInteraction(WorldRayHitInfo _hitInfo, Vector3i _blockPosInside, bool _bAlternativeBlockPos, bool _bHitWorldAndEntities, bool _bItemHit, bool _bBackpackHit, RaycastHit _raycastHitItems, bool _activate)
 	{
@@ -2147,7 +2147,7 @@ public class PlayerMoveController : MonoBehaviour
 		this.focusBoxScript.Update(CS$<>8__locals1.bMeshSelected, this.gameManager.World, CS$<>8__locals1._hitInfo, this.FocusBoxPosition, this.entityPlayerLocal, this.gameManager.persistentLocalPlayer, _bAlternativeBlockPos);
 	}
 
-	// Token: 0x0600989D RID: 39069 RVA: 0x0039DD2C File Offset: 0x0039BF2C
+	// Token: 0x060098F5 RID: 39157 RVA: 0x003A0130 File Offset: 0x0039E330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void swapItem(int inventoryItemToSet)
 	{
@@ -2163,7 +2163,7 @@ public class PlayerMoveController : MonoBehaviour
 		}, true));
 	}
 
-	// Token: 0x0600989E RID: 39070 RVA: 0x0039DD78 File Offset: 0x0039BF78
+	// Token: 0x060098F6 RID: 39158 RVA: 0x003A017C File Offset: 0x0039E37C
 	public void DropHeldItem()
 	{
 		if (!this.gameManager.IsEditMode() && !BlockToolSelection.Instance.SelectionActive && this.entityPlayerLocal.inventory != null && !this.entityPlayerLocal.inventory.IsHandBusy() && !this.entityPlayerLocal.AimingGun)
@@ -2182,19 +2182,19 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600989F RID: 39071 RVA: 0x0039DEE0 File Offset: 0x0039C0E0
+	// Token: 0x060098F7 RID: 39159 RVA: 0x003A02E4 File Offset: 0x0039E4E4
 	public void SkipMouseLookNextFrame()
 	{
 		this.skipMouseLookNextFrame = 3;
 	}
 
-	// Token: 0x060098A0 RID: 39072 RVA: 0x0039DEE9 File Offset: 0x0039C0E9
+	// Token: 0x060098F8 RID: 39160 RVA: 0x003A02ED File Offset: 0x0039E4ED
 	public void SetControllableOverride(bool _b)
 	{
 		this.bCanControlOverride = _b;
 	}
 
-	// Token: 0x060098A1 RID: 39073 RVA: 0x0039DEF4 File Offset: 0x0039C0F4
+	// Token: 0x060098F9 RID: 39161 RVA: 0x003A02F8 File Offset: 0x0039E4F8
 	public void Respawn(RespawnType _type)
 	{
 		this.gameManager.World.GetPrimaryPlayer().Spawned = false;
@@ -2216,13 +2216,13 @@ public class PlayerMoveController : MonoBehaviour
 		this.respawnWorldWaitTimer.Reset();
 	}
 
-	// Token: 0x060098A2 RID: 39074 RVA: 0x0039DF78 File Offset: 0x0039C178
+	// Token: 0x060098FA RID: 39162 RVA: 0x003A037C File Offset: 0x0039E57C
 	public void AllowPlayerInput(bool allow)
 	{
 		this.bAllowPlayerInput = allow;
 	}
 
-	// Token: 0x060098A3 RID: 39075 RVA: 0x0039DF84 File Offset: 0x0039C184
+	// Token: 0x060098FB RID: 39163 RVA: 0x003A0388 File Offset: 0x0039E588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawChunkBoundary()
 	{
@@ -2257,7 +2257,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060098A4 RID: 39076 RVA: 0x0039E110 File Offset: 0x0039C310
+	// Token: 0x060098FC RID: 39164 RVA: 0x003A0514 File Offset: 0x0039E714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawChunkDensities()
 	{
@@ -2313,7 +2313,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060098A5 RID: 39077 RVA: 0x0039E328 File Offset: 0x0039C528
+	// Token: 0x060098FD RID: 39165 RVA: 0x003A072C File Offset: 0x0039E92C
 	public void FindCameraSnapTarget(eCameraSnapMode snapMode, float maxDistance)
 	{
 		PlayerMoveController.cameraSnapTargets.Clear();
@@ -2359,7 +2359,7 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060098A6 RID: 39078 RVA: 0x0039E558 File Offset: 0x0039C758
+	// Token: 0x060098FE RID: 39166 RVA: 0x003A095C File Offset: 0x0039EB5C
 	public void SetCameraSnapEntity(EntityAlive _target, eCameraSnapMode _snapMode)
 	{
 		this.cameraSnapTargetEntity = _target;
@@ -2375,21 +2375,21 @@ public class PlayerMoveController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060098A7 RID: 39079 RVA: 0x0039E60F File Offset: 0x0039C80F
+	// Token: 0x060098FF RID: 39167 RVA: 0x003A0A13 File Offset: 0x0039EC13
 	public void ForceStopRunning()
 	{
 		this.entityPlayerLocal.movementInput.running = false;
 		this.runToggleActive = false;
 	}
 
-	// Token: 0x060098A8 RID: 39080 RVA: 0x0039E629 File Offset: 0x0039C829
+	// Token: 0x06009900 RID: 39168 RVA: 0x003A0A2D File Offset: 0x0039EC2D
 	public void SetInventoryIdxFromScroll(int _idx)
 	{
 		this.inventoryScrollPressed = true;
 		this.inventoryScrollIdxToSelect = _idx;
 	}
 
-	// Token: 0x060098AB RID: 39083 RVA: 0x0039E73C File Offset: 0x0039C93C
+	// Token: 0x06009903 RID: 39171 RVA: 0x003A0B40 File Offset: 0x0039ED40
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <HandleInteraction>g__TryHandleBlock|113_0(out string _tooltip, ref PlayerMoveController.<>c__DisplayClass113_0 A_2)
@@ -2454,7 +2454,7 @@ public class PlayerMoveController : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060098AC RID: 39084 RVA: 0x0039E968 File Offset: 0x0039CB68
+	// Token: 0x06009904 RID: 39172 RVA: 0x003A0D6C File Offset: 0x0039EF6C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <HandleInteraction>g__TryHandleItem|113_1(out string _tooltip, ref PlayerMoveController.<>c__DisplayClass113_0 A_2)
@@ -2489,7 +2489,7 @@ public class PlayerMoveController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060098AD RID: 39085 RVA: 0x0039EA94 File Offset: 0x0039CC94
+	// Token: 0x06009905 RID: 39173 RVA: 0x003A0E98 File Offset: 0x0039F098
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <HandleInteraction>g__TryHandleEntity|113_2(out string _tooltip, ref PlayerMoveController.<>c__DisplayClass113_0 A_2)
@@ -2544,7 +2544,7 @@ public class PlayerMoveController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060098AE RID: 39086 RVA: 0x0039EBE0 File Offset: 0x0039CDE0
+	// Token: 0x06009906 RID: 39174 RVA: 0x003A0FE4 File Offset: 0x0039F1E4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <HandleInteraction>g__TryHandleProjectile|113_3(Transform _transform, out string _tooltip, ref PlayerMoveController.<>c__DisplayClass113_0 A_3)
@@ -2587,427 +2587,427 @@ public class PlayerMoveController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0400726E RID: 29294
+	// Token: 0x040072AF RID: 29359
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bAllowPlayerInput = true;
 
-	// Token: 0x0400726F RID: 29295
+	// Token: 0x040072B0 RID: 29360
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static FastTags<TagGroup.Global> BowTag = FastTags<TagGroup.Global>.Parse("bow");
 
-	// Token: 0x04007270 RID: 29296
+	// Token: 0x040072B1 RID: 29361
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static PlayerMoveController Instance = null;
 
-	// Token: 0x04007271 RID: 29297
+	// Token: 0x040072B2 RID: 29362
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<NGuiAction> globalActions = new List<NGuiAction>();
 
-	// Token: 0x04007272 RID: 29298
+	// Token: 0x040072B3 RID: 29363
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 mouseLookSensitivity;
 
-	// Token: 0x04007273 RID: 29299
+	// Token: 0x040072B4 RID: 29364
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float mouseZoomSensitivity;
 
-	// Token: 0x04007274 RID: 29300
+	// Token: 0x040072B5 RID: 29365
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float zoomAccel;
 
-	// Token: 0x04007275 RID: 29301
+	// Token: 0x040072B6 RID: 29366
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float vehicleLookSensitivity;
 
-	// Token: 0x04007276 RID: 29302
+	// Token: 0x040072B7 RID: 29367
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 controllerLookSensitivity;
 
-	// Token: 0x04007277 RID: 29303
+	// Token: 0x040072B8 RID: 29368
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GameManager gameManager;
 
-	// Token: 0x04007278 RID: 29304
+	// Token: 0x040072B9 RID: 29369
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public NGuiWdwInGameHUD guiInGame;
 
-	// Token: 0x04007279 RID: 29305
+	// Token: 0x040072BA RID: 29370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bCanControlOverride;
 
-	// Token: 0x0400727A RID: 29306
+	// Token: 0x040072BB RID: 29371
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bLastRespawnActive;
 
-	// Token: 0x0400727B RID: 29307
+	// Token: 0x040072BC RID: 29372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float respawnTime;
 
-	// Token: 0x0400727C RID: 29308
+	// Token: 0x040072BD RID: 29373
 	public RespawnType respawnReason;
 
-	// Token: 0x0400727D RID: 29309
+	// Token: 0x040072BE RID: 29374
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly StateHistory<RespawnProgress> respawnStateHistory = new StateHistory<RespawnProgress>(16, true, false);
 
-	// Token: 0x0400727E RID: 29310
+	// Token: 0x040072BF RID: 29375
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool spawnWindowOpened;
 
-	// Token: 0x0400727F RID: 29311
+	// Token: 0x040072C0 RID: 29376
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public EntityPlayerLocal entityPlayerLocal;
 
-	// Token: 0x04007280 RID: 29312
+	// Token: 0x040072C1 RID: 29377
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x04007281 RID: 29313
+	// Token: 0x040072C2 RID: 29378
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;
 
-	// Token: 0x04007282 RID: 29314
+	// Token: 0x040072C3 RID: 29379
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public NGUIWindowManager nguiWindowManager;
 
-	// Token: 0x04007283 RID: 29315
+	// Token: 0x040072C4 RID: 29380
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int invertMouse;
 
-	// Token: 0x04007284 RID: 29316
+	// Token: 0x040072C5 RID: 29381
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int invertController;
 
-	// Token: 0x04007285 RID: 29317
+	// Token: 0x040072C6 RID: 29382
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bControllerVibration;
 
-	// Token: 0x04007286 RID: 29318
+	// Token: 0x040072C7 RID: 29383
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public RenderDisplacedCube focusBoxScript;
 
-	// Token: 0x04007287 RID: 29319
+	// Token: 0x040072C8 RID: 29384
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string strTextLabelPointingTo;
 
-	// Token: 0x04007288 RID: 29320
+	// Token: 0x040072C9 RID: 29385
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float inventoryItemSwitchTimeout;
 
-	// Token: 0x04007289 RID: 29321
+	// Token: 0x040072CA RID: 29386
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int inventoryItemToSetAfterTimeout = int.MinValue;
 
-	// Token: 0x0400728A RID: 29322
+	// Token: 0x040072CB RID: 29387
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public PlayerAutoPilotControllor playerAutoPilotControllor;
 
-	// Token: 0x0400728B RID: 29323
+	// Token: 0x040072CC RID: 29388
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string InteractName;
 
-	// Token: 0x0400728C RID: 29324
+	// Token: 0x040072CD RID: 29389
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float InteractWaitTime;
 
-	// Token: 0x0400728D RID: 29325
+	// Token: 0x040072CE RID: 29390
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeActivatePressed;
 
-	// Token: 0x0400728E RID: 29326
+	// Token: 0x040072CF RID: 29391
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bIgnoreLeftMouseUntilReleased;
 
-	// Token: 0x0400728F RID: 29327
+	// Token: 0x040072D0 RID: 29392
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int skipMouseLookNextFrame;
 
-	// Token: 0x04007290 RID: 29328
+	// Token: 0x040072D1 RID: 29393
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool wasCameraChangeUsedWithWheel;
 
-	// Token: 0x04007291 RID: 29329
+	// Token: 0x040072D2 RID: 29394
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float cameraChangePressTime = -1f;
 
-	// Token: 0x04007292 RID: 29330
+	// Token: 0x040072D3 RID: 29395
 	public int drawChunkMode;
 
-	// Token: 0x04007293 RID: 29331
+	// Token: 0x040072D4 RID: 29396
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimationCurve lookAccelerationCurve;
 
-	// Token: 0x04007294 RID: 29332
+	// Token: 0x040072D5 RID: 29397
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lookAccelerationRate;
 
-	// Token: 0x04007295 RID: 29333
+	// Token: 0x040072D6 RID: 29398
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentLookAcceleration;
 
-	// Token: 0x04007296 RID: 29334
+	// Token: 0x040072D7 RID: 29399
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float controllerZoomSensitivity;
 
-	// Token: 0x04007297 RID: 29335
+	// Token: 0x040072D8 RID: 29400
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float controllerVehicleSensitivity;
 
-	// Token: 0x04007298 RID: 29336
+	// Token: 0x040072D9 RID: 29401
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool controllerAimAssistsEnabled = true;
 
-	// Token: 0x04007299 RID: 29337
+	// Token: 0x040072DA RID: 29402
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cSprintModeHold = 0;
 
-	// Token: 0x0400729A RID: 29338
+	// Token: 0x040072DB RID: 29403
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cSprintModeToggle = 1;
 
-	// Token: 0x0400729B RID: 29339
+	// Token: 0x040072DC RID: 29404
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cSprintModeAutorun = 2;
 
-	// Token: 0x0400729C RID: 29340
+	// Token: 0x040072DD RID: 29405
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int sprintMode;
 
-	// Token: 0x0400729D RID: 29341
+	// Token: 0x040072DE RID: 29406
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float aimAssistSlowAmount = 1f;
 
-	// Token: 0x0400729E RID: 29342
+	// Token: 0x040072DF RID: 29407
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bAimAssistTargetingItem;
 
-	// Token: 0x0400729F RID: 29343
+	// Token: 0x040072E0 RID: 29408
 	public Vector3i FocusBoxPosition;
 
-	// Token: 0x040072A0 RID: 29344
+	// Token: 0x040072E1 RID: 29409
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive cameraSnapTargetEntity;
 
-	// Token: 0x040072A1 RID: 29345
+	// Token: 0x040072E2 RID: 29410
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool snapTargetingHead;
 
-	// Token: 0x040072A2 RID: 29346
+	// Token: 0x040072E3 RID: 29411
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public eCameraSnapMode cameraSnapMode;
 
-	// Token: 0x040072A3 RID: 29347
+	// Token: 0x040072E4 RID: 29412
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float cameraSnapTime;
 
-	// Token: 0x040072A4 RID: 29348
+	// Token: 0x040072E5 RID: 29413
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<Entity> cameraSnapTargets = new List<Entity>();
 
-	// Token: 0x040072A5 RID: 29349
+	// Token: 0x040072E6 RID: 29414
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimationCurve targetSnapFalloffCurve;
 
-	// Token: 0x040072A6 RID: 29350
+	// Token: 0x040072E7 RID: 29415
 	public Action toggleGodMode;
 
-	// Token: 0x040072A7 RID: 29351
+	// Token: 0x040072E8 RID: 29416
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Action teleportPlayer;
 
-	// Token: 0x040072A8 RID: 29352
+	// Token: 0x040072E9 RID: 29417
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cGuiClosedInputWaitUpdates = 3;
 
-	// Token: 0x040072A9 RID: 29353
+	// Token: 0x040072EA RID: 29418
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool wasGuiClosedThisUpdate;
 
-	// Token: 0x040072AA RID: 29354
+	// Token: 0x040072EB RID: 29419
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool guiOpenLastUpdate;
 
-	// Token: 0x040072AB RID: 29355
+	// Token: 0x040072EC RID: 29420
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool guiOpenThisUpdate;
 
-	// Token: 0x040072AC RID: 29356
+	// Token: 0x040072ED RID: 29421
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int guiClosedUpdateCount;
 
-	// Token: 0x040072AD RID: 29357
+	// Token: 0x040072EE RID: 29422
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool wasVehicle;
 
-	// Token: 0x040072AE RID: 29358
+	// Token: 0x040072EF RID: 29423
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool runToggleActive;
 
-	// Token: 0x040072AF RID: 29359
+	// Token: 0x040072F0 RID: 29424
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float runInputTime;
 
-	// Token: 0x040072B0 RID: 29360
+	// Token: 0x040072F1 RID: 29425
 	public bool isAutorun;
 
-	// Token: 0x040072B1 RID: 29361
+	// Token: 0x040072F2 RID: 29426
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isAutorunInvalid;
 
-	// Token: 0x040072B2 RID: 29362
+	// Token: 0x040072F3 RID: 29427
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool inventoryScrollPressed;
 
-	// Token: 0x040072B3 RID: 29363
+	// Token: 0x040072F4 RID: 29428
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int inventoryScrollIdxToSelect = -1;
 
-	// Token: 0x040072B4 RID: 29364
+	// Token: 0x040072F5 RID: 29429
 	public bool cameraChangeRequested;
 
-	// Token: 0x040072B5 RID: 29365
+	// Token: 0x040072F6 RID: 29430
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SpawnPosition spawnPosition = SpawnPosition.Undef;
 
-	// Token: 0x040072B6 RID: 29366
+	// Token: 0x040072F7 RID: 29431
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool waitingForSpawnPointSelection;
 
-	// Token: 0x040072B7 RID: 29367
+	// Token: 0x040072F8 RID: 29432
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float colliderWaitTime;
 
-	// Token: 0x040072B8 RID: 29368
+	// Token: 0x040072F9 RID: 29433
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cMaxColliderWaitSeconds = 5f;
 
-	// Token: 0x040072B9 RID: 29369
+	// Token: 0x040072FA RID: 29434
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public PlayerMoveController.RespawnConditionTimer respawnChunkWaitTimer = new PlayerMoveController.RespawnConditionTimer("Waiting for respawn chunk", 10f);
 
-	// Token: 0x040072BA RID: 29370
+	// Token: 0x040072FB RID: 29435
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public PlayerMoveController.RespawnConditionTimer respawnUIWaitTimer = new PlayerMoveController.RespawnConditionTimer("Waiting for player xui", 10f);
 
-	// Token: 0x040072BB RID: 29371
+	// Token: 0x040072FC RID: 29436
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public PlayerMoveController.RespawnConditionTimer respawnWorldWaitTimer = new PlayerMoveController.RespawnConditionTimer("Waiting for world", 15f);
 
-	// Token: 0x040072BC RID: 29372
+	// Token: 0x040072FD RID: 29437
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool wasUIInputActive;
 
-	// Token: 0x040072BD RID: 29373
+	// Token: 0x040072FE RID: 29438
 	public static bool useScaledMouseLook = false;
 
-	// Token: 0x040072BE RID: 29374
+	// Token: 0x040072FF RID: 29439
 	public static float lookDeltaTimeScale = 100f;
 
-	// Token: 0x040072BF RID: 29375
+	// Token: 0x04007300 RID: 29440
 	public static float mouseDeltaTimeScale = 75f;
 
-	// Token: 0x040072C0 RID: 29376
+	// Token: 0x04007301 RID: 29441
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 previousMouseInput = Vector2.zero;
 
-	// Token: 0x040072C1 RID: 29377
+	// Token: 0x04007302 RID: 29442
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool runPressedWhileActive;
 
-	// Token: 0x040072C2 RID: 29378
+	// Token: 0x04007303 RID: 29443
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<int> nextHeldItem = new List<int>();
 
-	// Token: 0x020012D7 RID: 4823
+	// Token: 0x020012E9 RID: 4841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RespawnConditionTimer
 	{
-		// Token: 0x17001248 RID: 4680
-		// (get) Token: 0x060098AF RID: 39087 RVA: 0x0039ECCF File Offset: 0x0039CECF
-		// (set) Token: 0x060098B0 RID: 39088 RVA: 0x0039ECD7 File Offset: 0x0039CED7
+		// Token: 0x17001254 RID: 4692
+		// (get) Token: 0x06009907 RID: 39175 RVA: 0x003A10D3 File Offset: 0x0039F2D3
+		// (set) Token: 0x06009908 RID: 39176 RVA: 0x003A10DB File Offset: 0x0039F2DB
 		public bool HasLogged
 		{
 			readonly get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x060098B1 RID: 39089 RVA: 0x0039ECE0 File Offset: 0x0039CEE0
+		// Token: 0x06009909 RID: 39177 RVA: 0x003A10E4 File Offset: 0x0039F2E4
 		public RespawnConditionTimer(string _name, float _timeoutSeconds)
 		{
 			this.name = _name;
@@ -3016,7 +3016,7 @@ public class PlayerMoveController : MonoBehaviour
 			this.HasLogged = false;
 		}
 
-		// Token: 0x060098B2 RID: 39090 RVA: 0x0039ED02 File Offset: 0x0039CF02
+		// Token: 0x0600990A RID: 39178 RVA: 0x003A1106 File Offset: 0x0039F306
 		public bool HasReachedTimeout(float _deltaTime)
 		{
 			if (this.timer < this.timeoutSeconds)
@@ -3027,28 +3027,28 @@ public class PlayerMoveController : MonoBehaviour
 			return true;
 		}
 
-		// Token: 0x060098B3 RID: 39091 RVA: 0x0039ED23 File Offset: 0x0039CF23
+		// Token: 0x0600990B RID: 39179 RVA: 0x003A1127 File Offset: 0x0039F327
 		public void LogTimeoutReached()
 		{
 			Log.Warning(string.Format("Respawning stuck on {0} for {1:F2}s, forcing continue", this.name, this.timer));
 			this.HasLogged = true;
 		}
 
-		// Token: 0x060098B4 RID: 39092 RVA: 0x0039ED4C File Offset: 0x0039CF4C
+		// Token: 0x0600990C RID: 39180 RVA: 0x003A1150 File Offset: 0x0039F350
 		public void Reset()
 		{
 			this.timer = 0f;
 			this.HasLogged = false;
 		}
 
-		// Token: 0x040072C3 RID: 29379
+		// Token: 0x04007304 RID: 29444
 		public readonly string name;
 
-		// Token: 0x040072C4 RID: 29380
+		// Token: 0x04007305 RID: 29445
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float timer;
 
-		// Token: 0x040072C5 RID: 29381
+		// Token: 0x04007306 RID: 29446
 		public readonly float timeoutSeconds;
 	}
 }

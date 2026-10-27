@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EB RID: 2027
+// Token: 0x020007F5 RID: 2037
 [Preserve]
 public class NetPackageEntitySpawn : NetPackageEntityTargeted
 {
-	// Token: 0x1700065C RID: 1628
-	// (get) Token: 0x06003BDE RID: 15326 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000662 RID: 1634
+	// (get) Token: 0x06003C01 RID: 15361 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BDF RID: 15327 RVA: 0x001808B1 File Offset: 0x0017EAB1
+	// Token: 0x06003C02 RID: 15362 RVA: 0x001819B5 File Offset: 0x0017FBB5
 	public NetPackageEntitySpawn Setup(EntityCreationData _es)
 	{
 		base.Setup(_es.id);
@@ -24,7 +24,7 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BE0 RID: 15328 RVA: 0x001808C7 File Offset: 0x0017EAC7
+	// Token: 0x06003C03 RID: 15363 RVA: 0x001819CB File Offset: 0x0017FBCB
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -32,14 +32,14 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		this.es.read(_reader, StreamModeRead.FromServer);
 	}
 
-	// Token: 0x06003BE1 RID: 15329 RVA: 0x001808E8 File Offset: 0x0017EAE8
+	// Token: 0x06003C04 RID: 15364 RVA: 0x001819EC File Offset: 0x0017FBEC
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.es.write(_writer, StreamModeWrite.ToClient);
 	}
 
-	// Token: 0x06003BE2 RID: 15330 RVA: 0x00180900 File Offset: 0x0017EB00
+	// Token: 0x06003C05 RID: 15365 RVA: 0x00181A04 File Offset: 0x0017FC04
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -64,6 +64,6 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		});
 	}
 
-	// Token: 0x040030AD RID: 12461
+	// Token: 0x040030CD RID: 12493
 	public EntityCreationData es;
 }

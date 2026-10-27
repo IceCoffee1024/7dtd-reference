@@ -2,13 +2,13 @@
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DED RID: 3565
+// Token: 0x02000DF8 RID: 3576
 [Preserve]
 public class XUiC_ServerBrowserGamePrefSelectorComboSandboxOption : XUiC_ServerBrowserGamePrefSelectorCombo
 {
-	// Token: 0x17000C18 RID: 3096
-	// (get) Token: 0x06006C96 RID: 27798 RVA: 0x002A844C File Offset: 0x002A664C
-	// (set) Token: 0x06006C97 RID: 27799 RVA: 0x002A8454 File Offset: 0x002A6654
+	// Token: 0x17000C1E RID: 3102
+	// (get) Token: 0x06006CBB RID: 27835 RVA: 0x002A9974 File Offset: 0x002A7B74
+	// (set) Token: 0x06006CBC RID: 27836 RVA: 0x002A997C File Offset: 0x002A7B7C
 	[XuiXmlAttribute("sandboxoption", false)]
 	public global::SandboxOptions.SandboxOptions SandboxOption
 	{
@@ -18,7 +18,7 @@ public class XUiC_ServerBrowserGamePrefSelectorComboSandboxOption : XUiC_ServerB
 		set;
 	}
 
-	// Token: 0x06006C98 RID: 27800 RVA: 0x002A8460 File Offset: 0x002A6660
+	// Token: 0x06006CBD RID: 27837 RVA: 0x002A9988 File Offset: 0x002A7B88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setupOptions()
 	{

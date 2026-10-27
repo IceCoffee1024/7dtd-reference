@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001401 RID: 5121
+// Token: 0x02001413 RID: 5139
 public class DictionaryList<T, S>
 {
-	// Token: 0x0600A066 RID: 41062 RVA: 0x003C69F3 File Offset: 0x003C4BF3
+	// Token: 0x0600A0BE RID: 41150 RVA: 0x003C8DF7 File Offset: 0x003C6FF7
 	public DictionaryList()
 	{
 		this.dict = new Dictionary<T, S>();
 	}
 
-	// Token: 0x0600A067 RID: 41063 RVA: 0x003C6A11 File Offset: 0x003C4C11
+	// Token: 0x0600A0BF RID: 41151 RVA: 0x003C8E15 File Offset: 0x003C7015
 	public DictionaryList(IEqualityComparer<T> _comparer)
 	{
 		this.dict = new Dictionary<T, S>(_comparer);
 	}
 
-	// Token: 0x0600A068 RID: 41064 RVA: 0x003C6A30 File Offset: 0x003C4C30
+	// Token: 0x0600A0C0 RID: 41152 RVA: 0x003C8E34 File Offset: 0x003C7034
 	public void Add(T _key, S _value)
 	{
 		this.dict.Add(_key, _value);
 		this.list.Add(_value);
 	}
 
-	// Token: 0x0600A069 RID: 41065 RVA: 0x003C6A4B File Offset: 0x003C4C4B
+	// Token: 0x0600A0C1 RID: 41153 RVA: 0x003C8E4F File Offset: 0x003C704F
 	public void Set(T _key, S _value)
 	{
 		if (this.dict.ContainsKey(_key))
@@ -33,7 +33,7 @@ public class DictionaryList<T, S>
 		this.Add(_key, _value);
 	}
 
-	// Token: 0x0600A06A RID: 41066 RVA: 0x003C6A6C File Offset: 0x003C4C6C
+	// Token: 0x0600A0C2 RID: 41154 RVA: 0x003C8E70 File Offset: 0x003C7070
 	public bool Remove(T _key)
 	{
 		if (this.dict.ContainsKey(_key))
@@ -46,7 +46,7 @@ public class DictionaryList<T, S>
 		return false;
 	}
 
-	// Token: 0x0600A06B RID: 41067 RVA: 0x003C6AB4 File Offset: 0x003C4CB4
+	// Token: 0x0600A0C3 RID: 41155 RVA: 0x003C8EB8 File Offset: 0x003C70B8
 	public S Get(T _key)
 	{
 		S s;
@@ -57,15 +57,15 @@ public class DictionaryList<T, S>
 		return default(S);
 	}
 
-	// Token: 0x0600A06C RID: 41068 RVA: 0x003C6ADC File Offset: 0x003C4CDC
+	// Token: 0x0600A0C4 RID: 41156 RVA: 0x003C8EE0 File Offset: 0x003C70E0
 	public void Clear()
 	{
 		this.list.Clear();
 		this.dict.Clear();
 	}
 
-	// Token: 0x1700131F RID: 4895
-	// (get) Token: 0x0600A06D RID: 41069 RVA: 0x003C6AF4 File Offset: 0x003C4CF4
+	// Token: 0x1700132B RID: 4907
+	// (get) Token: 0x0600A0C5 RID: 41157 RVA: 0x003C8EF8 File Offset: 0x003C70F8
 	public int Count
 	{
 		get
@@ -74,9 +74,9 @@ public class DictionaryList<T, S>
 		}
 	}
 
-	// Token: 0x04007967 RID: 31079
+	// Token: 0x040079A8 RID: 31144
 	public Dictionary<T, S> dict;
 
-	// Token: 0x04007968 RID: 31080
+	// Token: 0x040079A9 RID: 31145
 	public List<S> list = new List<S>();
 }

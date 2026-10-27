@@ -2,12 +2,12 @@
 using Unity.Profiling;
 using UnityEngine.Scripting;
 
-// Token: 0x020004C0 RID: 1216
+// Token: 0x020004C2 RID: 1218
 [Preserve]
 public class EntityLootContainer : EntityContainerAbs
 {
 	// Token: 0x17000441 RID: 1089
-	// (get) Token: 0x06002670 RID: 9840 RVA: 0x000EBB8A File Offset: 0x000E9D8A
+	// (get) Token: 0x06002677 RID: 9847 RVA: 0x000EBF9A File Offset: 0x000EA19A
 	public override string LocalizedEntityName
 	{
 		get
@@ -20,7 +20,7 @@ public class EntityLootContainer : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002671 RID: 9841 RVA: 0x000EBBAD File Offset: 0x000E9DAD
+	// Token: 0x06002678 RID: 9848 RVA: 0x000EBFBD File Offset: 0x000EA1BD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -28,7 +28,7 @@ public class EntityLootContainer : EntityContainerAbs
 		base.Awake();
 	}
 
-	// Token: 0x06002672 RID: 9842 RVA: 0x000EBBC5 File Offset: 0x000E9DC5
+	// Token: 0x06002679 RID: 9849 RVA: 0x000EBFD5 File Offset: 0x000EA1D5
 	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
@@ -37,7 +37,7 @@ public class EntityLootContainer : EntityContainerAbs
 		this.bag.Write(_bw, _eStreamMode);
 	}
 
-	// Token: 0x06002673 RID: 9843 RVA: 0x000EBBF4 File Offset: 0x000E9DF4
+	// Token: 0x0600267A RID: 9850 RVA: 0x000EC004 File Offset: 0x000EA204
 	public override void Read(byte _version, PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_version, _br, _eStreamMode);
@@ -88,7 +88,7 @@ public class EntityLootContainer : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002674 RID: 9844 RVA: 0x000EBD17 File Offset: 0x000E9F17
+	// Token: 0x0600267B RID: 9851 RVA: 0x000EC127 File Offset: 0x000EA327
 	public override string GetLootList()
 	{
 		if (!(this.OverrideLootList != ""))
@@ -98,7 +98,7 @@ public class EntityLootContainer : EntityContainerAbs
 		return this.OverrideLootList;
 	}
 
-	// Token: 0x06002675 RID: 9845 RVA: 0x000EBD38 File Offset: 0x000E9F38
+	// Token: 0x0600267C RID: 9852 RVA: 0x000EC148 File Offset: 0x000EA348
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleNavObject()
 	{
@@ -108,7 +108,7 @@ public class EntityLootContainer : EntityContainerAbs
 		}
 	}
 
-	// Token: 0x06002676 RID: 9846 RVA: 0x000EBD94 File Offset: 0x000E9F94
+	// Token: 0x0600267D RID: 9853 RVA: 0x000EC1A4 File Offset: 0x000EA3A4
 	public void SetContent(ItemStack[] _inventory, int _slotCountOverride = 0)
 	{
 		int num = 0;
@@ -141,7 +141,7 @@ public class EntityLootContainer : EntityContainerAbs
 		this.bag.ItemGrid.Touch();
 	}
 
-	// Token: 0x06002677 RID: 9847 RVA: 0x000EBE32 File Offset: 0x000EA032
+	// Token: 0x0600267E RID: 9854 RVA: 0x000EC242 File Offset: 0x000EA442
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale = 1f)
 	{
 		if (_strength >= 99999)
@@ -151,7 +151,7 @@ public class EntityLootContainer : EntityContainerAbs
 		return base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
 	}
 
-	// Token: 0x06002678 RID: 9848 RVA: 0x000EBE54 File Offset: 0x000EA054
+	// Token: 0x0600267F RID: 9855 RVA: 0x000EC264 File Offset: 0x000EA464
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -164,9 +164,9 @@ public class EntityLootContainer : EntityContainerAbs
 		});
 	}
 
-	// Token: 0x04001C91 RID: 7313
+	// Token: 0x04001CA1 RID: 7329
 	public string OverrideLootList = "";
 
-	// Token: 0x04001C92 RID: 7314
+	// Token: 0x04001CA2 RID: 7330
 	public string OverrideName = "";
 }

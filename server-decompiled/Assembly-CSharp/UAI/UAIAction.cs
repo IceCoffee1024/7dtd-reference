@@ -4,29 +4,29 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017AF RID: 6063
+	// Token: 0x020017E0 RID: 6112
 	[Preserve]
 	public class UAIAction
 	{
-		// Token: 0x17001740 RID: 5952
-		// (get) Token: 0x0600BBD0 RID: 48080 RVA: 0x0045B1B4 File Offset: 0x004593B4
-		// (set) Token: 0x0600BBD1 RID: 48081 RVA: 0x0045B1BC File Offset: 0x004593BC
+		// Token: 0x17001788 RID: 6024
+		// (get) Token: 0x0600BCE4 RID: 48356 RVA: 0x0045EB60 File Offset: 0x0045CD60
+		// (set) Token: 0x0600BCE5 RID: 48357 RVA: 0x0045EB68 File Offset: 0x0045CD68
 		public string Name
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001741 RID: 5953
-		// (get) Token: 0x0600BBD2 RID: 48082 RVA: 0x0045B1C5 File Offset: 0x004593C5
-		// (set) Token: 0x0600BBD3 RID: 48083 RVA: 0x0045B1CD File Offset: 0x004593CD
+		// Token: 0x17001789 RID: 6025
+		// (get) Token: 0x0600BCE6 RID: 48358 RVA: 0x0045EB71 File Offset: 0x0045CD71
+		// (set) Token: 0x0600BCE7 RID: 48359 RVA: 0x0045EB79 File Offset: 0x0045CD79
 		public float Weight
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600BBD4 RID: 48084 RVA: 0x0045B1D6 File Offset: 0x004593D6
+		// Token: 0x0600BCE8 RID: 48360 RVA: 0x0045EB82 File Offset: 0x0045CD82
 		public UAIAction(string _name, float _weight)
 		{
 			this.Name = _name;
@@ -35,7 +35,7 @@ namespace UAI
 			this.tasks = new List<UAITaskBase>();
 		}
 
-		// Token: 0x0600BBD5 RID: 48085 RVA: 0x0045B204 File Offset: 0x00459404
+		// Token: 0x0600BCE9 RID: 48361 RVA: 0x0045EBB0 File Offset: 0x0045CDB0
 		public float GetScore(Context _context, object _target, float min = 0f)
 		{
 			float num = 1f;
@@ -58,35 +58,35 @@ namespace UAI
 			return (num + (1f - num) * (float)(1 - 1 / this.considerations.Count) * num) * this.Weight;
 		}
 
-		// Token: 0x0600BBD6 RID: 48086 RVA: 0x0045B2B2 File Offset: 0x004594B2
+		// Token: 0x0600BCEA RID: 48362 RVA: 0x0045EC5E File Offset: 0x0045CE5E
 		public void AddConsideration(UAIConsiderationBase _c)
 		{
 			this.considerations.Add(_c);
 		}
 
-		// Token: 0x0600BBD7 RID: 48087 RVA: 0x0045B2C0 File Offset: 0x004594C0
+		// Token: 0x0600BCEB RID: 48363 RVA: 0x0045EC6C File Offset: 0x0045CE6C
 		public void AddTask(UAITaskBase _t)
 		{
 			this.tasks.Add(_t);
 		}
 
-		// Token: 0x0600BBD8 RID: 48088 RVA: 0x0045B2CE File Offset: 0x004594CE
+		// Token: 0x0600BCEC RID: 48364 RVA: 0x0045EC7A File Offset: 0x0045CE7A
 		public List<UAIConsiderationBase> GetConsiderations()
 		{
 			return this.considerations;
 		}
 
-		// Token: 0x0600BBD9 RID: 48089 RVA: 0x0045B2D6 File Offset: 0x004594D6
+		// Token: 0x0600BCED RID: 48365 RVA: 0x0045EC82 File Offset: 0x0045CE82
 		public List<UAITaskBase> GetTasks()
 		{
 			return this.tasks;
 		}
 
-		// Token: 0x04008C8B RID: 35979
+		// Token: 0x04008D74 RID: 36212
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<UAITaskBase> tasks;
 
-		// Token: 0x04008C8C RID: 35980
+		// Token: 0x04008D75 RID: 36213
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<UAIConsiderationBase> considerations;
 	}

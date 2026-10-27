@@ -7,15 +7,15 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C4C RID: 7244
+	// Token: 0x02001C7D RID: 7293
 	public static class XblHelpers
 	{
 		// Token: 0x1400012E RID: 302
-		// (add) Token: 0x0600D72F RID: 55087 RVA: 0x004D3E3C File Offset: 0x004D203C
-		// (remove) Token: 0x0600D730 RID: 55088 RVA: 0x004D3E70 File Offset: 0x004D2070
+		// (add) Token: 0x0600D843 RID: 55363 RVA: 0x004D7964 File Offset: 0x004D5B64
+		// (remove) Token: 0x0600D844 RID: 55364 RVA: 0x004D7998 File Offset: 0x004D5B98
 		public static event XblHelpers.ErrorDelegate OnError;
 
-		// Token: 0x0600D731 RID: 55089 RVA: 0x004D3EA4 File Offset: 0x004D20A4
+		// Token: 0x0600D845 RID: 55365 RVA: 0x004D79CC File Offset: 0x004D5BCC
 		public static bool Succeeded(int _hresult, string _operationFriendlyName, bool _logToConsole = true, bool _printSuccess = false)
 		{
 			if (Unity.XGamingRuntime.Interop.HR.SUCCEEDED(_hresult))
@@ -43,7 +43,7 @@ namespace Platform.XBL
 			return false;
 		}
 
-		// Token: 0x0600D732 RID: 55090 RVA: 0x004D3F20 File Offset: 0x004D2120
+		// Token: 0x0600D846 RID: 55366 RVA: 0x004D7A48 File Offset: 0x004D5C48
 		[PublicizedFrom(EAccessModifier.Private)]
 		static XblHelpers()
 		{
@@ -51,7 +51,7 @@ namespace Platform.XBL
 			XblHelpers.hresultToFriendlyErrorLookup[-2015035361] = "Missing Game Config";
 		}
 
-		// Token: 0x0600D733 RID: 55091 RVA: 0x004D3FE0 File Offset: 0x004D21E0
+		// Token: 0x0600D847 RID: 55367 RVA: 0x004D7B08 File Offset: 0x004D5D08
 		public static string GetHRName(int hr)
 		{
 			string text;
@@ -62,7 +62,7 @@ namespace Platform.XBL
 			return text;
 		}
 
-		// Token: 0x0600D734 RID: 55092 RVA: 0x004D4004 File Offset: 0x004D2204
+		// Token: 0x0600D848 RID: 55368 RVA: 0x004D7B2C File Offset: 0x004D5D2C
 		public static void LogHR(int hr, string identifier, bool failWarn = false)
 		{
 			bool flag = Unity.XGamingRuntime.Interop.HR.SUCCEEDED(hr);
@@ -87,11 +87,11 @@ namespace Platform.XBL
 			Log.Error(text2);
 		}
 
-		// Token: 0x0400A358 RID: 41816
+		// Token: 0x0400A441 RID: 42049
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<int, string> hresultToFriendlyErrorLookup = new Dictionary<int, string>();
 
-		// Token: 0x0400A359 RID: 41817
+		// Token: 0x0400A442 RID: 42050
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly IReadOnlyDictionary<int, string> s_hrToName = (from f in new Type[]
 			{
@@ -102,8 +102,8 @@ namespace Platform.XBL
 			where f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(int)
 			select f).ToDictionary<FieldInfo, int, string>((FieldInfo f) => (int)f.GetValue(null), (FieldInfo f) => f.Name);
 
-		// Token: 0x02001C4D RID: 7245
-		// (Invoke) Token: 0x0600D736 RID: 55094
+		// Token: 0x02001C7E RID: 7294
+		// (Invoke) Token: 0x0600D84A RID: 55370
 		public delegate void ErrorDelegate(int _hresult, string _operationFriendlyName, string _errorMessage);
 	}
 }

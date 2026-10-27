@@ -3,11 +3,11 @@ using System.Collections;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000571 RID: 1393
+// Token: 0x02000578 RID: 1400
 public sealed class Hand
 {
 	// Token: 0x170004C7 RID: 1223
-	// (get) Token: 0x06002D0E RID: 11534 RVA: 0x00120A4C File Offset: 0x0011EC4C
+	// (get) Token: 0x06002D19 RID: 11545 RVA: 0x0012100C File Offset: 0x0011F20C
 	public ItemInventoryData Held
 	{
 		get
@@ -31,7 +31,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004C8 RID: 1224
-	// (get) Token: 0x06002D0F RID: 11535 RVA: 0x00120AB3 File Offset: 0x0011ECB3
+	// (get) Token: 0x06002D1A RID: 11546 RVA: 0x00121073 File Offset: 0x0011F273
 	public ItemClass Item
 	{
 		get
@@ -41,7 +41,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004C9 RID: 1225
-	// (get) Token: 0x06002D10 RID: 11536 RVA: 0x00120AC0 File Offset: 0x0011ECC0
+	// (get) Token: 0x06002D1B RID: 11547 RVA: 0x00121080 File Offset: 0x0011F280
 	public ItemValue ItemValue
 	{
 		get
@@ -51,7 +51,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004CA RID: 1226
-	// (get) Token: 0x06002D11 RID: 11537 RVA: 0x00120ACD File Offset: 0x0011ECCD
+	// (get) Token: 0x06002D1C RID: 11548 RVA: 0x0012108D File Offset: 0x0011F28D
 	public ItemStack Stack
 	{
 		get
@@ -61,7 +61,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004CB RID: 1227
-	// (get) Token: 0x06002D12 RID: 11538 RVA: 0x00120ADA File Offset: 0x0011ECDA
+	// (get) Token: 0x06002D1D RID: 11549 RVA: 0x0012109A File Offset: 0x0011F29A
 	public int Count
 	{
 		get
@@ -71,7 +71,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004CC RID: 1228
-	// (get) Token: 0x06002D13 RID: 11539 RVA: 0x00120AEC File Offset: 0x0011ECEC
+	// (get) Token: 0x06002D1E RID: 11550 RVA: 0x001210AC File Offset: 0x0011F2AC
 	public bool IsBusy
 	{
 		get
@@ -81,7 +81,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004CD RID: 1229
-	// (get) Token: 0x06002D14 RID: 11540 RVA: 0x00120B1C File Offset: 0x0011ED1C
+	// (get) Token: 0x06002D1F RID: 11551 RVA: 0x001210DC File Offset: 0x0011F2DC
 	public bool IsSwitching
 	{
 		get
@@ -91,7 +91,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004CE RID: 1230
-	// (get) Token: 0x06002D15 RID: 11541 RVA: 0x00120B24 File Offset: 0x0011ED24
+	// (get) Token: 0x06002D20 RID: 11552 RVA: 0x001210E4 File Offset: 0x0011F2E4
 	public bool IsHolstered
 	{
 		get
@@ -101,7 +101,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004CF RID: 1231
-	// (get) Token: 0x06002D16 RID: 11542 RVA: 0x00120B2F File Offset: 0x0011ED2F
+	// (get) Token: 0x06002D21 RID: 11553 RVA: 0x001210EF File Offset: 0x0011F2EF
 	public ItemValue BareHandItemValue
 	{
 		get
@@ -111,7 +111,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004D0 RID: 1232
-	// (get) Token: 0x06002D17 RID: 11543 RVA: 0x00120B3C File Offset: 0x0011ED3C
+	// (get) Token: 0x06002D22 RID: 11554 RVA: 0x001210FC File Offset: 0x0011F2FC
 	public ItemClass BareHandItem
 	{
 		get
@@ -121,7 +121,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004D1 RID: 1233
-	// (get) Token: 0x06002D18 RID: 11544 RVA: 0x00120B49 File Offset: 0x0011ED49
+	// (get) Token: 0x06002D23 RID: 11555 RVA: 0x00121109 File Offset: 0x0011F309
 	public int DataSlotNoBarehandFallback
 	{
 		get
@@ -131,7 +131,7 @@ public sealed class Hand
 	}
 
 	// Token: 0x170004D2 RID: 1234
-	// (get) Token: 0x06002D19 RID: 11545 RVA: 0x00120B56 File Offset: 0x0011ED56
+	// (get) Token: 0x06002D24 RID: 11556 RVA: 0x00121116 File Offset: 0x0011F316
 	public Transform ModelTransform
 	{
 		get
@@ -148,7 +148,7 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D1A RID: 11546 RVA: 0x00120B81 File Offset: 0x0011ED81
+	// Token: 0x06002D25 RID: 11557 RVA: 0x00121141 File Offset: 0x0011F341
 	public Hand(EntityAlive _entity)
 	{
 		this.entity = _entity;
@@ -156,7 +156,7 @@ public sealed class Hand
 		this.transientData = ItemInventoryData.Create(_entity, null, -1);
 	}
 
-	// Token: 0x06002D1B RID: 11547 RVA: 0x00120BBC File Offset: 0x0011EDBC
+	// Token: 0x06002D26 RID: 11558 RVA: 0x0012117C File Offset: 0x0011F37C
 	public void BindToolbelt(Inventory _toolbelt)
 	{
 		if (this.slotDatas == null)
@@ -176,7 +176,7 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D1C RID: 11548 RVA: 0x00120C68 File Offset: 0x0011EE68
+	// Token: 0x06002D27 RID: 11559 RVA: 0x00121228 File Offset: 0x0011F428
 	public void Cleanup()
 	{
 		if (this.switchingCoroutine != null)
@@ -200,7 +200,7 @@ public sealed class Hand
 		this.mode = Hand.HoldingMode.Current;
 	}
 
-	// Token: 0x06002D1D RID: 11549 RVA: 0x00120D04 File Offset: 0x0011EF04
+	// Token: 0x06002D28 RID: 11560 RVA: 0x001212C4 File Offset: 0x0011F4C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnSlotChanged(int _idx)
 	{
@@ -208,7 +208,7 @@ public sealed class Hand
 		this.Reconcile();
 	}
 
-	// Token: 0x06002D1E RID: 11550 RVA: 0x00120D1A File Offset: 0x0011EF1A
+	// Token: 0x06002D29 RID: 11561 RVA: 0x001212DA File Offset: 0x0011F4DA
 	public ItemInventoryData GetSlotData(int _idx)
 	{
 		if (this.slotDatas[_idx].item == null)
@@ -218,7 +218,7 @@ public sealed class Hand
 		return this.slotDatas[_idx];
 	}
 
-	// Token: 0x06002D1F RID: 11551 RVA: 0x00120D38 File Offset: 0x0011EF38
+	// Token: 0x06002D2A RID: 11562 RVA: 0x001212F8 File Offset: 0x0011F4F8
 	public void SelectSlot(int _slot, bool _applyHolsterTime)
 	{
 		ItemInventoryData itemInventoryData = this.slotDatas[_slot];
@@ -242,7 +242,7 @@ public sealed class Hand
 		this.SelectHoldingMode(Hand.HoldingMode.Current, _applyHolsterTime ? 0.2f : 0f);
 	}
 
-	// Token: 0x06002D20 RID: 11552 RVA: 0x00120E1C File Offset: 0x0011F01C
+	// Token: 0x06002D2B RID: 11563 RVA: 0x001213DC File Offset: 0x0011F5DC
 	public void SelectHoldingMode(Hand.HoldingMode _mode, float _holsterTime = 0f)
 	{
 		ItemInventoryData itemInventoryData = this.equipped;
@@ -283,7 +283,7 @@ public sealed class Hand
 		this.switchingCoroutine = GameManager.Instance.StartCoroutine(this.TransitionRoutine(itemClass2, _holsterTime));
 	}
 
-	// Token: 0x06002D21 RID: 11553 RVA: 0x00120F12 File Offset: 0x0011F112
+	// Token: 0x06002D2C RID: 11564 RVA: 0x001214D2 File Offset: 0x0011F6D2
 	public void SetBareHandItem(ItemValue _itemValue)
 	{
 		this.bareHandData.SetStack(new ItemStack(_itemValue, 0));
@@ -294,13 +294,13 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D22 RID: 11554 RVA: 0x00120F46 File Offset: 0x0011F146
+	// Token: 0x06002D2D RID: 11565 RVA: 0x00121506 File Offset: 0x0011F706
 	public bool UsingBareHand()
 	{
 		return this.Held == this.bareHandData;
 	}
 
-	// Token: 0x06002D23 RID: 11555 RVA: 0x00120F56 File Offset: 0x0011F156
+	// Token: 0x06002D2E RID: 11566 RVA: 0x00121516 File Offset: 0x0011F716
 	public IEnumerator SimulateActionExecution(int _actionIdx, ItemStackGrid _sourceGrid, int _sourceIdx)
 	{
 		Hand.<>c__DisplayClass52_0 CS$<>8__locals1 = new Hand.<>c__DisplayClass52_0();
@@ -377,7 +377,7 @@ public sealed class Hand
 		yield break;
 	}
 
-	// Token: 0x06002D24 RID: 11556 RVA: 0x00120F7A File Offset: 0x0011F17A
+	// Token: 0x06002D2F RID: 11567 RVA: 0x0012153A File Offset: 0x0011F73A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator TransitionRoutine(ItemClass _outgoing, float waitTime)
 	{
@@ -432,7 +432,7 @@ public sealed class Hand
 		yield break;
 	}
 
-	// Token: 0x06002D25 RID: 11557 RVA: 0x00120F98 File Offset: 0x0011F198
+	// Token: 0x06002D30 RID: 11568 RVA: 0x00121558 File Offset: 0x0011F758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CompleteTransition()
 	{
@@ -448,7 +448,7 @@ public sealed class Hand
 		this.CancelAnimatorActions();
 	}
 
-	// Token: 0x06002D26 RID: 11558 RVA: 0x00121000 File Offset: 0x0011F200
+	// Token: 0x06002D31 RID: 11569 RVA: 0x001215C0 File Offset: 0x0011F7C0
 	public int GetBestQuickSwapSlot()
 	{
 		if (this.quickSwapSlotIdx == -1 || this.quickSwapItemValue == null || this.toolbelt.GetStackAt(this.quickSwapSlotIdx).itemValue.ItemClass == null)
@@ -469,7 +469,7 @@ public sealed class Hand
 		return -1;
 	}
 
-	// Token: 0x06002D27 RID: 11559 RVA: 0x001210A8 File Offset: 0x0011F2A8
+	// Token: 0x06002D32 RID: 11570 RVA: 0x00121668 File Offset: 0x0011F868
 	public void Reconcile()
 	{
 		if (this.isSwitching)
@@ -509,7 +509,7 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D28 RID: 11560 RVA: 0x0012114C File Offset: 0x0011F34C
+	// Token: 0x06002D33 RID: 11571 RVA: 0x0012170C File Offset: 0x0011F90C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Equip(ItemInventoryData _held)
 	{
@@ -532,7 +532,7 @@ public sealed class Hand
 		this.entity.OnHoldingItemChanged();
 	}
 
-	// Token: 0x06002D29 RID: 11561 RVA: 0x0012121C File Offset: 0x0011F41C
+	// Token: 0x06002D34 RID: 11572 RVA: 0x001217DC File Offset: 0x0011F9DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Unequip()
 	{
@@ -561,7 +561,7 @@ public sealed class Hand
 		this.CancelAnimatorActions();
 	}
 
-	// Token: 0x06002D2A RID: 11562 RVA: 0x001212D8 File Offset: 0x0011F4D8
+	// Token: 0x06002D35 RID: 11573 RVA: 0x00121898 File Offset: 0x0011FA98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FireActivationEvents()
 	{
@@ -611,7 +611,7 @@ public sealed class Hand
 		this.entity.IsEquipping = false;
 	}
 
-	// Token: 0x06002D2B RID: 11563 RVA: 0x00121474 File Offset: 0x0011F674
+	// Token: 0x06002D36 RID: 11574 RVA: 0x00121A34 File Offset: 0x0011FC34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CancelAnimatorActions()
 	{
@@ -625,7 +625,7 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D2C RID: 11564 RVA: 0x00121548 File Offset: 0x0011F748
+	// Token: 0x06002D37 RID: 11575 RVA: 0x00121B08 File Offset: 0x0011FD08
 	public void OnUpdate()
 	{
 		if (!this.isSwitching && !this.entity.IsDead() && this.entity.IsSpawned())
@@ -641,7 +641,7 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D2D RID: 11565 RVA: 0x00121608 File Offset: 0x0011F808
+	// Token: 0x06002D38 RID: 11576 RVA: 0x00121BC8 File Offset: 0x0011FDC8
 	public void Execute(int _actionIdx, bool _bReleased, PlayerActionsLocal _playerActions = null)
 	{
 		if (this.isSwitching)
@@ -659,7 +659,7 @@ public sealed class Hand
 		this.Item.ExecuteAction(_actionIdx, this.Held, _bReleased, _playerActions);
 	}
 
-	// Token: 0x06002D2E RID: 11566 RVA: 0x00121640 File Offset: 0x0011F840
+	// Token: 0x06002D39 RID: 11577 RVA: 0x00121C00 File Offset: 0x0011FE00
 	public void ReleaseAll(PlayerActionsLocal _playerActions = null)
 	{
 		ItemClass item = this.Item;
@@ -669,108 +669,108 @@ public sealed class Hand
 		}
 	}
 
-	// Token: 0x06002D2F RID: 11567 RVA: 0x00121670 File Offset: 0x0011F870
+	// Token: 0x06002D3A RID: 11578 RVA: 0x00121C30 File Offset: 0x0011FE30
 	public bool IsActionRunning()
 	{
 		return this.Item.IsActionRunning(this.Held);
 	}
 
-	// Token: 0x06002D30 RID: 11568 RVA: 0x00121683 File Offset: 0x0011F883
+	// Token: 0x06002D3B RID: 11579 RVA: 0x00121C43 File Offset: 0x0011FE43
 	public bool IsHUDDisabled()
 	{
 		return this.Item.IsHUDDisabled(this.Held);
 	}
 
-	// Token: 0x06002D31 RID: 11569 RVA: 0x00121696 File Offset: 0x0011F896
+	// Token: 0x06002D3C RID: 11580 RVA: 0x00121C56 File Offset: 0x0011FE56
 	public string CanInteract()
 	{
 		return this.Item.CanInteract(this.Held);
 	}
 
-	// Token: 0x06002D32 RID: 11570 RVA: 0x001216A9 File Offset: 0x0011F8A9
+	// Token: 0x06002D3D RID: 11581 RVA: 0x00121C69 File Offset: 0x0011FE69
 	public void Interact()
 	{
 		this.Item.Interact(this.Held);
 	}
 
-	// Token: 0x0400236B RID: 9067
+	// Token: 0x04002386 RID: 9094
 	public static readonly FastTags<TagGroup.Global> IgnoreWhenHeld = FastTags<TagGroup.Global>.Parse("clothing,armor");
 
-	// Token: 0x0400236C RID: 9068
+	// Token: 0x04002387 RID: 9095
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cHolsterTime = 0.2f;
 
-	// Token: 0x0400236D RID: 9069
+	// Token: 0x04002388 RID: 9096
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cQuickSwapSettleTime = 0.3f;
 
-	// Token: 0x0400236E RID: 9070
+	// Token: 0x04002389 RID: 9097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly EntityAlive entity;
 
-	// Token: 0x0400236F RID: 9071
+	// Token: 0x0400238A RID: 9098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Inventory toolbelt;
 
-	// Token: 0x04002370 RID: 9072
+	// Token: 0x0400238B RID: 9099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData[] slotDatas;
 
-	// Token: 0x04002371 RID: 9073
+	// Token: 0x0400238C RID: 9100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData bareHandData;
 
-	// Token: 0x04002372 RID: 9074
+	// Token: 0x0400238D RID: 9101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData transientData;
 
-	// Token: 0x04002373 RID: 9075
+	// Token: 0x0400238E RID: 9102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Hand.HoldingMode mode;
 
-	// Token: 0x04002374 RID: 9076
+	// Token: 0x0400238F RID: 9103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue previousHeldItemValue;
 
-	// Token: 0x04002375 RID: 9077
+	// Token: 0x04002390 RID: 9104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousHeldItemSlotIdx = -1;
 
-	// Token: 0x04002376 RID: 9078
+	// Token: 0x04002391 RID: 9105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue quickSwapItemValue;
 
-	// Token: 0x04002377 RID: 9079
+	// Token: 0x04002392 RID: 9106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int quickSwapSlotIdx = -1;
 
-	// Token: 0x04002378 RID: 9080
+	// Token: 0x04002393 RID: 9107
 	public bool WaitForSecondaryRelease;
 
-	// Token: 0x04002379 RID: 9081
+	// Token: 0x04002394 RID: 9108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSwitching;
 
-	// Token: 0x0400237A RID: 9082
+	// Token: 0x04002395 RID: 9109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine switchingCoroutine;
 
-	// Token: 0x0400237B RID: 9083
+	// Token: 0x04002396 RID: 9110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData equipped;
 
-	// Token: 0x0400237C RID: 9084
+	// Token: 0x04002397 RID: 9111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData holstering;
 
-	// Token: 0x02000572 RID: 1394
+	// Token: 0x02000579 RID: 1401
 	public enum HoldingMode
 	{
-		// Token: 0x0400237E RID: 9086
+		// Token: 0x04002399 RID: 9113
 		Current,
-		// Token: 0x0400237F RID: 9087
+		// Token: 0x0400239A RID: 9114
 		Bare,
-		// Token: 0x04002380 RID: 9088
+		// Token: 0x0400239B RID: 9115
 		Transient
 	}
 }

@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockPoweredTrap : BlockPowered
 {
-	// Token: 0x060008BD RID: 2237 RVA: 0x0003D820 File Offset: 0x0003BA20
+	// Token: 0x060008BD RID: 2237 RVA: 0x0003D7E0 File Offset: 0x0003B9E0
 	public override void Init()
 	{
 		base.Init();
@@ -27,7 +27,7 @@ public class BlockPoweredTrap : BlockPowered
 		this.damageReceived = 0;
 	}
 
-	// Token: 0x060008BE RID: 2238 RVA: 0x0003D8B4 File Offset: 0x0003BAB4
+	// Token: 0x060008BE RID: 2238 RVA: 0x0003D874 File Offset: 0x0003BA74
 	public override void GetCollisionAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedY, List<Bounds> _result)
 	{
 		base.GetCollisionAABB(_blockValue, _x, _y, _z, _distortedY, _result);
@@ -40,7 +40,7 @@ public class BlockPoweredTrap : BlockPowered
 		}
 	}
 
-	// Token: 0x060008BF RID: 2239 RVA: 0x000355E7 File Offset: 0x000337E7
+	// Token: 0x060008BF RID: 2239 RVA: 0x000355A7 File Offset: 0x000337A7
 	public override IList<Bounds> GetClipBoundsList(BlockValue _blockValue, Vector3 _blockPos)
 	{
 		Block.staticList_IntersectRayWithBlockList.Clear();
@@ -48,7 +48,7 @@ public class BlockPoweredTrap : BlockPowered
 		return Block.staticList_IntersectRayWithBlockList;
 	}
 
-	// Token: 0x060008C0 RID: 2240 RVA: 0x0003D92C File Offset: 0x0003BB2C
+	// Token: 0x060008C0 RID: 2240 RVA: 0x0003D8EC File Offset: 0x0003BAEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateTrapState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bSwitchTrap = false)
 	{
@@ -87,7 +87,7 @@ public class BlockPoweredTrap : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008C1 RID: 2241 RVA: 0x0003DA0A File Offset: 0x0003BC0A
+	// Token: 0x060008C1 RID: 2241 RVA: 0x0003D9CA File Offset: 0x0003BBCA
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -99,13 +99,13 @@ public class BlockPoweredTrap : BlockPowered
 		((World)_world).ChunkCache.GetBlockEntity(_blockPos);
 	}
 
-	// Token: 0x060008C2 RID: 2242 RVA: 0x0003AED3 File Offset: 0x000390D3
+	// Token: 0x060008C2 RID: 2242 RVA: 0x0003AE93 File Offset: 0x00039093
 	public static bool IsOn(byte _metadata)
 	{
 		return (_metadata & 2) > 0;
 	}
 
-	// Token: 0x060008C3 RID: 2243 RVA: 0x0003DA44 File Offset: 0x0003BC44
+	// Token: 0x060008C3 RID: 2243 RVA: 0x0003DA04 File Offset: 0x0003BC04
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -145,7 +145,7 @@ public class BlockPoweredTrap : BlockPowered
 		}
 	}
 
-	// Token: 0x060008C4 RID: 2244 RVA: 0x0003DB28 File Offset: 0x0003BD28
+	// Token: 0x060008C4 RID: 2244 RVA: 0x0003DAE8 File Offset: 0x0003BCE8
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -176,7 +176,7 @@ public class BlockPoweredTrap : BlockPowered
 		});
 	}
 
-	// Token: 0x060008C5 RID: 2245 RVA: 0x0003DBC8 File Offset: 0x0003BDC8
+	// Token: 0x060008C5 RID: 2245 RVA: 0x0003DB88 File Offset: 0x0003BD88
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		if (_blockValue.ischild)
@@ -195,7 +195,7 @@ public class BlockPoweredTrap : BlockPowered
 		return false;
 	}
 
-	// Token: 0x060008C7 RID: 2247 RVA: 0x0003DC14 File Offset: 0x0003BE14
+	// Token: 0x060008C7 RID: 2247 RVA: 0x0003DBD4 File Offset: 0x0003BDD4
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredMeleeTrap(chunk);

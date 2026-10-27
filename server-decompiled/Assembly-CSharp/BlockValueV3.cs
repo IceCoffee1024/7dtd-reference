@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 // Token: 0x02000167 RID: 359
 public struct BlockValueV3
 {
-	// Token: 0x060009FA RID: 2554 RVA: 0x00043608 File Offset: 0x00041808
+	// Token: 0x060009FA RID: 2554 RVA: 0x000435C8 File Offset: 0x000417C8
 	public static uint ConvertOldRawData(uint _rawData)
 	{
 		BlockValueV3.convertBV3.rawData = _rawData;
@@ -25,14 +25,14 @@ public struct BlockValueV3
 		return BlockValueV3.convertBV.rawData;
 	}
 
-	// Token: 0x060009FB RID: 2555 RVA: 0x000436BD File Offset: 0x000418BD
+	// Token: 0x060009FB RID: 2555 RVA: 0x0004367D File Offset: 0x0004187D
 	public BlockValueV3(uint _rawData)
 	{
 		this.rawData = _rawData;
 	}
 
 	// Token: 0x170000B9 RID: 185
-	// (get) Token: 0x060009FC RID: 2556 RVA: 0x000436C6 File Offset: 0x000418C6
+	// (get) Token: 0x060009FC RID: 2556 RVA: 0x00043686 File Offset: 0x00041886
 	public Block Block
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,7 +42,7 @@ public struct BlockValueV3
 		}
 	}
 
-	// Token: 0x060009FD RID: 2557 RVA: 0x000436D4 File Offset: 0x000418D4
+	// Token: 0x060009FD RID: 2557 RVA: 0x00043694 File Offset: 0x00041894
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static uint GetTypeMasked(uint _v)
 	{
@@ -50,7 +50,7 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000BA RID: 186
-	// (get) Token: 0x060009FE RID: 2558 RVA: 0x000436DD File Offset: 0x000418DD
+	// (get) Token: 0x060009FE RID: 2558 RVA: 0x0004369D File Offset: 0x0004189D
 	public bool isair
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,7 +61,7 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000BB RID: 187
-	// (get) Token: 0x060009FF RID: 2559 RVA: 0x000436E8 File Offset: 0x000418E8
+	// (get) Token: 0x060009FF RID: 2559 RVA: 0x000436A8 File Offset: 0x000418A8
 	public bool isWater
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,8 +72,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000BC RID: 188
-	// (get) Token: 0x06000A00 RID: 2560 RVA: 0x00043713 File Offset: 0x00041913
-	// (set) Token: 0x06000A01 RID: 2561 RVA: 0x00043721 File Offset: 0x00041921
+	// (get) Token: 0x06000A00 RID: 2560 RVA: 0x000436D3 File Offset: 0x000418D3
+	// (set) Token: 0x06000A01 RID: 2561 RVA: 0x000436E1 File Offset: 0x000418E1
 	public int type
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,8 +88,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000BD RID: 189
-	// (get) Token: 0x06000A02 RID: 2562 RVA: 0x00043740 File Offset: 0x00041940
-	// (set) Token: 0x06000A03 RID: 2563 RVA: 0x00043752 File Offset: 0x00041952
+	// (get) Token: 0x06000A02 RID: 2562 RVA: 0x00043700 File Offset: 0x00041900
+	// (set) Token: 0x06000A03 RID: 2563 RVA: 0x00043712 File Offset: 0x00041912
 	public byte rotation
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,8 +104,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000BE RID: 190
-	// (get) Token: 0x06000A04 RID: 2564 RVA: 0x0004376E File Offset: 0x0004196E
-	// (set) Token: 0x06000A05 RID: 2565 RVA: 0x00043780 File Offset: 0x00041980
+	// (get) Token: 0x06000A04 RID: 2564 RVA: 0x0004372E File Offset: 0x0004192E
+	// (set) Token: 0x06000A05 RID: 2565 RVA: 0x00043740 File Offset: 0x00041940
 	public byte meta
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -120,8 +120,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000BF RID: 191
-	// (get) Token: 0x06000A06 RID: 2566 RVA: 0x0004379C File Offset: 0x0004199C
-	// (set) Token: 0x06000A07 RID: 2567 RVA: 0x000437AE File Offset: 0x000419AE
+	// (get) Token: 0x06000A06 RID: 2566 RVA: 0x0004375C File Offset: 0x0004195C
+	// (set) Token: 0x06000A07 RID: 2567 RVA: 0x0004376E File Offset: 0x0004196E
 	public byte meta2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -136,8 +136,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C0 RID: 192
-	// (get) Token: 0x06000A08 RID: 2568 RVA: 0x000437CA File Offset: 0x000419CA
-	// (set) Token: 0x06000A09 RID: 2569 RVA: 0x000437DC File Offset: 0x000419DC
+	// (get) Token: 0x06000A08 RID: 2568 RVA: 0x0004378A File Offset: 0x0004198A
+	// (set) Token: 0x06000A09 RID: 2569 RVA: 0x0004379C File Offset: 0x0004199C
 	public byte meta3
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -153,8 +153,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C1 RID: 193
-	// (get) Token: 0x06000A0A RID: 2570 RVA: 0x000437F7 File Offset: 0x000419F7
-	// (set) Token: 0x06000A0B RID: 2571 RVA: 0x00043809 File Offset: 0x00041A09
+	// (get) Token: 0x06000A0A RID: 2570 RVA: 0x000437B7 File Offset: 0x000419B7
+	// (set) Token: 0x06000A0B RID: 2571 RVA: 0x000437C9 File Offset: 0x000419C9
 	public byte meta2and1
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -170,8 +170,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C2 RID: 194
-	// (get) Token: 0x06000A0C RID: 2572 RVA: 0x00043823 File Offset: 0x00041A23
-	// (set) Token: 0x06000A0D RID: 2573 RVA: 0x00043835 File Offset: 0x00041A35
+	// (get) Token: 0x06000A0C RID: 2572 RVA: 0x000437E3 File Offset: 0x000419E3
+	// (set) Token: 0x06000A0D RID: 2573 RVA: 0x000437F5 File Offset: 0x000419F5
 	public byte rotationAndMeta3
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -189,8 +189,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C3 RID: 195
-	// (get) Token: 0x06000A0E RID: 2574 RVA: 0x0004384D File Offset: 0x00041A4D
-	// (set) Token: 0x06000A0F RID: 2575 RVA: 0x0004385E File Offset: 0x00041A5E
+	// (get) Token: 0x06000A0E RID: 2574 RVA: 0x0004380D File Offset: 0x00041A0D
+	// (set) Token: 0x06000A0F RID: 2575 RVA: 0x0004381E File Offset: 0x00041A1E
 	public bool hasdecal
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -205,7 +205,7 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C4 RID: 196
-	// (get) Token: 0x06000A10 RID: 2576 RVA: 0x0004387E File Offset: 0x00041A7E
+	// (get) Token: 0x06000A10 RID: 2576 RVA: 0x0004383E File Offset: 0x00041A3E
 	public BlockFaceFlag rotatedWaterFlowMask
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -216,8 +216,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C5 RID: 197
-	// (get) Token: 0x06000A11 RID: 2577 RVA: 0x0004376E File Offset: 0x0004196E
-	// (set) Token: 0x06000A12 RID: 2578 RVA: 0x00043896 File Offset: 0x00041A96
+	// (get) Token: 0x06000A11 RID: 2577 RVA: 0x0004372E File Offset: 0x0004192E
+	// (set) Token: 0x06000A12 RID: 2578 RVA: 0x00043856 File Offset: 0x00041A56
 	public BlockFace decalface
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -232,8 +232,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C6 RID: 198
-	// (get) Token: 0x06000A13 RID: 2579 RVA: 0x0004379C File Offset: 0x0004199C
-	// (set) Token: 0x06000A14 RID: 2580 RVA: 0x000438AF File Offset: 0x00041AAF
+	// (get) Token: 0x06000A13 RID: 2579 RVA: 0x0004375C File Offset: 0x0004195C
+	// (set) Token: 0x06000A14 RID: 2580 RVA: 0x0004386F File Offset: 0x00041A6F
 	public byte decaltex
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -248,8 +248,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C7 RID: 199
-	// (get) Token: 0x06000A15 RID: 2581 RVA: 0x000438C8 File Offset: 0x00041AC8
-	// (set) Token: 0x06000A16 RID: 2582 RVA: 0x000438D9 File Offset: 0x00041AD9
+	// (get) Token: 0x06000A15 RID: 2581 RVA: 0x00043888 File Offset: 0x00041A88
+	// (set) Token: 0x06000A16 RID: 2582 RVA: 0x00043899 File Offset: 0x00041A99
 	public bool ischild
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -264,8 +264,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C8 RID: 200
-	// (get) Token: 0x06000A17 RID: 2583 RVA: 0x000438FC File Offset: 0x00041AFC
-	// (set) Token: 0x06000A18 RID: 2584 RVA: 0x0004392C File Offset: 0x00041B2C
+	// (get) Token: 0x06000A17 RID: 2583 RVA: 0x000438BC File Offset: 0x00041ABC
+	// (set) Token: 0x06000A18 RID: 2584 RVA: 0x000438EC File Offset: 0x00041AEC
 	public int parentx
 	{
 		get
@@ -281,8 +281,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000C9 RID: 201
-	// (get) Token: 0x06000A19 RID: 2585 RVA: 0x00043960 File Offset: 0x00041B60
-	// (set) Token: 0x06000A1A RID: 2586 RVA: 0x0004398C File Offset: 0x00041B8C
+	// (get) Token: 0x06000A19 RID: 2585 RVA: 0x00043920 File Offset: 0x00041B20
+	// (set) Token: 0x06000A1A RID: 2586 RVA: 0x0004394C File Offset: 0x00041B4C
 	public int parenty
 	{
 		get
@@ -298,8 +298,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000CA RID: 202
-	// (get) Token: 0x06000A1B RID: 2587 RVA: 0x000439B4 File Offset: 0x00041BB4
-	// (set) Token: 0x06000A1C RID: 2588 RVA: 0x000439E4 File Offset: 0x00041BE4
+	// (get) Token: 0x06000A1B RID: 2587 RVA: 0x00043974 File Offset: 0x00041B74
+	// (set) Token: 0x06000A1C RID: 2588 RVA: 0x000439A4 File Offset: 0x00041BA4
 	public int parentz
 	{
 		get
@@ -315,8 +315,8 @@ public struct BlockValueV3
 	}
 
 	// Token: 0x170000CB RID: 203
-	// (get) Token: 0x06000A1D RID: 2589 RVA: 0x00043A18 File Offset: 0x00041C18
-	// (set) Token: 0x06000A1E RID: 2590 RVA: 0x00043A31 File Offset: 0x00041C31
+	// (get) Token: 0x06000A1D RID: 2589 RVA: 0x000439D8 File Offset: 0x00041BD8
+	// (set) Token: 0x06000A1E RID: 2590 RVA: 0x000439F1 File Offset: 0x00041BF1
 	public Vector3i parent
 	{
 		get

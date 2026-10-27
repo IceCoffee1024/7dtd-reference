@@ -2,14 +2,14 @@
 
 namespace Twitch
 {
-	// Token: 0x02001812 RID: 6162
+	// Token: 0x02001843 RID: 6211
 	[Serializable]
 	public class TwitchUserData
 	{
-		// Token: 0x04008ED7 RID: 36567
+		// Token: 0x04008FC0 RID: 36800
 		public string display_name;
 
-		// Token: 0x04008ED8 RID: 36568
+		// Token: 0x04008FC1 RID: 36801
 		public string broadcaster_type;
 	}
 }

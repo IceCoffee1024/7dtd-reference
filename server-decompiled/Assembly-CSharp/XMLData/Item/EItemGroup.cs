@@ -2,14 +2,14 @@
 
 namespace XMLData.Item
 {
-	// Token: 0x0200165E RID: 5726
+	// Token: 0x02001670 RID: 5744
 	public enum EItemGroup
 	{
-		// Token: 0x04008698 RID: 34456
+		// Token: 0x040086D9 RID: 34521
 		Misc,
-		// Token: 0x04008699 RID: 34457
+		// Token: 0x040086DA RID: 34522
 		Resources,
-		// Token: 0x0400869A RID: 34458
+		// Token: 0x040086DB RID: 34523
 		Weapons
 	}
 }

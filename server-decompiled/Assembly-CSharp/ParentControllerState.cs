@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x0200111E RID: 4382
+// Token: 0x0200112E RID: 4398
 public class ParentControllerState
 {
-	// Token: 0x06008ABB RID: 35515 RVA: 0x0034F280 File Offset: 0x0034D480
+	// Token: 0x06008B0F RID: 35599 RVA: 0x00351330 File Offset: 0x0034F530
 	public ParentControllerState(XUiController parentController)
 	{
 		if (parentController == null)
@@ -31,7 +31,7 @@ public class ParentControllerState
 		}
 	}
 
-	// Token: 0x06008ABC RID: 35516 RVA: 0x0034F360 File Offset: 0x0034D560
+	// Token: 0x06008B10 RID: 35600 RVA: 0x00351410 File Offset: 0x0034F610
 	public void Hide()
 	{
 		if (this.m_parentControllers == null)
@@ -45,7 +45,7 @@ public class ParentControllerState
 		}
 	}
 
-	// Token: 0x06008ABD RID: 35517 RVA: 0x0034F3B0 File Offset: 0x0034D5B0
+	// Token: 0x06008B11 RID: 35601 RVA: 0x00351460 File Offset: 0x0034F660
 	public void Restore()
 	{
 		if (this.m_parentControllers == null)
@@ -59,15 +59,15 @@ public class ParentControllerState
 		}
 	}
 
-	// Token: 0x0400670F RID: 26383
+	// Token: 0x0400674F RID: 26447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController[] m_parentControllers;
 
-	// Token: 0x04006710 RID: 26384
+	// Token: 0x04006750 RID: 26448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool[] m_isVisible;
 
-	// Token: 0x04006711 RID: 26385
+	// Token: 0x04006751 RID: 26449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool[] m_isEscClosable;
 }

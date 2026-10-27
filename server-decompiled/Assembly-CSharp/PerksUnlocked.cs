@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200069A RID: 1690
+// Token: 0x020006A1 RID: 1697
 [Preserve]
 public class PerksUnlocked : TargetedCompareRequirementBase
 {
-	// Token: 0x0600359C RID: 13724 RVA: 0x001616F0 File Offset: 0x0015F8F0
+	// Token: 0x060035AA RID: 13738 RVA: 0x001622E4 File Offset: 0x001604E4
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -31,13 +31,13 @@ public class PerksUnlocked : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)num, this.operation, this.value);
 	}
 
-	// Token: 0x0600359D RID: 13725 RVA: 0x001617A6 File Offset: 0x0015F9A6
+	// Token: 0x060035AB RID: 13739 RVA: 0x0016239A File Offset: 0x0016059A
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("perks unlocked count {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x0600359E RID: 13726 RVA: 0x001617E4 File Offset: 0x0015F9E4
+	// Token: 0x060035AC RID: 13740 RVA: 0x001623D8 File Offset: 0x001605D8
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -49,7 +49,7 @@ public class PerksUnlocked : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B4E RID: 11086
+	// Token: 0x04002B69 RID: 11113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string skill_name;
 }

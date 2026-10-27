@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001213 RID: 4627
+// Token: 0x02001223 RID: 4643
 public static class GameSparksCollector
 {
-	// Token: 0x170011CE RID: 4558
-	// (get) Token: 0x06009398 RID: 37784 RVA: 0x0037C866 File Offset: 0x0037AA66
-	// (set) Token: 0x06009399 RID: 37785 RVA: 0x0037C86D File Offset: 0x0037AA6D
+	// Token: 0x170011D9 RID: 4569
+	// (get) Token: 0x060093EE RID: 37870 RVA: 0x0037E9DA File Offset: 0x0037CBDA
+	// (set) Token: 0x060093EF RID: 37871 RVA: 0x0037E9E1 File Offset: 0x0037CBE1
 	public static bool CollectGamePlayData { get; set; }
 
-	// Token: 0x0600939A RID: 37786 RVA: 0x0037C878 File Offset: 0x0037AA78
+	// Token: 0x060093F0 RID: 37872 RVA: 0x0037E9EC File Offset: 0x0037CBEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GSRequestData GetObject(string _keyString, GSRequestData _collection)
 	{
@@ -32,7 +32,7 @@ public static class GameSparksCollector
 		return gsrequestData2;
 	}
 
-	// Token: 0x0600939B RID: 37787 RVA: 0x0037C8D4 File Offset: 0x0037AAD4
+	// Token: 0x060093F1 RID: 37873 RVA: 0x0037EA48 File Offset: 0x0037CC48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ValueTuple<GSRequestData, string> GetRequestDataAndKey(GameSparksCollector.GSDataCollection _collectionType, GameSparksCollector.GSDataKey _key, string _subKey = null)
 	{
@@ -45,7 +45,7 @@ public static class GameSparksCollector
 		return new ValueTuple<GSRequestData, string>(GameSparksCollector.GetObject(text, gsrequestData), _subKey);
 	}
 
-	// Token: 0x0600939C RID: 37788 RVA: 0x0037C914 File Offset: 0x0037AB14
+	// Token: 0x060093F2 RID: 37874 RVA: 0x0037EA88 File Offset: 0x0037CC88
 	public static void SetValue(GameSparksCollector.GSDataKey _key, string _subKey, int _value, bool _isGamePlay = true, GameSparksCollector.GSDataCollection _collectionType = GameSparksCollector.GSDataCollection.SessionUpdates)
 	{
 		if (!_isGamePlay || GameSparksCollector.CollectGamePlayData)
@@ -61,7 +61,7 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x0600939D RID: 37789 RVA: 0x0037C978 File Offset: 0x0037AB78
+	// Token: 0x060093F3 RID: 37875 RVA: 0x0037EAEC File Offset: 0x0037CCEC
 	public static void SetValue(GameSparksCollector.GSDataKey _key, string _subKey, string _value, bool _isGamePlay = true, GameSparksCollector.GSDataCollection _collectionType = GameSparksCollector.GSDataCollection.SessionUpdates)
 	{
 		if (!_isGamePlay || GameSparksCollector.CollectGamePlayData)
@@ -77,7 +77,7 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x0600939E RID: 37790 RVA: 0x0037C9DC File Offset: 0x0037ABDC
+	// Token: 0x060093F4 RID: 37876 RVA: 0x0037EB50 File Offset: 0x0037CD50
 	public static void IncrementCounter(GameSparksCollector.GSDataKey _key, string _subKey, int _increment, bool _isGamePlay = true, GameSparksCollector.GSDataCollection _collectionType = GameSparksCollector.GSDataCollection.SessionUpdates)
 	{
 		if (!_isGamePlay || GameSparksCollector.CollectGamePlayData)
@@ -95,7 +95,7 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x0600939F RID: 37791 RVA: 0x0037CA58 File Offset: 0x0037AC58
+	// Token: 0x060093F5 RID: 37877 RVA: 0x0037EBCC File Offset: 0x0037CDCC
 	public static void IncrementCounter(GameSparksCollector.GSDataKey _key, string _subKey, float _increment, bool _isGamePlay = true, GameSparksCollector.GSDataCollection _collectionType = GameSparksCollector.GSDataCollection.SessionUpdates)
 	{
 		if (!_isGamePlay || GameSparksCollector.CollectGamePlayData)
@@ -113,7 +113,7 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x060093A0 RID: 37792 RVA: 0x0037CAD4 File Offset: 0x0037ACD4
+	// Token: 0x060093F6 RID: 37878 RVA: 0x0037EC48 File Offset: 0x0037CE48
 	public static void SetMax(GameSparksCollector.GSDataKey _key, string _subKey, int _currentValue, bool _isGamePlay = true, GameSparksCollector.GSDataCollection _collectionType = GameSparksCollector.GSDataCollection.SessionUpdates)
 	{
 		if (!_isGamePlay || GameSparksCollector.CollectGamePlayData)
@@ -131,7 +131,7 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x060093A1 RID: 37793 RVA: 0x0037CB64 File Offset: 0x0037AD64
+	// Token: 0x060093F7 RID: 37879 RVA: 0x0037ECD8 File Offset: 0x0037CED8
 	public static GSRequestData GetSessionUpdateDataAndReset()
 	{
 		object obj = GameSparksCollector.lockObject;
@@ -145,7 +145,7 @@ public static class GameSparksCollector
 		return gsrequestData2;
 	}
 
-	// Token: 0x060093A2 RID: 37794 RVA: 0x0037CBB0 File Offset: 0x0037ADB0
+	// Token: 0x060093F8 RID: 37880 RVA: 0x0037ED24 File Offset: 0x0037CF24
 	public static GSRequestData GetSessionTotalData(bool _reset)
 	{
 		if (!_reset)
@@ -163,7 +163,7 @@ public static class GameSparksCollector
 		return gsrequestData2;
 	}
 
-	// Token: 0x060093A3 RID: 37795 RVA: 0x0037CC04 File Offset: 0x0037AE04
+	// Token: 0x060093F9 RID: 37881 RVA: 0x0037ED78 File Offset: 0x0037CF78
 	public static void PlayerLevelUp(EntityPlayerLocal _localPlayer, int _level)
 	{
 		if (_level == 15)
@@ -186,7 +186,7 @@ public static class GameSparksCollector
 		GameSparksCollector.SendSkillStats(GameSparksCollector.GSDataKey.SkillsPurchasedAtLevel50, _localPlayer);
 	}
 
-	// Token: 0x060093A4 RID: 37796 RVA: 0x0037CC44 File Offset: 0x0037AE44
+	// Token: 0x060093FA RID: 37882 RVA: 0x0037EDB8 File Offset: 0x0037CFB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SendSkillStats(GameSparksCollector.GSDataKey _key, EntityPlayerLocal _localPlayer)
 	{
@@ -214,7 +214,7 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x060093A5 RID: 37797 RVA: 0x0037CD48 File Offset: 0x0037AF48
+	// Token: 0x060093FB RID: 37883 RVA: 0x0037EEBC File Offset: 0x0037D0BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SendSaveTimePlayed(GameSparksCollector.GSDataKey _key, EntityPlayerLocal _localPlayer)
 	{
@@ -225,79 +225,79 @@ public static class GameSparksCollector
 		}
 	}
 
-	// Token: 0x04006E47 RID: 28231
+	// Token: 0x04006E5F RID: 28255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object lockObject = new object();
 
-	// Token: 0x04006E48 RID: 28232
+	// Token: 0x04006E60 RID: 28256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GSRequestData dataUpdates = new GSRequestData();
 
-	// Token: 0x04006E49 RID: 28233
+	// Token: 0x04006E61 RID: 28257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GSRequestData dataSessionTotal = new GSRequestData();
 
-	// Token: 0x02001214 RID: 4628
+	// Token: 0x02001224 RID: 4644
 	public enum GSDataKey
 	{
-		// Token: 0x04006E4C RID: 28236
-		HoursPlayedAtLevel15,
-		// Token: 0x04006E4D RID: 28237
-		HoursPlayedAtLevel30,
-		// Token: 0x04006E4E RID: 28238
-		HoursPlayedAtLevel50,
-		// Token: 0x04006E4F RID: 28239
-		SkillsPurchasedAtLevel15,
-		// Token: 0x04006E50 RID: 28240
-		SkillsPurchasedAtLevel30,
-		// Token: 0x04006E51 RID: 28241
-		SkillsPurchasedAtLevel50,
-		// Token: 0x04006E52 RID: 28242
-		PlayerLevelAtHour,
-		// Token: 0x04006E53 RID: 28243
-		XpEarnedBy,
-		// Token: 0x04006E54 RID: 28244
-		PlayerDeathCauses,
-		// Token: 0x04006E55 RID: 28245
-		ZombiesKilledBy,
-		// Token: 0x04006E56 RID: 28246
-		CraftedItems,
-		// Token: 0x04006E57 RID: 28247
-		TraderItemsBought,
-		// Token: 0x04006E58 RID: 28248
-		VendingItemsBought,
-		// Token: 0x04006E59 RID: 28249
-		TraderMoneySpentOn,
-		// Token: 0x04006E5A RID: 28250
-		VendingMoneySpentOn,
-		// Token: 0x04006E5B RID: 28251
-		TotalMoneySpentOn,
-		// Token: 0x04006E5C RID: 28252
-		PeakConcurrentClients,
-		// Token: 0x04006E5D RID: 28253
-		PeakConcurrentPlayers,
-		// Token: 0x04006E5E RID: 28254
-		QuestTraderToTraderDistance,
-		// Token: 0x04006E5F RID: 28255
-		QuestAcceptedDistance,
-		// Token: 0x04006E60 RID: 28256
-		QuestOfferedDistance,
-		// Token: 0x04006E61 RID: 28257
-		QuestStarterTraderDistance,
-		// Token: 0x04006E62 RID: 28258
-		PlayerProfileIsCustom,
-		// Token: 0x04006E63 RID: 28259
-		PlayerArchetypeName,
 		// Token: 0x04006E64 RID: 28260
+		HoursPlayedAtLevel15,
+		// Token: 0x04006E65 RID: 28261
+		HoursPlayedAtLevel30,
+		// Token: 0x04006E66 RID: 28262
+		HoursPlayedAtLevel50,
+		// Token: 0x04006E67 RID: 28263
+		SkillsPurchasedAtLevel15,
+		// Token: 0x04006E68 RID: 28264
+		SkillsPurchasedAtLevel30,
+		// Token: 0x04006E69 RID: 28265
+		SkillsPurchasedAtLevel50,
+		// Token: 0x04006E6A RID: 28266
+		PlayerLevelAtHour,
+		// Token: 0x04006E6B RID: 28267
+		XpEarnedBy,
+		// Token: 0x04006E6C RID: 28268
+		PlayerDeathCauses,
+		// Token: 0x04006E6D RID: 28269
+		ZombiesKilledBy,
+		// Token: 0x04006E6E RID: 28270
+		CraftedItems,
+		// Token: 0x04006E6F RID: 28271
+		TraderItemsBought,
+		// Token: 0x04006E70 RID: 28272
+		VendingItemsBought,
+		// Token: 0x04006E71 RID: 28273
+		TraderMoneySpentOn,
+		// Token: 0x04006E72 RID: 28274
+		VendingMoneySpentOn,
+		// Token: 0x04006E73 RID: 28275
+		TotalMoneySpentOn,
+		// Token: 0x04006E74 RID: 28276
+		PeakConcurrentClients,
+		// Token: 0x04006E75 RID: 28277
+		PeakConcurrentPlayers,
+		// Token: 0x04006E76 RID: 28278
+		QuestTraderToTraderDistance,
+		// Token: 0x04006E77 RID: 28279
+		QuestAcceptedDistance,
+		// Token: 0x04006E78 RID: 28280
+		QuestOfferedDistance,
+		// Token: 0x04006E79 RID: 28281
+		QuestStarterTraderDistance,
+		// Token: 0x04006E7A RID: 28282
+		PlayerProfileIsCustom,
+		// Token: 0x04006E7B RID: 28283
+		PlayerArchetypeName,
+		// Token: 0x04006E7C RID: 28284
 		UsedTwitchIntegration
 	}
 
-	// Token: 0x02001215 RID: 4629
+	// Token: 0x02001225 RID: 4645
 	public enum GSDataCollection
 	{
-		// Token: 0x04006E66 RID: 28262
+		// Token: 0x04006E7E RID: 28286
 		SessionTotal,
-		// Token: 0x04006E67 RID: 28263
+		// Token: 0x04006E7F RID: 28287
 		SessionUpdates
 	}
 }

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000455 RID: 1109
+// Token: 0x02000457 RID: 1111
 [Preserve]
 public class EAISetAsTargetIfHurt : EAITarget
 {
-	// Token: 0x060021B9 RID: 8633 RVA: 0x000CC20B File Offset: 0x000CA40B
+	// Token: 0x060021BE RID: 8638 RVA: 0x000CC5B7 File Offset: 0x000CA7B7
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity, 0f, false);
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x060021BA RID: 8634 RVA: 0x000CC224 File Offset: 0x000CA424
+	// Token: 0x060021BF RID: 8639 RVA: 0x000CC5D0 File Offset: 0x000CA7D0
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -32,7 +32,7 @@ public class EAISetAsTargetIfHurt : EAITarget
 		}
 	}
 
-	// Token: 0x060021BB RID: 8635 RVA: 0x000CC290 File Offset: 0x000CA490
+	// Token: 0x060021C0 RID: 8640 RVA: 0x000CC63C File Offset: 0x000CA83C
 	public override bool CanExecute()
 	{
 		EntityAlive revengeTarget = this.theEntity.GetRevengeTarget();
@@ -85,7 +85,7 @@ public class EAISetAsTargetIfHurt : EAITarget
 		return false;
 	}
 
-	// Token: 0x060021BC RID: 8636 RVA: 0x000CC474 File Offset: 0x000CA674
+	// Token: 0x060021C1 RID: 8641 RVA: 0x000CC820 File Offset: 0x000CAA20
 	public override void Start()
 	{
 		this.theEntity.SetAttackTarget(this.theEntity.GetRevengeTarget(), 400);
@@ -95,7 +95,7 @@ public class EAISetAsTargetIfHurt : EAITarget
 		base.Start();
 	}
 
-	// Token: 0x060021BD RID: 8637 RVA: 0x000CC4CB File Offset: 0x000CA6CB
+	// Token: 0x060021C2 RID: 8642 RVA: 0x000CC877 File Offset: 0x000CAA77
 	public override void Update()
 	{
 		if (this.viewAngleRestoreCounter > 0)
@@ -108,20 +108,20 @@ public class EAISetAsTargetIfHurt : EAITarget
 		}
 	}
 
-	// Token: 0x060021BE RID: 8638 RVA: 0x000CC4F2 File Offset: 0x000CA6F2
+	// Token: 0x060021C3 RID: 8643 RVA: 0x000CC89E File Offset: 0x000CAA9E
 	public override bool Continue()
 	{
 		return (!(this.theEntity.GetRevengeTarget() != null) || !(this.theEntity.GetAttackTarget() != this.theEntity.GetRevengeTarget())) && base.Continue();
 	}
 
-	// Token: 0x060021BF RID: 8639 RVA: 0x000CC52C File Offset: 0x000CA72C
+	// Token: 0x060021C4 RID: 8644 RVA: 0x000CC8D8 File Offset: 0x000CAAD8
 	public override void Reset()
 	{
 		base.Reset();
 		this.restoreViewAngle();
 	}
 
-	// Token: 0x060021C0 RID: 8640 RVA: 0x000CC53A File Offset: 0x000CA73A
+	// Token: 0x060021C5 RID: 8645 RVA: 0x000CC8E6 File Offset: 0x000CAAE6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void restoreViewAngle()
 	{
@@ -133,23 +133,23 @@ public class EAISetAsTargetIfHurt : EAITarget
 		}
 	}
 
-	// Token: 0x0400174D RID: 5965
+	// Token: 0x0400175D RID: 5981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAISetAsTargetIfHurt.TargetClass> targetClasses;
 
-	// Token: 0x0400174E RID: 5966
+	// Token: 0x0400175E RID: 5982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float viewAngleSave;
 
-	// Token: 0x0400174F RID: 5967
+	// Token: 0x0400175F RID: 5983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int viewAngleRestoreCounter;
 
-	// Token: 0x02000456 RID: 1110
+	// Token: 0x02000458 RID: 1112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TargetClass
 	{
-		// Token: 0x04001750 RID: 5968
+		// Token: 0x04001760 RID: 5984
 		public Type type;
 	}
 }

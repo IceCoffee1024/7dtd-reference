@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000338 RID: 824
+// Token: 0x0200033A RID: 826
 [Preserve]
 public class ConsoleCmdDiscord : ConsoleCmdAbstract
 {
-	// Token: 0x060017CB RID: 6091 RVA: 0x000892B0 File Offset: 0x000874B0
+	// Token: 0x060017CF RID: 6095 RVA: 0x000894E4 File Offset: 0x000876E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdDiscord : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170002D3 RID: 723
-	// (get) Token: 0x060017CC RID: 6092 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060017D0 RID: 6096 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -25,7 +25,7 @@ public class ConsoleCmdDiscord : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170002D4 RID: 724
-	// (get) Token: 0x060017CD RID: 6093 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060017D1 RID: 6097 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -35,7 +35,7 @@ public class ConsoleCmdDiscord : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170002D5 RID: 725
-	// (get) Token: 0x060017CE RID: 6094 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x060017D2 RID: 6098 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -44,14 +44,14 @@ public class ConsoleCmdDiscord : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060017CF RID: 6095 RVA: 0x000892C8 File Offset: 0x000874C8
+	// Token: 0x060017D3 RID: 6099 RVA: 0x000894FC File Offset: 0x000876FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Toggle Discord debug window";
 	}
 
-	// Token: 0x060017D0 RID: 6096 RVA: 0x000892CF File Offset: 0x000874CF
+	// Token: 0x060017D4 RID: 6100 RVA: 0x00089503 File Offset: 0x00087703
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		LocalPlayerUI.primaryUI.windowManager.SwitchVisible(XUiC_DiscordWindow.ID, false);

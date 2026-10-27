@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020010EC RID: 4332
+// Token: 0x020010FC RID: 4348
 public class DisplayInfoEntry
 {
-	// Token: 0x17001026 RID: 4134
-	// (get) Token: 0x060089C8 RID: 35272 RVA: 0x0034A4A7 File Offset: 0x003486A7
-	// (set) Token: 0x060089C9 RID: 35273 RVA: 0x0034A4AF File Offset: 0x003486AF
+	// Token: 0x17001031 RID: 4145
+	// (get) Token: 0x06008A1C RID: 35356 RVA: 0x0034C558 File Offset: 0x0034A758
+	// (set) Token: 0x06008A1D RID: 35357 RVA: 0x0034C560 File Offset: 0x0034A760
 	public FastTags<TagGroup.Global> Tags
 	{
 		get
@@ -19,48 +19,48 @@ public class DisplayInfoEntry
 		}
 	}
 
-	// Token: 0x0400666F RID: 26223
+	// Token: 0x040066AF RID: 26287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tags = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x04006670 RID: 26224
+	// Token: 0x040066B0 RID: 26288
 	public bool TagsSet;
 
-	// Token: 0x04006671 RID: 26225
+	// Token: 0x040066B1 RID: 26289
 	public PassiveEffects StatType;
 
-	// Token: 0x04006672 RID: 26226
+	// Token: 0x040066B2 RID: 26290
 	public string CustomName = "";
 
-	// Token: 0x04006673 RID: 26227
+	// Token: 0x040066B3 RID: 26291
 	public string TitleOverride;
 
-	// Token: 0x04006674 RID: 26228
+	// Token: 0x040066B4 RID: 26292
 	public DisplayInfoEntry.DisplayTypes DisplayType;
 
-	// Token: 0x04006675 RID: 26229
+	// Token: 0x040066B5 RID: 26293
 	public bool ShowInverted;
 
-	// Token: 0x04006676 RID: 26230
+	// Token: 0x040066B6 RID: 26294
 	public bool NegativePreferred;
 
-	// Token: 0x04006677 RID: 26231
+	// Token: 0x040066B7 RID: 26295
 	public bool DisplayLeadingPlus;
 
-	// Token: 0x020010ED RID: 4333
+	// Token: 0x020010FD RID: 4349
 	public enum DisplayTypes
 	{
-		// Token: 0x04006679 RID: 26233
+		// Token: 0x040066B9 RID: 26297
 		Integer,
-		// Token: 0x0400667A RID: 26234
+		// Token: 0x040066BA RID: 26298
 		Decimal1,
-		// Token: 0x0400667B RID: 26235
+		// Token: 0x040066BB RID: 26299
 		Decimal2,
-		// Token: 0x0400667C RID: 26236
+		// Token: 0x040066BC RID: 26300
 		Bool,
-		// Token: 0x0400667D RID: 26237
+		// Token: 0x040066BD RID: 26301
 		Percent,
-		// Token: 0x0400667E RID: 26238
+		// Token: 0x040066BE RID: 26302
 		Time
 	}
 }

@@ -4,10 +4,10 @@ using System.Reflection;
 
 namespace Webserver
 {
-	// Token: 0x02001AEC RID: 6892
+	// Token: 0x02001B1D RID: 6941
 	public static class ResourceHelpers
 	{
-		// Token: 0x0600CFBF RID: 53183 RVA: 0x004B6B34 File Offset: 0x004B4D34
+		// Token: 0x0600D0D3 RID: 53459 RVA: 0x004BA630 File Offset: 0x004B8830
 		public static Stream OpenManifestResource(Assembly _assembly, string _name, bool _ignoreCase = false)
 		{
 			foreach (string text in _assembly.GetManifestResourceNames())
@@ -20,7 +20,7 @@ namespace Webserver
 			return null;
 		}
 
-		// Token: 0x0600CFC0 RID: 53184 RVA: 0x004B6B74 File Offset: 0x004B4D74
+		// Token: 0x0600D0D4 RID: 53460 RVA: 0x004BA670 File Offset: 0x004B8870
 		public static string GetManifestResourceText(Assembly _assembly, string _name, bool _ignoreCase = false)
 		{
 			string text;

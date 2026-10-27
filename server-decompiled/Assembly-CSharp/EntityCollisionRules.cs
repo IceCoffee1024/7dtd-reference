@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200050C RID: 1292
+// Token: 0x0200050E RID: 1294
 public class EntityCollisionRules : MonoBehaviour
 {
-	// Token: 0x04001FFA RID: 8186
+	// Token: 0x0400200A RID: 8202
 	public bool IsStatic;
 
-	// Token: 0x04001FFB RID: 8187
+	// Token: 0x0400200B RID: 8203
 	public bool IsInteractable = true;
 
-	// Token: 0x04001FFC RID: 8188
+	// Token: 0x0400200C RID: 8204
 	public bool IsAnimPush;
 }

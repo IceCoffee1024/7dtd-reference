@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace Quests.Requirements
 {
-	// Token: 0x020018D5 RID: 6357
+	// Token: 0x02001906 RID: 6406
 	[Preserve]
 	public class RequirementLevel : BaseRequirement
 	{
-		// Token: 0x0600C42E RID: 50222 RVA: 0x004851BC File Offset: 0x004833BC
+		// Token: 0x0600C542 RID: 50498 RVA: 0x00488B68 File Offset: 0x00486D68
 		public override void SetupRequirement()
 		{
 			string text = Localization.Get("RequirementLevel_keyword", false, null);
@@ -15,13 +15,13 @@ namespace Quests.Requirements
 			base.Description = string.Format("{0} {1}", text, this.expectedLevel);
 		}
 
-		// Token: 0x0600C42F RID: 50223 RVA: 0x00485203 File Offset: 0x00483403
+		// Token: 0x0600C543 RID: 50499 RVA: 0x00488BAF File Offset: 0x00486DAF
 		public override bool CheckRequirement()
 		{
 			return !base.OwnerQuest.Active || XUiM_Player.GetLevel(base.OwnerQuest.OwnerJournal.OwnerPlayer) >= this.expectedLevel;
 		}
 
-		// Token: 0x0600C430 RID: 50224 RVA: 0x00485234 File Offset: 0x00483434
+		// Token: 0x0600C544 RID: 50500 RVA: 0x00488BE0 File Offset: 0x00486DE0
 		public override BaseRequirement Clone()
 		{
 			return new RequirementLevel
@@ -32,7 +32,7 @@ namespace Quests.Requirements
 			};
 		}
 
-		// Token: 0x04009493 RID: 38035
+		// Token: 0x0400957C RID: 38268
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int expectedLevel;
 	}

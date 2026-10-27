@@ -2,10 +2,10 @@
 using System.Reflection;
 using UniLinq;
 
-// Token: 0x02001418 RID: 5144
+// Token: 0x0200142A RID: 5162
 public static class EnumExtensions
 {
-	// Token: 0x0600A126 RID: 41254 RVA: 0x003C975C File Offset: 0x003C795C
+	// Token: 0x0600A17E RID: 41342 RVA: 0x003CBB60 File Offset: 0x003C9D60
 	public static string GetDocumentation(this Enum enumValue)
 	{
 		MemberInfo memberInfo = enumValue.GetType().GetMember(enumValue.ToString()).FirstOrDefault<MemberInfo>();

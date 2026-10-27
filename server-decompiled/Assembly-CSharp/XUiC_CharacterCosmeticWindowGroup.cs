@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EF3 RID: 3827
+// Token: 0x02000EFE RID: 3838
 [Preserve]
 public class XUiC_CharacterCosmeticWindowGroup : XUiController
 {
-	// Token: 0x060077A8 RID: 30632 RVA: 0x002D2BEC File Offset: 0x002D0DEC
+	// Token: 0x060077CE RID: 30670 RVA: 0x002D4144 File Offset: 0x002D2344
 	public override void Init()
 	{
 		base.Init();
@@ -23,7 +23,7 @@ public class XUiC_CharacterCosmeticWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060077A9 RID: 30633 RVA: 0x002D2C3B File Offset: 0x002D0E3B
+	// Token: 0x060077CF RID: 30671 RVA: 0x002D4193 File Offset: 0x002D2393
 	public static void Open(XUi xui, EquipmentSlots slot)
 	{
 		GUIWindowManager windowManager = xui.playerUI.windowManager;
@@ -31,7 +31,7 @@ public class XUiC_CharacterCosmeticWindowGroup : XUiController
 		((XUiC_CharacterCosmeticWindowGroup)((XUiWindowGroup)windowManager.GetWindow("cosmetics")).Controller).SetEquipSlot(slot);
 	}
 
-	// Token: 0x060077AA RID: 30634 RVA: 0x002D2C74 File Offset: 0x002D0E74
+	// Token: 0x060077D0 RID: 30672 RVA: 0x002D41CC File Offset: 0x002D23CC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -45,7 +45,7 @@ public class XUiC_CharacterCosmeticWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060077AB RID: 30635 RVA: 0x002D2CC4 File Offset: 0x002D0EC4
+	// Token: 0x060077D1 RID: 30673 RVA: 0x002D421C File Offset: 0x002D241C
 	public void SetEquipSlot(EquipmentSlots equipSlot)
 	{
 		if (equipSlot != EquipmentSlots.Count)
@@ -54,7 +54,7 @@ public class XUiC_CharacterCosmeticWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060077AC RID: 30636 RVA: 0x002D2CD7 File Offset: 0x002D0ED7
+	// Token: 0x060077D2 RID: 30674 RVA: 0x002D422F File Offset: 0x002D242F
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -64,21 +64,21 @@ public class XUiC_CharacterCosmeticWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060077AD RID: 30637 RVA: 0x002D2CFD File Offset: 0x002D0EFD
+	// Token: 0x060077D3 RID: 30675 RVA: 0x002D4255 File Offset: 0x002D2455
 	public void ResetPreview()
 	{
 		this.characterCosmeticWindow.MakePreview();
 	}
 
-	// Token: 0x04005896 RID: 22678
+	// Token: 0x040058BB RID: 22715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x04005897 RID: 22679
+	// Token: 0x040058BC RID: 22716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticWindow characterCosmeticWindow;
 
-	// Token: 0x04005898 RID: 22680
+	// Token: 0x040058BD RID: 22717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticsListWindow characterCosmeticListWindow;
 }

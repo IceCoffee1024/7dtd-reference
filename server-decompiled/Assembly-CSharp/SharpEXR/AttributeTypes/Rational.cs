@@ -2,24 +2,24 @@
 
 namespace SharpEXR.AttributeTypes
 {
-	// Token: 0x02001712 RID: 5906
+	// Token: 0x02001731 RID: 5937
 	public struct Rational
 	{
-		// Token: 0x0600B87F RID: 47231 RVA: 0x0044358A File Offset: 0x0044178A
+		// Token: 0x0600B953 RID: 47443 RVA: 0x0044602E File Offset: 0x0044422E
 		public Rational(int numerator, uint denominator)
 		{
 			this.Numerator = numerator;
 			this.Denominator = denominator;
 		}
 
-		// Token: 0x0600B880 RID: 47232 RVA: 0x0044359A File Offset: 0x0044179A
+		// Token: 0x0600B954 RID: 47444 RVA: 0x0044603E File Offset: 0x0044423E
 		public override string ToString()
 		{
 			return string.Format("{0}/{1}", this.Numerator, this.Denominator);
 		}
 
-		// Token: 0x170016FB RID: 5883
-		// (get) Token: 0x0600B881 RID: 47233 RVA: 0x004435BC File Offset: 0x004417BC
+		// Token: 0x17001742 RID: 5954
+		// (get) Token: 0x0600B955 RID: 47445 RVA: 0x00446060 File Offset: 0x00444260
 		public double Value
 		{
 			get
@@ -28,10 +28,10 @@ namespace SharpEXR.AttributeTypes
 			}
 		}
 
-		// Token: 0x040089A2 RID: 35234
+		// Token: 0x04008A55 RID: 35413
 		public readonly int Numerator;
 
-		// Token: 0x040089A3 RID: 35235
+		// Token: 0x04008A56 RID: 35414
 		public readonly uint Denominator;
 	}
 }

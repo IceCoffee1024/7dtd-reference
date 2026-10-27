@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F01 RID: 3841
+// Token: 0x02000F0C RID: 3852
 [Preserve]
 public class XUiC_CollectedItem : XUiController
 {
-	// Token: 0x17000E30 RID: 3632
-	// (get) Token: 0x060077FC RID: 30716 RVA: 0x002D5D92 File Offset: 0x002D3F92
-	// (set) Token: 0x060077FD RID: 30717 RVA: 0x002D5D9A File Offset: 0x002D3F9A
+	// Token: 0x17000E34 RID: 3636
+	// (get) Token: 0x06007822 RID: 30754 RVA: 0x002D72EA File Offset: 0x002D54EA
+	// (set) Token: 0x06007823 RID: 30755 RVA: 0x002D72F2 File Offset: 0x002D54F2
 	public ItemStack ItemStack
 	{
 		get
@@ -23,7 +23,7 @@ public class XUiC_CollectedItem : XUiController
 		}
 	}
 
-	// Token: 0x060077FE RID: 30718 RVA: 0x002D5DC0 File Offset: 0x002D3FC0
+	// Token: 0x06007824 RID: 30756 RVA: 0x002D7318 File Offset: 0x002D5518
 	public override void Init()
 	{
 		base.Init();
@@ -35,13 +35,13 @@ public class XUiC_CollectedItem : XUiController
 		base.ViewComponent.IsVisible = false;
 	}
 
-	// Token: 0x060077FF RID: 30719 RVA: 0x002D5E2F File Offset: 0x002D402F
+	// Token: 0x06007825 RID: 30757 RVA: 0x002D7387 File Offset: 0x002D5587
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007800 RID: 30720 RVA: 0x002D5E38 File Offset: 0x002D4038
+	// Token: 0x06007826 RID: 30758 RVA: 0x002D7390 File Offset: 0x002D5590
 	public void ShowItem()
 	{
 		TweenColor component = base.ViewComponent.UiTransform.gameObject.GetComponent<TweenColor>();
@@ -51,7 +51,7 @@ public class XUiC_CollectedItem : XUiController
 		component.enabled = true;
 	}
 
-	// Token: 0x06007801 RID: 30721 RVA: 0x002D5E78 File Offset: 0x002D4078
+	// Token: 0x06007827 RID: 30759 RVA: 0x002D73D0 File Offset: 0x002D55D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -100,25 +100,25 @@ public class XUiC_CollectedItem : XUiController
 		return true;
 	}
 
-	// Token: 0x040058F4 RID: 22772
+	// Token: 0x04005919 RID: 22809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack itemStack = ItemStack.Empty;
 
-	// Token: 0x040058F5 RID: 22773
+	// Token: 0x0400591A RID: 22810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 
-	// Token: 0x040058F6 RID: 22774
+	// Token: 0x0400591B RID: 22811
 	public GameObject Item;
 
-	// Token: 0x040058F7 RID: 22775
+	// Token: 0x0400591C RID: 22812
 	public float TimeAdded;
 
-	// Token: 0x040058F8 RID: 22776
+	// Token: 0x0400591D RID: 22813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemiconcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x040058F9 RID: 22777
+	// Token: 0x0400591E RID: 22814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> itemcountFormatter = new CachedStringFormatter<int>((int _i) => "+" + _i.ToString());
 }

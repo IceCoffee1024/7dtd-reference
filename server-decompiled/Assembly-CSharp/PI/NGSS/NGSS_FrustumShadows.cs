@@ -4,20 +4,20 @@ using UnityEngine.Rendering;
 
 namespace PI.NGSS
 {
-	// Token: 0x02001B5A RID: 7002
+	// Token: 0x02001B8B RID: 7051
 	[ImageEffectAllowedInSceneView]
 	[ExecuteInEditMode]
 	public class NGSS_FrustumShadows : MonoBehaviour
 	{
-		// Token: 0x0600D21A RID: 53786 RVA: 0x004C5E26 File Offset: 0x004C4026
+		// Token: 0x0600D32E RID: 54062 RVA: 0x004C994E File Offset: 0x004C7B4E
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsNotSupported()
 		{
 			return SystemInfo.graphicsDeviceType == GraphicsDeviceType.OpenGLES2;
 		}
 
-		// Token: 0x17001A40 RID: 6720
-		// (get) Token: 0x0600D21B RID: 53787 RVA: 0x004C6348 File Offset: 0x004C4548
+		// Token: 0x17001A88 RID: 6792
+		// (get) Token: 0x0600D32F RID: 54063 RVA: 0x004C9E70 File Offset: 0x004C8070
 		public Camera mCamera
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -40,9 +40,9 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x17001A41 RID: 6721
-		// (get) Token: 0x0600D21D RID: 53789 RVA: 0x004C63B8 File Offset: 0x004C45B8
-		// (set) Token: 0x0600D21C RID: 53788 RVA: 0x004C63AE File Offset: 0x004C45AE
+		// Token: 0x17001A89 RID: 6793
+		// (get) Token: 0x0600D331 RID: 54065 RVA: 0x004C9EE0 File Offset: 0x004C80E0
+		// (set) Token: 0x0600D330 RID: 54064 RVA: 0x004C9ED6 File Offset: 0x004C80D6
 		public Material mMaterial
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -70,7 +70,7 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x0600D21E RID: 53790 RVA: 0x004C6428 File Offset: 0x004C4628
+		// Token: 0x0600D332 RID: 54066 RVA: 0x004C9F50 File Offset: 0x004C8150
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddCommandBuffers()
 		{
@@ -104,7 +104,7 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x0600D21F RID: 53791 RVA: 0x004C64E0 File Offset: 0x004C46E0
+		// Token: 0x0600D333 RID: 54067 RVA: 0x004CA008 File Offset: 0x004C8208
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RemoveCommandBuffers()
 		{
@@ -117,7 +117,7 @@ namespace PI.NGSS
 			this._isInit = false;
 		}
 
-		// Token: 0x0600D220 RID: 53792 RVA: 0x004C652C File Offset: 0x004C472C
+		// Token: 0x0600D334 RID: 54068 RVA: 0x004CA054 File Offset: 0x004C8254
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Init()
 		{
@@ -161,7 +161,7 @@ namespace PI.NGSS
 			this._isInit = true;
 		}
 
-		// Token: 0x0600D221 RID: 53793 RVA: 0x004C675B File Offset: 0x004C495B
+		// Token: 0x0600D335 RID: 54069 RVA: 0x004CA283 File Offset: 0x004C8483
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnEnable()
 		{
@@ -174,7 +174,7 @@ namespace PI.NGSS
 			this.Init();
 		}
 
-		// Token: 0x0600D222 RID: 53794 RVA: 0x004C677E File Offset: 0x004C497E
+		// Token: 0x0600D336 RID: 54070 RVA: 0x004CA2A6 File Offset: 0x004C84A6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisable()
 		{
@@ -190,7 +190,7 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x0600D223 RID: 53795 RVA: 0x004C67BD File Offset: 0x004C49BD
+		// Token: 0x0600D337 RID: 54071 RVA: 0x004CA2E5 File Offset: 0x004C84E5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnApplicationQuit()
 		{
@@ -200,7 +200,7 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x0600D224 RID: 53796 RVA: 0x004C67D0 File Offset: 0x004C49D0
+		// Token: 0x0600D338 RID: 54072 RVA: 0x004CA2F8 File Offset: 0x004C84F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPreRender()
 		{
@@ -281,14 +281,14 @@ namespace PI.NGSS
 			this.mMaterial.SetFloat("RayScreenScale", this.m_rayScreenScale ? 1f : 0f);
 		}
 
-		// Token: 0x0600D225 RID: 53797 RVA: 0x004C6B58 File Offset: 0x004C4D58
+		// Token: 0x0600D339 RID: 54073 RVA: 0x004CA680 File Offset: 0x004C8880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPostRender()
 		{
 			Shader.SetGlobalFloat("NGSS_FRUSTUM_SHADOWS_ENABLED", 0f);
 		}
 
-		// Token: 0x0600D226 RID: 53798 RVA: 0x004C6B69 File Offset: 0x004C4D69
+		// Token: 0x0600D33A RID: 54074 RVA: 0x004CA691 File Offset: 0x004C8891
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void BlitXR(CommandBuffer cmd, RenderTargetIdentifier src, RenderTargetIdentifier dest, Material mat, int pass)
 		{
@@ -297,8 +297,8 @@ namespace PI.NGSS
 			cmd.DrawMesh(this.FullScreenTriangle, Matrix4x4.identity, mat, pass);
 		}
 
-		// Token: 0x17001A42 RID: 6722
-		// (get) Token: 0x0600D227 RID: 53799 RVA: 0x004C6B98 File Offset: 0x004C4D98
+		// Token: 0x17001A8A RID: 6794
+		// (get) Token: 0x0600D33B RID: 54075 RVA: 0x004CA6C0 File Offset: 0x004C88C0
 		public Mesh FullScreenTriangle
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -324,140 +324,140 @@ namespace PI.NGSS
 			}
 		}
 
-		// Token: 0x04009FF7 RID: 40951
+		// Token: 0x0400A0E0 RID: 41184
 		[Header("REFERENCES")]
 		public Light mainShadowsLight;
 
-		// Token: 0x04009FF8 RID: 40952
+		// Token: 0x0400A0E1 RID: 41185
 		public Shader frustumShadowsShader;
 
-		// Token: 0x04009FF9 RID: 40953
+		// Token: 0x0400A0E2 RID: 41186
 		[Header("SHADOWS SETTINGS")]
 		[Tooltip("Poisson Noise. Randomize samples to remove repeated patterns.")]
 		public bool m_dithering;
 
-		// Token: 0x04009FFA RID: 40954
+		// Token: 0x0400A0E3 RID: 41187
 		[Tooltip("If enabled a faster separable blur will be used.\nIf disabled a slower depth aware blur will be used.")]
 		public bool m_fastBlur = true;
 
-		// Token: 0x04009FFB RID: 40955
+		// Token: 0x0400A0E4 RID: 41188
 		[Tooltip("If enabled, backfaced lit fragments will be skipped increasing performance. Requires GBuffer normals.")]
 		public bool m_deferredBackfaceOptimization;
 
-		// Token: 0x04009FFC RID: 40956
+		// Token: 0x0400A0E5 RID: 41189
 		[Range(0f, 1f)]
 		[Tooltip("Set how backfaced lit fragments are shaded. Requires DeferredBackfaceOptimization to be enabled.")]
 		public float m_deferredBackfaceTranslucency;
 
-		// Token: 0x04009FFD RID: 40957
+		// Token: 0x0400A0E6 RID: 41190
 		[Tooltip("Tweak this value to remove soft-shadows leaking around edges.")]
 		[Range(0.01f, 1f)]
 		public float m_shadowsEdgeBlur = 0.25f;
 
-		// Token: 0x04009FFE RID: 40958
+		// Token: 0x0400A0E7 RID: 41191
 		[Tooltip("Overall softness of the shadows.")]
 		[Range(0.01f, 1f)]
 		public float m_shadowsBlur = 0.5f;
 
-		// Token: 0x04009FFF RID: 40959
+		// Token: 0x0400A0E8 RID: 41192
 		[Tooltip("Overall softness of the shadows. Higher values than 1 wont work well if FastBlur is enabled.")]
 		[Range(1f, 4f)]
 		public int m_shadowsBlurIterations = 1;
 
-		// Token: 0x0400A000 RID: 40960
+		// Token: 0x0400A0E9 RID: 41193
 		[Tooltip("Rising this value will make shadows more blurry but also lower in resolution.")]
 		[Range(1f, 4f)]
 		public int m_shadowsDownGrade = 1;
 
-		// Token: 0x0400A001 RID: 40961
+		// Token: 0x0400A0EA RID: 41194
 		[Tooltip("Tweak this value if your objects display backface shadows.")]
 		[Range(0f, 1f)]
 		public float m_shadowsBias = 0.05f;
 
-		// Token: 0x0400A002 RID: 40962
+		// Token: 0x0400A0EB RID: 41195
 		[Tooltip("The distance in metters from camera where shadows start to shown.")]
 		public float m_shadowsDistanceStart;
 
-		// Token: 0x0400A003 RID: 40963
+		// Token: 0x0400A0EC RID: 41196
 		[Header("RAY SETTINGS")]
 		[Tooltip("If enabled the ray length will be scaled at screen space instead of world space. Keep it enabled for an infinite view shadows coverage. Disable it for a ContactShadows like effect. Adjust the Ray Scale property accordingly.")]
 		public bool m_rayScreenScale = true;
 
-		// Token: 0x0400A004 RID: 40964
+		// Token: 0x0400A0ED RID: 41197
 		[Tooltip("Number of samplers between each step. The higher values produces less gaps between shadows but is more costly.")]
 		[Range(16f, 128f)]
 		public int m_raySamples = 64;
 
-		// Token: 0x0400A005 RID: 40965
+		// Token: 0x0400A0EE RID: 41198
 		[Tooltip("The higher the value, the larger the shadows ray will be.")]
 		[Range(0.01f, 1f)]
 		public float m_rayScale = 0.25f;
 
-		// Token: 0x0400A006 RID: 40966
+		// Token: 0x0400A0EF RID: 41199
 		[Tooltip("The higher the value, the ticker the shadows will look.")]
 		[Range(0f, 1f)]
 		public float m_rayThickness = 0.01f;
 
-		// Token: 0x0400A007 RID: 40967
+		// Token: 0x0400A0F0 RID: 41200
 		[Header("TEMPORAL SETTINGS")]
 		[Tooltip("Enable this option if you use temporal anti-aliasing in your project. Works better when Dithering is enabled.")]
 		public bool m_Temporal;
 
-		// Token: 0x0400A008 RID: 40968
+		// Token: 0x0400A0F1 RID: 41201
 		[Range(0f, 1f)]
 		public float m_JitterScale = 0.5f;
 
-		// Token: 0x0400A009 RID: 40969
+		// Token: 0x0400A0F2 RID: 41202
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int m_temporalJitter;
 
-		// Token: 0x0400A00A RID: 40970
+		// Token: 0x0400A0F3 RID: 41203
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _iterations = 1;
 
-		// Token: 0x0400A00B RID: 40971
+		// Token: 0x0400A0F4 RID: 41204
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _downGrade = 1;
 
-		// Token: 0x0400A00C RID: 40972
+		// Token: 0x0400A0F5 RID: 41205
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _width;
 
-		// Token: 0x0400A00D RID: 40973
+		// Token: 0x0400A0F6 RID: 41206
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _height;
 
-		// Token: 0x0400A00E RID: 40974
+		// Token: 0x0400A0F7 RID: 41207
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public RenderingPath _currentRenderingPath;
 
-		// Token: 0x0400A00F RID: 40975
+		// Token: 0x0400A0F8 RID: 41208
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public CommandBuffer computeShadowsCB;
 
-		// Token: 0x0400A010 RID: 40976
+		// Token: 0x0400A0F9 RID: 41209
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool _isInit;
 
-		// Token: 0x0400A011 RID: 40977
+		// Token: 0x0400A0FA RID: 41210
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Camera _mCamera;
 
-		// Token: 0x0400A012 RID: 40978
+		// Token: 0x0400A0FB RID: 41211
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Material _mMaterial;
 
-		// Token: 0x0400A013 RID: 40979
+		// Token: 0x0400A0FC RID: 41212
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Mesh _fullScreenTriangle;

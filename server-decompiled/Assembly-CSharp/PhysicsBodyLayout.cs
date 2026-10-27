@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x02000904 RID: 2308
+// Token: 0x0200090E RID: 2318
 public class PhysicsBodyLayout
 {
-	// Token: 0x17000721 RID: 1825
-	// (get) Token: 0x0600424C RID: 16972 RVA: 0x001A0EFB File Offset: 0x0019F0FB
+	// Token: 0x17000727 RID: 1831
+	// (get) Token: 0x0600426F RID: 17007 RVA: 0x001A1FA3 File Offset: 0x001A01A3
 	public string Name
 	{
 		get
@@ -16,8 +16,8 @@ public class PhysicsBodyLayout
 		}
 	}
 
-	// Token: 0x17000722 RID: 1826
-	// (get) Token: 0x0600424D RID: 16973 RVA: 0x001A0F03 File Offset: 0x0019F103
+	// Token: 0x17000728 RID: 1832
+	// (get) Token: 0x06004270 RID: 17008 RVA: 0x001A1FAB File Offset: 0x001A01AB
 	public List<PhysicsBodyColliderConfiguration> Colliders
 	{
 		get
@@ -26,7 +26,7 @@ public class PhysicsBodyLayout
 		}
 	}
 
-	// Token: 0x0600424E RID: 16974 RVA: 0x001A0F0C File Offset: 0x0019F10C
+	// Token: 0x06004271 RID: 17009 RVA: 0x001A1FB4 File Offset: 0x001A01B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PhysicsBodyLayout New(string _name)
 	{
@@ -40,7 +40,7 @@ public class PhysicsBodyLayout
 		return physicsBodyLayout;
 	}
 
-	// Token: 0x0600424F RID: 16975 RVA: 0x001A0F4C File Offset: 0x0019F14C
+	// Token: 0x06004272 RID: 17010 RVA: 0x001A1FF4 File Offset: 0x001A01F4
 	public static PhysicsBodyLayout New()
 	{
 		int num = 0;
@@ -57,7 +57,7 @@ public class PhysicsBodyLayout
 		return PhysicsBodyLayout.New(text);
 	}
 
-	// Token: 0x06004250 RID: 16976 RVA: 0x001A0F85 File Offset: 0x0019F185
+	// Token: 0x06004273 RID: 17011 RVA: 0x001A202D File Offset: 0x001A022D
 	public bool Rename(string newName)
 	{
 		if (PhysicsBodyLayout.bodyLayouts.ContainsKey(newName))
@@ -70,13 +70,13 @@ public class PhysicsBodyLayout
 		return true;
 	}
 
-	// Token: 0x06004251 RID: 16977 RVA: 0x001A0FBB File Offset: 0x0019F1BB
+	// Token: 0x06004274 RID: 17012 RVA: 0x001A2063 File Offset: 0x001A0263
 	public static bool Remove(string _name)
 	{
 		return PhysicsBodyLayout.bodyLayouts.Remove(_name);
 	}
 
-	// Token: 0x06004252 RID: 16978 RVA: 0x001A0FC8 File Offset: 0x0019F1C8
+	// Token: 0x06004275 RID: 17013 RVA: 0x001A2070 File Offset: 0x001A0270
 	public static PhysicsBodyLayout Find(string _name)
 	{
 		PhysicsBodyLayout physicsBodyLayout = null;
@@ -84,8 +84,8 @@ public class PhysicsBodyLayout
 		return physicsBodyLayout;
 	}
 
-	// Token: 0x17000723 RID: 1827
-	// (get) Token: 0x06004253 RID: 16979 RVA: 0x001A0FE8 File Offset: 0x0019F1E8
+	// Token: 0x17000729 RID: 1833
+	// (get) Token: 0x06004276 RID: 17014 RVA: 0x001A2090 File Offset: 0x001A0290
 	public static PhysicsBodyLayout[] BodyLayouts
 	{
 		get
@@ -96,13 +96,13 @@ public class PhysicsBodyLayout
 		}
 	}
 
-	// Token: 0x06004254 RID: 16980 RVA: 0x001A1011 File Offset: 0x0019F211
+	// Token: 0x06004277 RID: 17015 RVA: 0x001A20B9 File Offset: 0x001A02B9
 	public static void Reset()
 	{
 		PhysicsBodyLayout.bodyLayouts.Clear();
 	}
 
-	// Token: 0x06004255 RID: 16981 RVA: 0x001A1020 File Offset: 0x0019F220
+	// Token: 0x06004278 RID: 17016 RVA: 0x001A20C8 File Offset: 0x001A02C8
 	public static PhysicsBodyLayout Read(XElement _e)
 	{
 		if (!_e.HasAttribute("name"))
@@ -117,7 +117,7 @@ public class PhysicsBodyLayout
 		return physicsBodyLayout;
 	}
 
-	// Token: 0x06004256 RID: 16982 RVA: 0x001A10B8 File Offset: 0x0019F2B8
+	// Token: 0x06004279 RID: 17017 RVA: 0x001A2160 File Offset: 0x001A0360
 	public void Write(XmlElement _elem)
 	{
 		XmlElement xmlElement = _elem.AddXmlElement("body").SetAttrib("name", this.name);
@@ -127,15 +127,15 @@ public class PhysicsBodyLayout
 		}
 	}
 
-	// Token: 0x040035F2 RID: 13810
+	// Token: 0x04003612 RID: 13842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, PhysicsBodyLayout> bodyLayouts = new Dictionary<string, PhysicsBodyLayout>();
 
-	// Token: 0x040035F3 RID: 13811
+	// Token: 0x04003613 RID: 13843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PhysicsBodyColliderConfiguration> colliders = new List<PhysicsBodyColliderConfiguration>();
 
-	// Token: 0x040035F4 RID: 13812
+	// Token: 0x04003614 RID: 13844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 }

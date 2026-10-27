@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000B26 RID: 2854
+// Token: 0x02000B31 RID: 2865
 public class ChunkCaveShadowMeshManager : MonoBehaviour
 {
 }

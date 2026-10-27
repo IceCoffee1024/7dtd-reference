@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000B7A RID: 2938
+// Token: 0x02000B85 RID: 2949
 public abstract class PinnedBuffer : IDisposable
 {
-	// Token: 0x06005880 RID: 22656 RVA: 0x0021F8A8 File Offset: 0x0021DAA8
+	// Token: 0x060058A5 RID: 22693 RVA: 0x00220E04 File Offset: 0x0021F004
 	public static PinnedBuffer<T> Create<[IsUnmanaged] T>(ArrayListMP<T> list, PinnedBuffer.Ownership ownership) where T : struct, ValueType
 	{
 		if (list == null || list.Count <= 0)
@@ -34,23 +34,23 @@ public abstract class PinnedBuffer : IDisposable
 		}
 	}
 
-	// Token: 0x06005881 RID: 22657
+	// Token: 0x060058A6 RID: 22694
 	public abstract void Dispose();
 
-	// Token: 0x06005882 RID: 22658 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060058A7 RID: 22695 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public PinnedBuffer()
 	{
 	}
 
-	// Token: 0x02000B7B RID: 2939
+	// Token: 0x02000B86 RID: 2950
 	public enum Ownership
 	{
-		// Token: 0x040044B0 RID: 17584
+		// Token: 0x040044D5 RID: 17621
 		Pin,
-		// Token: 0x040044B1 RID: 17585
+		// Token: 0x040044D6 RID: 17622
 		Clone,
-		// Token: 0x040044B2 RID: 17586
+		// Token: 0x040044D7 RID: 17623
 		Steal
 	}
 }

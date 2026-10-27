@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 
-// Token: 0x02000CF2 RID: 3314
+// Token: 0x02000CFD RID: 3325
 public class WaterSimulationApplyChanges
 {
-	// Token: 0x0600650B RID: 25867 RVA: 0x0027B52C File Offset: 0x0027972C
+	// Token: 0x06006530 RID: 25904 RVA: 0x0027CA54 File Offset: 0x0027AC54
 	public WaterSimulationApplyChanges(ChunkCluster _cc)
 	{
 		this.chunks = _cc;
@@ -13,7 +13,7 @@ public class WaterSimulationApplyChanges
 		this.applyThread = ThreadManager.StartThread("WaterSimulationApplyChanges", null, new ThreadManager.ThreadFunctionLoopDelegate(this.ThreadLoop), null, null, null, true, false);
 	}
 
-	// Token: 0x0600650C RID: 25868 RVA: 0x0027B5CC File Offset: 0x002797CC
+	// Token: 0x06006531 RID: 25905 RVA: 0x0027CAF4 File Offset: 0x0027ACF4
 	public WaterSimulationApplyChanges.ChangesForChunk.Writer GetChangeWriter(long _chunkKey)
 	{
 		Dictionary<long, WaterSimulationApplyChanges.ChangesForChunk> dictionary = this.changeCache;
@@ -32,7 +32,7 @@ public class WaterSimulationApplyChanges
 		return writer;
 	}
 
-	// Token: 0x0600650D RID: 25869 RVA: 0x0027B648 File Offset: 0x00279848
+	// Token: 0x06006532 RID: 25906 RVA: 0x0027CB70 File Offset: 0x0027AD70
 	public void DiscardChangesForChunks(List<long> _chunkKeys)
 	{
 		Dictionary<long, WaterSimulationApplyChanges.ChangesForChunk> dictionary = this.changeCache;
@@ -52,7 +52,7 @@ public class WaterSimulationApplyChanges
 		}
 	}
 
-	// Token: 0x0600650E RID: 25870 RVA: 0x0027B704 File Offset: 0x00279904
+	// Token: 0x06006533 RID: 25907 RVA: 0x0027CC2C File Offset: 0x0027AE2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ThreadLoop(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -82,7 +82,7 @@ public class WaterSimulationApplyChanges
 		return 0;
 	}
 
-	// Token: 0x0600650F RID: 25871 RVA: 0x0027B7A4 File Offset: 0x002799A4
+	// Token: 0x06006534 RID: 25908 RVA: 0x0027CCCC File Offset: 0x0027AECC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryFindChangeToApply(out Chunk _chunk, out WaterSimulationApplyChanges.ChangesForChunk _changes)
 	{
@@ -133,7 +133,7 @@ public class WaterSimulationApplyChanges
 		return flag2;
 	}
 
-	// Token: 0x06006510 RID: 25872 RVA: 0x0027B8A0 File Offset: 0x00279AA0
+	// Token: 0x06006535 RID: 25909 RVA: 0x0027CDC8 File Offset: 0x0027AFC8
 	public void ApplyChanges(Chunk _chunk, Dictionary<int, WaterValue> changedVoxels)
 	{
 		NetPackageWaterSimChunkUpdate netPackageWaterSimChunkUpdate = null;
@@ -243,7 +243,7 @@ public class WaterSimulationApplyChanges
 		}
 	}
 
-	// Token: 0x06006511 RID: 25873 RVA: 0x0027BB48 File Offset: 0x00279D48
+	// Token: 0x06006536 RID: 25910 RVA: 0x0027D070 File Offset: 0x0027B270
 	public bool HasNetWorkLimitBeenReached()
 	{
 		if (this.isServer && this.networkMaxBytesPerSecond > 0L && SingletonMonoBehaviour<ConnectionManager>.Instance.ClientCount() > 0)
@@ -258,7 +258,7 @@ public class WaterSimulationApplyChanges
 		return false;
 	}
 
-	// Token: 0x06006512 RID: 25874 RVA: 0x0027BBB8 File Offset: 0x00279DB8
+	// Token: 0x06006537 RID: 25911 RVA: 0x0027D0E0 File Offset: 0x0027B2E0
 	public NetPackageWaterSimChunkUpdate SetupForSend(Chunk _chunk)
 	{
 		this.clientsNearChunkBuffer.Clear();
@@ -276,7 +276,7 @@ public class WaterSimulationApplyChanges
 		return package;
 	}
 
-	// Token: 0x06006513 RID: 25875 RVA: 0x0027BC68 File Offset: 0x00279E68
+	// Token: 0x06006538 RID: 25912 RVA: 0x0027D190 File Offset: 0x0027B390
 	public int SendUpdateToClients(NetPackageWaterSimChunkUpdate _package)
 	{
 		int num = 0;
@@ -290,56 +290,56 @@ public class WaterSimulationApplyChanges
 		return num;
 	}
 
-	// Token: 0x06006514 RID: 25876 RVA: 0x0027BCD4 File Offset: 0x00279ED4
+	// Token: 0x06006539 RID: 25913 RVA: 0x0027D1FC File Offset: 0x0027B3FC
 	public void Cleanup()
 	{
 		this.applyThread.WaitForEnd(30);
 	}
 
-	// Token: 0x04004ED7 RID: 20183
+	// Token: 0x04004EFC RID: 20220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryPooledObject<WaterSimulationApplyChanges.ChangesForChunk> changesPool = new MemoryPooledObject<WaterSimulationApplyChanges.ChangesForChunk>(300);
 
-	// Token: 0x04004ED8 RID: 20184
+	// Token: 0x04004EFD RID: 20221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkCluster chunks;
 
-	// Token: 0x04004ED9 RID: 20185
+	// Token: 0x04004EFE RID: 20222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo applyThread;
 
-	// Token: 0x04004EDA RID: 20186
+	// Token: 0x04004EFF RID: 20223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int noWorkPauseDurationMs = 15;
 
-	// Token: 0x04004EDB RID: 20187
+	// Token: 0x04004F00 RID: 20224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, WaterSimulationApplyChanges.ChangesForChunk> changeCache = new Dictionary<long, WaterSimulationApplyChanges.ChangesForChunk>();
 
-	// Token: 0x04004EDC RID: 20188
+	// Token: 0x04004F01 RID: 20225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LinkedList<long> changedChunkList = new LinkedList<long>();
 
-	// Token: 0x04004EDD RID: 20189
+	// Token: 0x04004F02 RID: 20226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageMeasure networkMeasure = new NetPackageMeasure(1.0);
 
-	// Token: 0x04004EDE RID: 20190
+	// Token: 0x04004F03 RID: 20227
 	public long networkMaxBytesPerSecond = 524288L;
 
-	// Token: 0x04004EDF RID: 20191
+	// Token: 0x04004F04 RID: 20228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ClientInfo> clientsNearChunkBuffer = new List<ClientInfo>();
 
-	// Token: 0x04004EE0 RID: 20192
+	// Token: 0x04004F05 RID: 20229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isServer;
 
-	// Token: 0x02000CF3 RID: 3315
+	// Token: 0x02000CFE RID: 3326
 	public class ChangesForChunk : IMemoryPoolableObject
 	{
-		// Token: 0x17000AA7 RID: 2727
-		// (get) Token: 0x06006515 RID: 25877 RVA: 0x0027BCE4 File Offset: 0x00279EE4
+		// Token: 0x17000AAD RID: 2733
+		// (get) Token: 0x0600653A RID: 25914 RVA: 0x0027D20C File Offset: 0x0027B40C
 		public bool IsRecordingChanges
 		{
 			get
@@ -353,30 +353,30 @@ public class WaterSimulationApplyChanges
 			}
 		}
 
-		// Token: 0x06006516 RID: 25878 RVA: 0x0027BD24 File Offset: 0x00279F24
+		// Token: 0x0600653B RID: 25915 RVA: 0x0027D24C File Offset: 0x0027B44C
 		public void Cleanup()
 		{
 			this.Reset();
 		}
 
-		// Token: 0x06006517 RID: 25879 RVA: 0x0027BD2C File Offset: 0x00279F2C
+		// Token: 0x0600653C RID: 25916 RVA: 0x0027D254 File Offset: 0x0027B454
 		public void Reset()
 		{
 			this.isRecordingChanges = false;
 			this.changedVoxels.Clear();
 		}
 
-		// Token: 0x04004EE1 RID: 20193
+		// Token: 0x04004F06 RID: 20230
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isRecordingChanges;
 
-		// Token: 0x04004EE2 RID: 20194
+		// Token: 0x04004F07 RID: 20231
 		public Dictionary<int, WaterValue> changedVoxels = new Dictionary<int, WaterValue>();
 
-		// Token: 0x02000CF4 RID: 3316
+		// Token: 0x02000CFF RID: 3327
 		public struct Writer : IDisposable
 		{
-			// Token: 0x06006519 RID: 25881 RVA: 0x0027BD54 File Offset: 0x00279F54
+			// Token: 0x0600653E RID: 25918 RVA: 0x0027D27C File Offset: 0x0027B47C
 			public Writer(WaterSimulationApplyChanges.ChangesForChunk _changes)
 			{
 				lock (_changes)
@@ -386,13 +386,13 @@ public class WaterSimulationApplyChanges
 				this.changes = _changes;
 			}
 
-			// Token: 0x0600651A RID: 25882 RVA: 0x0027BD98 File Offset: 0x00279F98
+			// Token: 0x0600653F RID: 25919 RVA: 0x0027D2C0 File Offset: 0x0027B4C0
 			public void RecordChange(int _voxelIndex, WaterValue _waterValue)
 			{
 				this.changes.changedVoxels[_voxelIndex] = _waterValue;
 			}
 
-			// Token: 0x0600651B RID: 25883 RVA: 0x0027BDAC File Offset: 0x00279FAC
+			// Token: 0x06006540 RID: 25920 RVA: 0x0027D2D4 File Offset: 0x0027B4D4
 			public void Dispose()
 			{
 				WaterSimulationApplyChanges.ChangesForChunk changesForChunk = this.changes;
@@ -402,7 +402,7 @@ public class WaterSimulationApplyChanges
 				}
 			}
 
-			// Token: 0x04004EE3 RID: 20195
+			// Token: 0x04004F08 RID: 20232
 			[PublicizedFrom(EAccessModifier.Private)]
 			public WaterSimulationApplyChanges.ChangesForChunk changes;
 		}

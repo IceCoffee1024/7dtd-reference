@@ -19,7 +19,7 @@ public class BlockQuestActivate : Block
 		}
 	}
 
-	// Token: 0x06000902 RID: 2306 RVA: 0x0003EDE0 File Offset: 0x0003CFE0
+	// Token: 0x06000902 RID: 2306 RVA: 0x0003EDA0 File Offset: 0x0003CFA0
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -39,7 +39,7 @@ public class BlockQuestActivate : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x06000903 RID: 2307 RVA: 0x0003EE74 File Offset: 0x0003D074
+	// Token: 0x06000903 RID: 2307 RVA: 0x0003EE34 File Offset: 0x0003D034
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!_world.IsEditor() && _blockValue.meta2 != 1)
@@ -92,7 +92,7 @@ public class BlockQuestActivate : Block
 		}
 	}
 
-	// Token: 0x06000904 RID: 2308 RVA: 0x0003F04C File Offset: 0x0003D24C
+	// Token: 0x06000904 RID: 2308 RVA: 0x0003F00C File Offset: 0x0003D20C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_AlternateEvent(TimerEventData timerData)
 	{
@@ -107,7 +107,7 @@ public class BlockQuestActivate : Block
 		world.SetBlockRPC(vector3i, blockValue);
 	}
 
-	// Token: 0x06000905 RID: 2309 RVA: 0x0003F0DC File Offset: 0x0003D2DC
+	// Token: 0x06000905 RID: 2309 RVA: 0x0003F09C File Offset: 0x0003D29C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_CloseEvent(TimerEventData timerData)
 	{
@@ -120,7 +120,7 @@ public class BlockQuestActivate : Block
 		this.setControllerState(world, null, vector3i, QuestGeneratorController.GeneratorStates.Off, false);
 	}
 
-	// Token: 0x06000906 RID: 2310 RVA: 0x0003F130 File Offset: 0x0003D330
+	// Token: 0x06000906 RID: 2310 RVA: 0x0003F0F0 File Offset: 0x0003D2F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_Event(TimerEventData timerData)
 	{
@@ -136,14 +136,14 @@ public class BlockQuestActivate : Block
 		this.setControllerState(world, null, vector3i, QuestGeneratorController.GeneratorStates.On, false);
 	}
 
-	// Token: 0x06000907 RID: 2311 RVA: 0x0003F1AE File Offset: 0x0003D3AE
+	// Token: 0x06000907 RID: 2311 RVA: 0x0003F16E File Offset: 0x0003D36E
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
 		QuestEventManager.Current.BlockDestroyed(_blockValue.Block, _blockPos, null);
 	}
 
-	// Token: 0x06000908 RID: 2312 RVA: 0x0003F1D4 File Offset: 0x0003D3D4
+	// Token: 0x06000908 RID: 2312 RVA: 0x0003F194 File Offset: 0x0003D394
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -155,7 +155,7 @@ public class BlockQuestActivate : Block
 		this.setControllerState(_world, _chunk, _blockPos, meta, false);
 	}
 
-	// Token: 0x06000909 RID: 2313 RVA: 0x0003F21C File Offset: 0x0003D41C
+	// Token: 0x06000909 RID: 2313 RVA: 0x0003F1DC File Offset: 0x0003D3DC
 	public override void Init()
 	{
 		base.Init();
@@ -172,7 +172,7 @@ public class BlockQuestActivate : Block
 		return true;
 	}
 
-	// Token: 0x0600090B RID: 2315 RVA: 0x0003F27C File Offset: 0x0003D47C
+	// Token: 0x0600090B RID: 2315 RVA: 0x0003F23C File Offset: 0x0003D43C
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = !_world.IsEditor();
@@ -180,7 +180,7 @@ public class BlockQuestActivate : Block
 		return this.cmds;
 	}
 
-	// Token: 0x0600090C RID: 2316 RVA: 0x0003F2D0 File Offset: 0x0003D4D0
+	// Token: 0x0600090C RID: 2316 RVA: 0x0003F290 File Offset: 0x0003D490
 	public override void OnTriggerAddedFromPrefab(BlockTrigger _trigger, Vector3i _blockPos, BlockValue _blockValue, FastTags<TagGroup.Global> _questTags)
 	{
 		if (GameManager.Instance.World.IsEditor())
@@ -207,7 +207,7 @@ public class BlockQuestActivate : Block
 		}
 	}
 
-	// Token: 0x0600090D RID: 2317 RVA: 0x0003F388 File Offset: 0x0003D588
+	// Token: 0x0600090D RID: 2317 RVA: 0x0003F348 File Offset: 0x0003D548
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -228,7 +228,7 @@ public class BlockQuestActivate : Block
 		}
 	}
 
-	// Token: 0x0600090E RID: 2318 RVA: 0x0003F404 File Offset: 0x0003D604
+	// Token: 0x0600090E RID: 2318 RVA: 0x0003F3C4 File Offset: 0x0003D5C4
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -246,7 +246,7 @@ public class BlockQuestActivate : Block
 		this.setControllerState(_world, chunk, _blockPos, meta, true);
 	}
 
-	// Token: 0x0600090F RID: 2319 RVA: 0x0003F46B File Offset: 0x0003D66B
+	// Token: 0x0600090F RID: 2319 RVA: 0x0003F42B File Offset: 0x0003D62B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator resetTriggerLater(BlockTrigger _trigger, BlockValue _blockValue, FastTags<TagGroup.Global> _questTag)
 	{
@@ -276,14 +276,14 @@ public class BlockQuestActivate : Block
 		yield break;
 	}
 
-	// Token: 0x06000910 RID: 2320 RVA: 0x0003F481 File Offset: 0x0003D681
+	// Token: 0x06000910 RID: 2320 RVA: 0x0003F441 File Offset: 0x0003D641
 	public override void OnTriggerRefresh(BlockTrigger _trigger, BlockValue _bv, FastTags<TagGroup.Global> _questTag)
 	{
 		base.OnTriggerRefresh(_trigger, _bv, _questTag);
 		GameManager.Instance.StartCoroutine(this.resetTriggerLater(_trigger, _bv, _questTag));
 	}
 
-	// Token: 0x06000911 RID: 2321 RVA: 0x0003F4A0 File Offset: 0x0003D6A0
+	// Token: 0x06000911 RID: 2321 RVA: 0x0003F460 File Offset: 0x0003D660
 	public void SetupForQuest(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> blockChanges)
 	{
 		if (_world.IsEditor())
@@ -299,7 +299,7 @@ public class BlockQuestActivate : Block
 		this.setControllerState(_world, _chunk, _blockPos, QuestGeneratorController.GeneratorStates.Off, false);
 	}
 
-	// Token: 0x06000912 RID: 2322 RVA: 0x0003F4DC File Offset: 0x0003D6DC
+	// Token: 0x06000912 RID: 2322 RVA: 0x0003F49C File Offset: 0x0003D69C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setControllerState(WorldBase _world, Chunk _chunk, Vector3i _blockPos, QuestGeneratorController.GeneratorStates generatorState, bool isInit = false)
 	{

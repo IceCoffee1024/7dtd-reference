@@ -2,10 +2,10 @@
 
 namespace Twitch
 {
-	// Token: 0x0200187E RID: 6270
+	// Token: 0x020018AF RID: 6319
 	public class TwitchRecentlyRemovedEntityEntry
 	{
-		// Token: 0x0600C1D7 RID: 49623 RVA: 0x004789C8 File Offset: 0x00476BC8
+		// Token: 0x0600C2EB RID: 49899 RVA: 0x0047C374 File Offset: 0x0047A574
 		public TwitchRecentlyRemovedEntityEntry(TwitchSpawnedEntityEntry entry)
 		{
 			this.SpawnedEntity = entry.SpawnedEntity;
@@ -16,22 +16,22 @@ namespace Twitch
 			this.TimeRemaining = 60f;
 		}
 
-		// Token: 0x040091CD RID: 37325
+		// Token: 0x040092B6 RID: 37558
 		public Entity SpawnedEntity;
 
-		// Token: 0x040091CE RID: 37326
+		// Token: 0x040092B7 RID: 37559
 		public int SpawnedEntityID = -1;
 
-		// Token: 0x040091CF RID: 37327
+		// Token: 0x040092B8 RID: 37560
 		public TwitchActionEntry Action;
 
-		// Token: 0x040091D0 RID: 37328
+		// Token: 0x040092B9 RID: 37561
 		public TwitchEventActionEntry Event;
 
-		// Token: 0x040091D1 RID: 37329
+		// Token: 0x040092BA RID: 37562
 		public TwitchVoteEntry Vote;
 
-		// Token: 0x040091D2 RID: 37330
+		// Token: 0x040092BB RID: 37563
 		public float TimeRemaining;
 	}
 }

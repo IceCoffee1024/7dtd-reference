@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200078B RID: 1931
+// Token: 0x02000793 RID: 1939
 [Preserve]
 public class NativePlatformAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005FD RID: 1533
-	// (get) Token: 0x060039B5 RID: 14773 RVA: 0x0017862B File Offset: 0x0017682B
+	// Token: 0x17000601 RID: 1537
+	// (get) Token: 0x060039CC RID: 14796 RVA: 0x001795C3 File Offset: 0x001777C3
 	public override int Order
 	{
 		get
@@ -17,8 +17,8 @@ public class NativePlatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005FE RID: 1534
-	// (get) Token: 0x060039B6 RID: 14774 RVA: 0x00178632 File Offset: 0x00176832
+	// Token: 0x17000602 RID: 1538
+	// (get) Token: 0x060039CD RID: 14797 RVA: 0x001795CA File Offset: 0x001777CA
 	public override string AuthorizerName
 	{
 		get
@@ -27,8 +27,8 @@ public class NativePlatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005FF RID: 1535
-	// (get) Token: 0x060039B7 RID: 14775 RVA: 0x00178639 File Offset: 0x00176839
+	// Token: 0x17000603 RID: 1539
+	// (get) Token: 0x060039CE RID: 14798 RVA: 0x001795D1 File Offset: 0x001777D1
 	public override string StateLocalizationKey
 	{
 		get
@@ -37,7 +37,7 @@ public class NativePlatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060039B8 RID: 14776 RVA: 0x00178640 File Offset: 0x00176840
+	// Token: 0x060039CF RID: 14799 RVA: 0x001795D8 File Offset: 0x001777D8
 	public override void ServerStart()
 	{
 		base.ServerStart();
@@ -54,7 +54,7 @@ public class NativePlatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060039B9 RID: 14777 RVA: 0x001786C8 File Offset: 0x001768C8
+	// Token: 0x060039D0 RID: 14800 RVA: 0x00179660 File Offset: 0x00177860
 	public override void ServerStop()
 	{
 		base.ServerStop();
@@ -71,7 +71,7 @@ public class NativePlatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060039BA RID: 14778 RVA: 0x00178738 File Offset: 0x00176938
+	// Token: 0x060039D1 RID: 14801 RVA: 0x001796D0 File Offset: 0x001778D0
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		EPlatformIdentifier platformIdentifier = _clientInfo.PlatformId.PlatformIdentifier;
@@ -96,21 +96,21 @@ public class NativePlatformAuthorizer : AuthorizerAbs
 		return new ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?>(EAuthorizerSyncResult.WaitAsync, null);
 	}
 
-	// Token: 0x060039BB RID: 14779 RVA: 0x001787DC File Offset: 0x001769DC
+	// Token: 0x060039D2 RID: 14802 RVA: 0x00179774 File Offset: 0x00177974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void authPlayerSteamSuccessfulCallback(ClientInfo _clientInfo)
 	{
 		this.authResponsesHandler.AuthorizationAccepted(this, _clientInfo);
 	}
 
-	// Token: 0x060039BC RID: 14780 RVA: 0x001787EB File Offset: 0x001769EB
+	// Token: 0x060039D3 RID: 14803 RVA: 0x00179783 File Offset: 0x00177983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void kickPlayerCallback(ClientInfo _cInfo, GameUtils.KickPlayerData _kickData)
 	{
 		this.authResponsesHandler.AuthorizationDenied(this, _cInfo, _kickData);
 	}
 
-	// Token: 0x060039BD RID: 14781 RVA: 0x001787FB File Offset: 0x001769FB
+	// Token: 0x060039D4 RID: 14804 RVA: 0x00179793 File Offset: 0x00177993
 	public override void Disconnect(ClientInfo _clientInfo)
 	{
 		if (_clientInfo != null)

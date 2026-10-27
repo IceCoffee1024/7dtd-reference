@@ -3,17 +3,17 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-// Token: 0x020013E2 RID: 5090
+// Token: 0x020013F4 RID: 5108
 public static class DataLoader
 {
-	// Token: 0x06009FCF RID: 40911 RVA: 0x003C4C9C File Offset: 0x003C2E9C
+	// Token: 0x0600A027 RID: 40999 RVA: 0x003C70A0 File Offset: 0x003C52A0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsInResources(string _uri)
 	{
 		return _uri.IndexOf('#') < 0 && _uri.IndexOf('@') < 0;
 	}
 
-	// Token: 0x06009FD0 RID: 40912 RVA: 0x003C4CB8 File Offset: 0x003C2EB8
+	// Token: 0x0600A028 RID: 41000 RVA: 0x003C70BC File Offset: 0x003C52BC
 	public static DataLoader.DataPathIdentifier ParseDataPathIdentifier(string _inputUri)
 	{
 		if (_inputUri == null)
@@ -39,25 +39,25 @@ public static class DataLoader
 		return new DataLoader.DataPathIdentifier(_inputUri, DataLoader.DataPathIdentifier.AssetLocation.Resources, false);
 	}
 
-	// Token: 0x06009FD1 RID: 40913 RVA: 0x003C4D45 File Offset: 0x003C2F45
+	// Token: 0x0600A029 RID: 41001 RVA: 0x003C7149 File Offset: 0x003C5349
 	public static T LoadAsset<T>(DataLoader.DataPathIdentifier _identifier, bool _ignoreDlcEntitlements = false) where T : global::UnityEngine.Object
 	{
 		return LoadManager.LoadAsset<T>(_identifier, null, null, false, true, _ignoreDlcEntitlements).Asset;
 	}
 
-	// Token: 0x06009FD2 RID: 40914 RVA: 0x003C4D57 File Offset: 0x003C2F57
+	// Token: 0x0600A02A RID: 41002 RVA: 0x003C715B File Offset: 0x003C535B
 	public static T LoadAsset<T>(string _uri, bool _ignoreDlcEntitlements = false) where T : global::UnityEngine.Object
 	{
 		return DataLoader.LoadAsset<T>(DataLoader.ParseDataPathIdentifier(_uri), _ignoreDlcEntitlements);
 	}
 
-	// Token: 0x06009FD3 RID: 40915 RVA: 0x003C4D65 File Offset: 0x003C2F65
+	// Token: 0x0600A02B RID: 41003 RVA: 0x003C7169 File Offset: 0x003C5369
 	public static T LoadAsset<T>(AssetReference assetReference, bool _ignoreDlcEntitlements = false) where T : global::UnityEngine.Object
 	{
 		return LoadManager.LoadAssetFromAddressables<T>(assetReference, null, null, false, true, _ignoreDlcEntitlements).Asset;
 	}
 
-	// Token: 0x06009FD4 RID: 40916 RVA: 0x003C4D77 File Offset: 0x003C2F77
+	// Token: 0x0600A02C RID: 41004 RVA: 0x003C717B File Offset: 0x003C537B
 	public static void UnloadAsset(DataLoader.DataPathIdentifier _srcIdentifier, global::UnityEngine.Object _obj)
 	{
 		if (_srcIdentifier.IsBundle)
@@ -72,13 +72,13 @@ public static class DataLoader
 		}
 	}
 
-	// Token: 0x06009FD5 RID: 40917 RVA: 0x003C4D9E File Offset: 0x003C2F9E
+	// Token: 0x0600A02D RID: 41005 RVA: 0x003C71A2 File Offset: 0x003C53A2
 	public static void UnloadAsset(string _uri, global::UnityEngine.Object _obj)
 	{
 		DataLoader.UnloadAsset(DataLoader.ParseDataPathIdentifier(_uri), _obj);
 	}
 
-	// Token: 0x06009FD6 RID: 40918 RVA: 0x003C4DAC File Offset: 0x003C2FAC
+	// Token: 0x0600A02E RID: 41006 RVA: 0x003C71B0 File Offset: 0x003C53B0
 	public static void PreloadBundle(DataLoader.DataPathIdentifier _identifier)
 	{
 		if (_identifier.IsBundle)
@@ -87,17 +87,17 @@ public static class DataLoader
 		}
 	}
 
-	// Token: 0x06009FD7 RID: 40919 RVA: 0x003C4DCD File Offset: 0x003C2FCD
+	// Token: 0x0600A02F RID: 41007 RVA: 0x003C71D1 File Offset: 0x003C53D1
 	public static void PreloadBundle(string _uri)
 	{
 		DataLoader.PreloadBundle(DataLoader.ParseDataPathIdentifier(_uri));
 	}
 
-	// Token: 0x020013E3 RID: 5091
+	// Token: 0x020013F5 RID: 5109
 	public struct DataPathIdentifier
 	{
-		// Token: 0x1700130C RID: 4876
-		// (get) Token: 0x06009FD8 RID: 40920 RVA: 0x003C4DDA File Offset: 0x003C2FDA
+		// Token: 0x17001318 RID: 4888
+		// (get) Token: 0x0600A030 RID: 41008 RVA: 0x003C71DE File Offset: 0x003C53DE
 		public bool IsBundle
 		{
 			get
@@ -106,7 +106,7 @@ public static class DataLoader
 			}
 		}
 
-		// Token: 0x06009FD9 RID: 40921 RVA: 0x003C4DE5 File Offset: 0x003C2FE5
+		// Token: 0x0600A031 RID: 41009 RVA: 0x003C71E9 File Offset: 0x003C53E9
 		public DataPathIdentifier(string _assetName, DataLoader.DataPathIdentifier.AssetLocation _location = DataLoader.DataPathIdentifier.AssetLocation.Resources, bool _fromMod = false)
 		{
 			this.BundlePath = null;
@@ -115,7 +115,7 @@ public static class DataLoader
 			this.FromMod = _fromMod;
 		}
 
-		// Token: 0x06009FDA RID: 40922 RVA: 0x003C4E03 File Offset: 0x003C3003
+		// Token: 0x0600A032 RID: 41010 RVA: 0x003C7207 File Offset: 0x003C5407
 		public DataPathIdentifier(string _assetName, string _bundlePath, bool _fromMod = false)
 		{
 			this.BundlePath = _bundlePath;
@@ -124,26 +124,26 @@ public static class DataLoader
 			this.FromMod = _fromMod;
 		}
 
-		// Token: 0x0400790B RID: 30987
+		// Token: 0x0400794C RID: 31052
 		public readonly DataLoader.DataPathIdentifier.AssetLocation Location;
 
-		// Token: 0x0400790C RID: 30988
+		// Token: 0x0400794D RID: 31053
 		public readonly string BundlePath;
 
-		// Token: 0x0400790D RID: 30989
+		// Token: 0x0400794E RID: 31054
 		public readonly string AssetName;
 
-		// Token: 0x0400790E RID: 30990
+		// Token: 0x0400794F RID: 31055
 		public readonly bool FromMod;
 
-		// Token: 0x020013E4 RID: 5092
+		// Token: 0x020013F6 RID: 5110
 		public enum AssetLocation
 		{
-			// Token: 0x04007910 RID: 30992
+			// Token: 0x04007951 RID: 31057
 			Resources,
-			// Token: 0x04007911 RID: 30993
+			// Token: 0x04007952 RID: 31058
 			Bundle,
-			// Token: 0x04007912 RID: 30994
+			// Token: 0x04007953 RID: 31059
 			Addressable
 		}
 	}

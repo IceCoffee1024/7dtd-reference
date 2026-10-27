@@ -2,23 +2,23 @@
 
 namespace Twitch
 {
-	// Token: 0x0200180E RID: 6158
+	// Token: 0x0200183F RID: 6207
 	[Serializable]
 	public class SetConfigRequestData
 	{
-		// Token: 0x04008EC5 RID: 36549
+		// Token: 0x04008FAE RID: 36782
 		public string extension_id;
 
-		// Token: 0x04008EC6 RID: 36550
+		// Token: 0x04008FAF RID: 36783
 		public string broadcaster_id;
 
-		// Token: 0x04008EC7 RID: 36551
+		// Token: 0x04008FB0 RID: 36784
 		public string segment;
 
-		// Token: 0x04008EC8 RID: 36552
+		// Token: 0x04008FB1 RID: 36785
 		public string version;
 
-		// Token: 0x04008EC9 RID: 36553
+		// Token: 0x04008FB2 RID: 36786
 		public string content;
 	}
 }

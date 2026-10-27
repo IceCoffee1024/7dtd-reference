@@ -1,40 +1,40 @@
 ﻿using System;
 
-// Token: 0x02001030 RID: 4144
+// Token: 0x02001040 RID: 4160
 public class InGameService
 {
-	// Token: 0x17000F5D RID: 3933
-	// (get) Token: 0x06008298 RID: 33432 RVA: 0x0031B88F File Offset: 0x00319A8F
-	// (set) Token: 0x06008299 RID: 33433 RVA: 0x0031B897 File Offset: 0x00319A97
+	// Token: 0x17000F68 RID: 3944
+	// (get) Token: 0x060082EA RID: 33514 RVA: 0x0031D593 File Offset: 0x0031B793
+	// (set) Token: 0x060082EB RID: 33515 RVA: 0x0031D59B File Offset: 0x0031B79B
 	public InGameService.InGameServiceTypes ServiceType { get; set; }
 
-	// Token: 0x17000F5E RID: 3934
-	// (get) Token: 0x0600829A RID: 33434 RVA: 0x0031B8A0 File Offset: 0x00319AA0
-	// (set) Token: 0x0600829B RID: 33435 RVA: 0x0031B8A8 File Offset: 0x00319AA8
+	// Token: 0x17000F69 RID: 3945
+	// (get) Token: 0x060082EC RID: 33516 RVA: 0x0031D5A4 File Offset: 0x0031B7A4
+	// (set) Token: 0x060082ED RID: 33517 RVA: 0x0031D5AC File Offset: 0x0031B7AC
 	public string Name { get; set; }
 
-	// Token: 0x17000F5F RID: 3935
-	// (get) Token: 0x0600829C RID: 33436 RVA: 0x0031B8B1 File Offset: 0x00319AB1
-	// (set) Token: 0x0600829D RID: 33437 RVA: 0x0031B8B9 File Offset: 0x00319AB9
+	// Token: 0x17000F6A RID: 3946
+	// (get) Token: 0x060082EE RID: 33518 RVA: 0x0031D5B5 File Offset: 0x0031B7B5
+	// (set) Token: 0x060082EF RID: 33519 RVA: 0x0031D5BD File Offset: 0x0031B7BD
 	public string Description { get; set; }
 
-	// Token: 0x17000F60 RID: 3936
-	// (get) Token: 0x0600829E RID: 33438 RVA: 0x0031B8C2 File Offset: 0x00319AC2
-	// (set) Token: 0x0600829F RID: 33439 RVA: 0x0031B8CA File Offset: 0x00319ACA
+	// Token: 0x17000F6B RID: 3947
+	// (get) Token: 0x060082F0 RID: 33520 RVA: 0x0031D5C6 File Offset: 0x0031B7C6
+	// (set) Token: 0x060082F1 RID: 33521 RVA: 0x0031D5CE File Offset: 0x0031B7CE
 	public string Icon { get; set; }
 
-	// Token: 0x17000F61 RID: 3937
-	// (get) Token: 0x060082A0 RID: 33440 RVA: 0x0031B8D3 File Offset: 0x00319AD3
-	// (set) Token: 0x060082A1 RID: 33441 RVA: 0x0031B8DB File Offset: 0x00319ADB
+	// Token: 0x17000F6C RID: 3948
+	// (get) Token: 0x060082F2 RID: 33522 RVA: 0x0031D5D7 File Offset: 0x0031B7D7
+	// (set) Token: 0x060082F3 RID: 33523 RVA: 0x0031D5DF File Offset: 0x0031B7DF
 	public int Price { get; set; }
 
-	// Token: 0x040060D9 RID: 24793
+	// Token: 0x04006117 RID: 24855
 	public Action<bool> VisibleChangedHandler;
 
-	// Token: 0x02001031 RID: 4145
+	// Token: 0x02001041 RID: 4161
 	public enum InGameServiceTypes
 	{
-		// Token: 0x040060DB RID: 24795
+		// Token: 0x04006119 RID: 24857
 		VendingRent
 	}
 }

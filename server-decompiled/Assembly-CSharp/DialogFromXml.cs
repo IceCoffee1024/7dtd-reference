@@ -3,10 +3,10 @@ using System.Collections;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000D10 RID: 3344
+// Token: 0x02000D1B RID: 3355
 public class DialogFromXml
 {
-	// Token: 0x060065B5 RID: 26037 RVA: 0x002801C8 File Offset: 0x0027E3C8
+	// Token: 0x060065DA RID: 26074 RVA: 0x002816F0 File Offset: 0x0027F8F0
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		Dialog.DialogList.Clear();
@@ -14,12 +14,12 @@ public class DialogFromXml
 		yield break;
 	}
 
-	// Token: 0x060065B6 RID: 26038 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060065DB RID: 26075 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void Reload()
 	{
 	}
 
-	// Token: 0x060065B7 RID: 26039 RVA: 0x002801D7 File Offset: 0x0027E3D7
+	// Token: 0x060065DC RID: 26076 RVA: 0x002816FF File Offset: 0x0027F8FF
 	public static bool CreateDialogs(XmlFile xmlFile)
 	{
 		Dialog.DialogList.Clear();
@@ -32,7 +32,7 @@ public class DialogFromXml
 		return true;
 	}
 
-	// Token: 0x060065B8 RID: 26040 RVA: 0x00280208 File Offset: 0x0027E408
+	// Token: 0x060065DD RID: 26077 RVA: 0x00281730 File Offset: 0x0027F930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -43,7 +43,7 @@ public class DialogFromXml
 		}
 	}
 
-	// Token: 0x060065B9 RID: 26041 RVA: 0x00280270 File Offset: 0x0027E470
+	// Token: 0x060065DE RID: 26078 RVA: 0x00281798 File Offset: 0x0027F998
 	public static Dialog ParseDialog(XElement e)
 	{
 		if (!e.HasAttribute("id"))
@@ -88,7 +88,7 @@ public class DialogFromXml
 		return dialog;
 	}
 
-	// Token: 0x060065BA RID: 26042 RVA: 0x002803E4 File Offset: 0x0027E5E4
+	// Token: 0x060065DF RID: 26079 RVA: 0x0028190C File Offset: 0x0027FB0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParsePhase(Dialog dialog, XElement e)
 	{
@@ -113,7 +113,7 @@ public class DialogFromXml
 		}
 	}
 
-	// Token: 0x060065BB RID: 26043 RVA: 0x002804C0 File Offset: 0x0027E6C0
+	// Token: 0x060065E0 RID: 26080 RVA: 0x002819E8 File Offset: 0x0027FBE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseStatement(Dialog dialog, XElement e)
 	{
@@ -191,7 +191,7 @@ public class DialogFromXml
 		}
 	}
 
-	// Token: 0x060065BC RID: 26044 RVA: 0x00280790 File Offset: 0x0027E990
+	// Token: 0x060065E1 RID: 26081 RVA: 0x00281CB8 File Offset: 0x0027FEB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseResponse(Dialog dialog, XElement e)
 	{
@@ -235,7 +235,7 @@ public class DialogFromXml
 		}
 	}
 
-	// Token: 0x060065BD RID: 26045 RVA: 0x002808E8 File Offset: 0x0027EAE8
+	// Token: 0x060065E2 RID: 26082 RVA: 0x00281E10 File Offset: 0x00280010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseDialogAction ParseAction(XElement e)
 	{
@@ -264,7 +264,7 @@ public class DialogFromXml
 		return baseDialogAction;
 	}
 
-	// Token: 0x060065BE RID: 26046 RVA: 0x002809B8 File Offset: 0x0027EBB8
+	// Token: 0x060065E3 RID: 26083 RVA: 0x00281EE0 File Offset: 0x002800E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseDialogRequirement ParseRequirement(XElement e)
 	{

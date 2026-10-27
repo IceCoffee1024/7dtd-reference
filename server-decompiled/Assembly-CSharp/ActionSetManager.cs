@@ -6,12 +6,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000559 RID: 1369
+// Token: 0x0200055D RID: 1373
 [global::UnityEngine.Scripting.Preserve]
 public class ActionSetManager
 {
 	// Token: 0x170004AD RID: 1197
-	// (get) Token: 0x06002C7A RID: 11386 RVA: 0x0011A8E8 File Offset: 0x00118AE8
+	// (get) Token: 0x06002C82 RID: 11394 RVA: 0x0011AE74 File Offset: 0x00119074
 	public bool Empty
 	{
 		get
@@ -21,7 +21,7 @@ public class ActionSetManager
 	}
 
 	// Token: 0x170004AE RID: 1198
-	// (get) Token: 0x06002C7B RID: 11387 RVA: 0x0011A8FB File Offset: 0x00118AFB
+	// (get) Token: 0x06002C83 RID: 11395 RVA: 0x0011AE87 File Offset: 0x00119087
 	public PlayerActionSet Top
 	{
 		get
@@ -31,7 +31,7 @@ public class ActionSetManager
 	}
 
 	// Token: 0x170004AF RID: 1199
-	// (get) Token: 0x06002C7C RID: 11388 RVA: 0x0011A915 File Offset: 0x00118B15
+	// (get) Token: 0x06002C84 RID: 11396 RVA: 0x0011AEA1 File Offset: 0x001190A1
 	public static ActionSetManager.EDebugLevel DebugLevel
 	{
 		get
@@ -40,7 +40,7 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x06002C7D RID: 11389 RVA: 0x0011A91C File Offset: 0x00118B1C
+	// Token: 0x06002C85 RID: 11397 RVA: 0x0011AEA8 File Offset: 0x001190A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	static ActionSetManager()
 	{
@@ -56,7 +56,7 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x06002C7E RID: 11390 RVA: 0x0011A958 File Offset: 0x00118B58
+	// Token: 0x06002C86 RID: 11398 RVA: 0x0011AEE4 File Offset: 0x001190E4
 	public void Insert(PlayerActionSet _playerAction, int _index, string _windowName = null)
 	{
 		if (ActionSetManager.debug != ActionSetManager.EDebugLevel.Off)
@@ -85,7 +85,7 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x06002C7F RID: 11391 RVA: 0x0011AA00 File Offset: 0x00118C00
+	// Token: 0x06002C87 RID: 11399 RVA: 0x0011AF8C File Offset: 0x0011918C
 	public void Remove(PlayerActionSet _playerAction, int _minIndex, string _windowName = null)
 	{
 		if (ActionSetManager.debug != ActionSetManager.EDebugLevel.Off)
@@ -135,7 +135,7 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x06002C80 RID: 11392 RVA: 0x0011AB0A File Offset: 0x00118D0A
+	// Token: 0x06002C88 RID: 11400 RVA: 0x0011B096 File Offset: 0x00119296
 	public void Push(PlayerActionSet _playerAction)
 	{
 		if (_playerAction == null)
@@ -145,7 +145,7 @@ public class ActionSetManager
 		this.PushInternal(_playerAction, null);
 	}
 
-	// Token: 0x06002C81 RID: 11393 RVA: 0x0011AB21 File Offset: 0x00118D21
+	// Token: 0x06002C89 RID: 11401 RVA: 0x0011B0AD File Offset: 0x001192AD
 	public void Push(GUIWindow _window)
 	{
 		if (((_window != null) ? _window.GetActionSet() : null) == null)
@@ -155,7 +155,7 @@ public class ActionSetManager
 		this.PushInternal((_window != null) ? _window.GetActionSet() : null, (_window != null) ? _window.Id : null);
 	}
 
-	// Token: 0x06002C82 RID: 11394 RVA: 0x0011AB5C File Offset: 0x00118D5C
+	// Token: 0x06002C8A RID: 11402 RVA: 0x0011B0E8 File Offset: 0x001192E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PushInternal(PlayerActionSet _playerAction, string _windowName = null)
 	{
@@ -180,7 +180,7 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x06002C83 RID: 11395 RVA: 0x0011ABEC File Offset: 0x00118DEC
+	// Token: 0x06002C8B RID: 11403 RVA: 0x0011B178 File Offset: 0x00119378
 	public void Pop(GUIWindow _window = null)
 	{
 		if (ActionSetManager.debug != ActionSetManager.EDebugLevel.Off)
@@ -218,7 +218,7 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x06002C84 RID: 11396 RVA: 0x0011ACCC File Offset: 0x00118ECC
+	// Token: 0x06002C8C RID: 11404 RVA: 0x0011B258 File Offset: 0x00119458
 	public void LogActionSets()
 	{
 		string text = "";
@@ -264,7 +264,7 @@ public class ActionSetManager
 		Log.Out("ActionSets: Stack: {0} --- All: {1}", new object[] { text, text2 });
 	}
 
-	// Token: 0x06002C85 RID: 11397 RVA: 0x0011AE31 File Offset: 0x00119031
+	// Token: 0x06002C8D RID: 11405 RVA: 0x0011B3BD File Offset: 0x001195BD
 	public void Reset()
 	{
 		while (!this.Empty)
@@ -273,22 +273,22 @@ public class ActionSetManager
 		}
 	}
 
-	// Token: 0x0400224C RID: 8780
+	// Token: 0x04002263 RID: 8803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PlayerActionSet> PlayerActions = new List<PlayerActionSet>();
 
-	// Token: 0x0400224D RID: 8781
+	// Token: 0x04002264 RID: 8804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ActionSetManager.EDebugLevel debug = ActionSetManager.EDebugLevel.Off;
 
-	// Token: 0x0200055A RID: 1370
+	// Token: 0x0200055E RID: 1374
 	public enum EDebugLevel
 	{
-		// Token: 0x0400224F RID: 8783
+		// Token: 0x04002266 RID: 8806
 		Off,
-		// Token: 0x04002250 RID: 8784
+		// Token: 0x04002267 RID: 8807
 		Normal,
-		// Token: 0x04002251 RID: 8785
+		// Token: 0x04002268 RID: 8808
 		Verbose
 	}
 }

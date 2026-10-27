@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A13 RID: 6675
+	// Token: 0x02001A44 RID: 6724
 	[Preserve]
 	public class ActionBlockReplaceAttack : ActionBlockReplace
 	{
-		// Token: 0x0600CBAD RID: 52141 RVA: 0x004A6ED0 File Offset: 0x004A50D0
+		// Token: 0x0600CCC1 RID: 52417 RVA: 0x004AA9CC File Offset: 0x004A8BCC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -40,7 +40,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600CBAE RID: 52142 RVA: 0x004A6F78 File Offset: 0x004A5178
+		// Token: 0x0600CCC2 RID: 52418 RVA: 0x004AAA74 File Offset: 0x004A8C74
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ChangesComplete()
 		{
@@ -60,7 +60,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CBAF RID: 52143 RVA: 0x004A70B4 File Offset: 0x004A52B4
+		// Token: 0x0600CCC3 RID: 52419 RVA: 0x004AABB0 File Offset: 0x004A8DB0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -69,7 +69,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionBlockReplaceAttack.PropRefundOnRemove, ref this.refundOnRemove);
 		}
 
-		// Token: 0x0600CBB0 RID: 52144 RVA: 0x004A70F0 File Offset: 0x004A52F0
+		// Token: 0x0600CCC4 RID: 52420 RVA: 0x004AABEC File Offset: 0x004A8DEC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -83,31 +83,31 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009A66 RID: 39526
+		// Token: 0x04009B4F RID: 39759
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<Vector3i> blocksAdded = new List<Vector3i>();
 
-		// Token: 0x04009A67 RID: 39527
+		// Token: 0x04009B50 RID: 39760
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float timeAlive = -1f;
 
-		// Token: 0x04009A68 RID: 39528
+		// Token: 0x04009B51 RID: 39761
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string removeSound = "";
 
-		// Token: 0x04009A69 RID: 39529
+		// Token: 0x04009B52 RID: 39762
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool refundOnRemove;
 
-		// Token: 0x04009A6A RID: 39530
+		// Token: 0x04009B53 RID: 39763
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTimeAlive = "time_alive";
 
-		// Token: 0x04009A6B RID: 39531
+		// Token: 0x04009B54 RID: 39764
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveSound = "remove_sound";
 
-		// Token: 0x04009A6C RID: 39532
+		// Token: 0x04009B55 RID: 39765
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRefundOnRemove = "refund_on_remove";
 	}

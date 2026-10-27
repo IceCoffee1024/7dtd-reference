@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x020003CA RID: 970
+// Token: 0x020003CC RID: 972
 public class WaveReader
 {
-	// Token: 0x06001D0C RID: 7436 RVA: 0x000AF18C File Offset: 0x000AD38C
+	// Token: 0x06001D10 RID: 7440 RVA: 0x000AF39C File Offset: 0x000AD59C
 	public WaveReader(string _fileName)
 	{
 		this.filename = _fileName;
@@ -17,7 +17,7 @@ public class WaveReader
 	}
 
 	// Token: 0x1700037A RID: 890
-	// (set) Token: 0x06001D0D RID: 7437 RVA: 0x000AF218 File Offset: 0x000AD418
+	// (set) Token: 0x06001D11 RID: 7441 RVA: 0x000AF428 File Offset: 0x000AD628
 	public int Position
 	{
 		set
@@ -26,7 +26,7 @@ public class WaveReader
 		}
 	}
 
-	// Token: 0x06001D0E RID: 7438 RVA: 0x000AF228 File Offset: 0x000AD428
+	// Token: 0x06001D12 RID: 7442 RVA: 0x000AF438 File Offset: 0x000AD638
 	public void Read(float[] data, int count)
 	{
 		using (BinaryReader binaryReader = new BinaryReader(SdFile.Open(this.filename, FileMode.Open, FileAccess.Read, FileShare.Read)))
@@ -41,30 +41,30 @@ public class WaveReader
 		}
 	}
 
-	// Token: 0x06001D0F RID: 7439 RVA: 0x000AF2B4 File Offset: 0x000AD4B4
+	// Token: 0x06001D13 RID: 7443 RVA: 0x000AF4C4 File Offset: 0x000AD6C4
 	public void Cleanup()
 	{
 		MemoryPools.poolByte.Free(this.buffer);
 		this.buffer = null;
 	}
 
-	// Token: 0x040012F7 RID: 4855
+	// Token: 0x04001307 RID: 4871
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filename;
 
-	// Token: 0x040012F8 RID: 4856
+	// Token: 0x04001308 RID: 4872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int bufferSize = 8192;
 
-	// Token: 0x040012F9 RID: 4857
+	// Token: 0x04001309 RID: 4873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] buffer;
 
-	// Token: 0x040012FA RID: 4858
+	// Token: 0x0400130A RID: 4874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int dataStartPos;
 
-	// Token: 0x040012FB RID: 4859
+	// Token: 0x0400130B RID: 4875
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int position;
 }

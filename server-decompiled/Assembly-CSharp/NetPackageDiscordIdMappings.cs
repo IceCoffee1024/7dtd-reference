@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200033B RID: 827
+// Token: 0x0200033D RID: 829
 [Preserve]
 public class NetPackageDiscordIdMappings : NetPackage
 {
-	// Token: 0x060017DF RID: 6111 RVA: 0x000893CE File Offset: 0x000875CE
+	// Token: 0x060017E3 RID: 6115 RVA: 0x00089602 File Offset: 0x00087802
 	public NetPackageDiscordIdMappings Setup(int _entityId, bool _remove, ulong _discordId)
 	{
 		this.entityId = _entityId;
@@ -25,7 +25,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		return this;
 	}
 
-	// Token: 0x060017E0 RID: 6112 RVA: 0x00089408 File Offset: 0x00087608
+	// Token: 0x060017E4 RID: 6116 RVA: 0x0008963C File Offset: 0x0008783C
 	public NetPackageDiscordIdMappings Setup(List<int> _entityIds, List<ulong> _discordIds)
 	{
 		this.entityId = 0;
@@ -36,7 +36,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		return this;
 	}
 
-	// Token: 0x060017E1 RID: 6113 RVA: 0x00089430 File Offset: 0x00087630
+	// Token: 0x060017E5 RID: 6117 RVA: 0x00089664 File Offset: 0x00087864
 	public override void read(PooledBinaryReader _reader)
 	{
 		List<int> list = this.entityIds;
@@ -75,7 +75,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		}
 	}
 
-	// Token: 0x060017E2 RID: 6114 RVA: 0x00089500 File Offset: 0x00087700
+	// Token: 0x060017E6 RID: 6118 RVA: 0x00089734 File Offset: 0x00087934
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -97,7 +97,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		}
 	}
 
-	// Token: 0x060017E3 RID: 6115 RVA: 0x00089590 File Offset: 0x00087790
+	// Token: 0x060017E7 RID: 6119 RVA: 0x000897C4 File Offset: 0x000879C4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (this.entityId > 0)
@@ -130,23 +130,23 @@ public class NetPackageDiscordIdMappings : NetPackage
 		}
 	}
 
-	// Token: 0x04000F70 RID: 3952
+	// Token: 0x04000F80 RID: 3968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04000F71 RID: 3953
+	// Token: 0x04000F81 RID: 3969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool remove;
 
-	// Token: 0x04000F72 RID: 3954
+	// Token: 0x04000F82 RID: 3970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong discordId;
 
-	// Token: 0x04000F73 RID: 3955
+	// Token: 0x04000F83 RID: 3971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> entityIds;
 
-	// Token: 0x04000F74 RID: 3956
+	// Token: 0x04000F84 RID: 3972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ulong> discordIds;
 }

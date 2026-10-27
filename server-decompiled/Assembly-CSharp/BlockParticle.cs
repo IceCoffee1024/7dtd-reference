@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockParticle : Block
 {
-	// Token: 0x06000857 RID: 2135 RVA: 0x0003B108 File Offset: 0x00039308
+	// Token: 0x06000857 RID: 2135 RVA: 0x0003B0C8 File Offset: 0x000392C8
 	public BlockParticle()
 	{
 		base.IsNotifyOnLoadUnload = true;
 	}
 
-	// Token: 0x06000858 RID: 2136 RVA: 0x0003B118 File Offset: 0x00039318
+	// Token: 0x06000858 RID: 2136 RVA: 0x0003B0D8 File Offset: 0x000392D8
 	public override void Init()
 	{
 		base.Init();
@@ -52,14 +52,14 @@ public class BlockParticle : Block
 		}
 	}
 
-	// Token: 0x06000859 RID: 2137 RVA: 0x0003B255 File Offset: 0x00039455
+	// Token: 0x06000859 RID: 2137 RVA: 0x0003B215 File Offset: 0x00039415
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
 		this.removeParticles(_world, _blockPos.x, _blockPos.y, _blockPos.z, _blockValue);
 	}
 
-	// Token: 0x0600085A RID: 2138 RVA: 0x0003B27D File Offset: 0x0003947D
+	// Token: 0x0600085A RID: 2138 RVA: 0x0003B23D File Offset: 0x0003943D
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -69,7 +69,7 @@ public class BlockParticle : Block
 		}
 	}
 
-	// Token: 0x0600085B RID: 2139 RVA: 0x0003B2A0 File Offset: 0x000394A0
+	// Token: 0x0600085B RID: 2139 RVA: 0x0003B260 File Offset: 0x00039460
 	public override void OnNeighborBlockChange(WorldBase world, Vector3i _myBlockPos, BlockValue _myBlockValue, Vector3i _blockPosThatChanged, BlockValue _newNeighborBlockValue, BlockValue _oldNeighborBlockValue)
 	{
 		Transform blockParticleEffect;
@@ -86,7 +86,7 @@ public class BlockParticle : Block
 		}
 	}
 
-	// Token: 0x0600085C RID: 2140 RVA: 0x0003B384 File Offset: 0x00039584
+	// Token: 0x0600085C RID: 2140 RVA: 0x0003B344 File Offset: 0x00039544
 	public override void OnBlockValueChanged(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -101,7 +101,7 @@ public class BlockParticle : Block
 		}
 	}
 
-	// Token: 0x0600085D RID: 2141 RVA: 0x0003B418 File Offset: 0x00039618
+	// Token: 0x0600085D RID: 2141 RVA: 0x0003B3D8 File Offset: 0x000395D8
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -132,21 +132,21 @@ public class BlockParticle : Block
 		}
 	}
 
-	// Token: 0x0600085E RID: 2142 RVA: 0x0003B511 File Offset: 0x00039711
+	// Token: 0x0600085E RID: 2142 RVA: 0x0003B4D1 File Offset: 0x000396D1
 	public override void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockUnloaded(_world, _blockPos, _blockValue);
 		this.removeParticles(_world, _blockPos.x, _blockPos.y, _blockPos.z, _blockValue);
 	}
 
-	// Token: 0x0600085F RID: 2143 RVA: 0x0003B538 File Offset: 0x00039738
+	// Token: 0x0600085F RID: 2143 RVA: 0x0003B4F8 File Offset: 0x000396F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 getParticleOffset(BlockValue _blockValue)
 	{
 		return this.shape.GetRotation(_blockValue) * (this.offset - new Vector3(0.5f, 0.5f, 0.5f)) + new Vector3(0.5f, 0.5f, 0.5f);
 	}
 
-	// Token: 0x06000860 RID: 2144 RVA: 0x0003B58E File Offset: 0x0003978E
+	// Token: 0x06000860 RID: 2144 RVA: 0x0003B54E File Offset: 0x0003974E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -156,7 +156,7 @@ public class BlockParticle : Block
 		}
 	}
 
-	// Token: 0x06000861 RID: 2145 RVA: 0x0003B5C0 File Offset: 0x000397C0
+	// Token: 0x06000861 RID: 2145 RVA: 0x0003B580 File Offset: 0x00039780
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void addParticles(WorldBase _world, int _x, int _y, int _z, BlockValue _blockValue)
 	{
@@ -174,7 +174,7 @@ public class BlockParticle : Block
 		_world.GetGameManager().SpawnBlockParticleEffect(new Vector3i(_x, _y, _z), new ParticleEffect(this.particleName, new Vector3((float)_x, (float)_y + num, (float)_z) + this.getParticleOffset(_blockValue), this.shape.GetRotation(_blockValue), 1f, Color.white));
 	}
 
-	// Token: 0x06000862 RID: 2146 RVA: 0x0003B690 File Offset: 0x00039890
+	// Token: 0x06000862 RID: 2146 RVA: 0x0003B650 File Offset: 0x00039850
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void removeParticles(WorldBase _world, int _x, int _y, int _z, BlockValue _blockValue)
 	{

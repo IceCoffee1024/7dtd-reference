@@ -1,29 +1,29 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020011E7 RID: 4583
+// Token: 0x020011F7 RID: 4599
 [Preserve]
 public class GameModeEditWorld : GameModeAbstract
 {
-	// Token: 0x0600926A RID: 37482 RVA: 0x00373BD5 File Offset: 0x00371DD5
+	// Token: 0x060092C0 RID: 37568 RVA: 0x00375D49 File Offset: 0x00373F49
 	public override string GetName()
 	{
 		return "gmEditWorld";
 	}
 
-	// Token: 0x0600926B RID: 37483 RVA: 0x00373BDC File Offset: 0x00371DDC
+	// Token: 0x060092C1 RID: 37569 RVA: 0x00375D50 File Offset: 0x00373F50
 	public override string GetDescription()
 	{
 		return "gmEditWorldDesc";
 	}
 
-	// Token: 0x0600926C RID: 37484 RVA: 0x000814D1 File Offset: 0x0007F6D1
+	// Token: 0x060092C2 RID: 37570 RVA: 0x000816F5 File Offset: 0x0007F8F5
 	public override int GetID()
 	{
 		return 8;
 	}
 
-	// Token: 0x0600926D RID: 37485 RVA: 0x00373BE4 File Offset: 0x00371DE4
+	// Token: 0x060092C3 RID: 37571 RVA: 0x00375D58 File Offset: 0x00373F58
 	public override GameMode.ModeGamePref[] GetSupportedGamePrefsInfo()
 	{
 		return new GameMode.ModeGamePref[]
@@ -35,7 +35,7 @@ public class GameModeEditWorld : GameModeAbstract
 		};
 	}
 
-	// Token: 0x0600926E RID: 37486 RVA: 0x00373C54 File Offset: 0x00371E54
+	// Token: 0x060092C4 RID: 37572 RVA: 0x00375DC8 File Offset: 0x00373FC8
 	public override void Init()
 	{
 		base.Init();
@@ -55,24 +55,24 @@ public class GameModeEditWorld : GameModeAbstract
 		GamePrefs.Set(EnumGamePrefs.DynamicSpawner, "");
 	}
 
-	// Token: 0x0600926F RID: 37487 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060092C5 RID: 37573 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int GetRoundCount()
 	{
 		return 1;
 	}
 
-	// Token: 0x06009270 RID: 37488 RVA: 0x00373864 File Offset: 0x00371A64
+	// Token: 0x060092C6 RID: 37574 RVA: 0x003759D8 File Offset: 0x00373BD8
 	public override void StartRound(int _idx)
 	{
 		GameStats.Set(EnumGameStats.GameState, 1);
 	}
 
-	// Token: 0x06009271 RID: 37489 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092C7 RID: 37575 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void EndRound(int _idx)
 	{
 	}
 
-	// Token: 0x06009272 RID: 37490 RVA: 0x00373CDC File Offset: 0x00371EDC
+	// Token: 0x060092C8 RID: 37576 RVA: 0x00375E50 File Offset: 0x00374050
 	public override string GetAdditionalGameInfo(World _world)
 	{
 		switch (GamePrefs.GetInt(EnumGamePrefs.SelectionOperationMode))
@@ -88,6 +88,6 @@ public class GameModeEditWorld : GameModeAbstract
 		}
 	}
 
-	// Token: 0x04006C5B RID: 27739
+	// Token: 0x04006C73 RID: 27763
 	public static readonly string TypeName = typeof(GameModeEditWorld).Name;
 }

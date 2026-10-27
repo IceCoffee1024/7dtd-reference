@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020001D5 RID: 469
+// Token: 0x020001D7 RID: 471
 [Preserve]
 public class NetPackageModifyCVar : NetPackage
 {
-	// Token: 0x06000E78 RID: 3704 RVA: 0x0005F8C6 File Offset: 0x0005DAC6
+	// Token: 0x06000E7C RID: 3708 RVA: 0x0005FB8A File Offset: 0x0005DD8A
 	public NetPackageModifyCVar Setup(EntityAlive entity, string _cvarName, float _value, CVarOperation _operation)
 	{
 		this.m_entityId = entity.entityId;
@@ -15,7 +15,7 @@ public class NetPackageModifyCVar : NetPackage
 		return this;
 	}
 
-	// Token: 0x06000E79 RID: 3705 RVA: 0x0005F8EB File Offset: 0x0005DAEB
+	// Token: 0x06000E7D RID: 3709 RVA: 0x0005FBAF File Offset: 0x0005DDAF
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.m_entityId = _reader.ReadInt32();
@@ -24,7 +24,7 @@ public class NetPackageModifyCVar : NetPackage
 		this.operation = (CVarOperation)_reader.ReadInt16();
 	}
 
-	// Token: 0x06000E7A RID: 3706 RVA: 0x0005F91D File Offset: 0x0005DB1D
+	// Token: 0x06000E7E RID: 3710 RVA: 0x0005FBE1 File Offset: 0x0005DDE1
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -34,7 +34,7 @@ public class NetPackageModifyCVar : NetPackage
 		_writer.Write((short)this.operation);
 	}
 
-	// Token: 0x06000E7B RID: 3707 RVA: 0x0005F958 File Offset: 0x0005DB58
+	// Token: 0x06000E7F RID: 3711 RVA: 0x0005FC1C File Offset: 0x0005DE1C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -48,19 +48,19 @@ public class NetPackageModifyCVar : NetPackage
 		}
 	}
 
-	// Token: 0x04000C57 RID: 3159
+	// Token: 0x04000C59 RID: 3161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_entityId;
 
-	// Token: 0x04000C58 RID: 3160
+	// Token: 0x04000C5A RID: 3162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cvarName;
 
-	// Token: 0x04000C59 RID: 3161
+	// Token: 0x04000C5B RID: 3163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float value;
 
-	// Token: 0x04000C5A RID: 3162
+	// Token: 0x04000C5C RID: 3164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CVarOperation operation;
 }

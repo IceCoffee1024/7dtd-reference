@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010E6 RID: 4326
+// Token: 0x020010F6 RID: 4342
 [Preserve]
 public class XUiC_WorkstationOutputWindow : XUiController
 {
-	// Token: 0x0600898C RID: 35212 RVA: 0x00349104 File Offset: 0x00347304
+	// Token: 0x060089DF RID: 35295 RVA: 0x0034B188 File Offset: 0x00349388
 	public override void Init()
 	{
 		base.Init();
@@ -37,7 +37,7 @@ public class XUiC_WorkstationOutputWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600898D RID: 35213 RVA: 0x0034917C File Offset: 0x0034737C
+	// Token: 0x060089E0 RID: 35296 RVA: 0x0034B200 File Offset: 0x00349400
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -48,11 +48,11 @@ public class XUiC_WorkstationOutputWindow : XUiController
 		}
 	}
 
-	// Token: 0x0400664E RID: 26190
+	// Token: 0x0400668D RID: 26253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationOutputGrid outputGrid;
 
-	// Token: 0x0400664F RID: 26191
+	// Token: 0x0400668E RID: 26254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls controls;
 }

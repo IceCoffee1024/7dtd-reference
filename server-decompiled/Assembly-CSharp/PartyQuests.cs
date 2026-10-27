@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020008D3 RID: 2259
+// Token: 0x020008DD RID: 2269
 public class PartyQuests
 {
-	// Token: 0x170006EF RID: 1775
-	// (get) Token: 0x060040E9 RID: 16617 RVA: 0x00198032 File Offset: 0x00196232
+	// Token: 0x170006F5 RID: 1781
+	// (get) Token: 0x0600410C RID: 16652 RVA: 0x001990DA File Offset: 0x001972DA
 	public static PartyQuests Instance
 	{
 		get
@@ -20,14 +20,14 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040EA RID: 16618 RVA: 0x00198048 File Offset: 0x00196248
+	// Token: 0x0600410D RID: 16653 RVA: 0x001990F0 File Offset: 0x001972F0
 	public static void EnforeInstance()
 	{
 		PartyQuests partyQuests = PartyQuests.Instance;
 	}
 
-	// Token: 0x170006F0 RID: 1776
-	// (get) Token: 0x060040EB RID: 16619 RVA: 0x00198050 File Offset: 0x00196250
+	// Token: 0x170006F6 RID: 1782
+	// (get) Token: 0x0600410E RID: 16654 RVA: 0x001990F8 File Offset: 0x001972F8
 	public static bool AutoShare
 	{
 		get
@@ -36,8 +36,8 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x170006F1 RID: 1777
-	// (get) Token: 0x060040EC RID: 16620 RVA: 0x0019805C File Offset: 0x0019625C
+	// Token: 0x170006F7 RID: 1783
+	// (get) Token: 0x0600410F RID: 16655 RVA: 0x00199104 File Offset: 0x00197304
 	public static bool AutoAccept
 	{
 		get
@@ -46,7 +46,7 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040ED RID: 16621 RVA: 0x00198068 File Offset: 0x00196268
+	// Token: 0x06004110 RID: 16656 RVA: 0x00199110 File Offset: 0x00197310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PartyQuests()
 	{
@@ -60,7 +60,7 @@ public class PartyQuests
 		Log.Out("[PartyQuests] Initialized");
 	}
 
-	// Token: 0x060040EE RID: 16622 RVA: 0x001980C2 File Offset: 0x001962C2
+	// Token: 0x06004111 RID: 16657 RVA: 0x0019916A File Offset: 0x0019736A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void localPlayerChangedEvent(EntityPlayerLocal _newLocalPlayer)
 	{
@@ -72,7 +72,7 @@ public class PartyQuests
 		this.gameStarted(_newLocalPlayer);
 	}
 
-	// Token: 0x060040EF RID: 16623 RVA: 0x001980DC File Offset: 0x001962DC
+	// Token: 0x06004112 RID: 16658 RVA: 0x00199184 File Offset: 0x00197384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameStarted(EntityPlayerLocal _newLocalPlayer)
 	{
@@ -83,7 +83,7 @@ public class PartyQuests
 		Log.Out(string.Format("[PartyQuests] Player registered: {0}", _newLocalPlayer));
 	}
 
-	// Token: 0x060040F0 RID: 16624 RVA: 0x00198148 File Offset: 0x00196348
+	// Token: 0x06004113 RID: 16659 RVA: 0x001991F0 File Offset: 0x001973F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameEnded()
 	{
@@ -97,7 +97,7 @@ public class PartyQuests
 		Log.Out("[PartyQuests] Player unregistered");
 	}
 
-	// Token: 0x060040F1 RID: 16625 RVA: 0x001981B9 File Offset: 0x001963B9
+	// Token: 0x06004114 RID: 16660 RVA: 0x00199261 File Offset: 0x00197461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerJoinedParty(Party _affectedParty, EntityPlayer _player)
 	{
@@ -107,7 +107,7 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040F2 RID: 16626 RVA: 0x001981CE File Offset: 0x001963CE
+	// Token: 0x06004115 RID: 16661 RVA: 0x00199276 File Offset: 0x00197476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator shareQuestsLater()
 	{
@@ -116,7 +116,7 @@ public class PartyQuests
 		yield break;
 	}
 
-	// Token: 0x060040F3 RID: 16627 RVA: 0x001981DD File Offset: 0x001963DD
+	// Token: 0x06004116 RID: 16662 RVA: 0x00199285 File Offset: 0x00197485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void newQuestAccepted(Quest _q)
 	{
@@ -127,7 +127,7 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040F4 RID: 16628 RVA: 0x00198206 File Offset: 0x00196406
+	// Token: 0x06004117 RID: 16663 RVA: 0x001992AE File Offset: 0x001974AE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator shareQuestLater(Quest _q)
 	{
@@ -136,7 +136,7 @@ public class PartyQuests
 		yield break;
 	}
 
-	// Token: 0x060040F5 RID: 16629 RVA: 0x0019821C File Offset: 0x0019641C
+	// Token: 0x06004118 RID: 16664 RVA: 0x001992C4 File Offset: 0x001974C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sharedQuestReceived(SharedQuestEntry _entry)
 	{
@@ -154,7 +154,7 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040F6 RID: 16630 RVA: 0x00198284 File Offset: 0x00196484
+	// Token: 0x06004119 RID: 16665 RVA: 0x0019932C File Offset: 0x0019752C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void logQuest(string _prefix, Quest _q)
 	{
@@ -168,7 +168,7 @@ public class PartyQuests
 		}));
 	}
 
-	// Token: 0x060040F7 RID: 16631 RVA: 0x001982E0 File Offset: 0x001964E0
+	// Token: 0x0600411A RID: 16666 RVA: 0x00199388 File Offset: 0x00197588
 	public static void ShareAllQuestsWithParty(EntityPlayerLocal _localPlayer)
 	{
 		if (_localPlayer == null)
@@ -185,7 +185,7 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040F8 RID: 16632 RVA: 0x00198358 File Offset: 0x00196558
+	// Token: 0x0600411B RID: 16667 RVA: 0x00199400 File Offset: 0x00197600
 	public static void ShareQuestWithParty(Quest _selectedQuest, EntityPlayerLocal _localPlayer, bool _showTooltips)
 	{
 		if (_selectedQuest == null)
@@ -226,7 +226,7 @@ public class PartyQuests
 				{
 					Vector3 vector;
 					_selectedQuest.GetPositionData(out vector, Quest.PositionDataTypes.QuestGiver);
-					GameManager.Instance.QuestShareServer(new NetPackageSharedQuest.SharedQuestData(_selectedQuest.QuestUniqueId, _selectedQuest.QuestCode, _selectedQuest.ID, _selectedQuest.GetPOIName(), _selectedQuest.GetLocation(), _selectedQuest.GetLocationSize(), vector, _localPlayer.entityId, entityPlayer.entityId, _selectedQuest.QuestGiverID));
+					GameManager.Instance.QuestShareServer(new NetPackageSharedQuest.SharedQuestData(_selectedQuest.QuestUniqueId, _selectedQuest.QuestCode, _selectedQuest.ID, _selectedQuest.GetPOINameKey(), _selectedQuest.GetLocation(), _selectedQuest.GetLocationSize(), vector, _localPlayer.entityId, entityPlayer.entityId, _selectedQuest.QuestGiverID));
 					num++;
 					if (PartyQuests.AutoShare)
 					{
@@ -241,7 +241,7 @@ public class PartyQuests
 		}
 	}
 
-	// Token: 0x060040F9 RID: 16633 RVA: 0x001984D8 File Offset: 0x001966D8
+	// Token: 0x0600411C RID: 16668 RVA: 0x00199580 File Offset: 0x00197780
 	public static void AcceptSharedQuest(SharedQuestEntry _sharedQuest, EntityPlayerLocal _localPlayer)
 	{
 		if (_sharedQuest == null)
@@ -265,15 +265,15 @@ public class PartyQuests
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageSharedQuest, false);
 	}
 
-	// Token: 0x040034EA RID: 13546
+	// Token: 0x0400350A RID: 13578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PartyQuests instance;
 
-	// Token: 0x040034EB RID: 13547
+	// Token: 0x0400350B RID: 13579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x040034EC RID: 13548
+	// Token: 0x0400350C RID: 13580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly WaitForSeconds sendQuestsDelay = new WaitForSeconds(0.5f);
 }

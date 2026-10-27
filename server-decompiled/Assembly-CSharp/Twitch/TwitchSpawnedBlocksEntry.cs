@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x0200187D RID: 6269
+	// Token: 0x020018AE RID: 6318
 	public class TwitchSpawnedBlocksEntry
 	{
-		// Token: 0x0600C1D3 RID: 49619 RVA: 0x00478850 File Offset: 0x00476A50
+		// Token: 0x0600C2E7 RID: 49895 RVA: 0x0047C1FC File Offset: 0x0047A3FC
 		public bool CheckPos(Vector3i pos)
 		{
 			for (int i = 0; i < this.blocks.Count; i++)
@@ -29,7 +29,7 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0600C1D4 RID: 49620 RVA: 0x004788C0 File Offset: 0x00476AC0
+		// Token: 0x0600C2E8 RID: 49896 RVA: 0x0047C26C File Offset: 0x0047A46C
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public bool RemoveBlock(Vector3i blockRemoved)
 		{
@@ -48,7 +48,7 @@ namespace Twitch
 			return this.blocks.Count == 0;
 		}
 
-		// Token: 0x0600C1D5 RID: 49621 RVA: 0x00478940 File Offset: 0x00476B40
+		// Token: 0x0600C2E9 RID: 49897 RVA: 0x0047C2EC File Offset: 0x0047A4EC
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public bool RemoveBlocks(List<Vector3i> blocksRemoved)
 		{
@@ -66,28 +66,28 @@ namespace Twitch
 			return this.blocks.Count == 0;
 		}
 
-		// Token: 0x040091C5 RID: 37317
+		// Token: 0x040092AE RID: 37550
 		public List<Vector3i> blocks;
 
-		// Token: 0x040091C6 RID: 37318
+		// Token: 0x040092AF RID: 37551
 		public List<Vector3i> recentlyRemoved;
 
-		// Token: 0x040091C7 RID: 37319
+		// Token: 0x040092B0 RID: 37552
 		public TwitchActionEntry Action;
 
-		// Token: 0x040091C8 RID: 37320
+		// Token: 0x040092B1 RID: 37553
 		public TwitchEventActionEntry Event;
 
-		// Token: 0x040091C9 RID: 37321
+		// Token: 0x040092B2 RID: 37554
 		public TwitchVoteEntry Vote;
 
-		// Token: 0x040091CA RID: 37322
+		// Token: 0x040092B3 RID: 37555
 		public int BlockGroupID = -1;
 
-		// Token: 0x040091CB RID: 37323
+		// Token: 0x040092B4 RID: 37556
 		public float TimeRemaining = -1f;
 
-		// Token: 0x040091CC RID: 37324
+		// Token: 0x040092B5 RID: 37557
 		public TwitchRespawnEntry RespawnEntry;
 	}
 }

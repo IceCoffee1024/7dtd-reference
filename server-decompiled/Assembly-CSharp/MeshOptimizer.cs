@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000B88 RID: 2952
+// Token: 0x02000B93 RID: 2963
 public class MeshOptimizer
 {
-	// Token: 0x060058E7 RID: 22759 RVA: 0x00221956 File Offset: 0x0021FB56
+	// Token: 0x0600590C RID: 22796 RVA: 0x00222EB2 File Offset: 0x002210B2
 	public void Optimize(List<Vector3> _vertices, List<int> _indices, float _maxEdgeCost, out Vector3[] optimizedVerts, out int[] optimizedIndices)
 	{
 		this.AllocateArrays(_vertices.Count, _indices.Count / 3);
@@ -16,7 +16,7 @@ public class MeshOptimizer
 		this.GenerateOutputMesh(_vertices, _indices, out optimizedVerts, out optimizedIndices);
 	}
 
-	// Token: 0x060058E8 RID: 22760 RVA: 0x00221994 File Offset: 0x0021FB94
+	// Token: 0x0600590D RID: 22797 RVA: 0x00222EF0 File Offset: 0x002210F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildEdgeList(List<Vector3> _vertices, List<int> _indices)
 	{
@@ -26,7 +26,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058E9 RID: 22761 RVA: 0x002219BC File Offset: 0x0021FBBC
+	// Token: 0x0600590E RID: 22798 RVA: 0x00222F18 File Offset: 0x00221118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CollapseEdges(float _maxEdgeCost)
 	{
@@ -65,7 +65,7 @@ public class MeshOptimizer
 		return num;
 	}
 
-	// Token: 0x060058EA RID: 22762 RVA: 0x00221AEC File Offset: 0x0021FCEC
+	// Token: 0x0600590F RID: 22799 RVA: 0x00223048 File Offset: 0x00221248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SwapSortedVert(int v0, int v1)
 	{
@@ -76,7 +76,7 @@ public class MeshOptimizer
 		this.VertexList[this.SortedEdgeCost[v1]].sortedPosition = v1;
 	}
 
-	// Token: 0x060058EB RID: 22763 RVA: 0x00221B50 File Offset: 0x0021FD50
+	// Token: 0x06005910 RID: 22800 RVA: 0x002230AC File Offset: 0x002212AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NextSortedVert(int v, int dir)
 	{
@@ -93,7 +93,7 @@ public class MeshOptimizer
 		return -1;
 	}
 
-	// Token: 0x060058EC RID: 22764 RVA: 0x00221B98 File Offset: 0x0021FD98
+	// Token: 0x06005911 RID: 22801 RVA: 0x002230F4 File Offset: 0x002212F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ValidateSort()
 	{
@@ -128,7 +128,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058ED RID: 22765 RVA: 0x00221CB0 File Offset: 0x0021FEB0
+	// Token: 0x06005912 RID: 22802 RVA: 0x0022320C File Offset: 0x0022140C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResortVert(int v)
 	{
@@ -172,7 +172,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058EE RID: 22766 RVA: 0x00221D8C File Offset: 0x0021FF8C
+	// Token: 0x06005913 RID: 22803 RVA: 0x002232E8 File Offset: 0x002214E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkBoundaryEdge(int edge)
 	{
@@ -198,7 +198,7 @@ public class MeshOptimizer
 		this.EdgeList[edge].onModelEdge = num < 2;
 	}
 
-	// Token: 0x060058EF RID: 22767 RVA: 0x00221E1C File Offset: 0x0022001C
+	// Token: 0x06005914 RID: 22804 RVA: 0x00223378 File Offset: 0x00221578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CollapseEdgeList(int v)
 	{
@@ -210,7 +210,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058F0 RID: 22768 RVA: 0x00221E74 File Offset: 0x00220074
+	// Token: 0x06005915 RID: 22805 RVA: 0x002233D0 File Offset: 0x002215D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CollapseTri(int tri)
 	{
@@ -223,7 +223,7 @@ public class MeshOptimizer
 		this.CollapseVert(this.TriList[tri].v2);
 	}
 
-	// Token: 0x060058F1 RID: 22769 RVA: 0x00221F20 File Offset: 0x00220120
+	// Token: 0x06005916 RID: 22806 RVA: 0x0022347C File Offset: 0x0022167C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CollapseEdge(int edge)
 	{
@@ -246,7 +246,7 @@ public class MeshOptimizer
 		this.EdgeList[edge].collapsed = flag;
 	}
 
-	// Token: 0x060058F2 RID: 22770 RVA: 0x00221FAC File Offset: 0x002201AC
+	// Token: 0x06005917 RID: 22807 RVA: 0x00223508 File Offset: 0x00221708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CollapseVert(int v)
 	{
@@ -269,7 +269,7 @@ public class MeshOptimizer
 		this.VertexList[v].collapsed = flag;
 	}
 
-	// Token: 0x060058F3 RID: 22771 RVA: 0x00222038 File Offset: 0x00220238
+	// Token: 0x06005918 RID: 22808 RVA: 0x00223594 File Offset: 0x00221794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CollapseVertex(int v0, int v1, int edge)
 	{
@@ -317,7 +317,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058F4 RID: 22772 RVA: 0x0022221C File Offset: 0x0022041C
+	// Token: 0x06005919 RID: 22809 RVA: 0x00223778 File Offset: 0x00221978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkBoundaryEdges(int v)
 	{
@@ -345,7 +345,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058F5 RID: 22773 RVA: 0x002222D0 File Offset: 0x002204D0
+	// Token: 0x0600591A RID: 22810 RVA: 0x0022382C File Offset: 0x00221A2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkBoundaryVert(int v)
 	{
@@ -363,7 +363,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058F6 RID: 22774 RVA: 0x00222364 File Offset: 0x00220564
+	// Token: 0x0600591B RID: 22811 RVA: 0x002238C0 File Offset: 0x00221AC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool EdgeWillMerge(int v0, int v1, int edge)
 	{
@@ -385,7 +385,7 @@ public class MeshOptimizer
 		return false;
 	}
 
-	// Token: 0x060058F7 RID: 22775 RVA: 0x00222468 File Offset: 0x00220668
+	// Token: 0x0600591C RID: 22812 RVA: 0x002239C4 File Offset: 0x00221BC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MergeEdgeList(int v0, int v1)
 	{
@@ -448,7 +448,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058F8 RID: 22776 RVA: 0x00222788 File Offset: 0x00220988
+	// Token: 0x0600591D RID: 22813 RVA: 0x00223CE4 File Offset: 0x00221EE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GenerateOutputMesh(List<Vector3> _vertices, List<int> _indices, out Vector3[] optimizedVerts, out int[] optimizedIndices)
 	{
@@ -477,7 +477,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058F9 RID: 22777 RVA: 0x002228B0 File Offset: 0x00220AB0
+	// Token: 0x0600591E RID: 22814 RVA: 0x00223E0C File Offset: 0x0022200C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildSortedEdgeCollapseList()
 	{
@@ -496,7 +496,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058FA RID: 22778 RVA: 0x0022294C File Offset: 0x00220B4C
+	// Token: 0x0600591F RID: 22815 RVA: 0x00223EA8 File Offset: 0x002220A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkBoundaryEdges()
 	{
@@ -511,7 +511,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x060058FB RID: 22779 RVA: 0x002229D4 File Offset: 0x00220BD4
+	// Token: 0x06005920 RID: 22816 RVA: 0x00223F30 File Offset: 0x00222130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool FindBestVertexCollapse(int v)
 	{
@@ -555,7 +555,7 @@ public class MeshOptimizer
 		return true;
 	}
 
-	// Token: 0x060058FC RID: 22780 RVA: 0x00222B2C File Offset: 0x00220D2C
+	// Token: 0x06005921 RID: 22817 RVA: 0x00224088 File Offset: 0x00222288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalculateBoundaryEdgeCost(int v0, int v1, int edge)
 	{
@@ -576,7 +576,7 @@ public class MeshOptimizer
 		return num;
 	}
 
-	// Token: 0x060058FD RID: 22781 RVA: 0x00222C20 File Offset: 0x00220E20
+	// Token: 0x06005922 RID: 22818 RVA: 0x0022417C File Offset: 0x0022237C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool DetectDegenerateCollapse(int v0, int v1, int edge)
 	{
@@ -655,7 +655,7 @@ public class MeshOptimizer
 		return false;
 	}
 
-	// Token: 0x060058FE RID: 22782 RVA: 0x00223038 File Offset: 0x00221238
+	// Token: 0x06005923 RID: 22819 RVA: 0x00224594 File Offset: 0x00222794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalculateEdgeCost(int v0, int v1, int edge)
 	{
@@ -693,7 +693,7 @@ public class MeshOptimizer
 		return this.EdgeList[edge].len * num;
 	}
 
-	// Token: 0x060058FF RID: 22783 RVA: 0x002231F4 File Offset: 0x002213F4
+	// Token: 0x06005924 RID: 22820 RVA: 0x00224750 File Offset: 0x00222950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddTri(List<Vector3> _vertices, List<int> _indices, int index)
 	{
@@ -729,7 +729,7 @@ public class MeshOptimizer
 		this.NumOptimizedTris++;
 	}
 
-	// Token: 0x06005900 RID: 22784 RVA: 0x002233B8 File Offset: 0x002215B8
+	// Token: 0x06005925 RID: 22821 RVA: 0x00224914 File Offset: 0x00222B14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddEdgeToVertex(int v, int edge)
 	{
@@ -759,7 +759,7 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x06005901 RID: 22785 RVA: 0x00223498 File Offset: 0x00221698
+	// Token: 0x06005926 RID: 22822 RVA: 0x002249F4 File Offset: 0x00222BF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int AddEdge(int v0, int v1, int tri)
 	{
@@ -809,7 +809,7 @@ public class MeshOptimizer
 		return num;
 	}
 
-	// Token: 0x06005902 RID: 22786 RVA: 0x002236A8 File Offset: 0x002218A8
+	// Token: 0x06005927 RID: 22823 RVA: 0x00224C04 File Offset: 0x00222E04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindTriEdge(int v0, int v1)
 	{
@@ -839,7 +839,7 @@ public class MeshOptimizer
 		return -1;
 	}
 
-	// Token: 0x06005903 RID: 22787 RVA: 0x002237F0 File Offset: 0x002219F0
+	// Token: 0x06005928 RID: 22824 RVA: 0x00224D4C File Offset: 0x00222F4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int AddVertex(int v, int tri, List<Vector3> _vertices, bool addTriToVerts)
 	{
@@ -891,7 +891,7 @@ public class MeshOptimizer
 		return v;
 	}
 
-	// Token: 0x06005904 RID: 22788 RVA: 0x002239DE File Offset: 0x00221BDE
+	// Token: 0x06005929 RID: 22825 RVA: 0x00224F3A File Offset: 0x0022313A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int AllocateComponents(int num)
 	{
@@ -900,7 +900,7 @@ public class MeshOptimizer
 		return numComponents;
 	}
 
-	// Token: 0x06005905 RID: 22789 RVA: 0x002239F4 File Offset: 0x00221BF4
+	// Token: 0x0600592A RID: 22826 RVA: 0x00224F50 File Offset: 0x00223150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AllocateArrays(int _numVerts, int _numTriangles)
 	{
@@ -942,167 +942,167 @@ public class MeshOptimizer
 		}
 	}
 
-	// Token: 0x04004527 RID: 17703
+	// Token: 0x0400454C RID: 17740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float DegenerateEpsilon = 0.9999f;
 
-	// Token: 0x04004528 RID: 17704
+	// Token: 0x0400454D RID: 17741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Iterations;
 
-	// Token: 0x04004529 RID: 17705
+	// Token: 0x0400454E RID: 17742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumEdges;
 
-	// Token: 0x0400452A RID: 17706
+	// Token: 0x0400454F RID: 17743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumTris;
 
-	// Token: 0x0400452B RID: 17707
+	// Token: 0x04004550 RID: 17744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumVerts;
 
-	// Token: 0x0400452C RID: 17708
+	// Token: 0x04004551 RID: 17745
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumComponents;
 
-	// Token: 0x0400452D RID: 17709
+	// Token: 0x04004552 RID: 17746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumOptimizedVerts;
 
-	// Token: 0x0400452E RID: 17710
+	// Token: 0x04004553 RID: 17747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumOptimizedTris;
 
-	// Token: 0x0400452F RID: 17711
+	// Token: 0x04004554 RID: 17748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshOptimizer.Edge[] EdgeList;
 
-	// Token: 0x04004530 RID: 17712
+	// Token: 0x04004555 RID: 17749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshOptimizer.Tri[] TriList;
 
-	// Token: 0x04004531 RID: 17713
+	// Token: 0x04004556 RID: 17750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshOptimizer.Vertex[] VertexList;
 
-	// Token: 0x04004532 RID: 17714
+	// Token: 0x04004557 RID: 17751
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] ComponentList;
 
-	// Token: 0x04004533 RID: 17715
+	// Token: 0x04004558 RID: 17752
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NumSortedEdges;
 
-	// Token: 0x04004534 RID: 17716
+	// Token: 0x04004559 RID: 17753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] SortedEdgeCost;
 
-	// Token: 0x02000B89 RID: 2953
+	// Token: 0x02000B94 RID: 2964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Edge
 	{
-		// Token: 0x04004535 RID: 17717
+		// Token: 0x0400455A RID: 17754
 		public const int MaxEdgeTris = 8;
 
-		// Token: 0x04004536 RID: 17718
+		// Token: 0x0400455B RID: 17755
 		public int firstTri;
 
-		// Token: 0x04004537 RID: 17719
+		// Token: 0x0400455C RID: 17756
 		public int numTris;
 
-		// Token: 0x04004538 RID: 17720
+		// Token: 0x0400455D RID: 17757
 		public int v0;
 
-		// Token: 0x04004539 RID: 17721
+		// Token: 0x0400455E RID: 17758
 		public int v1;
 
-		// Token: 0x0400453A RID: 17722
+		// Token: 0x0400455F RID: 17759
 		public Vector3 vec;
 
-		// Token: 0x0400453B RID: 17723
+		// Token: 0x04004560 RID: 17760
 		public Vector3 normal;
 
-		// Token: 0x0400453C RID: 17724
+		// Token: 0x04004561 RID: 17761
 		public float len;
 
-		// Token: 0x0400453D RID: 17725
+		// Token: 0x04004562 RID: 17762
 		public bool collapsed;
 
-		// Token: 0x0400453E RID: 17726
+		// Token: 0x04004563 RID: 17763
 		public bool onModelEdge;
 	}
 
-	// Token: 0x02000B8A RID: 2954
+	// Token: 0x02000B95 RID: 2965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Tri
 	{
-		// Token: 0x0400453F RID: 17727
+		// Token: 0x04004564 RID: 17764
 		public int e0;
 
-		// Token: 0x04004540 RID: 17728
+		// Token: 0x04004565 RID: 17765
 		public int e1;
 
-		// Token: 0x04004541 RID: 17729
+		// Token: 0x04004566 RID: 17766
 		public int e2;
 
-		// Token: 0x04004542 RID: 17730
+		// Token: 0x04004567 RID: 17767
 		public int v0;
 
-		// Token: 0x04004543 RID: 17731
+		// Token: 0x04004568 RID: 17768
 		public int v1;
 
-		// Token: 0x04004544 RID: 17732
+		// Token: 0x04004569 RID: 17769
 		public int v2;
 
-		// Token: 0x04004545 RID: 17733
+		// Token: 0x0400456A RID: 17770
 		public Vector3 normal;
 
-		// Token: 0x04004546 RID: 17734
+		// Token: 0x0400456B RID: 17771
 		public bool collapsed;
 	}
 
-	// Token: 0x02000B8B RID: 2955
+	// Token: 0x02000B96 RID: 2966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Vertex
 	{
-		// Token: 0x04004547 RID: 17735
+		// Token: 0x0400456C RID: 17772
 		public const int MaxVertexTris = 256;
 
-		// Token: 0x04004548 RID: 17736
+		// Token: 0x0400456D RID: 17773
 		public Vector3 pos;
 
-		// Token: 0x04004549 RID: 17737
+		// Token: 0x0400456E RID: 17774
 		public int firstTri;
 
-		// Token: 0x0400454A RID: 17738
+		// Token: 0x0400456F RID: 17775
 		public int numTris;
 
-		// Token: 0x0400454B RID: 17739
+		// Token: 0x04004570 RID: 17776
 		public int firstEdge;
 
-		// Token: 0x0400454C RID: 17740
+		// Token: 0x04004571 RID: 17777
 		public int numEdges;
 
-		// Token: 0x0400454D RID: 17741
+		// Token: 0x04004572 RID: 17778
 		public bool collapsed;
 
-		// Token: 0x0400454E RID: 17742
+		// Token: 0x04004573 RID: 17779
 		public bool onModelEdge;
 
-		// Token: 0x0400454F RID: 17743
+		// Token: 0x04004574 RID: 17780
 		public float collapseCost;
 
-		// Token: 0x04004550 RID: 17744
+		// Token: 0x04004575 RID: 17781
 		public int collapseEdge;
 
-		// Token: 0x04004551 RID: 17745
+		// Token: 0x04004576 RID: 17782
 		public int emitIndex;
 
-		// Token: 0x04004552 RID: 17746
+		// Token: 0x04004577 RID: 17783
 		public int iterations;
 
-		// Token: 0x04004553 RID: 17747
+		// Token: 0x04004578 RID: 17784
 		public int sortedPosition;
 	}
 }

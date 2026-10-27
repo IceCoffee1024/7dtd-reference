@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085C RID: 2140
+// Token: 0x02000866 RID: 2150
 [Preserve]
 public class NetPackageTileEntity : NetPackage
 {
-	// Token: 0x06003E20 RID: 15904 RVA: 0x0018A611 File Offset: 0x00188811
+	// Token: 0x06003E43 RID: 15939 RVA: 0x0018B6B9 File Offset: 0x001898B9
 	public NetPackageTileEntity Setup(TileEntity _te, StreamModeWrite _eStreamMode)
 	{
 		return this.Setup(_te, _eStreamMode, byte.MaxValue);
 	}
 
-	// Token: 0x06003E21 RID: 15905 RVA: 0x0018A620 File Offset: 0x00188820
+	// Token: 0x06003E44 RID: 15940 RVA: 0x0018B6C8 File Offset: 0x001898C8
 	public NetPackageTileEntity Setup(TileEntity _te, StreamModeWrite _eStreamMode, byte _handle)
 	{
 		this.handle = _handle;
@@ -30,14 +30,14 @@ public class NetPackageTileEntity : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E22 RID: 15906 RVA: 0x0018A6DC File Offset: 0x001888DC
+	// Token: 0x06003E45 RID: 15941 RVA: 0x0018B784 File Offset: 0x00189984
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageTileEntity()
 	{
 		MemoryPools.poolMemoryStream.FreeSync(this.ms);
 	}
 
-	// Token: 0x06003E23 RID: 15907 RVA: 0x0018A714 File Offset: 0x00188914
+	// Token: 0x06003E46 RID: 15942 RVA: 0x0018B7BC File Offset: 0x001899BC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.handle = _br.ReadByte();
@@ -47,7 +47,7 @@ public class NetPackageTileEntity : NetPackage
 		StreamUtils.StreamCopy(_br.BaseStream, this.ms, num, null, true);
 	}
 
-	// Token: 0x06003E24 RID: 15908 RVA: 0x0018A760 File Offset: 0x00188960
+	// Token: 0x06003E47 RID: 15943 RVA: 0x0018B808 File Offset: 0x00189A08
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -58,7 +58,7 @@ public class NetPackageTileEntity : NetPackage
 		this.ms.WriteTo(_bw.BaseStream);
 	}
 
-	// Token: 0x06003E25 RID: 15909 RVA: 0x0018A7BC File Offset: 0x001889BC
+	// Token: 0x06003E48 RID: 15944 RVA: 0x0018B864 File Offset: 0x00189A64
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -99,23 +99,23 @@ public class NetPackageTileEntity : NetPackage
 		}
 	}
 
-	// Token: 0x04003280 RID: 12928
+	// Token: 0x040032A0 RID: 12960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxPackageSize = 65535;
 
-	// Token: 0x04003281 RID: 12929
+	// Token: 0x040032A1 RID: 12961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte handle;
 
-	// Token: 0x04003282 RID: 12930
+	// Token: 0x040032A2 RID: 12962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i teWorldPos;
 
-	// Token: 0x04003283 RID: 12931
+	// Token: 0x040032A3 RID: 12963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int teBlockId;
 
-	// Token: 0x04003284 RID: 12932
+	// Token: 0x040032A4 RID: 12964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream ms = MemoryPools.poolMemoryStream.AllocSync(true);
 }

@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001AC0 RID: 6848
+	// Token: 0x02001AF1 RID: 6897
 	public class FrequencyManager
 	{
-		// Token: 0x170019E0 RID: 6624
-		// (get) Token: 0x0600CEA0 RID: 52896 RVA: 0x004AF790 File Offset: 0x004AD990
+		// Token: 0x17001A28 RID: 6696
+		// (get) Token: 0x0600CFB4 RID: 53172 RVA: 0x004B328C File Offset: 0x004B148C
 		public float DailyTimePercentage
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -17,8 +17,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E1 RID: 6625
-		// (get) Token: 0x0600CEA1 RID: 52897 RVA: 0x004AF79C File Offset: 0x004AD99C
+		// Token: 0x17001A29 RID: 6697
+		// (get) Token: 0x0600CFB5 RID: 53173 RVA: 0x004B3298 File Offset: 0x004B1498
 		public int MinutesPerDay
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -28,8 +28,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E2 RID: 6626
-		// (get) Token: 0x0600CEA2 RID: 52898 RVA: 0x004AF7A5 File Offset: 0x004AD9A5
+		// Token: 0x17001A2A RID: 6698
+		// (get) Token: 0x0600CFB6 RID: 53174 RVA: 0x004B32A1 File Offset: 0x004B14A1
 		public bool IsMusicPlayingThisTick
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -39,8 +39,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E3 RID: 6627
-		// (get) Token: 0x0600CEA3 RID: 52899 RVA: 0x004AF7B2 File Offset: 0x004AD9B2
+		// Token: 0x17001A2B RID: 6699
+		// (get) Token: 0x0600CFB7 RID: 53175 RVA: 0x004B32AE File Offset: 0x004B14AE
 		public bool MusicStarted
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -50,8 +50,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E4 RID: 6628
-		// (get) Token: 0x0600CEA4 RID: 52900 RVA: 0x004AF7BF File Offset: 0x004AD9BF
+		// Token: 0x17001A2C RID: 6700
+		// (get) Token: 0x0600CFB8 RID: 53176 RVA: 0x004B32BB File Offset: 0x004B14BB
 		public bool MusicStopped
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -61,8 +61,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E5 RID: 6629
-		// (get) Token: 0x0600CEA5 RID: 52901 RVA: 0x004AF7CC File Offset: 0x004AD9CC
+		// Token: 0x17001A2D RID: 6701
+		// (get) Token: 0x0600CFB9 RID: 53177 RVA: 0x004B32C8 File Offset: 0x004B14C8
 		public bool IsMusicScheduled
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -72,8 +72,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E6 RID: 6630
-		// (get) Token: 0x0600CEA6 RID: 52902 RVA: 0x004AF7E1 File Offset: 0x004AD9E1
+		// Token: 0x17001A2E RID: 6702
+		// (get) Token: 0x0600CFBA RID: 53178 RVA: 0x004B32DD File Offset: 0x004B14DD
 		public bool DidDayChange
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -83,8 +83,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E7 RID: 6631
-		// (get) Token: 0x0600CEA7 RID: 52903 RVA: 0x004AF802 File Offset: 0x004ADA02
+		// Token: 0x17001A2F RID: 6703
+		// (get) Token: 0x0600CFBB RID: 53179 RVA: 0x004B32FE File Offset: 0x004B14FE
 		public float DailyTimeAllotted
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -94,8 +94,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E8 RID: 6632
-		// (get) Token: 0x0600CEA8 RID: 52904 RVA: 0x004AF812 File Offset: 0x004ADA12
+		// Token: 0x17001A30 RID: 6704
+		// (get) Token: 0x0600CFBC RID: 53180 RVA: 0x004B330E File Offset: 0x004B150E
 		public bool HasExceededDailyAllotted
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -105,8 +105,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019E9 RID: 6633
-		// (get) Token: 0x0600CEA9 RID: 52905 RVA: 0x004AF825 File Offset: 0x004ADA25
+		// Token: 0x17001A31 RID: 6705
+		// (get) Token: 0x0600CFBD RID: 53181 RVA: 0x004B3321 File Offset: 0x004B1521
 		public float RealTimeInMinutes
 		{
 			get
@@ -115,8 +115,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019EA RID: 6634
-		// (get) Token: 0x0600CEAA RID: 52906 RVA: 0x004AF837 File Offset: 0x004ADA37
+		// Token: 0x17001A32 RID: 6706
+		// (get) Token: 0x0600CFBE RID: 53182 RVA: 0x004B3333 File Offset: 0x004B1533
 		public bool IsInCoolDown
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -126,8 +126,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019EB RID: 6635
-		// (get) Token: 0x0600CEAB RID: 52907 RVA: 0x004AF847 File Offset: 0x004ADA47
+		// Token: 0x17001A33 RID: 6707
+		// (get) Token: 0x0600CFBF RID: 53183 RVA: 0x004B3343 File Offset: 0x004B1543
 		public float CoolDownTime
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -137,16 +137,16 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019EC RID: 6636
-		// (get) Token: 0x0600CEAC RID: 52908 RVA: 0x004AF873 File Offset: 0x004ADA73
-		// (set) Token: 0x0600CEAD RID: 52909 RVA: 0x004AF87B File Offset: 0x004ADA7B
+		// Token: 0x17001A34 RID: 6708
+		// (get) Token: 0x0600CFC0 RID: 53184 RVA: 0x004B336F File Offset: 0x004B156F
+		// (set) Token: 0x0600CFC1 RID: 53185 RVA: 0x004B3377 File Offset: 0x004B1577
 		public bool CanScheduleTrack
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CEAE RID: 52910 RVA: 0x004AF884 File Offset: 0x004ADA84
+		// Token: 0x0600CFC2 RID: 53186 RVA: 0x004B3380 File Offset: 0x004B1580
 		public static void Init(DynamicMusicManager _dynamicMusicManager)
 		{
 			_dynamicMusicManager.FrequencyManager = new FrequencyManager();
@@ -155,7 +155,7 @@ namespace DynamicMusic.Legacy
 			FrequencyManager.PlayChance = GamePrefs.GetFloat(EnumGamePrefs.OptionsPlayChanceProbability);
 		}
 
-		// Token: 0x0600CEAF RID: 52911 RVA: 0x004AF8B8 File Offset: 0x004ADAB8
+		// Token: 0x0600CFC3 RID: 53187 RVA: 0x004B33B4 File Offset: 0x004B15B4
 		public void Tick()
 		{
 			this.CanScheduleTrack = !this.IsMusicPlayingThisTick && !this.IsInCoolDown && this.RollIsSuccessful;
@@ -196,27 +196,27 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEB0 RID: 52912 RVA: 0x004AF9C6 File Offset: 0x004ADBC6
+		// Token: 0x0600CFC4 RID: 53188 RVA: 0x004B34C2 File Offset: 0x004B16C2
 		public void OnPlayerFirstSpawned()
 		{
 			this.StartCoolDown();
 		}
 
-		// Token: 0x0600CEB1 RID: 52913 RVA: 0x004AF9CE File Offset: 0x004ADBCE
+		// Token: 0x0600CFC5 RID: 53189 RVA: 0x004B34CA File Offset: 0x004B16CA
 		public void StartCoolDown()
 		{
 			this.CanScheduleTrack = false;
 			this.NextScheduleChance = this.RealTimeInMinutes + this.CoolDownTime;
 		}
 
-		// Token: 0x0600CEB2 RID: 52914 RVA: 0x004AF9EA File Offset: 0x004ADBEA
+		// Token: 0x0600CFC6 RID: 53190 RVA: 0x004B34E6 File Offset: 0x004B16E6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnMusicStarted()
 		{
 			this.musicStartTime = this.RealTimeInMinutes;
 		}
 
-		// Token: 0x0600CEB3 RID: 52915 RVA: 0x004AF9F8 File Offset: 0x004ADBF8
+		// Token: 0x0600CFC7 RID: 53191 RVA: 0x004B34F4 File Offset: 0x004B16F4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnMusicStopped()
 		{
@@ -225,13 +225,13 @@ namespace DynamicMusic.Legacy
 			this.PauseTime = 0f;
 		}
 
-		// Token: 0x0600CEB4 RID: 52916 RVA: 0x004AFA2C File Offset: 0x004ADC2C
+		// Token: 0x0600CFC8 RID: 53192 RVA: 0x004B3528 File Offset: 0x004B1728
 		public void OnPause()
 		{
 			this.pauseStart = this.RealTimeInMinutes;
 		}
 
-		// Token: 0x0600CEB5 RID: 52917 RVA: 0x004AFA3C File Offset: 0x004ADC3C
+		// Token: 0x0600CFC9 RID: 53193 RVA: 0x004B3538 File Offset: 0x004B1738
 		public void OnUnPause()
 		{
 			this.pauseEnd = this.RealTimeInMinutes;
@@ -239,40 +239,40 @@ namespace DynamicMusic.Legacy
 			this.pauseEnd = (this.pauseStart = 0f);
 		}
 
-		// Token: 0x04009C5F RID: 40031
+		// Token: 0x04009D48 RID: 40264
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DynamicMusicManager dynamicMusicManager;
 
-		// Token: 0x04009C60 RID: 40032
+		// Token: 0x04009D49 RID: 40265
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float PlayChance;
 
-		// Token: 0x04009C61 RID: 40033
+		// Token: 0x04009D4A RID: 40266
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentDay;
 
-		// Token: 0x04009C62 RID: 40034
+		// Token: 0x04009D4B RID: 40267
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float musicStartTime;
 
-		// Token: 0x04009C63 RID: 40035
+		// Token: 0x04009D4C RID: 40268
 		public float DailyPlayTimeUsed;
 
-		// Token: 0x04009C64 RID: 40036
+		// Token: 0x04009D4D RID: 40269
 		public float NextScheduleChance;
 
-		// Token: 0x04009C65 RID: 40037
+		// Token: 0x04009D4E RID: 40270
 		public float PauseTime;
 
-		// Token: 0x04009C66 RID: 40038
+		// Token: 0x04009D4F RID: 40271
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float pauseStart;
 
-		// Token: 0x04009C67 RID: 40039
+		// Token: 0x04009D50 RID: 40272
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float pauseEnd;
 
-		// Token: 0x04009C68 RID: 40040
+		// Token: 0x04009D51 RID: 40273
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool RollIsSuccessful;
 	}

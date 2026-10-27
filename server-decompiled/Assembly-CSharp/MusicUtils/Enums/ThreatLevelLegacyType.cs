@@ -2,18 +2,18 @@
 
 namespace MusicUtils.Enums
 {
-	// Token: 0x02001A44 RID: 6724
+	// Token: 0x02001A75 RID: 6773
 	public enum ThreatLevelLegacyType : byte
 	{
-		// Token: 0x04009B1C RID: 39708
+		// Token: 0x04009C05 RID: 39941
 		None,
-		// Token: 0x04009B1D RID: 39709
+		// Token: 0x04009C06 RID: 39942
 		Exploration,
-		// Token: 0x04009B1E RID: 39710
+		// Token: 0x04009C07 RID: 39943
 		Suspense,
-		// Token: 0x04009B1F RID: 39711
+		// Token: 0x04009C08 RID: 39944
 		CombatReady,
-		// Token: 0x04009B20 RID: 39712
+		// Token: 0x04009C09 RID: 39945
 		Combat
 	}
 }

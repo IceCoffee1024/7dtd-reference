@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D26 RID: 7462
+	// Token: 0x02001D57 RID: 7511
 	[Preserve]
 	[PlatformFactory(EPlatformIdentifier.EOS)]
 	public class Factory : AbsPlatform
 	{
-		// Token: 0x0600DD58 RID: 56664 RVA: 0x004EE3D4 File Offset: 0x004EC5D4
+		// Token: 0x0600DE6C RID: 56940 RVA: 0x004F1F74 File Offset: 0x004F0174
 		public override void CreateInstances()
 		{
 			EosBindingsUnityEditor.Init();
@@ -58,7 +58,7 @@ namespace Platform.EOS
 			AntiCheatCommon.Init();
 		}
 
-		// Token: 0x0600DD59 RID: 56665 RVA: 0x004EE4F8 File Offset: 0x004EC6F8
+		// Token: 0x0600DE6D RID: 56941 RVA: 0x004F2098 File Offset: 0x004F0298
 		public override bool HasNetworkingEnabled(IList<string> _disabledProtocolNames)
 		{
 			if (!GameManager.IsDedicatedServer && base.HasNetworkingEnabled(_disabledProtocolNames) && PlatformManager.NativePlatform.User.UserStatus == EUserStatus.LoggedIn && PlatformManager.NativePlatform.User.Permissions.HasMultiplayer())
@@ -69,8 +69,8 @@ namespace Platform.EOS
 			return false;
 		}
 
-		// Token: 0x17001C11 RID: 7185
-		// (get) Token: 0x0600DD5A RID: 56666 RVA: 0x004EE559 File Offset: 0x004EC759
+		// Token: 0x17001C59 RID: 7257
+		// (get) Token: 0x0600DE6E RID: 56942 RVA: 0x004F20F9 File Offset: 0x004F02F9
 		public override string NetworkProtocolName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -80,21 +80,21 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD5B RID: 56667 RVA: 0x004EE560 File Offset: 0x004EC760
+		// Token: 0x0600DE6F RID: 56943 RVA: 0x004F2100 File Offset: 0x004F0300
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IPlatformNetworkServer instantiateNetworkServer(ProtocolManager _protocolManager)
 		{
 			return new NetworkServerEos(this, _protocolManager);
 		}
 
-		// Token: 0x0600DD5C RID: 56668 RVA: 0x004EE569 File Offset: 0x004EC769
+		// Token: 0x0600DE70 RID: 56944 RVA: 0x004F2109 File Offset: 0x004F0309
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IPlatformNetworkClient instantiateNetworkClient(ProtocolManager _protocolManager)
 		{
 			return new NetworkClientEos(this, _protocolManager);
 		}
 
-		// Token: 0x0600DD5D RID: 56669 RVA: 0x004EE572 File Offset: 0x004EC772
+		// Token: 0x0600DE71 RID: 56945 RVA: 0x004F2112 File Offset: 0x004F0312
 		public override void Destroy()
 		{
 			base.Destroy();

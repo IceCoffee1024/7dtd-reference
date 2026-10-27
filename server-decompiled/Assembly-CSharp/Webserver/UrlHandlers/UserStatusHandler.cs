@@ -6,16 +6,16 @@ using Webserver.Permissions;
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001B25 RID: 6949
+	// Token: 0x02001B56 RID: 6998
 	public class UserStatusHandler : AbsHandler
 	{
-		// Token: 0x0600D101 RID: 53505 RVA: 0x004BE0E5 File Offset: 0x004BC2E5
+		// Token: 0x0600D215 RID: 53781 RVA: 0x004C1BE1 File Offset: 0x004BFDE1
 		public UserStatusHandler(string _moduleName = null)
 			: base(_moduleName, 0)
 		{
 		}
 
-		// Token: 0x0600D102 RID: 53506 RVA: 0x004BE0F0 File Offset: 0x004BC2F0
+		// Token: 0x0600D216 RID: 53782 RVA: 0x004C1BEC File Offset: 0x004BFDEC
 		[PublicizedFrom(EAccessModifier.Private)]
 		static UserStatusHandler()
 		{
@@ -26,7 +26,7 @@ namespace Webserver.UrlHandlers
 			}
 		}
 
-		// Token: 0x0600D103 RID: 53507 RVA: 0x004BE188 File Offset: 0x004BC388
+		// Token: 0x0600D217 RID: 53783 RVA: 0x004C1C84 File Offset: 0x004BFE84
 		public override void HandleRequest(RequestContext _context)
 		{
 			JsonWriter jsonWriter;
@@ -86,31 +86,31 @@ namespace Webserver.UrlHandlers
 			WebUtils.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x04009E80 RID: 40576
+		// Token: 0x04009F69 RID: 40809
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonLoggedInKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("loggedIn");
 
-		// Token: 0x04009E81 RID: 40577
+		// Token: 0x04009F6A RID: 40810
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonUsernameKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("username");
 
-		// Token: 0x04009E82 RID: 40578
+		// Token: 0x04009F6B RID: 40811
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPermissionLevelKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("permissionLevel");
 
-		// Token: 0x04009E83 RID: 40579
+		// Token: 0x04009F6C RID: 40812
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPermissionsKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("permissions");
 
-		// Token: 0x04009E84 RID: 40580
+		// Token: 0x04009F6D RID: 40813
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonModuleKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("module");
 
-		// Token: 0x04009E85 RID: 40581
+		// Token: 0x04009F6E RID: 40814
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonAllowedKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("allowed");
 
-		// Token: 0x04009E86 RID: 40582
+		// Token: 0x04009F6F RID: 40815
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[][] jsonMethodNameKeys = new byte[7][];
 	}

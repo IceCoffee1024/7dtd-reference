@@ -5,39 +5,39 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001045 RID: 4165
+// Token: 0x02001055 RID: 4181
 [Preserve]
 public class XUiC_SignLayerGrid : XUiController
 {
-	// Token: 0x17000F7B RID: 3963
-	// (get) Token: 0x060083BB RID: 33723 RVA: 0x00324FC0 File Offset: 0x003231C0
-	// (set) Token: 0x060083BC RID: 33724 RVA: 0x00324FC8 File Offset: 0x003231C8
+	// Token: 0x17000F86 RID: 3974
+	// (get) Token: 0x0600840D RID: 33805 RVA: 0x00326CC4 File Offset: 0x00324EC4
+	// (set) Token: 0x0600840E RID: 33806 RVA: 0x00326CCC File Offset: 0x00324ECC
 	public int SelectedLayerIndex
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = -1;
 
-	// Token: 0x17000F7C RID: 3964
-	// (get) Token: 0x060083BD RID: 33725 RVA: 0x00324FD1 File Offset: 0x003231D1
-	// (set) Token: 0x060083BE RID: 33726 RVA: 0x00324FD9 File Offset: 0x003231D9
+	// Token: 0x17000F87 RID: 3975
+	// (get) Token: 0x0600840F RID: 33807 RVA: 0x00326CD5 File Offset: 0x00324ED5
+	// (set) Token: 0x06008410 RID: 33808 RVA: 0x00326CDD File Offset: 0x00324EDD
 	public int SlotCount
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F7D RID: 3965
-	// (get) Token: 0x060083BF RID: 33727 RVA: 0x00324FE2 File Offset: 0x003231E2
-	// (set) Token: 0x060083C0 RID: 33728 RVA: 0x00324FEA File Offset: 0x003231EA
+	// Token: 0x17000F88 RID: 3976
+	// (get) Token: 0x06008411 RID: 33809 RVA: 0x00326CE6 File Offset: 0x00324EE6
+	// (set) Token: 0x06008412 RID: 33810 RVA: 0x00326CEE File Offset: 0x00324EEE
 	public int LayerCount
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F7E RID: 3966
-	// (get) Token: 0x060083C1 RID: 33729 RVA: 0x00324FF3 File Offset: 0x003231F3
+	// Token: 0x17000F89 RID: 3977
+	// (get) Token: 0x06008413 RID: 33811 RVA: 0x00326CF7 File Offset: 0x00324EF7
 	public int ItemCount
 	{
 		get
@@ -46,17 +46,17 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x17000F7F RID: 3967
-	// (get) Token: 0x060083C2 RID: 33730 RVA: 0x00325008 File Offset: 0x00323208
-	// (set) Token: 0x060083C3 RID: 33731 RVA: 0x00325010 File Offset: 0x00323210
+	// Token: 0x17000F8A RID: 3978
+	// (get) Token: 0x06008414 RID: 33812 RVA: 0x00326D0C File Offset: 0x00324F0C
+	// (set) Token: 0x06008415 RID: 33813 RVA: 0x00326D14 File Offset: 0x00324F14
 	public Action OnAddLayerSelected
 	{
 		get; [PublicizedFrom(EAccessModifier.Internal)]
 		set;
 	}
 
-	// Token: 0x17000F80 RID: 3968
-	// (get) Token: 0x060083C4 RID: 33732 RVA: 0x00325019 File Offset: 0x00323219
+	// Token: 0x17000F8B RID: 3979
+	// (get) Token: 0x06008416 RID: 33814 RVA: 0x00326D1D File Offset: 0x00324F1D
 	public bool HasPlaceholder
 	{
 		get
@@ -65,7 +65,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083C5 RID: 33733 RVA: 0x00325028 File Offset: 0x00323228
+	// Token: 0x06008417 RID: 33815 RVA: 0x00326D2C File Offset: 0x00324F2C
 	public override void Init()
 	{
 		base.Init();
@@ -105,7 +105,7 @@ public class XUiC_SignLayerGrid : XUiController
 		this.insertIndicator = base.GetChildById("insertIndicator");
 	}
 
-	// Token: 0x060083C6 RID: 33734 RVA: 0x00325228 File Offset: 0x00323428
+	// Token: 0x06008418 RID: 33816 RVA: 0x00326F2C File Offset: 0x0032512C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnDrag(XUiController sender, EDragType dragType, Vector2 mousePositionDelta)
 	{
@@ -133,21 +133,21 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083C7 RID: 33735 RVA: 0x003252F0 File Offset: 0x003234F0
+	// Token: 0x06008419 RID: 33817 RVA: 0x00326FF4 File Offset: 0x003251F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnNextLayerOnPress(XUiController sender, int mouseButton)
 	{
 		this.TryScroll(1);
 	}
 
-	// Token: 0x060083C8 RID: 33736 RVA: 0x003252FA File Offset: 0x003234FA
+	// Token: 0x0600841A RID: 33818 RVA: 0x00326FFE File Offset: 0x003251FE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnPreviousLayerOnPress(XUiController sender, int mouseButton)
 	{
 		this.TryScroll(-1);
 	}
 
-	// Token: 0x060083C9 RID: 33737 RVA: 0x00325304 File Offset: 0x00323504
+	// Token: 0x0600841B RID: 33819 RVA: 0x00327008 File Offset: 0x00325208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCursorSelect(XUiC_SignLayer layer)
 	{
@@ -180,7 +180,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083CA RID: 33738 RVA: 0x003253F0 File Offset: 0x003235F0
+	// Token: 0x0600841C RID: 33820 RVA: 0x003270F4 File Offset: 0x003252F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnHover(XUiController _sender, bool _isOver)
 	{
@@ -197,7 +197,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083CB RID: 33739 RVA: 0x00325430 File Offset: 0x00323630
+	// Token: 0x0600841D RID: 33821 RVA: 0x00327134 File Offset: 0x00325334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnClick(XUiC_SignLayer layerthumb)
 	{
@@ -266,7 +266,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083CC RID: 33740 RVA: 0x00325608 File Offset: 0x00323808
+	// Token: 0x0600841E RID: 33822 RVA: 0x0032730C File Offset: 0x0032550C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnSelect(XUiC_SignGridEntry gridEntry)
 	{
@@ -285,14 +285,14 @@ public class XUiC_SignLayerGrid : XUiController
 		onLayerSelected(this.SelectedLayerIndex);
 	}
 
-	// Token: 0x060083CD RID: 33741 RVA: 0x0032564C File Offset: 0x0032384C
+	// Token: 0x0600841F RID: 33823 RVA: 0x00327350 File Offset: 0x00325550
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
 		this.TryScroll((_delta > 0f) ? (-1) : 1);
 	}
 
-	// Token: 0x060083CE RID: 33742 RVA: 0x00325664 File Offset: 0x00323864
+	// Token: 0x06008420 RID: 33824 RVA: 0x00327368 File Offset: 0x00325568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryScroll(int _delta)
 	{
@@ -315,7 +315,7 @@ public class XUiC_SignLayerGrid : XUiController
 		return true;
 	}
 
-	// Token: 0x060083CF RID: 33743 RVA: 0x003256E2 File Offset: 0x003238E2
+	// Token: 0x06008421 RID: 33825 RVA: 0x003273E6 File Offset: 0x003255E6
 	public void ReleaseDragAndDrop()
 	{
 		if (this.isDraggingLayers)
@@ -330,7 +330,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083D0 RID: 33744 RVA: 0x0032571B File Offset: 0x0032391B
+	// Token: 0x06008422 RID: 33826 RVA: 0x0032741F File Offset: 0x0032561F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleAddLayer(XUiController sender, int mouseButton)
 	{
@@ -342,7 +342,7 @@ public class XUiC_SignLayerGrid : XUiController
 		onAddLayerPressed(this.nearestInsertIndex);
 	}
 
-	// Token: 0x060083D1 RID: 33745 RVA: 0x00325733 File Offset: 0x00323933
+	// Token: 0x06008423 RID: 33827 RVA: 0x00327437 File Offset: 0x00325637
 	public int GridIndexToLayerIndex(int gridIndex)
 	{
 		if (!this.HasPlaceholder)
@@ -360,7 +360,7 @@ public class XUiC_SignLayerGrid : XUiController
 		return gridIndex - 1;
 	}
 
-	// Token: 0x060083D2 RID: 33746 RVA: 0x00325758 File Offset: 0x00323958
+	// Token: 0x06008424 RID: 33828 RVA: 0x0032745C File Offset: 0x0032565C
 	public void RefreshSelectedLayerBindings()
 	{
 		int num = this.SelectedLayerIndex - this.baseLayerIndex;
@@ -371,7 +371,7 @@ public class XUiC_SignLayerGrid : XUiController
 		this.signLayerControllers[num].RefreshBindings();
 	}
 
-	// Token: 0x060083D3 RID: 33747 RVA: 0x00325790 File Offset: 0x00323990
+	// Token: 0x06008425 RID: 33829 RVA: 0x00327494 File Offset: 0x00325694
 	public void UpdateLayers(GlobalSignId signId, int selectedIndex, bool placeholderActive, bool autoScroll = true)
 	{
 		int num = this.placeholderIndex;
@@ -438,14 +438,14 @@ public class XUiC_SignLayerGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x060083D4 RID: 33748 RVA: 0x0032591A File Offset: 0x00323B1A
+	// Token: 0x06008426 RID: 33830 RVA: 0x0032761E File Offset: 0x0032581E
 	public void SetLayerName(string name)
 	{
 		this.signLayerControllers[this.SelectedLayerIndex - this.baseLayerIndex].layer.name = name;
 		this.signLayerControllers[this.SelectedLayerIndex - this.baseLayerIndex].RefreshTooltip();
 	}
 
-	// Token: 0x060083D5 RID: 33749 RVA: 0x00325954 File Offset: 0x00323B54
+	// Token: 0x06008427 RID: 33831 RVA: 0x00327658 File Offset: 0x00325858
 	public bool MousePositionInsideActiveArea()
 	{
 		Vector3 vector = this.xui.playerUI.camera.ScreenToWorldPoint(Input.mousePosition);
@@ -453,7 +453,7 @@ public class XUiC_SignLayerGrid : XUiController
 		return this.activeArea.ViewComponent.ColliderBounds.Contains(vector);
 	}
 
-	// Token: 0x060083D6 RID: 33750 RVA: 0x002FF7A6 File Offset: 0x002FD9A6
+	// Token: 0x06008428 RID: 33832 RVA: 0x003012C2 File Offset: 0x002FF4C2
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -462,7 +462,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083D7 RID: 33751 RVA: 0x003259B1 File Offset: 0x00323BB1
+	// Token: 0x06008429 RID: 33833 RVA: 0x003276B5 File Offset: 0x003258B5
 	public override void OnClose()
 	{
 		this.MultiSelectedLayerIndices.Clear();
@@ -472,7 +472,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083D8 RID: 33752 RVA: 0x003259E0 File Offset: 0x00323BE0
+	// Token: 0x0600842A RID: 33834 RVA: 0x003276E4 File Offset: 0x003258E4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -511,7 +511,7 @@ public class XUiC_SignLayerGrid : XUiController
 		}
 	}
 
-	// Token: 0x060083D9 RID: 33753 RVA: 0x00325B80 File Offset: 0x00323D80
+	// Token: 0x0600842B RID: 33835 RVA: 0x00327884 File Offset: 0x00325A84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetNearestVisibleInsertSlot()
 	{
@@ -529,7 +529,7 @@ public class XUiC_SignLayerGrid : XUiController
 		return Mathf.Clamp(num2, 0, num3);
 	}
 
-	// Token: 0x060083DA RID: 33754 RVA: 0x00325C4B File Offset: 0x00323E4B
+	// Token: 0x0600842C RID: 33836 RVA: 0x0032794F File Offset: 0x00325B4F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetInsertPositionX(int visibleSlot)
 	{
@@ -540,7 +540,7 @@ public class XUiC_SignLayerGrid : XUiController
 		return this.signLayerControllers[0].LeftInsertX;
 	}
 
-	// Token: 0x060083DB RID: 33755 RVA: 0x00325C70 File Offset: 0x00323E70
+	// Token: 0x0600842D RID: 33837 RVA: 0x00327974 File Offset: 0x00325B74
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -576,97 +576,97 @@ public class XUiC_SignLayerGrid : XUiController
 		return true;
 	}
 
-	// Token: 0x060083DC RID: 33756 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600842E RID: 33838 RVA: 0x000027FC File Offset: 0x000009FC
 	[Conditional("DEBUG_LOG_SIGN_LAYER_GRID")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DebugLog(string message)
 	{
 	}
 
-	// Token: 0x040061D4 RID: 25044
+	// Token: 0x04006212 RID: 25106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int baseLayerIndex;
 
-	// Token: 0x040061D5 RID: 25045
+	// Token: 0x04006213 RID: 25107
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_SignLayer[] signLayerControllers;
 
-	// Token: 0x040061D6 RID: 25046
+	// Token: 0x04006214 RID: 25108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId currentId;
 
-	// Token: 0x040061D7 RID: 25047
+	// Token: 0x04006215 RID: 25109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hoveredLayerIndex = -1;
 
-	// Token: 0x040061D8 RID: 25048
+	// Token: 0x04006216 RID: 25110
 	public Action<int> OnLayerSelected;
 
-	// Token: 0x040061D9 RID: 25049
+	// Token: 0x04006217 RID: 25111
 	public Action<int> OnLayerHovered;
 
-	// Token: 0x040061DA RID: 25050
+	// Token: 0x04006218 RID: 25112
 	public XUiC_SignLayerGrid.MultiSelectionDeselectCallback OnMultiSelectionDeselect;
 
-	// Token: 0x040061DB RID: 25051
+	// Token: 0x04006219 RID: 25113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayer selectionOverrideLayer;
 
-	// Token: 0x040061DC RID: 25052
+	// Token: 0x0400621A RID: 25114
 	public readonly List<int> MultiSelectedLayerIndices = new List<int>();
 
-	// Token: 0x040061E0 RID: 25056
+	// Token: 0x0400621E RID: 25118
 	public readonly List<int> draggedLayerIndices = new List<int>();
 
-	// Token: 0x040061E2 RID: 25058
+	// Token: 0x04006220 RID: 25120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int placeholderIndex = -1;
 
-	// Token: 0x040061E3 RID: 25059
+	// Token: 0x04006221 RID: 25121
 	public Action<int> OnDragAndDropStarted;
 
-	// Token: 0x040061E4 RID: 25060
+	// Token: 0x04006222 RID: 25122
 	public Action<int> OnDragAndDropReleased;
 
-	// Token: 0x040061E5 RID: 25061
+	// Token: 0x04006223 RID: 25123
 	public Action<int> OnAddLayerPressed;
 
-	// Token: 0x040061E6 RID: 25062
+	// Token: 0x04006224 RID: 25124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController activeArea;
 
-	// Token: 0x040061E7 RID: 25063
+	// Token: 0x04006225 RID: 25125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInsideActiveArea;
 
-	// Token: 0x040061E8 RID: 25064
+	// Token: 0x04006226 RID: 25126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnAddLayer;
 
-	// Token: 0x040061E9 RID: 25065
+	// Token: 0x04006227 RID: 25127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBtnAddLayerHovered;
 
-	// Token: 0x040061EA RID: 25066
+	// Token: 0x04006228 RID: 25128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nearestInsertIndex = -1;
 
-	// Token: 0x040061EB RID: 25067
+	// Token: 0x04006229 RID: 25129
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController dragAndDropIndicator;
 
-	// Token: 0x040061EC RID: 25068
+	// Token: 0x0400622A RID: 25130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController insertIndicator;
 
-	// Token: 0x040061ED RID: 25069
+	// Token: 0x0400622B RID: 25131
 	public bool isDraggingLayers;
 
-	// Token: 0x040061EE RID: 25070
+	// Token: 0x0400622C RID: 25132
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dragStartIdx;
 
-	// Token: 0x02001046 RID: 4166
-	// (Invoke) Token: 0x060083E0 RID: 33760
+	// Token: 0x02001056 RID: 4182
+	// (Invoke) Token: 0x06008432 RID: 33842
 	public delegate void MultiSelectionDeselectCallback(bool wasPrimary);
 }

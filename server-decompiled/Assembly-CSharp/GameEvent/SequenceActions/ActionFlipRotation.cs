@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019B3 RID: 6579
+	// Token: 0x020019E4 RID: 6628
 	[Preserve]
 	public class ActionFlipRotation : ActionBaseClientAction
 	{
-		// Token: 0x0600C9EC RID: 51692 RVA: 0x0049EFB4 File Offset: 0x0049D1B4
+		// Token: 0x0600CB00 RID: 51968 RVA: 0x004A2AB4 File Offset: 0x004A0CB4
 		public override void OnClientPerform(Entity target)
 		{
 			if (target != null)
@@ -38,7 +38,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9ED RID: 51693 RVA: 0x0049F056 File Offset: 0x0049D256
+		// Token: 0x0600CB01 RID: 51969 RVA: 0x004A2B56 File Offset: 0x004A0D56
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

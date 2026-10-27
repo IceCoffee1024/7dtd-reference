@@ -7,10 +7,10 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
-// Token: 0x020014EC RID: 5356
+// Token: 0x020014FE RID: 5374
 public static class TextureUtils
 {
-	// Token: 0x0600A7C8 RID: 42952 RVA: 0x003E750C File Offset: 0x003E570C
+	// Token: 0x0600A820 RID: 43040 RVA: 0x003E9910 File Offset: 0x003E7B10
 	public static void CopyTexturePart(this Texture2D _sourceTex, Vector2i _sourceOffset, Texture2D _destTex, Vector2i _destOffset, Vector2i _size)
 	{
 		if (_sourceOffset.x + _size.x > _sourceTex.width || _sourceOffset.y + _size.y > _sourceTex.height)
@@ -52,7 +52,7 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7C9 RID: 42953 RVA: 0x003E76D0 File Offset: 0x003E58D0
+	// Token: 0x0600A821 RID: 43041 RVA: 0x003E9AD4 File Offset: 0x003E7CD4
 	public static void FillTexture(this Texture2D _tex, global::UnityEngine.Color _color, bool _apply = false, bool _compress = false)
 	{
 		if (_tex.format.Is32BitTextureFormat())
@@ -97,19 +97,19 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7CA RID: 42954 RVA: 0x003E77F7 File Offset: 0x003E59F7
+	// Token: 0x0600A822 RID: 43042 RVA: 0x003E9BFB File Offset: 0x003E7DFB
 	public static void PointScale(this Texture2D _tex, int _newWidth, int _newHeight)
 	{
 		TextureScale.Point(_tex, _newWidth, _newHeight);
 	}
 
-	// Token: 0x0600A7CB RID: 42955 RVA: 0x003E7801 File Offset: 0x003E5A01
+	// Token: 0x0600A823 RID: 43043 RVA: 0x003E9C05 File Offset: 0x003E7E05
 	public static void BilinearScale(this Texture2D _tex, int _newWidth, int _newHeight)
 	{
 		TextureScale.Bilinear(_tex, _newWidth, _newHeight);
 	}
 
-	// Token: 0x0600A7CC RID: 42956 RVA: 0x003E780C File Offset: 0x003E5A0C
+	// Token: 0x0600A824 RID: 43044 RVA: 0x003E9C10 File Offset: 0x003E7E10
 	public static void PointScaleNoAlloc(this Texture2D _sourceTex, Texture2D _targetTex)
 	{
 		NativeArray<int> rawTextureData = _sourceTex.GetRawTextureData<int>();
@@ -131,7 +131,7 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7CD RID: 42957 RVA: 0x003E78A1 File Offset: 0x003E5AA1
+	// Token: 0x0600A825 RID: 43045 RVA: 0x003E9CA5 File Offset: 0x003E7EA5
 	public static bool Is32BitTextureFormat(this TextureFormat _format)
 	{
 		if (_format - TextureFormat.RGB24 > 2)
@@ -157,7 +157,7 @@ public static class TextureUtils
 		return true;
 	}
 
-	// Token: 0x0600A7CE RID: 42958 RVA: 0x003E78D0 File Offset: 0x003E5AD0
+	// Token: 0x0600A826 RID: 43046 RVA: 0x003E9CD4 File Offset: 0x003E7ED4
 	public static Texture2D DeCompress(this Texture2D _source, TextureFormat _outputFormat = TextureFormat.RGBA32)
 	{
 		RenderTexture temporary = RenderTexture.GetTemporary(_source.width, _source.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
@@ -172,7 +172,7 @@ public static class TextureUtils
 		return texture2D;
 	}
 
-	// Token: 0x0600A7CF RID: 42959 RVA: 0x003E7950 File Offset: 0x003E5B50
+	// Token: 0x0600A827 RID: 43047 RVA: 0x003E9D54 File Offset: 0x003E7F54
 	public static Texture2D GetMipTexture(this Texture2D _source, int _mipLevel)
 	{
 		if (_mipLevel >= _source.mipmapCount - 2)
@@ -188,14 +188,14 @@ public static class TextureUtils
 		return texture2D.DeCompress(TextureFormat.RGBA32);
 	}
 
-	// Token: 0x0600A7D0 RID: 42960 RVA: 0x003E79C4 File Offset: 0x003E5BC4
+	// Token: 0x0600A828 RID: 43048 RVA: 0x003E9DC8 File Offset: 0x003E7FC8
 	public static void SaveMipmapToPng(this Texture2D _source, int _mipLevel, string _filename)
 	{
 		Texture2D mipTexture = _source.GetMipTexture(_mipLevel);
 		SdFile.WriteAllBytes(_filename, mipTexture.EncodeToPNG());
 	}
 
-	// Token: 0x0600A7D1 RID: 42961 RVA: 0x003E79E8 File Offset: 0x003E5BE8
+	// Token: 0x0600A829 RID: 43049 RVA: 0x003E9DEC File Offset: 0x003E7FEC
 	public static Texture2DArray CreateLowerResTextureArray(Texture2DArray _inputArray, int _mipmapLevel, Texture2DArray _existingTA)
 	{
 		bool flag = _existingTA == null || _existingTA.depth == _inputArray.depth;
@@ -218,31 +218,31 @@ public static class TextureUtils
 		return texture2DArray;
 	}
 
-	// Token: 0x0600A7D2 RID: 42962 RVA: 0x003E7AF8 File Offset: 0x003E5CF8
+	// Token: 0x0600A82A RID: 43050 RVA: 0x003E9EFC File Offset: 0x003E80FC
 	public static global::UnityEngine.Color GetLinearColor(TextureUtils.ColorRGB24 color)
 	{
 		return new global::UnityEngine.Color(Mathf.GammaToLinearSpace((float)color.r / 255f), Mathf.GammaToLinearSpace((float)color.g / 255f), Mathf.GammaToLinearSpace((float)color.b / 255f), 1f);
 	}
 
-	// Token: 0x0600A7D3 RID: 42963 RVA: 0x003E7B48 File Offset: 0x003E5D48
+	// Token: 0x0600A82B RID: 43051 RVA: 0x003E9F4C File Offset: 0x003E814C
 	public static global::UnityEngine.Color GetLinearColor(Color32 color)
 	{
 		return new global::UnityEngine.Color(Mathf.GammaToLinearSpace((float)color.r / 255f), Mathf.GammaToLinearSpace((float)color.g / 255f), Mathf.GammaToLinearSpace((float)color.b / 255f), (float)color.a / 255f);
 	}
 
-	// Token: 0x0600A7D4 RID: 42964 RVA: 0x003E7BA0 File Offset: 0x003E5DA0
+	// Token: 0x0600A82C RID: 43052 RVA: 0x003E9FA4 File Offset: 0x003E81A4
 	public static global::UnityEngine.Color GetLinearColor(TextureUtils.ColorARGB32 color)
 	{
 		return new global::UnityEngine.Color(Mathf.GammaToLinearSpace((float)color.r / 255f), Mathf.GammaToLinearSpace((float)color.g / 255f), Mathf.GammaToLinearSpace((float)color.b / 255f), (float)color.a / 255f);
 	}
 
-	// Token: 0x0600A7D5 RID: 42965 RVA: 0x003E7BF8 File Offset: 0x003E5DF8
+	// Token: 0x0600A82D RID: 43053 RVA: 0x003E9FFC File Offset: 0x003E81FC
 	public static global::UnityEngine.Color GetLinearColor(TextureUtils.ColorBGRA32 color)
 	{
 		return new global::UnityEngine.Color(Mathf.GammaToLinearSpace((float)color.r / 255f), Mathf.GammaToLinearSpace((float)color.g / 255f), Mathf.GammaToLinearSpace((float)color.b / 255f), (float)color.a / 255f);
 	}
 
-	// Token: 0x0600A7D6 RID: 42966 RVA: 0x003E7C50 File Offset: 0x003E5E50
+	// Token: 0x0600A82E RID: 43054 RVA: 0x003EA054 File Offset: 0x003E8254
 	public static string GetTextureFilename(string _pathNoExtension, string[] _extensions = null)
 	{
 		if (_extensions == null)
@@ -260,7 +260,7 @@ public static class TextureUtils
 		return null;
 	}
 
-	// Token: 0x0600A7D7 RID: 42967 RVA: 0x003E7C90 File Offset: 0x003E5E90
+	// Token: 0x0600A82F RID: 43055 RVA: 0x003EA094 File Offset: 0x003E8294
 	public static Color32[] LoadTexturePixels(string _pathNoExtension, out int _width, out int _height, string[] _extensions = null)
 	{
 		string textureFilename = TextureUtils.GetTextureFilename(_pathNoExtension, _extensions);
@@ -288,7 +288,7 @@ public static class TextureUtils
 		return pixels;
 	}
 
-	// Token: 0x0600A7D8 RID: 42968 RVA: 0x003E7D0C File Offset: 0x003E5F0C
+	// Token: 0x0600A830 RID: 43056 RVA: 0x003EA110 File Offset: 0x003E8310
 	public static Texture2D LoadTexture(string _filepath, FilterMode _filterMode = FilterMode.Point, bool _bMipmaps = false, bool _unknownExtension = false, string[] _extensions = null)
 	{
 		if (_unknownExtension)
@@ -310,14 +310,14 @@ public static class TextureUtils
 		return texture2D;
 	}
 
-	// Token: 0x0600A7D9 RID: 42969 RVA: 0x003E7D64 File Offset: 0x003E5F64
+	// Token: 0x0600A831 RID: 43057 RVA: 0x003EA168 File Offset: 0x003E8368
 	public static void SaveTexture(Texture2D _texture, string _fileName)
 	{
 		byte[] array = _texture.EncodeToPNG();
 		SdFile.WriteAllBytes(_fileName, array);
 	}
 
-	// Token: 0x0600A7DA RID: 42970 RVA: 0x003E7D7F File Offset: 0x003E5F7F
+	// Token: 0x0600A832 RID: 43058 RVA: 0x003EA183 File Offset: 0x003E8383
 	public static void SaveTextureAsTGA(Texture2D _texture, string _fileName)
 	{
 		PNG2TGA png2TGA = new PNG2TGA();
@@ -325,7 +325,7 @@ public static class TextureUtils
 		png2TGA.Save2(_fileName);
 	}
 
-	// Token: 0x0600A7DB RID: 42971 RVA: 0x003E7DA5 File Offset: 0x003E5FA5
+	// Token: 0x0600A833 RID: 43059 RVA: 0x003EA1A9 File Offset: 0x003E83A9
 	public static void SaveTextureAsTGA(global::UnityEngine.Color[] _colors, int _width, int _height, string _fileName)
 	{
 		PNG2TGA png2TGA = new PNG2TGA();
@@ -333,7 +333,7 @@ public static class TextureUtils
 		png2TGA.Save2(_fileName);
 	}
 
-	// Token: 0x0600A7DC RID: 42972 RVA: 0x003E7DBC File Offset: 0x003E5FBC
+	// Token: 0x0600A834 RID: 43060 RVA: 0x003EA1C0 File Offset: 0x003E83C0
 	public static void SaveTextureAsTGA(Color32[] _colors, int _width, int _height, string _fileName)
 	{
 		PNG2TGA png2TGA = new PNG2TGA();
@@ -341,7 +341,7 @@ public static class TextureUtils
 		png2TGA.Save2(_fileName);
 	}
 
-	// Token: 0x0600A7DD RID: 42973 RVA: 0x003E7DD4 File Offset: 0x003E5FD4
+	// Token: 0x0600A835 RID: 43061 RVA: 0x003EA1D8 File Offset: 0x003E83D8
 	public static bool CopyToAlphaChannel(Texture2D _alphaChannel, Texture2D _destTexture)
 	{
 		if (_alphaChannel.width != _destTexture.width || _alphaChannel.height != _destTexture.height)
@@ -365,7 +365,7 @@ public static class TextureUtils
 		return true;
 	}
 
-	// Token: 0x0600A7DE RID: 42974 RVA: 0x003E7E8C File Offset: 0x003E608C
+	// Token: 0x0600A836 RID: 43062 RVA: 0x003EA290 File Offset: 0x003E8490
 	public static void CopyToChannel(int _srcChnIdx, global::UnityEngine.Color[] _srcColors, int _tgtChnIdx, global::UnityEngine.Color[] _tgtColors)
 	{
 		for (int i = 0; i < _srcColors.Length; i++)
@@ -374,7 +374,7 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7DF RID: 42975 RVA: 0x003E7EC4 File Offset: 0x003E60C4
+	// Token: 0x0600A837 RID: 43063 RVA: 0x003EA2C8 File Offset: 0x003E84C8
 	public static void FillChannel(float _value, int _tgtChnIdx, global::UnityEngine.Color[] _tgtColors)
 	{
 		for (int i = 0; i < _tgtColors.Length; i++)
@@ -383,7 +383,7 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7E0 RID: 42976 RVA: 0x003E7EF0 File Offset: 0x003E60F0
+	// Token: 0x0600A838 RID: 43064 RVA: 0x003EA2F4 File Offset: 0x003E84F4
 	public static void SetAlphaChannel(Texture2D _tex, float _v)
 	{
 		global::UnityEngine.Color[] pixels = _tex.GetPixels();
@@ -395,7 +395,7 @@ public static class TextureUtils
 		_tex.Apply();
 	}
 
-	// Token: 0x0600A7E1 RID: 42977 RVA: 0x003E7F2C File Offset: 0x003E612C
+	// Token: 0x0600A839 RID: 43065 RVA: 0x003EA330 File Offset: 0x003E8530
 	public static bool CopyFromAlphaChannel(Texture2D _sourceTexture, Texture2D _alphaChannel)
 	{
 		if (_alphaChannel.width != _sourceTexture.width || _alphaChannel.height != _sourceTexture.height)
@@ -413,7 +413,7 @@ public static class TextureUtils
 		return true;
 	}
 
-	// Token: 0x0600A7E2 RID: 42978 RVA: 0x003E7FB8 File Offset: 0x003E61B8
+	// Token: 0x0600A83A RID: 43066 RVA: 0x003EA3BC File Offset: 0x003E85BC
 	public static void FillAlphaChannel(float _alphaValue, Texture2D _destTexture)
 	{
 		global::UnityEngine.Color[] pixels = _destTexture.GetPixels();
@@ -425,7 +425,7 @@ public static class TextureUtils
 		_destTexture.Apply();
 	}
 
-	// Token: 0x0600A7E3 RID: 42979 RVA: 0x003E7FF4 File Offset: 0x003E61F4
+	// Token: 0x0600A83B RID: 43067 RVA: 0x003EA3F8 File Offset: 0x003E85F8
 	public static void ApplyTint(Texture2D _sourceTex, Texture2D _destinationTex, global::UnityEngine.Color _tintColor)
 	{
 		if (_sourceTex.height != _destinationTex.height || _sourceTex.width != _destinationTex.width)
@@ -449,7 +449,7 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7E4 RID: 42980 RVA: 0x003E80D0 File Offset: 0x003E62D0
+	// Token: 0x0600A83C RID: 43068 RVA: 0x003EA4D4 File Offset: 0x003E86D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplyTintNative(Texture2D _sourceTex, Texture2D _destinationTex, global::UnityEngine.Color _tintColor)
 	{
@@ -469,7 +469,7 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x0600A7E5 RID: 42981 RVA: 0x003E817C File Offset: 0x003E637C
+	// Token: 0x0600A83D RID: 43069 RVA: 0x003EA580 File Offset: 0x003E8780
 	public static Texture2D CloneTexture(Texture2D _sourceTex, bool _createMipMaps = false, bool _compress = false, bool _makeNonReadable = false)
 	{
 		Texture2D texture2D = new Texture2D(_sourceTex.width, _sourceTex.height, _sourceTex.format, _createMipMaps);
@@ -498,7 +498,7 @@ public static class TextureUtils
 		return texture2D;
 	}
 
-	// Token: 0x0600A7E6 RID: 42982 RVA: 0x003E822C File Offset: 0x003E642C
+	// Token: 0x0600A83E RID: 43070 RVA: 0x003EA630 File Offset: 0x003E8830
 	public static void CopyToClipboard(Texture2D _tex)
 	{
 		byte[] array = _tex.EncodeToJPG();
@@ -512,56 +512,56 @@ public static class TextureUtils
 		}
 	}
 
-	// Token: 0x04007C98 RID: 31896
+	// Token: 0x04007CD9 RID: 31961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] defaultTextureExtensions = new string[] { ".png", ".tga", ".jpg" };
 
-	// Token: 0x04007C99 RID: 31897
+	// Token: 0x04007CDA RID: 31962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker pmApplyTintNative = new ProfilerMarker("ApplyTintNative");
 
-	// Token: 0x020014ED RID: 5357
+	// Token: 0x020014FF RID: 5375
 	public struct ColorRGB24
 	{
-		// Token: 0x04007C9A RID: 31898
+		// Token: 0x04007CDB RID: 31963
 		public byte r;
 
-		// Token: 0x04007C9B RID: 31899
+		// Token: 0x04007CDC RID: 31964
 		public byte g;
 
-		// Token: 0x04007C9C RID: 31900
+		// Token: 0x04007CDD RID: 31965
 		public byte b;
 	}
 
-	// Token: 0x020014EE RID: 5358
+	// Token: 0x02001500 RID: 5376
 	public struct ColorARGB32
 	{
-		// Token: 0x04007C9D RID: 31901
+		// Token: 0x04007CDE RID: 31966
 		public byte a;
 
-		// Token: 0x04007C9E RID: 31902
+		// Token: 0x04007CDF RID: 31967
 		public byte r;
 
-		// Token: 0x04007C9F RID: 31903
+		// Token: 0x04007CE0 RID: 31968
 		public byte g;
 
-		// Token: 0x04007CA0 RID: 31904
+		// Token: 0x04007CE1 RID: 31969
 		public byte b;
 	}
 
-	// Token: 0x020014EF RID: 5359
+	// Token: 0x02001501 RID: 5377
 	public struct ColorBGRA32
 	{
-		// Token: 0x04007CA1 RID: 31905
+		// Token: 0x04007CE2 RID: 31970
 		public byte b;
 
-		// Token: 0x04007CA2 RID: 31906
+		// Token: 0x04007CE3 RID: 31971
 		public byte g;
 
-		// Token: 0x04007CA3 RID: 31907
+		// Token: 0x04007CE4 RID: 31972
 		public byte r;
 
-		// Token: 0x04007CA4 RID: 31908
+		// Token: 0x04007CE5 RID: 31973
 		public byte a;
 	}
 }

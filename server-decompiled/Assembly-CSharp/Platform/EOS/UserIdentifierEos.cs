@@ -6,14 +6,14 @@ using UnityEngine.Scripting;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D5C RID: 7516
+	// Token: 0x02001D8D RID: 7565
 	[Preserve]
 	[DoNotTouchSerializableFlags]
 	[Serializable]
 	public class UserIdentifierEos : PlatformUserIdentifierAbs
 	{
-		// Token: 0x17001C3A RID: 7226
-		// (get) Token: 0x0600DEAA RID: 57002 RVA: 0x0002F260 File Offset: 0x0002D460
+		// Token: 0x17001C82 RID: 7298
+		// (get) Token: 0x0600DFBE RID: 57278 RVA: 0x0002F260 File Offset: 0x0002D460
 		public override EPlatformIdentifier PlatformIdentifier
 		{
 			get
@@ -22,12 +22,12 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001C3B RID: 7227
-		// (get) Token: 0x0600DEAB RID: 57003 RVA: 0x004F6A75 File Offset: 0x004F4C75
+		// Token: 0x17001C83 RID: 7299
+		// (get) Token: 0x0600DFBF RID: 57279 RVA: 0x004FA615 File Offset: 0x004F8815
 		public override string PlatformIdentifierString { get; } = PlatformManager.PlatformStringFromEnum(EPlatformIdentifier.EOS);
 
-		// Token: 0x17001C3C RID: 7228
-		// (get) Token: 0x0600DEAC RID: 57004 RVA: 0x004F6A7D File Offset: 0x004F4C7D
+		// Token: 0x17001C84 RID: 7300
+		// (get) Token: 0x0600DFC0 RID: 57280 RVA: 0x004FA61D File Offset: 0x004F881D
 		public override string ReadablePlatformUserIdentifier
 		{
 			get
@@ -36,24 +36,24 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001C3D RID: 7229
-		// (get) Token: 0x0600DEAD RID: 57005 RVA: 0x004F6A85 File Offset: 0x004F4C85
+		// Token: 0x17001C85 RID: 7301
+		// (get) Token: 0x0600DFC1 RID: 57281 RVA: 0x004FA625 File Offset: 0x004F8825
 		public override string CombinedString { get; }
 
-		// Token: 0x0600DEAE RID: 57006 RVA: 0x004F6A8D File Offset: 0x004F4C8D
+		// Token: 0x0600DFC2 RID: 57282 RVA: 0x004FA62D File Offset: 0x004F882D
 		public static string CreateCombinedString(string _puidString)
 		{
 			return PlatformManager.PlatformStringFromEnum(EPlatformIdentifier.EOS) + "_" + _puidString;
 		}
 
-		// Token: 0x0600DEAF RID: 57007 RVA: 0x004F6AA0 File Offset: 0x004F4CA0
+		// Token: 0x0600DFC3 RID: 57283 RVA: 0x004FA640 File Offset: 0x004F8840
 		public static string CreateCombinedString(ProductUserId _puid)
 		{
 			return PlatformManager.PlatformStringFromEnum(EPlatformIdentifier.EOS) + "_" + UserIdentifierEos.CreateStringFromPuid(_puid);
 		}
 
-		// Token: 0x17001C3E RID: 7230
-		// (get) Token: 0x0600DEB0 RID: 57008 RVA: 0x004F6AB8 File Offset: 0x004F4CB8
+		// Token: 0x17001C86 RID: 7302
+		// (get) Token: 0x0600DFC4 RID: 57284 RVA: 0x004FA658 File Offset: 0x004F8858
 		public string ProductUserIdString
 		{
 			get
@@ -67,8 +67,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001C3F RID: 7231
-		// (get) Token: 0x0600DEB1 RID: 57009 RVA: 0x004F6AE4 File Offset: 0x004F4CE4
+		// Token: 0x17001C87 RID: 7303
+		// (get) Token: 0x0600DFC5 RID: 57285 RVA: 0x004FA684 File Offset: 0x004F8884
 		public ProductUserId ProductUserId
 		{
 			get
@@ -82,9 +82,9 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001C40 RID: 7232
-		// (get) Token: 0x0600DEB2 RID: 57010 RVA: 0x004F6B0F File Offset: 0x004F4D0F
-		// (set) Token: 0x0600DEB3 RID: 57011 RVA: 0x004F6B17 File Offset: 0x004F4D17
+		// Token: 0x17001C88 RID: 7304
+		// (get) Token: 0x0600DFC6 RID: 57286 RVA: 0x004FA6AF File Offset: 0x004F88AF
+		// (set) Token: 0x0600DFC7 RID: 57287 RVA: 0x004FA6B7 File Offset: 0x004F88B7
 		public string Ticket
 		{
 			get
@@ -98,7 +98,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DEB4 RID: 57012 RVA: 0x004F6B20 File Offset: 0x004F4D20
+		// Token: 0x0600DFC8 RID: 57288 RVA: 0x004FA6C0 File Offset: 0x004F88C0
 		public UserIdentifierEos(string _puid)
 		{
 			if (string.IsNullOrEmpty(_puid))
@@ -114,7 +114,7 @@ namespace Platform.EOS
 			this.hashcode = this.ProductUserIdString.GetHashCode() ^ ((int)this.PlatformIdentifier * 397);
 		}
 
-		// Token: 0x0600DEB5 RID: 57013 RVA: 0x004F6BB0 File Offset: 0x004F4DB0
+		// Token: 0x0600DFC9 RID: 57289 RVA: 0x004FA750 File Offset: 0x004F8950
 		public UserIdentifierEos(ProductUserId _puid)
 		{
 			if (_puid == null)
@@ -126,7 +126,7 @@ namespace Platform.EOS
 			this.hashcode = this.ProductUserIdString.GetHashCode() ^ ((int)this.PlatformIdentifier * 397);
 		}
 
-		// Token: 0x0600DEB6 RID: 57014 RVA: 0x004F6C20 File Offset: 0x004F4E20
+		// Token: 0x0600DFCA RID: 57290 RVA: 0x004FA7C0 File Offset: 0x004F89C0
 		public static string CreateStringFromPuid(ProductUserId _puid)
 		{
 			if (!ThreadManager.IsMainThread())
@@ -141,7 +141,7 @@ namespace Platform.EOS
 			return _puid.ToString();
 		}
 
-		// Token: 0x0600DEB7 RID: 57015 RVA: 0x004F6C77 File Offset: 0x004F4E77
+		// Token: 0x0600DFCB RID: 57291 RVA: 0x004FA817 File Offset: 0x004F8A17
 		public static ProductUserId CreatePuidFromString(string _puidString)
 		{
 			if (_puidString == null)
@@ -152,7 +152,7 @@ namespace Platform.EOS
 			return ProductUserId.FromString(_puidString);
 		}
 
-		// Token: 0x0600DEB8 RID: 57016 RVA: 0x004F6CA2 File Offset: 0x004F4EA2
+		// Token: 0x0600DFCC RID: 57292 RVA: 0x004FA842 File Offset: 0x004F8A42
 		public override bool DecodeTicket(string _ticket)
 		{
 			if (string.IsNullOrEmpty(_ticket))
@@ -163,7 +163,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DEB9 RID: 57017 RVA: 0x004F6CB8 File Offset: 0x004F4EB8
+		// Token: 0x0600DFCD RID: 57293 RVA: 0x004FA858 File Offset: 0x004F8A58
 		public override bool Equals(PlatformUserIdentifierAbs _other)
 		{
 			if (_other == null)
@@ -178,31 +178,31 @@ namespace Platform.EOS
 			return userIdentifierEos != null && string.Equals(userIdentifierEos.ProductUserIdString, this.ProductUserIdString, StringComparison.Ordinal);
 		}
 
-		// Token: 0x0600DEBA RID: 57018 RVA: 0x004F6CEE File Offset: 0x004F4EEE
+		// Token: 0x0600DFCE RID: 57294 RVA: 0x004FA88E File Offset: 0x004F8A8E
 		public override int GetHashCode()
 		{
 			return this.hashcode;
 		}
 
-		// Token: 0x0400A7F2 RID: 42994
+		// Token: 0x0400A8DB RID: 43227
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex puidMatcher = new Regex("^[0-9a-fA-F]{8,32}$", RegexOptions.Compiled);
 
-		// Token: 0x0400A7F5 RID: 42997
+		// Token: 0x0400A8DE RID: 43230
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public string ticket;
 
-		// Token: 0x0400A7F6 RID: 42998
+		// Token: 0x0400A8DF RID: 43231
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string productUserIdString;
 
-		// Token: 0x0400A7F7 RID: 42999
+		// Token: 0x0400A8E0 RID: 43232
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public ProductUserId productUserId;
 
-		// Token: 0x0400A7F8 RID: 43000
+		// Token: 0x0400A8E1 RID: 43233
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int hashcode;
 	}

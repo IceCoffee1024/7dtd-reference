@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A6 RID: 1702
+// Token: 0x020006AD RID: 1709
 [Preserve]
 public class RoundsInMagazine : TargetedCompareRequirementBase
 {
-	// Token: 0x060035BF RID: 13759 RVA: 0x00161E38 File Offset: 0x00160038
+	// Token: 0x060035CD RID: 13773 RVA: 0x00162A2C File Offset: 0x00160C2C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -24,7 +24,7 @@ public class RoundsInMagazine : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)_params.ItemValue.Meta, this.operation, this.value);
 	}
 
-	// Token: 0x060035C0 RID: 13760 RVA: 0x00161EBE File Offset: 0x001600BE
+	// Token: 0x060035CE RID: 13774 RVA: 0x00162AB2 File Offset: 0x00160CB2
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Rounds in Magazine: {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));

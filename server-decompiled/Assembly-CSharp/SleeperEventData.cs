@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x020009EB RID: 2539
+// Token: 0x020009F5 RID: 2549
 public class SleeperEventData
 {
-	// Token: 0x06004B1E RID: 19230 RVA: 0x001D4B78 File Offset: 0x001D2D78
+	// Token: 0x06004B42 RID: 19266 RVA: 0x001D5C58 File Offset: 0x001D3E58
 	public void SetupData(Vector3 _position)
 	{
 		this.position = _position;
@@ -32,7 +32,7 @@ public class SleeperEventData
 		}
 	}
 
-	// Token: 0x06004B1F RID: 19231 RVA: 0x001D4C78 File Offset: 0x001D2E78
+	// Token: 0x06004B43 RID: 19267 RVA: 0x001D5D58 File Offset: 0x001D3F58
 	public bool Update()
 	{
 		if (!this.hasRefreshed)
@@ -118,18 +118,18 @@ public class SleeperEventData
 		return true;
 	}
 
-	// Token: 0x04003B7B RID: 15227
+	// Token: 0x04003B9C RID: 15260
 	public List<SleeperVolume> SleeperVolumes = new List<SleeperVolume>();
 
-	// Token: 0x04003B7C RID: 15228
+	// Token: 0x04003B9D RID: 15261
 	public List<int> EntityList = new List<int>();
 
-	// Token: 0x04003B7D RID: 15229
+	// Token: 0x04003B9E RID: 15262
 	public bool hasRefreshed;
 
-	// Token: 0x04003B7E RID: 15230
+	// Token: 0x04003B9F RID: 15263
 	public int ShowQuestClearCount = 1;
 
-	// Token: 0x04003B7F RID: 15231
+	// Token: 0x04003BA0 RID: 15264
 	public Vector3 position;
 }

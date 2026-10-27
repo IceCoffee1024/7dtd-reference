@@ -6,10 +6,10 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x0200151C RID: 5404
+// Token: 0x0200152E RID: 5422
 public static class XmlExtensions
 {
-	// Token: 0x0600A9B2 RID: 43442 RVA: 0x003F2130 File Offset: 0x003F0330
+	// Token: 0x0600AA0A RID: 43530 RVA: 0x003F4534 File Offset: 0x003F2734
 	public static string GetElementString(this XElement _elem)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -27,7 +27,7 @@ public static class XmlExtensions
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A9B3 RID: 43443 RVA: 0x003F21DC File Offset: 0x003F03DC
+	// Token: 0x0600AA0B RID: 43531 RVA: 0x003F45E0 File Offset: 0x003F27E0
 	public static string GetXPath(this XElement _elem)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -35,7 +35,7 @@ public static class XmlExtensions
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A9B4 RID: 43444 RVA: 0x003F21EF File Offset: 0x003F03EF
+	// Token: 0x0600AA0C RID: 43532 RVA: 0x003F45F3 File Offset: 0x003F27F3
 	public static string GetXPath(this XAttribute _attr)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -46,7 +46,7 @@ public static class XmlExtensions
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A9B5 RID: 43445 RVA: 0x003F2229 File Offset: 0x003F0429
+	// Token: 0x0600AA0D RID: 43533 RVA: 0x003F462D File Offset: 0x003F282D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void getXPath(StringBuilder _sb, XElement _current)
 	{
@@ -58,13 +58,13 @@ public static class XmlExtensions
 		_sb.Append(_current.Name);
 	}
 
-	// Token: 0x0600A9B6 RID: 43446 RVA: 0x003F2255 File Offset: 0x003F0455
+	// Token: 0x0600AA0E RID: 43534 RVA: 0x003F4659 File Offset: 0x003F2859
 	public static bool HasAttribute(this XElement _element, XName _name)
 	{
 		return _element.Attribute(_name) != null;
 	}
 
-	// Token: 0x0600A9B7 RID: 43447 RVA: 0x003F2264 File Offset: 0x003F0464
+	// Token: 0x0600AA0F RID: 43535 RVA: 0x003F4668 File Offset: 0x003F2868
 	public static string GetAttribute(this XElement _element, XName _name)
 	{
 		XAttribute xattribute = _element.Attribute(_name);
@@ -75,7 +75,7 @@ public static class XmlExtensions
 		return xattribute.Value;
 	}
 
-	// Token: 0x0600A9B8 RID: 43448 RVA: 0x003F2288 File Offset: 0x003F0488
+	// Token: 0x0600AA10 RID: 43536 RVA: 0x003F468C File Offset: 0x003F288C
 	public static bool TryGetAttribute(this XElement _element, XName _name, out string _result)
 	{
 		XAttribute xattribute = _element.Attribute(_name);
@@ -83,7 +83,7 @@ public static class XmlExtensions
 		return xattribute != null;
 	}
 
-	// Token: 0x0600A9B9 RID: 43449 RVA: 0x003F22B0 File Offset: 0x003F04B0
+	// Token: 0x0600AA11 RID: 43537 RVA: 0x003F46B4 File Offset: 0x003F28B4
 	public static bool ParseAttribute(this XElement _element, XName _name, ref int _result)
 	{
 		string text;
@@ -95,7 +95,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9BA RID: 43450 RVA: 0x003F22D4 File Offset: 0x003F04D4
+	// Token: 0x0600AA12 RID: 43538 RVA: 0x003F46D8 File Offset: 0x003F28D8
 	public static bool ParseAttribute(this XElement _element, XName _name, ref short _result)
 	{
 		string text;
@@ -107,7 +107,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9BB RID: 43451 RVA: 0x003F22F8 File Offset: 0x003F04F8
+	// Token: 0x0600AA13 RID: 43539 RVA: 0x003F46FC File Offset: 0x003F28FC
 	public static bool ParseAttribute(this XElement _element, XName _name, ref string _result)
 	{
 		string text;
@@ -119,7 +119,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9BC RID: 43452 RVA: 0x003F2318 File Offset: 0x003F0518
+	// Token: 0x0600AA14 RID: 43540 RVA: 0x003F471C File Offset: 0x003F291C
 	public static bool ParseAttribute(this XElement _element, XName _name, ref float _result)
 	{
 		string text;
@@ -131,7 +131,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9BD RID: 43453 RVA: 0x003F2344 File Offset: 0x003F0544
+	// Token: 0x0600AA15 RID: 43541 RVA: 0x003F4748 File Offset: 0x003F2948
 	public static bool ParseAttribute(this XElement _element, XName _name, ref Vector2 _result)
 	{
 		string text;
@@ -143,7 +143,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9BE RID: 43454 RVA: 0x003F236C File Offset: 0x003F056C
+	// Token: 0x0600AA16 RID: 43542 RVA: 0x003F4770 File Offset: 0x003F2970
 	public static bool ParseAttribute(this XElement _element, XName _name, ref Vector3 _result)
 	{
 		string text;
@@ -155,7 +155,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9BF RID: 43455 RVA: 0x003F2398 File Offset: 0x003F0598
+	// Token: 0x0600AA17 RID: 43543 RVA: 0x003F479C File Offset: 0x003F299C
 	public static bool ParseAttribute(this XElement _element, XName _name, ref ulong _result)
 	{
 		string text;
@@ -167,7 +167,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9C0 RID: 43456 RVA: 0x003F23BC File Offset: 0x003F05BC
+	// Token: 0x0600AA18 RID: 43544 RVA: 0x003F47C0 File Offset: 0x003F29C0
 	public static bool ParseAttribute(this XElement _element, XName _name, ref bool _result)
 	{
 		string text;
@@ -179,7 +179,7 @@ public static class XmlExtensions
 		return false;
 	}
 
-	// Token: 0x0600A9C1 RID: 43457 RVA: 0x003F23E0 File Offset: 0x003F05E0
+	// Token: 0x0600AA19 RID: 43545 RVA: 0x003F47E4 File Offset: 0x003F29E4
 	public static List<XmlNode> ToList(this XmlNodeList _xmlNodeList)
 	{
 		List<XmlNode> list = new List<XmlNode>(_xmlNodeList.Count);
@@ -191,14 +191,14 @@ public static class XmlExtensions
 		return list;
 	}
 
-	// Token: 0x0600A9C2 RID: 43458 RVA: 0x003F2444 File Offset: 0x003F0644
+	// Token: 0x0600AA1A RID: 43546 RVA: 0x003F4848 File Offset: 0x003F2A48
 	public static void CreateXmlDeclaration(this XmlDocument _doc)
 	{
 		XmlDeclaration xmlDeclaration = _doc.CreateXmlDeclaration("1.0", "UTF-8", null);
 		_doc.InsertBefore(xmlDeclaration, _doc.DocumentElement);
 	}
 
-	// Token: 0x0600A9C3 RID: 43459 RVA: 0x003F2474 File Offset: 0x003F0674
+	// Token: 0x0600AA1B RID: 43547 RVA: 0x003F4878 File Offset: 0x003F2A78
 	public static XmlElement AddXmlElement(this XmlNode _node, string _name)
 	{
 		XmlDocument xmlDocument;
@@ -215,7 +215,7 @@ public static class XmlExtensions
 		return xmlElement;
 	}
 
-	// Token: 0x0600A9C4 RID: 43460 RVA: 0x003F24AC File Offset: 0x003F06AC
+	// Token: 0x0600AA1C RID: 43548 RVA: 0x003F48B0 File Offset: 0x003F2AB0
 	public static XmlComment AddXmlComment(this XmlNode _node, string _content)
 	{
 		XmlDocument xmlDocument;
@@ -232,7 +232,7 @@ public static class XmlExtensions
 		return xmlComment;
 	}
 
-	// Token: 0x0600A9C5 RID: 43461 RVA: 0x003F24E4 File Offset: 0x003F06E4
+	// Token: 0x0600AA1D RID: 43549 RVA: 0x003F48E8 File Offset: 0x003F2AE8
 	public static XmlText AddXmlText(this XmlNode _node, string _text)
 	{
 		XmlDocument xmlDocument;
@@ -249,20 +249,20 @@ public static class XmlExtensions
 		return xmlText;
 	}
 
-	// Token: 0x0600A9C6 RID: 43462 RVA: 0x003F251C File Offset: 0x003F071C
+	// Token: 0x0600AA1E RID: 43550 RVA: 0x003F4920 File Offset: 0x003F2B20
 	public static XmlElement SetAttrib(this XmlElement _element, string _name, string _value)
 	{
 		_element.SetAttribute(_name, _value);
 		return _element;
 	}
 
-	// Token: 0x0600A9C7 RID: 43463 RVA: 0x003F2527 File Offset: 0x003F0727
+	// Token: 0x0600AA1F RID: 43551 RVA: 0x003F492B File Offset: 0x003F2B2B
 	public static XmlElement AddXmlKeyValueProperty(this XmlNode _node, string _name, string _value)
 	{
 		return _node.AddXmlElement("property").SetAttrib("name", _name).SetAttrib("value", _value);
 	}
 
-	// Token: 0x0600A9C8 RID: 43464 RVA: 0x003F254A File Offset: 0x003F074A
+	// Token: 0x0600AA20 RID: 43552 RVA: 0x003F494E File Offset: 0x003F2B4E
 	public static bool TryGetAttribute(this XmlElement _element, string _name, out string _result)
 	{
 		if (!_element.HasAttribute(_name))

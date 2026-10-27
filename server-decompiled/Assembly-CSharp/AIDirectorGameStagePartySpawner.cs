@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine.Scripting;
 
-// Token: 0x02000416 RID: 1046
+// Token: 0x02000418 RID: 1048
 [Preserve]
 public class AIDirectorGameStagePartySpawner
 {
-	// Token: 0x06002031 RID: 8241 RVA: 0x000C2F84 File Offset: 0x000C1184
+	// Token: 0x06002036 RID: 8246 RVA: 0x000C3330 File Offset: 0x000C1530
 	public AIDirectorGameStagePartySpawner(World _world, string _gameStageName)
 	{
 		this.world = _world;
@@ -17,13 +17,13 @@ public class AIDirectorGameStagePartySpawner
 		this.gsScaling = 1f;
 	}
 
-	// Token: 0x06002032 RID: 8242 RVA: 0x000C2FE3 File Offset: 0x000C11E3
+	// Token: 0x06002037 RID: 8247 RVA: 0x000C338F File Offset: 0x000C158F
 	public void SetScaling(float _scaling)
 	{
 		this.gsScaling = Utils.FastLerp(1f, 2.5f, (_scaling - 1f) / 3f);
 	}
 
-	// Token: 0x06002033 RID: 8243 RVA: 0x000C3008 File Offset: 0x000C1208
+	// Token: 0x06002038 RID: 8248 RVA: 0x000C33B4 File Offset: 0x000C15B4
 	public void ResetPartyLevel(int mod = 0)
 	{
 		int num = this.CalcPartyLevel();
@@ -34,7 +34,7 @@ public class AIDirectorGameStagePartySpawner
 		this.SetPartyLevel(num);
 	}
 
-	// Token: 0x06002034 RID: 8244 RVA: 0x000C302C File Offset: 0x000C122C
+	// Token: 0x06002039 RID: 8249 RVA: 0x000C33D8 File Offset: 0x000C15D8
 	public int CalcPartyLevel()
 	{
 		List<int> list = new List<int>();
@@ -46,7 +46,7 @@ public class AIDirectorGameStagePartySpawner
 		return GameStageDefinition.CalcPartyLevel(list);
 	}
 
-	// Token: 0x06002035 RID: 8245 RVA: 0x000C3074 File Offset: 0x000C1274
+	// Token: 0x0600203A RID: 8250 RVA: 0x000C3420 File Offset: 0x000C1620
 	public void SetPartyLevel(int _partyLevel)
 	{
 		this.partyLevel = _partyLevel;
@@ -81,7 +81,7 @@ public class AIDirectorGameStagePartySpawner
 		}
 	}
 
-	// Token: 0x06002036 RID: 8246 RVA: 0x000C31C0 File Offset: 0x000C13C0
+	// Token: 0x0600203B RID: 8251 RVA: 0x000C356C File Offset: 0x000C176C
 	public bool Tick(double _deltaTime)
 	{
 		if (this.spawnGroup != null)
@@ -105,7 +105,7 @@ public class AIDirectorGameStagePartySpawner
 		return this.spawnGroup != null;
 	}
 
-	// Token: 0x06002037 RID: 8247 RVA: 0x000C324C File Offset: 0x000C144C
+	// Token: 0x0600203C RID: 8252 RVA: 0x000C35F8 File Offset: 0x000C17F8
 	public void AddMember(EntityPlayer _player)
 	{
 		if (!this.memberIDs.Contains(_player.entityId))
@@ -118,13 +118,13 @@ public class AIDirectorGameStagePartySpawner
 		}
 	}
 
-	// Token: 0x06002038 RID: 8248 RVA: 0x000C3298 File Offset: 0x000C1498
+	// Token: 0x0600203D RID: 8253 RVA: 0x000C3644 File Offset: 0x000C1844
 	public bool IsMemberOfParty(int _entityID)
 	{
 		return this.memberIDs.Contains(_entityID);
 	}
 
-	// Token: 0x06002039 RID: 8249 RVA: 0x000C32A6 File Offset: 0x000C14A6
+	// Token: 0x0600203E RID: 8254 RVA: 0x000C3652 File Offset: 0x000C1852
 	public void RemoveMember(EntityPlayer _player, bool removeID)
 	{
 		this.members.Remove(_player);
@@ -134,7 +134,7 @@ public class AIDirectorGameStagePartySpawner
 		}
 	}
 
-	// Token: 0x0600203A RID: 8250 RVA: 0x000C32CC File Offset: 0x000C14CC
+	// Token: 0x0600203F RID: 8255 RVA: 0x000C3678 File Offset: 0x000C1878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CalcStageSpawnMax()
 	{
@@ -148,20 +148,20 @@ public class AIDirectorGameStagePartySpawner
 		return num;
 	}
 
-	// Token: 0x0600203B RID: 8251 RVA: 0x000C3314 File Offset: 0x000C1514
+	// Token: 0x06002040 RID: 8256 RVA: 0x000C36C0 File Offset: 0x000C18C0
 	public void ClearMembers()
 	{
 		this.members.Clear();
 		this.memberIDs.Clear();
 	}
 
-	// Token: 0x0600203C RID: 8252 RVA: 0x000C332C File Offset: 0x000C152C
+	// Token: 0x06002041 RID: 8257 RVA: 0x000C36D8 File Offset: 0x000C18D8
 	public void IncSpawnCount()
 	{
 		this.spawnCount++;
 	}
 
-	// Token: 0x0600203D RID: 8253 RVA: 0x000C333C File Offset: 0x000C153C
+	// Token: 0x06002042 RID: 8258 RVA: 0x000C36E8 File Offset: 0x000C18E8
 	public void DecSpawnCount(int dec)
 	{
 		if (dec > this.spawnCount)
@@ -173,7 +173,7 @@ public class AIDirectorGameStagePartySpawner
 	}
 
 	// Token: 0x170003B6 RID: 950
-	// (get) Token: 0x0600203E RID: 8254 RVA: 0x000C335D File Offset: 0x000C155D
+	// (get) Token: 0x06002043 RID: 8259 RVA: 0x000C3709 File Offset: 0x000C1909
 	public bool IsDone
 	{
 		get
@@ -183,7 +183,7 @@ public class AIDirectorGameStagePartySpawner
 	}
 
 	// Token: 0x170003B7 RID: 951
-	// (get) Token: 0x0600203F RID: 8255 RVA: 0x000C3373 File Offset: 0x000C1573
+	// (get) Token: 0x06002044 RID: 8260 RVA: 0x000C371F File Offset: 0x000C191F
 	public bool canSpawn
 	{
 		get
@@ -193,7 +193,7 @@ public class AIDirectorGameStagePartySpawner
 	}
 
 	// Token: 0x170003B8 RID: 952
-	// (get) Token: 0x06002040 RID: 8256 RVA: 0x000C338D File Offset: 0x000C158D
+	// (get) Token: 0x06002045 RID: 8261 RVA: 0x000C3739 File Offset: 0x000C1939
 	public int maxAlive
 	{
 		get
@@ -207,7 +207,7 @@ public class AIDirectorGameStagePartySpawner
 	}
 
 	// Token: 0x170003B9 RID: 953
-	// (get) Token: 0x06002041 RID: 8257 RVA: 0x000C33A4 File Offset: 0x000C15A4
+	// (get) Token: 0x06002046 RID: 8262 RVA: 0x000C3750 File Offset: 0x000C1950
 	public string spawnGroupName
 	{
 		get
@@ -220,7 +220,7 @@ public class AIDirectorGameStagePartySpawner
 		}
 	}
 
-	// Token: 0x06002042 RID: 8258 RVA: 0x000C33BC File Offset: 0x000C15BC
+	// Token: 0x06002047 RID: 8263 RVA: 0x000C3768 File Offset: 0x000C1968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupGroup()
 	{
@@ -236,67 +236,67 @@ public class AIDirectorGameStagePartySpawner
 		Log.Out("AIDirectorGameStagePartySpawner: groups done ({0})", new object[] { this.groupIndex });
 	}
 
-	// Token: 0x06002043 RID: 8259 RVA: 0x000C346C File Offset: 0x000C166C
+	// Token: 0x06002048 RID: 8264 RVA: 0x000C3818 File Offset: 0x000C1A18
 	public override string ToString()
 	{
 		return string.Format("{0} {1} (count {2}, numToSpawn {3}, maxAlive {4})", new object[] { this.groupIndex, this.spawnGroupName, this.spawnCount, this.numToSpawn, this.maxAlive });
 	}
 
-	// Token: 0x04001606 RID: 5638
+	// Token: 0x04001616 RID: 5654
 	public ReadOnlyCollection<EntityPlayer> partyMembers;
 
-	// Token: 0x04001607 RID: 5639
+	// Token: 0x04001617 RID: 5655
 	public float gsScaling;
 
-	// Token: 0x04001608 RID: 5640
+	// Token: 0x04001618 RID: 5656
 	public int groupIndex;
 
-	// Token: 0x04001609 RID: 5641
+	// Token: 0x04001619 RID: 5657
 	public int partyLevel;
 
-	// Token: 0x0400160A RID: 5642
+	// Token: 0x0400161A RID: 5658
 	public int stageSpawnMax;
 
-	// Token: 0x0400160B RID: 5643
+	// Token: 0x0400161B RID: 5659
 	public int bonusLootEvery;
 
-	// Token: 0x0400160C RID: 5644
+	// Token: 0x0400161C RID: 5660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameStageDefinition def;
 
-	// Token: 0x0400160D RID: 5645
+	// Token: 0x0400161D RID: 5661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameStageDefinition.Stage stage;
 
-	// Token: 0x0400160E RID: 5646
+	// Token: 0x0400161E RID: 5662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameStageDefinition.SpawnGroup spawnGroup;
 
-	// Token: 0x0400160F RID: 5647
+	// Token: 0x0400161F RID: 5663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int spawnCount;
 
-	// Token: 0x04001610 RID: 5648
+	// Token: 0x04001620 RID: 5664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numToSpawn;
 
-	// Token: 0x04001611 RID: 5649
+	// Token: 0x04001621 RID: 5665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double interval;
 
-	// Token: 0x04001612 RID: 5650
+	// Token: 0x04001622 RID: 5666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong nextStageTime;
 
-	// Token: 0x04001613 RID: 5651
+	// Token: 0x04001623 RID: 5667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04001614 RID: 5652
+	// Token: 0x04001624 RID: 5668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> memberIDs = new HashSet<int>();
 
-	// Token: 0x04001615 RID: 5653
+	// Token: 0x04001625 RID: 5669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityPlayer> members = new List<EntityPlayer>();
 }

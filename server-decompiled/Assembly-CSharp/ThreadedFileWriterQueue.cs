@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001300 RID: 4864
+// Token: 0x02001312 RID: 4882
 public class ThreadedFileWriterQueue
 {
-	// Token: 0x060099FA RID: 39418 RVA: 0x003A6C5E File Offset: 0x003A4E5E
+	// Token: 0x06009A52 RID: 39506 RVA: 0x003A9062 File Offset: 0x003A7262
 	public ThreadedFileWriterQueue(string taskName, string filepath)
 	{
 		this.taskName = taskName;
 		this.filepath = filepath;
 	}
 
-	// Token: 0x060099FB RID: 39419 RVA: 0x003A6C8C File Offset: 0x003A4E8C
+	// Token: 0x06009A53 RID: 39507 RVA: 0x003A9090 File Offset: 0x003A7290
 	public void Write(PooledExpandableMemoryStream stream, bool waitForComplete = false)
 	{
 		object obj = this.threadLock;
@@ -31,7 +31,7 @@ public class ThreadedFileWriterQueue
 		}
 	}
 
-	// Token: 0x060099FC RID: 39420 RVA: 0x003A6D10 File Offset: 0x003A4F10
+	// Token: 0x06009A54 RID: 39508 RVA: 0x003A9114 File Offset: 0x003A7314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteSaveFileThread(ThreadManager.ThreadInfo threadInfo)
 	{
@@ -60,23 +60,23 @@ public class ThreadedFileWriterQueue
 		}
 	}
 
-	// Token: 0x04007403 RID: 29699
+	// Token: 0x04007444 RID: 29764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string taskName;
 
-	// Token: 0x04007404 RID: 29700
+	// Token: 0x04007445 RID: 29765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string filepath;
 
-	// Token: 0x04007405 RID: 29701
+	// Token: 0x04007446 RID: 29766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object threadLock = new object();
 
-	// Token: 0x04007406 RID: 29702
+	// Token: 0x04007447 RID: 29767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo writerThread;
 
-	// Token: 0x04007407 RID: 29703
+	// Token: 0x04007448 RID: 29768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<PooledExpandableMemoryStream> memoryStreams = new Queue<PooledExpandableMemoryStream>();
 }

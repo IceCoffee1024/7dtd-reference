@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001929 RID: 6441
+	// Token: 0x0200195A RID: 6490
 	[Preserve]
 	public class ChallengeObjectiveChallengeStatAwarded : BaseChallengeObjective
 	{
-		// Token: 0x17001902 RID: 6402
-		// (get) Token: 0x0600C6B3 RID: 50867 RVA: 0x0048F1C1 File Offset: 0x0048D3C1
+		// Token: 0x1700194A RID: 6474
+		// (get) Token: 0x0600C7C7 RID: 51143 RVA: 0x00492BB5 File Offset: 0x00490DB5
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -19,8 +19,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001903 RID: 6403
-		// (get) Token: 0x0600C6B4 RID: 50868 RVA: 0x0048F1C5 File Offset: 0x0048D3C5
+		// Token: 0x1700194B RID: 6475
+		// (get) Token: 0x0600C7C8 RID: 51144 RVA: 0x00492BB9 File Offset: 0x00490DB9
 		public override string DescriptionText
 		{
 			get
@@ -29,7 +29,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6B5 RID: 50869 RVA: 0x0048F1D4 File Offset: 0x0048D3D4
+		// Token: 0x0600C7C9 RID: 51145 RVA: 0x00492BC8 File Offset: 0x00490DC8
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.ChallengeAwardCredit += this.Current_ChallengeAwardCredit;
@@ -46,13 +46,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6B6 RID: 50870 RVA: 0x0048F262 File Offset: 0x0048D462
+		// Token: 0x0600C7CA RID: 51146 RVA: 0x00492C56 File Offset: 0x00490E56
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.ChallengeAwardCredit -= this.Current_ChallengeAwardCredit;
 		}
 
-		// Token: 0x0600C6B7 RID: 50871 RVA: 0x0048F27C File Offset: 0x0048D47C
+		// Token: 0x0600C7CB RID: 51147 RVA: 0x00492C70 File Offset: 0x00490E70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_ChallengeAwardCredit(string stat, int awardCount)
 		{
@@ -71,7 +71,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6B8 RID: 50872 RVA: 0x0048F2D0 File Offset: 0x0048D4D0
+		// Token: 0x0600C7CC RID: 51148 RVA: 0x00492CC4 File Offset: 0x00490EC4
 		public override void HandleTrackingStarted()
 		{
 			base.HandleTrackingStarted();
@@ -83,7 +83,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6B9 RID: 50873 RVA: 0x0048F31D File Offset: 0x0048D51D
+		// Token: 0x0600C7CD RID: 51149 RVA: 0x00492D11 File Offset: 0x00490F11
 		public override void HandleTrackingEnded()
 		{
 			base.HandleTrackingEnded();
@@ -94,7 +94,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6BA RID: 50874 RVA: 0x0048F34C File Offset: 0x0048D54C
+		// Token: 0x0600C7CE RID: 51150 RVA: 0x00492D40 File Offset: 0x00490F40
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -124,7 +124,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C6BB RID: 50875 RVA: 0x0048F468 File Offset: 0x0048D668
+		// Token: 0x0600C7CF RID: 51151 RVA: 0x00492E5C File Offset: 0x0049105C
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveChallengeStatAwarded
@@ -137,27 +137,27 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x040095F3 RID: 38387
+		// Token: 0x040096DC RID: 38620
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string challengeStat = "";
 
-		// Token: 0x040095F4 RID: 38388
+		// Token: 0x040096DD RID: 38621
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string statText = "";
 
-		// Token: 0x040095F5 RID: 38389
+		// Token: 0x040096DE RID: 38622
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string trackerIndexName;
 
-		// Token: 0x040095F6 RID: 38390
+		// Token: 0x040096DF RID: 38623
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string trackerNavObjectName;
 
-		// Token: 0x040095F7 RID: 38391
+		// Token: 0x040096E0 RID: 38624
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float trackDistance = 20f;
 
-		// Token: 0x040095F8 RID: 38392
+		// Token: 0x040096E1 RID: 38625
 		public TrackingEntry trackingEntry;
 	}
 }

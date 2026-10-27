@@ -3,11 +3,11 @@ using GUI_2;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010B5 RID: 4277
+// Token: 0x020010C5 RID: 4293
 [Preserve]
 public class XUiC_TwitchInfoWindowGroup : XUiController
 {
-	// Token: 0x06008805 RID: 34821 RVA: 0x003412F2 File Offset: 0x0033F4F2
+	// Token: 0x06008858 RID: 34904 RVA: 0x00343376 File Offset: 0x00341576
 	public override void Init()
 	{
 		base.Init();
@@ -16,37 +16,37 @@ public class XUiC_TwitchInfoWindowGroup : XUiController
 		this.descriptionWindow.OwnerList = this.entryListWindow;
 	}
 
-	// Token: 0x06008806 RID: 34822 RVA: 0x00341323 File Offset: 0x0033F523
+	// Token: 0x06008859 RID: 34905 RVA: 0x003433A7 File Offset: 0x003415A7
 	public void SetEntry(XUiC_TwitchActionEntry ta)
 	{
 		this.descriptionWindow.SetTwitchAction(ta);
 	}
 
-	// Token: 0x06008807 RID: 34823 RVA: 0x00341331 File Offset: 0x0033F531
+	// Token: 0x0600885A RID: 34906 RVA: 0x003433B5 File Offset: 0x003415B5
 	public void SetEntry(XUiC_TwitchVoteInfoEntry tv)
 	{
 		this.descriptionWindow.SetTwitchVote(tv);
 	}
 
-	// Token: 0x06008808 RID: 34824 RVA: 0x0034133F File Offset: 0x0033F53F
+	// Token: 0x0600885B RID: 34907 RVA: 0x003433C3 File Offset: 0x003415C3
 	public void SetEntry(XUiC_TwitchActionHistoryEntry th)
 	{
 		this.descriptionWindow.SetTwitchHistory(th);
 	}
 
-	// Token: 0x06008809 RID: 34825 RVA: 0x0034134D File Offset: 0x0033F54D
+	// Token: 0x0600885C RID: 34908 RVA: 0x003433D1 File Offset: 0x003415D1
 	public void ClearEntries()
 	{
 		this.descriptionWindow.ClearEntries();
 	}
 
-	// Token: 0x0600880A RID: 34826 RVA: 0x002D5E2F File Offset: 0x002D402F
+	// Token: 0x0600885D RID: 34909 RVA: 0x002D7387 File Offset: 0x002D5587
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600880B RID: 34827 RVA: 0x0034135C File Offset: 0x0033F55C
+	// Token: 0x0600885E RID: 34910 RVA: 0x003433E0 File Offset: 0x003415E0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -58,7 +58,7 @@ public class XUiC_TwitchInfoWindowGroup : XUiController
 		TwitchManager.Current.HasViewedSettings = true;
 	}
 
-	// Token: 0x0600880C RID: 34828 RVA: 0x003413D6 File Offset: 0x0033F5D6
+	// Token: 0x0600885F RID: 34911 RVA: 0x0034345A File Offset: 0x0034165A
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -66,9 +66,9 @@ public class XUiC_TwitchInfoWindowGroup : XUiController
 		this.xui.playerUI.windowManager.Close("twitchwindowpaging");
 	}
 
-	// Token: 0x0400655D RID: 25949
+	// Token: 0x0400659C RID: 26012
 	public XUiC_TwitchEntryDescriptionWindow descriptionWindow;
 
-	// Token: 0x0400655E RID: 25950
+	// Token: 0x0400659D RID: 26013
 	public XUiC_TwitchEntryListWindow entryListWindow;
 }

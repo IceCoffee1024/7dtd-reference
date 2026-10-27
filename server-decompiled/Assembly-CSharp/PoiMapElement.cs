@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C14 RID: 3092
+// Token: 0x02000C1F RID: 3103
 public class PoiMapElement
 {
-	// Token: 0x06005DCB RID: 24011 RVA: 0x00248EC0 File Offset: 0x002470C0
+	// Token: 0x06005DF0 RID: 24048 RVA: 0x0024A3E8 File Offset: 0x002485E8
 	public PoiMapElement(uint _color, string _name, BlockValue _blockValue, BlockValue _blockBelow, int _iSO, int _ypos, int _yposFill, int _iST)
 	{
 		this.m_sModelName = _name;
@@ -15,7 +15,7 @@ public class PoiMapElement
 		this.m_BlockBelow = _blockBelow;
 	}
 
-	// Token: 0x06005DCC RID: 24012 RVA: 0x00248F16 File Offset: 0x00247116
+	// Token: 0x06005DF1 RID: 24049 RVA: 0x0024A43E File Offset: 0x0024863E
 	public PoiMapDecal GetDecal(int _index)
 	{
 		if (_index >= 0 && _index < this.decals.Count)
@@ -25,7 +25,7 @@ public class PoiMapElement
 		return null;
 	}
 
-	// Token: 0x06005DCD RID: 24013 RVA: 0x00248F38 File Offset: 0x00247138
+	// Token: 0x06005DF2 RID: 24050 RVA: 0x0024A460 File Offset: 0x00248660
 	public PoiMapDecal GetRandomDecal(GameRandom _random)
 	{
 		for (int i = 0; i < this.decals.Count; i++)
@@ -39,7 +39,7 @@ public class PoiMapElement
 		return null;
 	}
 
-	// Token: 0x06005DCE RID: 24014 RVA: 0x00248F7C File Offset: 0x0024717C
+	// Token: 0x06005DF3 RID: 24051 RVA: 0x0024A4A4 File Offset: 0x002486A4
 	public PoiMapBlock GetRandomBlockOnTop(GameRandom _random)
 	{
 		for (int i = 0; i < this.blocksOnTop.Count; i++)
@@ -53,27 +53,27 @@ public class PoiMapElement
 		return null;
 	}
 
-	// Token: 0x040048CD RID: 18637
+	// Token: 0x040048F2 RID: 18674
 	public uint m_uColorId;
 
-	// Token: 0x040048CE RID: 18638
+	// Token: 0x040048F3 RID: 18675
 	public string m_sModelName;
 
-	// Token: 0x040048CF RID: 18639
+	// Token: 0x040048F4 RID: 18676
 	public BlockValue m_BlockValue;
 
-	// Token: 0x040048D0 RID: 18640
+	// Token: 0x040048F5 RID: 18677
 	public BlockValue m_BlockBelow;
 
-	// Token: 0x040048D1 RID: 18641
+	// Token: 0x040048F6 RID: 18678
 	public int m_YPos;
 
-	// Token: 0x040048D2 RID: 18642
+	// Token: 0x040048F7 RID: 18679
 	public int m_YPosFill;
 
-	// Token: 0x040048D3 RID: 18643
+	// Token: 0x040048F8 RID: 18680
 	public List<PoiMapDecal> decals = new List<PoiMapDecal>();
 
-	// Token: 0x040048D4 RID: 18644
+	// Token: 0x040048F9 RID: 18681
 	public List<PoiMapBlock> blocksOnTop = new List<PoiMapBlock>();
 }

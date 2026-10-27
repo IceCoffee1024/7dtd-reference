@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000C8E RID: 3214
-// (Invoke) Token: 0x06006207 RID: 25095
+// Token: 0x02000C99 RID: 3225
+// (Invoke) Token: 0x0600622C RID: 25132
 public delegate void XUiEvent_FuelStackChanged();

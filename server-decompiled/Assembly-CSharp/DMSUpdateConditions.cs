@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020003C7 RID: 967
+// Token: 0x020003C9 RID: 969
 public struct DMSUpdateConditions
 {
 	// Token: 0x17000373 RID: 883
-	// (set) Token: 0x06001CF9 RID: 7417 RVA: 0x000AED5B File Offset: 0x000ACF5B
+	// (set) Token: 0x06001CFD RID: 7421 RVA: 0x000AEF6B File Offset: 0x000AD16B
 	public bool DoesPlayerExist
 	{
 		set
@@ -14,7 +14,7 @@ public struct DMSUpdateConditions
 	}
 
 	// Token: 0x17000374 RID: 884
-	// (set) Token: 0x06001CFA RID: 7418 RVA: 0x000AED69 File Offset: 0x000ACF69
+	// (set) Token: 0x06001CFE RID: 7422 RVA: 0x000AEF79 File Offset: 0x000AD179
 	public bool IsGameUnPaused
 	{
 		set
@@ -24,7 +24,7 @@ public struct DMSUpdateConditions
 	}
 
 	// Token: 0x17000375 RID: 885
-	// (set) Token: 0x06001CFB RID: 7419 RVA: 0x000AED74 File Offset: 0x000ACF74
+	// (set) Token: 0x06001CFF RID: 7423 RVA: 0x000AEF84 File Offset: 0x000AD184
 	public bool IsDMSInitialized
 	{
 		set
@@ -34,7 +34,7 @@ public struct DMSUpdateConditions
 	}
 
 	// Token: 0x17000376 RID: 886
-	// (set) Token: 0x06001CFC RID: 7420 RVA: 0x000AED7F File Offset: 0x000ACF7F
+	// (set) Token: 0x06001D00 RID: 7424 RVA: 0x000AEF8F File Offset: 0x000AD18F
 	public bool IsDMSEnabled
 	{
 		set
@@ -44,7 +44,7 @@ public struct DMSUpdateConditions
 	}
 
 	// Token: 0x17000377 RID: 887
-	// (get) Token: 0x06001CFD RID: 7421 RVA: 0x000AED8A File Offset: 0x000ACF8A
+	// (get) Token: 0x06001D01 RID: 7425 RVA: 0x000AEF9A File Offset: 0x000AD19A
 	public bool CanUpdate
 	{
 		get
@@ -53,7 +53,7 @@ public struct DMSUpdateConditions
 		}
 	}
 
-	// Token: 0x06001CFE RID: 7422 RVA: 0x000AED99 File Offset: 0x000ACF99
+	// Token: 0x06001D02 RID: 7426 RVA: 0x000AEFA9 File Offset: 0x000AD1A9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetBoolHolder(bool _value, byte _place)
 	{
@@ -65,7 +65,7 @@ public struct DMSUpdateConditions
 		this.BoolHolder &= ~_place;
 	}
 
-	// Token: 0x040012E4 RID: 4836
+	// Token: 0x040012F4 RID: 4852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte BoolHolder;
 }

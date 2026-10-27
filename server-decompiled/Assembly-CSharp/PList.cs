@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x0200149A RID: 5274
+// Token: 0x020014AC RID: 5292
 public class PList<T> : List<T>
 {
-	// Token: 0x0600A51D RID: 42269 RVA: 0x003D93DA File Offset: 0x003D75DA
+	// Token: 0x0600A575 RID: 42357 RVA: 0x003DB7DE File Offset: 0x003D99DE
 	public PList()
 		: this(1U)
 	{
 	}
 
-	// Token: 0x0600A51E RID: 42270 RVA: 0x003D93E3 File Offset: 0x003D75E3
+	// Token: 0x0600A576 RID: 42358 RVA: 0x003DB7E7 File Offset: 0x003D99E7
 	public PList(uint _saveVersion)
 	{
 		this.saveVersion = _saveVersion;
 	}
 
-	// Token: 0x0600A51F RID: 42271 RVA: 0x003D9400 File Offset: 0x003D7600
+	// Token: 0x0600A577 RID: 42359 RVA: 0x003DB804 File Offset: 0x003D9A04
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write((ushort)base.Count);
@@ -28,7 +28,7 @@ public class PList<T> : List<T>
 		}
 	}
 
-	// Token: 0x0600A520 RID: 42272 RVA: 0x003D9470 File Offset: 0x003D7670
+	// Token: 0x0600A578 RID: 42360 RVA: 0x003DB874 File Offset: 0x003D9A74
 	public void Read(BinaryReader _br)
 	{
 		base.Clear();
@@ -41,13 +41,13 @@ public class PList<T> : List<T>
 		}
 	}
 
-	// Token: 0x0600A521 RID: 42273 RVA: 0x003D94B2 File Offset: 0x003D76B2
+	// Token: 0x0600A579 RID: 42361 RVA: 0x003DB8B6 File Offset: 0x003D9AB6
 	public void MarkToRemove(T _v)
 	{
 		this.toRemove.Add(_v);
 	}
 
-	// Token: 0x0600A522 RID: 42274 RVA: 0x003D94C0 File Offset: 0x003D76C0
+	// Token: 0x0600A57A RID: 42362 RVA: 0x003DB8C4 File Offset: 0x003D9AC4
 	public void RemoveAllMarked()
 	{
 		foreach (T t in this.toRemove)
@@ -57,17 +57,17 @@ public class PList<T> : List<T>
 		this.toRemove.Clear();
 	}
 
-	// Token: 0x04007B59 RID: 31577
+	// Token: 0x04007B9A RID: 31642
 	public Action<BinaryWriter, T> writeElement;
 
-	// Token: 0x04007B5A RID: 31578
+	// Token: 0x04007B9B RID: 31643
 	public Func<BinaryReader, uint, T> readElement;
 
-	// Token: 0x04007B5B RID: 31579
+	// Token: 0x04007B9C RID: 31644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public uint saveVersion;
 
-	// Token: 0x04007B5C RID: 31580
+	// Token: 0x04007B9D RID: 31645
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<T> toRemove = new List<T>();
 }

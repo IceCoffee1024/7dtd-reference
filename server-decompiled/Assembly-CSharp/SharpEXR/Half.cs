@@ -4,311 +4,311 @@ using System.Globalization;
 
 namespace SharpEXR
 {
-	// Token: 0x020016FC RID: 5884
+	// Token: 0x0200171B RID: 5915
 	[Serializable]
 	public struct Half : IComparable, IFormattable, IConvertible, IComparable<Half>, IEquatable<Half>
 	{
-		// Token: 0x0600B7E2 RID: 47074 RVA: 0x00441DC8 File Offset: 0x0043FFC8
+		// Token: 0x0600B8B6 RID: 47286 RVA: 0x0044486C File Offset: 0x00442A6C
 		public Half(float value)
 		{
 			this = HalfHelper.SingleToHalf(value);
 		}
 
-		// Token: 0x0600B7E3 RID: 47075 RVA: 0x00441DD6 File Offset: 0x0043FFD6
+		// Token: 0x0600B8B7 RID: 47287 RVA: 0x0044487A File Offset: 0x00442A7A
 		public Half(int value)
 		{
 			this = new Half((float)value);
 		}
 
-		// Token: 0x0600B7E4 RID: 47076 RVA: 0x00441DD6 File Offset: 0x0043FFD6
+		// Token: 0x0600B8B8 RID: 47288 RVA: 0x0044487A File Offset: 0x00442A7A
 		public Half(long value)
 		{
 			this = new Half((float)value);
 		}
 
-		// Token: 0x0600B7E5 RID: 47077 RVA: 0x00441DD6 File Offset: 0x0043FFD6
+		// Token: 0x0600B8B9 RID: 47289 RVA: 0x0044487A File Offset: 0x00442A7A
 		public Half(double value)
 		{
 			this = new Half((float)value);
 		}
 
-		// Token: 0x0600B7E6 RID: 47078 RVA: 0x00441DE0 File Offset: 0x0043FFE0
+		// Token: 0x0600B8BA RID: 47290 RVA: 0x00444884 File Offset: 0x00442A84
 		public Half(decimal value)
 		{
 			this = new Half((float)value);
 		}
 
-		// Token: 0x0600B7E7 RID: 47079 RVA: 0x00441DEF File Offset: 0x0043FFEF
+		// Token: 0x0600B8BB RID: 47291 RVA: 0x00444893 File Offset: 0x00442A93
 		public Half(uint value)
 		{
 			this = new Half(value);
 		}
 
-		// Token: 0x0600B7E8 RID: 47080 RVA: 0x00441DEF File Offset: 0x0043FFEF
+		// Token: 0x0600B8BC RID: 47292 RVA: 0x00444893 File Offset: 0x00442A93
 		public Half(ulong value)
 		{
 			this = new Half(value);
 		}
 
-		// Token: 0x0600B7E9 RID: 47081 RVA: 0x00441DFA File Offset: 0x0043FFFA
+		// Token: 0x0600B8BD RID: 47293 RVA: 0x0044489E File Offset: 0x00442A9E
 		public static Half Negate(Half half)
 		{
 			return -half;
 		}
 
-		// Token: 0x0600B7EA RID: 47082 RVA: 0x00441E02 File Offset: 0x00440002
+		// Token: 0x0600B8BE RID: 47294 RVA: 0x004448A6 File Offset: 0x00442AA6
 		public static Half Add(Half half1, Half half2)
 		{
 			return half1 + half2;
 		}
 
-		// Token: 0x0600B7EB RID: 47083 RVA: 0x00441E0B File Offset: 0x0044000B
+		// Token: 0x0600B8BF RID: 47295 RVA: 0x004448AF File Offset: 0x00442AAF
 		public static Half Subtract(Half half1, Half half2)
 		{
 			return half1 - half2;
 		}
 
-		// Token: 0x0600B7EC RID: 47084 RVA: 0x00441E14 File Offset: 0x00440014
+		// Token: 0x0600B8C0 RID: 47296 RVA: 0x004448B8 File Offset: 0x00442AB8
 		public static Half Multiply(Half half1, Half half2)
 		{
 			return half1 * half2;
 		}
 
-		// Token: 0x0600B7ED RID: 47085 RVA: 0x00441E1D File Offset: 0x0044001D
+		// Token: 0x0600B8C1 RID: 47297 RVA: 0x004448C1 File Offset: 0x00442AC1
 		public static Half Divide(Half half1, Half half2)
 		{
 			return half1 / half2;
 		}
 
-		// Token: 0x0600B7EE RID: 47086 RVA: 0x0012AC85 File Offset: 0x00128E85
+		// Token: 0x0600B8C2 RID: 47298 RVA: 0x0012B879 File Offset: 0x00129A79
 		public static Half operator +(Half half)
 		{
 			return half;
 		}
 
-		// Token: 0x0600B7EF RID: 47087 RVA: 0x00441E26 File Offset: 0x00440026
+		// Token: 0x0600B8C3 RID: 47299 RVA: 0x004448CA File Offset: 0x00442ACA
 		public static Half operator -(Half half)
 		{
 			return HalfHelper.Negate(half);
 		}
 
-		// Token: 0x0600B7F0 RID: 47088 RVA: 0x00441E2E File Offset: 0x0044002E
+		// Token: 0x0600B8C4 RID: 47300 RVA: 0x004448D2 File Offset: 0x00442AD2
 		public static Half operator ++(Half half)
 		{
 			return (Half)(half + 1f);
 		}
 
-		// Token: 0x0600B7F1 RID: 47089 RVA: 0x00441E41 File Offset: 0x00440041
+		// Token: 0x0600B8C5 RID: 47301 RVA: 0x004448E5 File Offset: 0x00442AE5
 		public static Half operator --(Half half)
 		{
 			return (Half)(half - 1f);
 		}
 
-		// Token: 0x0600B7F2 RID: 47090 RVA: 0x00441E54 File Offset: 0x00440054
+		// Token: 0x0600B8C6 RID: 47302 RVA: 0x004448F8 File Offset: 0x00442AF8
 		public static Half operator +(Half half1, Half half2)
 		{
 			return (Half)(half1 + half2);
 		}
 
-		// Token: 0x0600B7F3 RID: 47091 RVA: 0x00441E6A File Offset: 0x0044006A
+		// Token: 0x0600B8C7 RID: 47303 RVA: 0x0044490E File Offset: 0x00442B0E
 		public static Half operator -(Half half1, Half half2)
 		{
 			return (Half)(half1 - half2);
 		}
 
-		// Token: 0x0600B7F4 RID: 47092 RVA: 0x00441E80 File Offset: 0x00440080
+		// Token: 0x0600B8C8 RID: 47304 RVA: 0x00444924 File Offset: 0x00442B24
 		public static Half operator *(Half half1, Half half2)
 		{
 			return (Half)(half1 * half2);
 		}
 
-		// Token: 0x0600B7F5 RID: 47093 RVA: 0x00441E96 File Offset: 0x00440096
+		// Token: 0x0600B8C9 RID: 47305 RVA: 0x0044493A File Offset: 0x00442B3A
 		public static Half operator /(Half half1, Half half2)
 		{
 			return (Half)(half1 / half2);
 		}
 
-		// Token: 0x0600B7F6 RID: 47094 RVA: 0x00441EAC File Offset: 0x004400AC
+		// Token: 0x0600B8CA RID: 47306 RVA: 0x00444950 File Offset: 0x00442B50
 		public static bool operator ==(Half half1, Half half2)
 		{
 			return !Half.IsNaN(half1) && half1.value == half2.value;
 		}
 
-		// Token: 0x0600B7F7 RID: 47095 RVA: 0x00441EC6 File Offset: 0x004400C6
+		// Token: 0x0600B8CB RID: 47307 RVA: 0x0044496A File Offset: 0x00442B6A
 		public static bool operator !=(Half half1, Half half2)
 		{
 			return half1.value != half2.value;
 		}
 
-		// Token: 0x0600B7F8 RID: 47096 RVA: 0x00441ED9 File Offset: 0x004400D9
+		// Token: 0x0600B8CC RID: 47308 RVA: 0x0044497D File Offset: 0x00442B7D
 		public static bool operator <(Half half1, Half half2)
 		{
 			return half1 < half2;
 		}
 
-		// Token: 0x0600B7F9 RID: 47097 RVA: 0x00441EEB File Offset: 0x004400EB
+		// Token: 0x0600B8CD RID: 47309 RVA: 0x0044498F File Offset: 0x00442B8F
 		public static bool operator >(Half half1, Half half2)
 		{
 			return half1 > half2;
 		}
 
-		// Token: 0x0600B7FA RID: 47098 RVA: 0x00441EFD File Offset: 0x004400FD
+		// Token: 0x0600B8CE RID: 47310 RVA: 0x004449A1 File Offset: 0x00442BA1
 		public static bool operator <=(Half half1, Half half2)
 		{
 			return half1 == half2 || half1 < half2;
 		}
 
-		// Token: 0x0600B7FB RID: 47099 RVA: 0x00441F11 File Offset: 0x00440111
+		// Token: 0x0600B8CF RID: 47311 RVA: 0x004449B5 File Offset: 0x00442BB5
 		public static bool operator >=(Half half1, Half half2)
 		{
 			return half1 == half2 || half1 > half2;
 		}
 
-		// Token: 0x0600B7FC RID: 47100 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D0 RID: 47312 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(byte value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B7FD RID: 47101 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D1 RID: 47313 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(short value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B7FE RID: 47102 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D2 RID: 47314 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(char value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B7FF RID: 47103 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D3 RID: 47315 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(int value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B800 RID: 47104 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D4 RID: 47316 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(long value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B801 RID: 47105 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D5 RID: 47317 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static explicit operator Half(float value)
 		{
 			return new Half(value);
 		}
 
-		// Token: 0x0600B802 RID: 47106 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8D6 RID: 47318 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static explicit operator Half(double value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B803 RID: 47107 RVA: 0x00441F2E File Offset: 0x0044012E
+		// Token: 0x0600B8D7 RID: 47319 RVA: 0x004449D2 File Offset: 0x00442BD2
 		public static explicit operator Half(decimal value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B804 RID: 47108 RVA: 0x00441F3C File Offset: 0x0044013C
+		// Token: 0x0600B8D8 RID: 47320 RVA: 0x004449E0 File Offset: 0x00442BE0
 		public static explicit operator byte(Half value)
 		{
 			return (byte)value;
 		}
 
-		// Token: 0x0600B805 RID: 47109 RVA: 0x00441F46 File Offset: 0x00440146
+		// Token: 0x0600B8D9 RID: 47321 RVA: 0x004449EA File Offset: 0x00442BEA
 		public static explicit operator char(Half value)
 		{
 			return (char)value;
 		}
 
-		// Token: 0x0600B806 RID: 47110 RVA: 0x00441F50 File Offset: 0x00440150
+		// Token: 0x0600B8DA RID: 47322 RVA: 0x004449F4 File Offset: 0x00442BF4
 		public static explicit operator short(Half value)
 		{
 			return (short)value;
 		}
 
-		// Token: 0x0600B807 RID: 47111 RVA: 0x00441F5A File Offset: 0x0044015A
+		// Token: 0x0600B8DB RID: 47323 RVA: 0x004449FE File Offset: 0x00442BFE
 		public static explicit operator int(Half value)
 		{
 			return (int)value;
 		}
 
-		// Token: 0x0600B808 RID: 47112 RVA: 0x00441F64 File Offset: 0x00440164
+		// Token: 0x0600B8DC RID: 47324 RVA: 0x00444A08 File Offset: 0x00442C08
 		public static explicit operator long(Half value)
 		{
 			return (long)value;
 		}
 
-		// Token: 0x0600B809 RID: 47113 RVA: 0x00441F6E File Offset: 0x0044016E
+		// Token: 0x0600B8DD RID: 47325 RVA: 0x00444A12 File Offset: 0x00442C12
 		public static implicit operator float(Half value)
 		{
 			return HalfHelper.HalfToSingle(value);
 		}
 
-		// Token: 0x0600B80A RID: 47114 RVA: 0x00441F77 File Offset: 0x00440177
+		// Token: 0x0600B8DE RID: 47326 RVA: 0x00444A1B File Offset: 0x00442C1B
 		public static implicit operator double(Half value)
 		{
 			return (double)value;
 		}
 
-		// Token: 0x0600B80B RID: 47115 RVA: 0x00441F81 File Offset: 0x00440181
+		// Token: 0x0600B8DF RID: 47327 RVA: 0x00444A25 File Offset: 0x00442C25
 		public static explicit operator decimal(Half value)
 		{
 			return (decimal)value;
 		}
 
-		// Token: 0x0600B80C RID: 47116 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8E0 RID: 47328 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(sbyte value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B80D RID: 47117 RVA: 0x00441F25 File Offset: 0x00440125
+		// Token: 0x0600B8E1 RID: 47329 RVA: 0x004449C9 File Offset: 0x00442BC9
 		public static implicit operator Half(ushort value)
 		{
 			return new Half((float)value);
 		}
 
-		// Token: 0x0600B80E RID: 47118 RVA: 0x00441F8F File Offset: 0x0044018F
+		// Token: 0x0600B8E2 RID: 47330 RVA: 0x00444A33 File Offset: 0x00442C33
 		public static implicit operator Half(uint value)
 		{
 			return new Half(value);
 		}
 
-		// Token: 0x0600B80F RID: 47119 RVA: 0x00441F8F File Offset: 0x0044018F
+		// Token: 0x0600B8E3 RID: 47331 RVA: 0x00444A33 File Offset: 0x00442C33
 		public static implicit operator Half(ulong value)
 		{
 			return new Half(value);
 		}
 
-		// Token: 0x0600B810 RID: 47120 RVA: 0x00441F99 File Offset: 0x00440199
+		// Token: 0x0600B8E4 RID: 47332 RVA: 0x00444A3D File Offset: 0x00442C3D
 		public static explicit operator sbyte(Half value)
 		{
 			return (sbyte)value;
 		}
 
-		// Token: 0x0600B811 RID: 47121 RVA: 0x00441F46 File Offset: 0x00440146
+		// Token: 0x0600B8E5 RID: 47333 RVA: 0x004449EA File Offset: 0x00442BEA
 		public static explicit operator ushort(Half value)
 		{
 			return (ushort)value;
 		}
 
-		// Token: 0x0600B812 RID: 47122 RVA: 0x00441FA3 File Offset: 0x004401A3
+		// Token: 0x0600B8E6 RID: 47334 RVA: 0x00444A47 File Offset: 0x00442C47
 		public static explicit operator uint(Half value)
 		{
 			return (uint)value;
 		}
 
-		// Token: 0x0600B813 RID: 47123 RVA: 0x00441FAD File Offset: 0x004401AD
+		// Token: 0x0600B8E7 RID: 47335 RVA: 0x00444A51 File Offset: 0x00442C51
 		public static explicit operator ulong(Half value)
 		{
 			return (ulong)value;
 		}
 
-		// Token: 0x0600B814 RID: 47124 RVA: 0x00441FB8 File Offset: 0x004401B8
+		// Token: 0x0600B8E8 RID: 47336 RVA: 0x00444A5C File Offset: 0x00442C5C
 		public int CompareTo(Half other)
 		{
 			int num = 0;
@@ -334,7 +334,7 @@ namespace SharpEXR
 			return num;
 		}
 
-		// Token: 0x0600B815 RID: 47125 RVA: 0x00442018 File Offset: 0x00440218
+		// Token: 0x0600B8E9 RID: 47337 RVA: 0x00444ABC File Offset: 0x00442CBC
 		public int CompareTo(object obj)
 		{
 			int num;
@@ -353,13 +353,13 @@ namespace SharpEXR
 			return num;
 		}
 
-		// Token: 0x0600B816 RID: 47126 RVA: 0x00442051 File Offset: 0x00440251
+		// Token: 0x0600B8EA RID: 47338 RVA: 0x00444AF5 File Offset: 0x00442CF5
 		public bool Equals(Half other)
 		{
 			return other == this || (Half.IsNaN(other) && Half.IsNaN(this));
 		}
 
-		// Token: 0x0600B817 RID: 47127 RVA: 0x00442078 File Offset: 0x00440278
+		// Token: 0x0600B8EB RID: 47339 RVA: 0x00444B1C File Offset: 0x00442D1C
 		public override bool Equals(object obj)
 		{
 			bool flag = false;
@@ -374,37 +374,37 @@ namespace SharpEXR
 			return flag;
 		}
 
-		// Token: 0x0600B818 RID: 47128 RVA: 0x004420BC File Offset: 0x004402BC
+		// Token: 0x0600B8EC RID: 47340 RVA: 0x00444B60 File Offset: 0x00442D60
 		public override int GetHashCode()
 		{
 			return this.value.GetHashCode();
 		}
 
-		// Token: 0x0600B819 RID: 47129 RVA: 0x0004E4CA File Offset: 0x0004C6CA
+		// Token: 0x0600B8ED RID: 47341 RVA: 0x0004E48A File Offset: 0x0004C68A
 		public TypeCode GetTypeCode()
 		{
 			return (TypeCode)255;
 		}
 
-		// Token: 0x0600B81A RID: 47130 RVA: 0x004420C9 File Offset: 0x004402C9
+		// Token: 0x0600B8EE RID: 47342 RVA: 0x00444B6D File Offset: 0x00442D6D
 		public static byte[] GetBytes(Half value)
 		{
 			return BitConverter.GetBytes(value.value);
 		}
 
-		// Token: 0x0600B81B RID: 47131 RVA: 0x004420D6 File Offset: 0x004402D6
+		// Token: 0x0600B8EF RID: 47343 RVA: 0x00444B7A File Offset: 0x00442D7A
 		public static ushort GetBits(Half value)
 		{
 			return value.value;
 		}
 
-		// Token: 0x0600B81C RID: 47132 RVA: 0x004420DE File Offset: 0x004402DE
+		// Token: 0x0600B8F0 RID: 47344 RVA: 0x00444B82 File Offset: 0x00442D82
 		public static Half ToHalf(byte[] value, int startIndex)
 		{
 			return Half.ToHalf((ushort)BitConverter.ToInt16(value, startIndex));
 		}
 
-		// Token: 0x0600B81D RID: 47133 RVA: 0x004420F0 File Offset: 0x004402F0
+		// Token: 0x0600B8F1 RID: 47345 RVA: 0x00444B94 File Offset: 0x00442D94
 		public static Half ToHalf(ushort bits)
 		{
 			return new Half
@@ -413,7 +413,7 @@ namespace SharpEXR
 			};
 		}
 
-		// Token: 0x0600B81E RID: 47134 RVA: 0x0044210E File Offset: 0x0044030E
+		// Token: 0x0600B8F2 RID: 47346 RVA: 0x00444BB2 File Offset: 0x00442DB2
 		public static int Sign(Half value)
 		{
 			if (value < 0)
@@ -431,13 +431,13 @@ namespace SharpEXR
 			return 0;
 		}
 
-		// Token: 0x0600B81F RID: 47135 RVA: 0x0044214A File Offset: 0x0044034A
+		// Token: 0x0600B8F3 RID: 47347 RVA: 0x00444BEE File Offset: 0x00442DEE
 		public static Half Abs(Half value)
 		{
 			return HalfHelper.Abs(value);
 		}
 
-		// Token: 0x0600B820 RID: 47136 RVA: 0x00442152 File Offset: 0x00440352
+		// Token: 0x0600B8F4 RID: 47348 RVA: 0x00444BF6 File Offset: 0x00442DF6
 		public static Half Max(Half value1, Half value2)
 		{
 			if (!(value1 < value2))
@@ -447,7 +447,7 @@ namespace SharpEXR
 			return value2;
 		}
 
-		// Token: 0x0600B821 RID: 47137 RVA: 0x00442160 File Offset: 0x00440360
+		// Token: 0x0600B8F5 RID: 47349 RVA: 0x00444C04 File Offset: 0x00442E04
 		public static Half Min(Half value1, Half value2)
 		{
 			if (!(value1 < value2))
@@ -457,55 +457,55 @@ namespace SharpEXR
 			return value1;
 		}
 
-		// Token: 0x0600B822 RID: 47138 RVA: 0x0044216E File Offset: 0x0044036E
+		// Token: 0x0600B8F6 RID: 47350 RVA: 0x00444C12 File Offset: 0x00442E12
 		public static bool IsNaN(Half half)
 		{
 			return HalfHelper.IsNaN(half);
 		}
 
-		// Token: 0x0600B823 RID: 47139 RVA: 0x00442176 File Offset: 0x00440376
+		// Token: 0x0600B8F7 RID: 47351 RVA: 0x00444C1A File Offset: 0x00442E1A
 		public static bool IsInfinity(Half half)
 		{
 			return HalfHelper.IsInfinity(half);
 		}
 
-		// Token: 0x0600B824 RID: 47140 RVA: 0x0044217E File Offset: 0x0044037E
+		// Token: 0x0600B8F8 RID: 47352 RVA: 0x00444C22 File Offset: 0x00442E22
 		public static bool IsNegativeInfinity(Half half)
 		{
 			return HalfHelper.IsNegativeInfinity(half);
 		}
 
-		// Token: 0x0600B825 RID: 47141 RVA: 0x00442186 File Offset: 0x00440386
+		// Token: 0x0600B8F9 RID: 47353 RVA: 0x00444C2A File Offset: 0x00442E2A
 		public static bool IsPositiveInfinity(Half half)
 		{
 			return HalfHelper.IsPositiveInfinity(half);
 		}
 
-		// Token: 0x0600B826 RID: 47142 RVA: 0x0044218E File Offset: 0x0044038E
+		// Token: 0x0600B8FA RID: 47354 RVA: 0x00444C32 File Offset: 0x00442E32
 		public static Half Parse(string value)
 		{
 			return (Half)float.Parse(value, CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600B827 RID: 47143 RVA: 0x004421A0 File Offset: 0x004403A0
+		// Token: 0x0600B8FB RID: 47355 RVA: 0x00444C44 File Offset: 0x00442E44
 		public static Half Parse(string value, IFormatProvider provider)
 		{
 			return (Half)float.Parse(value, provider);
 		}
 
-		// Token: 0x0600B828 RID: 47144 RVA: 0x004421AE File Offset: 0x004403AE
+		// Token: 0x0600B8FC RID: 47356 RVA: 0x00444C52 File Offset: 0x00442E52
 		public static Half Parse(string value, NumberStyles style)
 		{
 			return (Half)float.Parse(value, style, CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600B829 RID: 47145 RVA: 0x004421C1 File Offset: 0x004403C1
+		// Token: 0x0600B8FD RID: 47357 RVA: 0x00444C65 File Offset: 0x00442E65
 		public static Half Parse(string value, NumberStyles style, IFormatProvider provider)
 		{
 			return (Half)float.Parse(value, style, provider);
 		}
 
-		// Token: 0x0600B82A RID: 47146 RVA: 0x004421D0 File Offset: 0x004403D0
+		// Token: 0x0600B8FE RID: 47358 RVA: 0x00444C74 File Offset: 0x00442E74
 		public static bool TryParse(string value, out Half result)
 		{
 			float num;
@@ -518,7 +518,7 @@ namespace SharpEXR
 			return false;
 		}
 
-		// Token: 0x0600B82B RID: 47147 RVA: 0x00442200 File Offset: 0x00440400
+		// Token: 0x0600B8FF RID: 47359 RVA: 0x00444CA4 File Offset: 0x00442EA4
 		public static bool TryParse(string value, NumberStyles style, IFormatProvider provider, out Half result)
 		{
 			bool flag = false;
@@ -535,171 +535,171 @@ namespace SharpEXR
 			return flag;
 		}
 
-		// Token: 0x0600B82C RID: 47148 RVA: 0x00442234 File Offset: 0x00440434
+		// Token: 0x0600B900 RID: 47360 RVA: 0x00444CD8 File Offset: 0x00442ED8
 		public override string ToString()
 		{
 			return this.ToString(CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600B82D RID: 47149 RVA: 0x0044225C File Offset: 0x0044045C
+		// Token: 0x0600B901 RID: 47361 RVA: 0x00444D00 File Offset: 0x00442F00
 		public string ToString(IFormatProvider formatProvider)
 		{
 			return this.ToString(formatProvider);
 		}
 
-		// Token: 0x0600B82E RID: 47150 RVA: 0x00442280 File Offset: 0x00440480
+		// Token: 0x0600B902 RID: 47362 RVA: 0x00444D24 File Offset: 0x00442F24
 		public string ToString(string format)
 		{
 			return this.ToString(format, CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600B82F RID: 47151 RVA: 0x004422A8 File Offset: 0x004404A8
+		// Token: 0x0600B903 RID: 47363 RVA: 0x00444D4C File Offset: 0x00442F4C
 		public string ToString(string format, IFormatProvider formatProvider)
 		{
 			return this.ToString(format, formatProvider);
 		}
 
-		// Token: 0x0600B830 RID: 47152 RVA: 0x004422CB File Offset: 0x004404CB
+		// Token: 0x0600B904 RID: 47364 RVA: 0x00444D6F File Offset: 0x00442F6F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float System.IConvertible.ToSingle(IFormatProvider provider)
 		{
 			return this;
 		}
 
-		// Token: 0x0600B831 RID: 47153 RVA: 0x004422D9 File Offset: 0x004404D9
+		// Token: 0x0600B905 RID: 47365 RVA: 0x00444D7D File Offset: 0x00442F7D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TypeCode System.IConvertible.GetTypeCode()
 		{
 			return this.GetTypeCode();
 		}
 
-		// Token: 0x0600B832 RID: 47154 RVA: 0x004422E1 File Offset: 0x004404E1
+		// Token: 0x0600B906 RID: 47366 RVA: 0x00444D85 File Offset: 0x00442F85
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool System.IConvertible.ToBoolean(IFormatProvider provider)
 		{
 			return Convert.ToBoolean(this);
 		}
 
-		// Token: 0x0600B833 RID: 47155 RVA: 0x004422F4 File Offset: 0x004404F4
+		// Token: 0x0600B907 RID: 47367 RVA: 0x00444D98 File Offset: 0x00442F98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public byte System.IConvertible.ToByte(IFormatProvider provider)
 		{
 			return Convert.ToByte(this);
 		}
 
-		// Token: 0x0600B834 RID: 47156 RVA: 0x00442307 File Offset: 0x00440507
+		// Token: 0x0600B908 RID: 47368 RVA: 0x00444DAB File Offset: 0x00442FAB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public char System.IConvertible.ToChar(IFormatProvider provider)
 		{
 			throw new InvalidCastException(string.Format(CultureInfo.CurrentCulture, "Invalid cast from '{0}' to '{1}'.", "Half", "Char"));
 		}
 
-		// Token: 0x0600B835 RID: 47157 RVA: 0x00442327 File Offset: 0x00440527
+		// Token: 0x0600B909 RID: 47369 RVA: 0x00444DCB File Offset: 0x00442FCB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime System.IConvertible.ToDateTime(IFormatProvider provider)
 		{
 			throw new InvalidCastException(string.Format(CultureInfo.CurrentCulture, "Invalid cast from '{0}' to '{1}'.", "Half", "DateTime"));
 		}
 
-		// Token: 0x0600B836 RID: 47158 RVA: 0x00442347 File Offset: 0x00440547
+		// Token: 0x0600B90A RID: 47370 RVA: 0x00444DEB File Offset: 0x00442FEB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public decimal System.IConvertible.ToDecimal(IFormatProvider provider)
 		{
 			return Convert.ToDecimal(this);
 		}
 
-		// Token: 0x0600B837 RID: 47159 RVA: 0x0044235A File Offset: 0x0044055A
+		// Token: 0x0600B90B RID: 47371 RVA: 0x00444DFE File Offset: 0x00442FFE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public double System.IConvertible.ToDouble(IFormatProvider provider)
 		{
 			return Convert.ToDouble(this);
 		}
 
-		// Token: 0x0600B838 RID: 47160 RVA: 0x0044236D File Offset: 0x0044056D
+		// Token: 0x0600B90C RID: 47372 RVA: 0x00444E11 File Offset: 0x00443011
 		[PublicizedFrom(EAccessModifier.Private)]
 		public short System.IConvertible.ToInt16(IFormatProvider provider)
 		{
 			return Convert.ToInt16(this);
 		}
 
-		// Token: 0x0600B839 RID: 47161 RVA: 0x00442380 File Offset: 0x00440580
+		// Token: 0x0600B90D RID: 47373 RVA: 0x00444E24 File Offset: 0x00443024
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int System.IConvertible.ToInt32(IFormatProvider provider)
 		{
 			return Convert.ToInt32(this);
 		}
 
-		// Token: 0x0600B83A RID: 47162 RVA: 0x00442393 File Offset: 0x00440593
+		// Token: 0x0600B90E RID: 47374 RVA: 0x00444E37 File Offset: 0x00443037
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long System.IConvertible.ToInt64(IFormatProvider provider)
 		{
 			return Convert.ToInt64(this);
 		}
 
-		// Token: 0x0600B83B RID: 47163 RVA: 0x004423A6 File Offset: 0x004405A6
+		// Token: 0x0600B90F RID: 47375 RVA: 0x00444E4A File Offset: 0x0044304A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sbyte System.IConvertible.ToSByte(IFormatProvider provider)
 		{
 			return Convert.ToSByte(this);
 		}
 
-		// Token: 0x0600B83C RID: 47164 RVA: 0x004423B9 File Offset: 0x004405B9
+		// Token: 0x0600B910 RID: 47376 RVA: 0x00444E5D File Offset: 0x0044305D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string System.IConvertible.ToString(IFormatProvider provider)
 		{
 			return Convert.ToString(this, CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600B83D RID: 47165 RVA: 0x004423D1 File Offset: 0x004405D1
+		// Token: 0x0600B911 RID: 47377 RVA: 0x00444E75 File Offset: 0x00443075
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object System.IConvertible.ToType(Type conversionType, IFormatProvider provider)
 		{
 			return ((IConvertible)this).ToType(conversionType, provider);
 		}
 
-		// Token: 0x0600B83E RID: 47166 RVA: 0x004423EB File Offset: 0x004405EB
+		// Token: 0x0600B912 RID: 47378 RVA: 0x00444E8F File Offset: 0x0044308F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ushort System.IConvertible.ToUInt16(IFormatProvider provider)
 		{
 			return Convert.ToUInt16(this);
 		}
 
-		// Token: 0x0600B83F RID: 47167 RVA: 0x004423FE File Offset: 0x004405FE
+		// Token: 0x0600B913 RID: 47379 RVA: 0x00444EA2 File Offset: 0x004430A2
 		[PublicizedFrom(EAccessModifier.Private)]
 		public uint System.IConvertible.ToUInt32(IFormatProvider provider)
 		{
 			return Convert.ToUInt32(this);
 		}
 
-		// Token: 0x0600B840 RID: 47168 RVA: 0x00442411 File Offset: 0x00440611
+		// Token: 0x0600B914 RID: 47380 RVA: 0x00444EB5 File Offset: 0x004430B5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong System.IConvertible.ToUInt64(IFormatProvider provider)
 		{
 			return Convert.ToUInt64(this);
 		}
 
-		// Token: 0x04008942 RID: 35138
+		// Token: 0x040089F5 RID: 35317
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[NonSerialized]
 		public ushort value;
 
-		// Token: 0x04008943 RID: 35139
+		// Token: 0x040089F6 RID: 35318
 		public static readonly Half Epsilon = Half.ToHalf(1);
 
-		// Token: 0x04008944 RID: 35140
+		// Token: 0x040089F7 RID: 35319
 		public static readonly Half MaxValue = Half.ToHalf(31743);
 
-		// Token: 0x04008945 RID: 35141
+		// Token: 0x040089F8 RID: 35320
 		public static readonly Half MinValue = Half.ToHalf(64511);
 
-		// Token: 0x04008946 RID: 35142
+		// Token: 0x040089F9 RID: 35321
 		public static readonly Half NaN = Half.ToHalf(65024);
 
-		// Token: 0x04008947 RID: 35143
+		// Token: 0x040089FA RID: 35322
 		public static readonly Half NegativeInfinity = Half.ToHalf(64512);
 
-		// Token: 0x04008948 RID: 35144
+		// Token: 0x040089FB RID: 35323
 		public static readonly Half PositiveInfinity = Half.ToHalf(31744);
 	}
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x0200134C RID: 4940
+// Token: 0x0200135E RID: 4958
 public class CameraMatrixOverride : MonoBehaviour
 {
-	// Token: 0x06009BBE RID: 39870 RVA: 0x003AD354 File Offset: 0x003AB554
+	// Token: 0x06009C16 RID: 39958 RVA: 0x003AF758 File Offset: 0x003AD958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -19,7 +19,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		this.originalNearClip = this.referenceCamera.nearClipPlane;
 	}
 
-	// Token: 0x06009BBF RID: 39871 RVA: 0x003AD3A0 File Offset: 0x003AB5A0
+	// Token: 0x06009C17 RID: 39959 RVA: 0x003AF7A4 File Offset: 0x003AD9A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -31,7 +31,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		this.RestoreChildSettings();
 	}
 
-	// Token: 0x06009BC0 RID: 39872 RVA: 0x003AD3C8 File Offset: 0x003AB5C8
+	// Token: 0x06009C18 RID: 39960 RVA: 0x003AF7CC File Offset: 0x003AD9CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRendererList()
 	{
@@ -103,7 +103,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		this.renderersToRestore.Clear();
 	}
 
-	// Token: 0x06009BC1 RID: 39873 RVA: 0x003AD698 File Offset: 0x003AB898
+	// Token: 0x06009C19 RID: 39961 RVA: 0x003AFA9C File Offset: 0x003ADC9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -113,7 +113,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC2 RID: 39874 RVA: 0x003AD6AD File Offset: 0x003AB8AD
+	// Token: 0x06009C1A RID: 39962 RVA: 0x003AFAB1 File Offset: 0x003ADCB1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreCull()
 	{
@@ -123,7 +123,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC3 RID: 39875 RVA: 0x003AD6C4 File Offset: 0x003AB8C4
+	// Token: 0x06009C1B RID: 39963 RVA: 0x003AFAC8 File Offset: 0x003ADCC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRender()
 	{
@@ -182,7 +182,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC4 RID: 39876 RVA: 0x003AD8F0 File Offset: 0x003ABAF0
+	// Token: 0x06009C1C RID: 39964 RVA: 0x003AFCF4 File Offset: 0x003ADEF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RestoreChildSettings()
 	{
@@ -205,7 +205,7 @@ public class CameraMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC5 RID: 39877 RVA: 0x003AD988 File Offset: 0x003ABB88
+	// Token: 0x06009C1D RID: 39965 RVA: 0x003AFD8C File Offset: 0x003ADF8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPostRender()
 	{
@@ -219,123 +219,123 @@ public class CameraMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007552 RID: 30034
+	// Token: 0x04007593 RID: 30099
 	[Tooltip("The overridden FoV to use when rendering any child Renderers in the hierarchy beneath the Camera this script is attached to.")]
 	public float fov = 45f;
 
-	// Token: 0x04007553 RID: 30035
+	// Token: 0x04007594 RID: 30100
 	[Range(0.01f, 1f)]
 	[Tooltip("The overridden near-clip distance to use when this script is enabled. Note this applies to the Camera as a whole, rather than specifically targeting child Renderers.")]
 	public float nearClipOverride = 0.01f;
 
-	// Token: 0x04007554 RID: 30036
+	// Token: 0x04007595 RID: 30101
 	[Range(1E-45f, 8f)]
 	[Tooltip("A value of 1 results in normal rendering behaviour. Higher values effectively squash the depth of child Renderers towards the camera; this reduces the likelihood of clipping into environment geometry, but can distort certain screen effects such as reflections. A value of 2 seems to provide a good balance between reducing clipping and minimising distortion of screen effects.")]
 	public float nearClipFactor = 2f;
 
-	// Token: 0x04007555 RID: 30037
+	// Token: 0x04007596 RID: 30102
 	[Tooltip("An assortment of parameters left over from earlier prototyping. They remain exposed for debug purposes if ever required; otherwise it is not recommended to change them away from their default values.")]
 	public CameraMatrixOverride.AdvancedSettings advancedSettings = new CameraMatrixOverride.AdvancedSettings();
 
-	// Token: 0x04007556 RID: 30038
+	// Token: 0x04007597 RID: 30103
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera referenceCamera;
 
-	// Token: 0x04007557 RID: 30039
+	// Token: 0x04007598 RID: 30104
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<Renderer, CameraMatrixOverride.RendererSettings> rendererSettingsMap = new Dictionary<Renderer, CameraMatrixOverride.RendererSettings>();
 
-	// Token: 0x04007558 RID: 30040
+	// Token: 0x04007599 RID: 30105
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Renderer> overriddenRenderers = new List<Renderer>();
 
-	// Token: 0x04007559 RID: 30041
+	// Token: 0x0400759A RID: 30106
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public HashSet<Renderer> renderersToRestore = new HashSet<Renderer>();
 
-	// Token: 0x0400755A RID: 30042
+	// Token: 0x0400759B RID: 30107
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float originalNearClip = 0.0751f;
 
-	// Token: 0x0200134D RID: 4941
+	// Token: 0x0200135F RID: 4959
 	public enum ProjectionMode
 	{
-		// Token: 0x0400755C RID: 30044
+		// Token: 0x0400759D RID: 30109
 		Custom,
-		// Token: 0x0400755D RID: 30045
+		// Token: 0x0400759E RID: 30110
 		Reference,
-		// Token: 0x0400755E RID: 30046
+		// Token: 0x0400759F RID: 30111
 		ReferenceNonJittered
 	}
 
-	// Token: 0x0200134E RID: 4942
+	// Token: 0x02001360 RID: 4960
 	public enum UpdateTiming
 	{
-		// Token: 0x04007560 RID: 30048
+		// Token: 0x040075A1 RID: 30113
 		LateUpdate,
-		// Token: 0x04007561 RID: 30049
+		// Token: 0x040075A2 RID: 30114
 		OnPreCull,
-		// Token: 0x04007562 RID: 30050
+		// Token: 0x040075A3 RID: 30115
 		OnPreRender,
-		// Token: 0x04007563 RID: 30051
+		// Token: 0x040075A4 RID: 30116
 		None
 	}
 
-	// Token: 0x0200134F RID: 4943
+	// Token: 0x02001361 RID: 4961
 	[Serializable]
 	public class AdvancedSettings
 	{
-		// Token: 0x04007564 RID: 30052
+		// Token: 0x040075A5 RID: 30117
 		public bool enableNearClipOverride = true;
 
-		// Token: 0x04007565 RID: 30053
+		// Token: 0x040075A6 RID: 30118
 		public bool enableChildShadows;
 
-		// Token: 0x04007566 RID: 30054
+		// Token: 0x040075A7 RID: 30119
 		public bool enableBoundsPadding = true;
 
-		// Token: 0x04007567 RID: 30055
+		// Token: 0x040075A8 RID: 30120
 		public CameraMatrixOverride.ProjectionMode projectionMode;
 
-		// Token: 0x04007568 RID: 30056
+		// Token: 0x040075A9 RID: 30121
 		public CameraMatrixOverride.UpdateTiming updateTiming = CameraMatrixOverride.UpdateTiming.OnPreCull;
 
-		// Token: 0x04007569 RID: 30057
+		// Token: 0x040075AA RID: 30122
 		[Range(1E-45f, 2f)]
 		public float depthScaleFactor = 1f;
 
-		// Token: 0x0400756A RID: 30058
+		// Token: 0x040075AB RID: 30123
 		public float farClipFactor = 1f;
 
-		// Token: 0x0400756B RID: 30059
+		// Token: 0x040075AC RID: 30124
 		public float jitterFactor = 1f;
 
-		// Token: 0x0400756C RID: 30060
+		// Token: 0x040075AD RID: 30125
 		public float boundsPadding = 1f;
 	}
 
-	// Token: 0x02001350 RID: 4944
+	// Token: 0x02001362 RID: 4962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class RendererSettings
 	{
-		// Token: 0x0400756D RID: 30061
+		// Token: 0x040075AE RID: 30126
 		public ShadowCastingMode originalShadowCastingMode;
 
-		// Token: 0x0400756E RID: 30062
+		// Token: 0x040075AF RID: 30127
 		public MaterialPropertyBlock originalProperties;
 
-		// Token: 0x0400756F RID: 30063
+		// Token: 0x040075B0 RID: 30128
 		public MaterialPropertyBlock overriddenProperties;
 
-		// Token: 0x04007570 RID: 30064
+		// Token: 0x040075B1 RID: 30129
 		public bool boundsDirty;
 
-		// Token: 0x04007571 RID: 30065
+		// Token: 0x040075B2 RID: 30130
 		public bool shadowModeDirty;
 	}
 }

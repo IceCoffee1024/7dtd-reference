@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001944 RID: 6468
+	// Token: 0x02001975 RID: 6517
 	[Preserve]
 	public class RequirementObjectiveGroupBlockUpgrade : BaseRequirementObjectiveGroup
 	{
-		// Token: 0x0600C7D4 RID: 51156 RVA: 0x00493626 File Offset: 0x00491826
+		// Token: 0x0600C8E8 RID: 51432 RVA: 0x0049701A File Offset: 0x0049521A
 		public RequirementObjectiveGroupBlockUpgrade(string itemID, string neededResourceID, int neededResourceCount)
 		{
 			this.ItemID = itemID;
@@ -16,7 +16,7 @@ namespace Challenges
 			this.NeededResourceCount = neededResourceCount;
 		}
 
-		// Token: 0x0600C7D5 RID: 51157 RVA: 0x00493660 File Offset: 0x00491860
+		// Token: 0x0600C8E9 RID: 51433 RVA: 0x00497054 File Offset: 0x00495254
 		public override void CreateRequirements()
 		{
 			if (this.PhaseList == null)
@@ -66,7 +66,7 @@ namespace Challenges
 			this.PhaseList.Add(requirementGroupPhase);
 		}
 
-		// Token: 0x0600C7D6 RID: 51158 RVA: 0x004937C4 File Offset: 0x004919C4
+		// Token: 0x0600C8EA RID: 51434 RVA: 0x004971B8 File Offset: 0x004953B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RequirementGroupPhase AddIngredientGatheringReqs()
 		{
@@ -110,7 +110,7 @@ namespace Challenges
 			return requirementGroupPhase;
 		}
 
-		// Token: 0x0600C7D7 RID: 51159 RVA: 0x00493914 File Offset: 0x00491B14
+		// Token: 0x0600C8EB RID: 51435 RVA: 0x00497308 File Offset: 0x00495508
 		public override bool HasPrerequisiteCondition()
 		{
 			EntityPlayerLocal player = this.Owner.Owner.Player;
@@ -120,21 +120,21 @@ namespace Challenges
 			return !playerInventory.HasItem(new ItemStack(ItemClass.GetItem(this.NeededResourceID, false), this.NeededResourceCount)) || (!playerInventory.HasItem(ItemClass.GetItem(this.ItemID, false)) && !this.CheckDragDropItem(uiforPlayer.xui.DragAndDropWindow.CurrentStack)) || holdingItem.Name != this.ItemID;
 		}
 
-		// Token: 0x0600C7D8 RID: 51160 RVA: 0x004939CD File Offset: 0x00491BCD
+		// Token: 0x0600C8EC RID: 51436 RVA: 0x004973C1 File Offset: 0x004955C1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckResourceDragDropItem(ItemStack stack)
 		{
 			return !stack.IsEmpty() && stack.itemValue.ItemClass.GetItemName() == this.NeededResourceID && stack.count >= this.NeededResourceCount;
 		}
 
-		// Token: 0x0600C7D9 RID: 51161 RVA: 0x00493A09 File Offset: 0x00491C09
+		// Token: 0x0600C8ED RID: 51437 RVA: 0x004973FD File Offset: 0x004955FD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckDragDropItem(ItemStack stack)
 		{
 			return !stack.IsEmpty() && stack.itemValue.ItemClass.GetItemName() == this.ItemID;
 		}
 
-		// Token: 0x0600C7DA RID: 51162 RVA: 0x00493A30 File Offset: 0x00491C30
+		// Token: 0x0600C8EE RID: 51438 RVA: 0x00497424 File Offset: 0x00495624
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool CheckPhaseStatus(int index)
 		{
@@ -171,22 +171,22 @@ namespace Challenges
 			return true;
 		}
 
-		// Token: 0x0600C7DB RID: 51163 RVA: 0x00493C4C File Offset: 0x00491E4C
+		// Token: 0x0600C8EF RID: 51439 RVA: 0x00497640 File Offset: 0x00495840
 		public override BaseRequirementObjectiveGroup Clone()
 		{
 			return new RequirementObjectiveGroupBlockUpgrade(this.ItemID, this.NeededResourceID, this.NeededResourceCount);
 		}
 
-		// Token: 0x0400965A RID: 38490
+		// Token: 0x04009743 RID: 38723
 		public string ItemID = "";
 
-		// Token: 0x0400965B RID: 38491
+		// Token: 0x04009744 RID: 38724
 		public string NeededResourceID = "";
 
-		// Token: 0x0400965C RID: 38492
+		// Token: 0x04009745 RID: 38725
 		public int NeededResourceCount = 1;
 
-		// Token: 0x0400965D RID: 38493
+		// Token: 0x04009746 RID: 38726
 		public Recipe ResourceRecipe;
 	}
 }

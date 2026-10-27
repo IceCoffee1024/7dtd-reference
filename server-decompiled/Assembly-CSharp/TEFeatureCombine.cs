@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class TEFeatureCombine : TEFeatureAbs, IFeatureSavedInPrefab
 {
-	// Token: 0x06000B00 RID: 2816 RVA: 0x00046E5C File Offset: 0x0004505C
+	// Token: 0x06000B00 RID: 2816 RVA: 0x00046E1C File Offset: 0x0004501C
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -17,21 +17,21 @@ public class TEFeatureCombine : TEFeatureAbs, IFeatureSavedInPrefab
 		props.ParseString(TEFeatureCombine.PropCombineCompleteSound, ref this.combineCompleteSound);
 	}
 
-	// Token: 0x06000B01 RID: 2817 RVA: 0x00046EA9 File Offset: 0x000450A9
+	// Token: 0x06000B01 RID: 2817 RVA: 0x00046E69 File Offset: 0x00045069
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
 		return _blockValue.Block.GetLocalizedBlockName() + "\n" + Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x06000B02 RID: 2818 RVA: 0x00046EDD File Offset: 0x000450DD
+	// Token: 0x06000B02 RID: 2818 RVA: 0x00046E9D File Offset: 0x0004509D
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
 		_addCallback(new BlockActivationCommand("Open", "campfire", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000B03 RID: 2819 RVA: 0x00046F05 File Offset: 0x00045105
+	// Token: 0x06000B03 RID: 2819 RVA: 0x00046EC5 File Offset: 0x000450C5
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -42,7 +42,7 @@ public class TEFeatureCombine : TEFeatureAbs, IFeatureSavedInPrefab
 		return true;
 	}
 
-	// Token: 0x06000B04 RID: 2820 RVA: 0x00046F23 File Offset: 0x00045123
+	// Token: 0x06000B04 RID: 2820 RVA: 0x00046EE3 File Offset: 0x000450E3
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -55,20 +55,20 @@ public class TEFeatureCombine : TEFeatureAbs, IFeatureSavedInPrefab
 		return false;
 	}
 
-	// Token: 0x06000B05 RID: 2821 RVA: 0x00046F58 File Offset: 0x00045158
+	// Token: 0x06000B05 RID: 2821 RVA: 0x00046F18 File Offset: 0x00045118
 	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		this.ShowUI(_success);
 		return true;
 	}
 
-	// Token: 0x06000B06 RID: 2822 RVA: 0x00046F64 File Offset: 0x00045164
+	// Token: 0x06000B06 RID: 2822 RVA: 0x00046F24 File Offset: 0x00045124
 	public override void OnUnlockedServer(int _unlockingPlayerID, ushort _channel)
 	{
 		Manager.BroadcastPlayByLocalPlayer(base.ToWorldPos().ToVector3() + Vector3.one * 0.5f, this.closeSound);
 	}
 
-	// Token: 0x06000B07 RID: 2823 RVA: 0x00046FA0 File Offset: 0x000451A0
+	// Token: 0x06000B07 RID: 2823 RVA: 0x00046F60 File Offset: 0x00045160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowUI(bool _lockGranted)
 	{
@@ -83,13 +83,13 @@ public class TEFeatureCombine : TEFeatureAbs, IFeatureSavedInPrefab
 		Manager.BroadcastPlayByLocalPlayer(base.ToWorldPos().ToVector3() + Vector3.one * 0.5f, this.openSound);
 	}
 
-	// Token: 0x06000B08 RID: 2824 RVA: 0x00047044 File Offset: 0x00045244
+	// Token: 0x06000B08 RID: 2824 RVA: 0x00047004 File Offset: 0x00045204
 	public void HandlePlayComplete()
 	{
 		Manager.BroadcastPlayByLocalPlayer(base.ToWorldPos().ToVector3() + Vector3.one * 0.5f, this.combineCompleteSound);
 	}
 
-	// Token: 0x06000B09 RID: 2825 RVA: 0x00047080 File Offset: 0x00045280
+	// Token: 0x06000B09 RID: 2825 RVA: 0x00047040 File Offset: 0x00045240
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{

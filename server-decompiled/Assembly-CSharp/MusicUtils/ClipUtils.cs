@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace MusicUtils
 {
-	// Token: 0x02001A38 RID: 6712
+	// Token: 0x02001A69 RID: 6761
 	public static class ClipUtils
 	{
-		// Token: 0x0600CC4E RID: 52302 RVA: 0x004A9A1F File Offset: 0x004A7C1F
+		// Token: 0x0600CD62 RID: 52578 RVA: 0x004AD51B File Offset: 0x004AB71B
 		public static AudioClip LoadClipImmediate(string _path)
 		{
 			return LoadManager.LoadAsset<AudioClip>(_path, null, null, false, true, false).Asset;
 		}
 
-		// Token: 0x0600CC4F RID: 52303 RVA: 0x004A9A31 File Offset: 0x004A7C31
+		// Token: 0x0600CD63 RID: 52579 RVA: 0x004AD52D File Offset: 0x004AB72D
 		public static IEnumerator LoadClipFrom(string _path, Func<AudioClip, float[]> _onAudioClipLoad, Action _onFinish)
 		{
 			LoadManager.AssetRequestTask<AudioClip> req = LoadManager.LoadAsset<AudioClip>(_path, null, null, false, false, false);
@@ -29,7 +29,7 @@ namespace MusicUtils
 			yield break;
 		}
 
-		// Token: 0x0600CC50 RID: 52304 RVA: 0x004A9A4E File Offset: 0x004A7C4E
+		// Token: 0x0600CD64 RID: 52580 RVA: 0x004AD54A File Offset: 0x004AB74A
 		public static IEnumerator StripClip(AudioClip _clip, float[] _data)
 		{
 			float[] buffer = MemoryPools.poolFloat.Alloc(44100);

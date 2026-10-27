@@ -2,10 +2,10 @@
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001243 RID: 4675
+// Token: 0x02001255 RID: 4693
 public class GUIHUDEntityName : MonoBehaviour
 {
-	// Token: 0x06009511 RID: 38161 RVA: 0x003867E0 File Offset: 0x003849E0
+	// Token: 0x06009568 RID: 38248 RVA: 0x00388BDC File Offset: 0x00386DDC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -47,7 +47,7 @@ public class GUIHUDEntityName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009512 RID: 38162 RVA: 0x00386971 File Offset: 0x00384B71
+	// Token: 0x06009569 RID: 38249 RVA: 0x00388D6D File Offset: 0x00386F6D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDestroy()
 	{
@@ -59,7 +59,7 @@ public class GUIHUDEntityName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009513 RID: 38163 RVA: 0x0038699C File Offset: 0x00384B9C
+	// Token: 0x0600956A RID: 38250 RVA: 0x00388D98 File Offset: 0x00386F98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void findRenderers()
 	{
@@ -73,7 +73,7 @@ public class GUIHUDEntityName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009514 RID: 38164 RVA: 0x003869E0 File Offset: 0x00384BE0
+	// Token: 0x0600956B RID: 38251 RVA: 0x00388DDC File Offset: 0x00386FDC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -225,7 +225,7 @@ public class GUIHUDEntityName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009515 RID: 38165 RVA: 0x00386F71 File Offset: 0x00385171
+	// Token: 0x0600956C RID: 38252 RVA: 0x0038936D File Offset: 0x0038756D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setActiveIfDifferent(bool _active)
 	{
@@ -235,77 +235,77 @@ public class GUIHUDEntityName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04006FAC RID: 28588
+	// Token: 0x04006FED RID: 28653
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cRaycastFrameDelay = 5;
 
-	// Token: 0x04006FAD RID: 28589
+	// Token: 0x04006FEE RID: 28654
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cVisibleDistance = 8;
 
-	// Token: 0x04006FAE RID: 28590
+	// Token: 0x04006FEF RID: 28655
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cHeadOffset = 0.6f;
 
-	// Token: 0x04006FAF RID: 28591
+	// Token: 0x04006FF0 RID: 28656
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive entity;
 
-	// Token: 0x04006FB0 RID: 28592
+	// Token: 0x04006FF1 RID: 28657
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayer entityPlayer;
 
-	// Token: 0x04006FB1 RID: 28593
+	// Token: 0x04006FF2 RID: 28658
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Renderer[] renderers;
 
-	// Token: 0x04006FB2 RID: 28594
+	// Token: 0x04006FF3 RID: 28659
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int updatePhysicsVisibilityCounter;
 
-	// Token: 0x04006FB3 RID: 28595
+	// Token: 0x04006FF4 RID: 28660
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bShowHUDText;
 
-	// Token: 0x04006FB4 RID: 28596
+	// Token: 0x04006FF5 RID: 28661
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bLastShowHUDText;
 
-	// Token: 0x04006FB5 RID: 28597
+	// Token: 0x04006FF6 RID: 28662
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float hideCountdownTime;
 
-	// Token: 0x04006FB6 RID: 28598
+	// Token: 0x04006FF7 RID: 28663
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameManager gameManager;
 
-	// Token: 0x04006FB7 RID: 28599
+	// Token: 0x04006FF8 RID: 28664
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Camera mainCamera;
 
-	// Token: 0x04006FB8 RID: 28600
+	// Token: 0x04006FF9 RID: 28665
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGuiHUDText hudText;
 
-	// Token: 0x04006FB9 RID: 28601
+	// Token: 0x04006FFA RID: 28666
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject hudTextObj;
 
-	// Token: 0x04006FBA RID: 28602
+	// Token: 0x04006FFB RID: 28667
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGuiUIFollowTarget followTarget;

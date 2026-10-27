@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012AE RID: 4782
+// Token: 0x020012C0 RID: 4800
 public class NGuiButtonOnClickHandler : MonoBehaviour
 {
-	// Token: 0x060097A0 RID: 38816 RVA: 0x00390BFA File Offset: 0x0038EDFA
+	// Token: 0x060097F8 RID: 38904 RVA: 0x00393002 File Offset: 0x00391202
 	public virtual void OnClick()
 	{
 		if (this.OnClickDelegate != null)
@@ -13,7 +13,7 @@ public class NGuiButtonOnClickHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097A1 RID: 38817 RVA: 0x00390C15 File Offset: 0x0038EE15
+	// Token: 0x060097F9 RID: 38905 RVA: 0x0039301D File Offset: 0x0039121D
 	public virtual void OnDoubleClick()
 	{
 		if (this.OnDoubleClickDelegate != null)
@@ -22,7 +22,7 @@ public class NGuiButtonOnClickHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097A2 RID: 38818 RVA: 0x00390C30 File Offset: 0x0038EE30
+	// Token: 0x060097FA RID: 38906 RVA: 0x00393038 File Offset: 0x00391238
 	public void OnHover(bool _isOver)
 	{
 		if (this.OnHoverDelegate != null)
@@ -31,7 +31,7 @@ public class NGuiButtonOnClickHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097A3 RID: 38819 RVA: 0x00390C4C File Offset: 0x0038EE4C
+	// Token: 0x060097FB RID: 38907 RVA: 0x00393054 File Offset: 0x00391254
 	public void OnIsHeld()
 	{
 		if (this.OnIsHeldDelegate != null)
@@ -40,15 +40,15 @@ public class NGuiButtonOnClickHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007175 RID: 29045
+	// Token: 0x040071B6 RID: 29110
 	public INGuiButtonOnClick OnClickDelegate;
 
-	// Token: 0x04007176 RID: 29046
+	// Token: 0x040071B7 RID: 29111
 	public INGuiButtonOnDoubleClick OnDoubleClickDelegate;
 
-	// Token: 0x04007177 RID: 29047
+	// Token: 0x040071B8 RID: 29112
 	public INGuiButtonOnHover OnHoverDelegate;
 
-	// Token: 0x04007178 RID: 29048
+	// Token: 0x040071B9 RID: 29113
 	public INGuiButtonOnIsHeld OnIsHeldDelegate;
 }

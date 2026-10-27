@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001407 RID: 5127
+// Token: 0x02001419 RID: 5145
 [Preserve]
 [AttributeUsage(AttributeTargets.Class)]
 public class DoNotTouchSerializableFlagsAttribute : Attribute

@@ -1,45 +1,45 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x0200046F RID: 1135
+// Token: 0x02000471 RID: 1137
 public static class EnumBodyPartHitExtensions
 {
-	// Token: 0x0600220C RID: 8716 RVA: 0x000CE189 File Offset: 0x000CC389
+	// Token: 0x06002211 RID: 8721 RVA: 0x000CE535 File Offset: 0x000CC735
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsNone(this EnumBodyPartHit bodyPart)
 	{
 		return (bodyPart & EnumBodyPartHit.Arms) > EnumBodyPartHit.None;
 	}
 
-	// Token: 0x0600220D RID: 8717 RVA: 0x000CE189 File Offset: 0x000CC389
+	// Token: 0x06002212 RID: 8722 RVA: 0x000CE535 File Offset: 0x000CC735
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsArm(this EnumBodyPartHit bodyPart)
 	{
 		return (bodyPart & EnumBodyPartHit.Arms) > EnumBodyPartHit.None;
 	}
 
-	// Token: 0x0600220E RID: 8718 RVA: 0x000CE195 File Offset: 0x000CC395
+	// Token: 0x06002213 RID: 8723 RVA: 0x000CE541 File Offset: 0x000CC741
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsLeg(this EnumBodyPartHit bodyPart)
 	{
 		return (bodyPart & EnumBodyPartHit.Legs) > EnumBodyPartHit.None;
 	}
 
-	// Token: 0x0600220F RID: 8719 RVA: 0x000CE1A1 File Offset: 0x000CC3A1
+	// Token: 0x06002214 RID: 8724 RVA: 0x000CE54D File Offset: 0x000CC74D
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsLeftLeg(this EnumBodyPartHit bodyPart)
 	{
 		return (bodyPart & (EnumBodyPartHit.LeftUpperLeg | EnumBodyPartHit.LeftLowerLeg)) > EnumBodyPartHit.None;
 	}
 
-	// Token: 0x06002210 RID: 8720 RVA: 0x000CE1AD File Offset: 0x000CC3AD
+	// Token: 0x06002215 RID: 8725 RVA: 0x000CE559 File Offset: 0x000CC759
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsRightLeg(this EnumBodyPartHit bodyPart)
 	{
 		return (bodyPart & (EnumBodyPartHit.RightUpperLeg | EnumBodyPartHit.RightLowerLeg)) > EnumBodyPartHit.None;
 	}
 
-	// Token: 0x06002211 RID: 8721 RVA: 0x000CE1B9 File Offset: 0x000CC3B9
+	// Token: 0x06002216 RID: 8726 RVA: 0x000CE565 File Offset: 0x000CC765
 	public static BodyPrimaryHit LowerToUpperLimb(this BodyPrimaryHit _primary)
 	{
 		switch (_primary)
@@ -57,20 +57,20 @@ public static class EnumBodyPartHitExtensions
 		}
 	}
 
-	// Token: 0x06002212 RID: 8722 RVA: 0x000CE1DE File Offset: 0x000CC3DE
+	// Token: 0x06002217 RID: 8727 RVA: 0x000CE58A File Offset: 0x000CC78A
 	public static EnumBodyPartHit ToFlag(this BodyPrimaryHit _parts)
 	{
 		return (EnumBodyPartHit)(1 << _parts - BodyPrimaryHit.Torso);
 	}
 
-	// Token: 0x06002213 RID: 8723 RVA: 0x000CE1E8 File Offset: 0x000CC3E8
+	// Token: 0x06002218 RID: 8728 RVA: 0x000CE594 File Offset: 0x000CC794
 	public static bool IsMultiHit(this EnumBodyPartHit _parts)
 	{
 		EnumBodyPartHit enumBodyPartHit = _parts.ToPrimary().ToFlag();
 		return (_parts & ~enumBodyPartHit) > EnumBodyPartHit.None;
 	}
 
-	// Token: 0x06002214 RID: 8724 RVA: 0x000CE208 File Offset: 0x000CC408
+	// Token: 0x06002219 RID: 8729 RVA: 0x000CE5B4 File Offset: 0x000CC7B4
 	public static BodyPrimaryHit ToPrimary(this EnumBodyPartHit _part)
 	{
 		if ((_part & EnumBodyPartHit.Head) > EnumBodyPartHit.None)

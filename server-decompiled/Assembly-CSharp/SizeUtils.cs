@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020014C5 RID: 5317
+// Token: 0x020014D7 RID: 5335
 public static class SizeUtils
 {
-	// Token: 0x0600A676 RID: 42614 RVA: 0x003DF564 File Offset: 0x003DD764
+	// Token: 0x0600A6CE RID: 42702 RVA: 0x003E1968 File Offset: 0x003DFB68
 	public static string FormatSize(this int sizeBytes, bool includeOriginalBytes = false)
 	{
 		if (Math.Abs(sizeBytes) < 1024)
@@ -29,7 +29,7 @@ public static class SizeUtils
 		return string.Format("{0:F3} {1} ({2} B)", num, text, sizeBytes);
 	}
 
-	// Token: 0x0600A677 RID: 42615 RVA: 0x003DF614 File Offset: 0x003DD814
+	// Token: 0x0600A6CF RID: 42703 RVA: 0x003E1A18 File Offset: 0x003DFC18
 	public static string FormatSize(this uint sizeBytes, bool includeOriginalBytes = false)
 	{
 		if (sizeBytes < 1024U)
@@ -55,7 +55,7 @@ public static class SizeUtils
 		return string.Format("{0:F3} {1} ({2} B)", num, text, sizeBytes);
 	}
 
-	// Token: 0x0600A678 RID: 42616 RVA: 0x003DF6B8 File Offset: 0x003DD8B8
+	// Token: 0x0600A6D0 RID: 42704 RVA: 0x003E1ABC File Offset: 0x003DFCBC
 	public static string FormatSize(this long sizeBytes, bool includeOriginalBytes = false)
 	{
 		if (Math.Abs(sizeBytes) < 1024L)
@@ -96,7 +96,7 @@ public static class SizeUtils
 		return string.Format("{0:F3} {1} ({2} B)", num, text, sizeBytes);
 	}
 
-	// Token: 0x0600A679 RID: 42617 RVA: 0x003DF7D4 File Offset: 0x003DD9D4
+	// Token: 0x0600A6D1 RID: 42705 RVA: 0x003E1BD8 File Offset: 0x003DFDD8
 	public static string FormatSize(this ulong sizeBytes, bool includeOriginalBytes = false)
 	{
 		if (sizeBytes < 1024UL)

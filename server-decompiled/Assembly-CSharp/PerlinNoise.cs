@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02001531 RID: 5425
+// Token: 0x02001543 RID: 5443
 public class PerlinNoise
 {
-	// Token: 0x0600AA45 RID: 43589 RVA: 0x003F8BDC File Offset: 0x003F6DDC
+	// Token: 0x0600AA9D RID: 43677 RVA: 0x003FAFE0 File Offset: 0x003F91E0
 	public PerlinNoise(int seed)
 	{
 		GameRandom gameRandom = GameRandomManager.Instance.CreateGameRandom(seed);
@@ -20,13 +20,13 @@ public class PerlinNoise
 		GameRandomManager.Instance.FreeGameRandom(gameRandom);
 	}
 
-	// Token: 0x0600AA46 RID: 43590 RVA: 0x003F8CB9 File Offset: 0x003F6EB9
+	// Token: 0x0600AA9E RID: 43678 RVA: 0x003FB0BD File Offset: 0x003F92BD
 	public double Noise01(double x, double y)
 	{
 		return (this.Noise(x, y) + 1.0) * 0.5;
 	}
 
-	// Token: 0x0600AA47 RID: 43591 RVA: 0x003F8CD8 File Offset: 0x003F6ED8
+	// Token: 0x0600AA9F RID: 43679 RVA: 0x003FB0DC File Offset: 0x003F92DC
 	public double Noise(double x, double y)
 	{
 		int num = (int)Math.Floor(x);
@@ -56,7 +56,7 @@ public class PerlinNoise
 		return num13;
 	}
 
-	// Token: 0x0600AA48 RID: 43592 RVA: 0x003F8DD4 File Offset: 0x003F6FD4
+	// Token: 0x0600AAA0 RID: 43680 RVA: 0x003FB1D8 File Offset: 0x003F93D8
 	public double Noise(double x, double y, double z)
 	{
 		int num = (int)Math.Floor(x);
@@ -98,7 +98,7 @@ public class PerlinNoise
 		return num19;
 	}
 
-	// Token: 0x0600AA49 RID: 43593 RVA: 0x003F8F98 File Offset: 0x003F7198
+	// Token: 0x0600AAA1 RID: 43681 RVA: 0x003FB39C File Offset: 0x003F959C
 	public double FBM(double _x, double _y, double _freq)
 	{
 		double num = 0.0;
@@ -116,7 +116,7 @@ public class PerlinNoise
 		return num;
 	}
 
-	// Token: 0x0600AA4A RID: 43594 RVA: 0x003F9004 File Offset: 0x003F7204
+	// Token: 0x0600AAA2 RID: 43682 RVA: 0x003FB408 File Offset: 0x003F9608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double Lattice(int ix, int iy, double fx, double fy)
 	{
@@ -124,7 +124,7 @@ public class PerlinNoise
 		return this._gradients[num] * fx + this._gradients[num + 1] * fy;
 	}
 
-	// Token: 0x0600AA4B RID: 43595 RVA: 0x003F9050 File Offset: 0x003F7250
+	// Token: 0x0600AAA3 RID: 43683 RVA: 0x003FB454 File Offset: 0x003F9654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double Lattice(int ix, int iy, int iz, double fx, double fy, double fz)
 	{
@@ -132,7 +132,7 @@ public class PerlinNoise
 		return this._gradients[num] * fx + this._gradients[num + 1] * fy + this._gradients[num + 2] * fz;
 	}
 
-	// Token: 0x0600AA4C RID: 43596 RVA: 0x003F90B3 File Offset: 0x003F72B3
+	// Token: 0x0600AAA4 RID: 43684 RVA: 0x003FB4B7 File Offset: 0x003F96B7
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public double Lerp(double t, double value0, double value1)
@@ -140,7 +140,7 @@ public class PerlinNoise
 		return value0 + t * (value1 - value0);
 	}
 
-	// Token: 0x0600AA4D RID: 43597 RVA: 0x003F90BC File Offset: 0x003F72BC
+	// Token: 0x0600AAA5 RID: 43685 RVA: 0x003FB4C0 File Offset: 0x003F96C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public double Smooth(double x)
@@ -148,19 +148,19 @@ public class PerlinNoise
 		return x * x * (3.0 - 2.0 * x);
 	}
 
-	// Token: 0x04007E20 RID: 32288
+	// Token: 0x04007E61 RID: 32353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int GradientSizeTable = 256;
 
-	// Token: 0x04007E21 RID: 32289
+	// Token: 0x04007E62 RID: 32354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cGradMask = 255;
 
-	// Token: 0x04007E22 RID: 32290
+	// Token: 0x04007E63 RID: 32355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly double[] _gradients = new double[768];
 
-	// Token: 0x04007E23 RID: 32291
+	// Token: 0x04007E64 RID: 32356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] _perm = new byte[]
 	{

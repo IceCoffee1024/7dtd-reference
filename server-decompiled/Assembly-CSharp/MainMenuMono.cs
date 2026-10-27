@@ -6,11 +6,11 @@ using Services.Analytics;
 using UnityEngine;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02001289 RID: 4745
+// Token: 0x0200129B RID: 4763
 public class MainMenuMono : MonoBehaviour
 {
-	// Token: 0x17001222 RID: 4642
-	// (get) Token: 0x060096CD RID: 38605 RVA: 0x0038D9AF File Offset: 0x0038BBAF
+	// Token: 0x1700122E RID: 4654
+	// (get) Token: 0x06009725 RID: 38693 RVA: 0x0038FDB7 File Offset: 0x0038DFB7
 	public static bool IsQuickContinue
 	{
 		get
@@ -19,7 +19,7 @@ public class MainMenuMono : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060096CE RID: 38606 RVA: 0x0038D9CD File Offset: 0x0038BBCD
+	// Token: 0x06009726 RID: 38694 RVA: 0x0038FDD5 File Offset: 0x0038DFD5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -27,7 +27,7 @@ public class MainMenuMono : MonoBehaviour
 		this.nguiWindowManager = base.GetComponent<NGUIWindowManager>();
 	}
 
-	// Token: 0x060096CF RID: 38607 RVA: 0x0038D9E8 File Offset: 0x0038BBE8
+	// Token: 0x06009727 RID: 38695 RVA: 0x0038FDF0 File Offset: 0x0038DFF0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -42,7 +42,7 @@ public class MainMenuMono : MonoBehaviour
 		this.nguiWindowManager.Show(EnumNGUIWindow.Loading, true);
 	}
 
-	// Token: 0x060096D0 RID: 38608 RVA: 0x0038DA3D File Offset: 0x0038BC3D
+	// Token: 0x06009728 RID: 38696 RVA: 0x0038FE45 File Offset: 0x0038E045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckLogin()
 	{
@@ -52,7 +52,7 @@ public class MainMenuMono : MonoBehaviour
 		return this.bOpenMainMenu;
 	}
 
-	// Token: 0x060096D1 RID: 38609 RVA: 0x0038DA74 File Offset: 0x0038BC74
+	// Token: 0x06009729 RID: 38697 RVA: 0x0038FE7C File Offset: 0x0038E07C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLoginComplete()
 	{
@@ -93,7 +93,7 @@ public class MainMenuMono : MonoBehaviour
 		Log.Error(string.Format(text, obj, obj2 ?? "N/A"));
 	}
 
-	// Token: 0x060096D2 RID: 38610 RVA: 0x0038DB64 File Offset: 0x0038BD64
+	// Token: 0x0600972A RID: 38698 RVA: 0x0038FF6C File Offset: 0x0038E16C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -156,7 +156,7 @@ public class MainMenuMono : MonoBehaviour
 		this.bOpenMainMenu = false;
 	}
 
-	// Token: 0x060096D3 RID: 38611 RVA: 0x0038DD09 File Offset: 0x0038BF09
+	// Token: 0x0600972B RID: 38699 RVA: 0x00390111 File Offset: 0x0038E311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startDedicatedServer()
 	{
@@ -229,7 +229,7 @@ public class MainMenuMono : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060096D4 RID: 38612 RVA: 0x0038DD18 File Offset: 0x0038BF18
+	// Token: 0x0600972C RID: 38700 RVA: 0x00390120 File Offset: 0x0038E320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startGeneration(UserDataStorageType _worldStorageType, Action<bool> _finishedCallback)
 	{
@@ -263,7 +263,7 @@ public class MainMenuMono : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060096D5 RID: 38613 RVA: 0x0038DD38 File Offset: 0x0038BF38
+	// Token: 0x0600972D RID: 38701 RVA: 0x00390140 File Offset: 0x0038E340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void abortServerStartupWithError(params string[] _errorMessage)
 	{
@@ -276,7 +276,7 @@ public class MainMenuMono : MonoBehaviour
 		Application.Quit();
 	}
 
-	// Token: 0x060096D7 RID: 38615 RVA: 0x0038DD94 File Offset: 0x0038BF94
+	// Token: 0x0600972F RID: 38703 RVA: 0x0039019C File Offset: 0x0038E39C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator <OnLoginComplete>g__ResolveInitialPermissions|9_0(EUserPerms _perms)
@@ -286,37 +286,37 @@ public class MainMenuMono : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040070F0 RID: 28912
+	// Token: 0x04007131 RID: 28977
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;
 
-	// Token: 0x040070F1 RID: 28913
+	// Token: 0x04007132 RID: 28978
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGUIWindowManager nguiWindowManager;
 
-	// Token: 0x040070F2 RID: 28914
+	// Token: 0x04007133 RID: 28979
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bOpenMainMenu;
 
-	// Token: 0x040070F3 RID: 28915
+	// Token: 0x04007134 RID: 28980
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool loginCheckDone;
 
-	// Token: 0x040070F4 RID: 28916
+	// Token: 0x04007135 RID: 28981
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string loadingText = "";
 
-	// Token: 0x040070F5 RID: 28917
+	// Token: 0x04007136 RID: 28982
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string displayedLoadAction = "";
 
-	// Token: 0x040070F6 RID: 28918
+	// Token: 0x04007137 RID: 28983
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float ServerStartDelaySec = 2.5f;

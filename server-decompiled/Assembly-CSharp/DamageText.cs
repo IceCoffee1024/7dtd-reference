@@ -2,12 +2,12 @@
 using TMPro;
 using UnityEngine;
 
-// Token: 0x02000C67 RID: 3175
+// Token: 0x02000C72 RID: 3186
 public class DamageText : MonoBehaviour
 {
-	// Token: 0x170009E7 RID: 2535
-	// (get) Token: 0x06006036 RID: 24630 RVA: 0x00263FA1 File Offset: 0x002621A1
-	// (set) Token: 0x06006037 RID: 24631 RVA: 0x00263FB1 File Offset: 0x002621B1
+	// Token: 0x170009ED RID: 2541
+	// (get) Token: 0x0600605B RID: 24667 RVA: 0x002654C9 File Offset: 0x002636C9
+	// (set) Token: 0x0600605C RID: 24668 RVA: 0x002654D9 File Offset: 0x002636D9
 	public static bool Enabled
 	{
 		get
@@ -20,7 +20,7 @@ public class DamageText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06006038 RID: 24632 RVA: 0x00263FBC File Offset: 0x002621BC
+	// Token: 0x0600605D RID: 24669 RVA: 0x002654E4 File Offset: 0x002636E4
 	public static void Create(string _text, Color _color, Vector3 _worldPos, Vector3 _velocity, float _scale = 1f)
 	{
 		GameObject gameObject = (GameObject)global::UnityEngine.Object.Instantiate(Resources.Load("Prefabs/DamageText"));
@@ -35,7 +35,7 @@ public class DamageText : MonoBehaviour
 		component.cameraT = Camera.main.transform;
 	}
 
-	// Token: 0x06006039 RID: 24633 RVA: 0x00264034 File Offset: 0x00262234
+	// Token: 0x0600605E RID: 24670 RVA: 0x0026555C File Offset: 0x0026375C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -57,38 +57,38 @@ public class DamageText : MonoBehaviour
 		base.transform.SetPositionAndRotation(Vector3.MoveTowards(this.worldPos - Origin.position, this.cameraT.position + this.cameraT.forward * 0.18f, 0.25f), this.cameraT.rotation);
 	}
 
-	// Token: 0x04004BA1 RID: 19361
+	// Token: 0x04004BC6 RID: 19398
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public new static bool enabled;
 
-	// Token: 0x04004BA2 RID: 19362
+	// Token: 0x04004BC7 RID: 19399
 	public static bool SandboxEnabled;
 
-	// Token: 0x04004BA3 RID: 19363
+	// Token: 0x04004BC8 RID: 19400
 	public float TimeDuration = 1.5f;
 
-	// Token: 0x04004BA4 RID: 19364
+	// Token: 0x04004BC9 RID: 19401
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public TextMeshPro textMeshPro;
 
-	// Token: 0x04004BA5 RID: 19365
+	// Token: 0x04004BCA RID: 19402
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 worldPos;
 
-	// Token: 0x04004BA6 RID: 19366
+	// Token: 0x04004BCB RID: 19403
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 velocity;
 
-	// Token: 0x04004BA7 RID: 19367
+	// Token: 0x04004BCC RID: 19404
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float velocityDecayDelay = 0.2f;
 
-	// Token: 0x04004BA8 RID: 19368
+	// Token: 0x04004BCD RID: 19405
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform cameraT;

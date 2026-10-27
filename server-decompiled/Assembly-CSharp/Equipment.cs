@@ -8,16 +8,16 @@ using Services.Analytics;
 using Services.Analytics.Events;
 using UnityEngine;
 
-// Token: 0x02000524 RID: 1316
+// Token: 0x02000528 RID: 1320
 public class Equipment
 {
 	// Token: 0x14000028 RID: 40
-	// (add) Token: 0x06002AF1 RID: 10993 RVA: 0x001102DC File Offset: 0x0010E4DC
-	// (remove) Token: 0x06002AF2 RID: 10994 RVA: 0x00110314 File Offset: 0x0010E514
+	// (add) Token: 0x06002AF9 RID: 11001 RVA: 0x00110864 File Offset: 0x0010EA64
+	// (remove) Token: 0x06002AFA RID: 11002 RVA: 0x0011089C File Offset: 0x0010EA9C
 	public event Action OnChanged;
 
 	// Token: 0x1700049D RID: 1181
-	// (get) Token: 0x06002AF3 RID: 10995 RVA: 0x00110349 File Offset: 0x0010E549
+	// (get) Token: 0x06002AFB RID: 11003 RVA: 0x001108D1 File Offset: 0x0010EAD1
 	public ItemStackGrid ItemGrid
 	{
 		get
@@ -27,8 +27,8 @@ public class Equipment
 	}
 
 	// Token: 0x1700049E RID: 1182
-	// (get) Token: 0x06002AF4 RID: 10996 RVA: 0x00110351 File Offset: 0x0010E551
-	// (set) Token: 0x06002AF5 RID: 10997 RVA: 0x00110359 File Offset: 0x0010E559
+	// (get) Token: 0x06002AFC RID: 11004 RVA: 0x001108D9 File Offset: 0x0010EAD9
+	// (set) Token: 0x06002AFD RID: 11005 RVA: 0x001108E1 File Offset: 0x0010EAE1
 	public ItemClass[] CosmeticSlots
 	{
 		get
@@ -42,17 +42,17 @@ public class Equipment
 	}
 
 	// Token: 0x14000029 RID: 41
-	// (add) Token: 0x06002AF6 RID: 10998 RVA: 0x00110364 File Offset: 0x0010E564
-	// (remove) Token: 0x06002AF7 RID: 10999 RVA: 0x0011039C File Offset: 0x0010E59C
+	// (add) Token: 0x06002AFE RID: 11006 RVA: 0x001108EC File Offset: 0x0010EAEC
+	// (remove) Token: 0x06002AFF RID: 11007 RVA: 0x00110924 File Offset: 0x0010EB24
 	public event Equipment_CosmeticUnlocked CosmeticUnlocked;
 
-	// Token: 0x06002AF8 RID: 11000 RVA: 0x001103D1 File Offset: 0x0010E5D1
+	// Token: 0x06002B00 RID: 11008 RVA: 0x00110959 File Offset: 0x0010EB59
 	public Equipment()
 		: this(null)
 	{
 	}
 
-	// Token: 0x06002AF9 RID: 11001 RVA: 0x001103DC File Offset: 0x0010E5DC
+	// Token: 0x06002B01 RID: 11009 RVA: 0x00110964 File Offset: 0x0010EB64
 	public Equipment(EntityAlive _entity)
 	{
 		this.m_entity = _entity;
@@ -62,7 +62,7 @@ public class Equipment
 		this.preferredItemSlots = new int[num];
 	}
 
-	// Token: 0x06002AFA RID: 11002 RVA: 0x0011044F File Offset: 0x0010E64F
+	// Token: 0x06002B02 RID: 11010 RVA: 0x001109D7 File Offset: 0x0010EBD7
 	public ItemClass GetCosmeticSlot(int index, bool useTemporary)
 	{
 		if (index >= this.CosmeticSlots.Length)
@@ -76,7 +76,7 @@ public class Equipment
 		return this.CosmeticSlots[index];
 	}
 
-	// Token: 0x06002AFB RID: 11003 RVA: 0x0011047C File Offset: 0x0010E67C
+	// Token: 0x06002B03 RID: 11011 RVA: 0x00110A04 File Offset: 0x0010EC04
 	public void SetCosmeticSlot(ItemClassArmor itemClass)
 	{
 		if (itemClass.EquipSlot.SlotType() == EquipmentSlotType.Armor)
@@ -99,7 +99,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002AFC RID: 11004 RVA: 0x00110508 File Offset: 0x0010E708
+	// Token: 0x06002B04 RID: 11012 RVA: 0x00110A90 File Offset: 0x0010EC90
 	public void SetCosmeticSlot(int slotID, int id)
 	{
 		if (id == 0)
@@ -113,7 +113,14 @@ public class Equipment
 		}
 		else
 		{
-			ItemClass itemClass = ItemClass.GetItemClass(Equipment.CosmeticMappingIDString[id], false);
+			string text;
+			if (!Equipment.CosmeticMappingIDString.TryGetValue(id, out text))
+			{
+				Log.Warning(string.Format("[Equipment] Unknown cosmetic id {0}; slot {1} cleared.", id, slotID));
+				this.CosmeticSlots[slotID] = null;
+				return;
+			}
+			ItemClass itemClass = ItemClass.GetItemClass(text, false);
 			ItemClassArmor itemClassArmor = itemClass as ItemClassArmor;
 			if (itemClassArmor != null)
 			{
@@ -138,7 +145,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002AFD RID: 11005 RVA: 0x001105DC File Offset: 0x0010E7DC
+	// Token: 0x06002B05 RID: 11013 RVA: 0x00110B90 File Offset: 0x0010ED90
 	public int[] GetCosmeticIDs()
 	{
 		int num = 13;
@@ -157,7 +164,7 @@ public class Equipment
 		return array;
 	}
 
-	// Token: 0x06002AFE RID: 11006 RVA: 0x0011062C File Offset: 0x0010E82C
+	// Token: 0x06002B06 RID: 11014 RVA: 0x00110BE0 File Offset: 0x0010EDE0
 	public void ClearCosmeticSlots()
 	{
 		for (int i = 0; i < this.m_cosmeticSlots.Length; i++)
@@ -170,7 +177,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002AFF RID: 11007 RVA: 0x0011067C File Offset: 0x0010E87C
+	// Token: 0x06002B07 RID: 11015 RVA: 0x00110C30 File Offset: 0x0010EE30
 	public void UnlockCosmeticItem(ItemClass itemClass)
 	{
 		if (itemClass == null)
@@ -192,7 +199,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B00 RID: 11008 RVA: 0x001106DC File Offset: 0x0010E8DC
+	// Token: 0x06002B08 RID: 11016 RVA: 0x00110C90 File Offset: 0x0010EE90
 	public void ModifyValue(ItemValue _originalItemValue, PassiveEffects _passiveEffect, ref float _base_val, ref float _perc_val, FastTags<TagGroup.Global> tags, bool _useDurability = false)
 	{
 		for (int i = 0; i < this.itemGrid.Length; i++)
@@ -205,7 +212,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B01 RID: 11009 RVA: 0x00110740 File Offset: 0x0010E940
+	// Token: 0x06002B09 RID: 11017 RVA: 0x00110CF4 File Offset: 0x0010EEF4
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSources, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, ItemValue _originalItemValue, PassiveEffects _passiveEffect, ref float _base_val, ref float _perc_val, FastTags<TagGroup.Global> tags)
 	{
 		for (int i = 0; i < this.itemGrid.Length; i++)
@@ -218,7 +225,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B02 RID: 11010 RVA: 0x001107A8 File Offset: 0x0010E9A8
+	// Token: 0x06002B0A RID: 11018 RVA: 0x00110D5C File Offset: 0x0010EF5C
 	[return: TupleElementNames(new string[] { "isUnlocked", "set" })]
 	public ValueTuple<bool, EntitlementSetEnum> HasCosmeticUnlocked(ItemClass itemClass)
 	{
@@ -243,7 +250,7 @@ public class Equipment
 		return new ValueTuple<bool, EntitlementSetEnum>(this.m_unlockedCosmetics.Contains(Equipment.CosmeticMappingStringID[itemClass.GetItemName()]), entitlementSetEnum);
 	}
 
-	// Token: 0x06002B03 RID: 11011 RVA: 0x00110838 File Offset: 0x0010EA38
+	// Token: 0x06002B0B RID: 11019 RVA: 0x00110DEC File Offset: 0x0010EFEC
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _params)
 	{
 		for (int i = 0; i < this.itemGrid.Length; i++)
@@ -256,7 +263,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B04 RID: 11012 RVA: 0x00110888 File Offset: 0x0010EA88
+	// Token: 0x06002B0C RID: 11020 RVA: 0x00110E3C File Offset: 0x0010F03C
 	public void DropItems()
 	{
 		for (int i = 0; i < this.itemGrid.Length; i++)
@@ -271,7 +278,7 @@ public class Equipment
 		this.updateInsulation();
 	}
 
-	// Token: 0x06002B05 RID: 11013 RVA: 0x001108E0 File Offset: 0x0010EAE0
+	// Token: 0x06002B0D RID: 11021 RVA: 0x00110E94 File Offset: 0x0010F094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateInsulation()
 	{
@@ -286,32 +293,32 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B06 RID: 11014 RVA: 0x00110940 File Offset: 0x0010EB40
+	// Token: 0x06002B0E RID: 11022 RVA: 0x00110EF4 File Offset: 0x0010F0F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void DropItemOnGround(ItemValue _itemValue)
 	{
 		this.m_entity.world.GetGameManager().ItemDropServer(new ItemStack(_itemValue, 1), this.m_entity.GetPosition(), new Vector3(0.5f, 0f, 0.5f), this.m_entity.belongsPlayerId, 60f, false);
 	}
 
-	// Token: 0x06002B07 RID: 11015 RVA: 0x00110999 File Offset: 0x0010EB99
+	// Token: 0x06002B0F RID: 11023 RVA: 0x00110F4D File Offset: 0x0010F14D
 	public float GetTotalInsulation()
 	{
 		return this.insulation;
 	}
 
-	// Token: 0x06002B08 RID: 11016 RVA: 0x001109A1 File Offset: 0x0010EBA1
+	// Token: 0x06002B10 RID: 11024 RVA: 0x00110F55 File Offset: 0x0010F155
 	public float GetTotalWaterproof()
 	{
 		return this.waterProof;
 	}
 
-	// Token: 0x06002B09 RID: 11017 RVA: 0x001109A9 File Offset: 0x0010EBA9
+	// Token: 0x06002B11 RID: 11025 RVA: 0x00110F5D File Offset: 0x0010F15D
 	public int GetSlotCount()
 	{
 		return this.itemGrid.Length;
 	}
 
-	// Token: 0x06002B0A RID: 11018 RVA: 0x001109B6 File Offset: 0x0010EBB6
+	// Token: 0x06002B12 RID: 11026 RVA: 0x00110F6A File Offset: 0x0010F16A
 	public ItemValue GetSlotItem(int index)
 	{
 		if (index >= this.itemGrid.Length)
@@ -321,7 +328,7 @@ public class Equipment
 		return this.itemGrid[index].itemValue;
 	}
 
-	// Token: 0x06002B0B RID: 11019 RVA: 0x001109E0 File Offset: 0x0010EBE0
+	// Token: 0x06002B13 RID: 11027 RVA: 0x00110F94 File Offset: 0x0010F194
 	public bool HasAnyItems()
 	{
 		for (int i = 0; i < this.itemGrid.Length; i++)
@@ -334,7 +341,7 @@ public class Equipment
 		return false;
 	}
 
-	// Token: 0x06002B0C RID: 11020 RVA: 0x00110A1C File Offset: 0x0010EC1C
+	// Token: 0x06002B14 RID: 11028 RVA: 0x00110FD0 File Offset: 0x0010F1D0
 	public void PerformActionOnSlots(Action<ItemValue> _action)
 	{
 		for (int i = 0; i < this.itemGrid.Length; i++)
@@ -347,21 +354,21 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B0D RID: 11021 RVA: 0x00110A60 File Offset: 0x0010EC60
+	// Token: 0x06002B15 RID: 11029 RVA: 0x00111014 File Offset: 0x0010F214
 	public void SetTempCosmeticSlot(int index, ItemClass itemClass)
 	{
 		this.tempCosmeticSlotIndex = index;
 		this.tempCosmeticSlot = itemClass;
 	}
 
-	// Token: 0x06002B0E RID: 11022 RVA: 0x00110A70 File Offset: 0x0010EC70
+	// Token: 0x06002B16 RID: 11030 RVA: 0x00111024 File Offset: 0x0010F224
 	public void ClearTempCosmeticSlot()
 	{
 		this.tempCosmeticSlotIndex = -1;
 		this.tempCosmeticSlot = null;
 	}
 
-	// Token: 0x06002B0F RID: 11023 RVA: 0x00110A80 File Offset: 0x0010EC80
+	// Token: 0x06002B17 RID: 11031 RVA: 0x00111034 File Offset: 0x0010F234
 	public void ApplyTempCosmeticSlot()
 	{
 		if (this.tempCosmeticSlotIndex != -1)
@@ -374,7 +381,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B10 RID: 11024 RVA: 0x00110AD0 File Offset: 0x0010ECD0
+	// Token: 0x06002B18 RID: 11032 RVA: 0x00111084 File Offset: 0x0010F284
 	public void CalcDamage(ref int entityDamageTaken, ref int armorDamageTaken, FastTags<TagGroup.Global> damageTypeTag, EntityAlive attacker, ItemValue attackingItem)
 	{
 		armorDamageTaken = entityDamageTaken;
@@ -395,7 +402,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B11 RID: 11025 RVA: 0x00110B80 File Offset: 0x0010ED80
+	// Token: 0x06002B19 RID: 11033 RVA: 0x00111134 File Offset: 0x0010F334
 	public float GetTotalPhysicalArmorRating(EntityAlive attacker, ItemValue attackingItem)
 	{
 		FastTags<TagGroup.Global> fastTags = Equipment.coreDamageResist;
@@ -407,7 +414,7 @@ public class Equipment
 		return EffectManager.GetValue(PassiveEffects.TargetArmor, attackingItem, value, attacker, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002B12 RID: 11026 RVA: 0x00110BE8 File Offset: 0x0010EDE8
+	// Token: 0x06002B1A RID: 11034 RVA: 0x0011119C File Offset: 0x0010F39C
 	public List<ItemValue> GetArmor()
 	{
 		List<ItemValue> list = new List<ItemValue>();
@@ -428,7 +435,7 @@ public class Equipment
 		return list;
 	}
 
-	// Token: 0x06002B13 RID: 11027 RVA: 0x00110C64 File Offset: 0x0010EE64
+	// Token: 0x06002B1B RID: 11035 RVA: 0x00111218 File Offset: 0x0010F418
 	public bool CheckBreakUseItems()
 	{
 		bool flag = false;
@@ -458,7 +465,7 @@ public class Equipment
 		return flag;
 	}
 
-	// Token: 0x06002B14 RID: 11028 RVA: 0x00110D60 File Offset: 0x0010EF60
+	// Token: 0x06002B1C RID: 11036 RVA: 0x00111314 File Offset: 0x0010F514
 	public void SetSlotItem(int index, ItemValue value)
 	{
 		if (value == null)
@@ -492,7 +499,7 @@ public class Equipment
 		this.m_entity.IsEquipping = false;
 	}
 
-	// Token: 0x06002B15 RID: 11029 RVA: 0x00110E6C File Offset: 0x0010F06C
+	// Token: 0x06002B1D RID: 11037 RVA: 0x00111420 File Offset: 0x0010F620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TeardownSlot(int _index)
 	{
@@ -525,7 +532,7 @@ public class Equipment
 		itemValue.FireEvent(MinEventTypes.onSelfEquipStop, this.m_entity.MinEventContext);
 	}
 
-	// Token: 0x06002B16 RID: 11030 RVA: 0x00110F60 File Offset: 0x0010F160
+	// Token: 0x06002B1E RID: 11038 RVA: 0x00111514 File Offset: 0x0010F714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildSlot(int _index)
 	{
@@ -534,7 +541,7 @@ public class Equipment
 		this.slotsChangedFlags |= 1 << _index;
 	}
 
-	// Token: 0x06002B17 RID: 11031 RVA: 0x00110FB1 File Offset: 0x0010F1B1
+	// Token: 0x06002B1F RID: 11039 RVA: 0x00111565 File Offset: 0x0010F765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEquipmentChanged()
 	{
@@ -551,7 +558,7 @@ public class Equipment
 		onChanged();
 	}
 
-	// Token: 0x06002B18 RID: 11032 RVA: 0x00110FF0 File Offset: 0x0010F1F0
+	// Token: 0x06002B20 RID: 11040 RVA: 0x001115A4 File Offset: 0x0010F7A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogEquipmentUsageEvent(ItemValue previousItem, ItemValue currentItem)
 	{
@@ -577,7 +584,7 @@ public class Equipment
 			}
 			num++;
 		}
-		Dictionary<PassiveEffects, float> dictionary = new Dictionary<PassiveEffects, float>();
+		Dictionary<ValueTuple<PassiveEffects, PassiveEffect.ValueModifierTypes>, float> dictionary = new Dictionary<ValueTuple<PassiveEffects, PassiveEffect.ValueModifierTypes>, float>();
 		MinEffectController minEffectController;
 		if (currentItem == null)
 		{
@@ -595,9 +602,9 @@ public class Equipment
 			{
 				foreach (PassiveEffect passiveEffect in minEffectGroup.PassiveEffects)
 				{
-					if (!dictionary.ContainsKey(passiveEffect.Type))
+					if (!dictionary.ContainsKey(new ValueTuple<PassiveEffects, PassiveEffect.ValueModifierTypes>(passiveEffect.Type, passiveEffect.Modifier)))
 					{
-						dictionary.Add(passiveEffect.Type, (float)Math.Round((double)EffectManager.GetValue(passiveEffect.Type, currentItem, 0f, null, null, passiveEffect.Tags, true, true, true, true, true, 1, true, false), 3));
+						dictionary.Add(new ValueTuple<PassiveEffects, PassiveEffect.ValueModifierTypes>(passiveEffect.Type, passiveEffect.Modifier), (float)Math.Round((double)EffectManager.GetValue(passiveEffect.Type, currentItem, 1f, null, null, passiveEffect.Tags, true, true, true, true, true, 1, true, false), 3));
 					}
 				}
 			}
@@ -647,7 +654,7 @@ public class Equipment
 		ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(equipmentUsageEventData2);
 	}
 
-	// Token: 0x06002B19 RID: 11033 RVA: 0x00111360 File Offset: 0x0010F560
+	// Token: 0x06002B21 RID: 11041 RVA: 0x00111930 File Offset: 0x0010FB30
 	public void FireEventsForSlots(MinEventTypes _event, int _flags = -1)
 	{
 		this.m_entity.MinEventContext.Self = this.m_entity;
@@ -665,14 +672,14 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B1A RID: 11034 RVA: 0x001113E9 File Offset: 0x0010F5E9
+	// Token: 0x06002B22 RID: 11042 RVA: 0x001119B9 File Offset: 0x0010FBB9
 	public void FireEventsForSetSlots()
 	{
 		this.FireEventsForSlots(MinEventTypes.onSelfEquipStart, this.slotsSetFlags);
 		this.slotsSetFlags = 0;
 	}
 
-	// Token: 0x06002B1B RID: 11035 RVA: 0x00111400 File Offset: 0x0010F600
+	// Token: 0x06002B23 RID: 11043 RVA: 0x001119D0 File Offset: 0x0010FBD0
 	public void FireEventsForChangedSlots()
 	{
 		if (this.slotsChangedFlags == 0)
@@ -728,7 +735,7 @@ public class Equipment
 		this.m_entity.IsEquipping = false;
 	}
 
-	// Token: 0x06002B1C RID: 11036 RVA: 0x00111580 File Offset: 0x0010F780
+	// Token: 0x06002B24 RID: 11044 RVA: 0x00111B50 File Offset: 0x0010FD50
 	public void Update()
 	{
 		if (Time.time - this.lastUpdateTime >= 1f)
@@ -746,7 +753,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B1D RID: 11037 RVA: 0x001115FF File Offset: 0x0010F7FF
+	// Token: 0x06002B25 RID: 11045 RVA: 0x00111BCF File Offset: 0x0010FDCF
 	public void SetPreferredItemSlot(int _slot, ItemValue _itemValue)
 	{
 		if (_slot >= 0 && _slot < this.preferredItemSlots.Length)
@@ -755,7 +762,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B1E RID: 11038 RVA: 0x00111620 File Offset: 0x0010F820
+	// Token: 0x06002B26 RID: 11046 RVA: 0x00111BF0 File Offset: 0x0010FDF0
 	public int PreferredItemSlot(ItemValue _itemValue)
 	{
 		for (int i = 0; i < this.preferredItemSlots.Length; i++)
@@ -768,7 +775,7 @@ public class Equipment
 		return -1;
 	}
 
-	// Token: 0x06002B1F RID: 11039 RVA: 0x00111654 File Offset: 0x0010F854
+	// Token: 0x06002B27 RID: 11047 RVA: 0x00111C24 File Offset: 0x0010FE24
 	public int PreferredItemSlot(ItemStack _itemStack)
 	{
 		for (int i = 0; i < this.preferredItemSlots.Length; i++)
@@ -781,7 +788,7 @@ public class Equipment
 		return -1;
 	}
 
-	// Token: 0x06002B20 RID: 11040 RVA: 0x0011168C File Offset: 0x0010F88C
+	// Token: 0x06002B28 RID: 11048 RVA: 0x00111C5C File Offset: 0x0010FE5C
 	public void Write(PooledBinaryWriter writer, StreamModeWrite _eStreamMode)
 	{
 		writer.Write(6);
@@ -804,7 +811,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B21 RID: 11041 RVA: 0x00111729 File Offset: 0x0010F929
+	// Token: 0x06002B29 RID: 11049 RVA: 0x00111CF9 File Offset: 0x0010FEF9
 	public static Equipment Read(PooledBinaryReader reader, StreamModeRead _eStreamMode)
 	{
 		Equipment equipment = new Equipment();
@@ -812,7 +819,7 @@ public class Equipment
 		return equipment;
 	}
 
-	// Token: 0x06002B22 RID: 11042 RVA: 0x00111738 File Offset: 0x0010F938
+	// Token: 0x06002B2A RID: 11050 RVA: 0x00111D08 File Offset: 0x0010FF08
 	public void ReadInto(PooledBinaryReader reader, StreamModeRead _eStreamMode)
 	{
 		int num = (int)reader.ReadByte();
@@ -865,13 +872,19 @@ public class Equipment
 			for (int k = 0; k < num2; k++)
 			{
 				int num3 = reader.ReadInt32();
+				string text;
 				if (num3 == 0)
 				{
 					this.m_cosmeticSlots[k] = null;
 				}
-				else
+				else if (Equipment.CosmeticMappingIDString.TryGetValue(num3, out text))
 				{
 					this.m_cosmeticSlots[k] = ItemClass.GetItemClass(Equipment.CosmeticMappingIDString[num3], false);
+				}
+				else
+				{
+					this.m_cosmeticSlots[k] = null;
+					Log.Warning(string.Format("[Equipment] Unknown cosmetic id {0} in slot {1}; slot cleared. The save or packet was written by a build with different cosmetic ids.", num3, k));
 				}
 			}
 			this.m_unlockedCosmetics.Clear();
@@ -900,7 +913,7 @@ public class Equipment
 		this.FireEventsForChangedSlots();
 	}
 
-	// Token: 0x06002B23 RID: 11043 RVA: 0x00111920 File Offset: 0x0010FB20
+	// Token: 0x06002B2B RID: 11051 RVA: 0x00111F2C File Offset: 0x0011012C
 	public virtual bool ReturnItem(ItemStack _itemStack)
 	{
 		int num = this.PreferredItemSlot(_itemStack);
@@ -916,7 +929,7 @@ public class Equipment
 		return false;
 	}
 
-	// Token: 0x06002B24 RID: 11044 RVA: 0x0011196C File Offset: 0x0010FB6C
+	// Token: 0x06002B2C RID: 11052 RVA: 0x00111F78 File Offset: 0x00110178
 	public void InitializeEquipmentTransforms()
 	{
 		this.FireEventsForSlots(MinEventTypes.onSelfEquipStop, -1);
@@ -926,7 +939,7 @@ public class Equipment
 		this.FireEventsForChangedSlots();
 	}
 
-	// Token: 0x06002B25 RID: 11045 RVA: 0x00111994 File Offset: 0x0010FB94
+	// Token: 0x06002B2D RID: 11053 RVA: 0x00111FA0 File Offset: 0x001101A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddArmorGroup(string armorGroup, int quality)
 	{
@@ -950,7 +963,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B26 RID: 11046 RVA: 0x001119FC File Offset: 0x0010FBFC
+	// Token: 0x06002B2E RID: 11054 RVA: 0x00112008 File Offset: 0x00110208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetArmorGroups()
 	{
@@ -972,7 +985,7 @@ public class Equipment
 		}
 	}
 
-	// Token: 0x06002B27 RID: 11047 RVA: 0x00111A7A File Offset: 0x0010FC7A
+	// Token: 0x06002B2F RID: 11055 RVA: 0x00112086 File Offset: 0x00110286
 	public int GetArmorGroupCount(string armorGroup)
 	{
 		if (this.ArmorGroupEquipped.ContainsKey(armorGroup))
@@ -982,7 +995,7 @@ public class Equipment
 		return 0;
 	}
 
-	// Token: 0x06002B28 RID: 11048 RVA: 0x00111A9D File Offset: 0x0010FC9D
+	// Token: 0x06002B30 RID: 11056 RVA: 0x001120A9 File Offset: 0x001102A9
 	public int GetArmorGroupLowestQuality(string armorGroup)
 	{
 		if (this.ArmorGroupEquipped.ContainsKey(armorGroup))
@@ -992,14 +1005,14 @@ public class Equipment
 		return 0;
 	}
 
-	// Token: 0x06002B29 RID: 11049 RVA: 0x00111AC0 File Offset: 0x0010FCC0
+	// Token: 0x06002B31 RID: 11057 RVA: 0x001120CC File Offset: 0x001102CC
 	public static void AddCosmeticMapping(int ID, string name)
 	{
 		Equipment.CosmeticMappingIDString.Add(ID, name);
 		Equipment.CosmeticMappingStringID.Add(name, ID);
 	}
 
-	// Token: 0x06002B2A RID: 11050 RVA: 0x00111ADC File Offset: 0x0010FCDC
+	// Token: 0x06002B32 RID: 11058 RVA: 0x001120E8 File Offset: 0x001102E8
 	public static void SetupCosmeticMapping()
 	{
 		Equipment.CosmeticMappingIDString.Clear();
@@ -1101,16 +1114,10 @@ public class Equipment
 		Equipment.AddCosmeticMapping(94, "armorMoPowerOutfit");
 		Equipment.AddCosmeticMapping(95, "armorPassNGasHelmet");
 		Equipment.AddCosmeticMapping(96, "armorPassNGasOutfit");
-		Equipment.AddCosmeticMapping(97, "armorPopNPillsHelmet");
-		Equipment.AddCosmeticMapping(98, "armorPopNPillsOutfit");
 		Equipment.AddCosmeticMapping(99, "armorSavageCountryHelmet");
 		Equipment.AddCosmeticMapping(100, "armorSavageCountryOutfit");
 		Equipment.AddCosmeticMapping(101, "armorShamwayHelmet");
 		Equipment.AddCosmeticMapping(102, "armorShamwayOutfit");
-		Equipment.AddCosmeticMapping(103, "armorShotgunMessiahHelmet");
-		Equipment.AddCosmeticMapping(104, "armorShotgunMessiahOutfit");
-		Equipment.AddCosmeticMapping(105, "armorWorkingStiffsHelmet");
-		Equipment.AddCosmeticMapping(106, "armorWorkingStiffsOutfit");
 		Equipment.AddCosmeticMapping(107, "armorPirateHelmet");
 		Equipment.AddCosmeticMapping(108, "armorPirateOutfit");
 		Equipment.AddCosmeticMapping(109, "armorPirateGloves");
@@ -1163,90 +1170,87 @@ public class Equipment
 		Equipment.AddCosmeticMapping(156, "armorKegBreakerOutfit");
 		Equipment.AddCosmeticMapping(157, "armorKegBreakerGloves");
 		Equipment.AddCosmeticMapping(158, "armorKegBreakerBoots");
-		Equipment.AddCosmeticMapping(159, "armorWraithWoodWitchHelmet");
-		Equipment.AddCosmeticMapping(160, "armorWraithWoodWitchOutfit");
-		Equipment.AddCosmeticMapping(161, "armorWraithWoodWitchGloves");
-		Equipment.AddCosmeticMapping(162, "armorWraithWoodWitchBoots");
+		CosmeticSetRegistrar.RegisterCosmeticMappings();
 	}
 
-	// Token: 0x040020FD RID: 8445
+	// Token: 0x04002114 RID: 8468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CurrentSaveVersion = 6;
 
-	// Token: 0x040020FF RID: 8447
+	// Token: 0x04002116 RID: 8470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStackGrid itemGrid;
 
-	// Token: 0x04002100 RID: 8448
+	// Token: 0x04002117 RID: 8471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int slotsSetFlags;
 
-	// Token: 0x04002101 RID: 8449
+	// Token: 0x04002118 RID: 8472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int slotsChangedFlags;
 
-	// Token: 0x04002102 RID: 8450
+	// Token: 0x04002119 RID: 8473
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] preferredItemSlots;
 
-	// Token: 0x04002103 RID: 8451
+	// Token: 0x0400211A RID: 8474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass[] m_cosmeticSlots;
 
-	// Token: 0x04002104 RID: 8452
+	// Token: 0x0400211B RID: 8475
 	public List<int> m_unlockedCosmetics = new List<int>();
 
-	// Token: 0x04002105 RID: 8453
+	// Token: 0x0400211C RID: 8476
 	public int tempCosmeticSlotIndex = -1;
 
-	// Token: 0x04002106 RID: 8454
+	// Token: 0x0400211D RID: 8477
 	public ItemClass tempCosmeticSlot;
 
-	// Token: 0x04002107 RID: 8455
+	// Token: 0x0400211E RID: 8478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive m_entity;
 
-	// Token: 0x04002108 RID: 8456
+	// Token: 0x0400211F RID: 8479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float insulation;
 
-	// Token: 0x04002109 RID: 8457
+	// Token: 0x04002120 RID: 8480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float waterProof;
 
-	// Token: 0x0400210A RID: 8458
+	// Token: 0x04002121 RID: 8481
 	public float CurrentLowestDurability = 1f;
 
-	// Token: 0x0400210B RID: 8459
+	// Token: 0x04002122 RID: 8482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, Equipment.ArmorGroupInfo> ArmorGroupEquipped = new Dictionary<string, Equipment.ArmorGroupInfo>();
 
-	// Token: 0x0400210C RID: 8460
+	// Token: 0x04002123 RID: 8483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastUpdateTime;
 
-	// Token: 0x0400210E RID: 8462
+	// Token: 0x04002125 RID: 8485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> physicalDamageTypes = FastTags<TagGroup.Global>.Parse("piercing,bashing,slashing,crushing,none,corrosive");
 
-	// Token: 0x0400210F RID: 8463
+	// Token: 0x04002126 RID: 8486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> coreDamageResist = FastTags<TagGroup.Global>.Parse("coredamageresist");
 
-	// Token: 0x04002110 RID: 8464
+	// Token: 0x04002127 RID: 8487
 	public static Dictionary<int, string> CosmeticMappingIDString = new Dictionary<int, string>();
 
-	// Token: 0x04002111 RID: 8465
+	// Token: 0x04002128 RID: 8488
 	public static Dictionary<string, int> CosmeticMappingStringID = new Dictionary<string, int>();
 
-	// Token: 0x02000525 RID: 1317
+	// Token: 0x02000529 RID: 1321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ArmorGroupInfo
 	{
-		// Token: 0x04002112 RID: 8466
+		// Token: 0x04002129 RID: 8489
 		public int Count;
 
-		// Token: 0x04002113 RID: 8467
+		// Token: 0x0400212A RID: 8490
 		public int LowestQuality;
 	}
 }

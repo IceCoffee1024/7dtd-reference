@@ -4,18 +4,18 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001946 RID: 6470
+	// Token: 0x02001977 RID: 6519
 	[Preserve]
 	public class RequirementObjectiveGroupGatherIngredients : BaseRequirementObjectiveGroup
 	{
-		// Token: 0x0600C7E0 RID: 51168 RVA: 0x00493E54 File Offset: 0x00492054
+		// Token: 0x0600C8F4 RID: 51444 RVA: 0x00497848 File Offset: 0x00495A48
 		public RequirementObjectiveGroupGatherIngredients(string itemID)
 		{
 			this.ItemID = itemID;
 			this.itemRecipe = CraftingManager.GetRecipe(itemID);
 		}
 
-		// Token: 0x0600C7E1 RID: 51169 RVA: 0x00493E7C File Offset: 0x0049207C
+		// Token: 0x0600C8F5 RID: 51445 RVA: 0x00497870 File Offset: 0x00495A70
 		public override void CreateRequirements()
 		{
 			if (this.PhaseList == null)
@@ -57,26 +57,26 @@ namespace Challenges
 			this.PhaseList.Add(requirementGroupPhase);
 		}
 
-		// Token: 0x0600C7E2 RID: 51170 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600C8F6 RID: 51446 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool HasPrerequisiteCondition()
 		{
 			return true;
 		}
 
-		// Token: 0x0600C7E3 RID: 51171 RVA: 0x00494004 File Offset: 0x00492204
+		// Token: 0x0600C8F7 RID: 51447 RVA: 0x004979F8 File Offset: 0x00495BF8
 		public override BaseRequirementObjectiveGroup Clone()
 		{
 			return new RequirementObjectiveGroupGatherIngredients(this.ItemID);
 		}
 
-		// Token: 0x04009660 RID: 38496
+		// Token: 0x04009749 RID: 38729
 		public string ItemID = "";
 
-		// Token: 0x04009661 RID: 38497
+		// Token: 0x0400974A RID: 38730
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Recipe itemRecipe;
 
-		// Token: 0x04009662 RID: 38498
+		// Token: 0x0400974B RID: 38731
 		public ChallengeObjectiveCraft CraftObj;
 	}
 }

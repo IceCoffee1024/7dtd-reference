@@ -8,8 +8,8 @@ using UnityEngine.Scripting;
 public class TEFeatureLandClaim : TEFeatureAbs
 {
 	// Token: 0x170000E0 RID: 224
-	// (get) Token: 0x06000B36 RID: 2870 RVA: 0x00047DF0 File Offset: 0x00045FF0
-	// (set) Token: 0x06000B37 RID: 2871 RVA: 0x00047DF8 File Offset: 0x00045FF8
+	// (get) Token: 0x06000B36 RID: 2870 RVA: 0x00047DB0 File Offset: 0x00045FB0
+	// (set) Token: 0x06000B37 RID: 2871 RVA: 0x00047DB8 File Offset: 0x00045FB8
 	public bool ShowBounds
 	{
 		get
@@ -23,7 +23,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B38 RID: 2872 RVA: 0x00047E08 File Offset: 0x00046008
+	// Token: 0x06000B38 RID: 2872 RVA: 0x00047DC8 File Offset: 0x00045FC8
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -33,7 +33,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		this.inactivePrompt = Localization.Get("inactiveBlockPrompt", false, null);
 	}
 
-	// Token: 0x06000B39 RID: 2873 RVA: 0x00047E64 File Offset: 0x00046064
+	// Token: 0x06000B39 RID: 2873 RVA: 0x00047E24 File Offset: 0x00046024
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -44,7 +44,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B3A RID: 2874 RVA: 0x00047E88 File Offset: 0x00046088
+	// Token: 0x06000B3A RID: 2874 RVA: 0x00047E48 File Offset: 0x00046048
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -64,7 +64,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		return string.Format(this.inactivePrompt, _blockValue.Block.GetLocalizedBlockName());
 	}
 
-	// Token: 0x06000B3B RID: 2875 RVA: 0x00047F78 File Offset: 0x00046178
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00047F38 File Offset: 0x00046138
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
@@ -73,7 +73,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		_addCallback(new BlockActivationCommand("remove", "x", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000B3C RID: 2876 RVA: 0x00047FEC File Offset: 0x000461EC
+	// Token: 0x06000B3C RID: 2876 RVA: 0x00047FAC File Offset: 0x000461AC
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -101,7 +101,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		return flag;
 	}
 
-	// Token: 0x06000B3D RID: 2877 RVA: 0x000480A8 File Offset: 0x000462A8
+	// Token: 0x06000B3D RID: 2877 RVA: 0x00048068 File Offset: 0x00046268
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -125,7 +125,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		return false;
 	}
 
-	// Token: 0x06000B3E RID: 2878 RVA: 0x0004815C File Offset: 0x0004635C
+	// Token: 0x06000B3E RID: 2878 RVA: 0x0004811C File Offset: 0x0004631C
 	public override void OnAdded(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnAdded(_blockPos, _blockValue);
@@ -141,7 +141,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B3F RID: 2879 RVA: 0x000481D0 File Offset: 0x000463D0
+	// Token: 0x06000B3F RID: 2879 RVA: 0x00048190 File Offset: 0x00046390
 	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
@@ -159,7 +159,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		this.showBounds = _br.ReadBoolean();
 	}
 
-	// Token: 0x06000B40 RID: 2880 RVA: 0x0004820B File Offset: 0x0004640B
+	// Token: 0x06000B40 RID: 2880 RVA: 0x000481CB File Offset: 0x000463CB
 	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
@@ -170,7 +170,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		_bw.Write(this.showBounds);
 	}
 
-	// Token: 0x06000B41 RID: 2881 RVA: 0x0004822C File Offset: 0x0004642C
+	// Token: 0x06000B41 RID: 2881 RVA: 0x000481EC File Offset: 0x000463EC
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -180,7 +180,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B42 RID: 2882 RVA: 0x0004828C File Offset: 0x0004648C
+	// Token: 0x06000B42 RID: 2882 RVA: 0x0004824C File Offset: 0x0004644C
 	public override void OnLoad()
 	{
 		base.OnLoad();
@@ -211,21 +211,21 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B43 RID: 2883 RVA: 0x00048364 File Offset: 0x00046564
+	// Token: 0x06000B43 RID: 2883 RVA: 0x00048324 File Offset: 0x00046524
 	public override void OnUnload(World _world)
 	{
 		base.OnUnload(_world);
 		LandClaimBoundsHelper.RemoveBoundsHelper(base.ToWorldPos());
 	}
 
-	// Token: 0x06000B44 RID: 2884 RVA: 0x0004837D File Offset: 0x0004657D
+	// Token: 0x06000B44 RID: 2884 RVA: 0x0004833D File Offset: 0x0004653D
 	public override void OnRemove(World _world)
 	{
 		base.OnRemove(_world);
 		LandClaimBoundsHelper.RemoveBoundsHelper(base.ToWorldPos());
 	}
 
-	// Token: 0x06000B45 RID: 2885 RVA: 0x00048398 File Offset: 0x00046598
+	// Token: 0x06000B45 RID: 2885 RVA: 0x00048358 File Offset: 0x00046558
 	public override void OnDestroy()
 	{
 		base.OnDestroy();
@@ -236,7 +236,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B46 RID: 2886 RVA: 0x00048400 File Offset: 0x00046600
+	// Token: 0x06000B46 RID: 2886 RVA: 0x000483C0 File Offset: 0x000465C0
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -253,13 +253,13 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B47 RID: 2887 RVA: 0x00048462 File Offset: 0x00046662
+	// Token: 0x06000B47 RID: 2887 RVA: 0x00048422 File Offset: 0x00046622
 	public bool IsPrimary()
 	{
 		return GameManager.Instance.persistentPlayers.GetLandProtectionBlockOwner(base.ToWorldPos()) != null;
 	}
 
-	// Token: 0x06000B48 RID: 2888 RVA: 0x0004847C File Offset: 0x0004667C
+	// Token: 0x06000B48 RID: 2888 RVA: 0x0004843C File Offset: 0x0004663C
 	public static void HandleDeactivateLandClaim(Vector3i _blockPos)
 	{
 		World world = GameManager.Instance.World;

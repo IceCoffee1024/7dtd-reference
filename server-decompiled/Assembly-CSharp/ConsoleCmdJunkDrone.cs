@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200022C RID: 556
+// Token: 0x0200022E RID: 558
 [Preserve]
 public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 {
 	// Token: 0x17000199 RID: 409
-	// (get) Token: 0x060010BF RID: 4287 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060010C3 RID: 4291 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,28 +16,28 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010C0 RID: 4288 RVA: 0x0006AB30 File Offset: 0x00068D30
+	// Token: 0x060010C4 RID: 4292 RVA: 0x0006AD00 File Offset: 0x00068F00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "junkDrone", "jd" };
 	}
 
-	// Token: 0x060010C1 RID: 4289 RVA: 0x0006AB48 File Offset: 0x00068D48
+	// Token: 0x060010C5 RID: 4293 RVA: 0x0006AD18 File Offset: 0x00068F18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Local player junk drone commands.";
 	}
 
-	// Token: 0x060010C2 RID: 4290 RVA: 0x0006AB4F File Offset: 0x00068D4F
+	// Token: 0x060010C6 RID: 4294 RVA: 0x0006AD1F File Offset: 0x00068F1F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return this.buildHelpLog();
 	}
 
-	// Token: 0x060010C3 RID: 4291 RVA: 0x0006AB58 File Offset: 0x00068D58
+	// Token: 0x060010C7 RID: 4295 RVA: 0x0006AD28 File Offset: 0x00068F28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buildHelpLog()
 	{
@@ -55,7 +55,7 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		return text;
 	}
 
-	// Token: 0x060010C4 RID: 4292 RVA: 0x0006ABF8 File Offset: 0x00068DF8
+	// Token: 0x060010C8 RID: 4296 RVA: 0x0006ADC8 File Offset: 0x00068FC8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GameManager instance = GameManager.Instance;
@@ -182,7 +182,7 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010C5 RID: 4293 RVA: 0x0006AF75 File Offset: 0x00069175
+	// Token: 0x060010C9 RID: 4297 RVA: 0x0006B145 File Offset: 0x00069345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<OwnedEntityData> getDrones(EntityPlayer player)
 	{
@@ -193,7 +193,7 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		return null;
 	}
 
-	// Token: 0x060010C6 RID: 4294 RVA: 0x0006AF8C File Offset: 0x0006918C
+	// Token: 0x060010CA RID: 4298 RVA: 0x0006B15C File Offset: 0x0006935C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleDebugCam(EntityPlayer player)
 	{
@@ -206,7 +206,7 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010C7 RID: 4295 RVA: 0x0006AFF0 File Offset: 0x000691F0
+	// Token: 0x060010CB RID: 4299 RVA: 0x0006B1C0 File Offset: 0x000693C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string logPlayerOwnedDrones(EntityPlayer player)
 	{
@@ -226,7 +226,7 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		return empty + string.Format("[{0} - count({1})]" + Environment.NewLine + "{2}", player.EntityName, num, text);
 	}
 
-	// Token: 0x060010C8 RID: 4296 RVA: 0x0006B0E0 File Offset: 0x000692E0
+	// Token: 0x060010CC RID: 4300 RVA: 0x0006B2B0 File Offset: 0x000694B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearDronesForPlayer(EntityPlayer player)
 	{
@@ -237,7 +237,7 @@ public class ConsoleCmdJunkDrone : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010C9 RID: 4297 RVA: 0x0006B114 File Offset: 0x00069314
+	// Token: 0x060010CD RID: 4301 RVA: 0x0006B2E4 File Offset: 0x000694E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleEnemiesInRange(EntityPlayer player)
 	{

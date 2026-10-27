@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200199E RID: 6558
+	// Token: 0x020019CF RID: 6607
 	[Preserve]
 	public class ActionCallGameEvent : BaseAction
 	{
-		// Token: 0x0600C996 RID: 51606 RVA: 0x0049B6D0 File Offset: 0x004998D0
+		// Token: 0x0600CAAA RID: 51882 RVA: 0x0049F1D0 File Offset: 0x0049D3D0
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			GameEventActionSequence gameEventActionSequence = ((base.Owner.OwnerSequence != null) ? base.Owner.OwnerSequence : base.Owner);
@@ -30,7 +30,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C997 RID: 51607 RVA: 0x0049B810 File Offset: 0x00499A10
+		// Token: 0x0600CAAB RID: 51883 RVA: 0x0049F310 File Offset: 0x0049D510
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -41,7 +41,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionCallGameEvent.PropTargetGroup, ref this.targetGroup);
 		}
 
-		// Token: 0x0600C998 RID: 51608 RVA: 0x0049B86A File Offset: 0x00499A6A
+		// Token: 0x0600CAAC RID: 51884 RVA: 0x0049F36A File Offset: 0x0049D56A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -52,19 +52,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097ED RID: 38893
+		// Token: 0x040098D6 RID: 39126
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<string> gameEventNames = new List<string>();
 
-		// Token: 0x040097EE RID: 38894
+		// Token: 0x040098D7 RID: 39127
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x040097EF RID: 38895
+		// Token: 0x040098D8 RID: 39128
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGameEventNames = "game_events";
 
-		// Token: 0x040097F0 RID: 38896
+		// Token: 0x040098D9 RID: 39129
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 	}

@@ -9,17 +9,17 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001753 RID: 5971
+	// Token: 0x02001784 RID: 6020
 	[BurstCompile(CompileSynchronously = true)]
 	public class StampManager
 	{
-		// Token: 0x0600B9B6 RID: 47542 RVA: 0x0044AEF5 File Offset: 0x004490F5
+		// Token: 0x0600BACA RID: 47818 RVA: 0x0044E8A1 File Offset: 0x0044CAA1
 		public StampManager(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B9B7 RID: 47543 RVA: 0x0044AF1C File Offset: 0x0044911C
+		// Token: 0x0600BACB RID: 47819 RVA: 0x0044E8C8 File Offset: 0x0044CAC8
 		public void ClearStamps()
 		{
 			foreach (RawStamp rawStamp in this.AllStamps.Values)
@@ -29,7 +29,7 @@ namespace WorldGenerationEngineFinal
 			this.AllStamps.Clear();
 		}
 
-		// Token: 0x0600B9B8 RID: 47544 RVA: 0x0044AF7C File Offset: 0x0044917C
+		// Token: 0x0600BACC RID: 47820 RVA: 0x0044E928 File Offset: 0x0044CB28
 		public void DrawStampGroup(StampGroup _group, ref NativeArray<float> _dest, int size)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -53,7 +53,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600B9B9 RID: 47545 RVA: 0x0044B00C File Offset: 0x0044920C
+		// Token: 0x0600BACD RID: 47821 RVA: 0x0044E9B8 File Offset: 0x0044CBB8
 		public void DrawStampGroup(StampGroup _group, Color32[] _image, int size, float _stampScale = 1f)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -79,7 +79,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600B9BA RID: 47546 RVA: 0x0044B10C File Offset: 0x0044930C
+		// Token: 0x0600BACE RID: 47822 RVA: 0x0044EAB8 File Offset: 0x0044CCB8
 		public void DrawWaterStampGroup(StampGroup _group, ref NativeArray<float> _dest, int _destSize)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -103,7 +103,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600B9BB RID: 47547 RVA: 0x0044B19C File Offset: 0x0044939C
+		// Token: 0x0600BACF RID: 47823 RVA: 0x0044EB48 File Offset: 0x0044CD48
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float CalcRotatedValue(float x1, float y1, ref NativeArray<float> src, float sine, float cosine, int width, int height, bool isWater = false)
 		{
@@ -161,7 +161,7 @@ namespace WorldGenerationEngineFinal
 			return num8 + (num12 - num8) * num5;
 		}
 
-		// Token: 0x0600B9BC RID: 47548 RVA: 0x0044B2C8 File Offset: 0x004494C8
+		// Token: 0x0600BAD0 RID: 47824 RVA: 0x0044EC74 File Offset: 0x0044CE74
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float CalcRotatedValue(ref StampManager.RotateParams _p, float x1, float y1, ref NativeArray<float> src)
 		{
@@ -205,7 +205,7 @@ namespace WorldGenerationEngineFinal
 			return num10 + (num11 - num10) * num3;
 		}
 
-		// Token: 0x0600B9BD RID: 47549 RVA: 0x0044B42C File Offset: 0x0044962C
+		// Token: 0x0600BAD1 RID: 47825 RVA: 0x0044EDD8 File Offset: 0x0044CFD8
 		public void DrawStamp(ref NativeArray<float> _dest, Stamp stamp)
 		{
 			int x = stamp.transform.x;
@@ -215,15 +215,15 @@ namespace WorldGenerationEngineFinal
 			StampManager.DrawStamp(ref _dest, ref stamp.stamp.data, x, y, worldSize, worldSize, stamp.alpha, stamp.additive, stamp.scale, ref stamp.customColor, stamp.alphaCutoff, num);
 		}
 
-		// Token: 0x0600B9BE RID: 47550 RVA: 0x0044B4A0 File Offset: 0x004496A0
+		// Token: 0x0600BAD2 RID: 47826 RVA: 0x0044EE4C File Offset: 0x0044D04C
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void DrawStamp(ref NativeArray<float> _dest, ref RawStamp.Data _src, int _x, int _y, int _destWidth, int _destHeight, float _alphaScale, bool _additive, float _scale, ref Color32 _customColor, float _alphaCutoff, float _angle)
 		{
-			StampManager.DrawStamp_0000B966$BurstDirectCall.Invoke(ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _alphaScale, _additive, _scale, ref _customColor, _alphaCutoff, _angle);
+			StampManager.DrawStamp_0000BA7A$BurstDirectCall.Invoke(ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _alphaScale, _additive, _scale, ref _customColor, _alphaCutoff, _angle);
 		}
 
-		// Token: 0x0600B9BF RID: 47551 RVA: 0x0044B4C8 File Offset: 0x004496C8
+		// Token: 0x0600BAD3 RID: 47827 RVA: 0x0044EE74 File Offset: 0x0044D074
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void DrawStamp(Color32[] _dest, ref RawStamp.Data _src, int _x, int _y, int _destWidth, int _destHeight, int _srcWidth, int _srcHeight, float _alpha, float _scale, Color32 _customColor, float _alphaCutoff = 0.1f, float _angle = 0f, bool isWater = false)
 		{
@@ -279,7 +279,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B9C0 RID: 47552 RVA: 0x0044B614 File Offset: 0x00449814
+		// Token: 0x0600BAD4 RID: 47828 RVA: 0x0044EFC0 File Offset: 0x0044D1C0
 		public static void DrawWaterStamp(Stamp stamp, ref NativeArray<float> _dest, int _destSize)
 		{
 			if (!stamp.isWater)
@@ -301,15 +301,15 @@ namespace WorldGenerationEngineFinal
 			StampManager.DrawWaterStamp(ref _dest, ref nativeArray, x, y, _destSize, _destSize, stamp.imageWidth, stamp.imageHeight, stamp.alpha, stamp.scale, (float)stamp.customColor.b, num);
 		}
 
-		// Token: 0x0600B9C1 RID: 47553 RVA: 0x0044B6CC File Offset: 0x004498CC
+		// Token: 0x0600BAD5 RID: 47829 RVA: 0x0044F078 File Offset: 0x0044D278
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void DrawWaterStamp(ref NativeArray<float> _dest, ref NativeArray<float> _src, int _x, int _y, int _destWidth, int _destHeight, int _srcWidth, int _srcHeight, float _alpha, float _scale, float _customColor, float _angle)
 		{
-			StampManager.DrawWaterStamp_0000B969$BurstDirectCall.Invoke(ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _srcWidth, _srcHeight, _alpha, _scale, _customColor, _angle);
+			StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.Invoke(ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _srcWidth, _srcHeight, _alpha, _scale, _customColor, _angle);
 		}
 
-		// Token: 0x0600B9C2 RID: 47554 RVA: 0x0044B6F4 File Offset: 0x004498F4
+		// Token: 0x0600BAD6 RID: 47830 RVA: 0x0044F0A0 File Offset: 0x0044D2A0
 		public static void DrawBiomeStamp(Color32[] _dest, ref NativeArray<float> _src, int _x, int _y, int _destWidth, int _destHeight, int _srcWidth, int _srcHeight, float _scale, Color32 _destColor, float _alphaCutoff = 0.1f, float _angle = 0f)
 		{
 			_x -= (int)((float)_srcWidth * _scale) / 2;
@@ -359,19 +359,19 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B9C3 RID: 47555 RVA: 0x0044B81F File Offset: 0x00449A1F
+		// Token: 0x0600BAD7 RID: 47831 RVA: 0x0044F1CB File Offset: 0x0044D3CB
 		public bool TryGetStamp(string terrainTypeName, string comboTypeName, out RawStamp tmp)
 		{
 			return this.TryGetStamp(comboTypeName, out tmp) || this.TryGetStamp(terrainTypeName, out tmp);
 		}
 
-		// Token: 0x0600B9C4 RID: 47556 RVA: 0x0044B838 File Offset: 0x00449A38
+		// Token: 0x0600BAD8 RID: 47832 RVA: 0x0044F1E4 File Offset: 0x0044D3E4
 		public bool TryGetStamp(string _baseName, out RawStamp _output)
 		{
 			return this.TryGetStamp(_baseName, out _output, Rand.Instance);
 		}
 
-		// Token: 0x0600B9C5 RID: 47557 RVA: 0x0044B848 File Offset: 0x00449A48
+		// Token: 0x0600BAD9 RID: 47833 RVA: 0x0044F1F4 File Offset: 0x0044D3F4
 		public bool TryGetStamp(string _baseName, out RawStamp _output, Rand _rand)
 		{
 			List<RawStamp> list = this.tempGetStampList;
@@ -407,7 +407,7 @@ namespace WorldGenerationEngineFinal
 			return flag2;
 		}
 
-		// Token: 0x0600B9C6 RID: 47558 RVA: 0x0044B940 File Offset: 0x00449B40
+		// Token: 0x0600BADA RID: 47834 RVA: 0x0044F2EC File Offset: 0x0044D4EC
 		public RawStamp GetStamp(string _baseName, Rand _rand = null)
 		{
 			if (_rand == null)
@@ -422,7 +422,7 @@ namespace WorldGenerationEngineFinal
 			return rawStamp;
 		}
 
-		// Token: 0x0600B9C7 RID: 47559 RVA: 0x0044B966 File Offset: 0x00449B66
+		// Token: 0x0600BADB RID: 47835 RVA: 0x0044F312 File Offset: 0x0044D512
 		public IEnumerator LoadStamps()
 		{
 			if (this.AllStamps.Count > 0)
@@ -462,7 +462,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600B9C8 RID: 47560 RVA: 0x0044B978 File Offset: 0x00449B78
+		// Token: 0x0600BADC RID: 47836 RVA: 0x0044F324 File Offset: 0x0044D524
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LoadStamp(PathAbstractions.AbstractedLocation _path)
 		{
@@ -577,7 +577,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600B9C9 RID: 47561 RVA: 0x0044BCC4 File Offset: 0x00449EC4
+		// Token: 0x0600BADD RID: 47837 RVA: 0x0044F670 File Offset: 0x0044D870
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void SaveEXR(string cleanname, Color[] colors, bool _replace = true)
 		{
@@ -593,7 +593,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out("SaveEXR {0}", new object[] { text });
 		}
 
-		// Token: 0x0600B9CA RID: 47562 RVA: 0x0044BD34 File Offset: 0x00449F34
+		// Token: 0x0600BADE RID: 47838 RVA: 0x0044F6E0 File Offset: 0x0044D8E0
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -685,7 +685,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B9CB RID: 47563 RVA: 0x0044BF7C File Offset: 0x0044A17C
+		// Token: 0x0600BADF RID: 47839 RVA: 0x0044F928 File Offset: 0x0044DB28
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -746,103 +746,103 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x04008A8D RID: 35469
+		// Token: 0x04008B76 RID: 35702
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cAlphaCutoff = 1E-05f;
 
-		// Token: 0x04008A8E RID: 35470
+		// Token: 0x04008B77 RID: 35703
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008A8F RID: 35471
+		// Token: 0x04008B78 RID: 35704
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, RawStamp> AllStamps = new Dictionary<string, RawStamp>();
 
-		// Token: 0x04008A90 RID: 35472
+		// Token: 0x04008B79 RID: 35705
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<RawStamp> tempGetStampList = new List<RawStamp>();
 
-		// Token: 0x02001754 RID: 5972
+		// Token: 0x02001785 RID: 6021
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct RotateParams
 		{
-			// Token: 0x04008A91 RID: 35473
+			// Token: 0x04008B7A RID: 35706
 			public float sine;
 
-			// Token: 0x04008A92 RID: 35474
+			// Token: 0x04008B7B RID: 35707
 			public float cosine;
 
-			// Token: 0x04008A93 RID: 35475
+			// Token: 0x04008B7C RID: 35708
 			public int width;
 
-			// Token: 0x04008A94 RID: 35476
+			// Token: 0x04008B7D RID: 35709
 			public int height;
 
-			// Token: 0x04008A95 RID: 35477
+			// Token: 0x04008B7E RID: 35710
 			public float halfWidth;
 
-			// Token: 0x04008A96 RID: 35478
+			// Token: 0x04008B7F RID: 35711
 			public float halfHeight;
 
-			// Token: 0x04008A97 RID: 35479
+			// Token: 0x04008B80 RID: 35712
 			public bool isWater;
 		}
 
-		// Token: 0x02001756 RID: 5974
-		// (Invoke) Token: 0x0600B9D3 RID: 47571
+		// Token: 0x02001787 RID: 6023
+		// (Invoke) Token: 0x0600BAE7 RID: 47847
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void DrawStamp_0000B966$PostfixBurstDelegate(ref NativeArray<float> _dest, ref RawStamp.Data _src, int _x, int _y, int _destWidth, int _destHeight, float _alphaScale, bool _additive, float _scale, ref Color32 _customColor, float _alphaCutoff, float _angle);
+		public delegate void DrawStamp_0000BA7A$PostfixBurstDelegate(ref NativeArray<float> _dest, ref RawStamp.Data _src, int _x, int _y, int _destWidth, int _destHeight, float _alphaScale, bool _additive, float _scale, ref Color32 _customColor, float _alphaCutoff, float _angle);
 
-		// Token: 0x02001757 RID: 5975
+		// Token: 0x02001788 RID: 6024
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class DrawStamp_0000B966$BurstDirectCall
+		public static class DrawStamp_0000BA7A$BurstDirectCall
 		{
-			// Token: 0x0600B9D6 RID: 47574 RVA: 0x0044C2EE File Offset: 0x0044A4EE
+			// Token: 0x0600BAEA RID: 47850 RVA: 0x0044FC9A File Offset: 0x0044DE9A
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (StampManager.DrawStamp_0000B966$BurstDirectCall.Pointer == 0)
+				if (StampManager.DrawStamp_0000BA7A$BurstDirectCall.Pointer == 0)
 				{
-					StampManager.DrawStamp_0000B966$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(StampManager.DrawStamp_0000B966$BurstDirectCall.DeferredCompilation, methodof(StampManager.DrawStamp$BurstManaged(ref NativeArray<float>, ref RawStamp.Data, int, int, int, int, float, bool, float, ref Color32, float, float)).MethodHandle, typeof(StampManager.DrawStamp_0000B966$PostfixBurstDelegate).TypeHandle);
+					StampManager.DrawStamp_0000BA7A$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(StampManager.DrawStamp_0000BA7A$BurstDirectCall.DeferredCompilation, methodof(StampManager.DrawStamp$BurstManaged(ref NativeArray<float>, ref RawStamp.Data, int, int, int, int, float, bool, float, ref Color32, float, float)).MethodHandle, typeof(StampManager.DrawStamp_0000BA7A$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = StampManager.DrawStamp_0000B966$BurstDirectCall.Pointer;
+				A_0 = StampManager.DrawStamp_0000BA7A$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B9D7 RID: 47575 RVA: 0x0044C31C File Offset: 0x0044A51C
+			// Token: 0x0600BAEB RID: 47851 RVA: 0x0044FCC8 File Offset: 0x0044DEC8
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				StampManager.DrawStamp_0000B966$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				StampManager.DrawStamp_0000BA7A$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B9D8 RID: 47576 RVA: 0x0044C334 File Offset: 0x0044A534
+			// Token: 0x0600BAEC RID: 47852 RVA: 0x0044FCE0 File Offset: 0x0044DEE0
 			public static void Constructor()
 			{
-				StampManager.DrawStamp_0000B966$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(StampManager.DrawStamp(ref NativeArray<float>, ref RawStamp.Data, int, int, int, int, float, bool, float, ref Color32, float, float)).MethodHandle);
+				StampManager.DrawStamp_0000BA7A$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(StampManager.DrawStamp(ref NativeArray<float>, ref RawStamp.Data, int, int, int, int, float, bool, float, ref Color32, float, float)).MethodHandle);
 			}
 
-			// Token: 0x0600B9D9 RID: 47577 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BAED RID: 47853 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B9DA RID: 47578 RVA: 0x0044C345 File Offset: 0x0044A545
+			// Token: 0x0600BAEE RID: 47854 RVA: 0x0044FCF1 File Offset: 0x0044DEF1
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static DrawStamp_0000B966$BurstDirectCall()
+			static DrawStamp_0000BA7A$BurstDirectCall()
 			{
-				StampManager.DrawStamp_0000B966$BurstDirectCall.Constructor();
+				StampManager.DrawStamp_0000BA7A$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B9DB RID: 47579 RVA: 0x0044C34C File Offset: 0x0044A54C
+			// Token: 0x0600BAEF RID: 47855 RVA: 0x0044FCF8 File Offset: 0x0044DEF8
 			public static void Invoke(ref NativeArray<float> _dest, ref RawStamp.Data _src, int _x, int _y, int _destWidth, int _destHeight, float _alphaScale, bool _additive, float _scale, ref Color32 _customColor, float _alphaCutoff, float _angle)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = StampManager.DrawStamp_0000B966$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = StampManager.DrawStamp_0000BA7A$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(Unity.Collections.NativeArray`1<System.Single>&,WorldGenerationEngineFinal.RawStamp/Data&,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean,System.Single,UnityEngine.Color32&,System.Single,System.Single), ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _alphaScale, _additive, _scale, ref _customColor, _alphaCutoff, _angle, functionPointer);
@@ -852,70 +852,70 @@ namespace WorldGenerationEngineFinal
 				StampManager.DrawStamp$BurstManaged(ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _alphaScale, _additive, _scale, ref _customColor, _alphaCutoff, _angle);
 			}
 
-			// Token: 0x04008A9F RID: 35487
+			// Token: 0x04008B88 RID: 35720
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008AA0 RID: 35488
+			// Token: 0x04008B89 RID: 35721
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x02001758 RID: 5976
-		// (Invoke) Token: 0x0600B9DD RID: 47581
+		// Token: 0x02001789 RID: 6025
+		// (Invoke) Token: 0x0600BAF1 RID: 47857
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void DrawWaterStamp_0000B969$PostfixBurstDelegate(ref NativeArray<float> _dest, ref NativeArray<float> _src, int _x, int _y, int _destWidth, int _destHeight, int _srcWidth, int _srcHeight, float _alpha, float _scale, float _customColor, float _angle);
+		public delegate void DrawWaterStamp_0000BA7D$PostfixBurstDelegate(ref NativeArray<float> _dest, ref NativeArray<float> _src, int _x, int _y, int _destWidth, int _destHeight, int _srcWidth, int _srcHeight, float _alpha, float _scale, float _customColor, float _angle);
 
-		// Token: 0x02001759 RID: 5977
+		// Token: 0x0200178A RID: 6026
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class DrawWaterStamp_0000B969$BurstDirectCall
+		public static class DrawWaterStamp_0000BA7D$BurstDirectCall
 		{
-			// Token: 0x0600B9E0 RID: 47584 RVA: 0x0044C3A3 File Offset: 0x0044A5A3
+			// Token: 0x0600BAF4 RID: 47860 RVA: 0x0044FD4F File Offset: 0x0044DF4F
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (StampManager.DrawWaterStamp_0000B969$BurstDirectCall.Pointer == 0)
+				if (StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.Pointer == 0)
 				{
-					StampManager.DrawWaterStamp_0000B969$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(StampManager.DrawWaterStamp_0000B969$BurstDirectCall.DeferredCompilation, methodof(StampManager.DrawWaterStamp$BurstManaged(ref NativeArray<float>, ref NativeArray<float>, int, int, int, int, int, int, float, float, float, float)).MethodHandle, typeof(StampManager.DrawWaterStamp_0000B969$PostfixBurstDelegate).TypeHandle);
+					StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.DeferredCompilation, methodof(StampManager.DrawWaterStamp$BurstManaged(ref NativeArray<float>, ref NativeArray<float>, int, int, int, int, int, int, float, float, float, float)).MethodHandle, typeof(StampManager.DrawWaterStamp_0000BA7D$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = StampManager.DrawWaterStamp_0000B969$BurstDirectCall.Pointer;
+				A_0 = StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B9E1 RID: 47585 RVA: 0x0044C3D0 File Offset: 0x0044A5D0
+			// Token: 0x0600BAF5 RID: 47861 RVA: 0x0044FD7C File Offset: 0x0044DF7C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				StampManager.DrawWaterStamp_0000B969$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B9E2 RID: 47586 RVA: 0x0044C3E8 File Offset: 0x0044A5E8
+			// Token: 0x0600BAF6 RID: 47862 RVA: 0x0044FD94 File Offset: 0x0044DF94
 			public static void Constructor()
 			{
-				StampManager.DrawWaterStamp_0000B969$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(StampManager.DrawWaterStamp(ref NativeArray<float>, ref NativeArray<float>, int, int, int, int, int, int, float, float, float, float)).MethodHandle);
+				StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(StampManager.DrawWaterStamp(ref NativeArray<float>, ref NativeArray<float>, int, int, int, int, int, int, float, float, float, float)).MethodHandle);
 			}
 
-			// Token: 0x0600B9E3 RID: 47587 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BAF7 RID: 47863 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B9E4 RID: 47588 RVA: 0x0044C3F9 File Offset: 0x0044A5F9
+			// Token: 0x0600BAF8 RID: 47864 RVA: 0x0044FDA5 File Offset: 0x0044DFA5
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static DrawWaterStamp_0000B969$BurstDirectCall()
+			static DrawWaterStamp_0000BA7D$BurstDirectCall()
 			{
-				StampManager.DrawWaterStamp_0000B969$BurstDirectCall.Constructor();
+				StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B9E5 RID: 47589 RVA: 0x0044C400 File Offset: 0x0044A600
+			// Token: 0x0600BAF9 RID: 47865 RVA: 0x0044FDAC File Offset: 0x0044DFAC
 			public static void Invoke(ref NativeArray<float> _dest, ref NativeArray<float> _src, int _x, int _y, int _destWidth, int _destHeight, int _srcWidth, int _srcHeight, float _alpha, float _scale, float _customColor, float _angle)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = StampManager.DrawWaterStamp_0000B969$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = StampManager.DrawWaterStamp_0000BA7D$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(Unity.Collections.NativeArray`1<System.Single>&,Unity.Collections.NativeArray`1<System.Single>&,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single), ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _srcWidth, _srcHeight, _alpha, _scale, _customColor, _angle, functionPointer);
@@ -925,11 +925,11 @@ namespace WorldGenerationEngineFinal
 				StampManager.DrawWaterStamp$BurstManaged(ref _dest, ref _src, _x, _y, _destWidth, _destHeight, _srcWidth, _srcHeight, _alpha, _scale, _customColor, _angle);
 			}
 
-			// Token: 0x04008AA1 RID: 35489
+			// Token: 0x04008B8A RID: 35722
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008AA2 RID: 35490
+			// Token: 0x04008B8B RID: 35723
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}

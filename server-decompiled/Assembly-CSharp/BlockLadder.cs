@@ -11,7 +11,7 @@ public class BlockLadder : Block
 		return true;
 	}
 
-	// Token: 0x060007C3 RID: 1987 RVA: 0x00036DE8 File Offset: 0x00034FE8
+	// Token: 0x060007C3 RID: 1987 RVA: 0x00036DA8 File Offset: 0x00034FA8
 	public override bool IsElevator(int rotation)
 	{
 		return BlockLadder.climbableRotations[rotation] > 0;

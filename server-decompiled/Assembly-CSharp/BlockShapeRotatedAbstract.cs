@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020001B9 RID: 441
 public abstract class BlockShapeRotatedAbstract : BlockShape
 {
-	// Token: 0x06000D2E RID: 3374 RVA: 0x000566AC File Offset: 0x000548AC
+	// Token: 0x06000D2E RID: 3374 RVA: 0x0005664C File Offset: 0x0005484C
 	public BlockShapeRotatedAbstract()
 	{
 		this.IsRotatable = true;
 	}
 
-	// Token: 0x06000D2F RID: 3375 RVA: 0x000566D5 File Offset: 0x000548D5
+	// Token: 0x06000D2F RID: 3375 RVA: 0x00056675 File Offset: 0x00054875
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
@@ -19,7 +19,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		this.createAABBVertices();
 	}
 
-	// Token: 0x06000D30 RID: 3376 RVA: 0x000566F0 File Offset: 0x000548F0
+	// Token: 0x06000D30 RID: 3376 RVA: 0x00056690 File Offset: 0x00054890
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createBoundingBoxes()
 	{
@@ -40,7 +40,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		}
 	}
 
-	// Token: 0x06000D31 RID: 3377 RVA: 0x00056760 File Offset: 0x00054960
+	// Token: 0x06000D31 RID: 3377 RVA: 0x00056700 File Offset: 0x00054900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createAABBVertices()
 	{
@@ -60,7 +60,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void createVertices();
 
-	// Token: 0x06000D33 RID: 3379 RVA: 0x00056850 File Offset: 0x00054A50
+	// Token: 0x06000D33 RID: 3379 RVA: 0x000567F0 File Offset: 0x000549F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3[] rotateVertices(Vector3[] _vertices, Vector3 _drawPos, BlockValue _blockValue)
 	{
@@ -93,7 +93,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		return true;
 	}
 
-	// Token: 0x06000D37 RID: 3383 RVA: 0x000568C8 File Offset: 0x00054AC8
+	// Token: 0x06000D37 RID: 3383 RVA: 0x00056868 File Offset: 0x00054A68
 	public override Bounds[] GetBounds(BlockValue _blockValue)
 	{
 		int rotation = (int)_blockValue.rotation;
@@ -135,7 +135,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		return this.boundsArr;
 	}
 
-	// Token: 0x06000D38 RID: 3384 RVA: 0x00056A70 File Offset: 0x00054C70
+	// Token: 0x06000D38 RID: 3384 RVA: 0x00056A10 File Offset: 0x00054C10
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		for (int i = 0; i < _rotCount; i++)
@@ -190,7 +190,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		return _blockValue;
 	}
 
-	// Token: 0x06000D39 RID: 3385 RVA: 0x00056B32 File Offset: 0x00054D32
+	// Token: 0x06000D39 RID: 3385 RVA: 0x00056AD2 File Offset: 0x00054CD2
 	public override float GetStepHeight(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		this.GetBounds(_blockValue);

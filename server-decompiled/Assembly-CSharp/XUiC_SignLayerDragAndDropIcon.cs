@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001044 RID: 4164
+// Token: 0x02001054 RID: 4180
 [Preserve]
 public class XUiC_SignLayerDragAndDropIcon : XUiController
 {
-	// Token: 0x060083B5 RID: 33717 RVA: 0x00324DF8 File Offset: 0x00322FF8
+	// Token: 0x06008407 RID: 33799 RVA: 0x00326AFC File Offset: 0x00324CFC
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class XUiC_SignLayerDragAndDropIcon : XUiController
 		this.signMaterial.Texture = Texture2D.whiteTexture;
 	}
 
-	// Token: 0x060083B6 RID: 33718 RVA: 0x00324E60 File Offset: 0x00323060
+	// Token: 0x06008408 RID: 33800 RVA: 0x00326B64 File Offset: 0x00324D64
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -35,7 +35,7 @@ public class XUiC_SignLayerDragAndDropIcon : XUiController
 		}
 	}
 
-	// Token: 0x060083B7 RID: 33719 RVA: 0x00324F09 File Offset: 0x00323109
+	// Token: 0x06008409 RID: 33801 RVA: 0x00326C0D File Offset: 0x00324E0D
 	public void SetLayer(GlobalSignId _signId, SignData.SignLayer _layer)
 	{
 		this.signId = _signId;
@@ -43,7 +43,7 @@ public class XUiC_SignLayerDragAndDropIcon : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060083B8 RID: 33720 RVA: 0x00324F20 File Offset: 0x00323120
+	// Token: 0x0600840A RID: 33802 RVA: 0x00326C24 File Offset: 0x00324E24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnWillRender(Material mat)
 	{
@@ -54,7 +54,7 @@ public class XUiC_SignLayerDragAndDropIcon : XUiController
 		}
 	}
 
-	// Token: 0x060083B9 RID: 33721 RVA: 0x00324F84 File Offset: 0x00323184
+	// Token: 0x0600840B RID: 33803 RVA: 0x00326C88 File Offset: 0x00324E88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -70,15 +70,15 @@ public class XUiC_SignLayerDragAndDropIcon : XUiController
 		return false;
 	}
 
-	// Token: 0x040061D1 RID: 25041
+	// Token: 0x0400620F RID: 25103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture signMaterial;
 
-	// Token: 0x040061D2 RID: 25042
+	// Token: 0x04006210 RID: 25104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId signId;
 
-	// Token: 0x040061D3 RID: 25043
+	// Token: 0x04006211 RID: 25105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer layer;
 }

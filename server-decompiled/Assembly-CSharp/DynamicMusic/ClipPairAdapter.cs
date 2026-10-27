@@ -6,33 +6,33 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A61 RID: 6753
+	// Token: 0x02001A92 RID: 6802
 	[Preserve]
 	public class ClipPairAdapter : IClipAdapter
 	{
-		// Token: 0x17001983 RID: 6531
-		// (get) Token: 0x0600CCF4 RID: 52468 RVA: 0x004AB3A0 File Offset: 0x004A95A0
-		// (set) Token: 0x0600CCF5 RID: 52469 RVA: 0x004AB3A8 File Offset: 0x004A95A8
+		// Token: 0x170019CB RID: 6603
+		// (get) Token: 0x0600CE08 RID: 52744 RVA: 0x004AEE9C File Offset: 0x004AD09C
+		// (set) Token: 0x0600CE09 RID: 52745 RVA: 0x004AEEA4 File Offset: 0x004AD0A4
 		public bool IsLoaded
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CCF6 RID: 52470 RVA: 0x004AB3B1 File Offset: 0x004A95B1
+		// Token: 0x0600CE0A RID: 52746 RVA: 0x004AEEAD File Offset: 0x004AD0AD
 		public ClipPairAdapter()
 		{
 			this.clipAdapterLo = new ClipAdapter();
 			this.clipAdapterHi = new ClipAdapter();
 		}
 
-		// Token: 0x0600CCF7 RID: 52471 RVA: 0x004AB3CF File Offset: 0x004A95CF
+		// Token: 0x0600CE0B RID: 52747 RVA: 0x004AEECB File Offset: 0x004AD0CB
 		public float GetSample(int idx, params float[] _params)
 		{
 			return _params[0] * (this.clipAdapterLo.GetSample(idx, null) * (1f - _params[1]) + _params[1] * this.clipAdapterHi.GetSample(idx, null));
 		}
 
-		// Token: 0x0600CCF8 RID: 52472 RVA: 0x004AB3FE File Offset: 0x004A95FE
+		// Token: 0x0600CE0C RID: 52748 RVA: 0x004AEEFA File Offset: 0x004AD0FA
 		public IEnumerator Load()
 		{
 			yield return this.clipAdapterLo.Load();
@@ -40,14 +40,14 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CCF9 RID: 52473 RVA: 0x004AB40D File Offset: 0x004A960D
+		// Token: 0x0600CE0D RID: 52749 RVA: 0x004AEF09 File Offset: 0x004AD109
 		public void LoadImmediate()
 		{
 			this.clipAdapterLo.LoadImmediate();
 			this.clipAdapterHi.LoadImmediate();
 		}
 
-		// Token: 0x0600CCFA RID: 52474 RVA: 0x004AB425 File Offset: 0x004A9625
+		// Token: 0x0600CE0E RID: 52750 RVA: 0x004AEF21 File Offset: 0x004AD121
 		public void Unload()
 		{
 			this.clipAdapterLo.Unload();
@@ -55,23 +55,23 @@ namespace DynamicMusic
 			this.IsLoaded = false;
 		}
 
-		// Token: 0x0600CCFB RID: 52475 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CE0F RID: 52751 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ParseXml(XElement _xmlNode)
 		{
 		}
 
-		// Token: 0x0600CCFC RID: 52476 RVA: 0x004AB444 File Offset: 0x004A9644
+		// Token: 0x0600CE10 RID: 52752 RVA: 0x004AEF40 File Offset: 0x004AD140
 		public void SetPaths(int _num, PlacementType _placement, SectionType _section, LayerType _layer, string stress = "")
 		{
 			this.clipAdapterLo.SetPaths(_num, _placement, _section, _layer, "Lo");
 			this.clipAdapterHi.SetPaths(_num, _placement, _section, _layer, "Hi");
 		}
 
-		// Token: 0x04009B9E RID: 39838
+		// Token: 0x04009C87 RID: 40071
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ClipAdapter clipAdapterLo;
 
-		// Token: 0x04009B9F RID: 39839
+		// Token: 0x04009C88 RID: 40072
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ClipAdapter clipAdapterHi;
 	}

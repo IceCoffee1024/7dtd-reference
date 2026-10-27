@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F3C RID: 3900
+// Token: 0x02000F4B RID: 3915
 [Preserve]
 public class XUiC_EditorPanelSelector : XUiController
 {
-	// Token: 0x060079E6 RID: 31206 RVA: 0x002E1B18 File Offset: 0x002DFD18
+	// Token: 0x06007A29 RID: 31273 RVA: 0x002E3408 File Offset: 0x002E1608
 	public override void Init()
 	{
 		base.Init();
@@ -18,14 +18,14 @@ public class XUiC_EditorPanelSelector : XUiController
 		}
 	}
 
-	// Token: 0x060079E7 RID: 31207 RVA: 0x002E1B71 File Offset: 0x002DFD71
+	// Token: 0x06007A2A RID: 31274 RVA: 0x002E3461 File Offset: 0x002E1661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ButtonsOnCategoryClickChanged(XUiC_CategoryEntry _categoryEntry)
 	{
 		this.OpenSelectedWindow();
 	}
 
-	// Token: 0x060079E8 RID: 31208 RVA: 0x002E1B7C File Offset: 0x002DFD7C
+	// Token: 0x06007A2B RID: 31275 RVA: 0x002E346C File Offset: 0x002E166C
 	public void OpenSelectedWindow()
 	{
 		if (this.buttons == null)
@@ -47,7 +47,7 @@ public class XUiC_EditorPanelSelector : XUiController
 		}
 	}
 
-	// Token: 0x060079E9 RID: 31209 RVA: 0x002E1C34 File Offset: 0x002DFE34
+	// Token: 0x06007A2C RID: 31276 RVA: 0x002E3524 File Offset: 0x002E1724
 	public void SetSelected(string _name)
 	{
 		XUiC_CategoryList xuiC_CategoryList = this.buttons;
@@ -58,7 +58,7 @@ public class XUiC_EditorPanelSelector : XUiController
 		xuiC_CategoryList.SetCategory(_name);
 	}
 
-	// Token: 0x060079EA RID: 31210 RVA: 0x002E1C47 File Offset: 0x002DFE47
+	// Token: 0x06007A2D RID: 31277 RVA: 0x002E3537 File Offset: 0x002E1737
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -69,7 +69,7 @@ public class XUiC_EditorPanelSelector : XUiController
 		this.OpenSelectedWindow();
 	}
 
-	// Token: 0x060079EB RID: 31211 RVA: 0x002E1C84 File Offset: 0x002DFE84
+	// Token: 0x06007A2E RID: 31278 RVA: 0x002E3574 File Offset: 0x002E1774
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -82,7 +82,7 @@ public class XUiC_EditorPanelSelector : XUiController
 		}
 	}
 
-	// Token: 0x060079EC RID: 31212 RVA: 0x0008A9BD File Offset: 0x00088BBD
+	// Token: 0x06007A2F RID: 31279 RVA: 0x0008ABF1 File Offset: 0x00088DF1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -93,7 +93,7 @@ public class XUiC_EditorPanelSelector : XUiController
 		}
 	}
 
-	// Token: 0x060079ED RID: 31213 RVA: 0x002E1D00 File Offset: 0x002DFF00
+	// Token: 0x06007A30 RID: 31280 RVA: 0x002E35F0 File Offset: 0x002E17F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -116,10 +116,10 @@ public class XUiC_EditorPanelSelector : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04005A4A RID: 23114
+	// Token: 0x04005A7D RID: 23165
 	public static string ID = "";
 
-	// Token: 0x04005A4B RID: 23115
+	// Token: 0x04005A7E RID: 23166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList buttons;
 }

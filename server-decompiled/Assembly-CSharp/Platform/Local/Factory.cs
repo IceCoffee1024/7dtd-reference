@@ -6,12 +6,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.Local
 {
-	// Token: 0x02001CFA RID: 7418
+	// Token: 0x02001D2B RID: 7467
 	[Preserve]
 	[PlatformFactory(EPlatformIdentifier.Local)]
 	public class Factory : AbsPlatform
 	{
-		// Token: 0x0600DC42 RID: 56386 RVA: 0x004E874C File Offset: 0x004E694C
+		// Token: 0x0600DD56 RID: 56662 RVA: 0x004EC2EC File Offset: 0x004EA4EC
 		public override void CreateInstances()
 		{
 			base.Api = new Api();

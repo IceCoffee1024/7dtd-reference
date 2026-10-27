@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200040C RID: 1036
+// Token: 0x0200040E RID: 1038
 [Preserve]
 public class AIDirectorChunkData
 {
 	// Token: 0x170003AF RID: 943
-	// (get) Token: 0x06001FF8 RID: 8184 RVA: 0x000C235D File Offset: 0x000C055D
+	// (get) Token: 0x06001FFD RID: 8189 RVA: 0x000C2709 File Offset: 0x000C0909
 	public float ActivityLevel
 	{
 		get
@@ -17,7 +17,7 @@ public class AIDirectorChunkData
 	}
 
 	// Token: 0x170003B0 RID: 944
-	// (get) Token: 0x06001FF9 RID: 8185 RVA: 0x000C2365 File Offset: 0x000C0565
+	// (get) Token: 0x06001FFE RID: 8190 RVA: 0x000C2711 File Offset: 0x000C0911
 	public bool IsReady
 	{
 		get
@@ -26,7 +26,7 @@ public class AIDirectorChunkData
 		}
 	}
 
-	// Token: 0x06001FFA RID: 8186 RVA: 0x000C2378 File Offset: 0x000C0578
+	// Token: 0x06001FFF RID: 8191 RVA: 0x000C2724 File Offset: 0x000C0924
 	public void StartNeighborCooldown(bool _isLong)
 	{
 		float num = (_isLong ? 720f : 180f);
@@ -34,7 +34,7 @@ public class AIDirectorChunkData
 	}
 
 	// Token: 0x170003B1 RID: 945
-	// (get) Token: 0x06001FFB RID: 8187 RVA: 0x000C23A7 File Offset: 0x000C05A7
+	// (get) Token: 0x06002000 RID: 8192 RVA: 0x000C2753 File Offset: 0x000C0953
 	public int EventCount
 	{
 		get
@@ -43,13 +43,13 @@ public class AIDirectorChunkData
 		}
 	}
 
-	// Token: 0x06001FFC RID: 8188 RVA: 0x000C23B4 File Offset: 0x000C05B4
+	// Token: 0x06002001 RID: 8193 RVA: 0x000C2760 File Offset: 0x000C0960
 	public AIDirectorChunkEvent GetEvent(int _index)
 	{
 		return this.events[_index];
 	}
 
-	// Token: 0x06001FFD RID: 8189 RVA: 0x000C23C4 File Offset: 0x000C05C4
+	// Token: 0x06002002 RID: 8194 RVA: 0x000C2770 File Offset: 0x000C0970
 	public void Write(PooledBinaryWriter _stream)
 	{
 		_stream.Write(2);
@@ -62,7 +62,7 @@ public class AIDirectorChunkData
 		_stream.Write(this.cooldownDelay);
 	}
 
-	// Token: 0x06001FFE RID: 8190 RVA: 0x000C242C File Offset: 0x000C062C
+	// Token: 0x06002003 RID: 8195 RVA: 0x000C27D8 File Offset: 0x000C09D8
 	public void Read(PooledBinaryReader _stream, int outerVersion)
 	{
 		int num = _stream.ReadInt32();
@@ -79,7 +79,7 @@ public class AIDirectorChunkData
 		}
 	}
 
-	// Token: 0x06001FFF RID: 8191 RVA: 0x000C248C File Offset: 0x000C068C
+	// Token: 0x06002004 RID: 8196 RVA: 0x000C2838 File Offset: 0x000C0A38
 	public void AddEvent(AIDirectorChunkEvent _chunkEvent)
 	{
 		int num = this.events.FindIndex((AIDirectorChunkEvent e) => e.Position == _chunkEvent.Position && e.EventType == _chunkEvent.EventType);
@@ -96,7 +96,7 @@ public class AIDirectorChunkData
 		this.activityLevel += _chunkEvent.Value;
 	}
 
-	// Token: 0x06002000 RID: 8192 RVA: 0x000C2521 File Offset: 0x000C0721
+	// Token: 0x06002005 RID: 8197 RVA: 0x000C28CD File Offset: 0x000C0ACD
 	public bool Tick(float _elapsed)
 	{
 		if (this.cooldownDelay > 0f)
@@ -108,7 +108,7 @@ public class AIDirectorChunkData
 		return this.EventCount > 0;
 	}
 
-	// Token: 0x06002001 RID: 8193 RVA: 0x000C2554 File Offset: 0x000C0754
+	// Token: 0x06002006 RID: 8198 RVA: 0x000C2900 File Offset: 0x000C0B00
 	public void DecayEvents(float _elapsed)
 	{
 		this.activityLevel = 0f;
@@ -131,7 +131,7 @@ public class AIDirectorChunkData
 		}
 	}
 
-	// Token: 0x06002002 RID: 8194 RVA: 0x000C25FC File Offset: 0x000C07FC
+	// Token: 0x06002007 RID: 8199 RVA: 0x000C29A8 File Offset: 0x000C0BA8
 	public AIDirectorChunkEvent FindBestEventAndReset()
 	{
 		AIDirectorChunkEvent aidirectorChunkEvent = null;
@@ -151,13 +151,13 @@ public class AIDirectorChunkData
 		return aidirectorChunkEvent;
 	}
 
-	// Token: 0x06002003 RID: 8195 RVA: 0x000C2674 File Offset: 0x000C0874
+	// Token: 0x06002008 RID: 8200 RVA: 0x000C2A20 File Offset: 0x000C0C20
 	public void SetLongDelay()
 	{
 		this.cooldownDelay = 1320f;
 	}
 
-	// Token: 0x06002004 RID: 8196 RVA: 0x000C2681 File Offset: 0x000C0881
+	// Token: 0x06002009 RID: 8201 RVA: 0x000C2A2D File Offset: 0x000C0C2D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearEvents()
 	{
@@ -165,34 +165,34 @@ public class AIDirectorChunkData
 		this.events.Clear();
 	}
 
-	// Token: 0x040015BB RID: 5563
+	// Token: 0x040015CB RID: 5579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVersion = 2;
 
-	// Token: 0x040015BC RID: 5564
+	// Token: 0x040015CC RID: 5580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCooldownDelay = 240f;
 
-	// Token: 0x040015BD RID: 5565
+	// Token: 0x040015CD RID: 5581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCooldownLongDelay = 1320f;
 
-	// Token: 0x040015BE RID: 5566
+	// Token: 0x040015CE RID: 5582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCooldownNeighborDelay = 180f;
 
-	// Token: 0x040015BF RID: 5567
+	// Token: 0x040015CF RID: 5583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCooldownNeighborLongDelay = 720f;
 
-	// Token: 0x040015C0 RID: 5568
+	// Token: 0x040015D0 RID: 5584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float activityLevel;
 
-	// Token: 0x040015C1 RID: 5569
+	// Token: 0x040015D1 RID: 5585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIDirectorChunkEvent> events = new List<AIDirectorChunkEvent>();
 
-	// Token: 0x040015C2 RID: 5570
+	// Token: 0x040015D2 RID: 5586
 	public float cooldownDelay;
 }

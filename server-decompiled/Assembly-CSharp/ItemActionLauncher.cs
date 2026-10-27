@@ -5,23 +5,23 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B4 RID: 1460
+// Token: 0x020005BB RID: 1467
 [Preserve]
 public class ItemActionLauncher : ItemActionRanged
 {
-	// Token: 0x06002FE6 RID: 12262 RVA: 0x001315E3 File Offset: 0x0012F7E3
+	// Token: 0x06002FF4 RID: 12276 RVA: 0x001321D7 File Offset: 0x001303D7
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionLauncher.ItemActionDataLauncher(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FE7 RID: 12263 RVA: 0x001315EC File Offset: 0x0012F7EC
+	// Token: 0x06002FF5 RID: 12277 RVA: 0x001321E0 File Offset: 0x001303E0
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
 	}
 
-	// Token: 0x06002FE8 RID: 12264 RVA: 0x001315F8 File Offset: 0x0012F7F8
+	// Token: 0x06002FF6 RID: 12278 RVA: 0x001321EC File Offset: 0x001303EC
 	public override void StartHolding(ItemActionData _actionData)
 	{
 		base.StartHolding(_actionData);
@@ -36,14 +36,14 @@ public class ItemActionLauncher : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06002FE9 RID: 12265 RVA: 0x0013166B File Offset: 0x0012F86B
+	// Token: 0x06002FF7 RID: 12279 RVA: 0x0013225F File Offset: 0x0013045F
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		this.DeleteProjectiles(_data);
 	}
 
-	// Token: 0x06002FEA RID: 12266 RVA: 0x0013167C File Offset: 0x0012F87C
+	// Token: 0x06002FF8 RID: 12280 RVA: 0x00132270 File Offset: 0x00130470
 	public void DeleteProjectiles(ItemActionData _actionData)
 	{
 		ItemActionLauncher.ItemActionDataLauncher itemActionDataLauncher = (ItemActionLauncher.ItemActionDataLauncher)_actionData;
@@ -58,7 +58,7 @@ public class ItemActionLauncher : ItemActionRanged
 		itemActionDataLauncher.projectileTs.Clear();
 	}
 
-	// Token: 0x06002FEB RID: 12267 RVA: 0x001316D4 File Offset: 0x0012F8D4
+	// Token: 0x06002FF9 RID: 12281 RVA: 0x001322C8 File Offset: 0x001304C8
 	public override void ReloadGun(ItemActionData _actionData)
 	{
 		ItemActionLauncher.ItemActionDataLauncher itemActionDataLauncher = (ItemActionLauncher.ItemActionDataLauncher)_actionData;
@@ -73,7 +73,7 @@ public class ItemActionLauncher : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06002FEC RID: 12268 RVA: 0x00131730 File Offset: 0x0012F930
+	// Token: 0x06002FFA RID: 12282 RVA: 0x00132324 File Offset: 0x00130524
 	public override void CancelReload(ItemActionData _actionData, bool holsterWeapon)
 	{
 		base.CancelReload(_actionData, holsterWeapon);
@@ -81,7 +81,7 @@ public class ItemActionLauncher : ItemActionRanged
 		this.ClampAmmoCount(itemActionDataLauncher);
 	}
 
-	// Token: 0x06002FED RID: 12269 RVA: 0x00131754 File Offset: 0x0012F954
+	// Token: 0x06002FFB RID: 12283 RVA: 0x00132348 File Offset: 0x00130548
 	public override void SwapAmmoType(EntityAlive _entity, int _selectedIndex = -1)
 	{
 		ItemActionLauncher.ItemActionDataLauncher itemActionDataLauncher = (ItemActionLauncher.ItemActionDataLauncher)_entity.inventory.holdingItemData.actionData[0];
@@ -89,7 +89,7 @@ public class ItemActionLauncher : ItemActionRanged
 		base.SwapAmmoType(_entity, _selectedIndex);
 	}
 
-	// Token: 0x06002FEE RID: 12270 RVA: 0x0013178C File Offset: 0x0012F98C
+	// Token: 0x06002FFC RID: 12284 RVA: 0x00132380 File Offset: 0x00130580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClampAmmoCount(ItemActionLauncher.ItemActionDataLauncher actionData)
 	{
@@ -108,7 +108,7 @@ public class ItemActionLauncher : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06002FEF RID: 12271 RVA: 0x00131800 File Offset: 0x0012FA00
+	// Token: 0x06002FFD RID: 12285 RVA: 0x001323F4 File Offset: 0x001305F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 fireShot(int _shotIdx, ItemActionRanged.ItemActionDataRanged _actionData, ref bool hitEntity)
 	{
@@ -116,7 +116,7 @@ public class ItemActionLauncher : ItemActionRanged
 		return Vector3.zero;
 	}
 
-	// Token: 0x06002FF0 RID: 12272 RVA: 0x0013180C File Offset: 0x0012FA0C
+	// Token: 0x06002FFE RID: 12286 RVA: 0x00132400 File Offset: 0x00130600
 	public Transform instantiateProjectile(ItemActionData _actionData, Vector3 _positionOffset = default(Vector3))
 	{
 		EntityAlive holdingEntity = _actionData.invData.holdingEntity;
@@ -162,7 +162,7 @@ public class ItemActionLauncher : ItemActionRanged
 		return transform;
 	}
 
-	// Token: 0x06002FF1 RID: 12273 RVA: 0x00131998 File Offset: 0x0012FB98
+	// Token: 0x06002FFF RID: 12287 RVA: 0x0013258C File Offset: 0x0013078C
 	public override void ItemActionEffects(GameManager _gameManager, ItemActionData _actionData, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		base.ItemActionEffects(_gameManager, _actionData, _firingState, _startPos, _direction, _userData);
@@ -191,14 +191,14 @@ public class ItemActionLauncher : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06002FF2 RID: 12274 RVA: 0x00131A3B File Offset: 0x0012FC3B
+	// Token: 0x06003000 RID: 12288 RVA: 0x0013262F File Offset: 0x0013082F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ConsumeAmmo(ItemActionData _actionData)
 	{
 		_actionData.invData.itemValue.Meta -= this.GetBurstCount(_actionData);
 	}
 
-	// Token: 0x06002FF3 RID: 12275 RVA: 0x00131A5C File Offset: 0x0012FC5C
+	// Token: 0x06003001 RID: 12289 RVA: 0x00132650 File Offset: 0x00130850
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override int GetActionEffectsValues(ItemActionData _actionData, out Vector3 _startPos, out Vector3 _direction)
 	{
@@ -210,13 +210,13 @@ public class ItemActionLauncher : ItemActionRanged
 		return 0;
 	}
 
-	// Token: 0x040024E6 RID: 9446
+	// Token: 0x04002501 RID: 9473
 	public ItemValue LastProjectileType;
 
-	// Token: 0x020005B5 RID: 1461
+	// Token: 0x020005BC RID: 1468
 	public class ItemActionDataLauncher : ItemActionRanged.ItemActionDataRanged
 	{
-		// Token: 0x06002FF5 RID: 12277 RVA: 0x00131AB8 File Offset: 0x0012FCB8
+		// Token: 0x06003003 RID: 12291 RVA: 0x001326AC File Offset: 0x001308AC
 		public ItemActionDataLauncher(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
@@ -224,16 +224,16 @@ public class ItemActionLauncher : ItemActionRanged
 			this.projectileTs = new List<Transform>();
 		}
 
-		// Token: 0x040024E7 RID: 9447
+		// Token: 0x04002502 RID: 9474
 		public Transform projectileJointT;
 
-		// Token: 0x040024E8 RID: 9448
+		// Token: 0x04002503 RID: 9475
 		public List<Transform> projectileTs;
 
-		// Token: 0x040024E9 RID: 9449
+		// Token: 0x04002504 RID: 9476
 		public float strainPercent = 1f;
 
-		// Token: 0x040024EA RID: 9450
+		// Token: 0x04002505 RID: 9477
 		public float lastAttackStrainPercent;
 	}
 }

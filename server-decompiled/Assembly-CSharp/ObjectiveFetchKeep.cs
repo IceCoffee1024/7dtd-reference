@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000999 RID: 2457
+// Token: 0x020009A3 RID: 2467
 [Preserve]
 public class ObjectiveFetchKeep : ObjectiveFetch
 {
-	// Token: 0x0600479A RID: 18330 RVA: 0x001C2CE2 File Offset: 0x001C0EE2
+	// Token: 0x060047BD RID: 18365 RVA: 0x001C3D66 File Offset: 0x001C1F66
 	public ObjectiveFetchKeep()
 	{
 		this.KeepItems = true;
 	}
 
-	// Token: 0x0600479B RID: 18331 RVA: 0x001C2CF4 File Offset: 0x001C0EF4
+	// Token: 0x060047BE RID: 18366 RVA: 0x001C3D78 File Offset: 0x001C1F78
 	public override BaseObjective Clone()
 	{
 		ObjectiveFetchKeep objectiveFetchKeep = new ObjectiveFetchKeep();

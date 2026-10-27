@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001585 RID: 5509
+// Token: 0x02001597 RID: 5527
 [Preserve]
 public abstract class vp_StateEventHandler : vp_EventHandler
 {
-	// Token: 0x0600AC49 RID: 44105 RVA: 0x00403CEC File Offset: 0x00401EEC
+	// Token: 0x0600ACA1 RID: 44193 RVA: 0x004060F0 File Offset: 0x004042F0
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
@@ -22,7 +22,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		}
 	}
 
-	// Token: 0x0600AC4A RID: 44106 RVA: 0x00403D50 File Offset: 0x00401F50
+	// Token: 0x0600ACA2 RID: 44194 RVA: 0x00406154 File Offset: 0x00404354
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void BindStateToActivity(vp_Activity a)
@@ -31,7 +31,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		this.BindStateToActivityOnStop(a);
 	}
 
-	// Token: 0x0600AC4B RID: 44107 RVA: 0x00403D60 File Offset: 0x00401F60
+	// Token: 0x0600ACA3 RID: 44195 RVA: 0x00406164 File Offset: 0x00404364
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void BindStateToActivityOnStart(vp_Activity a)
@@ -50,7 +50,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		}));
 	}
 
-	// Token: 0x0600AC4C RID: 44108 RVA: 0x00403DB4 File Offset: 0x00401FB4
+	// Token: 0x0600ACA4 RID: 44196 RVA: 0x004061B8 File Offset: 0x004043B8
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void BindStateToActivityOnStop(vp_Activity a)
@@ -69,7 +69,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		}));
 	}
 
-	// Token: 0x0600AC4D RID: 44109 RVA: 0x00403E08 File Offset: 0x00402008
+	// Token: 0x0600ACA5 RID: 44197 RVA: 0x0040620C File Offset: 0x0040440C
 	[Preserve]
 	public void RefreshActivityStates()
 	{
@@ -85,7 +85,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		}
 	}
 
-	// Token: 0x0600AC4E RID: 44110 RVA: 0x00403ED0 File Offset: 0x004020D0
+	// Token: 0x0600ACA6 RID: 44198 RVA: 0x004062D4 File Offset: 0x004044D4
 	[Preserve]
 	public void ResetActivityStates()
 	{
@@ -95,7 +95,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		}
 	}
 
-	// Token: 0x0600AC4F RID: 44111 RVA: 0x00403F20 File Offset: 0x00402120
+	// Token: 0x0600ACA7 RID: 44199 RVA: 0x00406324 File Offset: 0x00404524
 	[Preserve]
 	public void SetState(string state, bool setActive = true, bool recursive = true, bool includeDisabled = false)
 	{
@@ -105,7 +105,7 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		}
 	}
 
-	// Token: 0x0600AC50 RID: 44112 RVA: 0x00403F78 File Offset: 0x00402178
+	// Token: 0x0600ACA8 RID: 44200 RVA: 0x0040637C File Offset: 0x0040457C
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ActivityInitialized(vp_Activity a)
@@ -123,13 +123,13 @@ public abstract class vp_StateEventHandler : vp_EventHandler
 		return true;
 	}
 
-	// Token: 0x0600AC51 RID: 44113 RVA: 0x00403FDC File Offset: 0x004021DC
+	// Token: 0x0600ACA9 RID: 44201 RVA: 0x004063E0 File Offset: 0x004045E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_StateEventHandler()
 	{
 	}
 
-	// Token: 0x04007F9E RID: 32670
+	// Token: 0x04007FDF RID: 32735
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<vp_Component> m_StateTargets = new List<vp_Component>();

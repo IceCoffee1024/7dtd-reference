@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001545 RID: 5445
+// Token: 0x02001557 RID: 5463
 public static class MetricConversion
 {
-	// Token: 0x0600AAB9 RID: 43705 RVA: 0x003FBFA0 File Offset: 0x003FA1A0
+	// Token: 0x0600AB11 RID: 43793 RVA: 0x003FE3A4 File Offset: 0x003FC5A4
 	public static string ToShortestBytesString(long bytes)
 	{
 		if (bytes < 1024L)
@@ -21,24 +21,24 @@ public static class MetricConversion
 		return string.Format("{0:F2} GB", 9.313225746154785E-10 * (double)bytes);
 	}
 
-	// Token: 0x04007EC4 RID: 32452
+	// Token: 0x04007F05 RID: 32517
 	public const double nanoToMilli = 1E-06;
 
-	// Token: 0x04007EC5 RID: 32453
+	// Token: 0x04007F06 RID: 32518
 	public const int kilobyte = 1024;
 
-	// Token: 0x04007EC6 RID: 32454
+	// Token: 0x04007F07 RID: 32519
 	public const int megabyte = 1048576;
 
-	// Token: 0x04007EC7 RID: 32455
+	// Token: 0x04007F08 RID: 32520
 	public const int gigabyte = 1073741824;
 
-	// Token: 0x04007EC8 RID: 32456
+	// Token: 0x04007F09 RID: 32521
 	public const double bytesToKilobyte = 0.0009765625;
 
-	// Token: 0x04007EC9 RID: 32457
+	// Token: 0x04007F0A RID: 32522
 	public const double bytesToMegabyte = 9.5367431640625E-07;
 
-	// Token: 0x04007ECA RID: 32458
+	// Token: 0x04007F0B RID: 32523
 	public const double bytesToGigabyte = 9.313225746154785E-10;
 }

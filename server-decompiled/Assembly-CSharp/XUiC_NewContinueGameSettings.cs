@@ -5,22 +5,22 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E2A RID: 3626
+// Token: 0x02000E35 RID: 3637
 [Preserve]
 public class XUiC_NewContinueGameSettings : XUiController
 {
 	// Token: 0x1400009B RID: 155
-	// (add) Token: 0x06006EBF RID: 28351 RVA: 0x002B1394 File Offset: 0x002AF594
-	// (remove) Token: 0x06006EC0 RID: 28352 RVA: 0x002B13CC File Offset: 0x002AF5CC
+	// (add) Token: 0x06006EE4 RID: 28388 RVA: 0x002B2900 File Offset: 0x002B0B00
+	// (remove) Token: 0x06006EE5 RID: 28389 RVA: 0x002B2938 File Offset: 0x002B0B38
 	public event Action SettingsChanged;
 
 	// Token: 0x1400009C RID: 156
-	// (add) Token: 0x06006EC1 RID: 28353 RVA: 0x002B1404 File Offset: 0x002AF604
-	// (remove) Token: 0x06006EC2 RID: 28354 RVA: 0x002B143C File Offset: 0x002AF63C
+	// (add) Token: 0x06006EE6 RID: 28390 RVA: 0x002B2970 File Offset: 0x002B0B70
+	// (remove) Token: 0x06006EE7 RID: 28391 RVA: 0x002B29A8 File Offset: 0x002B0BA8
 	public event Action OpenSandboxSettingsRequested;
 
-	// Token: 0x17000C73 RID: 3187
-	// (get) Token: 0x06006EC3 RID: 28355 RVA: 0x002B1474 File Offset: 0x002AF674
+	// Token: 0x17000C79 RID: 3193
+	// (get) Token: 0x06006EE8 RID: 28392 RVA: 0x002B29E0 File Offset: 0x002B0BE0
 	[XuiXmlBinding("crossplayTooltip")]
 	public string CrossplayTooltip
 	{
@@ -41,9 +41,9 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x17000C74 RID: 3188
-	// (get) Token: 0x06006EC4 RID: 28356 RVA: 0x002B14E0 File Offset: 0x002AF6E0
-	// (set) Token: 0x06006EC5 RID: 28357 RVA: 0x002B14E8 File Offset: 0x002AF6E8
+	// Token: 0x17000C7A RID: 3194
+	// (get) Token: 0x06006EE9 RID: 28393 RVA: 0x002B2A4C File Offset: 0x002B0C4C
+	// (set) Token: 0x06006EEA RID: 28394 RVA: 0x002B2A54 File Offset: 0x002B0C54
 	[XuiXmlBinding("port_valid")]
 	public bool PortValid
 	{
@@ -62,7 +62,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EC6 RID: 28358 RVA: 0x002B1504 File Offset: 0x002AF704
+	// Token: 0x06006EEB RID: 28395 RVA: 0x002B2A70 File Offset: 0x002B0C70
 	public override void Init()
 	{
 		base.Init();
@@ -121,7 +121,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EC7 RID: 28359 RVA: 0x002B1644 File Offset: 0x002AF844
+	// Token: 0x06006EEC RID: 28396 RVA: 0x002B2BB0 File Offset: 0x002B0DB0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -145,16 +145,16 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EC8 RID: 28360 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06006EED RID: 28397 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Option_OnValueChanged(XUiC_GamePrefSelector _uiElement, EnumGamePrefs _gamePref)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x17000C75 RID: 3189
-	// (get) Token: 0x06006EC9 RID: 28361 RVA: 0x002B1740 File Offset: 0x002AF940
-	// (set) Token: 0x06006ECA RID: 28362 RVA: 0x002B1748 File Offset: 0x002AF948
+	// Token: 0x17000C7B RID: 3195
+	// (get) Token: 0x06006EEE RID: 28398 RVA: 0x002B2CAC File Offset: 0x002B0EAC
+	// (set) Token: 0x06006EEF RID: 28399 RVA: 0x002B2CB4 File Offset: 0x002B0EB4
 	[XuiXmlAttribute("sandbox_values_columns", false)]
 	public int SandboxValuesColumns
 	{
@@ -164,9 +164,9 @@ public class XUiC_NewContinueGameSettings : XUiController
 		set;
 	}
 
-	// Token: 0x17000C76 RID: 3190
-	// (get) Token: 0x06006ECB RID: 28363 RVA: 0x002B1751 File Offset: 0x002AF951
-	// (set) Token: 0x06006ECC RID: 28364 RVA: 0x002B1759 File Offset: 0x002AF959
+	// Token: 0x17000C7C RID: 3196
+	// (get) Token: 0x06006EF0 RID: 28400 RVA: 0x002B2CBD File Offset: 0x002B0EBD
+	// (set) Token: 0x06006EF1 RID: 28401 RVA: 0x002B2CC5 File Offset: 0x002B0EC5
 	[XuiXmlAttribute("sandbox_values_template", false)]
 	public string SandBoxValuesTemplate
 	{
@@ -187,9 +187,9 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x17000C77 RID: 3191
-	// (get) Token: 0x06006ECD RID: 28365 RVA: 0x002B178F File Offset: 0x002AF98F
-	// (set) Token: 0x06006ECE RID: 28366 RVA: 0x002B1797 File Offset: 0x002AF997
+	// Token: 0x17000C7D RID: 3197
+	// (get) Token: 0x06006EF2 RID: 28402 RVA: 0x002B2CFB File Offset: 0x002B0EFB
+	// (set) Token: 0x06006EF3 RID: 28403 RVA: 0x002B2D03 File Offset: 0x002B0F03
 	[XuiXmlAttribute("sandbox_values_template_defaults", false)]
 	public string SandBoxValuesTemplateDefaults
 	{
@@ -210,8 +210,8 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x17000C78 RID: 3192
-	// (get) Token: 0x06006ECF RID: 28367 RVA: 0x002B17CD File Offset: 0x002AF9CD
+	// Token: 0x17000C7E RID: 3198
+	// (get) Token: 0x06006EF4 RID: 28404 RVA: 0x002B2D39 File Offset: 0x002B0F39
 	[XuiXmlBinding("sandboxvalues")]
 	public Dictionary<string, string> SandboxValues
 	{
@@ -219,7 +219,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		get;
 	} = new Dictionary<string, string>();
 
-	// Token: 0x06006ED0 RID: 28368 RVA: 0x002B17D5 File Offset: 0x002AF9D5
+	// Token: 0x06006EF5 RID: 28405 RVA: 0x002B2D41 File Offset: 0x002B0F41
 	[XuiBindEvent("OnPress", "btnSandboxOptions")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSandboxOptions_OnPressed(XUiController _sender, int _mouseButton)
@@ -232,13 +232,13 @@ public class XUiC_NewContinueGameSettings : XUiController
 		openSandboxSettingsRequested();
 	}
 
-	// Token: 0x06006ED1 RID: 28369 RVA: 0x002B17E7 File Offset: 0x002AF9E7
+	// Token: 0x06006EF6 RID: 28406 RVA: 0x002B2D53 File Offset: 0x002B0F53
 	public void ResetSandboxPresetToDefault()
 	{
 		this.sandboxPresetSelector.SelectPresetByName("", null, false);
 	}
 
-	// Token: 0x06006ED2 RID: 28370 RVA: 0x002B17FC File Offset: 0x002AF9FC
+	// Token: 0x06006EF7 RID: 28407 RVA: 0x002B2D68 File Offset: 0x002B0F68
 	public void UpdateSandboxPresetGroups()
 	{
 		string @string = GamePrefs.GetString(EnumGamePrefs.SandboxPreset);
@@ -254,7 +254,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		this.updateSandboxData();
 	}
 
-	// Token: 0x06006ED3 RID: 28371 RVA: 0x002B1872 File Offset: 0x002AFA72
+	// Token: 0x06006EF8 RID: 28408 RVA: 0x002B2DDE File Offset: 0x002B0FDE
 	[XuiBindEvent("SandboxPresetSelectionChanged", "sandboxPresetSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SandboxPresetSelector_OnValueChanged(SandboxPresetInfo _oldPreset, SandboxPresetInfo _newPreset)
@@ -262,7 +262,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		this.updateSandboxData();
 	}
 
-	// Token: 0x06006ED4 RID: 28372 RVA: 0x002B187C File Offset: 0x002AFA7C
+	// Token: 0x06006EF9 RID: 28409 RVA: 0x002B2DE8 File Offset: 0x002B0FE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateSandboxData()
 	{
@@ -282,14 +282,14 @@ public class XUiC_NewContinueGameSettings : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006ED5 RID: 28373 RVA: 0x002B1906 File Offset: 0x002AFB06
+	// Token: 0x06006EFA RID: 28410 RVA: 0x002B2E72 File Offset: 0x002B1072
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmbBloodMoonFrequency_OnChangeHandler(XUiC_GamePrefSelector _prefSelector, EnumGamePrefs _gamePref)
 	{
 		this.gameOptions[EnumGamePrefs.BloodMoonRange].Enabled = GamePrefs.GetInt(_gamePref) != 0;
 	}
 
-	// Token: 0x06006ED6 RID: 28374 RVA: 0x002B1924 File Offset: 0x002AFB24
+	// Token: 0x06006EFB RID: 28411 RVA: 0x002B2E90 File Offset: 0x002B1090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtPort_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -311,7 +311,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		settingsChanged();
 	}
 
-	// Token: 0x06006ED7 RID: 28375 RVA: 0x002B1988 File Offset: 0x002AFB88
+	// Token: 0x06006EFC RID: 28412 RVA: 0x002B2EF4 File Offset: 0x002B10F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void validatePort(XUiC_TextInput _txtPort)
 	{
@@ -323,7 +323,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006ED8 RID: 28376 RVA: 0x002B19D4 File Offset: 0x002AFBD4
+	// Token: 0x06006EFD RID: 28413 RVA: 0x002B2F40 File Offset: 0x002B1140
 	public void WatchForServerEnabledChanges(bool _doWatch)
 	{
 		if (_doWatch)
@@ -336,7 +336,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		xuiC_GamePrefSelector2.OnValueChanged = (Action<XUiC_GamePrefSelector, EnumGamePrefs>)Delegate.Remove(xuiC_GamePrefSelector2.OnValueChanged, new Action<XUiC_GamePrefSelector, EnumGamePrefs>(this.CmbServerEnabled_OnChangeHandler));
 	}
 
-	// Token: 0x06006ED9 RID: 28377 RVA: 0x002B1A34 File Offset: 0x002AFC34
+	// Token: 0x06006EFE RID: 28414 RVA: 0x002B2FA0 File Offset: 0x002B11A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmbServerEnabled_OnChangeHandler(XUiC_GamePrefSelector _prefSelector, EnumGamePrefs _gamePref)
 	{
@@ -352,7 +352,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EDA RID: 28378 RVA: 0x002B1A80 File Offset: 0x002AFC80
+	// Token: 0x06006EFF RID: 28415 RVA: 0x002B2FEC File Offset: 0x002B11EC
 	public void RefreshMultiplayerOptionStates(bool _enabled)
 	{
 		IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -410,7 +410,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		this.gameOptions[EnumGamePrefs.ServerMaxPlayerCount].CheckDefaultValue();
 	}
 
-	// Token: 0x06006EDB RID: 28379 RVA: 0x002B1C98 File Offset: 0x002AFE98
+	// Token: 0x06006F00 RID: 28416 RVA: 0x002B3204 File Offset: 0x002B1404
 	public void ApplyMaxPlayerCountOptions()
 	{
 		if (GamePrefs.GetString(EnumGamePrefs.GameMode) != "GameMode" + EnumGameMode.Survival.ToStringCached<EnumGameMode>() || GameModeSurvival.OverrideMaxPlayerCount < 2)
@@ -425,7 +425,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		this.gameOptions[EnumGamePrefs.ServerMaxPlayerCount].OverrideValues(list);
 	}
 
-	// Token: 0x06006EDC RID: 28380 RVA: 0x002B1D04 File Offset: 0x002AFF04
+	// Token: 0x06006F01 RID: 28417 RVA: 0x002B3270 File Offset: 0x002B1470
 	public void ApplyInitialServerEnabledState()
 	{
 		bool flag = GamePrefs.GetBool(EnumGamePrefs.ServerEnabled) && PermissionsManager.IsMultiplayerAllowed() && PermissionsManager.CanHostMultiplayer();
@@ -442,25 +442,25 @@ public class XUiC_NewContinueGameSettings : XUiController
 		this.RefreshMultiplayerOptionStates(flag);
 	}
 
-	// Token: 0x06006EDD RID: 28381 RVA: 0x002B1D71 File Offset: 0x002AFF71
+	// Token: 0x06006F02 RID: 28418 RVA: 0x002B32DD File Offset: 0x002B14DD
 	public void UpdateServerEnabledState()
 	{
 		this.serverEnabledSelector.SetCurrentValue();
 	}
 
-	// Token: 0x06006EDE RID: 28382 RVA: 0x002B1D7E File Offset: 0x002AFF7E
+	// Token: 0x06006F03 RID: 28419 RVA: 0x002B32EA File Offset: 0x002B14EA
 	public void UpdateCrossplayEnabledState()
 	{
 		this.gameOptions[EnumGamePrefs.ServerAllowCrossplay].SetCurrentValue();
 	}
 
-	// Token: 0x06006EDF RID: 28383 RVA: 0x002B1D92 File Offset: 0x002AFF92
+	// Token: 0x06006F04 RID: 28420 RVA: 0x002B32FE File Offset: 0x002B14FE
 	public void ApplyCreativeModeChangeAllowed(bool _allowed)
 	{
 		this.gameOptions[EnumGamePrefs.BuildCreate].Enabled = _allowed;
 	}
 
-	// Token: 0x06006EE0 RID: 28384 RVA: 0x002B1DA8 File Offset: 0x002AFFA8
+	// Token: 0x06006F05 RID: 28421 RVA: 0x002B3314 File Offset: 0x002B1514
 	public void SaveGameOptions(bool _saveAsLastUsed)
 	{
 		List<EnumGamePrefs> list = new List<EnumGamePrefs>(this.gameOptions.Count);
@@ -474,7 +474,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EE1 RID: 28385 RVA: 0x002B1E20 File Offset: 0x002B0020
+	// Token: 0x06006F06 RID: 28422 RVA: 0x002B338C File Offset: 0x002B158C
 	public void UpdateOptionVisibilityForGameMode(GameMode _gameMode)
 	{
 		foreach (KeyValuePair<EnumGamePrefs, XUiC_GamePrefSelector> keyValuePair in this.gameOptions)
@@ -483,7 +483,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EE2 RID: 28386 RVA: 0x002B1E7C File Offset: 0x002B007C
+	// Token: 0x06006F07 RID: 28423 RVA: 0x002B33E8 File Offset: 0x002B15E8
 	public void UpdateOptionValuesFromGamePrefs()
 	{
 		this.UpdateSandboxPresetGroups();
@@ -493,7 +493,7 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x06006EE3 RID: 28387 RVA: 0x002B1EDC File Offset: 0x002B00DC
+	// Token: 0x06006F08 RID: 28424 RVA: 0x002B3448 File Offset: 0x002B1648
 	public void SetGamePrefsToDefaults()
 	{
 		foreach (KeyValuePair<EnumGamePrefs, XUiC_GamePrefSelector> keyValuePair in this.gameOptions)
@@ -502,56 +502,56 @@ public class XUiC_NewContinueGameSettings : XUiController
 		}
 	}
 
-	// Token: 0x04005454 RID: 21588
+	// Token: 0x04005479 RID: 21625
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TabSelector tabSelector;
 
-	// Token: 0x04005455 RID: 21589
+	// Token: 0x0400547A RID: 21626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<EnumGamePrefs, XUiC_GamePrefSelector> gameOptions = new EnumDictionary<EnumGamePrefs, XUiC_GamePrefSelector>();
 
-	// Token: 0x04005456 RID: 21590
+	// Token: 0x0400547B RID: 21627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_GamePrefSelector serverEnabledSelector;
 
-	// Token: 0x04005459 RID: 21593
+	// Token: 0x0400547E RID: 21630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool portValid;
 
-	// Token: 0x0400545A RID: 21594
+	// Token: 0x0400547F RID: 21631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_GamePrefSelector> tabPrefsTmp = new List<XUiC_GamePrefSelector>();
 
-	// Token: 0x0400545B RID: 21595
+	// Token: 0x04005480 RID: 21632
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SandboxPresetSelector sandboxPresetSelector;
 
-	// Token: 0x0400545C RID: 21596
+	// Token: 0x04005481 RID: 21633
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SandboxSettingsDisplay sandboxDisplay;
 
-	// Token: 0x0400545D RID: 21597
+	// Token: 0x04005482 RID: 21634
 	[XuiBindComponent("btnSandboxOptions", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnSandboxOptions;
 
-	// Token: 0x0400545E RID: 21598
+	// Token: 0x04005483 RID: 21635
 	[XuiBindComponent("sandboxPresetValues.", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_ScrollView sandboxPresetValues;
 
-	// Token: 0x0400545F RID: 21599
+	// Token: 0x04005484 RID: 21636
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SandboxOptionManager sandboxManager = SandboxOptionManager.Current;
 
-	// Token: 0x04005460 RID: 21600
+	// Token: 0x04005485 RID: 21637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sandBoxValuesTemplate;
 
-	// Token: 0x04005461 RID: 21601
+	// Token: 0x04005486 RID: 21638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sandBoxValuesTemplateDefaults;
 }

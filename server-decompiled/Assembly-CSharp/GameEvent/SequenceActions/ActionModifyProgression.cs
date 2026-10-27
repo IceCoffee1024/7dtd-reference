@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019BD RID: 6589
+	// Token: 0x020019EE RID: 6638
 	[Preserve]
 	public class ActionModifyProgression : ActionBaseClientAction
 	{
-		// Token: 0x0600CA05 RID: 51717 RVA: 0x0049F7F4 File Offset: 0x0049D9F4
+		// Token: 0x0600CB19 RID: 51993 RVA: 0x004A32F4 File Offset: 0x004A14F4
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -34,7 +34,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CA06 RID: 51718 RVA: 0x0049F890 File Offset: 0x0049DA90
+		// Token: 0x0600CB1A RID: 51994 RVA: 0x004A3390 File Offset: 0x004A1590
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -58,7 +58,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionModifyProgression.ModifyTypes>(ActionModifyProgression.PropModifyType, ref this.ModifyType);
 		}
 
-		// Token: 0x0600CA07 RID: 51719 RVA: 0x0049F94C File Offset: 0x0049DB4C
+		// Token: 0x0600CB1B RID: 51995 RVA: 0x004A344C File Offset: 0x004A164C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -71,34 +71,34 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098C2 RID: 39106
+		// Token: 0x040099AB RID: 39339
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionModifyProgression.ModifyTypes ModifyType;
 
-		// Token: 0x040098C3 RID: 39107
+		// Token: 0x040099AC RID: 39340
 		public string[] ProgressionNames;
 
-		// Token: 0x040098C4 RID: 39108
+		// Token: 0x040099AD RID: 39341
 		public string[] Values;
 
-		// Token: 0x040098C5 RID: 39109
+		// Token: 0x040099AE RID: 39342
 		public static string PropModifyType = "modify_type";
 
-		// Token: 0x040098C6 RID: 39110
+		// Token: 0x040099AF RID: 39343
 		public static string PropProgressionNames = "progression_names";
 
-		// Token: 0x040098C7 RID: 39111
+		// Token: 0x040099B0 RID: 39344
 		public static string PropValues = "values";
 
-		// Token: 0x020019BE RID: 6590
+		// Token: 0x020019EF RID: 6639
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ModifyTypes
 		{
-			// Token: 0x040098C9 RID: 39113
+			// Token: 0x040099B2 RID: 39346
 			Set,
-			// Token: 0x040098CA RID: 39114
+			// Token: 0x040099B3 RID: 39347
 			Add,
-			// Token: 0x040098CB RID: 39115
+			// Token: 0x040099B4 RID: 39348
 			Remove
 		}
 	}

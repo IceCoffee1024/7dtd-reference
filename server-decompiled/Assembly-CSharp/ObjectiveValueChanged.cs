@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000985 RID: 2437
-// (Invoke) Token: 0x060046B8 RID: 18104
+// Token: 0x0200098F RID: 2447
+// (Invoke) Token: 0x060046DB RID: 18139
 public delegate void ObjectiveValueChanged();

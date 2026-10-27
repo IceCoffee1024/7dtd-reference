@@ -8,10 +8,10 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x02001360 RID: 4960
+// Token: 0x02001372 RID: 4978
 public class GameRenderManager
 {
-	// Token: 0x06009C56 RID: 40022 RVA: 0x003B06F1 File Offset: 0x003AE8F1
+	// Token: 0x06009CAE RID: 40110 RVA: 0x003B2AF5 File Offset: 0x003B0CF5
 	public static GameRenderManager Create(EntityPlayerLocal player)
 	{
 		GameRenderManager gameRenderManager = new GameRenderManager();
@@ -20,7 +20,7 @@ public class GameRenderManager
 		return gameRenderManager;
 	}
 
-	// Token: 0x06009C57 RID: 40023 RVA: 0x003B0708 File Offset: 0x003AE908
+	// Token: 0x06009CAF RID: 40111 RVA: 0x003B2B0C File Offset: 0x003B0D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -31,7 +31,7 @@ public class GameRenderManager
 		this.DynamicResolutionInit();
 	}
 
-	// Token: 0x06009C58 RID: 40024 RVA: 0x003B0754 File Offset: 0x003AE954
+	// Token: 0x06009CB0 RID: 40112 RVA: 0x003B2B58 File Offset: 0x003B0D58
 	public void Destroy()
 	{
 		this.lightManager.Destroy();
@@ -41,7 +41,7 @@ public class GameRenderManager
 		this.DynamicResolutionDestroyRT();
 	}
 
-	// Token: 0x06009C59 RID: 40025 RVA: 0x003B0780 File Offset: 0x003AE980
+	// Token: 0x06009CB1 RID: 40113 RVA: 0x003B2B84 File Offset: 0x003B0D84
 	public void FrameUpdate()
 	{
 		this.lightManager.FrameUpdate();
@@ -49,16 +49,16 @@ public class GameRenderManager
 		this.DynamicResolutionUpdate();
 	}
 
-	// Token: 0x06009C5A RID: 40026 RVA: 0x003B079E File Offset: 0x003AE99E
+	// Token: 0x06009CB2 RID: 40114 RVA: 0x003B2BA2 File Offset: 0x003B0DA2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PostProcessInit()
 	{
 		Camera playerCamera = this.player.playerCamera;
 	}
 
-	// Token: 0x170012C2 RID: 4802
-	// (get) Token: 0x06009C5B RID: 40027 RVA: 0x003B07AC File Offset: 0x003AE9AC
-	// (set) Token: 0x06009C5C RID: 40028 RVA: 0x003B07B3 File Offset: 0x003AE9B3
+	// Token: 0x170012CE RID: 4814
+	// (get) Token: 0x06009CB3 RID: 40115 RVA: 0x003B2BB0 File Offset: 0x003B0DB0
+	// (set) Token: 0x06009CB4 RID: 40116 RVA: 0x003B2BB7 File Offset: 0x003B0DB7
 	public static int TextureMipmapLimit
 	{
 		get
@@ -71,7 +71,7 @@ public class GameRenderManager
 		}
 	}
 
-	// Token: 0x06009C5D RID: 40029 RVA: 0x003B07BC File Offset: 0x003AE9BC
+	// Token: 0x06009CB5 RID: 40117 RVA: 0x003B2BC0 File Offset: 0x003B0DC0
 	public static void ApplyCameraOptions(EntityPlayerLocal player)
 	{
 		if (GameManager.Instance.World == null)
@@ -90,7 +90,7 @@ public class GameRenderManager
 		}
 	}
 
-	// Token: 0x06009C5E RID: 40030 RVA: 0x003B081C File Offset: 0x003AEA1C
+	// Token: 0x06009CB6 RID: 40118 RVA: 0x003B2C20 File Offset: 0x003B0E20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyCameraOptions()
 	{
@@ -286,7 +286,7 @@ public class GameRenderManager
 		this.reflectionManager.ApplyCameraOptions(playerCamera);
 	}
 
-	// Token: 0x06009C5F RID: 40031 RVA: 0x003B0CA4 File Offset: 0x003AEEA4
+	// Token: 0x06009CB7 RID: 40119 RVA: 0x003B30A8 File Offset: 0x003B12A8
 	public void SetAntialiasing(int aaQuality, float sharpness, PostProcessLayer mainLayer)
 	{
 		if (aaQuality == 0)
@@ -328,7 +328,7 @@ public class GameRenderManager
 		this.UpscalingSetQuality(-1);
 	}
 
-	// Token: 0x06009C60 RID: 40032 RVA: 0x003B0D7C File Offset: 0x003AEF7C
+	// Token: 0x06009CB8 RID: 40120 RVA: 0x003B3180 File Offset: 0x003B1380
 	public void DynamicResolutionInit()
 	{
 		this.DynamicResolutionDestroyRT();
@@ -351,7 +351,7 @@ public class GameRenderManager
 		this.DynamicResolutionAllocRTs();
 	}
 
-	// Token: 0x06009C61 RID: 40033 RVA: 0x003B0DE0 File Offset: 0x003AEFE0
+	// Token: 0x06009CB9 RID: 40121 RVA: 0x003B31E4 File Offset: 0x003B13E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddFinalCameraToPlayer()
 	{
@@ -365,7 +365,7 @@ public class GameRenderManager
 		gameObject.AddComponent<LocalPlayerFinalCamera>().entityPlayerLocal = this.player;
 	}
 
-	// Token: 0x06009C62 RID: 40034 RVA: 0x003B0E4C File Offset: 0x003AF04C
+	// Token: 0x06009CBA RID: 40122 RVA: 0x003B3250 File Offset: 0x003B1450
 	public void DynamicResolutionUpdate()
 	{
 		if (GameManager.Instance.World == null)
@@ -439,7 +439,7 @@ public class GameRenderManager
 		this.dynamicRT = renderTexture;
 	}
 
-	// Token: 0x06009C63 RID: 40035 RVA: 0x003B1004 File Offset: 0x003AF204
+	// Token: 0x06009CBB RID: 40123 RVA: 0x003B3408 File Offset: 0x003B1608
 	public bool DynamicResolutionUpdateGraph(ref float value)
 	{
 		if (this.dynamicRT != null)
@@ -454,7 +454,7 @@ public class GameRenderManager
 		return false;
 	}
 
-	// Token: 0x06009C64 RID: 40036 RVA: 0x003B1040 File Offset: 0x003AF240
+	// Token: 0x06009CBC RID: 40124 RVA: 0x003B3444 File Offset: 0x003B1644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DynamicResolutionAllocRTs()
 	{
@@ -478,7 +478,7 @@ public class GameRenderManager
 		this.dynamicUpdateDelay = 18f;
 	}
 
-	// Token: 0x06009C65 RID: 40037 RVA: 0x003B10E8 File Offset: 0x003AF2E8
+	// Token: 0x06009CBD RID: 40125 RVA: 0x003B34EC File Offset: 0x003B16EC
 	public RenderTexture DynamicResolutionAllocRT(float scale)
 	{
 		int num = (int)((float)Screen.width * scale);
@@ -489,7 +489,7 @@ public class GameRenderManager
 		return renderTexture;
 	}
 
-	// Token: 0x06009C66 RID: 40038 RVA: 0x003B1160 File Offset: 0x003AF360
+	// Token: 0x06009CBE RID: 40126 RVA: 0x003B3564 File Offset: 0x003B1764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DynamicResolutionDestroyRT()
 	{
@@ -510,7 +510,7 @@ public class GameRenderManager
 		this.dynamicRT = null;
 	}
 
-	// Token: 0x06009C67 RID: 40039 RVA: 0x003B11E4 File Offset: 0x003AF3E4
+	// Token: 0x06009CBF RID: 40127 RVA: 0x003B35E8 File Offset: 0x003B17E8
 	public void SetDynamicResolution(float scale, float fpsMin, float fpsMax)
 	{
 		GameRenderManager.dynamicIsEnabled = scale >= 0f;
@@ -550,19 +550,19 @@ public class GameRenderManager
 		this.DynamicResolutionInit();
 	}
 
-	// Token: 0x06009C68 RID: 40040 RVA: 0x003B12D0 File Offset: 0x003AF4D0
+	// Token: 0x06009CC0 RID: 40128 RVA: 0x003B36D4 File Offset: 0x003B18D4
 	public RenderTexture GetDynamicRenderTexture()
 	{
 		return this.dynamicRT;
 	}
 
-	// Token: 0x06009C69 RID: 40041 RVA: 0x003B12D8 File Offset: 0x003AF4D8
+	// Token: 0x06009CC1 RID: 40129 RVA: 0x003B36DC File Offset: 0x003B18DC
 	public void DynamicResolutionRender()
 	{
 		Graphics.Blit(this.GetDynamicRenderTexture(), null);
 	}
 
-	// Token: 0x06009C6A RID: 40042 RVA: 0x003B12E8 File Offset: 0x003AF4E8
+	// Token: 0x06009CC2 RID: 40130 RVA: 0x003B36EC File Offset: 0x003B18EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpscalingSetQuality(int _quality)
 	{
@@ -631,7 +631,7 @@ public class GameRenderManager
 		dlss.qualityMode = dlss_Quality;
 	}
 
-	// Token: 0x06009C6B RID: 40043 RVA: 0x003B13E0 File Offset: 0x003AF5E0
+	// Token: 0x06009CC3 RID: 40131 RVA: 0x003B37E4 File Offset: 0x003B19E4
 	public void UpscalingPreCull()
 	{
 		if (!this.upscalingEnabled)
@@ -654,7 +654,7 @@ public class GameRenderManager
 		}
 	}
 
-	// Token: 0x06009C6C RID: 40044 RVA: 0x003B1494 File Offset: 0x003AF694
+	// Token: 0x06009CC4 RID: 40132 RVA: 0x003B3898 File Offset: 0x003B1A98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateMipmaps(float _renderToScreenRatio, float biasStrength = 1f)
 	{
@@ -672,7 +672,7 @@ public class GameRenderManager
 		}
 	}
 
-	// Token: 0x06009C6D RID: 40045 RVA: 0x003B1500 File Offset: 0x003AF700
+	// Token: 0x06009CC5 RID: 40133 RVA: 0x003B3904 File Offset: 0x003B1B04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMipmapBias(float _bias)
 	{
@@ -688,135 +688,135 @@ public class GameRenderManager
 		}
 	}
 
-	// Token: 0x06009C6E RID: 40046 RVA: 0x003B1565 File Offset: 0x003AF765
+	// Token: 0x06009CC6 RID: 40134 RVA: 0x003B3969 File Offset: 0x003B1B69
 	public void OnGUI()
 	{
 		this.graphManager.Draw();
 	}
 
-	// Token: 0x06009C6F RID: 40047 RVA: 0x003B1572 File Offset: 0x003AF772
+	// Token: 0x06009CC7 RID: 40135 RVA: 0x003B3976 File Offset: 0x003B1B76
 	public bool FPSUpdateGraph(ref float value)
 	{
 		value = 1f / (Time.deltaTime + 0.001f);
 		return true;
 	}
 
-	// Token: 0x06009C70 RID: 40048 RVA: 0x003B1588 File Offset: 0x003AF788
+	// Token: 0x06009CC8 RID: 40136 RVA: 0x003B398C File Offset: 0x003B1B8C
 	public bool SPFUpdateGraph(ref float value)
 	{
 		value = (Time.deltaTime + 0.0001f) * 1000f;
 		return true;
 	}
 
-	// Token: 0x040075DC RID: 30172
+	// Token: 0x0400761D RID: 30237
 	public GameGraphManager graphManager;
 
-	// Token: 0x040075DD RID: 30173
+	// Token: 0x0400761E RID: 30238
 	public GameLightManager lightManager;
 
-	// Token: 0x040075DE RID: 30174
+	// Token: 0x0400761F RID: 30239
 	public ReflectionManager reflectionManager;
 
-	// Token: 0x040075DF RID: 30175
+	// Token: 0x04007620 RID: 30240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x040075E0 RID: 30176
+	// Token: 0x04007621 RID: 30241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PostProcessLayer layer;
 
-	// Token: 0x040075E1 RID: 30177
+	// Token: 0x04007622 RID: 30242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicUpdateDelay = 18f;
 
-	// Token: 0x040075E2 RID: 30178
+	// Token: 0x04007623 RID: 30243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicChangeSeconds = 5f;
 
-	// Token: 0x040075E3 RID: 30179
+	// Token: 0x04007624 RID: 30244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicFPSMin = 30f;
 
-	// Token: 0x040075E4 RID: 30180
+	// Token: 0x04007625 RID: 30245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicFPSMax = 64f;
 
-	// Token: 0x040075E5 RID: 30181
+	// Token: 0x04007626 RID: 30246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicFPSVSyncMin = 30f;
 
-	// Token: 0x040075E6 RID: 30182
+	// Token: 0x04007627 RID: 30247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicFPSVSyncMax = 55f;
 
-	// Token: 0x040075E7 RID: 30183
+	// Token: 0x04007628 RID: 30248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicScaleMin = 0.4f;
 
-	// Token: 0x040075E8 RID: 30184
+	// Token: 0x04007629 RID: 30249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDynamicScaleThreshold = 0.049f;
 
-	// Token: 0x040075E9 RID: 30185
+	// Token: 0x0400762A RID: 30250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cDynamicRTCount = 4;
 
-	// Token: 0x040075EA RID: 30186
+	// Token: 0x0400762B RID: 30251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly float[] dynamicScales = new float[] { 1f, 0.75f, 0.62f, 0.5f, 0f };
 
-	// Token: 0x040075EB RID: 30187
+	// Token: 0x0400762C RID: 30252
 	public static bool dynamicIsEnabled;
 
-	// Token: 0x040075EC RID: 30188
+	// Token: 0x0400762D RID: 30253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicUpdateDelay;
 
-	// Token: 0x040075ED RID: 30189
+	// Token: 0x0400762E RID: 30254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicFPSTargetMin;
 
-	// Token: 0x040075EE RID: 30190
+	// Token: 0x0400762F RID: 30255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicFPSTargetMax = 64f;
 
-	// Token: 0x040075EF RID: 30191
+	// Token: 0x04007630 RID: 30256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicFPS = 60f;
 
-	// Token: 0x040075F0 RID: 30192
+	// Token: 0x04007631 RID: 30257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicScale;
 
-	// Token: 0x040075F1 RID: 30193
+	// Token: 0x04007632 RID: 30258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicScaleTarget;
 
-	// Token: 0x040075F2 RID: 30194
+	// Token: 0x04007633 RID: 30259
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dynamicScaleOverride;
 
-	// Token: 0x040075F3 RID: 30195
+	// Token: 0x04007634 RID: 30260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dynamicScreenW;
 
-	// Token: 0x040075F4 RID: 30196
+	// Token: 0x04007635 RID: 30261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture dynamicRT;
 
-	// Token: 0x040075F5 RID: 30197
+	// Token: 0x04007636 RID: 30262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture[] dynamicRTs;
 
-	// Token: 0x040075F6 RID: 30198
+	// Token: 0x04007637 RID: 30263
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool upscalingEnabled;
 
-	// Token: 0x040075F7 RID: 30199
+	// Token: 0x04007638 RID: 30264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float mipmapDelay;
 
-	// Token: 0x040075F8 RID: 30200
+	// Token: 0x04007639 RID: 30265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong mipmapTextureMem;
 }

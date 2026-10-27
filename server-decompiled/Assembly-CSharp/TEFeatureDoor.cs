@@ -10,7 +10,7 @@ using UnityEngine.Scripting;
 public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePhysicalCapabilities, IFeatureSavedInPrefab
 {
 	// Token: 0x170000DE RID: 222
-	// (get) Token: 0x06000B0C RID: 2828 RVA: 0x000470B6 File Offset: 0x000452B6
+	// (get) Token: 0x06000B0C RID: 2828 RVA: 0x00047076 File Offset: 0x00045276
 	public IFeatureTriggerCapability.ETriggerRole TriggerRole
 	{
 		get
@@ -19,7 +19,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B0D RID: 2829 RVA: 0x000470BC File Offset: 0x000452BC
+	// Token: 0x06000B0D RID: 2829 RVA: 0x0004707C File Offset: 0x0004527C
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -54,7 +54,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B0E RID: 2830 RVA: 0x00047238 File Offset: 0x00045438
+	// Token: 0x06000B0E RID: 2830 RVA: 0x000471F8 File Offset: 0x000453F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -69,7 +69,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B0F RID: 2831 RVA: 0x0004728C File Offset: 0x0004548C
+	// Token: 0x06000B0F RID: 2831 RVA: 0x0004724C File Offset: 0x0004544C
 	public override void UpgradeDowngradeFrom(TileEntityComposite _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -84,7 +84,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B10 RID: 2832 RVA: 0x000472E8 File Offset: 0x000454E8
+	// Token: 0x06000B10 RID: 2832 RVA: 0x000472A8 File Offset: 0x000454A8
 	public void HandleOpenCloseSound(Vector3i _blockPos)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -95,7 +95,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		Manager.BroadcastPlayByLocalPlayer(_blockPos.ToVector3() + Vector3.one * 0.5f, text);
 	}
 
-	// Token: 0x06000B11 RID: 2833 RVA: 0x00047338 File Offset: 0x00045538
+	// Token: 0x06000B11 RID: 2833 RVA: 0x000472F8 File Offset: 0x000454F8
 	public void UpdateAnimState(BlockEntityData _ebcd)
 	{
 		if (_ebcd != null && _ebcd.bHasTransform)
@@ -114,7 +114,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B12 RID: 2834 RVA: 0x00047394 File Offset: 0x00045594
+	// Token: 0x06000B12 RID: 2834 RVA: 0x00047354 File Offset: 0x00045554
 	public void ForceAnimationState(BlockEntityData _ebcd)
 	{
 		if (_ebcd != null && _ebcd.bHasTransform)
@@ -134,13 +134,13 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B13 RID: 2835 RVA: 0x0004740C File Offset: 0x0004560C
+	// Token: 0x06000B13 RID: 2835 RVA: 0x000473CC File Offset: 0x000455CC
 	public bool IsOpen()
 	{
 		return this.isOpen;
 	}
 
-	// Token: 0x06000B14 RID: 2836 RVA: 0x00047414 File Offset: 0x00045614
+	// Token: 0x06000B14 RID: 2836 RVA: 0x000473D4 File Offset: 0x000455D4
 	public void SetOpen(bool _open, bool _animate = false)
 	{
 		if (this.isOpen == _open)
@@ -166,7 +166,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		base.SetModified();
 	}
 
-	// Token: 0x06000B15 RID: 2837 RVA: 0x000474B7 File Offset: 0x000456B7
+	// Token: 0x06000B15 RID: 2837 RVA: 0x00047477 File Offset: 0x00045677
 	public bool CanOpen(out bool canPickToOpen)
 	{
 		canPickToOpen = false;
@@ -179,7 +179,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return this.lockFeature == null || !this.lockFeature.IsLocked();
 	}
 
-	// Token: 0x06000B16 RID: 2838 RVA: 0x000474F4 File Offset: 0x000456F4
+	// Token: 0x06000B16 RID: 2838 RVA: 0x000474B4 File Offset: 0x000456B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleDoorAnimation(bool _animate)
 	{
@@ -192,7 +192,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		this.ForceAnimationState(blockEntity);
 	}
 
-	// Token: 0x06000B17 RID: 2839 RVA: 0x00047534 File Offset: 0x00045734
+	// Token: 0x06000B17 RID: 2839 RVA: 0x000474F4 File Offset: 0x000456F4
 	public override void SetBlockEntityData(BlockEntityData _blockEntityData)
 	{
 		if (_blockEntityData == null || !_blockEntityData.bHasTransform)
@@ -236,7 +236,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		this.ForceAnimationState(_blockEntityData);
 	}
 
-	// Token: 0x06000B18 RID: 2840 RVA: 0x0004766C File Offset: 0x0004586C
+	// Token: 0x06000B18 RID: 2840 RVA: 0x0004762C File Offset: 0x0004582C
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -251,7 +251,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		this.SetOpen(false, true);
 	}
 
-	// Token: 0x06000B19 RID: 2841 RVA: 0x000476C8 File Offset: 0x000458C8
+	// Token: 0x06000B19 RID: 2841 RVA: 0x00047688 File Offset: 0x00045888
 	public override void OnBlockValueChanged(Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (_newBlockValue.Block.shape is BlockShapeModelEntity && _oldBlockValue.type != _newBlockValue.type && !_newBlockValue.ischild)
@@ -265,13 +265,13 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B1A RID: 2842 RVA: 0x00047736 File Offset: 0x00045936
+	// Token: 0x06000B1A RID: 2842 RVA: 0x000476F6 File Offset: 0x000458F6
 	public override void OnBlockReset(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		this.SetOpen(false, false);
 	}
 
-	// Token: 0x06000B1B RID: 2843 RVA: 0x00047740 File Offset: 0x00045940
+	// Token: 0x06000B1B RID: 2843 RVA: 0x00047700 File Offset: 0x00045900
 	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		if (this.lockFeature != null && _triggeredBy != null && _triggeredBy.Unlock)
@@ -281,7 +281,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		this.SetOpen(!this.isOpen, true);
 	}
 
-	// Token: 0x06000B1C RID: 2844 RVA: 0x00047774 File Offset: 0x00045974
+	// Token: 0x06000B1C RID: 2844 RVA: 0x00047734 File Offset: 0x00045934
 	public override void OnUnload(World _world)
 	{
 		base.OnUnload(_world);
@@ -294,7 +294,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B1D RID: 2845 RVA: 0x000477B8 File Offset: 0x000459B8
+	// Token: 0x06000B1D RID: 2845 RVA: 0x00047778 File Offset: 0x00045978
 	public bool IsMovementBlocked(Vector3i _blockPos, BlockValue _blockValue, BlockFace _face)
 	{
 		if (!this.isDrawBridge)
@@ -314,7 +314,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return _blockPos.y == parentPos.y;
 	}
 
-	// Token: 0x06000B1E RID: 2846 RVA: 0x00047818 File Offset: 0x00045A18
+	// Token: 0x06000B1E RID: 2846 RVA: 0x000477D8 File Offset: 0x000459D8
 	public bool IsMovementBlocked(Vector3i _blockPos, BlockValue _blockValue, BlockFaceFlag _sides)
 	{
 		if (!this.isDrawBridge)
@@ -334,13 +334,13 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return _blockPos.y == parentPos.y;
 	}
 
-	// Token: 0x06000B1F RID: 2847 RVA: 0x0004740C File Offset: 0x0004560C
+	// Token: 0x06000B1F RID: 2847 RVA: 0x000473CC File Offset: 0x000455CC
 	public bool IsSeeThrough(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		return this.isOpen;
 	}
 
-	// Token: 0x06000B20 RID: 2848 RVA: 0x00047878 File Offset: 0x00045A78
+	// Token: 0x06000B20 RID: 2848 RVA: 0x00047838 File Offset: 0x00045A38
 	public float GetStepHeight(Vector3i _blockPos, BlockValue _blockValue, BlockFace crossingFace)
 	{
 		if (!this.isDrawBridge)
@@ -363,7 +363,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return 0f;
 	}
 
-	// Token: 0x06000B21 RID: 2849 RVA: 0x000478E4 File Offset: 0x00045AE4
+	// Token: 0x06000B21 RID: 2849 RVA: 0x000478A4 File Offset: 0x00045AA4
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -379,7 +379,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return string.Format(Localization.Get("tooltipUnlocked", false, null), _activateHotkeyMarkup, text);
 	}
 
-	// Token: 0x06000B22 RID: 2850 RVA: 0x00047978 File Offset: 0x00045B78
+	// Token: 0x06000B22 RID: 2850 RVA: 0x00047938 File Offset: 0x00045B38
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
@@ -387,7 +387,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		_addCallback(new BlockActivationCommand("close", "door", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000B23 RID: 2851 RVA: 0x000479CC File Offset: 0x00045BCC
+	// Token: 0x06000B23 RID: 2851 RVA: 0x0004798C File Offset: 0x00045B8C
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -405,7 +405,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return !base.CommandIs(_commandName, "close") || this.isOpen;
 	}
 
-	// Token: 0x06000B24 RID: 2852 RVA: 0x00047A25 File Offset: 0x00045C25
+	// Token: 0x06000B24 RID: 2852 RVA: 0x000479E5 File Offset: 0x00045BE5
 	public override void OnAdded(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnAdded(_blockPos, _blockValue);
@@ -416,7 +416,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B25 RID: 2853 RVA: 0x00047A44 File Offset: 0x00045C44
+	// Token: 0x06000B25 RID: 2853 RVA: 0x00047A04 File Offset: 0x00045C04
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -445,7 +445,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		return true;
 	}
 
-	// Token: 0x06000B26 RID: 2854 RVA: 0x00047B30 File Offset: 0x00045D30
+	// Token: 0x06000B26 RID: 2854 RVA: 0x00047AF0 File Offset: 0x00045CF0
 	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
@@ -476,7 +476,7 @@ public class TEFeatureDoor : TEFeatureAbs, IFeatureTriggerCapability, IFeaturePh
 		}
 	}
 
-	// Token: 0x06000B27 RID: 2855 RVA: 0x00047BAE File Offset: 0x00045DAE
+	// Token: 0x06000B27 RID: 2855 RVA: 0x00047B6E File Offset: 0x00045D6E
 	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);

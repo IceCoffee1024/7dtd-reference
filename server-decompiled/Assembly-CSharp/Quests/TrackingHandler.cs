@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Quests
 {
-	// Token: 0x020018CE RID: 6350
+	// Token: 0x020018FF RID: 6399
 	public class TrackingHandler
 	{
-		// Token: 0x0600C406 RID: 50182 RVA: 0x00484AF8 File Offset: 0x00482CF8
+		// Token: 0x0600C51A RID: 50458 RVA: 0x004884A4 File Offset: 0x004866A4
 		public bool Update(float deltaTime)
 		{
 			if (this.LocalPlayer == null)
@@ -28,7 +28,7 @@ namespace Quests
 			return true;
 		}
 
-		// Token: 0x0600C407 RID: 50183 RVA: 0x00484B91 File Offset: 0x00482D91
+		// Token: 0x0600C51B RID: 50459 RVA: 0x0048853D File Offset: 0x0048673D
 		public void AddTrackingEntry(ObjectiveModifierTrackBlocks track)
 		{
 			if (!this.trackingEntries.Contains(track))
@@ -39,7 +39,7 @@ namespace Quests
 			QuestEventManager.Current.AddTrackerToBeUpdated(this);
 		}
 
-		// Token: 0x0600C408 RID: 50184 RVA: 0x00484BBF File Offset: 0x00482DBF
+		// Token: 0x0600C51C RID: 50460 RVA: 0x0048856B File Offset: 0x0048676B
 		public void RemoveTrackingEntry(ObjectiveModifierTrackBlocks track)
 		{
 			if (this.trackingEntries.Contains(track))
@@ -53,7 +53,7 @@ namespace Quests
 			}
 		}
 
-		// Token: 0x0600C409 RID: 50185 RVA: 0x00484BFC File Offset: 0x00482DFC
+		// Token: 0x0600C51D RID: 50461 RVA: 0x004885A8 File Offset: 0x004867A8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void HandleTracking()
 		{
@@ -76,23 +76,23 @@ namespace Quests
 			}
 		}
 
-		// Token: 0x04009477 RID: 38007
+		// Token: 0x04009560 RID: 38240
 		public int QuestCode;
 
-		// Token: 0x04009478 RID: 38008
+		// Token: 0x04009561 RID: 38241
 		public EntityPlayerLocal LocalPlayer;
 
-		// Token: 0x04009479 RID: 38009
+		// Token: 0x04009562 RID: 38242
 		public List<ObjectiveModifierTrackBlocks> trackingEntries = new List<ObjectiveModifierTrackBlocks>();
 
-		// Token: 0x0400947A RID: 38010
+		// Token: 0x04009563 RID: 38243
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3 LastCheckedPosition = new Vector3(0f, 9999f, 0f);
 
-		// Token: 0x0400947B RID: 38011
+		// Token: 0x04009564 RID: 38244
 		public float RefreshDistance = 5f;
 
-		// Token: 0x0400947C RID: 38012
+		// Token: 0x04009565 RID: 38245
 		public bool NeedsRefresh;
 	}
 }

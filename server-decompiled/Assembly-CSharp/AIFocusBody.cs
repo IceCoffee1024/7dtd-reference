@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000444 RID: 1092
+// Token: 0x02000446 RID: 1094
 public struct AIFocusBody : IFocusTarget
 {
-	// Token: 0x06002149 RID: 8521 RVA: 0x000C911F File Offset: 0x000C731F
+	// Token: 0x0600214E RID: 8526 RVA: 0x000C94CB File Offset: 0x000C76CB
 	public AIFocusBody(float target)
 	{
 		this.TargetYaw = target;
@@ -13,7 +13,7 @@ public struct AIFocusBody : IFocusTarget
 		this.ConditionDistance = default(AIFocusConditionDistance);
 	}
 
-	// Token: 0x0600214A RID: 8522 RVA: 0x000C9142 File Offset: 0x000C7342
+	// Token: 0x0600214F RID: 8527 RVA: 0x000C94EE File Offset: 0x000C76EE
 	public AIFocusBody(EntityAlive target)
 	{
 		this.TargetYaw = 0f;
@@ -22,7 +22,7 @@ public struct AIFocusBody : IFocusTarget
 		this.ConditionDistance = default(AIFocusConditionDistance);
 	}
 
-	// Token: 0x0600214B RID: 8523 RVA: 0x000C9169 File Offset: 0x000C7369
+	// Token: 0x06002150 RID: 8528 RVA: 0x000C9515 File Offset: 0x000C7715
 	public bool TryGetValue(EntityAlive theEntity, out float value)
 	{
 		if (this.HasTargetYaw)
@@ -39,13 +39,13 @@ public struct AIFocusBody : IFocusTarget
 		return false;
 	}
 
-	// Token: 0x0600214C RID: 8524 RVA: 0x000C91A3 File Offset: 0x000C73A3
+	// Token: 0x06002151 RID: 8529 RVA: 0x000C954F File Offset: 0x000C774F
 	public static bool GetActiveFocusForPriority(EntityAlive theEntity, FocusPriority priority, AIFocus<AIFocusBody> focus, out float focusForPriority)
 	{
 		return focus.FocusTargets[(int)priority].TryGetValue(theEntity, out focusForPriority);
 	}
 
-	// Token: 0x0600214D RID: 8525 RVA: 0x000C91B8 File Offset: 0x000C73B8
+	// Token: 0x06002152 RID: 8530 RVA: 0x000C9564 File Offset: 0x000C7764
 	public static bool GetActiveFocus(EntityAlive theEntity, AIFocus<AIFocusBody> focus, out float activeFocus)
 	{
 		Vector3 position = theEntity.position;
@@ -63,15 +63,15 @@ public struct AIFocusBody : IFocusTarget
 		return false;
 	}
 
-	// Token: 0x040016E5 RID: 5861
+	// Token: 0x040016F5 RID: 5877
 	public readonly EntityAlive TargetYawEntity;
 
-	// Token: 0x040016E6 RID: 5862
+	// Token: 0x040016F6 RID: 5878
 	public readonly float TargetYaw;
 
-	// Token: 0x040016E7 RID: 5863
+	// Token: 0x040016F7 RID: 5879
 	public readonly bool HasTargetYaw;
 
-	// Token: 0x040016E8 RID: 5864
+	// Token: 0x040016F8 RID: 5880
 	public AIFocusConditionDistance ConditionDistance;
 }

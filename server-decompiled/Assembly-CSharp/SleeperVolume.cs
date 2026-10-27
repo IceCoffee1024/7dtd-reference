@@ -5,11 +5,11 @@ using System.Diagnostics;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x02000BC3 RID: 3011
+// Token: 0x02000BCE RID: 3022
 public class SleeperVolume
 {
-	// Token: 0x1700099A RID: 2458
-	// (get) Token: 0x06005A89 RID: 23177 RVA: 0x0022E744 File Offset: 0x0022C944
+	// Token: 0x170009A0 RID: 2464
+	// (get) Token: 0x06005AAE RID: 23214 RVA: 0x0022FCA0 File Offset: 0x0022DEA0
 	public bool IsTrigger
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -19,8 +19,8 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x1700099B RID: 2459
-	// (get) Token: 0x06005A8A RID: 23178 RVA: 0x0022E754 File Offset: 0x0022C954
+	// Token: 0x170009A1 RID: 2465
+	// (get) Token: 0x06005AAF RID: 23215 RVA: 0x0022FCB0 File Offset: 0x0022DEB0
 	public bool IsTriggerAndNoRespawn
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -30,7 +30,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A8B RID: 23179 RVA: 0x0022E771 File Offset: 0x0022C971
+	// Token: 0x06005AB0 RID: 23216 RVA: 0x0022FCCD File Offset: 0x0022DECD
 	public static void WorldInit()
 	{
 		if (GameUtils.IsPlaytesting())
@@ -41,7 +41,7 @@ public class SleeperVolume
 		SleeperVolume.sleeperRandom = GameRandomManager.Instance.CreateGameRandom();
 	}
 
-	// Token: 0x06005A8C RID: 23180 RVA: 0x0022E7A0 File Offset: 0x0022C9A0
+	// Token: 0x06005AB1 RID: 23217 RVA: 0x0022FCFC File Offset: 0x0022DEFC
 	public static SleeperVolume Create(PrefabSleeperVolume psv, Vector3i _boxMin, Vector3i _boxMax)
 	{
 		SleeperVolume sleeperVolume = new SleeperVolume();
@@ -59,7 +59,7 @@ public class SleeperVolume
 		return sleeperVolume;
 	}
 
-	// Token: 0x06005A8D RID: 23181 RVA: 0x0022E838 File Offset: 0x0022CA38
+	// Token: 0x06005AB2 RID: 23218 RVA: 0x0022FD94 File Offset: 0x0022DF94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMinMax(Vector3i _boxMin, Vector3i _boxMax)
 	{
@@ -68,14 +68,14 @@ public class SleeperVolume
 		this.Center = (this.BoxMin + this.BoxMax).ToVector3() * 0.5f;
 	}
 
-	// Token: 0x06005A8E RID: 23182 RVA: 0x0022E87C File Offset: 0x0022CA7C
+	// Token: 0x06005AB3 RID: 23219 RVA: 0x0022FDD8 File Offset: 0x0022DFD8
 	public bool Intersects(Bounds bounds)
 	{
 		return BoundsUtils.Intersects(bounds, this.BoxMin, this.BoxMax);
 	}
 
-	// Token: 0x1700099C RID: 2460
-	// (get) Token: 0x06005A8F RID: 23183 RVA: 0x0022E89A File Offset: 0x0022CA9A
+	// Token: 0x170009A2 RID: 2466
+	// (get) Token: 0x06005AB4 RID: 23220 RVA: 0x0022FDF6 File Offset: 0x0022DFF6
 	public PrefabInstance PrefabInstance
 	{
 		get
@@ -84,7 +84,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A90 RID: 23184 RVA: 0x0022E8A4 File Offset: 0x0022CAA4
+	// Token: 0x06005AB5 RID: 23221 RVA: 0x0022FE00 File Offset: 0x0022E000
 	public bool AddToPrefabInstance()
 	{
 		DynamicPrefabDecorator dynamicPrefabDecorator = GameManager.Instance.World.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator();
@@ -97,7 +97,7 @@ public class SleeperVolume
 		return false;
 	}
 
-	// Token: 0x06005A91 RID: 23185 RVA: 0x0022E8FB File Offset: 0x0022CAFB
+	// Token: 0x06005AB6 RID: 23222 RVA: 0x0022FE57 File Offset: 0x0022E057
 	public void AddSpawnPoint(int _x, int _y, int _z, BlockSleeper _block, BlockValue _blockValue)
 	{
 		if (this.spawnPointList.Count < 255)
@@ -106,7 +106,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A92 RID: 23186 RVA: 0x0022E937 File Offset: 0x0022CB37
+	// Token: 0x06005AB7 RID: 23223 RVA: 0x0022FE93 File Offset: 0x0022E093
 	public void SetScript(string _script)
 	{
 		if (string.IsNullOrEmpty(_script))
@@ -118,7 +118,7 @@ public class SleeperVolume
 		this.minScript.SetText(_script);
 	}
 
-	// Token: 0x06005A93 RID: 23187 RVA: 0x0022E960 File Offset: 0x0022CB60
+	// Token: 0x06005AB8 RID: 23224 RVA: 0x0022FEBC File Offset: 0x0022E0BC
 	public void Tick(World _world)
 	{
 		if (this.isSpawning)
@@ -176,7 +176,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A94 RID: 23188 RVA: 0x0022EB18 File Offset: 0x0022CD18
+	// Token: 0x06005AB9 RID: 23225 RVA: 0x00230074 File Offset: 0x0022E274
 	public int GetPlayerTouchedToUpdateId()
 	{
 		int num = -1;
@@ -187,7 +187,7 @@ public class SleeperVolume
 		return num;
 	}
 
-	// Token: 0x06005A95 RID: 23189 RVA: 0x0022EB44 File Offset: 0x0022CD44
+	// Token: 0x06005ABA RID: 23226 RVA: 0x002300A0 File Offset: 0x0022E2A0
 	public int GetPlayerTouchedTriggerId()
 	{
 		int num = -1;
@@ -198,14 +198,14 @@ public class SleeperVolume
 		return num;
 	}
 
-	// Token: 0x06005A96 RID: 23190 RVA: 0x0022EB6E File Offset: 0x0022CD6E
+	// Token: 0x06005ABB RID: 23227 RVA: 0x002300CA File Offset: 0x0022E2CA
 	public void DespawnAndReset(World _world)
 	{
 		this.Despawn(_world);
 		this.Reset();
 	}
 
-	// Token: 0x06005A97 RID: 23191 RVA: 0x0022EB80 File Offset: 0x0022CD80
+	// Token: 0x06005ABC RID: 23228 RVA: 0x002300DC File Offset: 0x0022E2DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Despawn(World _world)
 	{
@@ -225,7 +225,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A98 RID: 23192 RVA: 0x0022EC18 File Offset: 0x0022CE18
+	// Token: 0x06005ABD RID: 23229 RVA: 0x00230174 File Offset: 0x0022E374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Reset()
 	{
@@ -246,7 +246,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A99 RID: 23193 RVA: 0x0022EC8C File Offset: 0x0022CE8C
+	// Token: 0x06005ABE RID: 23230 RVA: 0x002301E8 File Offset: 0x0022E3E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CancelPendingSpawns()
 	{
@@ -262,7 +262,7 @@ public class SleeperVolume
 		this.pendingSpawnMap.Clear();
 	}
 
-	// Token: 0x06005A9A RID: 23194 RVA: 0x0022ECDC File Offset: 0x0022CEDC
+	// Token: 0x06005ABF RID: 23231 RVA: 0x00230238 File Offset: 0x0022E438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CompletePendingSpawns()
 	{
@@ -277,7 +277,7 @@ public class SleeperVolume
 		this.pendingSpawnMap.Clear();
 	}
 
-	// Token: 0x06005A9B RID: 23195 RVA: 0x0022ED1C File Offset: 0x0022CF1C
+	// Token: 0x06005AC0 RID: 23232 RVA: 0x00230278 File Offset: 0x0022E478
 	public int GetAliveCount()
 	{
 		int num = 0;
@@ -291,7 +291,7 @@ public class SleeperVolume
 		return num - this.numSpawned + this.respawnMap.Count;
 	}
 
-	// Token: 0x06005A9C RID: 23196 RVA: 0x0022ED74 File Offset: 0x0022CF74
+	// Token: 0x06005AC1 RID: 23233 RVA: 0x002302D0 File Offset: 0x0022E4D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdatePlayerTouched(World _world, EntityPlayer _playerTouched)
 	{
@@ -348,7 +348,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A9D RID: 23197 RVA: 0x0022EF60 File Offset: 0x0022D160
+	// Token: 0x06005AC2 RID: 23234 RVA: 0x002304BC File Offset: 0x0022E6BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetSpawnsAvailable()
 	{
@@ -367,7 +367,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A9E RID: 23198 RVA: 0x0022EFE8 File Offset: 0x0022D1E8
+	// Token: 0x06005AC3 RID: 23235 RVA: 0x00230544 File Offset: 0x0022E744
 	public void AddSpawnCount(string _groupName, float _min, float _max)
 	{
 		if (_max == 0f)
@@ -397,7 +397,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005A9F RID: 23199 RVA: 0x0022F064 File Offset: 0x0022D264
+	// Token: 0x06005AC4 RID: 23236 RVA: 0x002305C0 File Offset: 0x0022E7C0
 	public void CheckTouching(World _world, EntityPlayer _player)
 	{
 		if (this.IsTriggerAndNoRespawn || _player.IsSpectator)
@@ -424,7 +424,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AA0 RID: 23200 RVA: 0x0022F238 File Offset: 0x0022D438
+	// Token: 0x06005AC5 RID: 23237 RVA: 0x00230794 File Offset: 0x0022E994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TouchGroup(World _world, EntityPlayer _player, bool setActive)
 	{
@@ -445,7 +445,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AA1 RID: 23201 RVA: 0x0022F2B0 File Offset: 0x0022D4B0
+	// Token: 0x06005AC6 RID: 23238 RVA: 0x0023080C File Offset: 0x0022EA0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Touch(World _world, EntityPlayer _player, bool setActive, SleeperVolume.ETriggerType trigger)
 	{
@@ -494,7 +494,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AA2 RID: 23202 RVA: 0x0022F404 File Offset: 0x0022D604
+	// Token: 0x06005AC7 RID: 23239 RVA: 0x00230960 File Offset: 0x0022EB60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckTrigger(World _world, Vector3 playerPos)
 	{
@@ -526,7 +526,7 @@ public class SleeperVolume
 		return true;
 	}
 
-	// Token: 0x06005AA3 RID: 23203 RVA: 0x0022F578 File Offset: 0x0022D778
+	// Token: 0x06005AC8 RID: 23240 RVA: 0x00230AD4 File Offset: 0x0022ECD4
 	public void CheckNoise(World _world, Vector3 pos)
 	{
 		if (this.hasPassives && pos.x >= (float)this.BoxMin.x - 0.9f && pos.x < (float)this.BoxMax.x + 0.9f && pos.y >= (float)this.BoxMin.y - 0.9f && pos.y < (float)this.BoxMax.y + 0.9f && pos.z >= (float)this.BoxMin.z - 0.9f && pos.z < (float)this.BoxMax.z + 0.9f && (this.flags & 7) != 1)
@@ -535,7 +535,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AA4 RID: 23204 RVA: 0x0022F643 File Offset: 0x0022D843
+	// Token: 0x06005AC9 RID: 23241 RVA: 0x00230B9F File Offset: 0x0022ED9F
 	public void OnTriggered(EntityPlayer _player, World _world, int _triggerIndex)
 	{
 		this.triggerState = (SleeperVolume.ETriggerType)(this.flags & 7);
@@ -543,7 +543,7 @@ public class SleeperVolume
 		this.UpdatePlayerTouched(_world, _player);
 	}
 
-	// Token: 0x06005AA5 RID: 23205 RVA: 0x0022F664 File Offset: 0x0022D864
+	// Token: 0x06005ACA RID: 23242 RVA: 0x00230BC0 File Offset: 0x0022EDC0
 	public void EntityDied(EntityAlive entity)
 	{
 		if (!this.respawnMap.Remove(entity.entityId))
@@ -562,7 +562,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AA6 RID: 23206 RVA: 0x0022F6C8 File Offset: 0x0022D8C8
+	// Token: 0x06005ACB RID: 23243 RVA: 0x00230C24 File Offset: 0x0022EE24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearedUpdate(World _world)
 	{
@@ -582,14 +582,14 @@ public class SleeperVolume
 		this.wasCleared = true;
 	}
 
-	// Token: 0x06005AA7 RID: 23207 RVA: 0x0022F71E File Offset: 0x0022D91E
+	// Token: 0x06005ACC RID: 23244 RVA: 0x00230C7A File Offset: 0x0022EE7A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetGameStageAround(EntityPlayer player)
 	{
 		return GameStageDefinition.CalcGameStageAround(player);
 	}
 
-	// Token: 0x06005AA8 RID: 23208 RVA: 0x0022F728 File Offset: 0x0022D928
+	// Token: 0x06005ACD RID: 23245 RVA: 0x00230C84 File Offset: 0x0022EE84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SpawnPointIsHidden(World _world, int _index)
 	{
@@ -634,7 +634,7 @@ public class SleeperVolume
 		return true;
 	}
 
-	// Token: 0x06005AA9 RID: 23209 RVA: 0x0022F8A0 File Offset: 0x0022DAA0
+	// Token: 0x06005ACE RID: 23246 RVA: 0x00230DFC File Offset: 0x0022EFFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindFathestSpawnFromPlayers(World _world)
 	{
@@ -675,7 +675,7 @@ public class SleeperVolume
 		return num5;
 	}
 
-	// Token: 0x06005AAA RID: 23210 RVA: 0x0022F9BC File Offset: 0x0022DBBC
+	// Token: 0x06005ACF RID: 23247 RVA: 0x00230F18 File Offset: 0x0022F118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveSpawnAvailable(int index)
 	{
@@ -689,7 +689,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AAB RID: 23211 RVA: 0x0022F9FC File Offset: 0x0022DBFC
+	// Token: 0x06005AD0 RID: 23248 RVA: 0x00230F58 File Offset: 0x0022F158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSpawn(World _world)
 	{
@@ -884,7 +884,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AAC RID: 23212 RVA: 0x0022FF54 File Offset: 0x0022E154
+	// Token: 0x06005AD1 RID: 23249 RVA: 0x002314B0 File Offset: 0x0022F6B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindSpawnIndex(World _world)
 	{
@@ -910,7 +910,7 @@ public class SleeperVolume
 		return this.FindFathestSpawnFromPlayers(_world);
 	}
 
-	// Token: 0x06005AAD RID: 23213 RVA: 0x00230004 File Offset: 0x0022E204
+	// Token: 0x06005AD2 RID: 23250 RVA: 0x00231560 File Offset: 0x0022F760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckSpawnPos(World _world, Vector3i pos)
 	{
@@ -922,7 +922,7 @@ public class SleeperVolume
 		return chunk != null && !chunk.IsInternalBlocksCulled && !chunk.NeedsCopying && !chunk.NeedsRegeneration;
 	}
 
-	// Token: 0x06005AAE RID: 23214 RVA: 0x0023004C File Offset: 0x0022E24C
+	// Token: 0x06005AD3 RID: 23251 RVA: 0x002315A8 File Offset: 0x0022F7A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool Spawn(World _world, int entityClassId, int spawnIndex, BlockSleeper block)
 	{
@@ -968,7 +968,7 @@ public class SleeperVolume
 		return true;
 	}
 
-	// Token: 0x06005AAF RID: 23215 RVA: 0x002301E8 File Offset: 0x0022E3E8
+	// Token: 0x06005AD4 RID: 23252 RVA: 0x00231744 File Offset: 0x0022F944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddEnemyToWorld(World _world, EntityAlive zombie, int spawnIndex, Vector3 spawnPos, Vector3 lookDir, int pose)
 	{
@@ -992,7 +992,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AB0 RID: 23216 RVA: 0x00230274 File Offset: 0x0022E474
+	// Token: 0x06005AD5 RID: 23253 RVA: 0x002317D0 File Offset: 0x0022F9D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnParticle(string _particleName, EntityAlive _zombie)
 	{
@@ -1010,7 +1010,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AB1 RID: 23217 RVA: 0x0023030A File Offset: 0x0022E50A
+	// Token: 0x06005AD6 RID: 23254 RVA: 0x00231866 File Offset: 0x0022FA66
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator WakeAttackLater(EntityAlive _ea, EntityPlayer _playerTouched)
 	{
@@ -1023,13 +1023,13 @@ public class SleeperVolume
 		yield break;
 	}
 
-	// Token: 0x06005AB2 RID: 23218 RVA: 0x00230320 File Offset: 0x0022E520
+	// Token: 0x06005AD7 RID: 23255 RVA: 0x0023187C File Offset: 0x0022FA7C
 	public List<SleeperVolume.SpawnPoint> GetSpawnPoints()
 	{
 		return this.spawnPointList;
 	}
 
-	// Token: 0x06005AB3 RID: 23219 RVA: 0x00230328 File Offset: 0x0022E528
+	// Token: 0x06005AD8 RID: 23256 RVA: 0x00231884 File Offset: 0x0022FA84
 	public static SleeperVolume Read(PooledBinaryReader _br)
 	{
 		SleeperVolume sleeperVolume = new SleeperVolume();
@@ -1181,7 +1181,7 @@ public class SleeperVolume
 		return sleeperVolume;
 	}
 
-	// Token: 0x06005AB4 RID: 23220 RVA: 0x0023064C File Offset: 0x0022E84C
+	// Token: 0x06005AD9 RID: 23257 RVA: 0x00231BA8 File Offset: 0x0022FDA8
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(21);
@@ -1275,7 +1275,7 @@ public class SleeperVolume
 		}
 	}
 
-	// Token: 0x06005AB5 RID: 23221 RVA: 0x002309CC File Offset: 0x0022EBCC
+	// Token: 0x06005ADA RID: 23258 RVA: 0x00231F28 File Offset: 0x00230128
 	public override string ToString()
 	{
 		string text = ((this.groupCountList != null && this.groupCountList.Count > 0) ? this.groupCountList[0].groupName : "");
@@ -1289,7 +1289,7 @@ public class SleeperVolume
 		});
 	}
 
-	// Token: 0x06005AB6 RID: 23222 RVA: 0x00230A5F File Offset: 0x0022EC5F
+	// Token: 0x06005ADB RID: 23259 RVA: 0x00231FBB File Offset: 0x002301BB
 	[Conditional("DEBUG_SLEEPERLOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogSleeper(string format, params object[] args)
@@ -1298,7 +1298,7 @@ public class SleeperVolume
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x06005AB7 RID: 23223 RVA: 0x00230A8C File Offset: 0x0022EC8C
+	// Token: 0x06005ADC RID: 23260 RVA: 0x00231FE8 File Offset: 0x002301E8
 	public void Draw(float _duration)
 	{
 		Vector3 vector = this.BoxMin.ToVector3() - Origin.position;
@@ -1308,7 +1308,7 @@ public class SleeperVolume
 		Utils.DrawBoxLines(vector, vector2, color, _duration);
 	}
 
-	// Token: 0x06005AB8 RID: 23224 RVA: 0x00230AD8 File Offset: 0x0022ECD8
+	// Token: 0x06005ADD RID: 23261 RVA: 0x00232034 File Offset: 0x00230234
 	public void DrawDebugLines(float _duration)
 	{
 		string text = string.Format("SleeperVolume{0},{1}", this.BoxMin, this.BoxMax);
@@ -1320,7 +1320,7 @@ public class SleeperVolume
 		DebugLines.Create(text, GameManager.Instance.World.GetPrimaryPlayer().RootTransform, color, color, 0.05f, 0.05f, _duration).AddCube(vector, vector2);
 	}
 
-	// Token: 0x06005AB9 RID: 23225 RVA: 0x00230B6C File Offset: 0x0022ED6C
+	// Token: 0x06005ADE RID: 23262 RVA: 0x002320C8 File Offset: 0x002302C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color GetColor()
 	{
@@ -1343,7 +1343,7 @@ public class SleeperVolume
 		return color;
 	}
 
-	// Token: 0x06005ABA RID: 23226 RVA: 0x00230C0C File Offset: 0x0022EE0C
+	// Token: 0x06005ADF RID: 23263 RVA: 0x00232168 File Offset: 0x00230368
 	public string GetDescription()
 	{
 		long num = (long)(this.respawnTime - GameManager.Instance.World.worldTime);
@@ -1378,7 +1378,7 @@ public class SleeperVolume
 		});
 	}
 
-	// Token: 0x06005ABB RID: 23227 RVA: 0x00230D78 File Offset: 0x0022EF78
+	// Token: 0x06005AE0 RID: 23264 RVA: 0x002322D4 File Offset: 0x002304D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string DurationToString(long duration)
 	{
@@ -1401,224 +1401,224 @@ public class SleeperVolume
 		return text + ((int)((double)duration / 1000.0 * 60.0 * 60.0) % 60).ToString("00");
 	}
 
-	// Token: 0x0400465D RID: 18013
+	// Token: 0x04004682 RID: 18050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cVersion = 21;
 
-	// Token: 0x0400465E RID: 18014
+	// Token: 0x04004683 RID: 18051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSpawnDelay = 2;
 
-	// Token: 0x0400465F RID: 18015
+	// Token: 0x04004684 RID: 18052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSpawnVisibleCheckDist = 60f;
 
-	// Token: 0x04004660 RID: 18016
+	// Token: 0x04004685 RID: 18053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cDespawnDelay = 900;
 
-	// Token: 0x04004661 RID: 18017
+	// Token: 0x04004686 RID: 18054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cDespawnPassiveDelay = 200;
 
-	// Token: 0x04004662 RID: 18018
+	// Token: 0x04004687 RID: 18055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cBedrollClearTime = 24000;
 
-	// Token: 0x04004663 RID: 18019
+	// Token: 0x04004688 RID: 18056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPlayerInsideDelayTime = 1000;
 
-	// Token: 0x04004664 RID: 18020
+	// Token: 0x04004689 RID: 18057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPlayerYOffset = 0.8f;
 
-	// Token: 0x04004665 RID: 18021
+	// Token: 0x0400468A RID: 18058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cAttackPaddingXZ = -0.1f;
 
-	// Token: 0x04004666 RID: 18022
+	// Token: 0x0400468B RID: 18059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPassivePaddingXZ = -0.3f;
 
-	// Token: 0x04004667 RID: 18023
+	// Token: 0x0400468C RID: 18060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPassiveNoisePadding = 0.9f;
 
-	// Token: 0x04004668 RID: 18024
+	// Token: 0x0400468D RID: 18061
 	public static Vector3i chunkPadding = new Vector3i(12, 1, 12);
 
-	// Token: 0x04004669 RID: 18025
+	// Token: 0x0400468E RID: 18062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i triggerPaddingMin = new Vector3i(8f, 0.7f, 8f);
 
-	// Token: 0x0400466A RID: 18026
+	// Token: 0x0400468F RID: 18063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i triggerPaddingMax = new Vector3i(8f, 0.7f, 8f);
 
-	// Token: 0x0400466B RID: 18027
+	// Token: 0x04004690 RID: 18064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i unpadding = new Vector3i(14, 16, 14);
 
-	// Token: 0x0400466C RID: 18028
+	// Token: 0x04004691 RID: 18065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance prefabInstance;
 
-	// Token: 0x0400466D RID: 18029
+	// Token: 0x04004692 RID: 18066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short groupId;
 
-	// Token: 0x0400466E RID: 18030
+	// Token: 0x04004693 RID: 18067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short spawnCountMin;
 
-	// Token: 0x0400466F RID: 18031
+	// Token: 0x04004694 RID: 18068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short spawnCountMax;
 
-	// Token: 0x04004670 RID: 18032
+	// Token: 0x04004695 RID: 18069
 	public const int cTriggerFlagsMask = 7;
 
-	// Token: 0x04004671 RID: 18033
+	// Token: 0x04004696 RID: 18070
 	public const int cFlagsHasScript = 16;
 
-	// Token: 0x04004672 RID: 18034
+	// Token: 0x04004697 RID: 18071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int flags;
 
-	// Token: 0x04004673 RID: 18035
+	// Token: 0x04004698 RID: 18072
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SleeperVolume.SpawnPoint> spawnPointList = new List<SleeperVolume.SpawnPoint>();
 
-	// Token: 0x04004674 RID: 18036
+	// Token: 0x04004699 RID: 18073
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> spawnsAvailable;
 
-	// Token: 0x04004675 RID: 18037
+	// Token: 0x0400469A RID: 18074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string groupName;
 
-	// Token: 0x04004676 RID: 18038
+	// Token: 0x0400469B RID: 18075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SleeperVolume.GroupCount> groupCountList;
 
-	// Token: 0x04004677 RID: 18039
+	// Token: 0x0400469C RID: 18076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, SleeperVolume.RespawnData> respawnMap = new Dictionary<int, SleeperVolume.RespawnData>();
 
-	// Token: 0x04004678 RID: 18040
+	// Token: 0x0400469D RID: 18077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> respawnList;
 
-	// Token: 0x04004679 RID: 18041
+	// Token: 0x0400469E RID: 18078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> pendingSpawnMap = new HashSet<int>();
 
-	// Token: 0x0400467A RID: 18042
+	// Token: 0x0400469F RID: 18079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<EntityAsyncManager.EntityCreateHandle> pendingSpawnOps = new Queue<EntityAsyncManager.EntityCreateHandle>();
 
-	// Token: 0x0400467B RID: 18043
+	// Token: 0x040046A0 RID: 18080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int gameStage;
 
-	// Token: 0x0400467C RID: 18044
+	// Token: 0x040046A1 RID: 18081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x0400467D RID: 18045
+	// Token: 0x040046A2 RID: 18082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong respawnTime = ulong.MaxValue;
 
-	// Token: 0x0400467E RID: 18046
+	// Token: 0x040046A3 RID: 18083
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const uint cRespawnNever = 4294967295U;
 
-	// Token: 0x0400467F RID: 18047
+	// Token: 0x040046A4 RID: 18084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numSpawned;
 
-	// Token: 0x04004680 RID: 18048
+	// Token: 0x040046A5 RID: 18085
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSpawned;
 
-	// Token: 0x04004681 RID: 18049
+	// Token: 0x040046A6 RID: 18086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSpawning;
 
-	// Token: 0x04004682 RID: 18050
+	// Token: 0x040046A7 RID: 18087
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int spawnDelay;
 
-	// Token: 0x04004683 RID: 18051
+	// Token: 0x040046A8 RID: 18088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ticksUntilDespawn;
 
-	// Token: 0x04004684 RID: 18052
+	// Token: 0x040046A9 RID: 18089
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer playerTouchedToUpdate;
 
-	// Token: 0x04004685 RID: 18053
+	// Token: 0x040046AA RID: 18090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer playerTouchedTrigger;
 
-	// Token: 0x04004686 RID: 18054
+	// Token: 0x040046AB RID: 18091
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasPassives;
 
-	// Token: 0x04004687 RID: 18055
+	// Token: 0x040046AC RID: 18092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SleeperVolume.ETriggerType triggerState = SleeperVolume.ETriggerType.Passive;
 
-	// Token: 0x04004688 RID: 18056
+	// Token: 0x040046AD RID: 18093
 	public bool wasCleared;
 
-	// Token: 0x04004689 RID: 18057
+	// Token: 0x040046AE RID: 18094
 	public bool isQuestExclude;
 
-	// Token: 0x0400468A RID: 18058
+	// Token: 0x040046AF RID: 18095
 	public bool isPriority;
 
-	// Token: 0x0400468B RID: 18059
+	// Token: 0x040046B0 RID: 18096
 	public Vector3i BoxMin;
 
-	// Token: 0x0400468C RID: 18060
+	// Token: 0x040046B1 RID: 18097
 	public Vector3i BoxMax;
 
-	// Token: 0x0400468D RID: 18061
+	// Token: 0x040046B2 RID: 18098
 	public Vector3 Center;
 
-	// Token: 0x0400468E RID: 18062
+	// Token: 0x040046B3 RID: 18099
 	public List<byte> TriggeredByIndices = new List<byte>();
 
-	// Token: 0x0400468F RID: 18063
+	// Token: 0x040046B4 RID: 18100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MinScript minScript;
 
-	// Token: 0x04004690 RID: 18064
+	// Token: 0x040046B5 RID: 18101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWanderingCountdown = 10;
 
-	// Token: 0x04004691 RID: 18065
+	// Token: 0x040046B6 RID: 18102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int wanderingCountdown = 5;
 
-	// Token: 0x04004692 RID: 18066
+	// Token: 0x040046B7 RID: 18103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameRandom sleeperRandom;
 
-	// Token: 0x04004693 RID: 18067
+	// Token: 0x040046B8 RID: 18104
 	public static int TickSpawnCount;
 
-	// Token: 0x04004694 RID: 18068
+	// Token: 0x040046B9 RID: 18105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSpawnPerTickMax = 2;
 
-	// Token: 0x04004695 RID: 18069
+	// Token: 0x040046BA RID: 18106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float[] difficultyTierScale = new float[] { 1f, 1f, 1f, 0.9f, 0.9f, 0.9f, 0.9f };
 
-	// Token: 0x04004696 RID: 18070
+	// Token: 0x040046BB RID: 18107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float[][] isHiddenOffsets = new float[][]
 	{
@@ -1634,63 +1634,63 @@ public class SleeperVolume
 		}
 	};
 
-	// Token: 0x04004697 RID: 18071
+	// Token: 0x040046BC RID: 18108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagsQuestExclude = 1;
 
-	// Token: 0x04004698 RID: 18072
+	// Token: 0x040046BD RID: 18109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagsPriority = 2;
 
-	// Token: 0x04004699 RID: 18073
+	// Token: 0x040046BE RID: 18110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagsSpawning = 4;
 
-	// Token: 0x0400469A RID: 18074
+	// Token: 0x040046BF RID: 18111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagsCleared = 8;
 
-	// Token: 0x02000BC4 RID: 3012
+	// Token: 0x02000BCF RID: 3023
 	public enum ETriggerType
 	{
-		// Token: 0x0400469C RID: 18076
+		// Token: 0x040046C1 RID: 18113
 		Active,
-		// Token: 0x0400469D RID: 18077
+		// Token: 0x040046C2 RID: 18114
 		Passive,
-		// Token: 0x0400469E RID: 18078
+		// Token: 0x040046C3 RID: 18115
 		Attack,
-		// Token: 0x0400469F RID: 18079
+		// Token: 0x040046C4 RID: 18116
 		Trigger,
-		// Token: 0x040046A0 RID: 18080
+		// Token: 0x040046C5 RID: 18117
 		Wander
 	}
 
-	// Token: 0x02000BC5 RID: 3013
+	// Token: 0x02000BD0 RID: 3024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct GroupCount
 	{
-		// Token: 0x040046A1 RID: 18081
+		// Token: 0x040046C6 RID: 18118
 		public string groupName;
 
-		// Token: 0x040046A2 RID: 18082
+		// Token: 0x040046C7 RID: 18119
 		public int count;
 	}
 
-	// Token: 0x02000BC6 RID: 3014
+	// Token: 0x02000BD1 RID: 3025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RespawnData
 	{
-		// Token: 0x040046A3 RID: 18083
+		// Token: 0x040046C8 RID: 18120
 		public string className;
 
-		// Token: 0x040046A4 RID: 18084
+		// Token: 0x040046C9 RID: 18121
 		public int spawnPointIndex;
 	}
 
-	// Token: 0x02000BC7 RID: 3015
+	// Token: 0x02000BD2 RID: 3026
 	public struct SpawnPoint
 	{
-		// Token: 0x06005ABE RID: 23230 RVA: 0x00230F67 File Offset: 0x0022F167
+		// Token: 0x06005AE3 RID: 23267 RVA: 0x002324C3 File Offset: 0x002306C3
 		public SpawnPoint(Vector3i _pos, float _rot, int _blockType)
 		{
 			this.pos = _pos;
@@ -1698,7 +1698,7 @@ public class SleeperVolume
 			this.blockType = _blockType;
 		}
 
-		// Token: 0x06005ABF RID: 23231 RVA: 0x00230F80 File Offset: 0x0022F180
+		// Token: 0x06005AE4 RID: 23268 RVA: 0x002324DC File Offset: 0x002306DC
 		public BlockSleeper GetBlock()
 		{
 			BlockSleeper blockSleeper = Block.list[this.blockType] as BlockSleeper;
@@ -1709,7 +1709,7 @@ public class SleeperVolume
 			return blockSleeper;
 		}
 
-		// Token: 0x06005AC0 RID: 23232 RVA: 0x00230FB4 File Offset: 0x0022F1B4
+		// Token: 0x06005AE5 RID: 23269 RVA: 0x00232510 File Offset: 0x00230710
 		public static SleeperVolume.SpawnPoint Read(PooledBinaryReader _br, int _version)
 		{
 			Vector3i vector3i = new Vector3i(_br.ReadInt32(), _br.ReadInt32(), _br.ReadInt32());
@@ -1745,7 +1745,7 @@ public class SleeperVolume
 			return new SleeperVolume.SpawnPoint(vector3i, num, num2);
 		}
 
-		// Token: 0x06005AC1 RID: 23233 RVA: 0x0023105C File Offset: 0x0022F25C
+		// Token: 0x06005AE6 RID: 23270 RVA: 0x002325B8 File Offset: 0x002307B8
 		public void Write(PooledBinaryWriter _bw)
 		{
 			_bw.Write(this.pos.x);
@@ -1755,13 +1755,13 @@ public class SleeperVolume
 			_bw.Write(this.GetBlock().GetBlockName());
 		}
 
-		// Token: 0x040046A5 RID: 18085
+		// Token: 0x040046CA RID: 18122
 		public readonly Vector3i pos;
 
-		// Token: 0x040046A6 RID: 18086
+		// Token: 0x040046CB RID: 18123
 		public readonly float rot;
 
-		// Token: 0x040046A7 RID: 18087
+		// Token: 0x040046CC RID: 18124
 		public readonly int blockType;
 	}
 }

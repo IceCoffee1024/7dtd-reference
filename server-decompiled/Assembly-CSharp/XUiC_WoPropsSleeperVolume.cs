@@ -6,21 +6,21 @@ using PrefabVolumes;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010D2 RID: 4306
+// Token: 0x020010E2 RID: 4322
 [Preserve]
 public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, ISelectionCategoryCallback
 {
-	// Token: 0x17001020 RID: 4128
-	// (get) Token: 0x060088FF RID: 35071 RVA: 0x00346B90 File Offset: 0x00344D90
-	// (set) Token: 0x06008900 RID: 35072 RVA: 0x00346B97 File Offset: 0x00344D97
+	// Token: 0x1700102B RID: 4139
+	// (get) Token: 0x06008952 RID: 35154 RVA: 0x00348C14 File Offset: 0x00346E14
+	// (set) Token: 0x06008953 RID: 35155 RVA: 0x00348C1B File Offset: 0x00346E1B
 	public static XUiC_WoPropsSleeperVolume Instance
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17001021 RID: 4129
-	// (get) Token: 0x06008901 RID: 35073 RVA: 0x00346BA0 File Offset: 0x00344DA0
+	// Token: 0x1700102C RID: 4140
+	// (get) Token: 0x06008954 RID: 35156 RVA: 0x00348C24 File Offset: 0x00346E24
 	public List<byte> TriggeredByIndices
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,7 +38,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		}
 	}
 
-	// Token: 0x06008902 RID: 35074 RVA: 0x00346BD0 File Offset: 0x00344DD0
+	// Token: 0x06008955 RID: 35157 RVA: 0x00348C54 File Offset: 0x00346E54
 	public override void Init()
 	{
 		base.Init();
@@ -123,7 +123,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		}
 	}
 
-	// Token: 0x06008903 RID: 35075 RVA: 0x00347054 File Offset: 0x00345254
+	// Token: 0x06008956 RID: 35158 RVA: 0x003490D8 File Offset: 0x003472D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCloneVolume_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -138,7 +138,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		PrefabVolumeManager.Instance.CloneVolumeServer(PrefabVolumeAbs.EVolumeType.Sleeper, prefabInstance.id, num, new Vector3i(0, prefabSleeperVolume.size.y + 1, 0));
 	}
 
-	// Token: 0x06008904 RID: 35076 RVA: 0x003470A4 File Offset: 0x003452A4
+	// Token: 0x06008957 RID: 35159 RVA: 0x00349128 File Offset: 0x00347328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool modifyCurrentVolume(Action<PrefabSleeperVolume> _modifyAction)
 	{
@@ -156,7 +156,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		return true;
 	}
 
-	// Token: 0x06008905 RID: 35077 RVA: 0x003470F0 File Offset: 0x003452F0
+	// Token: 0x06008958 RID: 35160 RVA: 0x00349174 File Offset: 0x00347374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtGroupId_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -170,7 +170,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		});
 	}
 
-	// Token: 0x06008906 RID: 35078 RVA: 0x00347130 File Offset: 0x00345330
+	// Token: 0x06008959 RID: 35161 RVA: 0x003491B4 File Offset: 0x003473B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxPriority_OnValueChanged(XUiController _sender, bool _oldValue, bool _newValue)
 	{
@@ -180,7 +180,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		});
 	}
 
-	// Token: 0x06008907 RID: 35079 RVA: 0x00347160 File Offset: 0x00345360
+	// Token: 0x0600895A RID: 35162 RVA: 0x003491E4 File Offset: 0x003473E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxQuestExclude_OnValueChanged(XUiController _sender, bool _oldValue, bool _newValue)
 	{
@@ -190,7 +190,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		});
 	}
 
-	// Token: 0x06008908 RID: 35080 RVA: 0x00347190 File Offset: 0x00345390
+	// Token: 0x0600895B RID: 35163 RVA: 0x00349214 File Offset: 0x00347414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findCountPresetIndex(int _min, int _max)
 	{
@@ -204,7 +204,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		return -1;
 	}
 
-	// Token: 0x06008909 RID: 35081 RVA: 0x003471F0 File Offset: 0x003453F0
+	// Token: 0x0600895C RID: 35164 RVA: 0x00349274 File Offset: 0x00347474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCountPresetLabel()
 	{
@@ -227,7 +227,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.cbxCountPreset.SelectedIndex = num2;
 	}
 
-	// Token: 0x0600890A RID: 35082 RVA: 0x00347260 File Offset: 0x00345460
+	// Token: 0x0600895D RID: 35165 RVA: 0x003492E4 File Offset: 0x003474E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxCountPreset_OnValueChanged(XUiController _sender, XUiC_WoPropsSleeperVolume.CountPreset _oldValue, XUiC_WoPropsSleeperVolume.CountPreset _newValue)
 	{
@@ -240,7 +240,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.updateCountPresetLabel();
 	}
 
-	// Token: 0x0600890B RID: 35083 RVA: 0x003472A0 File Offset: 0x003454A0
+	// Token: 0x0600895E RID: 35166 RVA: 0x00349324 File Offset: 0x00347524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtSpawnMinMax_OnChangeHandler(string _text, bool _changeFromCode, bool _isMax)
 	{
@@ -261,7 +261,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.updateCountPresetLabel();
 	}
 
-	// Token: 0x0600890C RID: 35084 RVA: 0x003472EC File Offset: 0x003454EC
+	// Token: 0x0600895F RID: 35167 RVA: 0x00349370 File Offset: 0x00347570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxTrigger_OnValueChanged(XUiController _sender, SleeperVolume.ETriggerType _oldValue, SleeperVolume.ETriggerType _newValue)
 	{
@@ -272,7 +272,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.triggersBox.IsVisible = true;
 	}
 
-	// Token: 0x0600890D RID: 35085 RVA: 0x00347328 File Offset: 0x00345528
+	// Token: 0x06008960 RID: 35168 RVA: 0x003493AC File Offset: 0x003475AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtMinScript_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -286,7 +286,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		});
 	}
 
-	// Token: 0x0600890E RID: 35086 RVA: 0x0034735C File Offset: 0x0034555C
+	// Token: 0x06008961 RID: 35169 RVA: 0x003493E0 File Offset: 0x003475E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnersList_SelectionChanged(XUiC_List<XUiC_SpawnersList.SpawnerEntry> _list, XUiC_SpawnersList.SpawnerEntry _previousEntry, XUiC_SpawnersList.SpawnerEntry _newEntry)
 	{
@@ -301,7 +301,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		});
 	}
 
-	// Token: 0x0600890F RID: 35087 RVA: 0x00347398 File Offset: 0x00345598
+	// Token: 0x06008962 RID: 35170 RVA: 0x0034941C File Offset: 0x0034761C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggeredByList_SelectionChanged(XUiC_List<XUiC_PrefabTriggerEditorList.PrefabTriggerEntry> _list, XUiC_PrefabTriggerEditorList.PrefabTriggerEntry _previousEntry, XUiC_PrefabTriggerEditorList.PrefabTriggerEntry _newEntry)
 	{
@@ -316,7 +316,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		_newEntry.UiDirty = true;
 	}
 
-	// Token: 0x06008910 RID: 35088 RVA: 0x003473DC File Offset: 0x003455DC
+	// Token: 0x06008963 RID: 35171 RVA: 0x00349460 File Offset: 0x00347660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggerOnAddTriggersPressed(XUiController _sender, int _mouseButton)
 	{
@@ -332,7 +332,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.triggeredByList.RebuildList(false);
 	}
 
-	// Token: 0x06008911 RID: 35089 RVA: 0x0034741C File Offset: 0x0034561C
+	// Token: 0x06008964 RID: 35172 RVA: 0x003494A0 File Offset: 0x003476A0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -348,7 +348,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.updateCountPresetLabel();
 	}
 
-	// Token: 0x06008912 RID: 35090 RVA: 0x00347478 File Offset: 0x00345678
+	// Token: 0x06008965 RID: 35173 RVA: 0x003494FC File Offset: 0x003476FC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -375,7 +375,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.triggersBox.IsVisible = true;
 	}
 
-	// Token: 0x06008913 RID: 35091 RVA: 0x003475C2 File Offset: 0x003457C2
+	// Token: 0x06008966 RID: 35174 RVA: 0x00349646 File Offset: 0x00347846
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -389,7 +389,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		XUiC_WoPropsSleeperVolume.Instance = null;
 	}
 
-	// Token: 0x06008914 RID: 35092 RVA: 0x003475FB File Offset: 0x003457FB
+	// Token: 0x06008967 RID: 35175 RVA: 0x0034967F File Offset: 0x0034787F
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		if (_bActivated)
@@ -400,7 +400,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		return true;
 	}
 
-	// Token: 0x06008915 RID: 35093 RVA: 0x00347614 File Offset: 0x00345814
+	// Token: 0x06008968 RID: 35176 RVA: 0x00349698 File Offset: 0x00347898
 	public void SleeperVolumeChanged(int _prefabInstanceId, int _volumeId)
 	{
 		SelectionBox selectionBox;
@@ -418,27 +418,27 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.bSleeperVolumeChanged = true;
 	}
 
-	// Token: 0x06008916 RID: 35094 RVA: 0x00347650 File Offset: 0x00345850
+	// Token: 0x06008969 RID: 35177 RVA: 0x003496D4 File Offset: 0x003478D4
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		PrefabVolumeManager.Instance.SelectionBoxMoved(PrefabVolumeAbs.EVolumeType.Sleeper, _box, _moveVector);
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x06008917 RID: 35095 RVA: 0x00347664 File Offset: 0x00345864
+	// Token: 0x0600896A RID: 35178 RVA: 0x003496E8 File Offset: 0x003478E8
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		PrefabVolumeManager.Instance.SelectionBoxSized(PrefabVolumeAbs.EVolumeType.Sleeper, _box, _dTop, _dBottom, _dNorth, _dSouth, _dEast, _dWest);
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x06008918 RID: 35096 RVA: 0x0034768C File Offset: 0x0034588C
+	// Token: 0x0600896B RID: 35179 RVA: 0x00349710 File Offset: 0x00347910
 	public void OnSelectionBoxMirrored(Vector3i _axis)
 	{
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x06008919 RID: 35097 RVA: 0x00347694 File Offset: 0x00345894
+	// Token: 0x0600896C RID: 35180 RVA: 0x00349718 File Offset: 0x00347918
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		int num;
@@ -446,57 +446,57 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		return PrefabVolumeManager.GetPrefabIdAndVolumeId(_box.name, out num, out prefabInstance) && PrefabVolumeManager.Instance.SelectionBoxDelete(PrefabVolumeAbs.EVolumeType.Sleeper, _box, _checkCanDeleteOnly);
 	}
 
-	// Token: 0x0600891A RID: 35098 RVA: 0x0033B509 File Offset: 0x00339709
+	// Token: 0x0600896D RID: 35181 RVA: 0x0033D58D File Offset: 0x0033B78D
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		return _criteria == EnumSelectionBoxAvailabilities.CanShowProperties || _criteria == EnumSelectionBoxAvailabilities.CanResize;
 	}
 
-	// Token: 0x0600891B RID: 35099 RVA: 0x003468D9 File Offset: 0x00344AD9
+	// Token: 0x0600896E RID: 35182 RVA: 0x0034895D File Offset: 0x00346B5D
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 		_windowManager.SwitchVisible(this.windowGroup, true);
 	}
 
-	// Token: 0x0600891C RID: 35100 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600896F RID: 35183 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x0600891D RID: 35101 RVA: 0x003476C1 File Offset: 0x003458C1
+	// Token: 0x06008970 RID: 35184 RVA: 0x00349745 File Offset: 0x00347945
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 		SleeperVolumeToolManager.RegisterSleeperVolume(_box);
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x0600891E RID: 35102 RVA: 0x003476CE File Offset: 0x003458CE
+	// Token: 0x06008971 RID: 35185 RVA: 0x00349752 File Offset: 0x00347952
 	public void OnSelectionCategoryVisibilityChanged(SelectionCategory _category, bool _visible)
 	{
 		SleeperVolumeToolManager.SetVisible(_visible);
 	}
 
-	// Token: 0x0600891F RID: 35103 RVA: 0x003476C1 File Offset: 0x003458C1
+	// Token: 0x06008972 RID: 35186 RVA: 0x00349745 File Offset: 0x00347945
 	public void OnSelectionCategoryBoxAdded(SelectionBox _box)
 	{
 		SleeperVolumeToolManager.RegisterSleeperVolume(_box);
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x06008920 RID: 35104 RVA: 0x003476D6 File Offset: 0x003458D6
+	// Token: 0x06008973 RID: 35187 RVA: 0x0034975A File Offset: 0x0034795A
 	public void OnSelectionCategoryBoxRemoved(SelectionBox _box)
 	{
 		SleeperVolumeToolManager.UnRegisterSleeperVolume(_box);
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x06008921 RID: 35105 RVA: 0x003476E3 File Offset: 0x003458E3
+	// Token: 0x06008974 RID: 35188 RVA: 0x00349767 File Offset: 0x00347967
 	public void OnSelectionCategoryCleared(SelectionCategory _category)
 	{
 		SleeperVolumeToolManager.ClearSleeperVolumes();
 	}
 
-	// Token: 0x06008922 RID: 35106 RVA: 0x003476EC File Offset: 0x003458EC
+	// Token: 0x06008975 RID: 35189 RVA: 0x00349770 File Offset: 0x00347970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleSleeperVolumeChanged()
 	{
@@ -517,7 +517,7 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.updateCountPresetLabel();
 	}
 
-	// Token: 0x06008923 RID: 35107 RVA: 0x00347748 File Offset: 0x00345948
+	// Token: 0x06008976 RID: 35190 RVA: 0x003497CC File Offset: 0x003479CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool getSelectedVolumeStats(out XUiC_WoPropsSleeperVolume.VolumeStats _stats)
 	{
@@ -535,13 +535,13 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		return true;
 	}
 
-	// Token: 0x06008924 RID: 35108 RVA: 0x003477E9 File Offset: 0x003459E9
+	// Token: 0x06008977 RID: 35191 RVA: 0x0034986D File Offset: 0x00347A6D
 	public static bool GetSelectedVolumeStats(out XUiC_WoPropsSleeperVolume.VolumeStats _stats)
 	{
 		return XUiC_WoPropsSleeperVolume.Instance.getSelectedVolumeStats(out _stats);
 	}
 
-	// Token: 0x0600892A RID: 35114 RVA: 0x00347820 File Offset: 0x00345A20
+	// Token: 0x0600897D RID: 35197 RVA: 0x003498A4 File Offset: 0x00347AA4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <Update>g__SetDefaultBoxContents|42_0()
@@ -560,81 +560,81 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 		this.txtMinScript.Text = string.Empty;
 	}
 
-	// Token: 0x04006609 RID: 26121
+	// Token: 0x04006648 RID: 26184
 	public static string ID = "";
 
-	// Token: 0x0400660B RID: 26123
+	// Token: 0x0400664A RID: 26186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView triggersBox;
 
-	// Token: 0x0400660C RID: 26124
+	// Token: 0x0400664B RID: 26187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label labelIndex;
 
-	// Token: 0x0400660D RID: 26125
+	// Token: 0x0400664C RID: 26188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label labelPosition;
 
-	// Token: 0x0400660E RID: 26126
+	// Token: 0x0400664D RID: 26189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label labelSize;
 
-	// Token: 0x0400660F RID: 26127
+	// Token: 0x0400664E RID: 26190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label labelSleeperCount;
 
-	// Token: 0x04006610 RID: 26128
+	// Token: 0x0400664F RID: 26191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label labelGroup;
 
-	// Token: 0x04006611 RID: 26129
+	// Token: 0x04006650 RID: 26192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtGroupId;
 
-	// Token: 0x04006612 RID: 26130
+	// Token: 0x04006651 RID: 26193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool cbxPriority;
 
-	// Token: 0x04006613 RID: 26131
+	// Token: 0x04006652 RID: 26194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool cbxQuestExclude;
 
-	// Token: 0x04006614 RID: 26132
+	// Token: 0x04006653 RID: 26195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<XUiC_WoPropsSleeperVolume.CountPreset> cbxCountPreset;
 
-	// Token: 0x04006615 RID: 26133
+	// Token: 0x04006654 RID: 26196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSpawnMin;
 
-	// Token: 0x04006616 RID: 26134
+	// Token: 0x04006655 RID: 26197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSpawnMax;
 
-	// Token: 0x04006617 RID: 26135
+	// Token: 0x04006656 RID: 26198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<SleeperVolume.ETriggerType> cbxTrigger;
 
-	// Token: 0x04006618 RID: 26136
+	// Token: 0x04006657 RID: 26199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtMinScript;
 
-	// Token: 0x04006619 RID: 26137
+	// Token: 0x04006658 RID: 26200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SpawnersList spawnersList;
 
-	// Token: 0x0400661A RID: 26138
+	// Token: 0x04006659 RID: 26201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabTriggerEditorList triggeredByList;
 
-	// Token: 0x0400661B RID: 26139
+	// Token: 0x0400665A RID: 26202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bSleeperVolumeChanged;
 
-	// Token: 0x020010D3 RID: 4307
+	// Token: 0x020010E3 RID: 4323
 	public struct VolumeStats
 	{
-		// Token: 0x0600892B RID: 35115 RVA: 0x003478E4 File Offset: 0x00345AE4
+		// Token: 0x0600897E RID: 35198 RVA: 0x00349968 File Offset: 0x00347B68
 		public VolumeStats(int _index, Vector3i _volumePos, Vector3i _worldPos, Vector3i _size, short _groupId, string _groupName, int _sleeperCount, int _spawnCountMin, int _spawnCountMax, bool _isPriority, bool _isQuestExclude, SleeperVolume.ETriggerType _triggerType, string _minScript)
 		{
 			this.Index = _index;
@@ -652,50 +652,50 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 			this.MinScript = _minScript;
 		}
 
-		// Token: 0x0400661C RID: 26140
+		// Token: 0x0400665B RID: 26203
 		public readonly int Index;
 
-		// Token: 0x0400661D RID: 26141
+		// Token: 0x0400665C RID: 26204
 		public readonly Vector3i VolumePos;
 
-		// Token: 0x0400661E RID: 26142
+		// Token: 0x0400665D RID: 26205
 		public readonly Vector3i WorldPos;
 
-		// Token: 0x0400661F RID: 26143
+		// Token: 0x0400665E RID: 26206
 		public readonly Vector3i Size;
 
-		// Token: 0x04006620 RID: 26144
+		// Token: 0x0400665F RID: 26207
 		public readonly short GroupId;
 
-		// Token: 0x04006621 RID: 26145
+		// Token: 0x04006660 RID: 26208
 		public readonly string GroupName;
 
-		// Token: 0x04006622 RID: 26146
+		// Token: 0x04006661 RID: 26209
 		public readonly int SleeperCount;
 
-		// Token: 0x04006623 RID: 26147
+		// Token: 0x04006662 RID: 26210
 		public readonly int SpawnCountMin;
 
-		// Token: 0x04006624 RID: 26148
+		// Token: 0x04006663 RID: 26211
 		public readonly int SpawnCountMax;
 
-		// Token: 0x04006625 RID: 26149
+		// Token: 0x04006664 RID: 26212
 		public readonly bool IsPriority;
 
-		// Token: 0x04006626 RID: 26150
+		// Token: 0x04006665 RID: 26213
 		public readonly bool IsQuestExclude;
 
-		// Token: 0x04006627 RID: 26151
+		// Token: 0x04006666 RID: 26214
 		public readonly SleeperVolume.ETriggerType TriggerType;
 
-		// Token: 0x04006628 RID: 26152
+		// Token: 0x04006667 RID: 26215
 		public readonly string MinScript;
 	}
 
-	// Token: 0x020010D4 RID: 4308
+	// Token: 0x020010E4 RID: 4324
 	public readonly struct CountPreset
 	{
-		// Token: 0x0600892C RID: 35116 RVA: 0x00347956 File Offset: 0x00345B56
+		// Token: 0x0600897F RID: 35199 RVA: 0x003499DA File Offset: 0x00347BDA
 		public CountPreset(short _min, short _max, string _name)
 		{
 			this.Min = _min;
@@ -703,19 +703,19 @@ public class XUiC_WoPropsSleeperVolume : XUiController, ISelectionBoxCallback, I
 			this.name = _name;
 		}
 
-		// Token: 0x0600892D RID: 35117 RVA: 0x0034796D File Offset: 0x00345B6D
+		// Token: 0x06008980 RID: 35200 RVA: 0x003499F1 File Offset: 0x00347BF1
 		public override string ToString()
 		{
 			return this.name;
 		}
 
-		// Token: 0x04006629 RID: 26153
+		// Token: 0x04006668 RID: 26216
 		public readonly short Min;
 
-		// Token: 0x0400662A RID: 26154
+		// Token: 0x04006669 RID: 26217
 		public readonly short Max;
 
-		// Token: 0x0400662B RID: 26155
+		// Token: 0x0400666A RID: 26218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string name;
 	}

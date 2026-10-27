@@ -5,10 +5,10 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CD6 RID: 7382
+	// Token: 0x02001D07 RID: 7431
 	public class Utils : IUtils
 	{
-		// Token: 0x0600DAFA RID: 56058 RVA: 0x004E5BBE File Offset: 0x004E3DBE
+		// Token: 0x0600DC0E RID: 56334 RVA: 0x004E975E File Offset: 0x004E795E
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -18,7 +18,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600DAFB RID: 56059 RVA: 0x004E5BE4 File Offset: 0x004E3DE4
+		// Token: 0x0600DC0F RID: 56335 RVA: 0x004E9784 File Offset: 0x004E7984
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ResolveSteamBranchName()
 		{
@@ -35,7 +35,7 @@ namespace Platform.Steam
 			this.branchName = "public";
 		}
 
-		// Token: 0x0600DAFC RID: 56060 RVA: 0x004E5C2D File Offset: 0x004E3E2D
+		// Token: 0x0600DC10 RID: 56336 RVA: 0x004E97CD File Offset: 0x004E79CD
 		public bool OpenBrowser(string _url)
 		{
 			if (global::Utils.IsValidWebUrl(ref _url))
@@ -45,7 +45,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600DAFD RID: 56061 RVA: 0x004E5C40 File Offset: 0x004E3E40
+		// Token: 0x0600DC11 RID: 56337 RVA: 0x004E97E0 File Offset: 0x004E79E0
 		public string GetPlatformLanguage()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -65,7 +65,7 @@ namespace Platform.Steam
 			return "english";
 		}
 
-		// Token: 0x0600DAFE RID: 56062 RVA: 0x004E5C98 File Offset: 0x004E3E98
+		// Token: 0x0600DC12 RID: 56338 RVA: 0x004E9838 File Offset: 0x004E7A38
 		public string GetAppLanguage()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -89,7 +89,7 @@ namespace Platform.Steam
 			return "english";
 		}
 
-		// Token: 0x0600DAFF RID: 56063 RVA: 0x004E5D01 File Offset: 0x004E3F01
+		// Token: 0x0600DC13 RID: 56339 RVA: 0x004E98A1 File Offset: 0x004E7AA1
 		public string GetCountry()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -104,25 +104,25 @@ namespace Platform.Steam
 			return "??";
 		}
 
-		// Token: 0x0600DB00 RID: 56064 RVA: 0x004E5D37 File Offset: 0x004E3F37
+		// Token: 0x0600DC14 RID: 56340 RVA: 0x004E98D7 File Offset: 0x004E7AD7
 		public string GetStoreBranchName()
 		{
 			return this.branchName;
 		}
 
-		// Token: 0x0600DB01 RID: 56065 RVA: 0x004E5D3F File Offset: 0x004E3F3F
+		// Token: 0x0600DC15 RID: 56341 RVA: 0x004E98DF File Offset: 0x004E7ADF
 		public void ClearTempFiles()
 		{
 			Platform.Shared.Utils.TryDeleteTempCacheContents();
 		}
 
-		// Token: 0x0600DB02 RID: 56066 RVA: 0x004E5D46 File Offset: 0x004E3F46
+		// Token: 0x0600DC16 RID: 56342 RVA: 0x004E98E6 File Offset: 0x004E7AE6
 		public string GetTempFileName(string prefix = "", string suffix = "")
 		{
 			return Platform.Shared.Utils.GetRandomTempCacheFileName(prefix, suffix);
 		}
 
-		// Token: 0x0600DB03 RID: 56067 RVA: 0x004E5D50 File Offset: 0x004E3F50
+		// Token: 0x0600DC17 RID: 56343 RVA: 0x004E98F0 File Offset: 0x004E7AF0
 		public bool? IsFamilyShare()
 		{
 			bool? flag;
@@ -137,12 +137,12 @@ namespace Platform.Steam
 			return flag;
 		}
 
-		// Token: 0x0600DB04 RID: 56068 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DC18 RID: 56344 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ControllerDisconnected(InputDevice inputDevice)
 		{
 		}
 
-		// Token: 0x0600DB05 RID: 56069 RVA: 0x004E5D88 File Offset: 0x004E3F88
+		// Token: 0x0600DC19 RID: 56345 RVA: 0x004E9928 File Offset: 0x004E7B28
 		public string GetCrossplayPlayerIcon(EPlayGroup _playGroup, bool _fetchGenericIcons, EPlatformIdentifier _nativePlatform = EPlatformIdentifier.None)
 		{
 			switch (_playGroup)
@@ -169,11 +169,11 @@ namespace Platform.Steam
 			return string.Empty;
 		}
 
-		// Token: 0x0400A5CF RID: 42447
+		// Token: 0x0400A6B8 RID: 42680
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A5D0 RID: 42448
+		// Token: 0x0400A6B9 RID: 42681
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string branchName = "none";
 	}

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001023 RID: 4131
+// Token: 0x02001033 RID: 4147
 [Preserve]
 public class XUiC_RecipeTrackerWindow : XUiController
 {
-	// Token: 0x17000F52 RID: 3922
-	// (get) Token: 0x06008239 RID: 33337 RVA: 0x00319ED3 File Offset: 0x003180D3
-	// (set) Token: 0x0600823A RID: 33338 RVA: 0x00319EDB File Offset: 0x003180DB
+	// Token: 0x17000F5D RID: 3933
+	// (get) Token: 0x0600828B RID: 33419 RVA: 0x0031BBD7 File Offset: 0x00319DD7
+	// (set) Token: 0x0600828C RID: 33420 RVA: 0x0031BBDF File Offset: 0x00319DDF
 	public Recipe CurrentRecipe
 	{
 		get
@@ -22,7 +22,7 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600823B RID: 33339 RVA: 0x00319EF1 File Offset: 0x003180F1
+	// Token: 0x0600828D RID: 33421 RVA: 0x0031BBF5 File Offset: 0x00319DF5
 	public override void Init()
 	{
 		base.Init();
@@ -30,7 +30,7 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		this.ingredientList = base.GetChildByType<XUiC_RecipeTrackerIngredientsList>();
 	}
 
-	// Token: 0x0600823C RID: 33340 RVA: 0x00319F18 File Offset: 0x00318118
+	// Token: 0x0600828E RID: 33422 RVA: 0x0031BC1C File Offset: 0x00319E1C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -63,7 +63,7 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600823D RID: 33341 RVA: 0x0031A00C File Offset: 0x0031820C
+	// Token: 0x0600828F RID: 33423 RVA: 0x0031BD10 File Offset: 0x00319F10
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -72,7 +72,7 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600823E RID: 33342 RVA: 0x0031A058 File Offset: 0x00318258
+	// Token: 0x06008290 RID: 33424 RVA: 0x0031BD5C File Offset: 0x00319F5C
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -82,7 +82,7 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600823F RID: 33343 RVA: 0x0031A083 File Offset: 0x00318283
+	// Token: 0x06008291 RID: 33425 RVA: 0x0031BD87 File Offset: 0x00319F87
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RecipeTracker_OnTrackedRecipeChanged()
 	{
@@ -91,7 +91,7 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008240 RID: 33344 RVA: 0x0031A0B8 File Offset: 0x003182B8
+	// Token: 0x06008292 RID: 33426 RVA: 0x0031BDBC File Offset: 0x00319FBC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -135,25 +135,25 @@ public class XUiC_RecipeTrackerWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x04006093 RID: 24723
+	// Token: 0x040060D1 RID: 24785
 	public static string ID = "";
 
-	// Token: 0x04006094 RID: 24724
+	// Token: 0x040060D2 RID: 24786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeTrackerIngredientsList ingredientList;
 
-	// Token: 0x04006095 RID: 24725
+	// Token: 0x040060D3 RID: 24787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x04006096 RID: 24726
+	// Token: 0x040060D4 RID: 24788
 	public int Count = 1;
 
-	// Token: 0x04006097 RID: 24727
+	// Token: 0x040060D5 RID: 24789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe currentRecipe;
 
-	// Token: 0x04006098 RID: 24728
+	// Token: 0x040060D6 RID: 24790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt trackerheightFormatter = new CachedStringFormatterInt();
 }

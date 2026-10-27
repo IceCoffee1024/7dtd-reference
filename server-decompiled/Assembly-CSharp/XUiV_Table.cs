@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001179 RID: 4473
+// Token: 0x02001189 RID: 4489
 public class XUiV_Table : XUiView
 {
-	// Token: 0x17001126 RID: 4390
-	// (get) Token: 0x06008E93 RID: 36499 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x17001131 RID: 4401
+	// (get) Token: 0x06008EE7 RID: 36583 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override UIRect UiRect
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -15,45 +15,45 @@ public class XUiV_Table : XUiView
 		}
 	}
 
-	// Token: 0x17001127 RID: 4391
-	// (get) Token: 0x06008E94 RID: 36500 RVA: 0x0035D5E7 File Offset: 0x0035B7E7
-	// (set) Token: 0x06008E95 RID: 36501 RVA: 0x0035D5EF File Offset: 0x0035B7EF
+	// Token: 0x17001132 RID: 4402
+	// (get) Token: 0x06008EE8 RID: 36584 RVA: 0x0035F6D7 File Offset: 0x0035D8D7
+	// (set) Token: 0x06008EE9 RID: 36585 RVA: 0x0035F6DF File Offset: 0x0035D8DF
 	[XuiXmlAttribute("sorting", false)]
 	public UITable.Sorting Sorting { get; set; }
 
-	// Token: 0x17001128 RID: 4392
-	// (get) Token: 0x06008E96 RID: 36502 RVA: 0x0035D5F8 File Offset: 0x0035B7F8
-	// (set) Token: 0x06008E97 RID: 36503 RVA: 0x0035D600 File Offset: 0x0035B800
+	// Token: 0x17001133 RID: 4403
+	// (get) Token: 0x06008EEA RID: 36586 RVA: 0x0035F6E8 File Offset: 0x0035D8E8
+	// (set) Token: 0x06008EEB RID: 36587 RVA: 0x0035F6F0 File Offset: 0x0035D8F0
 	[XuiXmlAttribute("cols", false)]
 	public int Columns { get; set; } = 1;
 
-	// Token: 0x17001129 RID: 4393
-	// (get) Token: 0x06008E98 RID: 36504 RVA: 0x0035D609 File Offset: 0x0035B809
-	// (set) Token: 0x06008E99 RID: 36505 RVA: 0x0035D611 File Offset: 0x0035B811
+	// Token: 0x17001134 RID: 4404
+	// (get) Token: 0x06008EEC RID: 36588 RVA: 0x0035F6F9 File Offset: 0x0035D8F9
+	// (set) Token: 0x06008EED RID: 36589 RVA: 0x0035F701 File Offset: 0x0035D901
 	[XuiXmlAttribute("padding", true)]
 	public Vector2 Padding { get; set; }
 
-	// Token: 0x1700112A RID: 4394
-	// (get) Token: 0x06008E9A RID: 36506 RVA: 0x0035D61A File Offset: 0x0035B81A
-	// (set) Token: 0x06008E9B RID: 36507 RVA: 0x0035D622 File Offset: 0x0035B822
+	// Token: 0x17001135 RID: 4405
+	// (get) Token: 0x06008EEE RID: 36590 RVA: 0x0035F70A File Offset: 0x0035D90A
+	// (set) Token: 0x06008EEF RID: 36591 RVA: 0x0035F712 File Offset: 0x0035D912
 	[XuiXmlAttribute("hide_inactive", false)]
 	public bool HideInactive { get; set; } = true;
 
-	// Token: 0x1700112B RID: 4395
-	// (get) Token: 0x06008E9C RID: 36508 RVA: 0x0035D62B File Offset: 0x0035B82B
-	// (set) Token: 0x06008E9D RID: 36509 RVA: 0x0035D633 File Offset: 0x0035B833
+	// Token: 0x17001136 RID: 4406
+	// (get) Token: 0x06008EF0 RID: 36592 RVA: 0x0035F71B File Offset: 0x0035D91B
+	// (set) Token: 0x06008EF1 RID: 36593 RVA: 0x0035F723 File Offset: 0x0035D923
 	[XuiXmlAttribute("always_reposition", false)]
 	public bool AlwaysReposition { get; set; }
 
-	// Token: 0x1700112C RID: 4396
-	// (get) Token: 0x06008E9E RID: 36510 RVA: 0x0035D63C File Offset: 0x0035B83C
-	// (set) Token: 0x06008E9F RID: 36511 RVA: 0x0035D644 File Offset: 0x0035B844
+	// Token: 0x17001137 RID: 4407
+	// (get) Token: 0x06008EF2 RID: 36594 RVA: 0x0035F72C File Offset: 0x0035D92C
+	// (set) Token: 0x06008EF3 RID: 36595 RVA: 0x0035F734 File Offset: 0x0035D934
 	[XuiXmlAttribute("reposition_twice", false)]
 	public bool RepositionTwice { get; set; }
 
-	// Token: 0x1700112D RID: 4397
-	// (get) Token: 0x06008EA0 RID: 36512 RVA: 0x0035D64D File Offset: 0x0035B84D
-	// (set) Token: 0x06008EA1 RID: 36513 RVA: 0x0035D655 File Offset: 0x0035B855
+	// Token: 0x17001138 RID: 4408
+	// (get) Token: 0x06008EF4 RID: 36596 RVA: 0x0035F73D File Offset: 0x0035D93D
+	// (set) Token: 0x06008EF5 RID: 36597 RVA: 0x0035F745 File Offset: 0x0035D945
 	[XuiXmlAttribute("pivot", false)]
 	public UIWidget.Pivot Pivot
 	{
@@ -72,9 +72,9 @@ public class XUiV_Table : XUiView
 		}
 	}
 
-	// Token: 0x1700112E RID: 4398
-	// (get) Token: 0x06008EA2 RID: 36514 RVA: 0x0035D66E File Offset: 0x0035B86E
-	// (set) Token: 0x06008EA3 RID: 36515 RVA: 0x0035D676 File Offset: 0x0035B876
+	// Token: 0x17001139 RID: 4409
+	// (get) Token: 0x06008EF6 RID: 36598 RVA: 0x0035F75E File Offset: 0x0035D95E
+	// (set) Token: 0x06008EF7 RID: 36599 RVA: 0x0035F766 File Offset: 0x0035D966
 	[XuiXmlAttribute("cell_alignment", false)]
 	public UIWidget.Pivot CellAlignment
 	{
@@ -93,8 +93,8 @@ public class XUiV_Table : XUiView
 		}
 	}
 
-	// Token: 0x1700112F RID: 4399
-	// (get) Token: 0x06008EA4 RID: 36516 RVA: 0x0035A991 File Offset: 0x00358B91
+	// Token: 0x1700113A RID: 4410
+	// (get) Token: 0x06008EF8 RID: 36600 RVA: 0x0035CA3D File Offset: 0x0035AC3D
 	public override Vector3[] WorldCorners
 	{
 		get
@@ -103,20 +103,20 @@ public class XUiV_Table : XUiView
 		}
 	}
 
-	// Token: 0x06008EA5 RID: 36517 RVA: 0x0035D68F File Offset: 0x0035B88F
+	// Token: 0x06008EF9 RID: 36601 RVA: 0x0035F77F File Offset: 0x0035D97F
 	public XUiV_Table(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008EA6 RID: 36518 RVA: 0x0035D6AE File Offset: 0x0035B8AE
+	// Token: 0x06008EFA RID: 36602 RVA: 0x0035F79E File Offset: 0x0035D99E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
 		_go.AddComponent<UITable>();
 	}
 
-	// Token: 0x06008EA7 RID: 36519 RVA: 0x0035D6B7 File Offset: 0x0035B8B7
+	// Token: 0x06008EFB RID: 36603 RVA: 0x0035F7A7 File Offset: 0x0035D9A7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -124,7 +124,7 @@ public class XUiV_Table : XUiView
 		this.table = this.uiTransform.gameObject.GetComponent<UITable>();
 	}
 
-	// Token: 0x06008EA8 RID: 36520 RVA: 0x0035D6D8 File Offset: 0x0035B8D8
+	// Token: 0x06008EFC RID: 36604 RVA: 0x0035F7C8 File Offset: 0x0035D9C8
 	public override void InitView()
 	{
 		base.InitView();
@@ -138,7 +138,7 @@ public class XUiV_Table : XUiView
 		this.table.Reposition();
 	}
 
-	// Token: 0x06008EA9 RID: 36521 RVA: 0x0035D768 File Offset: 0x0035B968
+	// Token: 0x06008EFD RID: 36605 RVA: 0x0035F858 File Offset: 0x0035DA58
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -149,7 +149,7 @@ public class XUiV_Table : XUiView
 		}
 	}
 
-	// Token: 0x06008EAA RID: 36522 RVA: 0x0035D78C File Offset: 0x0035B98C
+	// Token: 0x06008EFE RID: 36606 RVA: 0x0035F87C File Offset: 0x0035DA7C
 	public override void Update(float _dt)
 	{
 		if (this.firstUpdate || this.AlwaysReposition)
@@ -165,29 +165,29 @@ public class XUiV_Table : XUiView
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008EAB RID: 36523 RVA: 0x0035D7EA File Offset: 0x0035B9EA
+	// Token: 0x06008EFF RID: 36607 RVA: 0x0035F8DA File Offset: 0x0035DADA
 	public void Reposition()
 	{
 		this.repositionNextFrame = true;
 	}
 
-	// Token: 0x040068A7 RID: 26791
+	// Token: 0x040068E7 RID: 26855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UITable table;
 
-	// Token: 0x040068AE RID: 26798
+	// Token: 0x040068EE RID: 26862
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIWidget.Pivot pivot;
 
-	// Token: 0x040068AF RID: 26799
+	// Token: 0x040068EF RID: 26863
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIWidget.Pivot cellAlignment;
 
-	// Token: 0x040068B0 RID: 26800
+	// Token: 0x040068F0 RID: 26864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstUpdate = true;
 
-	// Token: 0x040068B1 RID: 26801
+	// Token: 0x040068F1 RID: 26865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool repositionNextFrame;
 }

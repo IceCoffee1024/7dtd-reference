@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DF5 RID: 3573
+// Token: 0x02000E00 RID: 3584
 [Preserve]
 public class XUiC_ServerPasswordWindow : XUiController
 {
-	// Token: 0x17000C22 RID: 3106
-	// (get) Token: 0x06006CDC RID: 27868 RVA: 0x002A93D1 File Offset: 0x002A75D1
-	// (set) Token: 0x06006CDD RID: 27869 RVA: 0x002A93D9 File Offset: 0x002A75D9
+	// Token: 0x17000C28 RID: 3112
+	// (get) Token: 0x06006D01 RID: 27905 RVA: 0x002AA8F9 File Offset: 0x002A8AF9
+	// (set) Token: 0x06006D02 RID: 27906 RVA: 0x002AA901 File Offset: 0x002A8B01
 	[XuiXmlBinding("isinvalidpassword")]
 	public bool IsInvalidPassword
 	{
@@ -22,7 +22,7 @@ public class XUiC_ServerPasswordWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006CDE RID: 27870 RVA: 0x002A93E9 File Offset: 0x002A75E9
+	// Token: 0x06006D03 RID: 27907 RVA: 0x002AA911 File Offset: 0x002A8B11
 	[XuiBindEvent("OnSubmitHandler", "txtPassword")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtPassword_OnSubmitHandler(XUiController _sender, string _text)
@@ -30,7 +30,7 @@ public class XUiC_ServerPasswordWindow : XUiController
 		this.BtnSubmit_OnPressed(_sender, -1);
 	}
 
-	// Token: 0x06006CDF RID: 27871 RVA: 0x002A93F4 File Offset: 0x002A75F4
+	// Token: 0x06006D04 RID: 27908 RVA: 0x002AA91C File Offset: 0x002A8B1C
 	[XuiBindEvent("OnPress", "btnSubmit")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSubmit_OnPressed(XUiController _sender, int _mouseButton)
@@ -45,7 +45,7 @@ public class XUiC_ServerPasswordWindow : XUiController
 		action(text);
 	}
 
-	// Token: 0x06006CE0 RID: 27872 RVA: 0x002A943A File Offset: 0x002A763A
+	// Token: 0x06006D05 RID: 27909 RVA: 0x002AA962 File Offset: 0x002A8B62
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
@@ -59,7 +59,7 @@ public class XUiC_ServerPasswordWindow : XUiController
 		action();
 	}
 
-	// Token: 0x06006CE1 RID: 27873 RVA: 0x002A9468 File Offset: 0x002A7668
+	// Token: 0x06006D06 RID: 27910 RVA: 0x002AA990 File Offset: 0x002A8B90
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -77,14 +77,14 @@ public class XUiC_ServerPasswordWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006CE2 RID: 27874 RVA: 0x002A94E3 File Offset: 0x002A76E3
+	// Token: 0x06006D07 RID: 27911 RVA: 0x002AAA0B File Offset: 0x002A8C0B
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.txtPassword.SetSelected(true, true);
 	}
 
-	// Token: 0x06006CE3 RID: 27875 RVA: 0x002A94F8 File Offset: 0x002A76F8
+	// Token: 0x06006D08 RID: 27912 RVA: 0x002AAA20 File Offset: 0x002A8C20
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -93,7 +93,7 @@ public class XUiC_ServerPasswordWindow : XUiController
 		this.txtPassword.Text = "";
 	}
 
-	// Token: 0x06006CE4 RID: 27876 RVA: 0x002A9520 File Offset: 0x002A7720
+	// Token: 0x06006D09 RID: 27913 RVA: 0x002AAA48 File Offset: 0x002A8C48
 	public static void OpenPasswordWindow(XUi _xuiInstance, bool _badPassword, string _currentPwd, bool _modal, Action<string> _onSubmitDelegate, Action _onCancelDelegate)
 	{
 		XUiC_ServerPasswordWindow childByType = _xuiInstance.GetChildByType<XUiC_ServerPasswordWindow>();
@@ -104,30 +104,30 @@ public class XUiC_ServerPasswordWindow : XUiController
 		_xuiInstance.playerUI.windowManager.Open(childByType.windowGroup, _modal, true);
 	}
 
-	// Token: 0x0400533E RID: 21310
+	// Token: 0x04005363 RID: 21347
 	[XuiBindComponent("txtPassword", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtPassword;
 
-	// Token: 0x0400533F RID: 21311
+	// Token: 0x04005364 RID: 21348
 	[XuiBindComponent("btnSubmit", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnSubmit;
 
-	// Token: 0x04005340 RID: 21312
+	// Token: 0x04005365 RID: 21349
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x04005341 RID: 21313
+	// Token: 0x04005366 RID: 21350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<string> onSubmit;
 
-	// Token: 0x04005342 RID: 21314
+	// Token: 0x04005367 RID: 21351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onCancel;
 
-	// Token: 0x04005343 RID: 21315
+	// Token: 0x04005368 RID: 21352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInvalidPassword;
 }

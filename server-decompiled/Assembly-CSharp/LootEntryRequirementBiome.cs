@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000627 RID: 1575
+// Token: 0x0200062E RID: 1582
 [Preserve]
 public class LootEntryRequirementBiome : BaseLootEntryRequirement
 {
-	// Token: 0x06003353 RID: 13139 RVA: 0x0014CDB8 File Offset: 0x0014AFB8
+	// Token: 0x06003361 RID: 13153 RVA: 0x0014D9AC File Offset: 0x0014BBAC
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -19,13 +19,13 @@ public class LootEntryRequirementBiome : BaseLootEntryRequirement
 		this.biomes = new string[0];
 	}
 
-	// Token: 0x06003354 RID: 13140 RVA: 0x0014CE02 File Offset: 0x0014B002
+	// Token: 0x06003362 RID: 13154 RVA: 0x0014D9F6 File Offset: 0x0014BBF6
 	public override bool CheckRequirement(EntityPlayer player)
 	{
 		return this.biomes.ContainsCaseInsensitive(player.biomeStandingOn.m_sBiomeName);
 	}
 
-	// Token: 0x040028D1 RID: 10449
+	// Token: 0x040028EC RID: 10476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] biomes;
 }

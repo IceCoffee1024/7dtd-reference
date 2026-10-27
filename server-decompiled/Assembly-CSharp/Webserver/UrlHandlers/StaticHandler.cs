@@ -4,10 +4,10 @@ using Webserver.FileCache;
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001B24 RID: 6948
+	// Token: 0x02001B55 RID: 6997
 	public class StaticHandler : AbsHandler
 	{
-		// Token: 0x0600D0FF RID: 53503 RVA: 0x004BDFC4 File Offset: 0x004BC1C4
+		// Token: 0x0600D213 RID: 53779 RVA: 0x004C1AC0 File Offset: 0x004BFCC0
 		public StaticHandler(string _filePath, AbstractCache _cache, bool _logMissingFiles, string _moduleName = null)
 			: base(_moduleName, 0)
 		{
@@ -16,7 +16,7 @@ namespace Webserver.UrlHandlers
 			this.logMissingFiles = _logMissingFiles;
 		}
 
-		// Token: 0x0600D100 RID: 53504 RVA: 0x004BE014 File Offset: 0x004BC214
+		// Token: 0x0600D214 RID: 53780 RVA: 0x004C1B10 File Offset: 0x004BFD10
 		public override void HandleRequest(RequestContext _context)
 		{
 			string text = _context.RequestPath.Remove(0, this.urlBasePath.Length);
@@ -35,15 +35,15 @@ namespace Webserver.UrlHandlers
 			}
 		}
 
-		// Token: 0x04009E7D RID: 40573
+		// Token: 0x04009F66 RID: 40806
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AbstractCache cache;
 
-		// Token: 0x04009E7E RID: 40574
+		// Token: 0x04009F67 RID: 40807
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string datapath;
 
-		// Token: 0x04009E7F RID: 40575
+		// Token: 0x04009F68 RID: 40808
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool logMissingFiles;
 	}

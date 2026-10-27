@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using System.Threading;
 
-// Token: 0x02000370 RID: 880
+// Token: 0x02000372 RID: 882
 [DebuggerDisplay("{X},{Z} {StateInfo}")]
 public class DynamicMeshData
 {
-	// Token: 0x060019CE RID: 6606 RVA: 0x00094698 File Offset: 0x00092898
+	// Token: 0x060019D2 RID: 6610 RVA: 0x000948CC File Offset: 0x00092ACC
 	public string GetByteLengthString()
 	{
 		if (this.Bytes == null)
@@ -16,19 +16,19 @@ public class DynamicMeshData
 		return this.Bytes.Length.ToString();
 	}
 
-	// Token: 0x060019CF RID: 6607 RVA: 0x000946C3 File Offset: 0x000928C3
+	// Token: 0x060019D3 RID: 6611 RVA: 0x000948F7 File Offset: 0x00092AF7
 	public string Path(bool isRegionQueue)
 	{
 		return DynamicMeshFile.MeshLocation + string.Format("{0},{1}.{2}", this.X, this.Z, isRegionQueue ? "region" : "mesh");
 	}
 
-	// Token: 0x060019D0 RID: 6608 RVA: 0x000946FE File Offset: 0x000928FE
+	// Token: 0x060019D4 RID: 6612 RVA: 0x00094932 File Offset: 0x00092B32
 	public bool Exists(bool isRegionQueue)
 	{
 		return SdFile.Exists(DynamicMeshFile.MeshLocation + string.Format("{0},{1}.{2}", this.X, this.Z, isRegionQueue ? "region" : "mesh"));
 	}
 
-	// Token: 0x060019D1 RID: 6609 RVA: 0x00094740 File Offset: 0x00092940
+	// Token: 0x060019D5 RID: 6613 RVA: 0x00094974 File Offset: 0x00092B74
 	public bool GetLock(string debug)
 	{
 		DateTime now = DateTime.Now;
@@ -67,13 +67,13 @@ public class DynamicMeshData
 		return true;
 	}
 
-	// Token: 0x060019D2 RID: 6610 RVA: 0x00094834 File Offset: 0x00092A34
+	// Token: 0x060019D6 RID: 6614 RVA: 0x00094A68 File Offset: 0x00092C68
 	public bool ReleaseLock()
 	{
 		return this.TryExit("releaseLock");
 	}
 
-	// Token: 0x060019D3 RID: 6611 RVA: 0x00094844 File Offset: 0x00092A44
+	// Token: 0x060019D7 RID: 6615 RVA: 0x00094A78 File Offset: 0x00092C78
 	public bool TryTakeLock(string debug)
 	{
 		bool flag = false;
@@ -109,13 +109,13 @@ public class DynamicMeshData
 		return flag;
 	}
 
-	// Token: 0x060019D4 RID: 6612 RVA: 0x000948FA File Offset: 0x00092AFA
+	// Token: 0x060019D8 RID: 6616 RVA: 0x00094B2E File Offset: 0x00092D2E
 	public bool ThreadHasLock()
 	{
 		return Monitor.IsEntered(this._lock);
 	}
 
-	// Token: 0x060019D5 RID: 6613 RVA: 0x00094907 File Offset: 0x00092B07
+	// Token: 0x060019D9 RID: 6617 RVA: 0x00094B3B File Offset: 0x00092D3B
 	public bool TryGetBytes(out byte[] bytes, string debug)
 	{
 		if (this.TryTakeLock(debug))
@@ -127,7 +127,7 @@ public class DynamicMeshData
 		return false;
 	}
 
-	// Token: 0x060019D6 RID: 6614 RVA: 0x00094920 File Offset: 0x00092B20
+	// Token: 0x060019DA RID: 6618 RVA: 0x00094B54 File Offset: 0x00092D54
 	public bool TryExit(string debug)
 	{
 		if (!Monitor.IsEntered(this._lock))
@@ -149,19 +149,19 @@ public class DynamicMeshData
 		return true;
 	}
 
-	// Token: 0x060019D7 RID: 6615 RVA: 0x00094990 File Offset: 0x00092B90
+	// Token: 0x060019DB RID: 6619 RVA: 0x00094BC4 File Offset: 0x00092DC4
 	public bool IsAvailableToLoad()
 	{
 		return this.Bytes != null && !this.StateInfo.HasFlag(DynamicMeshStates.MarkedForDelete) && !this.StateInfo.HasFlag(DynamicMeshStates.ThreadUpdating) && !this.StateInfo.HasFlag(DynamicMeshStates.LoadRequired);
 	}
 
-	// Token: 0x060019D8 RID: 6616 RVA: 0x000949F1 File Offset: 0x00092BF1
+	// Token: 0x060019DC RID: 6620 RVA: 0x00094C25 File Offset: 0x00092E25
 	public string ToDebugLocation()
 	{
 		return string.Format("{0}:{1},{2}", this.IsRegion ? "R" : "C", this.X, this.Z);
 	}
 
-	// Token: 0x060019D9 RID: 6617 RVA: 0x00094A27 File Offset: 0x00092C27
+	// Token: 0x060019DD RID: 6621 RVA: 0x00094C5B File Offset: 0x00092E5B
 	public void ClearUnloadMarks()
 	{
 		this.StateInfo &= ~DynamicMeshStates.UnloadMark1;
@@ -169,7 +169,7 @@ public class DynamicMeshData
 		this.StateInfo &= ~DynamicMeshStates.UnloadMark3;
 	}
 
-	// Token: 0x060019DA RID: 6618 RVA: 0x00094A56 File Offset: 0x00092C56
+	// Token: 0x060019DE RID: 6622 RVA: 0x00094C8A File Offset: 0x00092E8A
 	public static DynamicMeshData Create(int x, int z, bool isRegion)
 	{
 		return new DynamicMeshData
@@ -180,29 +180,29 @@ public class DynamicMeshData
 		};
 	}
 
-	// Token: 0x04001048 RID: 4168
+	// Token: 0x04001058 RID: 4184
 	public byte[] Bytes;
 
-	// Token: 0x04001049 RID: 4169
+	// Token: 0x04001059 RID: 4185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _lock = new object();
 
-	// Token: 0x0400104A RID: 4170
+	// Token: 0x0400105A RID: 4186
 	public string lastLock;
 
-	// Token: 0x0400104B RID: 4171
+	// Token: 0x0400105B RID: 4187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsRegion;
 
-	// Token: 0x0400104C RID: 4172
+	// Token: 0x0400105C RID: 4188
 	public DynamicMeshStates StateInfo;
 
-	// Token: 0x0400104D RID: 4173
+	// Token: 0x0400105D RID: 4189
 	public int X;
 
-	// Token: 0x0400104E RID: 4174
+	// Token: 0x0400105E RID: 4190
 	public int Z;
 
-	// Token: 0x0400104F RID: 4175
+	// Token: 0x0400105F RID: 4191
 	public int StreamLength;
 }

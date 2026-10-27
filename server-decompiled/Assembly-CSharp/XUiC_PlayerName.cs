@@ -3,13 +3,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EA1 RID: 3745
+// Token: 0x02000EAC RID: 3756
 [Preserve]
 public class XUiC_PlayerName : XUiController
 {
-	// Token: 0x17000DA7 RID: 3495
-	// (get) Token: 0x0600740D RID: 29709 RVA: 0x002C2434 File Offset: 0x002C0634
-	// (set) Token: 0x0600740E RID: 29710 RVA: 0x002C2441 File Offset: 0x002C0641
+	// Token: 0x17000DAD RID: 3501
+	// (get) Token: 0x06007432 RID: 29746 RVA: 0x002C39A0 File Offset: 0x002C1BA0
+	// (set) Token: 0x06007433 RID: 29747 RVA: 0x002C39AD File Offset: 0x002C1BAD
 	public Color Color
 	{
 		get
@@ -23,7 +23,7 @@ public class XUiC_PlayerName : XUiController
 		}
 	}
 
-	// Token: 0x0600740F RID: 29711 RVA: 0x002C245C File Offset: 0x002C065C
+	// Token: 0x06007434 RID: 29748 RVA: 0x002C39C8 File Offset: 0x002C1BC8
 	public override void Init()
 	{
 		base.Init();
@@ -31,20 +31,20 @@ public class XUiC_PlayerName : XUiController
 		base.OnPress += this.PlayerName_OnPress;
 	}
 
-	// Token: 0x06007410 RID: 29712 RVA: 0x002C249B File Offset: 0x002C069B
+	// Token: 0x06007435 RID: 29749 RVA: 0x002C3A07 File Offset: 0x002C1C07
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		base.OnPress -= this.PlayerName_OnPress;
 	}
 
-	// Token: 0x06007411 RID: 29713 RVA: 0x002C24B5 File Offset: 0x002C06B5
+	// Token: 0x06007436 RID: 29750 RVA: 0x002C3A21 File Offset: 0x002C1C21
 	public void SetGenericName(string _name)
 	{
 		this.UpdatePlayerData(null, false, _name);
 	}
 
-	// Token: 0x06007412 RID: 29714 RVA: 0x002C24C0 File Offset: 0x002C06C0
+	// Token: 0x06007437 RID: 29751 RVA: 0x002C3A2C File Offset: 0x002C1C2C
 	public void UpdatePlayerData(PlayerData _playerData, bool _showCrossplay, string _displayName = null)
 	{
 		this.playerData = _playerData;
@@ -85,7 +85,7 @@ public class XUiC_PlayerName : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007413 RID: 29715 RVA: 0x002C2603 File Offset: 0x002C0803
+	// Token: 0x06007438 RID: 29752 RVA: 0x002C3B6F File Offset: 0x002C1D6F
 	public void ClearPlayerData()
 	{
 		this.playerData = null;
@@ -94,13 +94,13 @@ public class XUiC_PlayerName : XUiController
 		this.sprIconCrossplay.IsVisible = false;
 	}
 
-	// Token: 0x06007414 RID: 29716 RVA: 0x002C2638 File Offset: 0x002C0838
+	// Token: 0x06007439 RID: 29753 RVA: 0x002C3BA4 File Offset: 0x002C1DA4
 	public bool CanShowProfile()
 	{
 		return this.playerData != null && ((this.playerData.NativeId != null && PlatformManager.MultiPlatform.User.CanShowProfile(this.playerData.NativeId)) || (this.playerData.PrimaryId != null && PlatformManager.MultiPlatform.User.CanShowProfile(this.playerData.PrimaryId)));
 	}
 
-	// Token: 0x06007415 RID: 29717 RVA: 0x002C26A8 File Offset: 0x002C08A8
+	// Token: 0x0600743A RID: 29754 RVA: 0x002C3C14 File Offset: 0x002C1E14
 	public void ShowProfile()
 	{
 		if (this.playerData == null)
@@ -118,34 +118,34 @@ public class XUiC_PlayerName : XUiController
 		}
 	}
 
-	// Token: 0x06007416 RID: 29718 RVA: 0x002C2745 File Offset: 0x002C0945
+	// Token: 0x0600743B RID: 29755 RVA: 0x002C3CB1 File Offset: 0x002C1EB1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerName_OnPress(XUiController _sender, int _mousebutton)
 	{
 		this.ShowProfile();
 	}
 
-	// Token: 0x040056AA RID: 22186
+	// Token: 0x040056CF RID: 22223
 	[XuiBindComponent("playerName", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Rect rect;
 
-	// Token: 0x040056AB RID: 22187
+	// Token: 0x040056D0 RID: 22224
 	[XuiBindComponent("name", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblName;
 
-	// Token: 0x040056AC RID: 22188
+	// Token: 0x040056D1 RID: 22225
 	[XuiBindComponent("nameCrossplay", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblNameCrossplay;
 
-	// Token: 0x040056AD RID: 22189
+	// Token: 0x040056D2 RID: 22226
 	[XuiBindComponent("iconCrossplay", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite sprIconCrossplay;
 
-	// Token: 0x040056AE RID: 22190
+	// Token: 0x040056D3 RID: 22227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerData playerData;
 }

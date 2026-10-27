@@ -4,10 +4,10 @@ using System.Text;
 using InControl;
 using Platform;
 
-// Token: 0x0200055B RID: 1371
+// Token: 0x0200055F RID: 1375
 public static class InControlExtensions
 {
-	// Token: 0x06002C87 RID: 11399 RVA: 0x0011AE58 File Offset: 0x00119058
+	// Token: 0x06002C8F RID: 11407 RVA: 0x0011B3E4 File Offset: 0x001195E4
 	public static string GetBindingString(this PlayerAction _action, bool _forController, PlayerInputManager.InputStyle _inputStyle = PlayerInputManager.InputStyle.Undefined, XUiUtils.EmptyBindingStyle _emptyStyle = XUiUtils.EmptyBindingStyle.LocalizedNone, XUiUtils.DisplayStyle _displayStyle = XUiUtils.DisplayStyle.Plain, bool _isCustomDisplayStyle = false, string _customDisplayStyleString = null)
 	{
 		if (_action != null)
@@ -58,7 +58,7 @@ public static class InControlExtensions
 		return _action.GetBindingOfType(_forController).GetBindingSourceString(_inputStyle, _emptyStyle, _displayStyle, _isCustomDisplayStyle, _customDisplayStyleString);
 	}
 
-	// Token: 0x06002C88 RID: 11400 RVA: 0x0011B014 File Offset: 0x00119214
+	// Token: 0x06002C90 RID: 11408 RVA: 0x0011B5A0 File Offset: 0x001197A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetBindingSourceString(this BindingSource _bs, PlayerInputManager.InputStyle _inputStyle = PlayerInputManager.InputStyle.Undefined, XUiUtils.EmptyBindingStyle _emptyStyle = XUiUtils.EmptyBindingStyle.LocalizedNone, XUiUtils.DisplayStyle _displayStyle = XUiUtils.DisplayStyle.Plain, bool _isCustomDisplayStyle = false, string _customDisplayStyleString = null)
 	{
@@ -101,7 +101,7 @@ public static class InControlExtensions
 		return text;
 	}
 
-	// Token: 0x06002C89 RID: 11401 RVA: 0x0011B0DC File Offset: 0x001192DC
+	// Token: 0x06002C91 RID: 11409 RVA: 0x0011B668 File Offset: 0x00119868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetKeyboardSourceString(KeyBindingSource _kbs, XUiUtils.DisplayStyle _displayStyle, bool _isCustomDisplayStyle, string _customDisplayStyleString)
 	{
@@ -148,7 +148,7 @@ public static class InControlExtensions
 		return InControlExtensions.bindingToString.ToString();
 	}
 
-	// Token: 0x06002C8A RID: 11402 RVA: 0x0011B220 File Offset: 0x00119420
+	// Token: 0x06002C92 RID: 11410 RVA: 0x0011B7AC File Offset: 0x001199AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetMouseSourceString(Mouse _control)
 	{
@@ -171,7 +171,7 @@ public static class InControlExtensions
 		return text;
 	}
 
-	// Token: 0x06002C8B RID: 11403 RVA: 0x0011B264 File Offset: 0x00119464
+	// Token: 0x06002C93 RID: 11411 RVA: 0x0011B7F0 File Offset: 0x001199F0
 	public static string GetGamepadSourceString(InputControlType _control)
 	{
 		PlayerInputManager.InputStyle inputStyle = PlayerInputManager.InputStyleFromSelectedIconStyle();
@@ -255,7 +255,7 @@ public static class InControlExtensions
 		return text;
 	}
 
-	// Token: 0x06002C8C RID: 11404 RVA: 0x0011B33E File Offset: 0x0011953E
+	// Token: 0x06002C94 RID: 11412 RVA: 0x0011B8CA File Offset: 0x00119ACA
 	public static string GetBlankDPadSourceString()
 	{
 		if (PlayerInputManager.InputStyleFromSelectedIconStyle() == PlayerInputManager.InputStyle.PS4)
@@ -265,7 +265,7 @@ public static class InControlExtensions
 		return "[sp=XB_Button_DPadBlank]";
 	}
 
-	// Token: 0x06002C8D RID: 11405 RVA: 0x0011B354 File Offset: 0x00119554
+	// Token: 0x06002C95 RID: 11413 RVA: 0x0011B8E0 File Offset: 0x00119AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLocalizedName(this Key _key)
 	{
@@ -279,7 +279,7 @@ public static class InControlExtensions
 		return name;
 	}
 
-	// Token: 0x06002C8E RID: 11406 RVA: 0x0011B3A4 File Offset: 0x001195A4
+	// Token: 0x06002C96 RID: 11414 RVA: 0x0011B930 File Offset: 0x00119B30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLocalizedName(this Mouse _key)
 	{
@@ -292,7 +292,7 @@ public static class InControlExtensions
 		return _key.ToStringCached<Mouse>();
 	}
 
-	// Token: 0x06002C8F RID: 11407 RVA: 0x0011B3DC File Offset: 0x001195DC
+	// Token: 0x06002C97 RID: 11415 RVA: 0x0011B968 File Offset: 0x00119B68
 	public static string TryLocalizeButtonName(string _buttonName)
 	{
 		string text = "inpButton" + _buttonName.Replace(" ", "");
@@ -304,7 +304,7 @@ public static class InControlExtensions
 		return _buttonName;
 	}
 
-	// Token: 0x06002C90 RID: 11408 RVA: 0x0011B41C File Offset: 0x0011961C
+	// Token: 0x06002C98 RID: 11416 RVA: 0x0011B9A8 File Offset: 0x00119BA8
 	public static void UnbindBindingsOfType(this PlayerAction _action, bool _controller)
 	{
 		foreach (BindingSource bindingSource in _action.Bindings)
@@ -316,7 +316,7 @@ public static class InControlExtensions
 		}
 	}
 
-	// Token: 0x06002C91 RID: 11409 RVA: 0x0011B478 File Offset: 0x00119678
+	// Token: 0x06002C99 RID: 11417 RVA: 0x0011BA04 File Offset: 0x00119C04
 	public static void UnbindBindingsOfType(this PlayerAction _action, BindingSourceType _bindingType)
 	{
 		foreach (BindingSource bindingSource in _action.Bindings)
@@ -328,7 +328,7 @@ public static class InControlExtensions
 		}
 	}
 
-	// Token: 0x06002C92 RID: 11410 RVA: 0x0011B4D0 File Offset: 0x001196D0
+	// Token: 0x06002C9A RID: 11418 RVA: 0x0011BA5C File Offset: 0x00119C5C
 	public static PlayerAction BindingUsed(this PlayerActionSet _actionSet, BindingSource _binding)
 	{
 		if (_binding == null)
@@ -346,7 +346,7 @@ public static class InControlExtensions
 		return null;
 	}
 
-	// Token: 0x06002C93 RID: 11411 RVA: 0x0011B524 File Offset: 0x00119724
+	// Token: 0x06002C9B RID: 11419 RVA: 0x0011BAB0 File Offset: 0x00119CB0
 	public static BindingSource GetBindingOfType(this PlayerAction _action, bool _forController = false)
 	{
 		if (_action == null)
@@ -364,7 +364,7 @@ public static class InControlExtensions
 		return null;
 	}
 
-	// Token: 0x06002C94 RID: 11412 RVA: 0x0011B590 File Offset: 0x00119790
+	// Token: 0x06002C9C RID: 11420 RVA: 0x0011BB1C File Offset: 0x00119D1C
 	public static string GetNameForControlType(this InputDeviceProfile _profile, InputControlType _controlType)
 	{
 		foreach (InputControlMapping inputControlMapping in _profile.AnalogMappings)
@@ -384,7 +384,7 @@ public static class InControlExtensions
 		return null;
 	}
 
-	// Token: 0x06002C95 RID: 11413 RVA: 0x0011B5FC File Offset: 0x001197FC
+	// Token: 0x06002C9D RID: 11421 RVA: 0x0011BB88 File Offset: 0x00119D88
 	public static void GetBoundAction(this InputControlType _controlType, PlayerActionSet[] _actionSets, IList<PlayerAction> _result)
 	{
 		_result.Clear();
@@ -407,7 +407,7 @@ public static class InControlExtensions
 		}
 	}
 
-	// Token: 0x04002252 RID: 8786
+	// Token: 0x04002269 RID: 8809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly StringBuilder bindingToString = new StringBuilder();
 }

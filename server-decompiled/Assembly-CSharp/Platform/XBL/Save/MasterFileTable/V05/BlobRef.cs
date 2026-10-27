@@ -5,21 +5,21 @@ using System.Threading;
 
 namespace Platform.XBL.Save.MasterFileTable.V05
 {
-	// Token: 0x02001C97 RID: 7319
+	// Token: 0x02001CC8 RID: 7368
 	public sealed class BlobRef : IEquatable<BlobRef>, IMigratable
 	{
-		// Token: 0x17001B50 RID: 6992
-		// (get) Token: 0x0600D8C3 RID: 55491 RVA: 0x004DC418 File Offset: 0x004DA618
-		// (set) Token: 0x0600D8C4 RID: 55492 RVA: 0x004DC420 File Offset: 0x004DA620
+		// Token: 0x17001B98 RID: 7064
+		// (get) Token: 0x0600D9D7 RID: 55767 RVA: 0x004DFF68 File Offset: 0x004DE168
+		// (set) Token: 0x0600D9D8 RID: 55768 RVA: 0x004DFF70 File Offset: 0x004DE170
 		public ushort Version
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = 5;
 
-		// Token: 0x17001B51 RID: 6993
-		// (get) Token: 0x0600D8C5 RID: 55493 RVA: 0x004DC429 File Offset: 0x004DA629
-		// (set) Token: 0x0600D8C6 RID: 55494 RVA: 0x004DC431 File Offset: 0x004DA631
+		// Token: 0x17001B99 RID: 7065
+		// (get) Token: 0x0600D9D9 RID: 55769 RVA: 0x004DFF79 File Offset: 0x004DE179
+		// (set) Token: 0x0600D9DA RID: 55770 RVA: 0x004DFF81 File Offset: 0x004DE181
 		public ReadOnlyMemory<byte> Hash
 		{
 			get
@@ -36,16 +36,16 @@ namespace Platform.XBL.Save.MasterFileTable.V05
 			}
 		}
 
-		// Token: 0x17001B52 RID: 6994
-		// (get) Token: 0x0600D8C7 RID: 55495 RVA: 0x004DC45C File Offset: 0x004DA65C
-		// (set) Token: 0x0600D8C8 RID: 55496 RVA: 0x004DC464 File Offset: 0x004DA664
+		// Token: 0x17001B9A RID: 7066
+		// (get) Token: 0x0600D9DB RID: 55771 RVA: 0x004DFFAC File Offset: 0x004DE1AC
+		// (set) Token: 0x0600D9DC RID: 55772 RVA: 0x004DFFB4 File Offset: 0x004DE1B4
 		public byte[] FutureData
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = Array.Empty<byte>();
 
-		// Token: 0x0600D8C9 RID: 55497 RVA: 0x004DC470 File Offset: 0x004DA670
+		// Token: 0x0600D9DD RID: 55773 RVA: 0x004DFFC0 File Offset: 0x004DE1C0
 		public void Write(PooledBinaryWriter writer)
 		{
 			writer.Write(this.Version);
@@ -83,7 +83,7 @@ namespace Platform.XBL.Save.MasterFileTable.V05
 			writer.BaseStream.Position = position3;
 		}
 
-		// Token: 0x0600D8CA RID: 55498 RVA: 0x004DC5B8 File Offset: 0x004DA7B8
+		// Token: 0x0600D9DE RID: 55774 RVA: 0x004E0108 File Offset: 0x004DE308
 		public void Read(PooledBinaryReader reader)
 		{
 			if (this.Version != 5 || this.Id != 0UL || this.Length != 0U || !this.m_hash.Span.SequenceEqual<byte>(BlobRef.s_emptyHash) || this.FutureData.Length != 0)
@@ -111,7 +111,7 @@ namespace Platform.XBL.Save.MasterFileTable.V05
 			}
 		}
 
-		// Token: 0x0600D8CB RID: 55499 RVA: 0x004DC6E4 File Offset: 0x004DA8E4
+		// Token: 0x0600D9DF RID: 55775 RVA: 0x004E0234 File Offset: 0x004DE434
 		public override string ToString()
 		{
 			return string.Concat(new string[]
@@ -126,13 +126,13 @@ namespace Platform.XBL.Save.MasterFileTable.V05
 			});
 		}
 
-		// Token: 0x0600D8CC RID: 55500 RVA: 0x004DC747 File Offset: 0x004DA947
+		// Token: 0x0600D9E0 RID: 55776 RVA: 0x004E0297 File Offset: 0x004DE497
 		public static HashAlgorithm GetHashAlgorithm()
 		{
 			return BlobRef.s_md5.Value;
 		}
 
-		// Token: 0x0600D8CD RID: 55501 RVA: 0x004DC754 File Offset: 0x004DA954
+		// Token: 0x0600D9E1 RID: 55777 RVA: 0x004E02A4 File Offset: 0x004DE4A4
 		public static ReadOnlyMemory<byte> CalculateHash(RefCountedBuffer buffer)
 		{
 			HashAlgorithm hashAlgorithm = BlobRef.GetHashAlgorithm();
@@ -149,13 +149,13 @@ namespace Platform.XBL.Save.MasterFileTable.V05
 			return array;
 		}
 
-		// Token: 0x0600D8CE RID: 55502 RVA: 0x004DC7B4 File Offset: 0x004DA9B4
+		// Token: 0x0600D9E2 RID: 55778 RVA: 0x004E0304 File Offset: 0x004DE504
 		public bool Equals(BlobRef other)
 		{
 			return other != null && (this == other || (this.Id == other.Id && this.Length == other.Length && (this.Hash.Equals(other.Hash) || this.Hash.Span.SequenceEqual<byte>(other.Hash.Span))));
 		}
 
-		// Token: 0x0600D8CF RID: 55503 RVA: 0x004DC824 File Offset: 0x004DAA24
+		// Token: 0x0600D9E3 RID: 55779 RVA: 0x004E0374 File Offset: 0x004DE574
 		public override bool Equals(object obj)
 		{
 			if (this != obj)
@@ -166,48 +166,48 @@ namespace Platform.XBL.Save.MasterFileTable.V05
 			return true;
 		}
 
-		// Token: 0x0600D8D0 RID: 55504 RVA: 0x004DC84C File Offset: 0x004DAA4C
+		// Token: 0x0600D9E4 RID: 55780 RVA: 0x004E039C File Offset: 0x004DE59C
 		public override int GetHashCode()
 		{
 			return HashCode.Combine<ulong, uint, int>(this.Id, this.Length, SpanUtils.GetHashCode<byte>(this.Hash.Span));
 		}
 
-		// Token: 0x0600D8D1 RID: 55505 RVA: 0x001DCBE8 File Offset: 0x001DADE8
+		// Token: 0x0600D9E5 RID: 55781 RVA: 0x001DDCD0 File Offset: 0x001DBED0
 		public static bool operator ==(BlobRef left, BlobRef right)
 		{
 			return object.Equals(left, right);
 		}
 
-		// Token: 0x0600D8D2 RID: 55506 RVA: 0x001DCBF1 File Offset: 0x001DADF1
+		// Token: 0x0600D9E6 RID: 55782 RVA: 0x001DDCD9 File Offset: 0x001DBED9
 		public static bool operator !=(BlobRef left, BlobRef right)
 		{
 			return !object.Equals(left, right);
 		}
 
-		// Token: 0x0400A4AF RID: 42159
+		// Token: 0x0400A598 RID: 42392
 		public const ushort VERSION = 5;
 
-		// Token: 0x0400A4B0 RID: 42160
+		// Token: 0x0400A599 RID: 42393
 		public const int HashSizeBytes = 16;
 
-		// Token: 0x0400A4B1 RID: 42161
+		// Token: 0x0400A59A RID: 42394
 		public const int SizeBytes = 28;
 
-		// Token: 0x0400A4B2 RID: 42162
+		// Token: 0x0400A59B RID: 42395
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ThreadLocal<MD5> s_md5 = new ThreadLocal<MD5>(new Func<MD5>(MD5.Create));
 
-		// Token: 0x0400A4B3 RID: 42163
+		// Token: 0x0400A59C RID: 42396
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] s_emptyHash = new byte[16];
 
-		// Token: 0x0400A4B5 RID: 42165
+		// Token: 0x0400A59E RID: 42398
 		public ulong Id;
 
-		// Token: 0x0400A4B6 RID: 42166
+		// Token: 0x0400A59F RID: 42399
 		public uint Length;
 
-		// Token: 0x0400A4B7 RID: 42167
+		// Token: 0x0400A5A0 RID: 42400
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ReadOnlyMemory<byte> m_hash = BlobRef.s_emptyHash;
 	}

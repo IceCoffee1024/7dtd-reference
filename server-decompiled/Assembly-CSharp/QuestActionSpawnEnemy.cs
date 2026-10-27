@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000971 RID: 2417
+// Token: 0x0200097B RID: 2427
 [Preserve]
 public class QuestActionSpawnEnemy : BaseQuestAction
 {
-	// Token: 0x06004641 RID: 17985 RVA: 0x001BE8E4 File Offset: 0x001BCAE4
+	// Token: 0x06004664 RID: 18020 RVA: 0x001BF968 File Offset: 0x001BDB68
 	public override void SetupAction()
 	{
 		string[] array = this.ID.Split(',', StringSplitOptions.None);
@@ -28,7 +28,7 @@ public class QuestActionSpawnEnemy : BaseQuestAction
 		}
 	}
 
-	// Token: 0x06004642 RID: 17986 RVA: 0x001BE98C File Offset: 0x001BCB8C
+	// Token: 0x06004665 RID: 18021 RVA: 0x001BFA10 File Offset: 0x001BDC10
 	public override void PerformAction(Quest ownerQuest)
 	{
 		if (!GameStats.GetBool(EnumGameStats.EnemySpawnMode))
@@ -38,7 +38,7 @@ public class QuestActionSpawnEnemy : BaseQuestAction
 		this.HandleSpawnEnemies(ownerQuest);
 	}
 
-	// Token: 0x06004643 RID: 17987 RVA: 0x001BE9A0 File Offset: 0x001BCBA0
+	// Token: 0x06004666 RID: 18022 RVA: 0x001BFA24 File Offset: 0x001BDC24
 	public void HandleSpawnEnemies(Quest ownerQuest)
 	{
 		if (this.Value != null && this.Value != "" && !int.TryParse(this.Value, out this.count) && this.Value.Contains("-"))
@@ -52,7 +52,7 @@ public class QuestActionSpawnEnemy : BaseQuestAction
 		GameManager.Instance.StartCoroutine(this.SpawnEnemies(ownerQuest));
 	}
 
-	// Token: 0x06004644 RID: 17988 RVA: 0x001BEA3B File Offset: 0x001BCC3B
+	// Token: 0x06004667 RID: 18023 RVA: 0x001BFABF File Offset: 0x001BDCBF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator SpawnEnemies(Quest ownerQuest)
 	{
@@ -76,7 +76,7 @@ public class QuestActionSpawnEnemy : BaseQuestAction
 		yield break;
 	}
 
-	// Token: 0x06004645 RID: 17989 RVA: 0x001BEA54 File Offset: 0x001BCC54
+	// Token: 0x06004668 RID: 18024 RVA: 0x001BFAD8 File Offset: 0x001BDCD8
 	public static void SpawnQuestEntity(int spawnedEntityID, int entityIDQuestHolder, EntityPlayer player = null)
 	{
 		World world = GameManager.Instance.World;
@@ -98,7 +98,7 @@ public class QuestActionSpawnEnemy : BaseQuestAction
 		(entity as EntityAlive).SetAttackTarget(player, 200);
 	}
 
-	// Token: 0x06004646 RID: 17990 RVA: 0x001BEBA8 File Offset: 0x001BCDA8
+	// Token: 0x06004669 RID: 18025 RVA: 0x001BFC2C File Offset: 0x001BDE2C
 	public override BaseQuestAction Clone()
 	{
 		QuestActionSpawnEnemy questActionSpawnEnemy = new QuestActionSpawnEnemy();
@@ -107,11 +107,11 @@ public class QuestActionSpawnEnemy : BaseQuestAction
 		return questActionSpawnEnemy;
 	}
 
-	// Token: 0x040038D0 RID: 14544
+	// Token: 0x040038F0 RID: 14576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> entityIDs = new List<int>();
 
-	// Token: 0x040038D1 RID: 14545
+	// Token: 0x040038F1 RID: 14577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count = 1;
 }

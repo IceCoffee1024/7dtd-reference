@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C3 RID: 6595
+	// Token: 0x020019F4 RID: 6644
 	[Preserve]
 	public class ActionPrimeEntity : ActionBaseTargetAction
 	{
-		// Token: 0x0600CA25 RID: 51749 RVA: 0x004A01AC File Offset: 0x0049E3AC
+		// Token: 0x0600CB39 RID: 52025 RVA: 0x004A3CAC File Offset: 0x004A1EAC
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityZombieCop entityZombieCop = target as EntityZombieCop;
@@ -18,14 +18,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CA26 RID: 51750 RVA: 0x004A01F0 File Offset: 0x0049E3F0
+		// Token: 0x0600CB3A RID: 52026 RVA: 0x004A3CF0 File Offset: 0x004A1EF0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionPrimeEntity.PropOverrideTime, ref this.overrideTimeText);
 		}
 
-		// Token: 0x0600CA27 RID: 51751 RVA: 0x004A020A File Offset: 0x0049E40A
+		// Token: 0x0600CB3B RID: 52027 RVA: 0x004A3D0A File Offset: 0x004A1F0A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -36,11 +36,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098E7 RID: 39143
+		// Token: 0x040099D0 RID: 39376
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string overrideTimeText;
 
-		// Token: 0x040098E8 RID: 39144
+		// Token: 0x040099D1 RID: 39377
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOverrideTime = "override_time";
 	}

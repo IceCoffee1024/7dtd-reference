@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009FD RID: 2557
+// Token: 0x02000A07 RID: 2567
 [Preserve]
 public class RewardQuest : BaseReward
 {
-	// Token: 0x06004BDC RID: 19420 RVA: 0x001D8F4E File Offset: 0x001D714E
+	// Token: 0x06004C00 RID: 19456 RVA: 0x001DA036 File Offset: 0x001D8236
 	public override void SetupReward()
 	{
 		base.Description = Localization.Get("RewardQuest_keyword", false, null);
@@ -13,7 +13,7 @@ public class RewardQuest : BaseReward
 		base.Icon = "ui_game_symbol_quest";
 	}
 
-	// Token: 0x06004BDD RID: 19421 RVA: 0x001D8F84 File Offset: 0x001D7184
+	// Token: 0x06004C01 RID: 19457 RVA: 0x001DA06C File Offset: 0x001D826C
 	public override void GiveReward(EntityPlayer player)
 	{
 		Quest quest = QuestClass.CreateQuest(base.ID);
@@ -24,7 +24,7 @@ public class RewardQuest : BaseReward
 		player.QuestJournal.AddQuest(quest, Quest.QuestSource.QuestSystem, true);
 	}
 
-	// Token: 0x06004BDE RID: 19422 RVA: 0x001D8FD0 File Offset: 0x001D71D0
+	// Token: 0x06004C02 RID: 19458 RVA: 0x001DA0B8 File Offset: 0x001D82B8
 	public override BaseReward Clone()
 	{
 		RewardQuest rewardQuest = new RewardQuest();
@@ -33,7 +33,7 @@ public class RewardQuest : BaseReward
 		return rewardQuest;
 	}
 
-	// Token: 0x06004BDF RID: 19423 RVA: 0x001D8FF8 File Offset: 0x001D71F8
+	// Token: 0x06004C03 RID: 19459 RVA: 0x001DA0E0 File Offset: 0x001D82E0
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -47,12 +47,12 @@ public class RewardQuest : BaseReward
 		}
 	}
 
-	// Token: 0x04003BD7 RID: 15319
+	// Token: 0x04003BF8 RID: 15352
 	public static string PropQuest = "quest";
 
-	// Token: 0x04003BD8 RID: 15320
+	// Token: 0x04003BF9 RID: 15353
 	public static string PropChainQuest = "chainquest";
 
-	// Token: 0x04003BD9 RID: 15321
+	// Token: 0x04003BFA RID: 15354
 	public bool IsChainQuest = true;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001392 RID: 5010
+// Token: 0x020013A4 RID: 5028
 public class SpeedTreeMotionVectorHelper : MonoBehaviour
 {
-	// Token: 0x06009DA8 RID: 40360 RVA: 0x003B97AF File Offset: 0x003B79AF
+	// Token: 0x06009E00 RID: 40448 RVA: 0x003BBBB3 File Offset: 0x003B9DB3
 	public void Init(Renderer renderer)
 	{
 		this.renderer = renderer;
 	}
 
-	// Token: 0x06009DA9 RID: 40361 RVA: 0x003B97B8 File Offset: 0x003B79B8
+	// Token: 0x06009E01 RID: 40449 RVA: 0x003BBBBC File Offset: 0x003B9DBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnBecameVisible()
 	{
@@ -21,14 +21,14 @@ public class SpeedTreeMotionVectorHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009DAA RID: 40362 RVA: 0x003B97DD File Offset: 0x003B79DD
+	// Token: 0x06009E02 RID: 40450 RVA: 0x003BBBE1 File Offset: 0x003B9DE1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnBecameInvisible()
 	{
 		SpeedTreeWindHistoryBufferManager.Instance.DeregisterActiveRenderer(this.renderer);
 	}
 
-	// Token: 0x0400774C RID: 30540
+	// Token: 0x0400778D RID: 30605
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Renderer renderer;

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace Services
 {
-	// Token: 0x0200169C RID: 5788
+	// Token: 0x020016AE RID: 5806
 	public class ServiceProvider
 	{
-		// Token: 0x170015EE RID: 5614
-		// (get) Token: 0x0600B4FF RID: 46335 RVA: 0x0043AAEC File Offset: 0x00438CEC
-		// (set) Token: 0x0600B500 RID: 46336 RVA: 0x0043AAF3 File Offset: 0x00438CF3
+		// Token: 0x170015FA RID: 5626
+		// (get) Token: 0x0600B557 RID: 46423 RVA: 0x0043CEF0 File Offset: 0x0043B0F0
+		// (set) Token: 0x0600B558 RID: 46424 RVA: 0x0043CEF7 File Offset: 0x0043B0F7
 		public static ServiceProvider Instance
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600B501 RID: 46337 RVA: 0x0043AAFB File Offset: 0x00438CFB
+		// Token: 0x0600B559 RID: 46425 RVA: 0x0043CEFF File Offset: 0x0043B0FF
 		public static void Init()
 		{
 			if (ServiceProvider.Instance != null)
@@ -27,26 +27,26 @@ namespace Services
 			ServiceProvider.Instance.InternalInit();
 		}
 
-		// Token: 0x0600B502 RID: 46338 RVA: 0x0043AB23 File Offset: 0x00438D23
+		// Token: 0x0600B55A RID: 46426 RVA: 0x0043CF27 File Offset: 0x0043B127
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InternalInit()
 		{
 			this._services = new Dictionary<Type, object>();
 		}
 
-		// Token: 0x0600B503 RID: 46339 RVA: 0x0043AB30 File Offset: 0x00438D30
+		// Token: 0x0600B55B RID: 46427 RVA: 0x0043CF34 File Offset: 0x0043B134
 		public void Register(Type type, object obj)
 		{
 			this._services.Add(type, obj);
 		}
 
-		// Token: 0x0600B504 RID: 46340 RVA: 0x0043AB3F File Offset: 0x00438D3F
+		// Token: 0x0600B55C RID: 46428 RVA: 0x0043CF43 File Offset: 0x0043B143
 		public T Get<T>()
 		{
 			return (T)((object)this._services[typeof(T)]);
 		}
 
-		// Token: 0x040087AE RID: 34734
+		// Token: 0x040087EF RID: 34799
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<Type, object> _services;
 	}

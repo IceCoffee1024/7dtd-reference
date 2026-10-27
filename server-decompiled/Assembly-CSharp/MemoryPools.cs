@@ -4,10 +4,10 @@ using System.Text;
 using GamePath;
 using UnityEngine;
 
-// Token: 0x02000B69 RID: 2921
+// Token: 0x02000B74 RID: 2932
 public class MemoryPools
 {
-	// Token: 0x06005836 RID: 22582 RVA: 0x0021D3C8 File Offset: 0x0021B5C8
+	// Token: 0x0600585B RID: 22619 RVA: 0x0021E924 File Offset: 0x0021CB24
 	public static void InitStatic(bool _usePools)
 	{
 		_usePools = true;
@@ -19,7 +19,7 @@ public class MemoryPools
 		MemoryPools.poolCBC = new MemoryPooledObject<CBCLayer>(_usePools ? 50000 : 0);
 	}
 
-	// Token: 0x06005837 RID: 22583 RVA: 0x0021D454 File Offset: 0x0021B654
+	// Token: 0x0600585C RID: 22620 RVA: 0x0021E9B0 File Offset: 0x0021CBB0
 	public static void Cleanup()
 	{
 		MemoryPools.PoolChunks.Cleanup();
@@ -46,7 +46,7 @@ public class MemoryPools
 		}
 	}
 
-	// Token: 0x06005838 RID: 22584 RVA: 0x0021D544 File Offset: 0x0021B744
+	// Token: 0x0600585D RID: 22621 RVA: 0x0021EAA0 File Offset: 0x0021CCA0
 	public static string GetDebugInfo()
 	{
 		return string.Format("Chunks:{0}/{1} CBL:{2}/{3} CBC:{4}/{5} CGL:{6}/{7} VML:{8}/{9} MS:{10}/{11}", new object[]
@@ -66,7 +66,7 @@ public class MemoryPools
 		});
 	}
 
-	// Token: 0x06005839 RID: 22585 RVA: 0x0021D620 File Offset: 0x0021B820
+	// Token: 0x0600585E RID: 22622 RVA: 0x0021EB7C File Offset: 0x0021CD7C
 	public static string GetDebugInfoEx()
 	{
 		int count = MemoryPools.poolVector2.GetCount();
@@ -100,7 +100,7 @@ public class MemoryPools
 		});
 	}
 
-	// Token: 0x0600583A RID: 22586 RVA: 0x0021D83C File Offset: 0x0021BA3C
+	// Token: 0x0600585F RID: 22623 RVA: 0x0021ED98 File Offset: 0x0021CF98
 	public static string GetDebugInfoArrays()
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -123,7 +123,7 @@ public class MemoryPools
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600583B RID: 22587 RVA: 0x0021D8E4 File Offset: 0x0021BAE4
+	// Token: 0x06005860 RID: 22624 RVA: 0x0021EE40 File Offset: 0x0021D040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AppendDebugInfoArray<T>(StringBuilder _builder, MemoryPooledArray<T> _pool) where T : new()
 	{
@@ -147,69 +147,69 @@ public class MemoryPools
 		_builder.AppendLine(MetricConversion.ToShortestBytesString(num * num2));
 	}
 
-	// Token: 0x04004442 RID: 17474
+	// Token: 0x04004467 RID: 17511
 	public const int VMLPoolSize = 1000;
 
-	// Token: 0x04004443 RID: 17475
+	// Token: 0x04004468 RID: 17512
 	public static MemoryPooledObject<Chunk> PoolChunks = new MemoryPooledObject<Chunk>(0);
 
-	// Token: 0x04004444 RID: 17476
+	// Token: 0x04004469 RID: 17513
 	public static MemoryPooledObject<ChunkBlockLayer> poolCBL = new MemoryPooledObject<ChunkBlockLayer>(0);
 
-	// Token: 0x04004445 RID: 17477
+	// Token: 0x0400446A RID: 17514
 	public static MemoryPooledObject<VoxelMeshLayer> poolVML = new MemoryPooledObject<VoxelMeshLayer>(0);
 
-	// Token: 0x04004446 RID: 17478
+	// Token: 0x0400446B RID: 17515
 	public static MemoryPooledObject<ChunkGameObjectLayer> poolCGOL = new MemoryPooledObject<ChunkGameObjectLayer>(0);
 
-	// Token: 0x04004447 RID: 17479
+	// Token: 0x0400446C RID: 17516
 	public static MemoryPooledObject<PooledMemoryStream> poolMS = new MemoryPooledObject<PooledMemoryStream>(40);
 
-	// Token: 0x04004448 RID: 17480
+	// Token: 0x0400446D RID: 17517
 	public static MemoryPooledObject<CBCLayer> poolCBC = new MemoryPooledObject<CBCLayer>(0);
 
-	// Token: 0x04004449 RID: 17481
+	// Token: 0x0400446E RID: 17518
 	public static MemoryPooledArray<Vector3> poolVector3 = new MemoryPooledArray<Vector3>();
 
-	// Token: 0x0400444A RID: 17482
+	// Token: 0x0400446F RID: 17519
 	public static MemoryPooledArray<Vector4> poolVector4 = new MemoryPooledArray<Vector4>();
 
-	// Token: 0x0400444B RID: 17483
+	// Token: 0x04004470 RID: 17520
 	public static MemoryPooledArray<Vector2> poolVector2 = new MemoryPooledArray<Vector2>();
 
-	// Token: 0x0400444C RID: 17484
+	// Token: 0x04004471 RID: 17521
 	public static MemoryPooledArray<int> poolInt = new MemoryPooledArray<int>();
 
-	// Token: 0x0400444D RID: 17485
+	// Token: 0x04004472 RID: 17522
 	public static MemoryPooledArray<ushort> poolUInt16 = new MemoryPooledArray<ushort>();
 
-	// Token: 0x0400444E RID: 17486
+	// Token: 0x04004473 RID: 17523
 	public static MemoryPooledArray<float> poolFloat = new MemoryPooledArray<float>();
 
-	// Token: 0x0400444F RID: 17487
+	// Token: 0x04004474 RID: 17524
 	public static MemoryPooledArray<Color> poolColor = new MemoryPooledArray<Color>();
 
-	// Token: 0x04004450 RID: 17488
+	// Token: 0x04004475 RID: 17525
 	public static MemoryPooledArray<byte> poolByte = new MemoryPooledArray<byte>();
 
-	// Token: 0x04004451 RID: 17489
+	// Token: 0x04004476 RID: 17526
 	public static MemoryPooledObject<PooledExpandableMemoryStream> poolMemoryStream = new MemoryPooledObject<PooledExpandableMemoryStream>(100);
 
-	// Token: 0x04004452 RID: 17490
+	// Token: 0x04004477 RID: 17527
 	public static MemoryPooledObject<PooledBinaryReader> poolBinaryReader = new MemoryPooledObject<PooledBinaryReader>(100);
 
-	// Token: 0x04004453 RID: 17491
+	// Token: 0x04004478 RID: 17528
 	public static MemoryPooledObject<PooledBinaryWriter> poolBinaryWriter = new MemoryPooledObject<PooledBinaryWriter>(100);
 
-	// Token: 0x04004454 RID: 17492
+	// Token: 0x04004479 RID: 17529
 	public static MemoryPooledObject<NameIdMapping> poolNameIdMapping = new MemoryPooledObject<NameIdMapping>(10);
 
-	// Token: 0x04004455 RID: 17493
+	// Token: 0x0400447A RID: 17530
 	public static List<byte[]> poolCBLUpper24BitArrCache = new List<byte[]>();
 
-	// Token: 0x04004456 RID: 17494
+	// Token: 0x0400447B RID: 17531
 	public static List<byte[]> poolCBLLower8BitArrCache = new List<byte[]>();
 
-	// Token: 0x04004457 RID: 17495
+	// Token: 0x0400447C RID: 17532
 	public static DynamicObjectPool<PathPoint> s_pool = new DynamicObjectPool<PathPoint>(64);
 }

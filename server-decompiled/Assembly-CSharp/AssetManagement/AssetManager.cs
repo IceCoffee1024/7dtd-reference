@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace AssetManagement
 {
-	// Token: 0x02001B53 RID: 6995
+	// Token: 0x02001B84 RID: 7044
 	public abstract class AssetManager : IAssetManager
 	{
-		// Token: 0x17001A3B RID: 6715
-		// (get) Token: 0x0600D1F3 RID: 53747
+		// Token: 0x17001A83 RID: 6787
+		// (get) Token: 0x0600D307 RID: 54023
 		public abstract int ActiveAssetCount { get; }
 
-		// Token: 0x0600D1F4 RID: 53748 RVA: 0x004C531C File Offset: 0x004C351C
+		// Token: 0x0600D308 RID: 54024 RVA: 0x004C8E44 File Offset: 0x004C7044
 		public AssetHandle<T> AcquireAsset<T>(string uri, bool ignoreDlcEntitlements = false) where T : global::UnityEngine.Object
 		{
 			LoadManager.AssetRequestTask<T> assetRequestTask = LoadManager.LoadAsset<T>(uri, null, null, false, true, ignoreDlcEntitlements);
@@ -21,7 +21,7 @@ namespace AssetManagement
 			return this.TrackAsset<T>(uri, assetRequestTask);
 		}
 
-		// Token: 0x0600D1F5 RID: 53749 RVA: 0x004C535C File Offset: 0x004C355C
+		// Token: 0x0600D309 RID: 54025 RVA: 0x004C8E84 File Offset: 0x004C7084
 		public AssetHandle<T> AcquireAssetAsync<T>(string uri, bool ignoreDlcEntitlements = false) where T : global::UnityEngine.Object
 		{
 			LoadManager.AssetRequestTask<T> assetRequestTask = LoadManager.LoadAsset<T>(uri, null, null, false, false, ignoreDlcEntitlements);
@@ -32,22 +32,22 @@ namespace AssetManagement
 			return this.TrackAsset<T>(uri, assetRequestTask);
 		}
 
-		// Token: 0x0600D1F6 RID: 53750
+		// Token: 0x0600D30A RID: 54026
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public abstract AssetHandle<T> TrackAsset<T>(string uri, LoadManager.AssetRequestTask<T> loadTask) where T : global::UnityEngine.Object;
 
-		// Token: 0x0600D1F7 RID: 53751
+		// Token: 0x0600D30B RID: 54027
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public abstract InstanceHandle<T> TrackInstance<T>(string uri, T instance) where T : global::UnityEngine.Object;
 
-		// Token: 0x0600D1F8 RID: 53752
+		// Token: 0x0600D30C RID: 54028
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public abstract void Release(string uri);
 
-		// Token: 0x0600D1F9 RID: 53753
+		// Token: 0x0600D30D RID: 54029
 		public abstract void Cleanup();
 
-		// Token: 0x0600D1FA RID: 53754 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600D30E RID: 54030 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AssetManager()
 		{

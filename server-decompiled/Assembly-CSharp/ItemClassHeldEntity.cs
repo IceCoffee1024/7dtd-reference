@@ -5,10 +5,10 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020005FC RID: 1532
+// Token: 0x02000603 RID: 1539
 public class ItemClassHeldEntity : ItemClass
 {
-	// Token: 0x06003228 RID: 12840 RVA: 0x00144C90 File Offset: 0x00142E90
+	// Token: 0x06003236 RID: 12854 RVA: 0x00145884 File Offset: 0x00143A84
 	public override void Init()
 	{
 		base.Init();
@@ -30,14 +30,14 @@ public class ItemClassHeldEntity : ItemClass
 		this.Properties.ParseString(ItemClassHeldEntity.PropFullStressEvent, ref this.FullStressEvent);
 	}
 
-	// Token: 0x06003229 RID: 12841 RVA: 0x00144E03 File Offset: 0x00143003
+	// Token: 0x06003237 RID: 12855 RVA: 0x001459F7 File Offset: 0x00143BF7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isMaxStress()
 	{
 		return GameManager.Instance.World.GetPrimaryPlayer().GetCVar(ItemClassHeldEntity.CVarEntityStress) >= 100f;
 	}
 
-	// Token: 0x0600322A RID: 12842 RVA: 0x00144E28 File Offset: 0x00143028
+	// Token: 0x06003238 RID: 12856 RVA: 0x00145A1C File Offset: 0x00143C1C
 	public void PlayStressSound()
 	{
 		if (this.isMaxStress())
@@ -48,7 +48,7 @@ public class ItemClassHeldEntity : ItemClass
 		Manager.PlayInsidePlayerHead(this.StressSound, -1, 0f, false, false);
 	}
 
-	// Token: 0x0600322B RID: 12843 RVA: 0x00144E5C File Offset: 0x0014305C
+	// Token: 0x06003239 RID: 12857 RVA: 0x00145A50 File Offset: 0x00143C50
 	public override void OnPlacedAsCatalyst(ItemInventoryData _data)
 	{
 		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -57,7 +57,7 @@ public class ItemClassHeldEntity : ItemClass
 		primaryPlayer.MountEvent.RemoveListener(new UnityAction<bool>(this.handleMountEvent));
 	}
 
-	// Token: 0x0600322C RID: 12844 RVA: 0x00144EA8 File Offset: 0x001430A8
+	// Token: 0x0600323A RID: 12858 RVA: 0x00145A9C File Offset: 0x00143C9C
 	public override bool CanMoveToSlot(XUiC_ItemStack.StackLocationTypes locationType, int slot)
 	{
 		bool flag = true;
@@ -72,7 +72,7 @@ public class ItemClassHeldEntity : ItemClass
 		return flag;
 	}
 
-	// Token: 0x0600322D RID: 12845 RVA: 0x00144EEC File Offset: 0x001430EC
+	// Token: 0x0600323B RID: 12859 RVA: 0x00145AE0 File Offset: 0x00143CE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal getLocalPlayer(ItemInventoryData _data)
 	{
@@ -84,7 +84,7 @@ public class ItemClassHeldEntity : ItemClass
 		return entityPlayerLocal;
 	}
 
-	// Token: 0x0600322E RID: 12846 RVA: 0x00144F24 File Offset: 0x00143124
+	// Token: 0x0600323C RID: 12860 RVA: 0x00145B18 File Offset: 0x00143D18
 	public override void OnHoldingUpdate(ItemInventoryData _data)
 	{
 		base.OnHoldingUpdate(_data);
@@ -95,7 +95,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x0600322F RID: 12847 RVA: 0x00144F58 File Offset: 0x00143158
+	// Token: 0x0600323D RID: 12861 RVA: 0x00145B4C File Offset: 0x00143D4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool HandleFullStress(EntityPlayerLocal epl)
 	{
@@ -106,7 +106,7 @@ public class ItemClassHeldEntity : ItemClass
 		return false;
 	}
 
-	// Token: 0x06003230 RID: 12848 RVA: 0x00144FA0 File Offset: 0x001431A0
+	// Token: 0x0600323E RID: 12862 RVA: 0x00145B94 File Offset: 0x00143D94
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateTimer(EntityPlayerLocal epl, float deltaTime, bool ignoreMove)
 	{
@@ -179,7 +179,7 @@ public class ItemClassHeldEntity : ItemClass
 		epl.emodel.avatarController.GetRightHandTransform();
 	}
 
-	// Token: 0x06003231 RID: 12849 RVA: 0x00145208 File Offset: 0x00143408
+	// Token: 0x0600323F RID: 12863 RVA: 0x00145DFC File Offset: 0x00143FFC
 	public override void StartHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		base.StartHolding(_data, _modelTransform);
@@ -200,7 +200,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x06003232 RID: 12850 RVA: 0x001452B2 File Offset: 0x001434B2
+	// Token: 0x06003240 RID: 12864 RVA: 0x00145EA6 File Offset: 0x001440A6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void addBuff(EntityPlayerLocal epl)
 	{
@@ -210,7 +210,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x06003233 RID: 12851 RVA: 0x001452D7 File Offset: 0x001434D7
+	// Token: 0x06003241 RID: 12865 RVA: 0x00145ECB File Offset: 0x001440CB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void removeBuff(EntityPlayerLocal epl)
 	{
@@ -220,14 +220,14 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x06003234 RID: 12852 RVA: 0x001452F5 File Offset: 0x001434F5
+	// Token: 0x06003242 RID: 12866 RVA: 0x00145EE9 File Offset: 0x001440E9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool hasBuff(EntityPlayerLocal epl)
 	{
 		return epl.Buffs.HasBuff(this.PickupPlayerBuff);
 	}
 
-	// Token: 0x06003235 RID: 12853 RVA: 0x00145308 File Offset: 0x00143508
+	// Token: 0x06003243 RID: 12867 RVA: 0x00145EFC File Offset: 0x001440FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleMountEvent(bool mounted)
 	{
@@ -242,7 +242,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x06003236 RID: 12854 RVA: 0x00145350 File Offset: 0x00143550
+	// Token: 0x06003244 RID: 12868 RVA: 0x00145F44 File Offset: 0x00144144
 	public void DropEntity(bool forceFullStress = false)
 	{
 		XUiC_DragAndDropWindow dragAndDropWindow = LocalPlayerUI.GetUIForPrimaryPlayer().xui.DragAndDropWindow;
@@ -279,7 +279,7 @@ public class ItemClassHeldEntity : ItemClass
 		primaryPlayer.RequestToSpawnEntityServer(entityCreationData, new Action<Entity>(ItemClassHeldEntity.entitySpawned), true);
 	}
 
-	// Token: 0x06003237 RID: 12855 RVA: 0x001454E0 File Offset: 0x001436E0
+	// Token: 0x06003245 RID: 12869 RVA: 0x001460D4 File Offset: 0x001442D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void entitySpawned(Entity requestedEntity)
 	{
@@ -300,7 +300,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x06003238 RID: 12856 RVA: 0x0014554C File Offset: 0x0014374C
+	// Token: 0x06003246 RID: 12870 RVA: 0x00146140 File Offset: 0x00144340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string getItemValueName(ItemValue itemValue)
 	{
@@ -313,7 +313,7 @@ public class ItemClassHeldEntity : ItemClass
 		return text;
 	}
 
-	// Token: 0x06003239 RID: 12857 RVA: 0x00145570 File Offset: 0x00143770
+	// Token: 0x06003247 RID: 12871 RVA: 0x00146164 File Offset: 0x00144364
 	public override void StopHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		base.StopHolding(_data, _modelTransform);
@@ -344,7 +344,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x0600323A RID: 12858 RVA: 0x0014563C File Offset: 0x0014383C
+	// Token: 0x06003248 RID: 12872 RVA: 0x00146230 File Offset: 0x00144430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void cleanupWaypoints(EntityPlayerLocal epl)
 	{
@@ -369,19 +369,19 @@ public class ItemClassHeldEntity : ItemClass
 		epl.SetCVar(ItemClassHeldEntity.CVarLastDroppedEntityId, -1f);
 	}
 
-	// Token: 0x0600323B RID: 12859 RVA: 0x00145744 File Offset: 0x00143944
+	// Token: 0x06003249 RID: 12873 RVA: 0x00146338 File Offset: 0x00144538
 	public static void CheckSpawnValues(EntityPlayerLocal epl)
 	{
 		ItemClassHeldEntity.cleanupWaypoints(epl);
 	}
 
-	// Token: 0x0600323C RID: 12860 RVA: 0x00145744 File Offset: 0x00143944
+	// Token: 0x0600324A RID: 12874 RVA: 0x00146338 File Offset: 0x00144538
 	public static void CleanupOnPlayerRemove(EntityPlayerLocal epl)
 	{
 		ItemClassHeldEntity.cleanupWaypoints(epl);
 	}
 
-	// Token: 0x0600323D RID: 12861 RVA: 0x0014574C File Offset: 0x0014394C
+	// Token: 0x0600324B RID: 12875 RVA: 0x00146340 File Offset: 0x00144540
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void waitForBuff(EntityPlayerLocal epl)
 	{
@@ -391,7 +391,7 @@ public class ItemClassHeldEntity : ItemClass
 		}
 	}
 
-	// Token: 0x0600323E RID: 12862 RVA: 0x00145771 File Offset: 0x00143971
+	// Token: 0x0600324C RID: 12876 RVA: 0x00146365 File Offset: 0x00144565
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator waitForBuffCoroutine()
 	{
@@ -429,170 +429,170 @@ public class ItemClassHeldEntity : ItemClass
 		yield break;
 	}
 
-	// Token: 0x04002759 RID: 10073
+	// Token: 0x04002774 RID: 10100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxFreakLevel = 10;
 
-	// Token: 0x0400275A RID: 10074
+	// Token: 0x04002775 RID: 10101
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float RunModifier = 3f;
 
-	// Token: 0x0400275B RID: 10075
+	// Token: 0x04002776 RID: 10102
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float SneakModifier = -0.1f;
 
-	// Token: 0x0400275C RID: 10076
+	// Token: 0x04002777 RID: 10103
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float DecayModifier = 1f;
 
-	// Token: 0x0400275D RID: 10077
+	// Token: 0x04002778 RID: 10104
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float FreakoutTime = 5000f;
 
-	// Token: 0x0400275E RID: 10078
+	// Token: 0x04002779 RID: 10105
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int StressMaxLevel = 10;
 
-	// Token: 0x0400275F RID: 10079
+	// Token: 0x0400277A RID: 10106
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string PickupPlayerBuff;
 
-	// Token: 0x04002760 RID: 10080
+	// Token: 0x0400277B RID: 10107
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string PickedUpEntityName;
 
-	// Token: 0x04002761 RID: 10081
+	// Token: 0x0400277C RID: 10108
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string PickedUpAltEntityName;
 
-	// Token: 0x04002762 RID: 10082
+	// Token: 0x0400277D RID: 10109
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string PickupSound = "chickenpickupdrop";
 
-	// Token: 0x04002763 RID: 10083
+	// Token: 0x0400277E RID: 10110
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string DropSound = "chickenpickupdrop";
 
-	// Token: 0x04002764 RID: 10084
+	// Token: 0x0400277F RID: 10111
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string DropSoundMaxStress = "chickenpickupdrop";
 
-	// Token: 0x04002765 RID: 10085
+	// Token: 0x04002780 RID: 10112
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string StressSound = "";
 
-	// Token: 0x04002766 RID: 10086
+	// Token: 0x04002781 RID: 10113
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string MaxStressSound = "";
 
-	// Token: 0x04002767 RID: 10087
+	// Token: 0x04002782 RID: 10114
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string PickupStressTimer = "stressTimer";
 
-	// Token: 0x04002768 RID: 10088
+	// Token: 0x04002783 RID: 10115
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string DropEntityBuff;
 
-	// Token: 0x04002769 RID: 10089
+	// Token: 0x04002784 RID: 10116
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string FullStressEvent = "";
 
-	// Token: 0x0400276A RID: 10090
+	// Token: 0x04002785 RID: 10117
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float FullStressDropStress = 40000f;
 
-	// Token: 0x0400276B RID: 10091
+	// Token: 0x04002786 RID: 10118
 	public static string CVarEntityStress = "%stressAmount";
 
-	// Token: 0x0400276C RID: 10092
+	// Token: 0x04002787 RID: 10119
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFreakoutTime = "FreakoutTime";
 
-	// Token: 0x0400276D RID: 10093
+	// Token: 0x04002788 RID: 10120
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStressMaxLevel = "StressMaxLevel";
 
-	// Token: 0x0400276E RID: 10094
+	// Token: 0x04002789 RID: 10121
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropSneakModifier = "SneakModifier";
 
-	// Token: 0x0400276F RID: 10095
+	// Token: 0x0400278A RID: 10122
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropRunModifier = "RunModifier";
 
-	// Token: 0x04002770 RID: 10096
+	// Token: 0x0400278B RID: 10123
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDecayModifier = "DecayModifier";
 
-	// Token: 0x04002771 RID: 10097
+	// Token: 0x0400278C RID: 10124
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickedUpEntityName = "PickedUpEntityName";
 
-	// Token: 0x04002772 RID: 10098
+	// Token: 0x0400278D RID: 10125
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickedUpAltEntityName = "PickedUpAltEntityName";
 
-	// Token: 0x04002773 RID: 10099
+	// Token: 0x0400278E RID: 10126
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickupStressCvar = "PickupStressCVar";
 
-	// Token: 0x04002774 RID: 10100
+	// Token: 0x0400278F RID: 10127
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickupSound = "PickupSound";
 
-	// Token: 0x04002775 RID: 10101
+	// Token: 0x04002790 RID: 10128
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDropSound = "DropSound";
 
-	// Token: 0x04002776 RID: 10102
+	// Token: 0x04002791 RID: 10129
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDropSoundMaxStress = "DropSoundMaxStress";
 
-	// Token: 0x04002777 RID: 10103
+	// Token: 0x04002792 RID: 10130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStressSound = "StressSound";
 
-	// Token: 0x04002778 RID: 10104
+	// Token: 0x04002793 RID: 10131
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropMaxStressSound = "MaxStressSound";
 
-	// Token: 0x04002779 RID: 10105
+	// Token: 0x04002794 RID: 10132
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickupPlayerBuff = "PickupPlayerBuff";
 
-	// Token: 0x0400277A RID: 10106
+	// Token: 0x04002795 RID: 10133
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDropEntityBuff = "DropEntityBuff";
 
-	// Token: 0x0400277B RID: 10107
+	// Token: 0x04002796 RID: 10134
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFullStressEvent = "FullStressEvent";
 
-	// Token: 0x0400277C RID: 10108
+	// Token: 0x04002797 RID: 10135
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFullStressDropStress = "FullStressDropStress";
 
-	// Token: 0x0400277D RID: 10109
+	// Token: 0x04002798 RID: 10136
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropEntityStressCVar = "EntityStressCVar";
 
-	// Token: 0x0400277E RID: 10110
+	// Token: 0x04002799 RID: 10137
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string CVarLastHeldEntitySlot = "_lastHeldEntitySlot";
 
-	// Token: 0x0400277F RID: 10111
+	// Token: 0x0400279A RID: 10138
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string CVarIsFullStress = ".isFullStress";
 
-	// Token: 0x04002780 RID: 10112
+	// Token: 0x0400279B RID: 10139
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string CVarUseAltVersion = ".UseAltEntity";
 
-	// Token: 0x04002781 RID: 10113
+	// Token: 0x0400279C RID: 10140
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string CVarLastDroppedEntityId = "_lastDroppedEntityId";
 
-	// Token: 0x04002782 RID: 10114
+	// Token: 0x0400279D RID: 10141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color darkerRed = new Color32(100, 0, 0, byte.MaxValue);
 }

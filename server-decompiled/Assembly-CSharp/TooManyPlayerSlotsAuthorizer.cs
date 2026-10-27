@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000789 RID: 1929
+// Token: 0x02000791 RID: 1937
 [Preserve]
 public class TooManyPlayerSlotsAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005F7 RID: 1527
-	// (get) Token: 0x060039AB RID: 14763 RVA: 0x00178524 File Offset: 0x00176724
+	// Token: 0x170005FB RID: 1531
+	// (get) Token: 0x060039C2 RID: 14786 RVA: 0x001794BC File Offset: 0x001776BC
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class TooManyPlayerSlotsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005F8 RID: 1528
-	// (get) Token: 0x060039AC RID: 14764 RVA: 0x00178380 File Offset: 0x00176580
+	// Token: 0x170005FC RID: 1532
+	// (get) Token: 0x060039C3 RID: 14787 RVA: 0x00179318 File Offset: 0x00177518
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class TooManyPlayerSlotsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005F9 RID: 1529
-	// (get) Token: 0x060039AD RID: 14765 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x170005FD RID: 1533
+	// (get) Token: 0x060039C4 RID: 14788 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,7 +36,7 @@ public class TooManyPlayerSlotsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060039AE RID: 14766 RVA: 0x00178528 File Offset: 0x00176728
+	// Token: 0x060039C5 RID: 14789 RVA: 0x001794C0 File Offset: 0x001776C0
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		int @int = GamePrefs.GetInt(EnumGamePrefs.ServerMaxPlayerCount);

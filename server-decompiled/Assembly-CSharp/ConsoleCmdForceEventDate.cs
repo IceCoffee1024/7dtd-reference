@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000219 RID: 537
+// Token: 0x0200021B RID: 539
 [Preserve]
 public class ConsoleCmdForceEventDate : ConsoleCmdAbstract
 {
-	// Token: 0x0600103A RID: 4154 RVA: 0x000673B8 File Offset: 0x000655B8
+	// Token: 0x0600103E RID: 4158 RVA: 0x00067588 File Offset: 0x00065788
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdForceEventDate : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000178 RID: 376
-	// (get) Token: 0x0600103B RID: 4155 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600103F RID: 4159 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,7 +24,7 @@ public class ConsoleCmdForceEventDate : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000179 RID: 377
-	// (get) Token: 0x0600103C RID: 4156 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001040 RID: 4160 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -33,14 +33,14 @@ public class ConsoleCmdForceEventDate : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600103D RID: 4157 RVA: 0x000673C8 File Offset: 0x000655C8
+	// Token: 0x06001041 RID: 4161 RVA: 0x00067598 File Offset: 0x00065798
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Specify date for testing event dates";
 	}
 
-	// Token: 0x0600103E RID: 4158 RVA: 0x000673D0 File Offset: 0x000655D0
+	// Token: 0x06001042 RID: 4162 RVA: 0x000675A0 File Offset: 0x000657A0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)

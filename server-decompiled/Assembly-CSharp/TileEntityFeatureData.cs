@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Token: 0x02000190 RID: 400
 public class TileEntityFeatureData
 {
-	// Token: 0x06000C1E RID: 3102 RVA: 0x0004C4AB File Offset: 0x0004A6AB
+	// Token: 0x06000C1E RID: 3102 RVA: 0x0004C46B File Offset: 0x0004A66B
 	public TileEntityFeatureData(TileEntityCompositeData _parent, string _name, int _customOrder, Type _type, DynamicProperties _props)
 	{
 		this.Parent = _parent;
@@ -15,7 +15,7 @@ public class TileEntityFeatureData
 		this.Props = _props;
 	}
 
-	// Token: 0x06000C1F RID: 3103 RVA: 0x0004C4E9 File Offset: 0x0004A6E9
+	// Token: 0x06000C1F RID: 3103 RVA: 0x0004C4A9 File Offset: 0x0004A6A9
 	public ITileEntityFeature InstantiateModule()
 	{
 		return ReflectionHelpers.Instantiate<ITileEntityFeature>(this.Type);
@@ -48,7 +48,7 @@ public class TileEntityFeatureData
 		{
 		}
 
-		// Token: 0x06000C21 RID: 3105 RVA: 0x0004C4F6 File Offset: 0x0004A6F6
+		// Token: 0x06000C21 RID: 3105 RVA: 0x0004C4B6 File Offset: 0x0004A6B6
 		public int Compare(TileEntityFeatureData _x, TileEntityFeatureData _y)
 		{
 			if (_x == _y)

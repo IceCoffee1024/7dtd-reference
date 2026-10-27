@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001357 RID: 4951
+// Token: 0x02001369 RID: 4969
 public class FastWireNode : MonoBehaviour, IWireNode
 {
-	// Token: 0x170012B3 RID: 4787
-	// (get) Token: 0x06009BE6 RID: 39910 RVA: 0x003AE501 File Offset: 0x003AC701
-	// (set) Token: 0x06009BE7 RID: 39911 RVA: 0x003AE509 File Offset: 0x003AC709
+	// Token: 0x170012BF RID: 4799
+	// (get) Token: 0x06009C3E RID: 39998 RVA: 0x003B0905 File Offset: 0x003AEB05
+	// (set) Token: 0x06009C3F RID: 39999 RVA: 0x003B090D File Offset: 0x003AEB0D
 	public Vector3 StartPosition
 	{
 		get
@@ -20,9 +20,9 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x170012B4 RID: 4788
-	// (get) Token: 0x06009BE8 RID: 39912 RVA: 0x003AE512 File Offset: 0x003AC712
-	// (set) Token: 0x06009BE9 RID: 39913 RVA: 0x003AE51A File Offset: 0x003AC71A
+	// Token: 0x170012C0 RID: 4800
+	// (get) Token: 0x06009C40 RID: 40000 RVA: 0x003B0916 File Offset: 0x003AEB16
+	// (set) Token: 0x06009C41 RID: 40001 RVA: 0x003B091E File Offset: 0x003AEB1E
 	public Vector3 EndPosition
 	{
 		get
@@ -35,7 +35,7 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009BEA RID: 39914 RVA: 0x003AE524 File Offset: 0x003AC724
+	// Token: 0x06009C42 RID: 40002 RVA: 0x003B0928 File Offset: 0x003AEB28
 	public void Awake()
 	{
 		if (FastWireNode.BaseMaterial == null)
@@ -60,7 +60,7 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		Utils.SetColliderLayerRecursively(base.gameObject, 29);
 	}
 
-	// Token: 0x06009BEB RID: 39915 RVA: 0x003AE5F0 File Offset: 0x003AC7F0
+	// Token: 0x06009C43 RID: 40003 RVA: 0x003B09F4 File Offset: 0x003AEBF4
 	public void BuildMesh()
 	{
 		Vector3 vector = this.EndPosition + this.EndOffset;
@@ -245,7 +245,7 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009BEC RID: 39916 RVA: 0x003AEE82 File Offset: 0x003AD082
+	// Token: 0x06009C44 RID: 40004 RVA: 0x003B1286 File Offset: 0x003AF486
 	public void SetWireColor(Color color)
 	{
 		if (this.meshRenderer.material == null)
@@ -256,7 +256,7 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		this.wireColor = color;
 	}
 
-	// Token: 0x06009BED RID: 39917 RVA: 0x003AEEB5 File Offset: 0x003AD0B5
+	// Token: 0x06009C45 RID: 40005 RVA: 0x003B12B9 File Offset: 0x003AF4B9
 	public void SetPulseSpeed(float speed)
 	{
 		if (this.meshRenderer.material == null)
@@ -266,13 +266,13 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		this.meshRenderer.material.SetFloat("_PulseSpeed", speed);
 	}
 
-	// Token: 0x06009BEE RID: 39918 RVA: 0x003AEEE1 File Offset: 0x003AD0E1
+	// Token: 0x06009C46 RID: 40006 RVA: 0x003B12E5 File Offset: 0x003AF4E5
 	public void SetPulseColor(Color color)
 	{
 		this.pulseColor = color;
 	}
 
-	// Token: 0x06009BEF RID: 39919 RVA: 0x003AEEEA File Offset: 0x003AD0EA
+	// Token: 0x06009C47 RID: 40007 RVA: 0x003B12EE File Offset: 0x003AF4EE
 	public void TogglePulse(bool isOn)
 	{
 		if (this.meshRenderer.material == null)
@@ -282,85 +282,85 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		this.meshRenderer.material.SetColor("_PulseColor", isOn ? this.pulseColor : this.wireColor);
 	}
 
-	// Token: 0x06009BF0 RID: 39920 RVA: 0x003AEF26 File Offset: 0x003AD126
+	// Token: 0x06009C48 RID: 40008 RVA: 0x003B132A File Offset: 0x003AF52A
 	public void SetStartPosition(Vector3 pos)
 	{
 		this.StartPosition = pos;
 	}
 
-	// Token: 0x06009BF1 RID: 39921 RVA: 0x003AEF2F File Offset: 0x003AD12F
+	// Token: 0x06009C49 RID: 40009 RVA: 0x003B1333 File Offset: 0x003AF533
 	public void SetStartPositionOffset(Vector3 pos)
 	{
 		this.StartOffset = pos;
 	}
 
-	// Token: 0x06009BF2 RID: 39922 RVA: 0x003AEF38 File Offset: 0x003AD138
+	// Token: 0x06009C4A RID: 40010 RVA: 0x003B133C File Offset: 0x003AF53C
 	public void SetEndPosition(Vector3 pos)
 	{
 		this.EndPosition = pos;
 	}
 
-	// Token: 0x06009BF3 RID: 39923 RVA: 0x003AEF41 File Offset: 0x003AD141
+	// Token: 0x06009C4B RID: 40011 RVA: 0x003B1345 File Offset: 0x003AF545
 	public void SetEndPositionOffset(Vector3 pos)
 	{
 		this.EndOffset = pos;
 	}
 
-	// Token: 0x06009BF4 RID: 39924 RVA: 0x003AEF4A File Offset: 0x003AD14A
+	// Token: 0x06009C4C RID: 40012 RVA: 0x003B134E File Offset: 0x003AF54E
 	public void SetWireDip(float _dist)
 	{
 		this.maxWireDip = _dist;
 	}
 
-	// Token: 0x06009BF5 RID: 39925 RVA: 0x003AEF53 File Offset: 0x003AD153
+	// Token: 0x06009C4D RID: 40013 RVA: 0x003B1357 File Offset: 0x003AF557
 	public float GetWireDip()
 	{
 		return this.maxWireDip;
 	}
 
-	// Token: 0x06009BF6 RID: 39926 RVA: 0x003AEF5B File Offset: 0x003AD15B
+	// Token: 0x06009C4E RID: 40014 RVA: 0x003B135F File Offset: 0x003AF55F
 	public void SetWireRadius(float _radius)
 	{
 		this.wireRadius = _radius;
 	}
 
-	// Token: 0x06009BF7 RID: 39927 RVA: 0x003AEF64 File Offset: 0x003AD164
+	// Token: 0x06009C4F RID: 40015 RVA: 0x003B1368 File Offset: 0x003AF568
 	public void SetWireCanHide(bool _canHide)
 	{
 		this.canHide = _canHide;
 	}
 
-	// Token: 0x06009BF8 RID: 39928 RVA: 0x003AEF6D File Offset: 0x003AD16D
+	// Token: 0x06009C50 RID: 40016 RVA: 0x003B1371 File Offset: 0x003AF571
 	public Vector3 GetStartPosition()
 	{
 		return this.StartPosition;
 	}
 
-	// Token: 0x06009BF9 RID: 39929 RVA: 0x003AEF75 File Offset: 0x003AD175
+	// Token: 0x06009C51 RID: 40017 RVA: 0x003B1379 File Offset: 0x003AF579
 	public Vector3 GetStartPositionOffset()
 	{
 		return this.StartOffset;
 	}
 
-	// Token: 0x06009BFA RID: 39930 RVA: 0x003AEF7D File Offset: 0x003AD17D
+	// Token: 0x06009C52 RID: 40018 RVA: 0x003B1381 File Offset: 0x003AF581
 	public Vector3 GetEndPosition()
 	{
 		return this.EndPosition;
 	}
 
-	// Token: 0x06009BFB RID: 39931 RVA: 0x003AEF85 File Offset: 0x003AD185
+	// Token: 0x06009C53 RID: 40019 RVA: 0x003B1389 File Offset: 0x003AF589
 	public Vector3 GetEndPositionOffset()
 	{
 		return this.EndOffset;
 	}
 
-	// Token: 0x06009BFC RID: 39932 RVA: 0x003AEF8D File Offset: 0x003AD18D
+	// Token: 0x06009C54 RID: 40020 RVA: 0x003B1391 File Offset: 0x003AF591
 	public GameObject GetGameObject()
 	{
 		return base.gameObject;
 	}
 
-	// Token: 0x06009BFD RID: 39933 RVA: 0x003AEF95 File Offset: 0x003AD195
+	// Token: 0x06009C55 RID: 40021 RVA: 0x003B1399 File Offset: 0x003AF599
 	public void SetVisible(bool _visible)
 	{
 		if (this.canHide)
@@ -371,13 +371,13 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06009BFE RID: 39934 RVA: 0x003AEFB8 File Offset: 0x003AD1B8
+	// Token: 0x06009C56 RID: 40022 RVA: 0x003B13BC File Offset: 0x003AF5BC
 	public Bounds GetBounds()
 	{
 		return this.mesh.bounds;
 	}
 
-	// Token: 0x06009BFF RID: 39935 RVA: 0x003AEFC5 File Offset: 0x003AD1C5
+	// Token: 0x06009C57 RID: 40023 RVA: 0x003B13C9 File Offset: 0x003AF5C9
 	public void Reset()
 	{
 		this.maxWireDip = 0.25f;
@@ -385,92 +385,92 @@ public class FastWireNode : MonoBehaviour, IWireNode
 		this.pulseColor = Color.yellow;
 	}
 
-	// Token: 0x0400758F RID: 30095
+	// Token: 0x040075D0 RID: 30160
 	public const int cLayerMaskRayCast = 65537;
 
-	// Token: 0x04007590 RID: 30096
+	// Token: 0x040075D1 RID: 30161
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int NODE_COUNT = 15;
 
-	// Token: 0x04007591 RID: 30097
+	// Token: 0x040075D2 RID: 30162
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const float BASE_WIRE_RADIUS = 0.01f;
 
-	// Token: 0x04007592 RID: 30098
+	// Token: 0x040075D3 RID: 30163
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const float BASE_MIN_WIRE_DIP = 0f;
 
-	// Token: 0x04007593 RID: 30099
+	// Token: 0x040075D4 RID: 30164
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const float BASE_MAX_WIRE_DIP = 0.25f;
 
-	// Token: 0x04007594 RID: 30100
+	// Token: 0x040075D5 RID: 30165
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static Material BaseMaterial;
 
-	// Token: 0x04007595 RID: 30101
+	// Token: 0x040075D6 RID: 30166
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float maxWireDip = 0.25f;
 
-	// Token: 0x04007596 RID: 30102
+	// Token: 0x040075D7 RID: 30167
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float wireRadius = 0.01f;
 
-	// Token: 0x04007597 RID: 30103
+	// Token: 0x040075D8 RID: 30168
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 startPosition;
 
-	// Token: 0x04007598 RID: 30104
+	// Token: 0x040075D9 RID: 30169
 	public Vector3 StartOffset;
 
-	// Token: 0x04007599 RID: 30105
+	// Token: 0x040075DA RID: 30170
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 endPosition;
 
-	// Token: 0x0400759A RID: 30106
+	// Token: 0x040075DB RID: 30171
 	public Vector3 EndOffset;
 
-	// Token: 0x0400759B RID: 30107
+	// Token: 0x040075DC RID: 30172
 	public Color pulseColor = Color.yellow;
 
-	// Token: 0x0400759C RID: 30108
+	// Token: 0x040075DD RID: 30173
 	public Color wireColor = Color.black;
 
-	// Token: 0x0400759D RID: 30109
+	// Token: 0x040075DE RID: 30174
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool canHide = true;
 
-	// Token: 0x0400759E RID: 30110
+	// Token: 0x040075DF RID: 30175
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Mesh mesh;
 
-	// Token: 0x0400759F RID: 30111
+	// Token: 0x040075E0 RID: 30176
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshFilter meshFilter;
 
-	// Token: 0x040075A0 RID: 30112
+	// Token: 0x040075E1 RID: 30177
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshCollider meshCollider;
 
-	// Token: 0x040075A1 RID: 30113
+	// Token: 0x040075E2 RID: 30178
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshRenderer meshRenderer;
 
-	// Token: 0x040075A2 RID: 30114
+	// Token: 0x040075E3 RID: 30179
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color prevWireColor = Color.white;

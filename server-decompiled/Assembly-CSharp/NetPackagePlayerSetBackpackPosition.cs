@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200082F RID: 2095
+// Token: 0x02000839 RID: 2105
 [Preserve]
 public class NetPackagePlayerSetBackpackPosition : NetPackage
 {
-	// Token: 0x06003D3F RID: 15679 RVA: 0x0018603A File Offset: 0x0018423A
+	// Token: 0x06003D62 RID: 15714 RVA: 0x0018713E File Offset: 0x0018533E
 	public NetPackagePlayerSetBackpackPosition Setup(int _playerId, List<Vector3i> _positions)
 	{
 		this.playerId = _playerId;
@@ -14,7 +14,7 @@ public class NetPackagePlayerSetBackpackPosition : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D40 RID: 15680 RVA: 0x0018604C File Offset: 0x0018424C
+	// Token: 0x06003D63 RID: 15715 RVA: 0x00187150 File Offset: 0x00185350
 	public override void read(PooledBinaryReader _br)
 	{
 		this.playerId = _br.ReadInt32();
@@ -29,7 +29,7 @@ public class NetPackagePlayerSetBackpackPosition : NetPackage
 		}
 	}
 
-	// Token: 0x06003D41 RID: 15681 RVA: 0x00186098 File Offset: 0x00184298
+	// Token: 0x06003D64 RID: 15716 RVA: 0x0018719C File Offset: 0x0018539C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -46,7 +46,7 @@ public class NetPackagePlayerSetBackpackPosition : NetPackage
 		}
 	}
 
-	// Token: 0x06003D42 RID: 15682 RVA: 0x00186104 File Offset: 0x00184304
+	// Token: 0x06003D65 RID: 15717 RVA: 0x00187208 File Offset: 0x00185408
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (GameManager.Instance.World == null)
@@ -60,8 +60,8 @@ public class NetPackagePlayerSetBackpackPosition : NetPackage
 		}
 	}
 
-	// Token: 0x1700068C RID: 1676
-	// (get) Token: 0x06003D43 RID: 15683 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000692 RID: 1682
+	// (get) Token: 0x06003D66 RID: 15718 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -70,11 +70,11 @@ public class NetPackagePlayerSetBackpackPosition : NetPackage
 		}
 	}
 
-	// Token: 0x040031BF RID: 12735
+	// Token: 0x040031DF RID: 12767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerId;
 
-	// Token: 0x040031C0 RID: 12736
+	// Token: 0x040031E0 RID: 12768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> positions;
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-// Token: 0x02000A11 RID: 2577
+// Token: 0x02000A1B RID: 2587
 public static class SdFile
 {
-	// Token: 0x06004CBF RID: 19647 RVA: 0x001DABD0 File Offset: 0x001D8DD0
+	// Token: 0x06004CE3 RID: 19683 RVA: 0x001DBCB8 File Offset: 0x001D9EB8
 	public static StreamReader OpenText(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -17,14 +17,14 @@ public static class SdFile
 		return File.OpenText(path);
 	}
 
-	// Token: 0x06004CC0 RID: 19648 RVA: 0x001DABF4 File Offset: 0x001D8DF4
+	// Token: 0x06004CE4 RID: 19684 RVA: 0x001DBCDC File Offset: 0x001D9EDC
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static StreamReader ManagedOpenText(SaveDataManagedPath path)
 	{
 		return new StreamReader(SdFile.ManagedOpen(path, FileMode.Open, FileAccess.Read, FileShare.Read));
 	}
 
-	// Token: 0x06004CC1 RID: 19649 RVA: 0x001DAC04 File Offset: 0x001D8E04
+	// Token: 0x06004CE5 RID: 19685 RVA: 0x001DBCEC File Offset: 0x001D9EEC
 	public static StreamWriter CreateText(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -35,14 +35,14 @@ public static class SdFile
 		return File.CreateText(path);
 	}
 
-	// Token: 0x06004CC2 RID: 19650 RVA: 0x001DAC28 File Offset: 0x001D8E28
+	// Token: 0x06004CE6 RID: 19686 RVA: 0x001DBD10 File Offset: 0x001D9F10
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static StreamWriter ManagedCreateText(SaveDataManagedPath path)
 	{
 		return new StreamWriter(SdFile.ManagedOpen(path, FileMode.Create, FileAccess.Write, FileShare.Read));
 	}
 
-	// Token: 0x06004CC3 RID: 19651 RVA: 0x001DAC38 File Offset: 0x001D8E38
+	// Token: 0x06004CE7 RID: 19687 RVA: 0x001DBD20 File Offset: 0x001D9F20
 	public static StreamWriter AppendText(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -53,14 +53,14 @@ public static class SdFile
 		return File.AppendText(path);
 	}
 
-	// Token: 0x06004CC4 RID: 19652 RVA: 0x001DAC5C File Offset: 0x001D8E5C
+	// Token: 0x06004CE8 RID: 19688 RVA: 0x001DBD44 File Offset: 0x001D9F44
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static StreamWriter ManagedAppendText(SaveDataManagedPath path)
 	{
 		return new StreamWriter(SdFile.ManagedOpen(path, FileMode.Append, FileAccess.Write, FileShare.Read));
 	}
 
-	// Token: 0x06004CC5 RID: 19653 RVA: 0x001DAC6C File Offset: 0x001D8E6C
+	// Token: 0x06004CE9 RID: 19689 RVA: 0x001DBD54 File Offset: 0x001D9F54
 	public static void Copy(string sourceFileName, string destFileName)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -85,7 +85,7 @@ public static class SdFile
 		File.Copy(sourceFileName, destFileName);
 	}
 
-	// Token: 0x06004CC6 RID: 19654 RVA: 0x001DACB8 File Offset: 0x001D8EB8
+	// Token: 0x06004CEA RID: 19690 RVA: 0x001DBDA0 File Offset: 0x001D9FA0
 	public static void Copy(string sourceFileName, string destFileName, bool overwrite)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -110,7 +110,7 @@ public static class SdFile
 		File.Copy(sourceFileName, destFileName, overwrite);
 	}
 
-	// Token: 0x06004CC7 RID: 19655 RVA: 0x001DAD08 File Offset: 0x001D8F08
+	// Token: 0x06004CEB RID: 19691 RVA: 0x001DBDF0 File Offset: 0x001D9FF0
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void ManagedToManagedCopy(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName, bool overwrite)
 	{
@@ -123,7 +123,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CC8 RID: 19656 RVA: 0x001DAD6C File Offset: 0x001D8F6C
+	// Token: 0x06004CEC RID: 19692 RVA: 0x001DBE54 File Offset: 0x001DA054
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void ManagedToUnmanagedCopy(SaveDataManagedPath sourceFileName, string destFileName, bool overwrite)
 	{
@@ -136,7 +136,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CC9 RID: 19657 RVA: 0x001DADD0 File Offset: 0x001D8FD0
+	// Token: 0x06004CED RID: 19693 RVA: 0x001DBEB8 File Offset: 0x001DA0B8
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void UnmanagedToManagedCopy(string sourceFileName, SaveDataManagedPath destFileName, bool overwrite)
 	{
@@ -149,7 +149,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CCA RID: 19658 RVA: 0x001DAE34 File Offset: 0x001D9034
+	// Token: 0x06004CEE RID: 19694 RVA: 0x001DBF1C File Offset: 0x001DA11C
 	public static Stream Create(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -160,14 +160,14 @@ public static class SdFile
 		return File.Create(path);
 	}
 
-	// Token: 0x06004CCB RID: 19659 RVA: 0x001DAE58 File Offset: 0x001D9058
+	// Token: 0x06004CEF RID: 19695 RVA: 0x001DBF40 File Offset: 0x001DA140
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static Stream ManagedCreate(SaveDataManagedPath path)
 	{
 		return SdFile.ManagedOpen(path, FileMode.Create, FileAccess.ReadWrite, FileShare.None);
 	}
 
-	// Token: 0x06004CCC RID: 19660 RVA: 0x001DAE64 File Offset: 0x001D9064
+	// Token: 0x06004CF0 RID: 19696 RVA: 0x001DBF4C File Offset: 0x001DA14C
 	public static void Delete(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -179,14 +179,14 @@ public static class SdFile
 		File.Delete(path);
 	}
 
-	// Token: 0x06004CCD RID: 19661 RVA: 0x001DAE88 File Offset: 0x001D9088
+	// Token: 0x06004CF1 RID: 19697 RVA: 0x001DBF70 File Offset: 0x001DA170
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void ManagedDelete(SaveDataManagedPath path)
 	{
 		SaveDataUtils.SaveDataManager.ManagedFileDelete(path);
 	}
 
-	// Token: 0x06004CCE RID: 19662 RVA: 0x001DAE98 File Offset: 0x001D9098
+	// Token: 0x06004CF2 RID: 19698 RVA: 0x001DBF80 File Offset: 0x001DA180
 	public static bool Exists(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -197,14 +197,14 @@ public static class SdFile
 		return File.Exists(path);
 	}
 
-	// Token: 0x06004CCF RID: 19663 RVA: 0x001DAEBC File Offset: 0x001D90BC
+	// Token: 0x06004CF3 RID: 19699 RVA: 0x001DBFA4 File Offset: 0x001DA1A4
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool ManagedExists(SaveDataManagedPath path)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedFileExists(path);
 	}
 
-	// Token: 0x06004CD0 RID: 19664 RVA: 0x001DAECC File Offset: 0x001D90CC
+	// Token: 0x06004CF4 RID: 19700 RVA: 0x001DBFB4 File Offset: 0x001DA1B4
 	public static Stream Open(string path, FileMode mode)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -215,7 +215,7 @@ public static class SdFile
 		return File.Open(path, mode);
 	}
 
-	// Token: 0x06004CD1 RID: 19665 RVA: 0x001DAEFC File Offset: 0x001D90FC
+	// Token: 0x06004CF5 RID: 19701 RVA: 0x001DBFE4 File Offset: 0x001DA1E4
 	public static Stream Open(string path, FileMode mode, FileAccess access)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -226,7 +226,7 @@ public static class SdFile
 		return File.Open(path, mode, access);
 	}
 
-	// Token: 0x06004CD2 RID: 19666 RVA: 0x001DAF28 File Offset: 0x001D9128
+	// Token: 0x06004CF6 RID: 19702 RVA: 0x001DC010 File Offset: 0x001DA210
 	public static Stream Open(string path, FileMode mode, FileAccess access, FileShare share)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -237,14 +237,14 @@ public static class SdFile
 		return File.Open(path, mode, access, share);
 	}
 
-	// Token: 0x06004CD3 RID: 19667 RVA: 0x001DAF52 File Offset: 0x001D9152
+	// Token: 0x06004CF7 RID: 19703 RVA: 0x001DC03A File Offset: 0x001DA23A
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static Stream ManagedOpen(SaveDataManagedPath path, FileMode mode, FileAccess access, FileShare share)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedFileOpen(path, mode, access, share);
 	}
 
-	// Token: 0x06004CD4 RID: 19668 RVA: 0x001DAF64 File Offset: 0x001D9164
+	// Token: 0x06004CF8 RID: 19704 RVA: 0x001DC04C File Offset: 0x001DA24C
 	public static DateTime GetLastWriteTime(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -255,14 +255,14 @@ public static class SdFile
 		return File.GetLastWriteTime(path);
 	}
 
-	// Token: 0x06004CD5 RID: 19669 RVA: 0x001DAF88 File Offset: 0x001D9188
+	// Token: 0x06004CF9 RID: 19705 RVA: 0x001DC070 File Offset: 0x001DA270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime ManagedGetLastWriteTime(SaveDataManagedPath path)
 	{
 		return SdFile.ManagedGetLastWriteTimeUtc(path).ToLocalTime();
 	}
 
-	// Token: 0x06004CD6 RID: 19670 RVA: 0x001DAFA4 File Offset: 0x001D91A4
+	// Token: 0x06004CFA RID: 19706 RVA: 0x001DC08C File Offset: 0x001DA28C
 	public static DateTime GetLastWriteTimeUtc(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -273,14 +273,14 @@ public static class SdFile
 		return File.GetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004CD7 RID: 19671 RVA: 0x001DAFC8 File Offset: 0x001D91C8
+	// Token: 0x06004CFB RID: 19707 RVA: 0x001DC0B0 File Offset: 0x001DA2B0
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static DateTime ManagedGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedFileGetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004CD8 RID: 19672 RVA: 0x001DAFD8 File Offset: 0x001D91D8
+	// Token: 0x06004CFC RID: 19708 RVA: 0x001DC0C0 File Offset: 0x001DA2C0
 	public static Stream OpenRead(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -291,7 +291,7 @@ public static class SdFile
 		return File.OpenRead(path);
 	}
 
-	// Token: 0x06004CD9 RID: 19673 RVA: 0x001DB000 File Offset: 0x001D9200
+	// Token: 0x06004CFD RID: 19709 RVA: 0x001DC0E8 File Offset: 0x001DA2E8
 	public static Stream OpenWrite(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -302,7 +302,7 @@ public static class SdFile
 		return File.OpenWrite(path);
 	}
 
-	// Token: 0x06004CDA RID: 19674 RVA: 0x001DB028 File Offset: 0x001D9228
+	// Token: 0x06004CFE RID: 19710 RVA: 0x001DC110 File Offset: 0x001DA310
 	public static string ReadAllText(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -313,7 +313,7 @@ public static class SdFile
 		return File.ReadAllText(path);
 	}
 
-	// Token: 0x06004CDB RID: 19675 RVA: 0x001DB054 File Offset: 0x001D9254
+	// Token: 0x06004CFF RID: 19711 RVA: 0x001DC13C File Offset: 0x001DA33C
 	public static string ReadAllText(string path, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -324,7 +324,7 @@ public static class SdFile
 		return File.ReadAllText(path, encoding);
 	}
 
-	// Token: 0x06004CDC RID: 19676 RVA: 0x001DB07C File Offset: 0x001D927C
+	// Token: 0x06004D00 RID: 19712 RVA: 0x001DC164 File Offset: 0x001DA364
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static string ManagedReadAllText(SaveDataManagedPath path, Encoding encoding)
 	{
@@ -339,7 +339,7 @@ public static class SdFile
 		return text;
 	}
 
-	// Token: 0x06004CDD RID: 19677 RVA: 0x001DB0D8 File Offset: 0x001D92D8
+	// Token: 0x06004D01 RID: 19713 RVA: 0x001DC1C0 File Offset: 0x001DA3C0
 	public static void WriteAllText(string path, string contents)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -351,7 +351,7 @@ public static class SdFile
 		File.WriteAllText(path, contents);
 	}
 
-	// Token: 0x06004CDE RID: 19678 RVA: 0x001DB104 File Offset: 0x001D9304
+	// Token: 0x06004D02 RID: 19714 RVA: 0x001DC1EC File Offset: 0x001DA3EC
 	public static void WriteAllText(string path, string contents, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -363,7 +363,7 @@ public static class SdFile
 		File.WriteAllText(path, contents, encoding);
 	}
 
-	// Token: 0x06004CDF RID: 19679 RVA: 0x001DB12C File Offset: 0x001D932C
+	// Token: 0x06004D03 RID: 19715 RVA: 0x001DC214 File Offset: 0x001DA414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ManagedWriteAllText(SaveDataManagedPath path, string contents, Encoding encoding)
 	{
@@ -376,7 +376,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CE0 RID: 19680 RVA: 0x001DB184 File Offset: 0x001D9384
+	// Token: 0x06004D04 RID: 19716 RVA: 0x001DC26C File Offset: 0x001DA46C
 	public static byte[] ReadAllBytes(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -387,7 +387,7 @@ public static class SdFile
 		return File.ReadAllBytes(path);
 	}
 
-	// Token: 0x06004CE1 RID: 19681 RVA: 0x001DB1A8 File Offset: 0x001D93A8
+	// Token: 0x06004D05 RID: 19717 RVA: 0x001DC290 File Offset: 0x001DA490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] ManagedReadAllBytes(SaveDataManagedPath path)
 	{
@@ -403,7 +403,7 @@ public static class SdFile
 		return array;
 	}
 
-	// Token: 0x06004CE2 RID: 19682 RVA: 0x001DB20C File Offset: 0x001D940C
+	// Token: 0x06004D06 RID: 19718 RVA: 0x001DC2F4 File Offset: 0x001DA4F4
 	public static void WriteAllBytes(string path, byte[] bytes)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -415,7 +415,7 @@ public static class SdFile
 		File.WriteAllBytes(path, bytes);
 	}
 
-	// Token: 0x06004CE3 RID: 19683 RVA: 0x001DB234 File Offset: 0x001D9434
+	// Token: 0x06004D07 RID: 19719 RVA: 0x001DC31C File Offset: 0x001DA51C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ManagedWriteAllBytes(SaveDataManagedPath path, byte[] bytes)
 	{
@@ -425,7 +425,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CE4 RID: 19684 RVA: 0x001DB274 File Offset: 0x001D9474
+	// Token: 0x06004D08 RID: 19720 RVA: 0x001DC35C File Offset: 0x001DA55C
 	public static string[] ReadAllLines(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -436,7 +436,7 @@ public static class SdFile
 		return File.ReadAllLines(path);
 	}
 
-	// Token: 0x06004CE5 RID: 19685 RVA: 0x001DB2A0 File Offset: 0x001D94A0
+	// Token: 0x06004D09 RID: 19721 RVA: 0x001DC388 File Offset: 0x001DA588
 	public static string[] ReadAllLines(string path, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -447,7 +447,7 @@ public static class SdFile
 		return File.ReadAllLines(path, encoding);
 	}
 
-	// Token: 0x06004CE6 RID: 19686 RVA: 0x001DB2C8 File Offset: 0x001D94C8
+	// Token: 0x06004D0A RID: 19722 RVA: 0x001DC3B0 File Offset: 0x001DA5B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] ManagedReadAllLines(SaveDataManagedPath path, Encoding encoding)
 	{
@@ -472,7 +472,7 @@ public static class SdFile
 		return array;
 	}
 
-	// Token: 0x06004CE7 RID: 19687 RVA: 0x001DB33C File Offset: 0x001D953C
+	// Token: 0x06004D0B RID: 19723 RVA: 0x001DC424 File Offset: 0x001DA624
 	public static IEnumerable<string> ReadLines(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -483,7 +483,7 @@ public static class SdFile
 		return File.ReadLines(path);
 	}
 
-	// Token: 0x06004CE8 RID: 19688 RVA: 0x001DB368 File Offset: 0x001D9568
+	// Token: 0x06004D0C RID: 19724 RVA: 0x001DC450 File Offset: 0x001DA650
 	public static IEnumerable<string> ReadLines(string path, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -494,7 +494,7 @@ public static class SdFile
 		return File.ReadLines(path, encoding);
 	}
 
-	// Token: 0x06004CE9 RID: 19689 RVA: 0x001DB38E File Offset: 0x001D958E
+	// Token: 0x06004D0D RID: 19725 RVA: 0x001DC476 File Offset: 0x001DA676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<string> ManagedReadLines(SaveDataManagedPath path, Encoding encoding)
 	{
@@ -504,7 +504,7 @@ public static class SdFile
 		return <ManagedReadLines>d__;
 	}
 
-	// Token: 0x06004CEA RID: 19690 RVA: 0x001DB3A8 File Offset: 0x001D95A8
+	// Token: 0x06004D0E RID: 19726 RVA: 0x001DC490 File Offset: 0x001DA690
 	public static void WriteAllLines(string path, string[] contents)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -516,7 +516,7 @@ public static class SdFile
 		File.WriteAllLines(path, contents);
 	}
 
-	// Token: 0x06004CEB RID: 19691 RVA: 0x001DB3D4 File Offset: 0x001D95D4
+	// Token: 0x06004D0F RID: 19727 RVA: 0x001DC4BC File Offset: 0x001DA6BC
 	public static void WriteAllLines(string path, string[] contents, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -528,7 +528,7 @@ public static class SdFile
 		File.WriteAllLines(path, contents, encoding);
 	}
 
-	// Token: 0x06004CEC RID: 19692 RVA: 0x001DB3FC File Offset: 0x001D95FC
+	// Token: 0x06004D10 RID: 19728 RVA: 0x001DC4E4 File Offset: 0x001DA6E4
 	public static void WriteAllLines(string path, IEnumerable<string> contents)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -540,7 +540,7 @@ public static class SdFile
 		File.WriteAllLines(path, contents);
 	}
 
-	// Token: 0x06004CED RID: 19693 RVA: 0x001DB428 File Offset: 0x001D9628
+	// Token: 0x06004D11 RID: 19729 RVA: 0x001DC510 File Offset: 0x001DA710
 	public static void WriteAllLines(string path, IEnumerable<string> contents, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -552,7 +552,7 @@ public static class SdFile
 		File.WriteAllLines(path, contents, encoding);
 	}
 
-	// Token: 0x06004CEE RID: 19694 RVA: 0x001DB450 File Offset: 0x001D9650
+	// Token: 0x06004D12 RID: 19730 RVA: 0x001DC538 File Offset: 0x001DA738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ManagedWriteAllLines(SaveDataManagedPath path, IEnumerable<string> contents, Encoding encoding)
 	{
@@ -565,7 +565,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CEF RID: 19695 RVA: 0x001DB4A8 File Offset: 0x001D96A8
+	// Token: 0x06004D13 RID: 19731 RVA: 0x001DC590 File Offset: 0x001DA790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ManagedWriteAllLines(TextWriter writer, IEnumerable<string> contents)
 	{
@@ -585,7 +585,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CF0 RID: 19696 RVA: 0x001DB508 File Offset: 0x001D9708
+	// Token: 0x06004D14 RID: 19732 RVA: 0x001DC5F0 File Offset: 0x001DA7F0
 	public static void AppendAllText(string path, string contents)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -597,7 +597,7 @@ public static class SdFile
 		File.AppendAllText(path, contents);
 	}
 
-	// Token: 0x06004CF1 RID: 19697 RVA: 0x001DB534 File Offset: 0x001D9734
+	// Token: 0x06004D15 RID: 19733 RVA: 0x001DC61C File Offset: 0x001DA81C
 	public static void AppendAllText(string path, string contents, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -609,7 +609,7 @@ public static class SdFile
 		File.AppendAllText(path, contents, encoding);
 	}
 
-	// Token: 0x06004CF2 RID: 19698 RVA: 0x001DB55C File Offset: 0x001D975C
+	// Token: 0x06004D16 RID: 19734 RVA: 0x001DC644 File Offset: 0x001DA844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ManagedAppendAllText(SaveDataManagedPath path, string contents, Encoding encoding)
 	{
@@ -622,7 +622,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x06004CF3 RID: 19699 RVA: 0x001DB5B4 File Offset: 0x001D97B4
+	// Token: 0x06004D17 RID: 19735 RVA: 0x001DC69C File Offset: 0x001DA89C
 	public static void AppendAllLines(string path, IEnumerable<string> contents)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -634,7 +634,7 @@ public static class SdFile
 		File.AppendAllLines(path, contents);
 	}
 
-	// Token: 0x06004CF4 RID: 19700 RVA: 0x001DB5E0 File Offset: 0x001D97E0
+	// Token: 0x06004D18 RID: 19736 RVA: 0x001DC6C8 File Offset: 0x001DA8C8
 	public static void AppendAllLines(string path, IEnumerable<string> contents, Encoding encoding)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -646,7 +646,7 @@ public static class SdFile
 		File.AppendAllLines(path, contents, encoding);
 	}
 
-	// Token: 0x06004CF5 RID: 19701 RVA: 0x001DB608 File Offset: 0x001D9808
+	// Token: 0x06004D19 RID: 19737 RVA: 0x001DC6F0 File Offset: 0x001DA8F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ManagedAppendAllLines(SaveDataManagedPath path, IEnumerable<string> contents, Encoding encoding)
 	{
@@ -659,7 +659,7 @@ public static class SdFile
 		}
 	}
 
-	// Token: 0x04003C0D RID: 15373
+	// Token: 0x04003C2E RID: 15406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Encoding UTF8NoBom = new UTF8Encoding(false);
 }

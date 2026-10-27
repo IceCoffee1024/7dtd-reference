@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x0200019E RID: 414
 public abstract class BlockShape
 {
-	// Token: 0x06000C70 RID: 3184 RVA: 0x0004E3F4 File Offset: 0x0004C5F4
+	// Token: 0x06000C70 RID: 3184 RVA: 0x0004E3B4 File Offset: 0x0004C5B4
 	public BlockShape()
 	{
 		this.bounds = BoundsUtils.BoundsForMinMax(0f, 0f, 0f, 1f, 1f, 1f);
@@ -18,7 +18,7 @@ public abstract class BlockShape
 		this.minBounds = Vector3.zero;
 	}
 
-	// Token: 0x06000C71 RID: 3185 RVA: 0x0004E482 File Offset: 0x0004C682
+	// Token: 0x06000C71 RID: 3185 RVA: 0x0004E442 File Offset: 0x0004C642
 	public virtual void Init(Block _block)
 	{
 		this.block = _block;
@@ -29,13 +29,13 @@ public abstract class BlockShape
 	{
 	}
 
-	// Token: 0x06000C73 RID: 3187 RVA: 0x0004E48B File Offset: 0x0004C68B
+	// Token: 0x06000C73 RID: 3187 RVA: 0x0004E44B File Offset: 0x0004C64B
 	public virtual Quaternion GetRotation(BlockValue _blockValue)
 	{
 		return Quaternion.identity;
 	}
 
-	// Token: 0x06000C74 RID: 3188 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x06000C74 RID: 3188 RVA: 0x0004E452 File Offset: 0x0004C652
 	public virtual Vector3 GetRotationOffset(BlockValue _blockValue)
 	{
 		return Vector3.zero;
@@ -47,27 +47,27 @@ public abstract class BlockShape
 		return null;
 	}
 
-	// Token: 0x06000C76 RID: 3190 RVA: 0x0004E499 File Offset: 0x0004C699
+	// Token: 0x06000C76 RID: 3190 RVA: 0x0004E459 File Offset: 0x0004C659
 	public virtual byte Rotate(bool _bLeft, int _rotation)
 	{
 		return (byte)_rotation;
 	}
 
-	// Token: 0x06000C77 RID: 3191 RVA: 0x0004E49D File Offset: 0x0004C69D
+	// Token: 0x06000C77 RID: 3191 RVA: 0x0004E45D File Offset: 0x0004C65D
 	public virtual BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		_blockValue.rotation = (byte)(((int)_blockValue.rotation + _rotCount) & 15);
 		return _blockValue;
 	}
 
-	// Token: 0x06000C78 RID: 3192 RVA: 0x0004E4B4 File Offset: 0x0004C6B4
+	// Token: 0x06000C78 RID: 3192 RVA: 0x0004E474 File Offset: 0x0004C674
 	public virtual BlockValue MirrorY(bool _bAlongZ, BlockValue _blockValue)
 	{
 		_blockValue = this.RotateY(true, _blockValue, 1);
 		return this.RotateY(true, _blockValue, 1);
 	}
 
-	// Token: 0x06000C79 RID: 3193 RVA: 0x0004E4CA File Offset: 0x0004C6CA
+	// Token: 0x06000C79 RID: 3193 RVA: 0x0004E48A File Offset: 0x0004C68A
 	public virtual int getFacesDrawnFullBitfield(BlockValue _blockValue)
 	{
 		return 255;
@@ -100,55 +100,55 @@ public abstract class BlockShape
 		return false;
 	}
 
-	// Token: 0x06000C7F RID: 3199 RVA: 0x0004E4D4 File Offset: 0x0004C6D4
+	// Token: 0x06000C7F RID: 3199 RVA: 0x0004E494 File Offset: 0x0004C694
 	public virtual void renderDecorations(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, INeighborBlockCache _nBlocks)
 	{
 		this.renderFull(_worldPos, _blockValue, _drawPos, _vertices, _lightingAround, _textureFullArray, _meshes, BlockShape.MeshPurpose.World);
 	}
 
-	// Token: 0x06000C80 RID: 3200 RVA: 0x0004E4F3 File Offset: 0x0004C6F3
+	// Token: 0x06000C80 RID: 3200 RVA: 0x0004E4B3 File Offset: 0x0004C6B3
 	public virtual int MapSideAndRotationToTextureIdx(BlockValue _blockValue, BlockFace _side)
 	{
 		return (int)_side;
 	}
 
-	// Token: 0x06000C81 RID: 3201 RVA: 0x0004E4F6 File Offset: 0x0004C6F6
+	// Token: 0x06000C81 RID: 3201 RVA: 0x0004E4B6 File Offset: 0x0004C6B6
 	public virtual Bounds[] GetBounds(BlockValue _blockValue)
 	{
 		return this.boundsArr;
 	}
 
-	// Token: 0x06000C82 RID: 3202 RVA: 0x0004E4FE File Offset: 0x0004C6FE
+	// Token: 0x06000C82 RID: 3202 RVA: 0x0004E4BE File Offset: 0x0004C6BE
 	public virtual Vector2 GetPathOffset(int _rotation)
 	{
 		return Vector2.zero;
 	}
 
-	// Token: 0x06000C83 RID: 3203 RVA: 0x0004E48B File Offset: 0x0004C68B
+	// Token: 0x06000C83 RID: 3203 RVA: 0x0004E44B File Offset: 0x0004C64B
 	public virtual Quaternion GetPreviewRotation()
 	{
 		return Quaternion.identity;
 	}
 
-	// Token: 0x06000C84 RID: 3204 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x06000C84 RID: 3204 RVA: 0x0004E452 File Offset: 0x0004C652
 	public virtual Vector3 GetPreviewPosition()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x06000C85 RID: 3205 RVA: 0x0004E505 File Offset: 0x0004C705
+	// Token: 0x06000C85 RID: 3205 RVA: 0x0004E4C5 File Offset: 0x0004C6C5
 	public virtual float GetStepHeight(BlockValue blockDef, BlockFace crossingFace)
 	{
 		return (float)(blockDef.Block.IsCollideMovement ? 1 : 0);
 	}
 
-	// Token: 0x06000C86 RID: 3206 RVA: 0x0004E51A File Offset: 0x0004C71A
+	// Token: 0x06000C86 RID: 3206 RVA: 0x0004E4DA File Offset: 0x0004C6DA
 	public virtual bool IsMovementBlocked(BlockValue blockDef, BlockFace crossingFace)
 	{
 		return this.GetStepHeight(blockDef, crossingFace) > 0.5f;
 	}
 
-	// Token: 0x06000C87 RID: 3207 RVA: 0x0004E52B File Offset: 0x0004C72B
+	// Token: 0x06000C87 RID: 3207 RVA: 0x0004E4EB File Offset: 0x0004C6EB
 	public void SetMinAABB(Vector3 _add)
 	{
 		this.minBounds = _add;
@@ -201,13 +201,13 @@ public abstract class BlockShape
 		return null;
 	}
 
-	// Token: 0x06000C91 RID: 3217 RVA: 0x0004E4F3 File Offset: 0x0004C6F3
+	// Token: 0x06000C91 RID: 3217 RVA: 0x0004E4B3 File Offset: 0x0004C6B3
 	public virtual BlockFace GetRotatedBlockFace(BlockValue _blockValue, BlockFace _face)
 	{
 		return _face;
 	}
 
-	// Token: 0x06000C92 RID: 3218 RVA: 0x0004E534 File Offset: 0x0004C734
+	// Token: 0x06000C92 RID: 3218 RVA: 0x0004E4F4 File Offset: 0x0004C6F4
 	public virtual void MirrorFace(EnumMirrorAlong _axis, int _sourceRot, int _targetRot, BlockFace _face, out BlockFace _sourceFace, out BlockFace _targetFace)
 	{
 		_sourceFace = _face;
@@ -229,7 +229,7 @@ public abstract class BlockShape
 		return 0;
 	}
 
-	// Token: 0x06000C96 RID: 3222 RVA: 0x0004E540 File Offset: 0x0004C740
+	// Token: 0x06000C96 RID: 3222 RVA: 0x0004E500 File Offset: 0x0004C700
 	public virtual string GetName()
 	{
 		return string.Empty;

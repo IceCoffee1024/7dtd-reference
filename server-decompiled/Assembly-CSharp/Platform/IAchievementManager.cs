@@ -2,31 +2,31 @@
 
 namespace Platform
 {
-	// Token: 0x02001B84 RID: 7044
+	// Token: 0x02001BB5 RID: 7093
 	public interface IAchievementManager
 	{
-		// Token: 0x0600D319 RID: 54041
+		// Token: 0x0600D42D RID: 54317
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D31A RID: 54042
+		// Token: 0x0600D42E RID: 54318
 		void ShowAchievementsUi();
 
-		// Token: 0x0600D31B RID: 54043
+		// Token: 0x0600D42F RID: 54319
 		bool IsAchievementStatSupported(EnumAchievementDataStat _stat);
 
-		// Token: 0x0600D31C RID: 54044
+		// Token: 0x0600D430 RID: 54320
 		void SetAchievementStat(EnumAchievementDataStat _stat, int _value);
 
-		// Token: 0x0600D31D RID: 54045
+		// Token: 0x0600D431 RID: 54321
 		void SetAchievementStat(EnumAchievementDataStat _stat, float _value);
 
-		// Token: 0x0600D31E RID: 54046
+		// Token: 0x0600D432 RID: 54322
 		void ResetStats(bool _andAchievements);
 
-		// Token: 0x0600D31F RID: 54047
+		// Token: 0x0600D433 RID: 54323
 		void UnlockAllAchievements();
 
-		// Token: 0x0600D320 RID: 54048
+		// Token: 0x0600D434 RID: 54324
 		void Destroy();
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x0200052D RID: 1325
-// (Invoke) Token: 0x06002B66 RID: 11110
+// Token: 0x02000531 RID: 1329
+// (Invoke) Token: 0x06002B6E RID: 11118
 public delegate void OnGameEventStatus(string gameEventID, int targetEntityID, string extraData, string tag);

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EE RID: 2030
+// Token: 0x020007F8 RID: 2040
 [Preserve]
 public class NetPackageEntitySpeeds : NetPackageEntityTargeted
 {
-	// Token: 0x1700065D RID: 1629
-	// (get) Token: 0x06003BEB RID: 15339 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000663 RID: 1635
+	// (get) Token: 0x06003C0E RID: 15374 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntitySpeeds : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BEC RID: 15340 RVA: 0x00180BFC File Offset: 0x0017EDFC
+	// Token: 0x06003C0F RID: 15375 RVA: 0x00181D00 File Offset: 0x0017FF00
 	public NetPackageEntitySpeeds Setup(Entity _entity)
 	{
 		this.entityId = _entity.entityId;
@@ -25,7 +25,7 @@ public class NetPackageEntitySpeeds : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BED RID: 15341 RVA: 0x00180C2F File Offset: 0x0017EE2F
+	// Token: 0x06003C10 RID: 15376 RVA: 0x00181D33 File Offset: 0x0017FF33
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -34,7 +34,7 @@ public class NetPackageEntitySpeeds : NetPackageEntityTargeted
 		this.speedStrafe = _reader.ReadSingle();
 	}
 
-	// Token: 0x06003BEE RID: 15342 RVA: 0x00180C5C File Offset: 0x0017EE5C
+	// Token: 0x06003C11 RID: 15377 RVA: 0x00181D60 File Offset: 0x0017FF60
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -43,7 +43,7 @@ public class NetPackageEntitySpeeds : NetPackageEntityTargeted
 		_writer.Write(this.speedStrafe);
 	}
 
-	// Token: 0x06003BEF RID: 15343 RVA: 0x00180C8C File Offset: 0x0017EE8C
+	// Token: 0x06003C12 RID: 15378 RVA: 0x00181D90 File Offset: 0x0017FF90
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -63,15 +63,15 @@ public class NetPackageEntitySpeeds : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x040030B1 RID: 12465
+	// Token: 0x040030D1 RID: 12497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int movementState;
 
-	// Token: 0x040030B2 RID: 12466
+	// Token: 0x040030D2 RID: 12498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float speedForward;
 
-	// Token: 0x040030B3 RID: 12467
+	// Token: 0x040030D3 RID: 12499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float speedStrafe;
 }

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019F6 RID: 6646
+	// Token: 0x02001A27 RID: 6695
 	[Preserve]
 	public class ActionTeleport : ActionBaseTeleport
 	{
-		// Token: 0x0600CB1F RID: 51999 RVA: 0x004A4AE4 File Offset: 0x004A2CE4
+		// Token: 0x0600CC33 RID: 52275 RVA: 0x004A85E0 File Offset: 0x004A67E0
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			World world = GameManager.Instance.World;
@@ -33,7 +33,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600CB20 RID: 52000 RVA: 0x004A4B6F File Offset: 0x004A2D6F
+		// Token: 0x0600CC34 RID: 52276 RVA: 0x004A866B File Offset: 0x004A686B
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -41,7 +41,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionTeleport.OffsetTypes>(ActionTeleport.PropOffsetType, ref this.offsetType);
 		}
 
-		// Token: 0x0600CB21 RID: 52001 RVA: 0x004A4B9A File Offset: 0x004A2D9A
+		// Token: 0x0600CC35 RID: 52277 RVA: 0x004A8696 File Offset: 0x004A6896
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -54,31 +54,31 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099CD RID: 39373
+		// Token: 0x04009AB6 RID: 39606
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3 target_position;
 
-		// Token: 0x040099CE RID: 39374
+		// Token: 0x04009AB7 RID: 39607
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionTeleport.OffsetTypes offsetType;
 
-		// Token: 0x040099CF RID: 39375
+		// Token: 0x04009AB8 RID: 39608
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetPosition = "target_position";
 
-		// Token: 0x040099D0 RID: 39376
+		// Token: 0x04009AB9 RID: 39609
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOffsetType = "offset_type";
 
-		// Token: 0x020019F7 RID: 6647
+		// Token: 0x02001A28 RID: 6696
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum OffsetTypes
 		{
-			// Token: 0x040099D2 RID: 39378
+			// Token: 0x04009ABB RID: 39611
 			None,
-			// Token: 0x040099D3 RID: 39379
+			// Token: 0x04009ABC RID: 39612
 			Relative,
-			// Token: 0x040099D4 RID: 39380
+			// Token: 0x04009ABD RID: 39613
 			World
 		}
 	}

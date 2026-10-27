@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001930 RID: 6448
+	// Token: 0x02001961 RID: 6497
 	[Preserve]
 	public class ChallengeObjectiveHarvest : ChallengeBaseTrackedItemObjective
 	{
-		// Token: 0x17001912 RID: 6418
-		// (get) Token: 0x0600C70F RID: 50959 RVA: 0x001321B1 File Offset: 0x001303B1
+		// Token: 0x1700195A RID: 6490
+		// (get) Token: 0x0600C823 RID: 51235 RVA: 0x00132DA5 File Offset: 0x00130FA5
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001913 RID: 6419
-		// (get) Token: 0x0600C710 RID: 50960 RVA: 0x00490B24 File Offset: 0x0048ED24
+		// Token: 0x1700195B RID: 6491
+		// (get) Token: 0x0600C824 RID: 51236 RVA: 0x00494518 File Offset: 0x00492718
 		public override string DescriptionText
 		{
 			get
@@ -28,7 +28,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C711 RID: 50961 RVA: 0x00490B4C File Offset: 0x0048ED4C
+		// Token: 0x0600C825 RID: 51237 RVA: 0x00494540 File Offset: 0x00492740
 		public override void Init()
 		{
 			this.expectedItem = ItemClass.GetItem(this.itemClassID, false);
@@ -36,14 +36,14 @@ namespace Challenges
 			this.expectedHeldClass = ItemClass.GetItemClass(this.heldItemClassID, false);
 		}
 
-		// Token: 0x0600C712 RID: 50962 RVA: 0x00490B84 File Offset: 0x0048ED84
+		// Token: 0x0600C826 RID: 51238 RVA: 0x00494578 File Offset: 0x00492778
 		public override void HandleOnCreated()
 		{
 			base.HandleOnCreated();
 			this.CreateRequirements();
 		}
 
-		// Token: 0x0600C713 RID: 50963 RVA: 0x00490B92 File Offset: 0x0048ED92
+		// Token: 0x0600C827 RID: 51239 RVA: 0x00494586 File Offset: 0x00492786
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CreateRequirements()
 		{
@@ -58,7 +58,7 @@ namespace Challenges
 			this.Owner.SetRequirementGroup(new RequirementObjectiveGroupHold(this.heldItemClassID));
 		}
 
-		// Token: 0x0600C714 RID: 50964 RVA: 0x00490BBC File Offset: 0x0048EDBC
+		// Token: 0x0600C828 RID: 51240 RVA: 0x004945B0 File Offset: 0x004927B0
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.HarvestItem -= this.Current_HarvestItem;
@@ -66,13 +66,13 @@ namespace Challenges
 			base.HandleAddHooks();
 		}
 
-		// Token: 0x0600C715 RID: 50965 RVA: 0x00490BF0 File Offset: 0x0048EDF0
+		// Token: 0x0600C829 RID: 51241 RVA: 0x004945E4 File Offset: 0x004927E4
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.HarvestItem -= this.Current_HarvestItem;
 		}
 
-		// Token: 0x0600C716 RID: 50966 RVA: 0x00490C08 File Offset: 0x0048EE08
+		// Token: 0x0600C82A RID: 51242 RVA: 0x004945FC File Offset: 0x004927FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_HarvestItem(ItemValue held, ItemStack stack, BlockValue bv)
 		{
@@ -105,7 +105,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C717 RID: 50967 RVA: 0x00490CEC File Offset: 0x0048EEEC
+		// Token: 0x0600C82B RID: 51243 RVA: 0x004946E0 File Offset: 0x004928E0
 		public override void HandleTrackingStarted()
 		{
 			base.HandleTrackingStarted();
@@ -117,7 +117,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C718 RID: 50968 RVA: 0x0048FD85 File Offset: 0x0048DF85
+		// Token: 0x0600C82C RID: 51244 RVA: 0x00493779 File Offset: 0x00491979
 		public override void HandleTrackingEnded()
 		{
 			base.HandleTrackingEnded();
@@ -128,7 +128,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C719 RID: 50969 RVA: 0x00490D3C File Offset: 0x0048EF3C
+		// Token: 0x0600C82D RID: 51245 RVA: 0x00494730 File Offset: 0x00492930
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -150,7 +150,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C71A RID: 50970 RVA: 0x00490E08 File Offset: 0x0048F008
+		// Token: 0x0600C82E RID: 51246 RVA: 0x004947FC File Offset: 0x004929FC
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveHarvest
@@ -167,23 +167,23 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0400960E RID: 38414
+		// Token: 0x040096F7 RID: 38647
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemClass expectedHeldClass;
 
-		// Token: 0x0400960F RID: 38415
+		// Token: 0x040096F8 RID: 38648
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string heldItemClassID = "";
 
-		// Token: 0x04009610 RID: 38416
+		// Token: 0x040096F9 RID: 38649
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isBlock = true;
 
-		// Token: 0x04009611 RID: 38417
+		// Token: 0x040096FA RID: 38650
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool requireHeld;
 
-		// Token: 0x04009612 RID: 38418
+		// Token: 0x040096FB RID: 38651
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> blockTag = FastTags<TagGroup.Global>.none;
 	}

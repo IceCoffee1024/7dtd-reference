@@ -5,17 +5,17 @@ using System.Text;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018E2 RID: 6370
+	// Token: 0x02001913 RID: 6419
 	public class PrefabTriggerVolumeList : PrefabVolumeListAbs<PrefabTriggerVolumeList, PrefabTriggerVolume>
 	{
-		// Token: 0x0600C49C RID: 50332 RVA: 0x00486D41 File Offset: 0x00484F41
+		// Token: 0x0600C5B0 RID: 50608 RVA: 0x0048A6ED File Offset: 0x004888ED
 		public PrefabTriggerVolumeList(Prefab _owner)
 			: base(_owner)
 		{
 		}
 
-		// Token: 0x170018A2 RID: 6306
-		// (get) Token: 0x0600C49D RID: 50333 RVA: 0x00080804 File Offset: 0x0007EA04
+		// Token: 0x170018EA RID: 6378
+		// (get) Token: 0x0600C5B1 RID: 50609 RVA: 0x000809D4 File Offset: 0x0007EBD4
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -24,8 +24,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018A3 RID: 6307
-		// (get) Token: 0x0600C49E RID: 50334 RVA: 0x00486D4A File Offset: 0x00484F4A
+		// Token: 0x170018EB RID: 6379
+		// (get) Token: 0x0600C5B2 RID: 50610 RVA: 0x0048A6F6 File Offset: 0x004888F6
 		public override SelectionCategory SelectionCategory
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -35,7 +35,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C49F RID: 50335 RVA: 0x00486D58 File Offset: 0x00484F58
+		// Token: 0x0600C5B3 RID: 50611 RVA: 0x0048A704 File Offset: 0x00488904
 		public override void ReadFromProperties(DynamicProperties _properties)
 		{
 			this.List.Clear();
@@ -62,7 +62,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C4A0 RID: 50336 RVA: 0x00486EE8 File Offset: 0x004850E8
+		// Token: 0x0600C5B4 RID: 50612 RVA: 0x0048A894 File Offset: 0x00488A94
 		public override void WriteToProperties(DynamicProperties _properties)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -106,14 +106,14 @@ namespace PrefabVolumes
 			_properties.Values.Remove("TriggerVolumeTriggers");
 		}
 
-		// Token: 0x0600C4A1 RID: 50337 RVA: 0x00487098 File Offset: 0x00485298
+		// Token: 0x0600C5B5 RID: 50613 RVA: 0x0048AA44 File Offset: 0x00488C44
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override int FindWorldVolume(World _world, Vector3i _min, Vector3i _max)
 		{
 			return _world.FindTriggerVolume(_min, _max);
 		}
 
-		// Token: 0x0600C4A2 RID: 50338 RVA: 0x004870A4 File Offset: 0x004852A4
+		// Token: 0x0600C5B6 RID: 50614 RVA: 0x0048AA50 File Offset: 0x00488C50
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override int CreateWorldVolume(int _prefabVolumeIndex, PrefabTriggerVolume _prefabVolume, Vector3i _offset, Vector3i _volumeMin, Vector3i _volumeMax, World _world, Vector3i _volumeWorldMin, Vector3i _volumeWorldMax)
 		{
@@ -121,14 +121,14 @@ namespace PrefabVolumes
 			return _world.AddTriggerVolume(triggerVolume);
 		}
 
-		// Token: 0x0600C4A3 RID: 50339 RVA: 0x004870C4 File Offset: 0x004852C4
+		// Token: 0x0600C5B7 RID: 50615 RVA: 0x0048AA70 File Offset: 0x00488C70
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void AddWorldVolume(Chunk _chunk, int _volumeIndex)
 		{
 			_chunk.AddTriggerVolumeId(_volumeIndex);
 		}
 
-		// Token: 0x0600C4A4 RID: 50340 RVA: 0x004870CD File Offset: 0x004852CD
+		// Token: 0x0600C5B8 RID: 50616 RVA: 0x0048AA79 File Offset: 0x00488C79
 		public override void CopyVolumesIntoWorld(World _world, Chunk _chunk, Vector3i _offset)
 		{
 			base.CopyVolumesIntoWorldCommon(_world, _chunk, _offset, SleeperVolume.chunkPadding);

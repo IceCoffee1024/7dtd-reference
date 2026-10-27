@@ -4,10 +4,10 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Platform;
 
-// Token: 0x0200148D RID: 5261
+// Token: 0x0200149F RID: 5279
 public static class PathAbstractions
 {
-	// Token: 0x0600A4C4 RID: 42180 RVA: 0x003D7A2C File Offset: 0x003D5C2C
+	// Token: 0x0600A51C RID: 42268 RVA: 0x003D9E30 File Offset: 0x003D8030
 	public static void InvalidateCaches()
 	{
 		foreach (PathAbstractions.SearchDefinition searchDefinition in PathAbstractions.allSearchDefs)
@@ -16,9 +16,9 @@ public static class PathAbstractions
 		}
 	}
 
-	// Token: 0x17001397 RID: 5015
-	// (get) Token: 0x0600A4C5 RID: 42181 RVA: 0x003D7A7C File Offset: 0x003D5C7C
-	// (set) Token: 0x0600A4C6 RID: 42182 RVA: 0x003D7A83 File Offset: 0x003D5C83
+	// Token: 0x170013A3 RID: 5027
+	// (get) Token: 0x0600A51D RID: 42269 RVA: 0x003D9E80 File Offset: 0x003D8080
+	// (set) Token: 0x0600A51E RID: 42270 RVA: 0x003D9E87 File Offset: 0x003D8087
 	public static bool CacheEnabled
 	{
 		get
@@ -35,23 +35,23 @@ public static class PathAbstractions
 		}
 	}
 
-	// Token: 0x04007B2F RID: 31535
+	// Token: 0x04007B70 RID: 31600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<PathAbstractions.SearchDefinition> allSearchDefs = new List<PathAbstractions.SearchDefinition>();
 
-	// Token: 0x04007B30 RID: 31536
+	// Token: 0x04007B71 RID: 31601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Func<string> deviceLocalUserDataPath = new Func<string>(GameIO.GetDeviceLocalUserGameDataDir);
 
-	// Token: 0x04007B31 RID: 31537
+	// Token: 0x04007B72 RID: 31602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Func<string> gameDataPath = new Func<string>(GameIO.GetApplicationPath);
 
-	// Token: 0x04007B32 RID: 31538
+	// Token: 0x04007B73 RID: 31603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Func<UserDataStorageType> getWorldsStorageType = () => (UserDataStorageType)GamePrefs.GetInt(EnumGamePrefs.UserWorldStorageType);
 
-	// Token: 0x04007B33 RID: 31539
+	// Token: 0x04007B74 RID: 31604
 	public static readonly PathAbstractions.SearchDefinition WorldsSearchPaths = new PathAbstractions.SearchDefinition(true, null, false, false, new PathAbstractions.SearchPath[]
 	{
 		new PathAbstractions.SearchPathSaves("World"),
@@ -60,7 +60,7 @@ public static class PathAbstractions
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.GameData, PathAbstractions.gameDataPath, "Data/Worlds", null)
 	});
 
-	// Token: 0x04007B34 RID: 31540
+	// Token: 0x04007B75 RID: 31605
 	public static readonly PathAbstractions.SearchDefinition PrefabsSearchPaths = new PathAbstractions.SearchDefinition(false, ".tts", true, true, new PathAbstractions.SearchPath[]
 	{
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.UserDataPath, PathAbstractions.deviceLocalUserDataPath, "LocalPrefabs", null),
@@ -68,7 +68,7 @@ public static class PathAbstractions
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.GameData, PathAbstractions.gameDataPath, "Data/Prefabs", null)
 	});
 
-	// Token: 0x04007B35 RID: 31541
+	// Token: 0x04007B76 RID: 31606
 	public static readonly PathAbstractions.SearchDefinition PrefabImpostersSearchPaths = new PathAbstractions.SearchDefinition(false, ".mesh", false, true, new PathAbstractions.SearchPath[]
 	{
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.UserDataPath, PathAbstractions.deviceLocalUserDataPath, "LocalPrefabs", null),
@@ -76,7 +76,7 @@ public static class PathAbstractions
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.GameData, PathAbstractions.gameDataPath, "Data/Prefabs", null)
 	});
 
-	// Token: 0x04007B36 RID: 31542
+	// Token: 0x04007B77 RID: 31607
 	public static readonly PathAbstractions.SearchDefinition RwgStampsSearchPaths = new PathAbstractions.SearchDefinition(false, "", true, true, new PathAbstractions.SearchPath[]
 	{
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.UserDataPath, PathAbstractions.deviceLocalUserDataPath, "LocalStamps", null),
@@ -84,32 +84,32 @@ public static class PathAbstractions
 		new PathAbstractions.SearchPathBasic(PathAbstractions.EAbstractedLocationType.GameData, PathAbstractions.gameDataPath, "Data/Stamps", null)
 	});
 
-	// Token: 0x04007B37 RID: 31543
+	// Token: 0x04007B78 RID: 31608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool cacheEnabled;
 
-	// Token: 0x0200148E RID: 5262
+	// Token: 0x020014A0 RID: 5280
 	public enum EAbstractedLocationType
 	{
-		// Token: 0x04007B39 RID: 31545
+		// Token: 0x04007B7A RID: 31610
 		HostSave,
-		// Token: 0x04007B3A RID: 31546
+		// Token: 0x04007B7B RID: 31611
 		LocalSave,
-		// Token: 0x04007B3B RID: 31547
+		// Token: 0x04007B7C RID: 31612
 		UserDataPath,
-		// Token: 0x04007B3C RID: 31548
+		// Token: 0x04007B7D RID: 31613
 		Mods,
-		// Token: 0x04007B3D RID: 31549
+		// Token: 0x04007B7E RID: 31614
 		GameData,
-		// Token: 0x04007B3E RID: 31550
+		// Token: 0x04007B7F RID: 31615
 		None
 	}
 
-	// Token: 0x0200148F RID: 5263
+	// Token: 0x020014A1 RID: 5281
 	public readonly struct AbstractedLocation : IEquatable<PathAbstractions.AbstractedLocation>, IComparable<PathAbstractions.AbstractedLocation>, IComparable
 	{
-		// Token: 0x17001398 RID: 5016
-		// (get) Token: 0x0600A4C8 RID: 42184 RVA: 0x003D7C1D File Offset: 0x003D5E1D
+		// Token: 0x170013A4 RID: 5028
+		// (get) Token: 0x0600A520 RID: 42272 RVA: 0x003DA021 File Offset: 0x003D8221
 		public string FullPath
 		{
 			get
@@ -118,8 +118,8 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x17001399 RID: 5017
-		// (get) Token: 0x0600A4C9 RID: 42185 RVA: 0x003D7C3B File Offset: 0x003D5E3B
+		// Token: 0x170013A5 RID: 5029
+		// (get) Token: 0x0600A521 RID: 42273 RVA: 0x003DA03F File Offset: 0x003D823F
 		public string FullPathNoExtension
 		{
 			get
@@ -128,7 +128,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4CA RID: 42186 RVA: 0x003D7C54 File Offset: 0x003D5E54
+		// Token: 0x0600A522 RID: 42274 RVA: 0x003DA058 File Offset: 0x003D8258
 		public AbstractedLocation(PathAbstractions.EAbstractedLocationType _type, string _name, string _fullPath, string _relativePath, bool _isFolder, Mod _containingMod = null)
 		{
 			_fullPath = ((_fullPath != null) ? Path.GetFullPath(_fullPath).Replace("\\", "/") : null);
@@ -145,7 +145,7 @@ public static class PathAbstractions
 			this.StorageType = ((this.Folder != null && GameIO.IsRoamingUserDataPath(this.Folder)) ? UserDataStorageType.Roaming : UserDataStorageType.DeviceLocal);
 		}
 
-		// Token: 0x0600A4CB RID: 42187 RVA: 0x003D7D20 File Offset: 0x003D5F20
+		// Token: 0x0600A523 RID: 42275 RVA: 0x003DA124 File Offset: 0x003D8324
 		public AbstractedLocation(PathAbstractions.EAbstractedLocationType _type, string _name, string _folder, string _relativePath, string _fileNameNoExtension, string _extension, bool _isFolder, Mod _containingMod = null)
 		{
 			this.Type = _type;
@@ -159,7 +159,7 @@ public static class PathAbstractions
 			this.StorageType = ((this.Folder != null && GameIO.IsRoamingUserDataPath(this.Folder)) ? UserDataStorageType.Roaming : UserDataStorageType.DeviceLocal);
 		}
 
-		// Token: 0x0600A4CC RID: 42188 RVA: 0x003D7DA3 File Offset: 0x003D5FA3
+		// Token: 0x0600A524 RID: 42276 RVA: 0x003DA1A7 File Offset: 0x003D83A7
 		public bool Exists()
 		{
 			if (this.Type == PathAbstractions.EAbstractedLocationType.None)
@@ -173,13 +173,13 @@ public static class PathAbstractions
 			return SdDirectory.Exists(this.FullPath);
 		}
 
-		// Token: 0x0600A4CD RID: 42189 RVA: 0x003D7DD0 File Offset: 0x003D5FD0
+		// Token: 0x0600A525 RID: 42277 RVA: 0x003DA1D4 File Offset: 0x003D83D4
 		public bool Equals(PathAbstractions.AbstractedLocation _other)
 		{
 			return this.Type == _other.Type && (this.Type == PathAbstractions.EAbstractedLocationType.None || (this.IsFolder == _other.IsFolder && string.Equals(this.Name, _other.Name) && GameIO.PathsEquals(this.FullPath, _other.FullPath, true)));
 		}
 
-		// Token: 0x0600A4CE RID: 42190 RVA: 0x003D7E30 File Offset: 0x003D6030
+		// Token: 0x0600A526 RID: 42278 RVA: 0x003DA234 File Offset: 0x003D8434
 		public override bool Equals(object _obj)
 		{
 			if (_obj == null)
@@ -194,25 +194,25 @@ public static class PathAbstractions
 			return false;
 		}
 
-		// Token: 0x0600A4CF RID: 42191 RVA: 0x003D7E5A File Offset: 0x003D605A
+		// Token: 0x0600A527 RID: 42279 RVA: 0x003DA25E File Offset: 0x003D845E
 		public static bool operator ==(PathAbstractions.AbstractedLocation _a, PathAbstractions.AbstractedLocation _b)
 		{
 			return _a.Equals(_b);
 		}
 
-		// Token: 0x0600A4D0 RID: 42192 RVA: 0x003D7E64 File Offset: 0x003D6064
+		// Token: 0x0600A528 RID: 42280 RVA: 0x003DA268 File Offset: 0x003D8468
 		public static bool operator !=(PathAbstractions.AbstractedLocation _a, PathAbstractions.AbstractedLocation _b)
 		{
 			return !(_a == _b);
 		}
 
-		// Token: 0x0600A4D1 RID: 42193 RVA: 0x003D7E70 File Offset: 0x003D6070
+		// Token: 0x0600A529 RID: 42281 RVA: 0x003DA274 File Offset: 0x003D8474
 		public override int GetHashCode()
 		{
 			return (((((this.Name != null) ? this.Name.GetHashCode() : 0) * 397) ^ (int)this.Type) * 397) ^ ((this.FullPath != null) ? this.FullPath.GetHashCode() : 0);
 		}
 
-		// Token: 0x0600A4D2 RID: 42194 RVA: 0x003D7EC0 File Offset: 0x003D60C0
+		// Token: 0x0600A52A RID: 42282 RVA: 0x003DA2C4 File Offset: 0x003D84C4
 		public override string ToString()
 		{
 			return string.Concat(new string[]
@@ -226,7 +226,7 @@ public static class PathAbstractions
 			});
 		}
 
-		// Token: 0x0600A4D3 RID: 42195 RVA: 0x003D7F18 File Offset: 0x003D6118
+		// Token: 0x0600A52B RID: 42283 RVA: 0x003DA31C File Offset: 0x003D851C
 		public string GetLocationTypeDisplayString()
 		{
 			switch (this.Type)
@@ -246,7 +246,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4D4 RID: 42196 RVA: 0x003D7F98 File Offset: 0x003D6198
+		// Token: 0x0600A52C RID: 42284 RVA: 0x003DA39C File Offset: 0x003D859C
 		public int CompareTo(PathAbstractions.AbstractedLocation _other)
 		{
 			int num = string.Compare(this.Name, _other.Name, StringComparison.OrdinalIgnoreCase);
@@ -272,7 +272,7 @@ public static class PathAbstractions
 			return string.Compare(this.Folder, _other.Folder, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x0600A4D5 RID: 42197 RVA: 0x003D8024 File Offset: 0x003D6224
+		// Token: 0x0600A52D RID: 42285 RVA: 0x003DA428 File Offset: 0x003D8628
 		public int CompareTo(object _obj)
 		{
 			if (_obj == null)
@@ -287,41 +287,41 @@ public static class PathAbstractions
 			throw new ArgumentException("Object must be of type AbstractedLocation");
 		}
 
-		// Token: 0x04007B3F RID: 31551
+		// Token: 0x04007B80 RID: 31616
 		public static readonly PathAbstractions.AbstractedLocation None = new PathAbstractions.AbstractedLocation(PathAbstractions.EAbstractedLocationType.None, null, null, null, false, null);
 
-		// Token: 0x04007B40 RID: 31552
+		// Token: 0x04007B81 RID: 31617
 		public readonly PathAbstractions.EAbstractedLocationType Type;
 
-		// Token: 0x04007B41 RID: 31553
+		// Token: 0x04007B82 RID: 31618
 		public readonly string Name;
 
-		// Token: 0x04007B42 RID: 31554
+		// Token: 0x04007B83 RID: 31619
 		public readonly string Folder;
 
-		// Token: 0x04007B43 RID: 31555
+		// Token: 0x04007B84 RID: 31620
 		public readonly string RelativePath;
 
-		// Token: 0x04007B44 RID: 31556
+		// Token: 0x04007B85 RID: 31621
 		public readonly string FileNameNoExtension;
 
-		// Token: 0x04007B45 RID: 31557
+		// Token: 0x04007B86 RID: 31622
 		public readonly string Extension;
 
-		// Token: 0x04007B46 RID: 31558
+		// Token: 0x04007B87 RID: 31623
 		public readonly bool IsFolder;
 
-		// Token: 0x04007B47 RID: 31559
+		// Token: 0x04007B88 RID: 31624
 		public readonly Mod ContainingMod;
 
-		// Token: 0x04007B48 RID: 31560
+		// Token: 0x04007B89 RID: 31625
 		public readonly UserDataStorageType StorageType;
 	}
 
-	// Token: 0x02001490 RID: 5264
+	// Token: 0x020014A2 RID: 5282
 	public class SearchDefinition
 	{
-		// Token: 0x0600A4D7 RID: 42199 RVA: 0x003D806C File Offset: 0x003D626C
+		// Token: 0x0600A52F RID: 42287 RVA: 0x003DA470 File Offset: 0x003D8670
 		public SearchDefinition(bool _isFolder, string _extension, bool _removeExtension, bool _recursive, params PathAbstractions.SearchPath[] _paths)
 		{
 			this.IsFolder = _isFolder;
@@ -340,7 +340,7 @@ public static class PathAbstractions
 			PathAbstractions.allSearchDefs.Add(this);
 		}
 
-		// Token: 0x0600A4D8 RID: 42200 RVA: 0x003D80EC File Offset: 0x003D62EC
+		// Token: 0x0600A530 RID: 42288 RVA: 0x003DA4F0 File Offset: 0x003D86F0
 		public PathAbstractions.AbstractedLocation GetLocation(string _name, PathAbstractions.EAbstractedLocationType? _onlyLocationType = null, UserDataStorageType? _userDataHint = null)
 		{
 			foreach (PathAbstractions.SearchPath searchPath in this.paths)
@@ -357,7 +357,7 @@ public static class PathAbstractions
 			return new PathAbstractions.AbstractedLocation(PathAbstractions.EAbstractedLocationType.None, _name, null, null, this.IsFolder, null);
 		}
 
-		// Token: 0x0600A4D9 RID: 42201 RVA: 0x003D8180 File Offset: 0x003D6380
+		// Token: 0x0600A531 RID: 42289 RVA: 0x003DA584 File Offset: 0x003D8784
 		public List<PathAbstractions.AbstractedLocation> GetAvailablePathsList(Regex _nameMatch = null, bool _ignoreDuplicateNames = false, PathAbstractions.EAbstractedLocationType? _onlyLocationType = null)
 		{
 			List<PathAbstractions.AbstractedLocation> list = new List<PathAbstractions.AbstractedLocation>();
@@ -365,7 +365,7 @@ public static class PathAbstractions
 			return list;
 		}
 
-		// Token: 0x0600A4DA RID: 42202 RVA: 0x003D81A0 File Offset: 0x003D63A0
+		// Token: 0x0600A532 RID: 42290 RVA: 0x003DA5A4 File Offset: 0x003D87A4
 		public void GetAvailablePathsList(ref List<PathAbstractions.AbstractedLocation> _resultList, Regex _nameMatch = null, bool _ignoreDuplicateNames = false, PathAbstractions.EAbstractedLocationType? _onlyLocationType = null)
 		{
 			if (_resultList == null)
@@ -381,7 +381,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4DB RID: 42203 RVA: 0x003D8224 File Offset: 0x003D6424
+		// Token: 0x0600A533 RID: 42291 RVA: 0x003DA628 File Offset: 0x003D8828
 		public PathAbstractions.AbstractedLocation? BuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, string _modName = null, UserDataStorageType? _userStorageHint = null)
 		{
 			Mod mod = null;
@@ -400,7 +400,7 @@ public static class PathAbstractions
 			return this.BuildLocation(_locationType, _subFolder, _elementName, mod, _userStorageHint);
 		}
 
-		// Token: 0x0600A4DC RID: 42204 RVA: 0x003D8278 File Offset: 0x003D6478
+		// Token: 0x0600A534 RID: 42292 RVA: 0x003DA67C File Offset: 0x003D887C
 		public PathAbstractions.AbstractedLocation? BuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, Mod _mod = null, UserDataStorageType? _userStorageHint = null)
 		{
 			foreach (PathAbstractions.SearchPath searchPath in this.paths)
@@ -413,7 +413,7 @@ public static class PathAbstractions
 			return null;
 		}
 
-		// Token: 0x0600A4DD RID: 42205 RVA: 0x003D82E8 File Offset: 0x003D64E8
+		// Token: 0x0600A535 RID: 42293 RVA: 0x003DA6EC File Offset: 0x003D88EC
 		public string GetBasePath(PathAbstractions.EAbstractedLocationType _locationType, string _modName = null)
 		{
 			Mod mod = null;
@@ -432,7 +432,7 @@ public static class PathAbstractions
 			return this.GetBasePath(_locationType, mod);
 		}
 
-		// Token: 0x0600A4DE RID: 42206 RVA: 0x003D8338 File Offset: 0x003D6538
+		// Token: 0x0600A536 RID: 42294 RVA: 0x003DA73C File Offset: 0x003D893C
 		public string GetBasePath(PathAbstractions.EAbstractedLocationType _locationType, Mod _mod = null)
 		{
 			foreach (PathAbstractions.SearchPath searchPath in this.paths)
@@ -445,7 +445,7 @@ public static class PathAbstractions
 			return null;
 		}
 
-		// Token: 0x0600A4DF RID: 42207 RVA: 0x003D839C File Offset: 0x003D659C
+		// Token: 0x0600A537 RID: 42295 RVA: 0x003DA7A0 File Offset: 0x003D89A0
 		public void InvalidateCache()
 		{
 			foreach (PathAbstractions.SearchPath searchPath in this.paths)
@@ -454,28 +454,28 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x04007B49 RID: 31561
+		// Token: 0x04007B8A RID: 31626
 		public readonly bool IsFolder;
 
-		// Token: 0x04007B4A RID: 31562
+		// Token: 0x04007B8B RID: 31627
 		public readonly string Extension;
 
-		// Token: 0x04007B4B RID: 31563
+		// Token: 0x04007B8C RID: 31628
 		public readonly bool RemoveExtension;
 
-		// Token: 0x04007B4C RID: 31564
+		// Token: 0x04007B8D RID: 31629
 		public readonly bool Recursive;
 
-		// Token: 0x04007B4D RID: 31565
+		// Token: 0x04007B8E RID: 31630
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<PathAbstractions.SearchPath> paths;
 	}
 
-	// Token: 0x02001491 RID: 5265
+	// Token: 0x020014A3 RID: 5283
 	public abstract class SearchPath
 	{
-		// Token: 0x1700139A RID: 5018
-		// (get) Token: 0x0600A4E0 RID: 42208 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x170013A6 RID: 5030
+		// (get) Token: 0x0600A538 RID: 42296 RVA: 0x00020119 File Offset: 0x0001E319
 		public virtual bool CanMatch
 		{
 			get
@@ -484,26 +484,26 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4E1 RID: 42209 RVA: 0x003D83EC File Offset: 0x003D65EC
+		// Token: 0x0600A539 RID: 42297 RVA: 0x003DA7F0 File Offset: 0x003D89F0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public SearchPath(string _relativePath)
 		{
 			this.RelativePath = _relativePath;
 		}
 
-		// Token: 0x0600A4E2 RID: 42210 RVA: 0x003D8406 File Offset: 0x003D6606
+		// Token: 0x0600A53A RID: 42298 RVA: 0x003DA80A File Offset: 0x003D8A0A
 		public void SetOwner(PathAbstractions.SearchDefinition _owner)
 		{
 			this.Owner = _owner;
 		}
 
-		// Token: 0x0600A4E3 RID: 42211
+		// Token: 0x0600A53B RID: 42299
 		public abstract PathAbstractions.AbstractedLocation GetLocation(string _name, UserDataStorageType? _userDataHint);
 
-		// Token: 0x0600A4E4 RID: 42212
+		// Token: 0x0600A53C RID: 42300
 		public abstract void GetAvailablePathsList(List<PathAbstractions.AbstractedLocation> _targetList, Regex _nameMatch, bool _ignoreDuplicateNames);
 
-		// Token: 0x0600A4E5 RID: 42213 RVA: 0x003D8410 File Offset: 0x003D6610
+		// Token: 0x0600A53D RID: 42301 RVA: 0x003DA814 File Offset: 0x003D8A14
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PathAbstractions.AbstractedLocation getLocationSingleBase(PathAbstractions.EAbstractedLocationType _locationType, string _basePath, string _name, Mod _containingMod, string _subfolder = null)
 		{
@@ -542,7 +542,7 @@ public static class PathAbstractions
 			return PathAbstractions.AbstractedLocation.None;
 		}
 
-		// Token: 0x0600A4E6 RID: 42214 RVA: 0x003D8510 File Offset: 0x003D6710
+		// Token: 0x0600A53E RID: 42302 RVA: 0x003DA914 File Offset: 0x003D8B14
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void getAvailablePathsSingleBase(List<PathAbstractions.AbstractedLocation> _targetList, PathAbstractions.EAbstractedLocationType _locationType, string _basePath, Regex _nameMatch, bool _ignoreDuplicateNames, Mod _containingMod, string _subfolder = null)
 		{
@@ -585,7 +585,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4E7 RID: 42215 RVA: 0x003D8688 File Offset: 0x003D6888
+		// Token: 0x0600A53F RID: 42303 RVA: 0x003DAA8C File Offset: 0x003D8C8C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool UseCache()
 		{
@@ -597,7 +597,7 @@ public static class PathAbstractions
 			return cacheEnabled;
 		}
 
-		// Token: 0x0600A4E8 RID: 42216 RVA: 0x003D86A0 File Offset: 0x003D68A0
+		// Token: 0x0600A540 RID: 42304 RVA: 0x003DAAA4 File Offset: 0x003D8CA4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PathAbstractions.AbstractedLocation GetCachedLocation(string _name, bool _ignoreName = false)
 		{
@@ -628,7 +628,7 @@ public static class PathAbstractions
 			return list[0];
 		}
 
-		// Token: 0x0600A4E9 RID: 42217 RVA: 0x003D8774 File Offset: 0x003D6974
+		// Token: 0x0600A541 RID: 42305 RVA: 0x003DAB78 File Offset: 0x003D8D78
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void GetCachedPathList(List<PathAbstractions.AbstractedLocation> _targetList, Regex _nameMatch, bool _ignoreDuplicateNames)
 		{
@@ -652,47 +652,47 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4EA RID: 42218 RVA: 0x003D8848 File Offset: 0x003D6A48
+		// Token: 0x0600A542 RID: 42306 RVA: 0x003DAC4C File Offset: 0x003D8E4C
 		public void InvalidateCache()
 		{
 			this.locationsCache.Clear();
 			this.locationsCachePopulated = false;
 		}
 
-		// Token: 0x0600A4EB RID: 42219
+		// Token: 0x0600A543 RID: 42307
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void PopulateCache();
 
-		// Token: 0x0600A4EC RID: 42220
+		// Token: 0x0600A544 RID: 42308
 		public abstract PathAbstractions.AbstractedLocation? TryBuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, Mod _mod, UserDataStorageType? _userStorageHint);
 
-		// Token: 0x0600A4ED RID: 42221
+		// Token: 0x0600A545 RID: 42309
 		public abstract string TryGetBasePath(PathAbstractions.EAbstractedLocationType _locationType, Mod _mod);
 
-		// Token: 0x0600A4EE RID: 42222
+		// Token: 0x0600A546 RID: 42310
 		public abstract bool CanHandleLocationType(PathAbstractions.EAbstractedLocationType _locationType);
 
-		// Token: 0x04007B4E RID: 31566
+		// Token: 0x04007B8F RID: 31631
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PathAbstractions.SearchDefinition Owner;
 
-		// Token: 0x04007B4F RID: 31567
+		// Token: 0x04007B90 RID: 31632
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly string RelativePath;
 
-		// Token: 0x04007B50 RID: 31568
+		// Token: 0x04007B91 RID: 31633
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly Dictionary<string, IList<PathAbstractions.AbstractedLocation>> locationsCache = new CaseInsensitiveStringDictionary<IList<PathAbstractions.AbstractedLocation>>();
 
-		// Token: 0x04007B51 RID: 31569
+		// Token: 0x04007B92 RID: 31634
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool locationsCachePopulated;
 	}
 
-	// Token: 0x02001494 RID: 5268
+	// Token: 0x020014A6 RID: 5286
 	public class SearchPathBasic : PathAbstractions.SearchPath
 	{
-		// Token: 0x0600A4F3 RID: 42227 RVA: 0x003D8887 File Offset: 0x003D6A87
+		// Token: 0x0600A54B RID: 42315 RVA: 0x003DAC8B File Offset: 0x003D8E8B
 		public SearchPathBasic(PathAbstractions.EAbstractedLocationType _locationType, Func<string> _basePath, string _relativePath, Func<bool> _canMatch = null)
 			: base(_relativePath)
 		{
@@ -701,8 +701,8 @@ public static class PathAbstractions
 			this.canMatch = _canMatch;
 		}
 
-		// Token: 0x1700139B RID: 5019
-		// (get) Token: 0x0600A4F4 RID: 42228 RVA: 0x003D88A6 File Offset: 0x003D6AA6
+		// Token: 0x170013A7 RID: 5031
+		// (get) Token: 0x0600A54C RID: 42316 RVA: 0x003DACAA File Offset: 0x003D8EAA
 		public override bool CanMatch
 		{
 			get
@@ -716,7 +716,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4F5 RID: 42229 RVA: 0x003D88C0 File Offset: 0x003D6AC0
+		// Token: 0x0600A54D RID: 42317 RVA: 0x003DACC4 File Offset: 0x003D8EC4
 		public override PathAbstractions.AbstractedLocation GetLocation(string _name, UserDataStorageType? _userDataHint)
 		{
 			if (base.UseCache())
@@ -731,7 +731,7 @@ public static class PathAbstractions
 			return PathAbstractions.AbstractedLocation.None;
 		}
 
-		// Token: 0x0600A4F6 RID: 42230 RVA: 0x003D891E File Offset: 0x003D6B1E
+		// Token: 0x0600A54E RID: 42318 RVA: 0x003DAD22 File Offset: 0x003D8F22
 		public override void GetAvailablePathsList(List<PathAbstractions.AbstractedLocation> _targetList, Regex _nameMatch, bool _ignoreDuplicateNames)
 		{
 			if (base.UseCache())
@@ -742,7 +742,7 @@ public static class PathAbstractions
 			base.getAvailablePathsSingleBase(_targetList, this.locationType, this.basePath() + "/" + this.RelativePath, _nameMatch, _ignoreDuplicateNames, null, null);
 		}
 
-		// Token: 0x0600A4F7 RID: 42231 RVA: 0x003D8960 File Offset: 0x003D6B60
+		// Token: 0x0600A54F RID: 42319 RVA: 0x003DAD64 File Offset: 0x003D8F64
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void PopulateCache()
 		{
@@ -763,48 +763,48 @@ public static class PathAbstractions
 			this.locationsCachePopulated = true;
 		}
 
-		// Token: 0x0600A4F8 RID: 42232 RVA: 0x003D8A00 File Offset: 0x003D6C00
+		// Token: 0x0600A550 RID: 42320 RVA: 0x003DAE04 File Offset: 0x003D9004
 		public override PathAbstractions.AbstractedLocation? TryBuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, Mod _mod, UserDataStorageType? _userStorageHint = null)
 		{
 			return new PathAbstractions.AbstractedLocation?(new PathAbstractions.AbstractedLocation(_locationType, _elementName, this.basePath() + "/" + this.RelativePath + ((!string.IsNullOrEmpty(_subFolder)) ? ("/" + _subFolder) : ""), _subFolder, _elementName, this.Owner.Extension, this.Owner.IsFolder, null));
 		}
 
-		// Token: 0x0600A4F9 RID: 42233 RVA: 0x003D8A67 File Offset: 0x003D6C67
+		// Token: 0x0600A551 RID: 42321 RVA: 0x003DAE6B File Offset: 0x003D906B
 		public override string TryGetBasePath(PathAbstractions.EAbstractedLocationType _locationType, Mod _mod)
 		{
 			return this.basePath() + "/" + this.RelativePath;
 		}
 
-		// Token: 0x0600A4FA RID: 42234 RVA: 0x003D8A84 File Offset: 0x003D6C84
+		// Token: 0x0600A552 RID: 42322 RVA: 0x003DAE88 File Offset: 0x003D9088
 		public override bool CanHandleLocationType(PathAbstractions.EAbstractedLocationType _locationType)
 		{
 			return _locationType == this.locationType;
 		}
 
-		// Token: 0x04007B54 RID: 31572
+		// Token: 0x04007B95 RID: 31637
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly PathAbstractions.EAbstractedLocationType locationType;
 
-		// Token: 0x04007B55 RID: 31573
+		// Token: 0x04007B96 RID: 31638
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Func<string> basePath;
 
-		// Token: 0x04007B56 RID: 31574
+		// Token: 0x04007B97 RID: 31639
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Func<bool> canMatch;
 	}
 
-	// Token: 0x02001495 RID: 5269
+	// Token: 0x020014A7 RID: 5287
 	public class SearchPathUserData : PathAbstractions.SearchPath
 	{
-		// Token: 0x0600A4FB RID: 42235 RVA: 0x003D8A8F File Offset: 0x003D6C8F
+		// Token: 0x0600A553 RID: 42323 RVA: 0x003DAE93 File Offset: 0x003D9093
 		public SearchPathUserData(string _relativePath, Func<UserDataStorageType> _getStorageTarget)
 			: base(_relativePath)
 		{
 			this.getStorageTarget = _getStorageTarget;
 		}
 
-		// Token: 0x0600A4FC RID: 42236 RVA: 0x003D8AA0 File Offset: 0x003D6CA0
+		// Token: 0x0600A554 RID: 42324 RVA: 0x003DAEA4 File Offset: 0x003D90A4
 		public override PathAbstractions.AbstractedLocation GetLocation(string _name, UserDataStorageType? _userDataHint)
 		{
 			UserDataStorageType userDataStorageType = ((_userDataHint != null) ? _userDataHint.Value : this.getStorageTarget());
@@ -816,7 +816,7 @@ public static class PathAbstractions
 			return base.getLocationSingleBase(PathAbstractions.EAbstractedLocationType.UserDataPath, text, _name, null, null);
 		}
 
-		// Token: 0x0600A4FD RID: 42237 RVA: 0x003D8B00 File Offset: 0x003D6D00
+		// Token: 0x0600A555 RID: 42325 RVA: 0x003DAF04 File Offset: 0x003D9104
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CollectLocations(List<PathAbstractions.AbstractedLocation> _list, Regex _nameMatch, bool _ignoreDuplicateNames)
 		{
@@ -829,7 +829,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A4FE RID: 42238 RVA: 0x003D8B5C File Offset: 0x003D6D5C
+		// Token: 0x0600A556 RID: 42326 RVA: 0x003DAF60 File Offset: 0x003D9160
 		public override void GetAvailablePathsList(List<PathAbstractions.AbstractedLocation> _targetList, Regex _nameMatch, bool _ignoreDuplicateNames)
 		{
 			if (base.UseCache())
@@ -840,14 +840,14 @@ public static class PathAbstractions
 			this.CollectLocations(_targetList, _nameMatch, _ignoreDuplicateNames);
 		}
 
-		// Token: 0x0600A4FF RID: 42239 RVA: 0x003D8B79 File Offset: 0x003D6D79
+		// Token: 0x0600A557 RID: 42327 RVA: 0x003DAF7D File Offset: 0x003D917D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetCacheLookupName(string _name, UserDataStorageType _storageType)
 		{
 			return string.Format("{0}_{1}", _name, _storageType);
 		}
 
-		// Token: 0x0600A500 RID: 42240 RVA: 0x003D8B8C File Offset: 0x003D6D8C
+		// Token: 0x0600A558 RID: 42328 RVA: 0x003DAF90 File Offset: 0x003D9190
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void PopulateCache()
 		{
@@ -868,35 +868,35 @@ public static class PathAbstractions
 			this.locationsCachePopulated = true;
 		}
 
-		// Token: 0x0600A501 RID: 42241 RVA: 0x003D8C34 File Offset: 0x003D6E34
+		// Token: 0x0600A559 RID: 42329 RVA: 0x003DB038 File Offset: 0x003D9238
 		public override PathAbstractions.AbstractedLocation? TryBuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, Mod _mod, UserDataStorageType? _userStorageHint = null)
 		{
 			string userGameDataDir = GameIO.GetUserGameDataDir((_userStorageHint != null) ? _userStorageHint.Value : this.getStorageTarget());
 			return new PathAbstractions.AbstractedLocation?(new PathAbstractions.AbstractedLocation(_locationType, _elementName, userGameDataDir + "/" + this.RelativePath + ((!string.IsNullOrEmpty(_subFolder)) ? ("/" + _subFolder) : ""), _subFolder, _elementName, this.Owner.Extension, this.Owner.IsFolder, null));
 		}
 
-		// Token: 0x0600A502 RID: 42242 RVA: 0x003D8CB4 File Offset: 0x003D6EB4
+		// Token: 0x0600A55A RID: 42330 RVA: 0x003DB0B8 File Offset: 0x003D92B8
 		public override string TryGetBasePath(PathAbstractions.EAbstractedLocationType _locationType, Mod _mod)
 		{
 			return GameIO.GetUserGameDataDir(this.getStorageTarget()) + "/" + this.RelativePath;
 		}
 
-		// Token: 0x0600A503 RID: 42243 RVA: 0x003D8CD6 File Offset: 0x003D6ED6
+		// Token: 0x0600A55B RID: 42331 RVA: 0x003DB0DA File Offset: 0x003D92DA
 		public override bool CanHandleLocationType(PathAbstractions.EAbstractedLocationType _locationType)
 		{
 			return _locationType == PathAbstractions.EAbstractedLocationType.UserDataPath;
 		}
 
-		// Token: 0x04007B57 RID: 31575
+		// Token: 0x04007B98 RID: 31640
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Func<UserDataStorageType> getStorageTarget;
 	}
 
-	// Token: 0x02001496 RID: 5270
+	// Token: 0x020014A8 RID: 5288
 	public class SearchPathSaves : PathAbstractions.SearchPath
 	{
-		// Token: 0x1700139C RID: 5020
-		// (get) Token: 0x0600A504 RID: 42244 RVA: 0x003D8CDC File Offset: 0x003D6EDC
+		// Token: 0x170013A8 RID: 5032
+		// (get) Token: 0x0600A55C RID: 42332 RVA: 0x003DB0E0 File Offset: 0x003D92E0
 		public override bool CanMatch
 		{
 			get
@@ -905,13 +905,13 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A505 RID: 42245 RVA: 0x003D8CE9 File Offset: 0x003D6EE9
+		// Token: 0x0600A55D RID: 42333 RVA: 0x003DB0ED File Offset: 0x003D92ED
 		public SearchPathSaves(string _relativePath)
 			: base(_relativePath)
 		{
 		}
 
-		// Token: 0x0600A506 RID: 42246 RVA: 0x003D8CF2 File Offset: 0x003D6EF2
+		// Token: 0x0600A55E RID: 42334 RVA: 0x003DB0F6 File Offset: 0x003D92F6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ValueTuple<string, PathAbstractions.EAbstractedLocationType> GetSaveFolder()
 		{
@@ -926,7 +926,7 @@ public static class PathAbstractions
 			return new ValueTuple<string, PathAbstractions.EAbstractedLocationType>(null, PathAbstractions.EAbstractedLocationType.None);
 		}
 
-		// Token: 0x0600A507 RID: 42247 RVA: 0x003D8D2C File Offset: 0x003D6F2C
+		// Token: 0x0600A55F RID: 42335 RVA: 0x003DB130 File Offset: 0x003D9330
 		public override PathAbstractions.AbstractedLocation GetLocation(string _name, UserDataStorageType? _userDataHint)
 		{
 			if (base.UseCache())
@@ -948,7 +948,7 @@ public static class PathAbstractions
 			return PathAbstractions.AbstractedLocation.None;
 		}
 
-		// Token: 0x0600A508 RID: 42248 RVA: 0x003D8DC8 File Offset: 0x003D6FC8
+		// Token: 0x0600A560 RID: 42336 RVA: 0x003DB1CC File Offset: 0x003D93CC
 		public override void GetAvailablePathsList(List<PathAbstractions.AbstractedLocation> _targetList, Regex _nameMatch, bool _ignoreDuplicateNames)
 		{
 			if (base.UseCache())
@@ -970,7 +970,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A509 RID: 42249 RVA: 0x003D8E5C File Offset: 0x003D705C
+		// Token: 0x0600A561 RID: 42337 RVA: 0x003DB260 File Offset: 0x003D9460
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void PopulateCache()
 		{
@@ -993,7 +993,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A50A RID: 42250 RVA: 0x003D8F0C File Offset: 0x003D710C
+		// Token: 0x0600A562 RID: 42338 RVA: 0x003DB310 File Offset: 0x003D9510
 		public override PathAbstractions.AbstractedLocation? TryBuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, Mod _mod, UserDataStorageType? _userStorageHint = null)
 		{
 			ValueTuple<string, PathAbstractions.EAbstractedLocationType> saveFolder = this.GetSaveFolder();
@@ -1006,7 +1006,7 @@ public static class PathAbstractions
 			return new PathAbstractions.AbstractedLocation?(new PathAbstractions.AbstractedLocation(item2, _elementName, item + "/" + this.RelativePath + ((!string.IsNullOrEmpty(_subFolder)) ? ("/" + _subFolder) : ""), _subFolder, _elementName, this.Owner.Extension, this.Owner.IsFolder, null));
 		}
 
-		// Token: 0x0600A50B RID: 42251 RVA: 0x003D8F8C File Offset: 0x003D718C
+		// Token: 0x0600A563 RID: 42339 RVA: 0x003DB390 File Offset: 0x003D9590
 		public override string TryGetBasePath(PathAbstractions.EAbstractedLocationType _locationType, Mod _mod)
 		{
 			string item = this.GetSaveFolder().Item1;
@@ -1017,18 +1017,18 @@ public static class PathAbstractions
 			return item + "/" + this.RelativePath;
 		}
 
-		// Token: 0x0600A50C RID: 42252 RVA: 0x0033B509 File Offset: 0x00339709
+		// Token: 0x0600A564 RID: 42340 RVA: 0x0033D58D File Offset: 0x0033B78D
 		public override bool CanHandleLocationType(PathAbstractions.EAbstractedLocationType _locationType)
 		{
 			return _locationType == PathAbstractions.EAbstractedLocationType.HostSave || _locationType == PathAbstractions.EAbstractedLocationType.LocalSave;
 		}
 	}
 
-	// Token: 0x02001497 RID: 5271
+	// Token: 0x020014A9 RID: 5289
 	public class SearchPathMods : PathAbstractions.SearchPath
 	{
-		// Token: 0x1700139D RID: 5021
-		// (get) Token: 0x0600A50D RID: 42253 RVA: 0x003D8CDC File Offset: 0x003D6EDC
+		// Token: 0x170013A9 RID: 5033
+		// (get) Token: 0x0600A565 RID: 42341 RVA: 0x003DB0E0 File Offset: 0x003D92E0
 		public override bool CanMatch
 		{
 			get
@@ -1037,13 +1037,13 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A50E RID: 42254 RVA: 0x003D8CE9 File Offset: 0x003D6EE9
+		// Token: 0x0600A566 RID: 42342 RVA: 0x003DB0ED File Offset: 0x003D92ED
 		public SearchPathMods(string _relativePath)
 			: base(_relativePath)
 		{
 		}
 
-		// Token: 0x0600A50F RID: 42255 RVA: 0x003D8FBC File Offset: 0x003D71BC
+		// Token: 0x0600A567 RID: 42343 RVA: 0x003DB3C0 File Offset: 0x003D95C0
 		public override PathAbstractions.AbstractedLocation GetLocation(string _name, UserDataStorageType? _userDataHint)
 		{
 			if (base.UseCache())
@@ -1061,7 +1061,7 @@ public static class PathAbstractions
 			return PathAbstractions.AbstractedLocation.None;
 		}
 
-		// Token: 0x0600A510 RID: 42256 RVA: 0x003D9054 File Offset: 0x003D7254
+		// Token: 0x0600A568 RID: 42344 RVA: 0x003DB458 File Offset: 0x003D9658
 		public override void GetAvailablePathsList(List<PathAbstractions.AbstractedLocation> _targetList, Regex _nameMatch, bool _ignoreDuplicateNames)
 		{
 			if (base.UseCache())
@@ -1075,7 +1075,7 @@ public static class PathAbstractions
 			}
 		}
 
-		// Token: 0x0600A511 RID: 42257 RVA: 0x003D90D4 File Offset: 0x003D72D4
+		// Token: 0x0600A569 RID: 42345 RVA: 0x003DB4D8 File Offset: 0x003D96D8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void PopulateCache()
 		{
@@ -1098,7 +1098,7 @@ public static class PathAbstractions
 			this.locationsCachePopulated = true;
 		}
 
-		// Token: 0x0600A512 RID: 42258 RVA: 0x003D91CC File Offset: 0x003D73CC
+		// Token: 0x0600A56A RID: 42346 RVA: 0x003DB5D0 File Offset: 0x003D97D0
 		public override PathAbstractions.AbstractedLocation? TryBuildLocation(PathAbstractions.EAbstractedLocationType _locationType, string _subFolder, string _elementName, Mod _mod, UserDataStorageType? _userStorageHint = null)
 		{
 			if (_mod == null)
@@ -1108,7 +1108,7 @@ public static class PathAbstractions
 			return new PathAbstractions.AbstractedLocation?(new PathAbstractions.AbstractedLocation(_locationType, _elementName, _mod.Path + "/" + this.RelativePath + ((!string.IsNullOrEmpty(_subFolder)) ? ("/" + _subFolder) : ""), _subFolder, _elementName, this.Owner.Extension, this.Owner.IsFolder, _mod));
 		}
 
-		// Token: 0x0600A513 RID: 42259 RVA: 0x003D9244 File Offset: 0x003D7444
+		// Token: 0x0600A56B RID: 42347 RVA: 0x003DB648 File Offset: 0x003D9848
 		public override string TryGetBasePath(PathAbstractions.EAbstractedLocationType _locationType, Mod _mod)
 		{
 			if (_mod == null)
@@ -1118,17 +1118,17 @@ public static class PathAbstractions
 			return _mod.Path + "/" + this.RelativePath;
 		}
 
-		// Token: 0x0600A514 RID: 42260 RVA: 0x003D926F File Offset: 0x003D746F
+		// Token: 0x0600A56C RID: 42348 RVA: 0x003DB673 File Offset: 0x003D9873
 		public override bool CanHandleLocationType(PathAbstractions.EAbstractedLocationType _locationType)
 		{
 			return _locationType == PathAbstractions.EAbstractedLocationType.Mods;
 		}
 	}
 
-	// Token: 0x02001498 RID: 5272
+	// Token: 0x020014AA RID: 5290
 	public static class Contextual
 	{
-		// Token: 0x0600A515 RID: 42261 RVA: 0x003D9278 File Offset: 0x003D7478
+		// Token: 0x0600A56D RID: 42349 RVA: 0x003DB67C File Offset: 0x003D987C
 		public static PathAbstractions.AbstractedLocation FindDownloadedRemoteWorld(string _saveDir)
 		{
 			string text = Path.Combine(_saveDir, "World");
@@ -1139,7 +1139,7 @@ public static class PathAbstractions
 			return new PathAbstractions.AbstractedLocation(PathAbstractions.EAbstractedLocationType.LocalSave, "World", text, null, true, null);
 		}
 
-		// Token: 0x0600A516 RID: 42262 RVA: 0x003D92B0 File Offset: 0x003D74B0
+		// Token: 0x0600A56E RID: 42350 RVA: 0x003DB6B4 File Offset: 0x003D98B4
 		public static void FindActiveWorld(out string _name, out PathAbstractions.AbstractedLocation _location)
 		{
 			_name = GamePrefs.GetString(EnumGamePrefs.GameWorld);
@@ -1148,13 +1148,13 @@ public static class PathAbstractions
 			_location = PathAbstractions.Contextual.FindWorld(_name, @int, int2);
 		}
 
-		// Token: 0x0600A517 RID: 42263 RVA: 0x003D92EB File Offset: 0x003D74EB
+		// Token: 0x0600A56F RID: 42351 RVA: 0x003DB6EF File Offset: 0x003D98EF
 		public static PathAbstractions.AbstractedLocation FindActiveWorldLocation()
 		{
 			return PathAbstractions.Contextual.FindWorld(GamePrefs.GetString(EnumGamePrefs.GameWorld), (PathAbstractions.EAbstractedLocationType)GamePrefs.GetInt(EnumGamePrefs.GameWorldLocationType), (UserDataStorageType)GamePrefs.GetInt(EnumGamePrefs.UserWorldStorageType));
 		}
 
-		// Token: 0x0600A518 RID: 42264 RVA: 0x003D9310 File Offset: 0x003D7510
+		// Token: 0x0600A570 RID: 42352 RVA: 0x003DB714 File Offset: 0x003D9914
 		public static bool DoesWorldExist(string _name)
 		{
 			UserDataStorageType? userDataStorageType;
@@ -1172,7 +1172,7 @@ public static class PathAbstractions
 			return worldsSearchPaths2.GetLocation(_name, null, userDataStorageType).Exists();
 		}
 
-		// Token: 0x0600A519 RID: 42265 RVA: 0x003D937C File Offset: 0x003D757C
+		// Token: 0x0600A571 RID: 42353 RVA: 0x003DB780 File Offset: 0x003D9980
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static PathAbstractions.AbstractedLocation FindWorld(string _name, PathAbstractions.EAbstractedLocationType _locationTypeHint, UserDataStorageType _storageTypeHint)
 		{

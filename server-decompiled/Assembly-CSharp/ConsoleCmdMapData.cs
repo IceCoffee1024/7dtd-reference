@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000244 RID: 580
+// Token: 0x02000246 RID: 582
 [Preserve]
 public class ConsoleCmdMapData : ConsoleCmdAbstract
 {
-	// Token: 0x06001157 RID: 4439 RVA: 0x0006E0AA File Offset: 0x0006C2AA
+	// Token: 0x0600115B RID: 4443 RVA: 0x0006E27A File Offset: 0x0006C47A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "mapdata" };
 	}
 
-	// Token: 0x06001158 RID: 4440 RVA: 0x0006E0BA File Offset: 0x0006C2BA
+	// Token: 0x0600115C RID: 4444 RVA: 0x0006E28A File Offset: 0x0006C48A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\nclear - reset player map data\nprefab - save prefabs to mapdata.png\nstart - save start points to mapdata.png";
 	}
 
-	// Token: 0x06001159 RID: 4441 RVA: 0x0006E0C1 File Offset: 0x0006C2C1
+	// Token: 0x0600115D RID: 4445 RVA: 0x0006E291 File Offset: 0x0006C491
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Writes some map data to an image";
 	}
 
-	// Token: 0x0600115A RID: 4442 RVA: 0x0006E0C8 File Offset: 0x0006C2C8
+	// Token: 0x0600115E RID: 4446 RVA: 0x0006E298 File Offset: 0x0006C498
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -93,7 +93,7 @@ public class ConsoleCmdMapData : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Saved mapdata.png and put " + emode.ToStringCached<ConsoleCmdMapData.EMode>() + " into it");
 	}
 
-	// Token: 0x0600115B RID: 4443 RVA: 0x0006E2EC File Offset: 0x0006C4EC
+	// Token: 0x0600115F RID: 4447 RVA: 0x0006E4BC File Offset: 0x0006C6BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setRect(Vector2i _worldSize, Vector3i _pos, Vector3i _size, Color[] _cols, ConsoleCmdMapData.EColorChannel _channel)
 	{
@@ -128,25 +128,25 @@ public class ConsoleCmdMapData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x02000245 RID: 581
+	// Token: 0x02000247 RID: 583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EMode
 	{
-		// Token: 0x04000CD3 RID: 3283
-		Prefabs,
 		// Token: 0x04000CD4 RID: 3284
+		Prefabs,
+		// Token: 0x04000CD5 RID: 3285
 		StartPoints
 	}
 
-	// Token: 0x02000246 RID: 582
+	// Token: 0x02000248 RID: 584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EColorChannel
 	{
-		// Token: 0x04000CD6 RID: 3286
-		Red,
 		// Token: 0x04000CD7 RID: 3287
-		Green,
+		Red,
 		// Token: 0x04000CD8 RID: 3288
+		Green,
+		// Token: 0x04000CD9 RID: 3289
 		Blue
 	}
 }

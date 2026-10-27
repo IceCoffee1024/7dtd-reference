@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000998 RID: 2456
+// Token: 0x020009A2 RID: 2466
 [Preserve]
 public class ObjectiveFetch : BaseObjective
 {
-	// Token: 0x170007B9 RID: 1977
-	// (get) Token: 0x0600478C RID: 18316 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170007BF RID: 1983
+	// (get) Token: 0x060047AF RID: 18351 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -16,7 +16,7 @@ public class ObjectiveFetch : BaseObjective
 		}
 	}
 
-	// Token: 0x0600478D RID: 18317 RVA: 0x001C27FC File Offset: 0x001C09FC
+	// Token: 0x060047B0 RID: 18352 RVA: 0x001C3880 File Offset: 0x001C1A80
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveFetch_keyword", false, null);
@@ -25,14 +25,14 @@ public class ObjectiveFetch : BaseObjective
 		this.itemCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x0600478E RID: 18318 RVA: 0x001C2850 File Offset: 0x001C0A50
+	// Token: 0x060047B1 RID: 18353 RVA: 0x001C38D4 File Offset: 0x001C1AD4
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.expectedItemClass.GetLocalizedItemName());
 		this.StatusText = string.Format("{0}/{1}", this.currentCount, this.itemCount);
 	}
 
-	// Token: 0x0600478F RID: 18319 RVA: 0x001C28A0 File Offset: 0x001C0AA0
+	// Token: 0x060047B2 RID: 18354 RVA: 0x001C3924 File Offset: 0x001C1B24
 	public override void AddHooks()
 	{
 		LocalPlayerUI.GetUIForPlayer(base.OwnerQuest.OwnerJournal.OwnerPlayer);
@@ -42,7 +42,7 @@ public class ObjectiveFetch : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004790 RID: 18320 RVA: 0x001C2918 File Offset: 0x001C0B18
+	// Token: 0x060047B3 RID: 18355 RVA: 0x001C399C File Offset: 0x001C1B9C
 	public override void RemoveHooks()
 	{
 		XUiM_PlayerInventory playerInventory = LocalPlayerUI.GetUIForPlayer(base.OwnerQuest.OwnerJournal.OwnerPlayer).xui.PlayerInventory;
@@ -53,7 +53,7 @@ public class ObjectiveFetch : BaseObjective
 		}
 	}
 
-	// Token: 0x06004791 RID: 18321 RVA: 0x001C2978 File Offset: 0x001C0B78
+	// Token: 0x060047B4 RID: 18356 RVA: 0x001C39FC File Offset: 0x001C1BFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_AddItem(ItemStack stack)
 	{
@@ -75,7 +75,7 @@ public class ObjectiveFetch : BaseObjective
 		}
 	}
 
-	// Token: 0x06004792 RID: 18322 RVA: 0x001C29E8 File Offset: 0x001C0BE8
+	// Token: 0x060047B5 RID: 18357 RVA: 0x001C3A6C File Offset: 0x001C1C6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Backpack_OnBackpackItemsChangedInternal()
 	{
@@ -87,7 +87,7 @@ public class ObjectiveFetch : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004793 RID: 18323 RVA: 0x001C2A28 File Offset: 0x001C0C28
+	// Token: 0x060047B6 RID: 18358 RVA: 0x001C3AAC File Offset: 0x001C1CAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Toolbelt_OnToolbeltItemsChangedInternal()
 	{
@@ -99,7 +99,7 @@ public class ObjectiveFetch : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004794 RID: 18324 RVA: 0x001C2A68 File Offset: 0x001C0C68
+	// Token: 0x060047B7 RID: 18359 RVA: 0x001C3AEC File Offset: 0x001C1CEC
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -125,7 +125,7 @@ public class ObjectiveFetch : BaseObjective
 		}
 	}
 
-	// Token: 0x06004795 RID: 18325 RVA: 0x001C2B50 File Offset: 0x001C0D50
+	// Token: 0x060047B8 RID: 18360 RVA: 0x001C3BD4 File Offset: 0x001C1DD4
 	public override void RemoveObjectives()
 	{
 		if (!this.KeepItems)
@@ -139,7 +139,7 @@ public class ObjectiveFetch : BaseObjective
 		}
 	}
 
-	// Token: 0x06004796 RID: 18326 RVA: 0x001C2BC8 File Offset: 0x001C0DC8
+	// Token: 0x060047B9 RID: 18361 RVA: 0x001C3C4C File Offset: 0x001C1E4C
 	public override BaseObjective Clone()
 	{
 		ObjectiveFetch objectiveFetch = new ObjectiveFetch();
@@ -148,7 +148,7 @@ public class ObjectiveFetch : BaseObjective
 		return objectiveFetch;
 	}
 
-	// Token: 0x06004797 RID: 18327 RVA: 0x001C2BF0 File Offset: 0x001C0DF0
+	// Token: 0x060047BA RID: 18362 RVA: 0x001C3C74 File Offset: 0x001C1E74
 	public override string ParseBinding(string bindingName)
 	{
 		string id = this.ID;
@@ -178,7 +178,7 @@ public class ObjectiveFetch : BaseObjective
 		}
 	}
 
-	// Token: 0x06004798 RID: 18328 RVA: 0x001C2C78 File Offset: 0x001C0E78
+	// Token: 0x060047BB RID: 18363 RVA: 0x001C3CFC File Offset: 0x001C1EFC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
@@ -187,23 +187,23 @@ public class ObjectiveFetch : BaseObjective
 		parameters.Add("keep_items", this.KeepItems);
 	}
 
-	// Token: 0x04003982 RID: 14722
+	// Token: 0x040039A2 RID: 14754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x04003983 RID: 14723
+	// Token: 0x040039A3 RID: 14755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04003984 RID: 14724
+	// Token: 0x040039A4 RID: 14756
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int itemCount;
 
-	// Token: 0x04003985 RID: 14725
+	// Token: 0x040039A5 RID: 14757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentCount;
 
-	// Token: 0x04003986 RID: 14726
+	// Token: 0x040039A6 RID: 14758
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool KeepItems;
 }

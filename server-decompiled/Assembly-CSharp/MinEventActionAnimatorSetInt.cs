@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006CA RID: 1738
+// Token: 0x020006D1 RID: 1745
 [Preserve]
 public class MinEventActionAnimatorSetInt : MinEventActionTargetedBase
 {
-	// Token: 0x06003648 RID: 13896 RVA: 0x00165CE0 File Offset: 0x00163EE0
+	// Token: 0x06003657 RID: 13911 RVA: 0x001668DC File Offset: 0x00164ADC
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -18,7 +18,7 @@ public class MinEventActionAnimatorSetInt : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003649 RID: 13897 RVA: 0x00165D64 File Offset: 0x00163F64
+	// Token: 0x06003658 RID: 13912 RVA: 0x00166960 File Offset: 0x00164B60
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -39,11 +39,11 @@ public class MinEventActionAnimatorSetInt : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002B9B RID: 11163
+	// Token: 0x04002BB6 RID: 11190
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string property;
 
-	// Token: 0x04002B9C RID: 11164
+	// Token: 0x04002BB7 RID: 11191
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int value;
 }

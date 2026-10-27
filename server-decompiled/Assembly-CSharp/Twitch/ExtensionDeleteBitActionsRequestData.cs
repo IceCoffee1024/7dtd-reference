@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x020017F8 RID: 6136
+	// Token: 0x02001829 RID: 6185
 	[Serializable]
 	public class ExtensionDeleteBitActionsRequestData
 	{
-		// Token: 0x04008E4F RID: 36431
+		// Token: 0x04008F38 RID: 36664
 		public List<string> transactions;
 	}
 }

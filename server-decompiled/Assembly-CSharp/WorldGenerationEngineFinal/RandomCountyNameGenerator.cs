@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200174B RID: 5963
+	// Token: 0x0200177C RID: 6012
 	public static class RandomCountyNameGenerator
 	{
-		// Token: 0x0600B98E RID: 47502 RVA: 0x0044A4D0 File Offset: 0x004486D0
+		// Token: 0x0600BAA2 RID: 47778 RVA: 0x0044DE7C File Offset: 0x0044C07C
 		public static string GetName(int _seed)
 		{
 			string[] array = RandomCountyNameGenerator.constenants.Split(',', StringSplitOptions.None);
@@ -49,15 +49,15 @@ namespace WorldGenerationEngineFinal
 			return text2;
 		}
 
-		// Token: 0x04008A6E RID: 35438
+		// Token: 0x04008B57 RID: 35671
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string constenants = "b,c,d,f,g,h,j,k,l,m,n,p,r,s,t,v,w,x,y,z";
 
-		// Token: 0x04008A6F RID: 35439
+		// Token: 0x04008B58 RID: 35672
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string vowels = "a,e,i,o,u";
 
-		// Token: 0x04008A70 RID: 35440
+		// Token: 0x04008B59 RID: 35673
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string[] prefixes = new string[]
 		{
@@ -65,7 +65,7 @@ namespace WorldGenerationEngineFinal
 			"West", ""
 		};
 
-		// Token: 0x04008A71 RID: 35441
+		// Token: 0x04008B5A RID: 35674
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string[] suffixes = new string[] { " County", " Territory", " Valley", " Mountains" };
 	}

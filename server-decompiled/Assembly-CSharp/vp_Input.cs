@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015A4 RID: 5540
+// Token: 0x020015B6 RID: 5558
 public class vp_Input : MonoBehaviour
 {
-	// Token: 0x1700142F RID: 5167
-	// (get) Token: 0x0600ACF4 RID: 44276 RVA: 0x004072B4 File Offset: 0x004054B4
+	// Token: 0x1700143B RID: 5179
+	// (get) Token: 0x0600AD4C RID: 44364 RVA: 0x004096B8 File Offset: 0x004078B8
 	public static vp_Input Instance
 	{
 		get
@@ -39,12 +39,12 @@ public class vp_Input : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACF5 RID: 44277 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AD4D RID: 44365 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void CreateIfNoExist()
 	{
 	}
 
-	// Token: 0x0600ACF6 RID: 44278 RVA: 0x00407348 File Offset: 0x00405548
+	// Token: 0x0600AD4E RID: 44366 RVA: 0x0040974C File Offset: 0x0040794C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -54,13 +54,13 @@ public class vp_Input : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACF7 RID: 44279 RVA: 0x00407361 File Offset: 0x00405561
+	// Token: 0x0600AD4F RID: 44367 RVA: 0x00409765 File Offset: 0x00407965
 	public virtual void SetDirty(bool dirty)
 	{
 		vp_Input.mIsDirty = dirty;
 	}
 
-	// Token: 0x0600ACF8 RID: 44280 RVA: 0x0040736C File Offset: 0x0040556C
+	// Token: 0x0600AD50 RID: 44368 RVA: 0x00409770 File Offset: 0x00407970
 	public virtual void SetupDefaults(string type = "")
 	{
 		if ((type == "" || type == "Buttons") && this.ButtonKeys.Count == 0)
@@ -93,7 +93,7 @@ public class vp_Input : MonoBehaviour
 		this.UpdateDictionaries();
 	}
 
-	// Token: 0x0600ACF9 RID: 44281 RVA: 0x004074F0 File Offset: 0x004056F0
+	// Token: 0x0600AD51 RID: 44369 RVA: 0x004098F4 File Offset: 0x00407AF4
 	public virtual void AddButton(string n, KeyCode k = KeyCode.None)
 	{
 		if (this.ButtonKeys.Contains(n))
@@ -105,7 +105,7 @@ public class vp_Input : MonoBehaviour
 		this.ButtonValues.Add(k);
 	}
 
-	// Token: 0x0600ACFA RID: 44282 RVA: 0x0040753C File Offset: 0x0040573C
+	// Token: 0x0600AD52 RID: 44370 RVA: 0x00409940 File Offset: 0x00407B40
 	public virtual void AddAxis(string n, KeyCode pk = KeyCode.None, KeyCode nk = KeyCode.None)
 	{
 		if (this.AxisKeys.Contains(n))
@@ -125,7 +125,7 @@ public class vp_Input : MonoBehaviour
 		});
 	}
 
-	// Token: 0x0600ACFB RID: 44283 RVA: 0x004075AC File Offset: 0x004057AC
+	// Token: 0x0600AD53 RID: 44371 RVA: 0x004099B0 File Offset: 0x00407BB0
 	public virtual void AddUnityAxis(string n)
 	{
 		if (this.UnityAxis.Contains(n))
@@ -136,7 +136,7 @@ public class vp_Input : MonoBehaviour
 		this.UnityAxis.Add(n);
 	}
 
-	// Token: 0x0600ACFC RID: 44284 RVA: 0x004075E4 File Offset: 0x004057E4
+	// Token: 0x0600AD54 RID: 44372 RVA: 0x004099E8 File Offset: 0x00407BE8
 	public virtual void UpdateDictionaries()
 	{
 		if (!Application.isPlaying)
@@ -159,13 +159,13 @@ public class vp_Input : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACFD RID: 44285 RVA: 0x004076A8 File Offset: 0x004058A8
+	// Token: 0x0600AD55 RID: 44373 RVA: 0x00409AAC File Offset: 0x00407CAC
 	public static bool GetButtonAny(string button)
 	{
 		return vp_Input.Instance.DoGetButtonAny(button);
 	}
 
-	// Token: 0x0600ACFE RID: 44286 RVA: 0x004076B8 File Offset: 0x004058B8
+	// Token: 0x0600AD56 RID: 44374 RVA: 0x00409ABC File Offset: 0x00407CBC
 	public virtual bool DoGetButtonAny(string button)
 	{
 		if (this.Buttons.ContainsKey(button))
@@ -176,13 +176,13 @@ public class vp_Input : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600ACFF RID: 44287 RVA: 0x00407723 File Offset: 0x00405923
+	// Token: 0x0600AD57 RID: 44375 RVA: 0x00409B27 File Offset: 0x00407D27
 	public static bool GetButton(string button)
 	{
 		return vp_Input.Instance.DoGetButton(button);
 	}
 
-	// Token: 0x0600AD00 RID: 44288 RVA: 0x00407730 File Offset: 0x00405930
+	// Token: 0x0600AD58 RID: 44376 RVA: 0x00409B34 File Offset: 0x00407D34
 	public virtual bool DoGetButton(string button)
 	{
 		if (this.Buttons.ContainsKey(button))
@@ -193,13 +193,13 @@ public class vp_Input : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600AD01 RID: 44289 RVA: 0x00407768 File Offset: 0x00405968
+	// Token: 0x0600AD59 RID: 44377 RVA: 0x00409B6C File Offset: 0x00407D6C
 	public static bool GetButtonDown(string button)
 	{
 		return vp_Input.Instance.DoGetButtonDown(button);
 	}
 
-	// Token: 0x0600AD02 RID: 44290 RVA: 0x00407775 File Offset: 0x00405975
+	// Token: 0x0600AD5A RID: 44378 RVA: 0x00409B79 File Offset: 0x00407D79
 	public virtual bool DoGetButtonDown(string button)
 	{
 		if (this.Buttons.ContainsKey(button))
@@ -210,13 +210,13 @@ public class vp_Input : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600AD03 RID: 44291 RVA: 0x004077AD File Offset: 0x004059AD
+	// Token: 0x0600AD5B RID: 44379 RVA: 0x00409BB1 File Offset: 0x00407DB1
 	public static bool GetButtonUp(string button)
 	{
 		return vp_Input.Instance.DoGetButtonUp(button);
 	}
 
-	// Token: 0x0600AD04 RID: 44292 RVA: 0x004077BA File Offset: 0x004059BA
+	// Token: 0x0600AD5C RID: 44380 RVA: 0x00409BBE File Offset: 0x00407DBE
 	public virtual bool DoGetButtonUp(string button)
 	{
 		if (this.Buttons.ContainsKey(button))
@@ -227,13 +227,13 @@ public class vp_Input : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600AD05 RID: 44293 RVA: 0x004077F2 File Offset: 0x004059F2
+	// Token: 0x0600AD5D RID: 44381 RVA: 0x00409BF6 File Offset: 0x00407DF6
 	public static float GetAxisRaw(string axis)
 	{
 		return vp_Input.Instance.DoGetAxisRaw(axis);
 	}
 
-	// Token: 0x0600AD06 RID: 44294 RVA: 0x00407800 File Offset: 0x00405A00
+	// Token: 0x0600AD5E RID: 44382 RVA: 0x00409C04 File Offset: 0x00407E04
 	public virtual float DoGetAxisRaw(string axis)
 	{
 		if (this.Axis.ContainsKey(axis) && this.ControlType == 0)
@@ -257,7 +257,7 @@ public class vp_Input : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x0600AD07 RID: 44295 RVA: 0x00407898 File Offset: 0x00405A98
+	// Token: 0x0600AD5F RID: 44383 RVA: 0x00409C9C File Offset: 0x00407E9C
 	public static void ChangeButtonKey(string button, KeyCode keyCode, bool save = false)
 	{
 		if (!vp_Input.Instance.Buttons.ContainsKey(button))
@@ -272,7 +272,7 @@ public class vp_Input : MonoBehaviour
 		vp_Input.Instance.Buttons[button] = keyCode;
 	}
 
-	// Token: 0x0600AD08 RID: 44296 RVA: 0x00407904 File Offset: 0x00405B04
+	// Token: 0x0600AD60 RID: 44384 RVA: 0x00409D08 File Offset: 0x00407F08
 	public static void ChangeAxis(string n, KeyCode pk = KeyCode.None, KeyCode nk = KeyCode.None, bool save = false)
 	{
 		if (!vp_Input.Instance.AxisKeys.Contains(n))
@@ -295,56 +295,56 @@ public class vp_Input : MonoBehaviour
 		};
 	}
 
-	// Token: 0x04007FF4 RID: 32756
+	// Token: 0x04008035 RID: 32821
 	public int ControlType;
 
-	// Token: 0x04007FF5 RID: 32757
+	// Token: 0x04008036 RID: 32822
 	public Dictionary<string, KeyCode> Buttons = new Dictionary<string, KeyCode>();
 
-	// Token: 0x04007FF6 RID: 32758
+	// Token: 0x04008037 RID: 32823
 	public List<string> ButtonKeys = new List<string>();
 
-	// Token: 0x04007FF7 RID: 32759
+	// Token: 0x04008038 RID: 32824
 	public List<KeyCode> ButtonValues = new List<KeyCode>();
 
-	// Token: 0x04007FF8 RID: 32760
+	// Token: 0x04008039 RID: 32825
 	public Dictionary<string, vp_Input.vp_InputAxis> Axis = new Dictionary<string, vp_Input.vp_InputAxis>();
 
-	// Token: 0x04007FF9 RID: 32761
+	// Token: 0x0400803A RID: 32826
 	public List<string> AxisKeys = new List<string>();
 
-	// Token: 0x04007FFA RID: 32762
+	// Token: 0x0400803B RID: 32827
 	public List<vp_Input.vp_InputAxis> AxisValues = new List<vp_Input.vp_InputAxis>();
 
-	// Token: 0x04007FFB RID: 32763
+	// Token: 0x0400803C RID: 32828
 	public List<string> UnityAxis = new List<string>();
 
-	// Token: 0x04007FFC RID: 32764
+	// Token: 0x0400803D RID: 32829
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static string m_FolderPath = "UltimateFPS/Content/Resources/Input";
 
-	// Token: 0x04007FFD RID: 32765
+	// Token: 0x0400803E RID: 32830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static string m_PrefabPath = "Assets/UltimateFPS/Content/Resources/Input/vp_Input.prefab";
 
-	// Token: 0x04007FFE RID: 32766
+	// Token: 0x0400803F RID: 32831
 	public static bool mIsDirty = true;
 
-	// Token: 0x04007FFF RID: 32767
+	// Token: 0x04008040 RID: 32832
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static vp_Input m_Instance;
 
-	// Token: 0x020015A5 RID: 5541
+	// Token: 0x020015B7 RID: 5559
 	[Serializable]
 	public class vp_InputAxis
 	{
-		// Token: 0x04008000 RID: 32768
+		// Token: 0x04008041 RID: 32833
 		public KeyCode Positive;
 
-		// Token: 0x04008001 RID: 32769
+		// Token: 0x04008042 RID: 32834
 		public KeyCode Negative;
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E14 RID: 3604
+// Token: 0x02000E1F RID: 3615
 [Preserve]
 public class XUiC_EditingTools : XUiController
 {
-	// Token: 0x06006DE9 RID: 28137 RVA: 0x002ADF54 File Offset: 0x002AC154
+	// Token: 0x06006E0E RID: 28174 RVA: 0x002AF4C0 File Offset: 0x002AD6C0
 	[XuiBindEvent("WindowSelected", "parentSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onWindowSelected(XUiC_WindowSelector _sender, string _windowId)
@@ -31,30 +31,30 @@ public class XUiC_EditingTools : XUiController
 		}
 	}
 
-	// Token: 0x06006DEA RID: 28138 RVA: 0x002ADFD1 File Offset: 0x002AC1D1
+	// Token: 0x06006E0F RID: 28175 RVA: 0x002AF53D File Offset: 0x002AD73D
 	public override void Init()
 	{
 		base.Init();
 		XUiC_EditingTools.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006DEB RID: 28139 RVA: 0x002ADFE9 File Offset: 0x002AC1E9
+	// Token: 0x06006E10 RID: 28176 RVA: 0x002AF555 File Offset: 0x002AD755
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006DEC RID: 28140 RVA: 0x002ADFF8 File Offset: 0x002AC1F8
+	// Token: 0x06006E11 RID: 28177 RVA: 0x002AF564 File Offset: 0x002AD764
 	public void SetWindow(string _windowName)
 	{
 		this.parentSelector.SetSelected(_windowName);
 	}
 
-	// Token: 0x040053E0 RID: 21472
+	// Token: 0x04005405 RID: 21509
 	public static string ID = "";
 
-	// Token: 0x040053E1 RID: 21473
+	// Token: 0x04005406 RID: 21510
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WindowSelector parentSelector;

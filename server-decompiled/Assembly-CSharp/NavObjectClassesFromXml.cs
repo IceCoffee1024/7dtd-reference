@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000D2E RID: 3374
+// Token: 0x02000D39 RID: 3385
 public class NavObjectClassesFromXml
 {
-	// Token: 0x06006660 RID: 26208 RVA: 0x002880CC File Offset: 0x002862CC
+	// Token: 0x06006685 RID: 26245 RVA: 0x002895F4 File Offset: 0x002877F4
 	public static IEnumerator Load(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -20,7 +20,7 @@ public class NavObjectClassesFromXml
 		yield break;
 	}
 
-	// Token: 0x06006661 RID: 26209 RVA: 0x002880DC File Offset: 0x002862DC
+	// Token: 0x06006686 RID: 26246 RVA: 0x00289604 File Offset: 0x00287804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -30,7 +30,7 @@ public class NavObjectClassesFromXml
 		}
 	}
 
-	// Token: 0x06006662 RID: 26210 RVA: 0x00288130 File Offset: 0x00286330
+	// Token: 0x06006687 RID: 26247 RVA: 0x00289658 File Offset: 0x00287858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNavObjectClass(XElement e)
 	{
@@ -115,7 +115,7 @@ public class NavObjectClassesFromXml
 		navObjectClass.Init();
 	}
 
-	// Token: 0x06006663 RID: 26211 RVA: 0x002883D8 File Offset: 0x002865D8
+	// Token: 0x06006688 RID: 26248 RVA: 0x00289900 File Offset: 0x00287B00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseSettings(NavObjectSettings entry, XElement e)
 	{
@@ -128,7 +128,7 @@ public class NavObjectClassesFromXml
 		entry.Init();
 	}
 
-	// Token: 0x06006664 RID: 26212 RVA: 0x00288454 File Offset: 0x00286654
+	// Token: 0x06006689 RID: 26249 RVA: 0x0028997C File Offset: 0x00287B7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void HandleExtends(NavObjectClass navClass, NavObjectClass extendedClass)
 	{

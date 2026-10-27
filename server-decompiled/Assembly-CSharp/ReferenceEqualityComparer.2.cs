@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Threading;
 
-// Token: 0x020014AE RID: 5294
+// Token: 0x020014C0 RID: 5312
 public sealed class ReferenceEqualityComparer<T> : IEqualityComparer<T> where T : class
 {
-	// Token: 0x0600A5D6 RID: 42454 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600A62E RID: 42542 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReferenceEqualityComparer()
 	{
 	}
 
-	// Token: 0x170013AD RID: 5037
-	// (get) Token: 0x0600A5D7 RID: 42455 RVA: 0x003DBB54 File Offset: 0x003D9D54
+	// Token: 0x170013B9 RID: 5049
+	// (get) Token: 0x0600A62F RID: 42543 RVA: 0x003DDF58 File Offset: 0x003DC158
 	public static ReferenceEqualityComparer<T> Instance
 	{
 		get
@@ -26,14 +26,14 @@ public sealed class ReferenceEqualityComparer<T> : IEqualityComparer<T> where T 
 		}
 	}
 
-	// Token: 0x0600A5D8 RID: 42456 RVA: 0x003DBB80 File Offset: 0x003D9D80
+	// Token: 0x0600A630 RID: 42544 RVA: 0x003DDF84 File Offset: 0x003DC184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.Generic.IEqualityComparer<T>.Equals(T _x, T _y)
 	{
 		return _x == _y;
 	}
 
-	// Token: 0x0600A5D9 RID: 42457 RVA: 0x003DBB90 File Offset: 0x003D9D90
+	// Token: 0x0600A631 RID: 42545 RVA: 0x003DDF94 File Offset: 0x003DC194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int System.Collections.Generic.IEqualityComparer<T>.GetHashCode(T _obj)
 	{
@@ -44,7 +44,7 @@ public sealed class ReferenceEqualityComparer<T> : IEqualityComparer<T> where T 
 		return _obj.GetHashCode();
 	}
 
-	// Token: 0x04007B94 RID: 31636
+	// Token: 0x04007BD5 RID: 31701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ReferenceEqualityComparer<T> instance;
 }

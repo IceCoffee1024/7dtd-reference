@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020011BC RID: 4540
+// Token: 0x020011CC RID: 4556
 public enum EnumMirrorAlong
 {
-	// Token: 0x04006B35 RID: 27445
+	// Token: 0x04006B4D RID: 27469
 	XAxis,
-	// Token: 0x04006B36 RID: 27446
+	// Token: 0x04006B4E RID: 27470
 	YAxis,
-	// Token: 0x04006B37 RID: 27447
+	// Token: 0x04006B4F RID: 27471
 	ZAxis
 }

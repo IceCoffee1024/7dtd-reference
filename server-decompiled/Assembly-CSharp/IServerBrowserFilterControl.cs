@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000DD2 RID: 3538
+// Token: 0x02000DDD RID: 3549
 public interface IServerBrowserFilterControl
 {
-	// Token: 0x06006BC4 RID: 27588
+	// Token: 0x06006BE9 RID: 27625
 	void Reset();
 
-	// Token: 0x06006BC5 RID: 27589
+	// Token: 0x06006BEA RID: 27626
 	XUiC_ServersList.UiServerFilter GetFilter();
 }

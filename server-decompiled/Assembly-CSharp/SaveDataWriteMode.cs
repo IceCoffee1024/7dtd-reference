@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000A05 RID: 2565
+// Token: 0x02000A0F RID: 2575
 public enum SaveDataWriteMode
 {
-	// Token: 0x04003BEC RID: 15340
+	// Token: 0x04003C0D RID: 15373
 	None,
-	// Token: 0x04003BED RID: 15341
+	// Token: 0x04003C0E RID: 15374
 	Immediate,
-	// Token: 0x04003BEE RID: 15342
+	// Token: 0x04003C0F RID: 15375
 	Deferred
 }

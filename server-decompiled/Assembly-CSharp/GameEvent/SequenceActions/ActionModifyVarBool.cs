@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A30 RID: 6704
+	// Token: 0x02001A61 RID: 6753
 	[Preserve]
 	public class ActionModifyVarBool : ActionBaseClientAction
 	{
-		// Token: 0x0600CC32 RID: 52274 RVA: 0x004A93DE File Offset: 0x004A75DE
+		// Token: 0x0600CD46 RID: 52550 RVA: 0x004ACEDA File Offset: 0x004AB0DA
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			base.Owner.EventVariables.SetEventVariable(this.varName, StringParsers.ParseBool(this.valueText, 0, -1, true));
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CC33 RID: 52275 RVA: 0x004A9405 File Offset: 0x004A7605
+		// Token: 0x0600CD47 RID: 52551 RVA: 0x004ACF01 File Offset: 0x004AB101
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionModifyVarBool.PropVarName, ref this.varName);
 		}
 
-		// Token: 0x0600CC34 RID: 52276 RVA: 0x004A9430 File Offset: 0x004A7630
+		// Token: 0x0600CD48 RID: 52552 RVA: 0x004ACF2C File Offset: 0x004AB12C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -33,19 +33,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009AD0 RID: 39632
+		// Token: 0x04009BB9 RID: 39865
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText = "";
 
-		// Token: 0x04009AD1 RID: 39633
+		// Token: 0x04009BBA RID: 39866
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string varName = "";
 
-		// Token: 0x04009AD2 RID: 39634
+		// Token: 0x04009BBB RID: 39867
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 
-		// Token: 0x04009AD3 RID: 39635
+		// Token: 0x04009BBC RID: 39868
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropVarName = "var_name";
 	}

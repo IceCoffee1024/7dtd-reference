@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Scripting;
 
-// Token: 0x020002AD RID: 685
+// Token: 0x020002AF RID: 687
 [Preserve]
 public class ConsoleCmdSystemInfo : ConsoleCmdAbstract
 {
-	// Token: 0x060013B9 RID: 5049 RVA: 0x000786BF File Offset: 0x000768BF
+	// Token: 0x060013BD RID: 5053 RVA: 0x0007888F File Offset: 0x00076A8F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdSystemInfo : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000219 RID: 537
-	// (get) Token: 0x060013BA RID: 5050 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060013BE RID: 5054 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -25,21 +25,21 @@ public class ConsoleCmdSystemInfo : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013BB RID: 5051 RVA: 0x000786CF File Offset: 0x000768CF
+	// Token: 0x060013BF RID: 5055 RVA: 0x0007889F File Offset: 0x00076A9F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "List SystemInfo";
 	}
 
-	// Token: 0x060013BC RID: 5052 RVA: 0x0003223F File Offset: 0x0003043F
+	// Token: 0x060013C0 RID: 5056 RVA: 0x000321FF File Offset: 0x000303FF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "";
 	}
 
-	// Token: 0x060013BD RID: 5053 RVA: 0x000786D8 File Offset: 0x000768D8
+	// Token: 0x060013C1 RID: 5057 RVA: 0x000788A8 File Offset: 0x00076AA8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Device Model                   :" + SystemInfo.deviceModel);

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x0200138E RID: 5006
+// Token: 0x020013A0 RID: 5024
 public static class SleeperVolumeToolManager
 {
-	// Token: 0x170012D8 RID: 4824
-	// (get) Token: 0x06009D84 RID: 40324 RVA: 0x003B8354 File Offset: 0x003B6554
+	// Token: 0x170012E4 RID: 4836
+	// (get) Token: 0x06009DDC RID: 40412 RVA: 0x003BA758 File Offset: 0x003B8958
 	public static SelectionBox SelectedSleeperBox
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -26,7 +26,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D85 RID: 40325 RVA: 0x003B838C File Offset: 0x003B658C
+	// Token: 0x06009DDD RID: 40413 RVA: 0x003BA790 File Offset: 0x003B8990
 	public static void RegisterSleeperBlock(BlockValue _bv, Transform _prefabTrans, Vector3i _position)
 	{
 		BlockSleeper blockSleeper = _bv.Block as BlockSleeper;
@@ -70,7 +70,7 @@ public static class SleeperVolumeToolManager
 		SleeperVolumeToolManager.UpdateSleeperBlockVisuals(blockData, SleeperVolumeToolManager.SelectedSleeperBox);
 	}
 
-	// Token: 0x06009D86 RID: 40326 RVA: 0x003B850C File Offset: 0x003B670C
+	// Token: 0x06009DDE RID: 40414 RVA: 0x003BA910 File Offset: 0x003B8B10
 	public static void UnRegisterSleeperBlock(Vector3i _position)
 	{
 		if (SleeperVolumeToolManager.sleepers == null)
@@ -93,7 +93,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D87 RID: 40327 RVA: 0x003B8590 File Offset: 0x003B6790
+	// Token: 0x06009DDF RID: 40415 RVA: 0x003BA994 File Offset: 0x003B8B94
 	public static void CleanUp()
 	{
 		if (SleeperVolumeToolManager.sleepers != null)
@@ -117,7 +117,7 @@ public static class SleeperVolumeToolManager
 		SleeperVolumeToolManager.ClearSleeperVolumes();
 	}
 
-	// Token: 0x06009D88 RID: 40328 RVA: 0x003B8654 File Offset: 0x003B6854
+	// Token: 0x06009DE0 RID: 40416 RVA: 0x003BAA58 File Offset: 0x003B8C58
 	public static void RegisterSleeperVolume(SelectionBox _selBox)
 	{
 		if (_selBox == null)
@@ -134,19 +134,19 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D89 RID: 40329 RVA: 0x003B8686 File Offset: 0x003B6886
+	// Token: 0x06009DE1 RID: 40417 RVA: 0x003BAA8A File Offset: 0x003B8C8A
 	public static void UnRegisterSleeperVolume(SelectionBox _selBox)
 	{
 		SleeperVolumeToolManager.registeredSleeperVolumes.Remove(_selBox);
 	}
 
-	// Token: 0x06009D8A RID: 40330 RVA: 0x003B8694 File Offset: 0x003B6894
+	// Token: 0x06009DE2 RID: 40418 RVA: 0x003BAA98 File Offset: 0x003B8C98
 	public static void ClearSleeperVolumes()
 	{
 		SleeperVolumeToolManager.registeredSleeperVolumes.Clear();
 	}
 
-	// Token: 0x06009D8B RID: 40331 RVA: 0x003B86A0 File Offset: 0x003B68A0
+	// Token: 0x06009DE3 RID: 40419 RVA: 0x003BAAA4 File Offset: 0x003B8CA4
 	public static void CheckKeys()
 	{
 		if (!Input.GetKeyDown(KeyCode.RightBracket))
@@ -203,7 +203,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D8C RID: 40332 RVA: 0x003B8817 File Offset: 0x003B6A17
+	// Token: 0x06009DE4 RID: 40420 RVA: 0x003BAC1B File Offset: 0x003B8E1B
 	public static void SetVisible(bool _visible)
 	{
 		if (_visible)
@@ -214,7 +214,7 @@ public static class SleeperVolumeToolManager
 		SleeperVolumeToolManager.hideSleeperBlocks();
 	}
 
-	// Token: 0x06009D8D RID: 40333 RVA: 0x003B8828 File Offset: 0x003B6A28
+	// Token: 0x06009DE5 RID: 40421 RVA: 0x003BAC2C File Offset: 0x003B8E2C
 	public static void SelectionChanged(SelectionBox _selBox)
 	{
 		if (_selBox)
@@ -228,14 +228,14 @@ public static class SleeperVolumeToolManager
 		SleeperVolumeToolManager.UpdateAllVisuals();
 	}
 
-	// Token: 0x06009D8E RID: 40334 RVA: 0x003B8860 File Offset: 0x003B6A60
+	// Token: 0x06009DE6 RID: 40422 RVA: 0x003BAC64 File Offset: 0x003B8E64
 	public static void UpdateAllVisuals()
 	{
 		SleeperVolumeToolManager.UpdateAllSleeperBlockVisuals();
 		SleeperVolumeToolManager.UpdateSleeperVolumeColors();
 	}
 
-	// Token: 0x06009D8F RID: 40335 RVA: 0x003B886C File Offset: 0x003B6A6C
+	// Token: 0x06009DE7 RID: 40423 RVA: 0x003BAC70 File Offset: 0x003B8E70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void UpdateSleeperVolumeColors()
 	{
@@ -270,7 +270,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D90 RID: 40336 RVA: 0x003B8960 File Offset: 0x003B6B60
+	// Token: 0x06009DE8 RID: 40424 RVA: 0x003BAD64 File Offset: 0x003B8F64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void hideSleeperBlocks()
 	{
@@ -294,7 +294,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D91 RID: 40337 RVA: 0x003B8A14 File Offset: 0x003B6C14
+	// Token: 0x06009DE9 RID: 40425 RVA: 0x003BAE18 File Offset: 0x003B9018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void UpdateAllSleeperBlockVisuals()
 	{
@@ -315,7 +315,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D92 RID: 40338 RVA: 0x003B8AB8 File Offset: 0x003B6CB8
+	// Token: 0x06009DEA RID: 40426 RVA: 0x003BAEBC File Offset: 0x003B90BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void UpdateSleeperBlockVisuals(SleeperVolumeToolManager.BlockData _data, SelectionBox _selectedBox)
 	{
@@ -384,7 +384,7 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x06009D93 RID: 40339 RVA: 0x003B8CCC File Offset: 0x003B6ECC
+	// Token: 0x06009DEB RID: 40427 RVA: 0x003BB0D0 File Offset: 0x003B92D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool InAnyVolume(Vector3i _pos)
 	{
@@ -402,7 +402,7 @@ public static class SleeperVolumeToolManager
 		return false;
 	}
 
-	// Token: 0x06009D94 RID: 40340 RVA: 0x003B8DAC File Offset: 0x003B6FAC
+	// Token: 0x06009DEC RID: 40428 RVA: 0x003BB1B0 File Offset: 0x003B93B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetMats(Transform _t, Material _mat)
 	{
@@ -415,9 +415,9 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x170012D9 RID: 4825
-	// (get) Token: 0x06009D95 RID: 40341 RVA: 0x003B8DF7 File Offset: 0x003B6FF7
-	// (set) Token: 0x06009D96 RID: 40342 RVA: 0x003B8E00 File Offset: 0x003B7000
+	// Token: 0x170012E5 RID: 4837
+	// (get) Token: 0x06009DED RID: 40429 RVA: 0x003BB1FB File Offset: 0x003B93FB
+	// (set) Token: 0x06009DEE RID: 40430 RVA: 0x003BB204 File Offset: 0x003B9404
 	public static bool XRayMode
 	{
 		get
@@ -440,47 +440,47 @@ public static class SleeperVolumeToolManager
 		}
 	}
 
-	// Token: 0x04007730 RID: 30512
+	// Token: 0x04007771 RID: 30577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject GroupGameObject;
 
-	// Token: 0x04007731 RID: 30513
+	// Token: 0x04007772 RID: 30578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<Vector3i, List<SleeperVolumeToolManager.BlockData>> sleepers = new Dictionary<Vector3i, List<SleeperVolumeToolManager.BlockData>>();
 
-	// Token: 0x04007732 RID: 30514
+	// Token: 0x04007773 RID: 30579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<SelectionBox> registeredSleeperVolumes = new List<SelectionBox>();
 
-	// Token: 0x04007733 RID: 30515
+	// Token: 0x04007774 RID: 30580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool xRayOn = true;
 
-	// Token: 0x04007734 RID: 30516
+	// Token: 0x04007775 RID: 30581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cActiveIndex = 0;
 
-	// Token: 0x04007735 RID: 30517
+	// Token: 0x04007776 RID: 30582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPriorityIndex = 1;
 
-	// Token: 0x04007736 RID: 30518
+	// Token: 0x04007777 RID: 30583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cNoVolumeIndex = 2;
 
-	// Token: 0x04007737 RID: 30519
+	// Token: 0x04007778 RID: 30584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cDarkIndex = 3;
 
-	// Token: 0x04007738 RID: 30520
+	// Token: 0x04007779 RID: 30585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cBanditIndex = 4;
 
-	// Token: 0x04007739 RID: 30521
+	// Token: 0x0400777A RID: 30586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cInfestedIndex = 5;
 
-	// Token: 0x0400773A RID: 30522
+	// Token: 0x0400777B RID: 30587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color[] typeColors = new Color[]
 	{
@@ -492,15 +492,15 @@ public static class SleeperVolumeToolManager
 		new Color(1f, 0.1f, 0.1f)
 	};
 
-	// Token: 0x0400773B RID: 30523
+	// Token: 0x0400777C RID: 30588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Material> typeMats = new List<Material>();
 
-	// Token: 0x0400773C RID: 30524
+	// Token: 0x0400777D RID: 30589
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color groupSelectedColor = new Color(0.9f, 0.9f, 1f, 0.4f);
 
-	// Token: 0x0400773D RID: 30525
+	// Token: 0x0400777E RID: 30590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color[] groupColors = new Color[]
 	{
@@ -514,25 +514,25 @@ public static class SleeperVolumeToolManager
 		new Color(0.2f, 0.6f, 1f, 0.4f)
 	};
 
-	// Token: 0x0400773E RID: 30526
+	// Token: 0x0400777F RID: 30591
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SelectionBox currentSelectionBox;
 
-	// Token: 0x0400773F RID: 30527
+	// Token: 0x04007780 RID: 30592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SelectionBox previousSelectionBox;
 
-	// Token: 0x0200138F RID: 5007
+	// Token: 0x020013A1 RID: 5025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BlockData
 	{
-		// Token: 0x04007740 RID: 30528
+		// Token: 0x04007781 RID: 30593
 		public BlockSleeper block;
 
-		// Token: 0x04007741 RID: 30529
+		// Token: 0x04007782 RID: 30594
 		public Transform prefabT;
 
-		// Token: 0x04007742 RID: 30530
+		// Token: 0x04007783 RID: 30595
 		public Vector3i position;
 	}
 }

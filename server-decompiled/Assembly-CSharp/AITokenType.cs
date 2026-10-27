@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000460 RID: 1120
+// Token: 0x02000462 RID: 1122
 public enum AITokenType
 {
-	// Token: 0x0400177B RID: 6011
+	// Token: 0x0400178B RID: 6027
 	None,
-	// Token: 0x0400177C RID: 6012
+	// Token: 0x0400178C RID: 6028
 	MeleeAttack,
-	// Token: 0x0400177D RID: 6013
+	// Token: 0x0400178D RID: 6029
 	RangedAttack,
-	// Token: 0x0400177E RID: 6014
+	// Token: 0x0400178E RID: 6030
 	ThrowProjectile
 }

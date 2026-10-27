@@ -2,18 +2,18 @@
 using UniLinq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E40 RID: 3648
+// Token: 0x02000E4B RID: 3659
 [Preserve]
 public class XUiC_ProfilesList : XUiC_List<XUiC_ProfilesList.ListEntry>
 {
-	// Token: 0x06006FAE RID: 28590 RVA: 0x002B4A06 File Offset: 0x002B2C06
+	// Token: 0x06006FD3 RID: 28627 RVA: 0x002B5F72 File Offset: 0x002B4172
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06006FAF RID: 28591 RVA: 0x002B4A18 File Offset: 0x002B2C18
+	// Token: 0x06006FD4 RID: 28628 RVA: 0x002B5F84 File Offset: 0x002B4184
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -35,7 +35,7 @@ public class XUiC_ProfilesList : XUiC_List<XUiC_ProfilesList.ListEntry>
 		this.SelectByName(ProfileSDF.CurrentProfileName());
 	}
 
-	// Token: 0x06006FB0 RID: 28592 RVA: 0x002B4B14 File Offset: 0x002B2D14
+	// Token: 0x06006FD5 RID: 28629 RVA: 0x002B6080 File Offset: 0x002B4280
 	public bool SelectByName(string _name)
 	{
 		if (!string.IsNullOrEmpty(_name))
@@ -52,18 +52,18 @@ public class XUiC_ProfilesList : XUiC_List<XUiC_ProfilesList.ListEntry>
 		return false;
 	}
 
-	// Token: 0x02000E41 RID: 3649
+	// Token: 0x02000E4C RID: 3660
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_ProfilesList.ListEntry>
 	{
-		// Token: 0x06006FB2 RID: 28594 RVA: 0x002B4B6B File Offset: 0x002B2D6B
+		// Token: 0x06006FD7 RID: 28631 RVA: 0x002B60D7 File Offset: 0x002B42D7
 		public ListEntry(string _name, bool _isArchetype)
 		{
 			this.Name = _name;
 			this.isArchetype = _isArchetype;
 		}
 
-		// Token: 0x06006FB3 RID: 28595 RVA: 0x002B4B84 File Offset: 0x002B2D84
+		// Token: 0x06006FD8 RID: 28632 RVA: 0x002B60F0 File Offset: 0x002B42F0
 		public override int CompareTo(XUiC_ProfilesList.ListEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -78,26 +78,26 @@ public class XUiC_ProfilesList : XUiC_List<XUiC_ProfilesList.ListEntry>
 			return string.Compare(this.Name, _otherEntry.Name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06006FB4 RID: 28596 RVA: 0x002B4BC3 File Offset: 0x002B2DC3
+		// Token: 0x06006FD9 RID: 28633 RVA: 0x002B612F File Offset: 0x002B432F
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.Name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x040054BC RID: 21692
+		// Token: 0x040054E1 RID: 21729
 		public readonly string Name;
 
-		// Token: 0x040054BD RID: 21693
+		// Token: 0x040054E2 RID: 21730
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool isArchetype;
 	}
 
-	// Token: 0x02000E42 RID: 3650
+	// Token: 0x02000E4D RID: 3661
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_ProfilesList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06006FB5 RID: 28597 RVA: 0x002B4BD8 File Offset: 0x002B2DD8
+		// Token: 0x06006FDA RID: 28634 RVA: 0x002B6144 File Offset: 0x002B4344
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()

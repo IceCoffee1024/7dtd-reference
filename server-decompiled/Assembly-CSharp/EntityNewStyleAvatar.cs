@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004C3 RID: 1219
+// Token: 0x020004C5 RID: 1221
 [Preserve]
 public class EntityNewStyleAvatar : Entity
 {
-	// Token: 0x0600267D RID: 9853 RVA: 0x000EBEE0 File Offset: 0x000EA0E0
+	// Token: 0x06002684 RID: 9860 RVA: 0x000EC2F0 File Offset: 0x000EA4F0
 	public void EnableSubmesh(string submeshName, bool enable)
 	{
 		Transform transform = base.transform;
@@ -31,7 +31,7 @@ public class EntityNewStyleAvatar : Entity
 		}
 	}
 
-	// Token: 0x0600267E RID: 9854 RVA: 0x000EBF60 File Offset: 0x000EA160
+	// Token: 0x06002685 RID: 9861 RVA: 0x000EC370 File Offset: 0x000EA570
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
@@ -67,55 +67,55 @@ public class EntityNewStyleAvatar : Entity
 		base.gameObject.AddComponent<NewAvatarRootMotion>();
 	}
 
-	// Token: 0x0600267F RID: 9855 RVA: 0x000EC025 File Offset: 0x000EA225
+	// Token: 0x06002686 RID: 9862 RVA: 0x000EC435 File Offset: 0x000EA635
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
 		base.Awake();
 	}
 
-	// Token: 0x06002680 RID: 9856 RVA: 0x000EC02D File Offset: 0x000EA22D
+	// Token: 0x06002687 RID: 9863 RVA: 0x000EC43D File Offset: 0x000EA63D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
 		base.Update();
 	}
 
-	// Token: 0x04001C93 RID: 7315
+	// Token: 0x04001CA3 RID: 7331
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<string, EntityNewStyleAvatar.BodySlot> m_entitySlots = new Dictionary<string, EntityNewStyleAvatar.BodySlot>();
 
-	// Token: 0x020004C4 RID: 1220
+	// Token: 0x020004C6 RID: 1222
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class StringTags
 	{
-		// Token: 0x06002681 RID: 9857 RVA: 0x000EC035 File Offset: 0x000EA235
+		// Token: 0x06002688 RID: 9864 RVA: 0x000EC445 File Offset: 0x000EA645
 		public void AddTag(string tag)
 		{
 			this.tags.Add(tag);
 		}
 
-		// Token: 0x06002682 RID: 9858 RVA: 0x000EC044 File Offset: 0x000EA244
+		// Token: 0x06002689 RID: 9865 RVA: 0x000EC454 File Offset: 0x000EA654
 		public bool HasTag(string tag)
 		{
 			return this.tags.Contains(tag);
 		}
 
-		// Token: 0x04001C94 RID: 7316
+		// Token: 0x04001CA4 RID: 7332
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<string> tags;
 	}
 
-	// Token: 0x020004C5 RID: 1221
+	// Token: 0x020004C7 RID: 1223
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class BodySlot
 	{
-		// Token: 0x04001C95 RID: 7317
+		// Token: 0x04001CA5 RID: 7333
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string submeshName;
 
-		// Token: 0x04001C96 RID: 7318
+		// Token: 0x04001CA6 RID: 7334
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityNewStyleAvatar.StringTags tags;
 	}

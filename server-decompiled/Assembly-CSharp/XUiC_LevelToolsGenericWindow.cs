@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F77 RID: 3959
+// Token: 0x02000F87 RID: 3975
 [Preserve]
 public class XUiC_LevelToolsGenericWindow : XUiController
 {
-	// Token: 0x06007C58 RID: 31832 RVA: 0x002F1E8B File Offset: 0x002F008B
+	// Token: 0x06007CA7 RID: 31911 RVA: 0x002F3B13 File Offset: 0x002F1D13
 	public override void Init()
 	{
 		base.Init();
@@ -17,21 +17,21 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.initSpecialFeatures();
 	}
 
-	// Token: 0x06007C59 RID: 31833 RVA: 0x002F1EAF File Offset: 0x002F00AF
+	// Token: 0x06007CA8 RID: 31912 RVA: 0x002F3B37 File Offset: 0x002F1D37
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.onOpenSpecialFeatures();
 	}
 
-	// Token: 0x06007C5A RID: 31834 RVA: 0x002F1EBD File Offset: 0x002F00BD
+	// Token: 0x06007CA9 RID: 31913 RVA: 0x002F3B45 File Offset: 0x002F1D45
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.updateGenericButtons();
 	}
 
-	// Token: 0x06007C5B RID: 31835 RVA: 0x002F1ECC File Offset: 0x002F00CC
+	// Token: 0x06007CAA RID: 31914 RVA: 0x002F3B54 File Offset: 0x002F1D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initGenericButtons()
 	{
@@ -57,7 +57,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C5C RID: 31836 RVA: 0x002F1F68 File Offset: 0x002F0168
+	// Token: 0x06007CAB RID: 31915 RVA: 0x002F3BF0 File Offset: 0x002F1DF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateGenericButtons()
 	{
@@ -76,7 +76,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C5D RID: 31837 RVA: 0x002F2030 File Offset: 0x002F0230
+	// Token: 0x06007CAC RID: 31916 RVA: 0x002F3CB8 File Offset: 0x002F1EB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setToggle(XUiC_ToggleButton _toggle, NGuiAction _action)
 	{
@@ -89,7 +89,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.toggleList.Add(new ValueTuple<XUiC_ToggleButton, NGuiAction>(_toggle, _action));
 	}
 
-	// Token: 0x06007C5E RID: 31838 RVA: 0x002F2098 File Offset: 0x002F0298
+	// Token: 0x06007CAD RID: 31917 RVA: 0x002F3D20 File Offset: 0x002F1F20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setButton(XUiC_SimpleButton _button, NGuiAction _action)
 	{
@@ -102,14 +102,14 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.buttonList.Add(new ValueTuple<XUiC_SimpleButton, NGuiAction>(_button, _action));
 	}
 
-	// Token: 0x06007C5F RID: 31839 RVA: 0x002F20FD File Offset: 0x002F02FD
+	// Token: 0x06007CAE RID: 31918 RVA: 0x002F3D85 File Offset: 0x002F1F85
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string buildCaption(NGuiAction _action)
 	{
 		return _action.GetText() + " " + _action.GetHotkey().GetBindingXuiMarkupString(XUiUtils.EmptyBindingStyle.EmptyString, XUiUtils.DisplayStyle.KeyboardWithParentheses, null);
 	}
 
-	// Token: 0x06007C60 RID: 31840 RVA: 0x002F211D File Offset: 0x002F031D
+	// Token: 0x06007CAF RID: 31919 RVA: 0x002F3DA5 File Offset: 0x002F1FA5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initSpecialFeatures()
 	{
@@ -118,7 +118,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.initShapeMaterialReplacer();
 	}
 
-	// Token: 0x06007C61 RID: 31841 RVA: 0x002F2134 File Offset: 0x002F0334
+	// Token: 0x06007CB0 RID: 31920 RVA: 0x002F3DBC File Offset: 0x002F1FBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onOpenSpecialFeatures()
 	{
@@ -140,7 +140,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.onOpenShapeMaterialReplacer(list);
 	}
 
-	// Token: 0x06007C62 RID: 31842 RVA: 0x002F2194 File Offset: 0x002F0394
+	// Token: 0x06007CB1 RID: 31921 RVA: 0x002F3E1C File Offset: 0x002F201C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initBlockHighlighter()
 	{
@@ -153,7 +153,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C63 RID: 31843 RVA: 0x002F21F4 File Offset: 0x002F03F4
+	// Token: 0x06007CB2 RID: 31922 RVA: 0x002F3E7C File Offset: 0x002F207C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onOpenBlockHighlighter(List<string> _allBlockNames)
 	{
@@ -164,7 +164,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C64 RID: 31844 RVA: 0x002F2220 File Offset: 0x002F0420
+	// Token: 0x06007CB3 RID: 31923 RVA: 0x002F3EA8 File Offset: 0x002F20A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HighlightBlock_OnChangeHandler(XUiController _sender, string _text, bool _validInput, bool _changeFromCode)
 	{
@@ -172,7 +172,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.dropdownHighlightBlockName.TextInput.ActiveTextColor = (flag ? Color.white : Color.red);
 	}
 
-	// Token: 0x06007C65 RID: 31845 RVA: 0x002F2264 File Offset: 0x002F0464
+	// Token: 0x06007CB4 RID: 31924 RVA: 0x002F3EEC File Offset: 0x002F20EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HighlightBlock_OnSubmitHandler(XUiController _sender, string _text)
 	{
@@ -183,7 +183,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C66 RID: 31846 RVA: 0x002F2294 File Offset: 0x002F0494
+	// Token: 0x06007CB5 RID: 31925 RVA: 0x002F3F1C File Offset: 0x002F211C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initBlockReplacer()
 	{
@@ -214,7 +214,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C67 RID: 31847 RVA: 0x002F23C0 File Offset: 0x002F05C0
+	// Token: 0x06007CB6 RID: 31926 RVA: 0x002F4048 File Offset: 0x002F2248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onOpenBlockReplacer(List<string> _allBlockNames)
 	{
@@ -234,7 +234,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C68 RID: 31848 RVA: 0x002F2424 File Offset: 0x002F0624
+	// Token: 0x06007CB7 RID: 31927 RVA: 0x002F40AC File Offset: 0x002F22AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReplaceBlockIds_OnChangeHandler(XUiController _sender, string _text, bool _validInput, bool _changeFromCode)
 	{
@@ -249,13 +249,13 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.btnReplaceBlockIds.Enabled = flag && flag2;
 	}
 
-	// Token: 0x06007C69 RID: 31849 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007CB8 RID: 31928 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReplaceBlockIds_OnSubmitHandler(XUiController _sender, string _text)
 	{
 	}
 
-	// Token: 0x06007C6A RID: 31850 RVA: 0x002F24C0 File Offset: 0x002F06C0
+	// Token: 0x06007CB9 RID: 31929 RVA: 0x002F4148 File Offset: 0x002F2348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnReplaceBlockIds_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -272,7 +272,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		XUiC_LevelToolsHelpers.ReplaceBlockId(blockByName, blockByName2);
 	}
 
-	// Token: 0x06007C6B RID: 31851 RVA: 0x002F2500 File Offset: 0x002F0700
+	// Token: 0x06007CBA RID: 31930 RVA: 0x002F4188 File Offset: 0x002F2388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initShapeMaterialReplacer()
 	{
@@ -322,7 +322,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C6C RID: 31852 RVA: 0x002F2664 File Offset: 0x002F0864
+	// Token: 0x06007CBB RID: 31931 RVA: 0x002F42EC File Offset: 0x002F24EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onOpenShapeMaterialReplacer(List<string> _allBlockNames)
 	{
@@ -343,7 +343,7 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C6D RID: 31853 RVA: 0x002F26CC File Offset: 0x002F08CC
+	// Token: 0x06007CBC RID: 31932 RVA: 0x002F4354 File Offset: 0x002F2554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReplaceShapeMaterial_OnChangeHandler(XUiController _sender, string _text, bool _validInput, bool _changefromcode)
 	{
@@ -359,13 +359,13 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		this.btnReplaceShapeMaterials.Enabled = flag && flag2;
 	}
 
-	// Token: 0x06007C6E RID: 31854 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007CBD RID: 31933 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReplaceShapeMaterial_OnSubmitHandler(XUiController _sender, string _text)
 	{
 	}
 
-	// Token: 0x06007C6F RID: 31855 RVA: 0x002F2768 File Offset: 0x002F0968
+	// Token: 0x06007CBE RID: 31934 RVA: 0x002F43F0 File Offset: 0x002F25F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnReplaceShapeMaterial_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -383,48 +383,48 @@ public class XUiC_LevelToolsGenericWindow : XUiController
 		XUiC_LevelToolsHelpers.ReplaceBlockShapeMaterials(text, text2);
 	}
 
-	// Token: 0x04005C11 RID: 23569
+	// Token: 0x04005C4B RID: 23627
 	public static string ID = "";
 
-	// Token: 0x04005C12 RID: 23570
+	// Token: 0x04005C4C RID: 23628
 	[TupleElementNames(new string[] { "toggle", "action" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ValueTuple<XUiC_ToggleButton, NGuiAction>> toggleList = new List<ValueTuple<XUiC_ToggleButton, NGuiAction>>();
 
-	// Token: 0x04005C13 RID: 23571
+	// Token: 0x04005C4D RID: 23629
 	[TupleElementNames(new string[] { "button", "action" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ValueTuple<XUiC_SimpleButton, NGuiAction>> buttonList = new List<ValueTuple<XUiC_SimpleButton, NGuiAction>>();
 
-	// Token: 0x04005C14 RID: 23572
+	// Token: 0x04005C4E RID: 23630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool blockListsInitDone;
 
-	// Token: 0x04005C15 RID: 23573
+	// Token: 0x04005C4F RID: 23631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DropDown dropdownHighlightBlockName;
 
-	// Token: 0x04005C16 RID: 23574
+	// Token: 0x04005C50 RID: 23632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DropDown txtOldBlockId;
 
-	// Token: 0x04005C17 RID: 23575
+	// Token: 0x04005C51 RID: 23633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DropDown txtNewBlockId;
 
-	// Token: 0x04005C18 RID: 23576
+	// Token: 0x04005C52 RID: 23634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnReplaceBlockIds;
 
-	// Token: 0x04005C19 RID: 23577
+	// Token: 0x04005C53 RID: 23635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DropDown txtOldShapeMaterial;
 
-	// Token: 0x04005C1A RID: 23578
+	// Token: 0x04005C54 RID: 23636
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DropDown txtNewShapeMaterial;
 
-	// Token: 0x04005C1B RID: 23579
+	// Token: 0x04005C55 RID: 23637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnReplaceShapeMaterials;
 }

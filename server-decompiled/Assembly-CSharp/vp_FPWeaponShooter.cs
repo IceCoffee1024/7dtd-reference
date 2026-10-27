@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001623 RID: 5667
+// Token: 0x02001635 RID: 5685
 [RequireComponent(typeof(vp_FPWeapon))]
 public class vp_FPWeaponShooter : vp_WeaponShooter
 {
-	// Token: 0x170014D2 RID: 5330
-	// (get) Token: 0x0600B155 RID: 45397 RVA: 0x00423671 File Offset: 0x00421871
+	// Token: 0x170014DE RID: 5342
+	// (get) Token: 0x0600B1AD RID: 45485 RVA: 0x00425A75 File Offset: 0x00423C75
 	public new vp_FPPlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,8 +20,8 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		}
 	}
 
-	// Token: 0x170014D3 RID: 5331
-	// (get) Token: 0x0600B156 RID: 45398 RVA: 0x004236AB File Offset: 0x004218AB
+	// Token: 0x170014DF RID: 5343
+	// (get) Token: 0x0600B1AE RID: 45486 RVA: 0x00425AAF File Offset: 0x00423CAF
 	public new vp_FPWeapon Weapon
 	{
 		get
@@ -34,7 +34,7 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		}
 	}
 
-	// Token: 0x0600B157 RID: 45399 RVA: 0x004236D4 File Offset: 0x004218D4
+	// Token: 0x0600B1AF RID: 45487 RVA: 0x00425AD8 File Offset: 0x00423CD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -49,7 +49,7 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		this.ProjectileSpawnDelay = Mathf.Min(this.ProjectileSpawnDelay, this.ProjectileFiringRate - 0.1f);
 	}
 
-	// Token: 0x0600B158 RID: 45400 RVA: 0x00423750 File Offset: 0x00421950
+	// Token: 0x0600B1B0 RID: 45488 RVA: 0x00425B54 File Offset: 0x00423D54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -57,14 +57,14 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		base.OnEnable();
 	}
 
-	// Token: 0x0600B159 RID: 45401 RVA: 0x0042375E File Offset: 0x0042195E
+	// Token: 0x0600B1B1 RID: 45489 RVA: 0x00425B62 File Offset: 0x00423D62
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
 		base.OnDisable();
 	}
 
-	// Token: 0x0600B15A RID: 45402 RVA: 0x00423768 File Offset: 0x00421968
+	// Token: 0x0600B1B2 RID: 45490 RVA: 0x00425B6C File Offset: 0x00423D6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -79,7 +79,7 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		}
 	}
 
-	// Token: 0x0600B15B RID: 45403 RVA: 0x004237D4 File Offset: 0x004219D4
+	// Token: 0x0600B1B3 RID: 45491 RVA: 0x00425BD8 File Offset: 0x00423DD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Fire()
 	{
@@ -115,7 +115,7 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		base.Fire();
 	}
 
-	// Token: 0x0600B15C RID: 45404 RVA: 0x00423904 File Offset: 0x00421B04
+	// Token: 0x0600B1B4 RID: 45492 RVA: 0x00425D08 File Offset: 0x00423F08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ApplyRecoil()
 	{
@@ -143,14 +143,14 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		}
 	}
 
-	// Token: 0x0600B15D RID: 45405 RVA: 0x00423A7C File Offset: 0x00421C7C
+	// Token: 0x0600B1B5 RID: 45493 RVA: 0x00425E80 File Offset: 0x00424080
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_CameraToggle3rdPerson()
 	{
 		this.RefreshFirePoint();
 	}
 
-	// Token: 0x0600B15E RID: 45406 RVA: 0x00423A84 File Offset: 0x00421C84
+	// Token: 0x0600B1B6 RID: 45494 RVA: 0x00425E88 File Offset: 0x00424088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshFirePoint()
 	{
@@ -186,34 +186,34 @@ public class vp_FPWeaponShooter : vp_WeaponShooter
 		}
 	}
 
-	// Token: 0x040084CE RID: 33998
+	// Token: 0x0400850F RID: 34063
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPWeapon m_FPWeapon;
 
-	// Token: 0x040084CF RID: 33999
+	// Token: 0x04008510 RID: 34064
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_FPCamera;
 
-	// Token: 0x040084D0 RID: 34000
+	// Token: 0x04008511 RID: 34065
 	public float MotionPositionReset = 0.5f;
 
-	// Token: 0x040084D1 RID: 34001
+	// Token: 0x04008512 RID: 34066
 	public float MotionRotationReset = 0.5f;
 
-	// Token: 0x040084D2 RID: 34002
+	// Token: 0x04008513 RID: 34067
 	public float MotionPositionPause = 1f;
 
-	// Token: 0x040084D3 RID: 34003
+	// Token: 0x04008514 RID: 34068
 	public float MotionRotationPause = 1f;
 
-	// Token: 0x040084D4 RID: 34004
+	// Token: 0x04008515 RID: 34069
 	public float MotionRotationRecoilCameraFactor;
 
-	// Token: 0x040084D5 RID: 34005
+	// Token: 0x04008516 RID: 34070
 	public float MotionPositionRecoilCameraFactor;
 
-	// Token: 0x040084D6 RID: 34006
+	// Token: 0x04008517 RID: 34071
 	public AnimationClip AnimationFire;
 }

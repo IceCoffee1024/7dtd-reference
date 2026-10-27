@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000821 RID: 2081
+// Token: 0x0200082B RID: 2091
 [Preserve]
 public class NetPackagePlayerData : NetPackage
 {
-	// Token: 0x1700067F RID: 1663
-	// (get) Token: 0x06003CF1 RID: 15601 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000685 RID: 1669
+	// (get) Token: 0x06003D14 RID: 15636 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackagePlayerData : NetPackage
 		}
 	}
 
-	// Token: 0x06003CF2 RID: 15602 RVA: 0x00185299 File Offset: 0x00183499
+	// Token: 0x06003D15 RID: 15637 RVA: 0x0018639D File Offset: 0x0018459D
 	public NetPackagePlayerData Setup(EntityPlayer _player)
 	{
 		this.playerDataFile = new PlayerDataFile();
@@ -26,21 +26,21 @@ public class NetPackagePlayerData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CF3 RID: 15603 RVA: 0x001852BD File Offset: 0x001834BD
+	// Token: 0x06003D16 RID: 15638 RVA: 0x001863C1 File Offset: 0x001845C1
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.playerDataFile = new PlayerDataFile();
 		this.playerDataFile.ReadNetwork(_reader, StreamModeRead.FromClient);
 	}
 
-	// Token: 0x06003CF4 RID: 15604 RVA: 0x001852D7 File Offset: 0x001834D7
+	// Token: 0x06003D17 RID: 15639 RVA: 0x001863DB File Offset: 0x001845DB
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.playerDataFile.WriteNetwork(_writer, StreamModeWrite.ToServer);
 	}
 
-	// Token: 0x06003CF5 RID: 15605 RVA: 0x001852ED File Offset: 0x001834ED
+	// Token: 0x06003D18 RID: 15640 RVA: 0x001863F1 File Offset: 0x001845F1
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidEntityIdForSender(this.playerDataFile.id, false))
@@ -50,7 +50,7 @@ public class NetPackagePlayerData : NetPackage
 		_callbacks.SavePlayerData(base.Sender, this.playerDataFile);
 	}
 
-	// Token: 0x0400319D RID: 12701
+	// Token: 0x040031BD RID: 12733
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public PlayerDataFile playerDataFile;
 }

@@ -10,31 +10,31 @@ using System.Xml.Linq;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x02000923 RID: 2339
+// Token: 0x0200092D RID: 2349
 public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 {
 	// Token: 0x1400004E RID: 78
-	// (add) Token: 0x06004332 RID: 17202 RVA: 0x001A4DF8 File Offset: 0x001A2FF8
-	// (remove) Token: 0x06004333 RID: 17203 RVA: 0x001A4E30 File Offset: 0x001A3030
+	// (add) Token: 0x06004355 RID: 17237 RVA: 0x001A5EA0 File Offset: 0x001A40A0
+	// (remove) Token: 0x06004356 RID: 17238 RVA: 0x001A5ED8 File Offset: 0x001A40D8
 	public event Action<PrefabInstance> OnPrefabLoaded;
 
 	// Token: 0x1400004F RID: 79
-	// (add) Token: 0x06004334 RID: 17204 RVA: 0x001A4E68 File Offset: 0x001A3068
-	// (remove) Token: 0x06004335 RID: 17205 RVA: 0x001A4EA0 File Offset: 0x001A30A0
+	// (add) Token: 0x06004357 RID: 17239 RVA: 0x001A5F10 File Offset: 0x001A4110
+	// (remove) Token: 0x06004358 RID: 17240 RVA: 0x001A5F48 File Offset: 0x001A4148
 	public event Action<PrefabInstance> OnPrefabChanged;
 
 	// Token: 0x14000050 RID: 80
-	// (add) Token: 0x06004336 RID: 17206 RVA: 0x001A4ED8 File Offset: 0x001A30D8
-	// (remove) Token: 0x06004337 RID: 17207 RVA: 0x001A4F10 File Offset: 0x001A3110
+	// (add) Token: 0x06004359 RID: 17241 RVA: 0x001A5F80 File Offset: 0x001A4180
+	// (remove) Token: 0x0600435A RID: 17242 RVA: 0x001A5FB8 File Offset: 0x001A41B8
 	public event Action<PrefabInstance> OnPrefabRemoved;
 
-	// Token: 0x06004338 RID: 17208 RVA: 0x001A4F48 File Offset: 0x001A3148
+	// Token: 0x0600435B RID: 17243 RVA: 0x001A5FF0 File Offset: 0x001A41F0
 	public DynamicPrefabDecorator(PrefabCache _prefabCache)
 	{
 		this.prefabCache = _prefabCache;
 	}
 
-	// Token: 0x06004339 RID: 17209 RVA: 0x001A5005 File Offset: 0x001A3205
+	// Token: 0x0600435C RID: 17244 RVA: 0x001A60AD File Offset: 0x001A42AD
 	public IEnumerator Load(string _path, bool _skipBlockData = false)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -133,7 +133,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		yield break;
 	}
 
-	// Token: 0x0600433A RID: 17210 RVA: 0x001A5024 File Offset: 0x001A3224
+	// Token: 0x0600435D RID: 17245 RVA: 0x001A60CC File Offset: 0x001A42CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortPrefabs()
 	{
@@ -147,7 +147,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600433B RID: 17211 RVA: 0x001A50AC File Offset: 0x001A32AC
+	// Token: 0x0600435E RID: 17246 RVA: 0x001A6154 File Offset: 0x001A4354
 	public int GetNextId()
 	{
 		int num = this.id;
@@ -155,7 +155,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return num;
 	}
 
-	// Token: 0x0600433C RID: 17212 RVA: 0x001A50CC File Offset: 0x001A32CC
+	// Token: 0x0600435F RID: 17247 RVA: 0x001A6174 File Offset: 0x001A4374
 	public bool Save(string _path)
 	{
 		bool flag;
@@ -198,13 +198,13 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return flag;
 	}
 
-	// Token: 0x0600433D RID: 17213 RVA: 0x001A5234 File Offset: 0x001A3434
+	// Token: 0x06004360 RID: 17248 RVA: 0x001A62DC File Offset: 0x001A44DC
 	public void Cleanup()
 	{
 		this.prefabMeshExisting.Clear();
 	}
 
-	// Token: 0x0600433E RID: 17214 RVA: 0x001A5244 File Offset: 0x001A3444
+	// Token: 0x06004361 RID: 17249 RVA: 0x001A62EC File Offset: 0x001A44EC
 	public void GetAllPrefabs(List<PrefabInstance> _prefabs)
 	{
 		object obj = this.listsLock;
@@ -214,7 +214,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600433F RID: 17215 RVA: 0x001A528C File Offset: 0x001A348C
+	// Token: 0x06004362 RID: 17250 RVA: 0x001A6334 File Offset: 0x001A4534
 	public void GetPOIPrefabs(List<PrefabInstance> _prefabs)
 	{
 		object obj = this.listsLock;
@@ -224,7 +224,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004340 RID: 17216 RVA: 0x001A52D4 File Offset: 0x001A34D4
+	// Token: 0x06004363 RID: 17251 RVA: 0x001A637C File Offset: 0x001A457C
 	public void GetWorldPrefabs(List<PrefabInstance> _prefabs)
 	{
 		object obj = this.listsLock;
@@ -234,7 +234,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004341 RID: 17217 RVA: 0x001A531C File Offset: 0x001A351C
+	// Token: 0x06004364 RID: 17252 RVA: 0x001A63C4 File Offset: 0x001A45C4
 	public void AddWorldPrefab(PrefabInstance _pi, bool _isPOI = false)
 	{
 		object obj = this.listsLock;
@@ -250,7 +250,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004342 RID: 17218 RVA: 0x001A5384 File Offset: 0x001A3584
+	// Token: 0x06004365 RID: 17253 RVA: 0x001A642C File Offset: 0x001A462C
 	public IEnumerator RequestWorldPOIMetadataFromServer()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -276,7 +276,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		yield break;
 	}
 
-	// Token: 0x06004343 RID: 17219 RVA: 0x001A5394 File Offset: 0x001A3594
+	// Token: 0x06004366 RID: 17254 RVA: 0x001A643C File Offset: 0x001A463C
 	public void SendPOIMetadataToClient(ClientInfo _client)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -289,7 +289,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		_client.SendPackage(NetPackageManager.GetPackage<NetPackagePOIMetadataResponse>().Setup(list));
 	}
 
-	// Token: 0x06004344 RID: 17220 RVA: 0x001A53D8 File Offset: 0x001A35D8
+	// Token: 0x06004367 RID: 17255 RVA: 0x001A6480 File Offset: 0x001A4680
 	public void ProcessPOIMetadataReceived(List<PrefabInstance.POIMetadata> _poiMetadatas)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -312,7 +312,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		this.SortPrefabs();
 	}
 
-	// Token: 0x06004345 RID: 17221 RVA: 0x001A5450 File Offset: 0x001A3650
+	// Token: 0x06004368 RID: 17256 RVA: 0x001A64F8 File Offset: 0x001A46F8
 	public void RemoveWorldPrefab(PrefabInstance _pi)
 	{
 		object obj = this.listsLock;
@@ -328,7 +328,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004346 RID: 17222 RVA: 0x001A54D0 File Offset: 0x001A36D0
+	// Token: 0x06004369 RID: 17257 RVA: 0x001A6578 File Offset: 0x001A4778
 	public void AddEventPrefab(PrefabInstance _pi)
 	{
 		object obj = this.listsLock;
@@ -339,7 +339,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004347 RID: 17223 RVA: 0x001A5520 File Offset: 0x001A3720
+	// Token: 0x0600436A RID: 17258 RVA: 0x001A65C8 File Offset: 0x001A47C8
 	public void RemoveEventPrefab(PrefabInstance _pi)
 	{
 		object obj = this.listsLock;
@@ -350,67 +350,67 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004348 RID: 17224 RVA: 0x001A5574 File Offset: 0x001A3774
+	// Token: 0x0600436B RID: 17259 RVA: 0x001A661C File Offset: 0x001A481C
 	public void ClearTraders()
 	{
 		this.traderStore.Clear();
 	}
 
-	// Token: 0x06004349 RID: 17225 RVA: 0x001A5581 File Offset: 0x001A3781
+	// Token: 0x0600436C RID: 17260 RVA: 0x001A6629 File Offset: 0x001A4829
 	public void AddTrader(TraderArea _ta)
 	{
 		this.traderStore.Add(_ta);
 	}
 
-	// Token: 0x0600434A RID: 17226 RVA: 0x001A558F File Offset: 0x001A378F
+	// Token: 0x0600436D RID: 17261 RVA: 0x001A6637 File Offset: 0x001A4837
 	public List<TraderArea> GetTraderAreas()
 	{
 		return this.traderStore.Areas;
 	}
 
-	// Token: 0x0600434B RID: 17227 RVA: 0x001A559C File Offset: 0x001A379C
+	// Token: 0x0600436E RID: 17262 RVA: 0x001A6644 File Offset: 0x001A4844
 	public bool IsWithinTraderArea(Vector3i _minPos, Vector3i _maxPos)
 	{
 		return this.traderStore.OverlapsBounds(_minPos, _maxPos);
 	}
 
-	// Token: 0x0600434C RID: 17228 RVA: 0x001A55AB File Offset: 0x001A37AB
+	// Token: 0x0600436F RID: 17263 RVA: 0x001A6653 File Offset: 0x001A4853
 	public TraderArea GetTraderAtPosition(Vector3i _pos, int _padding)
 	{
 		return this.traderStore.GetAt(_pos.x, _pos.z, _padding);
 	}
 
-	// Token: 0x0600434D RID: 17229 RVA: 0x001A55C5 File Offset: 0x001A37C5
+	// Token: 0x06004370 RID: 17264 RVA: 0x001A666D File Offset: 0x001A486D
 	public TraderArea GetTraderOuterAtPosition(Vector3i _pos, int _depth)
 	{
 		return this.traderStore.GetOuterAt(_pos.x, _pos.z, _depth);
 	}
 
-	// Token: 0x0600434E RID: 17230 RVA: 0x001A55DF File Offset: 0x001A37DF
+	// Token: 0x06004371 RID: 17265 RVA: 0x001A6687 File Offset: 0x001A4887
 	public void ClearDecoSuppressAreas()
 	{
 		this.decoSuppressStore.Clear();
 	}
 
-	// Token: 0x0600434F RID: 17231 RVA: 0x001A55EC File Offset: 0x001A37EC
+	// Token: 0x06004372 RID: 17266 RVA: 0x001A6694 File Offset: 0x001A4894
 	public void AddDecoSuppressArea(Vector3i _pos, Vector3i _size)
 	{
 		this.decoSuppressStore.Add(new DecoSuppressArea(_pos, _size));
 	}
 
-	// Token: 0x06004350 RID: 17232 RVA: 0x001A5600 File Offset: 0x001A3800
+	// Token: 0x06004373 RID: 17267 RVA: 0x001A66A8 File Offset: 0x001A48A8
 	public bool IsWithinDecoSuppressArea(Vector3i _minPos, Vector3i _maxPos)
 	{
 		return this.decoSuppressStore.OverlapsBounds(_minPos, _maxPos);
 	}
 
-	// Token: 0x06004351 RID: 17233 RVA: 0x001A560F File Offset: 0x001A380F
+	// Token: 0x06004374 RID: 17268 RVA: 0x001A66B7 File Offset: 0x001A48B7
 	public bool IsDecorationSuppressedAt(int _x, int _z)
 	{
 		return this.decoSuppressStore.ContainsPoint(_x, _z, 0);
 	}
 
-	// Token: 0x06004352 RID: 17234 RVA: 0x001A5620 File Offset: 0x001A3820
+	// Token: 0x06004375 RID: 17269 RVA: 0x001A66C8 File Offset: 0x001A48C8
 	public void CopyAllPrefabsIntoWorld(World _world, bool _bOverwriteExistingBlocks = false)
 	{
 		object obj = this.listsLock;
@@ -430,7 +430,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004353 RID: 17235 RVA: 0x001A56C8 File Offset: 0x001A38C8
+	// Token: 0x06004376 RID: 17270 RVA: 0x001A6770 File Offset: 0x001A4970
 	public void CleanAllPrefabsFromWorld(World _world)
 	{
 		object obj = this.listsLock;
@@ -443,7 +443,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004354 RID: 17236 RVA: 0x001A572C File Offset: 0x001A392C
+	// Token: 0x06004377 RID: 17271 RVA: 0x001A67D4 File Offset: 0x001A49D4
 	public void ClearAllPrefabs()
 	{
 		object obj = this.listsLock;
@@ -460,7 +460,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004355 RID: 17237 RVA: 0x001A57D4 File Offset: 0x001A39D4
+	// Token: 0x06004378 RID: 17272 RVA: 0x001A687C File Offset: 0x001A4A7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CallPrefabRemovedEvent(PrefabInstance _prefabInstance)
 	{
@@ -470,7 +470,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004356 RID: 17238 RVA: 0x001A57EC File Offset: 0x001A39EC
+	// Token: 0x06004379 RID: 17273 RVA: 0x001A6894 File Offset: 0x001A4A94
 	public void CallPrefabChangedEvent(PrefabInstance _prefabInstance)
 	{
 		object obj = this.listsLock;
@@ -484,7 +484,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004357 RID: 17239 RVA: 0x001A5844 File Offset: 0x001A3A44
+	// Token: 0x0600437A RID: 17274 RVA: 0x001A68EC File Offset: 0x001A4AEC
 	public void CreateBoundingBoxes()
 	{
 		object obj = this.listsLock;
@@ -497,7 +497,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004358 RID: 17240 RVA: 0x001A58A8 File Offset: 0x001A3AA8
+	// Token: 0x0600437B RID: 17275 RVA: 0x001A6950 File Offset: 0x001A4B50
 	public PrefabInstance GetPrefab(int _id)
 	{
 		object obj = this.listsLock;
@@ -514,14 +514,14 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return null;
 	}
 
-	// Token: 0x06004359 RID: 17241 RVA: 0x001A5920 File Offset: 0x001A3B20
+	// Token: 0x0600437C RID: 17276 RVA: 0x001A69C8 File Offset: 0x001A4BC8
 	public bool IsActivePrefab(int _id)
 	{
 		PrefabInstance prefab = this.GetPrefab(_id);
 		return prefab != null && prefab == this.ActivePrefab;
 	}
 
-	// Token: 0x0600435A RID: 17242 RVA: 0x001A5944 File Offset: 0x001A3B44
+	// Token: 0x0600437D RID: 17277 RVA: 0x001A69EC File Offset: 0x001A4BEC
 	public PrefabInstance CreateNewPrefabAndActivate(PathAbstractions.AbstractedLocation _location, Vector3i _position, Prefab _bad, bool _bSetActive = true)
 	{
 		if (_bad == null)
@@ -544,7 +544,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance;
 	}
 
-	// Token: 0x0600435B RID: 17243 RVA: 0x001A59C0 File Offset: 0x001A3BC0
+	// Token: 0x0600437E RID: 17278 RVA: 0x001A6A68 File Offset: 0x001A4C68
 	public PrefabInstance RemoveActivePrefab(World _world)
 	{
 		if (this.ActivePrefab == null)
@@ -557,7 +557,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return activePrefab;
 	}
 
-	// Token: 0x0600435C RID: 17244 RVA: 0x001A59F0 File Offset: 0x001A3BF0
+	// Token: 0x0600437F RID: 17279 RVA: 0x001A6A98 File Offset: 0x001A4C98
 	public void RemovePrefabAndSelection(World _world, PrefabInstance _prefab, bool _bCleanFromWorld)
 	{
 		if (_bCleanFromWorld)
@@ -574,13 +574,13 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		this.CallPrefabRemovedEvent(_prefab);
 	}
 
-	// Token: 0x0600435D RID: 17245 RVA: 0x001A5A8C File Offset: 0x001A3C8C
+	// Token: 0x06004380 RID: 17280 RVA: 0x001A6B34 File Offset: 0x001A4D34
 	public virtual void DecorateChunk(World _world, Chunk _chunk)
 	{
 		this.DecorateChunk(_world, _chunk, false);
 	}
 
-	// Token: 0x0600435E RID: 17246 RVA: 0x001A5A98 File Offset: 0x001A3C98
+	// Token: 0x06004381 RID: 17281 RVA: 0x001A6B40 File Offset: 0x001A4D40
 	public void DecorateChunk(World _world, Chunk _chunk, bool _bForceOverwriteBlocks = false)
 	{
 		List<PrefabInstance> value = this.decorateChunkPIs.Value;
@@ -602,7 +602,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600435F RID: 17247 RVA: 0x001A5B54 File Offset: 0x001A3D54
+	// Token: 0x06004382 RID: 17282 RVA: 0x001A6BFC File Offset: 0x001A4DFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabInstanceSizeComparison(PrefabInstance _a, PrefabInstance _b)
 	{
@@ -610,7 +610,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return (_b.boundingBoxSize.x * _b.boundingBoxSize.z).CompareTo(num);
 	}
 
-	// Token: 0x06004360 RID: 17248 RVA: 0x001A5B9C File Offset: 0x001A3D9C
+	// Token: 0x06004383 RID: 17283 RVA: 0x001A6C44 File Offset: 0x001A4E44
 	public bool IsEntityInPrefab(int _entityId)
 	{
 		object obj = this.listsLock;
@@ -627,7 +627,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return false;
 	}
 
-	// Token: 0x06004361 RID: 17249 RVA: 0x001A5C08 File Offset: 0x001A3E08
+	// Token: 0x06004384 RID: 17284 RVA: 0x001A6CB0 File Offset: 0x001A4EB0
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		if (!_bActivated)
@@ -654,7 +654,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x06004362 RID: 17250 RVA: 0x001A5C96 File Offset: 0x001A3E96
+	// Token: 0x06004385 RID: 17285 RVA: 0x001A6D3E File Offset: 0x001A4F3E
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		if (this.ActivePrefab != null)
@@ -664,7 +664,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004363 RID: 17251 RVA: 0x001A5CBC File Offset: 0x001A3EBC
+	// Token: 0x06004386 RID: 17286 RVA: 0x001A6D64 File Offset: 0x001A4F64
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		if (GameManager.Instance.IsEditMode() && !PrefabEditModeManager.Instance.IsActive())
@@ -678,12 +678,12 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06004364 RID: 17252 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004387 RID: 17287 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxMirrored(Vector3i _axis)
 	{
 	}
 
-	// Token: 0x06004365 RID: 17253 RVA: 0x001A5D1F File Offset: 0x001A3F1F
+	// Token: 0x06004388 RID: 17288 RVA: 0x001A6DC7 File Offset: 0x001A4FC7
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		PrefabInstance prefabInstance = _box.UserData as PrefabInstance;
@@ -694,7 +694,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return false;
 	}
 
-	// Token: 0x06004366 RID: 17254 RVA: 0x001A5D38 File Offset: 0x001A3F38
+	// Token: 0x06004389 RID: 17289 RVA: 0x001A6DE0 File Offset: 0x001A4FE0
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		if (_criteria == EnumSelectionBoxAvailabilities.CanResize)
@@ -704,7 +704,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return _criteria == EnumSelectionBoxAvailabilities.CanShowProperties;
 	}
 
-	// Token: 0x06004367 RID: 17255 RVA: 0x001A5D50 File Offset: 0x001A3F50
+	// Token: 0x0600438A RID: 17290 RVA: 0x001A6DF8 File Offset: 0x001A4FF8
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 		XUiC_EditorPanelSelector childByType = _windowManager.playerUI.xui.FindWindowGroupByName(XUiC_EditorPanelSelector.ID).GetChildByType<XUiC_EditorPanelSelector>();
@@ -716,19 +716,19 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		_windowManager.SwitchVisible(XUiC_InGameMenuWindow.ID, true);
 	}
 
-	// Token: 0x06004368 RID: 17256 RVA: 0x001A5D93 File Offset: 0x001A3F93
+	// Token: 0x0600438B RID: 17291 RVA: 0x001A6E3B File Offset: 0x001A503B
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 		this.ActivePrefab.RotateAroundY();
 		this.ActivePrefab.UpdateImposterView();
 	}
 
-	// Token: 0x06004369 RID: 17257 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600438C RID: 17292 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x0600436A RID: 17258 RVA: 0x001A5DAC File Offset: 0x001A3FAC
+	// Token: 0x0600438D RID: 17293 RVA: 0x001A6E54 File Offset: 0x001A5054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int PrefabBinarySearch(int x)
 	{
@@ -760,7 +760,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return num4;
 	}
 
-	// Token: 0x0600436B RID: 17259 RVA: 0x001A5E44 File Offset: 0x001A4044
+	// Token: 0x0600438E RID: 17294 RVA: 0x001A6EEC File Offset: 0x001A50EC
 	public PrefabInstance GetPrefabAtPosition(Vector3 _position, FastTags<TagGroup.Poi>? _excludeTags = null, FastTags<TagGroup.Poi>? _requiredTags = null)
 	{
 		FastTags<TagGroup.Poi> fastTags = _excludeTags.GetValueOrDefault();
@@ -839,7 +839,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance3;
 	}
 
-	// Token: 0x0600436C RID: 17260 RVA: 0x001A6154 File Offset: 0x001A4354
+	// Token: 0x0600438F RID: 17295 RVA: 0x001A71FC File Offset: 0x001A53FC
 	public void GetPrefabsAtXZ(int _xMin, int _xMax, int _zMin, int _zMax, List<PrefabInstance> _list)
 	{
 		object obj = this.listsLock;
@@ -863,7 +863,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600436D RID: 17261 RVA: 0x001A6224 File Offset: 0x001A4424
+	// Token: 0x06004390 RID: 17296 RVA: 0x001A72CC File Offset: 0x001A54CC
 	public bool HasPrefabsAtXZ(int _xMin, int _xMax, int _zMin, int _zMax)
 	{
 		object obj = this.listsLock;
@@ -885,7 +885,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return false;
 	}
 
-	// Token: 0x0600436E RID: 17262 RVA: 0x001A62E4 File Offset: 0x001A44E4
+	// Token: 0x06004391 RID: 17297 RVA: 0x001A738C File Offset: 0x001A558C
 	public virtual void GetPrefabsAround(Vector3 _position, float _nearDistance, float _farDistance, Dictionary<int, PrefabInstance> _prefabsFar, Dictionary<int, PrefabInstance> _prefabsNear)
 	{
 		object obj = this.listsLock;
@@ -916,45 +916,42 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 					Vector2 vector5;
 					vector5.x = vector3.x;
 					vector5.y = vector4.y;
-					if (!DynamicMeshManager.IsOutsideDistantTerrain(vector2.x, vector3.x, vector2.y, vector4.y))
+					Vector2 vector6 = vector2 - vector;
+					if (Utils.FastMax(Utils.FastAbs(vector6.x), Utils.FastAbs(vector6.y)) < _nearDistance)
 					{
-						Vector2 vector6 = vector2 - vector;
-						if (Utils.FastMax(Utils.FastAbs(vector6.x), Utils.FastAbs(vector6.y)) < _nearDistance)
+						Vector2 vector7 = vector3 - vector;
+						if (Utils.FastMax(Utils.FastAbs(vector7.x), Utils.FastAbs(vector7.y)) < _nearDistance)
 						{
-							Vector2 vector7 = vector3 - vector;
-							if (Utils.FastMax(Utils.FastAbs(vector7.x), Utils.FastAbs(vector7.y)) < _nearDistance)
+							Vector2 vector8 = vector4 - vector;
+							if (Utils.FastMax(Utils.FastAbs(vector8.x), Utils.FastAbs(vector8.y)) < _nearDistance)
 							{
-								Vector2 vector8 = vector4 - vector;
-								if (Utils.FastMax(Utils.FastAbs(vector8.x), Utils.FastAbs(vector8.y)) < _nearDistance)
+								Vector2 vector9 = vector5 - vector;
+								if (Utils.FastMax(Utils.FastAbs(vector9.x), Utils.FastAbs(vector9.y)) < _nearDistance)
 								{
-									Vector2 vector9 = vector5 - vector;
-									if (Utils.FastMax(Utils.FastAbs(vector9.x), Utils.FastAbs(vector9.y)) < _nearDistance)
-									{
-										_prefabsNear.Add(prefabInstance.id, prefabInstance);
-										goto IL_02D7;
-									}
+									_prefabsNear.Add(prefabInstance.id, prefabInstance);
+									goto IL_02B1;
 								}
 							}
 						}
-						string text = ((prefabInstance.prefab.distantPOIOverride == null) ? prefabInstance.prefab.PrefabName : prefabInstance.prefab.distantPOIOverride);
-						bool flag2;
-						if (!this.prefabMeshExisting.TryGetValue(text, out flag2))
-						{
-							flag2 = PathAbstractions.PrefabImpostersSearchPaths.GetLocation(text, null, null).Type != PathAbstractions.EAbstractedLocationType.None;
-							this.prefabMeshExisting[text] = flag2;
-						}
-						if (flag2)
-						{
-							_prefabsFar.Add(prefabInstance.id, prefabInstance);
-						}
+					}
+					string text = ((prefabInstance.prefab.distantPOIOverride == null) ? prefabInstance.prefab.PrefabName : prefabInstance.prefab.distantPOIOverride);
+					bool flag2;
+					if (!this.prefabMeshExisting.TryGetValue(text, out flag2))
+					{
+						flag2 = PathAbstractions.PrefabImpostersSearchPaths.GetLocation(text, null, null).Type != PathAbstractions.EAbstractedLocationType.None;
+						this.prefabMeshExisting[text] = flag2;
+					}
+					if (flag2)
+					{
+						_prefabsFar.Add(prefabInstance.id, prefabInstance);
 					}
 				}
-				IL_02D7:;
+				IL_02B1:;
 			}
 		}
 	}
 
-	// Token: 0x0600436F RID: 17263 RVA: 0x001A6608 File Offset: 0x001A4808
+	// Token: 0x06004392 RID: 17298 RVA: 0x001A768C File Offset: 0x001A588C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ValidPrefabForQuest(EntityTrader trader, PrefabInstance prefab, FastTags<TagGroup.Global> questTag, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1, BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome, string biomeFilter = "")
 	{
@@ -1016,7 +1013,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x06004370 RID: 17264 RVA: 0x001A679C File Offset: 0x001A499C
+	// Token: 0x06004393 RID: 17299 RVA: 0x001A7820 File Offset: 0x001A5A20
 	public static PrefabInstance GetRandomPOINearTrader(EntityTrader trader, FastTags<TagGroup.Global> questTag, byte difficulty, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1, BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome, string biomeFilter = "")
 	{
 		QuestEventManager questEventManager = QuestEventManager.Current;
@@ -1042,7 +1039,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return null;
 	}
 
-	// Token: 0x06004371 RID: 17265 RVA: 0x001A6828 File Offset: 0x001A4A28
+	// Token: 0x06004394 RID: 17300 RVA: 0x001A78AC File Offset: 0x001A5AAC
 	public static PrefabInstance GetRandomPOINearWorldPos(Vector2 worldPos, int minSearchDistance, int maxSearchDistance, FastTags<TagGroup.Global> questTag, byte difficulty, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1, BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome, string biomeFilter = "")
 	{
 		List<PrefabInstance> prefabsByDifficultyTier = QuestEventManager.Current.GetPrefabsByDifficultyTier((int)difficulty);
@@ -1111,7 +1108,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return null;
 	}
 
-	// Token: 0x06004372 RID: 17266 RVA: 0x001A6A44 File Offset: 0x001A4C44
+	// Token: 0x06004395 RID: 17301 RVA: 0x001A7AC8 File Offset: 0x001A5CC8
 	public virtual PrefabInstance GetClosestPOIToWorldPos(FastTags<TagGroup.Global> questTag, Vector2 worldPos, List<Vector2> excludeList = null, int maxSearchDistanceSquared = -1, bool ignoreCurrentPOI = false, BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome, string biomeFilter = "", string questKey = "")
 	{
 		object obj = this.listsLock;
@@ -1194,7 +1191,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance3;
 	}
 
-	// Token: 0x06004373 RID: 17267 RVA: 0x001A6CCC File Offset: 0x001A4ECC
+	// Token: 0x06004396 RID: 17302 RVA: 0x001A7D50 File Offset: 0x001A5F50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance chooseClosestPrefab(List<Tuple<PrefabInstance, Vector2>> prefabCandidates, Vector2 worldPos, float maxSearchDistanceSquared)
 	{
@@ -1211,7 +1208,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance;
 	}
 
-	// Token: 0x06004374 RID: 17268 RVA: 0x001A6D3C File Offset: 0x001A4F3C
+	// Token: 0x06004397 RID: 17303 RVA: 0x001A7DC0 File Offset: 0x001A5FC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance chooseBestTrader(List<Tuple<PrefabInstance, Vector2>> prefabCandidates, Vector2 worldPos, float maxSearchDistanceSquared)
 	{
@@ -1236,7 +1233,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance;
 	}
 
-	// Token: 0x06004375 RID: 17269 RVA: 0x001A6DEC File Offset: 0x001A4FEC
+	// Token: 0x06004398 RID: 17304 RVA: 0x001A7E70 File Offset: 0x001A6070
 	public virtual PrefabInstance GetPrefabFromWorldPos(int x, int z)
 	{
 		object obj = this.listsLock;
@@ -1255,7 +1252,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance;
 	}
 
-	// Token: 0x06004376 RID: 17270 RVA: 0x001A6ECC File Offset: 0x001A50CC
+	// Token: 0x06004399 RID: 17305 RVA: 0x001A7F50 File Offset: 0x001A6150
 	public virtual PrefabInstance GetPrefabFromWorldPosInside(int _x, int _z)
 	{
 		object obj = this.listsLock;
@@ -1277,7 +1274,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance2;
 	}
 
-	// Token: 0x06004377 RID: 17271 RVA: 0x001A6F84 File Offset: 0x001A5184
+	// Token: 0x0600439A RID: 17306 RVA: 0x001A8008 File Offset: 0x001A6208
 	public virtual PrefabInstance GetPrefabFromWorldPosInsideWithOffset(int _x, int _z, int _offset)
 	{
 		object obj = this.listsLock;
@@ -1301,7 +1298,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance2;
 	}
 
-	// Token: 0x06004378 RID: 17272 RVA: 0x001A7060 File Offset: 0x001A5260
+	// Token: 0x0600439B RID: 17307 RVA: 0x001A80E4 File Offset: 0x001A62E4
 	public virtual PrefabInstance GetPrefabFromWorldPosInside(int _x, int _y, int _z)
 	{
 		object obj = this.listsLock;
@@ -1324,7 +1321,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance2;
 	}
 
-	// Token: 0x06004379 RID: 17273 RVA: 0x001A7144 File Offset: 0x001A5344
+	// Token: 0x0600439C RID: 17308 RVA: 0x001A81C8 File Offset: 0x001A63C8
 	public virtual List<PrefabInstance> GetPrefabsFromWorldPosInside(Vector3 _pos, FastTags<TagGroup.Global> _questTags)
 	{
 		_pos += this.boundsPad;
@@ -1350,7 +1347,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return list;
 	}
 
-	// Token: 0x0600437A RID: 17274 RVA: 0x001A7250 File Offset: 0x001A5450
+	// Token: 0x0600439D RID: 17309 RVA: 0x001A82D4 File Offset: 0x001A64D4
 	public virtual List<PrefabInstance> GetPrefabsIntersecting(PrefabInstance parentPI)
 	{
 		List<PrefabInstance> list = new List<PrefabInstance>();
@@ -1379,7 +1376,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return list;
 	}
 
-	// Token: 0x0600437B RID: 17275 RVA: 0x001A73C8 File Offset: 0x001A55C8
+	// Token: 0x0600439E RID: 17310 RVA: 0x001A844C File Offset: 0x001A664C
 	public PrefabInstance FindVolumeOwner(PrefabVolumeAbs.EVolumeType _volumeType, Vector3i _worldMin, Vector3i _worldMax)
 	{
 		object obj = this.listsLock;
@@ -1413,7 +1410,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		return prefabInstance2;
 	}
 
-	// Token: 0x0600437C RID: 17276 RVA: 0x001A7560 File Offset: 0x001A5760
+	// Token: 0x0600439F RID: 17311 RVA: 0x001A85E4 File Offset: 0x001A67E4
 	public IEnumerator CopyWorldPrefabHeightsIntoHeightMap(int _heightMapWidth, int _heightMapHeight, IBackedArray<ushort> _heightData, int _heightMapScale = 1, ushort[] _topTextures = null)
 	{
 		MicroStopwatch yieldMs = new MicroStopwatch(true);
@@ -1440,7 +1437,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		yield break;
 	}
 
-	// Token: 0x0600437D RID: 17277 RVA: 0x001A7594 File Offset: 0x001A5794
+	// Token: 0x060043A0 RID: 17312 RVA: 0x001A8618 File Offset: 0x001A6818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void copyPrefabsIntoHeightMap(PrefabInstance _pi, int _heightMapWidth, int _heightMapHeight, IBackedArray<ushort> _heightData, int _heightMapScale, ushort[] _topTextures = null)
 	{
@@ -1512,7 +1509,7 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0600437E RID: 17278 RVA: 0x001A78AC File Offset: 0x001A5AAC
+	// Token: 0x060043A1 RID: 17313 RVA: 0x001A8930 File Offset: 0x001A6B30
 	public void CalculateStats(out int basePrefabCount, out int rotatedPrefabsCount, out int activePrefabCount, out int basePrefabBytes, out int rotatedPrefabBytes, out int activePrefabBytes)
 	{
 		ChunkCluster chunkCache = GameManager.Instance.World.ChunkCache;
@@ -1550,80 +1547,80 @@ public class DynamicPrefabDecorator : IDynamicDecorator, ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x0400369B RID: 13979
+	// Token: 0x040036BB RID: 14011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPrefabMaxRadius = 200;
 
-	// Token: 0x0400369C RID: 13980
+	// Token: 0x040036BC RID: 14012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabCache prefabCache;
 
-	// Token: 0x0400369D RID: 13981
+	// Token: 0x040036BD RID: 14013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object listsLock = new object();
 
-	// Token: 0x0400369E RID: 13982
+	// Token: 0x040036BE RID: 14014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> allPrefabs = new List<PrefabInstance>();
 
-	// Token: 0x0400369F RID: 13983
+	// Token: 0x040036BF RID: 14015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> poiPrefabs = new List<PrefabInstance>();
 
-	// Token: 0x040036A0 RID: 13984
+	// Token: 0x040036C0 RID: 14016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> worldPrefabs = new List<PrefabInstance>();
 
-	// Token: 0x040036A1 RID: 13985
+	// Token: 0x040036C1 RID: 14017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> allPrefabsSorted = new List<PrefabInstance>();
 
-	// Token: 0x040036A2 RID: 13986
+	// Token: 0x040036C2 RID: 14018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSortNeeded = true;
 
-	// Token: 0x040036A3 RID: 13987
+	// Token: 0x040036C3 RID: 14019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DesignatedAreaStore<TraderArea> traderStore = new DesignatedAreaStore<TraderArea>();
 
-	// Token: 0x040036A4 RID: 13988
+	// Token: 0x040036C4 RID: 14020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DesignatedAreaStore<DecoSuppressArea> decoSuppressStore = new DesignatedAreaStore<DecoSuppressArea>();
 
-	// Token: 0x040036A5 RID: 13989
+	// Token: 0x040036C5 RID: 14021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x040036A6 RID: 13990
+	// Token: 0x040036C6 RID: 14022
 	public PrefabInstance ActivePrefab;
 
-	// Token: 0x040036A7 RID: 13991
+	// Token: 0x040036C7 RID: 14023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, bool> prefabMeshExisting = new Dictionary<string, bool>();
 
-	// Token: 0x040036AB RID: 13995
+	// Token: 0x040036CB RID: 14027
 	public static readonly FastTags<TagGroup.Poi> streetTileTag = FastTags<TagGroup.Poi>.Parse("streettile");
 
-	// Token: 0x040036AC RID: 13996
+	// Token: 0x040036CC RID: 14028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool poiMetadataRequestPending;
 
-	// Token: 0x040036AD RID: 13997
+	// Token: 0x040036CD RID: 14029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadLocal<List<PrefabInstance>> decorateChunkPIs = new ThreadLocal<List<PrefabInstance>>(() => new List<PrefabInstance>());
 
-	// Token: 0x040036AE RID: 13998
+	// Token: 0x040036CE RID: 14030
 	public static int PrefabPreviewLimit = 0;
 
-	// Token: 0x040036AF RID: 13999
+	// Token: 0x040036CF RID: 14031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Vector3 boundsPad = new Vector3(0.001f, 0.001f, 0.001f);
 
-	// Token: 0x040036B0 RID: 14000
+	// Token: 0x040036D0 RID: 14032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue blockValueTerrainFiller;
 
-	// Token: 0x040036B1 RID: 14001
+	// Token: 0x040036D1 RID: 14033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue blockValueTerrainFiller2;
 }

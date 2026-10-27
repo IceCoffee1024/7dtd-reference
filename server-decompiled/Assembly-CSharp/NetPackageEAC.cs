@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007CD RID: 1997
+// Token: 0x020007D7 RID: 2007
 [Preserve]
 public class NetPackageEAC : NetPackage
 {
-	// Token: 0x1700064A RID: 1610
-	// (get) Token: 0x06003B49 RID: 15177 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000650 RID: 1616
+	// (get) Token: 0x06003B6C RID: 15212 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4A RID: 15178 RVA: 0x0017E82D File Offset: 0x0017CA2D
+	// Token: 0x06003B6D RID: 15213 RVA: 0x0017F931 File Offset: 0x0017DB31
 	public NetPackageEAC Setup(int _size, byte[] _data)
 	{
 		this.data = new byte[_size];
@@ -24,7 +24,7 @@ public class NetPackageEAC : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B4B RID: 15179 RVA: 0x0017E84C File Offset: 0x0017CA4C
+	// Token: 0x06003B6E RID: 15214 RVA: 0x0017F950 File Offset: 0x0017DB50
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = _reader.ReadInt32();
@@ -35,7 +35,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4C RID: 15180 RVA: 0x0017E890 File Offset: 0x0017CA90
+	// Token: 0x06003B6F RID: 15215 RVA: 0x0017F994 File Offset: 0x0017DB94
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -46,7 +46,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4D RID: 15181 RVA: 0x0017E8D4 File Offset: 0x0017CAD4
+	// Token: 0x06003B70 RID: 15216 RVA: 0x0017F9D8 File Offset: 0x0017DBD8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -71,7 +71,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x04003041 RID: 12353
+	// Token: 0x04003061 RID: 12385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

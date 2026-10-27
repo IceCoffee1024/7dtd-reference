@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Challenges
 {
-	// Token: 0x0200194C RID: 6476
+	// Token: 0x0200197D RID: 6525
 	public class ChallengeTrackingHandler
 	{
-		// Token: 0x0600C7FC RID: 51196 RVA: 0x00494980 File Offset: 0x00492B80
+		// Token: 0x0600C910 RID: 51472 RVA: 0x00498374 File Offset: 0x00496574
 		public bool Update(float deltaTime)
 		{
 			if (this.LocalPlayer == null)
@@ -32,7 +32,7 @@ namespace Challenges
 			return true;
 		}
 
-		// Token: 0x0600C7FD RID: 51197 RVA: 0x00494A24 File Offset: 0x00492C24
+		// Token: 0x0600C911 RID: 51473 RVA: 0x00498418 File Offset: 0x00496618
 		public void AddTrackingEntry(TrackingEntry track)
 		{
 			if (!this.trackingEntries.Contains(track))
@@ -43,7 +43,7 @@ namespace Challenges
 			this.NeedsRefresh = true;
 		}
 
-		// Token: 0x0600C7FE RID: 51198 RVA: 0x00494A52 File Offset: 0x00492C52
+		// Token: 0x0600C912 RID: 51474 RVA: 0x00498446 File Offset: 0x00496646
 		public void RemoveTrackingEntry(TrackingEntry track)
 		{
 			if (this.trackingEntries.Contains(track))
@@ -57,7 +57,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C7FF RID: 51199 RVA: 0x00494A90 File Offset: 0x00492C90
+		// Token: 0x0600C913 RID: 51475 RVA: 0x00498484 File Offset: 0x00496684
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void HandleTracking()
 		{
@@ -83,26 +83,26 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x04009671 RID: 38513
+		// Token: 0x0400975A RID: 38746
 		public Challenge Owner;
 
-		// Token: 0x04009672 RID: 38514
+		// Token: 0x0400975B RID: 38747
 		public EntityPlayerLocal LocalPlayer;
 
-		// Token: 0x04009673 RID: 38515
+		// Token: 0x0400975C RID: 38748
 		public List<TrackingEntry> trackingEntries = new List<TrackingEntry>();
 
-		// Token: 0x04009674 RID: 38516
+		// Token: 0x0400975D RID: 38749
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3 LastCheckedPosition = new Vector3(0f, 9999f, 0f);
 
-		// Token: 0x04009675 RID: 38517
+		// Token: 0x0400975E RID: 38750
 		public float RefreshDistance = 5f;
 
-		// Token: 0x04009676 RID: 38518
+		// Token: 0x0400975F RID: 38751
 		public bool NeedsRefresh;
 
-		// Token: 0x04009677 RID: 38519
+		// Token: 0x04009760 RID: 38752
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool lastInTrader;
 	}

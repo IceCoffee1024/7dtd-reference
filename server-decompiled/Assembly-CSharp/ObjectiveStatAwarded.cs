@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020009B6 RID: 2486
+// Token: 0x020009C0 RID: 2496
 [Preserve]
 public class ObjectiveStatAwarded : BaseObjective
 {
-	// Token: 0x170007E2 RID: 2018
-	// (get) Token: 0x060048E0 RID: 18656 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170007E8 RID: 2024
+	// (get) Token: 0x06004903 RID: 18691 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -16,33 +16,33 @@ public class ObjectiveStatAwarded : BaseObjective
 		}
 	}
 
-	// Token: 0x060048E1 RID: 18657 RVA: 0x001C9954 File Offset: 0x001C7B54
+	// Token: 0x06004904 RID: 18692 RVA: 0x001CAA28 File Offset: 0x001C8C28
 	public override void SetupObjective()
 	{
 		this.keyword = this.statText;
 		this.neededCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x060048E2 RID: 18658 RVA: 0x001C9973 File Offset: 0x001C7B73
+	// Token: 0x06004905 RID: 18693 RVA: 0x001CAA47 File Offset: 0x001C8C47
 	public override void SetupDisplay()
 	{
 		base.Description = this.statText;
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.neededCount);
 	}
 
-	// Token: 0x060048E3 RID: 18659 RVA: 0x001C99A7 File Offset: 0x001C7BA7
+	// Token: 0x06004906 RID: 18694 RVA: 0x001CAA7B File Offset: 0x001C8C7B
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.QuestAwardCredit += this.Current_QuestAwardCredit;
 	}
 
-	// Token: 0x060048E4 RID: 18660 RVA: 0x001C99BF File Offset: 0x001C7BBF
+	// Token: 0x06004907 RID: 18695 RVA: 0x001CAA93 File Offset: 0x001C8C93
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.QuestAwardCredit -= this.Current_QuestAwardCredit;
 	}
 
-	// Token: 0x060048E5 RID: 18661 RVA: 0x001C99D7 File Offset: 0x001C7BD7
+	// Token: 0x06004908 RID: 18696 RVA: 0x001CAAAB File Offset: 0x001C8CAB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_QuestAwardCredit(string stat, int awardCount)
 	{
@@ -60,7 +60,7 @@ public class ObjectiveStatAwarded : BaseObjective
 		}
 	}
 
-	// Token: 0x060048E6 RID: 18662 RVA: 0x001C9A14 File Offset: 0x001C7C14
+	// Token: 0x06004909 RID: 18697 RVA: 0x001CAAE8 File Offset: 0x001C8CE8
 	public override void Refresh()
 	{
 		if ((int)base.CurrentValue > this.neededCount)
@@ -74,12 +74,12 @@ public class ObjectiveStatAwarded : BaseObjective
 		}
 	}
 
-	// Token: 0x060048E7 RID: 18663 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600490A RID: 18698 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RemoveObjectives()
 	{
 	}
 
-	// Token: 0x060048E8 RID: 18664 RVA: 0x001C9A6A File Offset: 0x001C7C6A
+	// Token: 0x0600490B RID: 18699 RVA: 0x001CAB3E File Offset: 0x001C8D3E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -89,7 +89,7 @@ public class ObjectiveStatAwarded : BaseObjective
 		objectiveStatAwarded.statText = this.statText;
 	}
 
-	// Token: 0x060048E9 RID: 18665 RVA: 0x001C9A90 File Offset: 0x001C7C90
+	// Token: 0x0600490C RID: 18700 RVA: 0x001CAB64 File Offset: 0x001C8D64
 	public override BaseObjective Clone()
 	{
 		ObjectiveStatAwarded objectiveStatAwarded = new ObjectiveStatAwarded();
@@ -97,7 +97,7 @@ public class ObjectiveStatAwarded : BaseObjective
 		return objectiveStatAwarded;
 	}
 
-	// Token: 0x060048EA RID: 18666 RVA: 0x001C9AAC File Offset: 0x001C7CAC
+	// Token: 0x0600490D RID: 18701 RVA: 0x001CAB80 File Offset: 0x001C8D80
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -117,38 +117,38 @@ public class ObjectiveStatAwarded : BaseObjective
 		}
 	}
 
-	// Token: 0x060048EB RID: 18667 RVA: 0x001C9B39 File Offset: 0x001C7D39
+	// Token: 0x0600490E RID: 18702 RVA: 0x001CAC0D File Offset: 0x001C8E0D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
 		parameters.Add("stat_name", this.statName);
 	}
 
-	// Token: 0x04003A21 RID: 14881
+	// Token: 0x04003A41 RID: 14913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statName = "";
 
-	// Token: 0x04003A22 RID: 14882
+	// Token: 0x04003A42 RID: 14914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statText = "";
 
-	// Token: 0x04003A23 RID: 14883
+	// Token: 0x04003A43 RID: 14915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int neededCount;
 
-	// Token: 0x04003A24 RID: 14884
+	// Token: 0x04003A44 RID: 14916
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStatName = "stat_name";
 
-	// Token: 0x04003A25 RID: 14885
+	// Token: 0x04003A45 RID: 14917
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStatText = "stat_text";
 
-	// Token: 0x04003A26 RID: 14886
+	// Token: 0x04003A46 RID: 14918
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStatTextKey = "stat_text_key";
 
-	// Token: 0x04003A27 RID: 14887
+	// Token: 0x04003A47 RID: 14919
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropNeededCount = "count";
 }

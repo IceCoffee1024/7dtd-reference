@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020010C8 RID: 4296
+// Token: 0x020010D8 RID: 4312
 [Preserve]
 public class XUiC_WindowNonPagingHeader : XUiController
 {
-	// Token: 0x060088BD RID: 35005 RVA: 0x00345AB4 File Offset: 0x00343CB4
+	// Token: 0x06008910 RID: 35088 RVA: 0x00347B38 File Offset: 0x00345D38
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class XUiC_WindowNonPagingHeader : XUiController
 		}
 	}
 
-	// Token: 0x060088BE RID: 35006 RVA: 0x00345AE7 File Offset: 0x00343CE7
+	// Token: 0x06008911 RID: 35089 RVA: 0x00347B6B File Offset: 0x00345D6B
 	public void SetHeader(string name)
 	{
 		if (this.lblWindowName != null)
@@ -25,7 +25,7 @@ public class XUiC_WindowNonPagingHeader : XUiController
 		}
 	}
 
-	// Token: 0x060088BF RID: 35007 RVA: 0x00345AFD File Offset: 0x00343CFD
+	// Token: 0x06008912 RID: 35090 RVA: 0x00347B81 File Offset: 0x00345D81
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -33,7 +33,7 @@ public class XUiC_WindowNonPagingHeader : XUiController
 		this.xui.DragAndDropWindow.InMenu = true;
 	}
 
-	// Token: 0x060088C0 RID: 35008 RVA: 0x00345B2C File Offset: 0x00343D2C
+	// Token: 0x06008913 RID: 35091 RVA: 0x00347BB0 File Offset: 0x00345DB0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -44,7 +44,7 @@ public class XUiC_WindowNonPagingHeader : XUiController
 		}
 	}
 
-	// Token: 0x040065EE RID: 26094
+	// Token: 0x0400662D RID: 26157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblWindowName;
 }

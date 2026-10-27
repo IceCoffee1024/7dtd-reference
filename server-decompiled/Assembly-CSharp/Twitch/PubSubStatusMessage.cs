@@ -3,29 +3,29 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001810 RID: 6160
+	// Token: 0x02001841 RID: 6209
 	[Serializable]
 	public class PubSubStatusMessage
 	{
-		// Token: 0x04008ECF RID: 36559
+		// Token: 0x04008FB8 RID: 36792
 		public string opaqueId;
 
-		// Token: 0x04008ED0 RID: 36560
+		// Token: 0x04008FB9 RID: 36793
 		public string displayName;
 
-		// Token: 0x04008ED1 RID: 36561
+		// Token: 0x04008FBA RID: 36794
 		public string status;
 
-		// Token: 0x04008ED2 RID: 36562
+		// Token: 0x04008FBB RID: 36795
 		public List<string> party;
 
-		// Token: 0x04008ED3 RID: 36563
+		// Token: 0x04008FBC RID: 36796
 		public string commands;
 
-		// Token: 0x04008ED4 RID: 36564
+		// Token: 0x04008FBD RID: 36797
 		public string language;
 
-		// Token: 0x04008ED5 RID: 36565
+		// Token: 0x04008FBE RID: 36798
 		public List<string> actionTypes;
 	}
 }

@@ -4,17 +4,17 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x02001907 RID: 6407
+	// Token: 0x02001938 RID: 6456
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class ASPPathNavigate : PathNavigate
 	{
-		// Token: 0x0600C5AE RID: 50606 RVA: 0x0048B843 File Offset: 0x00489A43
+		// Token: 0x0600C6C2 RID: 50882 RVA: 0x0048F1EF File Offset: 0x0048D3EF
 		public ASPPathNavigate(EntityAlive _ea)
 			: base(_ea)
 		{
 		}
 
-		// Token: 0x0600C5AF RID: 50607 RVA: 0x0048B84C File Offset: 0x00489A4C
+		// Token: 0x0600C6C3 RID: 50883 RVA: 0x0048F1F8 File Offset: 0x0048D3F8
 		public override void GetPathTo(PathInfo _pathInfo)
 		{
 			if (this.pathFinder != null)
@@ -30,7 +30,7 @@ namespace GamePath
 			this.CreatePath();
 		}
 
-		// Token: 0x0600C5B0 RID: 50608 RVA: 0x0048B880 File Offset: 0x00489A80
+		// Token: 0x0600C6C4 RID: 50884 RVA: 0x0048F22C File Offset: 0x0048D42C
 		public override bool SetPath(PathInfo _pathInfo, float _speed)
 		{
 			PathEntity pathEntity = ((_pathInfo != null) ? _pathInfo.path : null);
@@ -58,7 +58,7 @@ namespace GamePath
 			return true;
 		}
 
-		// Token: 0x0600C5B1 RID: 50609 RVA: 0x0048B8FC File Offset: 0x00489AFC
+		// Token: 0x0600C6C5 RID: 50885 RVA: 0x0048F2A8 File Offset: 0x0048D4A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ImprovePath()
 		{
@@ -79,7 +79,7 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x0600C5B2 RID: 50610 RVA: 0x0048B97B File Offset: 0x00489B7B
+		// Token: 0x0600C6C6 RID: 50886 RVA: 0x0048F327 File Offset: 0x0048D527
 		public override void UpdateNavigation()
 		{
 			if (base.noPath())
@@ -94,7 +94,7 @@ namespace GamePath
 			this.theEntity.moveHelper.SetMoveTo(this.currentPath, this.speed, this.canBreakBlocks);
 		}
 
-		// Token: 0x0600C5B3 RID: 50611 RVA: 0x0048B9B8 File Offset: 0x00489BB8
+		// Token: 0x0600C6C7 RID: 50887 RVA: 0x0048F364 File Offset: 0x0048D564
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void pathFollow()
 		{
@@ -152,7 +152,7 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x0600C5B4 RID: 50612 RVA: 0x0048BB84 File Offset: 0x00489D84
+		// Token: 0x0600C6C8 RID: 50888 RVA: 0x0048F530 File Offset: 0x0048D730
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void CreatePath()
 		{
@@ -167,7 +167,7 @@ namespace GamePath
 			this.pathFinder.Calculate(vector);
 		}
 
-		// Token: 0x0400951E RID: 38174
+		// Token: 0x04009607 RID: 38407
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ASPPathFinder pathFinder;
 	}

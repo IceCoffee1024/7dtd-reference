@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020014D0 RID: 5328
+// Token: 0x020014E2 RID: 5346
 public enum StreamModeRead
 {
-	// Token: 0x04007C23 RID: 31779
+	// Token: 0x04007C64 RID: 31844
 	Persistency,
-	// Token: 0x04007C24 RID: 31780
+	// Token: 0x04007C65 RID: 31845
 	FromServer,
-	// Token: 0x04007C25 RID: 31781
+	// Token: 0x04007C66 RID: 31846
 	FromClient
 }

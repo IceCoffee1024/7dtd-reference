@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E37 RID: 3639
+// Token: 0x02000E42 RID: 3650
 [Preserve]
 public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 {
-	// Token: 0x06006F69 RID: 28521 RVA: 0x002B3E85 File Offset: 0x002B2085
+	// Token: 0x06006F8E RID: 28558 RVA: 0x002B53F1 File Offset: 0x002B35F1
 	public override void Init()
 	{
 		base.Init();
 		XUiC_PlayerProfile.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006F6A RID: 28522 RVA: 0x002B3E9D File Offset: 0x002B209D
+	// Token: 0x06006F8F RID: 28559 RVA: 0x002B5409 File Offset: 0x002B3609
 	[XuiBindEvent("OnPress", "btnProfileEdit")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnProfileEdit_OnPressed(XUiController _sender, int _mouseButton)
@@ -21,7 +21,7 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		this.openCustomCharacterWindow();
 	}
 
-	// Token: 0x06006F6B RID: 28523 RVA: 0x002B3EA8 File Offset: 0x002B20A8
+	// Token: 0x06006F90 RID: 28560 RVA: 0x002B5414 File Offset: 0x002B3614
 	[XuiBindEvent("OnPress", "btnProfileDelete")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnProfileDelete_OnPressed(XUiController _sender, int _mouseButton)
@@ -61,7 +61,7 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		}, false, false, -1, -1);
 	}
 
-	// Token: 0x06006F6C RID: 28524 RVA: 0x002B3F22 File Offset: 0x002B2122
+	// Token: 0x06006F91 RID: 28561 RVA: 0x002B548E File Offset: 0x002B368E
 	[XuiBindEvent("OnPress", "btnProfileCreate")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnProfileCreate_OnPressed(XUiController _sender, int _mouseButton)
@@ -82,7 +82,7 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		this.xui.playerUI.windowManager.Open("playerProfilesCreate", false);
 	}
 
-	// Token: 0x06006F6D RID: 28525 RVA: 0x002B3F56 File Offset: 0x002B2156
+	// Token: 0x06006F92 RID: 28562 RVA: 0x002B54C2 File Offset: 0x002B36C2
 	[XuiBindEvent("SelectionChanged", "profiles")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Profiles_OnSelectionChanged(XUiC_List<XUiC_ProfilesList.ListEntry> _list, XUiC_ProfilesList.ListEntry _previousEntry, XUiC_ProfilesList.ListEntry _newEntry)
@@ -95,7 +95,7 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006F6E RID: 28526 RVA: 0x002B3F72 File Offset: 0x002B2172
+	// Token: 0x06006F93 RID: 28563 RVA: 0x002B54DE File Offset: 0x002B36DE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openCustomCharacterWindow()
 	{
@@ -106,7 +106,7 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		});
 	}
 
-	// Token: 0x06006F6F RID: 28527 RVA: 0x002B3F9C File Offset: 0x002B219C
+	// Token: 0x06006F94 RID: 28564 RVA: 0x002B5508 File Offset: 0x002B3708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void selectFirstProfile()
 	{
@@ -126,14 +126,14 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		ProfileSDF.SetSelectedProfile(text);
 	}
 
-	// Token: 0x06006F70 RID: 28528 RVA: 0x002B4010 File Offset: 0x002B2210
+	// Token: 0x06006F95 RID: 28565 RVA: 0x002B557C File Offset: 0x002B377C
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.selectFirstProfile();
 	}
 
-	// Token: 0x06006F71 RID: 28529 RVA: 0x002B401E File Offset: 0x002B221E
+	// Token: 0x06006F96 RID: 28566 RVA: 0x002B558A File Offset: 0x002B378A
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -145,15 +145,15 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		this.onCloseAction = null;
 	}
 
-	// Token: 0x06006F72 RID: 28530 RVA: 0x002B4041 File Offset: 0x002B2241
+	// Token: 0x06006F97 RID: 28567 RVA: 0x002B55AD File Offset: 0x002B37AD
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x17000CA0 RID: 3232
-	// (get) Token: 0x06006F73 RID: 28531 RVA: 0x002B4054 File Offset: 0x002B2254
+	// Token: 0x17000CA6 RID: 3238
+	// (get) Token: 0x06006F98 RID: 28568 RVA: 0x002B55C0 File Offset: 0x002B37C0
 	[XuiXmlBinding("user_profile_count")]
 	public int UserProfileCount
 	{
@@ -179,8 +179,8 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000CA1 RID: 3233
-	// (get) Token: 0x06006F74 RID: 28532 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000CA7 RID: 3239
+	// (get) Token: 0x06006F99 RID: 28569 RVA: 0x00020119 File Offset: 0x0001E319
 	[XuiXmlBinding("can_create_userprofile")]
 	public bool MaxUserProfilesReached
 	{
@@ -191,8 +191,8 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000CA2 RID: 3234
-	// (get) Token: 0x06006F75 RID: 28533 RVA: 0x002B40CC File Offset: 0x002B22CC
+	// Token: 0x17000CA8 RID: 3240
+	// (get) Token: 0x06006F9A RID: 28570 RVA: 0x002B5638 File Offset: 0x002B3838
 	[XuiXmlBinding("can_modify_profile")]
 	public bool CanModifyProfile
 	{
@@ -224,46 +224,46 @@ public class XUiC_PlayerProfile : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006F76 RID: 28534 RVA: 0x002B4141 File Offset: 0x002B2341
+	// Token: 0x06006F9B RID: 28571 RVA: 0x002B56AD File Offset: 0x002B38AD
 	public static void Open(XUi _xuiInstance, Action _onCloseAction = null)
 	{
 		_xuiInstance.GetChildByType<XUiC_PlayerProfile>().onCloseAction = _onCloseAction;
 		_xuiInstance.playerUI.windowManager.Open(XUiC_PlayerProfile.ID, true);
 	}
 
-	// Token: 0x0400549A RID: 21658
+	// Token: 0x040054BF RID: 21695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxUserProfiles = -1;
 
-	// Token: 0x0400549B RID: 21659
+	// Token: 0x040054C0 RID: 21696
 	public static string ID = "";
 
-	// Token: 0x0400549C RID: 21660
+	// Token: 0x040054C1 RID: 21697
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ProfilesList profiles;
 
-	// Token: 0x0400549D RID: 21661
+	// Token: 0x040054C2 RID: 21698
 	[XuiBindComponent("btnProfileCreate", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnProfileCreate;
 
-	// Token: 0x0400549E RID: 21662
+	// Token: 0x040054C3 RID: 21699
 	[XuiBindComponent("btnProfileDelete", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnProfileDelete;
 
-	// Token: 0x0400549F RID: 21663
+	// Token: 0x040054C4 RID: 21700
 	[XuiBindComponent("btnProfileEdit", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnProfileEdit;
 
-	// Token: 0x040054A0 RID: 21664
+	// Token: 0x040054C5 RID: 21701
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SDCSPreviewWindow previewWindow;
 
-	// Token: 0x040054A1 RID: 21665
+	// Token: 0x040054C6 RID: 21702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onCloseAction;
 }

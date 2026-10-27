@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02001083 RID: 4227
+// Token: 0x02001093 RID: 4243
 [Preserve]
 public class XUiC_SpawnersList : XUiC_List<XUiC_SpawnersList.SpawnerEntry>
 {
-	// Token: 0x06008614 RID: 34324 RVA: 0x00334400 File Offset: 0x00332600
+	// Token: 0x06008667 RID: 34407 RVA: 0x00336484 File Offset: 0x00334684
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -19,18 +19,18 @@ public class XUiC_SpawnersList : XUiC_List<XUiC_SpawnersList.SpawnerEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x02001084 RID: 4228
+	// Token: 0x02001094 RID: 4244
 	[Preserve]
 	public class SpawnerEntry : XUiListEntry<XUiC_SpawnersList.SpawnerEntry>
 	{
-		// Token: 0x06008616 RID: 34326 RVA: 0x0033448C File Offset: 0x0033268C
+		// Token: 0x06008669 RID: 34409 RVA: 0x00336510 File Offset: 0x00334710
 		public SpawnerEntry(string _name)
 		{
 			this.name = _name;
 			this.displayName = GameStageGroup.MakeDisplayName(_name);
 		}
 
-		// Token: 0x06008617 RID: 34327 RVA: 0x003344A7 File Offset: 0x003326A7
+		// Token: 0x0600866A RID: 34410 RVA: 0x0033652B File Offset: 0x0033472B
 		public override int CompareTo(XUiC_SpawnersList.SpawnerEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -40,25 +40,25 @@ public class XUiC_SpawnersList : XUiC_List<XUiC_SpawnersList.SpawnerEntry>
 			return string.Compare(this.name, _otherEntry.name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06008618 RID: 34328 RVA: 0x003344C0 File Offset: 0x003326C0
+		// Token: 0x0600866B RID: 34411 RVA: 0x00336544 File Offset: 0x00334744
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x040063B9 RID: 25529
+		// Token: 0x040063F8 RID: 25592
 		public readonly string name;
 
-		// Token: 0x040063BA RID: 25530
+		// Token: 0x040063F9 RID: 25593
 		public readonly string displayName;
 	}
 
-	// Token: 0x02001085 RID: 4229
+	// Token: 0x02001095 RID: 4245
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_SpawnersList.SpawnerEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06008619 RID: 34329 RVA: 0x003344D5 File Offset: 0x003326D5
+		// Token: 0x0600866C RID: 34412 RVA: 0x00336559 File Offset: 0x00334759
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()

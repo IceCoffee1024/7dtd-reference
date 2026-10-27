@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Token: 0x020014DD RID: 5341
+// Token: 0x020014EF RID: 5359
 public readonly ref struct StringSpan
 {
-	// Token: 0x0600A750 RID: 42832 RVA: 0x003E54CF File Offset: 0x003E36CF
+	// Token: 0x0600A7A8 RID: 42920 RVA: 0x003E78D3 File Offset: 0x003E5AD3
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan(ReadOnlySpan<char> span)
@@ -13,8 +13,8 @@ public readonly ref struct StringSpan
 		this.m_span = span;
 	}
 
-	// Token: 0x170013CE RID: 5070
-	// (get) Token: 0x0600A751 RID: 42833 RVA: 0x003E54D8 File Offset: 0x003E36D8
+	// Token: 0x170013DA RID: 5082
+	// (get) Token: 0x0600A7A9 RID: 42921 RVA: 0x003E78DC File Offset: 0x003E5ADC
 	public int Length
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,20 +24,20 @@ public readonly ref struct StringSpan
 		}
 	}
 
-	// Token: 0x0600A752 RID: 42834 RVA: 0x003E54E5 File Offset: 0x003E36E5
+	// Token: 0x0600A7AA RID: 42922 RVA: 0x003E78E9 File Offset: 0x003E5AE9
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public ReadOnlySpan<char> AsSpan()
 	{
 		return this.m_span;
 	}
 
-	// Token: 0x0600A753 RID: 42835 RVA: 0x003E54ED File Offset: 0x003E36ED
+	// Token: 0x0600A7AB RID: 42923 RVA: 0x003E78F1 File Offset: 0x003E5AF1
 	public override string ToString()
 	{
 		return new string(this.m_span);
 	}
 
-	// Token: 0x170013CF RID: 5071
+	// Token: 0x170013DB RID: 5083
 	public ref char this[int index]
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,28 +47,28 @@ public readonly ref struct StringSpan
 		}
 	}
 
-	// Token: 0x0600A755 RID: 42837 RVA: 0x003E5508 File Offset: 0x003E3708
+	// Token: 0x0600A7AD RID: 42925 RVA: 0x003E790C File Offset: 0x003E5B0C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan Slice(int start)
 	{
 		return this.m_span.Slice(start);
 	}
 
-	// Token: 0x0600A756 RID: 42838 RVA: 0x003E551B File Offset: 0x003E371B
+	// Token: 0x0600A7AE RID: 42926 RVA: 0x003E791F File Offset: 0x003E5B1F
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan Slice(int start, int length)
 	{
 		return this.m_span.Slice(start, length);
 	}
 
-	// Token: 0x0600A757 RID: 42839 RVA: 0x003E552F File Offset: 0x003E372F
+	// Token: 0x0600A7AF RID: 42927 RVA: 0x003E7933 File Offset: 0x003E5B33
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Equals(StringSpan other, StringComparison comparisonType = StringComparison.Ordinal)
 	{
 		return this.m_span == other.m_span || this.m_span.Equals(other.AsSpan(), comparisonType);
 	}
 
-	// Token: 0x0600A758 RID: 42840 RVA: 0x003E5559 File Offset: 0x003E3759
+	// Token: 0x0600A7B0 RID: 42928 RVA: 0x003E795D File Offset: 0x003E5B5D
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int CompareTo(StringSpan other, StringComparison comparisonType = StringComparison.Ordinal)
 	{
@@ -79,116 +79,116 @@ public readonly ref struct StringSpan
 		return 0;
 	}
 
-	// Token: 0x0600A759 RID: 42841 RVA: 0x003E5583 File Offset: 0x003E3783
+	// Token: 0x0600A7B1 RID: 42929 RVA: 0x003E7987 File Offset: 0x003E5B87
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Contains(char value)
 	{
 		return this.IndexOf(value) >= 0;
 	}
 
-	// Token: 0x0600A75A RID: 42842 RVA: 0x003E5592 File Offset: 0x003E3792
+	// Token: 0x0600A7B2 RID: 42930 RVA: 0x003E7996 File Offset: 0x003E5B96
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Contains(char value, StringComparison comparisonType)
 	{
 		return this.IndexOf(value, comparisonType) >= 0;
 	}
 
-	// Token: 0x0600A75B RID: 42843 RVA: 0x003E55A2 File Offset: 0x003E37A2
+	// Token: 0x0600A7B3 RID: 42931 RVA: 0x003E79A6 File Offset: 0x003E5BA6
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Contains(string value)
 	{
 		return this.IndexOf(value, StringComparison.Ordinal) >= 0;
 	}
 
-	// Token: 0x0600A75C RID: 42844 RVA: 0x003E55B7 File Offset: 0x003E37B7
+	// Token: 0x0600A7B4 RID: 42932 RVA: 0x003E79BB File Offset: 0x003E5BBB
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Contains(string value, StringComparison comparisonType)
 	{
 		return this.IndexOf(value, comparisonType) >= 0;
 	}
 
-	// Token: 0x0600A75D RID: 42845 RVA: 0x003E55CC File Offset: 0x003E37CC
+	// Token: 0x0600A7B5 RID: 42933 RVA: 0x003E79D0 File Offset: 0x003E5BD0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int IndexOf(char value)
 	{
 		return this.m_span.IndexOf(value);
 	}
 
-	// Token: 0x0600A75E RID: 42846 RVA: 0x003E55DA File Offset: 0x003E37DA
+	// Token: 0x0600A7B6 RID: 42934 RVA: 0x003E79DE File Offset: 0x003E5BDE
 	public int IndexOf(char value, StringComparison comparisonType)
 	{
 		return this.m_span.IndexOf(MemoryMarshal.CreateReadOnlySpan<char>(ref value, 1), comparisonType);
 	}
 
-	// Token: 0x0600A75F RID: 42847 RVA: 0x003E55F0 File Offset: 0x003E37F0
+	// Token: 0x0600A7B7 RID: 42935 RVA: 0x003E79F4 File Offset: 0x003E5BF4
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int IndexOf(StringSpan value)
 	{
 		return this.m_span.IndexOf<char>(value.AsSpan());
 	}
 
-	// Token: 0x0600A760 RID: 42848 RVA: 0x003E5604 File Offset: 0x003E3804
+	// Token: 0x0600A7B8 RID: 42936 RVA: 0x003E7A08 File Offset: 0x003E5C08
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int IndexOf(StringSpan value, StringComparison comparisonType)
 	{
 		return this.m_span.IndexOf(value.AsSpan(), comparisonType);
 	}
 
-	// Token: 0x0600A761 RID: 42849 RVA: 0x003E5619 File Offset: 0x003E3819
+	// Token: 0x0600A7B9 RID: 42937 RVA: 0x003E7A1D File Offset: 0x003E5C1D
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int LastIndexOf(char value)
 	{
 		return this.m_span.LastIndexOf(value);
 	}
 
-	// Token: 0x0600A762 RID: 42850 RVA: 0x003E5627 File Offset: 0x003E3827
+	// Token: 0x0600A7BA RID: 42938 RVA: 0x003E7A2B File Offset: 0x003E5C2B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int LastIndexOf(StringSpan value)
 	{
 		return this.m_span.LastIndexOf<char>(value.AsSpan());
 	}
 
-	// Token: 0x0600A763 RID: 42851 RVA: 0x003E563B File Offset: 0x003E383B
+	// Token: 0x0600A7BB RID: 42939 RVA: 0x003E7A3F File Offset: 0x003E5C3F
 	public int IndexOfAny(StringSpan value)
 	{
 		return this.m_span.IndexOfAny<char>(value.AsSpan());
 	}
 
-	// Token: 0x0600A764 RID: 42852 RVA: 0x003E564F File Offset: 0x003E384F
+	// Token: 0x0600A7BC RID: 42940 RVA: 0x003E7A53 File Offset: 0x003E5C53
 	public int LastIndexOfAny(StringSpan value)
 	{
 		return this.m_span.LastIndexOfAny<char>(value.AsSpan());
 	}
 
-	// Token: 0x0600A765 RID: 42853 RVA: 0x003E5663 File Offset: 0x003E3863
+	// Token: 0x0600A7BD RID: 42941 RVA: 0x003E7A67 File Offset: 0x003E5C67
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan.WhitespaceSplitEnumerator GetSplitEnumerator(StringSplitOptions options = StringSplitOptions.None)
 	{
 		return new StringSpan.WhitespaceSplitEnumerator(this.m_span, options);
 	}
 
-	// Token: 0x0600A766 RID: 42854 RVA: 0x003E5671 File Offset: 0x003E3871
+	// Token: 0x0600A7BE RID: 42942 RVA: 0x003E7A75 File Offset: 0x003E5C75
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan.CharSplitEnumerator GetSplitEnumerator(char separator, StringSplitOptions options = StringSplitOptions.None)
 	{
 		return new StringSpan.CharSplitEnumerator(this.m_span, separator, options);
 	}
 
-	// Token: 0x0600A767 RID: 42855 RVA: 0x003E5680 File Offset: 0x003E3880
+	// Token: 0x0600A7BF RID: 42943 RVA: 0x003E7A84 File Offset: 0x003E5C84
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan.StringSplitEnumerator GetSplitEnumerator(ReadOnlySpan<char> separator, StringSplitOptions options = StringSplitOptions.None)
 	{
 		return new StringSpan.StringSplitEnumerator(this.m_span, separator, options);
 	}
 
-	// Token: 0x0600A768 RID: 42856 RVA: 0x003E568F File Offset: 0x003E388F
+	// Token: 0x0600A7C0 RID: 42944 RVA: 0x003E7A93 File Offset: 0x003E5C93
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan.SeparatorSplitAnyEnumerator GetSplitAnyEnumerator(string[] separator, StringSplitOptions options = StringSplitOptions.None)
 	{
 		return new StringSpan.SeparatorSplitAnyEnumerator(this.m_span, options, separator);
 	}
 
-	// Token: 0x0600A769 RID: 42857 RVA: 0x003E56A0 File Offset: 0x003E38A0
+	// Token: 0x0600A7C1 RID: 42945 RVA: 0x003E7AA4 File Offset: 0x003E5CA4
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan Substring(int startIndex)
 	{
@@ -196,7 +196,7 @@ public readonly ref struct StringSpan
 		return stringSpan.Slice(startIndex, stringSpan.Length - startIndex);
 	}
 
-	// Token: 0x0600A76A RID: 42858 RVA: 0x003E56C8 File Offset: 0x003E38C8
+	// Token: 0x0600A7C2 RID: 42946 RVA: 0x003E7ACC File Offset: 0x003E5CCC
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public StringSpan Substring(int startIndex, int length)
 	{
@@ -204,7 +204,7 @@ public readonly ref struct StringSpan
 		return stringSpan.Slice(startIndex, startIndex + length - startIndex);
 	}
 
-	// Token: 0x0600A76B RID: 42859 RVA: 0x003E56EC File Offset: 0x003E38EC
+	// Token: 0x0600A7C3 RID: 42947 RVA: 0x003E7AF0 File Offset: 0x003E5CF0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public unsafe StringSpan Trim()
 	{
@@ -225,68 +225,68 @@ public readonly ref struct StringSpan
 		return this.Slice(num, num2 - num + 1);
 	}
 
-	// Token: 0x0600A76C RID: 42860 RVA: 0x003E5755 File Offset: 0x003E3955
+	// Token: 0x0600A7C4 RID: 42948 RVA: 0x003E7B59 File Offset: 0x003E5D59
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static implicit operator StringSpan(string str)
 	{
 		return new StringSpan(str);
 	}
 
-	// Token: 0x0600A76D RID: 42861 RVA: 0x003E5762 File Offset: 0x003E3962
+	// Token: 0x0600A7C5 RID: 42949 RVA: 0x003E7B66 File Offset: 0x003E5D66
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static implicit operator StringSpan(ReadOnlySpan<char> span)
 	{
 		return new StringSpan(span);
 	}
 
-	// Token: 0x0600A76E RID: 42862 RVA: 0x003E54ED File Offset: 0x003E36ED
+	// Token: 0x0600A7C6 RID: 42950 RVA: 0x003E78F1 File Offset: 0x003E5AF1
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static explicit operator string(StringSpan span)
 	{
 		return new string(span.m_span);
 	}
 
-	// Token: 0x0600A76F RID: 42863 RVA: 0x003E54E5 File Offset: 0x003E36E5
+	// Token: 0x0600A7C7 RID: 42951 RVA: 0x003E78E9 File Offset: 0x003E5AE9
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static explicit operator ReadOnlySpan<char>(StringSpan span)
 	{
 		return span.m_span;
 	}
 
-	// Token: 0x0600A770 RID: 42864 RVA: 0x003E576A File Offset: 0x003E396A
+	// Token: 0x0600A7C8 RID: 42952 RVA: 0x003E7B6E File Offset: 0x003E5D6E
 	public override bool Equals(object obj)
 	{
 		throw new NotSupportedException("StringSpan.Equals(object) is not supported. Use another method or the operator == instead.");
 	}
 
-	// Token: 0x0600A771 RID: 42865 RVA: 0x003E5776 File Offset: 0x003E3976
+	// Token: 0x0600A7C9 RID: 42953 RVA: 0x003E7B7A File Offset: 0x003E5D7A
 	public override int GetHashCode()
 	{
 		return SpanUtils.GetHashCode<char>(this.m_span);
 	}
 
-	// Token: 0x0600A772 RID: 42866 RVA: 0x003E5783 File Offset: 0x003E3983
+	// Token: 0x0600A7CA RID: 42954 RVA: 0x003E7B87 File Offset: 0x003E5D87
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool operator ==(StringSpan left, StringSpan right)
 	{
 		return left.Equals(right, StringComparison.Ordinal);
 	}
 
-	// Token: 0x0600A773 RID: 42867 RVA: 0x003E578E File Offset: 0x003E398E
+	// Token: 0x0600A7CB RID: 42955 RVA: 0x003E7B92 File Offset: 0x003E5D92
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool operator !=(StringSpan left, StringSpan right)
 	{
 		return !(left == right);
 	}
 
-	// Token: 0x04007C49 RID: 31817
+	// Token: 0x04007C8A RID: 31882
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ReadOnlySpan<char> m_span;
 
-	// Token: 0x020014DE RID: 5342
+	// Token: 0x020014F0 RID: 5360
 	public ref struct CharSplitEnumerator
 	{
-		// Token: 0x0600A774 RID: 42868 RVA: 0x003E579A File Offset: 0x003E399A
+		// Token: 0x0600A7CC RID: 42956 RVA: 0x003E7B9E File Offset: 0x003E5D9E
 		public CharSplitEnumerator(ReadOnlySpan<char> span, char separator, StringSplitOptions options = StringSplitOptions.None)
 		{
 			this.m_remainder = span;
@@ -296,14 +296,14 @@ public readonly ref struct StringSpan
 			this.m_done = false;
 		}
 
-		// Token: 0x0600A775 RID: 42869 RVA: 0x003E57D4 File Offset: 0x003E39D4
+		// Token: 0x0600A7CD RID: 42957 RVA: 0x003E7BD8 File Offset: 0x003E5DD8
 		public StringSpan.CharSplitEnumerator GetEnumerator()
 		{
 			return this;
 		}
 
-		// Token: 0x170013D0 RID: 5072
-		// (get) Token: 0x0600A776 RID: 42870 RVA: 0x003E57DC File Offset: 0x003E39DC
+		// Token: 0x170013DC RID: 5084
+		// (get) Token: 0x0600A7CE RID: 42958 RVA: 0x003E7BE0 File Offset: 0x003E5DE0
 		public StringSpan Current
 		{
 			get
@@ -312,7 +312,7 @@ public readonly ref struct StringSpan
 			}
 		}
 
-		// Token: 0x0600A777 RID: 42871 RVA: 0x003E57E4 File Offset: 0x003E39E4
+		// Token: 0x0600A7CF RID: 42959 RVA: 0x003E7BE8 File Offset: 0x003E5DE8
 		public bool MoveNext()
 		{
 			while (this.MoveToNextInternal())
@@ -325,7 +325,7 @@ public readonly ref struct StringSpan
 			return false;
 		}
 
-		// Token: 0x0600A778 RID: 42872 RVA: 0x003E5808 File Offset: 0x003E3A08
+		// Token: 0x0600A7D0 RID: 42960 RVA: 0x003E7C0C File Offset: 0x003E5E0C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe bool MoveToNextInternal()
 		{
@@ -351,31 +351,31 @@ public readonly ref struct StringSpan
 			return true;
 		}
 
-		// Token: 0x04007C4A RID: 31818
+		// Token: 0x04007C8B RID: 31883
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ReadOnlySpan<char> m_remainder;
 
-		// Token: 0x04007C4B RID: 31819
+		// Token: 0x04007C8C RID: 31884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly char m_separator;
 
-		// Token: 0x04007C4C RID: 31820
+		// Token: 0x04007C8D RID: 31885
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_removeEmptyEntries;
 
-		// Token: 0x04007C4D RID: 31821
+		// Token: 0x04007C8E RID: 31886
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringSpan m_current;
 
-		// Token: 0x04007C4E RID: 31822
+		// Token: 0x04007C8F RID: 31887
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_done;
 	}
 
-	// Token: 0x020014DF RID: 5343
+	// Token: 0x020014F1 RID: 5361
 	public ref struct StringSplitEnumerator
 	{
-		// Token: 0x0600A779 RID: 42873 RVA: 0x003E58AE File Offset: 0x003E3AAE
+		// Token: 0x0600A7D1 RID: 42961 RVA: 0x003E7CB2 File Offset: 0x003E5EB2
 		public StringSplitEnumerator(ReadOnlySpan<char> span, ReadOnlySpan<char> separator, StringSplitOptions options = StringSplitOptions.None)
 		{
 			this.m_remainder = span;
@@ -385,14 +385,14 @@ public readonly ref struct StringSpan
 			this.m_done = false;
 		}
 
-		// Token: 0x0600A77A RID: 42874 RVA: 0x003E58E8 File Offset: 0x003E3AE8
+		// Token: 0x0600A7D2 RID: 42962 RVA: 0x003E7CEC File Offset: 0x003E5EEC
 		public StringSpan.StringSplitEnumerator GetEnumerator()
 		{
 			return this;
 		}
 
-		// Token: 0x170013D1 RID: 5073
-		// (get) Token: 0x0600A77B RID: 42875 RVA: 0x003E58F0 File Offset: 0x003E3AF0
+		// Token: 0x170013DD RID: 5085
+		// (get) Token: 0x0600A7D3 RID: 42963 RVA: 0x003E7CF4 File Offset: 0x003E5EF4
 		public StringSpan Current
 		{
 			get
@@ -401,7 +401,7 @@ public readonly ref struct StringSpan
 			}
 		}
 
-		// Token: 0x0600A77C RID: 42876 RVA: 0x003E58F8 File Offset: 0x003E3AF8
+		// Token: 0x0600A7D4 RID: 42964 RVA: 0x003E7CFC File Offset: 0x003E5EFC
 		public bool MoveNext()
 		{
 			while (this.MoveToNextInternal())
@@ -414,7 +414,7 @@ public readonly ref struct StringSpan
 			return false;
 		}
 
-		// Token: 0x0600A77D RID: 42877 RVA: 0x003E591C File Offset: 0x003E3B1C
+		// Token: 0x0600A7D5 RID: 42965 RVA: 0x003E7D20 File Offset: 0x003E5F20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool MoveToNextInternal()
 		{
@@ -448,31 +448,31 @@ public readonly ref struct StringSpan
 			return true;
 		}
 
-		// Token: 0x04007C4F RID: 31823
+		// Token: 0x04007C90 RID: 31888
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ReadOnlySpan<char> m_remainder;
 
-		// Token: 0x04007C50 RID: 31824
+		// Token: 0x04007C91 RID: 31889
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ReadOnlySpan<char> m_separator;
 
-		// Token: 0x04007C51 RID: 31825
+		// Token: 0x04007C92 RID: 31890
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_removeEmptyEntries;
 
-		// Token: 0x04007C52 RID: 31826
+		// Token: 0x04007C93 RID: 31891
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringSpan m_current;
 
-		// Token: 0x04007C53 RID: 31827
+		// Token: 0x04007C94 RID: 31892
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_done;
 	}
 
-	// Token: 0x020014E0 RID: 5344
+	// Token: 0x020014F2 RID: 5362
 	public ref struct WhitespaceSplitEnumerator
 	{
-		// Token: 0x0600A77E RID: 42878 RVA: 0x003E5A20 File Offset: 0x003E3C20
+		// Token: 0x0600A7D6 RID: 42966 RVA: 0x003E7E24 File Offset: 0x003E6024
 		public WhitespaceSplitEnumerator(ReadOnlySpan<char> text, StringSplitOptions options = StringSplitOptions.None)
 		{
 			this.m_remainder = text;
@@ -481,14 +481,14 @@ public readonly ref struct StringSpan
 			this.m_done = false;
 		}
 
-		// Token: 0x0600A77F RID: 42879 RVA: 0x003E5A58 File Offset: 0x003E3C58
+		// Token: 0x0600A7D7 RID: 42967 RVA: 0x003E7E5C File Offset: 0x003E605C
 		public StringSpan.WhitespaceSplitEnumerator GetEnumerator()
 		{
 			return this;
 		}
 
-		// Token: 0x170013D2 RID: 5074
-		// (get) Token: 0x0600A780 RID: 42880 RVA: 0x003E5A60 File Offset: 0x003E3C60
+		// Token: 0x170013DE RID: 5086
+		// (get) Token: 0x0600A7D8 RID: 42968 RVA: 0x003E7E64 File Offset: 0x003E6064
 		public StringSpan Current
 		{
 			get
@@ -497,7 +497,7 @@ public readonly ref struct StringSpan
 			}
 		}
 
-		// Token: 0x0600A781 RID: 42881 RVA: 0x003E5A68 File Offset: 0x003E3C68
+		// Token: 0x0600A7D9 RID: 42969 RVA: 0x003E7E6C File Offset: 0x003E606C
 		public bool MoveNext()
 		{
 			while (this.MoveToNextInternal())
@@ -510,7 +510,7 @@ public readonly ref struct StringSpan
 			return false;
 		}
 
-		// Token: 0x0600A782 RID: 42882 RVA: 0x003E5A8C File Offset: 0x003E3C8C
+		// Token: 0x0600A7DA RID: 42970 RVA: 0x003E7E90 File Offset: 0x003E6090
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe bool MoveToNextInternal()
 		{
@@ -536,27 +536,27 @@ public readonly ref struct StringSpan
 			return true;
 		}
 
-		// Token: 0x04007C54 RID: 31828
+		// Token: 0x04007C95 RID: 31893
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringSpan m_remainder;
 
-		// Token: 0x04007C55 RID: 31829
+		// Token: 0x04007C96 RID: 31894
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_removeEmptyEntries;
 
-		// Token: 0x04007C56 RID: 31830
+		// Token: 0x04007C97 RID: 31895
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringSpan m_current;
 
-		// Token: 0x04007C57 RID: 31831
+		// Token: 0x04007C98 RID: 31896
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_done;
 	}
 
-	// Token: 0x020014E1 RID: 5345
+	// Token: 0x020014F3 RID: 5363
 	public ref struct SeparatorSplitAnyEnumerator
 	{
-		// Token: 0x0600A783 RID: 42883 RVA: 0x003E5B28 File Offset: 0x003E3D28
+		// Token: 0x0600A7DB RID: 42971 RVA: 0x003E7F2C File Offset: 0x003E612C
 		public SeparatorSplitAnyEnumerator(ReadOnlySpan<char> text, StringSplitOptions options = StringSplitOptions.None, params string[] separators)
 		{
 			this.m_remainder = text;
@@ -582,14 +582,14 @@ public readonly ref struct StringSpan
 			this.m_done = false;
 		}
 
-		// Token: 0x0600A784 RID: 42884 RVA: 0x003E5BA3 File Offset: 0x003E3DA3
+		// Token: 0x0600A7DC RID: 42972 RVA: 0x003E7FA7 File Offset: 0x003E61A7
 		public StringSpan.SeparatorSplitAnyEnumerator GetEnumerator()
 		{
 			return this;
 		}
 
-		// Token: 0x170013D3 RID: 5075
-		// (get) Token: 0x0600A785 RID: 42885 RVA: 0x003E5BAB File Offset: 0x003E3DAB
+		// Token: 0x170013DF RID: 5087
+		// (get) Token: 0x0600A7DD RID: 42973 RVA: 0x003E7FAF File Offset: 0x003E61AF
 		public StringSpan Current
 		{
 			get
@@ -598,7 +598,7 @@ public readonly ref struct StringSpan
 			}
 		}
 
-		// Token: 0x0600A786 RID: 42886 RVA: 0x003E5BB3 File Offset: 0x003E3DB3
+		// Token: 0x0600A7DE RID: 42974 RVA: 0x003E7FB7 File Offset: 0x003E61B7
 		public bool MoveNext()
 		{
 			while (this.MoveToNextInternal())
@@ -611,7 +611,7 @@ public readonly ref struct StringSpan
 			return false;
 		}
 
-		// Token: 0x0600A787 RID: 42887 RVA: 0x003E5BD8 File Offset: 0x003E3DD8
+		// Token: 0x0600A7DF RID: 42975 RVA: 0x003E7FDC File Offset: 0x003E61DC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe bool MoveToNextInternal()
 		{
@@ -640,23 +640,23 @@ public readonly ref struct StringSpan
 			return true;
 		}
 
-		// Token: 0x04007C58 RID: 31832
+		// Token: 0x04007C99 RID: 31897
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringSpan m_remainder;
 
-		// Token: 0x04007C59 RID: 31833
+		// Token: 0x04007C9A RID: 31898
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_removeEmptyEntries;
 
-		// Token: 0x04007C5A RID: 31834
+		// Token: 0x04007C9B RID: 31899
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string[] m_separators;
 
-		// Token: 0x04007C5B RID: 31835
+		// Token: 0x04007C9C RID: 31900
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringSpan m_current;
 
-		// Token: 0x04007C5C RID: 31836
+		// Token: 0x04007C9D RID: 31901
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_done;
 	}

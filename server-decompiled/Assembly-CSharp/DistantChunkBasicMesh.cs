@@ -1,27 +1,27 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C3B RID: 3131
+// Token: 0x02000C46 RID: 3142
 public class DistantChunkBasicMesh
 {
-	// Token: 0x04004A50 RID: 19024
+	// Token: 0x04004A75 RID: 19061
 	public int NbVertices;
 
-	// Token: 0x04004A51 RID: 19025
+	// Token: 0x04004A76 RID: 19062
 	public Vector3[] Vertices;
 
-	// Token: 0x04004A52 RID: 19026
+	// Token: 0x04004A77 RID: 19063
 	public Vector3[] Normals;
 
-	// Token: 0x04004A53 RID: 19027
+	// Token: 0x04004A78 RID: 19064
 	public Vector4[] Tangents;
 
-	// Token: 0x04004A54 RID: 19028
+	// Token: 0x04004A79 RID: 19065
 	public int[] Triangles;
 
-	// Token: 0x04004A55 RID: 19029
+	// Token: 0x04004A7A RID: 19066
 	public Color[] Colors;
 
-	// Token: 0x04004A56 RID: 19030
+	// Token: 0x04004A7B RID: 19067
 	public int[] TextureId;
 }

@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x020016A4 RID: 5796
+	// Token: 0x020016B7 RID: 5815
 	[EventTitle("Challenge Claimed")]
 	public class ChallengeClaimedEventData : BaseEventData
 	{
-		// Token: 0x170015FB RID: 5627
-		// (get) Token: 0x0600B532 RID: 46386 RVA: 0x0043B349 File Offset: 0x00439549
+		// Token: 0x1700160D RID: 5645
+		// (get) Token: 0x0600B599 RID: 46489 RVA: 0x0043D861 File Offset: 0x0043BA61
 		public override string EventType
 		{
 			get
@@ -19,82 +19,89 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015FC RID: 5628
-		// (get) Token: 0x0600B533 RID: 46387 RVA: 0x0043B350 File Offset: 0x00439550
-		// (set) Token: 0x0600B534 RID: 46388 RVA: 0x0043B358 File Offset: 0x00439558
+		// Token: 0x1700160E RID: 5646
+		// (get) Token: 0x0600B59A RID: 46490 RVA: 0x0043D868 File Offset: 0x0043BA68
+		// (set) Token: 0x0600B59B RID: 46491 RVA: 0x0043D870 File Offset: 0x0043BA70
 		[JsonProperty(PropertyName = "server_id")]
 		[Description("Id of the connected server, null if not in one")]
 		public string ServerId { get; set; }
 
-		// Token: 0x170015FD RID: 5629
-		// (get) Token: 0x0600B535 RID: 46389 RVA: 0x0043B361 File Offset: 0x00439561
-		// (set) Token: 0x0600B536 RID: 46390 RVA: 0x0043B369 File Offset: 0x00439569
+		// Token: 0x1700160F RID: 5647
+		// (get) Token: 0x0600B59C RID: 46492 RVA: 0x0043D879 File Offset: 0x0043BA79
+		// (set) Token: 0x0600B59D RID: 46493 RVA: 0x0043D881 File Offset: 0x0043BA81
 		[JsonProperty(PropertyName = "save_id")]
 		[Description("Unique Id of the world save")]
 		public string SaveId { get; set; }
 
-		// Token: 0x170015FE RID: 5630
-		// (get) Token: 0x0600B537 RID: 46391 RVA: 0x0043B372 File Offset: 0x00439572
-		// (set) Token: 0x0600B538 RID: 46392 RVA: 0x0043B37A File Offset: 0x0043957A
+		// Token: 0x17001610 RID: 5648
+		// (get) Token: 0x0600B59E RID: 46494 RVA: 0x0043D88A File Offset: 0x0043BA8A
+		// (set) Token: 0x0600B59F RID: 46495 RVA: 0x0043D892 File Offset: 0x0043BA92
 		[JsonProperty(PropertyName = "challenge_claimed_ts")]
 		[Description("Timestamp of when the challenged was claimed")]
 		[DateTimeFormat]
 		public string ChallengeClaimedTimeStamp { get; set; }
 
-		// Token: 0x170015FF RID: 5631
-		// (get) Token: 0x0600B539 RID: 46393 RVA: 0x0043B383 File Offset: 0x00439583
-		// (set) Token: 0x0600B53A RID: 46394 RVA: 0x0043B38B File Offset: 0x0043958B
+		// Token: 0x17001611 RID: 5649
+		// (get) Token: 0x0600B5A0 RID: 46496 RVA: 0x0043D89B File Offset: 0x0043BA9B
+		// (set) Token: 0x0600B5A1 RID: 46497 RVA: 0x0043D8A3 File Offset: 0x0043BAA3
 		[JsonProperty(PropertyName = "elapsed_time")]
 		[Description("Cumulative number of seconds online on this server at the time the challenge was claimed")]
 		public uint ElapsedTime { get; set; }
 
-		// Token: 0x17001600 RID: 5632
-		// (get) Token: 0x0600B53B RID: 46395 RVA: 0x0043B394 File Offset: 0x00439594
-		// (set) Token: 0x0600B53C RID: 46396 RVA: 0x0043B39C File Offset: 0x0043959C
+		// Token: 0x17001612 RID: 5650
+		// (get) Token: 0x0600B5A2 RID: 46498 RVA: 0x0043D8AC File Offset: 0x0043BAAC
+		// (set) Token: 0x0600B5A3 RID: 46499 RVA: 0x0043D8B4 File Offset: 0x0043BAB4
 		[JsonProperty(PropertyName = "player_level")]
 		[Description("Level of the player when challenge claimed")]
 		public int PlayerLevel { get; set; }
 
-		// Token: 0x17001601 RID: 5633
-		// (get) Token: 0x0600B53D RID: 46397 RVA: 0x0043B3A5 File Offset: 0x004395A5
-		// (set) Token: 0x0600B53E RID: 46398 RVA: 0x0043B3AD File Offset: 0x004395AD
+		// Token: 0x17001613 RID: 5651
+		// (get) Token: 0x0600B5A4 RID: 46500 RVA: 0x0043D8BD File Offset: 0x0043BABD
+		// (set) Token: 0x0600B5A5 RID: 46501 RVA: 0x0043D8C5 File Offset: 0x0043BAC5
 		[JsonProperty(PropertyName = "personal_game_stage")]
 		[Description("Personal Game Stage of the player when challenge claimed")]
 		public int PersonalGameStage { get; set; }
 
-		// Token: 0x17001602 RID: 5634
-		// (get) Token: 0x0600B53F RID: 46399 RVA: 0x0043B3B6 File Offset: 0x004395B6
-		// (set) Token: 0x0600B540 RID: 46400 RVA: 0x0043B3BE File Offset: 0x004395BE
+		// Token: 0x17001614 RID: 5652
+		// (get) Token: 0x0600B5A6 RID: 46502 RVA: 0x0043D8CE File Offset: 0x0043BACE
+		// (set) Token: 0x0600B5A7 RID: 46503 RVA: 0x0043D8D6 File Offset: 0x0043BAD6
 		[JsonProperty(PropertyName = "challenge_name")]
 		[Description("Name of the challenge claimed")]
 		public string ChallengeName { get; set; }
 
-		// Token: 0x17001603 RID: 5635
-		// (get) Token: 0x0600B541 RID: 46401 RVA: 0x0043B3C7 File Offset: 0x004395C7
-		// (set) Token: 0x0600B542 RID: 46402 RVA: 0x0043B3CF File Offset: 0x004395CF
+		// Token: 0x17001615 RID: 5653
+		// (get) Token: 0x0600B5A8 RID: 46504 RVA: 0x0043D8DF File Offset: 0x0043BADF
+		// (set) Token: 0x0600B5A9 RID: 46505 RVA: 0x0043D8E7 File Offset: 0x0043BAE7
 		[JsonProperty(PropertyName = "challenge_group")]
 		[Description("Group of the challenge claimed")]
 		public string ChallengeGroup { get; set; }
 
-		// Token: 0x17001604 RID: 5636
-		// (get) Token: 0x0600B543 RID: 46403 RVA: 0x0043B3D8 File Offset: 0x004395D8
-		// (set) Token: 0x0600B544 RID: 46404 RVA: 0x0043B3E0 File Offset: 0x004395E0
+		// Token: 0x17001616 RID: 5654
+		// (get) Token: 0x0600B5AA RID: 46506 RVA: 0x0043D8F0 File Offset: 0x0043BAF0
+		// (set) Token: 0x0600B5AB RID: 46507 RVA: 0x0043D8F8 File Offset: 0x0043BAF8
 		[JsonProperty(PropertyName = "is_challenge_group_complete")]
 		[Description("Group of the challenge claimed")]
 		public bool IsChallengeGroupComplete { get; set; }
 
-		// Token: 0x17001605 RID: 5637
-		// (get) Token: 0x0600B545 RID: 46405 RVA: 0x0043B3E9 File Offset: 0x004395E9
-		// (set) Token: 0x0600B546 RID: 46406 RVA: 0x0043B3F1 File Offset: 0x004395F1
+		// Token: 0x17001617 RID: 5655
+		// (get) Token: 0x0600B5AC RID: 46508 RVA: 0x0043D901 File Offset: 0x0043BB01
+		// (set) Token: 0x0600B5AD RID: 46509 RVA: 0x0043D909 File Offset: 0x0043BB09
 		[JsonProperty(PropertyName = "challenge_category")]
 		[Description("Category of the challenge claimed")]
 		public string ChallengeCategory { get; set; }
 
-		// Token: 0x17001606 RID: 5638
-		// (get) Token: 0x0600B547 RID: 46407 RVA: 0x0043B3FA File Offset: 0x004395FA
-		// (set) Token: 0x0600B548 RID: 46408 RVA: 0x0043B402 File Offset: 0x00439602
+		// Token: 0x17001618 RID: 5656
+		// (get) Token: 0x0600B5AE RID: 46510 RVA: 0x0043D912 File Offset: 0x0043BB12
+		// (set) Token: 0x0600B5AF RID: 46511 RVA: 0x0043D91A File Offset: 0x0043BB1A
 		[JsonProperty(PropertyName = "reward_event")]
 		[Description("Reward Event of the challenge claimed")]
 		public string RewardEvent { get; set; }
+
+		// Token: 0x17001619 RID: 5657
+		// (get) Token: 0x0600B5B0 RID: 46512 RVA: 0x0043D923 File Offset: 0x0043BB23
+		// (set) Token: 0x0600B5B1 RID: 46513 RVA: 0x0043D92B File Offset: 0x0043BB2B
+		[JsonProperty(PropertyName = "player_location")]
+		[Description("Location of the player at the time of completion")]
+		public string PlayerLocation { get; set; }
 	}
 }

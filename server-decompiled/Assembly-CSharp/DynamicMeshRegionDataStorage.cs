@@ -3,10 +3,10 @@ using System.Collections.Concurrent;
 using System.IO;
 using Noemax.GZip;
 
-// Token: 0x0200039E RID: 926
+// Token: 0x020003A0 RID: 928
 public class DynamicMeshRegionDataStorage
 {
-	// Token: 0x06001B82 RID: 7042 RVA: 0x000A3485 File Offset: 0x000A1685
+	// Token: 0x06001B86 RID: 7046 RVA: 0x000A3695 File Offset: 0x000A1895
 	public void ClearQueues()
 	{
 		Log.Out("Clearing queues.");
@@ -15,7 +15,7 @@ public class DynamicMeshRegionDataStorage
 		Log.Out("Cleared queues.");
 	}
 
-	// Token: 0x06001B83 RID: 7043 RVA: 0x000A34AC File Offset: 0x000A16AC
+	// Token: 0x06001B87 RID: 7047 RVA: 0x000A36BC File Offset: 0x000A18BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryLoadItem(DynamicMeshRegionDataWrapper wrapper, bool releaseLock)
 	{
@@ -77,7 +77,7 @@ public class DynamicMeshRegionDataStorage
 		return true;
 	}
 
-	// Token: 0x06001B84 RID: 7044 RVA: 0x000A36A4 File Offset: 0x000A18A4
+	// Token: 0x06001B88 RID: 7048 RVA: 0x000A38B4 File Offset: 0x000A1AB4
 	public void AddSaveRequest(long key, DynamicMeshChunkData data, int length, bool requestRegionUpdate, bool unloadImmediately, bool loadInWorld)
 	{
 		if (!DynamicMeshManager.CONTENT_ENABLED)
@@ -107,7 +107,7 @@ public class DynamicMeshRegionDataStorage
 		this.ClearLock(wrapper, "_SAVERELEASE_");
 	}
 
-	// Token: 0x06001B85 RID: 7045 RVA: 0x000A375C File Offset: 0x000A195C
+	// Token: 0x06001B89 RID: 7049 RVA: 0x000A396C File Offset: 0x000A1B6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveItem(DynamicMeshRegionDataWrapper wrapper)
 	{
@@ -160,18 +160,18 @@ public class DynamicMeshRegionDataStorage
 		}
 	}
 
-	// Token: 0x06001B86 RID: 7046 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001B8A RID: 7050 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CleanUpAndSave()
 	{
 	}
 
-	// Token: 0x06001B87 RID: 7047 RVA: 0x000A3900 File Offset: 0x000A1B00
+	// Token: 0x06001B8B RID: 7051 RVA: 0x000A3B10 File Offset: 0x000A1D10
 	public bool ClearLock(DynamicMeshRegionDataWrapper wrapper, string debug)
 	{
 		return wrapper.TryExit("ClearLock " + debug);
 	}
 
-	// Token: 0x06001B88 RID: 7048 RVA: 0x000A391C File Offset: 0x000A1B1C
+	// Token: 0x06001B8C RID: 7052 RVA: 0x000A3B2C File Offset: 0x000A1D2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ClearLock(long worldPosition, string debug)
 	{
@@ -179,7 +179,7 @@ public class DynamicMeshRegionDataStorage
 		return this.ClearLock(wrapper, debug);
 	}
 
-	// Token: 0x06001B89 RID: 7049 RVA: 0x000A393C File Offset: 0x000A1B3C
+	// Token: 0x06001B8D RID: 7053 RVA: 0x000A3B4C File Offset: 0x000A1D4C
 	public DynamicMeshRegionDataWrapper GetWrapper(long key)
 	{
 		DynamicMeshRegionDataWrapper dynamicMeshRegionDataWrapper;
@@ -195,7 +195,7 @@ public class DynamicMeshRegionDataStorage
 		return dynamicMeshRegionDataWrapper;
 	}
 
-	// Token: 0x06001B8A RID: 7050 RVA: 0x000A3994 File Offset: 0x000A1B94
+	// Token: 0x06001B8E RID: 7054 RVA: 0x000A3BA4 File Offset: 0x000A1DA4
 	public void LoadRegion(DyMeshRegionLoadRequest load)
 	{
 		DynamicMeshRegionDataWrapper wrapper = this.GetWrapper(load.Key);
@@ -261,7 +261,7 @@ public class DynamicMeshRegionDataStorage
 		this.ClearLock(wrapper, "loadRegionRelease");
 	}
 
-	// Token: 0x06001B8B RID: 7051 RVA: 0x000A3BC8 File Offset: 0x000A1DC8
+	// Token: 0x06001B8F RID: 7055 RVA: 0x000A3DD8 File Offset: 0x000A1FD8
 	public void SaveRegion(DynamicMeshThread.ThreadRegion region, Vector3i worldPosition, VoxelMesh opaque, VoxelMeshTerrain terrain)
 	{
 		long key = region.Key;
@@ -283,21 +283,21 @@ public class DynamicMeshRegionDataStorage
 		this.ClearLock(wrapper, "saveRegionRelease");
 	}
 
-	// Token: 0x040011BB RID: 4539
+	// Token: 0x040011CB RID: 4555
 	public ConcurrentDictionary<long, DynamicMeshRegionDataWrapper> ChunkData = new ConcurrentDictionary<long, DynamicMeshRegionDataWrapper>();
 
-	// Token: 0x040011BC RID: 4540
+	// Token: 0x040011CC RID: 4556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _lock = new object();
 
-	// Token: 0x040011BD RID: 4541
+	// Token: 0x040011CD RID: 4557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream FileMemoryStream = new MemoryStream();
 
-	// Token: 0x040011BE RID: 4542
+	// Token: 0x040011CE RID: 4558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] Buffer = new byte[2048];
 
-	// Token: 0x040011BF RID: 4543
+	// Token: 0x040011CF RID: 4559
 	public int MaxAllowedItems;
 }

@@ -4,17 +4,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005BD RID: 1469
+// Token: 0x020005C4 RID: 1476
 [Preserve]
 public class ItemActionOpenLootBundle : ItemAction
 {
-	// Token: 0x06003015 RID: 12309 RVA: 0x00133543 File Offset: 0x00131743
+	// Token: 0x06003023 RID: 12323 RVA: 0x00134137 File Offset: 0x00132337
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionOpenLootBundle.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06003016 RID: 12310 RVA: 0x0013354C File Offset: 0x0013174C
+	// Token: 0x06003024 RID: 12324 RVA: 0x00134140 File Offset: 0x00132340
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -30,14 +30,14 @@ public class ItemActionOpenLootBundle : ItemAction
 		this.UseAnimation = false;
 	}
 
-	// Token: 0x06003017 RID: 12311 RVA: 0x001335B1 File Offset: 0x001317B1
+	// Token: 0x06003025 RID: 12325 RVA: 0x001341A5 File Offset: 0x001323A5
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionOpenLootBundle.MyInventoryData)_data).bEatingStarted = false;
 	}
 
-	// Token: 0x06003018 RID: 12312 RVA: 0x001335C8 File Offset: 0x001317C8
+	// Token: 0x06003026 RID: 12326 RVA: 0x001341BC File Offset: 0x001323BC
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionOpenLootBundle.MyInventoryData myInventoryData = (ItemActionOpenLootBundle.MyInventoryData)_actionData;
@@ -95,7 +95,7 @@ public class ItemActionOpenLootBundle : ItemAction
 		this.ExecuteInstantAction(myInventoryData.invData.holdingEntity, myInventoryData.invData.itemStack, true, null);
 	}
 
-	// Token: 0x06003019 RID: 12313 RVA: 0x001337DC File Offset: 0x001319DC
+	// Token: 0x06003027 RID: 12327 RVA: 0x001343D0 File Offset: 0x001325D0
 	public override bool ExecuteInstantAction(EntityAlive ent, ItemStack stack, bool isHeldItem, XUiC_ItemStack stackController)
 	{
 		ent.MinEventContext.ItemValue = stack.itemValue;
@@ -152,26 +152,26 @@ public class ItemActionOpenLootBundle : ItemAction
 		return true;
 	}
 
-	// Token: 0x04002500 RID: 9472
+	// Token: 0x0400251B RID: 9499
 	public new bool Consume;
 
-	// Token: 0x04002501 RID: 9473
+	// Token: 0x0400251C RID: 9500
 	public HashSet<int> ConditionBlockTypes;
 
-	// Token: 0x04002502 RID: 9474
+	// Token: 0x0400251D RID: 9501
 	public string lootListName = "";
 
-	// Token: 0x020005BE RID: 1470
+	// Token: 0x020005C5 RID: 1477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x0600301B RID: 12315 RVA: 0x0012B224 File Offset: 0x00129424
+		// Token: 0x06003029 RID: 12329 RVA: 0x0012BE18 File Offset: 0x0012A018
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x04002503 RID: 9475
+		// Token: 0x0400251E RID: 9502
 		public bool bEatingStarted;
 	}
 }

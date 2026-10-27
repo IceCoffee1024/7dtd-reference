@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005E6 RID: 1510
+// Token: 0x020005ED RID: 1517
 [Preserve]
 public class ItemActionVomit : ItemActionLauncher
 {
-	// Token: 0x06003158 RID: 12632 RVA: 0x0013F42A File Offset: 0x0013D62A
+	// Token: 0x06003166 RID: 12646 RVA: 0x0014001E File Offset: 0x0013E21E
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionVomit.ItemActionDataVomit(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06003159 RID: 12633 RVA: 0x0013F434 File Offset: 0x0013D634
+	// Token: 0x06003167 RID: 12647 RVA: 0x00140028 File Offset: 0x0013E228
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -24,7 +24,7 @@ public class ItemActionVomit : ItemActionLauncher
 		_props.ParseString("Sound_warning", ref this.soundWarning);
 	}
 
-	// Token: 0x0600315A RID: 12634 RVA: 0x0013F49E File Offset: 0x0013D69E
+	// Token: 0x06003168 RID: 12648 RVA: 0x00140092 File Offset: 0x0013E292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetAttack(ItemActionVomit.ItemActionDataVomit _actionData)
 	{
@@ -34,7 +34,7 @@ public class ItemActionVomit : ItemActionLauncher
 		_actionData.isActive = false;
 	}
 
-	// Token: 0x0600315B RID: 12635 RVA: 0x0013F4C0 File Offset: 0x0013D6C0
+	// Token: 0x06003169 RID: 12649 RVA: 0x001400B4 File Offset: 0x0013E2B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override int GetActionEffectsValues(ItemActionData _actionData, out Vector3 _startPos, out Vector3 _direction)
 	{
@@ -69,7 +69,7 @@ public class ItemActionVomit : ItemActionLauncher
 		return 0;
 	}
 
-	// Token: 0x0600315C RID: 12636 RVA: 0x0013F5E8 File Offset: 0x0013D7E8
+	// Token: 0x0600316A RID: 12650 RVA: 0x001401DC File Offset: 0x0013E3DC
 	public override void ItemActionEffects(GameManager _gameManager, ItemActionData _actionData, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		ItemActionVomit.ItemActionDataVomit itemActionDataVomit = (ItemActionVomit.ItemActionDataVomit)_actionData;
@@ -96,7 +96,7 @@ public class ItemActionVomit : ItemActionLauncher
 		base.ItemActionEffects(_gameManager, _actionData, _firingState, _startPos, _direction, _userData);
 	}
 
-	// Token: 0x0600315D RID: 12637 RVA: 0x0013F6C8 File Offset: 0x0013D8C8
+	// Token: 0x0600316B RID: 12651 RVA: 0x001402BC File Offset: 0x0013E4BC
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionVomit.ItemActionDataVomit itemActionDataVomit = (ItemActionVomit.ItemActionDataVomit)_actionData;
@@ -146,54 +146,54 @@ public class ItemActionVomit : ItemActionLauncher
 		base.ExecuteAction(_actionData, _bReleased);
 	}
 
-	// Token: 0x0600315E RID: 12638 RVA: 0x0013F809 File Offset: 0x0013DA09
+	// Token: 0x0600316C RID: 12652 RVA: 0x001403FD File Offset: 0x0013E5FD
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return ((ItemActionVomit.ItemActionDataVomit)_actionData).isActive;
 	}
 
-	// Token: 0x04002610 RID: 9744
+	// Token: 0x0400262B RID: 9771
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRadius = -1f;
 
-	// Token: 0x04002611 RID: 9745
+	// Token: 0x0400262C RID: 9772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int animType;
 
-	// Token: 0x04002612 RID: 9746
+	// Token: 0x0400262D RID: 9773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float warningDelay;
 
-	// Token: 0x04002613 RID: 9747
+	// Token: 0x0400262E RID: 9774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int warningMax;
 
-	// Token: 0x04002614 RID: 9748
+	// Token: 0x0400262F RID: 9775
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundWarning;
 
-	// Token: 0x020005E7 RID: 1511
+	// Token: 0x020005EE RID: 1518
 	public class ItemActionDataVomit : ItemActionLauncher.ItemActionDataLauncher
 	{
-		// Token: 0x06003160 RID: 12640 RVA: 0x0012B879 File Offset: 0x00129A79
+		// Token: 0x0600316E RID: 12654 RVA: 0x0012C46D File Offset: 0x0012A66D
 		public ItemActionDataVomit(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x04002615 RID: 9749
+		// Token: 0x04002630 RID: 9776
 		public float warningTime;
 
-		// Token: 0x04002616 RID: 9750
+		// Token: 0x04002631 RID: 9777
 		public int numWarningsPlayed;
 
-		// Token: 0x04002617 RID: 9751
+		// Token: 0x04002632 RID: 9778
 		public int numVomits;
 
-		// Token: 0x04002618 RID: 9752
+		// Token: 0x04002633 RID: 9779
 		public bool bAttackStarted;
 
-		// Token: 0x04002619 RID: 9753
+		// Token: 0x04002634 RID: 9780
 		public bool isActive;
 	}
 }

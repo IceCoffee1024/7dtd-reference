@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200029A RID: 666
+// Token: 0x0200029C RID: 668
 [Preserve]
 public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 {
-	// Token: 0x06001351 RID: 4945 RVA: 0x00076611 File Offset: 0x00074811
+	// Token: 0x06001355 RID: 4949 RVA: 0x000767E1 File Offset: 0x000749E1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "signtexman", "stm" };
 	}
 
-	// Token: 0x06001352 RID: 4946 RVA: 0x00076629 File Offset: 0x00074829
+	// Token: 0x06001356 RID: 4950 RVA: 0x000767F9 File Offset: 0x000749F9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Allows enabling/disabling the Sign Texture Manager and configuring various baking settings.";
 	}
 
-	// Token: 0x06001353 RID: 4947 RVA: 0x00076630 File Offset: 0x00074830
+	// Token: 0x06001357 RID: 4951 RVA: 0x00076800 File Offset: 0x00074A00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -28,7 +28,7 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700020C RID: 524
-	// (get) Token: 0x06001354 RID: 4948 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001358 RID: 4952 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -38,7 +38,7 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700020D RID: 525
-	// (get) Token: 0x06001355 RID: 4949 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x06001359 RID: 4953 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -47,7 +47,7 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001356 RID: 4950 RVA: 0x00076638 File Offset: 0x00074838
+	// Token: 0x0600135A RID: 4954 RVA: 0x00076808 File Offset: 0x00074A08
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.World == null)
@@ -114,7 +114,7 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000D67 RID: 3431
+	// Token: 0x04000D68 RID: 3432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignTextureManager.SignTextureQuality previousQuality = SignTextureManager.SignTextureQuality.Medium;
 }

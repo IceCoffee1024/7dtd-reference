@@ -1,47 +1,47 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200063A RID: 1594
+// Token: 0x02000641 RID: 1601
 public class MapObjectSleepingBag : MapObject
 {
-	// Token: 0x060033F6 RID: 13302 RVA: 0x0014DCB0 File Offset: 0x0014BEB0
+	// Token: 0x06003404 RID: 13316 RVA: 0x0014E8A4 File Offset: 0x0014CAA4
 	public MapObjectSleepingBag(Vector3 _position, Entity _entity)
 		: base(EnumMapObjectType.SleepingBag, _position, (long)_entity.entityId, _entity, false)
 	{
 	}
 
-	// Token: 0x060033F7 RID: 13303 RVA: 0x0014DCC3 File Offset: 0x0014BEC3
+	// Token: 0x06003405 RID: 13317 RVA: 0x0014E8B7 File Offset: 0x0014CAB7
 	public override string GetMapIcon()
 	{
 		return "ui_game_symbol_map_bed";
 	}
 
-	// Token: 0x060033F8 RID: 13304 RVA: 0x0014DCC3 File Offset: 0x0014BEC3
+	// Token: 0x06003406 RID: 13318 RVA: 0x0014E8B7 File Offset: 0x0014CAB7
 	public override string GetCompassIcon()
 	{
 		return "ui_game_symbol_map_bed";
 	}
 
-	// Token: 0x060033F9 RID: 13305 RVA: 0x0014DCCA File Offset: 0x0014BECA
+	// Token: 0x06003407 RID: 13319 RVA: 0x0014E8BE File Offset: 0x0014CABE
 	public override bool IsOnCompass()
 	{
 		return this.IsMapIconEnabled() && this.entity is EntityPlayerLocal;
 	}
 
-	// Token: 0x060033FA RID: 13306 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003408 RID: 13320 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLayerForMapIcon()
 	{
 		return 0;
 	}
 
-	// Token: 0x060033FB RID: 13307 RVA: 0x0014DCE4 File Offset: 0x0014BEE4
+	// Token: 0x06003409 RID: 13321 RVA: 0x0014E8D8 File Offset: 0x0014CAD8
 	public override bool IsMapIconEnabled()
 	{
 		EntityPlayer entityPlayer = this.entity as EntityPlayer;
 		return entityPlayer == null || entityPlayer is EntityPlayerLocal || entityPlayer.IsFriendOfLocalPlayer;
 	}
 
-	// Token: 0x060033FC RID: 13308 RVA: 0x0014DD14 File Offset: 0x0014BF14
+	// Token: 0x0600340A RID: 13322 RVA: 0x0014E908 File Offset: 0x0014CB08
 	public override Color GetMapIconColor()
 	{
 		EntityPlayer entityPlayer = this.entity as EntityPlayer;

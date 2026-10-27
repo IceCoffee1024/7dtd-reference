@@ -3,7 +3,7 @@
 // Token: 0x020001A6 RID: 422
 public abstract class BlockShapeBillboardRotatedAbstract : BlockShapeRotatedAbstract
 {
-	// Token: 0x06000CB1 RID: 3249 RVA: 0x0004FE3B File Offset: 0x0004E03B
+	// Token: 0x06000CB1 RID: 3249 RVA: 0x0004FDFB File Offset: 0x0004DFFB
 	public BlockShapeBillboardRotatedAbstract()
 	{
 		this.IsSolidCube = false;
@@ -12,7 +12,7 @@ public abstract class BlockShapeBillboardRotatedAbstract : BlockShapeRotatedAbst
 		this.LightOpacity = 0;
 	}
 
-	// Token: 0x06000CB2 RID: 3250 RVA: 0x0004FE5F File Offset: 0x0004E05F
+	// Token: 0x06000CB2 RID: 3250 RVA: 0x0004FE1F File Offset: 0x0004E01F
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
@@ -37,7 +37,7 @@ public abstract class BlockShapeBillboardRotatedAbstract : BlockShapeRotatedAbst
 		return 0;
 	}
 
-	// Token: 0x06000CB6 RID: 3254 RVA: 0x0004FE70 File Offset: 0x0004E070
+	// Token: 0x06000CB6 RID: 3254 RVA: 0x0004FE30 File Offset: 0x0004E030
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		for (int i = 0; i < _rotCount; i++)

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001838 RID: 6200
+	// Token: 0x02001869 RID: 6249
 	public class BaseTwitchCommand
 	{
-		// Token: 0x170017C4 RID: 6084
-		// (get) Token: 0x0600BFC2 RID: 49090 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700180C RID: 6156
+		// (get) Token: 0x0600C0D6 RID: 49366 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual BaseTwitchCommand.PermissionLevels RequiredPermission
 		{
 			get
@@ -16,8 +16,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x170017C5 RID: 6085
-		// (get) Token: 0x0600BFC3 RID: 49091 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x1700180D RID: 6157
+		// (get) Token: 0x0600C0D7 RID: 49367 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public virtual string[] CommandText
 		{
 			get
@@ -26,8 +26,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x170017C6 RID: 6086
-		// (get) Token: 0x0600BFC4 RID: 49092 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x1700180E RID: 6158
+		// (get) Token: 0x0600C0D8 RID: 49368 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public virtual string[] LocalizedCommandNames
 		{
 			get
@@ -36,13 +36,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BFC6 RID: 49094 RVA: 0x0046B4BA File Offset: 0x004696BA
+		// Token: 0x0600C0DA RID: 49370 RVA: 0x0046EE66 File Offset: 0x0046D066
 		public static void ClearCommandPermissionOverrides()
 		{
 			BaseTwitchCommand.CommandPermissionOverrides.Clear();
 		}
 
-		// Token: 0x0600BFC7 RID: 49095 RVA: 0x0046B4C6 File Offset: 0x004696C6
+		// Token: 0x0600C0DB RID: 49371 RVA: 0x0046EE72 File Offset: 0x0046D072
 		public static void AddCommandPermissionOverride(string commandName, BaseTwitchCommand.PermissionLevels permissionLevel)
 		{
 			if (!BaseTwitchCommand.CommandPermissionOverrides.ContainsKey(commandName))
@@ -51,7 +51,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BFC8 RID: 49096 RVA: 0x0046B4E1 File Offset: 0x004696E1
+		// Token: 0x0600C0DC RID: 49372 RVA: 0x0046EE8D File Offset: 0x0046D08D
 		public static BaseTwitchCommand.PermissionLevels GetPermission(BaseTwitchCommand cmd)
 		{
 			if (BaseTwitchCommand.CommandPermissionOverrides.ContainsKey(cmd.CommandText[0]))
@@ -61,7 +61,7 @@ namespace Twitch
 			return cmd.RequiredPermission;
 		}
 
-		// Token: 0x0600BFC9 RID: 49097 RVA: 0x0046B510 File Offset: 0x00469710
+		// Token: 0x0600C0DD RID: 49373 RVA: 0x0046EEBC File Offset: 0x0046D0BC
 		public BaseTwitchCommand()
 		{
 			this.SetupCommandTextList();
@@ -71,7 +71,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BFCA RID: 49098 RVA: 0x0046B54C File Offset: 0x0046974C
+		// Token: 0x0600C0DE RID: 49374 RVA: 0x0046EEF8 File Offset: 0x0046D0F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupCommandTextList()
 		{
@@ -86,7 +86,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BFCB RID: 49099 RVA: 0x0046B5A0 File Offset: 0x004697A0
+		// Token: 0x0600C0DF RID: 49375 RVA: 0x0046EF4C File Offset: 0x0046D14C
 		public virtual bool CheckAllowed(TwitchIRCClient.TwitchChatMessage message)
 		{
 			BaseTwitchCommand.PermissionLevels permission = BaseTwitchCommand.GetPermission(this);
@@ -109,39 +109,39 @@ namespace Twitch
 			return permission == BaseTwitchCommand.PermissionLevels.Sub && message.isSub;
 		}
 
-		// Token: 0x0600BFCC RID: 49100 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C0E0 RID: 49376 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Execute(ViewerEntry entry, TwitchIRCClient.TwitchChatMessage message)
 		{
 		}
 
-		// Token: 0x0600BFCD RID: 49101 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C0E1 RID: 49377 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void ExecuteConsole(List<string> arguments)
 		{
 		}
 
-		// Token: 0x04009018 RID: 36888
+		// Token: 0x04009101 RID: 37121
 		public List<string> CommandTextList = new List<string>();
 
-		// Token: 0x04009019 RID: 36889
+		// Token: 0x04009102 RID: 37122
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string allText = "";
 
-		// Token: 0x0400901A RID: 36890
+		// Token: 0x04009103 RID: 37123
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static Dictionary<string, BaseTwitchCommand.PermissionLevels> CommandPermissionOverrides = new Dictionary<string, BaseTwitchCommand.PermissionLevels>();
 
-		// Token: 0x02001839 RID: 6201
+		// Token: 0x0200186A RID: 6250
 		public enum PermissionLevels
 		{
-			// Token: 0x0400901C RID: 36892
+			// Token: 0x04009105 RID: 37125
 			Everyone,
-			// Token: 0x0400901D RID: 36893
+			// Token: 0x04009106 RID: 37126
 			VIP,
-			// Token: 0x0400901E RID: 36894
+			// Token: 0x04009107 RID: 37127
 			Sub,
-			// Token: 0x0400901F RID: 36895
+			// Token: 0x04009108 RID: 37128
 			Mod,
-			// Token: 0x04009020 RID: 36896
+			// Token: 0x04009109 RID: 37129
 			Broadcaster
 		}
 	}

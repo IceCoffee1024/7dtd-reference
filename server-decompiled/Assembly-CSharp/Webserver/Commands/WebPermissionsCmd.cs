@@ -5,32 +5,32 @@ using Webserver.Permissions;
 
 namespace Webserver.Commands
 {
-	// Token: 0x02001B39 RID: 6969
+	// Token: 0x02001B6A RID: 7018
 	[Preserve]
 	public class WebPermissionsCmd : ConsoleCmdAbstract
 	{
-		// Token: 0x0600D163 RID: 53603 RVA: 0x004BFE75 File Offset: 0x004BE075
+		// Token: 0x0600D277 RID: 53879 RVA: 0x004C399D File Offset: 0x004C1B9D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string[] getCommands()
 		{
 			return new string[] { "webpermission" };
 		}
 
-		// Token: 0x0600D164 RID: 53604 RVA: 0x004BFE85 File Offset: 0x004BE085
+		// Token: 0x0600D278 RID: 53880 RVA: 0x004C39AD File Offset: 0x004C1BAD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getDescription()
 		{
 			return "Manage web permission levels";
 		}
 
-		// Token: 0x0600D165 RID: 53605 RVA: 0x004BFE8C File Offset: 0x004BE08C
+		// Token: 0x0600D279 RID: 53881 RVA: 0x004C39B4 File Offset: 0x004C1BB4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getHelp()
 		{
-			return "\n\t\t\t\t|Set/get permission levels required to access a given web functionality. Default\n\t\t\t    |level required for functions that are not explicitly specified is 0.\n\t\t\t    |Usage:\n\t\t\t\t|   1. webpermission add <webfunction> <method> <level>\n\t\t\t    |   2. webpermission remove <webfunction>\n\t\t\t    |   3. webpermission list [includedefaults]\n\t\t\t\t|1. Add a new override (or replace the existing one) for the given function. Method must be a HTTP method (like 'GET', 'POST')\n\t\t\t\t\t\tsupported by the function or the keyword 'global' for a per-API permission level. Use the permission level keyword\n\t\t\t\t\t\t'inherit' to use the per-API permission level for the specified method instead of a custom one for just the single method.\n\t\t\t\t|2. Removes any custom overrides for the specified function.\n\t\t\t\t|3. List all permissions. Pass in 'true' for the includedefaults argument to also show functions that do not have a custom override defined.\n\t\t\t\t".Unindent(true);
+			return "\r\n\t\t\t\t|Set/get permission levels required to access a given web functionality. Default\r\n\t\t\t    |level required for functions that are not explicitly specified is 0.\r\n\t\t\t    |Usage:\r\n\t\t\t\t|   1. webpermission add <webfunction> <method> <level>\r\n\t\t\t    |   2. webpermission remove <webfunction>\r\n\t\t\t    |   3. webpermission list [includedefaults]\r\n\t\t\t\t|1. Add a new override (or replace the existing one) for the given function. Method must be a HTTP method (like 'GET', 'POST')\r\n\t\t\t\t\t\tsupported by the function or the keyword 'global' for a per-API permission level. Use the permission level keyword\r\n\t\t\t\t\t\t'inherit' to use the per-API permission level for the specified method instead of a custom one for just the single method.\r\n\t\t\t\t|2. Removes any custom overrides for the specified function.\r\n\t\t\t\t|3. List all permissions. Pass in 'true' for the includedefaults argument to also show functions that do not have a custom override defined.\r\n\t\t\t\t".Unindent(true);
 		}
 
-		// Token: 0x0600D166 RID: 53606 RVA: 0x004BFE9C File Offset: 0x004BE09C
+		// Token: 0x0600D27A RID: 53882 RVA: 0x004C39C4 File Offset: 0x004C1BC4
 		public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 		{
 			if (_params.Count < 1)
@@ -56,7 +56,7 @@ namespace Webserver.Commands
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 		}
 
-		// Token: 0x0600D167 RID: 53607 RVA: 0x004BFF34 File Offset: 0x004BE134
+		// Token: 0x0600D27B RID: 53883 RVA: 0x004C3A5C File Offset: 0x004C1C5C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExecuteAdd(List<string> _params)
 		{
@@ -130,7 +130,7 @@ namespace Webserver.Commands
 			}));
 		}
 
-		// Token: 0x0600D168 RID: 53608 RVA: 0x004C0118 File Offset: 0x004BE318
+		// Token: 0x0600D27C RID: 53884 RVA: 0x004C3C40 File Offset: 0x004C1E40
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExecuteRemove(List<string> _params)
 		{
@@ -148,7 +148,7 @@ namespace Webserver.Commands
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output(_params[1] + " removed from permissions list.");
 		}
 
-		// Token: 0x0600D169 RID: 53609 RVA: 0x004C01B0 File Offset: 0x004BE3B0
+		// Token: 0x0600D27D RID: 53885 RVA: 0x004C3CD8 File Offset: 0x004C1ED8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExecuteList(List<string> _params)
 		{

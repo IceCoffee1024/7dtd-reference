@@ -2,11 +2,11 @@
 using SandboxOptions;
 using UnityEngine;
 
-// Token: 0x02001159 RID: 4441
+// Token: 0x02001169 RID: 4457
 public class XUiM_Trader : XUiModel
 {
-	// Token: 0x17001053 RID: 4179
-	// (get) Token: 0x06008C13 RID: 35859 RVA: 0x003568E3 File Offset: 0x00354AE3
+	// Token: 0x1700105E RID: 4190
+	// (get) Token: 0x06008C67 RID: 35943 RVA: 0x0035898F File Offset: 0x00356B8F
 	public TraderData TraderData
 	{
 		get
@@ -19,7 +19,7 @@ public class XUiM_Trader : XUiModel
 		}
 	}
 
-	// Token: 0x06008C14 RID: 35860 RVA: 0x003568FC File Offset: 0x00354AFC
+	// Token: 0x06008C68 RID: 35944 RVA: 0x003589A8 File Offset: 0x00356BA8
 	public static int GetBuyPrice(XUi _xui, ItemValue itemValue, int count, ItemClass itemClass = null, int index = -1)
 	{
 		bool flag = false;
@@ -100,7 +100,7 @@ public class XUiM_Trader : XUiModel
 		return Mathf.CeilToInt((float)((int)(num3 * (float)(count / num2))) * SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.TraderBuyPrices));
 	}
 
-	// Token: 0x06008C15 RID: 35861 RVA: 0x00356B40 File Offset: 0x00354D40
+	// Token: 0x06008C69 RID: 35945 RVA: 0x00358BEC File Offset: 0x00356DEC
 	public static int GetSellPrice(XUi _xui, ItemValue itemValue, int count, ItemClass itemClass = null)
 	{
 		bool flag = false;
@@ -177,9 +177,9 @@ public class XUiM_Trader : XUiModel
 		return Mathf.CeilToInt((float)((int)(num3 * (float)(count / num2))) * SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.TraderSellPrices));
 	}
 
-	// Token: 0x0400679F RID: 26527
+	// Token: 0x040067DF RID: 26591
 	public ITrader Trader;
 
-	// Token: 0x040067A0 RID: 26528
+	// Token: 0x040067E0 RID: 26592
 	public XUiC_TraderWindowGroup TraderWindowGroup;
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020011E4 RID: 4580
+// Token: 0x020011F4 RID: 4596
 public abstract class GameModeAbstract : GameMode
 {
-	// Token: 0x06009252 RID: 37458 RVA: 0x003733E8 File Offset: 0x003715E8
+	// Token: 0x060092A8 RID: 37544 RVA: 0x0037555C File Offset: 0x0037375C
 	public override void Init()
 	{
 		GameStats.Set(EnumGameStats.IsSpawnEnemies, GamePrefs.GetBool(EnumGamePrefs.EnemySpawnMode));
@@ -61,7 +61,7 @@ public abstract class GameModeAbstract : GameMode
 		GameStats.Set(EnumGameStats.StormFreq, GamePrefs.GetInt(EnumGamePrefs.StormFreq));
 	}
 
-	// Token: 0x06009253 RID: 37459 RVA: 0x003736B4 File Offset: 0x003718B4
+	// Token: 0x060092A9 RID: 37545 RVA: 0x00375828 File Offset: 0x00373A28
 	public override void ResetGamePrefs()
 	{
 		GameMode.ModeGamePref[] supportedGamePrefsInfo = this.GetSupportedGamePrefsInfo();
@@ -85,7 +85,7 @@ public abstract class GameModeAbstract : GameMode
 		this.Init();
 	}
 
-	// Token: 0x06009254 RID: 37460 RVA: 0x0037374E File Offset: 0x0037194E
+	// Token: 0x060092AA RID: 37546 RVA: 0x003758C2 File Offset: 0x00373AC2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public GameModeAbstract()
 	{

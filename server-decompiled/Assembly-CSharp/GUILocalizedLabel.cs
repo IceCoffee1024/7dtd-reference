@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02001233 RID: 4659
+// Token: 0x02001245 RID: 4677
 public class GUILocalizedLabel : MonoBehaviour
 {
-	// Token: 0x0600948A RID: 38026 RVA: 0x00383D00 File Offset: 0x00381F00
+	// Token: 0x060094E1 RID: 38113 RVA: 0x003860FC File Offset: 0x003842FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -16,7 +16,7 @@ public class GUILocalizedLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04006F51 RID: 28497
+	// Token: 0x04006F92 RID: 28562
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizationKey;

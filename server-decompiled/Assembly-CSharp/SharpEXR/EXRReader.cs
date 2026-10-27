@@ -4,58 +4,58 @@ using System.Text;
 
 namespace SharpEXR
 {
-	// Token: 0x020016F8 RID: 5880
+	// Token: 0x02001717 RID: 5911
 	public class EXRReader : IDisposable, IEXRReader
 	{
-		// Token: 0x0600B7C8 RID: 47048 RVA: 0x00441A5D File Offset: 0x0043FC5D
+		// Token: 0x0600B89C RID: 47260 RVA: 0x00444501 File Offset: 0x00442701
 		public EXRReader(Stream stream, bool leaveOpen = false)
 			: this(new BinaryReader(stream, Encoding.ASCII, leaveOpen))
 		{
 		}
 
-		// Token: 0x0600B7C9 RID: 47049 RVA: 0x00441A71 File Offset: 0x0043FC71
+		// Token: 0x0600B89D RID: 47261 RVA: 0x00444515 File Offset: 0x00442715
 		public EXRReader(BinaryReader reader)
 		{
 			this.reader = reader;
 		}
 
-		// Token: 0x0600B7CA RID: 47050 RVA: 0x00441A80 File Offset: 0x0043FC80
+		// Token: 0x0600B89E RID: 47262 RVA: 0x00444524 File Offset: 0x00442724
 		public byte ReadByte()
 		{
 			return this.reader.ReadByte();
 		}
 
-		// Token: 0x0600B7CB RID: 47051 RVA: 0x00441A8D File Offset: 0x0043FC8D
+		// Token: 0x0600B89F RID: 47263 RVA: 0x00444531 File Offset: 0x00442731
 		public int ReadInt32()
 		{
 			return this.reader.ReadInt32();
 		}
 
-		// Token: 0x0600B7CC RID: 47052 RVA: 0x00441A9A File Offset: 0x0043FC9A
+		// Token: 0x0600B8A0 RID: 47264 RVA: 0x0044453E File Offset: 0x0044273E
 		public uint ReadUInt32()
 		{
 			return this.reader.ReadUInt32();
 		}
 
-		// Token: 0x0600B7CD RID: 47053 RVA: 0x00441AA7 File Offset: 0x0043FCA7
+		// Token: 0x0600B8A1 RID: 47265 RVA: 0x0044454B File Offset: 0x0044274B
 		public Half ReadHalf()
 		{
 			return Half.ToHalf(this.reader.ReadUInt16());
 		}
 
-		// Token: 0x0600B7CE RID: 47054 RVA: 0x00441AB9 File Offset: 0x0043FCB9
+		// Token: 0x0600B8A2 RID: 47266 RVA: 0x0044455D File Offset: 0x0044275D
 		public float ReadSingle()
 		{
 			return this.reader.ReadSingle();
 		}
 
-		// Token: 0x0600B7CF RID: 47055 RVA: 0x00441AC6 File Offset: 0x0043FCC6
+		// Token: 0x0600B8A3 RID: 47267 RVA: 0x0044456A File Offset: 0x0044276A
 		public double ReadDouble()
 		{
 			return this.reader.ReadDouble();
 		}
 
-		// Token: 0x0600B7D0 RID: 47056 RVA: 0x00441AD4 File Offset: 0x0043FCD4
+		// Token: 0x0600B8A4 RID: 47268 RVA: 0x00444578 File Offset: 0x00442778
 		public string ReadNullTerminatedString(int maxLength)
 		{
 			long position = this.reader.BaseStream.Position;
@@ -72,14 +72,14 @@ namespace SharpEXR
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600B7D1 RID: 47057 RVA: 0x00441B4C File Offset: 0x0043FD4C
+		// Token: 0x0600B8A5 RID: 47269 RVA: 0x004445F0 File Offset: 0x004427F0
 		public string ReadString()
 		{
 			int num = this.ReadInt32();
 			return this.ReadString(num);
 		}
 
-		// Token: 0x0600B7D2 RID: 47058 RVA: 0x00441B68 File Offset: 0x0043FD68
+		// Token: 0x0600B8A6 RID: 47270 RVA: 0x0044460C File Offset: 0x0044280C
 		public string ReadString(int length)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -90,13 +90,13 @@ namespace SharpEXR
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600B7D3 RID: 47059 RVA: 0x00441B9F File Offset: 0x0043FD9F
+		// Token: 0x0600B8A7 RID: 47271 RVA: 0x00444643 File Offset: 0x00442843
 		public byte[] ReadBytes(int count)
 		{
 			return this.reader.ReadBytes(count);
 		}
 
-		// Token: 0x0600B7D4 RID: 47060 RVA: 0x00441BAD File Offset: 0x0043FDAD
+		// Token: 0x0600B8A8 RID: 47272 RVA: 0x00444651 File Offset: 0x00442851
 		public void CopyBytes(byte[] dest, int offset, int count)
 		{
 			if (this.reader.BaseStream.Read(dest, offset, count) != count)
@@ -105,14 +105,14 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B7D5 RID: 47061 RVA: 0x00441BD0 File Offset: 0x0043FDD0
+		// Token: 0x0600B8A9 RID: 47273 RVA: 0x00444674 File Offset: 0x00442874
 		public void Dispose()
 		{
 			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x0600B7D6 RID: 47062 RVA: 0x00441BE0 File Offset: 0x0043FDE0
+		// Token: 0x0600B8AA RID: 47274 RVA: 0x00444684 File Offset: 0x00442884
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void Dispose(bool disposing)
 		{
@@ -133,9 +133,9 @@ namespace SharpEXR
 			this.disposed = true;
 		}
 
-		// Token: 0x170016EE RID: 5870
-		// (get) Token: 0x0600B7D7 RID: 47063 RVA: 0x00441C20 File Offset: 0x0043FE20
-		// (set) Token: 0x0600B7D8 RID: 47064 RVA: 0x00441C33 File Offset: 0x0043FE33
+		// Token: 0x17001735 RID: 5941
+		// (get) Token: 0x0600B8AB RID: 47275 RVA: 0x004446C4 File Offset: 0x004428C4
+		// (set) Token: 0x0600B8AC RID: 47276 RVA: 0x004446D7 File Offset: 0x004428D7
 		public int Position
 		{
 			get
@@ -148,11 +148,11 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x04008936 RID: 35126
+		// Token: 0x040089E9 RID: 35305
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BinaryReader reader;
 
-		// Token: 0x04008937 RID: 35127
+		// Token: 0x040089EA RID: 35306
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool disposed;
 	}

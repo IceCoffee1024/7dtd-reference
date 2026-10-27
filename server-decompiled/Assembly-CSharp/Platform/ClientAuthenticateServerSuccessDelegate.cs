@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001B8F RID: 7055
-	// (Invoke) Token: 0x0600D353 RID: 54099
+	// Token: 0x02001BC0 RID: 7104
+	// (Invoke) Token: 0x0600D467 RID: 54375
 	public delegate void ClientAuthenticateServerSuccessDelegate();
 }

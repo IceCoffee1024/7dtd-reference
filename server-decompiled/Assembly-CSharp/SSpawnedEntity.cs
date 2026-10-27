@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000BFC RID: 3068
+// Token: 0x02000C07 RID: 3079
 public struct SSpawnedEntity
 {
-	// Token: 0x040047D7 RID: 18391
+	// Token: 0x040047FC RID: 18428
 	public string name;
 
-	// Token: 0x040047D8 RID: 18392
+	// Token: 0x040047FD RID: 18429
 	public Vector3 pos;
 
-	// Token: 0x040047D9 RID: 18393
+	// Token: 0x040047FE RID: 18430
 	public float distanceToLocalPlayer;
 
-	// Token: 0x040047DA RID: 18394
+	// Token: 0x040047FF RID: 18431
 	public float timeSpawned;
 }

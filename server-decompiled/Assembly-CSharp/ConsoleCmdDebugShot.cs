@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200020C RID: 524
+// Token: 0x0200020E RID: 526
 [Preserve]
 public class ConsoleCmdDebugShot : ConsoleCmdAbstract
 {
 	// Token: 0x1700015C RID: 348
-	// (get) Token: 0x06000FE2 RID: 4066 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06000FE6 RID: 4070 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,7 +18,7 @@ public class ConsoleCmdDebugShot : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700015D RID: 349
-	// (get) Token: 0x06000FE3 RID: 4067 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x06000FE7 RID: 4071 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -28,7 +28,7 @@ public class ConsoleCmdDebugShot : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700015E RID: 350
-	// (get) Token: 0x06000FE4 RID: 4068 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06000FE8 RID: 4072 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -37,14 +37,14 @@ public class ConsoleCmdDebugShot : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FE5 RID: 4069 RVA: 0x000666E4 File Offset: 0x000648E4
+	// Token: 0x06000FE9 RID: 4073 RVA: 0x000668B4 File Offset: 0x00064AB4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "debugshot", "dbs" };
 	}
 
-	// Token: 0x06000FE6 RID: 4070 RVA: 0x000666FC File Offset: 0x000648FC
+	// Token: 0x06000FEA RID: 4074 RVA: 0x000668CC File Offset: 0x00064ACC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GUIWindowConsole.Close();
@@ -52,7 +52,7 @@ public class ConsoleCmdDebugShot : ConsoleCmdAbstract
 		ThreadManager.StartCoroutine(this.openWindowLater(flag));
 	}
 
-	// Token: 0x06000FE7 RID: 4071 RVA: 0x00066737 File Offset: 0x00064937
+	// Token: 0x06000FEB RID: 4075 RVA: 0x00066907 File Offset: 0x00064B07
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator openWindowLater(bool _savePerks)
 	{
@@ -61,14 +61,14 @@ public class ConsoleCmdDebugShot : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x06000FE8 RID: 4072 RVA: 0x00066746 File Offset: 0x00064946
+	// Token: 0x06000FEC RID: 4076 RVA: 0x00066916 File Offset: 0x00064B16
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Creates a screenshot with some debug information";
 	}
 
-	// Token: 0x06000FE9 RID: 4073 RVA: 0x0006674D File Offset: 0x0006494D
+	// Token: 0x06000FED RID: 4077 RVA: 0x0006691D File Offset: 0x00064B1D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{

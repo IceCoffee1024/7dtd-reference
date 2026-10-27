@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x0200101B RID: 4123
-// (Invoke) Token: 0x060081BC RID: 33212
+// Token: 0x0200102B RID: 4139
+// (Invoke) Token: 0x0600820E RID: 33294
 public delegate void XUiEvent_PageNumberChangedEventHandler(int _pageNumber);

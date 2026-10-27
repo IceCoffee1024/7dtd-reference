@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085B RID: 2139
+// Token: 0x02000865 RID: 2149
 [Preserve]
 public class NetPackageTeleportPlayer : NetPackage
 {
-	// Token: 0x06003E1B RID: 15899 RVA: 0x0018A472 File Offset: 0x00188672
+	// Token: 0x06003E3E RID: 15934 RVA: 0x0018B51A File Offset: 0x0018971A
 	public NetPackageTeleportPlayer Setup(Vector3 _newPos, Vector3? _viewDirection = null, bool _onlyIfNotFlying = false)
 	{
 		this.pos = _newPos;
@@ -15,7 +15,7 @@ public class NetPackageTeleportPlayer : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E1C RID: 15900 RVA: 0x0018A48C File Offset: 0x0018868C
+	// Token: 0x06003E3F RID: 15935 RVA: 0x0018B534 File Offset: 0x00189734
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.pos = new Vector3(_reader.ReadSingle(), _reader.ReadSingle(), _reader.ReadSingle());
@@ -30,7 +30,7 @@ public class NetPackageTeleportPlayer : NetPackage
 		this.onlyIfNotFlying = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003E1D RID: 15901 RVA: 0x0018A4FC File Offset: 0x001886FC
+	// Token: 0x06003E40 RID: 15936 RVA: 0x0018B5A4 File Offset: 0x001897A4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -47,7 +47,7 @@ public class NetPackageTeleportPlayer : NetPackage
 		_writer.Write(this.onlyIfNotFlying);
 	}
 
-	// Token: 0x06003E1E RID: 15902 RVA: 0x0018A5B8 File Offset: 0x001887B8
+	// Token: 0x06003E41 RID: 15937 RVA: 0x0018B660 File Offset: 0x00189860
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -63,15 +63,15 @@ public class NetPackageTeleportPlayer : NetPackage
 		Log.Out("Discarding " + base.GetType().Name + " (no local player)");
 	}
 
-	// Token: 0x0400327D RID: 12925
+	// Token: 0x0400329D RID: 12957
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 pos;
 
-	// Token: 0x0400327E RID: 12926
+	// Token: 0x0400329E RID: 12958
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3? viewDirection;
 
-	// Token: 0x0400327F RID: 12927
+	// Token: 0x0400329F RID: 12959
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool onlyIfNotFlying;
 }

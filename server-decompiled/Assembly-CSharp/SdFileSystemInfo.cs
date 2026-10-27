@@ -1,35 +1,35 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000A14 RID: 2580
+// Token: 0x02000A1E RID: 2590
 public abstract class SdFileSystemInfo
 {
-	// Token: 0x17000855 RID: 2133
-	// (get) Token: 0x06004D18 RID: 19736 RVA: 0x001DBB3B File Offset: 0x001D9D3B
-	// (set) Token: 0x06004D19 RID: 19737 RVA: 0x001DBB43 File Offset: 0x001D9D43
+	// Token: 0x1700085B RID: 2139
+	// (get) Token: 0x06004D3C RID: 19772 RVA: 0x001DCC23 File Offset: 0x001DAE23
+	// (set) Token: 0x06004D3D RID: 19773 RVA: 0x001DCC2B File Offset: 0x001DAE2B
 	public bool IsManaged
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000856 RID: 2134
-	// (get) Token: 0x06004D1A RID: 19738 RVA: 0x001DBB4C File Offset: 0x001D9D4C
-	// (set) Token: 0x06004D1B RID: 19739 RVA: 0x001DBB54 File Offset: 0x001D9D54
+	// Token: 0x1700085C RID: 2140
+	// (get) Token: 0x06004D3E RID: 19774 RVA: 0x001DCC34 File Offset: 0x001DAE34
+	// (set) Token: 0x06004D3F RID: 19775 RVA: 0x001DCC3C File Offset: 0x001DAE3C
 	public SaveDataManagedPath ManagedPath
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06004D1C RID: 19740 RVA: 0x001DBB5D File Offset: 0x001D9D5D
+	// Token: 0x06004D40 RID: 19776 RVA: 0x001DCC45 File Offset: 0x001DAE45
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public SdFileSystemInfo(FileSystemInfo fileSystemInfo)
 	{
 		this.Reinitialize(fileSystemInfo);
 	}
 
-	// Token: 0x06004D1D RID: 19741 RVA: 0x001DBB6C File Offset: 0x001D9D6C
+	// Token: 0x06004D41 RID: 19777 RVA: 0x001DCC54 File Offset: 0x001DAE54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public SdFileSystemInfo(FileSystemInfo fileSystemInfo, SaveDataManagedPath managedPath)
 	{
@@ -38,7 +38,7 @@ public abstract class SdFileSystemInfo
 		this.ManagedPath = managedPath;
 	}
 
-	// Token: 0x06004D1E RID: 19742 RVA: 0x001DBB8C File Offset: 0x001D9D8C
+	// Token: 0x06004D42 RID: 19778 RVA: 0x001DCC74 File Offset: 0x001DAE74
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Reinitialize(FileSystemInfo fileSystemInfo)
 	{
@@ -48,8 +48,8 @@ public abstract class SdFileSystemInfo
 		this.ManagedPath = saveDataManagedPath;
 	}
 
-	// Token: 0x17000857 RID: 2135
-	// (get) Token: 0x06004D1F RID: 19743 RVA: 0x001DBBBA File Offset: 0x001D9DBA
+	// Token: 0x1700085D RID: 2141
+	// (get) Token: 0x06004D43 RID: 19779 RVA: 0x001DCCA2 File Offset: 0x001DAEA2
 	public virtual string FullName
 	{
 		get
@@ -58,8 +58,8 @@ public abstract class SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x17000858 RID: 2136
-	// (get) Token: 0x06004D20 RID: 19744 RVA: 0x001DBBC7 File Offset: 0x001D9DC7
+	// Token: 0x1700085E RID: 2142
+	// (get) Token: 0x06004D44 RID: 19780 RVA: 0x001DCCAF File Offset: 0x001DAEAF
 	public string Extension
 	{
 		get
@@ -68,19 +68,19 @@ public abstract class SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x17000859 RID: 2137
-	// (get) Token: 0x06004D21 RID: 19745
+	// Token: 0x1700085F RID: 2143
+	// (get) Token: 0x06004D45 RID: 19781
 	public abstract string Name { get; }
 
-	// Token: 0x1700085A RID: 2138
-	// (get) Token: 0x06004D22 RID: 19746
+	// Token: 0x17000860 RID: 2144
+	// (get) Token: 0x06004D46 RID: 19782
 	public abstract bool Exists { get; }
 
-	// Token: 0x06004D23 RID: 19747
+	// Token: 0x06004D47 RID: 19783
 	public abstract void Delete();
 
-	// Token: 0x1700085B RID: 2139
-	// (get) Token: 0x06004D24 RID: 19748 RVA: 0x001DBBD4 File Offset: 0x001D9DD4
+	// Token: 0x17000861 RID: 2145
+	// (get) Token: 0x06004D48 RID: 19784 RVA: 0x001DCCBC File Offset: 0x001DAEBC
 	public DateTime LastWriteTime
 	{
 		get
@@ -89,8 +89,8 @@ public abstract class SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x1700085C RID: 2140
-	// (get) Token: 0x06004D25 RID: 19749 RVA: 0x001DBBEF File Offset: 0x001D9DEF
+	// Token: 0x17000862 RID: 2146
+	// (get) Token: 0x06004D49 RID: 19785 RVA: 0x001DCCD7 File Offset: 0x001DAED7
 	public DateTime LastWriteTimeUtc
 	{
 		get
@@ -107,14 +107,14 @@ public abstract class SdFileSystemInfo
 		}
 	}
 
-	// Token: 0x06004D26 RID: 19750 RVA: 0x001DBC29 File Offset: 0x001D9E29
+	// Token: 0x06004D4A RID: 19786 RVA: 0x001DCD11 File Offset: 0x001DAF11
 	public void Refresh()
 	{
 		this.m_fileSystemInfo.Refresh();
 		this.Reinitialize(this.m_fileSystemInfo);
 	}
 
-	// Token: 0x04003C18 RID: 15384
+	// Token: 0x04003C39 RID: 15417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileSystemInfo m_fileSystemInfo;
 }

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200051C RID: 1308
+// Token: 0x0200051E RID: 1310
 [Preserve]
 public class EModelNpc : EModelBase
 {
-	// Token: 0x06002ACE RID: 10958 RVA: 0x0010FA34 File Offset: 0x0010DC34
+	// Token: 0x06002AD5 RID: 10965 RVA: 0x0010FFA8 File Offset: 0x0010E1A8
 	public override void Init(World _world, Entity _entity, EModelInstanceAssets _assets)
 	{
 		this.entity = _entity;
@@ -46,7 +46,7 @@ public class EModelNpc : EModelBase
 		base.LookAtInit();
 	}
 
-	// Token: 0x06002ACF RID: 10959 RVA: 0x0010FB64 File Offset: 0x0010DD64
+	// Token: 0x06002AD6 RID: 10966 RVA: 0x001100D8 File Offset: 0x0010E2D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupColliders(Transform bodyRoot)
 	{
@@ -58,7 +58,7 @@ public class EModelNpc : EModelBase
 		transform.tag = "E_BP_BipedRoot";
 	}
 
-	// Token: 0x06002AD0 RID: 10960 RVA: 0x0010FBA0 File Offset: 0x0010DDA0
+	// Token: 0x06002AD7 RID: 10967 RVA: 0x00110114 File Offset: 0x0010E314
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createAvatarController(EntityClass _ec)
 	{

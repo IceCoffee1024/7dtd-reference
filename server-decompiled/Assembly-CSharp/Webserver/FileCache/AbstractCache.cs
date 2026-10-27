@@ -4,24 +4,24 @@ using System.Runtime.CompilerServices;
 
 namespace Webserver.FileCache
 {
-	// Token: 0x02001B34 RID: 6964
+	// Token: 0x02001B65 RID: 7013
 	public abstract class AbstractCache
 	{
-		// Token: 0x0600D14F RID: 53583
+		// Token: 0x0600D263 RID: 53859
 		public abstract byte[] GetFileContent(string _filename);
 
-		// Token: 0x0600D150 RID: 53584
+		// Token: 0x0600D264 RID: 53860
 		[return: TupleElementNames(new string[] { "filesDropped", "bytesDropped" })]
 		public abstract ValueTuple<int, int> Invalidate();
 
-		// Token: 0x0600D151 RID: 53585 RVA: 0x004BFB3A File Offset: 0x004BDD3A
+		// Token: 0x0600D265 RID: 53861 RVA: 0x004C3662 File Offset: 0x004C1862
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbstractCache()
 		{
 			AbstractCache.caches.Add(this);
 		}
 
-		// Token: 0x0600D152 RID: 53586 RVA: 0x004BFB50 File Offset: 0x004BDD50
+		// Token: 0x0600D266 RID: 53862 RVA: 0x004C3678 File Offset: 0x004C1878
 		public static ValueTuple<int, int> InvalidateAllCaches()
 		{
 			int num = 0;
@@ -37,7 +37,7 @@ namespace Webserver.FileCache
 			return new ValueTuple<int, int>(num, num2);
 		}
 
-		// Token: 0x04009EB6 RID: 40630
+		// Token: 0x04009F9F RID: 40863
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly List<AbstractCache> caches = new List<AbstractCache>();
 	}

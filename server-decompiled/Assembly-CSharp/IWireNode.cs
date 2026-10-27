@@ -1,63 +1,63 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001358 RID: 4952
+// Token: 0x0200136A RID: 4970
 public interface IWireNode
 {
-	// Token: 0x06009C01 RID: 39937
+	// Token: 0x06009C59 RID: 40025
 	Vector3 GetStartPosition();
 
-	// Token: 0x06009C02 RID: 39938
+	// Token: 0x06009C5A RID: 40026
 	Vector3 GetStartPositionOffset();
 
-	// Token: 0x06009C03 RID: 39939
+	// Token: 0x06009C5B RID: 40027
 	void SetStartPosition(Vector3 pos);
 
-	// Token: 0x06009C04 RID: 39940
+	// Token: 0x06009C5C RID: 40028
 	void SetStartPositionOffset(Vector3 pos);
 
-	// Token: 0x06009C05 RID: 39941
+	// Token: 0x06009C5D RID: 40029
 	Vector3 GetEndPosition();
 
-	// Token: 0x06009C06 RID: 39942
+	// Token: 0x06009C5E RID: 40030
 	Vector3 GetEndPositionOffset();
 
-	// Token: 0x06009C07 RID: 39943
+	// Token: 0x06009C5F RID: 40031
 	void SetEndPosition(Vector3 pos);
 
-	// Token: 0x06009C08 RID: 39944
+	// Token: 0x06009C60 RID: 40032
 	void SetEndPositionOffset(Vector3 pos);
 
-	// Token: 0x06009C09 RID: 39945
+	// Token: 0x06009C61 RID: 40033
 	void SetWireDip(float _dist);
 
-	// Token: 0x06009C0A RID: 39946
+	// Token: 0x06009C62 RID: 40034
 	float GetWireDip();
 
-	// Token: 0x06009C0B RID: 39947
+	// Token: 0x06009C63 RID: 40035
 	void SetWireRadius(float _radius);
 
-	// Token: 0x06009C0C RID: 39948
+	// Token: 0x06009C64 RID: 40036
 	void SetWireCanHide(bool _canHide);
 
-	// Token: 0x06009C0D RID: 39949
+	// Token: 0x06009C65 RID: 40037
 	void SetVisible(bool _visible);
 
-	// Token: 0x06009C0E RID: 39950
+	// Token: 0x06009C66 RID: 40038
 	void Reset();
 
-	// Token: 0x06009C0F RID: 39951
+	// Token: 0x06009C67 RID: 40039
 	void BuildMesh();
 
-	// Token: 0x06009C10 RID: 39952
+	// Token: 0x06009C68 RID: 40040
 	void SetPulseColor(Color color);
 
-	// Token: 0x06009C11 RID: 39953
+	// Token: 0x06009C69 RID: 40041
 	void TogglePulse(bool isOn);
 
-	// Token: 0x06009C12 RID: 39954
+	// Token: 0x06009C6A RID: 40042
 	GameObject GetGameObject();
 
-	// Token: 0x06009C13 RID: 39955
+	// Token: 0x06009C6B RID: 40043
 	Bounds GetBounds();
 }

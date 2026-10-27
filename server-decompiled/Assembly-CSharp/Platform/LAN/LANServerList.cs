@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace Platform.LAN
 {
-	// Token: 0x02001D05 RID: 7429
+	// Token: 0x02001D36 RID: 7478
 	public class LANServerList : IServerListInterface
 	{
-		// Token: 0x17001C05 RID: 7173
-		// (get) Token: 0x0600DC85 RID: 56453 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001C4D RID: 7245
+		// (get) Token: 0x0600DD99 RID: 56729 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsPrefiltered
 		{
 			get
@@ -20,8 +20,8 @@ namespace Platform.LAN
 			}
 		}
 
-		// Token: 0x17001C06 RID: 7174
-		// (get) Token: 0x0600DC86 RID: 56454 RVA: 0x004E8EAB File Offset: 0x004E70AB
+		// Token: 0x17001C4E RID: 7246
+		// (get) Token: 0x0600DD9A RID: 56730 RVA: 0x004ECA4B File Offset: 0x004EAC4B
 		public bool IsRefreshing
 		{
 			get
@@ -30,25 +30,25 @@ namespace Platform.LAN
 			}
 		}
 
-		// Token: 0x0600DC87 RID: 56455 RVA: 0x004E8EB3 File Offset: 0x004E70B3
+		// Token: 0x0600DD9B RID: 56731 RVA: 0x004ECA53 File Offset: 0x004EAC53
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600DC88 RID: 56456 RVA: 0x004E8EBC File Offset: 0x004E70BC
+		// Token: 0x0600DD9C RID: 56732 RVA: 0x004ECA5C File Offset: 0x004EAC5C
 		public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _sessionSearchErrorCallback)
 		{
 			this.serverFoundCallback = _serverFound;
 		}
 
-		// Token: 0x0600DC89 RID: 56457 RVA: 0x0008806C File Offset: 0x0008626C
+		// Token: 0x0600DD9D RID: 56733 RVA: 0x000882A0 File Offset: 0x000864A0
 		public void GetSingleServerDetails(GameServerInfo _serverInfo, EServerRelationType _relation, GameServerFoundCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DC8A RID: 56458 RVA: 0x004E8EC8 File Offset: 0x004E70C8
+		// Token: 0x0600DD9E RID: 56734 RVA: 0x004ECA68 File Offset: 0x004EAC68
 		public void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			try
@@ -68,7 +68,7 @@ namespace Platform.LAN
 			}
 		}
 
-		// Token: 0x0600DC8B RID: 56459 RVA: 0x004E8F58 File Offset: 0x004E7158
+		// Token: 0x0600DD9F RID: 56735 RVA: 0x004ECAF8 File Offset: 0x004EACF8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator LANServerInfoRequestCoroutine()
 		{
@@ -92,7 +92,7 @@ namespace Platform.LAN
 			yield break;
 		}
 
-		// Token: 0x0600DC8C RID: 56460 RVA: 0x004E8F67 File Offset: 0x004E7167
+		// Token: 0x0600DDA0 RID: 56736 RVA: 0x004ECB07 File Offset: 0x004EAD07
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator LANServerInfoReceiveCoroutine()
 		{
@@ -125,7 +125,7 @@ namespace Platform.LAN
 			yield break;
 		}
 
-		// Token: 0x0600DC8D RID: 56461 RVA: 0x004E8F78 File Offset: 0x004E7178
+		// Token: 0x0600DDA1 RID: 56737 RVA: 0x004ECB18 File Offset: 0x004EAD18
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnServerFound(IPEndPoint endpoint)
 		{
@@ -140,7 +140,7 @@ namespace Platform.LAN
 			ServerInformationTcpClient.RequestRules(gameServerInfo, false, new ServerInformationTcpClient.RulesRequestDone(this.OnRulesRequestDone));
 		}
 
-		// Token: 0x0600DC8E RID: 56462 RVA: 0x004E8FDC File Offset: 0x004E71DC
+		// Token: 0x0600DDA2 RID: 56738 RVA: 0x004ECB7C File Offset: 0x004EAD7C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnRulesRequestDone(bool _success, string _message, GameServerInfo _gsi)
 		{
@@ -149,14 +149,14 @@ namespace Platform.LAN
 			this.serverFoundCallback(this.owner, _gsi, EServerRelationType.LAN);
 		}
 
-		// Token: 0x0600DC8F RID: 56463 RVA: 0x004E9011 File Offset: 0x004E7211
+		// Token: 0x0600DDA3 RID: 56739 RVA: 0x004ECBB1 File Offset: 0x004EADB1
 		public void StopSearch()
 		{
 			this.isPaused = true;
 			this.cacheControl.Clear();
 		}
 
-		// Token: 0x0600DC90 RID: 56464 RVA: 0x004E9028 File Offset: 0x004E7228
+		// Token: 0x0600DDA4 RID: 56740 RVA: 0x004ECBC8 File Offset: 0x004EADC8
 		public void Disconnect()
 		{
 			this.StopSearch();
@@ -178,63 +178,63 @@ namespace Platform.LAN
 			this.udpClient = null;
 		}
 
-		// Token: 0x0400A665 RID: 42597
+		// Token: 0x0400A74E RID: 42830
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int serverBroadcastIntervalSeconds = 5;
 
-		// Token: 0x0400A666 RID: 42598
+		// Token: 0x0400A74F RID: 42831
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan rulesRefreshInterval = new TimeSpan(0, 2, 0);
 
-		// Token: 0x0400A667 RID: 42599
+		// Token: 0x0400A750 RID: 42832
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan knownServerTimeout = new TimeSpan(0, 1, 0);
 
-		// Token: 0x0400A668 RID: 42600
+		// Token: 0x0400A751 RID: 42833
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A669 RID: 42601
+		// Token: 0x0400A752 RID: 42834
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerFoundCallback serverFoundCallback;
 
-		// Token: 0x0400A66A RID: 42602
+		// Token: 0x0400A753 RID: 42835
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IPAddress multicastGroupIp;
 
-		// Token: 0x0400A66B RID: 42603
+		// Token: 0x0400A754 RID: 42836
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UdpClient udpClient;
 
-		// Token: 0x0400A66C RID: 42604
+		// Token: 0x0400A755 RID: 42837
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shouldRefresh;
 
-		// Token: 0x0400A66D RID: 42605
+		// Token: 0x0400A756 RID: 42838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isPaused;
 
-		// Token: 0x0400A66E RID: 42606
+		// Token: 0x0400A757 RID: 42839
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine requestCoroutine;
 
-		// Token: 0x0400A66F RID: 42607
+		// Token: 0x0400A758 RID: 42840
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine receiveCoroutine;
 
-		// Token: 0x0400A670 RID: 42608
+		// Token: 0x0400A759 RID: 42841
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UdpClientSendHandler sendHandler;
 
-		// Token: 0x0400A671 RID: 42609
+		// Token: 0x0400A75A RID: 42842
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UdpClientReceiveHandler receiveHandler;
 
-		// Token: 0x0400A672 RID: 42610
+		// Token: 0x0400A75B RID: 42843
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LANServerCacheControl cacheControl = new LANServerCacheControl(LANServerList.rulesRefreshInterval, LANServerList.knownServerTimeout);
 
-		// Token: 0x0400A673 RID: 42611
+		// Token: 0x0400A75C RID: 42844
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static byte[] emptyMessage = new byte[0];
 	}

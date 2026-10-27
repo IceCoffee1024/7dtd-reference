@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200136F RID: 4975
+// Token: 0x02001381 RID: 4993
 [PreferBinarySerialization]
 public class MeshMorph : ScriptableObject
 {
-	// Token: 0x170012C6 RID: 4806
-	// (get) Token: 0x06009CBD RID: 40125 RVA: 0x003B39D9 File Offset: 0x003B1BD9
+	// Token: 0x170012D2 RID: 4818
+	// (get) Token: 0x06009D15 RID: 40213 RVA: 0x003B5DDD File Offset: 0x003B3FDD
 	public Vector3[] Vertices
 	{
 		get
@@ -15,14 +15,14 @@ public class MeshMorph : ScriptableObject
 		}
 	}
 
-	// Token: 0x06009CBE RID: 40126 RVA: 0x003B39E1 File Offset: 0x003B1BE1
+	// Token: 0x06009D16 RID: 40214 RVA: 0x003B5DE5 File Offset: 0x003B3FE5
 	public void Init(SkinnedMeshRenderer source, Vector3[] vertices)
 	{
 		this.source = source;
 		this.vertices = vertices;
 	}
 
-	// Token: 0x06009CBF RID: 40127 RVA: 0x003B39F4 File Offset: 0x003B1BF4
+	// Token: 0x06009D17 RID: 40215 RVA: 0x003B5DF8 File Offset: 0x003B3FF8
 	public GameObject GetMorphedSkinnedMesh()
 	{
 		if (this.source == null || this.source.sharedMesh == null || this.vertices == null || this.vertices.Length == 0)
@@ -46,23 +46,23 @@ public class MeshMorph : ScriptableObject
 		return gameObject;
 	}
 
-	// Token: 0x06009CC0 RID: 40128 RVA: 0x003B3B28 File Offset: 0x003B1D28
+	// Token: 0x06009D18 RID: 40216 RVA: 0x003B5F2C File Offset: 0x003B412C
 	public static bool IsInstance(Mesh _mesh)
 	{
 		return _mesh.name.StartsWith(MeshMorph.cMeshPrefix);
 	}
 
-	// Token: 0x04007649 RID: 30281
+	// Token: 0x0400768A RID: 30346
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SkinnedMeshRenderer source;
 
-	// Token: 0x0400764A RID: 30282
+	// Token: 0x0400768B RID: 30347
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] vertices;
 
-	// Token: 0x0400764B RID: 30283
+	// Token: 0x0400768C RID: 30348
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string cMeshPrefix = "MeshMorph-";

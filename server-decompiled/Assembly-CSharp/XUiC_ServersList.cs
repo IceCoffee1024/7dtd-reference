@@ -5,22 +5,22 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DF6 RID: 3574
+// Token: 0x02000E01 RID: 3585
 [Preserve]
 public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 {
 	// Token: 0x14000099 RID: 153
-	// (add) Token: 0x06006CE6 RID: 27878 RVA: 0x002A9570 File Offset: 0x002A7770
-	// (remove) Token: 0x06006CE7 RID: 27879 RVA: 0x002A95A8 File Offset: 0x002A77A8
+	// (add) Token: 0x06006D0B RID: 27915 RVA: 0x002AAA98 File Offset: 0x002A8C98
+	// (remove) Token: 0x06006D0C RID: 27916 RVA: 0x002AAAD0 File Offset: 0x002A8CD0
 	public event Action<int> OnFilterResultsChanged;
 
 	// Token: 0x1400009A RID: 154
-	// (add) Token: 0x06006CE8 RID: 27880 RVA: 0x002A95E0 File Offset: 0x002A77E0
-	// (remove) Token: 0x06006CE9 RID: 27881 RVA: 0x002A9618 File Offset: 0x002A7818
+	// (add) Token: 0x06006D0D RID: 27917 RVA: 0x002AAB08 File Offset: 0x002A8D08
+	// (remove) Token: 0x06006D0E RID: 27918 RVA: 0x002AAB40 File Offset: 0x002A8D40
 	public event Action CountsChanged;
 
-	// Token: 0x17000C23 RID: 3107
-	// (get) Token: 0x06006CEA RID: 27882 RVA: 0x002A964D File Offset: 0x002A784D
+	// Token: 0x17000C29 RID: 3113
+	// (get) Token: 0x06006D0F RID: 27919 RVA: 0x002AAB75 File Offset: 0x002A8D75
 	public XUiC_ServersList.EnumServerLists CurrentServerTypeList
 	{
 		get
@@ -29,7 +29,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CEB RID: 27883 RVA: 0x002A9658 File Offset: 0x002A7858
+	// Token: 0x06006D10 RID: 27920 RVA: 0x002AAB80 File Offset: 0x002A8D80
 	public override void Init()
 	{
 		base.Init();
@@ -46,7 +46,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CEC RID: 27884 RVA: 0x002A96B9 File Offset: 0x002A78B9
+	// Token: 0x06006D11 RID: 27921 RVA: 0x002AABE1 File Offset: 0x002A8DE1
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -55,14 +55,14 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		ThreadManager.StartThread("ServerBrowserListUpdater", null, new ThreadManager.ThreadFunctionLoopDelegate(this.currentListUpdateThread), null, null, null, false, false);
 	}
 
-	// Token: 0x06006CED RID: 27885 RVA: 0x002A96EC File Offset: 0x002A78EC
+	// Token: 0x06006D12 RID: 27922 RVA: 0x002AAC14 File Offset: 0x002A8E14
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.stopListUpdateThread = true;
 	}
 
-	// Token: 0x06006CEE RID: 27886 RVA: 0x002A96FC File Offset: 0x002A78FC
+	// Token: 0x06006D13 RID: 27923 RVA: 0x002AAC24 File Offset: 0x002A8E24
 	public override void Update(float _dt)
 	{
 		bool flag = false;
@@ -85,7 +85,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CEF RID: 27887 RVA: 0x002A9768 File Offset: 0x002A7968
+	// Token: 0x06006D14 RID: 27924 RVA: 0x002AAC90 File Offset: 0x002A8E90
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -97,7 +97,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06006CF0 RID: 27888 RVA: 0x002A97C0 File Offset: 0x002A79C0
+	// Token: 0x06006D15 RID: 27925 RVA: 0x002AACE8 File Offset: 0x002A8EE8
 	public void RefreshBindingListEntry(XUiC_ServersList.ListEntry _entry)
 	{
 		foreach (XUiC_List<XUiC_ServersList.ListEntry>.XUiC_ListEntry xuiC_ListEntry in this.listEntryControllers)
@@ -110,12 +110,12 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CF1 RID: 27889 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006D16 RID: 27926 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RefreshView(bool _resetFilter = false, bool _resetPage = true)
 	{
 	}
 
-	// Token: 0x06006CF2 RID: 27890 RVA: 0x002A97F8 File Offset: 0x002A79F8
+	// Token: 0x06006D17 RID: 27927 RVA: 0x002AAD20 File Offset: 0x002A8F20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnSearchInputChanged(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -131,7 +131,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006CF3 RID: 27891 RVA: 0x002A986C File Offset: 0x002A7A6C
+	// Token: 0x06006D18 RID: 27928 RVA: 0x002AAD94 File Offset: 0x002A8F94
 	public void SetServerTypeFilter(XUiC_ServersList.EnumServerLists _typelist)
 	{
 		Func<XUiC_ServersList.ListEntry, bool> func;
@@ -169,7 +169,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		base.ClearSelection();
 	}
 
-	// Token: 0x06006CF4 RID: 27892 RVA: 0x002A9978 File Offset: 0x002A7B78
+	// Token: 0x06006D19 RID: 27929 RVA: 0x002AAEA0 File Offset: 0x002A90A0
 	public void SetFilter(XUiC_ServersList.UiServerFilter _filter)
 	{
 		Dictionary<string, XUiC_ServersList.UiServerFilter> dictionary = this.currentFilters;
@@ -187,7 +187,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		this.updateCurrentList = true;
 	}
 
-	// Token: 0x06006CF5 RID: 27893 RVA: 0x002A99E8 File Offset: 0x002A7BE8
+	// Token: 0x06006D1A RID: 27930 RVA: 0x002AAF10 File Offset: 0x002A9110
 	public int GetActiveFilterCount()
 	{
 		Dictionary<string, XUiC_ServersList.UiServerFilter> dictionary = this.currentFilters;
@@ -199,7 +199,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		return num;
 	}
 
-	// Token: 0x06006CF6 RID: 27894 RVA: 0x002A9A50 File Offset: 0x002A7C50
+	// Token: 0x06006D1B RID: 27931 RVA: 0x002AAF78 File Offset: 0x002A9178
 	public int GetServerCount(XUiC_ServersList.EnumServerLists _list)
 	{
 		Dictionary<XUiC_ServersList.EnumServerLists, int> dictionary = this.serverCounts;
@@ -211,7 +211,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		return num;
 	}
 
-	// Token: 0x06006CF7 RID: 27895 RVA: 0x002A9A9C File Offset: 0x002A7C9C
+	// Token: 0x06006D1C RID: 27932 RVA: 0x002AAFC4 File Offset: 0x002A91C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateListFiltering(ref IEnumerable<XUiC_ServersList.ListEntry> _list)
 	{
@@ -228,7 +228,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CF8 RID: 27896 RVA: 0x002A9B3C File Offset: 0x002A7D3C
+	// Token: 0x06006D1D RID: 27933 RVA: 0x002AB064 File Offset: 0x002A9264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateListSorting(ref IEnumerable<XUiC_ServersList.ListEntry> _list)
 	{
@@ -246,7 +246,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CF9 RID: 27897 RVA: 0x002A9BD0 File Offset: 0x002A7DD0
+	// Token: 0x06006D1E RID: 27934 RVA: 0x002AB0F8 File Offset: 0x002A92F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int indexOfGameServerInfo(GameServerInfo _gameServerInfo)
 	{
@@ -266,7 +266,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		return -1;
 	}
 
-	// Token: 0x06006CFA RID: 27898 RVA: 0x002A9C48 File Offset: 0x002A7E48
+	// Token: 0x06006D1F RID: 27935 RVA: 0x002AB170 File Offset: 0x002A9370
 	public bool AddGameServer(GameServerInfo _gameServerInfo, EServerRelationType _source)
 	{
 		int num = this.indexOfGameServerInfo(_gameServerInfo);
@@ -298,7 +298,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		return flag;
 	}
 
-	// Token: 0x06006CFB RID: 27899 RVA: 0x002A9D04 File Offset: 0x002A7F04
+	// Token: 0x06006D20 RID: 27936 RVA: 0x002AB22C File Offset: 0x002A942C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addRemoveServerCount(GameServerInfo _gsi, bool _add)
 	{
@@ -330,7 +330,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		countsChanged();
 	}
 
-	// Token: 0x06006CFC RID: 27900 RVA: 0x002A9D74 File Offset: 0x002A7F74
+	// Token: 0x06006D21 RID: 27937 RVA: 0x002AB29C File Offset: 0x002A949C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addRemoveCountSingleListType(bool _add, XUiC_ServersList.EnumServerLists _list)
 	{
@@ -349,7 +349,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006CFD RID: 27901 RVA: 0x002A9DE8 File Offset: 0x002A7FE8
+	// Token: 0x06006D22 RID: 27938 RVA: 0x002AB310 File Offset: 0x002A9510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentListUpdateThread(ThreadManager.ThreadInfo _tInfo)
 	{
@@ -383,7 +383,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		return 50;
 	}
 
-	// Token: 0x06006CFE RID: 27902 RVA: 0x002A9ED0 File Offset: 0x002A80D0
+	// Token: 0x06006D23 RID: 27939 RVA: 0x002AB3F8 File Offset: 0x002A95F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -398,9 +398,9 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		this.IsDirty = true;
 	}
 
-	// Token: 0x17000C24 RID: 3108
-	// (get) Token: 0x06006CFF RID: 27903 RVA: 0x002A9F0B File Offset: 0x002A810B
-	// (set) Token: 0x06006D00 RID: 27904 RVA: 0x002A9F13 File Offset: 0x002A8113
+	// Token: 0x17000C2A RID: 3114
+	// (get) Token: 0x06006D24 RID: 27940 RVA: 0x002AB433 File Offset: 0x002A9633
+	// (set) Token: 0x06006D25 RID: 27941 RVA: 0x002AB43B File Offset: 0x002A963B
 	[XuiXmlBinding("sortcolumn")]
 	public XUiC_ServersList.EnumColumns SortColumn
 	{
@@ -421,7 +421,7 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006D01 RID: 27905 RVA: 0x002A9F30 File Offset: 0x002A8130
+	// Token: 0x06006D26 RID: 27942 RVA: 0x002AB458 File Offset: 0x002A9658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateSortType(XUiC_ServersList.EnumColumns _sortType)
 	{
@@ -471,51 +471,51 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		this.updateCurrentList = true;
 	}
 
-	// Token: 0x04005344 RID: 21316
+	// Token: 0x04005369 RID: 21353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string ServerTypeFilterName = "servertype";
 
-	// Token: 0x04005345 RID: 21317
+	// Token: 0x0400536A RID: 21354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string ServerNameFilterName = "servername";
 
-	// Token: 0x04005348 RID: 21320
+	// Token: 0x0400536D RID: 21357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool stopListUpdateThread;
 
-	// Token: 0x04005349 RID: 21321
+	// Token: 0x0400536E RID: 21358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateCurrentList;
 
-	// Token: 0x0400534A RID: 21322
+	// Token: 0x0400536F RID: 21359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pageUpdateRequired;
 
-	// Token: 0x0400534B RID: 21323
+	// Token: 0x04005370 RID: 21360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastPageUpdate;
 
-	// Token: 0x0400534C RID: 21324
+	// Token: 0x04005371 RID: 21361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ServersList.ListEntry> filteredEntriesTmp = new List<XUiC_ServersList.ListEntry>();
 
-	// Token: 0x0400534D RID: 21325
+	// Token: 0x04005372 RID: 21362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button[] sortButtons = new XUiC_Button[5];
 
-	// Token: 0x0400534E RID: 21326
+	// Token: 0x04005373 RID: 21363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool sortAscending = true;
 
-	// Token: 0x0400534F RID: 21327
+	// Token: 0x04005374 RID: 21364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<XUiC_ServersList.ListEntry, string> sortFuncString;
 
-	// Token: 0x04005350 RID: 21328
+	// Token: 0x04005375 RID: 21365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<XUiC_ServersList.ListEntry, int> sortFuncInt;
 
-	// Token: 0x04005351 RID: 21329
+	// Token: 0x04005376 RID: 21366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Func<XUiC_ServersList.ListEntry, int> sortDefaultFavHistory = delegate(XUiC_ServersList.ListEntry _line)
 	{
@@ -526,37 +526,37 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 		return int.MaxValue;
 	};
 
-	// Token: 0x04005352 RID: 21330
+	// Token: 0x04005377 RID: 21367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServersList.EnumServerLists currentServerTypeList;
 
-	// Token: 0x04005353 RID: 21331
+	// Token: 0x04005378 RID: 21368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, XUiC_ServersList.UiServerFilter> currentFilters = new Dictionary<string, XUiC_ServersList.UiServerFilter>();
 
-	// Token: 0x04005354 RID: 21332
+	// Token: 0x04005379 RID: 21369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly GameServerInfo.UniqueIdEqualityComparer uniqueIdComparer = GameServerInfo.UniqueIdEqualityComparer.Instance;
 
-	// Token: 0x04005355 RID: 21333
+	// Token: 0x0400537A RID: 21370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<XUiC_ServersList.EnumServerLists, int> serverCounts = new EnumDictionary<XUiC_ServersList.EnumServerLists, int>();
 
-	// Token: 0x04005356 RID: 21334
+	// Token: 0x0400537B RID: 21371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServersList.EnumColumns sortColumn = XUiC_ServersList.EnumColumns.Count;
 
-	// Token: 0x02000DF7 RID: 3575
+	// Token: 0x02000E02 RID: 3586
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_ServersList.ListEntry>
 	{
-		// Token: 0x06006D03 RID: 27907 RVA: 0x002AA0FA File Offset: 0x002A82FA
+		// Token: 0x06006D28 RID: 27944 RVA: 0x002AB622 File Offset: 0x002A9822
 		public ListEntry(GameServerInfo _serverInfo, XUiC_ServersList _serversList)
 		{
 			this.GameServerInfo = _serverInfo;
 		}
 
-		// Token: 0x06006D04 RID: 27908 RVA: 0x002AA10C File Offset: 0x002A830C
+		// Token: 0x06006D29 RID: 27945 RVA: 0x002AB634 File Offset: 0x002A9834
 		public override int CompareTo(XUiC_ServersList.ListEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -566,22 +566,22 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			return this.GameServerInfo.LastPlayedLinux.CompareTo(_otherEntry.GameServerInfo.LastPlayedLinux);
 		}
 
-		// Token: 0x06006D05 RID: 27909 RVA: 0x002AA13C File Offset: 0x002A833C
+		// Token: 0x06006D2A RID: 27946 RVA: 0x002AB664 File Offset: 0x002A9864
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.GameServerInfo.GetValue(GameInfoString.GameHost).ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005357 RID: 21335
+		// Token: 0x0400537C RID: 21372
 		public readonly GameServerInfo GameServerInfo;
 	}
 
-	// Token: 0x02000DF8 RID: 3576
+	// Token: 0x02000E03 RID: 3587
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_ServersList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06006D06 RID: 27910 RVA: 0x002AA150 File Offset: 0x002A8350
+		// Token: 0x06006D2B RID: 27947 RVA: 0x002AB678 File Offset: 0x002A9878
 		public override void Init()
 		{
 			base.Init();
@@ -596,15 +596,15 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			};
 		}
 
-		// Token: 0x06006D07 RID: 27911 RVA: 0x002AA185 File Offset: 0x002A8385
+		// Token: 0x06006D2C RID: 27948 RVA: 0x002AB6AD File Offset: 0x002A98AD
 		public override void Update(float _dt)
 		{
 			this.IsDirty = true;
 			base.Update(_dt);
 		}
 
-		// Token: 0x17000C25 RID: 3109
-		// (get) Token: 0x06006D08 RID: 27912 RVA: 0x002AA198 File Offset: 0x002A8398
+		// Token: 0x17000C2B RID: 3115
+		// (get) Token: 0x06006D2D RID: 27949 RVA: 0x002AB6C0 File Offset: 0x002A98C0
 		[XuiXmlBinding("servername")]
 		public string ServerName
 		{
@@ -627,8 +627,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C26 RID: 3110
-		// (get) Token: 0x06006D09 RID: 27913 RVA: 0x002AA21E File Offset: 0x002A841E
+		// Token: 0x17000C2C RID: 3116
+		// (get) Token: 0x06006D2E RID: 27950 RVA: 0x002AB746 File Offset: 0x002A9946
 		[XuiXmlBinding("servericon")]
 		public string ServerIcon
 		{
@@ -643,8 +643,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C27 RID: 3111
-		// (get) Token: 0x06006D0A RID: 27914 RVA: 0x002AA24F File Offset: 0x002A844F
+		// Token: 0x17000C2D RID: 3117
+		// (get) Token: 0x06006D2F RID: 27951 RVA: 0x002AB777 File Offset: 0x002A9977
 		[XuiXmlBinding("servericonatlas")]
 		public string ServerIconAtlas
 		{
@@ -655,8 +655,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C28 RID: 3112
-		// (get) Token: 0x06006D0B RID: 27915 RVA: 0x002AA256 File Offset: 0x002A8456
+		// Token: 0x17000C2E RID: 3118
+		// (get) Token: 0x06006D30 RID: 27952 RVA: 0x002AB77E File Offset: 0x002A997E
 		[XuiXmlBinding("playersonline")]
 		public int PlayersOnline
 		{
@@ -672,8 +672,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C29 RID: 3113
-		// (get) Token: 0x06006D0C RID: 27916 RVA: 0x002AA26F File Offset: 0x002A846F
+		// Token: 0x17000C2F RID: 3119
+		// (get) Token: 0x06006D31 RID: 27953 RVA: 0x002AB797 File Offset: 0x002A9997
 		[XuiXmlBinding("playersmax")]
 		public int PlayersMax
 		{
@@ -689,8 +689,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C2A RID: 3114
-		// (get) Token: 0x06006D0D RID: 27917 RVA: 0x002AA288 File Offset: 0x002A8488
+		// Token: 0x17000C30 RID: 3120
+		// (get) Token: 0x06006D32 RID: 27954 RVA: 0x002AB7B0 File Offset: 0x002A99B0
 		[XuiXmlBinding("ping")]
 		public string Ping
 		{
@@ -710,8 +710,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C2B RID: 3115
-		// (get) Token: 0x06006D0E RID: 27918 RVA: 0x002AA2C8 File Offset: 0x002A84C8
+		// Token: 0x17000C31 RID: 3121
+		// (get) Token: 0x06006D33 RID: 27955 RVA: 0x002AB7F0 File Offset: 0x002A99F0
 		[XuiXmlBinding("world")]
 		public string World
 		{
@@ -734,8 +734,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C2C RID: 3116
-		// (get) Token: 0x06006D0F RID: 27919 RVA: 0x002AA34E File Offset: 0x002A854E
+		// Token: 0x17000C32 RID: 3122
+		// (get) Token: 0x06006D34 RID: 27956 RVA: 0x002AB876 File Offset: 0x002A9A76
 		[XuiXmlBinding("anticheatprotected")]
 		public bool AntiCheatProtected
 		{
@@ -747,8 +747,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C2D RID: 3117
-		// (get) Token: 0x06006D10 RID: 27920 RVA: 0x002AA366 File Offset: 0x002A8566
+		// Token: 0x17000C33 RID: 3123
+		// (get) Token: 0x06006D35 RID: 27957 RVA: 0x002AB88E File Offset: 0x002A9A8E
 		[XuiXmlBinding("passwordprotected")]
 		public bool PasswordColorProtected
 		{
@@ -760,8 +760,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C2E RID: 3118
-		// (get) Token: 0x06006D11 RID: 27921 RVA: 0x002AA37F File Offset: 0x002A857F
+		// Token: 0x17000C34 RID: 3124
+		// (get) Token: 0x06006D36 RID: 27958 RVA: 0x002AB8A7 File Offset: 0x002A9AA7
 		[XuiXmlBinding("isfavorite")]
 		public bool IsFavorite
 		{
@@ -773,8 +773,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C2F RID: 3119
-		// (get) Token: 0x06006D12 RID: 27922 RVA: 0x002AA397 File Offset: 0x002A8597
+		// Token: 0x17000C35 RID: 3125
+		// (get) Token: 0x06006D37 RID: 27959 RVA: 0x002AB8BF File Offset: 0x002A9ABF
 		[XuiXmlBinding("isdedicated")]
 		public bool IsDedicated
 		{
@@ -786,8 +786,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C30 RID: 3120
-		// (get) Token: 0x06006D13 RID: 27923 RVA: 0x002AA3AF File Offset: 0x002A85AF
+		// Token: 0x17000C36 RID: 3126
+		// (get) Token: 0x06006D38 RID: 27960 RVA: 0x002AB8D7 File Offset: 0x002A9AD7
 		[XuiXmlBinding("hasping")]
 		public bool HasPing
 		{
@@ -798,8 +798,8 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x17000C31 RID: 3121
-		// (get) Token: 0x06006D14 RID: 27924 RVA: 0x002AA3E5 File Offset: 0x002A85E5
+		// Token: 0x17000C37 RID: 3127
+		// (get) Token: 0x06006D39 RID: 27961 RVA: 0x002AB90D File Offset: 0x002A9B0D
 		[XuiXmlBinding("sameversion")]
 		public bool SameVersion
 		{
@@ -811,15 +811,15 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			}
 		}
 
-		// Token: 0x04005358 RID: 21336
+		// Token: 0x0400537D RID: 21373
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_ServersList parentList;
 	}
 
-	// Token: 0x02000DF9 RID: 3577
+	// Token: 0x02000E04 RID: 3588
 	public class UiServerFilter : IServerListInterface.ServerFilter
 	{
-		// Token: 0x06006D19 RID: 27929 RVA: 0x002AA46A File Offset: 0x002A866A
+		// Token: 0x06006D3E RID: 27966 RVA: 0x002AB992 File Offset: 0x002A9B92
 		public UiServerFilter(string _name, XUiC_ServersList.EnumServerLists _applyingTo, Func<XUiC_ServersList.ListEntry, bool> _func = null, IServerListInterface.ServerFilter.EServerFilterType _type = IServerListInterface.ServerFilter.EServerFilterType.Any, int _intMinValue = 0, int _intMaxValue = 0, bool _boolValue = false, string _stringNeedle = null)
 			: base(_name, _type, _intMinValue, _intMaxValue, _boolValue, _stringNeedle)
 		{
@@ -827,52 +827,52 @@ public class XUiC_ServersList : XUiC_List<XUiC_ServersList.ListEntry>
 			this.ApplyingLists = _applyingTo;
 		}
 
-		// Token: 0x04005359 RID: 21337
+		// Token: 0x0400537E RID: 21374
 		public readonly Func<XUiC_ServersList.ListEntry, bool> Func;
 
-		// Token: 0x0400535A RID: 21338
+		// Token: 0x0400537F RID: 21375
 		public readonly XUiC_ServersList.EnumServerLists ApplyingLists;
 	}
 
-	// Token: 0x02000DFA RID: 3578
+	// Token: 0x02000E05 RID: 3589
 	[Flags]
 	public enum EnumServerLists
 	{
-		// Token: 0x0400535C RID: 21340
+		// Token: 0x04005381 RID: 21377
 		None = 0,
-		// Token: 0x0400535D RID: 21341
+		// Token: 0x04005382 RID: 21378
 		Dedicated = 1,
-		// Token: 0x0400535E RID: 21342
+		// Token: 0x04005383 RID: 21379
 		Peer = 2,
-		// Token: 0x0400535F RID: 21343
+		// Token: 0x04005384 RID: 21380
 		Friends = 4,
-		// Token: 0x04005360 RID: 21344
+		// Token: 0x04005385 RID: 21381
 		History = 8,
-		// Token: 0x04005361 RID: 21345
+		// Token: 0x04005386 RID: 21382
 		LAN = 16,
-		// Token: 0x04005362 RID: 21346
+		// Token: 0x04005387 RID: 21383
 		Regular = 3,
-		// Token: 0x04005363 RID: 21347
+		// Token: 0x04005388 RID: 21384
 		Special = 28,
-		// Token: 0x04005364 RID: 21348
+		// Token: 0x04005389 RID: 21385
 		All = 31
 	}
 
-	// Token: 0x02000DFB RID: 3579
+	// Token: 0x02000E06 RID: 3590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EnumColumns
 	{
-		// Token: 0x04005366 RID: 21350
+		// Token: 0x0400538B RID: 21387
 		ServerName,
-		// Token: 0x04005367 RID: 21351
+		// Token: 0x0400538C RID: 21388
 		World,
-		// Token: 0x04005368 RID: 21352
+		// Token: 0x0400538D RID: 21389
 		Difficulty,
-		// Token: 0x04005369 RID: 21353
+		// Token: 0x0400538E RID: 21390
 		Players,
-		// Token: 0x0400536A RID: 21354
+		// Token: 0x0400538F RID: 21391
 		Ping,
-		// Token: 0x0400536B RID: 21355
+		// Token: 0x04005390 RID: 21392
 		Count
 	}
 }

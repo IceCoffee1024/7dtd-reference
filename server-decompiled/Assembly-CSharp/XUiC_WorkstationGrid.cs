@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020010E0 RID: 4320
+// Token: 0x020010F0 RID: 4336
 [Preserve]
 public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 {
-	// Token: 0x17001022 RID: 4130
-	// (get) Token: 0x06008956 RID: 35158 RVA: 0x00348303 File Offset: 0x00346503
+	// Token: 0x1700102D RID: 4141
+	// (get) Token: 0x060089A9 RID: 35241 RVA: 0x0034A387 File Offset: 0x00348587
 	public XUiM_Workstation WorkstationData
 	{
 		get
@@ -15,8 +15,8 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x17001023 RID: 4131
-	// (get) Token: 0x06008957 RID: 35159 RVA: 0x000601CD File Offset: 0x0005E3CD
+	// Token: 0x1700102E RID: 4142
+	// (get) Token: 0x060089AA RID: 35242 RVA: 0x00060491 File Offset: 0x0005E691
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -26,19 +26,19 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06008958 RID: 35160 RVA: 0x0034830B File Offset: 0x0034650B
+	// Token: 0x060089AB RID: 35243 RVA: 0x0034A38F File Offset: 0x0034858F
 	public virtual void SetSlots(ItemStack[] stacks)
 	{
 		base.SetStacks(stacks);
 	}
 
-	// Token: 0x06008959 RID: 35161 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060089AC RID: 35244 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool HasRequirement(Recipe recipe)
 	{
 		return true;
 	}
 
-	// Token: 0x0600895A RID: 35162 RVA: 0x00348314 File Offset: 0x00346514
+	// Token: 0x060089AD RID: 35245 RVA: 0x0034A398 File Offset: 0x00348598
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -50,7 +50,7 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600895B RID: 35163 RVA: 0x0034836F File Offset: 0x0034656F
+	// Token: 0x060089AE RID: 35246 RVA: 0x0034A3F3 File Offset: 0x003485F3
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -61,7 +61,7 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600895C RID: 35164 RVA: 0x003483A4 File Offset: 0x003465A4
+	// Token: 0x060089AF RID: 35247 RVA: 0x0034A428 File Offset: 0x00348628
 	public int AddToItemStackArray(ItemStack _itemStack)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -95,7 +95,7 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		return num;
 	}
 
-	// Token: 0x0600895D RID: 35165 RVA: 0x0034842C File Offset: 0x0034662C
+	// Token: 0x060089B0 RID: 35248 RVA: 0x0034A4B0 File Offset: 0x003486B0
 	public virtual bool AddItem(ItemClass _itemClass, ItemStack _itemStack)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation, -1))
@@ -107,7 +107,7 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		return _itemStack.count > 0 && this.AddItem(_itemStack);
 	}
 
-	// Token: 0x0600895E RID: 35166 RVA: 0x00348468 File Offset: 0x00346668
+	// Token: 0x060089B1 RID: 35249 RVA: 0x0034A4EC File Offset: 0x003486EC
 	public bool TryStackItem(int startIndex, ItemStack _itemStack)
 	{
 		int num = 0;
@@ -131,7 +131,7 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		return false;
 	}
 
-	// Token: 0x0600895F RID: 35167 RVA: 0x00348514 File Offset: 0x00346714
+	// Token: 0x060089B2 RID: 35250 RVA: 0x0034A598 File Offset: 0x00348798
 	public bool AddItem(ItemStack _itemStack)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation, -1))
@@ -151,7 +151,7 @@ public class XUiC_WorkstationGrid : XUiC_ItemStackGrid
 		return false;
 	}
 
-	// Token: 0x04006642 RID: 26178
+	// Token: 0x04006681 RID: 26241
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiM_Workstation workstationData;
 }

@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001936 RID: 6454
+	// Token: 0x02001967 RID: 6503
 	[Preserve]
 	public class ChallengeObjectiveMeetTrader : BaseChallengeObjective
 	{
-		// Token: 0x1700191E RID: 6430
-		// (get) Token: 0x0600C74D RID: 51021 RVA: 0x000F659D File Offset: 0x000F479D
+		// Token: 0x17001966 RID: 6502
+		// (get) Token: 0x0600C861 RID: 51297 RVA: 0x000F6AD5 File Offset: 0x000F4CD5
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700191F RID: 6431
-		// (get) Token: 0x0600C74E RID: 51022 RVA: 0x00491CB8 File Offset: 0x0048FEB8
+		// Token: 0x17001967 RID: 6503
+		// (get) Token: 0x0600C862 RID: 51298 RVA: 0x004956AC File Offset: 0x004938AC
 		public override string DescriptionText
 		{
 			get
@@ -32,24 +32,24 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C74F RID: 51023 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C863 RID: 51299 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C750 RID: 51024 RVA: 0x00491D07 File Offset: 0x0048FF07
+		// Token: 0x0600C864 RID: 51300 RVA: 0x004956FB File Offset: 0x004938FB
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.NPCMeet += this.Current_NPCMeet;
 		}
 
-		// Token: 0x0600C751 RID: 51025 RVA: 0x00491D1F File Offset: 0x0048FF1F
+		// Token: 0x0600C865 RID: 51301 RVA: 0x00495713 File Offset: 0x00493913
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.NPCMeet -= this.Current_NPCMeet;
 		}
 
-		// Token: 0x0600C752 RID: 51026 RVA: 0x00491D38 File Offset: 0x0048FF38
+		// Token: 0x0600C866 RID: 51302 RVA: 0x0049572C File Offset: 0x0049392C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_NPCMeet(EntityNPC npc)
 		{
@@ -69,7 +69,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C753 RID: 51027 RVA: 0x00491DA5 File Offset: 0x0048FFA5
+		// Token: 0x0600C867 RID: 51303 RVA: 0x00495799 File Offset: 0x00493999
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -79,7 +79,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C754 RID: 51028 RVA: 0x00491DD6 File Offset: 0x0048FFD6
+		// Token: 0x0600C868 RID: 51304 RVA: 0x004957CA File Offset: 0x004939CA
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveMeetTrader
@@ -88,7 +88,7 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0400962B RID: 38443
+		// Token: 0x04009714 RID: 38676
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string TraderName = "";
 	}

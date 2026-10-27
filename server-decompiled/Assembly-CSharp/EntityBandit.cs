@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200048C RID: 1164
+// Token: 0x0200048E RID: 1166
 [Preserve]
 public class EntityBandit : EntityHuman
 {
-	// Token: 0x0600240C RID: 9228 RVA: 0x000DA732 File Offset: 0x000D8932
+	// Token: 0x06002412 RID: 9234 RVA: 0x000DAAB6 File Offset: 0x000D8CB6
 	public override void InitInventory()
 	{
 		if (this.inventory == null)
@@ -15,7 +15,7 @@ public class EntityBandit : EntityHuman
 		}
 	}
 
-	// Token: 0x0600240D RID: 9229 RVA: 0x000DA74C File Offset: 0x000D894C
+	// Token: 0x06002413 RID: 9235 RVA: 0x000DAAD0 File Offset: 0x000D8CD0
 	public override void PostInit()
 	{
 		string @string = EntityClass.list[this.entityClass].Properties.GetString(EntityClass.PropHandItem);
@@ -41,19 +41,19 @@ public class EntityBandit : EntityHuman
 		}
 	}
 
-	// Token: 0x0600240E RID: 9230 RVA: 0x000DA818 File Offset: 0x000D8A18
+	// Token: 0x06002414 RID: 9236 RVA: 0x000DAB9C File Offset: 0x000D8D9C
 	public override void OnAddedToWorld()
 	{
 		base.OnAddedToWorld();
 	}
 
-	// Token: 0x0600240F RID: 9231 RVA: 0x000DA820 File Offset: 0x000D8A20
+	// Token: 0x06002415 RID: 9237 RVA: 0x000DABA4 File Offset: 0x000D8DA4
 	public override void SetupHandItem()
 	{
 		this.ShowHoldingItem(true);
 	}
 
-	// Token: 0x06002410 RID: 9232 RVA: 0x000DA82C File Offset: 0x000D8A2C
+	// Token: 0x06002416 RID: 9238 RVA: 0x000DABB0 File Offset: 0x000D8DB0
 	public override bool UseHoldingItem(int _actionIndex, bool _isReleased)
 	{
 		if (!_isReleased)
@@ -72,7 +72,7 @@ public class EntityBandit : EntityHuman
 		return base.UseHoldingItem(_actionIndex, _isReleased);
 	}
 
-	// Token: 0x06002411 RID: 9233 RVA: 0x000DA898 File Offset: 0x000D8A98
+	// Token: 0x06002417 RID: 9239 RVA: 0x000DAC1C File Offset: 0x000D8E1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTasks()
 	{
@@ -84,19 +84,19 @@ public class EntityBandit : EntityHuman
 		}
 	}
 
-	// Token: 0x06002412 RID: 9234 RVA: 0x000DA8C2 File Offset: 0x000D8AC2
+	// Token: 0x06002418 RID: 9240 RVA: 0x000DAC46 File Offset: 0x000D8E46
 	public override bool GetAimTarget(out Vector3 aimTarget)
 	{
 		return AIFocusAim.GetActiveFocus(this, this.focusAim, out aimTarget) || base.GetAimTarget(out aimTarget);
 	}
 
-	// Token: 0x06002413 RID: 9235 RVA: 0x000DA8DC File Offset: 0x000D8ADC
+	// Token: 0x06002419 RID: 9241 RVA: 0x000DAC60 File Offset: 0x000D8E60
 	public override bool GetHeadLookTarget(out Vector3 lookTarget)
 	{
 		return AIFocusAim.GetActiveFocus(this, this.focusAim, out lookTarget) || base.GetHeadLookTarget(out lookTarget);
 	}
 
-	// Token: 0x06002414 RID: 9236 RVA: 0x000DA8F8 File Offset: 0x000D8AF8
+	// Token: 0x0600241A RID: 9242 RVA: 0x000DAC7C File Offset: 0x000D8E7C
 	public override bool CalcStrafeYawOffset(float _moveX, float _moveZ, ref float _desiredyaw, ref float _yawOffset)
 	{
 		float num;
@@ -110,23 +110,23 @@ public class EntityBandit : EntityHuman
 		return false;
 	}
 
-	// Token: 0x0400198B RID: 6539
+	// Token: 0x0400199B RID: 6555
 	public readonly AIFocus<AIFocusBody> focusBody = new AIFocus<AIFocusBody>(true);
 
-	// Token: 0x0400198C RID: 6540
+	// Token: 0x0400199C RID: 6556
 	public readonly AIFocus<AIFocusAim> focusAim = new AIFocus<AIFocusAim>(true);
 
-	// Token: 0x0200048D RID: 1165
+	// Token: 0x0200048F RID: 1167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum InvSlots
 	{
-		// Token: 0x0400198E RID: 6542
+		// Token: 0x0400199E RID: 6558
 		Melee,
-		// Token: 0x0400198F RID: 6543
+		// Token: 0x0400199F RID: 6559
 		Ranged,
-		// Token: 0x04001990 RID: 6544
+		// Token: 0x040019A0 RID: 6560
 		Thrown,
-		// Token: 0x04001991 RID: 6545
+		// Token: 0x040019A1 RID: 6561
 		Heal
 	}
 }

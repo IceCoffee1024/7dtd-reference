@@ -5,11 +5,11 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C52 RID: 7250
+	// Token: 0x02001C83 RID: 7299
 	public class XblSandboxHelper
 	{
-		// Token: 0x17001B35 RID: 6965
-		// (get) Token: 0x0600D752 RID: 55122 RVA: 0x004D43CC File Offset: 0x004D25CC
+		// Token: 0x17001B7D RID: 7037
+		// (get) Token: 0x0600D866 RID: 55398 RVA: 0x004D7EF4 File Offset: 0x004D60F4
 		public string SandboxId
 		{
 			get
@@ -24,14 +24,14 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D753 RID: 55123 RVA: 0x004D43F0 File Offset: 0x004D25F0
+		// Token: 0x0600D867 RID: 55399 RVA: 0x004D7F18 File Offset: 0x004D6118
 		public void RefreshSandboxId()
 		{
 			this.sandboxId = null;
 			ThreadManager.AddSingleTask(new ThreadManager.TaskFunctionDelegate(this.<RefreshSandboxId>g__GetSandboxTask|3_0), null, null, true);
 		}
 
-		// Token: 0x0600D754 RID: 55124 RVA: 0x004D440E File Offset: 0x004D260E
+		// Token: 0x0600D868 RID: 55400 RVA: 0x004D7F36 File Offset: 0x004D6136
 		public static EMatchmakingGroup SandboxIdToMatchmakingGroup(string sandboxId)
 		{
 			if (sandboxId == "CERT" || sandboxId == "CERT.DEBUG")
@@ -45,7 +45,7 @@ namespace Platform.XBL
 			return EMatchmakingGroup.Retail;
 		}
 
-		// Token: 0x0600D755 RID: 55125 RVA: 0x004D443E File Offset: 0x004D263E
+		// Token: 0x0600D869 RID: 55401 RVA: 0x004D7F66 File Offset: 0x004D6166
 		public static DLCEnvironmentFlags SandboxIdToDLCEnvironment(string sandboxId)
 		{
 			if (sandboxId == "CERT" || sandboxId == "CERT.DEBUG")
@@ -59,7 +59,7 @@ namespace Platform.XBL
 			return DLCEnvironmentFlags.Retail;
 		}
 
-		// Token: 0x0600D757 RID: 55127 RVA: 0x004D4470 File Offset: 0x004D2670
+		// Token: 0x0600D86B RID: 55403 RVA: 0x004D7F98 File Offset: 0x004D6198
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <RefreshSandboxId>g__GetSandboxTask|3_0(ThreadManager.TaskInfo taskInfo)
@@ -74,7 +74,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0400A3BC RID: 41916
+		// Token: 0x0400A4A5 RID: 42149
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string sandboxId;
 	}

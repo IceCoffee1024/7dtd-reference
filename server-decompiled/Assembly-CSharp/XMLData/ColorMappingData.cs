@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace XMLData
 {
-	// Token: 0x02001657 RID: 5719
+	// Token: 0x02001669 RID: 5737
 	[Preserve]
 	public class ColorMappingData : IXMLData
 	{
-		// Token: 0x17001544 RID: 5444
-		// (get) Token: 0x0600B31A RID: 45850 RVA: 0x0042C2A3 File Offset: 0x0042A4A3
+		// Token: 0x17001550 RID: 5456
+		// (get) Token: 0x0600B372 RID: 45938 RVA: 0x0042E6A7 File Offset: 0x0042C8A7
 		public static ColorMappingData Instance
 		{
 			get
@@ -24,7 +24,7 @@ namespace XMLData
 			}
 		}
 
-		// Token: 0x0600B31B RID: 45851 RVA: 0x0042C2B9 File Offset: 0x0042A4B9
+		// Token: 0x0600B373 RID: 45939 RVA: 0x0042E6BD File Offset: 0x0042C8BD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ColorMappingData()
 		{
@@ -33,17 +33,17 @@ namespace XMLData
 			this.ColorFromID = new Dictionary<int, Color>();
 		}
 
-		// Token: 0x04008677 RID: 34423
+		// Token: 0x040086B8 RID: 34488
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ColorMappingData instance;
 
-		// Token: 0x04008678 RID: 34424
+		// Token: 0x040086B9 RID: 34489
 		public Dictionary<string, int> IDFromName;
 
-		// Token: 0x04008679 RID: 34425
+		// Token: 0x040086BA RID: 34490
 		public Dictionary<int, string> NameFromID;
 
-		// Token: 0x0400867A RID: 34426
+		// Token: 0x040086BB RID: 34491
 		public Dictionary<int, Color> ColorFromID;
 	}
 }

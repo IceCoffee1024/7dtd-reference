@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace CoverClippingTool
 {
-	// Token: 0x02001693 RID: 5779
+	// Token: 0x020016A5 RID: 5797
 	[Serializable]
 	public struct SelectedBlockInfo
 	{
-		// Token: 0x170015EA RID: 5610
-		// (get) Token: 0x0600B4E5 RID: 46309 RVA: 0x00439D96 File Offset: 0x00437F96
-		// (set) Token: 0x0600B4E6 RID: 46310 RVA: 0x00439DA0 File Offset: 0x00437FA0
+		// Token: 0x170015F6 RID: 5622
+		// (get) Token: 0x0600B53D RID: 46397 RVA: 0x0043C19A File Offset: 0x0043A39A
+		// (set) Token: 0x0600B53E RID: 46398 RVA: 0x0043C1A4 File Offset: 0x0043A3A4
 		public BlockShapeInfo shapeInfo
 		{
 			get
@@ -26,8 +26,8 @@ namespace CoverClippingTool
 			}
 		}
 
-		// Token: 0x170015EB RID: 5611
-		// (get) Token: 0x0600B4E7 RID: 46311 RVA: 0x00439DF2 File Offset: 0x00437FF2
+		// Token: 0x170015F7 RID: 5623
+		// (get) Token: 0x0600B53F RID: 46399 RVA: 0x0043C1F6 File Offset: 0x0043A3F6
 		public ShapeReference savedShapeReference
 		{
 			get
@@ -36,7 +36,7 @@ namespace CoverClippingTool
 			}
 		}
 
-		// Token: 0x0600B4E8 RID: 46312 RVA: 0x00439DFA File Offset: 0x00437FFA
+		// Token: 0x0600B540 RID: 46400 RVA: 0x0043C1FE File Offset: 0x0043A3FE
 		public SelectedBlockInfo(int thisIsDumb)
 		{
 			this._shapeInfo = null;
@@ -44,17 +44,17 @@ namespace CoverClippingTool
 			this.renderables = new List<Renderable>();
 		}
 
-		// Token: 0x0400877F RID: 34687
+		// Token: 0x040087C0 RID: 34752
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public BlockShapeInfo _shapeInfo;
 
-		// Token: 0x04008780 RID: 34688
+		// Token: 0x040087C1 RID: 34753
 		[SerializeField]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ShapeReference _savedShapeReference;
 
-		// Token: 0x04008781 RID: 34689
+		// Token: 0x040087C2 RID: 34754
 		public readonly List<Renderable> renderables;
 	}
 }

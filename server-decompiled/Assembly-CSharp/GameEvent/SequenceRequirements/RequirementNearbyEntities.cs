@@ -5,17 +5,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200196A RID: 6506
+	// Token: 0x0200199B RID: 6555
 	[Preserve]
 	public class RequirementNearbyEntities : BaseRequirement
 	{
-		// Token: 0x0600C894 RID: 51348 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C9A8 RID: 51624 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C895 RID: 51349 RVA: 0x00495D38 File Offset: 0x00493F38
+		// Token: 0x0600C9A9 RID: 51625 RVA: 0x0049972C File Offset: 0x0049792C
 		public override bool CanPerform(Entity target)
 		{
 			FastTags<TagGroup.Global> fastTags = ((this.tag == "") ? FastTags<TagGroup.Global>.none : FastTags<TagGroup.Global>.Parse(this.tag));
@@ -69,7 +69,7 @@ namespace GameEvent.SequenceRequirements
 			return false;
 		}
 
-		// Token: 0x0600C896 RID: 51350 RVA: 0x00495EA3 File Offset: 0x004940A3
+		// Token: 0x0600C9AA RID: 51626 RVA: 0x00499897 File Offset: 0x00497A97
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -78,7 +78,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseEnum<RequirementNearbyEntities.EntityStates>(RequirementNearbyEntities.PropEntityState, ref this.currentState);
 		}
 
-		// Token: 0x0600C897 RID: 51351 RVA: 0x00495EDF File Offset: 0x004940DF
+		// Token: 0x0600C9AB RID: 51627 RVA: 0x004998D3 File Offset: 0x00497AD3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -90,45 +90,45 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040096BF RID: 38591
+		// Token: 0x040097A8 RID: 38824
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string tag = "";
 
-		// Token: 0x040096C0 RID: 38592
+		// Token: 0x040097A9 RID: 38825
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 10f;
 
-		// Token: 0x040096C1 RID: 38593
+		// Token: 0x040097AA RID: 38826
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool targetIsOwner;
 
-		// Token: 0x040096C2 RID: 38594
+		// Token: 0x040097AB RID: 38827
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public RequirementNearbyEntities.EntityStates currentState;
 
-		// Token: 0x040096C3 RID: 38595
+		// Token: 0x040097AC RID: 38828
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTag = "entity_tags";
 
-		// Token: 0x040096C4 RID: 38596
+		// Token: 0x040097AD RID: 38829
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEntityState = "entity_state";
 
-		// Token: 0x040096C5 RID: 38597
+		// Token: 0x040097AE RID: 38830
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x040096C6 RID: 38598
+		// Token: 0x040097AF RID: 38831
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetIsOwner = "target_is_owner";
 
-		// Token: 0x0200196B RID: 6507
+		// Token: 0x0200199C RID: 6556
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum EntityStates
 		{
-			// Token: 0x040096C8 RID: 38600
+			// Token: 0x040097B1 RID: 38833
 			Live,
-			// Token: 0x040096C9 RID: 38601
+			// Token: 0x040097B2 RID: 38834
 			Dead
 		}
 	}

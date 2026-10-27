@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000833 RID: 2099
+// Token: 0x0200083D RID: 2109
 [Preserve]
 public class NetPackagePlayerVendingMachine : NetPackage
 {
-	// Token: 0x06003D56 RID: 15702 RVA: 0x00186575 File Offset: 0x00184775
+	// Token: 0x06003D79 RID: 15737 RVA: 0x00187679 File Offset: 0x00185879
 	public NetPackagePlayerVendingMachine Setup(PlatformUserIdentifierAbs _userId, Vector3i _position, bool _removing)
 	{
 		this.userId = _userId;
@@ -14,7 +14,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D57 RID: 15703 RVA: 0x0018658D File Offset: 0x0018478D
+	// Token: 0x06003D7A RID: 15738 RVA: 0x00187691 File Offset: 0x00185891
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.userId = PlatformUserIdentifierAbs.FromStream(_reader, false, false);
@@ -22,7 +22,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		this.removing = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003D58 RID: 15704 RVA: 0x001865C8 File Offset: 0x001847C8
+	// Token: 0x06003D7B RID: 15739 RVA: 0x001876CC File Offset: 0x001858CC
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -33,7 +33,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		_writer.Write(this.removing);
 	}
 
-	// Token: 0x06003D59 RID: 15705 RVA: 0x00186628 File Offset: 0x00184828
+	// Token: 0x06003D7C RID: 15740 RVA: 0x0018772C File Offset: 0x0018592C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		PersistentPlayerData persistentPlayerData2;
@@ -52,12 +52,12 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		}
 	}
 
-	// Token: 0x040031CA RID: 12746
+	// Token: 0x040031EA RID: 12778
 	public PlatformUserIdentifierAbs userId;
 
-	// Token: 0x040031CB RID: 12747
+	// Token: 0x040031EB RID: 12779
 	public Vector3i position;
 
-	// Token: 0x040031CC RID: 12748
+	// Token: 0x040031EC RID: 12780
 	public bool removing;
 }

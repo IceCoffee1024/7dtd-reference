@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200098B RID: 2443
+// Token: 0x02000995 RID: 2453
 [Preserve]
 public class ObjectiveAssemble : BaseObjective
 {
-	// Token: 0x06004701 RID: 18177 RVA: 0x001C0911 File Offset: 0x001BEB11
+	// Token: 0x06004724 RID: 18212 RVA: 0x001C1995 File Offset: 0x001BFB95
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveAssemble_keyword", false, null);
@@ -14,26 +14,26 @@ public class ObjectiveAssemble : BaseObjective
 		this.expectedItemClass = ItemClass.GetItemClass(this.ID, false);
 	}
 
-	// Token: 0x06004702 RID: 18178 RVA: 0x001C0949 File Offset: 0x001BEB49
+	// Token: 0x06004725 RID: 18213 RVA: 0x001C19CD File Offset: 0x001BFBCD
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.expectedItemClass.GetLocalizedItemName());
 		this.StatusText = "";
 	}
 
-	// Token: 0x06004703 RID: 18179 RVA: 0x001C0972 File Offset: 0x001BEB72
+	// Token: 0x06004726 RID: 18214 RVA: 0x001C19F6 File Offset: 0x001BFBF6
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.AssembleItem += this.Current_AssembleItem;
 	}
 
-	// Token: 0x06004704 RID: 18180 RVA: 0x001C098A File Offset: 0x001BEB8A
+	// Token: 0x06004727 RID: 18215 RVA: 0x001C1A0E File Offset: 0x001BFC0E
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.AssembleItem -= this.Current_AssembleItem;
 	}
 
-	// Token: 0x06004705 RID: 18181 RVA: 0x001C09A2 File Offset: 0x001BEBA2
+	// Token: 0x06004728 RID: 18216 RVA: 0x001C1A26 File Offset: 0x001BFC26
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_AssembleItem(ItemStack stack)
 	{
@@ -44,7 +44,7 @@ public class ObjectiveAssemble : BaseObjective
 		}
 	}
 
-	// Token: 0x06004706 RID: 18182 RVA: 0x001C09D8 File Offset: 0x001BEBD8
+	// Token: 0x06004729 RID: 18217 RVA: 0x001C1A5C File Offset: 0x001BFC5C
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -59,7 +59,7 @@ public class ObjectiveAssemble : BaseObjective
 		}
 	}
 
-	// Token: 0x06004707 RID: 18183 RVA: 0x001C0A18 File Offset: 0x001BEC18
+	// Token: 0x0600472A RID: 18218 RVA: 0x001C1A9C File Offset: 0x001BFC9C
 	public override BaseObjective Clone()
 	{
 		ObjectiveAssemble objectiveAssemble = new ObjectiveAssemble();
@@ -67,22 +67,22 @@ public class ObjectiveAssemble : BaseObjective
 		return objectiveAssemble;
 	}
 
-	// Token: 0x06004708 RID: 18184 RVA: 0x001C0A33 File Offset: 0x001BEC33
+	// Token: 0x0600472B RID: 18219 RVA: 0x001C1AB7 File Offset: 0x001BFCB7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
 		parameters.Add("expected_item_id", this.expectedItem.ItemClass.Name);
 	}
 
-	// Token: 0x04003951 RID: 14673
+	// Token: 0x04003971 RID: 14705
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x04003952 RID: 14674
+	// Token: 0x04003972 RID: 14706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04003953 RID: 14675
+	// Token: 0x04003973 RID: 14707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool assembled;
 }

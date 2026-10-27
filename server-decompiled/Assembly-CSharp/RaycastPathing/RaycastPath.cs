@@ -5,21 +5,21 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018F1 RID: 6385
+	// Token: 0x02001922 RID: 6434
 	[Preserve]
 	public class RaycastPath
 	{
-		// Token: 0x170018C2 RID: 6338
-		// (get) Token: 0x0600C50E RID: 50446 RVA: 0x00488602 File Offset: 0x00486802
-		// (set) Token: 0x0600C50F RID: 50447 RVA: 0x0048860A File Offset: 0x0048680A
+		// Token: 0x1700190A RID: 6410
+		// (get) Token: 0x0600C622 RID: 50722 RVA: 0x0048BFAE File Offset: 0x0048A1AE
+		// (set) Token: 0x0600C623 RID: 50723 RVA: 0x0048BFB6 File Offset: 0x0048A1B6
 		public RaycastPathInfo Info
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170018C3 RID: 6339
-		// (get) Token: 0x0600C510 RID: 50448 RVA: 0x00488613 File Offset: 0x00486813
+		// Token: 0x1700190B RID: 6411
+		// (get) Token: 0x0600C624 RID: 50724 RVA: 0x0048BFBF File Offset: 0x0048A1BF
 		public Vector3 Start
 		{
 			get
@@ -28,8 +28,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018C4 RID: 6340
-		// (get) Token: 0x0600C511 RID: 50449 RVA: 0x00488620 File Offset: 0x00486820
+		// Token: 0x1700190C RID: 6412
+		// (get) Token: 0x0600C625 RID: 50725 RVA: 0x0048BFCC File Offset: 0x0048A1CC
 		public Vector3 Target
 		{
 			get
@@ -38,8 +38,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018C5 RID: 6341
-		// (get) Token: 0x0600C512 RID: 50450 RVA: 0x0048862D File Offset: 0x0048682D
+		// Token: 0x1700190D RID: 6413
+		// (get) Token: 0x0600C626 RID: 50726 RVA: 0x0048BFD9 File Offset: 0x0048A1D9
 		public Vector3i StartBlockPos
 		{
 			get
@@ -48,8 +48,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018C6 RID: 6342
-		// (get) Token: 0x0600C513 RID: 50451 RVA: 0x0048863A File Offset: 0x0048683A
+		// Token: 0x1700190E RID: 6414
+		// (get) Token: 0x0600C627 RID: 50727 RVA: 0x0048BFE6 File Offset: 0x0048A1E6
 		public Vector3i TargetBlockPos
 		{
 			get
@@ -58,8 +58,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018C7 RID: 6343
-		// (get) Token: 0x0600C514 RID: 50452 RVA: 0x00488647 File Offset: 0x00486847
+		// Token: 0x1700190F RID: 6415
+		// (get) Token: 0x0600C628 RID: 50728 RVA: 0x0048BFF3 File Offset: 0x0048A1F3
 		public bool PathStartsIndoors
 		{
 			get
@@ -68,8 +68,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018C8 RID: 6344
-		// (get) Token: 0x0600C515 RID: 50453 RVA: 0x00488654 File Offset: 0x00486854
+		// Token: 0x17001910 RID: 6416
+		// (get) Token: 0x0600C629 RID: 50729 RVA: 0x0048C000 File Offset: 0x0048A200
 		public bool PathEndsIndoors
 		{
 			get
@@ -78,27 +78,27 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C516 RID: 50454 RVA: 0x00488661 File Offset: 0x00486861
+		// Token: 0x0600C62A RID: 50730 RVA: 0x0048C00D File Offset: 0x0048A20D
 		public RaycastPath(Vector3 start, Vector3 target)
 		{
 			this.Info = new RaycastPathInfo(start, target);
 			RaycastPathManager.Instance.Add(this);
 		}
 
-		// Token: 0x0600C517 RID: 50455 RVA: 0x00488698 File Offset: 0x00486898
+		// Token: 0x0600C62B RID: 50731 RVA: 0x0048C044 File Offset: 0x0048A244
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~RaycastPath()
 		{
 			this.Destruct();
 		}
 
-		// Token: 0x0600C518 RID: 50456 RVA: 0x004886C4 File Offset: 0x004868C4
+		// Token: 0x0600C62C RID: 50732 RVA: 0x0048C070 File Offset: 0x0048A270
 		public void Destruct()
 		{
 			RaycastPathManager.Instance.Remove(this);
 		}
 
-		// Token: 0x0600C519 RID: 50457 RVA: 0x004886D1 File Offset: 0x004868D1
+		// Token: 0x0600C62D RID: 50733 RVA: 0x0048C07D File Offset: 0x0048A27D
 		public void AddNode(RaycastNode node)
 		{
 			if (!this.Nodes.Contains(node))
@@ -107,7 +107,7 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C51A RID: 50458 RVA: 0x004886ED File Offset: 0x004868ED
+		// Token: 0x0600C62E RID: 50734 RVA: 0x0048C099 File Offset: 0x0048A299
 		public void AddProjectedPoint(Vector3 point)
 		{
 			if (!this.ProjectedPoints.Contains(point))
@@ -116,7 +116,7 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C51B RID: 50459 RVA: 0x0048870C File Offset: 0x0048690C
+		// Token: 0x0600C62F RID: 50735 RVA: 0x0048C0B8 File Offset: 0x0048A2B8
 		public virtual void DebugDraw()
 		{
 			for (int i = 0; i < this.ProjectedPoints.Count - 1; i++)
@@ -173,10 +173,10 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x040094DD RID: 38109
+		// Token: 0x040095C6 RID: 38342
 		public List<RaycastNode> Nodes = new List<RaycastNode>();
 
-		// Token: 0x040094DE RID: 38110
+		// Token: 0x040095C7 RID: 38343
 		public List<Vector3> ProjectedPoints = new List<Vector3>();
 	}
 }

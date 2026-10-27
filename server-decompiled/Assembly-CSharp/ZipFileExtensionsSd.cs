@@ -2,17 +2,17 @@
 using System.IO;
 using System.IO.Compression;
 
-// Token: 0x020013BD RID: 5053
+// Token: 0x020013CF RID: 5071
 public static class ZipFileExtensionsSd
 {
-	// Token: 0x06009F16 RID: 40726 RVA: 0x003C12D0 File Offset: 0x003BF4D0
+	// Token: 0x06009F6E RID: 40814 RVA: 0x003C36D4 File Offset: 0x003C18D4
 	public static void CreateFromDirectory(this ZipArchive archiveZip, string saveDir)
 	{
 		Log.Out("[BACKTRACE] CreateFromDirectory Path: " + saveDir);
 		archiveZip.CreateFromDirectory(saveDir, CompressionLevel.Optimal, false);
 	}
 
-	// Token: 0x06009F17 RID: 40727 RVA: 0x003C12EC File Offset: 0x003BF4EC
+	// Token: 0x06009F6F RID: 40815 RVA: 0x003C36F0 File Offset: 0x003C18F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateFromDirectory(this ZipArchive destination, string sourceDirectoryName, CompressionLevel compressionLevel, bool includeBaseDirectory)
 	{
@@ -51,7 +51,7 @@ public static class ZipFileExtensionsSd
 		destination.CreateEntry(text3 + "/");
 	}
 
-	// Token: 0x06009F18 RID: 40728 RVA: 0x003C1430 File Offset: 0x003BF630
+	// Token: 0x06009F70 RID: 40816 RVA: 0x003C3834 File Offset: 0x003C1A34
 	public static ZipArchiveEntry CreateEntryFromFile(this ZipArchive destination, SdFileSystemInfo directoryInfo, string entryName, CompressionLevel compressionLevel)
 	{
 		string fullName = directoryInfo.FullName;
@@ -86,7 +86,7 @@ public static class ZipFileExtensionsSd
 		return zipArchiveEntry2;
 	}
 
-	// Token: 0x06009F19 RID: 40729 RVA: 0x003C150C File Offset: 0x003BF70C
+	// Token: 0x06009F71 RID: 40817 RVA: 0x003C3910 File Offset: 0x003C1B10
 	public static void AddSearchPattern(this ZipArchive destination, SdDirectoryInfo directoryInfo, string pattern, SearchOption options)
 	{
 		string fullName = directoryInfo.FullName;
@@ -111,7 +111,7 @@ public static class ZipFileExtensionsSd
 		}
 	}
 
-	// Token: 0x06009F1A RID: 40730 RVA: 0x003C1600 File Offset: 0x003BF800
+	// Token: 0x06009F72 RID: 40818 RVA: 0x003C3A04 File Offset: 0x003C1C04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string EntryFromPath(string entry, int offset, int length)
 	{

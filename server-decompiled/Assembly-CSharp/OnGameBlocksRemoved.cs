@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000532 RID: 1330
-// (Invoke) Token: 0x06002B7A RID: 11130
+// Token: 0x02000536 RID: 1334
+// (Invoke) Token: 0x06002B82 RID: 11138
 public delegate void OnGameBlocksRemoved(int blockGroupRemoved, bool isDespawn);

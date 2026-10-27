@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001639 RID: 5689
+// Token: 0x0200164B RID: 5707
 public class vp_PainHUD : MonoBehaviour
 {
-	// Token: 0x0600B285 RID: 45701 RVA: 0x00429BB5 File Offset: 0x00427DB5
+	// Token: 0x0600B2DD RID: 45789 RVA: 0x0042BFB9 File Offset: 0x0042A1B9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		this.m_Player = base.transform.GetComponent<vp_FPPlayerEventHandler>();
 	}
 
-	// Token: 0x0600B286 RID: 45702 RVA: 0x00429BC8 File Offset: 0x00427DC8
+	// Token: 0x0600B2DE RID: 45790 RVA: 0x0042BFCC File Offset: 0x0042A1CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -22,7 +22,7 @@ public class vp_PainHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B287 RID: 45703 RVA: 0x00429BE4 File Offset: 0x00427DE4
+	// Token: 0x0600B2DF RID: 45791 RVA: 0x0042BFE8 File Offset: 0x0042A1E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -32,7 +32,7 @@ public class vp_PainHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B288 RID: 45704 RVA: 0x00429C00 File Offset: 0x00427E00
+	// Token: 0x0600B2E0 RID: 45792 RVA: 0x0042C004 File Offset: 0x0042A204
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnGUI()
 	{
@@ -41,7 +41,7 @@ public class vp_PainHUD : MonoBehaviour
 		this.UpdateDeathTexture();
 	}
 
-	// Token: 0x0600B289 RID: 45705 RVA: 0x00429C14 File Offset: 0x00427E14
+	// Token: 0x0600B2E1 RID: 45793 RVA: 0x0042C018 File Offset: 0x0042A218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdatePainFlash()
 	{
@@ -59,7 +59,7 @@ public class vp_PainHUD : MonoBehaviour
 		GUI.color = Color.white;
 	}
 
-	// Token: 0x0600B28A RID: 45706 RVA: 0x00429CB0 File Offset: 0x00427EB0
+	// Token: 0x0600B2E2 RID: 45794 RVA: 0x0042C0B4 File Offset: 0x0042A2B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInflictorArrows()
 	{
@@ -94,7 +94,7 @@ public class vp_PainHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B28B RID: 45707 RVA: 0x00429E6E File Offset: 0x0042806E
+	// Token: 0x0600B2E3 RID: 45795 RVA: 0x0042C272 File Offset: 0x0042A472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateDeathTexture()
 	{
@@ -110,7 +110,7 @@ public class vp_PainHUD : MonoBehaviour
 		GUI.DrawTexture(this.m_SplatRect, this.DeathTexture);
 	}
 
-	// Token: 0x0600B28C RID: 45708 RVA: 0x00429EB0 File Offset: 0x004280B0
+	// Token: 0x0600B2E4 RID: 45796 RVA: 0x0042C2B4 File Offset: 0x0042A4B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_HUDDamageFlash(vp_DamageInfo damageInfo)
 	{
@@ -139,7 +139,7 @@ public class vp_PainHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B28D RID: 45709 RVA: 0x00429F98 File Offset: 0x00428198
+	// Token: 0x0600B2E5 RID: 45797 RVA: 0x0042C39C File Offset: 0x0042A59C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStart_Dead()
 	{
@@ -161,7 +161,7 @@ public class vp_PainHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B28E RID: 45710 RVA: 0x0042A0C4 File Offset: 0x004282C4
+	// Token: 0x0600B2E6 RID: 45798 RVA: 0x0042C4C8 File Offset: 0x0042A6C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStop_Dead()
 	{
@@ -172,86 +172,86 @@ public class vp_PainHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04008604 RID: 34308
+	// Token: 0x04008645 RID: 34373
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<vp_PainHUD.Inflictor> m_Inflictors = new List<vp_PainHUD.Inflictor>();
 
-	// Token: 0x04008605 RID: 34309
+	// Token: 0x04008646 RID: 34374
 	public Texture PainTexture;
 
-	// Token: 0x04008606 RID: 34310
+	// Token: 0x04008647 RID: 34375
 	public Texture DeathTexture;
 
-	// Token: 0x04008607 RID: 34311
+	// Token: 0x04008648 RID: 34376
 	public Texture ArrowTexture;
 
-	// Token: 0x04008608 RID: 34312
+	// Token: 0x04008649 RID: 34377
 	public float PainIntensity = 0.2f;
 
-	// Token: 0x04008609 RID: 34313
+	// Token: 0x0400864A RID: 34378
 	[Range(0.01f, 0.5f)]
 	public float ArrowScale = 0.083f;
 
-	// Token: 0x0400860A RID: 34314
+	// Token: 0x0400864B RID: 34379
 	public float ArrowAngleOffset = -135f;
 
-	// Token: 0x0400860B RID: 34315
+	// Token: 0x0400864C RID: 34380
 	public float ArrowVisibleDuration = 1.5f;
 
-	// Token: 0x0400860C RID: 34316
+	// Token: 0x0400864D RID: 34381
 	public float ArrowShakeDuration = 0.125f;
 
-	// Token: 0x0400860D RID: 34317
+	// Token: 0x0400864E RID: 34382
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_LastInflictorTime;
 
-	// Token: 0x0400860E RID: 34318
+	// Token: 0x0400864F RID: 34383
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_PainColor = new Color(0.8f, 0f, 0f, 0f);
 
-	// Token: 0x0400860F RID: 34319
+	// Token: 0x04008650 RID: 34384
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_ArrowColor = new Color(0.8f, 0f, 0f, 0f);
 
-	// Token: 0x04008610 RID: 34320
+	// Token: 0x04008651 RID: 34385
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_FlashInvisibleColor = new Color(1f, 0f, 0f, 0f);
 
-	// Token: 0x04008611 RID: 34321
+	// Token: 0x04008652 RID: 34386
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_SplatColor = Color.white;
 
-	// Token: 0x04008612 RID: 34322
+	// Token: 0x04008653 RID: 34387
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rect m_SplatRect;
 
-	// Token: 0x04008613 RID: 34323
+	// Token: 0x04008654 RID: 34388
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x0200163A RID: 5690
+	// Token: 0x0200164C RID: 5708
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class Inflictor
 	{
-		// Token: 0x0600B290 RID: 45712 RVA: 0x0042A1CD File Offset: 0x004283CD
+		// Token: 0x0600B2E8 RID: 45800 RVA: 0x0042C5D1 File Offset: 0x0042A7D1
 		public Inflictor(Transform transform, float damageTime)
 		{
 			this.Transform = transform;
 			this.DamageTime = damageTime;
 		}
 
-		// Token: 0x04008614 RID: 34324
+		// Token: 0x04008655 RID: 34389
 		public Transform Transform;
 
-		// Token: 0x04008615 RID: 34325
+		// Token: 0x04008656 RID: 34390
 		public float DamageTime;
 	}
 }

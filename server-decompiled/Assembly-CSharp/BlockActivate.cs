@@ -17,7 +17,7 @@ public class BlockActivate : Block
 		}
 	}
 
-	// Token: 0x06000715 RID: 1813 RVA: 0x000334D0 File Offset: 0x000316D0
+	// Token: 0x06000715 RID: 1813 RVA: 0x00033490 File Offset: 0x00031690
 	public override void Init()
 	{
 		base.Init();
@@ -27,7 +27,7 @@ public class BlockActivate : Block
 		}
 	}
 
-	// Token: 0x06000716 RID: 1814 RVA: 0x0003350C File Offset: 0x0003170C
+	// Token: 0x06000716 RID: 1814 RVA: 0x000334CC File Offset: 0x000316CC
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -38,13 +38,13 @@ public class BlockActivate : Block
 		}
 	}
 
-	// Token: 0x06000717 RID: 1815 RVA: 0x0003355E File Offset: 0x0003175E
+	// Token: 0x06000717 RID: 1815 RVA: 0x0003351E File Offset: 0x0003171E
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 	}
 
-	// Token: 0x06000718 RID: 1816 RVA: 0x00033570 File Offset: 0x00031770
+	// Token: 0x06000718 RID: 1816 RVA: 0x00033530 File Offset: 0x00031730
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		PlayerActionsLocal playerInput = ((EntityPlayerLocal)_entityFocusing).playerInput;
@@ -53,7 +53,7 @@ public class BlockActivate : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x06000719 RID: 1817 RVA: 0x000335D4 File Offset: 0x000317D4
+	// Token: 0x06000719 RID: 1817 RVA: 0x00033594 File Offset: 0x00031794
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "activate"))
@@ -82,7 +82,7 @@ public class BlockActivate : Block
 		return true;
 	}
 
-	// Token: 0x0600071B RID: 1819 RVA: 0x00033674 File Offset: 0x00031874
+	// Token: 0x0600071B RID: 1819 RVA: 0x00033634 File Offset: 0x00031834
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		((Chunk)_world.ChunkCache.GetChunkSync(World.toChunkXZ(_blockPos.x), _blockPos.y, World.toChunkXZ(_blockPos.z))).GetBlockTrigger(World.toBlock(_blockPos));

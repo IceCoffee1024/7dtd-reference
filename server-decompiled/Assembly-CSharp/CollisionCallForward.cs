@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200050A RID: 1290
+// Token: 0x0200050C RID: 1292
 public class CollisionCallForward : MonoBehaviour
 {
-	// Token: 0x06002A11 RID: 10769 RVA: 0x001084F7 File Offset: 0x001066F7
+	// Token: 0x06002A18 RID: 10776 RVA: 0x00108A4B File Offset: 0x00106C4B
 	public void OnCollisionEnter(Collision collision)
 	{
 		if (this.Entity != null)
@@ -13,7 +13,7 @@ public class CollisionCallForward : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A12 RID: 10770 RVA: 0x0010851A File Offset: 0x0010671A
+	// Token: 0x06002A19 RID: 10777 RVA: 0x00108A6E File Offset: 0x00106C6E
 	public void OnCollisionStay(Collision collision)
 	{
 		if (this.Entity != null)
@@ -22,7 +22,7 @@ public class CollisionCallForward : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A13 RID: 10771 RVA: 0x00108540 File Offset: 0x00106740
+	// Token: 0x06002A1A RID: 10778 RVA: 0x00108A94 File Offset: 0x00106C94
 	public static Entity FindEntity(Transform _t)
 	{
 		Entity component = _t.GetComponent<Entity>();
@@ -38,6 +38,6 @@ public class CollisionCallForward : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x04001FF8 RID: 8184
+	// Token: 0x04002008 RID: 8200
 	public Entity Entity;
 }

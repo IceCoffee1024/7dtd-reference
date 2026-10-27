@@ -5,11 +5,11 @@ using Unity.XGamingRuntime;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C32 RID: 7218
+	// Token: 0x02001C63 RID: 7267
 	public class ServerListFriendsMultiplayerActivity : IServerListInterface
 	{
-		// Token: 0x17001B10 RID: 6928
-		// (get) Token: 0x0600D680 RID: 54912 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001B58 RID: 7000
+		// (get) Token: 0x0600D794 RID: 55188 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsPrefiltered
 		{
 			get
@@ -18,8 +18,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B11 RID: 6929
-		// (get) Token: 0x0600D681 RID: 54913 RVA: 0x004D181A File Offset: 0x004CFA1A
+		// Token: 0x17001B59 RID: 7001
+		// (get) Token: 0x0600D795 RID: 55189 RVA: 0x004D5342 File Offset: 0x004D3542
 		public bool IsRefreshing
 		{
 			get
@@ -28,7 +28,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D682 RID: 54914 RVA: 0x004D1838 File Offset: 0x004CFA38
+		// Token: 0x0600D796 RID: 55190 RVA: 0x004D5360 File Offset: 0x004D3560
 		public void Init(IPlatform _owner)
 		{
 			this.user = (User)_owner.User;
@@ -41,7 +41,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D683 RID: 54915 RVA: 0x004D1875 File Offset: 0x004CFA75
+		// Token: 0x0600D797 RID: 55191 RVA: 0x004D539D File Offset: 0x004D359D
 		public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _sessionSearchErrorCallback)
 		{
 			if (this.serverLookup == null)
@@ -51,7 +51,7 @@ namespace Platform.XBL
 			this.gameServerFoundCallback = _serverFound;
 		}
 
-		// Token: 0x0600D684 RID: 54916 RVA: 0x004D1888 File Offset: 0x004CFA88
+		// Token: 0x0600D798 RID: 55192 RVA: 0x004D53B0 File Offset: 0x004D35B0
 		public void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			if (this.serverLookup == null)
@@ -69,7 +69,7 @@ namespace Platform.XBL
 			this.isLoadingFriendsList = true;
 		}
 
-		// Token: 0x0600D685 RID: 54917 RVA: 0x004D18E3 File Offset: 0x004CFAE3
+		// Token: 0x0600D799 RID: 55193 RVA: 0x004D540B File Offset: 0x004D360B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnlineFriendsListUpdated(ulong[] _users)
 		{
@@ -82,7 +82,7 @@ namespace Platform.XBL
 			this.user.MultiplayerActivityQueryManager.GetActivityAsync(_users, new MultiplayerActivityQueryManager.OnGetActivityComplete(this.OnActivitiesRetrieved));
 		}
 
-		// Token: 0x0600D686 RID: 54918 RVA: 0x004D1920 File Offset: 0x004CFB20
+		// Token: 0x0600D79A RID: 55194 RVA: 0x004D5448 File Offset: 0x004D3648
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnActivitiesRetrieved(ulong[] _searchedXuids, List<XblMultiplayerActivityInfo> _results)
 		{
@@ -118,7 +118,7 @@ namespace Platform.XBL
 			}, null);
 		}
 
-		// Token: 0x0600D687 RID: 54919 RVA: 0x004D19C0 File Offset: 0x004CFBC0
+		// Token: 0x0600D79B RID: 55195 RVA: 0x004D54E8 File Offset: 0x004D36E8
 		public void OnServerFound(IPlatform _sourcePlatform, GameServerInfo _info, EServerRelationType _source)
 		{
 			if (_info == null)
@@ -134,7 +134,7 @@ namespace Platform.XBL
 			Interlocked.Decrement(ref this.sessionSearchCount);
 		}
 
-		// Token: 0x0600D688 RID: 54920 RVA: 0x004D19ED File Offset: 0x004CFBED
+		// Token: 0x0600D79C RID: 55196 RVA: 0x004D5515 File Offset: 0x004D3715
 		public void StopSearch()
 		{
 			if (this.userGroupHandle != null)
@@ -144,44 +144,44 @@ namespace Platform.XBL
 			this.userGroupHandle = null;
 		}
 
-		// Token: 0x0600D689 RID: 54921 RVA: 0x004D1A1A File Offset: 0x004CFC1A
+		// Token: 0x0600D79D RID: 55197 RVA: 0x004D5542 File Offset: 0x004D3742
 		public void Disconnect()
 		{
 			this.StopSearch();
 			this.gameServerFoundCallback = null;
 		}
 
-		// Token: 0x0600D68A RID: 54922 RVA: 0x0008806C File Offset: 0x0008626C
+		// Token: 0x0600D79E RID: 55198 RVA: 0x000882A0 File Offset: 0x000864A0
 		public void GetSingleServerDetails(GameServerInfo _serverInfo, EServerRelationType _relation, GameServerFoundCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0400A2D4 RID: 41684
+		// Token: 0x0400A3BD RID: 41917
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerFoundCallback gameServerFoundCallback;
 
-		// Token: 0x0400A2D5 RID: 41685
+		// Token: 0x0400A3BE RID: 41918
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User user;
 
-		// Token: 0x0400A2D6 RID: 41686
+		// Token: 0x0400A3BF RID: 41919
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IServerListInterface serverLookup;
 
-		// Token: 0x0400A2D7 RID: 41687
+		// Token: 0x0400A3C0 RID: 41920
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XblSocialManagerUserGroupHandle userGroupHandle;
 
-		// Token: 0x0400A2D8 RID: 41688
+		// Token: 0x0400A3C1 RID: 41921
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isLoadingFriendsList;
 
-		// Token: 0x0400A2D9 RID: 41689
+		// Token: 0x0400A3C2 RID: 41922
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int activitySearchCount;
 
-		// Token: 0x0400A2DA RID: 41690
+		// Token: 0x0400A3C3 RID: 41923
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int sessionSearchCount;
 	}

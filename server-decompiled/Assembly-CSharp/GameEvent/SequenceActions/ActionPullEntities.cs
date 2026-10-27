@@ -6,17 +6,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C4 RID: 6596
+	// Token: 0x020019F5 RID: 6645
 	[Preserve]
 	public class ActionPullEntities : BaseAction
 	{
-		// Token: 0x0600CA2A RID: 51754 RVA: 0x004A0235 File Offset: 0x0049E435
+		// Token: 0x0600CB3E RID: 52030 RVA: 0x004A3D35 File Offset: 0x004A1F35
 		public override bool CanPerform(Entity player)
 		{
 			return GameManager.Instance.World.CanPlaceBlockAt(new Vector3i(player.position), null, false);
 		}
 
-		// Token: 0x0600CA2B RID: 51755 RVA: 0x004A0258 File Offset: 0x0049E458
+		// Token: 0x0600CB3F RID: 52031 RVA: 0x004A3D58 File Offset: 0x004A1F58
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.targetGroup != "")
@@ -75,7 +75,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CA2C RID: 51756 RVA: 0x004A03B4 File Offset: 0x0049E5B4
+		// Token: 0x0600CB40 RID: 52032 RVA: 0x004A3EB4 File Offset: 0x004A20B4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -85,7 +85,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseFloat(ActionPullEntities.PropMaxDistance, ref this.maxDistance);
 		}
 
-		// Token: 0x0600CA2D RID: 51757 RVA: 0x004A040C File Offset: 0x0049E60C
+		// Token: 0x0600CB41 RID: 52033 RVA: 0x004A3F0C File Offset: 0x004A210C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -98,43 +98,43 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098E9 RID: 39145
+		// Token: 0x040099D2 RID: 39378
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x040098EA RID: 39146
+		// Token: 0x040099D3 RID: 39379
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float minDistance = 7f;
 
-		// Token: 0x040098EB RID: 39147
+		// Token: 0x040099D4 RID: 39380
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 9f;
 
-		// Token: 0x040098EC RID: 39148
+		// Token: 0x040099D5 RID: 39381
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string pullSound = "";
 
-		// Token: 0x040098ED RID: 39149
+		// Token: 0x040099D6 RID: 39382
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x040098EE RID: 39150
+		// Token: 0x040099D7 RID: 39383
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinDistance = "min_distance";
 
-		// Token: 0x040098EF RID: 39151
+		// Token: 0x040099D8 RID: 39384
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x040098F0 RID: 39152
+		// Token: 0x040099D9 RID: 39385
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPullSound = "pull_sound";
 
-		// Token: 0x040098F1 RID: 39153
+		// Token: 0x040099DA RID: 39386
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Entity> entityPullList;
 
-		// Token: 0x040098F2 RID: 39154
+		// Token: 0x040099DB RID: 39387
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int index;
 	}

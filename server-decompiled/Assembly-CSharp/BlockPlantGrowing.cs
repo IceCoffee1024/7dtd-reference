@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockPlantGrowing : BlockPlant
 {
-	// Token: 0x0600087E RID: 2174 RVA: 0x0003BF65 File Offset: 0x0003A165
+	// Token: 0x0600087E RID: 2174 RVA: 0x0003BF25 File Offset: 0x0003A125
 	public BlockPlantGrowing()
 	{
 		this.fertileLevel = 5;
 	}
 
-	// Token: 0x0600087F RID: 2175 RVA: 0x0003BF94 File Offset: 0x0003A194
+	// Token: 0x0600087F RID: 2175 RVA: 0x0003BF54 File Offset: 0x0003A154
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -80,7 +80,7 @@ public class BlockPlantGrowing : BlockPlant
 		this.IsRandomlyTick = false;
 	}
 
-	// Token: 0x06000880 RID: 2176 RVA: 0x0003C260 File Offset: 0x0003A460
+	// Token: 0x06000880 RID: 2176 RVA: 0x0003C220 File Offset: 0x0003A420
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		if (GameManager.Instance.IsEditMode())
@@ -104,13 +104,13 @@ public class BlockPlantGrowing : BlockPlant
 		return true;
 	}
 
-	// Token: 0x06000881 RID: 2177 RVA: 0x0003C2C0 File Offset: 0x0003A4C0
+	// Token: 0x06000881 RID: 2177 RVA: 0x0003C280 File Offset: 0x0003A480
 	public override bool CanGrowOn(WorldBase _world, Vector3i _blockPos, BlockValue _blockValueOfPlant)
 	{
 		return this.fertileLevel == 0 || _world.GetBlock(_blockPos).Block.blockMaterial.FertileLevel >= this.fertileLevel;
 	}
 
-	// Token: 0x06000882 RID: 2178 RVA: 0x0003C2FB File Offset: 0x0003A4FB
+	// Token: 0x06000882 RID: 2178 RVA: 0x0003C2BB File Offset: 0x0003A4BB
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -120,7 +120,7 @@ public class BlockPlantGrowing : BlockPlant
 		}
 	}
 
-	// Token: 0x06000883 RID: 2179 RVA: 0x0003C33C File Offset: 0x0003A53C
+	// Token: 0x06000883 RID: 2179 RVA: 0x0003C2FC File Offset: 0x0003A4FC
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -139,7 +139,7 @@ public class BlockPlantGrowing : BlockPlant
 		}
 	}
 
-	// Token: 0x06000884 RID: 2180 RVA: 0x0003C3A4 File Offset: 0x0003A5A4
+	// Token: 0x06000884 RID: 2180 RVA: 0x0003C364 File Offset: 0x0003A564
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void addScheduledTick(WorldBase _world, Vector3i _blockPos)
 	{
@@ -165,13 +165,13 @@ public class BlockPlantGrowing : BlockPlant
 		_world.GetWBT().AddScheduledBlockUpdate(_blockPos, this.blockID, (ulong)((long)num6));
 	}
 
-	// Token: 0x06000885 RID: 2181 RVA: 0x0003C433 File Offset: 0x0003A633
+	// Token: 0x06000885 RID: 2181 RVA: 0x0003C3F3 File Offset: 0x0003A5F3
 	public override ulong GetTickRate()
 	{
 		return (ulong)(this.growthRate * BlockPlantGrowing.CropGrowthModifier * 20f * 60f);
 	}
 
-	// Token: 0x06000886 RID: 2182 RVA: 0x0003C450 File Offset: 0x0003A650
+	// Token: 0x06000886 RID: 2182 RVA: 0x0003C410 File Offset: 0x0003A610
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		if (this.nextPlant.isair)
@@ -244,7 +244,7 @@ public class BlockPlantGrowing : BlockPlant
 		return true;
 	}
 
-	// Token: 0x06000887 RID: 2183 RVA: 0x0003C6E0 File Offset: 0x0003A8E0
+	// Token: 0x06000887 RID: 2183 RVA: 0x0003C6A0 File Offset: 0x0003A8A0
 	public BlockValue ForceNextGrowStage(World _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		BlockValue block = _world.GetBlock(_blockPos + Vector3i.up);
@@ -281,7 +281,7 @@ public class BlockPlantGrowing : BlockPlant
 		return _blockValue;
 	}
 
-	// Token: 0x06000888 RID: 2184 RVA: 0x0003C861 File Offset: 0x0003AA61
+	// Token: 0x06000888 RID: 2184 RVA: 0x0003C821 File Offset: 0x0003AA21
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);

@@ -4,23 +4,23 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001C03 RID: 7171
+	// Token: 0x02001C34 RID: 7220
 	public class PlatformLobbyId
 	{
-		// Token: 0x0600D562 RID: 54626 RVA: 0x004CD27F File Offset: 0x004CB47F
+		// Token: 0x0600D676 RID: 54902 RVA: 0x004D0DA7 File Offset: 0x004CEFA7
 		public PlatformLobbyId(EPlatformIdentifier _platformId, string _lobbyId)
 		{
 			this.PlatformIdentifier = _platformId;
 			this.LobbyId = _lobbyId;
 		}
 
-		// Token: 0x0600D563 RID: 54627 RVA: 0x004CD295 File Offset: 0x004CB495
+		// Token: 0x0600D677 RID: 54903 RVA: 0x004D0DBD File Offset: 0x004CEFBD
 		public int GetWriteLength(Encoding encoding)
 		{
 			return 1 + this.LobbyId.GetBinaryWriterLength(encoding);
 		}
 
-		// Token: 0x0600D564 RID: 54628 RVA: 0x004CD2A5 File Offset: 0x004CB4A5
+		// Token: 0x0600D678 RID: 54904 RVA: 0x004D0DCD File Offset: 0x004CEFCD
 		public void Write(BinaryWriter _writer)
 		{
 			_writer.Write((byte)this.PlatformIdentifier);
@@ -30,7 +30,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D565 RID: 54629 RVA: 0x004CD2C8 File Offset: 0x004CB4C8
+		// Token: 0x0600D679 RID: 54905 RVA: 0x004D0DF0 File Offset: 0x004CEFF0
 		public static PlatformLobbyId Read(BinaryReader _reader)
 		{
 			byte b = _reader.ReadByte();
@@ -38,13 +38,13 @@ namespace Platform
 			return new PlatformLobbyId((EPlatformIdentifier)b, text);
 		}
 
-		// Token: 0x0400A21F RID: 41503
+		// Token: 0x0400A308 RID: 41736
 		public static readonly PlatformLobbyId None = new PlatformLobbyId(EPlatformIdentifier.None, string.Empty);
 
-		// Token: 0x0400A220 RID: 41504
+		// Token: 0x0400A309 RID: 41737
 		public readonly EPlatformIdentifier PlatformIdentifier;
 
-		// Token: 0x0400A221 RID: 41505
+		// Token: 0x0400A30A RID: 41738
 		public readonly string LobbyId;
 	}
 }

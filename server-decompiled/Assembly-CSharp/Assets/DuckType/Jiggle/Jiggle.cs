@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Assets.DuckType.Jiggle
 {
-	// Token: 0x02001D90 RID: 7568
+	// Token: 0x02001DC1 RID: 7617
 	public class Jiggle : MonoBehaviour
 	{
-		// Token: 0x0600DFC4 RID: 57284 RVA: 0x004FDD00 File Offset: 0x004FBF00
+		// Token: 0x0600E0D8 RID: 57560 RVA: 0x00501898 File Offset: 0x004FFA98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDrawGizmos()
 		{
@@ -28,7 +28,7 @@ namespace Assets.DuckType.Jiggle
 			}
 		}
 
-		// Token: 0x0600DFC5 RID: 57285 RVA: 0x004FDDC8 File Offset: 0x004FBFC8
+		// Token: 0x0600E0D9 RID: 57561 RVA: 0x00501960 File Offset: 0x004FFB60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDrawGizmosSelected()
 		{
@@ -70,7 +70,7 @@ namespace Assets.DuckType.Jiggle
 			}
 		}
 
-		// Token: 0x0600DFC6 RID: 57286 RVA: 0x004FDF90 File Offset: 0x004FC190
+		// Token: 0x0600E0DA RID: 57562 RVA: 0x00501B28 File Offset: 0x004FFD28
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Start()
 		{
@@ -80,28 +80,28 @@ namespace Assets.DuckType.Jiggle
 			this.m_LastCenterOfMassWorld = base.transform.localToWorldMatrix.MultiplyPoint3x4(this.CenterOfMass);
 		}
 
-		// Token: 0x0600DFC7 RID: 57287 RVA: 0x004FDFE5 File Offset: 0x004FC1E5
+		// Token: 0x0600E0DB RID: 57563 RVA: 0x00501B7D File Offset: 0x004FFD7D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LateUpdate()
 		{
 			JiggleScheduler.Update(this);
 		}
 
-		// Token: 0x0600DFC8 RID: 57288 RVA: 0x004FDFED File Offset: 0x004FC1ED
+		// Token: 0x0600E0DC RID: 57564 RVA: 0x00501B85 File Offset: 0x004FFD85
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnEnable()
 		{
 			JiggleScheduler.Register(this);
 		}
 
-		// Token: 0x0600DFC9 RID: 57289 RVA: 0x004FDFF5 File Offset: 0x004FC1F5
+		// Token: 0x0600E0DD RID: 57565 RVA: 0x00501B8D File Offset: 0x004FFD8D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisable()
 		{
 			JiggleScheduler.Deregister(this);
 		}
 
-		// Token: 0x0600DFCA RID: 57290 RVA: 0x004FE000 File Offset: 0x004FC200
+		// Token: 0x0600E0DE RID: 57566 RVA: 0x00501B98 File Offset: 0x004FFD98
 		public void ScheduledUpdate(float deltaTime)
 		{
 			Quaternion quaternion;
@@ -179,7 +179,7 @@ namespace Assets.DuckType.Jiggle
 			this.m_LastWorldRotation = base.transform.rotation;
 		}
 
-		// Token: 0x0600DFCB RID: 57291 RVA: 0x004FE438 File Offset: 0x004FC638
+		// Token: 0x0600E0DF RID: 57567 RVA: 0x00501FD0 File Offset: 0x005001D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 GetHingeNormalWorld()
 		{
@@ -187,7 +187,7 @@ namespace Assets.DuckType.Jiggle
 			return this.GetRestRotationWorld() * vector;
 		}
 
-		// Token: 0x0600DFCC RID: 57292 RVA: 0x004FE4BC File Offset: 0x004FC6BC
+		// Token: 0x0600E0E0 RID: 57568 RVA: 0x00502054 File Offset: 0x00500254
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Quaternion GetRestRotationWorld()
 		{
@@ -202,7 +202,7 @@ namespace Assets.DuckType.Jiggle
 			return base.transform.parent.rotation * this.m_RestLocalRotation;
 		}
 
-		// Token: 0x0600DFCD RID: 57293 RVA: 0x004FE514 File Offset: 0x004FC714
+		// Token: 0x0600E0E1 RID: 57569 RVA: 0x005020AC File Offset: 0x005002AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 GetNoiseVector(Vector3 pos, float scale, float phase)
 		{
@@ -210,7 +210,7 @@ namespace Assets.DuckType.Jiggle
 			return new Vector3(Mathf.PerlinNoise(pos.x, pos.y + phase) - 0.5f, Mathf.PerlinNoise(pos.y, pos.z + phase) - 0.5f, Mathf.PerlinNoise(pos.z, pos.x + phase) - 0.5f);
 		}
 
-		// Token: 0x0600DFCE RID: 57294 RVA: 0x004FE57C File Offset: 0x004FC77C
+		// Token: 0x0600E0E2 RID: 57570 RVA: 0x00502114 File Offset: 0x00500314
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Quaternion GetClosestRotationFromTo(Vector3 from, Vector3 to)
 		{
@@ -218,7 +218,7 @@ namespace Assets.DuckType.Jiggle
 			return base.transform.rotation.FromToRotation(quaternion);
 		}
 
-		// Token: 0x0600DFCF RID: 57295 RVA: 0x004FE5B4 File Offset: 0x004FC7B4
+		// Token: 0x0600E0E3 RID: 57571 RVA: 0x0050214C File Offset: 0x0050034C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DrawGizmosArc(Vector3 center, Vector3 startPoint, Vector3 normal, float degrees)
 		{
@@ -232,7 +232,7 @@ namespace Assets.DuckType.Jiggle
 			}
 		}
 
-		// Token: 0x0600DFD0 RID: 57296 RVA: 0x004FE60C File Offset: 0x004FC80C
+		// Token: 0x0600E0E4 RID: 57572 RVA: 0x005021A4 File Offset: 0x005003A4
 		public string DebugString()
 		{
 			return string.Format("{0} - enabled: {1}, m_Initialized: {2}, m_RestLocalRotation: {3}, UseCenterOfMass: {4}, CenterOfMass: {5}, Hinge: {6}, HingeAngle: {7}, UseAngleLimit: {8}, AngleLimit: {9}", new object[]
@@ -250,114 +250,114 @@ namespace Assets.DuckType.Jiggle
 			});
 		}
 
-		// Token: 0x0400A96D RID: 43373
+		// Token: 0x0400AA56 RID: 43606
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const float TORQUE_FACTOR = 0.001f;
 
-		// Token: 0x0400A96E RID: 43374
+		// Token: 0x0400AA57 RID: 43607
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool m_Initialised;
 
-		// Token: 0x0400A96F RID: 43375
+		// Token: 0x0400AA58 RID: 43608
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Quaternion m_RestLocalRotation;
 
-		// Token: 0x0400A970 RID: 43376
+		// Token: 0x0400AA59 RID: 43609
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Quaternion m_LastWorldRotation;
 
-		// Token: 0x0400A971 RID: 43377
+		// Token: 0x0400AA5A RID: 43610
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Quaternion m_Torque = Quaternion.identity;
 
-		// Token: 0x0400A972 RID: 43378
+		// Token: 0x0400AA5B RID: 43611
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Vector3 m_LastCenterOfMassWorld;
 
-		// Token: 0x0400A973 RID: 43379
+		// Token: 0x0400AA5C RID: 43612
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public float m_NoisePhase;
 
-		// Token: 0x0400A974 RID: 43380
+		// Token: 0x0400AA5D RID: 43613
 		public bool UpdateWithPhysics;
 
-		// Token: 0x0400A975 RID: 43381
+		// Token: 0x0400AA5E RID: 43614
 		public bool UseCenterOfMass = true;
 
-		// Token: 0x0400A976 RID: 43382
+		// Token: 0x0400AA5F RID: 43615
 		public Vector3 CenterOfMass = new Vector3(1f, 0f, 0f);
 
-		// Token: 0x0400A977 RID: 43383
+		// Token: 0x0400AA60 RID: 43616
 		public float CenterOfMassInertia = 1f;
 
-		// Token: 0x0400A978 RID: 43384
+		// Token: 0x0400AA61 RID: 43617
 		public bool AddWind;
 
-		// Token: 0x0400A979 RID: 43385
+		// Token: 0x0400AA62 RID: 43618
 		public Vector3 WindDirection = new Vector3(1f, 0f, 0f);
 
-		// Token: 0x0400A97A RID: 43386
+		// Token: 0x0400AA63 RID: 43619
 		public float WindStrength = 1f;
 
-		// Token: 0x0400A97B RID: 43387
+		// Token: 0x0400AA64 RID: 43620
 		public bool AddNoise;
 
-		// Token: 0x0400A97C RID: 43388
+		// Token: 0x0400AA65 RID: 43621
 		public float NoiseStrength = 1f;
 
-		// Token: 0x0400A97D RID: 43389
+		// Token: 0x0400AA66 RID: 43622
 		public float NoiseScale = 1f;
 
-		// Token: 0x0400A97E RID: 43390
+		// Token: 0x0400AA67 RID: 43623
 		public float NoiseSpeed = 1f;
 
-		// Token: 0x0400A97F RID: 43391
+		// Token: 0x0400AA68 RID: 43624
 		public float RotationInertia = 1f;
 
-		// Token: 0x0400A980 RID: 43392
+		// Token: 0x0400AA69 RID: 43625
 		public float Gravity;
 
-		// Token: 0x0400A981 RID: 43393
+		// Token: 0x0400AA6A RID: 43626
 		public float SpringStrength = 0.4f;
 
-		// Token: 0x0400A982 RID: 43394
+		// Token: 0x0400AA6B RID: 43627
 		public float Dampening = 0.4f;
 
-		// Token: 0x0400A983 RID: 43395
+		// Token: 0x0400AA6C RID: 43628
 		public bool BlendToOriginalRotation;
 
-		// Token: 0x0400A984 RID: 43396
+		// Token: 0x0400AA6D RID: 43629
 		public bool Hinge;
 
-		// Token: 0x0400A985 RID: 43397
+		// Token: 0x0400AA6E RID: 43630
 		public float HingeAngle;
 
-		// Token: 0x0400A986 RID: 43398
+		// Token: 0x0400AA6F RID: 43631
 		public bool UseAngleLimit;
 
-		// Token: 0x0400A987 RID: 43399
+		// Token: 0x0400AA70 RID: 43632
 		public float AngleLimit = 180f;
 
-		// Token: 0x0400A988 RID: 43400
+		// Token: 0x0400AA71 RID: 43633
 		public bool UseSoftLimit;
 
-		// Token: 0x0400A989 RID: 43401
+		// Token: 0x0400AA72 RID: 43634
 		public float SoftLimitInfluence = 0.5f;
 
-		// Token: 0x0400A98A RID: 43402
+		// Token: 0x0400AA73 RID: 43635
 		public float SoftLimitStrength = 0.5f;
 
-		// Token: 0x0400A98B RID: 43403
+		// Token: 0x0400AA74 RID: 43636
 		public bool ShowViewportGizmos = true;
 
-		// Token: 0x0400A98C RID: 43404
+		// Token: 0x0400AA75 RID: 43637
 		public float GizmoScale = 0.1f;
 	}
 }

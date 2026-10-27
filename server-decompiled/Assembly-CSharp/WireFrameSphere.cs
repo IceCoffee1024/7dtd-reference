@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000CFA RID: 3322
+// Token: 0x02000D05 RID: 3333
 [RequireComponent(typeof(LineRenderer))]
 public class WireFrameSphere : MonoBehaviour
 {
-	// Token: 0x0600653D RID: 25917 RVA: 0x0027C230 File Offset: 0x0027A430
+	// Token: 0x06006562 RID: 25954 RVA: 0x0027D758 File Offset: 0x0027B958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -17,7 +17,7 @@ public class WireFrameSphere : MonoBehaviour
 		this.player = global::UnityEngine.Object.FindAnyObjectByType<LocalPlayerCamera>();
 	}
 
-	// Token: 0x0600653E RID: 25918 RVA: 0x0027C284 File Offset: 0x0027A484
+	// Token: 0x06006563 RID: 25955 RVA: 0x0027D7AC File Offset: 0x0027B9AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -37,7 +37,7 @@ public class WireFrameSphere : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600653F RID: 25919 RVA: 0x0027C368 File Offset: 0x0027A568
+	// Token: 0x06006564 RID: 25956 RVA: 0x0027D890 File Offset: 0x0027BA90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3> RenderCircleOnPlane(bool xyPlane)
 	{
@@ -54,49 +54,49 @@ public class WireFrameSphere : MonoBehaviour
 		return list;
 	}
 
-	// Token: 0x06006540 RID: 25920 RVA: 0x001483DF File Offset: 0x001465DF
+	// Token: 0x06006565 RID: 25957 RVA: 0x00148FD3 File Offset: 0x001471D3
 	public void KillWF()
 	{
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04004EF8 RID: 20216
+	// Token: 0x04004F1D RID: 20253
 	public Vector3 center;
 
-	// Token: 0x04004EF9 RID: 20217
+	// Token: 0x04004F1E RID: 20254
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float TAU = 6.2831855f;
 
-	// Token: 0x04004EFA RID: 20218
+	// Token: 0x04004F1F RID: 20255
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float radius = 1f;
 
-	// Token: 0x04004EFB RID: 20219
+	// Token: 0x04004F20 RID: 20256
 	public float newRadius = 1f;
 
-	// Token: 0x04004EFC RID: 20220
+	// Token: 0x04004F21 RID: 20257
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LineRenderer lr;
 
-	// Token: 0x04004EFD RID: 20221
+	// Token: 0x04004F22 RID: 20258
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> positions;
 
-	// Token: 0x04004EFE RID: 20222
+	// Token: 0x04004F23 RID: 20259
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int numOfVertices = 100;
 
-	// Token: 0x04004EFF RID: 20223
+	// Token: 0x04004F24 RID: 20260
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float angle;
 
-	// Token: 0x04004F00 RID: 20224
+	// Token: 0x04004F25 RID: 20261
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerCamera player;

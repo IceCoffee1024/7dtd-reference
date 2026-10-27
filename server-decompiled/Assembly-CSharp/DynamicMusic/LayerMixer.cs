@@ -7,25 +7,25 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A7E RID: 6782
+	// Token: 0x02001AAF RID: 6831
 	[Preserve]
 	public abstract class LayerMixer<ConfigType> : ILayerMixer where ConfigType : IConfiguration
 	{
-		// Token: 0x1700199F RID: 6559
-		// (get) Token: 0x0600CD94 RID: 52628 RVA: 0x004AD786 File Offset: 0x004AB986
-		// (set) Token: 0x0600CD95 RID: 52629 RVA: 0x004AD78E File Offset: 0x004AB98E
+		// Token: 0x170019E7 RID: 6631
+		// (get) Token: 0x0600CEA8 RID: 52904 RVA: 0x004B1282 File Offset: 0x004AF482
+		// (set) Token: 0x0600CEA9 RID: 52905 RVA: 0x004B128A File Offset: 0x004AF48A
 		public SectionType Sect { get; set; }
 
-		// Token: 0x0600CD96 RID: 52630 RVA: 0x004AD797 File Offset: 0x004AB997
+		// Token: 0x0600CEAA RID: 52906 RVA: 0x004B1293 File Offset: 0x004AF493
 		public LayerMixer()
 		{
 			this.clipSetsFor = new EnumDictionary<LayerType, List<LayeredContent>>();
 		}
 
-		// Token: 0x170019A0 RID: 6560
+		// Token: 0x170019E8 RID: 6632
 		public abstract float this[int _idx] { get; }
 
-		// Token: 0x0600CD98 RID: 52632 RVA: 0x004AD7AA File Offset: 0x004AB9AA
+		// Token: 0x0600CEAC RID: 52908 RVA: 0x004B12A6 File Offset: 0x004AF4A6
 		public virtual IEnumerator Load()
 		{
 			Log.Out(string.Format("Loading new config for {0}...", this.Sect));
@@ -39,7 +39,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CD99 RID: 52633 RVA: 0x004AD7BC File Offset: 0x004AB9BC
+		// Token: 0x0600CEAD RID: 52909 RVA: 0x004B12B8 File Offset: 0x004AF4B8
 		public void Unload()
 		{
 			this.clipSetsFor.Values.ToList<List<LayeredContent>>().ForEach(delegate(List<LayeredContent> list)
@@ -53,11 +53,11 @@ namespace DynamicMusic
 			Log.Out(string.Format("unloaded ClipSets on {0}", this.Sect));
 		}
 
-		// Token: 0x04009BF8 RID: 39928
+		// Token: 0x04009CE1 RID: 40161
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ConfigType config;
 
-		// Token: 0x04009BF9 RID: 39929
+		// Token: 0x04009CE2 RID: 40162
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EnumDictionary<LayerType, List<LayeredContent>> clipSetsFor;
 	}

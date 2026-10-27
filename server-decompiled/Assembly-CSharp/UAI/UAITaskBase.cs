@@ -4,16 +4,16 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017AB RID: 6059
+	// Token: 0x020017DC RID: 6108
 	[Preserve]
 	public class UAITaskBase
 	{
-		// Token: 0x1700173F RID: 5951
-		// (get) Token: 0x0600BBBB RID: 48059 RVA: 0x0045ADC4 File Offset: 0x00458FC4
-		// (set) Token: 0x0600BBBC RID: 48060 RVA: 0x0045ADCC File Offset: 0x00458FCC
+		// Token: 0x17001787 RID: 6023
+		// (get) Token: 0x0600BCCF RID: 48335 RVA: 0x0045E770 File Offset: 0x0045C970
+		// (set) Token: 0x0600BCD0 RID: 48336 RVA: 0x0045E778 File Offset: 0x0045C978
 		public string Name { get; set; }
 
-		// Token: 0x0600BBBD RID: 48061 RVA: 0x0045ADD5 File Offset: 0x00458FD5
+		// Token: 0x0600BCD1 RID: 48337 RVA: 0x0045E781 File Offset: 0x0045C981
 		public virtual void Init(Context _context)
 		{
 			_context.ActionData.Initialized = true;
@@ -26,40 +26,40 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BBBE RID: 48062 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600BCD2 RID: 48338 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void initializeParameters()
 		{
 		}
 
-		// Token: 0x0600BBBF RID: 48063 RVA: 0x0045AE10 File Offset: 0x00459010
+		// Token: 0x0600BCD3 RID: 48339 RVA: 0x0045E7BC File Offset: 0x0045C9BC
 		public virtual void Start(Context _context)
 		{
 			_context.ActionData.Started = true;
 			_context.ActionData.Executing = true;
 		}
 
-		// Token: 0x0600BBC0 RID: 48064 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600BCD4 RID: 48340 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Update(Context _context)
 		{
 		}
 
-		// Token: 0x0600BBC1 RID: 48065 RVA: 0x0045AE2A File Offset: 0x0045902A
+		// Token: 0x0600BCD5 RID: 48341 RVA: 0x0045E7D6 File Offset: 0x0045C9D6
 		public virtual void Stop(Context _context)
 		{
 			_context.ActionData.Executing = false;
 		}
 
-		// Token: 0x0600BBC2 RID: 48066 RVA: 0x0045AE38 File Offset: 0x00459038
+		// Token: 0x0600BCD6 RID: 48342 RVA: 0x0045E7E4 File Offset: 0x0045C9E4
 		public virtual void Reset(Context _context)
 		{
 			_context.ActionData.ClearData();
 		}
 
-		// Token: 0x04008C82 RID: 35970
+		// Token: 0x04008D6B RID: 36203
 		public Dictionary<string, string> Parameters = new Dictionary<string, string>();
 
-		// Token: 0x04008C83 RID: 35971
+		// Token: 0x04008D6C RID: 36204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool parmsInitialized;
 	}

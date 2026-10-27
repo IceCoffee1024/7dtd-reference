@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000698 RID: 1688
+// Token: 0x0200069F RID: 1695
 [Preserve]
 public class PlayerItemCount : TargetedCompareRequirementBase
 {
-	// Token: 0x06003595 RID: 13717 RVA: 0x00161500 File Offset: 0x0015F700
+	// Token: 0x060035A3 RID: 13731 RVA: 0x001620F4 File Offset: 0x001602F4
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -31,13 +31,13 @@ public class PlayerItemCount : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)num, this.operation, this.value);
 	}
 
-	// Token: 0x06003596 RID: 13718 RVA: 0x001615AD File Offset: 0x0015F7AD
+	// Token: 0x060035A4 RID: 13732 RVA: 0x001621A1 File Offset: 0x001603A1
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Item count {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x06003597 RID: 13719 RVA: 0x001615EC File Offset: 0x0015F7EC
+	// Token: 0x060035A5 RID: 13733 RVA: 0x001621E0 File Offset: 0x001603E0
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -49,11 +49,11 @@ public class PlayerItemCount : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B4B RID: 11083
+	// Token: 0x04002B66 RID: 11110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string item_name;
 
-	// Token: 0x04002B4C RID: 11084
+	// Token: 0x04002B67 RID: 11111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue item;
 }

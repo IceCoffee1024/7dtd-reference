@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000F7A RID: 3962
+// Token: 0x02000F8A RID: 3978
 public static class XUiC_LevelToolsHelpers
 {
-	// Token: 0x06007C77 RID: 31863 RVA: 0x002F2854 File Offset: 0x002F0A54
+	// Token: 0x06007CC6 RID: 31942 RVA: 0x002F44DC File Offset: 0x002F26DC
 	public static NGuiAction BuildAction(string _functionName, string _captionOverride, bool _forToggle)
 	{
 		if (_functionName.IndexOf(':') < 0)
@@ -43,7 +43,7 @@ public static class XUiC_LevelToolsHelpers
 		return nguiAction;
 	}
 
-	// Token: 0x06007C78 RID: 31864 RVA: 0x002F293C File Offset: 0x002F0B3C
+	// Token: 0x06007CC7 RID: 31943 RVA: 0x002F45C4 File Offset: 0x002F27C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NGuiAction createSelectionBoxAction(string _categoryName)
 	{
@@ -63,7 +63,7 @@ public static class XUiC_LevelToolsHelpers
 		return nguiAction;
 	}
 
-	// Token: 0x06007C79 RID: 31865 RVA: 0x002F29C4 File Offset: 0x002F0BC4
+	// Token: 0x06007CC8 RID: 31944 RVA: 0x002F464C File Offset: 0x002F284C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NGuiAction createBlockToolSelectionAction(string _actionName)
 	{
@@ -77,7 +77,7 @@ public static class XUiC_LevelToolsHelpers
 		return nguiAction;
 	}
 
-	// Token: 0x06007C7A RID: 31866 RVA: 0x002F2A0C File Offset: 0x002F0C0C
+	// Token: 0x06007CC9 RID: 31945 RVA: 0x002F4694 File Offset: 0x002F2894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NGuiAction createSpecialAction(string _substring)
 	{
@@ -569,7 +569,7 @@ public static class XUiC_LevelToolsHelpers
 		return null;
 	}
 
-	// Token: 0x06007C7B RID: 31867 RVA: 0x002F3AA4 File Offset: 0x002F1CA4
+	// Token: 0x06007CCA RID: 31946 RVA: 0x002F572C File Offset: 0x002F392C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setChunkPartVisible(string[] _matchedNames, bool _visible, List<ChunkGameObject> _cgos = null)
 	{
@@ -583,7 +583,7 @@ public static class XUiC_LevelToolsHelpers
 		}
 	}
 
-	// Token: 0x06007C7C RID: 31868 RVA: 0x002F3B10 File Offset: 0x002F1D10
+	// Token: 0x06007CCB RID: 31947 RVA: 0x002F5798 File Offset: 0x002F3998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setChunkPartVisible(Transform _parent, string[] _matchedNames, bool _visible)
 	{
@@ -602,7 +602,7 @@ public static class XUiC_LevelToolsHelpers
 		}
 	}
 
-	// Token: 0x06007C7D RID: 31869 RVA: 0x002F3B68 File Offset: 0x002F1D68
+	// Token: 0x06007CCC RID: 31948 RVA: 0x002F57F0 File Offset: 0x002F39F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void updateImposter(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -616,7 +616,7 @@ public static class XUiC_LevelToolsHelpers
 		PrefabHelpers.convert(new Action(XUiC_LevelToolsHelpers.waitForUpdateImposter));
 	}
 
-	// Token: 0x06007C7E RID: 31870 RVA: 0x002F3BC0 File Offset: 0x002F1DC0
+	// Token: 0x06007CCD RID: 31949 RVA: 0x002F5848 File Offset: 0x002F3A48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void waitForUpdateImposter()
 	{
@@ -632,7 +632,7 @@ public static class XUiC_LevelToolsHelpers
 		LocalPlayerUI.GetUIForPrimaryPlayer().windowManager.ReEnableHUD();
 	}
 
-	// Token: 0x06007C7F RID: 31871 RVA: 0x002F3C16 File Offset: 0x002F1E16
+	// Token: 0x06007CCE RID: 31950 RVA: 0x002F589E File Offset: 0x002F3A9E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void imposterToggleShow()
 	{
@@ -644,7 +644,7 @@ public static class XUiC_LevelToolsHelpers
 		XUiC_SaveDirtyPrefab.Show(LocalPlayerUI.GetUIForPrimaryPlayer().xui, new Action<XUiC_SaveDirtyPrefab.ESelectedAction>(XUiC_LevelToolsHelpers.showImposter), XUiC_SaveDirtyPrefab.EMode.AskSaveIfDirty);
 	}
 
-	// Token: 0x06007C80 RID: 31872 RVA: 0x002F3C48 File Offset: 0x002F1E48
+	// Token: 0x06007CCF RID: 31951 RVA: 0x002F58D0 File Offset: 0x002F3AD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void showImposter(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -663,7 +663,7 @@ public static class XUiC_LevelToolsHelpers
 		GameManager.ShowTooltip(GameManager.Instance.World.GetLocalPlayers()[0], "Prefab " + loadedPrefab.Name + " has no imposter yet", false, false, 0f);
 	}
 
-	// Token: 0x06007C81 RID: 31873 RVA: 0x002F3CD4 File Offset: 0x002F1ED4
+	// Token: 0x06007CD0 RID: 31952 RVA: 0x002F595C File Offset: 0x002F3B5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void showPrefab()
 	{
@@ -673,19 +673,19 @@ public static class XUiC_LevelToolsHelpers
 		}
 	}
 
-	// Token: 0x06007C82 RID: 31874 RVA: 0x002F3CFF File Offset: 0x002F1EFF
+	// Token: 0x06007CD1 RID: 31953 RVA: 0x002F5987 File Offset: 0x002F3B87
 	public static bool IsShowImposter()
 	{
 		return PrefabEditModeManager.Instance.IsShowingImposterPrefab();
 	}
 
-	// Token: 0x06007C83 RID: 31875 RVA: 0x002F3D0B File Offset: 0x002F1F0B
+	// Token: 0x06007CD2 RID: 31954 RVA: 0x002F5993 File Offset: 0x002F3B93
 	public static void SetShowImposter()
 	{
 		XUiC_LevelToolsHelpers.imposterToggleShow();
 	}
 
-	// Token: 0x06007C84 RID: 31876 RVA: 0x002F3D12 File Offset: 0x002F1F12
+	// Token: 0x06007CD3 RID: 31955 RVA: 0x002F599A File Offset: 0x002F3B9A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator drawScreenshotGuide()
 	{
@@ -703,7 +703,7 @@ public static class XUiC_LevelToolsHelpers
 		yield break;
 	}
 
-	// Token: 0x06007C85 RID: 31877 RVA: 0x002F3D1A File Offset: 0x002F1F1A
+	// Token: 0x06007CD4 RID: 31956 RVA: 0x002F59A2 File Offset: 0x002F3BA2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator screenshotCo(string _filename)
 	{
@@ -728,7 +728,7 @@ public static class XUiC_LevelToolsHelpers
 		yield break;
 	}
 
-	// Token: 0x06007C86 RID: 31878 RVA: 0x002F3D2C File Offset: 0x002F1F2C
+	// Token: 0x06007CD5 RID: 31957 RVA: 0x002F59B4 File Offset: 0x002F3BB4
 	public static void ReplaceBlockId(Block _srcBlockClass, Block _dstBlockClass)
 	{
 		int sourceBlockId = _srcBlockClass.blockID;
@@ -787,7 +787,7 @@ public static class XUiC_LevelToolsHelpers
 		}
 	}
 
-	// Token: 0x06007C87 RID: 31879 RVA: 0x002F3E78 File Offset: 0x002F2078
+	// Token: 0x06007CD6 RID: 31958 RVA: 0x002F5B00 File Offset: 0x002F3D00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReplacePaint(int _sourcePaintId, int _targetPaintId)
 	{
@@ -837,7 +837,7 @@ public static class XUiC_LevelToolsHelpers
 		}
 	}
 
-	// Token: 0x06007C88 RID: 31880 RVA: 0x002F3FA0 File Offset: 0x002F21A0
+	// Token: 0x06007CD7 RID: 31959 RVA: 0x002F5C28 File Offset: 0x002F3E28
 	public static void ReplaceBlockShapeMaterials(string _oldMaterial, string _newMaterial)
 	{
 		HashSet<Chunk> changedChunks = new HashSet<Chunk>();
@@ -929,7 +929,7 @@ public static class XUiC_LevelToolsHelpers
 		}));
 	}
 
-	// Token: 0x06007C89 RID: 31881 RVA: 0x002F4158 File Offset: 0x002F2358
+	// Token: 0x06007CD8 RID: 31960 RVA: 0x002F5DE0 File Offset: 0x002F3FE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DensitiesClean()
 	{
@@ -971,31 +971,31 @@ public static class XUiC_LevelToolsHelpers
 		}
 	}
 
-	// Token: 0x04005C1E RID: 23582
+	// Token: 0x04005C58 RID: 23640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] goNamesUnpaintable = new string[] { "_BlockEntities", "models", "modelsCollider", "cutout", "cutoutCollider" };
 
-	// Token: 0x04005C1F RID: 23583
+	// Token: 0x04005C59 RID: 23641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] goNamesPaintable = new string[] { "opaque", "opaqueCollider" };
 
-	// Token: 0x04005C20 RID: 23584
+	// Token: 0x04005C5A RID: 23642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] goNamesTerrain = new string[] { "terrain", "terrainCollider" };
 
-	// Token: 0x04005C21 RID: 23585
+	// Token: 0x04005C5B RID: 23643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool wasShowingImposterBeforeUpdate;
 
-	// Token: 0x04005C22 RID: 23586
+	// Token: 0x04005C5C RID: 23644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float screenshotBorderPercentage = 0.15f;
 
-	// Token: 0x04005C23 RID: 23587
+	// Token: 0x04005C5D RID: 23645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const bool screenshot4To3 = true;
 
-	// Token: 0x04005C24 RID: 23588
+	// Token: 0x04005C5E RID: 23646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool drawingScreenshotGuide;
 }

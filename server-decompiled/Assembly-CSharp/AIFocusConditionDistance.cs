@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000442 RID: 1090
+// Token: 0x02000444 RID: 1092
 public readonly struct AIFocusConditionDistance
 {
-	// Token: 0x06002145 RID: 8517 RVA: 0x000C9019 File Offset: 0x000C7219
+	// Token: 0x0600214A RID: 8522 RVA: 0x000C93C5 File Offset: 0x000C75C5
 	public AIFocusConditionDistance(float distance, EntityAlive entityTransform)
 	{
 		this.ConditionalDistanceSq = distance * distance;
@@ -14,7 +14,7 @@ public readonly struct AIFocusConditionDistance
 		this.HasDistancePosition = false;
 	}
 
-	// Token: 0x06002146 RID: 8518 RVA: 0x000C9044 File Offset: 0x000C7244
+	// Token: 0x0600214B RID: 8523 RVA: 0x000C93F0 File Offset: 0x000C75F0
 	public AIFocusConditionDistance(float distance, Transform distanceTransform)
 	{
 		this.ConditionalDistanceSq = distance * distance;
@@ -24,7 +24,7 @@ public readonly struct AIFocusConditionDistance
 		this.HasDistancePosition = false;
 	}
 
-	// Token: 0x06002147 RID: 8519 RVA: 0x000C906F File Offset: 0x000C726F
+	// Token: 0x0600214C RID: 8524 RVA: 0x000C941B File Offset: 0x000C761B
 	public AIFocusConditionDistance(float distance, Vector3 distancePosition)
 	{
 		this.ConditionalDistanceSq = distance * distance;
@@ -34,7 +34,7 @@ public readonly struct AIFocusConditionDistance
 		this.HasDistancePosition = true;
 	}
 
-	// Token: 0x06002148 RID: 8520 RVA: 0x000C9098 File Offset: 0x000C7298
+	// Token: 0x0600214D RID: 8525 RVA: 0x000C9444 File Offset: 0x000C7644
 	public bool IsFocusDisabled(Entity theEntity)
 	{
 		if (this.ConditionalDistanceSq > 0f)
@@ -65,18 +65,18 @@ public readonly struct AIFocusConditionDistance
 		return false;
 	}
 
-	// Token: 0x040016E0 RID: 5856
+	// Token: 0x040016F0 RID: 5872
 	public readonly float ConditionalDistanceSq;
 
-	// Token: 0x040016E1 RID: 5857
+	// Token: 0x040016F1 RID: 5873
 	public readonly EntityAlive EntityTransform;
 
-	// Token: 0x040016E2 RID: 5858
+	// Token: 0x040016F2 RID: 5874
 	public readonly Transform DistanceTransform;
 
-	// Token: 0x040016E3 RID: 5859
+	// Token: 0x040016F3 RID: 5875
 	public readonly Vector3 DistancePosition;
 
-	// Token: 0x040016E4 RID: 5860
+	// Token: 0x040016F4 RID: 5876
 	public readonly bool HasDistancePosition;
 }

@@ -4,17 +4,17 @@ using System.Text;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018DC RID: 6364
+	// Token: 0x0200190D RID: 6413
 	public class PrefabTeleportVolumeList : PrefabVolumeListAbs<PrefabTeleportVolumeList, PrefabTeleportVolume>
 	{
-		// Token: 0x0600C47B RID: 50299 RVA: 0x00486623 File Offset: 0x00484823
+		// Token: 0x0600C58F RID: 50575 RVA: 0x00489FCF File Offset: 0x004881CF
 		public PrefabTeleportVolumeList(Prefab _owner)
 			: base(_owner)
 		{
 		}
 
-		// Token: 0x1700189C RID: 6300
-		// (get) Token: 0x0600C47C RID: 50300 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x170018E4 RID: 6372
+		// (get) Token: 0x0600C590 RID: 50576 RVA: 0x00020119 File Offset: 0x0001E319
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -23,8 +23,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x1700189D RID: 6301
-		// (get) Token: 0x0600C47D RID: 50301 RVA: 0x0048662C File Offset: 0x0048482C
+		// Token: 0x170018E5 RID: 6373
+		// (get) Token: 0x0600C591 RID: 50577 RVA: 0x00489FD8 File Offset: 0x004881D8
 		public override SelectionCategory SelectionCategory
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -34,7 +34,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C47E RID: 50302 RVA: 0x00486638 File Offset: 0x00484838
+		// Token: 0x0600C592 RID: 50578 RVA: 0x00489FE4 File Offset: 0x004881E4
 		public override void ReadFromProperties(DynamicProperties _properties)
 		{
 			this.List.Clear();
@@ -55,7 +55,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C47F RID: 50303 RVA: 0x00486728 File Offset: 0x00484928
+		// Token: 0x0600C593 RID: 50579 RVA: 0x0048A0D4 File Offset: 0x004882D4
 		public override void WriteToProperties(DynamicProperties _properties)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -84,7 +84,7 @@ namespace PrefabVolumes
 			_properties.Values.Remove("TeleportVolumeStart");
 		}
 
-		// Token: 0x0600C480 RID: 50304 RVA: 0x00486858 File Offset: 0x00484A58
+		// Token: 0x0600C594 RID: 50580 RVA: 0x0048A204 File Offset: 0x00488404
 		public override bool CanCreateVolume(string _prefabInstanceName, Vector3i _bbPos, Vector3i _startPos, Vector3i _size)
 		{
 			if (this.Owner.bTraderArea)
@@ -95,7 +95,7 @@ namespace PrefabVolumes
 			return false;
 		}
 
-		// Token: 0x0600C481 RID: 50305 RVA: 0x004868A5 File Offset: 0x00484AA5
+		// Token: 0x0600C595 RID: 50581 RVA: 0x0048A251 File Offset: 0x00488451
 		public void AddExistingVolume(PrefabTeleportVolume _volume)
 		{
 			this.List.Add(_volume);

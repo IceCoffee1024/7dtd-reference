@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x0200131F RID: 4895
+// Token: 0x02001331 RID: 4913
 public class WaypointCollection
 {
-	// Token: 0x06009A96 RID: 39574 RVA: 0x003A91F4 File Offset: 0x003A73F4
+	// Token: 0x06009AEE RID: 39662 RVA: 0x003AB5F8 File Offset: 0x003A97F8
 	public void Read(PooledBinaryReader _br)
 	{
 		this.Collection.Clear();
@@ -20,7 +20,7 @@ public class WaypointCollection
 		}
 	}
 
-	// Token: 0x06009A97 RID: 39575 RVA: 0x003A9240 File Offset: 0x003A7440
+	// Token: 0x06009AEF RID: 39663 RVA: 0x003AB644 File Offset: 0x003A9844
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(7);
@@ -42,7 +42,7 @@ public class WaypointCollection
 		}
 	}
 
-	// Token: 0x06009A98 RID: 39576 RVA: 0x003A92E0 File Offset: 0x003A74E0
+	// Token: 0x06009AF0 RID: 39664 RVA: 0x003AB6E4 File Offset: 0x003A98E4
 	public WaypointCollection Clone()
 	{
 		WaypointCollection waypointCollection = new WaypointCollection();
@@ -53,13 +53,13 @@ public class WaypointCollection
 		return waypointCollection;
 	}
 
-	// Token: 0x06009A99 RID: 39577 RVA: 0x003A9330 File Offset: 0x003A7530
+	// Token: 0x06009AF1 RID: 39665 RVA: 0x003AB734 File Offset: 0x003A9934
 	public bool ContainsWaypoint(Waypoint _wp)
 	{
 		return this.Collection.hashSet.Contains(_wp);
 	}
 
-	// Token: 0x06009A9A RID: 39578 RVA: 0x003A9344 File Offset: 0x003A7544
+	// Token: 0x06009AF2 RID: 39666 RVA: 0x003AB748 File Offset: 0x003A9948
 	public bool ContainsLastKnownPositionWaypoint(int _entityId)
 	{
 		using (List<Waypoint>.Enumerator enumerator = this.Collection.list.GetEnumerator())
@@ -75,7 +75,7 @@ public class WaypointCollection
 		return false;
 	}
 
-	// Token: 0x06009A9B RID: 39579 RVA: 0x003A93A4 File Offset: 0x003A75A4
+	// Token: 0x06009AF3 RID: 39667 RVA: 0x003AB7A8 File Offset: 0x003A99A8
 	public Waypoint GetLastKnownPositionWaypoint(int _entityID)
 	{
 		foreach (Waypoint waypoint in this.Collection.list)
@@ -88,7 +88,7 @@ public class WaypointCollection
 		return null;
 	}
 
-	// Token: 0x06009A9C RID: 39580 RVA: 0x003A9408 File Offset: 0x003A7608
+	// Token: 0x06009AF4 RID: 39668 RVA: 0x003AB80C File Offset: 0x003A9A0C
 	public void UpdateEntityVehicleWayPoint(EntityVehicle vehicle, bool unloaded = false)
 	{
 		if (!vehicle.LocalPlayerIsOwner())
@@ -121,7 +121,7 @@ public class WaypointCollection
 		((XUiC_MapArea)GameManager.Instance.World.GetPrimaryPlayer().PlayerUI.xui.GetWindow("mapArea").Controller).RefreshVehiclePositionWaypoint(vehicle, false);
 	}
 
-	// Token: 0x06009A9D RID: 39581 RVA: 0x003A9518 File Offset: 0x003A7718
+	// Token: 0x06009AF5 RID: 39669 RVA: 0x003AB91C File Offset: 0x003A9B1C
 	public void UpdateEntityAnimalWayPoint(EntityAnimal _animal, bool unloaded = false)
 	{
 		Waypoint waypoint = null;
@@ -150,7 +150,7 @@ public class WaypointCollection
 		((XUiC_MapArea)GameManager.Instance.World.GetPrimaryPlayer().PlayerUI.xui.GetWindow("mapArea").Controller).RefreshAnimalPositionWaypoint(_animal, false);
 	}
 
-	// Token: 0x06009A9E RID: 39582 RVA: 0x003A9620 File Offset: 0x003A7820
+	// Token: 0x06009AF6 RID: 39670 RVA: 0x003ABA24 File Offset: 0x003A9C24
 	public void SetEntityVehicleWaypointFromVehicleManager([TupleElementNames(new string[] { "entityId", "position" })] List<ValueTuple<int, Vector3>> _positions)
 	{
 		List<Waypoint> list = new List<Waypoint>();
@@ -195,7 +195,7 @@ public class WaypointCollection
 		}
 	}
 
-	// Token: 0x06009A9F RID: 39583 RVA: 0x003A9790 File Offset: 0x003A7990
+	// Token: 0x06009AF7 RID: 39671 RVA: 0x003ABB94 File Offset: 0x003A9D94
 	public void SetDroneWaypointsFromDroneManager([TupleElementNames(new string[] { "entityId", "position" })] List<ValueTuple<int, Vector3>> _drones)
 	{
 		for (int i = 0; i < _drones.Count; i++)
@@ -253,7 +253,7 @@ public class WaypointCollection
 		}
 	}
 
-	// Token: 0x06009AA0 RID: 39584 RVA: 0x003A99D0 File Offset: 0x003A7BD0
+	// Token: 0x06009AF8 RID: 39672 RVA: 0x003ABDD4 File Offset: 0x003A9FD4
 	public void UpdateEntityDroneWayPoint(EntityDrone drone, bool following, bool unloaded = false)
 	{
 		if (!drone.LocalPlayerIsOwner())
@@ -286,7 +286,7 @@ public class WaypointCollection
 		((XUiC_MapArea)GameManager.Instance.World.GetPrimaryPlayer().PlayerUI.xui.GetWindow("mapArea").Controller).RefreshDronePositionWaypoint(drone, false);
 	}
 
-	// Token: 0x06009AA1 RID: 39585 RVA: 0x003A9AE0 File Offset: 0x003A7CE0
+	// Token: 0x06009AF9 RID: 39673 RVA: 0x003ABEE4 File Offset: 0x003AA0E4
 	public void SetWaypointHiddenOnMap(int _entityId, bool _hidden)
 	{
 		foreach (Waypoint waypoint in this.Collection.list)
@@ -300,7 +300,7 @@ public class WaypointCollection
 		}
 	}
 
-	// Token: 0x06009AA2 RID: 39586 RVA: 0x003A9B50 File Offset: 0x003A7D50
+	// Token: 0x06009AFA RID: 39674 RVA: 0x003ABF54 File Offset: 0x003AA154
 	public bool TryRemoveLastKnownPositionWaypoint(int _entityId)
 	{
 		Waypoint lastKnownPositionWaypoint = this.GetLastKnownPositionWaypoint(_entityId);
@@ -313,7 +313,7 @@ public class WaypointCollection
 		return false;
 	}
 
-	// Token: 0x06009AA3 RID: 39587 RVA: 0x003A9B88 File Offset: 0x003A7D88
+	// Token: 0x06009AFB RID: 39675 RVA: 0x003ABF8C File Offset: 0x003AA18C
 	public Waypoint GetWaypointForNavObject(NavObject nav)
 	{
 		foreach (Waypoint waypoint in this.Collection.list)
@@ -326,9 +326,9 @@ public class WaypointCollection
 		return null;
 	}
 
-	// Token: 0x04007492 RID: 29842
+	// Token: 0x040074D3 RID: 29907
 	public const int cCurrentSaveVersion = 7;
 
-	// Token: 0x04007493 RID: 29843
+	// Token: 0x040074D4 RID: 29908
 	public HashSetList<Waypoint> Collection = new HashSetList<Waypoint>();
 }

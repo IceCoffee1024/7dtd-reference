@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200033D RID: 829
+// Token: 0x0200033F RID: 831
 [Preserve]
 public class XUiC_DiscordBlockedUsers : XUiController
 {
-	// Token: 0x060017EB RID: 6123 RVA: 0x000896B8 File Offset: 0x000878B8
+	// Token: 0x060017EF RID: 6127 RVA: 0x000898EC File Offset: 0x00087AEC
 	public override void Init()
 	{
 		base.Init();
@@ -20,6 +20,6 @@ public class XUiC_DiscordBlockedUsers : XUiController
 		}
 	}
 
-	// Token: 0x04000F77 RID: 3959
+	// Token: 0x04000F87 RID: 3975
 	public static string ID = "";
 }

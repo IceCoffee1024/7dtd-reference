@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001937 RID: 6455
+	// Token: 0x02001968 RID: 6504
 	[Preserve]
 	public class ChallengeObjectiveQuestComplete : BaseChallengeObjective
 	{
-		// Token: 0x17001920 RID: 6432
-		// (get) Token: 0x0600C756 RID: 51030 RVA: 0x0026F794 File Offset: 0x0026D994
+		// Token: 0x17001968 RID: 6504
+		// (get) Token: 0x0600C86A RID: 51306 RVA: 0x00270CBC File Offset: 0x0026EEBC
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -19,8 +19,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001921 RID: 6433
-		// (get) Token: 0x0600C757 RID: 51031 RVA: 0x00491DFC File Offset: 0x0048FFFC
+		// Token: 0x17001969 RID: 6505
+		// (get) Token: 0x0600C86B RID: 51307 RVA: 0x004957F0 File Offset: 0x004939F0
 		public override string DescriptionText
 		{
 			get
@@ -33,24 +33,24 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C758 RID: 51032 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C86C RID: 51308 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C759 RID: 51033 RVA: 0x00491E4E File Offset: 0x0049004E
+		// Token: 0x0600C86D RID: 51309 RVA: 0x00495842 File Offset: 0x00493A42
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.QuestComplete += this.Current_QuestComplete;
 		}
 
-		// Token: 0x0600C75A RID: 51034 RVA: 0x00491E66 File Offset: 0x00490066
+		// Token: 0x0600C86E RID: 51310 RVA: 0x0049585A File Offset: 0x00493A5A
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.QuestComplete -= this.Current_QuestComplete;
 		}
 
-		// Token: 0x0600C75B RID: 51035 RVA: 0x00491E80 File Offset: 0x00490080
+		// Token: 0x0600C86F RID: 51311 RVA: 0x00495874 File Offset: 0x00493A74
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_QuestComplete(FastTags<TagGroup.Global> questTags, QuestClass questClass)
 		{
@@ -70,7 +70,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C75C RID: 51036 RVA: 0x00491EE4 File Offset: 0x004900E4
+		// Token: 0x0600C870 RID: 51312 RVA: 0x004958D8 File Offset: 0x00493AD8
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -93,7 +93,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C75D RID: 51037 RVA: 0x00491F9D File Offset: 0x0049019D
+		// Token: 0x0600C871 RID: 51313 RVA: 0x00495991 File Offset: 0x00493B91
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveQuestComplete
@@ -104,19 +104,19 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0400962C RID: 38444
+		// Token: 0x04009715 RID: 38677
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string questTagText;
 
-		// Token: 0x0400962D RID: 38445
+		// Token: 0x04009716 RID: 38678
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> questTag = FastTags<TagGroup.Global>.none;
 
-		// Token: 0x0400962E RID: 38446
+		// Token: 0x04009717 RID: 38679
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int tier;
 
-		// Token: 0x0400962F RID: 38447
+		// Token: 0x04009718 RID: 38680
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string questText = "";
 	}

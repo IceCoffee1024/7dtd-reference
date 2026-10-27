@@ -4,17 +4,17 @@ using System.Collections.ObjectModel;
 using Challenges;
 using UnityEngine;
 
-// Token: 0x02001157 RID: 4439
+// Token: 0x02001167 RID: 4455
 public class XUiM_Recipes : XUiModel
 {
 	// Token: 0x140000EA RID: 234
-	// (add) Token: 0x06008BF3 RID: 35827 RVA: 0x00355D4C File Offset: 0x00353F4C
-	// (remove) Token: 0x06008BF4 RID: 35828 RVA: 0x00355D84 File Offset: 0x00353F84
+	// (add) Token: 0x06008C47 RID: 35911 RVA: 0x00357DF8 File Offset: 0x00355FF8
+	// (remove) Token: 0x06008C48 RID: 35912 RVA: 0x00357E30 File Offset: 0x00356030
 	public event XUiEvent_TrackedQuestChanged OnTrackedRecipeChanged;
 
-	// Token: 0x17001052 RID: 4178
-	// (get) Token: 0x06008BF5 RID: 35829 RVA: 0x00355DB9 File Offset: 0x00353FB9
-	// (set) Token: 0x06008BF6 RID: 35830 RVA: 0x00355DC4 File Offset: 0x00353FC4
+	// Token: 0x1700105D RID: 4189
+	// (get) Token: 0x06008C49 RID: 35913 RVA: 0x00357E65 File Offset: 0x00356065
+	// (set) Token: 0x06008C4A RID: 35914 RVA: 0x00357E70 File Offset: 0x00356070
 	public Recipe TrackedRecipe
 	{
 		get
@@ -39,7 +39,7 @@ public class XUiM_Recipes : XUiModel
 		}
 	}
 
-	// Token: 0x06008BF7 RID: 35831 RVA: 0x00355E14 File Offset: 0x00354014
+	// Token: 0x06008C4B RID: 35915 RVA: 0x00357EC0 File Offset: 0x003560C0
 	public void SetPreviousTracked(EntityPlayerLocal player)
 	{
 		XUi xui = player.PlayerUI.xui;
@@ -50,7 +50,7 @@ public class XUiM_Recipes : XUiModel
 		XUiM_Recipes.sPreviouslyTrackedQuest = trackedQuest;
 	}
 
-	// Token: 0x06008BF8 RID: 35832 RVA: 0x00355E68 File Offset: 0x00354068
+	// Token: 0x06008C4C RID: 35916 RVA: 0x00357F14 File Offset: 0x00356114
 	public void ResetToPreviousTracked(EntityPlayerLocal player)
 	{
 		XUi xui = player.PlayerUI.xui;
@@ -69,7 +69,7 @@ public class XUiM_Recipes : XUiModel
 		xui.QuestTracker.TrackedChallenge = XUiM_Recipes.sPreviouslyTrackedChallenge;
 	}
 
-	// Token: 0x06008BF9 RID: 35833 RVA: 0x00355EF6 File Offset: 0x003540F6
+	// Token: 0x06008C4D RID: 35917 RVA: 0x00357FA2 File Offset: 0x003561A2
 	public void RefreshTrackedRecipe()
 	{
 		if (this.OnTrackedRecipeChanged != null)
@@ -78,13 +78,13 @@ public class XUiM_Recipes : XUiModel
 		}
 	}
 
-	// Token: 0x06008BFA RID: 35834 RVA: 0x00355F0B File Offset: 0x0035410B
+	// Token: 0x06008C4E RID: 35918 RVA: 0x00357FB7 File Offset: 0x003561B7
 	public static ReadOnlyCollection<Recipe> GetRecipes()
 	{
 		return CraftingManager.NonScrapableRecipes;
 	}
 
-	// Token: 0x06008BFB RID: 35835 RVA: 0x00355F14 File Offset: 0x00354114
+	// Token: 0x06008C4F RID: 35919 RVA: 0x00357FC0 File Offset: 0x003561C0
 	public static void UpdateRecipesforBackpackCrafting()
 	{
 		ReadOnlyCollection<Recipe> recipes = XUiM_Recipes.GetRecipes();
@@ -112,7 +112,7 @@ public class XUiM_Recipes : XUiModel
 		}
 	}
 
-	// Token: 0x06008BFC RID: 35836 RVA: 0x00355FC8 File Offset: 0x003541C8
+	// Token: 0x06008C50 RID: 35920 RVA: 0x00358074 File Offset: 0x00356274
 	public static void FilterRecipesByCategory(string _category, ref List<Recipe> recipeList)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -162,7 +162,7 @@ public class XUiM_Recipes : XUiModel
 		recipeList = list;
 	}
 
-	// Token: 0x06008BFD RID: 35837 RVA: 0x003560A0 File Offset: 0x003542A0
+	// Token: 0x06008C51 RID: 35921 RVA: 0x0035814C File Offset: 0x0035634C
 	public static List<Recipe> FilterRecipesByWorkstation(string _workstation, IList<Recipe> recipeList)
 	{
 		if (_workstation == null)
@@ -250,7 +250,7 @@ public class XUiM_Recipes : XUiModel
 		return list;
 	}
 
-	// Token: 0x06008BFE RID: 35838 RVA: 0x00356318 File Offset: 0x00354518
+	// Token: 0x06008C52 RID: 35922 RVA: 0x003583C4 File Offset: 0x003565C4
 	public static List<Recipe> FilterRecipesByName(string _name, IList<Recipe> recipeList)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -299,7 +299,7 @@ public class XUiM_Recipes : XUiModel
 		return list;
 	}
 
-	// Token: 0x06008BFF RID: 35839 RVA: 0x00356488 File Offset: 0x00354688
+	// Token: 0x06008C53 RID: 35923 RVA: 0x00358534 File Offset: 0x00356734
 	public static List<Recipe> FilterRecipesByIngredient(ItemStack stack, IList<Recipe> recipeList)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -314,7 +314,7 @@ public class XUiM_Recipes : XUiModel
 		return list;
 	}
 
-	// Token: 0x06008C00 RID: 35840 RVA: 0x003564DC File Offset: 0x003546DC
+	// Token: 0x06008C54 RID: 35924 RVA: 0x00358588 File Offset: 0x00356788
 	public static List<Recipe> FilterRecipesByItem(List<int> itemIDs, IList<Recipe> recipeList)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -328,7 +328,7 @@ public class XUiM_Recipes : XUiModel
 		return list;
 	}
 
-	// Token: 0x06008C01 RID: 35841 RVA: 0x00356524 File Offset: 0x00354724
+	// Token: 0x06008C55 RID: 35925 RVA: 0x003585D0 File Offset: 0x003567D0
 	public static List<Recipe> FilterRecipesByID(int itemID, IList<Recipe> recipeList)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -342,7 +342,7 @@ public class XUiM_Recipes : XUiModel
 		return list;
 	}
 
-	// Token: 0x06008C02 RID: 35842 RVA: 0x00356568 File Offset: 0x00354768
+	// Token: 0x06008C56 RID: 35926 RVA: 0x00358614 File Offset: 0x00356814
 	public static bool FilterByBackpackSandboxSetting(Recipe recipe)
 	{
 		if ((XUiM_Recipes.BackpackCrafting == BackpackCraftingOptions.Disabled && recipe.craftingArea == "") || (XUiM_Recipes.BackpackCrafting == BackpackCraftingOptions.WorkbenchOnly && !recipe.tags.Test_AnySet(XUiM_Recipes.workbenchOnlyTag)))
@@ -381,50 +381,50 @@ public class XUiM_Recipes : XUiModel
 		return false;
 	}
 
-	// Token: 0x06008C03 RID: 35843 RVA: 0x00356612 File Offset: 0x00354812
+	// Token: 0x06008C57 RID: 35927 RVA: 0x003586BE File Offset: 0x003568BE
 	public static int GetCount(XUi xui)
 	{
 		return CraftingManager.GetRecipes().Count;
 	}
 
-	// Token: 0x06008C04 RID: 35844 RVA: 0x0035661E File Offset: 0x0035481E
+	// Token: 0x06008C58 RID: 35928 RVA: 0x003586CA File Offset: 0x003568CA
 	public static string GetRecipeName(Recipe _recipe)
 	{
 		return _recipe.GetName();
 	}
 
-	// Token: 0x06008C05 RID: 35845 RVA: 0x00356626 File Offset: 0x00354826
+	// Token: 0x06008C59 RID: 35929 RVA: 0x003586D2 File Offset: 0x003568D2
 	public static string GetRecipeSpriteName(Recipe _recipe)
 	{
 		return _recipe.GetIcon();
 	}
 
-	// Token: 0x06008C06 RID: 35846 RVA: 0x0035662E File Offset: 0x0035482E
+	// Token: 0x06008C5A RID: 35930 RVA: 0x003586DA File Offset: 0x003568DA
 	public static bool GetRecipeIsUnlocked(XUi xui, Recipe _recipe)
 	{
 		return _recipe.IsUnlocked(xui.playerUI.entityPlayer);
 	}
 
-	// Token: 0x06008C07 RID: 35847 RVA: 0x00356644 File Offset: 0x00354844
+	// Token: 0x06008C5B RID: 35931 RVA: 0x003586F0 File Offset: 0x003568F0
 	public static bool GetRecipeIsUnlocked(XUi xui, string itemName)
 	{
 		Recipe recipe = CraftingManager.GetRecipe(itemName);
 		return recipe != null && XUiM_Recipes.GetRecipeIsUnlocked(xui, recipe);
 	}
 
-	// Token: 0x06008C08 RID: 35848 RVA: 0x00356664 File Offset: 0x00354864
+	// Token: 0x06008C5C RID: 35932 RVA: 0x00358710 File Offset: 0x00356910
 	public static bool GetRecipeIsUnlockable(XUi xui, Recipe _recipe)
 	{
 		return _recipe.IsLearnable;
 	}
 
-	// Token: 0x06008C09 RID: 35849 RVA: 0x0035666C File Offset: 0x0035486C
+	// Token: 0x06008C5D RID: 35933 RVA: 0x00358718 File Offset: 0x00356918
 	public static bool GetRecipeIsFavorite(XUi xui, Recipe _recipe)
 	{
 		return CraftingManager.RecipeIsFavorite(_recipe);
 	}
 
-	// Token: 0x06008C0A RID: 35850 RVA: 0x00356674 File Offset: 0x00354874
+	// Token: 0x06008C5E RID: 35934 RVA: 0x00358720 File Offset: 0x00356920
 	public static float GetRecipeCraftTime(XUi xui, Recipe _recipe)
 	{
 		float num = EffectManager.GetValue(PassiveEffects.CraftingTime, null, _recipe.craftingTime, xui.playerUI.entityPlayer, _recipe, _recipe.tags, true, true, true, true, true, 1, true, false) * XUiM_Recipes.CraftingTimeModifier;
@@ -435,7 +435,7 @@ public class XUiM_Recipes : XUiModel
 		return num;
 	}
 
-	// Token: 0x06008C0B RID: 35851 RVA: 0x003566C0 File Offset: 0x003548C0
+	// Token: 0x06008C5F RID: 35935 RVA: 0x0035876C File Offset: 0x0035696C
 	public static int GetRecipeCraftOutputCount(XUi xui, Recipe _recipe)
 	{
 		float num = XUiM_Recipes.CraftingOutputModifier;
@@ -446,30 +446,30 @@ public class XUiM_Recipes : XUiModel
 		return (int)Mathf.Max(EffectManager.GetValue(PassiveEffects.CraftingOutputCount, null, (float)_recipe.count, xui.playerUI.entityPlayer, _recipe, _recipe.tags, true, true, true, true, true, 1, true, false) * num, 1f);
 	}
 
-	// Token: 0x06008C0C RID: 35852 RVA: 0x00356721 File Offset: 0x00354921
+	// Token: 0x06008C60 RID: 35936 RVA: 0x003587CD File Offset: 0x003569CD
 	public static ItemStack GetRecipeOutput(Recipe _recipe)
 	{
 		return new ItemStack(new ItemValue(_recipe.itemValueType, false), _recipe.count);
 	}
 
-	// Token: 0x06008C0D RID: 35853 RVA: 0x0035673A File Offset: 0x0035493A
+	// Token: 0x06008C61 RID: 35937 RVA: 0x003587E6 File Offset: 0x003569E6
 	public static List<ItemStack> GetRecipeIngredients(Recipe _recipe)
 	{
 		return _recipe.GetIngredientsSummedUp();
 	}
 
-	// Token: 0x06008C0E RID: 35854 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008C62 RID: 35938 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void GetCurrentSlots()
 	{
 	}
 
-	// Token: 0x06008C0F RID: 35855 RVA: 0x00356742 File Offset: 0x00354942
+	// Token: 0x06008C63 RID: 35939 RVA: 0x003587EE File Offset: 0x003569EE
 	public static bool HasIngredientsForRecipe(IList<ItemStack> allItems, Recipe _recipe, EntityAlive _ea = null)
 	{
 		return _recipe.CanCraftAny(allItems, _ea);
 	}
 
-	// Token: 0x06008C10 RID: 35856 RVA: 0x0035674C File Offset: 0x0035494C
+	// Token: 0x06008C64 RID: 35940 RVA: 0x003587F8 File Offset: 0x003569F8
 	public static float GetCraftingInputModifier(Recipe recipe)
 	{
 		if (recipe.tags.Test_AnySet(XUiM_Recipes.SandboxIgnoreTag))
@@ -479,123 +479,123 @@ public class XUiM_Recipes : XUiModel
 		return XUiM_Recipes.CraftingInputModifier;
 	}
 
-	// Token: 0x04006774 RID: 26484
+	// Token: 0x040067B4 RID: 26548
 	public static float CraftingTimeModifier = 1f;
 
-	// Token: 0x04006775 RID: 26485
+	// Token: 0x040067B5 RID: 26549
 	public static float CraftingInputModifier = 1f;
 
-	// Token: 0x04006776 RID: 26486
+	// Token: 0x040067B6 RID: 26550
 	public static float CraftingOutputModifier = 1f;
 
-	// Token: 0x04006777 RID: 26487
+	// Token: 0x040067B7 RID: 26551
 	public static float SmeltingTimeModifier = 1f;
 
-	// Token: 0x04006778 RID: 26488
+	// Token: 0x040067B8 RID: 26552
 	public static bool DisableSmelter = false;
 
-	// Token: 0x04006779 RID: 26489
+	// Token: 0x040067B9 RID: 26553
 	public static float ScrappingOutputModifier = 1f;
 
-	// Token: 0x0400677A RID: 26490
+	// Token: 0x040067BA RID: 26554
 	public static float SmeltingOutputModifier = 1f;
 
-	// Token: 0x0400677B RID: 26491
+	// Token: 0x040067BB RID: 26555
 	public static float DewCollectorTimeModifier = 1f;
 
-	// Token: 0x0400677C RID: 26492
+	// Token: 0x040067BC RID: 26556
 	public static float DewCollectorOutput = 1f;
 
-	// Token: 0x0400677D RID: 26493
+	// Token: 0x040067BD RID: 26557
 	public static float DewCollectorInput = 1f;
 
-	// Token: 0x0400677E RID: 26494
+	// Token: 0x040067BE RID: 26558
 	public static float ApiaryTimeModifier = 1f;
 
-	// Token: 0x0400677F RID: 26495
+	// Token: 0x040067BF RID: 26559
 	public static float ApiaryOutput = 1f;
 
-	// Token: 0x04006780 RID: 26496
+	// Token: 0x040067C0 RID: 26560
 	public static float ApiaryInput = 1f;
 
-	// Token: 0x04006781 RID: 26497
+	// Token: 0x040067C1 RID: 26561
 	public static float ChickenCoopTimeModifier = 1f;
 
-	// Token: 0x04006782 RID: 26498
+	// Token: 0x040067C2 RID: 26562
 	public static float ChickenCoopOutput = 1f;
 
-	// Token: 0x04006783 RID: 26499
+	// Token: 0x040067C3 RID: 26563
 	public static float ChickenCoopInput = 1f;
 
-	// Token: 0x04006784 RID: 26500
+	// Token: 0x040067C4 RID: 26564
 	public static float CollectorTimeModifier = 1f;
 
-	// Token: 0x04006785 RID: 26501
+	// Token: 0x040067C5 RID: 26565
 	public static int CollectorOutput = 1;
 
-	// Token: 0x04006786 RID: 26502
+	// Token: 0x040067C6 RID: 26566
 	public static float MiningOutputModifier = 1f;
 
-	// Token: 0x04006787 RID: 26503
+	// Token: 0x040067C7 RID: 26567
 	public static float HarvestingOutputModifier = 1f;
 
-	// Token: 0x04006788 RID: 26504
+	// Token: 0x040067C8 RID: 26568
 	public static float CropOutputModifier = 1f;
 
-	// Token: 0x04006789 RID: 26505
+	// Token: 0x040067C9 RID: 26569
 	public static float SeedDropOutputModifier = 1f;
 
-	// Token: 0x0400678A RID: 26506
+	// Token: 0x040067CA RID: 26570
 	public static int CraftingMaxTier = 6;
 
-	// Token: 0x0400678B RID: 26507
+	// Token: 0x040067CB RID: 26571
 	public static bool CraftingProgression = true;
 
-	// Token: 0x0400678C RID: 26508
+	// Token: 0x040067CC RID: 26572
 	public static BackpackCraftingOptions BackpackCrafting = BackpackCraftingOptions.Enabled;
 
-	// Token: 0x0400678D RID: 26509
+	// Token: 0x040067CD RID: 26573
 	public static bool WorkstationCrafting = true;
 
-	// Token: 0x0400678F RID: 26511
+	// Token: 0x040067CF RID: 26575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Quest sPreviouslyTrackedQuest = null;
 
-	// Token: 0x04006790 RID: 26512
+	// Token: 0x040067D0 RID: 26576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Challenge sPreviouslyTrackedChallenge = null;
 
-	// Token: 0x04006791 RID: 26513
+	// Token: 0x040067D1 RID: 26577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> SandboxIgnoreTag = FastTags<TagGroup.Global>.Parse("sandboxIgnore");
 
-	// Token: 0x04006792 RID: 26514
+	// Token: 0x040067D2 RID: 26578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> workbenchTag = FastTags<TagGroup.Global>.Parse("workbench");
 
-	// Token: 0x04006793 RID: 26515
+	// Token: 0x040067D3 RID: 26579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe trackedRecipe;
 
-	// Token: 0x04006794 RID: 26516
+	// Token: 0x040067D4 RID: 26580
 	public int TrackedRecipeQuality = 1;
 
-	// Token: 0x04006795 RID: 26517
+	// Token: 0x040067D5 RID: 26581
 	public int TrackedRecipeCount = 1;
 
-	// Token: 0x04006796 RID: 26518
+	// Token: 0x040067D6 RID: 26582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> workbenchOnlyTag = FastTags<TagGroup.Global>.Parse("isworkbench");
 
-	// Token: 0x04006797 RID: 26519
+	// Token: 0x040067D7 RID: 26583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> biomeprogressionTag = FastTags<TagGroup.Global>.Parse("biomeProgression");
 
-	// Token: 0x04006798 RID: 26520
+	// Token: 0x040067D8 RID: 26584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> useSmelterTag = FastTags<TagGroup.Global>.Parse("use_smelter");
 
-	// Token: 0x04006799 RID: 26521
+	// Token: 0x040067D9 RID: 26585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> replaceSmelterTag = FastTags<TagGroup.Global>.Parse("replace_smelter");
 }

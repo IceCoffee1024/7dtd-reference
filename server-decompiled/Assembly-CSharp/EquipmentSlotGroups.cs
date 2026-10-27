@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020005F7 RID: 1527
+// Token: 0x020005FE RID: 1534
 public enum EquipmentSlotGroups
 {
-	// Token: 0x04002740 RID: 10048
+	// Token: 0x0400275B RID: 10075
 	Head,
-	// Token: 0x04002741 RID: 10049
+	// Token: 0x0400275C RID: 10076
 	UpperBody,
-	// Token: 0x04002742 RID: 10050
+	// Token: 0x0400275D RID: 10077
 	LowerBody
 }

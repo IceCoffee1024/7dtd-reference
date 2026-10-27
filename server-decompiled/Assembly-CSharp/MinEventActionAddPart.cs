@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E3 RID: 1763
+// Token: 0x020006EB RID: 1771
 [Preserve]
 public class MinEventActionAddPart : MinEventActionTargetedBase
 {
-	// Token: 0x0600368F RID: 13967 RVA: 0x001678C4 File Offset: 0x00165AC4
+	// Token: 0x060036A6 RID: 13990 RVA: 0x001686AC File Offset: 0x001668AC
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -90,13 +90,13 @@ public class MinEventActionAddPart : MinEventActionTargetedBase
 		_params.Self.AddPart(this.partName, transform2);
 	}
 
-	// Token: 0x06003690 RID: 13968 RVA: 0x00167B98 File Offset: 0x00165D98
+	// Token: 0x060036A7 RID: 13991 RVA: 0x00168980 File Offset: 0x00166B80
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && (this.goToInstantiate != null || this.itemPropertyName != null);
 	}
 
-	// Token: 0x06003691 RID: 13969 RVA: 0x00167BD0 File Offset: 0x00165DD0
+	// Token: 0x060036A8 RID: 13992 RVA: 0x001689B8 File Offset: 0x00166BB8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -145,31 +145,31 @@ public class MinEventActionAddPart : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BD7 RID: 11223
+	// Token: 0x04002BF3 RID: 11251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string partName;
 
-	// Token: 0x04002BD8 RID: 11224
+	// Token: 0x04002BF4 RID: 11252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goToInstantiate;
 
-	// Token: 0x04002BD9 RID: 11225
+	// Token: 0x04002BF5 RID: 11253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string itemPropertyName;
 
-	// Token: 0x04002BDA RID: 11226
+	// Token: 0x04002BF6 RID: 11254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parentTransformPath;
 
-	// Token: 0x04002BDB RID: 11227
+	// Token: 0x04002BF7 RID: 11255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 localPos;
 
-	// Token: 0x04002BDC RID: 11228
+	// Token: 0x04002BF8 RID: 11256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 localRot;
 
-	// Token: 0x04002BDD RID: 11229
+	// Token: 0x04002BF9 RID: 11257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool colorTint;
 }

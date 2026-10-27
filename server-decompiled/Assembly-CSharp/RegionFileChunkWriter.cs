@@ -2,16 +2,16 @@
 using System.IO;
 using Noemax.GZip;
 
-// Token: 0x02000BA8 RID: 2984
+// Token: 0x02000BB3 RID: 2995
 public class RegionFileChunkWriter
 {
-	// Token: 0x060059D6 RID: 22998 RVA: 0x00227E0F File Offset: 0x0022600F
+	// Token: 0x060059FB RID: 23035 RVA: 0x0022936B File Offset: 0x0022756B
 	public RegionFileChunkWriter(RegionFileAccessAbstract regionFileAccess)
 	{
 		this.regionFileAccess = regionFileAccess;
 	}
 
-	// Token: 0x060059D7 RID: 22999 RVA: 0x00227E30 File Offset: 0x00226030
+	// Token: 0x060059FC RID: 23036 RVA: 0x0022938C File Offset: 0x0022758C
 	public void WriteStreamCompressed(string dir, int chunkX, int chunkZ, string ext, MemoryStream memoryStream)
 	{
 		Stream outputStream = this.regionFileAccess.GetOutputStream(dir, chunkX, chunkZ, ext);
@@ -31,19 +31,19 @@ public class RegionFileChunkWriter
 		outputStream.Close();
 	}
 
-	// Token: 0x040045C6 RID: 17862
+	// Token: 0x040045EB RID: 17899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileAccessAbstract regionFileAccess;
 
-	// Token: 0x040045C7 RID: 17863
+	// Token: 0x040045EC RID: 17900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stream innerSaveStream;
 
-	// Token: 0x040045C8 RID: 17864
+	// Token: 0x040045ED RID: 17901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DeflateOutputStream zipSaveStream;
 
-	// Token: 0x040045C9 RID: 17865
+	// Token: 0x040045EE RID: 17902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] saveBuffer = new byte[4096];
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200024A RID: 586
+// Token: 0x0200024C RID: 588
 [Preserve]
 public class ConsoleCmdMemoryProfiler : ConsoleCmdAbstract
 {
 	// Token: 0x170001B5 RID: 437
-	// (get) Token: 0x06001172 RID: 4466 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001176 RID: 4470 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -17,21 +17,21 @@ public class ConsoleCmdMemoryProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001173 RID: 4467 RVA: 0x0006EDDC File Offset: 0x0006CFDC
+	// Token: 0x06001177 RID: 4471 RVA: 0x0006EFAC File Offset: 0x0006D1AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "memprofile", "mprof" };
 	}
 
-	// Token: 0x06001174 RID: 4468 RVA: 0x0006EDF4 File Offset: 0x0006CFF4
+	// Token: 0x06001178 RID: 4472 RVA: 0x0006EFC4 File Offset: 0x0006D1C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Toggles screen Memory Profiler UI";
 	}
 
-	// Token: 0x06001175 RID: 4469 RVA: 0x0006EDFC File Offset: 0x0006CFFC
+	// Token: 0x06001179 RID: 4473 RVA: 0x0006EFCC File Offset: 0x0006D1CC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		UnityMemoryProfilerLabel[] array2;
@@ -72,7 +72,7 @@ public class ConsoleCmdMemoryProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000CE2 RID: 3298
+	// Token: 0x04000CE3 RID: 3299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool enabled;
 }

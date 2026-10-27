@@ -5,10 +5,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000C40 RID: 3136
+// Token: 0x02000C4B RID: 3147
 public class DistantTerrain
 {
-	// Token: 0x06005F11 RID: 24337 RVA: 0x00259F88 File Offset: 0x00258188
+	// Token: 0x06005F36 RID: 24374 RVA: 0x0025B4B0 File Offset: 0x002596B0
 	public void Init()
 	{
 		DistantTerrain.cShiftMidResChunks = DistantTerrain.cShiftHiResChunks + new Vector3(0f, -0.2f, 0f);
@@ -106,7 +106,7 @@ public class DistantTerrain
 		this.EdgeResFactor = new float[] { 1f, 1f, 1f, 1f };
 	}
 
-	// Token: 0x06005F12 RID: 24338 RVA: 0x0025A560 File Offset: 0x00258760
+	// Token: 0x06005F37 RID: 24375 RVA: 0x0025BA88 File Offset: 0x00259C88
 	public void Cleanup()
 	{
 		this.MainChunkMap[this.CurMapId].wcd = null;
@@ -136,7 +136,7 @@ public class DistantTerrain
 		DistantTerrain.Instance = null;
 	}
 
-	// Token: 0x06005F13 RID: 24339 RVA: 0x0025A639 File Offset: 0x00258839
+	// Token: 0x06005F38 RID: 24376 RVA: 0x0025BB61 File Offset: 0x00259D61
 	public void Configure(DelegateGetTerrainHeight _delegate, WorldCreationData _wcd, float _size = 0f)
 	{
 		DistantChunkMap.TGHeightFunc = _delegate;
@@ -146,14 +146,14 @@ public class DistantTerrain
 		this.ChunkToActivateList.Clear();
 	}
 
-	// Token: 0x06005F14 RID: 24340 RVA: 0x0025A675 File Offset: 0x00258875
+	// Token: 0x06005F39 RID: 24377 RVA: 0x0025BB9D File Offset: 0x00259D9D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setTerrainGOState(bool IsTerrainActive)
 	{
 		this.MainChunkMap[this.CurMapId].ParentGameObject.SetActive(IsTerrainActive);
 	}
 
-	// Token: 0x06005F15 RID: 24341 RVA: 0x0025A690 File Offset: 0x00258890
+	// Token: 0x06005F3A RID: 24378 RVA: 0x0025BBB8 File Offset: 0x00259DB8
 	public void UpdateTerrain(Vector3 InCenterPosXZ)
 	{
 		if (this.PlPosCache.Count > this.PlPosCache.Capacity - 2)
@@ -239,7 +239,7 @@ public class DistantTerrain
 		this.threadManagementUpdate();
 	}
 
-	// Token: 0x06005F16 RID: 24342 RVA: 0x0025A9E8 File Offset: 0x00258BE8
+	// Token: 0x06005F3B RID: 24379 RVA: 0x0025BF10 File Offset: 0x0025A110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ManagePlayerPos(Vector3 InCenterPosXZ)
 	{
@@ -254,13 +254,13 @@ public class DistantTerrain
 		this.setPlayerCurrentPosition(InCenterPosXZ.x, InCenterPosXZ.z);
 	}
 
-	// Token: 0x06005F17 RID: 24343 RVA: 0x0025AABB File Offset: 0x00258CBB
+	// Token: 0x06005F3C RID: 24380 RVA: 0x0025BFE3 File Offset: 0x0025A1E3
 	public void RedrawTerrain()
 	{
 		this.RedrawTerrain(this.CurrentPlayerPosVec, this.ChunkBackGroundMapId, this.ChunkDataListBackGround[0]);
 	}
 
-	// Token: 0x06005F18 RID: 24344 RVA: 0x0025AAE0 File Offset: 0x00258CE0
+	// Token: 0x06005F3D RID: 24381 RVA: 0x0025C008 File Offset: 0x0025A208
 	public void RedrawTerrain(Vector3 PlayerPos, int _CurMapId, OptimizedList<DistantChunk>[] CurChunkDataList)
 	{
 		int nbResLevel = this.MainChunkMap[_CurMapId].NbResLevel;
@@ -317,7 +317,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F19 RID: 24345 RVA: 0x0025ADB8 File Offset: 0x00258FB8
+	// Token: 0x06005F3E RID: 24382 RVA: 0x0025C2E0 File Offset: 0x0025A4E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearThreadProcess()
 	{
@@ -362,7 +362,7 @@ public class DistantTerrain
 		this.DebugYieldResLevel = -1;
 	}
 
-	// Token: 0x06005F1A RID: 24346 RVA: 0x0025B000 File Offset: 0x00259200
+	// Token: 0x06005F3F RID: 24383 RVA: 0x0025C528 File Offset: 0x0025A728
 	public void SetTerrainVisible(bool IsTerrainVisible)
 	{
 		if (Camera.main != null)
@@ -397,7 +397,7 @@ public class DistantTerrain
 		this.setAllCollidersOnOff(IsTerrainVisible);
 	}
 
-	// Token: 0x06005F1B RID: 24347 RVA: 0x0025B0CE File Offset: 0x002592CE
+	// Token: 0x06005F40 RID: 24384 RVA: 0x0025C5F6 File Offset: 0x0025A7F6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setPlayerCurrentPosition(float _posX, float _posY)
 	{
@@ -405,13 +405,13 @@ public class DistantTerrain
 		this.CurrentPlayerExtendedPosVec.Set(_posX, _posY);
 	}
 
-	// Token: 0x06005F1C RID: 24348 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005F41 RID: 24385 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setAllCollidersOnOff(bool _bColliderEnabled)
 	{
 	}
 
-	// Token: 0x06005F1D RID: 24349 RVA: 0x0025B0EC File Offset: 0x002592EC
+	// Token: 0x06005F42 RID: 24386 RVA: 0x0025C614 File Offset: 0x0025A814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setResLevelIdCollidersOnOff(int ResLevelId, bool IsColliderEnabled)
 	{
@@ -422,7 +422,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F1E RID: 24350 RVA: 0x0025B14C File Offset: 0x0025934C
+	// Token: 0x06005F43 RID: 24387 RVA: 0x0025C674 File Offset: 0x0025A874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetDistantChunkFromStack(DistantChunkMap _BaseChunkMap, int _ResLevel, Vector2i _CellIdVector, Vector2 _TerrainOriginCoor, float[] _EdgeResFactor, Stack<GameObject>[] _WaterPlaneGameObjStack)
 	{
@@ -440,7 +440,7 @@ public class DistantTerrain
 		this.ChunkDataList[_ResLevel].Add(distantChunk);
 	}
 
-	// Token: 0x06005F1F RID: 24351 RVA: 0x0025B1B4 File Offset: 0x002593B4
+	// Token: 0x06005F44 RID: 24388 RVA: 0x0025C6DC File Offset: 0x0025A8DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DistantChunk GetDistantChunkFromStack(DistantChunkMap _BaseChunkMap, int _ResLevel, Vector2i _CellIdVector, Vector2 _TerrainOriginCoor, float[] _EdgeResFactor, Stack<GameObject>[] _WaterPlaneGameObjStack, OptimizedList<DistantChunk>[] CurChunkDataList)
 	{
@@ -469,7 +469,7 @@ public class DistantTerrain
 		return distantChunk;
 	}
 
-	// Token: 0x06005F20 RID: 24352 RVA: 0x0025B288 File Offset: 0x00259488
+	// Token: 0x06005F45 RID: 24389 RVA: 0x0025C7B0 File Offset: 0x0025A9B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDefaultNewGameObj(DistantChunk CurChunk)
 	{
@@ -497,7 +497,7 @@ public class DistantTerrain
 		mesh.subMeshCount = 1;
 	}
 
-	// Token: 0x06005F21 RID: 24353 RVA: 0x0025B378 File Offset: 0x00259578
+	// Token: 0x06005F46 RID: 24390 RVA: 0x0025C8A0 File Offset: 0x0025AAA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void putDistantChunkOnStack(DistantChunk _DistantChunk, bool _AlsoRemoveInChunkDataList)
 	{
@@ -520,7 +520,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F22 RID: 24354 RVA: 0x0025B3EC File Offset: 0x002595EC
+	// Token: 0x06005F47 RID: 24391 RVA: 0x0025C914 File Offset: 0x0025AB14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void putDistantChunkOnStack(int _ResLevel, int _DistantChunkListId)
 	{
@@ -536,7 +536,7 @@ public class DistantTerrain
 		this.ChunkDataList[_ResLevel].RemoveAt(_DistantChunkListId);
 	}
 
-	// Token: 0x06005F23 RID: 24355 RVA: 0x0025B494 File Offset: 0x00259694
+	// Token: 0x06005F48 RID: 24392 RVA: 0x0025C9BC File Offset: 0x0025ABBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void putDistantChunkOnStack(int _ResLevel, int _DistantChunkListId, OptimizedList<DistantChunk>[] CurChunkDataList)
 	{
@@ -555,7 +555,7 @@ public class DistantTerrain
 		CurChunkDataList[_ResLevel].RemoveAt(_DistantChunkListId);
 	}
 
-	// Token: 0x06005F24 RID: 24356 RVA: 0x0025B544 File Offset: 0x00259744
+	// Token: 0x06005F49 RID: 24393 RVA: 0x0025CA6C File Offset: 0x0025AC6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void putDistantChunkOnStack(DistantChunk _DistantChunk, bool _AlsoRemoveInChunkDataList, OptimizedList<DistantChunk>[] CurChunkDataList)
 	{
@@ -577,7 +577,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F25 RID: 24357 RVA: 0x0025B5B4 File Offset: 0x002597B4
+	// Token: 0x06005F4A RID: 24394 RVA: 0x0025CADC File Offset: 0x0025ACDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetChunkDataList(int _MapId)
 	{
@@ -595,7 +595,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F26 RID: 24358 RVA: 0x0025B634 File Offset: 0x00259834
+	// Token: 0x06005F4B RID: 24395 RVA: 0x0025CB5C File Offset: 0x0025AD5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetChunkDataList(OptimizedList<DistantChunk>[] ChunkDataListBackground)
 	{
@@ -614,7 +614,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F27 RID: 24359 RVA: 0x0025B6A4 File Offset: 0x002598A4
+	// Token: 0x06005F4C RID: 24396 RVA: 0x0025CBCC File Offset: 0x0025ADCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCurrentPosOnMap()
 	{
@@ -750,7 +750,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F28 RID: 24360 RVA: 0x0025BED4 File Offset: 0x0025A0D4
+	// Token: 0x06005F4D RID: 24397 RVA: 0x0025D3FC File Offset: 0x0025B5FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void threadManagementUpdate()
 	{
@@ -789,14 +789,14 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F29 RID: 24361 RVA: 0x0025C042 File Offset: 0x0025A242
+	// Token: 0x06005F4E RID: 24398 RVA: 0x0025D56A File Offset: 0x0025B76A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsSpwaningProcessOngoing()
 	{
 		return this.MetaThreadContList.Count != 0 || this.MetaCoroutineContList.Count != 0 || this.ThProcessing != null;
 	}
 
-	// Token: 0x06005F2A RID: 24362 RVA: 0x0025C06C File Offset: 0x0025A26C
+	// Token: 0x06005F4F RID: 24399 RVA: 0x0025D594 File Offset: 0x0025B794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCurrentPosOnMapAsync(int _mapId, int _chunkDataListBGId)
 	{
@@ -869,7 +869,7 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F2B RID: 24363 RVA: 0x0025C420 File Offset: 0x0025A620
+	// Token: 0x06005F50 RID: 24400 RVA: 0x0025D948 File Offset: 0x0025BB48
 	public void ThreadExtraWork(DistantChunk DChunk, DistantChunkBasicMesh BMesh, bool WasReset)
 	{
 		if (!DChunk.IsOnActivationProcess)
@@ -879,7 +879,7 @@ public class DistantTerrain
 		DChunk.ActivateObject(WasReset);
 	}
 
-	// Token: 0x06005F2C RID: 24364 RVA: 0x0025C432 File Offset: 0x0025A632
+	// Token: 0x06005F51 RID: 24401 RVA: 0x0025D95A File Offset: 0x0025BB5A
 	public void MainExtraWork(DistantChunk DChunk, DistantChunkBasicMesh BMesh)
 	{
 		if (!DChunk.IsOnActivationProcess)
@@ -889,7 +889,7 @@ public class DistantTerrain
 		DChunk.ActivateUnityMeshGameObject(BMesh);
 	}
 
-	// Token: 0x06005F2D RID: 24365 RVA: 0x0025C444 File Offset: 0x0025A644
+	// Token: 0x06005F52 RID: 24402 RVA: 0x0025D96C File Offset: 0x0025BB6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator UpdateMetaListCoroutine(ThreadInfoParam threadInfoParam)
 	{
@@ -1056,7 +1056,7 @@ public class DistantTerrain
 		yield break;
 	}
 
-	// Token: 0x06005F2E RID: 24366 RVA: 0x0025C45C File Offset: 0x0025A65C
+	// Token: 0x06005F53 RID: 24403 RVA: 0x0025D984 File Offset: 0x0025BB84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findDistantChunkInList(long _CellKey, int _ResLevel)
 	{
@@ -1072,7 +1072,7 @@ public class DistantTerrain
 		return -1;
 	}
 
-	// Token: 0x06005F2F RID: 24367 RVA: 0x0025C4AC File Offset: 0x0025A6AC
+	// Token: 0x06005F54 RID: 24404 RVA: 0x0025D9D4 File Offset: 0x0025BBD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findDistantChunkInList(Vector2i _IntPosVec, int _ResLevel)
 	{
@@ -1089,7 +1089,7 @@ public class DistantTerrain
 		return -1;
 	}
 
-	// Token: 0x06005F30 RID: 24368 RVA: 0x0025C504 File Offset: 0x0025A704
+	// Token: 0x06005F55 RID: 24405 RVA: 0x0025DA2C File Offset: 0x0025BC2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findDistantChunkInList(Vector2i _IntPosVec, int _ResLevel, OptimizedList<DistantChunk>[] CurChunkDataList)
 	{
@@ -1106,7 +1106,7 @@ public class DistantTerrain
 		return -1;
 	}
 
-	// Token: 0x06005F31 RID: 24369 RVA: 0x0025C54C File Offset: 0x0025A74C
+	// Token: 0x06005F56 RID: 24406 RVA: 0x0025DA74 File Offset: 0x0025BC74
 	public bool ActivateChunk(int _chunkX, int _chunkZ, bool IsActive)
 	{
 		int num = _chunkX - this.TerrainOriginIntCoor.x;
@@ -1144,7 +1144,7 @@ public class DistantTerrain
 		return true;
 	}
 
-	// Token: 0x06005F32 RID: 24370 RVA: 0x0025C628 File Offset: 0x0025A828
+	// Token: 0x06005F57 RID: 24407 RVA: 0x0025DB50 File Offset: 0x0025BD50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateChunkActivationCache(Vector2i LocPosId, bool IsActive, bool IsChunkFound)
 	{
@@ -1158,7 +1158,7 @@ public class DistantTerrain
 		this.ChunkActivationCacheDic.Add(hashCode, new DistantTerrain.ChunkStateHelper(LocPosId.x, LocPosId.y, IsActive));
 	}
 
-	// Token: 0x06005F33 RID: 24371 RVA: 0x0025C67C File Offset: 0x0025A87C
+	// Token: 0x06005F58 RID: 24408 RVA: 0x0025DBA4 File Offset: 0x0025BDA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessChunkActivationCache(Vector3 PlayerPos)
 	{
@@ -1207,185 +1207,185 @@ public class DistantTerrain
 		}
 	}
 
-	// Token: 0x06005F34 RID: 24372 RVA: 0x0025C958 File Offset: 0x0025AB58
+	// Token: 0x06005F59 RID: 24409 RVA: 0x0025DE80 File Offset: 0x0025C080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPlayerPosCacheEmpty()
 	{
 		return this.PlPosCache.Count == 0;
 	}
 
-	// Token: 0x04004A91 RID: 19089
+	// Token: 0x04004AB6 RID: 19126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int NbChunkToBeUpdated = 15;
 
-	// Token: 0x04004A92 RID: 19090
+	// Token: 0x04004AB7 RID: 19127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int DT_ViewDistance = 2000;
 
-	// Token: 0x04004A93 RID: 19091
+	// Token: 0x04004AB8 RID: 19128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxNbDChunkOnAsyncUpdate = 50;
 
-	// Token: 0x04004A94 RID: 19092
+	// Token: 0x04004AB9 RID: 19129
 	public OptimizedList<DistantChunk>[] ChunkDataList;
 
-	// Token: 0x04004A95 RID: 19093
+	// Token: 0x04004ABA RID: 19130
 	public List<OptimizedList<DistantChunk>[]> ChunkDataListBackGround;
 
-	// Token: 0x04004A96 RID: 19094
+	// Token: 0x04004ABB RID: 19131
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DistantChunk[] ChunkDataProxyArray;
 
-	// Token: 0x04004A97 RID: 19095
+	// Token: 0x04004ABC RID: 19132
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UtilList<DistantTerrain.PlayerPosHelper> PlPosCache;
 
-	// Token: 0x04004A98 RID: 19096
+	// Token: 0x04004ABD RID: 19133
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, DistantTerrain.ChunkStateHelper> ChunkActivationCacheDic;
 
-	// Token: 0x04004A99 RID: 19097
+	// Token: 0x04004ABE RID: 19134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public OptimizedList<DistantTerrain.ChunkStateHelper> ChunkToActivateList;
 
-	// Token: 0x04004A9A RID: 19098
+	// Token: 0x04004ABF RID: 19135
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ProcessCacheCnt;
 
-	// Token: 0x04004A9B RID: 19099
+	// Token: 0x04004AC0 RID: 19136
 	public List<ThreadInfoParam> MetaThreadContList;
 
-	// Token: 0x04004A9C RID: 19100
+	// Token: 0x04004AC1 RID: 19137
 	public List<ThreadInfoParam> MetaCoroutineContList;
 
-	// Token: 0x04004A9D RID: 19101
+	// Token: 0x04004AC2 RID: 19138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadProcessing ThProcessing;
 
-	// Token: 0x04004A9E RID: 19102
+	// Token: 0x04004AC3 RID: 19139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsOnMapSyncProcess;
 
-	// Token: 0x04004A9F RID: 19103
+	// Token: 0x04004AC4 RID: 19140
 	public bool IsTerrainReady;
 
-	// Token: 0x04004AA0 RID: 19104
+	// Token: 0x04004AC5 RID: 19141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DistantChunkBasicMesh[] BaseMesh;
 
-	// Token: 0x04004AA1 RID: 19105
+	// Token: 0x04004AC6 RID: 19142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DistantChunkMap[] MainChunkMap;
 
-	// Token: 0x04004AA2 RID: 19106
+	// Token: 0x04004AC7 RID: 19143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CurMapId;
 
-	// Token: 0x04004AA3 RID: 19107
+	// Token: 0x04004AC8 RID: 19144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ChunkBackGroundMapId;
 
-	// Token: 0x04004AA4 RID: 19108
+	// Token: 0x04004AC9 RID: 19145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NbResLevel;
 
-	// Token: 0x04004AA5 RID: 19109
+	// Token: 0x04004ACA RID: 19146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int MaxNbResLevel;
 
-	// Token: 0x04004AA6 RID: 19110
+	// Token: 0x04004ACB RID: 19147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWorldSizeX = 20000;
 
-	// Token: 0x04004AA7 RID: 19111
+	// Token: 0x04004ACC RID: 19148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWorldSizeZ = 20000;
 
-	// Token: 0x04004AA8 RID: 19112
+	// Token: 0x04004ACD RID: 19149
 	public Vector2 CurrentPlayerPosVec;
 
-	// Token: 0x04004AA9 RID: 19113
+	// Token: 0x04004ACE RID: 19150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 CurrentPlayerExtendedPosVec;
 
-	// Token: 0x04004AAA RID: 19114
+	// Token: 0x04004ACF RID: 19151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i TerrainOriginIntCoor;
 
-	// Token: 0x04004AAB RID: 19115
+	// Token: 0x04004AD0 RID: 19152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] EdgeResFactor;
 
-	// Token: 0x04004AAC RID: 19116
+	// Token: 0x04004AD1 RID: 19153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator YieldCoroutine;
 
-	// Token: 0x04004AAD RID: 19117
+	// Token: 0x04004AD2 RID: 19154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public OptimizedList<DistantChunk>[] DistantChunkStack;
 
-	// Token: 0x04004AAE RID: 19118
+	// Token: 0x04004AD3 RID: 19155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stack<GameObject>[] WaterPlaneGameObjStack;
 
-	// Token: 0x04004AAF RID: 19119
+	// Token: 0x04004AD4 RID: 19156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadInfoParamPool ThInfoParamPool;
 
-	// Token: 0x04004AB0 RID: 19120
+	// Token: 0x04004AD5 RID: 19157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadProcessingPool ThProcessingPool;
 
-	// Token: 0x04004AB1 RID: 19121
+	// Token: 0x04004AD6 RID: 19158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadContainerPool ThContainerPool;
 
-	// Token: 0x04004AB2 RID: 19122
+	// Token: 0x04004AD7 RID: 19159
 	public int DebugYieldResLevel = -1;
 
-	// Token: 0x04004AB3 RID: 19123
+	// Token: 0x04004AD8 RID: 19160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DistantTerrainQuadTree TerExQuadTree;
 
-	// Token: 0x04004AB4 RID: 19124
+	// Token: 0x04004AD9 RID: 19161
 	public static Vector3 cShiftHiResChunks;
 
-	// Token: 0x04004AB5 RID: 19125
+	// Token: 0x04004ADA RID: 19162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 cShiftMidResChunks;
 
-	// Token: 0x04004AB6 RID: 19126
+	// Token: 0x04004ADB RID: 19163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 cShiftLowResChunks;
 
-	// Token: 0x04004AB7 RID: 19127
+	// Token: 0x04004ADC RID: 19164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goDistantTerrain;
 
-	// Token: 0x04004AB8 RID: 19128
+	// Token: 0x04004ADD RID: 19165
 	public static DistantTerrain Instance;
 
-	// Token: 0x04004AB9 RID: 19129
+	// Token: 0x04004ADE RID: 19166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] IdToRemove = new int[20];
 
-	// Token: 0x02000C41 RID: 3137
+	// Token: 0x02000C4C RID: 3148
 	public class PlayerPosHelper
 	{
-		// Token: 0x06005F36 RID: 24374 RVA: 0x0025C984 File Offset: 0x0025AB84
+		// Token: 0x06005F5B RID: 24411 RVA: 0x0025DEAC File Offset: 0x0025C0AC
 		public PlayerPosHelper(Vector3 _PlayerPos)
 		{
 			this.PlayerPos = _PlayerPos;
 		}
 
-		// Token: 0x04004ABA RID: 19130
+		// Token: 0x04004ADF RID: 19167
 		public Vector3 PlayerPos;
 	}
 
-	// Token: 0x02000C42 RID: 3138
+	// Token: 0x02000C4D RID: 3149
 	public class ChunkStateHelper
 	{
-		// Token: 0x06005F37 RID: 24375 RVA: 0x0025C993 File Offset: 0x0025AB93
+		// Token: 0x06005F5C RID: 24412 RVA: 0x0025DEBB File Offset: 0x0025C0BB
 		public ChunkStateHelper(int _PosX, int _PosZ, bool _IsActive)
 		{
 			this.PosX = _PosX;
@@ -1393,13 +1393,13 @@ public class DistantTerrain
 			this.IsActive = _IsActive;
 		}
 
-		// Token: 0x04004ABB RID: 19131
+		// Token: 0x04004AE0 RID: 19168
 		public bool IsActive;
 
-		// Token: 0x04004ABC RID: 19132
+		// Token: 0x04004AE1 RID: 19169
 		public int PosX;
 
-		// Token: 0x04004ABD RID: 19133
+		// Token: 0x04004AE2 RID: 19170
 		public int PosZ;
 	}
 }

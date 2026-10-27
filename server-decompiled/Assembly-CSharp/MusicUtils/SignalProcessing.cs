@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace MusicUtils
 {
-	// Token: 0x02001A3D RID: 6717
+	// Token: 0x02001A6E RID: 6766
 	public static class SignalProcessing
 	{
-		// Token: 0x17001967 RID: 6503
-		// (get) Token: 0x0600CC5F RID: 52319 RVA: 0x004A9CCB File Offset: 0x004A7ECB
+		// Token: 0x170019AF RID: 6575
+		// (get) Token: 0x0600CD73 RID: 52595 RVA: 0x004AD7C7 File Offset: 0x004AB9C7
 		public static float SuspenseRange
 		{
 			get
@@ -16,8 +16,8 @@ namespace MusicUtils
 			}
 		}
 
-		// Token: 0x17001968 RID: 6504
-		// (get) Token: 0x0600CC60 RID: 52320 RVA: 0x004A9CD8 File Offset: 0x004A7ED8
+		// Token: 0x170019B0 RID: 6576
+		// (get) Token: 0x0600CD74 RID: 52596 RVA: 0x004AD7D4 File Offset: 0x004AB9D4
 		public static float SuspenseThreshold
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -27,8 +27,8 @@ namespace MusicUtils
 			}
 		}
 
-		// Token: 0x17001969 RID: 6505
-		// (get) Token: 0x0600CC61 RID: 52321 RVA: 0x0014D1CF File Offset: 0x0014B3CF
+		// Token: 0x170019B1 RID: 6577
+		// (get) Token: 0x0600CD75 RID: 52597 RVA: 0x0014DDC3 File Offset: 0x0014BFC3
 		public static float CombatReadyThreshold
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -38,51 +38,51 @@ namespace MusicUtils
 			}
 		}
 
-		// Token: 0x04009B01 RID: 39681
+		// Token: 0x04009BEA RID: 39914
 		public const float cSilentVolume = -80f;
 
-		// Token: 0x04009B02 RID: 39682
+		// Token: 0x04009BEB RID: 39915
 		public const float cMaxLPFCutoff = 22000f;
 
-		// Token: 0x04009B03 RID: 39683
+		// Token: 0x04009BEC RID: 39916
 		public const float cPauseLowPassFilterCutoff = 500f;
 
-		// Token: 0x04009B04 RID: 39684
+		// Token: 0x04009BED RID: 39917
 		public const double cdBFullScaleBase = 1.12246204831;
 
-		// Token: 0x04009B05 RID: 39685
+		// Token: 0x04009BEE RID: 39918
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationLowPassCutoff = "ExpLPFCutOff";
 
-		// Token: 0x04009B06 RID: 39686
+		// Token: 0x04009BEF RID: 39919
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationReverbDryLevel = "ExpReverbDryLevel";
 
-		// Token: 0x04009B07 RID: 39687
+		// Token: 0x04009BF0 RID: 39920
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationReverbRoom = "ExpReverbRoom";
 
-		// Token: 0x04009B08 RID: 39688
+		// Token: 0x04009BF1 RID: 39921
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationReverbRoomHF = "ExpReverbRoomHF";
 
-		// Token: 0x04009B09 RID: 39689
+		// Token: 0x04009BF2 RID: 39922
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationDecayHFRatio = "DecayHFRatio";
 
-		// Token: 0x04009B0A RID: 39690
+		// Token: 0x04009BF3 RID: 39923
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationReflectDelay = "ExpReflectDelay";
 
-		// Token: 0x04009B0B RID: 39691
+		// Token: 0x04009BF4 RID: 39924
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationHFReference = "ExpHFReference";
 
-		// Token: 0x04009B0C RID: 39692
+		// Token: 0x04009BF5 RID: 39925
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cExplorationReverbRoomLF = "ExpReverbRoomLF";
 
-		// Token: 0x04009B0D RID: 39693
+		// Token: 0x04009BF6 RID: 39926
 		public static readonly Dictionary<string, Curve> DspCurves = new Dictionary<string, Curve>
 		{
 			{

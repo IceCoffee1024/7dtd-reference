@@ -8,12 +8,12 @@ using Noemax.GZip;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001285 RID: 4741
+// Token: 0x02001297 RID: 4759
 public static class Localization
 {
-	// Token: 0x17001219 RID: 4633
-	// (get) Token: 0x06009699 RID: 38553 RVA: 0x0038C568 File Offset: 0x0038A768
-	// (set) Token: 0x0600969A RID: 38554 RVA: 0x0038C56F File Offset: 0x0038A76F
+	// Token: 0x17001225 RID: 4645
+	// (get) Token: 0x060096F1 RID: 38641 RVA: 0x0038E970 File Offset: 0x0038CB70
+	// (set) Token: 0x060096F2 RID: 38642 RVA: 0x0038E977 File Offset: 0x0038CB77
 	public static bool LocalizationChecks
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -21,12 +21,12 @@ public static class Localization
 	}
 
 	// Token: 0x140000FA RID: 250
-	// (add) Token: 0x0600969B RID: 38555 RVA: 0x0038C578 File Offset: 0x0038A778
-	// (remove) Token: 0x0600969C RID: 38556 RVA: 0x0038C5AC File Offset: 0x0038A7AC
+	// (add) Token: 0x060096F3 RID: 38643 RVA: 0x0038E980 File Offset: 0x0038CB80
+	// (remove) Token: 0x060096F4 RID: 38644 RVA: 0x0038E9B4 File Offset: 0x0038CBB4
 	public static event Action<string> LanguageSelected;
 
-	// Token: 0x1700121A RID: 4634
-	// (get) Token: 0x0600969D RID: 38557 RVA: 0x0038C5DF File Offset: 0x0038A7DF
+	// Token: 0x17001226 RID: 4646
+	// (get) Token: 0x060096F5 RID: 38645 RVA: 0x0038E9E7 File Offset: 0x0038CBE7
 	public static Dictionary<string, string[]> Dictionary
 	{
 		get
@@ -36,8 +36,8 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x1700121B RID: 4635
-	// (get) Token: 0x0600969E RID: 38558 RVA: 0x0038C5EC File Offset: 0x0038A7EC
+	// Token: 0x17001227 RID: 4647
+	// (get) Token: 0x060096F6 RID: 38646 RVA: 0x0038E9F4 File Offset: 0x0038CBF4
 	public static string[] KnownLanguages
 	{
 		get
@@ -47,9 +47,9 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x1700121C RID: 4636
-	// (get) Token: 0x0600969F RID: 38559 RVA: 0x0038C5FE File Offset: 0x0038A7FE
-	// (set) Token: 0x060096A0 RID: 38560 RVA: 0x0038C63A File Offset: 0x0038A83A
+	// Token: 0x17001228 RID: 4648
+	// (get) Token: 0x060096F7 RID: 38647 RVA: 0x0038EA06 File Offset: 0x0038CC06
+	// (set) Token: 0x060096F8 RID: 38648 RVA: 0x0038EA42 File Offset: 0x0038CC42
 	public static string ActiveLanguage
 	{
 		get
@@ -71,8 +71,8 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x1700121D RID: 4637
-	// (get) Token: 0x060096A1 RID: 38561 RVA: 0x0038C64C File Offset: 0x0038A84C
+	// Token: 0x17001229 RID: 4649
+	// (get) Token: 0x060096F9 RID: 38649 RVA: 0x0038EA54 File Offset: 0x0038CC54
 	public static string RequestedLanguage
 	{
 		get
@@ -90,8 +90,8 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x1700121E RID: 4638
-	// (get) Token: 0x060096A2 RID: 38562 RVA: 0x0038C685 File Offset: 0x0038A885
+	// Token: 0x1700122A RID: 4650
+	// (get) Token: 0x060096FA RID: 38650 RVA: 0x0038EA8D File Offset: 0x0038CC8D
 	public static int TotalKeys
 	{
 		get
@@ -101,16 +101,16 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x1700121F RID: 4639
-	// (get) Token: 0x060096A3 RID: 38563 RVA: 0x0038C697 File Offset: 0x0038A897
-	// (set) Token: 0x060096A4 RID: 38564 RVA: 0x0038C69E File Offset: 0x0038A89E
+	// Token: 0x1700122B RID: 4651
+	// (get) Token: 0x060096FB RID: 38651 RVA: 0x0038EA9F File Offset: 0x0038CC9F
+	// (set) Token: 0x060096FC RID: 38652 RVA: 0x0038EAA6 File Offset: 0x0038CCA6
 	public static byte[] PatchedData
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060096A5 RID: 38565 RVA: 0x0038C6A6 File Offset: 0x0038A8A6
+	// Token: 0x060096FD RID: 38653 RVA: 0x0038EAAE File Offset: 0x0038CCAE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void checkLoaded(bool _throwExc = false)
 	{
@@ -124,7 +124,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060096A6 RID: 38566 RVA: 0x0038C6D0 File Offset: 0x0038A8D0
+	// Token: 0x060096FE RID: 38654 RVA: 0x0038EAD8 File Offset: 0x0038CCD8
 	public static void Init()
 	{
 		if (Localization.initialized)
@@ -160,13 +160,13 @@ public static class Localization
 		Localization.LocalizationChecks = GameUtils.GetLaunchArgument("localizationchecks") != null;
 	}
 
-	// Token: 0x060096A7 RID: 38567 RVA: 0x0038C782 File Offset: 0x0038A982
+	// Token: 0x060096FF RID: 38655 RVA: 0x0038EB8A File Offset: 0x0038CD8A
 	public static bool ReloadBaseLocalization()
 	{
 		return Localization.LoadAndSelectLanguage(true);
 	}
 
-	// Token: 0x060096A8 RID: 38568 RVA: 0x0038C78A File Offset: 0x0038A98A
+	// Token: 0x06009700 RID: 38656 RVA: 0x0038EB92 File Offset: 0x0038CD92
 	public static bool LoadAndSelectLanguage(bool _forceReload = false)
 	{
 		if (_forceReload)
@@ -177,7 +177,7 @@ public static class Localization
 		return (Localization.mDictionary != null || Localization.loadBaseDictionaries()) && Localization.selectLanguage();
 	}
 
-	// Token: 0x060096A9 RID: 38569 RVA: 0x0038C7B0 File Offset: 0x0038A9B0
+	// Token: 0x06009701 RID: 38657 RVA: 0x0038EBB8 File Offset: 0x0038CDB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool loadBaseDictionaries()
 	{
@@ -196,7 +196,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060096AA RID: 38570 RVA: 0x0038C81C File Offset: 0x0038AA1C
+	// Token: 0x06009702 RID: 38658 RVA: 0x0038EC24 File Offset: 0x0038CE24
 	public static bool LoadPatchDictionaries(string _modName, string _folder, bool _loadingInGame)
 	{
 		Localization.checkLoaded(true);
@@ -214,7 +214,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060096AB RID: 38571 RVA: 0x0038C878 File Offset: 0x0038AA78
+	// Token: 0x06009703 RID: 38659 RVA: 0x0038EC80 File Offset: 0x0038CE80
 	public static bool LoadServerPatchDictionary(byte[] _data)
 	{
 		Localization.checkLoaded(true);
@@ -227,7 +227,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060096AC RID: 38572 RVA: 0x0038C8A0 File Offset: 0x0038AAA0
+	// Token: 0x06009704 RID: 38660 RVA: 0x0038ECA8 File Offset: 0x0038CEA8
 	public static void UnloadMetaData()
 	{
 		string[] array;
@@ -274,7 +274,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060096AD RID: 38573 RVA: 0x0038C9B8 File Offset: 0x0038ABB8
+	// Token: 0x06009705 RID: 38661 RVA: 0x0038EDC0 File Offset: 0x0038CFC0
 	public static void UnloadUnusedLanguages()
 	{
 		string[] array;
@@ -317,7 +317,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060096AE RID: 38574 RVA: 0x0038CABC File Offset: 0x0038ACBC
+	// Token: 0x06009706 RID: 38662 RVA: 0x0038EEC4 File Offset: 0x0038D0C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	[return: TupleElementNames(new string[] { "defaultLanguage", "userLanguage" })]
 	public static ValueTuple<int, int> findUserLanguageColumns(string[] _headerColumns, string _userLanguage)
@@ -342,7 +342,7 @@ public static class Localization
 		return new ValueTuple<int, int>(num2, num);
 	}
 
-	// Token: 0x060096AF RID: 38575 RVA: 0x0038CB10 File Offset: 0x0038AD10
+	// Token: 0x06009707 RID: 38663 RVA: 0x0038EF18 File Offset: 0x0038D118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool selectLanguage()
 	{
@@ -364,7 +364,7 @@ public static class Localization
 		return Localization.currentLanguageIndex >= 0;
 	}
 
-	// Token: 0x060096B0 RID: 38576 RVA: 0x0038CB84 File Offset: 0x0038AD84
+	// Token: 0x06009708 RID: 38664 RVA: 0x0038EF8C File Offset: 0x0038D18C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void updateLanguages()
 	{
@@ -383,7 +383,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060096B1 RID: 38577 RVA: 0x0038CBF8 File Offset: 0x0038ADF8
+	// Token: 0x06009709 RID: 38665 RVA: 0x0038F000 File Offset: 0x0038D200
 	public static void WriteCsv()
 	{
 		new MicroStopwatch(true);
@@ -447,7 +447,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060096B2 RID: 38578 RVA: 0x0038CE68 File Offset: 0x0038B068
+	// Token: 0x0600970A RID: 38666 RVA: 0x0038F270 File Offset: 0x0038D470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool getLanguageEntry(string[] _entry, int _languageColumn, out string _result, string _localizationCheckPrefix = "L_")
 	{
@@ -473,7 +473,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060096B3 RID: 38579 RVA: 0x0038CEAC File Offset: 0x0038B0AC
+	// Token: 0x0600970B RID: 38667 RVA: 0x0038F2B4 File Offset: 0x0038D4B4
 	public static string Get(string _key, bool _caseInsensitive = false, string _languageName = null)
 	{
 		Localization.checkLoaded(false);
@@ -511,7 +511,7 @@ public static class Localization
 		return _key;
 	}
 
-	// Token: 0x060096B4 RID: 38580 RVA: 0x0038CF85 File Offset: 0x0038B185
+	// Token: 0x0600970C RID: 38668 RVA: 0x0038F38D File Offset: 0x0038D58D
 	public static bool Exists(string _key, bool _caseInsensitive = false)
 	{
 		Localization.checkLoaded(false);
@@ -526,7 +526,7 @@ public static class Localization
 		return Localization.mDictionaryCaseInsensitive.ContainsKey(_key);
 	}
 
-	// Token: 0x060096B5 RID: 38581 RVA: 0x0038CFB1 File Offset: 0x0038B1B1
+	// Token: 0x0600970D RID: 38669 RVA: 0x0038F3B9 File Offset: 0x0038D5B9
 	public static bool TryGet(string _key, out string _localizedString)
 	{
 		if (!Localization.Exists(_key, false))
@@ -538,19 +538,19 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060096B6 RID: 38582 RVA: 0x0038CFCC File Offset: 0x0038B1CC
+	// Token: 0x0600970E RID: 38670 RVA: 0x0038F3D4 File Offset: 0x0038D5D4
 	public static string FormatListAnd(params object[] _items)
 	{
 		return Localization.formatListX("listAndTwo", "listAndStart", "listAndMiddle", "listAndEnd", _items);
 	}
 
-	// Token: 0x060096B7 RID: 38583 RVA: 0x0038CFE8 File Offset: 0x0038B1E8
+	// Token: 0x0600970F RID: 38671 RVA: 0x0038F3F0 File Offset: 0x0038D5F0
 	public static string FormatListOr(params object[] _items)
 	{
 		return Localization.formatListX("listOrTwo", "listOrStart", "listOrMiddle", "listOrEnd", _items);
 	}
 
-	// Token: 0x060096B8 RID: 38584 RVA: 0x0038D004 File Offset: 0x0038B204
+	// Token: 0x06009710 RID: 38672 RVA: 0x0038F40C File Offset: 0x0038D60C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string formatListX(string _listXTwo, string _listXStart, string _listXMiddle, string _listXEnd, object[] _items)
 	{
@@ -586,7 +586,7 @@ public static class Localization
 		return text;
 	}
 
-	// Token: 0x060096B9 RID: 38585 RVA: 0x0038D080 File Offset: 0x0038B280
+	// Token: 0x06009711 RID: 38673 RVA: 0x0038F488 File Offset: 0x0038D688
 	public static IEnumerable<KeyValuePair<string, string[]>> EnumerateAll()
 	{
 		foreach (KeyValuePair<string, string[]> keyValuePair in Localization.mDictionary)
@@ -598,7 +598,7 @@ public static class Localization
 		yield break;
 	}
 
-	// Token: 0x060096BA RID: 38586 RVA: 0x0038D08C File Offset: 0x0038B28C
+	// Token: 0x06009712 RID: 38674 RVA: 0x0038F494 File Offset: 0x0038D694
 	public static string GetCurrentLocale()
 	{
 		string activeLanguage = Localization.ActiveLanguage;
@@ -709,14 +709,14 @@ public static class Localization
 		throw new Exception("No language code mapping found for Language \"" + Localization.ActiveLanguage + "\".");
 	}
 
-	// Token: 0x060096BB RID: 38587 RVA: 0x0038D2E7 File Offset: 0x0038B4E7
+	// Token: 0x06009713 RID: 38675 RVA: 0x0038F6EF File Offset: 0x0038D8EF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool loadCsv(string _filename, bool _patch = false)
 	{
 		return Localization.loadCsv(SdFile.ReadAllBytes(_filename), _patch, false);
 	}
 
-	// Token: 0x060096BC RID: 38588 RVA: 0x0038D2F8 File Offset: 0x0038B4F8
+	// Token: 0x06009714 RID: 38676 RVA: 0x0038F700 File Offset: 0x0038D900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool loadCsv(byte[] _asset, bool _patch = false, bool _serverData = false)
 	{
@@ -784,7 +784,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060096BD RID: 38589 RVA: 0x0038D480 File Offset: 0x0038B680
+	// Token: 0x06009715 RID: 38677 RVA: 0x0038F888 File Offset: 0x0038DA88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void addCsv(BetterList<string> _temp, int[] _colTranslationTable, int _newLength, int _origColIndexUsedInMainMenu, bool _serverData = false)
 	{
@@ -870,7 +870,7 @@ public static class Localization
 		Log.Warning("Localization: Duplicate key \"" + text + "\" found! Please check Localization file. Skipping entry...");
 	}
 
-	// Token: 0x060096BE RID: 38590 RVA: 0x0038D63C File Offset: 0x0038B83C
+	// Token: 0x06009716 RID: 38678 RVA: 0x0038FA44 File Offset: 0x0038DC44
 	public static int EstimateOwnedBytes()
 	{
 		int num = 0;
@@ -891,7 +891,7 @@ public static class Localization
 		return num;
 	}
 
-	// Token: 0x060096C0 RID: 38592 RVA: 0x0038D74C File Offset: 0x0038B94C
+	// Token: 0x06009718 RID: 38680 RVA: 0x0038FB54 File Offset: 0x0038DD54
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static string <formatListX>g__FormatThreeOrMore|56_0(ref Localization.<>c__DisplayClass56_0 A_0)
@@ -916,64 +916,64 @@ public static class Localization
 		return stringBuilder2.ToString();
 	}
 
-	// Token: 0x040070D3 RID: 28883
+	// Token: 0x04007114 RID: 28948
 	public const string DefaultLanguage = "english";
 
-	// Token: 0x040070D4 RID: 28884
+	// Token: 0x04007115 RID: 28949
 	public const string HeaderKey = "KEY";
 
-	// Token: 0x040070D5 RID: 28885
+	// Token: 0x04007116 RID: 28950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string KeepLoadedColumnName = "KeepLoaded";
 
-	// Token: 0x040070D6 RID: 28886
+	// Token: 0x04007117 RID: 28951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string UsedInMainMenuColumnName = "UsedInMainMenu";
 
-	// Token: 0x040070D7 RID: 28887
+	// Token: 0x04007118 RID: 28952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] ignoredMetaColumnNames = new string[] { "File", "Type", "NoTranslate", "Context / Alternate Text" };
 
-	// Token: 0x040070D8 RID: 28888
+	// Token: 0x04007119 RID: 28953
 	public const string MainLocalizationFilename = "Localization.csv";
 
-	// Token: 0x040070DA RID: 28890
+	// Token: 0x0400711B RID: 28955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<string> allLanguages = new List<string>();
 
-	// Token: 0x040070DB RID: 28891
+	// Token: 0x0400711C RID: 28956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, int> languageToColumnIndex = new CaseInsensitiveStringDictionary<int>();
 
-	// Token: 0x040070DC RID: 28892
+	// Token: 0x0400711D RID: 28957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, string[]> mDictionary;
 
-	// Token: 0x040070DD RID: 28893
+	// Token: 0x0400711E RID: 28958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, string[]> mDictionaryCaseInsensitive;
 
-	// Token: 0x040070DE RID: 28894
+	// Token: 0x0400711F RID: 28959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, bool[]> patchedCells = new Dictionary<string, bool[]>();
 
-	// Token: 0x040070DF RID: 28895
+	// Token: 0x04007120 RID: 28960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int defaultLanguageIndex = -1;
 
-	// Token: 0x040070E0 RID: 28896
+	// Token: 0x04007121 RID: 28961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int currentLanguageIndex = -1;
 
-	// Token: 0x040070E2 RID: 28898
+	// Token: 0x04007123 RID: 28963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string platformLanguage;
 
-	// Token: 0x040070E3 RID: 28899
+	// Token: 0x04007124 RID: 28964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool initialized;
 
-	// Token: 0x040070E5 RID: 28901
+	// Token: 0x04007126 RID: 28966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex languageHeaderMatcher = new Regex("^[A-Za-z]+$");
 }

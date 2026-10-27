@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B9B RID: 2971
+// Token: 0x02000BA6 RID: 2982
 public abstract class RegionFileAccessAbstract
 {
-	// Token: 0x0600598C RID: 22924 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060059B1 RID: 22961 RVA: 0x0000640C File Offset: 0x0000460C
 	public RegionFileAccessAbstract()
 	{
 	}
 
-	// Token: 0x0600598D RID: 22925 RVA: 0x00226DA0 File Offset: 0x00224FA0
+	// Token: 0x060059B2 RID: 22962 RVA: 0x002282FC File Offset: 0x002264FC
 	public static bool ExtractKey(string _filename, out long _key)
 	{
 		_key = 0L;
@@ -28,7 +28,7 @@ public abstract class RegionFileAccessAbstract
 		return false;
 	}
 
-	// Token: 0x0600598E RID: 22926 RVA: 0x00226E25 File Offset: 0x00225025
+	// Token: 0x060059B3 RID: 22963 RVA: 0x00228381 File Offset: 0x00226581
 	public static string MakeFilename(int _x, int _z)
 	{
 		return string.Concat(new string[]
@@ -41,45 +41,45 @@ public abstract class RegionFileAccessAbstract
 		});
 	}
 
-	// Token: 0x0600598F RID: 22927 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060059B4 RID: 22964 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Close()
 	{
 	}
 
-	// Token: 0x1700098D RID: 2445
-	// (get) Token: 0x06005990 RID: 22928
+	// Token: 0x17000993 RID: 2451
+	// (get) Token: 0x060059B5 RID: 22965
 	public abstract int ChunksPerRegionPerDimension { get; }
 
-	// Token: 0x06005991 RID: 22929
+	// Token: 0x060059B6 RID: 22966
 	public abstract void ReadDirectory(string _dir, Action<long, string, uint> _chunkAndTimeStampHandler);
 
-	// Token: 0x06005992 RID: 22930
+	// Token: 0x060059B7 RID: 22967
 	public abstract Stream GetOutputStream(string _dir, int _chunkX, int _chunkZ, string _ext);
 
-	// Token: 0x06005993 RID: 22931
+	// Token: 0x060059B8 RID: 22968
 	public abstract Stream GetInputStream(string _dir, int _chunkX, int _chunkZ, string _ext);
 
-	// Token: 0x06005994 RID: 22932
+	// Token: 0x060059B9 RID: 22969
 	public abstract void Remove(string _dir, int _chunkX, int _chunkZ);
 
-	// Token: 0x06005995 RID: 22933 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060059BA RID: 22970 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OptimizeLayouts()
 	{
 	}
 
-	// Token: 0x06005996 RID: 22934
+	// Token: 0x060059BB RID: 22971
 	public abstract void ClearCache();
 
-	// Token: 0x06005997 RID: 22935
+	// Token: 0x060059BC RID: 22972
 	public abstract void RemoveRegionFromCache(int _regionX, int _regionZ, string _dir);
 
-	// Token: 0x06005998 RID: 22936 RVA: 0x0008806C File Offset: 0x0008626C
+	// Token: 0x060059BD RID: 22973 RVA: 0x000882A0 File Offset: 0x000864A0
 	public virtual int GetChunkByteCount(string _dir, int _chunkX, int _chunkZ)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06005999 RID: 22937 RVA: 0x0008806C File Offset: 0x0008626C
+	// Token: 0x060059BE RID: 22974 RVA: 0x000882A0 File Offset: 0x000864A0
 	public virtual long GetTotalByteCount(string _dir)
 	{
 		throw new NotImplementedException();

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B1 RID: 1969
+// Token: 0x020007B9 RID: 1977
 [Preserve]
 public class NetPackageBag : NetPackage
 {
-	// Token: 0x17000632 RID: 1586
-	// (get) Token: 0x06003AB0 RID: 15024 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000636 RID: 1590
+	// (get) Token: 0x06003AC7 RID: 15047 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageBag : NetPackage
 		}
 	}
 
-	// Token: 0x06003AB1 RID: 15025 RVA: 0x0017C3C8 File Offset: 0x0017A5C8
+	// Token: 0x06003AC8 RID: 15048 RVA: 0x0017D360 File Offset: 0x0017B560
 	public NetPackageBag Setup(int _entityId, Bag _bag)
 	{
 		this.entityId = _entityId;
@@ -27,14 +27,14 @@ public class NetPackageBag : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AB2 RID: 15026 RVA: 0x0017C41C File Offset: 0x0017A61C
+	// Token: 0x06003AC9 RID: 15049 RVA: 0x0017D3B4 File Offset: 0x0017B5B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageBag()
 	{
 		MemoryPools.poolMemoryStream.FreeSync(this.ms);
 	}
 
-	// Token: 0x06003AB3 RID: 15027 RVA: 0x0017C454 File Offset: 0x0017A654
+	// Token: 0x06003ACA RID: 15050 RVA: 0x0017D3EC File Offset: 0x0017B5EC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.entityId = _br.ReadInt32();
@@ -42,7 +42,7 @@ public class NetPackageBag : NetPackage
 		StreamUtils.StreamCopy(_br.BaseStream, this.ms, num, null, true);
 	}
 
-	// Token: 0x06003AB4 RID: 15028 RVA: 0x0017C488 File Offset: 0x0017A688
+	// Token: 0x06003ACB RID: 15051 RVA: 0x0017D420 File Offset: 0x0017B620
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -51,7 +51,7 @@ public class NetPackageBag : NetPackage
 		this.ms.WriteTo(_bw.BaseStream);
 	}
 
-	// Token: 0x06003AB5 RID: 15029 RVA: 0x0017C4C0 File Offset: 0x0017A6C0
+	// Token: 0x06003ACC RID: 15052 RVA: 0x0017D458 File Offset: 0x0017B658
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -77,11 +77,11 @@ public class NetPackageBag : NetPackage
 		}
 	}
 
-	// Token: 0x04002FCC RID: 12236
+	// Token: 0x04002FE8 RID: 12264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04002FCD RID: 12237
+	// Token: 0x04002FE9 RID: 12265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream ms = MemoryPools.poolMemoryStream.AllocSync(true);
 }

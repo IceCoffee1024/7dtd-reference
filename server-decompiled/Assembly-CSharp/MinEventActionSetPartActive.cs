@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000705 RID: 1797
+// Token: 0x0200070D RID: 1805
 [Preserve]
 public class MinEventActionSetPartActive : MinEventActionBase
 {
-	// Token: 0x06003711 RID: 14097 RVA: 0x0016A5DC File Offset: 0x001687DC
+	// Token: 0x06003728 RID: 14120 RVA: 0x0016B574 File Offset: 0x00169774
 	public override void Execute(MinEventParams _params)
 	{
 		bool flag = this.isActive;
@@ -21,13 +21,13 @@ public class MinEventActionSetPartActive : MinEventActionBase
 		_params.Self.SetPartActive(this.partName, flag);
 	}
 
-	// Token: 0x06003712 RID: 14098 RVA: 0x0016A633 File Offset: 0x00168833
+	// Token: 0x06003729 RID: 14121 RVA: 0x0016B5CB File Offset: 0x001697CB
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && _params.ItemValue != null && this.partName != null;
 	}
 
-	// Token: 0x06003713 RID: 14099 RVA: 0x0016A660 File Offset: 0x00168860
+	// Token: 0x0600372A RID: 14122 RVA: 0x0016B5F8 File Offset: 0x001697F8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -61,19 +61,19 @@ public class MinEventActionSetPartActive : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002C36 RID: 11318
+	// Token: 0x04002C52 RID: 11346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string partName;
 
-	// Token: 0x04002C37 RID: 11319
+	// Token: 0x04002C53 RID: 11347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isActive;
 
-	// Token: 0x04002C38 RID: 11320
+	// Token: 0x04002C54 RID: 11348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInvert;
 
-	// Token: 0x04002C39 RID: 11321
+	// Token: 0x04002C55 RID: 11349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cVarName;
 }

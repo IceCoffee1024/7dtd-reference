@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Profiling;
 
-// Token: 0x020007A2 RID: 1954
+// Token: 0x020007AA RID: 1962
 public static class NetPackageManager
 {
-	// Token: 0x06003A51 RID: 14929 RVA: 0x0017B5EC File Offset: 0x001797EC
+	// Token: 0x06003A68 RID: 14952 RVA: 0x0017C584 File Offset: 0x0017A784
 	[PublicizedFrom(EAccessModifier.Private)]
 	static NetPackageManager()
 	{
@@ -17,7 +17,7 @@ public static class NetPackageManager
 		}, false);
 	}
 
-	// Token: 0x06003A52 RID: 14930 RVA: 0x0017B63C File Offset: 0x0017983C
+	// Token: 0x06003A69 RID: 14953 RVA: 0x0017C5D4 File Offset: 0x0017A7D4
 	public static void ResetMappings()
 	{
 		NetPackageManager.packageIdToClass = null;
@@ -25,7 +25,7 @@ public static class NetPackageManager
 		NetPackageManager.packageClassToPackageId = null;
 	}
 
-	// Token: 0x06003A53 RID: 14931 RVA: 0x0017B650 File Offset: 0x00179850
+	// Token: 0x06003A6A RID: 14954 RVA: 0x0017C5E8 File Offset: 0x0017A7E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AddPackageMapping(int _id, Type _type)
 	{
@@ -35,7 +35,7 @@ public static class NetPackageManager
 		NetPackageManager.packageIdToPackageInformation[_id] = packageInformation;
 	}
 
-	// Token: 0x06003A54 RID: 14932 RVA: 0x0017B6A9 File Offset: 0x001798A9
+	// Token: 0x06003A6B RID: 14955 RVA: 0x0017C641 File Offset: 0x0017A841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetupBaseMapping()
 	{
@@ -45,7 +45,7 @@ public static class NetPackageManager
 		NetPackageManager.AddPackageMapping(0, NetPackageManager.packageIdsType);
 	}
 
-	// Token: 0x06003A55 RID: 14933 RVA: 0x0017B6E0 File Offset: 0x001798E0
+	// Token: 0x06003A6C RID: 14956 RVA: 0x0017C678 File Offset: 0x0017A878
 	public static void StartServer()
 	{
 		NetPackageManager.ResetMappings();
@@ -61,14 +61,14 @@ public static class NetPackageManager
 		}
 	}
 
-	// Token: 0x06003A56 RID: 14934 RVA: 0x0017B75C File Offset: 0x0017995C
+	// Token: 0x06003A6D RID: 14957 RVA: 0x0017C6F4 File Offset: 0x0017A8F4
 	public static void StartClient()
 	{
 		NetPackageManager.ResetMappings();
 		NetPackageManager.SetupBaseMapping();
 	}
 
-	// Token: 0x06003A57 RID: 14935 RVA: 0x0017B768 File Offset: 0x00179968
+	// Token: 0x06003A6E RID: 14958 RVA: 0x0017C700 File Offset: 0x0017A900
 	public static void IdMappingsReceived(string[] _mappings)
 	{
 		for (int i = 0; i < _mappings.Length; i++)
@@ -88,7 +88,7 @@ public static class NetPackageManager
 		}
 	}
 
-	// Token: 0x06003A58 RID: 14936 RVA: 0x0017B7EA File Offset: 0x001799EA
+	// Token: 0x06003A6F RID: 14959 RVA: 0x0017C782 File Offset: 0x0017A982
 	public static NetPackage ParsePackage(PooledBinaryReader _reader, ClientInfo _sender)
 	{
 		NetPackage rawPackage = NetPackageManager.getPackageInfoByType((int)_reader.ReadUInt16()).GetRawPackage();
@@ -97,13 +97,13 @@ public static class NetPackageManager
 		return rawPackage;
 	}
 
-	// Token: 0x06003A59 RID: 14937 RVA: 0x0017B80A File Offset: 0x00179A0A
+	// Token: 0x06003A70 RID: 14960 RVA: 0x0017C7A2 File Offset: 0x0017A9A2
 	public static void FreePackage(NetPackage _package)
 	{
 		NetPackageManager.getPackageInfoByType(_package.PackageId).FreePackage(_package);
 	}
 
-	// Token: 0x06003A5A RID: 14938 RVA: 0x0017B81D File Offset: 0x00179A1D
+	// Token: 0x06003A71 RID: 14961 RVA: 0x0017C7B5 File Offset: 0x0017A9B5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NetPackageManager.IPackageInformation getPackageInfoByType(int _packageTypeId)
 	{
@@ -114,26 +114,26 @@ public static class NetPackageManager
 		return NetPackageManager.packageIdToPackageInformation[_packageTypeId];
 	}
 
-	// Token: 0x06003A5B RID: 14939 RVA: 0x0017B840 File Offset: 0x00179A40
+	// Token: 0x06003A72 RID: 14962 RVA: 0x0017C7D8 File Offset: 0x0017A9D8
 	public static TPackage GetPackage<TPackage>() where TPackage : NetPackage
 	{
 		return NetPackageManager.NetPackageInformation<TPackage>.Instance.GetPackage();
 	}
 
-	// Token: 0x06003A5C RID: 14940 RVA: 0x0017B84C File Offset: 0x00179A4C
+	// Token: 0x06003A73 RID: 14963 RVA: 0x0017C7E4 File Offset: 0x0017A9E4
 	public static int GetPackageId(Type _type)
 	{
 		return NetPackageManager.packageClassToPackageId[_type];
 	}
 
-	// Token: 0x06003A5D RID: 14941 RVA: 0x0017B859 File Offset: 0x00179A59
+	// Token: 0x06003A74 RID: 14964 RVA: 0x0017C7F1 File Offset: 0x0017A9F1
 	public static string GetPackageName(int _id)
 	{
 		return NetPackageManager.packageIdToClass[_id].ToString();
 	}
 
-	// Token: 0x17000622 RID: 1570
-	// (get) Token: 0x06003A5E RID: 14942 RVA: 0x0017B867 File Offset: 0x00179A67
+	// Token: 0x17000626 RID: 1574
+	// (get) Token: 0x06003A75 RID: 14965 RVA: 0x0017C7FF File Offset: 0x0017A9FF
 	public static int KnownPackageCount
 	{
 		get
@@ -142,8 +142,8 @@ public static class NetPackageManager
 		}
 	}
 
-	// Token: 0x17000623 RID: 1571
-	// (get) Token: 0x06003A5F RID: 14943 RVA: 0x0017B873 File Offset: 0x00179A73
+	// Token: 0x17000627 RID: 1575
+	// (get) Token: 0x06003A76 RID: 14966 RVA: 0x0017C80B File Offset: 0x0017AA0B
 	public static Type[] PackageMappings
 	{
 		get
@@ -152,7 +152,7 @@ public static class NetPackageManager
 		}
 	}
 
-	// Token: 0x06003A60 RID: 14944 RVA: 0x0017B87C File Offset: 0x00179A7C
+	// Token: 0x06003A77 RID: 14967 RVA: 0x0017C814 File Offset: 0x0017AA14
 	public static void LogStats()
 	{
 		Log.Out("NetPackage pool stats:");
@@ -179,46 +179,46 @@ public static class NetPackageManager
 		Log.Out("  Total: {0} packages, {1} Bytes", new object[] { num, num2 });
 	}
 
-	// Token: 0x04002FA4 RID: 12196
+	// Token: 0x04002FC0 RID: 12224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Type[] packageIdToClass;
 
-	// Token: 0x04002FA5 RID: 12197
+	// Token: 0x04002FC1 RID: 12225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NetPackageManager.IPackageInformation[] packageIdToPackageInformation;
 
-	// Token: 0x04002FA6 RID: 12198
+	// Token: 0x04002FC2 RID: 12226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<Type, int> packageClassToPackageId;
 
-	// Token: 0x04002FA7 RID: 12199
+	// Token: 0x04002FC3 RID: 12227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, Type> knownPackageTypes = new CaseInsensitiveStringDictionary<Type>();
 
-	// Token: 0x04002FA8 RID: 12200
+	// Token: 0x04002FC4 RID: 12228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Type packageIdsType = typeof(NetPackagePackageIds);
 
-	// Token: 0x020007A3 RID: 1955
+	// Token: 0x020007AB RID: 1963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public interface IPackageInformation
 	{
-		// Token: 0x06003A61 RID: 14945
+		// Token: 0x06003A78 RID: 14968
 		NetPackage GetRawPackage();
 
-		// Token: 0x06003A62 RID: 14946
+		// Token: 0x06003A79 RID: 14969
 		void FreePackage(NetPackage _package);
 
-		// Token: 0x06003A63 RID: 14947
+		// Token: 0x06003A7A RID: 14970
 		void GetStats(out int _packages, out int _totalSize);
 	}
 
-	// Token: 0x020007A4 RID: 1956
+	// Token: 0x020007AC RID: 1964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class NetPackageInformation<TPackage> : NetPackageManager.IPackageInformation where TPackage : NetPackage
 	{
-		// Token: 0x17000624 RID: 1572
-		// (get) Token: 0x06003A64 RID: 14948 RVA: 0x0017B917 File Offset: 0x00179B17
+		// Token: 0x17000628 RID: 1576
+		// (get) Token: 0x06003A7B RID: 14971 RVA: 0x0017C8AF File Offset: 0x0017AAAF
 		public static NetPackageManager.NetPackageInformation<TPackage> Instance
 		{
 			get
@@ -231,7 +231,7 @@ public static class NetPackageManager
 			}
 		}
 
-		// Token: 0x06003A65 RID: 14949 RVA: 0x0017B930 File Offset: 0x00179B30
+		// Token: 0x06003A7C RID: 14972 RVA: 0x0017C8C8 File Offset: 0x0017AAC8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public NetPackageInformation()
 		{
@@ -257,7 +257,7 @@ public static class NetPackageManager
 			}
 		}
 
-		// Token: 0x06003A66 RID: 14950 RVA: 0x0017BA68 File Offset: 0x00179C68
+		// Token: 0x06003A7D RID: 14973 RVA: 0x0017CA00 File Offset: 0x0017AC00
 		public TPackage GetPackage()
 		{
 			if (this.pool != null)
@@ -277,13 +277,13 @@ public static class NetPackageManager
 			return (TPackage)((object)this.ctor.Invoke(null));
 		}
 
-		// Token: 0x06003A67 RID: 14951 RVA: 0x0017BB04 File Offset: 0x00179D04
+		// Token: 0x06003A7E RID: 14974 RVA: 0x0017CA9C File Offset: 0x0017AC9C
 		public NetPackage GetRawPackage()
 		{
 			return this.GetPackage();
 		}
 
-		// Token: 0x06003A68 RID: 14952 RVA: 0x0017BB14 File Offset: 0x00179D14
+		// Token: 0x06003A7F RID: 14975 RVA: 0x0017CAAC File Offset: 0x0017ACAC
 		public void FreePackage(NetPackage _package)
 		{
 			if (this.pool == null)
@@ -307,7 +307,7 @@ public static class NetPackageManager
 			}
 		}
 
-		// Token: 0x06003A69 RID: 14953 RVA: 0x0017BBA0 File Offset: 0x00179DA0
+		// Token: 0x06003A80 RID: 14976 RVA: 0x0017CB38 File Offset: 0x0017AD38
 		public void GetStats(out int _packages, out int _totalSize)
 		{
 			_packages = 0;
@@ -323,7 +323,7 @@ public static class NetPackageManager
 			}
 		}
 
-		// Token: 0x06003A6A RID: 14954 RVA: 0x0017BBF4 File Offset: 0x00179DF4
+		// Token: 0x06003A81 RID: 14977 RVA: 0x0017CB8C File Offset: 0x0017AD8C
 		public void Cleanup()
 		{
 			if (this.pool == null)
@@ -340,59 +340,59 @@ public static class NetPackageManager
 			}
 		}
 
-		// Token: 0x04002FA9 RID: 12201
+		// Token: 0x04002FC5 RID: 12229
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static NetPackageManager.NetPackageInformation<TPackage> instance;
 
-		// Token: 0x04002FAA RID: 12202
+		// Token: 0x04002FC6 RID: 12230
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly TPackage[] pool;
 
-		// Token: 0x04002FAB RID: 12203
+		// Token: 0x04002FC7 RID: 12231
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int poolSize;
 
-		// Token: 0x04002FAC RID: 12204
+		// Token: 0x04002FC8 RID: 12232
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int capacity;
 
-		// Token: 0x04002FAD RID: 12205
+		// Token: 0x04002FC9 RID: 12233
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ConstructorInfo ctor;
 
-		// Token: 0x04002FAE RID: 12206
+		// Token: 0x04002FCA RID: 12234
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler getSampler = CustomSampler.Create("NPM.PI.GetPackage", false);
 
-		// Token: 0x04002FAF RID: 12207
+		// Token: 0x04002FCB RID: 12235
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler getSamplerPool = CustomSampler.Create("Pooled", false);
 
-		// Token: 0x04002FB0 RID: 12208
+		// Token: 0x04002FCC RID: 12236
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler getSamplerNew = CustomSampler.Create("New", false);
 
-		// Token: 0x04002FB1 RID: 12209
+		// Token: 0x04002FCD RID: 12237
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler getSamplerType = CustomSampler.Create(typeof(TPackage).Name, false);
 
-		// Token: 0x04002FB2 RID: 12210
+		// Token: 0x04002FCE RID: 12238
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler freeSampler = CustomSampler.Create("NPM.PI.FreePackage", false);
 
-		// Token: 0x04002FB3 RID: 12211
+		// Token: 0x04002FCF RID: 12239
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler freeSamplerPool = CustomSampler.Create("ToPool", false);
 
-		// Token: 0x04002FB4 RID: 12212
+		// Token: 0x04002FD0 RID: 12240
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler freeSamplerCleanup = CustomSampler.Create("Cleanup", false);
 	}
 
-	// Token: 0x020007A5 RID: 1957
+	// Token: 0x020007AD RID: 1965
 	public class UnknownNetPackageException : Exception
 	{
-		// Token: 0x06003A6B RID: 14955 RVA: 0x0017BC64 File Offset: 0x00179E64
+		// Token: 0x06003A82 RID: 14978 RVA: 0x0017CBFC File Offset: 0x0017ADFC
 		public UnknownNetPackageException(int _packageId)
 			: base("Unknown NetPackage ID: " + _packageId.ToString())
 		{

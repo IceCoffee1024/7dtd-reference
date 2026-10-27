@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200080D RID: 2061
+// Token: 0x02000817 RID: 2071
 [Preserve]
 public class NetPackageMapChunks : NetPackage
 {
-	// Token: 0x17000674 RID: 1652
-	// (get) Token: 0x06003C94 RID: 15508 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x1700067A RID: 1658
+	// (get) Token: 0x06003CB7 RID: 15543 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int Channel
 	{
 		get
@@ -16,8 +16,8 @@ public class NetPackageMapChunks : NetPackage
 		}
 	}
 
-	// Token: 0x17000675 RID: 1653
-	// (get) Token: 0x06003C95 RID: 15509 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x1700067B RID: 1659
+	// (get) Token: 0x06003CB8 RID: 15544 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool Compress
 	{
 		get
@@ -26,8 +26,8 @@ public class NetPackageMapChunks : NetPackage
 		}
 	}
 
-	// Token: 0x17000676 RID: 1654
-	// (get) Token: 0x06003C96 RID: 15510 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x1700067C RID: 1660
+	// (get) Token: 0x06003CB9 RID: 15545 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -36,7 +36,7 @@ public class NetPackageMapChunks : NetPackage
 		}
 	}
 
-	// Token: 0x06003C97 RID: 15511 RVA: 0x001833D9 File Offset: 0x001815D9
+	// Token: 0x06003CBA RID: 15546 RVA: 0x001844DD File Offset: 0x001826DD
 	public NetPackageMapChunks Setup(int _entityId, List<int> _chunks, List<ushort[]> _mapPieces)
 	{
 		this.entityId = _entityId;
@@ -45,7 +45,7 @@ public class NetPackageMapChunks : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C98 RID: 15512 RVA: 0x001833FC File Offset: 0x001815FC
+	// Token: 0x06003CBB RID: 15547 RVA: 0x00184500 File Offset: 0x00182700
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.chunks = new List<int>();
@@ -64,7 +64,7 @@ public class NetPackageMapChunks : NetPackage
 		}
 	}
 
-	// Token: 0x06003C99 RID: 15513 RVA: 0x00183480 File Offset: 0x00181680
+	// Token: 0x06003CBC RID: 15548 RVA: 0x00184584 File Offset: 0x00182784
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -100,7 +100,7 @@ public class NetPackageMapChunks : NetPackage
 		}
 	}
 
-	// Token: 0x06003C9A RID: 15514 RVA: 0x0018358C File Offset: 0x0018178C
+	// Token: 0x06003CBD RID: 15549 RVA: 0x00184690 File Offset: 0x00182890
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -114,15 +114,15 @@ public class NetPackageMapChunks : NetPackage
 		}
 	}
 
-	// Token: 0x04003135 RID: 12597
+	// Token: 0x04003155 RID: 12629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04003136 RID: 12598
+	// Token: 0x04003156 RID: 12630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> chunks;
 
-	// Token: 0x04003137 RID: 12599
+	// Token: 0x04003157 RID: 12631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ushort[]> mapPieces;
 }

@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000BEA RID: 3050
+// Token: 0x02000BF5 RID: 3061
 public class UnityDistantTerrainWaterPlane
 {
-	// Token: 0x06005B68 RID: 23400 RVA: 0x0023616C File Offset: 0x0023436C
+	// Token: 0x06005B8D RID: 23437 RVA: 0x002376B8 File Offset: 0x002358B8
 	public UnityDistantTerrainWaterPlane(UnityDistantTerrain.Config _terrainConfig, Material _waterMaterial)
 	{
 		this.terrainConfig = _terrainConfig;
 		this.waterMaterial = _waterMaterial;
 	}
 
-	// Token: 0x06005B69 RID: 23401 RVA: 0x00236184 File Offset: 0x00234384
+	// Token: 0x06005B8E RID: 23438 RVA: 0x002376D0 File Offset: 0x002358D0
 	public void createDynamicWaterPlane_Step1(int _xStart, int _zStart, int _tileSize, int _waterChunks16x16Width, byte[] _waterChunks16x16)
 	{
 		int num = this.terrainConfig.ChunkWorldSize / 16 + 1;
@@ -63,7 +63,7 @@ public class UnityDistantTerrainWaterPlane
 		}
 	}
 
-	// Token: 0x06005B6A RID: 23402 RVA: 0x002362D0 File Offset: 0x002344D0
+	// Token: 0x06005B8F RID: 23439 RVA: 0x0023781C File Offset: 0x00235A1C
 	public GameObject createDynamicWaterPlane_Step2(GameObject _existingWaterPlane, Transform _parent, string _tag = null)
 	{
 		if (_existingWaterPlane == null)
@@ -107,7 +107,7 @@ public class UnityDistantTerrainWaterPlane
 		return _existingWaterPlane;
 	}
 
-	// Token: 0x06005B6B RID: 23403 RVA: 0x002363F6 File Offset: 0x002345F6
+	// Token: 0x06005B90 RID: 23440 RVA: 0x00237942 File Offset: 0x00235B42
 	public void Cleanup()
 	{
 		this.dynamicWaterPlane = null;
@@ -115,39 +115,39 @@ public class UnityDistantTerrainWaterPlane
 		this.fixedWaterPlaneLoRes = null;
 	}
 
-	// Token: 0x04004750 RID: 18256
+	// Token: 0x04004775 RID: 18293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWaterPlaneChunkSize = 16;
 
-	// Token: 0x04004751 RID: 18257
+	// Token: 0x04004776 RID: 18294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrainWaterPlane.FixedMeshData fixedWaterPlaneHiRes;
 
-	// Token: 0x04004752 RID: 18258
+	// Token: 0x04004777 RID: 18295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrainWaterPlane.FixedMeshData fixedWaterPlaneLoRes;
 
-	// Token: 0x04004753 RID: 18259
+	// Token: 0x04004778 RID: 18296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrainWaterPlane.DynamicMeshData dynamicWaterPlane;
 
-	// Token: 0x04004754 RID: 18260
+	// Token: 0x04004779 RID: 18297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] dynamiceWaterPlaneChunkArr;
 
-	// Token: 0x04004755 RID: 18261
+	// Token: 0x0400477A RID: 18298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrain.Config terrainConfig;
 
-	// Token: 0x04004756 RID: 18262
+	// Token: 0x0400477B RID: 18299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material waterMaterial;
 
-	// Token: 0x02000BEB RID: 3051
+	// Token: 0x02000BF6 RID: 3062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class FixedMeshData
 	{
-		// Token: 0x06005B6C RID: 23404 RVA: 0x00236410 File Offset: 0x00234610
+		// Token: 0x06005B91 RID: 23441 RVA: 0x0023795C File Offset: 0x00235B5C
 		public FixedMeshData(int _vertCount, int _triCount)
 		{
 			this.count = _vertCount;
@@ -158,30 +158,30 @@ public class UnityDistantTerrainWaterPlane
 			this.triangles = new int[_triCount];
 		}
 
-		// Token: 0x04004757 RID: 18263
+		// Token: 0x0400477C RID: 18300
 		public int count;
 
-		// Token: 0x04004758 RID: 18264
+		// Token: 0x0400477D RID: 18301
 		public Vector3[] vertices;
 
-		// Token: 0x04004759 RID: 18265
+		// Token: 0x0400477E RID: 18302
 		public Vector3[] normals;
 
-		// Token: 0x0400475A RID: 18266
+		// Token: 0x0400477F RID: 18303
 		public Vector4[] tangents;
 
-		// Token: 0x0400475B RID: 18267
+		// Token: 0x04004780 RID: 18304
 		public Vector2[] uvs;
 
-		// Token: 0x0400475C RID: 18268
+		// Token: 0x04004781 RID: 18305
 		public int[] triangles;
 	}
 
-	// Token: 0x02000BEC RID: 3052
+	// Token: 0x02000BF7 RID: 3063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class DynamicMeshData
 	{
-		// Token: 0x06005B6D RID: 23405 RVA: 0x0023647C File Offset: 0x0023467C
+		// Token: 0x06005B92 RID: 23442 RVA: 0x002379C8 File Offset: 0x00235BC8
 		public DynamicMeshData(int _triCapacity)
 		{
 			this.vertices = new List<Vector3>(_triCapacity / 2);
@@ -191,7 +191,7 @@ public class UnityDistantTerrainWaterPlane
 			this.triangles = new List<int>(_triCapacity);
 		}
 
-		// Token: 0x06005B6E RID: 23406 RVA: 0x002364D3 File Offset: 0x002346D3
+		// Token: 0x06005B93 RID: 23443 RVA: 0x00237A1F File Offset: 0x00235C1F
 		public void Clear()
 		{
 			this.vertices.Clear();
@@ -201,7 +201,7 @@ public class UnityDistantTerrainWaterPlane
 			this.triangles.Clear();
 		}
 
-		// Token: 0x06005B6F RID: 23407 RVA: 0x0023650C File Offset: 0x0023470C
+		// Token: 0x06005B94 RID: 23444 RVA: 0x00237A58 File Offset: 0x00235C58
 		public void AddQuad(int _x, int _y, int _z, int _width, int _height, int _scale, int _totalCountP1)
 		{
 			int num = this.vertices.Count;
@@ -236,22 +236,22 @@ public class UnityDistantTerrainWaterPlane
 			this.triangles.Add(2 + num);
 		}
 
-		// Token: 0x0400475D RID: 18269
+		// Token: 0x04004782 RID: 18306
 		public List<Vector3> vertices;
 
-		// Token: 0x0400475E RID: 18270
+		// Token: 0x04004783 RID: 18307
 		public List<Vector3> normals;
 
-		// Token: 0x0400475F RID: 18271
+		// Token: 0x04004784 RID: 18308
 		public List<Vector4> tangents;
 
-		// Token: 0x04004760 RID: 18272
+		// Token: 0x04004785 RID: 18309
 		public List<Vector2> uvs;
 
-		// Token: 0x04004761 RID: 18273
+		// Token: 0x04004786 RID: 18310
 		public List<int> triangles;
 
-		// Token: 0x04004762 RID: 18274
+		// Token: 0x04004787 RID: 18311
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector4 defaultWaterPlaneTangent = new Vector4(1f, 0f, 0f, 1f);
 	}

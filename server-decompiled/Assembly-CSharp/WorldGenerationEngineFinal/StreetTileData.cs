@@ -2,16 +2,16 @@
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200175B RID: 5979
+	// Token: 0x0200178C RID: 6028
 	public struct StreetTileData
 	{
-		// Token: 0x04008AAF RID: 35503
+		// Token: 0x04008B98 RID: 35736
 		public bool IsCity;
 
-		// Token: 0x04008AB0 RID: 35504
+		// Token: 0x04008B99 RID: 35737
 		public bool OverlapsWater;
 
-		// Token: 0x04008AB1 RID: 35505
+		// Token: 0x04008B9A RID: 35738
 		public int ConnectedHighwayCount;
 	}
 }

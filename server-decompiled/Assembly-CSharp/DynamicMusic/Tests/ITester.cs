@@ -2,10 +2,10 @@
 
 namespace DynamicMusic.Tests
 {
-	// Token: 0x02001AD1 RID: 6865
+	// Token: 0x02001B02 RID: 6914
 	public interface ITester
 	{
-		// Token: 0x0600CF23 RID: 53027
+		// Token: 0x0600D037 RID: 53303
 		void RunTest();
 	}
 }

@@ -5,11 +5,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F49 RID: 3913
+// Token: 0x02000F58 RID: 3928
 [Preserve]
 public class XUiC_GamepadCalloutWindow : XUiController
 {
-	// Token: 0x06007A5F RID: 31327 RVA: 0x002E508C File Offset: 0x002E328C
+	// Token: 0x06007AA2 RID: 31394 RVA: 0x002E697C File Offset: 0x002E4B7C
 	public override void Init()
 	{
 		base.Init();
@@ -30,14 +30,14 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06007A60 RID: 31328 RVA: 0x002E5127 File Offset: 0x002E3327
+	// Token: 0x06007AA3 RID: 31395 RVA: 0x002E6A17 File Offset: 0x002E4C17
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.CalloutWindow = null;
 	}
 
-	// Token: 0x06007A61 RID: 31329 RVA: 0x002E513C File Offset: 0x002E333C
+	// Token: 0x06007AA4 RID: 31396 RVA: 0x002E6A2C File Offset: 0x002E4C2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
@@ -49,7 +49,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.HideCallouts(base.CurrentInputStyle == PlayerInputManager.InputStyle.Keyboard);
 	}
 
-	// Token: 0x06007A62 RID: 31330 RVA: 0x002E5188 File Offset: 0x002E3388
+	// Token: 0x06007AA5 RID: 31397 RVA: 0x002E6A78 File Offset: 0x002E4C78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitWorldCallouts()
 	{
@@ -64,7 +64,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.AddCallout(UIUtils.ButtonIcon.FaceButtonEast, "igcoReload", XUiC_GamepadCalloutWindow.CalloutType.World);
 	}
 
-	// Token: 0x06007A63 RID: 31331 RVA: 0x002E5218 File Offset: 0x002E3418
+	// Token: 0x06007AA6 RID: 31398 RVA: 0x002E6B08 File Offset: 0x002E4D08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitContextMenuCallouts()
 	{
@@ -74,7 +74,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.xui.CalloutWindow.AddCallout(UIUtils.ButtonIcon.RightTrigger, "igcoCategoryRight", XUiC_GamepadCalloutWindow.CalloutType.MenuCategory);
 	}
 
-	// Token: 0x06007A64 RID: 31332 RVA: 0x002E5270 File Offset: 0x002E3470
+	// Token: 0x06007AA7 RID: 31399 RVA: 0x002E6B60 File Offset: 0x002E4D60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRWGCallouts()
 	{
@@ -84,14 +84,14 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.xui.CalloutWindow.AddCallout(UIUtils.ButtonIcon.LeftTrigger, "igco_rwgCameraSpeed", XUiC_GamepadCalloutWindow.CalloutType.RWGCamera);
 	}
 
-	// Token: 0x06007A65 RID: 31333 RVA: 0x002E52E0 File Offset: 0x002E34E0
+	// Token: 0x06007AA8 RID: 31400 RVA: 0x002E6BD0 File Offset: 0x002E4DD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitCharacterPreviewCallouts()
 	{
 		this.xui.CalloutWindow.AddCallout(UIUtils.ButtonIcon.RightStickLeftRight, "igco_rwgRotateCharacterPreview", XUiC_GamepadCalloutWindow.CalloutType.CharacterPreview);
 	}
 
-	// Token: 0x06007A66 RID: 31334 RVA: 0x002E52FB File Offset: 0x002E34FB
+	// Token: 0x06007AA9 RID: 31401 RVA: 0x002E6BEB File Offset: 0x002E4DEB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitCameraZoomCallouts()
 	{
@@ -99,7 +99,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.xui.CalloutWindow.AddCallout(UIUtils.ButtonIcon.LeftTrigger, "igcoZoomOutCamera", XUiC_GamepadCalloutWindow.CalloutType.CameraZoom);
 	}
 
-	// Token: 0x06007A67 RID: 31335 RVA: 0x002E5330 File Offset: 0x002E3530
+	// Token: 0x06007AAA RID: 31402 RVA: 0x002E6C20 File Offset: 0x002E4E20
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -126,7 +126,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A68 RID: 31336 RVA: 0x002E53EC File Offset: 0x002E35EC
+	// Token: 0x06007AAB RID: 31403 RVA: 0x002E6CDC File Offset: 0x002E4EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetFreeCallouts()
 	{
@@ -140,7 +140,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A69 RID: 31337 RVA: 0x002E543C File Offset: 0x002E363C
+	// Token: 0x06007AAC RID: 31404 RVA: 0x002E6D2C File Offset: 0x002E4F2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowCallouts()
 	{
@@ -159,7 +159,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A6A RID: 31338 RVA: 0x002E5484 File Offset: 0x002E3684
+	// Token: 0x06007AAD RID: 31405 RVA: 0x002E6D74 File Offset: 0x002E4F74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowCallouts(XUiC_GamepadCalloutWindow.CalloutType _type, bool _visible, ref int _currentOffset)
 	{
@@ -183,7 +183,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A6B RID: 31339 RVA: 0x002E5510 File Offset: 0x002E3710
+	// Token: 0x06007AAE RID: 31406 RVA: 0x002E6E00 File Offset: 0x002E5000
 	public void AddCallout(UIUtils.ButtonIcon _button, string _action, XUiC_GamepadCalloutWindow.CalloutType _type)
 	{
 		if (this.ContainsCallout(_button, _action))
@@ -200,7 +200,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A6C RID: 31340 RVA: 0x002E5558 File Offset: 0x002E3758
+	// Token: 0x06007AAF RID: 31407 RVA: 0x002E6E48 File Offset: 0x002E5048
 	public void RemoveCallout(UIUtils.ButtonIcon _button, string _action, XUiC_GamepadCalloutWindow.CalloutType _type)
 	{
 		XUiC_GamepadCalloutWindow.Callout callout = null;
@@ -218,7 +218,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A6D RID: 31341 RVA: 0x002E55E4 File Offset: 0x002E37E4
+	// Token: 0x06007AB0 RID: 31408 RVA: 0x002E6ED4 File Offset: 0x002E50D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowCallout(UIUtils.ButtonIcon _button, XUiC_GamepadCalloutWindow.CalloutType _type, bool _visible)
 	{
@@ -234,7 +234,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A6E RID: 31342 RVA: 0x002E5654 File Offset: 0x002E3854
+	// Token: 0x06007AB1 RID: 31409 RVA: 0x002E6F44 File Offset: 0x002E5144
 	public bool ContainsCallout(UIUtils.ButtonIcon _button, string _action)
 	{
 		foreach (XUiC_GamepadCalloutWindow.Callout callout in this.callouts)
@@ -247,7 +247,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		return false;
 	}
 
-	// Token: 0x06007A6F RID: 31343 RVA: 0x002E56C8 File Offset: 0x002E38C8
+	// Token: 0x06007AB2 RID: 31410 RVA: 0x002E6FB8 File Offset: 0x002E51B8
 	public void ClearCallouts(XUiC_GamepadCalloutWindow.CalloutType _type)
 	{
 		List<XUiC_GamepadCalloutWindow.Callout> list;
@@ -266,7 +266,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A70 RID: 31344 RVA: 0x002E5730 File Offset: 0x002E3930
+	// Token: 0x06007AB3 RID: 31411 RVA: 0x002E7020 File Offset: 0x002E5220
 	public void SetCalloutsEnabled(XUiC_GamepadCalloutWindow.CalloutType _type, bool _enabled)
 	{
 		XUiC_GamepadCalloutWindow.VisibilityData visibilityData = this.typeVisible[(int)_type];
@@ -281,7 +281,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A71 RID: 31345 RVA: 0x002E5770 File Offset: 0x002E3970
+	// Token: 0x06007AB4 RID: 31412 RVA: 0x002E7060 File Offset: 0x002E5260
 	public void EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType _type, float _duration = 0f)
 	{
 		this.SetCalloutsEnabled(_type, true);
@@ -290,13 +290,13 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		visibilityData.duration = _duration;
 	}
 
-	// Token: 0x06007A72 RID: 31346 RVA: 0x002E5793 File Offset: 0x002E3993
+	// Token: 0x06007AB5 RID: 31413 RVA: 0x002E7083 File Offset: 0x002E5283
 	public void DisableCallouts(XUiC_GamepadCalloutWindow.CalloutType _type)
 	{
 		this.SetCalloutsEnabled(_type, false);
 	}
 
-	// Token: 0x06007A73 RID: 31347 RVA: 0x002E57A0 File Offset: 0x002E39A0
+	// Token: 0x06007AB6 RID: 31414 RVA: 0x002E7090 File Offset: 0x002E5290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateVisibility(float _dt)
 	{
@@ -314,7 +314,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007A74 RID: 31348 RVA: 0x002E5800 File Offset: 0x002E3A00
+	// Token: 0x06007AB7 RID: 31415 RVA: 0x002E70F0 File Offset: 0x002E52F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_GamepadCalloutWindow.Callout GetCallout(XUiC_GamepadCalloutWindow.CalloutType _type)
 	{
@@ -346,7 +346,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		return callout;
 	}
 
-	// Token: 0x06007A75 RID: 31349 RVA: 0x002E58B0 File Offset: 0x002E3AB0
+	// Token: 0x06007AB8 RID: 31416 RVA: 0x002E71A0 File Offset: 0x002E53A0
 	public void UpdateCalloutsForItemStack(GameObject _stackObject, ItemStack _itemStack, bool _isHovered, bool _canSwap = true, bool _canRemove = true, bool _canPlaceOne = true)
 	{
 		XUiC_DragAndDropWindow dragAndDropWindow = this.xui.DragAndDropWindow;
@@ -354,7 +354,17 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		if (_isHovered)
 		{
 			this.stackObject = _stackObject;
-			if (_itemStack.itemValue.ItemClass != null)
+			bool flag;
+			if (_itemStack == null)
+			{
+				flag = null != null;
+			}
+			else
+			{
+				ItemValue itemValue = _itemStack.itemValue;
+				flag = ((itemValue != null) ? itemValue.ItemClass : null) != null;
+			}
+			if (flag)
 			{
 				if (dragAndDropWindow.CurrentStack.IsEmpty())
 				{
@@ -411,109 +421,109 @@ public class XUiC_GamepadCalloutWindow : XUiController
 		this.ShowCallout(UIUtils.ButtonIcon.FaceButtonSouth, XUiC_GamepadCalloutWindow.CalloutType.Menu, true);
 	}
 
-	// Token: 0x06007A76 RID: 31350 RVA: 0x002E5A28 File Offset: 0x002E3C28
+	// Token: 0x06007AB9 RID: 31417 RVA: 0x002E7325 File Offset: 0x002E5525
 	public void HideCallouts(bool _hideCallouts)
 	{
 		this.hideCallouts = _hideCallouts;
 		this.ShowCallouts();
 	}
 
-	// Token: 0x04005AB8 RID: 23224
+	// Token: 0x04005AEB RID: 23275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Y_OFFSET = 5;
 
-	// Token: 0x04005AB9 RID: 23225
+	// Token: 0x04005AEC RID: 23276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int X_OFFSET = 0;
 
-	// Token: 0x04005ABA RID: 23226
+	// Token: 0x04005AED RID: 23277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInputManager.InputStyle controllerStyle;
 
-	// Token: 0x04005ABB RID: 23227
+	// Token: 0x04005AEE RID: 23278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_GamepadCalloutWindow.Callout> callouts = new List<XUiC_GamepadCalloutWindow.Callout>();
 
-	// Token: 0x04005ABC RID: 23228
+	// Token: 0x04005AEF RID: 23279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<XUiC_GamepadCalloutWindow.CalloutType, List<XUiC_GamepadCalloutWindow.Callout>> calloutGroups = new EnumDictionary<XUiC_GamepadCalloutWindow.CalloutType, List<XUiC_GamepadCalloutWindow.Callout>>();
 
-	// Token: 0x04005ABD RID: 23229
+	// Token: 0x04005AF0 RID: 23280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_GamepadCalloutWindow.VisibilityData[] typeVisible = new XUiC_GamepadCalloutWindow.VisibilityData[17];
 
-	// Token: 0x04005ABE RID: 23230
+	// Token: 0x04005AF1 RID: 23281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool localActionsEnabled;
 
-	// Token: 0x04005ABF RID: 23231
+	// Token: 0x04005AF2 RID: 23282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject stackObject;
 
-	// Token: 0x04005AC0 RID: 23232
+	// Token: 0x04005AF3 RID: 23283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hideCallouts = true;
 
-	// Token: 0x02000F4A RID: 3914
+	// Token: 0x02000F59 RID: 3929
 	public enum CalloutType
 	{
-		// Token: 0x04005AC2 RID: 23234
+		// Token: 0x04005AF5 RID: 23285
 		Menu,
-		// Token: 0x04005AC3 RID: 23235
+		// Token: 0x04005AF6 RID: 23286
 		MenuLoot,
-		// Token: 0x04005AC4 RID: 23236
+		// Token: 0x04005AF7 RID: 23287
 		MenuHoverItem,
-		// Token: 0x04005AC5 RID: 23237
+		// Token: 0x04005AF8 RID: 23288
 		MenuHoverAir,
-		// Token: 0x04005AC6 RID: 23238
+		// Token: 0x04005AF9 RID: 23289
 		SelectedOption,
-		// Token: 0x04005AC7 RID: 23239
+		// Token: 0x04005AFA RID: 23290
 		MenuCategory,
-		// Token: 0x04005AC8 RID: 23240
+		// Token: 0x04005AFB RID: 23291
 		MenuPaging,
-		// Token: 0x04005AC9 RID: 23241
+		// Token: 0x04005AFC RID: 23292
 		MenuComboBox,
-		// Token: 0x04005ACA RID: 23242
+		// Token: 0x04005AFD RID: 23293
 		MenuShortcuts,
-		// Token: 0x04005ACB RID: 23243
+		// Token: 0x04005AFE RID: 23294
 		World,
-		// Token: 0x04005ACC RID: 23244
+		// Token: 0x04005AFF RID: 23295
 		Tabs,
-		// Token: 0x04005ACD RID: 23245
+		// Token: 0x04005B00 RID: 23296
 		ColorPicker,
-		// Token: 0x04005ACE RID: 23246
+		// Token: 0x04005B01 RID: 23297
 		CharacterEditor,
-		// Token: 0x04005ACF RID: 23247
+		// Token: 0x04005B02 RID: 23298
 		RWGEditor,
-		// Token: 0x04005AD0 RID: 23248
+		// Token: 0x04005B03 RID: 23299
 		RWGCamera,
-		// Token: 0x04005AD1 RID: 23249
+		// Token: 0x04005B04 RID: 23300
 		CharacterPreview,
-		// Token: 0x04005AD2 RID: 23250
+		// Token: 0x04005B05 RID: 23301
 		CameraZoom,
-		// Token: 0x04005AD3 RID: 23251
+		// Token: 0x04005B06 RID: 23302
 		Count
 	}
 
-	// Token: 0x02000F4B RID: 3915
+	// Token: 0x02000F5A RID: 3930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class VisibilityData
 	{
-		// Token: 0x04005AD4 RID: 23252
+		// Token: 0x04005B07 RID: 23303
 		public bool isVisible;
 
-		// Token: 0x04005AD5 RID: 23253
+		// Token: 0x04005B08 RID: 23304
 		public float duration;
 
-		// Token: 0x04005AD6 RID: 23254
+		// Token: 0x04005B09 RID: 23305
 		public float activeDuration;
 	}
 
-	// Token: 0x02000F4C RID: 3916
+	// Token: 0x02000F5B RID: 3931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Callout : MonoBehaviour
 	{
-		// Token: 0x06007A79 RID: 31353 RVA: 0x002E5A6C File Offset: 0x002E3C6C
+		// Token: 0x06007ABC RID: 31420 RVA: 0x002E7368 File Offset: 0x002E5568
 		public void Awake()
 		{
 			this.bIsVisible = true;
@@ -544,7 +554,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 			this.actionLabel.effectDistance = new Vector2(1.5f, 1.5f);
 		}
 
-		// Token: 0x06007A7A RID: 31354 RVA: 0x002E5BCC File Offset: 0x002E3DCC
+		// Token: 0x06007ABD RID: 31421 RVA: 0x002E74C8 File Offset: 0x002E56C8
 		public void SetupCallout(UIUtils.ButtonIcon _icon, string _action)
 		{
 			if (this.iconSprite != null && this.actionLabel != null)
@@ -556,7 +566,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 			}
 		}
 
-		// Token: 0x06007A7B RID: 31355 RVA: 0x002E5C27 File Offset: 0x002E3E27
+		// Token: 0x06007ABE RID: 31422 RVA: 0x002E7523 File Offset: 0x002E5723
 		public void SetAtlas(INGUIAtlas _atlas)
 		{
 			if (this.iconSprite != null)
@@ -567,7 +577,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 			this.atlasToSet = _atlas;
 		}
 
-		// Token: 0x06007A7C RID: 31356 RVA: 0x002E5C4B File Offset: 0x002E3E4B
+		// Token: 0x06007ABF RID: 31423 RVA: 0x002E7547 File Offset: 0x002E5747
 		public void FreeCallout()
 		{
 			this.isFree = true;
@@ -575,7 +585,7 @@ public class XUiC_GamepadCalloutWindow : XUiController
 			this.action = "";
 		}
 
-		// Token: 0x06007A7D RID: 31357 RVA: 0x002E5C67 File Offset: 0x002E3E67
+		// Token: 0x06007AC0 RID: 31424 RVA: 0x002E7563 File Offset: 0x002E5763
 		public void RefreshIcon()
 		{
 			if (!this.isFree && this.icon != UIUtils.ButtonIcon.Count && this.iconSprite != null)
@@ -584,31 +594,31 @@ public class XUiC_GamepadCalloutWindow : XUiController
 			}
 		}
 
-		// Token: 0x04005AD7 RID: 23255
+		// Token: 0x04005B0A RID: 23306
 		public UIUtils.ButtonIcon icon;
 
-		// Token: 0x04005AD8 RID: 23256
+		// Token: 0x04005B0B RID: 23307
 		public string action;
 
-		// Token: 0x04005AD9 RID: 23257
+		// Token: 0x04005B0C RID: 23308
 		public static NGUIFont calloutFont;
 
-		// Token: 0x04005ADA RID: 23258
+		// Token: 0x04005B0D RID: 23309
 		public UISprite iconSprite;
 
-		// Token: 0x04005ADB RID: 23259
+		// Token: 0x04005B0E RID: 23310
 		public UILabel actionLabel;
 
-		// Token: 0x04005ADC RID: 23260
+		// Token: 0x04005B0F RID: 23311
 		public XUiC_GamepadCalloutWindow.CalloutType type;
 
-		// Token: 0x04005ADD RID: 23261
+		// Token: 0x04005B10 RID: 23312
 		public bool bIsVisible = true;
 
-		// Token: 0x04005ADE RID: 23262
+		// Token: 0x04005B11 RID: 23313
 		public bool isFree = true;
 
-		// Token: 0x04005ADF RID: 23263
+		// Token: 0x04005B12 RID: 23314
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public INGUIAtlas atlasToSet;

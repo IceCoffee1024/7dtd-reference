@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000813 RID: 2067
+// Token: 0x0200081D RID: 2077
 [Preserve]
 public class NetPackageNPCQuestList : NetPackage
 {
-	// Token: 0x06003CB7 RID: 15543 RVA: 0x00183C29 File Offset: 0x00181E29
+	// Token: 0x06003CDA RID: 15578 RVA: 0x00184D2D File Offset: 0x00182F2D
 	public NetPackageNPCQuestList Setup(int _npcEntityID, int _playerEntityID)
 	{
 		this.npcEntityID = _npcEntityID;
@@ -17,7 +17,7 @@ public class NetPackageNPCQuestList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CB8 RID: 15544 RVA: 0x00183C41 File Offset: 0x00181E41
+	// Token: 0x06003CDB RID: 15579 RVA: 0x00184D45 File Offset: 0x00182F45
 	public NetPackageNPCQuestList Setup(int _playerEntityID, Vector2 _questGiverPos, int _tierLevel, Vector2 _prefabPos)
 	{
 		this.playerEntityID = _playerEntityID;
@@ -28,7 +28,7 @@ public class NetPackageNPCQuestList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CB9 RID: 15545 RVA: 0x00183C68 File Offset: 0x00181E68
+	// Token: 0x06003CDC RID: 15580 RVA: 0x00184D6C File Offset: 0x00182F6C
 	public NetPackageNPCQuestList SetupClear(int _playerEntityID, Vector2 _questGiverPos, int _tierLevel)
 	{
 		this.playerEntityID = _playerEntityID;
@@ -38,7 +38,7 @@ public class NetPackageNPCQuestList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CBA RID: 15546 RVA: 0x00183C87 File Offset: 0x00181E87
+	// Token: 0x06003CDD RID: 15581 RVA: 0x00184D8B File Offset: 0x00182F8B
 	public NetPackageNPCQuestList Setup(int _npcEntityID, int _playerEntityID, int _tierLevel)
 	{
 		this.npcEntityID = _npcEntityID;
@@ -48,7 +48,7 @@ public class NetPackageNPCQuestList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CBB RID: 15547 RVA: 0x00183CA6 File Offset: 0x00181EA6
+	// Token: 0x06003CDE RID: 15582 RVA: 0x00184DAA File Offset: 0x00182FAA
 	public NetPackageNPCQuestList Setup(int _npcEntityID, int _playerEntityID, int _tierLevel, byte _removeIndex)
 	{
 		this.npcEntityID = _npcEntityID;
@@ -59,7 +59,7 @@ public class NetPackageNPCQuestList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CBC RID: 15548 RVA: 0x00183CCD File Offset: 0x00181ECD
+	// Token: 0x06003CDF RID: 15583 RVA: 0x00184DD1 File Offset: 0x00182FD1
 	public NetPackageNPCQuestList Setup(int _npcEntityID, int _playerEntityID, NetPackageNPCQuestList.QuestPacketEntry[] _questPacketEntries)
 	{
 		this.npcEntityID = _npcEntityID;
@@ -69,7 +69,7 @@ public class NetPackageNPCQuestList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CBD RID: 15549 RVA: 0x00183CEC File Offset: 0x00181EEC
+	// Token: 0x06003CE0 RID: 15584 RVA: 0x00184DF0 File Offset: 0x00182FF0
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.npcEntityID = _reader.ReadInt32();
@@ -115,7 +115,7 @@ public class NetPackageNPCQuestList : NetPackage
 		}
 	}
 
-	// Token: 0x06003CBE RID: 15550 RVA: 0x00183DE0 File Offset: 0x00181FE0
+	// Token: 0x06003CE1 RID: 15585 RVA: 0x00184EE4 File Offset: 0x001830E4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -161,7 +161,7 @@ public class NetPackageNPCQuestList : NetPackage
 		}
 	}
 
-	// Token: 0x06003CBF RID: 15551 RVA: 0x00183EE4 File Offset: 0x001820E4
+	// Token: 0x06003CE2 RID: 15586 RVA: 0x00184FE8 File Offset: 0x001831E8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -231,7 +231,7 @@ public class NetPackageNPCQuestList : NetPackage
 		}
 	}
 
-	// Token: 0x06003CC0 RID: 15552 RVA: 0x001840D8 File Offset: 0x001822D8
+	// Token: 0x06003CE3 RID: 15587 RVA: 0x001851DC File Offset: 0x001833DC
 	public static void SendQuestPacketsToPlayer(EntityTrader npc, int playerEntityID)
 	{
 		if (npc.activeQuests != null)
@@ -252,51 +252,51 @@ public class NetPackageNPCQuestList : NetPackage
 		}
 	}
 
-	// Token: 0x04003150 RID: 12624
+	// Token: 0x04003170 RID: 12656
 	public int npcEntityID;
 
-	// Token: 0x04003151 RID: 12625
+	// Token: 0x04003171 RID: 12657
 	public int playerEntityID;
 
-	// Token: 0x04003152 RID: 12626
+	// Token: 0x04003172 RID: 12658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageNPCQuestList.NPCQuestEventTypes eventType;
 
-	// Token: 0x04003153 RID: 12627
+	// Token: 0x04003173 RID: 12659
 	public NetPackageNPCQuestList.QuestPacketEntry[] questPacketEntries;
 
-	// Token: 0x04003154 RID: 12628
+	// Token: 0x04003174 RID: 12660
 	public int tierLevel = -1;
 
-	// Token: 0x04003155 RID: 12629
+	// Token: 0x04003175 RID: 12661
 	public byte removeIndex;
 
-	// Token: 0x04003156 RID: 12630
+	// Token: 0x04003176 RID: 12662
 	public Vector2 questGiverPos;
 
-	// Token: 0x04003157 RID: 12631
+	// Token: 0x04003177 RID: 12663
 	public Vector2 prefabPos;
 
-	// Token: 0x02000814 RID: 2068
+	// Token: 0x0200081E RID: 2078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum NPCQuestEventTypes
 	{
-		// Token: 0x04003159 RID: 12633
+		// Token: 0x04003179 RID: 12665
 		FetchList,
-		// Token: 0x0400315A RID: 12634
+		// Token: 0x0400317A RID: 12666
 		RemoveQuest,
-		// Token: 0x0400315B RID: 12635
+		// Token: 0x0400317B RID: 12667
 		ResetQuests,
-		// Token: 0x0400315C RID: 12636
+		// Token: 0x0400317C RID: 12668
 		AddUsedPOI,
-		// Token: 0x0400315D RID: 12637
+		// Token: 0x0400317D RID: 12669
 		ClearUsedPOI
 	}
 
-	// Token: 0x02000815 RID: 2069
+	// Token: 0x0200081F RID: 2079
 	public struct QuestPacketEntry
 	{
-		// Token: 0x06003CC2 RID: 15554 RVA: 0x001841F2 File Offset: 0x001823F2
+		// Token: 0x06003CE5 RID: 15589 RVA: 0x001852F6 File Offset: 0x001834F6
 		public void read(BinaryReader _reader)
 		{
 			this.QuestID = _reader.ReadString();
@@ -306,7 +306,7 @@ public class NetPackageNPCQuestList : NetPackage
 			this.TraderPos = StreamUtils.ReadVector3(_reader);
 		}
 
-		// Token: 0x06003CC3 RID: 15555 RVA: 0x00184230 File Offset: 0x00182430
+		// Token: 0x06003CE6 RID: 15590 RVA: 0x00185334 File Offset: 0x00183534
 		public void write(BinaryWriter _writer)
 		{
 			_writer.Write(this.QuestID);
@@ -316,19 +316,19 @@ public class NetPackageNPCQuestList : NetPackage
 			StreamUtils.Write(_writer, this.TraderPos);
 		}
 
-		// Token: 0x0400315E RID: 12638
+		// Token: 0x0400317E RID: 12670
 		public string QuestID;
 
-		// Token: 0x0400315F RID: 12639
+		// Token: 0x0400317F RID: 12671
 		public Vector3 QuestLocation;
 
-		// Token: 0x04003160 RID: 12640
+		// Token: 0x04003180 RID: 12672
 		public Vector3 QuestSize;
 
-		// Token: 0x04003161 RID: 12641
+		// Token: 0x04003181 RID: 12673
 		public Vector3 TraderPos;
 
-		// Token: 0x04003162 RID: 12642
+		// Token: 0x04003182 RID: 12674
 		public string POIName;
 	}
 }

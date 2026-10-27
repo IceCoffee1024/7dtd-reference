@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200067A RID: 1658
+// Token: 0x02000681 RID: 1665
 [Preserve]
 public class IsLocalPlayer : TargetedCompareRequirementBase
 {
-	// Token: 0x0600353A RID: 13626 RVA: 0x001600D3 File Offset: 0x0015E2D3
+	// Token: 0x06003548 RID: 13640 RVA: 0x00160CC7 File Offset: 0x0015EEC7
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

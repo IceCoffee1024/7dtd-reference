@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200045A RID: 1114
+// Token: 0x0200045C RID: 1116
 [Preserve]
 public class EAISetNearestEntityAsTargetSorter : IComparer<Entity>
 {
-	// Token: 0x060021D8 RID: 8664 RVA: 0x000CD311 File Offset: 0x000CB511
+	// Token: 0x060021DD RID: 8669 RVA: 0x000CD6BD File Offset: 0x000CB8BD
 	public EAISetNearestEntityAsTargetSorter(Entity _entity)
 	{
 		this.theEntity = _entity;
 	}
 
-	// Token: 0x060021D9 RID: 8665 RVA: 0x000CD320 File Offset: 0x000CB520
+	// Token: 0x060021DE RID: 8670 RVA: 0x000CD6CC File Offset: 0x000CB8CC
 	public int Compare(Entity _e, Entity _e2)
 	{
 		float distanceSq = this.theEntity.GetDistanceSq(_e);
@@ -28,7 +28,7 @@ public class EAISetNearestEntityAsTargetSorter : IComparer<Entity>
 		return 0;
 	}
 
-	// Token: 0x04001767 RID: 5991
+	// Token: 0x04001777 RID: 6007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Entity theEntity;
 }

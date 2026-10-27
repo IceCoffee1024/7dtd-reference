@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AB6 RID: 6838
+	// Token: 0x02001AE7 RID: 6887
 	public struct ThreatLevel : IThreatLevel
 	{
-		// Token: 0x170019D2 RID: 6610
-		// (get) Token: 0x0600CE69 RID: 52841 RVA: 0x004AF16B File Offset: 0x004AD36B
-		// (set) Token: 0x0600CE6A RID: 52842 RVA: 0x004AF173 File Offset: 0x004AD373
+		// Token: 0x17001A1A RID: 6682
+		// (get) Token: 0x0600CF7D RID: 53117 RVA: 0x004B2C67 File Offset: 0x004B0E67
+		// (set) Token: 0x0600CF7E RID: 53118 RVA: 0x004B2C6F File Offset: 0x004B0E6F
 		public ThreatLevelType Category
 		{
 			readonly get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019D3 RID: 6611
-		// (get) Token: 0x0600CE6B RID: 52843 RVA: 0x004AF17C File Offset: 0x004AD37C
-		// (set) Token: 0x0600CE6C RID: 52844 RVA: 0x004AF184 File Offset: 0x004AD384
+		// Token: 0x17001A1B RID: 6683
+		// (get) Token: 0x0600CF7F RID: 53119 RVA: 0x004B2C78 File Offset: 0x004B0E78
+		// (set) Token: 0x0600CF80 RID: 53120 RVA: 0x004B2C80 File Offset: 0x004B0E80
 		public float Numeric
 		{
 			get
@@ -47,21 +47,21 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x04009C3D RID: 39997
+		// Token: 0x04009D26 RID: 40230
 		public const float SPOOKED_THRESHOLD = 0.3f;
 
-		// Token: 0x04009C3E RID: 39998
+		// Token: 0x04009D27 RID: 40231
 		public const float PANICKED_THRESHOLD = 0.7f;
 
-		// Token: 0x04009C3F RID: 39999
+		// Token: 0x04009D28 RID: 40232
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float SPOOKED_DECAY_TIME = 30f;
 
-		// Token: 0x04009C40 RID: 40000
+		// Token: 0x04009D29 RID: 40233
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float suspenseTimer;
 
-		// Token: 0x04009C42 RID: 40002
+		// Token: 0x04009D2B RID: 40235
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float numeric;
 	}

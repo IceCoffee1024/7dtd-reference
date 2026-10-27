@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockVendingMachine : Block
 {
-	// Token: 0x06000A37 RID: 2615 RVA: 0x00043FA0 File Offset: 0x000421A0
+	// Token: 0x06000A37 RID: 2615 RVA: 0x00043F60 File Offset: 0x00042160
 	public BlockVendingMachine()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000A38 RID: 2616 RVA: 0x0004402C File Offset: 0x0004222C
+	// Token: 0x06000A38 RID: 2616 RVA: 0x00043FEC File Offset: 0x000421EC
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class BlockVendingMachine : Block
 		int.TryParse(base.Properties.Values[BlockVendingMachine.PropTraderID], out this.traderID);
 	}
 
-	// Token: 0x06000A39 RID: 2617 RVA: 0x00044094 File Offset: 0x00042294
+	// Token: 0x06000A39 RID: 2617 RVA: 0x00044054 File Offset: 0x00042254
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -39,7 +39,7 @@ public class BlockVendingMachine : Block
 		}
 	}
 
-	// Token: 0x06000A3A RID: 2618 RVA: 0x00044134 File Offset: 0x00042334
+	// Token: 0x06000A3A RID: 2618 RVA: 0x000440F4 File Offset: 0x000422F4
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityVendingMachine tileEntityVendingMachine = _world.GetTileEntity(_blockPos) as TileEntityVendingMachine;
@@ -78,13 +78,13 @@ public class BlockVendingMachine : Block
 		return string.Format(Localization.Get("vendingMachineActivate", false, null), text, text2);
 	}
 
-	// Token: 0x06000A3B RID: 2619 RVA: 0x000442ED File Offset: 0x000424ED
+	// Token: 0x06000A3B RID: 2619 RVA: 0x000442AD File Offset: 0x000424AD
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return _world.GetTileEntity(_blockPos) is TileEntityVendingMachine;
 	}
 
-	// Token: 0x06000A3C RID: 2620 RVA: 0x00044300 File Offset: 0x00042500
+	// Token: 0x06000A3C RID: 2620 RVA: 0x000442C0 File Offset: 0x000424C0
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityVendingMachine tileEntityVendingMachine = _world.GetTileEntity(_blockPos) as TileEntityVendingMachine;
@@ -110,7 +110,7 @@ public class BlockVendingMachine : Block
 		return this.cmds;
 	}
 
-	// Token: 0x06000A3D RID: 2621 RVA: 0x00044408 File Offset: 0x00042608
+	// Token: 0x06000A3D RID: 2621 RVA: 0x000443C8 File Offset: 0x000425C8
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -137,7 +137,7 @@ public class BlockVendingMachine : Block
 		}
 	}
 
-	// Token: 0x06000A3E RID: 2622 RVA: 0x00044494 File Offset: 0x00042694
+	// Token: 0x06000A3E RID: 2622 RVA: 0x00044454 File Offset: 0x00042654
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
@@ -157,14 +157,14 @@ public class BlockVendingMachine : Block
 		_chunk.RemoveTileEntityAt<TileEntityVendingMachine>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x06000A3F RID: 2623 RVA: 0x00044505 File Offset: 0x00042705
+	// Token: 0x06000A3F RID: 2623 RVA: 0x000444C5 File Offset: 0x000426C5
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		TileEntityVendingMachine tileEntityVendingMachine = _world.GetTileEntity(_bvRef) as TileEntityVendingMachine;
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x06000A40 RID: 2624 RVA: 0x00044518 File Offset: 0x00042718
+	// Token: 0x06000A40 RID: 2624 RVA: 0x000444D8 File Offset: 0x000426D8
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -210,7 +210,7 @@ public class BlockVendingMachine : Block
 		return false;
 	}
 
-	// Token: 0x06000A41 RID: 2625 RVA: 0x00044640 File Offset: 0x00042840
+	// Token: 0x06000A41 RID: 2625 RVA: 0x00044600 File Offset: 0x00042800
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_world.GetBlock(_blockPos.x, _blockPos.y - 1, _blockPos.z).Block.HasTag(BlockTags.Door))
@@ -228,7 +228,7 @@ public class BlockVendingMachine : Block
 		return true;
 	}
 
-	// Token: 0x06000A42 RID: 2626 RVA: 0x000446C8 File Offset: 0x000428C8
+	// Token: 0x06000A42 RID: 2626 RVA: 0x00044688 File Offset: 0x00042888
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (_damagePoints > 0 && base.Properties.Values.ContainsKey("Buff"))

@@ -5,10 +5,10 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL.Save
 {
-	// Token: 0x02001C7C RID: 7292
+	// Token: 0x02001CAD RID: 7341
 	public sealed class SizeTracker : IDisposable
 	{
-		// Token: 0x0600D826 RID: 55334 RVA: 0x004D9566 File Offset: 0x004D7766
+		// Token: 0x0600D93A RID: 55610 RVA: 0x004DD0B6 File Offset: 0x004DB2B6
 		[Conditional("DEBUG_SAVE_DATA_MANAGER")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogTrace(string text)
@@ -16,7 +16,7 @@ namespace Platform.XBL.Save
 			Log.Out("[XBL: SizeTracker] " + text);
 		}
 
-		// Token: 0x0600D827 RID: 55335 RVA: 0x004D9578 File Offset: 0x004D7778
+		// Token: 0x0600D93B RID: 55611 RVA: 0x004DD0C8 File Offset: 0x004DB2C8
 		public SizeTracker(long max, long used, SizeTrackerGetRemainingQuotaAsync getRemainingQuotaAsync, bool shouldUpdateSizesOnEstimate)
 		{
 			this.m_maxBytes = max;
@@ -25,7 +25,7 @@ namespace Platform.XBL.Save
 			this.m_sizes = new SaveDataSizes(max, max - used);
 		}
 
-		// Token: 0x0600D828 RID: 55336 RVA: 0x004D95B0 File Offset: 0x004D77B0
+		// Token: 0x0600D93C RID: 55612 RVA: 0x004DD100 File Offset: 0x004DB300
 		public void Dispose()
 		{
 			object @lock = this.m_lock;
@@ -35,8 +35,8 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x17001B3B RID: 6971
-		// (get) Token: 0x0600D829 RID: 55337 RVA: 0x004D95F4 File Offset: 0x004D77F4
+		// Token: 0x17001B83 RID: 7043
+		// (get) Token: 0x0600D93D RID: 55613 RVA: 0x004DD144 File Offset: 0x004DB344
 		public SaveDataSizes Sizes
 		{
 			get
@@ -51,7 +51,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D82A RID: 55338 RVA: 0x004D9638 File Offset: 0x004D7838
+		// Token: 0x0600D93E RID: 55614 RVA: 0x004DD188 File Offset: 0x004DB388
 		public void UpdateUsedEstimate(long deltaUsed)
 		{
 			object @lock = this.m_lock;
@@ -69,7 +69,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D82B RID: 55339 RVA: 0x004D96B4 File Offset: 0x004D78B4
+		// Token: 0x0600D93F RID: 55615 RVA: 0x004DD204 File Offset: 0x004DB404
 		public void RefreshSync()
 		{
 			if (this.m_disposed)
@@ -84,7 +84,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D82C RID: 55340 RVA: 0x004D9704 File Offset: 0x004D7904
+		// Token: 0x0600D940 RID: 55616 RVA: 0x004DD254 File Offset: 0x004DB454
 		public void RefreshAsync()
 		{
 			object @lock = this.m_lock;
@@ -106,7 +106,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D82D RID: 55341 RVA: 0x004D9790 File Offset: 0x004D7990
+		// Token: 0x0600D941 RID: 55617 RVA: 0x004DD2E0 File Offset: 0x004DB4E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void XGameSaveGetRemainingQuotaAsyncCompleted(int hrXGameSaveGetRemainingQuota, long remaining)
 		{
@@ -140,39 +140,39 @@ namespace Platform.XBL.Save
 			Interlocked.Increment(ref this.m_refreshCount);
 		}
 
-		// Token: 0x0400A44A RID: 42058
+		// Token: 0x0400A533 RID: 42291
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int DefaultMaxSaveDataBytes = 1073741824;
 
-		// Token: 0x0400A44B RID: 42059
+		// Token: 0x0400A534 RID: 42292
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly long m_maxBytes;
 
-		// Token: 0x0400A44C RID: 42060
+		// Token: 0x0400A535 RID: 42293
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SizeTrackerGetRemainingQuotaAsync m_getRemainingQuotaAsync;
 
-		// Token: 0x0400A44D RID: 42061
+		// Token: 0x0400A536 RID: 42294
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_shouldUpdateSizesOnEstimate;
 
-		// Token: 0x0400A44E RID: 42062
+		// Token: 0x0400A537 RID: 42295
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_disposed;
 
-		// Token: 0x0400A44F RID: 42063
+		// Token: 0x0400A538 RID: 42296
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_lock = new object();
 
-		// Token: 0x0400A450 RID: 42064
+		// Token: 0x0400A539 RID: 42297
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long m_refreshCount;
 
-		// Token: 0x0400A451 RID: 42065
+		// Token: 0x0400A53A RID: 42298
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long m_refreshCountExpected;
 
-		// Token: 0x0400A452 RID: 42066
+		// Token: 0x0400A53B RID: 42299
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveDataSizes m_sizes;
 	}

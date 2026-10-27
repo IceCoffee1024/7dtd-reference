@@ -8,13 +8,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockElectricWire : BlockPowered
 {
-	// Token: 0x06000789 RID: 1929 RVA: 0x0003580F File Offset: 0x00033A0F
+	// Token: 0x06000789 RID: 1929 RVA: 0x000357CF File Offset: 0x000339CF
 	public BlockElectricWire()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600078A RID: 1930 RVA: 0x00035820 File Offset: 0x00033A20
+	// Token: 0x0600078A RID: 1930 RVA: 0x000357E0 File Offset: 0x000339E0
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class BlockElectricWire : BlockPowered
 		this.brokenPercentage = 0.25f;
 	}
 
-	// Token: 0x0600078B RID: 1931 RVA: 0x00035882 File Offset: 0x00033A82
+	// Token: 0x0600078B RID: 1931 RVA: 0x00035842 File Offset: 0x00033A42
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredMeleeTrap(chunk)
@@ -35,7 +35,7 @@ public class BlockElectricWire : BlockPowered
 		};
 	}
 
-	// Token: 0x0600078C RID: 1932 RVA: 0x00035894 File Offset: 0x00033A94
+	// Token: 0x0600078C RID: 1932 RVA: 0x00035854 File Offset: 0x00033A54
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -58,7 +58,7 @@ public class BlockElectricWire : BlockPowered
 		}
 	}
 
-	// Token: 0x0600078D RID: 1933 RVA: 0x00035910 File Offset: 0x00033B10
+	// Token: 0x0600078D RID: 1933 RVA: 0x000358D0 File Offset: 0x00033AD0
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if ((_blockValue.meta & 2) > 0 && 1f - (float)_blockValue.damage / (float)_blockValue.Block.MaxDamage > this.brokenPercentage)

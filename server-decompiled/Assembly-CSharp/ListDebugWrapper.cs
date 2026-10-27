@@ -2,29 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x020013F7 RID: 5111
+// Token: 0x02001409 RID: 5129
 public sealed class ListDebugWrapper<T> : CollectionDebugWrapper<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
 {
-	// Token: 0x0600A037 RID: 41015 RVA: 0x003C6017 File Offset: 0x003C4217
+	// Token: 0x0600A08F RID: 41103 RVA: 0x003C841B File Offset: 0x003C661B
 	public ListDebugWrapper()
 		: this(new List<T>())
 	{
 	}
 
-	// Token: 0x0600A038 RID: 41016 RVA: 0x003C6024 File Offset: 0x003C4224
+	// Token: 0x0600A090 RID: 41104 RVA: 0x003C8428 File Offset: 0x003C6628
 	public ListDebugWrapper(IList<T> list)
 		: this(null, list)
 	{
 	}
 
-	// Token: 0x0600A039 RID: 41017 RVA: 0x003C602E File Offset: 0x003C422E
+	// Token: 0x0600A091 RID: 41105 RVA: 0x003C8432 File Offset: 0x003C6632
 	public ListDebugWrapper(DebugWrapper parent, IList<T> list)
 		: base(parent, list)
 	{
 		this.m_list = list;
 	}
 
-	// Token: 0x0600A03A RID: 41018 RVA: 0x003C6040 File Offset: 0x003C4240
+	// Token: 0x0600A092 RID: 41106 RVA: 0x003C8444 File Offset: 0x003C6644
 	public int IndexOf(T item)
 	{
 		int num;
@@ -35,7 +35,7 @@ public sealed class ListDebugWrapper<T> : CollectionDebugWrapper<T>, IList<T>, I
 		return num;
 	}
 
-	// Token: 0x0600A03B RID: 41019 RVA: 0x003C6080 File Offset: 0x003C4280
+	// Token: 0x0600A093 RID: 41107 RVA: 0x003C8484 File Offset: 0x003C6684
 	public void Insert(int index, T item)
 	{
 		using (base.DebugReadWriteScope())
@@ -44,7 +44,7 @@ public sealed class ListDebugWrapper<T> : CollectionDebugWrapper<T>, IList<T>, I
 		}
 	}
 
-	// Token: 0x0600A03C RID: 41020 RVA: 0x003C60C0 File Offset: 0x003C42C0
+	// Token: 0x0600A094 RID: 41108 RVA: 0x003C84C4 File Offset: 0x003C66C4
 	public void RemoveAt(int index)
 	{
 		using (base.DebugReadWriteScope())
@@ -53,7 +53,7 @@ public sealed class ListDebugWrapper<T> : CollectionDebugWrapper<T>, IList<T>, I
 		}
 	}
 
-	// Token: 0x1700131D RID: 4893
+	// Token: 0x17001329 RID: 4905
 	public T this[int index]
 	{
 		get
@@ -74,7 +74,7 @@ public sealed class ListDebugWrapper<T> : CollectionDebugWrapper<T>, IList<T>, I
 		}
 	}
 
-	// Token: 0x04007953 RID: 31059
+	// Token: 0x04007994 RID: 31124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IList<T> m_list;
 }

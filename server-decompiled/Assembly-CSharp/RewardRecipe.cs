@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009FE RID: 2558
+// Token: 0x02000A08 RID: 2568
 [Preserve]
 public class RewardRecipe : BaseReward
 {
-	// Token: 0x06004BE2 RID: 19426 RVA: 0x001D9086 File Offset: 0x001D7286
+	// Token: 0x06004C06 RID: 19462 RVA: 0x001DA16E File Offset: 0x001D836E
 	public override void SetupReward()
 	{
 		base.Description = Localization.Get("RewardRecipe_keyword", false, null);
@@ -13,7 +13,7 @@ public class RewardRecipe : BaseReward
 		base.Icon = "ui_game_symbol_hammer";
 	}
 
-	// Token: 0x06004BE3 RID: 19427 RVA: 0x001D90B4 File Offset: 0x001D72B4
+	// Token: 0x06004C07 RID: 19463 RVA: 0x001DA19C File Offset: 0x001D839C
 	public override void GiveReward(EntityPlayer player)
 	{
 		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(player as EntityPlayerLocal);
@@ -23,7 +23,7 @@ public class RewardRecipe : BaseReward
 		}
 	}
 
-	// Token: 0x06004BE4 RID: 19428 RVA: 0x001D90F4 File Offset: 0x001D72F4
+	// Token: 0x06004C08 RID: 19464 RVA: 0x001DA1DC File Offset: 0x001D83DC
 	public override BaseReward Clone()
 	{
 		RewardRecipe rewardRecipe = new RewardRecipe();
@@ -31,7 +31,7 @@ public class RewardRecipe : BaseReward
 		return rewardRecipe;
 	}
 
-	// Token: 0x06004BE5 RID: 19429 RVA: 0x001D910F File Offset: 0x001D730F
+	// Token: 0x06004C09 RID: 19465 RVA: 0x001DA1F7 File Offset: 0x001D83F7
 	public override void SetupGlobalRewardSettings()
 	{
 		CraftingManager.LockRecipe(base.ID, CraftingManager.RecipeLockTypes.Quest);

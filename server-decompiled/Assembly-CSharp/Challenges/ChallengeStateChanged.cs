@@ -2,7 +2,7 @@
 
 namespace Challenges
 {
-	// Token: 0x02001916 RID: 6422
-	// (Invoke) Token: 0x0600C5FC RID: 50684
+	// Token: 0x02001947 RID: 6471
+	// (Invoke) Token: 0x0600C710 RID: 50960
 	public delegate void ChallengeStateChanged(Challenge challenge);
 }

@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x0200113F RID: 4415
+// Token: 0x0200114F RID: 4431
 public class XUiM_ItemStack : XUiModel
 {
-	// Token: 0x06008B30 RID: 35632 RVA: 0x003512F4 File Offset: 0x0034F4F4
+	// Token: 0x06008B84 RID: 35716 RVA: 0x003533A4 File Offset: 0x003515A4
 	public static bool HasItemStats(ItemStack itemStack)
 	{
 		if (itemStack.itemValue.ItemClass == null)
@@ -21,7 +21,7 @@ public class XUiM_ItemStack : XUiModel
 		return itemStack.itemValue.ItemClass.DisplayType != "";
 	}
 
-	// Token: 0x06008B31 RID: 35633 RVA: 0x00351360 File Offset: 0x0034F560
+	// Token: 0x06008B85 RID: 35717 RVA: 0x00353410 File Offset: 0x00351610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string BuffActionStrings(ItemAction itemAction, List<string> stringList)
 	{
@@ -41,7 +41,7 @@ public class XUiM_ItemStack : XUiModel
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06008B32 RID: 35634 RVA: 0x00128A73 File Offset: 0x00126C73
+	// Token: 0x06008B86 RID: 35718 RVA: 0x00129667 File Offset: 0x00127867
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getColoredItemStat(string _title, float _value)
 	{
@@ -56,7 +56,7 @@ public class XUiM_ItemStack : XUiModel
 		return "";
 	}
 
-	// Token: 0x06008B33 RID: 35635 RVA: 0x003513F4 File Offset: 0x0034F5F4
+	// Token: 0x06008B87 RID: 35719 RVA: 0x003534A4 File Offset: 0x003516A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getColoredItemStatPercentage(string _title, float _value)
 	{
@@ -71,14 +71,14 @@ public class XUiM_ItemStack : XUiModel
 		return "";
 	}
 
-	// Token: 0x06008B34 RID: 35636 RVA: 0x001289D2 File Offset: 0x00126BD2
+	// Token: 0x06008B88 RID: 35720 RVA: 0x001295C6 File Offset: 0x001277C6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string StringFormatHandler(string title, object value)
 	{
 		return string.Format("{0}: [REPLACE_COLOR]{1}[-]\n", title, value);
 	}
 
-	// Token: 0x06008B35 RID: 35637 RVA: 0x00351444 File Offset: 0x0034F644
+	// Token: 0x06008B89 RID: 35721 RVA: 0x003534F4 File Offset: 0x003516F4
 	public static string GetStatItemValueTextWithModInfo(ItemStack itemStack, EntityPlayer player, DisplayInfoEntry infoEntry)
 	{
 		FastTags<TagGroup.Global> fastTags = (infoEntry.TagsSet ? infoEntry.Tags : (XUiM_ItemStack.primaryFastTags | XUiM_ItemStack.physicalDamageFastTags));
@@ -224,7 +224,7 @@ public class XUiM_ItemStack : XUiModel
 		}
 	}
 
-	// Token: 0x06008B36 RID: 35638 RVA: 0x0035191C File Offset: 0x0034FB1C
+	// Token: 0x06008B8A RID: 35722 RVA: 0x003539CC File Offset: 0x00351BCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void degradationMaxMod(PassiveEffects _statType, ItemValue _itemValue, EntityPlayer _player, FastTags<TagGroup.Global> _tags, bool _useMods, ref float _value)
 	{
@@ -236,7 +236,7 @@ public class XUiM_ItemStack : XUiModel
 		_value = (float)ItemValue.ModMaxUseTimes((int)_value, _itemValue);
 	}
 
-	// Token: 0x06008B37 RID: 35639 RVA: 0x00351958 File Offset: 0x0034FB58
+	// Token: 0x06008B8B RID: 35723 RVA: 0x00353A08 File Offset: 0x00351C08
 	public static string GetStatItemValueTextWithModColoring(ItemValue itemValue, EntityPlayerLocal player, DisplayInfoEntry infoEntry)
 	{
 		FastTags<TagGroup.Global> fastTags = (infoEntry.TagsSet ? infoEntry.Tags : (XUiM_ItemStack.primaryFastTags | XUiM_ItemStack.physicalDamageFastTags));
@@ -390,7 +390,7 @@ public class XUiM_ItemStack : XUiModel
 		}
 	}
 
-	// Token: 0x06008B38 RID: 35640 RVA: 0x00351E8C File Offset: 0x0035008C
+	// Token: 0x06008B8C RID: 35724 RVA: 0x00353F3C File Offset: 0x0035213C
 	public static string GetStatItemValueTextWithCompareInfo(ItemValue itemValue, ItemValue compareValue, EntityPlayerLocal player, DisplayInfoEntry infoEntry, bool flipCompare = false, bool useMods = true)
 	{
 		FastTags<TagGroup.Global> fastTags = (infoEntry.TagsSet ? infoEntry.Tags : (XUiM_ItemStack.primaryFastTags | XUiM_ItemStack.physicalDamageFastTags));
@@ -596,7 +596,7 @@ public class XUiM_ItemStack : XUiModel
 		}
 	}
 
-	// Token: 0x06008B39 RID: 35641 RVA: 0x003524D0 File Offset: 0x003506D0
+	// Token: 0x06008B8D RID: 35725 RVA: 0x00354580 File Offset: 0x00352780
 	public static string ShowLocalizedBool(bool value)
 	{
 		if (XUiM_ItemStack.localizedTrue == "")
@@ -611,7 +611,7 @@ public class XUiM_ItemStack : XUiModel
 		return XUiM_ItemStack.localizedTrue;
 	}
 
-	// Token: 0x06008B3A RID: 35642 RVA: 0x00352520 File Offset: 0x00350720
+	// Token: 0x06008B8E RID: 35726 RVA: 0x003545D0 File Offset: 0x003527D0
 	public static bool CanCompare(ItemClass item1, ItemClass item2)
 	{
 		if (item1 == null || item2 == null)
@@ -633,7 +633,7 @@ public class XUiM_ItemStack : XUiModel
 		return displayStatsForTag != null && displayStatsForTag2 != null && displayStatsForTag.DisplayGroup == displayStatsForTag2.DisplayGroup;
 	}
 
-	// Token: 0x06008B3B RID: 35643 RVA: 0x003525A8 File Offset: 0x003507A8
+	// Token: 0x06008B8F RID: 35727 RVA: 0x00354658 File Offset: 0x00352858
 	public static float GetCustomValue(DisplayInfoEntry entry, ItemValue itemValue, bool useMods)
 	{
 		Block block = ((itemValue != null) ? itemValue.ToBlockValue(false).Block : null);
@@ -853,7 +853,7 @@ public class XUiM_ItemStack : XUiModel
 		return 0f;
 	}
 
-	// Token: 0x06008B3C RID: 35644 RVA: 0x00352A18 File Offset: 0x00350C18
+	// Token: 0x06008B90 RID: 35728 RVA: 0x00354AC8 File Offset: 0x00352CC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetCustomDisplayValueForItem(ItemValue itemValue, DisplayInfoEntry entry)
 	{
@@ -887,7 +887,7 @@ public class XUiM_ItemStack : XUiModel
 		return CS$<>8__locals1.newValue;
 	}
 
-	// Token: 0x06008B3D RID: 35645 RVA: 0x00352B8C File Offset: 0x00350D8C
+	// Token: 0x06008B91 RID: 35729 RVA: 0x00354C3C File Offset: 0x00352E3C
 	public static bool CheckKnown(EntityPlayerLocal player, ItemClass itemClass, ItemValue itemValue = null)
 	{
 		string unlocks = itemClass.Unlocks;
@@ -928,7 +928,7 @@ public class XUiM_ItemStack : XUiModel
 		return flag;
 	}
 
-	// Token: 0x06008B40 RID: 35648 RVA: 0x00352C58 File Offset: 0x00350E58
+	// Token: 0x06008B94 RID: 35732 RVA: 0x00354D08 File Offset: 0x00352F08
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <GetCustomDisplayValueForItem>g__AddValueForDisplayIfValid|16_0(MinEventActionBase actionBase, ref XUiM_ItemStack.<>c__DisplayClass16_0 A_1)
@@ -948,19 +948,19 @@ public class XUiM_ItemStack : XUiModel
 		}
 	}
 
-	// Token: 0x04006747 RID: 26439
+	// Token: 0x04006787 RID: 26503
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> primaryFastTags = FastTags<TagGroup.Global>.Parse("primary");
 
-	// Token: 0x04006748 RID: 26440
+	// Token: 0x04006788 RID: 26504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> physicalDamageFastTags = FastTags<TagGroup.Global>.Parse("piercing,bashing,slashing,crushing,none,corrosive");
 
-	// Token: 0x04006749 RID: 26441
+	// Token: 0x04006789 RID: 26505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string localizedTrue = "";
 
-	// Token: 0x0400674A RID: 26442
+	// Token: 0x0400678A RID: 26506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string localizedFalse = "";
 }

@@ -2,7 +2,7 @@
 
 namespace XMLData
 {
-	// Token: 0x02001651 RID: 5713
+	// Token: 0x02001663 RID: 5731
 	public interface IXMLData
 	{
 	}

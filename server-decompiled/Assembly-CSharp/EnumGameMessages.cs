@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x020011B8 RID: 4536
+// Token: 0x020011C8 RID: 4552
 public enum EnumGameMessages
 {
-	// Token: 0x04006B1D RID: 27421
+	// Token: 0x04006B35 RID: 27445
 	PlainTextLocal,
-	// Token: 0x04006B1E RID: 27422
+	// Token: 0x04006B36 RID: 27446
 	EntityWasKilled,
-	// Token: 0x04006B1F RID: 27423
+	// Token: 0x04006B37 RID: 27447
 	JoinedGame,
-	// Token: 0x04006B20 RID: 27424
+	// Token: 0x04006B38 RID: 27448
 	LeftGame,
-	// Token: 0x04006B21 RID: 27425
+	// Token: 0x04006B39 RID: 27449
 	ChangedTeam,
-	// Token: 0x04006B22 RID: 27426
+	// Token: 0x04006B3A RID: 27450
 	Chat,
-	// Token: 0x04006B23 RID: 27427
+	// Token: 0x04006B3B RID: 27451
 	BlockedPlayerAlert
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x0200090B RID: 2315
+// Token: 0x02000915 RID: 2325
 public class PlayerInputRecordingSystem
 {
-	// Token: 0x1700072B RID: 1835
-	// (get) Token: 0x0600426C RID: 17004 RVA: 0x001A1A75 File Offset: 0x0019FC75
+	// Token: 0x17000731 RID: 1841
+	// (get) Token: 0x0600428F RID: 17039 RVA: 0x001A2B1D File Offset: 0x001A0D1D
 	public static PlayerInputRecordingSystem Instance
 	{
 		get
@@ -20,12 +20,12 @@ public class PlayerInputRecordingSystem
 		}
 	}
 
-	// Token: 0x0600426D RID: 17005 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004290 RID: 17040 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Record(MovementInput _movement, int _frameNr)
 	{
 	}
 
-	// Token: 0x0600426E RID: 17006 RVA: 0x001A1A90 File Offset: 0x0019FC90
+	// Token: 0x06004291 RID: 17041 RVA: 0x001A2B38 File Offset: 0x001A0D38
 	public void Record(EntityPlayer _player, ulong _ticks)
 	{
 		if (this.startTickTime == 0UL)
@@ -40,7 +40,7 @@ public class PlayerInputRecordingSystem
 		});
 	}
 
-	// Token: 0x0600426F RID: 17007 RVA: 0x001A1AF3 File Offset: 0x0019FCF3
+	// Token: 0x06004292 RID: 17042 RVA: 0x001A2B9B File Offset: 0x001A0D9B
 	public void Reset(bool _bClearRecordings = false)
 	{
 		this.index = 0;
@@ -53,7 +53,7 @@ public class PlayerInputRecordingSystem
 		this.autoSaveFilename = null;
 	}
 
-	// Token: 0x06004270 RID: 17008 RVA: 0x001A1B24 File Offset: 0x0019FD24
+	// Token: 0x06004293 RID: 17043 RVA: 0x001A2BCC File Offset: 0x001A0DCC
 	public bool Play(EntityPlayer _player, bool _bPlayRelativeToNow = false)
 	{
 		if (this.relativeStartTickTime == 0UL)
@@ -89,7 +89,7 @@ public class PlayerInputRecordingSystem
 		return this.index < this.recording.Count;
 	}
 
-	// Token: 0x06004271 RID: 17009 RVA: 0x001A1C86 File Offset: 0x0019FE86
+	// Token: 0x06004294 RID: 17044 RVA: 0x001A2D2E File Offset: 0x001A0F2E
 	public void SetStartPosition(EntityPlayer _player)
 	{
 		if (this.recording.Count > 0)
@@ -99,7 +99,7 @@ public class PlayerInputRecordingSystem
 		}
 	}
 
-	// Token: 0x06004272 RID: 17010 RVA: 0x001A1CC8 File Offset: 0x0019FEC8
+	// Token: 0x06004295 RID: 17045 RVA: 0x001A2D70 File Offset: 0x001A0F70
 	public void Load(string _filename)
 	{
 		using (BinaryReader binaryReader = new BinaryReader(SdFile.OpenRead(GameIO.GetSaveGameDir() + "/" + _filename + ".rec")))
@@ -117,13 +117,13 @@ public class PlayerInputRecordingSystem
 		}
 	}
 
-	// Token: 0x06004273 RID: 17011 RVA: 0x001A1D60 File Offset: 0x0019FF60
+	// Token: 0x06004296 RID: 17046 RVA: 0x001A2E08 File Offset: 0x001A1008
 	public void SetAutoSaveTo(string _filename)
 	{
 		this.autoSaveFilename = _filename;
 	}
 
-	// Token: 0x06004274 RID: 17012 RVA: 0x001A1D69 File Offset: 0x0019FF69
+	// Token: 0x06004297 RID: 17047 RVA: 0x001A2E11 File Offset: 0x001A1011
 	public bool AutoSave()
 	{
 		if (this.autoSaveFilename != null)
@@ -135,13 +135,13 @@ public class PlayerInputRecordingSystem
 		return false;
 	}
 
-	// Token: 0x06004275 RID: 17013 RVA: 0x001A1D89 File Offset: 0x0019FF89
+	// Token: 0x06004298 RID: 17048 RVA: 0x001A2E31 File Offset: 0x001A1031
 	public void Save(string _filename)
 	{
 		this.doSave(GameIO.GetSaveGameDir() + "/" + _filename);
 	}
 
-	// Token: 0x06004276 RID: 17014 RVA: 0x001A1DA4 File Offset: 0x0019FFA4
+	// Token: 0x06004299 RID: 17049 RVA: 0x001A2E4C File Offset: 0x001A104C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doSave(string _filename)
 	{
@@ -157,47 +157,47 @@ public class PlayerInputRecordingSystem
 		}
 	}
 
-	// Token: 0x04003606 RID: 13830
+	// Token: 0x04003626 RID: 13862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CurrentSaveVersion = 1;
 
-	// Token: 0x04003607 RID: 13831
+	// Token: 0x04003627 RID: 13863
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PlayerInputRecordingSystem mInstance;
 
-	// Token: 0x04003608 RID: 13832
+	// Token: 0x04003628 RID: 13864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PlayerInputRecordingSystem.SPosRot> recording = new List<PlayerInputRecordingSystem.SPosRot>();
 
-	// Token: 0x04003609 RID: 13833
+	// Token: 0x04003629 RID: 13865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int index;
 
-	// Token: 0x0400360A RID: 13834
+	// Token: 0x0400362A RID: 13866
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong startTickTime;
 
-	// Token: 0x0400360B RID: 13835
+	// Token: 0x0400362B RID: 13867
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong relativeStartTickTime;
 
-	// Token: 0x0400360C RID: 13836
+	// Token: 0x0400362C RID: 13868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int startFrameCount;
 
-	// Token: 0x0400360D RID: 13837
+	// Token: 0x0400362D RID: 13869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float startTime;
 
-	// Token: 0x0400360E RID: 13838
+	// Token: 0x0400362E RID: 13870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string autoSaveFilename;
 
-	// Token: 0x0200090C RID: 2316
+	// Token: 0x02000916 RID: 2326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct SPosRot
 	{
-		// Token: 0x06004278 RID: 17016 RVA: 0x001A1E4B File Offset: 0x001A004B
+		// Token: 0x0600429B RID: 17051 RVA: 0x001A2EF3 File Offset: 0x001A10F3
 		public void Write(BinaryWriter _bw)
 		{
 			_bw.Write(this.ticks);
@@ -205,7 +205,7 @@ public class PlayerInputRecordingSystem
 			StreamUtils.Write(_bw, this.rot);
 		}
 
-		// Token: 0x06004279 RID: 17017 RVA: 0x001A1E71 File Offset: 0x001A0071
+		// Token: 0x0600429C RID: 17052 RVA: 0x001A2F19 File Offset: 0x001A1119
 		public void Read(BinaryReader _br)
 		{
 			this.ticks = _br.ReadInt32();
@@ -213,13 +213,13 @@ public class PlayerInputRecordingSystem
 			this.rot = StreamUtils.ReadVector3(_br);
 		}
 
-		// Token: 0x0400360F RID: 13839
+		// Token: 0x0400362F RID: 13871
 		public Vector3 pos;
 
-		// Token: 0x04003610 RID: 13840
+		// Token: 0x04003630 RID: 13872
 		public Vector3 rot;
 
-		// Token: 0x04003611 RID: 13841
+		// Token: 0x04003631 RID: 13873
 		public int ticks;
 	}
 }

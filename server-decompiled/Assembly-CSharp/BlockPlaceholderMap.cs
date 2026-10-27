@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockPlaceholderMap
 {
-	// Token: 0x06000864 RID: 2148 RVA: 0x0003B73E File Offset: 0x0003993E
+	// Token: 0x06000864 RID: 2148 RVA: 0x0003B6FE File Offset: 0x000398FE
 	public static void InitStatic()
 	{
 		BlockPlaceholderMap.Instance = new BlockPlaceholderMap();
 	}
 
-	// Token: 0x06000865 RID: 2149 RVA: 0x0003B74A File Offset: 0x0003994A
+	// Token: 0x06000865 RID: 2149 RVA: 0x0003B70A File Offset: 0x0003990A
 	public static void Cleanup()
 	{
 		if (BlockPlaceholderMap.Instance != null)
@@ -22,7 +22,7 @@ public class BlockPlaceholderMap
 		}
 	}
 
-	// Token: 0x06000866 RID: 2150 RVA: 0x0003B75D File Offset: 0x0003995D
+	// Token: 0x06000866 RID: 2150 RVA: 0x0003B71D File Offset: 0x0003991D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Clear()
 	{
@@ -30,13 +30,13 @@ public class BlockPlaceholderMap
 		this.placeholders.Clear();
 	}
 
-	// Token: 0x06000867 RID: 2151 RVA: 0x0003B775 File Offset: 0x00039975
+	// Token: 0x06000867 RID: 2151 RVA: 0x0003B735 File Offset: 0x00039935
 	public void AddPlaceholder(BlockValue _placeholderBlockValue, BlockValue _targetValue, float _targetProb, string _biome, bool _randomRotation, string _sandboxOption)
 	{
 		this.addPlaceholderInternal(this.placeholders, _placeholderBlockValue, _targetValue, _targetProb, _biome, _randomRotation, _sandboxOption);
 	}
 
-	// Token: 0x06000868 RID: 2152 RVA: 0x0003B78C File Offset: 0x0003998C
+	// Token: 0x06000868 RID: 2152 RVA: 0x0003B74C File Offset: 0x0003994C
 	public void AddQuestResetPlaceholder(BlockValue _placeholderBlockValue, BlockValue _targetValue, float _targetProb, string _biome, bool _randomRotation, FastTags<TagGroup.Global> questTags)
 	{
 		if (!this.questResetPlaceholders.ContainsKey(_placeholderBlockValue))
@@ -59,7 +59,7 @@ public class BlockPlaceholderMap
 		this.questResetPlaceholders[_placeholderBlockValue].Add(questPlaceholderEntry2);
 	}
 
-	// Token: 0x06000869 RID: 2153 RVA: 0x0003B85D File Offset: 0x00039A5D
+	// Token: 0x06000869 RID: 2153 RVA: 0x0003B81D File Offset: 0x00039A1D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addPlaceholderInternal(Dictionary<BlockValue, List<BlockPlaceholderMap.PlaceholderTarget>> _map, BlockValue _placeholderBlockValue, BlockValue _targetValue, float _targetProb, string _biome, bool _randomRotation, string _sandboxOption)
 	{
@@ -70,7 +70,7 @@ public class BlockPlaceholderMap
 		_map[_placeholderBlockValue].Add(new BlockPlaceholderMap.PlaceholderTarget(_targetValue, _targetProb, _biome, _randomRotation, _sandboxOption));
 	}
 
-	// Token: 0x0600086A RID: 2154 RVA: 0x0003B890 File Offset: 0x00039A90
+	// Token: 0x0600086A RID: 2154 RVA: 0x0003B850 File Offset: 0x00039A50
 	public void AdjustData(BlockValue _blockValue)
 	{
 		List<BlockPlaceholderMap.PlaceholderTarget> list;
@@ -80,20 +80,20 @@ public class BlockPlaceholderMap
 		}
 	}
 
-	// Token: 0x0600086B RID: 2155 RVA: 0x0003B8D2 File Offset: 0x00039AD2
+	// Token: 0x0600086B RID: 2155 RVA: 0x0003B892 File Offset: 0x00039A92
 	public bool IsReplaceableBlockType(BlockValue _blockValue)
 	{
 		return !_blockValue.isair && this.placeholders.ContainsKey(_blockValue);
 	}
 
-	// Token: 0x0600086C RID: 2156 RVA: 0x0003B8EC File Offset: 0x00039AEC
+	// Token: 0x0600086C RID: 2156 RVA: 0x0003B8AC File Offset: 0x00039AAC
 	public BlockValue Replace(BlockValue _blockValue, GameRandom _random, int _blockX, int _blockZ, bool _useAlternate = false)
 	{
 		Chunk chunk = (Chunk)GameManager.Instance.World.GetChunkFromWorldPos(_blockX, _blockZ);
 		return this.Replace(_blockValue, _random, chunk, _blockX, 0, _blockZ, FastTags<TagGroup.Global>.none, _useAlternate, true);
 	}
 
-	// Token: 0x0600086D RID: 2157 RVA: 0x0003B928 File Offset: 0x00039B28
+	// Token: 0x0600086D RID: 2157 RVA: 0x0003B8E8 File Offset: 0x00039AE8
 	public unsafe BlockValue Replace(BlockValue _blockValue, GameRandom _random, Chunk _chunk, int _blockX, int _blockY, int _blockZ, FastTags<TagGroup.Global> questTags, bool useAlternate = false, bool allowRandomRotation = true)
 	{
 		List<BlockPlaceholderMap.PlaceholderTarget> placeholderList;
@@ -227,14 +227,14 @@ public class BlockPlaceholderMap
 		return blockValue;
 	}
 
-	// Token: 0x0600086E RID: 2158 RVA: 0x0003BC2C File Offset: 0x00039E2C
+	// Token: 0x0600086E RID: 2158 RVA: 0x0003BBEC File Offset: 0x00039DEC
 	public BlockValue Replace(BlockValueRef _bvRef, BlockValue _blockValue, GameRandom _random, bool _useAlternate = false)
 	{
 		Chunk chunk = (Chunk)GameManager.Instance.World.GetChunkSync(_bvRef);
 		return this.Replace(_bvRef, _blockValue, _random, chunk, FastTags<TagGroup.Global>.none, _useAlternate, true);
 	}
 
-	// Token: 0x0600086F RID: 2159 RVA: 0x0003BC64 File Offset: 0x00039E64
+	// Token: 0x0600086F RID: 2159 RVA: 0x0003BC24 File Offset: 0x00039E24
 	public BlockValue Replace(BlockValueRef _bvRef, BlockValue _blockValue, GameRandom _random, Chunk _chunk, FastTags<TagGroup.Global> questTags, bool useAlternate = false, bool allowRandomRotation = true)
 	{
 		BlockValue blockValue;
@@ -271,7 +271,7 @@ public class BlockPlaceholderMap
 	public struct PlaceholderTarget
 	{
 		// Token: 0x17000096 RID: 150
-		// (get) Token: 0x06000871 RID: 2161 RVA: 0x0003BCFC File Offset: 0x00039EFC
+		// (get) Token: 0x06000871 RID: 2161 RVA: 0x0003BCBC File Offset: 0x00039EBC
 		public float Prob
 		{
 			get
@@ -288,7 +288,7 @@ public class BlockPlaceholderMap
 			}
 		}
 
-		// Token: 0x06000872 RID: 2162 RVA: 0x0003BD50 File Offset: 0x00039F50
+		// Token: 0x06000872 RID: 2162 RVA: 0x0003BD10 File Offset: 0x00039F10
 		public PlaceholderTarget(BlockValue _blockValue, float _prob, string _biomeName, bool _isRandomRotation, string _sandboxOption)
 		{
 			this.blockValue = _blockValue;

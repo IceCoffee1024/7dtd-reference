@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FA3 RID: 4003
+// Token: 0x02000FB3 RID: 4019
 [Preserve]
 public class XUiC_MapWaypointListEntry : XUiController
 {
-	// Token: 0x17000EDC RID: 3804
-	// (get) Token: 0x06007DF8 RID: 32248 RVA: 0x002FE53B File Offset: 0x002FC73B
-	// (set) Token: 0x06007DF9 RID: 32249 RVA: 0x002FE544 File Offset: 0x002FC744
+	// Token: 0x17000EE7 RID: 3815
+	// (get) Token: 0x06007E47 RID: 32327 RVA: 0x00300057 File Offset: 0x002FE257
+	// (set) Token: 0x06007E48 RID: 32328 RVA: 0x00300060 File Offset: 0x002FE260
 	public Waypoint Waypoint
 	{
 		get
@@ -22,9 +22,9 @@ public class XUiC_MapWaypointListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EDD RID: 3805
-	// (get) Token: 0x06007DFA RID: 32250 RVA: 0x002FE57A File Offset: 0x002FC77A
-	// (set) Token: 0x06007DFB RID: 32251 RVA: 0x002FE582 File Offset: 0x002FC782
+	// Token: 0x17000EE8 RID: 3816
+	// (get) Token: 0x06007E49 RID: 32329 RVA: 0x00300096 File Offset: 0x002FE296
+	// (set) Token: 0x06007E4A RID: 32330 RVA: 0x0030009E File Offset: 0x002FE29E
 	public new bool Selected
 	{
 		get
@@ -38,7 +38,7 @@ public class XUiC_MapWaypointListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007DFC RID: 32252 RVA: 0x002FE594 File Offset: 0x002FC794
+	// Token: 0x06007E4B RID: 32331 RVA: 0x003000B0 File Offset: 0x002FE2B0
 	public override void Init()
 	{
 		base.Init();
@@ -54,7 +54,7 @@ public class XUiC_MapWaypointListEntry : XUiController
 		this.Background.IsNavigatable = (this.Background.IsSnappable = false);
 	}
 
-	// Token: 0x06007DFD RID: 32253 RVA: 0x002FE6B7 File Offset: 0x002FC8B7
+	// Token: 0x06007E4C RID: 32332 RVA: 0x003001D3 File Offset: 0x002FE3D3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Controller_OnScroll(XUiController _sender, float _delta)
 	{
@@ -80,14 +80,14 @@ public class XUiC_MapWaypointListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007DFE RID: 32254 RVA: 0x002FE6EE File Offset: 0x002FC8EE
+	// Token: 0x06007E4D RID: 32333 RVA: 0x0030020A File Offset: 0x002FE40A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Controller_OnHover(XUiController _sender, bool _isOver)
 	{
 		this.updateSelected(this.Waypoint != null && _isOver);
 	}
 
-	// Token: 0x06007DFF RID: 32255 RVA: 0x002FE704 File Offset: 0x002FC904
+	// Token: 0x06007E4E RID: 32334 RVA: 0x00300220 File Offset: 0x002FE420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -115,14 +115,14 @@ public class XUiC_MapWaypointListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007E00 RID: 32256 RVA: 0x002FE7EC File Offset: 0x002FC9EC
+	// Token: 0x06007E4F RID: 32335 RVA: 0x00300308 File Offset: 0x002FE508
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.Tracking.IsVisible = this.Waypoint != null && this.Waypoint.bTracked;
 	}
 
-	// Token: 0x06007E01 RID: 32257 RVA: 0x002FE818 File Offset: 0x002FCA18
+	// Token: 0x06007E50 RID: 32336 RVA: 0x00300334 File Offset: 0x002FE534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateSelected(bool _bHover)
 	{
@@ -148,33 +148,33 @@ public class XUiC_MapWaypointListEntry : XUiController
 		this.Tracking.IsVisible = this.Waypoint != null && this.Waypoint.bTracked;
 	}
 
-	// Token: 0x04005D70 RID: 23920
+	// Token: 0x04005DAB RID: 23979
 	public int Index;
 
-	// Token: 0x04005D71 RID: 23921
+	// Token: 0x04005DAC RID: 23980
 	public XUiV_Sprite Background;
 
-	// Token: 0x04005D72 RID: 23922
+	// Token: 0x04005DAD RID: 23981
 	public XUiV_Sprite Sprite;
 
-	// Token: 0x04005D73 RID: 23923
+	// Token: 0x04005DAE RID: 23982
 	public XUiV_Label Name;
 
-	// Token: 0x04005D74 RID: 23924
+	// Token: 0x04005DAF RID: 23983
 	public XUiV_Label Distance;
 
-	// Token: 0x04005D75 RID: 23925
+	// Token: 0x04005DB0 RID: 23984
 	public XUiV_Sprite Tracking;
 
-	// Token: 0x04005D76 RID: 23926
+	// Token: 0x04005DB1 RID: 23985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Waypoint _waypoint;
 
-	// Token: 0x04005D77 RID: 23927
+	// Token: 0x04005DB2 RID: 23986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_bSelected;
 
-	// Token: 0x04005D78 RID: 23928
+	// Token: 0x04005DB3 RID: 23987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_MapWaypointList waypointList;
 }

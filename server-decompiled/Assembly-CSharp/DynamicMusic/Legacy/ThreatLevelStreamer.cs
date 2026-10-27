@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001AC4 RID: 6852
+	// Token: 0x02001AF5 RID: 6901
 	public class ThreatLevelStreamer
 	{
-		// Token: 0x170019F0 RID: 6640
-		// (get) Token: 0x0600CED2 RID: 52946 RVA: 0x004B0044 File Offset: 0x004AE244
+		// Token: 0x17001A38 RID: 6712
+		// (get) Token: 0x0600CFE6 RID: 53222 RVA: 0x004B3B40 File Offset: 0x004B1D40
 		public bool InitFinished
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -30,8 +30,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019F1 RID: 6641
-		// (get) Token: 0x0600CED3 RID: 52947 RVA: 0x004B00A4 File Offset: 0x004AE2A4
+		// Token: 0x17001A39 RID: 6713
+		// (get) Token: 0x0600CFE7 RID: 53223 RVA: 0x004B3BA0 File Offset: 0x004B1DA0
 		public bool HasReachedLastHyperbar
 		{
 			get
@@ -50,19 +50,19 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CED4 RID: 52948 RVA: 0x004B0104 File Offset: 0x004AE304
+		// Token: 0x0600CFE8 RID: 53224 RVA: 0x004B3C00 File Offset: 0x004B1E00
 		public static ThreatLevelStreamer Create(ThreatLevelLegacyType _tl)
 		{
 			return new ThreatLevelStreamer(_tl);
 		}
 
-		// Token: 0x0600CED5 RID: 52949 RVA: 0x004B010C File Offset: 0x004AE30C
+		// Token: 0x0600CFE9 RID: 53225 RVA: 0x004B3C08 File Offset: 0x004B1E08
 		public static ThreatLevelStreamer Create(ThreatLevelLegacyType _tl, ThreatLevel _groupTL, ThreatLevelConfig _config)
 		{
 			return new ThreatLevelStreamer(_tl, _groupTL, _config);
 		}
 
-		// Token: 0x0600CED6 RID: 52950 RVA: 0x004B0118 File Offset: 0x004AE318
+		// Token: 0x0600CFEA RID: 53226 RVA: 0x004B3C14 File Offset: 0x004B1E14
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ThreatLevelStreamer(ThreatLevelLegacyType _tl)
 		{
@@ -78,7 +78,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CED7 RID: 52951 RVA: 0x004B01E8 File Offset: 0x004AE3E8
+		// Token: 0x0600CFEB RID: 53227 RVA: 0x004B3CE4 File Offset: 0x004B1EE4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ThreatLevelStreamer(ThreatLevelLegacyType _tl, ThreatLevel _groupTL, ThreatLevelConfig _config)
 		{
@@ -90,7 +90,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CED8 RID: 52952 RVA: 0x004B0288 File Offset: 0x004AE488
+		// Token: 0x0600CFEC RID: 53228 RVA: 0x004B3D84 File Offset: 0x004B1F84
 		public void Cleanup()
 		{
 			foreach (LayerStreamer layerStreamer in this.LayerStreamers.Values)
@@ -99,7 +99,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CED9 RID: 52953 RVA: 0x004B02E0 File Offset: 0x004AE4E0
+		// Token: 0x0600CFED RID: 53229 RVA: 0x004B3DDC File Offset: 0x004B1FDC
 		public void Play()
 		{
 			if (this.InitFinished)
@@ -113,7 +113,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEDA RID: 52954 RVA: 0x004B0368 File Offset: 0x004AE568
+		// Token: 0x0600CFEE RID: 53230 RVA: 0x004B3E64 File Offset: 0x004B2064
 		public void Pause()
 		{
 			this.IsPaused = true;
@@ -123,7 +123,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEDB RID: 52955 RVA: 0x004B03C4 File Offset: 0x004AE5C4
+		// Token: 0x0600CFEF RID: 53231 RVA: 0x004B3EC0 File Offset: 0x004B20C0
 		public void UnPause()
 		{
 			this.IsPaused = false;
@@ -133,7 +133,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEDC RID: 52956 RVA: 0x004B0420 File Offset: 0x004AE620
+		// Token: 0x0600CFF0 RID: 53232 RVA: 0x004B3F1C File Offset: 0x004B211C
 		public void Stop()
 		{
 			foreach (LayerStreamer layerStreamer in this.LayerStreamers.Values)
@@ -142,7 +142,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEDD RID: 52957 RVA: 0x004B0478 File Offset: 0x004AE678
+		// Token: 0x0600CFF1 RID: 53233 RVA: 0x004B3F74 File Offset: 0x004B2174
 		public void Tick()
 		{
 			if (!this.IsPlaying)
@@ -155,8 +155,8 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x170019F2 RID: 6642
-		// (get) Token: 0x0600CEDE RID: 52958 RVA: 0x004B04D8 File Offset: 0x004AE6D8
+		// Token: 0x17001A3A RID: 6714
+		// (get) Token: 0x0600CFF2 RID: 53234 RVA: 0x004B3FD4 File Offset: 0x004B21D4
 		public bool IsPlaying
 		{
 			get
@@ -175,19 +175,19 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x04009C79 RID: 40057
+		// Token: 0x04009D62 RID: 40290
 		public ThreatLevelLegacyType threatLevel;
 
-		// Token: 0x04009C7A RID: 40058
+		// Token: 0x04009D63 RID: 40291
 		public static int numCreated;
 
-		// Token: 0x04009C7B RID: 40059
+		// Token: 0x04009D64 RID: 40292
 		public readonly int id;
 
-		// Token: 0x04009C7C RID: 40060
+		// Token: 0x04009D65 RID: 40293
 		public bool IsPaused;
 
-		// Token: 0x04009C7D RID: 40061
+		// Token: 0x04009D66 RID: 40294
 		public Dictionary<LayerType, LayerStreamer> LayerStreamers;
 	}
 }

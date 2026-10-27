@@ -11,26 +11,26 @@ using Services;
 using Services.Analytics;
 using UnityEngine;
 
-// Token: 0x020011B4 RID: 4532
+// Token: 0x020011C4 RID: 4548
 public class GameEntrypoint : MonoBehaviour
 {
-	// Token: 0x17001185 RID: 4485
-	// (get) Token: 0x060090A6 RID: 37030 RVA: 0x003673DC File Offset: 0x003655DC
-	// (set) Token: 0x060090A7 RID: 37031 RVA: 0x003673E3 File Offset: 0x003655E3
+	// Token: 0x17001190 RID: 4496
+	// (get) Token: 0x060090FC RID: 37116 RVA: 0x003695F0 File Offset: 0x003677F0
+	// (set) Token: 0x060090FD RID: 37117 RVA: 0x003695F7 File Offset: 0x003677F7
 	public static bool EntrypointSuccess
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060090A8 RID: 37032 RVA: 0x003673EB File Offset: 0x003655EB
+	// Token: 0x060090FE RID: 37118 RVA: 0x003695FF File Offset: 0x003677FF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		ThreadManager.RunCoroutineSync(GameEntrypoint.EntrypointCoroutine());
 	}
 
-	// Token: 0x060090A9 RID: 37033 RVA: 0x003673F8 File Offset: 0x003655F8
+	// Token: 0x060090FF RID: 37119 RVA: 0x0036960C File Offset: 0x0036780C
 	public static bool FirstFrameInit()
 	{
 		Cursor.visible = false;
@@ -71,7 +71,7 @@ public class GameEntrypoint : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060090AA RID: 37034 RVA: 0x003674DD File Offset: 0x003656DD
+	// Token: 0x06009100 RID: 37120 RVA: 0x003696F1 File Offset: 0x003678F1
 	public static IEnumerator EntrypointCoroutine()
 	{
 		if (GameEntrypoint.s_entrypointEntered)
@@ -104,7 +104,7 @@ public class GameEntrypoint : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060090AB RID: 37035 RVA: 0x003674E5 File Offset: 0x003656E5
+	// Token: 0x06009101 RID: 37121 RVA: 0x003696F9 File Offset: 0x003678F9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator EntrypointCoroutineInternal()
 	{
@@ -143,7 +143,7 @@ public class GameEntrypoint : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060090AC RID: 37036 RVA: 0x003674F0 File Offset: 0x003656F0
+	// Token: 0x06009102 RID: 37122 RVA: 0x00369704 File Offset: 0x00367904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool HasPrefCollisions()
 	{
@@ -159,7 +159,7 @@ public class GameEntrypoint : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060090AD RID: 37037 RVA: 0x00367580 File Offset: 0x00365780
+	// Token: 0x06009103 RID: 37123 RVA: 0x00369794 File Offset: 0x00367994
 	[Conditional("NEVER_DEFINED")]
 	public static void ProfileSection(string identifier)
 	{
@@ -174,7 +174,7 @@ public class GameEntrypoint : MonoBehaviour
 		GameEntrypoint.s_profileIdentifier = identifier;
 	}
 
-	// Token: 0x060090AE RID: 37038 RVA: 0x003675AC File Offset: 0x003657AC
+	// Token: 0x06009104 RID: 37124 RVA: 0x003697C0 File Offset: 0x003679C0
 	[Conditional("PROFILE_GAME_ENTRYPOINT")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ProfileSectionEnd()
@@ -188,7 +188,7 @@ public class GameEntrypoint : MonoBehaviour
 		GameEntrypoint.s_profileIdentifier = null;
 	}
 
-	// Token: 0x060090AF RID: 37039 RVA: 0x003675FC File Offset: 0x003657FC
+	// Token: 0x06009105 RID: 37125 RVA: 0x00369810 File Offset: 0x00367A10
 	[Conditional("PROFILE_GAME_ENTRYPOINT")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ProfileEnd()
@@ -201,27 +201,27 @@ public class GameEntrypoint : MonoBehaviour
 		GameEntrypoint.s_profileTotal = null;
 	}
 
-	// Token: 0x04006B0D RID: 27405
+	// Token: 0x04006B25 RID: 27429
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool s_entrypointEntered;
 
-	// Token: 0x04006B0E RID: 27406
+	// Token: 0x04006B26 RID: 27430
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool s_entrypointFinished;
 
-	// Token: 0x04006B10 RID: 27408
+	// Token: 0x04006B28 RID: 27432
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static MicroStopwatch s_profileTotal;
 
-	// Token: 0x04006B11 RID: 27409
+	// Token: 0x04006B29 RID: 27433
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static MicroStopwatch s_profileSection;
 
-	// Token: 0x04006B12 RID: 27410
+	// Token: 0x04006B2A RID: 27434
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string s_profileIdentifier;

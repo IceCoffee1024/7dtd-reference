@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000725 RID: 1829
+// Token: 0x0200072D RID: 1837
 public class MinEvent
 {
-	// Token: 0x04002D23 RID: 11555
+	// Token: 0x04002D3F RID: 11583
 	public static MinEventTypes[] Start = new MinEventTypes[]
 	{
 		MinEventTypes.onSelfPrimaryActionStart,
@@ -11,7 +11,7 @@ public class MinEvent
 		MinEventTypes.onSelfAction2Start
 	};
 
-	// Token: 0x04002D24 RID: 11556
+	// Token: 0x04002D40 RID: 11584
 	public static MinEventTypes[] Update = new MinEventTypes[]
 	{
 		MinEventTypes.onSelfPrimaryActionUpdate,
@@ -19,7 +19,7 @@ public class MinEvent
 		MinEventTypes.onSelfAction2Update
 	};
 
-	// Token: 0x04002D25 RID: 11557
+	// Token: 0x04002D41 RID: 11585
 	public static MinEventTypes[] End = new MinEventTypes[]
 	{
 		MinEventTypes.onSelfPrimaryActionEnd,

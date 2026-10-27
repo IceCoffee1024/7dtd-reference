@@ -4,12 +4,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB7 RID: 4023
+// Token: 0x02000FC7 RID: 4039
 [Preserve]
 public class XUiC_PlayersListEntry : XUiController
 {
-	// Token: 0x17000EE8 RID: 3816
-	// (set) Token: 0x06007EA4 RID: 32420 RVA: 0x00303BBD File Offset: 0x00301DBD
+	// Token: 0x17000EF3 RID: 3827
+	// (set) Token: 0x06007EF3 RID: 32499 RVA: 0x003056D9 File Offset: 0x003038D9
 	public bool ShowOnMapEnabled
 	{
 		set
@@ -20,8 +20,8 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EE9 RID: 3817
-	// (set) Token: 0x06007EA5 RID: 32421 RVA: 0x00303BE8 File Offset: 0x00301DE8
+	// Token: 0x17000EF4 RID: 3828
+	// (set) Token: 0x06007EF4 RID: 32500 RVA: 0x00305704 File Offset: 0x00303904
 	public bool IsOffline
 	{
 		set
@@ -46,9 +46,9 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EEA RID: 3818
-	// (get) Token: 0x06007EA6 RID: 32422 RVA: 0x00303CB9 File Offset: 0x00301EB9
-	// (set) Token: 0x06007EA7 RID: 32423 RVA: 0x00303CC1 File Offset: 0x00301EC1
+	// Token: 0x17000EF5 RID: 3829
+	// (get) Token: 0x06007EF5 RID: 32501 RVA: 0x003057D5 File Offset: 0x003039D5
+	// (set) Token: 0x06007EF6 RID: 32502 RVA: 0x003057DD File Offset: 0x003039DD
 	public bool IsLocalPlayer
 	{
 		get
@@ -62,8 +62,8 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EEB RID: 3819
-	// (get) Token: 0x06007EA8 RID: 32424 RVA: 0x00303CD0 File Offset: 0x00301ED0
+	// Token: 0x17000EF6 RID: 3830
+	// (get) Token: 0x06007EF7 RID: 32503 RVA: 0x003057EC File Offset: 0x003039EC
 	public AllyStore.AllyStatus AllyStatus
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -77,9 +77,9 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EEC RID: 3820
-	// (get) Token: 0x06007EA9 RID: 32425 RVA: 0x00303CFC File Offset: 0x00301EFC
-	// (set) Token: 0x06007EAA RID: 32426 RVA: 0x00303D04 File Offset: 0x00301F04
+	// Token: 0x17000EF7 RID: 3831
+	// (get) Token: 0x06007EF8 RID: 32504 RVA: 0x00305818 File Offset: 0x00303A18
+	// (set) Token: 0x06007EF9 RID: 32505 RVA: 0x00305820 File Offset: 0x00303A20
 	public XUiC_PlayersListEntry.EnumPartyStatus PartyStatus
 	{
 		get
@@ -93,8 +93,8 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EED RID: 3821
-	// (set) Token: 0x06007EAB RID: 32427 RVA: 0x00303D13 File Offset: 0x00301F13
+	// Token: 0x17000EF8 RID: 3832
+	// (set) Token: 0x06007EFA RID: 32506 RVA: 0x0030582F File Offset: 0x00303A2F
 	public bool IsAlternating
 	{
 		set
@@ -106,8 +106,8 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EEE RID: 3822
-	// (get) Token: 0x06007EAC RID: 32428 RVA: 0x00303D29 File Offset: 0x00301F29
+	// Token: 0x17000EF9 RID: 3833
+	// (get) Token: 0x06007EFB RID: 32507 RVA: 0x00305845 File Offset: 0x00303A45
 	public static string SentKeyword
 	{
 		get
@@ -120,8 +120,8 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EEF RID: 3823
-	// (get) Token: 0x06007EAD RID: 32429 RVA: 0x00303D52 File Offset: 0x00301F52
+	// Token: 0x17000EFA RID: 3834
+	// (get) Token: 0x06007EFC RID: 32508 RVA: 0x0030586E File Offset: 0x00303A6E
 	public static string ReceivedKeyword
 	{
 		get
@@ -134,8 +134,8 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EF0 RID: 3824
-	// (get) Token: 0x06007EAE RID: 32430 RVA: 0x00303D7B File Offset: 0x00301F7B
+	// Token: 0x17000EFB RID: 3835
+	// (get) Token: 0x06007EFD RID: 32509 RVA: 0x00305897 File Offset: 0x00303A97
 	public static string NAKeyword
 	{
 		get
@@ -148,7 +148,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EAF RID: 32431 RVA: 0x00303DA4 File Offset: 0x00301FA4
+	// Token: 0x06007EFE RID: 32510 RVA: 0x003058C0 File Offset: 0x00303AC0
 	public override void Init()
 	{
 		base.Init();
@@ -184,7 +184,7 @@ public class XUiC_PlayersListEntry : XUiController
 		PlatformUserManager.BlockedStateChanged += this.playerBlockStateChanged;
 	}
 
-	// Token: 0x06007EB0 RID: 32432 RVA: 0x003040CA File Offset: 0x003022CA
+	// Token: 0x06007EFF RID: 32511 RVA: 0x00305BE6 File Offset: 0x00303DE6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Shutdown()
 	{
@@ -192,7 +192,7 @@ public class XUiC_PlayersListEntry : XUiController
 		PlatformUserManager.BlockedStateChanged -= this.playerBlockStateChanged;
 	}
 
-	// Token: 0x06007EB1 RID: 32433 RVA: 0x003040F4 File Offset: 0x003022F4
+	// Token: 0x06007F00 RID: 32512 RVA: 0x00305C10 File Offset: 0x00303E10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void oniconAllyIconPress(XUiController _sender, int _mouseButton)
 	{
@@ -215,7 +215,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EB2 RID: 32434 RVA: 0x00304199 File Offset: 0x00302399
+	// Token: 0x06007F01 RID: 32513 RVA: 0x00305CB5 File Offset: 0x00303EB5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveAlly_ItemClicked(XUiC_PopupMenuItem.Entry entry)
 	{
@@ -225,7 +225,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EB3 RID: 32435 RVA: 0x003041B4 File Offset: 0x003023B4
+	// Token: 0x06007F02 RID: 32514 RVA: 0x00305CD0 File Offset: 0x00303ED0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void oniconPartyIconPress(XUiController _sender, int _mouseButton)
 	{
@@ -293,7 +293,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EB4 RID: 32436 RVA: 0x003044B8 File Offset: 0x003026B8
+	// Token: 0x06007F03 RID: 32515 RVA: 0x00305FD4 File Offset: 0x003041D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LeaveParty_ItemClicked(XUiC_PopupMenuItem.Entry entry)
 	{
@@ -307,7 +307,7 @@ public class XUiC_PlayersListEntry : XUiController
 		Party.ServerHandleLeaveParty(entityPlayer, this.EntityId);
 	}
 
-	// Token: 0x06007EB5 RID: 32437 RVA: 0x00304528 File Offset: 0x00302728
+	// Token: 0x06007F04 RID: 32516 RVA: 0x00306044 File Offset: 0x00304244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MakeLeader_ItemClicked(XUiC_PopupMenuItem.Entry entry)
 	{
@@ -320,7 +320,7 @@ public class XUiC_PlayersListEntry : XUiController
 		Party.ServerHandleChangeLead(GameManager.Instance.World.GetEntity(this.EntityId) as EntityPlayer);
 	}
 
-	// Token: 0x06007EB6 RID: 32438 RVA: 0x00304598 File Offset: 0x00302798
+	// Token: 0x06007F05 RID: 32517 RVA: 0x003060B4 File Offset: 0x003042B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void KickParty_ItemClicked(XUiC_PopupMenuItem.Entry entry)
 	{
@@ -333,7 +333,7 @@ public class XUiC_PlayersListEntry : XUiController
 		Party.ServerHandleKickParty(this.EntityId);
 	}
 
-	// Token: 0x06007EB7 RID: 32439 RVA: 0x003045F2 File Offset: 0x003027F2
+	// Token: 0x06007F06 RID: 32518 RVA: 0x0030610E File Offset: 0x0030430E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onReportPlayerPress(XUiController _sender, int _mouseButton)
 	{
@@ -343,7 +343,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EB8 RID: 32440 RVA: 0x00304620 File Offset: 0x00302820
+	// Token: 0x06007F07 RID: 32519 RVA: 0x0030613C File Offset: 0x0030433C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateInviteStatus()
 	{
@@ -381,7 +381,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EB9 RID: 32441 RVA: 0x003046F4 File Offset: 0x003028F4
+	// Token: 0x06007F08 RID: 32520 RVA: 0x00306210 File Offset: 0x00304410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePartyStatus()
 	{
@@ -468,14 +468,14 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EBA RID: 32442 RVA: 0x00304998 File Offset: 0x00302B98
+	// Token: 0x06007F09 RID: 32521 RVA: 0x003064B4 File Offset: 0x003046B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onShowOnMapPress(XUiController _sender, int _mouseButton)
 	{
 		this.PlayersList.ShowOnMap(this.EntityId);
 	}
 
-	// Token: 0x06007EBB RID: 32443 RVA: 0x003049AC File Offset: 0x00302BAC
+	// Token: 0x06007F0A RID: 32522 RVA: 0x003064C8 File Offset: 0x003046C8
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "disabled_color")
@@ -491,21 +491,21 @@ public class XUiC_PlayersListEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06007EBC RID: 32444 RVA: 0x003049F9 File Offset: 0x00302BF9
+	// Token: 0x06007F0B RID: 32523 RVA: 0x00306515 File Offset: 0x00304715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void textChatButtonOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.blockButtonPressed(EBlockType.TextChat);
 	}
 
-	// Token: 0x06007EBD RID: 32445 RVA: 0x00304A02 File Offset: 0x00302C02
+	// Token: 0x06007F0C RID: 32524 RVA: 0x0030651E File Offset: 0x0030471E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void voiceChatButtonOnPress(XUiController _sender, int _mouseButton)
 	{
 		this.blockButtonPressed(EBlockType.VoiceChat);
 	}
 
-	// Token: 0x06007EBE RID: 32446 RVA: 0x00304A0C File Offset: 0x00302C0C
+	// Token: 0x06007F0D RID: 32525 RVA: 0x00306528 File Offset: 0x00304728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void blockButtonPressed(EBlockType _blockType)
 	{
@@ -517,7 +517,7 @@ public class XUiC_PlayersListEntry : XUiController
 		platformUserBlockedData.Locally = !platformUserBlockedData.Locally;
 	}
 
-	// Token: 0x06007EBF RID: 32447 RVA: 0x00304A4C File Offset: 0x00302C4C
+	// Token: 0x06007F0E RID: 32526 RVA: 0x00306568 File Offset: 0x00304768
 	public void playerBlockStateChanged(IPlatformUserData _pud, EBlockType _blockType, EUserBlockState _blockState)
 	{
 		if (this.PlayerData == null || !object.Equals(_pud.PrimaryId, this.PlayerData.PrimaryId))
@@ -539,7 +539,7 @@ public class XUiC_PlayersListEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007EC0 RID: 32448 RVA: 0x00304AF8 File Offset: 0x00302CF8
+	// Token: 0x06007F0F RID: 32527 RVA: 0x00306614 File Offset: 0x00304814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBlockButton(EUserBlockState _blockState, XUiV_Button _button, string _typeLocalizationKey)
 	{
@@ -581,161 +581,161 @@ public class XUiC_PlayersListEntry : XUiController
 		_button.ToolTip = string.Format(text, text3);
 	}
 
-	// Token: 0x04005E01 RID: 24065
+	// Token: 0x04005E3C RID: 24124
 	public XUiC_PlayersList PlayersList;
 
-	// Token: 0x04005E02 RID: 24066
+	// Token: 0x04005E3D RID: 24125
 	public int EntityId;
 
-	// Token: 0x04005E03 RID: 24067
+	// Token: 0x04005E3E RID: 24126
 	public PersistentPlayerData PlayerData;
 
-	// Token: 0x04005E04 RID: 24068
+	// Token: 0x04005E3F RID: 24127
 	public XUiC_PlayerName PlayerName;
 
-	// Token: 0x04005E05 RID: 24069
+	// Token: 0x04005E40 RID: 24128
 	public XUiV_Label ZombieKillsText;
 
-	// Token: 0x04005E06 RID: 24070
+	// Token: 0x04005E41 RID: 24129
 	public XUiV_Label PlayerKillsText;
 
-	// Token: 0x04005E07 RID: 24071
+	// Token: 0x04005E42 RID: 24130
 	public XUiV_Label DeathsText;
 
-	// Token: 0x04005E08 RID: 24072
+	// Token: 0x04005E43 RID: 24131
 	public XUiV_Label LevelText;
 
-	// Token: 0x04005E09 RID: 24073
+	// Token: 0x04005E44 RID: 24132
 	public XUiV_Label PingText;
 
-	// Token: 0x04005E0A RID: 24074
+	// Token: 0x04005E45 RID: 24133
 	public XUiV_Label GamestageText;
 
-	// Token: 0x04005E0B RID: 24075
+	// Token: 0x04005E46 RID: 24134
 	public XUiV_Sprite AdminSprite;
 
-	// Token: 0x04005E0C RID: 24076
+	// Token: 0x04005E47 RID: 24135
 	public XUiV_Sprite TwitchSprite;
 
-	// Token: 0x04005E0D RID: 24077
+	// Token: 0x04005E48 RID: 24136
 	public XUiV_Sprite TwitchDisabledSprite;
 
-	// Token: 0x04005E0E RID: 24078
+	// Token: 0x04005E49 RID: 24137
 	public XUiV_Label labelPartyIcon;
 
-	// Token: 0x04005E0F RID: 24079
+	// Token: 0x04005E4A RID: 24138
 	public XUiV_Label labelAllyIcon;
 
-	// Token: 0x04005E10 RID: 24080
+	// Token: 0x04005E4B RID: 24139
 	public XUiV_Label labelShowOnMap;
 
-	// Token: 0x04005E11 RID: 24081
+	// Token: 0x04005E4C RID: 24140
 	public bool IsFriend;
 
-	// Token: 0x04005E12 RID: 24082
+	// Token: 0x04005E4D RID: 24141
 	public XUiV_Button buttonShowOnMap;
 
-	// Token: 0x04005E13 RID: 24083
+	// Token: 0x04005E4E RID: 24142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOffline;
 
-	// Token: 0x04005E14 RID: 24084
+	// Token: 0x04005E4F RID: 24143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_isLocalPlayer;
 
-	// Token: 0x04005E15 RID: 24085
+	// Token: 0x04005E50 RID: 24144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PlayersListEntry.EnumPartyStatus m_partyStatus;
 
-	// Token: 0x04005E16 RID: 24086
+	// Token: 0x04005E51 RID: 24145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite rowBG;
 
-	// Token: 0x04005E17 RID: 24087
+	// Token: 0x04005E52 RID: 24146
 	public XUiV_Button Voice;
 
-	// Token: 0x04005E18 RID: 24088
+	// Token: 0x04005E53 RID: 24147
 	public XUiV_Button Chat;
 
-	// Token: 0x04005E19 RID: 24089
+	// Token: 0x04005E54 RID: 24148
 	public XUiV_Label DistanceToFriend;
 
-	// Token: 0x04005E1A RID: 24090
+	// Token: 0x04005E55 RID: 24149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button buttonPartyIcon;
 
-	// Token: 0x04005E1B RID: 24091
+	// Token: 0x04005E56 RID: 24150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button buttonAllyIcon;
 
-	// Token: 0x04005E1C RID: 24092
+	// Token: 0x04005E57 RID: 24151
 	public XUiV_Button buttonReportPlayer;
 
-	// Token: 0x04005E1D RID: 24093
+	// Token: 0x04005E58 RID: 24152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color enabledColor;
 
-	// Token: 0x04005E1E RID: 24094
+	// Token: 0x04005E59 RID: 24153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color disabledColor;
 
-	// Token: 0x04005E1F RID: 24095
+	// Token: 0x04005E5A RID: 24154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color alternatingColor;
 
-	// Token: 0x04005E20 RID: 24096
+	// Token: 0x04005E5B RID: 24155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string sentKeyword = "";
 
-	// Token: 0x04005E21 RID: 24097
+	// Token: 0x04005E5C RID: 24156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string receivedKeyword = "";
 
-	// Token: 0x04005E22 RID: 24098
+	// Token: 0x04005E5D RID: 24157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string naKeyword = "";
 
-	// Token: 0x04005E23 RID: 24099
+	// Token: 0x04005E5E RID: 24158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastTime;
 
-	// Token: 0x02000FB8 RID: 4024
+	// Token: 0x02000FC8 RID: 4040
 	public enum EnumTrackStatus
 	{
-		// Token: 0x04005E25 RID: 24101
+		// Token: 0x04005E60 RID: 24160
 		Hidden,
-		// Token: 0x04005E26 RID: 24102
+		// Token: 0x04005E61 RID: 24161
 		NotTracked,
-		// Token: 0x04005E27 RID: 24103
+		// Token: 0x04005E62 RID: 24162
 		Tracked
 	}
 
-	// Token: 0x02000FB9 RID: 4025
+	// Token: 0x02000FC9 RID: 4041
 	public enum EnumPartyStatus
 	{
-		// Token: 0x04005E29 RID: 24105
+		// Token: 0x04005E64 RID: 24164
 		LocalPlayer_InParty,
-		// Token: 0x04005E2A RID: 24106
+		// Token: 0x04005E65 RID: 24165
 		LocalPlayer_InPartyAsLead,
-		// Token: 0x04005E2B RID: 24107
+		// Token: 0x04005E66 RID: 24166
 		LocalPlayer_NoParty,
-		// Token: 0x04005E2C RID: 24108
+		// Token: 0x04005E67 RID: 24167
 		LocalPlayer_Received,
-		// Token: 0x04005E2D RID: 24109
+		// Token: 0x04005E68 RID: 24168
 		OtherPlayer_InParty,
-		// Token: 0x04005E2E RID: 24110
+		// Token: 0x04005E69 RID: 24169
 		OtherPlayer_InPartyIsLead,
-		// Token: 0x04005E2F RID: 24111
+		// Token: 0x04005E6A RID: 24170
 		OtherPlayer_InPartyAsLead,
-		// Token: 0x04005E30 RID: 24112
+		// Token: 0x04005E6B RID: 24171
 		OtherPlayer_NoParty,
-		// Token: 0x04005E31 RID: 24113
+		// Token: 0x04005E6C RID: 24172
 		OtherPlayer_NoPartyAsLead,
-		// Token: 0x04005E32 RID: 24114
+		// Token: 0x04005E6D RID: 24173
 		OtherPlayer_PartyFullAsLead,
-		// Token: 0x04005E33 RID: 24115
+		// Token: 0x04005E6E RID: 24174
 		OtherPlayer_Sent,
-		// Token: 0x04005E34 RID: 24116
+		// Token: 0x04005E6F RID: 24175
 		Offline
 	}
 }

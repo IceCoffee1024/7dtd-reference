@@ -1,22 +1,22 @@
 ﻿using System;
 
-// Token: 0x0200037D RID: 893
+// Token: 0x0200037F RID: 895
 public enum DynamicItemState : byte
 {
-	// Token: 0x040010CD RID: 4301
+	// Token: 0x040010DD RID: 4317
 	Waiting,
-	// Token: 0x040010CE RID: 4302
+	// Token: 0x040010DE RID: 4318
 	UpdateRequired,
-	// Token: 0x040010CF RID: 4303
+	// Token: 0x040010DF RID: 4319
 	Empty,
-	// Token: 0x040010D0 RID: 4304
+	// Token: 0x040010E0 RID: 4320
 	LoadRequested,
-	// Token: 0x040010D1 RID: 4305
+	// Token: 0x040010E1 RID: 4321
 	Loading,
-	// Token: 0x040010D2 RID: 4306
+	// Token: 0x040010E2 RID: 4322
 	Loaded,
-	// Token: 0x040010D3 RID: 4307
+	// Token: 0x040010E3 RID: 4323
 	ReadyToDelete,
-	// Token: 0x040010D4 RID: 4308
+	// Token: 0x040010E4 RID: 4324
 	Invalid
 }

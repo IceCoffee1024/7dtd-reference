@@ -1,28 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001359 RID: 4953
+// Token: 0x0200136B RID: 4971
 [Serializable]
 public class BrushSettings
 {
-	// Token: 0x170012B5 RID: 4789
-	// (get) Token: 0x06009C14 RID: 39956 RVA: 0x003AF039 File Offset: 0x003AD239
-	// (set) Token: 0x06009C15 RID: 39957 RVA: 0x003AF041 File Offset: 0x003AD241
+	// Token: 0x170012C1 RID: 4801
+	// (get) Token: 0x06009C6C RID: 40044 RVA: 0x003B143D File Offset: 0x003AF63D
+	// (set) Token: 0x06009C6D RID: 40045 RVA: 0x003B1445 File Offset: 0x003AF645
 	public string MainTexName { get; set; } = "_MainTex";
 
-	// Token: 0x170012B6 RID: 4790
-	// (get) Token: 0x06009C16 RID: 39958 RVA: 0x003AF04A File Offset: 0x003AD24A
-	// (set) Token: 0x06009C17 RID: 39959 RVA: 0x003AF052 File Offset: 0x003AD252
+	// Token: 0x170012C2 RID: 4802
+	// (get) Token: 0x06009C6E RID: 40046 RVA: 0x003B144E File Offset: 0x003AF64E
+	// (set) Token: 0x06009C6F RID: 40047 RVA: 0x003B1456 File Offset: 0x003AF656
 	public string DirectionMapName { get; set; } = "_DirectionMap";
 
-	// Token: 0x170012B7 RID: 4791
-	// (get) Token: 0x06009C18 RID: 39960 RVA: 0x003AF05B File Offset: 0x003AD25B
-	// (set) Token: 0x06009C19 RID: 39961 RVA: 0x003AF063 File Offset: 0x003AD263
+	// Token: 0x170012C3 RID: 4803
+	// (get) Token: 0x06009C70 RID: 40048 RVA: 0x003B145F File Offset: 0x003AF65F
+	// (set) Token: 0x06009C71 RID: 40049 RVA: 0x003B1467 File Offset: 0x003AF667
 	public string RMOLMapName { get; set; } = "_RMOL";
 
-	// Token: 0x170012B8 RID: 4792
-	// (get) Token: 0x06009C1A RID: 39962 RVA: 0x003AF06C File Offset: 0x003AD26C
-	// (set) Token: 0x06009C1B RID: 39963 RVA: 0x003AF074 File Offset: 0x003AD274
+	// Token: 0x170012C4 RID: 4804
+	// (get) Token: 0x06009C72 RID: 40050 RVA: 0x003B1470 File Offset: 0x003AF670
+	// (set) Token: 0x06009C73 RID: 40051 RVA: 0x003B1478 File Offset: 0x003AF678
 	public float Size
 	{
 		get
@@ -36,9 +36,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012B9 RID: 4793
-	// (get) Token: 0x06009C1C RID: 39964 RVA: 0x003AF08D File Offset: 0x003AD28D
-	// (set) Token: 0x06009C1D RID: 39965 RVA: 0x003AF095 File Offset: 0x003AD295
+	// Token: 0x170012C5 RID: 4805
+	// (get) Token: 0x06009C74 RID: 40052 RVA: 0x003B1491 File Offset: 0x003AF691
+	// (set) Token: 0x06009C75 RID: 40053 RVA: 0x003B1499 File Offset: 0x003AF699
 	public float Strength
 	{
 		get
@@ -52,9 +52,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012BA RID: 4794
-	// (get) Token: 0x06009C1E RID: 39966 RVA: 0x003AF0AA File Offset: 0x003AD2AA
-	// (set) Token: 0x06009C1F RID: 39967 RVA: 0x003AF0B2 File Offset: 0x003AD2B2
+	// Token: 0x170012C6 RID: 4806
+	// (get) Token: 0x06009C76 RID: 40054 RVA: 0x003B14AE File Offset: 0x003AF6AE
+	// (set) Token: 0x06009C77 RID: 40055 RVA: 0x003B14B6 File Offset: 0x003AF6B6
 	public float Falloff
 	{
 		get
@@ -68,9 +68,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012BB RID: 4795
-	// (get) Token: 0x06009C20 RID: 39968 RVA: 0x003AF0C7 File Offset: 0x003AD2C7
-	// (set) Token: 0x06009C21 RID: 39969 RVA: 0x003AF0CF File Offset: 0x003AD2CF
+	// Token: 0x170012C7 RID: 4807
+	// (get) Token: 0x06009C78 RID: 40056 RVA: 0x003B14CB File Offset: 0x003AF6CB
+	// (set) Token: 0x06009C79 RID: 40057 RVA: 0x003B14D3 File Offset: 0x003AF6D3
 	public float Matting
 	{
 		get
@@ -83,9 +83,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012BC RID: 4796
-	// (get) Token: 0x06009C22 RID: 39970 RVA: 0x003AF0DD File Offset: 0x003AD2DD
-	// (set) Token: 0x06009C23 RID: 39971 RVA: 0x003AF0E5 File Offset: 0x003AD2E5
+	// Token: 0x170012C8 RID: 4808
+	// (get) Token: 0x06009C7A RID: 40058 RVA: 0x003B14E1 File Offset: 0x003AF6E1
+	// (set) Token: 0x06009C7B RID: 40059 RVA: 0x003B14E9 File Offset: 0x003AF6E9
 	public float Length
 	{
 		get
@@ -98,9 +98,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012BD RID: 4797
-	// (get) Token: 0x06009C24 RID: 39972 RVA: 0x003AF0F3 File Offset: 0x003AD2F3
-	// (set) Token: 0x06009C25 RID: 39973 RVA: 0x003AF0FB File Offset: 0x003AD2FB
+	// Token: 0x170012C9 RID: 4809
+	// (get) Token: 0x06009C7C RID: 40060 RVA: 0x003B14F7 File Offset: 0x003AF6F7
+	// (set) Token: 0x06009C7D RID: 40061 RVA: 0x003B14FF File Offset: 0x003AF6FF
 	public float Roughness
 	{
 		get
@@ -113,9 +113,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012BE RID: 4798
-	// (get) Token: 0x06009C26 RID: 39974 RVA: 0x003AF109 File Offset: 0x003AD309
-	// (set) Token: 0x06009C27 RID: 39975 RVA: 0x003AF111 File Offset: 0x003AD311
+	// Token: 0x170012CA RID: 4810
+	// (get) Token: 0x06009C7E RID: 40062 RVA: 0x003B150D File Offset: 0x003AF70D
+	// (set) Token: 0x06009C7F RID: 40063 RVA: 0x003B1515 File Offset: 0x003AF715
 	public float Metallic
 	{
 		get
@@ -128,9 +128,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012BF RID: 4799
-	// (get) Token: 0x06009C28 RID: 39976 RVA: 0x003AF11F File Offset: 0x003AD31F
-	// (set) Token: 0x06009C29 RID: 39977 RVA: 0x003AF127 File Offset: 0x003AD327
+	// Token: 0x170012CB RID: 4811
+	// (get) Token: 0x06009C80 RID: 40064 RVA: 0x003B1523 File Offset: 0x003AF723
+	// (set) Token: 0x06009C81 RID: 40065 RVA: 0x003B152B File Offset: 0x003AF72B
 	public float Occlusion
 	{
 		get
@@ -143,9 +143,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012C0 RID: 4800
-	// (get) Token: 0x06009C2A RID: 39978 RVA: 0x003AF135 File Offset: 0x003AD335
-	// (set) Token: 0x06009C2B RID: 39979 RVA: 0x003AF13D File Offset: 0x003AD33D
+	// Token: 0x170012CC RID: 4812
+	// (get) Token: 0x06009C82 RID: 40066 RVA: 0x003B1539 File Offset: 0x003AF739
+	// (set) Token: 0x06009C83 RID: 40067 RVA: 0x003B1541 File Offset: 0x003AF741
 	public Color Color
 	{
 		get
@@ -158,9 +158,9 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x170012C1 RID: 4801
-	// (get) Token: 0x06009C2C RID: 39980 RVA: 0x003AF146 File Offset: 0x003AD346
-	// (set) Token: 0x06009C2D RID: 39981 RVA: 0x003AF154 File Offset: 0x003AD354
+	// Token: 0x170012CD RID: 4813
+	// (get) Token: 0x06009C84 RID: 40068 RVA: 0x003B154A File Offset: 0x003AF74A
+	// (set) Token: 0x06009C85 RID: 40069 RVA: 0x003B1558 File Offset: 0x003AF758
 	public Texture2D BrushPreview
 	{
 		get
@@ -174,7 +174,7 @@ public class BrushSettings
 		}
 	}
 
-	// Token: 0x06009C2E RID: 39982 RVA: 0x003AF160 File Offset: 0x003AD360
+	// Token: 0x06009C86 RID: 40070 RVA: 0x003B1564 File Offset: 0x003AF764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateBrushPreview()
 	{
@@ -214,57 +214,57 @@ public class BrushSettings
 		this.brushPreview.Apply();
 	}
 
-	// Token: 0x040075A3 RID: 30115
+	// Token: 0x040075E4 RID: 30180
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Texture2D brushPreview;
 
-	// Token: 0x040075A4 RID: 30116
+	// Token: 0x040075E5 RID: 30181
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float size = 100f;
 
-	// Token: 0x040075A5 RID: 30117
+	// Token: 0x040075E6 RID: 30182
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float strength = 0.5f;
 
-	// Token: 0x040075A6 RID: 30118
+	// Token: 0x040075E7 RID: 30183
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float falloff = 0.5f;
 
-	// Token: 0x040075A7 RID: 30119
+	// Token: 0x040075E8 RID: 30184
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float matting = 1f;
 
-	// Token: 0x040075A8 RID: 30120
+	// Token: 0x040075E9 RID: 30185
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float length = 1f;
 
-	// Token: 0x040075A9 RID: 30121
+	// Token: 0x040075EA RID: 30186
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float roughness = 0.5f;
 
-	// Token: 0x040075AA RID: 30122
+	// Token: 0x040075EB RID: 30187
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float metallic = 0.5f;
 
-	// Token: 0x040075AB RID: 30123
+	// Token: 0x040075EC RID: 30188
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float occlusion = 1f;
 
-	// Token: 0x040075AC RID: 30124
+	// Token: 0x040075ED RID: 30189
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color color = Color.white;
 
-	// Token: 0x040075AD RID: 30125
+	// Token: 0x040075EE RID: 30190
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isDirty = true;

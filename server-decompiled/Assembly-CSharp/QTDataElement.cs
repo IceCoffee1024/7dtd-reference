@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C4B RID: 3147
+// Token: 0x02000C56 RID: 3158
 public class QTDataElement
 {
-	// Token: 0x06005F62 RID: 24418 RVA: 0x0025E0A8 File Offset: 0x0025C2A8
+	// Token: 0x06005F87 RID: 24455 RVA: 0x0025F5D0 File Offset: 0x0025D7D0
 	public QTDataElement()
 	{
 		this.Data = null;
@@ -12,7 +12,7 @@ public class QTDataElement
 		this.LLPosY = 0;
 	}
 
-	// Token: 0x06005F63 RID: 24419 RVA: 0x0025E0CD File Offset: 0x0025C2CD
+	// Token: 0x06005F88 RID: 24456 RVA: 0x0025F5F5 File Offset: 0x0025D7F5
 	public QTDataElement(int _LLPosX, int _LLPosY, byte[] _Data)
 	{
 		this.LLPosX = _LLPosX;
@@ -20,15 +20,15 @@ public class QTDataElement
 		this.Data = _Data;
 	}
 
-	// Token: 0x04004AF7 RID: 19191
+	// Token: 0x04004B1C RID: 19228
 	public byte[] Data;
 
-	// Token: 0x04004AF8 RID: 19192
+	// Token: 0x04004B1D RID: 19229
 	public long Key;
 
-	// Token: 0x04004AF9 RID: 19193
+	// Token: 0x04004B1E RID: 19230
 	public int LLPosX;
 
-	// Token: 0x04004AFA RID: 19194
+	// Token: 0x04004B1F RID: 19231
 	public int LLPosY;
 }

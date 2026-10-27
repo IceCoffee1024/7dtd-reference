@@ -2,31 +2,31 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x0200149B RID: 5275
+// Token: 0x020014AD RID: 5293
 public class PNG2TGA
 {
-	// Token: 0x0600A523 RID: 42275 RVA: 0x003D9520 File Offset: 0x003D7720
+	// Token: 0x0600A57B RID: 42363 RVA: 0x003DB924 File Offset: 0x003D9B24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PNG2TGA.Vector2Int IndexToVector2Int(int index)
 	{
 		return new PNG2TGA.Vector2Int(index % this._width, index / this._width);
 	}
 
-	// Token: 0x0600A524 RID: 42276 RVA: 0x003D9537 File Offset: 0x003D7737
+	// Token: 0x0600A57C RID: 42364 RVA: 0x003DB93B File Offset: 0x003D9B3B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int XYToIndex(int x, int y)
 	{
 		return x + y * this._width;
 	}
 
-	// Token: 0x0600A525 RID: 42277 RVA: 0x003D9543 File Offset: 0x003D7743
+	// Token: 0x0600A57D RID: 42365 RVA: 0x003DB947 File Offset: 0x003D9B47
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Vector2IntToIndex(PNG2TGA.Vector2Int pos)
 	{
 		return this.XYToIndex(pos.x, pos.y);
 	}
 
-	// Token: 0x0600A526 RID: 42278 RVA: 0x003D9558 File Offset: 0x003D7758
+	// Token: 0x0600A57E RID: 42366 RVA: 0x003DB95C File Offset: 0x003D9B5C
 	public void Process(Texture2D texture)
 	{
 		this._texture = texture;
@@ -123,7 +123,7 @@ public class PNG2TGA
 		this._texture.Apply();
 	}
 
-	// Token: 0x0600A527 RID: 42279 RVA: 0x003D9990 File Offset: 0x003D7B90
+	// Token: 0x0600A57F RID: 42367 RVA: 0x003DBD94 File Offset: 0x003D9F94
 	public void Process2(Color[] pixels, int _width, int _height)
 	{
 		this.gwidth = _width;
@@ -208,7 +208,7 @@ public class PNG2TGA
 		}
 	}
 
-	// Token: 0x0600A528 RID: 42280 RVA: 0x003D9D34 File Offset: 0x003D7F34
+	// Token: 0x0600A580 RID: 42368 RVA: 0x003DC138 File Offset: 0x003DA338
 	public void Process3(Color32[] pixels, int _width, int _height)
 	{
 		this.gwidth = _width;
@@ -293,7 +293,7 @@ public class PNG2TGA
 		}
 	}
 
-	// Token: 0x0600A529 RID: 42281 RVA: 0x003DA0CC File Offset: 0x003D82CC
+	// Token: 0x0600A581 RID: 42369 RVA: 0x003DC4D0 File Offset: 0x003DA6D0
 	public bool Save(string path)
 	{
 		try
@@ -318,7 +318,7 @@ public class PNG2TGA
 		return false;
 	}
 
-	// Token: 0x0600A52A RID: 42282 RVA: 0x003DA198 File Offset: 0x003D8398
+	// Token: 0x0600A582 RID: 42370 RVA: 0x003DC59C File Offset: 0x003DA79C
 	public bool Save2(string path)
 	{
 		try
@@ -341,27 +341,27 @@ public class PNG2TGA
 		return false;
 	}
 
-	// Token: 0x04007B5D RID: 31581
+	// Token: 0x04007B9E RID: 31646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PNG2TGA _window;
 
-	// Token: 0x04007B5E RID: 31582
+	// Token: 0x04007B9F RID: 31647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D _texture;
 
-	// Token: 0x04007B5F RID: 31583
+	// Token: 0x04007BA0 RID: 31648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _width;
 
-	// Token: 0x04007B60 RID: 31584
+	// Token: 0x04007BA1 RID: 31649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _height;
 
-	// Token: 0x04007B61 RID: 31585
+	// Token: 0x04007BA2 RID: 31650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] _data;
 
-	// Token: 0x04007B62 RID: 31586
+	// Token: 0x04007BA3 RID: 31651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] header = new byte[]
 	{
@@ -369,7 +369,7 @@ public class PNG2TGA
 		0, 0, 0, 0, 0, 0, 32, 8
 	};
 
-	// Token: 0x04007B63 RID: 31587
+	// Token: 0x04007BA4 RID: 31652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] footer = new byte[]
 	{
@@ -378,41 +378,41 @@ public class PNG2TGA
 		70, 73, 76, 69, 46, 0
 	};
 
-	// Token: 0x04007B64 RID: 31588
+	// Token: 0x04007BA5 RID: 31653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int gwidth;
 
-	// Token: 0x04007B65 RID: 31589
+	// Token: 0x04007BA6 RID: 31654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int gheight;
 
-	// Token: 0x0200149C RID: 5276
+	// Token: 0x020014AE RID: 5294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Vector2Int
 	{
-		// Token: 0x0600A52D RID: 42285 RVA: 0x003DA290 File Offset: 0x003D8490
+		// Token: 0x0600A585 RID: 42373 RVA: 0x003DC694 File Offset: 0x003DA894
 		public Vector2Int(int x, int y)
 		{
 			this.x = x;
 			this.y = y;
 		}
 
-		// Token: 0x0600A52E RID: 42286 RVA: 0x003DA2A0 File Offset: 0x003D84A0
+		// Token: 0x0600A586 RID: 42374 RVA: 0x003DC6A4 File Offset: 0x003DA8A4
 		public static PNG2TGA.Vector2Int operator +(PNG2TGA.Vector2Int a, PNG2TGA.Vector2Int b)
 		{
 			return new PNG2TGA.Vector2Int(a.x + b.x, a.y + b.y);
 		}
 
-		// Token: 0x0600A52F RID: 42287 RVA: 0x003DA2C1 File Offset: 0x003D84C1
+		// Token: 0x0600A587 RID: 42375 RVA: 0x003DC6C5 File Offset: 0x003DA8C5
 		public static PNG2TGA.Vector2Int operator -(PNG2TGA.Vector2Int a, PNG2TGA.Vector2Int b)
 		{
 			return new PNG2TGA.Vector2Int(a.x - b.x, a.y - b.y);
 		}
 
-		// Token: 0x04007B66 RID: 31590
+		// Token: 0x04007BA7 RID: 31655
 		public int x;
 
-		// Token: 0x04007B67 RID: 31591
+		// Token: 0x04007BA8 RID: 31656
 		public int y;
 	}
 }

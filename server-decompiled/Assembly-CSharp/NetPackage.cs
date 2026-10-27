@@ -2,12 +2,12 @@
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A0 RID: 1952
+// Token: 0x020007A8 RID: 1960
 [Preserve]
 public abstract class NetPackage
 {
-	// Token: 0x1700061A RID: 1562
-	// (get) Token: 0x06003A39 RID: 14905 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061E RID: 1566
+	// (get) Token: 0x06003A50 RID: 14928 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual int Channel
 	{
 		get
@@ -16,8 +16,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x1700061B RID: 1563
-	// (get) Token: 0x06003A3A RID: 14906 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061F RID: 1567
+	// (get) Token: 0x06003A51 RID: 14929 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool Compress
 	{
 		get
@@ -26,8 +26,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x1700061C RID: 1564
-	// (get) Token: 0x06003A3B RID: 14907 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000620 RID: 1568
+	// (get) Token: 0x06003A52 RID: 14930 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool FlushQueue
 	{
 		get
@@ -36,8 +36,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x1700061D RID: 1565
-	// (get) Token: 0x06003A3C RID: 14908 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000621 RID: 1569
+	// (get) Token: 0x06003A53 RID: 14931 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual NetPackageDirection PackageDirection
 	{
 		get
@@ -46,8 +46,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x1700061E RID: 1566
-	// (get) Token: 0x06003A3D RID: 14909 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000622 RID: 1570
+	// (get) Token: 0x06003A54 RID: 14932 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool AllowedBeforeAuth
 	{
 		get
@@ -56,8 +56,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x1700061F RID: 1567
-	// (get) Token: 0x06003A3E RID: 14910 RVA: 0x0017B28D File Offset: 0x0017948D
+	// Token: 0x17000623 RID: 1571
+	// (get) Token: 0x06003A55 RID: 14933 RVA: 0x0017C225 File Offset: 0x0017A425
 	public int PackageId
 	{
 		get
@@ -66,13 +66,13 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x17000620 RID: 1568
-	// (get) Token: 0x06003A3F RID: 14911 RVA: 0x0017B29A File Offset: 0x0017949A
-	// (set) Token: 0x06003A40 RID: 14912 RVA: 0x0017B2A2 File Offset: 0x001794A2
+	// Token: 0x17000624 RID: 1572
+	// (get) Token: 0x06003A56 RID: 14934 RVA: 0x0017C232 File Offset: 0x0017A432
+	// (set) Token: 0x06003A57 RID: 14935 RVA: 0x0017C23A File Offset: 0x0017A43A
 	public ClientInfo Sender { get; set; }
 
-	// Token: 0x17000621 RID: 1569
-	// (get) Token: 0x06003A41 RID: 14913 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000625 RID: 1573
+	// (get) Token: 0x06003A58 RID: 14936 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool ReliableDelivery
 	{
 		get
@@ -81,31 +81,31 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x06003A42 RID: 14914
+	// Token: 0x06003A59 RID: 14937
 	public abstract void read(PooledBinaryReader _reader);
 
-	// Token: 0x06003A43 RID: 14915 RVA: 0x0017B2AB File Offset: 0x001794AB
+	// Token: 0x06003A5A RID: 14938 RVA: 0x0017C243 File Offset: 0x0017A443
 	public virtual void write(PooledBinaryWriter _writer)
 	{
 		_writer.Write((ushort)this.PackageId);
 	}
 
-	// Token: 0x06003A44 RID: 14916 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06003A5B RID: 14939 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool ShouldProcess(World _world, GameManager _callbacks)
 	{
 		return true;
 	}
 
-	// Token: 0x06003A45 RID: 14917
+	// Token: 0x06003A5C RID: 14940
 	public abstract void ProcessPackage(World _world, GameManager _callbacks);
 
-	// Token: 0x06003A46 RID: 14918 RVA: 0x0017B2BA File Offset: 0x001794BA
+	// Token: 0x06003A5D RID: 14941 RVA: 0x0017C252 File Offset: 0x0017A452
 	public virtual void HandleSkipped(World _world, GameManager _callbacks)
 	{
 		NetPackageManager.FreePackage(this);
 	}
 
-	// Token: 0x06003A47 RID: 14919 RVA: 0x0017B2C4 File Offset: 0x001794C4
+	// Token: 0x06003A5E RID: 14942 RVA: 0x0017C25C File Offset: 0x0017A45C
 	public override string ToString()
 	{
 		string text;
@@ -116,13 +116,13 @@ public abstract class NetPackage
 		return text;
 	}
 
-	// Token: 0x06003A48 RID: 14920 RVA: 0x0017B2EF File Offset: 0x001794EF
+	// Token: 0x06003A5F RID: 14943 RVA: 0x0017C287 File Offset: 0x0017A487
 	public void RegisterSendQueue()
 	{
 		Interlocked.Increment(ref this.inSendQueuesCount);
 	}
 
-	// Token: 0x06003A49 RID: 14921 RVA: 0x0017B2FD File Offset: 0x001794FD
+	// Token: 0x06003A60 RID: 14944 RVA: 0x0017C295 File Offset: 0x0017A495
 	public void SendQueueHandled()
 	{
 		if (Interlocked.Decrement(ref this.inSendQueuesCount) == 0)
@@ -131,7 +131,7 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x06003A4A RID: 14922 RVA: 0x0017B314 File Offset: 0x00179514
+	// Token: 0x06003A61 RID: 14945 RVA: 0x0017C2AC File Offset: 0x0017A4AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ValidEntityIdForSender(int _entityId, bool _allowAttachedToEntity = false)
 	{
@@ -155,7 +155,7 @@ public abstract class NetPackage
 		return false;
 	}
 
-	// Token: 0x06003A4B RID: 14923 RVA: 0x0017B3AC File Offset: 0x001795AC
+	// Token: 0x06003A62 RID: 14946 RVA: 0x0017C344 File Offset: 0x0017A544
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ValidUserIdForSender(PlatformUserIdentifierAbs _userId)
 	{
@@ -171,17 +171,17 @@ public abstract class NetPackage
 		return false;
 	}
 
-	// Token: 0x06003A4C RID: 14924 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06003A63 RID: 14947 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public NetPackage()
 	{
 	}
 
-	// Token: 0x04002F9D RID: 12189
+	// Token: 0x04002FB9 RID: 12217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inSendQueuesCount;
 
-	// Token: 0x04002F9E RID: 12190
+	// Token: 0x04002FBA RID: 12218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string classnameCached;
 }

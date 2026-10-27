@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000C2C RID: 3116
+// Token: 0x02000C37 RID: 3127
 public class DecoObject : IEquatable<DecoObject>
 {
-	// Token: 0x06005EAF RID: 24239 RVA: 0x00251702 File Offset: 0x0024F902
+	// Token: 0x06005ED4 RID: 24276 RVA: 0x00252C2A File Offset: 0x00250E2A
 	public void Init(Vector3i _pos, float _realYPos, BlockValue _bv, DecoState _state)
 	{
 		this.pos = _pos;
@@ -16,7 +16,7 @@ public class DecoObject : IEquatable<DecoObject>
 		this.go = null;
 	}
 
-	// Token: 0x06005EB0 RID: 24240 RVA: 0x00251730 File Offset: 0x0024F930
+	// Token: 0x06005ED5 RID: 24277 RVA: 0x00252C58 File Offset: 0x00250E58
 	public string GetModelName()
 	{
 		Block block = this.bv.Block;
@@ -34,7 +34,7 @@ public class DecoObject : IEquatable<DecoObject>
 		return GameIO.GetFilenameFromPathWithoutExtension(value);
 	}
 
-	// Token: 0x06005EB1 RID: 24241 RVA: 0x002517A4 File Offset: 0x0024F9A4
+	// Token: 0x06005ED6 RID: 24278 RVA: 0x00252CCC File Offset: 0x00250ECC
 	public void CreateGameObject(DecoChunk _decoChunk, Transform _parent)
 	{
 		string modelName = this.GetModelName();
@@ -45,7 +45,7 @@ public class DecoObject : IEquatable<DecoObject>
 		}
 	}
 
-	// Token: 0x06005EB2 RID: 24242 RVA: 0x002517D0 File Offset: 0x0024F9D0
+	// Token: 0x06005ED7 RID: 24279 RVA: 0x00252CF8 File Offset: 0x00250EF8
 	public void CreateGameObjectCallback(GameObject _obj, Transform _parent, bool _isAsync)
 	{
 		this.go = _obj;
@@ -78,7 +78,7 @@ public class DecoObject : IEquatable<DecoObject>
 		blockShapeDistantDeco.OnBlockEntityTransformAfterActivated(null, this.pos, this.bv, blockEntityData);
 	}
 
-	// Token: 0x06005EB3 RID: 24243 RVA: 0x002518F5 File Offset: 0x0024FAF5
+	// Token: 0x06005ED8 RID: 24280 RVA: 0x00252E1D File Offset: 0x0025101D
 	public void Destroy()
 	{
 		this.asyncItem = null;
@@ -89,7 +89,7 @@ public class DecoObject : IEquatable<DecoObject>
 		}
 	}
 
-	// Token: 0x06005EB4 RID: 24244 RVA: 0x00251924 File Offset: 0x0024FB24
+	// Token: 0x06005ED9 RID: 24281 RVA: 0x00252E4C File Offset: 0x0025104C
 	public void Write(BinaryWriter _bw, NameIdMapping _blockMap = null)
 	{
 		_bw.Write(GameUtils.Vector3iToUInt64(this.pos));
@@ -108,7 +108,7 @@ public class DecoObject : IEquatable<DecoObject>
 		}
 	}
 
-	// Token: 0x06005EB5 RID: 24245 RVA: 0x002519AD File Offset: 0x0024FBAD
+	// Token: 0x06005EDA RID: 24282 RVA: 0x00252ED5 File Offset: 0x002510D5
 	public void Read(BinaryReader _br)
 	{
 		this.pos = GameUtils.UInt64ToVector3i(_br.ReadUInt64());
@@ -117,13 +117,13 @@ public class DecoObject : IEquatable<DecoObject>
 		this.state = (DecoState)_br.ReadByte();
 	}
 
-	// Token: 0x06005EB6 RID: 24246 RVA: 0x002519E9 File Offset: 0x0024FBE9
+	// Token: 0x06005EDB RID: 24283 RVA: 0x00252F11 File Offset: 0x00251111
 	public override int GetHashCode()
 	{
 		return HashCode.Combine<int, DecoState, int>(this.pos.GetHashCode(), this.state, this.bv.GetHashCode());
 	}
 
-	// Token: 0x06005EB7 RID: 24247 RVA: 0x00251A18 File Offset: 0x0024FC18
+	// Token: 0x06005EDC RID: 24284 RVA: 0x00252F40 File Offset: 0x00251140
 	public override bool Equals(object _obj)
 	{
 		if (_obj == null)
@@ -138,27 +138,27 @@ public class DecoObject : IEquatable<DecoObject>
 		return decoObject != null && this.Equals(decoObject);
 	}
 
-	// Token: 0x06005EB8 RID: 24248 RVA: 0x00251A44 File Offset: 0x0024FC44
+	// Token: 0x06005EDD RID: 24285 RVA: 0x00252F6C File Offset: 0x0025116C
 	public bool Equals(DecoObject _other)
 	{
 		return _other != null && (this == _other || (_other.pos.Equals(this.pos) && _other.state == this.state && _other.bv.Equals(this.bv)));
 	}
 
-	// Token: 0x040049C6 RID: 18886
+	// Token: 0x040049EB RID: 18923
 	public Vector3i pos;
 
-	// Token: 0x040049C7 RID: 18887
+	// Token: 0x040049EC RID: 18924
 	public float realYPos;
 
-	// Token: 0x040049C8 RID: 18888
+	// Token: 0x040049ED RID: 18925
 	public BlockValue bv;
 
-	// Token: 0x040049C9 RID: 18889
+	// Token: 0x040049EE RID: 18926
 	public DecoState state;
 
-	// Token: 0x040049CA RID: 18890
+	// Token: 0x040049EF RID: 18927
 	public GameObjectPool.AsyncItem asyncItem;
 
-	// Token: 0x040049CB RID: 18891
+	// Token: 0x040049F0 RID: 18928
 	public GameObject go;
 }

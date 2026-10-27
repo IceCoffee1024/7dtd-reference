@@ -2,10 +2,10 @@
 
 namespace SharpEXR.AttributeTypes
 {
-	// Token: 0x0200170F RID: 5903
+	// Token: 0x0200172E RID: 5934
 	public struct KeyCode
 	{
-		// Token: 0x0600B87C RID: 47228 RVA: 0x0044341E File Offset: 0x0044161E
+		// Token: 0x0600B950 RID: 47440 RVA: 0x00445EC2 File Offset: 0x004440C2
 		public KeyCode(int filmMfcCode, int filmType, int prefix, int count, int perfOffset, int perfsPerFrame, int perfsPerCount)
 		{
 			this.FilmMfcCode = filmMfcCode;
@@ -17,25 +17,25 @@ namespace SharpEXR.AttributeTypes
 			this.PerfsPerCount = perfsPerCount;
 		}
 
-		// Token: 0x04008999 RID: 35225
+		// Token: 0x04008A4C RID: 35404
 		public readonly int FilmMfcCode;
 
-		// Token: 0x0400899A RID: 35226
+		// Token: 0x04008A4D RID: 35405
 		public readonly int FilmType;
 
-		// Token: 0x0400899B RID: 35227
+		// Token: 0x04008A4E RID: 35406
 		public readonly int Prefix;
 
-		// Token: 0x0400899C RID: 35228
+		// Token: 0x04008A4F RID: 35407
 		public readonly int Count;
 
-		// Token: 0x0400899D RID: 35229
+		// Token: 0x04008A50 RID: 35408
 		public readonly int PerfOffset;
 
-		// Token: 0x0400899E RID: 35230
+		// Token: 0x04008A51 RID: 35409
 		public readonly int PerfsPerFrame;
 
-		// Token: 0x0400899F RID: 35231
+		// Token: 0x04008A52 RID: 35410
 		public readonly int PerfsPerCount;
 	}
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B1 RID: 1457
+// Token: 0x020005B8 RID: 1464
 [Preserve]
 public class ItemActionExchangeItem : ItemAction
 {
-	// Token: 0x06002FD6 RID: 12246 RVA: 0x00130EB8 File Offset: 0x0012F0B8
+	// Token: 0x06002FE4 RID: 12260 RVA: 0x00131AAC File Offset: 0x0012FCAC
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -38,7 +38,7 @@ public class ItemActionExchangeItem : ItemAction
 		}
 	}
 
-	// Token: 0x06002FD7 RID: 12247 RVA: 0x00130FD0 File Offset: 0x0012F1D0
+	// Token: 0x06002FE5 RID: 12261 RVA: 0x00131BC4 File Offset: 0x0012FDC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isFocusingBlock(WorldRayHitInfo _hitInfo)
 	{
@@ -53,7 +53,7 @@ public class ItemActionExchangeItem : ItemAction
 		return false;
 	}
 
-	// Token: 0x06002FD8 RID: 12248 RVA: 0x0013101C File Offset: 0x0012F21C
+	// Token: 0x06002FE6 RID: 12262 RVA: 0x00131C10 File Offset: 0x0012FE10
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -84,20 +84,20 @@ public class ItemActionExchangeItem : ItemAction
 		}
 	}
 
-	// Token: 0x06002FD9 RID: 12249 RVA: 0x0012B1A4 File Offset: 0x001293A4
+	// Token: 0x06002FE7 RID: 12263 RVA: 0x0012BD98 File Offset: 0x00129F98
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return _actionData.lastUseTime != 0f && Time.time - _actionData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x06002FDA RID: 12250 RVA: 0x0012B9D6 File Offset: 0x00129BD6
+	// Token: 0x06002FE8 RID: 12264 RVA: 0x0012C5CA File Offset: 0x0012A7CA
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		_data.lastUseTime = 0f;
 	}
 
-	// Token: 0x06002FDB RID: 12251 RVA: 0x00131118 File Offset: 0x0012F318
+	// Token: 0x06002FE9 RID: 12265 RVA: 0x00131D0C File Offset: 0x0012FF0C
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		if (_actionData.lastUseTime == 0f || this.IsActionRunning(_actionData))
@@ -120,27 +120,27 @@ public class ItemActionExchangeItem : ItemAction
 		}
 	}
 
-	// Token: 0x040024DC RID: 9436
+	// Token: 0x040024F7 RID: 9463
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string changeItemToItem;
 
-	// Token: 0x040024DD RID: 9437
+	// Token: 0x040024F8 RID: 9464
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string changeBlockTo;
 
-	// Token: 0x040024DE RID: 9438
+	// Token: 0x040024F9 RID: 9465
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string doBlockAction;
 
-	// Token: 0x040024DF RID: 9439
+	// Token: 0x040024FA RID: 9466
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue hitLiquidBlock;
 
-	// Token: 0x040024E0 RID: 9440
+	// Token: 0x040024FB RID: 9467
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3i hitLiquidPos;
 
-	// Token: 0x040024E1 RID: 9441
+	// Token: 0x040024FC RID: 9468
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<BlockValue> focusedBlocks = new List<BlockValue>();
 }

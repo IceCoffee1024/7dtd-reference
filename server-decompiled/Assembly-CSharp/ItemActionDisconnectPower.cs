@@ -2,30 +2,30 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005AA RID: 1450
+// Token: 0x020005B1 RID: 1457
 [Preserve]
 public class ItemActionDisconnectPower : ItemAction
 {
-	// Token: 0x06002FB2 RID: 12210 RVA: 0x0012FAE5 File Offset: 0x0012DCE5
+	// Token: 0x06002FC0 RID: 12224 RVA: 0x001306D9 File Offset: 0x0012E8D9
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionDisconnectPower.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FB3 RID: 12211 RVA: 0x0012FAEE File Offset: 0x0012DCEE
+	// Token: 0x06002FC1 RID: 12225 RVA: 0x001306E2 File Offset: 0x0012E8E2
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
 	}
 
-	// Token: 0x06002FB4 RID: 12212 RVA: 0x0012FAF7 File Offset: 0x0012DCF7
+	// Token: 0x06002FC2 RID: 12226 RVA: 0x001306EB File Offset: 0x0012E8EB
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionDisconnectPower.MyInventoryData)_data).StartDisconnect = false;
 	}
 
-	// Token: 0x06002FB5 RID: 12213 RVA: 0x0012FB0C File Offset: 0x0012DD0C
+	// Token: 0x06002FC3 RID: 12227 RVA: 0x00130700 File Offset: 0x0012E900
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -40,14 +40,14 @@ public class ItemActionDisconnectPower : ItemAction
 		((ItemActionDisconnectPower.MyInventoryData)_actionData).StartDisconnect = true;
 	}
 
-	// Token: 0x06002FB6 RID: 12214 RVA: 0x0012FB40 File Offset: 0x0012DD40
+	// Token: 0x06002FC4 RID: 12228 RVA: 0x00130734 File Offset: 0x0012E934
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionDisconnectPower.MyInventoryData myInventoryData = (ItemActionDisconnectPower.MyInventoryData)_actionData;
 		return myInventoryData.StartDisconnect && Time.time - myInventoryData.lastUseTime < 2f * AnimationDelayData.AnimationDelay[myInventoryData.invData.item.HoldType.Value].RayCast;
 	}
 
-	// Token: 0x06002FB7 RID: 12215 RVA: 0x0012FB98 File Offset: 0x0012DD98
+	// Token: 0x06002FC5 RID: 12229 RVA: 0x0013078C File Offset: 0x0012E98C
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionDisconnectPower.MyInventoryData myInventoryData = (ItemActionDisconnectPower.MyInventoryData)_actionData;
@@ -94,7 +94,7 @@ public class ItemActionDisconnectPower : ItemAction
 		poweredBlock.RemoveParentWithWiringTool(_actionData.invData.holdingEntity.entityId);
 	}
 
-	// Token: 0x06002FB8 RID: 12216 RVA: 0x0012FE0C File Offset: 0x0012E00C
+	// Token: 0x06002FC6 RID: 12230 RVA: 0x00130A00 File Offset: 0x0012EC00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IPowered GetPoweredBlock(ItemInventoryData data)
 	{
@@ -138,17 +138,17 @@ public class ItemActionDisconnectPower : ItemAction
 		return tileEntity as IPowered;
 	}
 
-	// Token: 0x020005AB RID: 1451
+	// Token: 0x020005B2 RID: 1458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06002FBA RID: 12218 RVA: 0x0012B224 File Offset: 0x00129424
+		// Token: 0x06002FC8 RID: 12232 RVA: 0x0012BE18 File Offset: 0x0012A018
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040024CA RID: 9418
+		// Token: 0x040024E5 RID: 9445
 		public bool StartDisconnect;
 	}
 }

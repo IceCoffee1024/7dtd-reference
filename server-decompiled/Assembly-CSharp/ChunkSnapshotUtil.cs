@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000BA5 RID: 2981
+// Token: 0x02000BB0 RID: 2992
 public class ChunkSnapshotUtil : IRegionFileChunkSnapshotUtil
 {
-	// Token: 0x060059C7 RID: 22983 RVA: 0x00227C14 File Offset: 0x00225E14
+	// Token: 0x060059EC RID: 23020 RVA: 0x00229170 File Offset: 0x00227370
 	public ChunkSnapshotUtil(RegionFileAccessAbstract regionFileAccess)
 	{
 		this.regionFileAccess = regionFileAccess;
@@ -11,7 +11,7 @@ public class ChunkSnapshotUtil : IRegionFileChunkSnapshotUtil
 		this.chunkWriter = new RegionFileChunkWriter(regionFileAccess);
 	}
 
-	// Token: 0x060059C8 RID: 22984 RVA: 0x00227C4B File Offset: 0x00225E4B
+	// Token: 0x060059ED RID: 23021 RVA: 0x002291A7 File Offset: 0x002273A7
 	public IRegionFileChunkSnapshot TakeSnapshot(Chunk chunk, bool saveIfUnchanged)
 	{
 		RegionFileChunkSnapshot regionFileChunkSnapshot = this.poolSnapshots.AllocSync(true);
@@ -19,13 +19,13 @@ public class ChunkSnapshotUtil : IRegionFileChunkSnapshotUtil
 		return regionFileChunkSnapshot;
 	}
 
-	// Token: 0x060059C9 RID: 22985 RVA: 0x00227C61 File Offset: 0x00225E61
+	// Token: 0x060059EE RID: 23022 RVA: 0x002291BD File Offset: 0x002273BD
 	public void WriteSnapshot(IRegionFileChunkSnapshot snapshot, string dir, int chunkX, int chunkZ)
 	{
 		snapshot.Write(this.chunkWriter, dir, chunkX, chunkZ);
 	}
 
-	// Token: 0x060059CA RID: 22986 RVA: 0x00227C74 File Offset: 0x00225E74
+	// Token: 0x060059EF RID: 23023 RVA: 0x002291D0 File Offset: 0x002273D0
 	public Chunk LoadChunk(string dir, long key)
 	{
 		int num = WorldChunkCache.extractX(key);
@@ -83,7 +83,7 @@ public class ChunkSnapshotUtil : IRegionFileChunkSnapshotUtil
 		return null;
 	}
 
-	// Token: 0x060059CB RID: 22987 RVA: 0x00227DC0 File Offset: 0x00225FC0
+	// Token: 0x060059F0 RID: 23024 RVA: 0x0022931C File Offset: 0x0022751C
 	public void Free(IRegionFileChunkSnapshot iSnapshot)
 	{
 		if (iSnapshot == null)
@@ -99,25 +99,25 @@ public class ChunkSnapshotUtil : IRegionFileChunkSnapshotUtil
 		Log.Error("Attempting to free snapshot of wrong type. Expected: RegionFileChunkSnapshot, Actual: " + iSnapshot.GetType().Name);
 	}
 
-	// Token: 0x060059CC RID: 22988 RVA: 0x00227E02 File Offset: 0x00226002
+	// Token: 0x060059F1 RID: 23025 RVA: 0x0022935E File Offset: 0x0022755E
 	public void Cleanup()
 	{
 		this.poolSnapshots.Cleanup();
 	}
 
-	// Token: 0x040045C2 RID: 17858
+	// Token: 0x040045E7 RID: 17895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileAccessAbstract regionFileAccess;
 
-	// Token: 0x040045C3 RID: 17859
+	// Token: 0x040045E8 RID: 17896
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileChunkReader chunkReader;
 
-	// Token: 0x040045C4 RID: 17860
+	// Token: 0x040045E9 RID: 17897
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileChunkWriter chunkWriter;
 
-	// Token: 0x040045C5 RID: 17861
+	// Token: 0x040045EA RID: 17898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryPooledObject<RegionFileChunkSnapshot> poolSnapshots = new MemoryPooledObject<RegionFileChunkSnapshot>(255);
 }

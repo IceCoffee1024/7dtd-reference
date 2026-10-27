@@ -8,10 +8,10 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C3B RID: 7227
+	// Token: 0x02001C6C RID: 7276
 	public class User : IUserClient
 	{
-		// Token: 0x0600D6AD RID: 54957 RVA: 0x004D2284 File Offset: 0x004D0484
+		// Token: 0x0600D7C1 RID: 55233 RVA: 0x004D5DAC File Offset: 0x004D3FAC
 		[PublicizedFrom(EAccessModifier.Private)]
 		static User()
 		{
@@ -52,8 +52,8 @@ namespace Platform.XBL
 			};
 		}
 
-		// Token: 0x17001B16 RID: 6934
-		// (get) Token: 0x0600D6AE RID: 54958 RVA: 0x004D2368 File Offset: 0x004D0568
+		// Token: 0x17001B5E RID: 7006
+		// (get) Token: 0x0600D7C2 RID: 55234 RVA: 0x004D5E90 File Offset: 0x004D4090
 		public bool IsMultiplayerActivityActive
 		{
 			get
@@ -68,8 +68,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B17 RID: 6935
-		// (get) Token: 0x0600D6AF RID: 54959 RVA: 0x004D23AC File Offset: 0x004D05AC
+		// Token: 0x17001B5F RID: 7007
+		// (get) Token: 0x0600D7C3 RID: 55235 RVA: 0x004D5ED4 File Offset: 0x004D40D4
 		public XUserLocalId LocalID
 		{
 			get
@@ -78,8 +78,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B18 RID: 6936
-		// (get) Token: 0x0600D6B0 RID: 54960 RVA: 0x004D23B4 File Offset: 0x004D05B4
+		// Token: 0x17001B60 RID: 7008
+		// (get) Token: 0x0600D7C4 RID: 55236 RVA: 0x004D5EDC File Offset: 0x004D40DC
 		public ulong Xuid
 		{
 			get
@@ -88,8 +88,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B19 RID: 6937
-		// (get) Token: 0x0600D6B1 RID: 54961 RVA: 0x004D23BC File Offset: 0x004D05BC
+		// Token: 0x17001B61 RID: 7009
+		// (get) Token: 0x0600D7C5 RID: 55237 RVA: 0x004D5EE4 File Offset: 0x004D40E4
 		public Unity.XGamingRuntime.XblContextHandle XblContextHandle
 		{
 			get
@@ -98,8 +98,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B1A RID: 6938
-		// (get) Token: 0x0600D6B2 RID: 54962 RVA: 0x004D23C4 File Offset: 0x004D05C4
+		// Token: 0x17001B62 RID: 7010
+		// (get) Token: 0x0600D7C6 RID: 55238 RVA: 0x004D5EEC File Offset: 0x004D40EC
 		public XUserHandle UserHandle
 		{
 			get
@@ -108,9 +108,9 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B1B RID: 6939
-		// (get) Token: 0x0600D6B3 RID: 54963 RVA: 0x004D23CC File Offset: 0x004D05CC
-		// (set) Token: 0x0600D6B4 RID: 54964 RVA: 0x004D23D4 File Offset: 0x004D05D4
+		// Token: 0x17001B63 RID: 7011
+		// (get) Token: 0x0600D7C7 RID: 55239 RVA: 0x004D5EF4 File Offset: 0x004D40F4
+		// (set) Token: 0x0600D7C8 RID: 55240 RVA: 0x004D5EFC File Offset: 0x004D40FC
 		public EUserStatus UserStatus
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
@@ -118,8 +118,8 @@ namespace Platform.XBL
 		} = EUserStatus.NotAttempted;
 
 		// Token: 0x1400012B RID: 299
-		// (add) Token: 0x0600D6B5 RID: 54965 RVA: 0x004D23E0 File Offset: 0x004D05E0
-		// (remove) Token: 0x0600D6B6 RID: 54966 RVA: 0x004D244C File Offset: 0x004D064C
+		// (add) Token: 0x0600D7C9 RID: 55241 RVA: 0x004D5F08 File Offset: 0x004D4108
+		// (remove) Token: 0x0600D7CA RID: 55242 RVA: 0x004D5F74 File Offset: 0x004D4174
 		public event Action<XUserHandle> UserHandleReady
 		{
 			add
@@ -145,8 +145,8 @@ namespace Platform.XBL
 		}
 
 		// Token: 0x1400012C RID: 300
-		// (add) Token: 0x0600D6B7 RID: 54967 RVA: 0x004D24A0 File Offset: 0x004D06A0
-		// (remove) Token: 0x0600D6B8 RID: 54968 RVA: 0x004D2508 File Offset: 0x004D0708
+		// (add) Token: 0x0600D7CB RID: 55243 RVA: 0x004D5FC8 File Offset: 0x004D41C8
+		// (remove) Token: 0x0600D7CC RID: 55244 RVA: 0x004D6030 File Offset: 0x004D4230
 		public event Action<IPlatform> UserLoggedIn
 		{
 			add
@@ -172,12 +172,12 @@ namespace Platform.XBL
 		}
 
 		// Token: 0x1400012D RID: 301
-		// (add) Token: 0x0600D6B9 RID: 54969 RVA: 0x004D255C File Offset: 0x004D075C
-		// (remove) Token: 0x0600D6BA RID: 54970 RVA: 0x004D2594 File Offset: 0x004D0794
+		// (add) Token: 0x0600D7CD RID: 55245 RVA: 0x004D6084 File Offset: 0x004D4284
+		// (remove) Token: 0x0600D7CE RID: 55246 RVA: 0x004D60BC File Offset: 0x004D42BC
 		public event UserBlocksChangedCallback UserBlocksChanged;
 
-		// Token: 0x17001B1C RID: 6940
-		// (get) Token: 0x0600D6BB RID: 54971 RVA: 0x004D25C9 File Offset: 0x004D07C9
+		// Token: 0x17001B64 RID: 7012
+		// (get) Token: 0x0600D7CF RID: 55247 RVA: 0x004D60F1 File Offset: 0x004D42F1
 		public PlatformUserIdentifierAbs PlatformUserId
 		{
 			get
@@ -186,43 +186,43 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B1D RID: 6941
-		// (get) Token: 0x0600D6BC RID: 54972 RVA: 0x004D25D6 File Offset: 0x004D07D6
-		// (set) Token: 0x0600D6BD RID: 54973 RVA: 0x004D25DE File Offset: 0x004D07DE
+		// Token: 0x17001B65 RID: 7013
+		// (get) Token: 0x0600D7D0 RID: 55248 RVA: 0x004D60FE File Offset: 0x004D42FE
+		// (set) Token: 0x0600D7D1 RID: 55249 RVA: 0x004D6106 File Offset: 0x004D4306
 		public string GamerTag
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B1E RID: 6942
-		// (get) Token: 0x0600D6BE RID: 54974 RVA: 0x004D25E7 File Offset: 0x004D07E7
-		// (set) Token: 0x0600D6BF RID: 54975 RVA: 0x004D25EF File Offset: 0x004D07EF
+		// Token: 0x17001B66 RID: 7014
+		// (get) Token: 0x0600D7D2 RID: 55250 RVA: 0x004D610F File Offset: 0x004D430F
+		// (set) Token: 0x0600D7D3 RID: 55251 RVA: 0x004D6117 File Offset: 0x004D4317
 		public SocialManagerXbl SocialManager
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B1F RID: 6943
-		// (get) Token: 0x0600D6C0 RID: 54976 RVA: 0x004D25F8 File Offset: 0x004D07F8
-		// (set) Token: 0x0600D6C1 RID: 54977 RVA: 0x004D2600 File Offset: 0x004D0800
+		// Token: 0x17001B67 RID: 7015
+		// (get) Token: 0x0600D7D4 RID: 55252 RVA: 0x004D6120 File Offset: 0x004D4320
+		// (set) Token: 0x0600D7D5 RID: 55253 RVA: 0x004D6128 File Offset: 0x004D4328
 		public MultiplayerActivityQueryManager MultiplayerActivityQueryManager
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B20 RID: 6944
-		// (get) Token: 0x0600D6C2 RID: 54978 RVA: 0x004D2609 File Offset: 0x004D0809
-		// (set) Token: 0x0600D6C3 RID: 54979 RVA: 0x004D2611 File Offset: 0x004D0811
+		// Token: 0x17001B68 RID: 7016
+		// (get) Token: 0x0600D7D6 RID: 55254 RVA: 0x004D6131 File Offset: 0x004D4331
+		// (set) Token: 0x0600D7D7 RID: 55255 RVA: 0x004D6139 File Offset: 0x004D4339
 		public XblSandboxHelper SandboxHelper
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = new XblSandboxHelper();
 
-		// Token: 0x0600D6C4 RID: 54980 RVA: 0x004D261C File Offset: 0x004D081C
+		// Token: 0x0600D7D8 RID: 55256 RVA: 0x004D6144 File Offset: 0x004D4344
 		public void Init(IPlatform _owner)
 		{
 			this.m_owner = _owner;
@@ -236,7 +236,7 @@ namespace Platform.XBL
 			this.m_appState.OnNetworkStateChanged += this.OnNetworkStateChanged;
 		}
 
-		// Token: 0x0600D6C5 RID: 54981 RVA: 0x004D26B8 File Offset: 0x004D08B8
+		// Token: 0x0600D7D9 RID: 55257 RVA: 0x004D61E0 File Offset: 0x004D43E0
 		public void Destroy()
 		{
 			this.m_appState.OnNetworkStateChanged -= this.OnNetworkStateChanged;
@@ -251,7 +251,7 @@ namespace Platform.XBL
 			this.m_api.ClientApiInitialized -= this.OnClientApiInitialized;
 		}
 
-		// Token: 0x0600D6C6 RID: 54982 RVA: 0x004D2730 File Offset: 0x004D0930
+		// Token: 0x0600D7DA RID: 55258 RVA: 0x004D6258 File Offset: 0x004D4458
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetNameOnPlayerLogin(IPlatform platform)
 		{
@@ -265,7 +265,7 @@ namespace Platform.XBL
 			this.GamerTag = text;
 		}
 
-		// Token: 0x0600D6C7 RID: 54983 RVA: 0x004D276C File Offset: 0x004D096C
+		// Token: 0x0600D7DB RID: 55259 RVA: 0x004D6294 File Offset: 0x004D4494
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClientApiInitialized()
 		{
@@ -273,7 +273,7 @@ namespace Platform.XBL
 			SDK.XUserAddAsync(XUserAddOptions.AddDefaultUserSilently, new XUserAddCompleted(this.<OnClientApiInitialized>g__XUserAddAsyncSilentCompletionRoutine|77_0));
 		}
 
-		// Token: 0x0600D6C8 RID: 54984 RVA: 0x004D278C File Offset: 0x004D098C
+		// Token: 0x0600D7DC RID: 55260 RVA: 0x004D62B4 File Offset: 0x004D44B4
 		public void Login(LoginUserCallback _delegate)
 		{
 			User.<>c__DisplayClass78_0 CS$<>8__locals1 = new User.<>c__DisplayClass78_0();
@@ -295,7 +295,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6C9 RID: 54985 RVA: 0x004D2858 File Offset: 0x004D0A58
+		// Token: 0x0600D7DD RID: 55261 RVA: 0x004D6380 File Offset: 0x004D4580
 		public void PlayOffline(LoginUserCallback _delegate)
 		{
 			if (!this.m_idProvider.LoadOfflineId())
@@ -314,13 +314,13 @@ namespace Platform.XBL
 			userLoggedIn(this.m_owner);
 		}
 
-		// Token: 0x0600D6CA RID: 54986 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x0600D7DE RID: 55262 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public Action IsConnectToServerFromCommandline()
 		{
 			return null;
 		}
 
-		// Token: 0x0600D6CB RID: 54987 RVA: 0x004D28B4 File Offset: 0x004D0AB4
+		// Token: 0x0600D7DF RID: 55263 RVA: 0x004D63DC File Offset: 0x004D45DC
 		public void StartAdvertisePlaying(GameServerInfo _serverInfo)
 		{
 			if (_serverInfo == null)
@@ -344,7 +344,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6CC RID: 54988 RVA: 0x004D292C File Offset: 0x004D0B2C
+		// Token: 0x0600D7E0 RID: 55264 RVA: 0x004D6454 File Offset: 0x004D4654
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RegisterGameServerInfoEvents(GameServerInfo _serverInfo)
 		{
@@ -352,7 +352,7 @@ namespace Platform.XBL
 			_serverInfo.OnChangedInt += this.OnServerInfoChangedInt;
 		}
 
-		// Token: 0x0600D6CD RID: 54989 RVA: 0x004D2952 File Offset: 0x004D0B52
+		// Token: 0x0600D7E1 RID: 55265 RVA: 0x004D647A File Offset: 0x004D467A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UnregisterGameServerInfoEvents(GameServerInfo _serverInfo)
 		{
@@ -360,7 +360,7 @@ namespace Platform.XBL
 			_serverInfo.OnChangedString -= this.OnServerInfoChangedString;
 		}
 
-		// Token: 0x0600D6CE RID: 54990 RVA: 0x004D2978 File Offset: 0x004D0B78
+		// Token: 0x0600D7E2 RID: 55266 RVA: 0x004D64A0 File Offset: 0x004D46A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnServerInfoChangedString(GameServerInfo _serverInfo, GameInfoString _key)
 		{
@@ -370,7 +370,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6CF RID: 54991 RVA: 0x004D2986 File Offset: 0x004D0B86
+		// Token: 0x0600D7E3 RID: 55267 RVA: 0x004D64AE File Offset: 0x004D46AE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnServerInfoChangedInt(GameServerInfo _serverInfo, GameInfoInt _key)
 		{
@@ -380,7 +380,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6D0 RID: 54992 RVA: 0x004D299C File Offset: 0x004D0B9C
+		// Token: 0x0600D7E4 RID: 55268 RVA: 0x004D64C4 File Offset: 0x004D46C4
 		public void StopAdvertisePlaying()
 		{
 			object activityLock = this.m_activityLock;
@@ -396,7 +396,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6D1 RID: 54993 RVA: 0x004D2A00 File Offset: 0x004D0C00
+		// Token: 0x0600D7E5 RID: 55269 RVA: 0x004D6528 File Offset: 0x004D4728
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DeleteActivity()
 		{
@@ -419,7 +419,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6D2 RID: 54994 RVA: 0x004D2A8C File Offset: 0x004D0C8C
+		// Token: 0x0600D7E6 RID: 55270 RVA: 0x004D65B4 File Offset: 0x004D47B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnNetworkStateChanged(bool state)
 		{
@@ -433,7 +433,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6D3 RID: 54995 RVA: 0x004D2ADC File Offset: 0x004D0CDC
+		// Token: 0x0600D7E7 RID: 55271 RVA: 0x004D6604 File Offset: 0x004D4804
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetActivity(GameServerInfo _serverInfo)
 		{
@@ -489,7 +489,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6D4 RID: 54996 RVA: 0x004D2BE4 File Offset: 0x004D0DE4
+		// Token: 0x0600D7E8 RID: 55272 RVA: 0x004D670C File Offset: 0x004D490C
 		public void GetLoginTicket(Action<bool, byte[], string> _callback)
 		{
 			User.<>c__DisplayClass93_0 CS$<>8__locals1 = new User.<>c__DisplayClass93_0();
@@ -503,13 +503,13 @@ namespace Platform.XBL
 			SDK.XUserGetTokenAndSignatureUtf16Async(this.m_userHandle, XUserGetTokenAndSignatureOptions.None, "GET", "https://eos.epicgames.com", User.eosRelyingPartyRequestHeaders, null, new XUserGetTokenAndSignatureUtf16Result(CS$<>8__locals1.<GetLoginTicket>g__CompletionRoutine|0));
 		}
 
-		// Token: 0x0600D6D5 RID: 54997 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x0600D7E9 RID: 55273 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public string GetFriendName(PlatformUserIdentifierAbs _playerId)
 		{
 			return null;
 		}
 
-		// Token: 0x0600D6D6 RID: 54998 RVA: 0x004D2C50 File Offset: 0x004D0E50
+		// Token: 0x0600D7EA RID: 55274 RVA: 0x004D6778 File Offset: 0x004D4978
 		public bool IsFriend(PlatformUserIdentifierAbs _playerId)
 		{
 			ulong xuid = XblXuidMapper.GetXuid(_playerId);
@@ -521,13 +521,13 @@ namespace Platform.XBL
 			return friendsListXbl != null && friendsListXbl.IsFriend(xuid);
 		}
 
-		// Token: 0x0600D6D7 RID: 54999 RVA: 0x004D2C7B File Offset: 0x004D0E7B
+		// Token: 0x0600D7EB RID: 55275 RVA: 0x004D67A3 File Offset: 0x004D49A3
 		public bool CanShowProfile(PlatformUserIdentifierAbs _playerId)
 		{
 			return XblXuidMapper.GetXuid(_playerId) > 0UL;
 		}
 
-		// Token: 0x0600D6D8 RID: 55000 RVA: 0x004D2C88 File Offset: 0x004D0E88
+		// Token: 0x0600D7EC RID: 55276 RVA: 0x004D67B0 File Offset: 0x004D49B0
 		public void ShowProfile(PlatformUserIdentifierAbs _playerId)
 		{
 			ulong xuid = XblXuidMapper.GetXuid(_playerId);
@@ -546,8 +546,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B21 RID: 6945
-		// (get) Token: 0x0600D6D9 RID: 55001 RVA: 0x004D2CCC File Offset: 0x004D0ECC
+		// Token: 0x17001B69 RID: 7017
+		// (get) Token: 0x0600D7ED RID: 55277 RVA: 0x004D67F4 File Offset: 0x004D49F4
 		public EUserPerms Permissions
 		{
 			get
@@ -573,13 +573,13 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6DA RID: 55002 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x0600D7EE RID: 55278 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public string GetPermissionDenyReason(EUserPerms _perms)
 		{
 			return null;
 		}
 
-		// Token: 0x0600D6DB RID: 55003 RVA: 0x004D2D29 File Offset: 0x004D0F29
+		// Token: 0x0600D7EF RID: 55279 RVA: 0x004D6851 File Offset: 0x004D4A51
 		public IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 		{
 			Log.Out(string.Format("[XBL] {0}({1}: [{2}], {3}: {4})", new object[] { "ResolvePermissions", "_perms", _perms, "_canPrompt", _canPrompt }));
@@ -591,7 +591,7 @@ namespace Platform.XBL
 			yield break;
 		}
 
-		// Token: 0x0600D6DC RID: 55004 RVA: 0x004D2D4D File Offset: 0x004D0F4D
+		// Token: 0x0600D7F0 RID: 55280 RVA: 0x004D6875 File Offset: 0x004D4A75
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnXuidMapped(IReadOnlyCollection<PlatformUserIdentifierAbs> userIds, ulong xuid)
 		{
@@ -603,7 +603,7 @@ namespace Platform.XBL
 			userBlocksChanged(userIds);
 		}
 
-		// Token: 0x0600D6DD RID: 55005 RVA: 0x004D2D60 File Offset: 0x004D0F60
+		// Token: 0x0600D7F1 RID: 55281 RVA: 0x004D6888 File Offset: 0x004D4A88
 		public IEnumerator ResolveUserBlocks(IReadOnlyList<IPlatformUserBlockedResults> _results)
 		{
 			User.<>c__DisplayClass103_0 CS$<>8__locals1 = new User.<>c__DisplayClass103_0();
@@ -638,7 +638,7 @@ namespace Platform.XBL
 			yield break;
 		}
 
-		// Token: 0x0600D6DE RID: 55006 RVA: 0x004D2D78 File Offset: 0x004D0F78
+		// Token: 0x0600D7F2 RID: 55282 RVA: 0x004D68A0 File Offset: 0x004D4AA0
 		public EMatchmakingGroup GetMatchmakingGroup()
 		{
 			string sandboxId = this.SandboxHelper.SandboxId;
@@ -651,7 +651,7 @@ namespace Platform.XBL
 			return XblSandboxHelper.SandboxIdToMatchmakingGroup(sandboxId);
 		}
 
-		// Token: 0x0600D6E0 RID: 55008 RVA: 0x004D2E14 File Offset: 0x004D1014
+		// Token: 0x0600D7F4 RID: 55284 RVA: 0x004D693C File Offset: 0x004D4B3C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__XUserAddAsyncSilentCompletionRoutine|77_0(int hr, XUserHandle userHandle)
@@ -672,7 +672,7 @@ namespace Platform.XBL
 			SDK.XUserAddAsync(XUserAddOptions.AddDefaultUserSilently, new XUserAddCompleted(this.<OnClientApiInitialized>g__XUserAddAsyncSilentCompletionRoutine|77_0));
 		}
 
-		// Token: 0x0600D6E1 RID: 55009 RVA: 0x004D2E7A File Offset: 0x004D107A
+		// Token: 0x0600D7F5 RID: 55285 RVA: 0x004D69A2 File Offset: 0x004D4BA2
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__XUserAddAsyncAllowingUICompletionRoutine|77_1(int hr, XUserHandle userHandle)
@@ -687,7 +687,7 @@ namespace Platform.XBL
 			SDK.XUserAddAsync(XUserAddOptions.AddDefaultUserSilently, new XUserAddCompleted(this.<OnClientApiInitialized>g__XUserAddAsyncSilentCompletionRoutine|77_0));
 		}
 
-		// Token: 0x0600D6E2 RID: 55010 RVA: 0x004D2EB4 File Offset: 0x004D10B4
+		// Token: 0x0600D7F6 RID: 55286 RVA: 0x004D69DC File Offset: 0x004D4BDC
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__XUserAddSucceeded|77_2(XUserHandle userHandle)
@@ -709,7 +709,7 @@ namespace Platform.XBL
 			this.<OnClientApiInitialized>g__GetXuid|77_3();
 		}
 
-		// Token: 0x0600D6E3 RID: 55011 RVA: 0x004D2F50 File Offset: 0x004D1150
+		// Token: 0x0600D7F7 RID: 55287 RVA: 0x004D6A78 File Offset: 0x004D4C78
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__GetXuid|77_3()
@@ -729,7 +729,7 @@ namespace Platform.XBL
 			this.<OnClientApiInitialized>g__DoLoginUserCallback|77_7(EUserStatus.PermanentError, EApiStatusReason.Other, "Could not obtain User's Xuid.");
 		}
 
-		// Token: 0x0600D6E4 RID: 55012 RVA: 0x004D2FA6 File Offset: 0x004D11A6
+		// Token: 0x0600D7F8 RID: 55288 RVA: 0x004D6ACE File Offset: 0x004D4CCE
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__ResolveXuidIssue|77_4()
@@ -737,7 +737,7 @@ namespace Platform.XBL
 			SDK.XUserResolveIssueWithUiUtf16Async(this.m_userHandle, null, new XUserResolveIssueWithUiUtf16Result(this.<OnClientApiInitialized>g__ResolveXuidIssueCompletionRoutine|77_5));
 		}
 
-		// Token: 0x0600D6E5 RID: 55013 RVA: 0x004D2FC1 File Offset: 0x004D11C1
+		// Token: 0x0600D7F9 RID: 55289 RVA: 0x004D6AE9 File Offset: 0x004D4CE9
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__ResolveXuidIssueCompletionRoutine|77_5(int hrResolve)
@@ -746,7 +746,7 @@ namespace Platform.XBL
 			this.<OnClientApiInitialized>g__GetXuid|77_3();
 		}
 
-		// Token: 0x0600D6E6 RID: 55014 RVA: 0x004D2FD8 File Offset: 0x004D11D8
+		// Token: 0x0600D7FA RID: 55290 RVA: 0x004D6B00 File Offset: 0x004D4D00
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__PostLogin|77_6()
@@ -769,7 +769,7 @@ namespace Platform.XBL
 			this.<OnClientApiInitialized>g__DoLoginUserCallback|77_7(EUserStatus.LoggedIn, EApiStatusReason.Ok, null);
 		}
 
-		// Token: 0x0600D6E7 RID: 55015 RVA: 0x004D3064 File Offset: 0x004D1264
+		// Token: 0x0600D7FB RID: 55291 RVA: 0x004D6B8C File Offset: 0x004D4D8C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <OnClientApiInitialized>g__DoLoginUserCallback|77_7(EUserStatus userStatus, EApiStatusReason reason, string reasonAdditional)
@@ -792,7 +792,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6E8 RID: 55016 RVA: 0x004D310C File Offset: 0x004D130C
+		// Token: 0x0600D7FC RID: 55292 RVA: 0x004D6C34 File Offset: 0x004D4E34
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <DeleteActivity>g__CompletionRoutine|87_0(int _hresult)
@@ -835,7 +835,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D6E9 RID: 55017 RVA: 0x004D31F0 File Offset: 0x004D13F0
+		// Token: 0x0600D7FD RID: 55293 RVA: 0x004D6D18 File Offset: 0x004D4F18
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <SetActivity>g__CompletionRoutine|89_0(int _hresult)
@@ -863,142 +863,142 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0400A2F4 RID: 41716
+		// Token: 0x0400A3DD RID: 41949
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly EnumDictionary<XblPermission, EBlockType> xblPermissionToBlockType;
 
-		// Token: 0x0400A2F5 RID: 41717
+		// Token: 0x0400A3DE RID: 41950
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly XblPermission[] userBlockedPermissions;
 
-		// Token: 0x0400A2F6 RID: 41718
+		// Token: 0x0400A3DF RID: 41951
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly XblAnonymousUserType[] userBlockedAnonymousTypes;
 
-		// Token: 0x0400A2F7 RID: 41719
+		// Token: 0x0400A3E0 RID: 41952
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform m_owner;
 
-		// Token: 0x0400A2F8 RID: 41720
+		// Token: 0x0400A3E1 RID: 41953
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatformApi m_api;
 
-		// Token: 0x0400A2F9 RID: 41721
+		// Token: 0x0400A3E2 RID: 41954
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IApplicationStateController m_appState;
 
-		// Token: 0x0400A2FA RID: 41722
+		// Token: 0x0400A3E3 RID: 41955
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUserHandle m_userHandle;
 
-		// Token: 0x0400A2FB RID: 41723
+		// Token: 0x0400A3E4 RID: 41956
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_userHandleLock = new object();
 
-		// Token: 0x0400A2FC RID: 41724
+		// Token: 0x0400A3E5 RID: 41957
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<XUserHandle> m_userHandleReady;
 
-		// Token: 0x0400A2FD RID: 41725
+		// Token: 0x0400A3E6 RID: 41958
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Unity.XGamingRuntime.XblContextHandle m_contextHandle;
 
-		// Token: 0x0400A2FE RID: 41726
+		// Token: 0x0400A3E7 RID: 41959
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUserLocalId m_userLocalId;
 
-		// Token: 0x0400A2FF RID: 41727
+		// Token: 0x0400A3E8 RID: 41960
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong m_userXuid;
 
-		// Token: 0x0400A300 RID: 41728
+		// Token: 0x0400A3E9 RID: 41961
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserIdentifierXbl m_platformUserId;
 
-		// Token: 0x0400A301 RID: 41729
+		// Token: 0x0400A3EA RID: 41962
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_loginLock = new object();
 
-		// Token: 0x0400A302 RID: 41730
+		// Token: 0x0400A3EB RID: 41963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_loginDone;
 
-		// Token: 0x0400A303 RID: 41731
+		// Token: 0x0400A3EC RID: 41964
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EUserStatus m_loginUserStatus;
 
-		// Token: 0x0400A304 RID: 41732
+		// Token: 0x0400A3ED RID: 41965
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LoginUserCallback m_loginUserCallback;
 
-		// Token: 0x0400A305 RID: 41733
+		// Token: 0x0400A3EE RID: 41966
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EApiStatusReason m_loginUserCallbackReason;
 
-		// Token: 0x0400A306 RID: 41734
+		// Token: 0x0400A3EF RID: 41967
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string m_loginUserCallbackReasonAdditional;
 
-		// Token: 0x0400A307 RID: 41735
+		// Token: 0x0400A3F0 RID: 41968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserPrivilegeHelper m_privilegeHelper;
 
-		// Token: 0x0400A308 RID: 41736
+		// Token: 0x0400A3F1 RID: 41969
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_activityLock = new object();
 
-		// Token: 0x0400A309 RID: 41737
+		// Token: 0x0400A3F2 RID: 41970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerInfo m_activityLastServerInfo;
 
-		// Token: 0x0400A30A RID: 41738
+		// Token: 0x0400A3F3 RID: 41971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_isActivityActive;
 
-		// Token: 0x0400A30B RID: 41739
+		// Token: 0x0400A3F4 RID: 41972
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_shouldActivityBeActive;
 
-		// Token: 0x0400A30C RID: 41740
+		// Token: 0x0400A3F5 RID: 41973
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_shouldRetryDeleteActivity;
 
-		// Token: 0x0400A30D RID: 41741
+		// Token: 0x0400A3F6 RID: 41974
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_currentlyDeletingActivity;
 
-		// Token: 0x0400A30E RID: 41742
+		// Token: 0x0400A3F7 RID: 41975
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<ulong, IPlatformUserBlockedResults> userBlockedXuidToResultsTemp = new Dictionary<ulong, IPlatformUserBlockedResults>();
 
-		// Token: 0x0400A30F RID: 41743
+		// Token: 0x0400A3F8 RID: 41976
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<IPlatformUserBlockedResults> userBlockedAnonymousResultsTemp = new List<IPlatformUserBlockedResults>();
 
-		// Token: 0x0400A311 RID: 41745
+		// Token: 0x0400A3FA RID: 41978
 		public string SandboxName;
 
-		// Token: 0x0400A312 RID: 41746
+		// Token: 0x0400A3FB RID: 41979
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<IPlatform> m_userLoggedIn;
 
-		// Token: 0x0400A314 RID: 41748
+		// Token: 0x0400A3FD RID: 41981
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IdProviderGameCore m_idProvider;
 
-		// Token: 0x0400A317 RID: 41751
+		// Token: 0x0400A400 RID: 41984
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FriendsListXbl friendsList;
 
-		// Token: 0x0400A31A RID: 41754
+		// Token: 0x0400A403 RID: 41987
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string eosRelyingPartyUrl = "https://eos.epicgames.com";
 
-		// Token: 0x0400A31B RID: 41755
+		// Token: 0x0400A404 RID: 41988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string eosRelyingPartyHttpMethod = "GET";
 
-		// Token: 0x0400A31C RID: 41756
+		// Token: 0x0400A405 RID: 41989
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly XUserGetTokenAndSignatureUtf16HttpHeader[] eosRelyingPartyRequestHeaders = new XUserGetTokenAndSignatureUtf16HttpHeader[]
 		{

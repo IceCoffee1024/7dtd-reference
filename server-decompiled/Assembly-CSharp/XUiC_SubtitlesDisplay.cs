@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200108F RID: 4239
+// Token: 0x0200109F RID: 4255
 [Preserve]
 public class XUiC_SubtitlesDisplay : XUiController
 {
-	// Token: 0x17000FD7 RID: 4055
-	// (get) Token: 0x06008676 RID: 34422 RVA: 0x00336048 File Offset: 0x00334248
+	// Token: 0x17000FE2 RID: 4066
+	// (get) Token: 0x060086C9 RID: 34505 RVA: 0x003380CC File Offset: 0x003362CC
 	public static NGUIWindowManager PlayerNguiWindowManager
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -25,9 +25,9 @@ public class XUiC_SubtitlesDisplay : XUiController
 		}
 	}
 
-	// Token: 0x17000FD8 RID: 4056
-	// (get) Token: 0x06008677 RID: 34423 RVA: 0x00336081 File Offset: 0x00334281
-	// (set) Token: 0x06008678 RID: 34424 RVA: 0x00336088 File Offset: 0x00334288
+	// Token: 0x17000FE3 RID: 4067
+	// (get) Token: 0x060086CA RID: 34506 RVA: 0x00338105 File Offset: 0x00336305
+	// (set) Token: 0x060086CB RID: 34507 RVA: 0x0033810C File Offset: 0x0033630C
 	public static bool IsDisplaying
 	{
 		get
@@ -45,7 +45,7 @@ public class XUiC_SubtitlesDisplay : XUiController
 		}
 	}
 
-	// Token: 0x06008679 RID: 34425 RVA: 0x003360AC File Offset: 0x003342AC
+	// Token: 0x060086CC RID: 34508 RVA: 0x00338130 File Offset: 0x00336330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSubtitle(string _speaker, string _content, float _duration, bool _centerAlign)
 	{
@@ -58,7 +58,7 @@ public class XUiC_SubtitlesDisplay : XUiController
 		XUiC_SubtitlesDisplay.IsDisplaying = true;
 	}
 
-	// Token: 0x0600867A RID: 34426 RVA: 0x00336108 File Offset: 0x00334308
+	// Token: 0x060086CD RID: 34509 RVA: 0x0033818C File Offset: 0x0033638C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -71,14 +71,14 @@ public class XUiC_SubtitlesDisplay : XUiController
 		}
 	}
 
-	// Token: 0x0600867B RID: 34427 RVA: 0x00336188 File Offset: 0x00334388
+	// Token: 0x060086CE RID: 34510 RVA: 0x0033820C File Offset: 0x0033640C
 	public override void OnClose()
 	{
 		base.OnClose();
 		XUiC_SubtitlesDisplay.IsDisplaying = false;
 	}
 
-	// Token: 0x0600867C RID: 34428 RVA: 0x00336198 File Offset: 0x00334398
+	// Token: 0x060086CF RID: 34511 RVA: 0x0033821C File Offset: 0x0033641C
 	public static void DisplaySubtitle(XUi _xui, string _speakerText, string _contentText, float _duration = 3f, bool _centerAlign = false)
 	{
 		XUiC_SubtitlesDisplay instance = XUiC_SubtitlesDisplay.getInstance(_xui);
@@ -94,7 +94,7 @@ public class XUiC_SubtitlesDisplay : XUiController
 		}
 	}
 
-	// Token: 0x0600867D RID: 34429 RVA: 0x00336200 File Offset: 0x00334400
+	// Token: 0x060086D0 RID: 34512 RVA: 0x00338284 File Offset: 0x00336484
 	public static void Close(XUi _xui)
 	{
 		XUiC_SubtitlesDisplay instance = XUiC_SubtitlesDisplay.getInstance(_xui);
@@ -105,64 +105,64 @@ public class XUiC_SubtitlesDisplay : XUiController
 		_xui.playerUI.windowManager.Close(instance.windowGroup, false);
 	}
 
-	// Token: 0x0600867E RID: 34430 RVA: 0x0033622F File Offset: 0x0033442F
+	// Token: 0x060086D1 RID: 34513 RVA: 0x003382B3 File Offset: 0x003364B3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_SubtitlesDisplay getInstance(XUi _xui)
 	{
 		return _xui.GetChildByType<XUiC_SubtitlesDisplay>();
 	}
 
-	// Token: 0x040063ED RID: 25581
+	// Token: 0x0400642C RID: 25644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float MinDuration = 3f;
 
-	// Token: 0x040063EE RID: 25582
+	// Token: 0x0400642D RID: 25645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float DurationAdd = 1f;
 
-	// Token: 0x040063EF RID: 25583
+	// Token: 0x0400642E RID: 25646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int LabelPadding = 28;
 
-	// Token: 0x040063F0 RID: 25584
+	// Token: 0x0400642F RID: 25647
 	[XuiBindComponent("lblSpeaker", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label speakerLabel;
 
-	// Token: 0x040063F1 RID: 25585
+	// Token: 0x04006430 RID: 25648
 	[XuiBindComponent("lblSubtitle", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label subtitlesLabel;
 
-	// Token: 0x040063F2 RID: 25586
+	// Token: 0x04006431 RID: 25649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float openTime;
 
-	// Token: 0x040063F3 RID: 25587
+	// Token: 0x04006432 RID: 25650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float duration;
 
-	// Token: 0x040063F4 RID: 25588
+	// Token: 0x04006433 RID: 25651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int targetHeight = 64;
 
-	// Token: 0x040063F5 RID: 25589
+	// Token: 0x04006434 RID: 25652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pendingUpdate;
 
-	// Token: 0x040063F6 RID: 25590
+	// Token: 0x04006435 RID: 25653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string pendingText = "";
 
-	// Token: 0x040063F7 RID: 25591
+	// Token: 0x04006436 RID: 25654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGUIText.Alignment alignment = NGUIText.Alignment.Left;
 
-	// Token: 0x040063F8 RID: 25592
+	// Token: 0x04006437 RID: 25655
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool isDisplaying;
 
-	// Token: 0x040063F9 RID: 25593
+	// Token: 0x04006438 RID: 25656
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NGUIWindowManager _playerNguiWindowManager;
 }

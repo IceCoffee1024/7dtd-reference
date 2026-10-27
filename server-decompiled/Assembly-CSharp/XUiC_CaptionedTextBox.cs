@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E7E RID: 3710
+// Token: 0x02000E89 RID: 3721
 [Preserve]
 public class XUiC_CaptionedTextBox : XUiController
 {
-	// Token: 0x17000D1A RID: 3354
-	// (get) Token: 0x060071F8 RID: 29176 RVA: 0x002BD634 File Offset: 0x002BB834
-	// (set) Token: 0x060071F9 RID: 29177 RVA: 0x002BD641 File Offset: 0x002BB841
+	// Token: 0x17000D20 RID: 3360
+	// (get) Token: 0x0600721D RID: 29213 RVA: 0x002BEBA0 File Offset: 0x002BCDA0
+	// (set) Token: 0x0600721E RID: 29214 RVA: 0x002BEBAD File Offset: 0x002BCDAD
 	public string Text
 	{
 		get
@@ -21,16 +21,16 @@ public class XUiC_CaptionedTextBox : XUiController
 	}
 
 	// Token: 0x140000A5 RID: 165
-	// (add) Token: 0x060071FA RID: 29178 RVA: 0x002BD650 File Offset: 0x002BB850
-	// (remove) Token: 0x060071FB RID: 29179 RVA: 0x002BD688 File Offset: 0x002BB888
+	// (add) Token: 0x0600721F RID: 29215 RVA: 0x002BEBBC File Offset: 0x002BCDBC
+	// (remove) Token: 0x06007220 RID: 29216 RVA: 0x002BEBF4 File Offset: 0x002BCDF4
 	public event XUiEvent_InputOnSubmitEventHandler OnSubmitHandler;
 
 	// Token: 0x140000A6 RID: 166
-	// (add) Token: 0x060071FC RID: 29180 RVA: 0x002BD6C0 File Offset: 0x002BB8C0
-	// (remove) Token: 0x060071FD RID: 29181 RVA: 0x002BD6F8 File Offset: 0x002BB8F8
+	// (add) Token: 0x06007221 RID: 29217 RVA: 0x002BEC2C File Offset: 0x002BCE2C
+	// (remove) Token: 0x06007222 RID: 29218 RVA: 0x002BEC64 File Offset: 0x002BCE64
 	public event XUiEvent_InputOnChangedEventHandler OnChangeHandler;
 
-	// Token: 0x060071FE RID: 29182 RVA: 0x002BD72D File Offset: 0x002BB92D
+	// Token: 0x06007223 RID: 29219 RVA: 0x002BEC99 File Offset: 0x002BCE99
 	public override void Init()
 	{
 		base.Init();
@@ -38,14 +38,14 @@ public class XUiC_CaptionedTextBox : XUiController
 		this.textInput.UIInputController.OnHover += this.Event_OnHover;
 	}
 
-	// Token: 0x060071FF RID: 29183 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06007224 RID: 29220 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCustomAttributeModified(object _sender, DictionaryChangedEventArgs<string, object> _e)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007200 RID: 29184 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06007225 RID: 29221 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[XuiBindEvent("OnInteraction", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAnyEvent(XUiController _sender, EXUiControllerInteractionType _type)
@@ -53,21 +53,21 @@ public class XUiC_CaptionedTextBox : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007201 RID: 29185 RVA: 0x00291183 File Offset: 0x0028F383
+	// Token: 0x06007226 RID: 29222 RVA: 0x002926AB File Offset: 0x002908AB
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06007202 RID: 29186 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06007227 RID: 29223 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Event_OnHover(XUiController _sender, bool _isOver)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007203 RID: 29187 RVA: 0x002BD768 File Offset: 0x002BB968
+	// Token: 0x06007228 RID: 29224 RVA: 0x002BECD4 File Offset: 0x002BCED4
 	[XuiBindEvent("OnInputSelectedHandler", "textInput")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Event_OnInputSelected(XUiController _sender, bool _selected)
@@ -79,7 +79,7 @@ public class XUiC_CaptionedTextBox : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007204 RID: 29188 RVA: 0x002BD77A File Offset: 0x002BB97A
+	// Token: 0x06007229 RID: 29225 RVA: 0x002BECE6 File Offset: 0x002BCEE6
 	[XuiBindEvent("OnChangeHandler", "textInput")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Event_OnInputChanged(XUiController _sender, string _text, bool _changeFromCode)
@@ -95,7 +95,7 @@ public class XUiC_CaptionedTextBox : XUiController
 		}
 	}
 
-	// Token: 0x06007205 RID: 29189 RVA: 0x002BD7A3 File Offset: 0x002BB9A3
+	// Token: 0x0600722A RID: 29226 RVA: 0x002BED0F File Offset: 0x002BCF0F
 	[XuiBindEvent("OnSubmitHandler", "textInput")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Event_OnSubmitChanged(XUiController _sender, string _text)
@@ -108,7 +108,7 @@ public class XUiC_CaptionedTextBox : XUiController
 		onSubmitHandler(_sender, _text);
 	}
 
-	// Token: 0x06007206 RID: 29190 RVA: 0x002BD7B7 File Offset: 0x002BB9B7
+	// Token: 0x0600722B RID: 29227 RVA: 0x002BED23 File Offset: 0x002BCF23
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void switchToButtonIfEmpty()
 	{
@@ -123,8 +123,8 @@ public class XUiC_CaptionedTextBox : XUiController
 		}, 1);
 	}
 
-	// Token: 0x17000D1B RID: 3355
-	// (get) Token: 0x06007207 RID: 29191 RVA: 0x002BD7EE File Offset: 0x002BB9EE
+	// Token: 0x17000D21 RID: 3361
+	// (get) Token: 0x0600722C RID: 29228 RVA: 0x002BED5A File Offset: 0x002BCF5A
 	[XuiXmlBinding("box_enabled")]
 	public bool BindingEnabled
 	{
@@ -136,8 +136,8 @@ public class XUiC_CaptionedTextBox : XUiController
 		}
 	}
 
-	// Token: 0x17000D1C RID: 3356
-	// (get) Token: 0x06007208 RID: 29192 RVA: 0x002BD801 File Offset: 0x002BBA01
+	// Token: 0x17000D22 RID: 3362
+	// (get) Token: 0x0600722D RID: 29229 RVA: 0x002BED6D File Offset: 0x002BCF6D
 	[XuiXmlBinding("box_hovered")]
 	public bool BindingHovered
 	{
@@ -149,8 +149,8 @@ public class XUiC_CaptionedTextBox : XUiController
 		}
 	}
 
-	// Token: 0x17000D1D RID: 3357
-	// (get) Token: 0x06007209 RID: 29193 RVA: 0x002BD81E File Offset: 0x002BBA1E
+	// Token: 0x17000D23 RID: 3363
+	// (get) Token: 0x0600722E RID: 29230 RVA: 0x002BED8A File Offset: 0x002BCF8A
 	[XuiXmlBinding("box_empty")]
 	public bool BindingEmpty
 	{
@@ -162,8 +162,8 @@ public class XUiC_CaptionedTextBox : XUiController
 		}
 	}
 
-	// Token: 0x17000D1E RID: 3358
-	// (get) Token: 0x0600720A RID: 29194 RVA: 0x002BD837 File Offset: 0x002BBA37
+	// Token: 0x17000D24 RID: 3364
+	// (get) Token: 0x0600722F RID: 29231 RVA: 0x002BEDA3 File Offset: 0x002BCFA3
 	[XuiXmlBinding("box_selected")]
 	public bool BindingSelected
 	{
@@ -175,8 +175,8 @@ public class XUiC_CaptionedTextBox : XUiController
 		}
 	}
 
-	// Token: 0x17000D1F RID: 3359
-	// (get) Token: 0x0600720B RID: 29195 RVA: 0x002BD50E File Offset: 0x002BB70E
+	// Token: 0x17000D25 RID: 3365
+	// (get) Token: 0x06007230 RID: 29232 RVA: 0x002BEA7A File Offset: 0x002BCC7A
 	[XuiXmlBinding("box_attributes")]
 	public ObservableDictionary<string, object> BindingCustomAttributes
 	{
@@ -187,7 +187,7 @@ public class XUiC_CaptionedTextBox : XUiController
 		}
 	}
 
-	// Token: 0x0400560D RID: 22029
+	// Token: 0x04005632 RID: 22066
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput textInput;

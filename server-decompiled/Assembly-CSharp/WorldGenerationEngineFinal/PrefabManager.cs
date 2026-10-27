@@ -7,54 +7,54 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001748 RID: 5960
+	// Token: 0x02001779 RID: 6009
 	public class PrefabManager
 	{
-		// Token: 0x0600B976 RID: 47478 RVA: 0x00449980 File Offset: 0x00447B80
+		// Token: 0x0600BA8A RID: 47754 RVA: 0x0044D32C File Offset: 0x0044B52C
 		public PrefabManager(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B977 RID: 47479 RVA: 0x004499BB File Offset: 0x00447BBB
+		// Token: 0x0600BA8B RID: 47755 RVA: 0x0044D367 File Offset: 0x0044B567
 		public void LoadPrefabs()
 		{
 			this.prefabManagerData.LoadPrefabs();
 		}
 
-		// Token: 0x0600B978 RID: 47480 RVA: 0x004499C8 File Offset: 0x00447BC8
+		// Token: 0x0600BA8C RID: 47756 RVA: 0x0044D374 File Offset: 0x0044B574
 		public void ShufflePrefabData(int _seed)
 		{
 			this.prefabManagerData.ShufflePrefabData(_seed);
 		}
 
-		// Token: 0x0600B979 RID: 47481 RVA: 0x004499D6 File Offset: 0x00447BD6
+		// Token: 0x0600BA8D RID: 47757 RVA: 0x0044D382 File Offset: 0x0044B582
 		public void Clear()
 		{
 			this.StreetTilesUsed.Clear();
 		}
 
-		// Token: 0x0600B97A RID: 47482 RVA: 0x004499E3 File Offset: 0x00447BE3
+		// Token: 0x0600BA8E RID: 47758 RVA: 0x0044D38F File Offset: 0x0044B58F
 		public void ClearDisplayed()
 		{
 			this.UsedPrefabsWorld.Clear();
 			this.WorldUsedPrefabNames.Clear();
 		}
 
-		// Token: 0x0600B97B RID: 47483 RVA: 0x004499FB File Offset: 0x00447BFB
+		// Token: 0x0600BA8F RID: 47759 RVA: 0x0044D3A7 File Offset: 0x0044B5A7
 		public void Cleanup()
 		{
 			this.prefabManagerData.Cleanup();
 			this.ClearDisplayed();
 		}
 
-		// Token: 0x0600B97C RID: 47484 RVA: 0x00449A10 File Offset: 0x00447C10
+		// Token: 0x0600BA90 RID: 47760 RVA: 0x0044D3BC File Offset: 0x0044B5BC
 		public static bool isSizeValid(PrefabData prefab, Vector2i minSize, Vector2i maxSize)
 		{
 			return (maxSize == default(Vector2i) || (prefab.size.x <= maxSize.x && prefab.size.z <= maxSize.y) || (prefab.size.z <= maxSize.x && prefab.size.x <= maxSize.y)) && (minSize == default(Vector2i) || (prefab.size.x >= minSize.x && prefab.size.z >= minSize.y) || (prefab.size.z >= minSize.x && prefab.size.x >= minSize.y));
 		}
 
-		// Token: 0x0600B97D RID: 47485 RVA: 0x00449AE0 File Offset: 0x00447CE0
+		// Token: 0x0600BA91 RID: 47761 RVA: 0x0044D48C File Offset: 0x0044B68C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isThemeValid(PrefabData prefab, Vector2i prefabPos, List<PrefabDataInstance> prefabInstances, int distance)
 		{
@@ -75,7 +75,7 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600B97E RID: 47486 RVA: 0x00449BB0 File Offset: 0x00447DB0
+		// Token: 0x0600BA92 RID: 47762 RVA: 0x0044D55C File Offset: 0x0044B75C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isNameValid(PrefabData prefab, Vector2i prefabPos, List<PrefabDataInstance> prefabInstances, int distance)
 		{
@@ -92,7 +92,7 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600B97F RID: 47487 RVA: 0x00449C5C File Offset: 0x00447E5C
+		// Token: 0x0600BA93 RID: 47763 RVA: 0x0044D608 File Offset: 0x0044B808
 		public PrefabData GetPrefabWithDistrict(District _district, FastTags<TagGroup.Poi> _markerTags, Vector2i minSize, Vector2i maxSize, Vector2i center, float densityPointsLeft, float _distanceScale)
 		{
 			bool flag = !_district.tag.IsEmpty;
@@ -139,7 +139,7 @@ namespace WorldGenerationEngineFinal
 			return prefabData;
 		}
 
-		// Token: 0x0600B980 RID: 47488 RVA: 0x00449DD0 File Offset: 0x00447FD0
+		// Token: 0x0600BA94 RID: 47764 RVA: 0x0044D77C File Offset: 0x0044B97C
 		public PrefabData GetWildernessPrefab(FastTags<TagGroup.Poi> _withoutTags, FastTags<TagGroup.Poi> _markerTags, Vector2i minSize = default(Vector2i), Vector2i maxSize = default(Vector2i), Vector2i center = default(Vector2i), bool _isRetry = false)
 		{
 			PrefabData prefabData = null;
@@ -164,7 +164,7 @@ namespace WorldGenerationEngineFinal
 			return prefabData;
 		}
 
-		// Token: 0x0600B981 RID: 47489 RVA: 0x00449EF4 File Offset: 0x004480F4
+		// Token: 0x0600BA95 RID: 47765 RVA: 0x0044D8A0 File Offset: 0x0044BAA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int getRandomVal(int min, int maxExclusive, int seed)
 		{
@@ -174,7 +174,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B982 RID: 47490 RVA: 0x00449F20 File Offset: 0x00448120
+		// Token: 0x0600BA96 RID: 47766 RVA: 0x0044D8CC File Offset: 0x0044BACC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float getRandomVal(float min, float max, int seed)
 		{
@@ -184,7 +184,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B983 RID: 47491 RVA: 0x00449F4C File Offset: 0x0044814C
+		// Token: 0x0600BA97 RID: 47767 RVA: 0x0044D8F8 File Offset: 0x0044BAF8
 		public PrefabData GetPrefabByName(string _lowerCaseName)
 		{
 			PrefabData prefabData;
@@ -195,7 +195,7 @@ namespace WorldGenerationEngineFinal
 			return prefabData;
 		}
 
-		// Token: 0x0600B984 RID: 47492 RVA: 0x00449F78 File Offset: 0x00448178
+		// Token: 0x0600BA98 RID: 47768 RVA: 0x0044D924 File Offset: 0x0044BB24
 		public PrefabData GetStreetTile(string _lowerCaseName, Vector2i centerPoint, bool useExactString = false)
 		{
 			GameRandom rnd = GameRandomManager.Instance.CreateGameRandom(this.worldBuilder.Seed + (centerPoint.x + centerPoint.x * centerPoint.y * centerPoint.y));
@@ -218,7 +218,7 @@ namespace WorldGenerationEngineFinal
 			return this.prefabManagerData.AllPrefabDatas[text];
 		}
 
-		// Token: 0x0600B985 RID: 47493 RVA: 0x0044A050 File Offset: 0x00448250
+		// Token: 0x0600BA99 RID: 47769 RVA: 0x0044D9FC File Offset: 0x0044BBFC
 		public bool SavePrefabData(Stream _stream)
 		{
 			bool flag;
@@ -257,7 +257,7 @@ namespace WorldGenerationEngineFinal
 			return flag;
 		}
 
-		// Token: 0x0600B986 RID: 47494 RVA: 0x0044A170 File Offset: 0x00448370
+		// Token: 0x0600BA9A RID: 47770 RVA: 0x0044DB1C File Offset: 0x0044BD1C
 		public void GetPrefabsAround(Vector3 _position, float _distance, Dictionary<int, PrefabDataInstance> _prefabs)
 		{
 			for (int i = 0; i < this.UsedPrefabsWorld.Count; i++)
@@ -267,7 +267,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B987 RID: 47495 RVA: 0x0044A1C4 File Offset: 0x004483C4
+		// Token: 0x0600BA9B RID: 47771 RVA: 0x0044DB70 File Offset: 0x0044BD70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float getScoreForPrefab(PrefabData prefab, Vector2i center)
 		{
@@ -314,7 +314,7 @@ namespace WorldGenerationEngineFinal
 			return num * num2;
 		}
 
-		// Token: 0x0600B988 RID: 47496 RVA: 0x0044A37C File Offset: 0x0044857C
+		// Token: 0x0600BA9C RID: 47772 RVA: 0x0044DD28 File Offset: 0x0044BF28
 		public void AddUsedPrefab(string prefabName)
 		{
 			int num;
@@ -326,38 +326,38 @@ namespace WorldGenerationEngineFinal
 			this.WorldUsedPrefabNames.Add(prefabName, 1);
 		}
 
-		// Token: 0x0600B989 RID: 47497 RVA: 0x0044A3B6 File Offset: 0x004485B6
+		// Token: 0x0600BA9D RID: 47773 RVA: 0x0044DD62 File Offset: 0x0044BF62
 		public void AddUsedPrefabWorld(int townshipID, PrefabDataInstance pdi)
 		{
 			this.UsedPrefabsWorld.Add(pdi);
 			this.AddUsedPrefab(pdi.prefab.Name);
 		}
 
-		// Token: 0x04008A5D RID: 35421
+		// Token: 0x04008B46 RID: 35654
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008A5E RID: 35422
+		// Token: 0x04008B47 RID: 35655
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly PrefabManagerData prefabManagerData = new PrefabManagerData();
 
-		// Token: 0x04008A5F RID: 35423
+		// Token: 0x04008B48 RID: 35656
 		public readonly Dictionary<string, int> StreetTilesUsed = new Dictionary<string, int>();
 
-		// Token: 0x04008A60 RID: 35424
+		// Token: 0x04008B49 RID: 35657
 		public readonly List<PrefabDataInstance> UsedPrefabsWorld = new List<PrefabDataInstance>();
 
-		// Token: 0x04008A61 RID: 35425
+		// Token: 0x04008B4A RID: 35658
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, int> WorldUsedPrefabNames = new Dictionary<string, int>();
 
-		// Token: 0x04008A62 RID: 35426
+		// Token: 0x04008B4B RID: 35659
 		public int PrefabInstanceId;
 
-		// Token: 0x02001749 RID: 5961
+		// Token: 0x0200177A RID: 6010
 		public class POIWeightData
 		{
-			// Token: 0x0600B98A RID: 47498 RVA: 0x0044A3D8 File Offset: 0x004485D8
+			// Token: 0x0600BA9E RID: 47774 RVA: 0x0044DD84 File Offset: 0x0044BF84
 			public POIWeightData(string _partialPOIName, FastTags<TagGroup.Poi> _tags, FastTags<TagGroup.Poi> _biomeTags, float _weight, float _bias, int minCount, int maxCount)
 			{
 				this.PartialPOIName = _partialPOIName.ToLower();
@@ -369,25 +369,25 @@ namespace WorldGenerationEngineFinal
 				this.MaxCount = maxCount;
 			}
 
-			// Token: 0x04008A63 RID: 35427
+			// Token: 0x04008B4C RID: 35660
 			public string PartialPOIName;
 
-			// Token: 0x04008A64 RID: 35428
+			// Token: 0x04008B4D RID: 35661
 			public FastTags<TagGroup.Poi> Tags;
 
-			// Token: 0x04008A65 RID: 35429
+			// Token: 0x04008B4E RID: 35662
 			public FastTags<TagGroup.Poi> BiomeTags;
 
-			// Token: 0x04008A66 RID: 35430
+			// Token: 0x04008B4F RID: 35663
 			public float Weight;
 
-			// Token: 0x04008A67 RID: 35431
+			// Token: 0x04008B50 RID: 35664
 			public float Bias;
 
-			// Token: 0x04008A68 RID: 35432
+			// Token: 0x04008B51 RID: 35665
 			public int MinCount;
 
-			// Token: 0x04008A69 RID: 35433
+			// Token: 0x04008B52 RID: 35666
 			public int MaxCount;
 		}
 	}

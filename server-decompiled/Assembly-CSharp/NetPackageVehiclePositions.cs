@@ -4,18 +4,18 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000866 RID: 2150
+// Token: 0x02000870 RID: 2160
 [Preserve]
 public class NetPackageVehiclePositions : NetPackage
 {
-	// Token: 0x06003E55 RID: 15957 RVA: 0x0018B59F File Offset: 0x0018979F
+	// Token: 0x06003E78 RID: 15992 RVA: 0x0018C647 File Offset: 0x0018A847
 	public NetPackageVehiclePositions Setup([TupleElementNames(new string[] { "entityId", "position" })] List<ValueTuple<int, Vector3>> _positions)
 	{
 		this.positions = new List<ValueTuple<int, Vector3>>(_positions);
 		return this;
 	}
 
-	// Token: 0x06003E56 RID: 15958 RVA: 0x0018B5B0 File Offset: 0x001897B0
+	// Token: 0x06003E79 RID: 15993 RVA: 0x0018C658 File Offset: 0x0018A858
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		EntityPlayerLocal primaryPlayer = _world.GetPrimaryPlayer();
@@ -25,7 +25,7 @@ public class NetPackageVehiclePositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E57 RID: 15959 RVA: 0x0018B5E0 File Offset: 0x001897E0
+	// Token: 0x06003E7A RID: 15994 RVA: 0x0018C688 File Offset: 0x0018A888
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = _reader.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackageVehiclePositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E58 RID: 15960 RVA: 0x0018B628 File Offset: 0x00189828
+	// Token: 0x06003E7B RID: 15995 RVA: 0x0018C6D0 File Offset: 0x0018A8D0
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -48,7 +48,7 @@ public class NetPackageVehiclePositions : NetPackage
 		}
 	}
 
-	// Token: 0x040032A2 RID: 12962
+	// Token: 0x040032C2 RID: 12994
 	[TupleElementNames(new string[] { "entityId", "position" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ValueTuple<int, Vector3>> positions;

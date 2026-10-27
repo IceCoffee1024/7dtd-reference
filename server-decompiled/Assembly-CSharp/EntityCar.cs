@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200048F RID: 1167
+// Token: 0x02000491 RID: 1169
 [Preserve]
 public class EntityCar : EntityAlive
 {
-	// Token: 0x06002417 RID: 9239 RVA: 0x000DA95D File Offset: 0x000D8B5D
+	// Token: 0x0600241D RID: 9245 RVA: 0x000DACE1 File Offset: 0x000D8EE1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -15,7 +15,7 @@ public class EntityCar : EntityAlive
 		this.updateLightOnAllMaterials = base.transform.GetComponent<UpdateLightOnAllMaterials>();
 	}
 
-	// Token: 0x06002418 RID: 9240 RVA: 0x000DA984 File Offset: 0x000D8B84
+	// Token: 0x0600241E RID: 9246 RVA: 0x000DAD08 File Offset: 0x000D8F08
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
@@ -50,7 +50,7 @@ public class EntityCar : EntityAlive
 		}
 	}
 
-	// Token: 0x06002419 RID: 9241 RVA: 0x000DAAAC File Offset: 0x000D8CAC
+	// Token: 0x0600241F RID: 9247 RVA: 0x000DAE30 File Offset: 0x000D9030
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -68,7 +68,7 @@ public class EntityCar : EntityAlive
 		}
 	}
 
-	// Token: 0x0600241A RID: 9242 RVA: 0x000DAB94 File Offset: 0x000D8D94
+	// Token: 0x06002420 RID: 9248 RVA: 0x000DAF18 File Offset: 0x000D9118
 	public override void OnUpdateLive()
 	{
 		this.updateDamageModel();
@@ -97,7 +97,7 @@ public class EntityCar : EntityAlive
 		}
 	}
 
-	// Token: 0x0600241B RID: 9243 RVA: 0x000DAC60 File Offset: 0x000D8E60
+	// Token: 0x06002421 RID: 9249 RVA: 0x000DAFE4 File Offset: 0x000D91E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pushOutOfBlocks(float _x, float _y, float _z)
 	{
@@ -177,7 +177,7 @@ public class EntityCar : EntityAlive
 		return false;
 	}
 
-	// Token: 0x0600241C RID: 9244 RVA: 0x000DAED8 File Offset: 0x000D90D8
+	// Token: 0x06002422 RID: 9250 RVA: 0x000DB25C File Offset: 0x000D945C
 	public override void SetRotation(Vector3 _rot)
 	{
 		if (this.isEntityRemote)
@@ -196,7 +196,7 @@ public class EntityCar : EntityAlive
 		this.bBoundingBoxNeedsUpdate = true;
 	}
 
-	// Token: 0x0600241D RID: 9245 RVA: 0x000DAF64 File Offset: 0x000D9164
+	// Token: 0x06002423 RID: 9251 RVA: 0x000DB2E8 File Offset: 0x000D94E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateDamageModel()
 	{
@@ -215,7 +215,7 @@ public class EntityCar : EntityAlive
 		}
 	}
 
-	// Token: 0x0600241E RID: 9246 RVA: 0x000DB000 File Offset: 0x000D9200
+	// Token: 0x06002424 RID: 9252 RVA: 0x000DB384 File Offset: 0x000D9584
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impuleScale)
 	{
 		if (_strength < 10)
@@ -233,7 +233,7 @@ public class EntityCar : EntityAlive
 		return _strength;
 	}
 
-	// Token: 0x0600241F RID: 9247 RVA: 0x000DB0B0 File Offset: 0x000D92B0
+	// Token: 0x06002425 RID: 9253 RVA: 0x000DB434 File Offset: 0x000D9634
 	public override void OnEntityDeath()
 	{
 		base.OnEntityDeath();
@@ -248,63 +248,63 @@ public class EntityCar : EntityAlive
 		base.SetDeathTime(int.MaxValue);
 	}
 
-	// Token: 0x06002420 RID: 9248 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002426 RID: 9254 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanCollideWithBlocks()
 	{
 		return false;
 	}
 
-	// Token: 0x06002421 RID: 9249 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002427 RID: 9255 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isGameMessageOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x06002422 RID: 9250 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06002428 RID: 9256 RVA: 0x00020119 File Offset: 0x0001E319
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isEntityStatic()
 	{
 		return true;
 	}
 
-	// Token: 0x06002423 RID: 9251 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002429 RID: 9257 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanBePushed()
 	{
 		return false;
 	}
 
-	// Token: 0x04001992 RID: 6546
+	// Token: 0x040019A2 RID: 6562
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bBoundingBoxNeedsUpdate;
 
-	// Token: 0x04001993 RID: 6547
+	// Token: 0x040019A3 RID: 6563
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string PropDamagedModel = "Model-Damage-";
 
-	// Token: 0x04001994 RID: 6548
+	// Token: 0x040019A4 RID: 6564
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int curModelIdx;
 
-	// Token: 0x04001995 RID: 6549
+	// Token: 0x040019A5 RID: 6565
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int modelCount;
 
-	// Token: 0x04001996 RID: 6550
+	// Token: 0x040019A6 RID: 6566
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bPrimed;
 
-	// Token: 0x04001997 RID: 6551
+	// Token: 0x040019A7 RID: 6567
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int explosionTimer;
 
-	// Token: 0x04001998 RID: 6552
+	// Token: 0x040019A8 RID: 6568
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UpdateLightOnAllMaterials updateLightOnAllMaterials;

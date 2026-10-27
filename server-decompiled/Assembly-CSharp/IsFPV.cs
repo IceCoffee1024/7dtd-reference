@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000679 RID: 1657
+// Token: 0x02000680 RID: 1664
 [Preserve]
 public class IsFPV : TargetedCompareRequirementBase
 {
-	// Token: 0x06003538 RID: 13624 RVA: 0x00160070 File Offset: 0x0015E270
+	// Token: 0x06003546 RID: 13638 RVA: 0x00160C64 File Offset: 0x0015EE64
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

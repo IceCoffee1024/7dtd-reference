@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000862 RID: 2146
+// Token: 0x0200086C RID: 2156
 [Preserve]
 public class NetPackageVehicleCount : NetPackage
 {
-	// Token: 0x06003E45 RID: 15941 RVA: 0x0018B08B File Offset: 0x0018928B
+	// Token: 0x06003E68 RID: 15976 RVA: 0x0018C133 File Offset: 0x0018A333
 	public NetPackageVehicleCount Setup()
 	{
 		this.vehicleCount = VehicleManager.GetServerVehicleCount();
@@ -14,7 +14,7 @@ public class NetPackageVehicleCount : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E46 RID: 15942 RVA: 0x0018B0AF File Offset: 0x001892AF
+	// Token: 0x06003E69 RID: 15977 RVA: 0x0018C157 File Offset: 0x0018A357
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.vehicleCount = _reader.ReadInt32();
@@ -22,7 +22,7 @@ public class NetPackageVehicleCount : NetPackage
 		this.droneCount = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003E47 RID: 15943 RVA: 0x0018B0D5 File Offset: 0x001892D5
+	// Token: 0x06003E6A RID: 15978 RVA: 0x0018C17D File Offset: 0x0018A37D
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -31,7 +31,7 @@ public class NetPackageVehicleCount : NetPackage
 		_writer.Write(this.droneCount);
 	}
 
-	// Token: 0x06003E48 RID: 15944 RVA: 0x0018B102 File Offset: 0x00189302
+	// Token: 0x06003E6B RID: 15979 RVA: 0x0018C1AA File Offset: 0x0018A3AA
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		VehicleManager.SetServerVehicleCount(this.vehicleCount);
@@ -39,12 +39,12 @@ public class NetPackageVehicleCount : NetPackage
 		DroneManager.SetServerDroneCount(this.droneCount);
 	}
 
-	// Token: 0x04003292 RID: 12946
+	// Token: 0x040032B2 RID: 12978
 	public int vehicleCount;
 
-	// Token: 0x04003293 RID: 12947
+	// Token: 0x040032B3 RID: 12979
 	public int turretCount;
 
-	// Token: 0x04003294 RID: 12948
+	// Token: 0x040032B4 RID: 12980
 	public int droneCount;
 }

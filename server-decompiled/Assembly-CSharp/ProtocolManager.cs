@@ -4,29 +4,29 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02000896 RID: 2198
+// Token: 0x020008A0 RID: 2208
 public class ProtocolManager : IProtocolManagerProtocolInterface
 {
-	// Token: 0x170006BE RID: 1726
-	// (get) Token: 0x06003F65 RID: 16229 RVA: 0x0018F7B9 File Offset: 0x0018D9B9
-	// (set) Token: 0x06003F66 RID: 16230 RVA: 0x0018F7C1 File Offset: 0x0018D9C1
+	// Token: 0x170006C4 RID: 1732
+	// (get) Token: 0x06003F88 RID: 16264 RVA: 0x00190861 File Offset: 0x0018EA61
+	// (set) Token: 0x06003F89 RID: 16265 RVA: 0x00190869 File Offset: 0x0018EA69
 	public bool HasRunningServers
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006BF RID: 1727
-	// (get) Token: 0x06003F67 RID: 16231 RVA: 0x0018F7CA File Offset: 0x0018D9CA
-	// (set) Token: 0x06003F68 RID: 16232 RVA: 0x0018F7D2 File Offset: 0x0018D9D2
+	// Token: 0x170006C5 RID: 1733
+	// (get) Token: 0x06003F8A RID: 16266 RVA: 0x00190872 File Offset: 0x0018EA72
+	// (set) Token: 0x06003F8B RID: 16267 RVA: 0x0019087A File Offset: 0x0018EA7A
 	public ProtocolManager.NetworkType CurrentMode
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006C0 RID: 1728
-	// (get) Token: 0x06003F69 RID: 16233 RVA: 0x0018F7DB File Offset: 0x0018D9DB
+	// Token: 0x170006C6 RID: 1734
+	// (get) Token: 0x06003F8C RID: 16268 RVA: 0x00190883 File Offset: 0x0018EA83
 	public bool IsServer
 	{
 		get
@@ -35,8 +35,8 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x170006C1 RID: 1729
-	// (get) Token: 0x06003F6A RID: 16234 RVA: 0x0018F7F1 File Offset: 0x0018D9F1
+	// Token: 0x170006C7 RID: 1735
+	// (get) Token: 0x06003F8D RID: 16269 RVA: 0x00190899 File Offset: 0x0018EA99
 	public bool IsClient
 	{
 		get
@@ -45,7 +45,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F6B RID: 16235 RVA: 0x0018F7FC File Offset: 0x0018D9FC
+	// Token: 0x06003F8E RID: 16270 RVA: 0x001908A4 File Offset: 0x0018EAA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupProtocols()
 	{
@@ -105,7 +105,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F6C RID: 16236 RVA: 0x0018F9BC File Offset: 0x0018DBBC
+	// Token: 0x06003F8F RID: 16271 RVA: 0x00190A64 File Offset: 0x0018EC64
 	public string GetGamePortsString()
 	{
 		string text = "";
@@ -144,7 +144,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		return text;
 	}
 
-	// Token: 0x06003F6D RID: 16237 RVA: 0x0018FA98 File Offset: 0x0018DC98
+	// Token: 0x06003F90 RID: 16272 RVA: 0x00190B40 File Offset: 0x0018ED40
 	public void Update()
 	{
 		for (int i = 0; i < this.servers.Count; i++)
@@ -157,7 +157,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F6E RID: 16238 RVA: 0x0018FAF4 File Offset: 0x0018DCF4
+	// Token: 0x06003F91 RID: 16273 RVA: 0x00190B9C File Offset: 0x0018ED9C
 	public void LateUpdate()
 	{
 		for (int i = 0; i < this.servers.Count; i++)
@@ -170,14 +170,14 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F6F RID: 16239 RVA: 0x0018FB4F File Offset: 0x0018DD4F
+	// Token: 0x06003F92 RID: 16274 RVA: 0x00190BF7 File Offset: 0x0018EDF7
 	public void StartOfflineServer()
 	{
 		Log.Out("NET: Starting offline server.");
 		this.CurrentMode = ProtocolManager.NetworkType.OfflineServer;
 	}
 
-	// Token: 0x06003F70 RID: 16240 RVA: 0x0018FB64 File Offset: 0x0018DD64
+	// Token: 0x06003F93 RID: 16275 RVA: 0x00190C0C File Offset: 0x0018EE0C
 	public NetworkConnectionError StartServers(string _password)
 	{
 		if (PlatformManager.MultiPlatform.User.UserStatus == EUserStatus.OfflineMode || !PermissionsManager.IsMultiplayerAllowed() || !PermissionsManager.CanHostMultiplayer())
@@ -218,7 +218,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		return networkConnectionError;
 	}
 
-	// Token: 0x06003F71 RID: 16241 RVA: 0x0018FC9B File Offset: 0x0018DE9B
+	// Token: 0x06003F94 RID: 16276 RVA: 0x00190D43 File Offset: 0x0018EF43
 	public void MakeServerOffline()
 	{
 		if (this.CurrentMode != ProtocolManager.NetworkType.Server)
@@ -229,7 +229,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		this.CurrentMode = ProtocolManager.NetworkType.OfflineServer;
 	}
 
-	// Token: 0x06003F72 RID: 16242 RVA: 0x0018FCB4 File Offset: 0x0018DEB4
+	// Token: 0x06003F95 RID: 16277 RVA: 0x00190D5C File Offset: 0x0018EF5C
 	public void SetServerPassword(string _password)
 	{
 		if (this.CurrentMode != ProtocolManager.NetworkType.Server)
@@ -242,7 +242,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F73 RID: 16243 RVA: 0x0018FD10 File Offset: 0x0018DF10
+	// Token: 0x06003F96 RID: 16278 RVA: 0x00190DB8 File Offset: 0x0018EFB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StopServersOnly()
 	{
@@ -254,14 +254,14 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		this.HasRunningServers = false;
 	}
 
-	// Token: 0x06003F74 RID: 16244 RVA: 0x0018FD74 File Offset: 0x0018DF74
+	// Token: 0x06003F97 RID: 16279 RVA: 0x00190E1C File Offset: 0x0018F01C
 	public void StopServers()
 	{
 		this.StopServersOnly();
 		ThreadManager.StartCoroutine(this.resetStateLater(0.25f));
 	}
 
-	// Token: 0x06003F75 RID: 16245 RVA: 0x0018FD8D File Offset: 0x0018DF8D
+	// Token: 0x06003F98 RID: 16280 RVA: 0x00190E35 File Offset: 0x0018F035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator resetStateLater(float _delay)
 	{
@@ -270,7 +270,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		yield break;
 	}
 
-	// Token: 0x06003F76 RID: 16246 RVA: 0x0018FDA3 File Offset: 0x0018DFA3
+	// Token: 0x06003F99 RID: 16281 RVA: 0x00190E4B File Offset: 0x0018F04B
 	public void ConnectToServer(GameServerInfo _gameServerInfo)
 	{
 		this.SetupProtocols();
@@ -279,7 +279,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		this.clients[this.currentConnectionAttemptIndex].Connect(_gameServerInfo);
 	}
 
-	// Token: 0x06003F77 RID: 16247 RVA: 0x0018FDD0 File Offset: 0x0018DFD0
+	// Token: 0x06003F9A RID: 16282 RVA: 0x00190E78 File Offset: 0x0018F078
 	public void InvalidPasswordEv()
 	{
 		this.CurrentMode = ProtocolManager.NetworkType.None;
@@ -287,7 +287,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Net_InvalidPassword();
 	}
 
-	// Token: 0x06003F78 RID: 16248 RVA: 0x0018FDEC File Offset: 0x0018DFEC
+	// Token: 0x06003F9B RID: 16283 RVA: 0x00190E94 File Offset: 0x0018F094
 	public void ConnectionFailedEv(string _msg)
 	{
 		this.currentConnectionAttemptIndex++;
@@ -302,14 +302,14 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Net_ConnectionFailed(_msg);
 	}
 
-	// Token: 0x06003F79 RID: 16249 RVA: 0x0018FE57 File Offset: 0x0018E057
+	// Token: 0x06003F9C RID: 16284 RVA: 0x00190EFF File Offset: 0x0018F0FF
 	public void DisconnectedFromServerEv(string _msg)
 	{
 		this.CurrentMode = ProtocolManager.NetworkType.None;
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Net_DisconnectedFromServer(_msg);
 	}
 
-	// Token: 0x06003F7A RID: 16250 RVA: 0x0018FE6C File Offset: 0x0018E06C
+	// Token: 0x06003F9D RID: 16285 RVA: 0x00190F14 File Offset: 0x0018F114
 	public void Disconnect()
 	{
 		this.currentConnectionAttemptIndex = 0;
@@ -324,7 +324,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F7B RID: 16251 RVA: 0x0018FEC0 File Offset: 0x0018E0C0
+	// Token: 0x06003F9E RID: 16286 RVA: 0x00190F68 File Offset: 0x0018F168
 	public void SetLatencySimulation(bool _enable, int _min, int _max)
 	{
 		for (int i = 0; i < this.clients.Count; i++)
@@ -337,7 +337,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F7C RID: 16252 RVA: 0x0018FF24 File Offset: 0x0018E124
+	// Token: 0x06003F9F RID: 16287 RVA: 0x00190FCC File Offset: 0x0018F1CC
 	public void SetPacketLossSimulation(bool _enable, int _chance)
 	{
 		for (int i = 0; i < this.clients.Count; i++)
@@ -350,7 +350,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F7D RID: 16253 RVA: 0x0018FF84 File Offset: 0x0018E184
+	// Token: 0x06003FA0 RID: 16288 RVA: 0x0019102C File Offset: 0x0018F22C
 	public void EnableNetworkStatistics()
 	{
 		for (int i = 0; i < this.clients.Count; i++)
@@ -363,7 +363,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F7E RID: 16254 RVA: 0x0018FFE0 File Offset: 0x0018E1E0
+	// Token: 0x06003FA1 RID: 16289 RVA: 0x00191088 File Offset: 0x0018F288
 	public void DisableNetworkStatistics()
 	{
 		for (int i = 0; i < this.clients.Count; i++)
@@ -376,7 +376,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x06003F7F RID: 16255 RVA: 0x0019003C File Offset: 0x0018E23C
+	// Token: 0x06003FA2 RID: 16290 RVA: 0x001910E4 File Offset: 0x0018F2E4
 	public string PrintNetworkStatistics()
 	{
 		string text = "";
@@ -393,7 +393,7 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		return text;
 	}
 
-	// Token: 0x06003F80 RID: 16256 RVA: 0x001900E8 File Offset: 0x0018E2E8
+	// Token: 0x06003FA3 RID: 16291 RVA: 0x00191190 File Offset: 0x0018F390
 	public void ResetNetworkStatistics()
 	{
 		for (int i = 0; i < this.clients.Count; i++)
@@ -406,32 +406,32 @@ public class ProtocolManager : IProtocolManagerProtocolInterface
 		}
 	}
 
-	// Token: 0x04003375 RID: 13173
+	// Token: 0x04003395 RID: 13205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<INetworkClient> clients = new List<INetworkClient>();
 
-	// Token: 0x04003376 RID: 13174
+	// Token: 0x04003396 RID: 13206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<INetworkServer> servers = new List<INetworkServer>();
 
-	// Token: 0x04003379 RID: 13177
+	// Token: 0x04003399 RID: 13209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameServerInfo currentGameServerInfo;
 
-	// Token: 0x0400337A RID: 13178
+	// Token: 0x0400339A RID: 13210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentConnectionAttemptIndex;
 
-	// Token: 0x02000897 RID: 2199
+	// Token: 0x020008A1 RID: 2209
 	public enum NetworkType
 	{
-		// Token: 0x0400337C RID: 13180
+		// Token: 0x0400339C RID: 13212
 		None,
-		// Token: 0x0400337D RID: 13181
+		// Token: 0x0400339D RID: 13213
 		Client,
-		// Token: 0x0400337E RID: 13182
+		// Token: 0x0400339E RID: 13214
 		Server,
-		// Token: 0x0400337F RID: 13183
+		// Token: 0x0400339F RID: 13215
 		OfflineServer
 	}
 }

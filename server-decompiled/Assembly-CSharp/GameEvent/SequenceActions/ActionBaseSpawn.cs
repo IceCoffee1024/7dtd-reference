@@ -6,12 +6,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001997 RID: 6551
+	// Token: 0x020019C8 RID: 6600
 	[Preserve]
 	public class ActionBaseSpawn : BaseAction
 	{
-		// Token: 0x17001940 RID: 6464
-		// (get) Token: 0x0600C96F RID: 51567 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001988 RID: 6536
+		// (get) Token: 0x0600CA83 RID: 51843 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool UseRepeating
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,7 +21,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C970 RID: 51568 RVA: 0x0049A080 File Offset: 0x00498280
+		// Token: 0x0600CA84 RID: 51844 RVA: 0x0049DB80 File Offset: 0x0049BD80
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int ModifiedCount(Entity target)
 		{
@@ -55,7 +55,7 @@ namespace GameEvent.SequenceActions
 			return this.count;
 		}
 
-		// Token: 0x0600C971 RID: 51569 RVA: 0x0049A168 File Offset: 0x00498368
+		// Token: 0x0600CA85 RID: 51845 RVA: 0x0049DC68 File Offset: 0x0049BE68
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int GetPartyAdditionCount(EntityPlayer player)
 		{
@@ -67,7 +67,7 @@ namespace GameEvent.SequenceActions
 			return 0;
 		}
 
-		// Token: 0x0600C972 RID: 51570 RVA: 0x0049A1A4 File Offset: 0x004983A4
+		// Token: 0x0600CA86 RID: 51846 RVA: 0x0049DCA4 File Offset: 0x0049BEA4
 		public override bool CanPerform(Entity player)
 		{
 			this.count = GameEventManager.GetIntValue(player as EntityAlive, this.countText, 1);
@@ -98,7 +98,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600C973 RID: 51571 RVA: 0x0049A28C File Offset: 0x0049848C
+		// Token: 0x0600CA87 RID: 51847 RVA: 0x0049DD8C File Offset: 0x0049BF8C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -107,7 +107,7 @@ namespace GameEvent.SequenceActions
 			this.AddToGroups = this.AddToGroup.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600C974 RID: 51572 RVA: 0x0049A2B0 File Offset: 0x004984B0
+		// Token: 0x0600CA88 RID: 51848 RVA: 0x0049DDB0 File Offset: 0x0049BFB0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void SetupEntityIDs()
 		{
@@ -134,7 +134,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C975 RID: 51573 RVA: 0x0049A378 File Offset: 0x00498578
+		// Token: 0x0600CA89 RID: 51849 RVA: 0x0049DE78 File Offset: 0x0049C078
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (!base.Owner.HasTarget())
@@ -443,31 +443,31 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C976 RID: 51574 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CA8A RID: 51850 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleExtraAction()
 		{
 		}
 
-		// Token: 0x0600C977 RID: 51575 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600CA8B RID: 51851 RVA: 0x00010E62 File Offset: 0x0000F062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool HandleRepeat()
 		{
 			return false;
 		}
 
-		// Token: 0x0600C978 RID: 51576 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CA8C RID: 51852 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void HandleTargeting(EntityAlive attacker, EntityAlive targetAlive)
 		{
 		}
 
-		// Token: 0x0600C979 RID: 51577 RVA: 0x0049AD70 File Offset: 0x00498F70
+		// Token: 0x0600CA8D RID: 51853 RVA: 0x0049E870 File Offset: 0x0049CA70
 		public static bool FindValidPosition(out Vector3 newPoint, Entity entity, float minDistance, float maxDistance, bool spawnInSafe, float yOffset = 0f, bool spawnInAir = false)
 		{
 			return ActionBaseSpawn.FindValidPosition(out newPoint, entity.position, minDistance, maxDistance, spawnInSafe, yOffset, spawnInAir, 0f);
 		}
 
-		// Token: 0x0600C97A RID: 51578 RVA: 0x0049AD8C File Offset: 0x00498F8C
+		// Token: 0x0600CA8E RID: 51854 RVA: 0x0049E88C File Offset: 0x0049CA8C
 		public static bool FindValidPosition(out Vector3 newPoint, Vector3 startPoint, float minDistance, float maxDistance, bool spawnInSafe, float yOffset = 0f, bool spawnInAir = false, float raycastOffset = 0f)
 		{
 			World world = GameManager.Instance.World;
@@ -512,7 +512,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600C97B RID: 51579 RVA: 0x0049AF3C File Offset: 0x0049913C
+		// Token: 0x0600CA8F RID: 51855 RVA: 0x0049EA3C File Offset: 0x0049CC3C
 		public Entity SpawnEntity(int spawnedEntityID, Entity target, Vector3 startPoint, float minDistance, float maxDistance, bool spawnInSafe, float yOffset = 0f)
 		{
 			World world = GameManager.Instance.World;
@@ -537,12 +537,12 @@ namespace GameEvent.SequenceActions
 			return entity;
 		}
 
-		// Token: 0x0600C97C RID: 51580 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CA90 RID: 51856 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void AddPropertiesToSpawnedEntity(Entity entity)
 		{
 		}
 
-		// Token: 0x0600C97D RID: 51581 RVA: 0x0049B03E File Offset: 0x0049923E
+		// Token: 0x0600CA91 RID: 51857 RVA: 0x0049EB3E File Offset: 0x0049CD3E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
@@ -551,7 +551,7 @@ namespace GameEvent.SequenceActions
 			this.selectedEntityIndex = -1;
 		}
 
-		// Token: 0x0600C97E RID: 51582 RVA: 0x0049B058 File Offset: 0x00499258
+		// Token: 0x0600CA92 RID: 51858 RVA: 0x0049EB58 File Offset: 0x0049CD58
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -580,232 +580,232 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x040097A6 RID: 38822
+		// Token: 0x0400988F RID: 39055
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string entityNames = "";
 
-		// Token: 0x040097A7 RID: 38823
+		// Token: 0x04009890 RID: 39056
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string countText = "";
 
-		// Token: 0x040097A8 RID: 38824
+		// Token: 0x04009891 RID: 39057
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int count = -1;
 
-		// Token: 0x040097A9 RID: 38825
+		// Token: 0x04009892 RID: 39058
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool singleChoice;
 
-		// Token: 0x040097AA RID: 38826
+		// Token: 0x04009893 RID: 39059
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float minDistance = 8f;
 
-		// Token: 0x040097AB RID: 38827
+		// Token: 0x04009894 RID: 39060
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 12f;
 
-		// Token: 0x040097AC RID: 38828
+		// Token: 0x04009895 RID: 39061
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool safeSpawn;
 
-		// Token: 0x040097AD RID: 38829
+		// Token: 0x04009896 RID: 39062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x040097AE RID: 38830
+		// Token: 0x04009897 RID: 39063
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string AddToGroup = "";
 
-		// Token: 0x040097AF RID: 38831
+		// Token: 0x04009898 RID: 39064
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] AddToGroups;
 
-		// Token: 0x040097B0 RID: 38832
+		// Token: 0x04009899 RID: 39065
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool attackTarget = true;
 
-		// Token: 0x040097B1 RID: 38833
+		// Token: 0x0400989A RID: 39066
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool airSpawn;
 
-		// Token: 0x040097B2 RID: 38834
+		// Token: 0x0400989B RID: 39067
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool hasSpawned;
 
-		// Token: 0x040097B3 RID: 38835
+		// Token: 0x0400989C RID: 39068
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool clearPositionOnComplete;
 
-		// Token: 0x040097B4 RID: 38836
+		// Token: 0x0400989D RID: 39069
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBaseSpawn.SpawnTypes spawnType;
 
-		// Token: 0x040097B5 RID: 38837
+		// Token: 0x0400989E RID: 39070
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float yOffset;
 
-		// Token: 0x040097B6 RID: 38838
+		// Token: 0x0400989F RID: 39071
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string partyAdditionText = "";
 
-		// Token: 0x040097B7 RID: 38839
+		// Token: 0x040098A0 RID: 39072
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool useEntityGroup;
 
-		// Token: 0x040097B8 RID: 38840
+		// Token: 0x040098A1 RID: 39073
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string spawnSound = "";
 
-		// Token: 0x040097B9 RID: 38841
+		// Token: 0x040098A2 RID: 39074
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEntityNames = "entity_names";
 
-		// Token: 0x040097BA RID: 38842
+		// Token: 0x040098A3 RID: 39075
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEntityGroup = "entity_group";
 
-		// Token: 0x040097BB RID: 38843
+		// Token: 0x040098A4 RID: 39076
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSingleChoice = "single_choice";
 
-		// Token: 0x040097BC RID: 38844
+		// Token: 0x040098A5 RID: 39077
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnCount = "spawn_count";
 
-		// Token: 0x040097BD RID: 38845
+		// Token: 0x040098A6 RID: 39078
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinDistance = "min_distance";
 
-		// Token: 0x040097BE RID: 38846
+		// Token: 0x040098A7 RID: 39079
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x040097BF RID: 38847
+		// Token: 0x040098A8 RID: 39080
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnInSafe = "safe_spawn";
 
-		// Token: 0x040097C0 RID: 38848
+		// Token: 0x040098A9 RID: 39081
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x040097C1 RID: 38849
+		// Token: 0x040098AA RID: 39082
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAddToGroup = "add_to_group";
 
-		// Token: 0x040097C2 RID: 38850
+		// Token: 0x040098AB RID: 39083
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAttackTarget = "attack_target";
 
-		// Token: 0x040097C3 RID: 38851
+		// Token: 0x040098AC RID: 39084
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnInAir = "air_spawn";
 
-		// Token: 0x040097C4 RID: 38852
+		// Token: 0x040098AD RID: 39085
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnType = "spawn_type";
 
-		// Token: 0x040097C5 RID: 38853
+		// Token: 0x040098AE RID: 39086
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPartyAddition = "party_addition";
 
-		// Token: 0x040097C6 RID: 38854
+		// Token: 0x040098AF RID: 39087
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropClearPositionOnComplete = "clear_position_on_complete";
 
-		// Token: 0x040097C7 RID: 38855
+		// Token: 0x040098B0 RID: 39088
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIgnoreSpawnMultiplier = "ignore_multiplier";
 
-		// Token: 0x040097C8 RID: 38856
+		// Token: 0x040098B1 RID: 39089
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropYOffset = "yoffset";
 
-		// Token: 0x040097C9 RID: 38857
+		// Token: 0x040098B2 RID: 39090
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRaycastOffset = "raycast_offset";
 
-		// Token: 0x040097CA RID: 38858
+		// Token: 0x040098B3 RID: 39091
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIsAggressive = "is_aggressive";
 
-		// Token: 0x040097CB RID: 38859
+		// Token: 0x040098B4 RID: 39092
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnSound = "spawn_sound";
 
-		// Token: 0x040097CC RID: 38860
+		// Token: 0x040098B5 RID: 39093
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<int> entityIDs = new List<int>();
 
-		// Token: 0x040097CD RID: 38861
+		// Token: 0x040098B6 RID: 39094
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int selectedEntityIndex = -1;
 
-		// Token: 0x040097CE RID: 38862
+		// Token: 0x040098B7 RID: 39095
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int currentCount = 1;
 
-		// Token: 0x040097CF RID: 38863
+		// Token: 0x040098B8 RID: 39096
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float resetTime = 1f;
 
-		// Token: 0x040097D0 RID: 38864
+		// Token: 0x040098B9 RID: 39097
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool ignoreMultiplier;
 
-		// Token: 0x040097D1 RID: 38865
+		// Token: 0x040098BA RID: 39098
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3 position = Vector3.zero;
 
-		// Token: 0x040097D2 RID: 38866
+		// Token: 0x040098BB RID: 39099
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float raycastOffset;
 
-		// Token: 0x040097D3 RID: 38867
+		// Token: 0x040098BC RID: 39100
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isAggressive = true;
 
-		// Token: 0x040097D4 RID: 38868
+		// Token: 0x040098BD RID: 39101
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBaseSpawn.SpawnUpdateTypes CurrentState;
 
-		// Token: 0x040097D5 RID: 38869
+		// Token: 0x040098BE RID: 39102
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<ActionBaseSpawn.SpawnEntry> SpawnEntries;
 
-		// Token: 0x02001998 RID: 6552
+		// Token: 0x020019C9 RID: 6601
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum SpawnTypes
 		{
-			// Token: 0x040097D7 RID: 38871
+			// Token: 0x040098C0 RID: 39104
 			NearTarget,
-			// Token: 0x040097D8 RID: 38872
+			// Token: 0x040098C1 RID: 39105
 			Position,
-			// Token: 0x040097D9 RID: 38873
+			// Token: 0x040098C2 RID: 39106
 			NearPosition,
-			// Token: 0x040097DA RID: 38874
+			// Token: 0x040098C3 RID: 39107
 			WanderingHorde
 		}
 
-		// Token: 0x02001999 RID: 6553
+		// Token: 0x020019CA RID: 6602
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum SpawnUpdateTypes
 		{
-			// Token: 0x040097DC RID: 38876
+			// Token: 0x040098C5 RID: 39109
 			NeedSpawnEntries,
-			// Token: 0x040097DD RID: 38877
+			// Token: 0x040098C6 RID: 39110
 			NeedPosition,
-			// Token: 0x040097DE RID: 38878
+			// Token: 0x040098C7 RID: 39111
 			SpawnEntities
 		}
 
-		// Token: 0x0200199A RID: 6554
+		// Token: 0x020019CB RID: 6603
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public class SpawnEntry
 		{
-			// Token: 0x040097DF RID: 38879
+			// Token: 0x040098C8 RID: 39112
 			public Entity Target;
 
-			// Token: 0x040097E0 RID: 38880
+			// Token: 0x040098C9 RID: 39113
 			public int EntityTypeID;
 		}
 	}

@@ -10,18 +10,18 @@ using Unity.Burst;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000B46 RID: 2886
+// Token: 0x02000B51 RID: 2897
 [BurstCompile(CompileSynchronously = true)]
 public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 {
-	// Token: 0x06005710 RID: 22288 RVA: 0x00218640 File Offset: 0x00216840
+	// Token: 0x06005735 RID: 22325 RVA: 0x00219B9C File Offset: 0x00217D9C
 	public ChunkProviderGenerateWorldFromRaw(string _levelName, PathAbstractions.AbstractedLocation _worldLocation, bool _bClientMode = false, bool _bFixedWaterLevel = false)
 		: base(_levelName, _worldLocation, _bClientMode)
 	{
 		this.bFixedWaterLevel = _bFixedWaterLevel;
 	}
 
-	// Token: 0x06005711 RID: 22289 RVA: 0x0021869D File Offset: 0x0021689D
+	// Token: 0x06005736 RID: 22326 RVA: 0x00219BF9 File Offset: 0x00217DF9
 	public override IEnumerator Init(World _world)
 	{
 		ChunkProviderGenerateWorldFromRaw.<>c__DisplayClass17_0 CS$<>8__locals1 = new ChunkProviderGenerateWorldFromRaw.<>c__DisplayClass17_0();
@@ -256,7 +256,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		yield break;
 	}
 
-	// Token: 0x06005712 RID: 22290 RVA: 0x002186B3 File Offset: 0x002168B3
+	// Token: 0x06005737 RID: 22327 RVA: 0x00219C0F File Offset: 0x00217E0F
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Color32 ARGB32ToColor(TextureUtils.ColorARGB32 _color)
@@ -264,7 +264,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return new Color32(_color.r, _color.g, _color.b, _color.a);
 	}
 
-	// Token: 0x06005713 RID: 22291 RVA: 0x002186D2 File Offset: 0x002168D2
+	// Token: 0x06005738 RID: 22328 RVA: 0x00219C2E File Offset: 0x00217E2E
 	public static IEnumerator RoadSmooth(Texture2D _tex, Texture2D _smoothedTex)
 	{
 		int width = _tex.width;
@@ -297,14 +297,14 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		yield break;
 	}
 
-	// Token: 0x06005714 RID: 22292 RVA: 0x002186E8 File Offset: 0x002168E8
+	// Token: 0x06005739 RID: 22329 RVA: 0x00219C44 File Offset: 0x00217E44
 	[BurstCompile(CompileSynchronously = true)]
 	public static void RoadSmooth(in NativeArray<Color32> _colors, ref NativeArray<Color32> _colorsOut, int width, int height)
 	{
-		ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.Invoke(in _colors, ref _colorsOut, width, height);
+		ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.Invoke(in _colors, ref _colorsOut, width, height);
 	}
 
-	// Token: 0x06005715 RID: 22293 RVA: 0x002186F4 File Offset: 0x002168F4
+	// Token: 0x0600573A RID: 22330 RVA: 0x00219C50 File Offset: 0x00217E50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadDTM(string _dtmFilename = null)
 	{
@@ -320,23 +320,23 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		this.heightData = HeightMapUtils.LoadHeightMapRAW(_dtmFilename + ".raw", this.heightMapWidth, this.heightMapHeight, 1f, 250);
 	}
 
-	// Token: 0x06005716 RID: 22294 RVA: 0x0021874C File Offset: 0x0021694C
+	// Token: 0x0600573B RID: 22331 RVA: 0x00219CA8 File Offset: 0x00217EA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool filesNeedProcessing(string _worldPath, string _dtmFilename)
 	{
 		return !_dtmFilename.EndsWith("_processed") || !SdFile.Exists(_worldPath + "/splat3_processed.png") || !SdFile.Exists(_worldPath + "/splat4_processed.png") || !SdFile.Exists(_worldPath + "/splat3_half.png") || !SdFile.Exists(_worldPath + "/splat4_half.png") || !this.verifyFileHashes(_worldPath);
 	}
 
-	// Token: 0x1700095A RID: 2394
-	// (get) Token: 0x06005717 RID: 22295 RVA: 0x002187BA File Offset: 0x002169BA
-	// (set) Token: 0x06005718 RID: 22296 RVA: 0x002187C2 File Offset: 0x002169C2
+	// Token: 0x17000960 RID: 2400
+	// (get) Token: 0x0600573C RID: 22332 RVA: 0x00219D16 File Offset: 0x00217F16
+	// (set) Token: 0x0600573D RID: 22333 RVA: 0x00219D1E File Offset: 0x00217F1E
 	public long worldFileTotalSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06005719 RID: 22297 RVA: 0x002187CB File Offset: 0x002169CB
+	// Token: 0x0600573E RID: 22334 RVA: 0x00219D27 File Offset: 0x00217F27
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator calcWorldFileCrcs(string _worldPath)
 	{
@@ -364,7 +364,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		yield break;
 	}
 
-	// Token: 0x0600571A RID: 22298 RVA: 0x002187E4 File Offset: 0x002169E4
+	// Token: 0x0600573F RID: 22335 RVA: 0x00219D40 File Offset: 0x00217F40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void saveFileHashes(string _worldPath, Dictionary<string, uint> _worldFileCrcs)
 	{
@@ -382,7 +382,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		}
 	}
 
-	// Token: 0x0600571B RID: 22299 RVA: 0x002188A0 File Offset: 0x00216AA0
+	// Token: 0x06005740 RID: 22336 RVA: 0x00219DFC File Offset: 0x00217FFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, uint> loadStoredFileHashes(string _worldPath)
 	{
@@ -412,7 +412,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return dictionary;
 	}
 
-	// Token: 0x0600571C RID: 22300 RVA: 0x00218944 File Offset: 0x00216B44
+	// Token: 0x06005741 RID: 22337 RVA: 0x00219EA0 File Offset: 0x002180A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool verifyFileHashes(string _worldPath)
 	{
@@ -437,7 +437,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return true;
 	}
 
-	// Token: 0x0600571D RID: 22301 RVA: 0x002189D4 File Offset: 0x00216BD4
+	// Token: 0x06005742 RID: 22338 RVA: 0x00219F30 File Offset: 0x00218130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator processFiles(string _worldPath, ChunkProviderGenerateWorldFromRaw.ProcessFilesCallback _callback)
 	{
@@ -680,7 +680,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		yield break;
 	}
 
-	// Token: 0x0600571E RID: 22302 RVA: 0x002189F4 File Offset: 0x00216BF4
+	// Token: 0x06005743 RID: 22339 RVA: 0x00219F50 File Offset: 0x00218150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D generateHalfResTexture(Texture2D _tex)
 	{
@@ -695,7 +695,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return texture2D;
 	}
 
-	// Token: 0x0600571F RID: 22303 RVA: 0x00218A40 File Offset: 0x00216C40
+	// Token: 0x06005744 RID: 22340 RVA: 0x00219F9C File Offset: 0x0021819C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string getFilenameDTM()
 	{
@@ -707,7 +707,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return fullPath + "/dtm";
 	}
 
-	// Token: 0x06005720 RID: 22304 RVA: 0x00218A82 File Offset: 0x00216C82
+	// Token: 0x06005745 RID: 22341 RVA: 0x00219FDE File Offset: 0x002181DE
 	public override void ReloadAllChunks()
 	{
 		this.loadDTM(null);
@@ -715,13 +715,13 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		base.ReloadAllChunks();
 	}
 
-	// Token: 0x06005721 RID: 22305 RVA: 0x00080804 File Offset: 0x0007EA04
+	// Token: 0x06005746 RID: 22342 RVA: 0x000809D4 File Offset: 0x0007EBD4
 	public override EnumChunkProviderId GetProviderId()
 	{
 		return EnumChunkProviderId.ChunkDataDriven;
 	}
 
-	// Token: 0x06005722 RID: 22306 RVA: 0x00218AB8 File Offset: 0x00216CB8
+	// Token: 0x06005747 RID: 22343 RVA: 0x0021A014 File Offset: 0x00218214
 	public override bool GetWorldExtent(out Vector3i _minSize, out Vector3i _maxSize)
 	{
 		_minSize = new Vector3i(-this.heightMapWidth * this.heightMapScale / 2, 0, -this.heightMapHeight * this.heightMapScale / 2);
@@ -729,13 +729,13 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return true;
 	}
 
-	// Token: 0x06005723 RID: 22307 RVA: 0x00218B20 File Offset: 0x00216D20
+	// Token: 0x06005748 RID: 22344 RVA: 0x0021A07C File Offset: 0x0021827C
 	public override Vector2i GetWorldSize()
 	{
 		return new Vector2i(this.heightMapWidth * this.heightMapScale, this.heightMapHeight * this.heightMapScale);
 	}
 
-	// Token: 0x06005724 RID: 22308 RVA: 0x00218B44 File Offset: 0x00216D44
+	// Token: 0x06005749 RID: 22345 RVA: 0x0021A0A0 File Offset: 0x002182A0
 	public override int GetPOIBlockIdOverride(int x, int z)
 	{
 		if (this.poiFromImage == null)
@@ -756,7 +756,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return poiForColor.m_BlockValue.type;
 	}
 
-	// Token: 0x06005725 RID: 22309 RVA: 0x00218BCA File Offset: 0x00216DCA
+	// Token: 0x0600574A RID: 22346 RVA: 0x0021A126 File Offset: 0x00218326
 	public unsafe override IEnumerator FillOccupiedMap(int width, int height, DecoOccupiedMap _occupiedMap, List<PrefabInstance> overridePOIList = null)
 	{
 		MicroStopwatch mswYields = new MicroStopwatch();
@@ -952,7 +952,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		yield break;
 	}
 
-	// Token: 0x06005726 RID: 22310 RVA: 0x00218BF8 File Offset: 0x00216DF8
+	// Token: 0x0600574B RID: 22347 RVA: 0x0021A154 File Offset: 0x00218354
 	public override float GetPOIHeightOverride(int x, int z)
 	{
 		WorldDecoratorPOIFromImage worldDecoratorPOIFromImage = this.m_Decorators[0] as WorldDecoratorPOIFromImage;
@@ -978,7 +978,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return (float)poiForColor.m_YPosFill;
 	}
 
-	// Token: 0x06005727 RID: 22311 RVA: 0x00218CA8 File Offset: 0x00216EA8
+	// Token: 0x0600574C RID: 22348 RVA: 0x0021A204 File Offset: 0x00218404
 	public float GetHeight(int x, int z)
 	{
 		float num;
@@ -994,7 +994,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		return num;
 	}
 
-	// Token: 0x06005728 RID: 22312 RVA: 0x00218D04 File Offset: 0x00216F04
+	// Token: 0x0600574D RID: 22349 RVA: 0x0021A260 File Offset: 0x00218460
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -1024,7 +1024,7 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		biomeProvider.Cleanup();
 	}
 
-	// Token: 0x06005729 RID: 22313 RVA: 0x00218D90 File Offset: 0x00216F90
+	// Token: 0x0600574E RID: 22350 RVA: 0x0021A2EC File Offset: 0x002184EC
 	public void GetWaterChunks16x16(out int _water16x16ChunksW, out byte[] _water16x16Chunks)
 	{
 		WorldDecoratorPOIFromImage worldDecoratorPOIFromImage = this.m_Decorators[0] as WorldDecoratorPOIFromImage;
@@ -1037,13 +1037,13 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		worldDecoratorPOIFromImage.GetWaterChunks16x16(out _water16x16ChunksW, out _water16x16Chunks);
 	}
 
-	// Token: 0x0600572A RID: 22314 RVA: 0x00217D1C File Offset: 0x00215F1C
+	// Token: 0x0600574F RID: 22351 RVA: 0x00219278 File Offset: 0x00217478
 	public override ChunkProtectionLevel GetChunkProtectionLevel(Vector3i worldPos)
 	{
 		return this.m_RegionFileManager.GetChunkProtectionLevelForWorldPos(worldPos);
 	}
 
-	// Token: 0x0600572D RID: 22317 RVA: 0x00218E14 File Offset: 0x00217014
+	// Token: 0x06005752 RID: 22354 RVA: 0x0021A370 File Offset: 0x00218570
 	[BurstCompile(CompileSynchronously = true)]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1092,69 +1092,69 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 		}
 	}
 
-	// Token: 0x0400438B RID: 17291
+	// Token: 0x040043B0 RID: 17328
 	public const string cRawProcessed = "_processed";
 
-	// Token: 0x0400438C RID: 17292
+	// Token: 0x040043B1 RID: 17329
 	public const string cHalf = "_half";
 
-	// Token: 0x0400438D RID: 17293
+	// Token: 0x040043B2 RID: 17330
 	public const int cMaxHeight = 255;
 
-	// Token: 0x0400438E RID: 17294
+	// Token: 0x040043B3 RID: 17331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int heightMapWidth = 4096;
 
-	// Token: 0x0400438F RID: 17295
+	// Token: 0x040043B4 RID: 17332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int heightMapHeight = 4096;
 
-	// Token: 0x04004390 RID: 17296
+	// Token: 0x040043B5 RID: 17333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int heightMapScale = 1;
 
-	// Token: 0x04004391 RID: 17297
+	// Token: 0x040043B6 RID: 17334
 	public const float hmFac = 0.0038910506f;
 
-	// Token: 0x04004392 RID: 17298
+	// Token: 0x040043B7 RID: 17335
 	public IBackedArray<ushort> heightData;
 
-	// Token: 0x04004393 RID: 17299
+	// Token: 0x040043B8 RID: 17336
 	public WorldDecoratorPOIFromImage poiFromImage;
 
-	// Token: 0x04004394 RID: 17300
+	// Token: 0x040043B9 RID: 17337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HeightMap heightMap;
 
-	// Token: 0x04004395 RID: 17301
+	// Token: 0x040043BA RID: 17338
 	public Texture2D[] splats = new Texture2D[7];
 
-	// Token: 0x04004396 RID: 17302
+	// Token: 0x040043BB RID: 17339
 	public Texture2D procBiomeMask1;
 
-	// Token: 0x04004397 RID: 17303
+	// Token: 0x040043BC RID: 17340
 	public Texture2D procBiomeMask2;
 
-	// Token: 0x04004398 RID: 17304
+	// Token: 0x040043BD RID: 17341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, ChunkProviderGenerateWorldFromRaw.Bluff> bluffs = new Dictionary<string, ChunkProviderGenerateWorldFromRaw.Bluff>();
 
-	// Token: 0x04004399 RID: 17305
+	// Token: 0x040043BE RID: 17342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFixedWaterLevel;
 
-	// Token: 0x0400439A RID: 17306
+	// Token: 0x040043BF RID: 17343
 	public readonly Dictionary<string, uint> worldFileCrcs = new CaseInsensitiveStringDictionary<uint>();
 
-	// Token: 0x0400439C RID: 17308
+	// Token: 0x040043C1 RID: 17345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] FilesUsedForProcessing = new string[] { "prefabs.xml", "dtm.raw", "splat3.tga", "splat3.png", "water_info.xml", "main.ttw", "biomes.png" };
 
-	// Token: 0x02000B47 RID: 2887
+	// Token: 0x02000B52 RID: 2898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Bluff
 	{
-		// Token: 0x0600572E RID: 22318 RVA: 0x00218FB0 File Offset: 0x002171B0
+		// Token: 0x06005753 RID: 22355 RVA: 0x0021A50C File Offset: 0x0021870C
 		public static ChunkProviderGenerateWorldFromRaw.Bluff Load(string _name)
 		{
 			Texture2D texture2D = TextureUtils.LoadTexture(GameIO.GetGameDir("Data/Bluffs") + "/" + _name + ".tga", FilterMode.Point, false, false, null);
@@ -1171,76 +1171,76 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 			return bluff;
 		}
 
-		// Token: 0x0400439D RID: 17309
+		// Token: 0x040043C2 RID: 17346
 		public int width;
 
-		// Token: 0x0400439E RID: 17310
+		// Token: 0x040043C3 RID: 17347
 		public int height;
 
-		// Token: 0x0400439F RID: 17311
+		// Token: 0x040043C4 RID: 17348
 		public float[] data;
 	}
 
-	// Token: 0x02000B48 RID: 2888
-	// (Invoke) Token: 0x06005731 RID: 22321
+	// Token: 0x02000B53 RID: 2899
+	// (Invoke) Token: 0x06005756 RID: 22358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate void ProcessFilesCallback(Texture2D _splat3Tex, Texture2D _splat3Visual, Texture2D _splat4Tex, Texture2D _splat4Visual, WorldDecoratorPOIFromImage _decoratorPoiFromImage);
 
-	// Token: 0x02000B51 RID: 2897
-	// (Invoke) Token: 0x06005759 RID: 22361
+	// Token: 0x02000B5C RID: 2908
+	// (Invoke) Token: 0x0600577E RID: 22398
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public delegate void RoadSmooth_00005714$PostfixBurstDelegate(in NativeArray<Color32> _colors, ref NativeArray<Color32> _colorsOut, int width, int height);
+	public delegate void RoadSmooth_00005739$PostfixBurstDelegate(in NativeArray<Color32> _colors, ref NativeArray<Color32> _colorsOut, int width, int height);
 
-	// Token: 0x02000B52 RID: 2898
+	// Token: 0x02000B5D RID: 2909
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static class RoadSmooth_00005714$BurstDirectCall
+	public static class RoadSmooth_00005739$BurstDirectCall
 	{
-		// Token: 0x0600575C RID: 22364 RVA: 0x0021B30B File Offset: 0x0021950B
+		// Token: 0x06005781 RID: 22401 RVA: 0x0021C867 File Offset: 0x0021AA67
 		[BurstDiscard]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 		{
-			if (ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.Pointer == 0)
+			if (ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.Pointer == 0)
 			{
-				ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.DeferredCompilation, methodof(ChunkProviderGenerateWorldFromRaw.RoadSmooth$BurstManaged(ref NativeArray<Color32>, ref NativeArray<Color32>, int, int)).MethodHandle, typeof(ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$PostfixBurstDelegate).TypeHandle);
+				ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.DeferredCompilation, methodof(ChunkProviderGenerateWorldFromRaw.RoadSmooth$BurstManaged(ref NativeArray<Color32>, ref NativeArray<Color32>, int, int)).MethodHandle, typeof(ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$PostfixBurstDelegate).TypeHandle);
 			}
-			A_0 = ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.Pointer;
+			A_0 = ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.Pointer;
 		}
 
-		// Token: 0x0600575D RID: 22365 RVA: 0x0021B338 File Offset: 0x00219538
+		// Token: 0x06005782 RID: 22402 RVA: 0x0021C894 File Offset: 0x0021AA94
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IntPtr GetFunctionPointer()
 		{
 			IntPtr intPtr = (IntPtr)0;
-			ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+			ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 			return intPtr;
 		}
 
-		// Token: 0x0600575E RID: 22366 RVA: 0x0021B350 File Offset: 0x00219550
+		// Token: 0x06005783 RID: 22403 RVA: 0x0021C8AC File Offset: 0x0021AAAC
 		public static void Constructor()
 		{
-			ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(ChunkProviderGenerateWorldFromRaw.RoadSmooth(ref NativeArray<Color32>, ref NativeArray<Color32>, int, int)).MethodHandle);
+			ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(ChunkProviderGenerateWorldFromRaw.RoadSmooth(ref NativeArray<Color32>, ref NativeArray<Color32>, int, int)).MethodHandle);
 		}
 
-		// Token: 0x0600575F RID: 22367 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06005784 RID: 22404 RVA: 0x000027FC File Offset: 0x000009FC
 		public static void Initialize()
 		{
 		}
 
-		// Token: 0x06005760 RID: 22368 RVA: 0x0021B361 File Offset: 0x00219561
+		// Token: 0x06005785 RID: 22405 RVA: 0x0021C8BD File Offset: 0x0021AABD
 		// Note: this type is marked as 'beforefieldinit'.
 		[PublicizedFrom(EAccessModifier.Private)]
-		static RoadSmooth_00005714$BurstDirectCall()
+		static RoadSmooth_00005739$BurstDirectCall()
 		{
-			ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.Constructor();
+			ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.Constructor();
 		}
 
-		// Token: 0x06005761 RID: 22369 RVA: 0x0021B368 File Offset: 0x00219568
+		// Token: 0x06005786 RID: 22406 RVA: 0x0021C8C4 File Offset: 0x0021AAC4
 		public static void Invoke(in NativeArray<Color32> _colors, ref NativeArray<Color32> _colorsOut, int width, int height)
 		{
 			if (BurstCompiler.IsEnabled)
 			{
-				IntPtr functionPointer = ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005714$BurstDirectCall.GetFunctionPointer();
+				IntPtr functionPointer = ChunkProviderGenerateWorldFromRaw.RoadSmooth_00005739$BurstDirectCall.GetFunctionPointer();
 				if (functionPointer != 0)
 				{
 					calli(System.Void(Unity.Collections.NativeArray`1<UnityEngine.Color32>&,Unity.Collections.NativeArray`1<UnityEngine.Color32>&,System.Int32,System.Int32), ref _colors, ref _colorsOut, width, height, functionPointer);
@@ -1250,11 +1250,11 @@ public class ChunkProviderGenerateWorldFromRaw : ChunkProviderGenerateWorld
 			ChunkProviderGenerateWorldFromRaw.RoadSmooth$BurstManaged(in _colors, ref _colorsOut, width, height);
 		}
 
-		// Token: 0x040043EC RID: 17388
+		// Token: 0x04004411 RID: 17425
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IntPtr Pointer;
 
-		// Token: 0x040043ED RID: 17389
+		// Token: 0x04004412 RID: 17426
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IntPtr DeferredCompilation;
 	}

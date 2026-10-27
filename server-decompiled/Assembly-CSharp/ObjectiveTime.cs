@@ -4,12 +4,12 @@ using System.Globalization;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020009B8 RID: 2488
+// Token: 0x020009C2 RID: 2498
 [Preserve]
 public class ObjectiveTime : BaseObjective
 {
-	// Token: 0x170007E6 RID: 2022
-	// (get) Token: 0x060048FF RID: 18687 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x170007EC RID: 2028
+	// (get) Token: 0x06004922 RID: 18722 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -18,8 +18,8 @@ public class ObjectiveTime : BaseObjective
 		}
 	}
 
-	// Token: 0x170007E7 RID: 2023
-	// (get) Token: 0x06004900 RID: 18688 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170007ED RID: 2029
+	// (get) Token: 0x06004923 RID: 18723 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool UpdateUI
 	{
 		get
@@ -28,8 +28,8 @@ public class ObjectiveTime : BaseObjective
 		}
 	}
 
-	// Token: 0x170007E8 RID: 2024
-	// (get) Token: 0x06004901 RID: 18689 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007EE RID: 2030
+	// (get) Token: 0x06004924 RID: 18724 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ShowInQuestLog
 	{
 		get
@@ -38,8 +38,8 @@ public class ObjectiveTime : BaseObjective
 		}
 	}
 
-	// Token: 0x170007E9 RID: 2025
-	// (get) Token: 0x06004902 RID: 18690 RVA: 0x001C9EA0 File Offset: 0x001C80A0
+	// Token: 0x170007EF RID: 2031
+	// (get) Token: 0x06004925 RID: 18725 RVA: 0x001CAF74 File Offset: 0x001C9174
 	public override string StatusText
 	{
 		get
@@ -58,32 +58,32 @@ public class ObjectiveTime : BaseObjective
 		}
 	}
 
-	// Token: 0x06004903 RID: 18691 RVA: 0x001C9EF5 File Offset: 0x001C80F5
+	// Token: 0x06004926 RID: 18726 RVA: 0x001CAFC9 File Offset: 0x001C91C9
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveTime_keyword", false, null);
 		this.dayLengthInSeconds = GamePrefs.GetInt(EnumGamePrefs.DayNightLength) * 60;
 	}
 
-	// Token: 0x06004904 RID: 18692 RVA: 0x001C9F19 File Offset: 0x001C8119
+	// Token: 0x06004927 RID: 18727 RVA: 0x001CAFED File Offset: 0x001C91ED
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format("{0}:", this.keyword);
 	}
 
-	// Token: 0x06004905 RID: 18693 RVA: 0x001C5F75 File Offset: 0x001C4175
+	// Token: 0x06004928 RID: 18728 RVA: 0x001C7021 File Offset: 0x001C5221
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.AddObjectiveToBeUpdated(this);
 	}
 
-	// Token: 0x06004906 RID: 18694 RVA: 0x001C7FD6 File Offset: 0x001C61D6
+	// Token: 0x06004929 RID: 18729 RVA: 0x001C9082 File Offset: 0x001C7282
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.RemoveObjectiveToBeUpdated(this);
 	}
 
-	// Token: 0x06004907 RID: 18695 RVA: 0x001C9F34 File Offset: 0x001C8134
+	// Token: 0x0600492A RID: 18730 RVA: 0x001CB008 File Offset: 0x001C9208
 	public override void Refresh()
 	{
 		this.SetupDisplay();
@@ -101,20 +101,20 @@ public class ObjectiveTime : BaseObjective
 		}
 	}
 
-	// Token: 0x06004908 RID: 18696 RVA: 0x001C9F91 File Offset: 0x001C8191
+	// Token: 0x0600492B RID: 18731 RVA: 0x001CB065 File Offset: 0x001C9265
 	public override void Read(PooledBinaryReader _br)
 	{
 		this.currentTime = (float)_br.ReadUInt16();
 		this.currentValue = 1;
 	}
 
-	// Token: 0x06004909 RID: 18697 RVA: 0x001C9FA7 File Offset: 0x001C81A7
+	// Token: 0x0600492C RID: 18732 RVA: 0x001CB07B File Offset: 0x001C927B
 	public override void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write((ushort)this.currentTime);
 	}
 
-	// Token: 0x0600490A RID: 18698 RVA: 0x001C9FB6 File Offset: 0x001C81B6
+	// Token: 0x0600492D RID: 18733 RVA: 0x001CB08A File Offset: 0x001C928A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -125,7 +125,7 @@ public class ObjectiveTime : BaseObjective
 		objectiveTime.overrideOffset = this.overrideOffset;
 	}
 
-	// Token: 0x0600490B RID: 18699 RVA: 0x001C9FE8 File Offset: 0x001C81E8
+	// Token: 0x0600492E RID: 18734 RVA: 0x001CB0BC File Offset: 0x001C92BC
 	public override BaseObjective Clone()
 	{
 		ObjectiveTime objectiveTime = new ObjectiveTime();
@@ -133,7 +133,7 @@ public class ObjectiveTime : BaseObjective
 		return objectiveTime;
 	}
 
-	// Token: 0x0600490C RID: 18700 RVA: 0x001CA004 File Offset: 0x001C8204
+	// Token: 0x0600492F RID: 18735 RVA: 0x001CB0D8 File Offset: 0x001C92D8
 	public override void Update(float updateTime)
 	{
 		if (this.firstRun)
@@ -162,14 +162,14 @@ public class ObjectiveTime : BaseObjective
 		}
 	}
 
-	// Token: 0x0600490D RID: 18701 RVA: 0x001CA0C3 File Offset: 0x001C82C3
+	// Token: 0x06004930 RID: 18736 RVA: 0x001CB197 File Offset: 0x001C9397
 	public override void HandleFailed()
 	{
 		this.currentTime = 0f;
 		base.Complete = false;
 	}
 
-	// Token: 0x0600490E RID: 18702 RVA: 0x001CA0D7 File Offset: 0x001C82D7
+	// Token: 0x06004931 RID: 18737 RVA: 0x001CB1AB File Offset: 0x001C93AB
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -178,7 +178,7 @@ public class ObjectiveTime : BaseObjective
 		properties.ParseFloat(ObjectiveTime.PropOverrideOffset, ref this.overrideOffset);
 	}
 
-	// Token: 0x0600490F RID: 18703 RVA: 0x001CA114 File Offset: 0x001C8314
+	// Token: 0x06004932 RID: 18738 RVA: 0x001CB1E8 File Offset: 0x001C93E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
@@ -187,42 +187,42 @@ public class ObjectiveTime : BaseObjective
 		parameters.Add("override_offset", this.overrideOffset);
 	}
 
-	// Token: 0x04003A2D RID: 14893
+	// Token: 0x04003A4D RID: 14925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentTime;
 
-	// Token: 0x04003A2E RID: 14894
+	// Token: 0x04003A4E RID: 14926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ObjectiveTime.OverrideTypes overrideType;
 
-	// Token: 0x04003A2F RID: 14895
+	// Token: 0x04003A4F RID: 14927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float overrideOffset;
 
-	// Token: 0x04003A30 RID: 14896
+	// Token: 0x04003A50 RID: 14928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstRun = true;
 
-	// Token: 0x04003A31 RID: 14897
+	// Token: 0x04003A51 RID: 14929
 	public static string PropTime = "time";
 
-	// Token: 0x04003A32 RID: 14898
+	// Token: 0x04003A52 RID: 14930
 	public static string PropOverrideType = "override_type";
 
-	// Token: 0x04003A33 RID: 14899
+	// Token: 0x04003A53 RID: 14931
 	public static string PropOverrideOffset = "override_offset";
 
-	// Token: 0x04003A34 RID: 14900
+	// Token: 0x04003A54 RID: 14932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dayLengthInSeconds;
 
-	// Token: 0x020009B9 RID: 2489
+	// Token: 0x020009C3 RID: 2499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum OverrideTypes
 	{
-		// Token: 0x04003A36 RID: 14902
+		// Token: 0x04003A56 RID: 14934
 		None,
-		// Token: 0x04003A37 RID: 14903
+		// Token: 0x04003A57 RID: 14935
 		VoteTime
 	}
 }

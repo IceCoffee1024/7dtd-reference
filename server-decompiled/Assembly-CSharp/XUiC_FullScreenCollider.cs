@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E94 RID: 3732
+// Token: 0x02000E9F RID: 3743
 [Preserve]
 public class XUiC_FullScreenCollider : XUiController
 {
-	// Token: 0x06007371 RID: 29553 RVA: 0x002C0D54 File Offset: 0x002BEF54
+	// Token: 0x06007396 RID: 29590 RVA: 0x002C22C0 File Offset: 0x002C04C0
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		XUiC_FullScreenCollider.visibleInstances.Remove(this);
 	}
 
-	// Token: 0x06007372 RID: 29554 RVA: 0x002C0D68 File Offset: 0x002BEF68
+	// Token: 0x06007397 RID: 29591 RVA: 0x002C22D4 File Offset: 0x002C04D4
 	[XuiBindEvent("OnVisiblity", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void visibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
@@ -26,13 +26,13 @@ public class XUiC_FullScreenCollider : XUiController
 		XUiC_FullScreenCollider.visibleInstances.Remove(this);
 	}
 
-	// Token: 0x06007373 RID: 29555 RVA: 0x002C0D86 File Offset: 0x002BEF86
+	// Token: 0x06007398 RID: 29592 RVA: 0x002C22F2 File Offset: 0x002C04F2
 	public static bool IsBlocked(XUiView _view)
 	{
 		return XUiC_FullScreenCollider.visibleInstances.Count != 0 && XUiC_FullScreenCollider.visibleInstances.Max.ViewComponent.Depth > _view.Depth + 5;
 	}
 
-	// Token: 0x04005675 RID: 22133
+	// Token: 0x0400569A RID: 22170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SortedSet<XUiC_FullScreenCollider> visibleInstances = new SortedSet<XUiC_FullScreenCollider>(XUiControllerComparerDepth.Instance);
 }

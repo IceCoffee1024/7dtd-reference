@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020010C0 RID: 4288
+// Token: 0x020010D0 RID: 4304
 [Preserve]
 public class XUiC_UnlockByList : XUiController
 {
-	// Token: 0x17001018 RID: 4120
-	// (get) Token: 0x06008886 RID: 34950 RVA: 0x00344540 File Offset: 0x00342740
-	// (set) Token: 0x06008887 RID: 34951 RVA: 0x00344548 File Offset: 0x00342748
+	// Token: 0x17001023 RID: 4131
+	// (get) Token: 0x060088D9 RID: 35033 RVA: 0x003465C4 File Offset: 0x003447C4
+	// (set) Token: 0x060088DA RID: 35034 RVA: 0x003465CC File Offset: 0x003447CC
 	public Recipe Recipe
 	{
 		get
@@ -22,7 +22,7 @@ public class XUiC_UnlockByList : XUiController
 		}
 	}
 
-	// Token: 0x06008888 RID: 34952 RVA: 0x00344558 File Offset: 0x00342758
+	// Token: 0x060088DB RID: 35035 RVA: 0x003465DC File Offset: 0x003447DC
 	public override void Init()
 	{
 		base.Init();
@@ -37,7 +37,7 @@ public class XUiC_UnlockByList : XUiController
 		}
 	}
 
-	// Token: 0x06008889 RID: 34953 RVA: 0x00344598 File Offset: 0x00342798
+	// Token: 0x060088DC RID: 35036 RVA: 0x0034661C File Offset: 0x0034481C
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -96,11 +96,11 @@ public class XUiC_UnlockByList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x040065BE RID: 26046
+	// Token: 0x040065FD RID: 26109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe recipe;
 
-	// Token: 0x040065BF RID: 26047
+	// Token: 0x040065FE RID: 26110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiController> unlockByEntries = new List<XUiController>();
 }

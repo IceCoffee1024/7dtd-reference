@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200078E RID: 1934
+// Token: 0x02000796 RID: 1942
 [Preserve]
 public class BansAndWhitelistAuthorizer : AuthorizerAbs
 {
-	// Token: 0x17000608 RID: 1544
-	// (get) Token: 0x060039D0 RID: 14800 RVA: 0x00178B59 File Offset: 0x00176D59
+	// Token: 0x1700060C RID: 1548
+	// (get) Token: 0x060039E7 RID: 14823 RVA: 0x00179AF1 File Offset: 0x00177CF1
 	public override int Order
 	{
 		get
@@ -15,8 +15,8 @@ public class BansAndWhitelistAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x17000609 RID: 1545
-	// (get) Token: 0x060039D1 RID: 14801 RVA: 0x00178B60 File Offset: 0x00176D60
+	// Token: 0x1700060D RID: 1549
+	// (get) Token: 0x060039E8 RID: 14824 RVA: 0x00179AF8 File Offset: 0x00177CF8
 	public override string AuthorizerName
 	{
 		get
@@ -25,8 +25,8 @@ public class BansAndWhitelistAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x1700060A RID: 1546
-	// (get) Token: 0x060039D2 RID: 14802 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x1700060E RID: 1550
+	// (get) Token: 0x060039E9 RID: 14825 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override string StateLocalizationKey
 	{
 		get
@@ -35,8 +35,8 @@ public class BansAndWhitelistAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x1700060B RID: 1547
-	// (get) Token: 0x060039D3 RID: 14803 RVA: 0x00178B67 File Offset: 0x00176D67
+	// Token: 0x1700060F RID: 1551
+	// (get) Token: 0x060039EA RID: 14826 RVA: 0x00179AFF File Offset: 0x00177CFF
 	public override bool AuthorizerActive
 	{
 		get
@@ -45,7 +45,7 @@ public class BansAndWhitelistAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060039D4 RID: 14804 RVA: 0x00178B78 File Offset: 0x00176D78
+	// Token: 0x060039EB RID: 14827 RVA: 0x00179B10 File Offset: 0x00177D10
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		AdminTools adminTools = GameManager.Instance.adminTools;

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB1 RID: 4017
+// Token: 0x02000FC1 RID: 4033
 [Preserve]
 public class XUiC_PartList : XUiC_ItemStackGrid
 {
-	// Token: 0x06007E6E RID: 32366 RVA: 0x00301234 File Offset: 0x002FF434
+	// Token: 0x06007EBD RID: 32445 RVA: 0x00302D50 File Offset: 0x00300F50
 	public override void Init()
 	{
 		base.Init();
@@ -16,19 +16,19 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007E6F RID: 32367 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x06007EBE RID: 32446 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override ItemStack[] GetSlots()
 	{
 		return null;
 	}
 
-	// Token: 0x06007E70 RID: 32368 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007EBF RID: 32447 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x06007E71 RID: 32369 RVA: 0x00301274 File Offset: 0x002FF474
+	// Token: 0x06007EC0 RID: 32448 RVA: 0x00302D90 File Offset: 0x00300F90
 	public void SetPart(ItemValue part, int index)
 	{
 		XUiC_ItemStack xuiC_ItemStack = this.itemControllers[index];
@@ -47,7 +47,7 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		this.itemControllers[index].ViewComponent.EventOnHover = false;
 	}
 
-	// Token: 0x06007E72 RID: 32370 RVA: 0x003012EC File Offset: 0x002FF4EC
+	// Token: 0x06007EC1 RID: 32449 RVA: 0x00302E08 File Offset: 0x00301008
 	public void SetAmmoSlot(ItemValue ammo, int count)
 	{
 		int num = 5;
@@ -63,14 +63,14 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		this.itemControllers[num].GreyedOut = false;
 	}
 
-	// Token: 0x06007E73 RID: 32371 RVA: 0x00301357 File Offset: 0x002FF557
+	// Token: 0x06007EC2 RID: 32450 RVA: 0x00302E73 File Offset: 0x00301073
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetMainItem(ItemStack itemStack)
 	{
 		this.itemClass = itemStack.itemValue.ItemClass;
 	}
 
-	// Token: 0x04005DC9 RID: 24009
+	// Token: 0x04005E04 RID: 24068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200057F RID: 1407
+// Token: 0x02000586 RID: 1414
 public class ItemStackGrid
 {
-	// Token: 0x06002DE7 RID: 11751 RVA: 0x0012396C File Offset: 0x00121B6C
+	// Token: 0x06002DF3 RID: 11763 RVA: 0x001244E8 File Offset: 0x001226E8
 	public ItemStackGrid.Address GetAddress()
 	{
 		if (this.holder == null)
@@ -15,13 +15,13 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x14000038 RID: 56
-	// (add) Token: 0x06002DE8 RID: 11752 RVA: 0x001239A8 File Offset: 0x00121BA8
-	// (remove) Token: 0x06002DE9 RID: 11753 RVA: 0x001239E0 File Offset: 0x00121BE0
+	// (add) Token: 0x06002DF4 RID: 11764 RVA: 0x00124524 File Offset: 0x00122724
+	// (remove) Token: 0x06002DF5 RID: 11765 RVA: 0x0012455C File Offset: 0x0012275C
 	public event Action<int> SlotChanged;
 
 	// Token: 0x170004F6 RID: 1270
-	// (get) Token: 0x06002DEA RID: 11754 RVA: 0x00123A15 File Offset: 0x00121C15
-	// (set) Token: 0x06002DEB RID: 11755 RVA: 0x00123A1D File Offset: 0x00121C1D
+	// (get) Token: 0x06002DF6 RID: 11766 RVA: 0x00124591 File Offset: 0x00122791
+	// (set) Token: 0x06002DF7 RID: 11767 RVA: 0x00124599 File Offset: 0x00122799
 	public Vector2i ContainerSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -29,8 +29,8 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004F7 RID: 1271
-	// (get) Token: 0x06002DEC RID: 11756 RVA: 0x00123A26 File Offset: 0x00121C26
-	// (set) Token: 0x06002DED RID: 11757 RVA: 0x00123A2E File Offset: 0x00121C2E
+	// (get) Token: 0x06002DF8 RID: 11768 RVA: 0x001245A2 File Offset: 0x001227A2
+	// (set) Token: 0x06002DF9 RID: 11769 RVA: 0x001245AA File Offset: 0x001227AA
 	public XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -38,7 +38,7 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004F8 RID: 1272
-	// (get) Token: 0x06002DEE RID: 11758 RVA: 0x00123A37 File Offset: 0x00121C37
+	// (get) Token: 0x06002DFA RID: 11770 RVA: 0x001245B3 File Offset: 0x001227B3
 	public int Length
 	{
 		get
@@ -61,7 +61,7 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004FA RID: 1274
-	// (get) Token: 0x06002DF1 RID: 11761 RVA: 0x00123A55 File Offset: 0x00121C55
+	// (get) Token: 0x06002DFD RID: 11773 RVA: 0x001245D1 File Offset: 0x001227D1
 	public PackedBoolArray SlotLocks
 	{
 		get
@@ -71,7 +71,7 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004FB RID: 1275
-	// (get) Token: 0x06002DF2 RID: 11762 RVA: 0x00123A5D File Offset: 0x00121C5D
+	// (get) Token: 0x06002DFE RID: 11774 RVA: 0x001245D9 File Offset: 0x001227D9
 	public PreferenceTracker Preferences
 	{
 		get
@@ -81,7 +81,7 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004FC RID: 1276
-	// (get) Token: 0x06002DF3 RID: 11763 RVA: 0x00123A65 File Offset: 0x00121C65
+	// (get) Token: 0x06002DFF RID: 11775 RVA: 0x001245E1 File Offset: 0x001227E1
 	public bool Touched
 	{
 		get
@@ -91,8 +91,8 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004FD RID: 1277
-	// (get) Token: 0x06002DF4 RID: 11764 RVA: 0x00123A71 File Offset: 0x00121C71
-	// (set) Token: 0x06002DF5 RID: 11765 RVA: 0x00123A79 File Offset: 0x00121C79
+	// (get) Token: 0x06002E00 RID: 11776 RVA: 0x001245ED File Offset: 0x001227ED
+	// (set) Token: 0x06002E01 RID: 11777 RVA: 0x001245F5 File Offset: 0x001227F5
 	public ulong WorldTimeTouched
 	{
 		get
@@ -106,8 +106,8 @@ public class ItemStackGrid
 	}
 
 	// Token: 0x170004FE RID: 1278
-	// (get) Token: 0x06002DF6 RID: 11766 RVA: 0x00123A82 File Offset: 0x00121C82
-	// (set) Token: 0x06002DF7 RID: 11767 RVA: 0x00123A8A File Offset: 0x00121C8A
+	// (get) Token: 0x06002E02 RID: 11778 RVA: 0x001245FE File Offset: 0x001227FE
+	// (set) Token: 0x06002E03 RID: 11779 RVA: 0x00124606 File Offset: 0x00122806
 	public bool PlayerOwned
 	{
 		get
@@ -120,13 +120,13 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002DF8 RID: 11768 RVA: 0x00123A93 File Offset: 0x00121C93
+	// Token: 0x06002E04 RID: 11780 RVA: 0x0012460F File Offset: 0x0012280F
 	public static ItemStackGrid Create(Vector2i _containerSize, XUiC_ItemStack.StackLocationTypes _stackLocation, bool _hasLocks, bool _hasPreferences, IItemStackGridHolder _holder)
 	{
 		return new ItemStackGrid(_containerSize, _stackLocation, _hasLocks, _hasPreferences, _holder);
 	}
 
-	// Token: 0x06002DF9 RID: 11769 RVA: 0x00123AA0 File Offset: 0x00121CA0
+	// Token: 0x06002E05 RID: 11781 RVA: 0x0012461C File Offset: 0x0012281C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStackGrid(Vector2i _containerSize, XUiC_ItemStack.StackLocationTypes _stackLocation, bool _hasLocks, bool _hasPreferences, IItemStackGridHolder _holder)
 	{
@@ -144,14 +144,14 @@ public class ItemStackGrid
 		this.worldTimeTouched = 0UL;
 	}
 
-	// Token: 0x06002DFA RID: 11770 RVA: 0x00123B2B File Offset: 0x00121D2B
+	// Token: 0x06002E06 RID: 11782 RVA: 0x001246A7 File Offset: 0x001228A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStackGrid()
 	{
 		this.items = Array.Empty<ItemStack>();
 	}
 
-	// Token: 0x06002DFB RID: 11771 RVA: 0x00123B3E File Offset: 0x00121D3E
+	// Token: 0x06002E07 RID: 11783 RVA: 0x001246BA File Offset: 0x001228BA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack CreateSlot(int _slotIndex)
 	{
@@ -160,7 +160,7 @@ public class ItemStackGrid
 		return itemStack;
 	}
 
-	// Token: 0x06002DFC RID: 11772 RVA: 0x00123B4D File Offset: 0x00121D4D
+	// Token: 0x06002E08 RID: 11784 RVA: 0x001246C9 File Offset: 0x001228C9
 	public void OnSlotChanged(int _slotIndex)
 	{
 		if (!this.suppressChanged)
@@ -174,13 +174,13 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002DFD RID: 11773 RVA: 0x00123B68 File Offset: 0x00121D68
+	// Token: 0x06002E09 RID: 11785 RVA: 0x001246E4 File Offset: 0x001228E4
 	public void Touch()
 	{
 		this.worldTimeTouched = GameManager.Instance.World.GetWorldTime();
 	}
 
-	// Token: 0x06002DFE RID: 11774 RVA: 0x00123B80 File Offset: 0x00121D80
+	// Token: 0x06002E0A RID: 11786 RVA: 0x001246FC File Offset: 0x001228FC
 	public void CopyFrom(ItemStackGrid _other, bool _resize = true)
 	{
 		if (_resize)
@@ -213,7 +213,7 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002DFF RID: 11775 RVA: 0x00123C7C File Offset: 0x00121E7C
+	// Token: 0x06002E0B RID: 11787 RVA: 0x001247F8 File Offset: 0x001229F8
 	public List<ItemStack> Resize(Vector2i _containerSize)
 	{
 		int num = _containerSize.x * _containerSize.y;
@@ -256,7 +256,7 @@ public class ItemStackGrid
 		return list;
 	}
 
-	// Token: 0x06002E00 RID: 11776 RVA: 0x00123D4C File Offset: 0x00121F4C
+	// Token: 0x06002E0C RID: 11788 RVA: 0x001248C8 File Offset: 0x00122AC8
 	public bool Reset()
 	{
 		if (this.PlayerOwned)
@@ -268,7 +268,7 @@ public class ItemStackGrid
 		return true;
 	}
 
-	// Token: 0x06002E01 RID: 11777 RVA: 0x00123D67 File Offset: 0x00121F67
+	// Token: 0x06002E0D RID: 11789 RVA: 0x001248E3 File Offset: 0x00122AE3
 	public void Clear()
 	{
 		this.ClearItems();
@@ -285,7 +285,7 @@ public class ItemStackGrid
 		preferenceTracker.Clear();
 	}
 
-	// Token: 0x06002E02 RID: 11778 RVA: 0x00123D90 File Offset: 0x00121F90
+	// Token: 0x06002E0E RID: 11790 RVA: 0x0012490C File Offset: 0x00122B0C
 	public void SetSlotLocks(PackedBoolArray _slotLocks)
 	{
 		if (_slotLocks == null)
@@ -307,19 +307,27 @@ public class ItemStackGrid
 		this.slotLocks = _slotLocks;
 	}
 
-	// Token: 0x06002E03 RID: 11779 RVA: 0x00123E01 File Offset: 0x00122001
+	// Token: 0x06002E0F RID: 11791 RVA: 0x0012497D File Offset: 0x00122B7D
 	public void SetPreferences(PreferenceTracker _preferences)
 	{
 		this.preferences = _preferences;
 	}
 
-	// Token: 0x06002E04 RID: 11780 RVA: 0x00123E0A File Offset: 0x0012200A
+	// Token: 0x06002E10 RID: 11792 RVA: 0x00124986 File Offset: 0x00122B86
 	public bool IsLocked(int _index)
 	{
 		return this.slotLocks != null && this.slotLocks[_index];
 	}
 
-	// Token: 0x06002E05 RID: 11781 RVA: 0x00123E22 File Offset: 0x00122022
+	// Token: 0x06002E11 RID: 11793 RVA: 0x001249A0 File Offset: 0x00122BA0
+	public bool IsSlotLocked(int _index)
+	{
+		PackedBoolArray packedBoolArray = this.slotLocks;
+		int? num = ((packedBoolArray != null) ? new int?(packedBoolArray.Length) : null);
+		return !((_index >= num.GetValueOrDefault()) & (num != null)) && this.slotLocks != null && this.slotLocks[_index];
+	}
+
+	// Token: 0x06002E12 RID: 11794 RVA: 0x001249FC File Offset: 0x00122BFC
 	public void SetLocked(int _index, bool _value)
 	{
 		if (this.slotLocks == null || this.slotLocks[_index] == _value)
@@ -335,7 +343,7 @@ public class ItemStackGrid
 		slotChanged(_index);
 	}
 
-	// Token: 0x06002E06 RID: 11782 RVA: 0x00123E5A File Offset: 0x0012205A
+	// Token: 0x06002E13 RID: 11795 RVA: 0x00124A34 File Offset: 0x00122C34
 	public static ItemStackGrid Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		ItemStackGrid itemStackGrid = new ItemStackGrid();
@@ -343,7 +351,7 @@ public class ItemStackGrid
 		return itemStackGrid;
 	}
 
-	// Token: 0x06002E07 RID: 11783 RVA: 0x00123E6C File Offset: 0x0012206C
+	// Token: 0x06002E14 RID: 11796 RVA: 0x00124A44 File Offset: 0x00122C44
 	public void ReadInto(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		ushort num = _br.ReadUInt16();
@@ -391,7 +399,7 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002E08 RID: 11784 RVA: 0x00123F8C File Offset: 0x0012218C
+	// Token: 0x06002E15 RID: 11797 RVA: 0x00124B64 File Offset: 0x00122D64
 	public void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		_bw.Write(2);
@@ -417,19 +425,19 @@ public class ItemStackGrid
 		_bw.Write(this.playerOwned);
 	}
 
-	// Token: 0x06002E09 RID: 11785 RVA: 0x00123A41 File Offset: 0x00121C41
+	// Token: 0x06002E16 RID: 11798 RVA: 0x001245BD File Offset: 0x001227BD
 	public ItemStack GetItem(int _index)
 	{
 		return this.items[_index];
 	}
 
-	// Token: 0x06002E0A RID: 11786 RVA: 0x00124034 File Offset: 0x00122234
+	// Token: 0x06002E17 RID: 11799 RVA: 0x00124C0C File Offset: 0x00122E0C
 	public ItemStack GetItemClone(int _index)
 	{
 		return this.items[_index].Clone();
 	}
 
-	// Token: 0x06002E0B RID: 11787 RVA: 0x00124043 File Offset: 0x00122243
+	// Token: 0x06002E18 RID: 11800 RVA: 0x00124C1B File Offset: 0x00122E1B
 	public void SetItem(int _index, ItemStack _stack)
 	{
 		if (_stack == null || _stack.count <= 0)
@@ -440,7 +448,7 @@ public class ItemStackGrid
 		this.items[_index].Set(_stack.itemValue.Clone(), _stack.count);
 	}
 
-	// Token: 0x06002E0C RID: 11788 RVA: 0x00124080 File Offset: 0x00122280
+	// Token: 0x06002E19 RID: 11801 RVA: 0x00124C58 File Offset: 0x00122E58
 	public void SetItems(ItemStack[] _items, bool _fireSlotChanged = true)
 	{
 		if (_items == null || _items.Length != this.Length)
@@ -470,7 +478,7 @@ public class ItemStackGrid
 		this.suppressChanged = false;
 	}
 
-	// Token: 0x06002E0D RID: 11789 RVA: 0x0012413C File Offset: 0x0012233C
+	// Token: 0x06002E1A RID: 11802 RVA: 0x00124D14 File Offset: 0x00122F14
 	public int AddItem(ItemStack _itemStack, int _maxIndex = -1)
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -494,7 +502,7 @@ public class ItemStackGrid
 		return -1;
 	}
 
-	// Token: 0x06002E0E RID: 11790 RVA: 0x001241EC File Offset: 0x001223EC
+	// Token: 0x06002E1B RID: 11803 RVA: 0x00124DC4 File Offset: 0x00122FC4
 	public int ChangeCount(int _index, int _delta)
 	{
 		if (_delta == 0)
@@ -531,7 +539,7 @@ public class ItemStackGrid
 		return num;
 	}
 
-	// Token: 0x06002E0F RID: 11791 RVA: 0x00124264 File Offset: 0x00122464
+	// Token: 0x06002E1C RID: 11804 RVA: 0x00124E3C File Offset: 0x0012303C
 	public IList<ItemStack> CopyItemsFrom(ItemStackGrid _source)
 	{
 		int num = Utils.FastMin(this.items.Length, _source.items.Length);
@@ -555,7 +563,7 @@ public class ItemStackGrid
 		return list;
 	}
 
-	// Token: 0x06002E10 RID: 11792 RVA: 0x001242E4 File Offset: 0x001224E4
+	// Token: 0x06002E1D RID: 11805 RVA: 0x00124EBC File Offset: 0x001230BC
 	public ItemStack[] CloneItems()
 	{
 		ItemStack[] array = new ItemStack[this.items.Length];
@@ -566,7 +574,7 @@ public class ItemStackGrid
 		return array;
 	}
 
-	// Token: 0x06002E11 RID: 11793 RVA: 0x00124324 File Offset: 0x00122524
+	// Token: 0x06002E1E RID: 11806 RVA: 0x00124EFC File Offset: 0x001230FC
 	public void ClearItems()
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -575,7 +583,7 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002E12 RID: 11794 RVA: 0x00124351 File Offset: 0x00122551
+	// Token: 0x06002E1F RID: 11807 RVA: 0x00124F29 File Offset: 0x00123129
 	public void Compact()
 	{
 		this.suppressChanged = true;
@@ -584,7 +592,7 @@ public class ItemStackGrid
 		this.NotifyUnlockedSlotsChanged();
 	}
 
-	// Token: 0x06002E13 RID: 11795 RVA: 0x00124370 File Offset: 0x00122570
+	// Token: 0x06002E20 RID: 11808 RVA: 0x00124F48 File Offset: 0x00123148
 	public void Sort()
 	{
 		this.suppressChanged = true;
@@ -611,7 +619,7 @@ public class ItemStackGrid
 		this.NotifyUnlockedSlotsChanged();
 	}
 
-	// Token: 0x06002E14 RID: 11796 RVA: 0x00124408 File Offset: 0x00122608
+	// Token: 0x06002E21 RID: 11809 RVA: 0x00124FE0 File Offset: 0x001231E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NotifyUnlockedSlotsChanged()
 	{
@@ -628,7 +636,7 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002E15 RID: 11797 RVA: 0x00124444 File Offset: 0x00122644
+	// Token: 0x06002E22 RID: 11810 RVA: 0x0012501C File Offset: 0x0012321C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CompactSlots()
 	{
@@ -678,7 +686,7 @@ public class ItemStackGrid
 		}
 	}
 
-	// Token: 0x06002E16 RID: 11798 RVA: 0x0012459C File Offset: 0x0012279C
+	// Token: 0x06002E23 RID: 11811 RVA: 0x00125174 File Offset: 0x00123374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int CompareForSort(ItemStack _a, ItemStack _b)
 	{
@@ -719,49 +727,49 @@ public class ItemStackGrid
 		return num;
 	}
 
-	// Token: 0x040023B9 RID: 9145
+	// Token: 0x040023D4 RID: 9172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IItemStackGridHolder holder;
 
-	// Token: 0x040023BA RID: 9146
+	// Token: 0x040023D5 RID: 9173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort Version = 2;
 
-	// Token: 0x040023BB RID: 9147
+	// Token: 0x040023D6 RID: 9174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] items;
 
-	// Token: 0x040023BC RID: 9148
+	// Token: 0x040023D7 RID: 9175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PackedBoolArray slotLocks;
 
-	// Token: 0x040023BD RID: 9149
+	// Token: 0x040023D8 RID: 9176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PreferenceTracker preferences;
 
-	// Token: 0x040023BE RID: 9150
+	// Token: 0x040023D9 RID: 9177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong worldTimeTouched;
 
-	// Token: 0x040023BF RID: 9151
+	// Token: 0x040023DA RID: 9178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool suppressChanged;
 
-	// Token: 0x040023C0 RID: 9152
+	// Token: 0x040023DB RID: 9179
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool playerOwned;
 
-	// Token: 0x02000580 RID: 1408
+	// Token: 0x02000587 RID: 1415
 	public readonly struct Address
 	{
-		// Token: 0x06002E17 RID: 11799 RVA: 0x00124697 File Offset: 0x00122897
+		// Token: 0x06002E24 RID: 11812 RVA: 0x0012526F File Offset: 0x0012346F
 		public Address(WorldAddress _holderAddress, byte _key)
 		{
 			this.HolderAddress = _holderAddress;
 			this.Key = _key;
 		}
 
-		// Token: 0x06002E18 RID: 11800 RVA: 0x001246A7 File Offset: 0x001228A7
+		// Token: 0x06002E25 RID: 11813 RVA: 0x0012527F File Offset: 0x0012347F
 		public ItemStackGrid Resolve()
 		{
 			IItemStackGridHolder itemStackGridHolder = this.HolderAddress.Resolve<IItemStackGridHolder>();
@@ -772,23 +780,23 @@ public class ItemStackGrid
 			return itemStackGridHolder.GetItemStackGrid(this.Key);
 		}
 
-		// Token: 0x06002E19 RID: 11801 RVA: 0x001246C5 File Offset: 0x001228C5
+		// Token: 0x06002E26 RID: 11814 RVA: 0x0012529D File Offset: 0x0012349D
 		public void Write(PooledBinaryWriter _bw)
 		{
 			this.HolderAddress.Write(_bw);
 			_bw.Write(this.Key);
 		}
 
-		// Token: 0x06002E1A RID: 11802 RVA: 0x001246DF File Offset: 0x001228DF
+		// Token: 0x06002E27 RID: 11815 RVA: 0x001252B7 File Offset: 0x001234B7
 		public static ItemStackGrid.Address Read(PooledBinaryReader _br)
 		{
 			return new ItemStackGrid.Address(WorldAddress.Read(_br), _br.ReadByte());
 		}
 
-		// Token: 0x040023C4 RID: 9156
+		// Token: 0x040023DF RID: 9183
 		public readonly WorldAddress HolderAddress;
 
-		// Token: 0x040023C5 RID: 9157
+		// Token: 0x040023E0 RID: 9184
 		public readonly byte Key;
 	}
 }

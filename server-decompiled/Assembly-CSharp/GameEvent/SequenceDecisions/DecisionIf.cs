@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceDecisions
 {
-	// Token: 0x02001980 RID: 6528
+	// Token: 0x020019B1 RID: 6577
 	[Preserve]
 	public class DecisionIf : BaseDecision
 	{
-		// Token: 0x0600C90A RID: 51466 RVA: 0x00497F49 File Offset: 0x00496149
+		// Token: 0x0600CA1E RID: 51742 RVA: 0x0049B93D File Offset: 0x00499B3D
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (!this.runActions)
@@ -27,7 +27,7 @@ namespace GameEvent.SequenceDecisions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C90B RID: 51467 RVA: 0x00497F7C File Offset: 0x0049617C
+		// Token: 0x0600CA1F RID: 51743 RVA: 0x0049B970 File Offset: 0x00499B70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckCondition()
 		{
@@ -61,14 +61,14 @@ namespace GameEvent.SequenceDecisions
 			return true;
 		}
 
-		// Token: 0x0600C90C RID: 51468 RVA: 0x0049801C File Offset: 0x0049621C
+		// Token: 0x0600CA20 RID: 51744 RVA: 0x0049BA10 File Offset: 0x00499C10
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<DecisionIf.ConditionTypes>(DecisionIf.PropConditionType, ref this.ConditionType);
 		}
 
-		// Token: 0x0600C90D RID: 51469 RVA: 0x00498036 File Offset: 0x00496236
+		// Token: 0x0600CA21 RID: 51745 RVA: 0x0049BA2A File Offset: 0x00499C2A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -78,23 +78,23 @@ namespace GameEvent.SequenceDecisions
 			};
 		}
 
-		// Token: 0x04009723 RID: 38691
+		// Token: 0x0400980C RID: 38924
 		public DecisionIf.ConditionTypes ConditionType = DecisionIf.ConditionTypes.All;
 
-		// Token: 0x04009724 RID: 38692
+		// Token: 0x0400980D RID: 38925
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropConditionType = "condition_type";
 
-		// Token: 0x04009725 RID: 38693
+		// Token: 0x0400980E RID: 38926
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool runActions;
 
-		// Token: 0x02001981 RID: 6529
+		// Token: 0x020019B2 RID: 6578
 		public enum ConditionTypes
 		{
-			// Token: 0x04009727 RID: 38695
+			// Token: 0x04009810 RID: 38928
 			Any,
-			// Token: 0x04009728 RID: 38696
+			// Token: 0x04009811 RID: 38929
 			All
 		}
 	}

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F9A RID: 3994
+// Token: 0x02000FAA RID: 4010
 [Preserve]
 public class XUiC_MapPopupList : XUiController
 {
-	// Token: 0x06007DC2 RID: 32194 RVA: 0x002FCFE8 File Offset: 0x002FB1E8
+	// Token: 0x06007E11 RID: 32273 RVA: 0x002FEB04 File Offset: 0x002FCD04
 	public override void Init()
 	{
 		base.Init();
@@ -13,7 +13,7 @@ public class XUiC_MapPopupList : XUiController
 		this.children[1].OnPress += this.onPressEntry2;
 	}
 
-	// Token: 0x06007DC3 RID: 32195 RVA: 0x002FD035 File Offset: 0x002FB235
+	// Token: 0x06007E12 RID: 32274 RVA: 0x002FEB51 File Offset: 0x002FCD51
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onPressEntry1(XUiController _sender, int _mouseButton)
 	{
@@ -22,7 +22,7 @@ public class XUiC_MapPopupList : XUiController
 		xuiC_MapArea.GetChildById("mapView").SelectCursorElement(true, false);
 	}
 
-	// Token: 0x06007DC4 RID: 32196 RVA: 0x002FD06C File Offset: 0x002FB26C
+	// Token: 0x06007E13 RID: 32275 RVA: 0x002FEB88 File Offset: 0x002FCD88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onPressEntry2(XUiController _sender, int _mouseButton)
 	{

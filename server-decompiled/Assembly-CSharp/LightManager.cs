@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using UnityEngine.UI;
 
-// Token: 0x0200126A RID: 4714
+// Token: 0x0200127C RID: 4732
 public class LightManager
 {
-	// Token: 0x060095CC RID: 38348 RVA: 0x003898D0 File Offset: 0x00387AD0
+	// Token: 0x06009623 RID: 38435 RVA: 0x0038BCCC File Offset: 0x00389ECC
 	public static void Init()
 	{
 		for (int i = 0; i < 512; i++)
@@ -16,7 +16,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095CD RID: 38349 RVA: 0x003898FC File Offset: 0x00387AFC
+	// Token: 0x06009624 RID: 38436 RVA: 0x0038BCF8 File Offset: 0x00389EF8
 	public static void RegisterMovingLight(Entity owner, Light _light)
 	{
 		int num = ((owner == null) ? (-1) : owner.entityId);
@@ -29,7 +29,7 @@ public class LightManager
 		list.Add(_light);
 	}
 
-	// Token: 0x060095CE RID: 38350 RVA: 0x0038994C File Offset: 0x00387B4C
+	// Token: 0x06009625 RID: 38437 RVA: 0x0038BD48 File Offset: 0x00389F48
 	public static void UnRegisterMovingLight(Entity owner, Light _light)
 	{
 		int num = ((owner == null) ? (-1) : owner.entityId);
@@ -44,7 +44,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095CF RID: 38351 RVA: 0x003899A0 File Offset: 0x00387BA0
+	// Token: 0x06009626 RID: 38438 RVA: 0x0038BD9C File Offset: 0x00389F9C
 	public static float RegisterLight(Light _light)
 	{
 		float range = _light.range;
@@ -56,7 +56,7 @@ public class LightManager
 		return range;
 	}
 
-	// Token: 0x060095D0 RID: 38352 RVA: 0x003899EE File Offset: 0x00387BEE
+	// Token: 0x06009627 RID: 38439 RVA: 0x0038BDEA File Offset: 0x00389FEA
 	public static void UnRegisterLight(Vector3 _worldPosition, float _lightRange)
 	{
 		if (_lightRange <= 0f)
@@ -66,7 +66,7 @@ public class LightManager
 		LightManager.RegisterLight(_worldPosition - Vector3.one * _lightRange, null, _lightRange, _worldPosition, LightManager.SearchDir.All, false);
 	}
 
-	// Token: 0x060095D1 RID: 38353 RVA: 0x00389A14 File Offset: 0x00387C14
+	// Token: 0x06009628 RID: 38440 RVA: 0x0038BE10 File Offset: 0x0038A010
 	public static void Clear()
 	{
 		for (int i = 0; i < 512; i++)
@@ -81,7 +81,7 @@ public class LightManager
 		LightManager.debugPoints.Clear();
 	}
 
-	// Token: 0x060095D2 RID: 38354 RVA: 0x00389A9C File Offset: 0x00387C9C
+	// Token: 0x06009629 RID: 38441 RVA: 0x0038BE98 File Offset: 0x0038A098
 	public static void ShowSearchPattern(bool _bShow = true)
 	{
 		LightManager.ShowSearchPatternOn = _bShow;
@@ -91,18 +91,18 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095D3 RID: 38355 RVA: 0x00389B00 File Offset: 0x00387D00
+	// Token: 0x0600962A RID: 38442 RVA: 0x0038BEFC File Offset: 0x0038A0FC
 	public static void ShowLightLevel(bool _bShow = true)
 	{
 		LightManager.ShowLightLevelOn = _bShow;
 	}
 
-	// Token: 0x060095D4 RID: 38356 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600962B RID: 38443 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void UpdateUI()
 	{
 	}
 
-	// Token: 0x060095D5 RID: 38357 RVA: 0x00389B08 File Offset: 0x00387D08
+	// Token: 0x0600962C RID: 38444 RVA: 0x0038BF04 File Offset: 0x0038A104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetLightLevelFromMovingLights(int _excludeEntityId, Vector3 _worldPosition)
 	{
@@ -124,7 +124,7 @@ public class LightManager
 		return Utils.FastClamp01(num);
 	}
 
-	// Token: 0x060095D6 RID: 38358 RVA: 0x00389BB0 File Offset: 0x00387DB0
+	// Token: 0x0600962D RID: 38445 RVA: 0x0038BFAC File Offset: 0x0038A1AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetLightLevel(Light _light, Vector3 _worldPosition, bool _bAllowPointToSpot = false)
 	{
@@ -192,7 +192,7 @@ public class LightManager
 		return (1f - magnitude / range) * Utils.FastClamp01(_light.intensity) * SkyManager.GetLuma(color) * num5;
 	}
 
-	// Token: 0x060095D7 RID: 38359 RVA: 0x00389E34 File Offset: 0x00388034
+	// Token: 0x0600962E RID: 38446 RVA: 0x0038C230 File Offset: 0x0038A430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float BlockLight(Vector3 _worldPosition)
 	{
@@ -207,7 +207,7 @@ public class LightManager
 		return num;
 	}
 
-	// Token: 0x060095D8 RID: 38360 RVA: 0x00389EBC File Offset: 0x003880BC
+	// Token: 0x0600962F RID: 38447 RVA: 0x0038C2B8 File Offset: 0x0038A4B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float CalcShadeLight(Vector3 _worldPosition)
 	{
@@ -236,7 +236,7 @@ public class LightManager
 		return num;
 	}
 
-	// Token: 0x060095D9 RID: 38361 RVA: 0x00389F44 File Offset: 0x00388144
+	// Token: 0x06009630 RID: 38448 RVA: 0x0038C340 File Offset: 0x0038A540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetLightLevel(Vector3 _worldPosition)
 	{
@@ -289,7 +289,7 @@ public class LightManager
 		return Utils.FastClamp01(num);
 	}
 
-	// Token: 0x060095DA RID: 38362 RVA: 0x0038A08C File Offset: 0x0038828C
+	// Token: 0x06009631 RID: 38449 RVA: 0x0038C488 File Offset: 0x0038A688
 	public static Dictionary<Vector3, Light> GetLightsEffecting(Vector3 _worldPosition)
 	{
 		Dictionary<Vector3i, LightManager.RegLightGroup> dictionary = LightManager.regLightBins[(Utils.Fastfloor(_worldPosition.x) >> 3) & 511];
@@ -303,7 +303,7 @@ public class LightManager
 		return regLightGroup.lights;
 	}
 
-	// Token: 0x060095DB RID: 38363 RVA: 0x0038A0D4 File Offset: 0x003882D4
+	// Token: 0x06009632 RID: 38450 RVA: 0x0038C4D0 File Offset: 0x0038A6D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RegisterLight(Vector3 _searchPosition, Light _light, float _lightRange, Vector3 _lightPosition, LightManager.SearchDir _, bool _bRegister)
 	{
@@ -354,13 +354,13 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095DC RID: 38364 RVA: 0x0038A221 File Offset: 0x00388421
+	// Token: 0x06009633 RID: 38451 RVA: 0x0038C61D File Offset: 0x0038A81D
 	public static void SetPlayerLightLevel(float _lightLevel)
 	{
 		LightManager.PlayerLightLevel = _lightLevel;
 	}
 
-	// Token: 0x060095DD RID: 38365 RVA: 0x0038A22C File Offset: 0x0038842C
+	// Token: 0x06009634 RID: 38452 RVA: 0x0038C628 File Offset: 0x0038A828
 	public static float GetStealthLightLevel(EntityAlive _entity, out float selfLight)
 	{
 		if (LightManager.myServer != null)
@@ -375,7 +375,7 @@ public class LightManager
 		return 0f;
 	}
 
-	// Token: 0x060095DE RID: 38366 RVA: 0x0038A284 File Offset: 0x00388484
+	// Token: 0x06009635 RID: 38453 RVA: 0x0038C680 File Offset: 0x0038A880
 	public static float GetWorldLightLevelInRange(Vector3 pos, float distanceMax)
 	{
 		float lightLevel = LightManager.GetLightLevel(pos);
@@ -386,7 +386,7 @@ public class LightManager
 		return lightLevel;
 	}
 
-	// Token: 0x060095DF RID: 38367 RVA: 0x0038A2A8 File Offset: 0x003884A8
+	// Token: 0x06009636 RID: 38454 RVA: 0x0038C6A4 File Offset: 0x0038A8A4
 	public static void LightChanged(Vector3 lightPos)
 	{
 		List<EntityPlayerLocal> localPlayers = GameManager.Instance.World.GetLocalPlayers();
@@ -396,7 +396,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095E0 RID: 38368 RVA: 0x0038A2EF File Offset: 0x003884EF
+	// Token: 0x06009637 RID: 38455 RVA: 0x0038C6EB File Offset: 0x0038A8EB
 	public static void Dispose()
 	{
 		if (LightManager.myServer != null)
@@ -406,7 +406,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095E1 RID: 38369 RVA: 0x0038A308 File Offset: 0x00388508
+	// Token: 0x06009638 RID: 38456 RVA: 0x0038C704 File Offset: 0x0038A904
 	public static void AttachLocalPlayer(EntityPlayerLocal localPlayer, World world)
 	{
 		if (LightManager.myServer != null)
@@ -415,7 +415,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095E2 RID: 38370 RVA: 0x0038A31C File Offset: 0x0038851C
+	// Token: 0x06009639 RID: 38457 RVA: 0x0038C718 File Offset: 0x0038A918
 	public static void EntityAddedToWorld(Entity entity, World world)
 	{
 		if (LightManager.myServer != null)
@@ -424,7 +424,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095E3 RID: 38371 RVA: 0x0038A331 File Offset: 0x00388531
+	// Token: 0x0600963A RID: 38458 RVA: 0x0038C72D File Offset: 0x0038A92D
 	public static void EntityRemovedFromWorld(Entity entity, World world)
 	{
 		if (entity == null)
@@ -437,7 +437,7 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x060095E4 RID: 38372 RVA: 0x0038A350 File Offset: 0x00388550
+	// Token: 0x0600963B RID: 38459 RVA: 0x0038C74C File Offset: 0x0038A94C
 	public static void CreateServer()
 	{
 		if (LightManager.myServer == null && SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -446,98 +446,98 @@ public class LightManager
 		}
 	}
 
-	// Token: 0x04007070 RID: 28784
+	// Token: 0x040070B1 RID: 28849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int raycastMask = 65536;
 
-	// Token: 0x04007071 RID: 28785
+	// Token: 0x040070B2 RID: 28850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int enclosureRaycastMask = 8454417;
 
-	// Token: 0x04007072 RID: 28786
+	// Token: 0x040070B3 RID: 28851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRegGridSize = 8;
 
-	// Token: 0x04007073 RID: 28787
+	// Token: 0x040070B4 RID: 28852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRegPosMask = -8;
 
-	// Token: 0x04007074 RID: 28788
+	// Token: 0x040070B5 RID: 28853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRegBins = 512;
 
-	// Token: 0x04007075 RID: 28789
+	// Token: 0x040070B6 RID: 28854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRegBinShift = 3;
 
-	// Token: 0x04007076 RID: 28790
+	// Token: 0x040070B7 RID: 28855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<Vector3i, LightManager.RegLightGroup>[] regLightBins = new Dictionary<Vector3i, LightManager.RegLightGroup>[512];
 
-	// Token: 0x04007077 RID: 28791
+	// Token: 0x040070B8 RID: 28856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DictionaryList<int, List<Light>> movingLights = new DictionaryList<int, List<Light>>();
 
-	// Token: 0x04007078 RID: 28792
+	// Token: 0x040070B9 RID: 28857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LightManager.Server myServer = null;
 
-	// Token: 0x04007079 RID: 28793
+	// Token: 0x040070BA RID: 28858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float PlayerLightLevel = 0f;
 
-	// Token: 0x0400707A RID: 28794
+	// Token: 0x040070BB RID: 28859
 	public static bool ShowSearchPatternOn = false;
 
-	// Token: 0x0400707B RID: 28795
+	// Token: 0x040070BC RID: 28860
 	public static bool ShowLightLevelOn = false;
 
-	// Token: 0x0400707C RID: 28796
+	// Token: 0x040070BD RID: 28861
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Canvas debugUI = null;
 
-	// Token: 0x0400707D RID: 28797
+	// Token: 0x040070BE RID: 28862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Text debugText;
 
-	// Token: 0x0400707E RID: 28798
+	// Token: 0x040070BF RID: 28863
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<Vector3i, GameObject> debugPoints = new Dictionary<Vector3i, GameObject>();
 
-	// Token: 0x0400707F RID: 28799
+	// Token: 0x040070C0 RID: 28864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject LightLevelDebugPoints = new GameObject("LightLevelDebugPoints");
 
-	// Token: 0x04007080 RID: 28800
+	// Token: 0x040070C1 RID: 28865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Vector3> lightsEffectingRemovals = new List<Vector3>();
 
-	// Token: 0x0200126B RID: 4715
+	// Token: 0x0200127D RID: 4733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum SearchDir
 	{
-		// Token: 0x04007082 RID: 28802
+		// Token: 0x040070C3 RID: 28867
 		All,
-		// Token: 0x04007083 RID: 28803
+		// Token: 0x040070C4 RID: 28868
 		Forward,
-		// Token: 0x04007084 RID: 28804
+		// Token: 0x040070C5 RID: 28869
 		Right
 	}
 
-	// Token: 0x0200126C RID: 4716
+	// Token: 0x0200127E RID: 4734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RegLightGroup
 	{
-		// Token: 0x04007085 RID: 28805
+		// Token: 0x040070C6 RID: 28870
 		public Dictionary<Vector3, Light> lights;
 	}
 
-	// Token: 0x0200126D RID: 4717
+	// Token: 0x0200127F RID: 4735
 	[Preserve]
 	public class NetPackageLight : NetPackage
 	{
-		// Token: 0x17001200 RID: 4608
-		// (get) Token: 0x060095E7 RID: 38375 RVA: 0x0002F260 File Offset: 0x0002D460
+		// Token: 0x1700120B RID: 4619
+		// (get) Token: 0x0600963E RID: 38462 RVA: 0x0002F260 File Offset: 0x0002D460
 		public override NetPackageDirection PackageDirection
 		{
 			get
@@ -546,7 +546,7 @@ public class LightManager
 			}
 		}
 
-		// Token: 0x060095E8 RID: 38376 RVA: 0x0038A3DB File Offset: 0x003885DB
+		// Token: 0x0600963F RID: 38463 RVA: 0x0038C7D7 File Offset: 0x0038A9D7
 		public LightManager.NetPackageLight Setup(int _entityId, float _lightLevel = 0f)
 		{
 			this.entityId = _entityId;
@@ -554,14 +554,14 @@ public class LightManager
 			return this;
 		}
 
-		// Token: 0x060095E9 RID: 38377 RVA: 0x0038A3EC File Offset: 0x003885EC
+		// Token: 0x06009640 RID: 38464 RVA: 0x0038C7E8 File Offset: 0x0038A9E8
 		public override void read(PooledBinaryReader _reader)
 		{
 			this.entityId = _reader.ReadInt32();
 			this.lightLevel = _reader.ReadSingle();
 		}
 
-		// Token: 0x060095EA RID: 38378 RVA: 0x0038A406 File Offset: 0x00388606
+		// Token: 0x06009641 RID: 38465 RVA: 0x0038C802 File Offset: 0x0038AA02
 		public override void write(PooledBinaryWriter _writer)
 		{
 			base.write(_writer);
@@ -569,7 +569,7 @@ public class LightManager
 			_writer.Write(this.lightLevel);
 		}
 
-		// Token: 0x060095EB RID: 38379 RVA: 0x0038A428 File Offset: 0x00388628
+		// Token: 0x06009642 RID: 38466 RVA: 0x0038C824 File Offset: 0x0038AA24
 		public override void ProcessPackage(World _world, GameManager _callbacks)
 		{
 			if (GameManager.Instance == null || GameManager.Instance.World == null)
@@ -591,17 +591,17 @@ public class LightManager
 			LightManager.myServer.SendLightLevel(this.entityId, num);
 		}
 
-		// Token: 0x04007086 RID: 28806
+		// Token: 0x040070C7 RID: 28871
 		public int entityId;
 
-		// Token: 0x04007087 RID: 28807
+		// Token: 0x040070C8 RID: 28872
 		public float lightLevel;
 	}
 
-	// Token: 0x0200126E RID: 4718
+	// Token: 0x02001280 RID: 4736
 	public class Server : IDisposable
 	{
-		// Token: 0x060095EE RID: 38382 RVA: 0x0038A500 File Offset: 0x00388700
+		// Token: 0x06009645 RID: 38469 RVA: 0x0038C8FC File Offset: 0x0038AAFC
 		public void SendLightLevel(int entityId, float lightLevel)
 		{
 			LightManager.Client client;
@@ -611,13 +611,13 @@ public class LightManager
 			}
 		}
 
-		// Token: 0x060095EF RID: 38383 RVA: 0x0038A524 File Offset: 0x00388724
+		// Token: 0x06009646 RID: 38470 RVA: 0x0038C920 File Offset: 0x0038AB20
 		public void AttachLocalPlayer(EntityPlayerLocal localPlayer)
 		{
 			this.m_localPlayer = localPlayer;
 		}
 
-		// Token: 0x060095F0 RID: 38384 RVA: 0x0038A530 File Offset: 0x00388730
+		// Token: 0x06009647 RID: 38471 RVA: 0x0038C92C File Offset: 0x0038AB2C
 		public void EntityAddedToWorld(Entity entity, World world)
 		{
 			if (entity is EntityPlayer && (this.m_localPlayer == null || entity.entityId != this.m_localPlayer.entityId))
@@ -632,7 +632,7 @@ public class LightManager
 			}
 		}
 
-		// Token: 0x060095F1 RID: 38385 RVA: 0x0038A59C File Offset: 0x0038879C
+		// Token: 0x06009648 RID: 38472 RVA: 0x0038C998 File Offset: 0x0038AB98
 		public void EntityRemovedFromWorld(Entity entity, World world)
 		{
 			LightManager.Client client;
@@ -643,7 +643,7 @@ public class LightManager
 			}
 		}
 
-		// Token: 0x060095F2 RID: 38386 RVA: 0x0038A5D8 File Offset: 0x003887D8
+		// Token: 0x06009649 RID: 38473 RVA: 0x0038C9D4 File Offset: 0x0038ABD4
 		public void Dispose()
 		{
 			foreach (KeyValuePair<int, LightManager.Client> keyValuePair in this.m_players)
@@ -654,37 +654,37 @@ public class LightManager
 			this.m_localPlayer = null;
 		}
 
-		// Token: 0x04007088 RID: 28808
+		// Token: 0x040070C9 RID: 28873
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal m_localPlayer;
 
-		// Token: 0x04007089 RID: 28809
+		// Token: 0x040070CA RID: 28874
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<int, LightManager.Client> m_players = new Dictionary<int, LightManager.Client>();
 	}
 
-	// Token: 0x0200126F RID: 4719
+	// Token: 0x02001281 RID: 4737
 	public class Client : IDisposable
 	{
-		// Token: 0x060095F3 RID: 38387 RVA: 0x0038A640 File Offset: 0x00388840
+		// Token: 0x0600964A RID: 38474 RVA: 0x0038CA3C File Offset: 0x0038AC3C
 		public Client(int _entityId)
 		{
 			this.entityId = _entityId;
 		}
 
-		// Token: 0x060095F4 RID: 38388 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600964B RID: 38475 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Dispose()
 		{
 		}
 
-		// Token: 0x060095F5 RID: 38389 RVA: 0x0038A650 File Offset: 0x00388850
+		// Token: 0x0600964C RID: 38476 RVA: 0x0038CA4C File Offset: 0x0038AC4C
 		public void SetPlayerLightLevel(float _lightLevel)
 		{
 			LightManager.NetPackageLight netPackageLight = NetPackageManager.GetPackage<LightManager.NetPackageLight>().Setup(this.entityId, _lightLevel);
 			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageLight, false, this.entityId, -1, -1, null, 192, false);
 		}
 
-		// Token: 0x0400708A RID: 28810
+		// Token: 0x040070CB RID: 28875
 		public int entityId;
 	}
 }

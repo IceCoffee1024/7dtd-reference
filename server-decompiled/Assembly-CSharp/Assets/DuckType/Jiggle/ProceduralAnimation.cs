@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace Assets.DuckType.Jiggle
 {
-	// Token: 0x02001D93 RID: 7571
+	// Token: 0x02001DC4 RID: 7620
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class ProceduralAnimation : MonoBehaviour
 	{
-		// Token: 0x0600DFDD RID: 57309 RVA: 0x004FE993 File Offset: 0x004FCB93
+		// Token: 0x0600E0F1 RID: 57585 RVA: 0x0050252B File Offset: 0x0050072B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Awake()
 		{
 			this.m_RestPos = base.transform.position;
 		}
 
-		// Token: 0x0600DFDE RID: 57310 RVA: 0x004FE9A8 File Offset: 0x004FCBA8
+		// Token: 0x0600E0F2 RID: 57586 RVA: 0x00502540 File Offset: 0x00500740
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -27,7 +27,7 @@ namespace Assets.DuckType.Jiggle
 			base.transform.rotation = Quaternion.Euler(this.RotateX ? (Mathf.Sin(Time.time * 6f) * 30f * this.RotationMultiplier) : base.transform.eulerAngles.x, this.RotateY ? (Mathf.Sin(Time.time * 6f) * 30f * this.RotationMultiplier) : base.transform.eulerAngles.y, base.transform.eulerAngles.z);
 		}
 
-		// Token: 0x0600DFDF RID: 57311 RVA: 0x004FEADC File Offset: 0x004FCCDC
+		// Token: 0x0600E0F3 RID: 57587 RVA: 0x00502674 File Offset: 0x00500874
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float GetSineValue(bool bounce, float mult)
 		{
@@ -39,36 +39,36 @@ namespace Assets.DuckType.Jiggle
 			return Mathf.Abs(num);
 		}
 
-		// Token: 0x0400A994 RID: 43412
+		// Token: 0x0400AA7D RID: 43645
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Vector3 m_RestPos;
 
-		// Token: 0x0400A995 RID: 43413
+		// Token: 0x0400AA7E RID: 43646
 		public bool MoveAlongX;
 
-		// Token: 0x0400A996 RID: 43414
+		// Token: 0x0400AA7F RID: 43647
 		public bool ForwardAndBackward;
 
-		// Token: 0x0400A997 RID: 43415
+		// Token: 0x0400AA80 RID: 43648
 		public bool UpAndDown;
 
-		// Token: 0x0400A998 RID: 43416
+		// Token: 0x0400AA81 RID: 43649
 		public bool SideToSide;
 
-		// Token: 0x0400A999 RID: 43417
+		// Token: 0x0400AA82 RID: 43650
 		public bool Bounce;
 
-		// Token: 0x0400A99A RID: 43418
+		// Token: 0x0400AA83 RID: 43651
 		public float TranslationMultiplier = 1f;
 
-		// Token: 0x0400A99B RID: 43419
+		// Token: 0x0400AA84 RID: 43652
 		public bool RotateX;
 
-		// Token: 0x0400A99C RID: 43420
+		// Token: 0x0400AA85 RID: 43653
 		public bool RotateY;
 
-		// Token: 0x0400A99D RID: 43421
+		// Token: 0x0400AA86 RID: 43654
 		public float RotationMultiplier = 1f;
 	}
 }

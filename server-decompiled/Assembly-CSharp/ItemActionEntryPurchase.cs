@@ -4,11 +4,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D6D RID: 3437
+// Token: 0x02000D78 RID: 3448
 [Preserve]
 public class ItemActionEntryPurchase : BaseItemActionEntry
 {
-	// Token: 0x06006814 RID: 26644 RVA: 0x00293B1C File Offset: 0x00291D1C
+	// Token: 0x06006839 RID: 26681 RVA: 0x00295044 File Offset: 0x00293244
 	public ItemActionEntryPurchase(XUiController _controller)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.None, "", "ui/ui_denied")
 	{
@@ -36,7 +36,7 @@ public class ItemActionEntryPurchase : BaseItemActionEntry
 		base.IconName = "ui_game_symbol_coin";
 	}
 
-	// Token: 0x06006815 RID: 26645 RVA: 0x00293BF4 File Offset: 0x00291DF4
+	// Token: 0x0600683A RID: 26682 RVA: 0x0029511C File Offset: 0x0029331C
 	public override void RefreshEnabled()
 	{
 		this.refreshBinding();
@@ -61,7 +61,7 @@ public class ItemActionEntryPurchase : BaseItemActionEntry
 		base.Enabled = count > 0 && playerInventory.GetItemCount(item) >= buyPrice;
 	}
 
-	// Token: 0x06006816 RID: 26646 RVA: 0x00293CB8 File Offset: 0x00291EB8
+	// Token: 0x0600683B RID: 26683 RVA: 0x002951E0 File Offset: 0x002933E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refreshBinding()
 	{
@@ -99,7 +99,7 @@ public class ItemActionEntryPurchase : BaseItemActionEntry
 		xuiC_TraderItemEntry.Item = null;
 	}
 
-	// Token: 0x06006817 RID: 26647 RVA: 0x00293D30 File Offset: 0x00291F30
+	// Token: 0x0600683C RID: 26684 RVA: 0x00295258 File Offset: 0x00293458
 	public override void OnActivated()
 	{
 		this.refreshBinding();
@@ -221,11 +221,11 @@ public class ItemActionEntryPurchase : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x04005033 RID: 20531
+	// Token: 0x04005058 RID: 20568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isOwner;
 
-	// Token: 0x04005034 RID: 20532
+	// Token: 0x04005059 RID: 20569
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isVending;
 }

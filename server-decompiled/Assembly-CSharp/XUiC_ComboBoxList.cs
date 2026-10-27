@@ -4,13 +4,13 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E8F RID: 3727
+// Token: 0x02000E9A RID: 3738
 [Preserve]
 public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 {
-	// Token: 0x17000D67 RID: 3431
-	// (get) Token: 0x0600730C RID: 29452 RVA: 0x002BFC4E File Offset: 0x002BDE4E
-	// (set) Token: 0x0600730D RID: 29453 RVA: 0x002BFC56 File Offset: 0x002BDE56
+	// Token: 0x17000D6D RID: 3437
+	// (get) Token: 0x06007331 RID: 29489 RVA: 0x002C11BA File Offset: 0x002BF3BA
+	// (set) Token: 0x06007332 RID: 29490 RVA: 0x002C11C2 File Offset: 0x002BF3C2
 	[XuiXmlAttribute("localization_prefix", false)]
 	public string LocalizationPrefix
 	{
@@ -25,15 +25,15 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D68 RID: 3432
-	// (get) Token: 0x0600730E RID: 29454 RVA: 0x002BFC65 File Offset: 0x002BDE65
-	// (set) Token: 0x0600730F RID: 29455 RVA: 0x002BFC6D File Offset: 0x002BDE6D
+	// Token: 0x17000D6E RID: 3438
+	// (get) Token: 0x06007333 RID: 29491 RVA: 0x002C11D1 File Offset: 0x002BF3D1
+	// (set) Token: 0x06007334 RID: 29492 RVA: 0x002C11D9 File Offset: 0x002BF3D9
 	[XuiXmlAttribute("localization_key_caseinsensitive", false)]
 	public bool LocalizationKeyCaseInsensitive { get; set; }
 
-	// Token: 0x17000D69 RID: 3433
-	// (get) Token: 0x06007310 RID: 29456 RVA: 0x002BEF88 File Offset: 0x002BD188
-	// (set) Token: 0x06007311 RID: 29457 RVA: 0x002BFC78 File Offset: 0x002BDE78
+	// Token: 0x17000D6F RID: 3439
+	// (get) Token: 0x06007335 RID: 29493 RVA: 0x002C04F4 File Offset: 0x002BE6F4
+	// (set) Token: 0x06007336 RID: 29494 RVA: 0x002C11E4 File Offset: 0x002BF3E4
 	public override TElement Value
 	{
 		get
@@ -58,9 +58,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D6A RID: 3434
-	// (get) Token: 0x06007312 RID: 29458 RVA: 0x002BFCCC File Offset: 0x002BDECC
-	// (set) Token: 0x06007313 RID: 29459 RVA: 0x002BFD1C File Offset: 0x002BDF1C
+	// Token: 0x17000D70 RID: 3440
+	// (get) Token: 0x06007337 RID: 29495 RVA: 0x002C1238 File Offset: 0x002BF438
+	// (set) Token: 0x06007338 RID: 29496 RVA: 0x002C1288 File Offset: 0x002BF488
 	public override double RelativeValue
 	{
 		get
@@ -91,9 +91,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D6B RID: 3435
-	// (get) Token: 0x06007314 RID: 29460 RVA: 0x002BFD90 File Offset: 0x002BDF90
-	// (set) Token: 0x06007315 RID: 29461 RVA: 0x002BFD99 File Offset: 0x002BDF99
+	// Token: 0x17000D71 RID: 3441
+	// (get) Token: 0x06007339 RID: 29497 RVA: 0x002C12FC File Offset: 0x002BF4FC
+	// (set) Token: 0x0600733A RID: 29498 RVA: 0x002C1305 File Offset: 0x002BF505
 	public override long ValueGeneric
 	{
 		get
@@ -106,9 +106,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D6C RID: 3436
-	// (get) Token: 0x06007316 RID: 29462 RVA: 0x002BFDA3 File Offset: 0x002BDFA3
-	// (set) Token: 0x06007317 RID: 29463 RVA: 0x002BFDAC File Offset: 0x002BDFAC
+	// Token: 0x17000D72 RID: 3442
+	// (get) Token: 0x0600733B RID: 29499 RVA: 0x002C130F File Offset: 0x002BF50F
+	// (set) Token: 0x0600733C RID: 29500 RVA: 0x002C1318 File Offset: 0x002BF518
 	public override long ValueMinGeneric
 	{
 		get
@@ -121,9 +121,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D6D RID: 3437
-	// (get) Token: 0x06007318 RID: 29464 RVA: 0x002BFDB6 File Offset: 0x002BDFB6
-	// (set) Token: 0x06007319 RID: 29465 RVA: 0x002BFDBF File Offset: 0x002BDFBF
+	// Token: 0x17000D73 RID: 3443
+	// (get) Token: 0x0600733D RID: 29501 RVA: 0x002C1322 File Offset: 0x002BF522
+	// (set) Token: 0x0600733E RID: 29502 RVA: 0x002C132B File Offset: 0x002BF52B
 	public override long ValueMaxGeneric
 	{
 		get
@@ -136,8 +136,8 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D6E RID: 3438
-	// (get) Token: 0x0600731A RID: 29466 RVA: 0x002BFDC9 File Offset: 0x002BDFC9
+	// Token: 0x17000D74 RID: 3444
+	// (get) Token: 0x0600733F RID: 29503 RVA: 0x002C1335 File Offset: 0x002BF535
 	public override int IndexElementCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -147,8 +147,8 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D6F RID: 3439
-	// (get) Token: 0x0600731B RID: 29467 RVA: 0x002BFDDA File Offset: 0x002BDFDA
+	// Token: 0x17000D75 RID: 3445
+	// (get) Token: 0x06007340 RID: 29504 RVA: 0x002C1346 File Offset: 0x002BF546
 	public override int IndexMarkerIndex
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -162,9 +162,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D70 RID: 3440
-	// (get) Token: 0x0600731C RID: 29468 RVA: 0x002BFDFF File Offset: 0x002BDFFF
-	// (set) Token: 0x0600731D RID: 29469 RVA: 0x002BFE08 File Offset: 0x002BE008
+	// Token: 0x17000D76 RID: 3446
+	// (get) Token: 0x06007341 RID: 29505 RVA: 0x002C136B File Offset: 0x002BF56B
+	// (set) Token: 0x06007342 RID: 29506 RVA: 0x002C1374 File Offset: 0x002BF574
 	public int SelectedIndex
 	{
 		get
@@ -208,9 +208,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D71 RID: 3441
-	// (get) Token: 0x0600731E RID: 29470 RVA: 0x002BFF1B File Offset: 0x002BE11B
-	// (set) Token: 0x0600731F RID: 29471 RVA: 0x002BFF2E File Offset: 0x002BE12E
+	// Token: 0x17000D77 RID: 3447
+	// (get) Token: 0x06007343 RID: 29507 RVA: 0x002C1487 File Offset: 0x002BF687
+	// (set) Token: 0x06007344 RID: 29508 RVA: 0x002C149A File Offset: 0x002BF69A
 	[XuiXmlAttribute("index_min", false)]
 	public int MinIndex
 	{
@@ -237,9 +237,9 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x17000D72 RID: 3442
-	// (get) Token: 0x06007320 RID: 29472 RVA: 0x002BFF67 File Offset: 0x002BE167
-	// (set) Token: 0x06007321 RID: 29473 RVA: 0x002BFF9C File Offset: 0x002BE19C
+	// Token: 0x17000D78 RID: 3448
+	// (get) Token: 0x06007345 RID: 29509 RVA: 0x002C14D3 File Offset: 0x002BF6D3
+	// (set) Token: 0x06007346 RID: 29510 RVA: 0x002C1508 File Offset: 0x002BF708
 	[XuiXmlAttribute("index_max", false)]
 	public int MaxIndex
 	{
@@ -266,7 +266,7 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x06007322 RID: 29474 RVA: 0x002BFFEC File Offset: 0x002BE1EC
+	// Token: 0x06007347 RID: 29511 RVA: 0x002C1558 File Offset: 0x002BF758
 	public override void OnOpen()
 	{
 		if (this.Elements.Count > 0 && !this.useCustomValue)
@@ -295,7 +295,7 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		base.OnOpen();
 	}
 
-	// Token: 0x06007323 RID: 29475 RVA: 0x002C00CC File Offset: 0x002BE2CC
+	// Token: 0x06007348 RID: 29512 RVA: 0x002C1638 File Offset: 0x002BF838
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateLabel()
 	{
@@ -314,28 +314,28 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		base.ValueText = ((!string.IsNullOrEmpty(this.LocalizationPrefix)) ? Localization.Get(this.LocalizationPrefix + text, this.LocalizationKeyCaseInsensitive, null) : text);
 	}
 
-	// Token: 0x06007324 RID: 29476 RVA: 0x002C015F File Offset: 0x002BE35F
+	// Token: 0x06007349 RID: 29513 RVA: 0x002C16CB File Offset: 0x002BF8CB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDifferentValue(TElement _oldVal, TElement _currentValue)
 	{
 		return (_oldVal != null || _currentValue != null) && (_oldVal == null || _currentValue == null || !_oldVal.Equals(_currentValue));
 	}
 
-	// Token: 0x06007325 RID: 29477 RVA: 0x002C019B File Offset: 0x002BE39B
+	// Token: 0x0600734A RID: 29514 RVA: 0x002C1707 File Offset: 0x002BF907
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void BackPressed()
 	{
 		this.ChangeIndex(this.reverseList ? 1 : (-1));
 	}
 
-	// Token: 0x06007326 RID: 29478 RVA: 0x002C01AF File Offset: 0x002BE3AF
+	// Token: 0x0600734B RID: 29515 RVA: 0x002C171B File Offset: 0x002BF91B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ForwardPressed()
 	{
 		this.ChangeIndex(this.reverseList ? (-1) : 1);
 	}
 
-	// Token: 0x06007327 RID: 29479 RVA: 0x002C01C4 File Offset: 0x002BE3C4
+	// Token: 0x0600734C RID: 29516 RVA: 0x002C1730 File Offset: 0x002BF930
 	public void ChangeIndex(int _direction)
 	{
 		int num = this.SelectedIndex + _direction;
@@ -358,7 +358,7 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		this.SelectedIndex = num;
 	}
 
-	// Token: 0x06007328 RID: 29480 RVA: 0x002C027D File Offset: 0x002BE47D
+	// Token: 0x0600734D RID: 29517 RVA: 0x002C17E9 File Offset: 0x002BF9E9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isMax()
 	{
@@ -369,7 +369,7 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		return this.isMinIndex();
 	}
 
-	// Token: 0x06007329 RID: 29481 RVA: 0x002C0294 File Offset: 0x002BE494
+	// Token: 0x0600734E RID: 29518 RVA: 0x002C1800 File Offset: 0x002BFA00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isMin()
 	{
@@ -380,28 +380,28 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		return this.isMaxIndex();
 	}
 
-	// Token: 0x0600732A RID: 29482 RVA: 0x002C02AB File Offset: 0x002BE4AB
+	// Token: 0x0600734F RID: 29519 RVA: 0x002C1817 File Offset: 0x002BFA17
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isEmpty()
 	{
 		return this.Elements.Count == 0;
 	}
 
-	// Token: 0x0600732B RID: 29483 RVA: 0x002C02BB File Offset: 0x002BE4BB
+	// Token: 0x06007350 RID: 29520 RVA: 0x002C1827 File Offset: 0x002BFA27
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isMaxIndex()
 	{
 		return this.SelectedIndex == this.MaxIndex || this.SelectedIndex == this.Elements.Count - 1;
 	}
 
-	// Token: 0x0600732C RID: 29484 RVA: 0x002C02E2 File Offset: 0x002BE4E2
+	// Token: 0x06007351 RID: 29521 RVA: 0x002C184E File Offset: 0x002BFA4E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isMinIndex()
 	{
 		return this.SelectedIndex == this.MinIndex || this.SelectedIndex == 0;
 	}
 
-	// Token: 0x0600732D RID: 29485 RVA: 0x002BF4F7 File Offset: 0x002BD6F7
+	// Token: 0x06007352 RID: 29522 RVA: 0x002C0A63 File Offset: 0x002BEC63
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void incrementalChangeValue(double _value)
 	{
@@ -416,7 +416,7 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x0600732E RID: 29486 RVA: 0x002C0300 File Offset: 0x002BE500
+	// Token: 0x06007353 RID: 29523 RVA: 0x002C186C File Offset: 0x002BFA6C
 	[XuiXmlAttribute("values", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValues(string _value)
@@ -473,7 +473,7 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		}
 	}
 
-	// Token: 0x0600732F RID: 29487 RVA: 0x002C0474 File Offset: 0x002BE674
+	// Token: 0x06007354 RID: 29524 RVA: 0x002C19E0 File Offset: 0x002BFBE0
 	[XuiXmlAttribute("reverse_list", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeReverseList(string _value)
@@ -485,33 +485,33 @@ public class XUiC_ComboBoxList<TElement> : XUiC_ComboBox<TElement>
 		this.reverseList = StringParsers.ParseBool(_value, 0, -1, true);
 	}
 
-	// Token: 0x04005656 RID: 22102
+	// Token: 0x0400567B RID: 22139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizationPrefix;
 
-	// Token: 0x04005658 RID: 22104
+	// Token: 0x0400567D RID: 22141
 	public readonly List<TElement> Elements = new List<TElement>();
 
-	// Token: 0x04005659 RID: 22105
+	// Token: 0x0400567E RID: 22142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentIndex = int.MinValue;
 
-	// Token: 0x0400565A RID: 22106
+	// Token: 0x0400567F RID: 22143
 	public TElement CustomValue;
 
-	// Token: 0x0400565B RID: 22107
+	// Token: 0x04005680 RID: 22144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useCustomValue;
 
-	// Token: 0x0400565C RID: 22108
+	// Token: 0x04005681 RID: 22145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int minIndex = int.MinValue;
 
-	// Token: 0x0400565D RID: 22109
+	// Token: 0x04005682 RID: 22146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxIndex = int.MaxValue;
 
-	// Token: 0x0400565E RID: 22110
+	// Token: 0x04005683 RID: 22147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool reverseList;
 }

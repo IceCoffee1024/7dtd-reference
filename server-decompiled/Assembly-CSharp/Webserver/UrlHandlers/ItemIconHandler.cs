@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001B1B RID: 6939
+	// Token: 0x02001B4C RID: 6988
 	public class ItemIconHandler : AbsHandler
 	{
-		// Token: 0x0600D0CA RID: 53450 RVA: 0x004BC920 File Offset: 0x004BAB20
+		// Token: 0x0600D1DE RID: 53726 RVA: 0x004C041C File Offset: 0x004BE61C
 		public ItemIconHandler(bool _logMissingFiles, string _moduleName = null)
 			: base(_moduleName, 0)
 		{
@@ -18,16 +18,16 @@ namespace Webserver.UrlHandlers
 			ItemIconHandler.Instance = this;
 		}
 
-		// Token: 0x17001A2B RID: 6699
-		// (get) Token: 0x0600D0CB RID: 53451 RVA: 0x004BC985 File Offset: 0x004BAB85
-		// (set) Token: 0x0600D0CC RID: 53452 RVA: 0x004BC98C File Offset: 0x004BAB8C
+		// Token: 0x17001A73 RID: 6771
+		// (get) Token: 0x0600D1DF RID: 53727 RVA: 0x004C0481 File Offset: 0x004BE681
+		// (set) Token: 0x0600D1E0 RID: 53728 RVA: 0x004C0488 File Offset: 0x004BE688
 		public static ItemIconHandler Instance
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = null;
 
-		// Token: 0x0600D0CD RID: 53453 RVA: 0x004BC994 File Offset: 0x004BAB94
+		// Token: 0x0600D1E1 RID: 53729 RVA: 0x004C0490 File Offset: 0x004BE690
 		public override void HandleRequest(RequestContext _context)
 		{
 			if (!this.loaded)
@@ -64,7 +64,7 @@ namespace Webserver.UrlHandlers
 			_context.Response.OutputStream.Write(array, 0, array.Length);
 		}
 
-		// Token: 0x0600D0CE RID: 53454 RVA: 0x004BCAA2 File Offset: 0x004BACA2
+		// Token: 0x0600D1E2 RID: 53730 RVA: 0x004C059E File Offset: 0x004BE79E
 		public IEnumerator LoadIcons()
 		{
 			Dictionary<string, byte[]> dictionary = this.icons;
@@ -145,7 +145,7 @@ namespace Webserver.UrlHandlers
 			yield break;
 		}
 
-		// Token: 0x0600D0CF RID: 53455 RVA: 0x004BCAB1 File Offset: 0x004BACB1
+		// Token: 0x0600D1E3 RID: 53731 RVA: 0x004C05AD File Offset: 0x004BE7AD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator loadIconsFromFolder(string _path, Dictionary<string, List<Color>> _tintedIcons, ItemIconHandler.LoadingStats _stats, MicroStopwatch _mswPerFrame)
 		{
@@ -219,7 +219,7 @@ namespace Webserver.UrlHandlers
 			yield break;
 		}
 
-		// Token: 0x0600D0D0 RID: 53456 RVA: 0x004BCADD File Offset: 0x004BACDD
+		// Token: 0x0600D1E4 RID: 53732 RVA: 0x004C05D9 File Offset: 0x004BE7D9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator AddIcon(string _name, byte[] _sourceBytes, Texture2D _tex, Dictionary<string, List<Color>> _tintedIcons, ItemIconHandler.LoadingStats _stats, MicroStopwatch _mswPerFrame)
 		{
@@ -234,58 +234,58 @@ namespace Webserver.UrlHandlers
 			return <AddIcon>d__;
 		}
 
-		// Token: 0x04009E3D RID: 40509
+		// Token: 0x04009F26 RID: 40742
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, byte[]> icons = new Dictionary<string, byte[]>();
 
-		// Token: 0x04009E3E RID: 40510
+		// Token: 0x04009F27 RID: 40743
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool logMissingFiles;
 
-		// Token: 0x04009E3F RID: 40511
+		// Token: 0x04009F28 RID: 40744
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool loaded;
 
-		// Token: 0x04009E41 RID: 40513
+		// Token: 0x04009F2A RID: 40746
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int loadingMaxMsPerFrame = 100;
 
-		// Token: 0x04009E42 RID: 40514
+		// Token: 0x04009F2B RID: 40747
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool loading;
 
-		// Token: 0x04009E43 RID: 40515
+		// Token: 0x04009F2C RID: 40748
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ProfilerMarker pmSourceFile = new ProfilerMarker(".SourceFile");
 
-		// Token: 0x04009E44 RID: 40516
+		// Token: 0x04009F2D RID: 40749
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ProfilerMarker pmAddIcon = new ProfilerMarker(".AddIcon");
 
-		// Token: 0x04009E45 RID: 40517
+		// Token: 0x04009F2E RID: 40750
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ProfilerMarker pmTint = new ProfilerMarker(".Tint");
 
-		// Token: 0x02001B1C RID: 6940
+		// Token: 0x02001B4D RID: 6989
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class LoadingStats
 		{
-			// Token: 0x04009E46 RID: 40518
+			// Token: 0x04009F2F RID: 40751
 			public int Files;
 
-			// Token: 0x04009E47 RID: 40519
+			// Token: 0x04009F30 RID: 40752
 			public int Tints;
 
-			// Token: 0x04009E48 RID: 40520
+			// Token: 0x04009F31 RID: 40753
 			public readonly MicroStopwatch MswTotal = new MicroStopwatch(false);
 
-			// Token: 0x04009E49 RID: 40521
+			// Token: 0x04009F32 RID: 40754
 			public readonly MicroStopwatch MswLoading = new MicroStopwatch(false);
 
-			// Token: 0x04009E4A RID: 40522
+			// Token: 0x04009F33 RID: 40755
 			public readonly MicroStopwatch MswEncoding = new MicroStopwatch(false);
 
-			// Token: 0x04009E4B RID: 40523
+			// Token: 0x04009F34 RID: 40756
 			public readonly MicroStopwatch MswTinting = new MicroStopwatch(false);
 		}
 	}

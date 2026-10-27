@@ -2,17 +2,17 @@
 using Challenges;
 using UnityEngine;
 
-// Token: 0x02001156 RID: 4438
+// Token: 0x02001166 RID: 4454
 public class XUiM_Quest : XUiModel
 {
 	// Token: 0x140000E8 RID: 232
-	// (add) Token: 0x06008BE3 RID: 35811 RVA: 0x00355444 File Offset: 0x00353644
-	// (remove) Token: 0x06008BE4 RID: 35812 RVA: 0x0035547C File Offset: 0x0035367C
+	// (add) Token: 0x06008C37 RID: 35895 RVA: 0x003574F0 File Offset: 0x003556F0
+	// (remove) Token: 0x06008C38 RID: 35896 RVA: 0x00357528 File Offset: 0x00355728
 	public event XUiEvent_TrackedQuestChanged OnTrackedQuestChanged;
 
-	// Token: 0x17001050 RID: 4176
-	// (get) Token: 0x06008BE5 RID: 35813 RVA: 0x003554B1 File Offset: 0x003536B1
-	// (set) Token: 0x06008BE6 RID: 35814 RVA: 0x003554B9 File Offset: 0x003536B9
+	// Token: 0x1700105B RID: 4187
+	// (get) Token: 0x06008C39 RID: 35897 RVA: 0x0035755D File Offset: 0x0035575D
+	// (set) Token: 0x06008C3A RID: 35898 RVA: 0x00357565 File Offset: 0x00355765
 	public Quest TrackedQuest
 	{
 		get
@@ -32,13 +32,13 @@ public class XUiM_Quest : XUiModel
 	}
 
 	// Token: 0x140000E9 RID: 233
-	// (add) Token: 0x06008BE7 RID: 35815 RVA: 0x003554D4 File Offset: 0x003536D4
-	// (remove) Token: 0x06008BE8 RID: 35816 RVA: 0x0035550C File Offset: 0x0035370C
+	// (add) Token: 0x06008C3B RID: 35899 RVA: 0x00357580 File Offset: 0x00355780
+	// (remove) Token: 0x06008C3C RID: 35900 RVA: 0x003575B8 File Offset: 0x003557B8
 	public event XUiEvent_TrackedQuestChanged OnTrackedChallengeChanged;
 
-	// Token: 0x17001051 RID: 4177
-	// (get) Token: 0x06008BE9 RID: 35817 RVA: 0x00355541 File Offset: 0x00353741
-	// (set) Token: 0x06008BEA RID: 35818 RVA: 0x0035554C File Offset: 0x0035374C
+	// Token: 0x1700105C RID: 4188
+	// (get) Token: 0x06008C3D RID: 35901 RVA: 0x003575ED File Offset: 0x003557ED
+	// (set) Token: 0x06008C3E RID: 35902 RVA: 0x003575F8 File Offset: 0x003557F8
 	public Challenge TrackedChallenge
 	{
 		get
@@ -71,7 +71,7 @@ public class XUiM_Quest : XUiModel
 		}
 	}
 
-	// Token: 0x06008BEB RID: 35819 RVA: 0x00355604 File Offset: 0x00353804
+	// Token: 0x06008C3F RID: 35903 RVA: 0x003576B0 File Offset: 0x003558B0
 	public void HandleTrackedChallengeChanged()
 	{
 		XUiEvent_TrackedQuestChanged onTrackedChallengeChanged = this.OnTrackedChallengeChanged;
@@ -82,7 +82,7 @@ public class XUiM_Quest : XUiModel
 		onTrackedChallengeChanged();
 	}
 
-	// Token: 0x06008BEC RID: 35820 RVA: 0x00355618 File Offset: 0x00353818
+	// Token: 0x06008C40 RID: 35904 RVA: 0x003576C4 File Offset: 0x003558C4
 	public static string GetQuestItemRewards(Quest _quest, EntityPlayer _player, string _rewardItemFormat, string _rewardBonusItemFormat)
 	{
 		if (_quest == null)
@@ -140,7 +140,7 @@ public class XUiM_Quest : XUiModel
 		return text;
 	}
 
-	// Token: 0x06008BED RID: 35821 RVA: 0x0035577C File Offset: 0x0035397C
+	// Token: 0x06008C41 RID: 35905 RVA: 0x00357828 File Offset: 0x00355A28
 	public static bool HasQuestRewards(Quest _quest, EntityPlayer _player, bool _isChosen)
 	{
 		if (_quest == null)
@@ -157,7 +157,7 @@ public class XUiM_Quest : XUiModel
 		return false;
 	}
 
-	// Token: 0x06008BEE RID: 35822 RVA: 0x003557D0 File Offset: 0x003539D0
+	// Token: 0x06008C42 RID: 35906 RVA: 0x0035787C File Offset: 0x00355A7C
 	public static string GetQuestRewards(Quest _quest, EntityPlayer _player, bool _isChosen, string _rewardItemFormat, string _rewardItemBonusFormat, string _rewardNumberFormat, string _rewardNumberBonusFormat)
 	{
 		if (_quest == null)
@@ -230,7 +230,7 @@ public class XUiM_Quest : XUiModel
 		return text;
 	}
 
-	// Token: 0x06008BEF RID: 35823 RVA: 0x00355A58 File Offset: 0x00353C58
+	// Token: 0x06008C43 RID: 35907 RVA: 0x00357B04 File Offset: 0x00355D04
 	public static bool HasChainQuestRewards(Quest _quest, EntityPlayer _player)
 	{
 		Quest quest = _quest;
@@ -254,7 +254,7 @@ public class XUiM_Quest : XUiModel
 		return false;
 	}
 
-	// Token: 0x06008BF0 RID: 35824 RVA: 0x00355AE0 File Offset: 0x00353CE0
+	// Token: 0x06008C44 RID: 35908 RVA: 0x00357B8C File Offset: 0x00355D8C
 	public static string GetChainQuestRewards(Quest _quest, EntityPlayer _player, string _rewardItemFormat, string _rewardItemBonusFormat, string _rewardNumberFormat, string _rewardNumberBonusFormat)
 	{
 		string text = "";
@@ -326,14 +326,14 @@ public class XUiM_Quest : XUiModel
 		return text;
 	}
 
-	// Token: 0x04006770 RID: 26480
+	// Token: 0x040067B0 RID: 26544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest trackedQuest;
 
-	// Token: 0x04006772 RID: 26482
+	// Token: 0x040067B2 RID: 26546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Challenge trackedChallenge;
 
-	// Token: 0x04006773 RID: 26483
+	// Token: 0x040067B3 RID: 26547
 	public static readonly FastTags<TagGroup.Global> QuestTag = FastTags<TagGroup.Global>.Parse("quest");
 }

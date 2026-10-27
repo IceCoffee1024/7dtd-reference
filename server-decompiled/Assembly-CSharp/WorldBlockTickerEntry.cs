@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000C18 RID: 3096
+// Token: 0x02000C23 RID: 3107
 public class WorldBlockTickerEntry
 {
-	// Token: 0x06005DF1 RID: 24049 RVA: 0x0024ADD0 File Offset: 0x00248FD0
+	// Token: 0x06005E16 RID: 24086 RVA: 0x0024C2F8 File Offset: 0x0024A4F8
 	public WorldBlockTickerEntry(Vector3i _pos, int _id, ulong _scheduledTime)
 	{
 		long num = WorldBlockTickerEntry.nextTickEntryID;
@@ -15,7 +15,7 @@ public class WorldBlockTickerEntry
 		this.scheduledTime = _scheduledTime;
 	}
 
-	// Token: 0x06005DF2 RID: 24050 RVA: 0x0024AE04 File Offset: 0x00249004
+	// Token: 0x06005E17 RID: 24087 RVA: 0x0024C32C File Offset: 0x0024A52C
 	public static WorldBlockTickerEntry Read(BinaryReader _br, int _chunkX, int _chunkZ, int _version)
 	{
 		Vector3i vector3i = new Vector3i((int)_br.ReadByte() + _chunkX * 16, (int)_br.ReadByte(), (int)_br.ReadByte() + _chunkZ * 16);
@@ -25,7 +25,7 @@ public class WorldBlockTickerEntry
 		return new WorldBlockTickerEntry(vector3i, num, num2);
 	}
 
-	// Token: 0x06005DF3 RID: 24051 RVA: 0x0024AE50 File Offset: 0x00249050
+	// Token: 0x06005E18 RID: 24088 RVA: 0x0024C378 File Offset: 0x0024A578
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write((byte)World.toBlockXZ(this.worldPos.x));
@@ -36,44 +36,44 @@ public class WorldBlockTickerEntry
 		_bw.Write(0);
 	}
 
-	// Token: 0x06005DF4 RID: 24052 RVA: 0x0024AEC0 File Offset: 0x002490C0
+	// Token: 0x06005E19 RID: 24089 RVA: 0x0024C3E8 File Offset: 0x0024A5E8
 	public override bool Equals(object _obj)
 	{
 		WorldBlockTickerEntry worldBlockTickerEntry = _obj as WorldBlockTickerEntry;
 		return worldBlockTickerEntry != null && (this.worldPos.Equals(worldBlockTickerEntry.worldPos) && this.blockID == worldBlockTickerEntry.blockID) && worldBlockTickerEntry.tickEntryID == this.tickEntryID;
 	}
 
-	// Token: 0x06005DF5 RID: 24053 RVA: 0x0024AF0D File Offset: 0x0024910D
+	// Token: 0x06005E1A RID: 24090 RVA: 0x0024C435 File Offset: 0x0024A635
 	public override int GetHashCode()
 	{
 		return WorldBlockTickerEntry.ToHashCode(this.worldPos, this.blockID);
 	}
 
-	// Token: 0x06005DF6 RID: 24054 RVA: 0x0024AF20 File Offset: 0x00249120
+	// Token: 0x06005E1B RID: 24091 RVA: 0x0024C448 File Offset: 0x0024A648
 	public static int ToHashCode(Vector3i _pos, int _blockID)
 	{
 		return (_pos.GetHashCode() * 397) ^ _blockID;
 	}
 
-	// Token: 0x06005DF7 RID: 24055 RVA: 0x0024AF37 File Offset: 0x00249137
+	// Token: 0x06005E1C RID: 24092 RVA: 0x0024C45F File Offset: 0x0024A65F
 	public long GetChunkKey()
 	{
 		return WorldChunkCache.MakeChunkKey(World.toChunkXZ(this.worldPos.x), World.toChunkXZ(this.worldPos.z));
 	}
 
-	// Token: 0x040048E2 RID: 18658
+	// Token: 0x04004907 RID: 18695
 	public readonly Vector3i worldPos;
 
-	// Token: 0x040048E3 RID: 18659
+	// Token: 0x04004908 RID: 18696
 	public readonly int blockID;
 
-	// Token: 0x040048E4 RID: 18660
+	// Token: 0x04004909 RID: 18697
 	public readonly ulong scheduledTime;
 
-	// Token: 0x040048E5 RID: 18661
+	// Token: 0x0400490A RID: 18698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long nextTickEntryID;
 
-	// Token: 0x040048E6 RID: 18662
+	// Token: 0x0400490B RID: 18699
 	public readonly long tickEntryID;
 }

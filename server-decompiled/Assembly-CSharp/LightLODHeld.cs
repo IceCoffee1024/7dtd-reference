@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001269 RID: 4713
+// Token: 0x0200127B RID: 4731
 public class LightLODHeld : LightLOD
 {
-	// Token: 0x060095C9 RID: 38345 RVA: 0x003895F9 File Offset: 0x003877F9
+	// Token: 0x06009620 RID: 38432 RVA: 0x0038B9F5 File Offset: 0x00389BF5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -12,7 +12,7 @@ public class LightLODHeld : LightLOD
 		this.startPos = this.selfT.localPosition;
 	}
 
-	// Token: 0x060095CA RID: 38346 RVA: 0x00389614 File Offset: 0x00387814
+	// Token: 0x06009621 RID: 38433 RVA: 0x0038BA10 File Offset: 0x00389C10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -95,60 +95,60 @@ public class LightLODHeld : LightLOD
 		selfT.position = vector;
 	}
 
-	// Token: 0x04007064 RID: 28772
+	// Token: 0x040070A5 RID: 28837
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cHeightCheckY = 0.5f;
 
-	// Token: 0x04007065 RID: 28773
+	// Token: 0x040070A6 RID: 28838
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCastOffset = 0.02f;
 
-	// Token: 0x04007066 RID: 28774
+	// Token: 0x040070A7 RID: 28839
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCastRadius = 0.15f;
 
-	// Token: 0x04007067 RID: 28775
+	// Token: 0x040070A8 RID: 28840
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cClosestDist = 0.15f;
 
-	// Token: 0x04007068 RID: 28776
+	// Token: 0x040070A9 RID: 28841
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMask = -554734606;
 
-	// Token: 0x04007069 RID: 28777
+	// Token: 0x040070AA RID: 28842
 	public float flickerRadius;
 
-	// Token: 0x0400706A RID: 28778
+	// Token: 0x040070AB RID: 28843
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 flickerOffset;
 
-	// Token: 0x0400706B RID: 28779
+	// Token: 0x040070AC RID: 28844
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 flickerTargetOffset;
 
-	// Token: 0x0400706C RID: 28780
+	// Token: 0x040070AD RID: 28845
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 startPos;
 
-	// Token: 0x0400706D RID: 28781
+	// Token: 0x040070AE RID: 28846
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform rootT;
 
-	// Token: 0x0400706E RID: 28782
+	// Token: 0x040070AF RID: 28847
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 parentStartPos;
 
-	// Token: 0x0400706F RID: 28783
+	// Token: 0x040070B0 RID: 28848
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal player;

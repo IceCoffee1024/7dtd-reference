@@ -4,19 +4,19 @@ using Platform.Shared;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C28 RID: 7208
+	// Token: 0x02001C59 RID: 7257
 	public class IdProviderGameCore
 	{
-		// Token: 0x17001B0D RID: 6925
-		// (get) Token: 0x0600D632 RID: 54834 RVA: 0x004D0553 File Offset: 0x004CE753
-		// (set) Token: 0x0600D633 RID: 54835 RVA: 0x004D055B File Offset: 0x004CE75B
+		// Token: 0x17001B55 RID: 6997
+		// (get) Token: 0x0600D746 RID: 55110 RVA: 0x004D407B File Offset: 0x004D227B
+		// (set) Token: 0x0600D747 RID: 55111 RVA: 0x004D4083 File Offset: 0x004D2283
 		public UserIdentifierXbl Id
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600D634 RID: 54836 RVA: 0x004D0564 File Offset: 0x004CE764
+		// Token: 0x0600D748 RID: 55112 RVA: 0x004D408C File Offset: 0x004D228C
 		public IdProviderGameCore(User _nativeUser, IUserClient _crossplatformUser)
 		{
 			this.m_nativeUser = _nativeUser;
@@ -28,7 +28,7 @@ namespace Platform.XBL
 			this.m_nativeUser.UserLoggedIn += this.NativeLogin;
 		}
 
-		// Token: 0x0600D635 RID: 54837 RVA: 0x004D05A0 File Offset: 0x004CE7A0
+		// Token: 0x0600D749 RID: 55113 RVA: 0x004D40C8 File Offset: 0x004D22C8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void NativeLogin(IPlatform _platform)
 		{
@@ -37,7 +37,7 @@ namespace Platform.XBL
 			XblXuidMapper.SetXuid(this.Id, this.m_nativeUser.Xuid);
 		}
 
-		// Token: 0x0600D636 RID: 54838 RVA: 0x004D05F0 File Offset: 0x004CE7F0
+		// Token: 0x0600D74A RID: 55114 RVA: 0x004D4118 File Offset: 0x004D2318
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CrossplatformLogin(IPlatform _platform)
 		{
@@ -57,7 +57,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D637 RID: 54839 RVA: 0x004D0674 File Offset: 0x004CE874
+		// Token: 0x0600D74B RID: 55115 RVA: 0x004D419C File Offset: 0x004D239C
 		public bool LoadOfflineId()
 		{
 			UserIdentifierXbl userIdentifierXbl;
@@ -70,7 +70,7 @@ namespace Platform.XBL
 			return false;
 		}
 
-		// Token: 0x0400A2AA RID: 41642
+		// Token: 0x0400A393 RID: 41875
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly User m_nativeUser;
 	}

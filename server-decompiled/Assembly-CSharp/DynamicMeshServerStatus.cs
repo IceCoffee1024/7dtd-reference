@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000395 RID: 917
+// Token: 0x02000397 RID: 919
 public enum DynamicMeshServerStatus
 {
-	// Token: 0x0400117B RID: 4475
+	// Token: 0x0400118B RID: 4491
 	None,
-	// Token: 0x0400117C RID: 4476
+	// Token: 0x0400118C RID: 4492
 	WaitForLoad,
-	// Token: 0x0400117D RID: 4477
+	// Token: 0x0400118D RID: 4493
 	ClientMessageSent
 }

@@ -3,19 +3,19 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000CED RID: 3309
+// Token: 0x02000CF8 RID: 3320
 public class WaterDebugRendererLayer : IMemoryPoolableObject
 {
-	// Token: 0x17000AA4 RID: 2724
-	// (get) Token: 0x060064E8 RID: 25832 RVA: 0x0027AADA File Offset: 0x00278CDA
-	// (set) Token: 0x060064E9 RID: 25833 RVA: 0x0027AAE2 File Offset: 0x00278CE2
+	// Token: 0x17000AAA RID: 2730
+	// (get) Token: 0x0600650D RID: 25869 RVA: 0x0027C002 File Offset: 0x0027A202
+	// (set) Token: 0x0600650E RID: 25870 RVA: 0x0027C00A File Offset: 0x0027A20A
 	public bool IsInitialized
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060064EA RID: 25834 RVA: 0x0027AAEC File Offset: 0x00278CEC
+	// Token: 0x0600650F RID: 25871 RVA: 0x0027C014 File Offset: 0x0027A214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitializeData()
 	{
@@ -27,7 +27,7 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		this.IsInitialized = true;
 	}
 
-	// Token: 0x060064EB RID: 25835 RVA: 0x0027AB58 File Offset: 0x00278D58
+	// Token: 0x06006510 RID: 25872 RVA: 0x0027C080 File Offset: 0x0027A280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RegenerateTransforms()
 	{
@@ -50,7 +50,7 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		this.transformsHaveChanged = true;
 	}
 
-	// Token: 0x060064EC RID: 25836 RVA: 0x0027AC8C File Offset: 0x00278E8C
+	// Token: 0x06006511 RID: 25873 RVA: 0x0027C1B4 File Offset: 0x0027A3B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnOriginChanged(Vector3 _origin)
 	{
@@ -60,7 +60,7 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x060064ED RID: 25837 RVA: 0x0027AC9C File Offset: 0x00278E9C
+	// Token: 0x06006512 RID: 25874 RVA: 0x0027C1C4 File Offset: 0x0027A3C4
 	public void SetLayerOrigin(Vector3 _origin)
 	{
 		this.layerOrigin = _origin;
@@ -70,14 +70,14 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x060064EE RID: 25838 RVA: 0x0027ACB3 File Offset: 0x00278EB3
+	// Token: 0x06006513 RID: 25875 RVA: 0x0027C1DB File Offset: 0x0027A3DB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CoordToIndex(int _x, int _y, int _z)
 	{
 		return _x + 16 * _y + 256 * _z;
 	}
 
-	// Token: 0x060064EF RID: 25839 RVA: 0x0027ACC4 File Offset: 0x00278EC4
+	// Token: 0x06006514 RID: 25876 RVA: 0x0027C1EC File Offset: 0x0027A3EC
 	public void SetWater(int _x, int _y, int _z, float mass)
 	{
 		float num = mass / 19500f;
@@ -104,7 +104,7 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		this.massesHaveChanged = true;
 	}
 
-	// Token: 0x060064F0 RID: 25840 RVA: 0x0027AD8C File Offset: 0x00278F8C
+	// Token: 0x06006515 RID: 25877 RVA: 0x0027C2B4 File Offset: 0x0027A4B4
 	public void Draw()
 	{
 		if (this.totalWater == 0)
@@ -145,7 +145,7 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		Graphics.DrawMeshInstancedProcedural(WaterDebugAssets.CubeMesh, 0, WaterDebugAssets.DebugMaterial, this.bounds, 4096, this.materialProperties, ShadowCastingMode.On, true, 0, null, LightProbeUsage.BlendProbes, null);
 	}
 
-	// Token: 0x060064F1 RID: 25841 RVA: 0x0027AED4 File Offset: 0x002790D4
+	// Token: 0x06006516 RID: 25878 RVA: 0x0027C3FC File Offset: 0x0027A5FC
 	public void Reset()
 	{
 		if (this.IsInitialized)
@@ -160,7 +160,7 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		this.massesHaveChanged = false;
 	}
 
-	// Token: 0x060064F2 RID: 25842 RVA: 0x0027AF34 File Offset: 0x00279134
+	// Token: 0x06006517 RID: 25879 RVA: 0x0027C45C File Offset: 0x0027A65C
 	public void Cleanup()
 	{
 		if (this.transformsBuffer != null)
@@ -180,79 +180,79 @@ public class WaterDebugRendererLayer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x04004EB5 RID: 20149
+	// Token: 0x04004EDA RID: 20186
 	public const int dimX = 16;
 
-	// Token: 0x04004EB6 RID: 20150
+	// Token: 0x04004EDB RID: 20187
 	public const int dimY = 16;
 
-	// Token: 0x04004EB7 RID: 20151
+	// Token: 0x04004EDC RID: 20188
 	public const int dimZ = 16;
 
-	// Token: 0x04004EB8 RID: 20152
+	// Token: 0x04004EDD RID: 20189
 	public const int elementsPerLayer = 4096;
 
-	// Token: 0x04004EB9 RID: 20153
+	// Token: 0x04004EDE RID: 20190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SCALE_CUTOFF = 0.01f;
 
-	// Token: 0x04004EBA RID: 20154
+	// Token: 0x04004EDF RID: 20191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float RENDER_SCALE = 0.9f;
 
-	// Token: 0x04004EBB RID: 20155
+	// Token: 0x04004EE0 RID: 20192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float4 waterColor = new float4(0f, 0f, 1f, 1f);
 
-	// Token: 0x04004EBC RID: 20156
+	// Token: 0x04004EE1 RID: 20193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float4 overfullColor = new float4(1f, 0f, 1f, 1f);
 
-	// Token: 0x04004EBD RID: 20157
+	// Token: 0x04004EE2 RID: 20194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MaterialPropertyBlock materialProperties;
 
-	// Token: 0x04004EBE RID: 20158
+	// Token: 0x04004EE3 RID: 20195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 layerOrigin;
 
-	// Token: 0x04004EBF RID: 20159
+	// Token: 0x04004EE4 RID: 20196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bounds bounds;
 
-	// Token: 0x04004EC0 RID: 20160
+	// Token: 0x04004EE5 RID: 20197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Matrix4x4[] transforms;
 
-	// Token: 0x04004EC1 RID: 20161
+	// Token: 0x04004EE6 RID: 20198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float4[] colors;
 
-	// Token: 0x04004EC2 RID: 20162
+	// Token: 0x04004EE7 RID: 20199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool transformsHaveChanged;
 
-	// Token: 0x04004EC3 RID: 20163
+	// Token: 0x04004EE8 RID: 20200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] normalizedMass;
 
-	// Token: 0x04004EC4 RID: 20164
+	// Token: 0x04004EE9 RID: 20201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool massesHaveChanged;
 
-	// Token: 0x04004EC5 RID: 20165
+	// Token: 0x04004EEA RID: 20202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ComputeBuffer transformsBuffer;
 
-	// Token: 0x04004EC6 RID: 20166
+	// Token: 0x04004EEB RID: 20203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ComputeBuffer massBuffer;
 
-	// Token: 0x04004EC7 RID: 20167
+	// Token: 0x04004EEC RID: 20204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ComputeBuffer colorBuffer;
 
-	// Token: 0x04004EC9 RID: 20169
+	// Token: 0x04004EEE RID: 20206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalWater;
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using RaycastPathing;
 using UnityEngine.Scripting;
 
-// Token: 0x020008E7 RID: 2279
+// Token: 0x020008F1 RID: 2289
 [Preserve]
 public class RaycastPathManager
 {
-	// Token: 0x17000702 RID: 1794
-	// (get) Token: 0x0600417A RID: 16762 RVA: 0x0019C74B File Offset: 0x0019A94B
+	// Token: 0x17000708 RID: 1800
+	// (get) Token: 0x0600419D RID: 16797 RVA: 0x0019D7F3 File Offset: 0x0019B9F3
 	public static RaycastPathManager Instance
 	{
 		get
@@ -17,20 +17,20 @@ public class RaycastPathManager
 		}
 	}
 
-	// Token: 0x0600417B RID: 16763 RVA: 0x0019C752 File Offset: 0x0019A952
+	// Token: 0x0600419E RID: 16798 RVA: 0x0019D7FA File Offset: 0x0019B9FA
 	public static void Init()
 	{
 		RaycastPathManager.instance = new RaycastPathManager();
 		RaycastPathManager.instance._Init();
 	}
 
-	// Token: 0x0600417C RID: 16764 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600419F RID: 16799 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void _Init()
 	{
 	}
 
-	// Token: 0x0600417D RID: 16765 RVA: 0x0019C768 File Offset: 0x0019A968
+	// Token: 0x060041A0 RID: 16800 RVA: 0x0019D810 File Offset: 0x0019BA10
 	public void Add(RaycastPath path)
 	{
 		if (!this.paths.Contains(path))
@@ -39,7 +39,7 @@ public class RaycastPathManager
 		}
 	}
 
-	// Token: 0x0600417E RID: 16766 RVA: 0x0019C784 File Offset: 0x0019A984
+	// Token: 0x060041A1 RID: 16801 RVA: 0x0019D82C File Offset: 0x0019BA2C
 	public void Remove(RaycastPath path)
 	{
 		if (this.paths.Contains(path))
@@ -48,7 +48,7 @@ public class RaycastPathManager
 		}
 	}
 
-	// Token: 0x0600417F RID: 16767 RVA: 0x0019C7A1 File Offset: 0x0019A9A1
+	// Token: 0x060041A2 RID: 16802 RVA: 0x0019D849 File Offset: 0x0019BA49
 	public void Update()
 	{
 		if (RaycastPathManager.DebugModeEnabled)
@@ -57,7 +57,7 @@ public class RaycastPathManager
 		}
 	}
 
-	// Token: 0x06004180 RID: 16768 RVA: 0x0019C7B0 File Offset: 0x0019A9B0
+	// Token: 0x060041A3 RID: 16803 RVA: 0x0019D858 File Offset: 0x0019BA58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void _DebugDraw()
 	{
@@ -67,20 +67,20 @@ public class RaycastPathManager
 		}
 	}
 
-	// Token: 0x06004181 RID: 16769 RVA: 0x0019C7E4 File Offset: 0x0019A9E4
+	// Token: 0x060041A4 RID: 16804 RVA: 0x0019D88C File Offset: 0x0019BA8C
 	public static implicit operator bool(RaycastPathManager exists)
 	{
 		return exists != null;
 	}
 
-	// Token: 0x04003577 RID: 13687
+	// Token: 0x04003597 RID: 13719
 	public static bool DebugModeEnabled;
 
-	// Token: 0x04003578 RID: 13688
+	// Token: 0x04003598 RID: 13720
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<RaycastPath> paths = new List<RaycastPath>();
 
-	// Token: 0x04003579 RID: 13689
+	// Token: 0x04003599 RID: 13721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static RaycastPathManager instance;
 }

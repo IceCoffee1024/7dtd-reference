@@ -2,33 +2,33 @@
 
 namespace Platform
 {
-	// Token: 0x02001BE7 RID: 7143
+	// Token: 0x02001C18 RID: 7192
 	public interface IUserDataRoaming
 	{
-		// Token: 0x0600D4E7 RID: 54503
+		// Token: 0x0600D5FB RID: 54779
 		void Init(IPlatform platform);
 
-		// Token: 0x17001ACA RID: 6858
-		// (get) Token: 0x0600D4E8 RID: 54504
+		// Token: 0x17001B12 RID: 6930
+		// (get) Token: 0x0600D5FC RID: 54780
 		bool IsSupported { get; }
 
-		// Token: 0x17001ACB RID: 6859
-		// (get) Token: 0x0600D4E9 RID: 54505
+		// Token: 0x17001B13 RID: 6931
+		// (get) Token: 0x0600D5FD RID: 54781
 		SaveRoamingMode SaveRoamingMode { get; }
 
-		// Token: 0x17001ACC RID: 6860
-		// (get) Token: 0x0600D4EA RID: 54506
+		// Token: 0x17001B14 RID: 6932
+		// (get) Token: 0x0600D5FE RID: 54782
 		bool SaveRoamingEnabled { get; }
 
-		// Token: 0x17001ACD RID: 6861
-		// (get) Token: 0x0600D4EB RID: 54507
+		// Token: 0x17001B15 RID: 6933
+		// (get) Token: 0x0600D5FF RID: 54783
 		bool IsRoamingOptional { get; }
 
-		// Token: 0x17001ACE RID: 6862
-		// (get) Token: 0x0600D4EC RID: 54508
+		// Token: 0x17001B16 RID: 6934
+		// (get) Token: 0x0600D600 RID: 54784
 		UserDataStorageType DefaultSaveStorage { get; }
 
-		// Token: 0x0600D4ED RID: 54509
+		// Token: 0x0600D601 RID: 54785
 		void ValidateRoamingMode();
 	}
 }

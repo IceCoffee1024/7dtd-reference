@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020011AD RID: 4525
+// Token: 0x020011BE RID: 4542
 public class DebugLines : MonoBehaviour
 {
-	// Token: 0x0600907C RID: 36988 RVA: 0x00365F22 File Offset: 0x00364122
+	// Token: 0x060090D2 RID: 37074 RVA: 0x003681B6 File Offset: 0x003663B6
 	public static DebugLines Create(string _name, Transform _parentT, Color _color1, Color _color2, float _width1, float _width2, float _duration)
 	{
 		DebugLines debugLines = DebugLines.Create(_name, _parentT);
@@ -18,7 +18,7 @@ public class DebugLines : MonoBehaviour
 		return debugLines;
 	}
 
-	// Token: 0x0600907D RID: 36989 RVA: 0x00365F58 File Offset: 0x00364158
+	// Token: 0x060090D3 RID: 37075 RVA: 0x003681EC File Offset: 0x003663EC
 	public static DebugLines Create(string _name, Transform _parentT, Vector3 _pos1, Vector3 _pos2, Color _color1, Color _color2, float _width1, float _width2, float _duration)
 	{
 		DebugLines debugLines = DebugLines.Create(_name, _parentT);
@@ -34,7 +34,7 @@ public class DebugLines : MonoBehaviour
 		return debugLines;
 	}
 
-	// Token: 0x0600907E RID: 36990 RVA: 0x00365FC4 File Offset: 0x003641C4
+	// Token: 0x060090D4 RID: 37076 RVA: 0x00368258 File Offset: 0x00366458
 	public static DebugLines CreateAttached(string _name, Transform _parentT, Vector3 _pos1, Vector3 _pos2, Color _color1, Color _color2, float _width1, float _width2, float _duration)
 	{
 		DebugLines debugLines = DebugLines.Create(_name, _parentT);
@@ -53,7 +53,7 @@ public class DebugLines : MonoBehaviour
 		return debugLines;
 	}
 
-	// Token: 0x0600907F RID: 36991 RVA: 0x00366048 File Offset: 0x00364248
+	// Token: 0x060090D5 RID: 37077 RVA: 0x003682DC File Offset: 0x003664DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DebugLines Create(string _name, Transform _parentT)
 	{
@@ -84,7 +84,7 @@ public class DebugLines : MonoBehaviour
 		return debugLines;
 	}
 
-	// Token: 0x06009080 RID: 36992 RVA: 0x003660E4 File Offset: 0x003642E4
+	// Token: 0x060090D6 RID: 37078 RVA: 0x00368378 File Offset: 0x00366578
 	public void AddPoint(Vector3 _pos)
 	{
 		int positionCount = this.line.positionCount;
@@ -97,7 +97,7 @@ public class DebugLines : MonoBehaviour
 		this.line.SetPosition(positionCount, vector);
 	}
 
-	// Token: 0x06009081 RID: 36993 RVA: 0x00366140 File Offset: 0x00364340
+	// Token: 0x060090D7 RID: 37079 RVA: 0x003683D4 File Offset: 0x003665D4
 	public void AddCube(Vector3 _cornerPos1, Vector3 _cornerPos2)
 	{
 		Vector3 vector = _cornerPos1;
@@ -135,7 +135,7 @@ public class DebugLines : MonoBehaviour
 		this.AddPoint(vector);
 	}
 
-	// Token: 0x06009082 RID: 36994 RVA: 0x003662C6 File Offset: 0x003644C6
+	// Token: 0x060090D8 RID: 37080 RVA: 0x0036855A File Offset: 0x0036675A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -146,7 +146,7 @@ public class DebugLines : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009083 RID: 36995 RVA: 0x003662F2 File Offset: 0x003644F2
+	// Token: 0x060090D9 RID: 37081 RVA: 0x00368586 File Offset: 0x00366786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -156,30 +156,30 @@ public class DebugLines : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04006ACE RID: 27342
+	// Token: 0x04006B0E RID: 27406
 	public static Vector3 InsideOffsetV = new Vector3(0.05f, 0.05f, 0.05f);
 
-	// Token: 0x04006ACF RID: 27343
+	// Token: 0x04006B0F RID: 27407
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cName = "DebugLines";
 
-	// Token: 0x04006AD0 RID: 27344
+	// Token: 0x04006B10 RID: 27408
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Dictionary<string, DebugLines> lines = new Dictionary<string, DebugLines>();
 
-	// Token: 0x04006AD1 RID: 27345
+	// Token: 0x04006B11 RID: 27409
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string keyName;
 
-	// Token: 0x04006AD2 RID: 27346
+	// Token: 0x04006B12 RID: 27410
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float duration;
 
-	// Token: 0x04006AD3 RID: 27347
+	// Token: 0x04006B13 RID: 27411
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LineRenderer line;

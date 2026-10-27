@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000690 RID: 1680
+// Token: 0x02000697 RID: 1687
 public class NPCIsAlert : TargetedCompareRequirementBase
 {
-	// Token: 0x0600357D RID: 13693 RVA: 0x00161112 File Offset: 0x0015F312
+	// Token: 0x0600358B RID: 13707 RVA: 0x00161D06 File Offset: 0x0015FF06
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -22,7 +22,7 @@ public class NPCIsAlert : TargetedCompareRequirementBase
 		return this.target.IsAlert;
 	}
 
-	// Token: 0x0600357E RID: 13694 RVA: 0x00161150 File Offset: 0x0015F350
+	// Token: 0x0600358C RID: 13708 RVA: 0x00161D44 File Offset: 0x0015FF44
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Entity {0}Alert", this.invert ? "NOT " : ""));

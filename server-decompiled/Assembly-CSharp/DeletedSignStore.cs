@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000A75 RID: 2677
+// Token: 0x02000A7F RID: 2687
 public class DeletedSignStore
 {
-	// Token: 0x170008D5 RID: 2261
-	// (get) Token: 0x060050A5 RID: 20645 RVA: 0x001EF377 File Offset: 0x001ED577
+	// Token: 0x170008DB RID: 2267
+	// (get) Token: 0x060050C9 RID: 20681 RVA: 0x001F0453 File Offset: 0x001EE653
 	public bool Overflowed
 	{
 		get
@@ -15,8 +15,8 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x170008D6 RID: 2262
-	// (get) Token: 0x060050A6 RID: 20646 RVA: 0x001EF37F File Offset: 0x001ED57F
+	// Token: 0x170008DC RID: 2268
+	// (get) Token: 0x060050CA RID: 20682 RVA: 0x001F045B File Offset: 0x001EE65B
 	public int Count
 	{
 		get
@@ -25,14 +25,14 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050A7 RID: 20647 RVA: 0x001EF38C File Offset: 0x001ED58C
+	// Token: 0x060050CB RID: 20683 RVA: 0x001F0468 File Offset: 0x001EE668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetStorePath()
 	{
 		return GameIO.GetSaveGameDir() + "/deletedSigns.dat";
 	}
 
-	// Token: 0x060050A8 RID: 20648 RVA: 0x001EF39D File Offset: 0x001ED59D
+	// Token: 0x060050CC RID: 20684 RVA: 0x001F0479 File Offset: 0x001EE679
 	public bool IsDeleted(GlobalSignId signId)
 	{
 		if (this.overflowed)
@@ -42,7 +42,7 @@ public class DeletedSignStore
 		return this.deletedSignIds.Contains(signId);
 	}
 
-	// Token: 0x060050A9 RID: 20649 RVA: 0x001EF3C0 File Offset: 0x001ED5C0
+	// Token: 0x060050CD RID: 20685 RVA: 0x001F049C File Offset: 0x001EE69C
 	public void Add(GlobalSignId signId)
 	{
 		if (this.overflowed)
@@ -62,7 +62,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050AA RID: 20650 RVA: 0x001EF433 File Offset: 0x001ED633
+	// Token: 0x060050CE RID: 20686 RVA: 0x001F050F File Offset: 0x001EE70F
 	public void Remove(GlobalSignId signId)
 	{
 		if (this.deletedSignIds.Remove(signId))
@@ -71,7 +71,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050AB RID: 20651 RVA: 0x001EF44C File Offset: 0x001ED64C
+	// Token: 0x060050CF RID: 20687 RVA: 0x001F0528 File Offset: 0x001EE728
 	public void PruneExistingSigns(SignDataManager manager)
 	{
 		List<GlobalSignId> list = null;
@@ -99,7 +99,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050AC RID: 20652 RVA: 0x001EF51C File Offset: 0x001ED71C
+	// Token: 0x060050D0 RID: 20688 RVA: 0x001F05F8 File Offset: 0x001EE7F8
 	public void Load()
 	{
 		this.deletedSignIds.Clear();
@@ -122,7 +122,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050AD RID: 20653 RVA: 0x001EF5A7 File Offset: 0x001ED7A7
+	// Token: 0x060050D1 RID: 20689 RVA: 0x001F0683 File Offset: 0x001EE883
 	public void Update()
 	{
 		this.CheckCompletedWrite();
@@ -132,7 +132,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050AE RID: 20654 RVA: 0x001EF5C6 File Offset: 0x001ED7C6
+	// Token: 0x060050D2 RID: 20690 RVA: 0x001F06A2 File Offset: 0x001EE8A2
 	public void Flush()
 	{
 		if (this.writeTask != null)
@@ -147,7 +147,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050AF RID: 20655 RVA: 0x001EF5FC File Offset: 0x001ED7FC
+	// Token: 0x060050D3 RID: 20691 RVA: 0x001F06D8 File Offset: 0x001EE8D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckCompletedWrite()
 	{
@@ -162,7 +162,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050B0 RID: 20656 RVA: 0x001EF63C File Offset: 0x001ED83C
+	// Token: 0x060050D4 RID: 20692 RVA: 0x001F0718 File Offset: 0x001EE918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BeginWrite(bool waitForCompletion)
 	{
@@ -189,7 +189,7 @@ public class DeletedSignStore
 		}, pooledExpandableMemoryStream, null, true);
 	}
 
-	// Token: 0x060050B1 RID: 20657 RVA: 0x001EF6CC File Offset: 0x001ED8CC
+	// Token: 0x060050D5 RID: 20693 RVA: 0x001F07A8 File Offset: 0x001EE9A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildImage(PooledExpandableMemoryStream image)
 	{
@@ -205,7 +205,7 @@ public class DeletedSignStore
 		SignStoreIO.FinalizeImage(image, 1313297220U, 1, this.deletedSignIds.Count, this.overflowed ? 1 : 0);
 	}
 
-	// Token: 0x060050B2 RID: 20658 RVA: 0x001EF774 File Offset: 0x001ED974
+	// Token: 0x060050D6 RID: 20694 RVA: 0x001F0850 File Offset: 0x001EEA50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteImage(PooledExpandableMemoryStream image)
 	{
@@ -223,7 +223,7 @@ public class DeletedSignStore
 		}
 	}
 
-	// Token: 0x060050B3 RID: 20659 RVA: 0x001EF7CC File Offset: 0x001ED9CC
+	// Token: 0x060050D7 RID: 20695 RVA: 0x001F08A8 File Offset: 0x001EEAA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryReadFile(string path)
 	{
@@ -241,7 +241,7 @@ public class DeletedSignStore
 		return true;
 	}
 
-	// Token: 0x060050B4 RID: 20660 RVA: 0x001EF80C File Offset: 0x001EDA0C
+	// Token: 0x060050D8 RID: 20696 RVA: 0x001F08E8 File Offset: 0x001EEAE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryParseImage(string path, byte[] image)
 	{
@@ -292,48 +292,48 @@ public class DeletedSignStore
 		return true;
 	}
 
-	// Token: 0x04003E2F RID: 15919
+	// Token: 0x04003E50 RID: 15952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const uint kMagic = 1313297220U;
 
-	// Token: 0x04003E30 RID: 15920
+	// Token: 0x04003E51 RID: 15953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte kFlagOverflowed = 1;
 
-	// Token: 0x04003E31 RID: 15921
+	// Token: 0x04003E52 RID: 15954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cLogTag = "[DeletedSignStore]";
 
-	// Token: 0x04003E32 RID: 15922
+	// Token: 0x04003E53 RID: 15955
 	public const int CurrentVersion = 1;
 
-	// Token: 0x04003E33 RID: 15923
+	// Token: 0x04003E54 RID: 15956
 	public const int MinReadableVersion = 1;
 
-	// Token: 0x04003E34 RID: 15924
+	// Token: 0x04003E55 RID: 15957
 	public const int cMaxDeletedSigns = 10000;
 
-	// Token: 0x04003E35 RID: 15925
+	// Token: 0x04003E56 RID: 15958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cFileName = "deletedSigns.dat";
 
-	// Token: 0x04003E36 RID: 15926
+	// Token: 0x04003E57 RID: 15959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cBackupExt = ".bak";
 
-	// Token: 0x04003E37 RID: 15927
+	// Token: 0x04003E58 RID: 15960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<GlobalSignId> deletedSignIds = new HashSet<GlobalSignId>();
 
-	// Token: 0x04003E38 RID: 15928
+	// Token: 0x04003E59 RID: 15961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool overflowed;
 
-	// Token: 0x04003E39 RID: 15929
+	// Token: 0x04003E5A RID: 15962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool dirty;
 
-	// Token: 0x04003E3A RID: 15930
+	// Token: 0x04003E5B RID: 15963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.TaskInfo writeTask;
 }

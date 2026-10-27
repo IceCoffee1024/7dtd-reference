@@ -1,26 +1,26 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200045C RID: 1116
+// Token: 0x0200045E RID: 1118
 [Preserve]
 public class EAITaskEntry
 {
-	// Token: 0x060021E0 RID: 8672 RVA: 0x000CD4D4 File Offset: 0x000CB6D4
+	// Token: 0x060021E5 RID: 8677 RVA: 0x000CD880 File Offset: 0x000CBA80
 	public EAITaskEntry(int _priority, EAIBase _action)
 	{
 		this.priority = _priority;
 		this.action = _action;
 	}
 
-	// Token: 0x0400176B RID: 5995
+	// Token: 0x0400177B RID: 6011
 	public EAIBase action;
 
-	// Token: 0x0400176C RID: 5996
+	// Token: 0x0400177C RID: 6012
 	public int priority;
 
-	// Token: 0x0400176D RID: 5997
+	// Token: 0x0400177D RID: 6013
 	public bool isExecuting;
 
-	// Token: 0x0400176E RID: 5998
+	// Token: 0x0400177E RID: 6014
 	public float executeTime;
 }

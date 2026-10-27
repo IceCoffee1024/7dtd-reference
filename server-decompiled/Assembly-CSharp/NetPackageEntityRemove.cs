@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E8 RID: 2024
+// Token: 0x020007F2 RID: 2034
 [Preserve]
 public class NetPackageEntityRemove : NetPackageEntityTargeted
 {
-	// Token: 0x1700065A RID: 1626
-	// (get) Token: 0x06003BCD RID: 15309 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000660 RID: 1632
+	// (get) Token: 0x06003BF0 RID: 15344 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityRemove : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BCE RID: 15310 RVA: 0x0018052A File Offset: 0x0017E72A
+	// Token: 0x06003BF1 RID: 15345 RVA: 0x0018162E File Offset: 0x0017F82E
 	public NetPackageEntityRemove Setup(int _entityId, EnumRemoveEntityReason _reason)
 	{
 		base.Setup(_entityId);
@@ -23,21 +23,21 @@ public class NetPackageEntityRemove : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BCF RID: 15311 RVA: 0x0018053C File Offset: 0x0017E73C
+	// Token: 0x06003BF2 RID: 15346 RVA: 0x00181640 File Offset: 0x0017F840
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.reason = _reader.ReadByte();
 	}
 
-	// Token: 0x06003BD0 RID: 15312 RVA: 0x00180551 File Offset: 0x0017E751
+	// Token: 0x06003BF3 RID: 15347 RVA: 0x00181655 File Offset: 0x0017F855
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.reason);
 	}
 
-	// Token: 0x06003BD1 RID: 15313 RVA: 0x00180568 File Offset: 0x0017E768
+	// Token: 0x06003BF4 RID: 15348 RVA: 0x0018166C File Offset: 0x0017F86C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -51,7 +51,7 @@ public class NetPackageEntityRemove : NetPackageEntityTargeted
 		_world.RemoveEntity(this.entityId, (EnumRemoveEntityReason)this.reason);
 	}
 
-	// Token: 0x040030A6 RID: 12454
+	// Token: 0x040030C6 RID: 12486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte reason;
 }

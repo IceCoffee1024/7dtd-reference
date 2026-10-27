@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000625 RID: 1573
+// Token: 0x0200062C RID: 1580
 [Preserve]
 public class BaseOperationLootEntryRequirement : BaseLootEntryRequirement
 {
-	// Token: 0x0600334D RID: 13133 RVA: 0x0014CCC0 File Offset: 0x0014AEC0
+	// Token: 0x0600335B RID: 13147 RVA: 0x0014D8B4 File Offset: 0x0014BAB4
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -17,7 +17,7 @@ public class BaseOperationLootEntryRequirement : BaseLootEntryRequirement
 		}
 	}
 
-	// Token: 0x0600334E RID: 13134 RVA: 0x0014CCFC File Offset: 0x0014AEFC
+	// Token: 0x0600335C RID: 13148 RVA: 0x0014D8F0 File Offset: 0x0014BAF0
 	public override bool CheckRequirement(EntityPlayer player)
 	{
 		float num = this.LeftSide(player);
@@ -53,69 +53,69 @@ public class BaseOperationLootEntryRequirement : BaseLootEntryRequirement
 		}
 	}
 
-	// Token: 0x0600334F RID: 13135 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
+	// Token: 0x0600335D RID: 13149 RVA: 0x0003D372 File Offset: 0x0003B572
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual float LeftSide(EntityPlayer player)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06003350 RID: 13136 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
+	// Token: 0x0600335E RID: 13150 RVA: 0x0003D372 File Offset: 0x0003B572
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual float RightSide(EntityPlayer player)
 	{
 		return 0f;
 	}
 
-	// Token: 0x040028BB RID: 10427
+	// Token: 0x040028D6 RID: 10454
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BaseOperationLootEntryRequirement.OperationTypes operation = BaseOperationLootEntryRequirement.OperationTypes.Equals;
 
-	// Token: 0x040028BC RID: 10428
+	// Token: 0x040028D7 RID: 10455
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOperation = "operation";
 
-	// Token: 0x02000626 RID: 1574
+	// Token: 0x0200062D RID: 1581
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum OperationTypes
 	{
-		// Token: 0x040028BE RID: 10430
+		// Token: 0x040028D9 RID: 10457
 		None,
-		// Token: 0x040028BF RID: 10431
+		// Token: 0x040028DA RID: 10458
 		Equals,
-		// Token: 0x040028C0 RID: 10432
+		// Token: 0x040028DB RID: 10459
 		EQ,
-		// Token: 0x040028C1 RID: 10433
+		// Token: 0x040028DC RID: 10460
 		E,
-		// Token: 0x040028C2 RID: 10434
+		// Token: 0x040028DD RID: 10461
 		NotEquals,
-		// Token: 0x040028C3 RID: 10435
+		// Token: 0x040028DE RID: 10462
 		NEQ,
-		// Token: 0x040028C4 RID: 10436
+		// Token: 0x040028DF RID: 10463
 		NE,
-		// Token: 0x040028C5 RID: 10437
+		// Token: 0x040028E0 RID: 10464
 		Less,
-		// Token: 0x040028C6 RID: 10438
+		// Token: 0x040028E1 RID: 10465
 		LessThan,
-		// Token: 0x040028C7 RID: 10439
+		// Token: 0x040028E2 RID: 10466
 		LT,
-		// Token: 0x040028C8 RID: 10440
+		// Token: 0x040028E3 RID: 10467
 		Greater,
-		// Token: 0x040028C9 RID: 10441
+		// Token: 0x040028E4 RID: 10468
 		GreaterThan,
-		// Token: 0x040028CA RID: 10442
+		// Token: 0x040028E5 RID: 10469
 		GT,
-		// Token: 0x040028CB RID: 10443
+		// Token: 0x040028E6 RID: 10470
 		LessOrEqual,
-		// Token: 0x040028CC RID: 10444
+		// Token: 0x040028E7 RID: 10471
 		LessThanOrEqualTo,
-		// Token: 0x040028CD RID: 10445
+		// Token: 0x040028E8 RID: 10472
 		LTE,
-		// Token: 0x040028CE RID: 10446
+		// Token: 0x040028E9 RID: 10473
 		GreaterOrEqual,
-		// Token: 0x040028CF RID: 10447
+		// Token: 0x040028EA RID: 10474
 		GreaterThanOrEqualTo,
-		// Token: 0x040028D0 RID: 10448
+		// Token: 0x040028EB RID: 10475
 		GTE
 	}
 }

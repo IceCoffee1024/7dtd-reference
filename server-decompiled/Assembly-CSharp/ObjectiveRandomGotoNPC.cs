@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020009B0 RID: 2480
+// Token: 0x020009BA RID: 2490
 [Preserve]
 public class ObjectiveRandomGotoNPC : ObjectiveRandomGoto
 {
-	// Token: 0x170007DA RID: 2010
-	// (get) Token: 0x060048A5 RID: 18597 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170007E0 RID: 2016
+	// (get) Token: 0x060048C8 RID: 18632 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool NeedsNPCSetPosition
 	{
 		get
@@ -18,13 +18,13 @@ public class ObjectiveRandomGotoNPC : ObjectiveRandomGoto
 		}
 	}
 
-	// Token: 0x060048A6 RID: 18598 RVA: 0x001C8934 File Offset: 0x001C6B34
+	// Token: 0x060048C9 RID: 18633 RVA: 0x001C99E0 File Offset: 0x001C7BE0
 	public override bool SetupPosition(EntityNPC ownerNPC = null, EntityPlayer player = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
 	{
 		return this.GetPosition(ownerNPC) != Vector3.zero;
 	}
 
-	// Token: 0x060048A7 RID: 18599 RVA: 0x001C8948 File Offset: 0x001C6B48
+	// Token: 0x060048CA RID: 18634 RVA: 0x001C99F4 File Offset: 0x001C7BF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 GetPosition(EntityNPC ownerNPC)
 	{
@@ -79,7 +79,7 @@ public class ObjectiveRandomGotoNPC : ObjectiveRandomGoto
 		return Vector3.zero;
 	}
 
-	// Token: 0x060048A8 RID: 18600 RVA: 0x001C8B94 File Offset: 0x001C6D94
+	// Token: 0x060048CB RID: 18635 RVA: 0x001C9C40 File Offset: 0x001C7E40
 	public override BaseObjective Clone()
 	{
 		ObjectiveRandomGotoNPC objectiveRandomGotoNPC = new ObjectiveRandomGotoNPC();

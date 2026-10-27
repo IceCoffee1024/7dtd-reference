@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000291 RID: 657
+// Token: 0x02000293 RID: 659
 [Preserve]
 public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 {
 	// Token: 0x17000201 RID: 513
-	// (get) Token: 0x0600131F RID: 4895 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001323 RID: 4899 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,7 +18,7 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000202 RID: 514
-	// (get) Token: 0x06001320 RID: 4896 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x06001324 RID: 4900 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -28,7 +28,7 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000203 RID: 515
-	// (get) Token: 0x06001321 RID: 4897 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x06001325 RID: 4901 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,14 +37,14 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001322 RID: 4898 RVA: 0x00075FB3 File Offset: 0x000741B3
+	// Token: 0x06001326 RID: 4902 RVA: 0x00076183 File Offset: 0x00074383
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "showchunkdata", "sc" };
 	}
 
-	// Token: 0x06001323 RID: 4899 RVA: 0x00075FCC File Offset: 0x000741CC
+	// Token: 0x06001327 RID: 4903 RVA: 0x0007619C File Offset: 0x0007439C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		foreach (KeyValuePair<int, EntityPlayer> keyValuePair in GameManager.Instance.World.Players.dict)
@@ -88,7 +88,7 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001324 RID: 4900 RVA: 0x00076240 File Offset: 0x00074440
+	// Token: 0x06001328 RID: 4904 RVA: 0x00076410 File Offset: 0x00074610
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

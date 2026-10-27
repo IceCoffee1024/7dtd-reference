@@ -2,12 +2,12 @@
 using System.Collections.ObjectModel;
 using UnityEngine.Scripting;
 
-// Token: 0x02000786 RID: 1926
+// Token: 0x0200078E RID: 1934
 [Preserve]
 public class DuplicateUserIdAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005EE RID: 1518
-	// (get) Token: 0x0600399C RID: 14748 RVA: 0x00178251 File Offset: 0x00176451
+	// Token: 0x170005F2 RID: 1522
+	// (get) Token: 0x060039B3 RID: 14771 RVA: 0x001791E9 File Offset: 0x001773E9
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class DuplicateUserIdAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005EF RID: 1519
-	// (get) Token: 0x0600399D RID: 14749 RVA: 0x00178255 File Offset: 0x00176455
+	// Token: 0x170005F3 RID: 1523
+	// (get) Token: 0x060039B4 RID: 14772 RVA: 0x001791ED File Offset: 0x001773ED
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class DuplicateUserIdAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005F0 RID: 1520
-	// (get) Token: 0x0600399E RID: 14750 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x170005F4 RID: 1524
+	// (get) Token: 0x060039B5 RID: 14773 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,7 +36,7 @@ public class DuplicateUserIdAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x0600399F RID: 14751 RVA: 0x0017825C File Offset: 0x0017645C
+	// Token: 0x060039B6 RID: 14774 RVA: 0x001791F4 File Offset: 0x001773F4
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		ReadOnlyCollection<ClientInfo> list = SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.List;

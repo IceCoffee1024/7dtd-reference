@@ -4,21 +4,21 @@ using System.Threading;
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001CF1 RID: 7409
+	// Token: 0x02001D22 RID: 7458
 	public class ServerListAnnouncer : IMasterServerAnnouncer
 	{
-		// Token: 0x0600DBFD RID: 56317 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD11 RID: 56593 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600DBFE RID: 56318 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD12 RID: 56594 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x17001BF0 RID: 7152
-		// (get) Token: 0x0600DBFF RID: 56319 RVA: 0x004E7AC4 File Offset: 0x004E5CC4
+		// Token: 0x17001C38 RID: 7224
+		// (get) Token: 0x0600DD13 RID: 56595 RVA: 0x004EB664 File Offset: 0x004E9864
 		public bool GameServerInitialized
 		{
 			get
@@ -43,7 +43,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600DC00 RID: 56320 RVA: 0x004E7B30 File Offset: 0x004E5D30
+		// Token: 0x0600DD14 RID: 56596 RVA: 0x004EB6D0 File Offset: 0x004E98D0
 		public string GetServerPorts()
 		{
 			string text = "";
@@ -96,7 +96,7 @@ namespace Platform.MultiPlatform
 			return text;
 		}
 
-		// Token: 0x0600DC01 RID: 56321 RVA: 0x004E7C48 File Offset: 0x004E5E48
+		// Token: 0x0600DD15 RID: 56597 RVA: 0x004EB7E8 File Offset: 0x004E99E8
 		public void AdvertiseServer(Action _onServerRegistered)
 		{
 			if (PlatformManager.NativePlatform.ServerListAnnouncer != null)
@@ -135,7 +135,7 @@ namespace Platform.MultiPlatform
 			this.onServerRegistered = _onServerRegistered;
 		}
 
-		// Token: 0x0600DC02 RID: 56322 RVA: 0x004E7D68 File Offset: 0x004E5F68
+		// Token: 0x0600DD16 RID: 56598 RVA: 0x004EB908 File Offset: 0x004E9B08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serverRegisteredCallback()
 		{
@@ -150,7 +150,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600DC03 RID: 56323 RVA: 0x004E7D90 File Offset: 0x004E5F90
+		// Token: 0x0600DD17 RID: 56599 RVA: 0x004EB930 File Offset: 0x004E9B30
 		public void StopServer()
 		{
 			foreach (KeyValuePair<EPlatformIdentifier, IPlatform> keyValuePair in PlatformManager.ServerPlatforms)
@@ -181,11 +181,11 @@ namespace Platform.MultiPlatform
 			serverListAnnouncer3.StopServer();
 		}
 
-		// Token: 0x0400A63A RID: 42554
+		// Token: 0x0400A723 RID: 42787
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int platformsAdvertising;
 
-		// Token: 0x0400A63B RID: 42555
+		// Token: 0x0400A724 RID: 42788
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onServerRegistered;
 	}

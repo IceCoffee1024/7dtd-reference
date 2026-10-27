@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UniLinq;
 
-// Token: 0x020014C9 RID: 5321
+// Token: 0x020014DB RID: 5339
 public static class StackSortUtil
 {
-	// Token: 0x0600A692 RID: 42642 RVA: 0x003E0078 File Offset: 0x003DE278
+	// Token: 0x0600A6EA RID: 42730 RVA: 0x003E247C File Offset: 0x003E067C
 	public static ItemStack[] CombineAndSortStacks(ItemStack[] _stacks, int _ignoreSlots = 0, PackedBoolArray _ignoredSlots = null)
 	{
 		ItemStack[] array = new ItemStack[_stacks.Length];
@@ -62,7 +62,7 @@ public static class StackSortUtil
 		return _stacks;
 	}
 
-	// Token: 0x0600A693 RID: 42643 RVA: 0x003E01E8 File Offset: 0x003DE3E8
+	// Token: 0x0600A6EB RID: 42731 RVA: 0x003E25EC File Offset: 0x003E07EC
 	public static ItemStack[] SortStacks(ItemStack[] _stacks, int _ignoreSlots = 0, PackedBoolArray _ignoredSlots = null)
 	{
 		ItemStack[] array = new ItemStack[_stacks.Length];
@@ -97,13 +97,13 @@ public static class StackSortUtil
 		return array;
 	}
 
-	// Token: 0x0600A694 RID: 42644 RVA: 0x003E02EB File Offset: 0x003DE4EB
+	// Token: 0x0600A6EC RID: 42732 RVA: 0x003E26EF File Offset: 0x003E08EF
 	public static bool IsIgnoredSlot(int _ignoreSlots, PackedBoolArray _ignoredSlots, int _slot)
 	{
 		return _slot < _ignoreSlots || (_ignoredSlots != null && _slot < _ignoredSlots.Length && _ignoredSlots[_slot]);
 	}
 
-	// Token: 0x0600A695 RID: 42645 RVA: 0x003E0308 File Offset: 0x003DE508
+	// Token: 0x0600A6ED RID: 42733 RVA: 0x003E270C File Offset: 0x003E090C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getGroup(ItemStack _stack)
 	{
@@ -119,7 +119,7 @@ public static class StackSortUtil
 		return forId.Groups[0];
 	}
 
-	// Token: 0x0600A696 RID: 42646 RVA: 0x003E0348 File Offset: 0x003DE548
+	// Token: 0x0600A6EE RID: 42734 RVA: 0x003E274C File Offset: 0x003E094C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getName(ItemStack _stack)
 	{

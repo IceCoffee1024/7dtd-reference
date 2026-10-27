@@ -6,20 +6,20 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockForge : BlockWorkstation
 {
-	// Token: 0x0600078E RID: 1934 RVA: 0x00035A80 File Offset: 0x00033C80
+	// Token: 0x0600078E RID: 1934 RVA: 0x00035A40 File Offset: 0x00033C40
 	public BlockForge()
 	{
 		this.CraftingParticleLightIntensity = 1.6f;
 	}
 
-	// Token: 0x0600078F RID: 1935 RVA: 0x00035A93 File Offset: 0x00033C93
+	// Token: 0x0600078F RID: 1935 RVA: 0x00035A53 File Offset: 0x00033C53
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.MaterialUpdate(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000790 RID: 1936 RVA: 0x00035AA9 File Offset: 0x00033CA9
+	// Token: 0x06000790 RID: 1936 RVA: 0x00035A69 File Offset: 0x00033C69
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -31,7 +31,7 @@ public class BlockForge : BlockWorkstation
 		this.MaterialUpdate(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000791 RID: 1937 RVA: 0x00035AC8 File Offset: 0x00033CC8
+	// Token: 0x06000791 RID: 1937 RVA: 0x00035A88 File Offset: 0x00033C88
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (XUiM_Recipes.DisableSmelter)
@@ -45,7 +45,7 @@ public class BlockForge : BlockWorkstation
 		return _blockValue.Block.GetLocalizedBlockName() + "\n" + Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x06000792 RID: 1938 RVA: 0x00035B2C File Offset: 0x00033D2C
+	// Token: 0x06000792 RID: 1938 RVA: 0x00035AEC File Offset: 0x00033CEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MaterialUpdate(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{

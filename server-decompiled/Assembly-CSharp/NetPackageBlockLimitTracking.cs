@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B3 RID: 1971
+// Token: 0x020007BB RID: 1979
 [Preserve]
 public class NetPackageBlockLimitTracking : NetPackage
 {
-	// Token: 0x06003ABC RID: 15036 RVA: 0x0017C5E3 File Offset: 0x0017A7E3
+	// Token: 0x06003AD3 RID: 15059 RVA: 0x0017D57B File Offset: 0x0017B77B
 	public NetPackageBlockLimitTracking()
 	{
 		this.amounts = new List<int>();
 	}
 
-	// Token: 0x06003ABD RID: 15037 RVA: 0x0017C5F6 File Offset: 0x0017A7F6
+	// Token: 0x06003AD4 RID: 15060 RVA: 0x0017D58E File Offset: 0x0017B78E
 	public NetPackageBlockLimitTracking Setup(List<int> _amounts)
 	{
 		this.amounts = _amounts;
 		return this;
 	}
 
-	// Token: 0x06003ABE RID: 15038 RVA: 0x0017C600 File Offset: 0x0017A800
+	// Token: 0x06003AD5 RID: 15061 RVA: 0x0017D598 File Offset: 0x0017B798
 	public override void read(PooledBinaryReader _br)
 	{
 		this.amounts.Clear();
@@ -30,7 +30,7 @@ public class NetPackageBlockLimitTracking : NetPackage
 		}
 	}
 
-	// Token: 0x06003ABF RID: 15039 RVA: 0x0017C63C File Offset: 0x0017A83C
+	// Token: 0x06003AD6 RID: 15062 RVA: 0x0017D5D4 File Offset: 0x0017B7D4
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -41,7 +41,7 @@ public class NetPackageBlockLimitTracking : NetPackage
 		}
 	}
 
-	// Token: 0x06003AC0 RID: 15040 RVA: 0x0017C689 File Offset: 0x0017A889
+	// Token: 0x06003AD7 RID: 15063 RVA: 0x0017D621 File Offset: 0x0017B821
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -52,6 +52,6 @@ public class NetPackageBlockLimitTracking : NetPackage
 		BlockLimitTracker.instance.UpdateClientAmounts(this.amounts);
 	}
 
-	// Token: 0x04002FCF RID: 12239
+	// Token: 0x04002FEB RID: 12267
 	public List<int> amounts;
 }

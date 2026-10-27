@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200045E RID: 1118
+// Token: 0x02000460 RID: 1120
 [Preserve]
 public class EAITerritorial : EAIBase
 {
-	// Token: 0x060021EC RID: 8684 RVA: 0x000C9649 File Offset: 0x000C7849
+	// Token: 0x060021F1 RID: 8689 RVA: 0x000C99F5 File Offset: 0x000C7BF5
 	public EAITerritorial()
 	{
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x060021ED RID: 8685 RVA: 0x000C9340 File Offset: 0x000C7540
+	// Token: 0x060021F2 RID: 8690 RVA: 0x000C96EC File Offset: 0x000C78EC
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
 	}
 
-	// Token: 0x060021EE RID: 8686 RVA: 0x000CD840 File Offset: 0x000CBA40
+	// Token: 0x060021F3 RID: 8691 RVA: 0x000CDBEC File Offset: 0x000CBDEC
 	public override bool CanExecute()
 	{
 		if (this.theEntity.isWithinHomeDistanceCurrentPosition())
@@ -36,19 +36,19 @@ public class EAITerritorial : EAIBase
 		return true;
 	}
 
-	// Token: 0x060021EF RID: 8687 RVA: 0x000CD89B File Offset: 0x000CBA9B
+	// Token: 0x060021F4 RID: 8692 RVA: 0x000CDC47 File Offset: 0x000CBE47
 	public override bool Continue()
 	{
 		return !this.theEntity.getNavigator().noPathAndNotPlanningOne();
 	}
 
-	// Token: 0x060021F0 RID: 8688 RVA: 0x000CD8B0 File Offset: 0x000CBAB0
+	// Token: 0x060021F5 RID: 8693 RVA: 0x000CDC5C File Offset: 0x000CBE5C
 	public override void Start()
 	{
 		this.theEntity.FindPath(this.movePos, this.theEntity.GetMoveSpeed(), false, this);
 	}
 
-	// Token: 0x04001773 RID: 6003
+	// Token: 0x04001783 RID: 6019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 movePos;
 }

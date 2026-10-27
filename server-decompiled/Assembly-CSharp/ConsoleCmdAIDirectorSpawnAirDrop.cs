@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E4 RID: 484
+// Token: 0x020001E6 RID: 486
 [Preserve]
 public class ConsoleCmdAIDirectorSpawnAirDrop : ConsoleCmdAbstract
 {
-	// Token: 0x06000EDD RID: 3805 RVA: 0x00061077 File Offset: 0x0005F277
+	// Token: 0x06000EE1 RID: 3809 RVA: 0x0006133B File Offset: 0x0005F53B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spawnairdrop" };
 	}
 
-	// Token: 0x06000EDE RID: 3806 RVA: 0x00061087 File Offset: 0x0005F287
+	// Token: 0x06000EE2 RID: 3810 RVA: 0x0006134B File Offset: 0x0005F54B
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GameManager.Instance.World.aiDirector.GetComponent<AIDirectorAirDropComponent>().SpawnAirDrop();
 	}
 
-	// Token: 0x06000EDF RID: 3807 RVA: 0x000610A3 File Offset: 0x0005F2A3
+	// Token: 0x06000EE3 RID: 3811 RVA: 0x00061367 File Offset: 0x0005F567
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

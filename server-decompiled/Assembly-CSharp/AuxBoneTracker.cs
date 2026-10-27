@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000A52 RID: 2642
+// Token: 0x02000A5C RID: 2652
 public class AuxBoneTracker : MonoBehaviour
 {
-	// Token: 0x04003D44 RID: 15684
+	// Token: 0x04003D65 RID: 15717
 	public Dictionary<string, Transform> AuxBoneLookup = new Dictionary<string, Transform>();
 }

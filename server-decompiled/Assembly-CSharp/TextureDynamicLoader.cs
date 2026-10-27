@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000C6E RID: 3182
+// Token: 0x02000C79 RID: 3193
 public class TextureDynamicLoader : MonoBehaviour
 {
-	// Token: 0x06006052 RID: 24658 RVA: 0x00264BF0 File Offset: 0x00262DF0
+	// Token: 0x06006077 RID: 24695 RVA: 0x00266118 File Offset: 0x00264318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -41,7 +41,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		this.bLastTimeFarAwayCamera = num > 50f;
 	}
 
-	// Token: 0x06006053 RID: 24659 RVA: 0x00264CC1 File Offset: 0x00262EC1
+	// Token: 0x06006078 RID: 24696 RVA: 0x002661E9 File Offset: 0x002643E9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -52,7 +52,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06006054 RID: 24660 RVA: 0x00264CE0 File Offset: 0x00262EE0
+	// Token: 0x06006079 RID: 24697 RVA: 0x00266208 File Offset: 0x00264408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -64,7 +64,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06006055 RID: 24661 RVA: 0x00264D00 File Offset: 0x00262F00
+	// Token: 0x0600607A RID: 24698 RVA: 0x00266228 File Offset: 0x00264428
 	public bool IsHiResTextureLoaded(out bool _bHires)
 	{
 		_bHires = false;
@@ -83,7 +83,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06006056 RID: 24662 RVA: 0x00264D88 File Offset: 0x00262F88
+	// Token: 0x0600607B RID: 24699 RVA: 0x002662B0 File Offset: 0x002644B0
 	public void SetHiResTexture()
 	{
 		this.checkMaterials();
@@ -103,7 +103,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06006057 RID: 24663 RVA: 0x00264E08 File Offset: 0x00263008
+	// Token: 0x0600607C RID: 24700 RVA: 0x00266330 File Offset: 0x00264530
 	public void SetLoResTexture(bool _bFindFolderAndCreateLoResTex = false)
 	{
 		this.checkMaterials();
@@ -148,27 +148,27 @@ public class TextureDynamicLoader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06006058 RID: 24664 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600607D RID: 24701 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createLoResTexture(Texture2D _tex, string _path)
 	{
 	}
 
-	// Token: 0x06006059 RID: 24665 RVA: 0x00264F70 File Offset: 0x00263170
+	// Token: 0x0600607E RID: 24702 RVA: 0x00266498 File Offset: 0x00264698
 	public static void SaveTexture(Texture2D _texture, string _fileName)
 	{
 		byte[] array = _texture.EncodeToPNG();
 		SdFile.WriteAllBytes(_fileName, array);
 	}
 
-	// Token: 0x0600605A RID: 24666 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x0600607F RID: 24703 RVA: 0x000200DA File Offset: 0x0001E2DA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string determineAssetsFolder()
 	{
 		return null;
 	}
 
-	// Token: 0x0600605B RID: 24667 RVA: 0x00264F8C File Offset: 0x0026318C
+	// Token: 0x06006080 RID: 24704 RVA: 0x002664B4 File Offset: 0x002646B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkMaterials()
 	{
@@ -208,7 +208,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600605C RID: 24668 RVA: 0x0026506C File Offset: 0x0026326C
+	// Token: 0x06006081 RID: 24705 RVA: 0x00266594 File Offset: 0x00264794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setHiResTexture(Material _m, string _propName)
 	{
@@ -240,7 +240,7 @@ public class TextureDynamicLoader : MonoBehaviour
 		_m.SetTexture(_propName, texture2);
 	}
 
-	// Token: 0x0600605D RID: 24669 RVA: 0x00265114 File Offset: 0x00263314
+	// Token: 0x06006082 RID: 24706 RVA: 0x0026663C File Offset: 0x0026483C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setLoResTexture(Material _m, string _propName)
 	{
@@ -271,95 +271,95 @@ public class TextureDynamicLoader : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04004BC0 RID: 19392
+	// Token: 0x04004BE5 RID: 19429
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cWidthLoRes = 64;
 
-	// Token: 0x04004BC1 RID: 19393
+	// Token: 0x04004BE6 RID: 19430
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cDelayNearCamera = 1;
 
-	// Token: 0x04004BC2 RID: 19394
+	// Token: 0x04004BE7 RID: 19431
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cDelayFarAwayCamera = 5;
 
-	// Token: 0x04004BC3 RID: 19395
+	// Token: 0x04004BE8 RID: 19432
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cDefaultDistanceLoRes = 20;
 
-	// Token: 0x04004BC4 RID: 19396
+	// Token: 0x04004BE9 RID: 19433
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cDistFarAwayCamera = 50;
 
-	// Token: 0x04004BC5 RID: 19397
+	// Token: 0x04004BEA RID: 19434
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cPrefixPath = "Assets/Resources";
 
-	// Token: 0x04004BC6 RID: 19398
+	// Token: 0x04004BEB RID: 19435
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cPostFixLoResTex = "_LOW";
 
-	// Token: 0x04004BC7 RID: 19399
+	// Token: 0x04004BEC RID: 19436
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string[] textureTypes = new string[] { "_MainTex", "_BumpMap", "_MetallicGlossMap", "_SpecGlossMap", "_OcclusionMap", "_EmissionMap" };
 
-	// Token: 0x04004BC8 RID: 19400
+	// Token: 0x04004BED RID: 19437
 	public int LoResDistance = 20;
 
-	// Token: 0x04004BC9 RID: 19401
+	// Token: 0x04004BEE RID: 19438
 	public string AssetPath;
 
-	// Token: 0x04004BCA RID: 19402
+	// Token: 0x04004BEF RID: 19439
 	public bool DistanceChecks = true;
 
-	// Token: 0x04004BCB RID: 19403
+	// Token: 0x04004BF0 RID: 19440
 	public bool UseInstancedMaterial = true;
 
-	// Token: 0x04004BCC RID: 19404
+	// Token: 0x04004BF1 RID: 19441
 	public Renderer[] ExcludedRenderers;
 
-	// Token: 0x04004BCD RID: 19405
+	// Token: 0x04004BF2 RID: 19442
 	public bool CreateLowResTexture;
 
-	// Token: 0x04004BCE RID: 19406
+	// Token: 0x04004BF3 RID: 19443
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Material[]> materials = new List<Material[]>();
 
-	// Token: 0x04004BCF RID: 19407
+	// Token: 0x04004BF4 RID: 19444
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Renderer> renderes = new List<Renderer>();
 
-	// Token: 0x04004BD0 RID: 19408
+	// Token: 0x04004BF5 RID: 19445
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bGotMaterials;
 
-	// Token: 0x04004BD1 RID: 19409
+	// Token: 0x04004BF6 RID: 19446
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTimeChecked;
 
-	// Token: 0x04004BD2 RID: 19410
+	// Token: 0x04004BF7 RID: 19447
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera mainCamera;
 
-	// Token: 0x04004BD3 RID: 19411
+	// Token: 0x04004BF8 RID: 19448
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bLastTimeFarAwayCamera;
 
-	// Token: 0x04004BD4 RID: 19412
+	// Token: 0x04004BF9 RID: 19449
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bHiResLoaded;

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001391 RID: 5009
+// Token: 0x020013A3 RID: 5027
 public class SpeedTreeLODController : MonoBehaviour
 {
-	// Token: 0x06009DA4 RID: 40356 RVA: 0x003B9674 File Offset: 0x003B7874
+	// Token: 0x06009DFC RID: 40444 RVA: 0x003BBA78 File Offset: 0x003B9C78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -21,7 +21,7 @@ public class SpeedTreeLODController : MonoBehaviour
 		SpeedTreeLODController.tempTrees.Clear();
 	}
 
-	// Token: 0x06009DA5 RID: 40357 RVA: 0x003B9700 File Offset: 0x003B7900
+	// Token: 0x06009DFD RID: 40445 RVA: 0x003BBB04 File Offset: 0x003B9D04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -46,7 +46,7 @@ public class SpeedTreeLODController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400774B RID: 30539
+	// Token: 0x0400778C RID: 30604
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<Tree> tempTrees = new List<Tree>();

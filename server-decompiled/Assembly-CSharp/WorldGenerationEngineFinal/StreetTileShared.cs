@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200175A RID: 5978
+	// Token: 0x0200178B RID: 6027
 	public class StreetTileShared
 	{
-		// Token: 0x0600B9E6 RID: 47590 RVA: 0x0044C458 File Offset: 0x0044A658
+		// Token: 0x0600BAFA RID: 47866 RVA: 0x0044FE04 File Offset: 0x0044E004
 		public StreetTileShared(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
@@ -23,33 +23,33 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x04008AA3 RID: 35491
+		// Token: 0x04008B8C RID: 35724
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008AA4 RID: 35492
+		// Token: 0x04008B8D RID: 35725
 		public readonly FastTags<TagGroup.Poi> traderTag = FastTags<TagGroup.Poi>.Parse("trader");
 
-		// Token: 0x04008AA5 RID: 35493
+		// Token: 0x04008B8E RID: 35726
 		public readonly FastTags<TagGroup.Poi> wildernessTag = FastTags<TagGroup.Poi>.Parse("wilderness");
 
-		// Token: 0x04008AA6 RID: 35494
+		// Token: 0x04008B8F RID: 35727
 		public readonly string[] RoadShapes = new string[] { "rwg_tile_straight", "rwg_tile_t", "rwg_tile_intersection", "rwg_tile_cap", "rwg_tile_corner" };
 
-		// Token: 0x04008AA7 RID: 35495
+		// Token: 0x04008B90 RID: 35728
 		public readonly string[] RoadShapesDistrict = new string[] { "rwg_tile_{0}straight", "rwg_tile_{0}t", "rwg_tile_{0}intersection", "rwg_tile_{0}cap", "rwg_tile_{0}corner" };
 
-		// Token: 0x04008AA8 RID: 35496
+		// Token: 0x04008B91 RID: 35729
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int[] RoadShapeExits = new int[] { 5, 7, 15, 4, 6 };
 
-		// Token: 0x04008AA9 RID: 35497
+		// Token: 0x04008B92 RID: 35730
 		public readonly List<int> RoadShapeExitCounts = new List<int> { 2, 3, 4, 1, 2 };
 
-		// Token: 0x04008AAA RID: 35498
+		// Token: 0x04008B93 RID: 35731
 		public readonly List<int[]> RoadShapeExitsPerRotation = new List<int[]>();
 
-		// Token: 0x04008AAB RID: 35499
+		// Token: 0x04008B94 RID: 35732
 		public readonly Vector2i[] dir4way = new Vector2i[]
 		{
 			new Vector2i(0, 1),
@@ -58,7 +58,7 @@ namespace WorldGenerationEngineFinal
 			new Vector2i(-1, 0)
 		};
 
-		// Token: 0x04008AAC RID: 35500
+		// Token: 0x04008B95 RID: 35733
 		public readonly Vector2i[] dirDiagonal = new Vector2i[]
 		{
 			new Vector2i(1, 1),
@@ -67,7 +67,7 @@ namespace WorldGenerationEngineFinal
 			new Vector2i(-1, 1)
 		};
 
-		// Token: 0x04008AAD RID: 35501
+		// Token: 0x04008B96 RID: 35734
 		public readonly Vector2i[] dir8way = new Vector2i[]
 		{
 			new Vector2i(0, 1),
@@ -80,7 +80,7 @@ namespace WorldGenerationEngineFinal
 			new Vector2i(-1, 1)
 		};
 
-		// Token: 0x04008AAE RID: 35502
+		// Token: 0x04008B97 RID: 35735
 		public readonly Vector2i[] dir9way = new Vector2i[]
 		{
 			new Vector2i(0, 1),

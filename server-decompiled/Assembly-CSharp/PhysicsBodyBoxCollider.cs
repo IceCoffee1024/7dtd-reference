@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200090A RID: 2314
+// Token: 0x02000914 RID: 2324
 public class PhysicsBodyBoxCollider : PhysicsBodyColliderBase
 {
-	// Token: 0x0600426A RID: 17002 RVA: 0x001A18B6 File Offset: 0x0019FAB6
+	// Token: 0x0600428D RID: 17037 RVA: 0x001A295E File Offset: 0x001A0B5E
 	public PhysicsBodyBoxCollider(BoxCollider _collider, PhysicsBodyColliderConfiguration _config)
 		: base(_collider.transform, _config)
 	{
@@ -13,8 +13,8 @@ public class PhysicsBodyBoxCollider : PhysicsBodyColliderBase
 		this.collider = _collider;
 	}
 
-	// Token: 0x1700072A RID: 1834
-	// (set) Token: 0x0600426B RID: 17003 RVA: 0x001A18E4 File Offset: 0x0019FAE4
+	// Token: 0x17000730 RID: 1840
+	// (set) Token: 0x0600428E RID: 17038 RVA: 0x001A298C File Offset: 0x001A0B8C
 	public override EnumColliderMode ColliderMode
 	{
 		set
@@ -63,15 +63,15 @@ public class PhysicsBodyBoxCollider : PhysicsBodyColliderBase
 		}
 	}
 
-	// Token: 0x04003603 RID: 13827
+	// Token: 0x04003623 RID: 13859
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 center;
 
-	// Token: 0x04003604 RID: 13828
+	// Token: 0x04003624 RID: 13860
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 size;
 
-	// Token: 0x04003605 RID: 13829
+	// Token: 0x04003625 RID: 13861
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BoxCollider collider;
 }

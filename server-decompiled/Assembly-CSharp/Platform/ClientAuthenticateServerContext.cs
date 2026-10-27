@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B8E RID: 7054
+	// Token: 0x02001BBF RID: 7103
 	public sealed class ClientAuthenticateServerContext
 	{
-		// Token: 0x0600D34B RID: 54091 RVA: 0x004CB16C File Offset: 0x004C936C
+		// Token: 0x0600D45F RID: 54367 RVA: 0x004CEC94 File Offset: 0x004CCE94
 		public ClientAuthenticateServerContext(GameServerInfo _gameServerInfo, PlatformUserIdentifierAbs _platformUserId, PlatformUserIdentifierAbs _crossplatformUserId, ClientAuthenticateServerSuccessDelegate _success, ClientAuthenticateServerDisconnectDelegate _disconnect)
 		{
 			this.GameServerInfo = _gameServerInfo;
@@ -15,19 +15,19 @@ namespace Platform
 			this.disconnect = _disconnect;
 		}
 
-		// Token: 0x17001A7D RID: 6781
-		// (get) Token: 0x0600D34C RID: 54092 RVA: 0x004CB199 File Offset: 0x004C9399
+		// Token: 0x17001AC5 RID: 6853
+		// (get) Token: 0x0600D460 RID: 54368 RVA: 0x004CECC1 File Offset: 0x004CCEC1
 		public GameServerInfo GameServerInfo { get; }
 
-		// Token: 0x17001A7E RID: 6782
-		// (get) Token: 0x0600D34D RID: 54093 RVA: 0x004CB1A1 File Offset: 0x004C93A1
+		// Token: 0x17001AC6 RID: 6854
+		// (get) Token: 0x0600D461 RID: 54369 RVA: 0x004CECC9 File Offset: 0x004CCEC9
 		public PlatformUserIdentifierAbs PlatformUserId { get; }
 
-		// Token: 0x17001A7F RID: 6783
-		// (get) Token: 0x0600D34E RID: 54094 RVA: 0x004CB1A9 File Offset: 0x004C93A9
+		// Token: 0x17001AC7 RID: 6855
+		// (get) Token: 0x0600D462 RID: 54370 RVA: 0x004CECD1 File Offset: 0x004CCED1
 		public PlatformUserIdentifierAbs CrossplatformUserId { get; }
 
-		// Token: 0x0600D34F RID: 54095 RVA: 0x004CB1B1 File Offset: 0x004C93B1
+		// Token: 0x0600D463 RID: 54371 RVA: 0x004CECD9 File Offset: 0x004CCED9
 		public void Success()
 		{
 			ClientAuthenticateServerSuccessDelegate clientAuthenticateServerSuccessDelegate = this.success;
@@ -38,7 +38,7 @@ namespace Platform
 			clientAuthenticateServerSuccessDelegate();
 		}
 
-		// Token: 0x0600D350 RID: 54096 RVA: 0x004CB1C4 File Offset: 0x004C93C4
+		// Token: 0x0600D464 RID: 54372 RVA: 0x004CECEC File Offset: 0x004CCEEC
 		public void DisconnectNoCrossplay()
 		{
 			string text = PermissionsManager.GetPermissionDenyReason(EUserPerms.Crossplay, PermissionsManager.PermissionSources.All) ?? Localization.Get("auth_noCrossplay", false, null);
@@ -50,7 +50,7 @@ namespace Platform
 			clientAuthenticateServerDisconnectDelegate(text);
 		}
 
-		// Token: 0x0600D351 RID: 54097 RVA: 0x004CB1FB File Offset: 0x004C93FB
+		// Token: 0x0600D465 RID: 54373 RVA: 0x004CED23 File Offset: 0x004CCF23
 		public void DisconnectNoCrossplay(EPlayGroup otherPlayGroup)
 		{
 			ClientAuthenticateServerDisconnectDelegate clientAuthenticateServerDisconnectDelegate = this.disconnect;
@@ -61,11 +61,11 @@ namespace Platform
 			clientAuthenticateServerDisconnectDelegate(string.Format(Localization.Get("auth_noCrossplayBetween", false, null), EPlayGroupExtensions.Current, otherPlayGroup));
 		}
 
-		// Token: 0x0400A14E RID: 41294
+		// Token: 0x0400A237 RID: 41527
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ClientAuthenticateServerSuccessDelegate success;
 
-		// Token: 0x0400A14F RID: 41295
+		// Token: 0x0400A238 RID: 41528
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ClientAuthenticateServerDisconnectDelegate disconnect;
 	}

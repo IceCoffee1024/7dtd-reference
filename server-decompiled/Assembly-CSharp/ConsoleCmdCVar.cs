@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000201 RID: 513
+// Token: 0x02000203 RID: 515
 [Preserve]
 public class ConsoleCmdCVar : ConsoleCmdAbstract
 {
-	// Token: 0x06000FA4 RID: 4004 RVA: 0x000658A1 File Offset: 0x00063AA1
+	// Token: 0x06000FA8 RID: 4008 RVA: 0x00065A71 File Offset: 0x00063C71
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000154 RID: 340
-	// (get) Token: 0x06000FA5 RID: 4005 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x06000FA9 RID: 4009 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,7 +24,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000155 RID: 341
-	// (get) Token: 0x06000FA6 RID: 4006 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06000FAA RID: 4010 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -33,21 +33,21 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FA7 RID: 4007 RVA: 0x000658B1 File Offset: 0x00063AB1
+	// Token: 0x06000FAB RID: 4011 RVA: 0x00065A81 File Offset: 0x00063C81
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Commands to set, get, track or list CVars.";
 	}
 
-	// Token: 0x06000FA8 RID: 4008 RVA: 0x000658B8 File Offset: 0x00063AB8
+	// Token: 0x06000FAC RID: 4012 RVA: 0x00065A88 File Offset: 0x00063C88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usages of the commands. Add '-p <playerId>' to any command to apply that command to a remote player. \ncvar get <cvarName>\ncvar set <cvarName> <floatValue>\ncvar track <cvarName> <true|false>\ncvar list <searchFilter>";
 	}
 
-	// Token: 0x06000FA9 RID: 4009 RVA: 0x000658C0 File Offset: 0x00063AC0
+	// Token: 0x06000FAD RID: 4013 RVA: 0x00065A90 File Offset: 0x00063C90
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)
@@ -84,7 +84,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		this.ExecuteList(_params, num);
 	}
 
-	// Token: 0x06000FAA RID: 4010 RVA: 0x00065980 File Offset: 0x00063B80
+	// Token: 0x06000FAE RID: 4014 RVA: 0x00065B50 File Offset: 0x00063D50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteGet(List<string> _params, int _playerId)
 	{
@@ -109,7 +109,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Player {0} has cvar {1}: {2}. Value: {3}", new object[] { player.EntityName, text, flag, num }));
 	}
 
-	// Token: 0x06000FAB RID: 4011 RVA: 0x00065A4C File Offset: 0x00063C4C
+	// Token: 0x06000FAF RID: 4015 RVA: 0x00065C1C File Offset: 0x00063E1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteSet(List<string> _params, int _playerId)
 	{
@@ -148,7 +148,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Player {0} cvar {1} set from {2} to {3}", new object[] { player.EntityName, text, customVar, num }));
 	}
 
-	// Token: 0x06000FAC RID: 4012 RVA: 0x00065B58 File Offset: 0x00063D58
+	// Token: 0x06000FB0 RID: 4016 RVA: 0x00065D28 File Offset: 0x00063F28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteTrack(List<string> _params, int _playerId)
 	{
@@ -177,7 +177,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		player.Buffs.TrackCustomVar(text, flag);
 	}
 
-	// Token: 0x06000FAD RID: 4013 RVA: 0x00065C04 File Offset: 0x00063E04
+	// Token: 0x06000FB1 RID: 4017 RVA: 0x00065DD4 File Offset: 0x00063FD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList(List<string> _params, int _playerId)
 	{
@@ -209,7 +209,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FAE RID: 4014 RVA: 0x00065D1C File Offset: 0x00063F1C
+	// Token: 0x06000FB2 RID: 4018 RVA: 0x00065EEC File Offset: 0x000640EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetPlayerId(List<string> _params)
 	{
@@ -233,7 +233,7 @@ public class ConsoleCmdCVar : ConsoleCmdAbstract
 		return -1;
 	}
 
-	// Token: 0x06000FAF RID: 4015 RVA: 0x00065D64 File Offset: 0x00063F64
+	// Token: 0x06000FB3 RID: 4019 RVA: 0x00065F34 File Offset: 0x00064134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer GetPlayer(int _playerId)
 	{

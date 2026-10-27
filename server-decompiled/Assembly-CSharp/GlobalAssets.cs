@@ -4,17 +4,17 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-// Token: 0x0200122F RID: 4655
+// Token: 0x02001241 RID: 4673
 public static class GlobalAssets
 {
-	// Token: 0x0600947F RID: 38015 RVA: 0x00383BA5 File Offset: 0x00381DA5
+	// Token: 0x060094D6 RID: 38102 RVA: 0x00385FA2 File Offset: 0x003841A2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, string> LoadShaderMappings()
 	{
 		return JsonUtility.FromJson<AssetMappings>(File.ReadAllText(Path.Combine(Addressables.RuntimePath, "shaders.json"))).ToDictionary();
 	}
 
-	// Token: 0x06009480 RID: 38016 RVA: 0x00383BC8 File Offset: 0x00381DC8
+	// Token: 0x060094D7 RID: 38103 RVA: 0x00385FC4 File Offset: 0x003841C4
 	public static Shader FindShader(string name)
 	{
 		if (GlobalAssets.shaders == null)
@@ -29,10 +29,10 @@ public static class GlobalAssets
 		return Shader.Find(name);
 	}
 
-	// Token: 0x04006F49 RID: 28489
+	// Token: 0x04006F8A RID: 28554
 	public const string ShaderMappingFile = "shaders.json";
 
-	// Token: 0x04006F4A RID: 28490
+	// Token: 0x04006F8B RID: 28555
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, string> shaders;
 }

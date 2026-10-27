@@ -4,17 +4,17 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.ServerState
 {
-	// Token: 0x02001B06 RID: 6918
+	// Token: 0x02001B37 RID: 6967
 	[Preserve]
 	public class GameStats : KeyValueListAbs
 	{
-		// Token: 0x0600D047 RID: 53319 RVA: 0x004B9EBC File Offset: 0x004B80BC
+		// Token: 0x0600D15B RID: 53595 RVA: 0x004BD9B8 File Offset: 0x004BBBB8
 		public GameStats()
 			: base("GameStats")
 		{
 		}
 
-		// Token: 0x0600D048 RID: 53320 RVA: 0x004B9ECC File Offset: 0x004B80CC
+		// Token: 0x0600D15C RID: 53596 RVA: 0x004BD9C8 File Offset: 0x004BBBC8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void iterateList(ref JsonWriter _writer, ref bool _first)
 		{

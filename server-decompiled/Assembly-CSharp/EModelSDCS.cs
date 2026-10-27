@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200051E RID: 1310
+// Token: 0x02000520 RID: 1312
 [Preserve]
 public class EModelSDCS : EModelPlayer
 {
 	// Token: 0x17000499 RID: 1177
-	// (get) Token: 0x06002AD4 RID: 10964 RVA: 0x0010FC6F File Offset: 0x0010DE6F
+	// (get) Token: 0x06002ADB RID: 10971 RVA: 0x001101E3 File Offset: 0x0010E3E3
 	public bool isMale
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -19,7 +19,7 @@ public class EModelSDCS : EModelPlayer
 	}
 
 	// Token: 0x1700049A RID: 1178
-	// (get) Token: 0x06002AD5 RID: 10965 RVA: 0x0010FC90 File Offset: 0x0010DE90
+	// (get) Token: 0x06002ADC RID: 10972 RVA: 0x00110204 File Offset: 0x0010E404
 	public override Transform NeckTransform
 	{
 		get
@@ -32,7 +32,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002AD6 RID: 10966 RVA: 0x0010FCBB File Offset: 0x0010DEBB
+	// Token: 0x06002ADD RID: 10973 RVA: 0x0011022F File Offset: 0x0010E42F
 	public void Awake()
 	{
 		this.playerEntity = base.transform.GetComponent<EntityPlayerLocal>();
@@ -42,7 +42,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002AD7 RID: 10967 RVA: 0x0010FCF0 File Offset: 0x0010DEF0
+	// Token: 0x06002ADE RID: 10974 RVA: 0x00110264 File Offset: 0x0010E464
 	public override void Init(World _world, Entity _entity, EModelInstanceAssets _assets)
 	{
 		this.entity = _entity;
@@ -58,14 +58,14 @@ public class EModelSDCS : EModelPlayer
 		XUiM_PlayerEquipment.HandleRefreshEquipment += this.XUiM_PlayerEquipment_HandleRefreshEquipment;
 	}
 
-	// Token: 0x06002AD8 RID: 10968 RVA: 0x0010FDBC File Offset: 0x0010DFBC
+	// Token: 0x06002ADF RID: 10975 RVA: 0x00110330 File Offset: 0x0010E530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void OnDestroy()
 	{
 		XUiM_PlayerEquipment.HandleRefreshEquipment -= this.XUiM_PlayerEquipment_HandleRefreshEquipment;
 	}
 
-	// Token: 0x06002AD9 RID: 10969 RVA: 0x0010FDCF File Offset: 0x0010DFCF
+	// Token: 0x06002AE0 RID: 10976 RVA: 0x00110343 File Offset: 0x0010E543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiM_PlayerEquipment_HandleRefreshEquipment(XUiM_PlayerEquipment playerEquipment)
 	{
@@ -75,7 +75,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002ADA RID: 10970 RVA: 0x0010FDEC File Offset: 0x0010DFEC
+	// Token: 0x06002AE1 RID: 10977 RVA: 0x00110360 File Offset: 0x0010E560
 	public void UpdateEquipment()
 	{
 		Animator animator = this.avatarController.GetAnimator();
@@ -86,7 +86,7 @@ public class EModelSDCS : EModelPlayer
 	}
 
 	// Token: 0x1700049B RID: 1179
-	// (get) Token: 0x06002ADB RID: 10971 RVA: 0x0010FE24 File Offset: 0x0010E024
+	// (get) Token: 0x06002AE2 RID: 10978 RVA: 0x00110398 File Offset: 0x0010E598
 	public Transform HeadTransformFP
 	{
 		get
@@ -99,7 +99,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002ADC RID: 10972 RVA: 0x0010FE64 File Offset: 0x0010E064
+	// Token: 0x06002AE3 RID: 10979 RVA: 0x001103D8 File Offset: 0x0010E5D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
@@ -113,7 +113,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002ADD RID: 10973 RVA: 0x0010FEE8 File Offset: 0x0010E0E8
+	// Token: 0x06002AE4 RID: 10980 RVA: 0x0011045C File Offset: 0x0010E65C
 	public override void SwitchModelAndView(bool _bFPV, bool _isMale)
 	{
 		base.IsFPV = _bFPV;
@@ -123,7 +123,7 @@ public class EModelSDCS : EModelPlayer
 		this.meshTransform = this.modelTransform.FindInChildren("Spine1");
 	}
 
-	// Token: 0x06002ADE RID: 10974 RVA: 0x0010FF38 File Offset: 0x0010E138
+	// Token: 0x06002AE5 RID: 10981 RVA: 0x001104AC File Offset: 0x0010E6AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createModel(World _world, EntityClass _ec)
 	{
@@ -151,7 +151,7 @@ public class EModelSDCS : EModelPlayer
 		this.baseRig.transform.FindInChilds("Origin", false).tag = "E_BP_BipedRoot";
 	}
 
-	// Token: 0x06002ADF RID: 10975 RVA: 0x0011004C File Offset: 0x0010E24C
+	// Token: 0x06002AE6 RID: 10982 RVA: 0x001105C0 File Offset: 0x0010E7C0
 	public Transform GenerateMeshes()
 	{
 		SDCSUtils.CreateVizTP(this.archetype, ref this.baseRig, ref this.boneCatalog, this.playerEntity, base.IsFPV);
@@ -163,7 +163,7 @@ public class EModelSDCS : EModelPlayer
 		return this.baseRig.transform;
 	}
 
-	// Token: 0x06002AE0 RID: 10976 RVA: 0x001100C3 File Offset: 0x0010E2C3
+	// Token: 0x06002AE7 RID: 10983 RVA: 0x00110637 File Offset: 0x0010E837
 	public override Transform GetHeadTransform()
 	{
 		if (this.headT == null && this.boneCatalog.ContainsKey("Head"))
@@ -173,7 +173,7 @@ public class EModelSDCS : EModelPlayer
 		return this.headT;
 	}
 
-	// Token: 0x06002AE1 RID: 10977 RVA: 0x00110101 File Offset: 0x0010E301
+	// Token: 0x06002AE8 RID: 10984 RVA: 0x00110675 File Offset: 0x0010E875
 	public override Transform GetPelvisTransform()
 	{
 		if (this.bipedPelvisTransform == null && this.boneCatalog.ContainsKey("Hips"))
@@ -184,7 +184,7 @@ public class EModelSDCS : EModelPlayer
 	}
 
 	// Token: 0x1700049C RID: 1180
-	// (get) Token: 0x06002AE2 RID: 10978 RVA: 0x0011013F File Offset: 0x0010E33F
+	// (get) Token: 0x06002AE9 RID: 10985 RVA: 0x001106B3 File Offset: 0x0010E8B3
 	public Archetype Archetype
 	{
 		get
@@ -193,7 +193,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002AE3 RID: 10979 RVA: 0x00110147 File Offset: 0x0010E347
+	// Token: 0x06002AEA RID: 10986 RVA: 0x001106BB File Offset: 0x0010E8BB
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetRace(string value)
 	{
@@ -204,7 +204,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002AE4 RID: 10980 RVA: 0x00110174 File Offset: 0x0010E374
+	// Token: 0x06002AEB RID: 10987 RVA: 0x001106E8 File Offset: 0x0010E8E8
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetVariant(int value)
 	{
@@ -215,7 +215,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002AE5 RID: 10981 RVA: 0x001101A2 File Offset: 0x0010E3A2
+	// Token: 0x06002AEC RID: 10988 RVA: 0x00110716 File Offset: 0x0010E916
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetSex(bool value)
 	{
@@ -226,7 +226,7 @@ public class EModelSDCS : EModelPlayer
 		}
 	}
 
-	// Token: 0x06002AE6 RID: 10982 RVA: 0x001101D0 File Offset: 0x0010E3D0
+	// Token: 0x06002AED RID: 10989 RVA: 0x00110744 File Offset: 0x0010E944
 	public override void SetVisible(bool _bVisible, bool _isKeepColliders = false)
 	{
 		bool visible = base.visible;
@@ -237,67 +237,67 @@ public class EModelSDCS : EModelPlayer
 		base.SetVisible(_bVisible, _isKeepColliders);
 	}
 
-	// Token: 0x040020CB RID: 8395
+	// Token: 0x040020DC RID: 8412
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityClass entityClass;
 
-	// Token: 0x040020CC RID: 8396
+	// Token: 0x040020DD RID: 8413
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayer playerEntity;
 
-	// Token: 0x040020CD RID: 8397
+	// Token: 0x040020DE RID: 8414
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject baseRig;
 
-	// Token: 0x040020CE RID: 8398
+	// Token: 0x040020DF RID: 8415
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SDCSUtils.TransformCatalog boneCatalog;
 
-	// Token: 0x040020CF RID: 8399
+	// Token: 0x040020E0 RID: 8416
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject baseRigFP;
 
-	// Token: 0x040020D0 RID: 8400
+	// Token: 0x040020E1 RID: 8417
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SDCSUtils.TransformCatalog boneCatalogFP;
 
-	// Token: 0x040020D1 RID: 8401
+	// Token: 0x040020E2 RID: 8418
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform playerModelTransform;
 
-	// Token: 0x040020D2 RID: 8402
+	// Token: 0x040020E3 RID: 8419
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform headT;
 
-	// Token: 0x040020D3 RID: 8403
+	// Token: 0x040020E4 RID: 8420
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform headTransFP;
 
-	// Token: 0x040020D4 RID: 8404
+	// Token: 0x040020E5 RID: 8421
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UpdateLightOnPlayers updateLightScript;
 
-	// Token: 0x040020D5 RID: 8405
+	// Token: 0x040020E6 RID: 8422
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Archetype archetype;
 
-	// Token: 0x040020D6 RID: 8406
+	// Token: 0x040020E7 RID: 8423
 	public SDCSUtils.SlotData.HairMaskTypes HairMaskType;
 
-	// Token: 0x040020D7 RID: 8407
+	// Token: 0x040020E8 RID: 8424
 	public SDCSUtils.SlotData.HairMaskTypes FacialHairMaskType;
 
-	// Token: 0x040020D8 RID: 8408
+	// Token: 0x040020E9 RID: 8425
 	public List<Material> ClipMaterialsFP = new List<Material>();
 }

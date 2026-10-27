@@ -4,11 +4,11 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02001427 RID: 5159
+// Token: 0x02001439 RID: 5177
 public class GameObjectPool
 {
-	// Token: 0x1700132E RID: 4910
-	// (get) Token: 0x0600A1D4 RID: 41428 RVA: 0x003CC2A4 File Offset: 0x003CA4A4
+	// Token: 0x1700133A RID: 4922
+	// (get) Token: 0x0600A22C RID: 41516 RVA: 0x003CE6A8 File Offset: 0x003CC8A8
 	public static GameObjectPool Instance
 	{
 		get
@@ -21,9 +21,9 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x1700132F RID: 4911
-	// (get) Token: 0x0600A1D5 RID: 41429 RVA: 0x003CC2B7 File Offset: 0x003CA4B7
-	// (set) Token: 0x0600A1D6 RID: 41430 RVA: 0x003CC2BF File Offset: 0x003CA4BF
+	// Token: 0x1700133B RID: 4923
+	// (get) Token: 0x0600A22D RID: 41517 RVA: 0x003CE6BB File Offset: 0x003CC8BB
+	// (set) Token: 0x0600A22E RID: 41518 RVA: 0x003CE6C3 File Offset: 0x003CC8C3
 	public int MaxPooledInstancesPerItem
 	{
 		get
@@ -37,9 +37,9 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x17001330 RID: 4912
-	// (get) Token: 0x0600A1D7 RID: 41431 RVA: 0x003CC2E7 File Offset: 0x003CA4E7
-	// (set) Token: 0x0600A1D8 RID: 41432 RVA: 0x003CC2EF File Offset: 0x003CA4EF
+	// Token: 0x1700133C RID: 4924
+	// (get) Token: 0x0600A22F RID: 41519 RVA: 0x003CE6EB File Offset: 0x003CC8EB
+	// (set) Token: 0x0600A230 RID: 41520 RVA: 0x003CE6F3 File Offset: 0x003CC8F3
 	public int MaxDestroysPerUpdate
 	{
 		get
@@ -53,9 +53,9 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x17001331 RID: 4913
-	// (get) Token: 0x0600A1D9 RID: 41433 RVA: 0x003CC317 File Offset: 0x003CA517
-	// (set) Token: 0x0600A1DA RID: 41434 RVA: 0x003CC31F File Offset: 0x003CA51F
+	// Token: 0x1700133D RID: 4925
+	// (get) Token: 0x0600A231 RID: 41521 RVA: 0x003CE71B File Offset: 0x003CC91B
+	// (set) Token: 0x0600A232 RID: 41522 RVA: 0x003CE723 File Offset: 0x003CC923
 	public GameObjectPool.ShrinkThreshold ShrinkThresholdHigh
 	{
 		get
@@ -69,9 +69,9 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x17001332 RID: 4914
-	// (get) Token: 0x0600A1DB RID: 41435 RVA: 0x003CC347 File Offset: 0x003CA547
-	// (set) Token: 0x0600A1DC RID: 41436 RVA: 0x003CC34F File Offset: 0x003CA54F
+	// Token: 0x1700133E RID: 4926
+	// (get) Token: 0x0600A233 RID: 41523 RVA: 0x003CE74B File Offset: 0x003CC94B
+	// (set) Token: 0x0600A234 RID: 41524 RVA: 0x003CE753 File Offset: 0x003CC953
 	public GameObjectPool.ShrinkThreshold ShrinkThresholdMedium
 	{
 		get
@@ -85,9 +85,9 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x17001333 RID: 4915
-	// (get) Token: 0x0600A1DD RID: 41437 RVA: 0x003CC377 File Offset: 0x003CA577
-	// (set) Token: 0x0600A1DE RID: 41438 RVA: 0x003CC37F File Offset: 0x003CA57F
+	// Token: 0x1700133F RID: 4927
+	// (get) Token: 0x0600A235 RID: 41525 RVA: 0x003CE77B File Offset: 0x003CC97B
+	// (set) Token: 0x0600A236 RID: 41526 RVA: 0x003CE783 File Offset: 0x003CC983
 	public GameObjectPool.ShrinkThreshold ShrinkThresholdLow
 	{
 		get
@@ -101,21 +101,21 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x0600A1DF RID: 41439 RVA: 0x003CC3A7 File Offset: 0x003CA5A7
+	// Token: 0x0600A237 RID: 41527 RVA: 0x003CE7AB File Offset: 0x003CC9AB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Instantiate()
 	{
 		GameObjectPool.instance = new GameObjectPool();
 	}
 
-	// Token: 0x0600A1E0 RID: 41440 RVA: 0x003CC3B3 File Offset: 0x003CA5B3
+	// Token: 0x0600A238 RID: 41528 RVA: 0x003CE7B7 File Offset: 0x003CC9B7
 	public void Init()
 	{
 		PlatformOptimizations.ConfigureGameObjectPoolForPlatform(this);
 		this.tintMaskShader = GlobalAssets.FindShader("Game/Entity Tint Mask");
 	}
 
-	// Token: 0x0600A1E1 RID: 41441 RVA: 0x003CC3CC File Offset: 0x003CA5CC
+	// Token: 0x0600A239 RID: 41529 RVA: 0x003CE7D0 File Offset: 0x003CC9D0
 	public void Cleanup()
 	{
 		foreach (KeyValuePair<string, GameObjectPool.PoolItem> keyValuePair in this.pool)
@@ -139,7 +139,7 @@ public class GameObjectPool
 		this.asyncItems.Clear();
 	}
 
-	// Token: 0x0600A1E2 RID: 41442 RVA: 0x003CC4A8 File Offset: 0x003CA6A8
+	// Token: 0x0600A23A RID: 41530 RVA: 0x003CE8AC File Offset: 0x003CCAAC
 	public void FrameUpdate()
 	{
 		float time = Time.time;
@@ -209,7 +209,7 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x0600A1E3 RID: 41443 RVA: 0x003CC6A8 File Offset: 0x003CA8A8
+	// Token: 0x0600A23B RID: 41531 RVA: 0x003CEAAC File Offset: 0x003CCCAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObjectPool.ShrinkThreshold GetShrinkThreshold(int count)
 	{
@@ -228,7 +228,7 @@ public class GameObjectPool
 		return this.shrinkThresholdMin;
 	}
 
-	// Token: 0x0600A1E4 RID: 41444 RVA: 0x003CC6FC File Offset: 0x003CA8FC
+	// Token: 0x0600A23C RID: 41532 RVA: 0x003CEB00 File Offset: 0x003CCD00
 	public void AddPooledObject(string name, GameObjectPool.LoadCallback _loadCallback, GameObjectPool.CreateCallback _createOnceToAllCallback, GameObjectPool.CreateCallback _createCallback)
 	{
 		GameObjectPool.PoolItem poolItem;
@@ -254,7 +254,7 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x0600A1E5 RID: 41445 RVA: 0x003CC78E File Offset: 0x003CA98E
+	// Token: 0x0600A23D RID: 41533 RVA: 0x003CEB92 File Offset: 0x003CCD92
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setItemPrefab(GameObjectPool.PoolItem item, GameObject go)
 	{
@@ -262,7 +262,7 @@ public class GameObjectPool
 		this.getOriginalTint(item, go);
 	}
 
-	// Token: 0x0600A1E6 RID: 41446 RVA: 0x003CC7A0 File Offset: 0x003CA9A0
+	// Token: 0x0600A23E RID: 41534 RVA: 0x003CEBA4 File Offset: 0x003CCDA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void getOriginalTint(GameObjectPool.PoolItem item, GameObject go)
 	{
@@ -296,14 +296,14 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x0600A1E7 RID: 41447 RVA: 0x003CC878 File Offset: 0x003CAA78
+	// Token: 0x0600A23F RID: 41535 RVA: 0x003CEC7C File Offset: 0x003CCE7C
 	public GameObject GetObjectForType(string objectType)
 	{
 		Color color;
 		return this.GetObjectForType(objectType, out color);
 	}
 
-	// Token: 0x0600A1E8 RID: 41448 RVA: 0x003CC890 File Offset: 0x003CAA90
+	// Token: 0x0600A240 RID: 41536 RVA: 0x003CEC94 File Offset: 0x003CCE94
 	public GameObject GetObjectForType(string objectType, out Color originalTint)
 	{
 		GameObjectPool.PoolItem poolItem;
@@ -340,7 +340,7 @@ public class GameObjectPool
 		return poolItem.Instantiate();
 	}
 
-	// Token: 0x0600A1E9 RID: 41449 RVA: 0x003CC95C File Offset: 0x003CAB5C
+	// Token: 0x0600A241 RID: 41537 RVA: 0x003CED60 File Offset: 0x003CCF60
 	public GameObjectPool.AsyncItem GetObjectsForTypeAsync(string objectType, int _count, GameObjectPool.CreateAsyncCallback _callback, object _userData)
 	{
 		GameObjectPool.PoolItem poolItem;
@@ -399,7 +399,7 @@ public class GameObjectPool
 		return asyncItem;
 	}
 
-	// Token: 0x0600A1EA RID: 41450 RVA: 0x003CCAC4 File Offset: 0x003CACC4
+	// Token: 0x0600A242 RID: 41538 RVA: 0x003CEEC8 File Offset: 0x003CD0C8
 	public void CancelAsync(GameObjectPool.AsyncItem _ai)
 	{
 		if (this.asyncItems.Remove(_ai))
@@ -417,13 +417,13 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x0600A1EB RID: 41451 RVA: 0x003CCB1A File Offset: 0x003CAD1A
+	// Token: 0x0600A243 RID: 41539 RVA: 0x003CEF1E File Offset: 0x003CD11E
 	public void PoolObjectAsync(GameObject obj)
 	{
 		this.PoolObject(obj);
 	}
 
-	// Token: 0x0600A1EC RID: 41452 RVA: 0x003CCB24 File Offset: 0x003CAD24
+	// Token: 0x0600A244 RID: 41540 RVA: 0x003CEF28 File Offset: 0x003CD128
 	public void PoolObject(GameObject obj)
 	{
 		if (!obj)
@@ -456,7 +456,7 @@ public class GameObjectPool
 		}
 	}
 
-	// Token: 0x0600A1ED RID: 41453 RVA: 0x003CCBC2 File Offset: 0x003CADC2
+	// Token: 0x0600A245 RID: 41541 RVA: 0x003CEFC6 File Offset: 0x003CD1C6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DestroyObject(GameObject obj)
 	{
@@ -466,7 +466,7 @@ public class GameObjectPool
 		global::UnityEngine.Object.Destroy(obj);
 	}
 
-	// Token: 0x0600A1EE RID: 41454 RVA: 0x003CCBEC File Offset: 0x003CADEC
+	// Token: 0x0600A246 RID: 41542 RVA: 0x003CEFF0 File Offset: 0x003CD1F0
 	public void CmdList(string _mode)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Pool objects:");
@@ -526,7 +526,7 @@ public class GameObjectPool
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(text);
 	}
 
-	// Token: 0x0600A1EF RID: 41455 RVA: 0x003CCE24 File Offset: 0x003CB024
+	// Token: 0x0600A247 RID: 41543 RVA: 0x003CF228 File Offset: 0x003CD428
 	public void CmdShrink()
 	{
 		bool flag;
@@ -548,7 +548,7 @@ public class GameObjectPool
 		while (flag);
 	}
 
-	// Token: 0x0600A1F0 RID: 41456 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A248 RID: 41544 RVA: 0x000027FC File Offset: 0x000009FC
 	[Conditional("DEBUG_GOPOOL_PROFILE")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -556,7 +556,7 @@ public class GameObjectPool
 	{
 	}
 
-	// Token: 0x0600A1F1 RID: 41457 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A249 RID: 41545 RVA: 0x000027FC File Offset: 0x000009FC
 	[Conditional("DEBUG_GOPOOL_PROFILE")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -564,90 +564,90 @@ public class GameObjectPool
 	{
 	}
 
-	// Token: 0x040079CA RID: 31178
+	// Token: 0x04007A0B RID: 31243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cActivePoolAddAtCount = 1;
 
-	// Token: 0x040079CB RID: 31179
+	// Token: 0x04007A0C RID: 31244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cActivePoolMinCount = 0;
 
-	// Token: 0x040079CC RID: 31180
+	// Token: 0x04007A0D RID: 31245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cActivePoolRemoveDelay = 10f;
 
-	// Token: 0x040079CD RID: 31181
+	// Token: 0x04007A0E RID: 31246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObjectPool instance;
 
-	// Token: 0x040079CE RID: 31182
+	// Token: 0x04007A0F RID: 31247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Shader tintMaskShader;
 
-	// Token: 0x040079CF RID: 31183
+	// Token: 0x04007A10 RID: 31248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, GameObjectPool.PoolItem> pool = new Dictionary<string, GameObjectPool.PoolItem>();
 
-	// Token: 0x040079D0 RID: 31184
+	// Token: 0x04007A11 RID: 31249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObjectPool.PoolItem> activePool = new List<GameObjectPool.PoolItem>();
 
-	// Token: 0x040079D1 RID: 31185
+	// Token: 0x04007A12 RID: 31250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObjectPool.AsyncItem> asyncItems = new List<GameObjectPool.AsyncItem>();
 
-	// Token: 0x040079D2 RID: 31186
+	// Token: 0x04007A13 RID: 31251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cAsyncPoolObjsCount = 128;
 
-	// Token: 0x040079D3 RID: 31187
+	// Token: 0x04007A14 RID: 31252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject[] asyncPoolObjs = new GameObject[128];
 
-	// Token: 0x040079D4 RID: 31188
+	// Token: 0x04007A15 RID: 31253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Renderer> tempRenderers = new List<Renderer>();
 
-	// Token: 0x040079D5 RID: 31189
+	// Token: 0x04007A16 RID: 31254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxPooledInstancesPerItem = 200;
 
-	// Token: 0x040079D6 RID: 31190
+	// Token: 0x04007A17 RID: 31255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxDestroysPerUpdate = 1;
 
-	// Token: 0x040079D7 RID: 31191
+	// Token: 0x04007A18 RID: 31256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObjectPool.ShrinkThreshold shrinkThresholdHigh = new GameObjectPool.ShrinkThreshold(100, 1, 0.1f);
 
-	// Token: 0x040079D8 RID: 31192
+	// Token: 0x04007A19 RID: 31257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObjectPool.ShrinkThreshold shrinkThresholdMedium = new GameObjectPool.ShrinkThreshold(40, 1, 0.5f);
 
-	// Token: 0x040079D9 RID: 31193
+	// Token: 0x04007A1A RID: 31258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObjectPool.ShrinkThreshold shrinkThresholdLow = new GameObjectPool.ShrinkThreshold(12, 1, 3f);
 
-	// Token: 0x040079DA RID: 31194
+	// Token: 0x04007A1B RID: 31259
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObjectPool.ShrinkThreshold shrinkThresholdMin = new GameObjectPool.ShrinkThreshold(0, 1, 10f);
 
-	// Token: 0x02001428 RID: 5160
-	// (Invoke) Token: 0x0600A1F4 RID: 41460
+	// Token: 0x0200143A RID: 5178
+	// (Invoke) Token: 0x0600A24C RID: 41548
 	public delegate Transform LoadCallback();
 
-	// Token: 0x02001429 RID: 5161
-	// (Invoke) Token: 0x0600A1F8 RID: 41464
+	// Token: 0x0200143B RID: 5179
+	// (Invoke) Token: 0x0600A250 RID: 41552
 	public delegate void CreateCallback(GameObject obj);
 
-	// Token: 0x0200142A RID: 5162
-	// (Invoke) Token: 0x0600A1FC RID: 41468
+	// Token: 0x0200143C RID: 5180
+	// (Invoke) Token: 0x0600A254 RID: 41556
 	public delegate void CreateAsyncCallback(object _userData, global::UnityEngine.Object[] _objs, int _objsCount, bool _isAsync);
 
-	// Token: 0x0200142B RID: 5163
+	// Token: 0x0200143D RID: 5181
 	public class PoolItem
 	{
-		// Token: 0x0600A1FF RID: 41471 RVA: 0x003CCF2C File Offset: 0x003CB12C
+		// Token: 0x0600A257 RID: 41559 RVA: 0x003CF330 File Offset: 0x003CD530
 		public GameObject Instantiate()
 		{
 			this.activeCount++;
@@ -665,54 +665,54 @@ public class GameObjectPool
 			return gameObject;
 		}
 
-		// Token: 0x040079DB RID: 31195
+		// Token: 0x04007A1C RID: 31260
 		public string name;
 
-		// Token: 0x040079DC RID: 31196
+		// Token: 0x04007A1D RID: 31261
 		public GameObject prefab;
 
-		// Token: 0x040079DD RID: 31197
+		// Token: 0x04007A1E RID: 31262
 		public GameObjectPool.LoadCallback loadCallback;
 
-		// Token: 0x040079DE RID: 31198
+		// Token: 0x04007A1F RID: 31263
 		public GameObjectPool.CreateCallback createOnceToAllCallback;
 
-		// Token: 0x040079DF RID: 31199
+		// Token: 0x04007A20 RID: 31264
 		public GameObjectPool.CreateCallback createCallback;
 
-		// Token: 0x040079E0 RID: 31200
+		// Token: 0x04007A21 RID: 31265
 		public List<GameObject> objs;
 
-		// Token: 0x040079E1 RID: 31201
+		// Token: 0x04007A22 RID: 31266
 		public float updateTime;
 
-		// Token: 0x040079E2 RID: 31202
+		// Token: 0x04007A23 RID: 31267
 		public int activeCount;
 
-		// Token: 0x040079E3 RID: 31203
+		// Token: 0x04007A24 RID: 31268
 		public Color originalTint;
 	}
 
-	// Token: 0x0200142C RID: 5164
+	// Token: 0x0200143E RID: 5182
 	public class AsyncItem
 	{
-		// Token: 0x040079E4 RID: 31204
+		// Token: 0x04007A25 RID: 31269
 		public GameObjectPool.PoolItem item;
 
-		// Token: 0x040079E5 RID: 31205
+		// Token: 0x04007A26 RID: 31270
 		public GameObjectPool.CreateAsyncCallback callback;
 
-		// Token: 0x040079E6 RID: 31206
+		// Token: 0x04007A27 RID: 31271
 		public AsyncInstantiateOperation async;
 
-		// Token: 0x040079E7 RID: 31207
+		// Token: 0x04007A28 RID: 31272
 		public object userData;
 	}
 
-	// Token: 0x0200142D RID: 5165
+	// Token: 0x0200143F RID: 5183
 	public struct ShrinkThreshold
 	{
-		// Token: 0x0600A202 RID: 41474 RVA: 0x003CCF8F File Offset: 0x003CB18F
+		// Token: 0x0600A25A RID: 41562 RVA: 0x003CF393 File Offset: 0x003CD593
 		public ShrinkThreshold(int count, int destroyCount, float delay)
 		{
 			this.Count = count;
@@ -720,19 +720,19 @@ public class GameObjectPool
 			this.Delay = delay;
 		}
 
-		// Token: 0x0600A203 RID: 41475 RVA: 0x003CCFA8 File Offset: 0x003CB1A8
+		// Token: 0x0600A25B RID: 41563 RVA: 0x003CF3AC File Offset: 0x003CD5AC
 		public override string ToString()
 		{
 			return string.Format("({0} = {1}, {2} = {3}, {4} = {5:F2}s)", new object[] { "Count", this.Count, "DestroyCount", this.DestroyCount, "Delay", this.Delay });
 		}
 
-		// Token: 0x040079E8 RID: 31208
+		// Token: 0x04007A29 RID: 31273
 		public int Count;
 
-		// Token: 0x040079E9 RID: 31209
+		// Token: 0x04007A2A RID: 31274
 		public int DestroyCount;
 
-		// Token: 0x040079EA RID: 31210
+		// Token: 0x04007A2B RID: 31275
 		public float Delay;
 	}
 }

@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001464 RID: 5220
+// Token: 0x02001476 RID: 5238
 public class DynamicObjectPool<T> where T : new()
 {
-	// Token: 0x0600A3A6 RID: 41894 RVA: 0x003D3898 File Offset: 0x003D1A98
+	// Token: 0x0600A3FE RID: 41982 RVA: 0x003D5C9C File Offset: 0x003D3E9C
 	public DynamicObjectPool(int objectsPerBlock)
 	{
 		this.Init(objectsPerBlock, int.MaxValue);
 	}
 
-	// Token: 0x0600A3A7 RID: 41895 RVA: 0x003D38AC File Offset: 0x003D1AAC
+	// Token: 0x0600A3FF RID: 41983 RVA: 0x003D5CB0 File Offset: 0x003D3EB0
 	public DynamicObjectPool(int objectsPerBlock, int maxObjects)
 	{
 		this.Init(objectsPerBlock, maxObjects);
 	}
 
-	// Token: 0x0600A3A8 RID: 41896 RVA: 0x003D38BC File Offset: 0x003D1ABC
+	// Token: 0x0600A400 RID: 41984 RVA: 0x003D5CC0 File Offset: 0x003D3EC0
 	public void AllocateBlock(int numObjects)
 	{
 		for (int i = 0; i < numObjects; i++)
@@ -26,7 +26,7 @@ public class DynamicObjectPool<T> where T : new()
 		this.m_numAllocatedObjects += numObjects;
 	}
 
-	// Token: 0x0600A3A9 RID: 41897 RVA: 0x003D38EE File Offset: 0x003D1AEE
+	// Token: 0x0600A401 RID: 41985 RVA: 0x003D5CF2 File Offset: 0x003D3EF2
 	public T Allocate()
 	{
 		if (this.m_numFreeObjects < 1)
@@ -37,7 +37,7 @@ public class DynamicObjectPool<T> where T : new()
 		return this.pop();
 	}
 
-	// Token: 0x0600A3AA RID: 41898 RVA: 0x003D391C File Offset: 0x003D1B1C
+	// Token: 0x0600A402 RID: 41986 RVA: 0x003D5D20 File Offset: 0x003D3F20
 	public T[] Allocate(int numToAllocate)
 	{
 		if (numToAllocate < 1)
@@ -56,14 +56,14 @@ public class DynamicObjectPool<T> where T : new()
 		return array;
 	}
 
-	// Token: 0x0600A3AB RID: 41899 RVA: 0x003D3967 File Offset: 0x003D1B67
+	// Token: 0x0600A403 RID: 41987 RVA: 0x003D5D6B File Offset: 0x003D3F6B
 	public void Free(T obj)
 	{
 		this.push(obj);
 		this.m_numUsedObjects--;
 	}
 
-	// Token: 0x0600A3AC RID: 41900 RVA: 0x003D3980 File Offset: 0x003D1B80
+	// Token: 0x0600A404 RID: 41988 RVA: 0x003D5D84 File Offset: 0x003D3F84
 	public void Free(T[] array)
 	{
 		foreach (T t in array)
@@ -72,7 +72,7 @@ public class DynamicObjectPool<T> where T : new()
 		}
 	}
 
-	// Token: 0x0600A3AD RID: 41901 RVA: 0x003D39AC File Offset: 0x003D1BAC
+	// Token: 0x0600A405 RID: 41989 RVA: 0x003D5DB0 File Offset: 0x003D3FB0
 	public void Compact()
 	{
 		this.m_numFreeObjects = 0;
@@ -80,8 +80,8 @@ public class DynamicObjectPool<T> where T : new()
 		this.m_freeObjects = new List<T>(this.m_numObjectsPerBlock);
 	}
 
-	// Token: 0x1700136D RID: 4973
-	// (get) Token: 0x0600A3AE RID: 41902 RVA: 0x003D39DE File Offset: 0x003D1BDE
+	// Token: 0x17001379 RID: 4985
+	// (get) Token: 0x0600A406 RID: 41990 RVA: 0x003D5DE2 File Offset: 0x003D3FE2
 	public int NumAllocatedObjects
 	{
 		get
@@ -90,8 +90,8 @@ public class DynamicObjectPool<T> where T : new()
 		}
 	}
 
-	// Token: 0x1700136E RID: 4974
-	// (get) Token: 0x0600A3AF RID: 41903 RVA: 0x003D39E6 File Offset: 0x003D1BE6
+	// Token: 0x1700137A RID: 4986
+	// (get) Token: 0x0600A407 RID: 41991 RVA: 0x003D5DEA File Offset: 0x003D3FEA
 	public int NumUsedObjects
 	{
 		get
@@ -100,8 +100,8 @@ public class DynamicObjectPool<T> where T : new()
 		}
 	}
 
-	// Token: 0x1700136F RID: 4975
-	// (get) Token: 0x0600A3B0 RID: 41904 RVA: 0x003D39EE File Offset: 0x003D1BEE
+	// Token: 0x1700137B RID: 4987
+	// (get) Token: 0x0600A408 RID: 41992 RVA: 0x003D5DF2 File Offset: 0x003D3FF2
 	public int NumFreeObjects
 	{
 		get
@@ -110,8 +110,8 @@ public class DynamicObjectPool<T> where T : new()
 		}
 	}
 
-	// Token: 0x17001370 RID: 4976
-	// (get) Token: 0x0600A3B1 RID: 41905 RVA: 0x003D39F6 File Offset: 0x003D1BF6
+	// Token: 0x1700137C RID: 4988
+	// (get) Token: 0x0600A409 RID: 41993 RVA: 0x003D5DFA File Offset: 0x003D3FFA
 	public int MaxObjects
 	{
 		get
@@ -120,7 +120,7 @@ public class DynamicObjectPool<T> where T : new()
 		}
 	}
 
-	// Token: 0x0600A3B2 RID: 41906 RVA: 0x003D39FE File Offset: 0x003D1BFE
+	// Token: 0x0600A40A RID: 41994 RVA: 0x003D5E02 File Offset: 0x003D4002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init(int objectsPerBlock, int maxObjects)
 	{
@@ -129,7 +129,7 @@ public class DynamicObjectPool<T> where T : new()
 		this.m_freeObjects = new List<T>(objectsPerBlock);
 	}
 
-	// Token: 0x0600A3B3 RID: 41907 RVA: 0x003D3A1C File Offset: 0x003D1C1C
+	// Token: 0x0600A40B RID: 41995 RVA: 0x003D5E20 File Offset: 0x003D4020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void push(T t)
 	{
@@ -144,7 +144,7 @@ public class DynamicObjectPool<T> where T : new()
 		this.m_numFreeObjects++;
 	}
 
-	// Token: 0x0600A3B4 RID: 41908 RVA: 0x003D3A6C File Offset: 0x003D1C6C
+	// Token: 0x0600A40C RID: 41996 RVA: 0x003D5E70 File Offset: 0x003D4070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T pop()
 	{
@@ -158,27 +158,27 @@ public class DynamicObjectPool<T> where T : new()
 		return freeObjects[num];
 	}
 
-	// Token: 0x04007AA6 RID: 31398
+	// Token: 0x04007AE7 RID: 31463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_numAllocatedObjects;
 
-	// Token: 0x04007AA7 RID: 31399
+	// Token: 0x04007AE8 RID: 31464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_numUsedObjects;
 
-	// Token: 0x04007AA8 RID: 31400
+	// Token: 0x04007AE9 RID: 31465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_numFreeObjects;
 
-	// Token: 0x04007AA9 RID: 31401
+	// Token: 0x04007AEA RID: 31466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_numObjectsPerBlock;
 
-	// Token: 0x04007AAA RID: 31402
+	// Token: 0x04007AEB RID: 31467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_maxObjects;
 
-	// Token: 0x04007AAB RID: 31403
+	// Token: 0x04007AEC RID: 31468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T> m_freeObjects;
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000BE0 RID: 3040
+// Token: 0x02000BEB RID: 3051
 public class TileAreaSimple<T> : ITileArea<T> where T : class
 {
-	// Token: 0x06005B31 RID: 23345 RVA: 0x00233663 File Offset: 0x00231863
+	// Token: 0x06005B56 RID: 23382 RVA: 0x00234BBF File Offset: 0x00232DBF
 	public TileAreaSimple(T[,] _data = null)
 	{
 		this.data = _data;
 	}
 
-	// Token: 0x170009A5 RID: 2469
+	// Token: 0x170009AB RID: 2475
 	public T this[uint _key]
 	{
 		get
@@ -18,7 +18,7 @@ public class TileAreaSimple<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x170009A6 RID: 2470
+	// Token: 0x170009AC RID: 2476
 	public T this[int _tileX, int _tileZ]
 	{
 		get
@@ -27,8 +27,8 @@ public class TileAreaSimple<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x170009A7 RID: 2471
-	// (get) Token: 0x06005B34 RID: 23348 RVA: 0x00233684 File Offset: 0x00231884
+	// Token: 0x170009AD RID: 2477
+	// (get) Token: 0x06005B59 RID: 23385 RVA: 0x00234BE0 File Offset: 0x00232DE0
 	public TileAreaConfig Config
 	{
 		get
@@ -37,7 +37,7 @@ public class TileAreaSimple<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x040046F7 RID: 18167
+	// Token: 0x0400471C RID: 18204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[,] data;
 }

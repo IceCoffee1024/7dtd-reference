@@ -4,12 +4,12 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F52 RID: 3922
+// Token: 0x02000F61 RID: 3937
 [Preserve]
 public class XUiC_InGameDebugMenu : XUiController
 {
-	// Token: 0x17000E6C RID: 3692
-	// (get) Token: 0x06007A9D RID: 31389 RVA: 0x002E72F1 File Offset: 0x002E54F1
+	// Token: 0x17000E76 RID: 3702
+	// (get) Token: 0x06007AE0 RID: 31456 RVA: 0x002E8BED File Offset: 0x002E6DED
 	public ChunkCluster ChunkCluster0
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -27,8 +27,8 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x17000E6D RID: 3693
-	// (get) Token: 0x06007A9E RID: 31390 RVA: 0x002E731F File Offset: 0x002E551F
+	// Token: 0x17000E77 RID: 3703
+	// (get) Token: 0x06007AE1 RID: 31457 RVA: 0x002E8C1B File Offset: 0x002E6E1B
 	public bool HasWorld
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,7 +38,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007A9F RID: 31391 RVA: 0x002E7330 File Offset: 0x002E5530
+	// Token: 0x06007AE2 RID: 31458 RVA: 0x002E8C2C File Offset: 0x002E6E2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -62,7 +62,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		return true;
 	}
 
-	// Token: 0x06007AA0 RID: 31392 RVA: 0x002E73B0 File Offset: 0x002E55B0
+	// Token: 0x06007AE3 RID: 31459 RVA: 0x002E8CAC File Offset: 0x002E6EAC
 	public override void Init()
 	{
 		base.Init();
@@ -201,7 +201,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AA1 RID: 31393 RVA: 0x002E7840 File Offset: 0x002E5A40
+	// Token: 0x06007AE4 RID: 31460 RVA: 0x002E913C File Offset: 0x002E733C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSuicide_Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -214,7 +214,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		GameManager.Instance.Pause(false);
 	}
 
-	// Token: 0x06007AA2 RID: 31394 RVA: 0x002E78B0 File Offset: 0x002E5AB0
+	// Token: 0x06007AE5 RID: 31461 RVA: 0x002E91AC File Offset: 0x002E73AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void TeleportX_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -224,7 +224,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AA3 RID: 31395 RVA: 0x002E78C9 File Offset: 0x002E5AC9
+	// Token: 0x06007AE6 RID: 31462 RVA: 0x002E91C5 File Offset: 0x002E73C5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void TeleportZ_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -234,14 +234,14 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AA4 RID: 31396 RVA: 0x002E78E2 File Offset: 0x002E5AE2
+	// Token: 0x06007AE7 RID: 31463 RVA: 0x002E91DE File Offset: 0x002E73DE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Teleport_OnSubmitHandler(XUiController _sender, string _text)
 	{
 		this.BtnTeleport_Controller_OnPress(_sender, -1);
 	}
 
-	// Token: 0x06007AA5 RID: 31397 RVA: 0x002E78EC File Offset: 0x002E5AEC
+	// Token: 0x06007AE8 RID: 31464 RVA: 0x002E91E8 File Offset: 0x002E73E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnTeleport_Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -257,7 +257,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		this.xui.playerUI.entityPlayer.Teleport(new Vector3((float)XUiC_InGameDebugMenu.lastTeleportX, 240f, (float)XUiC_InGameDebugMenu.lastTeleportZ), float.MinValue);
 	}
 
-	// Token: 0x06007AA6 RID: 31398 RVA: 0x002E7978 File Offset: 0x002E5B78
+	// Token: 0x06007AE9 RID: 31465 RVA: 0x002E9274 File Offset: 0x002E7474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRecalcLight_Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -301,7 +301,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}));
 	}
 
-	// Token: 0x06007AA7 RID: 31399 RVA: 0x002E7B48 File Offset: 0x002E5D48
+	// Token: 0x06007AEA RID: 31466 RVA: 0x002E9444 File Offset: 0x002E7644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRecalcStability_Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -329,7 +329,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		});
 	}
 
-	// Token: 0x06007AA8 RID: 31400 RVA: 0x002E7C54 File Offset: 0x002E5E54
+	// Token: 0x06007AEB RID: 31467 RVA: 0x002E9550 File Offset: 0x002E7750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnReloadChunks_Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -342,7 +342,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		GameManager.Instance.World.UnloadEntities(GameManager.Instance.World.Entities.list, false);
 	}
 
-	// Token: 0x06007AA9 RID: 31401 RVA: 0x002E7CB2 File Offset: 0x002E5EB2
+	// Token: 0x06007AEC RID: 31468 RVA: 0x002E95AE File Offset: 0x002E77AE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleFlyMode_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -352,7 +352,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AAA RID: 31402 RVA: 0x002E7CE8 File Offset: 0x002E5EE8
+	// Token: 0x06007AED RID: 31469 RVA: 0x002E95E4 File Offset: 0x002E77E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleGodMode_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -374,7 +374,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		action();
 	}
 
-	// Token: 0x06007AAB RID: 31403 RVA: 0x002E7D2A File Offset: 0x002E5F2A
+	// Token: 0x06007AEE RID: 31470 RVA: 0x002E9626 File Offset: 0x002E7826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleNoCollisionMode_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -384,7 +384,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AAC RID: 31404 RVA: 0x002E7D5F File Offset: 0x002E5F5F
+	// Token: 0x06007AEF RID: 31471 RVA: 0x002E965B File Offset: 0x002E785B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleInvisibleModeOnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -394,35 +394,35 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AAD RID: 31405 RVA: 0x002E7D8F File Offset: 0x002E5F8F
+	// Token: 0x06007AF0 RID: 31472 RVA: 0x002E968B File Offset: 0x002E788B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TogglePhysics_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 		GameManager.bPhysicsActive = _newValue;
 	}
 
-	// Token: 0x06007AAE RID: 31406 RVA: 0x002E7D97 File Offset: 0x002E5F97
+	// Token: 0x06007AF1 RID: 31473 RVA: 0x002E9693 File Offset: 0x002E7893
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleWaterSim_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 		WaterSimulationNative.Instance.SetPaused(!_newValue);
 	}
 
-	// Token: 0x06007AAF RID: 31407 RVA: 0x002E7DA7 File Offset: 0x002E5FA7
+	// Token: 0x06007AF2 RID: 31474 RVA: 0x002E96A3 File Offset: 0x002E78A3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleDebugShaders_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 		MeshDescription.SetDebugStabilityShader(_newValue);
 	}
 
-	// Token: 0x06007AB0 RID: 31408 RVA: 0x002E7DAF File Offset: 0x002E5FAF
+	// Token: 0x06007AF3 RID: 31475 RVA: 0x002E96AB File Offset: 0x002E78AB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleLightPerformance_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 		LightViewer.SetEnabled(_newValue);
 	}
 
-	// Token: 0x06007AB1 RID: 31409 RVA: 0x002E7DB8 File Offset: 0x002E5FB8
+	// Token: 0x06007AF4 RID: 31476 RVA: 0x002E96B4 File Offset: 0x002E78B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleStabilityGlue_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -441,7 +441,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007AB2 RID: 31410 RVA: 0x002E7E06 File Offset: 0x002E6006
+	// Token: 0x06007AF5 RID: 31477 RVA: 0x002E9702 File Offset: 0x002E7902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnPlaytestOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -453,7 +453,7 @@ public class XUiC_InGameDebugMenu : XUiController
 		this.startPlaytest(XUiC_SaveDirtyPrefab.ESelectedAction.DontSave);
 	}
 
-	// Token: 0x06007AB3 RID: 31411 RVA: 0x002E7E40 File Offset: 0x002E6040
+	// Token: 0x06007AF6 RID: 31478 RVA: 0x002E973C File Offset: 0x002E793C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startPlaytest(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -464,14 +464,14 @@ public class XUiC_InGameDebugMenu : XUiController
 		GameUtils.StartPlaytesting(GameUtils.IsPlaytesting() ? GamePrefs.GetString(EnumGamePrefs.GameName) : GamePrefs.GetString(EnumGamePrefs.LastLoadedPrefab));
 	}
 
-	// Token: 0x06007AB4 RID: 31412 RVA: 0x002E7E66 File Offset: 0x002E6066
+	// Token: 0x06007AF7 RID: 31479 RVA: 0x002E9762 File Offset: 0x002E7962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBackToEditorOnPressed(XUiController _sender, int _mouseButton)
 	{
 		GameUtils.StartSinglePrefabEditing(null);
 	}
 
-	// Token: 0x06007AB5 RID: 31413 RVA: 0x002E7E70 File Offset: 0x002E6070
+	// Token: 0x06007AF8 RID: 31480 RVA: 0x002E976C File Offset: 0x002E796C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -511,54 +511,54 @@ public class XUiC_InGameDebugMenu : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005B14 RID: 23316
+	// Token: 0x04005B47 RID: 23367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int lastTeleportX;
 
-	// Token: 0x04005B15 RID: 23317
+	// Token: 0x04005B48 RID: 23368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int lastTeleportZ;
 
-	// Token: 0x04005B16 RID: 23318
+	// Token: 0x04005B49 RID: 23369
 	public static string ID = "";
 
-	// Token: 0x04005B17 RID: 23319
+	// Token: 0x04005B4A RID: 23370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton togglePhysics;
 
-	// Token: 0x04005B18 RID: 23320
+	// Token: 0x04005B4B RID: 23371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleWaterSim;
 
-	// Token: 0x04005B19 RID: 23321
+	// Token: 0x04005B4C RID: 23372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleDebugShaders;
 
-	// Token: 0x04005B1A RID: 23322
+	// Token: 0x04005B4D RID: 23373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleLightPerformance;
 
-	// Token: 0x04005B1B RID: 23323
+	// Token: 0x04005B4E RID: 23374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleStabilityGlue;
 
-	// Token: 0x04005B1C RID: 23324
+	// Token: 0x04005B4F RID: 23375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleFlyMode;
 
-	// Token: 0x04005B1D RID: 23325
+	// Token: 0x04005B50 RID: 23376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleGodMode;
 
-	// Token: 0x04005B1E RID: 23326
+	// Token: 0x04005B51 RID: 23377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleNoCollisionMode;
 
-	// Token: 0x04005B1F RID: 23327
+	// Token: 0x04005B52 RID: 23378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleInvisibleMode;
 
-	// Token: 0x04005B20 RID: 23328
+	// Token: 0x04005B53 RID: 23379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showCamPositions;
 }

@@ -1,39 +1,38 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8B RID: 3979
+// Token: 0x02000F9B RID: 3995
 [Preserve]
 public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 {
-	// Token: 0x17000ED1 RID: 3793
-	// (get) Token: 0x06007D24 RID: 32036 RVA: 0x002F7845 File Offset: 0x002F5A45
-	// (set) Token: 0x06007D25 RID: 32037 RVA: 0x002F784D File Offset: 0x002F5A4D
+	// Token: 0x17000EDD RID: 3805
+	// (get) Token: 0x06007D73 RID: 32115 RVA: 0x002F94CD File Offset: 0x002F76CD
+	// (set) Token: 0x06007D74 RID: 32116 RVA: 0x002F94D5 File Offset: 0x002F76D5
 	public Vector2i GridCellSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06007D26 RID: 32038 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007D75 RID: 32117 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] _stackList)
 	{
 	}
 
-	// Token: 0x06007D27 RID: 32039 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007D76 RID: 32118 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] _stackList)
 	{
 	}
 
-	// Token: 0x06007D28 RID: 32040 RVA: 0x002F7858 File Offset: 0x002F5A58
+	// Token: 0x06007D77 RID: 32119 RVA: 0x002F94E0 File Offset: 0x002F76E0
 	public void SetSlots(TEFeatureStorage _lootContainer)
 	{
 		this.localTileEntity = _lootContainer;
 		XUiC_ItemInfoWindow childByType = this.xui.GetChildByType<XUiC_ItemInfoWindow>();
-		XUiV_Grid xuiV_Grid = (XUiV_Grid)this.viewComponent;
-		xuiV_Grid.Columns = _lootContainer.ItemGrid.ContainerSize.x;
-		xuiV_Grid.Rows = _lootContainer.ItemGrid.ContainerSize.y;
+		this.grid.Columns = _lootContainer.ItemGrid.ContainerSize.x;
+		this.grid.Rows = _lootContainer.ItemGrid.ContainerSize.y;
 		int length = this.localTileEntity.ItemGrid.Length;
 		for (int i = 0; i < this.itemControllers.Length; i++)
 		{
@@ -46,34 +45,32 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 			if (i < length)
 			{
 				xuiC_ItemStack.ForceSetItemStack(this.localTileEntity.ItemGrid[i].Clone());
-				this.itemControllers[i].ViewComponent.IsVisible = true;
 				xuiC_ItemStack.SlotChangedEvent += this.HandleLootSlotChangedEvent;
 			}
 			else
 			{
 				xuiC_ItemStack.ItemStack = ItemStack.Empty;
-				this.itemControllers[i].ViewComponent.IsVisible = false;
 			}
 		}
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06007D29 RID: 32041 RVA: 0x002F7984 File Offset: 0x002F5B84
+	// Token: 0x06007D78 RID: 32120 RVA: 0x002F95E3 File Offset: 0x002F77E3
 	public override void Init()
 	{
 		base.Init();
-		XUiV_Grid xuiV_Grid = (XUiV_Grid)this.viewComponent;
-		this.GridCellSize = new Vector2i(xuiV_Grid.CellWidth, xuiV_Grid.CellHeight);
+		this.GridCellSize = new Vector2i(this.grid.CellWidth, this.grid.CellHeight);
 	}
 
-	// Token: 0x06007D2A RID: 32042 RVA: 0x002F79BA File Offset: 0x002F5BBA
+	// Token: 0x06007D79 RID: 32121 RVA: 0x002F960C File Offset: 0x002F780C
 	public void HandleLootSlotChangedEvent(int _slotNumber, ItemStack _stack)
 	{
 		this.localTileEntity.UpdateSlot(_slotNumber, _stack);
 		this.localTileEntity.SetModified();
+		base.updateSearch();
 	}
 
-	// Token: 0x06007D2B RID: 32043 RVA: 0x002F79D4 File Offset: 0x002F5BD4
+	// Token: 0x06007D7A RID: 32122 RVA: 0x002F962C File Offset: 0x002F782C
 	public void OnTileEntityChanged(ITileEntity _te)
 	{
 		ItemStackGrid itemGrid = this.localTileEntity.ItemGrid;
@@ -84,9 +81,10 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 			xuiC_ItemStack.ItemStack = itemGrid[i];
 			xuiC_ItemStack.SlotChangedEvent += this.HandleLootSlotChangedEvent;
 		}
+		base.updateSearch();
 	}
 
-	// Token: 0x06007D2C RID: 32044 RVA: 0x002F7A38 File Offset: 0x002F5C38
+	// Token: 0x06007D7B RID: 32123 RVA: 0x002F9694 File Offset: 0x002F7894
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -98,7 +96,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		this.localTileEntity.Destroyed += this.LocalTileEntity_Destroyed;
 	}
 
-	// Token: 0x06007D2D RID: 32045 RVA: 0x002F7A98 File Offset: 0x002F5C98
+	// Token: 0x06007D7C RID: 32124 RVA: 0x002F96F4 File Offset: 0x002F78F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LocalTileEntity_Destroyed(ITileEntity _te)
 	{
@@ -113,7 +111,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		}
 	}
 
-	// Token: 0x06007D2E RID: 32046 RVA: 0x002F7AE8 File Offset: 0x002F5CE8
+	// Token: 0x06007D7D RID: 32125 RVA: 0x002F9744 File Offset: 0x002F7944
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -130,7 +128,23 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		}
 	}
 
-	// Token: 0x04005CD6 RID: 23766
+	// Token: 0x06007D7E RID: 32126 RVA: 0x002F97C9 File Offset: 0x002F79C9
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void dropItemToGrid(ItemStack _dropStack)
+	{
+		base.dropItemToGrid(_dropStack);
+		if (XUiM_LootContainer.AddItem(_dropStack, this.xui))
+		{
+			_dropStack.count = 0;
+		}
+	}
+
+	// Token: 0x04005D10 RID: 23824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureStorage localTileEntity;
+
+	// Token: 0x04005D11 RID: 23825
+	[XuiBindComponent(true)]
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly XUiV_Grid grid;
 }

@@ -4,17 +4,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B2 RID: 1458
+// Token: 0x020005B9 RID: 1465
 [Preserve]
 public class ItemActionGainSkill : ItemAction
 {
-	// Token: 0x06002FDD RID: 12253 RVA: 0x00131257 File Offset: 0x0012F457
+	// Token: 0x06002FEB RID: 12267 RVA: 0x00131E4B File Offset: 0x0013004B
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionGainSkill.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FDE RID: 12254 RVA: 0x00131260 File Offset: 0x0012F460
+	// Token: 0x06002FEC RID: 12268 RVA: 0x00131E54 File Offset: 0x00130054
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -42,14 +42,14 @@ public class ItemActionGainSkill : ItemAction
 		this.Description = _props.Values["Description"];
 	}
 
-	// Token: 0x06002FDF RID: 12255 RVA: 0x0013131B File Offset: 0x0012F51B
+	// Token: 0x06002FED RID: 12269 RVA: 0x00131F0F File Offset: 0x0013010F
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionGainSkill.MyInventoryData)_data).bReadingStarted = false;
 	}
 
-	// Token: 0x06002FE0 RID: 12256 RVA: 0x00131330 File Offset: 0x0012F530
+	// Token: 0x06002FEE RID: 12270 RVA: 0x00131F24 File Offset: 0x00130124
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -65,14 +65,14 @@ public class ItemActionGainSkill : ItemAction
 		((ItemActionGainSkill.MyInventoryData)_actionData).bReadingStarted = true;
 	}
 
-	// Token: 0x06002FE1 RID: 12257 RVA: 0x00131380 File Offset: 0x0012F580
+	// Token: 0x06002FEF RID: 12271 RVA: 0x00131F74 File Offset: 0x00130174
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionGainSkill.MyInventoryData myInventoryData = (ItemActionGainSkill.MyInventoryData)_actionData;
 		return myInventoryData.bReadingStarted && Time.time - myInventoryData.lastUseTime < 2f * AnimationDelayData.AnimationDelay[myInventoryData.invData.item.HoldType.Value].RayCast;
 	}
 
-	// Token: 0x06002FE2 RID: 12258 RVA: 0x001313D8 File Offset: 0x0012F5D8
+	// Token: 0x06002FF0 RID: 12272 RVA: 0x00131FCC File Offset: 0x001301CC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionGainSkill.MyInventoryData myInventoryData = (ItemActionGainSkill.MyInventoryData)_actionData;
@@ -119,7 +119,7 @@ public class ItemActionGainSkill : ItemAction
 		}
 	}
 
-	// Token: 0x06002FE3 RID: 12259 RVA: 0x00131584 File Offset: 0x0012F784
+	// Token: 0x06002FF1 RID: 12273 RVA: 0x00132178 File Offset: 0x00130378
 	public override void GetItemValueActionInfo(ref List<string> _infoList, ItemValue _itemValue, XUi _xui, int _actionIndex = 0)
 	{
 		for (int i = 0; i < this.SkillsToGain.Length; i++)
@@ -128,26 +128,26 @@ public class ItemActionGainSkill : ItemAction
 		}
 	}
 
-	// Token: 0x040024E2 RID: 9442
+	// Token: 0x040024FD RID: 9469
 	public string[] SkillsToGain;
 
-	// Token: 0x040024E3 RID: 9443
+	// Token: 0x040024FE RID: 9470
 	public new string Title;
 
-	// Token: 0x040024E4 RID: 9444
+	// Token: 0x040024FF RID: 9471
 	public new string Description;
 
-	// Token: 0x020005B3 RID: 1459
+	// Token: 0x020005BA RID: 1466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06002FE5 RID: 12261 RVA: 0x0012B224 File Offset: 0x00129424
+		// Token: 0x06002FF3 RID: 12275 RVA: 0x0012BE18 File Offset: 0x0012A018
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040024E5 RID: 9445
+		// Token: 0x04002500 RID: 9472
 		public bool bReadingStarted;
 	}
 }

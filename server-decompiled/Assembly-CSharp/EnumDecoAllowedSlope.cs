@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000C33 RID: 3123
+// Token: 0x02000C3E RID: 3134
 public enum EnumDecoAllowedSlope : byte
 {
-	// Token: 0x040049E2 RID: 18914
+	// Token: 0x04004A07 RID: 18951
 	Flat,
-	// Token: 0x040049E3 RID: 18915
+	// Token: 0x04004A08 RID: 18952
 	Sloped,
-	// Token: 0x040049E4 RID: 18916
+	// Token: 0x04004A09 RID: 18953
 	Steep,
-	// Token: 0x040049E5 RID: 18917
+	// Token: 0x04004A0A RID: 18954
 	Unused
 }

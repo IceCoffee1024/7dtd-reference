@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Globalization;
 
-// Token: 0x02000911 RID: 2321
+// Token: 0x0200091B RID: 2331
 public class PowerGenerator : PowerSource
 {
-	// Token: 0x17000734 RID: 1844
-	// (get) Token: 0x0600429A RID: 17050 RVA: 0x000809CD File Offset: 0x0007EBCD
+	// Token: 0x1700073A RID: 1850
+	// (get) Token: 0x060042BD RID: 17085 RVA: 0x00080BF2 File Offset: 0x0007EDF2
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -14,8 +14,8 @@ public class PowerGenerator : PowerSource
 		}
 	}
 
-	// Token: 0x17000735 RID: 1845
-	// (get) Token: 0x0600429B RID: 17051 RVA: 0x001A2841 File Offset: 0x001A0A41
+	// Token: 0x1700073B RID: 1851
+	// (get) Token: 0x060042BE RID: 17086 RVA: 0x001A38E9 File Offset: 0x001A1AE9
 	public override string OnSound
 	{
 		get
@@ -24,8 +24,8 @@ public class PowerGenerator : PowerSource
 		}
 	}
 
-	// Token: 0x17000736 RID: 1846
-	// (get) Token: 0x0600429C RID: 17052 RVA: 0x001A2848 File Offset: 0x001A0A48
+	// Token: 0x1700073C RID: 1852
+	// (get) Token: 0x060042BF RID: 17087 RVA: 0x001A38F0 File Offset: 0x001A1AF0
 	public override string OffSound
 	{
 		get
@@ -34,28 +34,28 @@ public class PowerGenerator : PowerSource
 		}
 	}
 
-	// Token: 0x0600429D RID: 17053 RVA: 0x001A284F File Offset: 0x001A0A4F
+	// Token: 0x060042C0 RID: 17088 RVA: 0x001A38F7 File Offset: 0x001A1AF7
 	public override void read(PooledBinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
 		this.CurrentFuel = _br.ReadUInt16();
 	}
 
-	// Token: 0x0600429E RID: 17054 RVA: 0x001A2865 File Offset: 0x001A0A65
+	// Token: 0x060042C1 RID: 17089 RVA: 0x001A390D File Offset: 0x001A1B0D
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.CurrentFuel);
 	}
 
-	// Token: 0x0600429F RID: 17055 RVA: 0x001A287A File Offset: 0x001A0A7A
+	// Token: 0x060042C2 RID: 17090 RVA: 0x001A3922 File Offset: 0x001A1B22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool ShouldAutoTurnOff()
 	{
 		return this.CurrentFuel <= 0;
 	}
 
-	// Token: 0x060042A0 RID: 17056 RVA: 0x001A2888 File Offset: 0x001A0A88
+	// Token: 0x060042C3 RID: 17091 RVA: 0x001A3930 File Offset: 0x001A1B30
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void TickPowerGeneration()
 	{
@@ -66,7 +66,7 @@ public class PowerGenerator : PowerSource
 		}
 	}
 
-	// Token: 0x060042A1 RID: 17057 RVA: 0x001A28D8 File Offset: 0x001A0AD8
+	// Token: 0x060042C4 RID: 17092 RVA: 0x001A3980 File Offset: 0x001A1B80
 	public override void SetValuesFromBlock()
 	{
 		base.SetValuesFromBlock();
@@ -91,12 +91,12 @@ public class PowerGenerator : PowerSource
 		this.OutputPerFuel = 100f;
 	}
 
-	// Token: 0x0400361C RID: 13852
+	// Token: 0x0400363C RID: 13884
 	public ushort CurrentFuel;
 
-	// Token: 0x0400361D RID: 13853
+	// Token: 0x0400363D RID: 13885
 	public ushort MaxFuel;
 
-	// Token: 0x0400361E RID: 13854
+	// Token: 0x0400363E RID: 13886
 	public float OutputPerFuel;
 }

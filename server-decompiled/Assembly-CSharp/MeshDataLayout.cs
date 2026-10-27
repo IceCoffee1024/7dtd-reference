@@ -1,44 +1,44 @@
 ﻿using System;
 
-// Token: 0x02000B6B RID: 2923
+// Token: 0x02000B76 RID: 2934
 public struct MeshDataLayout
 {
-	// Token: 0x04004458 RID: 17496
+	// Token: 0x0400447D RID: 17533
 	public int Stride;
 
-	// Token: 0x04004459 RID: 17497
+	// Token: 0x0400447E RID: 17534
 	public int PositionSize;
 
-	// Token: 0x0400445A RID: 17498
+	// Token: 0x0400447F RID: 17535
 	public int PositionOffset;
 
-	// Token: 0x0400445B RID: 17499
+	// Token: 0x04004480 RID: 17536
 	public int NormalSize;
 
-	// Token: 0x0400445C RID: 17500
+	// Token: 0x04004481 RID: 17537
 	public int NormalOffset;
 
-	// Token: 0x0400445D RID: 17501
+	// Token: 0x04004482 RID: 17538
 	public int TangentSize;
 
-	// Token: 0x0400445E RID: 17502
+	// Token: 0x04004483 RID: 17539
 	public int TangentOffset;
 
-	// Token: 0x0400445F RID: 17503
+	// Token: 0x04004484 RID: 17540
 	public int ColorSize;
 
-	// Token: 0x04004460 RID: 17504
+	// Token: 0x04004485 RID: 17541
 	public int ColorOffset;
 
-	// Token: 0x04004461 RID: 17505
+	// Token: 0x04004486 RID: 17542
 	public int TexCoord0Size;
 
-	// Token: 0x04004462 RID: 17506
+	// Token: 0x04004487 RID: 17543
 	public int TexCoord0Offset;
 
-	// Token: 0x04004463 RID: 17507
+	// Token: 0x04004488 RID: 17544
 	public int TexCoord1Size;
 
-	// Token: 0x04004464 RID: 17508
+	// Token: 0x04004489 RID: 17545
 	public int TexCoord1Offset;
 }

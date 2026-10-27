@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using UnityEngine;
 
-// Token: 0x02000A04 RID: 2564
+// Token: 0x02000A0E RID: 2574
 public class GameRandomManager
 {
-	// Token: 0x17000842 RID: 2114
-	// (get) Token: 0x06004C17 RID: 19479 RVA: 0x001D9ACD File Offset: 0x001D7CCD
+	// Token: 0x17000848 RID: 2120
+	// (get) Token: 0x06004C3B RID: 19515 RVA: 0x001DABB5 File Offset: 0x001D8DB5
 	public static GameRandomManager Instance
 	{
 		get
@@ -21,14 +21,14 @@ public class GameRandomManager
 		}
 	}
 
-	// Token: 0x06004C18 RID: 19480 RVA: 0x001D9B04 File Offset: 0x001D7D04
+	// Token: 0x06004C3C RID: 19516 RVA: 0x001DABEC File Offset: 0x001D8DEC
 	public void SetBaseSeed(int _baseSeed)
 	{
 		this.baseSeed = _baseSeed;
 	}
 
-	// Token: 0x17000843 RID: 2115
-	// (get) Token: 0x06004C19 RID: 19481 RVA: 0x001D9B0D File Offset: 0x001D7D0D
+	// Token: 0x17000849 RID: 2121
+	// (get) Token: 0x06004C3D RID: 19517 RVA: 0x001DABF5 File Offset: 0x001D8DF5
 	public int BaseSeed
 	{
 		get
@@ -37,13 +37,13 @@ public class GameRandomManager
 		}
 	}
 
-	// Token: 0x06004C1A RID: 19482 RVA: 0x001D9B15 File Offset: 0x001D7D15
+	// Token: 0x06004C3E RID: 19518 RVA: 0x001DABFD File Offset: 0x001D8DFD
 	public GameRandom CreateGameRandom()
 	{
 		return this.CreateGameRandom(this.baseSeed);
 	}
 
-	// Token: 0x06004C1B RID: 19483 RVA: 0x001D9B23 File Offset: 0x001D7D23
+	// Token: 0x06004C3F RID: 19519 RVA: 0x001DAC0B File Offset: 0x001D8E0B
 	public GameRandom CreateGameRandom(int _seed)
 	{
 		GameRandom gameRandom = this.pool.AllocSync(false);
@@ -51,7 +51,7 @@ public class GameRandomManager
 		return gameRandom;
 	}
 
-	// Token: 0x06004C1C RID: 19484 RVA: 0x001D9B38 File Offset: 0x001D7D38
+	// Token: 0x06004C40 RID: 19520 RVA: 0x001DAC20 File Offset: 0x001D8E20
 	public void FreeGameRandom(GameRandom _gameRandom)
 	{
 		if (_gameRandom == null)
@@ -61,14 +61,14 @@ public class GameRandomManager
 		this.pool.FreeSync(_gameRandom);
 	}
 
-	// Token: 0x06004C1D RID: 19485 RVA: 0x001D9B4A File Offset: 0x001D7D4A
+	// Token: 0x06004C41 RID: 19521 RVA: 0x001DAC32 File Offset: 0x001D8E32
 	public GameRandom GetTempGameRandom(int _seed)
 	{
 		this.tempRandom.SetSeed(_seed);
 		return this.tempRandom;
 	}
 
-	// Token: 0x06004C1E RID: 19486 RVA: 0x001D9B60 File Offset: 0x001D7D60
+	// Token: 0x06004C42 RID: 19522 RVA: 0x001DAC48 File Offset: 0x001D8E48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void log(string _format, params object[] _values)
 	{
@@ -93,31 +93,31 @@ public class GameRandomManager
 		Log.Warning(string.Format("{0} GameRandomManager ", num.ToCultureInvariantString()) + _format, _values);
 	}
 
-	// Token: 0x04003BE4 RID: 15332
+	// Token: 0x04003C05 RID: 15365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameRandomManager instance;
 
-	// Token: 0x04003BE5 RID: 15333
+	// Token: 0x04003C06 RID: 15366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int baseSeed;
 
-	// Token: 0x04003BE6 RID: 15334
+	// Token: 0x04003C07 RID: 15367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryPooledObject<GameRandom> pool = new MemoryPooledObject<GameRandom>(30);
 
-	// Token: 0x04003BE7 RID: 15335
+	// Token: 0x04003C08 RID: 15368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameRandom tempRandom;
 
-	// Token: 0x04003BE8 RID: 15336
+	// Token: 0x04003C09 RID: 15369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cLogMax = 10;
 
-	// Token: 0x04003BE9 RID: 15337
+	// Token: 0x04003C0A RID: 15370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float logTime;
 
-	// Token: 0x04003BEA RID: 15338
+	// Token: 0x04003C0B RID: 15371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int logCount;
 }

@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02001141 RID: 4417
+// Token: 0x02001151 RID: 4433
 public class XUiM_LootContainer : XUiModel
 {
-	// Token: 0x06008B41 RID: 35649 RVA: 0x00352CBC File Offset: 0x00350EBC
+	// Token: 0x06008B95 RID: 35733 RVA: 0x00354D6C File Offset: 0x00352F6C
 	public static bool AddItem(ItemStack _itemStack, XUi _xui)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.LootContainer, -1))
@@ -20,7 +20,7 @@ public class XUiM_LootContainer : XUiModel
 		return _itemStack.count > 0 && _xui.LootContainer.AddItem(_itemStack);
 	}
 
-	// Token: 0x06008B42 RID: 35650 RVA: 0x00352CFC File Offset: 0x00350EFC
+	// Token: 0x06008B96 RID: 35734 RVA: 0x00354DAC File Offset: 0x00352FAC
 	[return: TupleElementNames(new string[] { "_allMoved", "_anyMoved" })]
 	public static ValueTuple<bool, bool> StashItems(XUiController _srcWindow, XUiC_ItemStackGrid _srcGrid, IInventory _dstInventory, int _ignoreSlots, PackedBoolArray _ignoredSlots, XUiM_LootContainer.EItemMoveKind _moveKind, bool _startBottomRight)
 	{
@@ -98,24 +98,24 @@ public class XUiM_LootContainer : XUiModel
 		return new ValueTuple<bool, bool>(flag, flag2);
 	}
 
-	// Token: 0x0400674D RID: 26445
+	// Token: 0x0400678D RID: 26509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastStashTime;
 
-	// Token: 0x0400674E RID: 26446
+	// Token: 0x0400678E RID: 26510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SecondClickMaxDelaySec = 2f;
 
-	// Token: 0x02001142 RID: 4418
+	// Token: 0x02001152 RID: 4434
 	public enum EItemMoveKind
 	{
-		// Token: 0x04006750 RID: 26448
+		// Token: 0x04006790 RID: 26512
 		All,
-		// Token: 0x04006751 RID: 26449
+		// Token: 0x04006791 RID: 26513
 		FillOnly,
-		// Token: 0x04006752 RID: 26450
+		// Token: 0x04006792 RID: 26514
 		FillAndCreate,
-		// Token: 0x04006753 RID: 26451
+		// Token: 0x04006793 RID: 26515
 		FillOnlyFirstCreateSecond
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x02000697 RID: 1687
+// Token: 0x0200069E RID: 1694
 public class IsLookingAtEntity : IsLookingAtBlock
 {
-	// Token: 0x06003593 RID: 13715 RVA: 0x0016148C File Offset: 0x0015F68C
+	// Token: 0x060035A1 RID: 13729 RVA: 0x00162080 File Offset: 0x00160280
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -25,11 +25,11 @@ public class IsLookingAtEntity : IsLookingAtBlock
 		return flag;
 	}
 
-	// Token: 0x04002B49 RID: 11081
+	// Token: 0x04002B64 RID: 11108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new FastTags<TagGroup.Global> tagsToCompare;
 
-	// Token: 0x04002B4A RID: 11082
+	// Token: 0x04002B65 RID: 11109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new bool hasAllTags;
 }

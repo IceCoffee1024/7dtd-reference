@@ -2,10 +2,10 @@
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02001510 RID: 5392
+// Token: 0x02001522 RID: 5410
 public static class ValueDisplayFormatters
 {
-	// Token: 0x0600A911 RID: 43281 RVA: 0x003EFD54 File Offset: 0x003EDF54
+	// Token: 0x0600A969 RID: 43369 RVA: 0x003F2158 File Offset: 0x003F0358
 	public static double RoundToSignificantDigits(this double _value, int _digits)
 	{
 		if (_value == 0.0)
@@ -16,7 +16,7 @@ public static class ValueDisplayFormatters
 		return num * Math.Round(_value / num, _digits);
 	}
 
-	// Token: 0x0600A912 RID: 43282 RVA: 0x003EFDAC File Offset: 0x003EDFAC
+	// Token: 0x0600A96A RID: 43370 RVA: 0x003F21B0 File Offset: 0x003F03B0
 	public static string FormatNumberWithMetricPrefix(this double _value, bool _allowDecimals = true, int _significantDigits = 3)
 	{
 		int num = 5;
@@ -60,8 +60,8 @@ public static class ValueDisplayFormatters
 		return _value.ToCultureInvariantString("g");
 	}
 
-	// Token: 0x170013F6 RID: 5110
-	// (get) Token: 0x0600A913 RID: 43283 RVA: 0x003EFEFB File Offset: 0x003EE0FB
+	// Token: 0x17001402 RID: 5122
+	// (get) Token: 0x0600A96B RID: 43371 RVA: 0x003F22FF File Offset: 0x003F04FF
 	public static bool UseEnglishCardinalDirections
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -71,8 +71,8 @@ public static class ValueDisplayFormatters
 		}
 	}
 
-	// Token: 0x170013F7 RID: 5111
-	// (get) Token: 0x0600A914 RID: 43284 RVA: 0x003EFF07 File Offset: 0x003EE107
+	// Token: 0x17001403 RID: 5123
+	// (get) Token: 0x0600A96C RID: 43372 RVA: 0x003F230B File Offset: 0x003F050B
 	public static string CardinalDirectionsLanguage
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -86,13 +86,13 @@ public static class ValueDisplayFormatters
 		}
 	}
 
-	// Token: 0x0600A915 RID: 43285 RVA: 0x003EFF17 File Offset: 0x003EE117
+	// Token: 0x0600A96D RID: 43373 RVA: 0x003F231B File Offset: 0x003F051B
 	public static string WorldPos(Vector3 _pos, string _delim = " ", bool _useLongGeoDirs = false)
 	{
 		return ValueDisplayFormatters.WorldPosLongitude(_pos, _useLongGeoDirs) + _delim + ValueDisplayFormatters.WorldPosLatitude(_pos, _useLongGeoDirs);
 	}
 
-	// Token: 0x0600A916 RID: 43286 RVA: 0x003EFF30 File Offset: 0x003EE130
+	// Token: 0x0600A96E RID: 43374 RVA: 0x003F2334 File Offset: 0x003F0534
 	public static string WorldPosLatitude(Vector3 _pos, bool _useLongGeoDirs = false)
 	{
 		string cardinalDirectionsLanguage = ValueDisplayFormatters.CardinalDirectionsLanguage;
@@ -101,7 +101,7 @@ public static class ValueDisplayFormatters
 		return string.Format(Localization.Get("geoLocationSingleAxis", false, cardinalDirectionsLanguage), text2, text);
 	}
 
-	// Token: 0x0600A917 RID: 43287 RVA: 0x003EFFA8 File Offset: 0x003EE1A8
+	// Token: 0x0600A96F RID: 43375 RVA: 0x003F23AC File Offset: 0x003F05AC
 	public static string WorldPosLongitude(Vector3 _pos, bool _useLongGeoDirs = false)
 	{
 		string cardinalDirectionsLanguage = ValueDisplayFormatters.CardinalDirectionsLanguage;
@@ -110,14 +110,14 @@ public static class ValueDisplayFormatters
 		return string.Format(Localization.Get("geoLocationSingleAxis", false, cardinalDirectionsLanguage), text2, text);
 	}
 
-	// Token: 0x0600A918 RID: 43288 RVA: 0x003F0020 File Offset: 0x003EE220
+	// Token: 0x0600A970 RID: 43376 RVA: 0x003F2424 File Offset: 0x003F0624
 	public static string Direction(GameUtils.DirEightWay _direction, bool _useLongGeoDirs = false)
 	{
 		string cardinalDirectionsLanguage = ValueDisplayFormatters.CardinalDirectionsLanguage;
 		return Localization.Get("geoDirection" + _direction.ToStringCached<GameUtils.DirEightWay>() + (_useLongGeoDirs ? "Long" : ""), false, cardinalDirectionsLanguage);
 	}
 
-	// Token: 0x0600A919 RID: 43289 RVA: 0x003F005C File Offset: 0x003EE25C
+	// Token: 0x0600A971 RID: 43377 RVA: 0x003F2460 File Offset: 0x003F0660
 	public static string WorldTime(ulong _worldTime, string _format)
 	{
 		ValueTuple<int, int, int> valueTuple = GameUtils.WorldTimeToElements(_worldTime);
@@ -127,7 +127,7 @@ public static class ValueDisplayFormatters
 		return string.Format(_format, item, item2, item3);
 	}
 
-	// Token: 0x0600A91A RID: 43290 RVA: 0x003F009C File Offset: 0x003EE29C
+	// Token: 0x0600A972 RID: 43378 RVA: 0x003F24A0 File Offset: 0x003F06A0
 	public static string Distance(float _distance, bool _useLongDistanceName)
 	{
 		string text = Localization.Get("geoDistanceTemplate", false, null);
@@ -145,13 +145,13 @@ public static class ValueDisplayFormatters
 		return string.Format(text, _distance.ToCultureInvariantString("0.0"), text2);
 	}
 
-	// Token: 0x0600A91B RID: 43291 RVA: 0x003F0132 File Offset: 0x003EE332
+	// Token: 0x0600A973 RID: 43379 RVA: 0x003F2536 File Offset: 0x003F0736
 	public static string Distance(float _distance)
 	{
 		return ValueDisplayFormatters.Distance(_distance, false);
 	}
 
-	// Token: 0x0600A91C RID: 43292 RVA: 0x003F013C File Offset: 0x003EE33C
+	// Token: 0x0600A974 RID: 43380 RVA: 0x003F2540 File Offset: 0x003F0740
 	public static string DateAge(DateTime _dateTime)
 	{
 		TimeSpan timeSpan = DateTime.Now - _dateTime;
@@ -174,7 +174,7 @@ public static class ValueDisplayFormatters
 		return string.Format(Localization.Get("timeAgeYears", false, null), Mathf.RoundToInt((float)(timeSpan.TotalDays / 365.0)));
 	}
 
-	// Token: 0x0600A91D RID: 43293 RVA: 0x003F0270 File Offset: 0x003EE470
+	// Token: 0x0600A975 RID: 43381 RVA: 0x003F2674 File Offset: 0x003F0874
 	public static string Temperature(float _fahrenheit, int _decimals = -1)
 	{
 		string text = "°F";
@@ -194,7 +194,7 @@ public static class ValueDisplayFormatters
 		return _fahrenheit.ToString(string.Format("F{0}", _decimals)) + text;
 	}
 
-	// Token: 0x0600A91E RID: 43294 RVA: 0x003F02CC File Offset: 0x003EE4CC
+	// Token: 0x0600A976 RID: 43382 RVA: 0x003F26D0 File Offset: 0x003F08D0
 	public static string TemperatureRelative(float _fahrenheit, int _decimals)
 	{
 		string text = "°F";
@@ -206,7 +206,7 @@ public static class ValueDisplayFormatters
 		return ((_fahrenheit >= 0f) ? "+" : "") + _fahrenheit.ToString(string.Format("F{0}", _decimals)) + text;
 	}
 
-	// Token: 0x0600A91F RID: 43295 RVA: 0x003F032C File Offset: 0x003EE52C
+	// Token: 0x0600A977 RID: 43383 RVA: 0x003F2730 File Offset: 0x003F0930
 	public static string RomanNumber(int _value)
 	{
 		if (_value <= 0)
@@ -280,13 +280,13 @@ public static class ValueDisplayFormatters
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A920 RID: 43296 RVA: 0x003F04C4 File Offset: 0x003EE6C4
+	// Token: 0x0600A978 RID: 43384 RVA: 0x003F28C8 File Offset: 0x003F0AC8
 	public static string MemoryMiB(long _bytes)
 	{
 		return (_bytes / 1024L / 1024L).ToString() + " MiB";
 	}
 
-	// Token: 0x04007D54 RID: 32084
+	// Token: 0x04007D95 RID: 32149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] metricPrefixes = new char[]
 	{
@@ -294,11 +294,11 @@ public static class ValueDisplayFormatters
 		'P'
 	};
 
-	// Token: 0x04007D55 RID: 32085
+	// Token: 0x04007D96 RID: 32150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BaseMetricPrefixIndex = 5;
 
-	// Token: 0x04007D56 RID: 32086
+	// Token: 0x04007D97 RID: 32151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] romanNumbers = new string[]
 	{

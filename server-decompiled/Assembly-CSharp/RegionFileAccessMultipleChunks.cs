@@ -4,17 +4,17 @@ using System.IO;
 using Unity.Profiling;
 using UnityEngine;
 
-// Token: 0x02000B9E RID: 2974
+// Token: 0x02000BA9 RID: 2985
 public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 {
-	// Token: 0x060059A1 RID: 22945 RVA: 0x00226F0A File Offset: 0x0022510A
+	// Token: 0x060059C6 RID: 22982 RVA: 0x00228466 File Offset: 0x00226666
 	public RegionFileAccessMultipleChunks()
 	{
 		this.writeStream = new ChunkMemoryStreamWriter();
 		this.readStream = new ChunkMemoryStreamReader();
 	}
 
-	// Token: 0x060059A2 RID: 22946 RVA: 0x00226F40 File Offset: 0x00225140
+	// Token: 0x060059C7 RID: 22983 RVA: 0x0022849C File Offset: 0x0022669C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void ReadDirectory(string _dir, Action<long, string, uint> _chunkAndTimeStampHandler, int chunksPerRegionPerDimension)
 	{
@@ -62,7 +62,7 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		}
 	}
 
-	// Token: 0x060059A3 RID: 22947 RVA: 0x0022706C File Offset: 0x0022526C
+	// Token: 0x060059C8 RID: 22984 RVA: 0x002285C8 File Offset: 0x002267C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFile GetRFC(int _regionX, int _regionZ, string _dir, string _ext)
 	{
@@ -94,22 +94,22 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		return regionFile2;
 	}
 
-	// Token: 0x060059A4 RID: 22948
+	// Token: 0x060059C9 RID: 22985
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract RegionFile OpenRegionFile(string _dir, int _regionX, int _regionZ, string _ext);
 
-	// Token: 0x060059A5 RID: 22949
+	// Token: 0x060059CA RID: 22986
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void GetRegionCoords(int _chunkX, int _chunkZ, out int _regionX, out int _regionZ);
 
-	// Token: 0x060059A6 RID: 22950 RVA: 0x0022711C File Offset: 0x0022531C
+	// Token: 0x060059CB RID: 22987 RVA: 0x00228678 File Offset: 0x00226878
 	public override Stream GetOutputStream(string _dir, int _chunkX, int _chunkZ, string _ext)
 	{
 		this.writeStream.Init(this, _dir, _chunkX, _chunkZ, _ext);
 		return this.writeStream;
 	}
 
-	// Token: 0x060059A7 RID: 22951 RVA: 0x00227138 File Offset: 0x00225338
+	// Token: 0x060059CC RID: 22988 RVA: 0x00228694 File Offset: 0x00226894
 	public override Stream GetInputStream(string _dir, int _chunkX, int _chunkZ, string _ext)
 	{
 		int num;
@@ -125,7 +125,7 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		return this.readStream;
 	}
 
-	// Token: 0x060059A8 RID: 22952 RVA: 0x0022718C File Offset: 0x0022538C
+	// Token: 0x060059CD RID: 22989 RVA: 0x002286E8 File Offset: 0x002268E8
 	public void Write(string _dir, int _chunkX, int _chunkZ, string _ext, byte[] _buf, int _bufLength)
 	{
 		int num;
@@ -134,14 +134,14 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		this.GetRFC(num, num2, _dir, _ext).WriteData(_chunkX, _chunkZ, _bufLength, 0, _buf, true);
 	}
 
-	// Token: 0x060059A9 RID: 22953 RVA: 0x002271BD File Offset: 0x002253BD
+	// Token: 0x060059CE RID: 22990 RVA: 0x00228719 File Offset: 0x00226919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int MediumIntByteArrayToInt(byte[] bytes)
 	{
 		return (int)bytes[0] | ((int)bytes[1] << 8) | ((int)bytes[2] << 16);
 	}
 
-	// Token: 0x060059AA RID: 22954 RVA: 0x002271D0 File Offset: 0x002253D0
+	// Token: 0x060059CF RID: 22991 RVA: 0x0022872C File Offset: 0x0022692C
 	public override void Remove(string _dir, int _chunkX, int _chunkZ)
 	{
 		int num;
@@ -170,7 +170,7 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		}
 	}
 
-	// Token: 0x060059AB RID: 22955 RVA: 0x002272A0 File Offset: 0x002254A0
+	// Token: 0x060059D0 RID: 22992 RVA: 0x002287FC File Offset: 0x002269FC
 	public override void OptimizeLayouts()
 	{
 		foreach (RegionFile regionFile in this.regionsWithRemovedChunks)
@@ -195,14 +195,14 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		this.regionsWithRemovedChunks.Clear();
 	}
 
-	// Token: 0x060059AC RID: 22956 RVA: 0x00227358 File Offset: 0x00225558
+	// Token: 0x060059D1 RID: 22993 RVA: 0x002288B4 File Offset: 0x00226AB4
 	public override void Close()
 	{
 		this.OptimizeLayouts();
 		this.ClearCache();
 	}
 
-	// Token: 0x060059AD RID: 22957 RVA: 0x00227368 File Offset: 0x00225568
+	// Token: 0x060059D2 RID: 22994 RVA: 0x002288C4 File Offset: 0x00226AC4
 	public override void ClearCache()
 	{
 		Dictionary<string, RegionFileAccessMultipleChunks.Region> dictionary = this.regionTable;
@@ -225,7 +225,7 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		}
 	}
 
-	// Token: 0x060059AE RID: 22958 RVA: 0x00227484 File Offset: 0x00225684
+	// Token: 0x060059D3 RID: 22995 RVA: 0x002289E0 File Offset: 0x00226BE0
 	public override void RemoveRegionFromCache(int _regionX, int _regionZ, string _dir)
 	{
 		Dictionary<string, RegionFileAccessMultipleChunks.Region> dictionary = this.regionTable;
@@ -250,7 +250,7 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		}
 	}
 
-	// Token: 0x060059AF RID: 22959 RVA: 0x00227540 File Offset: 0x00225740
+	// Token: 0x060059D4 RID: 22996 RVA: 0x00228A9C File Offset: 0x00226C9C
 	public override int GetChunkByteCount(string _dir, int _chunkX, int _chunkZ)
 	{
 		int num;
@@ -278,7 +278,7 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		return num3;
 	}
 
-	// Token: 0x060059B0 RID: 22960 RVA: 0x00227604 File Offset: 0x00225804
+	// Token: 0x060059D5 RID: 22997 RVA: 0x00228B60 File Offset: 0x00226D60
 	public override long GetTotalByteCount(string _dir)
 	{
 		long num = 0L;
@@ -299,38 +299,38 @@ public abstract class RegionFileAccessMultipleChunks : RegionFileAccessAbstract
 		return num;
 	}
 
-	// Token: 0x040045B4 RID: 17844
+	// Token: 0x040045D9 RID: 17881
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, RegionFileAccessMultipleChunks.Region> regionTable = new Dictionary<string, RegionFileAccessMultipleChunks.Region>();
 
-	// Token: 0x040045B5 RID: 17845
+	// Token: 0x040045DA RID: 17882
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<RegionFile> regionsWithRemovedChunks = new HashSet<RegionFile>();
 
-	// Token: 0x040045B6 RID: 17846
+	// Token: 0x040045DB RID: 17883
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkMemoryStreamWriter writeStream;
 
-	// Token: 0x040045B7 RID: 17847
+	// Token: 0x040045DC RID: 17884
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkMemoryStreamReader readStream;
 
-	// Token: 0x040045B8 RID: 17848
+	// Token: 0x040045DD RID: 17885
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_OptimizeLayoutsMarker = new ProfilerMarker("RegionFileAccess.OptimizeLayout");
 
-	// Token: 0x02000B9F RID: 2975
+	// Token: 0x02000BAA RID: 2986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Region : Dictionary<Vector2, RegionFileAccessMultipleChunks.RegionExtensions>
 	{
-		// Token: 0x060059B2 RID: 22962 RVA: 0x00227711 File Offset: 0x00225911
+		// Token: 0x060059D7 RID: 22999 RVA: 0x00228C6D File Offset: 0x00226E6D
 		public Region()
 			: base(Vector2EqualityComparer.Instance)
 		{
 		}
 	}
 
-	// Token: 0x02000BA0 RID: 2976
+	// Token: 0x02000BAB RID: 2987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class RegionExtensions : Dictionary<string, RegionFile>
 	{

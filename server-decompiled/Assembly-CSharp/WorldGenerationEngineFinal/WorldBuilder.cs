@@ -16,12 +16,12 @@ using UnityEngine.Experimental.Rendering;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200176F RID: 5999
+	// Token: 0x020017A0 RID: 6048
 	[BurstCompile(CompileSynchronously = true)]
 	public class WorldBuilder
 	{
-		// Token: 0x1700171D RID: 5917
-		// (get) Token: 0x0600BA7A RID: 47738 RVA: 0x00451DB3 File Offset: 0x0044FFB3
+		// Token: 0x17001765 RID: 5989
+		// (get) Token: 0x0600BB8E RID: 48014 RVA: 0x0045575F File Offset: 0x0045395F
 		public int HalfWorldSize
 		{
 			get
@@ -30,8 +30,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x1700171E RID: 5918
-		// (get) Token: 0x0600BA7B RID: 47739 RVA: 0x00451DBD File Offset: 0x0044FFBD
+		// Token: 0x17001766 RID: 5990
+		// (get) Token: 0x0600BB8F RID: 48015 RVA: 0x00455769 File Offset: 0x00453969
 		public Vector3i PrefabWorldOffset
 		{
 			get
@@ -40,8 +40,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x1700171F RID: 5919
-		// (get) Token: 0x0600BA7C RID: 47740 RVA: 0x00451DD3 File Offset: 0x0044FFD3
+		// Token: 0x17001767 RID: 5991
+		// (get) Token: 0x0600BB90 RID: 48016 RVA: 0x0045577F File Offset: 0x0045397F
 		public long SerializedSize
 		{
 			get
@@ -54,7 +54,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA7D RID: 47741 RVA: 0x00451DF4 File Offset: 0x0044FFF4
+		// Token: 0x0600BB91 RID: 48017 RVA: 0x004557A0 File Offset: 0x004539A0
 		public WorldBuilder(string _seed, int _worldSize, UserDataStorageType _storageLocation)
 		{
 			this.WorldSeedName = _seed;
@@ -101,7 +101,7 @@ namespace WorldGenerationEngineFinal
 			this.mainThreadSerializerBuffers = new MemoryStream[this.mainThreadSerializers.Length];
 		}
 
-		// Token: 0x0600BA7E RID: 47742 RVA: 0x00452234 File Offset: 0x00450434
+		// Token: 0x0600BB92 RID: 48018 RVA: 0x00455BE0 File Offset: 0x00453DE0
 		public WorldBuilder(int _worldSize)
 		{
 			this.WorldSize = _worldSize;
@@ -113,7 +113,7 @@ namespace WorldGenerationEngineFinal
 			this.InitStreetTiles();
 		}
 
-		// Token: 0x0600BA7F RID: 47743 RVA: 0x00452453 File Offset: 0x00450653
+		// Token: 0x0600BB93 RID: 48019 RVA: 0x00455DFF File Offset: 0x00453FFF
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator Init()
 		{
@@ -159,7 +159,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA80 RID: 47744 RVA: 0x00452464 File Offset: 0x00450664
+		// Token: 0x0600BB94 RID: 48020 RVA: 0x00455E10 File Offset: 0x00454010
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LocalizationInit()
 		{
@@ -191,7 +191,7 @@ namespace WorldGenerationEngineFinal
 			this.messageSmoothRoadTerrain = Localization.Get("xuiRwgSmoothRoadTerrain", false, null);
 		}
 
-		// Token: 0x0600BA81 RID: 47745 RVA: 0x00452648 File Offset: 0x00450848
+		// Token: 0x0600BB95 RID: 48021 RVA: 0x00455FF4 File Offset: 0x004541F4
 		public void SetBiomeWeight(BiomeType _type, int _weight)
 		{
 			switch (_type)
@@ -216,20 +216,20 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA82 RID: 47746 RVA: 0x00452697 File Offset: 0x00450897
+		// Token: 0x0600BB96 RID: 48022 RVA: 0x00456043 File Offset: 0x00454243
 		public static string GetWorldPath(UserDataStorageType _storageType, string _worldName)
 		{
 			return GameIO.GetUserGameDataDir(_storageType) + "/GeneratedWorlds/" + _worldName + "/";
 		}
 
-		// Token: 0x0600BA83 RID: 47747 RVA: 0x004526AF File Offset: 0x004508AF
+		// Token: 0x0600BB97 RID: 48023 RVA: 0x0045605B File Offset: 0x0045425B
 		public void SetStorageType(UserDataStorageType _storageType)
 		{
 			this.StorageLocation = _storageType;
 			this.WorldPath = WorldBuilder.GetWorldPath(_storageType, this.WorldName);
 		}
 
-		// Token: 0x0600BA84 RID: 47748 RVA: 0x004526CA File Offset: 0x004508CA
+		// Token: 0x0600BB98 RID: 48024 RVA: 0x00456076 File Offset: 0x00454276
 		public IEnumerator GenerateFromServer()
 		{
 			this.PreviewWindow = null;
@@ -241,7 +241,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA85 RID: 47749 RVA: 0x004526D9 File Offset: 0x004508D9
+		// Token: 0x0600BB99 RID: 48025 RVA: 0x00456085 File Offset: 0x00454285
 		public IEnumerator GenerateFromUI()
 		{
 			this.IsCanceled = false;
@@ -253,7 +253,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA86 RID: 47750 RVA: 0x004526E8 File Offset: 0x004508E8
+		// Token: 0x0600BB9A RID: 48026 RVA: 0x00456094 File Offset: 0x00454294
 		public IEnumerator FinishForPreview()
 		{
 			if (!this.IsCanceled)
@@ -268,7 +268,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA87 RID: 47751 RVA: 0x004526F7 File Offset: 0x004508F7
+		// Token: 0x0600BB9B RID: 48027 RVA: 0x004560A3 File Offset: 0x004542A3
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator GenerateData()
 		{
@@ -310,7 +310,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA88 RID: 47752 RVA: 0x00452708 File Offset: 0x00450908
+		// Token: 0x0600BB9C RID: 48028 RVA: 0x004560B4 File Offset: 0x004542B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateTask()
 		{
@@ -393,7 +393,7 @@ namespace WorldGenerationEngineFinal
 			this.FinalizeWater();
 		}
 
-		// Token: 0x0600BA89 RID: 47753 RVA: 0x00452980 File Offset: 0x00450B80
+		// Token: 0x0600BB9D RID: 48029 RVA: 0x0045632C File Offset: 0x0045452C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ThrowIfTaskFaulted(Task task, string taskName)
 		{
@@ -408,7 +408,7 @@ namespace WorldGenerationEngineFinal
 			throw new Exception("RWG task '" + taskName + "' failed.");
 		}
 
-		// Token: 0x0600BA8A RID: 47754 RVA: 0x004529D7 File Offset: 0x00450BD7
+		// Token: 0x0600BB9E RID: 48030 RVA: 0x00456383 File Offset: 0x00454583
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator SerializeData()
 		{
@@ -487,13 +487,13 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA8B RID: 47755 RVA: 0x004529E6 File Offset: 0x00450BE6
+		// Token: 0x0600BB9F RID: 48031 RVA: 0x00456392 File Offset: 0x00454592
 		public bool CanSaveData()
 		{
 			return !SdDirectory.Exists(this.WorldPath);
 		}
 
-		// Token: 0x0600BA8C RID: 47756 RVA: 0x004529F6 File Offset: 0x00450BF6
+		// Token: 0x0600BBA0 RID: 48032 RVA: 0x004563A2 File Offset: 0x004545A2
 		public IEnumerator SaveData(WorldBuilder.SaveDataPromptMode promptMode, XUiController parentController = null, Action onCancel = null, Action onDiscard = null, Action onConfirm = null)
 		{
 			WorldBuilder.<>c__DisplayClass126_0 CS$<>8__locals1 = new WorldBuilder.<>c__DisplayClass126_0();
@@ -620,7 +620,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BA8D RID: 47757 RVA: 0x00452A23 File Offset: 0x00450C23
+		// Token: 0x0600BBA1 RID: 48033 RVA: 0x004563CF File Offset: 0x004545CF
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<StreetTile> CalcPlayerSpawnTiles()
 		{
@@ -631,7 +631,7 @@ namespace WorldGenerationEngineFinal
 			return list;
 		}
 
-		// Token: 0x0600BA8E RID: 47758 RVA: 0x00452A58 File Offset: 0x00450C58
+		// Token: 0x0600BBA2 RID: 48034 RVA: 0x00456404 File Offset: 0x00454604
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float CalcClosestTraderDistance(StreetTile _st)
 		{
@@ -647,7 +647,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600BA8F RID: 47759 RVA: 0x00452AC0 File Offset: 0x00450CC0
+		// Token: 0x0600BBA3 RID: 48035 RVA: 0x0045646C File Offset: 0x0045466C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<StreetTile> getWildernessTilesToSmooth()
 		{
@@ -656,7 +656,7 @@ namespace WorldGenerationEngineFinal
 				select st).ToList<StreetTile>();
 		}
 
-		// Token: 0x0600BA90 RID: 47760 RVA: 0x00452AF8 File Offset: 0x00450CF8
+		// Token: 0x0600BBA4 RID: 48036 RVA: 0x004564A4 File Offset: 0x004546A4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InitStreetTiles()
 		{
@@ -672,7 +672,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA91 RID: 47761 RVA: 0x00452B90 File Offset: 0x00450D90
+		// Token: 0x0600BBA5 RID: 48037 RVA: 0x0045653C File Offset: 0x0045473C
 		public void CleanupGeneratedData()
 		{
 			this.roadDest = null;
@@ -689,7 +689,7 @@ namespace WorldGenerationEngineFinal
 			Rand.Instance.Cleanup();
 		}
 
-		// Token: 0x0600BA92 RID: 47762 RVA: 0x00452BF0 File Offset: 0x00450DF0
+		// Token: 0x0600BBA6 RID: 48038 RVA: 0x0045659C File Offset: 0x0045479C
 		public void Cleanup()
 		{
 			this.serializedTotalSize = 0L;
@@ -730,7 +730,7 @@ namespace WorldGenerationEngineFinal
 			this.IsFinished = true;
 		}
 
-		// Token: 0x0600BA93 RID: 47763 RVA: 0x00452CA4 File Offset: 0x00450EA4
+		// Token: 0x0600BBA7 RID: 48039 RVA: 0x00456650 File Offset: 0x00454850
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateTerrain()
 		{
@@ -768,7 +768,7 @@ namespace WorldGenerationEngineFinal
 			this.SetTaskMessage(this.messageTerrainGenerationFinished);
 		}
 
-		// Token: 0x0600BA94 RID: 47764 RVA: 0x00452E2C File Offset: 0x0045102C
+		// Token: 0x0600BBA8 RID: 48040 RVA: 0x004567D8 File Offset: 0x004549D8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateBaseStamps()
 		{
@@ -947,7 +947,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA95 RID: 47765 RVA: 0x00452FD8 File Offset: 0x004511D8
+		// Token: 0x0600BBA9 RID: 48041 RVA: 0x00456984 File Offset: 0x00454B84
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateTerrainFromTiles(TerrainType _terrainType, int _tileSize)
 		{
@@ -1041,7 +1041,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA96 RID: 47766 RVA: 0x00453290 File Offset: 0x00451490
+		// Token: 0x0600BBAA RID: 48042 RVA: 0x00456C3C File Offset: 0x00454E3C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DrawBiomeRadStampsToMaps()
 		{
@@ -1082,7 +1082,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600BA97 RID: 47767 RVA: 0x00453344 File Offset: 0x00451544
+		// Token: 0x0600BBAB RID: 48043 RVA: 0x00456CF0 File Offset: 0x00454EF0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ClearWaterUnderTerrain()
 		{
@@ -1097,15 +1097,15 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA98 RID: 47768 RVA: 0x0045341C File Offset: 0x0045161C
+		// Token: 0x0600BBAC RID: 48044 RVA: 0x00456DC8 File Offset: 0x00454FC8
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ClearWaterUnderTerrain(ref WorldBuilder.Data _data, ref NativeArray<float> _terrain, int startX, int endX, int startY, int endY)
 		{
-			WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.Invoke(ref _data, ref _terrain, startX, endX, startY, endY);
+			WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.Invoke(ref _data, ref _terrain, startX, endX, startY, endY);
 		}
 
-		// Token: 0x0600BA99 RID: 47769 RVA: 0x0045342C File Offset: 0x0045162C
+		// Token: 0x0600BBAD RID: 48045 RVA: 0x00456DD8 File Offset: 0x00454FD8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateTerrainLast()
 		{
@@ -1172,7 +1172,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600BA9A RID: 47770 RVA: 0x004535F4 File Offset: 0x004517F4
+		// Token: 0x0600BBAE RID: 48046 RVA: 0x00456FA0 File Offset: 0x004551A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void FinalizeWater()
 		{
@@ -1181,15 +1181,15 @@ namespace WorldGenerationEngineFinal
 			Log.Out("FinalizeWater in {0}", new object[] { (float)microStopwatch.ElapsedMilliseconds * 0.001f });
 		}
 
-		// Token: 0x0600BA9B RID: 47771 RVA: 0x0045363F File Offset: 0x0045183F
+		// Token: 0x0600BBAF RID: 48047 RVA: 0x00456FEB File Offset: 0x004551EB
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void FinalizeWater(ref WorldBuilder.Data _data, float _WaterHeight)
 		{
-			WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.Invoke(ref _data, _WaterHeight);
+			WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.Invoke(ref _data, _WaterHeight);
 		}
 
-		// Token: 0x0600BA9C RID: 47772 RVA: 0x00453648 File Offset: 0x00451848
+		// Token: 0x0600BBB0 RID: 48048 RVA: 0x00456FF4 File Offset: 0x004551F4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SerializeWater(Stream stream)
 		{
@@ -1209,7 +1209,7 @@ namespace WorldGenerationEngineFinal
 			stream.Write(ImageConversion.EncodeArrayToPNG(array, GraphicsFormat.R8G8B8A8_UNorm, (uint)this.WorldSize, (uint)this.WorldSize, (uint)(this.WorldSize * 4)));
 		}
 
-		// Token: 0x0600BA9D RID: 47773 RVA: 0x00453718 File Offset: 0x00451918
+		// Token: 0x0600BBB1 RID: 48049 RVA: 0x004570C4 File Offset: 0x004552C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void generateTerrainFeature(string featureName, WorldBuilder.GenerationSelections selection, bool isWaterFeature = false)
 		{
@@ -1360,7 +1360,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600BA9E RID: 47774 RVA: 0x00453E5C File Offset: 0x0045205C
+		// Token: 0x0600BBB2 RID: 48050 RVA: 0x00457808 File Offset: 0x00455A08
 		public bool CreatePlayerSpawn(Vector2i worldPos, bool _isFallback = false)
 		{
 			Vector3 vector = new Vector3((float)worldPos.x, this.GetHeight(worldPos), (float)worldPos.y);
@@ -1411,7 +1411,7 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600BA9F RID: 47775 RVA: 0x00453FB4 File Offset: 0x004521B4
+		// Token: 0x0600BBB3 RID: 48051 RVA: 0x00457960 File Offset: 0x00455B60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CalcTownshipsHeightMask()
 		{
@@ -1440,7 +1440,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAA0 RID: 47776 RVA: 0x004540CC File Offset: 0x004522CC
+		// Token: 0x0600BBB4 RID: 48052 RVA: 0x00457A78 File Offset: 0x00455C78
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CalcWindernessPOIsHeightMask(Color32[] roadMask)
 		{
@@ -1466,7 +1466,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAA1 RID: 47777 RVA: 0x00454194 File Offset: 0x00452394
+		// Token: 0x0600BBB5 RID: 48053 RVA: 0x00457B40 File Offset: 0x00455D40
 		public void SmoothRoadTerrain(Color32[] _roadMask, NativeArray<float> _heightMap, int WorldSize, List<Township> _townships = null)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -1487,14 +1487,14 @@ namespace WorldGenerationEngineFinal
 			Log.Out("Smooth Road Terrain in {0}", new object[] { (float)microStopwatch.ElapsedMilliseconds * 0.001f });
 		}
 
-		// Token: 0x0600BAA2 RID: 47778 RVA: 0x00454266 File Offset: 0x00452466
+		// Token: 0x0600BBB6 RID: 48054 RVA: 0x00457C12 File Offset: 0x00455E12
 		[BurstCompile(CompileSynchronously = true)]
 		public static void SmoothRoadTerrainTask(ref WorldBuilder.Data _data, ref NativeArray<Color32> roadMask, ref NativeArray<float> _heightMap, int WorldSize)
 		{
-			WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.Invoke(ref _data, ref roadMask, ref _heightMap, WorldSize);
+			WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.Invoke(ref _data, ref roadMask, ref _heightMap, WorldSize);
 		}
 
-		// Token: 0x0600BAA3 RID: 47779 RVA: 0x00454274 File Offset: 0x00452474
+		// Token: 0x0600BBB7 RID: 48055 RVA: 0x00457C20 File Offset: 0x00455E20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SmoothWildernessTerrain()
 		{
@@ -1506,7 +1506,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("Smooth Wilderness Terrain in {0}, r={1:x}", (float)microStopwatch.ElapsedMilliseconds * 0.001f, Rand.Instance.PeekSample()));
 		}
 
-		// Token: 0x0600BAA4 RID: 47780 RVA: 0x004542FC File Offset: 0x004524FC
+		// Token: 0x0600BBB8 RID: 48056 RVA: 0x00457CA8 File Offset: 0x00455EA8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateTerrainTiles()
 		{
@@ -1630,7 +1630,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAA5 RID: 47781 RVA: 0x004546E8 File Offset: 0x004528E8
+		// Token: 0x0600BBB9 RID: 48057 RVA: 0x00458094 File Offset: 0x00456294
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<WorldBuilder.BiomeTypeData> CalcBiomeTileBiomeData(int totalTiles, int multiple)
 		{
@@ -1666,7 +1666,7 @@ namespace WorldGenerationEngineFinal
 			return list;
 		}
 
-		// Token: 0x0600BAA6 RID: 47782 RVA: 0x00454868 File Offset: 0x00452A68
+		// Token: 0x0600BBBA RID: 48058 RVA: 0x00458214 File Offset: 0x00456414
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateBiomeTiles()
 		{
@@ -1806,7 +1806,7 @@ namespace WorldGenerationEngineFinal
 			this.biomeMap.Replace(BiomeType.none, BiomeType.forest);
 		}
 
-		// Token: 0x0600BAA7 RID: 47783 RVA: 0x00454C90 File Offset: 0x00452E90
+		// Token: 0x0600BBBB RID: 48059 RVA: 0x0045863C File Offset: 0x0045683C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool FindBiomeEmptyAndSet(WorldBuilder.BiomeTypeData _b, int _edge)
 		{
@@ -1891,7 +1891,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600BAA8 RID: 47784 RVA: 0x0045501C File Offset: 0x0045321C
+		// Token: 0x0600BBBC RID: 48060 RVA: 0x004589C8 File Offset: 0x00456BC8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool HasBiomeNeighbor(int _x, int _y, BiomeType _biomeType)
 		{
@@ -1915,7 +1915,7 @@ namespace WorldGenerationEngineFinal
 			return num3 < num && this.biomeMap.Get(_x, num3) == _biomeType;
 		}
 
-		// Token: 0x0600BAA9 RID: 47785 RVA: 0x004550A0 File Offset: 0x004532A0
+		// Token: 0x0600BBBD RID: 48061 RVA: 0x00458A4C File Offset: 0x00456C4C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BiomeType GetBiomeFromNeighbors(int _x, int _y)
 		{
@@ -1959,7 +1959,7 @@ namespace WorldGenerationEngineFinal
 			return BiomeType.none;
 		}
 
-		// Token: 0x0600BAAA RID: 47786 RVA: 0x0045515C File Offset: 0x0045335C
+		// Token: 0x0600BBBE RID: 48062 RVA: 0x00458B08 File Offset: 0x00456D08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serializeRWGTTW(Stream stream)
 		{
@@ -1970,7 +1970,7 @@ namespace WorldGenerationEngineFinal
 			worldState.Save(stream);
 		}
 
-		// Token: 0x0600BAAB RID: 47787 RVA: 0x0045518C File Offset: 0x0045338C
+		// Token: 0x0600BBBF RID: 48063 RVA: 0x00458B38 File Offset: 0x00456D38
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serializeDynamicProperties(Stream stream)
 		{
@@ -2003,7 +2003,7 @@ namespace WorldGenerationEngineFinal
 			dynamicProperties.Save("MapInfo", stream);
 		}
 
-		// Token: 0x0600BAAC RID: 47788 RVA: 0x0045543C File Offset: 0x0045363C
+		// Token: 0x0600BBC0 RID: 48064 RVA: 0x00458DE8 File Offset: 0x00456FE8
 		public void AddPreviewLinePlus(Vector2i pos, Color32 color, int size)
 		{
 			WorldBuilder.PreviewPoint previewPoint;
@@ -2013,7 +2013,7 @@ namespace WorldGenerationEngineFinal
 			this.previewPoints.Add(previewPoint);
 		}
 
-		// Token: 0x0600BAAD RID: 47789 RVA: 0x00455470 File Offset: 0x00453670
+		// Token: 0x0600BBC1 RID: 48065 RVA: 0x00458E1C File Offset: 0x0045701C
 		public void PreviewTextureUpdateBiomes(Color32[] previewColors)
 		{
 			Color32 color = new Color32(0, 0, 0, byte.MaxValue);
@@ -2042,7 +2042,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAAE RID: 47790 RVA: 0x00455567 File Offset: 0x00453767
+		// Token: 0x0600BBC2 RID: 48066 RVA: 0x00458F13 File Offset: 0x00457113
 		public IEnumerator PreviewTextureUpdateFinal(Color32[] previewColors)
 		{
 			yield return this.SetMessage(Localization.Get("xuiRwgCreatingPreview", false, null), true, false);
@@ -2143,14 +2143,14 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BAAF RID: 47791 RVA: 0x0045557D File Offset: 0x0045377D
+		// Token: 0x0600BBC3 RID: 48067 RVA: 0x00458F29 File Offset: 0x00457129
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public StreetTile GetStreetTileGrid(Vector2i pos)
 		{
 			return this.GetStreetTileGrid(pos.x, pos.y);
 		}
 
-		// Token: 0x0600BAB0 RID: 47792 RVA: 0x00455591 File Offset: 0x00453791
+		// Token: 0x0600BBC4 RID: 48068 RVA: 0x00458F3D File Offset: 0x0045713D
 		public StreetTile GetStreetTileGrid(int x, int y)
 		{
 			if ((ulong)x >= (ulong)((long)this.StreetTileMapWidth))
@@ -2164,14 +2164,14 @@ namespace WorldGenerationEngineFinal
 			return this.StreetTileMap[x + y * this.StreetTileMapWidth];
 		}
 
-		// Token: 0x0600BAB1 RID: 47793 RVA: 0x004555BE File Offset: 0x004537BE
+		// Token: 0x0600BBC5 RID: 48069 RVA: 0x00458F6A File Offset: 0x0045716A
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public StreetTile GetStreetTileWorld(Vector2i pos)
 		{
 			return this.GetStreetTileWorld(pos.x, pos.y);
 		}
 
-		// Token: 0x0600BAB2 RID: 47794 RVA: 0x004555D2 File Offset: 0x004537D2
+		// Token: 0x0600BBC6 RID: 48070 RVA: 0x00458F7E File Offset: 0x0045717E
 		public StreetTile GetStreetTileWorld(int x, int y)
 		{
 			x /= 150;
@@ -2187,14 +2187,14 @@ namespace WorldGenerationEngineFinal
 			return this.StreetTileMap[x + y * this.StreetTileMapWidth];
 		}
 
-		// Token: 0x0600BAB3 RID: 47795 RVA: 0x00455611 File Offset: 0x00453811
+		// Token: 0x0600BBC7 RID: 48071 RVA: 0x00458FBD File Offset: 0x004571BD
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public float GetHeight(Vector2i pos)
 		{
 			return this.GetHeight(pos.x, pos.y);
 		}
 
-		// Token: 0x0600BAB4 RID: 47796 RVA: 0x00455625 File Offset: 0x00453825
+		// Token: 0x0600BBC8 RID: 48072 RVA: 0x00458FD1 File Offset: 0x004571D1
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public float GetHeight(int x, int y)
 		{
@@ -2205,14 +2205,14 @@ namespace WorldGenerationEngineFinal
 			return this.data.HeightMap[x + y * this.WorldSize];
 		}
 
-		// Token: 0x0600BAB5 RID: 47797 RVA: 0x0045565D File Offset: 0x0045385D
+		// Token: 0x0600BBC9 RID: 48073 RVA: 0x00459009 File Offset: 0x00457209
 		[BurstCompile(CompileSynchronously = true)]
 		public static void AdjustHeights(ref NativeArray<float> _src, float _min)
 		{
-			WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.Invoke(ref _src, _min);
+			WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.Invoke(ref _src, _min);
 		}
 
-		// Token: 0x0600BAB6 RID: 47798 RVA: 0x00455666 File Offset: 0x00453866
+		// Token: 0x0600BBCA RID: 48074 RVA: 0x00459012 File Offset: 0x00457212
 		public void SetHeight(int x, int y, float height)
 		{
 			if ((ulong)x >= (ulong)((long)this.WorldSize) || (ulong)y >= (ulong)((long)this.WorldSize))
@@ -2222,21 +2222,21 @@ namespace WorldGenerationEngineFinal
 			this.data.HeightMap[x + y * this.WorldSize] = height;
 		}
 
-		// Token: 0x0600BAB7 RID: 47799 RVA: 0x0045569A File Offset: 0x0045389A
+		// Token: 0x0600BBCB RID: 48075 RVA: 0x00459046 File Offset: 0x00457246
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void SetHeightTrusted(int x, int y, float height)
 		{
 			this.data.HeightMap[x + y * this.WorldSize] = height;
 		}
 
-		// Token: 0x0600BAB8 RID: 47800 RVA: 0x004556B7 File Offset: 0x004538B7
+		// Token: 0x0600BBCC RID: 48076 RVA: 0x00459063 File Offset: 0x00457263
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public TerrainType GetTerrainType(Vector2i pos)
 		{
 			return this.GetTerrainType(pos.x, pos.y);
 		}
 
-		// Token: 0x0600BAB9 RID: 47801 RVA: 0x004556CC File Offset: 0x004538CC
+		// Token: 0x0600BBCD RID: 48077 RVA: 0x00459078 File Offset: 0x00457278
 		public TerrainType GetTerrainType(int x, int y)
 		{
 			x /= 256;
@@ -2252,13 +2252,13 @@ namespace WorldGenerationEngineFinal
 			return this.terrainTypeMap.Get(x, y);
 		}
 
-		// Token: 0x0600BABA RID: 47802 RVA: 0x00455724 File Offset: 0x00453924
+		// Token: 0x0600BBCE RID: 48078 RVA: 0x004590D0 File Offset: 0x004572D0
 		public BiomeType GetBiome(Vector2i pos)
 		{
 			return this.GetBiome(pos.x, pos.y);
 		}
 
-		// Token: 0x0600BABB RID: 47803 RVA: 0x00455738 File Offset: 0x00453938
+		// Token: 0x0600BBCF RID: 48079 RVA: 0x004590E4 File Offset: 0x004572E4
 		public BiomeType GetBiome(int x, int y)
 		{
 			int num = x / 8 + y / 8 * this.BiomeSize;
@@ -2287,7 +2287,7 @@ namespace WorldGenerationEngineFinal
 			return biomeType;
 		}
 
-		// Token: 0x0600BABC RID: 47804 RVA: 0x004557CE File Offset: 0x004539CE
+		// Token: 0x0600BBD0 RID: 48080 RVA: 0x0045917A File Offset: 0x0045737A
 		public void SetWater(int x, int y, byte height)
 		{
 			if ((ulong)x >= (ulong)((long)this.WorldSize) || (ulong)y >= (ulong)((long)this.WorldSize))
@@ -2297,7 +2297,7 @@ namespace WorldGenerationEngineFinal
 			this.data.waterDest[x + y * this.WorldSize] = (float)height;
 		}
 
-		// Token: 0x0600BABD RID: 47805 RVA: 0x00455803 File Offset: 0x00453A03
+		// Token: 0x0600BBD1 RID: 48081 RVA: 0x004591AF File Offset: 0x004573AF
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public byte GetRad(int x, int y)
 		{
@@ -2308,7 +2308,7 @@ namespace WorldGenerationEngineFinal
 			return this.radDest[x / 32 + y / 32 * this.RadSize].r;
 		}
 
-		// Token: 0x0600BABE RID: 47806 RVA: 0x0045583D File Offset: 0x00453A3D
+		// Token: 0x0600BBD2 RID: 48082 RVA: 0x004591E9 File Offset: 0x004573E9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serializePrefabs(Stream stream)
 		{
@@ -2319,14 +2319,14 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BABF RID: 47807 RVA: 0x00455864 File Offset: 0x00453A64
+		// Token: 0x0600BBD3 RID: 48083 RVA: 0x00459210 File Offset: 0x00457410
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serializeRawHeightmap(Stream stream)
 		{
 			HeightMapUtils.SaveHeightMapRAW(stream, this.data.HeightMap.ToArray(), -1f);
 		}
 
-		// Token: 0x0600BAC0 RID: 47808 RVA: 0x00455884 File Offset: 0x00453A84
+		// Token: 0x0600BBD4 RID: 48084 RVA: 0x00459230 File Offset: 0x00457430
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DrawRoads(Color32[] dest)
 		{
@@ -2347,7 +2347,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("DrawRoads in {0}", (float)microStopwatch.ElapsedMilliseconds * 0.001f));
 		}
 
-		// Token: 0x0600BAC1 RID: 47809 RVA: 0x00455984 File Offset: 0x00453B84
+		// Token: 0x0600BBD5 RID: 48085 RVA: 0x00459330 File Offset: 0x00457530
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serializePlayerSpawns(Stream stream)
 		{
@@ -2372,13 +2372,13 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAC2 RID: 47810 RVA: 0x00455A84 File Offset: 0x00453C84
+		// Token: 0x0600BBD6 RID: 48086 RVA: 0x00459430 File Offset: 0x00457630
 		public void SetTaskMessage(string _message)
 		{
 			this.taskMessage = _message;
 		}
 
-		// Token: 0x0600BAC3 RID: 47811 RVA: 0x00455A8D File Offset: 0x00453C8D
+		// Token: 0x0600BBD7 RID: 48087 RVA: 0x00459439 File Offset: 0x00457639
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator TaskMessageUpdate()
 		{
@@ -2386,7 +2386,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BAC4 RID: 47812 RVA: 0x00455A9C File Offset: 0x00453C9C
+		// Token: 0x0600BBD8 RID: 48088 RVA: 0x00459448 File Offset: 0x00457648
 		public IEnumerator SetMessage(string _message, bool _logToConsole = false, bool _ignoreCancel = false)
 		{
 			string text = "\n";
@@ -2442,7 +2442,7 @@ namespace WorldGenerationEngineFinal
 			yield break;
 		}
 
-		// Token: 0x0600BAC5 RID: 47813 RVA: 0x00455AC0 File Offset: 0x00453CC0
+		// Token: 0x0600BBD9 RID: 48089 RVA: 0x0045946C File Offset: 0x0045766C
 		public bool IsMessageElapsed()
 		{
 			if (this.messageMS.ElapsedMilliseconds > 600L)
@@ -2453,14 +2453,14 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600BAC6 RID: 47814 RVA: 0x00455AE4 File Offset: 0x00453CE4
+		// Token: 0x0600BBDA RID: 48090 RVA: 0x00459490 File Offset: 0x00457690
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2i getRotatedPoint(int x, int y, int cx, int cy, int angle)
 		{
 			return new Vector2i(Mathf.RoundToInt((float)((double)(x - cx) * Math.Cos((double)angle) - (double)(y - cy) * Math.Sin((double)angle) + (double)cx)), Mathf.RoundToInt((float)((double)(x - cx) * Math.Sin((double)angle) + (double)(y - cy) * Math.Cos((double)angle) + (double)cy)));
 		}
 
-		// Token: 0x0600BAC7 RID: 47815 RVA: 0x00455B44 File Offset: 0x00453D44
+		// Token: 0x0600BBDB RID: 48091 RVA: 0x004594F0 File Offset: 0x004576F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetTerrainProperties(string biomeTypeName, string terrainTypeName, string comboTypeName, out Vector2 _scaleMinMax, out int _clusterCount, out int _clusterRadius, out float _clusterStrength, out bool useBiomeMask, out float biomeCutoff)
 		{
@@ -2512,13 +2512,13 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAC8 RID: 47816 RVA: 0x00455CDF File Offset: 0x00453EDF
+		// Token: 0x0600BBDC RID: 48092 RVA: 0x0045968B File Offset: 0x0045788B
 		public static string GetGeneratedWorldName(string _worldSeedName, int _worldSize = 8192)
 		{
 			return RandomCountyNameGenerator.GetName(_worldSeedName.GetHashCode() + _worldSize);
 		}
 
-		// Token: 0x0600BAC9 RID: 47817 RVA: 0x00455CF0 File Offset: 0x00453EF0
+		// Token: 0x0600BBDD RID: 48093 RVA: 0x0045969C File Offset: 0x0045789C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int distanceSqr(Vector2i pointA, Vector2i pointB)
 		{
@@ -2526,7 +2526,7 @@ namespace WorldGenerationEngineFinal
 			return vector2i.x * vector2i.x + vector2i.y * vector2i.y;
 		}
 
-		// Token: 0x0600BACA RID: 47818 RVA: 0x00455D20 File Offset: 0x00453F20
+		// Token: 0x0600BBDE RID: 48094 RVA: 0x004596CC File Offset: 0x004578CC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float distanceSqr(Vector2 pointA, Vector2 pointB)
 		{
@@ -2534,7 +2534,7 @@ namespace WorldGenerationEngineFinal
 			return vector.x * vector.x + vector.y * vector.y;
 		}
 
-		// Token: 0x0600BACB RID: 47819 RVA: 0x00455D50 File Offset: 0x00453F50
+		// Token: 0x0600BBDF RID: 48095 RVA: 0x004596FC File Offset: 0x004578FC
 		public int GetCount(string _name, WorldBuilder.GenerationSelections _selection, GameRandom _rand = null)
 		{
 			float num = -1f;
@@ -2562,7 +2562,7 @@ namespace WorldGenerationEngineFinal
 			return num5;
 		}
 
-		// Token: 0x0600BACC RID: 47820 RVA: 0x00455DBC File Offset: 0x00453FBC
+		// Token: 0x0600BBE0 RID: 48096 RVA: 0x00459768 File Offset: 0x00457968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void TestGenerateHeights()
 		{
@@ -2585,7 +2585,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAD7 RID: 47831 RVA: 0x004561C0 File Offset: 0x004543C0
+		// Token: 0x0600BBEB RID: 48107 RVA: 0x00459B6C File Offset: 0x00457D6C
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2604,7 +2604,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAD8 RID: 47832 RVA: 0x00456220 File Offset: 0x00454420
+		// Token: 0x0600BBEC RID: 48108 RVA: 0x00459BCC File Offset: 0x00457DCC
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2623,7 +2623,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BAD9 RID: 47833 RVA: 0x00456284 File Offset: 0x00454484
+		// Token: 0x0600BBED RID: 48109 RVA: 0x00459C30 File Offset: 0x00457E30
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2823,7 +2823,7 @@ namespace WorldGenerationEngineFinal
 			nativeArray2.Dispose();
 		}
 
-		// Token: 0x0600BADA RID: 47834 RVA: 0x0045688C File Offset: 0x00454A8C
+		// Token: 0x0600BBEE RID: 48110 RVA: 0x0045A238 File Offset: 0x00458438
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2835,254 +2835,254 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x04008B37 RID: 35639
+		// Token: 0x04008C20 RID: 35872
 		public const int HeightMax = 255;
 
-		// Token: 0x04008B38 RID: 35640
+		// Token: 0x04008C21 RID: 35873
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int groundHeight = 35;
 
-		// Token: 0x04008B39 RID: 35641
+		// Token: 0x04008C22 RID: 35874
 		public int WaterHeight = 30;
 
-		// Token: 0x04008B3A RID: 35642
+		// Token: 0x04008C23 RID: 35875
 		public readonly DistrictPlanner DistrictPlanner;
 
-		// Token: 0x04008B3B RID: 35643
+		// Token: 0x04008C24 RID: 35876
 		public readonly HighwayPlanner HighwayPlanner;
 
-		// Token: 0x04008B3C RID: 35644
+		// Token: 0x04008C25 RID: 35877
 		public readonly PathingUtils PathingUtils;
 
-		// Token: 0x04008B3D RID: 35645
+		// Token: 0x04008C26 RID: 35878
 		public readonly PathShared PathShared;
 
-		// Token: 0x04008B3E RID: 35646
+		// Token: 0x04008C27 RID: 35879
 		public readonly POISmoother POISmoother;
 
-		// Token: 0x04008B3F RID: 35647
+		// Token: 0x04008C28 RID: 35880
 		public readonly PrefabManager PrefabManager;
 
-		// Token: 0x04008B40 RID: 35648
+		// Token: 0x04008C29 RID: 35881
 		public readonly StampManager StampManager;
 
-		// Token: 0x04008B41 RID: 35649
+		// Token: 0x04008C2A RID: 35882
 		public readonly StreetTileShared StreetTileShared;
 
-		// Token: 0x04008B42 RID: 35650
+		// Token: 0x04008C2B RID: 35883
 		public readonly TownPlanner TownPlanner;
 
-		// Token: 0x04008B43 RID: 35651
+		// Token: 0x04008C2C RID: 35884
 		public readonly TownshipShared TownshipShared;
 
-		// Token: 0x04008B44 RID: 35652
+		// Token: 0x04008C2D RID: 35885
 		public readonly WildernessPathPlanner WildernessPathPlanner;
 
-		// Token: 0x04008B45 RID: 35653
+		// Token: 0x04008C2E RID: 35886
 		public readonly WildernessPlanner WildernessPlanner;
 
-		// Token: 0x04008B46 RID: 35654
+		// Token: 0x04008C2F RID: 35887
 		public string WorldName;
 
-		// Token: 0x04008B47 RID: 35655
+		// Token: 0x04008C30 RID: 35888
 		public string WorldSeedName;
 
-		// Token: 0x04008B48 RID: 35656
+		// Token: 0x04008C31 RID: 35889
 		public string WorldPath;
 
-		// Token: 0x04008B49 RID: 35657
+		// Token: 0x04008C32 RID: 35890
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserDataStorageType StorageLocation;
 
-		// Token: 0x04008B4A RID: 35658
+		// Token: 0x04008C33 RID: 35891
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MicroStopwatch totalMS;
 
-		// Token: 0x04008B4B RID: 35659
+		// Token: 0x04008C34 RID: 35892
 		public bool IsCanceled;
 
-		// Token: 0x04008B4C RID: 35660
+		// Token: 0x04008C35 RID: 35893
 		public bool IsFinished;
 
-		// Token: 0x04008B4D RID: 35661
+		// Token: 0x04008C36 RID: 35894
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color32[] roadDest;
 
-		// Token: 0x04008B4E RID: 35662
+		// Token: 0x04008C37 RID: 35895
 		public int WorldSize = 8192;
 
-		// Token: 0x04008B4F RID: 35663
+		// Token: 0x04008C38 RID: 35896
 		public int WorldSizeDistDiv;
 
-		// Token: 0x04008B50 RID: 35664
+		// Token: 0x04008C39 RID: 35897
 		public const int BiomeSizeDiv = 8;
 
-		// Token: 0x04008B51 RID: 35665
+		// Token: 0x04008C3A RID: 35898
 		public int BiomeSize;
 
-		// Token: 0x04008B52 RID: 35666
+		// Token: 0x04008C3B RID: 35899
 		public int RadSize;
 
-		// Token: 0x04008B53 RID: 35667
+		// Token: 0x04008C3C RID: 35900
 		public int Seed = 12345;
 
-		// Token: 0x04008B54 RID: 35668
+		// Token: 0x04008C3D RID: 35901
 		public int Plains = 4;
 
-		// Token: 0x04008B55 RID: 35669
+		// Token: 0x04008C3E RID: 35902
 		public int Hills = 4;
 
-		// Token: 0x04008B56 RID: 35670
+		// Token: 0x04008C3F RID: 35903
 		public int Mountains = 2;
 
-		// Token: 0x04008B57 RID: 35671
+		// Token: 0x04008C40 RID: 35904
 		public WorldBuilder.GenerationSelections Canyons = WorldBuilder.GenerationSelections.Default;
 
-		// Token: 0x04008B58 RID: 35672
+		// Token: 0x04008C41 RID: 35905
 		public WorldBuilder.GenerationSelections Craters = WorldBuilder.GenerationSelections.Default;
 
-		// Token: 0x04008B59 RID: 35673
+		// Token: 0x04008C42 RID: 35906
 		public WorldBuilder.GenerationSelections Lakes = WorldBuilder.GenerationSelections.Default;
 
-		// Token: 0x04008B5A RID: 35674
+		// Token: 0x04008C43 RID: 35907
 		public WorldBuilder.GenerationSelections Rivers = WorldBuilder.GenerationSelections.Default;
 
-		// Token: 0x04008B5B RID: 35675
+		// Token: 0x04008C44 RID: 35908
 		public WorldBuilder.GenerationSelections Towns = WorldBuilder.GenerationSelections.Default;
 
-		// Token: 0x04008B5C RID: 35676
+		// Token: 0x04008C45 RID: 35909
 		public WorldBuilder.GenerationSelections Wilderness = WorldBuilder.GenerationSelections.Default;
 
-		// Token: 0x04008B5D RID: 35677
+		// Token: 0x04008C46 RID: 35910
 		public StreetTile[] StreetTileMap;
 
-		// Token: 0x04008B5E RID: 35678
+		// Token: 0x04008C47 RID: 35911
 		public int StreetTileMapWidth;
 
-		// Token: 0x04008B5F RID: 35679
+		// Token: 0x04008C48 RID: 35912
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataMap<BiomeType> biomeMap;
 
-		// Token: 0x04008B60 RID: 35680
+		// Token: 0x04008C49 RID: 35913
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataMap<TerrainType> terrainTypeMap;
 
-		// Token: 0x04008B61 RID: 35681
+		// Token: 0x04008C4A RID: 35914
 		public List<Rect> waterRects = new List<Rect>();
 
-		// Token: 0x04008B62 RID: 35682
+		// Token: 0x04008C4B RID: 35915
 		public List<Township> Townships = new List<Township>();
 
-		// Token: 0x04008B63 RID: 35683
+		// Token: 0x04008C4C RID: 35916
 		public int WildernessPrefabCount;
 
-		// Token: 0x04008B64 RID: 35684
+		// Token: 0x04008C4D RID: 35917
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string worldSizeName;
 
-		// Token: 0x04008B65 RID: 35685
+		// Token: 0x04008C4E RID: 35918
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DynamicProperties thisWorldProperties;
 
-		// Token: 0x04008B66 RID: 35686
+		// Token: 0x04008C4F RID: 35919
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int WorldTileSize = 1024;
 
-		// Token: 0x04008B67 RID: 35687
+		// Token: 0x04008C50 RID: 35920
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int BiomeTileSize = 256;
 
-		// Token: 0x04008B68 RID: 35688
+		// Token: 0x04008C51 RID: 35921
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int TerrainTileSize = 256;
 
-		// Token: 0x04008B69 RID: 35689
+		// Token: 0x04008C52 RID: 35922
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int terrainToBiomeTileScale = 1;
 
-		// Token: 0x04008B6A RID: 35690
+		// Token: 0x04008C53 RID: 35923
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int RadTileSize = 32;
 
-		// Token: 0x04008B6B RID: 35691
+		// Token: 0x04008C54 RID: 35924
 		public WorldBuilder.BiomeLayout biomeLayout;
 
-		// Token: 0x04008B6C RID: 35692
+		// Token: 0x04008C55 RID: 35925
 		public int ForestBiomeWeight = 13;
 
-		// Token: 0x04008B6D RID: 35693
+		// Token: 0x04008C56 RID: 35926
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int BurntForestBiomeWeight = 18;
 
-		// Token: 0x04008B6E RID: 35694
+		// Token: 0x04008C57 RID: 35927
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int DesertBiomeWeight = 22;
 
-		// Token: 0x04008B6F RID: 35695
+		// Token: 0x04008C58 RID: 35928
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int SnowBiomeWeight = 23;
 
-		// Token: 0x04008B70 RID: 35696
+		// Token: 0x04008C59 RID: 35929
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int WastelandBiomeWeight = 24;
 
-		// Token: 0x04008B71 RID: 35697
+		// Token: 0x04008C5A RID: 35930
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<BiomeType, Color32> biomeColors = new Dictionary<BiomeType, Color32>();
 
-		// Token: 0x04008B72 RID: 35698
+		// Token: 0x04008C5B RID: 35931
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cPlayerSpawnsNeeded = 12;
 
-		// Token: 0x04008B73 RID: 35699
+		// Token: 0x04008C5C RID: 35932
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<WorldBuilder.PlayerSpawn> playerSpawns;
 
-		// Token: 0x04008B74 RID: 35700
+		// Token: 0x04008C5D RID: 35933
 		public List<Path> highwayPaths = new List<Path>();
 
-		// Token: 0x04008B75 RID: 35701
+		// Token: 0x04008C5E RID: 35934
 		public List<Path> wildernessPaths = new List<Path>();
 
-		// Token: 0x04008B76 RID: 35702
+		// Token: 0x04008C5F RID: 35935
 		public List<Vector2i> TraderCenterPositions = new List<Vector2i>();
 
-		// Token: 0x04008B77 RID: 35703
+		// Token: 0x04008C60 RID: 35936
 		public List<Vector2i> TraderForestCenterPositions = new List<Vector2i>();
 
-		// Token: 0x04008B78 RID: 35704
+		// Token: 0x04008C61 RID: 35937
 		[PublicizedFrom(EAccessModifier.Private)]
 		public WaitForEndOfFrame endOfFrameHandle = new WaitForEndOfFrame();
 
-		// Token: 0x04008B79 RID: 35705
+		// Token: 0x04008C62 RID: 35938
 		public XUiC_WorldGenerationPreview PreviewWindow;
 
-		// Token: 0x04008B7A RID: 35706
+		// Token: 0x04008C63 RID: 35939
 		public WorldBuilder.Data data;
 
-		// Token: 0x04008B7B RID: 35707
+		// Token: 0x04008C64 RID: 35940
 		[TupleElementNames(new string[] { "langKey", "fileName", "serializer" })]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ValueTuple<string, string, Action<Stream>>[] threadedSerializers;
 
-		// Token: 0x04008B7C RID: 35708
+		// Token: 0x04008C65 RID: 35941
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MemoryStream[] threadedSerializerBuffers;
 
-		// Token: 0x04008B7D RID: 35709
+		// Token: 0x04008C66 RID: 35942
 		[TupleElementNames(new string[] { "langKey", "fileName", "serializer" })]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ValueTuple<string, string, Func<Stream, IEnumerator>>[] mainThreadSerializers;
 
-		// Token: 0x04008B7E RID: 35710
+		// Token: 0x04008C67 RID: 35943
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MemoryStream[] mainThreadSerializerBuffers;
 
-		// Token: 0x04008B7F RID: 35711
+		// Token: 0x04008C68 RID: 35944
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long serializedTotalSize;
 
-		// Token: 0x04008B80 RID: 35712
+		// Token: 0x04008C69 RID: 35945
 		public readonly int[] biomeTagBits = new int[]
 		{
 			FastTags<TagGroup.Poi>.GetBit("forest"),
@@ -3093,156 +3093,156 @@ namespace WorldGenerationEngineFinal
 			FastTags<TagGroup.Poi>.GetBit("water")
 		};
 
-		// Token: 0x04008B81 RID: 35713
+		// Token: 0x04008C6A RID: 35946
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string creatingTerrainAndBiomeStamps;
 
-		// Token: 0x04008B82 RID: 35714
+		// Token: 0x04008C6B RID: 35947
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string creatingTerrainStamps;
 
-		// Token: 0x04008B83 RID: 35715
+		// Token: 0x04008C6C RID: 35948
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string creatingBiomeStamps;
 
-		// Token: 0x04008B84 RID: 35716
+		// Token: 0x04008C6D RID: 35949
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageGeneratingTerrain;
 
-		// Token: 0x04008B85 RID: 35717
+		// Token: 0x04008C6E RID: 35950
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageWritingStampsToMap;
 
-		// Token: 0x04008B86 RID: 35718
+		// Token: 0x04008C6F RID: 35951
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageTerrainGenerationFinished;
 
-		// Token: 0x04008B87 RID: 35719
+		// Token: 0x04008C70 RID: 35952
 		public string messageTownPlanning;
 
-		// Token: 0x04008B88 RID: 35720
+		// Token: 0x04008C71 RID: 35953
 		public string messageTownPlanningFinished;
 
-		// Token: 0x04008B89 RID: 35721
+		// Token: 0x04008C72 RID: 35954
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageCleaningUpWaterMapData;
 
-		// Token: 0x04008B8A RID: 35722
+		// Token: 0x04008C73 RID: 35955
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageWritingTerrainStampsToMap;
 
-		// Token: 0x04008B8B RID: 35723
+		// Token: 0x04008C74 RID: 35956
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageWritingWaterStampsToMap;
 
-		// Token: 0x04008B8C RID: 35724
+		// Token: 0x04008C75 RID: 35957
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageWritingTerrainAndWaterStampsToMap;
 
-		// Token: 0x04008B8D RID: 35725
+		// Token: 0x04008C76 RID: 35958
 		public string messageSmoothingStreetTiles;
 
-		// Token: 0x04008B8E RID: 35726
+		// Token: 0x04008C77 RID: 35959
 		public string messageWildernessPOIs;
 
-		// Token: 0x04008B8F RID: 35727
+		// Token: 0x04008C78 RID: 35960
 		public string messageHighways;
 
-		// Token: 0x04008B90 RID: 35728
+		// Token: 0x04008C79 RID: 35961
 		public string messageHighwaysConnections;
 
-		// Token: 0x04008B91 RID: 35729
+		// Token: 0x04008C7A RID: 35962
 		public string messageHighwaysTownExitsSelf;
 
-		// Token: 0x04008B92 RID: 35730
+		// Token: 0x04008C7B RID: 35963
 		public string messageHighwaysTownExitsOther;
 
-		// Token: 0x04008B93 RID: 35731
+		// Token: 0x04008C7C RID: 35964
 		public string messageHighwaysTownship;
 
-		// Token: 0x04008B94 RID: 35732
+		// Token: 0x04008C7D RID: 35965
 		public string messageHighwaysTownExits;
 
-		// Token: 0x04008B95 RID: 35733
+		// Token: 0x04008C7E RID: 35966
 		public string messageWildernessPaths;
 
-		// Token: 0x04008B96 RID: 35734
+		// Token: 0x04008C7F RID: 35967
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageDrawRoads;
 
-		// Token: 0x04008B97 RID: 35735
+		// Token: 0x04008C80 RID: 35968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageDrawRoadsWilderness;
 
-		// Token: 0x04008B98 RID: 35736
+		// Token: 0x04008C81 RID: 35969
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageDrawRoadsProgress;
 
-		// Token: 0x04008B99 RID: 35737
+		// Token: 0x04008C82 RID: 35970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageSmoothRoadTerrainCount;
 
-		// Token: 0x04008B9A RID: 35738
+		// Token: 0x04008C83 RID: 35971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string messageSmoothRoadTerrain;
 
-		// Token: 0x04008B9B RID: 35739
+		// Token: 0x04008C84 RID: 35972
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_WorldGenerationPreview.PreviewStep previewStep;
 
-		// Token: 0x04008B9C RID: 35740
+		// Token: 0x04008C85 RID: 35973
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_WorldGenerationPreview.PreviewStep previewStepOfTask;
 
-		// Token: 0x04008B9D RID: 35741
+		// Token: 0x04008C86 RID: 35974
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color32[] biomeDest;
 
-		// Token: 0x04008B9E RID: 35742
+		// Token: 0x04008C87 RID: 35975
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color32[] radDest;
 
-		// Token: 0x04008B9F RID: 35743
+		// Token: 0x04008C88 RID: 35976
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StampGroup lowerLayer = new StampGroup("Lower Layer");
 
-		// Token: 0x04008BA0 RID: 35744
+		// Token: 0x04008C89 RID: 35977
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StampGroup terrainLayer = new StampGroup("Top Layer");
 
-		// Token: 0x04008BA1 RID: 35745
+		// Token: 0x04008C8A RID: 35978
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StampGroup radiationLayer = new StampGroup("Radiation Layer");
 
-		// Token: 0x04008BA2 RID: 35746
+		// Token: 0x04008C8B RID: 35979
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StampGroup biomeLayer = new StampGroup("Biome Layer");
 
-		// Token: 0x04008BA3 RID: 35747
+		// Token: 0x04008C8C RID: 35980
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StampGroup waterLayer = new StampGroup("Water Layer");
 
-		// Token: 0x04008BA4 RID: 35748
+		// Token: 0x04008C8D RID: 35981
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int BorderWaterMask;
 
-		// Token: 0x04008BA5 RID: 35749
+		// Token: 0x04008C8E RID: 35982
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<WorldBuilder.PreviewPoint> previewPoints = new List<WorldBuilder.PreviewPoint>();
 
-		// Token: 0x04008BA6 RID: 35750
+		// Token: 0x04008C8F RID: 35983
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string taskMessage = string.Empty;
 
-		// Token: 0x04008BA7 RID: 35751
+		// Token: 0x04008C90 RID: 35984
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string setMessageLast = string.Empty;
 
-		// Token: 0x04008BA8 RID: 35752
+		// Token: 0x04008C91 RID: 35985
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MicroStopwatch messageMS = new MicroStopwatch(true);
 
-		// Token: 0x04008BA9 RID: 35753
+		// Token: 0x04008C92 RID: 35986
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Vector2i[] directions8way = new Vector2i[]
 		{
@@ -3256,7 +3256,7 @@ namespace WorldGenerationEngineFinal
 			Vector2i.left + Vector2i.up
 		};
 
-		// Token: 0x04008BAA RID: 35754
+		// Token: 0x04008C93 RID: 35987
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Vector2i[] directions4way = new Vector2i[]
 		{
@@ -3266,25 +3266,25 @@ namespace WorldGenerationEngineFinal
 			Vector2i.left
 		};
 
-		// Token: 0x02001770 RID: 6000
+		// Token: 0x020017A1 RID: 6049
 		public enum BiomeLayout
 		{
-			// Token: 0x04008BAC RID: 35756
+			// Token: 0x04008C95 RID: 35989
 			CenterForest,
-			// Token: 0x04008BAD RID: 35757
+			// Token: 0x04008C96 RID: 35990
 			CenterWasteland,
-			// Token: 0x04008BAE RID: 35758
+			// Token: 0x04008C97 RID: 35991
 			Circle,
-			// Token: 0x04008BAF RID: 35759
+			// Token: 0x04008C98 RID: 35992
 			Circle2,
-			// Token: 0x04008BB0 RID: 35760
+			// Token: 0x04008C99 RID: 35993
 			Line
 		}
 
-		// Token: 0x02001771 RID: 6001
+		// Token: 0x020017A2 RID: 6050
 		public struct Data
 		{
-			// Token: 0x0600BADB RID: 47835 RVA: 0x004568C0 File Offset: 0x00454AC0
+			// Token: 0x0600BBEF RID: 48111 RVA: 0x0045A26C File Offset: 0x0045846C
 			public void Init(int _worldSize)
 			{
 				this.WorldSize = _worldSize;
@@ -3296,7 +3296,7 @@ namespace WorldGenerationEngineFinal
 				this.StreetTileDataGridWidth = this.WorldSize / 150;
 			}
 
-			// Token: 0x0600BADC RID: 47836 RVA: 0x00456939 File Offset: 0x00454B39
+			// Token: 0x0600BBF0 RID: 48112 RVA: 0x0045A2E5 File Offset: 0x004584E5
 			public void Cleanup()
 			{
 				this.HeightMap.Dispose();
@@ -3306,14 +3306,14 @@ namespace WorldGenerationEngineFinal
 				this.waterDest.Dispose();
 			}
 
-			// Token: 0x0600BADD RID: 47837 RVA: 0x00456972 File Offset: 0x00454B72
+			// Token: 0x0600BBF1 RID: 48113 RVA: 0x0045A31E File Offset: 0x0045851E
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public float GetHeight(Vector2i pos)
 			{
 				return this.GetHeight(pos.x, pos.y);
 			}
 
-			// Token: 0x0600BADE RID: 47838 RVA: 0x00456986 File Offset: 0x00454B86
+			// Token: 0x0600BBF2 RID: 48114 RVA: 0x0045A332 File Offset: 0x00458532
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public float GetHeight(int x, int y)
 			{
@@ -3324,14 +3324,14 @@ namespace WorldGenerationEngineFinal
 				return this.HeightMap[x + y * this.WorldSize];
 			}
 
-			// Token: 0x0600BADF RID: 47839 RVA: 0x004569B9 File Offset: 0x00454BB9
+			// Token: 0x0600BBF3 RID: 48115 RVA: 0x0045A365 File Offset: 0x00458565
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public bool InWorldBounds(int x, int y)
 			{
 				return (ulong)x < (ulong)((long)this.WorldSize) && (ulong)y < (ulong)((long)this.WorldSize);
 			}
 
-			// Token: 0x0600BAE0 RID: 47840 RVA: 0x004569D4 File Offset: 0x00454BD4
+			// Token: 0x0600BBF4 RID: 48116 RVA: 0x0045A380 File Offset: 0x00458580
 			public ref StreetTileData GetStreetTileDataWorld(int x, int y)
 			{
 				x /= 150;
@@ -3344,7 +3344,7 @@ namespace WorldGenerationEngineFinal
 				return UnsafeUtility.ArrayElementAsRef<StreetTileData>(NativeArrayUnsafeUtility.GetUnsafeBufferPointerWithoutChecks<StreetTileData>(this.StreetTileDataGrid), x + y * this.StreetTileDataGridWidth);
 			}
 
-			// Token: 0x0600BAE1 RID: 47841 RVA: 0x00456A29 File Offset: 0x00454C29
+			// Token: 0x0600BBF5 RID: 48117 RVA: 0x0045A3D5 File Offset: 0x004585D5
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public byte GetWater(int x, int y)
 			{
@@ -3355,7 +3355,7 @@ namespace WorldGenerationEngineFinal
 				return (byte)this.waterDest[x + y * this.WorldSize];
 			}
 
-			// Token: 0x0600BAE2 RID: 47842 RVA: 0x00456A59 File Offset: 0x00454C59
+			// Token: 0x0600BBF6 RID: 48118 RVA: 0x0045A405 File Offset: 0x00458605
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public byte GetWater(int _index)
 			{
@@ -3366,50 +3366,50 @@ namespace WorldGenerationEngineFinal
 				return (byte)this.waterDest[_index];
 			}
 
-			// Token: 0x04008BB1 RID: 35761
+			// Token: 0x04008C9A RID: 35994
 			public int WorldSize;
 
-			// Token: 0x04008BB2 RID: 35762
+			// Token: 0x04008C9B RID: 35995
 			public NativeArray<float> HeightMap;
 
-			// Token: 0x04008BB3 RID: 35763
+			// Token: 0x04008C9C RID: 35996
 			public NativeArray<float> waterDest;
 
-			// Token: 0x04008BB4 RID: 35764
+			// Token: 0x04008C9D RID: 35997
 			public int PathTileGridWidth;
 
-			// Token: 0x04008BB5 RID: 35765
+			// Token: 0x04008C9E RID: 35998
 			public NativeArray<PathTile> PathTileGrid;
 
-			// Token: 0x04008BB6 RID: 35766
+			// Token: 0x04008C9F RID: 35999
 			public int StreetTileDataGridWidth;
 
-			// Token: 0x04008BB7 RID: 35767
+			// Token: 0x04008CA0 RID: 36000
 			public NativeArray<StreetTileData> StreetTileDataGrid;
 
-			// Token: 0x04008BB8 RID: 35768
+			// Token: 0x04008CA1 RID: 36001
 			public NativeArray<byte> poiHeightMask;
 
-			// Token: 0x04008BB9 RID: 35769
+			// Token: 0x04008CA2 RID: 36002
 			public volatile int messageCnt;
 		}
 
-		// Token: 0x02001772 RID: 6002
+		// Token: 0x020017A3 RID: 6051
 		public enum SaveDataPromptMode
 		{
-			// Token: 0x04008BBB RID: 35771
+			// Token: 0x04008CA4 RID: 36004
 			On,
-			// Token: 0x04008BBC RID: 35772
+			// Token: 0x04008CA5 RID: 36005
 			OnInsufficientSpace,
-			// Token: 0x04008BBD RID: 35773
+			// Token: 0x04008CA6 RID: 36006
 			Off
 		}
 
-		// Token: 0x02001773 RID: 6003
+		// Token: 0x020017A4 RID: 6052
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class BiomeTypeData
 		{
-			// Token: 0x0600BAE3 RID: 47843 RVA: 0x00456A7C File Offset: 0x00454C7C
+			// Token: 0x0600BBF7 RID: 48119 RVA: 0x0045A428 File Offset: 0x00458628
 			public BiomeTypeData(BiomeType _type, float _percent, int _totalTiles)
 			{
 				this.Type = _type;
@@ -3421,57 +3421,57 @@ namespace WorldGenerationEngineFinal
 				}
 			}
 
-			// Token: 0x04008BBE RID: 35774
+			// Token: 0x04008CA7 RID: 36007
 			public BiomeType Type;
 
-			// Token: 0x04008BBF RID: 35775
+			// Token: 0x04008CA8 RID: 36008
 			public float Percent;
 
-			// Token: 0x04008BC0 RID: 35776
+			// Token: 0x04008CA9 RID: 36009
 			public int TileCount;
 
-			// Token: 0x04008BC1 RID: 35777
+			// Token: 0x04008CAA RID: 36010
 			public Vector2i Center;
 		}
 
-		// Token: 0x02001774 RID: 6004
+		// Token: 0x020017A5 RID: 6053
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct PreviewPoint
 		{
-			// Token: 0x04008BC2 RID: 35778
+			// Token: 0x04008CAB RID: 36011
 			public Vector2i pos;
 
-			// Token: 0x04008BC3 RID: 35779
+			// Token: 0x04008CAC RID: 36012
 			public Color32 color;
 
-			// Token: 0x04008BC4 RID: 35780
+			// Token: 0x04008CAD RID: 36013
 			public int size;
 		}
 
-		// Token: 0x02001775 RID: 6005
+		// Token: 0x020017A6 RID: 6054
 		public enum GenerationSelections
 		{
-			// Token: 0x04008BC6 RID: 35782
+			// Token: 0x04008CAF RID: 36015
 			None,
-			// Token: 0x04008BC7 RID: 35783
+			// Token: 0x04008CB0 RID: 36016
 			Few,
-			// Token: 0x04008BC8 RID: 35784
+			// Token: 0x04008CB1 RID: 36017
 			Default,
-			// Token: 0x04008BC9 RID: 35785
+			// Token: 0x04008CB2 RID: 36018
 			Many
 		}
 
-		// Token: 0x02001776 RID: 6006
+		// Token: 0x020017A7 RID: 6055
 		public struct PlayerSpawn
 		{
-			// Token: 0x0600BAE4 RID: 47844 RVA: 0x00456AC8 File Offset: 0x00454CC8
+			// Token: 0x0600BBF8 RID: 48120 RVA: 0x0045A474 File Offset: 0x00458674
 			public PlayerSpawn(Vector3 _position, float _yRotation)
 			{
 				this.Position = _position;
 				this.Rotation = _yRotation;
 			}
 
-			// Token: 0x0600BAE5 RID: 47845 RVA: 0x00456AD8 File Offset: 0x00454CD8
+			// Token: 0x0600BBF9 RID: 48121 RVA: 0x0045A484 File Offset: 0x00458684
 			public bool IsTooClose(Vector3 _position)
 			{
 				float num = _position.x - this.Position.x;
@@ -3479,72 +3479,72 @@ namespace WorldGenerationEngineFinal
 				return num * num + num2 * num2 < 3600f;
 			}
 
-			// Token: 0x04008BCA RID: 35786
+			// Token: 0x04008CB3 RID: 36019
 			[PublicizedFrom(EAccessModifier.Private)]
 			public const int cSafeDist = 60;
 
-			// Token: 0x04008BCB RID: 35787
+			// Token: 0x04008CB4 RID: 36020
 			public Vector3 Position;
 
-			// Token: 0x04008BCC RID: 35788
+			// Token: 0x04008CB5 RID: 36021
 			public float Rotation;
 		}
 
-		// Token: 0x02001790 RID: 6032
-		// (Invoke) Token: 0x0600BB61 RID: 47969
+		// Token: 0x020017C1 RID: 6081
+		// (Invoke) Token: 0x0600BC75 RID: 48245
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void ClearWaterUnderTerrain_0000BA2A$PostfixBurstDelegate(ref WorldBuilder.Data _data, ref NativeArray<float> _terrain, int startX, int endX, int startY, int endY);
+		public delegate void ClearWaterUnderTerrain_0000BB3E$PostfixBurstDelegate(ref WorldBuilder.Data _data, ref NativeArray<float> _terrain, int startX, int endX, int startY, int endY);
 
-		// Token: 0x02001791 RID: 6033
+		// Token: 0x020017C2 RID: 6082
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class ClearWaterUnderTerrain_0000BA2A$BurstDirectCall
+		public static class ClearWaterUnderTerrain_0000BB3E$BurstDirectCall
 		{
-			// Token: 0x0600BB64 RID: 47972 RVA: 0x00459128 File Offset: 0x00457328
+			// Token: 0x0600BC78 RID: 48248 RVA: 0x0045CAD4 File Offset: 0x0045ACD4
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.Pointer == 0)
+				if (WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.Pointer == 0)
 				{
-					WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.ClearWaterUnderTerrain$BurstManaged(ref WorldBuilder.Data, ref NativeArray<float>, int, int, int, int)).MethodHandle, typeof(WorldBuilder.ClearWaterUnderTerrain_0000BA2A$PostfixBurstDelegate).TypeHandle);
+					WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.ClearWaterUnderTerrain$BurstManaged(ref WorldBuilder.Data, ref NativeArray<float>, int, int, int, int)).MethodHandle, typeof(WorldBuilder.ClearWaterUnderTerrain_0000BB3E$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.Pointer;
+				A_0 = WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600BB65 RID: 47973 RVA: 0x00459154 File Offset: 0x00457354
+			// Token: 0x0600BC79 RID: 48249 RVA: 0x0045CB00 File Offset: 0x0045AD00
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600BB66 RID: 47974 RVA: 0x0045916C File Offset: 0x0045736C
+			// Token: 0x0600BC7A RID: 48250 RVA: 0x0045CB18 File Offset: 0x0045AD18
 			public static void Constructor()
 			{
-				WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.ClearWaterUnderTerrain(ref WorldBuilder.Data, ref NativeArray<float>, int, int, int, int)).MethodHandle);
+				WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.ClearWaterUnderTerrain(ref WorldBuilder.Data, ref NativeArray<float>, int, int, int, int)).MethodHandle);
 			}
 
-			// Token: 0x0600BB67 RID: 47975 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BC7B RID: 48251 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600BB68 RID: 47976 RVA: 0x0045917D File Offset: 0x0045737D
+			// Token: 0x0600BC7C RID: 48252 RVA: 0x0045CB29 File Offset: 0x0045AD29
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static ClearWaterUnderTerrain_0000BA2A$BurstDirectCall()
+			static ClearWaterUnderTerrain_0000BB3E$BurstDirectCall()
 			{
-				WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.Constructor();
+				WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600BB69 RID: 47977 RVA: 0x00459184 File Offset: 0x00457384
+			// Token: 0x0600BC7D RID: 48253 RVA: 0x0045CB30 File Offset: 0x0045AD30
 			public static void Invoke(ref WorldBuilder.Data _data, ref NativeArray<float> _terrain, int startX, int endX, int startY, int endY)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = WorldBuilder.ClearWaterUnderTerrain_0000BA2A$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = WorldBuilder.ClearWaterUnderTerrain_0000BB3E$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(WorldGenerationEngineFinal.WorldBuilder/Data&,Unity.Collections.NativeArray`1<System.Single>&,System.Int32,System.Int32,System.Int32,System.Int32), ref _data, ref _terrain, startX, endX, startY, endY, functionPointer);
@@ -3554,70 +3554,70 @@ namespace WorldGenerationEngineFinal
 				WorldBuilder.ClearWaterUnderTerrain$BurstManaged(ref _data, ref _terrain, startX, endX, startY, endY);
 			}
 
-			// Token: 0x04008C3B RID: 35899
+			// Token: 0x04008D24 RID: 36132
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008C3C RID: 35900
+			// Token: 0x04008D25 RID: 36133
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x02001792 RID: 6034
-		// (Invoke) Token: 0x0600BB6B RID: 47979
+		// Token: 0x020017C3 RID: 6083
+		// (Invoke) Token: 0x0600BC7F RID: 48255
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void FinalizeWater_0000BA2D$PostfixBurstDelegate(ref WorldBuilder.Data _data, float _WaterHeight);
+		public delegate void FinalizeWater_0000BB41$PostfixBurstDelegate(ref WorldBuilder.Data _data, float _WaterHeight);
 
-		// Token: 0x02001793 RID: 6035
+		// Token: 0x020017C4 RID: 6084
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class FinalizeWater_0000BA2D$BurstDirectCall
+		public static class FinalizeWater_0000BB41$BurstDirectCall
 		{
-			// Token: 0x0600BB6E RID: 47982 RVA: 0x004591C3 File Offset: 0x004573C3
+			// Token: 0x0600BC82 RID: 48258 RVA: 0x0045CB6F File Offset: 0x0045AD6F
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.Pointer == 0)
+				if (WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.Pointer == 0)
 				{
-					WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.FinalizeWater$BurstManaged(ref WorldBuilder.Data, float)).MethodHandle, typeof(WorldBuilder.FinalizeWater_0000BA2D$PostfixBurstDelegate).TypeHandle);
+					WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.FinalizeWater$BurstManaged(ref WorldBuilder.Data, float)).MethodHandle, typeof(WorldBuilder.FinalizeWater_0000BB41$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.Pointer;
+				A_0 = WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600BB6F RID: 47983 RVA: 0x004591F0 File Offset: 0x004573F0
+			// Token: 0x0600BC83 RID: 48259 RVA: 0x0045CB9C File Offset: 0x0045AD9C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600BB70 RID: 47984 RVA: 0x00459208 File Offset: 0x00457408
+			// Token: 0x0600BC84 RID: 48260 RVA: 0x0045CBB4 File Offset: 0x0045ADB4
 			public static void Constructor()
 			{
-				WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.FinalizeWater(ref WorldBuilder.Data, float)).MethodHandle);
+				WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.FinalizeWater(ref WorldBuilder.Data, float)).MethodHandle);
 			}
 
-			// Token: 0x0600BB71 RID: 47985 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BC85 RID: 48261 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600BB72 RID: 47986 RVA: 0x00459219 File Offset: 0x00457419
+			// Token: 0x0600BC86 RID: 48262 RVA: 0x0045CBC5 File Offset: 0x0045ADC5
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static FinalizeWater_0000BA2D$BurstDirectCall()
+			static FinalizeWater_0000BB41$BurstDirectCall()
 			{
-				WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.Constructor();
+				WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600BB73 RID: 47987 RVA: 0x00459220 File Offset: 0x00457420
+			// Token: 0x0600BC87 RID: 48263 RVA: 0x0045CBCC File Offset: 0x0045ADCC
 			public static void Invoke(ref WorldBuilder.Data _data, float _WaterHeight)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = WorldBuilder.FinalizeWater_0000BA2D$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = WorldBuilder.FinalizeWater_0000BB41$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(WorldGenerationEngineFinal.WorldBuilder/Data&,System.Single), ref _data, _WaterHeight, functionPointer);
@@ -3627,70 +3627,70 @@ namespace WorldGenerationEngineFinal
 				WorldBuilder.FinalizeWater$BurstManaged(ref _data, _WaterHeight);
 			}
 
-			// Token: 0x04008C3D RID: 35901
+			// Token: 0x04008D26 RID: 36134
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008C3E RID: 35902
+			// Token: 0x04008D27 RID: 36135
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x02001794 RID: 6036
-		// (Invoke) Token: 0x0600BB75 RID: 47989
+		// Token: 0x020017C5 RID: 6085
+		// (Invoke) Token: 0x0600BC89 RID: 48265
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void SmoothRoadTerrainTask_0000BA34$PostfixBurstDelegate(ref WorldBuilder.Data _data, ref NativeArray<Color32> roadMask, ref NativeArray<float> _heightMap, int WorldSize);
+		public delegate void SmoothRoadTerrainTask_0000BB48$PostfixBurstDelegate(ref WorldBuilder.Data _data, ref NativeArray<Color32> roadMask, ref NativeArray<float> _heightMap, int WorldSize);
 
-		// Token: 0x02001795 RID: 6037
+		// Token: 0x020017C6 RID: 6086
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class SmoothRoadTerrainTask_0000BA34$BurstDirectCall
+		public static class SmoothRoadTerrainTask_0000BB48$BurstDirectCall
 		{
-			// Token: 0x0600BB78 RID: 47992 RVA: 0x00459253 File Offset: 0x00457453
+			// Token: 0x0600BC8C RID: 48268 RVA: 0x0045CBFF File Offset: 0x0045ADFF
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.Pointer == 0)
+				if (WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.Pointer == 0)
 				{
-					WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.SmoothRoadTerrainTask$BurstManaged(ref WorldBuilder.Data, ref NativeArray<Color32>, ref NativeArray<float>, int)).MethodHandle, typeof(WorldBuilder.SmoothRoadTerrainTask_0000BA34$PostfixBurstDelegate).TypeHandle);
+					WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.SmoothRoadTerrainTask$BurstManaged(ref WorldBuilder.Data, ref NativeArray<Color32>, ref NativeArray<float>, int)).MethodHandle, typeof(WorldBuilder.SmoothRoadTerrainTask_0000BB48$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.Pointer;
+				A_0 = WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600BB79 RID: 47993 RVA: 0x00459280 File Offset: 0x00457480
+			// Token: 0x0600BC8D RID: 48269 RVA: 0x0045CC2C File Offset: 0x0045AE2C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600BB7A RID: 47994 RVA: 0x00459298 File Offset: 0x00457498
+			// Token: 0x0600BC8E RID: 48270 RVA: 0x0045CC44 File Offset: 0x0045AE44
 			public static void Constructor()
 			{
-				WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.SmoothRoadTerrainTask(ref WorldBuilder.Data, ref NativeArray<Color32>, ref NativeArray<float>, int)).MethodHandle);
+				WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.SmoothRoadTerrainTask(ref WorldBuilder.Data, ref NativeArray<Color32>, ref NativeArray<float>, int)).MethodHandle);
 			}
 
-			// Token: 0x0600BB7B RID: 47995 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BC8F RID: 48271 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600BB7C RID: 47996 RVA: 0x004592A9 File Offset: 0x004574A9
+			// Token: 0x0600BC90 RID: 48272 RVA: 0x0045CC55 File Offset: 0x0045AE55
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static SmoothRoadTerrainTask_0000BA34$BurstDirectCall()
+			static SmoothRoadTerrainTask_0000BB48$BurstDirectCall()
 			{
-				WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.Constructor();
+				WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600BB7D RID: 47997 RVA: 0x004592B0 File Offset: 0x004574B0
+			// Token: 0x0600BC91 RID: 48273 RVA: 0x0045CC5C File Offset: 0x0045AE5C
 			public static void Invoke(ref WorldBuilder.Data _data, ref NativeArray<Color32> roadMask, ref NativeArray<float> _heightMap, int WorldSize)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = WorldBuilder.SmoothRoadTerrainTask_0000BA34$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = WorldBuilder.SmoothRoadTerrainTask_0000BB48$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(WorldGenerationEngineFinal.WorldBuilder/Data&,Unity.Collections.NativeArray`1<UnityEngine.Color32>&,Unity.Collections.NativeArray`1<System.Single>&,System.Int32), ref _data, ref roadMask, ref _heightMap, WorldSize, functionPointer);
@@ -3700,70 +3700,70 @@ namespace WorldGenerationEngineFinal
 				WorldBuilder.SmoothRoadTerrainTask$BurstManaged(ref _data, ref roadMask, ref _heightMap, WorldSize);
 			}
 
-			// Token: 0x04008C3F RID: 35903
+			// Token: 0x04008D28 RID: 36136
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008C40 RID: 35904
+			// Token: 0x04008D29 RID: 36137
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x02001796 RID: 6038
-		// (Invoke) Token: 0x0600BB7F RID: 47999
+		// Token: 0x020017C7 RID: 6087
+		// (Invoke) Token: 0x0600BC93 RID: 48275
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void AdjustHeights_0000BA47$PostfixBurstDelegate(ref NativeArray<float> _src, float _min);
+		public delegate void AdjustHeights_0000BB5B$PostfixBurstDelegate(ref NativeArray<float> _src, float _min);
 
-		// Token: 0x02001797 RID: 6039
+		// Token: 0x020017C8 RID: 6088
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class AdjustHeights_0000BA47$BurstDirectCall
+		public static class AdjustHeights_0000BB5B$BurstDirectCall
 		{
-			// Token: 0x0600BB82 RID: 48002 RVA: 0x004592E7 File Offset: 0x004574E7
+			// Token: 0x0600BC96 RID: 48278 RVA: 0x0045CC93 File Offset: 0x0045AE93
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.Pointer == 0)
+				if (WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.Pointer == 0)
 				{
-					WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.AdjustHeights$BurstManaged(ref NativeArray<float>, float)).MethodHandle, typeof(WorldBuilder.AdjustHeights_0000BA47$PostfixBurstDelegate).TypeHandle);
+					WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.DeferredCompilation, methodof(WorldBuilder.AdjustHeights$BurstManaged(ref NativeArray<float>, float)).MethodHandle, typeof(WorldBuilder.AdjustHeights_0000BB5B$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.Pointer;
+				A_0 = WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600BB83 RID: 48003 RVA: 0x00459314 File Offset: 0x00457514
+			// Token: 0x0600BC97 RID: 48279 RVA: 0x0045CCC0 File Offset: 0x0045AEC0
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600BB84 RID: 48004 RVA: 0x0045932C File Offset: 0x0045752C
+			// Token: 0x0600BC98 RID: 48280 RVA: 0x0045CCD8 File Offset: 0x0045AED8
 			public static void Constructor()
 			{
-				WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.AdjustHeights(ref NativeArray<float>, float)).MethodHandle);
+				WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(WorldBuilder.AdjustHeights(ref NativeArray<float>, float)).MethodHandle);
 			}
 
-			// Token: 0x0600BB85 RID: 48005 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BC99 RID: 48281 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600BB86 RID: 48006 RVA: 0x0045933D File Offset: 0x0045753D
+			// Token: 0x0600BC9A RID: 48282 RVA: 0x0045CCE9 File Offset: 0x0045AEE9
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static AdjustHeights_0000BA47$BurstDirectCall()
+			static AdjustHeights_0000BB5B$BurstDirectCall()
 			{
-				WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.Constructor();
+				WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600BB87 RID: 48007 RVA: 0x00459344 File Offset: 0x00457544
+			// Token: 0x0600BC9B RID: 48283 RVA: 0x0045CCF0 File Offset: 0x0045AEF0
 			public static void Invoke(ref NativeArray<float> _src, float _min)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = WorldBuilder.AdjustHeights_0000BA47$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = WorldBuilder.AdjustHeights_0000BB5B$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(Unity.Collections.NativeArray`1<System.Single>&,System.Single), ref _src, _min, functionPointer);
@@ -3773,11 +3773,11 @@ namespace WorldGenerationEngineFinal
 				WorldBuilder.AdjustHeights$BurstManaged(ref _src, _min);
 			}
 
-			// Token: 0x04008C41 RID: 35905
+			// Token: 0x04008D2A RID: 36138
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008C42 RID: 35906
+			// Token: 0x04008D2B RID: 36139
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}

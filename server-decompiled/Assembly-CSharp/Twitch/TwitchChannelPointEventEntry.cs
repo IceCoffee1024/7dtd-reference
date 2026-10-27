@@ -7,16 +7,16 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x02001859 RID: 6233
+	// Token: 0x0200188A RID: 6282
 	public class TwitchChannelPointEventEntry : BaseTwitchEventEntry
 	{
-		// Token: 0x0600C072 RID: 49266 RVA: 0x0046D58E File Offset: 0x0046B78E
+		// Token: 0x0600C186 RID: 49542 RVA: 0x00470F3A File Offset: 0x0046F13A
 		public override bool IsValid(int amount = -1, string name = "", TwitchSubEventEntry.SubTierTypes subTier = TwitchSubEventEntry.SubTierTypes.Any)
 		{
 			return this.ChannelPointTitle == name;
 		}
 
-		// Token: 0x0600C073 RID: 49267 RVA: 0x0046D59C File Offset: 0x0046B79C
+		// Token: 0x0600C187 RID: 49543 RVA: 0x00470F48 File Offset: 0x0046F148
 		public TwitchChannelPointEventEntry.CreateCustomReward SetupRewardEntry(string channelID)
 		{
 			return new TwitchChannelPointEventEntry.CreateCustomReward
@@ -33,7 +33,7 @@ namespace Twitch
 			};
 		}
 
-		// Token: 0x0600C074 RID: 49268 RVA: 0x0046D61E File Offset: 0x0046B81E
+		// Token: 0x0600C188 RID: 49544 RVA: 0x00470FCA File Offset: 0x0046F1CA
 		public static IEnumerator CreateCustomRewardPost(TwitchChannelPointEventEntry.CreateCustomReward _rd, Action<string> _onSucess, Action<string> _onFail)
 		{
 			yield return new WaitUntil(() => TwitchManager.Current.Authentication != null && TwitchManager.Current.Authentication.oauth != "" && TwitchManager.Current.Authentication.userID != "");
@@ -70,7 +70,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600C075 RID: 49269 RVA: 0x0046D63B File Offset: 0x0046B83B
+		// Token: 0x0600C189 RID: 49545 RVA: 0x00470FE7 File Offset: 0x0046F1E7
 		public static IEnumerator DeleteCustomRewardsDelete(string id, Action<string> _onSucess, Action<string> _onFail)
 		{
 			string text = string.Format("https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id={0}&id={1}", TwitchManager.Current.Authentication.userID, id);
@@ -110,97 +110,97 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x04009053 RID: 36947
+		// Token: 0x0400913C RID: 37180
 		public string ChannelPointTitle = "";
 
-		// Token: 0x04009054 RID: 36948
+		// Token: 0x0400913D RID: 37181
 		public int Cost = 1000;
 
-		// Token: 0x04009055 RID: 36949
+		// Token: 0x0400913E RID: 37182
 		public int MaxPerUserPerStream;
 
-		// Token: 0x04009056 RID: 36950
+		// Token: 0x0400913F RID: 37183
 		public int MaxPerStream;
 
-		// Token: 0x04009057 RID: 36951
+		// Token: 0x04009140 RID: 37184
 		public int GlobalCooldown;
 
-		// Token: 0x04009058 RID: 36952
+		// Token: 0x04009141 RID: 37185
 		public string ChannelPointID = "";
 
-		// Token: 0x04009059 RID: 36953
+		// Token: 0x04009142 RID: 37186
 		public bool AutoCreate = true;
 
-		// Token: 0x0200185A RID: 6234
+		// Token: 0x0200188B RID: 6283
 		[Serializable]
 		public class CreateCustomRewards
 		{
-			// Token: 0x0400905A RID: 36954
+			// Token: 0x04009143 RID: 37187
 			public List<TwitchChannelPointEventEntry.CreateCustomReward> data = new List<TwitchChannelPointEventEntry.CreateCustomReward>();
 		}
 
-		// Token: 0x0200185B RID: 6235
+		// Token: 0x0200188C RID: 6284
 		[Serializable]
 		public class CreateCustomReward
 		{
-			// Token: 0x0400905B RID: 36955
+			// Token: 0x04009144 RID: 37188
 			public string broadcaster_id;
 
-			// Token: 0x0400905C RID: 36956
+			// Token: 0x04009145 RID: 37189
 			public string title;
 
-			// Token: 0x0400905D RID: 36957
+			// Token: 0x04009146 RID: 37190
 			public string background_color = "#F13030";
 
-			// Token: 0x0400905E RID: 36958
+			// Token: 0x04009147 RID: 37191
 			public int cost;
 
-			// Token: 0x0400905F RID: 36959
+			// Token: 0x04009148 RID: 37192
 			public int max_per_user_per_stream;
 
-			// Token: 0x04009060 RID: 36960
+			// Token: 0x04009149 RID: 37193
 			public bool is_max_per_user_per_stream_enabled;
 
-			// Token: 0x04009061 RID: 36961
+			// Token: 0x0400914A RID: 37194
 			public int max_per_stream;
 
-			// Token: 0x04009062 RID: 36962
+			// Token: 0x0400914B RID: 37195
 			public bool is_max_per_stream_enabled;
 
-			// Token: 0x04009063 RID: 36963
+			// Token: 0x0400914C RID: 37196
 			public int global_cooldown_seconds;
 
-			// Token: 0x04009064 RID: 36964
+			// Token: 0x0400914D RID: 37197
 			public bool is_global_cooldown_enabled;
 		}
 
-		// Token: 0x0200185C RID: 6236
+		// Token: 0x0200188D RID: 6285
 		[Serializable]
 		public class CreateCustomRewardResponses
 		{
-			// Token: 0x04009065 RID: 36965
+			// Token: 0x0400914E RID: 37198
 			public List<TwitchChannelPointEventEntry.CreateCustomRewardResponse> data;
 		}
 
-		// Token: 0x0200185D RID: 6237
+		// Token: 0x0200188E RID: 6286
 		[Serializable]
 		public class CreateCustomRewardResponse
 		{
-			// Token: 0x04009066 RID: 36966
+			// Token: 0x0400914F RID: 37199
 			public string id;
 
-			// Token: 0x04009067 RID: 36967
+			// Token: 0x04009150 RID: 37200
 			public string title;
 		}
 
-		// Token: 0x0200185E RID: 6238
+		// Token: 0x0200188F RID: 6287
 		[Serializable]
 		public class ErrorResponse
 		{
-			// Token: 0x04009068 RID: 36968
+			// Token: 0x04009151 RID: 37201
 			public string status;
 
-			// Token: 0x04009069 RID: 36969
+			// Token: 0x04009152 RID: 37202
 			public string message;
 		}
 	}

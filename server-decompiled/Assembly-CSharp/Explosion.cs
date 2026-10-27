@@ -4,10 +4,10 @@ using System.Diagnostics;
 using Twitch;
 using UnityEngine;
 
-// Token: 0x02000549 RID: 1353
+// Token: 0x0200054D RID: 1357
 public class Explosion
 {
-	// Token: 0x06002C40 RID: 11328 RVA: 0x00118204 File Offset: 0x00116404
+	// Token: 0x06002C48 RID: 11336 RVA: 0x00118790 File Offset: 0x00116990
 	public Explosion(World _world, Vector3 _worldPos, Vector3i _blockPos, ExplosionData _explosionData, int _entityId)
 	{
 		this.world = _world;
@@ -19,7 +19,7 @@ public class Explosion
 		this.ChangedBlockPositions = new Dictionary<Vector3i, BlockChangeInfo>();
 	}
 
-	// Token: 0x06002C41 RID: 11329 RVA: 0x00118254 File Offset: 0x00116454
+	// Token: 0x06002C49 RID: 11337 RVA: 0x001187E0 File Offset: 0x001169E0
 	public void AttackBlocks(int _entityThatCausedExplosion, ItemValue _itemValueExplosionSource)
 	{
 		ChunkCluster chunkCache = this.world.ChunkCache;
@@ -201,7 +201,7 @@ public class Explosion
 		}
 	}
 
-	// Token: 0x06002C42 RID: 11330 RVA: 0x001188A8 File Offset: 0x00116AA8
+	// Token: 0x06002C4A RID: 11338 RVA: 0x00118E34 File Offset: 0x00117034
 	public void AttackEntites(int _entityThatCausedExplosion, ItemValue _itemValueExplosionSource, EnumDamageTypes damageType)
 	{
 		EntityAlive entityAlive = this.world.GetEntity(_entityThatCausedExplosion) as EntityAlive;
@@ -412,7 +412,7 @@ public class Explosion
 		Explosion.hitEntities.Clear();
 	}
 
-	// Token: 0x06002C43 RID: 11331 RVA: 0x00119038 File Offset: 0x00117238
+	// Token: 0x06002C4B RID: 11339 RVA: 0x001195C4 File Offset: 0x001177C4
 	[Conditional("DEBUG_EXPLOSION_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void log(string format, params object[] args)
@@ -421,77 +421,77 @@ public class Explosion
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x040021F1 RID: 8689
+	// Token: 0x04002208 RID: 8712
 	public Dictionary<Vector3i, BlockChangeInfo> ChangedBlockPositions;
 
-	// Token: 0x040021F2 RID: 8690
+	// Token: 0x04002209 RID: 8713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x040021F3 RID: 8691
+	// Token: 0x0400220A RID: 8714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 worldPos;
 
-	// Token: 0x040021F4 RID: 8692
+	// Token: 0x0400220B RID: 8715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x040021F5 RID: 8693
+	// Token: 0x0400220C RID: 8716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040021F6 RID: 8694
+	// Token: 0x0400220D RID: 8717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ExplosionData explosionData;
 
-	// Token: 0x040021F7 RID: 8695
+	// Token: 0x0400220E RID: 8718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> damagedBlockPositions;
 
-	// Token: 0x040021F8 RID: 8696
+	// Token: 0x0400220F RID: 8719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> explosionTag = FastTags<TagGroup.Global>.Parse("explosion");
 
-	// Token: 0x040021F9 RID: 8697
+	// Token: 0x04002210 RID: 8720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDisintegrationEpicenterPercent = 0.67f;
 
-	// Token: 0x040021FA RID: 8698
+	// Token: 0x04002211 RID: 8721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMinZombiesForDisintegration = 4f;
 
-	// Token: 0x040021FB RID: 8699
+	// Token: 0x04002212 RID: 8722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMinZombiesForDisintegrationPercent = 0.8f;
 
-	// Token: 0x040021FC RID: 8700
+	// Token: 0x04002213 RID: 8723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cStepDistance = 0.51f;
 
-	// Token: 0x040021FD RID: 8701
+	// Token: 0x04002214 RID: 8724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, Explosion.DamageRecord> hitEntities = new Dictionary<int, Explosion.DamageRecord>();
 
-	// Token: 0x0200054A RID: 1354
+	// Token: 0x0200054E RID: 1358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct DamageRecord
 	{
-		// Token: 0x040021FE RID: 8702
+		// Token: 0x04002215 RID: 8725
 		public EntityAlive entity;
 
-		// Token: 0x040021FF RID: 8703
+		// Token: 0x04002216 RID: 8726
 		public float damage;
 
-		// Token: 0x04002200 RID: 8704
+		// Token: 0x04002217 RID: 8727
 		public Vector3 dir;
 
-		// Token: 0x04002201 RID: 8705
+		// Token: 0x04002218 RID: 8728
 		public Transform hitTransform;
 
-		// Token: 0x04002202 RID: 8706
+		// Token: 0x04002219 RID: 8729
 		public EnumBodyPartHit mainPart;
 
-		// Token: 0x04002203 RID: 8707
+		// Token: 0x0400221A RID: 8730
 		public EnumBodyPartHit parts;
 	}
 }

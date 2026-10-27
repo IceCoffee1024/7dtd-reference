@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000835 RID: 2101
+// Token: 0x0200083F RID: 2111
 [Preserve]
 public class NetPackagePOIMetadataResponse : NetPackage
 {
-	// Token: 0x1700068F RID: 1679
-	// (get) Token: 0x06003D61 RID: 15713 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000695 RID: 1685
+	// (get) Token: 0x06003D84 RID: 15748 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,8 +16,8 @@ public class NetPackagePOIMetadataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x17000690 RID: 1680
-	// (get) Token: 0x06003D62 RID: 15714 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000696 RID: 1686
+	// (get) Token: 0x06003D85 RID: 15749 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool Compress
 	{
 		get
@@ -26,7 +26,7 @@ public class NetPackagePOIMetadataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003D63 RID: 15715 RVA: 0x001866A4 File Offset: 0x001848A4
+	// Token: 0x06003D86 RID: 15750 RVA: 0x001877A8 File Offset: 0x001859A8
 	public NetPackagePOIMetadataResponse Setup(List<PrefabInstance> _pois)
 	{
 		this.metadatas = new List<PrefabInstance.POIMetadata>(_pois.Count);
@@ -42,7 +42,7 @@ public class NetPackagePOIMetadataResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D64 RID: 15716 RVA: 0x001866FC File Offset: 0x001848FC
+	// Token: 0x06003D87 RID: 15751 RVA: 0x00187800 File Offset: 0x00185A00
 	public override void read(PooledBinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -53,7 +53,7 @@ public class NetPackagePOIMetadataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003D65 RID: 15717 RVA: 0x0018673C File Offset: 0x0018493C
+	// Token: 0x06003D88 RID: 15752 RVA: 0x00187840 File Offset: 0x00185A40
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -65,13 +65,13 @@ public class NetPackagePOIMetadataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003D66 RID: 15718 RVA: 0x00186781 File Offset: 0x00184981
+	// Token: 0x06003D89 RID: 15753 RVA: 0x00187885 File Offset: 0x00185A85
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		GameManager.Instance.GetDynamicPrefabDecorator().ProcessPOIMetadataReceived(this.metadatas);
 	}
 
-	// Token: 0x040031CD RID: 12749
+	// Token: 0x040031ED RID: 12781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance.POIMetadata> metadatas;
 }

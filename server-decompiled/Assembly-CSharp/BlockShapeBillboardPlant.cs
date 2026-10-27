@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 {
-	// Token: 0x06000CA6 RID: 3238 RVA: 0x0004F400 File Offset: 0x0004D600
+	// Token: 0x06000CA6 RID: 3238 RVA: 0x0004F3C0 File Offset: 0x0004D5C0
 	public BlockShapeBillboardPlant()
 	{
 		this.boundsArr = new Bounds[] { BoundsUtils.BoundsForMinMax(0.3f, 0f, 0.3f, 0.7f, 1f, 0.7f) };
 	}
 
-	// Token: 0x06000CA7 RID: 3239 RVA: 0x0004F44C File Offset: 0x0004D64C
+	// Token: 0x06000CA7 RID: 3239 RVA: 0x0004F40C File Offset: 0x0004D60C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createVertices()
 	{
@@ -30,13 +30,13 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		};
 	}
 
-	// Token: 0x06000CA8 RID: 3240 RVA: 0x0004F53D File Offset: 0x0004D73D
+	// Token: 0x06000CA8 RID: 3240 RVA: 0x0004F4FD File Offset: 0x0004D6FD
 	public override Quaternion GetRotation(BlockValue _blockValue)
 	{
 		return Quaternion.AngleAxis((float)(20 * _blockValue.rotation), Vector3.up);
 	}
 
-	// Token: 0x06000CA9 RID: 3241 RVA: 0x0004F554 File Offset: 0x0004D754
+	// Token: 0x06000CA9 RID: 3241 RVA: 0x0004F514 File Offset: 0x0004D714
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -67,27 +67,27 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		MemoryPools.poolVector3.Free(array);
 	}
 
-	// Token: 0x06000CAA RID: 3242 RVA: 0x0004E4F6 File Offset: 0x0004C6F6
+	// Token: 0x06000CAA RID: 3242 RVA: 0x0004E4B6 File Offset: 0x0004C6B6
 	public override Bounds[] GetBounds(BlockValue _blockValue)
 	{
 		return this.boundsArr;
 	}
 
-	// Token: 0x06000CAB RID: 3243 RVA: 0x0004F701 File Offset: 0x0004D901
+	// Token: 0x06000CAB RID: 3243 RVA: 0x0004F6C1 File Offset: 0x0004D8C1
 	public override byte Rotate(bool _isLeft, int _rotation)
 	{
 		_rotation = (_rotation + (_isLeft ? (-1) : 1)) & 3;
 		return (byte)_rotation;
 	}
 
-	// Token: 0x06000CAC RID: 3244 RVA: 0x0004F712 File Offset: 0x0004D912
+	// Token: 0x06000CAC RID: 3244 RVA: 0x0004F6D2 File Offset: 0x0004D8D2
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		_blockValue.rotation = (byte)(((int)_blockValue.rotation + _rotCount) & 3);
 		return _blockValue;
 	}
 
-	// Token: 0x06000CAD RID: 3245 RVA: 0x0004F728 File Offset: 0x0004D928
+	// Token: 0x06000CAD RID: 3245 RVA: 0x0004F6E8 File Offset: 0x0004D8E8
 	public static void RenderSpinMesh(VoxelMesh _mesh, Vector3 _drawPos, Vector3[] _vertices, Rect uvTex, byte _sunlight, byte _blocklight, BlockShapeBillboardPlant.RenderData _data)
 	{
 		float num = _drawPos.y;
@@ -140,7 +140,7 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		}
 	}
 
-	// Token: 0x06000CAE RID: 3246 RVA: 0x0004F958 File Offset: 0x0004DB58
+	// Token: 0x06000CAE RID: 3246 RVA: 0x0004F918 File Offset: 0x0004DB18
 	public static void RenderGridMesh(VoxelMesh _mesh, Vector3 _drawPos, Vector3[] _vertices, Rect uvTex, byte _sunlight, byte _blocklight, BlockShapeBillboardPlant.RenderData _data)
 	{
 		float num = _drawPos.y;
@@ -219,7 +219,7 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		}
 	}
 
-	// Token: 0x06000CAF RID: 3247 RVA: 0x0004FCBC File Offset: 0x0004DEBC
+	// Token: 0x06000CAF RID: 3247 RVA: 0x0004FC7C File Offset: 0x0004DE7C
 	public static void AddCollider(VoxelMesh _mesh, Vector3 _drawPos, float _height)
 	{
 		float num = _drawPos.x + 0.5f;
@@ -254,7 +254,7 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		_mesh.AddRectangleColliderPair(vector, vector2, vector3, vector4);
 	}
 
-	// Token: 0x06000CB0 RID: 3248 RVA: 0x0004FDDC File Offset: 0x0004DFDC
+	// Token: 0x06000CB0 RID: 3248 RVA: 0x0004FD9C File Offset: 0x0004DF9C
 	public override void CalculateCollisionHash(IncrementalHash calcHash)
 	{
 		int num = 1;

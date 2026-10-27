@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002C5 RID: 709
+// Token: 0x020002C7 RID: 711
 [Preserve]
 public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 {
 	// Token: 0x17000236 RID: 566
-	// (get) Token: 0x0600145D RID: 5213 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001461 RID: 5217 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,14 +18,14 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600145E RID: 5214 RVA: 0x0007BDC1 File Offset: 0x00079FC1
+	// Token: 0x06001462 RID: 5218 RVA: 0x0007BF91 File Offset: 0x0007A191
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "wsmats", "workstationmaterials" };
 	}
 
-	// Token: 0x0600145F RID: 5215 RVA: 0x0007BDDC File Offset: 0x00079FDC
+	// Token: 0x06001463 RID: 5219 RVA: 0x0007BFAC File Offset: 0x0007A1AC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 2)
@@ -100,7 +100,7 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		primaryPlayer.Stats.Stamina.MaxModifier = -primaryPlayer.Stats.Stamina.Max + (float)Mathf.CeilToInt(num4 / 100f * primaryPlayer.Stats.Stamina.Max);
 	}
 
-	// Token: 0x06001460 RID: 5216 RVA: 0x0007C01C File Offset: 0x0007A21C
+	// Token: 0x06001464 RID: 5220 RVA: 0x0007C1EC File Offset: 0x0007A3EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSlot(int _targetSlot, int _count, int _storedSlotCount, int _smeltSlotCount, ItemStack[] _inputStacks, string[] _materialNames)
 	{
@@ -128,14 +128,14 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		_inputStacks[num].count = _count;
 	}
 
-	// Token: 0x06001461 RID: 5217 RVA: 0x0007C0D3 File Offset: 0x0007A2D3
+	// Token: 0x06001465 RID: 5221 RVA: 0x0007C2A3 File Offset: 0x0007A4A3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Set material counts on workstations.";
 	}
 
-	// Token: 0x06001462 RID: 5218 RVA: 0x0007C0DA File Offset: 0x0007A2DA
+	// Token: 0x06001466 RID: 5222 RVA: 0x0007C2AA File Offset: 0x0007A4AA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{

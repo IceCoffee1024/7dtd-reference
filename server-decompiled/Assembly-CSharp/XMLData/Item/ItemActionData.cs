@@ -8,13 +8,13 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x02001662 RID: 5730
+	// Token: 0x02001674 RID: 5748
 	[Preserve]
 	public class ItemActionData : IXMLData
 	{
-		// Token: 0x17001563 RID: 5475
-		// (get) Token: 0x0600B368 RID: 45928 RVA: 0x0042E883 File Offset: 0x0042CA83
-		// (set) Token: 0x0600B369 RID: 45929 RVA: 0x0042E88B File Offset: 0x0042CA8B
+		// Token: 0x1700156F RID: 5487
+		// (get) Token: 0x0600B3C0 RID: 46016 RVA: 0x00430C87 File Offset: 0x0042EE87
+		// (set) Token: 0x0600B3C1 RID: 46017 RVA: 0x00430C8F File Offset: 0x0042EE8F
 		public DataItem<float> Delay
 		{
 			get
@@ -27,9 +27,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001564 RID: 5476
-		// (get) Token: 0x0600B36A RID: 45930 RVA: 0x0042E894 File Offset: 0x0042CA94
-		// (set) Token: 0x0600B36B RID: 45931 RVA: 0x0042E89C File Offset: 0x0042CA9C
+		// Token: 0x17001570 RID: 5488
+		// (get) Token: 0x0600B3C2 RID: 46018 RVA: 0x00430C98 File Offset: 0x0042EE98
+		// (set) Token: 0x0600B3C3 RID: 46019 RVA: 0x00430CA0 File Offset: 0x0042EEA0
 		public DataItem<float> Range
 		{
 			get
@@ -42,9 +42,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001565 RID: 5477
-		// (get) Token: 0x0600B36C RID: 45932 RVA: 0x0042E8A5 File Offset: 0x0042CAA5
-		// (set) Token: 0x0600B36D RID: 45933 RVA: 0x0042E8AD File Offset: 0x0042CAAD
+		// Token: 0x17001571 RID: 5489
+		// (get) Token: 0x0600B3C4 RID: 46020 RVA: 0x00430CA9 File Offset: 0x0042EEA9
+		// (set) Token: 0x0600B3C5 RID: 46021 RVA: 0x00430CB1 File Offset: 0x0042EEB1
 		public DataItem<string> SoundStart
 		{
 			get
@@ -57,9 +57,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001566 RID: 5478
-		// (get) Token: 0x0600B36E RID: 45934 RVA: 0x0042E8B6 File Offset: 0x0042CAB6
-		// (set) Token: 0x0600B36F RID: 45935 RVA: 0x0042E8BE File Offset: 0x0042CABE
+		// Token: 0x17001572 RID: 5490
+		// (get) Token: 0x0600B3C6 RID: 46022 RVA: 0x00430CBA File Offset: 0x0042EEBA
+		// (set) Token: 0x0600B3C7 RID: 46023 RVA: 0x00430CC2 File Offset: 0x0042EEC2
 		public DataItem<string> SoundRepeat
 		{
 			get
@@ -72,9 +72,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001567 RID: 5479
-		// (get) Token: 0x0600B370 RID: 45936 RVA: 0x0042E8C7 File Offset: 0x0042CAC7
-		// (set) Token: 0x0600B371 RID: 45937 RVA: 0x0042E8CF File Offset: 0x0042CACF
+		// Token: 0x17001573 RID: 5491
+		// (get) Token: 0x0600B3C8 RID: 46024 RVA: 0x00430CCB File Offset: 0x0042EECB
+		// (set) Token: 0x0600B3C9 RID: 46025 RVA: 0x00430CD3 File Offset: 0x0042EED3
 		public DataItem<string> SoundEnd
 		{
 			get
@@ -87,9 +87,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001568 RID: 5480
-		// (get) Token: 0x0600B372 RID: 45938 RVA: 0x0042E8D8 File Offset: 0x0042CAD8
-		// (set) Token: 0x0600B373 RID: 45939 RVA: 0x0042E8E0 File Offset: 0x0042CAE0
+		// Token: 0x17001574 RID: 5492
+		// (get) Token: 0x0600B3CA RID: 46026 RVA: 0x00430CDC File Offset: 0x0042EEDC
+		// (set) Token: 0x0600B3CB RID: 46027 RVA: 0x00430CE4 File Offset: 0x0042EEE4
 		public DataItem<string> SoundEmpty
 		{
 			get
@@ -102,9 +102,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001569 RID: 5481
-		// (get) Token: 0x0600B374 RID: 45940 RVA: 0x0042E8E9 File Offset: 0x0042CAE9
-		// (set) Token: 0x0600B375 RID: 45941 RVA: 0x0042E8F1 File Offset: 0x0042CAF1
+		// Token: 0x17001575 RID: 5493
+		// (get) Token: 0x0600B3CC RID: 46028 RVA: 0x00430CED File Offset: 0x0042EEED
+		// (set) Token: 0x0600B3CD RID: 46029 RVA: 0x00430CF5 File Offset: 0x0042EEF5
 		public DataItem<string> SoundReload
 		{
 			get
@@ -117,9 +117,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700156A RID: 5482
-		// (get) Token: 0x0600B376 RID: 45942 RVA: 0x0042E8FA File Offset: 0x0042CAFA
-		// (set) Token: 0x0600B377 RID: 45943 RVA: 0x0042E902 File Offset: 0x0042CB02
+		// Token: 0x17001576 RID: 5494
+		// (get) Token: 0x0600B3CE RID: 46030 RVA: 0x00430CFE File Offset: 0x0042EEFE
+		// (set) Token: 0x0600B3CF RID: 46031 RVA: 0x00430D06 File Offset: 0x0042EF06
 		public DataItem<string> SoundWarning
 		{
 			get
@@ -132,9 +132,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700156B RID: 5483
-		// (get) Token: 0x0600B378 RID: 45944 RVA: 0x0042E90B File Offset: 0x0042CB0B
-		// (set) Token: 0x0600B379 RID: 45945 RVA: 0x0042E913 File Offset: 0x0042CB13
+		// Token: 0x17001577 RID: 5495
+		// (get) Token: 0x0600B3D0 RID: 46032 RVA: 0x00430D0F File Offset: 0x0042EF0F
+		// (set) Token: 0x0600B3D1 RID: 46033 RVA: 0x00430D17 File Offset: 0x0042EF17
 		public DataItem<string> StaminaUsage
 		{
 			get
@@ -147,9 +147,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700156C RID: 5484
-		// (get) Token: 0x0600B37A RID: 45946 RVA: 0x0042E91C File Offset: 0x0042CB1C
-		// (set) Token: 0x0600B37B RID: 45947 RVA: 0x0042E924 File Offset: 0x0042CB24
+		// Token: 0x17001578 RID: 5496
+		// (get) Token: 0x0600B3D2 RID: 46034 RVA: 0x00430D20 File Offset: 0x0042EF20
+		// (set) Token: 0x0600B3D3 RID: 46035 RVA: 0x00430D28 File Offset: 0x0042EF28
 		public DataItem<string> UseTime
 		{
 			get
@@ -162,9 +162,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700156D RID: 5485
-		// (get) Token: 0x0600B37C RID: 45948 RVA: 0x0042E92D File Offset: 0x0042CB2D
-		// (set) Token: 0x0600B37D RID: 45949 RVA: 0x0042E935 File Offset: 0x0042CB35
+		// Token: 0x17001579 RID: 5497
+		// (get) Token: 0x0600B3D4 RID: 46036 RVA: 0x00430D31 File Offset: 0x0042EF31
+		// (set) Token: 0x0600B3D5 RID: 46037 RVA: 0x00430D39 File Offset: 0x0042EF39
 		public DataItem<string> FocusedBlockname1
 		{
 			get
@@ -177,9 +177,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700156E RID: 5486
-		// (get) Token: 0x0600B37E RID: 45950 RVA: 0x0042E93E File Offset: 0x0042CB3E
-		// (set) Token: 0x0600B37F RID: 45951 RVA: 0x0042E946 File Offset: 0x0042CB46
+		// Token: 0x1700157A RID: 5498
+		// (get) Token: 0x0600B3D6 RID: 46038 RVA: 0x00430D42 File Offset: 0x0042EF42
+		// (set) Token: 0x0600B3D7 RID: 46039 RVA: 0x00430D4A File Offset: 0x0042EF4A
 		public DataItem<string> FocusedBlockname2
 		{
 			get
@@ -192,9 +192,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700156F RID: 5487
-		// (get) Token: 0x0600B380 RID: 45952 RVA: 0x0042E94F File Offset: 0x0042CB4F
-		// (set) Token: 0x0600B381 RID: 45953 RVA: 0x0042E957 File Offset: 0x0042CB57
+		// Token: 0x1700157B RID: 5499
+		// (get) Token: 0x0600B3D8 RID: 46040 RVA: 0x00430D53 File Offset: 0x0042EF53
+		// (set) Token: 0x0600B3D9 RID: 46041 RVA: 0x00430D5B File Offset: 0x0042EF5B
 		public DataItem<string> FocusedBlockname3
 		{
 			get
@@ -207,9 +207,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001570 RID: 5488
-		// (get) Token: 0x0600B382 RID: 45954 RVA: 0x0042E960 File Offset: 0x0042CB60
-		// (set) Token: 0x0600B383 RID: 45955 RVA: 0x0042E968 File Offset: 0x0042CB68
+		// Token: 0x1700157C RID: 5500
+		// (get) Token: 0x0600B3DA RID: 46042 RVA: 0x00430D64 File Offset: 0x0042EF64
+		// (set) Token: 0x0600B3DB RID: 46043 RVA: 0x00430D6C File Offset: 0x0042EF6C
 		public DataItem<string> FocusedBlockname4
 		{
 			get
@@ -222,9 +222,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001571 RID: 5489
-		// (get) Token: 0x0600B384 RID: 45956 RVA: 0x0042E971 File Offset: 0x0042CB71
-		// (set) Token: 0x0600B385 RID: 45957 RVA: 0x0042E979 File Offset: 0x0042CB79
+		// Token: 0x1700157D RID: 5501
+		// (get) Token: 0x0600B3DC RID: 46044 RVA: 0x00430D75 File Offset: 0x0042EF75
+		// (set) Token: 0x0600B3DD RID: 46045 RVA: 0x00430D7D File Offset: 0x0042EF7D
 		public DataItem<string> FocusedBlockname5
 		{
 			get
@@ -237,9 +237,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001572 RID: 5490
-		// (get) Token: 0x0600B386 RID: 45958 RVA: 0x0042E982 File Offset: 0x0042CB82
-		// (set) Token: 0x0600B387 RID: 45959 RVA: 0x0042E98A File Offset: 0x0042CB8A
+		// Token: 0x1700157E RID: 5502
+		// (get) Token: 0x0600B3DE RID: 46046 RVA: 0x00430D86 File Offset: 0x0042EF86
+		// (set) Token: 0x0600B3DF RID: 46047 RVA: 0x00430D8E File Offset: 0x0042EF8E
 		public DataItem<string> FocusedBlockname6
 		{
 			get
@@ -252,9 +252,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001573 RID: 5491
-		// (get) Token: 0x0600B388 RID: 45960 RVA: 0x0042E993 File Offset: 0x0042CB93
-		// (set) Token: 0x0600B389 RID: 45961 RVA: 0x0042E99B File Offset: 0x0042CB9B
+		// Token: 0x1700157F RID: 5503
+		// (get) Token: 0x0600B3E0 RID: 46048 RVA: 0x00430D97 File Offset: 0x0042EF97
+		// (set) Token: 0x0600B3E1 RID: 46049 RVA: 0x00430D9F File Offset: 0x0042EF9F
 		public DataItem<string> FocusedBlockname7
 		{
 			get
@@ -267,9 +267,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001574 RID: 5492
-		// (get) Token: 0x0600B38A RID: 45962 RVA: 0x0042E9A4 File Offset: 0x0042CBA4
-		// (set) Token: 0x0600B38B RID: 45963 RVA: 0x0042E9AC File Offset: 0x0042CBAC
+		// Token: 0x17001580 RID: 5504
+		// (get) Token: 0x0600B3E2 RID: 46050 RVA: 0x00430DA8 File Offset: 0x0042EFA8
+		// (set) Token: 0x0600B3E3 RID: 46051 RVA: 0x00430DB0 File Offset: 0x0042EFB0
 		public DataItem<string> FocusedBlockname8
 		{
 			get
@@ -282,9 +282,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001575 RID: 5493
-		// (get) Token: 0x0600B38C RID: 45964 RVA: 0x0042E9B5 File Offset: 0x0042CBB5
-		// (set) Token: 0x0600B38D RID: 45965 RVA: 0x0042E9BD File Offset: 0x0042CBBD
+		// Token: 0x17001581 RID: 5505
+		// (get) Token: 0x0600B3E4 RID: 46052 RVA: 0x00430DB9 File Offset: 0x0042EFB9
+		// (set) Token: 0x0600B3E5 RID: 46053 RVA: 0x00430DC1 File Offset: 0x0042EFC1
 		public DataItem<string> FocusedBlockname9
 		{
 			get
@@ -297,9 +297,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001576 RID: 5494
-		// (get) Token: 0x0600B38E RID: 45966 RVA: 0x0042E9C6 File Offset: 0x0042CBC6
-		// (set) Token: 0x0600B38F RID: 45967 RVA: 0x0042E9CE File Offset: 0x0042CBCE
+		// Token: 0x17001582 RID: 5506
+		// (get) Token: 0x0600B3E6 RID: 46054 RVA: 0x00430DCA File Offset: 0x0042EFCA
+		// (set) Token: 0x0600B3E7 RID: 46055 RVA: 0x00430DD2 File Offset: 0x0042EFD2
 		public DataItem<string> ChangeItemTo
 		{
 			get
@@ -312,9 +312,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001577 RID: 5495
-		// (get) Token: 0x0600B390 RID: 45968 RVA: 0x0042E9D7 File Offset: 0x0042CBD7
-		// (set) Token: 0x0600B391 RID: 45969 RVA: 0x0042E9DF File Offset: 0x0042CBDF
+		// Token: 0x17001583 RID: 5507
+		// (get) Token: 0x0600B3E8 RID: 46056 RVA: 0x00430DDB File Offset: 0x0042EFDB
+		// (set) Token: 0x0600B3E9 RID: 46057 RVA: 0x00430DE3 File Offset: 0x0042EFE3
 		public DataItem<string> ChangeBlockTo
 		{
 			get
@@ -327,9 +327,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001578 RID: 5496
-		// (get) Token: 0x0600B392 RID: 45970 RVA: 0x0042E9E8 File Offset: 0x0042CBE8
-		// (set) Token: 0x0600B393 RID: 45971 RVA: 0x0042E9F0 File Offset: 0x0042CBF0
+		// Token: 0x17001584 RID: 5508
+		// (get) Token: 0x0600B3EA RID: 46058 RVA: 0x00430DEC File Offset: 0x0042EFEC
+		// (set) Token: 0x0600B3EB RID: 46059 RVA: 0x00430DF4 File Offset: 0x0042EFF4
 		public DataItem<string> DoBlockAction
 		{
 			get
@@ -342,9 +342,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001579 RID: 5497
-		// (get) Token: 0x0600B394 RID: 45972 RVA: 0x0042E9F9 File Offset: 0x0042CBF9
-		// (set) Token: 0x0600B395 RID: 45973 RVA: 0x0042EA01 File Offset: 0x0042CC01
+		// Token: 0x17001585 RID: 5509
+		// (get) Token: 0x0600B3EC RID: 46060 RVA: 0x00430DFD File Offset: 0x0042EFFD
+		// (set) Token: 0x0600B3ED RID: 46061 RVA: 0x00430E05 File Offset: 0x0042F005
 		public DataItem<float> GainHealth
 		{
 			get
@@ -357,9 +357,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700157A RID: 5498
-		// (get) Token: 0x0600B396 RID: 45974 RVA: 0x0042EA0A File Offset: 0x0042CC0A
-		// (set) Token: 0x0600B397 RID: 45975 RVA: 0x0042EA12 File Offset: 0x0042CC12
+		// Token: 0x17001586 RID: 5510
+		// (get) Token: 0x0600B3EE RID: 46062 RVA: 0x00430E0E File Offset: 0x0042F00E
+		// (set) Token: 0x0600B3EF RID: 46063 RVA: 0x00430E16 File Offset: 0x0042F016
 		public DataItem<float> GainFood
 		{
 			get
@@ -372,9 +372,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700157B RID: 5499
-		// (get) Token: 0x0600B398 RID: 45976 RVA: 0x0042EA1B File Offset: 0x0042CC1B
-		// (set) Token: 0x0600B399 RID: 45977 RVA: 0x0042EA23 File Offset: 0x0042CC23
+		// Token: 0x17001587 RID: 5511
+		// (get) Token: 0x0600B3F0 RID: 46064 RVA: 0x00430E1F File Offset: 0x0042F01F
+		// (set) Token: 0x0600B3F1 RID: 46065 RVA: 0x00430E27 File Offset: 0x0042F027
 		public DataItem<float> GainWater
 		{
 			get
@@ -387,9 +387,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700157C RID: 5500
-		// (get) Token: 0x0600B39A RID: 45978 RVA: 0x0042EA2C File Offset: 0x0042CC2C
-		// (set) Token: 0x0600B39B RID: 45979 RVA: 0x0042EA34 File Offset: 0x0042CC34
+		// Token: 0x17001588 RID: 5512
+		// (get) Token: 0x0600B3F2 RID: 46066 RVA: 0x00430E30 File Offset: 0x0042F030
+		// (set) Token: 0x0600B3F3 RID: 46067 RVA: 0x00430E38 File Offset: 0x0042F038
 		public DataItem<float> GainStamina
 		{
 			get
@@ -402,9 +402,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700157D RID: 5501
-		// (get) Token: 0x0600B39C RID: 45980 RVA: 0x0042EA3D File Offset: 0x0042CC3D
-		// (set) Token: 0x0600B39D RID: 45981 RVA: 0x0042EA45 File Offset: 0x0042CC45
+		// Token: 0x17001589 RID: 5513
+		// (get) Token: 0x0600B3F4 RID: 46068 RVA: 0x00430E41 File Offset: 0x0042F041
+		// (set) Token: 0x0600B3F5 RID: 46069 RVA: 0x00430E49 File Offset: 0x0042F049
 		public DataItem<float> GainSickness
 		{
 			get
@@ -417,9 +417,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700157E RID: 5502
-		// (get) Token: 0x0600B39E RID: 45982 RVA: 0x0042EA4E File Offset: 0x0042CC4E
-		// (set) Token: 0x0600B39F RID: 45983 RVA: 0x0042EA56 File Offset: 0x0042CC56
+		// Token: 0x1700158A RID: 5514
+		// (get) Token: 0x0600B3F6 RID: 46070 RVA: 0x00430E52 File Offset: 0x0042F052
+		// (set) Token: 0x0600B3F7 RID: 46071 RVA: 0x00430E5A File Offset: 0x0042F05A
 		public DataItem<float> GainWellness
 		{
 			get
@@ -432,9 +432,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700157F RID: 5503
-		// (get) Token: 0x0600B3A0 RID: 45984 RVA: 0x0042EA5F File Offset: 0x0042CC5F
-		// (set) Token: 0x0600B3A1 RID: 45985 RVA: 0x0042EA67 File Offset: 0x0042CC67
+		// Token: 0x1700158B RID: 5515
+		// (get) Token: 0x0600B3F8 RID: 46072 RVA: 0x00430E63 File Offset: 0x0042F063
+		// (set) Token: 0x0600B3F9 RID: 46073 RVA: 0x00430E6B File Offset: 0x0042F06B
 		public DataItem<string> Buff
 		{
 			get
@@ -447,9 +447,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001580 RID: 5504
-		// (get) Token: 0x0600B3A2 RID: 45986 RVA: 0x0042EA70 File Offset: 0x0042CC70
-		// (set) Token: 0x0600B3A3 RID: 45987 RVA: 0x0042EA78 File Offset: 0x0042CC78
+		// Token: 0x1700158C RID: 5516
+		// (get) Token: 0x0600B3FA RID: 46074 RVA: 0x00430E74 File Offset: 0x0042F074
+		// (set) Token: 0x0600B3FB RID: 46075 RVA: 0x00430E7C File Offset: 0x0042F07C
 		public DataItem<string> BuffChance
 		{
 			get
@@ -462,9 +462,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001581 RID: 5505
-		// (get) Token: 0x0600B3A4 RID: 45988 RVA: 0x0042EA81 File Offset: 0x0042CC81
-		// (set) Token: 0x0600B3A5 RID: 45989 RVA: 0x0042EA89 File Offset: 0x0042CC89
+		// Token: 0x1700158D RID: 5517
+		// (get) Token: 0x0600B3FC RID: 46076 RVA: 0x00430E85 File Offset: 0x0042F085
+		// (set) Token: 0x0600B3FD RID: 46077 RVA: 0x00430E8D File Offset: 0x0042F08D
 		public DataItem<string> Debuff
 		{
 			get
@@ -477,9 +477,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001582 RID: 5506
-		// (get) Token: 0x0600B3A6 RID: 45990 RVA: 0x0042EA92 File Offset: 0x0042CC92
-		// (set) Token: 0x0600B3A7 RID: 45991 RVA: 0x0042EA9A File Offset: 0x0042CC9A
+		// Token: 0x1700158E RID: 5518
+		// (get) Token: 0x0600B3FE RID: 46078 RVA: 0x00430E96 File Offset: 0x0042F096
+		// (set) Token: 0x0600B3FF RID: 46079 RVA: 0x00430E9E File Offset: 0x0042F09E
 		public DataItem<string> CreateItem
 		{
 			get
@@ -492,9 +492,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001583 RID: 5507
-		// (get) Token: 0x0600B3A8 RID: 45992 RVA: 0x0042EAA3 File Offset: 0x0042CCA3
-		// (set) Token: 0x0600B3A9 RID: 45993 RVA: 0x0042EAAB File Offset: 0x0042CCAB
+		// Token: 0x1700158F RID: 5519
+		// (get) Token: 0x0600B400 RID: 46080 RVA: 0x00430EA7 File Offset: 0x0042F0A7
+		// (set) Token: 0x0600B401 RID: 46081 RVA: 0x00430EAF File Offset: 0x0042F0AF
 		public DataItem<int> ConditionRaycastBlock
 		{
 			get
@@ -507,9 +507,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001584 RID: 5508
-		// (get) Token: 0x0600B3AA RID: 45994 RVA: 0x0042EAB4 File Offset: 0x0042CCB4
-		// (set) Token: 0x0600B3AB RID: 45995 RVA: 0x0042EABC File Offset: 0x0042CCBC
+		// Token: 0x17001590 RID: 5520
+		// (get) Token: 0x0600B402 RID: 46082 RVA: 0x00430EB8 File Offset: 0x0042F0B8
+		// (set) Token: 0x0600B403 RID: 46083 RVA: 0x00430EC0 File Offset: 0x0042F0C0
 		public DataItem<int> GainGas
 		{
 			get
@@ -522,9 +522,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001585 RID: 5509
-		// (get) Token: 0x0600B3AC RID: 45996 RVA: 0x0042EAC5 File Offset: 0x0042CCC5
-		// (set) Token: 0x0600B3AD RID: 45997 RVA: 0x0042EACD File Offset: 0x0042CCCD
+		// Token: 0x17001591 RID: 5521
+		// (get) Token: 0x0600B404 RID: 46084 RVA: 0x00430EC9 File Offset: 0x0042F0C9
+		// (set) Token: 0x0600B405 RID: 46085 RVA: 0x00430ED1 File Offset: 0x0042F0D1
 		public DataItem<bool> Consume
 		{
 			get
@@ -537,9 +537,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001586 RID: 5510
-		// (get) Token: 0x0600B3AE RID: 45998 RVA: 0x0042EAD6 File Offset: 0x0042CCD6
-		// (set) Token: 0x0600B3AF RID: 45999 RVA: 0x0042EADE File Offset: 0x0042CCDE
+		// Token: 0x17001592 RID: 5522
+		// (get) Token: 0x0600B406 RID: 46086 RVA: 0x00430EDA File Offset: 0x0042F0DA
+		// (set) Token: 0x0600B407 RID: 46087 RVA: 0x00430EE2 File Offset: 0x0042F0E2
 		public DataItem<string> Blockname
 		{
 			get
@@ -552,9 +552,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001587 RID: 5511
-		// (get) Token: 0x0600B3B0 RID: 46000 RVA: 0x0042EAE7 File Offset: 0x0042CCE7
-		// (set) Token: 0x0600B3B1 RID: 46001 RVA: 0x0042EAEF File Offset: 0x0042CCEF
+		// Token: 0x17001593 RID: 5523
+		// (get) Token: 0x0600B408 RID: 46088 RVA: 0x00430EEB File Offset: 0x0042F0EB
+		// (set) Token: 0x0600B409 RID: 46089 RVA: 0x00430EF3 File Offset: 0x0042F0F3
 		public DataItem<float> ThrowStrengthDefault
 		{
 			get
@@ -567,9 +567,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001588 RID: 5512
-		// (get) Token: 0x0600B3B2 RID: 46002 RVA: 0x0042EAF8 File Offset: 0x0042CCF8
-		// (set) Token: 0x0600B3B3 RID: 46003 RVA: 0x0042EB00 File Offset: 0x0042CD00
+		// Token: 0x17001594 RID: 5524
+		// (get) Token: 0x0600B40A RID: 46090 RVA: 0x00430EFC File Offset: 0x0042F0FC
+		// (set) Token: 0x0600B40B RID: 46091 RVA: 0x00430F04 File Offset: 0x0042F104
 		public DataItem<float> ThrowStrengthMax
 		{
 			get
@@ -582,9 +582,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001589 RID: 5513
-		// (get) Token: 0x0600B3B4 RID: 46004 RVA: 0x0042EB09 File Offset: 0x0042CD09
-		// (set) Token: 0x0600B3B5 RID: 46005 RVA: 0x0042EB11 File Offset: 0x0042CD11
+		// Token: 0x17001595 RID: 5525
+		// (get) Token: 0x0600B40C RID: 46092 RVA: 0x00430F0D File Offset: 0x0042F10D
+		// (set) Token: 0x0600B40D RID: 46093 RVA: 0x00430F15 File Offset: 0x0042F115
 		public DataItem<float> MaxStrainTime
 		{
 			get
@@ -597,9 +597,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700158A RID: 5514
-		// (get) Token: 0x0600B3B6 RID: 46006 RVA: 0x0042EB1A File Offset: 0x0042CD1A
-		// (set) Token: 0x0600B3B7 RID: 46007 RVA: 0x0042EB22 File Offset: 0x0042CD22
+		// Token: 0x17001596 RID: 5526
+		// (get) Token: 0x0600B40E RID: 46094 RVA: 0x00430F1E File Offset: 0x0042F11E
+		// (set) Token: 0x0600B40F RID: 46095 RVA: 0x00430F26 File Offset: 0x0042F126
 		public DataItem<int> MagazineSize
 		{
 			get
@@ -612,9 +612,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700158B RID: 5515
-		// (get) Token: 0x0600B3B8 RID: 46008 RVA: 0x0042EB2B File Offset: 0x0042CD2B
-		// (set) Token: 0x0600B3B9 RID: 46009 RVA: 0x0042EB33 File Offset: 0x0042CD33
+		// Token: 0x17001597 RID: 5527
+		// (get) Token: 0x0600B410 RID: 46096 RVA: 0x00430F2F File Offset: 0x0042F12F
+		// (set) Token: 0x0600B411 RID: 46097 RVA: 0x00430F37 File Offset: 0x0042F137
 		public DataItem<string> MagazineItem
 		{
 			get
@@ -627,9 +627,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700158C RID: 5516
-		// (get) Token: 0x0600B3BA RID: 46010 RVA: 0x0042EB3C File Offset: 0x0042CD3C
-		// (set) Token: 0x0600B3BB RID: 46011 RVA: 0x0042EB44 File Offset: 0x0042CD44
+		// Token: 0x17001598 RID: 5528
+		// (get) Token: 0x0600B412 RID: 46098 RVA: 0x00430F40 File Offset: 0x0042F140
+		// (set) Token: 0x0600B413 RID: 46099 RVA: 0x00430F48 File Offset: 0x0042F148
 		public DataItem<float> ReloadTime
 		{
 			get
@@ -642,9 +642,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700158D RID: 5517
-		// (get) Token: 0x0600B3BC RID: 46012 RVA: 0x0042EB4D File Offset: 0x0042CD4D
-		// (set) Token: 0x0600B3BD RID: 46013 RVA: 0x0042EB55 File Offset: 0x0042CD55
+		// Token: 0x17001599 RID: 5529
+		// (get) Token: 0x0600B414 RID: 46100 RVA: 0x00430F51 File Offset: 0x0042F151
+		// (set) Token: 0x0600B415 RID: 46101 RVA: 0x00430F59 File Offset: 0x0042F159
 		public DataItem<string> BulletIcon
 		{
 			get
@@ -657,9 +657,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700158E RID: 5518
-		// (get) Token: 0x0600B3BE RID: 46014 RVA: 0x0042EB5E File Offset: 0x0042CD5E
-		// (set) Token: 0x0600B3BF RID: 46015 RVA: 0x0042EB66 File Offset: 0x0042CD66
+		// Token: 0x1700159A RID: 5530
+		// (get) Token: 0x0600B416 RID: 46102 RVA: 0x00430F62 File Offset: 0x0042F162
+		// (set) Token: 0x0600B417 RID: 46103 RVA: 0x00430F6A File Offset: 0x0042F16A
 		public DataItem<int> RaysPerShot
 		{
 			get
@@ -672,9 +672,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700158F RID: 5519
-		// (get) Token: 0x0600B3C0 RID: 46016 RVA: 0x0042EB6F File Offset: 0x0042CD6F
-		// (set) Token: 0x0600B3C1 RID: 46017 RVA: 0x0042EB77 File Offset: 0x0042CD77
+		// Token: 0x1700159B RID: 5531
+		// (get) Token: 0x0600B418 RID: 46104 RVA: 0x00430F73 File Offset: 0x0042F173
+		// (set) Token: 0x0600B419 RID: 46105 RVA: 0x00430F7B File Offset: 0x0042F17B
 		public DataItem<float> RaysSpread
 		{
 			get
@@ -687,9 +687,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001590 RID: 5520
-		// (get) Token: 0x0600B3C2 RID: 46018 RVA: 0x0042EB80 File Offset: 0x0042CD80
-		// (set) Token: 0x0600B3C3 RID: 46019 RVA: 0x0042EB88 File Offset: 0x0042CD88
+		// Token: 0x1700159C RID: 5532
+		// (get) Token: 0x0600B41A RID: 46106 RVA: 0x00430F84 File Offset: 0x0042F184
+		// (set) Token: 0x0600B41B RID: 46107 RVA: 0x00430F8C File Offset: 0x0042F18C
 		public DataItem<float> Sphere
 		{
 			get
@@ -702,9 +702,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001591 RID: 5521
-		// (get) Token: 0x0600B3C4 RID: 46020 RVA: 0x0042EB91 File Offset: 0x0042CD91
-		// (set) Token: 0x0600B3C5 RID: 46021 RVA: 0x0042EB99 File Offset: 0x0042CD99
+		// Token: 0x1700159D RID: 5533
+		// (get) Token: 0x0600B41C RID: 46108 RVA: 0x00430F95 File Offset: 0x0042F195
+		// (set) Token: 0x0600B41D RID: 46109 RVA: 0x00430F9D File Offset: 0x0042F19D
 		public DataItem<int> CrosshairMinDistance
 		{
 			get
@@ -717,9 +717,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001592 RID: 5522
-		// (get) Token: 0x0600B3C6 RID: 46022 RVA: 0x0042EBA2 File Offset: 0x0042CDA2
-		// (set) Token: 0x0600B3C7 RID: 46023 RVA: 0x0042EBAA File Offset: 0x0042CDAA
+		// Token: 0x1700159E RID: 5534
+		// (get) Token: 0x0600B41E RID: 46110 RVA: 0x00430FA6 File Offset: 0x0042F1A6
+		// (set) Token: 0x0600B41F RID: 46111 RVA: 0x00430FAE File Offset: 0x0042F1AE
 		public DataItem<int> CrosshairMaxDistance
 		{
 			get
@@ -732,9 +732,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001593 RID: 5523
-		// (get) Token: 0x0600B3C8 RID: 46024 RVA: 0x0042EBB3 File Offset: 0x0042CDB3
-		// (set) Token: 0x0600B3C9 RID: 46025 RVA: 0x0042EBBB File Offset: 0x0042CDBB
+		// Token: 0x1700159F RID: 5535
+		// (get) Token: 0x0600B420 RID: 46112 RVA: 0x00430FB7 File Offset: 0x0042F1B7
+		// (set) Token: 0x0600B421 RID: 46113 RVA: 0x00430FBF File Offset: 0x0042F1BF
 		public DataItem<int> DamageEntity
 		{
 			get
@@ -747,9 +747,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001594 RID: 5524
-		// (get) Token: 0x0600B3CA RID: 46026 RVA: 0x0042EBC4 File Offset: 0x0042CDC4
-		// (set) Token: 0x0600B3CB RID: 46027 RVA: 0x0042EBCC File Offset: 0x0042CDCC
+		// Token: 0x170015A0 RID: 5536
+		// (get) Token: 0x0600B422 RID: 46114 RVA: 0x00430FC8 File Offset: 0x0042F1C8
+		// (set) Token: 0x0600B423 RID: 46115 RVA: 0x00430FD0 File Offset: 0x0042F1D0
 		public DataItem<float> DamageBlock
 		{
 			get
@@ -762,9 +762,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001595 RID: 5525
-		// (get) Token: 0x0600B3CC RID: 46028 RVA: 0x0042EBD5 File Offset: 0x0042CDD5
-		// (set) Token: 0x0600B3CD RID: 46029 RVA: 0x0042EBDD File Offset: 0x0042CDDD
+		// Token: 0x170015A1 RID: 5537
+		// (get) Token: 0x0600B424 RID: 46116 RVA: 0x00430FD9 File Offset: 0x0042F1D9
+		// (set) Token: 0x0600B425 RID: 46117 RVA: 0x00430FE1 File Offset: 0x0042F1E1
 		public DataItem<string> ParticlesMuzzleFire
 		{
 			get
@@ -777,9 +777,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001596 RID: 5526
-		// (get) Token: 0x0600B3CE RID: 46030 RVA: 0x0042EBE6 File Offset: 0x0042CDE6
-		// (set) Token: 0x0600B3CF RID: 46031 RVA: 0x0042EBEE File Offset: 0x0042CDEE
+		// Token: 0x170015A2 RID: 5538
+		// (get) Token: 0x0600B426 RID: 46118 RVA: 0x00430FEA File Offset: 0x0042F1EA
+		// (set) Token: 0x0600B427 RID: 46119 RVA: 0x00430FF2 File Offset: 0x0042F1F2
 		public DataItem<string> ParticlesMuzzleSmoke
 		{
 			get
@@ -792,9 +792,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001597 RID: 5527
-		// (get) Token: 0x0600B3D0 RID: 46032 RVA: 0x0042EBF7 File Offset: 0x0042CDF7
-		// (set) Token: 0x0600B3D1 RID: 46033 RVA: 0x0042EBFF File Offset: 0x0042CDFF
+		// Token: 0x170015A3 RID: 5539
+		// (get) Token: 0x0600B428 RID: 46120 RVA: 0x00430FFB File Offset: 0x0042F1FB
+		// (set) Token: 0x0600B429 RID: 46121 RVA: 0x00431003 File Offset: 0x0042F203
 		public DataItem<float> BlockRange
 		{
 			get
@@ -807,9 +807,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001598 RID: 5528
-		// (get) Token: 0x0600B3D2 RID: 46034 RVA: 0x0042EC08 File Offset: 0x0042CE08
-		// (set) Token: 0x0600B3D3 RID: 46035 RVA: 0x0042EC10 File Offset: 0x0042CE10
+		// Token: 0x170015A4 RID: 5540
+		// (get) Token: 0x0600B42A RID: 46122 RVA: 0x0043100C File Offset: 0x0042F20C
+		// (set) Token: 0x0600B42B RID: 46123 RVA: 0x00431014 File Offset: 0x0042F214
 		public DataItem<bool> AutoFire
 		{
 			get
@@ -822,9 +822,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001599 RID: 5529
-		// (get) Token: 0x0600B3D4 RID: 46036 RVA: 0x0042EC19 File Offset: 0x0042CE19
-		// (set) Token: 0x0600B3D5 RID: 46037 RVA: 0x0042EC21 File Offset: 0x0042CE21
+		// Token: 0x170015A5 RID: 5541
+		// (get) Token: 0x0600B42C RID: 46124 RVA: 0x0043101D File Offset: 0x0042F21D
+		// (set) Token: 0x0600B42D RID: 46125 RVA: 0x00431025 File Offset: 0x0042F225
 		public DataItem<float> HordeMeterRate
 		{
 			get
@@ -837,9 +837,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700159A RID: 5530
-		// (get) Token: 0x0600B3D6 RID: 46038 RVA: 0x0042EC2A File Offset: 0x0042CE2A
-		// (set) Token: 0x0600B3D7 RID: 46039 RVA: 0x0042EC32 File Offset: 0x0042CE32
+		// Token: 0x170015A6 RID: 5542
+		// (get) Token: 0x0600B42E RID: 46126 RVA: 0x0043102E File Offset: 0x0042F22E
+		// (set) Token: 0x0600B42F RID: 46127 RVA: 0x00431036 File Offset: 0x0042F236
 		public DataItem<float> HordeMeterDistance
 		{
 			get
@@ -852,9 +852,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700159B RID: 5531
-		// (get) Token: 0x0600B3D8 RID: 46040 RVA: 0x0042EC3B File Offset: 0x0042CE3B
-		// (set) Token: 0x0600B3D9 RID: 46041 RVA: 0x0042EC43 File Offset: 0x0042CE43
+		// Token: 0x170015A7 RID: 5543
+		// (get) Token: 0x0600B430 RID: 46128 RVA: 0x0043103F File Offset: 0x0042F23F
+		// (set) Token: 0x0600B431 RID: 46129 RVA: 0x00431047 File Offset: 0x0042F247
 		public DataItem<string> HitmaskOverride
 		{
 			get
@@ -867,9 +867,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700159C RID: 5532
-		// (get) Token: 0x0600B3DA RID: 46042 RVA: 0x0042EC4C File Offset: 0x0042CE4C
-		// (set) Token: 0x0600B3DB RID: 46043 RVA: 0x0042EC54 File Offset: 0x0042CE54
+		// Token: 0x170015A8 RID: 5544
+		// (get) Token: 0x0600B432 RID: 46130 RVA: 0x00431050 File Offset: 0x0042F250
+		// (set) Token: 0x0600B433 RID: 46131 RVA: 0x00431058 File Offset: 0x0042F258
 		public DataItem<bool> SingleMagazineUsage
 		{
 			get
@@ -882,9 +882,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700159D RID: 5533
-		// (get) Token: 0x0600B3DC RID: 46044 RVA: 0x0042EC5D File Offset: 0x0042CE5D
-		// (set) Token: 0x0600B3DD RID: 46045 RVA: 0x0042EC65 File Offset: 0x0042CE65
+		// Token: 0x170015A9 RID: 5545
+		// (get) Token: 0x0600B434 RID: 46132 RVA: 0x00431061 File Offset: 0x0042F261
+		// (set) Token: 0x0600B435 RID: 46133 RVA: 0x00431069 File Offset: 0x0042F269
 		public DataItem<string> BulletMaterial
 		{
 			get
@@ -897,9 +897,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700159E RID: 5534
-		// (get) Token: 0x0600B3DE RID: 46046 RVA: 0x0042EC6E File Offset: 0x0042CE6E
-		// (set) Token: 0x0600B3DF RID: 46047 RVA: 0x0042EC76 File Offset: 0x0042CE76
+		// Token: 0x170015AA RID: 5546
+		// (get) Token: 0x0600B436 RID: 46134 RVA: 0x00431072 File Offset: 0x0042F272
+		// (set) Token: 0x0600B437 RID: 46135 RVA: 0x0043107A File Offset: 0x0042F27A
 		public DataItem<bool> InfiniteAmmo
 		{
 			get
@@ -912,9 +912,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700159F RID: 5535
-		// (get) Token: 0x0600B3E0 RID: 46048 RVA: 0x0042EC7F File Offset: 0x0042CE7F
-		// (set) Token: 0x0600B3E1 RID: 46049 RVA: 0x0042EC87 File Offset: 0x0042CE87
+		// Token: 0x170015AB RID: 5547
+		// (get) Token: 0x0600B438 RID: 46136 RVA: 0x00431083 File Offset: 0x0042F283
+		// (set) Token: 0x0600B439 RID: 46137 RVA: 0x0043108B File Offset: 0x0042F28B
 		public DataItem<float> ZoomMaxOut
 		{
 			get
@@ -927,9 +927,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A0 RID: 5536
-		// (get) Token: 0x0600B3E2 RID: 46050 RVA: 0x0042EC90 File Offset: 0x0042CE90
-		// (set) Token: 0x0600B3E3 RID: 46051 RVA: 0x0042EC98 File Offset: 0x0042CE98
+		// Token: 0x170015AC RID: 5548
+		// (get) Token: 0x0600B43A RID: 46138 RVA: 0x00431094 File Offset: 0x0042F294
+		// (set) Token: 0x0600B43B RID: 46139 RVA: 0x0043109C File Offset: 0x0042F29C
 		public DataItem<float> ZoomMaxIn
 		{
 			get
@@ -942,9 +942,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A1 RID: 5537
-		// (get) Token: 0x0600B3E4 RID: 46052 RVA: 0x0042ECA1 File Offset: 0x0042CEA1
-		// (set) Token: 0x0600B3E5 RID: 46053 RVA: 0x0042ECA9 File Offset: 0x0042CEA9
+		// Token: 0x170015AD RID: 5549
+		// (get) Token: 0x0600B43C RID: 46140 RVA: 0x004310A5 File Offset: 0x0042F2A5
+		// (set) Token: 0x0600B43D RID: 46141 RVA: 0x004310AD File Offset: 0x0042F2AD
 		public DataItem<string> ZoomOverlay
 		{
 			get
@@ -957,9 +957,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A2 RID: 5538
-		// (get) Token: 0x0600B3E6 RID: 46054 RVA: 0x0042ECB2 File Offset: 0x0042CEB2
-		// (set) Token: 0x0600B3E7 RID: 46055 RVA: 0x0042ECBA File Offset: 0x0042CEBA
+		// Token: 0x170015AE RID: 5550
+		// (get) Token: 0x0600B43E RID: 46142 RVA: 0x004310B6 File Offset: 0x0042F2B6
+		// (set) Token: 0x0600B43F RID: 46143 RVA: 0x004310BE File Offset: 0x0042F2BE
 		public DataItem<int> Velocity
 		{
 			get
@@ -972,9 +972,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A3 RID: 5539
-		// (get) Token: 0x0600B3E8 RID: 46056 RVA: 0x0042ECC3 File Offset: 0x0042CEC3
-		// (set) Token: 0x0600B3E9 RID: 46057 RVA: 0x0042ECCB File Offset: 0x0042CECB
+		// Token: 0x170015AF RID: 5551
+		// (get) Token: 0x0600B440 RID: 46144 RVA: 0x004310C7 File Offset: 0x0042F2C7
+		// (set) Token: 0x0600B441 RID: 46145 RVA: 0x004310CF File Offset: 0x0042F2CF
 		public DataItem<float> FlyTime
 		{
 			get
@@ -987,9 +987,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A4 RID: 5540
-		// (get) Token: 0x0600B3EA RID: 46058 RVA: 0x0042ECD4 File Offset: 0x0042CED4
-		// (set) Token: 0x0600B3EB RID: 46059 RVA: 0x0042ECDC File Offset: 0x0042CEDC
+		// Token: 0x170015B0 RID: 5552
+		// (get) Token: 0x0600B442 RID: 46146 RVA: 0x004310D8 File Offset: 0x0042F2D8
+		// (set) Token: 0x0600B443 RID: 46147 RVA: 0x004310E0 File Offset: 0x0042F2E0
 		public DataItem<float> LifeTime
 		{
 			get
@@ -1002,9 +1002,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A5 RID: 5541
-		// (get) Token: 0x0600B3EC RID: 46060 RVA: 0x0042ECE5 File Offset: 0x0042CEE5
-		// (set) Token: 0x0600B3ED RID: 46061 RVA: 0x0042ECED File Offset: 0x0042CEED
+		// Token: 0x170015B1 RID: 5553
+		// (get) Token: 0x0600B444 RID: 46148 RVA: 0x004310E9 File Offset: 0x0042F2E9
+		// (set) Token: 0x0600B445 RID: 46149 RVA: 0x004310F1 File Offset: 0x0042F2F1
 		public DataItem<float> CollisionRadius
 		{
 			get
@@ -1017,9 +1017,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A6 RID: 5542
-		// (get) Token: 0x0600B3EE RID: 46062 RVA: 0x0042ECF6 File Offset: 0x0042CEF6
-		// (set) Token: 0x0600B3EF RID: 46063 RVA: 0x0042ECFE File Offset: 0x0042CEFE
+		// Token: 0x170015B2 RID: 5554
+		// (get) Token: 0x0600B446 RID: 46150 RVA: 0x004310FA File Offset: 0x0042F2FA
+		// (set) Token: 0x0600B447 RID: 46151 RVA: 0x00431102 File Offset: 0x0042F302
 		public DataItem<int> ProjectileInitialVelocity
 		{
 			get
@@ -1032,9 +1032,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A7 RID: 5543
-		// (get) Token: 0x0600B3F0 RID: 46064 RVA: 0x0042ED07 File Offset: 0x0042CF07
-		// (set) Token: 0x0600B3F1 RID: 46065 RVA: 0x0042ED0F File Offset: 0x0042CF0F
+		// Token: 0x170015B3 RID: 5555
+		// (get) Token: 0x0600B448 RID: 46152 RVA: 0x0043110B File Offset: 0x0042F30B
+		// (set) Token: 0x0600B449 RID: 46153 RVA: 0x00431113 File Offset: 0x0042F313
 		public DataItem<string> Fertileblock
 		{
 			get
@@ -1047,9 +1047,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A8 RID: 5544
-		// (get) Token: 0x0600B3F2 RID: 46066 RVA: 0x0042ED18 File Offset: 0x0042CF18
-		// (set) Token: 0x0600B3F3 RID: 46067 RVA: 0x0042ED20 File Offset: 0x0042CF20
+		// Token: 0x170015B4 RID: 5556
+		// (get) Token: 0x0600B44A RID: 46154 RVA: 0x0043111C File Offset: 0x0042F31C
+		// (set) Token: 0x0600B44B RID: 46155 RVA: 0x00431124 File Offset: 0x0042F324
 		public DataItem<string> Adjacentblock
 		{
 			get
@@ -1062,9 +1062,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015A9 RID: 5545
-		// (get) Token: 0x0600B3F4 RID: 46068 RVA: 0x0042ED29 File Offset: 0x0042CF29
-		// (set) Token: 0x0600B3F5 RID: 46069 RVA: 0x0042ED31 File Offset: 0x0042CF31
+		// Token: 0x170015B5 RID: 5557
+		// (get) Token: 0x0600B44C RID: 46156 RVA: 0x0043112D File Offset: 0x0042F32D
+		// (set) Token: 0x0600B44D RID: 46157 RVA: 0x00431135 File Offset: 0x0042F335
 		public DataItem<int> RepairAmount
 		{
 			get
@@ -1077,9 +1077,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015AA RID: 5546
-		// (get) Token: 0x0600B3F6 RID: 46070 RVA: 0x0042ED3A File Offset: 0x0042CF3A
-		// (set) Token: 0x0600B3F7 RID: 46071 RVA: 0x0042ED42 File Offset: 0x0042CF42
+		// Token: 0x170015B6 RID: 5558
+		// (get) Token: 0x0600B44E RID: 46158 RVA: 0x0043113E File Offset: 0x0042F33E
+		// (set) Token: 0x0600B44F RID: 46159 RVA: 0x00431146 File Offset: 0x0042F346
 		public DataItem<int> UpgradeHitOffset
 		{
 			get
@@ -1092,9 +1092,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015AB RID: 5547
-		// (get) Token: 0x0600B3F8 RID: 46072 RVA: 0x0042ED4B File Offset: 0x0042CF4B
-		// (set) Token: 0x0600B3F9 RID: 46073 RVA: 0x0042ED53 File Offset: 0x0042CF53
+		// Token: 0x170015B7 RID: 5559
+		// (get) Token: 0x0600B450 RID: 46160 RVA: 0x0043114F File Offset: 0x0042F34F
+		// (set) Token: 0x0600B451 RID: 46161 RVA: 0x00431157 File Offset: 0x0042F357
 		public DataItem<string> AllowedUpgradeItems
 		{
 			get
@@ -1107,9 +1107,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015AC RID: 5548
-		// (get) Token: 0x0600B3FA RID: 46074 RVA: 0x0042ED5C File Offset: 0x0042CF5C
-		// (set) Token: 0x0600B3FB RID: 46075 RVA: 0x0042ED64 File Offset: 0x0042CF64
+		// Token: 0x170015B8 RID: 5560
+		// (get) Token: 0x0600B452 RID: 46162 RVA: 0x00431160 File Offset: 0x0042F360
+		// (set) Token: 0x0600B453 RID: 46163 RVA: 0x00431168 File Offset: 0x0042F368
 		public DataItem<string> RestrictedUpgradeItems
 		{
 			get
@@ -1122,9 +1122,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015AD RID: 5549
-		// (get) Token: 0x0600B3FC RID: 46076 RVA: 0x0042ED6D File Offset: 0x0042CF6D
-		// (set) Token: 0x0600B3FD RID: 46077 RVA: 0x0042ED75 File Offset: 0x0042CF75
+		// Token: 0x170015B9 RID: 5561
+		// (get) Token: 0x0600B454 RID: 46164 RVA: 0x00431171 File Offset: 0x0042F371
+		// (set) Token: 0x0600B455 RID: 46165 RVA: 0x00431179 File Offset: 0x0042F379
 		public DataItem<string> UpgradeActionSound
 		{
 			get
@@ -1137,9 +1137,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015AE RID: 5550
-		// (get) Token: 0x0600B3FE RID: 46078 RVA: 0x0042ED7E File Offset: 0x0042CF7E
-		// (set) Token: 0x0600B3FF RID: 46079 RVA: 0x0042ED86 File Offset: 0x0042CF86
+		// Token: 0x170015BA RID: 5562
+		// (get) Token: 0x0600B456 RID: 46166 RVA: 0x00431182 File Offset: 0x0042F382
+		// (set) Token: 0x0600B457 RID: 46167 RVA: 0x0043118A File Offset: 0x0042F38A
 		public DataItem<string> RepairActionSound
 		{
 			get
@@ -1152,9 +1152,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015AF RID: 5551
-		// (get) Token: 0x0600B400 RID: 46080 RVA: 0x0042ED8F File Offset: 0x0042CF8F
-		// (set) Token: 0x0600B401 RID: 46081 RVA: 0x0042ED97 File Offset: 0x0042CF97
+		// Token: 0x170015BB RID: 5563
+		// (get) Token: 0x0600B458 RID: 46168 RVA: 0x00431193 File Offset: 0x0042F393
+		// (set) Token: 0x0600B459 RID: 46169 RVA: 0x0043119B File Offset: 0x0042F39B
 		public DataItem<string> ReferenceItem
 		{
 			get
@@ -1167,9 +1167,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B0 RID: 5552
-		// (get) Token: 0x0600B402 RID: 46082 RVA: 0x0042EDA0 File Offset: 0x0042CFA0
-		// (set) Token: 0x0600B403 RID: 46083 RVA: 0x0042EDA8 File Offset: 0x0042CFA8
+		// Token: 0x170015BC RID: 5564
+		// (get) Token: 0x0600B45A RID: 46170 RVA: 0x004311A4 File Offset: 0x0042F3A4
+		// (set) Token: 0x0600B45B RID: 46171 RVA: 0x004311AC File Offset: 0x0042F3AC
 		public DataItem<string> Mesh
 		{
 			get
@@ -1182,9 +1182,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B1 RID: 5553
-		// (get) Token: 0x0600B404 RID: 46084 RVA: 0x0042EDB1 File Offset: 0x0042CFB1
-		// (set) Token: 0x0600B405 RID: 46085 RVA: 0x0042EDB9 File Offset: 0x0042CFB9
+		// Token: 0x170015BD RID: 5565
+		// (get) Token: 0x0600B45C RID: 46172 RVA: 0x004311B5 File Offset: 0x0042F3B5
+		// (set) Token: 0x0600B45D RID: 46173 RVA: 0x004311BD File Offset: 0x0042F3BD
 		public DataItem<int> ActionIdx
 		{
 			get
@@ -1197,9 +1197,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B2 RID: 5554
-		// (get) Token: 0x0600B406 RID: 46086 RVA: 0x0042EDC2 File Offset: 0x0042CFC2
-		// (set) Token: 0x0600B407 RID: 46087 RVA: 0x0042EDCA File Offset: 0x0042CFCA
+		// Token: 0x170015BE RID: 5566
+		// (get) Token: 0x0600B45E RID: 46174 RVA: 0x004311C6 File Offset: 0x0042F3C6
+		// (set) Token: 0x0600B45F RID: 46175 RVA: 0x004311CE File Offset: 0x0042F3CE
 		public DataItem<string> Title
 		{
 			get
@@ -1212,9 +1212,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B3 RID: 5555
-		// (get) Token: 0x0600B408 RID: 46088 RVA: 0x0042EDD3 File Offset: 0x0042CFD3
-		// (set) Token: 0x0600B409 RID: 46089 RVA: 0x0042EDDB File Offset: 0x0042CFDB
+		// Token: 0x170015BF RID: 5567
+		// (get) Token: 0x0600B460 RID: 46176 RVA: 0x004311D7 File Offset: 0x0042F3D7
+		// (set) Token: 0x0600B461 RID: 46177 RVA: 0x004311DF File Offset: 0x0042F3DF
 		public DataItem<string> Description
 		{
 			get
@@ -1227,9 +1227,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B4 RID: 5556
-		// (get) Token: 0x0600B40A RID: 46090 RVA: 0x0042EDE4 File Offset: 0x0042CFE4
-		// (set) Token: 0x0600B40B RID: 46091 RVA: 0x0042EDEC File Offset: 0x0042CFEC
+		// Token: 0x170015C0 RID: 5568
+		// (get) Token: 0x0600B462 RID: 46178 RVA: 0x004311E8 File Offset: 0x0042F3E8
+		// (set) Token: 0x0600B463 RID: 46179 RVA: 0x004311F0 File Offset: 0x0042F3F0
 		public DataItem<string> RecipesToLearn
 		{
 			get
@@ -1242,9 +1242,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B5 RID: 5557
-		// (get) Token: 0x0600B40C RID: 46092 RVA: 0x0042EDF5 File Offset: 0x0042CFF5
-		// (set) Token: 0x0600B40D RID: 46093 RVA: 0x0042EDFD File Offset: 0x0042CFFD
+		// Token: 0x170015C1 RID: 5569
+		// (get) Token: 0x0600B464 RID: 46180 RVA: 0x004311F9 File Offset: 0x0042F3F9
+		// (set) Token: 0x0600B465 RID: 46181 RVA: 0x00431201 File Offset: 0x0042F401
 		public DataItem<string> InstantiateOnLoad
 		{
 			get
@@ -1257,9 +1257,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B6 RID: 5558
-		// (get) Token: 0x0600B40E RID: 46094 RVA: 0x0042EE06 File Offset: 0x0042D006
-		// (set) Token: 0x0600B40F RID: 46095 RVA: 0x0042EE0E File Offset: 0x0042D00E
+		// Token: 0x170015C2 RID: 5570
+		// (get) Token: 0x0600B466 RID: 46182 RVA: 0x0043120A File Offset: 0x0042F40A
+		// (set) Token: 0x0600B467 RID: 46183 RVA: 0x00431212 File Offset: 0x0042F412
 		public DataItem<string> SoundDraw
 		{
 			get
@@ -1272,9 +1272,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B7 RID: 5559
-		// (get) Token: 0x0600B410 RID: 46096 RVA: 0x0042EE17 File Offset: 0x0042D017
-		// (set) Token: 0x0600B411 RID: 46097 RVA: 0x0042EE1F File Offset: 0x0042D01F
+		// Token: 0x170015C3 RID: 5571
+		// (get) Token: 0x0600B468 RID: 46184 RVA: 0x0043121B File Offset: 0x0042F41B
+		// (set) Token: 0x0600B469 RID: 46185 RVA: 0x00431223 File Offset: 0x0042F423
 		public DataItem<DamageBonusData> DamageBonus
 		{
 			get
@@ -1287,9 +1287,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170015B8 RID: 5560
-		// (get) Token: 0x0600B412 RID: 46098 RVA: 0x0042EE28 File Offset: 0x0042D028
-		// (set) Token: 0x0600B413 RID: 46099 RVA: 0x0042EE30 File Offset: 0x0042D030
+		// Token: 0x170015C4 RID: 5572
+		// (get) Token: 0x0600B46A RID: 46186 RVA: 0x0043122C File Offset: 0x0042F42C
+		// (set) Token: 0x0600B46B RID: 46187 RVA: 0x00431234 File Offset: 0x0042F434
 		public DataItem<ExplosionData> Explosion
 		{
 			get
@@ -1302,7 +1302,7 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B414 RID: 46100 RVA: 0x0042EE3C File Offset: 0x0042D03C
+		// Token: 0x0600B46C RID: 46188 RVA: 0x00431240 File Offset: 0x0042F440
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			List<IDataItem> list = new List<IDataItem>();
@@ -1317,354 +1317,354 @@ namespace XMLData.Item
 			return list;
 		}
 
-		// Token: 0x040086A7 RID: 34471
+		// Token: 0x040086E8 RID: 34536
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pDelay;
 
-		// Token: 0x040086A8 RID: 34472
+		// Token: 0x040086E9 RID: 34537
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pRange;
 
-		// Token: 0x040086A9 RID: 34473
+		// Token: 0x040086EA RID: 34538
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundStart;
 
-		// Token: 0x040086AA RID: 34474
+		// Token: 0x040086EB RID: 34539
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundRepeat;
 
-		// Token: 0x040086AB RID: 34475
+		// Token: 0x040086EC RID: 34540
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundEnd;
 
-		// Token: 0x040086AC RID: 34476
+		// Token: 0x040086ED RID: 34541
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundEmpty;
 
-		// Token: 0x040086AD RID: 34477
+		// Token: 0x040086EE RID: 34542
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundReload;
 
-		// Token: 0x040086AE RID: 34478
+		// Token: 0x040086EF RID: 34543
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundWarning;
 
-		// Token: 0x040086AF RID: 34479
+		// Token: 0x040086F0 RID: 34544
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pStaminaUsage;
 
-		// Token: 0x040086B0 RID: 34480
+		// Token: 0x040086F1 RID: 34545
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pUseTime;
 
-		// Token: 0x040086B1 RID: 34481
+		// Token: 0x040086F2 RID: 34546
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname1;
 
-		// Token: 0x040086B2 RID: 34482
+		// Token: 0x040086F3 RID: 34547
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname2;
 
-		// Token: 0x040086B3 RID: 34483
+		// Token: 0x040086F4 RID: 34548
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname3;
 
-		// Token: 0x040086B4 RID: 34484
+		// Token: 0x040086F5 RID: 34549
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname4;
 
-		// Token: 0x040086B5 RID: 34485
+		// Token: 0x040086F6 RID: 34550
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname5;
 
-		// Token: 0x040086B6 RID: 34486
+		// Token: 0x040086F7 RID: 34551
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname6;
 
-		// Token: 0x040086B7 RID: 34487
+		// Token: 0x040086F8 RID: 34552
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname7;
 
-		// Token: 0x040086B8 RID: 34488
+		// Token: 0x040086F9 RID: 34553
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname8;
 
-		// Token: 0x040086B9 RID: 34489
+		// Token: 0x040086FA RID: 34554
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFocusedBlockname9;
 
-		// Token: 0x040086BA RID: 34490
+		// Token: 0x040086FB RID: 34555
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pChangeItemTo;
 
-		// Token: 0x040086BB RID: 34491
+		// Token: 0x040086FC RID: 34556
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pChangeBlockTo;
 
-		// Token: 0x040086BC RID: 34492
+		// Token: 0x040086FD RID: 34557
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pDoBlockAction;
 
-		// Token: 0x040086BD RID: 34493
+		// Token: 0x040086FE RID: 34558
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGainHealth;
 
-		// Token: 0x040086BE RID: 34494
+		// Token: 0x040086FF RID: 34559
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGainFood;
 
-		// Token: 0x040086BF RID: 34495
+		// Token: 0x04008700 RID: 34560
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGainWater;
 
-		// Token: 0x040086C0 RID: 34496
+		// Token: 0x04008701 RID: 34561
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGainStamina;
 
-		// Token: 0x040086C1 RID: 34497
+		// Token: 0x04008702 RID: 34562
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGainSickness;
 
-		// Token: 0x040086C2 RID: 34498
+		// Token: 0x04008703 RID: 34563
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGainWellness;
 
-		// Token: 0x040086C3 RID: 34499
+		// Token: 0x04008704 RID: 34564
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pBuff;
 
-		// Token: 0x040086C4 RID: 34500
+		// Token: 0x04008705 RID: 34565
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pBuffChance;
 
-		// Token: 0x040086C5 RID: 34501
+		// Token: 0x04008706 RID: 34566
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pDebuff;
 
-		// Token: 0x040086C6 RID: 34502
+		// Token: 0x04008707 RID: 34567
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pCreateItem;
 
-		// Token: 0x040086C7 RID: 34503
+		// Token: 0x04008708 RID: 34568
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pConditionRaycastBlock;
 
-		// Token: 0x040086C8 RID: 34504
+		// Token: 0x04008709 RID: 34569
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pGainGas;
 
-		// Token: 0x040086C9 RID: 34505
+		// Token: 0x0400870A RID: 34570
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pConsume;
 
-		// Token: 0x040086CA RID: 34506
+		// Token: 0x0400870B RID: 34571
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pBlockname;
 
-		// Token: 0x040086CB RID: 34507
+		// Token: 0x0400870C RID: 34572
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pThrowStrengthDefault;
 
-		// Token: 0x040086CC RID: 34508
+		// Token: 0x0400870D RID: 34573
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pThrowStrengthMax;
 
-		// Token: 0x040086CD RID: 34509
+		// Token: 0x0400870E RID: 34574
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pMaxStrainTime;
 
-		// Token: 0x040086CE RID: 34510
+		// Token: 0x0400870F RID: 34575
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pMagazineSize;
 
-		// Token: 0x040086CF RID: 34511
+		// Token: 0x04008710 RID: 34576
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pMagazineItem;
 
-		// Token: 0x040086D0 RID: 34512
+		// Token: 0x04008711 RID: 34577
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pReloadTime;
 
-		// Token: 0x040086D1 RID: 34513
+		// Token: 0x04008712 RID: 34578
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pBulletIcon;
 
-		// Token: 0x040086D2 RID: 34514
+		// Token: 0x04008713 RID: 34579
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pRaysPerShot;
 
-		// Token: 0x040086D3 RID: 34515
+		// Token: 0x04008714 RID: 34580
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pRaysSpread;
 
-		// Token: 0x040086D4 RID: 34516
+		// Token: 0x04008715 RID: 34581
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pSphere;
 
-		// Token: 0x040086D5 RID: 34517
+		// Token: 0x04008716 RID: 34582
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pCrosshairMinDistance;
 
-		// Token: 0x040086D6 RID: 34518
+		// Token: 0x04008717 RID: 34583
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pCrosshairMaxDistance;
 
-		// Token: 0x040086D7 RID: 34519
+		// Token: 0x04008718 RID: 34584
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pDamageEntity;
 
-		// Token: 0x040086D8 RID: 34520
+		// Token: 0x04008719 RID: 34585
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pDamageBlock;
 
-		// Token: 0x040086D9 RID: 34521
+		// Token: 0x0400871A RID: 34586
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pParticlesMuzzleFire;
 
-		// Token: 0x040086DA RID: 34522
+		// Token: 0x0400871B RID: 34587
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pParticlesMuzzleSmoke;
 
-		// Token: 0x040086DB RID: 34523
+		// Token: 0x0400871C RID: 34588
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pBlockRange;
 
-		// Token: 0x040086DC RID: 34524
+		// Token: 0x0400871D RID: 34589
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pAutoFire;
 
-		// Token: 0x040086DD RID: 34525
+		// Token: 0x0400871E RID: 34590
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pHordeMeterRate;
 
-		// Token: 0x040086DE RID: 34526
+		// Token: 0x0400871F RID: 34591
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pHordeMeterDistance;
 
-		// Token: 0x040086DF RID: 34527
+		// Token: 0x04008720 RID: 34592
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pHitmaskOverride;
 
-		// Token: 0x040086E0 RID: 34528
+		// Token: 0x04008721 RID: 34593
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pSingleMagazineUsage;
 
-		// Token: 0x040086E1 RID: 34529
+		// Token: 0x04008722 RID: 34594
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pBulletMaterial;
 
-		// Token: 0x040086E2 RID: 34530
+		// Token: 0x04008723 RID: 34595
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pInfiniteAmmo;
 
-		// Token: 0x040086E3 RID: 34531
+		// Token: 0x04008724 RID: 34596
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pZoomMaxOut;
 
-		// Token: 0x040086E4 RID: 34532
+		// Token: 0x04008725 RID: 34597
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pZoomMaxIn;
 
-		// Token: 0x040086E5 RID: 34533
+		// Token: 0x04008726 RID: 34598
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pZoomOverlay;
 
-		// Token: 0x040086E6 RID: 34534
+		// Token: 0x04008727 RID: 34599
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pVelocity;
 
-		// Token: 0x040086E7 RID: 34535
+		// Token: 0x04008728 RID: 34600
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pFlyTime;
 
-		// Token: 0x040086E8 RID: 34536
+		// Token: 0x04008729 RID: 34601
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pLifeTime;
 
-		// Token: 0x040086E9 RID: 34537
+		// Token: 0x0400872A RID: 34602
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pCollisionRadius;
 
-		// Token: 0x040086EA RID: 34538
+		// Token: 0x0400872B RID: 34603
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pProjectileInitialVelocity;
 
-		// Token: 0x040086EB RID: 34539
+		// Token: 0x0400872C RID: 34604
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFertileblock;
 
-		// Token: 0x040086EC RID: 34540
+		// Token: 0x0400872D RID: 34605
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pAdjacentblock;
 
-		// Token: 0x040086ED RID: 34541
+		// Token: 0x0400872E RID: 34606
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pRepairAmount;
 
-		// Token: 0x040086EE RID: 34542
+		// Token: 0x0400872F RID: 34607
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pUpgradeHitOffset;
 
-		// Token: 0x040086EF RID: 34543
+		// Token: 0x04008730 RID: 34608
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pAllowedUpgradeItems;
 
-		// Token: 0x040086F0 RID: 34544
+		// Token: 0x04008731 RID: 34609
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pRestrictedUpgradeItems;
 
-		// Token: 0x040086F1 RID: 34545
+		// Token: 0x04008732 RID: 34610
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pUpgradeActionSound;
 
-		// Token: 0x040086F2 RID: 34546
+		// Token: 0x04008733 RID: 34611
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pRepairActionSound;
 
-		// Token: 0x040086F3 RID: 34547
+		// Token: 0x04008734 RID: 34612
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pReferenceItem;
 
-		// Token: 0x040086F4 RID: 34548
+		// Token: 0x04008735 RID: 34613
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pMesh;
 
-		// Token: 0x040086F5 RID: 34549
+		// Token: 0x04008736 RID: 34614
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pActionIdx;
 
-		// Token: 0x040086F6 RID: 34550
+		// Token: 0x04008737 RID: 34615
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pTitle;
 
-		// Token: 0x040086F7 RID: 34551
+		// Token: 0x04008738 RID: 34616
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pDescription;
 
-		// Token: 0x040086F8 RID: 34552
+		// Token: 0x04008739 RID: 34617
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pRecipesToLearn;
 
-		// Token: 0x040086F9 RID: 34553
+		// Token: 0x0400873A RID: 34618
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pInstantiateOnLoad;
 
-		// Token: 0x040086FA RID: 34554
+		// Token: 0x0400873B RID: 34619
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundDraw;
 
-		// Token: 0x040086FB RID: 34555
+		// Token: 0x0400873C RID: 34620
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<DamageBonusData> pDamageBonus;
 
-		// Token: 0x040086FC RID: 34556
+		// Token: 0x0400873D RID: 34621
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ExplosionData> pExplosion;
 
-		// Token: 0x02001663 RID: 5731
+		// Token: 0x02001675 RID: 5749
 		public static class Parser
 		{
-			// Token: 0x0600B416 RID: 46102 RVA: 0x0042EEA0 File Offset: 0x0042D0A0
+			// Token: 0x0600B46E RID: 46190 RVA: 0x004312A4 File Offset: 0x0042F4A4
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static DataItem<string> ParseItem(string _string, PositionXmlElement _elem)
 			{
@@ -1687,7 +1687,7 @@ namespace XMLData.Item
 				return new DataItem<string>(_string, text);
 			}
 
-			// Token: 0x0600B417 RID: 46103 RVA: 0x0042EF24 File Offset: 0x0042D124
+			// Token: 0x0600B46F RID: 46191 RVA: 0x00431328 File Offset: 0x0042F528
 			public static ItemAction Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "ItemAction");
@@ -3861,7 +3861,7 @@ namespace XMLData.Item
 				return itemAction;
 			}
 
-			// Token: 0x040086FD RID: 34557
+			// Token: 0x0400873E RID: 34622
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

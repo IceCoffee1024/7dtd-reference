@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000674 RID: 1652
+// Token: 0x0200067B RID: 1659
 [Preserve]
 public class StatCompareModMax : StatCompareAbs
 {
-	// Token: 0x0600352D RID: 13613 RVA: 0x0015FCE4 File Offset: 0x0015DEE4
+	// Token: 0x0600353B RID: 13627 RVA: 0x001608D8 File Offset: 0x0015EAD8
 	public override bool Compare(MinEventParams _params)
 	{
 		float num;

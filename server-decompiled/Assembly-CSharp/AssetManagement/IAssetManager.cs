@@ -3,20 +3,20 @@ using UnityEngine;
 
 namespace AssetManagement
 {
-	// Token: 0x02001B52 RID: 6994
+	// Token: 0x02001B83 RID: 7043
 	public interface IAssetManager
 	{
-		// Token: 0x17001A3A RID: 6714
-		// (get) Token: 0x0600D1EF RID: 53743
+		// Token: 0x17001A82 RID: 6786
+		// (get) Token: 0x0600D303 RID: 54019
 		int ActiveAssetCount { get; }
 
-		// Token: 0x0600D1F0 RID: 53744
+		// Token: 0x0600D304 RID: 54020
 		AssetHandle<T> AcquireAsset<T>(string uri, bool ignoreDlcEntitlements = false) where T : global::UnityEngine.Object;
 
-		// Token: 0x0600D1F1 RID: 53745
+		// Token: 0x0600D305 RID: 54021
 		AssetHandle<T> AcquireAssetAsync<T>(string uri, bool ignoreDlcEntitlements = false) where T : global::UnityEngine.Object;
 
-		// Token: 0x0600D1F2 RID: 53746
+		// Token: 0x0600D306 RID: 54022
 		void Cleanup();
 	}
 }

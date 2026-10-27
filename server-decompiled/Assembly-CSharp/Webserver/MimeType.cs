@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Webserver
 {
-	// Token: 0x02001AE8 RID: 6888
+	// Token: 0x02001B19 RID: 6937
 	public static class MimeType
 	{
-		// Token: 0x0600CFB2 RID: 53170 RVA: 0x004B4028 File Offset: 0x004B2228
+		// Token: 0x0600D0C6 RID: 53446 RVA: 0x004B7B24 File Offset: 0x004B5D24
 		public static string GetMimeType(string _extension)
 		{
 			if (_extension == null)
@@ -25,7 +25,7 @@ namespace Webserver
 			return text;
 		}
 
-		// Token: 0x04009D14 RID: 40212
+		// Token: 0x04009DFD RID: 40445
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly IDictionary<string, string> mappings = new CaseInsensitiveStringDictionary<string>
 		{

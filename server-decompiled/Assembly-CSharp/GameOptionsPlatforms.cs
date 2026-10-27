@@ -3,16 +3,16 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x020011F0 RID: 4592
+// Token: 0x02001200 RID: 4608
 public static class GameOptionsPlatforms
 {
-	// Token: 0x060092DE RID: 37598 RVA: 0x00376F4D File Offset: 0x0037514D
+	// Token: 0x06009334 RID: 37684 RVA: 0x003790C1 File Offset: 0x003772C1
 	public static float GetStreamingMipmapBudget()
 	{
 		return (float)SystemInfo.graphicsMemorySize * 0.9f;
 	}
 
-	// Token: 0x060092DF RID: 37599 RVA: 0x00376F5C File Offset: 0x0037515C
+	// Token: 0x06009335 RID: 37685 RVA: 0x003790D0 File Offset: 0x003772D0
 	public static string GetItemIconFilterString()
 	{
 		string text = "mip0";
@@ -23,7 +23,7 @@ public static class GameOptionsPlatforms
 		return text;
 	}
 
-	// Token: 0x060092E0 RID: 37600 RVA: 0x00376F90 File Offset: 0x00375190
+	// Token: 0x06009336 RID: 37686 RVA: 0x00379104 File Offset: 0x00377304
 	public static int CalcTextureQualityMin()
 	{
 		int systemMemorySize = SystemInfo.systemMemorySize;
@@ -34,7 +34,7 @@ public static class GameOptionsPlatforms
 		return 0;
 	}
 
-	// Token: 0x060092E1 RID: 37601 RVA: 0x00376FBC File Offset: 0x003751BC
+	// Token: 0x06009337 RID: 37687 RVA: 0x00379130 File Offset: 0x00377330
 	public static GameOptionsPlatforms.GfxPreset CalcDefaultGfxPreset()
 	{
 		if ((DeviceFlag.StandaloneWindows | DeviceFlag.StandaloneLinux | DeviceFlag.StandaloneOSX).IsCurrent())
@@ -78,8 +78,8 @@ public static class GameOptionsPlatforms
 		return GameOptionsPlatforms.GfxPreset.Medium;
 	}
 
-	// Token: 0x170011B7 RID: 4535
-	// (get) Token: 0x060092E2 RID: 37602 RVA: 0x00377091 File Offset: 0x00375291
+	// Token: 0x170011C2 RID: 4546
+	// (get) Token: 0x06009338 RID: 37688 RVA: 0x00379205 File Offset: 0x00377405
 	public static int DefaultUpscalerMode
 	{
 		get
@@ -92,7 +92,7 @@ public static class GameOptionsPlatforms
 		}
 	}
 
-	// Token: 0x060092E3 RID: 37603 RVA: 0x003770A0 File Offset: 0x003752A0
+	// Token: 0x06009339 RID: 37689 RVA: 0x00379214 File Offset: 0x00377414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool FindGfxName(string names)
 	{
@@ -112,7 +112,7 @@ public static class GameOptionsPlatforms
 		return false;
 	}
 
-	// Token: 0x060092E4 RID: 37604 RVA: 0x003770ED File Offset: 0x003752ED
+	// Token: 0x0600933A RID: 37690 RVA: 0x00379261 File Offset: 0x00377461
 	public static int ApplyTextureFilterLimit(int filter)
 	{
 		if ((float)SystemInfo.graphicsMemorySize < 3200f)
@@ -122,37 +122,37 @@ public static class GameOptionsPlatforms
 		return filter;
 	}
 
-	// Token: 0x020011F1 RID: 4593
+	// Token: 0x02001201 RID: 4609
 	public enum GfxPreset
 	{
-		// Token: 0x04006C75 RID: 27765
+		// Token: 0x04006C8D RID: 27789
 		Lowest,
-		// Token: 0x04006C76 RID: 27766
+		// Token: 0x04006C8E RID: 27790
 		Low,
-		// Token: 0x04006C77 RID: 27767
+		// Token: 0x04006C8F RID: 27791
 		Medium,
-		// Token: 0x04006C78 RID: 27768
+		// Token: 0x04006C90 RID: 27792
 		High,
-		// Token: 0x04006C79 RID: 27769
+		// Token: 0x04006C91 RID: 27793
 		Ultra,
-		// Token: 0x04006C7A RID: 27770
+		// Token: 0x04006C92 RID: 27794
 		Custom,
-		// Token: 0x04006C7B RID: 27771
+		// Token: 0x04006C93 RID: 27795
 		ConsolePerformance,
-		// Token: 0x04006C7C RID: 27772
+		// Token: 0x04006C94 RID: 27796
 		LEGACY_ConsolePerformanceFSR,
-		// Token: 0x04006C7D RID: 27773
+		// Token: 0x04006C95 RID: 27797
 		ConsoleQuality,
-		// Token: 0x04006C7E RID: 27774
+		// Token: 0x04006C96 RID: 27798
 		LEGACY_ConsoleQualityFSR,
-		// Token: 0x04006C7F RID: 27775
+		// Token: 0x04006C97 RID: 27799
 		Simplified = 100
 	}
 
-	// Token: 0x020011F2 RID: 4594
+	// Token: 0x02001202 RID: 4610
 	public static class UpscalerMode
 	{
-		// Token: 0x060092E5 RID: 37605 RVA: 0x00377100 File Offset: 0x00375300
+		// Token: 0x0600933B RID: 37691 RVA: 0x00379274 File Offset: 0x00377474
 		public static string ToString(int upscalerSettingValue)
 		{
 			switch (upscalerSettingValue)
@@ -174,22 +174,22 @@ public static class GameOptionsPlatforms
 			}
 		}
 
-		// Token: 0x04006C80 RID: 27776
+		// Token: 0x04006C98 RID: 27800
 		public const int Off = 0;
 
-		// Token: 0x04006C81 RID: 27777
+		// Token: 0x04006C99 RID: 27801
 		public const int FSR2 = 1;
 
-		// Token: 0x04006C82 RID: 27778
+		// Token: 0x04006C9A RID: 27802
 		public const int FSR3 = 2;
 
-		// Token: 0x04006C83 RID: 27779
+		// Token: 0x04006C9B RID: 27803
 		public const int DynamicResolution = 3;
 
-		// Token: 0x04006C84 RID: 27780
+		// Token: 0x04006C9C RID: 27804
 		public const int Scale = 4;
 
-		// Token: 0x04006C85 RID: 27781
+		// Token: 0x04006C9D RID: 27805
 		public const int DLSS = 5;
 	}
 }

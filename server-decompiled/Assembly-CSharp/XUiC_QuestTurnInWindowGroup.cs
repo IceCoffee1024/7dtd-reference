@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200100B RID: 4107
+// Token: 0x0200101B RID: 4123
 [Preserve]
 public class XUiC_QuestTurnInWindowGroup : XUiController
 {
-	// Token: 0x0600813E RID: 33086 RVA: 0x00312CBC File Offset: 0x00310EBC
+	// Token: 0x06008190 RID: 33168 RVA: 0x003149C0 File Offset: 0x00312BC0
 	public static void Open(XUi xui, Action _OnCloseAction = null)
 	{
 		xui.playerUI.windowManager.Open("questTurnIn", true);
@@ -17,7 +17,7 @@ public class XUiC_QuestTurnInWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x0600813F RID: 33087 RVA: 0x00312D0D File Offset: 0x00310F0D
+	// Token: 0x06008191 RID: 33169 RVA: 0x00314A11 File Offset: 0x00312C11
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_QuestTurnInWindowGroup : XUiController
 		this.rewardsWindow = base.GetChildByType<XUiC_QuestTurnInRewardsWindow>();
 	}
 
-	// Token: 0x06008140 RID: 33088 RVA: 0x00312D3C File Offset: 0x00310F3C
+	// Token: 0x06008192 RID: 33170 RVA: 0x00314A40 File Offset: 0x00312C40
 	public override void OnOpen()
 	{
 		if (this.xui.Dialog.Respondent != null)
@@ -57,7 +57,7 @@ public class XUiC_QuestTurnInWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06008141 RID: 33089 RVA: 0x00312E74 File Offset: 0x00311074
+	// Token: 0x06008193 RID: 33171 RVA: 0x00314B78 File Offset: 0x00312D78
 	public override void OnClose()
 	{
 		EntityTrader entityTrader = this.xui.Dialog.Respondent as EntityTrader;
@@ -79,7 +79,7 @@ public class XUiC_QuestTurnInWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06008142 RID: 33090 RVA: 0x00312F34 File Offset: 0x00311134
+	// Token: 0x06008194 RID: 33172 RVA: 0x00314C38 File Offset: 0x00312E38
 	public void TryNextComplete()
 	{
 		Quest nextCompletedQuest = this.xui.playerUI.entityPlayer.QuestJournal.GetNextCompletedQuest(this.xui.Dialog.QuestTurnIn, this.NPC.entityId);
@@ -93,21 +93,21 @@ public class XUiC_QuestTurnInWindowGroup : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005FF1 RID: 24561
+	// Token: 0x0400602F RID: 24623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestTurnInDetailsWindow detailsWindow;
 
-	// Token: 0x04005FF2 RID: 24562
+	// Token: 0x04006030 RID: 24624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestTurnInRewardsWindow rewardsWindow;
 
-	// Token: 0x04005FF3 RID: 24563
+	// Token: 0x04006031 RID: 24625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x04005FF4 RID: 24564
+	// Token: 0x04006032 RID: 24626
 	public static string ID = "questTurnIn";
 
-	// Token: 0x04005FF5 RID: 24565
+	// Token: 0x04006033 RID: 24627
 	public EntityNPC NPC;
 }

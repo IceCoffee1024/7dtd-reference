@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200054B RID: 1355
+// Token: 0x0200054F RID: 1359
 public class ExplosionDamageArea : MonoBehaviour
 {
-	// Token: 0x06002C45 RID: 11333 RVA: 0x0011907D File Offset: 0x0011727D
+	// Token: 0x06002C4D RID: 11341 RVA: 0x00119609 File Offset: 0x00117809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -15,7 +15,7 @@ public class ExplosionDamageArea : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C46 RID: 11334 RVA: 0x00119094 File Offset: 0x00117294
+	// Token: 0x06002C4E RID: 11342 RVA: 0x00119620 File Offset: 0x00117820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Entity getEntityFromCollider(Collider col)
 	{
@@ -41,7 +41,7 @@ public class ExplosionDamageArea : MonoBehaviour
 		return entityAlive;
 	}
 
-	// Token: 0x06002C47 RID: 11335 RVA: 0x00119120 File Offset: 0x00117320
+	// Token: 0x06002C4F RID: 11343 RVA: 0x001196AC File Offset: 0x001178AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -59,9 +59,9 @@ public class ExplosionDamageArea : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002204 RID: 8708
+	// Token: 0x0400221B RID: 8731
 	public List<string> BuffActions;
 
-	// Token: 0x04002205 RID: 8709
+	// Token: 0x0400221C RID: 8732
 	public int InitiatorEntityId = -1;
 }

@@ -4,38 +4,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001FA RID: 506
+// Token: 0x020001FC RID: 508
 [Preserve]
 public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 {
-	// Token: 0x06000F72 RID: 3954 RVA: 0x000646BB File Offset: 0x000628BB
+	// Token: 0x06000F76 RID: 3958 RVA: 0x0006497F File Offset: 0x00062B7F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "chunkreset", "cr" };
 	}
 
-	// Token: 0x06000F73 RID: 3955 RVA: 0x000646D3 File Offset: 0x000628D3
+	// Token: 0x06000F77 RID: 3959 RVA: 0x00064997 File Offset: 0x00062B97
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "resets the specified chunks";
 	}
 
-	// Token: 0x06000F74 RID: 3956 RVA: 0x000646DA File Offset: 0x000628DA
+	// Token: 0x06000F78 RID: 3960 RVA: 0x0006499E File Offset: 0x00062B9E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  1. chunkreset <x1> <z1> <x2> <z2>\n  2. chunkreset [f]\n1. Rebuilds the chunks that contain the given coordinate range.\n2. Can only be executed by a player in the ingame console! Behaviour depends on whether the\n   player is currently within the bounds of a POI:\n   Within a POI: The POI is reset.\n   Not within a POI: The chunk the player is in and the eight chunks around that one are\n     rebuilt. Not deco! Does not reload POI data!\n   d - regen deco\n   f - fully regenerates chunks (may cause double entities!)\n   u, utimed, ue - Unload chunks or entities\n   nq - Enqueue a 3x3 group of chunks centred around the player to be reset when unsynced, unless they are otherwise protected from the chunk reset system.";
 	}
 
-	// Token: 0x06000F75 RID: 3957 RVA: 0x000646E1 File Offset: 0x000628E1
+	// Token: 0x06000F79 RID: 3961 RVA: 0x000649A5 File Offset: 0x00062BA5
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GameManager.Instance.StartCoroutine(this.execute(_params, _senderInfo));
 	}
 
-	// Token: 0x06000F76 RID: 3958 RVA: 0x000646F6 File Offset: 0x000628F6
+	// Token: 0x06000F7A RID: 3962 RVA: 0x000649BA File Offset: 0x00062BBA
 	public IEnumerator execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		World world = GameManager.Instance.World;
@@ -97,21 +97,11 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 				}
 				GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(hashSetLong);
 				SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Reset chunks covering area {0}/{1} to {2}/{3} (chunk coordinates {4} to {5}).", new object[] { num, num2, num3, num4, vector2i, vector2i2 }));
-				if (!(DynamicMeshManager.Instance != null))
-				{
-					goto IL_0968;
-				}
-				using (HashSetLong.Enumerator enumerator = hashSetLong.GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						long num6 = enumerator.Current;
-						DynamicMeshManager.Instance.AddChunk(num6, true, true, null);
-					}
-					yield break;
-				}
 			}
-			SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Can not reset chunks on this game");
+			else
+			{
+				SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Can not reset chunks on this game");
+			}
 		}
 		else
 		{
@@ -133,12 +123,12 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 			int num2 = World.toChunkXZ((int)vector.z) - 1;
 			int num3 = num + 2;
 			int num4 = num2 + 2;
-			HashSetLong chunks = new HashSetLong();
+			HashSetLong hashSetLong2 = new HashSetLong();
 			for (int k = num; k <= num3; k++)
 			{
 				for (int l = num2; l <= num4; l++)
 				{
-					chunks.Add(WorldChunkCache.MakeChunkKey(k, l));
+					hashSetLong2.Add(WorldChunkCache.MakeChunkKey(k, l));
 				}
 			}
 			if (_params.Count == 1)
@@ -151,63 +141,63 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 				}
 				if (_params[0] == "nq")
 				{
-					foreach (long num7 in chunks)
+					foreach (long num6 in hashSetLong2)
 					{
-						chunkProviderGenerateWorld2.RequestChunkReset(num7);
+						chunkProviderGenerateWorld2.RequestChunkReset(num6);
 					}
 					yield break;
 				}
 				if (_params[0] == "d")
 				{
-					LockManager.Instance.ForceUnlockByChunk(chunks);
-					foreach (long num8 in chunks)
+					LockManager.Instance.ForceUnlockByChunk(hashSetLong2);
+					foreach (long num7 in hashSetLong2)
 					{
-						Chunk chunkSync = chunkCache2.GetChunkSync(num8);
+						Chunk chunkSync = chunkCache2.GetChunkSync(num7);
 						if (chunkSync != null)
 						{
 							chunkSync.NeedsLightDecoration = true;
 							chunkSync.NeedsLightCalculation = true;
 						}
 					}
-					GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(chunks);
+					GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(hashSetLong2);
 					SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Generate deco around player");
 				}
 				else if (_params[0] == "f")
 				{
-					LockManager.Instance.ForceUnlockByChunk(chunks);
-					foreach (long num9 in chunks)
+					LockManager.Instance.ForceUnlockByChunk(hashSetLong2);
+					foreach (long num8 in hashSetLong2)
 					{
-						if (!chunkProviderGenerateWorld2.GenerateSingleChunk(chunkCache2, num9, true))
+						if (!chunkProviderGenerateWorld2.GenerateSingleChunk(chunkCache2, num8, true))
 						{
-							SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Failed regenerating chunk at position {0}/{1}", WorldChunkCache.extractX(num9) << 4, WorldChunkCache.extractZ(num9) << 4));
+							SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Failed regenerating chunk at position {0}/{1}", WorldChunkCache.extractX(num8) << 4, WorldChunkCache.extractZ(num8) << 4));
 						}
 					}
-					GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(chunks);
+					GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(hashSetLong2);
 					SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Generate chunks around player");
 				}
 				else
 				{
 					if (_params[0] == "r")
 					{
-						using (HashSetLong.Enumerator enumerator = chunks.GetEnumerator())
+						using (HashSetLong.Enumerator enumerator = hashSetLong2.GetEnumerator())
 						{
 							while (enumerator.MoveNext())
 							{
-								long num10 = enumerator.Current;
-								Chunk chunkSync2 = chunkCache2.GetChunkSync(num10);
+								long num9 = enumerator.Current;
+								Chunk chunkSync2 = chunkCache2.GetChunkSync(num9);
 								if (chunkSync2 != null)
 								{
 									chunkSync2.NeedsRegeneration = true;
 								}
 							}
-							goto IL_0900;
+							yield break;
 						}
 					}
 					if (_params[0] == "u")
 					{
-						foreach (long num11 in chunks)
+						foreach (long num10 in hashSetLong2)
 						{
-							world.m_ChunkManager.RemoveChunk(num11);
+							world.m_ChunkManager.RemoveChunk(num10);
 						}
 						SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unload around player");
 					}
@@ -226,9 +216,9 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 					}
 					else if (_params[0] == "ue")
 					{
-						foreach (long num12 in chunks)
+						foreach (long num11 in hashSetLong2)
 						{
-							Chunk chunkSync3 = chunkCache2.GetChunkSync(num12);
+							Chunk chunkSync3 = chunkCache2.GetChunkSync(num11);
 							if (chunkSync3 != null)
 							{
 								for (int m = 0; m < chunkSync3.entityLists.Length; m++)
@@ -260,27 +250,17 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 				}
 				else
 				{
-					LockManager.Instance.ForceUnlockByChunk(chunks);
-					world.RebuildTerrain(chunks, Vector3i.zero, Vector3i.zero, false, true, true, false);
-					GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(chunks);
+					LockManager.Instance.ForceUnlockByChunk(hashSetLong2);
+					world.RebuildTerrain(hashSetLong2, Vector3i.zero, Vector3i.zero, false, true, true, false);
+					GameManager.Instance.World.m_ChunkManager.ResendChunksToClients(hashSetLong2);
 					SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Reset chunks around player");
 				}
 			}
-			IL_0900:
-			if (DynamicMeshManager.Instance != null)
-			{
-				foreach (long num13 in chunks)
-				{
-					DynamicMeshManager.Instance.AddChunk(num13, true, true, null);
-				}
-			}
-			chunks = null;
 		}
-		IL_0968:
 		yield break;
 	}
 
-	// Token: 0x06000F77 RID: 3959 RVA: 0x00064713 File Offset: 0x00062913
+	// Token: 0x06000F7B RID: 3963 RVA: 0x000649D7 File Offset: 0x00062BD7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator UnloadTimed()
 	{
@@ -315,7 +295,7 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x04000C92 RID: 3218
+	// Token: 0x04000C94 RID: 3220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine unloadTimed;
 }

@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019EF RID: 6639
+	// Token: 0x02001A20 RID: 6688
 	[Preserve]
 	public class ActionShuffleItems : ActionBaseClientAction
 	{
-		// Token: 0x0600CAFA RID: 51962 RVA: 0x004A3F74 File Offset: 0x004A2174
+		// Token: 0x0600CC0E RID: 52238 RVA: 0x004A7A74 File Offset: 0x004A5C74
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -20,7 +20,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CAFB RID: 51963 RVA: 0x004A3F9D File Offset: 0x004A219D
+		// Token: 0x0600CC0F RID: 52239 RVA: 0x004A7A9D File Offset: 0x004A5C9D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator handleShuffle(EntityPlayer player)
 		{
@@ -31,7 +31,7 @@ namespace GameEvent.SequenceActions
 			List<ItemStack> list = new List<ItemStack>();
 			if (this.itemLocations.Contains(ActionShuffleItems.ItemLocations.Toolbelt))
 			{
-				for (int i = 0; i < player.inventory.Length - 1; i++)
+				for (int i = 0; i < player.inventory.Length; i++)
 				{
 					list.Add(player.inventory.GetItem(i).Clone());
 				}
@@ -56,7 +56,7 @@ namespace GameEvent.SequenceActions
 			if (this.itemLocations.Contains(ActionShuffleItems.ItemLocations.Toolbelt))
 			{
 				Inventory inventory = player.inventory;
-				for (int l = 0; l < inventory.Length - 1; l++)
+				for (int l = 0; l < inventory.Length; l++)
 				{
 					inventory.SetItem(l, list[num3++]);
 				}
@@ -73,7 +73,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600CAFC RID: 51964 RVA: 0x004A3FB4 File Offset: 0x004A21B4
+		// Token: 0x0600CC10 RID: 52240 RVA: 0x004A7AB4 File Offset: 0x004A5CB4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -91,7 +91,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CAFD RID: 51965 RVA: 0x004A401C File Offset: 0x004A221C
+		// Token: 0x0600CC11 RID: 52241 RVA: 0x004A7B1C File Offset: 0x004A5D1C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -102,21 +102,21 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099B2 RID: 39346
+		// Token: 0x04009A9B RID: 39579
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<ActionShuffleItems.ItemLocations> itemLocations = new List<ActionShuffleItems.ItemLocations>();
 
-		// Token: 0x040099B3 RID: 39347
+		// Token: 0x04009A9C RID: 39580
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropItemLocation = "items_location";
 
-		// Token: 0x020019F0 RID: 6640
+		// Token: 0x02001A21 RID: 6689
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ItemLocations
 		{
-			// Token: 0x040099B5 RID: 39349
+			// Token: 0x04009A9E RID: 39582
 			Toolbelt,
-			// Token: 0x040099B6 RID: 39350
+			// Token: 0x04009A9F RID: 39583
 			Backpack
 		}
 	}

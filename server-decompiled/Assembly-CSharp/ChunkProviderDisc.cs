@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x02000B3B RID: 2875
+// Token: 0x02000B46 RID: 2886
 public class ChunkProviderDisc : ChunkProviderAbstract
 {
-	// Token: 0x0600569C RID: 22172 RVA: 0x00215B7D File Offset: 0x00213D7D
+	// Token: 0x060056C1 RID: 22209 RVA: 0x002170D9 File Offset: 0x002152D9
 	public ChunkProviderDisc(ChunkCluster _cc, string _worldName, PathAbstractions.AbstractedLocation _worldLocation)
 	{
 		this.cc = _cc;
@@ -15,7 +15,7 @@ public class ChunkProviderDisc : ChunkProviderAbstract
 		this.worldLocation = _worldLocation;
 	}
 
-	// Token: 0x0600569D RID: 22173 RVA: 0x00215B9A File Offset: 0x00213D9A
+	// Token: 0x060056C2 RID: 22210 RVA: 0x002170F6 File Offset: 0x002152F6
 	public override IEnumerator Init(World _world)
 	{
 		this.world = _world;
@@ -122,44 +122,44 @@ public class ChunkProviderDisc : ChunkProviderAbstract
 		yield break;
 	}
 
-	// Token: 0x0600569E RID: 22174 RVA: 0x00215BB0 File Offset: 0x00213DB0
+	// Token: 0x060056C3 RID: 22211 RVA: 0x0021710C File Offset: 0x0021530C
 	public override DynamicPrefabDecorator GetDynamicPrefabDecorator()
 	{
 		return this.prefabDecorator;
 	}
 
-	// Token: 0x0600569F RID: 22175 RVA: 0x00215BB8 File Offset: 0x00213DB8
+	// Token: 0x060056C4 RID: 22212 RVA: 0x00217114 File Offset: 0x00215314
 	public override SpawnPointList GetSpawnPointList()
 	{
 		return this.spawnPointManager.spawnPointList;
 	}
 
-	// Token: 0x060056A0 RID: 22176 RVA: 0x00215BC5 File Offset: 0x00213DC5
+	// Token: 0x060056C5 RID: 22213 RVA: 0x00217121 File Offset: 0x00215321
 	public override void SetSpawnPointList(SpawnPointList _spawnPointList)
 	{
 		this.spawnPointManager.spawnPointList = _spawnPointList;
 	}
 
-	// Token: 0x060056A1 RID: 22177 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060056C6 RID: 22214 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool GetOverviewMap(Vector2i _startPos, Vector2i _size, Color[] mapColors)
 	{
 		return false;
 	}
 
-	// Token: 0x060056A2 RID: 22178 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060056C7 RID: 22215 RVA: 0x00020119 File Offset: 0x0001E319
 	public override EnumChunkProviderId GetProviderId()
 	{
 		return EnumChunkProviderId.Disc;
 	}
 
-	// Token: 0x060056A3 RID: 22179 RVA: 0x00215BD3 File Offset: 0x00213DD3
+	// Token: 0x060056C8 RID: 22216 RVA: 0x0021712F File Offset: 0x0021532F
 	public override void Cleanup()
 	{
 		Thread.Sleep(200);
 		this.m_RegionFileManager.Cleanup();
 	}
 
-	// Token: 0x060056A4 RID: 22180 RVA: 0x00215BEC File Offset: 0x00213DEC
+	// Token: 0x060056C9 RID: 22217 RVA: 0x00217148 File Offset: 0x00215348
 	public override void SaveAll()
 	{
 		if (this.world.IsEditor())
@@ -182,12 +182,12 @@ public class ChunkProviderDisc : ChunkProviderAbstract
 		this.m_RegionFileManager.WaitSaveDone();
 	}
 
-	// Token: 0x060056A5 RID: 22181 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060056CA RID: 22218 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SaveRandomChunks(int count, ulong _curWorldTimeInTicks, ArraySegment<long> _activeChunkSet)
 	{
 	}
 
-	// Token: 0x060056A6 RID: 22182 RVA: 0x00215CEC File Offset: 0x00213EEC
+	// Token: 0x060056CB RID: 22219 RVA: 0x00217248 File Offset: 0x00215448
 	public override bool GetWorldExtent(out Vector3i _minSize, out Vector3i _maxSize)
 	{
 		_minSize = new Vector3i(this.world.ChunkCache.ChunkMinPos.x * 16, 0, this.world.ChunkCache.ChunkMinPos.y * 16);
@@ -195,7 +195,7 @@ public class ChunkProviderDisc : ChunkProviderAbstract
 		return true;
 	}
 
-	// Token: 0x060056A7 RID: 22183 RVA: 0x00215D78 File Offset: 0x00213F78
+	// Token: 0x060056CC RID: 22220 RVA: 0x002172D4 File Offset: 0x002154D4
 	public override void RebuildTerrain(HashSetLong _chunks, Vector3i _areaStart, Vector3i _areaSize, bool _bStopStabilityUpdate, bool _bRegenerateChunk, bool _bFillEmptyBlocks, bool _isReset)
 	{
 		ThreadManager.RunCoroutineSync(this.prefabDecorator.Load(this.worldLocation.FullPath, false));
@@ -246,49 +246,49 @@ public class ChunkProviderDisc : ChunkProviderAbstract
 		}
 	}
 
-	// Token: 0x060056A8 RID: 22184 RVA: 0x00215FE4 File Offset: 0x002141E4
+	// Token: 0x060056CD RID: 22221 RVA: 0x00217540 File Offset: 0x00215740
 	public override ChunkProtectionLevel GetChunkProtectionLevel(Vector3i worldPos)
 	{
 		return this.m_RegionFileManager.GetChunkProtectionLevelForWorldPos(worldPos);
 	}
 
-	// Token: 0x04004345 RID: 17221
+	// Token: 0x0400436A RID: 17258
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public World world;
 
-	// Token: 0x04004346 RID: 17222
+	// Token: 0x0400436B RID: 17259
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly PathAbstractions.AbstractedLocation worldLocation;
 
-	// Token: 0x04004347 RID: 17223
+	// Token: 0x0400436C RID: 17260
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly string worldName;
 
-	// Token: 0x04004348 RID: 17224
+	// Token: 0x0400436D RID: 17261
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly string gameName;
 
-	// Token: 0x04004349 RID: 17225
+	// Token: 0x0400436E RID: 17262
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public WorldState m_HeaderInfo;
 
-	// Token: 0x0400434A RID: 17226
+	// Token: 0x0400436F RID: 17263
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DynamicPrefabDecorator prefabDecorator;
 
-	// Token: 0x0400434B RID: 17227
+	// Token: 0x04004370 RID: 17264
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public RegionFileManager m_RegionFileManager;
 
-	// Token: 0x0400434C RID: 17228
+	// Token: 0x04004371 RID: 17265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunkProviderIndicator chunkManager;
 
-	// Token: 0x0400434D RID: 17229
+	// Token: 0x04004372 RID: 17266
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ChunkCluster cc;
 
-	// Token: 0x0400434E RID: 17230
+	// Token: 0x04004373 RID: 17267
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public SpawnPointManager spawnPointManager;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using ConcurrentCollections;
 
-// Token: 0x02000360 RID: 864
+// Token: 0x02000362 RID: 866
 public class ChunkQueue
 {
-	// Token: 0x060018F0 RID: 6384 RVA: 0x0008CD00 File Offset: 0x0008AF00
+	// Token: 0x060018F4 RID: 6388 RVA: 0x0008CF34 File Offset: 0x0008B134
 	public void Add(long item)
 	{
 		object @lock = this._lock;
@@ -14,29 +14,29 @@ public class ChunkQueue
 		}
 	}
 
-	// Token: 0x060018F1 RID: 6385 RVA: 0x0008CD48 File Offset: 0x0008AF48
+	// Token: 0x060018F5 RID: 6389 RVA: 0x0008CF7C File Offset: 0x0008B17C
 	public void Clear()
 	{
 		this.KeyQueue.Clear();
 	}
 
-	// Token: 0x060018F2 RID: 6386 RVA: 0x0008CD55 File Offset: 0x0008AF55
+	// Token: 0x060018F6 RID: 6390 RVA: 0x0008CF89 File Offset: 0x0008B189
 	public bool Contains(long item)
 	{
 		return this.KeyQueue.Contains(item);
 	}
 
-	// Token: 0x060018F3 RID: 6387 RVA: 0x0008CD63 File Offset: 0x0008AF63
+	// Token: 0x060018F7 RID: 6391 RVA: 0x0008CF97 File Offset: 0x0008B197
 	public void Remove(long item)
 	{
 		this.KeyQueue.TryRemove(item);
 	}
 
-	// Token: 0x04000FE1 RID: 4065
+	// Token: 0x04000FF1 RID: 4081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _lock = new object();
 
-	// Token: 0x04000FE2 RID: 4066
+	// Token: 0x04000FF2 RID: 4082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConcurrentHashSet<long> KeyQueue = new ConcurrentHashSet<long>();
 }

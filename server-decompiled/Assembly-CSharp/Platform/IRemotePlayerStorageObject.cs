@@ -2,13 +2,13 @@
 
 namespace Platform
 {
-	// Token: 0x02001BC8 RID: 7112
+	// Token: 0x02001BF9 RID: 7161
 	public interface IRemotePlayerStorageObject
 	{
-		// Token: 0x0600D47E RID: 54398
+		// Token: 0x0600D592 RID: 54674
 		void ReadInto(PooledBinaryReader _reader);
 
-		// Token: 0x0600D47F RID: 54399
+		// Token: 0x0600D593 RID: 54675
 		void WriteFrom(PooledBinaryWriter _writer);
 	}
 }

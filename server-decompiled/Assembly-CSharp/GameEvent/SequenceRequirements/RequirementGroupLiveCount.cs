@@ -3,31 +3,31 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001957 RID: 6487
+	// Token: 0x02001988 RID: 6536
 	[Preserve]
 	public class RequirementGroupLiveCount : BaseOperationRequirement
 	{
-		// Token: 0x0600C840 RID: 51264 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C954 RID: 51540 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C841 RID: 51265 RVA: 0x004952A1 File Offset: 0x004934A1
+		// Token: 0x0600C955 RID: 51541 RVA: 0x00498C95 File Offset: 0x00496E95
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
 			return this.Owner.GetEntityGroupLiveCount(this.targetGroup);
 		}
 
-		// Token: 0x0600C842 RID: 51266 RVA: 0x004952B9 File Offset: 0x004934B9
+		// Token: 0x0600C956 RID: 51542 RVA: 0x00498CAD File Offset: 0x00496EAD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetIntValue(target as EntityAlive, this.valueText, 0);
 		}
 
-		// Token: 0x0600C843 RID: 51267 RVA: 0x004952D2 File Offset: 0x004934D2
+		// Token: 0x0600C957 RID: 51543 RVA: 0x00498CC6 File Offset: 0x00496EC6
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementGroupLiveCount.PropCount, ref this.valueText);
 		}
 
-		// Token: 0x0600C844 RID: 51268 RVA: 0x004952FD File Offset: 0x004934FD
+		// Token: 0x0600C958 RID: 51544 RVA: 0x00498CF1 File Offset: 0x00496EF1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -48,19 +48,19 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040096A5 RID: 38565
+		// Token: 0x0400978E RID: 38798
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x040096A6 RID: 38566
+		// Token: 0x0400978F RID: 38799
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040096A7 RID: 38567
+		// Token: 0x04009790 RID: 38800
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x040096A8 RID: 38568
+		// Token: 0x04009791 RID: 38801
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropCount = "count";
 	}

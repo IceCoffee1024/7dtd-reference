@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000855 RID: 2133
+// Token: 0x0200085F RID: 2143
 public enum SimpleRPCType : byte
 {
-	// Token: 0x04003270 RID: 12912
+	// Token: 0x04003290 RID: 12944
 	OnActivateItem,
-	// Token: 0x04003271 RID: 12913
+	// Token: 0x04003291 RID: 12945
 	OnResetItem
 }

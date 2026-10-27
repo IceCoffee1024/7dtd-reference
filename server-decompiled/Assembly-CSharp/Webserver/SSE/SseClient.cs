@@ -8,10 +8,10 @@ using Webserver.UrlHandlers;
 
 namespace Webserver.SSE
 {
-	// Token: 0x02001B29 RID: 6953
+	// Token: 0x02001B5A RID: 7002
 	public class SseClient
 	{
-		// Token: 0x0600D10E RID: 53518 RVA: 0x004BE640 File Offset: 0x004BC840
+		// Token: 0x0600D222 RID: 53794 RVA: 0x004C213C File Offset: 0x004C033C
 		public SseClient(SseHandler _parent, RequestContext _context)
 		{
 			this.parent = _parent;
@@ -22,7 +22,7 @@ namespace Webserver.SSE
 			this.response.OutputStream.Flush();
 		}
 
-		// Token: 0x0600D10F RID: 53519 RVA: 0x004BE6B4 File Offset: 0x004BC8B4
+		// Token: 0x0600D223 RID: 53795 RVA: 0x004C21B0 File Offset: 0x004C03B0
 		public ESseClientWriteResult Write(byte[] _bytes, int _bytesToSend)
 		{
 			SpaceWizards.HttpListener.HttpListenerResponse httpListenerResponse = this.response;
@@ -77,7 +77,7 @@ namespace Webserver.SSE
 			return esseClientWriteResult;
 		}
 
-		// Token: 0x0600D110 RID: 53520 RVA: 0x004BE800 File Offset: 0x004BCA00
+		// Token: 0x0600D224 RID: 53796 RVA: 0x004C22FC File Offset: 0x004C04FC
 		public void HandleKeepAlive()
 		{
 			DateTime now = DateTime.Now;
@@ -89,26 +89,26 @@ namespace Webserver.SSE
 			this.lastMessageSent = now;
 		}
 
-		// Token: 0x04009E95 RID: 40597
+		// Token: 0x04009F7E RID: 40830
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int keepAliveIntervalSeconds = 10;
 
-		// Token: 0x04009E96 RID: 40598
+		// Token: 0x04009F7F RID: 40831
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] keepAliveData = Encoding.UTF8.GetBytes(": KeepAlive\n\n");
 
-		// Token: 0x04009E97 RID: 40599
+		// Token: 0x04009F80 RID: 40832
 		public readonly IPEndPoint RemoteEndpoint;
 
-		// Token: 0x04009E98 RID: 40600
+		// Token: 0x04009F81 RID: 40833
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SseHandler parent;
 
-		// Token: 0x04009E99 RID: 40601
+		// Token: 0x04009F82 RID: 40834
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SpaceWizards.HttpListener.HttpListenerResponse response;
 
-		// Token: 0x04009E9A RID: 40602
+		// Token: 0x04009F83 RID: 40835
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime lastMessageSent = DateTime.Now;
 	}

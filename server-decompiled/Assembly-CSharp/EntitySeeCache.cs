@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000510 RID: 1296
+// Token: 0x02000512 RID: 1298
 public class EntitySeeCache
 {
-	// Token: 0x06002A4A RID: 10826 RVA: 0x0010B580 File Offset: 0x00109780
+	// Token: 0x06002A51 RID: 10833 RVA: 0x0010BAD4 File Offset: 0x00109CD4
 	public EntitySeeCache(EntityAlive _e)
 	{
 		this.theEntity = _e;
 	}
 
-	// Token: 0x06002A4B RID: 10827 RVA: 0x0010B5A8 File Offset: 0x001097A8
+	// Token: 0x06002A52 RID: 10834 RVA: 0x0010BAFC File Offset: 0x00109CFC
 	public bool CanSee(Entity _e)
 	{
 		if (_e == null)
@@ -43,32 +43,32 @@ public class EntitySeeCache
 		return flag;
 	}
 
-	// Token: 0x06002A4C RID: 10828 RVA: 0x0010B632 File Offset: 0x00109832
+	// Token: 0x06002A53 RID: 10835 RVA: 0x0010BB86 File Offset: 0x00109D86
 	public float GetLastTimePlayerSeen()
 	{
 		return this.lastTimeSeenAPlayer;
 	}
 
-	// Token: 0x06002A4D RID: 10829 RVA: 0x0010B63A File Offset: 0x0010983A
+	// Token: 0x06002A54 RID: 10836 RVA: 0x0010BB8E File Offset: 0x00109D8E
 	public void SetLastTimePlayerSeen()
 	{
 		this.lastTimeSeenAPlayer = Time.time;
 	}
 
-	// Token: 0x06002A4E RID: 10830 RVA: 0x0010B647 File Offset: 0x00109847
+	// Token: 0x06002A55 RID: 10837 RVA: 0x0010BB9B File Offset: 0x00109D9B
 	public void SetCanSee(Entity _e)
 	{
 		this.positiveCache.Add(_e.entityId);
 	}
 
-	// Token: 0x06002A4F RID: 10831 RVA: 0x0010B65B File Offset: 0x0010985B
+	// Token: 0x06002A56 RID: 10838 RVA: 0x0010BBAF File Offset: 0x00109DAF
 	public void Clear()
 	{
 		this.positiveCache.Clear();
 		this.negativeCache.Clear();
 	}
 
-	// Token: 0x06002A50 RID: 10832 RVA: 0x0010B674 File Offset: 0x00109874
+	// Token: 0x06002A57 RID: 10839 RVA: 0x0010BBC8 File Offset: 0x00109DC8
 	public void ClearIfExpired()
 	{
 		int num = this.ticksSinceLastClear + 1;
@@ -80,23 +80,23 @@ public class EntitySeeCache
 		}
 	}
 
-	// Token: 0x0400204E RID: 8270
+	// Token: 0x0400205E RID: 8286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive theEntity;
 
-	// Token: 0x0400204F RID: 8271
+	// Token: 0x0400205F RID: 8287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> positiveCache = new HashSet<int>();
 
-	// Token: 0x04002050 RID: 8272
+	// Token: 0x04002060 RID: 8288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> negativeCache = new HashSet<int>();
 
-	// Token: 0x04002051 RID: 8273
+	// Token: 0x04002061 RID: 8289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ticksSinceLastClear;
 
-	// Token: 0x04002052 RID: 8274
+	// Token: 0x04002062 RID: 8290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastTimeSeenAPlayer;
 }

@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DC0 RID: 3520
+// Token: 0x02000DCB RID: 3531
 [Preserve]
 public class XUiC_OptionsMenuNew : XUiController
 {
-	// Token: 0x17000BBA RID: 3002
-	// (get) Token: 0x06006B20 RID: 27424 RVA: 0x002A0E34 File Offset: 0x0029F034
+	// Token: 0x17000BC0 RID: 3008
+	// (get) Token: 0x06006B45 RID: 27461 RVA: 0x002A235C File Offset: 0x002A055C
 	[XuiXmlBinding("video_options_simplified")]
 	public bool VideoOptionsSimplified
 	{
@@ -28,8 +28,8 @@ public class XUiC_OptionsMenuNew : XUiController
 		}
 	}
 
-	// Token: 0x17000BBB RID: 3003
-	// (get) Token: 0x06006B21 RID: 27425 RVA: 0x002A0E6E File Offset: 0x0029F06E
+	// Token: 0x17000BC1 RID: 3009
+	// (get) Token: 0x06006B46 RID: 27462 RVA: 0x002A2396 File Offset: 0x002A0596
 	[XuiXmlBinding("has_block_list")]
 	public bool HasBlockList
 	{
@@ -40,7 +40,7 @@ public class XUiC_OptionsMenuNew : XUiController
 		}
 	}
 
-	// Token: 0x06006B22 RID: 27426 RVA: 0x002A0E78 File Offset: 0x0029F078
+	// Token: 0x06006B47 RID: 27463 RVA: 0x002A23A0 File Offset: 0x002A05A0
 	public override void Init()
 	{
 		base.Init();
@@ -48,7 +48,7 @@ public class XUiC_OptionsMenuNew : XUiController
 		UIOptions.OnOptionsVideoWindowChanged += this.OnVideoOptionsWindowChanged;
 	}
 
-	// Token: 0x06006B23 RID: 27427 RVA: 0x002A0E9C File Offset: 0x0029F09C
+	// Token: 0x06006B48 RID: 27464 RVA: 0x002A23C4 File Offset: 0x002A05C4
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -56,14 +56,14 @@ public class XUiC_OptionsMenuNew : XUiController
 		UIOptions.OnOptionsVideoWindowChanged -= this.OnVideoOptionsWindowChanged;
 	}
 
-	// Token: 0x06006B24 RID: 27428 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06006B49 RID: 27465 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoOptionsWindowChanged(OptionsVideoWindowMode _mode)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006B25 RID: 27429 RVA: 0x0008A9BD File Offset: 0x00088BBD
+	// Token: 0x06006B4A RID: 27466 RVA: 0x0008ABF1 File Offset: 0x00088DF1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -74,20 +74,20 @@ public class XUiC_OptionsMenuNew : XUiController
 		}
 	}
 
-	// Token: 0x06006B26 RID: 27430 RVA: 0x002A0EBB File Offset: 0x0029F0BB
+	// Token: 0x06006B4B RID: 27467 RVA: 0x002A23E3 File Offset: 0x002A05E3
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		GameManager.Instance.Pause(true);
 	}
 
-	// Token: 0x06006B27 RID: 27431 RVA: 0x002A0ECE File Offset: 0x0029F0CE
+	// Token: 0x06006B4C RID: 27468 RVA: 0x002A23F6 File Offset: 0x002A05F6
 	public override void OnClose()
 	{
 		base.OnClose();
 		GameManager.Instance.Pause(false);
 	}
 
-	// Token: 0x040051D2 RID: 20946
+	// Token: 0x040051F7 RID: 20983
 	public static XUiC_WindowSelector ParentSelector;
 }

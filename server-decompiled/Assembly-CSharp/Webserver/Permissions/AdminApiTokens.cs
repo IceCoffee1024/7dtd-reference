@@ -4,11 +4,11 @@ using System.Xml;
 
 namespace Webserver.Permissions
 {
-	// Token: 0x02001B2A RID: 6954
+	// Token: 0x02001B5B RID: 7003
 	public class AdminApiTokens : AdminSectionAbs
 	{
-		// Token: 0x17001A32 RID: 6706
-		// (get) Token: 0x0600D112 RID: 53522 RVA: 0x004BE863 File Offset: 0x004BCA63
+		// Token: 0x17001A7A RID: 6778
+		// (get) Token: 0x0600D226 RID: 53798 RVA: 0x004C235F File Offset: 0x004C055F
 		public static AdminApiTokens Instance
 		{
 			get
@@ -17,19 +17,19 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D113 RID: 53523 RVA: 0x004BE874 File Offset: 0x004BCA74
+		// Token: 0x0600D227 RID: 53799 RVA: 0x004C2370 File Offset: 0x004C0570
 		public AdminApiTokens(AdminTools _parent)
 			: base(_parent, "apitokens")
 		{
 		}
 
-		// Token: 0x0600D114 RID: 53524 RVA: 0x004BE88D File Offset: 0x004BCA8D
+		// Token: 0x0600D228 RID: 53800 RVA: 0x004C2389 File Offset: 0x004C0589
 		public override void Clear()
 		{
 			this.tokens.Clear();
 		}
 
-		// Token: 0x0600D115 RID: 53525 RVA: 0x004BE89C File Offset: 0x004BCA9C
+		// Token: 0x0600D229 RID: 53801 RVA: 0x004C2398 File Offset: 0x004C0598
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ParseElement(XmlElement _childElement)
 		{
@@ -40,7 +40,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D116 RID: 53526 RVA: 0x004BE8C8 File Offset: 0x004BCAC8
+		// Token: 0x0600D22A RID: 53802 RVA: 0x004C23C4 File Offset: 0x004C05C4
 		public override void Save(XmlElement _root)
 		{
 			XmlElement xmlElement = _root.AddXmlElement(this.SectionTypeName);
@@ -55,7 +55,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D117 RID: 53527 RVA: 0x004BE944 File Offset: 0x004BCB44
+		// Token: 0x0600D22B RID: 53803 RVA: 0x004C2440 File Offset: 0x004C0640
 		public void AddToken(string _name, string _secret, int _permissionLevel)
 		{
 			AdminTools parent = this.Parent;
@@ -67,7 +67,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600D118 RID: 53528 RVA: 0x004BE9A0 File Offset: 0x004BCBA0
+		// Token: 0x0600D22C RID: 53804 RVA: 0x004C249C File Offset: 0x004C069C
 		public bool RemoveToken(string _name)
 		{
 			AdminTools parent = this.Parent;
@@ -84,7 +84,7 @@ namespace Webserver.Permissions
 			return flag3;
 		}
 
-		// Token: 0x0600D119 RID: 53529 RVA: 0x004BE9F8 File Offset: 0x004BCBF8
+		// Token: 0x0600D22D RID: 53805 RVA: 0x004C24F4 File Offset: 0x004C06F4
 		public Dictionary<string, AdminApiTokens.ApiToken> GetTokens()
 		{
 			AdminTools parent = this.Parent;
@@ -96,7 +96,7 @@ namespace Webserver.Permissions
 			return dictionary;
 		}
 
-		// Token: 0x0600D11A RID: 53530 RVA: 0x004BEA3C File Offset: 0x004BCC3C
+		// Token: 0x0600D22E RID: 53806 RVA: 0x004C2538 File Offset: 0x004C0738
 		public int GetPermissionLevel(string _name, string _secret)
 		{
 			AdminTools parent = this.Parent;
@@ -120,7 +120,7 @@ namespace Webserver.Permissions
 			return num;
 		}
 
-		// Token: 0x0600D11B RID: 53531 RVA: 0x004BEAB4 File Offset: 0x004BCCB4
+		// Token: 0x0600D22F RID: 53807 RVA: 0x004C25B0 File Offset: 0x004C07B0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsCommandlineToken(string _name, string _secret)
 		{
@@ -133,26 +133,26 @@ namespace Webserver.Permissions
 			return !string.IsNullOrEmpty(this.commandlineTokenName) && !string.IsNullOrEmpty(this.commandlineTokenSecret) && _name == this.commandlineTokenName && _secret == this.commandlineTokenSecret;
 		}
 
-		// Token: 0x04009E9B RID: 40603
+		// Token: 0x04009F84 RID: 40836
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, AdminApiTokens.ApiToken> tokens = new CaseInsensitiveStringDictionary<AdminApiTokens.ApiToken>();
 
-		// Token: 0x04009E9C RID: 40604
+		// Token: 0x04009F85 RID: 40837
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool commandlineChecked;
 
-		// Token: 0x04009E9D RID: 40605
+		// Token: 0x04009F86 RID: 40838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string commandlineTokenName;
 
-		// Token: 0x04009E9E RID: 40606
+		// Token: 0x04009F87 RID: 40839
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string commandlineTokenSecret;
 
-		// Token: 0x02001B2B RID: 6955
+		// Token: 0x02001B5C RID: 7004
 		public readonly struct ApiToken
 		{
-			// Token: 0x0600D11C RID: 53532 RVA: 0x004BEB28 File Offset: 0x004BCD28
+			// Token: 0x0600D230 RID: 53808 RVA: 0x004C2624 File Offset: 0x004C0824
 			public ApiToken(string _name, string _secret, int _permissionLevel)
 			{
 				this.Name = _name;
@@ -160,14 +160,14 @@ namespace Webserver.Permissions
 				this.PermissionLevel = _permissionLevel;
 			}
 
-			// Token: 0x0600D11D RID: 53533 RVA: 0x004BEB40 File Offset: 0x004BCD40
+			// Token: 0x0600D231 RID: 53809 RVA: 0x004C263C File Offset: 0x004C083C
 			public void ToXml(XmlElement _parent)
 			{
 				_parent.AddXmlElement("token").SetAttrib("name", this.Name).SetAttrib("secret", this.Secret)
 					.SetAttrib("permission_level", this.PermissionLevel.ToString());
 			}
 
-			// Token: 0x0600D11E RID: 53534 RVA: 0x004BEB94 File Offset: 0x004BCD94
+			// Token: 0x0600D232 RID: 53810 RVA: 0x004C2690 File Offset: 0x004C0890
 			public static bool TryParse(XmlElement _element, out AdminApiTokens.ApiToken _result)
 			{
 				_result = default(AdminApiTokens.ApiToken);
@@ -199,13 +199,13 @@ namespace Webserver.Permissions
 				return true;
 			}
 
-			// Token: 0x04009E9F RID: 40607
+			// Token: 0x04009F88 RID: 40840
 			public readonly string Name;
 
-			// Token: 0x04009EA0 RID: 40608
+			// Token: 0x04009F89 RID: 40841
 			public readonly string Secret;
 
-			// Token: 0x04009EA1 RID: 40609
+			// Token: 0x04009F8A RID: 40842
 			public readonly int PermissionLevel;
 		}
 	}

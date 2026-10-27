@@ -3,10 +3,10 @@ using System.Runtime.CompilerServices;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 
-// Token: 0x02000B7C RID: 2940
+// Token: 0x02000B87 RID: 2951
 public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struct, ValueType
 {
-	// Token: 0x06005883 RID: 22659 RVA: 0x0021F95C File Offset: 0x0021DB5C
+	// Token: 0x060058A8 RID: 22696 RVA: 0x00220EB8 File Offset: 0x0021F0B8
 	public PinnedBuffer(MemoryPooledArray<T> pool, int length)
 	{
 		if (length <= 0)
@@ -19,13 +19,13 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		this.InitBuffer(this.m_poolArray, length);
 	}
 
-	// Token: 0x06005884 RID: 22660 RVA: 0x0021F99B File Offset: 0x0021DB9B
+	// Token: 0x060058A9 RID: 22697 RVA: 0x00220EF7 File Offset: 0x0021F0F7
 	public PinnedBuffer()
 	{
 		this.InitBuffer(Array.Empty<T>(), 0);
 	}
 
-	// Token: 0x06005885 RID: 22661 RVA: 0x0021F9AF File Offset: 0x0021DBAF
+	// Token: 0x060058AA RID: 22698 RVA: 0x00220F0B File Offset: 0x0021F10B
 	public PinnedBuffer(int length)
 	{
 		if (length <= 0)
@@ -36,7 +36,7 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		this.InitBuffer(new T[length], length);
 	}
 
-	// Token: 0x06005886 RID: 22662 RVA: 0x0021F9D5 File Offset: 0x0021DBD5
+	// Token: 0x060058AB RID: 22699 RVA: 0x00220F31 File Offset: 0x0021F131
 	public PinnedBuffer(T[] buffer, int length)
 	{
 		if (length <= 0)
@@ -47,7 +47,7 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		this.InitBuffer(buffer, length);
 	}
 
-	// Token: 0x06005887 RID: 22663 RVA: 0x0021F9F6 File Offset: 0x0021DBF6
+	// Token: 0x060058AC RID: 22700 RVA: 0x00220F52 File Offset: 0x0021F152
 	public PinnedBuffer(MemoryPooledArray<T> pool, T[] poolArray, int length)
 	{
 		this.m_pool = pool;
@@ -55,7 +55,7 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		this.InitBuffer(poolArray, length);
 	}
 
-	// Token: 0x06005888 RID: 22664 RVA: 0x0021FA14 File Offset: 0x0021DC14
+	// Token: 0x060058AD RID: 22701 RVA: 0x00220F70 File Offset: 0x0021F170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe void InitBuffer(T[] buffer, int length)
 	{
@@ -63,7 +63,7 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		this.m_length = length;
 	}
 
-	// Token: 0x06005889 RID: 22665 RVA: 0x0021FA30 File Offset: 0x0021DC30
+	// Token: 0x060058AE RID: 22702 RVA: 0x00220F8C File Offset: 0x0021F18C
 	public override void Dispose()
 	{
 		this.m_length = 0;
@@ -81,8 +81,8 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		this.m_poolArray = null;
 	}
 
-	// Token: 0x1700096E RID: 2414
-	// (get) Token: 0x0600588A RID: 22666 RVA: 0x0021FA90 File Offset: 0x0021DC90
+	// Token: 0x17000974 RID: 2420
+	// (get) Token: 0x060058AF RID: 22703 RVA: 0x00220FEC File Offset: 0x0021F1EC
 	public unsafe T* Ptr
 	{
 		get
@@ -91,8 +91,8 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		}
 	}
 
-	// Token: 0x1700096F RID: 2415
-	// (get) Token: 0x0600588B RID: 22667 RVA: 0x0021FA98 File Offset: 0x0021DC98
+	// Token: 0x17000975 RID: 2421
+	// (get) Token: 0x060058B0 RID: 22704 RVA: 0x00220FF4 File Offset: 0x0021F1F4
 	public int Length
 	{
 		get
@@ -101,77 +101,77 @@ public sealed class PinnedBuffer<[IsUnmanaged] T> : PinnedBuffer where T : struc
 		}
 	}
 
-	// Token: 0x0600588C RID: 22668 RVA: 0x0021FAA0 File Offset: 0x0021DCA0
+	// Token: 0x060058B1 RID: 22705 RVA: 0x00220FFC File Offset: 0x0021F1FC
 	public PinnedBufferRef<T> AsRef()
 	{
 		return new PinnedBufferRef<T>(this.m_ptr, this.m_length);
 	}
 
-	// Token: 0x0600588D RID: 22669 RVA: 0x0021FAB3 File Offset: 0x0021DCB3
+	// Token: 0x060058B2 RID: 22706 RVA: 0x0022100F File Offset: 0x0021F20F
 	public static implicit operator PinnedBufferRef<T>(PinnedBuffer<T> buffer)
 	{
 		return buffer.AsRef();
 	}
 
-	// Token: 0x0600588E RID: 22670 RVA: 0x0021FABC File Offset: 0x0021DCBC
+	// Token: 0x060058B3 RID: 22707 RVA: 0x00221018 File Offset: 0x0021F218
 	public PinnedBufferRef<byte> AsBytes()
 	{
 		return this.AsRef().AsBytes();
 	}
 
-	// Token: 0x0600588F RID: 22671 RVA: 0x0021FAD7 File Offset: 0x0021DCD7
+	// Token: 0x060058B4 RID: 22708 RVA: 0x00221033 File Offset: 0x0021F233
 	public static implicit operator PinnedBufferRef<byte>(PinnedBuffer<T> buffer)
 	{
 		return buffer.AsBytes();
 	}
 
-	// Token: 0x06005890 RID: 22672 RVA: 0x0021FADF File Offset: 0x0021DCDF
+	// Token: 0x060058B5 RID: 22709 RVA: 0x0022103B File Offset: 0x0021F23B
 	public unsafe Span<T> AsSpan()
 	{
 		return new Span<T>((void*)this.m_ptr, this.m_length);
 	}
 
-	// Token: 0x06005891 RID: 22673 RVA: 0x0021FAF2 File Offset: 0x0021DCF2
+	// Token: 0x060058B6 RID: 22710 RVA: 0x0022104E File Offset: 0x0021F24E
 	public static implicit operator Span<T>(PinnedBuffer<T> buffer)
 	{
 		return buffer.AsSpan();
 	}
 
-	// Token: 0x06005892 RID: 22674 RVA: 0x0021FAFA File Offset: 0x0021DCFA
+	// Token: 0x060058B7 RID: 22711 RVA: 0x00221056 File Offset: 0x0021F256
 	public unsafe ReadOnlySpan<T> AsReadOnlySpan()
 	{
 		return new ReadOnlySpan<T>((void*)this.m_ptr, this.m_length);
 	}
 
-	// Token: 0x06005893 RID: 22675 RVA: 0x0021FB0D File Offset: 0x0021DD0D
+	// Token: 0x060058B8 RID: 22712 RVA: 0x00221069 File Offset: 0x0021F269
 	public static implicit operator ReadOnlySpan<T>(PinnedBuffer<T> buffer)
 	{
 		return buffer.AsReadOnlySpan();
 	}
 
-	// Token: 0x06005894 RID: 22676 RVA: 0x0021FB15 File Offset: 0x0021DD15
+	// Token: 0x060058B9 RID: 22713 RVA: 0x00221071 File Offset: 0x0021F271
 	public AtomicSafeHandleScope CreateNativeArray(out NativeArray<T> array)
 	{
 		return MeshDataUtils.CreateNativeArray<T>(this.m_ptr, this.m_length, out array);
 	}
 
-	// Token: 0x040044B3 RID: 17587
+	// Token: 0x040044D8 RID: 17624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryPooledArray<T> m_pool;
 
-	// Token: 0x040044B4 RID: 17588
+	// Token: 0x040044D9 RID: 17625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[] m_poolArray;
 
-	// Token: 0x040044B5 RID: 17589
+	// Token: 0x040044DA RID: 17626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe T* m_ptr;
 
-	// Token: 0x040044B6 RID: 17590
+	// Token: 0x040044DB RID: 17627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_length;
 
-	// Token: 0x040044B7 RID: 17591
+	// Token: 0x040044DC RID: 17628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong m_gcHandle;
 }

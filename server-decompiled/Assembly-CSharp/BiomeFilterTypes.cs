@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020009C0 RID: 2496
+// Token: 0x020009CA RID: 2506
 public enum BiomeFilterTypes
 {
-	// Token: 0x04003A77 RID: 14967
+	// Token: 0x04003A97 RID: 14999
 	AnyBiome,
-	// Token: 0x04003A78 RID: 14968
+	// Token: 0x04003A98 RID: 15000
 	OnlyBiome,
-	// Token: 0x04003A79 RID: 14969
+	// Token: 0x04003A99 RID: 15001
 	ExcludeBiome,
-	// Token: 0x04003A7A RID: 14970
+	// Token: 0x04003A9A RID: 15002
 	SameBiome
 }

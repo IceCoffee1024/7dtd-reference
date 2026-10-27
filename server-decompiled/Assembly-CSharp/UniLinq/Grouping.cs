@@ -4,20 +4,20 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x020017DC RID: 6108
+	// Token: 0x0200180D RID: 6157
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class Grouping<K, T> : IGrouping<K, T>, IEnumerable<T>, IEnumerable
 	{
-		// Token: 0x0600BE08 RID: 48648 RVA: 0x00463617 File Offset: 0x00461817
+		// Token: 0x0600BF1C RID: 48924 RVA: 0x00466FC3 File Offset: 0x004651C3
 		public Grouping(K key, IEnumerable<T> group)
 		{
 			this.group = group;
 			this.key = key;
 		}
 
-		// Token: 0x17001788 RID: 6024
-		// (get) Token: 0x0600BE09 RID: 48649 RVA: 0x0046362D File Offset: 0x0046182D
-		// (set) Token: 0x0600BE0A RID: 48650 RVA: 0x00463635 File Offset: 0x00461835
+		// Token: 0x170017D0 RID: 6096
+		// (get) Token: 0x0600BF1D RID: 48925 RVA: 0x00466FD9 File Offset: 0x004651D9
+		// (set) Token: 0x0600BF1E RID: 48926 RVA: 0x00466FE1 File Offset: 0x004651E1
 		public K Key
 		{
 			get
@@ -30,24 +30,24 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BE0B RID: 48651 RVA: 0x0046363E File Offset: 0x0046183E
+		// Token: 0x0600BF1F RID: 48927 RVA: 0x00466FEA File Offset: 0x004651EA
 		public IEnumerator<T> GetEnumerator()
 		{
 			return this.group.GetEnumerator();
 		}
 
-		// Token: 0x0600BE0C RID: 48652 RVA: 0x0046363E File Offset: 0x0046183E
+		// Token: 0x0600BF20 RID: 48928 RVA: 0x00466FEA File Offset: 0x004651EA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.group.GetEnumerator();
 		}
 
-		// Token: 0x04008DF7 RID: 36343
+		// Token: 0x04008EE0 RID: 36576
 		[PublicizedFrom(EAccessModifier.Private)]
 		public K key;
 
-		// Token: 0x04008DF8 RID: 36344
+		// Token: 0x04008EE1 RID: 36577
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerable<T> group;
 	}

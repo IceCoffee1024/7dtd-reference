@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081F RID: 2079
+// Token: 0x02000829 RID: 2089
 [Preserve]
 public class NetPackagePartyQuestChange : NetPackage
 {
-	// Token: 0x06003CE6 RID: 15590 RVA: 0x00184F2E File Offset: 0x0018312E
+	// Token: 0x06003D09 RID: 15625 RVA: 0x00186032 File Offset: 0x00184232
 	public NetPackagePartyQuestChange Setup(int _senderEntityID, byte _objectiveIndex, bool _isComplete, int _questCode)
 	{
 		this.senderEntityID = _senderEntityID;
@@ -16,7 +16,7 @@ public class NetPackagePartyQuestChange : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CE7 RID: 15591 RVA: 0x00184F4E File Offset: 0x0018314E
+	// Token: 0x06003D0A RID: 15626 RVA: 0x00186052 File Offset: 0x00184252
 	public override void read(PooledBinaryReader _br)
 	{
 		this.senderEntityID = _br.ReadInt32();
@@ -25,7 +25,7 @@ public class NetPackagePartyQuestChange : NetPackage
 		this.questCode = _br.ReadInt32();
 	}
 
-	// Token: 0x06003CE8 RID: 15592 RVA: 0x00184F80 File Offset: 0x00183180
+	// Token: 0x06003D0B RID: 15627 RVA: 0x00186084 File Offset: 0x00184284
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -35,7 +35,7 @@ public class NetPackagePartyQuestChange : NetPackage
 		_bw.Write(this.questCode);
 	}
 
-	// Token: 0x06003CE9 RID: 15593 RVA: 0x00184FBC File Offset: 0x001831BC
+	// Token: 0x06003D0C RID: 15628 RVA: 0x001860C0 File Offset: 0x001842C0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -70,7 +70,7 @@ public class NetPackagePartyQuestChange : NetPackage
 		}
 	}
 
-	// Token: 0x06003CEA RID: 15594 RVA: 0x001850A8 File Offset: 0x001832A8
+	// Token: 0x06003D0D RID: 15629 RVA: 0x001861AC File Offset: 0x001843AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePlayer(World _world, EntityPlayerLocal localPlayer)
 	{
@@ -107,19 +107,19 @@ public class NetPackagePartyQuestChange : NetPackage
 		localPlayer.QuestJournal.RemoveSharedQuestEntry(this.questCode);
 	}
 
-	// Token: 0x04003195 RID: 12693
+	// Token: 0x040031B5 RID: 12725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int senderEntityID;
 
-	// Token: 0x04003196 RID: 12694
+	// Token: 0x040031B6 RID: 12726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte objectiveIndex;
 
-	// Token: 0x04003197 RID: 12695
+	// Token: 0x040031B7 RID: 12727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isComplete;
 
-	// Token: 0x04003198 RID: 12696
+	// Token: 0x040031B8 RID: 12728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int questCode;
 }

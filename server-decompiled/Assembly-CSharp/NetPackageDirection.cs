@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x0200079F RID: 1951
+// Token: 0x020007A7 RID: 1959
 public enum NetPackageDirection
 {
-	// Token: 0x04002F9A RID: 12186
+	// Token: 0x04002FB6 RID: 12214
 	Both,
-	// Token: 0x04002F9B RID: 12187
+	// Token: 0x04002FB7 RID: 12215
 	ToServer,
-	// Token: 0x04002F9C RID: 12188
+	// Token: 0x04002FB8 RID: 12216
 	ToClient
 }

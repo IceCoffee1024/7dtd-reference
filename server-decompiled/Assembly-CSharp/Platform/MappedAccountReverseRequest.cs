@@ -2,26 +2,26 @@
 
 namespace Platform
 {
-	// Token: 0x02001BF4 RID: 7156
+	// Token: 0x02001C25 RID: 7205
 	public class MappedAccountReverseRequest
 	{
-		// Token: 0x0600D516 RID: 54550 RVA: 0x004CC4C0 File Offset: 0x004CA6C0
+		// Token: 0x0600D62A RID: 54826 RVA: 0x004CFFE8 File Offset: 0x004CE1E8
 		public MappedAccountReverseRequest(EPlatformIdentifier _platform, string _id)
 		{
 			this.Platform = _platform;
 			this.Id = _id;
 		}
 
-		// Token: 0x0400A1FC RID: 41468
+		// Token: 0x0400A2E5 RID: 41701
 		public readonly EPlatformIdentifier Platform;
 
-		// Token: 0x0400A1FD RID: 41469
+		// Token: 0x0400A2E6 RID: 41702
 		public readonly string Id;
 
-		// Token: 0x0400A1FE RID: 41470
+		// Token: 0x0400A2E7 RID: 41703
 		public MappedAccountQueryResult Result;
 
-		// Token: 0x0400A1FF RID: 41471
+		// Token: 0x0400A2E8 RID: 41704
 		public PlatformUserIdentifierAbs PlatformId;
 	}
 }

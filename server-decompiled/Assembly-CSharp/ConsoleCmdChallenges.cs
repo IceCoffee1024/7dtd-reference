@@ -4,37 +4,37 @@ using Challenges;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020001F4 RID: 500
+// Token: 0x020001F6 RID: 502
 [Preserve]
 public class ConsoleCmdChallenges : ConsoleCmdAbstract
 {
-	// Token: 0x06000F58 RID: 3928 RVA: 0x00063BED File Offset: 0x00061DED
+	// Token: 0x06000F5C RID: 3932 RVA: 0x00063EB1 File Offset: 0x000620B1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "challenges" };
 	}
 
-	// Token: 0x06000F59 RID: 3929 RVA: 0x00063BFD File Offset: 0x00061DFD
+	// Token: 0x06000F5D RID: 3933 RVA: 0x00063EC1 File Offset: 0x000620C1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Complete certain challenges";
 	}
 
-	// Token: 0x06000F5A RID: 3930 RVA: 0x00063C04 File Offset: 0x00061E04
+	// Token: 0x06000F5E RID: 3934 RVA: 0x00063EC8 File Offset: 0x000620C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return string.Concat(new string[]
 		{
-			"\n\t\t\t|Usage:\n\t\t\t|  1. ", this.PrimaryCommand, " list [group name]\n\t\t\t|  2. ", this.PrimaryCommand, " complete all [\"redeem\"/\"r\"]\n\t\t\t|  3. ", this.PrimaryCommand, " complete first [\"redeem\"/\"r\"]\n\t\t\t|  4. ", this.PrimaryCommand, " complete challenge <challenge name> [\"redeem\"/\"r\"]\n\t\t\t|  5. ", this.PrimaryCommand,
-			" complete group <group name> [\"redeem\"/\"r\"]\n\t\t\t|  6. ", this.PrimaryCommand, " complete category <category name> [\"redeem\"/\"r\"]\n\t\t\t|  7. ", this.PrimaryCommand, " groups [category name]\n\t\t\t|Short forms: \"list\"->\"l\", \"complete\"->\"c\", \"groups\"->\"g\".\n\t\t\t|1. List challenges - optionally limited to a specific group.\n\t\t\t|2. Set all challenges to completed.\n\t\t\t|3. Set challenges of the first defined group to completed.\n\t\t\t|4. Set given challenge to completed.\n\t\t\t|5. Set all challenges in the given group to completed.\n\t\t\t|6. Set all challenges in the given category to completed.\n\t\t\t|2.-6. If the optional \"redeem\" or \"r\" is specified it will automatically redeem the completed challenges.\n\t\t\t|7. List all groups - optionally limited to a specific category.\n\t\t\t"
+			"\r\n\t\t\t|Usage:\r\n\t\t\t|  1. ", this.PrimaryCommand, " list [group name]\r\n\t\t\t|  2. ", this.PrimaryCommand, " complete all [\"redeem\"/\"r\"]\r\n\t\t\t|  3. ", this.PrimaryCommand, " complete first [\"redeem\"/\"r\"]\r\n\t\t\t|  4. ", this.PrimaryCommand, " complete challenge <challenge name> [\"redeem\"/\"r\"]\r\n\t\t\t|  5. ", this.PrimaryCommand,
+			" complete group <group name> [\"redeem\"/\"r\"]\r\n\t\t\t|  6. ", this.PrimaryCommand, " complete category <category name> [\"redeem\"/\"r\"]\r\n\t\t\t|  7. ", this.PrimaryCommand, " groups [category name]\r\n\t\t\t|Short forms: \"list\"->\"l\", \"complete\"->\"c\", \"groups\"->\"g\".\r\n\t\t\t|1. List challenges - optionally limited to a specific group.\r\n\t\t\t|2. Set all challenges to completed.\r\n\t\t\t|3. Set challenges of the first defined group to completed.\r\n\t\t\t|4. Set given challenge to completed.\r\n\t\t\t|5. Set all challenges in the given group to completed.\r\n\t\t\t|6. Set all challenges in the given category to completed.\r\n\t\t\t|2.-6. If the optional \"redeem\" or \"r\" is specified it will automatically redeem the completed challenges.\r\n\t\t\t|7. List all groups - optionally limited to a specific category.\r\n\t\t\t"
 		}).Unindent(true);
 	}
 
 	// Token: 0x17000146 RID: 326
-	// (get) Token: 0x06000F5B RID: 3931 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06000F5F RID: 3935 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -44,7 +44,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000147 RID: 327
-	// (get) Token: 0x06000F5C RID: 3932 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x06000F60 RID: 3936 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -53,7 +53,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F5D RID: 3933 RVA: 0x00063CA8 File Offset: 0x00061EA8
+	// Token: 0x06000F61 RID: 3937 RVA: 0x00063F6C File Offset: 0x0006216C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -85,7 +85,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unknown subcommand '" + text + "'");
 	}
 
-	// Token: 0x06000F5E RID: 3934 RVA: 0x00063D80 File Offset: 0x00061F80
+	// Token: 0x06000F62 RID: 3938 RVA: 0x00064044 File Offset: 0x00062244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void executeListGroups(List<string> _params)
 	{
@@ -112,7 +112,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F5F RID: 3935 RVA: 0x00063E6C File Offset: 0x0006206C
+	// Token: 0x06000F63 RID: 3939 RVA: 0x00064130 File Offset: 0x00062330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void executeList(List<string> _params)
 	{
@@ -148,7 +148,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F60 RID: 3936 RVA: 0x00063F78 File Offset: 0x00062178
+	// Token: 0x06000F64 RID: 3940 RVA: 0x0006423C File Offset: 0x0006243C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void executeComplete(List<string> _params)
 	{

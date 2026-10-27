@@ -4,26 +4,26 @@ using System.Collections.Concurrent;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020003B9 RID: 953
+// Token: 0x020003BB RID: 955
 public class DynamicMeshVoxelLoad
 {
 	// Token: 0x17000354 RID: 852
-	// (get) Token: 0x06001C82 RID: 7298 RVA: 0x000AA7F4 File Offset: 0x000A89F4
-	// (set) Token: 0x06001C83 RID: 7299 RVA: 0x000AA7FC File Offset: 0x000A89FC
+	// (get) Token: 0x06001C86 RID: 7302 RVA: 0x000AAA04 File Offset: 0x000A8C04
+	// (set) Token: 0x06001C87 RID: 7303 RVA: 0x000AAA0C File Offset: 0x000A8C0C
 	public DynamicMeshItem Item { get; set; }
 
 	// Token: 0x17000355 RID: 853
-	// (get) Token: 0x06001C84 RID: 7300 RVA: 0x000AA805 File Offset: 0x000A8A05
-	// (set) Token: 0x06001C85 RID: 7301 RVA: 0x000AA80D File Offset: 0x000A8A0D
+	// (get) Token: 0x06001C88 RID: 7304 RVA: 0x000AAA15 File Offset: 0x000A8C15
+	// (set) Token: 0x06001C89 RID: 7305 RVA: 0x000AAA1D File Offset: 0x000A8C1D
 	public DyMeshData Data { get; set; }
 
-	// Token: 0x06001C86 RID: 7302 RVA: 0x000AA816 File Offset: 0x000A8A16
+	// Token: 0x06001C8A RID: 7306 RVA: 0x000AAA26 File Offset: 0x000A8C26
 	public void DisposeMeshes()
 	{
 		this.Data = DyMeshData.AddToCache(this.Data);
 	}
 
-	// Token: 0x06001C87 RID: 7303 RVA: 0x000AA829 File Offset: 0x000A8A29
+	// Token: 0x06001C8B RID: 7307 RVA: 0x000AAA39 File Offset: 0x000A8C39
 	public IEnumerator CreateMeshCoroutine(DynamicMeshItem item)
 	{
 		DateTime start = DateTime.Now;
@@ -100,7 +100,7 @@ public class DynamicMeshVoxelLoad
 		yield break;
 	}
 
-	// Token: 0x06001C88 RID: 7304 RVA: 0x000AA840 File Offset: 0x000A8A40
+	// Token: 0x06001C8C RID: 7308 RVA: 0x000AAA50 File Offset: 0x000A8C50
 	public static void CopyTerrain(VoxelMeshTerrain terrain, Mesh mesh, MeshFilter filter, MeshTiming time, DynamicMeshItem item)
 	{
 		time.Reset();
@@ -173,7 +173,7 @@ public class DynamicMeshVoxelLoad
 		component.sharedMaterials = DynamicMeshFile.TerrainSharedMaterials[num];
 	}
 
-	// Token: 0x06001C89 RID: 7305 RVA: 0x000AAA7F File Offset: 0x000A8C7F
+	// Token: 0x06001C8D RID: 7309 RVA: 0x000AAC8F File Offset: 0x000A8E8F
 	public static DynamicMeshVoxelLoad Create(DynamicMeshItem item, DyMeshData data)
 	{
 		return new DynamicMeshVoxelLoad
@@ -183,6 +183,6 @@ public class DynamicMeshVoxelLoad
 		};
 	}
 
-	// Token: 0x04001281 RID: 4737
+	// Token: 0x04001291 RID: 4753
 	public static ConcurrentQueue<VoxelMeshLayer> LayerCache = new ConcurrentQueue<VoxelMeshLayer>();
 }

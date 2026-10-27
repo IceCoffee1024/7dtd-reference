@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200084A RID: 2122
+// Token: 0x02000854 RID: 2132
 [Preserve]
 public class NetPackageSetProp : NetPackage
 {
-	// Token: 0x06003DC9 RID: 15817 RVA: 0x00188F87 File Offset: 0x00187187
+	// Token: 0x06003DEC RID: 15852 RVA: 0x0018A02F File Offset: 0x0018822F
 	public NetPackageSetProp Setup(PersistentPlayerData persistentPlayerData, List<PropChangeInfo> propChanges, int localPlayerThatChanged)
 	{
 		this.m_persistentPlayerId = ((persistentPlayerData != null) ? persistentPlayerData.PrimaryId : null);
@@ -15,7 +15,7 @@ public class NetPackageSetProp : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DCA RID: 15818 RVA: 0x00188FAC File Offset: 0x001871AC
+	// Token: 0x06003DED RID: 15853 RVA: 0x0018A054 File Offset: 0x00188254
 	public override void read(PooledBinaryReader _br)
 	{
 		this.m_persistentPlayerId = PlatformUserIdentifierAbs.FromStream(_br, false, false);
@@ -28,7 +28,7 @@ public class NetPackageSetProp : NetPackage
 		this.m_localPlayerThatChanged = _br.ReadInt32();
 	}
 
-	// Token: 0x06003DCB RID: 15819 RVA: 0x00189004 File Offset: 0x00187204
+	// Token: 0x06003DEE RID: 15854 RVA: 0x0018A0AC File Offset: 0x001882AC
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -42,7 +42,7 @@ public class NetPackageSetProp : NetPackage
 		_bw.Write(this.m_localPlayerThatChanged);
 	}
 
-	// Token: 0x06003DCC RID: 15820 RVA: 0x00189064 File Offset: 0x00187264
+	// Token: 0x06003DEF RID: 15855 RVA: 0x0018A10C File Offset: 0x0018830C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidUserIdForSender(this.m_persistentPlayerId))
@@ -64,15 +64,15 @@ public class NetPackageSetProp : NetPackage
 		_callbacks.ChangeProps(this.m_persistentPlayerId, this.m_propChanges);
 	}
 
-	// Token: 0x0400324E RID: 12878
+	// Token: 0x0400326E RID: 12910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PropChangeInfo> m_propChanges;
 
-	// Token: 0x0400324F RID: 12879
+	// Token: 0x0400326F RID: 12911
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs m_persistentPlayerId;
 
-	// Token: 0x04003250 RID: 12880
+	// Token: 0x04003270 RID: 12912
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_localPlayerThatChanged;
 }

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A1 RID: 6561
+	// Token: 0x020019D2 RID: 6610
 	[Preserve]
 	public class ActionCompleteChallenge : ActionBaseClientAction
 	{
-		// Token: 0x0600C9A5 RID: 51621 RVA: 0x0049B9CC File Offset: 0x00499BCC
+		// Token: 0x0600CAB9 RID: 51897 RVA: 0x0049F4CC File Offset: 0x0049D6CC
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -27,7 +27,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9A6 RID: 51622 RVA: 0x0049BA40 File Offset: 0x00499C40
+		// Token: 0x0600CABA RID: 51898 RVA: 0x0049F540 File Offset: 0x0049D740
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionCompleteChallenge.PropForceRedeem, ref this.ForceRedeem);
 		}
 
-		// Token: 0x0600C9A7 RID: 51623 RVA: 0x0049BA6B File Offset: 0x00499C6B
+		// Token: 0x0600CABB RID: 51899 RVA: 0x0049F56B File Offset: 0x0049D76B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -46,16 +46,16 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097F5 RID: 38901
+		// Token: 0x040098DE RID: 39134
 		public string ChallengeID = "";
 
-		// Token: 0x040097F6 RID: 38902
+		// Token: 0x040098DF RID: 39135
 		public bool ForceRedeem;
 
-		// Token: 0x040097F7 RID: 38903
+		// Token: 0x040098E0 RID: 39136
 		public static string PropChallengeID = "challenges";
 
-		// Token: 0x040097F8 RID: 38904
+		// Token: 0x040098E1 RID: 39137
 		public static string PropForceRedeem = "force_redeem";
 	}
 }

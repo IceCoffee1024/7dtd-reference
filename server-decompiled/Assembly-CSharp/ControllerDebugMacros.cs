@@ -6,16 +6,16 @@ using System.Text;
 using InControl;
 using UnityEngine;
 
-// Token: 0x020011A9 RID: 4521
+// Token: 0x020011BA RID: 4538
 public class ControllerDebugMacros : MonoBehaviour
 {
-	// Token: 0x06009062 RID: 36962 RVA: 0x003657DB File Offset: 0x003639DB
+	// Token: 0x060090B8 RID: 37048 RVA: 0x00367A6F File Offset: 0x00365C6F
 	public ControllerDebugMacros()
 	{
 		this.m_debugMacros = new SortedDictionary<string, Action<ControllerDebugMacros.DebugDirection>>();
 	}
 
-	// Token: 0x06009063 RID: 36963 RVA: 0x003657F0 File Offset: 0x003639F0
+	// Token: 0x060090B9 RID: 37049 RVA: 0x00367A84 File Offset: 0x00365C84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -29,7 +29,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		this.AddDebugMacro("Toggle Flying", new Action(this.MacroToggleFlying));
 	}
 
-	// Token: 0x06009064 RID: 36964 RVA: 0x00365894 File Offset: 0x00363A94
+	// Token: 0x060090BA RID: 37050 RVA: 0x00367B28 File Offset: 0x00365D28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -39,7 +39,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		this.RemoveDebugMacro("Toggle Flying");
 	}
 
-	// Token: 0x06009065 RID: 36965 RVA: 0x003658C8 File Offset: 0x00363AC8
+	// Token: 0x060090BB RID: 37051 RVA: 0x00367B5C File Offset: 0x00365D5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -142,7 +142,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009066 RID: 36966 RVA: 0x00365AEC File Offset: 0x00363CEC
+	// Token: 0x060090BC RID: 37052 RVA: 0x00367D80 File Offset: 0x00365F80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildDebugMacroStatus(StringBuilder builder)
 	{
@@ -165,7 +165,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009067 RID: 36967 RVA: 0x00365B7C File Offset: 0x00363D7C
+	// Token: 0x060090BD RID: 37053 RVA: 0x00367E10 File Offset: 0x00366010
 	public void AddDebugMacro(string macroName, Action macro)
 	{
 		this.m_debugMacros[macroName] = delegate(ControllerDebugMacros.DebugDirection _)
@@ -174,33 +174,33 @@ public class ControllerDebugMacros : MonoBehaviour
 		};
 	}
 
-	// Token: 0x06009068 RID: 36968 RVA: 0x00365BAE File Offset: 0x00363DAE
+	// Token: 0x060090BE RID: 37054 RVA: 0x00367E42 File Offset: 0x00366042
 	public void AddDebugMacro(string macroName, Action<ControllerDebugMacros.DebugDirection> macro)
 	{
 		this.m_debugMacros[macroName] = macro;
 	}
 
-	// Token: 0x06009069 RID: 36969 RVA: 0x00365BBD File Offset: 0x00363DBD
+	// Token: 0x060090BF RID: 37055 RVA: 0x00367E51 File Offset: 0x00366051
 	public void RemoveDebugMacro(string macroName)
 	{
 		this.m_debugMacros.Remove(macroName);
 	}
 
-	// Token: 0x0600906A RID: 36970 RVA: 0x00365BCC File Offset: 0x00363DCC
+	// Token: 0x060090C0 RID: 37056 RVA: 0x00367E60 File Offset: 0x00366060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasPreviousMacroKeybind()
 	{
 		return ControllerDebugMacros.<HasPreviousMacroKeybind>g__HasKeyboardKeybind|14_0() || ControllerDebugMacros.<HasPreviousMacroKeybind>g__HasControllerKeybind|14_1();
 	}
 
-	// Token: 0x0600906B RID: 36971 RVA: 0x00365BDC File Offset: 0x00363DDC
+	// Token: 0x060090C1 RID: 37057 RVA: 0x00367E70 File Offset: 0x00366070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasNextMacroKeybind()
 	{
 		return ControllerDebugMacros.<HasNextMacroKeybind>g__HasKeyboardKeybind|15_0() || ControllerDebugMacros.<HasNextMacroKeybind>g__HasControllerKeybind|15_1();
 	}
 
-	// Token: 0x0600906C RID: 36972 RVA: 0x00365BEC File Offset: 0x00363DEC
+	// Token: 0x060090C2 RID: 37058 RVA: 0x00367E80 File Offset: 0x00366080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ControllerDebugMacros.DebugDirection? GetExecuteMacroKeybind()
 	{
@@ -212,7 +212,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return debugDirection;
 	}
 
-	// Token: 0x0600906D RID: 36973 RVA: 0x00365C10 File Offset: 0x00363E10
+	// Token: 0x060090C3 RID: 37059 RVA: 0x00367EA4 File Offset: 0x003660A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroOpenConsole()
 	{
@@ -225,7 +225,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		GUIWindowConsole.Open();
 	}
 
-	// Token: 0x0600906E RID: 36974 RVA: 0x00012E78 File Offset: 0x00011078
+	// Token: 0x060090C4 RID: 37060 RVA: 0x00012E78 File Offset: 0x00011078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EntityPlayerLocal GetPrimaryPlayer()
 	{
@@ -237,7 +237,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return world.GetPrimaryPlayer();
 	}
 
-	// Token: 0x0600906F RID: 36975 RVA: 0x00365C40 File Offset: 0x00363E40
+	// Token: 0x060090C5 RID: 37061 RVA: 0x00367ED4 File Offset: 0x003660D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroToggleGodMode()
 	{
@@ -260,7 +260,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		primaryPlayer.bEntityAliveFlagsChanged = true;
 	}
 
-	// Token: 0x06009070 RID: 36976 RVA: 0x00365CB0 File Offset: 0x00363EB0
+	// Token: 0x060090C6 RID: 37062 RVA: 0x00367F44 File Offset: 0x00366144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroToggleFlying()
 	{
@@ -274,7 +274,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		primaryPlayer.bEntityAliveFlagsChanged = true;
 	}
 
-	// Token: 0x06009071 RID: 36977 RVA: 0x00365CE7 File Offset: 0x00363EE7
+	// Token: 0x060090C7 RID: 37063 RVA: 0x00367F7B File Offset: 0x0036617B
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <HasPreviousMacroKeybind>g__HasKeyboardKeybind|14_0()
@@ -282,7 +282,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return InputUtils.ControlKeyPressed && InputUtils.ShiftKeyPressed && InputUtils.AltKeyPressed && Input.GetKey(KeyCode.LeftArrow);
 	}
 
-	// Token: 0x06009072 RID: 36978 RVA: 0x00365D14 File Offset: 0x00363F14
+	// Token: 0x060090C8 RID: 37064 RVA: 0x00367FA8 File Offset: 0x003661A8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <HasPreviousMacroKeybind>g__HasControllerKeybind|14_1()
@@ -290,7 +290,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return InputManager.Enabled && InputManager.ActiveDevice.LeftBumper.IsPressed && InputManager.ActiveDevice.RightBumper.IsPressed && InputManager.ActiveDevice.DPadLeft.IsPressed;
 	}
 
-	// Token: 0x06009073 RID: 36979 RVA: 0x00365D64 File Offset: 0x00363F64
+	// Token: 0x060090C9 RID: 37065 RVA: 0x00367FF8 File Offset: 0x003661F8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <HasNextMacroKeybind>g__HasKeyboardKeybind|15_0()
@@ -298,7 +298,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return InputUtils.ControlKeyPressed && InputUtils.ShiftKeyPressed && InputUtils.AltKeyPressed && Input.GetKey(KeyCode.RightArrow);
 	}
 
-	// Token: 0x06009074 RID: 36980 RVA: 0x00365D90 File Offset: 0x00363F90
+	// Token: 0x060090CA RID: 37066 RVA: 0x00368024 File Offset: 0x00366224
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <HasNextMacroKeybind>g__HasControllerKeybind|15_1()
@@ -306,7 +306,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return InputManager.Enabled && InputManager.ActiveDevice.LeftBumper.IsPressed && InputManager.ActiveDevice.RightBumper.IsPressed && InputManager.ActiveDevice.DPadRight.IsPressed;
 	}
 
-	// Token: 0x06009075 RID: 36981 RVA: 0x00365DE0 File Offset: 0x00363FE0
+	// Token: 0x060090CB RID: 37067 RVA: 0x00368074 File Offset: 0x00366274
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static ControllerDebugMacros.DebugDirection? <GetExecuteMacroKeybind>g__GetKeyboardKeybind|16_0()
@@ -338,7 +338,7 @@ public class ControllerDebugMacros : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06009076 RID: 36982 RVA: 0x00365E64 File Offset: 0x00364064
+	// Token: 0x060090CC RID: 37068 RVA: 0x003680F8 File Offset: 0x003662F8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static ControllerDebugMacros.DebugDirection? <GetExecuteMacroKeybind>g__GetControllerKeybind|16_1()
@@ -370,39 +370,39 @@ public class ControllerDebugMacros : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x04006AC2 RID: 27330
+	// Token: 0x04006B02 RID: 27394
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly SortedDictionary<string, Action<ControllerDebugMacros.DebugDirection>> m_debugMacros;
 
-	// Token: 0x04006AC3 RID: 27331
+	// Token: 0x04006B03 RID: 27395
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string m_currentMacro;
 
-	// Token: 0x04006AC4 RID: 27332
+	// Token: 0x04006B04 RID: 27396
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_lastIndex;
 
-	// Token: 0x04006AC5 RID: 27333
+	// Token: 0x04006B05 RID: 27397
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_keybindPressed;
 
-	// Token: 0x04006AC6 RID: 27334
+	// Token: 0x04006B06 RID: 27398
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ControllerDebugLabel m_debugLabel;
 
-	// Token: 0x020011AA RID: 4522
+	// Token: 0x020011BB RID: 4539
 	public enum DebugDirection
 	{
-		// Token: 0x04006AC8 RID: 27336
+		// Token: 0x04006B08 RID: 27400
 		Up,
-		// Token: 0x04006AC9 RID: 27337
+		// Token: 0x04006B09 RID: 27401
 		Down,
-		// Token: 0x04006ACA RID: 27338
+		// Token: 0x04006B0A RID: 27402
 		Neutral
 	}
 }

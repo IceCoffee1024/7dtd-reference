@@ -8,16 +8,16 @@ using UnityEngine.Profiling;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C50 RID: 7248
+	// Token: 0x02001C81 RID: 7297
 	public abstract class XblPlatformApi : IPlatformApi
 	{
-		// Token: 0x17001B33 RID: 6963
-		// (get) Token: 0x0600D740 RID: 55104
+		// Token: 0x17001B7B RID: 7035
+		// (get) Token: 0x0600D854 RID: 55380
 		public abstract string SCID { get; }
 
-		// Token: 0x17001B34 RID: 6964
-		// (get) Token: 0x0600D741 RID: 55105 RVA: 0x004D40C2 File Offset: 0x004D22C2
-		// (set) Token: 0x0600D742 RID: 55106 RVA: 0x004D40CA File Offset: 0x004D22CA
+		// Token: 0x17001B7C RID: 7036
+		// (get) Token: 0x0600D855 RID: 55381 RVA: 0x004D7BEA File Offset: 0x004D5DEA
+		// (set) Token: 0x0600D856 RID: 55382 RVA: 0x004D7BF2 File Offset: 0x004D5DF2
 		public EApiStatus ClientApiStatus
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
@@ -25,8 +25,8 @@ namespace Platform.XBL
 		} = EApiStatus.Uninitialized;
 
 		// Token: 0x1400012F RID: 303
-		// (add) Token: 0x0600D743 RID: 55107 RVA: 0x004D40D4 File Offset: 0x004D22D4
-		// (remove) Token: 0x0600D744 RID: 55108 RVA: 0x004D4130 File Offset: 0x004D2330
+		// (add) Token: 0x0600D857 RID: 55383 RVA: 0x004D7BFC File Offset: 0x004D5DFC
+		// (remove) Token: 0x0600D858 RID: 55384 RVA: 0x004D7C58 File Offset: 0x004D5E58
 		public event Action ClientApiInitialized
 		{
 			add
@@ -49,10 +49,10 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D745 RID: 55109
+		// Token: 0x0600D859 RID: 55385
 		public abstract void Init(IPlatform owner);
 
-		// Token: 0x0600D746 RID: 55110 RVA: 0x004D417C File Offset: 0x004D237C
+		// Token: 0x0600D85A RID: 55386 RVA: 0x004D7CA4 File Offset: 0x004D5EA4
 		public bool InitClientApis()
 		{
 			if (this.ClientApiStatus == EApiStatus.Ok)
@@ -133,18 +133,18 @@ namespace Platform.XBL
 			return true;
 		}
 
-		// Token: 0x0600D747 RID: 55111
+		// Token: 0x0600D85B RID: 55387
 		public abstract bool InitServerApis();
 
-		// Token: 0x0600D748 RID: 55112
+		// Token: 0x0600D85C RID: 55388
 		public abstract void ServerApiLoaded();
 
-		// Token: 0x0600D749 RID: 55113 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D85D RID: 55389 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x0600D74A RID: 55114 RVA: 0x004D4268 File Offset: 0x004D2468
+		// Token: 0x0600D85E RID: 55390 RVA: 0x004D7D90 File Offset: 0x004D5F90
 		public void Destroy()
 		{
 			if (Application.isEditor)
@@ -173,31 +173,31 @@ namespace Platform.XBL
 			Log.Out("[XBL] API Destroyed.");
 		}
 
-		// Token: 0x0600D74B RID: 55115 RVA: 0x00041064 File Offset: 0x0003F264
+		// Token: 0x0600D85F RID: 55391 RVA: 0x00041024 File Offset: 0x0003F224
 		public float GetScreenBoundsValueFromSystem()
 		{
 			return 1f;
 		}
 
-		// Token: 0x0600D74C RID: 55116 RVA: 0x004D42F1 File Offset: 0x004D24F1
+		// Token: 0x0600D860 RID: 55392 RVA: 0x004D7E19 File Offset: 0x004D6019
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public XblPlatformApi()
 		{
 		}
 
-		// Token: 0x0400A3B6 RID: 41910
+		// Token: 0x0400A49F RID: 42143
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ProfilerMarker s_TaskQueueDispatchMarker = new ProfilerMarker("XTaskQueueDispatch");
 
-		// Token: 0x0400A3B7 RID: 41911
+		// Token: 0x0400A4A0 RID: 42144
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Thread m_dispatchGXDKTaskQueueThread;
 
-		// Token: 0x0400A3B8 RID: 41912
+		// Token: 0x0400A4A1 RID: 42145
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_dispatchGXDKTaskQueueRunning;
 
-		// Token: 0x0400A3B9 RID: 41913
+		// Token: 0x0400A4A2 RID: 42146
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action m_clientApiInitialized;
 	}

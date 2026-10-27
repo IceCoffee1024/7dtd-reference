@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001BBA RID: 7098
+	// Token: 0x02001BEB RID: 7147
 	public interface IPlatformNetworkClient : INetworkClient
 	{
 	}

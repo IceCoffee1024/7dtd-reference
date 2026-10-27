@@ -1,43 +1,43 @@
 ﻿using System;
 
-// Token: 0x02000CBF RID: 3263
+// Token: 0x02000CCA RID: 3274
 public struct ChunkKey : IEquatable<ChunkKey>
 {
-	// Token: 0x060063CB RID: 25547 RVA: 0x00275BF8 File Offset: 0x00273DF8
+	// Token: 0x060063F0 RID: 25584 RVA: 0x00277120 File Offset: 0x00275320
 	public ChunkKey(IChunk _chunk)
 	{
 		this.x = _chunk.X;
 		this.z = _chunk.Z;
 	}
 
-	// Token: 0x060063CC RID: 25548 RVA: 0x00275C12 File Offset: 0x00273E12
+	// Token: 0x060063F1 RID: 25585 RVA: 0x0027713A File Offset: 0x0027533A
 	public ChunkKey(int _x, int _z)
 	{
 		this.x = _x;
 		this.z = _z;
 	}
 
-	// Token: 0x060063CD RID: 25549 RVA: 0x00275C22 File Offset: 0x00273E22
+	// Token: 0x060063F2 RID: 25586 RVA: 0x0027714A File Offset: 0x0027534A
 	public override int GetHashCode()
 	{
 		return WaterUtils.GetVoxelKey2D(this.x, this.z);
 	}
 
-	// Token: 0x060063CE RID: 25550 RVA: 0x00275C35 File Offset: 0x00273E35
+	// Token: 0x060063F3 RID: 25587 RVA: 0x0027715D File Offset: 0x0027535D
 	public override bool Equals(object obj)
 	{
 		return base.Equals((ChunkKey)obj);
 	}
 
-	// Token: 0x060063CF RID: 25551 RVA: 0x00275C52 File Offset: 0x00273E52
+	// Token: 0x060063F4 RID: 25588 RVA: 0x0027717A File Offset: 0x0027537A
 	public bool Equals(ChunkKey other)
 	{
 		return this.x == other.x && this.z == other.z;
 	}
 
-	// Token: 0x04004DD8 RID: 19928
+	// Token: 0x04004DFD RID: 19965
 	public int x;
 
-	// Token: 0x04004DD9 RID: 19929
+	// Token: 0x04004DFE RID: 19966
 	public int z;
 }

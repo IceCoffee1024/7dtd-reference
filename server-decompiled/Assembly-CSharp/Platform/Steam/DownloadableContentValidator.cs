@@ -6,28 +6,28 @@ using UnityEngine;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CB7 RID: 7351
+	// Token: 0x02001CE8 RID: 7400
 	public class DownloadableContentValidator : IEntitlementValidator
 	{
-		// Token: 0x0600D9EF RID: 55791 RVA: 0x004E1510 File Offset: 0x004DF710
+		// Token: 0x0600DB03 RID: 56067 RVA: 0x004E5060 File Offset: 0x004E3260
 		public void Init(IPlatform _owner)
 		{
 			this._owner = _owner;
 		}
 
-		// Token: 0x0600D9F0 RID: 55792 RVA: 0x004E1519 File Offset: 0x004DF719
+		// Token: 0x0600DB04 RID: 56068 RVA: 0x004E5069 File Offset: 0x004E3269
 		public bool IsAvailableOnPlatform(EntitlementSetEnum _dlcSet)
 		{
 			return _dlcSet == EntitlementSetEnum.None || DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet);
 		}
 
-		// Token: 0x0600D9F1 RID: 55793 RVA: 0x004E152B File Offset: 0x004DF72B
+		// Token: 0x0600DB05 RID: 56069 RVA: 0x004E507B File Offset: 0x004E327B
 		public bool IsEntitlementPurchasable(EntitlementSetEnum _dlcSet)
 		{
 			return DLCTitleStorageManager.Instance.IsDLCPurchasable(_dlcSet, DLCEnvironmentFlags.Dev | DLCEnvironmentFlags.Cert | DLCEnvironmentFlags.Retail);
 		}
 
-		// Token: 0x0600D9F2 RID: 55794 RVA: 0x004E153C File Offset: 0x004DF73C
+		// Token: 0x0600DB06 RID: 56070 RVA: 0x004E508C File Offset: 0x004E328C
 		public string GetEntitlementSetId(EntitlementSetEnum _entitlementSet)
 		{
 			uint num;
@@ -38,7 +38,7 @@ namespace Platform.Steam
 			return num.ToString();
 		}
 
-		// Token: 0x0600D9F3 RID: 55795 RVA: 0x004E1564 File Offset: 0x004DF764
+		// Token: 0x0600DB07 RID: 56071 RVA: 0x004E50B4 File Offset: 0x004E32B4
 		public DateTime? GetAcquiredDate(EntitlementSetEnum _entitlementSet)
 		{
 			if (_entitlementSet == EntitlementSetEnum.None)
@@ -62,13 +62,13 @@ namespace Platform.Steam
 			return new DateTime?(DateTimeOffset.FromUnixTimeSeconds((long)((ulong)earliestPurchaseUnixTime)).ToUniversalTime().DateTime);
 		}
 
-		// Token: 0x0600D9F4 RID: 55796 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DB08 RID: 56072 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsFetchingEntitlements()
 		{
 			return false;
 		}
 
-		// Token: 0x0600D9F5 RID: 55797 RVA: 0x004E15FC File Offset: 0x004DF7FC
+		// Token: 0x0600DB09 RID: 56073 RVA: 0x004E514C File Offset: 0x004E334C
 		public bool HasEntitlement(EntitlementSetEnum _dlcSet)
 		{
 			if (_dlcSet == EntitlementSetEnum.None)
@@ -87,7 +87,7 @@ namespace Platform.Steam
 			return SteamApps.BIsDlcInstalled(new AppId_t(DownloadableContentValidator.entitlementMap[_dlcSet]));
 		}
 
-		// Token: 0x0600D9F6 RID: 55798 RVA: 0x004E1650 File Offset: 0x004DF850
+		// Token: 0x0600DB0A RID: 56074 RVA: 0x004E51A0 File Offset: 0x004E33A0
 		public bool OpenStore(EntitlementSetEnum _dlcSet, Action<EntitlementSetEnum> _onDlcPurchased)
 		{
 			if (!DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet))
@@ -109,7 +109,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600D9F7 RID: 55799 RVA: 0x004E16D5 File Offset: 0x004DF8D5
+		// Token: 0x0600DB0B RID: 56075 RVA: 0x004E5225 File Offset: 0x004E3425
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator CheckDlcPurchases()
 		{
@@ -141,7 +141,7 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0400A537 RID: 42295
+		// Token: 0x0400A620 RID: 42528
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EntitlementSetEnum, uint> entitlementMap = new Dictionary<EntitlementSetEnum, uint>
 		{
@@ -192,18 +192,42 @@ namespace Platform.Steam
 			{
 				EntitlementSetEnum.OktoberfestCosmetic,
 				5239930U
+			},
+			{
+				EntitlementSetEnum.WraithWoodWitch,
+				5403990U
+			},
+			{
+				EntitlementSetEnum.ScarletScoundrel,
+				5404000U
+			},
+			{
+				EntitlementSetEnum.RedRidingRogue,
+				5404020U
+			},
+			{
+				EntitlementSetEnum.ShotgunMessiahStore,
+				5456760U
+			},
+			{
+				EntitlementSetEnum.WorkingStiffsStore,
+				5456740U
+			},
+			{
+				EntitlementSetEnum.PopNPillsStore,
+				5456660U
 			}
 		};
 
-		// Token: 0x0400A538 RID: 42296
+		// Token: 0x0400A621 RID: 42529
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform _owner;
 
-		// Token: 0x0400A539 RID: 42297
+		// Token: 0x0400A622 RID: 42530
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<EntitlementSetEnum> pendingDlcChecks = new HashSet<EntitlementSetEnum>();
 
-		// Token: 0x0400A53A RID: 42298
+		// Token: 0x0400A623 RID: 42531
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EntitlementSetEnum, Action<EntitlementSetEnum>> dlcPurchaseCallbacks = new Dictionary<EntitlementSetEnum, Action<EntitlementSetEnum>>();
 	}

@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x0200070B RID: 1803
+// Token: 0x02000713 RID: 1811
 public interface IMinEventAction
 {
-	// Token: 0x06003726 RID: 14118
+	// Token: 0x0600373D RID: 14141
 	bool CanExecute(MinEventTypes _eventType, MinEventParams _params);
 
-	// Token: 0x06003727 RID: 14119
+	// Token: 0x0600373E RID: 14142
 	void Execute(MinEventParams _params);
 
-	// Token: 0x06003728 RID: 14120
+	// Token: 0x0600373F RID: 14143
 	bool ParseXmlAttribute(XAttribute _attribute);
 
-	// Token: 0x06003729 RID: 14121
+	// Token: 0x06003740 RID: 14144
 	void ParseXMLPostProcess();
 }

@@ -2,12 +2,12 @@
 
 namespace Platform
 {
-	// Token: 0x02001BE5 RID: 7141
+	// Token: 0x02001C16 RID: 7190
 	public enum UserDataStorageType
 	{
-		// Token: 0x0400A1EA RID: 41450
+		// Token: 0x0400A2D3 RID: 41683
 		DeviceLocal,
-		// Token: 0x0400A1EB RID: 41451
+		// Token: 0x0400A2D4 RID: 41684
 		Roaming
 	}
 }

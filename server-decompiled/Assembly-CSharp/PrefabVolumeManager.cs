@@ -3,11 +3,11 @@ using System.Globalization;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x0200095B RID: 2395
+// Token: 0x02000965 RID: 2405
 public class PrefabVolumeManager : ISelectionBoxCallback
 {
-	// Token: 0x17000786 RID: 1926
-	// (get) Token: 0x060045C0 RID: 17856 RVA: 0x001BC40A File Offset: 0x001BA60A
+	// Token: 0x1700078C RID: 1932
+	// (get) Token: 0x060045E3 RID: 17891 RVA: 0x001BD48E File Offset: 0x001BB68E
 	public static PrefabVolumeManager Instance
 	{
 		get
@@ -21,7 +21,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x060045C1 RID: 17857 RVA: 0x001BC420 File Offset: 0x001BA620
+	// Token: 0x060045E4 RID: 17892 RVA: 0x001BD4A4 File Offset: 0x001BB6A4
 	public void AddVolumeServer(PrefabVolumeAbs.EVolumeType _volumeType, Vector3i _startPos, Vector3i _size)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -58,7 +58,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x060045C2 RID: 17858 RVA: 0x001BC578 File Offset: 0x001BA778
+	// Token: 0x060045E5 RID: 17893 RVA: 0x001BD5FC File Offset: 0x001BB7FC
 	public void CloneVolumeServer(PrefabVolumeAbs.EVolumeType _volumeType, int _prefabInstanceId, int _existingIndex, Vector3i _offset)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -87,7 +87,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEditorUpdateVolume>().Setup(NetPackageEditorUpdateVolume.EChangeType.Added, prefab.id, item, item2), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060045C3 RID: 17859 RVA: 0x001BC660 File Offset: 0x001BA860
+	// Token: 0x060045E6 RID: 17894 RVA: 0x001BD6E4 File Offset: 0x001BB8E4
 	public void UpdatePropertiesServer(int _prefabInstanceId, int _volumeId, PrefabVolumeAbs _volumeSettings)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -99,7 +99,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageEditorUpdateVolume>().Setup(NetPackageEditorUpdateVolume.EChangeType.Changed, _prefabInstanceId, _volumeId, _volumeSettings), false);
 	}
 
-	// Token: 0x060045C4 RID: 17860 RVA: 0x001BC6C8 File Offset: 0x001BA8C8
+	// Token: 0x060045E7 RID: 17895 RVA: 0x001BD74C File Offset: 0x001BB94C
 	public void AddUpdatePropertiesClient(int _prefabInstanceId, int _volumeId, PrefabVolumeAbs _volumeSettings)
 	{
 		PrefabInstance prefabInstance = PrefabInstanceClientManager.Instance.GetPrefabInstance(_prefabInstanceId);
@@ -120,7 +120,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x060045C5 RID: 17861 RVA: 0x001BC778 File Offset: 0x001BA978
+	// Token: 0x060045E8 RID: 17896 RVA: 0x001BD7FC File Offset: 0x001BB9FC
 	public static bool GetPrefabIdAndVolumeId(string _name, out int _volumeId, out PrefabInstance _prefabInstance)
 	{
 		_volumeId = -1;
@@ -153,7 +153,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		return _prefabInstance != null;
 	}
 
-	// Token: 0x060045C6 RID: 17862 RVA: 0x001BC7F8 File Offset: 0x001BA9F8
+	// Token: 0x060045E9 RID: 17897 RVA: 0x001BD87C File Offset: 0x001BBA7C
 	public static bool TryGetSelectedVolume<TVolume>(SelectionCategory _selectionCategory, out SelectionBox _box, out TVolume _volume, out PrefabInstance _prefabInstance, out int _volumeIndex) where TVolume : PrefabVolumeAbs
 	{
 		_box = null;
@@ -179,7 +179,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x060045C7 RID: 17863 RVA: 0x001BC870 File Offset: 0x001BAA70
+	// Token: 0x060045EA RID: 17898 RVA: 0x001BD8F4 File Offset: 0x001BBAF4
 	public void SelectionBoxMoved(PrefabVolumeAbs.EVolumeType _volumeType, SelectionBox _box, Vector3 _moveVector)
 	{
 		int num;
@@ -198,7 +198,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		this.UpdatePropertiesServer(prefabInstance.id, num, prefabVolumeAbs);
 	}
 
-	// Token: 0x060045C8 RID: 17864 RVA: 0x001BC8EC File Offset: 0x001BAAEC
+	// Token: 0x060045EB RID: 17899 RVA: 0x001BD970 File Offset: 0x001BBB70
 	public void SelectionBoxSized(PrefabVolumeAbs.EVolumeType _volumeType, SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		int num;
@@ -217,7 +217,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		this.UpdatePropertiesServer(prefabInstance.id, num, prefabVolumeAbs);
 	}
 
-	// Token: 0x060045C9 RID: 17865 RVA: 0x001BC970 File Offset: 0x001BAB70
+	// Token: 0x060045EC RID: 17900 RVA: 0x001BD9F4 File Offset: 0x001BBBF4
 	public bool SelectionBoxDelete(PrefabVolumeAbs.EVolumeType _volumeType, SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		int num;
@@ -241,7 +241,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x060045CA RID: 17866 RVA: 0x001BC9EC File Offset: 0x001BABEC
+	// Token: 0x060045ED RID: 17901 RVA: 0x001BDA70 File Offset: 0x001BBC70
 	public void Init()
 	{
 		SelectionBoxManager.Instance.CategoryTraderTeleport.SetCallback(this);
@@ -249,7 +249,7 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		SelectionBoxManager.Instance.CategoryWallVolume.SetCallback(this);
 	}
 
-	// Token: 0x060045CB RID: 17867 RVA: 0x001BCA20 File Offset: 0x001BAC20
+	// Token: 0x060045EE RID: 17902 RVA: 0x001BDAA4 File Offset: 0x001BBCA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabVolumeAbs.EVolumeType getBoxVolumeType(SelectionBox _box)
 	{
@@ -269,57 +269,57 @@ public class PrefabVolumeManager : ISelectionBoxCallback
 		throw new ArgumentException("Invalid box category " + category.name);
 	}
 
-	// Token: 0x060045CC RID: 17868 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060045EF RID: 17903 RVA: 0x00020119 File Offset: 0x0001E319
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		return true;
 	}
 
-	// Token: 0x060045CD RID: 17869 RVA: 0x001BCA76 File Offset: 0x001BAC76
+	// Token: 0x060045F0 RID: 17904 RVA: 0x001BDAFA File Offset: 0x001BBCFA
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		this.SelectionBoxMoved(this.getBoxVolumeType(_box), _box, _moveVector);
 	}
 
-	// Token: 0x060045CE RID: 17870 RVA: 0x001BCA88 File Offset: 0x001BAC88
+	// Token: 0x060045F1 RID: 17905 RVA: 0x001BDB0C File Offset: 0x001BBD0C
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		this.SelectionBoxSized(this.getBoxVolumeType(_box), _box, _dTop, _dBottom, _dNorth, _dSouth, _dEast, _dWest);
 	}
 
-	// Token: 0x060045CF RID: 17871 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060045F2 RID: 17906 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxMirrored(Vector3i _axis)
 	{
 	}
 
-	// Token: 0x060045D0 RID: 17872 RVA: 0x001BCAAD File Offset: 0x001BACAD
+	// Token: 0x060045F3 RID: 17907 RVA: 0x001BDB31 File Offset: 0x001BBD31
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		return this.SelectionBoxDelete(this.getBoxVolumeType(_box), _box, _checkCanDeleteOnly);
 	}
 
-	// Token: 0x060045D1 RID: 17873 RVA: 0x001BCABE File Offset: 0x001BACBE
+	// Token: 0x060045F4 RID: 17908 RVA: 0x001BDB42 File Offset: 0x001BBD42
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		return _criteria == EnumSelectionBoxAvailabilities.CanResize;
 	}
 
-	// Token: 0x060045D2 RID: 17874 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060045F5 RID: 17909 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 	}
 
-	// Token: 0x060045D3 RID: 17875 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060045F6 RID: 17910 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x060045D4 RID: 17876 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060045F7 RID: 17911 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x04003859 RID: 14425
+	// Token: 0x04003879 RID: 14457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PrefabVolumeManager instance;
 }

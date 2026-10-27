@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Diagnostics;
 
-// Token: 0x020014A4 RID: 5284
+// Token: 0x020014B6 RID: 5302
 public static class ProfilerExt
 {
-	// Token: 0x0600A5A9 RID: 42409 RVA: 0x003DB6C9 File Offset: 0x003D98C9
+	// Token: 0x0600A601 RID: 42497 RVA: 0x003DDACD File Offset: 0x003DBCCD
 	[Conditional("ENABLE_PROFILER")]
 	public static void BeginSampleThreadSafe(string _caption)
 	{
 		ThreadManager.IsMainThread();
 	}
 
-	// Token: 0x0600A5AA RID: 42410 RVA: 0x003DB6C9 File Offset: 0x003D98C9
+	// Token: 0x0600A602 RID: 42498 RVA: 0x003DDACD File Offset: 0x003DBCCD
 	[Conditional("ENABLE_PROFILER")]
 	public static void EndSampleThreadSafe()
 	{

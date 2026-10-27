@@ -11,10 +11,10 @@ using SpaceWizards.HttpListener;
 
 namespace Webserver
 {
-	// Token: 0x02001AE9 RID: 6889
+	// Token: 0x02001B1A RID: 6938
 	public static class OpenID
 	{
-		// Token: 0x0600CFB4 RID: 53172 RVA: 0x004B638C File Offset: 0x004B458C
+		// Token: 0x0600D0C8 RID: 53448 RVA: 0x004B9E88 File Offset: 0x004B8088
 		[PublicizedFrom(EAccessModifier.Private)]
 		static OpenID()
 		{
@@ -95,7 +95,7 @@ namespace Webserver
 			};
 		}
 
-		// Token: 0x0600CFB5 RID: 53173 RVA: 0x004B642C File Offset: 0x004B462C
+		// Token: 0x0600D0C9 RID: 53449 RVA: 0x004B9F28 File Offset: 0x004B8128
 		public static string GetOpenIdLoginUrl(string _returnHost, string _returnUrl)
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>
@@ -110,7 +110,7 @@ namespace Webserver
 			return "https://steamcommunity.com/openid/login?" + OpenID.buildUrlParams(dictionary);
 		}
 
-		// Token: 0x0600CFB6 RID: 53174 RVA: 0x004B64A8 File Offset: 0x004B46A8
+		// Token: 0x0600D0CA RID: 53450 RVA: 0x004B9FA4 File Offset: 0x004B81A4
 		public static ulong Validate(SpaceWizards.HttpListener.HttpListenerRequest _req)
 		{
 			string value = OpenID.getValue(_req, "openid.mode");
@@ -190,7 +190,7 @@ namespace Webserver
 			return 0UL;
 		}
 
-		// Token: 0x0600CFB7 RID: 53175 RVA: 0x004B6748 File Offset: 0x004B4948
+		// Token: 0x0600D0CB RID: 53451 RVA: 0x004BA244 File Offset: 0x004B8444
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string buildUrlParams(Dictionary<string, string> _queryParams)
 		{
@@ -208,7 +208,7 @@ namespace Webserver
 			return string.Join("&", array);
 		}
 
-		// Token: 0x0600CFB8 RID: 53176 RVA: 0x004B67D4 File Offset: 0x004B49D4
+		// Token: 0x0600D0CC RID: 53452 RVA: 0x004BA2D0 File Offset: 0x004B84D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string getValue(SpaceWizards.HttpListener.HttpListenerRequest _req, string _name)
 		{
@@ -220,7 +220,7 @@ namespace Webserver
 			return queryString[_name];
 		}
 
-		// Token: 0x0600CFB9 RID: 53177 RVA: 0x004B6804 File Offset: 0x004B4A04
+		// Token: 0x0600D0CD RID: 53453 RVA: 0x004BA300 File Offset: 0x004B8500
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void PrintOpenIdResponse(SpaceWizards.HttpListener.HttpListenerRequest _req)
 		{
@@ -231,27 +231,27 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x04009D15 RID: 40213
+		// Token: 0x04009DFE RID: 40446
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string STEAM_LOGIN = "https://steamcommunity.com/openid/login";
 
-		// Token: 0x04009D16 RID: 40214
+		// Token: 0x04009DFF RID: 40447
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex steamIdUrlMatcher = new Regex("^https?:\\/\\/steamcommunity\\.com\\/openid\\/id\\/([0-9]{17,18})");
 
-		// Token: 0x04009D17 RID: 40215
+		// Token: 0x04009E00 RID: 40448
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly X509Certificate2 caCert = new X509Certificate2(GameIO.GetGameDir("Data/Web") + "/steam-rootca.cer");
 
-		// Token: 0x04009D18 RID: 40216
+		// Token: 0x04009E01 RID: 40449
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly X509Certificate2 caIntermediateCert = new X509Certificate2(GameIO.GetGameDir("Data/Web") + "/steam-intermediate.cer");
 
-		// Token: 0x04009D19 RID: 40217
+		// Token: 0x04009E02 RID: 40450
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool verboseSsl = false;
 
-		// Token: 0x04009D1A RID: 40218
+		// Token: 0x04009E03 RID: 40451
 		public static bool debugOpenId;
 	}
 }

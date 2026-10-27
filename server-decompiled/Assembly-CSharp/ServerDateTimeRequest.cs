@@ -3,11 +3,11 @@ using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-// Token: 0x02000899 RID: 2201
+// Token: 0x020008A3 RID: 2211
 [PublicizedFrom(EAccessModifier.Internal)]
 public class ServerDateTimeRequest
 {
-	// Token: 0x06003F88 RID: 16264 RVA: 0x001901CC File Offset: 0x0018E3CC
+	// Token: 0x06003FAB RID: 16299 RVA: 0x00191274 File Offset: 0x0018F474
 	public static void GetNtpTimeAsync(Action<ServerDateTimeResult> _onComplete, string _ntpServer = "pool.ntp.org", int _timeoutMilliseconds = 5000)
 	{
 		ServerDateTimeRequest.<>c__DisplayClass0_0 CS$<>8__locals1 = new ServerDateTimeRequest.<>c__DisplayClass0_0();
@@ -25,7 +25,7 @@ public class ServerDateTimeRequest
 		});
 	}
 
-	// Token: 0x06003F89 RID: 16265 RVA: 0x001901FC File Offset: 0x0018E3FC
+	// Token: 0x06003FAC RID: 16300 RVA: 0x001912A4 File Offset: 0x0018F4A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static async Task<ServerDateTimeResult> FetchNtpTimeAsync(string _ntpServer, int _timeoutMilliseconds)
 	{
@@ -73,7 +73,7 @@ public class ServerDateTimeRequest
 		return serverDateTimeResult;
 	}
 
-	// Token: 0x06003F8A RID: 16266 RVA: 0x00190247 File Offset: 0x0018E447
+	// Token: 0x06003FAD RID: 16301 RVA: 0x001912EF File Offset: 0x0018F4EF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static uint SwapEndianness(ulong _x)
 	{

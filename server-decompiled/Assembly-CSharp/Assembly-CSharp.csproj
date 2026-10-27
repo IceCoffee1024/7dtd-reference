@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <ProjectGuid>{DD4E94CE-C473-4FA8-A607-54649C4C87DA}</ProjectGuid>
+    <ProjectGuid>{A5BAC4D5-1B96-4E46-9051-E9727E2E9E3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Assembly-CSharp</RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -722,6 +722,9 @@
     <Compile Include="ControllerGUI.cs" />
     <Compile Include="ControllerMouseSimulation.cs" />
     <Compile Include="CoroutineCancellationToken.cs" />
+    <Compile Include="CosmeticSet.cs" />
+    <Compile Include="CosmeticSetRegistrar.cs" />
+    <Compile Include="CosmeticSets.cs" />
     <Compile Include="CountdownTimer.cs" />
     <Compile Include="CoverClippingTool\ArrayValue.cs" />
     <Compile Include="CoverClippingTool\BlockSettings.cs" />
@@ -1483,7 +1486,13 @@
     <Compile Include="GameUtils.cs" />
     <Compile Include="GCUtils.cs" />
     <Compile Include="GearBoneMap.cs" />
+    <Compile Include="GearVariants\BodyFit.cs" />
+    <Compile Include="GearVariants\GearFitEntry.cs" />
+    <Compile Include="GearVariants\GearFitMatrixSO.cs" />
+    <Compile Include="GearVariants\GearFitNaming.cs" />
     <Compile Include="GearVariants\GearVariantMatrixSO.cs" />
+    <Compile Include="GearVariants\GenderFitTables.cs" />
+    <Compile Include="GearVariants\PartFitTable.cs" />
     <Compile Include="GearVariants\SexGearTables.cs" />
     <Compile Include="GearVariants\StringTable2D.cs" />
     <Compile Include="GeneratedTextManager.cs" />
@@ -1521,6 +1530,7 @@
     <Compile Include="HazardDamageController.cs" />
     <Compile Include="HeightMap.cs" />
     <Compile Include="HeightMapUtils.cs" />
+    <Compile Include="HideIfAttribute.cs" />
     <Compile Include="HitInfoDetails.cs" />
     <Compile Include="HitLocation.cs" />
     <Compile Include="HoldingItemBroken.cs" />
@@ -1622,6 +1632,7 @@
     <Compile Include="InputAxisHelper.cs" />
     <Compile Include="InputUtils.cs" />
     <Compile Include="InSafeZone.cs" />
+    <Compile Include="InspectorReadOnlyAttribute.cs" />
     <Compile Include="IntHashMap.cs" />
     <Compile Include="IntHashMapEntry.cs" />
     <Compile Include="IntRange.cs" />
@@ -2087,6 +2098,8 @@
     <Compile Include="NetPackageDirection.cs" />
     <Compile Include="NetPackageDiscordIdMappings.cs" />
     <Compile Include="NetPackageDiscordLobbySecret.cs" />
+    <Compile Include="NetPackageDroneRecoveryRequest.cs" />
+    <Compile Include="NetPackageDroneRecoveryResponse.cs" />
     <Compile Include="NetPackageDropItemsContainer.cs" />
     <Compile Include="NetPackageDynamicClientArrive.cs" />
     <Compile Include="NetPackageDynamicMesh.cs" />
@@ -3056,6 +3069,7 @@
     <Compile Include="ServerStateAuthorizer.cs" />
     <Compile Include="ServiceActionEntryRent.cs" />
     <Compile Include="Services\Analytics\Events\BaseEventData.cs" />
+    <Compile Include="Services\Analytics\Events\CameraToggleEventData.cs" />
     <Compile Include="Services\Analytics\Events\ChallengeClaimedEventData.cs" />
     <Compile Include="Services\Analytics\Events\ChallengeCompletedEventData.cs" />
     <Compile Include="Services\Analytics\Events\CosmeticUsageEventData.cs" />
@@ -3064,12 +3078,18 @@
     <Compile Include="Services\Analytics\Events\HardwareInfoEventData.cs" />
     <Compile Include="Services\Analytics\Events\HeartbeatEventData.cs" />
     <Compile Include="Services\Analytics\Events\LoginEventData.cs" />
+    <Compile Include="Services\Analytics\Events\PlayerCraftingSkillEventData.cs" />
     <Compile Include="Services\Analytics\Events\PlayerDeathEventData.cs" />
     <Compile Include="Services\Analytics\Events\PlayerJoinServerEventData.cs" />
+    <Compile Include="Services\Analytics\Events\PlayerPerkProgressionEventData.cs" />
+    <Compile Include="Services\Analytics\Events\PlayerSkillPointEventData.cs" />
+    <Compile Include="Services\Analytics\Events\PlayerStateEventData.cs" />
     <Compile Include="Services\Analytics\Events\QuestAddedEventData.cs" />
     <Compile Include="Services\Analytics\Events\QuestProgressionEventData.cs" />
     <Compile Include="Services\Analytics\Events\QuestRemovedEventData.cs" />
+    <Compile Include="Services\Analytics\Events\QuestRewardEventData.cs" />
     <Compile Include="Services\Analytics\Events\ServerStartEventData.cs" />
+    <Compile Include="Services\Analytics\Events\ToolBeltUsageEventData.cs" />
     <Compile Include="Services\Analytics\EventTypes.cs" />
     <Compile Include="Services\Analytics\Helper.cs" />
     <Compile Include="Services\Analytics\TruncateStringSerializerConverter.cs" />
@@ -3126,6 +3146,7 @@
     <Compile Include="SharpEXR\PixelType.cs" />
     <Compile Include="SharpEXR\RoundingMode.cs" />
     <Compile Include="ShinyScreenSpaceRaytracedReflections\Rotate.cs" />
+    <Compile Include="ShowIfAttribute.cs" />
     <Compile Include="SignBakeRequest.cs" />
     <Compile Include="SignCanvas.cs" />
     <Compile Include="SignComplexityInfo.cs" />
@@ -4517,15 +4538,15 @@
     <Compile Include="XuiXmlBindingAttribute.cs" />
     <Compile Include="XUi_FallThrough.cs" />
     <Compile Include="ZipFileExtensionsSd.cs" />
-    <Compile Include="__JobReflectionRegistrationOutput__756963992.cs" />
+    <Compile Include="__JobReflectionRegistrationOutput__1221567004.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogLibrary\LogLibrary.csproj">
-      <Project>{DD4E94CE-C473-4FA8-A607-54649C4C87DB}</Project>
+      <Project>{A5BAC4D5-1B96-4E46-9051-E9727E2E9E3D}</Project>
       <Name>LogLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\UnityEngine.CoreModule\UnityEngine.CoreModule.csproj">
-      <Project>{DD4E94CE-C473-4FA8-A607-54649C4C87DC}</Project>
+      <Project>{A5BAC4D5-1B96-4E46-9051-E9727E2E9E3E}</Project>
       <Name>UnityEngine.CoreModule</Name>
     </ProjectReference>
   </ItemGroup>

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200082E RID: 2094
+// Token: 0x02000838 RID: 2104
 [Preserve]
 public class NetPackagePlayerQuestPositions : NetPackage
 {
-	// Token: 0x1700068B RID: 1675
-	// (get) Token: 0x06003D39 RID: 15673 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000691 RID: 1681
+	// (get) Token: 0x06003D5C RID: 15708 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D3A RID: 15674 RVA: 0x00185F0D File Offset: 0x0018410D
+	// Token: 0x06003D5D RID: 15709 RVA: 0x00187011 File Offset: 0x00185211
 	public NetPackagePlayerQuestPositions Setup(int entityId, PersistentPlayerData ppd)
 	{
 		this.entityId = entityId;
@@ -24,7 +24,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D3B RID: 15675 RVA: 0x00185F28 File Offset: 0x00184128
+	// Token: 0x06003D5E RID: 15710 RVA: 0x0018702C File Offset: 0x0018522C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D3C RID: 15676 RVA: 0x00185F70 File Offset: 0x00184170
+	// Token: 0x06003D5F RID: 15711 RVA: 0x00187074 File Offset: 0x00185274
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -48,7 +48,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D3D RID: 15677 RVA: 0x00185FE8 File Offset: 0x001841E8
+	// Token: 0x06003D60 RID: 15712 RVA: 0x001870EC File Offset: 0x001852EC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidEntityIdForSender(this.entityId, false))
@@ -63,11 +63,11 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x040031BD RID: 12733
+	// Token: 0x040031DD RID: 12765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040031BE RID: 12734
+	// Token: 0x040031DE RID: 12766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<QuestPositionData> questPositions;
 }

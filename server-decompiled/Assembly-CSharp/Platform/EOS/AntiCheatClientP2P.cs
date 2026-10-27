@@ -8,12 +8,12 @@ using Epic.OnlineServices.Connect;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D10 RID: 7440
+	// Token: 0x02001D41 RID: 7489
 	public class AntiCheatClientP2P
 	{
 		// Token: 0x1400013E RID: 318
-		// (add) Token: 0x0600DCC4 RID: 56516 RVA: 0x004E9EC4 File Offset: 0x004E80C4
-		// (remove) Token: 0x0600DCC5 RID: 56517 RVA: 0x004E9F24 File Offset: 0x004E8124
+		// (add) Token: 0x0600DDD8 RID: 56792 RVA: 0x004EDA64 File Offset: 0x004EBC64
+		// (remove) Token: 0x0600DDD9 RID: 56793 RVA: 0x004EDAC4 File Offset: 0x004EBCC4
 		public event Action OnRemoteAuthComplete
 		{
 			add
@@ -38,7 +38,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCC6 RID: 56518 RVA: 0x004E9F78 File Offset: 0x004E8178
+		// Token: 0x0600DDDA RID: 56794 RVA: 0x004EDB18 File Offset: 0x004EBD18
 		public AntiCheatClientP2P(IPlatform _owner, AntiCheatClientInterface _antiCheatInterface)
 		{
 			this.owner = _owner;
@@ -46,7 +46,7 @@ namespace Platform.EOS
 			this.connectInterface = ((Api)this.owner.Api).ConnectInterface;
 		}
 
-		// Token: 0x0600DCC7 RID: 56519 RVA: 0x004E9FD8 File Offset: 0x004E81D8
+		// Token: 0x0600DDDB RID: 56795 RVA: 0x004EDB78 File Offset: 0x004EBD78
 		public void Activate()
 		{
 			if (this.handleMessageToPeerID == 0UL)
@@ -78,7 +78,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCC8 RID: 56520 RVA: 0x004EA0F4 File Offset: 0x004E82F4
+		// Token: 0x0600DDDC RID: 56796 RVA: 0x004EDC94 File Offset: 0x004EBE94
 		public void Deactivate()
 		{
 			object obj = AntiCheatCommon.LockObject;
@@ -102,7 +102,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCC9 RID: 56521 RVA: 0x004EA190 File Offset: 0x004E8390
+		// Token: 0x0600DDDD RID: 56797 RVA: 0x004EDD30 File Offset: 0x004EBF30
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool BeginSession()
 		{
@@ -126,7 +126,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DCCA RID: 56522 RVA: 0x004EA22C File Offset: 0x004E842C
+		// Token: 0x0600DDDE RID: 56798 RVA: 0x004EDDCC File Offset: 0x004EBFCC
 		public void ConnectToServer([TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _hostIdentifierAndToken, Action _onConnectionComplete, Action<string> _onConnectionFailed)
 		{
 			AntiCheatClientP2P.<>c__DisplayClass18_0 CS$<>8__locals1 = new AntiCheatClientP2P.<>c__DisplayClass18_0();
@@ -163,13 +163,13 @@ namespace Platform.EOS
 			onConnectionFailed("Invalid EOS Crossplatform ID");
 		}
 
-		// Token: 0x0600DCCB RID: 56523 RVA: 0x004EA344 File Offset: 0x004E8544
+		// Token: 0x0600DDDF RID: 56799 RVA: 0x004EDEE4 File Offset: 0x004EC0E4
 		public bool IsServerAntiCheatProtected()
 		{
 			return this.serverDeviceType.RequiresAntiCheat();
 		}
 
-		// Token: 0x0600DCCC RID: 56524 RVA: 0x004EA354 File Offset: 0x004E8554
+		// Token: 0x0600DDE0 RID: 56800 RVA: 0x004EDEF4 File Offset: 0x004EC0F4
 		public void HandleMessageFromPeer(byte[] _data)
 		{
 			if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsConnected)
@@ -198,7 +198,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCCD RID: 56525 RVA: 0x004EA410 File Offset: 0x004E8610
+		// Token: 0x0600DDE1 RID: 56801 RVA: 0x004EDFB0 File Offset: 0x004EC1B0
 		public void DisconnectFromServer()
 		{
 			this.clientAuthStatus = AntiCheatCommonClientAuthStatus.Invalid;
@@ -209,7 +209,7 @@ namespace Platform.EOS
 			Log.Out("[EOS-ACC] Disconnected from game server");
 		}
 
-		// Token: 0x0600DCCE RID: 56526 RVA: 0x004EA440 File Offset: 0x004E8640
+		// Token: 0x0600DDE2 RID: 56802 RVA: 0x004EDFE0 File Offset: 0x004EC1E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void EndSession()
 		{
@@ -227,14 +227,14 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCCF RID: 56527 RVA: 0x004EA4B8 File Offset: 0x004E86B8
+		// Token: 0x0600DDE3 RID: 56803 RVA: 0x004EE058 File Offset: 0x004EC258
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void handleMessageToPeer(ref OnMessageToClientCallbackInfo _data)
 		{
 			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageEAC>().Setup(_data.MessageData.Count, _data.MessageData.Array), false);
 		}
 
-		// Token: 0x0600DCD0 RID: 56528 RVA: 0x004EA4F8 File Offset: 0x004E86F8
+		// Token: 0x0600DDE4 RID: 56804 RVA: 0x004EE098 File Offset: 0x004EC298
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void handlePeerActionRequired(ref OnClientActionRequiredCallbackInfo _data)
 		{
@@ -274,7 +274,7 @@ namespace Platform.EOS
 			}));
 		}
 
-		// Token: 0x0600DCD1 RID: 56529 RVA: 0x004EA5D8 File Offset: 0x004E87D8
+		// Token: 0x0600DDE5 RID: 56805 RVA: 0x004EE178 File Offset: 0x004EC378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator DisconnectOnNextFrame(GameUtils.KickPlayerData _kickPlayerData)
 		{
@@ -286,14 +286,14 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DCD2 RID: 56530 RVA: 0x004EA5EE File Offset: 0x004E87EE
+		// Token: 0x0600DDE6 RID: 56806 RVA: 0x004EE18E File Offset: 0x004EC38E
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void QueueDisconnectFromServer(GameUtils.KickPlayerData _kickPlayerData)
 		{
 			ThreadManager.StartCoroutine(this.DisconnectOnNextFrame(_kickPlayerData));
 		}
 
-		// Token: 0x0600DCD3 RID: 56531 RVA: 0x004EA600 File Offset: 0x004E8800
+		// Token: 0x0600DDE7 RID: 56807 RVA: 0x004EE1A0 File Offset: 0x004EC3A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void handlePeerAuthStateChange(ref OnClientAuthStatusChangedCallbackInfo _data)
 		{
@@ -315,47 +315,47 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0400A697 RID: 42647
+		// Token: 0x0400A780 RID: 42880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A698 RID: 42648
+		// Token: 0x0400A781 RID: 42881
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ConnectInterface connectInterface;
 
-		// Token: 0x0400A699 RID: 42649
+		// Token: 0x0400A782 RID: 42882
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatClientInterface antiCheatInterface;
 
-		// Token: 0x0400A69A RID: 42650
+		// Token: 0x0400A783 RID: 42883
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong handleMessageToPeerID;
 
-		// Token: 0x0400A69B RID: 42651
+		// Token: 0x0400A784 RID: 42884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong handlePeerAuthStateChangeID;
 
-		// Token: 0x0400A69C RID: 42652
+		// Token: 0x0400A785 RID: 42885
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong handlePeerActionRequiredID;
 
-		// Token: 0x0400A69D RID: 42653
+		// Token: 0x0400A786 RID: 42886
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IntPtr serverHandle = new IntPtr(int.MaxValue);
 
-		// Token: 0x0400A69E RID: 42654
+		// Token: 0x0400A787 RID: 42887
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ClientInfo.EDeviceType serverDeviceType = ClientInfo.EDeviceType.Unknown;
 
-		// Token: 0x0400A69F RID: 42655
+		// Token: 0x0400A788 RID: 42888
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object lockObject = new object();
 
-		// Token: 0x0400A6A0 RID: 42656
+		// Token: 0x0400A789 RID: 42889
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatCommonClientAuthStatus clientAuthStatus;
 
-		// Token: 0x0400A6A1 RID: 42657
+		// Token: 0x0400A78A RID: 42890
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onRemoteAuthComplete;
 	}

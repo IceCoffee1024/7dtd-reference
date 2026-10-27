@@ -4,17 +4,17 @@ using System.Globalization;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010BC RID: 4284
+// Token: 0x020010CC RID: 4300
 [Preserve]
 public class XUiC_TwitchVoteList : XUiController
 {
-	// Token: 0x0600884F RID: 34895 RVA: 0x003426E0 File Offset: 0x003408E0
+	// Token: 0x060088A2 RID: 34978 RVA: 0x00344764 File Offset: 0x00342964
 	public float GetHeight()
 	{
 		return 90f;
 	}
 
-	// Token: 0x06008850 RID: 34896 RVA: 0x003426E8 File Offset: 0x003408E8
+	// Token: 0x060088A3 RID: 34979 RVA: 0x0034476C File Offset: 0x0034296C
 	public override void Init()
 	{
 		base.Init();
@@ -28,7 +28,7 @@ public class XUiC_TwitchVoteList : XUiController
 		}
 	}
 
-	// Token: 0x06008851 RID: 34897 RVA: 0x00342724 File Offset: 0x00340924
+	// Token: 0x060088A4 RID: 34980 RVA: 0x003447A8 File Offset: 0x003429A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void VoteStateChanged()
 	{
@@ -39,7 +39,7 @@ public class XUiC_TwitchVoteList : XUiController
 		}
 	}
 
-	// Token: 0x06008852 RID: 34898 RVA: 0x00342724 File Offset: 0x00340924
+	// Token: 0x060088A5 RID: 34981 RVA: 0x003447A8 File Offset: 0x003429A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void VoteEndedChanged()
 	{
@@ -50,7 +50,7 @@ public class XUiC_TwitchVoteList : XUiController
 		}
 	}
 
-	// Token: 0x06008853 RID: 34899 RVA: 0x0034274C File Offset: 0x0034094C
+	// Token: 0x060088A6 RID: 34982 RVA: 0x003447D0 File Offset: 0x003429D0
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -105,7 +105,7 @@ public class XUiC_TwitchVoteList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008854 RID: 34900 RVA: 0x00342904 File Offset: 0x00340B04
+	// Token: 0x060088A7 RID: 34983 RVA: 0x00344988 File Offset: 0x00342B88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupForVote()
 	{
@@ -132,7 +132,7 @@ public class XUiC_TwitchVoteList : XUiController
 		}
 	}
 
-	// Token: 0x06008855 RID: 34901 RVA: 0x003429C8 File Offset: 0x00340BC8
+	// Token: 0x060088A8 RID: 34984 RVA: 0x00344A4C File Offset: 0x00342C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupWinner()
 	{
@@ -157,14 +157,14 @@ public class XUiC_TwitchVoteList : XUiController
 		}
 	}
 
-	// Token: 0x06008856 RID: 34902 RVA: 0x00342A97 File Offset: 0x00340C97
+	// Token: 0x060088A9 RID: 34985 RVA: 0x00344B1B File Offset: 0x00342D1B
 	public void SetupCommandList()
 	{
 		this.voteList.Clear();
 		this.voteList.AddRange(this.votingManager.voteList);
 	}
 
-	// Token: 0x06008857 RID: 34903 RVA: 0x00342ABC File Offset: 0x00340CBC
+	// Token: 0x060088AA RID: 34986 RVA: 0x00344B40 File Offset: 0x00342D40
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -184,7 +184,7 @@ public class XUiC_TwitchVoteList : XUiController
 		twitchVotingManager6.VoteEventEnded = (OnGameEventVoteAction)Delegate.Combine(twitchVotingManager6.VoteEventEnded, new OnGameEventVoteAction(this.VoteEndedChanged));
 	}
 
-	// Token: 0x06008858 RID: 34904 RVA: 0x00342BD0 File Offset: 0x00340DD0
+	// Token: 0x060088AB RID: 34987 RVA: 0x00344C54 File Offset: 0x00342E54
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "line_count")
@@ -195,21 +195,21 @@ public class XUiC_TwitchVoteList : XUiController
 		return base.ParseAttribute(name, value);
 	}
 
-	// Token: 0x04006592 RID: 26002
+	// Token: 0x040065D1 RID: 26065
 	public List<TwitchVoteEntry> voteList = new List<TwitchVoteEntry>();
 
-	// Token: 0x04006593 RID: 26003
+	// Token: 0x040065D2 RID: 26066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_TwitchVoteEntry> voteEntries = new List<XUiC_TwitchVoteEntry>();
 
-	// Token: 0x04006594 RID: 26004
+	// Token: 0x040065D3 RID: 26067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchVotingManager votingManager;
 
-	// Token: 0x04006595 RID: 26005
+	// Token: 0x040065D4 RID: 26068
 	public XUiC_TwitchWindow Owner;
 
-	// Token: 0x04006596 RID: 26006
+	// Token: 0x040065D5 RID: 26069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lineCount = 1;
 }

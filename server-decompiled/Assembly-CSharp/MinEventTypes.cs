@@ -1,236 +1,236 @@
 ﻿using System;
 
-// Token: 0x02000724 RID: 1828
+// Token: 0x0200072C RID: 1836
 public enum MinEventTypes
 {
-	// Token: 0x04002CB0 RID: 11440
-	onSelfBuffStart,
-	// Token: 0x04002CB1 RID: 11441
-	onSelfBuffUpdate,
-	// Token: 0x04002CB2 RID: 11442
-	onSelfBuffFinish,
-	// Token: 0x04002CB3 RID: 11443
-	onSelfBuffRemove,
-	// Token: 0x04002CB4 RID: 11444
-	onSelfBuffStack,
-	// Token: 0x04002CB5 RID: 11445
-	onSelfProgressionUpdate,
-	// Token: 0x04002CB6 RID: 11446
-	onSelfChallengeCompleteUpdate,
-	// Token: 0x04002CB7 RID: 11447
-	onOtherDamagedSelf,
-	// Token: 0x04002CB8 RID: 11448
-	onOtherAttackedSelf,
-	// Token: 0x04002CB9 RID: 11449
-	onOtherHealedSelf,
-	// Token: 0x04002CBA RID: 11450
-	onSelfDamagedOther,
-	// Token: 0x04002CBB RID: 11451
-	onSelfAttackedOther,
-	// Token: 0x04002CBC RID: 11452
-	onSelfVehicleAttackedOther,
-	// Token: 0x04002CBD RID: 11453
-	onSelfHealedOther,
-	// Token: 0x04002CBE RID: 11454
-	onSelfExplosionAttackedOther,
-	// Token: 0x04002CBF RID: 11455
-	onSelfExplosionDamagedOther,
-	// Token: 0x04002CC0 RID: 11456
-	onSelfExplosionMissEntity,
-	// Token: 0x04002CC1 RID: 11457
-	onSelfDamagedSelf,
-	// Token: 0x04002CC2 RID: 11458
-	onSelfHealedSelf,
-	// Token: 0x04002CC3 RID: 11459
-	onSelfKilledOther,
-	// Token: 0x04002CC4 RID: 11460
-	onOtherKilledSelf,
-	// Token: 0x04002CC5 RID: 11461
-	onBlockKilledSelf,
-	// Token: 0x04002CC6 RID: 11462
-	onSelfKilledSelf,
-	// Token: 0x04002CC7 RID: 11463
-	onSelfDied,
-	// Token: 0x04002CC8 RID: 11464
-	onSelfPrimaryActionStart,
-	// Token: 0x04002CC9 RID: 11465
-	onSelfPrimaryActionRayHit,
-	// Token: 0x04002CCA RID: 11466
-	onSelfPrimaryActionRayMiss,
-	// Token: 0x04002CCB RID: 11467
-	onSelfPrimaryActionGrazeHit,
 	// Token: 0x04002CCC RID: 11468
-	onSelfPrimaryActionGrazeMiss,
+	onSelfBuffStart,
 	// Token: 0x04002CCD RID: 11469
-	onSelfPrimaryActionEnd,
+	onSelfBuffUpdate,
 	// Token: 0x04002CCE RID: 11470
-	onSelfPrimaryActionUpdate,
+	onSelfBuffFinish,
 	// Token: 0x04002CCF RID: 11471
-	onSelfPrimaryActionMissEntity,
+	onSelfBuffRemove,
 	// Token: 0x04002CD0 RID: 11472
-	onSelfSecondaryActionStart,
+	onSelfBuffStack,
 	// Token: 0x04002CD1 RID: 11473
-	onSelfSecondaryActionRayHit,
+	onSelfProgressionUpdate,
 	// Token: 0x04002CD2 RID: 11474
-	onSelfSecondaryActionRayMiss,
+	onSelfChallengeCompleteUpdate,
 	// Token: 0x04002CD3 RID: 11475
-	onSelfSecondaryActionGrazeHit,
+	onOtherDamagedSelf,
 	// Token: 0x04002CD4 RID: 11476
-	onSelfSecondaryActionGrazeMiss,
+	onOtherAttackedSelf,
 	// Token: 0x04002CD5 RID: 11477
-	onSelfSecondaryActionEnd,
+	onOtherHealedSelf,
 	// Token: 0x04002CD6 RID: 11478
-	onSelfSecondaryActionUpdate,
+	onSelfDamagedOther,
 	// Token: 0x04002CD7 RID: 11479
-	onSelfSecondaryActionMissEntity,
+	onSelfAttackedOther,
 	// Token: 0x04002CD8 RID: 11480
-	onSelfAction2Start,
+	onSelfVehicleAttackedOther,
 	// Token: 0x04002CD9 RID: 11481
-	onSelfAction2Update,
+	onSelfHealedOther,
 	// Token: 0x04002CDA RID: 11482
-	onSelfAction2End,
+	onSelfExplosionAttackedOther,
 	// Token: 0x04002CDB RID: 11483
-	onSelfRepairBlock,
+	onSelfExplosionDamagedOther,
 	// Token: 0x04002CDC RID: 11484
-	onSelfPlaceBlock,
+	onSelfExplosionMissEntity,
 	// Token: 0x04002CDD RID: 11485
-	onSelfUpgradedBlock,
+	onSelfDamagedSelf,
 	// Token: 0x04002CDE RID: 11486
-	onSelfDamagedBlock,
+	onSelfHealedSelf,
 	// Token: 0x04002CDF RID: 11487
-	onSelfDestroyedBlock,
+	onSelfKilledOther,
 	// Token: 0x04002CE0 RID: 11488
-	onSelfHarvestBlock,
+	onOtherKilledSelf,
 	// Token: 0x04002CE1 RID: 11489
-	onSelfHarvestOther,
+	onBlockKilledSelf,
 	// Token: 0x04002CE2 RID: 11490
-	onOtherEnteredRange,
+	onSelfKilledSelf,
 	// Token: 0x04002CE3 RID: 11491
-	onOtherLeftRange,
+	onSelfDied,
 	// Token: 0x04002CE4 RID: 11492
-	onSelfRangedBurstShotStart,
+	onSelfPrimaryActionStart,
 	// Token: 0x04002CE5 RID: 11493
-	onSelfRangedBurstShotEnd,
+	onSelfPrimaryActionRayHit,
 	// Token: 0x04002CE6 RID: 11494
-	onSelfEquipStart,
+	onSelfPrimaryActionRayMiss,
 	// Token: 0x04002CE7 RID: 11495
-	onSelfEquipChanged,
+	onSelfPrimaryActionGrazeHit,
 	// Token: 0x04002CE8 RID: 11496
-	onSelfEquipUpdate,
+	onSelfPrimaryActionGrazeMiss,
 	// Token: 0x04002CE9 RID: 11497
-	onSelfEquipStop,
+	onSelfPrimaryActionEnd,
 	// Token: 0x04002CEA RID: 11498
-	onReloadStart,
+	onSelfPrimaryActionUpdate,
 	// Token: 0x04002CEB RID: 11499
-	onReloadUpdate,
+	onSelfPrimaryActionMissEntity,
 	// Token: 0x04002CEC RID: 11500
-	onReloadStop,
+	onSelfSecondaryActionStart,
 	// Token: 0x04002CED RID: 11501
-	onSelfFirstSpawn,
+	onSelfSecondaryActionRayHit,
 	// Token: 0x04002CEE RID: 11502
-	onSelfRespawn,
+	onSelfSecondaryActionRayMiss,
 	// Token: 0x04002CEF RID: 11503
-	onSelfLeaveGame,
+	onSelfSecondaryActionGrazeHit,
 	// Token: 0x04002CF0 RID: 11504
-	onSelfEnteredGame,
+	onSelfSecondaryActionGrazeMiss,
 	// Token: 0x04002CF1 RID: 11505
-	onSelfTeleported,
+	onSelfSecondaryActionEnd,
 	// Token: 0x04002CF2 RID: 11506
-	onSelfJump,
+	onSelfSecondaryActionUpdate,
 	// Token: 0x04002CF3 RID: 11507
-	onSelfLandJump,
+	onSelfSecondaryActionMissEntity,
 	// Token: 0x04002CF4 RID: 11508
-	onSelfRun,
+	onSelfAction2Start,
 	// Token: 0x04002CF5 RID: 11509
-	onSelfWalk,
+	onSelfAction2Update,
 	// Token: 0x04002CF6 RID: 11510
-	onSelfCrouch,
+	onSelfAction2End,
 	// Token: 0x04002CF7 RID: 11511
-	onSelfStand,
+	onSelfRepairBlock,
 	// Token: 0x04002CF8 RID: 11512
-	onSelfAimingGunStart,
+	onSelfPlaceBlock,
 	// Token: 0x04002CF9 RID: 11513
-	onSelfAimingGunStop,
+	onSelfUpgradedBlock,
 	// Token: 0x04002CFA RID: 11514
-	onSelfCrouchRun,
+	onSelfDamagedBlock,
 	// Token: 0x04002CFB RID: 11515
-	onSelfCrouchWalk,
+	onSelfDestroyedBlock,
 	// Token: 0x04002CFC RID: 11516
-	onSelfSwimStart,
+	onSelfHarvestBlock,
 	// Token: 0x04002CFD RID: 11517
-	onSelfSwimStop,
+	onSelfHarvestOther,
 	// Token: 0x04002CFE RID: 11518
-	onSelfSwimRun,
+	onOtherEnteredRange,
 	// Token: 0x04002CFF RID: 11519
-	onSelfSwimIdle,
+	onOtherLeftRange,
 	// Token: 0x04002D00 RID: 11520
-	onSelfWaterSurface,
+	onSelfRangedBurstShotStart,
 	// Token: 0x04002D01 RID: 11521
-	onSelfWaterSubmerge,
+	onSelfRangedBurstShotEnd,
 	// Token: 0x04002D02 RID: 11522
-	onSelfHoldingItemThrown,
+	onSelfEquipStart,
 	// Token: 0x04002D03 RID: 11523
-	onSelfHoldingItemCreated,
+	onSelfEquipChanged,
 	// Token: 0x04002D04 RID: 11524
-	onSelfItemCrafted,
+	onSelfEquipUpdate,
 	// Token: 0x04002D05 RID: 11525
-	onSelfItemRepaired,
+	onSelfEquipStop,
 	// Token: 0x04002D06 RID: 11526
-	onSelfItemLooted,
+	onReloadStart,
 	// Token: 0x04002D07 RID: 11527
-	onSelfItemLost,
+	onReloadUpdate,
 	// Token: 0x04002D08 RID: 11528
-	onSelfItemGained,
+	onReloadStop,
 	// Token: 0x04002D09 RID: 11529
-	onSelfItemSold,
+	onSelfFirstSpawn,
 	// Token: 0x04002D0A RID: 11530
-	onSelfItemBought,
+	onSelfRespawn,
 	// Token: 0x04002D0B RID: 11531
-	onSelfItemActivate,
+	onSelfLeaveGame,
 	// Token: 0x04002D0C RID: 11532
-	onSelfItemDeactivate,
+	onSelfEnteredGame,
 	// Token: 0x04002D0D RID: 11533
-	onSelfItemJammedUse,
+	onSelfTeleported,
 	// Token: 0x04002D0E RID: 11534
-	onSelfChangedView,
+	onSelfJump,
 	// Token: 0x04002D0F RID: 11535
-	onSelfFallImpact,
+	onSelfLandJump,
 	// Token: 0x04002D10 RID: 11536
-	onProjectilePreImpact,
+	onSelfRun,
 	// Token: 0x04002D11 RID: 11537
-	onProjectileImpact,
+	onSelfWalk,
 	// Token: 0x04002D12 RID: 11538
-	onPerkLevelChanged,
+	onSelfCrouch,
 	// Token: 0x04002D13 RID: 11539
-	onSelfEnteredBiome,
+	onSelfStand,
 	// Token: 0x04002D14 RID: 11540
-	onSelfLootContainer,
+	onSelfAimingGunStart,
 	// Token: 0x04002D15 RID: 11541
-	onSelfOpenLootContainer,
+	onSelfAimingGunStop,
 	// Token: 0x04002D16 RID: 11542
-	onSelfCloseLootContainer,
+	onSelfCrouchRun,
 	// Token: 0x04002D17 RID: 11543
-	onSelfBiomeLootStageMaxEntered,
+	onSelfCrouchWalk,
 	// Token: 0x04002D18 RID: 11544
-	onSelfBiomeLootStageMaxExited,
+	onSelfSwimStart,
 	// Token: 0x04002D19 RID: 11545
-	onDismember,
+	onSelfSwimStop,
 	// Token: 0x04002D1A RID: 11546
-	onCombatEntered,
+	onSelfSwimRun,
 	// Token: 0x04002D1B RID: 11547
-	onTrackedEntityLost,
+	onSelfSwimIdle,
 	// Token: 0x04002D1C RID: 11548
-	onTreasureRadiusEntered,
+	onSelfWaterSurface,
 	// Token: 0x04002D1D RID: 11549
-	onTreasureRadiusExited,
+	onSelfWaterSubmerge,
 	// Token: 0x04002D1E RID: 11550
-	onTreasureRadiusCompleted,
+	onSelfHoldingItemThrown,
 	// Token: 0x04002D1F RID: 11551
-	onSelfPickupOther,
+	onSelfHoldingItemCreated,
 	// Token: 0x04002D20 RID: 11552
-	onSelfDroppedOther,
+	onSelfItemCrafted,
 	// Token: 0x04002D21 RID: 11553
-	onSelfPickedUpByOther,
+	onSelfItemRepaired,
 	// Token: 0x04002D22 RID: 11554
+	onSelfItemLooted,
+	// Token: 0x04002D23 RID: 11555
+	onSelfItemLost,
+	// Token: 0x04002D24 RID: 11556
+	onSelfItemGained,
+	// Token: 0x04002D25 RID: 11557
+	onSelfItemSold,
+	// Token: 0x04002D26 RID: 11558
+	onSelfItemBought,
+	// Token: 0x04002D27 RID: 11559
+	onSelfItemActivate,
+	// Token: 0x04002D28 RID: 11560
+	onSelfItemDeactivate,
+	// Token: 0x04002D29 RID: 11561
+	onSelfItemJammedUse,
+	// Token: 0x04002D2A RID: 11562
+	onSelfChangedView,
+	// Token: 0x04002D2B RID: 11563
+	onSelfFallImpact,
+	// Token: 0x04002D2C RID: 11564
+	onProjectilePreImpact,
+	// Token: 0x04002D2D RID: 11565
+	onProjectileImpact,
+	// Token: 0x04002D2E RID: 11566
+	onPerkLevelChanged,
+	// Token: 0x04002D2F RID: 11567
+	onSelfEnteredBiome,
+	// Token: 0x04002D30 RID: 11568
+	onSelfLootContainer,
+	// Token: 0x04002D31 RID: 11569
+	onSelfOpenLootContainer,
+	// Token: 0x04002D32 RID: 11570
+	onSelfCloseLootContainer,
+	// Token: 0x04002D33 RID: 11571
+	onSelfBiomeLootStageMaxEntered,
+	// Token: 0x04002D34 RID: 11572
+	onSelfBiomeLootStageMaxExited,
+	// Token: 0x04002D35 RID: 11573
+	onDismember,
+	// Token: 0x04002D36 RID: 11574
+	onCombatEntered,
+	// Token: 0x04002D37 RID: 11575
+	onTrackedEntityLost,
+	// Token: 0x04002D38 RID: 11576
+	onTreasureRadiusEntered,
+	// Token: 0x04002D39 RID: 11577
+	onTreasureRadiusExited,
+	// Token: 0x04002D3A RID: 11578
+	onTreasureRadiusCompleted,
+	// Token: 0x04002D3B RID: 11579
+	onSelfPickupOther,
+	// Token: 0x04002D3C RID: 11580
+	onSelfDroppedOther,
+	// Token: 0x04002D3D RID: 11581
+	onSelfPickedUpByOther,
+	// Token: 0x04002D3E RID: 11582
 	COUNT
 }

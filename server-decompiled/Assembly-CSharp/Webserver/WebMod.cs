@@ -5,10 +5,10 @@ using Webserver.UrlHandlers;
 
 namespace Webserver
 {
-	// Token: 0x02001AF4 RID: 6900
+	// Token: 0x02001B25 RID: 6949
 	public class WebMod
 	{
-		// Token: 0x0600CFE7 RID: 53223 RVA: 0x004B7950 File Offset: 0x004B5B50
+		// Token: 0x0600D0FB RID: 53499 RVA: 0x004BB44C File Offset: 0x004B964C
 		public WebMod(Web _parentWeb, Mod _parentMod, bool _useStaticCache)
 		{
 			this.ParentMod = _parentMod;
@@ -26,31 +26,31 @@ namespace Webserver
 			_parentWeb.RegisterPathHandler(this.ModUrl, new StaticHandler(text, _useStaticCache ? new SimpleCache() : new DirectAccess(), false, null));
 		}
 
-		// Token: 0x04009D4F RID: 40271
+		// Token: 0x04009E38 RID: 40504
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string modsBaseUrl = "/webmods/";
 
-		// Token: 0x04009D50 RID: 40272
+		// Token: 0x04009E39 RID: 40505
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string reactBundleName = "bundle.js";
 
-		// Token: 0x04009D51 RID: 40273
+		// Token: 0x04009E3A RID: 40506
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string stylingFileName = "styling.css";
 
-		// Token: 0x04009D52 RID: 40274
+		// Token: 0x04009E3B RID: 40507
 		public readonly Mod ParentMod;
 
-		// Token: 0x04009D53 RID: 40275
+		// Token: 0x04009E3C RID: 40508
 		public readonly string ModUrl;
 
-		// Token: 0x04009D54 RID: 40276
+		// Token: 0x04009E3D RID: 40509
 		public readonly string ReactBundle;
 
-		// Token: 0x04009D55 RID: 40277
+		// Token: 0x04009E3E RID: 40510
 		public readonly string CssPath;
 
-		// Token: 0x04009D56 RID: 40278
+		// Token: 0x04009E3F RID: 40511
 		public readonly bool IsWebMod;
 	}
 }

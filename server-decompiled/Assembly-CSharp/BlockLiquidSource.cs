@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockLiquidSource : Block
 {
-	// Token: 0x060007FF RID: 2047 RVA: 0x000388B8 File Offset: 0x00036AB8
+	// Token: 0x060007FF RID: 2047 RVA: 0x00038878 File Offset: 0x00036A78
 	public BlockLiquidSource()
 	{
 		Vector3i[,] array = new Vector3i[8, 4];
@@ -46,7 +46,7 @@ public class BlockLiquidSource : Block
 		this.IsRandomlyTick = false;
 	}
 
-	// Token: 0x06000800 RID: 2048 RVA: 0x00038AE0 File Offset: 0x00036CE0
+	// Token: 0x06000800 RID: 2048 RVA: 0x00038AA0 File Offset: 0x00036CA0
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -59,7 +59,7 @@ public class BlockLiquidSource : Block
 		this.waterBlock = BlockValue.Air;
 	}
 
-	// Token: 0x06000801 RID: 2049 RVA: 0x00038B1C File Offset: 0x00036D1C
+	// Token: 0x06000801 RID: 2049 RVA: 0x00038ADC File Offset: 0x00036CDC
 	public override void OnNeighborBlockChange(WorldBase world, Vector3i _myBlockPos, BlockValue _myBlockValue, Vector3i _blockPosThatChanged, BlockValue _newNeighborBlockValue, BlockValue _oldNeighborBlockValue)
 	{
 		base.OnNeighborBlockChange(world, _myBlockPos, _myBlockValue, _blockPosThatChanged, _newNeighborBlockValue, _oldNeighborBlockValue);
@@ -77,13 +77,13 @@ public class BlockLiquidSource : Block
 		return false;
 	}
 
-	// Token: 0x06000803 RID: 2051 RVA: 0x00038B73 File Offset: 0x00036D73
+	// Token: 0x06000803 RID: 2051 RVA: 0x00038B33 File Offset: 0x00036D33
 	public override ulong GetTickRate()
 	{
 		return 20UL;
 	}
 
-	// Token: 0x06000804 RID: 2052 RVA: 0x00038B78 File Offset: 0x00036D78
+	// Token: 0x06000804 RID: 2052 RVA: 0x00038B38 File Offset: 0x00036D38
 	public override bool UpdateTick(WorldBase world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		BlockValue blockValue;
@@ -116,7 +116,7 @@ public class BlockLiquidSource : Block
 		return true;
 	}
 
-	// Token: 0x06000805 RID: 2053 RVA: 0x00038CB4 File Offset: 0x00036EB4
+	// Token: 0x06000805 RID: 2053 RVA: 0x00038C74 File Offset: 0x00036E74
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);

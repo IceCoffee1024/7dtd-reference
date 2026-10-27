@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000F4F RID: 3919
+// Token: 0x02000F5E RID: 3934
 public enum HUDStatGroups
 {
-	// Token: 0x04005B08 RID: 23304
+	// Token: 0x04005B3B RID: 23355
 	Player,
-	// Token: 0x04005B09 RID: 23305
+	// Token: 0x04005B3C RID: 23356
 	Vehicle
 }

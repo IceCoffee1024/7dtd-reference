@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D0 RID: 6608
+	// Token: 0x02001A01 RID: 6657
 	[Preserve]
 	public class ActionRemoveItems : ActionBaseItemAction
 	{
-		// Token: 0x0600CA65 RID: 51813 RVA: 0x004A0F10 File Offset: 0x0049F110
+		// Token: 0x0600CB79 RID: 52089 RVA: 0x004A4A10 File Offset: 0x004A2C10
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
@@ -50,7 +50,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600CA66 RID: 51814 RVA: 0x004A0FFC File Offset: 0x0049F1FC
+		// Token: 0x0600CB7A RID: 52090 RVA: 0x004A4AFC File Offset: 0x004A2CFC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemValueChange(ref ItemValue itemValue, EntityPlayer player)
 		{
@@ -70,7 +70,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600CA67 RID: 51815 RVA: 0x004A1068 File Offset: 0x0049F268
+		// Token: 0x0600CB7B RID: 52091 RVA: 0x004A4B68 File Offset: 0x004A2D68
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

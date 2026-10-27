@@ -1,76 +1,76 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000638 RID: 1592
+// Token: 0x0200063F RID: 1599
 public class MapObjectRestorePower : MapObject
 {
-	// Token: 0x060033DD RID: 13277 RVA: 0x0014DC09 File Offset: 0x0014BE09
+	// Token: 0x060033EB RID: 13291 RVA: 0x0014E7FD File Offset: 0x0014C9FD
 	public MapObjectRestorePower(Vector3 _position)
 		: base(EnumMapObjectType.RestorePower, _position, (long)(++MapObjectRestorePower.newID), null, false)
 	{
 	}
 
-	// Token: 0x060033DE RID: 13278 RVA: 0x0014D775 File Offset: 0x0014B975
+	// Token: 0x060033EC RID: 13292 RVA: 0x0014E369 File Offset: 0x0014C569
 	public override string GetMapIcon()
 	{
 		return "ui_game_symbol_fetch_loot";
 	}
 
-	// Token: 0x060033DF RID: 13279 RVA: 0x0014D775 File Offset: 0x0014B975
+	// Token: 0x060033ED RID: 13293 RVA: 0x0014E369 File Offset: 0x0014C569
 	public override string GetCompassIcon()
 	{
 		return "ui_game_symbol_fetch_loot";
 	}
 
-	// Token: 0x060033E0 RID: 13280 RVA: 0x0014D77C File Offset: 0x0014B97C
+	// Token: 0x060033EE RID: 13294 RVA: 0x0014E370 File Offset: 0x0014C570
 	public override string GetCompassDownIcon()
 	{
 		return "ui_game_symbol_fetch_loot_down";
 	}
 
-	// Token: 0x060033E1 RID: 13281 RVA: 0x0014D783 File Offset: 0x0014B983
+	// Token: 0x060033EF RID: 13295 RVA: 0x0014E377 File Offset: 0x0014C577
 	public override string GetCompassUpIcon()
 	{
 		return "ui_game_symbol_fetch_loot_up";
 	}
 
-	// Token: 0x060033E2 RID: 13282 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060033F0 RID: 13296 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool UseUpDownCompassIcons()
 	{
 		return true;
 	}
 
-	// Token: 0x060033E3 RID: 13283 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060033F1 RID: 13297 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsOnCompass()
 	{
 		return true;
 	}
 
-	// Token: 0x060033E4 RID: 13284 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060033F2 RID: 13298 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsCompassIconClamped()
 	{
 		return true;
 	}
 
-	// Token: 0x060033E5 RID: 13285 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060033F3 RID: 13299 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool NearbyCompassBlink()
 	{
 		return true;
 	}
 
-	// Token: 0x060033E6 RID: 13286 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060033F4 RID: 13300 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLayerForMapIcon()
 	{
 		return 0;
 	}
 
-	// Token: 0x060033E7 RID: 13287 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060033F5 RID: 13301 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMapIconEnabled()
 	{
 		return false;
 	}
 
-	// Token: 0x060033E8 RID: 13288 RVA: 0x0014DC24 File Offset: 0x0014BE24
+	// Token: 0x060033F6 RID: 13302 RVA: 0x0014E818 File Offset: 0x0014CA18
 	public override Color GetMapIconColor()
 	{
 		if (this.IsSelected)
@@ -80,10 +80,10 @@ public class MapObjectRestorePower : MapObject
 		return Color.yellow;
 	}
 
-	// Token: 0x04002903 RID: 10499
+	// Token: 0x0400291E RID: 10526
 	public bool IsSelected;
 
-	// Token: 0x04002904 RID: 10500
+	// Token: 0x0400291F RID: 10527
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int newID;
 }

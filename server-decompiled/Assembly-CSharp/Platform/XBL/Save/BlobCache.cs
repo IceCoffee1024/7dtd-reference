@@ -10,10 +10,10 @@ using Platform.XBL.Save.MasterFileTable.Latest;
 
 namespace Platform.XBL.Save
 {
-	// Token: 0x02001C6B RID: 7275
+	// Token: 0x02001C9C RID: 7324
 	public class BlobCache
 	{
-		// Token: 0x0600D7C5 RID: 55237 RVA: 0x004D650D File Offset: 0x004D470D
+		// Token: 0x0600D8D9 RID: 55513 RVA: 0x004DA05D File Offset: 0x004D825D
 		[Conditional("DEBUG_SAVE_DATA_MANAGER")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogTrace(string text)
@@ -21,28 +21,28 @@ namespace Platform.XBL.Save
 			Log.Out("[XBL: BlobCache] " + text);
 		}
 
-		// Token: 0x0600D7C6 RID: 55238 RVA: 0x004D650D File Offset: 0x004D470D
+		// Token: 0x0600D8DA RID: 55514 RVA: 0x004DA05D File Offset: 0x004D825D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogInfo(string text)
 		{
 			Log.Out("[XBL: BlobCache] " + text);
 		}
 
-		// Token: 0x0600D7C7 RID: 55239 RVA: 0x004D651F File Offset: 0x004D471F
+		// Token: 0x0600D8DB RID: 55515 RVA: 0x004DA06F File Offset: 0x004D826F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogWarning(string text)
 		{
 			Log.Warning("[XBL: BlobCache] " + text);
 		}
 
-		// Token: 0x0600D7C8 RID: 55240 RVA: 0x004D6531 File Offset: 0x004D4731
+		// Token: 0x0600D8DC RID: 55516 RVA: 0x004DA081 File Offset: 0x004D8281
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogError(string text)
 		{
 			Log.Error("[XBL: BlobCache] " + text);
 		}
 
-		// Token: 0x0600D7C9 RID: 55241 RVA: 0x004D6544 File Offset: 0x004D4744
+		// Token: 0x0600D8DD RID: 55517 RVA: 0x004DA094 File Offset: 0x004D8294
 		public BlobCache(string containerName, IEnumerable<BlobRef> expectedBlobRefs)
 		{
 			if (!LaunchPrefs.GameCoreBlobCache.Value)
@@ -120,7 +120,7 @@ namespace Platform.XBL.Save
 			BlobCache.LogInfo(string.Format("Cached validated in {0:F3} ms.", microStopwatch.Elapsed.TotalMilliseconds));
 		}
 
-		// Token: 0x0600D7CA RID: 55242 RVA: 0x004D68D8 File Offset: 0x004D4AD8
+		// Token: 0x0600D8DE RID: 55518 RVA: 0x004DA428 File Offset: 0x004D8628
 		public bool Contains(BlobRef requestedRef)
 		{
 			if (!LaunchPrefs.GameCoreBlobCache.Value)
@@ -139,7 +139,7 @@ namespace Platform.XBL.Save
 			return !(requestedRef != blobRef);
 		}
 
-		// Token: 0x0600D7CB RID: 55243 RVA: 0x004D6948 File Offset: 0x004D4B48
+		// Token: 0x0600D8DF RID: 55519 RVA: 0x004DA498 File Offset: 0x004D8698
 		public bool TryGet(BlobRef requestedRef, out RefCountedBuffer buffer)
 		{
 			if (!LaunchPrefs.GameCoreBlobCache.Value)
@@ -225,7 +225,7 @@ namespace Platform.XBL.Save
 			return flag2;
 		}
 
-		// Token: 0x0600D7CC RID: 55244 RVA: 0x004D6B68 File Offset: 0x004D4D68
+		// Token: 0x0600D8E0 RID: 55520 RVA: 0x004DA6B8 File Offset: 0x004D88B8
 		public BlobRef Set(ulong blobId, RefCountedBuffer buffer)
 		{
 			BlobRef blobRef = new BlobRef
@@ -274,7 +274,7 @@ namespace Platform.XBL.Save
 			return blobRef3;
 		}
 
-		// Token: 0x0600D7CD RID: 55245 RVA: 0x004D6CC4 File Offset: 0x004D4EC4
+		// Token: 0x0600D8E1 RID: 55521 RVA: 0x004DA814 File Offset: 0x004D8A14
 		public void Invalidate(ulong blobId)
 		{
 			if (!LaunchPrefs.GameCoreBlobCache.Value)
@@ -303,7 +303,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7CE RID: 55246 RVA: 0x004D6D74 File Offset: 0x004D4F74
+		// Token: 0x0600D8E2 RID: 55522 RVA: 0x004DA8C4 File Offset: 0x004D8AC4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BlobCache.FileScope GetCachedPath(ulong blobId, out string filePath)
 		{
@@ -325,27 +325,27 @@ namespace Platform.XBL.Save
 			return fileScope2;
 		}
 
-		// Token: 0x0400A40A RID: 41994
+		// Token: 0x0400A4F3 RID: 42227
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string m_root;
 
-		// Token: 0x0400A40B RID: 41995
+		// Token: 0x0400A4F4 RID: 42228
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_blobRefsLock = new object();
 
-		// Token: 0x0400A40C RID: 41996
+		// Token: 0x0400A4F5 RID: 42229
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<ulong, BlobRef> m_blobRefs;
 
-		// Token: 0x0400A40D RID: 41997
+		// Token: 0x0400A4F6 RID: 42230
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ConcurrentDictionary<ulong, byte> m_inUse;
 
-		// Token: 0x02001C6C RID: 7276
+		// Token: 0x02001C9D RID: 7325
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly struct FileScope : IDisposable
 		{
-			// Token: 0x0600D7CF RID: 55247 RVA: 0x004D6DD0 File Offset: 0x004D4FD0
+			// Token: 0x0600D8E3 RID: 55523 RVA: 0x004DA920 File Offset: 0x004D8B20
 			public FileScope(BlobCache parent, ulong blobId)
 			{
 				this.m_parent = parent;
@@ -356,7 +356,7 @@ namespace Platform.XBL.Save
 				}
 			}
 
-			// Token: 0x0600D7D0 RID: 55248 RVA: 0x004D6E04 File Offset: 0x004D5004
+			// Token: 0x0600D8E4 RID: 55524 RVA: 0x004DA954 File Offset: 0x004D8B54
 			public void Dispose()
 			{
 				byte b;
@@ -366,11 +366,11 @@ namespace Platform.XBL.Save
 				}
 			}
 
-			// Token: 0x0400A40E RID: 41998
+			// Token: 0x0400A4F7 RID: 42231
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly BlobCache m_parent;
 
-			// Token: 0x0400A40F RID: 41999
+			// Token: 0x0400A4F8 RID: 42232
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly ulong m_blobId;
 		}

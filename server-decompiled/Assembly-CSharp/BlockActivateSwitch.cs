@@ -18,7 +18,7 @@ public class BlockActivateSwitch : Block
 		}
 	}
 
-	// Token: 0x06000730 RID: 1840 RVA: 0x00033CC1 File Offset: 0x00031EC1
+	// Token: 0x06000730 RID: 1840 RVA: 0x00033C81 File Offset: 0x00031E81
 	public override void Init()
 	{
 		base.Init();
@@ -26,41 +26,41 @@ public class BlockActivateSwitch : Block
 		base.Properties.ParseString(BlockActivateSwitch.PropActivateSound, ref this.activateSound);
 	}
 
-	// Token: 0x06000731 RID: 1841 RVA: 0x000337E3 File Offset: 0x000319E3
+	// Token: 0x06000731 RID: 1841 RVA: 0x000337A3 File Offset: 0x000319A3
 	public override void LateInit()
 	{
 		base.LateInit();
 	}
 
-	// Token: 0x06000732 RID: 1842 RVA: 0x000337EB File Offset: 0x000319EB
+	// Token: 0x06000732 RID: 1842 RVA: 0x000337AB File Offset: 0x000319AB
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 		this.Refresh(_world, _chunk, _blockPos, _newBlockValue);
 	}
 
-	// Token: 0x06000733 RID: 1843 RVA: 0x00033805 File Offset: 0x00031A05
+	// Token: 0x06000733 RID: 1843 RVA: 0x000337C5 File Offset: 0x000319C5
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.Refresh(_world, null, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000734 RID: 1844 RVA: 0x0003381C File Offset: 0x00031A1C
+	// Token: 0x06000734 RID: 1844 RVA: 0x000337DC File Offset: 0x000319DC
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		BlockUtilityNavIcon.RemoveNavObject(_blockPos);
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000735 RID: 1845 RVA: 0x0003382F File Offset: 0x00031A2F
+	// Token: 0x06000735 RID: 1845 RVA: 0x000337EF File Offset: 0x000319EF
 	public override void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		BlockUtilityNavIcon.RemoveNavObject(_blockPos);
 		base.OnBlockUnloaded(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000736 RID: 1846 RVA: 0x00033CF8 File Offset: 0x00031EF8
+	// Token: 0x06000736 RID: 1846 RVA: 0x00033CB8 File Offset: 0x00031EB8
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -80,7 +80,7 @@ public class BlockActivateSwitch : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x06000737 RID: 1847 RVA: 0x00033D8C File Offset: 0x00031F8C
+	// Token: 0x06000737 RID: 1847 RVA: 0x00033D4C File Offset: 0x00031F4C
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -94,7 +94,7 @@ public class BlockActivateSwitch : Block
 		this.Refresh(_world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000738 RID: 1848 RVA: 0x00033DF0 File Offset: 0x00031FF0
+	// Token: 0x06000738 RID: 1848 RVA: 0x00033DB0 File Offset: 0x00031FB0
 	public override void OnTriggerAddedFromPrefab(BlockTrigger _trigger, Vector3i _blockPos, BlockValue _blockValue, FastTags<TagGroup.Global> _questTags)
 	{
 		if (GameManager.Instance.World.IsEditor())
@@ -109,7 +109,7 @@ public class BlockActivateSwitch : Block
 		this.Refresh(GameManager.Instance.World, _trigger.Chunk, _trigger.LocalChunkPos, _blockValue);
 	}
 
-	// Token: 0x06000739 RID: 1849 RVA: 0x00033E74 File Offset: 0x00032074
+	// Token: 0x06000739 RID: 1849 RVA: 0x00033E34 File Offset: 0x00032034
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!_world.IsEditor())
@@ -151,7 +151,7 @@ public class BlockActivateSwitch : Block
 		return false;
 	}
 
-	// Token: 0x0600073A RID: 1850 RVA: 0x00033FA0 File Offset: 0x000321A0
+	// Token: 0x0600073A RID: 1850 RVA: 0x00033F60 File Offset: 0x00032160
 	public override void OnTriggerRefresh(BlockTrigger _trigger, BlockValue _bv, FastTags<TagGroup.Global> questTag)
 	{
 		GameManager gm = GameManager.Instance;
@@ -168,7 +168,7 @@ public class BlockActivateSwitch : Block
 		return true;
 	}
 
-	// Token: 0x0600073C RID: 1852 RVA: 0x00034000 File Offset: 0x00032200
+	// Token: 0x0600073C RID: 1852 RVA: 0x00033FC0 File Offset: 0x000321C0
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		((Chunk)_world.ChunkCache.GetChunkSync(World.toChunkXZ(_blockPos.x), _blockPos.y, World.toChunkXZ(_blockPos.z))).GetBlockTrigger(World.toBlock(_blockPos));
@@ -177,7 +177,7 @@ public class BlockActivateSwitch : Block
 		return this.cmds;
 	}
 
-	// Token: 0x0600073D RID: 1853 RVA: 0x0003408C File Offset: 0x0003228C
+	// Token: 0x0600073D RID: 1853 RVA: 0x0003404C File Offset: 0x0003224C
 	public override void Refresh(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.Refresh(_world, _chunk, _blockPos, _blockValue);
@@ -214,7 +214,7 @@ public class BlockActivateSwitch : Block
 		}
 	}
 
-	// Token: 0x0600073E RID: 1854 RVA: 0x00034144 File Offset: 0x00032344
+	// Token: 0x0600073E RID: 1854 RVA: 0x00034104 File Offset: 0x00032304
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);

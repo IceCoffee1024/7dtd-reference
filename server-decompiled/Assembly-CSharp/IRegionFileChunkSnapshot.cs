@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x02000BA6 RID: 2982
+// Token: 0x02000BB1 RID: 2993
 public interface IRegionFileChunkSnapshot
 {
-	// Token: 0x17000991 RID: 2449
-	// (get) Token: 0x060059CD RID: 22989
+	// Token: 0x17000997 RID: 2455
+	// (get) Token: 0x060059F2 RID: 23026
 	long Size { get; }
 
-	// Token: 0x060059CE RID: 22990
+	// Token: 0x060059F3 RID: 23027
 	void Update(Chunk chunk, bool saveIfUnchanged);
 
-	// Token: 0x060059CF RID: 22991
+	// Token: 0x060059F4 RID: 23028
 	void Write(RegionFileChunkWriter writer, string dir, int chunkX, int chunkZ);
 
-	// Token: 0x060059D0 RID: 22992
+	// Token: 0x060059F5 RID: 23029
 	void Reset();
 }

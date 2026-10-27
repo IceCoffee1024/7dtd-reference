@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015A6 RID: 5542
+// Token: 0x020015B8 RID: 5560
 public sealed class vp_Layer
 {
-	// Token: 0x0600AD0C RID: 44300 RVA: 0x00407A10 File Offset: 0x00405C10
+	// Token: 0x0600AD64 RID: 44388 RVA: 0x00409E14 File Offset: 0x00408014
 	[PublicizedFrom(EAccessModifier.Private)]
 	static vp_Layer()
 	{
@@ -13,13 +13,13 @@ public sealed class vp_Layer
 		Physics.IgnoreLayerCollision(22, 23);
 	}
 
-	// Token: 0x0600AD0D RID: 44301 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600AD65 RID: 44389 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public vp_Layer()
 	{
 	}
 
-	// Token: 0x0600AD0E RID: 44302 RVA: 0x00407A38 File Offset: 0x00405C38
+	// Token: 0x0600AD66 RID: 44390 RVA: 0x00409E3C File Offset: 0x0040803C
 	public static void Set(GameObject obj, int layer, bool recursive = false)
 	{
 		if (layer < 0 || layer > 31)
@@ -37,73 +37,73 @@ public sealed class vp_Layer
 		}
 	}
 
-	// Token: 0x0600AD0F RID: 44303 RVA: 0x00407AB4 File Offset: 0x00405CB4
+	// Token: 0x0600AD67 RID: 44391 RVA: 0x00409EB8 File Offset: 0x004080B8
 	public static bool IsInMask(int layer, int layerMask)
 	{
 		return (layerMask & (1 << layer)) == 0;
 	}
 
-	// Token: 0x04008002 RID: 32770
+	// Token: 0x04008043 RID: 32835
 	public static readonly vp_Layer instance = new vp_Layer();
 
-	// Token: 0x04008003 RID: 32771
+	// Token: 0x04008044 RID: 32836
 	public const int Default = 0;
 
-	// Token: 0x04008004 RID: 32772
+	// Token: 0x04008045 RID: 32837
 	public const int TransparentFX = 1;
 
-	// Token: 0x04008005 RID: 32773
+	// Token: 0x04008046 RID: 32838
 	public const int IgnoreRaycast = 2;
 
-	// Token: 0x04008006 RID: 32774
+	// Token: 0x04008047 RID: 32839
 	public const int Water = 4;
 
-	// Token: 0x04008007 RID: 32775
+	// Token: 0x04008048 RID: 32840
 	public const int Ragdoll = 22;
 
-	// Token: 0x04008008 RID: 32776
+	// Token: 0x04008049 RID: 32841
 	public const int PlayerDamageCollider = 23;
 
-	// Token: 0x04008009 RID: 32777
+	// Token: 0x0400804A RID: 32842
 	public const int IgnoreBullets = 24;
 
-	// Token: 0x0400800A RID: 32778
+	// Token: 0x0400804B RID: 32843
 	public const int Enemy = 25;
 
-	// Token: 0x0400800B RID: 32779
+	// Token: 0x0400804C RID: 32844
 	public const int Pickup = 26;
 
-	// Token: 0x0400800C RID: 32780
+	// Token: 0x0400804D RID: 32845
 	public const int Trigger = 27;
 
-	// Token: 0x0400800D RID: 32781
+	// Token: 0x0400804E RID: 32846
 	public const int MovableObject = 28;
 
-	// Token: 0x0400800E RID: 32782
+	// Token: 0x0400804F RID: 32847
 	public const int Debris = 29;
 
-	// Token: 0x0400800F RID: 32783
+	// Token: 0x04008050 RID: 32848
 	public const int LocalPlayer = 30;
 
-	// Token: 0x04008010 RID: 32784
+	// Token: 0x04008051 RID: 32849
 	public const int Weapon = 10;
 
-	// Token: 0x020015A7 RID: 5543
+	// Token: 0x020015B9 RID: 5561
 	public static class Mask
 	{
-		// Token: 0x04008011 RID: 32785
+		// Token: 0x04008052 RID: 32850
 		public const int BulletBlockers = -538750989;
 
-		// Token: 0x04008012 RID: 32786
+		// Token: 0x04008053 RID: 32851
 		public const int ExternalBlockers = 1084850184;
 
-		// Token: 0x04008013 RID: 32787
+		// Token: 0x04008054 RID: 32852
 		public const int CameraBlockers = 1082195968;
 
-		// Token: 0x04008014 RID: 32788
+		// Token: 0x04008055 RID: 32853
 		public const int PhysicsBlockers = 2261000;
 
-		// Token: 0x04008015 RID: 32789
+		// Token: 0x04008056 RID: 32854
 		public const int IgnoreWalkThru = -738197525;
 	}
 }

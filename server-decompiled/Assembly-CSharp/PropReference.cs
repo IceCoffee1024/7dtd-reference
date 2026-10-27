@@ -5,8 +5,8 @@ using UnityEngine;
 public class PropReference : MonoBehaviour
 {
 	// Token: 0x170000F0 RID: 240
-	// (get) Token: 0x06000C35 RID: 3125 RVA: 0x0004C77B File Offset: 0x0004A97B
-	// (set) Token: 0x06000C36 RID: 3126 RVA: 0x0004C78E File Offset: 0x0004A98E
+	// (get) Token: 0x06000C35 RID: 3125 RVA: 0x0004C73B File Offset: 0x0004A93B
+	// (set) Token: 0x06000C36 RID: 3126 RVA: 0x0004C74E File Offset: 0x0004A94E
 	public Vector2i ChunkPos
 	{
 		get
@@ -21,8 +21,8 @@ public class PropReference : MonoBehaviour
 	}
 
 	// Token: 0x170000F1 RID: 241
-	// (get) Token: 0x06000C37 RID: 3127 RVA: 0x0004C7A8 File Offset: 0x0004A9A8
-	// (set) Token: 0x06000C38 RID: 3128 RVA: 0x0004C7E3 File Offset: 0x0004A9E3
+	// (get) Token: 0x06000C37 RID: 3127 RVA: 0x0004C768 File Offset: 0x0004A968
+	// (set) Token: 0x06000C38 RID: 3128 RVA: 0x0004C7A3 File Offset: 0x0004A9A3
 	public PropRef PropRef
 	{
 		get
@@ -41,7 +41,7 @@ public class PropReference : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C39 RID: 3129 RVA: 0x0004C814 File Offset: 0x0004AA14
+	// Token: 0x06000C39 RID: 3129 RVA: 0x0004C7D4 File Offset: 0x0004A9D4
 	public override string ToString()
 	{
 		return this.PropRef.ToString();

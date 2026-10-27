@@ -2,106 +2,106 @@
 
 namespace Platform
 {
-	// Token: 0x02001B5D RID: 7005
+	// Token: 0x02001B8E RID: 7054
 	public enum EnumAchievementManagerAchievement
 	{
-		// Token: 0x0400A03F RID: 41023
+		// Token: 0x0400A128 RID: 41256
 		StoneAxe,
-		// Token: 0x0400A040 RID: 41024
+		// Token: 0x0400A129 RID: 41257
 		Bedroll,
-		// Token: 0x0400A041 RID: 41025
+		// Token: 0x0400A12A RID: 41258
 		BleedOut,
-		// Token: 0x0400A042 RID: 41026
+		// Token: 0x0400A12B RID: 41259
 		WoodFrame,
-		// Token: 0x0400A043 RID: 41027
+		// Token: 0x0400A12C RID: 41260
 		LandClaim,
-		// Token: 0x0400A044 RID: 41028
+		// Token: 0x0400A12D RID: 41261
 		Items50,
-		// Token: 0x0400A045 RID: 41029
+		// Token: 0x0400A12E RID: 41262
 		Items500,
-		// Token: 0x0400A046 RID: 41030
+		// Token: 0x0400A12F RID: 41263
 		Items1500,
-		// Token: 0x0400A047 RID: 41031
+		// Token: 0x0400A130 RID: 41264
 		Items5000,
-		// Token: 0x0400A048 RID: 41032
+		// Token: 0x0400A131 RID: 41265
 		Zombies10,
-		// Token: 0x0400A049 RID: 41033
+		// Token: 0x0400A132 RID: 41266
 		Zombies100,
-		// Token: 0x0400A04A RID: 41034
+		// Token: 0x0400A133 RID: 41267
 		Zombies500,
-		// Token: 0x0400A04B RID: 41035
+		// Token: 0x0400A134 RID: 41268
 		Zombies2500,
-		// Token: 0x0400A04C RID: 41036
+		// Token: 0x0400A135 RID: 41269
 		Players1,
-		// Token: 0x0400A04D RID: 41037
+		// Token: 0x0400A136 RID: 41270
 		Players5,
-		// Token: 0x0400A04E RID: 41038
+		// Token: 0x0400A137 RID: 41271
 		Players10,
-		// Token: 0x0400A04F RID: 41039
+		// Token: 0x0400A138 RID: 41272
 		Players25,
-		// Token: 0x0400A050 RID: 41040
+		// Token: 0x0400A139 RID: 41273
 		Travel10,
-		// Token: 0x0400A051 RID: 41041
+		// Token: 0x0400A13A RID: 41274
 		Travel50,
-		// Token: 0x0400A052 RID: 41042
+		// Token: 0x0400A13B RID: 41275
 		Travel250,
-		// Token: 0x0400A053 RID: 41043
+		// Token: 0x0400A13C RID: 41276
 		Travel1000,
-		// Token: 0x0400A054 RID: 41044
+		// Token: 0x0400A13D RID: 41277
 		Die1,
-		// Token: 0x0400A055 RID: 41045
+		// Token: 0x0400A13E RID: 41278
 		Die7,
-		// Token: 0x0400A056 RID: 41046
+		// Token: 0x0400A13F RID: 41279
 		Die14,
-		// Token: 0x0400A057 RID: 41047
+		// Token: 0x0400A140 RID: 41280
 		Die28,
-		// Token: 0x0400A058 RID: 41048
+		// Token: 0x0400A141 RID: 41281
 		Height255,
-		// Token: 0x0400A059 RID: 41049
+		// Token: 0x0400A142 RID: 41282
 		Height0,
-		// Token: 0x0400A05A RID: 41050
+		// Token: 0x0400A143 RID: 41283
 		SubZeroNaked,
-		// Token: 0x0400A05B RID: 41051
+		// Token: 0x0400A144 RID: 41284
 		Kills44Mag,
-		// Token: 0x0400A05C RID: 41052
+		// Token: 0x0400A145 RID: 41285
 		LegBreak,
-		// Token: 0x0400A05D RID: 41053
+		// Token: 0x0400A146 RID: 41286
 		Life60Minute,
-		// Token: 0x0400A05E RID: 41054
+		// Token: 0x0400A147 RID: 41287
 		Life180Minute,
-		// Token: 0x0400A05F RID: 41055
+		// Token: 0x0400A148 RID: 41288
 		Life600Minute,
-		// Token: 0x0400A060 RID: 41056
+		// Token: 0x0400A149 RID: 41289
 		Life1680Minute,
-		// Token: 0x0400A061 RID: 41057
+		// Token: 0x0400A14A RID: 41290
 		Fortitude4,
-		// Token: 0x0400A062 RID: 41058
+		// Token: 0x0400A14B RID: 41291
 		Fortitude6,
-		// Token: 0x0400A063 RID: 41059
+		// Token: 0x0400A14C RID: 41292
 		Fortitude8,
-		// Token: 0x0400A064 RID: 41060
+		// Token: 0x0400A14D RID: 41293
 		Fortitude10,
-		// Token: 0x0400A065 RID: 41061
+		// Token: 0x0400A14E RID: 41294
 		Gamestage10,
-		// Token: 0x0400A066 RID: 41062
+		// Token: 0x0400A14F RID: 41295
 		Gamestage25,
-		// Token: 0x0400A067 RID: 41063
+		// Token: 0x0400A150 RID: 41296
 		Gamestage50,
-		// Token: 0x0400A068 RID: 41064
+		// Token: 0x0400A151 RID: 41297
 		Gamestage100,
-		// Token: 0x0400A069 RID: 41065
+		// Token: 0x0400A152 RID: 41298
 		Gamestage200,
-		// Token: 0x0400A06A RID: 41066
+		// Token: 0x0400A153 RID: 41299
 		PlayerLevel7,
-		// Token: 0x0400A06B RID: 41067
+		// Token: 0x0400A154 RID: 41300
 		PlayerLevel28,
-		// Token: 0x0400A06C RID: 41068
+		// Token: 0x0400A155 RID: 41301
 		PlayerLevel70,
-		// Token: 0x0400A06D RID: 41069
+		// Token: 0x0400A156 RID: 41302
 		PlayerLevel140,
-		// Token: 0x0400A06E RID: 41070
+		// Token: 0x0400A157 RID: 41303
 		PlayerLevel300,
-		// Token: 0x0400A06F RID: 41071
+		// Token: 0x0400A158 RID: 41304
 		Last
 	}
 }

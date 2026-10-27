@@ -4,14 +4,14 @@ using UnityEngine.Scripting;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CD5 RID: 7381
+	// Token: 0x02001D06 RID: 7430
 	[Preserve]
 	[DoNotTouchSerializableFlags]
 	[Serializable]
 	public class UserIdentifierSteam : PlatformUserIdentifierAbs
 	{
-		// Token: 0x17001BA2 RID: 7074
-		// (get) Token: 0x0600DAEE RID: 56046 RVA: 0x000470B6 File Offset: 0x000452B6
+		// Token: 0x17001BEA RID: 7146
+		// (get) Token: 0x0600DC02 RID: 56322 RVA: 0x00047076 File Offset: 0x00045276
 		public override EPlatformIdentifier PlatformIdentifier
 		{
 			get
@@ -20,21 +20,21 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001BA3 RID: 7075
-		// (get) Token: 0x0600DAEF RID: 56047 RVA: 0x004E5950 File Offset: 0x004E3B50
+		// Token: 0x17001BEB RID: 7147
+		// (get) Token: 0x0600DC03 RID: 56323 RVA: 0x004E94F0 File Offset: 0x004E76F0
 		public override string PlatformIdentifierString { get; } = PlatformManager.PlatformStringFromEnum(EPlatformIdentifier.Steam);
 
-		// Token: 0x17001BA4 RID: 7076
-		// (get) Token: 0x0600DAF0 RID: 56048 RVA: 0x004E5958 File Offset: 0x004E3B58
+		// Token: 0x17001BEC RID: 7148
+		// (get) Token: 0x0600DC04 RID: 56324 RVA: 0x004E94F8 File Offset: 0x004E76F8
 		public override string ReadablePlatformUserIdentifier { get; }
 
-		// Token: 0x17001BA5 RID: 7077
-		// (get) Token: 0x0600DAF1 RID: 56049 RVA: 0x004E5960 File Offset: 0x004E3B60
+		// Token: 0x17001BED RID: 7149
+		// (get) Token: 0x0600DC05 RID: 56325 RVA: 0x004E9500 File Offset: 0x004E7700
 		public override string CombinedString { get; }
 
-		// Token: 0x17001BA6 RID: 7078
-		// (get) Token: 0x0600DAF2 RID: 56050 RVA: 0x004E5968 File Offset: 0x004E3B68
-		// (set) Token: 0x0600DAF3 RID: 56051 RVA: 0x004E5970 File Offset: 0x004E3B70
+		// Token: 0x17001BEE RID: 7150
+		// (get) Token: 0x0600DC06 RID: 56326 RVA: 0x004E9508 File Offset: 0x004E7708
+		// (set) Token: 0x0600DC07 RID: 56327 RVA: 0x004E9510 File Offset: 0x004E7710
 		public byte[] Ticket
 		{
 			get
@@ -48,7 +48,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600DAF4 RID: 56052 RVA: 0x004E597C File Offset: 0x004E3B7C
+		// Token: 0x0600DC08 RID: 56328 RVA: 0x004E951C File Offset: 0x004E771C
 		public UserIdentifierSteam(string _steamId)
 		{
 			ulong num;
@@ -62,7 +62,7 @@ namespace Platform.Steam
 			this.hashcode = num.GetHashCode() ^ ((int)this.PlatformIdentifier * 397);
 		}
 
-		// Token: 0x0600DAF5 RID: 56053 RVA: 0x004E5A04 File Offset: 0x004E3C04
+		// Token: 0x0600DC09 RID: 56329 RVA: 0x004E95A4 File Offset: 0x004E77A4
 		public UserIdentifierSteam(ulong _steamId)
 		{
 			if (_steamId < 10000000000000000UL || _steamId > 99999999999999999UL)
@@ -75,7 +75,7 @@ namespace Platform.Steam
 			this.hashcode = _steamId.GetHashCode() ^ ((int)this.PlatformIdentifier * 397);
 		}
 
-		// Token: 0x0600DAF6 RID: 56054 RVA: 0x004E5AA4 File Offset: 0x004E3CA4
+		// Token: 0x0600DC0A RID: 56330 RVA: 0x004E9644 File Offset: 0x004E7844
 		public UserIdentifierSteam(CSteamID _steamId)
 		{
 			this.SteamId = _steamId.m_SteamID;
@@ -87,7 +87,7 @@ namespace Platform.Steam
 			this.hashcode = _steamId.m_SteamID.GetHashCode() ^ ((int)this.PlatformIdentifier * 397);
 		}
 
-		// Token: 0x0600DAF7 RID: 56055 RVA: 0x004E5B28 File Offset: 0x004E3D28
+		// Token: 0x0600DC0B RID: 56331 RVA: 0x004E96C8 File Offset: 0x004E78C8
 		public override bool DecodeTicket(string _ticket)
 		{
 			if (string.IsNullOrEmpty(_ticket))
@@ -107,7 +107,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600DAF8 RID: 56056 RVA: 0x004E5B84 File Offset: 0x004E3D84
+		// Token: 0x0600DC0C RID: 56332 RVA: 0x004E9724 File Offset: 0x004E7924
 		public override bool Equals(PlatformUserIdentifierAbs _other)
 		{
 			if (_other == null)
@@ -122,24 +122,24 @@ namespace Platform.Steam
 			return userIdentifierSteam != null && userIdentifierSteam.SteamId == this.SteamId;
 		}
 
-		// Token: 0x0600DAF9 RID: 56057 RVA: 0x004E5BB6 File Offset: 0x004E3DB6
+		// Token: 0x0600DC0D RID: 56333 RVA: 0x004E9756 File Offset: 0x004E7956
 		public override int GetHashCode()
 		{
 			return this.hashcode;
 		}
 
-		// Token: 0x0400A5CB RID: 42443
+		// Token: 0x0400A6B4 RID: 42676
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public byte[] ticket;
 
-		// Token: 0x0400A5CC RID: 42444
+		// Token: 0x0400A6B5 RID: 42677
 		public UserIdentifierSteam OwnerId;
 
-		// Token: 0x0400A5CD RID: 42445
+		// Token: 0x0400A6B6 RID: 42678
 		public readonly ulong SteamId;
 
-		// Token: 0x0400A5CE RID: 42446
+		// Token: 0x0400A6B7 RID: 42679
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int hashcode;
 	}

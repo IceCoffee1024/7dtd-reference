@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x02000D18 RID: 3352
+// Token: 0x02000D23 RID: 3363
 public class EntitySpawnerClassesFromXml
 {
-	// Token: 0x060065E7 RID: 26087 RVA: 0x00281A40 File Offset: 0x0027FC40
+	// Token: 0x0600660C RID: 26124 RVA: 0x00282F68 File Offset: 0x00281168
 	public static bool LoadEntitySpawnerClasses(XDocument _spawnXml)
 	{
 		XElement root = _spawnXml.Root;

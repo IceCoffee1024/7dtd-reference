@@ -5,23 +5,23 @@ using Epic.OnlineServices.Connect;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D20 RID: 7456
+	// Token: 0x02001D51 RID: 7505
 	public class EosUserIdMapper : IUserIdentifierMappingService
 	{
-		// Token: 0x0600DD3C RID: 56636 RVA: 0x004ED495 File Offset: 0x004EB695
+		// Token: 0x0600DE50 RID: 56912 RVA: 0x004F1035 File Offset: 0x004EF235
 		public EosUserIdMapper(Api _eosApi, User _eosUser)
 		{
 			this.api = _eosApi;
 			this.user = _eosUser;
 		}
 
-		// Token: 0x0600DD3D RID: 56637 RVA: 0x004ED4AB File Offset: 0x004EB6AB
+		// Token: 0x0600DE51 RID: 56913 RVA: 0x004F104B File Offset: 0x004EF24B
 		public bool CanQuery(PlatformUserIdentifierAbs _id)
 		{
 			return _id is UserIdentifierEos;
 		}
 
-		// Token: 0x0600DD3E RID: 56638 RVA: 0x004ED4B8 File Offset: 0x004EB6B8
+		// Token: 0x0600DE52 RID: 56914 RVA: 0x004F1058 File Offset: 0x004EF258
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool TryValidateUser(out ProductUserId loggedInUser, out MappedAccountQueryResult failureResult)
 		{
@@ -50,7 +50,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DD3F RID: 56639 RVA: 0x004ED530 File Offset: 0x004EB730
+		// Token: 0x0600DE53 RID: 56915 RVA: 0x004F10D0 File Offset: 0x004EF2D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool TryValidateRequest(PlatformUserIdentifierAbs _id, EPlatformIdentifier _platform, out ProductUserId _puid)
 		{
@@ -70,7 +70,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DD40 RID: 56640 RVA: 0x004ED58C File Offset: 0x004EB78C
+		// Token: 0x0600DE54 RID: 56916 RVA: 0x004F112C File Offset: 0x004EF32C
 		public void QueryMappedAccountDetails(PlatformUserIdentifierAbs _id, EPlatformIdentifier _platform, MappedAccountQueryCallback _callback)
 		{
 			ProductUserId productUserId;
@@ -89,7 +89,7 @@ namespace Platform.EOS
 			this.QueryMappedExternalAccount(productUserId, productUserId2, _platform, _callback);
 		}
 
-		// Token: 0x0600DD41 RID: 56641 RVA: 0x004ED5D0 File Offset: 0x004EB7D0
+		// Token: 0x0600DE55 RID: 56917 RVA: 0x004F1170 File Offset: 0x004EF370
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void QueryMappedExternalAccount(ProductUserId _loggedInUser, ProductUserId _puid, EPlatformIdentifier _platform, MappedAccountQueryCallback _callback)
 		{
@@ -153,7 +153,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD42 RID: 56642 RVA: 0x004ED71C File Offset: 0x004EB91C
+		// Token: 0x0600DE56 RID: 56918 RVA: 0x004F12BC File Offset: 0x004EF4BC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool TryCopyResult(CopyProductUserExternalAccountByAccountTypeOptions _copyOptions, out ExternalAccountInfo _externalAccountInfo)
 		{
@@ -180,7 +180,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DD43 RID: 56643 RVA: 0x004ED7C8 File Offset: 0x004EB9C8
+		// Token: 0x0600DE57 RID: 56919 RVA: 0x004F1368 File Offset: 0x004EF568
 		public void QueryMappedAccountsDetails(IReadOnlyList<MappedAccountRequest> _requests, MappedAccountsQueryCallback _callback)
 		{
 			if (_requests.Count == 0)
@@ -202,7 +202,7 @@ namespace Platform.EOS
 			this.QueryMappedExternalAccounts(productUserId, _requests, _callback);
 		}
 
-		// Token: 0x0600DD44 RID: 56644 RVA: 0x004ED83C File Offset: 0x004EBA3C
+		// Token: 0x0600DE58 RID: 56920 RVA: 0x004F13DC File Offset: 0x004EF5DC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void QueryMappedExternalAccounts(ProductUserId _loggedInUser, IReadOnlyList<MappedAccountRequest> _requests, MappedAccountsQueryCallback _callback)
 		{
@@ -310,13 +310,13 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD45 RID: 56645 RVA: 0x004EDA18 File Offset: 0x004EBC18
+		// Token: 0x0600DE59 RID: 56921 RVA: 0x004F15B8 File Offset: 0x004EF7B8
 		public bool CanReverseQuery(EPlatformIdentifier _platform, string _platformId)
 		{
 			return EosHelpers.PlatformIdentifierMappings.ContainsKey(_platform);
 		}
 
-		// Token: 0x0600DD46 RID: 56646 RVA: 0x004EDA25 File Offset: 0x004EBC25
+		// Token: 0x0600DE5A RID: 56922 RVA: 0x004F15C5 File Offset: 0x004EF7C5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool TryValidateReverseRequest(EPlatformIdentifier _platform, out ExternalAccountType _externalAccountType)
 		{
@@ -328,7 +328,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DD47 RID: 56647 RVA: 0x004EDA50 File Offset: 0x004EBC50
+		// Token: 0x0600DE5B RID: 56923 RVA: 0x004F15F0 File Offset: 0x004EF7F0
 		public void ReverseQueryMappedAccountDetails(EPlatformIdentifier _platform, string _platformId, MappedAccountReverseQueryCallback _callback)
 		{
 			EosUserIdMapper.<>c__DisplayClass13_0 CS$<>8__locals1 = new EosUserIdMapper.<>c__DisplayClass13_0();
@@ -339,7 +339,7 @@ namespace Platform.EOS
 			}, new MappedAccountsReverseQueryCallback(CS$<>8__locals1.<ReverseQueryMappedAccountDetails>g__Callback|0));
 		}
 
-		// Token: 0x0600DD48 RID: 56648 RVA: 0x004EDA8C File Offset: 0x004EBC8C
+		// Token: 0x0600DE5C RID: 56924 RVA: 0x004F162C File Offset: 0x004EF82C
 		public void ReverseQueryMappedAccountsDetails(IReadOnlyList<MappedAccountReverseRequest> _requests, MappedAccountsReverseQueryCallback _callback)
 		{
 			if (_requests.Count == 0)
@@ -361,7 +361,7 @@ namespace Platform.EOS
 			this.QueryExternalAccountMappings(productUserId, _requests, _callback);
 		}
 
-		// Token: 0x0600DD49 RID: 56649 RVA: 0x004EDB00 File Offset: 0x004EBD00
+		// Token: 0x0600DE5D RID: 56925 RVA: 0x004F16A0 File Offset: 0x004EF8A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void QueryExternalAccountMappings(ProductUserId _loggedInUser, IReadOnlyList<MappedAccountReverseRequest> _requests, MappedAccountsReverseQueryCallback _callback)
 		{
@@ -428,7 +428,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD4A RID: 56650 RVA: 0x004EDCDC File Offset: 0x004EBEDC
+		// Token: 0x0600DE5E RID: 56926 RVA: 0x004F187C File Offset: 0x004EFA7C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void QueryExternalAccountMappings(ProductUserId _loggedInUser, ExternalAccountType _externalAccountType, IReadOnlyList<MappedAccountReverseRequest> _requests, Action _callback)
 		{
@@ -502,11 +502,11 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0400A6F1 RID: 42737
+		// Token: 0x0400A7DA RID: 42970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Api api;
 
-		// Token: 0x0400A6F2 RID: 42738
+		// Token: 0x0400A7DB RID: 42971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User user;
 	}

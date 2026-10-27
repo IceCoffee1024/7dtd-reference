@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x020003B7 RID: 951
+// Token: 0x020003B9 RID: 953
 public class DynamicMeshChunkProcessor
 {
 	// Token: 0x17000351 RID: 849
-	// (get) Token: 0x06001C62 RID: 7266 RVA: 0x000A32B7 File Offset: 0x000A14B7
+	// (get) Token: 0x06001C66 RID: 7270 RVA: 0x000A34C7 File Offset: 0x000A16C7
 	public static World world
 	{
 		get
@@ -18,7 +18,7 @@ public class DynamicMeshChunkProcessor
 	}
 
 	// Token: 0x17000352 RID: 850
-	// (get) Token: 0x06001C63 RID: 7267 RVA: 0x000A88B4 File Offset: 0x000A6AB4
+	// (get) Token: 0x06001C67 RID: 7271 RVA: 0x000A8AC4 File Offset: 0x000A6CC4
 	public double InactiveTime
 	{
 		get
@@ -28,7 +28,7 @@ public class DynamicMeshChunkProcessor
 	}
 
 	// Token: 0x17000353 RID: 851
-	// (get) Token: 0x06001C64 RID: 7268 RVA: 0x0009CDF7 File Offset: 0x0009AFF7
+	// (get) Token: 0x06001C68 RID: 7272 RVA: 0x0009D02B File Offset: 0x0009B22B
 	public static bool IsServer
 	{
 		get
@@ -37,13 +37,13 @@ public class DynamicMeshChunkProcessor
 		}
 	}
 
-	// Token: 0x06001C65 RID: 7269 RVA: 0x000A88DC File Offset: 0x000A6ADC
+	// Token: 0x06001C69 RID: 7273 RVA: 0x000A8AEC File Offset: 0x000A6CEC
 	public static bool IsChunkLoaded(Chunk c)
 	{
 		return c != null && !c.InProgressUnloading && !c.InProgressSaving && !c.InProgressDecorating && !c.InProgressCopying && !c.InProgressLighting && !c.InProgressNetworking && !c.InProgressRegeneration && c != null && !c.IsLocked && !c.IsLockedExceptUnloading;
 	}
 
-	// Token: 0x06001C66 RID: 7270 RVA: 0x000A894C File Offset: 0x000A6B4C
+	// Token: 0x06001C6A RID: 7274 RVA: 0x000A8B5C File Offset: 0x000A6D5C
 	public int AddNewItem(DynamicMeshItem item, bool isPrimary)
 	{
 		if (this.Status != DynamicMeshBuilderStatus.Ready)
@@ -68,7 +68,7 @@ public class DynamicMeshChunkProcessor
 		return 1;
 	}
 
-	// Token: 0x06001C67 RID: 7271 RVA: 0x000A89DC File Offset: 0x000A6BDC
+	// Token: 0x06001C6B RID: 7275 RVA: 0x000A8BEC File Offset: 0x000A6DEC
 	public int AddRegenerateRegion(DynamicMeshThread.ThreadRegion region)
 	{
 		if (this.Status != DynamicMeshBuilderStatus.Ready)
@@ -89,7 +89,7 @@ public class DynamicMeshChunkProcessor
 		return 1;
 	}
 
-	// Token: 0x06001C68 RID: 7272 RVA: 0x000A8A54 File Offset: 0x000A6C54
+	// Token: 0x06001C6C RID: 7276 RVA: 0x000A8C64 File Offset: 0x000A6E64
 	public int AddItemForMeshPreview(DynamicMeshItem item, ChunkPreviewData previewData)
 	{
 		if (this.Status != DynamicMeshBuilderStatus.Ready)
@@ -115,7 +115,7 @@ public class DynamicMeshChunkProcessor
 		return 1;
 	}
 
-	// Token: 0x06001C69 RID: 7273 RVA: 0x000A8AE8 File Offset: 0x000A6CE8
+	// Token: 0x06001C6D RID: 7277 RVA: 0x000A8CF8 File Offset: 0x000A6EF8
 	public int AddItemForMeshGeneration(DynamicMeshItem item, bool isPrimary)
 	{
 		if (this.Status != DynamicMeshBuilderStatus.Ready)
@@ -141,14 +141,14 @@ public class DynamicMeshChunkProcessor
 		return 1;
 	}
 
-	// Token: 0x06001C6A RID: 7274 RVA: 0x000A8B90 File Offset: 0x000A6D90
+	// Token: 0x06001C6E RID: 7278 RVA: 0x000A8DA0 File Offset: 0x000A6FA0
 	public void CleanUp()
 	{
 		this.MeshLayer.Cleanup();
 		this.MeshLayer = null;
 	}
 
-	// Token: 0x06001C6B RID: 7275 RVA: 0x000A8BA4 File Offset: 0x000A6DA4
+	// Token: 0x06001C6F RID: 7279 RVA: 0x000A8DB4 File Offset: 0x000A6FB4
 	public void RequestStop(bool forceStop = false)
 	{
 		this.StopRequested = true;
@@ -169,7 +169,7 @@ public class DynamicMeshChunkProcessor
 		this.Status = DynamicMeshBuilderStatus.Stopped;
 	}
 
-	// Token: 0x06001C6C RID: 7276 RVA: 0x000A8BE8 File Offset: 0x000A6DE8
+	// Token: 0x06001C70 RID: 7280 RVA: 0x000A8DF8 File Offset: 0x000A6FF8
 	public void StartThread()
 	{
 		if (DynamicMeshChunkProcessor.DebugOnMainThread)
@@ -215,7 +215,7 @@ public class DynamicMeshChunkProcessor
 		this.thread.Start();
 	}
 
-	// Token: 0x06001C6D RID: 7277 RVA: 0x000A8C3C File Offset: 0x000A6E3C
+	// Token: 0x06001C71 RID: 7281 RVA: 0x000A8E4C File Offset: 0x000A704C
 	public void RunJob()
 	{
 		if (this.Status == DynamicMeshBuilderStatus.Ready || this.Status == DynamicMeshBuilderStatus.Complete || this.Status == DynamicMeshBuilderStatus.PreviewComplete || this.Status == DynamicMeshBuilderStatus.Error)
@@ -248,7 +248,7 @@ public class DynamicMeshChunkProcessor
 		}
 	}
 
-	// Token: 0x06001C6E RID: 7278 RVA: 0x000A8CF0 File Offset: 0x000A6EF0
+	// Token: 0x06001C72 RID: 7282 RVA: 0x000A8F00 File Offset: 0x000A7100
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ExportMeshResult SetResultPreview(ExportMeshResult result)
 	{
@@ -259,7 +259,7 @@ public class DynamicMeshChunkProcessor
 		return result;
 	}
 
-	// Token: 0x06001C6F RID: 7279 RVA: 0x000A8D20 File Offset: 0x000A6F20
+	// Token: 0x06001C73 RID: 7283 RVA: 0x000A8F30 File Offset: 0x000A7130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ExportMeshResult SetResult(ExportMeshResult result)
 	{
@@ -274,7 +274,7 @@ public class DynamicMeshChunkProcessor
 		return result;
 	}
 
-	// Token: 0x06001C70 RID: 7280 RVA: 0x000A8D70 File Offset: 0x000A6F70
+	// Token: 0x06001C74 RID: 7284 RVA: 0x000A8F80 File Offset: 0x000A7180
 	public void Init(int id)
 	{
 		this.LastActive = DateTime.Now;
@@ -298,21 +298,21 @@ public class DynamicMeshChunkProcessor
 		}
 	}
 
-	// Token: 0x06001C71 RID: 7281 RVA: 0x000A8E34 File Offset: 0x000A7034
+	// Token: 0x06001C75 RID: 7285 RVA: 0x000A9044 File Offset: 0x000A7244
 	public ExportMeshResult CreatePreviewMeshJob()
 	{
 		ExportMeshResult exportMeshResult = this.CreatePreviewMesh();
 		return this.SetResultPreview(exportMeshResult);
 	}
 
-	// Token: 0x06001C72 RID: 7282 RVA: 0x000A8E50 File Offset: 0x000A7050
+	// Token: 0x06001C76 RID: 7286 RVA: 0x000A9060 File Offset: 0x000A7260
 	public ExportMeshResult CreateMesh(DynamicMeshItem item)
 	{
 		ExportMeshResult exportMeshResult = this.CreateMesh(item.Key, false);
 		return this.SetResult(exportMeshResult);
 	}
 
-	// Token: 0x06001C73 RID: 7283 RVA: 0x000A8E74 File Offset: 0x000A7074
+	// Token: 0x06001C77 RID: 7287 RVA: 0x000A9084 File Offset: 0x000A7284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderChunkMeshToData(Vector3i worldPosition, Chunk chunk, DyMeshData data, bool fullHeight)
 	{
@@ -352,7 +352,7 @@ public class DynamicMeshChunkProcessor
 		}
 	}
 
-	// Token: 0x06001C74 RID: 7284 RVA: 0x000A8FD8 File Offset: 0x000A71D8
+	// Token: 0x06001C78 RID: 7288 RVA: 0x000A91E8 File Offset: 0x000A73E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ExportMeshResult CreateMesh(long key, bool isRegionRegen)
 	{
@@ -448,7 +448,7 @@ public class DynamicMeshChunkProcessor
 		return ExportMeshResult.Success;
 	}
 
-	// Token: 0x06001C75 RID: 7285 RVA: 0x000A9384 File Offset: 0x000A7584
+	// Token: 0x06001C79 RID: 7289 RVA: 0x000A9594 File Offset: 0x000A7794
 	public ExportMeshResult CreatePreviewMesh()
 	{
 		WorldBase world = GameManager.Instance.World;
@@ -525,7 +525,7 @@ public class DynamicMeshChunkProcessor
 		return ExportMeshResult.PreviewSuccess;
 	}
 
-	// Token: 0x06001C76 RID: 7286 RVA: 0x000A9640 File Offset: 0x000A7840
+	// Token: 0x06001C7A RID: 7290 RVA: 0x000A9850 File Offset: 0x000A7A50
 	public ExportMeshResult ExportChunk(DynamicMeshItem item)
 	{
 		WorldBase world = GameManager.Instance.World;
@@ -599,7 +599,7 @@ public class DynamicMeshChunkProcessor
 		return this.SetResult(ExportMeshResult.Success);
 	}
 
-	// Token: 0x06001C77 RID: 7287 RVA: 0x000A9878 File Offset: 0x000A7A78
+	// Token: 0x06001C7B RID: 7291 RVA: 0x000A9A88 File Offset: 0x000A7C88
 	public Chunk CopyPreviewChunk(Chunk chunkInWorld, Chunk previewChunk, bool isNeighbour)
 	{
 		Vector3i worldPos = chunkInWorld.GetWorldPos();
@@ -645,7 +645,7 @@ public class DynamicMeshChunkProcessor
 		return previewChunk;
 	}
 
-	// Token: 0x06001C78 RID: 7288 RVA: 0x000A9A34 File Offset: 0x000A7C34
+	// Token: 0x06001C7C RID: 7292 RVA: 0x000A9C44 File Offset: 0x000A7E44
 	public bool CopyChunkFromWorld(Chunk chunkInWorld, DynamicMeshChunkData data, bool fullCopy)
 	{
 		data.Reset();
@@ -804,7 +804,7 @@ public class DynamicMeshChunkProcessor
 		return flag2;
 	}
 
-	// Token: 0x06001C79 RID: 7289 RVA: 0x000AA010 File Offset: 0x000A8210
+	// Token: 0x06001C7D RID: 7293 RVA: 0x000AA220 File Offset: 0x000A8420
 	public ExportMeshResult RegenerateRegion(DynamicMeshThread.ThreadRegion region)
 	{
 		DateTime now = DateTime.Now;
@@ -842,7 +842,7 @@ public class DynamicMeshChunkProcessor
 		return this.SetResult(ExportMeshResult.Success);
 	}
 
-	// Token: 0x06001C7A RID: 7290 RVA: 0x000AA1F4 File Offset: 0x000A83F4
+	// Token: 0x06001C7E RID: 7294 RVA: 0x000AA404 File Offset: 0x000A8604
 	public static void LoadChunkIntoRegion(int regionX, int regionZ, Vector3i chunkPos, DynamicMeshThread.ThreadRegion region, VoxelMesh voxelMeshToCopyFrom, VoxelMesh opaqueMesh, VoxelMeshTerrain terrainMesh, byte biomeId)
 	{
 		if (voxelMeshToCopyFrom == null || voxelMeshToCopyFrom.Vertices.Count == 0)
@@ -910,7 +910,7 @@ public class DynamicMeshChunkProcessor
 		}
 	}
 
-	// Token: 0x06001C7B RID: 7291 RVA: 0x000AA65C File Offset: 0x000A885C
+	// Token: 0x06001C7F RID: 7295 RVA: 0x000AA86C File Offset: 0x000A8A6C
 	public void ResetAfterJob()
 	{
 		this.Item = null;
@@ -918,88 +918,88 @@ public class DynamicMeshChunkProcessor
 		this.Status = DynamicMeshBuilderStatus.Ready;
 	}
 
-	// Token: 0x04001264 RID: 4708
+	// Token: 0x04001274 RID: 4724
 	public static DyMeshData RegionMeshData = DyMeshData.Create(1048000, 63000);
 
-	// Token: 0x04001265 RID: 4709
-	public static bool DebugOnMainThread = false;
-
-	// Token: 0x04001266 RID: 4710
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public string ThreadName;
-
-	// Token: 0x04001267 RID: 4711
-	public string Error;
-
-	// Token: 0x04001268 RID: 4712
-	public bool StopRequested;
-
-	// Token: 0x04001269 RID: 4713
-	public DynamicMeshBuilderStatus Status;
-
-	// Token: 0x0400126A RID: 4714
-	public DyMeshData ChunkData;
-
-	// Token: 0x0400126B RID: 4715
-	public ExportMeshResult Result = ExportMeshResult.Missing;
-
-	// Token: 0x0400126C RID: 4716
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public Chunk chunk = new Chunk();
-
-	// Token: 0x0400126D RID: 4717
-	public DynamicMeshItem Item;
-
-	// Token: 0x0400126E RID: 4718
-	public DynamicMeshThread.ThreadRegion Region;
-
-	// Token: 0x0400126F RID: 4719
-	public bool IsPrimaryQueue;
-
-	// Token: 0x04001270 RID: 4720
-	[PublicizedFrom(EAccessModifier.Private)]
-	public VoxelMeshLayer MeshLayer = MemoryPools.poolVML.AllocSync(true);
-
-	// Token: 0x04001271 RID: 4721
-	public int yOffset;
-
-	// Token: 0x04001272 RID: 4722
-	public int EndY;
-
-	// Token: 0x04001273 RID: 4723
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public ChunkCacheNeighborChunks cacheNeighbourChunks;
-
-	// Token: 0x04001274 RID: 4724
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public ChunkCacheNeighborBlocks cacheBlocks;
-
 	// Token: 0x04001275 RID: 4725
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public Chunk[] neighbours = new Chunk[9];
+	public static bool DebugOnMainThread = false;
 
 	// Token: 0x04001276 RID: 4726
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public MeshGeneratorMC2 meshGen;
+	public string ThreadName;
 
 	// Token: 0x04001277 RID: 4727
-	public double MeshDataTime;
+	public string Error;
 
 	// Token: 0x04001278 RID: 4728
-	public double ExportTime;
+	public bool StopRequested;
 
 	// Token: 0x04001279 RID: 4729
-	public int MinTerrainHeight;
+	public DynamicMeshBuilderStatus Status;
 
 	// Token: 0x0400127A RID: 4730
+	public DyMeshData ChunkData;
+
+	// Token: 0x0400127B RID: 4731
+	public ExportMeshResult Result = ExportMeshResult.Missing;
+
+	// Token: 0x0400127C RID: 4732
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public Chunk chunk = new Chunk();
+
+	// Token: 0x0400127D RID: 4733
+	public DynamicMeshItem Item;
+
+	// Token: 0x0400127E RID: 4734
+	public DynamicMeshThread.ThreadRegion Region;
+
+	// Token: 0x0400127F RID: 4735
+	public bool IsPrimaryQueue;
+
+	// Token: 0x04001280 RID: 4736
+	[PublicizedFrom(EAccessModifier.Private)]
+	public VoxelMeshLayer MeshLayer = MemoryPools.poolVML.AllocSync(true);
+
+	// Token: 0x04001281 RID: 4737
+	public int yOffset;
+
+	// Token: 0x04001282 RID: 4738
+	public int EndY;
+
+	// Token: 0x04001283 RID: 4739
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public ChunkCacheNeighborChunks cacheNeighbourChunks;
+
+	// Token: 0x04001284 RID: 4740
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public ChunkCacheNeighborBlocks cacheBlocks;
+
+	// Token: 0x04001285 RID: 4741
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public Chunk[] neighbours = new Chunk[9];
+
+	// Token: 0x04001286 RID: 4742
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public MeshGeneratorMC2 meshGen;
+
+	// Token: 0x04001287 RID: 4743
+	public double MeshDataTime;
+
+	// Token: 0x04001288 RID: 4744
+	public double ExportTime;
+
+	// Token: 0x04001289 RID: 4745
+	public int MinTerrainHeight;
+
+	// Token: 0x0400128A RID: 4746
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DateTime LastActive;
 
-	// Token: 0x0400127B RID: 4731
+	// Token: 0x0400128B RID: 4747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkPreviewData PreviewData;
 
-	// Token: 0x0400127C RID: 4732
+	// Token: 0x0400128C RID: 4748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk[] FakeChunks = new Chunk[]
 	{
@@ -1013,11 +1013,11 @@ public class DynamicMeshChunkProcessor
 		new Chunk()
 	};
 
-	// Token: 0x0400127D RID: 4733
+	// Token: 0x0400128D RID: 4749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Thread thread;
 
-	// Token: 0x0400127E RID: 4734
+	// Token: 0x0400128E RID: 4750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> ChunkKeys = new List<long>(20);
 }

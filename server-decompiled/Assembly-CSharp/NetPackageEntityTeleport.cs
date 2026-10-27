@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F1 RID: 2033
+// Token: 0x020007FB RID: 2043
 [Preserve]
 public class NetPackageEntityTeleport : NetPackageEntityPosAndRot
 {
-	// Token: 0x06003BFF RID: 15359 RVA: 0x00180F49 File Offset: 0x0017F149
+	// Token: 0x06003C22 RID: 15394 RVA: 0x0018204D File Offset: 0x0018024D
 	public new NetPackageEntityTeleport Setup(Entity _entity)
 	{
 		base.Setup(_entity);
 		return this;
 	}
 
-	// Token: 0x06003C00 RID: 15360 RVA: 0x00180F54 File Offset: 0x0017F154
+	// Token: 0x06003C23 RID: 15395 RVA: 0x00182058 File Offset: 0x00180258
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)

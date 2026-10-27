@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A1E RID: 6686
+	// Token: 0x02001A4F RID: 6735
 	[Preserve]
 	public class ActionShuffleContainers : ActionBaseContainersAction
 	{
-		// Token: 0x0600CBE0 RID: 52192 RVA: 0x004A80F8 File Offset: 0x004A62F8
+		// Token: 0x0600CCF4 RID: 52468 RVA: 0x004ABBF4 File Offset: 0x004A9DF4
 		public override bool CheckValidTileEntity(TileEntity te, out bool isEmpty)
 		{
 			isEmpty = false;
@@ -34,7 +34,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600CBE1 RID: 52193 RVA: 0x004A814C File Offset: 0x004A634C
+		// Token: 0x0600CCF5 RID: 52469 RVA: 0x004ABC48 File Offset: 0x004A9E48
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleContainerAction(List<TileEntity> tileEntityList)
 		{
@@ -129,14 +129,14 @@ namespace GameEvent.SequenceActions
 			return flag;
 		}
 
-		// Token: 0x0600CBE2 RID: 52194 RVA: 0x004A83EC File Offset: 0x004A65EC
+		// Token: 0x0600CCF6 RID: 52470 RVA: 0x004ABEE8 File Offset: 0x004AA0E8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseBool(ActionShuffleContainers.PropIncludeOutputs, ref this.includeOutputs);
 		}
 
-		// Token: 0x0600CBE3 RID: 52195 RVA: 0x004A8408 File Offset: 0x004A6608
+		// Token: 0x0600CCF7 RID: 52471 RVA: 0x004ABF04 File Offset: 0x004AA104
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -151,11 +151,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009A91 RID: 39569
+		// Token: 0x04009B7A RID: 39802
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeOutputs;
 
-		// Token: 0x04009A92 RID: 39570
+		// Token: 0x04009B7B RID: 39803
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeOutputs = "include_outputs";
 	}

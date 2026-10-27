@@ -5,10 +5,10 @@ using System.Diagnostics;
 using Pathfinding;
 using UnityEngine;
 
-// Token: 0x020008DF RID: 2271
+// Token: 0x020008E9 RID: 2281
 public class AstarVoxelGrid : LayerGridGraph
 {
-	// Token: 0x06004148 RID: 16712 RVA: 0x00199F58 File Offset: 0x00198158
+	// Token: 0x0600416B RID: 16747 RVA: 0x0019B000 File Offset: 0x00199200
 	public void Init()
 	{
 		if (AstarVoxelGrid.connectionsPool == null)
@@ -22,14 +22,14 @@ public class AstarVoxelGrid : LayerGridGraph
 		this.gridMover = new AstarVoxelGrid.ProceduralGridMover();
 	}
 
-	// Token: 0x06004149 RID: 16713 RVA: 0x00199F9C File Offset: 0x0019819C
+	// Token: 0x0600416C RID: 16748 RVA: 0x0019B044 File Offset: 0x00199244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitScan()
 	{
 		base.Scan();
 	}
 
-	// Token: 0x0600414A RID: 16714 RVA: 0x00199FA4 File Offset: 0x001981A4
+	// Token: 0x0600416D RID: 16749 RVA: 0x0019B04C File Offset: 0x0019924C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override IEnumerable<Progress> ScanInternal()
 	{
@@ -40,7 +40,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		yield break;
 	}
 
-	// Token: 0x0600414B RID: 16715 RVA: 0x00199FB4 File Offset: 0x001981B4
+	// Token: 0x0600416E RID: 16750 RVA: 0x0019B05C File Offset: 0x0019925C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateArea(GraphUpdateObject o)
 	{
@@ -72,14 +72,14 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x0600414C RID: 16716 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600416F RID: 16751 RVA: 0x000027FC File Offset: 0x000009FC
 	[Conditional("DEBUG_PATHGRIDVALIDATE")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Validate()
 	{
 	}
 
-	// Token: 0x0600414D RID: 16717 RVA: 0x0019A0B0 File Offset: 0x001982B0
+	// Token: 0x06004170 RID: 16752 RVA: 0x0019B158 File Offset: 0x00199358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SampleHeights(Vector3 pos)
 	{
@@ -93,7 +93,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x0600414E RID: 16718 RVA: 0x0019A120 File Offset: 0x00198320
+	// Token: 0x06004171 RID: 16753 RVA: 0x0019B1C8 File Offset: 0x001993C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckHeights(Vector3 position)
 	{
@@ -381,7 +381,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x0600414F RID: 16719 RVA: 0x0019AA58 File Offset: 0x00198C58
+	// Token: 0x06004172 RID: 16754 RVA: 0x0019BB00 File Offset: 0x00199D00
 	public override void RecalculateCell(int x, int z, bool resetPenalties = true, bool resetTags = true)
 	{
 		World world = GameManager.Instance.World;
@@ -589,14 +589,14 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x06004150 RID: 16720 RVA: 0x0019B09E File Offset: 0x0019929E
+	// Token: 0x06004173 RID: 16755 RVA: 0x0019C146 File Offset: 0x0019A346
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDestroy()
 	{
 		base.OnDestroy();
 	}
 
-	// Token: 0x06004151 RID: 16721 RVA: 0x0019B0A8 File Offset: 0x001992A8
+	// Token: 0x06004174 RID: 16756 RVA: 0x0019C150 File Offset: 0x0019A350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort CalcBlockingFlags(Vector3 pos, float offsetY)
 	{
@@ -631,7 +631,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		return (ushort)num;
 	}
 
-	// Token: 0x06004152 RID: 16722 RVA: 0x0019B1A0 File Offset: 0x001993A0
+	// Token: 0x06004175 RID: 16757 RVA: 0x0019C248 File Offset: 0x0019A448
 	public override void CalculateConnections(int x, int z, int layerIndex)
 	{
 		int num = this.width * this.depth;
@@ -823,7 +823,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x06004153 RID: 16723 RVA: 0x0019B7C0 File Offset: 0x001999C0
+	// Token: 0x06004176 RID: 16758 RVA: 0x0019C868 File Offset: 0x0019AA68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddConnection(GridNodeBase node, GridNodeBase other, uint cost, uint tag, object payload)
 	{
@@ -853,7 +853,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		node.connections = array;
 	}
 
-	// Token: 0x06004154 RID: 16724 RVA: 0x0019B874 File Offset: 0x00199A74
+	// Token: 0x06004177 RID: 16759 RVA: 0x0019C91C File Offset: 0x0019AB1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddDummyConnection(GridNodeBase node, GridNodeBase other)
 	{
@@ -871,7 +871,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		this.AddConnection(node, other, uint.MaxValue, 0U, null);
 	}
 
-	// Token: 0x06004155 RID: 16725 RVA: 0x0019B8B4 File Offset: 0x00199AB4
+	// Token: 0x06004178 RID: 16760 RVA: 0x0019C95C File Offset: 0x0019AB5C
 	public static void ClearConnections(GridNodeBase node)
 	{
 		Connection[] connections = node.connections;
@@ -890,7 +890,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x06004156 RID: 16726 RVA: 0x0019B90C File Offset: 0x00199B0C
+	// Token: 0x06004179 RID: 16761 RVA: 0x0019C9B4 File Offset: 0x0019ABB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RemoveConnection(GridNodeBase node, GridNodeBase other)
 	{
@@ -937,7 +937,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		}
 	}
 
-	// Token: 0x06004157 RID: 16727 RVA: 0x0019B9BC File Offset: 0x00199BBC
+	// Token: 0x0600417A RID: 16762 RVA: 0x0019CA64 File Offset: 0x0019AC64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Connection[] AllocConnection(int count)
 	{
@@ -959,7 +959,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		return array;
 	}
 
-	// Token: 0x06004158 RID: 16728 RVA: 0x0019BA01 File Offset: 0x00199C01
+	// Token: 0x0600417B RID: 16763 RVA: 0x0019CAA9 File Offset: 0x0019ACA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue GetBlock(IChunk chunk, int _x, int _y, int _z)
 	{
@@ -970,7 +970,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		return chunk.GetBlock(_x, _y, _z);
 	}
 
-	// Token: 0x06004159 RID: 16729 RVA: 0x0019BA1B File Offset: 0x00199C1B
+	// Token: 0x0600417C RID: 16764 RVA: 0x0019CAC3 File Offset: 0x0019ACC3
 	public void SetPos(Vector3 pos)
 	{
 		this.center = pos;
@@ -978,7 +978,7 @@ public class AstarVoxelGrid : LayerGridGraph
 		this.InitScan();
 	}
 
-	// Token: 0x0600415A RID: 16730 RVA: 0x0019BA31 File Offset: 0x00199C31
+	// Token: 0x0600417D RID: 16765 RVA: 0x0019CAD9 File Offset: 0x0019ACD9
 	public void Move(Vector3 targetPos)
 	{
 		this.gridMover.graph = this;
@@ -986,115 +986,115 @@ public class AstarVoxelGrid : LayerGridGraph
 		this.gridMover.UpdateGraph();
 	}
 
-	// Token: 0x0600415B RID: 16731 RVA: 0x0019BA56 File Offset: 0x00199C56
+	// Token: 0x0600417E RID: 16766 RVA: 0x0019CAFE File Offset: 0x0019ACFE
 	public bool IsMoving()
 	{
 		return this.gridMover.updatingGraph;
 	}
 
-	// Token: 0x04003526 RID: 13606
+	// Token: 0x04003546 RID: 13638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cGridHeight = 320f;
 
-	// Token: 0x04003527 RID: 13607
+	// Token: 0x04003547 RID: 13639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cGridHeightPadded = 320.01f;
 
-	// Token: 0x04003528 RID: 13608
+	// Token: 0x04003548 RID: 13640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCollisionMask = 1073807360;
 
-	// Token: 0x04003529 RID: 13609
+	// Token: 0x04003549 RID: 13641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cLayerMinHeight = 0.7f;
 
-	// Token: 0x0400352A RID: 13610
+	// Token: 0x0400354A RID: 13642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cClimbMinHeight = 0.6f;
 
-	// Token: 0x0400352B RID: 13611
+	// Token: 0x0400354B RID: 13643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cClimbMaxHeight = 1.51f;
 
-	// Token: 0x0400352C RID: 13612
+	// Token: 0x0400354C RID: 13644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDropOnTopHeight = 0.95f;
 
-	// Token: 0x0400352D RID: 13613
+	// Token: 0x0400354D RID: 13645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDropMaxHeight = 9.4f;
 
-	// Token: 0x0400352E RID: 13614
+	// Token: 0x0400354E RID: 13646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cJumpPenalty = 8;
 
-	// Token: 0x0400352F RID: 13615
+	// Token: 0x0400354F RID: 13647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cDoorPenalty = 2;
 
-	// Token: 0x04003530 RID: 13616
+	// Token: 0x04003550 RID: 13648
 	public const int cPenaltyPerMeter = 1000;
 
-	// Token: 0x04003531 RID: 13617
+	// Token: 0x04003551 RID: 13649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPenaltyHealthBase = 10;
 
-	// Token: 0x04003532 RID: 13618
+	// Token: 0x04003552 RID: 13650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPenaltyHealthScale = 20;
 
-	// Token: 0x04003533 RID: 13619
+	// Token: 0x04003553 RID: 13651
 	public const uint cDummyPenalty = 4294967295U;
 
-	// Token: 0x04003534 RID: 13620
+	// Token: 0x04003554 RID: 13652
 	public const int cTagOpen = 0;
 
-	// Token: 0x04003535 RID: 13621
+	// Token: 0x04003555 RID: 13653
 	public const int cTagBreak = 1;
 
-	// Token: 0x04003536 RID: 13622
+	// Token: 0x04003556 RID: 13654
 	public const int cTagLowHeight = 2;
 
-	// Token: 0x04003537 RID: 13623
+	// Token: 0x04003557 RID: 13655
 	public const int cTagDoor = 3;
 
-	// Token: 0x04003538 RID: 13624
+	// Token: 0x04003558 RID: 13656
 	public const int cTagLadder = 4;
 
-	// Token: 0x04003539 RID: 13625
+	// Token: 0x04003559 RID: 13657
 	public const int cTagTest = 8;
 
-	// Token: 0x0400353A RID: 13626
+	// Token: 0x0400355A RID: 13658
 	public const ushort cBlockerFlagLow0 = 1;
 
-	// Token: 0x0400353B RID: 13627
+	// Token: 0x0400355B RID: 13659
 	public const ushort cBlockerFlagLow = 15;
 
-	// Token: 0x0400353C RID: 13628
+	// Token: 0x0400355C RID: 13660
 	public const ushort cBlockerFlagHigh0 = 16;
 
-	// Token: 0x0400353D RID: 13629
+	// Token: 0x0400355D RID: 13661
 	public const ushort cBlockerFlagHigh = 240;
 
-	// Token: 0x0400353E RID: 13630
+	// Token: 0x0400355E RID: 13662
 	public const ushort cBlockerFlagHighLow0 = 17;
 
-	// Token: 0x0400353F RID: 13631
+	// Token: 0x0400355F RID: 13663
 	public const ushort cBlockerFlagHighLow = 255;
 
-	// Token: 0x04003540 RID: 13632
+	// Token: 0x04003560 RID: 13664
 	public const ushort cBlockerFlagSlopeDir0 = 256;
 
-	// Token: 0x04003541 RID: 13633
+	// Token: 0x04003561 RID: 13665
 	public const ushort cBlockerFlagFloor = 4096;
 
-	// Token: 0x04003542 RID: 13634
+	// Token: 0x04003562 RID: 13666
 	public const ushort cBlockerFlagLadder = 8192;
 
-	// Token: 0x04003543 RID: 13635
+	// Token: 0x04003563 RID: 13667
 	public const ushort cBlockerFlagDoor = 16384;
 
-	// Token: 0x04003544 RID: 13636
+	// Token: 0x04003564 RID: 13668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector2i[] neighboursOffsetV2 = new Vector2i[]
 	{
@@ -1104,100 +1104,100 @@ public class AstarVoxelGrid : LayerGridGraph
 		new Vector2i(-1, 0)
 	};
 
-	// Token: 0x04003545 RID: 13637
+	// Token: 0x04003565 RID: 13669
 	public bool IsUsed;
 
-	// Token: 0x04003546 RID: 13638
+	// Token: 0x04003566 RID: 13670
 	public bool IsFullUpdateNeeded;
 
-	// Token: 0x04003547 RID: 13639
+	// Token: 0x04003567 RID: 13671
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarVoxelGrid.ProceduralGridMover gridMover;
 
-	// Token: 0x04003548 RID: 13640
+	// Token: 0x04003568 RID: 13672
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRayHitsMax = 512;
 
-	// Token: 0x04003549 RID: 13641
+	// Token: 0x04003569 RID: 13673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static AstarVoxelGrid.HitData[] cellHits = new AstarVoxelGrid.HitData[512];
 
-	// Token: 0x0400354A RID: 13642
+	// Token: 0x0400356A RID: 13674
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AstarVoxelGrid.HitData[] heights = new AstarVoxelGrid.HitData[512];
 
-	// Token: 0x0400354B RID: 13643
+	// Token: 0x0400356B RID: 13675
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int heightsUsed;
 
-	// Token: 0x0400354C RID: 13644
+	// Token: 0x0400356C RID: 13676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryPooledObject<AstarVoxelGrid.VoxelNode> levelGridNodePool = new MemoryPooledObject<AstarVoxelGrid.VoxelNode>(100000);
 
-	// Token: 0x0400354D RID: 13645
+	// Token: 0x0400356D RID: 13677
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cConnectionPoolMax = 16;
 
-	// Token: 0x0400354E RID: 13646
+	// Token: 0x0400356E RID: 13678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Connection[]>[] connectionsPool;
 
-	// Token: 0x0400354F RID: 13647
+	// Token: 0x0400356F RID: 13679
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly WorldRayHitInfo localWorldRayHit = new WorldRayHitInfo();
 
-	// Token: 0x04003550 RID: 13648
+	// Token: 0x04003570 RID: 13680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<int> validHeights = new HashSet<int>();
 
-	// Token: 0x04003551 RID: 13649
+	// Token: 0x04003571 RID: 13681
 	public Vector2 GridMovePendingPos;
 
-	// Token: 0x020008E0 RID: 2272
+	// Token: 0x020008EA RID: 2282
 	[Flags]
 	public enum HitDataFlags : ushort
 	{
-		// Token: 0x04003553 RID: 13651
+		// Token: 0x04003573 RID: 13683
 		None = 0,
-		// Token: 0x04003554 RID: 13652
+		// Token: 0x04003574 RID: 13684
 		InvalidCover = 1,
-		// Token: 0x04003555 RID: 13653
+		// Token: 0x04003575 RID: 13685
 		InsideOversized = 2
 	}
 
-	// Token: 0x020008E1 RID: 2273
+	// Token: 0x020008EB RID: 2283
 	public struct HitData
 	{
-		// Token: 0x04003556 RID: 13654
+		// Token: 0x04003576 RID: 13686
 		public Vector3 point;
 
-		// Token: 0x04003557 RID: 13655
+		// Token: 0x04003577 RID: 13687
 		public ushort blockerFlags;
 
-		// Token: 0x04003558 RID: 13656
+		// Token: 0x04003578 RID: 13688
 		public AstarVoxelGrid.HitDataFlags hitFlags;
 	}
 
-	// Token: 0x020008E2 RID: 2274
+	// Token: 0x020008EC RID: 2284
 	public class VoxelNode : LevelGridNode, IMemoryPoolableObject
 	{
-		// Token: 0x0600415F RID: 16735 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06004182 RID: 16770 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Reset()
 		{
 		}
 
-		// Token: 0x06004160 RID: 16736 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06004183 RID: 16771 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Cleanup()
 		{
 		}
 
-		// Token: 0x06004161 RID: 16737 RVA: 0x0019BB0A File Offset: 0x00199D0A
+		// Token: 0x06004184 RID: 16772 RVA: 0x0019CBB2 File Offset: 0x0019ADB2
 		public override void ClearCustomConnections(bool alsoReverse)
 		{
 			AstarVoxelGrid.ClearConnections(this);
 		}
 
-		// Token: 0x06004162 RID: 16738 RVA: 0x0019BB14 File Offset: 0x00199D14
+		// Token: 0x06004185 RID: 16773 RVA: 0x0019CBBC File Offset: 0x0019ADBC
 		public override void UpdateRecursiveG(Path path, PathNode pathNode, PathHandler handler)
 		{
 			handler.heap.Add(pathNode);
@@ -1237,37 +1237,37 @@ public class AstarVoxelGrid : LayerGridGraph
 			}
 		}
 
-		// Token: 0x04003559 RID: 13657
+		// Token: 0x04003579 RID: 13689
 		public int PenaltyHigh;
 
-		// Token: 0x0400355A RID: 13658
+		// Token: 0x0400357A RID: 13690
 		public int PenaltyLow;
 
-		// Token: 0x0400355B RID: 13659
+		// Token: 0x0400357B RID: 13691
 		public ushort BlockerFlags;
 	}
 
-	// Token: 0x020008E3 RID: 2275
+	// Token: 0x020008ED RID: 2285
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_procedural_grid_mover.php")]
 	public class ProceduralGridMover
 	{
-		// Token: 0x170006FD RID: 1789
-		// (get) Token: 0x06004164 RID: 16740 RVA: 0x0019BC47 File Offset: 0x00199E47
-		// (set) Token: 0x06004165 RID: 16741 RVA: 0x0019BC4F File Offset: 0x00199E4F
+		// Token: 0x17000703 RID: 1795
+		// (get) Token: 0x06004187 RID: 16775 RVA: 0x0019CCEF File Offset: 0x0019AEEF
+		// (set) Token: 0x06004188 RID: 16776 RVA: 0x0019CCF7 File Offset: 0x0019AEF7
 		public bool updatingGraph
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x06004166 RID: 16742 RVA: 0x0019BC58 File Offset: 0x00199E58
+		// Token: 0x06004189 RID: 16777 RVA: 0x0019CD00 File Offset: 0x0019AF00
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 PointToGraphSpace(Vector3 p)
 		{
 			return this.graph.transform.InverseTransform(p);
 		}
 
-		// Token: 0x06004167 RID: 16743 RVA: 0x0019BC6C File Offset: 0x00199E6C
+		// Token: 0x0600418A RID: 16778 RVA: 0x0019CD14 File Offset: 0x0019AF14
 		public void UpdateGraph()
 		{
 			if (this.updatingGraph)
@@ -1302,7 +1302,7 @@ public class AstarVoxelGrid : LayerGridGraph
 			}));
 		}
 
-		// Token: 0x06004168 RID: 16744 RVA: 0x0019BCBD File Offset: 0x00199EBD
+		// Token: 0x0600418B RID: 16779 RVA: 0x0019CD65 File Offset: 0x0019AF65
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator UpdateGraphCoroutine()
 		{
@@ -1520,16 +1520,16 @@ public class AstarVoxelGrid : LayerGridGraph
 			yield break;
 		}
 
-		// Token: 0x0400355C RID: 13660
+		// Token: 0x0400357C RID: 13692
 		public float updateDistance = 10f;
 
-		// Token: 0x0400355D RID: 13661
+		// Token: 0x0400357D RID: 13693
 		public Vector3 targetPosition;
 
-		// Token: 0x0400355E RID: 13662
+		// Token: 0x0400357E RID: 13694
 		public GridGraph graph;
 
-		// Token: 0x0400355F RID: 13663
+		// Token: 0x0400357F RID: 13695
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GridNodeBase[] buffer;
 	}

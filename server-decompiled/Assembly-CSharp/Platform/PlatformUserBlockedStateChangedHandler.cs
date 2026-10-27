@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001C1F RID: 7199
-	// (Invoke) Token: 0x0600D610 RID: 54800
+	// Token: 0x02001C50 RID: 7248
+	// (Invoke) Token: 0x0600D724 RID: 55076
 	public delegate void PlatformUserBlockedStateChangedHandler(IPlatformUserData userData, EBlockType blockType, EUserBlockState blockState);
 }

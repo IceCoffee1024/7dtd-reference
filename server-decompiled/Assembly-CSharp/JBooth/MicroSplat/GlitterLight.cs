@@ -3,26 +3,26 @@ using UnityEngine;
 
 namespace JBooth.MicroSplat
 {
-	// Token: 0x02001D6B RID: 7531
+	// Token: 0x02001D9C RID: 7580
 	[ExecuteInEditMode]
 	[RequireComponent(typeof(Light))]
 	public class GlitterLight : MonoBehaviour
 	{
-		// Token: 0x0600DF18 RID: 57112 RVA: 0x004F91F0 File Offset: 0x004F73F0
+		// Token: 0x0600E02C RID: 57388 RVA: 0x004FCD90 File Offset: 0x004FAF90
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnEnable()
 		{
 			this.lght = base.GetComponent<Light>();
 		}
 
-		// Token: 0x0600DF19 RID: 57113 RVA: 0x004F91F0 File Offset: 0x004F73F0
+		// Token: 0x0600E02D RID: 57389 RVA: 0x004FCD90 File Offset: 0x004FAF90
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisable()
 		{
 			this.lght = base.GetComponent<Light>();
 		}
 
-		// Token: 0x0600DF1A RID: 57114 RVA: 0x004F9200 File Offset: 0x004F7400
+		// Token: 0x0600E02E RID: 57390 RVA: 0x004FCDA0 File Offset: 0x004FAFA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -34,7 +34,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0400A838 RID: 43064
+		// Token: 0x0400A921 RID: 43297
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Light lght;

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000501 RID: 1281
+// Token: 0x02000503 RID: 1283
 public struct PlayerStealth
 {
-	// Token: 0x060029A7 RID: 10663 RVA: 0x00106A5A File Offset: 0x00104C5A
+	// Token: 0x060029AE RID: 10670 RVA: 0x00106FAE File Offset: 0x001051AE
 	public void Init(EntityPlayer _player)
 	{
 		this.player = _player;
@@ -15,7 +15,7 @@ public struct PlayerStealth
 		this.barColorUI = new Color32(0, 0, 0, byte.MaxValue);
 	}
 
-	// Token: 0x060029A8 RID: 10664 RVA: 0x00106A90 File Offset: 0x00104C90
+	// Token: 0x060029AF RID: 10671 RVA: 0x00106FE4 File Offset: 0x001051E4
 	public void TickServer()
 	{
 		float num = this.player.speedForward * this.player.speedForward + this.player.speedStrafe * this.player.speedStrafe;
@@ -132,7 +132,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029A9 RID: 10665 RVA: 0x00106F59 File Offset: 0x00105159
+	// Token: 0x060029B0 RID: 10672 RVA: 0x001074AD File Offset: 0x001056AD
 	public void TickLocalClient()
 	{
 		if (GamePrefs.GetInt(EnumGamePrefs.AISmellMode) != 0)
@@ -141,7 +141,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029AA RID: 10666 RVA: 0x00106F70 File Offset: 0x00105170
+	// Token: 0x060029B1 RID: 10673 RVA: 0x001074C4 File Offset: 0x001056C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AttractTickServer()
 	{
@@ -183,7 +183,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029AB RID: 10667 RVA: 0x001070C0 File Offset: 0x001052C0
+	// Token: 0x060029B2 RID: 10674 RVA: 0x00107614 File Offset: 0x00105814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellApplyMode()
 	{
@@ -197,7 +197,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029AC RID: 10668 RVA: 0x00107120 File Offset: 0x00105320
+	// Token: 0x060029B3 RID: 10675 RVA: 0x00107674 File Offset: 0x00105874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellTickServer()
 	{
@@ -299,7 +299,7 @@ public struct PlayerStealth
 		this.SmellTickEat();
 	}
 
-	// Token: 0x060029AD RID: 10669 RVA: 0x0010742C File Offset: 0x0010562C
+	// Token: 0x060029B4 RID: 10676 RVA: 0x00107980 File Offset: 0x00105B80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellTickClient()
 	{
@@ -321,7 +321,7 @@ public struct PlayerStealth
 		this.SmellTickEat();
 	}
 
-	// Token: 0x060029AE RID: 10670 RVA: 0x001074C8 File Offset: 0x001056C8
+	// Token: 0x060029B5 RID: 10677 RVA: 0x00107A1C File Offset: 0x00105C1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellTickWet()
 	{
@@ -332,7 +332,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029AF RID: 10671 RVA: 0x00107508 File Offset: 0x00105708
+	// Token: 0x060029B6 RID: 10678 RVA: 0x00107A5C File Offset: 0x00105C5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellTickEat()
 	{
@@ -352,7 +352,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029B0 RID: 10672 RVA: 0x00107570 File Offset: 0x00105770
+	// Token: 0x060029B7 RID: 10679 RVA: 0x00107AC4 File Offset: 0x00105CC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellUpdateItemsAndBlood()
 	{
@@ -385,7 +385,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029B1 RID: 10673 RVA: 0x0010766E File Offset: 0x0010586E
+	// Token: 0x060029B8 RID: 10680 RVA: 0x00107BC2 File Offset: 0x00105DC2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmellClear()
 	{
@@ -397,7 +397,7 @@ public struct PlayerStealth
 		this.smellWet = 0f;
 	}
 
-	// Token: 0x060029B2 RID: 10674 RVA: 0x001076AC File Offset: 0x001058AC
+	// Token: 0x060029B9 RID: 10681 RVA: 0x00107C00 File Offset: 0x00105E00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SmellCountItems()
 	{
@@ -433,7 +433,7 @@ public struct PlayerStealth
 		return (int)num;
 	}
 
-	// Token: 0x060029B3 RID: 10675 RVA: 0x001077CC File Offset: 0x001059CC
+	// Token: 0x060029BA RID: 10682 RVA: 0x00107D20 File Offset: 0x00105F20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float SmellCountToRadius(float _count)
 	{
@@ -446,7 +446,7 @@ public struct PlayerStealth
 		return num;
 	}
 
-	// Token: 0x060029B4 RID: 10676 RVA: 0x00107808 File Offset: 0x00105A08
+	// Token: 0x060029BB RID: 10683 RVA: 0x00107D5C File Offset: 0x00105F5C
 	public void SetSmellRadiusTarget(int _radius, bool _eating, bool _sheltered)
 	{
 		this.smellRadiusTarget = (float)_radius;
@@ -461,7 +461,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029B5 RID: 10677 RVA: 0x0010783C File Offset: 0x00105A3C
+	// Token: 0x060029BC RID: 10684 RVA: 0x00107D90 File Offset: 0x00105F90
 	public void SetSmellEat(float _distance)
 	{
 		this.smellEatRadius = Utils.FastMin(this.smellEatRadius + _distance, 100f);
@@ -470,7 +470,7 @@ public struct PlayerStealth
 		this.smellUpdateItemsTicks = 0;
 	}
 
-	// Token: 0x060029B6 RID: 10678 RVA: 0x0010788C File Offset: 0x00105A8C
+	// Token: 0x060029BD RID: 10685 RVA: 0x00107DE0 File Offset: 0x00105FE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetBarColor(bool _isAlert)
 	{
@@ -483,7 +483,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029B7 RID: 10679 RVA: 0x001078DC File Offset: 0x00105ADC
+	// Token: 0x060029BE RID: 10686 RVA: 0x00107E30 File Offset: 0x00106030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NoiseCleanup()
 	{
@@ -503,7 +503,7 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x060029B8 RID: 10680 RVA: 0x00107940 File Offset: 0x00105B40
+	// Token: 0x060029BF RID: 10687 RVA: 0x00107E94 File Offset: 0x00106094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalcVolume()
 	{
@@ -520,7 +520,7 @@ public struct PlayerStealth
 		return num;
 	}
 
-	// Token: 0x060029B9 RID: 10681 RVA: 0x001079EC File Offset: 0x00105BEC
+	// Token: 0x060029C0 RID: 10688 RVA: 0x00107F40 File Offset: 0x00106140
 	public bool CanSleeperAttackDetect(EntityAlive _e)
 	{
 		if (this.player.IsCrouching)
@@ -534,7 +534,7 @@ public struct PlayerStealth
 		return true;
 	}
 
-	// Token: 0x060029BA RID: 10682 RVA: 0x00107A2E File Offset: 0x00105C2E
+	// Token: 0x060029C1 RID: 10689 RVA: 0x00107F82 File Offset: 0x00106182
 	public void SetClientLevels(float _lightLevel, float _noiseVolume, bool _isAlert)
 	{
 		this.lightLevel = _lightLevel;
@@ -543,7 +543,7 @@ public struct PlayerStealth
 		this.SetBarColor(_isAlert);
 	}
 
-	// Token: 0x060029BB RID: 10683 RVA: 0x00107A4C File Offset: 0x00105C4C
+	// Token: 0x060029C2 RID: 10690 RVA: 0x00107FA0 File Offset: 0x001061A0
 	public bool NotifyNoise(float volume, float duration)
 	{
 		if (volume <= 0f)
@@ -570,7 +570,7 @@ public struct PlayerStealth
 		return false;
 	}
 
-	// Token: 0x060029BC RID: 10684 RVA: 0x00107AFC File Offset: 0x00105CFC
+	// Token: 0x060029C3 RID: 10691 RVA: 0x00108050 File Offset: 0x00106250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddNoise(List<PlayerStealth.NoiseData> list, float volume, int ticks)
 	{
@@ -587,7 +587,7 @@ public struct PlayerStealth
 		list.Insert(list.Count, noiseData);
 	}
 
-	// Token: 0x060029BD RID: 10685 RVA: 0x00107B50 File Offset: 0x00105D50
+	// Token: 0x060029C4 RID: 10692 RVA: 0x001080A4 File Offset: 0x001062A4
 	public static PlayerStealth Read(EntityPlayer _player, BinaryReader br)
 	{
 		int num = br.ReadInt32();
@@ -620,7 +620,7 @@ public struct PlayerStealth
 		return playerStealth;
 	}
 
-	// Token: 0x060029BE RID: 10686 RVA: 0x00107C1C File Offset: 0x00105E1C
+	// Token: 0x060029C5 RID: 10693 RVA: 0x00108170 File Offset: 0x00106370
 	public void Write(BinaryWriter bw)
 	{
 		bw.Write(4);
@@ -644,7 +644,7 @@ public struct PlayerStealth
 	}
 
 	// Token: 0x17000489 RID: 1161
-	// (get) Token: 0x060029BF RID: 10687 RVA: 0x00107CE3 File Offset: 0x00105EE3
+	// (get) Token: 0x060029C6 RID: 10694 RVA: 0x00108237 File Offset: 0x00106437
 	public Color32 ValueColorUI
 	{
 		get
@@ -654,7 +654,7 @@ public struct PlayerStealth
 	}
 
 	// Token: 0x1700048A RID: 1162
-	// (get) Token: 0x060029C0 RID: 10688 RVA: 0x00107CEC File Offset: 0x00105EEC
+	// (get) Token: 0x060029C7 RID: 10695 RVA: 0x00108240 File Offset: 0x00106440
 	public float ValuePercentUI
 	{
 		get
@@ -665,246 +665,246 @@ public struct PlayerStealth
 		}
 	}
 
-	// Token: 0x04001FA9 RID: 8105
-	public const float cLightLevelMax = 200f;
-
-	// Token: 0x04001FAA RID: 8106
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cLightMpyBase = 0.32f;
-
-	// Token: 0x04001FAB RID: 8107
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cVersion = 4;
-
-	// Token: 0x04001FAC RID: 8108
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cNextSoundPercent = 0.6f;
-
-	// Token: 0x04001FAD RID: 8109
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSleeperNoiseDecay = 50f;
-
-	// Token: 0x04001FAE RID: 8110
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSleeperNoiseHear = 360f;
-
-	// Token: 0x04001FAF RID: 8111
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cSleeperNoiseWaitTicks = 20;
-
-	// Token: 0x04001FB0 RID: 8112
-	public float lightLevel;
-
-	// Token: 0x04001FB1 RID: 8113
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float lightAttackPercent;
-
-	// Token: 0x04001FB2 RID: 8114
-	public float noiseVolume;
-
-	// Token: 0x04001FB3 RID: 8115
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float speedAverage;
-
-	// Token: 0x04001FB4 RID: 8116
-	[PublicizedFrom(EAccessModifier.Private)]
-	public EntityPlayer player;
-
-	// Token: 0x04001FB5 RID: 8117
-	[PublicizedFrom(EAccessModifier.Private)]
-	public EntityPlayerLocal playerLocal;
-
-	// Token: 0x04001FB6 RID: 8118
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int sendTickDelay;
-
-	// Token: 0x04001FB7 RID: 8119
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int lightLevelSent;
-
-	// Token: 0x04001FB8 RID: 8120
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int noiseVolumeSent;
-
 	// Token: 0x04001FB9 RID: 8121
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool alertEnemySent;
+	public const float cLightLevelMax = 200f;
 
 	// Token: 0x04001FBA RID: 8122
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int sleeperNoiseWaitTicks;
+	public const float cLightMpyBase = 0.32f;
 
 	// Token: 0x04001FBB RID: 8123
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float sleeperNoiseVolume;
+	public const int cVersion = 4;
 
 	// Token: 0x04001FBC RID: 8124
 	[PublicizedFrom(EAccessModifier.Private)]
-	public List<PlayerStealth.NoiseData> noises;
+	public const float cNextSoundPercent = 0.6f;
 
 	// Token: 0x04001FBD RID: 8125
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int alertEnemiesTicks;
+	public const float cSleeperNoiseDecay = 50f;
 
 	// Token: 0x04001FBE RID: 8126
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool alertEnemy;
+	public const float cSleeperNoiseHear = 360f;
 
 	// Token: 0x04001FBF RID: 8127
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Color32 barColorUI;
+	public const int cSleeperNoiseWaitTicks = 20;
 
 	// Token: 0x04001FC0 RID: 8128
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static readonly List<Entity> entityTempList = new List<Entity>();
+	public float lightLevel;
 
 	// Token: 0x04001FC1 RID: 8129
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cAttractEmitRate = 2;
+	public float lightAttackPercent;
 
 	// Token: 0x04001FC2 RID: 8130
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cAttractEmitChance = 0.2f;
+	public float noiseVolume;
 
 	// Token: 0x04001FC3 RID: 8131
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cAttractRadiusMax = 100f;
+	public float speedAverage;
 
 	// Token: 0x04001FC4 RID: 8132
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int attractEmitTicks;
+	public EntityPlayer player;
 
 	// Token: 0x04001FC5 RID: 8133
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cSmellStartDelay = 11;
+	public EntityPlayerLocal playerLocal;
 
 	// Token: 0x04001FC6 RID: 8134
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cSmellUpdateItemsTicksMax = 40;
+	public int sendTickDelay;
 
 	// Token: 0x04001FC7 RID: 8135
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellCountMin = 5f;
+	public int lightLevelSent;
 
 	// Token: 0x04001FC8 RID: 8136
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellCountMax = 50f;
+	public int noiseVolumeSent;
 
 	// Token: 0x04001FC9 RID: 8137
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellRadiusMin = 10f;
+	public bool alertEnemySent;
 
 	// Token: 0x04001FCA RID: 8138
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellRadiusMax = 100f;
+	public int sleeperNoiseWaitTicks;
 
 	// Token: 0x04001FCB RID: 8139
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellRadiusPerSecondUp = 5f;
+	public float sleeperNoiseVolume;
 
 	// Token: 0x04001FCC RID: 8140
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellRadiusPerSecondDown = 2f;
+	public List<PlayerStealth.NoiseData> noises;
 
 	// Token: 0x04001FCD RID: 8141
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellEatRadiusPerSecondDown = 0.14285715f;
+	public int alertEnemiesTicks;
 
 	// Token: 0x04001FCE RID: 8142
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellShelterRadiusPerSecondDown = 10f;
+	public bool alertEnemy;
 
 	// Token: 0x04001FCF RID: 8143
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellBleedRadius = 25f;
+	public Color32 barColorUI;
 
 	// Token: 0x04001FD0 RID: 8144
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellDysenteryRadius = 35f;
+	public static readonly List<Entity> entityTempList = new List<Entity>();
 
 	// Token: 0x04001FD1 RID: 8145
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cSmellEmitRate = 2;
+	public const int cAttractEmitRate = 2;
 
 	// Token: 0x04001FD2 RID: 8146
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellEmitChance = 0.2f;
+	public const float cAttractEmitChance = 0.2f;
 
 	// Token: 0x04001FD3 RID: 8147
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cSmellDuration = 90;
+	public const float cAttractRadiusMax = 100f;
 
 	// Token: 0x04001FD4 RID: 8148
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellWetClear = 3f;
+	public int attractEmitTicks;
 
 	// Token: 0x04001FD5 RID: 8149
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cSmellWetRateMin = 0.01f;
+	public const int cSmellStartDelay = 11;
 
 	// Token: 0x04001FD6 RID: 8150
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int smellUpdateItemsTicks;
+	public const int cSmellUpdateItemsTicksMax = 40;
 
 	// Token: 0x04001FD7 RID: 8151
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int smellUpdateCVarTicks;
+	public const float cSmellCountMin = 5f;
 
 	// Token: 0x04001FD8 RID: 8152
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int smellEmitTicks;
+	public const float cSmellCountMax = 50f;
 
 	// Token: 0x04001FD9 RID: 8153
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float smellRadiusTarget;
+	public const float cSmellRadiusMin = 10f;
 
 	// Token: 0x04001FDA RID: 8154
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float smellRadius;
+	public const float cSmellRadiusMax = 100f;
 
 	// Token: 0x04001FDB RID: 8155
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float smellEatRadius;
+	public const float cSmellRadiusPerSecondUp = 5f;
 
 	// Token: 0x04001FDC RID: 8156
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int smellEatTicks;
+	public const float cSmellRadiusPerSecondDown = 2f;
 
 	// Token: 0x04001FDD RID: 8157
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool smellSheltered;
+	public const float cSmellEatRadiusPerSecondDown = 0.14285715f;
 
 	// Token: 0x04001FDE RID: 8158
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float smellWet;
+	public const float cSmellShelterRadiusPerSecondDown = 10f;
 
 	// Token: 0x04001FDF RID: 8159
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float smellWetRate;
+	public const float cSmellBleedRadius = 25f;
 
 	// Token: 0x04001FE0 RID: 8160
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int smellRadiusTargetSent;
+	public const float cSmellDysenteryRadius = 35f;
 
 	// Token: 0x04001FE1 RID: 8161
 	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cSmellEmitRate = 2;
+
+	// Token: 0x04001FE2 RID: 8162
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cSmellEmitChance = 0.2f;
+
+	// Token: 0x04001FE3 RID: 8163
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cSmellDuration = 90;
+
+	// Token: 0x04001FE4 RID: 8164
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cSmellWetClear = 3f;
+
+	// Token: 0x04001FE5 RID: 8165
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cSmellWetRateMin = 0.01f;
+
+	// Token: 0x04001FE6 RID: 8166
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int smellUpdateItemsTicks;
+
+	// Token: 0x04001FE7 RID: 8167
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int smellUpdateCVarTicks;
+
+	// Token: 0x04001FE8 RID: 8168
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int smellEmitTicks;
+
+	// Token: 0x04001FE9 RID: 8169
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float smellRadiusTarget;
+
+	// Token: 0x04001FEA RID: 8170
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float smellRadius;
+
+	// Token: 0x04001FEB RID: 8171
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float smellEatRadius;
+
+	// Token: 0x04001FEC RID: 8172
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int smellEatTicks;
+
+	// Token: 0x04001FED RID: 8173
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool smellSheltered;
+
+	// Token: 0x04001FEE RID: 8174
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float smellWet;
+
+	// Token: 0x04001FEF RID: 8175
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float smellWetRate;
+
+	// Token: 0x04001FF0 RID: 8176
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int smellRadiusTargetSent;
+
+	// Token: 0x04001FF1 RID: 8177
+	[PublicizedFrom(EAccessModifier.Private)]
 	public bool smellShelteredSent;
 
-	// Token: 0x02000502 RID: 1282
+	// Token: 0x02000504 RID: 1284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct NoiseData
 	{
-		// Token: 0x060029C2 RID: 10690 RVA: 0x00107D6A File Offset: 0x00105F6A
+		// Token: 0x060029C9 RID: 10697 RVA: 0x001082BE File Offset: 0x001064BE
 		public NoiseData(float _volume, int _ticks)
 		{
 			this.volume = _volume;
 			this.ticks = _ticks;
 		}
 
-		// Token: 0x04001FE2 RID: 8162
+		// Token: 0x04001FF2 RID: 8178
 		public float volume;
 
-		// Token: 0x04001FE3 RID: 8163
+		// Token: 0x04001FF3 RID: 8179
 		public int ticks;
 	}
 }

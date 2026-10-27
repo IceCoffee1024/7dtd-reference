@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001054 RID: 4180
+// Token: 0x02001064 RID: 4196
 [Preserve]
 public class XUiC_TwirlWarpSettings : XUiC_SignWarpSettings
 {
-	// Token: 0x17000F8F RID: 3983
-	// (get) Token: 0x06008465 RID: 33893 RVA: 0x00328C47 File Offset: 0x00326E47
+	// Token: 0x17000F9A RID: 3994
+	// (get) Token: 0x060084B7 RID: 33975 RVA: 0x0032A94B File Offset: 0x00328B4B
 	public override SignData.SignWarp CurrentWarp
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,7 +17,7 @@ public class XUiC_TwirlWarpSettings : XUiC_SignWarpSettings
 		}
 	}
 
-	// Token: 0x06008466 RID: 33894 RVA: 0x00328C50 File Offset: 0x00326E50
+	// Token: 0x060084B8 RID: 33976 RVA: 0x0032A954 File Offset: 0x00328B54
 	public override void Init()
 	{
 		base.Init();
@@ -48,7 +48,7 @@ public class XUiC_TwirlWarpSettings : XUiC_SignWarpSettings
 		base.SetDefaultValue("cbxFreq", twirlWarp.frequency);
 	}
 
-	// Token: 0x06008467 RID: 33895 RVA: 0x00328DA8 File Offset: 0x00326FA8
+	// Token: 0x060084B9 RID: 33977 RVA: 0x0032AAAC File Offset: 0x00328CAC
 	public override void SetWarp(SignData.SignWarp warp)
 	{
 		this.currentWarp = warp as SignData.TwirlWarp;
@@ -66,7 +66,7 @@ public class XUiC_TwirlWarpSettings : XUiC_SignWarpSettings
 		this.cbxFreq.Value = (double)this.currentWarp.frequency;
 	}
 
-	// Token: 0x06008468 RID: 33896 RVA: 0x00328E80 File Offset: 0x00327080
+	// Token: 0x060084BA RID: 33978 RVA: 0x0032AB84 File Offset: 0x00328D84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -90,23 +90,23 @@ public class XUiC_TwirlWarpSettings : XUiC_SignWarpSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0400624B RID: 25163
+	// Token: 0x04006289 RID: 25225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.TwirlWarp currentWarp;
 
-	// Token: 0x0400624C RID: 25164
+	// Token: 0x0400628A RID: 25226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetX;
 
-	// Token: 0x0400624D RID: 25165
+	// Token: 0x0400628B RID: 25227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetY;
 
-	// Token: 0x0400624E RID: 25166
+	// Token: 0x0400628C RID: 25228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxAmount;
 
-	// Token: 0x0400624F RID: 25167
+	// Token: 0x0400628D RID: 25229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxFreq;
 }

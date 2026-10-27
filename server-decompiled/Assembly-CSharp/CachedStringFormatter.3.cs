@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013D1 RID: 5073
+// Token: 0x020013E3 RID: 5091
 public class CachedStringFormatter<T1, T2, T3>
 {
-	// Token: 0x06009F80 RID: 40832 RVA: 0x003C359D File Offset: 0x003C179D
+	// Token: 0x06009FD8 RID: 40920 RVA: 0x003C59A1 File Offset: 0x003C3BA1
 	public CachedStringFormatter(Func<T1, T2, T3, string> _formatterFunc)
 	{
 		this.formatter = _formatterFunc;
 	}
 
-	// Token: 0x06009F81 RID: 40833 RVA: 0x003C35D0 File Offset: 0x003C17D0
+	// Token: 0x06009FD9 RID: 40921 RVA: 0x003C59D4 File Offset: 0x003C3BD4
 	public string Format(T1 _v1, T2 _v2, T3 _v3)
 	{
 		bool flag;
 		return this.Format(_v1, _v2, _v3, out flag);
 	}
 
-	// Token: 0x06009F82 RID: 40834 RVA: 0x003C35E8 File Offset: 0x003C17E8
+	// Token: 0x06009FDA RID: 40922 RVA: 0x003C59EC File Offset: 0x003C3BEC
 	public string Format(T1 _v1, T2 _v2, T3 _v3, out bool _valueChanged)
 	{
 		_valueChanged = this.cachedResult == null;
@@ -43,35 +43,35 @@ public class CachedStringFormatter<T1, T2, T3>
 		return this.cachedResult;
 	}
 
-	// Token: 0x040078D1 RID: 30929
+	// Token: 0x04007912 RID: 30994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Func<T1, T2, T3, string> formatter;
 
-	// Token: 0x040078D2 RID: 30930
+	// Token: 0x04007913 RID: 30995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedResult;
 
-	// Token: 0x040078D3 RID: 30931
+	// Token: 0x04007914 RID: 30996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T1 oldValue1;
 
-	// Token: 0x040078D4 RID: 30932
+	// Token: 0x04007915 RID: 30997
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEqualityComparer<T1> comparer1 = EqualityComparer<T1>.Default;
 
-	// Token: 0x040078D5 RID: 30933
+	// Token: 0x04007916 RID: 30998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T2 oldValue2;
 
-	// Token: 0x040078D6 RID: 30934
+	// Token: 0x04007917 RID: 30999
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEqualityComparer<T2> comparer2 = EqualityComparer<T2>.Default;
 
-	// Token: 0x040078D7 RID: 30935
+	// Token: 0x04007918 RID: 31000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T3 oldValue3;
 
-	// Token: 0x040078D8 RID: 30936
+	// Token: 0x04007919 RID: 31001
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEqualityComparer<T3> comparer3 = EqualityComparer<T3>.Default;
 }

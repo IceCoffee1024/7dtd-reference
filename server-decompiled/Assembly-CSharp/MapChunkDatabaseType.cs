@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000B5D RID: 2909
+// Token: 0x02000B68 RID: 2920
 public enum MapChunkDatabaseType
 {
-	// Token: 0x04004404 RID: 17412
+	// Token: 0x04004429 RID: 17449
 	Fixed,
-	// Token: 0x04004405 RID: 17413
+	// Token: 0x0400442A RID: 17450
 	Region
 }

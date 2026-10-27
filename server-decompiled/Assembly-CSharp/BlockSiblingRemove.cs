@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSiblingRemove : Block
 {
-	// Token: 0x0600092F RID: 2351 RVA: 0x0003FE10 File Offset: 0x0003E010
+	// Token: 0x0600092F RID: 2351 RVA: 0x0003FDD0 File Offset: 0x0003DFD0
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class BlockSiblingRemove : Block
 		}
 	}
 
-	// Token: 0x06000930 RID: 2352 RVA: 0x0003FE64 File Offset: 0x0003E064
+	// Token: 0x06000930 RID: 2352 RVA: 0x0003FE24 File Offset: 0x0003E024
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);

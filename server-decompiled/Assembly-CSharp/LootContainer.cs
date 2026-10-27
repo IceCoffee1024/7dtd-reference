@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-// Token: 0x0200061B RID: 1563
+// Token: 0x02000622 RID: 1570
 public class LootContainer
 {
-	// Token: 0x0600332C RID: 13100 RVA: 0x0014B847 File Offset: 0x00149A47
+	// Token: 0x0600333A RID: 13114 RVA: 0x0014C43B File Offset: 0x0014A63B
 	public static void InitStatic()
 	{
 		LootContainer.Cleanup();
 	}
 
-	// Token: 0x0600332D RID: 13101 RVA: 0x0014B84E File Offset: 0x00149A4E
+	// Token: 0x0600333B RID: 13115 RVA: 0x0014C442 File Offset: 0x0014A642
 	public void Init()
 	{
 		LootContainer.lootContainers[this.Name] = this;
 	}
 
-	// Token: 0x0600332E RID: 13102 RVA: 0x0014B861 File Offset: 0x00149A61
+	// Token: 0x0600333C RID: 13116 RVA: 0x0014C455 File Offset: 0x0014A655
 	public static void Cleanup()
 	{
 		LootContainer.lootContainers.Clear();
@@ -27,13 +27,13 @@ public class LootContainer
 		LootContainer.lootProbTemplates.Clear();
 	}
 
-	// Token: 0x0600332F RID: 13103 RVA: 0x0014B88B File Offset: 0x00149A8B
+	// Token: 0x0600333D RID: 13117 RVA: 0x0014C47F File Offset: 0x0014A67F
 	public static bool IsLoaded()
 	{
 		return LootContainer.lootContainers.Count > 0;
 	}
 
-	// Token: 0x06003330 RID: 13104 RVA: 0x0014B89C File Offset: 0x00149A9C
+	// Token: 0x0600333E RID: 13118 RVA: 0x0014C490 File Offset: 0x0014A690
 	public static LootContainer GetLootContainer(string _name, bool _errorOnMiss = true)
 	{
 		if (string.IsNullOrEmpty(_name))
@@ -52,7 +52,7 @@ public class LootContainer
 		return null;
 	}
 
-	// Token: 0x06003331 RID: 13105 RVA: 0x0014B8E0 File Offset: 0x00149AE0
+	// Token: 0x0600333F RID: 13119 RVA: 0x0014C4D4 File Offset: 0x0014A6D4
 	public static ItemStack GetRewardItem(string lootGroup, float questDifficulty)
 	{
 		if (!LootContainer.lootGroups.ContainsKey(lootGroup))
@@ -69,7 +69,7 @@ public class LootContainer
 		return list[0];
 	}
 
-	// Token: 0x06003332 RID: 13106 RVA: 0x0014B968 File Offset: 0x00149B68
+	// Token: 0x06003340 RID: 13120 RVA: 0x0014C55C File Offset: 0x0014A75C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool SpawnItem(GameRandom random, LootContainer.LootEntry template, ItemValue lootItemValue, int countToSpawn, List<ItemStack> spawnedItems, ref int slotsLeft, float gameStage, string lootQualityTemplate, EntityPlayer player, FastTags<TagGroup.Global> containerTags, bool _forceStacking)
 	{
@@ -235,7 +235,7 @@ public class LootContainer
 		return true;
 	}
 
-	// Token: 0x06003333 RID: 13107 RVA: 0x0014BD44 File Offset: 0x00149F44
+	// Token: 0x06003341 RID: 13121 RVA: 0x0014C938 File Offset: 0x0014AB38
 	public static int RandomSpawnCount(GameRandom random, int min, int max, float abundance)
 	{
 		if (min < 0)
@@ -261,7 +261,7 @@ public class LootContainer
 		return num2;
 	}
 
-	// Token: 0x06003334 RID: 13108 RVA: 0x0014BD98 File Offset: 0x00149F98
+	// Token: 0x06003342 RID: 13122 RVA: 0x0014C98C File Offset: 0x0014AB8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool SpawnAllItemsFromList(GameRandom random, List<LootContainer.LootEntry> itemSet, float abundance, List<ItemStack> spawnedItems, ref int slotsLeft, float playerLevelPercentage, float rareLootChance, string lootQualityTemplate, EntityPlayer player, FastTags<TagGroup.Global> containerTags, bool uniqueItems, bool ignoreLootProb, bool _forceStacking, bool _ignoreLootAbundance, List<string> _buffsToAdd)
 	{
@@ -304,7 +304,7 @@ public class LootContainer
 		return flag;
 	}
 
-	// Token: 0x06003335 RID: 13109 RVA: 0x0014BEE4 File Offset: 0x0014A0E4
+	// Token: 0x06003343 RID: 13123 RVA: 0x0014CAD8 File Offset: 0x0014ACD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool SpawnItemsFromGroup(GameRandom random, LootContainer.LootGroup group, int numToSpawn, float abundance, List<ItemStack> spawnedItems, ref int slotsLeft, float gameStage, float rareLootChance, string lootQualityTemplate, EntityPlayer player, FastTags<TagGroup.Global> containerTags, bool uniqueItems, bool ignoreLootProb, bool _forceStacking, bool _ignoreLootAbundance, List<string> _buffsToAdd, bool _sandboxModifierUsed)
 	{
@@ -328,7 +328,7 @@ public class LootContainer
 		return flag;
 	}
 
-	// Token: 0x06003336 RID: 13110 RVA: 0x0014BFA4 File Offset: 0x0014A1A4
+	// Token: 0x06003344 RID: 13124 RVA: 0x0014CB98 File Offset: 0x0014AD98
 	public static bool SpawnLootItemsFromList(GameRandom random, List<LootContainer.LootEntry> itemSet, int numToSpawn, float abundance, List<ItemStack> spawnedItems, ref int slotsLeft, float lootStage, float rareLootChance, string lootQualityTemplate, EntityPlayer player, FastTags<TagGroup.Global> containerTags, bool uniqueItems, bool ignoreLootProb, bool _forceStacking, bool _ignoreLootAbundance, List<string> _buffsToAdd, bool _sandboxModifierUsed)
 	{
 		if (numToSpawn < 1)
@@ -421,7 +421,7 @@ public class LootContainer
 		return flag;
 	}
 
-	// Token: 0x06003337 RID: 13111 RVA: 0x0014C22C File Offset: 0x0014A42C
+	// Token: 0x06003345 RID: 13125 RVA: 0x0014CE20 File Offset: 0x0014B020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int RandomCountFromSandboxTags(GameRandom rand, ItemValue itemValue, int itemSpawnCount)
 	{
@@ -482,7 +482,7 @@ public class LootContainer
 		return LootContainer.RandomSpawnCount(rand, itemSpawnCount, itemSpawnCount, num);
 	}
 
-	// Token: 0x06003338 RID: 13112 RVA: 0x0014C354 File Offset: 0x0014A554
+	// Token: 0x06003346 RID: 13126 RVA: 0x0014CF48 File Offset: 0x0014B148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ValueTuple<int, bool> RandomCountFromSandbox(GameRandom _random, LootContainer.LootGroup _group, int _minCount, int _maxCount, float _abundance)
 	{
@@ -494,7 +494,7 @@ public class LootContainer
 		return new ValueTuple<int, bool>(LootContainer.RandomSpawnCount(_random, _minCount, _maxCount, _abundance), countMultiplierFromSandbox >= 0f);
 	}
 
-	// Token: 0x06003339 RID: 13113 RVA: 0x0014C39C File Offset: 0x0014A59C
+	// Token: 0x06003347 RID: 13127 RVA: 0x0014CF90 File Offset: 0x0014B190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetCountMultiplierFromSandbox(LootContainer.LootGroup.AbundanceLootModTypes abundanceType)
 	{
@@ -527,7 +527,7 @@ public class LootContainer
 		}
 	}
 
-	// Token: 0x0600333A RID: 13114 RVA: 0x0014C426 File Offset: 0x0014A626
+	// Token: 0x06003348 RID: 13128 RVA: 0x0014D01A File Offset: 0x0014B21A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetSandboxProb(ItemClass _item)
 	{
@@ -538,7 +538,7 @@ public class LootContainer
 		return 1f;
 	}
 
-	// Token: 0x0600333B RID: 13115 RVA: 0x0014C448 File Offset: 0x0014A648
+	// Token: 0x06003349 RID: 13129 RVA: 0x0014D03C File Offset: 0x0014B23C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float getProbability(EntityPlayer _player, LootContainer.LootEntry _item, float _lootstage, bool _ignoreLootProb)
 	{
@@ -598,7 +598,7 @@ public class LootContainer
 		}
 	}
 
-	// Token: 0x0600333C RID: 13116 RVA: 0x0014C640 File Offset: 0x0014A840
+	// Token: 0x0600334A RID: 13130 RVA: 0x0014D234 File Offset: 0x0014B434
 	public void ExecuteBuffActions(int instigatorId, EntityAlive target)
 	{
 		if (this.BuffActions != null)
@@ -610,7 +610,7 @@ public class LootContainer
 		}
 	}
 
-	// Token: 0x0600333D RID: 13117 RVA: 0x0014C68C File Offset: 0x0014A88C
+	// Token: 0x0600334B RID: 13131 RVA: 0x0014D280 File Offset: 0x0014B480
 	public List<ItemStack> Spawn(GameRandom random, int _maxItems, float playerLevelPercentage, float rareLootChance, EntityPlayer player, FastTags<TagGroup.Global> containerTags, bool uniqueItems, bool ignoreLootProb, bool ignoreLootAbundance)
 	{
 		float num = 1f;
@@ -640,7 +640,7 @@ public class LootContainer
 		return list;
 	}
 
-	// Token: 0x0600333E RID: 13118 RVA: 0x0014C76C File Offset: 0x0014A96C
+	// Token: 0x0600334C RID: 13132 RVA: 0x0014D360 File Offset: 0x0014B560
 	[Conditional("DEBUG_LOOTLOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LootLog(string _name, string _format = "", params object[] _args)
@@ -649,248 +649,248 @@ public class LootContainer
 		Log.Warning(_format, _args);
 	}
 
-	// Token: 0x04002850 RID: 10320
+	// Token: 0x0400286B RID: 10347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, LootContainer> lootContainers = new CaseInsensitiveStringDictionary<LootContainer>();
 
-	// Token: 0x04002851 RID: 10321
+	// Token: 0x0400286C RID: 10348
 	public static readonly Dictionary<string, LootContainer.LootGroup> lootGroups = new Dictionary<string, LootContainer.LootGroup>();
 
-	// Token: 0x04002852 RID: 10322
+	// Token: 0x0400286D RID: 10349
 	public static readonly Dictionary<string, LootContainer.LootQualityTemplate> lootQualityTemplates = new Dictionary<string, LootContainer.LootQualityTemplate>();
 
-	// Token: 0x04002853 RID: 10323
+	// Token: 0x0400286E RID: 10350
 	public static readonly Dictionary<string, LootContainer.LootProbabilityTemplate> lootProbTemplates = new Dictionary<string, LootContainer.LootProbabilityTemplate>();
 
-	// Token: 0x04002854 RID: 10324
+	// Token: 0x0400286F RID: 10351
 	public string Name;
 
-	// Token: 0x04002855 RID: 10325
+	// Token: 0x04002870 RID: 10352
 	public string soundOpen;
 
-	// Token: 0x04002856 RID: 10326
+	// Token: 0x04002871 RID: 10353
 	public string soundClose;
 
-	// Token: 0x04002857 RID: 10327
+	// Token: 0x04002872 RID: 10354
 	public Vector2i size;
 
-	// Token: 0x04002858 RID: 10328
+	// Token: 0x04002873 RID: 10355
 	public float openTime;
 
-	// Token: 0x04002859 RID: 10329
+	// Token: 0x04002874 RID: 10356
 	public int minCount;
 
-	// Token: 0x0400285A RID: 10330
+	// Token: 0x04002875 RID: 10357
 	public int maxCount;
 
-	// Token: 0x0400285B RID: 10331
+	// Token: 0x04002876 RID: 10358
 	public LootContainer.DestroyOnClose destroyOnClose;
 
-	// Token: 0x0400285C RID: 10332
+	// Token: 0x04002877 RID: 10359
 	public string lootQualityTemplate;
 
-	// Token: 0x0400285D RID: 10333
+	// Token: 0x04002878 RID: 10360
 	public List<string> BuffActions;
 
-	// Token: 0x0400285E RID: 10334
+	// Token: 0x04002879 RID: 10361
 	public string OnOpenEvent = "";
 
-	// Token: 0x0400285F RID: 10335
+	// Token: 0x0400287A RID: 10362
 	public bool ignoreLootAbundance;
 
-	// Token: 0x04002860 RID: 10336
+	// Token: 0x0400287B RID: 10363
 	public bool useUnmodifiedLootstage;
 
-	// Token: 0x04002861 RID: 10337
+	// Token: 0x0400287C RID: 10364
 	public bool UniqueItems;
 
-	// Token: 0x04002862 RID: 10338
+	// Token: 0x0400287D RID: 10365
 	public bool IgnoreLootProb;
 
-	// Token: 0x04002863 RID: 10339
+	// Token: 0x0400287E RID: 10366
 	public readonly List<LootContainer.LootEntry> itemsToSpawn = new List<LootContainer.LootEntry>();
 
-	// Token: 0x04002864 RID: 10340
+	// Token: 0x0400287F RID: 10367
 	public static Dictionary<EntityPlayer, string[]> OverrideItems = new Dictionary<EntityPlayer, string[]>();
 
-	// Token: 0x04002865 RID: 10341
+	// Token: 0x04002880 RID: 10368
 	public static float GlobalCountModifier = 1f;
 
-	// Token: 0x04002866 RID: 10342
+	// Token: 0x04002881 RID: 10369
 	public static float FoodCountModifier = 1f;
 
-	// Token: 0x04002867 RID: 10343
+	// Token: 0x04002882 RID: 10370
 	public static float DrinkCountModifier = 1f;
 
-	// Token: 0x04002868 RID: 10344
+	// Token: 0x04002883 RID: 10371
 	public static float AmmoCountModifier = 1f;
 
-	// Token: 0x04002869 RID: 10345
+	// Token: 0x04002884 RID: 10372
 	public static float MedicalCountModifier = 1f;
 
-	// Token: 0x0400286A RID: 10346
+	// Token: 0x04002885 RID: 10373
 	public static float ResourceCountModifier = 1f;
 
-	// Token: 0x0400286B RID: 10347
+	// Token: 0x04002886 RID: 10374
 	public static float ArmorCountModifier = 1f;
 
-	// Token: 0x0400286C RID: 10348
+	// Token: 0x04002887 RID: 10375
 	public static float MeleeCountModifier = 1f;
 
-	// Token: 0x0400286D RID: 10349
+	// Token: 0x04002888 RID: 10376
 	public static float RangedCountModifier = 1f;
 
-	// Token: 0x0400286E RID: 10350
+	// Token: 0x04002889 RID: 10377
 	public static float DukesCountModifier = 1f;
 
-	// Token: 0x0400286F RID: 10351
+	// Token: 0x0400288A RID: 10378
 	public static float MagazinesCountModifier = 1f;
 
-	// Token: 0x04002870 RID: 10352
+	// Token: 0x0400288B RID: 10379
 	public static float BookCountModifier = 1f;
 
-	// Token: 0x04002871 RID: 10353
+	// Token: 0x0400288C RID: 10380
 	public static float TreasureMapChance = 1f;
 
-	// Token: 0x04002872 RID: 10354
+	// Token: 0x0400288D RID: 10381
 	public static int LootMaxTier = 6;
 
-	// Token: 0x04002873 RID: 10355
+	// Token: 0x0400288E RID: 10382
 	public static float LootTimerModifier = 1f;
 
-	// Token: 0x04002874 RID: 10356
+	// Token: 0x0400288F RID: 10383
 	public static float LootBagChance = 1f;
 
-	// Token: 0x04002875 RID: 10357
+	// Token: 0x04002890 RID: 10384
 	public static bool NoLoot = false;
 
-	// Token: 0x04002876 RID: 10358
+	// Token: 0x04002891 RID: 10385
 	public static FastTags<TagGroup.Global> foodTags = FastTags<TagGroup.Global>.Parse("food");
 
-	// Token: 0x04002877 RID: 10359
+	// Token: 0x04002892 RID: 10386
 	public static FastTags<TagGroup.Global> drinksTags = FastTags<TagGroup.Global>.Parse("drinks");
 
-	// Token: 0x04002878 RID: 10360
+	// Token: 0x04002893 RID: 10387
 	public static FastTags<TagGroup.Global> ammoTags = FastTags<TagGroup.Global>.Parse("ammo");
 
-	// Token: 0x04002879 RID: 10361
+	// Token: 0x04002894 RID: 10388
 	public static FastTags<TagGroup.Global> medicalTags = FastTags<TagGroup.Global>.Parse("medical");
 
-	// Token: 0x0400287A RID: 10362
+	// Token: 0x04002895 RID: 10389
 	public static FastTags<TagGroup.Global> junkTags = FastTags<TagGroup.Global>.Parse("junk");
 
-	// Token: 0x0400287B RID: 10363
+	// Token: 0x04002896 RID: 10390
 	public static FastTags<TagGroup.Global> armorTags = FastTags<TagGroup.Global>.Parse("armor,armorParts");
 
-	// Token: 0x0400287C RID: 10364
+	// Token: 0x04002897 RID: 10391
 	public static FastTags<TagGroup.Global> meleeTags = FastTags<TagGroup.Global>.Parse("melee,meleeParts");
 
-	// Token: 0x0400287D RID: 10365
+	// Token: 0x04002898 RID: 10392
 	public static FastTags<TagGroup.Global> rangedTags = FastTags<TagGroup.Global>.Parse("ranged,rangedParts");
 
-	// Token: 0x0400287E RID: 10366
+	// Token: 0x04002899 RID: 10393
 	public static FastTags<TagGroup.Global> dukesTags = FastTags<TagGroup.Global>.Parse("dukes");
 
-	// Token: 0x0400287F RID: 10367
+	// Token: 0x0400289A RID: 10394
 	public static FastTags<TagGroup.Global> magazineTags = FastTags<TagGroup.Global>.Parse("csm");
 
-	// Token: 0x04002880 RID: 10368
+	// Token: 0x0400289B RID: 10395
 	public static FastTags<TagGroup.Global> booksTags = FastTags<TagGroup.Global>.Parse("books");
 
-	// Token: 0x04002881 RID: 10369
+	// Token: 0x0400289C RID: 10396
 	public static FastTags<TagGroup.Global> treasureTags = FastTags<TagGroup.Global>.Parse("treasureMap");
 
-	// Token: 0x0200061C RID: 1564
+	// Token: 0x02000623 RID: 1571
 	public enum DestroyOnClose
 	{
-		// Token: 0x04002883 RID: 10371
+		// Token: 0x0400289E RID: 10398
 		False,
-		// Token: 0x04002884 RID: 10372
+		// Token: 0x0400289F RID: 10399
 		True,
-		// Token: 0x04002885 RID: 10373
+		// Token: 0x040028A0 RID: 10400
 		Empty
 	}
 
-	// Token: 0x0200061D RID: 1565
+	// Token: 0x02000624 RID: 1572
 	public class LootItem
 	{
-		// Token: 0x04002886 RID: 10374
+		// Token: 0x040028A1 RID: 10401
 		public ItemValue itemValue;
 	}
 
-	// Token: 0x0200061E RID: 1566
+	// Token: 0x02000625 RID: 1573
 	public class LootGroup
 	{
-		// Token: 0x04002887 RID: 10375
+		// Token: 0x040028A2 RID: 10402
 		public string name;
 
-		// Token: 0x04002888 RID: 10376
+		// Token: 0x040028A3 RID: 10403
 		public string lootQualityTemplate;
 
-		// Token: 0x04002889 RID: 10377
+		// Token: 0x040028A4 RID: 10404
 		public int minCount;
 
-		// Token: 0x0400288A RID: 10378
+		// Token: 0x040028A5 RID: 10405
 		public int maxCount;
 
-		// Token: 0x0400288B RID: 10379
+		// Token: 0x040028A6 RID: 10406
 		public int minQuality = -1;
 
-		// Token: 0x0400288C RID: 10380
+		// Token: 0x040028A7 RID: 10407
 		public int maxQuality = -1;
 
-		// Token: 0x0400288D RID: 10381
+		// Token: 0x040028A8 RID: 10408
 		public float minLevel;
 
-		// Token: 0x0400288E RID: 10382
+		// Token: 0x040028A9 RID: 10409
 		public float maxLevel;
 
-		// Token: 0x0400288F RID: 10383
+		// Token: 0x040028AA RID: 10410
 		public string[] modsToInstall;
 
-		// Token: 0x04002890 RID: 10384
+		// Token: 0x040028AB RID: 10411
 		public float modChance = 1f;
 
-		// Token: 0x04002891 RID: 10385
+		// Token: 0x040028AC RID: 10412
 		public readonly List<LootContainer.LootEntry> items = new List<LootContainer.LootEntry>();
 
-		// Token: 0x04002892 RID: 10386
+		// Token: 0x040028AD RID: 10413
 		public LootContainer.LootGroup.AbundanceLootModTypes abundanceType;
 
-		// Token: 0x0200061F RID: 1567
+		// Token: 0x02000626 RID: 1574
 		public enum AbundanceLootModTypes
 		{
-			// Token: 0x04002894 RID: 10388
+			// Token: 0x040028AF RID: 10415
 			None,
-			// Token: 0x04002895 RID: 10389
+			// Token: 0x040028B0 RID: 10416
 			Food,
-			// Token: 0x04002896 RID: 10390
+			// Token: 0x040028B1 RID: 10417
 			Drinks,
-			// Token: 0x04002897 RID: 10391
+			// Token: 0x040028B2 RID: 10418
 			Ammo,
-			// Token: 0x04002898 RID: 10392
+			// Token: 0x040028B3 RID: 10419
 			Meds,
-			// Token: 0x04002899 RID: 10393
+			// Token: 0x040028B4 RID: 10420
 			Resources,
-			// Token: 0x0400289A RID: 10394
+			// Token: 0x040028B5 RID: 10421
 			Armor,
-			// Token: 0x0400289B RID: 10395
+			// Token: 0x040028B6 RID: 10422
 			Melee,
-			// Token: 0x0400289C RID: 10396
+			// Token: 0x040028B7 RID: 10423
 			Ranged,
-			// Token: 0x0400289D RID: 10397
+			// Token: 0x040028B8 RID: 10424
 			Dukes,
-			// Token: 0x0400289E RID: 10398
+			// Token: 0x040028B9 RID: 10425
 			Magazines,
-			// Token: 0x0400289F RID: 10399
+			// Token: 0x040028BA RID: 10426
 			Books
 		}
 	}
 
-	// Token: 0x02000620 RID: 1568
+	// Token: 0x02000627 RID: 1575
 	public class LootEntry
 	{
-		// Token: 0x06003343 RID: 13123 RVA: 0x0014C970 File Offset: 0x0014AB70
+		// Token: 0x06003351 RID: 13137 RVA: 0x0014D564 File Offset: 0x0014B764
 		public bool HasRequirements(EntityPlayer player)
 		{
 			if (this.Requirements != null)
@@ -906,81 +906,81 @@ public class LootContainer
 			return true;
 		}
 
-		// Token: 0x040028A0 RID: 10400
+		// Token: 0x040028BB RID: 10427
 		public string lootProbTemplate;
 
-		// Token: 0x040028A1 RID: 10401
+		// Token: 0x040028BC RID: 10428
 		public int minCount;
 
-		// Token: 0x040028A2 RID: 10402
+		// Token: 0x040028BD RID: 10429
 		public int maxCount;
 
-		// Token: 0x040028A3 RID: 10403
+		// Token: 0x040028BE RID: 10430
 		public int minQuality;
 
-		// Token: 0x040028A4 RID: 10404
+		// Token: 0x040028BF RID: 10431
 		public int maxQuality;
 
-		// Token: 0x040028A5 RID: 10405
+		// Token: 0x040028C0 RID: 10432
 		public float minLevel;
 
-		// Token: 0x040028A6 RID: 10406
+		// Token: 0x040028C1 RID: 10433
 		public float maxLevel;
 
-		// Token: 0x040028A7 RID: 10407
+		// Token: 0x040028C2 RID: 10434
 		public float prob;
 
-		// Token: 0x040028A8 RID: 10408
+		// Token: 0x040028C3 RID: 10435
 		public bool forceProb;
 
-		// Token: 0x040028A9 RID: 10409
+		// Token: 0x040028C4 RID: 10436
 		public string[] modsToInstall;
 
-		// Token: 0x040028AA RID: 10410
+		// Token: 0x040028C5 RID: 10437
 		public float modChance = 1f;
 
-		// Token: 0x040028AB RID: 10411
+		// Token: 0x040028C6 RID: 10438
 		public float lootstageCountMod;
 
-		// Token: 0x040028AC RID: 10412
+		// Token: 0x040028C7 RID: 10439
 		public LootContainer.LootItem item;
 
-		// Token: 0x040028AD RID: 10413
+		// Token: 0x040028C8 RID: 10440
 		public LootContainer.LootGroup group;
 
-		// Token: 0x040028AE RID: 10414
+		// Token: 0x040028C9 RID: 10441
 		public LootContainer.LootGroup parentGroup;
 
-		// Token: 0x040028AF RID: 10415
+		// Token: 0x040028CA RID: 10442
 		public FastTags<TagGroup.Global> tags;
 
-		// Token: 0x040028B0 RID: 10416
+		// Token: 0x040028CB RID: 10443
 		public string[] buffsToAdd;
 
-		// Token: 0x040028B1 RID: 10417
+		// Token: 0x040028CC RID: 10444
 		public bool randomDurability = true;
 
-		// Token: 0x040028B2 RID: 10418
+		// Token: 0x040028CD RID: 10445
 		public List<BaseLootEntryRequirement> Requirements;
 	}
 
-	// Token: 0x02000621 RID: 1569
+	// Token: 0x02000628 RID: 1576
 	public class LootProbabilityTemplate
 	{
-		// Token: 0x040028B3 RID: 10419
+		// Token: 0x040028CE RID: 10446
 		public string name;
 
-		// Token: 0x040028B4 RID: 10420
+		// Token: 0x040028CF RID: 10447
 		public readonly List<LootContainer.LootEntry> templates = new List<LootContainer.LootEntry>();
 	}
 
-	// Token: 0x02000622 RID: 1570
+	// Token: 0x02000629 RID: 1577
 	public class LootQualityTemplate
 	{
-		// Token: 0x040028B5 RID: 10421
+		// Token: 0x040028D0 RID: 10448
 		public string name;
 
-		// Token: 0x040028B6 RID: 10422
+		// Token: 0x040028D1 RID: 10449
 		public readonly List<LootContainer.LootGroup> templates = new List<LootContainer.LootGroup>();
 	}
 }

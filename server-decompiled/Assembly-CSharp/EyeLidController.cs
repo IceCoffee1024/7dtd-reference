@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000A54 RID: 2644
+// Token: 0x02000A5E RID: 2654
 public class EyeLidController : MonoBehaviour
 {
-	// Token: 0x06004FA7 RID: 20391 RVA: 0x001E5074 File Offset: 0x001E3274
+	// Token: 0x06004FCB RID: 20427 RVA: 0x001E615C File Offset: 0x001E435C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -24,7 +24,7 @@ public class EyeLidController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FA8 RID: 20392 RVA: 0x001E5154 File Offset: 0x001E3354
+	// Token: 0x06004FCC RID: 20428 RVA: 0x001E623C File Offset: 0x001E443C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -69,97 +69,97 @@ public class EyeLidController : MonoBehaviour
 		this.rightBottomTransform.localRotation = Quaternion.Euler(this.bottomRotation * this.blinkProgress) * this.rightBottomRotation;
 	}
 
-	// Token: 0x04003D64 RID: 15716
+	// Token: 0x04003D85 RID: 15749
 	public Transform leftTopTransform;
 
-	// Token: 0x04003D65 RID: 15717
+	// Token: 0x04003D86 RID: 15750
 	public Transform leftBottomTransform;
 
-	// Token: 0x04003D66 RID: 15718
+	// Token: 0x04003D87 RID: 15751
 	public Transform rightTopTransform;
 
-	// Token: 0x04003D67 RID: 15719
+	// Token: 0x04003D88 RID: 15752
 	public Transform rightBottomTransform;
 
-	// Token: 0x04003D68 RID: 15720
+	// Token: 0x04003D89 RID: 15753
 	public Vector3 leftTopLocalPosition;
 
-	// Token: 0x04003D69 RID: 15721
+	// Token: 0x04003D8A RID: 15754
 	public Vector3 leftBottomLocalPosition;
 
-	// Token: 0x04003D6A RID: 15722
+	// Token: 0x04003D8B RID: 15755
 	public Quaternion leftTopRotation;
 
-	// Token: 0x04003D6B RID: 15723
+	// Token: 0x04003D8C RID: 15756
 	public Quaternion leftBottomRotation;
 
-	// Token: 0x04003D6C RID: 15724
+	// Token: 0x04003D8D RID: 15757
 	public Vector3 rightTopLocalPosition;
 
-	// Token: 0x04003D6D RID: 15725
+	// Token: 0x04003D8E RID: 15758
 	public Vector3 rightBottomLocalPosition;
 
-	// Token: 0x04003D6E RID: 15726
+	// Token: 0x04003D8F RID: 15759
 	public Quaternion rightTopRotation;
 
-	// Token: 0x04003D6F RID: 15727
+	// Token: 0x04003D90 RID: 15760
 	public Quaternion rightBottomRotation;
 
-	// Token: 0x04003D70 RID: 15728
+	// Token: 0x04003D91 RID: 15761
 	public bool autoRecordEyeBoneTransforms;
 
-	// Token: 0x04003D71 RID: 15729
+	// Token: 0x04003D92 RID: 15762
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float nextBlinkTime;
 
-	// Token: 0x04003D72 RID: 15730
+	// Token: 0x04003D93 RID: 15763
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float blinkProgress;
 
-	// Token: 0x04003D73 RID: 15731
+	// Token: 0x04003D94 RID: 15764
 	public bool debug;
 
-	// Token: 0x04003D74 RID: 15732
+	// Token: 0x04003D95 RID: 15765
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive entityAlive;
 
-	// Token: 0x04003D75 RID: 15733
+	// Token: 0x04003D96 RID: 15766
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameRandom random;
 
-	// Token: 0x04003D76 RID: 15734
+	// Token: 0x04003D97 RID: 15767
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 topOffset = new Vector3(0f, 0f, 0.007f);
 
-	// Token: 0x04003D77 RID: 15735
+	// Token: 0x04003D98 RID: 15768
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 topRotation = new Vector3(40f, 0f, 0f);
 
-	// Token: 0x04003D78 RID: 15736
+	// Token: 0x04003D99 RID: 15769
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 bottomRotation = new Vector3(-10f, 0f, -10f);
 
-	// Token: 0x04003D79 RID: 15737
+	// Token: 0x04003D9A RID: 15770
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EyeLidController.BlinkState blinkState;
 
-	// Token: 0x02000A55 RID: 2645
+	// Token: 0x02000A5F RID: 2655
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum BlinkState
 	{
-		// Token: 0x04003D7B RID: 15739
+		// Token: 0x04003D9C RID: 15772
 		Open,
-		// Token: 0x04003D7C RID: 15740
+		// Token: 0x04003D9D RID: 15773
 		Closing,
-		// Token: 0x04003D7D RID: 15741
+		// Token: 0x04003D9E RID: 15774
 		Opening
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02001462 RID: 5218
+// Token: 0x02001474 RID: 5236
 public interface IMemoryPoolableObject
 {
-	// Token: 0x0600A398 RID: 41880
+	// Token: 0x0600A3F0 RID: 41968
 	void Reset();
 
-	// Token: 0x0600A399 RID: 41881
+	// Token: 0x0600A3F1 RID: 41969
 	void Cleanup();
 }

@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Xml.Linq;
 
-// Token: 0x02000D46 RID: 3398
+// Token: 0x02000D51 RID: 3409
 public static class ToolbeltFromXml
 {
-	// Token: 0x060066ED RID: 26349 RVA: 0x0028C718 File Offset: 0x0028A918
+	// Token: 0x06006712 RID: 26386 RVA: 0x0028DC40 File Offset: 0x0028BE40
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -17,7 +17,7 @@ public static class ToolbeltFromXml
 		yield break;
 	}
 
-	// Token: 0x060066EE RID: 26350 RVA: 0x0028C728 File Offset: 0x0028A928
+	// Token: 0x06006713 RID: 26387 RVA: 0x0028DC50 File Offset: 0x0028BE50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseConfig(XElement root, string configId, ToolbeltConfig config)
 	{
@@ -56,27 +56,27 @@ public static class ToolbeltFromXml
 		}
 	}
 
-	// Token: 0x04004FB8 RID: 20408
+	// Token: 0x04004FDD RID: 20445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MinSlotsPerBar = 1;
 
-	// Token: 0x04004FB9 RID: 20409
+	// Token: 0x04004FDE RID: 20446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxSlotsPerBar = 10;
 
-	// Token: 0x04004FBA RID: 20410
+	// Token: 0x04004FDF RID: 20447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MinBarPerPage = 1;
 
-	// Token: 0x04004FBB RID: 20411
+	// Token: 0x04004FE0 RID: 20448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxBarPerPage = 2;
 
-	// Token: 0x04004FBC RID: 20412
+	// Token: 0x04004FE1 RID: 20449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MinPages = 1;
 
-	// Token: 0x04004FBD RID: 20413
+	// Token: 0x04004FE2 RID: 20450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxPages = 10;
 }

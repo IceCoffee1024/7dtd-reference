@@ -8,18 +8,18 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A7C RID: 6780
+	// Token: 0x02001AAD RID: 6829
 	[Preserve]
 	public class FixedLayerMixer : LayerMixer<FixedConfiguration>
 	{
-		// Token: 0x0600CD86 RID: 52614 RVA: 0x004AD154 File Offset: 0x004AB354
+		// Token: 0x0600CE9A RID: 52890 RVA: 0x004B0C50 File Offset: 0x004AEE50
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void updateHyperbar(int _idx)
 		{
 			this.hyperbar = _idx / (this.sectSamplesFor * 2);
 		}
 
-		// Token: 0x1700199B RID: 6555
+		// Token: 0x170019E3 RID: 6627
 		public override float this[int _idx]
 		{
 			get
@@ -70,7 +70,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD88 RID: 52616 RVA: 0x004AD444 File Offset: 0x004AB644
+		// Token: 0x0600CE9C RID: 52892 RVA: 0x004B0F40 File Offset: 0x004AF140
 		public override IEnumerator Load()
 		{
 			yield return this.<>n__0();
@@ -99,8 +99,8 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x1700199C RID: 6556
-		// (get) Token: 0x0600CD89 RID: 52617 RVA: 0x004AD454 File Offset: 0x004AB654
+		// Token: 0x170019E4 RID: 6628
+		// (get) Token: 0x0600CE9D RID: 52893 RVA: 0x004B0F50 File Offset: 0x004AF150
 		public bool IsFinished
 		{
 			get
@@ -119,19 +119,19 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x04009BEB RID: 39915
+		// Token: 0x04009CD4 RID: 40148
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ProfilerMarker s_LoadMarker = new ProfilerMarker("DynamicMusic.FixedLayerMixer.Load");
 
-		// Token: 0x04009BEC RID: 39916
+		// Token: 0x04009CD5 RID: 40149
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int hyperbar;
 
-		// Token: 0x04009BED RID: 39917
+		// Token: 0x04009CD6 RID: 40150
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<LayerType> warningLogHash = new HashSet<LayerType>();
 
-		// Token: 0x04009BEE RID: 39918
+		// Token: 0x04009CD7 RID: 40151
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int sectSamplesFor;
 	}

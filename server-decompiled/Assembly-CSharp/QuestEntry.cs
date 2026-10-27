@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020004C8 RID: 1224
+// Token: 0x020004CA RID: 1226
 [Preserve]
 public class QuestEntry
 {
-	// Token: 0x06002695 RID: 9877 RVA: 0x000EC1F4 File Offset: 0x000EA3F4
+	// Token: 0x0600269C RID: 9884 RVA: 0x000EC604 File Offset: 0x000EA804
 	public QuestEntry(string questID, float prob, int startStage, int endStage, string cvar)
 	{
 		this.QuestID = questID;
@@ -19,7 +19,7 @@ public class QuestEntry
 		}
 	}
 
-	// Token: 0x06002696 RID: 9878 RVA: 0x000EC26C File Offset: 0x000EA46C
+	// Token: 0x0600269D RID: 9885 RVA: 0x000EC67C File Offset: 0x000EA87C
 	public bool CheckRequirement(EntityPlayer player)
 	{
 		if (!QuestJournal.BuriedQuestsEnabled && this.QuestClass.FilterTags.Test_AnySet(QuestEntry.buriedTag))
@@ -44,27 +44,27 @@ public class QuestEntry
 		return true;
 	}
 
-	// Token: 0x04001C98 RID: 7320
+	// Token: 0x04001CA8 RID: 7336
 	public float Prob = 1f;
 
-	// Token: 0x04001C99 RID: 7321
+	// Token: 0x04001CA9 RID: 7337
 	public int StartStage = -1;
 
-	// Token: 0x04001C9A RID: 7322
+	// Token: 0x04001CAA RID: 7338
 	public int EndStage = -1;
 
-	// Token: 0x04001C9B RID: 7323
+	// Token: 0x04001CAB RID: 7339
 	public string QuestID;
 
-	// Token: 0x04001C9C RID: 7324
+	// Token: 0x04001CAC RID: 7340
 	public QuestClass QuestClass;
 
-	// Token: 0x04001C9D RID: 7325
+	// Token: 0x04001CAD RID: 7341
 	public string[] CVar;
 
-	// Token: 0x04001C9E RID: 7326
+	// Token: 0x04001CAE RID: 7342
 	public static FastTags<TagGroup.Global> buriedTag = FastTags<TagGroup.Global>.Parse("buried");
 
-	// Token: 0x04001C9F RID: 7327
+	// Token: 0x04001CAF RID: 7343
 	public static FastTags<TagGroup.Global> poiTag = FastTags<TagGroup.Global>.Parse("poi");
 }

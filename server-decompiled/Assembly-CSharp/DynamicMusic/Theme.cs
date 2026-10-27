@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A92 RID: 6802
+	// Token: 0x02001AC3 RID: 6851
 	[Preserve]
 	public class Theme : SingleClipPlayer, ISection, IPlayable, IFadeable, ICleanable
 	{
-		// Token: 0x0600CE0F RID: 52751 RVA: 0x004AEAA8 File Offset: 0x004ACCA8
+		// Token: 0x0600CF23 RID: 53027 RVA: 0x004B25A4 File Offset: 0x004B07A4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator InitializationCoroutine()
 		{
@@ -23,7 +23,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CE10 RID: 52752 RVA: 0x004AEAB7 File Offset: 0x004ACCB7
+		// Token: 0x0600CF24 RID: 53028 RVA: 0x004B25B3 File Offset: 0x004B07B3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator PlayCoroutine()
 		{

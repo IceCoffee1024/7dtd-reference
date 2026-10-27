@@ -4,11 +4,11 @@ using Platform;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020002BA RID: 698
+// Token: 0x020002BC RID: 700
 [Preserve]
 public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 {
-	// Token: 0x06001405 RID: 5125 RVA: 0x0007A0EE File Offset: 0x000782EE
+	// Token: 0x06001409 RID: 5129 RVA: 0x0007A2BE File Offset: 0x000784BE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000224 RID: 548
-	// (get) Token: 0x06001406 RID: 5126 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600140A RID: 5130 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000225 RID: 549
-	// (get) Token: 0x06001407 RID: 5127 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x0600140B RID: 5131 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -36,7 +36,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000226 RID: 550
-	// (get) Token: 0x06001408 RID: 5128 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x0600140C RID: 5132 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -45,7 +45,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001409 RID: 5129 RVA: 0x0007A100 File Offset: 0x00078300
+	// Token: 0x0600140D RID: 5133 RVA: 0x0007A2D0 File Offset: 0x000784D0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!TwitchManager.Current.IsReady)
@@ -69,7 +69,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 		TwitchManager.Current.HandleConsoleAction(_params);
 	}
 
-	// Token: 0x0600140A RID: 5130 RVA: 0x0007A1C5 File Offset: 0x000783C5
+	// Token: 0x0600140E RID: 5134 RVA: 0x0007A395 File Offset: 0x00078595
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

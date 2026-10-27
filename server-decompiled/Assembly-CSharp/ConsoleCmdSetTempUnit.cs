@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200028A RID: 650
+// Token: 0x0200028C RID: 652
 [Preserve]
 public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 {
-	// Token: 0x060012F3 RID: 4851 RVA: 0x00075744 File Offset: 0x00073944
+	// Token: 0x060012F7 RID: 4855 RVA: 0x00075914 File Offset: 0x00073B14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001F7 RID: 503
-	// (get) Token: 0x060012F4 RID: 4852 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060012F8 RID: 4856 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,7 +23,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012F5 RID: 4853 RVA: 0x0007575C File Offset: 0x0007395C
+	// Token: 0x060012F9 RID: 4857 RVA: 0x0007592C File Offset: 0x00073B2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -31,7 +31,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001F8 RID: 504
-	// (get) Token: 0x060012F6 RID: 4854 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x060012FA RID: 4858 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012F7 RID: 4855 RVA: 0x00075763 File Offset: 0x00073963
+	// Token: 0x060012FB RID: 4859 RVA: 0x00075933 File Offset: 0x00073B33
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -48,7 +48,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001F9 RID: 505
-	// (get) Token: 0x060012F8 RID: 4856 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060012FC RID: 4860 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -57,7 +57,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012F9 RID: 4857 RVA: 0x0007576C File Offset: 0x0007396C
+	// Token: 0x060012FD RID: 4861 RVA: 0x0007593C File Offset: 0x00073B3C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 1)

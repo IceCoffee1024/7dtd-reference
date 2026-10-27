@@ -2,29 +2,29 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F2 RID: 1778
+// Token: 0x020006FA RID: 1786
 [Preserve]
 public class MinEventActionSetAudioMixerState : MinEventActionTargetedBase
 {
-	// Token: 0x1700058F RID: 1423
-	// (get) Token: 0x060036D7 RID: 14039 RVA: 0x00169274 File Offset: 0x00167474
-	// (set) Token: 0x060036D8 RID: 14040 RVA: 0x0016927C File Offset: 0x0016747C
+	// Token: 0x17000593 RID: 1427
+	// (get) Token: 0x060036EE RID: 14062 RVA: 0x0016A20C File Offset: 0x0016840C
+	// (set) Token: 0x060036EF RID: 14063 RVA: 0x0016A214 File Offset: 0x00168414
 	public MinEventActionSetAudioMixerState.AudioMixerStates State
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000590 RID: 1424
-	// (get) Token: 0x060036D9 RID: 14041 RVA: 0x00169285 File Offset: 0x00167485
-	// (set) Token: 0x060036DA RID: 14042 RVA: 0x0016928D File Offset: 0x0016748D
+	// Token: 0x17000594 RID: 1428
+	// (get) Token: 0x060036F0 RID: 14064 RVA: 0x0016A21D File Offset: 0x0016841D
+	// (set) Token: 0x060036F1 RID: 14065 RVA: 0x0016A225 File Offset: 0x00168425
 	public bool Value
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060036DB RID: 14043 RVA: 0x00169298 File Offset: 0x00167498
+	// Token: 0x060036F2 RID: 14066 RVA: 0x0016A230 File Offset: 0x00168430
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -52,7 +52,7 @@ public class MinEventActionSetAudioMixerState : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036DC RID: 14044 RVA: 0x00169308 File Offset: 0x00167508
+	// Token: 0x060036F3 RID: 14067 RVA: 0x0016A2A0 File Offset: 0x001684A0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -74,12 +74,12 @@ public class MinEventActionSetAudioMixerState : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x020006F3 RID: 1779
+	// Token: 0x020006FB RID: 1787
 	public enum AudioMixerStates
 	{
-		// Token: 0x04002C0D RID: 11277
+		// Token: 0x04002C29 RID: 11305
 		Stunned,
-		// Token: 0x04002C0E RID: 11278
+		// Token: 0x04002C2A RID: 11306
 		Deafened
 	}
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
-// Token: 0x02000541 RID: 1345
+// Token: 0x02000545 RID: 1349
 public class CameraPerspectives
 {
-	// Token: 0x06002C10 RID: 11280 RVA: 0x0011732C File Offset: 0x0011552C
+	// Token: 0x06002C18 RID: 11288 RVA: 0x001178B8 File Offset: 0x00115AB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetFullFilePath()
 	{
@@ -21,7 +21,7 @@ public class CameraPerspectives
 		return null;
 	}
 
-	// Token: 0x06002C11 RID: 11281 RVA: 0x00117367 File Offset: 0x00115567
+	// Token: 0x06002C19 RID: 11289 RVA: 0x001178F3 File Offset: 0x00115AF3
 	public CameraPerspectives(bool _load = true)
 	{
 		if (_load)
@@ -30,7 +30,7 @@ public class CameraPerspectives
 		}
 	}
 
-	// Token: 0x06002C12 RID: 11282 RVA: 0x0011738C File Offset: 0x0011558C
+	// Token: 0x06002C1A RID: 11290 RVA: 0x00117918 File Offset: 0x00115B18
 	public bool Load()
 	{
 		this.Perspectives.Clear();
@@ -69,7 +69,7 @@ public class CameraPerspectives
 		return true;
 	}
 
-	// Token: 0x06002C13 RID: 11283 RVA: 0x001174B8 File Offset: 0x001156B8
+	// Token: 0x06002C1B RID: 11291 RVA: 0x00117A44 File Offset: 0x00115C44
 	public void Save()
 	{
 		XmlDocument xmlDocument = new XmlDocument();
@@ -82,13 +82,13 @@ public class CameraPerspectives
 		xmlDocument.SdSave(CameraPerspectives.GetFullFilePath());
 	}
 
-	// Token: 0x040021C6 RID: 8646
+	// Token: 0x040021DD RID: 8669
 	public readonly SortedDictionary<string, CameraPerspectives.Perspective> Perspectives = new SortedDictionary<string, CameraPerspectives.Perspective>(StringComparer.OrdinalIgnoreCase);
 
-	// Token: 0x02000542 RID: 1346
+	// Token: 0x02000546 RID: 1350
 	public class Perspective : IEquatable<CameraPerspectives.Perspective>
 	{
-		// Token: 0x06002C14 RID: 11284 RVA: 0x00117534 File Offset: 0x00115734
+		// Token: 0x06002C1C RID: 11292 RVA: 0x00117AC0 File Offset: 0x00115CC0
 		public Perspective(string _name, Vector3 _position, Vector3 _direction, string _comment)
 		{
 			this.Name = _name;
@@ -97,7 +97,7 @@ public class CameraPerspectives
 			this.Comment = _comment;
 		}
 
-		// Token: 0x06002C15 RID: 11285 RVA: 0x0011755C File Offset: 0x0011575C
+		// Token: 0x06002C1D RID: 11293 RVA: 0x00117AE8 File Offset: 0x00115CE8
 		public Perspective(string _name, EntityPlayerLocal _player, string _comment = null)
 		{
 			this.Name = _name;
@@ -115,7 +115,7 @@ public class CameraPerspectives
 			this.Comment = _comment;
 		}
 
-		// Token: 0x06002C16 RID: 11286 RVA: 0x001175E8 File Offset: 0x001157E8
+		// Token: 0x06002C1E RID: 11294 RVA: 0x00117B74 File Offset: 0x00115D74
 		public void ToPlayer(EntityPlayerLocal _player)
 		{
 			if (_player.movementInput.bDetachedCameraMove)
@@ -129,25 +129,25 @@ public class CameraPerspectives
 			_player.TeleportToPosition(this.Position, false, new Vector3?(this.Direction));
 		}
 
-		// Token: 0x06002C17 RID: 11287 RVA: 0x00117658 File Offset: 0x00115858
+		// Token: 0x06002C1F RID: 11295 RVA: 0x00117BE4 File Offset: 0x00115DE4
 		public bool Equals(CameraPerspectives.Perspective _other)
 		{
 			return _other != null && (this == _other || (this.Position.Equals(_other.Position) && this.Direction.Equals(_other.Direction)));
 		}
 
-		// Token: 0x06002C18 RID: 11288 RVA: 0x0011769C File Offset: 0x0011589C
+		// Token: 0x06002C20 RID: 11296 RVA: 0x00117C28 File Offset: 0x00115E28
 		public override bool Equals(object _obj)
 		{
 			return _obj != null && (this == _obj || (!(_obj.GetType() != base.GetType()) && this.Equals((CameraPerspectives.Perspective)_obj)));
 		}
 
-		// Token: 0x06002C19 RID: 11289 RVA: 0x001176CC File Offset: 0x001158CC
+		// Token: 0x06002C21 RID: 11297 RVA: 0x00117C58 File Offset: 0x00115E58
 		public override int GetHashCode()
 		{
 			return (this.Position.GetHashCode() * 397) ^ this.Direction.GetHashCode();
 		}
 
-		// Token: 0x06002C1A RID: 11290 RVA: 0x00117708 File Offset: 0x00115908
+		// Token: 0x06002C22 RID: 11298 RVA: 0x00117C94 File Offset: 0x00115E94
 		public void ToXml(XmlElement _parent)
 		{
 			XmlElement xmlElement = _parent.AddXmlElement("position").SetAttrib("name", this.Name).SetAttrib("position", this.Position.ToString())
@@ -158,7 +158,7 @@ public class CameraPerspectives
 			}
 		}
 
-		// Token: 0x06002C1B RID: 11291 RVA: 0x0011778C File Offset: 0x0011598C
+		// Token: 0x06002C23 RID: 11299 RVA: 0x00117D18 File Offset: 0x00115F18
 		public static CameraPerspectives.Perspective FromXml(XmlElement _lineItem)
 		{
 			if (!_lineItem.HasAttribute("name"))
@@ -187,16 +187,16 @@ public class CameraPerspectives
 			return new CameraPerspectives.Perspective(attribute, vector, vector2, text);
 		}
 
-		// Token: 0x040021C7 RID: 8647
+		// Token: 0x040021DE RID: 8670
 		public readonly string Name;
 
-		// Token: 0x040021C8 RID: 8648
+		// Token: 0x040021DF RID: 8671
 		public readonly Vector3 Position;
 
-		// Token: 0x040021C9 RID: 8649
+		// Token: 0x040021E0 RID: 8672
 		public readonly Vector3 Direction;
 
-		// Token: 0x040021CA RID: 8650
+		// Token: 0x040021E1 RID: 8673
 		public readonly string Comment;
 	}
 }

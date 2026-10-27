@@ -10,10 +10,10 @@ using Utf8Json;
 
 namespace Webserver
 {
-	// Token: 0x02001AF1 RID: 6897
+	// Token: 0x02001B22 RID: 6946
 	public class WebCommandResult : IConsoleConnection
 	{
-		// Token: 0x0600CFD4 RID: 53204 RVA: 0x004B75FC File Offset: 0x004B57FC
+		// Token: 0x0600D0E8 RID: 53480 RVA: 0x004BB0F8 File Offset: 0x004B92F8
 		public WebCommandResult(string _command, string _parameters, WebCommandResult.ResultType _responseType, RequestContext _context)
 		{
 			this.context = _context;
@@ -24,7 +24,7 @@ namespace Webserver
 			this.sourceName = ((connection != null) ? connection.Username : null) ?? ("Unauth-PermLevel-" + _context.PermissionLevel.ToString());
 		}
 
-		// Token: 0x0600CFD5 RID: 53205 RVA: 0x004B7664 File Offset: 0x004B5864
+		// Token: 0x0600D0E9 RID: 53481 RVA: 0x004BB160 File Offset: 0x004B9360
 		public void SendLines(List<string> _output)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -91,71 +91,71 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFD6 RID: 53206 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D0EA RID: 53482 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SendLine(string _text)
 		{
 		}
 
-		// Token: 0x0600CFD7 RID: 53207 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D0EB RID: 53483 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 		{
 		}
 
-		// Token: 0x0600CFD8 RID: 53208 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D0EC RID: 53484 RVA: 0x000027FC File Offset: 0x000009FC
 		public void EnableLogLevel(LogType _type, bool _enable)
 		{
 		}
 
-		// Token: 0x0600CFD9 RID: 53209 RVA: 0x004B783C File Offset: 0x004B5A3C
+		// Token: 0x0600D0ED RID: 53485 RVA: 0x004BB338 File Offset: 0x004B9538
 		public string GetDescription()
 		{
 			return "WebCommandResult_for_" + this.command + "_by_" + this.sourceName;
 		}
 
-		// Token: 0x04009D3A RID: 40250
+		// Token: 0x04009E23 RID: 40483
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string command;
 
-		// Token: 0x04009D3B RID: 40251
+		// Token: 0x04009E24 RID: 40484
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string parameters;
 
-		// Token: 0x04009D3C RID: 40252
+		// Token: 0x04009E25 RID: 40485
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string sourceName;
 
-		// Token: 0x04009D3D RID: 40253
+		// Token: 0x04009E26 RID: 40486
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly RequestContext context;
 
-		// Token: 0x04009D3E RID: 40254
+		// Token: 0x04009E27 RID: 40487
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WebCommandResult.ResultType responseType;
 
-		// Token: 0x04009D3F RID: 40255
+		// Token: 0x04009E28 RID: 40488
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("resultRaw");
 
-		// Token: 0x04009D40 RID: 40256
+		// Token: 0x04009E29 RID: 40489
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonCommandKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("command");
 
-		// Token: 0x04009D41 RID: 40257
+		// Token: 0x04009E2A RID: 40490
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonParametersKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("parameters");
 
-		// Token: 0x04009D42 RID: 40258
+		// Token: 0x04009E2B RID: 40491
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonResultKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("result");
 
-		// Token: 0x02001AF2 RID: 6898
+		// Token: 0x02001B23 RID: 6947
 		public enum ResultType
 		{
-			// Token: 0x04009D44 RID: 40260
+			// Token: 0x04009E2D RID: 40493
 			Full,
-			// Token: 0x04009D45 RID: 40261
+			// Token: 0x04009E2E RID: 40494
 			ResultOnly,
-			// Token: 0x04009D46 RID: 40262
+			// Token: 0x04009E2F RID: 40495
 			Raw
 		}
 	}

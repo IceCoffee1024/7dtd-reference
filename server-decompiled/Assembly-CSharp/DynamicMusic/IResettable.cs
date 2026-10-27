@@ -2,10 +2,10 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AAD RID: 6829
+	// Token: 0x02001ADE RID: 6878
 	public interface IResettable
 	{
-		// Token: 0x0600CE54 RID: 52820
+		// Token: 0x0600CF68 RID: 53096
 		void Reset();
 	}
 }

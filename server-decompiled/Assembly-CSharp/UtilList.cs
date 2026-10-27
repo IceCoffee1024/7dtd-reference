@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C4E RID: 3150
+// Token: 0x02000C59 RID: 3161
 public class UtilList<T> where T : class
 {
-	// Token: 0x170009D6 RID: 2518
-	// (get) Token: 0x06005F74 RID: 24436 RVA: 0x0025EA2E File Offset: 0x0025CC2E
+	// Token: 0x170009DC RID: 2524
+	// (get) Token: 0x06005F99 RID: 24473 RVA: 0x0025FF56 File Offset: 0x0025E156
 	public int Capacity
 	{
 		get
@@ -14,8 +14,8 @@ public class UtilList<T> where T : class
 		}
 	}
 
-	// Token: 0x170009D7 RID: 2519
-	// (get) Token: 0x06005F75 RID: 24437 RVA: 0x0025EA36 File Offset: 0x0025CC36
+	// Token: 0x170009DD RID: 2525
+	// (get) Token: 0x06005F9A RID: 24474 RVA: 0x0025FF5E File Offset: 0x0025E15E
 	public int Count
 	{
 		get
@@ -24,7 +24,7 @@ public class UtilList<T> where T : class
 		}
 	}
 
-	// Token: 0x06005F76 RID: 24438 RVA: 0x0025EA40 File Offset: 0x0025CC40
+	// Token: 0x06005F9B RID: 24475 RVA: 0x0025FF68 File Offset: 0x0025E168
 	public UtilList(int _capacity, T _NullValue)
 	{
 		this.capacity = _capacity;
@@ -37,7 +37,7 @@ public class UtilList<T> where T : class
 		this.NullValue = _NullValue;
 	}
 
-	// Token: 0x06005F77 RID: 24439 RVA: 0x0025EA90 File Offset: 0x0025CC90
+	// Token: 0x06005F9C RID: 24476 RVA: 0x0025FFB8 File Offset: 0x0025E1B8
 	public void Clear()
 	{
 		this.StartId = 0;
@@ -47,7 +47,7 @@ public class UtilList<T> where T : class
 		this.IsStandardState = true;
 	}
 
-	// Token: 0x06005F78 RID: 24440 RVA: 0x0025EAB8 File Offset: 0x0025CCB8
+	// Token: 0x06005F9D RID: 24477 RVA: 0x0025FFE0 File Offset: 0x0025E1E0
 	public void Add(T NewItem)
 	{
 		if (this.IsFull)
@@ -69,13 +69,13 @@ public class UtilList<T> where T : class
 		this.count++;
 	}
 
-	// Token: 0x06005F79 RID: 24441 RVA: 0x0025EB34 File Offset: 0x0025CD34
+	// Token: 0x06005F9E RID: 24478 RVA: 0x0026005C File Offset: 0x0025E25C
 	public T Peek()
 	{
 		return this.InternArray[this.StartId];
 	}
 
-	// Token: 0x06005F7A RID: 24442 RVA: 0x0025EB48 File Offset: 0x0025CD48
+	// Token: 0x06005F9F RID: 24479 RVA: 0x00260070 File Offset: 0x0025E270
 	public T Dequeue()
 	{
 		if (this.StartId == this.EndId && !this.IsFull)
@@ -94,7 +94,7 @@ public class UtilList<T> where T : class
 		return this.InternArray[startId];
 	}
 
-	// Token: 0x06005F7B RID: 24443 RVA: 0x0025EBC8 File Offset: 0x0025CDC8
+	// Token: 0x06005FA0 RID: 24480 RVA: 0x002600F0 File Offset: 0x0025E2F0
 	public void RemoveNFirst(int N)
 	{
 		if (this.count < N)
@@ -111,7 +111,7 @@ public class UtilList<T> where T : class
 		this.IsFull = this.count == this.capacity;
 	}
 
-	// Token: 0x06005F7C RID: 24444 RVA: 0x0025EC44 File Offset: 0x0025CE44
+	// Token: 0x06005FA1 RID: 24481 RVA: 0x0026016C File Offset: 0x0025E36C
 	public void RemoveAt(List<int> IdList)
 	{
 		int num = IdList.Count;
@@ -141,7 +141,7 @@ public class UtilList<T> where T : class
 		this.IsFull = this.count == this.capacity;
 	}
 
-	// Token: 0x170009D8 RID: 2520
+	// Token: 0x170009DE RID: 2526
 	public T this[int Id]
 	{
 		get
@@ -194,35 +194,35 @@ public class UtilList<T> where T : class
 		}
 	}
 
-	// Token: 0x04004B09 RID: 19209
+	// Token: 0x04004B2E RID: 19246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int capacity;
 
-	// Token: 0x04004B0A RID: 19210
+	// Token: 0x04004B2F RID: 19247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int StartId;
 
-	// Token: 0x04004B0B RID: 19211
+	// Token: 0x04004B30 RID: 19248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int EndId;
 
-	// Token: 0x04004B0C RID: 19212
+	// Token: 0x04004B31 RID: 19249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count;
 
-	// Token: 0x04004B0D RID: 19213
+	// Token: 0x04004B32 RID: 19250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsStandardState;
 
-	// Token: 0x04004B0E RID: 19214
+	// Token: 0x04004B33 RID: 19251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsFull;
 
-	// Token: 0x04004B0F RID: 19215
+	// Token: 0x04004B34 RID: 19252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[] InternArray;
 
-	// Token: 0x04004B10 RID: 19216
+	// Token: 0x04004B35 RID: 19253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T NullValue;
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using AssetManagement;
 using UnityEngine;
 
-// Token: 0x02000579 RID: 1401
+// Token: 0x02000580 RID: 1408
 public sealed class ItemInventoryData
 {
 	// Token: 0x170004E5 RID: 1253
-	// (get) Token: 0x06002D9E RID: 11678 RVA: 0x000A32B7 File Offset: 0x000A14B7
+	// (get) Token: 0x06002DAA RID: 11690 RVA: 0x000A34C7 File Offset: 0x000A16C7
 	public World world
 	{
 		get
@@ -17,7 +17,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004E6 RID: 1254
-	// (get) Token: 0x06002D9F RID: 11679 RVA: 0x00122B02 File Offset: 0x00120D02
+	// (get) Token: 0x06002DAB RID: 11691 RVA: 0x0012367E File Offset: 0x0012187E
 	public EntityAlive holdingEntity
 	{
 		get
@@ -27,7 +27,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004E7 RID: 1255
-	// (get) Token: 0x06002DA0 RID: 11680 RVA: 0x00122B0A File Offset: 0x00120D0A
+	// (get) Token: 0x06002DAC RID: 11692 RVA: 0x00123686 File Offset: 0x00121886
 	public int slotIdx
 	{
 		get
@@ -37,7 +37,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004E8 RID: 1256
-	// (get) Token: 0x06002DA1 RID: 11681 RVA: 0x00122B12 File Offset: 0x00120D12
+	// (get) Token: 0x06002DAD RID: 11693 RVA: 0x0012368E File Offset: 0x0012188E
 	public ItemStack itemStack
 	{
 		get
@@ -47,7 +47,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004E9 RID: 1257
-	// (get) Token: 0x06002DA2 RID: 11682 RVA: 0x00122B1A File Offset: 0x00120D1A
+	// (get) Token: 0x06002DAE RID: 11694 RVA: 0x00123696 File Offset: 0x00121896
 	public ItemValue itemValue
 	{
 		get
@@ -57,7 +57,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004EA RID: 1258
-	// (get) Token: 0x06002DA3 RID: 11683 RVA: 0x00122B27 File Offset: 0x00120D27
+	// (get) Token: 0x06002DAF RID: 11695 RVA: 0x001236A3 File Offset: 0x001218A3
 	public ItemClass item
 	{
 		get
@@ -67,7 +67,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004EB RID: 1259
-	// (get) Token: 0x06002DA4 RID: 11684 RVA: 0x00122B39 File Offset: 0x00120D39
+	// (get) Token: 0x06002DB0 RID: 11696 RVA: 0x001236B5 File Offset: 0x001218B5
 	public ItemValue PhysicalItemValue
 	{
 		get
@@ -77,7 +77,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004EC RID: 1260
-	// (get) Token: 0x06002DA5 RID: 11685 RVA: 0x00122B41 File Offset: 0x00120D41
+	// (get) Token: 0x06002DB1 RID: 11697 RVA: 0x001236BD File Offset: 0x001218BD
 	public Transform model
 	{
 		get
@@ -91,7 +91,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004ED RID: 1261
-	// (get) Token: 0x06002DA6 RID: 11686 RVA: 0x00122B68 File Offset: 0x00120D68
+	// (get) Token: 0x06002DB2 RID: 11698 RVA: 0x001236E4 File Offset: 0x001218E4
 	public ItemValue BuiltItemValue
 	{
 		get
@@ -105,7 +105,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004EE RID: 1262
-	// (get) Token: 0x06002DA7 RID: 11687 RVA: 0x00122B84 File Offset: 0x00120D84
+	// (get) Token: 0x06002DB3 RID: 11699 RVA: 0x00123700 File Offset: 0x00121900
 	public bool HasItem
 	{
 		get
@@ -115,8 +115,8 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004EF RID: 1263
-	// (get) Token: 0x06002DA8 RID: 11688 RVA: 0x00122B94 File Offset: 0x00120D94
-	// (set) Token: 0x06002DA9 RID: 11689 RVA: 0x00122B9C File Offset: 0x00120D9C
+	// (get) Token: 0x06002DB4 RID: 11700 RVA: 0x00123710 File Offset: 0x00121910
+	// (set) Token: 0x06002DB5 RID: 11701 RVA: 0x00123718 File Offset: 0x00121918
 	public bool IsEquipped
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -124,7 +124,7 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004F0 RID: 1264
-	// (get) Token: 0x06002DAA RID: 11690 RVA: 0x00122BA5 File Offset: 0x00120DA5
+	// (get) Token: 0x06002DB6 RID: 11702 RVA: 0x00123721 File Offset: 0x00121921
 	public bool IsBlock
 	{
 		get
@@ -134,8 +134,8 @@ public sealed class ItemInventoryData
 	}
 
 	// Token: 0x170004F1 RID: 1265
-	// (get) Token: 0x06002DAB RID: 11691 RVA: 0x00122BBC File Offset: 0x00120DBC
-	// (set) Token: 0x06002DAC RID: 11692 RVA: 0x00122C05 File Offset: 0x00120E05
+	// (get) Token: 0x06002DB7 RID: 11703 RVA: 0x00123738 File Offset: 0x00121938
+	// (set) Token: 0x06002DB8 RID: 11704 RVA: 0x00123781 File Offset: 0x00121981
 	public BlockPlacement.EnumPlacement Placement
 	{
 		get
@@ -155,13 +155,13 @@ public sealed class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002DAD RID: 11693 RVA: 0x00122C0E File Offset: 0x00120E0E
+	// Token: 0x06002DB9 RID: 11705 RVA: 0x0012378A File Offset: 0x0012198A
 	public static ItemInventoryData Create(EntityAlive _entity, ItemStack _stack, int _toolbeltSlotIdx)
 	{
 		return new ItemInventoryData(_entity, _stack, _toolbeltSlotIdx);
 	}
 
-	// Token: 0x06002DAE RID: 11694 RVA: 0x00122C18 File Offset: 0x00120E18
+	// Token: 0x06002DBA RID: 11706 RVA: 0x00123794 File Offset: 0x00121994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData(EntityAlive _entity, ItemStack _stack, int _toolbeltSlotIdx)
 	{
@@ -171,14 +171,14 @@ public sealed class ItemInventoryData
 		this.actionData = new List<ItemActionData> { null, null };
 	}
 
-	// Token: 0x06002DAF RID: 11695 RVA: 0x00122C7C File Offset: 0x00120E7C
+	// Token: 0x06002DBB RID: 11707 RVA: 0x001237F8 File Offset: 0x001219F8
 	public void SetStack(ItemStack _stack)
 	{
 		this.stack = _stack ?? ItemStack.Empty;
 	}
 
 	// Token: 0x170004F2 RID: 1266
-	// (get) Token: 0x06002DB0 RID: 11696 RVA: 0x00122C8E File Offset: 0x00120E8E
+	// (get) Token: 0x06002DBC RID: 11708 RVA: 0x0012380A File Offset: 0x00121A0A
 	public bool NeedsRebuild
 	{
 		get
@@ -187,7 +187,7 @@ public sealed class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002DB1 RID: 11697 RVA: 0x00122CC0 File Offset: 0x00120EC0
+	// Token: 0x06002DBD RID: 11709 RVA: 0x0012383C File Offset: 0x00121A3C
 	public bool Rebuild()
 	{
 		if (this.IsEquipped || !this.NeedsRebuild)
@@ -200,7 +200,7 @@ public sealed class ItemInventoryData
 		return true;
 	}
 
-	// Token: 0x06002DB2 RID: 11698 RVA: 0x00122CE8 File Offset: 0x00120EE8
+	// Token: 0x06002DBE RID: 11710 RVA: 0x00123864 File Offset: 0x00121A64
 	public void EnsureActionData()
 	{
 		ItemClass item = this.item;
@@ -228,7 +228,7 @@ public sealed class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002DB3 RID: 11699 RVA: 0x00122D68 File Offset: 0x00120F68
+	// Token: 0x06002DBF RID: 11711 RVA: 0x001238E4 File Offset: 0x00121AE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Build()
 	{
@@ -265,7 +265,7 @@ public sealed class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002DB4 RID: 11700 RVA: 0x00122E80 File Offset: 0x00121080
+	// Token: 0x06002DC0 RID: 11712 RVA: 0x001239FC File Offset: 0x00121BFC
 	public void Teardown()
 	{
 		if (this.physicalItemValue != null)
@@ -283,20 +283,20 @@ public sealed class ItemInventoryData
 		this.DestroyModel();
 	}
 
-	// Token: 0x06002DB5 RID: 11701 RVA: 0x00122EDC File Offset: 0x001210DC
+	// Token: 0x06002DC1 RID: 11713 RVA: 0x00123A58 File Offset: 0x00121C58
 	public void OnEquipped()
 	{
 		this.IsEquipped = true;
 		this.BuildModel();
 	}
 
-	// Token: 0x06002DB6 RID: 11702 RVA: 0x00122EEB File Offset: 0x001210EB
+	// Token: 0x06002DC2 RID: 11714 RVA: 0x00123A67 File Offset: 0x00121C67
 	public void OnUnequipped()
 	{
 		this.IsEquipped = false;
 	}
 
-	// Token: 0x06002DB7 RID: 11703 RVA: 0x00122EF4 File Offset: 0x001210F4
+	// Token: 0x06002DC3 RID: 11715 RVA: 0x00123A70 File Offset: 0x00121C70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildModel()
 	{
@@ -321,7 +321,7 @@ public sealed class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002DB8 RID: 11704 RVA: 0x00122FA0 File Offset: 0x001211A0
+	// Token: 0x06002DC4 RID: 11716 RVA: 0x00123B1C File Offset: 0x00121D1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DestroyModel()
 	{
@@ -334,7 +334,7 @@ public sealed class ItemInventoryData
 		this.heldModel = default(InstanceHandle<GameObject>);
 	}
 
-	// Token: 0x06002DB9 RID: 11705 RVA: 0x00123004 File Offset: 0x00121204
+	// Token: 0x06002DC5 RID: 11717 RVA: 0x00123B80 File Offset: 0x00121D80
 	public void SeatModel()
 	{
 		Transform model = this.model;
@@ -355,7 +355,7 @@ public sealed class ItemInventoryData
 		this.entity.ShowHoldingItem(true);
 	}
 
-	// Token: 0x06002DBA RID: 11706 RVA: 0x00123128 File Offset: 0x00121328
+	// Token: 0x06002DC6 RID: 11718 RVA: 0x00123CA4 File Offset: 0x00121EA4
 	public void UnseatModel()
 	{
 		if (this.heldModel.Instance != null)
@@ -365,74 +365,74 @@ public sealed class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002DBB RID: 11707 RVA: 0x0012317A File Offset: 0x0012137A
+	// Token: 0x06002DC7 RID: 11719 RVA: 0x00123CF6 File Offset: 0x00121EF6
 	public InstanceHandle<GameObject> CloneModel()
 	{
 		return this.heldModel.Clone();
 	}
 
-	// Token: 0x0400239B RID: 9115
+	// Token: 0x040023B6 RID: 9142
 	public const int NoSlot = -1;
 
-	// Token: 0x0400239C RID: 9116
+	// Token: 0x040023B7 RID: 9143
 	public const byte NoRotation = 128;
 
-	// Token: 0x0400239D RID: 9117
+	// Token: 0x040023B8 RID: 9144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly EntityAlive entity;
 
-	// Token: 0x0400239E RID: 9118
+	// Token: 0x040023B9 RID: 9145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int toolbeltSlotIdx;
 
-	// Token: 0x0400239F RID: 9119
+	// Token: 0x040023BA RID: 9146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack stack;
 
-	// Token: 0x040023A0 RID: 9120
+	// Token: 0x040023BB RID: 9147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public InstanceHandle<GameObject> heldModel;
 
-	// Token: 0x040023A1 RID: 9121
+	// Token: 0x040023BC RID: 9148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue physicalItemValue;
 
-	// Token: 0x040023A2 RID: 9122
+	// Token: 0x040023BD RID: 9149
 	public List<ItemActionData> actionData;
 
-	// Token: 0x040023A3 RID: 9123
+	// Token: 0x040023BE RID: 9150
 	public int holdingEntitySoundID = -2;
 
-	// Token: 0x040023A4 RID: 9124
+	// Token: 0x040023BF RID: 9151
 	public float lastBuildTime;
 
-	// Token: 0x040023A5 RID: 9125
+	// Token: 0x040023C0 RID: 9152
 	public byte rotation;
 
-	// Token: 0x040023A6 RID: 9126
+	// Token: 0x040023C1 RID: 9153
 	public BlockPlacement.EnumRotationMode mode = BlockPlacement.EnumRotationMode.Simple;
 
-	// Token: 0x040023A7 RID: 9127
+	// Token: 0x040023C2 RID: 9154
 	public int localRot;
 
-	// Token: 0x040023A8 RID: 9128
+	// Token: 0x040023C3 RID: 9155
 	public int damage;
 
-	// Token: 0x040023A9 RID: 9129
+	// Token: 0x040023C4 RID: 9156
 	public PropTransform propTransform = PropTransform.identity;
 
-	// Token: 0x040023AA RID: 9130
+	// Token: 0x040023C5 RID: 9157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockPlacement.EnumPlacement placement;
 
-	// Token: 0x0200057A RID: 1402
+	// Token: 0x02000581 RID: 1409
 	public enum SoundPlayType
 	{
-		// Token: 0x040023AD RID: 9133
+		// Token: 0x040023C8 RID: 9160
 		None = -2,
-		// Token: 0x040023AE RID: 9134
+		// Token: 0x040023C9 RID: 9161
 		IdleReady,
-		// Token: 0x040023AF RID: 9135
+		// Token: 0x040023CA RID: 9162
 		Idle
 	}
 }

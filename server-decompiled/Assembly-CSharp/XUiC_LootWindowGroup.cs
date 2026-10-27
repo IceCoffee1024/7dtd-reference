@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8E RID: 3982
+// Token: 0x02000F9E RID: 3998
 [Preserve]
 public class XUiC_LootWindowGroup : XUiController
 {
-	// Token: 0x06007D50 RID: 32080 RVA: 0x002F8661 File Offset: 0x002F6861
+	// Token: 0x06007D9F RID: 32159 RVA: 0x002FA17D File Offset: 0x002F837D
 	public override void Init()
 	{
 		base.Init();
@@ -15,7 +15,7 @@ public class XUiC_LootWindowGroup : XUiController
 		this.nonPagingHeaderWindow = base.GetChildByType<XUiC_WindowNonPagingHeader>();
 	}
 
-	// Token: 0x06007D51 RID: 32081 RVA: 0x002F8684 File Offset: 0x002F6884
+	// Token: 0x06007DA0 RID: 32160 RVA: 0x002FA1A0 File Offset: 0x002F83A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openContainer(string _lootContainerName, TEFeatureStorage _te, bool _playOpenSound, bool _firstTimeTouched)
 	{
@@ -33,7 +33,7 @@ public class XUiC_LootWindowGroup : XUiController
 		this.xui.RecenterWindowGroup(this.windowGroup, false);
 	}
 
-	// Token: 0x06007D52 RID: 32082 RVA: 0x002F872C File Offset: 0x002F692C
+	// Token: 0x06007DA1 RID: 32161 RVA: 0x002FA248 File Offset: 0x002F8448
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -48,7 +48,7 @@ public class XUiC_LootWindowGroup : XUiController
 		LockManager.Instance.UnlockRequestLocal();
 	}
 
-	// Token: 0x06007D53 RID: 32083 RVA: 0x002F87B0 File Offset: 0x002F69B0
+	// Token: 0x06007DA2 RID: 32162 RVA: 0x002FA2CC File Offset: 0x002F84CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openTimerFinished(TimerEventData _data)
 	{
@@ -63,14 +63,14 @@ public class XUiC_LootWindowGroup : XUiController
 		this.openContainer(item, item2, false, item3);
 	}
 
-	// Token: 0x06007D54 RID: 32084 RVA: 0x00046AFD File Offset: 0x00044CFD
+	// Token: 0x06007DA3 RID: 32163 RVA: 0x00046ABD File Offset: 0x00044CBD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void openTimerClosedManually(TimerEventData _data)
 	{
 		LockManager.Instance.UnlockRequestLocal();
 	}
 
-	// Token: 0x06007D55 RID: 32085 RVA: 0x002F8830 File Offset: 0x002F6A30
+	// Token: 0x06007DA4 RID: 32164 RVA: 0x002FA34C File Offset: 0x002F854C
 	public void OpenLooting(string _lootContainerName, TEFeatureStorage _te, bool _firstTimeTouched)
 	{
 		if (EffectManager.GetValue(PassiveEffects.DisableLoot, null, 0f, this.xui.playerUI.entityPlayer, null, _te.blockValue.Block.Tags, true, true, true, true, true, 1, true, false) > 0f)
@@ -106,7 +106,7 @@ public class XUiC_LootWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007D56 RID: 32086 RVA: 0x002F89D9 File Offset: 0x002F6BD9
+	// Token: 0x06007DA5 RID: 32165 RVA: 0x002FA4F5 File Offset: 0x002F86F5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_LootWindowGroup GetInstance(XUi _xuiInstance = null)
 	{
@@ -117,7 +117,7 @@ public class XUiC_LootWindowGroup : XUiController
 		return (XUiC_LootWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_LootWindowGroup.ID);
 	}
 
-	// Token: 0x06007D57 RID: 32087 RVA: 0x002F89FA File Offset: 0x002F6BFA
+	// Token: 0x06007DA6 RID: 32166 RVA: 0x002FA516 File Offset: 0x002F8716
 	public static Vector3i GetTeBlockPos(XUi _xuiInstance = null)
 	{
 		TEFeatureStorage tefeatureStorage = XUiC_LootWindowGroup.GetInstance(_xuiInstance).te;
@@ -128,7 +128,7 @@ public class XUiC_LootWindowGroup : XUiController
 		return tefeatureStorage.ToWorldPos();
 	}
 
-	// Token: 0x06007D58 RID: 32088 RVA: 0x002F8A18 File Offset: 0x002F6C18
+	// Token: 0x06007DA7 RID: 32167 RVA: 0x002FA534 File Offset: 0x002F8734
 	public static void CloseIfOpenAtPos(Vector3i _blockPos, XUi _xuiInstance = null)
 	{
 		GUIWindowManager windowManager = XUiC_LootWindowGroup.GetInstance(_xuiInstance).xui.playerUI.windowManager;
@@ -138,22 +138,22 @@ public class XUiC_LootWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x04005CE7 RID: 23783
+	// Token: 0x04005D22 RID: 23842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_LootWindow lootWindow;
 
-	// Token: 0x04005CE8 RID: 23784
+	// Token: 0x04005D23 RID: 23843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x04005CE9 RID: 23785
+	// Token: 0x04005D24 RID: 23844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureStorage te;
 
-	// Token: 0x04005CEA RID: 23786
+	// Token: 0x04005D25 RID: 23845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lootingHeader;
 
-	// Token: 0x04005CEB RID: 23787
+	// Token: 0x04005D26 RID: 23846
 	public static string ID = "looting";
 }

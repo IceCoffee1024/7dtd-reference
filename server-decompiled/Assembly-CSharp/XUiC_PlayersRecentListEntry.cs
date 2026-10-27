@@ -2,13 +2,13 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E3C RID: 3644
+// Token: 0x02000E47 RID: 3655
 [Preserve]
 public class XUiC_PlayersRecentListEntry : XUiC_PlayersBlockedListEntryBase
 {
-	// Token: 0x17000CA6 RID: 3238
-	// (get) Token: 0x06006F93 RID: 28563 RVA: 0x002B45AC File Offset: 0x002B27AC
-	// (set) Token: 0x06006F94 RID: 28564 RVA: 0x002B45BD File Offset: 0x002B27BD
+	// Token: 0x17000CAC RID: 3244
+	// (get) Token: 0x06006FB8 RID: 28600 RVA: 0x002B5B18 File Offset: 0x002B3D18
+	// (set) Token: 0x06006FB9 RID: 28601 RVA: 0x002B5B29 File Offset: 0x002B3D29
 	[XuiXmlBinding("lastseenage")]
 	public string LastSeenAge
 	{
@@ -23,9 +23,9 @@ public class XUiC_PlayersRecentListEntry : XUiC_PlayersBlockedListEntryBase
 		}
 	}
 
-	// Token: 0x17000CA7 RID: 3239
-	// (get) Token: 0x06006F95 RID: 28565 RVA: 0x002B45CD File Offset: 0x002B27CD
-	// (set) Token: 0x06006F96 RID: 28566 RVA: 0x002B45D5 File Offset: 0x002B27D5
+	// Token: 0x17000CAD RID: 3245
+	// (get) Token: 0x06006FBA RID: 28602 RVA: 0x002B5B39 File Offset: 0x002B3D39
+	// (set) Token: 0x06006FBB RID: 28603 RVA: 0x002B5B41 File Offset: 0x002B3D41
 	[XuiXmlBinding("canshowprofile")]
 	public bool CanShowProfile
 	{
@@ -40,7 +40,7 @@ public class XUiC_PlayersRecentListEntry : XUiC_PlayersBlockedListEntryBase
 		}
 	}
 
-	// Token: 0x06006F97 RID: 28567 RVA: 0x002B45E8 File Offset: 0x002B27E8
+	// Token: 0x06006FBC RID: 28604 RVA: 0x002B5B54 File Offset: 0x002B3D54
 	public override void UpdateEntry(PlatformUserIdentifierAbs _playerId)
 	{
 		base.UpdateEntry(_playerId);
@@ -52,7 +52,7 @@ public class XUiC_PlayersRecentListEntry : XUiC_PlayersBlockedListEntryBase
 		}
 	}
 
-	// Token: 0x06006F98 RID: 28568 RVA: 0x002B4638 File Offset: 0x002B2838
+	// Token: 0x06006FBD RID: 28605 RVA: 0x002B5BA4 File Offset: 0x002B3DA4
 	[XuiBindEvent("OnPress", "btnBlockPlayer")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void blockPlayerPressed(XUiController _sender, int _mouseButton)
@@ -79,7 +79,7 @@ public class XUiC_PlayersRecentListEntry : XUiC_PlayersBlockedListEntryBase
 		}
 	}
 
-	// Token: 0x06006F99 RID: 28569 RVA: 0x002B46BB File Offset: 0x002B28BB
+	// Token: 0x06006FBE RID: 28606 RVA: 0x002B5C27 File Offset: 0x002B3E27
 	[XuiBindEvent("OnPress", "btnViewProfile")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void bntViewProfilePressed(XUiController _sender, int _mouseButton)
@@ -90,26 +90,26 @@ public class XUiC_PlayersRecentListEntry : XUiC_PlayersBlockedListEntryBase
 		}
 	}
 
-	// Token: 0x040054B0 RID: 21680
+	// Token: 0x040054D5 RID: 21717
 	[XuiBindComponent("lastSeen", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblLastSeenTime;
 
-	// Token: 0x040054B1 RID: 21681
+	// Token: 0x040054D6 RID: 21718
 	[XuiBindComponent("blockBtn", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBlockPlayer;
 
-	// Token: 0x040054B2 RID: 21682
+	// Token: 0x040054D7 RID: 21719
 	[XuiBindComponent("btnViewProfile", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnViewProfile;
 
-	// Token: 0x040054B3 RID: 21683
+	// Token: 0x040054D8 RID: 21720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lastSeenAge;
 
-	// Token: 0x040054B4 RID: 21684
+	// Token: 0x040054D9 RID: 21721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canShowProfile;
 }

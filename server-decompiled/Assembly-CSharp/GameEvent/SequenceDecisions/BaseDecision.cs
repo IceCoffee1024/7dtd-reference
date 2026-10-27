@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceDecisions
 {
-	// Token: 0x0200197F RID: 6527
+	// Token: 0x020019B0 RID: 6576
 	[Preserve]
 	public class BaseDecision : BaseAction
 	{
-		// Token: 0x1700193F RID: 6463
-		// (get) Token: 0x0600C902 RID: 51458 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001987 RID: 6535
+		// (get) Token: 0x0600CA16 RID: 51734 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override bool UseRequirements
 		{
 			get
@@ -19,7 +19,7 @@ namespace GameEvent.SequenceDecisions
 			}
 		}
 
-		// Token: 0x0600C903 RID: 51459 RVA: 0x00497BA0 File Offset: 0x00495DA0
+		// Token: 0x0600CA17 RID: 51735 RVA: 0x0049B594 File Offset: 0x00499794
 		public override void SetActionKeyData(int _actionIndex, BaseAction _parent, string prefix = "")
 		{
 			base.SetActionKeyData(_actionIndex, _parent, prefix);
@@ -29,7 +29,7 @@ namespace GameEvent.SequenceDecisions
 			}
 		}
 
-		// Token: 0x0600C904 RID: 51460 RVA: 0x00497BE4 File Offset: 0x00495DE4
+		// Token: 0x0600CA18 RID: 51736 RVA: 0x0049B5D8 File Offset: 0x004997D8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -51,7 +51,7 @@ namespace GameEvent.SequenceDecisions
 			this.phaseMax = 0;
 		}
 
-		// Token: 0x0600C905 RID: 51461 RVA: 0x00497C70 File Offset: 0x00495E70
+		// Token: 0x0600CA19 RID: 51737 RVA: 0x0049B664 File Offset: 0x00499864
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
@@ -63,7 +63,7 @@ namespace GameEvent.SequenceDecisions
 			this.currentPhase = 0;
 		}
 
-		// Token: 0x0600C906 RID: 51462 RVA: 0x00497CB4 File Offset: 0x00495EB4
+		// Token: 0x0600CA1A RID: 51738 RVA: 0x0049B6A8 File Offset: 0x004998A8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseAction.ActionCompleteStates HandleActions()
 		{
@@ -121,7 +121,7 @@ namespace GameEvent.SequenceDecisions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C907 RID: 51463 RVA: 0x00497E6C File Offset: 0x0049606C
+		// Token: 0x0600CA1B RID: 51739 RVA: 0x0049B860 File Offset: 0x00499A60
 		public override void HandleTemplateInit(GameEventActionSequence seq)
 		{
 			base.HandleTemplateInit(seq);
@@ -132,7 +132,7 @@ namespace GameEvent.SequenceDecisions
 			}
 		}
 
-		// Token: 0x0600C908 RID: 51464 RVA: 0x00497ED0 File Offset: 0x004960D0
+		// Token: 0x0600CA1C RID: 51740 RVA: 0x0049B8C4 File Offset: 0x00499AC4
 		public override BaseAction Clone()
 		{
 			BaseDecision baseDecision = (BaseDecision)base.Clone();
@@ -146,14 +146,14 @@ namespace GameEvent.SequenceDecisions
 			return baseDecision;
 		}
 
-		// Token: 0x04009720 RID: 38688
+		// Token: 0x04009809 RID: 38921
 		public List<BaseAction> Actions = new List<BaseAction>();
 
-		// Token: 0x04009721 RID: 38689
+		// Token: 0x0400980A RID: 38922
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int currentPhase;
 
-		// Token: 0x04009722 RID: 38690
+		// Token: 0x0400980B RID: 38923
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int phaseMax;
 	}

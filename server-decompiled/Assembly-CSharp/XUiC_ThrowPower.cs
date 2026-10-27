@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001093 RID: 4243
+// Token: 0x020010A3 RID: 4259
 [Preserve]
 public class XUiC_ThrowPower : XUiController
 {
-	// Token: 0x17000FDA RID: 4058
-	// (get) Token: 0x0600868A RID: 34442 RVA: 0x003369A6 File Offset: 0x00334BA6
-	// (set) Token: 0x0600868B RID: 34443 RVA: 0x003369AE File Offset: 0x00334BAE
+	// Token: 0x17000FE5 RID: 4069
+	// (get) Token: 0x060086DD RID: 34525 RVA: 0x00338A2A File Offset: 0x00336C2A
+	// (set) Token: 0x060086DE RID: 34526 RVA: 0x00338A32 File Offset: 0x00336C32
 	public float CurrentPower
 	{
 		get
@@ -24,21 +24,21 @@ public class XUiC_ThrowPower : XUiController
 		}
 	}
 
-	// Token: 0x0600868C RID: 34444 RVA: 0x002AE7EF File Offset: 0x002AC9EF
+	// Token: 0x060086DF RID: 34527 RVA: 0x002AFD5B File Offset: 0x002ADF5B
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		((XUiV_Window)this.viewComponent).ForceVisible(1f);
 	}
 
-	// Token: 0x0600868D RID: 34445 RVA: 0x003369C6 File Offset: 0x00334BC6
+	// Token: 0x060086E0 RID: 34528 RVA: 0x00338A4A File Offset: 0x00336C4A
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.CurrentPower = 0f;
 	}
 
-	// Token: 0x0600868E RID: 34446 RVA: 0x003369D9 File Offset: 0x00334BD9
+	// Token: 0x060086E1 RID: 34529 RVA: 0x00338A5D File Offset: 0x00336C5D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -50,7 +50,7 @@ public class XUiC_ThrowPower : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x0600868F RID: 34447 RVA: 0x00336A00 File Offset: 0x00334C00
+	// Token: 0x060086E2 RID: 34530 RVA: 0x00338A84 File Offset: 0x00336C84
 	public static void Status(LocalPlayerUI _playerUi, float _currentPower = -1f)
 	{
 		XUiC_ThrowPower windowByType = _playerUi.xui.GetWindowByType<XUiC_ThrowPower>();
@@ -66,7 +66,7 @@ public class XUiC_ThrowPower : XUiController
 		}
 	}
 
-	// Token: 0x0400640F RID: 25615
+	// Token: 0x0400644E RID: 25678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentPower;
 }

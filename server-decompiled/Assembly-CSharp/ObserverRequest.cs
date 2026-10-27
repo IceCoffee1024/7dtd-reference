@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000391 RID: 913
+// Token: 0x02000393 RID: 915
 public enum ObserverRequest
 {
-	// Token: 0x04001171 RID: 4465
+	// Token: 0x04001181 RID: 4481
 	None,
-	// Token: 0x04001172 RID: 4466
+	// Token: 0x04001182 RID: 4482
 	Start,
-	// Token: 0x04001173 RID: 4467
+	// Token: 0x04001183 RID: 4483
 	Stop
 }

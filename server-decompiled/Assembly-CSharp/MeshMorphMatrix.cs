@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001370 RID: 4976
+// Token: 0x02001382 RID: 4994
 [CreateAssetMenu(fileName = "MeshMorphMatrix", menuName = "Mesh Morphing/MeshMorphMatrix", order = 1)]
 public class MeshMorphMatrix : ScriptableObject
 {
-	// Token: 0x170012C7 RID: 4807
-	// (get) Token: 0x06009CC3 RID: 40131 RVA: 0x003B3B4E File Offset: 0x003B1D4E
+	// Token: 0x170012D3 RID: 4819
+	// (get) Token: 0x06009D1B RID: 40219 RVA: 0x003B5F52 File Offset: 0x003B4152
 	public SkinnedMeshRenderer MorphTargetsSource
 	{
 		get
@@ -15,8 +15,8 @@ public class MeshMorphMatrix : ScriptableObject
 		}
 	}
 
-	// Token: 0x170012C8 RID: 4808
-	// (get) Token: 0x06009CC4 RID: 40132 RVA: 0x003B3B56 File Offset: 0x003B1D56
+	// Token: 0x170012D4 RID: 4820
+	// (get) Token: 0x06009D1C RID: 40220 RVA: 0x003B5F5A File Offset: 0x003B415A
 	public MeshMorphMatrix.MorphTarget[] MorphTargets
 	{
 		get
@@ -25,8 +25,8 @@ public class MeshMorphMatrix : ScriptableObject
 		}
 	}
 
-	// Token: 0x170012C9 RID: 4809
-	// (get) Token: 0x06009CC5 RID: 40133 RVA: 0x003B3B5E File Offset: 0x003B1D5E
+	// Token: 0x170012D5 RID: 4821
+	// (get) Token: 0x06009D1D RID: 40221 RVA: 0x003B5F62 File Offset: 0x003B4162
 	public MeshMorphMatrix.MeshData[] Meshes
 	{
 		get
@@ -35,8 +35,8 @@ public class MeshMorphMatrix : ScriptableObject
 		}
 	}
 
-	// Token: 0x170012CA RID: 4810
-	// (get) Token: 0x06009CC6 RID: 40134 RVA: 0x003B3B66 File Offset: 0x003B1D66
+	// Token: 0x170012D6 RID: 4822
+	// (get) Token: 0x06009D1E RID: 40222 RVA: 0x003B5F6A File Offset: 0x003B416A
 	public MeshMorph[] MorphedMeshes
 	{
 		get
@@ -45,8 +45,8 @@ public class MeshMorphMatrix : ScriptableObject
 		}
 	}
 
-	// Token: 0x170012CB RID: 4811
-	// (get) Token: 0x06009CC7 RID: 40135 RVA: 0x003B3B6E File Offset: 0x003B1D6E
+	// Token: 0x170012D7 RID: 4823
+	// (get) Token: 0x06009D1F RID: 40223 RVA: 0x003B5F72 File Offset: 0x003B4172
 	public float MaxDistance
 	{
 		get
@@ -55,8 +55,8 @@ public class MeshMorphMatrix : ScriptableObject
 		}
 	}
 
-	// Token: 0x170012CC RID: 4812
-	// (get) Token: 0x06009CC8 RID: 40136 RVA: 0x003B3B76 File Offset: 0x003B1D76
+	// Token: 0x170012D8 RID: 4824
+	// (get) Token: 0x06009D20 RID: 40224 RVA: 0x003B5F7A File Offset: 0x003B417A
 	public float NormalBias
 	{
 		get
@@ -65,73 +65,73 @@ public class MeshMorphMatrix : ScriptableObject
 		}
 	}
 
-	// Token: 0x0400764C RID: 30284
+	// Token: 0x0400768D RID: 30349
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshMorphMatrix.MeshMorphMatrixType matrixType;
 
-	// Token: 0x0400764D RID: 30285
+	// Token: 0x0400768E RID: 30350
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SkinnedMeshRenderer morphTargetsSource;
 
-	// Token: 0x0400764E RID: 30286
+	// Token: 0x0400768F RID: 30351
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxDistance = 0.1f;
 
-	// Token: 0x0400764F RID: 30287
+	// Token: 0x04007690 RID: 30352
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float normalBias;
 
-	// Token: 0x04007650 RID: 30288
+	// Token: 0x04007691 RID: 30353
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshMorphMatrix.MorphTarget[] morphTargets;
 
-	// Token: 0x04007651 RID: 30289
+	// Token: 0x04007692 RID: 30354
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshMorphMatrix.MeshData[] meshes;
 
-	// Token: 0x04007652 RID: 30290
+	// Token: 0x04007693 RID: 30355
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshMorph[] morphedMeshes;
 
-	// Token: 0x04007653 RID: 30291
+	// Token: 0x04007694 RID: 30356
 	[HideInInspector]
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool initialized;
 
-	// Token: 0x02001371 RID: 4977
+	// Token: 0x02001383 RID: 4995
 	public enum MeshMorphMatrixType
 	{
-		// Token: 0x04007655 RID: 30293
+		// Token: 0x04007696 RID: 30358
 		Hair,
-		// Token: 0x04007656 RID: 30294
+		// Token: 0x04007697 RID: 30359
 		Headgear
 	}
 
-	// Token: 0x02001372 RID: 4978
+	// Token: 0x02001384 RID: 4996
 	[Serializable]
 	public struct MorphTarget
 	{
-		// Token: 0x04007657 RID: 30295
+		// Token: 0x04007698 RID: 30360
 		public int blendshapeIndex;
 
-		// Token: 0x04007658 RID: 30296
+		// Token: 0x04007699 RID: 30361
 		public string name;
 	}
 
-	// Token: 0x02001373 RID: 4979
+	// Token: 0x02001385 RID: 4997
 	[Serializable]
 	public struct MeshData
 	{
-		// Token: 0x170012CD RID: 4813
-		// (get) Token: 0x06009CCA RID: 40138 RVA: 0x003B3B91 File Offset: 0x003B1D91
+		// Token: 0x170012D9 RID: 4825
+		// (get) Token: 0x06009D22 RID: 40226 RVA: 0x003B5F95 File Offset: 0x003B4195
 		public string MeshName
 		{
 			get
@@ -144,13 +144,13 @@ public class MeshMorphMatrix : ScriptableObject
 			}
 		}
 
-		// Token: 0x04007659 RID: 30297
+		// Token: 0x0400769A RID: 30362
 		public int blendshapeIndex;
 
-		// Token: 0x0400765A RID: 30298
+		// Token: 0x0400769B RID: 30363
 		public string typeName;
 
-		// Token: 0x0400765B RID: 30299
+		// Token: 0x0400769C RID: 30364
 		public GameObject gameObject;
 	}
 }

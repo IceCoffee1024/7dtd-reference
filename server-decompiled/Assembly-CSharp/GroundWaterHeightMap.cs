@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000CCE RID: 3278
+// Token: 0x02000CD9 RID: 3289
 public class GroundWaterHeightMap
 {
-	// Token: 0x06006443 RID: 25667 RVA: 0x002775F7 File Offset: 0x002757F7
+	// Token: 0x06006468 RID: 25704 RVA: 0x00278B1F File Offset: 0x00276D1F
 	public GroundWaterHeightMap(World _world)
 	{
 		this.world = _world;
 	}
 
-	// Token: 0x06006444 RID: 25668 RVA: 0x00277608 File Offset: 0x00275808
+	// Token: 0x06006469 RID: 25705 RVA: 0x00278B30 File Offset: 0x00276D30
 	public bool TryInit()
 	{
 		if (this.poiColors != null && this.biomes != null)
@@ -31,7 +31,7 @@ public class GroundWaterHeightMap
 		return this.poiColors != null && this.biomes != null;
 	}
 
-	// Token: 0x06006445 RID: 25669 RVA: 0x00277680 File Offset: 0x00275880
+	// Token: 0x0600646A RID: 25706 RVA: 0x00278BA8 File Offset: 0x00276DA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PoiMapElement GetPoiMapElement(int _worldX, int _worldZ)
 	{
@@ -47,7 +47,7 @@ public class GroundWaterHeightMap
 		return this.biomes.getPoiForColor((uint)data);
 	}
 
-	// Token: 0x06006446 RID: 25670 RVA: 0x002776C0 File Offset: 0x002758C0
+	// Token: 0x0600646B RID: 25707 RVA: 0x00278BE8 File Offset: 0x00276DE8
 	public bool TryGetWaterHeightAt(int _worldX, int _worldZ, out int _height)
 	{
 		PoiMapElement poiMapElement = this.GetPoiMapElement(_worldX, _worldZ);
@@ -65,15 +65,15 @@ public class GroundWaterHeightMap
 		return true;
 	}
 
-	// Token: 0x04004E47 RID: 20039
+	// Token: 0x04004E6C RID: 20076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04004E48 RID: 20040
+	// Token: 0x04004E6D RID: 20077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldGridCompressedData<byte> poiColors;
 
-	// Token: 0x04004E49 RID: 20041
+	// Token: 0x04004E6E RID: 20078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBiomes biomes;
 }

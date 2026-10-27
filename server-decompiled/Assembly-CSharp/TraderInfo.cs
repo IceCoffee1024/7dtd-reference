@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020008B1 RID: 2225
+// Token: 0x020008BB RID: 2235
 public class TraderInfo
 {
-	// Token: 0x170006D6 RID: 1750
-	// (get) Token: 0x06004008 RID: 16392 RVA: 0x001927B7 File Offset: 0x001909B7
-	// (set) Token: 0x06004009 RID: 16393 RVA: 0x001927BE File Offset: 0x001909BE
+	// Token: 0x170006DC RID: 1756
+	// (get) Token: 0x0600402B RID: 16427 RVA: 0x0019385F File Offset: 0x00191A5F
+	// (set) Token: 0x0600402C RID: 16428 RVA: 0x00193866 File Offset: 0x00191A66
 	public static float BuyMarkup
 	{
 		get
@@ -20,9 +20,9 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006D7 RID: 1751
-	// (get) Token: 0x0600400A RID: 16394 RVA: 0x001927C6 File Offset: 0x001909C6
-	// (set) Token: 0x0600400B RID: 16395 RVA: 0x001927CD File Offset: 0x001909CD
+	// Token: 0x170006DD RID: 1757
+	// (get) Token: 0x0600402D RID: 16429 RVA: 0x0019386E File Offset: 0x00191A6E
+	// (set) Token: 0x0600402E RID: 16430 RVA: 0x00193875 File Offset: 0x00191A75
 	public static float SellMarkdown
 	{
 		get
@@ -35,9 +35,9 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006D8 RID: 1752
-	// (get) Token: 0x0600400C RID: 16396 RVA: 0x001927D5 File Offset: 0x001909D5
-	// (set) Token: 0x0600400D RID: 16397 RVA: 0x001927DC File Offset: 0x001909DC
+	// Token: 0x170006DE RID: 1758
+	// (get) Token: 0x0600402F RID: 16431 RVA: 0x0019387D File Offset: 0x00191A7D
+	// (set) Token: 0x06004030 RID: 16432 RVA: 0x00193884 File Offset: 0x00191A84
 	public static float QualityMinMod
 	{
 		get
@@ -50,9 +50,9 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006D9 RID: 1753
-	// (get) Token: 0x0600400E RID: 16398 RVA: 0x001927E4 File Offset: 0x001909E4
-	// (set) Token: 0x0600400F RID: 16399 RVA: 0x001927EB File Offset: 0x001909EB
+	// Token: 0x170006DF RID: 1759
+	// (get) Token: 0x06004031 RID: 16433 RVA: 0x0019388C File Offset: 0x00191A8C
+	// (set) Token: 0x06004032 RID: 16434 RVA: 0x00193893 File Offset: 0x00191A93
 	public static float QualityMaxMod
 	{
 		get
@@ -65,14 +65,14 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006DA RID: 1754
-	// (get) Token: 0x06004010 RID: 16400 RVA: 0x001927F3 File Offset: 0x001909F3
-	// (set) Token: 0x06004011 RID: 16401 RVA: 0x001927FA File Offset: 0x001909FA
+	// Token: 0x170006E0 RID: 1760
+	// (get) Token: 0x06004033 RID: 16435 RVA: 0x0019389B File Offset: 0x00191A9B
+	// (set) Token: 0x06004034 RID: 16436 RVA: 0x001938A2 File Offset: 0x00191AA2
 	public static string CurrencyItem { get; set; }
 
-	// Token: 0x170006DB RID: 1755
-	// (get) Token: 0x06004012 RID: 16402 RVA: 0x00192802 File Offset: 0x00190A02
-	// (set) Token: 0x06004013 RID: 16403 RVA: 0x00192840 File Offset: 0x00190A40
+	// Token: 0x170006E1 RID: 1761
+	// (get) Token: 0x06004035 RID: 16437 RVA: 0x001938AA File Offset: 0x00191AAA
+	// (set) Token: 0x06004036 RID: 16438 RVA: 0x001938E8 File Offset: 0x00191AE8
 	public int ResetInterval
 	{
 		get
@@ -100,9 +100,9 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006DC RID: 1756
-	// (get) Token: 0x06004014 RID: 16404 RVA: 0x00192849 File Offset: 0x00190A49
-	// (set) Token: 0x06004015 RID: 16405 RVA: 0x00192887 File Offset: 0x00190A87
+	// Token: 0x170006E2 RID: 1762
+	// (get) Token: 0x06004037 RID: 16439 RVA: 0x001938F1 File Offset: 0x00191AF1
+	// (set) Token: 0x06004038 RID: 16440 RVA: 0x0019392F File Offset: 0x00191B2F
 	public int ResetIntervalInTicks
 	{
 		get
@@ -130,9 +130,9 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006DD RID: 1757
-	// (get) Token: 0x06004016 RID: 16406 RVA: 0x00192890 File Offset: 0x00190A90
-	// (set) Token: 0x06004017 RID: 16407 RVA: 0x00192898 File Offset: 0x00190A98
+	// Token: 0x170006E3 RID: 1763
+	// (get) Token: 0x06004039 RID: 16441 RVA: 0x00193938 File Offset: 0x00191B38
+	// (set) Token: 0x0600403A RID: 16442 RVA: 0x00193940 File Offset: 0x00191B40
 	public static TraderInfo.TraderHourPresets TraderHoursPreset
 	{
 		get
@@ -177,8 +177,8 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006DE RID: 1758
-	// (get) Token: 0x06004018 RID: 16408 RVA: 0x001929A0 File Offset: 0x00190BA0
+	// Token: 0x170006E4 RID: 1764
+	// (get) Token: 0x0600403B RID: 16443 RVA: 0x00193A48 File Offset: 0x00191C48
 	public int RentTimeInSeconds
 	{
 		get
@@ -187,8 +187,8 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006DF RID: 1759
-	// (get) Token: 0x06004019 RID: 16409 RVA: 0x001929B3 File Offset: 0x00190BB3
+	// Token: 0x170006E5 RID: 1765
+	// (get) Token: 0x0600403C RID: 16444 RVA: 0x00193A5B File Offset: 0x00191C5B
 	public int RentTimeInTicks
 	{
 		get
@@ -197,7 +197,7 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x0600401A RID: 16410 RVA: 0x001929C1 File Offset: 0x00190BC1
+	// Token: 0x0600403D RID: 16445 RVA: 0x00193A69 File Offset: 0x00191C69
 	public ulong GetOpenTime()
 	{
 		if (TraderInfo.traderHoursPreset != TraderInfo.TraderHourPresets.Default)
@@ -207,7 +207,7 @@ public class TraderInfo
 		return this.OpenTime;
 	}
 
-	// Token: 0x0600401B RID: 16411 RVA: 0x001929D6 File Offset: 0x00190BD6
+	// Token: 0x0600403E RID: 16446 RVA: 0x00193A7E File Offset: 0x00191C7E
 	public ulong GetCloseTime()
 	{
 		if (TraderInfo.traderHoursPreset != TraderInfo.TraderHourPresets.Default)
@@ -217,7 +217,7 @@ public class TraderInfo
 		return this.CloseTime;
 	}
 
-	// Token: 0x0600401C RID: 16412 RVA: 0x001929EB File Offset: 0x00190BEB
+	// Token: 0x0600403F RID: 16447 RVA: 0x00193A93 File Offset: 0x00191C93
 	public ulong GetWarningTime()
 	{
 		if (TraderInfo.traderHoursPreset != TraderInfo.TraderHourPresets.Default)
@@ -227,8 +227,8 @@ public class TraderInfo
 		return this.WarningTime;
 	}
 
-	// Token: 0x170006E0 RID: 1760
-	// (get) Token: 0x0600401D RID: 16413 RVA: 0x00192A00 File Offset: 0x00190C00
+	// Token: 0x170006E6 RID: 1766
+	// (get) Token: 0x06004040 RID: 16448 RVA: 0x00193AA8 File Offset: 0x00191CA8
 	public bool IsOpen
 	{
 		get
@@ -257,8 +257,8 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006E1 RID: 1761
-	// (get) Token: 0x0600401E RID: 16414 RVA: 0x00192AD4 File Offset: 0x00190CD4
+	// Token: 0x170006E7 RID: 1767
+	// (get) Token: 0x06004041 RID: 16449 RVA: 0x00193B7C File Offset: 0x00191D7C
 	public bool IsTraderActivitiesOpen
 	{
 		get
@@ -278,8 +278,8 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006E2 RID: 1762
-	// (get) Token: 0x0600401F RID: 16415 RVA: 0x00192B3C File Offset: 0x00190D3C
+	// Token: 0x170006E8 RID: 1768
+	// (get) Token: 0x06004042 RID: 16450 RVA: 0x00193BE4 File Offset: 0x00191DE4
 	public bool ShouldPlayOpenSound
 	{
 		get
@@ -303,8 +303,8 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006E3 RID: 1763
-	// (get) Token: 0x06004020 RID: 16416 RVA: 0x00192BB0 File Offset: 0x00190DB0
+	// Token: 0x170006E9 RID: 1769
+	// (get) Token: 0x06004043 RID: 16451 RVA: 0x00193C58 File Offset: 0x00191E58
 	public bool ShouldPlayCloseSound
 	{
 		get
@@ -319,8 +319,8 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x170006E4 RID: 1764
-	// (get) Token: 0x06004021 RID: 16417 RVA: 0x00192C10 File Offset: 0x00190E10
+	// Token: 0x170006EA RID: 1770
+	// (get) Token: 0x06004044 RID: 16452 RVA: 0x00193CB8 File Offset: 0x00191EB8
 	public bool IsWarningTime
 	{
 		get
@@ -348,27 +348,27 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x06004023 RID: 16419 RVA: 0x00192D43 File Offset: 0x00190F43
+	// Token: 0x06004046 RID: 16454 RVA: 0x00193DEB File Offset: 0x00191FEB
 	public static void InitStatic()
 	{
 		TraderInfo.traderInfoList = new TraderInfo[256];
 		TraderInfo.traderItemGroups = new Dictionary<string, TraderInfo.TraderItemGroup>();
 	}
 
-	// Token: 0x06004024 RID: 16420 RVA: 0x00192D5E File Offset: 0x00190F5E
+	// Token: 0x06004047 RID: 16455 RVA: 0x00193E06 File Offset: 0x00192006
 	public void Init()
 	{
 		TraderInfo.traderInfoList[this.Id] = this;
 	}
 
-	// Token: 0x06004025 RID: 16421 RVA: 0x00192D6D File Offset: 0x00190F6D
+	// Token: 0x06004048 RID: 16456 RVA: 0x00193E15 File Offset: 0x00192015
 	public static void Cleanup()
 	{
 		TraderInfo.traderInfoList = null;
 		TraderInfo.traderItemGroups = null;
 	}
 
-	// Token: 0x06004026 RID: 16422 RVA: 0x00192D7B File Offset: 0x00190F7B
+	// Token: 0x06004049 RID: 16457 RVA: 0x00193E23 File Offset: 0x00192023
 	public static string GetNextTraderTime()
 	{
 		if (TraderInfo.traderDisplayInfo == null)
@@ -383,7 +383,7 @@ public class TraderInfo
 		return TraderInfo.traderDisplayInfo.GetTimeText();
 	}
 
-	// Token: 0x06004027 RID: 16423 RVA: 0x00192DB0 File Offset: 0x00190FB0
+	// Token: 0x0600404A RID: 16458 RVA: 0x00193E58 File Offset: 0x00192058
 	public static string GetNextTraderText()
 	{
 		if (TraderInfo.traderDisplayInfo == null)
@@ -398,7 +398,7 @@ public class TraderInfo
 		return TraderInfo.traderDisplayInfo.GetTimeTitle();
 	}
 
-	// Token: 0x06004028 RID: 16424 RVA: 0x00192DE8 File Offset: 0x00190FE8
+	// Token: 0x0600404B RID: 16459 RVA: 0x00193E90 File Offset: 0x00192090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyRandomDegradation(ref ItemValue _itemValue)
 	{
@@ -412,7 +412,7 @@ public class TraderInfo
 		_itemValue.UseTimes = (float)((int)((float)maxUseTimes * num));
 	}
 
-	// Token: 0x06004029 RID: 16425 RVA: 0x00192E4C File Offset: 0x0019104C
+	// Token: 0x0600404C RID: 16460 RVA: 0x00193EF4 File Offset: 0x001920F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyQuality(ref ItemValue _itemValue, int minQuality = 1, int maxQuality = 6)
 	{
@@ -422,7 +422,7 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x0600402A RID: 16426 RVA: 0x00192EA0 File Offset: 0x001910A0
+	// Token: 0x0600404D RID: 16461 RVA: 0x00193F48 File Offset: 0x00192148
 	public List<ItemStack> Spawn(GameRandom random)
 	{
 		List<ItemStack> list = new List<ItemStack>();
@@ -430,7 +430,7 @@ public class TraderInfo
 		return list;
 	}
 
-	// Token: 0x0600402B RID: 16427 RVA: 0x00192EC4 File Offset: 0x001910C4
+	// Token: 0x0600404E RID: 16462 RVA: 0x00193F6C File Offset: 0x0019216C
 	public List<ItemStack> SpawnTierGroup(GameRandom random, int tierGroupIndex)
 	{
 		List<ItemStack> list = new List<ItemStack>();
@@ -440,7 +440,7 @@ public class TraderInfo
 		return list;
 	}
 
-	// Token: 0x0600402C RID: 16428 RVA: 0x00192F20 File Offset: 0x00191120
+	// Token: 0x0600404F RID: 16463 RVA: 0x00193FC8 File Offset: 0x001921C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnItem(GameRandom random, TraderInfo.TraderItemEntry template, ItemValue item, int countToSpawn, List<ItemStack> spawnedItems)
 	{
@@ -546,7 +546,7 @@ public class TraderInfo
 		spawnedItems.Add(itemStack2);
 	}
 
-	// Token: 0x0600402D RID: 16429 RVA: 0x00193178 File Offset: 0x00191378
+	// Token: 0x06004050 RID: 16464 RVA: 0x00194220 File Offset: 0x00192420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int RandomSpawnCount(GameRandom random, int min, int max)
 	{
@@ -572,7 +572,7 @@ public class TraderInfo
 		return num2;
 	}
 
-	// Token: 0x0600402E RID: 16430 RVA: 0x001931C8 File Offset: 0x001913C8
+	// Token: 0x06004051 RID: 16465 RVA: 0x00194270 File Offset: 0x00192470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnAllItemsFromList(GameRandom random, List<TraderInfo.TraderItemEntry> itemSet, List<ItemStack> spawnedItems)
 	{
@@ -593,7 +593,7 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x0600402F RID: 16431 RVA: 0x0019325C File Offset: 0x0019145C
+	// Token: 0x06004052 RID: 16466 RVA: 0x00194304 File Offset: 0x00192504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnItemsFromGroup(GameRandom random, TraderInfo.TraderItemGroup group, int numToSpawn, List<ItemStack> spawnedItems, bool uniqueOnly)
 	{
@@ -609,7 +609,7 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x06004030 RID: 16432 RVA: 0x001932B0 File Offset: 0x001914B0
+	// Token: 0x06004053 RID: 16467 RVA: 0x00194358 File Offset: 0x00192558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnLootItemsFromList(GameRandom random, List<TraderInfo.TraderItemEntry> itemSet, int numToSpawn, List<ItemStack> spawnedItems, List<int> usedIndices)
 	{
@@ -664,288 +664,288 @@ public class TraderInfo
 		}
 	}
 
-	// Token: 0x040033EF RID: 13295
+	// Token: 0x0400340F RID: 13327
 	public static TraderInfo[] traderInfoList;
 
-	// Token: 0x040033F0 RID: 13296
+	// Token: 0x04003410 RID: 13328
 	public static Dictionary<string, TraderInfo.TraderItemGroup> traderItemGroups;
 
-	// Token: 0x040033F1 RID: 13297
+	// Token: 0x04003411 RID: 13329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float buyMarkup;
 
-	// Token: 0x040033F2 RID: 13298
+	// Token: 0x04003412 RID: 13330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float sellMarkdown;
 
-	// Token: 0x040033F3 RID: 13299
+	// Token: 0x04003413 RID: 13331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float qualityMinMod;
 
-	// Token: 0x040033F4 RID: 13300
+	// Token: 0x04003414 RID: 13332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float qualityMaxMod;
 
-	// Token: 0x040033F6 RID: 13302
+	// Token: 0x04003416 RID: 13334
 	public int Id;
 
-	// Token: 0x040033F7 RID: 13303
+	// Token: 0x04003417 RID: 13335
 	public float SalesMarkup;
 
-	// Token: 0x040033F8 RID: 13304
+	// Token: 0x04003418 RID: 13336
 	public static bool TraderDialog = true;
 
-	// Token: 0x040033F9 RID: 13305
+	// Token: 0x04003419 RID: 13337
 	public static int GlobalResetInterval = -1;
 
-	// Token: 0x040033FA RID: 13306
+	// Token: 0x0400341A RID: 13338
 	public static int GlobalResetIntervalInTicks = -1;
 
-	// Token: 0x040033FB RID: 13307
+	// Token: 0x0400341B RID: 13339
 	public static int VendingResetInterval = -1;
 
-	// Token: 0x040033FC RID: 13308
+	// Token: 0x0400341C RID: 13340
 	public static int VendingResetIntervalInTicks = -1;
 
-	// Token: 0x040033FD RID: 13309
+	// Token: 0x0400341D RID: 13341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int resetInterval = 1;
 
-	// Token: 0x040033FE RID: 13310
+	// Token: 0x0400341E RID: 13342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int resetIntervalInTicks = 24000;
 
-	// Token: 0x040033FF RID: 13311
+	// Token: 0x0400341F RID: 13343
 	public int MaxItems = 50;
 
-	// Token: 0x04003400 RID: 13312
+	// Token: 0x04003420 RID: 13344
 	public int minCount;
 
-	// Token: 0x04003401 RID: 13313
+	// Token: 0x04003421 RID: 13345
 	public int maxCount;
 
-	// Token: 0x04003402 RID: 13314
+	// Token: 0x04003422 RID: 13346
 	public bool AllowBuy = true;
 
-	// Token: 0x04003403 RID: 13315
+	// Token: 0x04003423 RID: 13347
 	public bool AllowSell = true;
 
-	// Token: 0x04003404 RID: 13316
+	// Token: 0x04003424 RID: 13348
 	public bool IsVendingMachine;
 
-	// Token: 0x04003405 RID: 13317
+	// Token: 0x04003425 RID: 13349
 	public float OverrideBuyMarkup = -1f;
 
-	// Token: 0x04003406 RID: 13318
+	// Token: 0x04003426 RID: 13350
 	public float OverrideSellMarkdown = -1f;
 
-	// Token: 0x04003407 RID: 13319
+	// Token: 0x04003427 RID: 13351
 	public bool UseOpenHours;
 
-	// Token: 0x04003408 RID: 13320
+	// Token: 0x04003428 RID: 13352
 	public ulong OpenTime;
 
-	// Token: 0x04003409 RID: 13321
+	// Token: 0x04003429 RID: 13353
 	public ulong CloseTime;
 
-	// Token: 0x0400340A RID: 13322
+	// Token: 0x0400342A RID: 13354
 	public ulong WarningTime;
 
-	// Token: 0x0400340B RID: 13323
+	// Token: 0x0400342B RID: 13355
 	public bool PlayerOwned;
 
-	// Token: 0x0400340C RID: 13324
+	// Token: 0x0400342C RID: 13356
 	public bool Rentable;
 
-	// Token: 0x0400340D RID: 13325
+	// Token: 0x0400342D RID: 13357
 	public int RentCost;
 
-	// Token: 0x0400340E RID: 13326
+	// Token: 0x0400342E RID: 13358
 	public int RentTimeInDays;
 
-	// Token: 0x0400340F RID: 13327
+	// Token: 0x0400342F RID: 13359
 	public static int TraderMaxTier = 6;
 
-	// Token: 0x04003410 RID: 13328
+	// Token: 0x04003430 RID: 13360
 	public static int TraderBuyLimit = 3;
 
-	// Token: 0x04003411 RID: 13329
+	// Token: 0x04003431 RID: 13361
 	public static float TraderItemAbundance = 1f;
 
-	// Token: 0x04003412 RID: 13330
+	// Token: 0x04003432 RID: 13362
 	public static float VendingItemAbundance = 1f;
 
-	// Token: 0x04003413 RID: 13331
+	// Token: 0x04003433 RID: 13363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastClosedBM;
 
-	// Token: 0x04003414 RID: 13332
+	// Token: 0x04003434 RID: 13364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TraderInfo.TraderHourPresets traderHoursPreset;
 
-	// Token: 0x04003415 RID: 13333
+	// Token: 0x04003435 RID: 13365
 	public static TraderInfo.TraderDaysPresets TraderDayPreset;
 
-	// Token: 0x04003416 RID: 13334
+	// Token: 0x04003436 RID: 13366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ulong GlobalOpenTime;
 
-	// Token: 0x04003417 RID: 13335
+	// Token: 0x04003437 RID: 13367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ulong GlobalCloseTime;
 
-	// Token: 0x04003418 RID: 13336
+	// Token: 0x04003438 RID: 13368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ulong GlobalWarningTime;
 
-	// Token: 0x04003419 RID: 13337
+	// Token: 0x04003439 RID: 13369
 	public List<TraderInfo.TierItemGroup> TierItemGroups = new List<TraderInfo.TierItemGroup>();
 
-	// Token: 0x0400341A RID: 13338
+	// Token: 0x0400343A RID: 13370
 	public List<TraderInfo.TraderItemEntry> traderItems = new List<TraderInfo.TraderItemEntry>();
 
-	// Token: 0x0400341B RID: 13339
+	// Token: 0x0400343B RID: 13371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastTime = 0f;
 
-	// Token: 0x0400341C RID: 13340
+	// Token: 0x0400343C RID: 13372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TraderInfo.TraderDisplayInfo traderDisplayInfo = null;
 
-	// Token: 0x020008B2 RID: 2226
+	// Token: 0x020008BC RID: 2236
 	public enum TraderHourPresets
 	{
-		// Token: 0x0400341E RID: 13342
+		// Token: 0x0400343E RID: 13374
 		Default,
-		// Token: 0x0400341F RID: 13343
+		// Token: 0x0400343F RID: 13375
 		MorningOnly,
-		// Token: 0x04003420 RID: 13344
+		// Token: 0x04003440 RID: 13376
 		MidDayOnly,
-		// Token: 0x04003421 RID: 13345
+		// Token: 0x04003441 RID: 13377
 		EveningOnly,
-		// Token: 0x04003422 RID: 13346
+		// Token: 0x04003442 RID: 13378
 		NightOnly,
-		// Token: 0x04003423 RID: 13347
+		// Token: 0x04003443 RID: 13379
 		OnlyClosedOnBM,
-		// Token: 0x04003424 RID: 13348
+		// Token: 0x04003444 RID: 13380
 		AlwaysOpen
 	}
 
-	// Token: 0x020008B3 RID: 2227
+	// Token: 0x020008BD RID: 2237
 	public enum TraderDaysPresets
 	{
-		// Token: 0x04003426 RID: 13350
+		// Token: 0x04003446 RID: 13382
 		Default,
-		// Token: 0x04003427 RID: 13351
+		// Token: 0x04003447 RID: 13383
 		Everyday,
-		// Token: 0x04003428 RID: 13352
+		// Token: 0x04003448 RID: 13384
 		EveryOtherDay,
-		// Token: 0x04003429 RID: 13353
+		// Token: 0x04003449 RID: 13385
 		EveryThreeDays,
-		// Token: 0x0400342A RID: 13354
+		// Token: 0x0400344A RID: 13386
 		EveryFourDays,
-		// Token: 0x0400342B RID: 13355
+		// Token: 0x0400344B RID: 13387
 		EveryFiveDays
 	}
 
-	// Token: 0x020008B4 RID: 2228
+	// Token: 0x020008BE RID: 2238
 	public class TraderItem
 	{
-		// Token: 0x0400342C RID: 13356
+		// Token: 0x0400344C RID: 13388
 		public ItemValue itemValue;
 	}
 
-	// Token: 0x020008B5 RID: 2229
+	// Token: 0x020008BF RID: 2239
 	public class TraderItemGroup
 	{
-		// Token: 0x0400342D RID: 13357
+		// Token: 0x0400344D RID: 13389
 		public string name;
 
-		// Token: 0x0400342E RID: 13358
+		// Token: 0x0400344E RID: 13390
 		public int minCount;
 
-		// Token: 0x0400342F RID: 13359
+		// Token: 0x0400344F RID: 13391
 		public int maxCount;
 
-		// Token: 0x04003430 RID: 13360
+		// Token: 0x04003450 RID: 13392
 		public int minQuality = -1;
 
-		// Token: 0x04003431 RID: 13361
+		// Token: 0x04003451 RID: 13393
 		public int maxQuality = -1;
 
-		// Token: 0x04003432 RID: 13362
+		// Token: 0x04003452 RID: 13394
 		public string[] modsToInstall;
 
-		// Token: 0x04003433 RID: 13363
+		// Token: 0x04003453 RID: 13395
 		public float modChance = 1f;
 
-		// Token: 0x04003434 RID: 13364
+		// Token: 0x04003454 RID: 13396
 		public bool uniqueOnly;
 
-		// Token: 0x04003435 RID: 13365
+		// Token: 0x04003455 RID: 13397
 		public List<TraderInfo.TraderItemEntry> items = new List<TraderInfo.TraderItemEntry>();
 	}
 
-	// Token: 0x020008B6 RID: 2230
+	// Token: 0x020008C0 RID: 2240
 	public class TraderItemEntry
 	{
-		// Token: 0x04003436 RID: 13366
+		// Token: 0x04003456 RID: 13398
 		public int minCount;
 
-		// Token: 0x04003437 RID: 13367
+		// Token: 0x04003457 RID: 13399
 		public int maxCount;
 
-		// Token: 0x04003438 RID: 13368
+		// Token: 0x04003458 RID: 13400
 		public int minQuality;
 
-		// Token: 0x04003439 RID: 13369
+		// Token: 0x04003459 RID: 13401
 		public int maxQuality;
 
-		// Token: 0x0400343A RID: 13370
+		// Token: 0x0400345A RID: 13402
 		public float prob;
 
-		// Token: 0x0400343B RID: 13371
+		// Token: 0x0400345B RID: 13403
 		public string[] modsToInstall;
 
-		// Token: 0x0400343C RID: 13372
+		// Token: 0x0400345C RID: 13404
 		public float modChance = 1f;
 
-		// Token: 0x0400343D RID: 13373
+		// Token: 0x0400345D RID: 13405
 		public bool uniqueOnly;
 
-		// Token: 0x0400343E RID: 13374
+		// Token: 0x0400345E RID: 13406
 		public TraderInfo.TraderItem item;
 
-		// Token: 0x0400343F RID: 13375
+		// Token: 0x0400345F RID: 13407
 		public TraderInfo.TraderItemGroup group;
 
-		// Token: 0x04003440 RID: 13376
+		// Token: 0x04003460 RID: 13408
 		public TraderInfo.TraderItemGroup parentGroup;
 	}
 
-	// Token: 0x020008B7 RID: 2231
+	// Token: 0x020008C1 RID: 2241
 	public class TierItemGroup
 	{
-		// Token: 0x04003441 RID: 13377
+		// Token: 0x04003461 RID: 13409
 		public int minLevel;
 
-		// Token: 0x04003442 RID: 13378
+		// Token: 0x04003462 RID: 13410
 		public int maxLevel;
 
-		// Token: 0x04003443 RID: 13379
+		// Token: 0x04003463 RID: 13411
 		public int minCount;
 
-		// Token: 0x04003444 RID: 13380
+		// Token: 0x04003464 RID: 13412
 		public int maxCount;
 
-		// Token: 0x04003445 RID: 13381
+		// Token: 0x04003465 RID: 13413
 		public List<TraderInfo.TraderItemEntry> traderItems = new List<TraderInfo.TraderItemEntry>();
 	}
 
-	// Token: 0x020008B8 RID: 2232
+	// Token: 0x020008C2 RID: 2242
 	public class TraderDisplayInfo
 	{
-		// Token: 0x06004037 RID: 16439 RVA: 0x0019348C File Offset: 0x0019168C
+		// Token: 0x0600405A RID: 16474 RVA: 0x00194534 File Offset: 0x00192734
 		public void Refresh()
 		{
 			if (GameManager.Instance.World == null)
@@ -979,7 +979,7 @@ public class TraderInfo
 			}
 		}
 
-		// Token: 0x06004038 RID: 16440 RVA: 0x00193583 File Offset: 0x00191783
+		// Token: 0x0600405B RID: 16475 RVA: 0x0019462B File Offset: 0x0019282B
 		public string GetTimeTitle()
 		{
 			if (!this.IsOpen)
@@ -989,7 +989,7 @@ public class TraderInfo
 			return "Closes at";
 		}
 
-		// Token: 0x06004039 RID: 16441 RVA: 0x00193598 File Offset: 0x00191798
+		// Token: 0x0600405C RID: 16476 RVA: 0x00194640 File Offset: 0x00192840
 		public string GetTimeText()
 		{
 			if (!this.IsOpen)
@@ -999,26 +999,26 @@ public class TraderInfo
 			return this.CloseTimeText;
 		}
 
-		// Token: 0x04003446 RID: 13382
+		// Token: 0x04003466 RID: 13414
 		public ulong OpenTime;
 
-		// Token: 0x04003447 RID: 13383
+		// Token: 0x04003467 RID: 13415
 		public ulong CloseTime;
 
-		// Token: 0x04003448 RID: 13384
+		// Token: 0x04003468 RID: 13416
 		public string OpenTimeText;
 
-		// Token: 0x04003449 RID: 13385
+		// Token: 0x04003469 RID: 13417
 		public string CloseTimeText;
 
-		// Token: 0x0400344A RID: 13386
+		// Token: 0x0400346A RID: 13418
 		public bool IsOpen;
 
-		// Token: 0x0400344B RID: 13387
+		// Token: 0x0400346B RID: 13419
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastUpdate;
 
-		// Token: 0x0400344C RID: 13388
+		// Token: 0x0400346C RID: 13420
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TraderInfo info;
 	}

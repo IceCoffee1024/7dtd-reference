@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000791 RID: 1937
+// Token: 0x02000799 RID: 1945
 [Preserve]
 public class AntiCheatEncryptionAgreementAuthorizer : AuthorizerAbs
 {
-	// Token: 0x17000613 RID: 1555
-	// (get) Token: 0x060039E6 RID: 14822 RVA: 0x00178DC4 File Offset: 0x00176FC4
+	// Token: 0x17000617 RID: 1559
+	// (get) Token: 0x060039FD RID: 14845 RVA: 0x00179D5C File Offset: 0x00177F5C
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class AntiCheatEncryptionAgreementAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x17000614 RID: 1556
-	// (get) Token: 0x060039E7 RID: 14823 RVA: 0x00178DCB File Offset: 0x00176FCB
+	// Token: 0x17000618 RID: 1560
+	// (get) Token: 0x060039FE RID: 14846 RVA: 0x00179D63 File Offset: 0x00177F63
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class AntiCheatEncryptionAgreementAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x17000615 RID: 1557
-	// (get) Token: 0x060039E8 RID: 14824 RVA: 0x00178DD2 File Offset: 0x00176FD2
+	// Token: 0x17000619 RID: 1561
+	// (get) Token: 0x060039FF RID: 14847 RVA: 0x00179D6A File Offset: 0x00177F6A
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,14 +36,14 @@ public class AntiCheatEncryptionAgreementAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060039E9 RID: 14825 RVA: 0x00178DD9 File Offset: 0x00176FD9
+	// Token: 0x06003A00 RID: 14848 RVA: 0x00179D71 File Offset: 0x00177F71
 	public override void ServerStart()
 	{
 		base.ServerStart();
 		SingletonMonoBehaviour<ConnectionManager>.Instance.AntiCheatEncryptionAuthServer.Start(new AntiCheatEncryptionAuthServer.KeyExchangeCompleteDelegate(this.KeyExchangeCompleted), new AntiCheatEncryptionAuthServer.KeyExchangeFailedDelegate(this.KeyExchangeFailed));
 	}
 
-	// Token: 0x060039EA RID: 14826 RVA: 0x00178E08 File Offset: 0x00177008
+	// Token: 0x06003A01 RID: 14849 RVA: 0x00179DA0 File Offset: 0x00177FA0
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		IAntiCheatServer antiCheatServer = PlatformManager.MultiPlatform.AntiCheatServer;
@@ -70,7 +70,7 @@ public class AntiCheatEncryptionAgreementAuthorizer : AuthorizerAbs
 		return new ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?>(EAuthorizerSyncResult.WaitAsync, null);
 	}
 
-	// Token: 0x060039EB RID: 14827 RVA: 0x00178EC1 File Offset: 0x001770C1
+	// Token: 0x06003A02 RID: 14850 RVA: 0x00179E59 File Offset: 0x00178059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void KeyExchangeCompleted(ClientInfo _clientInfo, IEncryptionModule _encryptionModule)
 	{
@@ -78,14 +78,14 @@ public class AntiCheatEncryptionAgreementAuthorizer : AuthorizerAbs
 		this.authResponsesHandler.AuthorizationAccepted(this, _clientInfo);
 	}
 
-	// Token: 0x060039EC RID: 14828 RVA: 0x001787EB File Offset: 0x001769EB
+	// Token: 0x06003A03 RID: 14851 RVA: 0x00179783 File Offset: 0x00177983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void KeyExchangeFailed(ClientInfo _clientInfo, GameUtils.KickPlayerData _reason)
 	{
 		this.authResponsesHandler.AuthorizationDenied(this, _clientInfo, _reason);
 	}
 
-	// Token: 0x060039ED RID: 14829 RVA: 0x00178ED7 File Offset: 0x001770D7
+	// Token: 0x06003A04 RID: 14852 RVA: 0x00179E6F File Offset: 0x0017806F
 	public override void ServerStop()
 	{
 		base.ServerStop();

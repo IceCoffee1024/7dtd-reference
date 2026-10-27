@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000BBC RID: 3004
+// Token: 0x02000BC7 RID: 3015
 public interface ISharedChunkObserver : IDisposable
 {
-	// Token: 0x06005A71 RID: 23153
+	// Token: 0x06005A96 RID: 23190
 	void Reference();
 
-	// Token: 0x17000995 RID: 2453
-	// (get) Token: 0x06005A72 RID: 23154
+	// Token: 0x1700099B RID: 2459
+	// (get) Token: 0x06005A97 RID: 23191
 	Vector2i ChunkPos { get; }
 
-	// Token: 0x17000996 RID: 2454
-	// (get) Token: 0x06005A73 RID: 23155
+	// Token: 0x1700099C RID: 2460
+	// (get) Token: 0x06005A98 RID: 23192
 	SharedChunkObserverCache Owner { get; }
 }

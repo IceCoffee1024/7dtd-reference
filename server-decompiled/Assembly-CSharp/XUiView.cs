@@ -7,12 +7,12 @@ using InControl;
 using Unity.Profiling;
 using UnityEngine;
 
-// Token: 0x02001166 RID: 4454
+// Token: 0x02001176 RID: 4470
 public abstract class XUiView : IXUiElement
 {
-	// Token: 0x1700106C RID: 4204
-	// (get) Token: 0x06008C8A RID: 35978 RVA: 0x00357FE3 File Offset: 0x003561E3
-	// (set) Token: 0x06008C8B RID: 35979 RVA: 0x00357FEB File Offset: 0x003561EB
+	// Token: 0x17001077 RID: 4215
+	// (get) Token: 0x06008CDE RID: 36062 RVA: 0x0035A08F File Offset: 0x0035828F
+	// (set) Token: 0x06008CDF RID: 36063 RVA: 0x0035A097 File Offset: 0x00358297
 	public XUiController Controller
 	{
 		get
@@ -29,16 +29,16 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700106D RID: 4205
-	// (get) Token: 0x06008C8C RID: 35980
+	// Token: 0x17001078 RID: 4216
+	// (get) Token: 0x06008CE0 RID: 36064
 	public abstract UIRect UiRect
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x1700106E RID: 4206
-	// (get) Token: 0x06008C8D RID: 35981 RVA: 0x0035800E File Offset: 0x0035620E
+	// Token: 0x17001079 RID: 4217
+	// (get) Token: 0x06008CE1 RID: 36065 RVA: 0x0035A0BA File Offset: 0x003582BA
 	public Transform UiTransform
 	{
 		get
@@ -47,8 +47,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700106F RID: 4207
-	// (get) Token: 0x06008C8E RID: 35982 RVA: 0x00358016 File Offset: 0x00356216
+	// Token: 0x1700107A RID: 4218
+	// (get) Token: 0x06008CE2 RID: 36066 RVA: 0x0035A0C2 File Offset: 0x003582C2
 	public bool ColliderEnabled
 	{
 		get
@@ -57,8 +57,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001070 RID: 4208
-	// (get) Token: 0x06008C8F RID: 35983 RVA: 0x00358030 File Offset: 0x00356230
+	// Token: 0x1700107B RID: 4219
+	// (get) Token: 0x06008CE3 RID: 36067 RVA: 0x0035A0DC File Offset: 0x003582DC
 	public Vector3 ColliderCenter
 	{
 		get
@@ -71,8 +71,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001071 RID: 4209
-	// (get) Token: 0x06008C90 RID: 35984 RVA: 0x00358064 File Offset: 0x00356264
+	// Token: 0x1700107C RID: 4220
+	// (get) Token: 0x06008CE4 RID: 36068 RVA: 0x0035A110 File Offset: 0x00358310
 	public float ColliderHeightExtent
 	{
 		get
@@ -85,8 +85,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001072 RID: 4210
-	// (get) Token: 0x06008C91 RID: 35985 RVA: 0x003580A0 File Offset: 0x003562A0
+	// Token: 0x1700107D RID: 4221
+	// (get) Token: 0x06008CE5 RID: 36069 RVA: 0x0035A14C File Offset: 0x0035834C
 	public float ColliderWidthExtent
 	{
 		get
@@ -99,8 +99,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001073 RID: 4211
-	// (get) Token: 0x06008C92 RID: 35986 RVA: 0x003580DC File Offset: 0x003562DC
+	// Token: 0x1700107E RID: 4222
+	// (get) Token: 0x06008CE6 RID: 36070 RVA: 0x0035A188 File Offset: 0x00358388
 	public Bounds ColliderBounds
 	{
 		get
@@ -113,8 +113,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001074 RID: 4212
-	// (get) Token: 0x06008C93 RID: 35987 RVA: 0x00358108 File Offset: 0x00356308
+	// Token: 0x1700107F RID: 4223
+	// (get) Token: 0x06008CE7 RID: 36071 RVA: 0x0035A1B4 File Offset: 0x003583B4
 	public virtual Vector3 LocalCenter
 	{
 		get
@@ -123,24 +123,24 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001075 RID: 4213
-	// (get) Token: 0x06008C94 RID: 35988
+	// Token: 0x17001080 RID: 4224
+	// (get) Token: 0x06008CE8 RID: 36072
 	public abstract Vector3[] WorldCorners { get; }
 
-	// Token: 0x17001076 RID: 4214
-	// (get) Token: 0x06008C95 RID: 35989 RVA: 0x00358139 File Offset: 0x00356339
-	// (set) Token: 0x06008C96 RID: 35990 RVA: 0x00358141 File Offset: 0x00356341
+	// Token: 0x17001081 RID: 4225
+	// (get) Token: 0x06008CE9 RID: 36073 RVA: 0x0035A1E5 File Offset: 0x003583E5
+	// (set) Token: 0x06008CEA RID: 36074 RVA: 0x0035A1ED File Offset: 0x003583ED
 	[XuiXmlAttribute("repeat_content", false)]
 	public bool RepeatContent { get; set; }
 
-	// Token: 0x17001077 RID: 4215
-	// (get) Token: 0x06008C97 RID: 35991 RVA: 0x0035814A File Offset: 0x0035634A
-	// (set) Token: 0x06008C98 RID: 35992 RVA: 0x00358152 File Offset: 0x00356352
+	// Token: 0x17001082 RID: 4226
+	// (get) Token: 0x06008CEB RID: 36075 RVA: 0x0035A1F6 File Offset: 0x003583F6
+	// (set) Token: 0x06008CEC RID: 36076 RVA: 0x0035A1FE File Offset: 0x003583FE
 	[XuiXmlAttribute("repeat_count", false)]
 	public virtual int RepeatCount { get; set; }
 
-	// Token: 0x17001078 RID: 4216
-	// (get) Token: 0x06008C99 RID: 35993 RVA: 0x0035815B File Offset: 0x0035635B
+	// Token: 0x17001083 RID: 4227
+	// (get) Token: 0x06008CED RID: 36077 RVA: 0x0035A207 File Offset: 0x00358407
 	public bool UiTransformIsHovered
 	{
 		get
@@ -149,8 +149,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001079 RID: 4217
-	// (get) Token: 0x06008C9A RID: 35994 RVA: 0x00358172 File Offset: 0x00356372
+	// Token: 0x17001084 RID: 4228
+	// (get) Token: 0x06008CEE RID: 36078 RVA: 0x0035A21E File Offset: 0x0035841E
 	public bool IsActiveInHierarchy
 	{
 		get
@@ -163,8 +163,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700107A RID: 4218
-	// (get) Token: 0x06008C9B RID: 35995 RVA: 0x00358199 File Offset: 0x00356399
+	// Token: 0x17001085 RID: 4229
+	// (get) Token: 0x06008CEF RID: 36079 RVA: 0x0035A245 File Offset: 0x00358445
 	public string ID
 	{
 		get
@@ -173,7 +173,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008C9C RID: 35996 RVA: 0x003581A1 File Offset: 0x003563A1
+	// Token: 0x06008CF0 RID: 36080 RVA: 0x0035A24D File Offset: 0x0035844D
 	[XuiXmlAttribute("name", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeName(string _value)
@@ -181,9 +181,9 @@ public abstract class XUiView : IXUiElement
 		this.id = _value;
 	}
 
-	// Token: 0x1700107B RID: 4219
-	// (get) Token: 0x06008C9D RID: 35997 RVA: 0x003581AA File Offset: 0x003563AA
-	// (set) Token: 0x06008C9E RID: 35998 RVA: 0x003581B4 File Offset: 0x003563B4
+	// Token: 0x17001086 RID: 4230
+	// (get) Token: 0x06008CF1 RID: 36081 RVA: 0x0035A256 File Offset: 0x00358456
+	// (set) Token: 0x06008CF2 RID: 36082 RVA: 0x0035A260 File Offset: 0x00358460
 	[XuiXmlAttribute("visible", false)]
 	public bool IsVisible
 	{
@@ -211,9 +211,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700107C RID: 4220
-	// (get) Token: 0x06008C9F RID: 35999 RVA: 0x0035824D File Offset: 0x0035644D
-	// (set) Token: 0x06008CA0 RID: 36000 RVA: 0x00358258 File Offset: 0x00356458
+	// Token: 0x17001087 RID: 4231
+	// (get) Token: 0x06008CF3 RID: 36083 RVA: 0x0035A2F9 File Offset: 0x003584F9
+	// (set) Token: 0x06008CF4 RID: 36084 RVA: 0x0035A304 File Offset: 0x00358504
 	[XuiXmlAttribute("enabled", false)]
 	public virtual bool Enabled
 	{
@@ -241,9 +241,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700107D RID: 4221
-	// (get) Token: 0x06008CA1 RID: 36001 RVA: 0x003582CF File Offset: 0x003564CF
-	// (set) Token: 0x06008CA2 RID: 36002 RVA: 0x003582D7 File Offset: 0x003564D7
+	// Token: 0x17001088 RID: 4232
+	// (get) Token: 0x06008CF5 RID: 36085 RVA: 0x0035A37B File Offset: 0x0035857B
+	// (set) Token: 0x06008CF6 RID: 36086 RVA: 0x0035A383 File Offset: 0x00358583
 	[XuiXmlAttribute("collider_scale", false)]
 	public float ColliderScale
 	{
@@ -253,9 +253,9 @@ public abstract class XUiView : IXUiElement
 		set;
 	} = 1f;
 
-	// Token: 0x1700107E RID: 4222
-	// (get) Token: 0x06008CA3 RID: 36003 RVA: 0x003582E0 File Offset: 0x003564E0
-	// (set) Token: 0x06008CA4 RID: 36004 RVA: 0x003582E8 File Offset: 0x003564E8
+	// Token: 0x17001089 RID: 4233
+	// (get) Token: 0x06008CF7 RID: 36087 RVA: 0x0035A38C File Offset: 0x0035858C
+	// (set) Token: 0x06008CF8 RID: 36088 RVA: 0x0035A394 File Offset: 0x00358594
 	[XuiXmlAttribute("collider_padding", false)]
 	public Vector2i ColliderPadding
 	{
@@ -265,9 +265,9 @@ public abstract class XUiView : IXUiElement
 		set;
 	} = Vector2i.zero;
 
-	// Token: 0x1700107F RID: 4223
-	// (get) Token: 0x06008CA5 RID: 36005 RVA: 0x003582F1 File Offset: 0x003564F1
-	// (set) Token: 0x06008CA6 RID: 36006 RVA: 0x003582F9 File Offset: 0x003564F9
+	// Token: 0x1700108A RID: 4234
+	// (get) Token: 0x06008CF9 RID: 36089 RVA: 0x0035A39D File Offset: 0x0035859D
+	// (set) Token: 0x06008CFA RID: 36090 RVA: 0x0035A3A5 File Offset: 0x003585A5
 	[XuiXmlAttribute("size", false)]
 	public Vector2i Size
 	{
@@ -286,9 +286,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001080 RID: 4224
-	// (get) Token: 0x06008CA7 RID: 36007 RVA: 0x00358317 File Offset: 0x00356517
-	// (set) Token: 0x06008CA8 RID: 36008 RVA: 0x00358324 File Offset: 0x00356524
+	// Token: 0x1700108B RID: 4235
+	// (get) Token: 0x06008CFB RID: 36091 RVA: 0x0035A3C3 File Offset: 0x003585C3
+	// (set) Token: 0x06008CFC RID: 36092 RVA: 0x0035A3D0 File Offset: 0x003585D0
 	[XuiXmlAttribute("width", false)]
 	public int Width
 	{
@@ -308,9 +308,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001081 RID: 4225
-	// (get) Token: 0x06008CA9 RID: 36009 RVA: 0x00358351 File Offset: 0x00356551
-	// (set) Token: 0x06008CAA RID: 36010 RVA: 0x00358360 File Offset: 0x00356560
+	// Token: 0x1700108C RID: 4236
+	// (get) Token: 0x06008CFD RID: 36093 RVA: 0x0035A3FD File Offset: 0x003585FD
+	// (set) Token: 0x06008CFE RID: 36094 RVA: 0x0035A40C File Offset: 0x0035860C
 	[XuiXmlAttribute("height", false)]
 	public int Height
 	{
@@ -330,9 +330,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001082 RID: 4226
-	// (get) Token: 0x06008CAB RID: 36011 RVA: 0x0035838D File Offset: 0x0035658D
-	// (set) Token: 0x06008CAC RID: 36012 RVA: 0x00358395 File Offset: 0x00356595
+	// Token: 0x1700108D RID: 4237
+	// (get) Token: 0x06008CFF RID: 36095 RVA: 0x0035A439 File Offset: 0x00358639
+	// (set) Token: 0x06008D00 RID: 36096 RVA: 0x0035A441 File Offset: 0x00358641
 	[XuiXmlAttribute("pos", false)]
 	public Vector2i Position
 	{
@@ -352,9 +352,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001083 RID: 4227
-	// (get) Token: 0x06008CAD RID: 36013 RVA: 0x003583BA File Offset: 0x003565BA
-	// (set) Token: 0x06008CAE RID: 36014 RVA: 0x003583C2 File Offset: 0x003565C2
+	// Token: 0x1700108E RID: 4238
+	// (get) Token: 0x06008D01 RID: 36097 RVA: 0x0035A466 File Offset: 0x00358666
+	// (set) Token: 0x06008D02 RID: 36098 RVA: 0x0035A46E File Offset: 0x0035866E
 	[XuiXmlAttribute("ignoreparentpadding", false)]
 	public bool IgnoreParentPadding
 	{
@@ -373,8 +373,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001084 RID: 4228
-	// (get) Token: 0x06008CAF RID: 36015 RVA: 0x003583DC File Offset: 0x003565DC
+	// Token: 0x1700108F RID: 4239
+	// (get) Token: 0x06008D03 RID: 36099 RVA: 0x0035A488 File Offset: 0x00358688
 	public Vector2i PaddedPosition
 	{
 		get
@@ -404,8 +404,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001085 RID: 4229
-	// (get) Token: 0x06008CB0 RID: 36016 RVA: 0x00358453 File Offset: 0x00356653
+	// Token: 0x17001090 RID: 4240
+	// (get) Token: 0x06008D04 RID: 36100 RVA: 0x0035A4FF File Offset: 0x003586FF
 	public virtual Vector2i InnerSize
 	{
 		get
@@ -414,8 +414,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001086 RID: 4230
-	// (get) Token: 0x06008CB1 RID: 36017 RVA: 0x00358488 File Offset: 0x00356688
+	// Token: 0x17001091 RID: 4241
+	// (get) Token: 0x06008D05 RID: 36101 RVA: 0x0035A534 File Offset: 0x00358734
 	public Vector2i InnerPosition
 	{
 		get
@@ -424,9 +424,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001087 RID: 4231
-	// (get) Token: 0x06008CB2 RID: 36018 RVA: 0x003584A6 File Offset: 0x003566A6
-	// (set) Token: 0x06008CB3 RID: 36019 RVA: 0x003584AE File Offset: 0x003566AE
+	// Token: 0x17001092 RID: 4242
+	// (get) Token: 0x06008D06 RID: 36102 RVA: 0x0035A552 File Offset: 0x00358752
+	// (set) Token: 0x06008D07 RID: 36103 RVA: 0x0035A55A File Offset: 0x0035875A
 	[XuiXmlAttribute("rotation", false)]
 	public float Rotation
 	{
@@ -446,9 +446,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001088 RID: 4232
-	// (get) Token: 0x06008CB4 RID: 36020 RVA: 0x003584D3 File Offset: 0x003566D3
-	// (set) Token: 0x06008CB5 RID: 36021 RVA: 0x003584DB File Offset: 0x003566DB
+	// Token: 0x17001093 RID: 4243
+	// (get) Token: 0x06008D08 RID: 36104 RVA: 0x0035A57F File Offset: 0x0035877F
+	// (set) Token: 0x06008D09 RID: 36105 RVA: 0x0035A587 File Offset: 0x00358787
 	public int Depth
 	{
 		get
@@ -466,7 +466,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008CB6 RID: 36022 RVA: 0x003584F4 File Offset: 0x003566F4
+	// Token: 0x06008D0A RID: 36106 RVA: 0x0035A5A0 File Offset: 0x003587A0
 	[XuiXmlAttribute("depth", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeDepth(int _value)
@@ -475,7 +475,7 @@ public abstract class XUiView : IXUiElement
 		this.Depth = _value + ((viewComponent != null) ? viewComponent.Depth : 0);
 	}
 
-	// Token: 0x06008CB7 RID: 36023 RVA: 0x0035851A File Offset: 0x0035671A
+	// Token: 0x06008D0B RID: 36107 RVA: 0x0035A5C6 File Offset: 0x003587C6
 	[XuiXmlAttribute("padding_left", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributePaddingLeft(int _value)
@@ -483,7 +483,7 @@ public abstract class XUiView : IXUiElement
 		this.padding = this.padding.SetLeft(_value);
 	}
 
-	// Token: 0x06008CB8 RID: 36024 RVA: 0x0035852E File Offset: 0x0035672E
+	// Token: 0x06008D0C RID: 36108 RVA: 0x0035A5DA File Offset: 0x003587DA
 	[XuiXmlAttribute("padding_right", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributePaddingRight(int _value)
@@ -491,7 +491,7 @@ public abstract class XUiView : IXUiElement
 		this.padding = this.padding.SetRight(_value);
 	}
 
-	// Token: 0x06008CB9 RID: 36025 RVA: 0x00358542 File Offset: 0x00356742
+	// Token: 0x06008D0D RID: 36109 RVA: 0x0035A5EE File Offset: 0x003587EE
 	[XuiXmlAttribute("padding_top", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributePaddingTop(int _value)
@@ -499,7 +499,7 @@ public abstract class XUiView : IXUiElement
 		this.padding = this.padding.SetTop(_value);
 	}
 
-	// Token: 0x06008CBA RID: 36026 RVA: 0x00358556 File Offset: 0x00356756
+	// Token: 0x06008D0E RID: 36110 RVA: 0x0035A602 File Offset: 0x00358802
 	[XuiXmlAttribute("padding_bottom", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributePaddingBottom(int _value)
@@ -507,7 +507,7 @@ public abstract class XUiView : IXUiElement
 		this.padding = this.padding.SetBottom(_value);
 	}
 
-	// Token: 0x06008CBB RID: 36027 RVA: 0x0035856A File Offset: 0x0035676A
+	// Token: 0x06008D0F RID: 36111 RVA: 0x0035A616 File Offset: 0x00358816
 	[XuiXmlAttribute("padding", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributePadding(string _value)
@@ -515,7 +515,7 @@ public abstract class XUiView : IXUiElement
 		XUiSideSizes.TryParse(_value, out this.padding, "padding");
 	}
 
-	// Token: 0x06008CBC RID: 36028 RVA: 0x0035857E File Offset: 0x0035677E
+	// Token: 0x06008D10 RID: 36112 RVA: 0x0035A62A File Offset: 0x0035882A
 	[XuiXmlAttribute("sound", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSound(string _value)
@@ -526,7 +526,7 @@ public abstract class XUiView : IXUiElement
 		});
 	}
 
-	// Token: 0x06008CBD RID: 36029 RVA: 0x00358598 File Offset: 0x00356798
+	// Token: 0x06008D11 RID: 36113 RVA: 0x0035A644 File Offset: 0x00358844
 	[XuiXmlAttribute("sound_play_on_hover", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSoundOnHover(string _value)
@@ -537,31 +537,31 @@ public abstract class XUiView : IXUiElement
 		});
 	}
 
-	// Token: 0x17001089 RID: 4233
-	// (get) Token: 0x06008CBE RID: 36030 RVA: 0x003585B2 File Offset: 0x003567B2
-	// (set) Token: 0x06008CBF RID: 36031 RVA: 0x003585BA File Offset: 0x003567BA
+	// Token: 0x17001094 RID: 4244
+	// (get) Token: 0x06008D12 RID: 36114 RVA: 0x0035A65E File Offset: 0x0035885E
+	// (set) Token: 0x06008D13 RID: 36115 RVA: 0x0035A666 File Offset: 0x00358866
 	[XuiXmlAttribute("sound_play_on_press", false)]
 	public bool SoundPlayOnClick { get; set; }
 
-	// Token: 0x1700108A RID: 4234
-	// (get) Token: 0x06008CC0 RID: 36032 RVA: 0x003585C3 File Offset: 0x003567C3
-	// (set) Token: 0x06008CC1 RID: 36033 RVA: 0x003585CB File Offset: 0x003567CB
+	// Token: 0x17001095 RID: 4245
+	// (get) Token: 0x06008D14 RID: 36116 RVA: 0x0035A66F File Offset: 0x0035886F
+	// (set) Token: 0x06008D15 RID: 36117 RVA: 0x0035A677 File Offset: 0x00358877
 	public bool SoundPlayOnHover { get; set; }
 
-	// Token: 0x1700108B RID: 4235
-	// (get) Token: 0x06008CC2 RID: 36034 RVA: 0x003585D4 File Offset: 0x003567D4
-	// (set) Token: 0x06008CC3 RID: 36035 RVA: 0x003585DC File Offset: 0x003567DC
+	// Token: 0x17001096 RID: 4246
+	// (get) Token: 0x06008D16 RID: 36118 RVA: 0x0035A680 File Offset: 0x00358880
+	// (set) Token: 0x06008D17 RID: 36119 RVA: 0x0035A688 File Offset: 0x00358888
 	[XuiXmlAttribute("sound_play_on_open", false)]
 	public bool SoundPlayOnOpen { get; set; }
 
-	// Token: 0x1700108C RID: 4236
-	// (get) Token: 0x06008CC4 RID: 36036 RVA: 0x003585E5 File Offset: 0x003567E5
-	// (set) Token: 0x06008CC5 RID: 36037 RVA: 0x003585ED File Offset: 0x003567ED
+	// Token: 0x17001097 RID: 4247
+	// (get) Token: 0x06008D18 RID: 36120 RVA: 0x0035A691 File Offset: 0x00358891
+	// (set) Token: 0x06008D19 RID: 36121 RVA: 0x0035A699 File Offset: 0x00358899
 	[XuiXmlAttribute("sound_volume", false)]
 	public float SoundVolume { get; set; }
 
-	// Token: 0x1700108D RID: 4237
-	// (get) Token: 0x06008CC6 RID: 36038 RVA: 0x003585F6 File Offset: 0x003567F6
+	// Token: 0x17001098 RID: 4248
+	// (get) Token: 0x06008D1A RID: 36122 RVA: 0x0035A6A2 File Offset: 0x003588A2
 	public bool HasHoverSound
 	{
 		get
@@ -570,9 +570,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700108E RID: 4238
-	// (get) Token: 0x06008CC7 RID: 36039 RVA: 0x00358604 File Offset: 0x00356804
-	// (set) Token: 0x06008CC8 RID: 36040 RVA: 0x0035860C File Offset: 0x0035680C
+	// Token: 0x17001099 RID: 4249
+	// (get) Token: 0x06008D1B RID: 36123 RVA: 0x0035A6B0 File Offset: 0x003588B0
+	// (set) Token: 0x06008D1C RID: 36124 RVA: 0x0035A6B8 File Offset: 0x003588B8
 	[XuiXmlAttribute("hold_delay", false)]
 	public float HoldDelay
 	{
@@ -582,9 +582,9 @@ public abstract class XUiView : IXUiElement
 		set;
 	} = 0.5f;
 
-	// Token: 0x1700108F RID: 4239
-	// (get) Token: 0x06008CC9 RID: 36041 RVA: 0x00358615 File Offset: 0x00356815
-	// (set) Token: 0x06008CCA RID: 36042 RVA: 0x0035861D File Offset: 0x0035681D
+	// Token: 0x1700109A RID: 4250
+	// (get) Token: 0x06008D1D RID: 36125 RVA: 0x0035A6C1 File Offset: 0x003588C1
+	// (set) Token: 0x06008D1E RID: 36126 RVA: 0x0035A6C9 File Offset: 0x003588C9
 	[XuiXmlAttribute("hold_timed_initial_interval", false)]
 	public float HoldEventIntervalInitial
 	{
@@ -594,9 +594,9 @@ public abstract class XUiView : IXUiElement
 		set;
 	} = 0.5f;
 
-	// Token: 0x17001090 RID: 4240
-	// (get) Token: 0x06008CCB RID: 36043 RVA: 0x00358626 File Offset: 0x00356826
-	// (set) Token: 0x06008CCC RID: 36044 RVA: 0x0035862E File Offset: 0x0035682E
+	// Token: 0x1700109B RID: 4251
+	// (get) Token: 0x06008D1F RID: 36127 RVA: 0x0035A6D2 File Offset: 0x003588D2
+	// (set) Token: 0x06008D20 RID: 36128 RVA: 0x0035A6DA File Offset: 0x003588DA
 	[XuiXmlAttribute("hold_timed_final_interval", false)]
 	public float HoldEventIntervalFinal
 	{
@@ -606,9 +606,9 @@ public abstract class XUiView : IXUiElement
 		set;
 	} = 0.06f;
 
-	// Token: 0x17001091 RID: 4241
-	// (get) Token: 0x06008CCD RID: 36045 RVA: 0x00358637 File Offset: 0x00356837
-	// (set) Token: 0x06008CCE RID: 36046 RVA: 0x0035863F File Offset: 0x0035683F
+	// Token: 0x1700109C RID: 4252
+	// (get) Token: 0x06008D21 RID: 36129 RVA: 0x0035A6E3 File Offset: 0x003588E3
+	// (set) Token: 0x06008D22 RID: 36130 RVA: 0x0035A6EB File Offset: 0x003588EB
 	[XuiXmlAttribute("hold_timed_step_acceleration", false)]
 	public float HoldEventIntervalAcceleration
 	{
@@ -618,9 +618,9 @@ public abstract class XUiView : IXUiElement
 		set;
 	} = 0.015f;
 
-	// Token: 0x17001092 RID: 4242
-	// (get) Token: 0x06008CCF RID: 36047 RVA: 0x00358648 File Offset: 0x00356848
-	// (set) Token: 0x06008CD0 RID: 36048 RVA: 0x00358650 File Offset: 0x00356850
+	// Token: 0x1700109D RID: 4253
+	// (get) Token: 0x06008D23 RID: 36131 RVA: 0x0035A6F4 File Offset: 0x003588F4
+	// (set) Token: 0x06008D24 RID: 36132 RVA: 0x0035A6FC File Offset: 0x003588FC
 	[XuiXmlAttribute("on_hover", false)]
 	public bool EventOnHover
 	{
@@ -639,9 +639,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001093 RID: 4243
-	// (get) Token: 0x06008CD1 RID: 36049 RVA: 0x00358669 File Offset: 0x00356869
-	// (set) Token: 0x06008CD2 RID: 36050 RVA: 0x00358671 File Offset: 0x00356871
+	// Token: 0x1700109E RID: 4254
+	// (get) Token: 0x06008D25 RID: 36133 RVA: 0x0035A715 File Offset: 0x00358915
+	// (set) Token: 0x06008D26 RID: 36134 RVA: 0x0035A71D File Offset: 0x0035891D
 	[XuiXmlAttribute("on_press", false)]
 	public bool EventOnPress
 	{
@@ -660,9 +660,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001094 RID: 4244
-	// (get) Token: 0x06008CD3 RID: 36051 RVA: 0x0035868A File Offset: 0x0035688A
-	// (set) Token: 0x06008CD4 RID: 36052 RVA: 0x00358692 File Offset: 0x00356892
+	// Token: 0x1700109F RID: 4255
+	// (get) Token: 0x06008D27 RID: 36135 RVA: 0x0035A736 File Offset: 0x00358936
+	// (set) Token: 0x06008D28 RID: 36136 RVA: 0x0035A73E File Offset: 0x0035893E
 	[XuiXmlAttribute("on_doubleclick", false)]
 	public bool EventOnDoubleClick
 	{
@@ -681,9 +681,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001095 RID: 4245
-	// (get) Token: 0x06008CD5 RID: 36053 RVA: 0x003586AB File Offset: 0x003568AB
-	// (set) Token: 0x06008CD6 RID: 36054 RVA: 0x003586B3 File Offset: 0x003568B3
+	// Token: 0x170010A0 RID: 4256
+	// (get) Token: 0x06008D29 RID: 36137 RVA: 0x0035A757 File Offset: 0x00358957
+	// (set) Token: 0x06008D2A RID: 36138 RVA: 0x0035A75F File Offset: 0x0035895F
 	[XuiXmlAttribute("on_held", false)]
 	public bool EventOnHeld
 	{
@@ -702,9 +702,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001096 RID: 4246
-	// (get) Token: 0x06008CD7 RID: 36055 RVA: 0x003586CC File Offset: 0x003568CC
-	// (set) Token: 0x06008CD8 RID: 36056 RVA: 0x003586D4 File Offset: 0x003568D4
+	// Token: 0x170010A1 RID: 4257
+	// (get) Token: 0x06008D2B RID: 36139 RVA: 0x0035A778 File Offset: 0x00358978
+	// (set) Token: 0x06008D2C RID: 36140 RVA: 0x0035A780 File Offset: 0x00358980
 	[XuiXmlAttribute("on_scroll", false)]
 	public bool EventOnScroll
 	{
@@ -723,9 +723,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001097 RID: 4247
-	// (get) Token: 0x06008CD9 RID: 36057 RVA: 0x003586ED File Offset: 0x003568ED
-	// (set) Token: 0x06008CDA RID: 36058 RVA: 0x003586F5 File Offset: 0x003568F5
+	// Token: 0x170010A2 RID: 4258
+	// (get) Token: 0x06008D2D RID: 36141 RVA: 0x0035A799 File Offset: 0x00358999
+	// (set) Token: 0x06008D2E RID: 36142 RVA: 0x0035A7A1 File Offset: 0x003589A1
 	[XuiXmlAttribute("on_drag", false)]
 	public bool EventOnDrag
 	{
@@ -744,9 +744,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001098 RID: 4248
-	// (get) Token: 0x06008CDB RID: 36059 RVA: 0x0035870E File Offset: 0x0035690E
-	// (set) Token: 0x06008CDC RID: 36060 RVA: 0x00358716 File Offset: 0x00356916
+	// Token: 0x170010A3 RID: 4259
+	// (get) Token: 0x06008D2F RID: 36143 RVA: 0x0035A7BA File Offset: 0x003589BA
+	// (set) Token: 0x06008D30 RID: 36144 RVA: 0x0035A7C2 File Offset: 0x003589C2
 	[XuiXmlAttribute("on_select", false)]
 	public bool EventOnSelect
 	{
@@ -765,8 +765,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x17001099 RID: 4249
-	// (get) Token: 0x06008CDD RID: 36061 RVA: 0x00358730 File Offset: 0x00356930
+	// Token: 0x170010A4 RID: 4260
+	// (get) Token: 0x06008D31 RID: 36145 RVA: 0x0035A7DC File Offset: 0x003589DC
 	public virtual bool HasAnyEvent
 	{
 		get
@@ -775,8 +775,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700109A RID: 4250
-	// (get) Token: 0x06008CDE RID: 36062 RVA: 0x00358785 File Offset: 0x00356985
+	// Token: 0x170010A5 RID: 4261
+	// (get) Token: 0x06008D32 RID: 36146 RVA: 0x0035A831 File Offset: 0x00358A31
 	public bool IsHovered
 	{
 		get
@@ -785,9 +785,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700109B RID: 4251
-	// (get) Token: 0x06008CDF RID: 36063 RVA: 0x0035878D File Offset: 0x0035698D
-	// (set) Token: 0x06008CE0 RID: 36064 RVA: 0x003587AF File Offset: 0x003569AF
+	// Token: 0x170010A6 RID: 4262
+	// (get) Token: 0x06008D33 RID: 36147 RVA: 0x0035A839 File Offset: 0x00358A39
+	// (set) Token: 0x06008D34 RID: 36148 RVA: 0x0035A85B File Offset: 0x00358A5B
 	public bool IsNavigatable
 	{
 		get
@@ -800,7 +800,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008CE1 RID: 36065 RVA: 0x003587B8 File Offset: 0x003569B8
+	// Token: 0x06008D35 RID: 36149 RVA: 0x0035A864 File Offset: 0x00358A64
 	[XuiXmlAttribute("gamepad_selectable", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeGamepadSelectable(bool _value)
@@ -809,12 +809,12 @@ public abstract class XUiView : IXUiElement
 		this.gamepadSelectableSetFromAttributes = true;
 	}
 
-	// Token: 0x1700109C RID: 4252
-	// (get) Token: 0x06008CE2 RID: 36066 RVA: 0x003587C8 File Offset: 0x003569C8
-	// (set) Token: 0x06008CE3 RID: 36067 RVA: 0x003587D0 File Offset: 0x003569D0
+	// Token: 0x170010A7 RID: 4263
+	// (get) Token: 0x06008D36 RID: 36150 RVA: 0x0035A874 File Offset: 0x00358A74
+	// (set) Token: 0x06008D37 RID: 36151 RVA: 0x0035A87C File Offset: 0x00358A7C
 	public bool IsSnappable { get; set; } = true;
 
-	// Token: 0x06008CE4 RID: 36068 RVA: 0x003587D9 File Offset: 0x003569D9
+	// Token: 0x06008D38 RID: 36152 RVA: 0x0035A885 File Offset: 0x00358A85
 	[XuiXmlAttribute("snap", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeGamepadSnappable(bool _value)
@@ -823,15 +823,15 @@ public abstract class XUiView : IXUiElement
 		this.gamepadSnappableSetFromAttributes = true;
 	}
 
-	// Token: 0x1700109D RID: 4253
-	// (get) Token: 0x06008CE5 RID: 36069 RVA: 0x003587E9 File Offset: 0x003569E9
-	// (set) Token: 0x06008CE6 RID: 36070 RVA: 0x003587F1 File Offset: 0x003569F1
+	// Token: 0x170010A8 RID: 4264
+	// (get) Token: 0x06008D39 RID: 36153 RVA: 0x0035A895 File Offset: 0x00358A95
+	// (set) Token: 0x06008D3A RID: 36154 RVA: 0x0035A89D File Offset: 0x00358A9D
 	[XuiXmlAttribute("use_selection_box", false)]
 	public bool UseSelectionBox { get; set; } = true;
 
-	// Token: 0x1700109E RID: 4254
-	// (get) Token: 0x06008CE7 RID: 36071 RVA: 0x003587FA File Offset: 0x003569FA
-	// (set) Token: 0x06008CE8 RID: 36072 RVA: 0x00358802 File Offset: 0x00356A02
+	// Token: 0x170010A9 RID: 4265
+	// (get) Token: 0x06008D3B RID: 36155 RVA: 0x0035A8A6 File Offset: 0x00358AA6
+	// (set) Token: 0x06008D3C RID: 36156 RVA: 0x0035A8AE File Offset: 0x00358AAE
 	[XuiXmlAttribute("nav_up", false)]
 	public string NavUpTargetString
 	{
@@ -852,9 +852,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x1700109F RID: 4255
-	// (get) Token: 0x06008CE9 RID: 36073 RVA: 0x00358820 File Offset: 0x00356A20
-	// (set) Token: 0x06008CEA RID: 36074 RVA: 0x00358828 File Offset: 0x00356A28
+	// Token: 0x170010AA RID: 4266
+	// (get) Token: 0x06008D3D RID: 36157 RVA: 0x0035A8CC File Offset: 0x00358ACC
+	// (set) Token: 0x06008D3E RID: 36158 RVA: 0x0035A8D4 File Offset: 0x00358AD4
 	public XUiView NavUpTarget
 	{
 		get
@@ -871,9 +871,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A0 RID: 4256
-	// (get) Token: 0x06008CEB RID: 36075 RVA: 0x0035888C File Offset: 0x00356A8C
-	// (set) Token: 0x06008CEC RID: 36076 RVA: 0x00358894 File Offset: 0x00356A94
+	// Token: 0x170010AB RID: 4267
+	// (get) Token: 0x06008D3F RID: 36159 RVA: 0x0035A938 File Offset: 0x00358B38
+	// (set) Token: 0x06008D40 RID: 36160 RVA: 0x0035A940 File Offset: 0x00358B40
 	[XuiXmlAttribute("nav_down", false)]
 	public string NavDownTargetString
 	{
@@ -894,9 +894,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A1 RID: 4257
-	// (get) Token: 0x06008CED RID: 36077 RVA: 0x003588B2 File Offset: 0x00356AB2
-	// (set) Token: 0x06008CEE RID: 36078 RVA: 0x003588BC File Offset: 0x00356ABC
+	// Token: 0x170010AC RID: 4268
+	// (get) Token: 0x06008D41 RID: 36161 RVA: 0x0035A95E File Offset: 0x00358B5E
+	// (set) Token: 0x06008D42 RID: 36162 RVA: 0x0035A968 File Offset: 0x00358B68
 	public XUiView NavDownTarget
 	{
 		get
@@ -913,9 +913,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A2 RID: 4258
-	// (get) Token: 0x06008CEF RID: 36079 RVA: 0x00358920 File Offset: 0x00356B20
-	// (set) Token: 0x06008CF0 RID: 36080 RVA: 0x00358928 File Offset: 0x00356B28
+	// Token: 0x170010AD RID: 4269
+	// (get) Token: 0x06008D43 RID: 36163 RVA: 0x0035A9CC File Offset: 0x00358BCC
+	// (set) Token: 0x06008D44 RID: 36164 RVA: 0x0035A9D4 File Offset: 0x00358BD4
 	[XuiXmlAttribute("nav_left", false)]
 	public string NavLeftTargetString
 	{
@@ -936,9 +936,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A3 RID: 4259
-	// (get) Token: 0x06008CF1 RID: 36081 RVA: 0x00358946 File Offset: 0x00356B46
-	// (set) Token: 0x06008CF2 RID: 36082 RVA: 0x00358950 File Offset: 0x00356B50
+	// Token: 0x170010AE RID: 4270
+	// (get) Token: 0x06008D45 RID: 36165 RVA: 0x0035A9F2 File Offset: 0x00358BF2
+	// (set) Token: 0x06008D46 RID: 36166 RVA: 0x0035A9FC File Offset: 0x00358BFC
 	public XUiView NavLeftTarget
 	{
 		get
@@ -955,9 +955,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A4 RID: 4260
-	// (get) Token: 0x06008CF3 RID: 36083 RVA: 0x003589B4 File Offset: 0x00356BB4
-	// (set) Token: 0x06008CF4 RID: 36084 RVA: 0x003589BC File Offset: 0x00356BBC
+	// Token: 0x170010AF RID: 4271
+	// (get) Token: 0x06008D47 RID: 36167 RVA: 0x0035AA60 File Offset: 0x00358C60
+	// (set) Token: 0x06008D48 RID: 36168 RVA: 0x0035AA68 File Offset: 0x00358C68
 	[XuiXmlAttribute("nav_right", false)]
 	public string NavRightTargetString
 	{
@@ -978,9 +978,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A5 RID: 4261
-	// (get) Token: 0x06008CF5 RID: 36085 RVA: 0x003589DA File Offset: 0x00356BDA
-	// (set) Token: 0x06008CF6 RID: 36086 RVA: 0x003589E4 File Offset: 0x00356BE4
+	// Token: 0x170010B0 RID: 4272
+	// (get) Token: 0x06008D49 RID: 36169 RVA: 0x0035AA86 File Offset: 0x00358C86
+	// (set) Token: 0x06008D4A RID: 36170 RVA: 0x0035AA90 File Offset: 0x00358C90
 	public XUiView NavRightTarget
 	{
 		get
@@ -997,9 +997,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A6 RID: 4262
-	// (get) Token: 0x06008CF7 RID: 36087 RVA: 0x00358A48 File Offset: 0x00356C48
-	// (set) Token: 0x06008CF8 RID: 36088 RVA: 0x00358A50 File Offset: 0x00356C50
+	// Token: 0x170010B1 RID: 4273
+	// (get) Token: 0x06008D4B RID: 36171 RVA: 0x0035AAF4 File Offset: 0x00358CF4
+	// (set) Token: 0x06008D4C RID: 36172 RVA: 0x0035AAFC File Offset: 0x00358CFC
 	[XuiXmlAttribute("tooltip", false)]
 	public string ToolTip
 	{
@@ -1021,9 +1021,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A7 RID: 4263
-	// (get) Token: 0x06008CF9 RID: 36089 RVA: 0x00358ACA File Offset: 0x00356CCA
-	// (set) Token: 0x06008CFA RID: 36090 RVA: 0x00358AD4 File Offset: 0x00356CD4
+	// Token: 0x170010B2 RID: 4274
+	// (get) Token: 0x06008D4D RID: 36173 RVA: 0x0035AB76 File Offset: 0x00358D76
+	// (set) Token: 0x06008D4E RID: 36174 RVA: 0x0035AB80 File Offset: 0x00358D80
 	[XuiXmlAttribute("disabled_tooltip", false)]
 	public string DisabledToolTip
 	{
@@ -1045,7 +1045,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008CFB RID: 36091 RVA: 0x00358B4E File Offset: 0x00356D4E
+	// Token: 0x06008D4F RID: 36175 RVA: 0x0035ABFA File Offset: 0x00358DFA
 	[XuiXmlAttribute("tooltip_key", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeTooltipKey(string _value)
@@ -1053,7 +1053,7 @@ public abstract class XUiView : IXUiElement
 		this.ToolTip = Localization.Get(_value, false, null);
 	}
 
-	// Token: 0x06008CFC RID: 36092 RVA: 0x00358B5E File Offset: 0x00356D5E
+	// Token: 0x06008D50 RID: 36176 RVA: 0x0035AC0A File Offset: 0x00358E0A
 	[XuiXmlAttribute("disabled_tooltip_key", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeDisabledTooltipKey(string _value)
@@ -1061,7 +1061,7 @@ public abstract class XUiView : IXUiElement
 		this.DisabledToolTip = Localization.Get(_value, false, null);
 	}
 
-	// Token: 0x06008CFD RID: 36093 RVA: 0x00358B70 File Offset: 0x00356D70
+	// Token: 0x06008D51 RID: 36177 RVA: 0x0035AC1C File Offset: 0x00358E1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiView(XUi _xui, string _id)
 	{
@@ -1069,13 +1069,13 @@ public abstract class XUiView : IXUiElement
 		this.id = _id;
 	}
 
-	// Token: 0x06008CFE RID: 36094 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008D52 RID: 36178 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createComponents(GameObject _go)
 	{
 	}
 
-	// Token: 0x06008CFF RID: 36095 RVA: 0x00358C34 File Offset: 0x00356E34
+	// Token: 0x06008D53 RID: 36179 RVA: 0x0035ACE0 File Offset: 0x00358EE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void buildView()
 	{
@@ -1109,14 +1109,14 @@ public abstract class XUiView : IXUiElement
 		this.uiTransform = global::UnityEngine.Object.Instantiate<GameObject>(gameObject3).transform;
 	}
 
-	// Token: 0x06008D00 RID: 36096 RVA: 0x00358D0D File Offset: 0x00356F0D
+	// Token: 0x06008D54 RID: 36180 RVA: 0x0035ADB9 File Offset: 0x00358FB9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void captureComponents()
 	{
 		this.collider = this.uiTransform.gameObject.GetComponent<BoxCollider>();
 	}
 
-	// Token: 0x06008D01 RID: 36097 RVA: 0x00358D28 File Offset: 0x00356F28
+	// Token: 0x06008D55 RID: 36181 RVA: 0x0035ADD4 File Offset: 0x00358FD4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void addTweeners()
 	{
@@ -1126,7 +1126,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D02 RID: 36098 RVA: 0x00358D68 File Offset: 0x00356F68
+	// Token: 0x06008D56 RID: 36182 RVA: 0x0035AE14 File Offset: 0x00359014
 	public virtual void InitView()
 	{
 		this.buildView();
@@ -1173,18 +1173,18 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D03 RID: 36099 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008D57 RID: 36183 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetRepeatContentTemplateParams(Dictionary<string, object> _templateParams, int _curRepeatNum)
 	{
 	}
 
-	// Token: 0x06008D04 RID: 36100 RVA: 0x00358FC2 File Offset: 0x003571C2
+	// Token: 0x06008D58 RID: 36184 RVA: 0x0035B06E File Offset: 0x0035926E
 	public virtual void Cleanup()
 	{
 		this.destroyed = true;
 	}
 
-	// Token: 0x06008D05 RID: 36101 RVA: 0x00358FCC File Offset: 0x003571CC
+	// Token: 0x06008D59 RID: 36185 RVA: 0x0035B078 File Offset: 0x00359278
 	public virtual void Update(float _dt)
 	{
 		if (this.isOver && !this.UiTransformIsHovered)
@@ -1235,7 +1235,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D06 RID: 36102 RVA: 0x00359194 File Offset: 0x00357394
+	// Token: 0x06008D5A RID: 36186 RVA: 0x0035B240 File Offset: 0x00359440
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateData()
 	{
@@ -1253,7 +1253,7 @@ public abstract class XUiView : IXUiElement
 		this.parseNavigationTargets();
 	}
 
-	// Token: 0x06008D07 RID: 36103 RVA: 0x00359224 File Offset: 0x00357424
+	// Token: 0x06008D5B RID: 36187 RVA: 0x0035B2D0 File Offset: 0x003594D0
 	public void TryUpdatePosition()
 	{
 		if (this.positionDirty)
@@ -1262,7 +1262,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D08 RID: 36104 RVA: 0x00359274 File Offset: 0x00357474
+	// Token: 0x06008D5C RID: 36188 RVA: 0x0035B320 File Offset: 0x00359520
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void refreshBoxCollider()
 	{
@@ -1270,16 +1270,16 @@ public abstract class XUiView : IXUiElement
 		this.collider.size = new Vector3((float)this.size.x * this.ColliderScale + (float)(2 * this.ColliderPadding.x), (float)this.size.y * this.ColliderScale + (float)(2 * this.ColliderPadding.y), 0f);
 	}
 
-	// Token: 0x06008D09 RID: 36105 RVA: 0x00359319 File Offset: 0x00357519
+	// Token: 0x06008D5D RID: 36189 RVA: 0x0035B3C5 File Offset: 0x003595C5
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void SetDirty()
 	{
 		this.isDirty = true;
 	}
 
-	// Token: 0x170010A8 RID: 4264
-	// (get) Token: 0x06008D0A RID: 36106 RVA: 0x00359322 File Offset: 0x00357522
-	// (set) Token: 0x06008D0B RID: 36107 RVA: 0x0035932A File Offset: 0x0035752A
+	// Token: 0x170010B3 RID: 4275
+	// (get) Token: 0x06008D5E RID: 36190 RVA: 0x0035B3CE File Offset: 0x003595CE
+	// (set) Token: 0x06008D5F RID: 36191 RVA: 0x0035B3D6 File Offset: 0x003595D6
 	[XuiXmlAttribute("anchor_left", false)]
 	public string AnchorLeft
 	{
@@ -1300,9 +1300,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010A9 RID: 4265
-	// (get) Token: 0x06008D0C RID: 36108 RVA: 0x00359348 File Offset: 0x00357548
-	// (set) Token: 0x06008D0D RID: 36109 RVA: 0x00359350 File Offset: 0x00357550
+	// Token: 0x170010B4 RID: 4276
+	// (get) Token: 0x06008D60 RID: 36192 RVA: 0x0035B3F4 File Offset: 0x003595F4
+	// (set) Token: 0x06008D61 RID: 36193 RVA: 0x0035B3FC File Offset: 0x003595FC
 	[XuiXmlAttribute("anchor_right", false)]
 	public string AnchorRight
 	{
@@ -1323,9 +1323,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010AA RID: 4266
-	// (get) Token: 0x06008D0E RID: 36110 RVA: 0x0035936E File Offset: 0x0035756E
-	// (set) Token: 0x06008D0F RID: 36111 RVA: 0x00359376 File Offset: 0x00357576
+	// Token: 0x170010B5 RID: 4277
+	// (get) Token: 0x06008D62 RID: 36194 RVA: 0x0035B41A File Offset: 0x0035961A
+	// (set) Token: 0x06008D63 RID: 36195 RVA: 0x0035B422 File Offset: 0x00359622
 	[XuiXmlAttribute("anchor_bottom", false)]
 	public string AnchorBottom
 	{
@@ -1346,9 +1346,9 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010AB RID: 4267
-	// (get) Token: 0x06008D10 RID: 36112 RVA: 0x00359394 File Offset: 0x00357594
-	// (set) Token: 0x06008D11 RID: 36113 RVA: 0x0035939C File Offset: 0x0035759C
+	// Token: 0x170010B6 RID: 4278
+	// (get) Token: 0x06008D64 RID: 36196 RVA: 0x0035B440 File Offset: 0x00359640
+	// (set) Token: 0x06008D65 RID: 36197 RVA: 0x0035B448 File Offset: 0x00359648
 	[XuiXmlAttribute("anchor_top", false)]
 	public string AnchorTop
 	{
@@ -1369,8 +1369,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010AC RID: 4268
-	// (get) Token: 0x06008D12 RID: 36114 RVA: 0x003593BA File Offset: 0x003575BA
+	// Token: 0x170010B7 RID: 4279
+	// (get) Token: 0x06008D66 RID: 36198 RVA: 0x0035B466 File Offset: 0x00359666
 	public bool HasAnchorStringLeft
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1380,8 +1380,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010AD RID: 4269
-	// (get) Token: 0x06008D13 RID: 36115 RVA: 0x003593CA File Offset: 0x003575CA
+	// Token: 0x170010B8 RID: 4280
+	// (get) Token: 0x06008D67 RID: 36199 RVA: 0x0035B476 File Offset: 0x00359676
 	public bool HasAnchorStringRight
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1391,8 +1391,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010AE RID: 4270
-	// (get) Token: 0x06008D14 RID: 36116 RVA: 0x003593DA File Offset: 0x003575DA
+	// Token: 0x170010B9 RID: 4281
+	// (get) Token: 0x06008D68 RID: 36200 RVA: 0x0035B486 File Offset: 0x00359686
 	public bool HasAnchorStringTop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1402,8 +1402,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010AF RID: 4271
-	// (get) Token: 0x06008D15 RID: 36117 RVA: 0x003593EA File Offset: 0x003575EA
+	// Token: 0x170010BA RID: 4282
+	// (get) Token: 0x06008D69 RID: 36201 RVA: 0x0035B496 File Offset: 0x00359696
 	public bool HasAnchorStringBottom
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1413,8 +1413,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010B0 RID: 4272
-	// (get) Token: 0x06008D16 RID: 36118 RVA: 0x003593FA File Offset: 0x003575FA
+	// Token: 0x170010BB RID: 4283
+	// (get) Token: 0x06008D6A RID: 36202 RVA: 0x0035B4A6 File Offset: 0x003596A6
 	public bool HasAnchorStringLeftAndRight
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1424,8 +1424,8 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x170010B1 RID: 4273
-	// (get) Token: 0x06008D17 RID: 36119 RVA: 0x0035940C File Offset: 0x0035760C
+	// Token: 0x170010BC RID: 4284
+	// (get) Token: 0x06008D6B RID: 36203 RVA: 0x0035B4B8 File Offset: 0x003596B8
 	public bool HasAnchorStringTopAndBottom
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1435,7 +1435,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D18 RID: 36120 RVA: 0x00359420 File Offset: 0x00357620
+	// Token: 0x06008D6C RID: 36204 RVA: 0x0035B4CC File Offset: 0x003596CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void parseAnchors()
 	{
@@ -1454,13 +1454,13 @@ public abstract class XUiView : IXUiElement
 		this.anchorsParsed();
 	}
 
-	// Token: 0x06008D19 RID: 36121 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008D6D RID: 36205 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void anchorsParsed()
 	{
 	}
 
-	// Token: 0x06008D1A RID: 36122 RVA: 0x0035950F File Offset: 0x0035770F
+	// Token: 0x06008D6E RID: 36206 RVA: 0x0035B5BB File Offset: 0x003597BB
 	public virtual void OnOpen()
 	{
 		if (this.xuiSound != null && this.SoundPlayOnOpen)
@@ -1471,7 +1471,7 @@ public abstract class XUiView : IXUiElement
 		this.isHold = false;
 	}
 
-	// Token: 0x06008D1B RID: 36123 RVA: 0x00359548 File Offset: 0x00357748
+	// Token: 0x06008D6F RID: 36207 RVA: 0x0035B5F4 File Offset: 0x003597F4
 	public virtual void OnClose()
 	{
 		this.isPressed = false;
@@ -1495,7 +1495,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D1C RID: 36124 RVA: 0x003595BD File Offset: 0x003577BD
+	// Token: 0x06008D70 RID: 36208 RVA: 0x0035B669 File Offset: 0x00359869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnScroll(GameObject _go, float _delta)
 	{
@@ -1505,7 +1505,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D1D RID: 36125 RVA: 0x003595D3 File Offset: 0x003577D3
+	// Token: 0x06008D71 RID: 36209 RVA: 0x0035B67F File Offset: 0x0035987F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnSelect(GameObject _go, bool _selected)
 	{
@@ -1515,7 +1515,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D1E RID: 36126 RVA: 0x003595F4 File Offset: 0x003577F4
+	// Token: 0x06008D72 RID: 36210 RVA: 0x0035B6A0 File Offset: 0x003598A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDrag(GameObject _go, Vector2 _delta)
 	{
@@ -1527,7 +1527,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D1F RID: 36127 RVA: 0x00359634 File Offset: 0x00357834
+	// Token: 0x06008D73 RID: 36211 RVA: 0x0035B6E0 File Offset: 0x003598E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPress(GameObject _go, bool _pressed)
 	{
@@ -1563,7 +1563,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D20 RID: 36128 RVA: 0x0035970C File Offset: 0x0035790C
+	// Token: 0x06008D74 RID: 36212 RVA: 0x0035B7B8 File Offset: 0x003599B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnHeldDragOut(GameObject _go)
 	{
@@ -1579,7 +1579,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D21 RID: 36129 RVA: 0x0035975C File Offset: 0x0035795C
+	// Token: 0x06008D75 RID: 36213 RVA: 0x0035B808 File Offset: 0x00359A08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnClick(GameObject _go)
 	{
@@ -1593,7 +1593,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D22 RID: 36130 RVA: 0x003597B8 File Offset: 0x003579B8
+	// Token: 0x06008D76 RID: 36214 RVA: 0x0035B864 File Offset: 0x00359A64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDoubleClick(GameObject _go)
 	{
@@ -1607,7 +1607,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D23 RID: 36131 RVA: 0x00359814 File Offset: 0x00357A14
+	// Token: 0x06008D77 RID: 36215 RVA: 0x0035B8C0 File Offset: 0x00359AC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnHover(bool _isOver)
 	{
@@ -1647,7 +1647,7 @@ public abstract class XUiView : IXUiElement
 		this.xui.playerUI.CursorController.HoverTarget = (flag ? this : null);
 	}
 
-	// Token: 0x06008D24 RID: 36132 RVA: 0x0035992F File Offset: 0x00357B2F
+	// Token: 0x06008D78 RID: 36216 RVA: 0x0035B9DB File Offset: 0x00359BDB
 	public void PlayHoverSound()
 	{
 		if (this.xuiHoverSound != null && this.SoundPlayOnHover && this.enabled && GameManager.Instance.GameIsFocused)
@@ -1656,7 +1656,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D25 RID: 36133 RVA: 0x0035996C File Offset: 0x00357B6C
+	// Token: 0x06008D79 RID: 36217 RVA: 0x0035BA18 File Offset: 0x00359C18
 	public void PlayClickSound()
 	{
 		if (this.xuiSound != null)
@@ -1665,13 +1665,13 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D26 RID: 36134 RVA: 0x0035998D File Offset: 0x00357B8D
+	// Token: 0x06008D7A RID: 36218 RVA: 0x0035BA39 File Offset: 0x00359C39
 	public Rect GetXUiRect()
 	{
 		return this.GetXUiRect(Vector2.zero);
 	}
 
-	// Token: 0x06008D27 RID: 36135 RVA: 0x0035999C File Offset: 0x00357B9C
+	// Token: 0x06008D7B RID: 36219 RVA: 0x0035BA48 File Offset: 0x00359C48
 	public Rect GetXUiRect(Vector2 _padding)
 	{
 		XUiController parent = this.controller;
@@ -1696,25 +1696,25 @@ public abstract class XUiView : IXUiElement
 		return new Rect(new Vector2(vector.x, vector.y - vector2.y), vector2);
 	}
 
-	// Token: 0x06008D28 RID: 36136 RVA: 0x00359ACA File Offset: 0x00357CCA
+	// Token: 0x06008D7C RID: 36220 RVA: 0x0035BB76 File Offset: 0x00359D76
 	public string GetXuiHierarchy()
 	{
 		return XUiUtils.GetXuiHierarchy(this.Controller);
 	}
 
-	// Token: 0x06008D29 RID: 36137 RVA: 0x00359AD7 File Offset: 0x00357CD7
+	// Token: 0x06008D7D RID: 36221 RVA: 0x0035BB83 File Offset: 0x00359D83
 	public Vector2 GetClosestPoint(Vector3 _point)
 	{
 		return this.collider.ClosestPointOnBounds(_point);
 	}
 
-	// Token: 0x06008D2A RID: 36138 RVA: 0x00359AEC File Offset: 0x00357CEC
+	// Token: 0x06008D7E RID: 36222 RVA: 0x0035BB98 File Offset: 0x00359D98
 	public void ClearNavigationTargets()
 	{
 		this.NavUpTarget = (this.NavDownTarget = (this.NavLeftTarget = (this.NavRightTarget = null)));
 	}
 
-	// Token: 0x06008D2B RID: 36139 RVA: 0x00359B1C File Offset: 0x00357D1C
+	// Token: 0x06008D7F RID: 36223 RVA: 0x0035BBC8 File Offset: 0x00359DC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void parseNavigationTargets()
 	{
@@ -1736,7 +1736,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D2C RID: 36140 RVA: 0x00359BA8 File Offset: 0x00357DA8
+	// Token: 0x06008D80 RID: 36224 RVA: 0x0035BC54 File Offset: 0x00359E54
 	public virtual void SetDefaults(XUiController _parent)
 	{
 		this.RepeatContent = false;
@@ -1761,7 +1761,7 @@ public abstract class XUiView : IXUiElement
 		this.SoundVolume = 1f;
 	}
 
-	// Token: 0x06008D2D RID: 36141 RVA: 0x00359C34 File Offset: 0x00357E34
+	// Token: 0x06008D81 RID: 36225 RVA: 0x0035BCE0 File Offset: 0x00359EE0
 	public virtual void SetPostParsingDefaults(XUiController _parent)
 	{
 		XUiView xuiView = ((_parent != null) ? _parent.ViewComponent : null);
@@ -1777,7 +1777,7 @@ public abstract class XUiView : IXUiElement
 		this.Size = vector2i;
 	}
 
-	// Token: 0x06008D2E RID: 36142 RVA: 0x00359CDC File Offset: 0x00357EDC
+	// Token: 0x06008D82 RID: 36226 RVA: 0x0035BD88 File Offset: 0x00359F88
 	public void ParseInitialAttributeValue(string _attribute, string _value)
 	{
 		if (_value.Contains("{"))
@@ -1796,7 +1796,7 @@ public abstract class XUiView : IXUiElement
 		this.ParseAttributeViewAndController(_attribute, _value);
 	}
 
-	// Token: 0x06008D2F RID: 36143 RVA: 0x00359D38 File Offset: 0x00357F38
+	// Token: 0x06008D83 RID: 36227 RVA: 0x0035BDE4 File Offset: 0x00359FE4
 	public bool ParseAttributeViewAndController(string _attribute, string _value)
 	{
 		if (_value.Contains("{") && XUiFromXml.DebugXuiLoading == XUiFromXml.DebugLevel.Verbose)
@@ -1814,7 +1814,7 @@ public abstract class XUiView : IXUiElement
 		return false;
 	}
 
-	// Token: 0x06008D30 RID: 36144 RVA: 0x00359DBF File Offset: 0x00357FBF
+	// Token: 0x06008D84 RID: 36228 RVA: 0x0035BE6B File Offset: 0x0035A06B
 	public virtual void OnVisibilityChanged(bool _visibleInScene)
 	{
 		if (this.isOver && !_visibleInScene)
@@ -1823,7 +1823,7 @@ public abstract class XUiView : IXUiElement
 		}
 	}
 
-	// Token: 0x06008D35 RID: 36149 RVA: 0x00359DFC File Offset: 0x00357FFC
+	// Token: 0x06008D89 RID: 36233 RVA: 0x0035BEA8 File Offset: 0x0035A0A8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <parseAnchors>g__ParseAnchorString|281_0(string _anchorString, ref string _parsedString, UIRect _uiRect, UIRect.AnchorPoint _anchor)
@@ -1907,7 +1907,7 @@ public abstract class XUiView : IXUiElement
 		return true;
 	}
 
-	// Token: 0x06008D36 RID: 36150 RVA: 0x0035A018 File Offset: 0x00358218
+	// Token: 0x06008D8A RID: 36234 RVA: 0x0035C0C4 File Offset: 0x0035A2C4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView <parseNavigationTargets>g__FindView|310_0(string _name)
@@ -1931,261 +1931,261 @@ public abstract class XUiView : IXUiElement
 		return null;
 	}
 
-	// Token: 0x040067CE RID: 26574
+	// Token: 0x0400680E RID: 26638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<Type, GameObject> componentTemplates = new Dictionary<Type, GameObject>();
 
-	// Token: 0x040067CF RID: 26575
+	// Token: 0x0400680F RID: 26639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform templatesParent;
 
-	// Token: 0x040067D0 RID: 26576
+	// Token: 0x04006810 RID: 26640
 	public readonly XUi xui;
 
-	// Token: 0x040067D1 RID: 26577
+	// Token: 0x04006811 RID: 26641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool destroyed;
 
-	// Token: 0x040067D2 RID: 26578
+	// Token: 0x04006812 RID: 26642
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController controller;
 
-	// Token: 0x040067D3 RID: 26579
+	// Token: 0x04006813 RID: 26643
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Transform uiTransform;
 
-	// Token: 0x040067D4 RID: 26580
+	// Token: 0x04006814 RID: 26644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BoxCollider collider;
 
-	// Token: 0x040067D5 RID: 26581
-	public readonly List<XUiTweenAbs> Tweeners = new List<XUiTweenAbs>();
-
-	// Token: 0x040067D8 RID: 26584
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isDirty;
-
-	// Token: 0x040067D9 RID: 26585
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public string id;
-
-	// Token: 0x040067DA RID: 26586
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isVisible = true;
-
-	// Token: 0x040067DB RID: 26587
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool enabled = true;
-
-	// Token: 0x040067DE RID: 26590
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public Vector2i size;
-
-	// Token: 0x040067DF RID: 26591
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public Vector2i position;
-
-	// Token: 0x040067E0 RID: 26592
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool positionDirty;
-
-	// Token: 0x040067E1 RID: 26593
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool ignoreParentPadding;
-
-	// Token: 0x040067E2 RID: 26594
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public XUiSideSizes padding;
-
-	// Token: 0x040067E3 RID: 26595
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public float rotation;
-
-	// Token: 0x040067E4 RID: 26596
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool rotationDirty;
-
-	// Token: 0x040067E5 RID: 26597
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public int depth;
-
-	// Token: 0x040067E6 RID: 26598
-	[PublicizedFrom(EAccessModifier.Private)]
-	public AudioClip xuiSound;
-
-	// Token: 0x040067E7 RID: 26599
-	[PublicizedFrom(EAccessModifier.Private)]
-	public AudioClip xuiHoverSound;
-
-	// Token: 0x040067F0 RID: 26608
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnHover;
-
-	// Token: 0x040067F1 RID: 26609
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnPress;
-
-	// Token: 0x040067F2 RID: 26610
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnDoubleClick;
-
-	// Token: 0x040067F3 RID: 26611
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnHeld;
-
-	// Token: 0x040067F4 RID: 26612
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnScroll;
-
-	// Token: 0x040067F5 RID: 26613
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnDrag;
-
-	// Token: 0x040067F6 RID: 26614
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool eventOnSelect;
-
-	// Token: 0x040067F7 RID: 26615
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isNavigatable = true;
-
-	// Token: 0x040067FA RID: 26618
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool gamepadSelectableSetFromAttributes;
-
-	// Token: 0x040067FB RID: 26619
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool gamepadSnappableSetFromAttributes;
-
-	// Token: 0x040067FC RID: 26620
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string navUpTargetString;
-
-	// Token: 0x040067FD RID: 26621
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiView navUpTarget;
-
-	// Token: 0x040067FE RID: 26622
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string navDownTargetString;
-
-	// Token: 0x040067FF RID: 26623
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiView navDownTarget;
-
-	// Token: 0x04006800 RID: 26624
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string navLeftTargetString;
-
-	// Token: 0x04006801 RID: 26625
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiView navLeftTarget;
-
-	// Token: 0x04006802 RID: 26626
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string navRightTargetString;
-
-	// Token: 0x04006803 RID: 26627
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiView navRightTarget;
-
-	// Token: 0x04006804 RID: 26628
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string toolTip;
-
-	// Token: 0x04006805 RID: 26629
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string disabledToolTip;
-
-	// Token: 0x04006806 RID: 26630
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ProfilerMarker pmUpdateHover = new ProfilerMarker("XV.U-Hover");
-
-	// Token: 0x04006807 RID: 26631
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ProfilerMarker pmUpdatePress = new ProfilerMarker("XV.U-Press");
-
-	// Token: 0x04006808 RID: 26632
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ProfilerMarker pmUpdateData = new ProfilerMarker("XV.U-UpdateData");
-
-	// Token: 0x04006809 RID: 26633
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorLeft;
-
-	// Token: 0x0400680A RID: 26634
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorRight;
-
-	// Token: 0x0400680B RID: 26635
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorBottom;
-
-	// Token: 0x0400680C RID: 26636
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorTop;
-
-	// Token: 0x0400680D RID: 26637
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorLeftParsed;
-
-	// Token: 0x0400680E RID: 26638
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorRightParsed;
-
-	// Token: 0x0400680F RID: 26639
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorBottomParsed;
-
-	// Token: 0x04006810 RID: 26640
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string anchorTopParsed;
-
-	// Token: 0x04006811 RID: 26641
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool anchoredLeftAndRight;
-
-	// Token: 0x04006812 RID: 26642
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public bool anchoredTopAndBottom;
-
-	// Token: 0x04006813 RID: 26643
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool wasDragging;
-
-	// Token: 0x04006814 RID: 26644
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isPressed;
-
 	// Token: 0x04006815 RID: 26645
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isHold;
-
-	// Token: 0x04006816 RID: 26646
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float pressStartTime;
-
-	// Token: 0x04006817 RID: 26647
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float holdStartTime;
+	public readonly List<XUiTweenAbs> Tweeners = new List<XUiTweenAbs>();
 
 	// Token: 0x04006818 RID: 26648
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float holdEventIntervalCurrent;
+	public bool isDirty;
 
 	// Token: 0x04006819 RID: 26649
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float holdEventIntervalChangeSpeed;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public string id;
 
 	// Token: 0x0400681A RID: 26650
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float holdEventNextTime;
+	public bool isVisible = true;
 
 	// Token: 0x0400681B RID: 26651
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool enabled = true;
+
+	// Token: 0x0400681E RID: 26654
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public Vector2i size;
+
+	// Token: 0x0400681F RID: 26655
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public Vector2i position;
+
+	// Token: 0x04006820 RID: 26656
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool positionDirty;
+
+	// Token: 0x04006821 RID: 26657
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool ignoreParentPadding;
+
+	// Token: 0x04006822 RID: 26658
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public XUiSideSizes padding;
+
+	// Token: 0x04006823 RID: 26659
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public float rotation;
+
+	// Token: 0x04006824 RID: 26660
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool rotationDirty;
+
+	// Token: 0x04006825 RID: 26661
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public int depth;
+
+	// Token: 0x04006826 RID: 26662
+	[PublicizedFrom(EAccessModifier.Private)]
+	public AudioClip xuiSound;
+
+	// Token: 0x04006827 RID: 26663
+	[PublicizedFrom(EAccessModifier.Private)]
+	public AudioClip xuiHoverSound;
+
+	// Token: 0x04006830 RID: 26672
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnHover;
+
+	// Token: 0x04006831 RID: 26673
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnPress;
+
+	// Token: 0x04006832 RID: 26674
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnDoubleClick;
+
+	// Token: 0x04006833 RID: 26675
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnHeld;
+
+	// Token: 0x04006834 RID: 26676
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnScroll;
+
+	// Token: 0x04006835 RID: 26677
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnDrag;
+
+	// Token: 0x04006836 RID: 26678
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool eventOnSelect;
+
+	// Token: 0x04006837 RID: 26679
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isNavigatable = true;
+
+	// Token: 0x0400683A RID: 26682
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool gamepadSelectableSetFromAttributes;
+
+	// Token: 0x0400683B RID: 26683
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool gamepadSnappableSetFromAttributes;
+
+	// Token: 0x0400683C RID: 26684
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string navUpTargetString;
+
+	// Token: 0x0400683D RID: 26685
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiView navUpTarget;
+
+	// Token: 0x0400683E RID: 26686
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string navDownTargetString;
+
+	// Token: 0x0400683F RID: 26687
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiView navDownTarget;
+
+	// Token: 0x04006840 RID: 26688
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string navLeftTargetString;
+
+	// Token: 0x04006841 RID: 26689
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiView navLeftTarget;
+
+	// Token: 0x04006842 RID: 26690
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string navRightTargetString;
+
+	// Token: 0x04006843 RID: 26691
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiView navRightTarget;
+
+	// Token: 0x04006844 RID: 26692
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string toolTip;
+
+	// Token: 0x04006845 RID: 26693
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string disabledToolTip;
+
+	// Token: 0x04006846 RID: 26694
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ProfilerMarker pmUpdateHover = new ProfilerMarker("XV.U-Hover");
+
+	// Token: 0x04006847 RID: 26695
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ProfilerMarker pmUpdatePress = new ProfilerMarker("XV.U-Press");
+
+	// Token: 0x04006848 RID: 26696
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ProfilerMarker pmUpdateData = new ProfilerMarker("XV.U-UpdateData");
+
+	// Token: 0x04006849 RID: 26697
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorLeft;
+
+	// Token: 0x0400684A RID: 26698
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorRight;
+
+	// Token: 0x0400684B RID: 26699
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorBottom;
+
+	// Token: 0x0400684C RID: 26700
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorTop;
+
+	// Token: 0x0400684D RID: 26701
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorLeftParsed;
+
+	// Token: 0x0400684E RID: 26702
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorRightParsed;
+
+	// Token: 0x0400684F RID: 26703
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorBottomParsed;
+
+	// Token: 0x04006850 RID: 26704
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string anchorTopParsed;
+
+	// Token: 0x04006851 RID: 26705
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool anchoredLeftAndRight;
+
+	// Token: 0x04006852 RID: 26706
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public bool anchoredTopAndBottom;
+
+	// Token: 0x04006853 RID: 26707
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool wasDragging;
+
+	// Token: 0x04006854 RID: 26708
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isPressed;
+
+	// Token: 0x04006855 RID: 26709
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isHold;
+
+	// Token: 0x04006856 RID: 26710
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float pressStartTime;
+
+	// Token: 0x04006857 RID: 26711
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float holdStartTime;
+
+	// Token: 0x04006858 RID: 26712
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float holdEventIntervalCurrent;
+
+	// Token: 0x04006859 RID: 26713
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float holdEventIntervalChangeSpeed;
+
+	// Token: 0x0400685A RID: 26714
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float holdEventNextTime;
+
+	// Token: 0x0400685B RID: 26715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float holdEventLastTime;
 
-	// Token: 0x0400681C RID: 26652
+	// Token: 0x0400685C RID: 26716
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isOver;
 }

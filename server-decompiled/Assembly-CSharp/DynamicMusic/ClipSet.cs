@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A6D RID: 6765
+	// Token: 0x02001A9E RID: 6814
 	[Preserve]
 	public class ClipSet : LayeredContent
 	{
-		// Token: 0x0600CD36 RID: 52534 RVA: 0x004AC248 File Offset: 0x004AA448
+		// Token: 0x0600CE4A RID: 52810 RVA: 0x004AFD44 File Offset: 0x004ADF44
 		public override float GetSample(PlacementType _placement, int _idx, params float[] _params)
 		{
 			IClipAdapter clipAdapter;
@@ -20,7 +20,7 @@ namespace DynamicMusic
 			return clipAdapter.GetSample(_idx, _params);
 		}
 
-		// Token: 0x0600CD37 RID: 52535 RVA: 0x004AC27C File Offset: 0x004AA47C
+		// Token: 0x0600CE4B RID: 52811 RVA: 0x004AFD78 File Offset: 0x004ADF78
 		public override void ParseFromXml(XElement _xmlNode)
 		{
 			base.ParseFromXml(_xmlNode);

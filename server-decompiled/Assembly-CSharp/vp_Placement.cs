@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015F2 RID: 5618
+// Token: 0x02001604 RID: 5636
 public class vp_Placement
 {
-	// Token: 0x0600AF30 RID: 44848 RVA: 0x00415324 File Offset: 0x00413524
+	// Token: 0x0600AF88 RID: 44936 RVA: 0x00417728 File Offset: 0x00415928
 	public static bool AdjustPosition(vp_Placement p, float physicsRadius, int attempts = 1000)
 	{
 		attempts--;
@@ -23,13 +23,13 @@ public class vp_Placement
 		return false;
 	}
 
-	// Token: 0x0600AF31 RID: 44849 RVA: 0x0041538B File Offset: 0x0041358B
+	// Token: 0x0600AF89 RID: 44937 RVA: 0x0041778F File Offset: 0x0041598F
 	public virtual bool IsObstructed(float physicsRadius = 1f)
 	{
 		return Physics.CheckSphere(this.Position, physicsRadius, 2261000);
 	}
 
-	// Token: 0x0600AF32 RID: 44850 RVA: 0x004153A4 File Offset: 0x004135A4
+	// Token: 0x0600AF8A RID: 44938 RVA: 0x004177A8 File Offset: 0x004159A8
 	public static void SnapToGround(vp_Placement p, float radius, float snapDistance)
 	{
 		if (snapDistance == 0f)
@@ -44,9 +44,9 @@ public class vp_Placement
 		}
 	}
 
-	// Token: 0x04008295 RID: 33429
+	// Token: 0x040082D6 RID: 33494
 	public Vector3 Position = Vector3.zero;
 
-	// Token: 0x04008296 RID: 33430
+	// Token: 0x040082D7 RID: 33495
 	public Quaternion Rotation = Quaternion.identity;
 }

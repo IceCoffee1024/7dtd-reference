@@ -2,13 +2,13 @@
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x0200107D RID: 4221
+// Token: 0x0200108D RID: 4237
 [Preserve]
 public class XUiC_SkillWindowGroup : XUiController
 {
-	// Token: 0x17000FD0 RID: 4048
-	// (get) Token: 0x060085F5 RID: 34293 RVA: 0x00333B8A File Offset: 0x00331D8A
-	// (set) Token: 0x060085F6 RID: 34294 RVA: 0x00333B92 File Offset: 0x00331D92
+	// Token: 0x17000FDB RID: 4059
+	// (get) Token: 0x06008648 RID: 34376 RVA: 0x00335C0E File Offset: 0x00333E0E
+	// (set) Token: 0x06008649 RID: 34377 RVA: 0x00335C16 File Offset: 0x00333E16
 	public ProgressionValue CurrentSkill
 	{
 		get
@@ -21,7 +21,7 @@ public class XUiC_SkillWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060085F7 RID: 34295 RVA: 0x00333B9C File Offset: 0x00331D9C
+	// Token: 0x0600864A RID: 34378 RVA: 0x00335C20 File Offset: 0x00333E20
 	public override void Init()
 	{
 		base.Init();
@@ -41,7 +41,7 @@ public class XUiC_SkillWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060085F8 RID: 34296 RVA: 0x00333C46 File Offset: 0x00331E46
+	// Token: 0x0600864B RID: 34379 RVA: 0x00335CCA File Offset: 0x00333ECA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -51,7 +51,7 @@ public class XUiC_SkillWindowGroup : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085F9 RID: 34297 RVA: 0x00333C76 File Offset: 0x00331E76
+	// Token: 0x0600864C RID: 34380 RVA: 0x00335CFA File Offset: 0x00333EFA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryClickChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -62,14 +62,14 @@ public class XUiC_SkillWindowGroup : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085FA RID: 34298 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x0600864D RID: 34381 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_SkillEntry_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085FB RID: 34299 RVA: 0x00333CB6 File Offset: 0x00331EB6
+	// Token: 0x0600864E RID: 34382 RVA: 0x00335D3A File Offset: 0x00333F3A
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -77,7 +77,7 @@ public class XUiC_SkillWindowGroup : XUiController
 		this.xui.CalloutWindow.DisableCallouts(XUiC_GamepadCalloutWindow.CalloutType.Menu);
 	}
 
-	// Token: 0x060085FC RID: 34300 RVA: 0x00333CEC File Offset: 0x00331EEC
+	// Token: 0x0600864F RID: 34383 RVA: 0x00335D70 File Offset: 0x00333F70
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -116,7 +116,7 @@ public class XUiC_SkillWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060085FD RID: 34301 RVA: 0x00333E14 File Offset: 0x00332014
+	// Token: 0x06008650 RID: 34384 RVA: 0x00335E98 File Offset: 0x00334098
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -159,39 +159,39 @@ public class XUiC_SkillWindowGroup : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x040063A8 RID: 25512
+	// Token: 0x040063E7 RID: 25575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillEntry[] skillEntries;
 
-	// Token: 0x040063A9 RID: 25513
+	// Token: 0x040063E8 RID: 25576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillList skillList;
 
-	// Token: 0x040063AA RID: 25514
+	// Token: 0x040063E9 RID: 25577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x040063AB RID: 25515
+	// Token: 0x040063EA RID: 25578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillAttributeInfoWindow skillAttributeInfoWindow;
 
-	// Token: 0x040063AC RID: 25516
+	// Token: 0x040063EB RID: 25579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillSkillInfoWindow skillSkillInfoWindow;
 
-	// Token: 0x040063AD RID: 25517
+	// Token: 0x040063EC RID: 25580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillPerkInfoWindow skillPerkInfoWindow;
 
-	// Token: 0x040063AE RID: 25518
+	// Token: 0x040063ED RID: 25581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillBookInfoWindow skillBookInfoWindow;
 
-	// Token: 0x040063AF RID: 25519
+	// Token: 0x040063EE RID: 25582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillCraftingInfoWindow skillCraftingInfoWindow;
 
-	// Token: 0x040063B0 RID: 25520
+	// Token: 0x040063EF RID: 25583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionValue currentSkill;
 }

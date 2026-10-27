@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D0A RID: 3338
+// Token: 0x02000D15 RID: 3349
 public class BuffsFromXml
 {
-	// Token: 0x06006593 RID: 26003 RVA: 0x0027F34C File Offset: 0x0027D54C
+	// Token: 0x060065B8 RID: 26040 RVA: 0x00280874 File Offset: 0x0027EA74
 	public static IEnumerator CreateBuffs(XmlFile xmlFile)
 	{
 		BuffManager.Buffs = new CaseInsensitiveStringDictionary<BuffClass>();
@@ -33,7 +33,7 @@ public class BuffsFromXml
 		yield break;
 	}
 
-	// Token: 0x06006594 RID: 26004 RVA: 0x0027F35C File Offset: 0x0027D55C
+	// Token: 0x060065B9 RID: 26041 RVA: 0x00280884 File Offset: 0x0027EA84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void clearBuffValueLinks()
 	{
@@ -57,13 +57,13 @@ public class BuffsFromXml
 		}
 	}
 
-	// Token: 0x06006595 RID: 26005 RVA: 0x0027F3EC File Offset: 0x0027D5EC
+	// Token: 0x060065BA RID: 26042 RVA: 0x00280914 File Offset: 0x0027EB14
 	public static void Reload(XmlFile xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(BuffsFromXml.CreateBuffs(xmlFile));
 	}
 
-	// Token: 0x06006596 RID: 26006 RVA: 0x0027F3FC File Offset: 0x0027D5FC
+	// Token: 0x060065BB RID: 26043 RVA: 0x00280924 File Offset: 0x0027EB24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseBuff(XElement _element)
 	{

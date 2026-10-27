@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D7 RID: 6615
+	// Token: 0x02001A08 RID: 6664
 	[Preserve]
 	public class ActionReplaceItems : ActionBaseItemAction
 	{
-		// Token: 0x0600CA89 RID: 51849 RVA: 0x004A1C7E File Offset: 0x0049FE7E
+		// Token: 0x0600CB9D RID: 52125 RVA: 0x004A577E File Offset: 0x004A397E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnClientActionStarted(EntityPlayer player)
 		{
 			this.replaceItemTag = FastTags<TagGroup.Global>.Parse(this.itemTags);
 		}
 
-		// Token: 0x0600CA8A RID: 51850 RVA: 0x004A1C94 File Offset: 0x0049FE94
+		// Token: 0x0600CB9E RID: 52126 RVA: 0x004A5794 File Offset: 0x004A3994
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool CheckEquipmentReplace(Equipment equipment, int slot)
 		{
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			return equipment.PreferredItemSlot(item) == slot;
 		}
 
-		// Token: 0x0600CA8B RID: 51851 RVA: 0x004A1CB8 File Offset: 0x0049FEB8
+		// Token: 0x0600CB9F RID: 52127 RVA: 0x004A57B8 File Offset: 0x004A39B8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
@@ -63,7 +63,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600CA8C RID: 51852 RVA: 0x004A1E08 File Offset: 0x004A0008
+		// Token: 0x0600CBA0 RID: 52128 RVA: 0x004A5908 File Offset: 0x004A3B08
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemValueChange(ref ItemValue itemValue, EntityPlayer player)
 		{
@@ -83,7 +83,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600CA8D RID: 51853 RVA: 0x004A1E87 File Offset: 0x004A0087
+		// Token: 0x0600CBA1 RID: 52129 RVA: 0x004A5987 File Offset: 0x004A3B87
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -93,7 +93,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CA8E RID: 51854 RVA: 0x004A1EB8 File Offset: 0x004A00B8
+		// Token: 0x0600CBA2 RID: 52130 RVA: 0x004A59B8 File Offset: 0x004A3BB8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -103,13 +103,13 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009932 RID: 39218
+		// Token: 0x04009A1B RID: 39451
 		public string ReplacedByItem = "";
 
-		// Token: 0x04009933 RID: 39219
+		// Token: 0x04009A1C RID: 39452
 		public static string PropReplacedByItem = "replaced_by_item";
 
-		// Token: 0x04009934 RID: 39220
+		// Token: 0x04009A1D RID: 39453
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> replaceItemTag = FastTags<TagGroup.Global>.none;
 	}

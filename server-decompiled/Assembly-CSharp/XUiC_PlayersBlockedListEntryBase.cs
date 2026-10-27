@@ -2,13 +2,13 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E3B RID: 3643
+// Token: 0x02000E46 RID: 3654
 [Preserve]
 public class XUiC_PlayersBlockedListEntryBase : XUiController
 {
-	// Token: 0x17000CA4 RID: 3236
-	// (get) Token: 0x06006F8B RID: 28555 RVA: 0x002B44FF File Offset: 0x002B26FF
-	// (set) Token: 0x06006F8C RID: 28556 RVA: 0x002B4507 File Offset: 0x002B2707
+	// Token: 0x17000CAA RID: 3242
+	// (get) Token: 0x06006FB0 RID: 28592 RVA: 0x002B5A6B File Offset: 0x002B3C6B
+	// (set) Token: 0x06006FB1 RID: 28593 RVA: 0x002B5A73 File Offset: 0x002B3C73
 	public PlatformUserIdentifierAbs PlayerId
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -24,8 +24,8 @@ public class XUiC_PlayersBlockedListEntryBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CA5 RID: 3237
-	// (get) Token: 0x06006F8D RID: 28557 RVA: 0x002B4517 File Offset: 0x002B2717
+	// Token: 0x17000CAB RID: 3243
+	// (get) Token: 0x06006FB2 RID: 28594 RVA: 0x002B5A83 File Offset: 0x002B3C83
 	[XuiXmlBinding("hasentry")]
 	public bool HasEntry
 	{
@@ -36,14 +36,14 @@ public class XUiC_PlayersBlockedListEntryBase : XUiController
 		}
 	}
 
-	// Token: 0x06006F8E RID: 28558 RVA: 0x00291183 File Offset: 0x0028F383
+	// Token: 0x06006FB3 RID: 28595 RVA: 0x002926AB File Offset: 0x002908AB
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06006F8F RID: 28559 RVA: 0x002B4524 File Offset: 0x002B2724
+	// Token: 0x06006FB4 RID: 28596 RVA: 0x002B5A90 File Offset: 0x002B3C90
 	public virtual void UpdateEntry(PlatformUserIdentifierAbs _playerId)
 	{
 		BlockedPlayerList.ListEntry playerStateInfo = BlockedPlayerList.Instance.GetPlayerStateInfo(_playerId);
@@ -56,14 +56,14 @@ public class XUiC_PlayersBlockedListEntryBase : XUiController
 		this.Clear();
 	}
 
-	// Token: 0x06006F90 RID: 28560 RVA: 0x002B4561 File Offset: 0x002B2761
+	// Token: 0x06006FB5 RID: 28597 RVA: 0x002B5ACD File Offset: 0x002B3CCD
 	public void Clear()
 	{
 		this.PlayerId = null;
 		this.PlayerName.ClearPlayerData();
 	}
 
-	// Token: 0x06006F91 RID: 28561 RVA: 0x002B4575 File Offset: 0x002B2775
+	// Token: 0x06006FB6 RID: 28598 RVA: 0x002B5AE1 File Offset: 0x002B3CE1
 	[XuiBindEvent("OnPress", "btnReportPlayer")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void reportPlayerPressed(XUiController _sender, int _mouseButton)
@@ -75,19 +75,19 @@ public class XUiC_PlayersBlockedListEntryBase : XUiController
 		XUiC_ReportPlayer.Open(BlockedPlayerList.Instance.GetPlayerStateInfo(this.PlayerId).PlayerData, EnumReportCategory.None, "");
 	}
 
-	// Token: 0x040054AC RID: 21676
+	// Token: 0x040054D1 RID: 21713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs playerId;
 
-	// Token: 0x040054AD RID: 21677
+	// Token: 0x040054D2 RID: 21714
 	[XuiBindParent(true)]
 	public readonly XUiC_BlockedPlayersList BlockList;
 
-	// Token: 0x040054AE RID: 21678
+	// Token: 0x040054D3 RID: 21715
 	[XuiBindComponent("playerName", true)]
 	public readonly XUiC_PlayerName PlayerName;
 
-	// Token: 0x040054AF RID: 21679
+	// Token: 0x040054D4 RID: 21716
 	[XuiBindComponent("btnReportPlayer", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnReportPlayer;

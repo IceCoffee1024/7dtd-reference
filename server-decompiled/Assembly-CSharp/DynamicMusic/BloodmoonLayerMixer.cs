@@ -8,11 +8,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A79 RID: 6777
+	// Token: 0x02001AAA RID: 6826
 	[Preserve]
 	public class BloodmoonLayerMixer : LayerMixer<BloodmoonConfiguration>
 	{
-		// Token: 0x0600CD78 RID: 52600 RVA: 0x004ACCF0 File Offset: 0x004AAEF0
+		// Token: 0x0600CE8C RID: 52876 RVA: 0x004B07EC File Offset: 0x004AE9EC
 		public BloodmoonLayerMixer()
 		{
 			BloodmoonLayerMixer.player = GameManager.Instance.World.GetPrimaryPlayer();
@@ -24,7 +24,7 @@ namespace DynamicMusic
 				});
 		}
 
-		// Token: 0x17001998 RID: 6552
+		// Token: 0x170019E0 RID: 6624
 		public override float this[int _idx]
 		{
 			get
@@ -49,7 +49,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD7A RID: 52602 RVA: 0x004ACEE4 File Offset: 0x004AB0E4
+		// Token: 0x0600CE8E RID: 52878 RVA: 0x004B09E0 File Offset: 0x004AEBE0
 		public override IEnumerator Load()
 		{
 			yield return this.<>n__0();
@@ -71,18 +71,18 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x04009BDF RID: 39903
+		// Token: 0x04009CC8 RID: 40136
 		public static float ThreatLevel = 0.75f;
 
-		// Token: 0x04009BE0 RID: 39904
+		// Token: 0x04009CC9 RID: 40137
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EntityPlayerLocal player;
 
-		// Token: 0x04009BE1 RID: 39905
+		// Token: 0x04009CCA RID: 40138
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cIncrement = 3.7792895E-06f;
 
-		// Token: 0x04009BE2 RID: 39906
+		// Token: 0x04009CCB RID: 40139
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EnumDictionary<LayerType, LayerParams> paramsFor;
 	}

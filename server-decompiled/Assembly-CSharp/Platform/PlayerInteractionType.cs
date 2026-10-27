@@ -2,14 +2,14 @@
 
 namespace Platform
 {
-	// Token: 0x02001BC0 RID: 7104
+	// Token: 0x02001BF1 RID: 7153
 	public enum PlayerInteractionType
 	{
-		// Token: 0x0400A1A0 RID: 41376
+		// Token: 0x0400A289 RID: 41609
 		Login,
-		// Token: 0x0400A1A1 RID: 41377
+		// Token: 0x0400A28A RID: 41610
 		Disconnect,
-		// Token: 0x0400A1A2 RID: 41378
+		// Token: 0x0400A28B RID: 41611
 		FirstSpawn
 	}
 }

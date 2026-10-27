@@ -1,13 +1,13 @@
 ﻿using System;
 
-// Token: 0x020012E7 RID: 4839
+// Token: 0x020012F9 RID: 4857
 public interface Serializable
 {
-	// Token: 0x0600991F RID: 39199
+	// Token: 0x06009977 RID: 39287
 	byte[] Serialize();
 
-	// Token: 0x1700124F RID: 4687
-	// (get) Token: 0x06009920 RID: 39200
-	// (set) Token: 0x06009921 RID: 39201
+	// Token: 0x1700125B RID: 4699
+	// (get) Token: 0x06009978 RID: 39288
+	// (set) Token: 0x06009979 RID: 39289
 	bool IsDirty { get; set; }
 }

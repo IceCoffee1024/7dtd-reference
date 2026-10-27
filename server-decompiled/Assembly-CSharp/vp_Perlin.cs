@@ -1,23 +1,23 @@
 ﻿using System;
 
-// Token: 0x02001599 RID: 5529
+// Token: 0x020015AB RID: 5547
 public class vp_Perlin
 {
-	// Token: 0x0600ACAB RID: 44203 RVA: 0x00405865 File Offset: 0x00403A65
+	// Token: 0x0600AD03 RID: 44291 RVA: 0x00407C69 File Offset: 0x00405E69
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float s_curve(float t)
 	{
 		return t * t * (3f - 2f * t);
 	}
 
-	// Token: 0x0600ACAC RID: 44204 RVA: 0x003F90B3 File Offset: 0x003F72B3
+	// Token: 0x0600AD04 RID: 44292 RVA: 0x003FB4B7 File Offset: 0x003F96B7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lerp(float t, float a, float b)
 	{
 		return a + t * (b - a);
 	}
 
-	// Token: 0x0600ACAD RID: 44205 RVA: 0x00405878 File Offset: 0x00403A78
+	// Token: 0x0600AD05 RID: 44293 RVA: 0x00407C7C File Offset: 0x00405E7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setup(float value, out int b0, out int b1, out float r0, out float r1)
 	{
@@ -28,21 +28,21 @@ public class vp_Perlin
 		r1 = r0 - 1f;
 	}
 
-	// Token: 0x0600ACAE RID: 44206 RVA: 0x004058B7 File Offset: 0x00403AB7
+	// Token: 0x0600AD06 RID: 44294 RVA: 0x00407CBB File Offset: 0x00405EBB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float at2(float rx, float ry, float x, float y)
 	{
 		return rx * x + ry * y;
 	}
 
-	// Token: 0x0600ACAF RID: 44207 RVA: 0x004058C1 File Offset: 0x00403AC1
+	// Token: 0x0600AD07 RID: 44295 RVA: 0x00407CC5 File Offset: 0x00405EC5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float at3(float rx, float ry, float rz, float x, float y, float z)
 	{
 		return rx * x + ry * y + rz * z;
 	}
 
-	// Token: 0x0600ACB0 RID: 44208 RVA: 0x004058D4 File Offset: 0x00403AD4
+	// Token: 0x0600AD08 RID: 44296 RVA: 0x00407CD8 File Offset: 0x00405ED8
 	public float Noise(float arg)
 	{
 		int num;
@@ -56,7 +56,7 @@ public class vp_Perlin
 		return this.lerp(num5, num6, num7);
 	}
 
-	// Token: 0x0600ACB1 RID: 44209 RVA: 0x0040592C File Offset: 0x00403B2C
+	// Token: 0x0600AD09 RID: 44297 RVA: 0x00407D30 File Offset: 0x00405F30
 	public float Noise(float x, float y)
 	{
 		int num;
@@ -86,7 +86,7 @@ public class vp_Perlin
 		return this.lerp(num16, num19, num20);
 	}
 
-	// Token: 0x0600ACB2 RID: 44210 RVA: 0x00405A7C File Offset: 0x00403C7C
+	// Token: 0x0600AD0A RID: 44298 RVA: 0x00407E80 File Offset: 0x00406080
 	public float Noise(float x, float y, float z)
 	{
 		int num;
@@ -130,7 +130,7 @@ public class vp_Perlin
 		return this.lerp(num21, num26, num27);
 	}
 
-	// Token: 0x0600ACB3 RID: 44211 RVA: 0x00405D84 File Offset: 0x00403F84
+	// Token: 0x0600AD0B RID: 44299 RVA: 0x00408188 File Offset: 0x00406388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void normalize2(ref float x, ref float y)
 	{
@@ -139,7 +139,7 @@ public class vp_Perlin
 		y /= num;
 	}
 
-	// Token: 0x0600ACB4 RID: 44212 RVA: 0x00405DB0 File Offset: 0x00403FB0
+	// Token: 0x0600AD0C RID: 44300 RVA: 0x004081B4 File Offset: 0x004063B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void normalize3(ref float x, ref float y, ref float z)
 	{
@@ -149,7 +149,7 @@ public class vp_Perlin
 		z /= num;
 	}
 
-	// Token: 0x0600ACB5 RID: 44213 RVA: 0x00405DE8 File Offset: 0x00403FE8
+	// Token: 0x0600AD0D RID: 44301 RVA: 0x004081EC File Offset: 0x004063EC
 	public vp_Perlin()
 	{
 		Random random = new Random();
@@ -191,31 +191,31 @@ public class vp_Perlin
 		}
 	}
 
-	// Token: 0x04007FBF RID: 32703
+	// Token: 0x04008000 RID: 32768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int B = 256;
 
-	// Token: 0x04007FC0 RID: 32704
+	// Token: 0x04008001 RID: 32769
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BM = 255;
 
-	// Token: 0x04007FC1 RID: 32705
+	// Token: 0x04008002 RID: 32770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N = 4096;
 
-	// Token: 0x04007FC2 RID: 32706
+	// Token: 0x04008003 RID: 32771
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] p = new int[514];
 
-	// Token: 0x04007FC3 RID: 32707
+	// Token: 0x04008004 RID: 32772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[,] g3 = new float[514, 3];
 
-	// Token: 0x04007FC4 RID: 32708
+	// Token: 0x04008005 RID: 32773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[,] g2 = new float[514, 2];
 
-	// Token: 0x04007FC5 RID: 32709
+	// Token: 0x04008006 RID: 32774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] g1 = new float[514];
 }

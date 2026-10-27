@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Token: 0x020006C8 RID: 1736
+// Token: 0x020006CF RID: 1743
 public class ValueModifierBase
 {
 }

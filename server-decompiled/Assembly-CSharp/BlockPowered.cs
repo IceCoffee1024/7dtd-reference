@@ -9,7 +9,7 @@ using UnityEngine.Scripting;
 public class BlockPowered : Block
 {
 	// Token: 0x17000097 RID: 151
-	// (get) Token: 0x0600088A RID: 2186 RVA: 0x0003C894 File Offset: 0x0003AA94
+	// (get) Token: 0x0600088A RID: 2186 RVA: 0x0003C854 File Offset: 0x0003AA54
 	public int RequiredPower
 	{
 		get
@@ -18,13 +18,13 @@ public class BlockPowered : Block
 		}
 	}
 
-	// Token: 0x0600088B RID: 2187 RVA: 0x0003C89C File Offset: 0x0003AA9C
+	// Token: 0x0600088B RID: 2187 RVA: 0x0003C85C File Offset: 0x0003AA5C
 	public BlockPowered()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600088C RID: 2188 RVA: 0x0003C8F8 File Offset: 0x0003AAF8
+	// Token: 0x0600088C RID: 2188 RVA: 0x0003C8B8 File Offset: 0x0003AAB8
 	public override void Init()
 	{
 		base.Init();
@@ -48,7 +48,7 @@ public class BlockPowered : Block
 		this.TakeDelay = 2f;
 	}
 
-	// Token: 0x0600088D RID: 2189 RVA: 0x0003C9C8 File Offset: 0x0003ABC8
+	// Token: 0x0600088D RID: 2189 RVA: 0x0003C988 File Offset: 0x0003AB88
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -72,7 +72,7 @@ public class BlockPowered : Block
 		});
 	}
 
-	// Token: 0x0600088E RID: 2190 RVA: 0x0003CA1C File Offset: 0x0003AC1C
+	// Token: 0x0600088E RID: 2190 RVA: 0x0003C9DC File Offset: 0x0003ABDC
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -96,7 +96,7 @@ public class BlockPowered : Block
 		}
 	}
 
-	// Token: 0x0600088F RID: 2191 RVA: 0x0003CAA6 File Offset: 0x0003ACA6
+	// Token: 0x0600088F RID: 2191 RVA: 0x0003CA66 File Offset: 0x0003AC66
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator drawWiresLater(IPowered powered)
 	{
@@ -105,7 +105,7 @@ public class BlockPowered : Block
 		yield break;
 	}
 
-	// Token: 0x06000890 RID: 2192 RVA: 0x0003CAB8 File Offset: 0x0003ACB8
+	// Token: 0x06000890 RID: 2192 RVA: 0x0003CA78 File Offset: 0x0003AC78
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
@@ -141,7 +141,7 @@ public class BlockPowered : Block
 		_chunk.RemoveTileEntityAt<TileEntityPowered>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x06000891 RID: 2193 RVA: 0x0003CBAD File Offset: 0x0003ADAD
+	// Token: 0x06000891 RID: 2193 RVA: 0x0003CB6D File Offset: 0x0003AD6D
 	public virtual TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredBlock(chunk);
@@ -153,7 +153,7 @@ public class BlockPowered : Block
 		return true;
 	}
 
-	// Token: 0x06000893 RID: 2195 RVA: 0x0003CBB8 File Offset: 0x0003ADB8
+	// Token: 0x06000893 RID: 2195 RVA: 0x0003CB78 File Offset: 0x0003AD78
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -161,7 +161,7 @@ public class BlockPowered : Block
 		return this.cmds;
 	}
 
-	// Token: 0x06000894 RID: 2196 RVA: 0x0003CC04 File Offset: 0x0003AE04
+	// Token: 0x06000894 RID: 2196 RVA: 0x0003CBC4 File Offset: 0x0003ADC4
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer()) || this.TakeDelay <= 0f)
@@ -172,7 +172,7 @@ public class BlockPowered : Block
 		return string.Format(Localization.Get("pickupPrompt", false, null), block.GetLocalizedBlockName());
 	}
 
-	// Token: 0x06000895 RID: 2197 RVA: 0x0003CC58 File Offset: 0x0003AE58
+	// Token: 0x06000895 RID: 2197 RVA: 0x0003CC18 File Offset: 0x0003AE18
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)

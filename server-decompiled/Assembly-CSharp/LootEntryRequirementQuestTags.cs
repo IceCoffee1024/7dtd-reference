@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200062A RID: 1578
+// Token: 0x02000631 RID: 1585
 [Preserve]
 public class LootEntryRequirementQuestTags : BaseLootEntryRequirement
 {
-	// Token: 0x0600335E RID: 13150 RVA: 0x0014CF1C File Offset: 0x0014B11C
+	// Token: 0x0600336C RID: 13164 RVA: 0x0014DB10 File Offset: 0x0014BD10
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -17,13 +17,13 @@ public class LootEntryRequirementQuestTags : BaseLootEntryRequirement
 		}
 	}
 
-	// Token: 0x0600335F RID: 13151 RVA: 0x0014CF56 File Offset: 0x0014B156
+	// Token: 0x0600336D RID: 13165 RVA: 0x0014DB4A File Offset: 0x0014BD4A
 	public override bool CheckRequirement(EntityPlayer player)
 	{
 		return player.QuestJournal.ActiveQuest != null && player.QuestJournal.ActiveQuest.QuestTags.Test_AnySet(this.questTags);
 	}
 
-	// Token: 0x040028D6 RID: 10454
+	// Token: 0x040028F1 RID: 10481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> questTags;
 }

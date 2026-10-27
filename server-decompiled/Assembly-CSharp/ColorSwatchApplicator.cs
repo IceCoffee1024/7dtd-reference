@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000A4F RID: 2639
+// Token: 0x02000A59 RID: 2649
 public class ColorSwatchApplicator : MonoBehaviour
 {
-	// Token: 0x170008A0 RID: 2208
-	// (get) Token: 0x06004F50 RID: 20304 RVA: 0x0000A1FE File Offset: 0x000083FE
+	// Token: 0x170008A6 RID: 2214
+	// (get) Token: 0x06004F74 RID: 20340 RVA: 0x0000A1FE File Offset: 0x000083FE
 	public static string baseHairColorLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -15,7 +15,7 @@ public class ColorSwatchApplicator : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004F51 RID: 20305 RVA: 0x001E3684 File Offset: 0x001E1884
+	// Token: 0x06004F75 RID: 20341 RVA: 0x001E476C File Offset: 0x001E296C
 	public void ApplyColorSwatch(string color)
 	{
 		if (!string.IsNullOrEmpty(color))
@@ -35,7 +35,7 @@ public class ColorSwatchApplicator : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004F52 RID: 20306 RVA: 0x001E370C File Offset: 0x001E190C
+	// Token: 0x06004F76 RID: 20342 RVA: 0x001E47F4 File Offset: 0x001E29F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplySwatchToGameObject(HairColorSwatch hairSwatch)
 	{

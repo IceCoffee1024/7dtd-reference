@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000165 RID: 357
 public static class BlockUtilityNavIcon
 {
-	// Token: 0x060009C5 RID: 2501 RVA: 0x00042DFC File Offset: 0x00040FFC
+	// Token: 0x060009C5 RID: 2501 RVA: 0x00042DBC File Offset: 0x00040FBC
 	public static void UpdateNavIcon(bool _shouldShow, Vector3i _blockPos)
 	{
 		World world = GameManager.Instance.World;
@@ -64,7 +64,7 @@ public static class BlockUtilityNavIcon
 		}
 	}
 
-	// Token: 0x060009C6 RID: 2502 RVA: 0x0004307C File Offset: 0x0004127C
+	// Token: 0x060009C6 RID: 2502 RVA: 0x0004303C File Offset: 0x0004123C
 	public static void RemoveNavObject(Vector3i _blockPos)
 	{
 		World world = GameManager.Instance.World;

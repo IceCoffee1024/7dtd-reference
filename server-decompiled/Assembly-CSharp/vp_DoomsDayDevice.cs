@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015BB RID: 5563
+// Token: 0x020015CD RID: 5581
 public class vp_DoomsDayDevice : MonoBehaviour
 {
-	// Token: 0x0600ADAB RID: 44459 RVA: 0x0040A6D4 File Offset: 0x004088D4
+	// Token: 0x0600AE03 RID: 44547 RVA: 0x0040CAD8 File Offset: 0x0040ACD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -27,7 +27,7 @@ public class vp_DoomsDayDevice : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADAC RID: 44460 RVA: 0x0040A798 File Offset: 0x00408998
+	// Token: 0x0600AE04 RID: 44548 RVA: 0x0040CB9C File Offset: 0x0040AD9C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -51,7 +51,7 @@ public class vp_DoomsDayDevice : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADAD RID: 44461 RVA: 0x0040A84B File Offset: 0x00408A4B
+	// Token: 0x0600AE05 RID: 44549 RVA: 0x0040CC4F File Offset: 0x0040AE4F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -61,7 +61,7 @@ public class vp_DoomsDayDevice : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADAE RID: 44462 RVA: 0x0040A868 File Offset: 0x00408A68
+	// Token: 0x0600AE06 RID: 44550 RVA: 0x0040CC6C File Offset: 0x0040AE6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -82,7 +82,7 @@ public class vp_DoomsDayDevice : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADAF RID: 44463 RVA: 0x0040A924 File Offset: 0x00408B24
+	// Token: 0x0600AE07 RID: 44551 RVA: 0x0040CD28 File Offset: 0x0040AF28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InitiateDoomsDay()
 	{
@@ -110,50 +110,50 @@ public class vp_DoomsDayDevice : MonoBehaviour
 		}, null);
 	}
 
-	// Token: 0x0400806C RID: 32876
+	// Token: 0x040080AD RID: 32941
 	public AudioClip EarthQuakeSound;
 
-	// Token: 0x0400806D RID: 32877
+	// Token: 0x040080AE RID: 32942
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x0400806E RID: 32878
+	// Token: 0x040080AF RID: 32943
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool Initiated;
 
-	// Token: 0x0400806F RID: 32879
+	// Token: 0x040080B0 RID: 32944
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GameObject m_Button;
 
-	// Token: 0x04008070 RID: 32880
+	// Token: 0x040080B1 RID: 32945
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PulsingLight m_PulsingLight;
 
-	// Token: 0x04008071 RID: 32881
+	// Token: 0x040080B2 RID: 32946
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_PlayerAudioSource;
 
-	// Token: 0x04008072 RID: 32882
+	// Token: 0x040080B3 RID: 32947
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_DeviceAudioSource;
 
-	// Token: 0x04008073 RID: 32883
+	// Token: 0x040080B4 RID: 32948
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_OriginalButtonPos;
 
-	// Token: 0x04008074 RID: 32884
+	// Token: 0x040080B5 RID: 32949
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_OriginalButtonColor;
 
-	// Token: 0x04008075 RID: 32885
+	// Token: 0x040080B6 RID: 32950
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_OriginalPulsingLightMaxIntensity;

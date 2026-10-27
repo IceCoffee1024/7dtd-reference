@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F43 RID: 3907
+// Token: 0x02000F52 RID: 3922
 [Preserve]
 public class XUiC_ExportPrefab : XUiController
 {
-	// Token: 0x06007A38 RID: 31288 RVA: 0x002E489C File Offset: 0x002E2A9C
+	// Token: 0x06007A7B RID: 31355 RVA: 0x002E618C File Offset: 0x002E438C
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class XUiC_ExportPrefab : XUiController
 		this.toggleAsPart = base.GetChildByType<XUiC_ToggleButton>();
 	}
 
-	// Token: 0x06007A39 RID: 31289 RVA: 0x002E49AC File Offset: 0x002E2BAC
+	// Token: 0x06007A7C RID: 31356 RVA: 0x002E629C File Offset: 0x002E449C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtSaveNameOnOnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -34,28 +34,28 @@ public class XUiC_ExportPrefab : XUiController
 		this.btnSaveLocal.Enabled = flag && !flag2;
 	}
 
-	// Token: 0x06007A3A RID: 31290 RVA: 0x002E4A32 File Offset: 0x002E2C32
+	// Token: 0x06007A7D RID: 31357 RVA: 0x002E6322 File Offset: 0x002E4522
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.SaveAndClose(false);
 	}
 
-	// Token: 0x06007A3B RID: 31291 RVA: 0x002E4A3B File Offset: 0x002E2C3B
+	// Token: 0x06007A7E RID: 31358 RVA: 0x002E632B File Offset: 0x002E452B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSaveLocal_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.SaveAndClose(true);
 	}
 
-	// Token: 0x06007A3C RID: 31292 RVA: 0x00089715 File Offset: 0x00087915
+	// Token: 0x06007A7F RID: 31359 RVA: 0x00089949 File Offset: 0x00087B49
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06007A3D RID: 31293 RVA: 0x002E4A44 File Offset: 0x002E2C44
+	// Token: 0x06007A80 RID: 31360 RVA: 0x002E6334 File Offset: 0x002E4534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveAndClose(bool _local)
 	{
@@ -72,7 +72,7 @@ public class XUiC_ExportPrefab : XUiController
 		GUIWindowConsole.Open();
 	}
 
-	// Token: 0x06007A3E RID: 31294 RVA: 0x002E4ADA File Offset: 0x002E2CDA
+	// Token: 0x06007A81 RID: 31361 RVA: 0x002E63CA File Offset: 0x002E45CA
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -81,36 +81,36 @@ public class XUiC_ExportPrefab : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A3F RID: 31295 RVA: 0x002E4B06 File Offset: 0x002E2D06
+	// Token: 0x06007A82 RID: 31362 RVA: 0x002E63F6 File Offset: 0x002E45F6
 	public static void Open(XUi _xui)
 	{
 		_xui.playerUI.windowManager.Open(XUiC_ExportPrefab.ID, true);
 	}
 
-	// Token: 0x04005AA5 RID: 23205
+	// Token: 0x04005AD8 RID: 23256
 	public static string ID = "";
 
-	// Token: 0x04005AA6 RID: 23206
+	// Token: 0x04005AD9 RID: 23257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSaveName;
 
-	// Token: 0x04005AA7 RID: 23207
+	// Token: 0x04005ADA RID: 23258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSave;
 
-	// Token: 0x04005AA8 RID: 23208
+	// Token: 0x04005ADB RID: 23259
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSaveLocal;
 
-	// Token: 0x04005AA9 RID: 23209
+	// Token: 0x04005ADC RID: 23260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblPrefabExists;
 
-	// Token: 0x04005AAA RID: 23210
+	// Token: 0x04005ADD RID: 23261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblInvalidName;
 
-	// Token: 0x04005AAB RID: 23211
+	// Token: 0x04005ADE RID: 23262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleAsPart;
 }

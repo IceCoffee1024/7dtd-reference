@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007FC RID: 2044
+// Token: 0x02000806 RID: 2054
 [Preserve]
 public class NetPackageGameMessage : NetPackage
 {
-	// Token: 0x06003C2E RID: 15406 RVA: 0x0018218F File Offset: 0x0018038F
+	// Token: 0x06003C51 RID: 15441 RVA: 0x00183293 File Offset: 0x00181493
 	public NetPackageGameMessage Setup(EnumGameMessages _type, int _mainEntityId, int _secondaryEntityId)
 	{
 		this.msgType = _type;
@@ -14,7 +14,7 @@ public class NetPackageGameMessage : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C2F RID: 15407 RVA: 0x001821A7 File Offset: 0x001803A7
+	// Token: 0x06003C52 RID: 15442 RVA: 0x001832AB File Offset: 0x001814AB
 	public override void read(PooledBinaryReader _br)
 	{
 		this.msgType = (EnumGameMessages)_br.ReadByte();
@@ -22,7 +22,7 @@ public class NetPackageGameMessage : NetPackage
 		this.secondaryEntityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003C30 RID: 15408 RVA: 0x001821CD File Offset: 0x001803CD
+	// Token: 0x06003C53 RID: 15443 RVA: 0x001832D1 File Offset: 0x001814D1
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -31,7 +31,7 @@ public class NetPackageGameMessage : NetPackage
 		_bw.Write(this.secondaryEntityId);
 	}
 
-	// Token: 0x06003C31 RID: 15409 RVA: 0x001821FC File Offset: 0x001803FC
+	// Token: 0x06003C54 RID: 15444 RVA: 0x00183300 File Offset: 0x00181500
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -46,15 +46,15 @@ public class NetPackageGameMessage : NetPackage
 		GameManager.Instance.DisplayGameMessage(this.msgType, this.mainEntityId, this.secondaryEntityId, true);
 	}
 
-	// Token: 0x040030FE RID: 12542
+	// Token: 0x0400311E RID: 12574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumGameMessages msgType;
 
-	// Token: 0x040030FF RID: 12543
+	// Token: 0x0400311F RID: 12575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int mainEntityId;
 
-	// Token: 0x04003100 RID: 12544
+	// Token: 0x04003120 RID: 12576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int secondaryEntityId;
 }

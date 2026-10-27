@@ -3,97 +3,97 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000B58 RID: 2904
+// Token: 0x02000B63 RID: 2915
 public interface IChunkProvider
 {
-	// Token: 0x0600578D RID: 22413
+	// Token: 0x060057B2 RID: 22450
 	IEnumerator Init(World _worldData);
 
-	// Token: 0x0600578E RID: 22414
+	// Token: 0x060057B3 RID: 22451
 	void Update();
 
-	// Token: 0x0600578F RID: 22415
+	// Token: 0x060057B4 RID: 22452
 	void StopUpdate();
 
-	// Token: 0x06005790 RID: 22416
+	// Token: 0x060057B5 RID: 22453
 	void Cleanup();
 
-	// Token: 0x06005791 RID: 22417
+	// Token: 0x060057B6 RID: 22454
 	void RequestChunk(int _x, int _y);
 
-	// Token: 0x06005792 RID: 22418
+	// Token: 0x060057B7 RID: 22455
 	HashSetList<long> GetRequestedChunks();
 
-	// Token: 0x06005793 RID: 22419
+	// Token: 0x060057B8 RID: 22456
 	void SaveAll();
 
-	// Token: 0x06005794 RID: 22420
+	// Token: 0x060057B9 RID: 22457
 	void SaveRandomChunks(int count, ulong _curWorldTimeInTicks, ArraySegment<long> _activeChunkSet);
 
-	// Token: 0x06005795 RID: 22421
+	// Token: 0x060057BA RID: 22458
 	void ReloadAllChunks();
 
-	// Token: 0x06005796 RID: 22422
+	// Token: 0x060057BB RID: 22459
 	void ClearCaches();
 
-	// Token: 0x06005797 RID: 22423
+	// Token: 0x060057BC RID: 22460
 	EnumChunkProviderId GetProviderId();
 
-	// Token: 0x06005798 RID: 22424
+	// Token: 0x060057BD RID: 22461
 	void UnloadChunk(Chunk _chunk);
 
-	// Token: 0x06005799 RID: 22425
+	// Token: 0x060057BE RID: 22462
 	DynamicPrefabDecorator GetDynamicPrefabDecorator();
 
-	// Token: 0x0600579A RID: 22426
+	// Token: 0x060057BF RID: 22463
 	EventPrefabs GetEventPrefabs();
 
-	// Token: 0x0600579B RID: 22427
+	// Token: 0x060057C0 RID: 22464
 	SpawnPointList GetSpawnPointList();
 
-	// Token: 0x0600579C RID: 22428
+	// Token: 0x060057C1 RID: 22465
 	void SetSpawnPointList(SpawnPointList _spawnPointList);
 
-	// Token: 0x0600579D RID: 22429
+	// Token: 0x060057C2 RID: 22466
 	bool GetOverviewMap(Vector2i _startPos, Vector2i _size, Color[] mapColors);
 
-	// Token: 0x0600579E RID: 22430
+	// Token: 0x060057C3 RID: 22467
 	void SetDecorationsEnabled(bool _bEnable);
 
-	// Token: 0x0600579F RID: 22431
+	// Token: 0x060057C4 RID: 22468
 	bool IsDecorationsEnabled();
 
-	// Token: 0x060057A0 RID: 22432
+	// Token: 0x060057C5 RID: 22469
 	bool GetWorldExtent(out Vector3i _minSize, out Vector3i _maxSize);
 
-	// Token: 0x060057A1 RID: 22433
+	// Token: 0x060057C6 RID: 22470
 	BoundsInt GetWorldBounds();
 
-	// Token: 0x060057A2 RID: 22434
+	// Token: 0x060057C7 RID: 22471
 	Vector2i GetWorldSize();
 
-	// Token: 0x060057A3 RID: 22435
+	// Token: 0x060057C8 RID: 22472
 	IBiomeProvider GetBiomeProvider();
 
-	// Token: 0x060057A4 RID: 22436
+	// Token: 0x060057C9 RID: 22473
 	ITerrainGenerator GetTerrainGenerator();
 
-	// Token: 0x060057A5 RID: 22437
+	// Token: 0x060057CA RID: 22474
 	int GetPOIBlockIdOverride(int x, int z);
 
-	// Token: 0x060057A6 RID: 22438
+	// Token: 0x060057CB RID: 22475
 	float GetPOIHeightOverride(int x, int z);
 
-	// Token: 0x060057A7 RID: 22439
+	// Token: 0x060057CC RID: 22476
 	IEnumerator FillOccupiedMap(int xStart, int zStart, DecoOccupiedMap occupiedMap, List<PrefabInstance> overridePOIList = null);
 
-	// Token: 0x060057A8 RID: 22440
+	// Token: 0x060057CD RID: 22477
 	void RebuildTerrain(HashSetLong _chunks, Vector3i _areaStart, Vector3i _areaSize, bool _isStopStabilityCalc, bool _isRegenChunk, bool _isFillEmptyBlocks, bool _isReset);
 
-	// Token: 0x060057A9 RID: 22441
+	// Token: 0x060057CE RID: 22478
 	ChunkProtectionLevel GetChunkProtectionLevel(Vector3i worldPos);
 
-	// Token: 0x17000965 RID: 2405
-	// (get) Token: 0x060057AA RID: 22442
+	// Token: 0x1700096B RID: 2411
+	// (get) Token: 0x060057CF RID: 22479
 	GameUtils.WorldInfo WorldInfo { get; }
 }

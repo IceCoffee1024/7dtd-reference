@@ -3,25 +3,25 @@ using UnityEngine;
 
 namespace WaterClippingTool
 {
-	// Token: 0x02001680 RID: 5760
+	// Token: 0x02001692 RID: 5778
 	public class WaterClippingPlanePlacer : MonoBehaviour
 	{
-		// Token: 0x0600B487 RID: 46215 RVA: 0x00437E09 File Offset: 0x00436009
+		// Token: 0x0600B4DF RID: 46303 RVA: 0x0043A20D File Offset: 0x0043840D
 		public Plane GetPlane()
 		{
 			return new Plane(base.transform.forward, base.transform.position);
 		}
 
-		// Token: 0x04008743 RID: 34627
+		// Token: 0x04008784 RID: 34692
 		public static readonly Plane DisabledPlane = new Plane(Vector3.up, 1000f);
 
-		// Token: 0x04008744 RID: 34628
+		// Token: 0x04008785 RID: 34693
 		public static readonly Vector4 DisabledPlaneVec = new Vector4(0f, 1f, 0f, 1000f);
 
-		// Token: 0x04008745 RID: 34629
+		// Token: 0x04008786 RID: 34694
 		public static readonly Vector3 DefaultModelOffset = new Vector3(1f, 0f, 1f);
 
-		// Token: 0x04008746 RID: 34630
+		// Token: 0x04008787 RID: 34695
 		public ShapeSettings liveSettings;
 	}
 }

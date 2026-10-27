@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B31 RID: 2865
+// Token: 0x02000B3C RID: 2876
 public class ChunkCustomData
 {
-	// Token: 0x06005629 RID: 22057 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600564E RID: 22094 RVA: 0x0000640C File Offset: 0x0000460C
 	public ChunkCustomData()
 	{
 	}
 
-	// Token: 0x0600562A RID: 22058 RVA: 0x00211821 File Offset: 0x0020FA21
+	// Token: 0x0600564F RID: 22095 RVA: 0x00212D9D File Offset: 0x00210F9D
 	public ChunkCustomData(string _key, ulong _expiresInWorldTime, bool _isSavedToNetwork)
 	{
 		this.key = _key;
@@ -17,7 +17,7 @@ public class ChunkCustomData
 		this.isSavedToNetwork = _isSavedToNetwork;
 	}
 
-	// Token: 0x0600562B RID: 22059 RVA: 0x00211840 File Offset: 0x0020FA40
+	// Token: 0x06005650 RID: 22096 RVA: 0x00212DBC File Offset: 0x00210FBC
 	public void Read(BinaryReader _br)
 	{
 		this.key = _br.ReadString();
@@ -32,7 +32,7 @@ public class ChunkCustomData
 		this.data = null;
 	}
 
-	// Token: 0x0600562C RID: 22060 RVA: 0x00211894 File Offset: 0x0020FA94
+	// Token: 0x06005651 RID: 22097 RVA: 0x00212E10 File Offset: 0x00211010
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(this.key);
@@ -49,27 +49,27 @@ public class ChunkCustomData
 		}
 	}
 
-	// Token: 0x0600562D RID: 22061 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005652 RID: 22098 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnRemove(Chunk chunk)
 	{
 	}
 
-	// Token: 0x040042C5 RID: 17093
+	// Token: 0x040042EA RID: 17130
 	public string key;
 
-	// Token: 0x040042C6 RID: 17094
+	// Token: 0x040042EB RID: 17131
 	public ulong expiresInWorldTime;
 
-	// Token: 0x040042C7 RID: 17095
+	// Token: 0x040042EC RID: 17132
 	public bool isSavedToNetwork;
 
-	// Token: 0x040042C8 RID: 17096
+	// Token: 0x040042ED RID: 17133
 	public byte[] data;
 
-	// Token: 0x040042C9 RID: 17097
+	// Token: 0x040042EE RID: 17134
 	public ChunkCustomData.TriggerWriteData TriggerWriteDataDelegate;
 
-	// Token: 0x02000B32 RID: 2866
-	// (Invoke) Token: 0x0600562F RID: 22063
+	// Token: 0x02000B3D RID: 2877
+	// (Invoke) Token: 0x06005654 RID: 22100
 	public delegate void TriggerWriteData();
 }

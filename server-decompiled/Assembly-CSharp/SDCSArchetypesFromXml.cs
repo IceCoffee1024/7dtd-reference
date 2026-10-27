@@ -4,10 +4,10 @@ using System.Globalization;
 using System.IO;
 using System.Xml.Linq;
 
-// Token: 0x02000D00 RID: 3328
+// Token: 0x02000D0B RID: 3339
 public class SDCSArchetypesFromXml
 {
-	// Token: 0x0600655F RID: 25951 RVA: 0x0027CE94 File Offset: 0x0027B094
+	// Token: 0x06006584 RID: 25988 RVA: 0x0027E3BC File Offset: 0x0027C5BC
 	public static void Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -24,7 +24,7 @@ public class SDCSArchetypesFromXml
 		}
 	}
 
-	// Token: 0x06006560 RID: 25952 RVA: 0x0027CF10 File Offset: 0x0027B110
+	// Token: 0x06006585 RID: 25989 RVA: 0x0027E438 File Offset: 0x0027C638
 	public static void Save(string _filename, List<Archetype> _archetypes)
 	{
 		StreamWriter streamWriter = new StreamWriter(GameIO.GetGameDir("Data/Config") + "/" + _filename + ".xml");
@@ -47,7 +47,7 @@ public class SDCSArchetypesFromXml
 		streamWriter.Close();
 	}
 
-	// Token: 0x06006561 RID: 25953 RVA: 0x0027CFCC File Offset: 0x0027B1CC
+	// Token: 0x06006586 RID: 25990 RVA: 0x0027E4F4 File Offset: 0x0027C6F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseArchetype(XElement element)
 	{
@@ -139,7 +139,7 @@ public class SDCSArchetypesFromXml
 		Archetype.SetArchetype(archetype);
 	}
 
-	// Token: 0x06006562 RID: 25954 RVA: 0x0027D2A8 File Offset: 0x0027B4A8
+	// Token: 0x06006587 RID: 25991 RVA: 0x0027E7D0 File Offset: 0x0027C9D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SDCSUtils.SlotData parseEquipment(XElement element)
 	{

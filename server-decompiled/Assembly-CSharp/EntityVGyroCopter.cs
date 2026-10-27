@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020004F6 RID: 1270
+// Token: 0x020004F8 RID: 1272
 [Preserve]
 public class EntityVGyroCopter : EntityDriveable
 {
-	// Token: 0x06002963 RID: 10595 RVA: 0x000FFB1C File Offset: 0x000FDD1C
+	// Token: 0x0600296A RID: 10602 RVA: 0x00100070 File Offset: 0x000FE270
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateWheelsSteering()
 	{

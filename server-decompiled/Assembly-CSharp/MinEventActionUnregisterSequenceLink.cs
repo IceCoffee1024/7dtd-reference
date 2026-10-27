@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F8 RID: 1784
+// Token: 0x02000700 RID: 1792
 [Preserve]
 public class MinEventActionUnregisterSequenceLink : MinEventActionTargetedBase
 {
-	// Token: 0x060036EA RID: 14058 RVA: 0x0016977C File Offset: 0x0016797C
+	// Token: 0x06003701 RID: 14081 RVA: 0x0016A714 File Offset: 0x00168914
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -18,7 +18,7 @@ public class MinEventActionUnregisterSequenceLink : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036EB RID: 14059 RVA: 0x001697CE File Offset: 0x001679CE
+	// Token: 0x06003702 RID: 14082 RVA: 0x0016A766 File Offset: 0x00168966
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -29,7 +29,7 @@ public class MinEventActionUnregisterSequenceLink : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C1A RID: 11290
+	// Token: 0x04002C36 RID: 11318
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string sequenceLink = "";
 }

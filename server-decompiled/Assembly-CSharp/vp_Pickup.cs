@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001607 RID: 5639
+// Token: 0x02001619 RID: 5657
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(AudioSource))]
 public abstract class vp_Pickup : MonoBehaviour
 {
-	// Token: 0x0600AF98 RID: 44952 RVA: 0x00417980 File Offset: 0x00415B80
+	// Token: 0x0600AFF0 RID: 45040 RVA: 0x00419D84 File Offset: 0x00417F84
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -53,7 +53,7 @@ public abstract class vp_Pickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF99 RID: 44953 RVA: 0x00417B38 File Offset: 0x00415D38
+	// Token: 0x0600AFF1 RID: 45041 RVA: 0x00419F3C File Offset: 0x0041813C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -75,7 +75,7 @@ public abstract class vp_Pickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF9A RID: 44954 RVA: 0x00417BCC File Offset: 0x00415DCC
+	// Token: 0x0600AFF2 RID: 45042 RVA: 0x00419FD0 File Offset: 0x004181D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateMotion()
 	{
@@ -104,7 +104,7 @@ public abstract class vp_Pickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF9B RID: 44955 RVA: 0x00417CE0 File Offset: 0x00415EE0
+	// Token: 0x0600AFF3 RID: 45043 RVA: 0x0041A0E4 File Offset: 0x004182E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnTriggerEnter(Collider col)
 	{
@@ -147,21 +147,21 @@ public abstract class vp_Pickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF9C RID: 44956 RVA: 0x00417E3C File Offset: 0x0041603C
+	// Token: 0x0600AFF4 RID: 45044 RVA: 0x0041A240 File Offset: 0x00418440
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnTriggerExit(Collider col)
 	{
 		this.m_AlreadyFailed = false;
 	}
 
-	// Token: 0x0600AF9D RID: 44957 RVA: 0x00417E45 File Offset: 0x00416045
+	// Token: 0x0600AFF5 RID: 45045 RVA: 0x0041A249 File Offset: 0x00418449
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool TryGive(vp_FPPlayerEventHandler player)
 	{
 		return player.AddItem.Try(new object[] { this.InventoryName, 1 });
 	}
 
-	// Token: 0x0600AF9E RID: 44958 RVA: 0x00417E74 File Offset: 0x00416074
+	// Token: 0x0600AFF6 RID: 45046 RVA: 0x0041A278 File Offset: 0x00418478
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Remove()
 	{
@@ -181,7 +181,7 @@ public abstract class vp_Pickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF9F RID: 44959 RVA: 0x00417EDC File Offset: 0x004160DC
+	// Token: 0x0600AFF7 RID: 45047 RVA: 0x0041A2E0 File Offset: 0x004184E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Respawn()
 	{
@@ -221,123 +221,123 @@ public abstract class vp_Pickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AFA0 RID: 44960 RVA: 0x00418008 File Offset: 0x00416208
+	// Token: 0x0600AFF8 RID: 45048 RVA: 0x0041A40C File Offset: 0x0041860C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Pickup()
 	{
 	}
 
-	// Token: 0x04008313 RID: 33555
+	// Token: 0x04008354 RID: 33620
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04008314 RID: 33556
+	// Token: 0x04008355 RID: 33621
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_Rigidbody;
 
-	// Token: 0x04008315 RID: 33557
+	// Token: 0x04008356 RID: 33622
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x04008316 RID: 33558
+	// Token: 0x04008357 RID: 33623
 	public string InventoryName = "Unnamed";
 
-	// Token: 0x04008317 RID: 33559
+	// Token: 0x04008358 RID: 33624
 	public List<string> RecipientTags = new List<string>();
 
-	// Token: 0x04008318 RID: 33560
+	// Token: 0x04008359 RID: 33625
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Collider m_LastCollider;
 
-	// Token: 0x04008319 RID: 33561
+	// Token: 0x0400835A RID: 33626
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Recipient;
 
-	// Token: 0x0400831A RID: 33562
+	// Token: 0x0400835B RID: 33627
 	public string GiveMessage = "Picked up an item";
 
-	// Token: 0x0400831B RID: 33563
+	// Token: 0x0400835C RID: 33628
 	public string FailMessage = "You currently can't pick up this item!";
 
-	// Token: 0x0400831C RID: 33564
+	// Token: 0x0400835D RID: 33629
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_SpawnPosition = Vector3.zero;
 
-	// Token: 0x0400831D RID: 33565
+	// Token: 0x0400835E RID: 33630
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_SpawnScale = Vector3.zero;
 
-	// Token: 0x0400831E RID: 33566
+	// Token: 0x0400835F RID: 33631
 	public bool Billboard;
 
-	// Token: 0x0400831F RID: 33567
+	// Token: 0x04008360 RID: 33632
 	public Vector3 Spin = Vector3.zero;
 
-	// Token: 0x04008320 RID: 33568
+	// Token: 0x04008361 RID: 33633
 	public float BobAmp;
 
-	// Token: 0x04008321 RID: 33569
+	// Token: 0x04008362 RID: 33634
 	public float BobRate;
 
-	// Token: 0x04008322 RID: 33570
+	// Token: 0x04008363 RID: 33635
 	public float BobOffset = -1f;
 
-	// Token: 0x04008323 RID: 33571
+	// Token: 0x04008364 RID: 33636
 	public Vector3 RigidbodyForce = Vector3.zero;
 
-	// Token: 0x04008324 RID: 33572
+	// Token: 0x04008365 RID: 33637
 	public float RigidbodySpin;
 
-	// Token: 0x04008325 RID: 33573
+	// Token: 0x04008366 RID: 33638
 	public float RespawnDuration = 10f;
 
-	// Token: 0x04008326 RID: 33574
+	// Token: 0x04008367 RID: 33639
 	public float RespawnScaleUpDuration;
 
-	// Token: 0x04008327 RID: 33575
+	// Token: 0x04008368 RID: 33640
 	public float RemoveDuration;
 
-	// Token: 0x04008328 RID: 33576
+	// Token: 0x04008369 RID: 33641
 	public AudioClip PickupSound;
 
-	// Token: 0x04008329 RID: 33577
+	// Token: 0x0400836A RID: 33642
 	public AudioClip PickupFailSound;
 
-	// Token: 0x0400832A RID: 33578
+	// Token: 0x0400836B RID: 33643
 	public AudioClip RespawnSound;
 
-	// Token: 0x0400832B RID: 33579
+	// Token: 0x0400836C RID: 33644
 	public bool PickupSoundSlomo = true;
 
-	// Token: 0x0400832C RID: 33580
+	// Token: 0x0400836D RID: 33645
 	public bool FailSoundSlomo = true;
 
-	// Token: 0x0400832D RID: 33581
+	// Token: 0x0400836E RID: 33646
 	public bool RespawnSoundSlomo = true;
 
-	// Token: 0x0400832E RID: 33582
+	// Token: 0x0400836F RID: 33647
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Depleted;
 
-	// Token: 0x0400832F RID: 33583
+	// Token: 0x04008370 RID: 33648
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_AlreadyFailed;
 
-	// Token: 0x04008330 RID: 33584
+	// Token: 0x04008371 RID: 33649
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_RespawnTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008331 RID: 33585
+	// Token: 0x04008372 RID: 33650
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_CameraMainTransform;

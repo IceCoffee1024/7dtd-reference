@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001750 RID: 5968
+	// Token: 0x02001781 RID: 6017
 	public class Rand
 	{
-		// Token: 0x17001709 RID: 5897
-		// (get) Token: 0x0600B9A1 RID: 47521 RVA: 0x0044A99F File Offset: 0x00448B9F
+		// Token: 0x17001751 RID: 5969
+		// (get) Token: 0x0600BAB5 RID: 47797 RVA: 0x0044E34B File Offset: 0x0044C54B
 		public static Rand Instance
 		{
 			get
@@ -20,91 +20,91 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B9A2 RID: 47522 RVA: 0x0044A9B7 File Offset: 0x00448BB7
+		// Token: 0x0600BAB6 RID: 47798 RVA: 0x0044E363 File Offset: 0x0044C563
 		public Rand()
 		{
 			this.gameRandom = GameRandomManager.Instance.CreateGameRandom();
 		}
 
-		// Token: 0x0600B9A3 RID: 47523 RVA: 0x0044A9CF File Offset: 0x00448BCF
+		// Token: 0x0600BAB7 RID: 47799 RVA: 0x0044E37B File Offset: 0x0044C57B
 		public Rand(int seed)
 		{
 			this.gameRandom = GameRandomManager.Instance.CreateGameRandom();
 			this.SetSeed(seed);
 		}
 
-		// Token: 0x0600B9A4 RID: 47524 RVA: 0x0044A9EE File Offset: 0x00448BEE
+		// Token: 0x0600BAB8 RID: 47800 RVA: 0x0044E39A File Offset: 0x0044C59A
 		public void Cleanup()
 		{
 			GameRandomManager.Instance.FreeGameRandom(this.gameRandom);
 			Rand.instance = null;
 		}
 
-		// Token: 0x0600B9A5 RID: 47525 RVA: 0x0044AA06 File Offset: 0x00448C06
+		// Token: 0x0600BAB9 RID: 47801 RVA: 0x0044E3B2 File Offset: 0x0044C5B2
 		public void Free()
 		{
 			GameRandomManager.Instance.FreeGameRandom(this.gameRandom);
 		}
 
-		// Token: 0x0600B9A6 RID: 47526 RVA: 0x0044AA18 File Offset: 0x00448C18
+		// Token: 0x0600BABA RID: 47802 RVA: 0x0044E3C4 File Offset: 0x0044C5C4
 		public void SetSeed(int seed)
 		{
 			this.gameRandom.SetSeed(seed);
 		}
 
-		// Token: 0x0600B9A7 RID: 47527 RVA: 0x0044AA26 File Offset: 0x00448C26
+		// Token: 0x0600BABB RID: 47803 RVA: 0x0044E3D2 File Offset: 0x0044C5D2
 		public float Float()
 		{
 			return this.gameRandom.RandomFloat;
 		}
 
-		// Token: 0x0600B9A8 RID: 47528 RVA: 0x0044AA33 File Offset: 0x00448C33
+		// Token: 0x0600BABC RID: 47804 RVA: 0x0044E3DF File Offset: 0x0044C5DF
 		public int Int()
 		{
 			return this.gameRandom.RandomInt;
 		}
 
-		// Token: 0x0600B9A9 RID: 47529 RVA: 0x0044AA40 File Offset: 0x00448C40
+		// Token: 0x0600BABD RID: 47805 RVA: 0x0044E3EC File Offset: 0x0044C5EC
 		public int Range(int min, int max)
 		{
 			return this.gameRandom.RandomRange(min, max);
 		}
 
-		// Token: 0x0600B9AA RID: 47530 RVA: 0x0044AA4F File Offset: 0x00448C4F
+		// Token: 0x0600BABE RID: 47806 RVA: 0x0044E3FB File Offset: 0x0044C5FB
 		public int Range(int max)
 		{
 			return this.gameRandom.RandomRange(max);
 		}
 
-		// Token: 0x0600B9AB RID: 47531 RVA: 0x0044AA5D File Offset: 0x00448C5D
+		// Token: 0x0600BABF RID: 47807 RVA: 0x0044E409 File Offset: 0x0044C609
 		public float Range(float min, float max)
 		{
 			return this.gameRandom.RandomRange(min, max);
 		}
 
-		// Token: 0x0600B9AC RID: 47532 RVA: 0x0044AA6C File Offset: 0x00448C6C
+		// Token: 0x0600BAC0 RID: 47808 RVA: 0x0044E418 File Offset: 0x0044C618
 		public int Angle()
 		{
 			return this.gameRandom.RandomRange(360);
 		}
 
-		// Token: 0x0600B9AD RID: 47533 RVA: 0x0044AA7E File Offset: 0x00448C7E
+		// Token: 0x0600BAC1 RID: 47809 RVA: 0x0044E42A File Offset: 0x0044C62A
 		public Vector2 RandomOnUnitCircle()
 		{
 			return this.gameRandom.RandomOnUnitCircle;
 		}
 
-		// Token: 0x0600B9AE RID: 47534 RVA: 0x0044AA8B File Offset: 0x00448C8B
+		// Token: 0x0600BAC2 RID: 47810 RVA: 0x0044E437 File Offset: 0x0044C637
 		public int PeekSample()
 		{
 			return this.gameRandom.PeekSample();
 		}
 
-		// Token: 0x04008A7D RID: 35453
+		// Token: 0x04008B66 RID: 35686
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Rand instance;
 
-		// Token: 0x04008A7E RID: 35454
+		// Token: 0x04008B67 RID: 35687
 		public GameRandom gameRandom;
 	}
 }

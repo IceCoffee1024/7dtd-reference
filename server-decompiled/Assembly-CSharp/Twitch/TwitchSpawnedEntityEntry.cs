@@ -2,25 +2,25 @@
 
 namespace Twitch
 {
-	// Token: 0x0200187C RID: 6268
+	// Token: 0x020018AD RID: 6317
 	public class TwitchSpawnedEntityEntry
 	{
-		// Token: 0x040091BF RID: 37311
+		// Token: 0x040092A8 RID: 37544
 		public Entity SpawnedEntity;
 
-		// Token: 0x040091C0 RID: 37312
+		// Token: 0x040092A9 RID: 37545
 		public int SpawnedEntityID = -1;
 
-		// Token: 0x040091C1 RID: 37313
+		// Token: 0x040092AA RID: 37546
 		public TwitchActionEntry Action;
 
-		// Token: 0x040091C2 RID: 37314
+		// Token: 0x040092AB RID: 37547
 		public TwitchEventActionEntry Event;
 
-		// Token: 0x040091C3 RID: 37315
+		// Token: 0x040092AC RID: 37548
 		public TwitchVoteEntry Vote;
 
-		// Token: 0x040091C4 RID: 37316
+		// Token: 0x040092AD RID: 37549
 		public TwitchRespawnEntry RespawnEntry;
 	}
 }

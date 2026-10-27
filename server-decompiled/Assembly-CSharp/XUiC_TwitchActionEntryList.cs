@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010A6 RID: 4262
+// Token: 0x020010B6 RID: 4278
 [Preserve]
 public class XUiC_TwitchActionEntryList : XUiController
 {
-	// Token: 0x17000FF8 RID: 4088
-	// (get) Token: 0x0600875D RID: 34653 RVA: 0x0033BA71 File Offset: 0x00339C71
-	// (set) Token: 0x0600875E RID: 34654 RVA: 0x0033BA79 File Offset: 0x00339C79
+	// Token: 0x17001003 RID: 4099
+	// (get) Token: 0x060087B0 RID: 34736 RVA: 0x0033DAF5 File Offset: 0x0033BCF5
+	// (set) Token: 0x060087B1 RID: 34737 RVA: 0x0033DAFD File Offset: 0x0033BCFD
 	public int Page
 	{
 		get
@@ -33,9 +33,9 @@ public class XUiC_TwitchActionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x17000FF9 RID: 4089
-	// (get) Token: 0x0600875F RID: 34655 RVA: 0x0033BAAF File Offset: 0x00339CAF
-	// (set) Token: 0x06008760 RID: 34656 RVA: 0x0033BAB7 File Offset: 0x00339CB7
+	// Token: 0x17001004 RID: 4100
+	// (get) Token: 0x060087B2 RID: 34738 RVA: 0x0033DB33 File Offset: 0x0033BD33
+	// (set) Token: 0x060087B3 RID: 34739 RVA: 0x0033DB3B File Offset: 0x0033BD3B
 	public XUiC_TwitchActionEntry SelectedEntry
 	{
 		get
@@ -56,7 +56,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06008761 RID: 34657 RVA: 0x0033BAE8 File Offset: 0x00339CE8
+	// Token: 0x060087B4 RID: 34740 RVA: 0x0033DB6C File Offset: 0x0033BD6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetFirstEntry()
 	{
@@ -73,7 +73,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		((XUiC_TwitchInfoWindowGroup)base.WindowGroup.Controller).SetEntry(this.selectedEntry);
 	}
 
-	// Token: 0x06008762 RID: 34658 RVA: 0x0033BB70 File Offset: 0x00339D70
+	// Token: 0x060087B5 RID: 34741 RVA: 0x0033DBF4 File Offset: 0x0033BDF4
 	public override void Init()
 	{
 		base.Init();
@@ -104,7 +104,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06008763 RID: 34659 RVA: 0x0033BC50 File Offset: 0x00339E50
+	// Token: 0x060087B6 RID: 34742 RVA: 0x0033DCD4 File Offset: 0x0033BED4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -150,7 +150,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06008764 RID: 34660 RVA: 0x0033BD88 File Offset: 0x00339F88
+	// Token: 0x060087B7 RID: 34743 RVA: 0x0033DE0C File Offset: 0x0033C00C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressEntry(XUiController _sender, int _mouseButton)
 	{
@@ -162,7 +162,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06008765 RID: 34661 RVA: 0x0033BDBC File Offset: 0x00339FBC
+	// Token: 0x060087B8 RID: 34744 RVA: 0x0033DE40 File Offset: 0x0033C040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnScrollEntry(XUiController _sender, float _delta)
 	{
@@ -188,7 +188,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06008766 RID: 34662 RVA: 0x0033BDE9 File Offset: 0x00339FE9
+	// Token: 0x060087B9 RID: 34745 RVA: 0x0033DE6D File Offset: 0x0033C06D
 	public void SetTwitchActionList(List<TwitchAction> newActionEntryList, TwitchActionPreset currentPreset)
 	{
 		this.CurrentPreset = currentPreset;
@@ -198,7 +198,7 @@ public class XUiC_TwitchActionEntryList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008767 RID: 34663 RVA: 0x0033BE0E File Offset: 0x0033A00E
+	// Token: 0x060087BA RID: 34746 RVA: 0x0033DE92 File Offset: 0x0033C092
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -206,43 +206,43 @@ public class XUiC_TwitchActionEntryList : XUiController
 		this.player = this.xui.playerUI.entityPlayer;
 	}
 
-	// Token: 0x06008768 RID: 34664 RVA: 0x0033BE33 File Offset: 0x0033A033
+	// Token: 0x060087BB RID: 34747 RVA: 0x0033DEB7 File Offset: 0x0033C0B7
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.SelectedEntry = null;
 	}
 
-	// Token: 0x0400649D RID: 25757
+	// Token: 0x040064DC RID: 25820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x0400649E RID: 25758
+	// Token: 0x040064DD RID: 25821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_TwitchActionEntry> entryList = new List<XUiC_TwitchActionEntry>();
 
-	// Token: 0x0400649F RID: 25759
+	// Token: 0x040064DE RID: 25822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x040064A0 RID: 25760
+	// Token: 0x040064DF RID: 25823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TwitchActionEntry selectedEntry;
 
-	// Token: 0x040064A1 RID: 25761
+	// Token: 0x040064E0 RID: 25824
 	public bool setFirstEntry = true;
 
-	// Token: 0x040064A2 RID: 25762
+	// Token: 0x040064E1 RID: 25825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<TwitchAction> actionList = new List<TwitchAction>();
 
-	// Token: 0x040064A3 RID: 25763
+	// Token: 0x040064E2 RID: 25826
 	public XUiC_TwitchEntryListWindow TwitchEntryListWindow;
 
-	// Token: 0x040064A4 RID: 25764
+	// Token: 0x040064E3 RID: 25827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x040064A5 RID: 25765
+	// Token: 0x040064E4 RID: 25828
 	public TwitchActionPreset CurrentPreset;
 }

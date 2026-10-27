@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x02000696 RID: 1686
+// Token: 0x0200069D RID: 1693
 public class IsLookingAtBlock : RequirementBase
 {
-	// Token: 0x0600358F RID: 13711 RVA: 0x00161412 File Offset: 0x0015F612
+	// Token: 0x0600359D RID: 13725 RVA: 0x00162006 File Offset: 0x00160206
 	public override bool IsValid(MinEventParams _params)
 	{
 		return base.IsValid(_params);
 	}
 
-	// Token: 0x06003590 RID: 13712 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600359E RID: 13726 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void raycast()
 	{
 	}
 
-	// Token: 0x06003591 RID: 13713 RVA: 0x00161420 File Offset: 0x0015F620
+	// Token: 0x0600359F RID: 13727 RVA: 0x00162014 File Offset: 0x00160214
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -37,11 +37,11 @@ public class IsLookingAtBlock : RequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B47 RID: 11079
+	// Token: 0x04002B62 RID: 11106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tagsToCompare;
 
-	// Token: 0x04002B48 RID: 11080
+	// Token: 0x04002B63 RID: 11107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAllTags;
 }

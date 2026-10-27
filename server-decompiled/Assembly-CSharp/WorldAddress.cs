@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020008A8 RID: 2216
+// Token: 0x020008B2 RID: 2226
 public readonly struct WorldAddress
 {
-	// Token: 0x06003FD8 RID: 16344 RVA: 0x00191D71 File Offset: 0x0018FF71
+	// Token: 0x06003FFB RID: 16379 RVA: 0x00192E19 File Offset: 0x00191019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldAddress(WorldAddress.WorldObjectType _type, Vector3i _pos, string _featureName, int _entityId)
 	{
@@ -13,7 +13,7 @@ public readonly struct WorldAddress
 		this.entityId = _entityId;
 	}
 
-	// Token: 0x06003FD9 RID: 16345 RVA: 0x00191D90 File Offset: 0x0018FF90
+	// Token: 0x06003FFC RID: 16380 RVA: 0x00192E38 File Offset: 0x00191038
 	public static WorldAddress Create(IHasWorldAddress _target)
 	{
 		if (_target == null)
@@ -23,25 +23,25 @@ public readonly struct WorldAddress
 		return _target.GetAddress();
 	}
 
-	// Token: 0x06003FDA RID: 16346 RVA: 0x00191DB0 File Offset: 0x0018FFB0
+	// Token: 0x06003FFD RID: 16381 RVA: 0x00192E58 File Offset: 0x00191058
 	public static WorldAddress CreateForTileEntity(Vector3i _pos)
 	{
 		return new WorldAddress(WorldAddress.WorldObjectType.TileEntity, _pos, null, -1);
 	}
 
-	// Token: 0x06003FDB RID: 16347 RVA: 0x00191DBB File Offset: 0x0018FFBB
+	// Token: 0x06003FFE RID: 16382 RVA: 0x00192E63 File Offset: 0x00191063
 	public static WorldAddress CreateForTEFeature(Vector3i _pos, string _featureName)
 	{
 		return new WorldAddress(WorldAddress.WorldObjectType.TEFeature, _pos, _featureName ?? string.Empty, -1);
 	}
 
-	// Token: 0x06003FDC RID: 16348 RVA: 0x00191DCF File Offset: 0x0018FFCF
+	// Token: 0x06003FFF RID: 16383 RVA: 0x00192E77 File Offset: 0x00191077
 	public static WorldAddress CreateForEntity(int _entityId)
 	{
 		return new WorldAddress(WorldAddress.WorldObjectType.Entity, Vector3i.zero, null, _entityId);
 	}
 
-	// Token: 0x06003FDD RID: 16349 RVA: 0x00191DE0 File Offset: 0x0018FFE0
+	// Token: 0x06004000 RID: 16384 RVA: 0x00192E88 File Offset: 0x00191088
 	public T Resolve<T>() where T : class, IHasWorldAddress
 	{
 		object obj = null;
@@ -86,7 +86,7 @@ public readonly struct WorldAddress
 		return default(T);
 	}
 
-	// Token: 0x06003FDE RID: 16350 RVA: 0x00191F84 File Offset: 0x00190184
+	// Token: 0x06004001 RID: 16385 RVA: 0x0019302C File Offset: 0x0019122C
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write((byte)this.type);
@@ -107,7 +107,7 @@ public readonly struct WorldAddress
 		}
 	}
 
-	// Token: 0x06003FDF RID: 16351 RVA: 0x00191FF4 File Offset: 0x001901F4
+	// Token: 0x06004002 RID: 16386 RVA: 0x0019309C File Offset: 0x0019129C
 	public static WorldAddress Read(PooledBinaryReader _br)
 	{
 		WorldAddress.WorldObjectType worldObjectType = (WorldAddress.WorldObjectType)_br.ReadByte();
@@ -130,32 +130,32 @@ public readonly struct WorldAddress
 		}
 	}
 
-	// Token: 0x040033C9 RID: 13257
+	// Token: 0x040033E9 RID: 13289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly WorldAddress.WorldObjectType type;
 
-	// Token: 0x040033CA RID: 13258
+	// Token: 0x040033EA RID: 13290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Vector3i pos;
 
-	// Token: 0x040033CB RID: 13259
+	// Token: 0x040033EB RID: 13291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string featureName;
 
-	// Token: 0x040033CC RID: 13260
+	// Token: 0x040033EC RID: 13292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int entityId;
 
-	// Token: 0x020008A9 RID: 2217
+	// Token: 0x020008B3 RID: 2227
 	public enum WorldObjectType : byte
 	{
-		// Token: 0x040033CE RID: 13262
+		// Token: 0x040033EE RID: 13294
 		None,
-		// Token: 0x040033CF RID: 13263
+		// Token: 0x040033EF RID: 13295
 		TileEntity,
-		// Token: 0x040033D0 RID: 13264
+		// Token: 0x040033F0 RID: 13296
 		TEFeature,
-		// Token: 0x040033D1 RID: 13265
+		// Token: 0x040033F1 RID: 13297
 		Entity
 	}
 }

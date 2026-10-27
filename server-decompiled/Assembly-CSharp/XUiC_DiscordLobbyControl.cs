@@ -2,11 +2,11 @@
 using Discord.Sdk;
 using UnityEngine.Scripting;
 
-// Token: 0x0200034B RID: 843
+// Token: 0x0200034D RID: 845
 [Preserve]
 public class XUiC_DiscordLobbyControl : XUiController
 {
-	// Token: 0x0600183C RID: 6204 RVA: 0x0008A89C File Offset: 0x00088A9C
+	// Token: 0x06001840 RID: 6208 RVA: 0x0008AAD0 File Offset: 0x00088CD0
 	public override void Init()
 	{
 		base.Init();
@@ -36,35 +36,35 @@ public class XUiC_DiscordLobbyControl : XUiController
 		}
 	}
 
-	// Token: 0x0600183D RID: 6205 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06001841 RID: 6209 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onLobbyStateChanged(DiscordManager.LobbyInfo _lobby, bool _isReady, bool _isJoined)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600183E RID: 6206 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06001842 RID: 6210 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onCallStatusChanged(DiscordManager.CallInfo _call, Call.Status _callStatus)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600183F RID: 6207 RVA: 0x0008A99E File Offset: 0x00088B9E
+	// Token: 0x06001843 RID: 6211 RVA: 0x0008ABD2 File Offset: 0x00088DD2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnJoinPressed(XUiController _sender, int _mouseButton)
 	{
 		DiscordManager.Instance.JoinLobbyVoice(this.lobbyType);
 	}
 
-	// Token: 0x06001840 RID: 6208 RVA: 0x0008A9B0 File Offset: 0x00088BB0
+	// Token: 0x06001844 RID: 6212 RVA: 0x0008ABE4 File Offset: 0x00088DE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnLeavePressed(XUiController _sender, int _mouseButton)
 	{
 		DiscordManager.Instance.LeaveLobbyVoice(true);
 	}
 
-	// Token: 0x06001841 RID: 6209 RVA: 0x0008A9BD File Offset: 0x00088BBD
+	// Token: 0x06001845 RID: 6213 RVA: 0x0008ABF1 File Offset: 0x00088DF1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -75,7 +75,7 @@ public class XUiC_DiscordLobbyControl : XUiController
 		}
 	}
 
-	// Token: 0x06001842 RID: 6210 RVA: 0x0008A9DC File Offset: 0x00088BDC
+	// Token: 0x06001846 RID: 6214 RVA: 0x0008AC10 File Offset: 0x00088E10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -108,7 +108,7 @@ public class XUiC_DiscordLobbyControl : XUiController
 		return true;
 	}
 
-	// Token: 0x06001843 RID: 6211 RVA: 0x0008AAC6 File Offset: 0x00088CC6
+	// Token: 0x06001847 RID: 6215 RVA: 0x0008ACFA File Offset: 0x00088EFA
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "lobby_type")
@@ -120,11 +120,11 @@ public class XUiC_DiscordLobbyControl : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x04000F9B RID: 3995
+	// Token: 0x04000FAB RID: 4011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DiscordManager.ELobbyType lobbyType;
 
-	// Token: 0x04000F9C RID: 3996
+	// Token: 0x04000FAC RID: 4012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DiscordManager.LobbyInfo lobby;
 }

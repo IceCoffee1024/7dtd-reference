@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000A50 RID: 2640
+// Token: 0x02000A5A RID: 2650
 public class PlayerProfile
 {
-	// Token: 0x170008A1 RID: 2209
-	// (get) Token: 0x06004F54 RID: 20308 RVA: 0x001E37A3 File Offset: 0x001E19A3
-	// (set) Token: 0x06004F55 RID: 20309 RVA: 0x001E37AB File Offset: 0x001E19AB
+	// Token: 0x170008A7 RID: 2215
+	// (get) Token: 0x06004F78 RID: 20344 RVA: 0x001E488B File Offset: 0x001E2A8B
+	// (set) Token: 0x06004F79 RID: 20345 RVA: 0x001E4893 File Offset: 0x001E2A93
 	public bool IsMale
 	{
 		get
@@ -19,9 +19,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A2 RID: 2210
-	// (get) Token: 0x06004F56 RID: 20310 RVA: 0x001E37B4 File Offset: 0x001E19B4
-	// (set) Token: 0x06004F57 RID: 20311 RVA: 0x001E37BC File Offset: 0x001E19BC
+	// Token: 0x170008A8 RID: 2216
+	// (get) Token: 0x06004F7A RID: 20346 RVA: 0x001E489C File Offset: 0x001E2A9C
+	// (set) Token: 0x06004F7B RID: 20347 RVA: 0x001E48A4 File Offset: 0x001E2AA4
 	public string RaceName
 	{
 		get
@@ -34,9 +34,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A3 RID: 2211
-	// (get) Token: 0x06004F58 RID: 20312 RVA: 0x001E37C5 File Offset: 0x001E19C5
-	// (set) Token: 0x06004F59 RID: 20313 RVA: 0x001E37CD File Offset: 0x001E19CD
+	// Token: 0x170008A9 RID: 2217
+	// (get) Token: 0x06004F7C RID: 20348 RVA: 0x001E48AD File Offset: 0x001E2AAD
+	// (set) Token: 0x06004F7D RID: 20349 RVA: 0x001E48B5 File Offset: 0x001E2AB5
 	public string EyeColor
 	{
 		get
@@ -49,9 +49,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A4 RID: 2212
-	// (get) Token: 0x06004F5A RID: 20314 RVA: 0x001E37D6 File Offset: 0x001E19D6
-	// (set) Token: 0x06004F5B RID: 20315 RVA: 0x001E37DE File Offset: 0x001E19DE
+	// Token: 0x170008AA RID: 2218
+	// (get) Token: 0x06004F7E RID: 20350 RVA: 0x001E48BE File Offset: 0x001E2ABE
+	// (set) Token: 0x06004F7F RID: 20351 RVA: 0x001E48C6 File Offset: 0x001E2AC6
 	public string HairName
 	{
 		get
@@ -64,9 +64,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A5 RID: 2213
-	// (get) Token: 0x06004F5C RID: 20316 RVA: 0x001E37E7 File Offset: 0x001E19E7
-	// (set) Token: 0x06004F5D RID: 20317 RVA: 0x001E37EF File Offset: 0x001E19EF
+	// Token: 0x170008AB RID: 2219
+	// (get) Token: 0x06004F80 RID: 20352 RVA: 0x001E48CF File Offset: 0x001E2ACF
+	// (set) Token: 0x06004F81 RID: 20353 RVA: 0x001E48D7 File Offset: 0x001E2AD7
 	public string HairColor
 	{
 		get
@@ -79,9 +79,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A6 RID: 2214
-	// (get) Token: 0x06004F5E RID: 20318 RVA: 0x001E37F8 File Offset: 0x001E19F8
-	// (set) Token: 0x06004F5F RID: 20319 RVA: 0x001E3800 File Offset: 0x001E1A00
+	// Token: 0x170008AC RID: 2220
+	// (get) Token: 0x06004F82 RID: 20354 RVA: 0x001E48E0 File Offset: 0x001E2AE0
+	// (set) Token: 0x06004F83 RID: 20355 RVA: 0x001E48E8 File Offset: 0x001E2AE8
 	public string MustacheName
 	{
 		get
@@ -94,9 +94,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A7 RID: 2215
-	// (get) Token: 0x06004F60 RID: 20320 RVA: 0x001E3809 File Offset: 0x001E1A09
-	// (set) Token: 0x06004F61 RID: 20321 RVA: 0x001E3811 File Offset: 0x001E1A11
+	// Token: 0x170008AD RID: 2221
+	// (get) Token: 0x06004F84 RID: 20356 RVA: 0x001E48F1 File Offset: 0x001E2AF1
+	// (set) Token: 0x06004F85 RID: 20357 RVA: 0x001E48F9 File Offset: 0x001E2AF9
 	public string ChopsName
 	{
 		get
@@ -109,9 +109,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A8 RID: 2216
-	// (get) Token: 0x06004F62 RID: 20322 RVA: 0x001E381A File Offset: 0x001E1A1A
-	// (set) Token: 0x06004F63 RID: 20323 RVA: 0x001E3822 File Offset: 0x001E1A22
+	// Token: 0x170008AE RID: 2222
+	// (get) Token: 0x06004F86 RID: 20358 RVA: 0x001E4902 File Offset: 0x001E2B02
+	// (set) Token: 0x06004F87 RID: 20359 RVA: 0x001E490A File Offset: 0x001E2B0A
 	public string BeardName
 	{
 		get
@@ -124,9 +124,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008A9 RID: 2217
-	// (get) Token: 0x06004F64 RID: 20324 RVA: 0x001E382B File Offset: 0x001E1A2B
-	// (set) Token: 0x06004F65 RID: 20325 RVA: 0x001E3833 File Offset: 0x001E1A33
+	// Token: 0x170008AF RID: 2223
+	// (get) Token: 0x06004F88 RID: 20360 RVA: 0x001E4913 File Offset: 0x001E2B13
+	// (set) Token: 0x06004F89 RID: 20361 RVA: 0x001E491B File Offset: 0x001E2B1B
 	public int VariantNumber
 	{
 		get
@@ -139,9 +139,9 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x170008AA RID: 2218
-	// (get) Token: 0x06004F66 RID: 20326 RVA: 0x001E383C File Offset: 0x001E1A3C
-	// (set) Token: 0x06004F67 RID: 20327 RVA: 0x001E3889 File Offset: 0x001E1A89
+	// Token: 0x170008B0 RID: 2224
+	// (get) Token: 0x06004F8A RID: 20362 RVA: 0x001E4924 File Offset: 0x001E2B24
+	// (set) Token: 0x06004F8B RID: 20363 RVA: 0x001E4971 File Offset: 0x001E2B71
 	public string ProfileArchetype
 	{
 		get
@@ -165,7 +165,7 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x06004F68 RID: 20328 RVA: 0x001E3894 File Offset: 0x001E1A94
+	// Token: 0x06004F8C RID: 20364 RVA: 0x001E497C File Offset: 0x001E2B7C
 	public Archetype CreateTempArchetype()
 	{
 		if (this.archetype != "BaseMale" && this.archetype != "BaseFemale")
@@ -185,8 +185,8 @@ public class PlayerProfile
 		};
 	}
 
-	// Token: 0x170008AB RID: 2219
-	// (get) Token: 0x06004F69 RID: 20329 RVA: 0x001E3943 File Offset: 0x001E1B43
+	// Token: 0x170008B1 RID: 2225
+	// (get) Token: 0x06004F8D RID: 20365 RVA: 0x001E4A2B File Offset: 0x001E2C2B
 	public string EntityClassName
 	{
 		get
@@ -199,7 +199,7 @@ public class PlayerProfile
 		}
 	}
 
-	// Token: 0x06004F6A RID: 20330 RVA: 0x001E3958 File Offset: 0x001E1B58
+	// Token: 0x06004F8E RID: 20366 RVA: 0x001E4A40 File Offset: 0x001E2C40
 	public PlayerProfile()
 	{
 		this.raceName = "white";
@@ -207,7 +207,7 @@ public class PlayerProfile
 		this.variantNumber = 1;
 	}
 
-	// Token: 0x06004F6B RID: 20331 RVA: 0x001E39EC File Offset: 0x001E1BEC
+	// Token: 0x06004F8F RID: 20367 RVA: 0x001E4AD4 File Offset: 0x001E2CD4
 	public PlayerProfile Clone()
 	{
 		return new PlayerProfile
@@ -225,7 +225,7 @@ public class PlayerProfile
 		};
 	}
 
-	// Token: 0x06004F6C RID: 20332 RVA: 0x001E3A78 File Offset: 0x001E1C78
+	// Token: 0x06004F90 RID: 20368 RVA: 0x001E4B60 File Offset: 0x001E2D60
 	public void Write(BinaryWriter writer)
 	{
 		writer.Write(5);
@@ -241,7 +241,7 @@ public class PlayerProfile
 		writer.Write(this.eyeColor ?? "Blue01");
 	}
 
-	// Token: 0x06004F6D RID: 20333 RVA: 0x001E3B3C File Offset: 0x001E1D3C
+	// Token: 0x06004F91 RID: 20369 RVA: 0x001E4C24 File Offset: 0x001E2E24
 	public static PlayerProfile Read(BinaryReader reader)
 	{
 		PlayerProfile playerProfile = new PlayerProfile();
@@ -271,13 +271,13 @@ public class PlayerProfile
 		return playerProfile;
 	}
 
-	// Token: 0x06004F6E RID: 20334 RVA: 0x001E3BDF File Offset: 0x001E1DDF
+	// Token: 0x06004F92 RID: 20370 RVA: 0x001E4CC7 File Offset: 0x001E2EC7
 	public static PlayerProfile LoadLocalProfile()
 	{
 		return PlayerProfile.LoadProfile(ProfileSDF.CurrentProfileName());
 	}
 
-	// Token: 0x06004F6F RID: 20335 RVA: 0x001E3BEC File Offset: 0x001E1DEC
+	// Token: 0x06004F93 RID: 20371 RVA: 0x001E4CD4 File Offset: 0x001E2ED4
 	public static PlayerProfile LoadProfile(string _profileName)
 	{
 		return new PlayerProfile
@@ -295,47 +295,47 @@ public class PlayerProfile
 		};
 	}
 
-	// Token: 0x04003D36 RID: 15670
+	// Token: 0x04003D57 RID: 15703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isMale = true;
 
-	// Token: 0x04003D37 RID: 15671
+	// Token: 0x04003D58 RID: 15704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string raceName = "";
 
-	// Token: 0x04003D38 RID: 15672
+	// Token: 0x04003D59 RID: 15705
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int variantNumber = 1;
 
-	// Token: 0x04003D39 RID: 15673
+	// Token: 0x04003D5A RID: 15706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string archetype = "";
 
-	// Token: 0x04003D3A RID: 15674
+	// Token: 0x04003D5B RID: 15707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string eyeColor = "";
 
-	// Token: 0x04003D3B RID: 15675
+	// Token: 0x04003D5C RID: 15708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hairName = "";
 
-	// Token: 0x04003D3C RID: 15676
+	// Token: 0x04003D5D RID: 15709
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hairColor = "";
 
-	// Token: 0x04003D3D RID: 15677
+	// Token: 0x04003D5E RID: 15710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string mustacheName = "";
 
-	// Token: 0x04003D3E RID: 15678
+	// Token: 0x04003D5F RID: 15711
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string chopsName = "";
 
-	// Token: 0x04003D3F RID: 15679
+	// Token: 0x04003D60 RID: 15712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string beardName = "";
 
-	// Token: 0x04003D40 RID: 15680
+	// Token: 0x04003D61 RID: 15713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int version = 5;
 }

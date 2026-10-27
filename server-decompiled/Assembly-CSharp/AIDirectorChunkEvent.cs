@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200040F RID: 1039
+// Token: 0x02000411 RID: 1041
 [Preserve]
 public class AIDirectorChunkEvent
 {
-	// Token: 0x06002007 RID: 8199 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600200C RID: 8204 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorChunkEvent()
 	{
 	}
 
-	// Token: 0x06002008 RID: 8200 RVA: 0x000C26C8 File Offset: 0x000C08C8
+	// Token: 0x0600200D RID: 8205 RVA: 0x000C2A74 File Offset: 0x000C0C74
 	public AIDirectorChunkEvent(EnumAIDirectorChunkEvent _type, Vector3i _position, float _value, float _duration)
 	{
 		this.EventType = _type;
@@ -20,7 +20,7 @@ public class AIDirectorChunkEvent
 		this.Duration = _duration;
 	}
 
-	// Token: 0x06002009 RID: 8201 RVA: 0x000C26F0 File Offset: 0x000C08F0
+	// Token: 0x0600200E RID: 8206 RVA: 0x000C2A9C File Offset: 0x000C0C9C
 	public void Write(PooledBinaryWriter _stream)
 	{
 		_stream.Write(2);
@@ -32,7 +32,7 @@ public class AIDirectorChunkEvent
 		_stream.Write(this.Duration);
 	}
 
-	// Token: 0x0600200A RID: 8202 RVA: 0x000C275C File Offset: 0x000C095C
+	// Token: 0x0600200F RID: 8207 RVA: 0x000C2B08 File Offset: 0x000C0D08
 	public static AIDirectorChunkEvent Read(PooledBinaryReader _stream)
 	{
 		int num = _stream.ReadInt32();
@@ -53,19 +53,19 @@ public class AIDirectorChunkEvent
 		return aidirectorChunkEvent;
 	}
 
-	// Token: 0x040015CC RID: 5580
+	// Token: 0x040015DC RID: 5596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVersion = 2;
 
-	// Token: 0x040015CD RID: 5581
+	// Token: 0x040015DD RID: 5597
 	public EnumAIDirectorChunkEvent EventType;
 
-	// Token: 0x040015CE RID: 5582
+	// Token: 0x040015DE RID: 5598
 	public Vector3i Position;
 
-	// Token: 0x040015CF RID: 5583
+	// Token: 0x040015DF RID: 5599
 	public float Value;
 
-	// Token: 0x040015D0 RID: 5584
+	// Token: 0x040015E0 RID: 5600
 	public float Duration;
 }

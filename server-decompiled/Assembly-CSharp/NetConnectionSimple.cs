@@ -5,10 +5,10 @@ using System.Threading;
 using Noemax.GZip;
 using UnityEngine.Networking;
 
-// Token: 0x02000775 RID: 1909
+// Token: 0x0200077D RID: 1917
 public class NetConnectionSimple : NetConnectionAbs
 {
-	// Token: 0x0600390C RID: 14604 RVA: 0x00174860 File Offset: 0x00172A60
+	// Token: 0x06003923 RID: 14627 RVA: 0x001757F8 File Offset: 0x001739F8
 	public NetConnectionSimple(int _channel, ClientInfo _clientInfo, INetworkClient _netClient, string _uniqueId, int _reservedHeaderBytes = 0, int _maxPacketSize = 0)
 		: base(_channel, _clientInfo, _netClient, _uniqueId)
 	{
@@ -35,7 +35,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerThreadInfo = ThreadManager.StartThread("NCS_Writer_" + this.connectionIdentifier, new ThreadManager.ThreadFunctionDelegate(this.taskSerialize), null, null, true, false);
 	}
 
-	// Token: 0x0600390D RID: 14605 RVA: 0x0017498C File Offset: 0x00172B8C
+	// Token: 0x06003924 RID: 14628 RVA: 0x00175924 File Offset: 0x00173B24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitStreams(bool _full)
 	{
@@ -92,7 +92,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerStream.SetLength(0L);
 	}
 
-	// Token: 0x0600390E RID: 14606 RVA: 0x00174C29 File Offset: 0x00172E29
+	// Token: 0x06003925 RID: 14629 RVA: 0x00175BC1 File Offset: 0x00173DC1
 	public override void Disconnect(bool _kick)
 	{
 		base.Disconnect(_kick);
@@ -100,7 +100,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerTriggerEvent.Set();
 	}
 
-	// Token: 0x0600390F RID: 14607 RVA: 0x00174C4C File Offset: 0x00172E4C
+	// Token: 0x06003926 RID: 14630 RVA: 0x00175BE4 File Offset: 0x00173DE4
 	public override void AddToSendQueue(NetPackage _package)
 	{
 		_package.RegisterSendQueue();
@@ -111,7 +111,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x06003910 RID: 14608 RVA: 0x00174C98 File Offset: 0x00172E98
+	// Token: 0x06003927 RID: 14631 RVA: 0x00175C30 File Offset: 0x00173E30
 	public override void FlushSendQueue()
 	{
 		object obj = this.writerListLockObj;
@@ -121,7 +121,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x06003911 RID: 14609 RVA: 0x00174CE0 File Offset: 0x00172EE0
+	// Token: 0x06003928 RID: 14632 RVA: 0x00175C78 File Offset: 0x00173E78
 	public override void AppendToReaderStream(byte[] _data, int _dataSize)
 	{
 		if (this.bDisconnected)
@@ -136,7 +136,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.readerTriggerEvent.Set();
 	}
 
-	// Token: 0x06003912 RID: 14610 RVA: 0x00174D44 File Offset: 0x00172F44
+	// Token: 0x06003929 RID: 14633 RVA: 0x00175CDC File Offset: 0x00173EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void taskDeserialize(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -292,7 +292,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x06003913 RID: 14611 RVA: 0x00175224 File Offset: 0x00173424
+	// Token: 0x0600392A RID: 14634 RVA: 0x001761BC File Offset: 0x001743BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void taskSerialize(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -516,7 +516,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x06003914 RID: 14612 RVA: 0x00175840 File Offset: 0x00173A40
+	// Token: 0x0600392B RID: 14635 RVA: 0x001767D8 File Offset: 0x001749D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int WriteToPackageStagingStream(NetPackage package)
 	{
@@ -554,7 +554,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		return num;
 	}
 
-	// Token: 0x06003915 RID: 14613 RVA: 0x00175950 File Offset: 0x00173B50
+	// Token: 0x0600392C RID: 14636 RVA: 0x001768E8 File Offset: 0x00174AE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StreamToBuffer(ref MemoryStream uncompressedStream, bool sendReliable, ref int packagesToSend, long milliseconds)
 	{
@@ -603,7 +603,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerStream.SetLength(0L);
 	}
 
-	// Token: 0x06003916 RID: 14614 RVA: 0x00175B48 File Offset: 0x00173D48
+	// Token: 0x0600392D RID: 14637 RVA: 0x00176AE0 File Offset: 0x00174CE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetworkError SendBuffers()
 	{
@@ -619,7 +619,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		return NetworkError.Ok;
 	}
 
-	// Token: 0x06003917 RID: 14615 RVA: 0x00175B7C File Offset: 0x00173D7C
+	// Token: 0x0600392E RID: 14638 RVA: 0x00176B14 File Offset: 0x00174D14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetworkError sendBuffersFromQueue(LinkedList<ArrayListMP<byte>> _sendQueue, bool _reliableDelivery)
 	{
@@ -652,7 +652,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		return NetworkError.Ok;
 	}
 
-	// Token: 0x06003918 RID: 14616 RVA: 0x00175C24 File Offset: 0x00173E24
+	// Token: 0x0600392F RID: 14639 RVA: 0x00176BBC File Offset: 0x00174DBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayListMP<byte> splitSendBuffer(ArrayListMP<byte> _inBuf, LinkedList<ArrayListMP<byte>> _sendQueue)
 	{
@@ -686,137 +686,137 @@ public class NetConnectionSimple : NetConnectionAbs
 		return null;
 	}
 
-	// Token: 0x04002E90 RID: 11920
+	// Token: 0x04002EAC RID: 11948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int reservedHeaderBytes;
 
-	// Token: 0x04002E91 RID: 11921
+	// Token: 0x04002EAD RID: 11949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int maxPacketSize;
 
-	// Token: 0x04002E92 RID: 11922
+	// Token: 0x04002EAE RID: 11950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int maxPayloadPerPacket;
 
-	// Token: 0x04002E93 RID: 11923
+	// Token: 0x04002EAF RID: 11951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int sendFrameHeaderBytes = 8;
 
-	// Token: 0x04002E94 RID: 11924
+	// Token: 0x04002EB0 RID: 11952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object writerListLockObj = new object();
 
-	// Token: 0x04002E95 RID: 11925
+	// Token: 0x04002EB1 RID: 11953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<NetPackage> writerListPending = new List<NetPackage>();
 
-	// Token: 0x04002E96 RID: 11926
+	// Token: 0x04002EB2 RID: 11954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ManualResetEvent writerTriggerEvent = new ManualResetEvent(false);
 
-	// Token: 0x04002E97 RID: 11927
+	// Token: 0x04002EB3 RID: 11955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] writerBuffer;
 
-	// Token: 0x04002E98 RID: 11928
+	// Token: 0x04002EB4 RID: 11956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo writerThreadInfo;
 
-	// Token: 0x04002E99 RID: 11929
+	// Token: 0x04002EB5 RID: 11957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryWriter reliableSendStreamWriter;
 
-	// Token: 0x04002E9A RID: 11930
+	// Token: 0x04002EB6 RID: 11958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryWriter unreliableSendStreamWriter;
 
-	// Token: 0x04002E9B RID: 11931
+	// Token: 0x04002EB7 RID: 11959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryWriter packageStagingStreamWriter;
 
-	// Token: 0x04002E9C RID: 11932
+	// Token: 0x04002EB8 RID: 11960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream packageStagingStream;
 
-	// Token: 0x04002E9D RID: 11933
+	// Token: 0x04002EB9 RID: 11961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream reliableSendStreamUncompressed;
 
-	// Token: 0x04002E9E RID: 11934
+	// Token: 0x04002EBA RID: 11962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream unreliableSendStreamUncompressed;
 
-	// Token: 0x04002E9F RID: 11935
+	// Token: 0x04002EBB RID: 11963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream sendStreamCompressed;
 
-	// Token: 0x04002EA0 RID: 11936
+	// Token: 0x04002EBC RID: 11964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DeflateOutputStream sendZipStream;
 
-	// Token: 0x04002EA1 RID: 11937
+	// Token: 0x04002EBD RID: 11965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream writerStream;
 
-	// Token: 0x04002EA2 RID: 11938
+	// Token: 0x04002EBE RID: 11966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<ArrayListMP<byte>> reliableBufsToSend = new LinkedList<ArrayListMP<byte>>();
 
-	// Token: 0x04002EA3 RID: 11939
+	// Token: 0x04002EBF RID: 11967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<ArrayListMP<byte>> unreliableBufsToSend = new LinkedList<ArrayListMP<byte>>();
 
-	// Token: 0x04002EA4 RID: 11940
+	// Token: 0x04002EC0 RID: 11968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ManualResetEvent readerTriggerEvent = new ManualResetEvent(false);
 
-	// Token: 0x04002EA5 RID: 11941
+	// Token: 0x04002EC1 RID: 11969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo readerThreadInfo;
 
-	// Token: 0x04002EA6 RID: 11942
+	// Token: 0x04002EC2 RID: 11970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] readerBuffer;
 
-	// Token: 0x04002EA7 RID: 11943
+	// Token: 0x04002EC3 RID: 11971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream receiveStreamCompressed;
 
-	// Token: 0x04002EA8 RID: 11944
+	// Token: 0x04002EC4 RID: 11972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream receiveStreamUncompressed;
 
-	// Token: 0x04002EA9 RID: 11945
+	// Token: 0x04002EC5 RID: 11973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DeflateInputStream receiveZipStream;
 
-	// Token: 0x04002EAA RID: 11946
+	// Token: 0x04002EC6 RID: 11974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly PooledBinaryReader receiveStreamReader = new PooledBinaryReader();
 
-	// Token: 0x04002EAB RID: 11947
+	// Token: 0x04002EC7 RID: 11975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Queue<NetConnectionSimple.RecvBuffer> receivedBuffers = new Queue<NetConnectionSimple.RecvBuffer>();
 
-	// Token: 0x04002EAC RID: 11948
+	// Token: 0x04002EC8 RID: 11976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int networkErrorCooldownMs = 500;
 
-	// Token: 0x02000776 RID: 1910
+	// Token: 0x0200077E RID: 1918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RecvBuffer
 	{
-		// Token: 0x06003919 RID: 14617 RVA: 0x00175CD8 File Offset: 0x00173ED8
+		// Token: 0x06003930 RID: 14640 RVA: 0x00176C70 File Offset: 0x00174E70
 		public RecvBuffer(byte[] _data, int _size)
 		{
 			this.Data = _data;
 			this.Size = _size;
 		}
 
-		// Token: 0x04002EAD RID: 11949
+		// Token: 0x04002EC9 RID: 11977
 		public readonly byte[] Data;
 
-		// Token: 0x04002EAE RID: 11950
+		// Token: 0x04002ECA RID: 11978
 		public readonly int Size;
 	}
 }

@@ -3,11 +3,11 @@ using Audio;
 using DynamicMusic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000715 RID: 1813
+// Token: 0x0200071D RID: 1821
 [Preserve]
 public class MinEventActionStopSound : MinEventActionSoundBase
 {
-	// Token: 0x06003748 RID: 14152 RVA: 0x0016BD8C File Offset: 0x00169F8C
+	// Token: 0x0600375F RID: 14175 RVA: 0x0016CD24 File Offset: 0x0016AF24
 	public override void Execute(MinEventParams _params)
 	{
 		string soundGroupForTarget = base.GetSoundGroupForTarget();

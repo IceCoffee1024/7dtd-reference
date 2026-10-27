@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockInfo : Block
 {
-	// Token: 0x060007B8 RID: 1976 RVA: 0x00036C18 File Offset: 0x00034E18
+	// Token: 0x060007B8 RID: 1976 RVA: 0x00036BD8 File Offset: 0x00034DD8
 	public override void Init()
 	{
 		base.Init();
@@ -16,13 +16,13 @@ public class BlockInfo : Block
 		base.Properties.ParseFloat(BlockInfo.PropTakeDelay, ref this.TakeDelay);
 	}
 
-	// Token: 0x060007B9 RID: 1977 RVA: 0x00036C78 File Offset: 0x00034E78
+	// Token: 0x060007B9 RID: 1977 RVA: 0x00036C38 File Offset: 0x00034E38
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return this.TakeDelay > 0f;
 	}
 
-	// Token: 0x060007BA RID: 1978 RVA: 0x00036C88 File Offset: 0x00034E88
+	// Token: 0x060007BA RID: 1978 RVA: 0x00036C48 File Offset: 0x00034E48
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -30,7 +30,7 @@ public class BlockInfo : Block
 		return this.cmds;
 	}
 
-	// Token: 0x060007BB RID: 1979 RVA: 0x00036CD4 File Offset: 0x00034ED4
+	// Token: 0x060007BB RID: 1979 RVA: 0x00036C94 File Offset: 0x00034E94
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		string text;
@@ -52,7 +52,7 @@ public class BlockInfo : Block
 		return text;
 	}
 
-	// Token: 0x060007BC RID: 1980 RVA: 0x00036D9C File Offset: 0x00034F9C
+	// Token: 0x060007BC RID: 1980 RVA: 0x00036D5C File Offset: 0x00034F5C
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "take")

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020015B7 RID: 5559
+// Token: 0x020015C9 RID: 5577
 public class vp_DemoManager
 {
-	// Token: 0x0600AD95 RID: 44437 RVA: 0x00409774 File Offset: 0x00407974
+	// Token: 0x0600ADED RID: 44525 RVA: 0x0040BB78 File Offset: 0x00409D78
 	public vp_DemoManager()
 	{
 		this.DesktopResolution = Screen.currentResolution;
@@ -13,7 +13,7 @@ public class vp_DemoManager
 		this.m_FullScreenFadeTexture = new Texture2D(1, 1, TextureFormat.RGB24, false);
 	}
 
-	// Token: 0x0600AD96 RID: 44438 RVA: 0x00409828 File Offset: 0x00407A28
+	// Token: 0x0600ADEE RID: 44526 RVA: 0x0040BC2C File Offset: 0x00409E2C
 	public virtual void Update()
 	{
 		if (double.IsNaN((double)Camera.main.fieldOfView))
@@ -40,7 +40,7 @@ public class vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD97 RID: 44439 RVA: 0x004098DC File Offset: 0x00407ADC
+	// Token: 0x0600ADEF RID: 44527 RVA: 0x0040BCE0 File Offset: 0x00409EE0
 	public bool ButtonToggle(Rect rect, string label, bool state, bool arrow, Texture imageUpPointer)
 	{
 		if (!this.ShowGUI)
@@ -72,7 +72,7 @@ public class vp_DemoManager
 		return state;
 	}
 
-	// Token: 0x0600AD98 RID: 44440 RVA: 0x00409A34 File Offset: 0x00407C34
+	// Token: 0x0600ADF0 RID: 44528 RVA: 0x0040BE38 File Offset: 0x0040A038
 	public void DrawBoxes(string caption, string description, Texture imageLeftArrow, Texture imageRightArrow, vp_DemoManager.LoadLevelCallback nextLevelCallback = null, vp_DemoManager.LoadLevelCallback prevLevelCallback = null, bool drawBox = true)
 	{
 		if (!this.ShowGUI)
@@ -139,7 +139,7 @@ public class vp_DemoManager
 		GUI.color = new Color(1f, 1f, 1f, this.m_TextAlpha * this.GlobalAlpha);
 	}
 
-	// Token: 0x0600AD99 RID: 44441 RVA: 0x00409D28 File Offset: 0x00407F28
+	// Token: 0x0600ADF1 RID: 44529 RVA: 0x0040C12C File Offset: 0x0040A32C
 	public int ToggleColumn(int width, int y, int sel, string[] strings, bool center, bool arrow, Texture imageRightPointer, Texture imageLeftPointer)
 	{
 		if (!this.ShowGUI)
@@ -207,7 +207,7 @@ public class vp_DemoManager
 		return sel;
 	}
 
-	// Token: 0x0600AD9A RID: 44442 RVA: 0x00409F0C File Offset: 0x0040810C
+	// Token: 0x0600ADF2 RID: 44530 RVA: 0x0040C310 File Offset: 0x0040A510
 	public int ButtonColumn(int y, int sel, string[] strings, Texture imagePointer)
 	{
 		if (!this.ShowGUI)
@@ -240,7 +240,7 @@ public class vp_DemoManager
 		return sel;
 	}
 
-	// Token: 0x0600AD9B RID: 44443 RVA: 0x0040A061 File Offset: 0x00408261
+	// Token: 0x0600ADF3 RID: 44531 RVA: 0x0040C465 File Offset: 0x0040A665
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Reset()
 	{
@@ -249,7 +249,7 @@ public class vp_DemoManager
 		this.LastInputTime = Time.time;
 	}
 
-	// Token: 0x0600AD9C RID: 44444 RVA: 0x0040A07C File Offset: 0x0040827C
+	// Token: 0x0600ADF4 RID: 44532 RVA: 0x0040C480 File Offset: 0x0040A680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitGUIStyles()
 	{
@@ -263,7 +263,7 @@ public class vp_DemoManager
 		this.m_StylesInitialized = true;
 	}
 
-	// Token: 0x0600AD9D RID: 44445 RVA: 0x0040A114 File Offset: 0x00408314
+	// Token: 0x0600ADF5 RID: 44533 RVA: 0x0040C518 File Offset: 0x0040A718
 	public void DrawImage(Texture image, float xOffset, float yOffset)
 	{
 		if (!this.ShowGUI)
@@ -280,13 +280,13 @@ public class vp_DemoManager
 		GUI.DrawTexture(new Rect(num - num2 / 2f + xOffset, 140f + yOffset, num2, num2 * num3), image);
 	}
 
-	// Token: 0x0600AD9E RID: 44446 RVA: 0x0040A17E File Offset: 0x0040837E
+	// Token: 0x0600ADF6 RID: 44534 RVA: 0x0040C582 File Offset: 0x0040A782
 	public void DrawImage(Texture image)
 	{
 		this.DrawImage(image, 0f, 0f);
 	}
 
-	// Token: 0x0600AD9F RID: 44447 RVA: 0x0040A194 File Offset: 0x00408394
+	// Token: 0x0600ADF7 RID: 44535 RVA: 0x0040C598 File Offset: 0x0040A798
 	public void DrawEditorPreview(Texture section, Texture imageEditorPreview, Texture imageEditorScreenshot)
 	{
 		if (!this.ShowGUI)
@@ -329,7 +329,7 @@ public class vp_DemoManager
 		GUI.color = color;
 	}
 
-	// Token: 0x0600ADA0 RID: 44448 RVA: 0x0040A398 File Offset: 0x00408598
+	// Token: 0x0600ADF8 RID: 44536 RVA: 0x0040C79C File Offset: 0x0040A99C
 	public void DrawFullScreenText(Texture imageFullScreen)
 	{
 		if (!this.ShowGUI)
@@ -349,7 +349,7 @@ public class vp_DemoManager
 		GUI.color = new Color(1f, 1f, 1f, 1f * this.GlobalAlpha);
 	}
 
-	// Token: 0x0600ADA1 RID: 44449 RVA: 0x0040A45C File Offset: 0x0040865C
+	// Token: 0x0600ADF9 RID: 44537 RVA: 0x0040C860 File Offset: 0x0040AA60
 	public void DoScreenTransition()
 	{
 		if (!this.ShowGUI)
@@ -379,14 +379,14 @@ public class vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600ADA2 RID: 44450 RVA: 0x0040A503 File Offset: 0x00408703
+	// Token: 0x0600ADFA RID: 44538 RVA: 0x0040C907 File Offset: 0x0040AB07
 	public void SetScreen(int screen)
 	{
 		this.m_FadeToScreen = screen;
 		this.m_FadeState = vp_DemoManager.FadeState.FadeOut;
 	}
 
-	// Token: 0x0600ADA3 RID: 44451 RVA: 0x0040A514 File Offset: 0x00408714
+	// Token: 0x0600ADFB RID: 44539 RVA: 0x0040C918 File Offset: 0x0040AB18
 	public void OnGUI()
 	{
 		if (!this.m_StylesInitialized)
@@ -418,7 +418,7 @@ public class vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600ADA4 RID: 44452 RVA: 0x0040A664 File Offset: 0x00408864
+	// Token: 0x0600ADFC RID: 44540 RVA: 0x0040CA68 File Offset: 0x0040AC68
 	public void LoadLevel(int level)
 	{
 		this.ClosingDown = true;
@@ -432,121 +432,121 @@ public class vp_DemoManager
 		}, null);
 	}
 
-	// Token: 0x04008049 RID: 32841
+	// Token: 0x0400808A RID: 32906
 	public GUIStyle UpStyle;
 
-	// Token: 0x0400804A RID: 32842
+	// Token: 0x0400808B RID: 32907
 	public GUIStyle LabelStyle;
 
-	// Token: 0x0400804B RID: 32843
+	// Token: 0x0400808C RID: 32908
 	public GUIStyle DownStyle;
 
-	// Token: 0x0400804C RID: 32844
+	// Token: 0x0400808D RID: 32909
 	public GUIStyle CenterStyle;
 
-	// Token: 0x0400804D RID: 32845
+	// Token: 0x0400808E RID: 32910
 	public int CurrentScreen = 1;
 
-	// Token: 0x0400804E RID: 32846
+	// Token: 0x0400808F RID: 32911
 	public Resolution DesktopResolution;
 
-	// Token: 0x0400804F RID: 32847
+	// Token: 0x04008090 RID: 32912
 	public bool FirstFrame = true;
 
-	// Token: 0x04008050 RID: 32848
+	// Token: 0x04008091 RID: 32913
 	public bool EditorPreviewSectionExpanded = true;
 
-	// Token: 0x04008051 RID: 32849
+	// Token: 0x04008092 RID: 32914
 	public bool ShowGUI = true;
 
-	// Token: 0x04008052 RID: 32850
+	// Token: 0x04008093 RID: 32915
 	public float ButtonColumnClickTime;
 
-	// Token: 0x04008053 RID: 32851
+	// Token: 0x04008094 RID: 32916
 	public float ButtonColumnArrowY = -100f;
 
-	// Token: 0x04008054 RID: 32852
+	// Token: 0x04008095 RID: 32917
 	public float ButtonColumnArrowFadeoutTime;
 
-	// Token: 0x04008055 RID: 32853
+	// Token: 0x04008096 RID: 32918
 	public int ButtonSelection;
 
-	// Token: 0x04008056 RID: 32854
+	// Token: 0x04008097 RID: 32919
 	public float LastInputTime;
 
-	// Token: 0x04008057 RID: 32855
+	// Token: 0x04008098 RID: 32920
 	public bool FadeGUIOnCursorLock = true;
 
-	// Token: 0x04008058 RID: 32856
+	// Token: 0x04008099 RID: 32921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_FadeSpeed = 0.03f;
 
-	// Token: 0x04008059 RID: 32857
+	// Token: 0x0400809A RID: 32922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_FadeToScreen;
 
-	// Token: 0x0400805A RID: 32858
+	// Token: 0x0400809B RID: 32923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_StylesInitialized;
 
-	// Token: 0x0400805B RID: 32859
+	// Token: 0x0400809C RID: 32924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public vp_DemoManager.FadeState m_FadeState;
 
-	// Token: 0x0400805C RID: 32860
+	// Token: 0x0400809D RID: 32925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D m_FullScreenFadeTexture;
 
-	// Token: 0x0400805D RID: 32861
+	// Token: 0x0400809E RID: 32926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_FullScreenFadeOutDuration = 0.5f;
 
-	// Token: 0x0400805E RID: 32862
+	// Token: 0x0400809F RID: 32927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_FullScreenFadeInDuration = 0.75f;
 
-	// Token: 0x0400805F RID: 32863
+	// Token: 0x040080A0 RID: 32928
 	public float CurrentFullScreenFadeTime;
 
-	// Token: 0x04008060 RID: 32864
+	// Token: 0x040080A1 RID: 32929
 	public bool ClosingDown;
 
-	// Token: 0x04008061 RID: 32865
+	// Token: 0x040080A2 RID: 32930
 	public float GlobalAlpha = 0.35f;
 
-	// Token: 0x04008062 RID: 32866
+	// Token: 0x040080A3 RID: 32931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_TextAlpha = 1f;
 
-	// Token: 0x04008063 RID: 32867
+	// Token: 0x040080A4 RID: 32932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_EditorPreviewScreenshotTextAlpha;
 
-	// Token: 0x04008064 RID: 32868
+	// Token: 0x040080A5 RID: 32933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_FullScreenTextAlpha = 1f;
 
-	// Token: 0x04008065 RID: 32869
+	// Token: 0x040080A6 RID: 32934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_BigArrowFadeAlpha = 1f;
 
-	// Token: 0x04008066 RID: 32870
+	// Token: 0x040080A7 RID: 32935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_SimulateLowFPS;
 
-	// Token: 0x020015B8 RID: 5560
+	// Token: 0x020015CA RID: 5578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum FadeState
 	{
-		// Token: 0x04008068 RID: 32872
+		// Token: 0x040080A9 RID: 32937
 		None,
-		// Token: 0x04008069 RID: 32873
+		// Token: 0x040080AA RID: 32938
 		FadeOut,
-		// Token: 0x0400806A RID: 32874
+		// Token: 0x040080AB RID: 32939
 		FadeIn
 	}
 
-	// Token: 0x020015B9 RID: 5561
-	// (Invoke) Token: 0x0600ADA6 RID: 44454
+	// Token: 0x020015CB RID: 5579
+	// (Invoke) Token: 0x0600ADFE RID: 44542
 	public delegate void LoadLevelCallback();
 }

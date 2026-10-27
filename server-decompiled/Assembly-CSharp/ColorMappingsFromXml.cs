@@ -4,10 +4,10 @@ using System.Xml.Linq;
 using UnityEngine;
 using XMLData;
 
-// Token: 0x02000D0E RID: 3342
+// Token: 0x02000D19 RID: 3353
 public class ColorMappingsFromXml : MonoBehaviour
 {
-	// Token: 0x060065AD RID: 26029 RVA: 0x0028003E File Offset: 0x0027E23E
+	// Token: 0x060065D2 RID: 26066 RVA: 0x00281566 File Offset: 0x0027F766
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

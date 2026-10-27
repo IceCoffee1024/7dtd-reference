@@ -3,10 +3,10 @@ using System.Buffers.Binary;
 using System.IO;
 using Force.Crc32;
 
-// Token: 0x02000ACA RID: 2762
+// Token: 0x02000AD4 RID: 2772
 public static class SignStoreIO
 {
-	// Token: 0x0600526D RID: 21101 RVA: 0x001F90B4 File Offset: 0x001F72B4
+	// Token: 0x06005291 RID: 21137 RVA: 0x001FA190 File Offset: 0x001F8390
 	public unsafe static void BeginImage(PooledExpandableMemoryStream image)
 	{
 		image.SetLength(0L);
@@ -16,7 +16,7 @@ public static class SignStoreIO
 		image.Write(span);
 	}
 
-	// Token: 0x0600526E RID: 21102 RVA: 0x001F90F4 File Offset: 0x001F72F4
+	// Token: 0x06005292 RID: 21138 RVA: 0x001FA1D0 File Offset: 0x001F83D0
 	public unsafe static void FinalizeImage(PooledExpandableMemoryStream image, uint magic, int version, int recordCount, byte flags = 0)
 	{
 		long num = image.Length - 32L;
@@ -39,7 +39,7 @@ public static class SignStoreIO
 		image.Position = 0L;
 	}
 
-	// Token: 0x0600526F RID: 21103 RVA: 0x001F91CE File Offset: 0x001F73CE
+	// Token: 0x06005293 RID: 21139 RVA: 0x001FA2AA File Offset: 0x001F84AA
 	public static void WriteWithBackup(string path, PooledExpandableMemoryStream image)
 	{
 		image.Position = 0L;
@@ -50,7 +50,7 @@ public static class SignStoreIO
 		}
 	}
 
-	// Token: 0x06005270 RID: 21104 RVA: 0x001F9204 File Offset: 0x001F7404
+	// Token: 0x06005294 RID: 21140 RVA: 0x001FA2E0 File Offset: 0x001F84E0
 	public static bool TryReadAllBytes(string logTag, string path, out byte[] image)
 	{
 		image = null;
@@ -103,7 +103,7 @@ public static class SignStoreIO
 		return flag;
 	}
 
-	// Token: 0x06005271 RID: 21105 RVA: 0x001F9340 File Offset: 0x001F7540
+	// Token: 0x06005295 RID: 21141 RVA: 0x001FA41C File Offset: 0x001F861C
 	public unsafe static bool TryValidateHeader(string logTag, string path, byte[] image, uint magic, int minReadableVersion, int currentVersion, out int version, out int recordCount, out byte flags)
 	{
 		version = 0;
@@ -138,9 +138,9 @@ public static class SignStoreIO
 		return true;
 	}
 
-	// Token: 0x04004013 RID: 16403
+	// Token: 0x04004034 RID: 16436
 	public const int cHeaderSize = 32;
 
-	// Token: 0x04004014 RID: 16404
+	// Token: 0x04004035 RID: 16437
 	public const string cBackupExt = ".bak";
 }

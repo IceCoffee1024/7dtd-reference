@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x0200157F RID: 5503
+// Token: 0x02001591 RID: 5521
 [Preserve]
 public class vp_Message : vp_Event
 {
-	// Token: 0x0600AC2E RID: 44078 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AC86 RID: 44166 RVA: 0x000027FC File Offset: 0x000009FC
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void Empty()
 	{
 	}
 
-	// Token: 0x0600AC2F RID: 44079 RVA: 0x0040160D File Offset: 0x003FF80D
+	// Token: 0x0600AC87 RID: 44167 RVA: 0x00403A11 File Offset: 0x00401C11
 	[Preserve]
 	public vp_Message(string name)
 		: base(name)
@@ -22,7 +22,7 @@ public class vp_Message : vp_Event
 		this.InitFields();
 	}
 
-	// Token: 0x0600AC30 RID: 44080 RVA: 0x004039FC File Offset: 0x00401BFC
+	// Token: 0x0600AC88 RID: 44168 RVA: 0x00405E00 File Offset: 0x00404000
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitFields()
@@ -35,7 +35,7 @@ public class vp_Message : vp_Event
 		this.Send = new vp_Message.Sender(vp_Message.Empty);
 	}
 
-	// Token: 0x0600AC31 RID: 44081 RVA: 0x00403A8F File Offset: 0x00401C8F
+	// Token: 0x0600AC89 RID: 44169 RVA: 0x00405E93 File Offset: 0x00404093
 	[Preserve]
 	public override void Register(object t, string m, int v)
 	{
@@ -43,7 +43,7 @@ public class vp_Message : vp_Event
 		base.Refresh();
 	}
 
-	// Token: 0x0600AC32 RID: 44082 RVA: 0x00403AC1 File Offset: 0x00401CC1
+	// Token: 0x0600AC8A RID: 44170 RVA: 0x00405EC5 File Offset: 0x004040C5
 	[Preserve]
 	public override void Unregister(object t)
 	{
@@ -51,12 +51,12 @@ public class vp_Message : vp_Event
 		base.Refresh();
 	}
 
-	// Token: 0x04007F9B RID: 32667
+	// Token: 0x04007FDC RID: 32732
 	[Preserve]
 	public vp_Message.Sender Send;
 
-	// Token: 0x02001580 RID: 5504
-	// (Invoke) Token: 0x0600AC34 RID: 44084
+	// Token: 0x02001592 RID: 5522
+	// (Invoke) Token: 0x0600AC8C RID: 44172
 	[Preserve]
 	public delegate void Sender();
 }

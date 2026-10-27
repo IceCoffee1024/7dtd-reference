@@ -1,28 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000BEF RID: 3055
+// Token: 0x02000BFA RID: 3066
 public class Voxel
 {
-	// Token: 0x06005B7C RID: 23420 RVA: 0x002369CB File Offset: 0x00234BCB
+	// Token: 0x06005BA1 RID: 23457 RVA: 0x00237F17 File Offset: 0x00236117
 	public static bool Raycast(World _worldData, Ray ray, float distance, int _hitmask, float _sphereSize)
 	{
 		return Voxel.Raycast(_worldData, ray, distance, -538488845, _hitmask, _sphereSize);
 	}
 
-	// Token: 0x06005B7D RID: 23421 RVA: 0x002369DD File Offset: 0x00234BDD
+	// Token: 0x06005BA2 RID: 23458 RVA: 0x00237F29 File Offset: 0x00236129
 	public static bool Raycast(World _worldData, Ray ray, float distance, bool bHitTransparentBlocks, bool bHitNotCollidableBlocks)
 	{
 		return Voxel.Raycast(_worldData, ray, distance, -538488845, 66 | (bHitTransparentBlocks ? 1 : 0) | (bHitNotCollidableBlocks ? 4 : 0), 0f);
 	}
 
-	// Token: 0x06005B7E RID: 23422 RVA: 0x00236A04 File Offset: 0x00234C04
+	// Token: 0x06005BA3 RID: 23459 RVA: 0x00237F50 File Offset: 0x00236150
 	public static bool Raycast(World _world, Ray ray, float distance, int _layerMask, int _hitMask, float _sphereRadius)
 	{
 		return Voxel.raycastNew(_world, ray, distance, _layerMask, _hitMask, _sphereRadius);
 	}
 
-	// Token: 0x06005B7F RID: 23423 RVA: 0x00236A14 File Offset: 0x00234C14
+	// Token: 0x06005BA4 RID: 23460 RVA: 0x00237F60 File Offset: 0x00236160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void terrainMeshHit(World _world, Vector3 dirNormalized, string phsxTag, Vector3 phsxHitpPoint, HitInfoDetails.VoxelData lastHitData, int _layerMask, int _hitMask)
 	{
@@ -123,7 +123,7 @@ public class Voxel
 		}
 	}
 
-	// Token: 0x06005B80 RID: 23424 RVA: 0x00237138 File Offset: 0x00235338
+	// Token: 0x06005BA5 RID: 23461 RVA: 0x00238684 File Offset: 0x00236884
 	public static Vector3i GoBackOnVoxels(ChunkCluster cc, Ray newRay, out BlockValue bv)
 	{
 		bv = BlockValue.Air;
@@ -140,7 +140,7 @@ public class Voxel
 		return vector3i;
 	}
 
-	// Token: 0x06005B81 RID: 23425 RVA: 0x002371C0 File Offset: 0x002353C0
+	// Token: 0x06005BA6 RID: 23462 RVA: 0x0023870C File Offset: 0x0023690C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool raycastNew(World _world, Ray ray, float distance, int _layerMask, int _hitMask, float _sphereRadius)
 	{
@@ -267,7 +267,7 @@ public class Voxel
 		return false;
 	}
 
-	// Token: 0x06005B82 RID: 23426 RVA: 0x00237900 File Offset: 0x00235B00
+	// Token: 0x06005BA7 RID: 23463 RVA: 0x00238E4C File Offset: 0x0023704C
 	public static Vector3i OneVoxelStep(Vector3i _voxelPos, Vector3 _origin, Vector3 _direction, out Vector3 hitPos, out BlockFace blockFace)
 	{
 		int num = _voxelPos.x;
@@ -310,7 +310,7 @@ public class Voxel
 		return new Vector3i(num, num2, num3);
 	}
 
-	// Token: 0x06005B83 RID: 23427 RVA: 0x00237BA4 File Offset: 0x00235DA4
+	// Token: 0x06005BA8 RID: 23464 RVA: 0x002390F0 File Offset: 0x002372F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int calcBestNormalToRaycastHit(ChunkCluster _cc)
 	{
@@ -328,7 +328,7 @@ public class Voxel
 		return num2;
 	}
 
-	// Token: 0x06005B84 RID: 23428 RVA: 0x00237C00 File Offset: 0x00235E00
+	// Token: 0x06005BA9 RID: 23465 RVA: 0x0023914C File Offset: 0x0023734C
 	public static bool RaycastOnVoxels(World _world, Ray ray, float distance, int _layerMask, int _hitMask, float _sphereSize)
 	{
 		bool flag = _sphereSize > 0f;
@@ -414,7 +414,7 @@ public class Voxel
 		return false;
 	}
 
-	// Token: 0x06005B85 RID: 23429 RVA: 0x0023802C File Offset: 0x0023622C
+	// Token: 0x06005BAA RID: 23466 RVA: 0x00239578 File Offset: 0x00237778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool GetNextBlockHit(World _worldData, Ray ray, float _distance, int _hitMask, bool bCastSphere)
 	{
@@ -519,7 +519,7 @@ public class Voxel
 		return false;
 	}
 
-	// Token: 0x06005B86 RID: 23430 RVA: 0x002386A0 File Offset: 0x002368A0
+	// Token: 0x06005BAB RID: 23467 RVA: 0x00239BEC File Offset: 0x00237DEC
 	public static void GetCellsOnRay(Ray ray, Voxel.DeletageNextBlockHit _delegateCallback)
 	{
 		Vector3i vector3i = new Vector3i(Utils.Fastfloor(ray.origin.x), Utils.Fastfloor(ray.origin.y), Utils.Fastfloor(ray.origin.z));
@@ -557,7 +557,7 @@ public class Voxel
 		}
 	}
 
-	// Token: 0x06005B87 RID: 23431 RVA: 0x00238970 File Offset: 0x00236B70
+	// Token: 0x06005BAC RID: 23468 RVA: 0x00239EBC File Offset: 0x002380BC
 	public static bool BlockHit(WorldRayHitInfo hitInfo, Vector3i blockPos)
 	{
 		HitInfoDetails.VoxelData from = HitInfoDetails.VoxelData.GetFrom(GameManager.Instance.World, blockPos);
@@ -575,7 +575,7 @@ public class Voxel
 		return true;
 	}
 
-	// Token: 0x06005B88 RID: 23432 RVA: 0x002389E8 File Offset: 0x00236BE8
+	// Token: 0x06005BAD RID: 23469 RVA: 0x00239F34 File Offset: 0x00238134
 	public static int ToHitMask(string _maskNames)
 	{
 		int num = 0;
@@ -654,49 +654,49 @@ public class Voxel
 		return num;
 	}
 
-	// Token: 0x04004766 RID: 18278
+	// Token: 0x0400478B RID: 18315
 	public const int HM_All = 4095;
 
-	// Token: 0x04004767 RID: 18279
+	// Token: 0x0400478C RID: 18316
 	public const int HM_None = 0;
 
-	// Token: 0x04004768 RID: 18280
+	// Token: 0x0400478D RID: 18317
 	public const int HM_Transparent = 1;
 
-	// Token: 0x04004769 RID: 18281
+	// Token: 0x0400478E RID: 18318
 	public const int HM_LiquidOnly = 2;
 
-	// Token: 0x0400476A RID: 18282
+	// Token: 0x0400478F RID: 18319
 	public const int HM_Moveable = 4;
 
-	// Token: 0x0400476B RID: 18283
+	// Token: 0x04004790 RID: 18320
 	public const int HM_Bullet = 8;
 
-	// Token: 0x0400476C RID: 18284
+	// Token: 0x04004791 RID: 18321
 	public const int HM_Rocket = 16;
 
-	// Token: 0x0400476D RID: 18285
+	// Token: 0x04004792 RID: 18322
 	public const int HM_Arrows = 32;
 
-	// Token: 0x0400476E RID: 18286
+	// Token: 0x04004793 RID: 18323
 	public const int HM_NotMoveable = 64;
 
-	// Token: 0x0400476F RID: 18287
+	// Token: 0x04004794 RID: 18324
 	public const int HM_Melee = 128;
 
-	// Token: 0x04004770 RID: 18288
+	// Token: 0x04004795 RID: 18325
 	public const int HM_FirstNotEmptyBlock = 256;
 
-	// Token: 0x04004771 RID: 18289
+	// Token: 0x04004796 RID: 18326
 	public const int HM_IgnoreFragile = 4096;
 
-	// Token: 0x04004772 RID: 18290
+	// Token: 0x04004797 RID: 18327
 	public static RaycastHit phyxRaycastHit;
 
-	// Token: 0x04004773 RID: 18291
+	// Token: 0x04004798 RID: 18328
 	public static WorldRayHitInfo voxelRayHitInfo = new WorldRayHitInfo();
 
-	// Token: 0x04004774 RID: 18292
+	// Token: 0x04004799 RID: 18329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i[] normalsI = new Vector3i[]
 	{
@@ -708,7 +708,7 @@ public class Voxel
 		new Vector3i(1, 0, 0)
 	};
 
-	// Token: 0x04004775 RID: 18293
+	// Token: 0x0400479A RID: 18330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[] normals = new Vector3[]
 	{
@@ -720,7 +720,7 @@ public class Voxel
 		new Vector3(1f, 0f, 0f)
 	};
 
-	// Token: 0x04004776 RID: 18294
+	// Token: 0x0400479B RID: 18331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BlockFace[] normalToFaces = new BlockFace[]
 	{
@@ -732,11 +732,11 @@ public class Voxel
 		BlockFace.East
 	};
 
-	// Token: 0x04004777 RID: 18295
+	// Token: 0x0400479C RID: 18332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] hitMaskSeparator = new char[] { ',' };
 
-	// Token: 0x02000BF0 RID: 3056
-	// (Invoke) Token: 0x06005B8B RID: 23435
+	// Token: 0x02000BFB RID: 3067
+	// (Invoke) Token: 0x06005BB0 RID: 23472
 	public delegate bool DeletageNextBlockHit(int _x, int _y, int _z);
 }

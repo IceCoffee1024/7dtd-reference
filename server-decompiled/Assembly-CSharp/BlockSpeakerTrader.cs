@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSpeakerTrader : Block
 {
-	// Token: 0x06000956 RID: 2390 RVA: 0x00040DC8 File Offset: 0x0003EFC8
+	// Token: 0x06000956 RID: 2390 RVA: 0x00040D88 File Offset: 0x0003EF88
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x06000957 RID: 2391 RVA: 0x00040E74 File Offset: 0x0003F074
+	// Token: 0x06000957 RID: 2391 RVA: 0x00040E34 File Offset: 0x0003F034
 	public void PlayOpen(Vector3i _blockPos, EntityTrader _trader)
 	{
 		string text = this.openSound;
@@ -38,7 +38,7 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x06000958 RID: 2392 RVA: 0x00040ED8 File Offset: 0x0003F0D8
+	// Token: 0x06000958 RID: 2392 RVA: 0x00040E98 File Offset: 0x0003F098
 	public void PlayClose(Vector3i _blockPos, EntityTrader _trader)
 	{
 		string text = this.closeSound;
@@ -52,7 +52,7 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x06000959 RID: 2393 RVA: 0x00040F3C File Offset: 0x0003F13C
+	// Token: 0x06000959 RID: 2393 RVA: 0x00040EFC File Offset: 0x0003F0FC
 	public void PlayWarning(Vector3i _blockPos, EntityTrader _trader)
 	{
 		string text = this.warningSound;

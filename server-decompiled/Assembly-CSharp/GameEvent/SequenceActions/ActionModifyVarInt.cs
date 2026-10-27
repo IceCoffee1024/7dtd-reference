@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A32 RID: 6706
+	// Token: 0x02001A63 RID: 6755
 	[Preserve]
 	public class ActionModifyVarInt : ActionBaseClientAction
 	{
-		// Token: 0x0600CC3C RID: 52284 RVA: 0x004A957C File Offset: 0x004A777C
+		// Token: 0x0600CD50 RID: 52560 RVA: 0x004AD078 File Offset: 0x004AB278
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			int intValue = GameEventManager.GetIntValue(target as EntityAlive, this.valueText, 0);
@@ -15,7 +15,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CC3D RID: 52285 RVA: 0x004A95C8 File Offset: 0x004A77C8
+		// Token: 0x0600CD51 RID: 52561 RVA: 0x004AD0C4 File Offset: 0x004AB2C4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseInt(ActionModifyVarInt.PropMaxValue, ref this.maxValue);
 		}
 
-		// Token: 0x0600CC3E RID: 52286 RVA: 0x004A9634 File Offset: 0x004A7834
+		// Token: 0x0600CD52 RID: 52562 RVA: 0x004AD130 File Offset: 0x004AB330
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -40,43 +40,43 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009ADA RID: 39642
+		// Token: 0x04009BC3 RID: 39875
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText = "";
 
-		// Token: 0x04009ADB RID: 39643
+		// Token: 0x04009BC4 RID: 39876
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string varName = "";
 
-		// Token: 0x04009ADC RID: 39644
+		// Token: 0x04009BC5 RID: 39877
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public GameEventVariables.OperationTypes operationType;
 
-		// Token: 0x04009ADD RID: 39645
+		// Token: 0x04009BC6 RID: 39878
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int minValue = int.MinValue;
 
-		// Token: 0x04009ADE RID: 39646
+		// Token: 0x04009BC7 RID: 39879
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int maxValue = int.MaxValue;
 
-		// Token: 0x04009ADF RID: 39647
+		// Token: 0x04009BC8 RID: 39880
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 
-		// Token: 0x04009AE0 RID: 39648
+		// Token: 0x04009BC9 RID: 39881
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropVarName = "var_name";
 
-		// Token: 0x04009AE1 RID: 39649
+		// Token: 0x04009BCA RID: 39882
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 
-		// Token: 0x04009AE2 RID: 39650
+		// Token: 0x04009BCB RID: 39883
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinValue = "min_value";
 
-		// Token: 0x04009AE3 RID: 39651
+		// Token: 0x04009BCC RID: 39884
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxValue = "min_value";
 	}

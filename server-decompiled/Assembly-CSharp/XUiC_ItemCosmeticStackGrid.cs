@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F65 RID: 3941
+// Token: 0x02000F74 RID: 3956
 [Preserve]
 public class XUiC_ItemCosmeticStackGrid : XUiController
 {
-	// Token: 0x17000E82 RID: 3714
-	// (get) Token: 0x06007B5D RID: 31581 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000E8C RID: 3724
+	// (get) Token: 0x06007BA0 RID: 31648 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -16,9 +16,9 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x17000E83 RID: 3715
-	// (get) Token: 0x06007B5E RID: 31582 RVA: 0x002ECFE8 File Offset: 0x002EB1E8
-	// (set) Token: 0x06007B5F RID: 31583 RVA: 0x002ECFF0 File Offset: 0x002EB1F0
+	// Token: 0x17000E8D RID: 3725
+	// (get) Token: 0x06007BA1 RID: 31649 RVA: 0x002EE8E4 File Offset: 0x002ECAE4
+	// (set) Token: 0x06007BA2 RID: 31650 RVA: 0x002EE8EC File Offset: 0x002ECAEC
 	public ItemStack CurrentItem
 	{
 		get
@@ -32,12 +32,12 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x17000E84 RID: 3716
-	// (get) Token: 0x06007B60 RID: 31584 RVA: 0x002ECFFF File Offset: 0x002EB1FF
-	// (set) Token: 0x06007B61 RID: 31585 RVA: 0x002ED007 File Offset: 0x002EB207
+	// Token: 0x17000E8E RID: 3726
+	// (get) Token: 0x06007BA3 RID: 31651 RVA: 0x002EE8FB File Offset: 0x002ECAFB
+	// (set) Token: 0x06007BA4 RID: 31652 RVA: 0x002EE903 File Offset: 0x002ECB03
 	public XUiC_AssembleWindow AssembleWindow { get; set; }
 
-	// Token: 0x06007B62 RID: 31586 RVA: 0x002ED010 File Offset: 0x002EB210
+	// Token: 0x06007BA5 RID: 31653 RVA: 0x002EE90C File Offset: 0x002ECB0C
 	public override void Init()
 	{
 		base.Init();
@@ -46,7 +46,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06007B63 RID: 31587 RVA: 0x002ECDC5 File Offset: 0x002EAFC5
+	// Token: 0x06007BA6 RID: 31654 RVA: 0x002EE6C1 File Offset: 0x002EC8C1
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -56,7 +56,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007B64 RID: 31588 RVA: 0x002ED03C File Offset: 0x002EB23C
+	// Token: 0x06007BA7 RID: 31655 RVA: 0x002EE938 File Offset: 0x002ECB38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetParts()
 	{
@@ -87,7 +87,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007B65 RID: 31589 RVA: 0x002ED13C File Offset: 0x002EB33C
+	// Token: 0x06007BA8 RID: 31656 RVA: 0x002EEA38 File Offset: 0x002ECC38
 	public void HandleSlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		XUiC_ItemCosmeticStack xuiC_ItemCosmeticStack = (XUiC_ItemCosmeticStack)this.itemControllers[slotNumber];
@@ -121,13 +121,13 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		this.xui.AssembleItem.RefreshAssembleItem();
 	}
 
-	// Token: 0x06007B66 RID: 31590 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007BA9 RID: 31657 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateBackend(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x06007B67 RID: 31591 RVA: 0x002E47DD File Offset: 0x002E29DD
+	// Token: 0x06007BAA RID: 31658 RVA: 0x002E60CD File Offset: 0x002E42CD
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -137,7 +137,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007B68 RID: 31592 RVA: 0x002ECFC5 File Offset: 0x002EB1C5
+	// Token: 0x06007BAB RID: 31659 RVA: 0x002EE8C1 File Offset: 0x002ECAC1
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -146,23 +146,23 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x04005B93 RID: 23443
+	// Token: 0x04005BC6 RID: 23494
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int curPageIdx;
 
-	// Token: 0x04005B94 RID: 23444
+	// Token: 0x04005BC7 RID: 23495
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int numPages;
 
-	// Token: 0x04005B95 RID: 23445
+	// Token: 0x04005BC8 RID: 23496
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController[] itemControllers;
 
-	// Token: 0x04005B96 RID: 23446
+	// Token: 0x04005BC9 RID: 23497
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ItemStack[] items;
 
-	// Token: 0x04005B97 RID: 23447
+	// Token: 0x04005BCA RID: 23498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack currentItem;
 }

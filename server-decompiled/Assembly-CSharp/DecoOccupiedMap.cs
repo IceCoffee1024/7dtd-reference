@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000C2E RID: 3118
+// Token: 0x02000C39 RID: 3129
 public class DecoOccupiedMap
 {
-	// Token: 0x06005EB9 RID: 24249 RVA: 0x00251A90 File Offset: 0x0024FC90
+	// Token: 0x06005EDE RID: 24286 RVA: 0x00252FB8 File Offset: 0x002511B8
 	public DecoOccupiedMap(int _worldWidth, int _worldHeight)
 	{
 		this.width = _worldWidth;
@@ -16,14 +16,14 @@ public class DecoOccupiedMap
 		this.occupiedMap = new EnumDecoOccupied[this.width * this.height];
 	}
 
-	// Token: 0x06005EBA RID: 24250 RVA: 0x00251AE5 File Offset: 0x0024FCE5
+	// Token: 0x06005EDF RID: 24287 RVA: 0x0025300D File Offset: 0x0025120D
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public EnumDecoOccupied Get(int _offs)
 	{
 		return this.occupiedMap[_offs];
 	}
 
-	// Token: 0x06005EBB RID: 24251 RVA: 0x00251AF0 File Offset: 0x0024FCF0
+	// Token: 0x06005EE0 RID: 24288 RVA: 0x00253018 File Offset: 0x00251218
 	public EnumDecoOccupied Get(int _x, int _z)
 	{
 		int num = DecoManager.CheckPosition(this.width, this.height, _x, _z);
@@ -34,13 +34,13 @@ public class DecoOccupiedMap
 		return EnumDecoOccupied.NoneAllowed;
 	}
 
-	// Token: 0x06005EBC RID: 24252 RVA: 0x00251B1F File Offset: 0x0024FD1F
+	// Token: 0x06005EE1 RID: 24289 RVA: 0x00253047 File Offset: 0x00251247
 	public void Set(int _offs, EnumDecoOccupied _v)
 	{
 		this.occupiedMap[_offs] = _v;
 	}
 
-	// Token: 0x06005EBD RID: 24253 RVA: 0x00251B2C File Offset: 0x0024FD2C
+	// Token: 0x06005EE2 RID: 24290 RVA: 0x00253054 File Offset: 0x00251254
 	public void Set(int _x, int _z, EnumDecoOccupied _v)
 	{
 		int num = DecoManager.CheckPosition(this.width, this.height, _x, _z);
@@ -50,7 +50,7 @@ public class DecoOccupiedMap
 		}
 	}
 
-	// Token: 0x06005EBE RID: 24254 RVA: 0x00251B5C File Offset: 0x0024FD5C
+	// Token: 0x06005EE3 RID: 24291 RVA: 0x00253084 File Offset: 0x00251284
 	public bool CheckArea(int _x, int _z, EnumDecoOccupied _v, int _rectSizeX, int _rectSizeZ)
 	{
 		int num = DecoManager.CheckPosition(this.width, this.height, _x, _z);
@@ -77,7 +77,7 @@ public class DecoOccupiedMap
 		return false;
 	}
 
-	// Token: 0x06005EBF RID: 24255 RVA: 0x00251BC8 File Offset: 0x0024FDC8
+	// Token: 0x06005EE4 RID: 24292 RVA: 0x002530F0 File Offset: 0x002512F0
 	public void SetArea(int _x, int _z, EnumDecoOccupied _v, int _rectSizeX, int _rectSizeZ)
 	{
 		int num = _x + this.widthHalf + (_z + this.heightHalf) * this.width;
@@ -102,13 +102,13 @@ public class DecoOccupiedMap
 		}
 	}
 
-	// Token: 0x06005EC0 RID: 24256 RVA: 0x00251C41 File Offset: 0x0024FE41
+	// Token: 0x06005EE5 RID: 24293 RVA: 0x00253169 File Offset: 0x00251369
 	public EnumDecoOccupied[] GetData()
 	{
 		return this.occupiedMap;
 	}
 
-	// Token: 0x06005EC1 RID: 24257 RVA: 0x00251C4C File Offset: 0x0024FE4C
+	// Token: 0x06005EE6 RID: 24294 RVA: 0x00253174 File Offset: 0x00251374
 	public void SaveAsTexture(string path, bool includeFlatAreas = false, List<FlatArea> flatAreas = null)
 	{
 		Color32[] array = new Color32[this.occupiedMap.Length];
@@ -190,23 +190,23 @@ public class DecoOccupiedMap
 		global::UnityEngine.Object.Destroy(texture2D);
 	}
 
-	// Token: 0x040049D0 RID: 18896
+	// Token: 0x040049F5 RID: 18933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumDecoOccupied[] occupiedMap;
 
-	// Token: 0x040049D1 RID: 18897
+	// Token: 0x040049F6 RID: 18934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int width;
 
-	// Token: 0x040049D2 RID: 18898
+	// Token: 0x040049F7 RID: 18935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int height;
 
-	// Token: 0x040049D3 RID: 18899
+	// Token: 0x040049F8 RID: 18936
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int widthHalf;
 
-	// Token: 0x040049D4 RID: 18900
+	// Token: 0x040049F9 RID: 18937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int heightHalf;
 }

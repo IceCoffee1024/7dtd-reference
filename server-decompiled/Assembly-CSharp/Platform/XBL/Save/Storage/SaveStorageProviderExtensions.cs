@@ -4,10 +4,10 @@ using Platform.XBL.Save.Storage.Files;
 
 namespace Platform.XBL.Save.Storage
 {
-	// Token: 0x02001C81 RID: 7297
+	// Token: 0x02001CB2 RID: 7346
 	public static class SaveStorageProviderExtensions
 	{
-		// Token: 0x0600D840 RID: 55360 RVA: 0x004D9888 File Offset: 0x004D7A88
+		// Token: 0x0600D954 RID: 55636 RVA: 0x004DD3D8 File Offset: 0x004DB5D8
 		public static ISaveStorageProvider Create(this SaveStorageProvider storageProvider)
 		{
 			ISaveStorageProvider saveStorageProvider;

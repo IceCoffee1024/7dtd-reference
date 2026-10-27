@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A82 RID: 6786
+	// Token: 0x02001AB3 RID: 6835
 	public class MusicTimeTracker : AbstractMusicTimeTracker, IMultiNotifiableFilter, INotifiable, INotifiableFilter<MusicActionType, SectionType>, INotifiable<MusicActionType>, IFilter<SectionType>, IGamePrefsChangedListener
 	{
-		// Token: 0x0600CDAC RID: 52652 RVA: 0x004ADA88 File Offset: 0x004ABC88
+		// Token: 0x0600CEC0 RID: 52928 RVA: 0x004B1584 File Offset: 0x004AF784
 		public MusicTimeTracker()
 		{
 			this.dailyAllottedPlayTime = GamePrefs.GetFloat(EnumGamePrefs.OptionsDynamicMusicDailyTime) * (float)GamePrefs.GetInt(EnumGamePrefs.DayNightLength) * 60f;
@@ -21,7 +21,7 @@ namespace DynamicMusic
 			this.FrequencyLimiter = new FrequencyLimiter();
 		}
 
-		// Token: 0x0600CDAD RID: 52653 RVA: 0x004ADB4C File Offset: 0x004ABD4C
+		// Token: 0x0600CEC1 RID: 52929 RVA: 0x004B1648 File Offset: 0x004AF848
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlay()
 		{
@@ -30,14 +30,14 @@ namespace DynamicMusic
 			this.pauseStartTime = (this.pauseDuration = 0f);
 		}
 
-		// Token: 0x0600CDAE RID: 52654 RVA: 0x004ADB80 File Offset: 0x004ABD80
+		// Token: 0x0600CEC2 RID: 52930 RVA: 0x004B167C File Offset: 0x004AF87C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPause()
 		{
 			this.pauseStartTime = (float)AudioSettings.dspTime;
 		}
 
-		// Token: 0x0600CDAF RID: 52655 RVA: 0x004ADB8E File Offset: 0x004ABD8E
+		// Token: 0x0600CEC3 RID: 52931 RVA: 0x004B168A File Offset: 0x004AF88A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnUnPause()
 		{
@@ -45,7 +45,7 @@ namespace DynamicMusic
 			this.pauseStartTime = 0f;
 		}
 
-		// Token: 0x0600CDB0 RID: 52656 RVA: 0x004ADBB8 File Offset: 0x004ABDB8
+		// Token: 0x0600CEC4 RID: 52932 RVA: 0x004B16B4 File Offset: 0x004AF8B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnStop()
 		{
@@ -54,7 +54,7 @@ namespace DynamicMusic
 			this.IsMusicPlaying = false;
 		}
 
-		// Token: 0x0600CDB1 RID: 52657 RVA: 0x004ADC01 File Offset: 0x004ABE01
+		// Token: 0x0600CEC5 RID: 52933 RVA: 0x004B16FD File Offset: 0x004AF8FD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnFadeIn()
 		{
@@ -64,7 +64,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CDB2 RID: 52658 RVA: 0x004ADC17 File Offset: 0x004ABE17
+		// Token: 0x0600CEC6 RID: 52934 RVA: 0x004B1713 File Offset: 0x004AF913
 		public void OnGamePrefChanged(EnumGamePrefs _enum)
 		{
 			if (_enum == EnumGamePrefs.OptionsDynamicMusicDailyTime || _enum == EnumGamePrefs.DayNightLength)
@@ -73,12 +73,12 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CDB3 RID: 52659 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CEC7 RID: 52935 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Cleanup()
 		{
 		}
 
-		// Token: 0x0600CDB4 RID: 52660 RVA: 0x004ADC40 File Offset: 0x004ABE40
+		// Token: 0x0600CEC8 RID: 52936 RVA: 0x004B173C File Offset: 0x004AF93C
 		public override List<SectionType> Filter(List<SectionType> _sectionTypes)
 		{
 			if (!this.IsMusicPlaying)
@@ -98,14 +98,14 @@ namespace DynamicMusic
 			return _sectionTypes;
 		}
 
-		// Token: 0x0600CDB5 RID: 52661 RVA: 0x004ADC93 File Offset: 0x004ABE93
+		// Token: 0x0600CEC9 RID: 52937 RVA: 0x004B178F File Offset: 0x004AF98F
 		public void Notify()
 		{
 			this.dailyPlayTimeUsed = 0f;
 			this.FrequencyLimiter.Notify();
 		}
 
-		// Token: 0x0600CDB6 RID: 52662 RVA: 0x004ADCAC File Offset: 0x004ABEAC
+		// Token: 0x0600CECA RID: 52938 RVA: 0x004B17A8 File Offset: 0x004AF9A8
 		public void Notify(MusicActionType _state)
 		{
 			Action action;
@@ -116,17 +116,17 @@ namespace DynamicMusic
 			this.FrequencyLimiter.Notify(_state);
 		}
 
-		// Token: 0x0600CDB7 RID: 52663 RVA: 0x004ADCDC File Offset: 0x004ABEDC
+		// Token: 0x0600CECB RID: 52939 RVA: 0x004B17D8 File Offset: 0x004AF9D8
 		public override string ToString()
 		{
 			return string.Format("Daily Play Time Allotted: {0}\nPlay Time Used: {1}\nIs Music Playing: {2}\nMusic Start Time: {3}\nPause Start Time: {4}\nPause Duration: {5}\n", new object[] { this.dailyAllottedPlayTime, this.dailyPlayTimeUsed, this.IsMusicPlaying, this.musicStartTime, this.pauseStartTime, this.pauseDuration });
 		}
 
-		// Token: 0x04009C04 RID: 39940
+		// Token: 0x04009CED RID: 40173
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IMultiNotifiableFilter FrequencyLimiter;
 
-		// Token: 0x04009C05 RID: 39941
+		// Token: 0x04009CEE RID: 40174
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EnumDictionary<MusicActionType, Action> MusicActions;
 	}

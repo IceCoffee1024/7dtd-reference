@@ -3,35 +3,35 @@ using UnityEngine;
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D84 RID: 7556
+	// Token: 0x02001DB5 RID: 7605
 	[Serializable]
 	public struct KinematicCharacterMotorState
 	{
-		// Token: 0x0400A8CF RID: 43215
+		// Token: 0x0400A9B8 RID: 43448
 		public Vector3 Position;
 
-		// Token: 0x0400A8D0 RID: 43216
+		// Token: 0x0400A9B9 RID: 43449
 		public Quaternion Rotation;
 
-		// Token: 0x0400A8D1 RID: 43217
+		// Token: 0x0400A9BA RID: 43450
 		public Vector3 BaseVelocity;
 
-		// Token: 0x0400A8D2 RID: 43218
+		// Token: 0x0400A9BB RID: 43451
 		public bool MustUnground;
 
-		// Token: 0x0400A8D3 RID: 43219
+		// Token: 0x0400A9BC RID: 43452
 		public float MustUngroundTime;
 
-		// Token: 0x0400A8D4 RID: 43220
+		// Token: 0x0400A9BD RID: 43453
 		public bool LastMovementIterationFoundAnyGround;
 
-		// Token: 0x0400A8D5 RID: 43221
+		// Token: 0x0400A9BE RID: 43454
 		public CharacterTransientGroundingReport GroundingStatus;
 
-		// Token: 0x0400A8D6 RID: 43222
+		// Token: 0x0400A9BF RID: 43455
 		public Rigidbody AttachedRigidbody;
 
-		// Token: 0x0400A8D7 RID: 43223
+		// Token: 0x0400A9C0 RID: 43456
 		public Vector3 AttachedRigidbodyVelocity;
 	}
 }

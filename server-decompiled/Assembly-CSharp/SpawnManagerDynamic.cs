@@ -3,17 +3,17 @@ using System.IO;
 using System.Xml;
 using UnityEngine;
 
-// Token: 0x02000B04 RID: 2820
+// Token: 0x02000B0F RID: 2831
 public class SpawnManagerDynamic : SpawnManagerAbstract
 {
-	// Token: 0x0600539A RID: 21402 RVA: 0x0020174C File Offset: 0x001FF94C
+	// Token: 0x060053BF RID: 21439 RVA: 0x00202CD0 File Offset: 0x00200ED0
 	public SpawnManagerDynamic(World _world, XmlDocument _spawnXml)
 		: base(_world)
 	{
 		this.lastDaySpawned = -1;
 	}
 
-	// Token: 0x0600539B RID: 21403 RVA: 0x0020175C File Offset: 0x001FF95C
+	// Token: 0x060053C0 RID: 21440 RVA: 0x00202CE0 File Offset: 0x00200EE0
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(1);
@@ -25,7 +25,7 @@ public class SpawnManagerDynamic : SpawnManagerAbstract
 		}
 	}
 
-	// Token: 0x0600539C RID: 21404 RVA: 0x00201794 File Offset: 0x001FF994
+	// Token: 0x060053C1 RID: 21441 RVA: 0x00202D18 File Offset: 0x00200F18
 	public void Read(BinaryReader _br)
 	{
 		_br.ReadByte();
@@ -37,7 +37,7 @@ public class SpawnManagerDynamic : SpawnManagerAbstract
 		}
 	}
 
-	// Token: 0x0600539D RID: 21405 RVA: 0x002017C8 File Offset: 0x001FF9C8
+	// Token: 0x060053C2 RID: 21442 RVA: 0x00202D4C File Offset: 0x00200F4C
 	public override void Update(string _spawnerName, bool _bSpawnEnemyEntities, object _userData)
 	{
 		if (this.world.IsDaytime())
@@ -69,21 +69,21 @@ public class SpawnManagerDynamic : SpawnManagerAbstract
 		}
 	}
 
-	// Token: 0x04004180 RID: 16768
+	// Token: 0x040041A5 RID: 16805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte CurrentFileVersion = 1;
 
-	// Token: 0x04004181 RID: 16769
+	// Token: 0x040041A6 RID: 16806
 	public const int cMinRange = 64;
 
-	// Token: 0x04004182 RID: 16770
+	// Token: 0x040041A7 RID: 16807
 	public const int cMaxRange = 96;
 
-	// Token: 0x04004183 RID: 16771
+	// Token: 0x040041A8 RID: 16808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntitySpawner currentSpawner;
 
-	// Token: 0x04004184 RID: 16772
+	// Token: 0x040041A9 RID: 16809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastDaySpawned;
 }

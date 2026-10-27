@@ -3,59 +3,59 @@ using Newtonsoft.Json;
 
 namespace Twitch.PubSub
 {
-	// Token: 0x020018A5 RID: 6309
+	// Token: 0x020018D6 RID: 6358
 	public class PubSubBitRedemptionMessage : BasePubSubMessage
 	{
-		// Token: 0x0600C2B8 RID: 49848 RVA: 0x0047D7EF File Offset: 0x0047B9EF
+		// Token: 0x0600C3CC RID: 50124 RVA: 0x0048119B File Offset: 0x0047F39B
 		public static PubSubBitRedemptionMessage Deserialize(string message)
 		{
 			return JsonConvert.DeserializeObject<PubSubBitRedemptionMessage>(message);
 		}
 
-		// Token: 0x0400932A RID: 37674
+		// Token: 0x04009413 RID: 37907
 		public PubSubBitRedemptionMessage.BitRedemptionData data;
 
-		// Token: 0x020018A6 RID: 6310
+		// Token: 0x020018D7 RID: 6359
 		public class BitRedemptionData : EventArgs
 		{
-			// Token: 0x17001852 RID: 6226
-			// (get) Token: 0x0600C2BA RID: 49850 RVA: 0x0047D7FF File Offset: 0x0047B9FF
-			// (set) Token: 0x0600C2BB RID: 49851 RVA: 0x0047D807 File Offset: 0x0047BA07
+			// Token: 0x1700189A RID: 6298
+			// (get) Token: 0x0600C3CE RID: 50126 RVA: 0x004811AB File Offset: 0x0047F3AB
+			// (set) Token: 0x0600C3CF RID: 50127 RVA: 0x004811B3 File Offset: 0x0047F3B3
 			public string user_name { get; set; }
 
-			// Token: 0x17001853 RID: 6227
-			// (get) Token: 0x0600C2BC RID: 49852 RVA: 0x0047D810 File Offset: 0x0047BA10
-			// (set) Token: 0x0600C2BD RID: 49853 RVA: 0x0047D818 File Offset: 0x0047BA18
+			// Token: 0x1700189B RID: 6299
+			// (get) Token: 0x0600C3D0 RID: 50128 RVA: 0x004811BC File Offset: 0x0047F3BC
+			// (set) Token: 0x0600C3D1 RID: 50129 RVA: 0x004811C4 File Offset: 0x0047F3C4
 			public string channel_name { get; set; }
 
-			// Token: 0x17001854 RID: 6228
-			// (get) Token: 0x0600C2BE RID: 49854 RVA: 0x0047D821 File Offset: 0x0047BA21
-			// (set) Token: 0x0600C2BF RID: 49855 RVA: 0x0047D829 File Offset: 0x0047BA29
+			// Token: 0x1700189C RID: 6300
+			// (get) Token: 0x0600C3D2 RID: 50130 RVA: 0x004811CD File Offset: 0x0047F3CD
+			// (set) Token: 0x0600C3D3 RID: 50131 RVA: 0x004811D5 File Offset: 0x0047F3D5
 			public string user_id { get; set; }
 
-			// Token: 0x17001855 RID: 6229
-			// (get) Token: 0x0600C2C0 RID: 49856 RVA: 0x0047D832 File Offset: 0x0047BA32
-			// (set) Token: 0x0600C2C1 RID: 49857 RVA: 0x0047D83A File Offset: 0x0047BA3A
+			// Token: 0x1700189D RID: 6301
+			// (get) Token: 0x0600C3D4 RID: 50132 RVA: 0x004811DE File Offset: 0x0047F3DE
+			// (set) Token: 0x0600C3D5 RID: 50133 RVA: 0x004811E6 File Offset: 0x0047F3E6
 			public string channel_id { get; set; }
 
-			// Token: 0x17001856 RID: 6230
-			// (get) Token: 0x0600C2C2 RID: 49858 RVA: 0x0047D843 File Offset: 0x0047BA43
-			// (set) Token: 0x0600C2C3 RID: 49859 RVA: 0x0047D84B File Offset: 0x0047BA4B
+			// Token: 0x1700189E RID: 6302
+			// (get) Token: 0x0600C3D6 RID: 50134 RVA: 0x004811EF File Offset: 0x0047F3EF
+			// (set) Token: 0x0600C3D7 RID: 50135 RVA: 0x004811F7 File Offset: 0x0047F3F7
 			public string chat_message { get; set; }
 
-			// Token: 0x17001857 RID: 6231
-			// (get) Token: 0x0600C2C4 RID: 49860 RVA: 0x0047D854 File Offset: 0x0047BA54
-			// (set) Token: 0x0600C2C5 RID: 49861 RVA: 0x0047D85C File Offset: 0x0047BA5C
+			// Token: 0x1700189F RID: 6303
+			// (get) Token: 0x0600C3D8 RID: 50136 RVA: 0x00481200 File Offset: 0x0047F400
+			// (set) Token: 0x0600C3D9 RID: 50137 RVA: 0x00481208 File Offset: 0x0047F408
 			public int bits_used { get; set; }
 
-			// Token: 0x17001858 RID: 6232
-			// (get) Token: 0x0600C2C6 RID: 49862 RVA: 0x0047D865 File Offset: 0x0047BA65
-			// (set) Token: 0x0600C2C7 RID: 49863 RVA: 0x0047D86D File Offset: 0x0047BA6D
+			// Token: 0x170018A0 RID: 6304
+			// (get) Token: 0x0600C3DA RID: 50138 RVA: 0x00481211 File Offset: 0x0047F411
+			// (set) Token: 0x0600C3DB RID: 50139 RVA: 0x00481219 File Offset: 0x0047F419
 			public int total_bits_used { get; set; }
 
-			// Token: 0x17001859 RID: 6233
-			// (get) Token: 0x0600C2C8 RID: 49864 RVA: 0x0047D876 File Offset: 0x0047BA76
-			// (set) Token: 0x0600C2C9 RID: 49865 RVA: 0x0047D87E File Offset: 0x0047BA7E
+			// Token: 0x170018A1 RID: 6305
+			// (get) Token: 0x0600C3DC RID: 50140 RVA: 0x00481222 File Offset: 0x0047F422
+			// (set) Token: 0x0600C3DD RID: 50141 RVA: 0x0048122A File Offset: 0x0047F42A
 			public bool is_anonymous { get; set; }
 		}
 	}

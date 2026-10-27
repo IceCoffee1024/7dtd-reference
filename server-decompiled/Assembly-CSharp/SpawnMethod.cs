@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x0200108B RID: 4235
+// Token: 0x0200109B RID: 4251
 public enum SpawnMethod
 {
-	// Token: 0x040063D2 RID: 25554
+	// Token: 0x04006411 RID: 25617
 	Invalid,
-	// Token: 0x040063D3 RID: 25555
+	// Token: 0x04006412 RID: 25618
 	NewRandomSpawn,
-	// Token: 0x040063D4 RID: 25556
+	// Token: 0x04006413 RID: 25619
 	NearDeath,
-	// Token: 0x040063D5 RID: 25557
+	// Token: 0x04006414 RID: 25620
 	OnBedRoll,
-	// Token: 0x040063D6 RID: 25558
+	// Token: 0x04006415 RID: 25621
 	NearBedroll,
-	// Token: 0x040063D7 RID: 25559
+	// Token: 0x04006416 RID: 25622
 	NearBackpack,
-	// Token: 0x040063D8 RID: 25560
+	// Token: 0x04006417 RID: 25623
 	NearFriend
 }

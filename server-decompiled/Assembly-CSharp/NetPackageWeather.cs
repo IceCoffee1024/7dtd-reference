@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200139A RID: 5018
+// Token: 0x020013AC RID: 5036
 [Preserve]
 public class NetPackageWeather : NetPackage
 {
-	// Token: 0x170012DD RID: 4829
-	// (get) Token: 0x06009DF8 RID: 40440 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x170012E9 RID: 4841
+	// (get) Token: 0x06009E50 RID: 40528 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,14 +15,14 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009DF9 RID: 40441 RVA: 0x003BB5A8 File Offset: 0x003B97A8
+	// Token: 0x06009E51 RID: 40529 RVA: 0x003BD9AC File Offset: 0x003BBBAC
 	public NetPackageWeather Setup(WeatherPackage[] _packages)
 	{
 		this.weatherPackages = _packages;
 		return this;
 	}
 
-	// Token: 0x06009DFA RID: 40442 RVA: 0x003BB5B4 File Offset: 0x003B97B4
+	// Token: 0x06009E52 RID: 40530 RVA: 0x003BD9B8 File Offset: 0x003BBBB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitPackages()
 	{
@@ -37,7 +37,7 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009DFB RID: 40443 RVA: 0x003BB604 File Offset: 0x003B9804
+	// Token: 0x06009E53 RID: 40531 RVA: 0x003BDA08 File Offset: 0x003BBC08
 	public override void read(PooledBinaryReader _br)
 	{
 		if (this.weatherPackages == null)
@@ -61,7 +61,7 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009DFC RID: 40444 RVA: 0x003BB68C File Offset: 0x003B988C
+	// Token: 0x06009E54 RID: 40532 RVA: 0x003BDA90 File Offset: 0x003BBC90
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -78,12 +78,12 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009DFD RID: 40445 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009E55 RID: 40533 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 	}
 
-	// Token: 0x040077BE RID: 30654
+	// Token: 0x040077FF RID: 30719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WeatherPackage[] weatherPackages;
 }

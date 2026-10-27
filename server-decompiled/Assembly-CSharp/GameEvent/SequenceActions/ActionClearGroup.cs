@@ -3,25 +3,25 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200199F RID: 6559
+	// Token: 0x020019D0 RID: 6608
 	[Preserve]
 	public class ActionClearGroup : BaseAction
 	{
-		// Token: 0x0600C99B RID: 51611 RVA: 0x0049B8BD File Offset: 0x00499ABD
+		// Token: 0x0600CAAF RID: 51887 RVA: 0x0049F3BD File Offset: 0x0049D5BD
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			base.Owner.ClearEntityGroup(this.groupName);
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C99C RID: 51612 RVA: 0x0049B8D1 File Offset: 0x00499AD1
+		// Token: 0x0600CAB0 RID: 51888 RVA: 0x0049F3D1 File Offset: 0x0049D5D1
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionClearGroup.PropGroupName, ref this.groupName);
 		}
 
-		// Token: 0x0600C99D RID: 51613 RVA: 0x0049B8EB File Offset: 0x00499AEB
+		// Token: 0x0600CAB1 RID: 51889 RVA: 0x0049F3EB File Offset: 0x0049D5EB
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -31,11 +31,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097F1 RID: 38897
+		// Token: 0x040098DA RID: 39130
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string groupName = "";
 
-		// Token: 0x040097F2 RID: 38898
+		// Token: 0x040098DB RID: 39131
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupName = "group_name";
 	}

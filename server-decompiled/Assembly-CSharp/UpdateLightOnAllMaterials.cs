@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001317 RID: 4887
+// Token: 0x02001329 RID: 4905
 public class UpdateLightOnAllMaterials : UpdateLight
 {
-	// Token: 0x06009A71 RID: 39537 RVA: 0x003A8407 File Offset: 0x003A6607
+	// Token: 0x06009AC9 RID: 39625 RVA: 0x003AA80B File Offset: 0x003A8A0B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -14,7 +14,7 @@ public class UpdateLightOnAllMaterials : UpdateLight
 		}
 	}
 
-	// Token: 0x06009A72 RID: 39538 RVA: 0x003A8428 File Offset: 0x003A6628
+	// Token: 0x06009ACA RID: 39626 RVA: 0x003AA82C File Offset: 0x003A8A2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{

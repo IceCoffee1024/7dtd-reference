@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001432 RID: 5170
+// Token: 0x02001444 RID: 5188
 public class GeometryUtils
 {
-	// Token: 0x0600A21A RID: 41498 RVA: 0x003CD350 File Offset: 0x003CB550
+	// Token: 0x0600A272 RID: 41586 RVA: 0x003CF754 File Offset: 0x003CD954
 	public static bool IntersectRayTriangle(Ray ray, GeometryUtils.Triangle tri, out Vector3 outNormal, out float hitDistance)
 	{
 		outNormal = Vector3.zero;
@@ -32,7 +32,7 @@ public class GeometryUtils
 		return true;
 	}
 
-	// Token: 0x0600A21B RID: 41499 RVA: 0x003CD480 File Offset: 0x003CB680
+	// Token: 0x0600A273 RID: 41587 RVA: 0x003CF884 File Offset: 0x003CDA84
 	public static Vector3 NearestPointOnLine(Vector3 fromPoint, Vector3 lineStart, Vector3 lineEnd)
 	{
 		Vector3 vector = fromPoint - lineStart;
@@ -41,7 +41,7 @@ public class GeometryUtils
 		return lineStart + num * vector2;
 	}
 
-	// Token: 0x0600A21C RID: 41500 RVA: 0x003CD4C0 File Offset: 0x003CB6C0
+	// Token: 0x0600A274 RID: 41588 RVA: 0x003CF8C4 File Offset: 0x003CDAC4
 	public static Vector3 NearestPointOnEdgeLoop(Vector3 fromPoint, Vector3[] loopPoints, int loopPointCount)
 	{
 		ValueTuple<float, Vector3> valueTuple = new ValueTuple<float, Vector3>(float.MaxValue, fromPoint);
@@ -59,7 +59,7 @@ public class GeometryUtils
 		return valueTuple.Item2;
 	}
 
-	// Token: 0x0600A21D RID: 41501 RVA: 0x003CD528 File Offset: 0x003CB728
+	// Token: 0x0600A275 RID: 41589 RVA: 0x003CF92C File Offset: 0x003CDB2C
 	public static void RotatePlaneAroundPoint(ref Plane plane, Vector3 pivot, Quaternion rotation)
 	{
 		if (rotation == Quaternion.identity)
@@ -73,7 +73,7 @@ public class GeometryUtils
 		plane.SetNormalAndPosition(vector, vector2);
 	}
 
-	// Token: 0x0600A21E RID: 41502 RVA: 0x003CD584 File Offset: 0x003CB784
+	// Token: 0x0600A276 RID: 41590 RVA: 0x003CF988 File Offset: 0x003CDB88
 	public static Rect RotateRectAboutY(Rect rect, float yRot)
 	{
 		Quaternion quaternion = Quaternion.AngleAxis(yRot, Vector3.up);
@@ -104,10 +104,10 @@ public class GeometryUtils
 		return new Rect(new Vector2(vector.x, vector.z), new Vector2(vector2.x - vector.x, vector2.z - vector.z));
 	}
 
-	// Token: 0x02001433 RID: 5171
+	// Token: 0x02001445 RID: 5189
 	public struct Triangle
 	{
-		// Token: 0x0600A220 RID: 41504 RVA: 0x003CD71C File Offset: 0x003CB91C
+		// Token: 0x0600A278 RID: 41592 RVA: 0x003CFB20 File Offset: 0x003CDD20
 		public Triangle(Vector3 v0, Vector3 v1, Vector3 v2)
 		{
 			this.v0 = v0;
@@ -116,16 +116,16 @@ public class GeometryUtils
 			this.normal = Vector3.Normalize(Vector3.Cross(v0 - v2, v0 - v1));
 		}
 
-		// Token: 0x040079FB RID: 31227
+		// Token: 0x04007A3C RID: 31292
 		public Vector3 v0;
 
-		// Token: 0x040079FC RID: 31228
+		// Token: 0x04007A3D RID: 31293
 		public Vector3 v1;
 
-		// Token: 0x040079FD RID: 31229
+		// Token: 0x04007A3E RID: 31294
 		public Vector3 v2;
 
-		// Token: 0x040079FE RID: 31230
+		// Token: 0x04007A3F RID: 31295
 		public Vector3 normal;
 	}
 }

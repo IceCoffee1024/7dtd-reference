@@ -4,10 +4,10 @@ using System.IO;
 
 namespace Platform
 {
-	// Token: 0x02001B64 RID: 7012
+	// Token: 0x02001B95 RID: 7061
 	public class AchievementData : Serializable
 	{
-		// Token: 0x0600D241 RID: 53825 RVA: 0x004C788C File Offset: 0x004C5A8C
+		// Token: 0x0600D355 RID: 54101 RVA: 0x004CB3B4 File Offset: 0x004C95B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EnumDictionary<EnumAchievementManagerAchievement, EnumAchievementDataStat> CreateAchievementToStat()
 		{
@@ -22,7 +22,7 @@ namespace Platform
 			return enumDictionary;
 		}
 
-		// Token: 0x0600D242 RID: 53826 RVA: 0x004C7910 File Offset: 0x004C5B10
+		// Token: 0x0600D356 RID: 54102 RVA: 0x004CB438 File Offset: 0x004C9638
 		public static EnumStatType GetStatType(EnumAchievementDataStat _stat)
 		{
 			if (_stat != EnumAchievementDataStat.Last)
@@ -32,7 +32,7 @@ namespace Platform
 			return EnumStatType.Invalid;
 		}
 
-		// Token: 0x0600D243 RID: 53827 RVA: 0x004C7929 File Offset: 0x004C5B29
+		// Token: 0x0600D357 RID: 54103 RVA: 0x004CB451 File Offset: 0x004C9651
 		public static AchievementData.EnumUpdateType GetUpdateType(EnumAchievementDataStat _stat)
 		{
 			if (_stat != EnumAchievementDataStat.Last)
@@ -42,24 +42,24 @@ namespace Platform
 			return AchievementData.EnumUpdateType.Replace;
 		}
 
-		// Token: 0x0600D244 RID: 53828 RVA: 0x004C7942 File Offset: 0x004C5B42
+		// Token: 0x0600D358 RID: 54104 RVA: 0x004CB46A File Offset: 0x004C966A
 		public static List<AchievementData.AchievementInfo> GetAchievementInfos(EnumAchievementDataStat _stat)
 		{
 			return AchievementData.propertyList[(int)_stat].achievementInfos;
 		}
 
-		// Token: 0x0600D245 RID: 53829 RVA: 0x004C7954 File Offset: 0x004C5B54
+		// Token: 0x0600D359 RID: 54105 RVA: 0x004CB47C File Offset: 0x004C967C
 		public static EnumAchievementDataStat GetStat(EnumAchievementManagerAchievement _achievement)
 		{
 			return AchievementData.achievementToStat[_achievement];
 		}
 
-		// Token: 0x17001A46 RID: 6726
-		// (get) Token: 0x0600D246 RID: 53830 RVA: 0x004C7961 File Offset: 0x004C5B61
-		// (set) Token: 0x0600D247 RID: 53831 RVA: 0x004C7969 File Offset: 0x004C5B69
+		// Token: 0x17001A8E RID: 6798
+		// (get) Token: 0x0600D35A RID: 54106 RVA: 0x004CB489 File Offset: 0x004C9689
+		// (set) Token: 0x0600D35B RID: 54107 RVA: 0x004CB491 File Offset: 0x004C9691
 		public bool IsDirty { get; set; }
 
-		// Token: 0x0600D248 RID: 53832 RVA: 0x004C7974 File Offset: 0x004C5B74
+		// Token: 0x0600D35C RID: 54108 RVA: 0x004CB49C File Offset: 0x004C969C
 		public AchievementData()
 		{
 			this.statValues = new object[AchievementData.propertyList.Length];
@@ -76,7 +76,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D249 RID: 53833 RVA: 0x004C79F0 File Offset: 0x004C5BF0
+		// Token: 0x0600D35D RID: 54109 RVA: 0x004CB518 File Offset: 0x004C9718
 		public void UpdateAchievement(EnumAchievementDataStat _stat)
 		{
 			List<AchievementData.AchievementInfo> achievementInfos = AchievementData.GetAchievementInfos(_stat);
@@ -99,13 +99,13 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D24A RID: 53834 RVA: 0x004C7A8D File Offset: 0x004C5C8D
+		// Token: 0x0600D35E RID: 54110 RVA: 0x004CB5B5 File Offset: 0x004C97B5
 		public void SetStatCompleteCallback(Action<EnumAchievementManagerAchievement> _statCompleteCallback)
 		{
 			this.statCompleteCallback = _statCompleteCallback;
 		}
 
-		// Token: 0x0600D24B RID: 53835 RVA: 0x004C7A96 File Offset: 0x004C5C96
+		// Token: 0x0600D35F RID: 54111 RVA: 0x004CB5BE File Offset: 0x004C97BE
 		public int GetIntStatValue(EnumAchievementDataStat _stat)
 		{
 			if (AchievementData.propertyList[(int)_stat].type == EnumStatType.Int)
@@ -115,7 +115,7 @@ namespace Platform
 			return -1;
 		}
 
-		// Token: 0x0600D24C RID: 53836 RVA: 0x004C7AB9 File Offset: 0x004C5CB9
+		// Token: 0x0600D360 RID: 54112 RVA: 0x004CB5E1 File Offset: 0x004C97E1
 		public float GetFloatStatValue(EnumAchievementDataStat _stat)
 		{
 			if (AchievementData.propertyList[(int)_stat].type == EnumStatType.Float)
@@ -125,7 +125,7 @@ namespace Platform
 			return -1f;
 		}
 
-		// Token: 0x0600D24D RID: 53837 RVA: 0x004C7AE4 File Offset: 0x004C5CE4
+		// Token: 0x0600D361 RID: 54113 RVA: 0x004CB60C File Offset: 0x004C980C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetStatValue(EnumAchievementDataStat _stat, object _value)
 		{
@@ -165,19 +165,19 @@ namespace Platform
 			this.UpdateAchievement(_stat);
 		}
 
-		// Token: 0x0600D24E RID: 53838 RVA: 0x004C7C14 File Offset: 0x004C5E14
+		// Token: 0x0600D362 RID: 54114 RVA: 0x004CB73C File Offset: 0x004C993C
 		public virtual void SetAchievementStat(EnumAchievementDataStat _stat, int _value)
 		{
 			this.SetStatValue(_stat, _value);
 		}
 
-		// Token: 0x0600D24F RID: 53839 RVA: 0x004C7C23 File Offset: 0x004C5E23
+		// Token: 0x0600D363 RID: 54115 RVA: 0x004CB74B File Offset: 0x004C994B
 		public virtual void SetAchievementStat(EnumAchievementDataStat _stat, float _value)
 		{
 			this.SetStatValue(_stat, _value);
 		}
 
-		// Token: 0x0600D250 RID: 53840 RVA: 0x004C7C32 File Offset: 0x004C5E32
+		// Token: 0x0600D364 RID: 54116 RVA: 0x004CB75A File Offset: 0x004C995A
 		public object GetAchievementStatValue(EnumAchievementDataStat _stat)
 		{
 			if (_stat == EnumAchievementDataStat.Last)
@@ -187,13 +187,13 @@ namespace Platform
 			return this.statValues[(int)_stat];
 		}
 
-		// Token: 0x0600D251 RID: 53841 RVA: 0x004C7C48 File Offset: 0x004C5E48
+		// Token: 0x0600D365 RID: 54117 RVA: 0x004CB770 File Offset: 0x004C9970
 		public bool IsAchievementLocked(EnumAchievementManagerAchievement _achievement)
 		{
 			return this.achievementStatuses[_achievement];
 		}
 
-		// Token: 0x0600D252 RID: 53842 RVA: 0x004C7C58 File Offset: 0x004C5E58
+		// Token: 0x0600D366 RID: 54118 RVA: 0x004CB780 File Offset: 0x004C9980
 		public void LockAchievement(EnumAchievementManagerAchievement _achievement)
 		{
 			Dictionary<EnumAchievementManagerAchievement, bool> dictionary = this.achievementStatuses;
@@ -209,7 +209,7 @@ namespace Platform
 			action(_achievement);
 		}
 
-		// Token: 0x0600D253 RID: 53843 RVA: 0x004C7CB0 File Offset: 0x004C5EB0
+		// Token: 0x0600D367 RID: 54119 RVA: 0x004CB7D8 File Offset: 0x004C99D8
 		public float GetGameProgress()
 		{
 			float num = 0f;
@@ -228,7 +228,7 @@ namespace Platform
 			return num;
 		}
 
-		// Token: 0x0600D254 RID: 53844 RVA: 0x004C7D28 File Offset: 0x004C5F28
+		// Token: 0x0600D368 RID: 54120 RVA: 0x004CB850 File Offset: 0x004C9A50
 		public void DebugPrintStats()
 		{
 			for (int i = 0; i < 19; i++)
@@ -249,7 +249,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D255 RID: 53845 RVA: 0x004C7DA4 File Offset: 0x004C5FA4
+		// Token: 0x0600D369 RID: 54121 RVA: 0x004CB8CC File Offset: 0x004C9ACC
 		public byte[] Serialize()
 		{
 			byte[] array = null;
@@ -302,7 +302,7 @@ namespace Platform
 			return array;
 		}
 
-		// Token: 0x0600D256 RID: 53846 RVA: 0x004C7FC4 File Offset: 0x004C61C4
+		// Token: 0x0600D36A RID: 54122 RVA: 0x004CBAEC File Offset: 0x004C9CEC
 		public void DeserializeBytes(byte[] _bytes)
 		{
 			Stream stream = null;
@@ -322,7 +322,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D257 RID: 53847 RVA: 0x004C801C File Offset: 0x004C621C
+		// Token: 0x0600D36B RID: 54123 RVA: 0x004CBB44 File Offset: 0x004C9D44
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool DeserializeFromStream(Stream _stream)
 		{
@@ -384,7 +384,7 @@ namespace Platform
 			return true;
 		}
 
-		// Token: 0x0600D258 RID: 53848 RVA: 0x004C8208 File Offset: 0x004C6408
+		// Token: 0x0600D36C RID: 54124 RVA: 0x004CBD30 File Offset: 0x004C9F30
 		public static void Deserialize(byte[] _bytes, Action<AchievementData> _callback)
 		{
 			AchievementData achievementData = null;
@@ -410,14 +410,14 @@ namespace Platform
 			});
 		}
 
-		// Token: 0x0400A09D RID: 41117
+		// Token: 0x0400A186 RID: 41350
 		public const string cDataName = "achievements.bin";
 
-		// Token: 0x0400A09E RID: 41118
+		// Token: 0x0400A187 RID: 41351
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int CurrentSaveVersion = 1;
 
-		// Token: 0x0400A09F RID: 41119
+		// Token: 0x0400A188 RID: 41352
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly AchievementData.AchievementStatDecl[] propertyList = new AchievementData.AchievementStatDecl[]
 		{
@@ -528,42 +528,42 @@ namespace Platform
 			})
 		};
 
-		// Token: 0x0400A0A0 RID: 41120
+		// Token: 0x0400A189 RID: 41353
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly EnumDictionary<EnumAchievementManagerAchievement, EnumAchievementDataStat> achievementToStat = AchievementData.CreateAchievementToStat();
 
-		// Token: 0x0400A0A1 RID: 41121
+		// Token: 0x0400A18A RID: 41354
 		[PublicizedFrom(EAccessModifier.Private)]
 		public uint version;
 
-		// Token: 0x0400A0A3 RID: 41123
+		// Token: 0x0400A18C RID: 41356
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object[] statValues;
 
-		// Token: 0x0400A0A4 RID: 41124
+		// Token: 0x0400A18D RID: 41357
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EnumAchievementManagerAchievement, bool> achievementStatuses;
 
-		// Token: 0x0400A0A5 RID: 41125
+		// Token: 0x0400A18E RID: 41358
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<EnumAchievementManagerAchievement> statCompleteCallback;
 
-		// Token: 0x02001B65 RID: 7013
+		// Token: 0x02001B96 RID: 7062
 		public enum EnumUpdateType
 		{
-			// Token: 0x0400A0A7 RID: 41127
+			// Token: 0x0400A190 RID: 41360
 			Sum,
-			// Token: 0x0400A0A8 RID: 41128
+			// Token: 0x0400A191 RID: 41361
 			Replace,
-			// Token: 0x0400A0A9 RID: 41129
+			// Token: 0x0400A192 RID: 41362
 			Max
 		}
 
-		// Token: 0x02001B66 RID: 7014
+		// Token: 0x02001B97 RID: 7063
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly struct AchievementStatDecl
 		{
-			// Token: 0x0600D25A RID: 53850 RVA: 0x004C88C0 File Offset: 0x004C6AC0
+			// Token: 0x0600D36E RID: 54126 RVA: 0x004CC3E8 File Offset: 0x004CA5E8
 			public AchievementStatDecl(EnumAchievementDataStat _name, EnumStatType _type, AchievementData.EnumUpdateType _updateType, List<AchievementData.AchievementInfo> _achievementPairs)
 			{
 				this.name = _name;
@@ -572,23 +572,23 @@ namespace Platform
 				this.achievementInfos = _achievementPairs;
 			}
 
-			// Token: 0x0400A0AA RID: 41130
+			// Token: 0x0400A193 RID: 41363
 			public readonly EnumAchievementDataStat name;
 
-			// Token: 0x0400A0AB RID: 41131
+			// Token: 0x0400A194 RID: 41364
 			public readonly EnumStatType type;
 
-			// Token: 0x0400A0AC RID: 41132
+			// Token: 0x0400A195 RID: 41365
 			public readonly AchievementData.EnumUpdateType updateType;
 
-			// Token: 0x0400A0AD RID: 41133
+			// Token: 0x0400A196 RID: 41366
 			public readonly List<AchievementData.AchievementInfo> achievementInfos;
 		}
 
-		// Token: 0x02001B67 RID: 7015
+		// Token: 0x02001B98 RID: 7064
 		public readonly struct AchievementInfo
 		{
-			// Token: 0x0600D25B RID: 53851 RVA: 0x004C88DF File Offset: 0x004C6ADF
+			// Token: 0x0600D36F RID: 54127 RVA: 0x004CC407 File Offset: 0x004CA607
 			public AchievementInfo(object _triggerPoint, EnumAchievementManagerAchievement _achievement, float _progressContribution)
 			{
 				this.triggerPoint = _triggerPoint;
@@ -596,13 +596,13 @@ namespace Platform
 				this.progressContribution = _progressContribution;
 			}
 
-			// Token: 0x0400A0AE RID: 41134
+			// Token: 0x0400A197 RID: 41367
 			public readonly object triggerPoint;
 
-			// Token: 0x0400A0AF RID: 41135
+			// Token: 0x0400A198 RID: 41368
 			public readonly EnumAchievementManagerAchievement achievement;
 
-			// Token: 0x0400A0B0 RID: 41136
+			// Token: 0x0400A199 RID: 41369
 			public readonly float progressContribution;
 		}
 	}

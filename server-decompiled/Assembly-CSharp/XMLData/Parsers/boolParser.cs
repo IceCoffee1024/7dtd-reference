@@ -3,10 +3,10 @@ using XMLData.Exceptions;
 
 namespace XMLData.Parsers
 {
-	// Token: 0x0200166E RID: 5742
+	// Token: 0x02001680 RID: 5760
 	public static class boolParser
 	{
-		// Token: 0x0600B462 RID: 46178 RVA: 0x00437AA7 File Offset: 0x00435CA7
+		// Token: 0x0600B4BA RID: 46266 RVA: 0x00439EAB File Offset: 0x004380AB
 		public static bool Parse(string _value)
 		{
 			if (_value == "true")
@@ -20,7 +20,7 @@ namespace XMLData.Parsers
 			throw new InvalidValueException("Expected bool value, found \"" + _value + "\"", -1);
 		}
 
-		// Token: 0x0600B463 RID: 46179 RVA: 0x00437ADD File Offset: 0x00435CDD
+		// Token: 0x0600B4BB RID: 46267 RVA: 0x00439EE1 File Offset: 0x004380E1
 		public static string Unparse(bool _value)
 		{
 			if (!_value)

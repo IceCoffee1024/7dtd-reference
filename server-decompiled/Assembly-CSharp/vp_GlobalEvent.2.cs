@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02001578 RID: 5496
+// Token: 0x0200158A RID: 5514
 public static class vp_GlobalEvent<T>
 {
-	// Token: 0x0600AC0B RID: 44043 RVA: 0x00402FD8 File Offset: 0x004011D8
+	// Token: 0x0600AC63 RID: 44131 RVA: 0x004053DC File Offset: 0x004035DC
 	[Preserve]
 	public static void Register(string name, vp_GlobalCallback<T> callback)
 	{
@@ -27,7 +27,7 @@ public static class vp_GlobalEvent<T>
 		list.Add(callback);
 	}
 
-	// Token: 0x0600AC0C RID: 44044 RVA: 0x00403034 File Offset: 0x00401234
+	// Token: 0x0600AC64 RID: 44132 RVA: 0x00405438 File Offset: 0x00403638
 	[Preserve]
 	public static void Unregister(string name, vp_GlobalCallback<T> callback)
 	{
@@ -48,13 +48,13 @@ public static class vp_GlobalEvent<T>
 		throw vp_GlobalEventInternal.ShowUnregisterException(name);
 	}
 
-	// Token: 0x0600AC0D RID: 44045 RVA: 0x00403085 File Offset: 0x00401285
+	// Token: 0x0600AC65 RID: 44133 RVA: 0x00405489 File Offset: 0x00403689
 	public static void Send(string name, T arg1)
 	{
 		vp_GlobalEvent<T>.Send(name, arg1, vp_GlobalEventMode.DONT_REQUIRE_LISTENER);
 	}
 
-	// Token: 0x0600AC0E RID: 44046 RVA: 0x00403090 File Offset: 0x00401290
+	// Token: 0x0600AC66 RID: 44134 RVA: 0x00405494 File Offset: 0x00403694
 	public static void Send(string name, T arg1, vp_GlobalEventMode mode)
 	{
 		if (string.IsNullOrEmpty(name))
@@ -84,7 +84,7 @@ public static class vp_GlobalEvent<T>
 		}
 	}
 
-	// Token: 0x04007F94 RID: 32660
+	// Token: 0x04007FD5 RID: 32725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Hashtable m_Callbacks = vp_GlobalEventInternal.Callbacks;
 }

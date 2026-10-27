@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200147D RID: 5245
+// Token: 0x0200148F RID: 5263
 public class OnAnimatorIKForwardCall : MonoBehaviour
 {
-	// Token: 0x0600A440 RID: 42048 RVA: 0x003D610F File Offset: 0x003D430F
+	// Token: 0x0600A498 RID: 42136 RVA: 0x003D8513 File Offset: 0x003D6713
 	public void OnAnimatorIK(int layerIndex)
 	{
 		if (this.Callback != null)
@@ -13,6 +13,6 @@ public class OnAnimatorIKForwardCall : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007B02 RID: 31490
+	// Token: 0x04007B43 RID: 31555
 	public IOnAnimatorIKCallback Callback;
 }

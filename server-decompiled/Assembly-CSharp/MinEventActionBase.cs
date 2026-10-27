@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200070D RID: 1805
+// Token: 0x02000715 RID: 1813
 [Preserve]
 public class MinEventActionBase : IMinEventAction
 {
-	// Token: 0x0600372D RID: 14125 RVA: 0x0016ADB5 File Offset: 0x00168FB5
+	// Token: 0x06003744 RID: 14148 RVA: 0x0016BD4D File Offset: 0x00169F4D
 	public virtual void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(this.EventType.ToStringCached<MinEventTypes>() + ": " + this.ToString());
@@ -19,18 +19,18 @@ public class MinEventActionBase : IMinEventAction
 		requirements.GetInfoStrings(ref list);
 	}
 
-	// Token: 0x0600372E RID: 14126 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003745 RID: 14149 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Execute(MinEventParams _params)
 	{
 	}
 
-	// Token: 0x0600372F RID: 14127 RVA: 0x0016ADEA File Offset: 0x00168FEA
+	// Token: 0x06003746 RID: 14150 RVA: 0x0016BD82 File Offset: 0x00169F82
 	public virtual bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return this.Requirements == null || this.Requirements.IsValid(_params);
 	}
 
-	// Token: 0x06003730 RID: 14128 RVA: 0x0016AE04 File Offset: 0x00169004
+	// Token: 0x06003747 RID: 14151 RVA: 0x0016BD9C File Offset: 0x00169F9C
 	public virtual bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		string localName = _attribute.Name.LocalName;
@@ -47,7 +47,7 @@ public class MinEventActionBase : IMinEventAction
 		return true;
 	}
 
-	// Token: 0x06003731 RID: 14129 RVA: 0x0016AE64 File Offset: 0x00169064
+	// Token: 0x06003748 RID: 14152 RVA: 0x0016BDFC File Offset: 0x00169FFC
 	public static MinEventActionBase ParseAction(XElement _element)
 	{
 		if (!_element.HasAttribute("action"))
@@ -70,18 +70,18 @@ public class MinEventActionBase : IMinEventAction
 		return minEventActionBase;
 	}
 
-	// Token: 0x06003732 RID: 14130 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003749 RID: 14153 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void ParseXMLPostProcess()
 	{
 	}
 
-	// Token: 0x04002C5F RID: 11359
+	// Token: 0x04002C7B RID: 11387
 	public MinEventTypes EventType;
 
-	// Token: 0x04002C60 RID: 11360
+	// Token: 0x04002C7C RID: 11388
 	public float Delay;
 
-	// Token: 0x04002C61 RID: 11361
+	// Token: 0x04002C7D RID: 11389
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public RequirementGroup Requirements;
 }

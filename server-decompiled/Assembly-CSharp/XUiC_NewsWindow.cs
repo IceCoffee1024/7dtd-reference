@@ -4,13 +4,13 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E34 RID: 3636
+// Token: 0x02000E3F RID: 3647
 [Preserve]
 public class XUiC_NewsWindow : XUiController
 {
-	// Token: 0x17000C8D RID: 3213
-	// (get) Token: 0x06006F37 RID: 28471 RVA: 0x002B3553 File Offset: 0x002B1753
-	// (set) Token: 0x06006F38 RID: 28472 RVA: 0x002B355B File Offset: 0x002B175B
+	// Token: 0x17000C93 RID: 3219
+	// (get) Token: 0x06006F5C RID: 28508 RVA: 0x002B4ABF File Offset: 0x002B2CBF
+	// (set) Token: 0x06006F5D RID: 28509 RVA: 0x002B4AC7 File Offset: 0x002B2CC7
 	[XuiXmlBinding("has_news_provider")]
 	public bool HasProviders
 	{
@@ -20,9 +20,9 @@ public class XUiC_NewsWindow : XUiController
 		set;
 	}
 
-	// Token: 0x17000C8E RID: 3214
-	// (get) Token: 0x06006F39 RID: 28473 RVA: 0x002B3564 File Offset: 0x002B1764
-	// (set) Token: 0x06006F3A RID: 28474 RVA: 0x002B356C File Offset: 0x002B176C
+	// Token: 0x17000C94 RID: 3220
+	// (get) Token: 0x06006F5E RID: 28510 RVA: 0x002B4AD0 File Offset: 0x002B2CD0
+	// (set) Token: 0x06006F5F RID: 28511 RVA: 0x002B4AD8 File Offset: 0x002B2CD8
 	[XuiXmlAttribute("max_entries", false)]
 	public int MaxEntries
 	{
@@ -32,9 +32,9 @@ public class XUiC_NewsWindow : XUiController
 		set;
 	} = int.MaxValue;
 
-	// Token: 0x17000C8F RID: 3215
-	// (get) Token: 0x06006F3B RID: 28475 RVA: 0x002B3575 File Offset: 0x002B1775
-	// (set) Token: 0x06006F3C RID: 28476 RVA: 0x002B357D File Offset: 0x002B177D
+	// Token: 0x17000C95 RID: 3221
+	// (get) Token: 0x06006F60 RID: 28512 RVA: 0x002B4AE1 File Offset: 0x002B2CE1
+	// (set) Token: 0x06006F61 RID: 28513 RVA: 0x002B4AE9 File Offset: 0x002B2CE9
 	[XuiXmlAttribute("auto_cycle_time_per_entry", false)]
 	public float AutoCycleTimePerEntry
 	{
@@ -45,13 +45,13 @@ public class XUiC_NewsWindow : XUiController
 	}
 
 	// Token: 0x1400009D RID: 157
-	// (add) Token: 0x06006F3D RID: 28477 RVA: 0x002B3588 File Offset: 0x002B1788
-	// (remove) Token: 0x06006F3E RID: 28478 RVA: 0x002B35C0 File Offset: 0x002B17C0
+	// (add) Token: 0x06006F62 RID: 28514 RVA: 0x002B4AF4 File Offset: 0x002B2CF4
+	// (remove) Token: 0x06006F63 RID: 28515 RVA: 0x002B4B2C File Offset: 0x002B2D2C
 	public event XUiC_NewsWindow.NewsEntryClickedDelegate NewsEntryClicked;
 
-	// Token: 0x17000C90 RID: 3216
-	// (get) Token: 0x06006F3F RID: 28479 RVA: 0x002B35F5 File Offset: 0x002B17F5
-	// (set) Token: 0x06006F40 RID: 28480 RVA: 0x002B3600 File Offset: 0x002B1800
+	// Token: 0x17000C96 RID: 3222
+	// (get) Token: 0x06006F64 RID: 28516 RVA: 0x002B4B61 File Offset: 0x002B2D61
+	// (set) Token: 0x06006F65 RID: 28517 RVA: 0x002B4B6C File Offset: 0x002B2D6C
 	public int CurrentIndex
 	{
 		get
@@ -81,8 +81,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C91 RID: 3217
-	// (get) Token: 0x06006F41 RID: 28481 RVA: 0x002B365C File Offset: 0x002B185C
+	// Token: 0x17000C97 RID: 3223
+	// (get) Token: 0x06006F66 RID: 28518 RVA: 0x002B4BC8 File Offset: 0x002B2DC8
 	public NewsManager.NewsEntry CurrentEntry
 	{
 		get
@@ -105,8 +105,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C92 RID: 3218
-	// (get) Token: 0x06006F42 RID: 28482 RVA: 0x002B36CC File Offset: 0x002B18CC
+	// Token: 0x17000C98 RID: 3224
+	// (get) Token: 0x06006F67 RID: 28519 RVA: 0x002B4C38 File Offset: 0x002B2E38
 	public NewsManager.NewsEntry CurrentEntryOrEmpty
 	{
 		get
@@ -115,7 +115,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F43 RID: 28483 RVA: 0x002B36DD File Offset: 0x002B18DD
+	// Token: 0x06006F68 RID: 28520 RVA: 0x002B4C49 File Offset: 0x002B2E49
 	[XuiXmlAttribute("browse_sound", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attribBrowseSound(string _value)
@@ -126,7 +126,7 @@ public class XUiC_NewsWindow : XUiController
 		});
 	}
 
-	// Token: 0x06006F44 RID: 28484 RVA: 0x002B36F8 File Offset: 0x002B18F8
+	// Token: 0x06006F69 RID: 28521 RVA: 0x002B4C64 File Offset: 0x002B2E64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void parseSourcesString(string _value)
 	{
@@ -142,7 +142,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F45 RID: 28485 RVA: 0x002B3745 File Offset: 0x002B1945
+	// Token: 0x06006F6A RID: 28522 RVA: 0x002B4CB1 File Offset: 0x002B2EB1
 	[XuiXmlAttribute("additional_sources", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attribAdditionalSources(string _value)
@@ -150,7 +150,7 @@ public class XUiC_NewsWindow : XUiController
 		this.parseSourcesString(_value);
 	}
 
-	// Token: 0x06006F46 RID: 28486 RVA: 0x002B3745 File Offset: 0x002B1945
+	// Token: 0x06006F6B RID: 28523 RVA: 0x002B4CB1 File Offset: 0x002B2EB1
 	[XuiXmlAttribute("sources", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attribSources(string _value)
@@ -158,8 +158,8 @@ public class XUiC_NewsWindow : XUiController
 		this.parseSourcesString(_value);
 	}
 
-	// Token: 0x17000C93 RID: 3219
-	// (get) Token: 0x06006F47 RID: 28487 RVA: 0x002B374E File Offset: 0x002B194E
+	// Token: 0x17000C99 RID: 3225
+	// (get) Token: 0x06006F6C RID: 28524 RVA: 0x002B4CBA File Offset: 0x002B2EBA
 	[XuiXmlBinding("news_count")]
 	public int NewsCount
 	{
@@ -170,8 +170,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C94 RID: 3220
-	// (get) Token: 0x06006F48 RID: 28488 RVA: 0x002B3766 File Offset: 0x002B1966
+	// Token: 0x17000C9A RID: 3226
+	// (get) Token: 0x06006F6D RID: 28525 RVA: 0x002B4CD2 File Offset: 0x002B2ED2
 	[XuiXmlBinding("is_custom")]
 	public bool NewsIsCustom
 	{
@@ -182,8 +182,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C95 RID: 3221
-	// (get) Token: 0x06006F49 RID: 28489 RVA: 0x002B3773 File Offset: 0x002B1973
+	// Token: 0x17000C9B RID: 3227
+	// (get) Token: 0x06006F6E RID: 28526 RVA: 0x002B4CDF File Offset: 0x002B2EDF
 	[XuiXmlBinding("source")]
 	public string NewsSource
 	{
@@ -194,8 +194,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C96 RID: 3222
-	// (get) Token: 0x06006F4A RID: 28490 RVA: 0x002B3789 File Offset: 0x002B1989
+	// Token: 0x17000C9C RID: 3228
+	// (get) Token: 0x06006F6F RID: 28527 RVA: 0x002B4CF5 File Offset: 0x002B2EF5
 	[XuiXmlBinding("has_text")]
 	public bool NewsHasText
 	{
@@ -206,8 +206,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C97 RID: 3223
-	// (get) Token: 0x06006F4B RID: 28491 RVA: 0x002B379E File Offset: 0x002B199E
+	// Token: 0x17000C9D RID: 3229
+	// (get) Token: 0x06006F70 RID: 28528 RVA: 0x002B4D0A File Offset: 0x002B2F0A
 	[XuiXmlBinding("headline")]
 	public string NewsHeadline
 	{
@@ -218,8 +218,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C98 RID: 3224
-	// (get) Token: 0x06006F4C RID: 28492 RVA: 0x002B37B4 File Offset: 0x002B19B4
+	// Token: 0x17000C9E RID: 3230
+	// (get) Token: 0x06006F71 RID: 28529 RVA: 0x002B4D20 File Offset: 0x002B2F20
 	[XuiXmlBinding("headline2")]
 	public string NewsHeadline2
 	{
@@ -230,8 +230,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C99 RID: 3225
-	// (get) Token: 0x06006F4D RID: 28493 RVA: 0x002B37CC File Offset: 0x002B19CC
+	// Token: 0x17000C9F RID: 3231
+	// (get) Token: 0x06006F72 RID: 28530 RVA: 0x002B4D38 File Offset: 0x002B2F38
 	[XuiXmlBinding("date")]
 	public string NewsDate
 	{
@@ -242,8 +242,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9A RID: 3226
-	// (get) Token: 0x06006F4E RID: 28494 RVA: 0x002B37F1 File Offset: 0x002B19F1
+	// Token: 0x17000CA0 RID: 3232
+	// (get) Token: 0x06006F73 RID: 28531 RVA: 0x002B4D5D File Offset: 0x002B2F5D
 	[XuiXmlBinding("age")]
 	public string NewsAge
 	{
@@ -254,8 +254,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9B RID: 3227
-	// (get) Token: 0x06006F4F RID: 28495 RVA: 0x002B3803 File Offset: 0x002B1A03
+	// Token: 0x17000CA1 RID: 3233
+	// (get) Token: 0x06006F74 RID: 28532 RVA: 0x002B4D6F File Offset: 0x002B2F6F
 	[XuiXmlBinding("text")]
 	public string NewsText
 	{
@@ -266,8 +266,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9C RID: 3228
-	// (get) Token: 0x06006F50 RID: 28496 RVA: 0x002B3819 File Offset: 0x002B1A19
+	// Token: 0x17000CA2 RID: 3234
+	// (get) Token: 0x06006F75 RID: 28533 RVA: 0x002B4D85 File Offset: 0x002B2F85
 	[XuiXmlBinding("has_link")]
 	public bool NewsHasLink
 	{
@@ -278,8 +278,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9D RID: 3229
-	// (get) Token: 0x06006F51 RID: 28497 RVA: 0x002B382E File Offset: 0x002B1A2E
+	// Token: 0x17000CA3 RID: 3235
+	// (get) Token: 0x06006F76 RID: 28534 RVA: 0x002B4D9A File Offset: 0x002B2F9A
 	[XuiXmlBinding("link")]
 	public string NewsLink
 	{
@@ -290,8 +290,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9E RID: 3230
-	// (get) Token: 0x06006F52 RID: 28498 RVA: 0x002B3844 File Offset: 0x002B1A44
+	// Token: 0x17000CA4 RID: 3236
+	// (get) Token: 0x06006F77 RID: 28535 RVA: 0x002B4DB0 File Offset: 0x002B2FB0
 	[XuiXmlBinding("has_younger")]
 	public bool HasYounger
 	{
@@ -302,8 +302,8 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9F RID: 3231
-	// (get) Token: 0x06006F53 RID: 28499 RVA: 0x002B385F File Offset: 0x002B1A5F
+	// Token: 0x17000CA5 RID: 3237
+	// (get) Token: 0x06006F78 RID: 28536 RVA: 0x002B4DCB File Offset: 0x002B2FCB
 	[XuiXmlBinding("has_older")]
 	public bool HasOlder
 	{
@@ -314,7 +314,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F54 RID: 28500 RVA: 0x002B3888 File Offset: 0x002B1A88
+	// Token: 0x06006F79 RID: 28537 RVA: 0x002B4DF4 File Offset: 0x002B2FF4
 	public override void Init()
 	{
 		base.Init();
@@ -380,7 +380,7 @@ public class XUiC_NewsWindow : XUiController
 		this.newsUpdated(NewsManager.Instance);
 	}
 
-	// Token: 0x06006F55 RID: 28501 RVA: 0x002B3A5F File Offset: 0x002B1C5F
+	// Token: 0x06006F7A RID: 28538 RVA: 0x002B4FCB File Offset: 0x002B31CB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnScrollEvent(XUiController _sender, float _delta)
 	{
@@ -392,7 +392,7 @@ public class XUiC_NewsWindow : XUiController
 		this.selector.ScrollEvent(_sender, _delta);
 	}
 
-	// Token: 0x06006F56 RID: 28502 RVA: 0x002B3A84 File Offset: 0x002B1C84
+	// Token: 0x06006F7B RID: 28539 RVA: 0x002B4FF0 File Offset: 0x002B31F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Selector_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
@@ -401,7 +401,7 @@ public class XUiC_NewsWindow : XUiController
 		this.autoCycle = false;
 	}
 
-	// Token: 0x06006F57 RID: 28503 RVA: 0x002B3AB0 File Offset: 0x002B1CB0
+	// Token: 0x06006F7C RID: 28540 RVA: 0x002B501C File Offset: 0x002B321C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void newsUpdated(NewsManager _newsManager)
 	{
@@ -424,7 +424,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F58 RID: 28504 RVA: 0x002B3B54 File Offset: 0x002B1D54
+	// Token: 0x06006F7D RID: 28541 RVA: 0x002B50C0 File Offset: 0x002B32C0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -446,7 +446,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F59 RID: 28505 RVA: 0x002B3BC8 File Offset: 0x002B1DC8
+	// Token: 0x06006F7E RID: 28542 RVA: 0x002B5134 File Offset: 0x002B3334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doAutoCycle(float _dt)
 	{
@@ -468,7 +468,7 @@ public class XUiC_NewsWindow : XUiController
 		this.CurrentIndex = Mathf.CeilToInt((float)this.selector.Value) - 1;
 	}
 
-	// Token: 0x06006F5A RID: 28506 RVA: 0x002B3C54 File Offset: 0x002B1E54
+	// Token: 0x06006F7F RID: 28543 RVA: 0x002B51C0 File Offset: 0x002B33C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLink_OnPressed(XUiController _sender, int _mousebutton)
 	{
@@ -507,7 +507,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F5B RID: 28507 RVA: 0x002B3D24 File Offset: 0x002B1F24
+	// Token: 0x06006F80 RID: 28544 RVA: 0x002B5290 File Offset: 0x002B3490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cycle(int _increment, bool _sound)
 	{
@@ -529,7 +529,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F5C RID: 28508 RVA: 0x002B3DCC File Offset: 0x002B1FCC
+	// Token: 0x06006F81 RID: 28545 RVA: 0x002B5338 File Offset: 0x002B3538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetIndex()
 	{
@@ -540,7 +540,7 @@ public class XUiC_NewsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006F5D RID: 28509 RVA: 0x002B3DF5 File Offset: 0x002B1FF5
+	// Token: 0x06006F82 RID: 28546 RVA: 0x002B5361 File Offset: 0x002B3561
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -549,43 +549,43 @@ public class XUiC_NewsWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0400548B RID: 21643
+	// Token: 0x040054B0 RID: 21680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PlatformStoreLink = "openstore://";
 
-	// Token: 0x0400548C RID: 21644
+	// Token: 0x040054B1 RID: 21681
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip browseSound;
 
-	// Token: 0x0400548D RID: 21645
+	// Token: 0x040054B2 RID: 21682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat selector;
 
-	// Token: 0x0400548E RID: 21646
+	// Token: 0x040054B3 RID: 21683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture[] bannerTextures;
 
-	// Token: 0x0400548F RID: 21647
+	// Token: 0x040054B4 RID: 21684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object newsLock = new object();
 
-	// Token: 0x04005490 RID: 21648
+	// Token: 0x040054B5 RID: 21685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentIndex;
 
-	// Token: 0x04005491 RID: 21649
+	// Token: 0x040054B6 RID: 21686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<NewsManager.NewsEntry> entries = new List<NewsManager.NewsEntry>();
 
-	// Token: 0x04005493 RID: 21651
+	// Token: 0x040054B8 RID: 21688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> newsProviders = new List<string>();
 
-	// Token: 0x04005496 RID: 21654
+	// Token: 0x040054BB RID: 21691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool autoCycle;
 
-	// Token: 0x02000E35 RID: 3637
-	// (Invoke) Token: 0x06006F63 RID: 28515
+	// Token: 0x02000E40 RID: 3648
+	// (Invoke) Token: 0x06006F88 RID: 28552
 	public delegate void NewsEntryClickedDelegate(NewsManager.NewsEntry _newsEntry);
 }

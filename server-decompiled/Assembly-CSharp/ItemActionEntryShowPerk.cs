@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D77 RID: 3447
+// Token: 0x02000D82 RID: 3458
 [Preserve]
 public class ItemActionEntryShowPerk : BaseItemActionEntry
 {
-	// Token: 0x06006839 RID: 26681 RVA: 0x00295BF8 File Offset: 0x00293DF8
+	// Token: 0x0600685E RID: 26718 RVA: 0x00297120 File Offset: 0x00295320
 	public ItemActionEntryShowPerk(XUiController _controller, RecipeUnlockData _unlockData)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -34,13 +34,13 @@ public class ItemActionEntryShowPerk : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0600683A RID: 26682 RVA: 0x002941E6 File Offset: 0x002923E6
+	// Token: 0x0600685F RID: 26719 RVA: 0x0029570E File Offset: 0x0029390E
 	public override void RefreshEnabled()
 	{
 		base.Enabled = true;
 	}
 
-	// Token: 0x0600683B RID: 26683 RVA: 0x00295CC0 File Offset: 0x00293EC0
+	// Token: 0x06006860 RID: 26720 RVA: 0x002971E8 File Offset: 0x002953E8
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;
@@ -66,7 +66,7 @@ public class ItemActionEntryShowPerk : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0400504B RID: 20555
+	// Token: 0x04005070 RID: 20592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly RecipeUnlockData unlockData;
 }

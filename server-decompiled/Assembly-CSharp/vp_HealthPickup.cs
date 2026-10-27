@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001606 RID: 5638
+// Token: 0x02001618 RID: 5656
 public class vp_HealthPickup : vp_Pickup
 {
-	// Token: 0x0600AF96 RID: 44950 RVA: 0x004178E4 File Offset: 0x00415AE4
+	// Token: 0x0600AFEE RID: 45038 RVA: 0x00419CE8 File Offset: 0x00417EE8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryGive(vp_FPPlayerEventHandler player)
 	{
@@ -20,6 +20,6 @@ public class vp_HealthPickup : vp_Pickup
 		return true;
 	}
 
-	// Token: 0x04008312 RID: 33554
+	// Token: 0x04008353 RID: 33619
 	public float Health = 1f;
 }

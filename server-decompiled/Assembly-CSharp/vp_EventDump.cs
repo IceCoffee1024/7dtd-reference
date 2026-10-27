@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x02001568 RID: 5480
+// Token: 0x0200157A RID: 5498
 [Preserve]
 public class vp_EventDump
 {
-	// Token: 0x0600ABCF RID: 43983 RVA: 0x00401EC8 File Offset: 0x004000C8
+	// Token: 0x0600AC27 RID: 44071 RVA: 0x004042CC File Offset: 0x004024CC
 	public static string Dump(vp_EventHandler handler, string[] eventTypes)
 	{
 		string text = "";
@@ -42,7 +42,7 @@ public class vp_EventDump
 		return text;
 	}
 
-	// Token: 0x0600ABD0 RID: 43984 RVA: 0x00401FC8 File Offset: 0x004001C8
+	// Token: 0x0600AC28 RID: 44072 RVA: 0x004043CC File Offset: 0x004025CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string DumpEventsOfType(string type, string caption, vp_EventHandler handler)
 	{
@@ -86,7 +86,7 @@ public class vp_EventDump
 		return text;
 	}
 
-	// Token: 0x0600ABD1 RID: 43985 RVA: 0x004021D0 File Offset: 0x004003D0
+	// Token: 0x0600AC29 RID: 44073 RVA: 0x004045D4 File Offset: 0x004027D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string DumpEventListeners(object e, string[] invokers)
 	{
@@ -198,7 +198,7 @@ public class vp_EventDump
 		return text;
 	}
 
-	// Token: 0x0600ABD2 RID: 43986 RVA: 0x00402408 File Offset: 0x00400608
+	// Token: 0x0600AC2A RID: 44074 RVA: 0x0040480C File Offset: 0x00402A0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] GetMethodNames(Delegate[] list)
 	{
@@ -244,7 +244,7 @@ public class vp_EventDump
 		return array;
 	}
 
-	// Token: 0x0600ABD3 RID: 43987 RVA: 0x004024D0 File Offset: 0x004006D0
+	// Token: 0x0600AC2B RID: 44075 RVA: 0x004048D4 File Offset: 0x00402AD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Delegate[] RemoveDelegatesFromList(Delegate[] list)
 	{
@@ -259,7 +259,7 @@ public class vp_EventDump
 		return list2.ToArray();
 	}
 
-	// Token: 0x0600ABD4 RID: 43988 RVA: 0x0040252C File Offset: 0x0040072C
+	// Token: 0x0600AC2C RID: 44076 RVA: 0x00404930 File Offset: 0x00402B30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string DumpDelegateNames(string[] array)
 	{

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000A74 RID: 2676
+// Token: 0x02000A7E RID: 2686
 public class SelectionCategory
 {
-	// Token: 0x06005098 RID: 20632 RVA: 0x001EEFF8 File Offset: 0x001ED1F8
+	// Token: 0x060050BC RID: 20668 RVA: 0x001F00D4 File Offset: 0x001EE2D4
 	public SelectionCategory(string _name, Transform _transform, Color _colActive, Color _colInactive, Color _colFaceSelected, bool _bCollider, string _tag, ISelectionBoxCallback _boxCallbacks, int _layer = 0)
 	{
 		this.name = _name;
@@ -20,19 +20,19 @@ public class SelectionCategory
 		this.layer = _layer;
 	}
 
-	// Token: 0x06005099 RID: 20633 RVA: 0x001EF078 File Offset: 0x001ED278
+	// Token: 0x060050BD RID: 20669 RVA: 0x001F0154 File Offset: 0x001EE354
 	public void SetCallback(ISelectionBoxCallback _callback)
 	{
 		this.BoxCallbacks = _callback;
 	}
 
-	// Token: 0x0600509A RID: 20634 RVA: 0x001EF081 File Offset: 0x001ED281
+	// Token: 0x060050BE RID: 20670 RVA: 0x001F015D File Offset: 0x001EE35D
 	public bool IsVisible()
 	{
 		return this.transform.gameObject.activeSelf;
 	}
 
-	// Token: 0x0600509B RID: 20635 RVA: 0x001EF094 File Offset: 0x001ED294
+	// Token: 0x060050BF RID: 20671 RVA: 0x001F0170 File Offset: 0x001EE370
 	public void SetVisible(bool _bVisible)
 	{
 		this.transform.gameObject.SetActive(_bVisible);
@@ -51,7 +51,7 @@ public class SelectionCategory
 		}
 	}
 
-	// Token: 0x0600509C RID: 20636 RVA: 0x001EF0EC File Offset: 0x001ED2EC
+	// Token: 0x060050C0 RID: 20672 RVA: 0x001F01C8 File Offset: 0x001EE3C8
 	public void SetCaptionVisibility(bool _visible)
 	{
 		foreach (KeyValuePair<string, SelectionBox> keyValuePair in this.boxes)
@@ -60,7 +60,7 @@ public class SelectionCategory
 		}
 	}
 
-	// Token: 0x0600509D RID: 20637 RVA: 0x001EF148 File Offset: 0x001ED348
+	// Token: 0x060050C1 RID: 20673 RVA: 0x001F0224 File Offset: 0x001EE424
 	public void Clear()
 	{
 		foreach (KeyValuePair<string, SelectionBox> keyValuePair in this.boxes)
@@ -76,7 +76,7 @@ public class SelectionCategory
 		categoryCallbacks.OnSelectionCategoryCleared(this);
 	}
 
-	// Token: 0x0600509E RID: 20638 RVA: 0x001EF1C4 File Offset: 0x001ED3C4
+	// Token: 0x060050C2 RID: 20674 RVA: 0x001F02A0 File Offset: 0x001EE4A0
 	public SelectionBox AddBox(string _name, Vector3i _pos, Vector3i _size, bool _bDrawDirection = false, bool _bAlwaysDrawDirection = false)
 	{
 		SelectionBox selectionBox;
@@ -106,7 +106,7 @@ public class SelectionCategory
 		return selectionBox2;
 	}
 
-	// Token: 0x0600509F RID: 20639 RVA: 0x001EF278 File Offset: 0x001ED478
+	// Token: 0x060050C3 RID: 20675 RVA: 0x001F0354 File Offset: 0x001EE554
 	public SelectionBox GetBox(string _name)
 	{
 		SelectionBox selectionBox;
@@ -114,13 +114,13 @@ public class SelectionCategory
 		return selectionBox;
 	}
 
-	// Token: 0x060050A0 RID: 20640 RVA: 0x001EF295 File Offset: 0x001ED495
+	// Token: 0x060050C4 RID: 20676 RVA: 0x001F0371 File Offset: 0x001EE571
 	public bool TryGetBox(string _name, out SelectionBox _box)
 	{
 		return this.boxes.TryGetValue(_name, out _box);
 	}
 
-	// Token: 0x060050A1 RID: 20641 RVA: 0x001EF2A4 File Offset: 0x001ED4A4
+	// Token: 0x060050C5 RID: 20677 RVA: 0x001F0380 File Offset: 0x001EE580
 	public void RenameBox(SelectionBox _box, string _newName)
 	{
 		if (_box.name.Equals(_newName))
@@ -133,7 +133,7 @@ public class SelectionCategory
 		this.boxes.Remove(text);
 	}
 
-	// Token: 0x060050A2 RID: 20642 RVA: 0x001EF2E8 File Offset: 0x001ED4E8
+	// Token: 0x060050C6 RID: 20678 RVA: 0x001F03C4 File Offset: 0x001EE5C4
 	public void RemoveBox(SelectionBox _box)
 	{
 		if (SelectionBoxManager.Instance.Selection == _box)
@@ -149,7 +149,7 @@ public class SelectionCategory
 		this.boxes.Remove(_box.name);
 	}
 
-	// Token: 0x060050A3 RID: 20643 RVA: 0x001EF340 File Offset: 0x001ED540
+	// Token: 0x060050C7 RID: 20679 RVA: 0x001F041C File Offset: 0x001EE61C
 	public void RemoveBox(string _name)
 	{
 		SelectionBox selectionBox;
@@ -160,51 +160,51 @@ public class SelectionCategory
 		this.RemoveBox(selectionBox);
 	}
 
-	// Token: 0x060050A4 RID: 20644 RVA: 0x001EF365 File Offset: 0x001ED565
+	// Token: 0x060050C8 RID: 20680 RVA: 0x001F0441 File Offset: 0x001EE641
 	public override string ToString()
 	{
 		return "Cat " + this.name;
 	}
 
-	// Token: 0x04003E22 RID: 15906
+	// Token: 0x04003E43 RID: 15939
 	public readonly string name;
 
-	// Token: 0x04003E23 RID: 15907
+	// Token: 0x04003E44 RID: 15940
 	public readonly string LocalizedName;
 
-	// Token: 0x04003E24 RID: 15908
+	// Token: 0x04003E45 RID: 15941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Transform transform;
 
-	// Token: 0x04003E25 RID: 15909
+	// Token: 0x04003E46 RID: 15942
 	public readonly Color colActive;
 
-	// Token: 0x04003E26 RID: 15910
+	// Token: 0x04003E47 RID: 15943
 	public readonly Color colInactive;
 
-	// Token: 0x04003E27 RID: 15911
+	// Token: 0x04003E48 RID: 15944
 	public readonly Color colFaceSelected;
 
-	// Token: 0x04003E28 RID: 15912
+	// Token: 0x04003E49 RID: 15945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool bCollider;
 
-	// Token: 0x04003E29 RID: 15913
+	// Token: 0x04003E4A RID: 15946
 	public readonly string tag;
 
-	// Token: 0x04003E2A RID: 15914
+	// Token: 0x04003E4B RID: 15947
 	public ISelectionBoxCallback BoxCallbacks;
 
-	// Token: 0x04003E2B RID: 15915
+	// Token: 0x04003E4C RID: 15948
 	public ISelectionCategoryCallback CategoryCallbacks;
 
-	// Token: 0x04003E2C RID: 15916
+	// Token: 0x04003E4D RID: 15949
 	public Action CheckKeysCallback;
 
-	// Token: 0x04003E2D RID: 15917
+	// Token: 0x04003E4E RID: 15950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int layer;
 
-	// Token: 0x04003E2E RID: 15918
+	// Token: 0x04003E4F RID: 15951
 	public readonly Dictionary<string, SelectionBox> boxes = new Dictionary<string, SelectionBox>();
 }

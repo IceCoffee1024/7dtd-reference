@@ -6,32 +6,32 @@ using Webserver.Permissions;
 
 namespace Webserver.Commands
 {
-	// Token: 0x02001B3A RID: 6970
+	// Token: 0x02001B6B RID: 7019
 	[Preserve]
 	public class WebTokens : ConsoleCmdAbstract
 	{
-		// Token: 0x0600D16B RID: 53611 RVA: 0x004C02E4 File Offset: 0x004BE4E4
+		// Token: 0x0600D27F RID: 53887 RVA: 0x004C3E0C File Offset: 0x004C200C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string[] getCommands()
 		{
 			return new string[] { "webtokens" };
 		}
 
-		// Token: 0x0600D16C RID: 53612 RVA: 0x004C02F4 File Offset: 0x004BE4F4
+		// Token: 0x0600D280 RID: 53888 RVA: 0x004C3E1C File Offset: 0x004C201C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getDescription()
 		{
 			return "Manage web tokens";
 		}
 
-		// Token: 0x0600D16D RID: 53613 RVA: 0x004C02FB File Offset: 0x004BE4FB
+		// Token: 0x0600D281 RID: 53889 RVA: 0x004C3E23 File Offset: 0x004C2023
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getHelp()
 		{
 			return "Set/get webtoken permission levels. A level of 0 is maximum permission.\nUsage:\n   webtokens add <tokenname> <tokensecret> <level>\n   webtokens remove <tokenname>\n   webtokens list";
 		}
 
-		// Token: 0x0600D16E RID: 53614 RVA: 0x004C0304 File Offset: 0x004BE504
+		// Token: 0x0600D282 RID: 53890 RVA: 0x004C3E2C File Offset: 0x004C202C
 		public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 		{
 			if (_params.Count < 1)
@@ -57,7 +57,7 @@ namespace Webserver.Commands
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 		}
 
-		// Token: 0x0600D16F RID: 53615 RVA: 0x004C039C File Offset: 0x004BE59C
+		// Token: 0x0600D283 RID: 53891 RVA: 0x004C3EC4 File Offset: 0x004C20C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExecuteAdd(List<string> _params)
 		{
@@ -96,7 +96,7 @@ namespace Webserver.Commands
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Web API token with name={0} and secret={1} added with permission level of {2}.", _params[1], _params[2], num));
 		}
 
-		// Token: 0x0600D170 RID: 53616 RVA: 0x004C04B8 File Offset: 0x004BE6B8
+		// Token: 0x0600D284 RID: 53892 RVA: 0x004C3FE0 File Offset: 0x004C21E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExecuteRemove(List<string> _params)
 		{
@@ -119,7 +119,7 @@ namespace Webserver.Commands
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output(_params[1] + " removed from web API token permissions list.");
 		}
 
-		// Token: 0x0600D171 RID: 53617 RVA: 0x004C055C File Offset: 0x004BE75C
+		// Token: 0x0600D285 RID: 53893 RVA: 0x004C4084 File Offset: 0x004C2284
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExecuteList()
 		{
@@ -135,7 +135,7 @@ namespace Webserver.Commands
 			}
 		}
 
-		// Token: 0x04009EB8 RID: 40632
+		// Token: 0x04009FA1 RID: 40865
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex validNameTokenMatcher = new Regex("^\\w+$");
 	}

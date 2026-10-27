@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-// Token: 0x0200075D RID: 1885
+// Token: 0x02000765 RID: 1893
 public class NavObjectManager
 {
-	// Token: 0x170005B4 RID: 1460
-	// (get) Token: 0x06003839 RID: 14393 RVA: 0x001708FA File Offset: 0x0016EAFA
+	// Token: 0x170005B8 RID: 1464
+	// (get) Token: 0x06003850 RID: 14416 RVA: 0x00171892 File Offset: 0x0016FA92
 	public static NavObjectManager Instance
 	{
 		get
@@ -20,8 +20,8 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x170005B5 RID: 1461
-	// (get) Token: 0x0600383A RID: 14394 RVA: 0x00170912 File Offset: 0x0016EB12
+	// Token: 0x170005B9 RID: 1465
+	// (get) Token: 0x06003851 RID: 14417 RVA: 0x001718AA File Offset: 0x0016FAAA
 	public static bool HasInstance
 	{
 		get
@@ -30,14 +30,14 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x0600383B RID: 14395 RVA: 0x0017091C File Offset: 0x0016EB1C
+	// Token: 0x06003852 RID: 14418 RVA: 0x001718B4 File Offset: 0x0016FAB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NavObjectManager()
 	{
 		NavObjectManager.instance = this;
 	}
 
-	// Token: 0x0600383C RID: 14396 RVA: 0x00170956 File Offset: 0x0016EB56
+	// Token: 0x06003853 RID: 14419 RVA: 0x001718EE File Offset: 0x0016FAEE
 	public void Cleanup()
 	{
 		NavObjectManager.instance = null;
@@ -47,21 +47,21 @@ public class NavObjectManager
 	}
 
 	// Token: 0x1400003F RID: 63
-	// (add) Token: 0x0600383D RID: 14397 RVA: 0x00170980 File Offset: 0x0016EB80
-	// (remove) Token: 0x0600383E RID: 14398 RVA: 0x001709B8 File Offset: 0x0016EBB8
+	// (add) Token: 0x06003854 RID: 14420 RVA: 0x00171918 File Offset: 0x0016FB18
+	// (remove) Token: 0x06003855 RID: 14421 RVA: 0x00171950 File Offset: 0x0016FB50
 	public event NavObjectManager.NavObjectChangedDelegate OnNavObjectAdded;
 
 	// Token: 0x14000040 RID: 64
-	// (add) Token: 0x0600383F RID: 14399 RVA: 0x001709F0 File Offset: 0x0016EBF0
-	// (remove) Token: 0x06003840 RID: 14400 RVA: 0x00170A28 File Offset: 0x0016EC28
+	// (add) Token: 0x06003856 RID: 14422 RVA: 0x00171988 File Offset: 0x0016FB88
+	// (remove) Token: 0x06003857 RID: 14423 RVA: 0x001719C0 File Offset: 0x0016FBC0
 	public event NavObjectManager.NavObjectChangedDelegate OnNavObjectRemoved;
 
 	// Token: 0x14000041 RID: 65
-	// (add) Token: 0x06003841 RID: 14401 RVA: 0x00170A60 File Offset: 0x0016EC60
-	// (remove) Token: 0x06003842 RID: 14402 RVA: 0x00170A98 File Offset: 0x0016EC98
+	// (add) Token: 0x06003858 RID: 14424 RVA: 0x001719F8 File Offset: 0x0016FBF8
+	// (remove) Token: 0x06003859 RID: 14425 RVA: 0x00171A30 File Offset: 0x0016FC30
 	public event NavObjectManager.NavObjectChangedDelegate OnNavObjectRefreshed;
 
-	// Token: 0x06003843 RID: 14403 RVA: 0x00170AD0 File Offset: 0x0016ECD0
+	// Token: 0x0600385A RID: 14426 RVA: 0x00171A68 File Offset: 0x0016FC68
 	public NavObject RegisterNavObject(string className, Transform trackedTransform, string overrideSprite = "", bool hiddenOnCompass = false)
 	{
 		for (int i = 0; i < this.NavObjectList.Count; i++)
@@ -100,7 +100,7 @@ public class NavObjectManager
 		return navObject;
 	}
 
-	// Token: 0x06003844 RID: 14404 RVA: 0x00170BB4 File Offset: 0x0016EDB4
+	// Token: 0x0600385B RID: 14427 RVA: 0x00171B4C File Offset: 0x0016FD4C
 	public NavObject RegisterNavObject(string className, Vector3 trackedPosition, string overrideSprite = "", bool hiddenOnCompass = false, int entityId = -1, Entity ownerEntity = null)
 	{
 		for (int i = 0; i < this.NavObjectList.Count; i++)
@@ -148,7 +148,7 @@ public class NavObjectManager
 		return navObject;
 	}
 
-	// Token: 0x06003845 RID: 14405 RVA: 0x00170D2C File Offset: 0x0016EF2C
+	// Token: 0x0600385C RID: 14428 RVA: 0x00171CC4 File Offset: 0x0016FEC4
 	public NavObject RegisterNavObject(string className, Entity trackedEntity, string overrideSprite = "", bool hiddenOnCompass = false)
 	{
 		for (int i = 0; i < this.NavObjectList.Count; i++)
@@ -188,7 +188,7 @@ public class NavObjectManager
 		return navObject;
 	}
 
-	// Token: 0x06003846 RID: 14406 RVA: 0x00170E54 File Offset: 0x0016F054
+	// Token: 0x0600385D RID: 14429 RVA: 0x00171DEC File Offset: 0x0016FFEC
 	public void UnRegisterNavObject(NavObject navObject)
 	{
 		if (navObject == null)
@@ -215,37 +215,37 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x06003847 RID: 14407 RVA: 0x00170EBC File Offset: 0x0016F0BC
+	// Token: 0x0600385E RID: 14430 RVA: 0x00171E54 File Offset: 0x00170054
 	public void UnRegisterNavObjectByPosition(Vector3 position, string navObjectClass)
 	{
 		this.unRegisterNavObjects((NavObject navObject) => navObject.IsTrackedPosition(position) && navObject.NavObjectClass != null && navObject.NavObjectClass.NavObjectClassName == navObjectClass, string.Format("UnRegisterNavObjectByOwnerEntity {0}", position));
 	}
 
-	// Token: 0x06003848 RID: 14408 RVA: 0x00170F04 File Offset: 0x0016F104
+	// Token: 0x0600385F RID: 14431 RVA: 0x00171E9C File Offset: 0x0017009C
 	public void UnRegisterNavObjectByOwnerEntity(Entity ownerEntity, string navObjectClass)
 	{
 		this.unRegisterNavObjects((NavObject navObject) => navObject.OwnerEntity == ownerEntity && navObject.NavObjectClass != null && navObject.NavObjectClass.NavObjectClassName == navObjectClass, string.Format("\"UnRegisterNavObjectByOwnerEntity {0}", ownerEntity));
 	}
 
-	// Token: 0x06003849 RID: 14409 RVA: 0x00170F48 File Offset: 0x0016F148
+	// Token: 0x06003860 RID: 14432 RVA: 0x00171EE0 File Offset: 0x001700E0
 	public void UnRegisterNavObjectByEntityID(int entityId)
 	{
 		this.unRegisterNavObjects((NavObject navObject) => navObject.EntityID == entityId, string.Format("UnRegisterNavObjectByEntityID {0}", entityId));
 	}
 
-	// Token: 0x0600384A RID: 14410 RVA: 0x00170F8C File Offset: 0x0016F18C
+	// Token: 0x06003861 RID: 14433 RVA: 0x00171F24 File Offset: 0x00170124
 	public void UnRegisterNavObjectByClass(string className)
 	{
 		this.unRegisterNavObjects((NavObject navObject) => navObject.NavObjectClass != null && navObject.NavObjectClass.NavObjectClassName == className, string.Format("UnRegisterNavObjectByClass {0}", className));
 	}
 
-	// Token: 0x0600384B RID: 14411 RVA: 0x00170FC8 File Offset: 0x0016F1C8
+	// Token: 0x06003862 RID: 14434 RVA: 0x00171F60 File Offset: 0x00170160
 	public void UnRegisterNavObjectByClass(int classId)
 	{
 		this.unRegisterNavObjects((NavObject navObject) => navObject.NavObjectClass != null && navObject.NavObjectClass.NavObjectClassName.GetHashCode() == classId, string.Format("UnRegisterNavObjectByClass {0}", EntityClass.GetEntityClassName(classId)));
 	}
 
-	// Token: 0x0600384C RID: 14412 RVA: 0x0017100C File Offset: 0x0016F20C
+	// Token: 0x06003863 RID: 14435 RVA: 0x00171FA4 File Offset: 0x001701A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void unRegisterNavObjects(NavObjectManager.includeInList includeTest, string logStringPrefix)
 	{
@@ -273,7 +273,7 @@ public class NavObjectManager
 		this.removeList.Clear();
 	}
 
-	// Token: 0x0600384D RID: 14413 RVA: 0x001710F4 File Offset: 0x0016F2F4
+	// Token: 0x06003864 RID: 14436 RVA: 0x0017208C File Offset: 0x0017028C
 	public void AddNavObjectTag(NavObject navObject)
 	{
 		for (int i = 0; i < navObject.NavObjectClassList.Count; i++)
@@ -289,7 +289,7 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x0600384E RID: 14414 RVA: 0x00171194 File Offset: 0x0016F394
+	// Token: 0x06003865 RID: 14437 RVA: 0x0017212C File Offset: 0x0017032C
 	public void RemoveNavObjectTag(NavObject navObject)
 	{
 		for (int i = 0; i < navObject.NavObjectClassList.Count; i++)
@@ -305,7 +305,7 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x0600384F RID: 14415 RVA: 0x00171234 File Offset: 0x0016F434
+	// Token: 0x06003866 RID: 14438 RVA: 0x001721CC File Offset: 0x001703CC
 	public bool HasNavObjectTag(string tag)
 	{
 		if (this.tagList.ContainsKey(tag))
@@ -321,7 +321,7 @@ public class NavObjectManager
 		return false;
 	}
 
-	// Token: 0x06003850 RID: 14416 RVA: 0x001712AC File Offset: 0x0016F4AC
+	// Token: 0x06003867 RID: 14439 RVA: 0x00172244 File Offset: 0x00170444
 	public NavObject GetNavObjectByEntityID(int entityId)
 	{
 		for (int i = this.NavObjectList.Count - 1; i >= 0; i--)
@@ -335,7 +335,7 @@ public class NavObjectManager
 		return null;
 	}
 
-	// Token: 0x06003851 RID: 14417 RVA: 0x001712FC File Offset: 0x0016F4FC
+	// Token: 0x06003868 RID: 14440 RVA: 0x00172294 File Offset: 0x00170494
 	public void RefreshNavObjects()
 	{
 		for (int i = 0; i < this.NavObjectList.Count; i++)
@@ -361,7 +361,7 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x06003852 RID: 14418 RVA: 0x001713FC File Offset: 0x0016F5FC
+	// Token: 0x06003869 RID: 14441 RVA: 0x00172394 File Offset: 0x00170594
 	public void Update()
 	{
 		if (GameManager.Instance.World == null)
@@ -383,7 +383,7 @@ public class NavObjectManager
 		}
 	}
 
-	// Token: 0x06003853 RID: 14419 RVA: 0x0017146C File Offset: 0x0016F66C
+	// Token: 0x0600386A RID: 14442 RVA: 0x00172404 File Offset: 0x00170604
 	[Conditional("DEBUG_NAV")]
 	public static void LogNav(string _format = "", params object[] _args)
 	{
@@ -391,30 +391,30 @@ public class NavObjectManager
 		Log.Out(_format, _args);
 	}
 
-	// Token: 0x04002E23 RID: 11811
+	// Token: 0x04002E3F RID: 11839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NavObjectManager instance;
 
-	// Token: 0x04002E27 RID: 11815
+	// Token: 0x04002E43 RID: 11843
 	public List<NavObject> NavObjectList = new List<NavObject>();
 
-	// Token: 0x04002E28 RID: 11816
+	// Token: 0x04002E44 RID: 11844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<NavObject> removedNavObjectPool = new List<NavObject>();
 
-	// Token: 0x04002E29 RID: 11817
+	// Token: 0x04002E45 RID: 11845
 	public Dictionary<string, List<NavObject>> tagList = new Dictionary<string, List<NavObject>>();
 
-	// Token: 0x04002E2A RID: 11818
+	// Token: 0x04002E46 RID: 11846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<NavObject> removeList = new List<NavObject>();
 
-	// Token: 0x0200075E RID: 1886
-	// (Invoke) Token: 0x06003855 RID: 14421
+	// Token: 0x02000766 RID: 1894
+	// (Invoke) Token: 0x0600386C RID: 14444
 	public delegate void NavObjectChangedDelegate(NavObject newNavObject);
 
-	// Token: 0x0200075F RID: 1887
-	// (Invoke) Token: 0x06003859 RID: 14425
+	// Token: 0x02000767 RID: 1895
+	// (Invoke) Token: 0x06003870 RID: 14448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate bool includeInList(NavObject navObject);
 }

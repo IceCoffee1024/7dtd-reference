@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000CBD RID: 3261
+// Token: 0x02000CC8 RID: 3272
 public class VideoManager
 {
-	// Token: 0x060063BC RID: 25532 RVA: 0x002757CA File Offset: 0x002739CA
+	// Token: 0x060063E1 RID: 25569 RVA: 0x00276CF2 File Offset: 0x00274EF2
 	public static void Init()
 	{
 		VideoManager.initialized = true;
 		VideoManager.videos = new Dictionary<string, VideoData>();
 	}
 
-	// Token: 0x060063BD RID: 25533 RVA: 0x002757DC File Offset: 0x002739DC
+	// Token: 0x060063E2 RID: 25570 RVA: 0x00276D04 File Offset: 0x00274F04
 	public static void AddVideo(VideoData data)
 	{
 		if (!VideoManager.initialized)
@@ -26,7 +26,7 @@ public class VideoManager
 		VideoManager.videos[data.name] = data;
 	}
 
-	// Token: 0x060063BE RID: 25534 RVA: 0x0027582C File Offset: 0x00273A2C
+	// Token: 0x060063E3 RID: 25571 RVA: 0x00276D54 File Offset: 0x00274F54
 	public static VideoData GetVideoData(string id)
 	{
 		VideoData videoData;
@@ -37,10 +37,10 @@ public class VideoManager
 		return null;
 	}
 
-	// Token: 0x04004DD5 RID: 19925
+	// Token: 0x04004DFA RID: 19962
 	public static Dictionary<string, VideoData> videos;
 
-	// Token: 0x04004DD6 RID: 19926
+	// Token: 0x04004DFB RID: 19963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool initialized;
 }

@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x0200058C RID: 1420
+// Token: 0x02000593 RID: 1427
 public class ToolbeltConfig
 {
 	// Token: 0x1700051E RID: 1310
-	// (get) Token: 0x06002ED4 RID: 11988 RVA: 0x001284DF File Offset: 0x001266DF
-	// (set) Token: 0x06002ED5 RID: 11989 RVA: 0x001284E6 File Offset: 0x001266E6
+	// (get) Token: 0x06002EE2 RID: 12002 RVA: 0x001290D3 File Offset: 0x001272D3
+	// (set) Token: 0x06002EE3 RID: 12003 RVA: 0x001290DA File Offset: 0x001272DA
 	public static ToolbeltConfig GameConfig { get; set; } = new ToolbeltConfig();
 
 	// Token: 0x1700051F RID: 1311
-	// (get) Token: 0x06002ED6 RID: 11990 RVA: 0x001284EE File Offset: 0x001266EE
-	// (set) Token: 0x06002ED7 RID: 11991 RVA: 0x001284F5 File Offset: 0x001266F5
+	// (get) Token: 0x06002EE4 RID: 12004 RVA: 0x001290E2 File Offset: 0x001272E2
+	// (set) Token: 0x06002EE5 RID: 12005 RVA: 0x001290E9 File Offset: 0x001272E9
 	public static ToolbeltConfig EditorConfig { get; set; } = new ToolbeltConfig();
 
 	// Token: 0x17000520 RID: 1312
-	// (get) Token: 0x06002ED8 RID: 11992 RVA: 0x001284FD File Offset: 0x001266FD
+	// (get) Token: 0x06002EE6 RID: 12006 RVA: 0x001290F1 File Offset: 0x001272F1
 	public static ToolbeltConfig CurrentConfig
 	{
 		get
@@ -28,22 +28,22 @@ public class ToolbeltConfig
 	}
 
 	// Token: 0x17000521 RID: 1313
-	// (get) Token: 0x06002ED9 RID: 11993 RVA: 0x0012851D File Offset: 0x0012671D
-	// (set) Token: 0x06002EDA RID: 11994 RVA: 0x00128525 File Offset: 0x00126725
+	// (get) Token: 0x06002EE7 RID: 12007 RVA: 0x00129111 File Offset: 0x00127311
+	// (set) Token: 0x06002EE8 RID: 12008 RVA: 0x00129119 File Offset: 0x00127319
 	public int SlotsPerBar { get; set; } = 10;
 
 	// Token: 0x17000522 RID: 1314
-	// (get) Token: 0x06002EDB RID: 11995 RVA: 0x0012852E File Offset: 0x0012672E
-	// (set) Token: 0x06002EDC RID: 11996 RVA: 0x00128536 File Offset: 0x00126736
+	// (get) Token: 0x06002EE9 RID: 12009 RVA: 0x00129122 File Offset: 0x00127322
+	// (set) Token: 0x06002EEA RID: 12010 RVA: 0x0012912A File Offset: 0x0012732A
 	public int BarsPerPage { get; set; } = 1;
 
 	// Token: 0x17000523 RID: 1315
-	// (get) Token: 0x06002EDD RID: 11997 RVA: 0x0012853F File Offset: 0x0012673F
-	// (set) Token: 0x06002EDE RID: 11998 RVA: 0x00128547 File Offset: 0x00126747
+	// (get) Token: 0x06002EEB RID: 12011 RVA: 0x00129133 File Offset: 0x00127333
+	// (set) Token: 0x06002EEC RID: 12012 RVA: 0x0012913B File Offset: 0x0012733B
 	public int PageCount { get; set; } = 1;
 
 	// Token: 0x17000524 RID: 1316
-	// (get) Token: 0x06002EDF RID: 11999 RVA: 0x00128550 File Offset: 0x00126750
+	// (get) Token: 0x06002EED RID: 12013 RVA: 0x00129144 File Offset: 0x00127344
 	public int SlotsPerPage
 	{
 		get
@@ -53,7 +53,7 @@ public class ToolbeltConfig
 	}
 
 	// Token: 0x17000525 RID: 1317
-	// (get) Token: 0x06002EE0 RID: 12000 RVA: 0x0012855F File Offset: 0x0012675F
+	// (get) Token: 0x06002EEE RID: 12014 RVA: 0x00129153 File Offset: 0x00127353
 	public int TotalSlots
 	{
 		get

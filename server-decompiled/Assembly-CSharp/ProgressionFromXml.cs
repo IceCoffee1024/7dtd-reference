@@ -3,10 +3,10 @@ using System.Collections;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000AE8 RID: 2792
+// Token: 0x02000AF3 RID: 2803
 public class ProgressionFromXml
 {
-	// Token: 0x0600532A RID: 21290 RVA: 0x001FE50A File Offset: 0x001FC70A
+	// Token: 0x0600534F RID: 21327 RVA: 0x001FFA8E File Offset: 0x001FDC8E
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -62,7 +62,7 @@ public class ProgressionFromXml
 		yield break;
 	}
 
-	// Token: 0x0600532B RID: 21291 RVA: 0x001FE51C File Offset: 0x001FC71C
+	// Token: 0x06005350 RID: 21328 RVA: 0x001FFAA0 File Offset: 0x001FDCA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void clearProgressionValueLinks()
 	{
@@ -90,7 +90,7 @@ public class ProgressionFromXml
 		}
 	}
 
-	// Token: 0x0600532C RID: 21292 RVA: 0x001FE5B4 File Offset: 0x001FC7B4
+	// Token: 0x06005351 RID: 21329 RVA: 0x001FFB38 File Offset: 0x001FDD38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseLevelNode(XElement element)
 	{
@@ -142,7 +142,7 @@ public class ProgressionFromXml
 		Progression.MaxLevel = 200;
 	}
 
-	// Token: 0x0600532D RID: 21293 RVA: 0x001FE71C File Offset: 0x001FC91C
+	// Token: 0x06005352 RID: 21330 RVA: 0x001FFCA0 File Offset: 0x001FDEA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseProgressionItems(XElement element)
 	{
@@ -218,7 +218,7 @@ public class ProgressionFromXml
 		}
 	}
 
-	// Token: 0x0600532E RID: 21294 RVA: 0x001FE9A8 File Offset: 0x001FCBA8
+	// Token: 0x06005353 RID: 21331 RVA: 0x001FFF2C File Offset: 0x001FE12C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseProgressionItem(XElement childElement, int max_level, int min_level, int base_cost, float cost_multiplier_per_level, float max_level_ratio_to_parent, ref float order)
 	{

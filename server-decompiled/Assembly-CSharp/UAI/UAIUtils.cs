@@ -4,24 +4,24 @@ using UnityEngine;
 
 namespace UAI
 {
-	// Token: 0x020017B1 RID: 6065
+	// Token: 0x020017E2 RID: 6114
 	public static class UAIUtils
 	{
-		// Token: 0x0600BBE2 RID: 48098 RVA: 0x0045B6A0 File Offset: 0x004598A0
+		// Token: 0x0600BCF6 RID: 48374 RVA: 0x0045F04C File Offset: 0x0045D24C
 		public static float DistanceSqr(Vector3 pointA, Vector3 pointB)
 		{
 			Vector3 vector = pointA - pointB;
 			return vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
 		}
 
-		// Token: 0x0600BBE3 RID: 48099 RVA: 0x0045B6E0 File Offset: 0x004598E0
+		// Token: 0x0600BCF7 RID: 48375 RVA: 0x0045F08C File Offset: 0x0045D28C
 		public static float DistanceSqr(Vector2 pointA, Vector2 pointB)
 		{
 			Vector2 vector = pointA - pointB;
 			return vector.x * vector.x + vector.y * vector.y;
 		}
 
-		// Token: 0x0600BBE4 RID: 48100 RVA: 0x0045B710 File Offset: 0x00459910
+		// Token: 0x0600BCF8 RID: 48376 RVA: 0x0045F0BC File Offset: 0x0045D2BC
 		public static EntityAlive ConvertToEntityAlive(object obj)
 		{
 			EntityAlive entityAlive = null;
@@ -35,16 +35,16 @@ namespace UAI
 			return entityAlive;
 		}
 
-		// Token: 0x020017B2 RID: 6066
+		// Token: 0x020017E3 RID: 6115
 		public class NearestWaypointSorter : IComparer<Vector3>
 		{
-			// Token: 0x0600BBE5 RID: 48101 RVA: 0x0045B73C File Offset: 0x0045993C
+			// Token: 0x0600BCF9 RID: 48377 RVA: 0x0045F0E8 File Offset: 0x0045D2E8
 			public NearestWaypointSorter(Entity _self)
 			{
 				this.self = _self;
 			}
 
-			// Token: 0x0600BBE6 RID: 48102 RVA: 0x0045B74C File Offset: 0x0045994C
+			// Token: 0x0600BCFA RID: 48378 RVA: 0x0045F0F8 File Offset: 0x0045D2F8
 			public int Compare(Vector3 _obj1, Vector3 _obj2)
 			{
 				float distanceSq = this.self.GetDistanceSq(_obj1);
@@ -60,21 +60,21 @@ namespace UAI
 				return 0;
 			}
 
-			// Token: 0x04008C91 RID: 35985
+			// Token: 0x04008D7A RID: 36218
 			[PublicizedFrom(EAccessModifier.Private)]
 			public Entity self;
 		}
 
-		// Token: 0x020017B3 RID: 6067
+		// Token: 0x020017E4 RID: 6116
 		public class NearestEntitySorter : IComparer<Entity>
 		{
-			// Token: 0x0600BBE7 RID: 48103 RVA: 0x0045B780 File Offset: 0x00459980
+			// Token: 0x0600BCFB RID: 48379 RVA: 0x0045F12C File Offset: 0x0045D32C
 			public NearestEntitySorter(Entity _self)
 			{
 				this.self = _self;
 			}
 
-			// Token: 0x0600BBE8 RID: 48104 RVA: 0x0045B790 File Offset: 0x00459990
+			// Token: 0x0600BCFC RID: 48380 RVA: 0x0045F13C File Offset: 0x0045D33C
 			public int Compare(Entity _obj1, Entity _obj2)
 			{
 				float distanceSq = this.self.GetDistanceSq(_obj1);
@@ -90,7 +90,7 @@ namespace UAI
 				return 0;
 			}
 
-			// Token: 0x04008C92 RID: 35986
+			// Token: 0x04008D7B RID: 36219
 			[PublicizedFrom(EAccessModifier.Private)]
 			public Entity self;
 		}

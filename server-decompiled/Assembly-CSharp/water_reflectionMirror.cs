@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02001558 RID: 5464
+// Token: 0x0200156A RID: 5482
 [ExecuteInEditMode]
 public class water_reflectionMirror : MonoBehaviour
 {
-	// Token: 0x0600AB1D RID: 43805 RVA: 0x003FDBF8 File Offset: 0x003FBDF8
+	// Token: 0x0600AB75 RID: 43893 RVA: 0x003FFFFC File Offset: 0x003FE1FC
 	public void OnWillRenderObject()
 	{
 		if (!base.enabled || !base.GetComponent<Renderer>() || !base.GetComponent<Renderer>().sharedMaterial || !base.GetComponent<Renderer>().enabled)
@@ -77,7 +77,7 @@ public class water_reflectionMirror : MonoBehaviour
 		water_reflectionMirror.s_InsideRendering = false;
 	}
 
-	// Token: 0x0600AB1E RID: 43806 RVA: 0x003FDEC8 File Offset: 0x003FC0C8
+	// Token: 0x0600AB76 RID: 43894 RVA: 0x004002CC File Offset: 0x003FE4CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -93,7 +93,7 @@ public class water_reflectionMirror : MonoBehaviour
 		this.m_ReflectionCameras.Clear();
 	}
 
-	// Token: 0x0600AB1F RID: 43807 RVA: 0x003FDF58 File Offset: 0x003FC158
+	// Token: 0x0600AB77 RID: 43895 RVA: 0x0040035C File Offset: 0x003FE55C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCameraModes(Camera src, Camera dest)
 	{
@@ -126,7 +126,7 @@ public class water_reflectionMirror : MonoBehaviour
 		dest.orthographicSize = src.orthographicSize;
 	}
 
-	// Token: 0x0600AB20 RID: 43808 RVA: 0x003FE03C File Offset: 0x003FC23C
+	// Token: 0x0600AB78 RID: 43896 RVA: 0x00400440 File Offset: 0x003FE640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateMirrorObjects(Camera currentCamera, out Camera reflectionCamera)
 	{
@@ -161,7 +161,7 @@ public class water_reflectionMirror : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB21 RID: 43809 RVA: 0x003A0EFE File Offset: 0x0039F0FE
+	// Token: 0x0600AB79 RID: 43897 RVA: 0x003A3302 File Offset: 0x003A1502
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float sgn(float a)
 	{
@@ -176,7 +176,7 @@ public class water_reflectionMirror : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x0600AB22 RID: 43810 RVA: 0x003FE1AC File Offset: 0x003FC3AC
+	// Token: 0x0600AB7A RID: 43898 RVA: 0x004005B0 File Offset: 0x003FE7B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
 	{
@@ -187,7 +187,7 @@ public class water_reflectionMirror : MonoBehaviour
 		return new Vector4(vector3.x, vector3.y, vector3.z, -Vector3.Dot(vector2, vector3));
 	}
 
-	// Token: 0x0600AB23 RID: 43811 RVA: 0x003FE214 File Offset: 0x003FC414
+	// Token: 0x0600AB7B RID: 43899 RVA: 0x00400618 File Offset: 0x003FE818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CalculateObliqueMatrix(ref Matrix4x4 projection, Vector4 clipPlane)
 	{
@@ -199,7 +199,7 @@ public class water_reflectionMirror : MonoBehaviour
 		projection[14] = vector2.w - projection[15];
 	}
 
-	// Token: 0x0600AB24 RID: 43812 RVA: 0x003FE2C0 File Offset: 0x003FC4C0
+	// Token: 0x0600AB7C RID: 43900 RVA: 0x004006C4 File Offset: 0x003FE8C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMat, Vector4 plane)
 	{
@@ -221,32 +221,32 @@ public class water_reflectionMirror : MonoBehaviour
 		reflectionMat.m33 = 1f;
 	}
 
-	// Token: 0x04007F38 RID: 32568
+	// Token: 0x04007F79 RID: 32633
 	public bool m_DisablePixelLights = true;
 
-	// Token: 0x04007F39 RID: 32569
+	// Token: 0x04007F7A RID: 32634
 	public int m_TextureSize = 256;
 
-	// Token: 0x04007F3A RID: 32570
+	// Token: 0x04007F7B RID: 32635
 	public float m_ClipPlaneOffset = 0.07f;
 
-	// Token: 0x04007F3B RID: 32571
+	// Token: 0x04007F7C RID: 32636
 	public LayerMask m_ReflectLayers = -1;
 
-	// Token: 0x04007F3C RID: 32572
+	// Token: 0x04007F7D RID: 32637
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Hashtable m_ReflectionCameras = new Hashtable();
 
-	// Token: 0x04007F3D RID: 32573
+	// Token: 0x04007F7E RID: 32638
 	public static RenderTexture m_ReflectionTexture;
 
-	// Token: 0x04007F3E RID: 32574
+	// Token: 0x04007F7F RID: 32639
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_OldReflectionTextureSize;
 
-	// Token: 0x04007F3F RID: 32575
+	// Token: 0x04007F80 RID: 32640
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool s_InsideRendering;

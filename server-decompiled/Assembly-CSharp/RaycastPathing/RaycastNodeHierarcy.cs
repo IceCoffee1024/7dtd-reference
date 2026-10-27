@@ -5,24 +5,24 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018F6 RID: 6390
+	// Token: 0x02001927 RID: 6439
 	[Preserve]
 	public class RaycastNodeHierarcy
 	{
-		// Token: 0x0600C53D RID: 50493 RVA: 0x00488C60 File Offset: 0x00486E60
+		// Token: 0x0600C651 RID: 50769 RVA: 0x0048C60C File Offset: 0x0048A80C
 		public void SetWayPoint(RaycastNode node)
 		{
 			this.flowToWaypoint = true;
 			this.waypoint = node;
 		}
 
-		// Token: 0x0600C53E RID: 50494 RVA: 0x00488C70 File Offset: 0x00486E70
+		// Token: 0x0600C652 RID: 50770 RVA: 0x0048C61C File Offset: 0x0048A81C
 		public void SetParent(RaycastNode node)
 		{
 			this.parent = node;
 		}
 
-		// Token: 0x0600C53F RID: 50495 RVA: 0x00488C79 File Offset: 0x00486E79
+		// Token: 0x0600C653 RID: 50771 RVA: 0x0048C625 File Offset: 0x0048A825
 		public void AddNeighbor(RaycastNode node)
 		{
 			if (!this.neighbors.Contains(node))
@@ -31,7 +31,7 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C540 RID: 50496 RVA: 0x00488C98 File Offset: 0x00486E98
+		// Token: 0x0600C654 RID: 50772 RVA: 0x0048C644 File Offset: 0x0048A844
 		public RaycastNode GetNeighbor(Vector3 pos)
 		{
 			for (int i = 0; i < this.neighbors.Count; i++)
@@ -44,7 +44,7 @@ namespace RaycastPathing
 			return null;
 		}
 
-		// Token: 0x0600C541 RID: 50497 RVA: 0x00488CE4 File Offset: 0x00486EE4
+		// Token: 0x0600C655 RID: 50773 RVA: 0x0048C690 File Offset: 0x0048A890
 		public void AddChild(RaycastNode node)
 		{
 			if (!this.children.Contains(node))
@@ -65,25 +65,25 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x040094F6 RID: 38134
+		// Token: 0x040095DF RID: 38367
 		public RaycastNode parent;
 
-		// Token: 0x040094F7 RID: 38135
+		// Token: 0x040095E0 RID: 38368
 		public List<RaycastNode> neighbors = new List<RaycastNode>();
 
-		// Token: 0x040094F8 RID: 38136
+		// Token: 0x040095E1 RID: 38369
 		public List<RaycastNode> children = new List<RaycastNode>();
 
-		// Token: 0x040094F9 RID: 38137
+		// Token: 0x040095E2 RID: 38370
 		public List<RaycastNode> childAirBlocks = new List<RaycastNode>();
 
-		// Token: 0x040094FA RID: 38138
+		// Token: 0x040095E3 RID: 38371
 		public List<RaycastNode> childSolidBlocks = new List<RaycastNode>();
 
-		// Token: 0x040094FB RID: 38139
+		// Token: 0x040095E4 RID: 38372
 		public bool flowToWaypoint;
 
-		// Token: 0x040094FC RID: 38140
+		// Token: 0x040095E5 RID: 38373
 		public RaycastNode waypoint;
 	}
 }

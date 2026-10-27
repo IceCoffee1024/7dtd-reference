@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C60 RID: 3168
+// Token: 0x02000C6B RID: 3179
 public class WorldBlockFiller
 {
-	// Token: 0x06006010 RID: 24592 RVA: 0x00261E00 File Offset: 0x00260000
+	// Token: 0x06006035 RID: 24629 RVA: 0x00263328 File Offset: 0x00261528
 	public WorldBlockFiller(int iBiomeColorId, WorldBiomeProviderFromImage _biomeProvider, GameRandom _rand, WorldBiomes _rules)
 	{
 		this.m_RandomGenerator = _rand;
@@ -13,7 +13,7 @@ public class WorldBlockFiller
 		this.m_GenRules = _rules;
 	}
 
-	// Token: 0x06006011 RID: 24593 RVA: 0x00261E3C File Offset: 0x0026003C
+	// Token: 0x06006036 RID: 24630 RVA: 0x00263364 File Offset: 0x00261564
 	public void resetBlockInformation()
 	{
 		for (int i = 0; i < this.m_iChunkDimension; i++)
@@ -30,7 +30,7 @@ public class WorldBlockFiller
 		this.m_iAreaCount = 0;
 	}
 
-	// Token: 0x06006012 RID: 24594 RVA: 0x00261EA8 File Offset: 0x002600A8
+	// Token: 0x06006037 RID: 24631 RVA: 0x002633D0 File Offset: 0x002615D0
 	public void setBlockToFill(int x, int y, int z, byte top)
 	{
 		this.m_iMaxX = ((x > this.m_iMaxX) ? x : this.m_iMaxX);
@@ -47,7 +47,7 @@ public class WorldBlockFiller
 		}
 	}
 
-	// Token: 0x06006013 RID: 24595 RVA: 0x00261F70 File Offset: 0x00260170
+	// Token: 0x06006038 RID: 24632 RVA: 0x00263498 File Offset: 0x00261698
 	public void fillChunk(Chunk c)
 	{
 		if (this.m_iAreaCount == 0)
@@ -73,7 +73,7 @@ public class WorldBlockFiller
 		}
 	}
 
-	// Token: 0x06006014 RID: 24596 RVA: 0x00262014 File Offset: 0x00260214
+	// Token: 0x06006039 RID: 24633 RVA: 0x0026353C File Offset: 0x0026173C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void fillLevel(Chunk c, BiomeBlockDecoration bb, int iLayerDepth, ref int iAvailableCount)
 	{
@@ -141,7 +141,7 @@ public class WorldBlockFiller
 		}
 	}
 
-	// Token: 0x06006015 RID: 24597 RVA: 0x002621C0 File Offset: 0x002603C0
+	// Token: 0x0600603A RID: 24634 RVA: 0x002636E8 File Offset: 0x002618E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int setDecorationBlock(Chunk c, int x, int y, int d, int z, double probability, BlockValue blockValue)
 	{
@@ -176,69 +176,69 @@ public class WorldBlockFiller
 		return num;
 	}
 
-	// Token: 0x06006016 RID: 24598 RVA: 0x002622D4 File Offset: 0x002604D4
+	// Token: 0x0600603B RID: 24635 RVA: 0x002637FC File Offset: 0x002619FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte getBlockArrayValue(int x, int y, int z)
 	{
 		return this.m_BlocksToFill[((x << 4) + z << 8) + y];
 	}
 
-	// Token: 0x06006017 RID: 24599 RVA: 0x002622E6 File Offset: 0x002604E6
+	// Token: 0x0600603C RID: 24636 RVA: 0x0026380E File Offset: 0x00261A0E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setBlockArrayValue(int x, int y, int z, byte value)
 	{
 		this.m_BlocksToFill[((x << 4) + z << 8) + y] = value;
 	}
 
-	// Token: 0x04004B62 RID: 19298
+	// Token: 0x04004B87 RID: 19335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iMaxX;
 
-	// Token: 0x04004B63 RID: 19299
+	// Token: 0x04004B88 RID: 19336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iMinX;
 
-	// Token: 0x04004B64 RID: 19300
+	// Token: 0x04004B89 RID: 19337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iMaxY;
 
-	// Token: 0x04004B65 RID: 19301
+	// Token: 0x04004B8A RID: 19338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iMinY;
 
-	// Token: 0x04004B66 RID: 19302
+	// Token: 0x04004B8B RID: 19339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iMaxZ;
 
-	// Token: 0x04004B67 RID: 19303
+	// Token: 0x04004B8C RID: 19340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iMinZ;
 
-	// Token: 0x04004B68 RID: 19304
+	// Token: 0x04004B8D RID: 19341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] m_BlocksToFill;
 
-	// Token: 0x04004B69 RID: 19305
+	// Token: 0x04004B8E RID: 19342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameRandom m_RandomGenerator;
 
-	// Token: 0x04004B6A RID: 19306
+	// Token: 0x04004B8F RID: 19343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iChunkDimension;
 
-	// Token: 0x04004B6B RID: 19307
+	// Token: 0x04004B90 RID: 19344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iFillCount;
 
-	// Token: 0x04004B6C RID: 19308
+	// Token: 0x04004B91 RID: 19345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iAreaCount;
 
-	// Token: 0x04004B6D RID: 19309
+	// Token: 0x04004B92 RID: 19346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iThisBiomeColorId;
 
-	// Token: 0x04004B6E RID: 19310
+	// Token: 0x04004B93 RID: 19347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBiomes m_GenRules;
 }

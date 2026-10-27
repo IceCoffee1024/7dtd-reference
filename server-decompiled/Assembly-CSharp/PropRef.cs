@@ -3,7 +3,7 @@
 // Token: 0x02000193 RID: 403
 public struct PropRef : IEquatable<PropRef>
 {
-	// Token: 0x06000C2C RID: 3116 RVA: 0x0004C668 File Offset: 0x0004A868
+	// Token: 0x06000C2C RID: 3116 RVA: 0x0004C628 File Offset: 0x0004A828
 	public static PropRef Read(PooledBinaryReader br)
 	{
 		return new PropRef
@@ -13,26 +13,26 @@ public struct PropRef : IEquatable<PropRef>
 		};
 	}
 
-	// Token: 0x06000C2D RID: 3117 RVA: 0x0004C698 File Offset: 0x0004A898
+	// Token: 0x06000C2D RID: 3117 RVA: 0x0004C658 File Offset: 0x0004A858
 	public readonly void Write(PooledBinaryWriter bw)
 	{
 		StreamUtils.Write(bw, this.ChunkPos);
 		bw.Write(this.PropId);
 	}
 
-	// Token: 0x06000C2E RID: 3118 RVA: 0x0004C6B2 File Offset: 0x0004A8B2
+	// Token: 0x06000C2E RID: 3118 RVA: 0x0004C672 File Offset: 0x0004A872
 	public override string ToString()
 	{
 		return string.Format("ChunkPos=({0}), PropId={1}", this.ChunkPos, this.PropId);
 	}
 
-	// Token: 0x06000C2F RID: 3119 RVA: 0x0004C6D4 File Offset: 0x0004A8D4
+	// Token: 0x06000C2F RID: 3119 RVA: 0x0004C694 File Offset: 0x0004A894
 	public bool Equals(PropRef other)
 	{
 		return this.ChunkPos.Equals(other.ChunkPos) && this.PropId == other.PropId;
 	}
 
-	// Token: 0x06000C30 RID: 3120 RVA: 0x0004C6FC File Offset: 0x0004A8FC
+	// Token: 0x06000C30 RID: 3120 RVA: 0x0004C6BC File Offset: 0x0004A8BC
 	public override bool Equals(object obj)
 	{
 		if (obj is PropRef)
@@ -43,19 +43,19 @@ public struct PropRef : IEquatable<PropRef>
 		return false;
 	}
 
-	// Token: 0x06000C31 RID: 3121 RVA: 0x0004C721 File Offset: 0x0004A921
+	// Token: 0x06000C31 RID: 3121 RVA: 0x0004C6E1 File Offset: 0x0004A8E1
 	public override int GetHashCode()
 	{
 		return HashCode.Combine<Vector2i, int>(this.ChunkPos, this.PropId);
 	}
 
-	// Token: 0x06000C32 RID: 3122 RVA: 0x0004C734 File Offset: 0x0004A934
+	// Token: 0x06000C32 RID: 3122 RVA: 0x0004C6F4 File Offset: 0x0004A8F4
 	public static bool operator ==(PropRef left, PropRef right)
 	{
 		return left.Equals(right);
 	}
 
-	// Token: 0x06000C33 RID: 3123 RVA: 0x0004C73E File Offset: 0x0004A93E
+	// Token: 0x06000C33 RID: 3123 RVA: 0x0004C6FE File Offset: 0x0004A8FE
 	public static bool operator !=(PropRef left, PropRef right)
 	{
 		return !left.Equals(right);

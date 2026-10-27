@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E4 RID: 2020
+// Token: 0x020007EE RID: 2030
 [Preserve]
 public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 {
-	// Token: 0x17000657 RID: 1623
-	// (get) Token: 0x06003BB5 RID: 15285 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700065D RID: 1629
+	// (get) Token: 0x06003BD8 RID: 15320 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BB6 RID: 15286 RVA: 0x0017FDD0 File Offset: 0x0017DFD0
+	// Token: 0x06003BD9 RID: 15321 RVA: 0x00180ED4 File Offset: 0x0017F0D4
 	public NetPackageEntityPosAndRot Setup(Entity _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -28,7 +28,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BB7 RID: 15287 RVA: 0x0017FE28 File Offset: 0x0017E028
+	// Token: 0x06003BDA RID: 15322 RVA: 0x00180F2C File Offset: 0x0017F12C
 	public override void read(PooledBinaryReader _br)
 	{
 		base.read(_br);
@@ -45,7 +45,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		this.onGround = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003BB8 RID: 15288 RVA: 0x0017FEBC File Offset: 0x0017E0BC
+	// Token: 0x06003BDB RID: 15323 RVA: 0x00180FC0 File Offset: 0x0017F1C0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -69,7 +69,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		_bw.Write(this.onGround);
 	}
 
-	// Token: 0x06003BB9 RID: 15289 RVA: 0x0017FFA8 File Offset: 0x0017E1A8
+	// Token: 0x06003BDC RID: 15324 RVA: 0x001810AC File Offset: 0x0017F2AC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -102,23 +102,23 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		entity.onGround = this.onGround;
 	}
 
-	// Token: 0x04003091 RID: 12433
+	// Token: 0x040030B1 RID: 12465
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 pos;
 
-	// Token: 0x04003092 RID: 12434
+	// Token: 0x040030B2 RID: 12466
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 rot;
 
-	// Token: 0x04003093 RID: 12435
+	// Token: 0x040030B3 RID: 12467
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool onGround;
 
-	// Token: 0x04003094 RID: 12436
+	// Token: 0x040030B4 RID: 12468
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Quaternion qrot;
 
-	// Token: 0x04003095 RID: 12437
+	// Token: 0x040030B5 RID: 12469
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bUseQRotation;
 }

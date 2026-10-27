@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019ED RID: 6637
+	// Token: 0x02001A1E RID: 6686
 	[Preserve]
 	public class ActionShowMessageWindow : ActionBaseClientAction
 	{
-		// Token: 0x0600CAF0 RID: 51952 RVA: 0x004A3E23 File Offset: 0x004A2023
+		// Token: 0x0600CC04 RID: 52228 RVA: 0x004A7923 File Offset: 0x004A5B23
 		public override void OnClientPerform(Entity target)
 		{
 			if (target is EntityPlayerLocal)
@@ -16,7 +16,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CAF1 RID: 51953 RVA: 0x004A3E5F File Offset: 0x004A205F
+		// Token: 0x0600CC05 RID: 52229 RVA: 0x004A795F File Offset: 0x004A5B5F
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -24,7 +24,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionShowMessageWindow.PropTitle, ref this.title);
 		}
 
-		// Token: 0x0600CAF2 RID: 51954 RVA: 0x004A3E8A File Offset: 0x004A208A
+		// Token: 0x0600CC06 RID: 52230 RVA: 0x004A798A File Offset: 0x004A5B8A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -36,19 +36,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099AC RID: 39340
+		// Token: 0x04009A95 RID: 39573
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string PropMessage = "message";
 
-		// Token: 0x040099AD RID: 39341
+		// Token: 0x04009A96 RID: 39574
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string PropTitle = "title";
 
-		// Token: 0x040099AE RID: 39342
+		// Token: 0x04009A97 RID: 39575
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string message = "";
 
-		// Token: 0x040099AF RID: 39343
+		// Token: 0x04009A98 RID: 39576
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string title = "";
 	}

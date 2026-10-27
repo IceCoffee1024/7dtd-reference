@@ -5,11 +5,11 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.WorldState
 {
-	// Token: 0x02001B02 RID: 6914
+	// Token: 0x02001B33 RID: 6963
 	[Preserve]
 	public class Bloodmoon : AbsRestApi
 	{
-		// Token: 0x0600D03A RID: 53306 RVA: 0x004B9598 File Offset: 0x004B7798
+		// Token: 0x0600D14E RID: 53582 RVA: 0x004BD094 File Offset: 0x004BB294
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -34,25 +34,25 @@ namespace Webserver.WebAPI.APIs.WorldState
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600D03B RID: 53307 RVA: 0x004B3AA8 File Offset: 0x004B1CA8
+		// Token: 0x0600D14F RID: 53583 RVA: 0x004B75A4 File Offset: 0x004B57A4
 		public Bloodmoon()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009DB1 RID: 40369
+		// Token: 0x04009E9A RID: 40602
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyGameTime = JsonWriter.GetEncodedPropertyNameWithBeginObject("gameTime");
 
-		// Token: 0x04009DB2 RID: 40370
+		// Token: 0x04009E9B RID: 40603
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyBloodmoonActive = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("bloodmoonActive");
 
-		// Token: 0x04009DB3 RID: 40371
+		// Token: 0x04009E9C RID: 40604
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyNextBloodmoon = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("nextBloodmoon");
 
-		// Token: 0x04009DB4 RID: 40372
+		// Token: 0x04009E9D RID: 40605
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyNextBloodmoonEnd = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("nextBloodmoonEnd");
 	}

@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F21 RID: 3873
+// Token: 0x02000F30 RID: 3888
 [Preserve]
 public class XUiC_Creative2StackGrid : XUiC_ItemStackGrid
 {
-	// Token: 0x17000E47 RID: 3655
-	// (get) Token: 0x06007906 RID: 30982 RVA: 0x002DDEDD File Offset: 0x002DC0DD
-	// (set) Token: 0x06007907 RID: 30983 RVA: 0x002DDEE5 File Offset: 0x002DC0E5
+	// Token: 0x17000E51 RID: 3665
+	// (get) Token: 0x06007949 RID: 31049 RVA: 0x002DF7CD File Offset: 0x002DD9CD
+	// (set) Token: 0x0600794A RID: 31050 RVA: 0x002DF7D5 File Offset: 0x002DD9D5
 	public int Length
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000E48 RID: 3656
-	// (get) Token: 0x06007908 RID: 30984 RVA: 0x002DDEEE File Offset: 0x002DC0EE
-	// (set) Token: 0x06007909 RID: 30985 RVA: 0x002DDEF6 File Offset: 0x002DC0F6
+	// Token: 0x17000E52 RID: 3666
+	// (get) Token: 0x0600794B RID: 31051 RVA: 0x002DF7DE File Offset: 0x002DD9DE
+	// (set) Token: 0x0600794C RID: 31052 RVA: 0x002DF7E6 File Offset: 0x002DD9E6
 	public int Page
 	{
 		get
@@ -30,7 +30,7 @@ public class XUiC_Creative2StackGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x0600790A RID: 30986 RVA: 0x002DDF06 File Offset: 0x002DC106
+	// Token: 0x0600794D RID: 31053 RVA: 0x002DF7F6 File Offset: 0x002DD9F6
 	public override void Init()
 	{
 		base.Init();
@@ -38,25 +38,25 @@ public class XUiC_Creative2StackGrid : XUiC_ItemStackGrid
 		this.IsDirty = false;
 	}
 
-	// Token: 0x0600790B RID: 30987 RVA: 0x002DDF23 File Offset: 0x002DC123
+	// Token: 0x0600794E RID: 31054 RVA: 0x002DF813 File Offset: 0x002DDA13
 	public override ItemStack[] GetSlots()
 	{
 		return this.items;
 	}
 
-	// Token: 0x0600790C RID: 30988 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600794F RID: 31055 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x0600790D RID: 30989 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007950 RID: 31056 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x0600790E RID: 30990 RVA: 0x002DDF2C File Offset: 0x002DC12C
+	// Token: 0x06007951 RID: 31057 RVA: 0x002DF81C File Offset: 0x002DDA1C
 	public void SetSlots(ItemStack[] stackList)
 	{
 		if (stackList == null)
@@ -75,7 +75,7 @@ public class XUiC_Creative2StackGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x0600790F RID: 30991 RVA: 0x002DDF90 File Offset: 0x002DC190
+	// Token: 0x06007952 RID: 31058 RVA: 0x002DF880 File Offset: 0x002DDA80
 	public override void Update(float _dt)
 	{
 		if (!base.ViewComponent.IsVisible)
@@ -113,7 +113,7 @@ public class XUiC_Creative2StackGrid : XUiC_ItemStackGrid
 		base.Update(_dt);
 	}
 
-	// Token: 0x040059C0 RID: 22976
+	// Token: 0x040059F3 RID: 23027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 }

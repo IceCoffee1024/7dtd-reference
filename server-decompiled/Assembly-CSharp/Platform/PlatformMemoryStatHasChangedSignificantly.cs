@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001BB1 RID: 7089
-	// (Invoke) Token: 0x0600D40C RID: 54284
+	// Token: 0x02001BE2 RID: 7138
+	// (Invoke) Token: 0x0600D520 RID: 54560
 	public delegate bool PlatformMemoryStatHasChangedSignificantly<in T>(T current, T last);
 }

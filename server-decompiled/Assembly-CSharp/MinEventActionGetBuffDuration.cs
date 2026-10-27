@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D6 RID: 1750
+// Token: 0x020006DE RID: 1758
 [Preserve]
 public class MinEventActionGetBuffDuration : MinEventActionTargetedBase
 {
-	// Token: 0x0600366A RID: 13930 RVA: 0x0016670C File Offset: 0x0016490C
+	// Token: 0x0600367B RID: 13947 RVA: 0x001674BD File Offset: 0x001656BD
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		if (base.CanExecute(_eventType, _params))
@@ -20,7 +20,7 @@ public class MinEventActionGetBuffDuration : MinEventActionTargetedBase
 		return false;
 	}
 
-	// Token: 0x0600366B RID: 13931 RVA: 0x0016673C File Offset: 0x0016493C
+	// Token: 0x0600367C RID: 13948 RVA: 0x001674F0 File Offset: 0x001656F0
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -29,7 +29,7 @@ public class MinEventActionGetBuffDuration : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600366C RID: 13932 RVA: 0x00166790 File Offset: 0x00164990
+	// Token: 0x0600367D RID: 13949 RVA: 0x00167544 File Offset: 0x00165744
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -41,7 +41,7 @@ public class MinEventActionGetBuffDuration : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BAF RID: 11183
+	// Token: 0x04002BCB RID: 11211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string reference;
 }

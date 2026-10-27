@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020008BF RID: 2239
+// Token: 0x020008C9 RID: 2249
 public class Occludee : MonoBehaviour
 {
-	// Token: 0x0600404F RID: 16463 RVA: 0x00193C74 File Offset: 0x00191E74
+	// Token: 0x06004072 RID: 16498 RVA: 0x00194D1C File Offset: 0x00192F1C
 	public static void Add(GameObject obj)
 	{
 		if (!OcclusionManager.Instance.isEnabled)
@@ -15,7 +15,7 @@ public class Occludee : MonoBehaviour
 		obj.AddComponent<Occludee>();
 	}
 
-	// Token: 0x06004050 RID: 16464 RVA: 0x00193C8C File Offset: 0x00191E8C
+	// Token: 0x06004073 RID: 16499 RVA: 0x00194D34 File Offset: 0x00192F34
 	public static void Refresh(GameObject obj)
 	{
 		if (!OcclusionManager.Instance.isEnabled)
@@ -29,7 +29,7 @@ public class Occludee : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004051 RID: 16465 RVA: 0x00193CD0 File Offset: 0x00191ED0
+	// Token: 0x06004074 RID: 16500 RVA: 0x00194D78 File Offset: 0x00192F78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -48,7 +48,7 @@ public class Occludee : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004052 RID: 16466 RVA: 0x00193D2C File Offset: 0x00191F2C
+	// Token: 0x06004075 RID: 16501 RVA: 0x00194DD4 File Offset: 0x00192FD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -60,7 +60,7 @@ public class Occludee : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003460 RID: 13408
+	// Token: 0x04003480 RID: 13440
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LinkedListNode<OcclusionManager.OcclusionEntry> node;

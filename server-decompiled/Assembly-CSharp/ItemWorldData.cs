@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000586 RID: 1414
+// Token: 0x0200058D RID: 1421
 public class ItemWorldData
 {
-	// Token: 0x06002E92 RID: 11922 RVA: 0x00126ACA File Offset: 0x00124CCA
+	// Token: 0x06002EA0 RID: 11936 RVA: 0x001276BE File Offset: 0x001258BE
 	public ItemWorldData(IGameManager _gm, ItemValue _itemValue, EntityItem _entityItem, int _belongsEntityId)
 	{
 		this.gameManager = _gm;
@@ -12,15 +12,15 @@ public class ItemWorldData
 		this.belongsEntityId = _belongsEntityId;
 	}
 
-	// Token: 0x040023E7 RID: 9191
+	// Token: 0x04002402 RID: 9218
 	public IGameManager gameManager;
 
-	// Token: 0x040023E8 RID: 9192
+	// Token: 0x04002403 RID: 9219
 	public WorldBase world;
 
-	// Token: 0x040023E9 RID: 9193
+	// Token: 0x04002404 RID: 9220
 	public EntityItem entityItem;
 
-	// Token: 0x040023EA RID: 9194
+	// Token: 0x04002405 RID: 9221
 	public int belongsEntityId;
 }

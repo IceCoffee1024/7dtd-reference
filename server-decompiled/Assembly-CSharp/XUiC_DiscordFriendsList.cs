@@ -5,11 +5,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000342 RID: 834
+// Token: 0x02000344 RID: 836
 [Preserve]
 public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendEntry>
 {
-	// Token: 0x06001802 RID: 6146 RVA: 0x00089AA8 File Offset: 0x00087CA8
+	// Token: 0x06001806 RID: 6150 RVA: 0x00089CDC File Offset: 0x00087EDC
 	public override void Init()
 	{
 		base.Init();
@@ -21,7 +21,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		}
 	}
 
-	// Token: 0x06001803 RID: 6147 RVA: 0x00089B01 File Offset: 0x00087D01
+	// Token: 0x06001807 RID: 6151 RVA: 0x00089D35 File Offset: 0x00087F35
 	[XuiBindEvent("OnPress", "btnDiscordLinkAccount")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDiscordLinkAccount_OnPress(XUiController _sender, int _mouseButton)
@@ -32,7 +32,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		DiscordManager.Instance.AuthManager.LoginDiscordUser();
 	}
 
-	// Token: 0x06001804 RID: 6148 RVA: 0x00089B41 File Offset: 0x00087D41
+	// Token: 0x06001808 RID: 6152 RVA: 0x00089D75 File Offset: 0x00087F75
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -40,28 +40,28 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		DiscordManager.Instance.StatusChanged -= this.discordStatusChanged;
 	}
 
-	// Token: 0x06001805 RID: 6149 RVA: 0x00089B75 File Offset: 0x00087D75
+	// Token: 0x06001809 RID: 6153 RVA: 0x00089DA9 File Offset: 0x00087FA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordFriendsListChanged()
 	{
 		this.UpdateList();
 	}
 
-	// Token: 0x06001806 RID: 6150 RVA: 0x00089B75 File Offset: 0x00087D75
+	// Token: 0x0600180A RID: 6154 RVA: 0x00089DA9 File Offset: 0x00087FA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordStatusChanged(DiscordManager.EDiscordStatus _obj)
 	{
 		this.UpdateList();
 	}
 
-	// Token: 0x06001807 RID: 6151 RVA: 0x00089B7D File Offset: 0x00087D7D
+	// Token: 0x0600180B RID: 6155 RVA: 0x00089DB1 File Offset: 0x00087FB1
 	public void ToggleSectionVisibility(XUiC_DiscordFriendsList.FriendEntry.ESection _section)
 	{
 		XUiC_DiscordFriendsList.sectionsOpened[(int)_section] = !XUiC_DiscordFriendsList.sectionsOpened[(int)_section];
 		this.UpdateList();
 	}
 
-	// Token: 0x06001808 RID: 6152 RVA: 0x00089B98 File Offset: 0x00087D98
+	// Token: 0x0600180C RID: 6156 RVA: 0x00089DCC File Offset: 0x00087FCC
 	public void UpdateList()
 	{
 		int page = base.Page;
@@ -69,7 +69,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		base.Page = page;
 	}
 
-	// Token: 0x06001809 RID: 6153 RVA: 0x00089BBC File Offset: 0x00087DBC
+	// Token: 0x0600180D RID: 6157 RVA: 0x00089DF0 File Offset: 0x00087FF0
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -92,7 +92,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x0600180A RID: 6154 RVA: 0x00089CD8 File Offset: 0x00087ED8
+	// Token: 0x0600180E RID: 6158 RVA: 0x00089F0C File Offset: 0x0008810C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void FilterResults(string _textMatch)
 	{
@@ -107,7 +107,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		}
 	}
 
-	// Token: 0x0600180B RID: 6155 RVA: 0x00089D28 File Offset: 0x00087F28
+	// Token: 0x0600180F RID: 6159 RVA: 0x00089F5C File Offset: 0x0008815C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -135,7 +135,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		return true;
 	}
 
-	// Token: 0x0600180C RID: 6156 RVA: 0x00089DDA File Offset: 0x00087FDA
+	// Token: 0x06001810 RID: 6160 RVA: 0x0008A00E File Offset: 0x0008820E
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -145,49 +145,49 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 		}
 	}
 
-	// Token: 0x04000F7C RID: 3964
+	// Token: 0x04000F8C RID: 3980
 	[XuiBindComponent("btnDiscordLinkAccount", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscordLinkAccount;
 
-	// Token: 0x04000F7D RID: 3965
+	// Token: 0x04000F8D RID: 3981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly bool[] sectionsOpened = new bool[4];
 
-	// Token: 0x04000F7E RID: 3966
+	// Token: 0x04000F8E RID: 3982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly int[] sectionUserCounts = new int[4];
 
-	// Token: 0x04000F7F RID: 3967
+	// Token: 0x04000F8F RID: 3983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<DiscordManager.DiscordUser> users = new HashSet<DiscordManager.DiscordUser>();
 
-	// Token: 0x04000F80 RID: 3968
+	// Token: 0x04000F90 RID: 3984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DiscordFriendsList.FriendEntry entryHeaderInServer = new XUiC_DiscordFriendsList.FriendEntry(XUiC_DiscordFriendsList.FriendEntry.ESection.InServer);
 
-	// Token: 0x04000F81 RID: 3969
+	// Token: 0x04000F91 RID: 3985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DiscordFriendsList.FriendEntry entryHeaderInGame = new XUiC_DiscordFriendsList.FriendEntry(XUiC_DiscordFriendsList.FriendEntry.ESection.OnlineInGame);
 
-	// Token: 0x04000F82 RID: 3970
+	// Token: 0x04000F92 RID: 3986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DiscordFriendsList.FriendEntry entryHeaderOnline = new XUiC_DiscordFriendsList.FriendEntry(XUiC_DiscordFriendsList.FriendEntry.ESection.Online);
 
-	// Token: 0x04000F83 RID: 3971
+	// Token: 0x04000F93 RID: 3987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DiscordFriendsList.FriendEntry entryHeaderOffline = new XUiC_DiscordFriendsList.FriendEntry(XUiC_DiscordFriendsList.FriendEntry.ESection.Offline);
 
-	// Token: 0x02000343 RID: 835
+	// Token: 0x02000345 RID: 837
 	[Preserve]
 	public class FriendEntry : XUiListEntry<XUiC_DiscordFriendsList.FriendEntry>
 	{
 		// Token: 0x170002DA RID: 730
-		// (get) Token: 0x0600180F RID: 6159 RVA: 0x00089E5E File Offset: 0x0008805E
+		// (get) Token: 0x06001813 RID: 6163 RVA: 0x0008A092 File Offset: 0x00088292
 		public XUiC_DiscordFriendsList.FriendEntry.EEntryType EntryType { get; }
 
 		// Token: 0x170002DB RID: 731
-		// (get) Token: 0x06001810 RID: 6160 RVA: 0x00089E66 File Offset: 0x00088066
+		// (get) Token: 0x06001814 RID: 6164 RVA: 0x0008A09A File Offset: 0x0008829A
 		public XUiC_DiscordFriendsList.FriendEntry.ESection SectionType
 		{
 			get
@@ -200,7 +200,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			}
 		}
 
-		// Token: 0x06001811 RID: 6161 RVA: 0x00089E80 File Offset: 0x00088080
+		// Token: 0x06001815 RID: 6165 RVA: 0x0008A0B4 File Offset: 0x000882B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_DiscordFriendsList.FriendEntry.ESection getUserSectionType()
 		{
@@ -249,21 +249,21 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return esection;
 		}
 
-		// Token: 0x06001812 RID: 6162 RVA: 0x00089F10 File Offset: 0x00088110
+		// Token: 0x06001816 RID: 6166 RVA: 0x0008A144 File Offset: 0x00088344
 		public FriendEntry(XUiC_DiscordFriendsList.FriendEntry.ESection _sectionHeaderType)
 		{
 			this.EntryType = XUiC_DiscordFriendsList.FriendEntry.EEntryType.SectionHeader;
 			this.sectionHeaderType = _sectionHeaderType;
 		}
 
-		// Token: 0x06001813 RID: 6163 RVA: 0x00089F26 File Offset: 0x00088126
+		// Token: 0x06001817 RID: 6167 RVA: 0x0008A15A File Offset: 0x0008835A
 		public FriendEntry(DiscordManager.DiscordUser _discordUser)
 		{
 			this.User = _discordUser;
 			this.EntryType = XUiC_DiscordFriendsList.FriendEntry.EEntryType.User;
 		}
 
-		// Token: 0x06001814 RID: 6164 RVA: 0x00089F3C File Offset: 0x0008813C
+		// Token: 0x06001818 RID: 6168 RVA: 0x0008A170 File Offset: 0x00088370
 		public override int CompareTo(XUiC_DiscordFriendsList.FriendEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -306,7 +306,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return string.Compare(this.User.DisplayName, _otherEntry.User.DisplayName, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06001815 RID: 6165 RVA: 0x0008A042 File Offset: 0x00088242
+		// Token: 0x06001819 RID: 6169 RVA: 0x0008A276 File Offset: 0x00088476
 		public override bool MatchesSearch(string _searchString)
 		{
 			if (this.EntryType == XUiC_DiscordFriendsList.FriendEntry.EEntryType.SectionHeader)
@@ -321,44 +321,44 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return user != null && user.DisplayName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04000F85 RID: 3973
+		// Token: 0x04000F95 RID: 3989
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_DiscordFriendsList.FriendEntry.ESection sectionHeaderType;
 
-		// Token: 0x04000F86 RID: 3974
+		// Token: 0x04000F96 RID: 3990
 		public readonly DiscordManager.DiscordUser User;
 
-		// Token: 0x02000344 RID: 836
+		// Token: 0x02000346 RID: 838
 		public enum EEntryType
 		{
-			// Token: 0x04000F88 RID: 3976
+			// Token: 0x04000F98 RID: 3992
 			SectionHeader,
-			// Token: 0x04000F89 RID: 3977
+			// Token: 0x04000F99 RID: 3993
 			User
 		}
 
-		// Token: 0x02000345 RID: 837
+		// Token: 0x02000347 RID: 839
 		public enum ESection
 		{
-			// Token: 0x04000F8B RID: 3979
+			// Token: 0x04000F9B RID: 3995
 			InServer,
-			// Token: 0x04000F8C RID: 3980
+			// Token: 0x04000F9C RID: 3996
 			OnlineInGame,
-			// Token: 0x04000F8D RID: 3981
+			// Token: 0x04000F9D RID: 3997
 			Online,
-			// Token: 0x04000F8E RID: 3982
+			// Token: 0x04000F9E RID: 3998
 			Offline,
-			// Token: 0x04000F8F RID: 3983
+			// Token: 0x04000F9F RID: 3999
 			Count
 		}
 	}
 
-	// Token: 0x02000346 RID: 838
+	// Token: 0x02000348 RID: 840
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class DiscordFriendsListEntryController : XUiC_List<XUiC_DiscordFriendsList.FriendEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06001816 RID: 6166 RVA: 0x0008A070 File Offset: 0x00088270
+		// Token: 0x0600181A RID: 6170 RVA: 0x0008A2A4 File Offset: 0x000884A4
 		public override void Init()
 		{
 			base.Init();
@@ -448,7 +448,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			}
 		}
 
-		// Token: 0x06001817 RID: 6167 RVA: 0x0008A0C9 File Offset: 0x000882C9
+		// Token: 0x0600181B RID: 6171 RVA: 0x0008A2FD File Offset: 0x000884FD
 		public override void SetEntry(XUiC_DiscordFriendsList.FriendEntry _data)
 		{
 			base.SetEntry(_data);
@@ -470,7 +470,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			xuiV_TextureBased.Texture = texture;
 		}
 
-		// Token: 0x06001818 RID: 6168 RVA: 0x0008A0FE File Offset: 0x000882FE
+		// Token: 0x0600181C RID: 6172 RVA: 0x0008A332 File Offset: 0x00088532
 		[XuiXmlBinding("displayname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDisplayName()
@@ -489,7 +489,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return text ?? "";
 		}
 
-		// Token: 0x06001819 RID: 6169 RVA: 0x0008A128 File Offset: 0x00088328
+		// Token: 0x0600181D RID: 6173 RVA: 0x0008A35C File Offset: 0x0008855C
 		[XuiXmlBinding("discordstate_icon")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDiscordStateIcon()
@@ -532,7 +532,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return text;
 		}
 
-		// Token: 0x0600181A RID: 6170 RVA: 0x0008A1D0 File Offset: 0x000883D0
+		// Token: 0x0600181E RID: 6174 RVA: 0x0008A404 File Offset: 0x00088604
 		[XuiXmlBinding("statustext")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingStatusText()
@@ -574,7 +574,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			}
 		}
 
-		// Token: 0x0600181B RID: 6171 RVA: 0x0008A267 File Offset: 0x00088467
+		// Token: 0x0600181F RID: 6175 RVA: 0x0008A49B File Offset: 0x0008869B
 		[XuiXmlBinding("entry_type")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_DiscordFriendsList.FriendEntry.EEntryType bindingEntryType()
@@ -587,7 +587,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return entryData.EntryType;
 		}
 
-		// Token: 0x0600181C RID: 6172 RVA: 0x0008A27A File Offset: 0x0008847A
+		// Token: 0x06001820 RID: 6176 RVA: 0x0008A4AE File Offset: 0x000886AE
 		[XuiXmlBinding("section_type")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_DiscordFriendsList.FriendEntry.ESection bindingSectionType()
@@ -600,7 +600,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return entryData.SectionType;
 		}
 
-		// Token: 0x0600181D RID: 6173 RVA: 0x0008A290 File Offset: 0x00088490
+		// Token: 0x06001821 RID: 6177 RVA: 0x0008A4C4 File Offset: 0x000886C4
 		[XuiXmlBinding("has_joinable_activity")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingHasJoinableActivity()
@@ -620,7 +620,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return flag2.GetValueOrDefault();
 		}
 
-		// Token: 0x0600181E RID: 6174 RVA: 0x0008A2D8 File Offset: 0x000884D8
+		// Token: 0x06001822 RID: 6178 RVA: 0x0008A50C File Offset: 0x0008870C
 		[XuiXmlBinding("section_open")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingSectionOpen()
@@ -628,7 +628,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return this.entryData == null || XUiC_DiscordFriendsList.sectionsOpened[(int)this.entryData.SectionType];
 		}
 
-		// Token: 0x0600181F RID: 6175 RVA: 0x0008A2F5 File Offset: 0x000884F5
+		// Token: 0x06001823 RID: 6179 RVA: 0x0008A529 File Offset: 0x00088729
 		[XuiXmlBinding("section_user_count")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int bindingUserCount()
@@ -640,7 +640,7 @@ public class XUiC_DiscordFriendsList : XUiC_List<XUiC_DiscordFriendsList.FriendE
 			return 0;
 		}
 
-		// Token: 0x04000F90 RID: 3984
+		// Token: 0x04000FA0 RID: 4000
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiV_Texture avatarTexture;
 	}

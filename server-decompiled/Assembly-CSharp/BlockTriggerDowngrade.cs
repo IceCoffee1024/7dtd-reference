@@ -16,7 +16,7 @@ public class BlockTriggerDowngrade : Block
 		}
 	}
 
-	// Token: 0x060009B2 RID: 2482 RVA: 0x000428F4 File Offset: 0x00040AF4
+	// Token: 0x060009B2 RID: 2482 RVA: 0x000428B4 File Offset: 0x00040AB4
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -30,13 +30,13 @@ public class BlockTriggerDowngrade : Block
 		}
 	}
 
-	// Token: 0x060009B3 RID: 2483 RVA: 0x0003355E File Offset: 0x0003175E
+	// Token: 0x060009B3 RID: 2483 RVA: 0x0003351E File Offset: 0x0003171E
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 	}
 
-	// Token: 0x060009B4 RID: 2484 RVA: 0x0004293C File Offset: 0x00040B3C
+	// Token: 0x060009B4 RID: 2484 RVA: 0x000428FC File Offset: 0x00040AFC
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -49,7 +49,7 @@ public class BlockTriggerDowngrade : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x060009B5 RID: 2485 RVA: 0x000429AB File Offset: 0x00040BAB
+	// Token: 0x060009B5 RID: 2485 RVA: 0x0004296B File Offset: 0x00040B6B
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "trigger")
@@ -65,7 +65,7 @@ public class BlockTriggerDowngrade : Block
 		return true;
 	}
 
-	// Token: 0x060009B7 RID: 2487 RVA: 0x000429D0 File Offset: 0x00040BD0
+	// Token: 0x060009B7 RID: 2487 RVA: 0x00042990 File Offset: 0x00040B90
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		((Chunk)_world.ChunkCache.GetChunkSync(World.toChunkXZ(_blockPos.x), _blockPos.y, World.toChunkXZ(_blockPos.z))).GetBlockTrigger(World.toBlock(_blockPos));
@@ -73,14 +73,14 @@ public class BlockTriggerDowngrade : Block
 		return this.cmds;
 	}
 
-	// Token: 0x060009B8 RID: 2488 RVA: 0x00042A3F File Offset: 0x00040C3F
+	// Token: 0x060009B8 RID: 2488 RVA: 0x000429FF File Offset: 0x00040BFF
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);
 		this.HandleDowngrade(_world, _blockPos, _blockValue, _blockChanges);
 	}
 
-	// Token: 0x060009B9 RID: 2489 RVA: 0x00042A5C File Offset: 0x00040C5C
+	// Token: 0x060009B9 RID: 2489 RVA: 0x00042A1C File Offset: 0x00040C1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleDowngrade(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges)
 	{

@@ -8,7 +8,7 @@ using UnityEngine.Scripting;
 public class BlockCollector : Block
 {
 	// Token: 0x1700007A RID: 122
-	// (get) Token: 0x06000748 RID: 1864 RVA: 0x00034340 File Offset: 0x00032540
+	// (get) Token: 0x06000748 RID: 1864 RVA: 0x00034300 File Offset: 0x00032500
 	public string[] Outputs
 	{
 		get
@@ -17,7 +17,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000749 RID: 1865 RVA: 0x00034348 File Offset: 0x00032548
+	// Token: 0x06000749 RID: 1865 RVA: 0x00034308 File Offset: 0x00032508
 	public BlockCollector.FuelType GetFuelType(string name)
 	{
 		BlockCollector.FuelType fuelType;
@@ -28,7 +28,7 @@ public class BlockCollector : Block
 		return fuelType;
 	}
 
-	// Token: 0x0600074A RID: 1866 RVA: 0x00034368 File Offset: 0x00032568
+	// Token: 0x0600074A RID: 1866 RVA: 0x00034328 File Offset: 0x00032528
 	public BlockCollector.OutputType GetOutputType(string name)
 	{
 		BlockCollector.OutputType outputType;
@@ -40,7 +40,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007B RID: 123
-	// (get) Token: 0x0600074B RID: 1867 RVA: 0x00034388 File Offset: 0x00032588
+	// (get) Token: 0x0600074B RID: 1867 RVA: 0x00034348 File Offset: 0x00032548
 	public string[] ItemIconBackdrop
 	{
 		get
@@ -50,7 +50,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007C RID: 124
-	// (get) Token: 0x0600074C RID: 1868 RVA: 0x00034390 File Offset: 0x00032590
+	// (get) Token: 0x0600074C RID: 1868 RVA: 0x00034350 File Offset: 0x00032550
 	public string ItemBackgroundColor
 	{
 		get
@@ -60,7 +60,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007D RID: 125
-	// (get) Token: 0x0600074D RID: 1869 RVA: 0x00034398 File Offset: 0x00032598
+	// (get) Token: 0x0600074D RID: 1869 RVA: 0x00034358 File Offset: 0x00032558
 	public string LootLabelKey
 	{
 		get
@@ -70,7 +70,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007E RID: 126
-	// (get) Token: 0x0600074E RID: 1870 RVA: 0x000343A0 File Offset: 0x000325A0
+	// (get) Token: 0x0600074E RID: 1870 RVA: 0x00034360 File Offset: 0x00032560
 	public string ActivationEvent
 	{
 		get
@@ -80,7 +80,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007F RID: 127
-	// (get) Token: 0x0600074F RID: 1871 RVA: 0x000343A8 File Offset: 0x000325A8
+	// (get) Token: 0x0600074F RID: 1871 RVA: 0x00034368 File Offset: 0x00032568
 	public string CloseEvent
 	{
 		get
@@ -90,7 +90,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000080 RID: 128
-	// (get) Token: 0x06000750 RID: 1872 RVA: 0x000343B0 File Offset: 0x000325B0
+	// (get) Token: 0x06000750 RID: 1872 RVA: 0x00034370 File Offset: 0x00032570
 	public string[] RequiredMods
 	{
 		get
@@ -100,7 +100,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000081 RID: 129
-	// (get) Token: 0x06000751 RID: 1873 RVA: 0x000343B8 File Offset: 0x000325B8
+	// (get) Token: 0x06000751 RID: 1873 RVA: 0x00034378 File Offset: 0x00032578
 	public bool RequiredModsOnly
 	{
 		get
@@ -110,7 +110,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000082 RID: 130
-	// (get) Token: 0x06000752 RID: 1874 RVA: 0x000343C0 File Offset: 0x000325C0
+	// (get) Token: 0x06000752 RID: 1874 RVA: 0x00034380 File Offset: 0x00032580
 	public string[] ModTransformEnableNames
 	{
 		get
@@ -120,7 +120,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000083 RID: 131
-	// (get) Token: 0x06000753 RID: 1875 RVA: 0x000343C8 File Offset: 0x000325C8
+	// (get) Token: 0x06000753 RID: 1875 RVA: 0x00034388 File Offset: 0x00032588
 	public string[] ModTransformDisableNames
 	{
 		get
@@ -130,7 +130,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000084 RID: 132
-	// (get) Token: 0x06000754 RID: 1876 RVA: 0x000343D0 File Offset: 0x000325D0
+	// (get) Token: 0x06000754 RID: 1876 RVA: 0x00034390 File Offset: 0x00032590
 	public int FuelGridInitialHeight
 	{
 		get
@@ -140,7 +140,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000085 RID: 133
-	// (get) Token: 0x06000755 RID: 1877 RVA: 0x000343D8 File Offset: 0x000325D8
+	// (get) Token: 0x06000755 RID: 1877 RVA: 0x00034398 File Offset: 0x00032598
 	public int CatalystGridInitialHeight
 	{
 		get
@@ -150,7 +150,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000086 RID: 134
-	// (get) Token: 0x06000756 RID: 1878 RVA: 0x000343E0 File Offset: 0x000325E0
+	// (get) Token: 0x06000756 RID: 1878 RVA: 0x000343A0 File Offset: 0x000325A0
 	public int OutputGridInitialHeight
 	{
 		get
@@ -160,7 +160,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000087 RID: 135
-	// (get) Token: 0x06000757 RID: 1879 RVA: 0x000343E8 File Offset: 0x000325E8
+	// (get) Token: 0x06000757 RID: 1879 RVA: 0x000343A8 File Offset: 0x000325A8
 	public string FuelTitleText
 	{
 		get
@@ -170,7 +170,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000088 RID: 136
-	// (get) Token: 0x06000758 RID: 1880 RVA: 0x000343F0 File Offset: 0x000325F0
+	// (get) Token: 0x06000758 RID: 1880 RVA: 0x000343B0 File Offset: 0x000325B0
 	public string FuelTitleSprite
 	{
 		get
@@ -180,7 +180,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000089 RID: 137
-	// (get) Token: 0x06000759 RID: 1881 RVA: 0x000343F8 File Offset: 0x000325F8
+	// (get) Token: 0x06000759 RID: 1881 RVA: 0x000343B8 File Offset: 0x000325B8
 	public string FuelTitleSpriteAtlas
 	{
 		get
@@ -190,7 +190,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008A RID: 138
-	// (get) Token: 0x0600075A RID: 1882 RVA: 0x00034400 File Offset: 0x00032600
+	// (get) Token: 0x0600075A RID: 1882 RVA: 0x000343C0 File Offset: 0x000325C0
 	public string CatalystTitleText
 	{
 		get
@@ -200,7 +200,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008B RID: 139
-	// (get) Token: 0x0600075B RID: 1883 RVA: 0x00034408 File Offset: 0x00032608
+	// (get) Token: 0x0600075B RID: 1883 RVA: 0x000343C8 File Offset: 0x000325C8
 	public string CatalystTitleSprite
 	{
 		get
@@ -210,7 +210,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008C RID: 140
-	// (get) Token: 0x0600075C RID: 1884 RVA: 0x00034410 File Offset: 0x00032610
+	// (get) Token: 0x0600075C RID: 1884 RVA: 0x000343D0 File Offset: 0x000325D0
 	public string CatalystTitleSpriteAtlas
 	{
 		get
@@ -220,7 +220,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008D RID: 141
-	// (get) Token: 0x0600075D RID: 1885 RVA: 0x00034418 File Offset: 0x00032618
+	// (get) Token: 0x0600075D RID: 1885 RVA: 0x000343D8 File Offset: 0x000325D8
 	public string[] FuelTypesSprites
 	{
 		get
@@ -230,7 +230,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008E RID: 142
-	// (get) Token: 0x0600075E RID: 1886 RVA: 0x00034420 File Offset: 0x00032620
+	// (get) Token: 0x0600075E RID: 1886 RVA: 0x000343E0 File Offset: 0x000325E0
 	public string[] FuelTypesSpriteAtlases
 	{
 		get
@@ -240,7 +240,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008F RID: 143
-	// (get) Token: 0x0600075F RID: 1887 RVA: 0x00034428 File Offset: 0x00032628
+	// (get) Token: 0x0600075F RID: 1887 RVA: 0x000343E8 File Offset: 0x000325E8
 	public string[] CatalystTypesSprites
 	{
 		get
@@ -250,7 +250,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000090 RID: 144
-	// (get) Token: 0x06000760 RID: 1888 RVA: 0x00034430 File Offset: 0x00032630
+	// (get) Token: 0x06000760 RID: 1888 RVA: 0x000343F0 File Offset: 0x000325F0
 	public string[] CatalystTypesSpriteAtlases
 	{
 		get
@@ -260,7 +260,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000091 RID: 145
-	// (get) Token: 0x06000761 RID: 1889 RVA: 0x00034438 File Offset: 0x00032638
+	// (get) Token: 0x06000761 RID: 1889 RVA: 0x000343F8 File Offset: 0x000325F8
 	public string[] CatalystTypes
 	{
 		get
@@ -269,13 +269,13 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000762 RID: 1890 RVA: 0x00034440 File Offset: 0x00032640
+	// Token: 0x06000762 RID: 1890 RVA: 0x00034400 File Offset: 0x00032600
 	public BlockCollector()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000763 RID: 1891 RVA: 0x00034590 File Offset: 0x00032790
+	// Token: 0x06000763 RID: 1891 RVA: 0x00034550 File Offset: 0x00032750
 	public override void Init()
 	{
 		base.Init();
@@ -451,7 +451,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000764 RID: 1892 RVA: 0x00034C73 File Offset: 0x00032E73
+	// Token: 0x06000764 RID: 1892 RVA: 0x00034C33 File Offset: 0x00032E33
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -462,7 +462,7 @@ public class BlockCollector : Block
 		this.addTileEntity(world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000765 RID: 1893 RVA: 0x00034C97 File Offset: 0x00032E97
+	// Token: 0x06000765 RID: 1893 RVA: 0x00034C57 File Offset: 0x00032E57
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "Search")
@@ -483,7 +483,7 @@ public class BlockCollector : Block
 		return true;
 	}
 
-	// Token: 0x06000767 RID: 1895 RVA: 0x00034CD8 File Offset: 0x00032ED8
+	// Token: 0x06000767 RID: 1895 RVA: 0x00034C98 File Offset: 0x00032E98
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -491,7 +491,7 @@ public class BlockCollector : Block
 		return this.cmds;
 	}
 
-	// Token: 0x06000768 RID: 1896 RVA: 0x00034D24 File Offset: 0x00032F24
+	// Token: 0x06000768 RID: 1896 RVA: 0x00034CE4 File Offset: 0x00032EE4
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -507,7 +507,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000769 RID: 1897 RVA: 0x00034D74 File Offset: 0x00032F74
+	// Token: 0x06000769 RID: 1897 RVA: 0x00034D34 File Offset: 0x00032F34
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityCollector tileEntityCollector = _world.GetTileEntity(_blockPos) as TileEntityCollector;
@@ -529,7 +529,7 @@ public class BlockCollector : Block
 		return string.Format(Localization.Get(this.hasItem1Text, false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x0600076A RID: 1898 RVA: 0x00034E28 File Offset: 0x00033028
+	// Token: 0x0600076A RID: 1898 RVA: 0x00034DE8 File Offset: 0x00032FE8
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
@@ -541,7 +541,7 @@ public class BlockCollector : Block
 		this.removeTileEntity(world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x0600076B RID: 1899 RVA: 0x00034E64 File Offset: 0x00033064
+	// Token: 0x0600076B RID: 1899 RVA: 0x00034E24 File Offset: 0x00033024
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void addTileEntity(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -551,14 +551,14 @@ public class BlockCollector : Block
 		_chunk.AddTileEntity(tileEntityCollector);
 	}
 
-	// Token: 0x0600076C RID: 1900 RVA: 0x00034E91 File Offset: 0x00033091
+	// Token: 0x0600076C RID: 1900 RVA: 0x00034E51 File Offset: 0x00033051
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void removeTileEntity(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		_chunk.RemoveTileEntityAt<TileEntityCollector>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x0600076D RID: 1901 RVA: 0x00034EA8 File Offset: 0x000330A8
+	// Token: 0x0600076D RID: 1901 RVA: 0x00034E68 File Offset: 0x00033068
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		TileEntityCollector tileEntityCollector = _world.GetTileEntity(_bvRef) as TileEntityCollector;
@@ -573,14 +573,14 @@ public class BlockCollector : Block
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x0600076E RID: 1902 RVA: 0x00034EDF File Offset: 0x000330DF
+	// Token: 0x0600076E RID: 1902 RVA: 0x00034E9F File Offset: 0x0003309F
 	public override void OnBlockEntityTransformBeforeActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformBeforeActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.UpdateVisible(_world, _blockPos);
 	}
 
-	// Token: 0x0600076F RID: 1903 RVA: 0x00034EF4 File Offset: 0x000330F4
+	// Token: 0x0600076F RID: 1903 RVA: 0x00034EB4 File Offset: 0x000330B4
 	public void UpdateVisible(WorldBase _world, Vector3i _blockPos)
 	{
 		TileEntityCollector tileEntityCollector = _world.GetTileEntity(_blockPos) as TileEntityCollector;
@@ -590,7 +590,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000770 RID: 1904 RVA: 0x00034F18 File Offset: 0x00033118
+	// Token: 0x06000770 RID: 1904 RVA: 0x00034ED8 File Offset: 0x000330D8
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_player.inventory.IsHoldingItemActionRunning())
@@ -607,7 +607,7 @@ public class BlockCollector : Block
 		return true;
 	}
 
-	// Token: 0x06000771 RID: 1905 RVA: 0x00034F5C File Offset: 0x0003315C
+	// Token: 0x06000771 RID: 1905 RVA: 0x00034F1C File Offset: 0x0003311C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool takeItemWithTimerCanTake(Vector3i _blockPos, EntityAlive _player)
 	{
@@ -619,7 +619,7 @@ public class BlockCollector : Block
 		return false;
 	}
 
-	// Token: 0x06000772 RID: 1906 RVA: 0x00034FB4 File Offset: 0x000331B4
+	// Token: 0x06000772 RID: 1906 RVA: 0x00034F74 File Offset: 0x00033174
 	public bool UsesFuel()
 	{
 		bool flag = false;
@@ -638,13 +638,13 @@ public class BlockCollector : Block
 		return !flag && this.fuelTypes.Values.Count > 0;
 	}
 
-	// Token: 0x06000773 RID: 1907 RVA: 0x00035021 File Offset: 0x00033221
+	// Token: 0x06000773 RID: 1907 RVA: 0x00034FE1 File Offset: 0x000331E1
 	public bool UsesCatalyst()
 	{
 		return this.CatalystTypes.Length != 0;
 	}
 
-	// Token: 0x06000774 RID: 1908 RVA: 0x0003502D File Offset: 0x0003322D
+	// Token: 0x06000774 RID: 1908 RVA: 0x00034FED File Offset: 0x000331ED
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int modifyTime(int time, float modifier)
 	{
@@ -659,7 +659,7 @@ public class BlockCollector : Block
 		return time;
 	}
 
-	// Token: 0x06000775 RID: 1909 RVA: 0x0003504C File Offset: 0x0003324C
+	// Token: 0x06000775 RID: 1909 RVA: 0x0003500C File Offset: 0x0003320C
 	public int GetSandboxModifiedTime(int time)
 	{
 		if (time != 0)
@@ -680,7 +680,7 @@ public class BlockCollector : Block
 		return time;
 	}
 
-	// Token: 0x06000776 RID: 1910 RVA: 0x000350A8 File Offset: 0x000332A8
+	// Token: 0x06000776 RID: 1910 RVA: 0x00035068 File Offset: 0x00033268
 	public int GetSandboxModifiedFuelNeeded(int cost)
 	{
 		switch (this.CollectorType)
@@ -698,7 +698,7 @@ public class BlockCollector : Block
 		return cost;
 	}
 
-	// Token: 0x06000777 RID: 1911 RVA: 0x000350F8 File Offset: 0x000332F8
+	// Token: 0x06000777 RID: 1911 RVA: 0x000350B8 File Offset: 0x000332B8
 	public int GetSandboxModifiedOutput(int cost)
 	{
 		switch (this.CollectorType)
@@ -1038,14 +1038,14 @@ public class BlockCollector : Block
 	// Token: 0x02000119 RID: 281
 	public class CatalystConvert
 	{
-		// Token: 0x06000779 RID: 1913 RVA: 0x000352C7 File Offset: 0x000334C7
+		// Token: 0x06000779 RID: 1913 RVA: 0x00035287 File Offset: 0x00033487
 		public CatalystConvert(string _convertFrom, string _convertTo)
 		{
 			this.convertFrom = _convertFrom;
 			this.convertTo = _convertTo;
 		}
 
-		// Token: 0x0600077A RID: 1914 RVA: 0x000352E0 File Offset: 0x000334E0
+		// Token: 0x0600077A RID: 1914 RVA: 0x000352A0 File Offset: 0x000334A0
 		public ItemStack Convert(ItemStack _inStack)
 		{
 			ItemStack itemStack = null;
@@ -1068,7 +1068,7 @@ public class BlockCollector : Block
 	// Token: 0x0200011A RID: 282
 	public class FuelType
 	{
-		// Token: 0x0600077B RID: 1915 RVA: 0x00035330 File Offset: 0x00033530
+		// Token: 0x0600077B RID: 1915 RVA: 0x000352F0 File Offset: 0x000334F0
 		public FuelType(string ftDef)
 		{
 			string[] array = ftDef.Split(',', StringSplitOptions.None);
@@ -1090,7 +1090,7 @@ public class BlockCollector : Block
 	// Token: 0x0200011B RID: 283
 	public class OutputType
 	{
-		// Token: 0x0600077C RID: 1916 RVA: 0x00035390 File Offset: 0x00033590
+		// Token: 0x0600077C RID: 1916 RVA: 0x00035350 File Offset: 0x00033550
 		public OutputType(string otDef)
 		{
 			string[] array = otDef.Split(",", StringSplitOptions.None);
@@ -1109,7 +1109,7 @@ public class BlockCollector : Block
 			this.ConvertSound = array[num++];
 		}
 
-		// Token: 0x0600077D RID: 1917 RVA: 0x00035478 File Offset: 0x00033678
+		// Token: 0x0600077D RID: 1917 RVA: 0x00035438 File Offset: 0x00033638
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int safeParseInt(string intString)
 		{

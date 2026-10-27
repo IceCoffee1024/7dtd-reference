@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace GearVariants
 {
-	// Token: 0x0200171A RID: 5914
+	// Token: 0x0200174B RID: 5963
 	[Serializable]
 	public class StringTable2D
 	{
-		// Token: 0x0600B897 RID: 47255 RVA: 0x0044381C File Offset: 0x00441A1C
+		// Token: 0x0600B9AB RID: 47531 RVA: 0x004471C8 File Offset: 0x004453C8
 		public void EnsureShapeSymmetric(IReadOnlyList<string> keys, IReadOnlyList<string> guids)
 		{
 			IReadOnlyList<string> readOnlyList = keys ?? Array.Empty<string>();
@@ -77,19 +77,19 @@ namespace GearVariants
 			this.rows = list;
 		}
 
-		// Token: 0x0600B898 RID: 47256 RVA: 0x00443A60 File Offset: 0x00441C60
+		// Token: 0x0600B9AC RID: 47532 RVA: 0x0044740C File Offset: 0x0044560C
 		public string Get(int rowIdx, int colIdx)
 		{
 			return this.rows[rowIdx].cellValues[colIdx];
 		}
 
-		// Token: 0x0600B899 RID: 47257 RVA: 0x00443A79 File Offset: 0x00441C79
+		// Token: 0x0600B9AD RID: 47533 RVA: 0x00447425 File Offset: 0x00445625
 		public void Set(int rowIdx, int colIdx, string value)
 		{
 			this.rows[rowIdx].cellValues[colIdx] = value ?? string.Empty;
 		}
 
-		// Token: 0x0600B89A RID: 47258 RVA: 0x00443A9C File Offset: 0x00441C9C
+		// Token: 0x0600B9AE RID: 47534 RVA: 0x00447448 File Offset: 0x00445648
 		public void ClampValuesToValidOptions(Func<string, HashSet<string>> getValidOptionsForRowKey)
 		{
 			for (int i = 0; i < this.rows.Count; i++)
@@ -110,7 +110,7 @@ namespace GearVariants
 			}
 		}
 
-		// Token: 0x0600B89B RID: 47259 RVA: 0x00443B2C File Offset: 0x00441D2C
+		// Token: 0x0600B9AF RID: 47535 RVA: 0x004474D8 File Offset: 0x004456D8
 		public void ApplyReorder(IReadOnlyList<int> newToOld)
 		{
 			int count = this.rowKeys.Count;
@@ -154,26 +154,26 @@ namespace GearVariants
 			this.columnKeys = list7;
 		}
 
-		// Token: 0x040089B7 RID: 35255
+		// Token: 0x04008AA0 RID: 35488
 		public List<string> rowKeys = new List<string>();
 
-		// Token: 0x040089B8 RID: 35256
+		// Token: 0x04008AA1 RID: 35489
 		public List<string> columnKeys = new List<string>();
 
-		// Token: 0x040089B9 RID: 35257
+		// Token: 0x04008AA2 RID: 35490
 		public List<StringTable2D.Row> rows = new List<StringTable2D.Row>();
 
-		// Token: 0x0200171B RID: 5915
+		// Token: 0x0200174C RID: 5964
 		[Serializable]
 		public class Row
 		{
-			// Token: 0x040089BA RID: 35258
+			// Token: 0x04008AA3 RID: 35491
 			public string rowKey;
 
-			// Token: 0x040089BB RID: 35259
+			// Token: 0x04008AA4 RID: 35492
 			public string rowGuid;
 
-			// Token: 0x040089BC RID: 35260
+			// Token: 0x04008AA5 RID: 35493
 			public List<string> cellValues = new List<string>();
 		}
 	}

@@ -4,13 +4,13 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FA0 RID: 4000
+// Token: 0x02000FB0 RID: 4016
 [Preserve]
 public class XUiC_MapWaypointList : XUiController
 {
-	// Token: 0x17000EDA RID: 3802
-	// (get) Token: 0x06007DDE RID: 32222 RVA: 0x002FD92F File Offset: 0x002FBB2F
-	// (set) Token: 0x06007DDF RID: 32223 RVA: 0x002FD938 File Offset: 0x002FBB38
+	// Token: 0x17000EE5 RID: 3813
+	// (get) Token: 0x06007E2D RID: 32301 RVA: 0x002FF44B File Offset: 0x002FD64B
+	// (set) Token: 0x06007E2E RID: 32302 RVA: 0x002FF454 File Offset: 0x002FD654
 	public Waypoint TrackedWaypoint
 	{
 		get
@@ -33,9 +33,9 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x17000EDB RID: 3803
-	// (get) Token: 0x06007DE0 RID: 32224 RVA: 0x002FD9AA File Offset: 0x002FBBAA
-	// (set) Token: 0x06007DE1 RID: 32225 RVA: 0x002FD9B2 File Offset: 0x002FBBB2
+	// Token: 0x17000EE6 RID: 3814
+	// (get) Token: 0x06007E2F RID: 32303 RVA: 0x002FF4C6 File Offset: 0x002FD6C6
+	// (set) Token: 0x06007E30 RID: 32304 RVA: 0x002FF4CE File Offset: 0x002FD6CE
 	public Waypoint SelectedWaypoint
 	{
 		get
@@ -48,7 +48,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DE2 RID: 32226 RVA: 0x002FD9BC File Offset: 0x002FBBBC
+	// Token: 0x06007E31 RID: 32305 RVA: 0x002FF4D8 File Offset: 0x002FD6D8
 	public override void Init()
 	{
 		base.Init();
@@ -83,7 +83,7 @@ public class XUiC_MapWaypointList : XUiController
 		this.xui.GetWindow("mapTrackingPopup").Controller.GetChildById("inviteEveryone").OnPress += this.onInviteEveryonePressed;
 	}
 
-	// Token: 0x06007DE3 RID: 32227 RVA: 0x002FDBA4 File Offset: 0x002FBDA4
+	// Token: 0x06007E32 RID: 32306 RVA: 0x002FF6C0 File Offset: 0x002FD8C0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -98,7 +98,7 @@ public class XUiC_MapWaypointList : XUiController
 		this.UpdateWaypointsList(null);
 	}
 
-	// Token: 0x06007DE4 RID: 32228 RVA: 0x002FDBF8 File Offset: 0x002FBDF8
+	// Token: 0x06007E33 RID: 32307 RVA: 0x002FF714 File Offset: 0x002FD914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetTrackedWaypoint()
 	{
@@ -123,7 +123,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DE5 RID: 32229 RVA: 0x002FDC78 File Offset: 0x002FBE78
+	// Token: 0x06007E34 RID: 32308 RVA: 0x002FF794 File Offset: 0x002FD994
 	public void UpdateWaypointsList(Waypoint _selectThisWaypoint = null)
 	{
 		if (this.pager == null)
@@ -233,7 +233,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DE6 RID: 32230 RVA: 0x002FE0C8 File Offset: 0x002FC2C8
+	// Token: 0x06007E35 RID: 32309 RVA: 0x002FFBE4 File Offset: 0x002FDDE4
 	public void SelectWaypoint(Waypoint _w)
 	{
 		EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
@@ -251,7 +251,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DE7 RID: 32231 RVA: 0x002FE148 File Offset: 0x002FC348
+	// Token: 0x06007E36 RID: 32310 RVA: 0x002FFC64 File Offset: 0x002FDE64
 	public void SelectWaypoint(NavObject _nav)
 	{
 		EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
@@ -269,7 +269,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DE8 RID: 32232 RVA: 0x002FE1D8 File Offset: 0x002FC3D8
+	// Token: 0x06007E37 RID: 32311 RVA: 0x002FFCF4 File Offset: 0x002FDEF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onTrackWaypointPressed(XUiController _sender, int _mouseButton)
 	{
@@ -290,7 +290,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DE9 RID: 32233 RVA: 0x002FE23E File Offset: 0x002FC43E
+	// Token: 0x06007E38 RID: 32312 RVA: 0x002FFD5A File Offset: 0x002FDF5A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInvitePressed(XUiController _sender, int _mouseButton)
 	{
@@ -300,7 +300,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DEA RID: 32234 RVA: 0x002FE260 File Offset: 0x002FC460
+	// Token: 0x06007E39 RID: 32313 RVA: 0x002FFD7C File Offset: 0x002FDF7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onShowOnMapPressed(XUiController _sender, int _mouseButton)
 	{
@@ -311,7 +311,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DEB RID: 32235 RVA: 0x002FE2A4 File Offset: 0x002FC4A4
+	// Token: 0x06007E3A RID: 32314 RVA: 0x002FFDC0 File Offset: 0x002FDFC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onWaypointRemovePressed(XUiController _sender, int _mouseButton)
 	{
@@ -333,13 +333,13 @@ public class XUiC_MapWaypointList : XUiController
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x06007DEC RID: 32236 RVA: 0x002FE345 File Offset: 0x002FC545
+	// Token: 0x06007E3B RID: 32315 RVA: 0x002FFE61 File Offset: 0x002FE061
 	public Waypoint GetSelectedWaypoint()
 	{
 		return this.SelectedWaypoint;
 	}
 
-	// Token: 0x06007DED RID: 32237 RVA: 0x002FE350 File Offset: 0x002FC550
+	// Token: 0x06007E3C RID: 32316 RVA: 0x002FFE6C File Offset: 0x002FE06C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInviteFriendsPressed(XUiController _sender, int _mouseButton)
 	{
@@ -352,7 +352,7 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DEE RID: 32238 RVA: 0x002FE3D4 File Offset: 0x002FC5D4
+	// Token: 0x06007E3D RID: 32317 RVA: 0x002FFEF0 File Offset: 0x002FE0F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInviteEveryonePressed(XUiController _sender, int _mouseButton)
 	{
@@ -365,21 +365,21 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x06007DEF RID: 32239 RVA: 0x002FE455 File Offset: 0x002FC655
+	// Token: 0x06007E3E RID: 32318 RVA: 0x002FFF71 File Offset: 0x002FE171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void waypointFilerOnSubmitHandler(XUiController _sender, string _text)
 	{
 		this.UpdateWaypointsList(null);
 	}
 
-	// Token: 0x06007DF0 RID: 32240 RVA: 0x002FE455 File Offset: 0x002FC655
+	// Token: 0x06007E3F RID: 32319 RVA: 0x002FFF71 File Offset: 0x002FE171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void waypointFilterOnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
 		this.UpdateWaypointsList(null);
 	}
 
-	// Token: 0x06007DF1 RID: 32241 RVA: 0x002FE45E File Offset: 0x002FC65E
+	// Token: 0x06007E40 RID: 32320 RVA: 0x002FFF7A File Offset: 0x002FE17A
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -390,70 +390,70 @@ public class XUiC_MapWaypointList : XUiController
 		}
 	}
 
-	// Token: 0x04005D60 RID: 23904
+	// Token: 0x04005D9B RID: 23963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Waypoint trackedWaypoint;
 
-	// Token: 0x04005D61 RID: 23905
+	// Token: 0x04005D9C RID: 23964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Waypoint selectedWaypoint;
 
-	// Token: 0x04005D62 RID: 23906
+	// Token: 0x04005D9D RID: 23965
 	public XUiC_MapWaypointListEntry SelectedWaypointEntry;
 
-	// Token: 0x04005D63 RID: 23907
+	// Token: 0x04005D9E RID: 23966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cCountWaypointsPerPage = 8;
 
-	// Token: 0x04005D64 RID: 23908
+	// Token: 0x04005D9F RID: 23967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Grid list;
 
-	// Token: 0x04005D65 RID: 23909
+	// Token: 0x04005DA0 RID: 23968
 	public XUiC_Paging pager;
 
-	// Token: 0x04005D66 RID: 23910
+	// Token: 0x04005DA1 RID: 23969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentPage;
 
-	// Token: 0x04005D67 RID: 23911
+	// Token: 0x04005DA2 RID: 23970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInputFilter;
 
-	// Token: 0x04005D68 RID: 23912
+	// Token: 0x04005DA3 RID: 23971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController trackBtn;
 
-	// Token: 0x04005D69 RID: 23913
+	// Token: 0x04005DA4 RID: 23972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController showOnMapBtn;
 
-	// Token: 0x04005D6A RID: 23914
+	// Token: 0x04005DA5 RID: 23973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController waypointRemoveBtn;
 
-	// Token: 0x04005D6B RID: 23915
+	// Token: 0x04005DA6 RID: 23974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController inviteBtn;
 
-	// Token: 0x04005D6C RID: 23916
+	// Token: 0x04005DA7 RID: 23975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filterString;
 
-	// Token: 0x04005D6D RID: 23917
+	// Token: 0x04005DA8 RID: 23976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateWaypointsNextUpdate;
 
-	// Token: 0x02000FA1 RID: 4001
+	// Token: 0x02000FB1 RID: 4017
 	public class WaypointSorter : IComparer<Waypoint>
 	{
-		// Token: 0x06007DF4 RID: 32244 RVA: 0x002FE4BA File Offset: 0x002FC6BA
+		// Token: 0x06007E43 RID: 32323 RVA: 0x002FFFD6 File Offset: 0x002FE1D6
 		public WaypointSorter(EntityPlayerLocal _localPlayer)
 		{
 			this.localPlayerPos = _localPlayer.GetPosition();
 		}
 
-		// Token: 0x06007DF5 RID: 32245 RVA: 0x002FE4D0 File Offset: 0x002FC6D0
+		// Token: 0x06007E44 RID: 32324 RVA: 0x002FFFEC File Offset: 0x002FE1EC
 		public int Compare(Waypoint _w1, Waypoint _w2)
 		{
 			float sqrMagnitude = (_w1.pos.ToVector3() - this.localPlayerPos).sqrMagnitude;
@@ -469,7 +469,7 @@ public class XUiC_MapWaypointList : XUiController
 			return 0;
 		}
 
-		// Token: 0x04005D6E RID: 23918
+		// Token: 0x04005DA9 RID: 23977
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 localPlayerPos;
 	}

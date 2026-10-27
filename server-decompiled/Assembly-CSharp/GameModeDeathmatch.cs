@@ -1,27 +1,27 @@
 ﻿using System;
 
-// Token: 0x020011E6 RID: 4582
+// Token: 0x020011F6 RID: 4598
 public class GameModeDeathmatch : GameModeAbstract
 {
-	// Token: 0x06009260 RID: 37472 RVA: 0x003738E8 File Offset: 0x00371AE8
+	// Token: 0x060092B6 RID: 37558 RVA: 0x00375A5C File Offset: 0x00373C5C
 	public override string GetName()
 	{
 		return "gmDeathmatch";
 	}
 
-	// Token: 0x06009261 RID: 37473 RVA: 0x003738EF File Offset: 0x00371AEF
+	// Token: 0x060092B7 RID: 37559 RVA: 0x00375A63 File Offset: 0x00373C63
 	public override string GetDescription()
 	{
 		return "gmDeathmatchDesc";
 	}
 
-	// Token: 0x06009262 RID: 37474 RVA: 0x000470B6 File Offset: 0x000452B6
+	// Token: 0x060092B8 RID: 37560 RVA: 0x00047076 File Offset: 0x00045276
 	public override int GetID()
 	{
 		return 3;
 	}
 
-	// Token: 0x06009263 RID: 37475 RVA: 0x003738F8 File Offset: 0x00371AF8
+	// Token: 0x060092B9 RID: 37561 RVA: 0x00375A6C File Offset: 0x00373C6C
 	public override GameMode.ModeGamePref[] GetSupportedGamePrefsInfo()
 	{
 		return new GameMode.ModeGamePref[]
@@ -43,13 +43,13 @@ public class GameModeDeathmatch : GameModeAbstract
 		};
 	}
 
-	// Token: 0x06009264 RID: 37476 RVA: 0x00080804 File Offset: 0x0007EA04
+	// Token: 0x060092BA RID: 37562 RVA: 0x000809D4 File Offset: 0x0007EBD4
 	public override int GetRoundCount()
 	{
 		return 4;
 	}
 
-	// Token: 0x06009265 RID: 37477 RVA: 0x00373A4C File Offset: 0x00371C4C
+	// Token: 0x060092BB RID: 37563 RVA: 0x00375BC0 File Offset: 0x00373DC0
 	public override void Init()
 	{
 		base.Init();
@@ -70,7 +70,7 @@ public class GameModeDeathmatch : GameModeAbstract
 		GameStats.Set(EnumGameStats.EnemySpawnMode, GamePrefs.GetBool(EnumGamePrefs.EnemySpawnMode));
 	}
 
-	// Token: 0x06009266 RID: 37478 RVA: 0x00373B04 File Offset: 0x00371D04
+	// Token: 0x060092BC RID: 37564 RVA: 0x00375C78 File Offset: 0x00373E78
 	public override void StartRound(int _idx)
 	{
 		switch (_idx)
@@ -103,11 +103,11 @@ public class GameModeDeathmatch : GameModeAbstract
 		}
 	}
 
-	// Token: 0x06009267 RID: 37479 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092BD RID: 37565 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void EndRound(int _idx)
 	{
 	}
 
-	// Token: 0x04006C5A RID: 27738
+	// Token: 0x04006C72 RID: 27762
 	public static readonly string TypeName = typeof(GameModeDeathmatch).Name;
 }

@@ -5,17 +5,17 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Token: 0x020003C8 RID: 968
+// Token: 0x020003CA RID: 970
 public class WaveCleanUp : MonoBehaviour
 {
-	// Token: 0x06001CFF RID: 7423 RVA: 0x000AEDBF File Offset: 0x000ACFBF
+	// Token: 0x06001D03 RID: 7427 RVA: 0x000AEFCF File Offset: 0x000AD1CF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		base.StartCoroutine(this.FormatHeader());
 	}
 
-	// Token: 0x06001D00 RID: 7424 RVA: 0x000AEDCE File Offset: 0x000ACFCE
+	// Token: 0x06001D04 RID: 7428 RVA: 0x000AEFDE File Offset: 0x000AD1DE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator FormatHeader()
 	{
@@ -59,7 +59,7 @@ public class WaveCleanUp : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001D01 RID: 7425 RVA: 0x000AEDE0 File Offset: 0x000ACFE0
+	// Token: 0x06001D05 RID: 7429 RVA: 0x000AEFF0 File Offset: 0x000AD1F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] PCMDataToByteArray(float[] _pcmData)
 	{
@@ -75,7 +75,7 @@ public class WaveCleanUp : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x06001D02 RID: 7426 RVA: 0x000AEE2D File Offset: 0x000AD02D
+	// Token: 0x06001D06 RID: 7430 RVA: 0x000AF03D File Offset: 0x000AD23D
 	public static GameObject Create()
 	{
 		if (WaveCleanUp.PrefabWaveCleanUp == null)
@@ -87,71 +87,71 @@ public class WaveCleanUp : MonoBehaviour
 		return gameObject;
 	}
 
-	// Token: 0x040012E5 RID: 4837
+	// Token: 0x040012F5 RID: 4853
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameObject PrefabWaveCleanUp;
 
-	// Token: 0x040012E6 RID: 4838
+	// Token: 0x040012F6 RID: 4854
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static byte[] ChunkID = Encoding.ASCII.GetBytes("RIFF");
 
-	// Token: 0x040012E7 RID: 4839
+	// Token: 0x040012F7 RID: 4855
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static byte[] Format = Encoding.ASCII.GetBytes("WAVE");
 
-	// Token: 0x040012E8 RID: 4840
+	// Token: 0x040012F8 RID: 4856
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static byte[] Subchunk1ID = Encoding.ASCII.GetBytes("fmt ");
 
-	// Token: 0x040012E9 RID: 4841
+	// Token: 0x040012F9 RID: 4857
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static byte[] Subchunk2ID = Encoding.ASCII.GetBytes("data");
 
-	// Token: 0x040012EA RID: 4842
+	// Token: 0x040012FA RID: 4858
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static short AudioFormat = 1;
 
-	// Token: 0x040012EB RID: 4843
+	// Token: 0x040012FB RID: 4859
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int SampleRate = 44100;
 
-	// Token: 0x040012EC RID: 4844
+	// Token: 0x040012FC RID: 4860
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static short Channels = 2;
 
-	// Token: 0x040012ED RID: 4845
+	// Token: 0x040012FD RID: 4861
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static short BitsPerSample = 16;
 
-	// Token: 0x040012EE RID: 4846
+	// Token: 0x040012FE RID: 4862
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int ByteRate = WaveCleanUp.SampleRate * (int)WaveCleanUp.Channels * (int)WaveCleanUp.BitsPerSample / 8;
 
-	// Token: 0x040012EF RID: 4847
+	// Token: 0x040012FF RID: 4863
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static short BlockAlign = WaveCleanUp.Channels * WaveCleanUp.BitsPerSample / 8;
 
-	// Token: 0x040012F0 RID: 4848
+	// Token: 0x04001300 RID: 4864
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int Subchunk1Size = 16;
 
-	// Token: 0x040012F1 RID: 4849
+	// Token: 0x04001301 RID: 4865
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool IsFinished;
 
-	// Token: 0x040012F2 RID: 4850
+	// Token: 0x04001302 RID: 4866
 	public string FilePath;
 }

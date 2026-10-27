@@ -2,16 +2,16 @@
 using System.Runtime.CompilerServices;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DA2 RID: 3490
+// Token: 0x02000DAD RID: 3501
 [Preserve]
 public abstract class XUiC_OptionEntryAbs : XUiController
 {
 	// Token: 0x14000092 RID: 146
-	// (add) Token: 0x0600699B RID: 27035 RVA: 0x0029C3D0 File Offset: 0x0029A5D0
-	// (remove) Token: 0x0600699C RID: 27036 RVA: 0x0029C408 File Offset: 0x0029A608
+	// (add) Token: 0x060069C0 RID: 27072 RVA: 0x0029D8F8 File Offset: 0x0029BAF8
+	// (remove) Token: 0x060069C1 RID: 27073 RVA: 0x0029D930 File Offset: 0x0029BB30
 	public event Action<XUiC_OptionEntryAbs> ValueChanged;
 
-	// Token: 0x0600699D RID: 27037 RVA: 0x0029C43D File Offset: 0x0029A63D
+	// Token: 0x060069C2 RID: 27074 RVA: 0x0029D965 File Offset: 0x0029BB65
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void invokeValueChanged()
 	{
@@ -23,9 +23,9 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		valueChanged(this);
 	}
 
-	// Token: 0x17000B63 RID: 2915
-	// (get) Token: 0x0600699E RID: 27038 RVA: 0x0029C450 File Offset: 0x0029A650
-	// (set) Token: 0x0600699F RID: 27039 RVA: 0x0029C458 File Offset: 0x0029A658
+	// Token: 0x17000B69 RID: 2921
+	// (get) Token: 0x060069C3 RID: 27075 RVA: 0x0029D978 File Offset: 0x0029BB78
+	// (set) Token: 0x060069C4 RID: 27076 RVA: 0x0029D980 File Offset: 0x0029BB80
 	[XuiXmlAttribute("prefname", false)]
 	public string PrefName
 	{
@@ -35,9 +35,9 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		set;
 	}
 
-	// Token: 0x17000B64 RID: 2916
-	// (get) Token: 0x060069A0 RID: 27040 RVA: 0x0029C461 File Offset: 0x0029A661
-	// (set) Token: 0x060069A1 RID: 27041 RVA: 0x0029C469 File Offset: 0x0029A669
+	// Token: 0x17000B6A RID: 2922
+	// (get) Token: 0x060069C5 RID: 27077 RVA: 0x0029D989 File Offset: 0x0029BB89
+	// (set) Token: 0x060069C6 RID: 27078 RVA: 0x0029D991 File Offset: 0x0029BB91
 	[XuiXmlAttribute("apply_immediately", false)]
 	public bool ApplyImmediately
 	{
@@ -47,9 +47,9 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		set;
 	}
 
-	// Token: 0x17000B65 RID: 2917
-	// (get) Token: 0x060069A2 RID: 27042 RVA: 0x0029C472 File Offset: 0x0029A672
-	// (set) Token: 0x060069A3 RID: 27043 RVA: 0x0029C47A File Offset: 0x0029A67A
+	// Token: 0x17000B6B RID: 2923
+	// (get) Token: 0x060069C7 RID: 27079 RVA: 0x0029D99A File Offset: 0x0029BB9A
+	// (set) Token: 0x060069C8 RID: 27080 RVA: 0x0029D9A2 File Offset: 0x0029BBA2
 	[XuiXmlAttribute("apply_defaults", false)]
 	public bool ApplyDefaults
 	{
@@ -59,19 +59,19 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		set;
 	}
 
-	// Token: 0x17000B66 RID: 2918
-	// (get) Token: 0x060069A4 RID: 27044
+	// Token: 0x17000B6C RID: 2924
+	// (get) Token: 0x060069C9 RID: 27081
 	[XuiXmlBinding("option_changed")]
 	public abstract bool IsChanged { get; }
 
-	// Token: 0x17000B67 RID: 2919
-	// (get) Token: 0x060069A5 RID: 27045
+	// Token: 0x17000B6D RID: 2925
+	// (get) Token: 0x060069CA RID: 27082
 	[XuiXmlBinding("option_is_default")]
 	public abstract bool IsDefault { get; }
 
-	// Token: 0x17000B68 RID: 2920
-	// (get) Token: 0x060069A6 RID: 27046 RVA: 0x0029C483 File Offset: 0x0029A683
-	// (set) Token: 0x060069A7 RID: 27047 RVA: 0x0029C48B File Offset: 0x0029A68B
+	// Token: 0x17000B6E RID: 2926
+	// (get) Token: 0x060069CB RID: 27083 RVA: 0x0029D9AB File Offset: 0x0029BBAB
+	// (set) Token: 0x060069CC RID: 27084 RVA: 0x0029D9B3 File Offset: 0x0029BBB3
 	[XuiXmlBinding("option_hovered")]
 	public bool OptionHovered
 	{
@@ -91,20 +91,20 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		}
 	}
 
-	// Token: 0x060069A8 RID: 27048
+	// Token: 0x060069CD RID: 27085
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void initCurrentValue();
 
-	// Token: 0x060069A9 RID: 27049
+	// Token: 0x060069CE RID: 27086
 	public abstract void DiscardCurrentChange();
 
-	// Token: 0x060069AA RID: 27050
+	// Token: 0x060069CF RID: 27087
 	public abstract void ApplySelection();
 
-	// Token: 0x060069AB RID: 27051
+	// Token: 0x060069D0 RID: 27088
 	public abstract void ResetToDefault();
 
-	// Token: 0x060069AC RID: 27052 RVA: 0x0029C4A5 File Offset: 0x0029A6A5
+	// Token: 0x060069D1 RID: 27089 RVA: 0x0029D9CD File Offset: 0x0029BBCD
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -112,14 +112,14 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		this.initCurrentValue();
 	}
 
-	// Token: 0x060069AD RID: 27053 RVA: 0x0029C4B9 File Offset: 0x0029A6B9
+	// Token: 0x060069D2 RID: 27090 RVA: 0x0029D9E1 File Offset: 0x0029BBE1
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.DiscardCurrentChange();
 	}
 
-	// Token: 0x060069AE RID: 27054 RVA: 0x0029C4C7 File Offset: 0x0029A6C7
+	// Token: 0x060069D3 RID: 27091 RVA: 0x0029D9EF File Offset: 0x0029BBEF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initHovering()
 	{
@@ -131,7 +131,7 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		this.<initHovering>g__ApplyEventToChildren|33_0(this);
 	}
 
-	// Token: 0x060069AF RID: 27055 RVA: 0x0029C4E0 File Offset: 0x0029A6E0
+	// Token: 0x060069D4 RID: 27092 RVA: 0x0029DA08 File Offset: 0x0029BC08
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -142,7 +142,7 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		}
 	}
 
-	// Token: 0x060069B0 RID: 27056 RVA: 0x0029C4FE File Offset: 0x0029A6FE
+	// Token: 0x060069D5 RID: 27093 RVA: 0x0029DA26 File Offset: 0x0029BC26
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnHoveredElementChanged(XUiController _sender, bool _state)
 	{
@@ -150,18 +150,18 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		this.parentOptionsDialog.HoveredOption = (_state ? this : null);
 	}
 
-	// Token: 0x060069B1 RID: 27057 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060069D6 RID: 27094 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void DebugLog(string _s)
 	{
 	}
 
-	// Token: 0x060069B2 RID: 27058 RVA: 0x00089701 File Offset: 0x00087901
+	// Token: 0x060069D7 RID: 27095 RVA: 0x00089935 File Offset: 0x00087B35
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_OptionEntryAbs()
 	{
 	}
 
-	// Token: 0x060069B3 RID: 27059 RVA: 0x0029C51C File Offset: 0x0029A71C
+	// Token: 0x060069D8 RID: 27096 RVA: 0x0029DA44 File Offset: 0x0029BC44
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <initHovering>g__ApplyEventToChildren|33_0(XUiController _controller)
@@ -177,21 +177,21 @@ public abstract class XUiC_OptionEntryAbs : XUiController
 		}
 	}
 
-	// Token: 0x0400514D RID: 20813
+	// Token: 0x04005172 RID: 20850
 	[XuiBindParent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionsDialogBase parentOptionsDialog;
 
-	// Token: 0x0400514E RID: 20814
+	// Token: 0x04005173 RID: 20851
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_ComboBoxBase comboGeneric;
 
-	// Token: 0x04005152 RID: 20818
+	// Token: 0x04005177 RID: 20855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool optionHovered;
 
-	// Token: 0x04005153 RID: 20819
+	// Token: 0x04005178 RID: 20856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hoveringInitialized;
 }

@@ -8,20 +8,20 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A63 RID: 6755
+	// Token: 0x02001A94 RID: 6804
 	[Preserve]
 	public class Conductor : IUpdatable, ICleanable
 	{
-		// Token: 0x17001986 RID: 6534
-		// (get) Token: 0x0600CD03 RID: 52483 RVA: 0x004AB501 File Offset: 0x004A9701
-		// (set) Token: 0x0600CD04 RID: 52484 RVA: 0x004AB509 File Offset: 0x004A9709
+		// Token: 0x170019CE RID: 6606
+		// (get) Token: 0x0600CE17 RID: 52759 RVA: 0x004AEFFD File Offset: 0x004AD1FD
+		// (set) Token: 0x0600CE18 RID: 52760 RVA: 0x004AF005 File Offset: 0x004AD205
 		public SectionType CurrentSectionType
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CD05 RID: 52485 RVA: 0x004AB512 File Offset: 0x004A9712
+		// Token: 0x0600CE19 RID: 52761 RVA: 0x004AF00E File Offset: 0x004AD20E
 		public Conductor()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -31,7 +31,7 @@ namespace DynamicMusic
 			MixerController.Instance.Init();
 		}
 
-		// Token: 0x0600CD06 RID: 52486 RVA: 0x004AB52C File Offset: 0x004A972C
+		// Token: 0x0600CE1A RID: 52762 RVA: 0x004AF028 File Offset: 0x004AD228
 		public void Init(bool ReadyImmediate = false)
 		{
 			this.world = GameManager.Instance.World;
@@ -99,8 +99,8 @@ namespace DynamicMusic
 			Log.Out("Dynamic Music Initialized on Client");
 		}
 
-		// Token: 0x17001987 RID: 6535
-		// (get) Token: 0x0600CD07 RID: 52487 RVA: 0x004AB658 File Offset: 0x004A9858
+		// Token: 0x170019CF RID: 6607
+		// (get) Token: 0x0600CE1B RID: 52763 RVA: 0x004AF154 File Offset: 0x004AD354
 		public bool IsMusicPlaying
 		{
 			get
@@ -123,7 +123,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD08 RID: 52488 RVA: 0x004AB6C0 File Offset: 0x004A98C0
+		// Token: 0x0600CE1C RID: 52764 RVA: 0x004AF1BC File Offset: 0x004AD3BC
 		public IEnumerator PreloadRoutine()
 		{
 			Log.Out("Begin DMS Conductor Preload Routine");
@@ -140,7 +140,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CD09 RID: 52489 RVA: 0x004AB6D0 File Offset: 0x004A98D0
+		// Token: 0x0600CE1D RID: 52765 RVA: 0x004AF1CC File Offset: 0x004AD3CC
 		public void Update()
 		{
 			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -241,7 +241,7 @@ namespace DynamicMusic
 			MixerController.Instance.Update();
 		}
 
-		// Token: 0x0600CD0A RID: 52490 RVA: 0x004ABA84 File Offset: 0x004A9C84
+		// Token: 0x0600CE1E RID: 52766 RVA: 0x004AF580 File Offset: 0x004AD780
 		public void OnPauseGame()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -258,7 +258,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD0B RID: 52491 RVA: 0x004ABAB5 File Offset: 0x004A9CB5
+		// Token: 0x0600CE1F RID: 52767 RVA: 0x004AF5B1 File Offset: 0x004AD7B1
 		public void OnUnPauseGame()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -275,7 +275,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD0C RID: 52492 RVA: 0x004ABAE8 File Offset: 0x004A9CE8
+		// Token: 0x0600CE20 RID: 52768 RVA: 0x004AF5E4 File Offset: 0x004AD7E4
 		public void CleanUp()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -297,7 +297,7 @@ namespace DynamicMusic
 			LayeredContent.ClearQueues();
 		}
 
-		// Token: 0x0600CD0D RID: 52493 RVA: 0x004ABB7C File Offset: 0x004A9D7C
+		// Token: 0x0600CE21 RID: 52769 RVA: 0x004AF678 File Offset: 0x004AD878
 		public void OnWorldExit()
 		{
 			ConnectionManager.OnClientDisconnected -= this.OnClientDisconnected;
@@ -312,13 +312,13 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD0E RID: 52494 RVA: 0x004ABBE4 File Offset: 0x004A9DE4
+		// Token: 0x0600CE22 RID: 52770 RVA: 0x004AF6E0 File Offset: 0x004AD8E0
 		public override string ToString()
 		{
 			return "Conductor:\n" + string.Format("Current Section Type: {0}\n", this.CurrentSectionType);
 		}
 
-		// Token: 0x0600CD0F RID: 52495 RVA: 0x004ABC08 File Offset: 0x004A9E08
+		// Token: 0x0600CE23 RID: 52771 RVA: 0x004AF704 File Offset: 0x004AD904
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClientDisconnected(ClientInfo _ci)
 		{
@@ -339,29 +339,29 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x04009BA4 RID: 39844
+		// Token: 0x04009C8D RID: 40077
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ISectionSelector sectionSelector;
 
-		// Token: 0x04009BA5 RID: 39845
+		// Token: 0x04009C8E RID: 40078
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EnumDictionary<SectionType, ISection> sections;
 
-		// Token: 0x04009BA7 RID: 39847
+		// Token: 0x04009C90 RID: 40080
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ISection CurrentSection;
 
-		// Token: 0x04009BA8 RID: 39848
+		// Token: 0x04009C91 RID: 40081
 		[PublicizedFrom(EAccessModifier.Private)]
 		public World world;
 
-		// Token: 0x04009BA9 RID: 39849
+		// Token: 0x04009C92 RID: 40082
 		public Dictionary<int, bool> PlayerEligibleForBloodmoonCache;
 
-		// Token: 0x04009BAA RID: 39850
+		// Token: 0x04009C93 RID: 40083
 		public bool IsBloodmoonMusicEligible;
 
-		// Token: 0x04009BAB RID: 39851
+		// Token: 0x04009C94 RID: 40084
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool wasMusicPlaying;
 	}

@@ -4,82 +4,82 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001BDA RID: 7130
+	// Token: 0x02001C0B RID: 7179
 	public interface IUserClient
 	{
-		// Token: 0x17001AC6 RID: 6854
-		// (get) Token: 0x0600D4BF RID: 54463
+		// Token: 0x17001B0E RID: 6926
+		// (get) Token: 0x0600D5D3 RID: 54739
 		EUserStatus UserStatus { get; }
 
 		// Token: 0x14000125 RID: 293
-		// (add) Token: 0x0600D4C0 RID: 54464
-		// (remove) Token: 0x0600D4C1 RID: 54465
+		// (add) Token: 0x0600D5D4 RID: 54740
+		// (remove) Token: 0x0600D5D5 RID: 54741
 		event Action<IPlatform> UserLoggedIn;
 
 		// Token: 0x14000126 RID: 294
-		// (add) Token: 0x0600D4C2 RID: 54466
-		// (remove) Token: 0x0600D4C3 RID: 54467
+		// (add) Token: 0x0600D5D6 RID: 54742
+		// (remove) Token: 0x0600D5D7 RID: 54743
 		event UserBlocksChangedCallback UserBlocksChanged;
 
-		// Token: 0x17001AC7 RID: 6855
-		// (get) Token: 0x0600D4C4 RID: 54468
+		// Token: 0x17001B0F RID: 6927
+		// (get) Token: 0x0600D5D8 RID: 54744
 		PlatformUserIdentifierAbs PlatformUserId { get; }
 
-		// Token: 0x0600D4C5 RID: 54469
+		// Token: 0x0600D5D9 RID: 54745
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D4C6 RID: 54470
+		// Token: 0x0600D5DA RID: 54746
 		void Login(LoginUserCallback _delegate);
 
-		// Token: 0x0600D4C7 RID: 54471
+		// Token: 0x0600D5DB RID: 54747
 		void PlayOffline(LoginUserCallback _delegate);
 
-		// Token: 0x0600D4C8 RID: 54472 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600D5DC RID: 54748 RVA: 0x00010E62 File Offset: 0x0000F062
 		EMatchmakingGroup GetMatchmakingGroup()
 		{
 			return EMatchmakingGroup.Dev;
 		}
 
-		// Token: 0x0600D4C9 RID: 54473
+		// Token: 0x0600D5DD RID: 54749
 		void StartAdvertisePlaying(GameServerInfo _serverInfo);
 
-		// Token: 0x0600D4CA RID: 54474
+		// Token: 0x0600D5DE RID: 54750
 		void StopAdvertisePlaying();
 
-		// Token: 0x0600D4CB RID: 54475
+		// Token: 0x0600D5DF RID: 54751
 		void GetLoginTicket(Action<bool, byte[], string> _callback);
 
-		// Token: 0x0600D4CC RID: 54476
+		// Token: 0x0600D5E0 RID: 54752
 		string GetFriendName(PlatformUserIdentifierAbs _playerId);
 
-		// Token: 0x0600D4CD RID: 54477
+		// Token: 0x0600D5E1 RID: 54753
 		bool IsFriend(PlatformUserIdentifierAbs _playerId);
 
-		// Token: 0x0600D4CE RID: 54478 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600D5E2 RID: 54754 RVA: 0x00010E62 File Offset: 0x0000F062
 		bool CanShowProfile(PlatformUserIdentifierAbs _playerId)
 		{
 			return false;
 		}
 
-		// Token: 0x0600D4CF RID: 54479 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D5E3 RID: 54755 RVA: 0x000027FC File Offset: 0x000009FC
 		void ShowProfile(PlatformUserIdentifierAbs _playerId)
 		{
 		}
 
-		// Token: 0x17001AC8 RID: 6856
-		// (get) Token: 0x0600D4D0 RID: 54480
+		// Token: 0x17001B10 RID: 6928
+		// (get) Token: 0x0600D5E4 RID: 54756
 		EUserPerms Permissions { get; }
 
-		// Token: 0x0600D4D1 RID: 54481
+		// Token: 0x0600D5E5 RID: 54757
 		string GetPermissionDenyReason(EUserPerms _perms);
 
-		// Token: 0x0600D4D2 RID: 54482
+		// Token: 0x0600D5E6 RID: 54758
 		IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken cancellationToken = null);
 
-		// Token: 0x0600D4D3 RID: 54483
+		// Token: 0x0600D5E7 RID: 54759
 		IEnumerator ResolveUserBlocks(IReadOnlyList<IPlatformUserBlockedResults> _results);
 
-		// Token: 0x0600D4D4 RID: 54484
+		// Token: 0x0600D5E8 RID: 54760
 		void Destroy();
 	}
 }

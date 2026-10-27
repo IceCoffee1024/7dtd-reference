@@ -1,6 +1,6 @@
 ﻿using System;
 using Platform;
 
-// Token: 0x020012D1 RID: 4817
-// (Invoke) Token: 0x0600986F RID: 39023
+// Token: 0x020012E3 RID: 4835
+// (Invoke) Token: 0x060098C7 RID: 39111
 public delegate void PlayerIteractionEvent(PlayerInteraction playerInteraction);

@@ -2,19 +2,19 @@
 
 namespace Audio
 {
-	// Token: 0x02001B3E RID: 6974
+	// Token: 0x02001B6F RID: 7023
 	public class SubtitleData
 	{
-		// Token: 0x04009F44 RID: 40772
+		// Token: 0x0400A02D RID: 41005
 		public string name;
 
-		// Token: 0x04009F45 RID: 40773
+		// Token: 0x0400A02E RID: 41006
 		public string speakerLocId;
 
-		// Token: 0x04009F46 RID: 40774
+		// Token: 0x0400A02F RID: 41007
 		public string contentLocId;
 
-		// Token: 0x04009F47 RID: 40775
+		// Token: 0x0400A030 RID: 41008
 		public string speakerColorId;
 	}
 }

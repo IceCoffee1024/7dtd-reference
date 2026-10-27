@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000CC0 RID: 3264
+// Token: 0x02000CCB RID: 3275
 public static class CollectWaterUtils
 {
-	// Token: 0x060063D0 RID: 25552 RVA: 0x00275C74 File Offset: 0x00273E74
+	// Token: 0x060063F5 RID: 25589 RVA: 0x0027719C File Offset: 0x0027539C
 	public static int CollectWater(ChunkCluster cc, int requiredMass, Vector3i origin, int maxRadius, List<CollectWaterUtils.WaterPoint> points)
 	{
 		int num = requiredMass;
@@ -57,7 +57,7 @@ public static class CollectWaterUtils
 		return requiredMass - num;
 	}
 
-	// Token: 0x060063D1 RID: 25553 RVA: 0x00275DB0 File Offset: 0x00273FB0
+	// Token: 0x060063F6 RID: 25590 RVA: 0x002772D8 File Offset: 0x002754D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCollectionPositions(Vector3i center, int radius)
 	{
@@ -89,11 +89,11 @@ public static class CollectWaterUtils
 		yield break;
 	}
 
-	// Token: 0x02000CC1 RID: 3265
+	// Token: 0x02000CCC RID: 3276
 	public struct WaterPoint
 	{
-		// Token: 0x17000A76 RID: 2678
-		// (get) Token: 0x060063D2 RID: 25554 RVA: 0x00275DC7 File Offset: 0x00273FC7
+		// Token: 0x17000A7C RID: 2684
+		// (get) Token: 0x060063F7 RID: 25591 RVA: 0x002772EF File Offset: 0x002754EF
 		public int finalMass
 		{
 			get
@@ -102,7 +102,7 @@ public static class CollectWaterUtils
 			}
 		}
 
-		// Token: 0x060063D3 RID: 25555 RVA: 0x00275DD6 File Offset: 0x00273FD6
+		// Token: 0x060063F8 RID: 25592 RVA: 0x002772FE File Offset: 0x002754FE
 		public WaterPoint(Vector3i _pos, int _mass)
 		{
 			this.worldPos = _pos;
@@ -110,13 +110,13 @@ public static class CollectWaterUtils
 			this.massToTake = _mass;
 		}
 
-		// Token: 0x04004DDA RID: 19930
+		// Token: 0x04004DFF RID: 19967
 		public Vector3i worldPos;
 
-		// Token: 0x04004DDB RID: 19931
+		// Token: 0x04004E00 RID: 19968
 		public int mass;
 
-		// Token: 0x04004DDC RID: 19932
+		// Token: 0x04004E01 RID: 19969
 		public int massToTake;
 	}
 }

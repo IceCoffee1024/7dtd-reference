@@ -5,42 +5,42 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000B27 RID: 2855
+// Token: 0x02000B32 RID: 2866
 public class ChunkCluster : WorldChunkCache, IBlockAccess
 {
 	// Token: 0x1400007F RID: 127
-	// (add) Token: 0x060055AF RID: 21935 RVA: 0x0020E618 File Offset: 0x0020C818
-	// (remove) Token: 0x060055B0 RID: 21936 RVA: 0x0020E650 File Offset: 0x0020C850
+	// (add) Token: 0x060055D4 RID: 21972 RVA: 0x0020FB94 File Offset: 0x0020DD94
+	// (remove) Token: 0x060055D5 RID: 21973 RVA: 0x0020FBCC File Offset: 0x0020DDCC
 	public event ChunkCluster.OnBlockDamagedDelegate OnBlockDamagedDelegates;
 
 	// Token: 0x14000080 RID: 128
-	// (add) Token: 0x060055B1 RID: 21937 RVA: 0x0020E688 File Offset: 0x0020C888
-	// (remove) Token: 0x060055B2 RID: 21938 RVA: 0x0020E6C0 File Offset: 0x0020C8C0
+	// (add) Token: 0x060055D6 RID: 21974 RVA: 0x0020FC04 File Offset: 0x0020DE04
+	// (remove) Token: 0x060055D7 RID: 21975 RVA: 0x0020FC3C File Offset: 0x0020DE3C
 	public event ChunkCluster.OnChunksFinishedLoadingDelegate OnChunksFinishedLoadingDelegates;
 
 	// Token: 0x14000081 RID: 129
-	// (add) Token: 0x060055B3 RID: 21939 RVA: 0x0020E6F8 File Offset: 0x0020C8F8
-	// (remove) Token: 0x060055B4 RID: 21940 RVA: 0x0020E730 File Offset: 0x0020C930
+	// (add) Token: 0x060055D8 RID: 21976 RVA: 0x0020FC74 File Offset: 0x0020DE74
+	// (remove) Token: 0x060055D9 RID: 21977 RVA: 0x0020FCAC File Offset: 0x0020DEAC
 	public event ChunkCluster.OnChunksFinishedDisplayingDelegate OnChunksFinishedDisplayingDelegates;
 
 	// Token: 0x14000082 RID: 130
-	// (add) Token: 0x060055B5 RID: 21941 RVA: 0x0020E768 File Offset: 0x0020C968
-	// (remove) Token: 0x060055B6 RID: 21942 RVA: 0x0020E7A0 File Offset: 0x0020C9A0
+	// (add) Token: 0x060055DA RID: 21978 RVA: 0x0020FCE4 File Offset: 0x0020DEE4
+	// (remove) Token: 0x060055DB RID: 21979 RVA: 0x0020FD1C File Offset: 0x0020DF1C
 	public event ChunkCluster.OnChunkVisibleDelegate OnChunkVisibleDelegates;
 
 	// Token: 0x14000083 RID: 131
-	// (add) Token: 0x060055B7 RID: 21943 RVA: 0x0020E7D8 File Offset: 0x0020C9D8
-	// (remove) Token: 0x060055B8 RID: 21944 RVA: 0x0020E810 File Offset: 0x0020CA10
+	// (add) Token: 0x060055DC RID: 21980 RVA: 0x0020FD54 File Offset: 0x0020DF54
+	// (remove) Token: 0x060055DD RID: 21981 RVA: 0x0020FD8C File Offset: 0x0020DF8C
 	public event ChunkCluster.OnBlockChangedDelegate OnBlockChangedDelegates;
 
-	// Token: 0x060055B9 RID: 21945 RVA: 0x0020E848 File Offset: 0x0020CA48
+	// Token: 0x060055DE RID: 21982 RVA: 0x0020FDC4 File Offset: 0x0020DFC4
 	public ChunkCluster(World _world, string _name)
 	{
 		this.Name = _name;
 		this.world = _world;
 	}
 
-	// Token: 0x060055BA RID: 21946 RVA: 0x0020E8A0 File Offset: 0x0020CAA0
+	// Token: 0x060055DF RID: 21983 RVA: 0x0020FE1C File Offset: 0x0020E01C
 	public IEnumerator Init(EnumChunkProviderId _providerId, PathAbstractions.AbstractedLocation _worldLocation)
 	{
 		this.nChunks = new ChunkCacheNeighborChunks(this);
@@ -88,7 +88,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		yield break;
 	}
 
-	// Token: 0x060055BB RID: 21947 RVA: 0x0020E8C0 File Offset: 0x0020CAC0
+	// Token: 0x060055E0 RID: 21984 RVA: 0x0020FE3C File Offset: 0x0020E03C
 	public void Cleanup()
 	{
 		ChunkManager chunkManager = this.world.m_ChunkManager;
@@ -137,13 +137,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		ChunkCluster.chunkRegenerationHistories.Clear();
 	}
 
-	// Token: 0x060055BC RID: 21948 RVA: 0x0020EA30 File Offset: 0x0020CC30
+	// Token: 0x060055E1 RID: 21985 RVA: 0x0020FFAC File Offset: 0x0020E1AC
 	public World GetWorld()
 	{
 		return this.world;
 	}
 
-	// Token: 0x060055BD RID: 21949 RVA: 0x0020EA38 File Offset: 0x0020CC38
+	// Token: 0x060055E2 RID: 21986 RVA: 0x0020FFB4 File Offset: 0x0020E1B4
 	public List<Vector3i> GetIndexedBlocks(string _name)
 	{
 		List<Vector3i> list = new List<Vector3i>();
@@ -170,7 +170,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return list;
 	}
 
-	// Token: 0x060055BE RID: 21950 RVA: 0x0020EAFC File Offset: 0x0020CCFC
+	// Token: 0x060055E3 RID: 21987 RVA: 0x00210078 File Offset: 0x0020E278
 	public override bool AddChunkSync(Chunk _chunk, bool _bOmitCallbacks = false)
 	{
 		bool flag = base.AddChunkSync(_chunk, _bOmitCallbacks);
@@ -214,7 +214,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return flag;
 	}
 
-	// Token: 0x060055BF RID: 21951 RVA: 0x0020EC6D File Offset: 0x0020CE6D
+	// Token: 0x060055E4 RID: 21988 RVA: 0x002101E9 File Offset: 0x0020E3E9
 	public void NotifyOnChunksFinishedLoading()
 	{
 		if (this.OnChunksFinishedLoadingDelegates != null)
@@ -224,7 +224,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055C0 RID: 21952 RVA: 0x0020EC89 File Offset: 0x0020CE89
+	// Token: 0x060055E5 RID: 21989 RVA: 0x00210205 File Offset: 0x0020E405
 	public void RemoveChunk(Chunk _chunk)
 	{
 		_chunk.OnUnload(this.world);
@@ -232,7 +232,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		this.UpdateRegenerationState(_chunk.Key, ChunkCluster.ChunkState.Removed);
 	}
 
-	// Token: 0x060055C1 RID: 21953 RVA: 0x0020ECB0 File Offset: 0x0020CEB0
+	// Token: 0x060055E6 RID: 21990 RVA: 0x0021022C File Offset: 0x0020E42C
 	public void UnloadChunk(Chunk _chunk)
 	{
 		if (this.ChunkProvider != null)
@@ -243,7 +243,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055C2 RID: 21954 RVA: 0x0020ECDC File Offset: 0x0020CEDC
+	// Token: 0x060055E7 RID: 21991 RVA: 0x00210258 File Offset: 0x0020E458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addDistantDecorationBlocks(Chunk _chunk)
 	{
@@ -287,7 +287,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055C3 RID: 21955 RVA: 0x0020EEB3 File Offset: 0x0020D0B3
+	// Token: 0x060055E8 RID: 21992 RVA: 0x0021042F File Offset: 0x0020E62F
 	public void LightChunk(Chunk chunk, Chunk[] _neighbours)
 	{
 		this.addDistantDecorationBlocks(chunk);
@@ -301,7 +301,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		chunk.CalcDominantBiome();
 	}
 
-	// Token: 0x060055C4 RID: 21956 RVA: 0x0020EEEA File Offset: 0x0020D0EA
+	// Token: 0x060055E9 RID: 21993 RVA: 0x00210466 File Offset: 0x0020E666
 	public void CalcStability(Chunk chunk)
 	{
 		if (this.stabilityCalcLightingThread != null)
@@ -311,7 +311,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055C5 RID: 21957 RVA: 0x0020EF08 File Offset: 0x0020D108
+	// Token: 0x060055EA RID: 21994 RVA: 0x00210484 File Offset: 0x0020E684
 	public void RegenerateChunk(Chunk _chunk, Chunk[] _neighbours)
 	{
 		this.nChunks.Init(_chunk, _neighbours);
@@ -355,13 +355,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		this.nChunks.Clear();
 	}
 
-	// Token: 0x060055C6 RID: 21958 RVA: 0x0020F09C File Offset: 0x0020D29C
+	// Token: 0x060055EB RID: 21995 RVA: 0x00210618 File Offset: 0x0020E818
 	public bool IsOnBorder(Chunk _c)
 	{
 		return this.IsFixedSize && (_c.X == this.ChunkMinPos.x || _c.X == this.ChunkMaxPos.x || _c.Z == this.ChunkMinPos.y || _c.Z == this.ChunkMaxPos.y);
 	}
 
-	// Token: 0x060055C7 RID: 21959 RVA: 0x0020F104 File Offset: 0x0020D304
+	// Token: 0x060055EC RID: 21996 RVA: 0x00210680 File Offset: 0x0020E880
 	public sbyte GetDensity(Vector3i _worldPos)
 	{
 		IChunk chunkSync = base.GetChunkSync(World.toChunkXZ(_worldPos.x), World.toChunkXZ(_worldPos.z));
@@ -373,13 +373,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunkSync.GetDensity(vector3i.x, vector3i.y, vector3i.z);
 	}
 
-	// Token: 0x060055C8 RID: 21960 RVA: 0x0020F158 File Offset: 0x0020D358
+	// Token: 0x060055ED RID: 21997 RVA: 0x002106D4 File Offset: 0x0020E8D4
 	public void SetDensity(Vector3i _pos, sbyte _density, bool _isForceDensity = false)
 	{
 		this.SetBlock(_pos, false, BlockValue.Air, true, _density, false, false, _isForceDensity, false, -1);
 	}
 
-	// Token: 0x060055C9 RID: 21961 RVA: 0x0020F17C File Offset: 0x0020D37C
+	// Token: 0x060055EE RID: 21998 RVA: 0x002106F8 File Offset: 0x0020E8F8
 	public void SetDensityRaw(Vector3i _pos, sbyte _density)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_pos);
@@ -393,7 +393,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		chunk.SetDensity(num, num3, num2, _density);
 	}
 
-	// Token: 0x060055CA RID: 21962 RVA: 0x0020F1C8 File Offset: 0x0020D3C8
+	// Token: 0x060055EF RID: 21999 RVA: 0x00210744 File Offset: 0x0020E944
 	public void SetStability(Vector3i _pos, byte _v)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_pos);
@@ -407,7 +407,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		chunk.SetStability(num, num3, num2, _v);
 	}
 
-	// Token: 0x060055CB RID: 21963 RVA: 0x0020F214 File Offset: 0x0020D414
+	// Token: 0x060055F0 RID: 22000 RVA: 0x00210790 File Offset: 0x0020E990
 	public WaterValue GetWater(Vector3i _pos)
 	{
 		if (_pos.y < 256)
@@ -421,7 +421,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return WaterValue.Empty;
 	}
 
-	// Token: 0x060055CC RID: 21964 RVA: 0x0020F264 File Offset: 0x0020D464
+	// Token: 0x060055F1 RID: 22001 RVA: 0x002107E0 File Offset: 0x0020E9E0
 	public void SetWater(Vector3i _pos, WaterValue _waterData)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_pos);
@@ -436,7 +436,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		this.chunkPosNeedsRegeneration(chunk, num, num3, num2, false);
 	}
 
-	// Token: 0x060055CD RID: 21965 RVA: 0x0020F2BC File Offset: 0x0020D4BC
+	// Token: 0x060055F2 RID: 22002 RVA: 0x00210838 File Offset: 0x0020EA38
 	public BlockValue GetBlock(int x, int y, int z)
 	{
 		if (y < 256)
@@ -450,25 +450,25 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return BlockValue.Air;
 	}
 
-	// Token: 0x060055CE RID: 21966 RVA: 0x001B2790 File Offset: 0x001B0990
+	// Token: 0x060055F3 RID: 22003 RVA: 0x001B3814 File Offset: 0x001B1A14
 	public BlockValue GetBlock(Vector3i pos)
 	{
 		return IBlockAccess.DefaultGetBlock(this, pos);
 	}
 
-	// Token: 0x060055CF RID: 21967 RVA: 0x001B2799 File Offset: 0x001B0999
+	// Token: 0x060055F4 RID: 22004 RVA: 0x001B381D File Offset: 0x001B1A1D
 	public BlockValue GetBlock(BlockValueRef bvRef)
 	{
 		return IBlockAccess.DefaultGetBlock(this, bvRef);
 	}
 
-	// Token: 0x060055D0 RID: 21968 RVA: 0x0020F2F8 File Offset: 0x0020D4F8
+	// Token: 0x060055F5 RID: 22005 RVA: 0x00210874 File Offset: 0x0020EA74
 	public BlockValue SetBlock(BlockValueRef _bvRef, BlockValue _bv, bool _isNotify, bool _isUpdateLight)
 	{
 		return this.SetBlock(_bvRef, true, _bv, false, 0, _isNotify, _isUpdateLight, false, false, -1);
 	}
 
-	// Token: 0x060055D1 RID: 21969 RVA: 0x0020F318 File Offset: 0x0020D518
+	// Token: 0x060055F6 RID: 22006 RVA: 0x00210894 File Offset: 0x0020EA94
 	public BlockValue SetBlock(BlockValueRef _bvRef, bool _isChangeBV, BlockValue _bv, bool _isChangeDensity, sbyte _density, bool _isNotify, bool _isUpdateLight, bool _isForceDensity = false, bool _wasChild = false, int _changedByEntityId = -1)
 	{
 		BlockValue blockValue;
@@ -493,7 +493,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return blockValue;
 	}
 
-	// Token: 0x060055D2 RID: 21970 RVA: 0x0020F3A8 File Offset: 0x0020D5A8
+	// Token: 0x060055F7 RID: 22007 RVA: 0x00210924 File Offset: 0x0020EB24
 	public unsafe BlockValue SetBlock(Vector3i _pos, bool _isChangeBV, BlockValue _bv, bool _isChangeDensity, sbyte _density, bool _isNotify, bool _isUpdateLight, bool _isForceDensity = false, bool _wasChild = false, int _changedByEntityId = -1)
 	{
 		if (_pos.y <= 0 || _pos.y >= 255)
@@ -763,7 +763,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return blockValue;
 	}
 
-	// Token: 0x060055D3 RID: 21971 RVA: 0x0020FBEC File Offset: 0x0020DDEC
+	// Token: 0x060055F8 RID: 22008 RVA: 0x00211168 File Offset: 0x0020F368
 	public void SetBlockRaw(Vector3i _worldBlockPos, BlockValue _blockValue)
 	{
 		Chunk chunkSync = base.GetChunkSync(World.toChunkXZ(_worldBlockPos.x), World.toChunkXZ(_worldBlockPos.z));
@@ -774,7 +774,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		chunkSync.SetBlockRaw(World.toBlockXZ(_worldBlockPos.x), _worldBlockPos.y, World.toBlockXZ(_worldBlockPos.z), _blockValue);
 	}
 
-	// Token: 0x060055D4 RID: 21972 RVA: 0x0020FC40 File Offset: 0x0020DE40
+	// Token: 0x060055F9 RID: 22009 RVA: 0x002111BC File Offset: 0x0020F3BC
 	public byte GetLight(Vector3i _blockPos, Chunk.LIGHT_TYPE type)
 	{
 		IChunk chunkFromWorldPos = base.GetChunkFromWorldPos(_blockPos);
@@ -785,7 +785,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return 0;
 	}
 
-	// Token: 0x060055D5 RID: 21973 RVA: 0x0020FC82 File Offset: 0x0020DE82
+	// Token: 0x060055FA RID: 22010 RVA: 0x002111FE File Offset: 0x0020F3FE
 	public PropValue GetProp(int chunkX, int chunkZ, int propId)
 	{
 		Chunk chunkSync = base.GetChunkSync(chunkX, chunkZ);
@@ -796,7 +796,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunkSync.GetProp(chunkX, chunkZ, propId);
 	}
 
-	// Token: 0x060055D6 RID: 21974 RVA: 0x0020FC9E File Offset: 0x0020DE9E
+	// Token: 0x060055FB RID: 22011 RVA: 0x0021121A File Offset: 0x0020F41A
 	public PropValue GetProp(long chunkKey, int propId)
 	{
 		Chunk chunkSync = this.GetChunkSync(chunkKey);
@@ -807,25 +807,25 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunkSync.GetProp(chunkKey, propId);
 	}
 
-	// Token: 0x060055D7 RID: 21975 RVA: 0x001B2925 File Offset: 0x001B0B25
+	// Token: 0x060055FC RID: 22012 RVA: 0x001B39A9 File Offset: 0x001B1BA9
 	public PropValue GetProp(Vector2i chunkPos, int propId)
 	{
 		return IBlockAccess.DefaultGetProp(this, chunkPos, propId);
 	}
 
-	// Token: 0x060055D8 RID: 21976 RVA: 0x001B292F File Offset: 0x001B0B2F
+	// Token: 0x060055FD RID: 22013 RVA: 0x001B39B3 File Offset: 0x001B1BB3
 	public PropValue GetProp(PropRef propRef)
 	{
 		return IBlockAccess.DefaultGetProp(this, propRef);
 	}
 
-	// Token: 0x060055D9 RID: 21977 RVA: 0x0020FCB8 File Offset: 0x0020DEB8
+	// Token: 0x060055FE RID: 22014 RVA: 0x00211234 File Offset: 0x0020F434
 	public PropValue SetProp(PropRef propRef, Vector3? position = null, Quaternion? rotation = null, Vector3? scale = null, BlockValue? blockValue = null)
 	{
 		return this.SetProp(propRef.ChunkPos, new int?(propRef.PropId), position, rotation, scale, blockValue);
 	}
 
-	// Token: 0x060055DA RID: 21978 RVA: 0x0020FCD8 File Offset: 0x0020DED8
+	// Token: 0x060055FF RID: 22015 RVA: 0x00211254 File Offset: 0x0020F454
 	public PropValue SetProp(Vector2i chunkPos, int? propId = null, Vector3? position = null, Quaternion? rotation = null, Vector3? scale = null, BlockValue? blockValue = null)
 	{
 		Chunk chunk = (Chunk)base.GetChunkSync(chunkPos);
@@ -843,7 +843,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return PropValue.AIR;
 	}
 
-	// Token: 0x060055DB RID: 21979 RVA: 0x0020FD60 File Offset: 0x0020DF60
+	// Token: 0x06005600 RID: 22016 RVA: 0x002112DC File Offset: 0x0020F4DC
 	public void SetBlockValue(BlockValueRef blockValueRef, BlockValue blockValue)
 	{
 		switch (blockValueRef.Type)
@@ -861,7 +861,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055DC RID: 21980 RVA: 0x0020FDCC File Offset: 0x0020DFCC
+	// Token: 0x06005601 RID: 22017 RVA: 0x00211348 File Offset: 0x0020F548
 	public ChunkGameObject RemoveDisplayedChunkGameObject(long _key)
 	{
 		DictionarySave<long, ChunkGameObject> displayedChunkGameObjects = this.DisplayedChunkGameObjects;
@@ -874,7 +874,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunkGameObject;
 	}
 
-	// Token: 0x060055DD RID: 21981 RVA: 0x0020FE20 File Offset: 0x0020E020
+	// Token: 0x06005602 RID: 22018 RVA: 0x0021139C File Offset: 0x0020F59C
 	public void SetDisplayedChunkGameObject(long _key, ChunkGameObject _cgo)
 	{
 		DictionarySave<long, ChunkGameObject> displayedChunkGameObjects = this.DisplayedChunkGameObjects;
@@ -884,7 +884,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055DE RID: 21982 RVA: 0x0020FE68 File Offset: 0x0020E068
+	// Token: 0x06005603 RID: 22019 RVA: 0x002113E4 File Offset: 0x0020F5E4
 	public void ChunkPosNeedsRegeneration_DelayedStart()
 	{
 		this.delayedRegenCount++;
@@ -898,7 +898,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055DF RID: 21983 RVA: 0x0020FEC4 File Offset: 0x0020E0C4
+	// Token: 0x06005604 RID: 22020 RVA: 0x00211440 File Offset: 0x0020F640
 	public void ChunkPosNeedsRegeneration_DelayedStop()
 	{
 		this.delayedRegenCount--;
@@ -916,7 +916,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055E0 RID: 21984 RVA: 0x0020FF70 File Offset: 0x0020E170
+	// Token: 0x06005605 RID: 22021 RVA: 0x002114EC File Offset: 0x0020F6EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void chunkRegenerateAt(Chunk _c, int _yPos)
 	{
@@ -938,7 +938,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055E1 RID: 21985 RVA: 0x0020FFF4 File Offset: 0x0020E1F4
+	// Token: 0x06005606 RID: 22022 RVA: 0x00211570 File Offset: 0x0020F770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void chunkPosNeedsRegeneration(Chunk _chunk, int _blockX, int _blockY, int _blockZ, bool _bTerrainBlockChanged)
 	{
@@ -1122,7 +1122,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		this.chunksNeedingRegThisCall.Clear();
 	}
 
-	// Token: 0x060055E2 RID: 21986 RVA: 0x00210480 File Offset: 0x0020E680
+	// Token: 0x06005607 RID: 22023 RVA: 0x002119FC File Offset: 0x0020FBFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void notifyBlocksOfNeighborChange(Vector3i _worldBlockPos, BlockValue _newBlockValue, BlockValue _oldBlockValue)
 	{
@@ -1132,7 +1132,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055E3 RID: 21987 RVA: 0x002104BC File Offset: 0x0020E6BC
+	// Token: 0x06005608 RID: 22024 RVA: 0x00211A38 File Offset: 0x0020FC38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void notifyBlockOfNeighborChange(Vector3i _myBlockPos, BlockValue _newBlockValue, BlockValue _oldBlockValue, Vector3i _blockPosThatChanged)
 	{
@@ -1147,13 +1147,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055E4 RID: 21988 RVA: 0x00210505 File Offset: 0x0020E705
+	// Token: 0x06005609 RID: 22025 RVA: 0x00211A81 File Offset: 0x0020FC81
 	public Vector3 ToWorldPosition(Vector3 _localPos)
 	{
 		return _localPos + this.Position;
 	}
 
-	// Token: 0x060055E5 RID: 21989 RVA: 0x00210514 File Offset: 0x0020E714
+	// Token: 0x0600560A RID: 22026 RVA: 0x00211A90 File Offset: 0x0020FC90
 	public Vector3 ToLocalPosition(Vector3 _worldPos)
 	{
 		_worldPos.x -= this.Position.x;
@@ -1162,13 +1162,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return _worldPos;
 	}
 
-	// Token: 0x060055E6 RID: 21990 RVA: 0x000149AE File Offset: 0x00012BAE
+	// Token: 0x0600560B RID: 22027 RVA: 0x000149AE File Offset: 0x00012BAE
 	public Vector3 ToLocalVector(Vector3 _vector)
 	{
 		return _vector;
 	}
 
-	// Token: 0x060055E7 RID: 21991 RVA: 0x00210564 File Offset: 0x0020E764
+	// Token: 0x0600560C RID: 22028 RVA: 0x00211AE0 File Offset: 0x0020FCE0
 	public long ToLocalKey(long _key)
 	{
 		int num = World.toChunkXZ(Mathf.FloorToInt(this.Position.x));
@@ -1178,7 +1178,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return WorldChunkCache.MakeChunkKey(num3, num4);
 	}
 
-	// Token: 0x060055E8 RID: 21992 RVA: 0x002105B4 File Offset: 0x0020E7B4
+	// Token: 0x0600560D RID: 22029 RVA: 0x00211B30 File Offset: 0x0020FD30
 	public List<BlockEntityData> GetBlockEntities(string _indexedBlockKey)
 	{
 		List<BlockEntityData> list = new List<BlockEntityData>();
@@ -1203,7 +1203,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return list;
 	}
 
-	// Token: 0x060055E9 RID: 21993 RVA: 0x00210644 File Offset: 0x0020E844
+	// Token: 0x0600560E RID: 22030 RVA: 0x00211BC0 File Offset: 0x0020FDC0
 	public BlockEntityData GetBlockEntity(Vector3i _blockLocalPos)
 	{
 		IChunk chunkFromWorldPos = base.GetChunkFromWorldPos(_blockLocalPos);
@@ -1214,7 +1214,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunkFromWorldPos.GetBlockEntity(_blockLocalPos);
 	}
 
-	// Token: 0x060055EA RID: 21994 RVA: 0x00210668 File Offset: 0x0020E868
+	// Token: 0x0600560F RID: 22031 RVA: 0x00211BE4 File Offset: 0x0020FDE4
 	public void DebugOnGUI(float middleX, float middleY, float size)
 	{
 		List<Chunk> chunkArrayCopySync = base.GetChunkArrayCopySync();
@@ -1285,13 +1285,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055EB RID: 21995 RVA: 0x002108D2 File Offset: 0x0020EAD2
+	// Token: 0x06005610 RID: 22032 RVA: 0x00211E4E File Offset: 0x0021004E
 	public void SnapTerrainToPositionAroundLocal(Vector3i _worldPos)
 	{
 		this.SnapTerrainToPositionAroundRPC(null, _worldPos);
 	}
 
-	// Token: 0x060055EC RID: 21996 RVA: 0x002108DC File Offset: 0x0020EADC
+	// Token: 0x06005611 RID: 22033 RVA: 0x00211E58 File Offset: 0x00210058
 	public void SnapTerrainToPositionAroundRPC(WorldBase _world, Vector3i _worldPos)
 	{
 		if (!this.GetBlock(_worldPos).Block.shape.IsTerrain())
@@ -1305,13 +1305,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		this.snapTerrainToPosition(_world, _worldPos - Vector3i.forward, false, true);
 	}
 
-	// Token: 0x060055ED RID: 21997 RVA: 0x0021095F File Offset: 0x0020EB5F
+	// Token: 0x06005612 RID: 22034 RVA: 0x00211EDB File Offset: 0x002100DB
 	public void SnapTerrainToPositionAtLocal(Vector3i _worldPos, bool _bLiftUpTerrainByOneIfNeeded, bool _bUseHalfTerrainDensity)
 	{
 		this.snapTerrainToPosition(null, _worldPos, _bLiftUpTerrainByOneIfNeeded, _bUseHalfTerrainDensity);
 	}
 
-	// Token: 0x060055EE RID: 21998 RVA: 0x0021096C File Offset: 0x0020EB6C
+	// Token: 0x06005613 RID: 22035 RVA: 0x00211EE8 File Offset: 0x002100E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void snapTerrainToPosition(WorldBase _world, Vector3i _worldPos, bool _bLiftUpTerrainByOneIfNeeded, bool _bUseHalfTerrainDensity)
 	{
@@ -1376,7 +1376,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055EF RID: 21999 RVA: 0x00210A8C File Offset: 0x0020EC8C
+	// Token: 0x06005614 RID: 22036 RVA: 0x00212008 File Offset: 0x00210208
 	public void InvokeOnBlockDamagedDelegates(BlockValueRef _bvRef, BlockValue _blockValue, int _damage, int _attackerEntityId)
 	{
 		if (this.OnBlockDamagedDelegates != null)
@@ -1385,13 +1385,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F0 RID: 22000 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06005615 RID: 22037 RVA: 0x00020119 File Offset: 0x0001E319
 	public bool Overlaps(Bounds _boundsInWorldCoord)
 	{
 		return true;
 	}
 
-	// Token: 0x060055F1 RID: 22001 RVA: 0x00210AA8 File Offset: 0x0020ECA8
+	// Token: 0x06005616 RID: 22038 RVA: 0x00212024 File Offset: 0x00210224
 	public void OnChunkDisplayed(long _key, bool _isDisplayed)
 	{
 		if (this.OnChunkVisibleDelegates != null)
@@ -1412,7 +1412,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F2 RID: 22002 RVA: 0x00210B10 File Offset: 0x0020ED10
+	// Token: 0x06005617 RID: 22039 RVA: 0x0021208C File Offset: 0x0021028C
 	public void CheckCollisionWithBlocks(Entity _entity)
 	{
 		Vector3 vector = this.ToLocalPosition(_entity.boundingBox.min + new Vector3(0.001f, 0.001f, 0.001f));
@@ -1495,7 +1495,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F3 RID: 22003 RVA: 0x00210DB7 File Offset: 0x0020EFB7
+	// Token: 0x06005618 RID: 22040 RVA: 0x00212333 File Offset: 0x00210533
 	public void Save()
 	{
 		if (this.ChunkProvider != null)
@@ -1504,7 +1504,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F4 RID: 22004 RVA: 0x00210DCC File Offset: 0x0020EFCC
+	// Token: 0x06005619 RID: 22041 RVA: 0x00212348 File Offset: 0x00210548
 	public int GetBlockFaceTexture(Vector3i _blockPos, BlockFace _blockFace, int _channel)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_blockPos);
@@ -1515,7 +1515,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunk.GetBlockFaceTexture(World.toBlockXZ(_blockPos.x), World.toBlockY(_blockPos.y), World.toBlockXZ(_blockPos.z), _blockFace, _channel);
 	}
 
-	// Token: 0x060055F5 RID: 22005 RVA: 0x00210E14 File Offset: 0x0020F014
+	// Token: 0x0600561A RID: 22042 RVA: 0x00212390 File Offset: 0x00210590
 	public void SetBlockFaceTexture(Vector3i _blockPos, BlockFace _blockFace, int _textureIdx, int _channel)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_blockPos);
@@ -1536,7 +1536,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F6 RID: 22006 RVA: 0x00210EA8 File Offset: 0x0020F0A8
+	// Token: 0x0600561B RID: 22043 RVA: 0x00212424 File Offset: 0x00210624
 	public void SetTextureFull(Vector3i _blockPos, long _textureFull, int channel)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_blockPos);
@@ -1557,7 +1557,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F7 RID: 22007 RVA: 0x00210F38 File Offset: 0x0020F138
+	// Token: 0x0600561C RID: 22044 RVA: 0x002124B4 File Offset: 0x002106B4
 	public void SetTextureFull(BlockValueRef _bvRef, long _textureFull, int channel)
 	{
 		switch (_bvRef.Type)
@@ -1574,7 +1574,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F8 RID: 22008 RVA: 0x00210F78 File Offset: 0x0020F178
+	// Token: 0x0600561D RID: 22045 RVA: 0x002124F4 File Offset: 0x002106F4
 	public void SetTextureFullArray(Vector3i _blockPos, TextureFullArray _textureFull)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_blockPos);
@@ -1594,7 +1594,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055F9 RID: 22009 RVA: 0x00210FFC File Offset: 0x0020F1FC
+	// Token: 0x0600561E RID: 22046 RVA: 0x00212578 File Offset: 0x00210778
 	public void SetTextureFullArray(BlockValueRef _bvRef, TextureFullArray _textureFull)
 	{
 		switch (_bvRef.Type)
@@ -1611,7 +1611,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055FA RID: 22010 RVA: 0x0021103C File Offset: 0x0020F23C
+	// Token: 0x0600561F RID: 22047 RVA: 0x002125B8 File Offset: 0x002107B8
 	public long GetTextureFull(Vector3i _blockPos)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_blockPos);
@@ -1622,7 +1622,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunk.GetTextureFull(World.toBlockXZ(_blockPos.x), World.toBlockY(_blockPos.y), World.toBlockXZ(_blockPos.z), 0);
 	}
 
-	// Token: 0x060055FB RID: 22011 RVA: 0x00211084 File Offset: 0x0020F284
+	// Token: 0x06005620 RID: 22048 RVA: 0x00212600 File Offset: 0x00210800
 	public long GetTextureFull(BlockValueRef _bvRef)
 	{
 		switch (_bvRef.Type)
@@ -1638,7 +1638,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055FC RID: 22012 RVA: 0x002110C4 File Offset: 0x0020F2C4
+	// Token: 0x06005621 RID: 22049 RVA: 0x00212640 File Offset: 0x00210840
 	public TextureFullArray GetTextureFullArray(Vector3i _blockPos)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_blockPos);
@@ -1649,7 +1649,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return chunk.GetTextureFullArray(World.toBlockXZ(_blockPos.x), World.toBlockY(_blockPos.y), World.toBlockXZ(_blockPos.z), true);
 	}
 
-	// Token: 0x060055FD RID: 22013 RVA: 0x00211110 File Offset: 0x0020F310
+	// Token: 0x06005622 RID: 22050 RVA: 0x0021268C File Offset: 0x0021088C
 	public TextureFullArray GetTextureFullArray(BlockValueRef _bvRef)
 	{
 		switch (_bvRef.Type)
@@ -1665,13 +1665,13 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x060055FE RID: 22014 RVA: 0x00211156 File Offset: 0x0020F356
+	// Token: 0x06005623 RID: 22051 RVA: 0x002126D2 File Offset: 0x002108D2
 	public void MGTest()
 	{
 		this.meshGenerator.Test();
 	}
 
-	// Token: 0x060055FF RID: 22015 RVA: 0x00211164 File Offset: 0x0020F364
+	// Token: 0x06005624 RID: 22052 RVA: 0x002126E0 File Offset: 0x002108E0
 	public static ValueTuple<int, double> SecondsSinceChunkStartedRegeneration(long chunkKey)
 	{
 		ValueTuple<int, DateTime> valueTuple;
@@ -1682,7 +1682,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return new ValueTuple<int, double>(-1, -1.0);
 	}
 
-	// Token: 0x06005600 RID: 22016 RVA: 0x002111B4 File Offset: 0x0020F3B4
+	// Token: 0x06005625 RID: 22053 RVA: 0x00212730 File Offset: 0x00210930
 	public static ValueTuple<int, double> SecondsSinceChunkEndedRegeneration(long chunkKey)
 	{
 		ValueTuple<int, DateTime> valueTuple;
@@ -1693,7 +1693,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		return new ValueTuple<int, double>(-1, -1.0);
 	}
 
-	// Token: 0x06005601 RID: 22017 RVA: 0x00211204 File Offset: 0x0020F404
+	// Token: 0x06005626 RID: 22054 RVA: 0x00212780 File Offset: 0x00210980
 	public static void LogCurrentChunkRegenerationState(long importantChunkKey)
 	{
 		StateHistory<ChunkCluster.ChunkState> stateHistory;
@@ -1734,7 +1734,7 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x06005602 RID: 22018 RVA: 0x002113FC File Offset: 0x0020F5FC
+	// Token: 0x06005627 RID: 22055 RVA: 0x00212978 File Offset: 0x00210B78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRegenerationState(long chunkKey, ChunkCluster.ChunkState state)
 	{
@@ -1750,14 +1750,14 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		}
 	}
 
-	// Token: 0x06005603 RID: 22019 RVA: 0x0021146C File Offset: 0x0020F66C
+	// Token: 0x06005628 RID: 22056 RVA: 0x002129E8 File Offset: 0x00210BE8
 	public void ClearStabilityForChunks(HashSetLong chunks)
 	{
 		this.stabilityCalcMainThread.ClearChunkStabilityQueues(chunks);
 		this.world.ClearFallingBlocksForChunks(chunks);
 	}
 
-	// Token: 0x04004291 RID: 17041
+	// Token: 0x040042B6 RID: 17078
 	public static readonly IReadOnlyDictionary<string, int> LayerMappingTable = new Dictionary<string, int>
 	{
 		{ "terraincollision", 16 },
@@ -1768,153 +1768,153 @@ public class ChunkCluster : WorldChunkCache, IBlockAccess
 		{ "terrain", 28 }
 	};
 
-	// Token: 0x04004297 RID: 17047
+	// Token: 0x040042BC RID: 17084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFinishedLoadingDelegateCalled;
 
-	// Token: 0x04004298 RID: 17048
+	// Token: 0x040042BD RID: 17085
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetLong chunkKeysNeedLoading;
 
-	// Token: 0x04004299 RID: 17049
+	// Token: 0x040042BE RID: 17086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFinishedDisplayingDelegateCalled;
 
-	// Token: 0x0400429A RID: 17050
+	// Token: 0x040042BF RID: 17087
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetLong chunkKeysNeedDisplaying;
 
-	// Token: 0x0400429B RID: 17051
+	// Token: 0x040042C0 RID: 17088
 	public string Name;
 
-	// Token: 0x0400429C RID: 17052
+	// Token: 0x040042C1 RID: 17089
 	public bool IsFixedSize;
 
-	// Token: 0x0400429D RID: 17053
+	// Token: 0x040042C2 RID: 17090
 	public int LayerMappingId;
 
-	// Token: 0x0400429E RID: 17054
+	// Token: 0x040042C3 RID: 17091
 	public DictionarySave<long, ChunkGameObject> DisplayedChunkGameObjects = new DictionarySave<long, ChunkGameObject>();
 
-	// Token: 0x0400429F RID: 17055
+	// Token: 0x040042C4 RID: 17092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConcurrentDictionary<long, ValueTuple<int, DateTime>> chunkRegenerationStartTimestamps = new ConcurrentDictionary<long, ValueTuple<int, DateTime>>();
 
-	// Token: 0x040042A0 RID: 17056
+	// Token: 0x040042C5 RID: 17093
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConcurrentDictionary<long, ValueTuple<int, DateTime>> chunkRegenerationEndTimestamps = new ConcurrentDictionary<long, ValueTuple<int, DateTime>>();
 
-	// Token: 0x040042A1 RID: 17057
+	// Token: 0x040042C6 RID: 17094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ConcurrentDictionary<long, StateHistory<ChunkCluster.ChunkState>> chunkRegenerationHistories = new ConcurrentDictionary<long, StateHistory<ChunkCluster.ChunkState>>();
 
-	// Token: 0x040042A2 RID: 17058
+	// Token: 0x040042C7 RID: 17095
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long currentChunkKey;
 
-	// Token: 0x040042A3 RID: 17059
+	// Token: 0x040042C8 RID: 17096
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int currentChunkVMLIndex;
 
-	// Token: 0x040042A4 RID: 17060
+	// Token: 0x040042C9 RID: 17097
 	public Vector3 Position;
 
-	// Token: 0x040042A5 RID: 17061
+	// Token: 0x040042CA RID: 17098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ILightProcessor m_LightProcessorMainThread;
 
-	// Token: 0x040042A6 RID: 17062
+	// Token: 0x040042CB RID: 17099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ILightProcessor m_LightProcessorLightingThread;
 
-	// Token: 0x040042A7 RID: 17063
+	// Token: 0x040042CC RID: 17100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public StabilityCalculator stabilityCalcMainThread;
 
-	// Token: 0x040042A8 RID: 17064
+	// Token: 0x040042CD RID: 17101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public StabilityInitializer stabilityCalcLightingThread;
 
-	// Token: 0x040042A9 RID: 17065
+	// Token: 0x040042CE RID: 17102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkCacheNeighborChunks nChunks;
 
-	// Token: 0x040042AA RID: 17066
+	// Token: 0x040042CF RID: 17103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkCacheNeighborBlocks nBlocks;
 
-	// Token: 0x040042AB RID: 17067
+	// Token: 0x040042D0 RID: 17104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshGenerator meshGenerator;
 
-	// Token: 0x040042AC RID: 17068
+	// Token: 0x040042D1 RID: 17105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x040042AD RID: 17069
+	// Token: 0x040042D2 RID: 17106
 	public IChunkProvider ChunkProvider;
 
-	// Token: 0x040042AE RID: 17070
+	// Token: 0x040042D3 RID: 17107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SBlockPosValue> multiBlockList = new List<SBlockPosValue>();
 
-	// Token: 0x040042AF RID: 17071
+	// Token: 0x040042D4 RID: 17108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInNotify;
 
-	// Token: 0x040042B0 RID: 17072
+	// Token: 0x040042D5 RID: 17109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Chunk> chunksNeedingRegThisCall = new List<Chunk>();
 
-	// Token: 0x040042B1 RID: 17073
+	// Token: 0x040042D6 RID: 17110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Chunk, int> delayedRegenChunks = new Dictionary<Chunk, int>();
 
-	// Token: 0x040042B2 RID: 17074
+	// Token: 0x040042D7 RID: 17111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int delayedRegenCount;
 
-	// Token: 0x040042B3 RID: 17075
+	// Token: 0x040042D8 RID: 17112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Bounds> aabbList = new List<Bounds>();
 
-	// Token: 0x02000B28 RID: 2856
-	// (Invoke) Token: 0x06005606 RID: 22022
+	// Token: 0x02000B33 RID: 2867
+	// (Invoke) Token: 0x0600562B RID: 22059
 	public delegate void OnBlockDamagedDelegate(BlockValueRef _bvRef, BlockValue _blockValue, int _damage, int _attackerEntityId);
 
-	// Token: 0x02000B29 RID: 2857
-	// (Invoke) Token: 0x0600560A RID: 22026
+	// Token: 0x02000B34 RID: 2868
+	// (Invoke) Token: 0x0600562F RID: 22063
 	public delegate void OnChunksFinishedLoadingDelegate();
 
-	// Token: 0x02000B2A RID: 2858
-	// (Invoke) Token: 0x0600560E RID: 22030
+	// Token: 0x02000B35 RID: 2869
+	// (Invoke) Token: 0x06005633 RID: 22067
 	public delegate void OnChunksFinishedDisplayingDelegate();
 
-	// Token: 0x02000B2B RID: 2859
-	// (Invoke) Token: 0x06005612 RID: 22034
+	// Token: 0x02000B36 RID: 2870
+	// (Invoke) Token: 0x06005637 RID: 22071
 	public delegate void OnChunkVisibleDelegate(long _key, bool _isDisplayed);
 
-	// Token: 0x02000B2C RID: 2860
-	// (Invoke) Token: 0x06005616 RID: 22038
+	// Token: 0x02000B37 RID: 2871
+	// (Invoke) Token: 0x0600563B RID: 22075
 	public delegate void OnBlockChangedDelegate(Vector3i pos, BlockValue bvOld, sbyte densOld, TextureFullArray texOld, BlockValue bvNew);
 
-	// Token: 0x02000B2D RID: 2861
+	// Token: 0x02000B38 RID: 2872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ChunkState : byte
 	{
-		// Token: 0x040042B5 RID: 17077
+		// Token: 0x040042DA RID: 17114
 		Unloaded,
-		// Token: 0x040042B6 RID: 17078
+		// Token: 0x040042DB RID: 17115
 		Removed,
-		// Token: 0x040042B7 RID: 17079
+		// Token: 0x040042DC RID: 17116
 		Loaded,
-		// Token: 0x040042B8 RID: 17080
+		// Token: 0x040042DD RID: 17117
 		Starting,
-		// Token: 0x040042B9 RID: 17081
+		// Token: 0x040042DE RID: 17118
 		GeneratingMeshes,
-		// Token: 0x040042BA RID: 17082
+		// Token: 0x040042DF RID: 17119
 		AddingMeshLayer,
-		// Token: 0x040042BB RID: 17083
+		// Token: 0x040042E0 RID: 17120
 		Regenerated
 	}
 }

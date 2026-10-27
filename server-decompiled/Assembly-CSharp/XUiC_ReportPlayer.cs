@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02001024 RID: 4132
+// Token: 0x02001034 RID: 4148
 [Preserve]
 public class XUiC_ReportPlayer : XUiController
 {
-	// Token: 0x17000F53 RID: 3923
-	// (get) Token: 0x06008243 RID: 33347 RVA: 0x0031A264 File Offset: 0x00318464
-	// (set) Token: 0x06008244 RID: 33348 RVA: 0x0031A275 File Offset: 0x00318475
+	// Token: 0x17000F5E RID: 3934
+	// (get) Token: 0x06008295 RID: 33429 RVA: 0x0031BF68 File Offset: 0x0031A168
+	// (set) Token: 0x06008296 RID: 33430 RVA: 0x0031BF79 File Offset: 0x0031A179
 	[XuiXmlBinding("reportedplayer")]
 	public string ReportedPlayerName
 	{
@@ -24,9 +24,9 @@ public class XUiC_ReportPlayer : XUiController
 		}
 	}
 
-	// Token: 0x17000F54 RID: 3924
-	// (get) Token: 0x06008245 RID: 33349 RVA: 0x0031A285 File Offset: 0x00318485
-	// (set) Token: 0x06008246 RID: 33350 RVA: 0x0031A28D File Offset: 0x0031848D
+	// Token: 0x17000F5F RID: 3935
+	// (get) Token: 0x06008297 RID: 33431 RVA: 0x0031BF89 File Offset: 0x0031A189
+	// (set) Token: 0x06008298 RID: 33432 RVA: 0x0031BF91 File Offset: 0x0031A191
 	public int ReportedEntityId
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -42,8 +42,8 @@ public class XUiC_ReportPlayer : XUiController
 		}
 	}
 
-	// Token: 0x17000F55 RID: 3925
-	// (get) Token: 0x06008247 RID: 33351 RVA: 0x0031A29D File Offset: 0x0031849D
+	// Token: 0x17000F60 RID: 3936
+	// (get) Token: 0x06008299 RID: 33433 RVA: 0x0031BFA1 File Offset: 0x0031A1A1
 	[XuiXmlBinding("playeronserver")]
 	public bool PlayerOnServer
 	{
@@ -54,9 +54,9 @@ public class XUiC_ReportPlayer : XUiController
 		}
 	}
 
-	// Token: 0x17000F56 RID: 3926
-	// (get) Token: 0x06008248 RID: 33352 RVA: 0x0031A2B9 File Offset: 0x003184B9
-	// (set) Token: 0x06008249 RID: 33353 RVA: 0x0031A2CA File Offset: 0x003184CA
+	// Token: 0x17000F61 RID: 3937
+	// (get) Token: 0x0600829A RID: 33434 RVA: 0x0031BFBD File Offset: 0x0031A1BD
+	// (set) Token: 0x0600829B RID: 33435 RVA: 0x0031BFCE File Offset: 0x0031A1CE
 	[XuiXmlBinding("inputWarning")]
 	public string InputErrorMessage
 	{
@@ -71,7 +71,7 @@ public class XUiC_ReportPlayer : XUiController
 		}
 	}
 
-	// Token: 0x0600824A RID: 33354 RVA: 0x0031A2DC File Offset: 0x003184DC
+	// Token: 0x0600829C RID: 33436 RVA: 0x0031BFE0 File Offset: 0x0031A1E0
 	public override void Init()
 	{
 		base.Init();
@@ -87,14 +87,14 @@ public class XUiC_ReportPlayer : XUiController
 		}
 	}
 
-	// Token: 0x0600824B RID: 33355 RVA: 0x00291183 File Offset: 0x0028F383
+	// Token: 0x0600829D RID: 33437 RVA: 0x002926AB File Offset: 0x002908AB
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x0600824C RID: 33356 RVA: 0x00089715 File Offset: 0x00087915
+	// Token: 0x0600829E RID: 33438 RVA: 0x00089949 File Offset: 0x00087B49
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
@@ -102,7 +102,7 @@ public class XUiC_ReportPlayer : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x0600824D RID: 33357 RVA: 0x0031A360 File Offset: 0x00318560
+	// Token: 0x0600829F RID: 33439 RVA: 0x0031C064 File Offset: 0x0031A264
 	[XuiBindEvent("OnPress", "btnKickPlayer")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnKick_OnPressed(XUiController _sender, int _mouseButton)
@@ -133,7 +133,7 @@ public class XUiC_ReportPlayer : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x0600824E RID: 33358 RVA: 0x0031A400 File Offset: 0x00318600
+	// Token: 0x060082A0 RID: 33440 RVA: 0x0031C104 File Offset: 0x0031A304
 	[XuiBindEvent("OnPress", "btnSend")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSend_OnPressed(XUiController _sender, int _mouseButton)
@@ -156,7 +156,7 @@ public class XUiC_ReportPlayer : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x0600824F RID: 33359 RVA: 0x0031A4B8 File Offset: 0x003186B8
+	// Token: 0x060082A1 RID: 33441 RVA: 0x0031C1BC File Offset: 0x0031A3BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void reportSentMessageBox(bool _success)
 	{
@@ -164,7 +164,7 @@ public class XUiC_ReportPlayer : XUiController
 		XUiC_MessageBoxWindowGroup.ShowOk(this.xui, Localization.Get("xuiReportPlayerHeader", false, null), text, "", null, false, XUiC_ReportPlayer.OpenDialogsModal, false);
 	}
 
-	// Token: 0x06008250 RID: 33360 RVA: 0x0031A508 File Offset: 0x00318708
+	// Token: 0x060082A2 RID: 33442 RVA: 0x0031C20C File Offset: 0x0031A40C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -199,14 +199,14 @@ public class XUiC_ReportPlayer : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06008251 RID: 33361 RVA: 0x0031A628 File Offset: 0x00318828
+	// Token: 0x060082A3 RID: 33443 RVA: 0x0031C32C File Offset: 0x0031A52C
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.reportedPlayerData = null;
 	}
 
-	// Token: 0x06008252 RID: 33362 RVA: 0x0031A637 File Offset: 0x00318837
+	// Token: 0x060082A4 RID: 33444 RVA: 0x0031C33B File Offset: 0x0031A53B
 	[XuiBindEvent("OnInputErrorHandler", "txtMessage")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateErrorMessage(XUiController _sender, string _errorMessage)
@@ -214,7 +214,7 @@ public class XUiC_ReportPlayer : XUiController
 		this.InputErrorMessage = _errorMessage;
 	}
 
-	// Token: 0x06008253 RID: 33363 RVA: 0x0031A640 File Offset: 0x00318840
+	// Token: 0x060082A5 RID: 33445 RVA: 0x0031C344 File Offset: 0x0031A544
 	public static void Open(PlayerData _reportedPlayerData, EnumReportCategory _initialCategory = EnumReportCategory.None, string _initialText = "")
 	{
 		if (LocalPlayerUI.primaryUI.windowManager.IsWindowOpen(XUiC_ReportPlayer.id))
@@ -228,8 +228,8 @@ public class XUiC_ReportPlayer : XUiController
 		LocalPlayerUI.primaryUI.windowManager.Open(childByType.windowGroup, XUiC_ReportPlayer.OpenDialogsModal);
 	}
 
-	// Token: 0x17000F57 RID: 3927
-	// (get) Token: 0x06008254 RID: 33364 RVA: 0x002AAB45 File Offset: 0x002A8D45
+	// Token: 0x17000F62 RID: 3938
+	// (get) Token: 0x060082A6 RID: 33446 RVA: 0x002AC06D File Offset: 0x002AA26D
 	public static bool OpenDialogsModal
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -239,56 +239,56 @@ public class XUiC_ReportPlayer : XUiController
 		}
 	}
 
-	// Token: 0x04006099 RID: 24729
+	// Token: 0x040060D7 RID: 24791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string id;
 
-	// Token: 0x0400609A RID: 24730
+	// Token: 0x040060D8 RID: 24792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string initialText = "";
 
-	// Token: 0x0400609B RID: 24731
+	// Token: 0x040060D9 RID: 24793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumReportCategory initialCategory;
 
-	// Token: 0x0400609C RID: 24732
+	// Token: 0x040060DA RID: 24794
 	[XuiBindComponent("cbxCategory", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<IPlayerReporting.PlayerReportCategory> cbxCategory;
 
-	// Token: 0x0400609D RID: 24733
+	// Token: 0x040060DB RID: 24795
 	[XuiBindComponent("txtMessage", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtMessage;
 
-	// Token: 0x0400609E RID: 24734
+	// Token: 0x040060DC RID: 24796
 	[XuiBindComponent("btnKick", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnKickPlayer;
 
-	// Token: 0x0400609F RID: 24735
+	// Token: 0x040060DD RID: 24797
 	[XuiBindComponent("btnSend", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnSend;
 
-	// Token: 0x040060A0 RID: 24736
+	// Token: 0x040060DE RID: 24798
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x040060A1 RID: 24737
+	// Token: 0x040060DF RID: 24799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string reportedPlayerName;
 
-	// Token: 0x040060A2 RID: 24738
+	// Token: 0x040060E0 RID: 24800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int reportedEntityId;
 
-	// Token: 0x040060A3 RID: 24739
+	// Token: 0x040060E1 RID: 24801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string inputErrorMessage;
 
-	// Token: 0x040060A4 RID: 24740
+	// Token: 0x040060E2 RID: 24802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerData reportedPlayerData;
 }

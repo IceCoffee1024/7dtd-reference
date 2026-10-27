@@ -4,11 +4,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006FF RID: 1791
+// Token: 0x02000707 RID: 1799
 [Preserve]
 public class MinEventActionExplode : MinEventActionTargetedBase
 {
-	// Token: 0x060036FF RID: 14079 RVA: 0x00169CD4 File Offset: 0x00167ED4
+	// Token: 0x06003716 RID: 14102 RVA: 0x0016AC6C File Offset: 0x00168E6C
 	public override void Execute(MinEventParams _params)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -37,7 +37,7 @@ public class MinEventActionExplode : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003700 RID: 14080 RVA: 0x00169DD4 File Offset: 0x00167FD4
+	// Token: 0x06003717 RID: 14103 RVA: 0x0016AD6C File Offset: 0x00168F6C
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -106,31 +106,31 @@ public class MinEventActionExplode : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C23 RID: 11299
+	// Token: 0x04002C3F RID: 11327
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int blastPower = 75;
 
-	// Token: 0x04002C24 RID: 11300
+	// Token: 0x04002C40 RID: 11328
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int blockDamage = 1;
 
-	// Token: 0x04002C25 RID: 11301
+	// Token: 0x04002C41 RID: 11329
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int blockRadius = 4;
 
-	// Token: 0x04002C26 RID: 11302
+	// Token: 0x04002C42 RID: 11330
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int entityDamage = 5000;
 
-	// Token: 0x04002C27 RID: 11303
+	// Token: 0x04002C43 RID: 11331
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int entityRadius = 3;
 
-	// Token: 0x04002C28 RID: 11304
+	// Token: 0x04002C44 RID: 11332
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string blockTags = "";
 
-	// Token: 0x04002C29 RID: 11305
+	// Token: 0x04002C45 RID: 11333
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EnumDamageTypes damageType = EnumDamageTypes.Heat;
 }

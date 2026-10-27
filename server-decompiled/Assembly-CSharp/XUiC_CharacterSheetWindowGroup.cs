@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EF5 RID: 3829
+// Token: 0x02000F00 RID: 3840
 [Preserve]
 public class XUiC_CharacterSheetWindowGroup : XUiController
 {
-	// Token: 0x060077C1 RID: 30657 RVA: 0x002D486D File Offset: 0x002D2A6D
+	// Token: 0x060077E7 RID: 30695 RVA: 0x002D5DC5 File Offset: 0x002D3FC5
 	public override void Init()
 	{
 		base.Init();
 		this.buffList = base.GetChildByType<XUiC_ActiveBuffList>();
 	}
 
-	// Token: 0x060077C2 RID: 30658 RVA: 0x002D4884 File Offset: 0x002D2A84
+	// Token: 0x060077E8 RID: 30696 RVA: 0x002D5DDC File Offset: 0x002D3FDC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -32,7 +32,7 @@ public class XUiC_CharacterSheetWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060077C3 RID: 30659 RVA: 0x002D4908 File Offset: 0x002D2B08
+	// Token: 0x060077E9 RID: 30697 RVA: 0x002D5E60 File Offset: 0x002D4060
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -43,7 +43,7 @@ public class XUiC_CharacterSheetWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x040058C0 RID: 22720
+	// Token: 0x040058E5 RID: 22757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ActiveBuffList buffList;
 }

@@ -2,12 +2,12 @@
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x020002FE RID: 766
+// Token: 0x02000300 RID: 768
 [Preserve]
 public class DialogRequirementQuestTier : BaseDialogRequirement
 {
 	// Token: 0x1700026D RID: 621
-	// (get) Token: 0x060015B7 RID: 5559 RVA: 0x000470B6 File Offset: 0x000452B6
+	// (get) Token: 0x060015BB RID: 5563 RVA: 0x00047076 File Offset: 0x00045276
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -16,13 +16,13 @@ public class DialogRequirementQuestTier : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x060015B8 RID: 5560 RVA: 0x0003223F File Offset: 0x0003043F
+	// Token: 0x060015BC RID: 5564 RVA: 0x000321FF File Offset: 0x000303FF
 	public override string GetRequiredDescription(EntityPlayer player)
 	{
 		return "";
 	}
 
-	// Token: 0x060015B9 RID: 5561 RVA: 0x00081934 File Offset: 0x0007FB34
+	// Token: 0x060015BD RID: 5565 RVA: 0x00081B58 File Offset: 0x0007FD58
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		EntityTrader entityTrader = talkingTo as EntityTrader;

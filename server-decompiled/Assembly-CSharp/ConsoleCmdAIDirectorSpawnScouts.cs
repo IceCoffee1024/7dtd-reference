@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E6 RID: 486
+// Token: 0x020001E8 RID: 488
 [Preserve]
 public class ConsoleCmdAIDirectorSpawnScouts : ConsoleCmdAbstract
 {
-	// Token: 0x06000EE6 RID: 3814 RVA: 0x0006116A File Offset: 0x0005F36A
+	// Token: 0x06000EEA RID: 3818 RVA: 0x0006142E File Offset: 0x0005F62E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spawnscouts" };
 	}
 
-	// Token: 0x06000EE7 RID: 3815 RVA: 0x0006117C File Offset: 0x0005F37C
+	// Token: 0x06000EEB RID: 3819 RVA: 0x00061440 File Offset: 0x0005F640
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 1 && _params.Count != 3)
@@ -81,14 +81,14 @@ public class ConsoleCmdAIDirectorSpawnScouts : ConsoleCmdAbstract
 		GameManager.Instance.World.aiDirector.GetComponent<AIDirectorChunkEventComponent>().SpawnScouts(vector);
 	}
 
-	// Token: 0x06000EE8 RID: 3816 RVA: 0x00061400 File Offset: 0x0005F600
+	// Token: 0x06000EEC RID: 3820 RVA: 0x000616C4 File Offset: 0x0005F8C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Spawns zombie scouts";
 	}
 
-	// Token: 0x06000EE9 RID: 3817 RVA: 0x00061407 File Offset: 0x0005F607
+	// Token: 0x06000EED RID: 3821 RVA: 0x000616CB File Offset: 0x0005F8CB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{

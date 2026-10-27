@@ -8,10 +8,10 @@ using Pathfinding.Util;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D39 RID: 7481
+	// Token: 0x02001D6A RID: 7530
 	public class SanctionsCheck
 	{
-		// Token: 0x0600DDDE RID: 56798 RVA: 0x004F180E File Offset: 0x004EFA0E
+		// Token: 0x0600DEF2 RID: 57074 RVA: 0x004F53AE File Offset: 0x004F35AE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator WaitUntilSanctionsCheck(CoroutineCancellationToken _cancellationToken = null)
 		{
@@ -26,7 +26,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DDDF RID: 56799 RVA: 0x004F1824 File Offset: 0x004EFA24
+		// Token: 0x0600DEF3 RID: 57075 RVA: 0x004F53C4 File Offset: 0x004F35C4
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public IEnumerator CheckSanctionsEnumerator(SanctionsInterface _sanctionsInterface, ProductUserId _productUserId, [CanBeNull] ProductUserId _localUser, Action<SanctionsCheckResult> callback, CoroutineCancellationToken _cancellationToken = null)
 		{
@@ -64,7 +64,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DDE0 RID: 56800 RVA: 0x004F1858 File Offset: 0x004EFA58
+		// Token: 0x0600DEF4 RID: 57076 RVA: 0x004F53F8 File Offset: 0x004F35F8
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public void CheckSanctions(SanctionsInterface _sanctionsInterface, ProductUserId _productUserId, [CanBeNull] ProductUserId _localUser, Action<SanctionsCheckResult> callback)
 		{
@@ -91,7 +91,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DDE1 RID: 56801 RVA: 0x004F1918 File Offset: 0x004EFB18
+		// Token: 0x0600DEF5 RID: 57077 RVA: 0x004F54B8 File Offset: 0x004F36B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnSanctionsQueryResolveAndGatherSanctions(ref QueryActivePlayerSanctionsCallbackInfo data, Action<SanctionsCheckResult> callback)
 		{
@@ -184,19 +184,19 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0400A767 RID: 42855
+		// Token: 0x0400A850 RID: 43088
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ProductUserId productUserId;
 
-		// Token: 0x0400A768 RID: 42856
+		// Token: 0x0400A851 RID: 43089
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SanctionsInterface sanctionsInterface;
 
-		// Token: 0x0400A769 RID: 42857
+		// Token: 0x0400A852 RID: 43090
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool queryInProgress;
 
-		// Token: 0x0400A76A RID: 42858
+		// Token: 0x0400A853 RID: 43091
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<EOSSanction> CurrentCheckSanctions;
 	}

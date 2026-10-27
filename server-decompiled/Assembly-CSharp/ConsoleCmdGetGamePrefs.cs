@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200021C RID: 540
+// Token: 0x0200021E RID: 542
 [Preserve]
 public class ConsoleCmdGetGamePrefs : ConsoleCmdAbstract
 {
-	// Token: 0x0600104D RID: 4173 RVA: 0x000676DC File Offset: 0x000658DC
+	// Token: 0x06001051 RID: 4177 RVA: 0x000678AC File Offset: 0x00065AAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool prefAccessAllowed(EnumGamePrefs gp)
 	{
@@ -21,7 +21,7 @@ public class ConsoleCmdGetGamePrefs : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x0600104E RID: 4174 RVA: 0x00067717 File Offset: 0x00065917
+	// Token: 0x06001052 RID: 4178 RVA: 0x000678E7 File Offset: 0x00065AE7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -29,7 +29,7 @@ public class ConsoleCmdGetGamePrefs : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700017E RID: 382
-	// (get) Token: 0x0600104F RID: 4175 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001053 RID: 4179 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -39,7 +39,7 @@ public class ConsoleCmdGetGamePrefs : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700017F RID: 383
-	// (get) Token: 0x06001050 RID: 4176 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x06001054 RID: 4180 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -48,21 +48,21 @@ public class ConsoleCmdGetGamePrefs : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001051 RID: 4177 RVA: 0x0006772F File Offset: 0x0006592F
+	// Token: 0x06001055 RID: 4181 RVA: 0x000678FF File Offset: 0x00065AFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Gets game preferences";
 	}
 
-	// Token: 0x06001052 RID: 4178 RVA: 0x00067736 File Offset: 0x00065936
+	// Token: 0x06001056 RID: 4182 RVA: 0x00067906 File Offset: 0x00065B06
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Get all game preferences or only those matching a given substring";
 	}
 
-	// Token: 0x06001053 RID: 4179 RVA: 0x00067740 File Offset: 0x00065940
+	// Token: 0x06001057 RID: 4183 RVA: 0x00067910 File Offset: 0x00065B10
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		string text = null;
@@ -84,7 +84,7 @@ public class ConsoleCmdGetGamePrefs : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000CAE RID: 3246
+	// Token: 0x04000CAF RID: 3247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] forbiddenPrefs = new string[] { "telnet", "adminfilename", "controlpanel", "password", "historycache", "userdatafolder", "options", "token", "last" };
 }

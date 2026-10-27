@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020001D7 RID: 471
+// Token: 0x020001D9 RID: 473
 public interface IEntityUINotificationChanged
 {
-	// Token: 0x06000E85 RID: 3717
+	// Token: 0x06000E89 RID: 3721
 	void EntityUINotificationAdded(EntityUINotification _notification);
 
-	// Token: 0x06000E86 RID: 3718
+	// Token: 0x06000E8A RID: 3722
 	void EntityUINotificationRemoved(EntityUINotification _notification);
 }

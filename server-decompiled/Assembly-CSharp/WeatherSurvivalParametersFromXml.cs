@@ -3,10 +3,10 @@ using System.Globalization;
 using System.Reflection;
 using System.Xml.Linq;
 
-// Token: 0x02000D53 RID: 3411
+// Token: 0x02000D5E RID: 3422
 public class WeatherSurvivalParametersFromXml
 {
-	// Token: 0x0600674F RID: 26447 RVA: 0x00290E90 File Offset: 0x0028F090
+	// Token: 0x06006774 RID: 26484 RVA: 0x002923B8 File Offset: 0x002905B8
 	public static void Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

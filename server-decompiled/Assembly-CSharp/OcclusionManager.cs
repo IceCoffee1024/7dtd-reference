@@ -4,12 +4,12 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020008C0 RID: 2240
+// Token: 0x020008CA RID: 2250
 public class OcclusionManager : MonoBehaviour
 {
-	// Token: 0x170006E5 RID: 1765
-	// (get) Token: 0x06004054 RID: 16468 RVA: 0x00193D63 File Offset: 0x00191F63
-	// (set) Token: 0x06004055 RID: 16469 RVA: 0x00193D6B File Offset: 0x00191F6B
+	// Token: 0x170006EB RID: 1771
+	// (get) Token: 0x06004077 RID: 16503 RVA: 0x00194E0B File Offset: 0x0019300B
+	// (set) Token: 0x06004078 RID: 16504 RVA: 0x00194E13 File Offset: 0x00193013
 	public bool GPUCullingEnabled
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -25,19 +25,19 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004056 RID: 16470 RVA: 0x00193D8D File Offset: 0x00191F8D
+	// Token: 0x06004079 RID: 16505 RVA: 0x00194E35 File Offset: 0x00193035
 	public static void Load()
 	{
 		global::UnityEngine.Object.Instantiate<GameObject>(Resources.Load<GameObject>("Occlusion/Occlusion"));
 	}
 
-	// Token: 0x06004057 RID: 16471 RVA: 0x00193D9F File Offset: 0x00191F9F
+	// Token: 0x0600407A RID: 16506 RVA: 0x00194E47 File Offset: 0x00193047
 	public void EnableCulling(bool isCulling)
 	{
 		this.GPUCullingEnabled = isCulling;
 	}
 
-	// Token: 0x06004058 RID: 16472 RVA: 0x00193DA8 File Offset: 0x00191FA8
+	// Token: 0x0600407B RID: 16507 RVA: 0x00194E50 File Offset: 0x00193050
 	public void SetMultipleCameras(bool isMultiple)
 	{
 		if (!this.isEnabled)
@@ -51,7 +51,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004059 RID: 16473 RVA: 0x00193DC8 File Offset: 0x00191FC8
+	// Token: 0x0600407C RID: 16508 RVA: 0x00194E70 File Offset: 0x00193070
 	public void WorldChanging(bool isEditWorld)
 	{
 		this.isEnabled = GamePrefs.GetBool(EnumGamePrefs.OptionsGfxOcclusion);
@@ -108,7 +108,7 @@ public class OcclusionManager : MonoBehaviour
 		this.hugeErrorCount = 0;
 	}
 
-	// Token: 0x0600405A RID: 16474 RVA: 0x00193EF0 File Offset: 0x001920F0
+	// Token: 0x0600407D RID: 16509 RVA: 0x00194F98 File Offset: 0x00193198
 	public void AddChunkTransforms(Chunk chunk, List<Transform> transforms)
 	{
 		OcclusionManager.OccludeeZone occludeeZone = chunk.occludeeZone;
@@ -130,7 +130,7 @@ public class OcclusionManager : MonoBehaviour
 		this.UpdateZoneRegistration(occludeeZone);
 	}
 
-	// Token: 0x0600405B RID: 16475 RVA: 0x00193F5C File Offset: 0x0019215C
+	// Token: 0x0600407E RID: 16510 RVA: 0x00195004 File Offset: 0x00193204
 	public void RemoveChunkTransforms(Chunk chunk, List<Transform> transforms)
 	{
 		OcclusionManager.OccludeeZone occludeeZone = chunk.occludeeZone;
@@ -146,7 +146,7 @@ public class OcclusionManager : MonoBehaviour
 		this.UpdateZoneRegistration(occludeeZone);
 	}
 
-	// Token: 0x0600405C RID: 16476 RVA: 0x00193FA0 File Offset: 0x001921A0
+	// Token: 0x0600407F RID: 16511 RVA: 0x00195048 File Offset: 0x00193248
 	public void RemoveChunk(Chunk chunk)
 	{
 		OcclusionManager.OccludeeZone occludeeZone = chunk.occludeeZone;
@@ -158,7 +158,7 @@ public class OcclusionManager : MonoBehaviour
 		chunk.occludeeZone = null;
 	}
 
-	// Token: 0x0600405D RID: 16477 RVA: 0x00193FC8 File Offset: 0x001921C8
+	// Token: 0x06004080 RID: 16512 RVA: 0x00195070 File Offset: 0x00193270
 	public void RemoveFullZone(OcclusionManager.OccludeeZone zone)
 	{
 		for (int i = zone.layers.Length - 1; i >= 0; i--)
@@ -172,7 +172,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600405E RID: 16478 RVA: 0x00194014 File Offset: 0x00192214
+	// Token: 0x06004081 RID: 16513 RVA: 0x001950BC File Offset: 0x001932BC
 	public void AddDeco(DecoChunk chunk, List<Transform> addTs)
 	{
 		OcclusionManager.OccludeeZone occludeeZone = chunk.occludeeZone;
@@ -189,7 +189,7 @@ public class OcclusionManager : MonoBehaviour
 		occludeeZone.addTs.AddRange(addTs);
 	}
 
-	// Token: 0x0600405F RID: 16479 RVA: 0x0019406C File Offset: 0x0019226C
+	// Token: 0x06004082 RID: 16514 RVA: 0x00195114 File Offset: 0x00193314
 	public void RemoveDeco(DecoChunk chunk, Transform removeT)
 	{
 		OcclusionManager.OccludeeZone occludeeZone = chunk.occludeeZone;
@@ -206,7 +206,7 @@ public class OcclusionManager : MonoBehaviour
 		occludeeZone.removeTs.Add(removeT);
 	}
 
-	// Token: 0x06004060 RID: 16480 RVA: 0x001940C4 File Offset: 0x001922C4
+	// Token: 0x06004083 RID: 16515 RVA: 0x0019516C File Offset: 0x0019336C
 	public void RemoveDecoChunk(DecoChunk chunk)
 	{
 		OcclusionManager.OccludeeZone occludeeZone = chunk.occludeeZone;
@@ -218,7 +218,7 @@ public class OcclusionManager : MonoBehaviour
 		chunk.occludeeZone = null;
 	}
 
-	// Token: 0x06004061 RID: 16481 RVA: 0x001940EC File Offset: 0x001922EC
+	// Token: 0x06004084 RID: 16516 RVA: 0x00195194 File Offset: 0x00193394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateZones()
 	{
@@ -233,7 +233,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004062 RID: 16482 RVA: 0x00194140 File Offset: 0x00192340
+	// Token: 0x06004085 RID: 16517 RVA: 0x001951E8 File Offset: 0x001933E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateZonePending(OcclusionManager.OccludeeZone zone)
 	{
@@ -255,7 +255,7 @@ public class OcclusionManager : MonoBehaviour
 		this.UpdateZoneRegistration(zone);
 	}
 
-	// Token: 0x06004063 RID: 16483 RVA: 0x001941CC File Offset: 0x001923CC
+	// Token: 0x06004086 RID: 16518 RVA: 0x00195274 File Offset: 0x00193474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateZoneRegistration(OcclusionManager.OccludeeZone zone)
 	{
@@ -287,7 +287,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004064 RID: 16484 RVA: 0x001942CC File Offset: 0x001924CC
+	// Token: 0x06004087 RID: 16519 RVA: 0x00195374 File Offset: 0x00193574
 	public static void AddEntity(EntityAlive _ea, float extentsTotalMax = 32f)
 	{
 		OcclusionManager instance = OcclusionManager.Instance;
@@ -326,7 +326,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004065 RID: 16485 RVA: 0x001943D4 File Offset: 0x001925D4
+	// Token: 0x06004088 RID: 16520 RVA: 0x0019547C File Offset: 0x0019367C
 	public static void RemoveEntity(EntityAlive _ea)
 	{
 		OcclusionManager instance = OcclusionManager.Instance;
@@ -350,7 +350,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004066 RID: 16486 RVA: 0x0019443C File Offset: 0x0019263C
+	// Token: 0x06004089 RID: 16521 RVA: 0x001954E4 File Offset: 0x001936E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEntities()
 	{
@@ -365,7 +365,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004067 RID: 16487 RVA: 0x001944E8 File Offset: 0x001926E8
+	// Token: 0x0600408A RID: 16522 RVA: 0x00195590 File Offset: 0x00193790
 	public static void AddLight(LightLOD _light)
 	{
 		OcclusionManager instance = OcclusionManager.Instance;
@@ -388,7 +388,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004068 RID: 16488 RVA: 0x00194584 File Offset: 0x00192784
+	// Token: 0x0600408B RID: 16523 RVA: 0x0019562C File Offset: 0x0019382C
 	public static void RemoveLight(LightLOD _light)
 	{
 		OcclusionManager instance = OcclusionManager.Instance;
@@ -410,7 +410,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004069 RID: 16489 RVA: 0x00194600 File Offset: 0x00192800
+	// Token: 0x0600408C RID: 16524 RVA: 0x001956A8 File Offset: 0x001938A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLights()
 	{
@@ -431,7 +431,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600406A RID: 16490 RVA: 0x001946D8 File Offset: 0x001928D8
+	// Token: 0x0600408D RID: 16525 RVA: 0x00195780 File Offset: 0x00193980
 	public LinkedListNode<OcclusionManager.OcclusionEntry> RegisterOccludee(Renderer[] renderers, float extentsTotalMax = 32f)
 	{
 		if (!this.isEnabled)
@@ -470,7 +470,7 @@ public class OcclusionManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600406B RID: 16491 RVA: 0x001947CC File Offset: 0x001929CC
+	// Token: 0x0600408E RID: 16526 RVA: 0x00195874 File Offset: 0x00193A74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcArea(OcclusionManager.OcclusionEntry entry)
 	{
@@ -566,7 +566,7 @@ public class OcclusionManager : MonoBehaviour
 		entry.isAreaFound = true;
 	}
 
-	// Token: 0x0600406C RID: 16492 RVA: 0x00194AE0 File Offset: 0x00192CE0
+	// Token: 0x0600408F RID: 16527 RVA: 0x00195B88 File Offset: 0x00193D88
 	public void UnregisterOccludee(LinkedListNode<OcclusionManager.OcclusionEntry> node)
 	{
 		if (node != null)
@@ -596,7 +596,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600406D RID: 16493 RVA: 0x00194BC8 File Offset: 0x00192DC8
+	// Token: 0x06004090 RID: 16528 RVA: 0x00195C70 File Offset: 0x00193E70
 	public void OriginChanged(Vector3 offset)
 	{
 		for (LinkedListNode<OcclusionManager.OcclusionEntry> linkedListNode = this.usedEntries.First; linkedListNode != null; linkedListNode = linkedListNode.Next)
@@ -613,7 +613,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600406E RID: 16494 RVA: 0x00194CB4 File Offset: 0x00192EB4
+	// Token: 0x06004091 RID: 16529 RVA: 0x00195D5C File Offset: 0x00193F5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -673,7 +673,7 @@ public class OcclusionManager : MonoBehaviour
 		Log.Out("Occlusion: Awake");
 	}
 
-	// Token: 0x0600406F RID: 16495 RVA: 0x00194F05 File Offset: 0x00193105
+	// Token: 0x06004092 RID: 16530 RVA: 0x00195FAD File Offset: 0x001941AD
 	public void SetSourceDepthCamera(Camera _camera)
 	{
 		if (this.depthCopyCmdBuf != null)
@@ -687,7 +687,7 @@ public class OcclusionManager : MonoBehaviour
 		this.sourceDepthCamera = _camera;
 	}
 
-	// Token: 0x06004070 RID: 16496 RVA: 0x00194F45 File Offset: 0x00193145
+	// Token: 0x06004093 RID: 16531 RVA: 0x00195FED File Offset: 0x001941ED
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAllCullingTypes(bool _enabled)
 	{
@@ -701,14 +701,14 @@ public class OcclusionManager : MonoBehaviour
 		this.cullPrefabs = _enabled;
 	}
 
-	// Token: 0x06004071 RID: 16497 RVA: 0x00194F7F File Offset: 0x0019317F
+	// Token: 0x06004094 RID: 16532 RVA: 0x00196027 File Offset: 0x00194227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnResolutionChanged(int _width, int _height)
 	{
 		this.CreateDepthRT();
 	}
 
-	// Token: 0x06004072 RID: 16498 RVA: 0x00194F88 File Offset: 0x00193188
+	// Token: 0x06004095 RID: 16533 RVA: 0x00196030 File Offset: 0x00194230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateDepthRT()
 	{
@@ -724,7 +724,7 @@ public class OcclusionManager : MonoBehaviour
 		this.depthCamera.targetTexture = this.depthRT;
 	}
 
-	// Token: 0x06004073 RID: 16499 RVA: 0x0019500C File Offset: 0x0019320C
+	// Token: 0x06004096 RID: 16534 RVA: 0x001960B4 File Offset: 0x001942B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateVisibility(uint[] data)
 	{
@@ -793,7 +793,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004074 RID: 16500 RVA: 0x0019519D File Offset: 0x0019339D
+	// Token: 0x06004097 RID: 16535 RVA: 0x00196245 File Offset: 0x00194445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -803,7 +803,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004075 RID: 16501 RVA: 0x001951C8 File Offset: 0x001933C8
+	// Token: 0x06004098 RID: 16536 RVA: 0x00196270 File Offset: 0x00194470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -814,7 +814,7 @@ public class OcclusionManager : MonoBehaviour
 		this.SetRenderersEnabled(true);
 	}
 
-	// Token: 0x06004076 RID: 16502 RVA: 0x001951FC File Offset: 0x001933FC
+	// Token: 0x06004099 RID: 16537 RVA: 0x001962A4 File Offset: 0x001944A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -849,7 +849,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004077 RID: 16503 RVA: 0x001952CC File Offset: 0x001934CC
+	// Token: 0x0600409A RID: 16538 RVA: 0x00196374 File Offset: 0x00194574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderOccludees(Camera renderCamera, int layer)
 	{
@@ -878,7 +878,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004078 RID: 16504 RVA: 0x001953A8 File Offset: 0x001935A8
+	// Token: 0x0600409B RID: 16539 RVA: 0x00196450 File Offset: 0x00194650
 	public void LocalPlayerOnPreCull()
 	{
 		if (!this.GPUCullingEnabled)
@@ -907,7 +907,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004079 RID: 16505 RVA: 0x00195430 File Offset: 0x00193630
+	// Token: 0x0600409C RID: 16540 RVA: 0x001964D8 File Offset: 0x001946D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnRenderObject()
 	{
@@ -945,7 +945,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600407A RID: 16506 RVA: 0x00195556 File Offset: 0x00193756
+	// Token: 0x0600409D RID: 16541 RVA: 0x001965FE File Offset: 0x001947FE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreCull()
 	{
@@ -953,7 +953,7 @@ public class OcclusionManager : MonoBehaviour
 		this.RenderOccludees(this.depthCamera, 11);
 	}
 
-	// Token: 0x0600407B RID: 16507 RVA: 0x0019557E File Offset: 0x0019377E
+	// Token: 0x0600409E RID: 16542 RVA: 0x00196626 File Offset: 0x00194826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPostRender()
 	{
@@ -962,7 +962,7 @@ public class OcclusionManager : MonoBehaviour
 		this.counterBufferCurrentIndex = (this.counterBufferCurrentIndex + 1) % this.counterBuffer.Length;
 	}
 
-	// Token: 0x0600407C RID: 16508 RVA: 0x001955B8 File Offset: 0x001937B8
+	// Token: 0x0600409F RID: 16543 RVA: 0x00196660 File Offset: 0x00194860
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnRequest(AsyncGPUReadbackRequest req)
 	{
@@ -975,7 +975,7 @@ public class OcclusionManager : MonoBehaviour
 		this.hasVisibilityData = true;
 	}
 
-	// Token: 0x0600407D RID: 16509 RVA: 0x001955F4 File Offset: 0x001937F4
+	// Token: 0x060040A0 RID: 16544 RVA: 0x0019669C File Offset: 0x0019489C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRenderersEnabled(bool isEnabled)
 	{
@@ -1006,7 +1006,7 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600407E RID: 16510 RVA: 0x001956AC File Offset: 0x001938AC
+	// Token: 0x060040A1 RID: 16545 RVA: 0x00196754 File Offset: 0x00194954
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool WriteListToDisk(out List<string> fileList)
 	{
@@ -1096,7 +1096,7 @@ public class OcclusionManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600407F RID: 16511 RVA: 0x00195C80 File Offset: 0x00193E80
+	// Token: 0x060040A2 RID: 16546 RVA: 0x00196D28 File Offset: 0x00194F28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogOcclusion(string format, params object[] args)
 	{
@@ -1104,13 +1104,13 @@ public class OcclusionManager : MonoBehaviour
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x06004080 RID: 16512 RVA: 0x00195CA0 File Offset: 0x00193EA0
+	// Token: 0x060040A3 RID: 16547 RVA: 0x00196D48 File Offset: 0x00194F48
 	public void ToggleDebugView()
 	{
 		this.isDebugView = !this.isDebugView;
 	}
 
-	// Token: 0x06004081 RID: 16513 RVA: 0x00195CB4 File Offset: 0x00193EB4
+	// Token: 0x060040A4 RID: 16548 RVA: 0x00196D5C File Offset: 0x00194F5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{
@@ -1125,299 +1125,299 @@ public class OcclusionManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003461 RID: 13409
+	// Token: 0x04003481 RID: 13441
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cDepthRTWidth = 256;
 
-	// Token: 0x04003462 RID: 13410
+	// Token: 0x04003482 RID: 13442
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBoundsScale = 1f;
 
-	// Token: 0x04003463 RID: 13411
+	// Token: 0x04003483 RID: 13443
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCameraEnableAllAngleCos = 0.94f;
 
-	// Token: 0x04003464 RID: 13412
+	// Token: 0x04003484 RID: 13444
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool outOfEntriesErrorReported;
 
-	// Token: 0x04003465 RID: 13413
+	// Token: 0x04003485 RID: 13445
 	public static OcclusionManager Instance;
 
-	// Token: 0x04003466 RID: 13414
+	// Token: 0x04003486 RID: 13446
 	public bool isEnabled;
 
-	// Token: 0x04003467 RID: 13415
+	// Token: 0x04003487 RID: 13447
 	public Material depthTestMat;
 
-	// Token: 0x04003468 RID: 13416
+	// Token: 0x04003488 RID: 13448
 	public int visibleEntryCount;
 
-	// Token: 0x04003469 RID: 13417
+	// Token: 0x04003489 RID: 13449
 	public int totalEntryCount;
 
-	// Token: 0x0400346A RID: 13418
+	// Token: 0x0400348A RID: 13450
 	public int freeEntryCount;
 
-	// Token: 0x0400346B RID: 13419
+	// Token: 0x0400348B RID: 13451
 	public int usedEntryCount;
 
-	// Token: 0x0400346C RID: 13420
+	// Token: 0x0400348C RID: 13452
 	public bool forceAllVisible;
 
-	// Token: 0x0400346D RID: 13421
+	// Token: 0x0400348D RID: 13453
 	public bool forceAllHidden;
 
-	// Token: 0x0400346E RID: 13422
+	// Token: 0x0400348E RID: 13454
 	public bool cullChunkEntities;
 
-	// Token: 0x0400346F RID: 13423
+	// Token: 0x0400348F RID: 13455
 	public bool cullChunkLayers;
 
-	// Token: 0x04003470 RID: 13424
+	// Token: 0x04003490 RID: 13456
 	public bool cullDecorations;
 
-	// Token: 0x04003471 RID: 13425
+	// Token: 0x04003491 RID: 13457
 	public bool cullDistantChunks;
 
-	// Token: 0x04003472 RID: 13426
+	// Token: 0x04003492 RID: 13458
 	public bool cullDistantTerrain;
 
-	// Token: 0x04003473 RID: 13427
+	// Token: 0x04003493 RID: 13459
 	public bool cullEntities;
 
-	// Token: 0x04003474 RID: 13428
+	// Token: 0x04003494 RID: 13460
 	public bool cullLights;
 
-	// Token: 0x04003475 RID: 13429
-	public bool cullPrefabs;
-
-	// Token: 0x04003476 RID: 13430
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const int cMaxUnits = 511;
-
-	// Token: 0x04003477 RID: 13431
-	[PublicizedFrom(EAccessModifier.Internal)]
-	[NonSerialized]
-	public const int cMaxEntries = 4088;
-
-	// Token: 0x04003478 RID: 13432
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Matrix4x4 tinyMatrix;
-
-	// Token: 0x04003479 RID: 13433
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ComputeBuffer[] counterBuffer = new ComputeBuffer[3];
-
-	// Token: 0x0400347A RID: 13434
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int counterBufferCurrentIndex;
-
-	// Token: 0x0400347B RID: 13435
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public uint[] initialData;
-
-	// Token: 0x0400347C RID: 13436
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool hasVisibilityData;
-
-	// Token: 0x0400347D RID: 13437
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public uint[] visibleData;
-
-	// Token: 0x0400347E RID: 13438
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Camera sourceDepthCamera;
-
-	// Token: 0x0400347F RID: 13439
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public CommandBuffer depthCopyCmdBuf;
-
-	// Token: 0x04003480 RID: 13440
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public List<OcclusionManager.OcclusionEntry> entries = new List<OcclusionManager.OcclusionEntry>();
-
-	// Token: 0x04003481 RID: 13441
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public LinkedList<OcclusionManager.OcclusionEntry> freeEntries = new LinkedList<OcclusionManager.OcclusionEntry>();
-
-	// Token: 0x04003482 RID: 13442
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public LinkedList<OcclusionManager.OcclusionEntry> usedEntries = new LinkedList<OcclusionManager.OcclusionEntry>();
-
-	// Token: 0x04003483 RID: 13443
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public List<Matrix4x4[]> objectMatrixLists = new List<Matrix4x4[]>();
-
-	// Token: 0x04003484 RID: 13444
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public MaterialPropertyBlock[] materialBlocks;
-
-	// Token: 0x04003485 RID: 13445
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public GameObject cubeObj;
-
-	// Token: 0x04003486 RID: 13446
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Mesh cubeMesh;
-
-	// Token: 0x04003487 RID: 13447
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool gpuCullingEnabled;
-
-	// Token: 0x04003488 RID: 13448
-	public Camera depthCamera;
-
-	// Token: 0x04003489 RID: 13449
-	public Material depthCopyMat;
-
-	// Token: 0x0400348A RID: 13450
-	public RenderTexture depthRT;
-
-	// Token: 0x0400348B RID: 13451
-	public RenderTexture depthCopyRT;
-
-	// Token: 0x0400348C RID: 13452
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isOcclusionChecking;
-
-	// Token: 0x0400348D RID: 13453
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isCameraChanged;
-
-	// Token: 0x0400348E RID: 13454
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Matrix4x4 areaMatrix = Matrix4x4.identity;
-
-	// Token: 0x0400348F RID: 13455
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Action<AsyncGPUReadbackRequest> onRequestDelegate;
-
-	// Token: 0x04003490 RID: 13456
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int errorFrame;
-
-	// Token: 0x04003491 RID: 13457
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int hugeErrorCount;
-
-	// Token: 0x04003492 RID: 13458
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public readonly List<OcclusionManager.OccludeeZone> pendingZones = new List<OcclusionManager.OccludeeZone>();
-
-	// Token: 0x04003493 RID: 13459
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static readonly List<Renderer> tempRenderers = new List<Renderer>();
-
-	// Token: 0x04003494 RID: 13460
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Dictionary<int, OcclusionManager.OccludeeEntity> entities = new Dictionary<int, OcclusionManager.OccludeeEntity>();
-
 	// Token: 0x04003495 RID: 13461
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Dictionary<int, OcclusionManager.OccludeeLight> lights = new Dictionary<int, OcclusionManager.OccludeeLight>();
+	public bool cullPrefabs;
 
 	// Token: 0x04003496 RID: 13462
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 camDirVec;
+	public const int cMaxUnits = 511;
 
 	// Token: 0x04003497 RID: 13463
+	[PublicizedFrom(EAccessModifier.Internal)]
+	[NonSerialized]
+	public const int cMaxEntries = 4088;
+
+	// Token: 0x04003498 RID: 13464
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Matrix4x4 tinyMatrix;
+
+	// Token: 0x04003499 RID: 13465
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public ComputeBuffer[] counterBuffer = new ComputeBuffer[3];
+
+	// Token: 0x0400349A RID: 13466
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int counterBufferCurrentIndex;
+
+	// Token: 0x0400349B RID: 13467
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public uint[] initialData;
+
+	// Token: 0x0400349C RID: 13468
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool hasVisibilityData;
+
+	// Token: 0x0400349D RID: 13469
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public uint[] visibleData;
+
+	// Token: 0x0400349E RID: 13470
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Camera sourceDepthCamera;
+
+	// Token: 0x0400349F RID: 13471
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public CommandBuffer depthCopyCmdBuf;
+
+	// Token: 0x040034A0 RID: 13472
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<OcclusionManager.OcclusionEntry> entries = new List<OcclusionManager.OcclusionEntry>();
+
+	// Token: 0x040034A1 RID: 13473
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public LinkedList<OcclusionManager.OcclusionEntry> freeEntries = new LinkedList<OcclusionManager.OcclusionEntry>();
+
+	// Token: 0x040034A2 RID: 13474
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public LinkedList<OcclusionManager.OcclusionEntry> usedEntries = new LinkedList<OcclusionManager.OcclusionEntry>();
+
+	// Token: 0x040034A3 RID: 13475
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<Matrix4x4[]> objectMatrixLists = new List<Matrix4x4[]>();
+
+	// Token: 0x040034A4 RID: 13476
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public MaterialPropertyBlock[] materialBlocks;
+
+	// Token: 0x040034A5 RID: 13477
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public GameObject cubeObj;
+
+	// Token: 0x040034A6 RID: 13478
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Mesh cubeMesh;
+
+	// Token: 0x040034A7 RID: 13479
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool gpuCullingEnabled;
+
+	// Token: 0x040034A8 RID: 13480
+	public Camera depthCamera;
+
+	// Token: 0x040034A9 RID: 13481
+	public Material depthCopyMat;
+
+	// Token: 0x040034AA RID: 13482
+	public RenderTexture depthRT;
+
+	// Token: 0x040034AB RID: 13483
+	public RenderTexture depthCopyRT;
+
+	// Token: 0x040034AC RID: 13484
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isOcclusionChecking;
+
+	// Token: 0x040034AD RID: 13485
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isCameraChanged;
+
+	// Token: 0x040034AE RID: 13486
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Matrix4x4 areaMatrix = Matrix4x4.identity;
+
+	// Token: 0x040034AF RID: 13487
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Action<AsyncGPUReadbackRequest> onRequestDelegate;
+
+	// Token: 0x040034B0 RID: 13488
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int errorFrame;
+
+	// Token: 0x040034B1 RID: 13489
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int hugeErrorCount;
+
+	// Token: 0x040034B2 RID: 13490
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public readonly List<OcclusionManager.OccludeeZone> pendingZones = new List<OcclusionManager.OccludeeZone>();
+
+	// Token: 0x040034B3 RID: 13491
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static readonly List<Renderer> tempRenderers = new List<Renderer>();
+
+	// Token: 0x040034B4 RID: 13492
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<int, OcclusionManager.OccludeeEntity> entities = new Dictionary<int, OcclusionManager.OccludeeEntity>();
+
+	// Token: 0x040034B5 RID: 13493
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<int, OcclusionManager.OccludeeLight> lights = new Dictionary<int, OcclusionManager.OccludeeLight>();
+
+	// Token: 0x040034B6 RID: 13494
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 camDirVec;
+
+	// Token: 0x040034B7 RID: 13495
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isDebugView;
 
-	// Token: 0x020008C1 RID: 2241
+	// Token: 0x020008CB RID: 2251
 	public struct RenderItem
 	{
-		// Token: 0x04003498 RID: 13464
+		// Token: 0x040034B8 RID: 13496
 		public Renderer renderer;
 
-		// Token: 0x04003499 RID: 13465
+		// Token: 0x040034B9 RID: 13497
 		public ShadowCastingMode shadowMode;
 	}
 
-	// Token: 0x020008C2 RID: 2242
+	// Token: 0x020008CC RID: 2252
 	public class OcclusionEntry
 	{
-		// Token: 0x0400349A RID: 13466
+		// Token: 0x040034BA RID: 13498
 		public Renderer[] allRenderers;
 
-		// Token: 0x0400349B RID: 13467
+		// Token: 0x040034BB RID: 13499
 		public OcclusionManager.RenderItem[] renderItems;
 
-		// Token: 0x0400349C RID: 13468
+		// Token: 0x040034BC RID: 13500
 		public int renderItemsUsed;
 
-		// Token: 0x0400349D RID: 13469
+		// Token: 0x040034BD RID: 13501
 		public OcclusionManager.OccludeeLight light;
 
-		// Token: 0x0400349E RID: 13470
+		// Token: 0x040034BE RID: 13502
 		public float cullStartDistSq;
 
-		// Token: 0x0400349F RID: 13471
+		// Token: 0x040034BF RID: 13503
 		public float extentsTotalMax;
 
-		// Token: 0x040034A0 RID: 13472
+		// Token: 0x040034C0 RID: 13504
 		public int index;
 
-		// Token: 0x040034A1 RID: 13473
+		// Token: 0x040034C1 RID: 13505
 		public int matrixUnitIndex;
 
-		// Token: 0x040034A2 RID: 13474
+		// Token: 0x040034C2 RID: 13506
 		public int matrixSubIndex;
 
-		// Token: 0x040034A3 RID: 13475
+		// Token: 0x040034C3 RID: 13507
 		public bool isAreaFound;
 
-		// Token: 0x040034A4 RID: 13476
+		// Token: 0x040034C4 RID: 13508
 		public Vector3 centerPos;
 
-		// Token: 0x040034A5 RID: 13477
+		// Token: 0x040034C5 RID: 13509
 		public Vector3 size;
 
-		// Token: 0x040034A6 RID: 13478
+		// Token: 0x040034C6 RID: 13510
 		public bool isForceOn;
 
-		// Token: 0x040034A7 RID: 13479
+		// Token: 0x040034C7 RID: 13511
 		public bool isVisible;
 	}
 
-	// Token: 0x020008C3 RID: 2243
+	// Token: 0x020008CD RID: 2253
 	public class OccludeeZone
 	{
-		// Token: 0x06004085 RID: 16517 RVA: 0x00195E20 File Offset: 0x00194020
+		// Token: 0x060040A8 RID: 16552 RVA: 0x00196EC8 File Offset: 0x001950C8
 		public int GetIndex(float y)
 		{
 			int num = (int)y >> 3;
@@ -1432,7 +1432,7 @@ public class OcclusionManager : MonoBehaviour
 			return 31;
 		}
 
-		// Token: 0x06004086 RID: 16518 RVA: 0x00195E44 File Offset: 0x00194044
+		// Token: 0x060040A9 RID: 16553 RVA: 0x00196EEC File Offset: 0x001950EC
 		public void AddTransform(Transform t)
 		{
 			int index = this.GetIndex(t.position.y + Origin.position.y);
@@ -1459,7 +1459,7 @@ public class OcclusionManager : MonoBehaviour
 			OcclusionManager.tempRenderers.Clear();
 		}
 
-		// Token: 0x06004087 RID: 16519 RVA: 0x00195F40 File Offset: 0x00194140
+		// Token: 0x060040AA RID: 16554 RVA: 0x00196FE8 File Offset: 0x001951E8
 		public void RemoveTransform(Transform t)
 		{
 			int hashCode = t.GetHashCode();
@@ -1484,35 +1484,35 @@ public class OcclusionManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x040034A8 RID: 13480
+		// Token: 0x040034C8 RID: 13512
 		public float extentsTotalMax;
 
-		// Token: 0x040034A9 RID: 13481
+		// Token: 0x040034C9 RID: 13513
 		public OcclusionManager.OccludeeLayer[] layers = new OcclusionManager.OccludeeLayer[32];
 
-		// Token: 0x040034AA RID: 13482
+		// Token: 0x040034CA RID: 13514
 		public List<Transform> addTs = new List<Transform>();
 
-		// Token: 0x040034AB RID: 13483
+		// Token: 0x040034CB RID: 13515
 		public List<Transform> removeTs = new List<Transform>();
 
-		// Token: 0x040034AC RID: 13484
+		// Token: 0x040034CC RID: 13516
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cLayerShift = 3;
 
-		// Token: 0x040034AD RID: 13485
+		// Token: 0x040034CD RID: 13517
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cLayerH = 8;
 
-		// Token: 0x040034AE RID: 13486
+		// Token: 0x040034CE RID: 13518
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cLayerCount = 32;
 	}
 
-	// Token: 0x020008C4 RID: 2244
+	// Token: 0x020008CE RID: 2254
 	public class OccludeeLayer
 	{
-		// Token: 0x06004089 RID: 16521 RVA: 0x00196000 File Offset: 0x00194200
+		// Token: 0x060040AC RID: 16556 RVA: 0x001970A8 File Offset: 0x001952A8
 		public OcclusionManager.OccludeeRenderers AddTransform(Transform t)
 		{
 			int hashCode = t.GetHashCode();
@@ -1531,46 +1531,46 @@ public class OcclusionManager : MonoBehaviour
 			return occludeeRenderers;
 		}
 
-		// Token: 0x040034AF RID: 13487
+		// Token: 0x040034CF RID: 13519
 		public Dictionary<int, OcclusionManager.OccludeeRenderers> renderers = new Dictionary<int, OcclusionManager.OccludeeRenderers>();
 
-		// Token: 0x040034B0 RID: 13488
+		// Token: 0x040034D0 RID: 13520
 		public LinkedListNode<OcclusionManager.OcclusionEntry> node;
 
-		// Token: 0x040034B1 RID: 13489
+		// Token: 0x040034D1 RID: 13521
 		public bool isOld;
 	}
 
-	// Token: 0x020008C5 RID: 2245
+	// Token: 0x020008CF RID: 2255
 	public class OccludeeRenderers
 	{
-		// Token: 0x040034B2 RID: 13490
+		// Token: 0x040034D2 RID: 13522
 		public List<Renderer> renderers = new List<Renderer>();
 	}
 
-	// Token: 0x020008C6 RID: 2246
+	// Token: 0x020008D0 RID: 2256
 	public class OccludeeEntity
 	{
-		// Token: 0x040034B3 RID: 13491
+		// Token: 0x040034D3 RID: 13523
 		public Entity entity;
 
-		// Token: 0x040034B4 RID: 13492
+		// Token: 0x040034D4 RID: 13524
 		public Vector3 pos;
 
-		// Token: 0x040034B5 RID: 13493
+		// Token: 0x040034D5 RID: 13525
 		public LinkedListNode<OcclusionManager.OcclusionEntry> entry;
 	}
 
-	// Token: 0x020008C7 RID: 2247
+	// Token: 0x020008D1 RID: 2257
 	public class OccludeeLight
 	{
-		// Token: 0x040034B6 RID: 13494
+		// Token: 0x040034D6 RID: 13526
 		public LightLOD lightLOD;
 
-		// Token: 0x040034B7 RID: 13495
+		// Token: 0x040034D7 RID: 13527
 		public Vector3 pos;
 
-		// Token: 0x040034B8 RID: 13496
+		// Token: 0x040034D8 RID: 13528
 		public LinkedListNode<OcclusionManager.OcclusionEntry> entry;
 	}
 }

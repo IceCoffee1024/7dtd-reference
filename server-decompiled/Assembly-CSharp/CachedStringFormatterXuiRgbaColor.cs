@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013D9 RID: 5081
+// Token: 0x020013EB RID: 5099
 public class CachedStringFormatterXuiRgbaColor : CachedStringFormatter<Color32>
 {
-	// Token: 0x06009F99 RID: 40857 RVA: 0x003C3924 File Offset: 0x003C1B24
+	// Token: 0x06009FF1 RID: 40945 RVA: 0x003C5D28 File Offset: 0x003C3F28
 	public CachedStringFormatterXuiRgbaColor()
 		: base(new Func<Color32, string>(CachedStringFormatterXuiRgbaColor.formatterFunc))
 	{
 		this.comparer1 = Color32EqualityComparer.Instance;
 	}
 
-	// Token: 0x06009F9A RID: 40858 RVA: 0x003C3943 File Offset: 0x003C1B43
+	// Token: 0x06009FF2 RID: 40946 RVA: 0x003C5D47 File Offset: 0x003C3F47
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string formatterFunc(Color32 _color)
 	{

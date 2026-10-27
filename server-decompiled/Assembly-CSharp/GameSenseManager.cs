@@ -6,19 +6,19 @@ using SteelSeries.GameSense;
 using SteelSeries.GameSense.DeviceZone;
 using UnityEngine;
 
-// Token: 0x02001208 RID: 4616
+// Token: 0x02001218 RID: 4632
 public class GameSenseManager : IEntityBuffsChanged
 {
-	// Token: 0x170011C1 RID: 4545
-	// (get) Token: 0x06009338 RID: 37688 RVA: 0x0037AB4F File Offset: 0x00378D4F
-	// (set) Token: 0x06009337 RID: 37687 RVA: 0x0037AB47 File Offset: 0x00378D47
+	// Token: 0x170011CC RID: 4556
+	// (get) Token: 0x0600938E RID: 37774 RVA: 0x0037CCC3 File Offset: 0x0037AEC3
+	// (set) Token: 0x0600938D RID: 37773 RVA: 0x0037CCBB File Offset: 0x0037AEBB
 	public static GameSenseManager Instance
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06009339 RID: 37689 RVA: 0x0037AB56 File Offset: 0x00378D56
+	// Token: 0x0600938F RID: 37775 RVA: 0x0037CCCA File Offset: 0x0037AECA
 	[PublicizedFrom(EAccessModifier.Private)]
 	static GameSenseManager()
 	{
@@ -33,8 +33,8 @@ public class GameSenseManager : IEntityBuffsChanged
 		GameSenseManager.Instance = new GameSenseManager();
 	}
 
-	// Token: 0x170011C2 RID: 4546
-	// (get) Token: 0x0600933A RID: 37690 RVA: 0x0037AB7E File Offset: 0x00378D7E
+	// Token: 0x170011CD RID: 4557
+	// (get) Token: 0x06009390 RID: 37776 RVA: 0x0037CCF2 File Offset: 0x0037AEF2
 	public static bool GameSenseInstalled
 	{
 		get
@@ -43,7 +43,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x0600933B RID: 37691 RVA: 0x0037AB8C File Offset: 0x00378D8C
+	// Token: 0x06009391 RID: 37777 RVA: 0x0037CD00 File Offset: 0x0037AF00
 	public void Init()
 	{
 		if (!GameSenseManager.GameSenseInstalled)
@@ -61,7 +61,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		ThreadManager.StartCoroutine(this.BindEventsCo());
 	}
 
-	// Token: 0x0600933C RID: 37692 RVA: 0x0037ABFF File Offset: 0x00378DFF
+	// Token: 0x06009392 RID: 37778 RVA: 0x0037CD73 File Offset: 0x0037AF73
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator BindEventsCo()
 	{
@@ -79,7 +79,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		yield break;
 	}
 
-	// Token: 0x0600933D RID: 37693 RVA: 0x0037AC10 File Offset: 0x00378E10
+	// Token: 0x06009393 RID: 37779 RVA: 0x0037CD84 File Offset: 0x0037AF84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventTime()
 	{
@@ -98,7 +98,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("TIME", 0, 100, EventIconId.Clock, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x0600933E RID: 37694 RVA: 0x0037AD24 File Offset: 0x00378F24
+	// Token: 0x06009394 RID: 37780 RVA: 0x0037CE98 File Offset: 0x0037B098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventAmmo()
 	{
@@ -106,7 +106,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("AMMO", 0, 100, EventIconId.Ammo, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x0600933F RID: 37695 RVA: 0x0037AD78 File Offset: 0x00378F78
+	// Token: 0x06009395 RID: 37781 RVA: 0x0037CEEC File Offset: 0x0037B0EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventHealth()
 	{
@@ -118,7 +118,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("HEALTH", 0, 100, EventIconId.Health, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x06009340 RID: 37696 RVA: 0x0037ADF8 File Offset: 0x00378FF8
+	// Token: 0x06009396 RID: 37782 RVA: 0x0037CF6C File Offset: 0x0037B16C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventDurability()
 	{
@@ -128,7 +128,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("DURABILITY", 0, 100, EventIconId.Item, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x06009341 RID: 37697 RVA: 0x0037AE6C File Offset: 0x0037906C
+	// Token: 0x06009397 RID: 37783 RVA: 0x0037CFE0 File Offset: 0x0037B1E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventStealth()
 	{
@@ -138,7 +138,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("STEALTH", 0, 100, EventIconId.Default, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x06009342 RID: 37698 RVA: 0x0037AED8 File Offset: 0x003790D8
+	// Token: 0x06009398 RID: 37784 RVA: 0x0037D04C File Offset: 0x0037B24C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventBleeding()
 	{
@@ -146,7 +146,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("BLEEDING", 0, 1, EventIconId.Default, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x06009343 RID: 37699 RVA: 0x0037AF20 File Offset: 0x00379120
+	// Token: 0x06009399 RID: 37785 RVA: 0x0037D094 File Offset: 0x0037B294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventBloodmoon()
 	{
@@ -171,7 +171,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("BLOODMOON", 0, 100, EventIconId.Default, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x06009344 RID: 37700 RVA: 0x0037B070 File Offset: 0x00379270
+	// Token: 0x0600939A RID: 37786 RVA: 0x0037D1E4 File Offset: 0x0037B3E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventCompass()
 	{
@@ -194,7 +194,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x06009345 RID: 37701 RVA: 0x0037B15C File Offset: 0x0037935C
+	// Token: 0x0600939B RID: 37787 RVA: 0x0037D2D0 File Offset: 0x0037B4D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventHit()
 	{
@@ -202,7 +202,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("HIT", 0, 1, EventIconId.Headshot, false, new AbstractHandler[] { abstractHandler });
 	}
 
-	// Token: 0x06009346 RID: 37702 RVA: 0x0037B1A4 File Offset: 0x003793A4
+	// Token: 0x0600939C RID: 37788 RVA: 0x0037D318 File Offset: 0x0037B518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventDukes()
 	{
@@ -215,13 +215,13 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.BindEventWrapper("DUKES", 0, 1, EventIconId.Money, true, new AbstractHandler[] { screenHandler });
 	}
 
-	// Token: 0x06009347 RID: 37703 RVA: 0x0037B21F File Offset: 0x0037941F
+	// Token: 0x0600939D RID: 37789 RVA: 0x0037D393 File Offset: 0x0037B593
 	public void Cleanup()
 	{
 		GameStats.OnChangedDelegates -= this.GameStats_OnChanged;
 	}
 
-	// Token: 0x06009348 RID: 37704 RVA: 0x0037B232 File Offset: 0x00379432
+	// Token: 0x0600939E RID: 37790 RVA: 0x0037D3A6 File Offset: 0x0037B5A6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BindEventWrapper(string _eventName, int _minValue, int _maxValue, EventIconId _icon, bool _optionalValue, params AbstractHandler[] _handlers)
 	{
@@ -229,7 +229,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.registeredEvents.Add(_eventName);
 	}
 
-	// Token: 0x06009349 RID: 37705 RVA: 0x0037B254 File Offset: 0x00379454
+	// Token: 0x0600939F RID: 37791 RVA: 0x0037D3C8 File Offset: 0x0037B5C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetEventValues()
 	{
@@ -239,7 +239,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x0600934A RID: 37706 RVA: 0x0037B2B0 File Offset: 0x003794B0
+	// Token: 0x060093A0 RID: 37792 RVA: 0x0037D424 File Offset: 0x0037B624
 	public void SessionStarted(EntityPlayerLocal _playerEntity)
 	{
 		this.ResetEventValues();
@@ -257,7 +257,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.dukesItem = ItemClass.GetItem(TraderInfo.CurrencyItem, false);
 	}
 
-	// Token: 0x0600934B RID: 37707 RVA: 0x0037B33C File Offset: 0x0037953C
+	// Token: 0x060093A1 RID: 37793 RVA: 0x0037D4B0 File Offset: 0x0037B6B0
 	public void SessionEnded()
 	{
 		this.ResetEventValues();
@@ -270,7 +270,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.dukesItem = null;
 	}
 
-	// Token: 0x0600934C RID: 37708 RVA: 0x0037B378 File Offset: 0x00379578
+	// Token: 0x060093A2 RID: 37794 RVA: 0x0037D4EC File Offset: 0x0037B6EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GameStats_OnChanged(EnumGameStats _gameStat, object _newValue)
 	{
@@ -280,7 +280,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x0600934D RID: 37709 RVA: 0x0037B38C File Offset: 0x0037958C
+	// Token: 0x060093A3 RID: 37795 RVA: 0x0037D500 File Offset: 0x0037B700
 	public void Update()
 	{
 		if (!GSClient.Instance.isClientActive())
@@ -293,7 +293,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		this.UpdateEventDukes();
 	}
 
-	// Token: 0x0600934E RID: 37710 RVA: 0x0037B3B4 File Offset: 0x003795B4
+	// Token: 0x060093A4 RID: 37796 RVA: 0x0037D528 File Offset: 0x0037B728
 	public void UpdateEventTime(ulong _worldTime)
 	{
 		if (!GSClient.Instance.isClientActive())
@@ -310,7 +310,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("TIME", num, null);
 	}
 
-	// Token: 0x0600934F RID: 37711 RVA: 0x0037B408 File Offset: 0x00379608
+	// Token: 0x060093A5 RID: 37797 RVA: 0x0037D57C File Offset: 0x0037B77C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEventAmmo()
 	{
@@ -346,7 +346,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("AMMO", num2, null);
 	}
 
-	// Token: 0x06009350 RID: 37712 RVA: 0x0037B516 File Offset: 0x00379716
+	// Token: 0x060093A6 RID: 37798 RVA: 0x0037D68A File Offset: 0x0037B88A
 	public void UpdateEventHealth(int _value)
 	{
 		if (!GSClient.Instance.isClientActive())
@@ -356,7 +356,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("HEALTH", _value, null);
 	}
 
-	// Token: 0x06009351 RID: 37713 RVA: 0x0037B538 File Offset: 0x00379738
+	// Token: 0x060093A7 RID: 37799 RVA: 0x0037D6AC File Offset: 0x0037B8AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEventDurability()
 	{
@@ -383,7 +383,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("DURABILITY", num, null);
 	}
 
-	// Token: 0x06009352 RID: 37714 RVA: 0x0037B5F0 File Offset: 0x003797F0
+	// Token: 0x060093A8 RID: 37800 RVA: 0x0037D764 File Offset: 0x0037B964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEventStealth()
 	{
@@ -401,14 +401,14 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("STEALTH", num, null);
 	}
 
-	// Token: 0x06009353 RID: 37715 RVA: 0x0037B653 File Offset: 0x00379853
+	// Token: 0x060093A9 RID: 37801 RVA: 0x0037D7C7 File Offset: 0x0037B9C7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEventBleeding(bool _isBleeding)
 	{
 		GSClient.Instance.SendEvent("BLEEDING", _isBleeding ? 1 : 0, null);
 	}
 
-	// Token: 0x06009354 RID: 37716 RVA: 0x0037B66C File Offset: 0x0037986C
+	// Token: 0x060093AA RID: 37802 RVA: 0x0037D7E0 File Offset: 0x0037B9E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEventBloodmoon(ulong _worldTime)
 	{
@@ -443,7 +443,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("BLOODMOON", num, null);
 	}
 
-	// Token: 0x06009355 RID: 37717 RVA: 0x0037B734 File Offset: 0x00379934
+	// Token: 0x060093AB RID: 37803 RVA: 0x0037D8A8 File Offset: 0x0037BAA8
 	public void UpdateEventCompass(float _rotation)
 	{
 		if (!GSClient.Instance.isClientActive())
@@ -498,7 +498,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("NORTHWEST", (edirection == GameSenseManager.EDirection45.NW) ? 1 : 0, null);
 	}
 
-	// Token: 0x06009356 RID: 37718 RVA: 0x0037B8A4 File Offset: 0x00379AA4
+	// Token: 0x060093AC RID: 37804 RVA: 0x0037DA18 File Offset: 0x0037BC18
 	public void UpdateEventHit()
 	{
 		if (!GSClient.Instance.isClientActive())
@@ -513,7 +513,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x06009357 RID: 37719 RVA: 0x0037B8F9 File Offset: 0x00379AF9
+	// Token: 0x060093AD RID: 37805 RVA: 0x0037DA6D File Offset: 0x0037BC6D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator StopHitCo()
 	{
@@ -526,7 +526,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		yield break;
 	}
 
-	// Token: 0x06009358 RID: 37720 RVA: 0x0037B908 File Offset: 0x00379B08
+	// Token: 0x060093AE RID: 37806 RVA: 0x0037DA7C File Offset: 0x0037BC7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEventDukes()
 	{
@@ -549,7 +549,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		GSClient.Instance.SendEvent("DUKES", num, contextFrameObject2);
 	}
 
-	// Token: 0x06009359 RID: 37721 RVA: 0x0037B9B0 File Offset: 0x00379BB0
+	// Token: 0x060093AF RID: 37807 RVA: 0x0037DB24 File Offset: 0x0037BD24
 	public void EntityBuffAdded(BuffValue _buff)
 	{
 		if (_buff.BuffClass.Name.EqualsCaseInsensitive("buffInjuryBleeding"))
@@ -558,7 +558,7 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x0600935A RID: 37722 RVA: 0x0037B9D0 File Offset: 0x00379BD0
+	// Token: 0x060093B0 RID: 37808 RVA: 0x0037DB44 File Offset: 0x0037BD44
 	public void EntityBuffRemoved(BuffValue _buff)
 	{
 		if (_buff.BuffClass.Name.EqualsCaseInsensitive("buffInjuryBleeding"))
@@ -567,160 +567,160 @@ public class GameSenseManager : IEntityBuffsChanged
 		}
 	}
 
-	// Token: 0x04006E02 RID: 28162
+	// Token: 0x04006E1A RID: 28186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<string> registeredEvents = new HashSet<string>();
 
-	// Token: 0x04006E03 RID: 28163
+	// Token: 0x04006E1B RID: 28187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string GameSenseGameName = "7dtd";
 
-	// Token: 0x04006E04 RID: 28164
+	// Token: 0x04006E1C RID: 28188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string GameSenseGameNameFull = "7 Days to Die";
 
-	// Token: 0x04006E05 RID: 28165
+	// Token: 0x04006E1D RID: 28189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string GameSenseGameDeveloper = "The Fun Pimps";
 
-	// Token: 0x04006E06 RID: 28166
+	// Token: 0x04006E1E RID: 28190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventHealth = "HEALTH";
 
-	// Token: 0x04006E07 RID: 28167
+	// Token: 0x04006E1F RID: 28191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventAmmo = "AMMO";
 
-	// Token: 0x04006E08 RID: 28168
+	// Token: 0x04006E20 RID: 28192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventTime = "TIME";
 
-	// Token: 0x04006E09 RID: 28169
+	// Token: 0x04006E21 RID: 28193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventDurability = "DURABILITY";
 
-	// Token: 0x04006E0A RID: 28170
+	// Token: 0x04006E22 RID: 28194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventStealth = "STEALTH";
 
-	// Token: 0x04006E0B RID: 28171
+	// Token: 0x04006E23 RID: 28195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventBleeding = "BLEEDING";
 
-	// Token: 0x04006E0C RID: 28172
+	// Token: 0x04006E24 RID: 28196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string BleedingBuffName = "buffInjuryBleeding";
 
-	// Token: 0x04006E0D RID: 28173
+	// Token: 0x04006E25 RID: 28197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventBloodmoon = "BLOODMOON";
 
-	// Token: 0x04006E0E RID: 28174
+	// Token: 0x04006E26 RID: 28198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BloodmoonBlinkWarningHours = 2;
 
-	// Token: 0x04006E0F RID: 28175
+	// Token: 0x04006E27 RID: 28199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventHit = "HIT";
 
-	// Token: 0x04006E10 RID: 28176
+	// Token: 0x04006E28 RID: 28200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float HitEventDuration = 0.5f;
 
-	// Token: 0x04006E11 RID: 28177
+	// Token: 0x04006E29 RID: 28201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EventDukes = "DUKES";
 
-	// Token: 0x04006E12 RID: 28178
+	// Token: 0x04006E2A RID: 28202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DukesStringValueKey = "dukesstring";
 
-	// Token: 0x04006E13 RID: 28179
+	// Token: 0x04006E2B RID: 28203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DukesLabelLocKey = "gamesenseDukesLabel";
 
-	// Token: 0x04006E14 RID: 28180
+	// Token: 0x04006E2C RID: 28204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WeakReference<EntityPlayerLocal> entityPlayer;
 
-	// Token: 0x04006E15 RID: 28181
+	// Token: 0x04006E2D RID: 28205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastTimePercent = -1;
 
-	// Token: 0x04006E16 RID: 28182
+	// Token: 0x04006E2E RID: 28206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousSlotIndex = -1;
 
-	// Token: 0x04006E17 RID: 28183
+	// Token: 0x04006E2F RID: 28207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousAmmoPercentage = -1;
 
-	// Token: 0x04006E18 RID: 28184
+	// Token: 0x04006E30 RID: 28208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousDurability = -1;
 
-	// Token: 0x04006E19 RID: 28185
+	// Token: 0x04006E31 RID: 28209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousStealth = -1;
 
-	// Token: 0x04006E1A RID: 28186
+	// Token: 0x04006E32 RID: 28210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bloodMoonDay;
 
-	// Token: 0x04006E1B RID: 28187
+	// Token: 0x04006E33 RID: 28211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bloodMoonWarning;
 
-	// Token: 0x04006E1C RID: 28188
+	// Token: 0x04006E34 RID: 28212
 	[TupleElementNames(new string[] { "duskHour", "dawnHour" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ValueTuple<int, int> duskDawnTime;
 
-	// Token: 0x04006E1D RID: 28189
+	// Token: 0x04006E35 RID: 28213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastBloodMoonValue = -1;
 
-	// Token: 0x04006E1E RID: 28190
+	// Token: 0x04006E36 RID: 28214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameSenseManager.EDirection45 lastDirection = GameSenseManager.EDirection45.None;
 
-	// Token: 0x04006E1F RID: 28191
+	// Token: 0x04006E37 RID: 28215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float stopHitEventTime = -1f;
 
-	// Token: 0x04006E20 RID: 28192
+	// Token: 0x04006E38 RID: 28216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine stopHitEventCoroutine;
 
-	// Token: 0x04006E21 RID: 28193
+	// Token: 0x04006E39 RID: 28217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dukesNextTime;
 
-	// Token: 0x04006E22 RID: 28194
+	// Token: 0x04006E3A RID: 28218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue dukesItem;
 
-	// Token: 0x02001209 RID: 4617
+	// Token: 0x02001219 RID: 4633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EDirection45
 	{
-		// Token: 0x04006E24 RID: 28196
+		// Token: 0x04006E3C RID: 28220
 		N,
-		// Token: 0x04006E25 RID: 28197
+		// Token: 0x04006E3D RID: 28221
 		NE,
-		// Token: 0x04006E26 RID: 28198
+		// Token: 0x04006E3E RID: 28222
 		E,
-		// Token: 0x04006E27 RID: 28199
+		// Token: 0x04006E3F RID: 28223
 		SE,
-		// Token: 0x04006E28 RID: 28200
+		// Token: 0x04006E40 RID: 28224
 		S,
-		// Token: 0x04006E29 RID: 28201
+		// Token: 0x04006E41 RID: 28225
 		SW,
-		// Token: 0x04006E2A RID: 28202
+		// Token: 0x04006E42 RID: 28226
 		W,
-		// Token: 0x04006E2B RID: 28203
+		// Token: 0x04006E43 RID: 28227
 		NW,
-		// Token: 0x04006E2C RID: 28204
+		// Token: 0x04006E44 RID: 28228
 		None
 	}
 }

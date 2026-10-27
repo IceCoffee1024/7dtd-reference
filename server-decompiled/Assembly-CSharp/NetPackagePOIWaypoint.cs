@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000836 RID: 2102
+// Token: 0x02000840 RID: 2112
 [Preserve]
 public class NetPackagePOIWaypoint : NetPackage
 {
-	// Token: 0x06003D68 RID: 15720 RVA: 0x00186798 File Offset: 0x00184998
+	// Token: 0x06003D8B RID: 15755 RVA: 0x0018789C File Offset: 0x00185A9C
 	public NetPackagePOIWaypoint Setup(NetPackagePOIWaypoint.OperationType _operation, int _entityId, int _prefabInstanceId = -1, bool _hiddenOnCompass = true)
 	{
 		this.operation = _operation;
@@ -15,7 +15,7 @@ public class NetPackagePOIWaypoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D69 RID: 15721 RVA: 0x001867B8 File Offset: 0x001849B8
+	// Token: 0x06003D8C RID: 15756 RVA: 0x001878BC File Offset: 0x00185ABC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.operation = (NetPackagePOIWaypoint.OperationType)_br.ReadByte();
@@ -36,7 +36,7 @@ public class NetPackagePOIWaypoint : NetPackage
 		}
 	}
 
-	// Token: 0x06003D6A RID: 15722 RVA: 0x0018681C File Offset: 0x00184A1C
+	// Token: 0x06003D8D RID: 15757 RVA: 0x00187920 File Offset: 0x00185B20
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -58,7 +58,7 @@ public class NetPackagePOIWaypoint : NetPackage
 		}
 	}
 
-	// Token: 0x06003D6B RID: 15723 RVA: 0x00186888 File Offset: 0x00184A88
+	// Token: 0x06003D8E RID: 15758 RVA: 0x0018798C File Offset: 0x00185B8C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		EntityPlayer entityPlayer = _world.GetEntity(this.entityId) as EntityPlayer;
@@ -83,8 +83,8 @@ public class NetPackagePOIWaypoint : NetPackage
 		}
 	}
 
-	// Token: 0x17000691 RID: 1681
-	// (get) Token: 0x06003D6C RID: 15724 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000697 RID: 1687
+	// (get) Token: 0x06003D8F RID: 15759 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -93,30 +93,30 @@ public class NetPackagePOIWaypoint : NetPackage
 		}
 	}
 
-	// Token: 0x040031CE RID: 12750
+	// Token: 0x040031EE RID: 12782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackagePOIWaypoint.OperationType operation;
 
-	// Token: 0x040031CF RID: 12751
+	// Token: 0x040031EF RID: 12783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040031D0 RID: 12752
+	// Token: 0x040031F0 RID: 12784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabInstanceId;
 
-	// Token: 0x040031D1 RID: 12753
+	// Token: 0x040031F1 RID: 12785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hiddenOnCompass;
 
-	// Token: 0x02000837 RID: 2103
+	// Token: 0x02000841 RID: 2113
 	public enum OperationType : byte
 	{
-		// Token: 0x040031D3 RID: 12755
+		// Token: 0x040031F3 RID: 12787
 		TrySet,
-		// Token: 0x040031D4 RID: 12756
+		// Token: 0x040031F4 RID: 12788
 		Remove,
-		// Token: 0x040031D5 RID: 12757
+		// Token: 0x040031F5 RID: 12789
 		ClearAll
 	}
 }

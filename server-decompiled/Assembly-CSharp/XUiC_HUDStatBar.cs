@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F4D RID: 3917
+// Token: 0x02000F5C RID: 3932
 [Preserve]
 public class XUiC_HUDStatBar : XUiController
 {
-	// Token: 0x17000E6B RID: 3691
-	// (get) Token: 0x06007A7F RID: 31359 RVA: 0x002E5CB5 File Offset: 0x002E3EB5
-	// (set) Token: 0x06007A80 RID: 31360 RVA: 0x002E5CBD File Offset: 0x002E3EBD
+	// Token: 0x17000E75 RID: 3701
+	// (get) Token: 0x06007AC2 RID: 31426 RVA: 0x002E75B1 File Offset: 0x002E57B1
+	// (set) Token: 0x06007AC3 RID: 31427 RVA: 0x002E75B9 File Offset: 0x002E57B9
 	public HUDStatTypes StatType
 	{
 		get
@@ -22,7 +22,7 @@ public class XUiC_HUDStatBar : XUiController
 		}
 	}
 
-	// Token: 0x06007A81 RID: 31361 RVA: 0x002E5CCC File Offset: 0x002E3ECC
+	// Token: 0x06007AC4 RID: 31428 RVA: 0x002E75C8 File Offset: 0x002E57C8
 	public override void Init()
 	{
 		base.Init();
@@ -30,7 +30,7 @@ public class XUiC_HUDStatBar : XUiController
 		this.activeAmmoItemValue = ItemValue.None;
 	}
 
-	// Token: 0x06007A82 RID: 31362 RVA: 0x002E5CE8 File Offset: 0x002E3EE8
+	// Token: 0x06007AC5 RID: 31429 RVA: 0x002E75E4 File Offset: 0x002E57E4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -125,7 +125,7 @@ public class XUiC_HUDStatBar : XUiController
 		}
 	}
 
-	// Token: 0x06007A83 RID: 31363 RVA: 0x002E5F48 File Offset: 0x002E4148
+	// Token: 0x06007AC6 RID: 31430 RVA: 0x002E7844 File Offset: 0x002E5A44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasChanged()
 	{
@@ -169,7 +169,7 @@ public class XUiC_HUDStatBar : XUiController
 		}
 	}
 
-	// Token: 0x06007A84 RID: 31364 RVA: 0x002E6054 File Offset: 0x002E4254
+	// Token: 0x06007AC7 RID: 31431 RVA: 0x002E7950 File Offset: 0x002E5B50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refreshFill()
 	{
@@ -217,7 +217,7 @@ public class XUiC_HUDStatBar : XUiController
 		this.currentValue = Mathf.Clamp01(Mathf.Lerp(this.oldValue, num3, num));
 	}
 
-	// Token: 0x06007A85 RID: 31365 RVA: 0x002E6228 File Offset: 0x002E4428
+	// Token: 0x06007AC8 RID: 31432 RVA: 0x002E7B24 File Offset: 0x002E5D24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -522,7 +522,7 @@ public class XUiC_HUDStatBar : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007A86 RID: 31366 RVA: 0x002E6B11 File Offset: 0x002E4D11
+	// Token: 0x06007AC9 RID: 31433 RVA: 0x002E840D File Offset: 0x002E660D
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "stat_type")
@@ -533,7 +533,7 @@ public class XUiC_HUDStatBar : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x06007A87 RID: 31367 RVA: 0x002E6B38 File Offset: 0x002E4D38
+	// Token: 0x06007ACA RID: 31434 RVA: 0x002E8434 File Offset: 0x002E6634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setStatValues()
 	{
@@ -594,7 +594,7 @@ public class XUiC_HUDStatBar : XUiController
 		}
 	}
 
-	// Token: 0x06007A88 RID: 31368 RVA: 0x002E6CEC File Offset: 0x002E4EEC
+	// Token: 0x06007ACB RID: 31435 RVA: 0x002E85E8 File Offset: 0x002E67E8
 	public Stat getCurrentStat()
 	{
 		if (this.localPlayer == null)
@@ -623,7 +623,7 @@ public class XUiC_HUDStatBar : XUiController
 		return stat;
 	}
 
-	// Token: 0x06007A89 RID: 31369 RVA: 0x002E6D78 File Offset: 0x002E4F78
+	// Token: 0x06007ACC RID: 31436 RVA: 0x002E8674 File Offset: 0x002E6874
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -635,7 +635,7 @@ public class XUiC_HUDStatBar : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A8A RID: 31370 RVA: 0x002E6DD3 File Offset: 0x002E4FD3
+	// Token: 0x06007ACD RID: 31437 RVA: 0x002E86CF File Offset: 0x002E68CF
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -643,21 +643,21 @@ public class XUiC_HUDStatBar : XUiController
 		this.xui.PlayerInventory.OnToolbeltItemsChanged -= this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x06007A8B RID: 31371 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06007ACE RID: 31438 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A8C RID: 31372 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06007ACF RID: 31439 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A8D RID: 31373 RVA: 0x002E6E14 File Offset: 0x002E5014
+	// Token: 0x06007AD0 RID: 31440 RVA: 0x002E8710 File Offset: 0x002E6910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupActiveItemEntry()
 	{
@@ -700,7 +700,7 @@ public class XUiC_HUDStatBar : XUiController
 		this.xui.CollectedItemList.SetYOffset(46);
 	}
 
-	// Token: 0x06007A8E RID: 31374 RVA: 0x002E6FCC File Offset: 0x002E51CC
+	// Token: 0x06007AD1 RID: 31441 RVA: 0x002E88C8 File Offset: 0x002E6AC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateActiveItemAmmo()
 	{
@@ -717,142 +717,142 @@ public class XUiC_HUDStatBar : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A8F RID: 31375 RVA: 0x002E7043 File Offset: 0x002E5243
+	// Token: 0x06007AD2 RID: 31442 RVA: 0x002E893F File Offset: 0x002E6B3F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool statEquals(Stat _a, Stat _b)
 	{
 		return Mathf.Approximately(_a.Value, _b.Value) && Mathf.Approximately(_a.Max, _b.Max) && Mathf.Approximately(_a.MaxModifier, _b.MaxModifier);
 	}
 
-	// Token: 0x04005AE0 RID: 23264
+	// Token: 0x04005B13 RID: 23315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HUDStatGroups statGroup;
 
-	// Token: 0x04005AE1 RID: 23265
+	// Token: 0x04005B14 RID: 23316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HUDStatTypes statType;
 
-	// Token: 0x04005AE2 RID: 23266
+	// Token: 0x04005B15 RID: 23317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x04005AE3 RID: 23267
+	// Token: 0x04005B16 RID: 23318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityVehicle vehicle;
 
-	// Token: 0x04005AE4 RID: 23268
+	// Token: 0x04005B17 RID: 23319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool vehicleTurbo;
 
-	// Token: 0x04005AE5 RID: 23269
+	// Token: 0x04005B18 RID: 23320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statImage = "";
 
-	// Token: 0x04005AE6 RID: 23270
+	// Token: 0x04005B19 RID: 23321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statIcon = "";
 
-	// Token: 0x04005AE7 RID: 23271
+	// Token: 0x04005B1A RID: 23322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statAtlas = "UIAtlas";
 
-	// Token: 0x04005AE8 RID: 23272
+	// Token: 0x04005B1B RID: 23323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentValue;
 
-	// Token: 0x04005AE9 RID: 23273
+	// Token: 0x04005B1C RID: 23324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float oldValue;
 
-	// Token: 0x04005AEA RID: 23274
+	// Token: 0x04005B1D RID: 23325
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stat oldStatState;
 
-	// Token: 0x04005AEB RID: 23275
+	// Token: 0x04005B1E RID: 23326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasDead;
 
-	// Token: 0x04005AEC RID: 23276
+	// Token: 0x04005B1F RID: 23327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasCrouching;
 
-	// Token: 0x04005AED RID: 23277
+	// Token: 0x04005B20 RID: 23328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hudWasHidden;
 
-	// Token: 0x04005AEE RID: 23278
+	// Token: 0x04005B21 RID: 23329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentSlotIndex = -1;
 
-	// Token: 0x04005AEF RID: 23279
+	// Token: 0x04005B22 RID: 23330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lastAmmoName = "";
 
-	// Token: 0x04005AF0 RID: 23280
+	// Token: 0x04005B23 RID: 23331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentAmmoCount;
 
-	// Token: 0x04005AF1 RID: 23281
+	// Token: 0x04005B24 RID: 23332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue activeAmmoItemValue;
 
-	// Token: 0x04005AF2 RID: 23282
+	// Token: 0x04005B25 RID: 23333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionAttack attackAction;
 
-	// Token: 0x04005AF3 RID: 23283
+	// Token: 0x04005B26 RID: 23334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 
-	// Token: 0x04005AF4 RID: 23284
+	// Token: 0x04005B27 RID: 23335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool sprinting;
 
-	// Token: 0x04005AF5 RID: 23285
+	// Token: 0x04005B28 RID: 23336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt statcurrentFormatterInt = new CachedStringFormatterInt();
 
-	// Token: 0x04005AF6 RID: 23286
+	// Token: 0x04005B29 RID: 23337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat statcurrentFormatterFloat = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005AF7 RID: 23287
+	// Token: 0x04005B2A RID: 23338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt currentPaintAmmoFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005AF8 RID: 23288
+	// Token: 0x04005B2B RID: 23339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> statcurrentWMaxFormatterAOfB = new CachedStringFormatter<int, int>((int _i, int _i1) => string.Format("{0}/{1}", _i, _i1));
 
-	// Token: 0x04005AF9 RID: 23289
+	// Token: 0x04005B2C RID: 23340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> statcurrentWMaxFormatterOf100 = new CachedStringFormatter<int>((int _i) => _i.ToString() + "/100");
 
-	// Token: 0x04005AFA RID: 23290
+	// Token: 0x04005B2D RID: 23341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> statcurrentWMaxFormatterPercent = new CachedStringFormatter<int>((int _i) => _i.ToString() + "%");
 
-	// Token: 0x04005AFB RID: 23291
+	// Token: 0x04005B2E RID: 23342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float, float> statmodifiedmaxFormatter = new CachedStringFormatter<float, float>((float _f1, float _f2) => (_f1 / _f2).ToCultureInvariantString());
 
-	// Token: 0x04005AFC RID: 23292
+	// Token: 0x04005B2F RID: 23343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float> statregenrateFormatter = new CachedStringFormatter<float>((float _f) => ((_f >= 0f) ? "+" : "") + _f.ToCultureInvariantString("0.00"));
 
-	// Token: 0x04005AFD RID: 23293
+	// Token: 0x04005B30 RID: 23344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat statfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005AFE RID: 23294
+	// Token: 0x04005B31 RID: 23345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor staticoncolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005AFF RID: 23295
+	// Token: 0x04005B32 RID: 23346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor stealthColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005B00 RID: 23296
+	// Token: 0x04005B33 RID: 23347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastRegenAmount;
 }

@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A8 RID: 6568
+	// Token: 0x020019D9 RID: 6617
 	[Preserve]
 	public class ActionEjectFromVehicle : ActionBaseTargetAction
 	{
-		// Token: 0x0600C9C5 RID: 51653 RVA: 0x0049CBA4 File Offset: 0x0049ADA4
+		// Token: 0x0600CAD9 RID: 51929 RVA: 0x004A06A4 File Offset: 0x0049E8A4
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C9C6 RID: 51654 RVA: 0x0049CC2A File Offset: 0x0049AE2A
+		// Token: 0x0600CADA RID: 51930 RVA: 0x004A072A File Offset: 0x0049E92A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

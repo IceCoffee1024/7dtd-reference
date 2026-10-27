@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017A2 RID: 6050
+	// Token: 0x020017D3 RID: 6099
 	[Preserve]
 	public class UAIConsiderationSelfHealth : UAIConsiderationBase
 	{
-		// Token: 0x0600BBA1 RID: 48033 RVA: 0x0045A540 File Offset: 0x00458740
+		// Token: 0x0600BCB5 RID: 48309 RVA: 0x0045DEEC File Offset: 0x0045C0EC
 		public override void Init(Dictionary<string, string> parameters)
 		{
 			base.Init(parameters);
@@ -29,7 +29,7 @@ namespace UAI
 			this.max = float.NaN;
 		}
 
-		// Token: 0x0600BBA2 RID: 48034 RVA: 0x0045A5C4 File Offset: 0x004587C4
+		// Token: 0x0600BCB6 RID: 48310 RVA: 0x0045DF70 File Offset: 0x0045C170
 		public override float GetScore(Context _context, object _target)
 		{
 			if (float.IsNaN(this.max))
@@ -39,11 +39,11 @@ namespace UAI
 			return ((float)_context.Self.Health - this.min) / (this.max - this.min);
 		}
 
-		// Token: 0x04008C78 RID: 35960
+		// Token: 0x04008D61 RID: 36193
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float min;
 
-		// Token: 0x04008C79 RID: 35961
+		// Token: 0x04008D62 RID: 36194
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float max;
 	}

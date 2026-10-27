@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 
-// Token: 0x02001414 RID: 5140
+// Token: 0x02001426 RID: 5158
 public static class EnumUtils
 {
-	// Token: 0x0600A10D RID: 41229 RVA: 0x003C8FDB File Offset: 0x003C71DB
+	// Token: 0x0600A165 RID: 41317 RVA: 0x003CB3DF File Offset: 0x003C95DF
 	public static string ToStringCached<TEnum>(this TEnum _enumValue) where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.GetName(_enumValue);
 	}
 
-	// Token: 0x0600A10E RID: 41230 RVA: 0x003C8FE8 File Offset: 0x003C71E8
+	// Token: 0x0600A166 RID: 41318 RVA: 0x003CB3EC File Offset: 0x003C95EC
 	public static int Ordinal<TEnum>(this TEnum _enumValue) where TEnum : struct, IConvertible
 	{
 		return EnumInt32ToInt.Convert<TEnum>(_enumValue);
 	}
 
-	// Token: 0x0600A10F RID: 41231 RVA: 0x003C8FF0 File Offset: 0x003C71F0
+	// Token: 0x0600A167 RID: 41319 RVA: 0x003CB3F4 File Offset: 0x003C95F4
 	public static bool TryFromOrdinal<TEnum>(int _ordinal, out TEnum _result) where TEnum : struct, IConvertible
 	{
 		IList<TEnum> list = EnumUtils.Values<TEnum>();
@@ -34,7 +34,7 @@ public static class EnumUtils
 		return false;
 	}
 
-	// Token: 0x0600A110 RID: 41232 RVA: 0x003C903C File Offset: 0x003C723C
+	// Token: 0x0600A168 RID: 41320 RVA: 0x003CB440 File Offset: 0x003C9640
 	public static TEnum Parse<TEnum>(string _name, TEnum _default, bool _ignoreCase = false) where TEnum : struct, IConvertible
 	{
 		TEnum tenum;
@@ -45,43 +45,43 @@ public static class EnumUtils
 		return tenum;
 	}
 
-	// Token: 0x0600A111 RID: 41233 RVA: 0x003C9057 File Offset: 0x003C7257
+	// Token: 0x0600A169 RID: 41321 RVA: 0x003CB45B File Offset: 0x003C965B
 	public static TEnum Parse<TEnum>(string _name, bool _ignoreCase = false) where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.Parse(_name, _ignoreCase);
 	}
 
-	// Token: 0x0600A112 RID: 41234 RVA: 0x003C9065 File Offset: 0x003C7265
+	// Token: 0x0600A16A RID: 41322 RVA: 0x003CB469 File Offset: 0x003C9669
 	public static bool TryParse<TEnum>(string _name, out TEnum _result, bool _ignoreCase = false) where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.TryParse(_name, out _result, _ignoreCase);
 	}
 
-	// Token: 0x0600A113 RID: 41235 RVA: 0x003C9074 File Offset: 0x003C7274
+	// Token: 0x0600A16B RID: 41323 RVA: 0x003CB478 File Offset: 0x003C9678
 	public static bool TryParseIgnoreCase<TEnum>(string _name, out TEnum _result) where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.TryParse(_name, out _result, true);
 	}
 
-	// Token: 0x0600A114 RID: 41236 RVA: 0x003C9083 File Offset: 0x003C7283
+	// Token: 0x0600A16C RID: 41324 RVA: 0x003CB487 File Offset: 0x003C9687
 	public static bool HasName<TEnum>(string _name, bool _ignoreCase = false) where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.HasName(_name, _ignoreCase);
 	}
 
-	// Token: 0x0600A115 RID: 41237 RVA: 0x003C9091 File Offset: 0x003C7291
+	// Token: 0x0600A16D RID: 41325 RVA: 0x003CB495 File Offset: 0x003C9695
 	public static IList<TEnum> Values<TEnum>() where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.EnumValues;
 	}
 
-	// Token: 0x0600A116 RID: 41238 RVA: 0x003C909D File Offset: 0x003C729D
+	// Token: 0x0600A16E RID: 41326 RVA: 0x003CB4A1 File Offset: 0x003C96A1
 	public static IList<string> Names<TEnum>() where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.EnumNames;
 	}
 
-	// Token: 0x0600A117 RID: 41239 RVA: 0x003C90AC File Offset: 0x003C72AC
+	// Token: 0x0600A16F RID: 41327 RVA: 0x003CB4B0 File Offset: 0x003C96B0
 	public static TEnum CycleEnum<TEnum>(this TEnum _enumVal, bool _reverse = false, bool _wrap = true) where TEnum : struct, IConvertible
 	{
 		if (!typeof(TEnum).IsEnum)
@@ -101,7 +101,7 @@ public static class EnumUtils
 		return enumValues[num];
 	}
 
-	// Token: 0x0600A118 RID: 41240 RVA: 0x003C9140 File Offset: 0x003C7340
+	// Token: 0x0600A170 RID: 41328 RVA: 0x003CB544 File Offset: 0x003C9744
 	public static TEnum CycleEnum<TEnum>(this TEnum _enumVal, TEnum _minVal, TEnum _maxVal, bool _reverse = false, bool _wrap = true) where TEnum : struct, IConvertible
 	{
 		if (!typeof(TEnum).IsEnum)
@@ -155,24 +155,24 @@ public static class EnumUtils
 		return enumValues[num6];
 	}
 
-	// Token: 0x0600A119 RID: 41241 RVA: 0x003C92A5 File Offset: 0x003C74A5
+	// Token: 0x0600A171 RID: 41329 RVA: 0x003CB6A9 File Offset: 0x003C98A9
 	public static TEnum MaxValue<TEnum>() where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.EnumValues[EnumUtils.EnumInfoCache<TEnum>.Instance.EnumValues.Count - 1];
 	}
 
-	// Token: 0x0600A11A RID: 41242 RVA: 0x003C92C7 File Offset: 0x003C74C7
+	// Token: 0x0600A172 RID: 41330 RVA: 0x003CB6CB File Offset: 0x003C98CB
 	public static TEnum MinValue<TEnum>() where TEnum : struct, IConvertible
 	{
 		return EnumUtils.EnumInfoCache<TEnum>.Instance.EnumValues[0];
 	}
 
-	// Token: 0x02001415 RID: 5141
+	// Token: 0x02001427 RID: 5159
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class EnumInfoCache<TEnum> where TEnum : struct, IConvertible
 	{
-		// Token: 0x17001328 RID: 4904
-		// (get) Token: 0x0600A11B RID: 41243 RVA: 0x003C92D9 File Offset: 0x003C74D9
+		// Token: 0x17001334 RID: 4916
+		// (get) Token: 0x0600A173 RID: 41331 RVA: 0x003CB6DD File Offset: 0x003C98DD
 		public static EnumUtils.EnumInfoCache<TEnum> Instance
 		{
 			get
@@ -185,7 +185,7 @@ public static class EnumUtils
 			}
 		}
 
-		// Token: 0x0600A11C RID: 41244 RVA: 0x003C92F4 File Offset: 0x003C74F4
+		// Token: 0x0600A174 RID: 41332 RVA: 0x003CB6F8 File Offset: 0x003C98F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EnumInfoCache()
 		{
@@ -243,7 +243,7 @@ public static class EnumUtils
 			this.EnumNames = new ReadOnlyCollection<string>(this.enumNames);
 		}
 
-		// Token: 0x0600A11D RID: 41245 RVA: 0x003C955C File Offset: 0x003C775C
+		// Token: 0x0600A175 RID: 41333 RVA: 0x003CB960 File Offset: 0x003C9B60
 		public string GetName(TEnum _enumValue)
 		{
 			if (this.isFlags)
@@ -261,7 +261,7 @@ public static class EnumUtils
 			return _enumValue.ToString(CultureInfo.InvariantCulture);
 		}
 
-		// Token: 0x0600A11E RID: 41246 RVA: 0x003C95D8 File Offset: 0x003C77D8
+		// Token: 0x0600A176 RID: 41334 RVA: 0x003CB9DC File Offset: 0x003C9BDC
 		public TEnum Parse(string _name, bool _ignoreCase)
 		{
 			if (string.IsNullOrEmpty(_name))
@@ -279,7 +279,7 @@ public static class EnumUtils
 			return tenum2;
 		}
 
-		// Token: 0x0600A11F RID: 41247 RVA: 0x003C964C File Offset: 0x003C784C
+		// Token: 0x0600A177 RID: 41335 RVA: 0x003CBA50 File Offset: 0x003C9C50
 		public bool TryParse(string _name, out TEnum _result, bool _ignoreCase)
 		{
 			_result = default(TEnum);
@@ -306,7 +306,7 @@ public static class EnumUtils
 			return flag;
 		}
 
-		// Token: 0x0600A120 RID: 41248 RVA: 0x003C96E4 File Offset: 0x003C78E4
+		// Token: 0x0600A178 RID: 41336 RVA: 0x003CBAE8 File Offset: 0x003C9CE8
 		public bool HasName(string _name, bool _ignoreCase)
 		{
 			if (string.IsNullOrEmpty(_name))
@@ -316,37 +316,37 @@ public static class EnumUtils
 			return (_ignoreCase ? this.nameToEnumCaseInsensitive : this.nameToEnumCaseSensitive).ContainsKey(_name);
 		}
 
-		// Token: 0x0400798F RID: 31119
+		// Token: 0x040079D0 RID: 31184
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EnumUtils.EnumInfoCache<TEnum> instance;
 
-		// Token: 0x04007990 RID: 31120
+		// Token: 0x040079D1 RID: 31185
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<TEnum> enumValues;
 
-		// Token: 0x04007991 RID: 31121
+		// Token: 0x040079D2 RID: 31186
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<string> enumNames;
 
-		// Token: 0x04007992 RID: 31122
+		// Token: 0x040079D3 RID: 31187
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<TEnum, string> enumToName;
 
-		// Token: 0x04007993 RID: 31123
+		// Token: 0x040079D4 RID: 31188
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, TEnum> nameToEnumCaseSensitive;
 
-		// Token: 0x04007994 RID: 31124
+		// Token: 0x040079D5 RID: 31189
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, TEnum> nameToEnumCaseInsensitive;
 
-		// Token: 0x04007995 RID: 31125
+		// Token: 0x040079D6 RID: 31190
 		public readonly ReadOnlyCollection<TEnum> EnumValues;
 
-		// Token: 0x04007996 RID: 31126
+		// Token: 0x040079D7 RID: 31191
 		public readonly ReadOnlyCollection<string> EnumNames;
 
-		// Token: 0x04007997 RID: 31127
+		// Token: 0x040079D8 RID: 31192
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool isFlags;
 	}

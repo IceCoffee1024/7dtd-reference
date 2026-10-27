@@ -3,56 +3,56 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A4F RID: 6735
+	// Token: 0x02001A80 RID: 6784
 	public abstract class AbstractDayTimeTracker : AbstractFilter, IFilter<SectionType>
 	{
-		// Token: 0x0600CC7E RID: 52350
+		// Token: 0x0600CD92 RID: 52626
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract int GetCurrentDay();
 
-		// Token: 0x0600CC7F RID: 52351
+		// Token: 0x0600CD93 RID: 52627
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract float GetCurrentTime();
 
-		// Token: 0x0600CC80 RID: 52352 RVA: 0x004AA1FF File Offset: 0x004A83FF
+		// Token: 0x0600CD94 RID: 52628 RVA: 0x004ADCFB File Offset: 0x004ABEFB
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbstractDayTimeTracker()
 		{
 		}
 
-		// Token: 0x04009B52 RID: 39762
+		// Token: 0x04009C3B RID: 39995
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbstractDayTimeTracker.DayPeriodType dayPeriod;
 
-		// Token: 0x04009B53 RID: 39763
+		// Token: 0x04009C3C RID: 39996
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int currentDay;
 
-		// Token: 0x04009B54 RID: 39764
+		// Token: 0x04009C3D RID: 39997
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float currentTime;
 
-		// Token: 0x04009B55 RID: 39765
+		// Token: 0x04009C3E RID: 39998
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float dawnTime;
 
-		// Token: 0x04009B56 RID: 39766
+		// Token: 0x04009C3F RID: 39999
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float duskTime;
 
-		// Token: 0x02001A50 RID: 6736
+		// Token: 0x02001A81 RID: 6785
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum DayPeriodType : byte
 		{
-			// Token: 0x04009B58 RID: 39768
+			// Token: 0x04009C41 RID: 40001
 			Morning,
-			// Token: 0x04009B59 RID: 39769
+			// Token: 0x04009C42 RID: 40002
 			Day,
-			// Token: 0x04009B5A RID: 39770
+			// Token: 0x04009C43 RID: 40003
 			Night,
-			// Token: 0x04009B5B RID: 39771
+			// Token: 0x04009C44 RID: 40004
 			Dusk,
-			// Token: 0x04009B5C RID: 39772
+			// Token: 0x04009C45 RID: 40005
 			Dawn
 		}
 	}

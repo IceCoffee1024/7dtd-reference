@@ -3,11 +3,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D73 RID: 3443
+// Token: 0x02000D7E RID: 3454
 [Preserve]
 public class ItemActionEntrySell : BaseItemActionEntry
 {
-	// Token: 0x0600682F RID: 26671 RVA: 0x0029514C File Offset: 0x0029334C
+	// Token: 0x06006854 RID: 26708 RVA: 0x00296674 File Offset: 0x00294874
 	public ItemActionEntrySell(XUiController _controller)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.None, "", "ui/ui_denied")
 	{
@@ -33,7 +33,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		base.IconName = "ui_game_symbol_coin";
 	}
 
-	// Token: 0x06006830 RID: 26672 RVA: 0x00295218 File Offset: 0x00293418
+	// Token: 0x06006855 RID: 26709 RVA: 0x00296740 File Offset: 0x00294940
 	public override void RefreshEnabled()
 	{
 		IItemStackController itemStackController = (IItemStackController)base.ItemController;
@@ -71,7 +71,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		base.Enabled = this.state == ItemActionEntrySell.StateTypes.Normal;
 	}
 
-	// Token: 0x06006831 RID: 26673 RVA: 0x0029536C File Offset: 0x0029356C
+	// Token: 0x06006856 RID: 26710 RVA: 0x00296894 File Offset: 0x00294A94
 	public override void OnDisabledActivate()
 	{
 		EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -95,7 +95,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x06006832 RID: 26674 RVA: 0x00295418 File Offset: 0x00293618
+	// Token: 0x06006857 RID: 26711 RVA: 0x00296940 File Offset: 0x00294B40
 	public override void OnActivated()
 	{
 		TraderData traderData = base.ItemController.xui.Trader.TraderData;
@@ -261,29 +261,29 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x04005041 RID: 20545
+	// Token: 0x04005066 RID: 20582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isOwner;
 
-	// Token: 0x04005042 RID: 20546
+	// Token: 0x04005067 RID: 20583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntrySell.StateTypes state;
 
-	// Token: 0x02000D74 RID: 3444
+	// Token: 0x02000D7F RID: 3455
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04005044 RID: 20548
+		// Token: 0x04005069 RID: 20585
 		Normal,
-		// Token: 0x04005045 RID: 20549
+		// Token: 0x0400506A RID: 20586
 		ItemNotSellable,
-		// Token: 0x04005046 RID: 20550
+		// Token: 0x0400506B RID: 20587
 		ItemNotSellableVending,
-		// Token: 0x04005047 RID: 20551
+		// Token: 0x0400506C RID: 20588
 		PriceTooLow,
-		// Token: 0x04005048 RID: 20552
+		// Token: 0x0400506D RID: 20589
 		NotEnoughItems,
-		// Token: 0x04005049 RID: 20553
+		// Token: 0x0400506E RID: 20590
 		NotBundleSize
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000A15 RID: 2581
+// Token: 0x02000A1F RID: 2591
 public static class SdPlayerPrefs
 {
-	// Token: 0x06004D28 RID: 19752 RVA: 0x001DBC44 File Offset: 0x001D9E44
+	// Token: 0x06004D4C RID: 19788 RVA: 0x001DCD2C File Offset: 0x001DAF2C
 	public static float GetFloat(string key)
 	{
 		float @float;
@@ -18,7 +18,7 @@ public static class SdPlayerPrefs
 		return @float;
 	}
 
-	// Token: 0x06004D29 RID: 19753 RVA: 0x001DBC88 File Offset: 0x001D9E88
+	// Token: 0x06004D4D RID: 19789 RVA: 0x001DCD70 File Offset: 0x001DAF70
 	public static float GetFloat(string key, float defaultValue)
 	{
 		float @float;
@@ -33,7 +33,7 @@ public static class SdPlayerPrefs
 		return @float;
 	}
 
-	// Token: 0x06004D2A RID: 19754 RVA: 0x001DBCD4 File Offset: 0x001D9ED4
+	// Token: 0x06004D4E RID: 19790 RVA: 0x001DCDBC File Offset: 0x001DAFBC
 	public static void SetFloat(string key, float value)
 	{
 		try
@@ -46,7 +46,7 @@ public static class SdPlayerPrefs
 		}
 	}
 
-	// Token: 0x06004D2B RID: 19755 RVA: 0x001DBD20 File Offset: 0x001D9F20
+	// Token: 0x06004D4F RID: 19791 RVA: 0x001DCE08 File Offset: 0x001DB008
 	public static int GetInt(string key)
 	{
 		int @int;
@@ -61,7 +61,7 @@ public static class SdPlayerPrefs
 		return @int;
 	}
 
-	// Token: 0x06004D2C RID: 19756 RVA: 0x001DBD64 File Offset: 0x001D9F64
+	// Token: 0x06004D50 RID: 19792 RVA: 0x001DCE4C File Offset: 0x001DB04C
 	public static int GetInt(string key, int defaultValue)
 	{
 		int @int;
@@ -76,7 +76,7 @@ public static class SdPlayerPrefs
 		return @int;
 	}
 
-	// Token: 0x06004D2D RID: 19757 RVA: 0x001DBDB0 File Offset: 0x001D9FB0
+	// Token: 0x06004D51 RID: 19793 RVA: 0x001DCE98 File Offset: 0x001DB098
 	public static void SetInt(string key, int value)
 	{
 		try
@@ -89,7 +89,7 @@ public static class SdPlayerPrefs
 		}
 	}
 
-	// Token: 0x06004D2E RID: 19758 RVA: 0x001DBDFC File Offset: 0x001D9FFC
+	// Token: 0x06004D52 RID: 19794 RVA: 0x001DCEE4 File Offset: 0x001DB0E4
 	public static string GetString(string key)
 	{
 		string @string;
@@ -104,7 +104,7 @@ public static class SdPlayerPrefs
 		return @string;
 	}
 
-	// Token: 0x06004D2F RID: 19759 RVA: 0x001DBE40 File Offset: 0x001DA040
+	// Token: 0x06004D53 RID: 19795 RVA: 0x001DCF28 File Offset: 0x001DB128
 	public static string GetString(string key, string defaultValue)
 	{
 		string @string;
@@ -119,7 +119,7 @@ public static class SdPlayerPrefs
 		return @string;
 	}
 
-	// Token: 0x06004D30 RID: 19760 RVA: 0x001DBEA0 File Offset: 0x001DA0A0
+	// Token: 0x06004D54 RID: 19796 RVA: 0x001DCF88 File Offset: 0x001DB188
 	public static void SetString(string key, string value)
 	{
 		try
@@ -132,7 +132,7 @@ public static class SdPlayerPrefs
 		}
 	}
 
-	// Token: 0x06004D31 RID: 19761 RVA: 0x001DBF00 File Offset: 0x001DA100
+	// Token: 0x06004D55 RID: 19797 RVA: 0x001DCFE8 File Offset: 0x001DB1E8
 	public static bool HasKey(string key)
 	{
 		bool flag;
@@ -147,7 +147,7 @@ public static class SdPlayerPrefs
 		return flag;
 	}
 
-	// Token: 0x06004D32 RID: 19762 RVA: 0x001DBF44 File Offset: 0x001DA144
+	// Token: 0x06004D56 RID: 19798 RVA: 0x001DD02C File Offset: 0x001DB22C
 	public static void DeleteKey(string key)
 	{
 		try
@@ -160,13 +160,13 @@ public static class SdPlayerPrefs
 		}
 	}
 
-	// Token: 0x06004D33 RID: 19763 RVA: 0x001DBF88 File Offset: 0x001DA188
+	// Token: 0x06004D57 RID: 19799 RVA: 0x001DD070 File Offset: 0x001DB270
 	public static void DeleteAll()
 	{
 		SaveDataUtils.SaveDataPrefs.DeleteAll();
 	}
 
-	// Token: 0x06004D34 RID: 19764 RVA: 0x001DBF94 File Offset: 0x001DA194
+	// Token: 0x06004D58 RID: 19800 RVA: 0x001DD07C File Offset: 0x001DB27C
 	public static void Save()
 	{
 		SaveDataUtils.SaveDataPrefs.Save();
@@ -178,15 +178,15 @@ public static class SdPlayerPrefs
 		store.Save();
 	}
 
-	// Token: 0x06004D35 RID: 19765 RVA: 0x001DBFAF File Offset: 0x001DA1AF
+	// Token: 0x06004D59 RID: 19801 RVA: 0x001DD097 File Offset: 0x001DB297
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void Load()
 	{
 		SaveDataUtils.SaveDataPrefs.Load();
 	}
 
-	// Token: 0x1700085D RID: 2141
-	// (get) Token: 0x06004D36 RID: 19766 RVA: 0x001DBFBB File Offset: 0x001DA1BB
+	// Token: 0x17000863 RID: 2147
+	// (get) Token: 0x06004D5A RID: 19802 RVA: 0x001DD0A3 File Offset: 0x001DB2A3
 	public static bool CanLoad
 	{
 		[PublicizedFrom(EAccessModifier.Internal)]

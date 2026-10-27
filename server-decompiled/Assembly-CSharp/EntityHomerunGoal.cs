@@ -5,30 +5,30 @@ using GameEvent.GameEventHelpers;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004BA RID: 1210
+// Token: 0x020004BC RID: 1212
 [Preserve]
 public class EntityHomerunGoal : Entity
 {
-	// Token: 0x06002618 RID: 9752 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600261F RID: 9759 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanCollideWithBlocks()
 	{
 		return false;
 	}
 
-	// Token: 0x06002619 RID: 9753 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06002620 RID: 9760 RVA: 0x00020119 File Offset: 0x0001E319
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isEntityStatic()
 	{
 		return true;
 	}
 
-	// Token: 0x0600261A RID: 9754 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002621 RID: 9761 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanBePushed()
 	{
 		return false;
 	}
 
-	// Token: 0x0600261B RID: 9755 RVA: 0x000E9228 File Offset: 0x000E7428
+	// Token: 0x06002622 RID: 9762 RVA: 0x000E9638 File Offset: 0x000E7838
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -101,7 +101,7 @@ public class EntityHomerunGoal : Entity
 		}
 	}
 
-	// Token: 0x0600261C RID: 9756 RVA: 0x000E9580 File Offset: 0x000E7780
+	// Token: 0x06002623 RID: 9763 RVA: 0x000E9990 File Offset: 0x000E7B90
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -111,44 +111,44 @@ public class EntityHomerunGoal : Entity
 		entityClass.Properties.ParseBool("IsMoving", ref this.IsMoving);
 	}
 
-	// Token: 0x04001C57 RID: 7255
+	// Token: 0x04001C67 RID: 7271
 	public HomerunData Owner;
 
-	// Token: 0x04001C58 RID: 7256
+	// Token: 0x04001C68 RID: 7272
 	public bool ReadyForDelete;
 
-	// Token: 0x04001C59 RID: 7257
+	// Token: 0x04001C69 RID: 7273
 	public int ScoreAdded = 1;
 
-	// Token: 0x04001C5A RID: 7258
+	// Token: 0x04001C6A RID: 7274
 	public float Size = 2f;
 
-	// Token: 0x04001C5B RID: 7259
+	// Token: 0x04001C6B RID: 7275
 	public Vector3 StartPosition;
 
-	// Token: 0x04001C5C RID: 7260
+	// Token: 0x04001C6C RID: 7276
 	public float TimeRemaining = 20f;
 
-	// Token: 0x04001C5D RID: 7261
+	// Token: 0x04001C6D RID: 7277
 	public bool IsMoving = true;
 
-	// Token: 0x04001C5E RID: 7262
+	// Token: 0x04001C6E RID: 7278
 	public EntityHomerunGoal.Direction direction;
 
-	// Token: 0x020004BB RID: 1211
+	// Token: 0x020004BD RID: 1213
 	public enum Direction
 	{
-		// Token: 0x04001C60 RID: 7264
+		// Token: 0x04001C70 RID: 7280
 		YPositive,
-		// Token: 0x04001C61 RID: 7265
+		// Token: 0x04001C71 RID: 7281
 		XPositive,
-		// Token: 0x04001C62 RID: 7266
+		// Token: 0x04001C72 RID: 7282
 		XNegative,
-		// Token: 0x04001C63 RID: 7267
+		// Token: 0x04001C73 RID: 7283
 		ZPositive,
-		// Token: 0x04001C64 RID: 7268
+		// Token: 0x04001C74 RID: 7284
 		ZNegative,
-		// Token: 0x04001C65 RID: 7269
+		// Token: 0x04001C75 RID: 7285
 		Max
 	}
 }

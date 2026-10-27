@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200028E RID: 654
+// Token: 0x02000290 RID: 656
 [Preserve]
 public class ConsoleCmdShow : ConsoleCmdAbstract
 {
 	// Token: 0x170001FD RID: 509
-	// (get) Token: 0x0600130C RID: 4876 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001310 RID: 4880 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -19,7 +19,7 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001FE RID: 510
-	// (get) Token: 0x0600130D RID: 4877 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001311 RID: 4881 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -28,21 +28,21 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600130E RID: 4878 RVA: 0x00075C0C File Offset: 0x00073E0C
+	// Token: 0x06001312 RID: 4882 RVA: 0x00075DDC File Offset: 0x00073FDC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "show" };
 	}
 
-	// Token: 0x0600130F RID: 4879 RVA: 0x00075C1C File Offset: 0x00073E1C
+	// Token: 0x06001313 RID: 4883 RVA: 0x00075DEC File Offset: 0x00073FEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Shows custom layers of rendering.";
 	}
 
-	// Token: 0x06001310 RID: 4880 RVA: 0x00075C24 File Offset: 0x00073E24
+	// Token: 0x06001314 RID: 4884 RVA: 0x00075DF4 File Offset: 0x00073FF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Enable(ConsoleCmdShow.DebugView dView)
 	{
@@ -67,7 +67,7 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		GameManager.Instance.ApplyAllOptions();
 	}
 
-	// Token: 0x06001311 RID: 4881 RVA: 0x00075CBC File Offset: 0x00073EBC
+	// Token: 0x06001315 RID: 4885 RVA: 0x00075E8C File Offset: 0x0007408C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Disable()
 	{
@@ -83,14 +83,14 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		GameManager.Instance.ApplyAllOptions();
 	}
 
-	// Token: 0x06001312 RID: 4882 RVA: 0x00075D22 File Offset: 0x00073F22
+	// Token: 0x06001316 RID: 4886 RVA: 0x00075EF2 File Offset: 0x000740F2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool IsEnabled(string key)
 	{
 		return ConsoleCmdShow.enabledKeyword.Length >= 1 && ConsoleCmdShow.enabledKeyword.EqualsCaseInsensitive(key);
 	}
 
-	// Token: 0x06001313 RID: 4883 RVA: 0x00075D40 File Offset: 0x00073F40
+	// Token: 0x06001317 RID: 4887 RVA: 0x00075F10 File Offset: 0x00074110
 	public static void Init()
 	{
 		for (int i = 0; i < ConsoleCmdShow.Commands.Length; i++)
@@ -99,7 +99,7 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001314 RID: 4884 RVA: 0x00075D70 File Offset: 0x00073F70
+	// Token: 0x06001318 RID: 4888 RVA: 0x00075F40 File Offset: 0x00074140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Switch(ConsoleCmdShow.DebugView dView)
 	{
@@ -111,7 +111,7 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		ConsoleCmdShow.Enable(dView);
 	}
 
-	// Token: 0x06001315 RID: 4885 RVA: 0x00075D8C File Offset: 0x00073F8C
+	// Token: 0x06001319 RID: 4889 RVA: 0x00075F5C File Offset: 0x0007415C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -142,31 +142,31 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		_params[0].EqualsCaseInsensitive("NA");
 	}
 
-	// Token: 0x04000D57 RID: 3415
+	// Token: 0x04000D58 RID: 3416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool DISABLE_SHADOWS = true;
 
-	// Token: 0x04000D58 RID: 3416
+	// Token: 0x04000D59 RID: 3417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ENABLE_SHADOWS = false;
 
-	// Token: 0x04000D59 RID: 3417
+	// Token: 0x04000D5A RID: 3418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool DISABLE_SSAO = true;
 
-	// Token: 0x04000D5A RID: 3418
+	// Token: 0x04000D5B RID: 3419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ENABLE_SSAO = false;
 
-	// Token: 0x04000D5B RID: 3419
+	// Token: 0x04000D5C RID: 3420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool DISABLE_DOF = true;
 
-	// Token: 0x04000D5C RID: 3420
+	// Token: 0x04000D5D RID: 3421
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ENABLE_DOF = false;
 
-	// Token: 0x04000D5D RID: 3421
+	// Token: 0x04000D5E RID: 3422
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConsoleCmdShow.DebugView[] Commands = new ConsoleCmdShow.DebugView[]
 	{
@@ -176,26 +176,26 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 		new ConsoleCmdShow.DebugView("normals", "SHOW_NORMALS", ConsoleCmdShow.DISABLE_SHADOWS, ConsoleCmdShow.DISABLE_SSAO, ConsoleCmdShow.DISABLE_DOF)
 	};
 
-	// Token: 0x04000D5E RID: 3422
+	// Token: 0x04000D5F RID: 3423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string enabledKeyword = "";
 
-	// Token: 0x04000D5F RID: 3423
+	// Token: 0x04000D60 RID: 3424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int savedShadowsOption = -1;
 
-	// Token: 0x04000D60 RID: 3424
+	// Token: 0x04000D61 RID: 3425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool savedSSAOOption = false;
 
-	// Token: 0x04000D61 RID: 3425
+	// Token: 0x04000D62 RID: 3426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool savedDOFOption = false;
 
-	// Token: 0x0200028F RID: 655
+	// Token: 0x02000291 RID: 657
 	public class DebugView
 	{
-		// Token: 0x06001318 RID: 4888 RVA: 0x00075F2C File Offset: 0x0007412C
+		// Token: 0x0600131C RID: 4892 RVA: 0x000760FC File Offset: 0x000742FC
 		public DebugView(string _cmd, string _key, bool _disableShadows, bool _disableSSAO, bool _disableDOF)
 		{
 			this.cmd = _cmd;
@@ -205,19 +205,19 @@ public class ConsoleCmdShow : ConsoleCmdAbstract
 			this.disableDOF = _disableDOF;
 		}
 
-		// Token: 0x04000D62 RID: 3426
+		// Token: 0x04000D63 RID: 3427
 		public string cmd;
 
-		// Token: 0x04000D63 RID: 3427
+		// Token: 0x04000D64 RID: 3428
 		public string key;
 
-		// Token: 0x04000D64 RID: 3428
+		// Token: 0x04000D65 RID: 3429
 		public bool disableShadows;
 
-		// Token: 0x04000D65 RID: 3429
+		// Token: 0x04000D66 RID: 3430
 		public bool disableSSAO;
 
-		// Token: 0x04000D66 RID: 3430
+		// Token: 0x04000D67 RID: 3431
 		public bool disableDOF;
 	}
 }

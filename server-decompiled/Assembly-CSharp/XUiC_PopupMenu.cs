@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D59 RID: 3417
+// Token: 0x02000D64 RID: 3428
 [Preserve]
 public class XUiC_PopupMenu : XUiController
 {
-	// Token: 0x17000B12 RID: 2834
-	// (get) Token: 0x06006793 RID: 26515 RVA: 0x00291C50 File Offset: 0x0028FE50
-	// (set) Token: 0x06006794 RID: 26516 RVA: 0x00291C58 File Offset: 0x0028FE58
+	// Token: 0x17000B18 RID: 2840
+	// (get) Token: 0x060067B8 RID: 26552 RVA: 0x00293178 File Offset: 0x00291378
+	// (set) Token: 0x060067B9 RID: 26553 RVA: 0x00293180 File Offset: 0x00291380
 	[XuiXmlAttribute("menu_min_width", false)]
 	public int MenuMinWidth
 	{
@@ -19,9 +19,9 @@ public class XUiC_PopupMenu : XUiController
 		set;
 	} = 100;
 
-	// Token: 0x17000B13 RID: 2835
-	// (get) Token: 0x06006795 RID: 26517 RVA: 0x00291C61 File Offset: 0x0028FE61
-	// (set) Token: 0x06006796 RID: 26518 RVA: 0x00291C69 File Offset: 0x0028FE69
+	// Token: 0x17000B19 RID: 2841
+	// (get) Token: 0x060067BA RID: 26554 RVA: 0x00293189 File Offset: 0x00291389
+	// (set) Token: 0x060067BB RID: 26555 RVA: 0x00293191 File Offset: 0x00291391
 	[XuiXmlAttribute("element_padding_over_label", false)]
 	public int MaxWidthPadding
 	{
@@ -31,14 +31,14 @@ public class XUiC_PopupMenu : XUiController
 		set;
 	} = 60;
 
-	// Token: 0x17000B14 RID: 2836
-	// (get) Token: 0x06006797 RID: 26519 RVA: 0x00291C72 File Offset: 0x0028FE72
-	// (set) Token: 0x06006798 RID: 26520 RVA: 0x00291C7A File Offset: 0x0028FE7A
+	// Token: 0x17000B1A RID: 2842
+	// (get) Token: 0x060067BC RID: 26556 RVA: 0x0029319A File Offset: 0x0029139A
+	// (set) Token: 0x060067BD RID: 26557 RVA: 0x002931A2 File Offset: 0x002913A2
 	[XuiXmlAttribute("slider_min_width", false)]
 	public int SliderMinWidth { get; set; } = 250;
 
-	// Token: 0x17000B15 RID: 2837
-	// (get) Token: 0x06006799 RID: 26521 RVA: 0x00291C83 File Offset: 0x0028FE83
+	// Token: 0x17000B1B RID: 2843
+	// (get) Token: 0x060067BE RID: 26558 RVA: 0x002931AB File Offset: 0x002913AB
 	[XuiXmlBinding("grid_width")]
 	public int GridSizeX
 	{
@@ -49,8 +49,8 @@ public class XUiC_PopupMenu : XUiController
 		}
 	}
 
-	// Token: 0x17000B16 RID: 2838
-	// (get) Token: 0x0600679A RID: 26522 RVA: 0x00291C90 File Offset: 0x0028FE90
+	// Token: 0x17000B1C RID: 2844
+	// (get) Token: 0x060067BF RID: 26559 RVA: 0x002931B8 File Offset: 0x002913B8
 	[XuiXmlBinding("grid_height")]
 	public int GridSizeY
 	{
@@ -61,8 +61,8 @@ public class XUiC_PopupMenu : XUiController
 		}
 	}
 
-	// Token: 0x17000B17 RID: 2839
-	// (get) Token: 0x0600679B RID: 26523 RVA: 0x00291C9D File Offset: 0x0028FE9D
+	// Token: 0x17000B1D RID: 2845
+	// (get) Token: 0x060067C0 RID: 26560 RVA: 0x002931C5 File Offset: 0x002913C5
 	[XuiXmlBinding("title")]
 	public string Title
 	{
@@ -73,21 +73,21 @@ public class XUiC_PopupMenu : XUiController
 		}
 	}
 
-	// Token: 0x0600679C RID: 26524 RVA: 0x00291CAE File Offset: 0x0028FEAE
+	// Token: 0x060067C1 RID: 26561 RVA: 0x002931D6 File Offset: 0x002913D6
 	public override void Init()
 	{
 		base.Init();
 		this.xui.PopupMenuWindow = this;
 	}
 
-	// Token: 0x0600679D RID: 26525 RVA: 0x00291CC2 File Offset: 0x0028FEC2
+	// Token: 0x060067C2 RID: 26562 RVA: 0x002931EA File Offset: 0x002913EA
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.PopupMenuWindow = null;
 	}
 
-	// Token: 0x0600679E RID: 26526 RVA: 0x00291CD6 File Offset: 0x0028FED6
+	// Token: 0x060067C3 RID: 26563 RVA: 0x002931FE File Offset: 0x002913FE
 	public XUiC_PopupMenu Setup(Vector2i _offsetPosition, string _title = "")
 	{
 		this.clearItems();
@@ -99,7 +99,7 @@ public class XUiC_PopupMenu : XUiController
 		return this;
 	}
 
-	// Token: 0x0600679F RID: 26527 RVA: 0x00291D0C File Offset: 0x0028FF0C
+	// Token: 0x060067C4 RID: 26564 RVA: 0x00293234 File Offset: 0x00291434
 	public XUiC_PopupMenu AddItem(XUiC_PopupMenuItem.Entry _newMenuItems)
 	{
 		this.menuItems.Add(_newMenuItems);
@@ -107,7 +107,7 @@ public class XUiC_PopupMenu : XUiController
 		return this;
 	}
 
-	// Token: 0x060067A0 RID: 26528 RVA: 0x00291D24 File Offset: 0x0028FF24
+	// Token: 0x060067C5 RID: 26565 RVA: 0x0029324C File Offset: 0x0029144C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearItems()
 	{
@@ -120,7 +120,7 @@ public class XUiC_PopupMenu : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060067A1 RID: 26529 RVA: 0x00291D62 File Offset: 0x0028FF62
+	// Token: 0x060067C6 RID: 26566 RVA: 0x0029328A File Offset: 0x0029148A
 	public XUiC_PopupMenu Show()
 	{
 		this.xui.playerUI.windowManager.Open(this.windowGroup, false);
@@ -128,14 +128,14 @@ public class XUiC_PopupMenu : XUiController
 		return this;
 	}
 
-	// Token: 0x060067A2 RID: 26530 RVA: 0x00291D88 File Offset: 0x0028FF88
+	// Token: 0x060067C7 RID: 26567 RVA: 0x002932B0 File Offset: 0x002914B0
 	public void Close()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 		this.clearItems();
 	}
 
-	// Token: 0x060067A3 RID: 26531 RVA: 0x00291DAC File Offset: 0x0028FFAC
+	// Token: 0x060067C8 RID: 26568 RVA: 0x002932D4 File Offset: 0x002914D4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -188,7 +188,7 @@ public class XUiC_PopupMenu : XUiController
 		}
 	}
 
-	// Token: 0x060067A4 RID: 26532 RVA: 0x00291F7C File Offset: 0x0029017C
+	// Token: 0x060067C9 RID: 26569 RVA: 0x002934A4 File Offset: 0x002916A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void limitPositionToScreenBounds()
 	{
@@ -219,40 +219,40 @@ public class XUiC_PopupMenu : XUiController
 		base.ViewComponent.TryUpdatePosition();
 	}
 
-	// Token: 0x04004FF3 RID: 20467
+	// Token: 0x04005018 RID: 20504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_PopupMenuItem.Entry> menuItems = new List<XUiC_PopupMenuItem.Entry>();
 
-	// Token: 0x04004FF4 RID: 20468
+	// Token: 0x04005019 RID: 20505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i xuiPosition;
 
-	// Token: 0x04004FF5 RID: 20469
+	// Token: 0x0400501A RID: 20506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i offset;
 
-	// Token: 0x04004FF6 RID: 20470
+	// Token: 0x0400501B RID: 20507
 	public bool IsOver;
 
-	// Token: 0x04004FF7 RID: 20471
+	// Token: 0x0400501C RID: 20508
 	[XuiBindComponent("list", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Grid gridView;
 
-	// Token: 0x04004FF8 RID: 20472
+	// Token: 0x0400501D RID: 20509
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_PopupMenuItem[] popupMenuItems;
 
-	// Token: 0x04004FFC RID: 20476
+	// Token: 0x04005021 RID: 20513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string title;
 
-	// Token: 0x04004FFD RID: 20477
+	// Token: 0x04005022 RID: 20514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i gridSize = Vector2i.one;
 
-	// Token: 0x04004FFE RID: 20478
+	// Token: 0x04005023 RID: 20515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool justOpened;
 }

@@ -6,12 +6,12 @@ using Newtonsoft.Json;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x020016B7 RID: 5815
+	// Token: 0x020016D1 RID: 5841
 	[EventTitle("QuestProgression")]
 	public class QuestProgressionEventData : BaseEventData
 	{
-		// Token: 0x17001681 RID: 5761
-		// (get) Token: 0x0600B63F RID: 46655 RVA: 0x0043BD1C File Offset: 0x00439F1C
+		// Token: 0x170016C4 RID: 5828
+		// (get) Token: 0x0600B708 RID: 46856 RVA: 0x0043E544 File Offset: 0x0043C744
 		public override string EventType
 		{
 			get
@@ -20,93 +20,93 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x17001682 RID: 5762
-		// (get) Token: 0x0600B640 RID: 46656 RVA: 0x0043BD23 File Offset: 0x00439F23
-		// (set) Token: 0x0600B641 RID: 46657 RVA: 0x0043BD2B File Offset: 0x00439F2B
+		// Token: 0x170016C5 RID: 5829
+		// (get) Token: 0x0600B709 RID: 46857 RVA: 0x0043E54B File Offset: 0x0043C74B
+		// (set) Token: 0x0600B70A RID: 46858 RVA: 0x0043E553 File Offset: 0x0043C753
 		[JsonProperty(PropertyName = "server_id")]
 		[Description("Server identity")]
 		public string ServerId { get; set; }
 
-		// Token: 0x17001683 RID: 5763
-		// (get) Token: 0x0600B642 RID: 46658 RVA: 0x0043BD34 File Offset: 0x00439F34
-		// (set) Token: 0x0600B643 RID: 46659 RVA: 0x0043BD3C File Offset: 0x00439F3C
+		// Token: 0x170016C6 RID: 5830
+		// (get) Token: 0x0600B70B RID: 46859 RVA: 0x0043E55C File Offset: 0x0043C75C
+		// (set) Token: 0x0600B70C RID: 46860 RVA: 0x0043E564 File Offset: 0x0043C764
 		[JsonProperty(PropertyName = "save_id")]
 		[Description("Save/world identity")]
 		public string SaveId { get; set; }
 
-		// Token: 0x17001684 RID: 5764
-		// (get) Token: 0x0600B644 RID: 46660 RVA: 0x0043BD45 File Offset: 0x00439F45
-		// (set) Token: 0x0600B645 RID: 46661 RVA: 0x0043BD4D File Offset: 0x00439F4D
+		// Token: 0x170016C7 RID: 5831
+		// (get) Token: 0x0600B70D RID: 46861 RVA: 0x0043E56D File Offset: 0x0043C76D
+		// (set) Token: 0x0600B70E RID: 46862 RVA: 0x0043E575 File Offset: 0x0043C775
 		[JsonProperty(PropertyName = "quest_progression_ts")]
 		[DateTimeFormat]
 		public string QuestProgressionTimestamp { get; set; }
 
-		// Token: 0x17001685 RID: 5765
-		// (get) Token: 0x0600B646 RID: 46662 RVA: 0x0043BD56 File Offset: 0x00439F56
-		// (set) Token: 0x0600B647 RID: 46663 RVA: 0x0043BD5E File Offset: 0x00439F5E
+		// Token: 0x170016C8 RID: 5832
+		// (get) Token: 0x0600B70F RID: 46863 RVA: 0x0043E57E File Offset: 0x0043C77E
+		// (set) Token: 0x0600B710 RID: 46864 RVA: 0x0043E586 File Offset: 0x0043C786
 		[JsonProperty(PropertyName = "quest_instance_id")]
 		[Description("Primary join key — unique per accepted instance; identical across quest_started → quest_progression → quest_reward.")]
 		public string QuestInstanceId { get; set; }
 
-		// Token: 0x17001686 RID: 5766
-		// (get) Token: 0x0600B648 RID: 46664 RVA: 0x0043BD67 File Offset: 0x00439F67
-		// (set) Token: 0x0600B649 RID: 46665 RVA: 0x0043BD6F File Offset: 0x00439F6F
+		// Token: 0x170016C9 RID: 5833
+		// (get) Token: 0x0600B711 RID: 46865 RVA: 0x0043E58F File Offset: 0x0043C78F
+		// (set) Token: 0x0600B712 RID: 46866 RVA: 0x0043E597 File Offset: 0x0043C797
 		[JsonProperty(PropertyName = "quest_id")]
 		public string QuestId { get; set; }
 
-		// Token: 0x17001687 RID: 5767
-		// (get) Token: 0x0600B64A RID: 46666 RVA: 0x0043BD78 File Offset: 0x00439F78
-		// (set) Token: 0x0600B64B RID: 46667 RVA: 0x0043BD80 File Offset: 0x00439F80
+		// Token: 0x170016CA RID: 5834
+		// (get) Token: 0x0600B713 RID: 46867 RVA: 0x0043E5A0 File Offset: 0x0043C7A0
+		// (set) Token: 0x0600B714 RID: 46868 RVA: 0x0043E5A8 File Offset: 0x0043C7A8
 		[JsonProperty(PropertyName = "quest_name")]
 		[Description("English localization of the quest name.")]
 		public string QuestName { get; set; }
 
-		// Token: 0x17001688 RID: 5768
-		// (get) Token: 0x0600B64C RID: 46668 RVA: 0x0043BD89 File Offset: 0x00439F89
-		// (set) Token: 0x0600B64D RID: 46669 RVA: 0x0043BD91 File Offset: 0x00439F91
+		// Token: 0x170016CB RID: 5835
+		// (get) Token: 0x0600B715 RID: 46869 RVA: 0x0043E5B1 File Offset: 0x0043C7B1
+		// (set) Token: 0x0600B716 RID: 46870 RVA: 0x0043E5B9 File Offset: 0x0043C7B9
 		[JsonProperty(PropertyName = "quest_group")]
 		public string QuestGroup { get; set; }
 
-		// Token: 0x17001689 RID: 5769
-		// (get) Token: 0x0600B64E RID: 46670 RVA: 0x0043BD9A File Offset: 0x00439F9A
-		// (set) Token: 0x0600B64F RID: 46671 RVA: 0x0043BDA2 File Offset: 0x00439FA2
+		// Token: 0x170016CC RID: 5836
+		// (get) Token: 0x0600B717 RID: 46871 RVA: 0x0043E5C2 File Offset: 0x0043C7C2
+		// (set) Token: 0x0600B718 RID: 46872 RVA: 0x0043E5CA File Offset: 0x0043C7CA
 		[JsonProperty(PropertyName = "quest_category")]
 		[Description("The category of the quest.")]
 		public string QuestCategory { get; set; }
 
-		// Token: 0x1700168A RID: 5770
-		// (get) Token: 0x0600B650 RID: 46672 RVA: 0x0043BDAB File Offset: 0x00439FAB
-		// (set) Token: 0x0600B651 RID: 46673 RVA: 0x0043BDB3 File Offset: 0x00439FB3
+		// Token: 0x170016CD RID: 5837
+		// (get) Token: 0x0600B719 RID: 46873 RVA: 0x0043E5D3 File Offset: 0x0043C7D3
+		// (set) Token: 0x0600B71A RID: 46874 RVA: 0x0043E5DB File Offset: 0x0043C7DB
 		[JsonProperty(PropertyName = "quest_tier")]
 		public int? QuestTier { get; set; }
 
-		// Token: 0x1700168B RID: 5771
-		// (get) Token: 0x0600B652 RID: 46674 RVA: 0x0043BDBC File Offset: 0x00439FBC
-		// (set) Token: 0x0600B653 RID: 46675 RVA: 0x0043BDC4 File Offset: 0x00439FC4
+		// Token: 0x170016CE RID: 5838
+		// (get) Token: 0x0600B71B RID: 46875 RVA: 0x0043E5E4 File Offset: 0x0043C7E4
+		// (set) Token: 0x0600B71C RID: 46876 RVA: 0x0043E5EC File Offset: 0x0043C7EC
 		[JsonProperty(PropertyName = "quest_owner_provider_id")]
 		[KrakenIdTransform("$.quest_owner_provider_id")]
 		[Description("data_provider_user_id of the player who acquired the quest")]
 		public string QuestOwnerProviderId { get; set; }
 
-		// Token: 0x1700168C RID: 5772
-		// (get) Token: 0x0600B654 RID: 46676 RVA: 0x0043BDCD File Offset: 0x00439FCD
-		// (set) Token: 0x0600B655 RID: 46677 RVA: 0x0043BDD5 File Offset: 0x00439FD5
+		// Token: 0x170016CF RID: 5839
+		// (get) Token: 0x0600B71D RID: 46877 RVA: 0x0043E5F5 File Offset: 0x0043C7F5
+		// (set) Token: 0x0600B71E RID: 46878 RVA: 0x0043E5FD File Offset: 0x0043C7FD
 		[JsonProperty(PropertyName = "progress_type")]
 		public string ProgressType { get; set; }
 
-		// Token: 0x1700168D RID: 5773
-		// (get) Token: 0x0600B656 RID: 46678 RVA: 0x0043BDDE File Offset: 0x00439FDE
-		// (set) Token: 0x0600B657 RID: 46679 RVA: 0x0043BDE6 File Offset: 0x00439FE6
+		// Token: 0x170016D0 RID: 5840
+		// (get) Token: 0x0600B71F RID: 46879 RVA: 0x0043E606 File Offset: 0x0043C806
+		// (set) Token: 0x0600B720 RID: 46880 RVA: 0x0043E60E File Offset: 0x0043C80E
 		[JsonProperty(PropertyName = "objective_type")]
 		public string ObjectiveType { get; set; }
 
-		// Token: 0x1700168E RID: 5774
-		// (get) Token: 0x0600B658 RID: 46680 RVA: 0x0043BDEF File Offset: 0x00439FEF
-		// (set) Token: 0x0600B659 RID: 46681 RVA: 0x0043BDF7 File Offset: 0x00439FF7
+		// Token: 0x170016D1 RID: 5841
+		// (get) Token: 0x0600B721 RID: 46881 RVA: 0x0043E617 File Offset: 0x0043C817
+		// (set) Token: 0x0600B722 RID: 46882 RVA: 0x0043E61F File Offset: 0x0043C81F
 		[JsonProperty(PropertyName = "objective_parameters")]
 		public object ObjectiveParameters { get; set; }
 
-		// Token: 0x0600B65A RID: 46682 RVA: 0x0043BE00 File Offset: 0x0043A000
+		// Token: 0x0600B723 RID: 46883 RVA: 0x0043E628 File Offset: 0x0043C828
 		public QuestProgressionEventData(BaseObjective objective)
 		{
 			PersistentPlayerData persistentPlayerData = GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(objective.OwnerQuest.SharedOwnerID) ?? objective.OwnerQuest.OwnerJournal.OwnerPlayer.PersistentPlayerData;
@@ -125,7 +125,7 @@ namespace Services.Analytics.Events
 			this.ObjectiveParameters = objective.ToParametersDictionary();
 		}
 
-		// Token: 0x0600B65B RID: 46683 RVA: 0x0043B40B File Offset: 0x0043960B
+		// Token: 0x0600B724 RID: 46884 RVA: 0x0043D859 File Offset: 0x0043BA59
 		public QuestProgressionEventData()
 		{
 		}

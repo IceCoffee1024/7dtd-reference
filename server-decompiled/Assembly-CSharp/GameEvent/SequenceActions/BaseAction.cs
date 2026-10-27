@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A03 RID: 6659
+	// Token: 0x02001A34 RID: 6708
 	public class BaseAction
 	{
-		// Token: 0x17001953 RID: 6483
-		// (get) Token: 0x0600CB4D RID: 52045 RVA: 0x004A5753 File Offset: 0x004A3953
-		// (set) Token: 0x0600CB4E RID: 52046 RVA: 0x004A575C File Offset: 0x004A395C
+		// Token: 0x1700199B RID: 6555
+		// (get) Token: 0x0600CC61 RID: 52321 RVA: 0x004A924F File Offset: 0x004A744F
+		// (set) Token: 0x0600CC62 RID: 52322 RVA: 0x004A9258 File Offset: 0x004A7458
 		public GameEventActionSequence Owner
 		{
 			get
@@ -31,7 +31,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CB4F RID: 52047 RVA: 0x004A57A0 File Offset: 0x004A39A0
+		// Token: 0x0600CC63 RID: 52323 RVA: 0x004A929C File Offset: 0x004A749C
 		public static BaseAction FindKey(string key)
 		{
 			BaseAction baseAction = null;
@@ -42,7 +42,7 @@ namespace GameEvent.SequenceActions
 			return baseAction;
 		}
 
-		// Token: 0x0600CB50 RID: 52048 RVA: 0x004A57C4 File Offset: 0x004A39C4
+		// Token: 0x0600CC64 RID: 52324 RVA: 0x004A92C0 File Offset: 0x004A74C0
 		public virtual void SetActionKeyData(int _actionIndex, BaseAction _parent, string prefix = "")
 		{
 			if (_parent != null)
@@ -56,14 +56,14 @@ namespace GameEvent.SequenceActions
 			BaseAction.sLookupByKey[this.actionKey] = this;
 		}
 
-		// Token: 0x0600CB51 RID: 52049 RVA: 0x004A5817 File Offset: 0x004A3A17
+		// Token: 0x0600CC65 RID: 52325 RVA: 0x004A9313 File Offset: 0x004A7513
 		public string GetActionKey()
 		{
 			return this.actionKey;
 		}
 
-		// Token: 0x17001954 RID: 6484
-		// (get) Token: 0x0600CB52 RID: 52050 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x1700199C RID: 6556
+		// (get) Token: 0x0600CC66 RID: 52326 RVA: 0x00020119 File Offset: 0x0001E319
 		public virtual bool UseRequirements
 		{
 			get
@@ -72,37 +72,37 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CB53 RID: 52051 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CC67 RID: 52327 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnInit()
 		{
 		}
 
-		// Token: 0x0600CB54 RID: 52052 RVA: 0x004A581F File Offset: 0x004A3A1F
+		// Token: 0x0600CC68 RID: 52328 RVA: 0x004A931B File Offset: 0x004A751B
 		public void Init()
 		{
 			this.OnInit();
 			this.IsComplete = false;
 		}
 
-		// Token: 0x0600CB55 RID: 52053 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600CC69 RID: 52329 RVA: 0x00020119 File Offset: 0x0001E319
 		public virtual bool CanPerform(Entity target)
 		{
 			return true;
 		}
 
-		// Token: 0x0600CB56 RID: 52054 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CC6A RID: 52330 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void OnClientPerform(Entity target)
 		{
 		}
 
-		// Token: 0x0600CB57 RID: 52055 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600CC6B RID: 52331 RVA: 0x00020119 File Offset: 0x0001E319
 		public virtual BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			return BaseAction.ActionCompleteStates.InCompleteRefund;
 		}
 
-		// Token: 0x0600CB58 RID: 52056 RVA: 0x004A5830 File Offset: 0x004A3A30
+		// Token: 0x0600CC6C RID: 52332 RVA: 0x004A932C File Offset: 0x004A752C
 		public BaseAction.ActionCompleteStates PerformAction()
 		{
 			if (this.UseRequirements && this.Requirements != null)
@@ -119,20 +119,20 @@ namespace GameEvent.SequenceActions
 			return this.OnPerformAction();
 		}
 
-		// Token: 0x0600CB59 RID: 52057 RVA: 0x004A58A0 File Offset: 0x004A3AA0
+		// Token: 0x0600CC6D RID: 52333 RVA: 0x004A939C File Offset: 0x004A759C
 		public void Reset()
 		{
 			this.IsComplete = false;
 			this.OnReset();
 		}
 
-		// Token: 0x0600CB5A RID: 52058 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CC6E RID: 52334 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnReset()
 		{
 		}
 
-		// Token: 0x0600CB5B RID: 52059 RVA: 0x004A58B0 File Offset: 0x004A3AB0
+		// Token: 0x0600CC6F RID: 52335 RVA: 0x004A93AC File Offset: 0x004A75AC
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			this.Properties = properties;
@@ -143,7 +143,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(BaseAction.PropIgnoreRefund, ref this.IgnoreRefund);
 		}
 
-		// Token: 0x0600CB5C RID: 52060 RVA: 0x004A5914 File Offset: 0x004A3B14
+		// Token: 0x0600CC70 RID: 52336 RVA: 0x004A9410 File Offset: 0x004A7610
 		public virtual void HandleTemplateInit(GameEventActionSequence seq)
 		{
 			seq.HandleVariablesForProperties(this.Properties);
@@ -167,7 +167,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CB5D RID: 52061 RVA: 0x004A59C9 File Offset: 0x004A3BC9
+		// Token: 0x0600CC71 RID: 52337 RVA: 0x004A94C5 File Offset: 0x004A76C5
 		public void AddRequirement(BaseRequirement req)
 		{
 			if (this.Requirements == null)
@@ -178,7 +178,7 @@ namespace GameEvent.SequenceActions
 			this.Requirements.Add(req);
 		}
 
-		// Token: 0x0600CB5E RID: 52062 RVA: 0x004A59F8 File Offset: 0x004A3BF8
+		// Token: 0x0600CC72 RID: 52338 RVA: 0x004A94F4 File Offset: 0x004A76F4
 		public virtual BaseAction Clone()
 		{
 			BaseAction baseAction = this.CloneChildSettings();
@@ -203,14 +203,14 @@ namespace GameEvent.SequenceActions
 			return baseAction;
 		}
 
-		// Token: 0x0600CB5F RID: 52063 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x0600CC73 RID: 52339 RVA: 0x000200DA File Offset: 0x0001E2DA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual BaseAction CloneChildSettings()
 		{
 			return null;
 		}
 
-		// Token: 0x0600CB60 RID: 52064 RVA: 0x004A5AAA File Offset: 0x004A3CAA
+		// Token: 0x0600CC74 RID: 52340 RVA: 0x004A95A6 File Offset: 0x004A77A6
 		public IEnumerator TeleportEntity(Entity entity, Vector3 position, float teleportDelay)
 		{
 			yield return new WaitForSeconds(teleportDelay);
@@ -239,14 +239,14 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600CB61 RID: 52065 RVA: 0x000149AE File Offset: 0x00012BAE
+		// Token: 0x0600CC75 RID: 52341 RVA: 0x000149AE File Offset: 0x00012BAE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual string ParseTextElement(string element)
 		{
 			return element;
 		}
 
-		// Token: 0x0600CB62 RID: 52066 RVA: 0x004A5AC8 File Offset: 0x004A3CC8
+		// Token: 0x0600CC76 RID: 52342 RVA: 0x004A95C4 File Offset: 0x004A77C4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string GetTextWithElements(string text)
 		{
@@ -281,7 +281,7 @@ namespace GameEvent.SequenceActions
 			return text;
 		}
 
-		// Token: 0x0600CB63 RID: 52067 RVA: 0x004A5BA0 File Offset: 0x004A3DA0
+		// Token: 0x0600CC77 RID: 52343 RVA: 0x004A969C File Offset: 0x004A789C
 		public virtual BaseAction HandleAssignFrom(GameEventActionSequence newSeq, GameEventActionSequence oldSeq)
 		{
 			BaseAction baseAction = this.Clone();
@@ -307,65 +307,65 @@ namespace GameEvent.SequenceActions
 			return baseAction;
 		}
 
-		// Token: 0x04009A08 RID: 39432
+		// Token: 0x04009AF1 RID: 39665
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static Dictionary<string, BaseAction> sLookupByKey = new Dictionary<string, BaseAction>();
 
-		// Token: 0x04009A09 RID: 39433
+		// Token: 0x04009AF2 RID: 39666
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public GameEventActionSequence owner;
 
-		// Token: 0x04009A0A RID: 39434
+		// Token: 0x04009AF3 RID: 39667
 		public int Phase;
 
-		// Token: 0x04009A0B RID: 39435
+		// Token: 0x04009AF4 RID: 39668
 		public int PhaseOnComplete = -1;
 
-		// Token: 0x04009A0C RID: 39436
+		// Token: 0x04009AF5 RID: 39669
 		public int PhaseOnDenied = -1;
 
-		// Token: 0x04009A0D RID: 39437
+		// Token: 0x04009AF6 RID: 39670
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string actionKey = "";
 
-		// Token: 0x04009A0E RID: 39438
+		// Token: 0x04009AF7 RID: 39671
 		public bool IgnoreRefund;
 
-		// Token: 0x04009A0F RID: 39439
+		// Token: 0x04009AF8 RID: 39672
 		public bool IsComplete;
 
-		// Token: 0x04009A10 RID: 39440
+		// Token: 0x04009AF9 RID: 39673
 		public DynamicProperties Properties;
 
-		// Token: 0x04009A11 RID: 39441
+		// Token: 0x04009AFA RID: 39674
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPhase = "phase";
 
-		// Token: 0x04009A12 RID: 39442
+		// Token: 0x04009AFB RID: 39675
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPhaseOnComplete = "phase_on_complete";
 
-		// Token: 0x04009A13 RID: 39443
+		// Token: 0x04009AFC RID: 39676
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPhaseOnDenied = "phase_on_denied";
 
-		// Token: 0x04009A14 RID: 39444
+		// Token: 0x04009AFD RID: 39677
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIgnoreRefund = "ignore_refund";
 
-		// Token: 0x04009A15 RID: 39445
+		// Token: 0x04009AFE RID: 39678
 		public List<BaseRequirement> Requirements;
 
-		// Token: 0x02001A04 RID: 6660
+		// Token: 0x02001A35 RID: 6709
 		public enum ActionCompleteStates
 		{
-			// Token: 0x04009A17 RID: 39447
+			// Token: 0x04009B00 RID: 39680
 			InComplete,
-			// Token: 0x04009A18 RID: 39448
+			// Token: 0x04009B01 RID: 39681
 			InCompleteRefund,
-			// Token: 0x04009A19 RID: 39449
+			// Token: 0x04009B02 RID: 39682
 			RequirementsNotMet,
-			// Token: 0x04009A1A RID: 39450
+			// Token: 0x04009B03 RID: 39683
 			Complete
 		}
 	}

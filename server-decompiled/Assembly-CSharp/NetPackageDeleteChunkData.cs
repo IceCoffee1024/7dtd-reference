@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007CB RID: 1995
+// Token: 0x020007D3 RID: 2003
 [Preserve]
 public class NetPackageDeleteChunkData : NetPackage
 {
-	// Token: 0x06003B3D RID: 15165 RVA: 0x0017E604 File Offset: 0x0017C804
+	// Token: 0x06003B54 RID: 15188 RVA: 0x0017F59C File Offset: 0x0017D79C
 	public NetPackageDeleteChunkData Setup(ICollection<long> _chunkKeys)
 	{
 		this.chunkKeys.Clear();
@@ -15,7 +15,7 @@ public class NetPackageDeleteChunkData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B3E RID: 15166 RVA: 0x0017E634 File Offset: 0x0017C834
+	// Token: 0x06003B55 RID: 15189 RVA: 0x0017F5CC File Offset: 0x0017D7CC
 	public override void read(PooledBinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -26,7 +26,7 @@ public class NetPackageDeleteChunkData : NetPackage
 		}
 	}
 
-	// Token: 0x06003B3F RID: 15167 RVA: 0x0017E670 File Offset: 0x0017C870
+	// Token: 0x06003B56 RID: 15190 RVA: 0x0017F608 File Offset: 0x0017D808
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -37,7 +37,7 @@ public class NetPackageDeleteChunkData : NetPackage
 		}
 	}
 
-	// Token: 0x06003B40 RID: 15168 RVA: 0x0017E6C0 File Offset: 0x0017C8C0
+	// Token: 0x06003B57 RID: 15191 RVA: 0x0017F658 File Offset: 0x0017D858
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -57,8 +57,8 @@ public class NetPackageDeleteChunkData : NetPackage
 		MultiBlockManager.Instance.CullChunklessDataOnClient(this.chunkKeys);
 	}
 
-	// Token: 0x17000648 RID: 1608
-	// (get) Token: 0x06003B41 RID: 15169 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x1700064C RID: 1612
+	// (get) Token: 0x06003B58 RID: 15192 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -67,10 +67,10 @@ public class NetPackageDeleteChunkData : NetPackage
 		}
 	}
 
-	// Token: 0x0400303B RID: 12347
+	// Token: 0x04003057 RID: 12375
 	public List<long> chunkKeys = new List<long>();
 
-	// Token: 0x0400303C RID: 12348
+	// Token: 0x04003058 RID: 12376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 }

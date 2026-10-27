@@ -6,7 +6,7 @@ using Platform;
 // Token: 0x0200012C RID: 300
 public class BlockLimitTracker
 {
-	// Token: 0x060007F0 RID: 2032 RVA: 0x00038150 File Offset: 0x00036350
+	// Token: 0x060007F0 RID: 2032 RVA: 0x00038110 File Offset: 0x00036310
 	public static void Init()
 	{
 		BlockLimitTracker.instance = new BlockLimitTracker();
@@ -16,7 +16,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007F1 RID: 2033 RVA: 0x00038172 File Offset: 0x00036372
+	// Token: 0x060007F1 RID: 2033 RVA: 0x00038132 File Offset: 0x00036332
 	public BlockLimitTracker()
 	{
 		this.poweredBlockTracker = new BlockTracker(10000);
@@ -24,7 +24,7 @@ public class BlockLimitTracker
 		this.clientAmounts = new List<int>();
 	}
 
-	// Token: 0x060007F2 RID: 2034 RVA: 0x000381A8 File Offset: 0x000363A8
+	// Token: 0x060007F2 RID: 2034 RVA: 0x00038168 File Offset: 0x00036368
 	public bool CanAddBlock(BlockValue _blockValue, Vector3i _blockPosition, out eSetBlockResponse _response)
 	{
 		_response = eSetBlockResponse.Success;
@@ -56,7 +56,7 @@ public class BlockLimitTracker
 		return true;
 	}
 
-	// Token: 0x060007F3 RID: 2035 RVA: 0x00038248 File Offset: 0x00036448
+	// Token: 0x060007F3 RID: 2035 RVA: 0x00038208 File Offset: 0x00036408
 	public void TryAddTrackedBlock(BlockValue _blockValue, Vector3i _blockPosition, int _entityId)
 	{
 		if (_entityId == -1)
@@ -109,7 +109,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007F4 RID: 2036 RVA: 0x000383A4 File Offset: 0x000365A4
+	// Token: 0x060007F4 RID: 2036 RVA: 0x00038364 File Offset: 0x00036564
 	public void TryRemoveOrReplaceBlock(BlockValue _oldBlockValue, BlockValue _newBlockValue, Vector3i _blockPosition)
 	{
 		if (_oldBlockValue.Block.isMultiBlock && _oldBlockValue.ischild)
@@ -156,7 +156,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007F5 RID: 2037 RVA: 0x000384E0 File Offset: 0x000366E0
+	// Token: 0x060007F5 RID: 2037 RVA: 0x000384A0 File Offset: 0x000366A0
 	public void ServerUpdateClients()
 	{
 		if (this.clientAmounts.Count == 0 || this.clientAmounts[0] != this.poweredBlockTracker.blockLocations.Count || this.clientAmounts[1] != this.playerStorageTracker.blockLocations.Count)
@@ -168,7 +168,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007F6 RID: 2038 RVA: 0x000385A4 File Offset: 0x000367A4
+	// Token: 0x060007F6 RID: 2038 RVA: 0x00038564 File Offset: 0x00036764
 	public void UpdateClientAmounts(List<int> _amounts)
 	{
 		if (_amounts.Count != 2)
@@ -180,7 +180,7 @@ public class BlockLimitTracker
 		this.playerStorageTracker.clientAmount = _amounts[1];
 	}
 
-	// Token: 0x060007F7 RID: 2039 RVA: 0x000385DE File Offset: 0x000367DE
+	// Token: 0x060007F7 RID: 2039 RVA: 0x0003859E File Offset: 0x0003679E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearAll()
 	{
@@ -188,7 +188,7 @@ public class BlockLimitTracker
 		this.playerStorageTracker.Clear();
 	}
 
-	// Token: 0x060007F8 RID: 2040 RVA: 0x000385F6 File Offset: 0x000367F6
+	// Token: 0x060007F8 RID: 2040 RVA: 0x000385B6 File Offset: 0x000367B6
 	public static void Cleanup()
 	{
 		if (BlockLimitTracker.instance != null)
@@ -199,7 +199,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007F9 RID: 2041 RVA: 0x0003861C File Offset: 0x0003681C
+	// Token: 0x060007F9 RID: 2041 RVA: 0x000385DC File Offset: 0x000367DC
 	public void Load()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "blockLimits.dat");
@@ -235,7 +235,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007FA RID: 2042 RVA: 0x0003873C File Offset: 0x0003693C
+	// Token: 0x060007FA RID: 2042 RVA: 0x000386FC File Offset: 0x000368FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(PooledBinaryReader _reader)
 	{
@@ -249,7 +249,7 @@ public class BlockLimitTracker
 		this.playerStorageTracker.Read(_reader);
 	}
 
-	// Token: 0x060007FB RID: 2043 RVA: 0x00038770 File Offset: 0x00036970
+	// Token: 0x060007FB RID: 2043 RVA: 0x00038730 File Offset: 0x00036930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggerSave()
 	{
@@ -259,7 +259,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007FC RID: 2044 RVA: 0x00038790 File Offset: 0x00036990
+	// Token: 0x060007FC RID: 2044 RVA: 0x00038750 File Offset: 0x00036950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save()
 	{
@@ -275,7 +275,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007FD RID: 2045 RVA: 0x00038828 File Offset: 0x00036A28
+	// Token: 0x060007FD RID: 2045 RVA: 0x000387E8 File Offset: 0x000369E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SaveThread(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -291,7 +291,7 @@ public class BlockLimitTracker
 		return -1;
 	}
 
-	// Token: 0x060007FE RID: 2046 RVA: 0x00038894 File Offset: 0x00036A94
+	// Token: 0x060007FE RID: 2046 RVA: 0x00038854 File Offset: 0x00036A54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(PooledBinaryWriter _writer)
 	{

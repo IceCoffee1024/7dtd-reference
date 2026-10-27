@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000C86 RID: 3206
+// Token: 0x02000C91 RID: 3217
 public class TileEntityPoweredTrigger : TileEntityPowered
 {
-	// Token: 0x17000A0F RID: 2575
-	// (get) Token: 0x0600619C RID: 24988 RVA: 0x0026B807 File Offset: 0x00269A07
-	// (set) Token: 0x0600619D RID: 24989 RVA: 0x0026B81C File Offset: 0x00269A1C
+	// Token: 0x17000A15 RID: 2581
+	// (get) Token: 0x060061C1 RID: 25025 RVA: 0x0026CD2F File Offset: 0x0026AF2F
+	// (set) Token: 0x060061C2 RID: 25026 RVA: 0x0026CD44 File Offset: 0x0026AF44
 	public bool IsTriggered
 	{
 		get
@@ -23,32 +23,32 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x0600619E RID: 24990 RVA: 0x0026B851 File Offset: 0x00269A51
+	// Token: 0x060061C3 RID: 25027 RVA: 0x0026CD79 File Offset: 0x0026AF79
 	public TileEntityPoweredTrigger(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x0600619F RID: 24991 RVA: 0x0026B865 File Offset: 0x00269A65
+	// Token: 0x060061C4 RID: 25028 RVA: 0x0026CD8D File Offset: 0x0026AF8D
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(this.ownerID);
 	}
 
-	// Token: 0x060061A0 RID: 24992 RVA: 0x0026B878 File Offset: 0x00269A78
+	// Token: 0x060061C5 RID: 25029 RVA: 0x0026CDA0 File Offset: 0x0026AFA0
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return this.ownerID;
 	}
 
-	// Token: 0x060061A1 RID: 24993 RVA: 0x0026B880 File Offset: 0x00269A80
+	// Token: 0x060061C6 RID: 25030 RVA: 0x0026CDA8 File Offset: 0x0026AFA8
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.ownerID = _userIdentifier;
 		base.SetModified();
 	}
 
-	// Token: 0x060061A2 RID: 24994 RVA: 0x0026B890 File Offset: 0x00269A90
+	// Token: 0x060061C7 RID: 25031 RVA: 0x0026CDB8 File Offset: 0x0026AFB8
 	public bool Activate(bool activated, bool isOn)
 	{
 		World world = GameManager.Instance.World;
@@ -56,7 +56,7 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		return block.Block.ActivateBlock(world, base.ToWorldPos(), block, isOn, activated);
 	}
 
-	// Token: 0x060061A3 RID: 24995 RVA: 0x0026B8D0 File Offset: 0x00269AD0
+	// Token: 0x060061C8 RID: 25032 RVA: 0x0026CDF8 File Offset: 0x0026AFF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override PowerItem CreatePowerItem()
 	{
@@ -117,7 +117,7 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		};
 	}
 
-	// Token: 0x060061A4 RID: 24996 RVA: 0x0026B9D8 File Offset: 0x00269BD8
+	// Token: 0x060061C9 RID: 25033 RVA: 0x0026CF00 File Offset: 0x0026B100
 	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -190,7 +190,7 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x060061A5 RID: 24997 RVA: 0x0026BB7D File Offset: 0x00269D7D
+	// Token: 0x060061CA RID: 25034 RVA: 0x0026D0A5 File Offset: 0x0026B2A5
 	public void ResetTrigger()
 	{
 		if (this.TriggerType != PowerTrigger.TriggerTypes.TimerRelay)
@@ -205,7 +205,7 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x060061A6 RID: 24998 RVA: 0x0026BBB8 File Offset: 0x00269DB8
+	// Token: 0x060061CB RID: 25035 RVA: 0x0026D0E0 File Offset: 0x0026B2E0
 	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -264,7 +264,7 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x060061A7 RID: 24999 RVA: 0x0026BD4C File Offset: 0x00269F4C
+	// Token: 0x060061CC RID: 25036 RVA: 0x0026D274 File Offset: 0x0026B474
 	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
@@ -278,9 +278,9 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		return true;
 	}
 
-	// Token: 0x17000A10 RID: 2576
-	// (get) Token: 0x060061A8 RID: 25000 RVA: 0x0026BDC4 File Offset: 0x00269FC4
-	// (set) Token: 0x060061A9 RID: 25001 RVA: 0x0026BE14 File Offset: 0x0026A014
+	// Token: 0x17000A16 RID: 2582
+	// (get) Token: 0x060061CD RID: 25037 RVA: 0x0026D2EC File Offset: 0x0026B4EC
+	// (set) Token: 0x060061CE RID: 25038 RVA: 0x0026D33C File Offset: 0x0026B53C
 	public byte Property1
 	{
 		get
@@ -311,9 +311,9 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A11 RID: 2577
-	// (get) Token: 0x060061AA RID: 25002 RVA: 0x0026BE68 File Offset: 0x0026A068
-	// (set) Token: 0x060061AB RID: 25003 RVA: 0x0026BEB8 File Offset: 0x0026A0B8
+	// Token: 0x17000A17 RID: 2583
+	// (get) Token: 0x060061CF RID: 25039 RVA: 0x0026D390 File Offset: 0x0026B590
+	// (set) Token: 0x060061D0 RID: 25040 RVA: 0x0026D3E0 File Offset: 0x0026B5E0
 	public byte Property2
 	{
 		get
@@ -344,9 +344,9 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A12 RID: 2578
-	// (get) Token: 0x060061AC RID: 25004 RVA: 0x0026BF0A File Offset: 0x0026A10A
-	// (set) Token: 0x060061AD RID: 25005 RVA: 0x0026BF34 File Offset: 0x0026A134
+	// Token: 0x17000A18 RID: 2584
+	// (get) Token: 0x060061D1 RID: 25041 RVA: 0x0026D432 File Offset: 0x0026B632
+	// (set) Token: 0x060061D2 RID: 25042 RVA: 0x0026D45C File Offset: 0x0026B65C
 	public int TargetType
 	{
 		get
@@ -368,8 +368,8 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A13 RID: 2579
-	// (get) Token: 0x060061AE RID: 25006 RVA: 0x0026BF60 File Offset: 0x0026A160
+	// Token: 0x17000A19 RID: 2585
+	// (get) Token: 0x060061D3 RID: 25043 RVA: 0x0026D488 File Offset: 0x0026B688
 	public bool ShowTriggerOptions
 	{
 		get
@@ -387,8 +387,8 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A14 RID: 2580
-	// (get) Token: 0x060061AF RID: 25007 RVA: 0x0026BFB4 File Offset: 0x0026A1B4
+	// Token: 0x17000A1A RID: 2586
+	// (get) Token: 0x060061D4 RID: 25044 RVA: 0x0026D4DC File Offset: 0x0026B6DC
 	public bool TargetSelf
 	{
 		get
@@ -397,8 +397,8 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A15 RID: 2581
-	// (get) Token: 0x060061B0 RID: 25008 RVA: 0x0026BFC1 File Offset: 0x0026A1C1
+	// Token: 0x17000A1B RID: 2587
+	// (get) Token: 0x060061D5 RID: 25045 RVA: 0x0026D4E9 File Offset: 0x0026B6E9
 	public bool TargetAllies
 	{
 		get
@@ -407,8 +407,8 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A16 RID: 2582
-	// (get) Token: 0x060061B1 RID: 25009 RVA: 0x0026BFCE File Offset: 0x0026A1CE
+	// Token: 0x17000A1C RID: 2588
+	// (get) Token: 0x060061D6 RID: 25046 RVA: 0x0026D4F6 File Offset: 0x0026B6F6
 	public bool TargetStrangers
 	{
 		get
@@ -417,8 +417,8 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x17000A17 RID: 2583
-	// (get) Token: 0x060061B2 RID: 25010 RVA: 0x0026BFDB File Offset: 0x0026A1DB
+	// Token: 0x17000A1D RID: 2589
+	// (get) Token: 0x060061D7 RID: 25047 RVA: 0x0026D503 File Offset: 0x0026B703
 	public bool TargetZombies
 	{
 		get
@@ -427,45 +427,45 @@ public class TileEntityPoweredTrigger : TileEntityPowered
 		}
 	}
 
-	// Token: 0x060061B3 RID: 25011 RVA: 0x000ED904 File Offset: 0x000EBB04
+	// Token: 0x060061D8 RID: 25048 RVA: 0x000EDD14 File Offset: 0x000EBF14
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Trigger;
 	}
 
-	// Token: 0x04004C75 RID: 19573
+	// Token: 0x04004C9A RID: 19610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C76 RID: 19574
+	// Token: 0x04004C9B RID: 19611
 	public PowerTrigger.TriggerTypes TriggerType;
 
-	// Token: 0x04004C77 RID: 19575
+	// Token: 0x04004C9C RID: 19612
 	public TileEntityPoweredTrigger.ClientTriggerData ClientData = new TileEntityPoweredTrigger.ClientTriggerData();
 
-	// Token: 0x04004C78 RID: 19576
+	// Token: 0x04004C9D RID: 19613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs ownerID;
 
-	// Token: 0x02000C87 RID: 3207
+	// Token: 0x02000C92 RID: 3218
 	public class ClientTriggerData
 	{
-		// Token: 0x04004C79 RID: 19577
+		// Token: 0x04004C9E RID: 19614
 		public byte Property1;
 
-		// Token: 0x04004C7A RID: 19578
+		// Token: 0x04004C9F RID: 19615
 		public byte Property2;
 
-		// Token: 0x04004C7B RID: 19579
+		// Token: 0x04004CA0 RID: 19616
 		public int TargetType = 3;
 
-		// Token: 0x04004C7C RID: 19580
+		// Token: 0x04004CA1 RID: 19617
 		public bool ShowTriggerOptions;
 
-		// Token: 0x04004C7D RID: 19581
+		// Token: 0x04004CA2 RID: 19618
 		public bool ResetTrigger;
 
-		// Token: 0x04004C7E RID: 19582
+		// Token: 0x04004CA3 RID: 19619
 		public bool HasChanges;
 	}
 }

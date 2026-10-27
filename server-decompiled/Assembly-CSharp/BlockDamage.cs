@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockDamage : Block
 {
-	// Token: 0x0600077E RID: 1918 RVA: 0x00035492 File Offset: 0x00033692
+	// Token: 0x0600077E RID: 1918 RVA: 0x00035452 File Offset: 0x00033652
 	public BlockDamage()
 	{
 		this.IsCheckCollideWithEntity = true;
 	}
 
-	// Token: 0x0600077F RID: 1919 RVA: 0x000354A8 File Offset: 0x000336A8
+	// Token: 0x0600077F RID: 1919 RVA: 0x00035468 File Offset: 0x00033668
 	public override void Init()
 	{
 		base.Init();
@@ -37,7 +37,7 @@ public class BlockDamage : Block
 		base.Properties.ParseEnum<EnumDamageTypes>(BlockDamage.PropDamageType, ref this.damageType);
 	}
 
-	// Token: 0x06000780 RID: 1920 RVA: 0x00035570 File Offset: 0x00033770
+	// Token: 0x06000780 RID: 1920 RVA: 0x00035530 File Offset: 0x00033730
 	public override void GetCollisionAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedY, List<Bounds> _result)
 	{
 		base.GetCollisionAABB(_blockValue, _x, _y, _z, _distortedY, _result);
@@ -50,7 +50,7 @@ public class BlockDamage : Block
 		}
 	}
 
-	// Token: 0x06000781 RID: 1921 RVA: 0x000355E7 File Offset: 0x000337E7
+	// Token: 0x06000781 RID: 1921 RVA: 0x000355A7 File Offset: 0x000337A7
 	public override IList<Bounds> GetClipBoundsList(BlockValue _blockValue, Vector3 _blockPos)
 	{
 		Block.staticList_IntersectRayWithBlockList.Clear();
@@ -58,7 +58,7 @@ public class BlockDamage : Block
 		return Block.staticList_IntersectRayWithBlockList;
 	}
 
-	// Token: 0x06000782 RID: 1922 RVA: 0x00035620 File Offset: 0x00033820
+	// Token: 0x06000782 RID: 1922 RVA: 0x000355E0 File Offset: 0x000337E0
 	public override bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _targetEntity)
 	{
 		if (!(_targetEntity is EntityAlive))

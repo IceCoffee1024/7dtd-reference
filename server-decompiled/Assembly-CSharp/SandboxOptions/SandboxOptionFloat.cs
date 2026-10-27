@@ -2,11 +2,11 @@
 
 namespace SandboxOptions
 {
-	// Token: 0x020018C1 RID: 6337
+	// Token: 0x020018F2 RID: 6386
 	public class SandboxOptionFloat : BaseSandboxOption
 	{
-		// Token: 0x1700187F RID: 6271
-		// (get) Token: 0x0600C371 RID: 50033 RVA: 0x0002F260 File Offset: 0x0002D460
+		// Token: 0x170018C7 RID: 6343
+		// (get) Token: 0x0600C485 RID: 50309 RVA: 0x0002F260 File Offset: 0x0002D460
 		public override BaseSandboxOption.OptionTypes OptionType
 		{
 			get
@@ -15,7 +15,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C372 RID: 50034 RVA: 0x0047EEDC File Offset: 0x0047D0DC
+		// Token: 0x0600C486 RID: 50310 RVA: 0x00482888 File Offset: 0x00480A88
 		public SandboxOptionFloat(SandboxOptions option, string optionName, string categoryName, string valueSetName, float defaultValue, bool newUISection = false, SandboxOptionFloat.DisabledOptionsOnValue disabledOptions = null)
 			: base(option, optionName, categoryName, valueSetName, newUISection)
 		{
@@ -23,26 +23,26 @@ namespace SandboxOptions
 			this.DisabledOptions = disabledOptions;
 		}
 
-		// Token: 0x0600C373 RID: 50035 RVA: 0x0047EF06 File Offset: 0x0047D106
+		// Token: 0x0600C487 RID: 50311 RVA: 0x004828B2 File Offset: 0x00480AB2
 		public override float GetFloatValue()
 		{
 			return this.CurrentValue;
 		}
 
-		// Token: 0x0600C374 RID: 50036 RVA: 0x0047EF0E File Offset: 0x0047D10E
+		// Token: 0x0600C488 RID: 50312 RVA: 0x004828BA File Offset: 0x00480ABA
 		public override int GetIntValue()
 		{
 			return (int)(this.CurrentValue * 100f);
 		}
 
-		// Token: 0x0600C375 RID: 50037 RVA: 0x0047EF1D File Offset: 0x0047D11D
+		// Token: 0x0600C489 RID: 50313 RVA: 0x004828C9 File Offset: 0x00480AC9
 		public override object GetValue()
 		{
 			return this.GetFloatValue();
 		}
 
-		// Token: 0x17001880 RID: 6272
-		// (get) Token: 0x0600C376 RID: 50038 RVA: 0x0047EF2A File Offset: 0x0047D12A
+		// Token: 0x170018C8 RID: 6344
+		// (get) Token: 0x0600C48A RID: 50314 RVA: 0x004828D6 File Offset: 0x00480AD6
 		public override string ValueText
 		{
 			get
@@ -51,7 +51,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C377 RID: 50039 RVA: 0x0047EF38 File Offset: 0x0047D138
+		// Token: 0x0600C48B RID: 50315 RVA: 0x004828E4 File Offset: 0x00480AE4
 		public override void SetValue(string value)
 		{
 			float num;
@@ -61,61 +61,61 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C378 RID: 50040 RVA: 0x0047EF65 File Offset: 0x0047D165
+		// Token: 0x0600C48C RID: 50316 RVA: 0x00482911 File Offset: 0x00480B11
 		public override void SetFloat(float value)
 		{
 			this.CurrentValue = value;
 		}
 
-		// Token: 0x0600C379 RID: 50041 RVA: 0x0047EF6E File Offset: 0x0047D16E
+		// Token: 0x0600C48D RID: 50317 RVA: 0x0048291A File Offset: 0x00480B1A
 		public override bool IsChanged()
 		{
 			return this.CurrentValue != this.DefaultValue;
 		}
 
-		// Token: 0x0600C37A RID: 50042 RVA: 0x0047EF81 File Offset: 0x0047D181
+		// Token: 0x0600C48E RID: 50318 RVA: 0x0048292D File Offset: 0x00480B2D
 		public override object GetDefaultValue()
 		{
 			return this.DefaultValue;
 		}
 
-		// Token: 0x0600C37B RID: 50043 RVA: 0x0047EF8E File Offset: 0x0047D18E
+		// Token: 0x0600C48F RID: 50319 RVA: 0x0048293A File Offset: 0x00480B3A
 		public override float GetDefaultFloatValue()
 		{
 			return this.DefaultValue;
 		}
 
-		// Token: 0x0600C37C RID: 50044 RVA: 0x0047EF96 File Offset: 0x0047D196
+		// Token: 0x0600C490 RID: 50320 RVA: 0x00482942 File Offset: 0x00480B42
 		public override int GetDefaultIntValue()
 		{
 			return (int)(this.DefaultValue * 100f);
 		}
 
-		// Token: 0x0600C37D RID: 50045 RVA: 0x0047EFA5 File Offset: 0x0047D1A5
+		// Token: 0x0600C491 RID: 50321 RVA: 0x00482951 File Offset: 0x00480B51
 		public override int GetDefaultIndex()
 		{
 			return base.GetValueSet().GetFloatIndex(this.DefaultValue);
 		}
 
-		// Token: 0x0600C37E RID: 50046 RVA: 0x0047EFB8 File Offset: 0x0047D1B8
+		// Token: 0x0600C492 RID: 50322 RVA: 0x00482964 File Offset: 0x00480B64
 		public override void SetToDefault()
 		{
 			this.CurrentValue = this.DefaultValue;
 		}
 
-		// Token: 0x0600C37F RID: 50047 RVA: 0x0047EFC6 File Offset: 0x0047D1C6
+		// Token: 0x0600C493 RID: 50323 RVA: 0x00482972 File Offset: 0x00480B72
 		public override string GetValueText()
 		{
 			return string.Format("{0} | default:{1}", this.CurrentValue, this.DefaultValue);
 		}
 
-		// Token: 0x0600C380 RID: 50048 RVA: 0x0047EFE8 File Offset: 0x0047D1E8
+		// Token: 0x0600C494 RID: 50324 RVA: 0x00482994 File Offset: 0x00480B94
 		public override int GetValueIndex()
 		{
 			return base.GetValueSet().GetFloatIndex(this.CurrentValue);
 		}
 
-		// Token: 0x0600C381 RID: 50049 RVA: 0x0047EFFC File Offset: 0x0047D1FC
+		// Token: 0x0600C495 RID: 50325 RVA: 0x004829A8 File Offset: 0x00480BA8
 		public override int GetValueIndex(string value)
 		{
 			float num;
@@ -126,7 +126,7 @@ namespace SandboxOptions
 			return base.GetValueSet().GetFloatIndex(this.DefaultValue);
 		}
 
-		// Token: 0x0600C382 RID: 50050 RVA: 0x0047F031 File Offset: 0x0047D231
+		// Token: 0x0600C496 RID: 50326 RVA: 0x004829DD File Offset: 0x00480BDD
 		public override void SetValueFromIndex(int index)
 		{
 			if (!base.GetValueSet().GetFloatValue(index, out this.CurrentValue))
@@ -135,7 +135,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C383 RID: 50051 RVA: 0x0047F053 File Offset: 0x0047D253
+		// Token: 0x0600C497 RID: 50327 RVA: 0x004829FF File Offset: 0x00480BFF
 		public override SandboxOptions[] GetAlwaysShowOptions()
 		{
 			if (this.DisabledOptions == null || !this.DisabledOptions.AlwaysShowValuesOnEnabled)
@@ -145,22 +145,22 @@ namespace SandboxOptions
 			return this.DisabledOptions.DisabledOptions;
 		}
 
-		// Token: 0x04009395 RID: 37781
+		// Token: 0x0400947E RID: 38014
 		public float DefaultValue;
 
-		// Token: 0x04009396 RID: 37782
+		// Token: 0x0400947F RID: 38015
 		public float CurrentValue = 1f;
 
-		// Token: 0x04009397 RID: 37783
+		// Token: 0x04009480 RID: 38016
 		public bool IsPercent;
 
-		// Token: 0x04009398 RID: 37784
+		// Token: 0x04009481 RID: 38017
 		public SandboxOptionFloat.DisabledOptionsOnValue DisabledOptions;
 
-		// Token: 0x020018C2 RID: 6338
+		// Token: 0x020018F3 RID: 6387
 		public class DisabledOptionsOnValue
 		{
-			// Token: 0x0600C384 RID: 50052 RVA: 0x0047F077 File Offset: 0x0047D277
+			// Token: 0x0600C498 RID: 50328 RVA: 0x00482A23 File Offset: 0x00480C23
 			public DisabledOptionsOnValue(SandboxOptions[] options, float value, bool inverted = false, bool alwaysShowValuesOnEnabled = false)
 			{
 				this.DisabledOptions = options;
@@ -169,16 +169,16 @@ namespace SandboxOptions
 				this.AlwaysShowValuesOnEnabled = alwaysShowValuesOnEnabled;
 			}
 
-			// Token: 0x04009399 RID: 37785
+			// Token: 0x04009482 RID: 38018
 			public float Value;
 
-			// Token: 0x0400939A RID: 37786
+			// Token: 0x04009483 RID: 38019
 			public bool Inverted;
 
-			// Token: 0x0400939B RID: 37787
+			// Token: 0x04009484 RID: 38020
 			public SandboxOptions[] DisabledOptions;
 
-			// Token: 0x0400939C RID: 37788
+			// Token: 0x04009485 RID: 38021
 			public bool AlwaysShowValuesOnEnabled;
 		}
 	}

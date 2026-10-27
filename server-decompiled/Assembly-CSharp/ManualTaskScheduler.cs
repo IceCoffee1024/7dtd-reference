@@ -4,17 +4,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using Unity.Profiling;
 
-// Token: 0x02001452 RID: 5202
+// Token: 0x02001464 RID: 5220
 public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 {
-	// Token: 0x0600A316 RID: 41750 RVA: 0x003D1CCE File Offset: 0x003CFECE
+	// Token: 0x0600A36E RID: 41838 RVA: 0x003D40D2 File Offset: 0x003D22D2
 	public ManualTaskScheduler()
 	{
 		this.m_taskCancellationSource = new CancellationTokenSource();
 		this.m_taskFactory = new TaskFactory(this.m_taskCancellationSource.Token, TaskCreationOptions.None, TaskContinuationOptions.None, this);
 	}
 
-	// Token: 0x0600A317 RID: 41751 RVA: 0x003D1D05 File Offset: 0x003CFF05
+	// Token: 0x0600A36F RID: 41839 RVA: 0x003D4109 File Offset: 0x003D2309
 	public void Dispose()
 	{
 		this.m_taskFactory = null;
@@ -26,7 +26,7 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		this.m_taskCancellationSource = null;
 	}
 
-	// Token: 0x0600A318 RID: 41752 RVA: 0x003D1D28 File Offset: 0x003CFF28
+	// Token: 0x0600A370 RID: 41840 RVA: 0x003D412C File Offset: 0x003D232C
 	public void ProcessTasks()
 	{
 		try
@@ -64,8 +64,8 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x17001357 RID: 4951
-	// (get) Token: 0x0600A319 RID: 41753 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17001363 RID: 4963
+	// (get) Token: 0x0600A371 RID: 41841 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int MaximumConcurrencyLevel
 	{
 		get
@@ -74,8 +74,8 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x17001358 RID: 4952
-	// (get) Token: 0x0600A31A RID: 41754 RVA: 0x003D1DC0 File Offset: 0x003CFFC0
+	// Token: 0x17001364 RID: 4964
+	// (get) Token: 0x0600A372 RID: 41842 RVA: 0x003D41C4 File Offset: 0x003D23C4
 	public TaskFactory Factory
 	{
 		get
@@ -84,14 +84,14 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x0600A31B RID: 41755 RVA: 0x003D1DC8 File Offset: 0x003CFFC8
+	// Token: 0x0600A373 RID: 41843 RVA: 0x003D41CC File Offset: 0x003D23CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
 	{
 		return (!taskWasPreviouslyQueued || this.TryDequeue(task)) && base.TryExecuteTask(task);
 	}
 
-	// Token: 0x0600A31C RID: 41756 RVA: 0x003D1DE0 File Offset: 0x003CFFE0
+	// Token: 0x0600A374 RID: 41844 RVA: 0x003D41E4 File Offset: 0x003D23E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void QueueTask(Task task)
 	{
@@ -102,7 +102,7 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x0600A31D RID: 41757 RVA: 0x003D1E28 File Offset: 0x003D0028
+	// Token: 0x0600A375 RID: 41845 RVA: 0x003D422C File Offset: 0x003D242C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryDequeue(Task task)
 	{
@@ -115,7 +115,7 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		return flag2;
 	}
 
-	// Token: 0x0600A31E RID: 41758 RVA: 0x003D1E70 File Offset: 0x003D0070
+	// Token: 0x0600A376 RID: 41846 RVA: 0x003D4274 File Offset: 0x003D2474
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override IEnumerable<Task> GetScheduledTasks()
 	{
@@ -140,27 +140,27 @@ public sealed class ManualTaskScheduler : TaskScheduler, IDisposable
 		return tasks;
 	}
 
-	// Token: 0x04007A6E RID: 31342
+	// Token: 0x04007AAF RID: 31407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ProcessTasksMarker = new ProfilerMarker("ManualTaskScheduler.ProcessTasks");
 
-	// Token: 0x04007A6F RID: 31343
+	// Token: 0x04007AB0 RID: 31408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_TryGetTaskMarker = new ProfilerMarker("ManualTaskScheduler.TryGetTask");
 
-	// Token: 0x04007A70 RID: 31344
+	// Token: 0x04007AB1 RID: 31409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ExecuteTaskMarker = new ProfilerMarker("ManualTaskScheduler.ExecuteTask");
 
-	// Token: 0x04007A71 RID: 31345
+	// Token: 0x04007AB2 RID: 31410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<Task> m_tasks = new LinkedList<Task>();
 
-	// Token: 0x04007A72 RID: 31346
+	// Token: 0x04007AB3 RID: 31411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CancellationTokenSource m_taskCancellationSource;
 
-	// Token: 0x04007A73 RID: 31347
+	// Token: 0x04007AB4 RID: 31412
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TaskFactory m_taskFactory;
 }

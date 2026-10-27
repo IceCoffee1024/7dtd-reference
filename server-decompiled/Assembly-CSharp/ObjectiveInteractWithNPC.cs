@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020009A1 RID: 2465
+// Token: 0x020009AB RID: 2475
 [Preserve]
 public class ObjectiveInteractWithNPC : BaseObjective
 {
-	// Token: 0x06004806 RID: 18438 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004829 RID: 18473 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetupObjective()
 	{
 	}
 
-	// Token: 0x06004807 RID: 18439 RVA: 0x001C50C7 File Offset: 0x001C32C7
+	// Token: 0x0600482A RID: 18474 RVA: 0x001C6173 File Offset: 0x001C4373
 	public override void SetupDisplay()
 	{
 		base.Description = Localization.Get("ObjectiveTalkToTrader_keyword", false, null);
 		this.StatusText = "";
 	}
 
-	// Token: 0x170007C5 RID: 1989
-	// (get) Token: 0x06004808 RID: 18440 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007CB RID: 1995
+	// (get) Token: 0x0600482B RID: 18475 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool PlayObjectiveComplete
 	{
 		get
@@ -29,7 +29,7 @@ public class ObjectiveInteractWithNPC : BaseObjective
 		}
 	}
 
-	// Token: 0x06004809 RID: 18441 RVA: 0x001C50E8 File Offset: 0x001C32E8
+	// Token: 0x0600482C RID: 18476 RVA: 0x001C6194 File Offset: 0x001C4394
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.NPCInteract += this.Current_NPCInteract;
@@ -51,13 +51,13 @@ public class ObjectiveInteractWithNPC : BaseObjective
 		}
 	}
 
-	// Token: 0x0600480A RID: 18442 RVA: 0x001C51E0 File Offset: 0x001C33E0
+	// Token: 0x0600482D RID: 18477 RVA: 0x001C628C File Offset: 0x001C448C
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.NPCInteract -= this.Current_NPCInteract;
 	}
 
-	// Token: 0x0600480B RID: 18443 RVA: 0x001C51F8 File Offset: 0x001C33F8
+	// Token: 0x0600482E RID: 18478 RVA: 0x001C62A4 File Offset: 0x001C44A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_NPCInteract(EntityNPC npc)
 	{
@@ -73,7 +73,7 @@ public class ObjectiveInteractWithNPC : BaseObjective
 		}
 	}
 
-	// Token: 0x0600480C RID: 18444 RVA: 0x001C527C File Offset: 0x001C347C
+	// Token: 0x0600482F RID: 18479 RVA: 0x001C6328 File Offset: 0x001C4528
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -88,7 +88,7 @@ public class ObjectiveInteractWithNPC : BaseObjective
 		}
 	}
 
-	// Token: 0x0600480D RID: 18445 RVA: 0x001C52C0 File Offset: 0x001C34C0
+	// Token: 0x06004830 RID: 18480 RVA: 0x001C636C File Offset: 0x001C456C
 	public override BaseObjective Clone()
 	{
 		ObjectiveInteractWithNPC objectiveInteractWithNPC = new ObjectiveInteractWithNPC();
@@ -97,7 +97,7 @@ public class ObjectiveInteractWithNPC : BaseObjective
 		return objectiveInteractWithNPC;
 	}
 
-	// Token: 0x0600480E RID: 18446 RVA: 0x001C52E7 File Offset: 0x001C34E7
+	// Token: 0x06004831 RID: 18481 RVA: 0x001C6393 File Offset: 0x001C4593
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -107,21 +107,21 @@ public class ObjectiveInteractWithNPC : BaseObjective
 		}
 	}
 
-	// Token: 0x0600480F RID: 18447 RVA: 0x001C5320 File Offset: 0x001C3520
+	// Token: 0x06004832 RID: 18482 RVA: 0x001C63CC File Offset: 0x001C45CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
 		parameters.Add("interacted_npc", this.interactedEntity.npcID);
 	}
 
-	// Token: 0x040039B8 RID: 14776
+	// Token: 0x040039D8 RID: 14808
 	public static string PropUseClosest = "use_closest";
 
-	// Token: 0x040039B9 RID: 14777
+	// Token: 0x040039D9 RID: 14809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useClosest;
 
-	// Token: 0x040039BA RID: 14778
+	// Token: 0x040039DA RID: 14810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityNPC interactedEntity;
 }

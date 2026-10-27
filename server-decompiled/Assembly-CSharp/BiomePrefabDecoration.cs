@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C10 RID: 3088
+// Token: 0x02000C1B RID: 3099
 public class BiomePrefabDecoration
 {
-	// Token: 0x06005DC7 RID: 24007 RVA: 0x00248E3A File Offset: 0x0024703A
+	// Token: 0x06005DEC RID: 24044 RVA: 0x0024A362 File Offset: 0x00248562
 	public BiomePrefabDecoration(string _prefabName, float _prob, bool _isDecorateOnSlopes, int _checkResource = 2147483647)
 	{
 		this.prefabName = _prefabName;
@@ -12,15 +12,15 @@ public class BiomePrefabDecoration
 		this.isDecorateOnSlopes = _isDecorateOnSlopes;
 	}
 
-	// Token: 0x040048BF RID: 18623
+	// Token: 0x040048E4 RID: 18660
 	public string prefabName;
 
-	// Token: 0x040048C0 RID: 18624
+	// Token: 0x040048E5 RID: 18661
 	public float prob;
 
-	// Token: 0x040048C1 RID: 18625
+	// Token: 0x040048E6 RID: 18662
 	public int checkResourceOffsetY;
 
-	// Token: 0x040048C2 RID: 18626
+	// Token: 0x040048E7 RID: 18663
 	public bool isDecorateOnSlopes;
 }

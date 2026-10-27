@@ -2,16 +2,16 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Token: 0x020014C7 RID: 5319
+// Token: 0x020014D9 RID: 5337
 public static class SpanUtils
 {
-	// Token: 0x0600A684 RID: 42628 RVA: 0x003DFAA5 File Offset: 0x003DDCA5
+	// Token: 0x0600A6DC RID: 42716 RVA: 0x003E1EA9 File Offset: 0x003E00A9
 	public static int GetHashCode<[IsUnmanaged] T>(ReadOnlySpan<T> span) where T : struct, ValueType
 	{
 		return SpanUtils.GetHashCodeInternal(MemoryMarshal.Cast<T, byte>(span));
 	}
 
-	// Token: 0x0600A685 RID: 42629 RVA: 0x003DFAB4 File Offset: 0x003DDCB4
+	// Token: 0x0600A6DD RID: 42717 RVA: 0x003E1EB8 File Offset: 0x003E00B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static int GetHashCodeInternal(ReadOnlySpan<byte> span)
 	{
@@ -48,7 +48,7 @@ public static class SpanUtils
 		return num2 * 9176 + num5;
 	}
 
-	// Token: 0x0600A686 RID: 42630 RVA: 0x003DFBB0 File Offset: 0x003DDDB0
+	// Token: 0x0600A6DE RID: 42718 RVA: 0x003E1FB4 File Offset: 0x003E01B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int ConcatAccLength(int length, ref int totalLength)
@@ -57,7 +57,7 @@ public static class SpanUtils
 		return length;
 	}
 
-	// Token: 0x0600A687 RID: 42631 RVA: 0x003DFBBC File Offset: 0x003DDDBC
+	// Token: 0x0600A6DF RID: 42719 RVA: 0x003E1FC0 File Offset: 0x003E01C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void ConcatCopyThenSlice(ref Span<char> dest, [TupleElementNames(new string[] { "ptr", "len" })] ValueTuple<IntPtr, int> src)
@@ -69,7 +69,7 @@ public static class SpanUtils
 		dest = span.Slice(item, span.Length - item);
 	}
 
-	// Token: 0x0600A688 RID: 42632 RVA: 0x003DFC14 File Offset: 0x003DDE14
+	// Token: 0x0600A6E0 RID: 42720 RVA: 0x003E2018 File Offset: 0x003E0218
 	public unsafe static string Concat(StringSpan s0, StringSpan s1)
 	{
 		fixed (char* pinnableReference = s0.AsSpan().GetPinnableReference())
@@ -89,7 +89,7 @@ public static class SpanUtils
 		}
 	}
 
-	// Token: 0x0600A689 RID: 42633 RVA: 0x003DFCB0 File Offset: 0x003DDEB0
+	// Token: 0x0600A6E1 RID: 42721 RVA: 0x003E20B4 File Offset: 0x003E02B4
 	public unsafe static string Concat(StringSpan s0, StringSpan s1, StringSpan s2)
 	{
 		fixed (char* pinnableReference = s0.AsSpan().GetPinnableReference())
@@ -114,7 +114,7 @@ public static class SpanUtils
 		}
 	}
 
-	// Token: 0x0600A68A RID: 42634 RVA: 0x003DFD7C File Offset: 0x003DDF7C
+	// Token: 0x0600A6E2 RID: 42722 RVA: 0x003E2180 File Offset: 0x003E0380
 	public unsafe static string Concat(StringSpan s0, StringSpan s1, StringSpan s2, StringSpan s3)
 	{
 		fixed (char* pinnableReference = s0.AsSpan().GetPinnableReference())
@@ -148,7 +148,7 @@ public static class SpanUtils
 		}
 	}
 
-	// Token: 0x0600A68B RID: 42635 RVA: 0x003DFE78 File Offset: 0x003DE078
+	// Token: 0x0600A6E3 RID: 42723 RVA: 0x003E227C File Offset: 0x003E047C
 	public unsafe static string Concat(StringSpan s0, StringSpan s1, StringSpan s2, StringSpan s3, StringSpan s4)
 	{
 		fixed (char* pinnableReference = s0.AsSpan().GetPinnableReference())

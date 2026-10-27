@@ -5,18 +5,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A6 RID: 6566
+	// Token: 0x020019D7 RID: 6615
 	[Preserve]
 	public class ActionDropHeldItem : ActionBaseItemAction
 	{
-		// Token: 0x0600C9B8 RID: 51640 RVA: 0x0049C718 File Offset: 0x0049A918
+		// Token: 0x0600CACC RID: 51916 RVA: 0x004A0218 File Offset: 0x0049E418
 		public override bool CanPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
 			return entityPlayer != null && !entityPlayer.inventory.holdingItemStack.IsEmpty();
 		}
 
-		// Token: 0x0600C9B9 RID: 51641 RVA: 0x0049C748 File Offset: 0x0049A948
+		// Token: 0x0600CACD RID: 51917 RVA: 0x004A0248 File Offset: 0x0049E448
 		public override void OnClientPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -36,14 +36,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9BA RID: 51642 RVA: 0x0049C805 File Offset: 0x0049AA05
+		// Token: 0x0600CACE RID: 51918 RVA: 0x004A0305 File Offset: 0x0049E505
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionDropHeldItem.PropDropSound, ref this.DropSound);
 		}
 
-		// Token: 0x0600C9BB RID: 51643 RVA: 0x0049C81F File Offset: 0x0049AA1F
+		// Token: 0x0600CACF RID: 51919 RVA: 0x004A031F File Offset: 0x0049E51F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -54,10 +54,10 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400981A RID: 38938
+		// Token: 0x04009903 RID: 39171
 		public string DropSound = "";
 
-		// Token: 0x0400981B RID: 38939
+		// Token: 0x04009904 RID: 39172
 		public static string PropDropSound = "drop_sound";
 	}
 }

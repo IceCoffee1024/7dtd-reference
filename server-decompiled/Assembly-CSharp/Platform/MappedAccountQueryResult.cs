@@ -2,16 +2,16 @@
 
 namespace Platform
 {
-	// Token: 0x02001BEF RID: 7151
+	// Token: 0x02001C20 RID: 7200
 	public enum MappedAccountQueryResult
 	{
-		// Token: 0x0400A1F3 RID: 41459
+		// Token: 0x0400A2DC RID: 41692
 		QueryFailed,
-		// Token: 0x0400A1F4 RID: 41460
+		// Token: 0x0400A2DD RID: 41693
 		MappingNotFound,
-		// Token: 0x0400A1F5 RID: 41461
+		// Token: 0x0400A2DE RID: 41694
 		Success,
-		// Token: 0x0400A1F6 RID: 41462
+		// Token: 0x0400A2DF RID: 41695
 		NotReady
 	}
 }

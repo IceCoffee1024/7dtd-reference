@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020008AB RID: 2219
+// Token: 0x020008B5 RID: 2229
 public class CompanionGroup
 {
-	// Token: 0x170006CE RID: 1742
+	// Token: 0x170006D4 RID: 1748
 	public EntityAlive this[int index]
 	{
 		get
@@ -13,8 +13,8 @@ public class CompanionGroup
 		}
 	}
 
-	// Token: 0x170006CF RID: 1743
-	// (get) Token: 0x06003FE5 RID: 16357 RVA: 0x00192093 File Offset: 0x00190293
+	// Token: 0x170006D5 RID: 1749
+	// (get) Token: 0x06004008 RID: 16392 RVA: 0x0019313B File Offset: 0x0019133B
 	public int Count
 	{
 		get
@@ -23,7 +23,7 @@ public class CompanionGroup
 		}
 	}
 
-	// Token: 0x06003FE6 RID: 16358 RVA: 0x001920A0 File Offset: 0x001902A0
+	// Token: 0x06004009 RID: 16393 RVA: 0x00193148 File Offset: 0x00191348
 	public void Add(EntityAlive entity)
 	{
 		this.MemberList.Add(entity);
@@ -35,7 +35,7 @@ public class CompanionGroup
 		onGroupChanged();
 	}
 
-	// Token: 0x06003FE7 RID: 16359 RVA: 0x001920BE File Offset: 0x001902BE
+	// Token: 0x0600400A RID: 16394 RVA: 0x00193166 File Offset: 0x00191366
 	public void Remove(EntityAlive entity)
 	{
 		this.MemberList.Remove(entity);
@@ -47,16 +47,16 @@ public class CompanionGroup
 		onGroupChanged();
 	}
 
-	// Token: 0x06003FE8 RID: 16360 RVA: 0x001920DD File Offset: 0x001902DD
+	// Token: 0x0600400B RID: 16395 RVA: 0x00193185 File Offset: 0x00191385
 	public int IndexOf(EntityAlive entity)
 	{
 		return this.MemberList.IndexOf(entity);
 	}
 
-	// Token: 0x040033D2 RID: 13266
+	// Token: 0x040033F2 RID: 13298
 	public OnCompanionGroupChanged OnGroupChanged;
 
-	// Token: 0x040033D3 RID: 13267
+	// Token: 0x040033F3 RID: 13299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityAlive> MemberList = new List<EntityAlive>();
 }

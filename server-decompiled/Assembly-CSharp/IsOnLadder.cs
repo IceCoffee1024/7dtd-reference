@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020006AF RID: 1711
+// Token: 0x020006B6 RID: 1718
 [Preserve]
 public class IsOnLadder : TargetedCompareRequirementBase
 {
-	// Token: 0x060035DC RID: 13788 RVA: 0x00162437 File Offset: 0x00160637
+	// Token: 0x060035EA RID: 13802 RVA: 0x0016302B File Offset: 0x0016122B
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -20,7 +20,7 @@ public class IsOnLadder : TargetedCompareRequirementBase
 		return !this.target.IsInElevator();
 	}
 
-	// Token: 0x060035DD RID: 13789 RVA: 0x00162466 File Offset: 0x00160666
+	// Token: 0x060035EB RID: 13803 RVA: 0x0016305A File Offset: 0x0016125A
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Is {0} On Ladder", this.invert ? "NOT " : ""));

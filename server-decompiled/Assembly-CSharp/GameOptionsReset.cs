@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020011F3 RID: 4595
+// Token: 0x02001203 RID: 4611
 public static class GameOptionsReset
 {
-	// Token: 0x060092E6 RID: 37606 RVA: 0x00377158 File Offset: 0x00375358
+	// Token: 0x0600933C RID: 37692 RVA: 0x003792CC File Offset: 0x003774CC
 	public static void Init()
 	{
 		GameOptionsReset.Audio = new GameOptionsReset.AudioGroup();
@@ -22,13 +22,13 @@ public static class GameOptionsReset
 		};
 	}
 
-	// Token: 0x060092E7 RID: 37607 RVA: 0x003771D8 File Offset: 0x003753D8
+	// Token: 0x0600933D RID: 37693 RVA: 0x0037934C File Offset: 0x0037754C
 	public static string GetGroupId(EnumGamePrefs enumGamePref)
 	{
 		return GameOptionsReset.GetGroupId(enumGamePref.ToStringCached<EnumGamePrefs>());
 	}
 
-	// Token: 0x060092E8 RID: 37608 RVA: 0x003771E8 File Offset: 0x003753E8
+	// Token: 0x0600933E RID: 37694 RVA: 0x0037935C File Offset: 0x0037755C
 	public static string GetGroupId(string prefName)
 	{
 		foreach (GameOptionsReset.IGroup group in GameOptionsReset.groups)
@@ -41,7 +41,7 @@ public static class GameOptionsReset
 		return GameOptionsReset.defaultGroupId;
 	}
 
-	// Token: 0x060092E9 RID: 37609 RVA: 0x0037724C File Offset: 0x0037544C
+	// Token: 0x0600933F RID: 37695 RVA: 0x003793C0 File Offset: 0x003775C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PrefType EnumTypeToPrefType(GamePrefs.EnumType enumType)
 	{
@@ -62,7 +62,7 @@ public static class GameOptionsReset
 		}
 	}
 
-	// Token: 0x060092EA RID: 37610 RVA: 0x003772A0 File Offset: 0x003754A0
+	// Token: 0x06009340 RID: 37696 RVA: 0x00379414 File Offset: 0x00377614
 	public static bool TryGetPrefType(EnumGamePrefs enumGamePref, out PrefType prefType)
 	{
 		GamePrefs.EnumType? prefType2 = GamePrefs.GetPrefType(enumGamePref);
@@ -76,13 +76,13 @@ public static class GameOptionsReset
 		return true;
 	}
 
-	// Token: 0x060092EB RID: 37611 RVA: 0x003772E6 File Offset: 0x003754E6
+	// Token: 0x06009341 RID: 37697 RVA: 0x0037945A File Offset: 0x0037765A
 	public static bool NeedsResetGame()
 	{
 		return 13 != GamePrefs.GetInt(EnumGamePrefs.LastGameResetRevision);
 	}
 
-	// Token: 0x060092EC RID: 37612 RVA: 0x003772F8 File Offset: 0x003754F8
+	// Token: 0x06009342 RID: 37698 RVA: 0x0037946C File Offset: 0x0037766C
 	public static void ResetGame(PrefVersionStore versionedPrefs)
 	{
 		GamePrefs.PropertyDecl[] propertyList = GamePrefs.GetPropertyList();
@@ -96,7 +96,7 @@ public static class GameOptionsReset
 		GamePrefs.Set(EnumGamePrefs.LastGameResetRevision, 13);
 	}
 
-	// Token: 0x060092ED RID: 37613 RVA: 0x00377358 File Offset: 0x00375558
+	// Token: 0x06009343 RID: 37699 RVA: 0x003794CC File Offset: 0x003776CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ResetPref(EnumGamePrefs enumGamePref, PrefVersionStore versionedPrefs)
 	{
@@ -108,53 +108,53 @@ public static class GameOptionsReset
 		GamePrefs.SetObject(enumGamePref, @default);
 	}
 
-	// Token: 0x04006C86 RID: 27782
+	// Token: 0x04006C9E RID: 27806
 	public static GameOptionsReset.AudioGroup Audio;
 
-	// Token: 0x04006C87 RID: 27783
+	// Token: 0x04006C9F RID: 27807
 	public static GameOptionsReset.GraphicsGroup Graphics;
 
-	// Token: 0x04006C88 RID: 27784
+	// Token: 0x04006CA0 RID: 27808
 	public static GameOptionsReset.ControlsGroup Controls;
 
-	// Token: 0x04006C89 RID: 27785
+	// Token: 0x04006CA1 RID: 27809
 	public static GameOptionsReset.ControllerGroup Controller;
 
-	// Token: 0x04006C8A RID: 27786
+	// Token: 0x04006CA2 RID: 27810
 	public static GameOptionsReset.BindingsGroup Bindings;
 
-	// Token: 0x04006C8B RID: 27787
+	// Token: 0x04006CA3 RID: 27811
 	public static List<GameOptionsReset.IGroup> groups;
 
-	// Token: 0x04006C8C RID: 27788
+	// Token: 0x04006CA4 RID: 27812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string defaultGroupId = string.Format("DefaultGroup_{0}", 13);
 
-	// Token: 0x020011F4 RID: 4596
+	// Token: 0x02001204 RID: 4612
 	public interface IGroup
 	{
-		// Token: 0x170011B8 RID: 4536
-		// (get) Token: 0x060092EF RID: 37615
+		// Token: 0x170011C3 RID: 4547
+		// (get) Token: 0x06009345 RID: 37701
 		string VersionId { get; }
 
-		// Token: 0x060092F0 RID: 37616
+		// Token: 0x06009346 RID: 37702
 		bool HasPref(string prefName);
 
-		// Token: 0x060092F1 RID: 37617
+		// Token: 0x06009347 RID: 37703
 		bool NeedsReset();
 
-		// Token: 0x060092F2 RID: 37618
+		// Token: 0x06009348 RID: 37704
 		void Reset(PrefVersionStore versionedPrefs);
 	}
 
-	// Token: 0x020011F5 RID: 4597
+	// Token: 0x02001205 RID: 4613
 	public abstract class EnumGamePrefGroup : GameOptionsReset.IGroup
 	{
-		// Token: 0x170011B9 RID: 4537
-		// (get) Token: 0x060092F3 RID: 37619
+		// Token: 0x170011C4 RID: 4548
+		// (get) Token: 0x06009349 RID: 37705
 		public abstract string VersionId { get; }
 
-		// Token: 0x060092F4 RID: 37620 RVA: 0x0037739C File Offset: 0x0037559C
+		// Token: 0x0600934A RID: 37706 RVA: 0x00379510 File Offset: 0x00377710
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EnumGamePrefGroup(params EnumGamePrefs[] enumGamePrefs)
 		{
@@ -164,7 +164,7 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x060092F5 RID: 37621 RVA: 0x003773E0 File Offset: 0x003755E0
+		// Token: 0x0600934B RID: 37707 RVA: 0x00379554 File Offset: 0x00377754
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void AddEnumGamePref(EnumGamePrefs enumGamePref)
 		{
@@ -175,19 +175,19 @@ public static class GameOptionsReset
 			this.PrefNames.Add(enumGamePref.ToStringCached<EnumGamePrefs>());
 		}
 
-		// Token: 0x060092F6 RID: 37622 RVA: 0x00377403 File Offset: 0x00375603
+		// Token: 0x0600934C RID: 37708 RVA: 0x00379577 File Offset: 0x00377777
 		public virtual bool HasPref(string prefName)
 		{
 			return this.PrefNames.Contains(prefName);
 		}
 
-		// Token: 0x060092F7 RID: 37623 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600934D RID: 37709 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool NeedsReset()
 		{
 			return false;
 		}
 
-		// Token: 0x060092F8 RID: 37624 RVA: 0x00377414 File Offset: 0x00375614
+		// Token: 0x0600934E RID: 37710 RVA: 0x00379588 File Offset: 0x00377788
 		public virtual void Reset(PrefVersionStore versionedPrefs)
 		{
 			foreach (EnumGamePrefs enumGamePrefs in this.EnumPrefs)
@@ -196,20 +196,20 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x04006C8D RID: 27789
+		// Token: 0x04006CA5 RID: 27813
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<EnumGamePrefs> EnumPrefs = new HashSet<EnumGamePrefs>();
 
-		// Token: 0x04006C8E RID: 27790
+		// Token: 0x04006CA6 RID: 27814
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<string> PrefNames = new HashSet<string>();
 	}
 
-	// Token: 0x020011F6 RID: 4598
+	// Token: 0x02001206 RID: 4614
 	public class AudioGroup : GameOptionsReset.EnumGamePrefGroup
 	{
-		// Token: 0x170011BA RID: 4538
-		// (get) Token: 0x060092F9 RID: 37625 RVA: 0x00377468 File Offset: 0x00375668
+		// Token: 0x170011C5 RID: 4549
+		// (get) Token: 0x0600934F RID: 37711 RVA: 0x003795DC File Offset: 0x003777DC
 		public override string VersionId
 		{
 			get
@@ -218,7 +218,7 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x060092FA RID: 37626 RVA: 0x0037747B File Offset: 0x0037567B
+		// Token: 0x06009350 RID: 37712 RVA: 0x003795EF File Offset: 0x003777EF
 		public AudioGroup()
 			: base(new EnumGamePrefs[]
 			{
@@ -237,7 +237,7 @@ public static class GameOptionsReset
 		{
 		}
 
-		// Token: 0x060092FB RID: 37627 RVA: 0x00377495 File Offset: 0x00375695
+		// Token: 0x06009351 RID: 37713 RVA: 0x00379609 File Offset: 0x00377809
 		public override void Reset(PrefVersionStore versionedPrefs)
 		{
 			Log.Out("Resetting game options AudioGroup");
@@ -245,11 +245,11 @@ public static class GameOptionsReset
 		}
 	}
 
-	// Token: 0x020011F7 RID: 4599
+	// Token: 0x02001207 RID: 4615
 	public class GraphicsGroup : GameOptionsReset.EnumGamePrefGroup
 	{
-		// Token: 0x170011BB RID: 4539
-		// (get) Token: 0x060092FC RID: 37628 RVA: 0x003774A8 File Offset: 0x003756A8
+		// Token: 0x170011C6 RID: 4550
+		// (get) Token: 0x06009352 RID: 37714 RVA: 0x0037961C File Offset: 0x0037781C
 		public override string VersionId
 		{
 			get
@@ -258,7 +258,7 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x060092FD RID: 37629 RVA: 0x003774C4 File Offset: 0x003756C4
+		// Token: 0x06009353 RID: 37715 RVA: 0x00379638 File Offset: 0x00377838
 		public GraphicsGroup()
 			: base(new EnumGamePrefs[]
 			{
@@ -282,13 +282,13 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x060092FE RID: 37630 RVA: 0x00377540 File Offset: 0x00375740
+		// Token: 0x06009354 RID: 37716 RVA: 0x003796B4 File Offset: 0x003778B4
 		public override bool NeedsReset()
 		{
 			return 4 != GamePrefs.GetInt(EnumGamePrefs.OptionsGfxResetRevision);
 		}
 
-		// Token: 0x060092FF RID: 37631 RVA: 0x00377550 File Offset: 0x00375750
+		// Token: 0x06009355 RID: 37717 RVA: 0x003796C4 File Offset: 0x003778C4
 		public override void Reset(PrefVersionStore versionedPrefs)
 		{
 			Log.Out("Resetting game options GraphicsGroup");
@@ -300,11 +300,11 @@ public static class GameOptionsReset
 		}
 	}
 
-	// Token: 0x020011F8 RID: 4600
+	// Token: 0x02001208 RID: 4616
 	public class ControlsGroup : GameOptionsReset.EnumGamePrefGroup
 	{
-		// Token: 0x170011BC RID: 4540
-		// (get) Token: 0x06009300 RID: 37632 RVA: 0x0037758C File Offset: 0x0037578C
+		// Token: 0x170011C7 RID: 4551
+		// (get) Token: 0x06009356 RID: 37718 RVA: 0x00379700 File Offset: 0x00377900
 		public override string VersionId
 		{
 			get
@@ -313,7 +313,7 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x06009301 RID: 37633 RVA: 0x003775A5 File Offset: 0x003757A5
+		// Token: 0x06009357 RID: 37719 RVA: 0x00379719 File Offset: 0x00377919
 		public ControlsGroup()
 			: base(new EnumGamePrefs[]
 			{
@@ -327,13 +327,13 @@ public static class GameOptionsReset
 		{
 		}
 
-		// Token: 0x06009302 RID: 37634 RVA: 0x003775BE File Offset: 0x003757BE
+		// Token: 0x06009358 RID: 37720 RVA: 0x00379732 File Offset: 0x00377932
 		public override bool NeedsReset()
 		{
 			return 7 != GamePrefs.GetInt(EnumGamePrefs.OptionsControlsResetRevision);
 		}
 
-		// Token: 0x06009303 RID: 37635 RVA: 0x003775D0 File Offset: 0x003757D0
+		// Token: 0x06009359 RID: 37721 RVA: 0x00379744 File Offset: 0x00377944
 		public override void Reset(PrefVersionStore versionedPrefs)
 		{
 			Log.Out("Resetting game options ControlsGroup");
@@ -342,11 +342,11 @@ public static class GameOptionsReset
 		}
 	}
 
-	// Token: 0x020011F9 RID: 4601
+	// Token: 0x02001209 RID: 4617
 	public class ControllerGroup : GameOptionsReset.EnumGamePrefGroup
 	{
-		// Token: 0x170011BD RID: 4541
-		// (get) Token: 0x06009304 RID: 37636 RVA: 0x003775EE File Offset: 0x003757EE
+		// Token: 0x170011C8 RID: 4552
+		// (get) Token: 0x0600935A RID: 37722 RVA: 0x00379762 File Offset: 0x00377962
 		public override string VersionId
 		{
 			get
@@ -355,7 +355,7 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x06009305 RID: 37637 RVA: 0x00377601 File Offset: 0x00375801
+		// Token: 0x0600935B RID: 37723 RVA: 0x00379775 File Offset: 0x00377975
 		public ControllerGroup()
 			: base(new EnumGamePrefs[]
 			{
@@ -382,7 +382,7 @@ public static class GameOptionsReset
 		{
 		}
 
-		// Token: 0x06009306 RID: 37638 RVA: 0x0037761B File Offset: 0x0037581B
+		// Token: 0x0600935C RID: 37724 RVA: 0x0037978F File Offset: 0x0037798F
 		public override void Reset(PrefVersionStore versionedPrefs)
 		{
 			Log.Out("Resetting game options ControllerGroup");
@@ -390,11 +390,11 @@ public static class GameOptionsReset
 		}
 	}
 
-	// Token: 0x020011FA RID: 4602
+	// Token: 0x0200120A RID: 4618
 	public class BindingsGroup : GameOptionsReset.IGroup
 	{
-		// Token: 0x170011BE RID: 4542
-		// (get) Token: 0x06009307 RID: 37639 RVA: 0x0037762E File Offset: 0x0037582E
+		// Token: 0x170011C9 RID: 4553
+		// (get) Token: 0x0600935D RID: 37725 RVA: 0x003797A2 File Offset: 0x003779A2
 		public string VersionId
 		{
 			get
@@ -403,7 +403,7 @@ public static class GameOptionsReset
 			}
 		}
 
-		// Token: 0x06009308 RID: 37640 RVA: 0x00377648 File Offset: 0x00375848
+		// Token: 0x0600935E RID: 37726 RVA: 0x003797BC File Offset: 0x003779BC
 		public bool HasPref(string prefName)
 		{
 			if (prefName.Equals("Controls"))
@@ -429,13 +429,13 @@ public static class GameOptionsReset
 			return false;
 		}
 
-		// Token: 0x06009309 RID: 37641 RVA: 0x003776D0 File Offset: 0x003758D0
+		// Token: 0x0600935F RID: 37727 RVA: 0x00379844 File Offset: 0x00377A44
 		public bool NeedsReset()
 		{
 			return 1 != GamePrefs.GetInt(EnumGamePrefs.OptionsBindingsResetRevision);
 		}
 
-		// Token: 0x0600930A RID: 37642 RVA: 0x003776E4 File Offset: 0x003758E4
+		// Token: 0x06009360 RID: 37728 RVA: 0x00379858 File Offset: 0x00377A58
 		public void Reset(PrefVersionStore versionedPrefs)
 		{
 			Log.Out("Resetting game options BindingsGroup");

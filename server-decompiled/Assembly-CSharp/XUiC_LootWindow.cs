@@ -7,12 +7,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8C RID: 3980
+// Token: 0x02000F9C RID: 3996
 [Preserve]
 public class XUiC_LootWindow : XUiController
 {
-	// Token: 0x17000ED2 RID: 3794
-	// (get) Token: 0x06007D30 RID: 32048 RVA: 0x002F7B6D File Offset: 0x002F5D6D
+	// Token: 0x17000EDE RID: 3806
+	// (get) Token: 0x06007D80 RID: 32128 RVA: 0x002F97E7 File Offset: 0x002F79E7
 	public int ContainerSlotsCount
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -22,42 +22,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000ED3 RID: 3795
-	// (get) Token: 0x06007D31 RID: 32049 RVA: 0x002F7B86 File Offset: 0x002F5D86
-	// (set) Token: 0x06007D32 RID: 32050 RVA: 0x002F7B90 File Offset: 0x002F5D90
-	public bool UserLockMode
-	{
-		[PublicizedFrom(EAccessModifier.Private)]
-		get
-		{
-			return this.userLockMode;
-		}
-		[PublicizedFrom(EAccessModifier.Private)]
-		set
-		{
-			if (value == this.userLockMode)
-			{
-				return;
-			}
-			if (this.userLockMode)
-			{
-				this.UpdateLockedSlots(this.standardControls);
-			}
-			XUiC_ContainerStandardControls xuiC_ContainerStandardControls = this.standardControls;
-			if (xuiC_ContainerStandardControls != null)
-			{
-				xuiC_ContainerStandardControls.LockModeChanged(value);
-			}
-			this.userLockMode = value;
-			base.WindowGroup.isEscClosable = !this.userLockMode;
-			MicroStopwatch microStopwatch = new MicroStopwatch(true);
-			base.RefreshBindings();
-			microStopwatch.Stop();
-			Log.Warning(string.Format("ZZZ LootWindow.RefreshBindings took {0} us", microStopwatch.ElapsedMicroseconds));
-		}
-	}
-
-	// Token: 0x06007D33 RID: 32051 RVA: 0x002F7C18 File Offset: 0x002F5E18
+	// Token: 0x06007D81 RID: 32129 RVA: 0x002F9800 File Offset: 0x002F7A00
 	public override void Init()
 	{
 		base.Init();
@@ -74,10 +39,13 @@ public class XUiC_LootWindow : XUiController
 				}
 			};
 			this.standardControls.ApplyLockedSlotStates = new Action<PackedBoolArray>(this.ApplyLockedSlotStates);
-			this.standardControls.UpdateLockedSlotStates = new Action<XUiC_ContainerStandardControls>(this.UpdateLockedSlots);
-			this.standardControls.LockModeToggled = delegate
+			this.standardControls.LockModeToggled = delegate(bool _)
 			{
-				this.UserLockMode = !this.UserLockMode;
+				this.IsDirty = true;
+			};
+			this.standardControls.SearchFiltersChanged = delegate(XUiC_ContainerStandardControls.MatchesFiltersDelegate filter)
+			{
+				this.lootContainer.MatchesFiltersFunc = filter;
 			};
 			this.standardControls.SortPressed = delegate(PackedBoolArray _)
 			{
@@ -106,7 +74,7 @@ public class XUiC_LootWindow : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06007D34 RID: 32052 RVA: 0x002F7D0C File Offset: 0x002F5F0C
+	// Token: 0x06007D82 RID: 32130 RVA: 0x002F98F4 File Offset: 0x002F7AF4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -114,7 +82,7 @@ public class XUiC_LootWindow : XUiController
 		{
 			this.wasReleased = true;
 		}
-		if (this.wasReleased)
+		if (this.wasReleased && !this.xui.playerUI.windowManager.IsInputActive())
 		{
 			if (this.xui.playerUI.playerInput.PermanentActions.Activate.IsPressed)
 			{
@@ -144,14 +112,10 @@ public class XUiC_LootWindow : XUiController
 		{
 			this.standardControls.MoveAll();
 		}
-		PlayerActionsLocal playerInput = this.xui.playerUI.playerInput;
-		if (this.UserLockMode && (playerInput.GUIActions.Cancel.WasPressed || playerInput.PermanentActions.Cancel.WasPressed))
-		{
-			this.UserLockMode = false;
-		}
+		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06007D35 RID: 32053 RVA: 0x002F7F30 File Offset: 0x002F6130
+	// Token: 0x06007D83 RID: 32131 RVA: 0x002F9AF4 File Offset: 0x002F7CF4
 	public void SetTileEntityChest(string _lootContainerName, TEFeatureStorage _te, bool _playOpenSound = true)
 	{
 		this.te = _te;
@@ -178,7 +142,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007D36 RID: 32054 RVA: 0x002F7FFC File Offset: 0x002F61FC
+	// Token: 0x06007D84 RID: 32132 RVA: 0x002F9BC0 File Offset: 0x002F7DC0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -196,12 +160,11 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007D37 RID: 32055 RVA: 0x002F80BC File Offset: 0x002F62BC
+	// Token: 0x06007D85 RID: 32133 RVA: 0x002F9C80 File Offset: 0x002F7E80
 	public override void OnClose()
 	{
 		this.wasReleased = false;
 		this.activeKeyDown = false;
-		this.UserLockMode = false;
 		EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
 		entityPlayer.MinEventContext.TileEntity = this.te;
 		entityPlayer.MinEventContext.BlockValue = this.te.blockValue;
@@ -218,7 +181,7 @@ public class XUiC_LootWindow : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x06007D38 RID: 32056 RVA: 0x002F8180 File Offset: 0x002F6380
+	// Token: 0x06007D86 RID: 32134 RVA: 0x002F9D3C File Offset: 0x002F7F3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playSound(string _soundName)
 	{
@@ -229,7 +192,7 @@ public class XUiC_LootWindow : XUiController
 		Manager.BroadcastPlayByLocalPlayer(this.te.ToWorldPos().ToVector3() + Vector3.one * 0.5f, _soundName);
 	}
 
-	// Token: 0x06007D39 RID: 32057 RVA: 0x002F81BE File Offset: 0x002F63BE
+	// Token: 0x06007D87 RID: 32135 RVA: 0x002F9D7A File Offset: 0x002F7F7A
 	public PreferenceTracker GetPreferenceTrackerFromTileEntity()
 	{
 		TEFeatureStorage tefeatureStorage = this.te;
@@ -240,7 +203,7 @@ public class XUiC_LootWindow : XUiController
 		return tefeatureStorage.ItemGrid.Preferences;
 	}
 
-	// Token: 0x06007D3A RID: 32058 RVA: 0x002F81D6 File Offset: 0x002F63D6
+	// Token: 0x06007D88 RID: 32136 RVA: 0x002F9D92 File Offset: 0x002F7F92
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeInventoryLater()
 	{
@@ -251,7 +214,7 @@ public class XUiC_LootWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06007D3B RID: 32059 RVA: 0x002F81E5 File Offset: 0x002F63E5
+	// Token: 0x06007D89 RID: 32137 RVA: 0x002F9DA1 File Offset: 0x002F7FA1
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "window_grid_width_difference")
@@ -262,86 +225,53 @@ public class XUiC_LootWindow : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x06007D3C RID: 32060 RVA: 0x002F8210 File Offset: 0x002F6410
+	// Token: 0x06007D8A RID: 32138 RVA: 0x002F9DCC File Offset: 0x002F7FCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
-		uint num = <PrivateImplementationDetails>.ComputeStringHash(_bindingName);
-		if (num <= 775821220U)
+		if (_bindingName == "windowWidth")
 		{
-			if (num != 58930246U)
-			{
-				if (num != 610671175U)
-				{
-					if (num == 775821220U)
-					{
-						if (_bindingName == "lootcontainer_name")
-						{
-							_value = ((!string.IsNullOrEmpty(this.lootContainerName)) ? this.lootContainerName : Localization.Get("xuiLoot", false, null));
-							return true;
-						}
-					}
-				}
-				else if (_bindingName == "windowWidth")
-				{
-					_value = this.windowWidth.ToString();
-					return true;
-				}
-			}
-			else if (_bindingName == "container_slots")
-			{
-				_value = this.ContainerSlotsCount.ToString();
-				return true;
-			}
-		}
-		else if (num <= 1899514017U)
-		{
-			if (num != 1249315359U)
-			{
-				if (num == 1899514017U)
-				{
-					if (_bindingName == "hasslotlocks")
-					{
-						TEFeatureStorage tefeatureStorage = this.te;
-						_value = (((tefeatureStorage != null) ? tefeatureStorage.ItemGrid.SlotLocks : null) != null).ToString();
-						return true;
-					}
-				}
-			}
-			else if (_bindingName == "buttons_visible")
-			{
-				_value = (this.windowWidth >= 450).ToString();
-				return true;
-			}
-		}
-		else if (num != 2305669482U)
-		{
-			if (num == 4041168338U)
-			{
-				if (_bindingName == "take_all_tooltip")
-				{
-					if (base.CurrentInputStyle == PlayerInputManager.InputStyle.Keyboard)
-					{
-						_value = string.Format(Localization.Get("xuiLootTakeAllTooltip", false, null), "[action:permanent:Reload:emptystring:KeyboardWithAngleBrackets]");
-					}
-					else
-					{
-						_value = string.Format(Localization.Get("xuiLootTakeAllTooltip", false, null), this.xui.playerUI.playerInput.GUIActions.LeftStick.GetBindingString(true, PlatformManager.NativePlatform.Input.CurrentControllerInputStyle, XUiUtils.EmptyBindingStyle.LocalizedNone, XUiUtils.DisplayStyle.Plain, false, null));
-					}
-					return true;
-				}
-			}
-		}
-		else if (_bindingName == "userlockmode")
-		{
-			_value = this.UserLockMode.ToString();
+			_value = this.windowWidth.ToString();
 			return true;
 		}
-		return base.GetBindingValueInternal(ref _value, _bindingName);
+		if (_bindingName == "lootcontainer_name")
+		{
+			_value = ((!string.IsNullOrEmpty(this.lootContainerName)) ? this.lootContainerName : Localization.Get("xuiLoot", false, null));
+			return true;
+		}
+		if (_bindingName == "take_all_tooltip")
+		{
+			if (base.CurrentInputStyle == PlayerInputManager.InputStyle.Keyboard)
+			{
+				_value = string.Format(Localization.Get("xuiLootTakeAllTooltip", false, null), "[action:permanent:Reload:emptystring:KeyboardWithAngleBrackets]");
+			}
+			else
+			{
+				_value = string.Format(Localization.Get("xuiLootTakeAllTooltip", false, null), this.xui.playerUI.playerInput.GUIActions.LeftStick.GetBindingString(true, PlatformManager.NativePlatform.Input.CurrentControllerInputStyle, XUiUtils.EmptyBindingStyle.LocalizedNone, XUiUtils.DisplayStyle.Plain, false, null));
+			}
+			return true;
+		}
+		if (_bindingName == "buttons_visible")
+		{
+			_value = (this.windowWidth >= 450).ToString();
+			return true;
+		}
+		if (_bindingName == "container_slots")
+		{
+			_value = this.ContainerSlotsCount.ToString();
+			return true;
+		}
+		if (!(_bindingName == "hasslotlocks"))
+		{
+			return base.GetBindingValueInternal(ref _value, _bindingName);
+		}
+		TEFeatureStorage tefeatureStorage = this.te;
+		_value = (((tefeatureStorage != null) ? tefeatureStorage.ItemGrid.SlotLocks : null) != null).ToString();
+		return true;
 	}
 
-	// Token: 0x17000ED4 RID: 3796
-	// (get) Token: 0x06007D3D RID: 32061 RVA: 0x002F841E File Offset: 0x002F661E
+	// Token: 0x17000EDF RID: 3807
+	// (get) Token: 0x06007D8B RID: 32139 RVA: 0x002F9F30 File Offset: 0x002F8130
 	[XuiXmlBinding("gridDimensions")]
 	public Vector2i GridDimensions
 	{
@@ -351,15 +281,16 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007D3E RID: 32062 RVA: 0x002F8426 File Offset: 0x002F6626
+	// Token: 0x06007D8C RID: 32140 RVA: 0x002F9F38 File Offset: 0x002F8138
 	[XuiXmlBinding("userlockmode")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bindingUserLockMode()
 	{
-		return this.UserLockMode;
+		XUiC_ContainerStandardControls xuiC_ContainerStandardControls = this.standardControls;
+		return xuiC_ContainerStandardControls != null && xuiC_ContainerStandardControls.UserLockMode;
 	}
 
-	// Token: 0x06007D3F RID: 32063 RVA: 0x002F842E File Offset: 0x002F662E
+	// Token: 0x06007D8D RID: 32141 RVA: 0x002F9F4B File Offset: 0x002F814B
 	[XuiXmlBinding("container_slots")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bindingContainerSlots()
@@ -367,7 +298,7 @@ public class XUiC_LootWindow : XUiController
 		return this.ContainerSlotsCount;
 	}
 
-	// Token: 0x06007D40 RID: 32064 RVA: 0x002F8438 File Offset: 0x002F6638
+	// Token: 0x06007D8E RID: 32142 RVA: 0x002F9F54 File Offset: 0x002F8154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLockedSlotStates(PackedBoolArray _lockedSlots)
 	{
@@ -378,7 +309,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007D41 RID: 32065 RVA: 0x002F8480 File Offset: 0x002F6680
+	// Token: 0x06007D8F RID: 32143 RVA: 0x002F9F9C File Offset: 0x002F819C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLockedSlots(XUiC_ContainerStandardControls _csc)
 	{
@@ -402,51 +333,51 @@ public class XUiC_LootWindow : XUiController
 		_csc.LockedSlots = packedBoolArray;
 	}
 
-	// Token: 0x04005CD8 RID: 23768
+	// Token: 0x04005D13 RID: 23827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureStorage te;
 
-	// Token: 0x04005CD9 RID: 23769
+	// Token: 0x04005D14 RID: 23828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_LootContainer lootContainer;
 
-	// Token: 0x04005CDA RID: 23770
+	// Token: 0x04005D15 RID: 23829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool userLockMode;
 
-	// Token: 0x04005CDB RID: 23771
+	// Token: 0x04005D16 RID: 23830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls standardControls;
 
-	// Token: 0x04005CDC RID: 23772
+	// Token: 0x04005D17 RID: 23831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lootContainerName;
 
-	// Token: 0x04005CDD RID: 23773
+	// Token: 0x04005D18 RID: 23832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i containerSlotsSize;
 
-	// Token: 0x04005CDE RID: 23774
+	// Token: 0x04005D19 RID: 23833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowWidth;
 
-	// Token: 0x04005CDF RID: 23775
+	// Token: 0x04005D1A RID: 23834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowGridWidthDifference;
 
-	// Token: 0x04005CE0 RID: 23776
+	// Token: 0x04005D1B RID: 23835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool playOpenSound;
 
-	// Token: 0x04005CE1 RID: 23777
+	// Token: 0x04005D1C RID: 23836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClosing;
 
-	// Token: 0x04005CE2 RID: 23778
+	// Token: 0x04005D1D RID: 23837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005CE3 RID: 23779
+	// Token: 0x04005D1E RID: 23838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

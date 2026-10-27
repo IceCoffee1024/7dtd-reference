@@ -2,16 +2,16 @@
 
 namespace SharpEXR
 {
-	// Token: 0x02001703 RID: 5891
+	// Token: 0x02001722 RID: 5922
 	public enum PartType
 	{
-		// Token: 0x04008970 RID: 35184
+		// Token: 0x04008A23 RID: 35363
 		ScanLine,
-		// Token: 0x04008971 RID: 35185
+		// Token: 0x04008A24 RID: 35364
 		Tiled,
-		// Token: 0x04008972 RID: 35186
+		// Token: 0x04008A25 RID: 35365
 		DeepScanLine,
-		// Token: 0x04008973 RID: 35187
+		// Token: 0x04008A26 RID: 35366
 		DeepTile
 	}
 }

@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EE2 RID: 3810
+// Token: 0x02000EED RID: 3821
 [Preserve]
 public class XUiC_CategoryEntry : XUiController
 {
-	// Token: 0x17000E19 RID: 3609
-	// (get) Token: 0x060076DF RID: 30431 RVA: 0x002CD500 File Offset: 0x002CB700
-	// (set) Token: 0x060076E0 RID: 30432 RVA: 0x002CD508 File Offset: 0x002CB708
+	// Token: 0x17000E1D RID: 3613
+	// (get) Token: 0x06007704 RID: 30468 RVA: 0x002CE9BC File Offset: 0x002CCBBC
+	// (set) Token: 0x06007705 RID: 30469 RVA: 0x002CE9C4 File Offset: 0x002CCBC4
 	public XUiC_CategoryList CategoryList { get; set; }
 
-	// Token: 0x17000E1A RID: 3610
-	// (get) Token: 0x060076E1 RID: 30433 RVA: 0x002CD511 File Offset: 0x002CB711
-	// (set) Token: 0x060076E2 RID: 30434 RVA: 0x002CD519 File Offset: 0x002CB719
+	// Token: 0x17000E1E RID: 3614
+	// (get) Token: 0x06007706 RID: 30470 RVA: 0x002CE9CD File Offset: 0x002CCBCD
+	// (set) Token: 0x06007707 RID: 30471 RVA: 0x002CE9D5 File Offset: 0x002CCBD5
 	public string CategoryName
 	{
 		get
@@ -26,9 +26,9 @@ public class XUiC_CategoryEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E1B RID: 3611
-	// (get) Token: 0x060076E3 RID: 30435 RVA: 0x002CD529 File Offset: 0x002CB729
-	// (set) Token: 0x060076E4 RID: 30436 RVA: 0x002CD531 File Offset: 0x002CB731
+	// Token: 0x17000E1F RID: 3615
+	// (get) Token: 0x06007708 RID: 30472 RVA: 0x002CE9E5 File Offset: 0x002CCBE5
+	// (set) Token: 0x06007709 RID: 30473 RVA: 0x002CE9ED File Offset: 0x002CCBED
 	public string CategoryDisplayName
 	{
 		get
@@ -42,9 +42,9 @@ public class XUiC_CategoryEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E1C RID: 3612
-	// (get) Token: 0x060076E5 RID: 30437 RVA: 0x002CD541 File Offset: 0x002CB741
-	// (set) Token: 0x060076E6 RID: 30438 RVA: 0x002CD549 File Offset: 0x002CB749
+	// Token: 0x17000E20 RID: 3616
+	// (get) Token: 0x0600770A RID: 30474 RVA: 0x002CE9FD File Offset: 0x002CCBFD
+	// (set) Token: 0x0600770B RID: 30475 RVA: 0x002CEA05 File Offset: 0x002CCC05
 	public string SpriteName
 	{
 		get
@@ -58,9 +58,9 @@ public class XUiC_CategoryEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E1D RID: 3613
-	// (get) Token: 0x060076E7 RID: 30439 RVA: 0x002CD559 File Offset: 0x002CB759
-	// (set) Token: 0x060076E8 RID: 30440 RVA: 0x002CD561 File Offset: 0x002CB761
+	// Token: 0x17000E21 RID: 3617
+	// (get) Token: 0x0600770C RID: 30476 RVA: 0x002CEA15 File Offset: 0x002CCC15
+	// (set) Token: 0x0600770D RID: 30477 RVA: 0x002CEA1D File Offset: 0x002CCC1D
 	public new bool Selected
 	{
 		get
@@ -74,7 +74,7 @@ public class XUiC_CategoryEntry : XUiController
 		}
 	}
 
-	// Token: 0x060076E9 RID: 30441 RVA: 0x002CD57B File Offset: 0x002CB77B
+	// Token: 0x0600770E RID: 30478 RVA: 0x002CEA37 File Offset: 0x002CCC37
 	public override void Init()
 	{
 		base.Init();
@@ -83,7 +83,7 @@ public class XUiC_CategoryEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060076EA RID: 30442 RVA: 0x002CD5B0 File Offset: 0x002CB7B0
+	// Token: 0x0600770F RID: 30479 RVA: 0x002CEA6C File Offset: 0x002CCC6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_CategoryEntry_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -101,13 +101,13 @@ public class XUiC_CategoryEntry : XUiController
 		}
 	}
 
-	// Token: 0x060076EB RID: 30443 RVA: 0x002CD60F File Offset: 0x002CB80F
+	// Token: 0x06007710 RID: 30480 RVA: 0x002CEACB File Offset: 0x002CCCCB
 	public void PlayButtonClickSound()
 	{
 		this.button.PlayClickSound();
 	}
 
-	// Token: 0x060076EC RID: 30444 RVA: 0x002CD61C File Offset: 0x002CB81C
+	// Token: 0x06007711 RID: 30481 RVA: 0x002CEAD8 File Offset: 0x002CCCD8
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -119,7 +119,7 @@ public class XUiC_CategoryEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x060076ED RID: 30445 RVA: 0x002CD653 File Offset: 0x002CB853
+	// Token: 0x06007712 RID: 30482 RVA: 0x002CEB0F File Offset: 0x002CCD0F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -136,7 +136,7 @@ public class XUiC_CategoryEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x060076EE RID: 30446 RVA: 0x002CD690 File Offset: 0x002CB890
+	// Token: 0x06007713 RID: 30483 RVA: 0x002CEB4C File Offset: 0x002CCD4C
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "categoryname")
@@ -174,23 +174,23 @@ public class XUiC_CategoryEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0400580E RID: 22542
+	// Token: 0x04005833 RID: 22579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryName = "";
 
-	// Token: 0x0400580F RID: 22543
+	// Token: 0x04005834 RID: 22580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryDisplayName = "";
 
-	// Token: 0x04005810 RID: 22544
+	// Token: 0x04005835 RID: 22581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string spriteName = "";
 
-	// Token: 0x04005811 RID: 22545
+	// Token: 0x04005836 RID: 22582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool selected;
 
-	// Token: 0x04005812 RID: 22546
+	// Token: 0x04005837 RID: 22583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button button;
 }

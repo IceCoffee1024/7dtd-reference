@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A96 RID: 6806
+	// Token: 0x02001AC7 RID: 6855
 	public static class ThreatLevelUtility
 	{
-		// Token: 0x0600CE24 RID: 52772 RVA: 0x004AED00 File Offset: 0x004ACF00
+		// Token: 0x0600CF38 RID: 53048 RVA: 0x004B27FC File Offset: 0x004B09FC
 		public static float GetThreatLevelOn(EntityPlayerLocal _player)
 		{
 			GameManager.Instance.World.GetEntitiesInBounds(typeof(EntityEnemy), new Bounds(_player.position, ThreatLevelUtility.boundingBoxRange), ThreatLevelUtility.enemies);
@@ -45,7 +45,7 @@ namespace DynamicMusic
 			return num;
 		}
 
-		// Token: 0x0600CE25 RID: 52773 RVA: 0x004AEEE0 File Offset: 0x004AD0E0
+		// Token: 0x0600CF39 RID: 53049 RVA: 0x004B29DC File Offset: 0x004B0BDC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool isPlayerInUnclearedPOI(EntityPlayerLocal _player)
 		{
@@ -73,7 +73,7 @@ namespace DynamicMusic
 			return false;
 		}
 
-		// Token: 0x0600CE26 RID: 52774 RVA: 0x004AEF70 File Offset: 0x004AD170
+		// Token: 0x0600CF3A RID: 53050 RVA: 0x004B2A6C File Offset: 0x004B0C6C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int zombiesContributingThreat()
 		{
@@ -89,7 +89,7 @@ namespace DynamicMusic
 			return num;
 		}
 
-		// Token: 0x0600CE27 RID: 52775 RVA: 0x004AEFBC File Offset: 0x004AD1BC
+		// Token: 0x0600CF3B RID: 53051 RVA: 0x004B2AB8 File Offset: 0x004B0CB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int EnemiesTargeting()
 		{
@@ -105,7 +105,7 @@ namespace DynamicMusic
 			return num;
 		}
 
-		// Token: 0x0600CE28 RID: 52776 RVA: 0x004AF01C File Offset: 0x004AD21C
+		// Token: 0x0600CF3C RID: 53052 RVA: 0x004B2B18 File Offset: 0x004B0D18
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool IsPlayerHome(EntityPlayerLocal _player)
 		{
@@ -113,44 +113,44 @@ namespace DynamicMusic
 			return !spawnPoint.IsUndef() && (spawnPoint.position - _player.position).magnitude <= 50f;
 		}
 
-		// Token: 0x0600CE29 RID: 52777 RVA: 0x004AF05E File Offset: 0x004AD25E
+		// Token: 0x0600CF3D RID: 53053 RVA: 0x004B2B5A File Offset: 0x004B0D5A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool IsPlayerInSpookyBiome(EntityPlayerLocal _player)
 		{
 			return _player.biomeStandingOn != null && (_player.biomeStandingOn.m_sBiomeName.Equals("burnt_forest") || _player.biomeStandingOn.m_sBiomeName.Equals("wasteland"));
 		}
 
-		// Token: 0x04009C33 RID: 39987
+		// Token: 0x04009D1C RID: 40220
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int ZOMBIE_COMBAT_QUANTITY = 4;
 
-		// Token: 0x04009C34 RID: 39988
+		// Token: 0x04009D1D RID: 40221
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float PLAYER_HOME_MINIMUM_DISTANCE = 50f;
 
-		// Token: 0x04009C35 RID: 39989
+		// Token: 0x04009D1E RID: 40222
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float THREAT_PER_ENEMY = 0.033333335f;
 
-		// Token: 0x04009C36 RID: 39990
+		// Token: 0x04009D1F RID: 40223
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<Entity> enemies = new List<Entity>();
 
-		// Token: 0x04009C37 RID: 39991
+		// Token: 0x04009D20 RID: 40224
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3 boundingBoxRange = new Vector3(50f, 50f, 50f);
 
-		// Token: 0x04009C38 RID: 39992
+		// Token: 0x04009D21 RID: 40225
 		public static int Zombies;
 
-		// Token: 0x04009C39 RID: 39993
+		// Token: 0x04009D22 RID: 40226
 		public static int Targeting;
 
-		// Token: 0x04009C3A RID: 39994
+		// Token: 0x04009D23 RID: 40227
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Queue<float> threatLevels = new Queue<float>();
 
-		// Token: 0x04009C3B RID: 39995
+		// Token: 0x04009D24 RID: 40228
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int LOOKBACK = 300;
 	}

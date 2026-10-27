@@ -2,16 +2,16 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000BF6 RID: 3062
+// Token: 0x02000C01 RID: 3073
 public class VoxelMeshExt3dModel : VoxelMesh
 {
-	// Token: 0x06005BDE RID: 23518 RVA: 0x0023D0E0 File Offset: 0x0023B2E0
+	// Token: 0x06005C03 RID: 23555 RVA: 0x0023E62C File Offset: 0x0023C82C
 	public VoxelMeshExt3dModel(int _meshIndex, int _minSize = 500)
 		: base(_meshIndex, _minSize, VoxelMesh.CreateFlags.Default)
 	{
 	}
 
-	// Token: 0x06005BDF RID: 23519 RVA: 0x0023D140 File Offset: 0x0023B340
+	// Token: 0x06005C04 RID: 23556 RVA: 0x0023E68C File Offset: 0x0023C88C
 	public override void Write(BinaryWriter _bw)
 	{
 		base.Write(_bw);
@@ -24,7 +24,7 @@ public class VoxelMeshExt3dModel : VoxelMesh
 		this.lod1Mesh.Write(_bw);
 	}
 
-	// Token: 0x06005BE0 RID: 23520 RVA: 0x0023D1A0 File Offset: 0x0023B3A0
+	// Token: 0x06005C05 RID: 23557 RVA: 0x0023E6EC File Offset: 0x0023C8EC
 	public override void Read(BinaryReader _br)
 	{
 		base.Read(_br);
@@ -43,7 +43,7 @@ public class VoxelMeshExt3dModel : VoxelMesh
 		this.lod1Mesh.ClearMesh();
 	}
 
-	// Token: 0x06005BE1 RID: 23521 RVA: 0x0023D220 File Offset: 0x0023B420
+	// Token: 0x06005C06 RID: 23558 RVA: 0x0023E76C File Offset: 0x0023C96C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addColliders(Vector3 _drawPos, VoxelMesh _colliderMesh)
 	{
@@ -62,7 +62,7 @@ public class VoxelMeshExt3dModel : VoxelMesh
 		}
 	}
 
-	// Token: 0x06005BE2 RID: 23522 RVA: 0x0023D2AC File Offset: 0x0023B4AC
+	// Token: 0x06005C07 RID: 23559 RVA: 0x0023E7F8 File Offset: 0x0023C9F8
 	public override void AddMesh(Vector3 _drawPos, int _count, Vector3[] _vertices, Vector3[] _normals, ArrayListMP<int> _indices, ArrayListMP<Vector2> _uvs, byte _sunlight, byte _blocklight, VoxelMesh _specialColliders, int damage)
 	{
 		if (_specialColliders != null)
@@ -72,7 +72,7 @@ public class VoxelMeshExt3dModel : VoxelMesh
 		base.AddMesh(_drawPos, _count, _vertices, _normals, _indices, _uvs, _sunlight, _blocklight, null, damage);
 	}
 
-	// Token: 0x06005BE3 RID: 23523 RVA: 0x0023D2DC File Offset: 0x0023B4DC
+	// Token: 0x06005C08 RID: 23560 RVA: 0x0023E828 File Offset: 0x0023CA28
 	public override int CopyToColliders(MeshCollider _meshCollider, out Mesh mesh)
 	{
 		if (this.boundsVertices == null || this.boundsVertices.Count == 0)
@@ -88,7 +88,7 @@ public class VoxelMeshExt3dModel : VoxelMesh
 		return this.boundsTriangles.Count / 3;
 	}
 
-	// Token: 0x06005BE4 RID: 23524 RVA: 0x0023D353 File Offset: 0x0023B553
+	// Token: 0x06005C09 RID: 23561 RVA: 0x0023E89F File Offset: 0x0023CA9F
 	public override void ClearMesh()
 	{
 		base.ClearMesh();
@@ -97,27 +97,27 @@ public class VoxelMeshExt3dModel : VoxelMesh
 		this.boundsTriangles.Clear();
 	}
 
-	// Token: 0x06005BE5 RID: 23525 RVA: 0x0023D37C File Offset: 0x0023B57C
+	// Token: 0x06005C0A RID: 23562 RVA: 0x0023E8C8 File Offset: 0x0023CAC8
 	public override void Finished()
 	{
 		base.Finished();
 		this.lod1Mesh.Finished();
 	}
 
-	// Token: 0x040047A2 RID: 18338
+	// Token: 0x040047C7 RID: 18375
 	public VoxelMesh boundingBoxMesh = new VoxelMesh(-1, 0, VoxelMesh.CreateFlags.Default);
 
-	// Token: 0x040047A3 RID: 18339
+	// Token: 0x040047C8 RID: 18376
 	public Bounds[] aabb = new Bounds[0];
 
-	// Token: 0x040047A4 RID: 18340
+	// Token: 0x040047C9 RID: 18377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayListMP<Vector3> boundsVertices = new ArrayListMP<Vector3>(MemoryPools.poolVector3, 0);
 
-	// Token: 0x040047A5 RID: 18341
+	// Token: 0x040047CA RID: 18378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayListMP<int> boundsTriangles = new ArrayListMP<int>(MemoryPools.poolInt, 0);
 
-	// Token: 0x040047A6 RID: 18342
+	// Token: 0x040047CB RID: 18379
 	public VoxelMesh lod1Mesh = new VoxelMesh(-1, 0, VoxelMesh.CreateFlags.Default);
 }

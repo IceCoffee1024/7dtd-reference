@@ -2,11 +2,11 @@
 using Audio;
 using UnityEngine;
 
-// Token: 0x0200091A RID: 2330
+// Token: 0x02000924 RID: 2340
 public class PowerTrigger : PowerConsumer
 {
-	// Token: 0x1700074B RID: 1867
-	// (get) Token: 0x0600430B RID: 17163 RVA: 0x000470B6 File Offset: 0x000452B6
+	// Token: 0x17000751 RID: 1873
+	// (get) Token: 0x0600432E RID: 17198 RVA: 0x00047076 File Offset: 0x00045276
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -15,9 +15,9 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x1700074C RID: 1868
-	// (get) Token: 0x0600430C RID: 17164 RVA: 0x001A43AC File Offset: 0x001A25AC
-	// (set) Token: 0x0600430D RID: 17165 RVA: 0x001A43B4 File Offset: 0x001A25B4
+	// Token: 0x17000752 RID: 1874
+	// (get) Token: 0x0600432F RID: 17199 RVA: 0x001A5454 File Offset: 0x001A3654
+	// (set) Token: 0x06004330 RID: 17200 RVA: 0x001A545C File Offset: 0x001A365C
 	public PowerTrigger.TriggerPowerDelayTypes TriggerPowerDelay
 	{
 		get
@@ -30,9 +30,9 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x1700074D RID: 1869
-	// (get) Token: 0x0600430E RID: 17166 RVA: 0x001A43BD File Offset: 0x001A25BD
-	// (set) Token: 0x0600430F RID: 17167 RVA: 0x001A43C5 File Offset: 0x001A25C5
+	// Token: 0x17000753 RID: 1875
+	// (get) Token: 0x06004331 RID: 17201 RVA: 0x001A5465 File Offset: 0x001A3665
+	// (set) Token: 0x06004332 RID: 17202 RVA: 0x001A546D File Offset: 0x001A366D
 	public PowerTrigger.TriggerPowerDurationTypes TriggerPowerDuration
 	{
 		get
@@ -45,8 +45,8 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x1700074E RID: 1870
-	// (get) Token: 0x06004310 RID: 17168 RVA: 0x001A43CE File Offset: 0x001A25CE
+	// Token: 0x17000754 RID: 1876
+	// (get) Token: 0x06004333 RID: 17203 RVA: 0x001A5476 File Offset: 0x001A3676
 	public virtual bool IsActive
 	{
 		get
@@ -59,9 +59,9 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x1700074F RID: 1871
-	// (get) Token: 0x06004311 RID: 17169 RVA: 0x001A4115 File Offset: 0x001A2315
-	// (set) Token: 0x06004312 RID: 17170 RVA: 0x001A43F0 File Offset: 0x001A25F0
+	// Token: 0x17000755 RID: 1877
+	// (get) Token: 0x06004334 RID: 17204 RVA: 0x001A51BD File Offset: 0x001A33BD
+	// (set) Token: 0x06004335 RID: 17205 RVA: 0x001A5498 File Offset: 0x001A3698
 	public virtual bool IsTriggered
 	{
 		get
@@ -139,7 +139,7 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004313 RID: 17171 RVA: 0x001A458C File Offset: 0x001A278C
+	// Token: 0x06004336 RID: 17206 RVA: 0x001A5634 File Offset: 0x001A3834
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetupDurationTime()
 	{
@@ -211,13 +211,13 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004315 RID: 17173 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06004338 RID: 17208 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool PowerChildren()
 	{
 		return true;
 	}
 
-	// Token: 0x06004316 RID: 17174 RVA: 0x001A4720 File Offset: 0x001A2920
+	// Token: 0x06004339 RID: 17209 RVA: 0x001A57C8 File Offset: 0x001A39C8
 	public override void HandlePowerReceived(ref ushort power)
 	{
 		ushort num = (ushort)Mathf.Min((int)this.RequiredPower, (int)power);
@@ -258,7 +258,7 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004317 RID: 17175 RVA: 0x001A482F File Offset: 0x001A2A2F
+	// Token: 0x0600433A RID: 17210 RVA: 0x001A58D7 File Offset: 0x001A3AD7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void CheckForActiveChange()
 	{
@@ -271,7 +271,7 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004318 RID: 17176 RVA: 0x001A486C File Offset: 0x001A2A6C
+	// Token: 0x0600433B RID: 17211 RVA: 0x001A5914 File Offset: 0x001A3B14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleSingleUseDisable()
 	{
@@ -283,13 +283,13 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004319 RID: 17177 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600433C RID: 17212 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleSoundDisable()
 	{
 	}
 
-	// Token: 0x0600431A RID: 17178 RVA: 0x001A48A0 File Offset: 0x001A2AA0
+	// Token: 0x0600433D RID: 17213 RVA: 0x001A5948 File Offset: 0x001A3B48
 	public override void HandlePowerUpdate(bool parentIsOn)
 	{
 		if (this.TileEntity != null)
@@ -314,7 +314,7 @@ public class PowerTrigger : PowerConsumer
 		this.HandleSingleUseDisable();
 	}
 
-	// Token: 0x0600431B RID: 17179 RVA: 0x001A496C File Offset: 0x001A2B6C
+	// Token: 0x0600433E RID: 17214 RVA: 0x001A5A14 File Offset: 0x001A3C14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleParentTriggering(PowerTrigger child)
 	{
@@ -331,13 +331,13 @@ public class PowerTrigger : PowerConsumer
 		child.SetTriggeredByParent(false);
 	}
 
-	// Token: 0x0600431C RID: 17180 RVA: 0x001A49CE File Offset: 0x001A2BCE
+	// Token: 0x0600433F RID: 17215 RVA: 0x001A5A76 File Offset: 0x001A3C76
 	public void SetTriggeredByParent(bool triggered)
 	{
 		this.parentTriggered = triggered;
 	}
 
-	// Token: 0x0600431D RID: 17181 RVA: 0x001A49D8 File Offset: 0x001A2BD8
+	// Token: 0x06004340 RID: 17216 RVA: 0x001A5A80 File Offset: 0x001A3C80
 	public virtual void CachedUpdateCall()
 	{
 		PowerTrigger.TriggerTypes triggerType = this.TriggerType;
@@ -374,7 +374,7 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x0600431E RID: 17182 RVA: 0x001A4AB8 File Offset: 0x001A2CB8
+	// Token: 0x06004341 RID: 17217 RVA: 0x001A5B60 File Offset: 0x001A3D60
 	public override void read(PooledBinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
@@ -400,7 +400,7 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x0600431F RID: 17183 RVA: 0x001A4B48 File Offset: 0x001A2D48
+	// Token: 0x06004342 RID: 17218 RVA: 0x001A5BF0 File Offset: 0x001A3DF0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -426,7 +426,7 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004320 RID: 17184 RVA: 0x001A4BDC File Offset: 0x001A2DDC
+	// Token: 0x06004343 RID: 17219 RVA: 0x001A5C84 File Offset: 0x001A3E84
 	public virtual void HandleDisconnectChildren()
 	{
 		this.HandlePowerUpdate(false);
@@ -436,14 +436,14 @@ public class PowerTrigger : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004321 RID: 17185 RVA: 0x001A4C18 File Offset: 0x001A2E18
+	// Token: 0x06004344 RID: 17220 RVA: 0x001A5CC0 File Offset: 0x001A3EC0
 	public override void HandleDisconnect()
 	{
 		this.parentTriggered = (this.isActive = false);
 		base.HandleDisconnect();
 	}
 
-	// Token: 0x06004322 RID: 17186 RVA: 0x001A4C3B File Offset: 0x001A2E3B
+	// Token: 0x06004345 RID: 17221 RVA: 0x001A5CE3 File Offset: 0x001A3EE3
 	public void ResetTrigger()
 	{
 		this.delayStartTime = -1f;
@@ -453,141 +453,141 @@ public class PowerTrigger : PowerConsumer
 		base.SendHasLocalChangesToRoot();
 	}
 
-	// Token: 0x04003661 RID: 13921
+	// Token: 0x04003681 RID: 13953
 	public PowerTrigger.TriggerTypes TriggerType;
 
-	// Token: 0x04003662 RID: 13922
+	// Token: 0x04003682 RID: 13954
 	public byte Parameter;
 
-	// Token: 0x04003663 RID: 13923
+	// Token: 0x04003683 RID: 13955
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public PowerTrigger.TriggerPowerDelayTypes triggerPowerDelay;
 
-	// Token: 0x04003664 RID: 13924
+	// Token: 0x04003684 RID: 13956
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public PowerTrigger.TriggerPowerDurationTypes triggerPowerDuration = PowerTrigger.TriggerPowerDurationTypes.Triggered;
 
-	// Token: 0x04003665 RID: 13925
+	// Token: 0x04003685 RID: 13957
 	public PowerTrigger.TargetTypes TargetType = PowerTrigger.TargetTypes.Self | PowerTrigger.TargetTypes.Allies;
 
-	// Token: 0x04003666 RID: 13926
+	// Token: 0x04003686 RID: 13958
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float delayStartTime = -1f;
 
-	// Token: 0x04003667 RID: 13927
+	// Token: 0x04003687 RID: 13959
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float powerTime;
 
-	// Token: 0x04003668 RID: 13928
+	// Token: 0x04003688 RID: 13960
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float lastPowerTime = -1f;
 
-	// Token: 0x04003669 RID: 13929
+	// Token: 0x04003689 RID: 13961
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool lastTriggered;
 
-	// Token: 0x0400366A RID: 13930
+	// Token: 0x0400368A RID: 13962
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isTriggered;
 
-	// Token: 0x0400366B RID: 13931
+	// Token: 0x0400368B RID: 13963
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool parentTriggered;
 
-	// Token: 0x0400366C RID: 13932
+	// Token: 0x0400368C RID: 13964
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isActive;
 
-	// Token: 0x0200091B RID: 2331
+	// Token: 0x02000925 RID: 2341
 	public enum TriggerTypes
 	{
-		// Token: 0x0400366E RID: 13934
+		// Token: 0x0400368E RID: 13966
 		Switch,
-		// Token: 0x0400366F RID: 13935
+		// Token: 0x0400368F RID: 13967
 		PressurePlate,
-		// Token: 0x04003670 RID: 13936
+		// Token: 0x04003690 RID: 13968
 		TimerRelay,
-		// Token: 0x04003671 RID: 13937
+		// Token: 0x04003691 RID: 13969
 		Motion,
-		// Token: 0x04003672 RID: 13938
+		// Token: 0x04003692 RID: 13970
 		TripWire
 	}
 
-	// Token: 0x0200091C RID: 2332
+	// Token: 0x02000926 RID: 2342
 	public enum TriggerPowerDelayTypes
 	{
-		// Token: 0x04003674 RID: 13940
+		// Token: 0x04003694 RID: 13972
 		Instant,
-		// Token: 0x04003675 RID: 13941
+		// Token: 0x04003695 RID: 13973
 		OneSecond,
-		// Token: 0x04003676 RID: 13942
+		// Token: 0x04003696 RID: 13974
 		TwoSecond,
-		// Token: 0x04003677 RID: 13943
+		// Token: 0x04003697 RID: 13975
 		ThreeSecond,
-		// Token: 0x04003678 RID: 13944
+		// Token: 0x04003698 RID: 13976
 		FourSecond,
-		// Token: 0x04003679 RID: 13945
+		// Token: 0x04003699 RID: 13977
 		FiveSecond
 	}
 
-	// Token: 0x0200091D RID: 2333
+	// Token: 0x02000927 RID: 2343
 	public enum TriggerPowerDurationTypes
 	{
-		// Token: 0x0400367B RID: 13947
+		// Token: 0x0400369B RID: 13979
 		Always,
-		// Token: 0x0400367C RID: 13948
+		// Token: 0x0400369C RID: 13980
 		Triggered,
-		// Token: 0x0400367D RID: 13949
+		// Token: 0x0400369D RID: 13981
 		OneSecond,
-		// Token: 0x0400367E RID: 13950
+		// Token: 0x0400369E RID: 13982
 		TwoSecond,
-		// Token: 0x0400367F RID: 13951
+		// Token: 0x0400369F RID: 13983
 		ThreeSecond,
-		// Token: 0x04003680 RID: 13952
+		// Token: 0x040036A0 RID: 13984
 		FourSecond,
-		// Token: 0x04003681 RID: 13953
+		// Token: 0x040036A1 RID: 13985
 		FiveSecond,
-		// Token: 0x04003682 RID: 13954
+		// Token: 0x040036A2 RID: 13986
 		SixSecond,
-		// Token: 0x04003683 RID: 13955
+		// Token: 0x040036A3 RID: 13987
 		SevenSecond,
-		// Token: 0x04003684 RID: 13956
+		// Token: 0x040036A4 RID: 13988
 		EightSecond,
-		// Token: 0x04003685 RID: 13957
+		// Token: 0x040036A5 RID: 13989
 		NineSecond,
-		// Token: 0x04003686 RID: 13958
+		// Token: 0x040036A6 RID: 13990
 		TenSecond,
-		// Token: 0x04003687 RID: 13959
+		// Token: 0x040036A7 RID: 13991
 		FifteenSecond,
-		// Token: 0x04003688 RID: 13960
+		// Token: 0x040036A8 RID: 13992
 		ThirtySecond,
-		// Token: 0x04003689 RID: 13961
+		// Token: 0x040036A9 RID: 13993
 		FourtyFiveSecond,
-		// Token: 0x0400368A RID: 13962
+		// Token: 0x040036AA RID: 13994
 		OneMinute,
-		// Token: 0x0400368B RID: 13963
+		// Token: 0x040036AB RID: 13995
 		FiveMinute,
-		// Token: 0x0400368C RID: 13964
+		// Token: 0x040036AC RID: 13996
 		TenMinute,
-		// Token: 0x0400368D RID: 13965
+		// Token: 0x040036AD RID: 13997
 		ThirtyMinute,
-		// Token: 0x0400368E RID: 13966
+		// Token: 0x040036AE RID: 13998
 		SixtyMinute
 	}
 
-	// Token: 0x0200091E RID: 2334
+	// Token: 0x02000928 RID: 2344
 	[Flags]
 	public enum TargetTypes
 	{
-		// Token: 0x04003690 RID: 13968
+		// Token: 0x040036B0 RID: 14000
 		None = 0,
-		// Token: 0x04003691 RID: 13969
+		// Token: 0x040036B1 RID: 14001
 		Self = 1,
-		// Token: 0x04003692 RID: 13970
+		// Token: 0x040036B2 RID: 14002
 		Allies = 2,
-		// Token: 0x04003693 RID: 13971
+		// Token: 0x040036B3 RID: 14003
 		Strangers = 4,
-		// Token: 0x04003694 RID: 13972
+		// Token: 0x040036B4 RID: 14004
 		Zombies = 8
 	}
 }

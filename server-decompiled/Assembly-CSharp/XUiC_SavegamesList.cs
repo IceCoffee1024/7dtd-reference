@@ -2,18 +2,18 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E53 RID: 3667
+// Token: 0x02000E5E RID: 3678
 [Preserve]
 public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 {
-	// Token: 0x06007053 RID: 28755 RVA: 0x002B6EF3 File Offset: 0x002B50F3
+	// Token: 0x06007078 RID: 28792 RVA: 0x002B845F File Offset: 0x002B665F
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007054 RID: 28756 RVA: 0x002B6F02 File Offset: 0x002B5102
+	// Token: 0x06007079 RID: 28793 RVA: 0x002B846E File Offset: 0x002B666E
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -22,7 +22,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007055 RID: 28757 RVA: 0x002B6F34 File Offset: 0x002B5134
+	// Token: 0x0600707A RID: 28794 RVA: 0x002B84A0 File Offset: 0x002B66A0
 	public bool SelectByName(string _name)
 	{
 		if (!string.IsNullOrEmpty(_name))
@@ -39,7 +39,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 		return false;
 	}
 
-	// Token: 0x06007056 RID: 28758 RVA: 0x002B6F84 File Offset: 0x002B5184
+	// Token: 0x0600707B RID: 28795 RVA: 0x002B84F0 File Offset: 0x002B66F0
 	public bool TrySelectEntry(string _worldName, string _saveName, UserDataStorageType _storageType)
 	{
 		if (this.filteredEntries == null)
@@ -59,19 +59,19 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 		return false;
 	}
 
-	// Token: 0x06007057 RID: 28759 RVA: 0x002B6FF7 File Offset: 0x002B51F7
+	// Token: 0x0600707C RID: 28796 RVA: 0x002B8563 File Offset: 0x002B6763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addSaveToEntries(UserDataStorageType _storage, string _saveName, string _worldName, DateTime _lastSaved, WorldState _worldState, bool _isArchived)
 	{
 		this.allEntries.Add(new XUiC_SavegamesList.ListEntry(_storage, _saveName, _worldName, _lastSaved, _worldState));
 	}
 
-	// Token: 0x02000E54 RID: 3668
+	// Token: 0x02000E5F RID: 3679
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_SavegamesList.ListEntry>
 	{
-		// Token: 0x17000CCE RID: 3278
-		// (get) Token: 0x06007059 RID: 28761 RVA: 0x002B7018 File Offset: 0x002B5218
+		// Token: 0x17000CD4 RID: 3284
+		// (get) Token: 0x0600707E RID: 28798 RVA: 0x002B8584 File Offset: 0x002B6784
 		public GameMode GameMode
 		{
 			get
@@ -80,7 +80,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			}
 		}
 
-		// Token: 0x0600705A RID: 28762 RVA: 0x002B702C File Offset: 0x002B522C
+		// Token: 0x0600707F RID: 28799 RVA: 0x002B8598 File Offset: 0x002B6798
 		public ListEntry(UserDataStorageType _storage, string _saveName, string _worldName, DateTime _lastSaved, WorldState _worldState)
 		{
 			this.StorageType = _storage;
@@ -101,7 +101,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			this.DisplaySaveName = this.SaveName;
 		}
 
-		// Token: 0x0600705B RID: 28763 RVA: 0x002B70F8 File Offset: 0x002B52F8
+		// Token: 0x06007080 RID: 28800 RVA: 0x002B8664 File Offset: 0x002B6864
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static XUiC_SavegamesList.ListEntry.ESaveCompatibility checkSaveCompatibility(VersionInformation _saveVersion)
 		{
@@ -140,13 +140,13 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			}
 		}
 
-		// Token: 0x0600705C RID: 28764 RVA: 0x002B7177 File Offset: 0x002B5377
+		// Token: 0x06007081 RID: 28801 RVA: 0x002B86E3 File Offset: 0x002B68E3
 		public string GetSaveDir()
 		{
 			return GameIO.GetSaveGameDir(this.WorldName, this.SaveName, this.StorageType);
 		}
 
-		// Token: 0x0600705D RID: 28765 RVA: 0x002B7190 File Offset: 0x002B5390
+		// Token: 0x06007082 RID: 28802 RVA: 0x002B86FC File Offset: 0x002B68FC
 		public override int CompareTo(XUiC_SavegamesList.ListEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -156,64 +156,64 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return -1 * this.LastSaved.CompareTo(_otherEntry.LastSaved);
 		}
 
-		// Token: 0x0600705E RID: 28766 RVA: 0x002B71B8 File Offset: 0x002B53B8
+		// Token: 0x06007083 RID: 28803 RVA: 0x002B8724 File Offset: 0x002B6924
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.SaveName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005513 RID: 21779
+		// Token: 0x04005538 RID: 21816
 		public readonly UserDataStorageType StorageType;
 
-		// Token: 0x04005514 RID: 21780
+		// Token: 0x04005539 RID: 21817
 		public readonly string SaveName;
 
-		// Token: 0x04005515 RID: 21781
+		// Token: 0x0400553A RID: 21818
 		public readonly string DisplaySaveName;
 
-		// Token: 0x04005516 RID: 21782
+		// Token: 0x0400553B RID: 21819
 		public readonly string WorldName;
 
-		// Token: 0x04005517 RID: 21783
+		// Token: 0x0400553C RID: 21820
 		public readonly DateTime LastSaved;
 
-		// Token: 0x04005518 RID: 21784
+		// Token: 0x0400553D RID: 21821
 		public readonly WorldState WorldState;
 
-		// Token: 0x04005519 RID: 21785
+		// Token: 0x0400553E RID: 21822
 		public readonly bool WorldExists;
 
-		// Token: 0x0400551A RID: 21786
+		// Token: 0x0400553F RID: 21823
 		public readonly VersionInformation SaveVersion;
 
-		// Token: 0x0400551B RID: 21787
+		// Token: 0x04005540 RID: 21824
 		public readonly XUiC_SavegamesList.ListEntry.ESaveCompatibility VersionComparison;
 
-		// Token: 0x0400551C RID: 21788
+		// Token: 0x04005541 RID: 21825
 		public readonly bool Playable;
 
-		// Token: 0x02000E55 RID: 3669
+		// Token: 0x02000E60 RID: 3680
 		public enum ESaveCompatibility
 		{
-			// Token: 0x0400551E RID: 21790
+			// Token: 0x04005543 RID: 21827
 			SameVersion,
-			// Token: 0x0400551F RID: 21791
+			// Token: 0x04005544 RID: 21828
 			NewerMinor,
-			// Token: 0x04005520 RID: 21792
+			// Token: 0x04005545 RID: 21829
 			Compatible,
-			// Token: 0x04005521 RID: 21793
+			// Token: 0x04005546 RID: 21830
 			FutureVersion,
-			// Token: 0x04005522 RID: 21794
+			// Token: 0x04005547 RID: 21831
 			OldVersion
 		}
 	}
 
-	// Token: 0x02000E56 RID: 3670
+	// Token: 0x02000E61 RID: 3681
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_SavegamesList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x0600705F RID: 28767 RVA: 0x002B71C8 File Offset: 0x002B53C8
+		// Token: 0x06007084 RID: 28804 RVA: 0x002B8734 File Offset: 0x002B6934
 		public override void Init()
 		{
 			base.Init();
@@ -255,7 +255,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			};
 		}
 
-		// Token: 0x06007060 RID: 28768 RVA: 0x002B727F File Offset: 0x002B547F
+		// Token: 0x06007085 RID: 28805 RVA: 0x002B87EB File Offset: 0x002B69EB
 		[XuiXmlBinding("savename")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingSaveName()
@@ -264,7 +264,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return ((entryData != null) ? entryData.DisplaySaveName : null) ?? "";
 		}
 
-		// Token: 0x06007061 RID: 28769 RVA: 0x002B729C File Offset: 0x002B549C
+		// Token: 0x06007086 RID: 28806 RVA: 0x002B8808 File Offset: 0x002B6A08
 		[XuiXmlBinding("worldname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingWorldName()
@@ -273,7 +273,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return ((entryData != null) ? entryData.WorldName : null) ?? "";
 		}
 
-		// Token: 0x06007062 RID: 28770 RVA: 0x002B72B9 File Offset: 0x002B54B9
+		// Token: 0x06007087 RID: 28807 RVA: 0x002B8825 File Offset: 0x002B6A25
 		[XuiXmlBinding("worldtooltip")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingWorldTooltip()
@@ -285,7 +285,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return "";
 		}
 
-		// Token: 0x06007063 RID: 28771 RVA: 0x002B72E4 File Offset: 0x002B54E4
+		// Token: 0x06007088 RID: 28808 RVA: 0x002B8850 File Offset: 0x002B6A50
 		[XuiXmlBinding("mode")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingMode()
@@ -302,7 +302,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return "-Unknown-";
 		}
 
-		// Token: 0x06007064 RID: 28772 RVA: 0x002B7324 File Offset: 0x002B5524
+		// Token: 0x06007089 RID: 28809 RVA: 0x002B8890 File Offset: 0x002B6A90
 		[XuiXmlBinding("version")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersion()
@@ -319,7 +319,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return worldState.gameVersion.ShortString;
 		}
 
-		// Token: 0x06007065 RID: 28773 RVA: 0x002B736C File Offset: 0x002B556C
+		// Token: 0x0600708A RID: 28810 RVA: 0x002B88D8 File Offset: 0x002B6AD8
 		[XuiXmlBinding("versiontooltip")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersionTooltip()
@@ -352,7 +352,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return text;
 		}
 
-		// Token: 0x06007066 RID: 28774 RVA: 0x002B73FC File Offset: 0x002B55FC
+		// Token: 0x0600708B RID: 28811 RVA: 0x002B8968 File Offset: 0x002B6B68
 		[XuiXmlBinding("lastplayed")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLastPlayed()
@@ -361,7 +361,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return ((entryData != null) ? entryData.LastSaved.ToString("yyyy-MM-dd HH:mm") : null) ?? "";
 		}
 
-		// Token: 0x06007067 RID: 28775 RVA: 0x002B7431 File Offset: 0x002B5631
+		// Token: 0x0600708C RID: 28812 RVA: 0x002B899D File Offset: 0x002B6B9D
 		[XuiXmlBinding("usesdatalimit")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingUsesDataLimit()
@@ -369,7 +369,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return this.entryData != null && PlatformManager.MultiPlatform.UserDataRoaming.IsRoamingOptional && this.entryData.StorageType.UsesDataLimit();
 		}
 
-		// Token: 0x06007068 RID: 28776 RVA: 0x002B745E File Offset: 0x002B565E
+		// Token: 0x0600708D RID: 28813 RVA: 0x002B89CA File Offset: 0x002B6BCA
 		[XuiXmlBinding("worldstate")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingWorldState()
@@ -385,7 +385,7 @@ public class XUiC_SavegamesList : XUiC_List<XUiC_SavegamesList.ListEntry>
 			return "ok";
 		}
 
-		// Token: 0x06007069 RID: 28777 RVA: 0x002B7488 File Offset: 0x002B5688
+		// Token: 0x0600708E RID: 28814 RVA: 0x002B89F4 File Offset: 0x002B6BF4
 		[XuiXmlBinding("versionstate")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersionState()

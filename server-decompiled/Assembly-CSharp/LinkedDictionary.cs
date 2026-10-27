@@ -3,44 +3,44 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-// Token: 0x0200144A RID: 5194
+// Token: 0x0200145C RID: 5212
 public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable, IReadOnlyDictionary<TKey, TValue>, IReadOnlyCollection<KeyValuePair<TKey, TValue>>
 {
-	// Token: 0x0600A2D5 RID: 41685 RVA: 0x003D11AE File Offset: 0x003CF3AE
+	// Token: 0x0600A32D RID: 41773 RVA: 0x003D35B2 File Offset: 0x003D17B2
 	public LinkedDictionary()
 	{
 		this.m_dictionary = new Dictionary<TKey, LinkedListNode<KeyValuePair<TKey, TValue>>>();
 		this.m_list = new LinkedList<KeyValuePair<TKey, TValue>>();
 	}
 
-	// Token: 0x0600A2D6 RID: 41686 RVA: 0x003D11CC File Offset: 0x003CF3CC
+	// Token: 0x0600A32E RID: 41774 RVA: 0x003D35D0 File Offset: 0x003D17D0
 	public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 	{
 		return this.m_list.GetEnumerator();
 	}
 
-	// Token: 0x0600A2D7 RID: 41687 RVA: 0x003D11DE File Offset: 0x003CF3DE
+	// Token: 0x0600A32F RID: 41775 RVA: 0x003D35E2 File Offset: 0x003D17E2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
 		return this.GetEnumerator();
 	}
 
-	// Token: 0x0600A2D8 RID: 41688 RVA: 0x003D11E6 File Offset: 0x003CF3E6
+	// Token: 0x0600A330 RID: 41776 RVA: 0x003D35EA File Offset: 0x003D17EA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(KeyValuePair<TKey, TValue> item)
 	{
 		this.Add(item.Key, item.Value);
 	}
 
-	// Token: 0x0600A2D9 RID: 41689 RVA: 0x003D11FC File Offset: 0x003CF3FC
+	// Token: 0x0600A331 RID: 41777 RVA: 0x003D3600 File Offset: 0x003D1800
 	public void Clear()
 	{
 		this.m_dictionary.Clear();
 		this.m_list.Clear();
 	}
 
-	// Token: 0x0600A2DA RID: 41690 RVA: 0x003D1214 File Offset: 0x003CF414
+	// Token: 0x0600A332 RID: 41778 RVA: 0x003D3618 File Offset: 0x003D1818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(KeyValuePair<TKey, TValue> item)
 	{
@@ -48,7 +48,7 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		return this.m_dictionary.TryGetValue(item.Key, out linkedListNode) && EqualityComparer<TValue>.Default.Equals(linkedListNode.Value.Value, item.Value);
 	}
 
-	// Token: 0x0600A2DB RID: 41691 RVA: 0x003D1258 File Offset: 0x003CF458
+	// Token: 0x0600A333 RID: 41779 RVA: 0x003D365C File Offset: 0x003D185C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
 	{
@@ -75,7 +75,7 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x0600A2DC RID: 41692 RVA: 0x003D12DC File Offset: 0x003CF4DC
+	// Token: 0x0600A334 RID: 41780 RVA: 0x003D36E0 File Offset: 0x003D18E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(KeyValuePair<TKey, TValue> item)
 	{
@@ -83,8 +83,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		return this.m_dictionary.TryGetValue(item.Key, out linkedListNode) && EqualityComparer<TValue>.Default.Equals(linkedListNode.Value.Value, item.Value) && this.Remove(item.Key);
 	}
 
-	// Token: 0x17001346 RID: 4934
-	// (get) Token: 0x0600A2DD RID: 41693 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17001352 RID: 4946
+	// (get) Token: 0x0600A335 RID: 41781 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -94,7 +94,7 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x0600A2DE RID: 41694 RVA: 0x003D1331 File Offset: 0x003CF531
+	// Token: 0x0600A336 RID: 41782 RVA: 0x003D3735 File Offset: 0x003D1935
 	public void Add(TKey key, TValue value)
 	{
 		if (this.m_dictionary.ContainsKey(key))
@@ -104,14 +104,14 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		this.m_dictionary.Add(key, this.m_list.AddLast(new KeyValuePair<TKey, TValue>(key, value)));
 	}
 
-	// Token: 0x0600A2DF RID: 41695 RVA: 0x003D136F File Offset: 0x003CF56F
+	// Token: 0x0600A337 RID: 41783 RVA: 0x003D3773 File Offset: 0x003D1973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.Generic.IDictionary<TKey,TValue>.ContainsKey(TKey key)
 	{
 		return this.m_dictionary.ContainsKey(key);
 	}
 
-	// Token: 0x0600A2E0 RID: 41696 RVA: 0x003D1380 File Offset: 0x003CF580
+	// Token: 0x0600A338 RID: 41784 RVA: 0x003D3784 File Offset: 0x003D1984
 	public bool Remove(TKey key)
 	{
 		LinkedListNode<KeyValuePair<TKey, TValue>> linkedListNode;
@@ -123,13 +123,13 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		return true;
 	}
 
-	// Token: 0x0600A2E1 RID: 41697 RVA: 0x003D136F File Offset: 0x003CF56F
+	// Token: 0x0600A339 RID: 41785 RVA: 0x003D3773 File Offset: 0x003D1973
 	public bool ContainsKey(TKey key)
 	{
 		return this.m_dictionary.ContainsKey(key);
 	}
 
-	// Token: 0x0600A2E2 RID: 41698 RVA: 0x003D13AC File Offset: 0x003CF5AC
+	// Token: 0x0600A33A RID: 41786 RVA: 0x003D37B0 File Offset: 0x003D19B0
 	public bool TryGetValue(TKey key, out TValue value)
 	{
 		LinkedListNode<KeyValuePair<TKey, TValue>> linkedListNode;
@@ -142,7 +142,7 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		return true;
 	}
 
-	// Token: 0x17001347 RID: 4935
+	// Token: 0x17001353 RID: 4947
 	public TValue this[TKey key]
 	{
 		get
@@ -161,8 +161,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x17001348 RID: 4936
-	// (get) Token: 0x0600A2E5 RID: 41701 RVA: 0x003D1459 File Offset: 0x003CF659
+	// Token: 0x17001354 RID: 4948
+	// (get) Token: 0x0600A33D RID: 41789 RVA: 0x003D385D File Offset: 0x003D1A5D
 	public IEnumerable<TKey> System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -172,8 +172,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x17001349 RID: 4937
-	// (get) Token: 0x0600A2E6 RID: 41702 RVA: 0x003D1461 File Offset: 0x003CF661
+	// Token: 0x17001355 RID: 4949
+	// (get) Token: 0x0600A33E RID: 41790 RVA: 0x003D3865 File Offset: 0x003D1A65
 	public IEnumerable<TValue> System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -183,8 +183,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x1700134A RID: 4938
-	// (get) Token: 0x0600A2E7 RID: 41703 RVA: 0x003D1469 File Offset: 0x003CF669
+	// Token: 0x17001356 RID: 4950
+	// (get) Token: 0x0600A33F RID: 41791 RVA: 0x003D386D File Offset: 0x003D1A6D
 	public ICollection<TKey> Keys
 	{
 		get
@@ -193,8 +193,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x1700134B RID: 4939
-	// (get) Token: 0x0600A2E8 RID: 41704 RVA: 0x003D1476 File Offset: 0x003CF676
+	// Token: 0x17001357 RID: 4951
+	// (get) Token: 0x0600A340 RID: 41792 RVA: 0x003D387A File Offset: 0x003D1A7A
 	public ICollection<TValue> Values
 	{
 		get
@@ -203,8 +203,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x1700134C RID: 4940
-	// (get) Token: 0x0600A2E9 RID: 41705 RVA: 0x003D1483 File Offset: 0x003CF683
+	// Token: 0x17001358 RID: 4952
+	// (get) Token: 0x0600A341 RID: 41793 RVA: 0x003D3887 File Offset: 0x003D1A87
 	public int Count
 	{
 		get
@@ -213,56 +213,56 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 		}
 	}
 
-	// Token: 0x04007A61 RID: 31329
+	// Token: 0x04007AA2 RID: 31394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<TKey, LinkedListNode<KeyValuePair<TKey, TValue>>> m_dictionary;
 
-	// Token: 0x04007A62 RID: 31330
+	// Token: 0x04007AA3 RID: 31395
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<KeyValuePair<TKey, TValue>> m_list;
 
-	// Token: 0x0200144B RID: 5195
+	// Token: 0x0200145D RID: 5213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly struct KeyCollection : ICollection<TKey>, IEnumerable<TKey>, IEnumerable
 	{
-		// Token: 0x0600A2EA RID: 41706 RVA: 0x003D1490 File Offset: 0x003CF690
+		// Token: 0x0600A342 RID: 41794 RVA: 0x003D3894 File Offset: 0x003D1A94
 		public KeyCollection(LinkedDictionary<TKey, TValue> parent)
 		{
 			this.m_parent = parent;
 		}
 
-		// Token: 0x0600A2EB RID: 41707 RVA: 0x003D1499 File Offset: 0x003CF699
+		// Token: 0x0600A343 RID: 41795 RVA: 0x003D389D File Offset: 0x003D1A9D
 		public IEnumerator<TKey> GetEnumerator()
 		{
 			return this.m_parent.m_list.Select<KeyValuePair<TKey, TValue>, TKey>((KeyValuePair<TKey, TValue> pair) => pair.Key).GetEnumerator();
 		}
 
-		// Token: 0x0600A2EC RID: 41708 RVA: 0x003D14CF File Offset: 0x003CF6CF
+		// Token: 0x0600A344 RID: 41796 RVA: 0x003D38D3 File Offset: 0x003D1AD3
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.GetEnumerator();
 		}
 
-		// Token: 0x0600A2ED RID: 41709 RVA: 0x00006566 File Offset: 0x00004766
+		// Token: 0x0600A345 RID: 41797 RVA: 0x00006566 File Offset: 0x00004766
 		public void Add(TKey item)
 		{
 			throw new NotSupportedException();
 		}
 
-		// Token: 0x0600A2EE RID: 41710 RVA: 0x003D14D7 File Offset: 0x003CF6D7
+		// Token: 0x0600A346 RID: 41798 RVA: 0x003D38DB File Offset: 0x003D1ADB
 		public void Clear()
 		{
 			this.m_parent.Clear();
 		}
 
-		// Token: 0x0600A2EF RID: 41711 RVA: 0x003D14E4 File Offset: 0x003CF6E4
+		// Token: 0x0600A347 RID: 41799 RVA: 0x003D38E8 File Offset: 0x003D1AE8
 		public bool Contains(TKey item)
 		{
 			return this.m_parent.ContainsKey(item);
 		}
 
-		// Token: 0x0600A2F0 RID: 41712 RVA: 0x003D14F4 File Offset: 0x003CF6F4
+		// Token: 0x0600A348 RID: 41800 RVA: 0x003D38F8 File Offset: 0x003D1AF8
 		public void CopyTo(TKey[] array, int arrayIndex)
 		{
 			if (array == null)
@@ -288,14 +288,14 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			}
 		}
 
-		// Token: 0x0600A2F1 RID: 41713 RVA: 0x003D1588 File Offset: 0x003CF788
+		// Token: 0x0600A349 RID: 41801 RVA: 0x003D398C File Offset: 0x003D1B8C
 		public bool Remove(TKey item)
 		{
 			return item != null && this.m_parent.Remove(item);
 		}
 
-		// Token: 0x1700134D RID: 4941
-		// (get) Token: 0x0600A2F2 RID: 41714 RVA: 0x003D15A0 File Offset: 0x003CF7A0
+		// Token: 0x17001359 RID: 4953
+		// (get) Token: 0x0600A34A RID: 41802 RVA: 0x003D39A4 File Offset: 0x003D1BA4
 		public int Count
 		{
 			get
@@ -304,8 +304,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			}
 		}
 
-		// Token: 0x1700134E RID: 4942
-		// (get) Token: 0x0600A2F3 RID: 41715 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700135A RID: 4954
+		// (get) Token: 0x0600A34B RID: 41803 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsReadOnly
 		{
 			get
@@ -314,53 +314,53 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			}
 		}
 
-		// Token: 0x04007A63 RID: 31331
+		// Token: 0x04007AA4 RID: 31396
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly LinkedDictionary<TKey, TValue> m_parent;
 	}
 
-	// Token: 0x0200144D RID: 5197
+	// Token: 0x0200145F RID: 5215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly struct ValueCollection : ICollection<TValue>, IEnumerable<TValue>, IEnumerable
 	{
-		// Token: 0x0600A2F7 RID: 41719 RVA: 0x003D15C7 File Offset: 0x003CF7C7
+		// Token: 0x0600A34F RID: 41807 RVA: 0x003D39CB File Offset: 0x003D1BCB
 		public ValueCollection(LinkedDictionary<TKey, TValue> parent)
 		{
 			this.m_parent = parent;
 		}
 
-		// Token: 0x0600A2F8 RID: 41720 RVA: 0x003D15D0 File Offset: 0x003CF7D0
+		// Token: 0x0600A350 RID: 41808 RVA: 0x003D39D4 File Offset: 0x003D1BD4
 		public IEnumerator<TValue> GetEnumerator()
 		{
 			return this.m_parent.m_list.Select<KeyValuePair<TKey, TValue>, TValue>((KeyValuePair<TKey, TValue> pair) => pair.Value).GetEnumerator();
 		}
 
-		// Token: 0x0600A2F9 RID: 41721 RVA: 0x003D1606 File Offset: 0x003CF806
+		// Token: 0x0600A351 RID: 41809 RVA: 0x003D3A0A File Offset: 0x003D1C0A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.GetEnumerator();
 		}
 
-		// Token: 0x0600A2FA RID: 41722 RVA: 0x00006566 File Offset: 0x00004766
+		// Token: 0x0600A352 RID: 41810 RVA: 0x00006566 File Offset: 0x00004766
 		public void Add(TValue item)
 		{
 			throw new NotSupportedException();
 		}
 
-		// Token: 0x0600A2FB RID: 41723 RVA: 0x003D160E File Offset: 0x003CF80E
+		// Token: 0x0600A353 RID: 41811 RVA: 0x003D3A12 File Offset: 0x003D1C12
 		public void Clear()
 		{
 			this.m_parent.Clear();
 		}
 
-		// Token: 0x0600A2FC RID: 41724 RVA: 0x003D161C File Offset: 0x003CF81C
+		// Token: 0x0600A354 RID: 41812 RVA: 0x003D3A20 File Offset: 0x003D1C20
 		public bool Contains(TValue item)
 		{
 			return this.m_parent.m_list.Any<KeyValuePair<TKey, TValue>>((KeyValuePair<TKey, TValue> pair) => !EqualityComparer<TValue>.Default.Equals(pair.Value, item));
 		}
 
-		// Token: 0x0600A2FD RID: 41725 RVA: 0x003D1654 File Offset: 0x003CF854
+		// Token: 0x0600A355 RID: 41813 RVA: 0x003D3A58 File Offset: 0x003D1C58
 		public void CopyTo(TValue[] array, int arrayIndex)
 		{
 			if (array == null)
@@ -386,7 +386,7 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			}
 		}
 
-		// Token: 0x0600A2FE RID: 41726 RVA: 0x003D16E8 File Offset: 0x003CF8E8
+		// Token: 0x0600A356 RID: 41814 RVA: 0x003D3AEC File Offset: 0x003D1CEC
 		public bool Remove(TValue item)
 		{
 			for (LinkedListNode<KeyValuePair<TKey, TValue>> linkedListNode = this.m_parent.m_list.First; linkedListNode != null; linkedListNode = linkedListNode.Next)
@@ -400,8 +400,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			return false;
 		}
 
-		// Token: 0x1700134F RID: 4943
-		// (get) Token: 0x0600A2FF RID: 41727 RVA: 0x003D174C File Offset: 0x003CF94C
+		// Token: 0x1700135B RID: 4955
+		// (get) Token: 0x0600A357 RID: 41815 RVA: 0x003D3B50 File Offset: 0x003D1D50
 		public int Count
 		{
 			get
@@ -410,8 +410,8 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			}
 		}
 
-		// Token: 0x17001350 RID: 4944
-		// (get) Token: 0x0600A300 RID: 41728 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700135C RID: 4956
+		// (get) Token: 0x0600A358 RID: 41816 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsReadOnly
 		{
 			get
@@ -420,7 +420,7 @@ public class LinkedDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollec
 			}
 		}
 
-		// Token: 0x04007A66 RID: 31334
+		// Token: 0x04007AA7 RID: 31399
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly LinkedDictionary<TKey, TValue> m_parent;
 	}

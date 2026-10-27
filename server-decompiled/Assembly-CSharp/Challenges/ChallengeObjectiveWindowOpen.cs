@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001941 RID: 6465
+	// Token: 0x02001972 RID: 6514
 	[Preserve]
 	public class ChallengeObjectiveWindowOpen : BaseChallengeObjective
 	{
-		// Token: 0x17001938 RID: 6456
-		// (get) Token: 0x0600C7B1 RID: 51121 RVA: 0x000ED904 File Offset: 0x000EBB04
+		// Token: 0x17001980 RID: 6528
+		// (get) Token: 0x0600C8C5 RID: 51397 RVA: 0x000EDD14 File Offset: 0x000EBF14
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -17,8 +17,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001939 RID: 6457
-		// (get) Token: 0x0600C7B2 RID: 51122 RVA: 0x00493027 File Offset: 0x00491227
+		// Token: 0x17001981 RID: 6529
+		// (get) Token: 0x0600C8C6 RID: 51398 RVA: 0x00496A1B File Offset: 0x00494C1B
 		public override string DescriptionText
 		{
 			get
@@ -27,19 +27,19 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C7B3 RID: 51123 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C8C7 RID: 51399 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C7B4 RID: 51124 RVA: 0x0049305B File Offset: 0x0049125B
+		// Token: 0x0600C8C8 RID: 51400 RVA: 0x00496A4F File Offset: 0x00494C4F
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.WindowChanged -= this.Current_WindowChanged;
 			QuestEventManager.Current.WindowChanged += this.Current_WindowChanged;
 		}
 
-		// Token: 0x0600C7B5 RID: 51125 RVA: 0x00493089 File Offset: 0x00491289
+		// Token: 0x0600C8C9 RID: 51401 RVA: 0x00496A7D File Offset: 0x00494C7D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_WindowChanged(string _windowName)
 		{
@@ -57,13 +57,13 @@ namespace Challenges
 			this.Parent.CheckPrerequisites();
 		}
 
-		// Token: 0x0600C7B6 RID: 51126 RVA: 0x004930C2 File Offset: 0x004912C2
+		// Token: 0x0600C8CA RID: 51402 RVA: 0x00496AB6 File Offset: 0x00494CB6
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.WindowChanged -= this.Current_WindowChanged;
 		}
 
-		// Token: 0x0600C7B7 RID: 51127 RVA: 0x004930DA File Offset: 0x004912DA
+		// Token: 0x0600C8CB RID: 51403 RVA: 0x00496ACE File Offset: 0x00494CCE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleUpdatingCurrent()
 		{
@@ -74,7 +74,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C7B8 RID: 51128 RVA: 0x00493107 File Offset: 0x00491307
+		// Token: 0x0600C8CC RID: 51404 RVA: 0x00496AFB File Offset: 0x00494CFB
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveWindowOpen
@@ -83,7 +83,7 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0600C7B9 RID: 51129 RVA: 0x0048E873 File Offset: 0x0048CA73
+		// Token: 0x0600C8CD RID: 51405 RVA: 0x00492267 File Offset: 0x00490467
 		public override void CompleteObjective(bool handleComplete = true)
 		{
 			base.Current = this.MaxCount;
@@ -94,14 +94,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x04009651 RID: 38481
+		// Token: 0x0400973A RID: 38714
 		public string WindowName = "";
 
-		// Token: 0x04009652 RID: 38482
+		// Token: 0x0400973B RID: 38715
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string currentOpenWindow = "";
 
-		// Token: 0x04009653 RID: 38483
+		// Token: 0x0400973C RID: 38716
 		public RequirementObjectiveGroupWindowOpen Parent;
 	}
 }

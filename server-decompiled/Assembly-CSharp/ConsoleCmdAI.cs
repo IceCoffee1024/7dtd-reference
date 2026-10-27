@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E1 RID: 481
+// Token: 0x020001E3 RID: 483
 [Preserve]
 public class ConsoleCmdAI : ConsoleCmdAbstract
 {
-	// Token: 0x06000ECE RID: 3790 RVA: 0x000609D4 File Offset: 0x0005EBD4
+	// Token: 0x06000ED2 RID: 3794 RVA: 0x00060C98 File Offset: 0x0005EE98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "ai" };
 	}
 
-	// Token: 0x06000ECF RID: 3791 RVA: 0x000609E4 File Offset: 0x0005EBE4
+	// Token: 0x06000ED3 RID: 3795 RVA: 0x00060CA8 File Offset: 0x0005EEA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "AI commands";
 	}
 
-	// Token: 0x06000ED0 RID: 3792 RVA: 0x000609EB File Offset: 0x0005EBEB
+	// Token: 0x06000ED4 RID: 3796 RVA: 0x00060CAF File Offset: 0x0005EEAF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "AI commands:\nactivityclear - remove all activity areas (heat)\nanim <name> - trigger an animation (attack, attack2)\nanimmove <forward> <strafe> - set animation forward and strafe motion\nfreezepos - toggles movement\nlatency - toggles drawing\npathlines - toggles drawing editor path lines\npathgrid - force grid update\nragdoll <force> <time>\nrage <speed> <time> - make all zombies rage (0 - 2, 0 stops) (seconds)\nsendnames - toggles admin clients receiving debug name info";
 	}
 
-	// Token: 0x06000ED1 RID: 3793 RVA: 0x000609F4 File Offset: 0x0005EBF4
+	// Token: 0x06000ED5 RID: 3797 RVA: 0x00060CB8 File Offset: 0x0005EEB8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

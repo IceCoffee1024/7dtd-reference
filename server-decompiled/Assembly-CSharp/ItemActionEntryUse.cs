@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D7A RID: 3450
+// Token: 0x02000D85 RID: 3461
 [Preserve]
 public class ItemActionEntryUse : BaseItemActionEntry
 {
-	// Token: 0x06006842 RID: 26690 RVA: 0x00295F84 File Offset: 0x00294184
+	// Token: 0x06006867 RID: 26727 RVA: 0x002974AC File Offset: 0x002956AC
 	public ItemActionEntryUse(XUiController _controller, ItemActionEntryUse.ConsumeType _consumeType)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.DPadLeft, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -44,7 +44,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		this.RefreshEnabled();
 	}
 
-	// Token: 0x06006843 RID: 26691 RVA: 0x002960C0 File Offset: 0x002942C0
+	// Token: 0x06006868 RID: 26728 RVA: 0x002975E8 File Offset: 0x002957E8
 	public override void OnDisabledActivate()
 	{
 		EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -108,7 +108,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006844 RID: 26692 RVA: 0x002962C8 File Offset: 0x002944C8
+	// Token: 0x06006869 RID: 26729 RVA: 0x002977F0 File Offset: 0x002959F0
 	public override void RefreshEnabled()
 	{
 		this.state = ItemActionEntryUse.StateTypes.Normal;
@@ -208,7 +208,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		base.Enabled = base.Enabled && !toolbelt.IsHandBusy();
 	}
 
-	// Token: 0x06006845 RID: 26693 RVA: 0x002965C8 File Offset: 0x002947C8
+	// Token: 0x0600686A RID: 26730 RVA: 0x00297AF0 File Offset: 0x00295CF0
 	public override void OnActivated()
 	{
 		ItemActionEntryUse.<>c__DisplayClass6_0 CS$<>8__locals1 = new ItemActionEntryUse.<>c__DisplayClass6_0();
@@ -314,7 +314,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		CS$<>8__locals1.<OnActivated>g__UseItemWithAnimation|1();
 	}
 
-	// Token: 0x06006846 RID: 26694 RVA: 0x00296979 File Offset: 0x00294B79
+	// Token: 0x0600686B RID: 26731 RVA: 0x00297EA1 File Offset: 0x002960A1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator SwitchBackCoroutine(Inventory _inventory)
 	{
@@ -329,49 +329,49 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		yield break;
 	}
 
-	// Token: 0x06006847 RID: 26695 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600686C RID: 26732 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnTimerCompleted()
 	{
 	}
 
-	// Token: 0x0400504D RID: 20557
+	// Token: 0x04005072 RID: 20594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ItemActionEntryUse.ConsumeType consumeType;
 
-	// Token: 0x0400504E RID: 20558
+	// Token: 0x04005073 RID: 20595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntryUse.StateTypes state;
 
-	// Token: 0x02000D7B RID: 3451
+	// Token: 0x02000D86 RID: 3462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04005050 RID: 20560
+		// Token: 0x04005075 RID: 20597
 		Normal,
-		// Token: 0x04005051 RID: 20561
+		// Token: 0x04005076 RID: 20598
 		RecipeKnown,
-		// Token: 0x04005052 RID: 20562
+		// Token: 0x04005077 RID: 20599
 		SkillRequirementsNotMet,
-		// Token: 0x04005053 RID: 20563
+		// Token: 0x04005078 RID: 20600
 		SkillKnown
 	}
 
-	// Token: 0x02000D7C RID: 3452
+	// Token: 0x02000D87 RID: 3463
 	public enum ConsumeType
 	{
-		// Token: 0x04005055 RID: 20565
+		// Token: 0x0400507A RID: 20602
 		None,
-		// Token: 0x04005056 RID: 20566
+		// Token: 0x0400507B RID: 20603
 		Eat,
-		// Token: 0x04005057 RID: 20567
+		// Token: 0x0400507C RID: 20604
 		Drink,
-		// Token: 0x04005058 RID: 20568
+		// Token: 0x0400507D RID: 20605
 		Heal,
-		// Token: 0x04005059 RID: 20569
+		// Token: 0x0400507E RID: 20606
 		Read,
-		// Token: 0x0400505A RID: 20570
+		// Token: 0x0400507F RID: 20607
 		Quest,
-		// Token: 0x0400505B RID: 20571
+		// Token: 0x04005080 RID: 20608
 		Open
 	}
 }

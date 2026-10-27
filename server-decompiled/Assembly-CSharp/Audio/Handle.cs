@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Audio
 {
-	// Token: 0x02001B47 RID: 6983
+	// Token: 0x02001B78 RID: 7032
 	public class Handle
 	{
-		// Token: 0x0600D18E RID: 53646 RVA: 0x004C0DCC File Offset: 0x004BEFCC
+		// Token: 0x0600D2A2 RID: 53922 RVA: 0x004C48F4 File Offset: 0x004C2AF4
 		public Handle(string soundGroupName, AudioSource near, AudioSource far)
 		{
 			this.name = soundGroupName;
@@ -19,7 +19,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D18F RID: 53647 RVA: 0x004C0E24 File Offset: 0x004BF024
+		// Token: 0x0600D2A3 RID: 53923 RVA: 0x004C494C File Offset: 0x004C2B4C
 		public void SetPitch(float pitch)
 		{
 			if (this.nearSource)
@@ -32,7 +32,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D190 RID: 53648 RVA: 0x004C0E74 File Offset: 0x004BF074
+		// Token: 0x0600D2A4 RID: 53924 RVA: 0x004C499C File Offset: 0x004C2B9C
 		public void SetVolume(float volume)
 		{
 			if (this.nearSource)
@@ -45,13 +45,13 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D191 RID: 53649 RVA: 0x004C0EC1 File Offset: 0x004BF0C1
+		// Token: 0x0600D2A5 RID: 53925 RVA: 0x004C49E9 File Offset: 0x004C2BE9
 		public void Stop(int entityId)
 		{
 			Manager.Stop(entityId, this.name);
 		}
 
-		// Token: 0x0600D192 RID: 53650 RVA: 0x004C0ED0 File Offset: 0x004BF0D0
+		// Token: 0x0600D2A6 RID: 53926 RVA: 0x004C49F8 File Offset: 0x004C2BF8
 		public float ClipLength()
 		{
 			if (this.nearSource)
@@ -65,7 +65,7 @@ namespace Audio
 			return 0f;
 		}
 
-		// Token: 0x0600D193 RID: 53651 RVA: 0x004C0F20 File Offset: 0x004BF120
+		// Token: 0x0600D2A7 RID: 53927 RVA: 0x004C4A48 File Offset: 0x004C2C48
 		public bool IsPlaying()
 		{
 			bool flag = false;
@@ -80,23 +80,23 @@ namespace Audio
 			return flag;
 		}
 
-		// Token: 0x04009F68 RID: 40808
+		// Token: 0x0400A051 RID: 41041
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string name;
 
-		// Token: 0x04009F69 RID: 40809
+		// Token: 0x0400A052 RID: 41042
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AudioSource nearSource;
 
-		// Token: 0x04009F6A RID: 40810
+		// Token: 0x0400A053 RID: 41043
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AudioSource farSource;
 
-		// Token: 0x04009F6B RID: 40811
+		// Token: 0x0400A054 RID: 41044
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float basePitch;
 
-		// Token: 0x04009F6C RID: 40812
+		// Token: 0x0400A055 RID: 41045
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float baseVolume;
 	}

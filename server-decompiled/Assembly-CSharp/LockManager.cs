@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Pool;
 
-// Token: 0x02000588 RID: 1416
+// Token: 0x0200058F RID: 1423
 public class LockManager
 {
 	// Token: 0x17000518 RID: 1304
-	// (get) Token: 0x06002E99 RID: 11929 RVA: 0x00126AF4 File Offset: 0x00124CF4
+	// (get) Token: 0x06002EA7 RID: 11943 RVA: 0x001276E8 File Offset: 0x001258E8
 	public static LockManager Instance
 	{
 		get
@@ -19,7 +19,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E9A RID: 11930 RVA: 0x00126B0C File Offset: 0x00124D0C
+	// Token: 0x06002EA8 RID: 11944 RVA: 0x00127700 File Offset: 0x00125900
 	public void Init()
 	{
 		if (this.pendingClientLocks.Count > 0 || this.singleLocks.CountKeys > 0 || this.sharedLocks.CountValues > 0)
@@ -34,7 +34,7 @@ public class LockManager
 		this.lastUpdate = DateTime.UtcNow;
 	}
 
-	// Token: 0x06002E9B RID: 11931 RVA: 0x00126B90 File Offset: 0x00124D90
+	// Token: 0x06002EA9 RID: 11945 RVA: 0x00127784 File Offset: 0x00125984
 	public void Update()
 	{
 		if (GameManager.Instance.World == null)
@@ -82,7 +82,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E9C RID: 11932 RVA: 0x00126D00 File Offset: 0x00124F00
+	// Token: 0x06002EAA RID: 11946 RVA: 0x001278F4 File Offset: 0x00125AF4
 	public bool IsLockedByLocalPlayer(ILockTarget _target, ushort _channel = 0)
 	{
 		if (_target == null)
@@ -118,7 +118,7 @@ public class LockManager
 		return !_target.IsSharedLock(_channel) && this.singleLocks.TryGetByValue(lockEntry, out num) && num == primaryPlayerId;
 	}
 
-	// Token: 0x06002E9D RID: 11933 RVA: 0x00126DC0 File Offset: 0x00124FC0
+	// Token: 0x06002EAB RID: 11947 RVA: 0x001279B4 File Offset: 0x00125BB4
 	public bool IsLockedServer(ILockTarget _target, ushort _channel = 0)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -130,7 +130,7 @@ public class LockManager
 		return (_target.IsSharedLock(_channel) && this.sharedLocks.ContainsValue(lockEntry)) || (!_target.IsSharedLock(_channel) && this.singleLocks.ContainsValue(lockEntry));
 	}
 
-	// Token: 0x06002E9E RID: 11934 RVA: 0x00126E21 File Offset: 0x00125021
+	// Token: 0x06002EAC RID: 11948 RVA: 0x00127A15 File Offset: 0x00125C15
 	public void LockRequestLocal(ILockTarget _target, ushort _channel = 0)
 	{
 		if (_target == null)
@@ -142,7 +142,7 @@ public class LockManager
 		this.LockRequestLocal(1, _channel);
 	}
 
-	// Token: 0x06002E9F RID: 11935 RVA: 0x00126E42 File Offset: 0x00125042
+	// Token: 0x06002EAD RID: 11949 RVA: 0x00127A36 File Offset: 0x00125C36
 	public void LockRequestLocal(ILockTarget _targetA, ILockTarget _targetB, ushort _channel = 0)
 	{
 		if (_targetA == null || _targetB == null)
@@ -155,7 +155,7 @@ public class LockManager
 		this.LockRequestLocal(2, _channel);
 	}
 
-	// Token: 0x06002EA0 RID: 11936 RVA: 0x00126E6F File Offset: 0x0012506F
+	// Token: 0x06002EAE RID: 11950 RVA: 0x00127A63 File Offset: 0x00125C63
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LockRequestLocal(int _count, ushort _channel)
 	{
@@ -163,7 +163,7 @@ public class LockManager
 		Array.Clear(this.requestTargets, 0, _count);
 	}
 
-	// Token: 0x06002EA1 RID: 11937 RVA: 0x00126E94 File Offset: 0x00125094
+	// Token: 0x06002EAF RID: 11951 RVA: 0x00127A88 File Offset: 0x00125C88
 	public unsafe void LockRequestLocal(ReadOnlySpan<ILockTarget> _targets, ushort _channel = 0)
 	{
 		if (_targets == null || _targets.Length == 0)
@@ -209,7 +209,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EA2 RID: 11938 RVA: 0x00126FE0 File Offset: 0x001251E0
+	// Token: 0x06002EB0 RID: 11952 RVA: 0x00127BD4 File Offset: 0x00125DD4
 	public void ProcessRequest(PooledBinaryReader _br, int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -225,7 +225,7 @@ public class LockManager
 		this.UnlockRequestServer(_playerId, false);
 	}
 
-	// Token: 0x06002EA3 RID: 11939 RVA: 0x00127014 File Offset: 0x00125214
+	// Token: 0x06002EB1 RID: 11953 RVA: 0x00127C08 File Offset: 0x00125E08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LockRequestServer(int _playerId, PooledBinaryReader _br)
 	{
@@ -325,7 +325,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EA4 RID: 11940 RVA: 0x00127308 File Offset: 0x00125508
+	// Token: 0x06002EB2 RID: 11954 RVA: 0x00127EFC File Offset: 0x001260FC
 	public void ProcessResponse(PooledBinaryReader _br)
 	{
 		if (_br.ReadBoolean())
@@ -336,7 +336,7 @@ public class LockManager
 		this.UnlockResponseLocal(_br);
 	}
 
-	// Token: 0x06002EA5 RID: 11941 RVA: 0x00127324 File Offset: 0x00125524
+	// Token: 0x06002EB3 RID: 11955 RVA: 0x00127F18 File Offset: 0x00126118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LockResponseLocal(PooledBinaryReader _br)
 	{
@@ -399,7 +399,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EA6 RID: 11942 RVA: 0x001274A0 File Offset: 0x001256A0
+	// Token: 0x06002EB4 RID: 11956 RVA: 0x00128094 File Offset: 0x00126294
 	public void UnlockRequestLocal()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -422,7 +422,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EA7 RID: 11943 RVA: 0x00127530 File Offset: 0x00125730
+	// Token: 0x06002EB5 RID: 11957 RVA: 0x00128124 File Offset: 0x00126324
 	public void UnlockRequestServer(int _playerId, bool _isForceUnlocked)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -487,7 +487,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EA8 RID: 11944 RVA: 0x001276F0 File Offset: 0x001258F0
+	// Token: 0x06002EB6 RID: 11958 RVA: 0x001282E4 File Offset: 0x001264E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DispatchRequest(PooledExpandableMemoryStream _request)
 	{
@@ -504,7 +504,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EA9 RID: 11945 RVA: 0x00127770 File Offset: 0x00125970
+	// Token: 0x06002EB7 RID: 11959 RVA: 0x00128364 File Offset: 0x00126564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DispatchResponse(PooledExpandableMemoryStream _response, int _playerId)
 	{
@@ -521,7 +521,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EAA RID: 11946 RVA: 0x001277F8 File Offset: 0x001259F8
+	// Token: 0x06002EB8 RID: 11960 RVA: 0x001283EC File Offset: 0x001265EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UnlockResponseLocal(PooledBinaryReader _br)
 	{
@@ -543,7 +543,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EAB RID: 11947 RVA: 0x0012787C File Offset: 0x00125A7C
+	// Token: 0x06002EB9 RID: 11961 RVA: 0x00128470 File Offset: 0x00126670
 	public void ForceUnlockAll()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -562,7 +562,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EAC RID: 11948 RVA: 0x001278F4 File Offset: 0x00125AF4
+	// Token: 0x06002EBA RID: 11962 RVA: 0x001284E8 File Offset: 0x001266E8
 	public void ForceUnlockByPlayer(int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -573,7 +573,7 @@ public class LockManager
 		this.UnlockRequestServer(_playerId, true);
 	}
 
-	// Token: 0x06002EAD RID: 11949 RVA: 0x00127918 File Offset: 0x00125B18
+	// Token: 0x06002EBB RID: 11963 RVA: 0x0012850C File Offset: 0x0012670C
 	public void ForceUnlockLockTarget(ILockTarget _target)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -619,7 +619,7 @@ public class LockManager
 		Log.Warning("[LockManager] Target is not locked.");
 	}
 
-	// Token: 0x06002EAE RID: 11950 RVA: 0x00127AA4 File Offset: 0x00125CA4
+	// Token: 0x06002EBC RID: 11964 RVA: 0x00128698 File Offset: 0x00126898
 	public void ForceUnlockByChunk(HashSetLong chunks)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -687,7 +687,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EAF RID: 11951 RVA: 0x00127D30 File Offset: 0x00125F30
+	// Token: 0x06002EBD RID: 11965 RVA: 0x00128924 File Offset: 0x00126B24
 	public void ProcessKeepOpen(int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -702,7 +702,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002EB0 RID: 11952 RVA: 0x00127D68 File Offset: 0x00125F68
+	// Token: 0x06002EBE RID: 11966 RVA: 0x0012895C File Offset: 0x00126B5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshPlayerActive(int playerId)
 	{
@@ -716,75 +716,75 @@ public class LockManager
 		this.keepOpenTimes.Remove(playerId);
 	}
 
-	// Token: 0x040023EB RID: 9195
+	// Token: 0x04002406 RID: 9222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxLocksPerPlayer = 5;
 
-	// Token: 0x040023EC RID: 9196
+	// Token: 0x04002407 RID: 9223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float KeepOpenTimeoutSeconds = 10f;
 
-	// Token: 0x040023ED RID: 9197
+	// Token: 0x04002408 RID: 9224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float KeepOpenPeriodSeconds = 2.5f;
 
-	// Token: 0x040023EE RID: 9198
+	// Token: 0x04002409 RID: 9225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LockManager _instance;
 
-	// Token: 0x040023EF RID: 9199
+	// Token: 0x0400240A RID: 9226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> playersWithLocks = new HashSet<int>();
 
-	// Token: 0x040023F0 RID: 9200
+	// Token: 0x0400240B RID: 9227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public OneToManyDictionary<int, LockManager.LockEntry> singleLocks = new OneToManyDictionary<int, LockManager.LockEntry>();
 
-	// Token: 0x040023F1 RID: 9201
+	// Token: 0x0400240C RID: 9228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ManyToManyDictionary<int, LockManager.LockEntry> sharedLocks = new ManyToManyDictionary<int, LockManager.LockEntry>();
 
-	// Token: 0x040023F2 RID: 9202
+	// Token: 0x0400240D RID: 9229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<LockManager.LockEntry> pendingClientLocks = new HashSet<LockManager.LockEntry>();
 
-	// Token: 0x040023F3 RID: 9203
+	// Token: 0x0400240E RID: 9230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ILockTarget[] requestTargets = new ILockTarget[5];
 
-	// Token: 0x040023F4 RID: 9204
+	// Token: 0x0400240F RID: 9231
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, DateTime> keepOpenTimes = new Dictionary<int, DateTime>();
 
-	// Token: 0x040023F5 RID: 9205
+	// Token: 0x04002410 RID: 9232
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime lastUpdate;
 
-	// Token: 0x02000589 RID: 1417
+	// Token: 0x02000590 RID: 1424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly struct LockEntry : IEquatable<LockManager.LockEntry>
 	{
-		// Token: 0x06002EB2 RID: 11954 RVA: 0x00127E26 File Offset: 0x00126026
+		// Token: 0x06002EC0 RID: 11968 RVA: 0x00128A1A File Offset: 0x00126C1A
 		public LockEntry(ILockTarget target, ushort channel = 0)
 		{
 			this.Target = target;
 			this.Channel = channel;
 		}
 
-		// Token: 0x06002EB3 RID: 11955 RVA: 0x00127E36 File Offset: 0x00126036
+		// Token: 0x06002EC1 RID: 11969 RVA: 0x00128A2A File Offset: 0x00126C2A
 		public bool Equals(LockManager.LockEntry other)
 		{
 			return this.Target == other.Target && this.Channel == other.Channel;
 		}
 
-		// Token: 0x06002EB4 RID: 11956 RVA: 0x00127E56 File Offset: 0x00126056
+		// Token: 0x06002EC2 RID: 11970 RVA: 0x00128A4A File Offset: 0x00126C4A
 		public override int GetHashCode()
 		{
 			ILockTarget target = this.Target;
 			return HashCode.Combine<int, ushort>((target != null) ? target.GetHashCode() : 0, this.Channel);
 		}
 
-		// Token: 0x06002EB5 RID: 11957 RVA: 0x00127E78 File Offset: 0x00126078
+		// Token: 0x06002EC3 RID: 11971 RVA: 0x00128A6C File Offset: 0x00126C6C
 		public override bool Equals(object obj)
 		{
 			if (obj is LockManager.LockEntry)
@@ -795,22 +795,22 @@ public class LockManager
 			return false;
 		}
 
-		// Token: 0x06002EB6 RID: 11958 RVA: 0x00127E9D File Offset: 0x0012609D
+		// Token: 0x06002EC4 RID: 11972 RVA: 0x00128A91 File Offset: 0x00126C91
 		public static bool operator ==(LockManager.LockEntry left, LockManager.LockEntry right)
 		{
 			return left.Equals(right);
 		}
 
-		// Token: 0x06002EB7 RID: 11959 RVA: 0x00127EA7 File Offset: 0x001260A7
+		// Token: 0x06002EC5 RID: 11973 RVA: 0x00128A9B File Offset: 0x00126C9B
 		public static bool operator !=(LockManager.LockEntry left, LockManager.LockEntry right)
 		{
 			return !left.Equals(right);
 		}
 
-		// Token: 0x040023F6 RID: 9206
+		// Token: 0x04002411 RID: 9233
 		public readonly ILockTarget Target;
 
-		// Token: 0x040023F7 RID: 9207
+		// Token: 0x04002412 RID: 9234
 		public readonly ushort Channel;
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using SandboxOptions;
 
-// Token: 0x02000E4C RID: 3660
+// Token: 0x02000E57 RID: 3671
 public struct SandboxPresetInfo : IEquatable<SandboxPresetInfo>
 {
-	// Token: 0x0600700B RID: 28683 RVA: 0x002B6324 File Offset: 0x002B4524
+	// Token: 0x06007030 RID: 28720 RVA: 0x002B7890 File Offset: 0x002B5A90
 	public SandboxPresetInfo(SandboxOptionPreset _preset)
 	{
 		this.InternalName = _preset.Name;
@@ -17,19 +17,19 @@ public struct SandboxPresetInfo : IEquatable<SandboxPresetInfo>
 		this.IsCustomPreset = _preset.IsCustomPreset;
 	}
 
-	// Token: 0x0600700C RID: 28684 RVA: 0x002B6391 File Offset: 0x002B4591
+	// Token: 0x06007031 RID: 28721 RVA: 0x002B78FD File Offset: 0x002B5AFD
 	public override string ToString()
 	{
 		return this.FormattedName;
 	}
 
-	// Token: 0x0600700D RID: 28685 RVA: 0x002B6399 File Offset: 0x002B4599
+	// Token: 0x06007032 RID: 28722 RVA: 0x002B7905 File Offset: 0x002B5B05
 	public bool Equals(SandboxPresetInfo _other)
 	{
 		return this.InternalName == _other.InternalName;
 	}
 
-	// Token: 0x0600700E RID: 28686 RVA: 0x002B63AC File Offset: 0x002B45AC
+	// Token: 0x06007033 RID: 28723 RVA: 0x002B7918 File Offset: 0x002B5B18
 	public override bool Equals(object _obj)
 	{
 		if (_obj is SandboxPresetInfo)
@@ -40,7 +40,7 @@ public struct SandboxPresetInfo : IEquatable<SandboxPresetInfo>
 		return false;
 	}
 
-	// Token: 0x0600700F RID: 28687 RVA: 0x002B63D1 File Offset: 0x002B45D1
+	// Token: 0x06007034 RID: 28724 RVA: 0x002B793D File Offset: 0x002B5B3D
 	public override int GetHashCode()
 	{
 		if (this.InternalName == null)
@@ -50,27 +50,27 @@ public struct SandboxPresetInfo : IEquatable<SandboxPresetInfo>
 		return this.InternalName.GetHashCode();
 	}
 
-	// Token: 0x040054EB RID: 21739
+	// Token: 0x04005510 RID: 21776
 	public readonly string InternalName;
 
-	// Token: 0x040054EC RID: 21740
+	// Token: 0x04005511 RID: 21777
 	public readonly string FormattedName;
 
-	// Token: 0x040054ED RID: 21741
+	// Token: 0x04005512 RID: 21778
 	public readonly string Description;
 
-	// Token: 0x040054EE RID: 21742
+	// Token: 0x04005513 RID: 21779
 	public readonly string Icon;
 
-	// Token: 0x040054EF RID: 21743
+	// Token: 0x04005514 RID: 21780
 	public readonly int Difficulty;
 
-	// Token: 0x040054F0 RID: 21744
+	// Token: 0x04005515 RID: 21781
 	public readonly bool IsUserPreset;
 
-	// Token: 0x040054F1 RID: 21745
+	// Token: 0x04005516 RID: 21782
 	public readonly bool IsCustomPreset;
 
-	// Token: 0x040054F2 RID: 21746
+	// Token: 0x04005517 RID: 21783
 	public string SandboxCode;
 }

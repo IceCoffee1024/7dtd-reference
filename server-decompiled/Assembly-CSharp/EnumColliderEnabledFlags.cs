@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000900 RID: 2304
+// Token: 0x0200090A RID: 2314
 [Flags]
 public enum EnumColliderEnabledFlags
 {
-	// Token: 0x040035DF RID: 13791
+	// Token: 0x040035FF RID: 13823
 	Disabled = 0,
-	// Token: 0x040035E0 RID: 13792
+	// Token: 0x04003600 RID: 13824
 	Collision = 1,
-	// Token: 0x040035E1 RID: 13793
+	// Token: 0x04003601 RID: 13825
 	Ragdoll = 2,
-	// Token: 0x040035E2 RID: 13794
+	// Token: 0x04003602 RID: 13826
 	All = 3
 }

@@ -8,13 +8,13 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x0200165A RID: 5722
+	// Token: 0x0200166C RID: 5740
 	[Preserve]
 	public class AttributesData : IXMLData
 	{
-		// Token: 0x1700154A RID: 5450
-		// (get) Token: 0x0600B32A RID: 45866 RVA: 0x0042C9DF File Offset: 0x0042ABDF
-		// (set) Token: 0x0600B32B RID: 45867 RVA: 0x0042C9E7 File Offset: 0x0042ABE7
+		// Token: 0x17001556 RID: 5462
+		// (get) Token: 0x0600B382 RID: 45954 RVA: 0x0042EDE3 File Offset: 0x0042CFE3
+		// (set) Token: 0x0600B383 RID: 45955 RVA: 0x0042EDEB File Offset: 0x0042CFEB
 		public DataItem<string> EntityDamage
 		{
 			get
@@ -27,9 +27,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700154B RID: 5451
-		// (get) Token: 0x0600B32C RID: 45868 RVA: 0x0042C9F0 File Offset: 0x0042ABF0
-		// (set) Token: 0x0600B32D RID: 45869 RVA: 0x0042C9F8 File Offset: 0x0042ABF8
+		// Token: 0x17001557 RID: 5463
+		// (get) Token: 0x0600B384 RID: 45956 RVA: 0x0042EDF4 File Offset: 0x0042CFF4
+		// (set) Token: 0x0600B385 RID: 45957 RVA: 0x0042EDFC File Offset: 0x0042CFFC
 		public DataItem<string> BlockDamage
 		{
 			get
@@ -42,9 +42,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700154C RID: 5452
-		// (get) Token: 0x0600B32E RID: 45870 RVA: 0x0042CA01 File Offset: 0x0042AC01
-		// (set) Token: 0x0600B32F RID: 45871 RVA: 0x0042CA09 File Offset: 0x0042AC09
+		// Token: 0x17001558 RID: 5464
+		// (get) Token: 0x0600B386 RID: 45958 RVA: 0x0042EE05 File Offset: 0x0042D005
+		// (set) Token: 0x0600B387 RID: 45959 RVA: 0x0042EE0D File Offset: 0x0042D00D
 		public DataItem<string> Accuracy
 		{
 			get
@@ -57,9 +57,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700154D RID: 5453
-		// (get) Token: 0x0600B330 RID: 45872 RVA: 0x0042CA12 File Offset: 0x0042AC12
-		// (set) Token: 0x0600B331 RID: 45873 RVA: 0x0042CA1A File Offset: 0x0042AC1A
+		// Token: 0x17001559 RID: 5465
+		// (get) Token: 0x0600B388 RID: 45960 RVA: 0x0042EE16 File Offset: 0x0042D016
+		// (set) Token: 0x0600B389 RID: 45961 RVA: 0x0042EE1E File Offset: 0x0042D01E
 		public DataItem<string> FalloffRange
 		{
 			get
@@ -72,9 +72,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700154E RID: 5454
-		// (get) Token: 0x0600B332 RID: 45874 RVA: 0x0042CA23 File Offset: 0x0042AC23
-		// (set) Token: 0x0600B333 RID: 45875 RVA: 0x0042CA2B File Offset: 0x0042AC2B
+		// Token: 0x1700155A RID: 5466
+		// (get) Token: 0x0600B38A RID: 45962 RVA: 0x0042EE27 File Offset: 0x0042D027
+		// (set) Token: 0x0600B38B RID: 45963 RVA: 0x0042EE2F File Offset: 0x0042D02F
 		public DataItem<string> GainHealth
 		{
 			get
@@ -87,9 +87,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700154F RID: 5455
-		// (get) Token: 0x0600B334 RID: 45876 RVA: 0x0042CA34 File Offset: 0x0042AC34
-		// (set) Token: 0x0600B335 RID: 45877 RVA: 0x0042CA3C File Offset: 0x0042AC3C
+		// Token: 0x1700155B RID: 5467
+		// (get) Token: 0x0600B38C RID: 45964 RVA: 0x0042EE38 File Offset: 0x0042D038
+		// (set) Token: 0x0600B38D RID: 45965 RVA: 0x0042EE40 File Offset: 0x0042D040
 		public DataItem<string> GainFood
 		{
 			get
@@ -102,9 +102,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001550 RID: 5456
-		// (get) Token: 0x0600B336 RID: 45878 RVA: 0x0042CA45 File Offset: 0x0042AC45
-		// (set) Token: 0x0600B337 RID: 45879 RVA: 0x0042CA4D File Offset: 0x0042AC4D
+		// Token: 0x1700155C RID: 5468
+		// (get) Token: 0x0600B38E RID: 45966 RVA: 0x0042EE49 File Offset: 0x0042D049
+		// (set) Token: 0x0600B38F RID: 45967 RVA: 0x0042EE51 File Offset: 0x0042D051
 		public DataItem<string> GainWater
 		{
 			get
@@ -117,9 +117,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001551 RID: 5457
-		// (get) Token: 0x0600B338 RID: 45880 RVA: 0x0042CA56 File Offset: 0x0042AC56
-		// (set) Token: 0x0600B339 RID: 45881 RVA: 0x0042CA5E File Offset: 0x0042AC5E
+		// Token: 0x1700155D RID: 5469
+		// (get) Token: 0x0600B390 RID: 45968 RVA: 0x0042EE5A File Offset: 0x0042D05A
+		// (set) Token: 0x0600B391 RID: 45969 RVA: 0x0042EE62 File Offset: 0x0042D062
 		public DataItem<string> DegradationRate
 		{
 			get
@@ -132,48 +132,48 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B33A RID: 45882 RVA: 0x0042C337 File Offset: 0x0042A537
+		// Token: 0x0600B392 RID: 45970 RVA: 0x0042E73B File Offset: 0x0042C93B
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			return new List<IDataItem>();
 		}
 
-		// Token: 0x04008681 RID: 34433
+		// Token: 0x040086C2 RID: 34498
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pEntityDamage;
 
-		// Token: 0x04008682 RID: 34434
+		// Token: 0x040086C3 RID: 34499
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pBlockDamage;
 
-		// Token: 0x04008683 RID: 34435
+		// Token: 0x040086C4 RID: 34500
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pAccuracy;
 
-		// Token: 0x04008684 RID: 34436
+		// Token: 0x040086C5 RID: 34501
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pFalloffRange;
 
-		// Token: 0x04008685 RID: 34437
+		// Token: 0x040086C6 RID: 34502
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pGainHealth;
 
-		// Token: 0x04008686 RID: 34438
+		// Token: 0x040086C7 RID: 34503
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pGainFood;
 
-		// Token: 0x04008687 RID: 34439
+		// Token: 0x040086C8 RID: 34504
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pGainWater;
 
-		// Token: 0x04008688 RID: 34440
+		// Token: 0x040086C9 RID: 34505
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pDegradationRate;
 
-		// Token: 0x0200165B RID: 5723
+		// Token: 0x0200166D RID: 5741
 		public static class Parser
 		{
-			// Token: 0x0600B33C RID: 45884 RVA: 0x0042CA68 File Offset: 0x0042AC68
+			// Token: 0x0600B394 RID: 45972 RVA: 0x0042EE6C File Offset: 0x0042D06C
 			public static AttributesData Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "AttributesData");
@@ -438,7 +438,7 @@ namespace XMLData.Item
 				return attributesData;
 			}
 
-			// Token: 0x04008689 RID: 34441
+			// Token: 0x040086CA RID: 34506
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

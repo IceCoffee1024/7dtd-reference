@@ -2,13 +2,13 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010B6 RID: 4278
+// Token: 0x020010C6 RID: 4294
 [Preserve]
 public class XUiC_TwitchLeaderboardEntry : XUiController
 {
-	// Token: 0x17001008 RID: 4104
-	// (get) Token: 0x0600880E RID: 34830 RVA: 0x00341409 File Offset: 0x0033F609
-	// (set) Token: 0x0600880F RID: 34831 RVA: 0x00341411 File Offset: 0x0033F611
+	// Token: 0x17001013 RID: 4115
+	// (get) Token: 0x06008861 RID: 34913 RVA: 0x0034348D File Offset: 0x0034168D
+	// (set) Token: 0x06008862 RID: 34914 RVA: 0x00343495 File Offset: 0x00341695
 	public TwitchLeaderboardEntry LeaderboardEntry
 	{
 		get
@@ -23,12 +23,12 @@ public class XUiC_TwitchLeaderboardEntry : XUiController
 		}
 	}
 
-	// Token: 0x17001009 RID: 4105
-	// (get) Token: 0x06008810 RID: 34832 RVA: 0x00341430 File Offset: 0x0033F630
-	// (set) Token: 0x06008811 RID: 34833 RVA: 0x00341438 File Offset: 0x0033F638
+	// Token: 0x17001014 RID: 4116
+	// (get) Token: 0x06008863 RID: 34915 RVA: 0x003434B4 File Offset: 0x003416B4
+	// (set) Token: 0x06008864 RID: 34916 RVA: 0x003434BC File Offset: 0x003416BC
 	public XUiC_TwitchInfoWindowGroup TwitchInfoUIHandler { get; set; }
 
-	// Token: 0x06008812 RID: 34834 RVA: 0x00341444 File Offset: 0x0033F644
+	// Token: 0x06008865 RID: 34917 RVA: 0x003434C8 File Offset: 0x003416C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -46,14 +46,14 @@ public class XUiC_TwitchLeaderboardEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06008813 RID: 34835 RVA: 0x002E0AD8 File Offset: 0x002DECD8
+	// Token: 0x06008866 RID: 34918 RVA: 0x002E23C8 File Offset: 0x002E05C8
 	public override void Init()
 	{
 		base.Init();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008814 RID: 34836 RVA: 0x002C75E5 File Offset: 0x002C57E5
+	// Token: 0x06008867 RID: 34919 RVA: 0x002C8B51 File Offset: 0x002C6D51
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -61,20 +61,20 @@ public class XUiC_TwitchLeaderboardEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008815 RID: 34837 RVA: 0x003414CB File Offset: 0x0033F6CB
+	// Token: 0x06008868 RID: 34920 RVA: 0x0034354F File Offset: 0x0034174F
 	public override void OnCursorSelected(bool _isActualElement)
 	{
 		base.OnCursorSelected(_isActualElement);
 		base.GetParentByType<XUiC_TwitchLeaderboardEntryList>().SelectedEntry = this;
 	}
 
-	// Token: 0x06008816 RID: 34838 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06008869 RID: 34921 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	public void Refresh()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008817 RID: 34839 RVA: 0x003414E0 File Offset: 0x0033F6E0
+	// Token: 0x0600886A RID: 34922 RVA: 0x00343564 File Offset: 0x00341764
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "enabled_color")
@@ -110,40 +110,40 @@ public class XUiC_TwitchLeaderboardEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0400655F RID: 25951
+	// Token: 0x0400659E RID: 26014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string enabledColor;
 
-	// Token: 0x04006560 RID: 25952
+	// Token: 0x0400659F RID: 26015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string disabledColor;
 
-	// Token: 0x04006561 RID: 25953
+	// Token: 0x040065A0 RID: 26016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rowColor;
 
-	// Token: 0x04006562 RID: 25954
+	// Token: 0x040065A1 RID: 26017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hoverColor;
 
-	// Token: 0x04006563 RID: 25955
+	// Token: 0x040065A2 RID: 26018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string positiveColor = "0,0,255";
 
-	// Token: 0x04006564 RID: 25956
+	// Token: 0x040065A3 RID: 26019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string negativeColor = "255,0,0";
 
-	// Token: 0x04006565 RID: 25957
+	// Token: 0x040065A4 RID: 26020
 	public new bool Selected;
 
-	// Token: 0x04006566 RID: 25958
+	// Token: 0x040065A5 RID: 26021
 	public bool IsHovered;
 
-	// Token: 0x04006567 RID: 25959
+	// Token: 0x040065A6 RID: 26022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchLeaderboardEntry leaderboardEntry;
 
-	// Token: 0x04006569 RID: 25961
+	// Token: 0x040065A8 RID: 26024
 	public XUiC_TwitchLeaderboardEntryList Owner;
 }

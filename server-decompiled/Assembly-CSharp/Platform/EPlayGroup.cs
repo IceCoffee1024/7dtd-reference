@@ -2,16 +2,16 @@
 
 namespace Platform
 {
-	// Token: 0x02001B80 RID: 7040
+	// Token: 0x02001BB1 RID: 7089
 	public enum EPlayGroup
 	{
-		// Token: 0x0400A11D RID: 41245
+		// Token: 0x0400A206 RID: 41478
 		Unknown,
-		// Token: 0x0400A11E RID: 41246
+		// Token: 0x0400A207 RID: 41479
 		Standalone,
-		// Token: 0x0400A11F RID: 41247
+		// Token: 0x0400A208 RID: 41480
 		XBS,
-		// Token: 0x0400A120 RID: 41248
+		// Token: 0x0400A209 RID: 41481
 		PS5
 	}
 }

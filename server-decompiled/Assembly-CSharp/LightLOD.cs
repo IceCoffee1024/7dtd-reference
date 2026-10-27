@@ -2,10 +2,10 @@
 using Audio;
 using UnityEngine;
 
-// Token: 0x02001267 RID: 4711
+// Token: 0x02001279 RID: 4729
 public class LightLOD : MonoBehaviour
 {
-	// Token: 0x060095AB RID: 38315 RVA: 0x003887F0 File Offset: 0x003869F0
+	// Token: 0x06009602 RID: 38402 RVA: 0x0038ABEC File Offset: 0x00388DEC
 	public Light GetLight()
 	{
 		if (!this.myLight)
@@ -27,14 +27,14 @@ public class LightLOD : MonoBehaviour
 		return this.myLight;
 	}
 
-	// Token: 0x060095AC RID: 38316 RVA: 0x00388866 File Offset: 0x00386A66
+	// Token: 0x06009603 RID: 38403 RVA: 0x0038AC62 File Offset: 0x00388E62
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.Init();
 	}
 
-	// Token: 0x060095AD RID: 38317 RVA: 0x00388870 File Offset: 0x00386A70
+	// Token: 0x06009604 RID: 38404 RVA: 0x0038AC6C File Offset: 0x00388E6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -111,7 +111,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095AE RID: 38318 RVA: 0x00388A5C File Offset: 0x00386C5C
+	// Token: 0x06009605 RID: 38405 RVA: 0x0038AE58 File Offset: 0x00389058
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -135,7 +135,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095AF RID: 38319 RVA: 0x00388AF4 File Offset: 0x00386CF4
+	// Token: 0x06009606 RID: 38406 RVA: 0x0038AEF0 File Offset: 0x003890F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckInitialBlock()
 	{
@@ -171,9 +171,9 @@ public class LightLOD : MonoBehaviour
 		this.isInitialBlockDone = true;
 	}
 
-	// Token: 0x170011FD RID: 4605
-	// (get) Token: 0x060095B0 RID: 38320 RVA: 0x00388C0C File Offset: 0x00386E0C
-	// (set) Token: 0x060095B1 RID: 38321 RVA: 0x00388C14 File Offset: 0x00386E14
+	// Token: 0x17001208 RID: 4616
+	// (get) Token: 0x06009607 RID: 38407 RVA: 0x0038B008 File Offset: 0x00389208
+	// (set) Token: 0x06009608 RID: 38408 RVA: 0x0038B010 File Offset: 0x00389210
 	public LightStateType LightStateType
 	{
 		get
@@ -203,9 +203,9 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170011FE RID: 4606
-	// (get) Token: 0x060095B3 RID: 38323 RVA: 0x00388CA2 File Offset: 0x00386EA2
-	// (set) Token: 0x060095B2 RID: 38322 RVA: 0x00388C82 File Offset: 0x00386E82
+	// Token: 0x17001209 RID: 4617
+	// (get) Token: 0x0600960A RID: 38410 RVA: 0x0038B09E File Offset: 0x0038929E
+	// (set) Token: 0x06009609 RID: 38409 RVA: 0x0038B07E File Offset: 0x0038927E
 	public float MaxIntensity
 	{
 		get
@@ -225,8 +225,8 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170011FF RID: 4607
-	// (set) Token: 0x060095B4 RID: 38324 RVA: 0x00388CAA File Offset: 0x00386EAA
+	// Token: 0x1700120A RID: 4618
+	// (set) Token: 0x0600960B RID: 38411 RVA: 0x0038B0A6 File Offset: 0x003892A6
 	public float LightAngle
 	{
 		set
@@ -242,13 +242,13 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095B5 RID: 38325 RVA: 0x00388CD4 File Offset: 0x00386ED4
+	// Token: 0x0600960C RID: 38412 RVA: 0x0038B0D0 File Offset: 0x003892D0
 	public void SetEmissiveColor(bool _on)
 	{
 		this.SetEmissiveColor(_on ? 1f : 0f);
 	}
 
-	// Token: 0x060095B6 RID: 38326 RVA: 0x00388CEC File Offset: 0x00386EEC
+	// Token: 0x0600960D RID: 38413 RVA: 0x0038B0E8 File Offset: 0x003892E8
 	public void SetEmissiveColor(float _newV)
 	{
 		if (_newV <= 0f)
@@ -282,7 +282,7 @@ public class LightLOD : MonoBehaviour
 		this.SetEmissiveColor(color2);
 	}
 
-	// Token: 0x060095B7 RID: 38327 RVA: 0x00388D64 File Offset: 0x00386F64
+	// Token: 0x0600960E RID: 38414 RVA: 0x0038B160 File Offset: 0x00389360
 	public void SetEmissiveColor(Color _color)
 	{
 		if (this.RefIlluminatedMaterials == null)
@@ -319,7 +319,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095B8 RID: 38328 RVA: 0x00388E18 File Offset: 0x00387018
+	// Token: 0x0600960F RID: 38415 RVA: 0x0038B214 File Offset: 0x00389414
 	public void SetRange(float _range)
 	{
 		Light light = this.GetLight();
@@ -335,7 +335,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095B9 RID: 38329 RVA: 0x00388E90 File Offset: 0x00387090
+	// Token: 0x06009610 RID: 38416 RVA: 0x0038B28C File Offset: 0x0038948C
 	public void TestRegistration()
 	{
 		if (this.myLight)
@@ -344,20 +344,20 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095BA RID: 38330 RVA: 0x00388EAB File Offset: 0x003870AB
+	// Token: 0x06009611 RID: 38417 RVA: 0x0038B2A7 File Offset: 0x003894A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcViewDistance()
 	{
 		this.lightViewDistance = Utils.FastMax(this.MaxDistance, this.lightRangeMaster * 1.5f);
 	}
 
-	// Token: 0x060095BB RID: 38331 RVA: 0x00388ECA File Offset: 0x003870CA
+	// Token: 0x06009612 RID: 38418 RVA: 0x0038B2C6 File Offset: 0x003894C6
 	public void SetBlockEntityData(BlockEntityData _bed)
 	{
 		this.bed = _bed;
 	}
 
-	// Token: 0x060095BC RID: 38332 RVA: 0x00388ED3 File Offset: 0x003870D3
+	// Token: 0x06009613 RID: 38419 RVA: 0x0038B2CF File Offset: 0x003894CF
 	public void SwitchOnOff(bool _isOn, bool _ignoreToggle = false)
 	{
 		if ((_ignoreToggle || this.bToggleable) && _isOn != this.bSwitchedOn)
@@ -370,7 +370,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095BD RID: 38333 RVA: 0x00388EFF File Offset: 0x003870FF
+	// Token: 0x06009614 RID: 38420 RVA: 0x0038B2FB File Offset: 0x003894FB
 	public void SetCulled(bool _culled)
 	{
 		this.isCulled = _culled;
@@ -380,7 +380,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095BE RID: 38334 RVA: 0x00388F24 File Offset: 0x00387124
+	// Token: 0x06009615 RID: 38421 RVA: 0x0038B320 File Offset: 0x00389520
 	public void OnDisable()
 	{
 		if (!string.IsNullOrEmpty(this.cyclingAudioClipPath) && this.cyclingAudioHandle != null)
@@ -399,7 +399,7 @@ public class LightLOD : MonoBehaviour
 		this.parentT = null;
 	}
 
-	// Token: 0x060095BF RID: 38335 RVA: 0x00388F9B File Offset: 0x0038719B
+	// Token: 0x06009616 RID: 38422 RVA: 0x0038B397 File Offset: 0x00389597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UnregisterFromLightManager()
 	{
@@ -410,7 +410,7 @@ public class LightLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095C0 RID: 38336 RVA: 0x00388FC8 File Offset: 0x003871C8
+	// Token: 0x06009617 RID: 38423 RVA: 0x0038B3C4 File Offset: 0x003895C4
 	public void FrameUpdate(Vector3 _cameraPos)
 	{
 		bool flag = this.lightStateType > LightStateType.Static;
@@ -580,240 +580,240 @@ public class LightLOD : MonoBehaviour
 		base.enabled = this.bSwitchedOn;
 	}
 
-	// Token: 0x060095C1 RID: 38337 RVA: 0x0038955C File Offset: 0x0038775C
+	// Token: 0x06009618 RID: 38424 RVA: 0x0038B958 File Offset: 0x00389B58
 	public void SetRenderingOn()
 	{
 		this.bRenderingOff = false;
 	}
 
-	// Token: 0x060095C2 RID: 38338 RVA: 0x00389565 File Offset: 0x00387765
+	// Token: 0x06009619 RID: 38425 RVA: 0x0038B961 File Offset: 0x00389B61
 	public void SetRenderingOff()
 	{
 		this.bRenderingOff = true;
 	}
 
-	// Token: 0x0400702E RID: 28718
+	// Token: 0x0400706F RID: 28783
 	public GameObject LitRootObject;
 
-	// Token: 0x0400702F RID: 28719
+	// Token: 0x04007070 RID: 28784
 	public Transform[] RefIlluminatedMaterials;
 
-	// Token: 0x04007030 RID: 28720
+	// Token: 0x04007071 RID: 28785
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material[][] cachedMaterials;
 
-	// Token: 0x04007031 RID: 28721
+	// Token: 0x04007072 RID: 28786
 	public Transform RefFlare;
 
-	// Token: 0x04007032 RID: 28722
+	// Token: 0x04007073 RID: 28787
 	public float MaxDistance = 30f;
 
-	// Token: 0x04007033 RID: 28723
+	// Token: 0x04007074 RID: 28788
 	public float DistanceScale = 1f;
 
-	// Token: 0x04007034 RID: 28724
+	// Token: 0x04007075 RID: 28789
 	public float FlareBrightnessFactor = 1f;
 
-	// Token: 0x04007035 RID: 28725
+	// Token: 0x04007076 RID: 28790
 	public bool bPlayerPlacedLight;
 
-	// Token: 0x04007036 RID: 28726
+	// Token: 0x04007077 RID: 28791
 	public bool bSwitchedOn;
 
-	// Token: 0x04007037 RID: 28727
+	// Token: 0x04007078 RID: 28792
 	public bool bToggleable = true;
 
-	// Token: 0x04007038 RID: 28728
+	// Token: 0x04007079 RID: 28793
 	public bool bWorksUnderwater = true;
 
-	// Token: 0x04007039 RID: 28729
+	// Token: 0x0400707A RID: 28794
 	public bool isHeld;
 
-	// Token: 0x0400703A RID: 28730
+	// Token: 0x0400707B RID: 28795
 	public Light otherLight;
 
-	// Token: 0x0400703B RID: 28731
+	// Token: 0x0400707C RID: 28796
 	public LightStateType lightStateStart;
 
-	// Token: 0x0400703C RID: 28732
+	// Token: 0x0400707D RID: 28797
 	public string cyclingAudioClipPath;
 
-	// Token: 0x0400703D RID: 28733
+	// Token: 0x0400707E RID: 28798
 	public float cyclingAudioOffset;
 
-	// Token: 0x0400703E RID: 28734
+	// Token: 0x0400707F RID: 28799
 	public float cyclingAudioPlayEveryNCycles = 1f;
 
-	// Token: 0x0400703F RID: 28735
+	// Token: 0x04007080 RID: 28800
 	public bool EmissiveFromLightColorOn;
 
-	// Token: 0x04007040 RID: 28736
+	// Token: 0x04007081 RID: 28801
 	public Color EmissiveColor = Color.white;
 
-	// Token: 0x04007041 RID: 28737
+	// Token: 0x04007082 RID: 28802
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Color EmissiveColorOff = Color.black;
 
-	// Token: 0x04007042 RID: 28738
+	// Token: 0x04007083 RID: 28803
 	public float StateRate = 1f;
 
-	// Token: 0x04007043 RID: 28739
+	// Token: 0x04007084 RID: 28804
 	public float FluxDelay = 1f;
 
-	// Token: 0x04007044 RID: 28740
+	// Token: 0x04007085 RID: 28805
 	public static float DebugViewDistance;
 
-	// Token: 0x04007045 RID: 28741
+	// Token: 0x04007086 RID: 28806
 	public LightLOD.MaxIntensityEvent MaxIntensityChanged;
 
-	// Token: 0x04007046 RID: 28742
+	// Token: 0x04007087 RID: 28807
 	public bool WaterLevelDirty;
 
-	// Token: 0x04007047 RID: 28743
+	// Token: 0x04007088 RID: 28808
 	public float priority;
 
-	// Token: 0x04007048 RID: 28744
+	// Token: 0x04007089 RID: 28809
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isCulled;
 
-	// Token: 0x04007049 RID: 28745
+	// Token: 0x0400708A RID: 28810
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform selfT;
 
-	// Token: 0x0400704A RID: 28746
+	// Token: 0x0400708B RID: 28811
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform parentT;
 
-	// Token: 0x0400704B RID: 28747
+	// Token: 0x0400708C RID: 28812
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly int EmissionColorId = Shader.PropertyToID("_EmissionColor");
 
-	// Token: 0x0400704C RID: 28748
+	// Token: 0x0400708D RID: 28813
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool hasInitialized;
 
-	// Token: 0x0400704D RID: 28749
+	// Token: 0x0400708E RID: 28814
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BlockEntityData bed;
 
-	// Token: 0x0400704E RID: 28750
+	// Token: 0x0400708F RID: 28815
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isInitialBlockDone;
 
-	// Token: 0x0400704F RID: 28751
+	// Token: 0x04007090 RID: 28816
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light myLight;
 
-	// Token: 0x04007050 RID: 28752
+	// Token: 0x04007091 RID: 28817
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lightIntensityMaster;
 
-	// Token: 0x04007051 RID: 28753
+	// Token: 0x04007092 RID: 28818
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lightIntensity;
 
-	// Token: 0x04007052 RID: 28754
+	// Token: 0x04007093 RID: 28819
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lightRangeMaster;
 
-	// Token: 0x04007053 RID: 28755
+	// Token: 0x04007094 RID: 28820
 	[NonSerialized]
 	public float lightRange;
 
-	// Token: 0x04007054 RID: 28756
+	// Token: 0x04007095 RID: 28821
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lightViewDistance;
 
-	// Token: 0x04007055 RID: 28757
+	// Token: 0x04007096 RID: 28822
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bRenderingOff;
 
-	// Token: 0x04007056 RID: 28758
+	// Token: 0x04007097 RID: 28823
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LensFlare lensFlare;
 
-	// Token: 0x04007057 RID: 28759
+	// Token: 0x04007098 RID: 28824
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float[] maxLightPowerValues;
 
-	// Token: 0x04007058 RID: 28760
+	// Token: 0x04007099 RID: 28825
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 registeredPos;
 
-	// Token: 0x04007059 RID: 28761
+	// Token: 0x0400709A RID: 28826
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float registeredRange;
 
-	// Token: 0x0400705A RID: 28762
+	// Token: 0x0400709B RID: 28827
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LightStateType lightStateType;
 
-	// Token: 0x0400705B RID: 28763
+	// Token: 0x0400709C RID: 28828
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LightState lightState;
 
-	// Token: 0x0400705C RID: 28764
+	// Token: 0x0400709D RID: 28829
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LightShadows shadowStateMaster;
 
-	// Token: 0x0400705D RID: 28765
+	// Token: 0x0400709E RID: 28830
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float shadowStrengthMaster;
 
-	// Token: 0x0400705E RID: 28766
+	// Token: 0x0400709F RID: 28831
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioPlayer audioPlayer;
 
-	// Token: 0x0400705F RID: 28767
+	// Token: 0x040070A0 RID: 28832
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Handle cyclingAudioHandle;
 
-	// Token: 0x04007060 RID: 28768
+	// Token: 0x040070A1 RID: 28833
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isUnderwater;
 
-	// Token: 0x04007061 RID: 28769
+	// Token: 0x040070A2 RID: 28834
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float waterLevelRecheckTime;
 
-	// Token: 0x04007062 RID: 28770
+	// Token: 0x040070A3 RID: 28835
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color? lastEmissiveColor;
 
-	// Token: 0x04007063 RID: 28771
+	// Token: 0x040070A4 RID: 28836
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float previousCycleTime;
 
-	// Token: 0x02001268 RID: 4712
-	// (Invoke) Token: 0x060095C6 RID: 38342
+	// Token: 0x0200127A RID: 4730
+	// (Invoke) Token: 0x0600961D RID: 38429
 	public delegate void MaxIntensityEvent();
 }

@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200046A RID: 1130
+// Token: 0x0200046C RID: 1132
 [Preserve]
 public enum EnumEntityStunType
 {
-	// Token: 0x0400179B RID: 6043
+	// Token: 0x040017AB RID: 6059
 	None,
-	// Token: 0x0400179C RID: 6044
+	// Token: 0x040017AC RID: 6060
 	Kneel,
-	// Token: 0x0400179D RID: 6045
+	// Token: 0x040017AD RID: 6061
 	Prone,
-	// Token: 0x0400179E RID: 6046
+	// Token: 0x040017AE RID: 6062
 	Getup,
-	// Token: 0x0400179F RID: 6047
+	// Token: 0x040017AF RID: 6063
 	Stumble,
-	// Token: 0x040017A0 RID: 6048
+	// Token: 0x040017B0 RID: 6064
 	StumbleBreakThrough,
-	// Token: 0x040017A1 RID: 6049
+	// Token: 0x040017B1 RID: 6065
 	StumbleBreakThroughRagdoll
 }

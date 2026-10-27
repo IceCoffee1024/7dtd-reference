@@ -2,7 +2,7 @@
 
 namespace Platform.XBL.Save
 {
-	// Token: 0x02001C7B RID: 7291
-	// (Invoke) Token: 0x0600D823 RID: 55331
+	// Token: 0x02001CAC RID: 7340
+	// (Invoke) Token: 0x0600D937 RID: 55607
 	public delegate void SizeTrackerGetRemainingQuotaCompleted(int hresult, long remainingQuota);
 }

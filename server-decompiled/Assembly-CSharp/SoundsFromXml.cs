@@ -6,10 +6,10 @@ using System.Xml.Linq;
 using Audio;
 using UniLinq;
 
-// Token: 0x02000D43 RID: 3395
+// Token: 0x02000D4E RID: 3406
 public class SoundsFromXml
 {
-	// Token: 0x060066DB RID: 26331 RVA: 0x0028BC18 File Offset: 0x00289E18
+	// Token: 0x06006700 RID: 26368 RVA: 0x0028D140 File Offset: 0x0028B340
 	public static IEnumerator CreateSounds(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -22,7 +22,7 @@ public class SoundsFromXml
 		yield break;
 	}
 
-	// Token: 0x060066DC RID: 26332 RVA: 0x0028BC28 File Offset: 0x00289E28
+	// Token: 0x06006701 RID: 26369 RVA: 0x0028D150 File Offset: 0x0028B350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(string master, XElement root)
 	{
@@ -44,7 +44,7 @@ public class SoundsFromXml
 		SoundsFromXml.controllerVibrationAudioSourceExclusions = null;
 	}
 
-	// Token: 0x060066DD RID: 26333 RVA: 0x0028BD30 File Offset: 0x00289F30
+	// Token: 0x06006702 RID: 26370 RVA: 0x0028D258 File Offset: 0x0028B458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Parse(XElement node)
 	{
@@ -211,7 +211,7 @@ public class SoundsFromXml
 		Manager.AddAudioData(xmlData);
 	}
 
-	// Token: 0x060066DE RID: 26334 RVA: 0x0028C4A4 File Offset: 0x0028A6A4
+	// Token: 0x06006703 RID: 26371 RVA: 0x0028D9CC File Offset: 0x0028BBCC
 	public static IEnumerator LoadSubtitleXML(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -223,7 +223,7 @@ public class SoundsFromXml
 		yield break;
 	}
 
-	// Token: 0x060066DF RID: 26335 RVA: 0x0028C4B4 File Offset: 0x0028A6B4
+	// Token: 0x06006704 RID: 26372 RVA: 0x0028D9DC File Offset: 0x0028BBDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseSubtitleNode(string master, XElement root)
 	{
@@ -256,7 +256,7 @@ public class SoundsFromXml
 		Manager.AddSubtitleData(list, list2);
 	}
 
-	// Token: 0x04004FB1 RID: 20401
+	// Token: 0x04004FD6 RID: 20438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<string> controllerVibrationAudioSourceExclusions;
 }

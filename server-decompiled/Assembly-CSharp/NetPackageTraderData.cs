@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085D RID: 2141
+// Token: 0x02000867 RID: 2151
 [Preserve]
 public class NetPackageTraderData : NetPackage
 {
-	// Token: 0x1700069D RID: 1693
-	// (get) Token: 0x06003E27 RID: 15911 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170006A3 RID: 1699
+	// (get) Token: 0x06003E4A RID: 15946 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageTraderData : NetPackage
 		}
 	}
 
-	// Token: 0x06003E28 RID: 15912 RVA: 0x0018A914 File Offset: 0x00188B14
+	// Token: 0x06003E4B RID: 15947 RVA: 0x0018B9BC File Offset: 0x00189BBC
 	public NetPackageTraderData Setup(ITrader _trader)
 	{
 		EntityTrader entityTrader = _trader as EntityTrader;
@@ -34,7 +34,7 @@ public class NetPackageTraderData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E29 RID: 15913 RVA: 0x0018A95F File Offset: 0x00188B5F
+	// Token: 0x06003E4C RID: 15948 RVA: 0x0018BA07 File Offset: 0x00189C07
 	public NetPackageTraderData Setup(EntityTrader _entityTrader)
 	{
 		this.entityId = _entityTrader.entityId;
@@ -44,7 +44,7 @@ public class NetPackageTraderData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E2A RID: 15914 RVA: 0x0018A991 File Offset: 0x00188B91
+	// Token: 0x06003E4D RID: 15949 RVA: 0x0018BA39 File Offset: 0x00189C39
 	public NetPackageTraderData Setup(TileEntityVendingMachine _vendingMachine)
 	{
 		this.entityId = -1;
@@ -54,7 +54,7 @@ public class NetPackageTraderData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E2B RID: 15915 RVA: 0x0018A9C0 File Offset: 0x00188BC0
+	// Token: 0x06003E4E RID: 15950 RVA: 0x0018BA68 File Offset: 0x00189C68
 	public override void read(PooledBinaryReader _br)
 	{
 		bool flag = _br.ReadBoolean();
@@ -80,7 +80,7 @@ public class NetPackageTraderData : NetPackage
 		this.traderData = null;
 	}
 
-	// Token: 0x06003E2C RID: 15916 RVA: 0x0018AA30 File Offset: 0x00188C30
+	// Token: 0x06003E4F RID: 15951 RVA: 0x0018BAD8 File Offset: 0x00189CD8
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -101,7 +101,7 @@ public class NetPackageTraderData : NetPackage
 		}
 	}
 
-	// Token: 0x06003E2D RID: 15917 RVA: 0x0018AA98 File Offset: 0x00188C98
+	// Token: 0x06003E50 RID: 15952 RVA: 0x0018BB40 File Offset: 0x00189D40
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null || this.traderData == null || !SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -131,15 +131,15 @@ public class NetPackageTraderData : NetPackage
 		}
 	}
 
-	// Token: 0x04003285 RID: 12933
+	// Token: 0x040032A5 RID: 12965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId = -1;
 
-	// Token: 0x04003286 RID: 12934
+	// Token: 0x040032A6 RID: 12966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i tePosition;
 
-	// Token: 0x04003287 RID: 12935
+	// Token: 0x040032A7 RID: 12967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TraderData traderData;
 }

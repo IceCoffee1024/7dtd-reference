@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200102F RID: 4143
+// Token: 0x0200103F RID: 4159
 [Preserve]
 public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x0600828E RID: 33422 RVA: 0x0031B3D0 File Offset: 0x003195D0
+	// Token: 0x060082E0 RID: 33504 RVA: 0x0031D0D4 File Offset: 0x0031B2D4
 	public override void Init()
 	{
 		base.Init();
@@ -19,19 +19,19 @@ public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 		base.OnVisiblity += base.OnVisibilityChanged;
 	}
 
-	// Token: 0x0600828F RID: 33423 RVA: 0x0031B460 File Offset: 0x00319660
+	// Token: 0x060082E1 RID: 33505 RVA: 0x0031D164 File Offset: 0x0031B364
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		base.OnVisiblity -= base.OnVisibilityChanged;
 	}
 
-	// Token: 0x06008290 RID: 33424 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060082E2 RID: 33506 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Deselect()
 	{
 	}
 
-	// Token: 0x06008291 RID: 33425 RVA: 0x0031B47C File Offset: 0x0031967C
+	// Token: 0x060082E3 RID: 33507 RVA: 0x0031D180 File Offset: 0x0031B380
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -45,7 +45,7 @@ public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06008292 RID: 33426 RVA: 0x0031B4DC File Offset: 0x003196DC
+	// Token: 0x060082E4 RID: 33508 RVA: 0x0031D1E0 File Offset: 0x0031B3E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -127,7 +127,7 @@ public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008293 RID: 33427 RVA: 0x0031B6FC File Offset: 0x003198FC
+	// Token: 0x060082E5 RID: 33509 RVA: 0x0031D400 File Offset: 0x0031B600
 	public void SetInfo(InGameService _service, XUiController controller)
 	{
 		this.service = _service;
@@ -151,7 +151,7 @@ public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008294 RID: 33428 RVA: 0x0031B7B2 File Offset: 0x003199B2
+	// Token: 0x060082E6 RID: 33510 RVA: 0x0031D4B6 File Offset: 0x0031B6B6
 	public void OnVisibilityChanged(XUiController _sender, bool _isVisible)
 	{
 		if (this.service != null)
@@ -160,7 +160,7 @@ public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06008295 RID: 33429 RVA: 0x0031B7D0 File Offset: 0x003199D0
+	// Token: 0x060082E7 RID: 33511 RVA: 0x0031D4D4 File Offset: 0x0031B6D4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -175,58 +175,58 @@ public class XUiC_ServiceInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06008296 RID: 33430 RVA: 0x0031B82A File Offset: 0x00319A2A
+	// Token: 0x060082E8 RID: 33512 RVA: 0x0031D52E File Offset: 0x0031B72E
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.service = null;
 	}
 
-	// Token: 0x040060C8 RID: 24776
+	// Token: 0x04006106 RID: 24838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public InGameService service;
 
-	// Token: 0x040060C9 RID: 24777
+	// Token: 0x04006107 RID: 24839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController servicePreview;
 
-	// Token: 0x040060CA RID: 24778
+	// Token: 0x04006108 RID: 24840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowName;
 
-	// Token: 0x040060CB RID: 24779
+	// Token: 0x04006109 RID: 24841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowIcon;
 
-	// Token: 0x040060CC RID: 24780
+	// Token: 0x0400610A RID: 24842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController description;
 
-	// Token: 0x040060CD RID: 24781
+	// Token: 0x0400610B RID: 24843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController stats;
 
-	// Token: 0x040060CE RID: 24782
+	// Token: 0x0400610C RID: 24844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList mainActionItemList;
 
-	// Token: 0x040060CF RID: 24783
+	// Token: 0x0400610D RID: 24845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 valueColor = new Color32(222, 206, 163, byte.MaxValue);
 
-	// Token: 0x040060D0 RID: 24784
+	// Token: 0x0400610E RID: 24846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_InfoWindow emptyInfoWindow;
 
-	// Token: 0x040060D1 RID: 24785
+	// Token: 0x0400610F RID: 24847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string stat1 = "";
 
-	// Token: 0x040060D2 RID: 24786
+	// Token: 0x04006110 RID: 24848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt servicecostFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040060D3 RID: 24787
+	// Token: 0x04006111 RID: 24849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor serviceicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 }

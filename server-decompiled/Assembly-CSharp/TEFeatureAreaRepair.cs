@@ -9,8 +9,8 @@ using UnityEngine.Scripting;
 public class TEFeatureAreaRepair : TEFeatureAbs
 {
 	// Token: 0x170000D6 RID: 214
-	// (get) Token: 0x06000AC4 RID: 2756 RVA: 0x00045E70 File Offset: 0x00044070
-	// (set) Token: 0x06000AC5 RID: 2757 RVA: 0x00045E78 File Offset: 0x00044078
+	// (get) Token: 0x06000AC4 RID: 2756 RVA: 0x00045E30 File Offset: 0x00044030
+	// (set) Token: 0x06000AC5 RID: 2757 RVA: 0x00045E38 File Offset: 0x00044038
 	public bool IsRepairing
 	{
 		get
@@ -23,7 +23,7 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000AC6 RID: 2758 RVA: 0x00045E81 File Offset: 0x00044081
+	// Token: 0x06000AC6 RID: 2758 RVA: 0x00045E41 File Offset: 0x00044041
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -37,26 +37,26 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 	{
 	}
 
-	// Token: 0x06000AC8 RID: 2760 RVA: 0x00045EAD File Offset: 0x000440AD
+	// Token: 0x06000AC8 RID: 2760 RVA: 0x00045E6D File Offset: 0x0004406D
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
 	}
 
-	// Token: 0x06000AC9 RID: 2761 RVA: 0x00045EB8 File Offset: 0x000440B8
+	// Token: 0x06000AC9 RID: 2761 RVA: 0x00045E78 File Offset: 0x00044078
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		return base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing) && !(_module is TEFeatureStorage) && (!this.Equals(_module) || ((this.lockFeature == null || GameManager.Instance.IsEditMode() || !this.lockFeature.IsLocked() || this.lockFeature.IsUserAllowed(PlatformManager.InternalLocalUserIdentifier)) && base.Parent.LocalPlayerIsOwner));
 	}
 
-	// Token: 0x06000ACA RID: 2762 RVA: 0x00045F2D File Offset: 0x0004412D
+	// Token: 0x06000ACA RID: 2762 RVA: 0x00045EED File Offset: 0x000440ED
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
 		return false;
 	}
 
-	// Token: 0x06000ACB RID: 2763 RVA: 0x00045F3E File Offset: 0x0004413E
+	// Token: 0x06000ACB RID: 2763 RVA: 0x00045EFE File Offset: 0x000440FE
 	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
@@ -71,7 +71,7 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000ACC RID: 2764 RVA: 0x00045F6C File Offset: 0x0004416C
+	// Token: 0x06000ACC RID: 2764 RVA: 0x00045F2C File Offset: 0x0004412C
 	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
@@ -81,13 +81,13 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000ACD RID: 2765 RVA: 0x00045F81 File Offset: 0x00044181
+	// Token: 0x06000ACD RID: 2765 RVA: 0x00045F41 File Offset: 0x00044141
 	public void RepairAll(World _world, Vector3i _blockPos, int _requesterId)
 	{
 		GameManager.Instance.StartCoroutine(this.repair(_world, _blockPos, _requesterId));
 	}
 
-	// Token: 0x06000ACE RID: 2766 RVA: 0x00045F97 File Offset: 0x00044197
+	// Token: 0x06000ACE RID: 2766 RVA: 0x00045F57 File Offset: 0x00044157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator repair(World _world, Vector3i _blockPos, int _requesterId)
 	{
@@ -131,7 +131,7 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 		yield break;
 	}
 
-	// Token: 0x06000ACF RID: 2767 RVA: 0x00045FBB File Offset: 0x000441BB
+	// Token: 0x06000ACF RID: 2767 RVA: 0x00045F7B File Offset: 0x0004417B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator repairChunkCheckBounds(World _world, int cx, int cz, World world, Vector2i blocksMin, Vector2i blocksMax)
 	{
@@ -150,7 +150,7 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 		yield break;
 	}
 
-	// Token: 0x06000AD0 RID: 2768 RVA: 0x00045FF7 File Offset: 0x000441F7
+	// Token: 0x06000AD0 RID: 2768 RVA: 0x00045FB7 File Offset: 0x000441B7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator repairChunk(World _world, int cx, int cz, World world)
 	{
@@ -169,7 +169,7 @@ public class TEFeatureAreaRepair : TEFeatureAbs
 		yield break;
 	}
 
-	// Token: 0x06000AD1 RID: 2769 RVA: 0x00046024 File Offset: 0x00044224
+	// Token: 0x06000AD1 RID: 2769 RVA: 0x00045FE4 File Offset: 0x000441E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void repairBlock(World _world, Vector3i worldPos, BlockValue bv)
 	{

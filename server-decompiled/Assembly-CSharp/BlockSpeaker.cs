@@ -6,13 +6,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSpeaker : BlockPowered
 {
-	// Token: 0x0600094E RID: 2382 RVA: 0x00040C2C File Offset: 0x0003EE2C
+	// Token: 0x0600094E RID: 2382 RVA: 0x00040BEC File Offset: 0x0003EDEC
 	public BlockSpeaker()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600094F RID: 2383 RVA: 0x00040C46 File Offset: 0x0003EE46
+	// Token: 0x0600094F RID: 2383 RVA: 0x00040C06 File Offset: 0x0003EE06
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class BlockSpeaker : BlockPowered
 		}
 	}
 
-	// Token: 0x06000950 RID: 2384 RVA: 0x00040C80 File Offset: 0x0003EE80
+	// Token: 0x06000950 RID: 2384 RVA: 0x00040C40 File Offset: 0x0003EE40
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		byte b = (byte)(((int)_blockValue.meta & -3) | (isOn ? 2 : 0));
@@ -48,21 +48,21 @@ public class BlockSpeaker : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000951 RID: 2385 RVA: 0x00040D1C File Offset: 0x0003EF1C
+	// Token: 0x06000951 RID: 2385 RVA: 0x00040CDC File Offset: 0x0003EEDC
 	public override void OnBlockUnloaded(WorldBase world, Vector3i blockPos, BlockValue blockValue)
 	{
 		base.OnBlockUnloaded(world, blockPos, blockValue);
 		Manager.Stop(blockPos.ToVector3(), this.playSound);
 	}
 
-	// Token: 0x06000952 RID: 2386 RVA: 0x00040D39 File Offset: 0x0003EF39
+	// Token: 0x06000952 RID: 2386 RVA: 0x00040CF9 File Offset: 0x0003EEF9
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
 		Manager.Stop(_blockPos.ToVector3(), this.playSound);
 	}
 
-	// Token: 0x06000953 RID: 2387 RVA: 0x00040D58 File Offset: 0x0003EF58
+	// Token: 0x06000953 RID: 2387 RVA: 0x00040D18 File Offset: 0x0003EF18
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -77,7 +77,7 @@ public class BlockSpeaker : BlockPowered
 		}
 	}
 
-	// Token: 0x06000954 RID: 2388 RVA: 0x00040DB7 File Offset: 0x0003EFB7
+	// Token: 0x06000954 RID: 2388 RVA: 0x00040D77 File Offset: 0x0003EF77
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredBlock(chunk)

@@ -2,42 +2,42 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x02001479 RID: 5241
+// Token: 0x0200148B RID: 5259
 public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable, IDictionary, ICollection
 {
-	// Token: 0x0600A410 RID: 42000 RVA: 0x003D5BF8 File Offset: 0x003D3DF8
+	// Token: 0x0600A468 RID: 42088 RVA: 0x003D7FFC File Offset: 0x003D61FC
 	public ObservableDictionary()
 		: this(new Dictionary<TKey, TValue>())
 	{
 	}
 
-	// Token: 0x0600A411 RID: 42001 RVA: 0x003D5C05 File Offset: 0x003D3E05
+	// Token: 0x0600A469 RID: 42089 RVA: 0x003D8009 File Offset: 0x003D6209
 	public ObservableDictionary(Dictionary<TKey, TValue> dictionary)
 	{
 		this._dictionary = dictionary;
 	}
 
 	// Token: 0x14000104 RID: 260
-	// (add) Token: 0x0600A412 RID: 42002 RVA: 0x003D5C14 File Offset: 0x003D3E14
-	// (remove) Token: 0x0600A413 RID: 42003 RVA: 0x003D5C4C File Offset: 0x003D3E4C
+	// (add) Token: 0x0600A46A RID: 42090 RVA: 0x003D8018 File Offset: 0x003D6218
+	// (remove) Token: 0x0600A46B RID: 42091 RVA: 0x003D8050 File Offset: 0x003D6250
 	public event DictionaryAddEventHandler<TKey, TValue> EntryAdded;
 
 	// Token: 0x14000105 RID: 261
-	// (add) Token: 0x0600A414 RID: 42004 RVA: 0x003D5C84 File Offset: 0x003D3E84
-	// (remove) Token: 0x0600A415 RID: 42005 RVA: 0x003D5CBC File Offset: 0x003D3EBC
+	// (add) Token: 0x0600A46C RID: 42092 RVA: 0x003D8088 File Offset: 0x003D6288
+	// (remove) Token: 0x0600A46D RID: 42093 RVA: 0x003D80C0 File Offset: 0x003D62C0
 	public event DictionaryRemoveEventHandler<TKey, TValue> EntryRemoved;
 
 	// Token: 0x14000106 RID: 262
-	// (add) Token: 0x0600A416 RID: 42006 RVA: 0x003D5CF4 File Offset: 0x003D3EF4
-	// (remove) Token: 0x0600A417 RID: 42007 RVA: 0x003D5D2C File Offset: 0x003D3F2C
+	// (add) Token: 0x0600A46E RID: 42094 RVA: 0x003D80F8 File Offset: 0x003D62F8
+	// (remove) Token: 0x0600A46F RID: 42095 RVA: 0x003D8130 File Offset: 0x003D6330
 	public event DictionaryUpdatedValueEventHandler<TKey, TValue> EntryUpdatedValue;
 
 	// Token: 0x14000107 RID: 263
-	// (add) Token: 0x0600A418 RID: 42008 RVA: 0x003D5D64 File Offset: 0x003D3F64
-	// (remove) Token: 0x0600A419 RID: 42009 RVA: 0x003D5D9C File Offset: 0x003D3F9C
+	// (add) Token: 0x0600A470 RID: 42096 RVA: 0x003D8168 File Offset: 0x003D6368
+	// (remove) Token: 0x0600A471 RID: 42097 RVA: 0x003D81A0 File Offset: 0x003D63A0
 	public event DictionaryEntryModifiedEventHandler<TKey, TValue> EntryModified;
 
-	// Token: 0x0600A41A RID: 42010 RVA: 0x003D5DD1 File Offset: 0x003D3FD1
+	// Token: 0x0600A472 RID: 42098 RVA: 0x003D81D5 File Offset: 0x003D63D5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEntryModified(TKey key, TValue value, ObservableDictionary<TKey, TValue>.EChangeType action)
 	{
@@ -49,7 +49,7 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		entryModified(this, new DictionaryChangedEventArgs<TKey, TValue>(key, value, action));
 	}
 
-	// Token: 0x0600A41B RID: 42011 RVA: 0x003D5DEC File Offset: 0x003D3FEC
+	// Token: 0x0600A473 RID: 42099 RVA: 0x003D81F0 File Offset: 0x003D63F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEntryAdded(TKey key, TValue value)
 	{
@@ -61,7 +61,7 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		this.OnEntryModified(key, value, ObservableDictionary<TKey, TValue>.EChangeType.Added);
 	}
 
-	// Token: 0x0600A41C RID: 42012 RVA: 0x003D5E11 File Offset: 0x003D4011
+	// Token: 0x0600A474 RID: 42100 RVA: 0x003D8215 File Offset: 0x003D6415
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEntryRemoved(TKey key, TValue value)
 	{
@@ -73,7 +73,7 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		this.OnEntryModified(key, value, ObservableDictionary<TKey, TValue>.EChangeType.Removed);
 	}
 
-	// Token: 0x0600A41D RID: 42013 RVA: 0x003D5E36 File Offset: 0x003D4036
+	// Token: 0x0600A475 RID: 42101 RVA: 0x003D823A File Offset: 0x003D643A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEntryUpdated(TKey key, TValue value)
 	{
@@ -85,14 +85,14 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		this.OnEntryModified(key, value, ObservableDictionary<TKey, TValue>.EChangeType.Updated);
 	}
 
-	// Token: 0x0600A41E RID: 42014 RVA: 0x003D5E5B File Offset: 0x003D405B
+	// Token: 0x0600A476 RID: 42102 RVA: 0x003D825F File Offset: 0x003D645F
 	public void Add(TKey key, TValue value)
 	{
 		this._dictionary.Add(key, value);
 		this.OnEntryAdded(key, value);
 	}
 
-	// Token: 0x0600A41F RID: 42015 RVA: 0x003D5E74 File Offset: 0x003D4074
+	// Token: 0x0600A477 RID: 42103 RVA: 0x003D8278 File Offset: 0x003D6478
 	public bool Remove(TKey key)
 	{
 		TValue tvalue;
@@ -104,7 +104,7 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		return false;
 	}
 
-	// Token: 0x17001375 RID: 4981
+	// Token: 0x17001381 RID: 4993
 	public TValue this[TKey key]
 	{
 		get
@@ -124,8 +124,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x17001376 RID: 4982
-	// (get) Token: 0x0600A422 RID: 42018 RVA: 0x003D5EF3 File Offset: 0x003D40F3
+	// Token: 0x17001382 RID: 4994
+	// (get) Token: 0x0600A47A RID: 42106 RVA: 0x003D82F7 File Offset: 0x003D64F7
 	public ICollection<TKey> Keys
 	{
 		get
@@ -134,8 +134,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x17001377 RID: 4983
-	// (get) Token: 0x0600A423 RID: 42019 RVA: 0x003D5F00 File Offset: 0x003D4100
+	// Token: 0x17001383 RID: 4995
+	// (get) Token: 0x0600A47B RID: 42107 RVA: 0x003D8304 File Offset: 0x003D6504
 	public ICollection<TValue> Values
 	{
 		get
@@ -144,44 +144,44 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x0600A424 RID: 42020 RVA: 0x003D5F0D File Offset: 0x003D410D
+	// Token: 0x0600A47C RID: 42108 RVA: 0x003D8311 File Offset: 0x003D6511
 	public bool ContainsKey(TKey key)
 	{
 		return this._dictionary.ContainsKey(key);
 	}
 
-	// Token: 0x0600A425 RID: 42021 RVA: 0x003D5F1B File Offset: 0x003D411B
+	// Token: 0x0600A47D RID: 42109 RVA: 0x003D831F File Offset: 0x003D651F
 	public bool TryGetValue(TKey key, out TValue value)
 	{
 		return this._dictionary.TryGetValue(key, out value);
 	}
 
-	// Token: 0x0600A426 RID: 42022 RVA: 0x003D5F2A File Offset: 0x003D412A
+	// Token: 0x0600A47E RID: 42110 RVA: 0x003D832E File Offset: 0x003D652E
 	public void Add(KeyValuePair<TKey, TValue> item)
 	{
 		this.Add(item.Key, item.Value);
 	}
 
-	// Token: 0x0600A427 RID: 42023 RVA: 0x003D5F40 File Offset: 0x003D4140
+	// Token: 0x0600A47F RID: 42111 RVA: 0x003D8344 File Offset: 0x003D6544
 	public bool Remove(KeyValuePair<TKey, TValue> item)
 	{
 		return this.Remove(item.Key);
 	}
 
-	// Token: 0x0600A428 RID: 42024 RVA: 0x003D5F4F File Offset: 0x003D414F
+	// Token: 0x0600A480 RID: 42112 RVA: 0x003D8353 File Offset: 0x003D6553
 	public bool Contains(KeyValuePair<TKey, TValue> item)
 	{
 		return this._dictionary.ContainsKey(item.Key) && EqualityComparer<TValue>.Default.Equals(this._dictionary[item.Key], item.Value);
 	}
 
-	// Token: 0x0600A429 RID: 42025 RVA: 0x003D5F8A File Offset: 0x003D418A
+	// Token: 0x0600A481 RID: 42113 RVA: 0x003D838E File Offset: 0x003D658E
 	public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
 	{
 		((ICollection<KeyValuePair<TKey, TValue>>)this._dictionary).CopyTo(array, arrayIndex);
 	}
 
-	// Token: 0x17001378 RID: 4984
-	// (get) Token: 0x0600A42A RID: 42026 RVA: 0x003D5F99 File Offset: 0x003D4199
+	// Token: 0x17001384 RID: 4996
+	// (get) Token: 0x0600A482 RID: 42114 RVA: 0x003D839D File Offset: 0x003D659D
 	public int Count
 	{
 		get
@@ -190,8 +190,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x17001379 RID: 4985
-	// (get) Token: 0x0600A42B RID: 42027 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17001385 RID: 4997
+	// (get) Token: 0x0600A483 RID: 42115 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool IsReadOnly
 	{
 		get
@@ -200,7 +200,7 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x0600A42C RID: 42028 RVA: 0x003D5FA8 File Offset: 0x003D41A8
+	// Token: 0x0600A484 RID: 42116 RVA: 0x003D83AC File Offset: 0x003D65AC
 	public void Clear()
 	{
 		foreach (TKey tkey in new List<TKey>(this._dictionary.Keys))
@@ -209,28 +209,28 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x0600A42D RID: 42029 RVA: 0x003D6008 File Offset: 0x003D4208
+	// Token: 0x0600A485 RID: 42117 RVA: 0x003D840C File Offset: 0x003D660C
 	public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 	{
 		return this._dictionary.GetEnumerator();
 	}
 
-	// Token: 0x0600A42E RID: 42030 RVA: 0x003D6008 File Offset: 0x003D4208
+	// Token: 0x0600A486 RID: 42118 RVA: 0x003D840C File Offset: 0x003D660C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
 		return this._dictionary.GetEnumerator();
 	}
 
-	// Token: 0x0600A42F RID: 42031 RVA: 0x003D601A File Offset: 0x003D421A
+	// Token: 0x0600A487 RID: 42119 RVA: 0x003D841E File Offset: 0x003D661E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.ICollection.CopyTo(Array array, int index)
 	{
 		((ICollection)this._dictionary).CopyTo(array, index);
 	}
 
-	// Token: 0x1700137A RID: 4986
-	// (get) Token: 0x0600A430 RID: 42032 RVA: 0x003D6029 File Offset: 0x003D4229
+	// Token: 0x17001386 RID: 4998
+	// (get) Token: 0x0600A488 RID: 42120 RVA: 0x003D842D File Offset: 0x003D662D
 	public bool System.Collections.ICollection.IsSynchronized
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -240,8 +240,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x1700137B RID: 4987
-	// (get) Token: 0x0600A431 RID: 42033 RVA: 0x003D6036 File Offset: 0x003D4236
+	// Token: 0x17001387 RID: 4999
+	// (get) Token: 0x0600A489 RID: 42121 RVA: 0x003D843A File Offset: 0x003D663A
 	public object System.Collections.ICollection.SyncRoot
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -251,8 +251,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x1700137C RID: 4988
-	// (get) Token: 0x0600A432 RID: 42034 RVA: 0x003D6043 File Offset: 0x003D4243
+	// Token: 0x17001388 RID: 5000
+	// (get) Token: 0x0600A48A RID: 42122 RVA: 0x003D8447 File Offset: 0x003D6647
 	public bool System.Collections.IDictionary.IsFixedSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -262,8 +262,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x1700137D RID: 4989
-	// (get) Token: 0x0600A433 RID: 42035 RVA: 0x003D6050 File Offset: 0x003D4250
+	// Token: 0x17001389 RID: 5001
+	// (get) Token: 0x0600A48B RID: 42123 RVA: 0x003D8454 File Offset: 0x003D6654
 	public bool System.Collections.IDictionary.IsReadOnly
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -273,8 +273,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x1700137E RID: 4990
-	// (get) Token: 0x0600A434 RID: 42036 RVA: 0x003D605D File Offset: 0x003D425D
+	// Token: 0x1700138A RID: 5002
+	// (get) Token: 0x0600A48C RID: 42124 RVA: 0x003D8461 File Offset: 0x003D6661
 	public ICollection System.Collections.IDictionary.Keys
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -284,8 +284,8 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x1700137F RID: 4991
-	// (get) Token: 0x0600A435 RID: 42037 RVA: 0x003D606A File Offset: 0x003D426A
+	// Token: 0x1700138B RID: 5003
+	// (get) Token: 0x0600A48D RID: 42125 RVA: 0x003D846E File Offset: 0x003D666E
 	public ICollection System.Collections.IDictionary.Values
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -295,7 +295,7 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x17001380 RID: 4992
+	// Token: 0x1700138C RID: 5004
 	public object this[object key]
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -310,46 +310,46 @@ public class ObservableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICo
 		}
 	}
 
-	// Token: 0x0600A438 RID: 42040 RVA: 0x003D6094 File Offset: 0x003D4294
+	// Token: 0x0600A490 RID: 42128 RVA: 0x003D8498 File Offset: 0x003D6698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.IDictionary.Add(object key, object value)
 	{
 		((IDictionary)this._dictionary).Add(key, value);
 	}
 
-	// Token: 0x0600A439 RID: 42041 RVA: 0x003D60A3 File Offset: 0x003D42A3
+	// Token: 0x0600A491 RID: 42129 RVA: 0x003D84A7 File Offset: 0x003D66A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.IDictionary.Contains(object key)
 	{
 		return ((IDictionary)this._dictionary).Contains(key);
 	}
 
-	// Token: 0x0600A43A RID: 42042 RVA: 0x003D60B1 File Offset: 0x003D42B1
+	// Token: 0x0600A492 RID: 42130 RVA: 0x003D84B5 File Offset: 0x003D66B5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IDictionaryEnumerator System.Collections.IDictionary.GetEnumerator()
 	{
 		return ((IDictionary)this._dictionary).GetEnumerator();
 	}
 
-	// Token: 0x0600A43B RID: 42043 RVA: 0x003D60BE File Offset: 0x003D42BE
+	// Token: 0x0600A493 RID: 42131 RVA: 0x003D84C2 File Offset: 0x003D66C2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.IDictionary.Remove(object key)
 	{
 		((IDictionary)this._dictionary).Remove(key);
 	}
 
-	// Token: 0x04007AF8 RID: 31480
+	// Token: 0x04007B39 RID: 31545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<TKey, TValue> _dictionary;
 
-	// Token: 0x0200147A RID: 5242
+	// Token: 0x0200148C RID: 5260
 	public enum EChangeType
 	{
-		// Token: 0x04007AFE RID: 31486
+		// Token: 0x04007B3F RID: 31551
 		Added,
-		// Token: 0x04007AFF RID: 31487
+		// Token: 0x04007B40 RID: 31552
 		Removed,
-		// Token: 0x04007B00 RID: 31488
+		// Token: 0x04007B41 RID: 31553
 		Updated
 	}
 }

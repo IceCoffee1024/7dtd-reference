@@ -2,23 +2,23 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200109C RID: 4252
+// Token: 0x020010AC RID: 4268
 [Preserve]
 public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 {
-	// Token: 0x17000FE1 RID: 4065
-	// (get) Token: 0x060086E0 RID: 34528 RVA: 0x00338342 File Offset: 0x00336542
-	// (set) Token: 0x060086E1 RID: 34529 RVA: 0x0033834A File Offset: 0x0033654A
+	// Token: 0x17000FEC RID: 4076
+	// (get) Token: 0x06008733 RID: 34611 RVA: 0x0033A3C6 File Offset: 0x003385C6
+	// (set) Token: 0x06008734 RID: 34612 RVA: 0x0033A3CE File Offset: 0x003385CE
 	public XUiC_TraderWindow TraderWindow { get; set; }
 
-	// Token: 0x17000FE2 RID: 4066
-	// (get) Token: 0x060086E2 RID: 34530 RVA: 0x00338353 File Offset: 0x00336553
-	// (set) Token: 0x060086E3 RID: 34531 RVA: 0x0033835B File Offset: 0x0033655B
+	// Token: 0x17000FED RID: 4077
+	// (get) Token: 0x06008735 RID: 34613 RVA: 0x0033A3D7 File Offset: 0x003385D7
+	// (set) Token: 0x06008736 RID: 34614 RVA: 0x0033A3DF File Offset: 0x003385DF
 	public XUiC_ItemInfoWindow InfoWindow { get; set; }
 
-	// Token: 0x17000FE3 RID: 4067
-	// (get) Token: 0x060086E4 RID: 34532 RVA: 0x00338364 File Offset: 0x00336564
-	// (set) Token: 0x060086E5 RID: 34533 RVA: 0x0033836C File Offset: 0x0033656C
+	// Token: 0x17000FEE RID: 4078
+	// (get) Token: 0x06008737 RID: 34615 RVA: 0x0033A3E8 File Offset: 0x003385E8
+	// (set) Token: 0x06008738 RID: 34616 RVA: 0x0033A3F0 File Offset: 0x003385F0
 	public ItemStack Item
 	{
 		get
@@ -39,7 +39,7 @@ public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060086E6 RID: 34534 RVA: 0x003383F8 File Offset: 0x003365F8
+	// Token: 0x06008739 RID: 34617 RVA: 0x0033A47C File Offset: 0x0033867C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
@@ -50,7 +50,7 @@ public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060086E7 RID: 34535 RVA: 0x00338468 File Offset: 0x00336668
+	// Token: 0x0600873A RID: 34618 RVA: 0x0033A4EC File Offset: 0x003386EC
 	public override void Init()
 	{
 		base.Init();
@@ -65,7 +65,7 @@ public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060086E8 RID: 34536 RVA: 0x003384C8 File Offset: 0x003366C8
+	// Token: 0x0600873B RID: 34619 RVA: 0x0033A54C File Offset: 0x0033874C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -84,7 +84,7 @@ public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x060086E9 RID: 34537 RVA: 0x00338540 File Offset: 0x00336740
+	// Token: 0x0600873C RID: 34620 RVA: 0x0033A5C4 File Offset: 0x003387C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -369,7 +369,7 @@ public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x060086EA RID: 34538 RVA: 0x00338DF4 File Offset: 0x00336FF4
+	// Token: 0x0600873D RID: 34621 RVA: 0x0033AE78 File Offset: 0x00339078
 	public void Refresh()
 	{
 		if (base.IsSelected)
@@ -380,62 +380,62 @@ public class XUiC_TraderItemEntry : XUiC_SelectableEntry
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0400643E RID: 25662
+	// Token: 0x0400647D RID: 25725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack item;
 
-	// Token: 0x0400643F RID: 25663
+	// Token: 0x0400647E RID: 25726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 
-	// Token: 0x04006440 RID: 25664
+	// Token: 0x0400647F RID: 25727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isHovered;
 
-	// Token: 0x04006441 RID: 25665
+	// Token: 0x04006480 RID: 25728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasIngredients;
 
-	// Token: 0x04006442 RID: 25666
+	// Token: 0x04006481 RID: 25729
 	public int SlotIndex;
 
-	// Token: 0x04006443 RID: 25667
+	// Token: 0x04006482 RID: 25730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x04006446 RID: 25670
+	// Token: 0x04006485 RID: 25733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, int> itemNameFormatter = new CachedStringFormatter<string, int>((string _s, int _i) => string.Format("{0} ({1})", _s, _i));
 
-	// Token: 0x04006447 RID: 25671
+	// Token: 0x04006486 RID: 25734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04006448 RID: 25672
+	// Token: 0x04006487 RID: 25735
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor durabilityColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04006449 RID: 25673
+	// Token: 0x04006488 RID: 25736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt durabilityValueFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x0400644A RID: 25674
+	// Token: 0x04006489 RID: 25737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat durabilityFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x0400644B RID: 25675
+	// Token: 0x0400648A RID: 25738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat removedDurabilityFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x0400644C RID: 25676
+	// Token: 0x0400648B RID: 25739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor stateColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x0400644D RID: 25677
+	// Token: 0x0400648C RID: 25740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt itemPriceFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x0400644E RID: 25678
+	// Token: 0x0400648D RID: 25741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor altitemtypeiconcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 }

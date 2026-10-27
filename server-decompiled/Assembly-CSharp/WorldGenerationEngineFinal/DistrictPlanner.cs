@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001724 RID: 5924
+	// Token: 0x02001755 RID: 5973
 	public class DistrictPlanner
 	{
-		// Token: 0x0600B8B7 RID: 47287 RVA: 0x004445E0 File Offset: 0x004427E0
+		// Token: 0x0600B9CB RID: 47563 RVA: 0x00447F8C File Offset: 0x0044618C
 		public DistrictPlanner(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B8B8 RID: 47288 RVA: 0x004445F0 File Offset: 0x004427F0
+		// Token: 0x0600B9CC RID: 47564 RVA: 0x00447F9C File Offset: 0x0044619C
 		public void PlanTownship(Township _township)
 		{
 			if (_township.IsRoadside())
@@ -39,7 +39,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B8B9 RID: 47289 RVA: 0x0044465C File Offset: 0x0044285C
+		// Token: 0x0600B9CD RID: 47565 RVA: 0x00448008 File Offset: 0x00446208
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateDistricts(Township _township)
 		{
@@ -151,7 +151,7 @@ namespace WorldGenerationEngineFinal
 			GameRandomManager.Instance.FreeGameRandom(gameRandom);
 		}
 
-		// Token: 0x0600B8BA RID: 47290 RVA: 0x00444A34 File Offset: 0x00442C34
+		// Token: 0x0600B9CE RID: 47566 RVA: 0x004483E0 File Offset: 0x004465E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile FindFreeWithNeighbor(List<StreetTile> _streetTiles, District _district)
 		{
@@ -184,7 +184,7 @@ namespace WorldGenerationEngineFinal
 			return null;
 		}
 
-		// Token: 0x0600B8BB RID: 47291 RVA: 0x00444B4C File Offset: 0x00442D4C
+		// Token: 0x0600B9CF RID: 47567 RVA: 0x004484F8 File Offset: 0x004466F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool HasAvoidNeighbor(StreetTile _st, District _district)
 		{
@@ -201,7 +201,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B8BC RID: 47292 RVA: 0x00444BA4 File Offset: 0x00442DA4
+		// Token: 0x0600B9D0 RID: 47568 RVA: 0x00448550 File Offset: 0x00446750
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateGateway(Township _township)
 		{
@@ -214,7 +214,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B8BD RID: 47293 RVA: 0x00444C24 File Offset: 0x00442E24
+		// Token: 0x0600B9D1 RID: 47569 RVA: 0x004485D0 File Offset: 0x004467D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GenerateGatewayDir(Township _township, int _baseDir)
 		{
@@ -265,7 +265,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x040089E5 RID: 35301
+		// Token: 0x04008ACE RID: 35534
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 	}

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004F7 RID: 1271
+// Token: 0x020004F9 RID: 1273
 [Preserve]
 public class EntityVHelicopter : EntityDriveable
 {
-	// Token: 0x06002965 RID: 10597 RVA: 0x001046D8 File Offset: 0x001028D8
+	// Token: 0x0600296C RID: 10604 RVA: 0x00104C2C File Offset: 0x00102E2C
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
@@ -15,7 +15,7 @@ public class EntityVHelicopter : EntityDriveable
 		this.rearPropT = meshTransform.Find("Origin/BackPropellerJoint");
 	}
 
-	// Token: 0x06002966 RID: 10598 RVA: 0x0010471C File Offset: 0x0010291C
+	// Token: 0x0600296D RID: 10605 RVA: 0x00104C70 File Offset: 0x00102E70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void PhysicsInputMove()
 	{
@@ -63,7 +63,7 @@ public class EntityVHelicopter : EntityDriveable
 		this.topRPM *= 0.99f;
 	}
 
-	// Token: 0x06002967 RID: 10599 RVA: 0x00104940 File Offset: 0x00102B40
+	// Token: 0x0600296E RID: 10606 RVA: 0x00104E94 File Offset: 0x00103094
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetWheelsForces(float motorTorque, float motorTorqueBase, float brakeTorque, float _friction)
 	{
@@ -75,14 +75,14 @@ public class EntityVHelicopter : EntityDriveable
 		}
 	}
 
-	// Token: 0x06002968 RID: 10600 RVA: 0x000FFB1C File Offset: 0x000FDD1C
+	// Token: 0x0600296F RID: 10607 RVA: 0x00100070 File Offset: 0x000FE270
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateWheelsSteering()
 	{
 		this.wheels[0].wheelC.steerAngle = this.wheelDir;
 	}
 
-	// Token: 0x06002969 RID: 10601 RVA: 0x00104984 File Offset: 0x00102B84
+	// Token: 0x06002970 RID: 10608 RVA: 0x00104ED8 File Offset: 0x001030D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -101,22 +101,22 @@ public class EntityVHelicopter : EntityDriveable
 		}
 	}
 
-	// Token: 0x04001F5E RID: 8030
+	// Token: 0x04001F6E RID: 8046
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cTopRPMMax = 3f;
 
-	// Token: 0x04001F5F RID: 8031
+	// Token: 0x04001F6F RID: 8047
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform topPropT;
 
-	// Token: 0x04001F60 RID: 8032
+	// Token: 0x04001F70 RID: 8048
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float topRPM;
 
-	// Token: 0x04001F61 RID: 8033
+	// Token: 0x04001F71 RID: 8049
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform rearPropT;

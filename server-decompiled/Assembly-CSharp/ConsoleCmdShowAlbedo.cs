@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000290 RID: 656
+// Token: 0x02000292 RID: 658
 [Preserve]
 public class ConsoleCmdShowAlbedo : ConsoleCmdAbstract
 {
 	// Token: 0x170001FF RID: 511
-	// (get) Token: 0x06001319 RID: 4889 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600131D RID: 4893 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,7 +17,7 @@ public class ConsoleCmdShowAlbedo : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000200 RID: 512
-	// (get) Token: 0x0600131A RID: 4890 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x0600131E RID: 4894 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -26,21 +26,21 @@ public class ConsoleCmdShowAlbedo : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600131B RID: 4891 RVA: 0x00075F59 File Offset: 0x00074159
+	// Token: 0x0600131F RID: 4895 RVA: 0x00076129 File Offset: 0x00074329
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "showalbedo", "albedo" };
 	}
 
-	// Token: 0x0600131C RID: 4892 RVA: 0x00075F71 File Offset: 0x00074171
+	// Token: 0x06001320 RID: 4896 RVA: 0x00076141 File Offset: 0x00074341
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		Polarizer.SetDebugView((Polarizer.GetDebugView() != Polarizer.ViewEnums.Albedo) ? Polarizer.ViewEnums.Albedo : Polarizer.ViewEnums.None);
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("showalbedo " + ((Polarizer.GetDebugView() == Polarizer.ViewEnums.Albedo) ? "on" : "off"));
 	}
 
-	// Token: 0x0600131D RID: 4893 RVA: 0x00075FAC File Offset: 0x000741AC
+	// Token: 0x06001321 RID: 4897 RVA: 0x0007617C File Offset: 0x0007437C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

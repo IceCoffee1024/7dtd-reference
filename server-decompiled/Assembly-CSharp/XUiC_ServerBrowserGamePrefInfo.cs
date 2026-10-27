@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DE2 RID: 3554
+// Token: 0x02000DED RID: 3565
 [Preserve]
 public class XUiC_ServerBrowserGamePrefInfo : XUiController
 {
-	// Token: 0x17000BFB RID: 3067
-	// (get) Token: 0x06006C33 RID: 27699 RVA: 0x002A654F File Offset: 0x002A474F
+	// Token: 0x17000C01 RID: 3073
+	// (get) Token: 0x06006C58 RID: 27736 RVA: 0x002A7A77 File Offset: 0x002A5C77
 	public GamePrefs.EnumType ValueType
 	{
 		get
@@ -17,8 +17,8 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BFC RID: 3068
-	// (get) Token: 0x06006C34 RID: 27700 RVA: 0x002A6557 File Offset: 0x002A4757
+	// Token: 0x17000C02 RID: 3074
+	// (get) Token: 0x06006C59 RID: 27737 RVA: 0x002A7A7F File Offset: 0x002A5C7F
 	public GameInfoBool GameInfoBool
 	{
 		get
@@ -27,8 +27,8 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BFD RID: 3069
-	// (get) Token: 0x06006C35 RID: 27701 RVA: 0x002A655F File Offset: 0x002A475F
+	// Token: 0x17000C03 RID: 3075
+	// (get) Token: 0x06006C5A RID: 27738 RVA: 0x002A7A87 File Offset: 0x002A5C87
 	public GameInfoInt GameInfoInt
 	{
 		get
@@ -37,8 +37,8 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BFE RID: 3070
-	// (get) Token: 0x06006C36 RID: 27702 RVA: 0x002A6567 File Offset: 0x002A4767
+	// Token: 0x17000C04 RID: 3076
+	// (get) Token: 0x06006C5B RID: 27739 RVA: 0x002A7A8F File Offset: 0x002A5C8F
 	public GameInfoString GameInfoString
 	{
 		get
@@ -47,8 +47,8 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BFF RID: 3071
-	// (set) Token: 0x06006C37 RID: 27703 RVA: 0x002A656F File Offset: 0x002A476F
+	// Token: 0x17000C05 RID: 3077
+	// (set) Token: 0x06006C5C RID: 27740 RVA: 0x002A7A97 File Offset: 0x002A5C97
 	public Func<int, int> ValuePreDisplayModifierFunc
 	{
 		set
@@ -62,8 +62,8 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000C00 RID: 3072
-	// (set) Token: 0x06006C38 RID: 27704 RVA: 0x002A658D File Offset: 0x002A478D
+	// Token: 0x17000C06 RID: 3078
+	// (set) Token: 0x06006C5D RID: 27741 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
 	public Func<GameServerInfo, int, string> CustomIntValueFormatter
 	{
 		set
@@ -77,8 +77,8 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000C01 RID: 3073
-	// (set) Token: 0x06006C39 RID: 27705 RVA: 0x002A65AC File Offset: 0x002A47AC
+	// Token: 0x17000C07 RID: 3079
+	// (set) Token: 0x06006C5E RID: 27742 RVA: 0x002A7AD4 File Offset: 0x002A5CD4
 	public Func<GameServerInfo, string, string> CustomStringValueFormatter
 	{
 		set
@@ -92,7 +92,7 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C3A RID: 27706 RVA: 0x002A65CC File Offset: 0x002A47CC
+	// Token: 0x06006C5F RID: 27743 RVA: 0x002A7AF4 File Offset: 0x002A5CF4
 	public override void Init()
 	{
 		base.Init();
@@ -124,7 +124,7 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		this.setupOptions();
 	}
 
-	// Token: 0x06006C3B RID: 27707 RVA: 0x002A667C File Offset: 0x002A487C
+	// Token: 0x06006C60 RID: 27744 RVA: 0x002A7BA4 File Offset: 0x002A5DA4
 	[XuiXmlAttribute("display_names", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeDisplayNames(string _value)
@@ -140,7 +140,7 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C3C RID: 27708 RVA: 0x002A66CA File Offset: 0x002A48CA
+	// Token: 0x06006C61 RID: 27745 RVA: 0x002A7BF2 File Offset: 0x002A5DF2
 	[XuiXmlAttribute("value_localization_prefix", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueLocalizationPrefix(string _value)
@@ -151,7 +151,7 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C3D RID: 27709 RVA: 0x002A66E4 File Offset: 0x002A48E4
+	// Token: 0x06006C62 RID: 27746 RVA: 0x002A7C0C File Offset: 0x002A5E0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupOptions()
 	{
@@ -185,7 +185,7 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C3E RID: 27710 RVA: 0x002A67B0 File Offset: 0x002A49B0
+	// Token: 0x06006C63 RID: 27747 RVA: 0x002A7CD8 File Offset: 0x002A5ED8
 	public void SetCurrentValue(GameServerInfo _gameInfo)
 	{
 		try
@@ -257,70 +257,70 @@ public class XUiC_ServerBrowserGamePrefInfo : XUiController
 		}
 	}
 
-	// Token: 0x040052CF RID: 21199
+	// Token: 0x040052F4 RID: 21236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label label;
 
-	// Token: 0x040052D0 RID: 21200
+	// Token: 0x040052F5 RID: 21237
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] namesFromXml;
 
-	// Token: 0x040052D1 RID: 21201
+	// Token: 0x040052F6 RID: 21238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string valueLocalizationPrefixFromXml;
 
-	// Token: 0x040052D2 RID: 21202
+	// Token: 0x040052F7 RID: 21239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GamePrefs.EnumType valueType;
 
-	// Token: 0x040052D3 RID: 21203
+	// Token: 0x040052F8 RID: 21240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameInfoBool gameInfoBool;
 
-	// Token: 0x040052D4 RID: 21204
+	// Token: 0x040052F9 RID: 21241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameInfoInt gameInfoInt;
 
-	// Token: 0x040052D5 RID: 21205
+	// Token: 0x040052FA RID: 21242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameInfoString gameInfoString;
 
-	// Token: 0x040052D6 RID: 21206
+	// Token: 0x040052FB RID: 21243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ServerBrowserGamePrefInfo.GameOptionValue> values;
 
-	// Token: 0x040052D7 RID: 21207
+	// Token: 0x040052FC RID: 21244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<int, int> valuePreDisplayModifierFunc;
 
-	// Token: 0x040052D8 RID: 21208
+	// Token: 0x040052FD RID: 21245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<GameServerInfo, int, string> customIntValueFormatter;
 
-	// Token: 0x040052D9 RID: 21209
+	// Token: 0x040052FE RID: 21246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<GameServerInfo, string, string> customStringValueFormatter;
 
-	// Token: 0x02000DE3 RID: 3555
+	// Token: 0x02000DEE RID: 3566
 	public struct GameOptionValue
 	{
-		// Token: 0x06006C40 RID: 27712 RVA: 0x002A69F0 File Offset: 0x002A4BF0
+		// Token: 0x06006C65 RID: 27749 RVA: 0x002A7F18 File Offset: 0x002A6118
 		public GameOptionValue(int _value, string _displayName)
 		{
 			this.Value = _value;
 			this.displayName = _displayName;
 		}
 
-		// Token: 0x06006C41 RID: 27713 RVA: 0x002A6A00 File Offset: 0x002A4C00
+		// Token: 0x06006C66 RID: 27750 RVA: 0x002A7F28 File Offset: 0x002A6128
 		public override string ToString()
 		{
 			return this.displayName;
 		}
 
-		// Token: 0x040052DA RID: 21210
+		// Token: 0x040052FF RID: 21247
 		public readonly int Value;
 
-		// Token: 0x040052DB RID: 21211
+		// Token: 0x04005300 RID: 21248
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string displayName;
 	}

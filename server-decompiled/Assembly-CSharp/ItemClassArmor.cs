@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020005F6 RID: 1526
+// Token: 0x020005FD RID: 1533
 [Preserve]
 public class ItemClassArmor : ItemClass
 {
-	// Token: 0x06003209 RID: 12809 RVA: 0x001445AD File Offset: 0x001427AD
+	// Token: 0x06003217 RID: 12823 RVA: 0x001451A1 File Offset: 0x001433A1
 	public override bool KeepOnDeath()
 	{
 		return this.keepOnDeath;
 	}
 
-	// Token: 0x0600320A RID: 12810 RVA: 0x001445B8 File Offset: 0x001427B8
+	// Token: 0x06003218 RID: 12824 RVA: 0x001451AC File Offset: 0x001433AC
 	public override void Init()
 	{
 		base.Init();
@@ -29,61 +29,61 @@ public class ItemClassArmor : ItemClass
 		this.Properties.ParseString("ReplaceByTag", ref this.ReplaceByTag);
 	}
 
-	// Token: 0x0600320B RID: 12811 RVA: 0x00144698 File Offset: 0x00142898
+	// Token: 0x06003219 RID: 12825 RVA: 0x0014528C File Offset: 0x0014348C
 	public override bool CanEquip()
 	{
 		return (World.TemperatureSurvival || World.StormFrequency != 0f || this.EquipSlot.SlotType() != EquipmentSlotType.Clothing) && (World.BiomeProgressionEnabled || this.EquipSlot.SlotType() != EquipmentSlotType.BiomeGear);
 	}
 
-	// Token: 0x04002730 RID: 10032
+	// Token: 0x0400274B RID: 10059
 	public const string PropEquipSlot = "EquipSlot";
 
-	// Token: 0x04002731 RID: 10033
+	// Token: 0x0400274C RID: 10060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropArmorGroup = "ArmorGroup";
 
-	// Token: 0x04002732 RID: 10034
+	// Token: 0x0400274D RID: 10061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropIsCosmetic = "IsCosmetic";
 
-	// Token: 0x04002733 RID: 10035
+	// Token: 0x0400274E RID: 10062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropKeepOnDeath = "KeepOnDeath";
 
-	// Token: 0x04002734 RID: 10036
+	// Token: 0x0400274F RID: 10063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropAllowUnEquip = "AllowUnEquip";
 
-	// Token: 0x04002735 RID: 10037
+	// Token: 0x04002750 RID: 10064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropAutoEquip = "AutoEquip";
 
-	// Token: 0x04002736 RID: 10038
+	// Token: 0x04002751 RID: 10065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropReplaceByTag = "ReplaceByTag";
 
-	// Token: 0x04002737 RID: 10039
+	// Token: 0x04002752 RID: 10066
 	public EquipmentSlots EquipSlot = EquipmentSlots.Count;
 
-	// Token: 0x04002738 RID: 10040
+	// Token: 0x04002753 RID: 10067
 	public string[] ArmorGroup;
 
-	// Token: 0x04002739 RID: 10041
+	// Token: 0x04002754 RID: 10068
 	public bool IsCosmetic = true;
 
-	// Token: 0x0400273A RID: 10042
+	// Token: 0x04002755 RID: 10069
 	public int CosmeticID = -1;
 
-	// Token: 0x0400273B RID: 10043
+	// Token: 0x04002756 RID: 10070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool keepOnDeath;
 
-	// Token: 0x0400273C RID: 10044
+	// Token: 0x04002757 RID: 10071
 	public bool AllowUnEquip = true;
 
-	// Token: 0x0400273D RID: 10045
+	// Token: 0x04002758 RID: 10072
 	public bool AutoEquip;
 
-	// Token: 0x0400273E RID: 10046
+	// Token: 0x04002759 RID: 10073
 	public string ReplaceByTag;
 }

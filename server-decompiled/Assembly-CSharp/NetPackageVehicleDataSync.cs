@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000863 RID: 2147
+// Token: 0x0200086D RID: 2157
 [Preserve]
 public class NetPackageVehicleDataSync : NetPackage
 {
-	// Token: 0x06003E4A RID: 15946 RVA: 0x0018B128 File Offset: 0x00189328
+	// Token: 0x06003E6D RID: 15981 RVA: 0x0018C1D0 File Offset: 0x0018A3D0
 	public NetPackageVehicleDataSync Setup(EntityVehicle _ev, int _senderId, ushort _syncFlags)
 	{
 		this.senderId = _senderId;
@@ -19,14 +19,14 @@ public class NetPackageVehicleDataSync : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E4B RID: 15947 RVA: 0x0018B18C File Offset: 0x0018938C
+	// Token: 0x06003E6E RID: 15982 RVA: 0x0018C234 File Offset: 0x0018A434
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageVehicleDataSync()
 	{
 		MemoryPools.poolMemoryStream.FreeSync(this.entityData);
 	}
 
-	// Token: 0x06003E4C RID: 15948 RVA: 0x0018B1C4 File Offset: 0x001893C4
+	// Token: 0x06003E6F RID: 15983 RVA: 0x0018C26C File Offset: 0x0018A46C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.senderId = _br.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackageVehicleDataSync : NetPackage
 		StreamUtils.StreamCopy(_br.BaseStream, this.entityData, num, null, true);
 	}
 
-	// Token: 0x06003E4D RID: 15949 RVA: 0x0018B210 File Offset: 0x00189410
+	// Token: 0x06003E70 RID: 15984 RVA: 0x0018C2B8 File Offset: 0x0018A4B8
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -47,7 +47,7 @@ public class NetPackageVehicleDataSync : NetPackage
 		this.entityData.WriteTo(_bw.BaseStream);
 	}
 
-	// Token: 0x06003E4E RID: 15950 RVA: 0x0018B26C File Offset: 0x0018946C
+	// Token: 0x06003E71 RID: 15985 RVA: 0x0018C314 File Offset: 0x0018A514
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -96,19 +96,19 @@ public class NetPackageVehicleDataSync : NetPackage
 		}
 	}
 
-	// Token: 0x04003295 RID: 12949
+	// Token: 0x040032B5 RID: 12981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int senderId;
 
-	// Token: 0x04003296 RID: 12950
+	// Token: 0x040032B6 RID: 12982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int vehicleId;
 
-	// Token: 0x04003297 RID: 12951
+	// Token: 0x040032B7 RID: 12983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort syncFlags;
 
-	// Token: 0x04003298 RID: 12952
+	// Token: 0x040032B8 RID: 12984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream entityData = MemoryPools.poolMemoryStream.AllocSync(true);
 }

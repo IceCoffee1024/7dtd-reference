@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000BCC RID: 3020
+// Token: 0x02000BD7 RID: 3031
 public class SpawnPointList : List<SpawnPoint>
 {
-	// Token: 0x06005ADF RID: 23263 RVA: 0x002314CC File Offset: 0x0022F6CC
+	// Token: 0x06005B04 RID: 23300 RVA: 0x00232A28 File Offset: 0x00230C28
 	public SpawnPoint Find(Vector3i _blockPos)
 	{
 		for (int i = 0; i < base.Count; i++)
@@ -19,7 +19,7 @@ public class SpawnPointList : List<SpawnPoint>
 		return null;
 	}
 
-	// Token: 0x06005AE0 RID: 23264 RVA: 0x0023150C File Offset: 0x0022F70C
+	// Token: 0x06005B05 RID: 23301 RVA: 0x00232A68 File Offset: 0x00230C68
 	public virtual SpawnPosition GetRandomSpawnPosition(World _world, Vector3? _refPosition = null, int _minDistance = 0, int _maxDistance = 0)
 	{
 		if (base.Count > 0)
@@ -59,7 +59,7 @@ public class SpawnPointList : List<SpawnPoint>
 		return SpawnPosition.Undef;
 	}
 
-	// Token: 0x06005AE1 RID: 23265 RVA: 0x0023160C File Offset: 0x0022F80C
+	// Token: 0x06005B06 RID: 23302 RVA: 0x00232B68 File Offset: 0x00230D68
 	public void Read(IBinaryReaderOrWriter _readerOrWriter)
 	{
 		if (_readerOrWriter == null)
@@ -77,7 +77,7 @@ public class SpawnPointList : List<SpawnPoint>
 		}
 	}
 
-	// Token: 0x06005AE2 RID: 23266 RVA: 0x00231654 File Offset: 0x0022F854
+	// Token: 0x06005B07 RID: 23303 RVA: 0x00232BB0 File Offset: 0x00230DB0
 	public void Read(PooledBinaryReader _br)
 	{
 		if (_br == null)
@@ -95,7 +95,7 @@ public class SpawnPointList : List<SpawnPoint>
 		}
 	}
 
-	// Token: 0x06005AE3 RID: 23267 RVA: 0x0023169C File Offset: 0x0022F89C
+	// Token: 0x06005B08 RID: 23304 RVA: 0x00232BF8 File Offset: 0x00230DF8
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write((byte)SpawnPointList.CurrentSaveVersion);
@@ -106,7 +106,7 @@ public class SpawnPointList : List<SpawnPoint>
 		}
 	}
 
-	// Token: 0x040046B8 RID: 18104
+	// Token: 0x040046DD RID: 18141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static uint CurrentSaveVersion = 2U;
 }

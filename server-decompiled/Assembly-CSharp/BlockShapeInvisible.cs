@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeInvisible : BlockShape
 {
-	// Token: 0x06000CD0 RID: 3280 RVA: 0x00050D10 File Offset: 0x0004EF10
+	// Token: 0x06000CD0 RID: 3280 RVA: 0x00050CD0 File Offset: 0x0004EED0
 	public BlockShapeInvisible()
 	{
 		this.IsSolidCube = false;
@@ -14,7 +14,7 @@ public class BlockShapeInvisible : BlockShape
 		this.LightOpacity = 0;
 	}
 
-	// Token: 0x06000CD1 RID: 3281 RVA: 0x00050D2D File Offset: 0x0004EF2D
+	// Token: 0x06000CD1 RID: 3281 RVA: 0x00050CED File Offset: 0x0004EEED
 	public override void Init(Block _block)
 	{
 		base.Init(_block);

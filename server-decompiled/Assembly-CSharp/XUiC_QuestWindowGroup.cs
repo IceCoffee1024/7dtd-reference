@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x0200100C RID: 4108
+// Token: 0x0200101C RID: 4124
 [Preserve]
 public class XUiC_QuestWindowGroup : XUiController
 {
-	// Token: 0x06008145 RID: 33093 RVA: 0x00312FD0 File Offset: 0x003111D0
+	// Token: 0x06008197 RID: 33175 RVA: 0x00314CD4 File Offset: 0x00312ED4
 	public override void Init()
 	{
 		base.Init();
@@ -28,7 +28,7 @@ public class XUiC_QuestWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06008146 RID: 33094 RVA: 0x00313069 File Offset: 0x00311269
+	// Token: 0x06008198 RID: 33176 RVA: 0x00314D6D File Offset: 0x00312F6D
 	public void SetQuest(XUiC_QuestEntry q)
 	{
 		this.objectivesWindow.SetQuest(q);
@@ -36,7 +36,7 @@ public class XUiC_QuestWindowGroup : XUiController
 		this.descriptionWindow.SetQuest(q);
 	}
 
-	// Token: 0x06008147 RID: 33095 RVA: 0x00313090 File Offset: 0x00311290
+	// Token: 0x06008199 RID: 33177 RVA: 0x00314D94 File Offset: 0x00312F94
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -58,7 +58,7 @@ public class XUiC_QuestWindowGroup : XUiController
 		this.AsyncUISelectionOnOpen();
 	}
 
-	// Token: 0x06008148 RID: 33096 RVA: 0x0031314C File Offset: 0x0031134C
+	// Token: 0x0600819A RID: 33178 RVA: 0x00314E50 File Offset: 0x00313050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public async void AsyncUISelectionOnOpen()
 	{
@@ -82,7 +82,7 @@ public class XUiC_QuestWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06008149 RID: 33097 RVA: 0x002D0C05 File Offset: 0x002CEE05
+	// Token: 0x0600819B RID: 33179 RVA: 0x002D215D File Offset: 0x002D035D
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -90,7 +90,7 @@ public class XUiC_QuestWindowGroup : XUiController
 		this.xui.playerUI.windowManager.Close("windowpaging");
 	}
 
-	// Token: 0x0600814A RID: 33098 RVA: 0x00313184 File Offset: 0x00311384
+	// Token: 0x0600819C RID: 33180 RVA: 0x00314E88 File Offset: 0x00313088
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -117,23 +117,23 @@ public class XUiC_QuestWindowGroup : XUiController
 		return true;
 	}
 
-	// Token: 0x04005FF6 RID: 24566
+	// Token: 0x04006034 RID: 24628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestList questList;
 
-	// Token: 0x04005FF7 RID: 24567
+	// Token: 0x04006035 RID: 24629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestSharedList sharedList;
 
-	// Token: 0x04005FF8 RID: 24568
+	// Token: 0x04006036 RID: 24630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestObjectivesWindow objectivesWindow;
 
-	// Token: 0x04005FF9 RID: 24569
+	// Token: 0x04006037 RID: 24631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestRewardsWindow rewardsWindow;
 
-	// Token: 0x04005FFA RID: 24570
+	// Token: 0x04006038 RID: 24632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestDescriptionWindow descriptionWindow;
 }

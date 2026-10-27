@@ -1,10 +1,10 @@
 ﻿using System;
 using Audio;
 
-// Token: 0x0200090E RID: 2318
+// Token: 0x02000918 RID: 2328
 public class PowerConsumer : PowerItem
 {
-	// Token: 0x0600428A RID: 17034 RVA: 0x001A247C File Offset: 0x001A067C
+	// Token: 0x060042AD RID: 17069 RVA: 0x001A3524 File Offset: 0x001A1724
 	public override void HandlePowerUpdate(bool isOn)
 	{
 		bool flag = this.isPowered && isOn;
@@ -27,7 +27,7 @@ public class PowerConsumer : PowerItem
 		}
 	}
 
-	// Token: 0x0600428B RID: 17035 RVA: 0x001A2504 File Offset: 0x001A0704
+	// Token: 0x060042AE RID: 17070 RVA: 0x001A35AC File Offset: 0x001A17AC
 	public override void SetValuesFromBlock()
 	{
 		base.SetValuesFromBlock();
@@ -46,22 +46,22 @@ public class PowerConsumer : PowerItem
 		}
 	}
 
-	// Token: 0x0600428C RID: 17036 RVA: 0x001A25BF File Offset: 0x001A07BF
+	// Token: 0x060042AF RID: 17071 RVA: 0x001A3667 File Offset: 0x001A1867
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void IsPoweredChanged(bool newPowered)
 	{
 		Manager.BroadcastPlay(this.Position.ToVector3(), newPowered ? this.StartSound : this.EndSound, 0f);
 	}
 
-	// Token: 0x04003617 RID: 13847
+	// Token: 0x04003637 RID: 13879
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string StartSound = "";
 
-	// Token: 0x04003618 RID: 13848
+	// Token: 0x04003638 RID: 13880
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string EndSound = "";
 
-	// Token: 0x04003619 RID: 13849
+	// Token: 0x04003639 RID: 13881
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool lastActivate;
 }

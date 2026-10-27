@@ -6,11 +6,11 @@ using JetBrains.Annotations;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EF6 RID: 3830
+// Token: 0x02000F01 RID: 3841
 [Preserve]
 public class XUiC_Chat : XUiController
 {
-	// Token: 0x060077C5 RID: 30661 RVA: 0x002D4948 File Offset: 0x002D2B48
+	// Token: 0x060077EB RID: 30699 RVA: 0x002D5EA0 File Offset: 0x002D40A0
 	public override void Init()
 	{
 		XUiC_Chat.ID = this.windowGroup.Id;
@@ -23,7 +23,7 @@ public class XUiC_Chat : XUiController
 		this.registerRegularChatMessageHandlers();
 	}
 
-	// Token: 0x060077C6 RID: 30662 RVA: 0x002D49C4 File Offset: 0x002D2BC4
+	// Token: 0x060077EC RID: 30700 RVA: 0x002D5F1C File Offset: 0x002D411C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void registerRegularChatMessageHandlers()
 	{
@@ -36,14 +36,14 @@ public class XUiC_Chat : XUiController
 		this.allTargets.Add(new XUiC_Chat.ChatTarget(EChatType.Party, null, (XUiC_Chat.ChatTarget _, XUi _) => this.entityIdsParty.Count > 1, true));
 	}
 
-	// Token: 0x060077C7 RID: 30663 RVA: 0x002AAE45 File Offset: 0x002A9045
+	// Token: 0x060077ED RID: 30701 RVA: 0x002AC36D File Offset: 0x002AA56D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TextInput_OnInputAbortedHandler(XUiController _sender)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x060077C8 RID: 30664 RVA: 0x002D4ACC File Offset: 0x002D2CCC
+	// Token: 0x060077EE RID: 30702 RVA: 0x002D6024 File Offset: 0x002D4224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TextInput_OnSubmitHandler(XUiController _sender, string _text)
 	{
@@ -56,7 +56,7 @@ public class XUiC_Chat : XUiController
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x060077C9 RID: 30665 RVA: 0x002D4B38 File Offset: 0x002D2D38
+	// Token: 0x060077EF RID: 30703 RVA: 0x002D6090 File Offset: 0x002D4290
 	public override void OnOpen()
 	{
 		this.cbxTarget.Enabled = PermissionsManager.IsCommunicationAllowed();
@@ -65,7 +65,7 @@ public class XUiC_Chat : XUiController
 		base.OnOpen();
 	}
 
-	// Token: 0x060077CA RID: 30666 RVA: 0x002D4B68 File Offset: 0x002D2D68
+	// Token: 0x060077F0 RID: 30704 RVA: 0x002D60C0 File Offset: 0x002D42C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateTargets()
 	{
@@ -119,7 +119,7 @@ public class XUiC_Chat : XUiController
 		}
 	}
 
-	// Token: 0x060077CB RID: 30667 RVA: 0x002D4DB0 File Offset: 0x002D2FB0
+	// Token: 0x060077F1 RID: 30705 RVA: 0x002D6308 File Offset: 0x002D4508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int enforceTarget(EChatType _chatType, string _targetId)
 	{
@@ -137,7 +137,7 @@ public class XUiC_Chat : XUiController
 		return this.cbxTarget.Elements.FindIndex((XUiC_Chat.ChatTarget _target) => _target.ChatType == _chatType && _targetId == _target.TargetId);
 	}
 
-	// Token: 0x060077CC RID: 30668 RVA: 0x002D4E44 File Offset: 0x002D3044
+	// Token: 0x060077F2 RID: 30706 RVA: 0x002D639C File Offset: 0x002D459C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void findOrAddTarget(EChatType _chatType, string _targetId)
 	{
@@ -149,14 +149,14 @@ public class XUiC_Chat : XUiController
 		}
 	}
 
-	// Token: 0x060077CD RID: 30669 RVA: 0x002D4E77 File Offset: 0x002D3077
+	// Token: 0x060077F3 RID: 30707 RVA: 0x002D63CF File Offset: 0x002D45CF
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.UpdateInput();
 	}
 
-	// Token: 0x060077CE RID: 30670 RVA: 0x002D4E88 File Offset: 0x002D3088
+	// Token: 0x060077F4 RID: 30708 RVA: 0x002D63E0 File Offset: 0x002D45E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -181,7 +181,7 @@ public class XUiC_Chat : XUiController
 		}
 	}
 
-	// Token: 0x060077CF RID: 30671 RVA: 0x002D4F3F File Offset: 0x002D313F
+	// Token: 0x060077F5 RID: 30709 RVA: 0x002D6497 File Offset: 0x002D4697
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "keep_whisper_targets_for_minutes")
@@ -192,7 +192,7 @@ public class XUiC_Chat : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x060077D0 RID: 30672 RVA: 0x002D4F68 File Offset: 0x002D3168
+	// Token: 0x060077F6 RID: 30710 RVA: 0x002D64C0 File Offset: 0x002D46C0
 	public static void RegisterCustomMessagingHandler(EChatType _chatType, XUiC_Chat.IsValidTarget _isValidTargetDelegate, XUiC_Chat.GetTargetDisplayName _getTargetDisplayNameDelegate, XUiC_Chat.SendMessage _sendMessageDelegate)
 	{
 		if (_chatType >= (EChatType)XUiC_Chat.messagingHandlers.Length)
@@ -203,7 +203,7 @@ public class XUiC_Chat : XUiController
 		XUiC_Chat.messagingHandlers[(int)_chatType] = new XUiC_Chat.ChatMessagingHandler(_isValidTargetDelegate, _getTargetDisplayNameDelegate, _sendMessageDelegate);
 	}
 
-	// Token: 0x060077D1 RID: 30673 RVA: 0x002D4FA8 File Offset: 0x002D31A8
+	// Token: 0x060077F7 RID: 30711 RVA: 0x002D6500 File Offset: 0x002D4700
 	public static void SetChatTarget(XUi _xuiInstance, EChatType _chatType, string _targetId)
 	{
 		XUiC_Chat windowByType = _xuiInstance.GetWindowByType<XUiC_Chat>();
@@ -224,7 +224,7 @@ public class XUiC_Chat : XUiController
 		windowByType.findOrAddTarget(_chatType, _targetId);
 	}
 
-	// Token: 0x060077D2 RID: 30674 RVA: 0x002D5014 File Offset: 0x002D3214
+	// Token: 0x060077F8 RID: 30712 RVA: 0x002D656C File Offset: 0x002D476C
 	public static bool GetChatTargetTooltip(XUi _xuiInstance, EChatType _chatType, string _targetId, out string _targetTooltip)
 	{
 		_targetTooltip = null;
@@ -246,7 +246,7 @@ public class XUiC_Chat : XUiController
 		return true;
 	}
 
-	// Token: 0x060077D3 RID: 30675 RVA: 0x002D5094 File Offset: 0x002D3294
+	// Token: 0x060077F9 RID: 30713 RVA: 0x002D65EC File Offset: 0x002D47EC
 	public static void EnforceTargetExists(XUi _xuiInstance, EChatType _chatType, string _targetId)
 	{
 		XUiC_Chat windowByType = _xuiInstance.GetWindowByType<XUiC_Chat>();
@@ -267,7 +267,7 @@ public class XUiC_Chat : XUiController
 		windowByType.enforceTarget(_chatType, _targetId);
 	}
 
-	// Token: 0x060077D8 RID: 30680 RVA: 0x002D5170 File Offset: 0x002D3370
+	// Token: 0x060077FE RID: 30718 RVA: 0x002D66C8 File Offset: 0x002D48C8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <registerRegularChatMessageHandlers>g__SendMessageRegular|9_2(EChatType _chatType, string _targetId, string _message)
@@ -307,7 +307,7 @@ public class XUiC_Chat : XUiController
 		GameManager.Instance.ChatMessageServer(null, _chatType, this.xui.playerUI.entityPlayer.entityId, _message, list2, EMessageSender.SenderIdAsPlayer, GeneratedTextManager.BbCodeSupportMode.Supported);
 	}
 
-	// Token: 0x060077D9 RID: 30681 RVA: 0x002D5220 File Offset: 0x002D3420
+	// Token: 0x060077FF RID: 30719 RVA: 0x002D6778 File Offset: 0x002D4978
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static string <registerRegularChatMessageHandlers>g__GetTargetDisplayNameRegular|9_3(EChatType _chatType, string _targetId)
@@ -329,7 +329,7 @@ public class XUiC_Chat : XUiController
 		return string.Format(Localization.Get("xuiChatTargetWhisper", false, null), entityPlayer.PlayerDisplayName);
 	}
 
-	// Token: 0x060077DA RID: 30682 RVA: 0x002D52B8 File Offset: 0x002D34B8
+	// Token: 0x06007800 RID: 30720 RVA: 0x002D6810 File Offset: 0x002D4A10
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <registerRegularChatMessageHandlers>g__IsValidTargetRegular|9_4(EChatType _chatType, string _targetId)
@@ -347,43 +347,43 @@ public class XUiC_Chat : XUiController
 		return GameManager.Instance.World.Players.dict.TryGetValue(num, out entityPlayer) && num != GameManager.Instance.World.GetPrimaryPlayer().entityId;
 	}
 
-	// Token: 0x040058C1 RID: 22721
+	// Token: 0x040058E6 RID: 22758
 	public static string ID = "";
 
-	// Token: 0x040058C2 RID: 22722
+	// Token: 0x040058E7 RID: 22759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<XUiC_Chat.ChatTarget> cbxTarget;
 
-	// Token: 0x040058C3 RID: 22723
+	// Token: 0x040058E8 RID: 22760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x040058C4 RID: 22724
+	// Token: 0x040058E9 RID: 22761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> entityIdsFriends = new List<int>();
 
-	// Token: 0x040058C5 RID: 22725
+	// Token: 0x040058EA RID: 22762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> entityIdsParty = new List<int>();
 
-	// Token: 0x040058C6 RID: 22726
+	// Token: 0x040058EB RID: 22763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_Chat.ChatTarget> allTargets = new List<XUiC_Chat.ChatTarget>();
 
-	// Token: 0x040058C7 RID: 22727
+	// Token: 0x040058EC RID: 22764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint keepWhisperTargetsForMinutes = 15U;
 
-	// Token: 0x040058C8 RID: 22728
+	// Token: 0x040058ED RID: 22765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XUiC_Chat.ChatMessagingHandler[] messagingHandlers = new XUiC_Chat.ChatMessagingHandler[(int)(EnumUtils.MaxValue<EChatType>() + 1)];
 
-	// Token: 0x02000EF7 RID: 3831
+	// Token: 0x02000F02 RID: 3842
 	[UsedImplicitly]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ChatTarget : IComparable<XUiC_Chat.ChatTarget>
 	{
-		// Token: 0x060077DB RID: 30683 RVA: 0x002D5324 File Offset: 0x002D3524
+		// Token: 0x06007801 RID: 30721 RVA: 0x002D687C File Offset: 0x002D4A7C
 		public ChatTarget(EChatType _chatType, string _targetId = null, Func<XUiC_Chat.ChatTarget, XUi, bool> _validCondition = null, bool _keepForever = false)
 		{
 			this.ChatType = _chatType;
@@ -399,21 +399,21 @@ public class XUiC_Chat : XUiController
 			this.lastUsed = DateTime.Now;
 		}
 
-		// Token: 0x060077DC RID: 30684 RVA: 0x002D53A2 File Offset: 0x002D35A2
+		// Token: 0x06007802 RID: 30722 RVA: 0x002D68FA File Offset: 0x002D4AFA
 		public override string ToString()
 		{
 			return this.displayText;
 		}
 
-		// Token: 0x060077DD RID: 30685 RVA: 0x002D53AA File Offset: 0x002D35AA
+		// Token: 0x06007803 RID: 30723 RVA: 0x002D6902 File Offset: 0x002D4B02
 		public void Send(string _message)
 		{
 			this.messageHandler.SendMessageDelegate(this.ChatType, this.TargetId, _message);
 			this.lastUsed = DateTime.Now;
 		}
 
-		// Token: 0x17000E2F RID: 3631
-		// (get) Token: 0x060077DE RID: 30686 RVA: 0x002D53D4 File Offset: 0x002D35D4
+		// Token: 0x17000E33 RID: 3635
+		// (get) Token: 0x06007804 RID: 30724 RVA: 0x002D692C File Offset: 0x002D4B2C
 		public TimeSpan Age
 		{
 			get
@@ -422,7 +422,7 @@ public class XUiC_Chat : XUiController
 			}
 		}
 
-		// Token: 0x060077DF RID: 30687 RVA: 0x002D53E6 File Offset: 0x002D35E6
+		// Token: 0x06007805 RID: 30725 RVA: 0x002D693E File Offset: 0x002D4B3E
 		public bool IsValid(XUi _xuiInstance)
 		{
 			Func<XUiC_Chat.ChatTarget, XUi, bool> validCondition = this.ValidCondition;
@@ -434,7 +434,7 @@ public class XUiC_Chat : XUiController
 			return validCondition(this, _xuiInstance);
 		}
 
-		// Token: 0x060077E0 RID: 30688 RVA: 0x002D541C File Offset: 0x002D361C
+		// Token: 0x06007806 RID: 30726 RVA: 0x002D6974 File Offset: 0x002D4B74
 		public int CompareTo(XUiC_Chat.ChatTarget _other)
 		{
 			if (this == _other)
@@ -461,49 +461,49 @@ public class XUiC_Chat : XUiController
 			return this.Age.CompareTo(_other.Age);
 		}
 
-		// Token: 0x040058C9 RID: 22729
+		// Token: 0x040058EE RID: 22766
 		public readonly EChatType ChatType;
 
-		// Token: 0x040058CA RID: 22730
+		// Token: 0x040058EF RID: 22767
 		public readonly string TargetId;
 
-		// Token: 0x040058CB RID: 22731
+		// Token: 0x040058F0 RID: 22768
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_Chat.ChatMessagingHandler messageHandler;
 
-		// Token: 0x040058CC RID: 22732
+		// Token: 0x040058F1 RID: 22769
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string displayText;
 
-		// Token: 0x040058CD RID: 22733
+		// Token: 0x040058F2 RID: 22770
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime lastUsed;
 
-		// Token: 0x040058CE RID: 22734
+		// Token: 0x040058F3 RID: 22771
 		public readonly bool KeepForever;
 
-		// Token: 0x040058CF RID: 22735
+		// Token: 0x040058F4 RID: 22772
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Func<XUiC_Chat.ChatTarget, XUi, bool> ValidCondition;
 	}
 
-	// Token: 0x02000EF8 RID: 3832
-	// (Invoke) Token: 0x060077E2 RID: 30690
+	// Token: 0x02000F03 RID: 3843
+	// (Invoke) Token: 0x06007808 RID: 30728
 	public delegate bool IsValidTarget(EChatType _chatType, string _targetId);
 
-	// Token: 0x02000EF9 RID: 3833
-	// (Invoke) Token: 0x060077E6 RID: 30694
+	// Token: 0x02000F04 RID: 3844
+	// (Invoke) Token: 0x0600780C RID: 30732
 	public delegate string GetTargetDisplayName(EChatType _chatType, string _targetId);
 
-	// Token: 0x02000EFA RID: 3834
-	// (Invoke) Token: 0x060077EA RID: 30698
+	// Token: 0x02000F05 RID: 3845
+	// (Invoke) Token: 0x06007810 RID: 30736
 	public delegate void SendMessage(EChatType _chatType, string _targetId, string _message);
 
-	// Token: 0x02000EFB RID: 3835
+	// Token: 0x02000F06 RID: 3846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ChatMessagingHandler
 	{
-		// Token: 0x060077ED RID: 30701 RVA: 0x002D548F File Offset: 0x002D368F
+		// Token: 0x06007813 RID: 30739 RVA: 0x002D69E7 File Offset: 0x002D4BE7
 		public ChatMessagingHandler(XUiC_Chat.IsValidTarget _isValidTargetDelegate, XUiC_Chat.GetTargetDisplayName _getTargetDisplayNameDelegate, XUiC_Chat.SendMessage _sendMessageDelegate)
 		{
 			this.IsValidTargetDelegate = _isValidTargetDelegate;
@@ -511,13 +511,13 @@ public class XUiC_Chat : XUiController
 			this.SendMessageDelegate = _sendMessageDelegate;
 		}
 
-		// Token: 0x040058D0 RID: 22736
+		// Token: 0x040058F5 RID: 22773
 		public readonly XUiC_Chat.IsValidTarget IsValidTargetDelegate;
 
-		// Token: 0x040058D1 RID: 22737
+		// Token: 0x040058F6 RID: 22774
 		public readonly XUiC_Chat.GetTargetDisplayName GetTargetDisplayNameDelegate;
 
-		// Token: 0x040058D2 RID: 22738
+		// Token: 0x040058F7 RID: 22775
 		public readonly XUiC_Chat.SendMessage SendMessageDelegate;
 	}
 }

@@ -1,31 +1,31 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020010E5 RID: 4325
+// Token: 0x020010F5 RID: 4341
 [Preserve]
 public class XUiC_WorkstationOutputGrid : XUiC_WorkstationGrid
 {
-	// Token: 0x06008987 RID: 35207 RVA: 0x003490AC File Offset: 0x003472AC
+	// Token: 0x060089DA RID: 35290 RVA: 0x0034B130 File Offset: 0x00349330
 	public void UpdateData(ItemStack[] stackList)
 	{
 		this.UpdateBackend(stackList);
 	}
 
-	// Token: 0x06008988 RID: 35208 RVA: 0x003490B5 File Offset: 0x003472B5
+	// Token: 0x060089DB RID: 35291 RVA: 0x0034B139 File Offset: 0x00349339
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.CurrentWorkstationOutputGrid = this;
 	}
 
-	// Token: 0x06008989 RID: 35209 RVA: 0x003490C9 File Offset: 0x003472C9
+	// Token: 0x060089DC RID: 35292 RVA: 0x0034B14D File Offset: 0x0034934D
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.CurrentWorkstationOutputGrid = null;
 	}
 
-	// Token: 0x0600898A RID: 35210 RVA: 0x003490DD File Offset: 0x003472DD
+	// Token: 0x060089DD RID: 35293 RVA: 0x0034B161 File Offset: 0x00349361
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{

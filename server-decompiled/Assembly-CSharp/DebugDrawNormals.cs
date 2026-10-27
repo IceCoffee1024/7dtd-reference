@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001354 RID: 4948
+// Token: 0x02001366 RID: 4966
 [ExecuteInEditMode]
 public class DebugDrawNormals : MonoBehaviour
 {
-	// Token: 0x06009BDB RID: 39899 RVA: 0x003AE164 File Offset: 0x003AC364
+	// Token: 0x06009C33 RID: 39987 RVA: 0x003B0568 File Offset: 0x003AE768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -36,7 +36,7 @@ public class DebugDrawNormals : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BDC RID: 39900 RVA: 0x003AE1E0 File Offset: 0x003AC3E0
+	// Token: 0x06009C34 RID: 39988 RVA: 0x003B05E4 File Offset: 0x003AE7E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Draw(MeshFilter mf)
 	{
@@ -81,7 +81,7 @@ public class DebugDrawNormals : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BDD RID: 39901 RVA: 0x003AE418 File Offset: 0x003AC618
+	// Token: 0x06009C35 RID: 39989 RVA: 0x003B081C File Offset: 0x003AEA1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -91,7 +91,7 @@ public class DebugDrawNormals : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BDE RID: 39902 RVA: 0x003AE42D File Offset: 0x003AC62D
+	// Token: 0x06009C36 RID: 39990 RVA: 0x003B0831 File Offset: 0x003AEA31
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDie()
 	{
@@ -99,43 +99,43 @@ public class DebugDrawNormals : MonoBehaviour
 		this.die = true;
 	}
 
-	// Token: 0x04007583 RID: 30083
+	// Token: 0x040075C4 RID: 30148
 	public float VertexNormalScale = 0.05f;
 
-	// Token: 0x04007584 RID: 30084
+	// Token: 0x040075C5 RID: 30149
 	public float TriangleNormalScale = 0.05f;
 
-	// Token: 0x04007585 RID: 30085
+	// Token: 0x040075C6 RID: 30150
 	public int MeshCount;
 
-	// Token: 0x04007586 RID: 30086
+	// Token: 0x040075C7 RID: 30151
 	public int TriangleCount;
 
-	// Token: 0x04007587 RID: 30087
+	// Token: 0x040075C8 RID: 30152
 	public int VertCount;
 
-	// Token: 0x04007588 RID: 30088
+	// Token: 0x040075C9 RID: 30153
 	public bool Record;
 
-	// Token: 0x04007589 RID: 30089
+	// Token: 0x040075CA RID: 30154
 	public List<DebugDrawNormals.Data> list = new List<DebugDrawNormals.Data>();
 
-	// Token: 0x0400758A RID: 30090
+	// Token: 0x040075CB RID: 30155
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool die;
 
-	// Token: 0x02001355 RID: 4949
+	// Token: 0x02001367 RID: 4967
 	[Serializable]
 	public class Data
 	{
-		// Token: 0x0400758B RID: 30091
+		// Token: 0x040075CC RID: 30156
 		public List<Vector3> verts = new List<Vector3>();
 
-		// Token: 0x0400758C RID: 30092
+		// Token: 0x040075CD RID: 30157
 		public List<Vector3> normals = new List<Vector3>();
 
-		// Token: 0x0400758D RID: 30093
+		// Token: 0x040075CE RID: 30158
 		public List<int> indices = new List<int>();
 	}
 }

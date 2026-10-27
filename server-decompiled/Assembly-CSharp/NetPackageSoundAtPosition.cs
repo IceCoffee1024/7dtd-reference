@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085A RID: 2138
+// Token: 0x02000864 RID: 2148
 [Preserve]
 public class NetPackageSoundAtPosition : NetPackage
 {
-	// Token: 0x06003E16 RID: 15894 RVA: 0x0018A33B File Offset: 0x0018853B
+	// Token: 0x06003E39 RID: 15929 RVA: 0x0018B3E3 File Offset: 0x001895E3
 	public NetPackageSoundAtPosition Setup(Vector3 _pos, string _audioClipName, AudioRolloffMode _mode, int _distance, int _entityId, float _volumeScale)
 	{
 		this.pos = _pos;
@@ -18,7 +18,7 @@ public class NetPackageSoundAtPosition : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E17 RID: 15895 RVA: 0x0018A36B File Offset: 0x0018856B
+	// Token: 0x06003E3A RID: 15930 RVA: 0x0018B413 File Offset: 0x00189613
 	public override void read(PooledBinaryReader _br)
 	{
 		this.pos = StreamUtils.ReadVector3(_br);
@@ -28,7 +28,7 @@ public class NetPackageSoundAtPosition : NetPackage
 		this.entityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003E18 RID: 15896 RVA: 0x0018A3AC File Offset: 0x001885AC
+	// Token: 0x06003E3B RID: 15931 RVA: 0x0018B454 File Offset: 0x00189654
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -39,7 +39,7 @@ public class NetPackageSoundAtPosition : NetPackage
 		_bw.Write(this.entityId);
 	}
 
-	// Token: 0x06003E19 RID: 15897 RVA: 0x0018A400 File Offset: 0x00188600
+	// Token: 0x06003E3C RID: 15932 RVA: 0x0018B4A8 File Offset: 0x001896A8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -54,27 +54,27 @@ public class NetPackageSoundAtPosition : NetPackage
 		_world.gameManager.PlaySoundAtPositionClient(this.pos, this.audioClipName, this.mode, this.distance, this.volumeScale);
 	}
 
-	// Token: 0x04003277 RID: 12919
+	// Token: 0x04003297 RID: 12951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 pos;
 
-	// Token: 0x04003278 RID: 12920
+	// Token: 0x04003298 RID: 12952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string audioClipName;
 
-	// Token: 0x04003279 RID: 12921
+	// Token: 0x04003299 RID: 12953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioRolloffMode mode;
 
-	// Token: 0x0400327A RID: 12922
+	// Token: 0x0400329A RID: 12954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int distance;
 
-	// Token: 0x0400327B RID: 12923
+	// Token: 0x0400329B RID: 12955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400327C RID: 12924
+	// Token: 0x0400329C RID: 12956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float volumeScale;
 }

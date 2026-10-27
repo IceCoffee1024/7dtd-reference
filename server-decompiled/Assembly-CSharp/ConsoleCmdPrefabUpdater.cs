@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 using System.Xml;
 using UnityEngine.Scripting;
 
-// Token: 0x0200026D RID: 621
+// Token: 0x0200026F RID: 623
 [Preserve]
 public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 {
-	// Token: 0x06001252 RID: 4690 RVA: 0x00072EC2 File Offset: 0x000710C2
+	// Token: 0x06001256 RID: 4694 RVA: 0x00073092 File Offset: 0x00071292
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001DC RID: 476
-	// (get) Token: 0x06001253 RID: 4691 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001257 RID: 4695 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -25,21 +25,21 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001254 RID: 4692 RVA: 0x0003223F File Offset: 0x0003043F
+	// Token: 0x06001258 RID: 4696 RVA: 0x000321FF File Offset: 0x000303FF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "";
 	}
 
-	// Token: 0x06001255 RID: 4693 RVA: 0x00072ED2 File Offset: 0x000710D2
+	// Token: 0x06001259 RID: 4697 RVA: 0x000730A2 File Offset: 0x000712A2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
-		return "Update prefabs for newer game builds.\nUsage:\n   1. prefabupdater loadxml <xmlfile>\n   2. prefabupdater clearxml\n   3. prefabupdater createmapping <prefabname>\n   4. prefabupdater loadtable [nametablefile]\n   5. prefabupdater unloadtables\n   6. prefabupdater updateblocks\n\n1. Load a blocks.xml that has the information about the prefabs to be\n   updated. If you have a modded XML first load that modded XML and\n   afterwards load the XML provided with the game for legacy prefabs.\n   The xmlfile-parameter can either be relative to the game's base\n   directory or an absolute path (for pre-Alpha 17 prefabs).\n2. Unload the data loaded with loadxml.\n3. Create a block mapping file for the given prefab(s). Accepts '*' as\n   wildcard (for pre-Alpha 17 prefabs).\n4. Load a block name mapping file. File path is relative to the game\n   directory if not specified as absolute path. If no file is given the\n   default file supplied with the game is loaded (BlockUpdates.csv). \n5. Unload the data loaded with loadtable.\n6. Update the block mappings in prefabs with the block name mapping table loaded by 4.";
+		return "Update prefabs for newer game builds.\r\nUsage:\r\n   1. prefabupdater loadxml <xmlfile>\r\n   2. prefabupdater clearxml\r\n   3. prefabupdater createmapping <prefabname>\r\n   4. prefabupdater loadtable [nametablefile]\r\n   5. prefabupdater unloadtables\r\n   6. prefabupdater updateblocks\r\n\r\n1. Load a blocks.xml that has the information about the prefabs to be\r\n   updated. If you have a modded XML first load that modded XML and\r\n   afterwards load the XML provided with the game for legacy prefabs.\r\n   The xmlfile-parameter can either be relative to the game's base\r\n   directory or an absolute path (for pre-Alpha 17 prefabs).\r\n2. Unload the data loaded with loadxml.\r\n3. Create a block mapping file for the given prefab(s). Accepts '*' as\r\n   wildcard (for pre-Alpha 17 prefabs).\r\n4. Load a block name mapping file. File path is relative to the game\r\n   directory if not specified as absolute path. If no file is given the\r\n   default file supplied with the game is loaded (BlockUpdates.csv). \r\n5. Unload the data loaded with loadtable.\r\n6. Update the block mappings in prefabs with the block name mapping table loaded by 4.";
 	}
 
-	// Token: 0x06001256 RID: 4694 RVA: 0x00072EDC File Offset: 0x000710DC
+	// Token: 0x0600125A RID: 4698 RVA: 0x000730AC File Offset: 0x000712AC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)
@@ -135,7 +135,7 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001257 RID: 4695 RVA: 0x00073164 File Offset: 0x00071364
+	// Token: 0x0600125B RID: 4699 RVA: 0x00073334 File Offset: 0x00071534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool createMapping(PathAbstractions.AbstractedLocation _location)
 	{
@@ -169,7 +169,7 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x06001258 RID: 4696 RVA: 0x00073270 File Offset: 0x00071470
+	// Token: 0x0600125C RID: 4700 RVA: 0x00073440 File Offset: 0x00071640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadLegacyBlocksXml(string _filename)
 	{
@@ -210,7 +210,7 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001259 RID: 4697 RVA: 0x000733C8 File Offset: 0x000715C8
+	// Token: 0x0600125D RID: 4701 RVA: 0x00073598 File Offset: 0x00071798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadMappingTable(string _file)
 	{
@@ -244,7 +244,7 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Loaded {0} block mappings.", num));
 	}
 
-	// Token: 0x0600125A RID: 4698 RVA: 0x00073498 File Offset: 0x00071698
+	// Token: 0x0600125E RID: 4702 RVA: 0x00073668 File Offset: 0x00071868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMappings()
 	{
@@ -282,16 +282,16 @@ public class ConsoleCmdPrefabUpdater : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Updating {0} block mappings took {1} ms. Replaced a total of {2} entries.", num, microStopwatch.ElapsedMilliseconds, num2));
 	}
 
-	// Token: 0x04000D2F RID: 3375
+	// Token: 0x04000D30 RID: 3376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NameIdMapping idMapping = new NameIdMapping(null, Block.MAX_BLOCKS);
 
-	// Token: 0x04000D30 RID: 3376
+	// Token: 0x04000D31 RID: 3377
 	[TupleElementNames(new string[] { "oldName", "newName" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ValueTuple<string, string>> mappingTable = new List<ValueTuple<string, string>>();
 
-	// Token: 0x04000D31 RID: 3377
+	// Token: 0x04000D32 RID: 3378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DefaultMappingFile = "BlockUpdates.csv";
 }

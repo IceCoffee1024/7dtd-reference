@@ -2,75 +2,75 @@
 using System.Diagnostics;
 using Unity.Profiling;
 
-// Token: 0x02000CF6 RID: 3318
+// Token: 0x02000D01 RID: 3329
 public static class WaterStatsProfiler
 {
-	// Token: 0x0600651F RID: 25887 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006544 RID: 25924 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void SampleTick(WaterStats stats)
 	{
 	}
 
-	// Token: 0x04004EEA RID: 20202
+	// Token: 0x04004F0F RID: 20239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounter<int> NumChunksProcessed = new ProfilerCounter<int>(ProfilerCategory.Scripts, "Num Chunks Processed", ProfilerMarkerDataUnit.Count);
 
-	// Token: 0x04004EEB RID: 20203
+	// Token: 0x04004F10 RID: 20240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounter<int> NumChunksActive = new ProfilerCounter<int>(ProfilerCategory.Scripts, "Num Chunks Active", ProfilerMarkerDataUnit.Count);
 
-	// Token: 0x04004EEC RID: 20204
+	// Token: 0x04004F11 RID: 20241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounter<int> NumFlowEvents = new ProfilerCounter<int>(ProfilerCategory.Scripts, "Num Flow Events", ProfilerMarkerDataUnit.Count);
 
-	// Token: 0x04004EED RID: 20205
+	// Token: 0x04004F12 RID: 20242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounter<int> NumVoxelProcessed = new ProfilerCounter<int>(ProfilerCategory.Scripts, "Num Voxels Processed", ProfilerMarkerDataUnit.Count);
 
-	// Token: 0x04004EEE RID: 20206
+	// Token: 0x04004F13 RID: 20243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounter<int> NumVoxelsPutToSleep = new ProfilerCounter<int>(ProfilerCategory.Scripts, "Num Voxels Put To Sleep", ProfilerMarkerDataUnit.Count);
 
-	// Token: 0x04004EEF RID: 20207
+	// Token: 0x04004F14 RID: 20244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounter<int> NumVoxelsWokeUp = new ProfilerCounter<int>(ProfilerCategory.Scripts, "Num Voxels Woke Up", ProfilerMarkerDataUnit.Count);
 
-	// Token: 0x02000CF7 RID: 3319
+	// Token: 0x02000D02 RID: 3330
 	public struct Timer
 	{
-		// Token: 0x06006521 RID: 25889 RVA: 0x0027BF73 File Offset: 0x0027A173
+		// Token: 0x06006546 RID: 25926 RVA: 0x0027D49B File Offset: 0x0027B69B
 		public Timer(string name)
 		{
 			this.stopwatch = new Stopwatch();
 			this.counterValue = new ProfilerCounter<double>(ProfilerCategory.Scripts, name, ProfilerMarkerDataUnit.TimeNanoseconds);
 		}
 
-		// Token: 0x06006522 RID: 25890 RVA: 0x0027BF92 File Offset: 0x0027A192
+		// Token: 0x06006547 RID: 25927 RVA: 0x0027D4BA File Offset: 0x0027B6BA
 		public void Start()
 		{
 			this.stopwatch.Start();
 		}
 
-		// Token: 0x06006523 RID: 25891 RVA: 0x0027BF9F File Offset: 0x0027A19F
+		// Token: 0x06006548 RID: 25928 RVA: 0x0027D4C7 File Offset: 0x0027B6C7
 		public void Stop()
 		{
 			this.stopwatch.Stop();
 		}
 
-		// Token: 0x06006524 RID: 25892 RVA: 0x0027BFAC File Offset: 0x0027A1AC
+		// Token: 0x06006549 RID: 25929 RVA: 0x0027D4D4 File Offset: 0x0027B6D4
 		public void Sample()
 		{
 			this.stopwatch.Reset();
 		}
 
-		// Token: 0x04004EF0 RID: 20208
+		// Token: 0x04004F15 RID: 20245
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly double tickToNanos = 1000000000.0 / (double)Stopwatch.Frequency;
 
-		// Token: 0x04004EF1 RID: 20209
+		// Token: 0x04004F16 RID: 20246
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Stopwatch stopwatch;
 
-		// Token: 0x04004EF2 RID: 20210
+		// Token: 0x04004F17 RID: 20247
 		public ProfilerCounter<double> counterValue;
 	}
 }

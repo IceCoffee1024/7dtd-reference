@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using InControl;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DB3 RID: 3507
+// Token: 0x02000DBE RID: 3518
 [UnityEngine.Scripting.Preserve]
 public class XUiC_OptionsControls : XUiC_OptionsControlsBase
 {
-	// Token: 0x17000BA1 RID: 2977
-	// (get) Token: 0x06006A8B RID: 27275 RVA: 0x0029EB5C File Offset: 0x0029CD5C
+	// Token: 0x17000BA7 RID: 2983
+	// (get) Token: 0x06006AB0 RID: 27312 RVA: 0x002A0084 File Offset: 0x0029E284
 	[XuiXmlBinding("mouse_sensitivity_min")]
 	public float MouseSensitivityMin
 	{
@@ -18,8 +18,8 @@ public class XUiC_OptionsControls : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000BA2 RID: 2978
-	// (get) Token: 0x06006A8C RID: 27276 RVA: 0x000D74E6 File Offset: 0x000D56E6
+	// Token: 0x17000BA8 RID: 2984
+	// (get) Token: 0x06006AB1 RID: 27313 RVA: 0x000D786A File Offset: 0x000D5A6A
 	[XuiXmlBinding("mouse_sensitivity_max")]
 	public float MouseSensitivityMax
 	{
@@ -29,14 +29,14 @@ public class XUiC_OptionsControls : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x06006A8D RID: 27277 RVA: 0x0029EB63 File Offset: 0x0029CD63
+	// Token: 0x06006AB2 RID: 27314 RVA: 0x002A008B File Offset: 0x0029E28B
 	public override void Init()
 	{
 		base.Init();
 		XUiC_OptionsControls.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006A8E RID: 27278 RVA: 0x0029EB7C File Offset: 0x0029CD7C
+	// Token: 0x06006AB3 RID: 27315 RVA: 0x002A00A4 File Offset: 0x0029E2A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createControlsEntries()
 	{
@@ -102,6 +102,6 @@ public class XUiC_OptionsControls : XUiC_OptionsControlsBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0400518E RID: 20878
+	// Token: 0x040051B3 RID: 20915
 	public static string ID = "";
 }

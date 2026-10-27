@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02001365 RID: 4965
+// Token: 0x02001377 RID: 4983
 [ExecuteInEditMode]
 [AddComponentMenu("Image Effects/Rendering/Colorize")]
 public class ImageEffectManager : MonoBehaviour
 {
-	// Token: 0x06009C83 RID: 40067 RVA: 0x003B1D40 File Offset: 0x003AFF40
+	// Token: 0x06009CDB RID: 40155 RVA: 0x003B4144 File Offset: 0x003B2344
 	public int GetNumEffects(string _effectGroupName)
 	{
 		ImageEffectManager.ValidateStaticClassEffects();
@@ -24,7 +24,7 @@ public class ImageEffectManager : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x06009C84 RID: 40068 RVA: 0x003B1D74 File Offset: 0x003AFF74
+	// Token: 0x06009CDC RID: 40156 RVA: 0x003B4178 File Offset: 0x003B2378
 	public string GetEffectName(string _effectGroupName, int _index)
 	{
 		if (_index <= 0)
@@ -44,7 +44,7 @@ public class ImageEffectManager : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x06009C85 RID: 40069 RVA: 0x003B1DBC File Offset: 0x003AFFBC
+	// Token: 0x06009CDD RID: 40157 RVA: 0x003B41C0 File Offset: 0x003B23C0
 	public void DisableEffectGroup(string _effectGroupName)
 	{
 		if (this.enabledEffects == null)
@@ -59,7 +59,7 @@ public class ImageEffectManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C86 RID: 40070 RVA: 0x003B1DFC File Offset: 0x003AFFFC
+	// Token: 0x06009CDE RID: 40158 RVA: 0x003B4200 File Offset: 0x003B2400
 	public bool SetEffect_Slow(string _effectGroupName, string _effectName, float _newIntensity = 1f)
 	{
 		if (!this.ValidateEffects())
@@ -83,7 +83,7 @@ public class ImageEffectManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06009C87 RID: 40071 RVA: 0x003B1E58 File Offset: 0x003B0058
+	// Token: 0x06009CDF RID: 40159 RVA: 0x003B425C File Offset: 0x003B245C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ValidateEffects()
 	{
@@ -103,7 +103,7 @@ public class ImageEffectManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06009C88 RID: 40072 RVA: 0x003B1E8C File Offset: 0x003B008C
+	// Token: 0x06009CE0 RID: 40160 RVA: 0x003B4290 File Offset: 0x003B2490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetEffectIntenal(string _effectGroupName, int _index, float _newIntensity = 1f)
 	{
@@ -142,13 +142,13 @@ public class ImageEffectManager : MonoBehaviour
 		base.enabled = this.numEnabledEffects > 0;
 	}
 
-	// Token: 0x06009C89 RID: 40073 RVA: 0x003B1F57 File Offset: 0x003B0157
+	// Token: 0x06009CE1 RID: 40161 RVA: 0x003B435B File Offset: 0x003B255B
 	public bool SetEffect(string _effectGroupName, float _newIntensity = 1f)
 	{
 		return this.SetEffect(_effectGroupName, 0, _newIntensity);
 	}
 
-	// Token: 0x06009C8A RID: 40074 RVA: 0x003B1F64 File Offset: 0x003B0164
+	// Token: 0x06009CE2 RID: 40162 RVA: 0x003B4368 File Offset: 0x003B2568
 	public bool SetEffect(string _effectGroupName, string _effectName, float _newIntensity = 1f)
 	{
 		ImageEffectManager.ValidateStaticClassEffects();
@@ -169,7 +169,7 @@ public class ImageEffectManager : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06009C8B RID: 40075 RVA: 0x003B1FBB File Offset: 0x003B01BB
+	// Token: 0x06009CE3 RID: 40163 RVA: 0x003B43BF File Offset: 0x003B25BF
 	public bool SetEffect(string _effectGroupName, int _index, float _newIntensity = 1f)
 	{
 		if (_index < 0)
@@ -184,7 +184,7 @@ public class ImageEffectManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06009C8C RID: 40076 RVA: 0x003B1FD7 File Offset: 0x003B01D7
+	// Token: 0x06009CE4 RID: 40164 RVA: 0x003B43DB File Offset: 0x003B25DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -192,7 +192,7 @@ public class ImageEffectManager : MonoBehaviour
 		ImageEffectManager.staticClass == null;
 	}
 
-	// Token: 0x06009C8D RID: 40077 RVA: 0x003B1FEC File Offset: 0x003B01EC
+	// Token: 0x06009CE5 RID: 40165 RVA: 0x003B43F0 File Offset: 0x003B25F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateStaticClassEffects()
 	{
@@ -226,7 +226,7 @@ public class ImageEffectManager : MonoBehaviour
 		ImageEffectManager.validated = true;
 	}
 
-	// Token: 0x06009C8E RID: 40078 RVA: 0x003B2098 File Offset: 0x003B0298
+	// Token: 0x06009CE6 RID: 40166 RVA: 0x003B449C File Offset: 0x003B269C
 	public void SetFloat_Slow(string _effectGroup, string _effectName, string _propertyName, float _value)
 	{
 		ImageEffectManager.ValidateStaticClassEffects();
@@ -244,7 +244,7 @@ public class ImageEffectManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C8F RID: 40079 RVA: 0x003B20F0 File Offset: 0x003B02F0
+	// Token: 0x06009CE7 RID: 40167 RVA: 0x003B44F4 File Offset: 0x003B26F4
 	public void SetFloat(string _effectGroup, int _effectIndex, string _propertyName, float _value)
 	{
 		ImageEffectManager.ValidateStaticClassEffects();
@@ -259,7 +259,7 @@ public class ImageEffectManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C90 RID: 40080 RVA: 0x003B2123 File Offset: 0x003B0323
+	// Token: 0x06009CE8 RID: 40168 RVA: 0x003B4527 File Offset: 0x003B2727
 	public void SetFloat(ImageEffectManager.EffectGroup _effectGroup, int _effectIndex, string _propertyName, float _value)
 	{
 		ImageEffectManager.ValidateStaticClassEffects();
@@ -269,7 +269,7 @@ public class ImageEffectManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C91 RID: 40081 RVA: 0x003B2148 File Offset: 0x003B0348
+	// Token: 0x06009CE9 RID: 40169 RVA: 0x003B454C File Offset: 0x003B274C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
@@ -360,42 +360,42 @@ public class ImageEffectManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400760D RID: 30221
+	// Token: 0x0400764E RID: 30286
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameObject staticGameObject;
 
-	// Token: 0x0400760E RID: 30222
+	// Token: 0x0400764F RID: 30287
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static ImageEffectManager staticClass;
 
-	// Token: 0x0400760F RID: 30223
+	// Token: 0x04007650 RID: 30288
 	public static Dictionary<string, ImageEffectManager.EffectGroup> staticEffectGroups;
 
-	// Token: 0x04007610 RID: 30224
+	// Token: 0x04007651 RID: 30289
 	public ImageEffectManager.EffectGroup[] effectGroups;
 
-	// Token: 0x04007611 RID: 30225
+	// Token: 0x04007652 RID: 30290
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<string, Dictionary<int, float>> enabledEffects;
 
-	// Token: 0x04007612 RID: 30226
+	// Token: 0x04007653 RID: 30291
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int numEnabledEffects;
 
-	// Token: 0x04007613 RID: 30227
+	// Token: 0x04007654 RID: 30292
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool validated;
 
-	// Token: 0x02001366 RID: 4966
+	// Token: 0x02001378 RID: 4984
 	[Serializable]
 	public class Effect
 	{
-		// Token: 0x06009C93 RID: 40083 RVA: 0x003B23D8 File Offset: 0x003B05D8
+		// Token: 0x06009CEB RID: 40171 RVA: 0x003B47DC File Offset: 0x003B29DC
 		public Effect()
 		{
 			this.instantiatedMtrl = null;
@@ -403,7 +403,7 @@ public class ImageEffectManager : MonoBehaviour
 			this.floatPropertyUpdates = new Dictionary<string, float>();
 		}
 
-		// Token: 0x06009C94 RID: 40084 RVA: 0x003B2404 File Offset: 0x003B0604
+		// Token: 0x06009CEC RID: 40172 RVA: 0x003B4808 File Offset: 0x003B2A08
 		public void UpdateMaterial()
 		{
 			if (this.material == null)
@@ -428,7 +428,7 @@ public class ImageEffectManager : MonoBehaviour
 			this.needToCheckMaterial = false;
 		}
 
-		// Token: 0x06009C95 RID: 40085 RVA: 0x003B24C4 File Offset: 0x003B06C4
+		// Token: 0x06009CED RID: 40173 RVA: 0x003B48C8 File Offset: 0x003B2AC8
 		public void SetFloat(string _propertyName, float _value)
 		{
 			bool flag = false;
@@ -469,7 +469,7 @@ public class ImageEffectManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06009C96 RID: 40086 RVA: 0x003B258C File Offset: 0x003B078C
+		// Token: 0x06009CEE RID: 40174 RVA: 0x003B4990 File Offset: 0x003B2B90
 		public Material GetMaterial()
 		{
 			if (this.instantiatedMtrl == null)
@@ -479,37 +479,37 @@ public class ImageEffectManager : MonoBehaviour
 			return this.instantiatedMtrl;
 		}
 
-		// Token: 0x04007614 RID: 30228
+		// Token: 0x04007655 RID: 30293
 		public string name;
 
-		// Token: 0x04007615 RID: 30229
+		// Token: 0x04007656 RID: 30294
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public bool needToCheckMaterial = true;
 
-		// Token: 0x04007616 RID: 30230
+		// Token: 0x04007657 RID: 30295
 		public Material material;
 
-		// Token: 0x04007617 RID: 30231
+		// Token: 0x04007658 RID: 30296
 		public Material instantiatedMtrl;
 
-		// Token: 0x04007618 RID: 30232
+		// Token: 0x04007659 RID: 30297
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public GameObject materialHolder;
 
-		// Token: 0x04007619 RID: 30233
+		// Token: 0x0400765A RID: 30298
 		public Dictionary<string, bool> hasProperty;
 
-		// Token: 0x0400761A RID: 30234
+		// Token: 0x0400765B RID: 30299
 		public Dictionary<string, float> floatPropertyUpdates;
 	}
 
-	// Token: 0x02001367 RID: 4967
+	// Token: 0x02001379 RID: 4985
 	[Serializable]
 	public class EffectGroup
 	{
-		// Token: 0x06009C97 RID: 40087 RVA: 0x003B25B3 File Offset: 0x003B07B3
+		// Token: 0x06009CEF RID: 40175 RVA: 0x003B49B7 File Offset: 0x003B2BB7
 		public int GetNumEffects()
 		{
 			if (this.effects == null)
@@ -519,7 +519,7 @@ public class ImageEffectManager : MonoBehaviour
 			return this.effects.Length;
 		}
 
-		// Token: 0x06009C98 RID: 40088 RVA: 0x003B25C7 File Offset: 0x003B07C7
+		// Token: 0x06009CF0 RID: 40176 RVA: 0x003B49CB File Offset: 0x003B2BCB
 		public string GetEffectName(int _index)
 		{
 			if (this.effects == null)
@@ -537,10 +537,10 @@ public class ImageEffectManager : MonoBehaviour
 			return this.effects[_index].name;
 		}
 
-		// Token: 0x0400761B RID: 30235
+		// Token: 0x0400765C RID: 30300
 		public string name;
 
-		// Token: 0x0400761C RID: 30236
+		// Token: 0x0400765D RID: 30301
 		public ImageEffectManager.Effect[] effects;
 	}
 }

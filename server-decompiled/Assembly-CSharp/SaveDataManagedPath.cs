@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000A1F RID: 2591
+// Token: 0x02000A29 RID: 2601
 public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<SaveDataManagedPath>, IComparable
 {
-	// Token: 0x06004D52 RID: 19794 RVA: 0x001DC61C File Offset: 0x001DA81C
+	// Token: 0x06004D76 RID: 19830 RVA: 0x001DD704 File Offset: 0x001DB904
 	public SaveDataManagedPath(StringSpan pathRelativeToRoot)
 	{
 		string text;
 		this..ctor(SaveDataManagedPath.TryFormatPath(pathRelativeToRoot.AsSpan(), out text) ? text : pathRelativeToRoot.ToString(), true);
 	}
 
-	// Token: 0x06004D53 RID: 19795 RVA: 0x001DC650 File Offset: 0x001DA850
+	// Token: 0x06004D77 RID: 19831 RVA: 0x001DD738 File Offset: 0x001DB938
 	public SaveDataManagedPath(string pathRelativeToRoot)
 		: this(pathRelativeToRoot, false)
 	{
 	}
 
-	// Token: 0x06004D54 RID: 19796 RVA: 0x001DC65C File Offset: 0x001DA85C
+	// Token: 0x06004D78 RID: 19832 RVA: 0x001DD744 File Offset: 0x001DB944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveDataManagedPath(string pathRelativeToRoot, bool alreadyFormatted)
 	{
@@ -55,7 +55,7 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		this.Slot = new SaveDataSlot(this);
 	}
 
-	// Token: 0x06004D55 RID: 19797 RVA: 0x001DC72C File Offset: 0x001DA92C
+	// Token: 0x06004D79 RID: 19833 RVA: 0x001DD814 File Offset: 0x001DBA14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static bool TryFormatPath(ReadOnlySpan<char> unformattedPath, out string formattedPath)
 	{
@@ -134,11 +134,11 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return true;
 	}
 
-	// Token: 0x17000860 RID: 2144
-	// (get) Token: 0x06004D56 RID: 19798 RVA: 0x001DC819 File Offset: 0x001DAA19
+	// Token: 0x17000866 RID: 2150
+	// (get) Token: 0x06004D7A RID: 19834 RVA: 0x001DD901 File Offset: 0x001DBB01
 	public SaveDataType Type { get; }
 
-	// Token: 0x06004D57 RID: 19799 RVA: 0x001DC824 File Offset: 0x001DAA24
+	// Token: 0x06004D7B RID: 19835 RVA: 0x001DD90C File Offset: 0x001DBB0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveDataType GetSaveDataType()
 	{
@@ -156,16 +156,16 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return SaveDataType.User;
 	}
 
-	// Token: 0x17000861 RID: 2145
-	// (get) Token: 0x06004D58 RID: 19800 RVA: 0x001DC8B8 File Offset: 0x001DAAB8
+	// Token: 0x17000867 RID: 2151
+	// (get) Token: 0x06004D7C RID: 19836 RVA: 0x001DD9A0 File Offset: 0x001DBBA0
 	public Range SlotPathRange
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
 		get;
 	}
 
-	// Token: 0x17000862 RID: 2146
-	// (get) Token: 0x06004D59 RID: 19801 RVA: 0x001DC8C0 File Offset: 0x001DAAC0
+	// Token: 0x17000868 RID: 2152
+	// (get) Token: 0x06004D7D RID: 19837 RVA: 0x001DD9A8 File Offset: 0x001DBBA8
 	public StringSpan SlotPath
 	{
 		get
@@ -179,11 +179,11 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		}
 	}
 
-	// Token: 0x17000863 RID: 2147
-	// (get) Token: 0x06004D5A RID: 19802 RVA: 0x001DC913 File Offset: 0x001DAB13
+	// Token: 0x17000869 RID: 2153
+	// (get) Token: 0x06004D7E RID: 19838 RVA: 0x001DD9FB File Offset: 0x001DBBFB
 	public SaveDataSlot Slot { get; }
 
-	// Token: 0x06004D5B RID: 19803 RVA: 0x001DC91C File Offset: 0x001DAB1C
+	// Token: 0x06004D7F RID: 19839 RVA: 0x001DDA04 File Offset: 0x001DBC04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Range GetSlotPathRange()
 	{
@@ -209,16 +209,16 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return new Range(pathRaw.Length, pathRaw.Length);
 	}
 
-	// Token: 0x17000864 RID: 2148
-	// (get) Token: 0x06004D5C RID: 19804 RVA: 0x001DC9E9 File Offset: 0x001DABE9
+	// Token: 0x1700086A RID: 2154
+	// (get) Token: 0x06004D80 RID: 19840 RVA: 0x001DDAD1 File Offset: 0x001DBCD1
 	public Range PathRelativeToSlotRange
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
 		get;
 	}
 
-	// Token: 0x17000865 RID: 2149
-	// (get) Token: 0x06004D5D RID: 19805 RVA: 0x001DC9F4 File Offset: 0x001DABF4
+	// Token: 0x1700086B RID: 2155
+	// (get) Token: 0x06004D81 RID: 19841 RVA: 0x001DDADC File Offset: 0x001DBCDC
 	public StringSpan PathRelativeToSlot
 	{
 		get
@@ -232,7 +232,7 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		}
 	}
 
-	// Token: 0x06004D5E RID: 19806 RVA: 0x001DCA48 File Offset: 0x001DAC48
+	// Token: 0x06004D82 RID: 19842 RVA: 0x001DDB30 File Offset: 0x001DBD30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Range GetPathRelativeToSlotRange()
 	{
@@ -249,19 +249,19 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return new Range(num, this.PathRelativeToRoot.Length);
 	}
 
-	// Token: 0x06004D5F RID: 19807 RVA: 0x001DCAE9 File Offset: 0x001DACE9
+	// Token: 0x06004D83 RID: 19843 RVA: 0x001DDBD1 File Offset: 0x001DBDD1
 	public string GetOriginalPath()
 	{
 		return GameIO.GetNormalizedPath(Path.Combine(SaveDataUtils.s_saveDataRootPathPrefix, this.PathRelativeToRoot));
 	}
 
-	// Token: 0x06004D60 RID: 19808 RVA: 0x001DCB00 File Offset: 0x001DAD00
+	// Token: 0x06004D84 RID: 19844 RVA: 0x001DDBE8 File Offset: 0x001DBDE8
 	public SaveDataManagedPath GetChildPath(StringSpan childPath)
 	{
 		return new SaveDataManagedPath(SpanUtils.Concat(this.PathRelativeToRoot, "/", childPath));
 	}
 
-	// Token: 0x06004D61 RID: 19809 RVA: 0x001DCB24 File Offset: 0x001DAD24
+	// Token: 0x06004D85 RID: 19845 RVA: 0x001DDC0C File Offset: 0x001DBE0C
 	public bool TryGetParentPath(out SaveDataManagedPath parentPath)
 	{
 		if (this.PathRelativeToRoot.Length <= 0)
@@ -279,49 +279,49 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return true;
 	}
 
-	// Token: 0x06004D62 RID: 19810 RVA: 0x001DCB74 File Offset: 0x001DAD74
+	// Token: 0x06004D86 RID: 19846 RVA: 0x001DDC5C File Offset: 0x001DBE5C
 	public bool IsParentOf(SaveDataManagedPath childPath)
 	{
 		return SaveDataManagedPath.<IsParentOf>g__IsParentOfInternal|28_0(this.PathRelativeToRoot, childPath.PathRelativeToRoot);
 	}
 
-	// Token: 0x06004D63 RID: 19811 RVA: 0x001DCB87 File Offset: 0x001DAD87
+	// Token: 0x06004D87 RID: 19847 RVA: 0x001DDC6F File Offset: 0x001DBE6F
 	public override string ToString()
 	{
 		return this.PathRelativeToRoot;
 	}
 
-	// Token: 0x06004D64 RID: 19812 RVA: 0x001DCB8F File Offset: 0x001DAD8F
+	// Token: 0x06004D88 RID: 19848 RVA: 0x001DDC77 File Offset: 0x001DBE77
 	public bool Equals(SaveDataManagedPath other)
 	{
 		return other != null && (this == other || this.PathRelativeToRoot == other.PathRelativeToRoot);
 	}
 
-	// Token: 0x06004D65 RID: 19813 RVA: 0x001DCBAD File Offset: 0x001DADAD
+	// Token: 0x06004D89 RID: 19849 RVA: 0x001DDC95 File Offset: 0x001DBE95
 	public override bool Equals(object obj)
 	{
 		return obj != null && (this == obj || (!(obj.GetType() != base.GetType()) && this.Equals((SaveDataManagedPath)obj)));
 	}
 
-	// Token: 0x06004D66 RID: 19814 RVA: 0x001DCBDB File Offset: 0x001DADDB
+	// Token: 0x06004D8A RID: 19850 RVA: 0x001DDCC3 File Offset: 0x001DBEC3
 	public override int GetHashCode()
 	{
 		return this.PathRelativeToRoot.GetHashCode();
 	}
 
-	// Token: 0x06004D67 RID: 19815 RVA: 0x001DCBE8 File Offset: 0x001DADE8
+	// Token: 0x06004D8B RID: 19851 RVA: 0x001DDCD0 File Offset: 0x001DBED0
 	public static bool operator ==(SaveDataManagedPath left, SaveDataManagedPath right)
 	{
 		return object.Equals(left, right);
 	}
 
-	// Token: 0x06004D68 RID: 19816 RVA: 0x001DCBF1 File Offset: 0x001DADF1
+	// Token: 0x06004D8C RID: 19852 RVA: 0x001DDCD9 File Offset: 0x001DBED9
 	public static bool operator !=(SaveDataManagedPath left, SaveDataManagedPath right)
 	{
 		return !object.Equals(left, right);
 	}
 
-	// Token: 0x06004D69 RID: 19817 RVA: 0x001DCBFD File Offset: 0x001DADFD
+	// Token: 0x06004D8D RID: 19853 RVA: 0x001DDCE5 File Offset: 0x001DBEE5
 	public int CompareTo(SaveDataManagedPath other)
 	{
 		if (other == null)
@@ -335,7 +335,7 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return string.Compare(this.PathRelativeToRoot, other.PathRelativeToRoot, StringComparison.Ordinal);
 	}
 
-	// Token: 0x06004D6A RID: 19818 RVA: 0x001DCC1C File Offset: 0x001DAE1C
+	// Token: 0x06004D8E RID: 19854 RVA: 0x001DDD04 File Offset: 0x001DBF04
 	public int CompareTo(object obj)
 	{
 		if (obj == null)
@@ -354,31 +354,31 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return this.CompareTo(saveDataManagedPath);
 	}
 
-	// Token: 0x06004D6B RID: 19819 RVA: 0x001DCC50 File Offset: 0x001DAE50
+	// Token: 0x06004D8F RID: 19855 RVA: 0x001DDD38 File Offset: 0x001DBF38
 	public static bool operator <(SaveDataManagedPath left, SaveDataManagedPath right)
 	{
 		return Comparer<SaveDataManagedPath>.Default.Compare(left, right) < 0;
 	}
 
-	// Token: 0x06004D6C RID: 19820 RVA: 0x001DCC61 File Offset: 0x001DAE61
+	// Token: 0x06004D90 RID: 19856 RVA: 0x001DDD49 File Offset: 0x001DBF49
 	public static bool operator >(SaveDataManagedPath left, SaveDataManagedPath right)
 	{
 		return Comparer<SaveDataManagedPath>.Default.Compare(left, right) > 0;
 	}
 
-	// Token: 0x06004D6D RID: 19821 RVA: 0x001DCC72 File Offset: 0x001DAE72
+	// Token: 0x06004D91 RID: 19857 RVA: 0x001DDD5A File Offset: 0x001DBF5A
 	public static bool operator <=(SaveDataManagedPath left, SaveDataManagedPath right)
 	{
 		return Comparer<SaveDataManagedPath>.Default.Compare(left, right) <= 0;
 	}
 
-	// Token: 0x06004D6E RID: 19822 RVA: 0x001DCC86 File Offset: 0x001DAE86
+	// Token: 0x06004D92 RID: 19858 RVA: 0x001DDD6E File Offset: 0x001DBF6E
 	public static bool operator >=(SaveDataManagedPath left, SaveDataManagedPath right)
 	{
 		return Comparer<SaveDataManagedPath>.Default.Compare(left, right) >= 0;
 	}
 
-	// Token: 0x06004D70 RID: 19824 RVA: 0x001DCCAC File Offset: 0x001DAEAC
+	// Token: 0x06004D94 RID: 19860 RVA: 0x001DDD94 File Offset: 0x001DBF94
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <IsParentOf>g__IsParentOfInternal|28_0(string parent, string child)
@@ -405,9 +405,9 @@ public class SaveDataManagedPath : IEquatable<SaveDataManagedPath>, IComparable<
 		return true;
 	}
 
-	// Token: 0x04003C2F RID: 15407
+	// Token: 0x04003C50 RID: 15440
 	public static readonly SaveDataManagedPath RootPath = new SaveDataManagedPath(string.Empty);
 
-	// Token: 0x04003C30 RID: 15408
+	// Token: 0x04003C51 RID: 15441
 	public readonly string PathRelativeToRoot;
 }

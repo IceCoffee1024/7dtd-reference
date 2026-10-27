@@ -9,10 +9,10 @@ using Webserver.UrlHandlers;
 
 namespace Webserver.WebAPI
 {
-	// Token: 0x02001AFC RID: 6908
+	// Token: 0x02001B2D RID: 6957
 	public class OpenApiHelpers
 	{
-		// Token: 0x0600D01A RID: 53274 RVA: 0x004B8691 File Offset: 0x004B6891
+		// Token: 0x0600D12E RID: 53550 RVA: 0x004BC18D File Offset: 0x004BA38D
 		public OpenApiHelpers()
 		{
 			this.loadMainSpec();
@@ -22,7 +22,7 @@ namespace Webserver.WebAPI
 			};
 		}
 
-		// Token: 0x0600D01B RID: 53275 RVA: 0x004B86BC File Offset: 0x004B68BC
+		// Token: 0x0600D12F RID: 53551 RVA: 0x004BC1B8 File Offset: 0x004BA3B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loadMainSpec()
 		{
@@ -36,7 +36,7 @@ namespace Webserver.WebAPI
 			this.specs.Add("openapi.yaml", new OpenApiHelpers.OpenApiSpec(text, null));
 		}
 
-		// Token: 0x0600D01C RID: 53276 RVA: 0x004B8710 File Offset: 0x004B6910
+		// Token: 0x0600D130 RID: 53552 RVA: 0x004BC20C File Offset: 0x004BA40C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void buildMainSpecRefs()
 		{
@@ -69,7 +69,7 @@ namespace Webserver.WebAPI
 			Log.Out("[Web] OpenAPI preparation done");
 		}
 
-		// Token: 0x0600D01D RID: 53277 RVA: 0x004B8830 File Offset: 0x004B6A30
+		// Token: 0x0600D131 RID: 53553 RVA: 0x004BC32C File Offset: 0x004BA52C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writePath(StringBuilder _sb, string _apiSpecName, string _exportedPath, string _rebasedPath)
 		{
@@ -79,26 +79,26 @@ namespace Webserver.WebAPI
 			_sb.AppendLine("'");
 		}
 
-		// Token: 0x0600D01E RID: 53278 RVA: 0x004B8885 File Offset: 0x004B6A85
+		// Token: 0x0600D132 RID: 53554 RVA: 0x004BC381 File Offset: 0x004BA581
 		public void LoadOpenApiSpec(AbsWebAPI _api)
 		{
 			this.loadOpenApiSpec(_api.GetType().Assembly, _api.Name, null);
 		}
 
-		// Token: 0x0600D01F RID: 53279 RVA: 0x004B88A0 File Offset: 0x004B6AA0
+		// Token: 0x0600D133 RID: 53555 RVA: 0x004BC39C File Offset: 0x004BA59C
 		public void LoadOpenApiSpec(AbsHandler _pathHandler)
 		{
 			Type type = _pathHandler.GetType();
 			this.loadOpenApiSpec(type.Assembly, type.Name, _pathHandler.UrlBasePath);
 		}
 
-		// Token: 0x0600D020 RID: 53280 RVA: 0x004B88CC File Offset: 0x004B6ACC
+		// Token: 0x0600D134 RID: 53556 RVA: 0x004BC3C8 File Offset: 0x004BA5C8
 		public void RegisterCustomSpec(Assembly _assembly, string _apiSpecName, string _replaceBasePath = null)
 		{
 			this.loadOpenApiSpec(_assembly, _apiSpecName, _replaceBasePath);
 		}
 
-		// Token: 0x0600D021 RID: 53281 RVA: 0x004B88D8 File Offset: 0x004B6AD8
+		// Token: 0x0600D135 RID: 53557 RVA: 0x004BC3D4 File Offset: 0x004BA5D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loadOpenApiSpec(Assembly _containingAssembly, string _apiName, string _basePath)
 		{
@@ -112,7 +112,7 @@ namespace Webserver.WebAPI
 			this.specs.Add(text, openApiSpec);
 		}
 
-		// Token: 0x0600D022 RID: 53282 RVA: 0x004B891C File Offset: 0x004B6B1C
+		// Token: 0x0600D136 RID: 53558 RVA: 0x004BC418 File Offset: 0x004BA618
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string loadSpecFileForAssembly(Assembly _containingAssembly, string _specFileName)
 		{
@@ -129,7 +129,7 @@ namespace Webserver.WebAPI
 			return textAsset.text;
 		}
 
-		// Token: 0x0600D023 RID: 53283 RVA: 0x004B8970 File Offset: 0x004B6B70
+		// Token: 0x0600D137 RID: 53559 RVA: 0x004BC46C File Offset: 0x004BA66C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, string> findExportedPaths(string _spec, string _replaceBasePath = null)
 		{
@@ -168,7 +168,7 @@ namespace Webserver.WebAPI
 			return dictionary2;
 		}
 
-		// Token: 0x0600D024 RID: 53284 RVA: 0x004B8A18 File Offset: 0x004B6C18
+		// Token: 0x0600D138 RID: 53560 RVA: 0x004BC514 File Offset: 0x004BA714
 		public bool TryGetOpenApiSpec(string _name, out string _specText)
 		{
 			if (string.IsNullOrEmpty(_name))
@@ -185,7 +185,7 @@ namespace Webserver.WebAPI
 			return true;
 		}
 
-		// Token: 0x0600D025 RID: 53285 RVA: 0x004B8A54 File Offset: 0x004B6C54
+		// Token: 0x0600D139 RID: 53561 RVA: 0x004BC550 File Offset: 0x004BA750
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeJsonPointerEncodedPath(StringBuilder _targetSb, string _path)
 		{
@@ -336,41 +336,41 @@ namespace Webserver.WebAPI
 			}
 		}
 
-		// Token: 0x04009D96 RID: 40342
+		// Token: 0x04009E7F RID: 40575
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string apiSpecResourcesFolder = "Data/Webserver/OpenApiSpecs";
 
-		// Token: 0x04009D97 RID: 40343
+		// Token: 0x04009E80 RID: 40576
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string masterResourceName = "openapi.master.yaml";
 
-		// Token: 0x04009D98 RID: 40344
+		// Token: 0x04009E81 RID: 40577
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string masterDocName = "openapi.yaml";
 
-		// Token: 0x04009D99 RID: 40345
+		// Token: 0x04009E82 RID: 40578
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, OpenApiHelpers.OpenApiSpec> specs = new CaseInsensitiveStringDictionary<OpenApiHelpers.OpenApiSpec>();
 
-		// Token: 0x04009D9A RID: 40346
+		// Token: 0x04009E83 RID: 40579
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex pathMatcher = new Regex("^\\s{1,2}(/\\S+):.*$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
-		// Token: 0x02001AFD RID: 6909
+		// Token: 0x02001B2E RID: 6958
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct OpenApiSpec
 		{
-			// Token: 0x0600D028 RID: 53288 RVA: 0x004B8DC7 File Offset: 0x004B6FC7
+			// Token: 0x0600D13C RID: 53564 RVA: 0x004BC8C3 File Offset: 0x004BAAC3
 			public OpenApiSpec(string _spec, Dictionary<string, string> _exportedPaths = null)
 			{
 				this.ExportedPaths = _exportedPaths;
 				this.Spec = _spec;
 			}
 
-			// Token: 0x04009D9B RID: 40347
+			// Token: 0x04009E84 RID: 40580
 			public readonly Dictionary<string, string> ExportedPaths;
 
-			// Token: 0x04009D9C RID: 40348
+			// Token: 0x04009E85 RID: 40581
 			public readonly string Spec;
 		}
 	}

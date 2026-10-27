@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000BE1 RID: 3041
+// Token: 0x02000BEC RID: 3052
 public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, ValueType
 {
-	// Token: 0x06005B35 RID: 23349 RVA: 0x00233696 File Offset: 0x00231896
+	// Token: 0x06005B5A RID: 23386 RVA: 0x00234BF2 File Offset: 0x00232DF2
 	public TileAreaCache(TileAreaConfig _config, TileFile<T> _tileFile, int _cacheMax)
 	{
 		this.tilesDatabase = _tileFile;
@@ -13,8 +13,8 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		this.cacheMax = _cacheMax;
 	}
 
-	// Token: 0x170009A8 RID: 2472
-	// (get) Token: 0x06005B36 RID: 23350 RVA: 0x002336C9 File Offset: 0x002318C9
+	// Token: 0x170009AE RID: 2478
+	// (get) Token: 0x06005B5B RID: 23387 RVA: 0x00234C25 File Offset: 0x00232E25
 	public TileAreaConfig Config
 	{
 		get
@@ -23,7 +23,7 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		}
 	}
 
-	// Token: 0x170009A9 RID: 2473
+	// Token: 0x170009AF RID: 2479
 	public T[,] this[uint _key]
 	{
 		get
@@ -40,7 +40,7 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		}
 	}
 
-	// Token: 0x170009AA RID: 2474
+	// Token: 0x170009B0 RID: 2480
 	public T[,] this[int _tileX, int _tileZ]
 	{
 		get
@@ -57,7 +57,7 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		}
 	}
 
-	// Token: 0x06005B39 RID: 23353 RVA: 0x0023375C File Offset: 0x0023195C
+	// Token: 0x06005B5E RID: 23390 RVA: 0x00234CB8 File Offset: 0x00232EB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PromoteEntry(uint _key)
 	{
@@ -72,7 +72,7 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		}
 	}
 
-	// Token: 0x06005B3A RID: 23354 RVA: 0x002337B0 File Offset: 0x002319B0
+	// Token: 0x06005B5F RID: 23391 RVA: 0x00234D0C File Offset: 0x00232F0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[,] Cache(uint _key, int _tileX, int _tileZ)
 	{
@@ -105,7 +105,7 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		return array;
 	}
 
-	// Token: 0x06005B3B RID: 23355 RVA: 0x00233889 File Offset: 0x00231A89
+	// Token: 0x06005B60 RID: 23392 RVA: 0x00234DE5 File Offset: 0x00232FE5
 	public void Cleanup()
 	{
 		if (this.tilesDatabase != null)
@@ -115,23 +115,23 @@ public class TileAreaCache<[IsUnmanaged] T> : ITileArea<T[,]> where T : struct, 
 		}
 	}
 
-	// Token: 0x040046F8 RID: 18168
+	// Token: 0x0400471D RID: 18205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileFile<T> tilesDatabase;
 
-	// Token: 0x040046F9 RID: 18169
+	// Token: 0x0400471E RID: 18206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileAreaConfig config;
 
-	// Token: 0x040046FA RID: 18170
+	// Token: 0x0400471F RID: 18207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<uint, T[,]> cache = new Dictionary<uint, T[,]>();
 
-	// Token: 0x040046FB RID: 18171
+	// Token: 0x04004720 RID: 18208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LinkedList<uint> cacheQueue = new LinkedList<uint>();
 
-	// Token: 0x040046FC RID: 18172
+	// Token: 0x04004721 RID: 18209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cacheMax;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D64 RID: 3428
+// Token: 0x02000D6F RID: 3439
 [Preserve]
 public class ItemActionEntryAssemble : BaseItemActionEntry
 {
-	// Token: 0x060067F9 RID: 26617 RVA: 0x00292844 File Offset: 0x00290A44
+	// Token: 0x0600681E RID: 26654 RVA: 0x00293D6C File Offset: 0x00291F6C
 	public ItemActionEntryAssemble(XUiController _controller)
 		: base(_controller, "lblContextActionModify", "ui_game_symbol_assemble", BaseItemActionEntry.GamepadShortCut.None, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -24,7 +24,7 @@ public class ItemActionEntryAssemble : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x060067FA RID: 26618 RVA: 0x002928D3 File Offset: 0x00290AD3
+	// Token: 0x0600681F RID: 26655 RVA: 0x00293DFB File Offset: 0x00291FFB
 	public override void OnDisabledActivate()
 	{
 		this.setWindowsDirty();
@@ -34,7 +34,7 @@ public class ItemActionEntryAssemble : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x060067FB RID: 26619 RVA: 0x00292910 File Offset: 0x00290B10
+	// Token: 0x06006820 RID: 26656 RVA: 0x00293E38 File Offset: 0x00292038
 	public override void OnActivated()
 	{
 		this.setWindowsDirty();
@@ -89,7 +89,7 @@ public class ItemActionEntryAssemble : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x060067FC RID: 26620 RVA: 0x00292AE8 File Offset: 0x00290CE8
+	// Token: 0x06006821 RID: 26657 RVA: 0x00294010 File Offset: 0x00292210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setWindowsDirty()
 	{
@@ -98,7 +98,7 @@ public class ItemActionEntryAssemble : BaseItemActionEntry
 		((XUiWindowGroup)windowManager.GetWindow("backpack")).Controller.GetChildByType<XUiC_Backpack>().SetAllChildrenDirty();
 	}
 
-	// Token: 0x060067FD RID: 26621 RVA: 0x00292B48 File Offset: 0x00290D48
+	// Token: 0x06006822 RID: 26658 RVA: 0x00294070 File Offset: 0x00292270
 	public override void RefreshEnabled()
 	{
 		this.setWindowsDirty();
@@ -145,7 +145,7 @@ public class ItemActionEntryAssemble : BaseItemActionEntry
 		base.Enabled = base.ItemController.xui.playerUI.entityPlayer.IsAimingGunPossible();
 	}
 
-	// Token: 0x04005024 RID: 20516
+	// Token: 0x04005049 RID: 20553
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool recipeUnknown;
 }

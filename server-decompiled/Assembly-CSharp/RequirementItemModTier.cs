@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200068E RID: 1678
+// Token: 0x02000695 RID: 1685
 [Preserve]
 public class RequirementItemModTier : RequirementBase
 {
-	// Token: 0x06003575 RID: 13685 RVA: 0x00160E6C File Offset: 0x0015F06C
+	// Token: 0x06003583 RID: 13699 RVA: 0x00161A60 File Offset: 0x0015FC60
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -43,13 +43,13 @@ public class RequirementItemModTier : RequirementBase
 		return !RequirementBase.compareValues((float)itemValue.Quality, this.operation, this.value);
 	}
 
-	// Token: 0x06003576 RID: 13686 RVA: 0x00160F36 File Offset: 0x0015F136
+	// Token: 0x06003584 RID: 13700 RVA: 0x00161B2A File Offset: 0x0015FD2A
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Item Mod tier {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x06003577 RID: 13687 RVA: 0x00160F74 File Offset: 0x0015F174
+	// Token: 0x06003585 RID: 13701 RVA: 0x00161B68 File Offset: 0x0015FD68
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -61,7 +61,7 @@ public class RequirementItemModTier : RequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B43 RID: 11075
+	// Token: 0x04002B5E RID: 11102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string modName;
 }

@@ -3,10 +3,10 @@ using System.Collections;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C47 RID: 7239
+	// Token: 0x02001C78 RID: 7288
 	public static class PrivilegeStateArrayExtensions
 	{
-		// Token: 0x0600D719 RID: 55065 RVA: 0x004D3B04 File Offset: 0x004D1D04
+		// Token: 0x0600D82D RID: 55341 RVA: 0x004D762C File Offset: 0x004D582C
 		public static bool Has(this PrivilegeState[] privilegeStates)
 		{
 			for (int i = 0; i < privilegeStates.Length; i++)
@@ -19,7 +19,7 @@ namespace Platform.XBL
 			return true;
 		}
 
-		// Token: 0x0600D71A RID: 55066 RVA: 0x004D3B30 File Offset: 0x004D1D30
+		// Token: 0x0600D82E RID: 55342 RVA: 0x004D7658 File Offset: 0x004D5858
 		public static void ResolveSilent(this PrivilegeState[] privilegeStates)
 		{
 			for (int i = 0; i < privilegeStates.Length; i++)
@@ -28,7 +28,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D71B RID: 55067 RVA: 0x004D3B55 File Offset: 0x004D1D55
+		// Token: 0x0600D82F RID: 55343 RVA: 0x004D767D File Offset: 0x004D587D
 		public static IEnumerator ResolveWithPrompt(this PrivilegeState[] privilegeStates, CoroutineCancellationToken _cancellationToken)
 		{
 			foreach (PrivilegeState privilegeState in privilegeStates)

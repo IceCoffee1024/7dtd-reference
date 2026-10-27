@@ -5,13 +5,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockRallyMarker : Block
 {
-	// Token: 0x0600091A RID: 2330 RVA: 0x0003F680 File Offset: 0x0003D880
+	// Token: 0x0600091A RID: 2330 RVA: 0x0003F640 File Offset: 0x0003D840
 	public BlockRallyMarker()
 	{
 		this.StabilityIgnore = true;
 	}
 
-	// Token: 0x0600091B RID: 2331 RVA: 0x0003F6C0 File Offset: 0x0003D8C0
+	// Token: 0x0600091B RID: 2331 RVA: 0x0003F680 File Offset: 0x0003D880
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		PlayerActionsLocal playerInput = ((EntityPlayerLocal)_entityFocusing).playerInput;
@@ -25,7 +25,7 @@ public class BlockRallyMarker : Block
 		return string.Empty;
 	}
 
-	// Token: 0x0600091C RID: 2332 RVA: 0x0003F76C File Offset: 0x0003D96C
+	// Token: 0x0600091C RID: 2332 RVA: 0x0003F72C File Offset: 0x0003D92C
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "activate")
@@ -46,14 +46,14 @@ public class BlockRallyMarker : Block
 		return true;
 	}
 
-	// Token: 0x0600091E RID: 2334 RVA: 0x0003F7C6 File Offset: 0x0003D9C6
+	// Token: 0x0600091E RID: 2334 RVA: 0x0003F786 File Offset: 0x0003D986
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = true;
 		return this.cmds;
 	}
 
-	// Token: 0x0600091F RID: 2335 RVA: 0x0003F7E0 File Offset: 0x0003D9E0
+	// Token: 0x0600091F RID: 2335 RVA: 0x0003F7A0 File Offset: 0x0003D9A0
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -77,7 +77,7 @@ public class BlockRallyMarker : Block
 		});
 	}
 
-	// Token: 0x06000920 RID: 2336 RVA: 0x0003F832 File Offset: 0x0003DA32
+	// Token: 0x06000920 RID: 2336 RVA: 0x0003F7F2 File Offset: 0x0003D9F2
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);

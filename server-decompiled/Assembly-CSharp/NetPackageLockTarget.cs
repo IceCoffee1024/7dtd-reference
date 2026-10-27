@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200080C RID: 2060
+// Token: 0x02000816 RID: 2070
 [Preserve]
 public class NetPackageLockTarget : NetPackage, IMemoryPoolableObject
 {
-	// Token: 0x06003C8D RID: 15501 RVA: 0x00183284 File Offset: 0x00181484
+	// Token: 0x06003CB0 RID: 15536 RVA: 0x00184388 File Offset: 0x00182588
 	public NetPackageLockTarget Setup(PooledExpandableMemoryStream _payload)
 	{
 		this.payload = MemoryPools.poolMemoryStream.AllocSync(true);
@@ -13,7 +13,7 @@ public class NetPackageLockTarget : NetPackage, IMemoryPoolableObject
 		return this;
 	}
 
-	// Token: 0x06003C8E RID: 15502 RVA: 0x001832A4 File Offset: 0x001814A4
+	// Token: 0x06003CB1 RID: 15537 RVA: 0x001843A8 File Offset: 0x001825A8
 	public override void read(PooledBinaryReader _br)
 	{
 		this.payload = MemoryPools.poolMemoryStream.AllocSync(true);
@@ -21,7 +21,7 @@ public class NetPackageLockTarget : NetPackage, IMemoryPoolableObject
 		StreamUtils.StreamCopy(_br.BaseStream, this.payload, num, null, true);
 	}
 
-	// Token: 0x06003C8F RID: 15503 RVA: 0x001832DD File Offset: 0x001814DD
+	// Token: 0x06003CB2 RID: 15538 RVA: 0x001843E1 File Offset: 0x001825E1
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -29,7 +29,7 @@ public class NetPackageLockTarget : NetPackage, IMemoryPoolableObject
 		this.payload.WriteTo(_bw.BaseStream);
 	}
 
-	// Token: 0x06003C90 RID: 15504 RVA: 0x0018330C File Offset: 0x0018150C
+	// Token: 0x06003CB3 RID: 15539 RVA: 0x00184410 File Offset: 0x00182610
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
@@ -51,7 +51,7 @@ public class NetPackageLockTarget : NetPackage, IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06003C91 RID: 15505 RVA: 0x001833B0 File Offset: 0x001815B0
+	// Token: 0x06003CB4 RID: 15540 RVA: 0x001844B4 File Offset: 0x001826B4
 	public void Reset()
 	{
 		if (this.payload != null)
@@ -61,13 +61,13 @@ public class NetPackageLockTarget : NetPackage, IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06003C92 RID: 15506 RVA: 0x001833D1 File Offset: 0x001815D1
+	// Token: 0x06003CB5 RID: 15541 RVA: 0x001844D5 File Offset: 0x001826D5
 	public void Cleanup()
 	{
 		this.Reset();
 	}
 
-	// Token: 0x04003134 RID: 12596
+	// Token: 0x04003154 RID: 12628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream payload;
 }

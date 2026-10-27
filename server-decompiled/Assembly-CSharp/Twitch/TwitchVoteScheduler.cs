@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001895 RID: 6293
+	// Token: 0x020018C6 RID: 6342
 	public class TwitchVoteScheduler
 	{
-		// Token: 0x17001843 RID: 6211
-		// (get) Token: 0x0600C24F RID: 49743 RVA: 0x0047B620 File Offset: 0x00479820
+		// Token: 0x1700188B RID: 6283
+		// (get) Token: 0x0600C363 RID: 50019 RVA: 0x0047EFCC File Offset: 0x0047D1CC
 		public static TwitchVoteScheduler Current
 		{
 			get
@@ -20,8 +20,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001844 RID: 6212
-		// (get) Token: 0x0600C250 RID: 49744 RVA: 0x0047B638 File Offset: 0x00479838
+		// Token: 0x1700188C RID: 6284
+		// (get) Token: 0x0600C364 RID: 50020 RVA: 0x0047EFE4 File Offset: 0x0047D1E4
 		public static bool HasInstance
 		{
 			get
@@ -30,20 +30,20 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C251 RID: 49745 RVA: 0x0047B642 File Offset: 0x00479842
+		// Token: 0x0600C365 RID: 50021 RVA: 0x0047EFEE File Offset: 0x0047D1EE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TwitchVoteScheduler()
 		{
 		}
 
-		// Token: 0x0600C252 RID: 49746 RVA: 0x0047B655 File Offset: 0x00479855
+		// Token: 0x0600C366 RID: 50022 RVA: 0x0047F001 File Offset: 0x0047D201
 		public void Cleanup()
 		{
 			this.ClearParticipants();
 			TwitchVoteScheduler.instance = null;
 		}
 
-		// Token: 0x0600C253 RID: 49747 RVA: 0x0047B663 File Offset: 0x00479863
+		// Token: 0x0600C367 RID: 50023 RVA: 0x0047F00F File Offset: 0x0047D20F
 		public void AddParticipant(int entityID)
 		{
 			if (!this.votingParticipants.Contains(entityID))
@@ -52,18 +52,18 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C254 RID: 49748 RVA: 0x0047B67F File Offset: 0x0047987F
+		// Token: 0x0600C368 RID: 50024 RVA: 0x0047F02B File Offset: 0x0047D22B
 		public void ClearParticipants()
 		{
 			this.votingParticipants.Clear();
 		}
 
-		// Token: 0x0600C255 RID: 49749 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C369 RID: 50025 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init()
 		{
 		}
 
-		// Token: 0x0600C256 RID: 49750 RVA: 0x0047B68C File Offset: 0x0047988C
+		// Token: 0x0600C36A RID: 50026 RVA: 0x0047F038 File Offset: 0x0047D238
 		public void Update(float deltaTime)
 		{
 			if (GameManager.Instance.World == null || GameManager.Instance.World.Players == null || GameManager.Instance.World.Players.Count == 0)
@@ -93,15 +93,15 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x04009294 RID: 37524
+		// Token: 0x0400937D RID: 37757
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TwitchVoteScheduler instance;
 
-		// Token: 0x04009295 RID: 37525
+		// Token: 0x0400937E RID: 37758
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<int> votingParticipants = new List<int>();
 
-		// Token: 0x04009296 RID: 37526
+		// Token: 0x0400937F RID: 37759
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float nextVoteTime;
 	}

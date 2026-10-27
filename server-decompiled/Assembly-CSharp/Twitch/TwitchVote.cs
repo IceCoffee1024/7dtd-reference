@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Twitch
 {
-	// Token: 0x02001890 RID: 6288
+	// Token: 0x020018C1 RID: 6337
 	public class TwitchVote
 	{
-		// Token: 0x17001841 RID: 6209
-		// (get) Token: 0x0600C240 RID: 49728 RVA: 0x0047ACB0 File Offset: 0x00478EB0
+		// Token: 0x17001889 RID: 6281
+		// (get) Token: 0x0600C354 RID: 50004 RVA: 0x0047E65C File Offset: 0x0047C85C
 		public string VoteDescription
 		{
 			get
@@ -28,8 +28,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001842 RID: 6210
-		// (get) Token: 0x0600C241 RID: 49729 RVA: 0x0047AD1C File Offset: 0x00478F1C
+		// Token: 0x1700188A RID: 6282
+		// (get) Token: 0x0600C355 RID: 50005 RVA: 0x0047E6C8 File Offset: 0x0047C8C8
 		public string VoteHeight
 		{
 			get
@@ -43,13 +43,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C242 RID: 49730 RVA: 0x0047AD42 File Offset: 0x00478F42
+		// Token: 0x0600C356 RID: 50006 RVA: 0x0047E6EE File Offset: 0x0047C8EE
 		public bool IsInPreset(TwitchVotePreset preset)
 		{
 			return (this.PresetNames == null && !preset.IsEmpty) || (this.PresetNames != null && this.PresetNames.Contains(preset.Name));
 		}
 
-		// Token: 0x0600C243 RID: 49731 RVA: 0x0047AD74 File Offset: 0x00478F74
+		// Token: 0x0600C357 RID: 50007 RVA: 0x0047E720 File Offset: 0x0047C920
 		public bool CanUse(int hour, int gamestage, EntityPlayer player)
 		{
 			if ((this.StartGameStage != -1 && this.StartGameStage > gamestage) || (this.EndGameStage != -1 && this.EndGameStage < gamestage) || hour < this.AllowedStartHour || hour > this.AllowedEndHour || (this.MaxTimesPerDay != -1 && this.MaxTimesPerDay <= this.CurrentDayCount))
@@ -76,7 +76,7 @@ namespace Twitch
 			return true;
 		}
 
-		// Token: 0x0600C244 RID: 49732 RVA: 0x0047AE54 File Offset: 0x00479054
+		// Token: 0x0600C358 RID: 50008 RVA: 0x0047E800 File Offset: 0x0047CA00
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			this.Properties = properties;
@@ -168,7 +168,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C245 RID: 49733 RVA: 0x0047B206 File Offset: 0x00479406
+		// Token: 0x0600C359 RID: 50009 RVA: 0x0047EBB2 File Offset: 0x0047CDB2
 		public void AddCooldownAddition(TwitchActionCooldownAddition newCooldown)
 		{
 			if (this.CooldownAdditions == null)
@@ -178,7 +178,7 @@ namespace Twitch
 			this.CooldownAdditions.Add(newCooldown);
 		}
 
-		// Token: 0x0600C246 RID: 49734 RVA: 0x0047B227 File Offset: 0x00479427
+		// Token: 0x0600C35A RID: 50010 RVA: 0x0047EBD3 File Offset: 0x0047CDD3
 		public void AddRequirement(BaseTwitchRequirement requirement)
 		{
 			if (this.TwitchRequirements == null)
@@ -188,7 +188,7 @@ namespace Twitch
 			this.TwitchRequirements.Add(requirement);
 		}
 
-		// Token: 0x0600C247 RID: 49735 RVA: 0x0047B248 File Offset: 0x00479448
+		// Token: 0x0600C35B RID: 50011 RVA: 0x0047EBF4 File Offset: 0x0047CDF4
 		public void HandleVoteComplete()
 		{
 			if (this.CooldownAdditions != null)
@@ -213,191 +213,191 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x04009243 RID: 37443
+		// Token: 0x0400932C RID: 37676
 		public static string PropTitleVarKey = "title_var_key";
 
-		// Token: 0x04009244 RID: 37444
+		// Token: 0x0400932D RID: 37677
 		public static string PropDisplayVarKey = "display_var_key";
 
-		// Token: 0x04009245 RID: 37445
+		// Token: 0x0400932E RID: 37678
 		public static string PropTitle = "title";
 
-		// Token: 0x04009246 RID: 37446
+		// Token: 0x0400932F RID: 37679
 		public static string PropTitleKey = "title_key";
 
-		// Token: 0x04009247 RID: 37447
+		// Token: 0x04009330 RID: 37680
 		public static string PropDescription = "description";
 
-		// Token: 0x04009248 RID: 37448
+		// Token: 0x04009331 RID: 37681
 		public static string PropDescriptionKey = "description_key";
 
-		// Token: 0x04009249 RID: 37449
+		// Token: 0x04009332 RID: 37682
 		public static string PropDisplay = "display";
 
-		// Token: 0x0400924A RID: 37450
+		// Token: 0x04009333 RID: 37683
 		public static string PropDisplayKey = "display_key";
 
-		// Token: 0x0400924B RID: 37451
+		// Token: 0x04009334 RID: 37684
 		public static string PropEventName = "event_name";
 
-		// Token: 0x0400924C RID: 37452
+		// Token: 0x04009335 RID: 37685
 		public static string PropVoteType = "vote_type";
 
-		// Token: 0x0400924D RID: 37453
+		// Token: 0x04009336 RID: 37686
 		public static string PropGroup = "group";
 
-		// Token: 0x0400924E RID: 37454
+		// Token: 0x04009337 RID: 37687
 		public static string PropTitleFormatKey = "title_format_key";
 
-		// Token: 0x0400924F RID: 37455
+		// Token: 0x04009338 RID: 37688
 		public static string PropDescriptionFormatKey = "description_format_key";
 
-		// Token: 0x04009250 RID: 37456
+		// Token: 0x04009339 RID: 37689
 		public static string PropDisplayFormatKey = "display_format_key";
 
-		// Token: 0x04009251 RID: 37457
+		// Token: 0x0400933A RID: 37690
 		public static string PropStartGameStage = "start_gamestage";
 
-		// Token: 0x04009252 RID: 37458
+		// Token: 0x0400933B RID: 37691
 		public static string PropEndGameStage = "end_gamestage";
 
-		// Token: 0x04009253 RID: 37459
+		// Token: 0x0400933C RID: 37692
 		public static string PropAllowedStartHour = "allowed_start_hour";
 
-		// Token: 0x04009254 RID: 37460
+		// Token: 0x0400933D RID: 37693
 		public static string PropAllowedEndHour = "allowed_end_hour";
 
-		// Token: 0x04009255 RID: 37461
+		// Token: 0x0400933E RID: 37694
 		public static string PropDisplayType = "display_type";
 
-		// Token: 0x04009256 RID: 37462
+		// Token: 0x0400933F RID: 37695
 		public static string PropTitleColor = "title_color";
 
-		// Token: 0x04009257 RID: 37463
+		// Token: 0x04009340 RID: 37696
 		public static string PropVoteLine1 = "line1_desc";
 
-		// Token: 0x04009258 RID: 37464
+		// Token: 0x04009341 RID: 37697
 		public static string PropVoteLine1Key = "line1_desc_key";
 
-		// Token: 0x04009259 RID: 37465
+		// Token: 0x04009342 RID: 37698
 		public static string PropVoteLine2 = "line2_desc";
 
-		// Token: 0x0400925A RID: 37466
+		// Token: 0x04009343 RID: 37699
 		public static string PropVoteLine2Key = "line2_desc_key";
 
-		// Token: 0x0400925B RID: 37467
+		// Token: 0x04009344 RID: 37700
 		public static string PropEnabled = "enabled";
 
-		// Token: 0x0400925C RID: 37468
+		// Token: 0x04009345 RID: 37701
 		public static string PropMaxTimesPerDay = "max_times_per_day";
 
-		// Token: 0x0400925D RID: 37469
+		// Token: 0x04009346 RID: 37702
 		public static string PropVoteTip = "vote_tip";
 
-		// Token: 0x0400925E RID: 37470
+		// Token: 0x04009347 RID: 37703
 		public static string PropVoteTipKey = "vote_tip_key";
 
-		// Token: 0x0400925F RID: 37471
+		// Token: 0x04009348 RID: 37704
 		public static string PropPresets = "presets";
 
-		// Token: 0x04009260 RID: 37472
+		// Token: 0x04009349 RID: 37705
 		public static HashSet<string> ExtendsExcludes = new HashSet<string>
 		{
 			TwitchVote.PropStartGameStage,
 			TwitchVote.PropEndGameStage
 		};
 
-		// Token: 0x04009261 RID: 37473
+		// Token: 0x0400934A RID: 37706
 		public string VoteName;
 
-		// Token: 0x04009262 RID: 37474
+		// Token: 0x0400934B RID: 37707
 		public string Title;
 
-		// Token: 0x04009263 RID: 37475
+		// Token: 0x0400934C RID: 37708
 		public string Description;
 
-		// Token: 0x04009264 RID: 37476
+		// Token: 0x0400934D RID: 37709
 		public string Display = "";
 
-		// Token: 0x04009265 RID: 37477
+		// Token: 0x0400934E RID: 37710
 		public string GameEvent;
 
-		// Token: 0x04009266 RID: 37478
+		// Token: 0x0400934F RID: 37711
 		public string[] VoteTypes;
 
-		// Token: 0x04009267 RID: 37479
+		// Token: 0x04009350 RID: 37712
 		public TwitchVoteType MainVoteType;
 
-		// Token: 0x04009268 RID: 37480
+		// Token: 0x04009351 RID: 37713
 		public string Group = "";
 
-		// Token: 0x04009269 RID: 37481
+		// Token: 0x04009352 RID: 37714
 		public bool Enabled = true;
 
-		// Token: 0x0400926A RID: 37482
+		// Token: 0x04009353 RID: 37715
 		public bool OriginalEnabled;
 
-		// Token: 0x0400926B RID: 37483
+		// Token: 0x04009354 RID: 37716
 		public string TitleColor = "";
 
-		// Token: 0x0400926C RID: 37484
+		// Token: 0x04009355 RID: 37717
 		public int StartGameStage = -1;
 
-		// Token: 0x0400926D RID: 37485
+		// Token: 0x04009356 RID: 37718
 		public int EndGameStage = -1;
 
-		// Token: 0x0400926E RID: 37486
+		// Token: 0x04009357 RID: 37719
 		public int AllowedStartHour;
 
-		// Token: 0x0400926F RID: 37487
+		// Token: 0x04009358 RID: 37720
 		public int AllowedEndHour = 24;
 
-		// Token: 0x04009270 RID: 37488
+		// Token: 0x04009359 RID: 37721
 		public string VoteLine1 = "";
 
-		// Token: 0x04009271 RID: 37489
+		// Token: 0x0400935A RID: 37722
 		public string VoteLine2 = "";
 
-		// Token: 0x04009272 RID: 37490
+		// Token: 0x0400935B RID: 37723
 		public int MaxTimesPerDay = -1;
 
-		// Token: 0x04009273 RID: 37491
+		// Token: 0x0400935C RID: 37724
 		public int CurrentDayCount;
 
-		// Token: 0x04009274 RID: 37492
+		// Token: 0x0400935D RID: 37725
 		public float tempCooldownSet;
 
-		// Token: 0x04009275 RID: 37493
+		// Token: 0x0400935E RID: 37726
 		public float tempCooldown;
 
-		// Token: 0x04009276 RID: 37494
+		// Token: 0x0400935F RID: 37727
 		public string VoteTip = "";
 
-		// Token: 0x04009277 RID: 37495
+		// Token: 0x04009360 RID: 37728
 		public DynamicProperties Properties;
 
-		// Token: 0x04009278 RID: 37496
+		// Token: 0x04009361 RID: 37729
 		public List<TwitchActionCooldownAddition> CooldownAdditions;
 
-		// Token: 0x04009279 RID: 37497
+		// Token: 0x04009362 RID: 37730
 		public List<BaseTwitchRequirement> TwitchRequirements;
 
-		// Token: 0x0400927A RID: 37498
+		// Token: 0x04009363 RID: 37731
 		public TwitchVote.VoteDisplayTypes DisplayType = TwitchVote.VoteDisplayTypes.GoodBad;
 
-		// Token: 0x0400927B RID: 37499
+		// Token: 0x04009364 RID: 37732
 		public List<string> PresetNames;
 
-		// Token: 0x02001891 RID: 6289
+		// Token: 0x020018C2 RID: 6338
 		public enum VoteDisplayTypes
 		{
-			// Token: 0x0400927D RID: 37501
+			// Token: 0x04009366 RID: 37734
 			Single,
-			// Token: 0x0400927E RID: 37502
+			// Token: 0x04009367 RID: 37735
 			GoodBad,
-			// Token: 0x0400927F RID: 37503
+			// Token: 0x04009368 RID: 37736
 			Special,
-			// Token: 0x04009280 RID: 37504
+			// Token: 0x04009369 RID: 37737
 			HordeBuffed
 		}
 	}

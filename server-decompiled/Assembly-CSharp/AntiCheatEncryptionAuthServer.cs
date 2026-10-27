@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-// Token: 0x02000765 RID: 1893
+// Token: 0x0200076D RID: 1901
 public class AntiCheatEncryptionAuthServer
 {
-	// Token: 0x06003866 RID: 14438 RVA: 0x00171547 File Offset: 0x0016F747
+	// Token: 0x0600387D RID: 14461 RVA: 0x001724DF File Offset: 0x001706DF
 	public void Start(AntiCheatEncryptionAuthServer.KeyExchangeCompleteDelegate completeDelegate, AntiCheatEncryptionAuthServer.KeyExchangeFailedDelegate failedDelegate)
 	{
 		this.OnExchangeCompleted = completeDelegate;
@@ -14,7 +14,7 @@ public class AntiCheatEncryptionAuthServer
 		ConnectionManager.OnClientDisconnected += this.OnClientDisconnected;
 	}
 
-	// Token: 0x06003867 RID: 14439 RVA: 0x00171574 File Offset: 0x0016F774
+	// Token: 0x0600387E RID: 14462 RVA: 0x0017250C File Offset: 0x0017070C
 	public bool TryStartKeyExchange(ClientInfo clientInfo)
 	{
 		if (!AntiCheatEncryptionAuthServer.platformPublicKeys.ContainsKey(clientInfo.device))
@@ -27,7 +27,7 @@ public class AntiCheatEncryptionAuthServer
 		return true;
 	}
 
-	// Token: 0x06003868 RID: 14440 RVA: 0x001715D8 File Offset: 0x0016F7D8
+	// Token: 0x0600387F RID: 14463 RVA: 0x00172570 File Offset: 0x00170770
 	public void SendSharedKey(ClientInfo clientInfo, string exchangePublicKeyParamsXml, byte[] hash, byte[] signedHash)
 	{
 		string text;
@@ -72,7 +72,7 @@ public class AntiCheatEncryptionAuthServer
 		onExchangeFailed2(clientInfo, new GameUtils.KickPlayerData(GameUtils.EKickReason.EncryptionAgreementError, 0, default(DateTime), ""));
 	}
 
-	// Token: 0x06003869 RID: 14441 RVA: 0x00171758 File Offset: 0x0016F958
+	// Token: 0x06003880 RID: 14464 RVA: 0x001726F0 File Offset: 0x001708F0
 	public void CompleteKeyExchange(ClientInfo clientInfo, bool wasSuccessful)
 	{
 		IEncryptionModule encryptionModule;
@@ -112,20 +112,20 @@ public class AntiCheatEncryptionAuthServer
 		}
 	}
 
-	// Token: 0x0600386A RID: 14442 RVA: 0x00171835 File Offset: 0x0016FA35
+	// Token: 0x06003881 RID: 14465 RVA: 0x001727CD File Offset: 0x001709CD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnClientDisconnected(ClientInfo clientInfo)
 	{
 		this.CancelKeyExchange(clientInfo);
 	}
 
-	// Token: 0x0600386B RID: 14443 RVA: 0x0017183E File Offset: 0x0016FA3E
+	// Token: 0x06003882 RID: 14466 RVA: 0x001727D6 File Offset: 0x001709D6
 	public void CancelKeyExchange(ClientInfo clientInfo)
 	{
 		this.pendingEncryptionModules.Remove(clientInfo);
 	}
 
-	// Token: 0x0600386C RID: 14444 RVA: 0x0017184D File Offset: 0x0016FA4D
+	// Token: 0x06003883 RID: 14467 RVA: 0x001727E5 File Offset: 0x001709E5
 	public void Stop()
 	{
 		ConnectionManager.OnClientDisconnected -= this.OnClientDisconnected;
@@ -139,7 +139,7 @@ public class AntiCheatEncryptionAuthServer
 		this.OnExchangeFailed = null;
 	}
 
-	// Token: 0x04002E32 RID: 11826
+	// Token: 0x04002E4E RID: 11854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<ClientInfo.EDeviceType, string> platformPublicKeys = new Dictionary<ClientInfo.EDeviceType, string>
 	{
@@ -153,23 +153,23 @@ public class AntiCheatEncryptionAuthServer
 		}
 	};
 
-	// Token: 0x04002E33 RID: 11827
+	// Token: 0x04002E4F RID: 11855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AntiCheatEncryptionAuthServer.KeyExchangeCompleteDelegate OnExchangeCompleted;
 
-	// Token: 0x04002E34 RID: 11828
+	// Token: 0x04002E50 RID: 11856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AntiCheatEncryptionAuthServer.KeyExchangeFailedDelegate OnExchangeFailed;
 
-	// Token: 0x04002E35 RID: 11829
+	// Token: 0x04002E51 RID: 11857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<ClientInfo, IEncryptionModule> pendingEncryptionModules;
 
-	// Token: 0x02000766 RID: 1894
-	// (Invoke) Token: 0x06003870 RID: 14448
+	// Token: 0x0200076E RID: 1902
+	// (Invoke) Token: 0x06003887 RID: 14471
 	public delegate void KeyExchangeCompleteDelegate(ClientInfo clientInfo, IEncryptionModule encryptionModule);
 
-	// Token: 0x02000767 RID: 1895
-	// (Invoke) Token: 0x06003874 RID: 14452
+	// Token: 0x0200076F RID: 1903
+	// (Invoke) Token: 0x0600388B RID: 14475
 	public delegate void KeyExchangeFailedDelegate(ClientInfo clientInfo, GameUtils.KickPlayerData reason);
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001798 RID: 6040
+	// Token: 0x020017C9 RID: 6089
 	public class TownshipData
 	{
-		// Token: 0x0600BB88 RID: 48008 RVA: 0x00459378 File Offset: 0x00457578
+		// Token: 0x0600BC9C RID: 48284 RVA: 0x0045CD24 File Offset: 0x0045AF24
 		public TownshipData(string _name, int _id)
 		{
 			this.Name = _name;
@@ -26,46 +26,46 @@ namespace WorldGenerationEngineFinal
 			WorldBuilderStatic.idToTownshipData[this.Id] = this;
 		}
 
-		// Token: 0x04008C43 RID: 35907
+		// Token: 0x04008D2C RID: 36140
 		public string Name;
 
-		// Token: 0x04008C44 RID: 35908
+		// Token: 0x04008D2D RID: 36141
 		public int Id;
 
-		// Token: 0x04008C45 RID: 35909
+		// Token: 0x04008D2E RID: 36142
 		public List<string> SpawnableTerrain = new List<string>();
 
-		// Token: 0x04008C46 RID: 35910
+		// Token: 0x04008D2F RID: 36143
 		public bool SpawnCustomSizes;
 
-		// Token: 0x04008C47 RID: 35911
+		// Token: 0x04008D30 RID: 36144
 		public bool SpawnTrader = true;
 
-		// Token: 0x04008C48 RID: 35912
+		// Token: 0x04008D31 RID: 36145
 		public bool SpawnGateway = true;
 
-		// Token: 0x04008C49 RID: 35913
+		// Token: 0x04008D32 RID: 36146
 		public string OutskirtDistrict;
 
-		// Token: 0x04008C4A RID: 35914
+		// Token: 0x04008D33 RID: 36147
 		public float OutskirtDistrictPercent;
 
-		// Token: 0x04008C4B RID: 35915
+		// Token: 0x04008D34 RID: 36148
 		public FastTags<TagGroup.Poi> Biomes;
 
-		// Token: 0x04008C4C RID: 35916
+		// Token: 0x04008D35 RID: 36149
 		public readonly TownshipData.eCategory Category;
 
-		// Token: 0x02001799 RID: 6041
+		// Token: 0x020017CA RID: 6090
 		public enum eCategory
 		{
-			// Token: 0x04008C4E RID: 35918
+			// Token: 0x04008D37 RID: 36151
 			Normal,
-			// Token: 0x04008C4F RID: 35919
+			// Token: 0x04008D38 RID: 36152
 			Roadside,
-			// Token: 0x04008C50 RID: 35920
+			// Token: 0x04008D39 RID: 36153
 			Rural,
-			// Token: 0x04008C51 RID: 35921
+			// Token: 0x04008D3A RID: 36154
 			Wilderness
 		}
 	}

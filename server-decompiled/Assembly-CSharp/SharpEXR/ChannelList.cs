@@ -4,21 +4,21 @@ using System.Collections.Generic;
 
 namespace SharpEXR
 {
-	// Token: 0x020016EE RID: 5870
+	// Token: 0x0200170D RID: 5901
 	public class ChannelList : IEnumerable<Channel>, IEnumerable
 	{
-		// Token: 0x170016D7 RID: 5847
-		// (get) Token: 0x0600B764 RID: 46948 RVA: 0x0043ED55 File Offset: 0x0043CF55
-		// (set) Token: 0x0600B765 RID: 46949 RVA: 0x0043ED5D File Offset: 0x0043CF5D
+		// Token: 0x1700171E RID: 5918
+		// (get) Token: 0x0600B838 RID: 47160 RVA: 0x004417F9 File Offset: 0x0043F9F9
+		// (set) Token: 0x0600B839 RID: 47161 RVA: 0x00441801 File Offset: 0x0043FA01
 		public List<Channel> Channels { get; set; }
 
-		// Token: 0x0600B766 RID: 46950 RVA: 0x0043ED66 File Offset: 0x0043CF66
+		// Token: 0x0600B83A RID: 47162 RVA: 0x0044180A File Offset: 0x0043FA0A
 		public ChannelList()
 		{
 			this.Channels = new List<Channel>();
 		}
 
-		// Token: 0x0600B767 RID: 46951 RVA: 0x0043ED7C File Offset: 0x0043CF7C
+		// Token: 0x0600B83B RID: 47163 RVA: 0x00441820 File Offset: 0x0043FA20
 		public void Read(EXRFile file, IEXRReader reader, int size)
 		{
 			int num = 0;
@@ -54,7 +54,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B768 RID: 46952 RVA: 0x0043EE34 File Offset: 0x0043D034
+		// Token: 0x0600B83C RID: 47164 RVA: 0x004418D8 File Offset: 0x0043FAD8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool ReadChannel(EXRFile file, IEXRReader reader, out Channel channel, out int bytesRead)
 		{
@@ -71,20 +71,20 @@ namespace SharpEXR
 			return true;
 		}
 
-		// Token: 0x0600B769 RID: 46953 RVA: 0x0043EEB2 File Offset: 0x0043D0B2
+		// Token: 0x0600B83D RID: 47165 RVA: 0x00441956 File Offset: 0x0043FB56
 		public IEnumerator<Channel> GetEnumerator()
 		{
 			return this.Channels.GetEnumerator();
 		}
 
-		// Token: 0x0600B76A RID: 46954 RVA: 0x0043EEC4 File Offset: 0x0043D0C4
+		// Token: 0x0600B83E RID: 47166 RVA: 0x00441968 File Offset: 0x0043FB68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.GetEnumerator();
 		}
 
-		// Token: 0x170016D8 RID: 5848
+		// Token: 0x1700171F RID: 5919
 		public Channel this[int index]
 		{
 			get

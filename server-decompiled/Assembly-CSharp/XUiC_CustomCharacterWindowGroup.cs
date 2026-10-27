@@ -2,13 +2,13 @@
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E0D RID: 3597
+// Token: 0x02000E18 RID: 3608
 [Preserve]
 [PublicizedFrom(EAccessModifier.Internal)]
 public class XUiC_CustomCharacterWindowGroup : XUiController
 {
-	// Token: 0x17000C45 RID: 3141
-	// (get) Token: 0x06006D96 RID: 28054 RVA: 0x002AC60A File Offset: 0x002AA80A
+	// Token: 0x17000C4B RID: 3147
+	// (get) Token: 0x06006DBB RID: 28091 RVA: 0x002ADB32 File Offset: 0x002ABD32
 	[XuiXmlBinding("ismale")]
 	public bool IsMale
 	{
@@ -19,7 +19,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006D97 RID: 28055 RVA: 0x002AC624 File Offset: 0x002AA824
+	// Token: 0x06006DBC RID: 28092 RVA: 0x002ADB4C File Offset: 0x002ABD4C
 	public override void Init()
 	{
 		base.Init();
@@ -27,7 +27,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		SDCSDataUtils.SetupData();
 	}
 
-	// Token: 0x06006D98 RID: 28056 RVA: 0x002AC644 File Offset: 0x002AA844
+	// Token: 0x06006DBD RID: 28093 RVA: 0x002ADB6C File Offset: 0x002ABD6C
 	public override void OnOpen()
 	{
 		this.windowGroup.openWindowOnEsc = XUiC_PlayerProfile.ID;
@@ -47,7 +47,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.setInitialOptions();
 	}
 
-	// Token: 0x06006D99 RID: 28057 RVA: 0x002AC6BD File Offset: 0x002AA8BD
+	// Token: 0x06006DBE RID: 28094 RVA: 0x002ADBE5 File Offset: 0x002ABDE5
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -59,7 +59,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.onClosed = null;
 	}
 
-	// Token: 0x06006D9A RID: 28058 RVA: 0x002AC6E0 File Offset: 0x002AA8E0
+	// Token: 0x06006DBF RID: 28095 RVA: 0x002ADC08 File Offset: 0x002ABE08
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -83,7 +83,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006D9B RID: 28059 RVA: 0x002AC770 File Offset: 0x002AA970
+	// Token: 0x06006DC0 RID: 28096 RVA: 0x002ADC98 File Offset: 0x002ABE98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setInitialOptions()
 	{
@@ -113,7 +113,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		Log.Error("PlayerProfile is null");
 	}
 
-	// Token: 0x06006D9C RID: 28060 RVA: 0x002AC938 File Offset: 0x002AAB38
+	// Token: 0x06006DC1 RID: 28097 RVA: 0x002ADE60 File Offset: 0x002AC060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetLocks()
 	{
@@ -128,7 +128,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.btnLockBeards.IsSelected = false;
 	}
 
-	// Token: 0x06006D9D RID: 28061 RVA: 0x002AC9B4 File Offset: 0x002AABB4
+	// Token: 0x06006DC2 RID: 28098 RVA: 0x002ADEDC File Offset: 0x002AC0DC
 	[XuiBindEvent("OnPress", "btnApply")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnApply_OnPress(XUiController _sender, int _mouseButton)
@@ -149,7 +149,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.close();
 	}
 
-	// Token: 0x06006D9E RID: 28062 RVA: 0x002ACA73 File Offset: 0x002AAC73
+	// Token: 0x06006DC3 RID: 28099 RVA: 0x002ADF9B File Offset: 0x002AC19B
 	[XuiBindEvent("OnPress", "btnBack")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBack_OnPress(XUiController _sender, int _mouseButton)
@@ -157,7 +157,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.close();
 	}
 
-	// Token: 0x06006D9F RID: 28063 RVA: 0x002ACA7C File Offset: 0x002AAC7C
+	// Token: 0x06006DC4 RID: 28100 RVA: 0x002ADFA4 File Offset: 0x002AC1A4
 	[XuiBindEvent("OnPress", "btnRandomize")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRandomize_OnPressed(XUiController _sender, int _mouseButton)
@@ -209,14 +209,14 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DA0 RID: 28064 RVA: 0x00089715 File Offset: 0x00087915
+	// Token: 0x06006DC5 RID: 28101 RVA: 0x00089949 File Offset: 0x00087B49
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void close()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06006DA1 RID: 28065 RVA: 0x002ACD41 File Offset: 0x002AAF41
+	// Token: 0x06006DC6 RID: 28102 RVA: 0x002AE269 File Offset: 0x002AC469
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePreview(bool _zoomToHead = true)
 	{
@@ -229,7 +229,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006DA2 RID: 28066 RVA: 0x002ACD6C File Offset: 0x002AAF6C
+	// Token: 0x06006DC7 RID: 28103 RVA: 0x002AE294 File Offset: 0x002AC494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSelectedGeneric(string _name, XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> _combo, Action<string> _applyFunc, bool _applyToPreview = false)
 	{
@@ -251,7 +251,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DA3 RID: 28067 RVA: 0x002ACDD4 File Offset: 0x002AAFD4
+	// Token: 0x06006DC8 RID: 28104 RVA: 0x002AE2FC File Offset: 0x002AC4FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupGenders()
 	{
@@ -260,7 +260,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.cbxGender.Elements.Add(new XUiC_CustomCharacterWindowGroup.NameData("male", Localization.Get("xuiBoolMaleOn", false, null)));
 	}
 
-	// Token: 0x06006DA4 RID: 28068 RVA: 0x002ACE40 File Offset: 0x002AB040
+	// Token: 0x06006DC9 RID: 28105 RVA: 0x002AE368 File Offset: 0x002AC568
 	[XuiBindEvent("OnValueChanged", "cbxGender")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxGenderOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -288,7 +288,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(false);
 	}
 
-	// Token: 0x06006DA5 RID: 28069 RVA: 0x002ACF5C File Offset: 0x002AB15C
+	// Token: 0x06006DCA RID: 28106 RVA: 0x002AE484 File Offset: 0x002AC684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupRaces(bool _isMale)
 	{
@@ -299,7 +299,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DA6 RID: 28070 RVA: 0x002ACFE8 File Offset: 0x002AB1E8
+	// Token: 0x06006DCB RID: 28107 RVA: 0x002AE510 File Offset: 0x002AC710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSelectedRace(string _raceName, bool _applyToPreview = false)
 	{
@@ -321,7 +321,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DA7 RID: 28071 RVA: 0x002AD068 File Offset: 0x002AB268
+	// Token: 0x06006DCC RID: 28108 RVA: 0x002AE590 File Offset: 0x002AC790
 	[XuiBindEvent("OnValueChanged", "cbxRace")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxRaceOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -333,7 +333,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(false);
 	}
 
-	// Token: 0x06006DA8 RID: 28072 RVA: 0x002AD0CF File Offset: 0x002AB2CF
+	// Token: 0x06006DCD RID: 28109 RVA: 0x002AE5F7 File Offset: 0x002AC7F7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyRace(string _name)
 	{
@@ -344,7 +344,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DA9 RID: 28073 RVA: 0x002AD0F8 File Offset: 0x002AB2F8
+	// Token: 0x06006DCE RID: 28110 RVA: 0x002AE620 File Offset: 0x002AC820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupVariants(bool _isMale, string _raceName)
 	{
@@ -357,7 +357,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DAA RID: 28074 RVA: 0x002AD190 File Offset: 0x002AB390
+	// Token: 0x06006DCF RID: 28111 RVA: 0x002AE6B8 File Offset: 0x002AC8B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSelectedVariant(int _variant, bool _applyToPreview = false)
 	{
@@ -379,7 +379,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DAB RID: 28075 RVA: 0x002AD217 File Offset: 0x002AB417
+	// Token: 0x06006DD0 RID: 28112 RVA: 0x002AE73F File Offset: 0x002AC93F
 	[XuiBindEvent("OnValueChanged", "cbxVariant")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxVariantOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -388,7 +388,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DAC RID: 28076 RVA: 0x002AD234 File Offset: 0x002AB434
+	// Token: 0x06006DD1 RID: 28113 RVA: 0x002AE75C File Offset: 0x002AC95C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyVariant(int _variant)
 	{
@@ -399,7 +399,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DAD RID: 28077 RVA: 0x002AD25C File Offset: 0x002AB45C
+	// Token: 0x06006DD2 RID: 28114 RVA: 0x002AE784 File Offset: 0x002AC984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupEyeColors()
 	{
@@ -412,7 +412,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DAE RID: 28078 RVA: 0x002AD2F0 File Offset: 0x002AB4F0
+	// Token: 0x06006DD3 RID: 28115 RVA: 0x002AE818 File Offset: 0x002ACA18
 	[XuiBindEvent("OnValueChanged", "cbxEyeColor")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxEyeColorOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -421,7 +421,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DAF RID: 28079 RVA: 0x002AD305 File Offset: 0x002AB505
+	// Token: 0x06006DD4 RID: 28116 RVA: 0x002AE82D File Offset: 0x002ACA2D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyEyeColor(string _name)
 	{
@@ -432,7 +432,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB0 RID: 28080 RVA: 0x002AD32C File Offset: 0x002AB52C
+	// Token: 0x06006DD5 RID: 28117 RVA: 0x002AE854 File Offset: 0x002ACA54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupHairStyles(bool _isMale)
 	{
@@ -446,7 +446,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB1 RID: 28081 RVA: 0x002AD3F4 File Offset: 0x002AB5F4
+	// Token: 0x06006DD6 RID: 28118 RVA: 0x002AE91C File Offset: 0x002ACB1C
 	[XuiBindEvent("OnValueChanged", "cbxHairStyle")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxHairsOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -455,7 +455,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DB2 RID: 28082 RVA: 0x002AD409 File Offset: 0x002AB609
+	// Token: 0x06006DD7 RID: 28119 RVA: 0x002AE931 File Offset: 0x002ACB31
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyHairStyle(string _name)
 	{
@@ -466,7 +466,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB3 RID: 28083 RVA: 0x002AD430 File Offset: 0x002AB630
+	// Token: 0x06006DD8 RID: 28120 RVA: 0x002AE958 File Offset: 0x002ACB58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupHairColors()
 	{
@@ -479,7 +479,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB4 RID: 28084 RVA: 0x002AD4C8 File Offset: 0x002AB6C8
+	// Token: 0x06006DD9 RID: 28121 RVA: 0x002AE9F0 File Offset: 0x002ACBF0
 	[XuiBindEvent("OnValueChanged", "cbxHairColor")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxHairColorOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -488,7 +488,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DB5 RID: 28085 RVA: 0x002AD4DD File Offset: 0x002AB6DD
+	// Token: 0x06006DDA RID: 28122 RVA: 0x002AEA05 File Offset: 0x002ACC05
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyHairColor(string _name)
 	{
@@ -499,7 +499,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB6 RID: 28086 RVA: 0x002AD504 File Offset: 0x002AB704
+	// Token: 0x06006DDB RID: 28123 RVA: 0x002AEA2C File Offset: 0x002ACC2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupMustaches(bool _isMale)
 	{
@@ -516,7 +516,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB7 RID: 28087 RVA: 0x002AD5E0 File Offset: 0x002AB7E0
+	// Token: 0x06006DDC RID: 28124 RVA: 0x002AEB08 File Offset: 0x002ACD08
 	[XuiBindEvent("OnValueChanged", "cbxMustaches")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxMustachesOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -525,7 +525,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DB8 RID: 28088 RVA: 0x002AD5F5 File Offset: 0x002AB7F5
+	// Token: 0x06006DDD RID: 28125 RVA: 0x002AEB1D File Offset: 0x002ACD1D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyMustache(string _name)
 	{
@@ -536,7 +536,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DB9 RID: 28089 RVA: 0x002AD61C File Offset: 0x002AB81C
+	// Token: 0x06006DDE RID: 28126 RVA: 0x002AEB44 File Offset: 0x002ACD44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupChops(bool _isMale)
 	{
@@ -553,7 +553,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DBA RID: 28090 RVA: 0x002AD6F8 File Offset: 0x002AB8F8
+	// Token: 0x06006DDF RID: 28127 RVA: 0x002AEC20 File Offset: 0x002ACE20
 	[XuiBindEvent("OnValueChanged", "cbxChops")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxChopsOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -562,7 +562,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DBB RID: 28091 RVA: 0x002AD70D File Offset: 0x002AB90D
+	// Token: 0x06006DE0 RID: 28128 RVA: 0x002AEC35 File Offset: 0x002ACE35
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyChops(string _name)
 	{
@@ -573,7 +573,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DBC RID: 28092 RVA: 0x002AD734 File Offset: 0x002AB934
+	// Token: 0x06006DE1 RID: 28129 RVA: 0x002AEC5C File Offset: 0x002ACE5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupBeards(bool _isMale)
 	{
@@ -590,7 +590,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DBD RID: 28093 RVA: 0x002AD810 File Offset: 0x002ABA10
+	// Token: 0x06006DE2 RID: 28130 RVA: 0x002AED38 File Offset: 0x002ACF38
 	[XuiBindEvent("OnValueChanged", "cbxBeards")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cbxBeardsOnValueChanged(XUiController _sender, XUiC_CustomCharacterWindowGroup.NameData _oldValue, XUiC_CustomCharacterWindowGroup.NameData _newValue)
@@ -599,7 +599,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		this.updatePreview(true);
 	}
 
-	// Token: 0x06006DBE RID: 28094 RVA: 0x002AD825 File Offset: 0x002ABA25
+	// Token: 0x06006DE3 RID: 28131 RVA: 0x002AED4D File Offset: 0x002ACF4D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyBeard(string _name)
 	{
@@ -610,7 +610,7 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06006DBF RID: 28095 RVA: 0x002AD84C File Offset: 0x002ABA4C
+	// Token: 0x06006DE4 RID: 28132 RVA: 0x002AED74 File Offset: 0x002ACF74
 	public static void Open(XUi _xui, Action _onClosed)
 	{
 		XUiC_CustomCharacterWindowGroup childByType = _xui.GetChildByType<XUiC_CustomCharacterWindowGroup>();
@@ -618,155 +618,155 @@ public class XUiC_CustomCharacterWindowGroup : XUiController
 		_xui.playerUI.windowManager.Open(childByType.WindowGroup, false);
 	}
 
-	// Token: 0x040053B6 RID: 21430
+	// Token: 0x040053DB RID: 21467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasChanges;
 
-	// Token: 0x040053B7 RID: 21431
+	// Token: 0x040053DC RID: 21468
 	public PlayerProfile PlayerProfile;
 
-	// Token: 0x040053B8 RID: 21432
+	// Token: 0x040053DD RID: 21469
 	public Archetype Archetype;
 
-	// Token: 0x040053B9 RID: 21433
+	// Token: 0x040053DE RID: 21470
 	[XuiBindComponent("cbxRace", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxRace;
 
-	// Token: 0x040053BA RID: 21434
+	// Token: 0x040053DF RID: 21471
 	[XuiBindComponent("cbxGender", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxGender;
 
-	// Token: 0x040053BB RID: 21435
+	// Token: 0x040053E0 RID: 21472
 	[XuiBindComponent("cbxEyeColor", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxEyeColor;
 
-	// Token: 0x040053BC RID: 21436
+	// Token: 0x040053E1 RID: 21473
 	[XuiBindComponent("cbxHairStyle", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxHairStyle;
 
-	// Token: 0x040053BD RID: 21437
+	// Token: 0x040053E2 RID: 21474
 	[XuiBindComponent("cbxHairColor", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxHairColor;
 
-	// Token: 0x040053BE RID: 21438
+	// Token: 0x040053E3 RID: 21475
 	[XuiBindComponent("cbxMustaches", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxMustaches;
 
-	// Token: 0x040053BF RID: 21439
+	// Token: 0x040053E4 RID: 21476
 	[XuiBindComponent("cbxChops", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxChops;
 
-	// Token: 0x040053C0 RID: 21440
+	// Token: 0x040053E5 RID: 21477
 	[XuiBindComponent("cbxBeards", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxBeards;
 
-	// Token: 0x040053C1 RID: 21441
+	// Token: 0x040053E6 RID: 21478
 	[XuiBindComponent("cbxFace", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_CustomCharacterWindowGroup.NameData> cbxVariant;
 
-	// Token: 0x040053C2 RID: 21442
+	// Token: 0x040053E7 RID: 21479
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SDCSPreviewWindow previewWindow;
 
-	// Token: 0x040053C3 RID: 21443
+	// Token: 0x040053E8 RID: 21480
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;
 
-	// Token: 0x040053C4 RID: 21444
+	// Token: 0x040053E9 RID: 21481
 	[XuiBindComponent("btnApply", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnApply;
 
-	// Token: 0x040053C5 RID: 21445
+	// Token: 0x040053EA RID: 21482
 	[XuiBindComponent("btnRandomize", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnRandomize;
 
-	// Token: 0x040053C6 RID: 21446
+	// Token: 0x040053EB RID: 21483
 	[XuiBindComponent("btnLockRace", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockRace;
 
-	// Token: 0x040053C7 RID: 21447
+	// Token: 0x040053EC RID: 21484
 	[XuiBindComponent("btnLockGender", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockGender;
 
-	// Token: 0x040053C8 RID: 21448
+	// Token: 0x040053ED RID: 21485
 	[XuiBindComponent("btnLockFace", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockFace;
 
-	// Token: 0x040053C9 RID: 21449
+	// Token: 0x040053EE RID: 21486
 	[XuiBindComponent("btnLockEyeColor", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockEyeColor;
 
-	// Token: 0x040053CA RID: 21450
+	// Token: 0x040053EF RID: 21487
 	[XuiBindComponent("btnLockHairStyle", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockHairStyle;
 
-	// Token: 0x040053CB RID: 21451
+	// Token: 0x040053F0 RID: 21488
 	[XuiBindComponent("btnLockHairColor", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockHairColor;
 
-	// Token: 0x040053CC RID: 21452
+	// Token: 0x040053F1 RID: 21489
 	[XuiBindComponent("btnLockMustaches", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockMustaches;
 
-	// Token: 0x040053CD RID: 21453
+	// Token: 0x040053F2 RID: 21490
 	[XuiBindComponent("btnLockChops", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockChops;
 
-	// Token: 0x040053CE RID: 21454
+	// Token: 0x040053F3 RID: 21491
 	[XuiBindComponent("btnLockBeards", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable btnLockBeards;
 
-	// Token: 0x040053CF RID: 21455
+	// Token: 0x040053F4 RID: 21492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameRandom gr;
 
-	// Token: 0x040053D0 RID: 21456
+	// Token: 0x040053F5 RID: 21493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onClosed;
 
-	// Token: 0x02000E0E RID: 3598
+	// Token: 0x02000E19 RID: 3609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly struct NameData
 	{
-		// Token: 0x06006DC3 RID: 28099 RVA: 0x002AD892 File Offset: 0x002ABA92
+		// Token: 0x06006DE8 RID: 28136 RVA: 0x002AEDBA File Offset: 0x002ACFBA
 		public NameData(string _internalName, string _formattedName)
 		{
 			this.InternalName = _internalName;
 			this.formattedName = _formattedName;
 		}
 
-		// Token: 0x06006DC4 RID: 28100 RVA: 0x002AD8A2 File Offset: 0x002ABAA2
+		// Token: 0x06006DE9 RID: 28137 RVA: 0x002AEDCA File Offset: 0x002ACFCA
 		public override string ToString()
 		{
 			return this.formattedName;
 		}
 
-		// Token: 0x040053D1 RID: 21457
+		// Token: 0x040053F6 RID: 21494
 		public readonly string InternalName;
 
-		// Token: 0x040053D2 RID: 21458
+		// Token: 0x040053F7 RID: 21495
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string formattedName;
 	}

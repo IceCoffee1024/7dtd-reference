@@ -8,11 +8,11 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8F RID: 3983
+// Token: 0x02000F9F RID: 3999
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_MapArea : XUiController
 {
-	// Token: 0x06007D5C RID: 32092 RVA: 0x002F8B64 File Offset: 0x002F6D64
+	// Token: 0x06007DAB RID: 32171 RVA: 0x002FA680 File Offset: 0x002F8880
 	public override void Init()
 	{
 		base.Init();
@@ -84,7 +84,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D5D RID: 32093 RVA: 0x002F8ECB File Offset: 0x002F70CB
+	// Token: 0x06007DAC RID: 32172 RVA: 0x002FA9E7 File Offset: 0x002F8BE7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Instance_OnNavObjectRemoved(NavObject newNavObject)
 	{
@@ -93,7 +93,7 @@ public class XUiC_MapArea : XUiController
 		this.keyToNavSprite.Remove(newNavObject.Key);
 	}
 
-	// Token: 0x06007D5E RID: 32094 RVA: 0x002F8F05 File Offset: 0x002F7105
+	// Token: 0x06007DAD RID: 32173 RVA: 0x002FAA21 File Offset: 0x002F8C21
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initFOWChunkMaskColors()
 	{
@@ -133,7 +133,7 @@ public class XUiC_MapArea : XUiController
 		});
 	}
 
-	// Token: 0x06007D5F RID: 32095 RVA: 0x002F8F24 File Offset: 0x002F7124
+	// Token: 0x06007DAE RID: 32174 RVA: 0x002FAA40 File Offset: 0x002F8C40
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -169,7 +169,7 @@ public class XUiC_MapArea : XUiController
 		this.windowGroup.isEscClosable = false;
 	}
 
-	// Token: 0x06007D60 RID: 32096 RVA: 0x002F910E File Offset: 0x002F730E
+	// Token: 0x06007DAF RID: 32175 RVA: 0x002FAC2A File Offset: 0x002F8E2A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMapCursor(bool _customCursor)
 	{
@@ -182,7 +182,7 @@ public class XUiC_MapArea : XUiController
 		CursorControllerAbs.SetCursor(CursorControllerAbs.ECursorType.Default);
 	}
 
-	// Token: 0x06007D61 RID: 32097 RVA: 0x002F9128 File Offset: 0x002F7328
+	// Token: 0x06007DB0 RID: 32176 RVA: 0x002FAC44 File Offset: 0x002F8E44
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -206,21 +206,21 @@ public class XUiC_MapArea : XUiController
 		XUiC_Paging.IsOverPagingOverrideElement = false;
 	}
 
-	// Token: 0x06007D62 RID: 32098 RVA: 0x002F91EB File Offset: 0x002F73EB
+	// Token: 0x06007DB1 RID: 32177 RVA: 0x002FAD07 File Offset: 0x002F8F07
 	public override void OnCursorSelected(bool _isActualElement)
 	{
 		base.OnCursorSelected(_isActualElement);
 		this.crosshair.IsVisible = PlatformManager.NativePlatform.Input.CurrentInputStyle != PlayerInputManager.InputStyle.Keyboard;
 	}
 
-	// Token: 0x06007D63 RID: 32099 RVA: 0x002F9214 File Offset: 0x002F7414
+	// Token: 0x06007DB2 RID: 32178 RVA: 0x002FAD30 File Offset: 0x002F8F30
 	public override void OnCursorUnSelected()
 	{
 		base.OnCursorUnSelected();
 		this.crosshair.IsVisible = false;
 	}
 
-	// Token: 0x06007D64 RID: 32100 RVA: 0x002F9228 File Offset: 0x002F7428
+	// Token: 0x06007DB3 RID: 32179 RVA: 0x002FAD44 File Offset: 0x002F8F44
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -298,7 +298,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D65 RID: 32101 RVA: 0x002F9604 File Offset: 0x002F7804
+	// Token: 0x06007DB4 RID: 32180 RVA: 0x002FB120 File Offset: 0x002F9320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe void updateMapOverlay()
 	{
@@ -431,7 +431,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D66 RID: 32102 RVA: 0x002F9AB0 File Offset: 0x002F7CB0
+	// Token: 0x06007DB5 RID: 32181 RVA: 0x002FB5CC File Offset: 0x002F97CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initExistingWaypoints(WaypointCollection _waypoints)
 	{
@@ -459,7 +459,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D67 RID: 32103 RVA: 0x002F9B84 File Offset: 0x002F7D84
+	// Token: 0x06007DB6 RID: 32182 RVA: 0x002FB6A0 File Offset: 0x002F98A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initMap()
 	{
@@ -473,7 +473,7 @@ public class XUiC_MapArea : XUiController
 		this.xuiTexture.Size = new Vector2i(712, 712);
 	}
 
-	// Token: 0x06007D68 RID: 32104 RVA: 0x002F9BF4 File Offset: 0x002F7DF4
+	// Token: 0x06007DB7 RID: 32183 RVA: 0x002FB710 File Offset: 0x002F9910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateFullMap()
 	{
@@ -491,7 +491,7 @@ public class XUiC_MapArea : XUiController
 		this.SendMapPositionToServer();
 	}
 
-	// Token: 0x06007D69 RID: 32105 RVA: 0x002F9CA8 File Offset: 0x002F7EA8
+	// Token: 0x06007DB8 RID: 32184 RVA: 0x002FB7C4 File Offset: 0x002F99C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMapForScroll(int deltaChunksX, int deltaChunksZ)
 	{
@@ -580,7 +580,7 @@ public class XUiC_MapArea : XUiController
 		this.SendMapPositionToServer();
 	}
 
-	// Token: 0x06007D6A RID: 32106 RVA: 0x002F9F70 File Offset: 0x002F8170
+	// Token: 0x06007DB9 RID: 32185 RVA: 0x002FBA8C File Offset: 0x002F9C8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMapSection(int mapStartX, int mapStartZ, int mapEndX, int mapEndZ, int drawnMapStartX, int drawnMapStartZ, int drawnMapEndX, int drawnMapEndZ)
 	{
@@ -722,7 +722,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D6B RID: 32107 RVA: 0x002FA348 File Offset: 0x002F8548
+	// Token: 0x06007DBA RID: 32186 RVA: 0x002FBE64 File Offset: 0x002FA064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SendMapPositionToServer()
 	{
@@ -733,7 +733,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D6C RID: 32108 RVA: 0x002FA3CC File Offset: 0x002F85CC
+	// Token: 0x06007DBB RID: 32187 RVA: 0x002FBEE8 File Offset: 0x002FA0E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void positionMap()
 	{
@@ -746,7 +746,7 @@ public class XUiC_MapArea : XUiController
 		this.mapBGPos.y = (num + this.mapMiddlePosPixel.y) / 2048f;
 	}
 
-	// Token: 0x06007D6D RID: 32109 RVA: 0x002FA4B8 File Offset: 0x002F86B8
+	// Token: 0x06007DBC RID: 32188 RVA: 0x002FBFD4 File Offset: 0x002FA1D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRender(LocalPlayerCamera _localPlayerCamera)
 	{
@@ -754,7 +754,7 @@ public class XUiC_MapArea : XUiController
 		Shader.SetGlobalVector("_MainMapBGPosAndScale", new Vector4(this.mapBGPos.x, this.mapBGPos.y, this.mapScale, this.mapScale));
 	}
 
-	// Token: 0x06007D6E RID: 32110 RVA: 0x002FA527 File Offset: 0x002F8727
+	// Token: 0x06007DBD RID: 32189 RVA: 0x002FC043 File Offset: 0x002FA243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onMapDragged(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
 	{
@@ -769,7 +769,7 @@ public class XUiC_MapArea : XUiController
 		this.closeAllPopups();
 	}
 
-	// Token: 0x06007D6F RID: 32111 RVA: 0x002FA560 File Offset: 0x002F8760
+	// Token: 0x06007DBE RID: 32190 RVA: 0x002FC07C File Offset: 0x002FA27C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DragMap(Vector2 delta)
 	{
@@ -804,7 +804,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D70 RID: 32112 RVA: 0x002FA6B8 File Offset: 0x002F88B8
+	// Token: 0x06007DBF RID: 32191 RVA: 0x002FC1D4 File Offset: 0x002FA3D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onMapScrolled(XUiController _sender, float _delta)
 	{
@@ -827,7 +827,7 @@ public class XUiC_MapArea : XUiController
 		this.closeAllPopups();
 	}
 
-	// Token: 0x06007D71 RID: 32113 RVA: 0x002FA738 File Offset: 0x002F8938
+	// Token: 0x06007DC0 RID: 32192 RVA: 0x002FC254 File Offset: 0x002FA454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMapObject(EnumMapObjectType _type, long _key, string _name, Vector3 _position, Vector3 _size, GameObject _prefab)
 	{
@@ -854,14 +854,14 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D72 RID: 32114 RVA: 0x002FA811 File Offset: 0x002F8A11
+	// Token: 0x06007DC1 RID: 32193 RVA: 0x002FC32D File Offset: 0x002FA52D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float getSpriteZoomScaleFac()
 	{
 		return Utils.FastClamp(1f / (this.zoomScale * 2f), 0.02f, 20f);
 	}
 
-	// Token: 0x06007D73 RID: 32115 RVA: 0x002FA834 File Offset: 0x002F8A34
+	// Token: 0x06007DC2 RID: 32194 RVA: 0x002FC350 File Offset: 0x002FA550
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMapObjectList(List<MapObject> _mapObjectList, bool _bConsiderInOnMouseOverCursor = false)
 	{
@@ -943,7 +943,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D74 RID: 32116 RVA: 0x002FABD0 File Offset: 0x002F8DD0
+	// Token: 0x06007DC3 RID: 32195 RVA: 0x002FC6EC File Offset: 0x002FA8EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateNavObjectList()
 	{
@@ -1014,7 +1014,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D75 RID: 32117 RVA: 0x002FAF10 File Offset: 0x002F9110
+	// Token: 0x06007DC4 RID: 32196 RVA: 0x002FCA2C File Offset: 0x002FAC2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateMapObjects()
 	{
@@ -1083,7 +1083,7 @@ public class XUiC_MapArea : XUiController
 		this.localPlayer.selectedSpawnPointKey = -1L;
 	}
 
-	// Token: 0x06007D76 RID: 32118 RVA: 0x002FB1C8 File Offset: 0x002F93C8
+	// Token: 0x06007DC5 RID: 32197 RVA: 0x002FCCE4 File Offset: 0x002FAEE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateWaypointSelection()
 	{
@@ -1129,14 +1129,14 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D77 RID: 32119 RVA: 0x002FB394 File Offset: 0x002F9594
+	// Token: 0x06007DC6 RID: 32198 RVA: 0x002FCEB0 File Offset: 0x002FB0B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 worldPosToScreenPos(Vector3 _worldPos)
 	{
 		return new Vector3((_worldPos.x - this.mapMiddlePosPixel.x) * 2.1190476f / this.zoomScale + (float)this.cTexMiddle.x, (_worldPos.z - this.mapMiddlePosPixel.y) * 2.1190476f / this.zoomScale - (float)this.cTexMiddle.y, 0f);
 	}
 
-	// Token: 0x06007D78 RID: 32120 RVA: 0x002FB404 File Offset: 0x002F9604
+	// Token: 0x06007DC7 RID: 32199 RVA: 0x002FCF20 File Offset: 0x002FB120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 mousePosToWindowPos(Vector3 _mousePos)
 	{
@@ -1148,7 +1148,7 @@ public class XUiC_MapArea : XUiController
 		return vector * 0.9493333f;
 	}
 
-	// Token: 0x06007D79 RID: 32121 RVA: 0x002FB470 File Offset: 0x002F9670
+	// Token: 0x06007DC8 RID: 32200 RVA: 0x002FCF8C File Offset: 0x002FB18C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 screenPosToWorldPos(Vector3 _mousePos, bool needY = false)
 	{
@@ -1170,7 +1170,7 @@ public class XUiC_MapArea : XUiController
 		return new Vector3(num2, num4, num3);
 	}
 
-	// Token: 0x06007D7A RID: 32122 RVA: 0x002FB594 File Offset: 0x002F9794
+	// Token: 0x06007DC9 RID: 32201 RVA: 0x002FD0B0 File Offset: 0x002FB2B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void teleportPlayerOnMap(Vector3 _screenPosition)
 	{
@@ -1178,7 +1178,7 @@ public class XUiC_MapArea : XUiController
 		this.localPlayer.Teleport(new Vector3(vector.x, 180f, vector.z), float.MinValue);
 	}
 
-	// Token: 0x06007D7B RID: 32123 RVA: 0x002FB5D0 File Offset: 0x002F97D0
+	// Token: 0x06007DCA RID: 32202 RVA: 0x002FD0EC File Offset: 0x002FB2EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onMapPressedLeft(XUiController _sender, int _mouseButton)
 	{
@@ -1208,7 +1208,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D7C RID: 32124 RVA: 0x002FB6C8 File Offset: 0x002F98C8
+	// Token: 0x06007DCB RID: 32203 RVA: 0x002FD1E4 File Offset: 0x002FB3E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onMapPressed(XUiController _sender, int _mouseButton)
 	{
@@ -1232,7 +1232,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D7D RID: 32125 RVA: 0x002FB740 File Offset: 0x002F9940
+	// Token: 0x06007DCC RID: 32204 RVA: 0x002FD25C File Offset: 0x002FB45C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenWaypointPopup()
 	{
@@ -1244,7 +1244,7 @@ public class XUiC_MapArea : XUiController
 		this.xui.playerUI.CursorController.SetNavigationTargetLater(window.Controller.GetChildById("opt1").ViewComponent);
 	}
 
-	// Token: 0x06007D7E RID: 32126 RVA: 0x002FB7D6 File Offset: 0x002F99D6
+	// Token: 0x06007DCD RID: 32205 RVA: 0x002FD2F2 File Offset: 0x002FB4F2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onMapHover(XUiController _sender, bool _isOver)
 	{
@@ -1252,7 +1252,7 @@ public class XUiC_MapArea : XUiController
 		XUiC_Paging.IsOverPagingOverrideElement = _isOver;
 	}
 
-	// Token: 0x06007D7F RID: 32127 RVA: 0x002FB7E5 File Offset: 0x002F99E5
+	// Token: 0x06007DCE RID: 32206 RVA: 0x002FD301 File Offset: 0x002FB501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onPlayerIconPressed(XUiController _sender, int _mouseButton)
 	{
@@ -1260,7 +1260,7 @@ public class XUiC_MapArea : XUiController
 		this.closeAllPopups();
 	}
 
-	// Token: 0x06007D80 RID: 32128 RVA: 0x002FB800 File Offset: 0x002F9A00
+	// Token: 0x06007DCF RID: 32207 RVA: 0x002FD31C File Offset: 0x002FB51C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onBedrollIconPressed(XUiController _sender, int _mouseButton)
 	{
@@ -1272,7 +1272,7 @@ public class XUiC_MapArea : XUiController
 		this.closeAllPopups();
 	}
 
-	// Token: 0x06007D81 RID: 32129 RVA: 0x002FB845 File Offset: 0x002F9A45
+	// Token: 0x06007DD0 RID: 32208 RVA: 0x002FD361 File Offset: 0x002FB561
 	public void OnSetWaypoint()
 	{
 		this.localPlayer.navMarkerHidden = false;
@@ -1280,13 +1280,13 @@ public class XUiC_MapArea : XUiController
 		this.closeAllPopups();
 	}
 
-	// Token: 0x06007D82 RID: 32130 RVA: 0x002FB876 File Offset: 0x002F9A76
+	// Token: 0x06007DD1 RID: 32209 RVA: 0x002FD392 File Offset: 0x002FB592
 	public void OnWaypointEntryChosen(string _iconName)
 	{
 		this.currentWaypointIconChosen = _iconName;
 	}
 
-	// Token: 0x06007D83 RID: 32131 RVA: 0x002FB880 File Offset: 0x002F9A80
+	// Token: 0x06007DD2 RID: 32210 RVA: 0x002FD39C File Offset: 0x002FB59C
 	public void OnWaypointCreated(string _name)
 	{
 		Waypoint w = new Waypoint();
@@ -1314,14 +1314,14 @@ public class XUiC_MapArea : XUiController
 		Manager.PlayInsidePlayerHead("ui_waypoint_add", -1, 0f, false, false);
 	}
 
-	// Token: 0x06007D84 RID: 32132 RVA: 0x002FBA17 File Offset: 0x002F9C17
+	// Token: 0x06007DD3 RID: 32211 RVA: 0x002FD533 File Offset: 0x002FB733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxStaticMapType_OnValueChanged(XUiController _sender, XUiC_MapArea.EStaticMapOverlay _oldvalue, XUiC_MapArea.EStaticMapOverlay _newvalue)
 	{
 		this.staticWorldTexture = null;
 	}
 
-	// Token: 0x06007D85 RID: 32133 RVA: 0x002FBA20 File Offset: 0x002F9C20
+	// Token: 0x06007DD4 RID: 32212 RVA: 0x002FD53C File Offset: 0x002FB73C
 	public void RefreshVehiclePositionWaypoint(EntityVehicle _vehicle, bool _unloaded)
 	{
 		Log.Out("Refresh Vehicle Position Waypoint {0} {1}", new object[] { _vehicle.entityId, _unloaded });
@@ -1361,7 +1361,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D86 RID: 32134 RVA: 0x002FBBC0 File Offset: 0x002F9DC0
+	// Token: 0x06007DD5 RID: 32213 RVA: 0x002FD6DC File Offset: 0x002FB8DC
 	public void RefreshAnimalPositionWaypoint(EntityAnimal _animal, bool _unloaded)
 	{
 		Log.Out("Refresh animal Position Waypoint {0} {1}", new object[] { _animal.entityId, _unloaded });
@@ -1401,7 +1401,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D87 RID: 32135 RVA: 0x002FBD57 File Offset: 0x002F9F57
+	// Token: 0x06007DD6 RID: 32214 RVA: 0x002FD873 File Offset: 0x002FBA73
 	public void RemoveVehicleLastKnownWaypoint(EntityVehicle _vehicle)
 	{
 		if (this.xui.playerUI.entityPlayer.Waypoints.TryRemoveLastKnownPositionWaypoint(_vehicle.entityId))
@@ -1410,7 +1410,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D88 RID: 32136 RVA: 0x002FBD57 File Offset: 0x002F9F57
+	// Token: 0x06007DD7 RID: 32215 RVA: 0x002FD873 File Offset: 0x002FBA73
 	public void RemoveAnimalLastKnownWaypoint(EntityAnimal _animal)
 	{
 		if (this.xui.playerUI.entityPlayer.Waypoints.TryRemoveLastKnownPositionWaypoint(_animal.entityId))
@@ -1419,7 +1419,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D89 RID: 32137 RVA: 0x002FBD98 File Offset: 0x002F9F98
+	// Token: 0x06007DD8 RID: 32216 RVA: 0x002FD8B4 File Offset: 0x002FBAB4
 	public void RefreshDronePositionWaypoint(EntityDrone _drone, bool _unloaded)
 	{
 		Log.Out("Refresh Drone Position Waypoint {0} {1}", new object[] { _drone.entityId, _unloaded });
@@ -1459,7 +1459,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D8A RID: 32138 RVA: 0x002FBF44 File Offset: 0x002FA144
+	// Token: 0x06007DD9 RID: 32217 RVA: 0x002FDA60 File Offset: 0x002FBC60
 	public void RefreshDronePositionWaypoint(int _entityId, Vector3i _pos, bool _unloaded)
 	{
 		Waypoint waypoint = new Waypoint();
@@ -1488,7 +1488,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D8B RID: 32139 RVA: 0x002FC0A1 File Offset: 0x002FA2A1
+	// Token: 0x06007DDA RID: 32218 RVA: 0x002FDBBD File Offset: 0x002FBDBD
 	public void RemoveDronePositionWaypoint(int _entityId)
 	{
 		if (this.xui.playerUI.entityPlayer.Waypoints.TryRemoveLastKnownPositionWaypoint(_entityId))
@@ -1497,7 +1497,7 @@ public class XUiC_MapArea : XUiController
 		}
 	}
 
-	// Token: 0x06007D8C RID: 32140 RVA: 0x002FC0DC File Offset: 0x002FA2DC
+	// Token: 0x06007DDB RID: 32219 RVA: 0x002FDBF8 File Offset: 0x002FBDF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onWaypointIconPressed(XUiController _sender, int _mouseButton)
 	{
@@ -1513,21 +1513,21 @@ public class XUiC_MapArea : XUiController
 		this.localPlayer.markerPosition = Vector3i.zero;
 	}
 
-	// Token: 0x06007D8D RID: 32141 RVA: 0x002FC147 File Offset: 0x002FA347
+	// Token: 0x06007DDC RID: 32220 RVA: 0x002FDC63 File Offset: 0x002FBE63
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void selectWaypoint(Waypoint _w)
 	{
 		((XUiC_MapWaypointList)base.Parent.GetChildById("waypointList")).SelectWaypoint(_w);
 	}
 
-	// Token: 0x06007D8E RID: 32142 RVA: 0x002FC164 File Offset: 0x002FA364
+	// Token: 0x06007DDD RID: 32221 RVA: 0x002FDC80 File Offset: 0x002FBE80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void selectWaypoint(NavObject _nav)
 	{
 		((XUiC_MapWaypointList)base.Parent.GetChildById("waypointList")).SelectWaypoint(_nav);
 	}
 
-	// Token: 0x06007D8F RID: 32143 RVA: 0x002FC184 File Offset: 0x002FA384
+	// Token: 0x06007DDE RID: 32222 RVA: 0x002FDCA0 File Offset: 0x002FBEA0
 	public void closeAllPopups()
 	{
 		this.xui.GetWindow("mapAreaSetWaypoint").IsVisible = false;
@@ -1537,7 +1537,7 @@ public class XUiC_MapArea : XUiController
 		this.mapView.SelectCursorElement(false, false);
 	}
 
-	// Token: 0x06007D90 RID: 32144 RVA: 0x002FC1F8 File Offset: 0x002FA3F8
+	// Token: 0x06007DDF RID: 32223 RVA: 0x002FDD14 File Offset: 0x002FBF14
 	public void PositionMapAt(Vector3 _worldPos)
 	{
 		int num = (int)_worldPos.x;
@@ -1548,327 +1548,327 @@ public class XUiC_MapArea : XUiController
 		this.updateFullMap();
 	}
 
-	// Token: 0x06007D91 RID: 32145 RVA: 0x002FC27E File Offset: 0x002FA47E
+	// Token: 0x06007DE0 RID: 32224 RVA: 0x002FDD9A File Offset: 0x002FBF9A
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		global::UnityEngine.Object.Destroy(this.mapTexture);
 	}
 
-	// Token: 0x04005CEC RID: 23788
+	// Token: 0x04005D27 RID: 23847
 	public const int MapDrawnSizeInChunks = 128;
 
-	// Token: 0x04005CED RID: 23789
-	public const int MapDrawnSize = 2048;
-
-	// Token: 0x04005CEE RID: 23790
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cMinZoomScale = 0.7f;
-
-	// Token: 0x04005CEF RID: 23791
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cMaxZoomScale = 6.15f;
-
-	// Token: 0x04005CF0 RID: 23792
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int cSpriteScale = 50;
-
-	// Token: 0x04005CF1 RID: 23793
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const int MapOnScreenSize = 712;
-
-	// Token: 0x04005CF2 RID: 23794
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2i cTexMiddle = new Vector2i(356, 356);
-
-	// Token: 0x04005CF3 RID: 23795
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const int MapSizeFull = 2048;
-
-	// Token: 0x04005CF4 RID: 23796
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const int MapSizeZoom1 = 336;
-
-	// Token: 0x04005CF5 RID: 23797
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float factorScreenSizeToDTM = 2.1190476f;
-
-	// Token: 0x04005CF6 RID: 23798
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float dragFactorSizeOfMap = 0.47191012f;
-
-	// Token: 0x04005CF7 RID: 23799
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool showStaticData;
-
-	// Token: 0x04005CF8 RID: 23800
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Color32[] staticWorldTexture;
-
-	// Token: 0x04005CF9 RID: 23801
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int staticWorldWidth;
-
-	// Token: 0x04005CFA RID: 23802
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int staticWorldHeight;
-
-	// Token: 0x04005CFB RID: 23803
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int staticMapLeft;
-
-	// Token: 0x04005CFC RID: 23804
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int staticMapRight;
-
-	// Token: 0x04005CFD RID: 23805
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int staticMapBottom;
-
-	// Token: 0x04005CFE RID: 23806
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int staticMapTop;
-
-	// Token: 0x04005CFF RID: 23807
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Texture2D mapTexture;
-
-	// Token: 0x04005D00 RID: 23808
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const byte mapMaskTransparency = 255;
-
-	// Token: 0x04005D01 RID: 23809
-	[PublicizedFrom(EAccessModifier.Private)]
-	public byte[][] fowChunkMaskAlphas = new byte[13][];
-
-	// Token: 0x04005D02 RID: 23810
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2 mapScrollTextureOffset;
-
-	// Token: 0x04005D03 RID: 23811
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int mapScrollTextureChunksOffsetX;
-
-	// Token: 0x04005D04 RID: 23812
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int mapScrollTextureChunksOffsetZ;
-
-	// Token: 0x04005D05 RID: 23813
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool existingWaypointsInitialized;
-
-	// Token: 0x04005D06 RID: 23814
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bMapInitialized;
-
-	// Token: 0x04005D07 RID: 23815
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bShouldRedrawMap;
-
-	// Token: 0x04005D08 RID: 23816
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float timeToRedrawMap;
-
-	// Token: 0x04005D09 RID: 23817
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bFowMaskEnabled;
-
-	// Token: 0x04005D0A RID: 23818
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2 mapMiddlePosChunks;
-
-	// Token: 0x04005D0B RID: 23819
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2 mapMiddlePosPixel;
-
-	// Token: 0x04005D0C RID: 23820
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2 mapMiddlePosChunksToServer;
-
-	// Token: 0x04005D0D RID: 23821
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float zoomScale;
-
-	// Token: 0x04005D0E RID: 23822
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float targetZoomScale;
-
-	// Token: 0x04005D0F RID: 23823
-	[PublicizedFrom(EAccessModifier.Private)]
-	public EntityPlayer localPlayer;
-
-	// Token: 0x04005D10 RID: 23824
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Texture xuiTexture;
-
-	// Token: 0x04005D11 RID: 23825
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Color32 defaultColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
-
-	// Token: 0x04005D12 RID: 23826
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Color32 hoverColor = new Color32(222, 206, 163, byte.MaxValue);
-
-	// Token: 0x04005D13 RID: 23827
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Color32 disabledColor = new Color32(96, 96, 96, byte.MaxValue);
-
-	// Token: 0x04005D14 RID: 23828
-	[PublicizedFrom(EAccessModifier.Private)]
-	public DictionarySave<long, MapObject> keyToMapObject = new DictionarySave<long, MapObject>();
-
-	// Token: 0x04005D15 RID: 23829
-	[PublicizedFrom(EAccessModifier.Private)]
-	public DictionarySave<int, NavObject> keyToNavObject = new DictionarySave<int, NavObject>();
-
-	// Token: 0x04005D16 RID: 23830
-	[PublicizedFrom(EAccessModifier.Private)]
-	public DictionarySave<int, GameObject> keyToNavSprite = new DictionarySave<int, GameObject>();
-
-	// Token: 0x04005D17 RID: 23831
-	[PublicizedFrom(EAccessModifier.Private)]
-	public DictionarySave<long, GameObject> keyToMapSprite = new DictionarySave<long, GameObject>();
-
-	// Token: 0x04005D18 RID: 23832
-	[PublicizedFrom(EAccessModifier.Private)]
-	public HashSetLong navObjectsOnMapAlive = new HashSetLong();
-
-	// Token: 0x04005D19 RID: 23833
-	[PublicizedFrom(EAccessModifier.Private)]
-	public HashSetLong mapObjectsOnMapAlive = new HashSetLong();
-
-	// Token: 0x04005D1A RID: 23834
-	[PublicizedFrom(EAccessModifier.Private)]
-	public NavObject closestMouseOverNavObject;
-
-	// Token: 0x04005D1B RID: 23835
-	[PublicizedFrom(EAccessModifier.Private)]
-	public GameObject prefabMapSprite;
-
-	// Token: 0x04005D1C RID: 23836
-	[PublicizedFrom(EAccessModifier.Private)]
-	public GameObject prefabMapSpriteStartPoint;
-
-	// Token: 0x04005D1D RID: 23837
-	[PublicizedFrom(EAccessModifier.Private)]
-	public GameObject prefabMapSpritePrefab;
-
-	// Token: 0x04005D1E RID: 23838
-	[PublicizedFrom(EAccessModifier.Private)]
-	public GameObject prefabMapSpriteEntitySpawner;
-
-	// Token: 0x04005D1F RID: 23839
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Transform transformSpritesParent;
-
-	// Token: 0x04005D20 RID: 23840
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Label uiLblPlayerPos;
-
-	// Token: 0x04005D21 RID: 23841
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Label uiLblBedrollPos;
-
-	// Token: 0x04005D22 RID: 23842
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Label uiLblCursorPos;
-
-	// Token: 0x04005D23 RID: 23843
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Label uiLblMapMarkerDistance;
-
-	// Token: 0x04005D24 RID: 23844
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Label uiLblMapMarkerInfo;
-
-	// Token: 0x04005D25 RID: 23845
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Button switchStaticMap;
-
-	// Token: 0x04005D26 RID: 23846
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiC_ComboBoxEnum<XUiC_MapArea.EStaticMapOverlay> cbxStaticMapType;
-
-	// Token: 0x04005D27 RID: 23847
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiController mapView;
-
 	// Token: 0x04005D28 RID: 23848
-	[PublicizedFrom(EAccessModifier.Private)]
-	public XUiV_Sprite crosshair;
+	public const int MapDrawnSize = 2048;
 
 	// Token: 0x04005D29 RID: 23849
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bMouseOverMap;
+	public const float cMinZoomScale = 0.7f;
 
 	// Token: 0x04005D2A RID: 23850
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 nextMarkerMousePosition = Vector3.zero;
+	public const float cMaxZoomScale = 6.15f;
 
 	// Token: 0x04005D2B RID: 23851
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isOpen;
+	public int cSpriteScale = 50;
 
 	// Token: 0x04005D2C RID: 23852
 	[PublicizedFrom(EAccessModifier.Private)]
-	public string kilometers;
+	public const int MapOnScreenSize = 712;
 
 	// Token: 0x04005D2D RID: 23853
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float mapScale = 1f;
+	public Vector2i cTexMiddle = new Vector2i(356, 356);
 
 	// Token: 0x04005D2E RID: 23854
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2 mapPos;
+	public const int MapSizeFull = 2048;
 
 	// Token: 0x04005D2F RID: 23855
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2 mapBGPos;
+	public const int MapSizeZoom1 = 336;
 
 	// Token: 0x04005D30 RID: 23856
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float ZOOM_SPEED = 5f;
+	public const float factorScreenSizeToDTM = 2.1190476f;
 
 	// Token: 0x04005D31 RID: 23857
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const KeyCode dragKey = KeyCode.Mouse0;
+	public const float dragFactorSizeOfMap = 0.47191012f;
 
 	// Token: 0x04005D32 RID: 23858
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int MaxMapSymbolSize = 100;
+	public bool showStaticData;
 
 	// Token: 0x04005D33 RID: 23859
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int MinMapSymbolSize = 9;
+	public Color32[] staticWorldTexture;
 
 	// Token: 0x04005D34 RID: 23860
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float mapSpriteMouseOverDistance = 20f;
+	public int staticWorldWidth;
 
 	// Token: 0x04005D35 RID: 23861
 	[PublicizedFrom(EAccessModifier.Private)]
-	public GameObject selectMapSprite;
+	public int staticWorldHeight;
 
 	// Token: 0x04005D36 RID: 23862
 	[PublicizedFrom(EAccessModifier.Private)]
-	public List<PrefabInstance> dynamicPrefabBuffer = new List<PrefabInstance>();
+	public int staticMapLeft;
 
 	// Token: 0x04005D37 RID: 23863
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bMapCursorSet;
+	public int staticMapRight;
 
 	// Token: 0x04005D38 RID: 23864
 	[PublicizedFrom(EAccessModifier.Private)]
+	public int staticMapBottom;
+
+	// Token: 0x04005D39 RID: 23865
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int staticMapTop;
+
+	// Token: 0x04005D3A RID: 23866
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Texture2D mapTexture;
+
+	// Token: 0x04005D3B RID: 23867
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const byte mapMaskTransparency = 255;
+
+	// Token: 0x04005D3C RID: 23868
+	[PublicizedFrom(EAccessModifier.Private)]
+	public byte[][] fowChunkMaskAlphas = new byte[13][];
+
+	// Token: 0x04005D3D RID: 23869
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2 mapScrollTextureOffset;
+
+	// Token: 0x04005D3E RID: 23870
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int mapScrollTextureChunksOffsetX;
+
+	// Token: 0x04005D3F RID: 23871
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int mapScrollTextureChunksOffsetZ;
+
+	// Token: 0x04005D40 RID: 23872
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool existingWaypointsInitialized;
+
+	// Token: 0x04005D41 RID: 23873
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bMapInitialized;
+
+	// Token: 0x04005D42 RID: 23874
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bShouldRedrawMap;
+
+	// Token: 0x04005D43 RID: 23875
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float timeToRedrawMap;
+
+	// Token: 0x04005D44 RID: 23876
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bFowMaskEnabled;
+
+	// Token: 0x04005D45 RID: 23877
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2 mapMiddlePosChunks;
+
+	// Token: 0x04005D46 RID: 23878
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2 mapMiddlePosPixel;
+
+	// Token: 0x04005D47 RID: 23879
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2 mapMiddlePosChunksToServer;
+
+	// Token: 0x04005D48 RID: 23880
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float zoomScale;
+
+	// Token: 0x04005D49 RID: 23881
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float targetZoomScale;
+
+	// Token: 0x04005D4A RID: 23882
+	[PublicizedFrom(EAccessModifier.Private)]
+	public EntityPlayer localPlayer;
+
+	// Token: 0x04005D4B RID: 23883
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Texture xuiTexture;
+
+	// Token: 0x04005D4C RID: 23884
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Color32 defaultColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
+
+	// Token: 0x04005D4D RID: 23885
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Color32 hoverColor = new Color32(222, 206, 163, byte.MaxValue);
+
+	// Token: 0x04005D4E RID: 23886
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Color32 disabledColor = new Color32(96, 96, 96, byte.MaxValue);
+
+	// Token: 0x04005D4F RID: 23887
+	[PublicizedFrom(EAccessModifier.Private)]
+	public DictionarySave<long, MapObject> keyToMapObject = new DictionarySave<long, MapObject>();
+
+	// Token: 0x04005D50 RID: 23888
+	[PublicizedFrom(EAccessModifier.Private)]
+	public DictionarySave<int, NavObject> keyToNavObject = new DictionarySave<int, NavObject>();
+
+	// Token: 0x04005D51 RID: 23889
+	[PublicizedFrom(EAccessModifier.Private)]
+	public DictionarySave<int, GameObject> keyToNavSprite = new DictionarySave<int, GameObject>();
+
+	// Token: 0x04005D52 RID: 23890
+	[PublicizedFrom(EAccessModifier.Private)]
+	public DictionarySave<long, GameObject> keyToMapSprite = new DictionarySave<long, GameObject>();
+
+	// Token: 0x04005D53 RID: 23891
+	[PublicizedFrom(EAccessModifier.Private)]
+	public HashSetLong navObjectsOnMapAlive = new HashSetLong();
+
+	// Token: 0x04005D54 RID: 23892
+	[PublicizedFrom(EAccessModifier.Private)]
+	public HashSetLong mapObjectsOnMapAlive = new HashSetLong();
+
+	// Token: 0x04005D55 RID: 23893
+	[PublicizedFrom(EAccessModifier.Private)]
+	public NavObject closestMouseOverNavObject;
+
+	// Token: 0x04005D56 RID: 23894
+	[PublicizedFrom(EAccessModifier.Private)]
+	public GameObject prefabMapSprite;
+
+	// Token: 0x04005D57 RID: 23895
+	[PublicizedFrom(EAccessModifier.Private)]
+	public GameObject prefabMapSpriteStartPoint;
+
+	// Token: 0x04005D58 RID: 23896
+	[PublicizedFrom(EAccessModifier.Private)]
+	public GameObject prefabMapSpritePrefab;
+
+	// Token: 0x04005D59 RID: 23897
+	[PublicizedFrom(EAccessModifier.Private)]
+	public GameObject prefabMapSpriteEntitySpawner;
+
+	// Token: 0x04005D5A RID: 23898
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Transform transformSpritesParent;
+
+	// Token: 0x04005D5B RID: 23899
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Label uiLblPlayerPos;
+
+	// Token: 0x04005D5C RID: 23900
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Label uiLblBedrollPos;
+
+	// Token: 0x04005D5D RID: 23901
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Label uiLblCursorPos;
+
+	// Token: 0x04005D5E RID: 23902
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Label uiLblMapMarkerDistance;
+
+	// Token: 0x04005D5F RID: 23903
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Label uiLblMapMarkerInfo;
+
+	// Token: 0x04005D60 RID: 23904
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Button switchStaticMap;
+
+	// Token: 0x04005D61 RID: 23905
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiC_ComboBoxEnum<XUiC_MapArea.EStaticMapOverlay> cbxStaticMapType;
+
+	// Token: 0x04005D62 RID: 23906
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiController mapView;
+
+	// Token: 0x04005D63 RID: 23907
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XUiV_Sprite crosshair;
+
+	// Token: 0x04005D64 RID: 23908
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bMouseOverMap;
+
+	// Token: 0x04005D65 RID: 23909
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector3 nextMarkerMousePosition = Vector3.zero;
+
+	// Token: 0x04005D66 RID: 23910
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isOpen;
+
+	// Token: 0x04005D67 RID: 23911
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string kilometers;
+
+	// Token: 0x04005D68 RID: 23912
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float mapScale = 1f;
+
+	// Token: 0x04005D69 RID: 23913
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2 mapPos;
+
+	// Token: 0x04005D6A RID: 23914
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2 mapBGPos;
+
+	// Token: 0x04005D6B RID: 23915
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float ZOOM_SPEED = 5f;
+
+	// Token: 0x04005D6C RID: 23916
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const KeyCode dragKey = KeyCode.Mouse0;
+
+	// Token: 0x04005D6D RID: 23917
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int MaxMapSymbolSize = 100;
+
+	// Token: 0x04005D6E RID: 23918
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int MinMapSymbolSize = 9;
+
+	// Token: 0x04005D6F RID: 23919
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float mapSpriteMouseOverDistance = 20f;
+
+	// Token: 0x04005D70 RID: 23920
+	[PublicizedFrom(EAccessModifier.Private)]
+	public GameObject selectMapSprite;
+
+	// Token: 0x04005D71 RID: 23921
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<PrefabInstance> dynamicPrefabBuffer = new List<PrefabInstance>();
+
+	// Token: 0x04005D72 RID: 23922
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bMapCursorSet;
+
+	// Token: 0x04005D73 RID: 23923
+	[PublicizedFrom(EAccessModifier.Private)]
 	public string currentWaypointIconChosen;
 
-	// Token: 0x02000F90 RID: 3984
+	// Token: 0x02000FA0 RID: 4000
 	public enum EStaticMapOverlay
 	{
-		// Token: 0x04005D3A RID: 23866
+		// Token: 0x04005D75 RID: 23925
 		None,
-		// Token: 0x04005D3B RID: 23867
+		// Token: 0x04005D76 RID: 23926
 		Radiation,
-		// Token: 0x04005D3C RID: 23868
+		// Token: 0x04005D77 RID: 23927
 		Biomes
 	}
 }

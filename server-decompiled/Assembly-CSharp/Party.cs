@@ -4,11 +4,11 @@ using Audio;
 using Twitch;
 using UnityEngine;
 
-// Token: 0x020008D1 RID: 2257
+// Token: 0x020008DB RID: 2267
 public class Party
 {
-	// Token: 0x170006E8 RID: 1768
-	// (get) Token: 0x060040BA RID: 16570 RVA: 0x00196C10 File Offset: 0x00194E10
+	// Token: 0x170006EE RID: 1774
+	// (get) Token: 0x060040DD RID: 16605 RVA: 0x00197CB8 File Offset: 0x00195EB8
 	public EntityPlayer Leader
 	{
 		get
@@ -21,8 +21,8 @@ public class Party
 		}
 	}
 
-	// Token: 0x170006E9 RID: 1769
-	// (get) Token: 0x060040BB RID: 16571 RVA: 0x00196C38 File Offset: 0x00194E38
+	// Token: 0x170006EF RID: 1775
+	// (get) Token: 0x060040DE RID: 16606 RVA: 0x00197CE0 File Offset: 0x00195EE0
 	public int GameStage
 	{
 		get
@@ -37,8 +37,8 @@ public class Party
 		}
 	}
 
-	// Token: 0x170006EA RID: 1770
-	// (get) Token: 0x060040BC RID: 16572 RVA: 0x00196C80 File Offset: 0x00194E80
+	// Token: 0x170006F0 RID: 1776
+	// (get) Token: 0x060040DF RID: 16607 RVA: 0x00197D28 File Offset: 0x00195F28
 	public int HighestGameStage
 	{
 		get
@@ -53,8 +53,8 @@ public class Party
 		}
 	}
 
-	// Token: 0x170006EB RID: 1771
-	// (get) Token: 0x060040BD RID: 16573 RVA: 0x00196CC0 File Offset: 0x00194EC0
+	// Token: 0x170006F1 RID: 1777
+	// (get) Token: 0x060040E0 RID: 16608 RVA: 0x00197D68 File Offset: 0x00195F68
 	public bool HasTwitchMember
 	{
 		get
@@ -70,8 +70,8 @@ public class Party
 		}
 	}
 
-	// Token: 0x170006EC RID: 1772
-	// (get) Token: 0x060040BE RID: 16574 RVA: 0x00196CFC File Offset: 0x00194EFC
+	// Token: 0x170006F2 RID: 1778
+	// (get) Token: 0x060040E1 RID: 16609 RVA: 0x00197DA4 File Offset: 0x00195FA4
 	public TwitchVoteLockTypes HasTwitchVoteLock
 	{
 		get
@@ -87,7 +87,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040BF RID: 16575 RVA: 0x00196D48 File Offset: 0x00194F48
+	// Token: 0x060040E2 RID: 16610 RVA: 0x00197DF0 File Offset: 0x00195FF0
 	public int GetHighestLootStage(float containerMod, float containerBonus)
 	{
 		int num = 0;
@@ -100,21 +100,21 @@ public class Party
 	}
 
 	// Token: 0x14000049 RID: 73
-	// (add) Token: 0x060040C0 RID: 16576 RVA: 0x00196D8C File Offset: 0x00194F8C
-	// (remove) Token: 0x060040C1 RID: 16577 RVA: 0x00196DC4 File Offset: 0x00194FC4
+	// (add) Token: 0x060040E3 RID: 16611 RVA: 0x00197E34 File Offset: 0x00196034
+	// (remove) Token: 0x060040E4 RID: 16612 RVA: 0x00197E6C File Offset: 0x0019606C
 	public event OnPartyMembersChanged PartyMemberAdded;
 
 	// Token: 0x1400004A RID: 74
-	// (add) Token: 0x060040C2 RID: 16578 RVA: 0x00196DFC File Offset: 0x00194FFC
-	// (remove) Token: 0x060040C3 RID: 16579 RVA: 0x00196E34 File Offset: 0x00195034
+	// (add) Token: 0x060040E5 RID: 16613 RVA: 0x00197EA4 File Offset: 0x001960A4
+	// (remove) Token: 0x060040E6 RID: 16614 RVA: 0x00197EDC File Offset: 0x001960DC
 	public event OnPartyMembersChanged PartyMemberRemoved;
 
 	// Token: 0x1400004B RID: 75
-	// (add) Token: 0x060040C4 RID: 16580 RVA: 0x00196E6C File Offset: 0x0019506C
-	// (remove) Token: 0x060040C5 RID: 16581 RVA: 0x00196EA4 File Offset: 0x001950A4
+	// (add) Token: 0x060040E7 RID: 16615 RVA: 0x00197F14 File Offset: 0x00196114
+	// (remove) Token: 0x060040E8 RID: 16616 RVA: 0x00197F4C File Offset: 0x0019614C
 	public event OnPartyChanged PartyLeaderChanged;
 
-	// Token: 0x060040C6 RID: 16582 RVA: 0x00196EDC File Offset: 0x001950DC
+	// Token: 0x060040E9 RID: 16617 RVA: 0x00197F84 File Offset: 0x00196184
 	public bool AddPlayer(EntityPlayer player)
 	{
 		if (this.MemberList.Contains(player))
@@ -155,7 +155,7 @@ public class Party
 		return true;
 	}
 
-	// Token: 0x060040C7 RID: 16583 RVA: 0x00197020 File Offset: 0x00195220
+	// Token: 0x060040EA RID: 16618 RVA: 0x001980C8 File Offset: 0x001962C8
 	public bool KickPlayer(EntityPlayer player)
 	{
 		if (!this.MemberList.Contains(player))
@@ -180,7 +180,7 @@ public class Party
 		return true;
 	}
 
-	// Token: 0x060040C8 RID: 16584 RVA: 0x001970A0 File Offset: 0x001952A0
+	// Token: 0x060040EB RID: 16619 RVA: 0x00198148 File Offset: 0x00196348
 	public bool RemovePlayer(EntityPlayer player)
 	{
 		if (!this.MemberList.Contains(player))
@@ -209,13 +209,13 @@ public class Party
 		return true;
 	}
 
-	// Token: 0x060040C9 RID: 16585 RVA: 0x00197154 File Offset: 0x00195354
+	// Token: 0x060040EC RID: 16620 RVA: 0x001981FC File Offset: 0x001963FC
 	public bool ContainsMember(EntityPlayer player)
 	{
 		return this.MemberList != null && this.MemberList.Contains(player);
 	}
 
-	// Token: 0x060040CA RID: 16586 RVA: 0x0019716C File Offset: 0x0019536C
+	// Token: 0x060040ED RID: 16621 RVA: 0x00198214 File Offset: 0x00196414
 	public bool ContainsMember(int entityID)
 	{
 		if (this.MemberList == null)
@@ -232,7 +232,7 @@ public class Party
 		return false;
 	}
 
-	// Token: 0x060040CB RID: 16587 RVA: 0x001971B0 File Offset: 0x001953B0
+	// Token: 0x060040EE RID: 16622 RVA: 0x00198258 File Offset: 0x00196458
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public int MemberCountInRange(EntityPlayer player)
 	{
@@ -248,7 +248,7 @@ public class Party
 		return num;
 	}
 
-	// Token: 0x060040CC RID: 16588 RVA: 0x00197218 File Offset: 0x00195418
+	// Token: 0x060040EF RID: 16623 RVA: 0x001982C0 File Offset: 0x001964C0
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public int MemberCountNotInRange(EntityPlayer player)
 	{
@@ -264,7 +264,7 @@ public class Party
 		return num;
 	}
 
-	// Token: 0x060040CD RID: 16589 RVA: 0x0019727C File Offset: 0x0019547C
+	// Token: 0x060040F0 RID: 16624 RVA: 0x00198324 File Offset: 0x00196524
 	public int MemberCountNotWithin(EntityPlayer player, Rect poiRect)
 	{
 		int num = 0;
@@ -284,14 +284,14 @@ public class Party
 		return num;
 	}
 
-	// Token: 0x060040CE RID: 16590 RVA: 0x001972E4 File Offset: 0x001954E4
+	// Token: 0x060040F1 RID: 16625 RVA: 0x0019838C File Offset: 0x0019658C
 	public int GetPartyXP(EntityPlayer player, int startingXP)
 	{
 		int num = this.MemberCountInRange(player);
 		return (int)((float)startingXP * (1f - 0.1f * (float)num));
 	}
 
-	// Token: 0x060040CF RID: 16591 RVA: 0x0019730C File Offset: 0x0019550C
+	// Token: 0x060040F2 RID: 16626 RVA: 0x001983B4 File Offset: 0x001965B4
 	public bool IsLocalParty()
 	{
 		for (int i = 0; i < this.MemberList.Count; i++)
@@ -304,7 +304,7 @@ public class Party
 		return false;
 	}
 
-	// Token: 0x060040D0 RID: 16592 RVA: 0x00197348 File Offset: 0x00195548
+	// Token: 0x060040F3 RID: 16627 RVA: 0x001983F0 File Offset: 0x001965F0
 	public int[] GetMemberIdArray()
 	{
 		int[] array = new int[this.MemberList.Count];
@@ -315,7 +315,7 @@ public class Party
 		return array;
 	}
 
-	// Token: 0x060040D1 RID: 16593 RVA: 0x00197394 File Offset: 0x00195594
+	// Token: 0x060040F4 RID: 16628 RVA: 0x0019843C File Offset: 0x0019663C
 	public List<int> GetMemberIdList(EntityPlayer exclude)
 	{
 		List<int> list = null;
@@ -333,7 +333,7 @@ public class Party
 		return list;
 	}
 
-	// Token: 0x060040D2 RID: 16594 RVA: 0x001973F0 File Offset: 0x001955F0
+	// Token: 0x060040F5 RID: 16629 RVA: 0x00198498 File Offset: 0x00196698
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void UpdateMemberList(World world, int[] partyMembers)
 	{
@@ -434,7 +434,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040D3 RID: 16595 RVA: 0x001977FC File Offset: 0x001959FC
+	// Token: 0x060040F6 RID: 16630 RVA: 0x001988A4 File Offset: 0x00196AA4
 	public void Disband()
 	{
 		for (int i = 0; i < this.MemberList.Count; i++)
@@ -444,7 +444,7 @@ public class Party
 		PartyManager.Current.RemoveParty(this);
 	}
 
-	// Token: 0x060040D4 RID: 16596 RVA: 0x0019783C File Offset: 0x00195A3C
+	// Token: 0x060040F7 RID: 16631 RVA: 0x001988E4 File Offset: 0x00196AE4
 	public static void ServerHandleAcceptInvite(EntityPlayer invitedBy, EntityPlayer invitedEntity)
 	{
 		if (invitedBy.Party == null)
@@ -474,14 +474,14 @@ public class Party
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackagePartyData>().Setup(invitedBy.Party, invitedEntity.entityId, NetPackagePartyData.PartyActions.AcceptInvite, false), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060040D5 RID: 16597 RVA: 0x0019793C File Offset: 0x00195B3C
+	// Token: 0x060040F8 RID: 16632 RVA: 0x001989E4 File Offset: 0x00196BE4
 	public static void ServerHandleChangeLead(EntityPlayer newHost)
 	{
 		newHost.Party.SetLeader(newHost);
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackagePartyData>().Setup(newHost.Party, newHost.entityId, NetPackagePartyData.PartyActions.ChangeLead, false), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060040D6 RID: 16598 RVA: 0x0019798C File Offset: 0x00195B8C
+	// Token: 0x060040F9 RID: 16633 RVA: 0x00198A34 File Offset: 0x00196C34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetLeader(EntityPlayer newHost)
 	{
@@ -496,7 +496,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040D7 RID: 16599 RVA: 0x001979E8 File Offset: 0x00195BE8
+	// Token: 0x060040FA RID: 16634 RVA: 0x00198A90 File Offset: 0x00196C90
 	public static void ServerHandleKickParty(int entityID)
 	{
 		EntityPlayer entityPlayer = GameManager.Instance.World.GetEntity(entityID) as EntityPlayer;
@@ -533,7 +533,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040D8 RID: 16600 RVA: 0x00197B04 File Offset: 0x00195D04
+	// Token: 0x060040FB RID: 16635 RVA: 0x00198BAC File Offset: 0x00196DAC
 	public static void ServerHandleLeaveParty(EntityPlayer player, int entityID)
 	{
 		if (player.Party != null)
@@ -573,7 +573,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040D9 RID: 16601 RVA: 0x00197C20 File Offset: 0x00195E20
+	// Token: 0x060040FC RID: 16636 RVA: 0x00198CC8 File Offset: 0x00196EC8
 	public static void ServerHandleDisconnectParty(EntityPlayer player)
 	{
 		if (player.Party != null)
@@ -609,14 +609,14 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040DA RID: 16602 RVA: 0x00197D29 File Offset: 0x00195F29
+	// Token: 0x060040FD RID: 16637 RVA: 0x00198DD1 File Offset: 0x00196FD1
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool IsFull()
 	{
 		return this.MemberList.Count == 8;
 	}
 
-	// Token: 0x060040DB RID: 16603 RVA: 0x00197D3C File Offset: 0x00195F3C
+	// Token: 0x060040FE RID: 16638 RVA: 0x00198DE4 File Offset: 0x00196FE4
 	public static void ServerHandleAutoJoinParty(EntityPlayer joiningEntity)
 	{
 		Party party = PartyManager.Current.GetParty(1);
@@ -630,7 +630,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040DC RID: 16604 RVA: 0x00197D9C File Offset: 0x00195F9C
+	// Token: 0x060040FF RID: 16639 RVA: 0x00198E44 File Offset: 0x00197044
 	public static void ServerHandleSetVoiceLoby(EntityPlayer player, string voiceLobbyId)
 	{
 		if (player.Party != null)
@@ -645,7 +645,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040DD RID: 16605 RVA: 0x00197E24 File Offset: 0x00196024
+	// Token: 0x06004100 RID: 16640 RVA: 0x00198ECC File Offset: 0x001970CC
 	public void ClearAllNavObjectColors()
 	{
 		for (int i = 0; i < this.MemberList.Count; i++)
@@ -657,7 +657,7 @@ public class Party
 		}
 	}
 
-	// Token: 0x060040DE RID: 16606 RVA: 0x00197E74 File Offset: 0x00196074
+	// Token: 0x06004101 RID: 16641 RVA: 0x00198F1C File Offset: 0x0019711C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public EntityPlayer GetMemberAtIndex(int index, EntityPlayer excludePlayer)
 	{
@@ -676,19 +676,19 @@ public class Party
 		return null;
 	}
 
-	// Token: 0x040034DE RID: 13534
+	// Token: 0x040034FE RID: 13566
 	public int LeaderIndex;
 
-	// Token: 0x040034DF RID: 13535
+	// Token: 0x040034FF RID: 13567
 	public int PartyID = -1;
 
-	// Token: 0x040034E0 RID: 13536
+	// Token: 0x04003500 RID: 13568
 	public string VoiceLobbyId;
 
-	// Token: 0x040034E1 RID: 13537
+	// Token: 0x04003501 RID: 13569
 	public List<EntityPlayer> MemberList = new List<EntityPlayer>();
 
-	// Token: 0x040034E5 RID: 13541
+	// Token: 0x04003505 RID: 13573
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityPlayer> changedPlayers = new List<EntityPlayer>();
 }

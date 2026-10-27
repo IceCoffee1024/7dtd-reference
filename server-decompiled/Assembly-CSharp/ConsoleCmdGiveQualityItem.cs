@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000225 RID: 549
+// Token: 0x02000227 RID: 551
 [Preserve]
 public class ConsoleCmdGiveQualityItem : ConsoleCmdAbstract
 {
-	// Token: 0x0600108E RID: 4238 RVA: 0x00069809 File Offset: 0x00067A09
+	// Token: 0x06001092 RID: 4242 RVA: 0x000699D9 File Offset: 0x00067BD9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdGiveQualityItem : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000190 RID: 400
-	// (get) Token: 0x0600108F RID: 4239 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001093 RID: 4243 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdGiveQualityItem : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000191 RID: 401
-	// (get) Token: 0x06001090 RID: 4240 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x06001094 RID: 4244 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -35,7 +35,7 @@ public class ConsoleCmdGiveQualityItem : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001091 RID: 4241 RVA: 0x0006981C File Offset: 0x00067A1C
+	// Token: 0x06001095 RID: 4245 RVA: 0x000699EC File Offset: 0x00067BEC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -89,7 +89,7 @@ public class ConsoleCmdGiveQualityItem : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001092 RID: 4242 RVA: 0x00069968 File Offset: 0x00067B68
+	// Token: 0x06001096 RID: 4246 RVA: 0x00069B38 File Offset: 0x00067D38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

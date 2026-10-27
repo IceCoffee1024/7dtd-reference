@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015C5 RID: 5573
+// Token: 0x020015D7 RID: 5591
 [RequireComponent(typeof(AudioSource))]
 public class vp_Debris : MonoBehaviour
 {
-	// Token: 0x0600AE0A RID: 44554 RVA: 0x0040EEB4 File Offset: 0x0040D0B4
+	// Token: 0x0600AE62 RID: 44642 RVA: 0x004112B8 File Offset: 0x0040F4B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -31,7 +31,7 @@ public class vp_Debris : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AE0B RID: 44555 RVA: 0x0040EF48 File Offset: 0x0040D148
+	// Token: 0x0600AE63 RID: 44643 RVA: 0x0041134C File Offset: 0x0040F54C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -69,7 +69,7 @@ public class vp_Debris : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AE0C RID: 44556 RVA: 0x0040F0F9 File Offset: 0x0040D2F9
+	// Token: 0x0600AE64 RID: 44644 RVA: 0x004114FD File Offset: 0x0040F6FD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -79,43 +79,43 @@ public class vp_Debris : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400815D RID: 33117
+	// Token: 0x0400819E RID: 33182
 	public float Radius = 2f;
 
-	// Token: 0x0400815E RID: 33118
+	// Token: 0x0400819F RID: 33183
 	public float Force = 10f;
 
-	// Token: 0x0400815F RID: 33119
+	// Token: 0x040081A0 RID: 33184
 	public float UpForce = 1f;
 
-	// Token: 0x04008160 RID: 33120
+	// Token: 0x040081A1 RID: 33185
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x04008161 RID: 33121
+	// Token: 0x040081A2 RID: 33186
 	public List<AudioClip> Sounds = new List<AudioClip>();
 
-	// Token: 0x04008162 RID: 33122
+	// Token: 0x040081A3 RID: 33187
 	public float SoundMinPitch = 0.8f;
 
-	// Token: 0x04008163 RID: 33123
+	// Token: 0x040081A4 RID: 33188
 	public float SoundMaxPitch = 1.2f;
 
-	// Token: 0x04008164 RID: 33124
+	// Token: 0x040081A5 RID: 33189
 	public float LifeTime = 5f;
 
-	// Token: 0x04008165 RID: 33125
+	// Token: 0x040081A6 RID: 33190
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Destroy;
 
-	// Token: 0x04008166 RID: 33126
+	// Token: 0x040081A7 RID: 33191
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Collider[] m_Colliders;
 
-	// Token: 0x04008167 RID: 33127
+	// Token: 0x040081A8 RID: 33192
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<Collider, Dictionary<string, object>> m_PiecesInitial = new Dictionary<Collider, Dictionary<string, object>>();

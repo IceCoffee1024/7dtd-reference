@@ -8,7 +8,7 @@ public class BlockRule<O, M>
 	{
 	}
 
-	// Token: 0x06000DDA RID: 3546 RVA: 0x0005BB17 File Offset: 0x00059D17
+	// Token: 0x06000DDA RID: 3546 RVA: 0x0005BAB7 File Offset: 0x00059CB7
 	public BlockRule(O _output, M[] _mask)
 	{
 		this.Output = _output;

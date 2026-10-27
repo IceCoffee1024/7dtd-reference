@@ -2,16 +2,16 @@
 
 namespace Platform.Local
 {
-	// Token: 0x02001CF8 RID: 7416
+	// Token: 0x02001D29 RID: 7465
 	public class Api : IPlatformApi
 	{
-		// Token: 0x17001BF8 RID: 7160
-		// (get) Token: 0x0600DC2E RID: 56366 RVA: 0x004E86F0 File Offset: 0x004E68F0
+		// Token: 0x17001C40 RID: 7232
+		// (get) Token: 0x0600DD42 RID: 56642 RVA: 0x004EC290 File Offset: 0x004EA490
 		public EApiStatus ClientApiStatus { get; }
 
 		// Token: 0x1400013B RID: 315
-		// (add) Token: 0x0600DC2F RID: 56367 RVA: 0x004E86F8 File Offset: 0x004E68F8
-		// (remove) Token: 0x0600DC30 RID: 56368 RVA: 0x000027FC File Offset: 0x000009FC
+		// (add) Token: 0x0600DD43 RID: 56643 RVA: 0x004EC298 File Offset: 0x004EA498
+		// (remove) Token: 0x0600DD44 RID: 56644 RVA: 0x000027FC File Offset: 0x000009FC
 		public event Action ClientApiInitialized
 		{
 			add
@@ -26,39 +26,39 @@ namespace Platform.Local
 			}
 		}
 
-		// Token: 0x0600DC31 RID: 56369 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD45 RID: 56645 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600DC32 RID: 56370 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600DD46 RID: 56646 RVA: 0x00020119 File Offset: 0x0001E319
 		public bool InitClientApis()
 		{
 			return true;
 		}
 
-		// Token: 0x0600DC33 RID: 56371 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600DD47 RID: 56647 RVA: 0x00020119 File Offset: 0x0001E319
 		public bool InitServerApis()
 		{
 			return true;
 		}
 
-		// Token: 0x0600DC34 RID: 56372 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD48 RID: 56648 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ServerApiLoaded()
 		{
 		}
 
-		// Token: 0x0600DC35 RID: 56373 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD49 RID: 56649 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x0600DC36 RID: 56374 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD4A RID: 56650 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}
 
-		// Token: 0x0600DC37 RID: 56375 RVA: 0x00041064 File Offset: 0x0003F264
+		// Token: 0x0600DD4B RID: 56651 RVA: 0x00041024 File Offset: 0x0003F224
 		public float GetScreenBoundsValueFromSystem()
 		{
 			return 1f;

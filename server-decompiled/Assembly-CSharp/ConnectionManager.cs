@@ -9,26 +9,26 @@ using Services.Analytics;
 using Services.Analytics.Events;
 using UnityEngine;
 
-// Token: 0x02000770 RID: 1904
+// Token: 0x02000778 RID: 1912
 public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 {
 	// Token: 0x14000042 RID: 66
-	// (add) Token: 0x060038A7 RID: 14503 RVA: 0x00172A4C File Offset: 0x00170C4C
-	// (remove) Token: 0x060038A8 RID: 14504 RVA: 0x00172A84 File Offset: 0x00170C84
+	// (add) Token: 0x060038BE RID: 14526 RVA: 0x001739E4 File Offset: 0x00171BE4
+	// (remove) Token: 0x060038BF RID: 14527 RVA: 0x00173A1C File Offset: 0x00171C1C
 	public event Action OnDisconnectFromServer;
 
 	// Token: 0x14000043 RID: 67
-	// (add) Token: 0x060038A9 RID: 14505 RVA: 0x00172ABC File Offset: 0x00170CBC
-	// (remove) Token: 0x060038AA RID: 14506 RVA: 0x00172AF0 File Offset: 0x00170CF0
+	// (add) Token: 0x060038C0 RID: 14528 RVA: 0x00173A54 File Offset: 0x00171C54
+	// (remove) Token: 0x060038C1 RID: 14529 RVA: 0x00173A88 File Offset: 0x00171C88
 	public static event ConnectionManager.ClientConnectionAction OnClientAdded;
 
 	// Token: 0x14000044 RID: 68
-	// (add) Token: 0x060038AB RID: 14507 RVA: 0x00172B24 File Offset: 0x00170D24
-	// (remove) Token: 0x060038AC RID: 14508 RVA: 0x00172B58 File Offset: 0x00170D58
+	// (add) Token: 0x060038C2 RID: 14530 RVA: 0x00173ABC File Offset: 0x00171CBC
+	// (remove) Token: 0x060038C3 RID: 14531 RVA: 0x00173AF0 File Offset: 0x00171CF0
 	public static event ConnectionManager.ClientConnectionAction OnClientDisconnected;
 
-	// Token: 0x170005BC RID: 1468
-	// (get) Token: 0x060038AD RID: 14509 RVA: 0x00172B8B File Offset: 0x00170D8B
+	// Token: 0x170005C0 RID: 1472
+	// (get) Token: 0x060038C4 RID: 14532 RVA: 0x00173B23 File Offset: 0x00171D23
 	public bool HasRunningServers
 	{
 		get
@@ -37,8 +37,8 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x170005BD RID: 1469
-	// (get) Token: 0x060038AE RID: 14510 RVA: 0x00172B98 File Offset: 0x00170D98
+	// Token: 0x170005C1 RID: 1473
+	// (get) Token: 0x060038C5 RID: 14533 RVA: 0x00173B30 File Offset: 0x00171D30
 	public ProtocolManager.NetworkType CurrentMode
 	{
 		get
@@ -47,8 +47,8 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x170005BE RID: 1470
-	// (get) Token: 0x060038AF RID: 14511 RVA: 0x00172BA5 File Offset: 0x00170DA5
+	// Token: 0x170005C2 RID: 1474
+	// (get) Token: 0x060038C6 RID: 14534 RVA: 0x00173B3D File Offset: 0x00171D3D
 	public bool IsServer
 	{
 		get
@@ -57,8 +57,8 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x170005BF RID: 1471
-	// (get) Token: 0x060038B0 RID: 14512 RVA: 0x00172BB2 File Offset: 0x00170DB2
+	// Token: 0x170005C3 RID: 1475
+	// (get) Token: 0x060038C7 RID: 14535 RVA: 0x00173B4A File Offset: 0x00171D4A
 	public bool IsClient
 	{
 		get
@@ -67,8 +67,8 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x170005C0 RID: 1472
-	// (get) Token: 0x060038B1 RID: 14513 RVA: 0x00172BBF File Offset: 0x00170DBF
+	// Token: 0x170005C4 RID: 1476
+	// (get) Token: 0x060038C8 RID: 14536 RVA: 0x00173B57 File Offset: 0x00171D57
 	public bool IsSinglePlayer
 	{
 		get
@@ -77,18 +77,18 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x170005C1 RID: 1473
-	// (get) Token: 0x060038B2 RID: 14514 RVA: 0x00172BD4 File Offset: 0x00170DD4
-	// (set) Token: 0x060038B3 RID: 14515 RVA: 0x00172BDC File Offset: 0x00170DDC
+	// Token: 0x170005C5 RID: 1477
+	// (get) Token: 0x060038C9 RID: 14537 RVA: 0x00173B6C File Offset: 0x00171D6C
+	// (set) Token: 0x060038CA RID: 14538 RVA: 0x00173B74 File Offset: 0x00171D74
 	public GameServerInfo LastGameServerInfo { get; set; }
 
-	// Token: 0x170005C2 RID: 1474
-	// (get) Token: 0x060038B4 RID: 14516 RVA: 0x00172BE5 File Offset: 0x00170DE5
-	// (set) Token: 0x060038B5 RID: 14517 RVA: 0x00172BED File Offset: 0x00170DED
+	// Token: 0x170005C6 RID: 1478
+	// (get) Token: 0x060038CB RID: 14539 RVA: 0x00173B7D File Offset: 0x00171D7D
+	// (set) Token: 0x060038CC RID: 14540 RVA: 0x00173B85 File Offset: 0x00171D85
 	public GameServerInfo LocalServerInfo { get; set; }
 
-	// Token: 0x170005C3 RID: 1475
-	// (get) Token: 0x060038B6 RID: 14518 RVA: 0x00172BF6 File Offset: 0x00170DF6
+	// Token: 0x170005C7 RID: 1479
+	// (get) Token: 0x060038CD RID: 14541 RVA: 0x00173B8E File Offset: 0x00171D8E
 	public GameServerInfo CurrentGameServerInfoServerOrClient
 	{
 		get
@@ -105,12 +105,12 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x170005C4 RID: 1476
-	// (get) Token: 0x060038B7 RID: 14519 RVA: 0x00172C17 File Offset: 0x00170E17
-	// (set) Token: 0x060038B8 RID: 14520 RVA: 0x00172C1F File Offset: 0x00170E1F
+	// Token: 0x170005C8 RID: 1480
+	// (get) Token: 0x060038CE RID: 14542 RVA: 0x00173BAF File Offset: 0x00171DAF
+	// (set) Token: 0x060038CF RID: 14543 RVA: 0x00173BB7 File Offset: 0x00171DB7
 	public string LastJoinSource { get; set; } = "Unknown";
 
-	// Token: 0x060038B9 RID: 14521 RVA: 0x00172C28 File Offset: 0x00170E28
+	// Token: 0x060038D0 RID: 14544 RVA: 0x00173BC0 File Offset: 0x00171DC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void singletonAwake()
 	{
@@ -124,7 +124,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		NetPackageLogger.Init();
 	}
 
-	// Token: 0x060038BA RID: 14522 RVA: 0x00172C82 File Offset: 0x00170E82
+	// Token: 0x060038D1 RID: 14545 RVA: 0x00173C1A File Offset: 0x00171E1A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void singletonDestroy()
 	{
@@ -132,7 +132,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		GamePrefs.OnGamePrefChanged -= this.OnGamePrefChanged;
 	}
 
-	// Token: 0x060038BB RID: 14523 RVA: 0x00172C9B File Offset: 0x00170E9B
+	// Token: 0x060038D2 RID: 14546 RVA: 0x00173C33 File Offset: 0x00171E33
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -142,7 +142,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038BC RID: 14524 RVA: 0x00172CB4 File Offset: 0x00170EB4
+	// Token: 0x060038D3 RID: 14547 RVA: 0x00173C4C File Offset: 0x00171E4C
 	public void Disconnect()
 	{
 		if (this.Clients != null)
@@ -178,14 +178,14 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		this.IsConnected = false;
 	}
 
-	// Token: 0x060038BD RID: 14525 RVA: 0x00172D86 File Offset: 0x00170F86
+	// Token: 0x060038D4 RID: 14548 RVA: 0x00173D1E File Offset: 0x00171F1E
 	public void BeginHeartbeat(float seconds)
 	{
 		this.countdownAnalyticsHeartbeat.SetTimeout(seconds);
 		this.countdownAnalyticsHeartbeat.ResetAndRestart();
 	}
 
-	// Token: 0x060038BE RID: 14526 RVA: 0x00172DA0 File Offset: 0x00170FA0
+	// Token: 0x060038D5 RID: 14549 RVA: 0x00173D38 File Offset: 0x00171F38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openConnectProgressWindow(GameServerInfo _gameServerInfo)
 	{
@@ -216,7 +216,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}, true, true, false);
 	}
 
-	// Token: 0x060038BF RID: 14527 RVA: 0x00172EAC File Offset: 0x001710AC
+	// Token: 0x060038D6 RID: 14550 RVA: 0x00173E44 File Offset: 0x00172044
 	public void Connect(GameServerInfo _gameServerInfo)
 	{
 		if (PlatformApplicationManager.IsRestartRequired)
@@ -245,19 +245,19 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		this.protocolManager.ConnectToServer(_gameServerInfo);
 	}
 
-	// Token: 0x060038C0 RID: 14528 RVA: 0x00172F45 File Offset: 0x00171145
+	// Token: 0x060038D7 RID: 14551 RVA: 0x00173EDD File Offset: 0x001720DD
 	public void SetConnectionToServer(INetConnection[] _cons)
 	{
 		this.connectionToServer = _cons;
 	}
 
-	// Token: 0x060038C1 RID: 14529 RVA: 0x00172F4E File Offset: 0x0017114E
+	// Token: 0x060038D8 RID: 14552 RVA: 0x00173EE6 File Offset: 0x001720E6
 	public INetConnection[] GetConnectionToServer()
 	{
 		return this.connectionToServer;
 	}
 
-	// Token: 0x060038C2 RID: 14530 RVA: 0x00172F56 File Offset: 0x00171156
+	// Token: 0x060038D9 RID: 14553 RVA: 0x00173EEE File Offset: 0x001720EE
 	public void DisconnectFromServer()
 	{
 		Action onDisconnectFromServer = this.OnDisconnectFromServer;
@@ -276,7 +276,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038C3 RID: 14531 RVA: 0x00172F98 File Offset: 0x00171198
+	// Token: 0x060038DA RID: 14554 RVA: 0x00173F30 File Offset: 0x00172130
 	public void SendToServer(NetPackage _package, bool _flush = false)
 	{
 		int channel = _package.Channel;
@@ -295,7 +295,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038C4 RID: 14532 RVA: 0x00172FE8 File Offset: 0x001711E8
+	// Token: 0x060038DB RID: 14555 RVA: 0x00173F80 File Offset: 0x00172180
 	public NetworkConnectionError StartServers(string _password, bool _offline)
 	{
 		if (PlatformApplicationManager.IsRestartRequired)
@@ -333,13 +333,13 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		return networkConnectionError;
 	}
 
-	// Token: 0x060038C5 RID: 14533 RVA: 0x00173082 File Offset: 0x00171282
+	// Token: 0x060038DC RID: 14556 RVA: 0x0017401A File Offset: 0x0017221A
 	public void MakeServerOffline()
 	{
 		this.protocolManager.MakeServerOffline();
 	}
 
-	// Token: 0x060038C6 RID: 14534 RVA: 0x00173090 File Offset: 0x00171290
+	// Token: 0x060038DD RID: 14557 RVA: 0x00174028 File Offset: 0x00172228
 	public void StopServers()
 	{
 		Log.Out("[NET] ServerShutdown");
@@ -361,7 +361,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038C7 RID: 14535 RVA: 0x001730FD File Offset: 0x001712FD
+	// Token: 0x060038DE RID: 14558 RVA: 0x00174095 File Offset: 0x00172295
 	public void ServerReady()
 	{
 		if (!this.IsConnected)
@@ -371,13 +371,13 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		this.IsConnected = true;
 	}
 
-	// Token: 0x060038C8 RID: 14536 RVA: 0x00173119 File Offset: 0x00171319
+	// Token: 0x060038DF RID: 14559 RVA: 0x001740B1 File Offset: 0x001722B1
 	public int ClientCount()
 	{
 		return this.Clients.Count;
 	}
 
-	// Token: 0x060038C9 RID: 14537 RVA: 0x00173128 File Offset: 0x00171328
+	// Token: 0x060038E0 RID: 14560 RVA: 0x001740C0 File Offset: 0x001722C0
 	public void AddClient(ClientInfo _cInfo)
 	{
 		ConnectionManager.ClientConnectionAction onClientAdded = ConnectionManager.OnClientAdded;
@@ -390,7 +390,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		GameSparksCollector.SetMax(GameSparksCollector.GSDataKey.PeakConcurrentPlayers, null, this.ClientCount() + (GameManager.IsDedicatedServer ? 0 : 1), false, GameSparksCollector.GSDataCollection.SessionTotal);
 	}
 
-	// Token: 0x060038CA RID: 14538 RVA: 0x00173180 File Offset: 0x00171380
+	// Token: 0x060038E1 RID: 14561 RVA: 0x00174118 File Offset: 0x00172318
 	public void DisconnectClient(ClientInfo _cInfo, bool _bShutdown = false, bool _clientDisconnect = false)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -478,7 +478,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038CB RID: 14539 RVA: 0x001733C2 File Offset: 0x001715C2
+	// Token: 0x060038E2 RID: 14562 RVA: 0x0017435A File Offset: 0x0017255A
 	public void SetClientEntityId(ClientInfo _cInfo, int _entityId, PlayerDataFile _pdf)
 	{
 		_cInfo.entityId = _entityId;
@@ -486,7 +486,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		_cInfo.latestPlayerData = _pdf;
 	}
 
-	// Token: 0x060038CC RID: 14540 RVA: 0x001733DC File Offset: 0x001715DC
+	// Token: 0x060038E3 RID: 14563 RVA: 0x00174374 File Offset: 0x00172574
 	public void SendPackage(List<NetPackage> _packages, bool _onlyClientsAttachedToAnEntity = false, int _attachedToEntityId = -1, int _allButAttachedToEntityId = -1, int _entitiesInRangeOfEntity = -1, Vector3? _entitiesInRangeOfWorldPos = null, int _range = 192, bool _onlyClientsNotAttachedToAnEntity = false)
 	{
 		if (this.Clients == null)
@@ -538,7 +538,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038CD RID: 14541 RVA: 0x0017359C File Offset: 0x0017179C
+	// Token: 0x060038E4 RID: 14564 RVA: 0x00174534 File Offset: 0x00172734
 	public void SendPackage(NetPackage _package, bool _onlyClientsAttachedToAnEntity = false, int _attachedToEntityId = -1, int _allButAttachedToEntityId = -1, int _entitiesInRangeOfEntity = -1, Vector3? _entitiesInRangeOfWorldPos = null, int _range = 192, bool _onlyClientsNotAttachedToAnEntity = false)
 	{
 		if (this.Clients == null)
@@ -561,7 +561,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		_package.SendQueueHandled();
 	}
 
-	// Token: 0x060038CE RID: 14542 RVA: 0x001736C4 File Offset: 0x001718C4
+	// Token: 0x060038E5 RID: 14565 RVA: 0x0017465C File Offset: 0x0017285C
 	public void FlushClientSendQueues()
 	{
 		for (int i = 0; i < this.Clients.List.Count; i++)
@@ -572,7 +572,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038CF RID: 14543 RVA: 0x00173718 File Offset: 0x00171918
+	// Token: 0x060038E6 RID: 14566 RVA: 0x001746B0 File Offset: 0x001728B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdatePings()
 	{
@@ -582,13 +582,13 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038D0 RID: 14544 RVA: 0x00173756 File Offset: 0x00171956
+	// Token: 0x060038E7 RID: 14567 RVA: 0x001746EE File Offset: 0x001728EE
 	public string GetRequiredPortsString()
 	{
 		return this.protocolManager.GetGamePortsString();
 	}
 
-	// Token: 0x060038D1 RID: 14545 RVA: 0x00173764 File Offset: 0x00171964
+	// Token: 0x060038E8 RID: 14568 RVA: 0x001746FC File Offset: 0x001728FC
 	public void SendToClientsOrServer(NetPackage _package)
 	{
 		if (!this.IsServer)
@@ -599,7 +599,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		this.SendPackage(_package, false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060038D2 RID: 14546 RVA: 0x0017379C File Offset: 0x0017199C
+	// Token: 0x060038E9 RID: 14569 RVA: 0x00174734 File Offset: 0x00172934
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -673,14 +673,14 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038D3 RID: 14547 RVA: 0x001739F2 File Offset: 0x00171BF2
+	// Token: 0x060038EA RID: 14570 RVA: 0x0017498A File Offset: 0x00172B8A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
 		this.protocolManager.LateUpdate();
 	}
 
-	// Token: 0x060038D4 RID: 14548 RVA: 0x00173A00 File Offset: 0x00171C00
+	// Token: 0x060038EB RID: 14571 RVA: 0x00174998 File Offset: 0x00172B98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessPackages(INetConnection _connection, NetPackageDirection _disallowedDirection, ClientInfo _clientInfo = null)
 	{
@@ -736,7 +736,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038D5 RID: 14549 RVA: 0x00173B58 File Offset: 0x00171D58
+	// Token: 0x060038EC RID: 14572 RVA: 0x00174AF0 File Offset: 0x00172CF0
 	public void PlayerAllowed(string _gameInfo, PlatformLobbyId _platformLobbyId, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _platformUserAndToken, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _crossplatformUserAndToken)
 	{
 		ConnectionManager.<>c__DisplayClass77_0 CS$<>8__locals1 = new ConnectionManager.<>c__DisplayClass77_0();
@@ -776,7 +776,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		CS$<>8__locals1.<PlayerAllowed>g__NextAuthorizer|0();
 	}
 
-	// Token: 0x060038D6 RID: 14550 RVA: 0x00173C84 File Offset: 0x00171E84
+	// Token: 0x060038ED RID: 14573 RVA: 0x00174C1C File Offset: 0x00172E1C
 	public void PlayerDenied(string _reason)
 	{
 		if (this.IsClient)
@@ -787,7 +787,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038D7 RID: 14551 RVA: 0x00173CE0 File Offset: 0x00171EE0
+	// Token: 0x060038EE RID: 14574 RVA: 0x00174C78 File Offset: 0x00172E78
 	public void ServerConsoleCommand(ClientInfo _cInfo, string _cmd)
 	{
 		if (GameManager.Instance == null)
@@ -837,7 +837,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		_cInfo.SendPackage(NetPackageManager.GetPackage<NetPackageConsoleCmdClient>().Setup(list, false));
 	}
 
-	// Token: 0x060038D8 RID: 14552 RVA: 0x00173E3C File Offset: 0x0017203C
+	// Token: 0x060038EF RID: 14575 RVA: 0x00174DD4 File Offset: 0x00172FD4
 	public void SendLogin()
 	{
 		PlatformUserIdentifierAbs platformUserId = PlatformManager.NativePlatform.User.PlatformUserId;
@@ -851,7 +851,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		this.SendToServer(NetPackageManager.GetPackage<NetPackagePlayerLogin>().Setup(GamePrefs.GetString(EnumGamePrefs.PlayerName), valueTuple, valueTuple2, Constants.cVersionInformation.LongStringNoBuild, Constants.cVersionInformation.LongStringNoBuild, num), false);
 	}
 
-	// Token: 0x060038D9 RID: 14553 RVA: 0x00173F00 File Offset: 0x00172100
+	// Token: 0x060038F0 RID: 14576 RVA: 0x00174E98 File Offset: 0x00173098
 	public void Net_ConnectionFailed(string _message)
 	{
 		Log.Error("[NET] Connection to server failed: " + _message);
@@ -865,7 +865,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		antiCheatClient.DisconnectFromServer();
 	}
 
-	// Token: 0x060038DA RID: 14554 RVA: 0x00173F63 File Offset: 0x00172163
+	// Token: 0x060038F1 RID: 14577 RVA: 0x00174EFB File Offset: 0x001730FB
 	public void Net_InvalidPassword()
 	{
 		XUiC_ServerPasswordWindow.OpenPasswordWindow(LocalPlayerUI.primaryUI.xui, true, ServerInfoCache.Instance.GetPassword(this.LastGameServerInfo), true, delegate(string _pwd)
@@ -879,7 +879,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		});
 	}
 
-	// Token: 0x060038DB RID: 14555 RVA: 0x00173FA0 File Offset: 0x001721A0
+	// Token: 0x060038F2 RID: 14578 RVA: 0x00174F38 File Offset: 0x00173138
 	public void Net_DisconnectedFromServer(string _reason)
 	{
 		Log.Out("[NET] DisconnectedFromServer: " + _reason);
@@ -887,7 +887,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		XUiC_MessageBoxWindowGroup.ShowOk(this.windowManager.playerUI.xui, Localization.Get("mmLblErrorConnectionLost", false, null), _reason, "", null, true, true, false);
 	}
 
-	// Token: 0x060038DC RID: 14556 RVA: 0x00173FEE File Offset: 0x001721EE
+	// Token: 0x060038F3 RID: 14579 RVA: 0x00174F86 File Offset: 0x00173186
 	public void Net_DataReceivedClient(int _channel, byte[] _data, int _size)
 	{
 		if (this.connectionToServer[_channel] != null)
@@ -896,7 +896,7 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038DD RID: 14557 RVA: 0x00174009 File Offset: 0x00172209
+	// Token: 0x060038F4 RID: 14580 RVA: 0x00174FA1 File Offset: 0x001731A1
 	public void Net_DataReceivedServer(ClientInfo _cInfo, int _channel, byte[] _data, int _size)
 	{
 		if (_cInfo != null)
@@ -910,14 +910,14 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038DE RID: 14558 RVA: 0x00174023 File Offset: 0x00172223
+	// Token: 0x060038F5 RID: 14581 RVA: 0x00174FBB File Offset: 0x001731BB
 	public void Net_PlayerConnected(ClientInfo _cInfo)
 	{
 		Log.Out(string.Format("[NET] PlayerConnected {0}", _cInfo));
 		_cInfo.netConnection[0].AddToSendQueue(NetPackageManager.GetPackage<NetPackagePackageIds>().Setup());
 	}
 
-	// Token: 0x060038DF RID: 14559 RVA: 0x0017404C File Offset: 0x0017224C
+	// Token: 0x060038F6 RID: 14582 RVA: 0x00174FE4 File Offset: 0x001731E4
 	public void Net_PlayerDisconnected(ClientInfo _cInfo)
 	{
 		if (_cInfo != null)
@@ -927,44 +927,44 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		}
 	}
 
-	// Token: 0x060038E0 RID: 14560 RVA: 0x0017406A File Offset: 0x0017226A
+	// Token: 0x060038F7 RID: 14583 RVA: 0x00175002 File Offset: 0x00173202
 	public void SetLatencySimulation(bool _enable, int _min, int _max)
 	{
 		this.protocolManager.SetLatencySimulation(_enable, _min, _max);
 	}
 
-	// Token: 0x060038E1 RID: 14561 RVA: 0x0017407A File Offset: 0x0017227A
+	// Token: 0x060038F8 RID: 14584 RVA: 0x00175012 File Offset: 0x00173212
 	public void SetPacketLossSimulation(bool _enable, int _chance)
 	{
 		this.protocolManager.SetPacketLossSimulation(_enable, _chance);
 	}
 
-	// Token: 0x060038E2 RID: 14562 RVA: 0x00174089 File Offset: 0x00172289
+	// Token: 0x060038F9 RID: 14585 RVA: 0x00175021 File Offset: 0x00173221
 	public void EnableNetworkStatistics()
 	{
 		this.protocolManager.EnableNetworkStatistics();
 	}
 
-	// Token: 0x060038E3 RID: 14563 RVA: 0x00174096 File Offset: 0x00172296
+	// Token: 0x060038FA RID: 14586 RVA: 0x0017502E File Offset: 0x0017322E
 	public void DisableNetworkStatistics()
 	{
 		this.protocolManager.DisableNetworkStatistics();
 	}
 
-	// Token: 0x060038E4 RID: 14564 RVA: 0x001740A3 File Offset: 0x001722A3
+	// Token: 0x060038FB RID: 14587 RVA: 0x0017503B File Offset: 0x0017323B
 	public string PrintNetworkStatistics()
 	{
 		return this.protocolManager.PrintNetworkStatistics();
 	}
 
-	// Token: 0x060038E5 RID: 14565 RVA: 0x001740B0 File Offset: 0x001722B0
+	// Token: 0x060038FC RID: 14588 RVA: 0x00175048 File Offset: 0x00173248
 	public void ResetNetworkStatistics()
 	{
 		this.protocolManager.ResetNetworkStatistics();
 		this.protocolManager.DisableNetworkStatistics();
 	}
 
-	// Token: 0x060038E9 RID: 14569 RVA: 0x00174190 File Offset: 0x00172390
+	// Token: 0x06003900 RID: 14592 RVA: 0x00175128 File Offset: 0x00173328
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static IAuthenticationClient[] <PlayerAllowed>g__GetAuthenticationClients|77_3()
@@ -977,68 +977,68 @@ public class ConnectionManager : SingletonMonoBehaviour<ConnectionManager>
 		return array.Where<IAuthenticationClient>((IAuthenticationClient authorizer) => authorizer != null).ToArray<IAuthenticationClient>();
 	}
 
-	// Token: 0x04002E62 RID: 11874
+	// Token: 0x04002E7E RID: 11902
 	public const int CHANNELCOUNT = 2;
 
-	// Token: 0x04002E63 RID: 11875
+	// Token: 0x04002E7F RID: 11903
 	public static bool VerboseNetLogging;
 
-	// Token: 0x04002E64 RID: 11876
+	// Token: 0x04002E80 RID: 11904
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;
 
-	// Token: 0x04002E65 RID: 11877
+	// Token: 0x04002E81 RID: 11905
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public INetConnection[] connectionToServer = new INetConnection[2];
 
-	// Token: 0x04002E67 RID: 11879
+	// Token: 0x04002E83 RID: 11907
 	public readonly AntiCheatEncryptionAuthClient AntiCheatEncryptionAuthClient = new AntiCheatEncryptionAuthClient();
 
-	// Token: 0x04002E68 RID: 11880
+	// Token: 0x04002E84 RID: 11908
 	public readonly ClientInfoCollection Clients = new ClientInfoCollection();
 
-	// Token: 0x04002E6B RID: 11883
+	// Token: 0x04002E87 RID: 11911
 	public readonly AntiCheatEncryptionAuthServer AntiCheatEncryptionAuthServer = new AntiCheatEncryptionAuthServer();
 
-	// Token: 0x04002E6C RID: 11884
+	// Token: 0x04002E88 RID: 11912
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastBadPacketCheck;
 
-	// Token: 0x04002E6D RID: 11885
+	// Token: 0x04002E89 RID: 11913
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int badPacketDisconnectThreshold = 3;
 
-	// Token: 0x04002E6E RID: 11886
+	// Token: 0x04002E8A RID: 11914
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ProtocolManager protocolManager;
 
-	// Token: 0x04002E6F RID: 11887
+	// Token: 0x04002E8B RID: 11915
 	public bool IsConnected;
 
-	// Token: 0x04002E70 RID: 11888
+	// Token: 0x04002E8C RID: 11916
 	public int ReceivedBytesThisFrame;
 
-	// Token: 0x04002E71 RID: 11889
+	// Token: 0x04002E8D RID: 11917
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly CountdownTimer updateClientInfo = new CountdownTimer(5f, true);
 
-	// Token: 0x04002E72 RID: 11890
+	// Token: 0x04002E8E RID: 11918
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CountdownTimer countdownAnalyticsHeartbeat = new CountdownTimer(300f, false);
 
-	// Token: 0x04002E76 RID: 11894
+	// Token: 0x04002E92 RID: 11922
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<NetPackage> packagesToProcess = new List<NetPackage>();
 
-	// Token: 0x02000771 RID: 1905
-	// (Invoke) Token: 0x060038ED RID: 14573
+	// Token: 0x02000779 RID: 1913
+	// (Invoke) Token: 0x06003904 RID: 14596
 	public delegate void ClientConnectionAction(ClientInfo _clientInfo);
 }

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017AE RID: 6062
+	// Token: 0x020017DF RID: 6111
 	[Preserve]
 	public class UAITaskWander : UAITaskBase
 	{
-		// Token: 0x0600BBCC RID: 48076 RVA: 0x0045B13C File Offset: 0x0045933C
+		// Token: 0x0600BCE0 RID: 48352 RVA: 0x0045EAE8 File Offset: 0x0045CCE8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void initializeParameters()
 		{
@@ -19,7 +19,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BBCD RID: 48077 RVA: 0x0045B178 File Offset: 0x00459378
+		// Token: 0x0600BCE1 RID: 48353 RVA: 0x0045EB24 File Offset: 0x0045CD24
 		public override void Start(Context _context)
 		{
 			base.Start(_context);
@@ -27,7 +27,7 @@ namespace UAI
 			_context.Self.FindPath(RandomPositionGenerator.CalcAround(_context.Self, num, num), _context.Self.GetMoveSpeed(), false, null);
 		}
 
-		// Token: 0x0600BBCE RID: 48078 RVA: 0x0045B11A File Offset: 0x0045931A
+		// Token: 0x0600BCE2 RID: 48354 RVA: 0x0045EAC6 File Offset: 0x0045CCC6
 		public override void Update(Context _context)
 		{
 			base.Update(_context);
@@ -37,7 +37,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x04008C88 RID: 35976
+		// Token: 0x04008D71 RID: 36209
 		public float maxWanderDistance;
 	}
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200056F RID: 1391
+// Token: 0x02000576 RID: 1398
 public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 {
-	// Token: 0x06002CE4 RID: 11492 RVA: 0x0011FCEC File Offset: 0x0011DEEC
+	// Token: 0x06002CEF RID: 11503 RVA: 0x001202AC File Offset: 0x0011E4AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -52,7 +52,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.panel = base.GetComponent<UIPanel>();
 	}
 
-	// Token: 0x06002CE5 RID: 11493 RVA: 0x0011FF35 File Offset: 0x0011E135
+	// Token: 0x06002CF0 RID: 11504 RVA: 0x001204F5 File Offset: 0x0011E6F5
 	public void InGameMenuOpen(bool _isOpen)
 	{
 		if (_isOpen)
@@ -63,7 +63,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.anchor.pixelOffset = new Vector2(0f, -7f);
 	}
 
-	// Token: 0x06002CE6 RID: 11494 RVA: 0x0011FF70 File Offset: 0x0011E170
+	// Token: 0x06002CF1 RID: 11505 RVA: 0x00120530 File Offset: 0x0011E730
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnEnable()
 	{
@@ -77,7 +77,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		}
 	}
 
-	// Token: 0x06002CE7 RID: 11495 RVA: 0x0011FFC1 File Offset: 0x0011E1C1
+	// Token: 0x06002CF2 RID: 11506 RVA: 0x00120581 File Offset: 0x0011E781
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDisable()
 	{
@@ -91,7 +91,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		}
 	}
 
-	// Token: 0x06002CE8 RID: 11496 RVA: 0x0011FFFC File Offset: 0x0011E1FC
+	// Token: 0x06002CF3 RID: 11507 RVA: 0x001205BC File Offset: 0x0011E7BC
 	public void OnSizeChange()
 	{
 		float value = UIProgressBar.current.value;
@@ -101,7 +101,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.sizeVal.text = this.size.ToString();
 	}
 
-	// Token: 0x06002CE9 RID: 11497 RVA: 0x00120064 File Offset: 0x0011E264
+	// Token: 0x06002CF4 RID: 11508 RVA: 0x00120624 File Offset: 0x0011E824
 	public void OnFalloffChange()
 	{
 		float value = UIProgressBar.current.value;
@@ -111,7 +111,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.falloffVal.text = this.hardness.ToCultureInvariantString();
 	}
 
-	// Token: 0x06002CEA RID: 11498 RVA: 0x001200C4 File Offset: 0x0011E2C4
+	// Token: 0x06002CF5 RID: 11509 RVA: 0x00120684 File Offset: 0x0011E884
 	public void OnStrengthChange()
 	{
 		float value = UIProgressBar.current.value;
@@ -120,7 +120,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.strengthVal.text = this.flow.ToCultureInvariantString();
 	}
 
-	// Token: 0x06002CEB RID: 11499 RVA: 0x00120111 File Offset: 0x0011E311
+	// Token: 0x06002CF6 RID: 11510 RVA: 0x001206D1 File Offset: 0x0011E8D1
 	public void HideWindow(bool _hide)
 	{
 		if (_hide)
@@ -131,7 +131,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.panel.alpha = 1f;
 	}
 
-	// Token: 0x06002CEC RID: 11500 RVA: 0x00120138 File Offset: 0x0011E338
+	// Token: 0x06002CF7 RID: 11511 RVA: 0x001206F8 File Offset: 0x0011E8F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -146,7 +146,7 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		this.InGameMenuOpen(this.nguiWindowManager.WindowManager.IsWindowOpen(XUiC_InGameMenuWindow.ID));
 	}
 
-	// Token: 0x06002CED RID: 11501 RVA: 0x00120208 File Offset: 0x0011E408
+	// Token: 0x06002CF8 RID: 11512 RVA: 0x001207C8 File Offset: 0x0011E9C8
 	public void NGuiButtonOnClick(Transform _t)
 	{
 		for (int i = 0; i < this.toolButtons.Count; i++)
@@ -160,109 +160,109 @@ public class NguiWdwTerrainEditor : MonoBehaviour, INGuiButtonOnClick
 		}
 	}
 
-	// Token: 0x04002350 RID: 9040
+	// Token: 0x0400236B RID: 9067
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameManager gm;
 
-	// Token: 0x04002351 RID: 9041
+	// Token: 0x0400236C RID: 9068
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<IBlockTool> tools;
 
-	// Token: 0x04002352 RID: 9042
+	// Token: 0x0400236D RID: 9069
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Transform> toolButtons;
 
-	// Token: 0x04002353 RID: 9043
+	// Token: 0x0400236E RID: 9070
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BlockTools.Brush brush;
 
-	// Token: 0x04002354 RID: 9044
+	// Token: 0x0400236F RID: 9071
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject toolButtonPrefab;
 
-	// Token: 0x04002355 RID: 9045
+	// Token: 0x04002370 RID: 9072
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform thisWindow;
 
-	// Token: 0x04002356 RID: 9046
+	// Token: 0x04002371 RID: 9073
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform toolGrid;
 
-	// Token: 0x04002357 RID: 9047
+	// Token: 0x04002372 RID: 9074
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform projectorParent;
 
-	// Token: 0x04002358 RID: 9048
+	// Token: 0x04002373 RID: 9075
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Projector brushSizeProjector;
 
-	// Token: 0x04002359 RID: 9049
+	// Token: 0x04002374 RID: 9076
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Projector brushFalloffPojector;
 
-	// Token: 0x0400235A RID: 9050
+	// Token: 0x04002375 RID: 9077
 	public Vector3i lastPosition;
 
-	// Token: 0x0400235B RID: 9051
+	// Token: 0x04002376 RID: 9078
 	public Vector3 lastDirection;
 
-	// Token: 0x0400235C RID: 9052
+	// Token: 0x04002377 RID: 9079
 	public Texture2D[] buttonTextures;
 
-	// Token: 0x0400235D RID: 9053
+	// Token: 0x04002378 RID: 9080
 	public string[] buttonNames;
 
-	// Token: 0x0400235E RID: 9054
+	// Token: 0x04002379 RID: 9081
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UILabel sizeVal;
 
-	// Token: 0x0400235F RID: 9055
+	// Token: 0x0400237A RID: 9082
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UILabel falloffVal;
 
-	// Token: 0x04002360 RID: 9056
+	// Token: 0x0400237B RID: 9083
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UILabel strengthVal;
 
-	// Token: 0x04002361 RID: 9057
+	// Token: 0x0400237C RID: 9084
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UIAnchor anchor;
 
-	// Token: 0x04002362 RID: 9058
+	// Token: 0x0400237D RID: 9085
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UIPanel panel;
 
-	// Token: 0x04002363 RID: 9059
+	// Token: 0x0400237E RID: 9086
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGUIWindowManager nguiWindowManager;
 
-	// Token: 0x04002364 RID: 9060
+	// Token: 0x0400237F RID: 9087
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int size;
 
-	// Token: 0x04002365 RID: 9061
+	// Token: 0x04002380 RID: 9088
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float hardness;
 
-	// Token: 0x04002366 RID: 9062
+	// Token: 0x04002381 RID: 9089
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float flow;

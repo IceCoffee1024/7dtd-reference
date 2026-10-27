@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000231 RID: 561
+// Token: 0x02000233 RID: 563
 [Preserve]
 public class ConsoleCmdKick : ConsoleCmdAbstract
 {
 	// Token: 0x1700019B RID: 411
-	// (get) Token: 0x060010DC RID: 4316 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x060010E0 RID: 4320 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -17,21 +17,21 @@ public class ConsoleCmdKick : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010DD RID: 4317 RVA: 0x0006BA51 File Offset: 0x00069C51
+	// Token: 0x060010E1 RID: 4321 RVA: 0x0006BC21 File Offset: 0x00069E21
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "kick" };
 	}
 
-	// Token: 0x060010DE RID: 4318 RVA: 0x0006BA61 File Offset: 0x00069C61
+	// Token: 0x060010E2 RID: 4322 RVA: 0x0006BC31 File Offset: 0x00069E31
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Kicks user with optional reason. \"kick playername reason\"";
 	}
 
-	// Token: 0x060010DF RID: 4319 RVA: 0x0006BA68 File Offset: 0x00069C68
+	// Token: 0x060010E3 RID: 4323 RVA: 0x0006BC38 File Offset: 0x00069E38
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)

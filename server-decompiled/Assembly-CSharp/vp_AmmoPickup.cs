@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001605 RID: 5637
+// Token: 0x02001617 RID: 5655
 public class vp_AmmoPickup : vp_Pickup
 {
-	// Token: 0x0600AF93 RID: 44947 RVA: 0x0041782C File Offset: 0x00415A2C
+	// Token: 0x0600AFEB RID: 45035 RVA: 0x00419C30 File Offset: 0x00417E30
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryGive(vp_FPPlayerEventHandler player)
 	{
@@ -32,13 +32,13 @@ public class vp_AmmoPickup : vp_Pickup
 		return true;
 	}
 
-	// Token: 0x0600AF94 RID: 44948 RVA: 0x00417880 File Offset: 0x00415A80
+	// Token: 0x0600AFEC RID: 45036 RVA: 0x00419C84 File Offset: 0x00417E84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryReloadIfEmpty(vp_FPPlayerEventHandler player)
 	{
 		return player.CurrentWeaponAmmoCount.Get() <= 0 && !(player.CurrentWeaponClipType.Get() != this.InventoryName) && player.Reload.TryStart(true);
 	}
 
-	// Token: 0x04008311 RID: 33553
+	// Token: 0x04008352 RID: 33618
 	public int GiveAmount = 1;
 }

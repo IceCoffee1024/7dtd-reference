@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D6 RID: 470
+// Token: 0x020001D8 RID: 472
 public class BuffEntityUINotification : EntityUINotification
 {
-	// Token: 0x06000E7D RID: 3709 RVA: 0x0005F9AC File Offset: 0x0005DBAC
+	// Token: 0x06000E81 RID: 3713 RVA: 0x0005FC70 File Offset: 0x0005DE70
 	public BuffEntityUINotification(EntityAlive _owner, BuffValue _buff)
 	{
 		this.owner = _owner;
@@ -12,7 +12,7 @@ public class BuffEntityUINotification : EntityUINotification
 	}
 
 	// Token: 0x1700010E RID: 270
-	// (get) Token: 0x06000E7E RID: 3710 RVA: 0x0005F9C2 File Offset: 0x0005DBC2
+	// (get) Token: 0x06000E82 RID: 3714 RVA: 0x0005FC86 File Offset: 0x0005DE86
 	public BuffValue Buff
 	{
 		get
@@ -22,7 +22,7 @@ public class BuffEntityUINotification : EntityUINotification
 	}
 
 	// Token: 0x1700010F RID: 271
-	// (get) Token: 0x06000E7F RID: 3711 RVA: 0x0005F9CA File Offset: 0x0005DBCA
+	// (get) Token: 0x06000E83 RID: 3715 RVA: 0x0005FC8E File Offset: 0x0005DE8E
 	public string Icon
 	{
 		get
@@ -31,14 +31,14 @@ public class BuffEntityUINotification : EntityUINotification
 		}
 	}
 
-	// Token: 0x06000E80 RID: 3712 RVA: 0x0005F9DC File Offset: 0x0005DBDC
+	// Token: 0x06000E84 RID: 3716 RVA: 0x0005FCA0 File Offset: 0x0005DEA0
 	public Color GetColor()
 	{
 		return this.Buff.BuffClass.IconColor;
 	}
 
 	// Token: 0x17000110 RID: 272
-	// (get) Token: 0x06000E81 RID: 3713 RVA: 0x0005F9F0 File Offset: 0x0005DBF0
+	// (get) Token: 0x06000E85 RID: 3717 RVA: 0x0005FCB4 File Offset: 0x0005DEB4
 	public float CurrentValue
 	{
 		get
@@ -52,7 +52,7 @@ public class BuffEntityUINotification : EntityUINotification
 	}
 
 	// Token: 0x17000111 RID: 273
-	// (get) Token: 0x06000E82 RID: 3714 RVA: 0x0005FA4C File Offset: 0x0005DC4C
+	// (get) Token: 0x06000E86 RID: 3718 RVA: 0x0005FD10 File Offset: 0x0005DF10
 	public string Units
 	{
 		get
@@ -70,7 +70,7 @@ public class BuffEntityUINotification : EntityUINotification
 	}
 
 	// Token: 0x17000112 RID: 274
-	// (get) Token: 0x06000E83 RID: 3715 RVA: 0x0005FAF4 File Offset: 0x0005DCF4
+	// (get) Token: 0x06000E87 RID: 3719 RVA: 0x0005FDB8 File Offset: 0x0005DFB8
 	public EnumEntityUINotificationDisplayMode DisplayMode
 	{
 		get
@@ -85,7 +85,7 @@ public class BuffEntityUINotification : EntityUINotification
 	}
 
 	// Token: 0x17000113 RID: 275
-	// (get) Token: 0x06000E84 RID: 3716 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x06000E88 RID: 3720 RVA: 0x00010E62 File Offset: 0x0000F062
 	public EnumEntityUINotificationSubject Subject
 	{
 		get
@@ -94,11 +94,11 @@ public class BuffEntityUINotification : EntityUINotification
 		}
 	}
 
-	// Token: 0x04000C5B RID: 3163
+	// Token: 0x04000C5D RID: 3165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive owner;
 
-	// Token: 0x04000C5C RID: 3164
+	// Token: 0x04000C5E RID: 3166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BuffValue buff;
 }

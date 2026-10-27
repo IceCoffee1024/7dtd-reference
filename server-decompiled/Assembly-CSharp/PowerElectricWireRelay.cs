@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000921 RID: 2337
+// Token: 0x0200092B RID: 2347
 public class PowerElectricWireRelay : PowerConsumer
 {
-	// Token: 0x17000753 RID: 1875
-	// (get) Token: 0x0600432B RID: 17195 RVA: 0x001321B1 File Offset: 0x001303B1
+	// Token: 0x17000759 RID: 1881
+	// (get) Token: 0x0600434E RID: 17230 RVA: 0x00132DA5 File Offset: 0x00130FA5
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get

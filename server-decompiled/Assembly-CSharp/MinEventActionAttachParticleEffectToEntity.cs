@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006DF RID: 1759
+// Token: 0x020006E7 RID: 1767
 [Preserve]
 public class MinEventActionAttachParticleEffectToEntity : MinEventActionTargetedBase
 {
-	// Token: 0x06003683 RID: 13955 RVA: 0x00167124 File Offset: 0x00165324
+	// Token: 0x0600369A RID: 13978 RVA: 0x00167F0C File Offset: 0x0016610C
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -178,13 +178,13 @@ public class MinEventActionAttachParticleEffectToEntity : MinEventActionTargeted
 		}
 	}
 
-	// Token: 0x06003684 RID: 13956 RVA: 0x001675BB File Offset: 0x001657BB
+	// Token: 0x0600369B RID: 13979 RVA: 0x001683A3 File Offset: 0x001665A3
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && this.goToInstantiate != null;
 	}
 
-	// Token: 0x06003685 RID: 13957 RVA: 0x001675E4 File Offset: 0x001657E4
+	// Token: 0x0600369C RID: 13980 RVA: 0x001683CC File Offset: 0x001665CC
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -258,38 +258,38 @@ public class MinEventActionAttachParticleEffectToEntity : MinEventActionTargeted
 		return flag;
 	}
 
-	// Token: 0x04002BCD RID: 11213
+	// Token: 0x04002BE9 RID: 11241
 	public const string cParticlePrefix = "Ptl_";
 
-	// Token: 0x04002BCE RID: 11214
+	// Token: 0x04002BEA RID: 11242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goToInstantiate;
 
-	// Token: 0x04002BCF RID: 11215
+	// Token: 0x04002BEB RID: 11243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parent_transform_path;
 
-	// Token: 0x04002BD0 RID: 11216
+	// Token: 0x04002BEC RID: 11244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_offset;
 
-	// Token: 0x04002BD1 RID: 11217
+	// Token: 0x04002BED RID: 11245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_rotation;
 
-	// Token: 0x04002BD2 RID: 11218
+	// Token: 0x04002BEE RID: 11246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> usePassedInTransformTag = FastTags<TagGroup.Global>.Parse("usePassedInTransform");
 
-	// Token: 0x04002BD3 RID: 11219
+	// Token: 0x04002BEF RID: 11247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool setShapeMesh;
 
-	// Token: 0x04002BD4 RID: 11220
+	// Token: 0x04002BF0 RID: 11248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundName;
 
-	// Token: 0x04002BD5 RID: 11221
+	// Token: 0x04002BF1 RID: 11249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOneshot;
 }

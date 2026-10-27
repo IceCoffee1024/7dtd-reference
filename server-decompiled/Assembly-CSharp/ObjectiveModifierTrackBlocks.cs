@@ -4,18 +4,18 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000983 RID: 2435
+// Token: 0x0200098D RID: 2445
 [Preserve]
 public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 {
-	// Token: 0x060046AB RID: 18091 RVA: 0x001BFD12 File Offset: 0x001BDF12
+	// Token: 0x060046CE RID: 18126 RVA: 0x001C0D96 File Offset: 0x001BEF96
 	public override void AddHooks()
 	{
 		base.OwnerObjective.OwnerQuest.TrackingHelper.AddTrackingEntry(this);
 		QuestEventManager.Current.BlockChange += this.Current_BlockChange;
 	}
 
-	// Token: 0x060046AC RID: 18092 RVA: 0x001BFD40 File Offset: 0x001BDF40
+	// Token: 0x060046CF RID: 18127 RVA: 0x001C0DC4 File Offset: 0x001BEFC4
 	public override void RemoveHooks()
 	{
 		base.OwnerObjective.OwnerQuest.TrackingHelper.RemoveTrackingEntry(this);
@@ -28,7 +28,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046AD RID: 18093 RVA: 0x001BFDBC File Offset: 0x001BDFBC
+	// Token: 0x060046D0 RID: 18128 RVA: 0x001C0E40 File Offset: 0x001BF040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockChange(Block blockOld, Block blockNew, Vector3i blockPos)
 	{
@@ -46,7 +46,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046AE RID: 18094 RVA: 0x001BFE34 File Offset: 0x001BE034
+	// Token: 0x060046D1 RID: 18129 RVA: 0x001C0EB8 File Offset: 0x001BF0B8
 	public void StartUpdate()
 	{
 		if (this.localPlayer == null)
@@ -59,7 +59,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046AF RID: 18095 RVA: 0x001BFE94 File Offset: 0x001BE094
+	// Token: 0x060046D2 RID: 18130 RVA: 0x001C0F18 File Offset: 0x001BF118
 	public void HandleTrack(Chunk c)
 	{
 		List<Vector3i> list;
@@ -79,7 +79,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046B0 RID: 18096 RVA: 0x001BFF40 File Offset: 0x001BE140
+	// Token: 0x060046D3 RID: 18131 RVA: 0x001C0FC4 File Offset: 0x001BF1C4
 	public void EndUpdate()
 	{
 		NavObjectManager instance = NavObjectManager.Instance;
@@ -93,7 +93,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046B1 RID: 18097 RVA: 0x001BFFA4 File Offset: 0x001BE1A4
+	// Token: 0x060046D4 RID: 18132 RVA: 0x001C1028 File Offset: 0x001BF228
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleAddTrackedBlock(Vector3i pos)
 	{
@@ -107,7 +107,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		this.TrackedBlocks.Add(new ObjectiveModifierTrackBlocks.TrackedBlock(pos, this.navObjectName));
 	}
 
-	// Token: 0x060046B2 RID: 18098 RVA: 0x001C000C File Offset: 0x001BE20C
+	// Token: 0x060046D5 RID: 18133 RVA: 0x001C1090 File Offset: 0x001BF290
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -125,7 +125,7 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046B3 RID: 18099 RVA: 0x001C00A4 File Offset: 0x001BE2A4
+	// Token: 0x060046D6 RID: 18134 RVA: 0x001C1128 File Offset: 0x001BF328
 	public override BaseObjectiveModifier Clone()
 	{
 		return new ObjectiveModifierTrackBlocks
@@ -136,38 +136,38 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 		};
 	}
 
-	// Token: 0x04003907 RID: 14599
+	// Token: 0x04003927 RID: 14631
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string blockIndexName = "questTracked";
 
-	// Token: 0x04003908 RID: 14600
+	// Token: 0x04003928 RID: 14632
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string navObjectName = "quest_resource";
 
-	// Token: 0x04003909 RID: 14601
+	// Token: 0x04003929 RID: 14633
 	public float trackDistance = 20f;
 
-	// Token: 0x0400390A RID: 14602
+	// Token: 0x0400392A RID: 14634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x0400390B RID: 14603
+	// Token: 0x0400392B RID: 14635
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<ObjectiveModifierTrackBlocks.TrackedBlock> TrackedBlocks = new List<ObjectiveModifierTrackBlocks.TrackedBlock>();
 
-	// Token: 0x0400390C RID: 14604
+	// Token: 0x0400392C RID: 14636
 	public static string PropBlockIndexName = "block_index_name";
 
-	// Token: 0x0400390D RID: 14605
+	// Token: 0x0400392D RID: 14637
 	public static string PropNavObjectName = "nav_object";
 
-	// Token: 0x0400390E RID: 14606
+	// Token: 0x0400392E RID: 14638
 	public static string PropTrackDistance = "track_distance";
 
-	// Token: 0x02000984 RID: 2436
+	// Token: 0x0200098E RID: 2446
 	public class TrackedBlock
 	{
-		// Token: 0x060046B6 RID: 18102 RVA: 0x001C0123 File Offset: 0x001BE323
+		// Token: 0x060046D9 RID: 18137 RVA: 0x001C11A7 File Offset: 0x001BF3A7
 		public TrackedBlock(Vector3i worldPos, string NavObjectName)
 		{
 			this.WorldPos = worldPos;
@@ -175,13 +175,13 @@ public class ObjectiveModifierTrackBlocks : BaseObjectiveModifier
 			this.KeepAlive = true;
 		}
 
-		// Token: 0x0400390F RID: 14607
+		// Token: 0x0400392F RID: 14639
 		public Vector3i WorldPos;
 
-		// Token: 0x04003910 RID: 14608
+		// Token: 0x04003930 RID: 14640
 		public NavObject NavObject;
 
-		// Token: 0x04003911 RID: 14609
+		// Token: 0x04003931 RID: 14641
 		public bool KeepAlive;
 	}
 }

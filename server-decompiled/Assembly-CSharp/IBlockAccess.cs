@@ -1,49 +1,49 @@
 ﻿using System;
 
-// Token: 0x02000B54 RID: 2900
+// Token: 0x02000B5F RID: 2911
 public interface IBlockAccess
 {
-	// Token: 0x0600576D RID: 22381
+	// Token: 0x06005792 RID: 22418
 	BlockValue GetBlock(int x, int y, int z);
 
-	// Token: 0x0600576E RID: 22382 RVA: 0x001B2790 File Offset: 0x001B0990
+	// Token: 0x06005793 RID: 22419 RVA: 0x001B3814 File Offset: 0x001B1A14
 	BlockValue GetBlock(Vector3i pos)
 	{
 		return IBlockAccess.DefaultGetBlock(this, pos);
 	}
 
-	// Token: 0x0600576F RID: 22383 RVA: 0x001B2799 File Offset: 0x001B0999
+	// Token: 0x06005794 RID: 22420 RVA: 0x001B381D File Offset: 0x001B1A1D
 	BlockValue GetBlock(BlockValueRef bvRef)
 	{
 		return IBlockAccess.DefaultGetBlock(this, bvRef);
 	}
 
-	// Token: 0x06005770 RID: 22384
+	// Token: 0x06005795 RID: 22421
 	PropValue GetProp(int chunkX, int chunkZ, int propId);
 
-	// Token: 0x06005771 RID: 22385
+	// Token: 0x06005796 RID: 22422
 	PropValue GetProp(long chunkKey, int propId);
 
-	// Token: 0x06005772 RID: 22386 RVA: 0x001B2925 File Offset: 0x001B0B25
+	// Token: 0x06005797 RID: 22423 RVA: 0x001B39A9 File Offset: 0x001B1BA9
 	PropValue GetProp(Vector2i chunkPos, int propId)
 	{
 		return IBlockAccess.DefaultGetProp(this, chunkPos, propId);
 	}
 
-	// Token: 0x06005773 RID: 22387 RVA: 0x001B292F File Offset: 0x001B0B2F
+	// Token: 0x06005798 RID: 22424 RVA: 0x001B39B3 File Offset: 0x001B1BB3
 	PropValue GetProp(PropRef propRef)
 	{
 		return IBlockAccess.DefaultGetProp(this, propRef);
 	}
 
-	// Token: 0x06005774 RID: 22388 RVA: 0x0021B53F File Offset: 0x0021973F
+	// Token: 0x06005799 RID: 22425 RVA: 0x0021CA9B File Offset: 0x0021AC9B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static BlockValue DefaultGetBlock(IBlockAccess iba, Vector3i pos)
 	{
 		return iba.GetBlock(pos.x, pos.y, pos.z);
 	}
 
-	// Token: 0x06005775 RID: 22389 RVA: 0x0021B55C File Offset: 0x0021975C
+	// Token: 0x0600579A RID: 22426 RVA: 0x0021CAB8 File Offset: 0x0021ACB8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static BlockValue DefaultGetBlock(IBlockAccess iba, BlockValueRef bvRef)
 	{
@@ -65,14 +65,14 @@ public interface IBlockAccess
 		return blockValue;
 	}
 
-	// Token: 0x06005776 RID: 22390 RVA: 0x0021B5B6 File Offset: 0x002197B6
+	// Token: 0x0600579B RID: 22427 RVA: 0x0021CB12 File Offset: 0x0021AD12
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static PropValue DefaultGetProp(IBlockAccess iba, Vector2i chunkPos, int propId)
 	{
 		return iba.GetProp(chunkPos.x, chunkPos.y, propId);
 	}
 
-	// Token: 0x06005777 RID: 22391 RVA: 0x0021B5CB File Offset: 0x002197CB
+	// Token: 0x0600579C RID: 22428 RVA: 0x0021CB27 File Offset: 0x0021AD27
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static PropValue DefaultGetProp(IBlockAccess iba, PropRef propRef)
 	{

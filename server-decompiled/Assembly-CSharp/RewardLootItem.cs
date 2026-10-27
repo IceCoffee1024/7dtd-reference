@@ -2,11 +2,11 @@
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x020009FC RID: 2556
+// Token: 0x02000A06 RID: 2566
 [Preserve]
 public class RewardLootItem : BaseReward
 {
-	// Token: 0x06004BD0 RID: 19408 RVA: 0x001D8974 File Offset: 0x001D6B74
+	// Token: 0x06004BF4 RID: 19444 RVA: 0x001D9A5C File Offset: 0x001D7C5C
 	public override void SetupReward()
 	{
 		this.LootGameStage = Convert.ToInt32(base.Value);
@@ -121,8 +121,8 @@ public class RewardLootItem : BaseReward
 		base.IconAtlas = "ItemIconAtlas";
 	}
 
-	// Token: 0x17000838 RID: 2104
-	// (get) Token: 0x06004BD1 RID: 19409 RVA: 0x001D8C5E File Offset: 0x001D6E5E
+	// Token: 0x1700083E RID: 2110
+	// (get) Token: 0x06004BF5 RID: 19445 RVA: 0x001D9D46 File Offset: 0x001D7F46
 	public ItemStack Item
 	{
 		get
@@ -135,7 +135,7 @@ public class RewardLootItem : BaseReward
 		}
 	}
 
-	// Token: 0x06004BD2 RID: 19410 RVA: 0x001D8C81 File Offset: 0x001D6E81
+	// Token: 0x06004BF6 RID: 19446 RVA: 0x001D9D69 File Offset: 0x001D7F69
 	public override void Read(PooledBinaryReader _br)
 	{
 		base.Read(_br);
@@ -143,7 +143,7 @@ public class RewardLootItem : BaseReward
 		this.item.Read(_br);
 	}
 
-	// Token: 0x06004BD3 RID: 19411 RVA: 0x001D8CA2 File Offset: 0x001D6EA2
+	// Token: 0x06004BF7 RID: 19447 RVA: 0x001D9D8A File Offset: 0x001D7F8A
 	public override void Write(PooledBinaryWriter _bw)
 	{
 		base.Write(_bw);
@@ -154,7 +154,7 @@ public class RewardLootItem : BaseReward
 		this.item.Write(_bw);
 	}
 
-	// Token: 0x06004BD4 RID: 19412 RVA: 0x001D8CCC File Offset: 0x001D6ECC
+	// Token: 0x06004BF8 RID: 19448 RVA: 0x001D9DB4 File Offset: 0x001D7FB4
 	public override void GiveReward(EntityPlayer player)
 	{
 		XUiM_PlayerInventory playerInventory = LocalPlayerUI.GetUIForPlayer(base.OwnerQuest.OwnerJournal.OwnerPlayer).xui.PlayerInventory;
@@ -164,13 +164,13 @@ public class RewardLootItem : BaseReward
 		}
 	}
 
-	// Token: 0x06004BD5 RID: 19413 RVA: 0x001D8D13 File Offset: 0x001D6F13
+	// Token: 0x06004BF9 RID: 19449 RVA: 0x001D9DFB File Offset: 0x001D7FFB
 	public override ItemStack GetRewardItem()
 	{
 		return this.item.Clone();
 	}
 
-	// Token: 0x06004BD6 RID: 19414 RVA: 0x001D8D20 File Offset: 0x001D6F20
+	// Token: 0x06004BFA RID: 19450 RVA: 0x001D9E08 File Offset: 0x001D8008
 	public void SetupItem()
 	{
 		string[] array = base.ID.Split(',', StringSplitOptions.None);
@@ -217,7 +217,7 @@ public class RewardLootItem : BaseReward
 		this.item.itemValue.MaxDurabilityModifier = 1f;
 	}
 
-	// Token: 0x06004BD7 RID: 19415 RVA: 0x001D8E60 File Offset: 0x001D7060
+	// Token: 0x06004BFB RID: 19451 RVA: 0x001D9F48 File Offset: 0x001D8148
 	public override BaseReward Clone()
 	{
 		RewardLootItem rewardLootItem = new RewardLootItem();
@@ -230,7 +230,7 @@ public class RewardLootItem : BaseReward
 		return rewardLootItem;
 	}
 
-	// Token: 0x06004BD8 RID: 19416 RVA: 0x001D8EA0 File Offset: 0x001D70A0
+	// Token: 0x06004BFC RID: 19452 RVA: 0x001D9F88 File Offset: 0x001D8188
 	public override string GetRewardText()
 	{
 		string localizedItemName = this.Item.itemValue.ItemClass.GetLocalizedItemName();
@@ -245,7 +245,7 @@ public class RewardLootItem : BaseReward
 		return string.Format("{0} ({1})", localizedItemName, this.Item.count);
 	}
 
-	// Token: 0x06004BD9 RID: 19417 RVA: 0x001D8F02 File Offset: 0x001D7102
+	// Token: 0x06004BFD RID: 19453 RVA: 0x001D9FEA File Offset: 0x001D81EA
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -255,14 +255,14 @@ public class RewardLootItem : BaseReward
 		}
 	}
 
-	// Token: 0x04003BD4 RID: 15316
+	// Token: 0x04003BF5 RID: 15349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int LootGameStage = 1;
 
-	// Token: 0x04003BD5 RID: 15317
+	// Token: 0x04003BF6 RID: 15350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack item;
 
-	// Token: 0x04003BD6 RID: 15318
+	// Token: 0x04003BF7 RID: 15351
 	public static string PropLootTier = "loot_tier";
 }

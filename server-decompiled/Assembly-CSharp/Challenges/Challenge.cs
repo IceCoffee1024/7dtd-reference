@@ -8,17 +8,17 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001917 RID: 6423
+	// Token: 0x02001948 RID: 6472
 	[Preserve]
 	public class Challenge
 	{
-		// Token: 0x170018E3 RID: 6371
-		// (get) Token: 0x0600C5FF RID: 50687 RVA: 0x0048C29A File Offset: 0x0048A49A
-		// (set) Token: 0x0600C600 RID: 50688 RVA: 0x0048C2A2 File Offset: 0x0048A4A2
+		// Token: 0x1700192B RID: 6443
+		// (get) Token: 0x0600C713 RID: 50963 RVA: 0x0048FC46 File Offset: 0x0048DE46
+		// (set) Token: 0x0600C714 RID: 50964 RVA: 0x0048FC4E File Offset: 0x0048DE4E
 		public byte CurrentFileVersion { get; set; }
 
-		// Token: 0x170018E4 RID: 6372
-		// (get) Token: 0x0600C601 RID: 50689 RVA: 0x0048C2AB File Offset: 0x0048A4AB
+		// Token: 0x1700192C RID: 6444
+		// (get) Token: 0x0600C715 RID: 50965 RVA: 0x0048FC57 File Offset: 0x0048DE57
 		public bool IsActive
 		{
 			get
@@ -28,13 +28,13 @@ namespace Challenges
 		}
 
 		// Token: 0x14000116 RID: 278
-		// (add) Token: 0x0600C602 RID: 50690 RVA: 0x0048C2B8 File Offset: 0x0048A4B8
-		// (remove) Token: 0x0600C603 RID: 50691 RVA: 0x0048C2F0 File Offset: 0x0048A4F0
+		// (add) Token: 0x0600C716 RID: 50966 RVA: 0x0048FC64 File Offset: 0x0048DE64
+		// (remove) Token: 0x0600C717 RID: 50967 RVA: 0x0048FC9C File Offset: 0x0048DE9C
 		public event ChallengeStateChanged OnChallengeStateChanged;
 
-		// Token: 0x170018E5 RID: 6373
-		// (get) Token: 0x0600C604 RID: 50692 RVA: 0x0048C325 File Offset: 0x0048A525
-		// (set) Token: 0x0600C605 RID: 50693 RVA: 0x0048C32D File Offset: 0x0048A52D
+		// Token: 0x1700192D RID: 6445
+		// (get) Token: 0x0600C718 RID: 50968 RVA: 0x0048FCD1 File Offset: 0x0048DED1
+		// (set) Token: 0x0600C719 RID: 50969 RVA: 0x0048FCD9 File Offset: 0x0048DED9
 		public bool NeedsPreRequisites
 		{
 			get
@@ -51,15 +51,15 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C606 RID: 50694 RVA: 0x0048C34A File Offset: 0x0048A54A
+		// Token: 0x0600C71A RID: 50970 RVA: 0x0048FCF6 File Offset: 0x0048DEF6
 		public void SetRequirementGroup(BaseRequirementObjectiveGroup requirementObjectiveGroup)
 		{
 			requirementObjectiveGroup.Owner = this;
 			this.RequirementObjectiveGroup = requirementObjectiveGroup;
 		}
 
-		// Token: 0x170018E6 RID: 6374
-		// (get) Token: 0x0600C607 RID: 50695 RVA: 0x0048C35A File Offset: 0x0048A55A
+		// Token: 0x1700192E RID: 6446
+		// (get) Token: 0x0600C71B RID: 50971 RVA: 0x0048FD06 File Offset: 0x0048DF06
 		public bool ReadyToComplete
 		{
 			get
@@ -68,8 +68,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170018E7 RID: 6375
-		// (get) Token: 0x0600C608 RID: 50696 RVA: 0x0048C380 File Offset: 0x0048A580
+		// Token: 0x1700192F RID: 6447
+		// (get) Token: 0x0600C71C RID: 50972 RVA: 0x0048FD2C File Offset: 0x0048DF2C
 		public float FillAmount
 		{
 			get
@@ -83,8 +83,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170018E8 RID: 6376
-		// (get) Token: 0x0600C609 RID: 50697 RVA: 0x0048C3CB File Offset: 0x0048A5CB
+		// Token: 0x17001930 RID: 6448
+		// (get) Token: 0x0600C71D RID: 50973 RVA: 0x0048FD77 File Offset: 0x0048DF77
 		public int ActiveObjectives
 		{
 			get
@@ -97,8 +97,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170018E9 RID: 6377
-		// (get) Token: 0x0600C60A RID: 50698 RVA: 0x0048C3EC File Offset: 0x0048A5EC
+		// Token: 0x17001931 RID: 6449
+		// (get) Token: 0x0600C71E RID: 50974 RVA: 0x0048FD98 File Offset: 0x0048DF98
 		public bool NeedsUIUpdate
 		{
 			get
@@ -107,7 +107,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C60B RID: 50699 RVA: 0x0048C404 File Offset: 0x0048A604
+		// Token: 0x0600C71F RID: 50975 RVA: 0x0048FDB0 File Offset: 0x0048DFB0
 		public virtual void Read(PooledBinaryReader _br)
 		{
 			this.CurrentFileVersion = _br.ReadByte();
@@ -131,7 +131,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C60C RID: 50700 RVA: 0x0048C4AC File Offset: 0x0048A6AC
+		// Token: 0x0600C720 RID: 50976 RVA: 0x0048FE58 File Offset: 0x0048E058
 		public ChallengeObjectiveChallengeComplete GetChallengeCompleteObjective()
 		{
 			for (int i = 0; i < this.ObjectiveList.Count; i++)
@@ -145,7 +145,7 @@ namespace Challenges
 			return null;
 		}
 
-		// Token: 0x0600C60D RID: 50701 RVA: 0x0048C4E7 File Offset: 0x0048A6E7
+		// Token: 0x0600C721 RID: 50977 RVA: 0x0048FE93 File Offset: 0x0048E093
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public Recipe GetRecipeFromRequirements()
 		{
@@ -156,7 +156,7 @@ namespace Challenges
 			return null;
 		}
 
-		// Token: 0x0600C60E RID: 50702 RVA: 0x0048C500 File Offset: 0x0048A700
+		// Token: 0x0600C722 RID: 50978 RVA: 0x0048FEAC File Offset: 0x0048E0AC
 		public virtual void Write(PooledBinaryWriter _bw)
 		{
 			_bw.Write(Challenge.FileVersion);
@@ -171,13 +171,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C60F RID: 50703 RVA: 0x0048C585 File Offset: 0x0048A785
+		// Token: 0x0600C723 RID: 50979 RVA: 0x0048FF31 File Offset: 0x0048E131
 		public bool ResetToChallengeClass()
 		{
 			return this.ChallengeClass != null && this.ChallengeClass.ResetObjectives(this);
 		}
 
-		// Token: 0x0600C610 RID: 50704 RVA: 0x0048C59D File Offset: 0x0048A79D
+		// Token: 0x0600C724 RID: 50980 RVA: 0x0048FF49 File Offset: 0x0048E149
 		public List<BaseChallengeObjective> GetObjectiveList()
 		{
 			if (!this.NeedsPreRequisites)
@@ -187,7 +187,7 @@ namespace Challenges
 			return this.RequirementObjectiveGroup.CurrentObjectiveList;
 		}
 
-		// Token: 0x0600C611 RID: 50705 RVA: 0x0048C5BC File Offset: 0x0048A7BC
+		// Token: 0x0600C725 RID: 50981 RVA: 0x0048FF68 File Offset: 0x0048E168
 		public List<Recipe> CraftedRecipes()
 		{
 			List<Recipe> list = null;
@@ -209,7 +209,7 @@ namespace Challenges
 			return list;
 		}
 
-		// Token: 0x0600C612 RID: 50706 RVA: 0x0048C61C File Offset: 0x0048A81C
+		// Token: 0x0600C726 RID: 50982 RVA: 0x0048FFC8 File Offset: 0x0048E1C8
 		public void StartChallenge()
 		{
 			if (!this.ChallengeClass.HandleResourceRequirement())
@@ -234,7 +234,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C613 RID: 50707 RVA: 0x0048C6AC File Offset: 0x0048A8AC
+		// Token: 0x0600C727 RID: 50983 RVA: 0x00490058 File Offset: 0x0048E258
 		public void EndChallenge(bool isCompleted)
 		{
 			for (int i = 0; i < this.ObjectiveList.Count; i++)
@@ -255,7 +255,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C614 RID: 50708 RVA: 0x0048C738 File Offset: 0x0048A938
+		// Token: 0x0600C728 RID: 50984 RVA: 0x004900E4 File Offset: 0x0048E2E4
 		public void HandleComplete(bool showTooltip = true, bool forceComplete = false)
 		{
 			bool flag = false;
@@ -296,12 +296,13 @@ namespace Challenges
 				ChallengeName = this.ChallengeClass.Name,
 				ChallengeGroup = this.ChallengeGroup.Name,
 				ChallengeCategory = this.ChallengeGroup.Category,
-				IsForcedCompletion = forceComplete
+				IsForcedCompletion = forceComplete,
+				PlayerLocation = this.Owner.Player.GetBlockPosition().ToString()
 			};
 			ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(challengeCompletedEventData);
 		}
 
-		// Token: 0x0600C615 RID: 50709 RVA: 0x0048C8E0 File Offset: 0x0048AAE0
+		// Token: 0x0600C729 RID: 50985 RVA: 0x004902B0 File Offset: 0x0048E4B0
 		public void Redeem()
 		{
 			GameEventManager.Current.HandleAction(this.ChallengeClass.RewardEvent, null, this.Owner.Player, false, "", "", false, true, "", null);
@@ -319,12 +320,13 @@ namespace Challenges
 				ChallengeGroup = this.ChallengeGroup.Name,
 				IsChallengeGroupComplete = this.ChallengeGroup.IsComplete,
 				ChallengeCategory = this.ChallengeGroup.Category,
-				RewardEvent = this.ChallengeClass.RewardEvent
+				RewardEvent = this.ChallengeClass.RewardEvent,
+				PlayerLocation = this.Owner.Player.GetBlockPosition().ToString()
 			};
 			ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(challengeClaimedEventData);
 		}
 
-		// Token: 0x0600C616 RID: 50710 RVA: 0x0048CA28 File Offset: 0x0048AC28
+		// Token: 0x0600C72A RID: 50986 RVA: 0x0049041C File Offset: 0x0048E61C
 		public void HandleTrackingStarted()
 		{
 			for (int i = 0; i < this.ObjectiveList.Count; i++)
@@ -336,7 +338,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C617 RID: 50711 RVA: 0x0048CA70 File Offset: 0x0048AC70
+		// Token: 0x0600C72B RID: 50987 RVA: 0x00490464 File Offset: 0x0048E664
 		public void HandleTrackingEnded()
 		{
 			for (int i = 0; i < this.ObjectiveList.Count; i++)
@@ -345,7 +347,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C618 RID: 50712 RVA: 0x0048CAA4 File Offset: 0x0048ACA4
+		// Token: 0x0600C72C RID: 50988 RVA: 0x00490498 File Offset: 0x0048E698
 		public ChallengeTrackingHandler GetTrackingHelper()
 		{
 			if (this.TrackingHandler == null)
@@ -359,7 +361,7 @@ namespace Challenges
 			return this.TrackingHandler;
 		}
 
-		// Token: 0x0600C619 RID: 50713 RVA: 0x0048CAD7 File Offset: 0x0048ACD7
+		// Token: 0x0600C72D RID: 50989 RVA: 0x004904CB File Offset: 0x0048E6CB
 		public void AddTrackingEntry(TrackingEntry entry)
 		{
 			if (this.TrackingHandler == null)
@@ -373,7 +375,7 @@ namespace Challenges
 			this.TrackingHandler.AddTrackingEntry(entry);
 		}
 
-		// Token: 0x0600C61A RID: 50714 RVA: 0x0048CB10 File Offset: 0x0048AD10
+		// Token: 0x0600C72E RID: 50990 RVA: 0x00490504 File Offset: 0x0048E704
 		public void RemoveTrackingEntry(TrackingEntry entry)
 		{
 			if (this.TrackingHandler == null)
@@ -383,7 +385,7 @@ namespace Challenges
 			this.TrackingHandler.RemoveTrackingEntry(entry);
 		}
 
-		// Token: 0x0600C61B RID: 50715 RVA: 0x0048CB28 File Offset: 0x0048AD28
+		// Token: 0x0600C72F RID: 50991 RVA: 0x0049051C File Offset: 0x0048E71C
 		public Challenge Clone()
 		{
 			Challenge challenge = new Challenge();
@@ -409,7 +411,7 @@ namespace Challenges
 			return challenge;
 		}
 
-		// Token: 0x0600C61C RID: 50716 RVA: 0x0048CBF9 File Offset: 0x0048ADF9
+		// Token: 0x0600C730 RID: 50992 RVA: 0x004905ED File Offset: 0x0048E7ED
 		public void RemovePrerequisiteHooks()
 		{
 			if (this.RequirementObjectiveGroup != null)
@@ -418,7 +420,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C61D RID: 50717 RVA: 0x0048CC10 File Offset: 0x0048AE10
+		// Token: 0x0600C731 RID: 50993 RVA: 0x00490604 File Offset: 0x0048E804
 		public void CheckPrerequisites()
 		{
 			bool flag = false;
@@ -442,7 +444,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C61E RID: 50718 RVA: 0x0048CC99 File Offset: 0x0048AE99
+		// Token: 0x0600C732 RID: 50994 RVA: 0x0049068D File Offset: 0x0048E88D
 		public void AddPrerequisiteHooks()
 		{
 			if (this.RequirementObjectiveGroup != null)
@@ -452,7 +454,7 @@ namespace Challenges
 			this.CheckPrerequisites();
 		}
 
-		// Token: 0x0600C61F RID: 50719 RVA: 0x0048CCB4 File Offset: 0x0048AEB4
+		// Token: 0x0600C733 RID: 50995 RVA: 0x004906A8 File Offset: 0x0048E8A8
 		public BaseChallengeObjective GetNavObjective()
 		{
 			for (int i = 0; i < this.ObjectiveList.Count; i++)
@@ -466,7 +468,7 @@ namespace Challenges
 			return null;
 		}
 
-		// Token: 0x0600C620 RID: 50720 RVA: 0x0048CCF0 File Offset: 0x0048AEF0
+		// Token: 0x0600C734 RID: 50996 RVA: 0x004906E4 File Offset: 0x0048E8E4
 		public void CompleteChallenge(bool forceRedeem = false, bool giveReward = true, bool forceComplete = false)
 		{
 			if (!this.IsActive && (!forceRedeem || this.ChallengeState != Challenge.ChallengeStates.Completed))
@@ -490,51 +492,51 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x04009566 RID: 38246
+		// Token: 0x0400964F RID: 38479
 		public static byte FileVersion = 2;
 
-		// Token: 0x04009568 RID: 38248
+		// Token: 0x04009651 RID: 38481
 		public Challenge.ChallengeStates ChallengeState;
 
-		// Token: 0x04009569 RID: 38249
+		// Token: 0x04009652 RID: 38482
 		public bool IsTracked;
 
-		// Token: 0x0400956A RID: 38250
+		// Token: 0x04009653 RID: 38483
 		public bool UIDirty;
 
-		// Token: 0x0400956B RID: 38251
+		// Token: 0x04009654 RID: 38484
 		public bool AutoCompleted;
 
-		// Token: 0x0400956C RID: 38252
+		// Token: 0x04009655 RID: 38485
 		public ChallengeClass ChallengeClass;
 
-		// Token: 0x0400956D RID: 38253
+		// Token: 0x04009656 RID: 38486
 		public ChallengeGroup ChallengeGroup;
 
-		// Token: 0x0400956E RID: 38254
+		// Token: 0x04009657 RID: 38487
 		public BaseRequirementObjectiveGroup RequirementObjectiveGroup;
 
-		// Token: 0x0400956F RID: 38255
+		// Token: 0x04009658 RID: 38488
 		public List<BaseChallengeObjective> ObjectiveList = new List<BaseChallengeObjective>();
 
-		// Token: 0x04009571 RID: 38257
+		// Token: 0x0400965A RID: 38490
 		public ChallengeTrackingHandler TrackingHandler;
 
-		// Token: 0x04009572 RID: 38258
+		// Token: 0x0400965B RID: 38491
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool needsPrerequisites;
 
-		// Token: 0x04009573 RID: 38259
+		// Token: 0x0400965C RID: 38492
 		public ChallengeJournal Owner;
 
-		// Token: 0x02001918 RID: 6424
+		// Token: 0x02001949 RID: 6473
 		public enum ChallengeStates : byte
 		{
-			// Token: 0x04009575 RID: 38261
+			// Token: 0x0400965E RID: 38494
 			Active,
-			// Token: 0x04009576 RID: 38262
+			// Token: 0x0400965F RID: 38495
 			Completed,
-			// Token: 0x04009577 RID: 38263
+			// Token: 0x04009660 RID: 38496
 			Redeemed
 		}
 	}

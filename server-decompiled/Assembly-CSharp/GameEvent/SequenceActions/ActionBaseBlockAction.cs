@@ -6,25 +6,25 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A06 RID: 6662
+	// Token: 0x02001A37 RID: 6711
 	[Preserve]
 	public class ActionBaseBlockAction : BaseAction
 	{
-		// Token: 0x0600CB6C RID: 52076 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600CC80 RID: 52352 RVA: 0x00010E62 File Offset: 0x0000F062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool NeedsDamage()
 		{
 			return false;
 		}
 
-		// Token: 0x0600CB6D RID: 52077 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600CC81 RID: 52353 RVA: 0x00010E62 File Offset: 0x0000F062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool AllowInTrader()
 		{
 			return false;
 		}
 
-		// Token: 0x0600CB6E RID: 52078 RVA: 0x004A5E2C File Offset: 0x004A402C
+		// Token: 0x0600CC82 RID: 52354 RVA: 0x004A9928 File Offset: 0x004A7B28
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -84,34 +84,34 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InCompleteRefund;
 		}
 
-		// Token: 0x0600CB6F RID: 52079 RVA: 0x004A61A1 File Offset: 0x004A43A1
+		// Token: 0x0600CC83 RID: 52355 RVA: 0x004A9C9D File Offset: 0x004A7E9D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void ProcessChanges(World world, List<BlockChangeInfo> blockChanges)
 		{
 			world.SetBlocksRPC(blockChanges);
 		}
 
-		// Token: 0x0600CB70 RID: 52080 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CC84 RID: 52356 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void ChangesComplete()
 		{
 		}
 
-		// Token: 0x0600CB71 RID: 52081 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600CC85 RID: 52357 RVA: 0x00020119 File Offset: 0x0001E319
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool CheckValid(World world, Vector3i currentPos)
 		{
 			return true;
 		}
 
-		// Token: 0x0600CB72 RID: 52082 RVA: 0x000200DA File Offset: 0x0001E2DA
+		// Token: 0x0600CC86 RID: 52358 RVA: 0x000200DA File Offset: 0x0001E2DA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
 			return null;
 		}
 
-		// Token: 0x0600CB73 RID: 52083 RVA: 0x004A61AA File Offset: 0x004A43AA
+		// Token: 0x0600CC87 RID: 52359 RVA: 0x004A9CA6 File Offset: 0x004A7EA6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator UpdateBlocks(List<BlockChangeInfo> blockChanges)
 		{
@@ -120,7 +120,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600CB74 RID: 52084 RVA: 0x004A61BC File Offset: 0x004A43BC
+		// Token: 0x0600CC88 RID: 52360 RVA: 0x004A9CB8 File Offset: 0x004A7EB8
 		public override BaseAction Clone()
 		{
 			ActionBaseBlockAction actionBaseBlockAction = base.Clone() as ActionBaseBlockAction;
@@ -138,7 +138,7 @@ namespace GameEvent.SequenceActions
 			return actionBaseBlockAction;
 		}
 
-		// Token: 0x0600CB75 RID: 52085 RVA: 0x004A6258 File Offset: 0x004A4458
+		// Token: 0x0600CC89 RID: 52361 RVA: 0x004A9D54 File Offset: 0x004A7F54
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -158,95 +158,95 @@ namespace GameEvent.SequenceActions
 			properties.ParseInt(ActionBaseBlockAction.PropMaxCount, ref this.maxCount);
 		}
 
-		// Token: 0x04009A20 RID: 39456
+		// Token: 0x04009B09 RID: 39689
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3i minOffset = Vector3i.zero;
 
-		// Token: 0x04009A21 RID: 39457
+		// Token: 0x04009B0A RID: 39690
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3i maxOffset = Vector3i.zero;
 
-		// Token: 0x04009A22 RID: 39458
+		// Token: 0x04009B0B RID: 39691
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string blockTags;
 
-		// Token: 0x04009A23 RID: 39459
+		// Token: 0x04009B0C RID: 39692
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string excludeTags;
 
-		// Token: 0x04009A24 RID: 39460
+		// Token: 0x04009B0D RID: 39693
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int spacing;
 
-		// Token: 0x04009A25 RID: 39461
+		// Token: 0x04009B0E RID: 39694
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int innerOffset = -1;
 
-		// Token: 0x04009A26 RID: 39462
+		// Token: 0x04009B0F RID: 39695
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool safeAllowed;
 
-		// Token: 0x04009A27 RID: 39463
+		// Token: 0x04009B10 RID: 39696
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool checkSafe;
 
-		// Token: 0x04009A28 RID: 39464
+		// Token: 0x04009B11 RID: 39697
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool allowTerrain;
 
-		// Token: 0x04009A29 RID: 39465
+		// Token: 0x04009B12 RID: 39698
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float randomChance = -1f;
 
-		// Token: 0x04009A2A RID: 39466
+		// Token: 0x04009B13 RID: 39699
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int maxCount = -1;
 
-		// Token: 0x04009A2B RID: 39467
+		// Token: 0x04009B14 RID: 39700
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBlockTags = "block_tags";
 
-		// Token: 0x04009A2C RID: 39468
+		// Token: 0x04009B15 RID: 39701
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeTags = "exclude_tags";
 
-		// Token: 0x04009A2D RID: 39469
+		// Token: 0x04009B16 RID: 39702
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinOffset = "min_offset";
 
-		// Token: 0x04009A2E RID: 39470
+		// Token: 0x04009B17 RID: 39703
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxOffset = "max_offset";
 
-		// Token: 0x04009A2F RID: 39471
+		// Token: 0x04009B18 RID: 39704
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpacing = "spacing";
 
-		// Token: 0x04009A30 RID: 39472
+		// Token: 0x04009B19 RID: 39705
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRandomChance = "random_chance";
 
-		// Token: 0x04009A31 RID: 39473
+		// Token: 0x04009B1A RID: 39706
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSafeAllowed = "safe_allowed";
 
-		// Token: 0x04009A32 RID: 39474
+		// Token: 0x04009B1B RID: 39707
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropInnerOffset = "inner_offset";
 
-		// Token: 0x04009A33 RID: 39475
+		// Token: 0x04009B1C RID: 39708
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAllowTerrain = "allow_terrain";
 
-		// Token: 0x04009A34 RID: 39476
+		// Token: 0x04009B1D RID: 39709
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxCount = "max_count";
 
-		// Token: 0x04009A35 RID: 39477
+		// Token: 0x04009B1E RID: 39710
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public GameRandom random;
 
-		// Token: 0x04009A36 RID: 39478
+		// Token: 0x04009B1F RID: 39711
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3 startPoint = Vector3.zero;
 	}

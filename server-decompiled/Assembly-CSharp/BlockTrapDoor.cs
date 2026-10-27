@@ -19,13 +19,13 @@ public class BlockTrapDoor : Block
 		}
 	}
 
-	// Token: 0x0600099F RID: 2463 RVA: 0x0004241C File Offset: 0x0004061C
+	// Token: 0x0600099F RID: 2463 RVA: 0x000423DC File Offset: 0x000405DC
 	public BlockTrapDoor()
 	{
 		this.IsCheckCollideWithEntity = true;
 	}
 
-	// Token: 0x060009A0 RID: 2464 RVA: 0x00042474 File Offset: 0x00040674
+	// Token: 0x060009A0 RID: 2464 RVA: 0x00042434 File Offset: 0x00040634
 	public override void Init()
 	{
 		base.Init();
@@ -45,21 +45,21 @@ public class BlockTrapDoor : Block
 		return true;
 	}
 
-	// Token: 0x060009A2 RID: 2466 RVA: 0x000424F7 File Offset: 0x000406F7
+	// Token: 0x060009A2 RID: 2466 RVA: 0x000424B7 File Offset: 0x000406B7
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = _world.IsEditor() && !GameUtils.IsWorldEditor();
 		return this.cmds;
 	}
 
-	// Token: 0x060009A3 RID: 2467 RVA: 0x00042523 File Offset: 0x00040723
+	// Token: 0x060009A3 RID: 2467 RVA: 0x000424E3 File Offset: 0x000406E3
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		XUiC_TriggerProperties.Show(_player.PlayerUI.xui, _blockPos, true, true);
 		return true;
 	}
 
-	// Token: 0x060009A4 RID: 2468 RVA: 0x0004253C File Offset: 0x0004073C
+	// Token: 0x060009A4 RID: 2468 RVA: 0x000424FC File Offset: 0x000406FC
 	public override bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _targetEntity)
 	{
 		if (_targetEntity as EntityAlive == null)
@@ -97,7 +97,7 @@ public class BlockTrapDoor : Block
 		return true;
 	}
 
-	// Token: 0x060009A5 RID: 2469 RVA: 0x000426C0 File Offset: 0x000408C0
+	// Token: 0x060009A5 RID: 2469 RVA: 0x00042680 File Offset: 0x00040880
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		EntityPlayer entityPlayer = ((World)_world).GetEntity(_entityId) as EntityPlayer;
@@ -108,7 +108,7 @@ public class BlockTrapDoor : Block
 		return base.OnBlockDestroyedBy(_world, _bvRef, _blockValue, _entityId, _bUseHarvestTool);
 	}
 
-	// Token: 0x060009A6 RID: 2470 RVA: 0x00042704 File Offset: 0x00040904
+	// Token: 0x060009A6 RID: 2470 RVA: 0x000426C4 File Offset: 0x000408C4
 	public override Block.DestroyedResult OnBlockDestroyedByExplosion(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		EntityPlayer entityPlayer = ((World)_world).GetEntity(_playerThatStartedExpl) as EntityPlayer;
@@ -119,7 +119,7 @@ public class BlockTrapDoor : Block
 		return base.OnBlockDestroyedByExplosion(_world, _bvRef, _blockValue, _playerThatStartedExpl);
 	}
 
-	// Token: 0x060009A7 RID: 2471 RVA: 0x00042746 File Offset: 0x00040946
+	// Token: 0x060009A7 RID: 2471 RVA: 0x00042706 File Offset: 0x00040906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator damageBlock(float time, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayer _player, int _entityId)
 	{
@@ -132,7 +132,7 @@ public class BlockTrapDoor : Block
 		yield break;
 	}
 
-	// Token: 0x060009A8 RID: 2472 RVA: 0x00042784 File Offset: 0x00040984
+	// Token: 0x060009A8 RID: 2472 RVA: 0x00042744 File Offset: 0x00040944
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);

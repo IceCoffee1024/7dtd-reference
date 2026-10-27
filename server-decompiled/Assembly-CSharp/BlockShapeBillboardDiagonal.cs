@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeBillboardDiagonal : BlockShapeBillboardAbstract
 {
-	// Token: 0x06000CA5 RID: 3237 RVA: 0x0004EFB4 File Offset: 0x0004D1B4
+	// Token: 0x06000CA5 RID: 3237 RVA: 0x0004EF74 File Offset: 0x0004D174
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;

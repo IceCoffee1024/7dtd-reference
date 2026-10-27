@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E8B RID: 3723
+// Token: 0x02000E96 RID: 3734
 [Preserve]
 public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where TValue : struct, IEquatable<TValue>, IComparable<TValue>, IFormattable, IConvertible
 {
-	// Token: 0x17000D52 RID: 3410
-	// (get) Token: 0x060072C7 RID: 29383 RVA: 0x002BF533 File Offset: 0x002BD733
-	// (set) Token: 0x060072C8 RID: 29384 RVA: 0x002BF53B File Offset: 0x002BD73B
+	// Token: 0x17000D58 RID: 3416
+	// (get) Token: 0x060072EC RID: 29420 RVA: 0x002C0A9F File Offset: 0x002BEC9F
+	// (set) Token: 0x060072ED RID: 29421 RVA: 0x002C0AA7 File Offset: 0x002BECA7
 	[XuiXmlAttribute("format_string", false)]
 	public string FormatString { get; set; }
 
-	// Token: 0x17000D53 RID: 3411
-	// (get) Token: 0x060072C9 RID: 29385 RVA: 0x002BEF88 File Offset: 0x002BD188
-	// (set) Token: 0x060072CA RID: 29386 RVA: 0x002BF544 File Offset: 0x002BD744
+	// Token: 0x17000D59 RID: 3417
+	// (get) Token: 0x060072EE RID: 29422 RVA: 0x002C04F4 File Offset: 0x002BE6F4
+	// (set) Token: 0x060072EF RID: 29423 RVA: 0x002C0AB0 File Offset: 0x002BECB0
 	public override TValue Value
 	{
 		get
@@ -39,8 +39,8 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		}
 	}
 
-	// Token: 0x17000D54 RID: 3412
-	// (get) Token: 0x060072CB RID: 29387 RVA: 0x0010087D File Offset: 0x000FEA7D
+	// Token: 0x17000D5A RID: 3418
+	// (get) Token: 0x060072F0 RID: 29424 RVA: 0x00100DD1 File Offset: 0x000FEFD1
 	public override int IndexElementCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -50,8 +50,8 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		}
 	}
 
-	// Token: 0x17000D55 RID: 3413
-	// (get) Token: 0x060072CC RID: 29388 RVA: 0x0010087D File Offset: 0x000FEA7D
+	// Token: 0x17000D5B RID: 3419
+	// (get) Token: 0x060072F1 RID: 29425 RVA: 0x00100DD1 File Offset: 0x000FEFD1
 	public override int IndexMarkerIndex
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -61,8 +61,8 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		}
 	}
 
-	// Token: 0x17000D56 RID: 3414
-	// (get) Token: 0x060072CD RID: 29389 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000D5C RID: 3420
+	// (get) Token: 0x060072F2 RID: 29426 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsNumber
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -72,7 +72,7 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		}
 	}
 
-	// Token: 0x060072CE RID: 29390 RVA: 0x002BF5B8 File Offset: 0x002BD7B8
+	// Token: 0x060072F3 RID: 29427 RVA: 0x002C0B24 File Offset: 0x002BED24
 	public override void OnOpen()
 	{
 		if (this.currentValue.CompareTo(this.Max) > 0)
@@ -86,21 +86,21 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		base.OnOpen();
 	}
 
-	// Token: 0x060072CF RID: 29391 RVA: 0x002BF619 File Offset: 0x002BD819
+	// Token: 0x060072F4 RID: 29428 RVA: 0x002C0B85 File Offset: 0x002BED85
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateLabel()
 	{
 		base.ValueText = ((this.CustomValueFormatter != null) ? this.CustomValueFormatter(this.currentValue) : this.currentValue.ToString(this.FormatString, Utils.StandardCulture));
 	}
 
-	// Token: 0x060072D0 RID: 29392 RVA: 0x002BF658 File Offset: 0x002BD858
+	// Token: 0x060072F5 RID: 29429 RVA: 0x002C0BC4 File Offset: 0x002BEDC4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDifferentValue(TValue _oldVal, TValue _currentValue)
 	{
 		return !_oldVal.Equals(_currentValue);
 	}
 
-	// Token: 0x060072D1 RID: 29393 RVA: 0x002BF66B File Offset: 0x002BD86B
+	// Token: 0x060072F6 RID: 29430 RVA: 0x002C0BD7 File Offset: 0x002BEDD7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void BackPressed()
 	{
@@ -110,7 +110,7 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		}
 	}
 
-	// Token: 0x060072D2 RID: 29394 RVA: 0x002BF6A3 File Offset: 0x002BD8A3
+	// Token: 0x060072F7 RID: 29431 RVA: 0x002C0C0F File Offset: 0x002BEE0F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ForwardPressed()
 	{
@@ -120,36 +120,36 @@ public abstract class XUiC_ComboBoxOrdinal<TValue> : XUiC_ComboBox<TValue> where
 		}
 	}
 
-	// Token: 0x060072D3 RID: 29395 RVA: 0x002BF6DB File Offset: 0x002BD8DB
+	// Token: 0x060072F8 RID: 29432 RVA: 0x002C0C47 File Offset: 0x002BEE47
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isMax()
 	{
 		return this.currentValue.CompareTo(this.Max) == 0;
 	}
 
-	// Token: 0x060072D4 RID: 29396 RVA: 0x002BF6F7 File Offset: 0x002BD8F7
+	// Token: 0x060072F9 RID: 29433 RVA: 0x002C0C63 File Offset: 0x002BEE63
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isMin()
 	{
 		return this.currentValue.CompareTo(this.Min) == 0;
 	}
 
-	// Token: 0x060072D5 RID: 29397 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060072FA RID: 29434 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isEmpty()
 	{
 		return false;
 	}
 
-	// Token: 0x060072D6 RID: 29398 RVA: 0x002BF713 File Offset: 0x002BD913
+	// Token: 0x060072FB RID: 29435 RVA: 0x002C0C7F File Offset: 0x002BEE7F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_ComboBoxOrdinal()
 	{
 	}
 
-	// Token: 0x0400564E RID: 22094
+	// Token: 0x04005673 RID: 22131
 	public TValue Min;
 
-	// Token: 0x0400564F RID: 22095
+	// Token: 0x04005674 RID: 22132
 	public TValue Max;
 }

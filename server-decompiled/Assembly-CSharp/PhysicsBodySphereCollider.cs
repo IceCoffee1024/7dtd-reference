@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000908 RID: 2312
+// Token: 0x02000912 RID: 2322
 public class PhysicsBodySphereCollider : PhysicsBodyColliderBase
 {
-	// Token: 0x06004266 RID: 16998 RVA: 0x001A14CA File Offset: 0x0019F6CA
+	// Token: 0x06004289 RID: 17033 RVA: 0x001A2572 File Offset: 0x001A0772
 	public PhysicsBodySphereCollider(SphereCollider _collider, PhysicsBodyColliderConfiguration _config)
 		: base(_collider.transform, _config)
 	{
@@ -13,8 +13,8 @@ public class PhysicsBodySphereCollider : PhysicsBodyColliderBase
 		this.collider = _collider;
 	}
 
-	// Token: 0x17000728 RID: 1832
-	// (set) Token: 0x06004267 RID: 16999 RVA: 0x001A14F8 File Offset: 0x0019F6F8
+	// Token: 0x1700072E RID: 1838
+	// (set) Token: 0x0600428A RID: 17034 RVA: 0x001A25A0 File Offset: 0x001A07A0
 	public override EnumColliderMode ColliderMode
 	{
 		set
@@ -63,15 +63,15 @@ public class PhysicsBodySphereCollider : PhysicsBodyColliderBase
 		}
 	}
 
-	// Token: 0x040035FC RID: 13820
+	// Token: 0x0400361C RID: 13852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 center;
 
-	// Token: 0x040035FD RID: 13821
+	// Token: 0x0400361D RID: 13853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float radius;
 
-	// Token: 0x040035FE RID: 13822
+	// Token: 0x0400361E RID: 13854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SphereCollider collider;
 }

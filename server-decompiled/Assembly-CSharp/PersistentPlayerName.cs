@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020008FE RID: 2302
+// Token: 0x02000908 RID: 2312
 public class PersistentPlayerName
 {
-	// Token: 0x1700071B RID: 1819
-	// (get) Token: 0x0600423C RID: 16956 RVA: 0x001A078F File Offset: 0x0019E98F
+	// Token: 0x17000721 RID: 1825
+	// (get) Token: 0x0600425F RID: 16991 RVA: 0x001A1837 File Offset: 0x0019FA37
 	public AuthoredText AuthoredName
 	{
 		get
@@ -13,8 +13,8 @@ public class PersistentPlayerName
 		}
 	}
 
-	// Token: 0x1700071C RID: 1820
-	// (get) Token: 0x0600423D RID: 16957 RVA: 0x001A0798 File Offset: 0x0019E998
+	// Token: 0x17000722 RID: 1826
+	// (get) Token: 0x06004260 RID: 16992 RVA: 0x001A1840 File Offset: 0x0019FA40
 	public string DisplayName
 	{
 		get
@@ -36,8 +36,8 @@ public class PersistentPlayerName
 		}
 	}
 
-	// Token: 0x1700071D RID: 1821
-	// (get) Token: 0x0600423E RID: 16958 RVA: 0x001A0884 File Offset: 0x0019EA84
+	// Token: 0x17000723 RID: 1827
+	// (get) Token: 0x06004261 RID: 16993 RVA: 0x001A192C File Offset: 0x0019FB2C
 	public string SafeDisplayName
 	{
 		get
@@ -59,14 +59,14 @@ public class PersistentPlayerName
 		}
 	}
 
-	// Token: 0x0600423F RID: 16959 RVA: 0x001A0900 File Offset: 0x0019EB00
+	// Token: 0x06004262 RID: 16994 RVA: 0x001A19A8 File Offset: 0x0019FBA8
 	public PersistentPlayerName(AuthoredText name)
 	{
 		this.playerName = name;
 		GeneratedTextManager.PrefilterText(name, GeneratedTextManager.TextFilteringMode.FilterOtherPlatforms);
 	}
 
-	// Token: 0x06004240 RID: 16960 RVA: 0x001A0916 File Offset: 0x0019EB16
+	// Token: 0x06004263 RID: 16995 RVA: 0x001A19BE File Offset: 0x0019FBBE
 	public void Update(string name, PlatformUserIdentifierAbs author)
 	{
 		this.cachedDisplayName = null;
@@ -76,7 +76,7 @@ public class PersistentPlayerName
 		GameManager.Instance.persistentPlayers.FixNameCollisions(name);
 	}
 
-	// Token: 0x06004241 RID: 16961 RVA: 0x001A0950 File Offset: 0x0019EB50
+	// Token: 0x06004264 RID: 16996 RVA: 0x001A19F8 File Offset: 0x0019FBF8
 	public void Update(AuthoredText name)
 	{
 		if (this.playerName != name)
@@ -89,21 +89,21 @@ public class PersistentPlayerName
 		}
 	}
 
-	// Token: 0x06004242 RID: 16962 RVA: 0x001A099C File Offset: 0x0019EB9C
+	// Token: 0x06004265 RID: 16997 RVA: 0x001A1A44 File Offset: 0x0019FC44
 	public void SetCollisionSuffix(int suffix)
 	{
 		this.nameSuffix = suffix;
 	}
 
-	// Token: 0x040035D6 RID: 13782
+	// Token: 0x040035F6 RID: 13814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AuthoredText playerName;
 
-	// Token: 0x040035D7 RID: 13783
+	// Token: 0x040035F7 RID: 13815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedDisplayName;
 
-	// Token: 0x040035D8 RID: 13784
+	// Token: 0x040035F8 RID: 13816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nameSuffix;
 }

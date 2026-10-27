@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02001124 RID: 4388
+// Token: 0x02001134 RID: 4404
 public class ParsingMethodCache
 {
-	// Token: 0x17001043 RID: 4163
-	// (get) Token: 0x06008AD4 RID: 35540 RVA: 0x0034F55D File Offset: 0x0034D75D
+	// Token: 0x1700104E RID: 4174
+	// (get) Token: 0x06008B28 RID: 35624 RVA: 0x0035160D File Offset: 0x0034F80D
 	public static ParsingMethodCache Instance
 	{
 		get
@@ -21,7 +21,7 @@ public class ParsingMethodCache
 		}
 	}
 
-	// Token: 0x06008AD5 RID: 35541 RVA: 0x0034F574 File Offset: 0x0034D774
+	// Token: 0x06008B29 RID: 35625 RVA: 0x00351624 File Offset: 0x0034F824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ParsingMethodCache()
 	{
@@ -29,7 +29,7 @@ public class ParsingMethodCache
 		ReflectionHelpers.FindTypesWithAttribute<XuiXmlAttributeConvertersClassAttribute>(new Action<Type, bool, XuiXmlAttributeConvertersClassAttribute>(this.<.ctor>g__TypeFoundCallback|11_0), true);
 	}
 
-	// Token: 0x06008AD6 RID: 35542 RVA: 0x0034F5F0 File Offset: 0x0034D7F0
+	// Token: 0x06008B2A RID: 35626 RVA: 0x003516A0 File Offset: 0x0034F8A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ParsingMethodCache.ParsingMethodTypeCache getCacheForType(Type _type)
 	{
@@ -44,7 +44,7 @@ public class ParsingMethodCache
 		return parsingMethodTypeCache;
 	}
 
-	// Token: 0x06008AD7 RID: 35543 RVA: 0x0034F63C File Offset: 0x0034D83C
+	// Token: 0x06008B2B RID: 35627 RVA: 0x003516EC File Offset: 0x0034F8EC
 	public void RegisterCustomParsingMethod(string _attributeName, MethodInfo _method)
 	{
 		if (string.IsNullOrEmpty(_attributeName))
@@ -113,13 +113,13 @@ public class ParsingMethodCache
 		}
 	}
 
-	// Token: 0x06008AD8 RID: 35544 RVA: 0x0034F7D9 File Offset: 0x0034D9D9
+	// Token: 0x06008B2C RID: 35628 RVA: 0x00351889 File Offset: 0x0034FA89
 	public bool TryGetParsingDelegate(IXUiElement _target, string _attributeName, out ParsingMethodCache.ParsingMethodData _parsingDelegate)
 	{
 		return this.getCacheForType(_target.GetType()).TryGetParsingDelegate(_attributeName, out _parsingDelegate);
 	}
 
-	// Token: 0x06008AD9 RID: 35545 RVA: 0x0034F7F0 File Offset: 0x0034D9F0
+	// Token: 0x06008B2D RID: 35629 RVA: 0x003518A0 File Offset: 0x0034FAA0
 	public bool TryParseDirect(IXUiElement _target, string _attributeName, string _value)
 	{
 		ParsingMethodCache.ParsingMethodData parsingMethodData;
@@ -164,7 +164,7 @@ public class ParsingMethodCache
 		return true;
 	}
 
-	// Token: 0x06008ADA RID: 35546 RVA: 0x0034F8EC File Offset: 0x0034DAEC
+	// Token: 0x06008B2E RID: 35630 RVA: 0x0035199C File Offset: 0x0034FB9C
 	public bool TryGetTypeConverterFromString(Type _outputType, out XuiParsingConverterFromStringDelegate _converterDelegate)
 	{
 		if (this.convertersFromString.TryGetValue(_outputType, out _converterDelegate))
@@ -184,7 +184,7 @@ public class ParsingMethodCache
 		return true;
 	}
 
-	// Token: 0x06008ADB RID: 35547 RVA: 0x0034F944 File Offset: 0x0034DB44
+	// Token: 0x06008B2F RID: 35631 RVA: 0x003519F4 File Offset: 0x0034FBF4
 	public bool TryGetTypeConverterFromType(Type _outputType, Type _inputType, out XuiParsingConverterTypeToTypeDelegate _converterDelegate)
 	{
 		Dictionary<Type, XuiParsingConverterTypeToTypeDelegate> dictionary;
@@ -196,13 +196,13 @@ public class ParsingMethodCache
 		return dictionary.TryGetValue(_inputType, out _converterDelegate);
 	}
 
-	// Token: 0x06008ADC RID: 35548 RVA: 0x0034F96E File Offset: 0x0034DB6E
+	// Token: 0x06008B30 RID: 35632 RVA: 0x00351A1E File Offset: 0x0034FC1E
 	public void LogInitTotal()
 	{
 		Log.Out(string.Format("[XUi] ParsingMethodCache total init time: {0:F3} ms", (float)this.mswInit.ElapsedMicroseconds / 1000f));
 	}
 
-	// Token: 0x06008ADD RID: 35549 RVA: 0x0034F996 File Offset: 0x0034DB96
+	// Token: 0x06008B31 RID: 35633 RVA: 0x00351A46 File Offset: 0x0034FC46
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static object boxBool(bool _value)
 	{
@@ -213,7 +213,7 @@ public class ParsingMethodCache
 		return ParsingMethodCache.boxedTrue;
 	}
 
-	// Token: 0x06008ADE RID: 35550 RVA: 0x0034F9A8 File Offset: 0x0034DBA8
+	// Token: 0x06008B32 RID: 35634 RVA: 0x00351A58 File Offset: 0x0034FC58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryGetParsingObjectDelegate(MethodInfo _method, out XuiParsingDelegate _func, out Type _inputType)
 	{
@@ -249,7 +249,7 @@ public class ParsingMethodCache
 		return true;
 	}
 
-	// Token: 0x06008ADF RID: 35551 RVA: 0x0034FAEC File Offset: 0x0034DCEC
+	// Token: 0x06008B33 RID: 35635 RVA: 0x00351B9C File Offset: 0x0034FD9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryGetParsingConverterFromStringDelegate(MethodInfo _method, out XuiParsingConverterFromStringDelegate _func, out Type _outputType)
 	{
@@ -315,7 +315,7 @@ public class ParsingMethodCache
 		return true;
 	}
 
-	// Token: 0x06008AE0 RID: 35552 RVA: 0x0034FCB0 File Offset: 0x0034DEB0
+	// Token: 0x06008B34 RID: 35636 RVA: 0x00351D60 File Offset: 0x0034FF60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryGetParsingConverterTypeToTypeDelegate(MethodInfo _method, out XuiParsingConverterTypeToTypeDelegate _func, out Type _outputType, out Type _inputType)
 	{
@@ -371,7 +371,7 @@ public class ParsingMethodCache
 		return true;
 	}
 
-	// Token: 0x06008AE2 RID: 35554 RVA: 0x0034FE42 File Offset: 0x0034E042
+	// Token: 0x06008B36 RID: 35638 RVA: 0x00351EF2 File Offset: 0x003500F2
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <.ctor>g__TypeFoundCallback|11_0(Type _type, bool _hasMultiple, XuiXmlAttributeConvertersClassAttribute _xmlParsingConvertersClassAttribute)
@@ -379,7 +379,7 @@ public class ParsingMethodCache
 		ReflectionHelpers.GetMethodsWithAttribute<XuiXmlAttributeConverterAttribute>(_type, new Action<MethodInfo, bool, XuiXmlAttributeConverterAttribute>(this.<.ctor>g__MethodFoundCallback|11_1), true, false, true);
 	}
 
-	// Token: 0x06008AE3 RID: 35555 RVA: 0x0034FE5C File Offset: 0x0034E05C
+	// Token: 0x06008B37 RID: 35639 RVA: 0x00351F0C File Offset: 0x0035010C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <.ctor>g__MethodFoundCallback|11_1(MethodInfo _method, bool _hasMultiple, XuiXmlAttributeConverterAttribute _xmlParsingConverterAttribute)
@@ -421,7 +421,7 @@ public class ParsingMethodCache
 		this.convertersFromString[type3] = xuiParsingConverterFromStringDelegate;
 	}
 
-	// Token: 0x06008AE4 RID: 35556 RVA: 0x0034FF45 File Offset: 0x0034E145
+	// Token: 0x06008B38 RID: 35640 RVA: 0x00351FF5 File Offset: 0x003501F5
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static XuiParsingDelegate <tryGetParsingObjectDelegate>g__GetParsingObjectDelegateCore|22_0<TInstance, TValue>(MethodInfo _methodInner) where TInstance : class
@@ -433,7 +433,7 @@ public class ParsingMethodCache
 		};
 	}
 
-	// Token: 0x06008AE5 RID: 35557 RVA: 0x0034FF74 File Offset: 0x0034E174
+	// Token: 0x06008B39 RID: 35641 RVA: 0x00352024 File Offset: 0x00350224
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static XuiParsingConverterFromStringDelegate <tryGetParsingConverterFromStringDelegate>g__GetParsingConverterDelegateCore|23_0<TValue>(MethodInfo _methodInner)
@@ -469,7 +469,7 @@ public class ParsingMethodCache
 		};
 	}
 
-	// Token: 0x06008AE6 RID: 35558 RVA: 0x00350014 File Offset: 0x0034E214
+	// Token: 0x06008B3A RID: 35642 RVA: 0x003520C4 File Offset: 0x003502C4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static XuiParsingConverterTypeToTypeDelegate <tryGetParsingConverterTypeToTypeDelegate>g__GetParsingConverterDelegateCore|25_0<TOutput, TInput>(MethodInfo _methodInner)
@@ -505,47 +505,47 @@ public class ParsingMethodCache
 		};
 	}
 
-	// Token: 0x04006714 RID: 26388
+	// Token: 0x04006754 RID: 26452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly MicroStopwatch mswInit = new MicroStopwatch(false);
 
-	// Token: 0x04006715 RID: 26389
+	// Token: 0x04006755 RID: 26453
 	[TupleElementNames(new string[] { "func", "inputType" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, Dictionary<string, ValueTuple<XuiParsingDelegate, Type>>> customParsingDelegates = new Dictionary<Type, Dictionary<string, ValueTuple<XuiParsingDelegate, Type>>>();
 
-	// Token: 0x04006716 RID: 26390
+	// Token: 0x04006756 RID: 26454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, ParsingMethodCache.ParsingMethodTypeCache> cachePerType = new Dictionary<Type, ParsingMethodCache.ParsingMethodTypeCache>();
 
-	// Token: 0x04006717 RID: 26391
+	// Token: 0x04006757 RID: 26455
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, XuiParsingConverterFromStringDelegate> convertersFromString = new Dictionary<Type, XuiParsingConverterFromStringDelegate>();
 
-	// Token: 0x04006718 RID: 26392
+	// Token: 0x04006758 RID: 26456
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, Dictionary<Type, XuiParsingConverterTypeToTypeDelegate>> convertersTypeToType = new Dictionary<Type, Dictionary<Type, XuiParsingConverterTypeToTypeDelegate>>();
 
-	// Token: 0x04006719 RID: 26393
+	// Token: 0x04006759 RID: 26457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly MethodInfo genericEnumTryParseMethod;
 
-	// Token: 0x0400671A RID: 26394
+	// Token: 0x0400675A RID: 26458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ParsingMethodCache instance;
 
-	// Token: 0x0400671B RID: 26395
+	// Token: 0x0400675B RID: 26459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxedFalse = false;
 
-	// Token: 0x0400671C RID: 26396
+	// Token: 0x0400675C RID: 26460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxedTrue = true;
 
-	// Token: 0x02001125 RID: 4389
+	// Token: 0x02001135 RID: 4405
 	public class ParsingMethodData
 	{
-		// Token: 0x06008AE7 RID: 35559 RVA: 0x003500B3 File Offset: 0x0034E2B3
+		// Token: 0x06008B3B RID: 35643 RVA: 0x00352163 File Offset: 0x00350363
 		public ParsingMethodData(Type _controllerOrViewType, string _attributeName, string _definingController, Type _nativeParseType, XuiParsingDelegate _nativeParserDelegate)
 		{
 			this.controllerOrViewType = _controllerOrViewType;
@@ -555,7 +555,7 @@ public class ParsingMethodCache
 			this.nativeParserDelegate = _nativeParserDelegate;
 		}
 
-		// Token: 0x06008AE8 RID: 35560 RVA: 0x003500EC File Offset: 0x0034E2EC
+		// Token: 0x06008B3C RID: 35644 RVA: 0x0035219C File Offset: 0x0035039C
 		public bool TryGetDelegateForSourceType(Type _sourceType, out XuiParsingDelegate _delegate)
 		{
 			if (_sourceType == this.NativeParseType)
@@ -671,41 +671,41 @@ public class ParsingMethodCache
 			return true;
 		}
 
-		// Token: 0x0400671D RID: 26397
+		// Token: 0x0400675D RID: 26461
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Type controllerOrViewType;
 
-		// Token: 0x0400671E RID: 26398
+		// Token: 0x0400675E RID: 26462
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string attributeName;
 
-		// Token: 0x0400671F RID: 26399
+		// Token: 0x0400675F RID: 26463
 		public readonly string DefiningController;
 
-		// Token: 0x04006720 RID: 26400
+		// Token: 0x04006760 RID: 26464
 		public readonly Type NativeParseType;
 
-		// Token: 0x04006721 RID: 26401
+		// Token: 0x04006761 RID: 26465
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XuiParsingDelegate nativeParserDelegate;
 
-		// Token: 0x04006722 RID: 26402
+		// Token: 0x04006762 RID: 26466
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<Type, XuiParsingDelegate> sourceTypeDelegates = new Dictionary<Type, XuiParsingDelegate>();
 	}
 
-	// Token: 0x02001127 RID: 4391
+	// Token: 0x02001137 RID: 4407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ParsingMethodTypeCache
 	{
-		// Token: 0x06008AED RID: 35565 RVA: 0x0035046B File Offset: 0x0034E66B
+		// Token: 0x06008B41 RID: 35649 RVA: 0x0035251B File Offset: 0x0035071B
 		public ParsingMethodTypeCache(Type _controllerOrViewType, ParsingMethodCache _owner)
 		{
 			this.controllerOrViewType = _controllerOrViewType;
 			this.initCacheForController(_owner);
 		}
 
-		// Token: 0x06008AEE RID: 35566 RVA: 0x00350494 File Offset: 0x0034E694
+		// Token: 0x06008B42 RID: 35650 RVA: 0x00352544 File Offset: 0x00350744
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void initCacheForController(ParsingMethodCache _owner)
 		{
@@ -737,7 +737,7 @@ public class ParsingMethodCache
 			}
 		}
 
-		// Token: 0x06008AEF RID: 35567 RVA: 0x003505E8 File Offset: 0x0034E7E8
+		// Token: 0x06008B43 RID: 35651 RVA: 0x00352698 File Offset: 0x00350898
 		public bool TryGetParsingDelegate(string _attributeName, out ParsingMethodCache.ParsingMethodData _parsingDelegate)
 		{
 			ParsingMethodCache.ParsingMethodData parsingMethodData;
@@ -750,7 +750,7 @@ public class ParsingMethodCache
 			return false;
 		}
 
-		// Token: 0x06008AF0 RID: 35568 RVA: 0x00350610 File Offset: 0x0034E810
+		// Token: 0x06008B44 RID: 35652 RVA: 0x003526C0 File Offset: 0x003508C0
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__PropertyFoundCallback|3_0(PropertyInfo _property, bool _hasMultiple, XuiXmlAttributeAttribute _xmlParsingConverterAttribute)
@@ -770,7 +770,7 @@ public class ParsingMethodCache
 			this.<initCacheForController>g__MethodFoundCallback|3_1(setMethod, _hasMultiple, _xmlParsingConverterAttribute);
 		}
 
-		// Token: 0x06008AF1 RID: 35569 RVA: 0x00350678 File Offset: 0x0034E878
+		// Token: 0x06008B45 RID: 35653 RVA: 0x00352728 File Offset: 0x00350928
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__MethodFoundCallback|3_1(MethodInfo _method, bool _hasMultiple, XuiXmlAttributeAttribute _parsingAttribute)
@@ -790,22 +790,22 @@ public class ParsingMethodCache
 			this.methods[_parsingAttribute.AttributeName] = parsingMethodData;
 		}
 
-		// Token: 0x04006726 RID: 26406
+		// Token: 0x04006766 RID: 26470
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Type controllerOrViewType;
 
-		// Token: 0x04006727 RID: 26407
+		// Token: 0x04006767 RID: 26471
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, ParsingMethodCache.ParsingMethodData> methods = new Dictionary<string, ParsingMethodCache.ParsingMethodData>(64, StringComparer.Ordinal);
 	}
 
-	// Token: 0x02001128 RID: 4392
-	// (Invoke) Token: 0x06008AF3 RID: 35571
+	// Token: 0x02001138 RID: 4408
+	// (Invoke) Token: 0x06008B47 RID: 35655
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate bool RawConverterFromStringDelegate<T>(string _in, out T _out);
 
-	// Token: 0x02001129 RID: 4393
-	// (Invoke) Token: 0x06008AF7 RID: 35575
+	// Token: 0x02001139 RID: 4409
+	// (Invoke) Token: 0x06008B4B RID: 35659
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate bool RawConverterTypeToTypeDelegate<TOutput, TInput>(TInput _in, out TOutput _out);
 }

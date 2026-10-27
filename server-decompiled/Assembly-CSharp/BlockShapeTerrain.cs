@@ -6,13 +6,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeTerrain : BlockShapeCube
 {
-	// Token: 0x06000D3B RID: 3387 RVA: 0x00056B68 File Offset: 0x00054D68
+	// Token: 0x06000D3B RID: 3387 RVA: 0x00056B08 File Offset: 0x00054D08
 	public BlockShapeTerrain()
 	{
 		this.IsOmitTerrainSnappingUp = true;
 	}
 
-	// Token: 0x06000D3C RID: 3388 RVA: 0x00056C30 File Offset: 0x00054E30
+	// Token: 0x06000D3C RID: 3388 RVA: 0x00056BD0 File Offset: 0x00054DD0
 	public override void renderFace(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, BlockFace _face, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		float num = _drawPos.y - _vertices[0].y + 1f + 0.0001f;
@@ -25,7 +25,7 @@ public class BlockShapeTerrain : BlockShapeCube
 		_meshes[4].AddQuadNoCollision(_vertices[0], _vertices[1], _vertices[2], _vertices[3], Color.white, uvrectTiling.uv);
 	}
 
-	// Token: 0x06000D3D RID: 3389 RVA: 0x00056CCE File Offset: 0x00054ECE
+	// Token: 0x06000D3D RID: 3389 RVA: 0x00056C6E File Offset: 0x00054E6E
 	public override bool isRenderFace(BlockValue _blockValue, BlockFace _face, BlockValue _adjBlockValue)
 	{
 		return _blockValue.hasdecal && _blockValue.decalface == _face;
@@ -43,7 +43,7 @@ public class BlockShapeTerrain : BlockShapeCube
 		return true;
 	}
 
-	// Token: 0x06000D40 RID: 3392 RVA: 0x00056CE8 File Offset: 0x00054EE8
+	// Token: 0x06000D40 RID: 3392 RVA: 0x00056C88 File Offset: 0x00054E88
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -68,7 +68,7 @@ public class BlockShapeTerrain : BlockShapeCube
 		}
 	}
 
-	// Token: 0x06000D41 RID: 3393 RVA: 0x00056FCD File Offset: 0x000551CD
+	// Token: 0x06000D41 RID: 3393 RVA: 0x00056F6D File Offset: 0x0005516D
 	public override Quaternion GetPreviewRotation()
 	{
 		return Quaternion.AngleAxis(55f, Vector3.up) * Quaternion.AngleAxis(10f, Vector3.forward);

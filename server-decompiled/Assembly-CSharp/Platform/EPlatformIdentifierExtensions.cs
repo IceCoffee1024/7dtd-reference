@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B7F RID: 7039
+	// Token: 0x02001BB0 RID: 7088
 	public static class EPlatformIdentifierExtensions
 	{
-		// Token: 0x0600D2B9 RID: 53945 RVA: 0x004CA5A0 File Offset: 0x004C87A0
+		// Token: 0x0600D3CD RID: 54221 RVA: 0x004CE0C8 File Offset: 0x004CC2C8
 		public static bool IsNative(this EPlatformIdentifier platformIdentifier)
 		{
 			bool flag;
@@ -44,7 +44,7 @@ namespace Platform
 			return flag;
 		}
 
-		// Token: 0x0600D2BA RID: 53946 RVA: 0x004CA610 File Offset: 0x004C8810
+		// Token: 0x0600D3CE RID: 54222 RVA: 0x004CE138 File Offset: 0x004CC338
 		public static bool IsCross(this EPlatformIdentifier platformIdentifier)
 		{
 			bool flag;
@@ -83,7 +83,7 @@ namespace Platform
 			return flag;
 		}
 
-		// Token: 0x0600D2BB RID: 53947 RVA: 0x004CA680 File Offset: 0x004C8880
+		// Token: 0x0600D3CF RID: 54223 RVA: 0x004CE1A8 File Offset: 0x004CC3A8
 		public static bool IsServer(this EPlatformIdentifier platformIdentifier)
 		{
 			bool flag;
@@ -122,7 +122,7 @@ namespace Platform
 			return flag;
 		}
 
-		// Token: 0x0600D2BC RID: 53948 RVA: 0x004CA6F0 File Offset: 0x004C88F0
+		// Token: 0x0600D3D0 RID: 54224 RVA: 0x004CE218 File Offset: 0x004CC418
 		public static bool IsServerValid(this EPlatformIdentifier serverPlatform, EPlatformIdentifier nativePlatform, EPlatformIdentifier crossPlatform)
 		{
 			bool flag = serverPlatform.IsServer();

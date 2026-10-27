@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000800 RID: 2048
+// Token: 0x0200080A RID: 2058
 [Preserve]
 public class NetPackageHordeEvent : NetPackage
 {
-	// Token: 0x06003C46 RID: 15430 RVA: 0x0018258F File Offset: 0x0018078F
+	// Token: 0x06003C69 RID: 15465 RVA: 0x00183693 File Offset: 0x00181893
 	public NetPackageHordeEvent Setup(AIDirector.HordeEvent _event, Vector3 pos, float maxDist)
 	{
 		this.m_event = _event;
@@ -15,7 +15,7 @@ public class NetPackageHordeEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C47 RID: 15431 RVA: 0x001825A8 File Offset: 0x001807A8
+	// Token: 0x06003C6A RID: 15466 RVA: 0x001836AC File Offset: 0x001818AC
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = (int)_reader.ReadByte();
@@ -26,7 +26,7 @@ public class NetPackageHordeEvent : NetPackage
 		this.m_maxDist = _reader.ReadSingle();
 	}
 
-	// Token: 0x06003C48 RID: 15432 RVA: 0x00182608 File Offset: 0x00180808
+	// Token: 0x06003C6B RID: 15467 RVA: 0x0018370C File Offset: 0x0018190C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -37,7 +37,7 @@ public class NetPackageHordeEvent : NetPackage
 		_writer.Write(this.m_maxDist);
 	}
 
-	// Token: 0x06003C49 RID: 15433 RVA: 0x0018266C File Offset: 0x0018086C
+	// Token: 0x06003C6C RID: 15468 RVA: 0x00183770 File Offset: 0x00181970
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -55,15 +55,15 @@ public class NetPackageHordeEvent : NetPackage
 		}
 	}
 
-	// Token: 0x04003108 RID: 12552
+	// Token: 0x04003128 RID: 12584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirector.HordeEvent m_event;
 
-	// Token: 0x04003109 RID: 12553
+	// Token: 0x04003129 RID: 12585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_pos;
 
-	// Token: 0x0400310A RID: 12554
+	// Token: 0x0400312A RID: 12586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_maxDist;
 }

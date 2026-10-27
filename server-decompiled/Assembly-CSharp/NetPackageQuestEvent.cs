@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000839 RID: 2105
+// Token: 0x02000843 RID: 2115
 [Preserve]
 public class NetPackageQuestEvent : NetPackage
 {
-	// Token: 0x06003D76 RID: 15734 RVA: 0x00186A26 File Offset: 0x00184C26
+	// Token: 0x06003D99 RID: 15769 RVA: 0x00187B2A File Offset: 0x00185D2A
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID)
 	{
 		this.eventType = _eventType;
@@ -15,7 +15,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D77 RID: 15735 RVA: 0x00186A37 File Offset: 0x00184C37
+	// Token: 0x06003D9A RID: 15770 RVA: 0x00187B3B File Offset: 0x00185D3B
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, int _traderID, int _overrideFactionPoints)
 	{
 		this.eventType = _eventType;
@@ -25,7 +25,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D78 RID: 15736 RVA: 0x00186A57 File Offset: 0x00184C57
+	// Token: 0x06003D9B RID: 15771 RVA: 0x00187B5B File Offset: 0x00185D5B
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, Vector3 _prefabPos, int _questCode)
 	{
 		this.entityID = _entityID;
@@ -35,7 +35,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D79 RID: 15737 RVA: 0x00186A77 File Offset: 0x00184C77
+	// Token: 0x06003D9C RID: 15772 RVA: 0x00187B7B File Offset: 0x00185D7B
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, Vector3 _prefabPos, int _questCode, ulong _extraData)
 	{
 		this.entityID = _entityID;
@@ -46,7 +46,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7A RID: 15738 RVA: 0x00186A9F File Offset: 0x00184C9F
+	// Token: 0x06003D9D RID: 15773 RVA: 0x00187BA3 File Offset: 0x00185DA3
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, Vector3 _prefabPos)
 	{
 		this.entityID = _entityID;
@@ -55,7 +55,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7B RID: 15739 RVA: 0x00186AB7 File Offset: 0x00184CB7
+	// Token: 0x06003D9E RID: 15774 RVA: 0x00187BBB File Offset: 0x00185DBB
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, string _questID, FastTags<TagGroup.Global> _questTags, Vector3 _prefabPos, int[] _sharedWithList)
 	{
 		this.entityID = _entityID;
@@ -67,7 +67,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7C RID: 15740 RVA: 0x00186AE7 File Offset: 0x00184CE7
+	// Token: 0x06003D9F RID: 15775 RVA: 0x00187BEB File Offset: 0x00185DEB
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, Vector3 _prefabPos, ObjectiveFetchFromContainer.FetchModeTypes _fetchModeType)
 	{
 		this.entityID = _entityID;
@@ -77,7 +77,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7D RID: 15741 RVA: 0x00186B07 File Offset: 0x00184D07
+	// Token: 0x06003DA0 RID: 15776 RVA: 0x00187C0B File Offset: 0x00185E0B
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, Vector3 _prefabPos, ObjectiveFetchFromContainer.FetchModeTypes _fetchModeType, int[] _sharedWithList)
 	{
 		this.entityID = _entityID;
@@ -88,7 +88,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7E RID: 15742 RVA: 0x00186B2F File Offset: 0x00184D2F
+	// Token: 0x06003DA1 RID: 15777 RVA: 0x00187C33 File Offset: 0x00185E33
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, int _questCode, string _completeEvent, Vector3 _prefabPos, string _blockIndex, int[] _sharedWithList)
 	{
 		this.entityID = _entityID;
@@ -101,7 +101,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7F RID: 15743 RVA: 0x00186B67 File Offset: 0x00184D67
+	// Token: 0x06003DA2 RID: 15778 RVA: 0x00187C6B File Offset: 0x00185E6B
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, Vector3 _prefabPos, bool _subscribeTo)
 	{
 		this.entityID = _entityID;
@@ -111,7 +111,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D80 RID: 15744 RVA: 0x00186B87 File Offset: 0x00184D87
+	// Token: 0x06003DA3 RID: 15779 RVA: 0x00187C8B File Offset: 0x00185E8B
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, int _questCode, string _completeEvent, Vector3 _prefabPos, List<Vector3i> _activateList)
 	{
 		this.entityID = _entityID;
@@ -123,7 +123,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D81 RID: 15745 RVA: 0x00186BB7 File Offset: 0x00184DB7
+	// Token: 0x06003DA4 RID: 15780 RVA: 0x00187CBB File Offset: 0x00185EBB
 	public NetPackageQuestEvent Setup(NetPackageQuestEvent.QuestEventTypes _eventType, int _entityID, int _questCode, string _questID, Vector3 _prefabPos, int[] _sharedWithList)
 	{
 		this.entityID = _entityID;
@@ -135,7 +135,7 @@ public class NetPackageQuestEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D82 RID: 15746 RVA: 0x00186BE8 File Offset: 0x00184DE8
+	// Token: 0x06003DA5 RID: 15781 RVA: 0x00187CEC File Offset: 0x00185EEC
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityID = _reader.ReadInt32();
@@ -229,7 +229,7 @@ public class NetPackageQuestEvent : NetPackage
 		this.extraData = _reader.ReadUInt64();
 	}
 
-	// Token: 0x06003D83 RID: 15747 RVA: 0x00186DC0 File Offset: 0x00184FC0
+	// Token: 0x06003DA6 RID: 15782 RVA: 0x00187EC4 File Offset: 0x001860C4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -321,7 +321,7 @@ public class NetPackageQuestEvent : NetPackage
 		_writer.Write(this.extraData);
 	}
 
-	// Token: 0x06003D84 RID: 15748 RVA: 0x00186FC4 File Offset: 0x001851C4
+	// Token: 0x06003DA7 RID: 15783 RVA: 0x001880C8 File Offset: 0x001862C8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -495,88 +495,88 @@ public class NetPackageQuestEvent : NetPackage
 		}
 	}
 
-	// Token: 0x040031DB RID: 12763
+	// Token: 0x040031FB RID: 12795
 	public int entityID;
 
-	// Token: 0x040031DC RID: 12764
+	// Token: 0x040031FC RID: 12796
 	public Vector3 prefabPos;
 
-	// Token: 0x040031DD RID: 12765
+	// Token: 0x040031FD RID: 12797
 	public FastTags<TagGroup.Global> questTags;
 
-	// Token: 0x040031DE RID: 12766
+	// Token: 0x040031FE RID: 12798
 	public NetPackageQuestEvent.QuestEventTypes eventType;
 
-	// Token: 0x040031DF RID: 12767
+	// Token: 0x040031FF RID: 12799
 	public ObjectiveFetchFromContainer.FetchModeTypes FetchModeType;
 
-	// Token: 0x040031E0 RID: 12768
+	// Token: 0x04003200 RID: 12800
 	public bool SubscribeTo;
 
-	// Token: 0x040031E1 RID: 12769
+	// Token: 0x04003201 RID: 12801
 	public int PartyCount;
 
-	// Token: 0x040031E2 RID: 12770
+	// Token: 0x04003202 RID: 12802
 	public int questCode;
 
-	// Token: 0x040031E3 RID: 12771
+	// Token: 0x04003203 RID: 12803
 	public int factionPointOverride;
 
-	// Token: 0x040031E4 RID: 12772
+	// Token: 0x04003204 RID: 12804
 	public string blockIndex = "";
 
-	// Token: 0x040031E5 RID: 12773
+	// Token: 0x04003205 RID: 12805
 	public string eventName = "";
 
-	// Token: 0x040031E6 RID: 12774
+	// Token: 0x04003206 RID: 12806
 	public string questID;
 
-	// Token: 0x040031E7 RID: 12775
+	// Token: 0x04003207 RID: 12807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong extraData;
 
-	// Token: 0x040031E8 RID: 12776
+	// Token: 0x04003208 RID: 12808
 	public List<Vector3i> activateList;
 
-	// Token: 0x040031E9 RID: 12777
+	// Token: 0x04003209 RID: 12809
 	public int[] SharedWithList;
 
-	// Token: 0x0200083A RID: 2106
+	// Token: 0x02000844 RID: 2116
 	public enum QuestEventTypes
 	{
-		// Token: 0x040031EB RID: 12779
+		// Token: 0x0400320B RID: 12811
 		TryRallyMarker,
-		// Token: 0x040031EC RID: 12780
+		// Token: 0x0400320C RID: 12812
 		ConfirmRallyMarker,
-		// Token: 0x040031ED RID: 12781
+		// Token: 0x0400320D RID: 12813
 		RallyMarkerActivated,
-		// Token: 0x040031EE RID: 12782
+		// Token: 0x0400320E RID: 12814
 		RallyMarkerLocked,
-		// Token: 0x040031EF RID: 12783
+		// Token: 0x0400320F RID: 12815
 		RallyMarker_PlayerLocked,
-		// Token: 0x040031F0 RID: 12784
+		// Token: 0x04003210 RID: 12816
 		RallyMarker_BedrollLocked,
-		// Token: 0x040031F1 RID: 12785
+		// Token: 0x04003211 RID: 12817
 		RallyMarker_LandClaimLocked,
-		// Token: 0x040031F2 RID: 12786
+		// Token: 0x04003212 RID: 12818
 		LockPOI,
-		// Token: 0x040031F3 RID: 12787
+		// Token: 0x04003213 RID: 12819
 		UnlockPOI,
-		// Token: 0x040031F4 RID: 12788
+		// Token: 0x04003214 RID: 12820
 		ClearSleeper,
-		// Token: 0x040031F5 RID: 12789
+		// Token: 0x04003215 RID: 12821
 		ShowSleeperVolume,
-		// Token: 0x040031F6 RID: 12790
+		// Token: 0x04003216 RID: 12822
 		HideSleeperVolume,
-		// Token: 0x040031F7 RID: 12791
+		// Token: 0x04003217 RID: 12823
 		SetupFetch,
-		// Token: 0x040031F8 RID: 12792
+		// Token: 0x04003218 RID: 12824
 		SetupRestorePower,
-		// Token: 0x040031F9 RID: 12793
+		// Token: 0x04003219 RID: 12825
 		FinishManagedQuest,
-		// Token: 0x040031FA RID: 12794
+		// Token: 0x0400321A RID: 12826
 		POILocked,
-		// Token: 0x040031FB RID: 12795
+		// Token: 0x0400321B RID: 12827
 		ResetTraderQuests
 	}
 }

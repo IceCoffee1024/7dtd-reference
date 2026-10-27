@@ -5,24 +5,24 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001767 RID: 5991
+	// Token: 0x02001798 RID: 6040
 	public class Township
 	{
-		// Token: 0x0600BA54 RID: 47700 RVA: 0x00451010 File Offset: 0x0044F210
+		// Token: 0x0600BB68 RID: 47976 RVA: 0x004549BC File Offset: 0x00452BBC
 		public Township(WorldBuilder _worldBuilder, TownshipData _townshipData)
 		{
 			this.worldBuilder = _worldBuilder;
 			this.townshipData = _townshipData;
 		}
 
-		// Token: 0x0600BA55 RID: 47701 RVA: 0x00451068 File Offset: 0x0044F268
+		// Token: 0x0600BB69 RID: 47977 RVA: 0x00454A14 File Offset: 0x00452C14
 		public void Cleanup()
 		{
 			GameRandomManager.Instance.FreeGameRandom(this.rand);
 		}
 
-		// Token: 0x1700171C RID: 5916
-		// (get) Token: 0x0600BA56 RID: 47702 RVA: 0x0045107A File Offset: 0x0044F27A
+		// Token: 0x17001764 RID: 5988
+		// (get) Token: 0x0600BB6A RID: 47978 RVA: 0x00454A26 File Offset: 0x00452C26
 		public TownshipData Data
 		{
 			get
@@ -31,38 +31,38 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600BA57 RID: 47703 RVA: 0x00451082 File Offset: 0x0044F282
+		// Token: 0x0600BB6B RID: 47979 RVA: 0x00454A2E File Offset: 0x00452C2E
 		public string GetTypeName()
 		{
 			return this.townshipData.Name;
 		}
 
-		// Token: 0x0600BA58 RID: 47704 RVA: 0x0045108F File Offset: 0x0044F28F
+		// Token: 0x0600BB6C RID: 47980 RVA: 0x00454A3B File Offset: 0x00452C3B
 		public bool IsBig()
 		{
 			return this.townshipData.Name == "citybig";
 		}
 
-		// Token: 0x0600BA59 RID: 47705 RVA: 0x004510A6 File Offset: 0x0044F2A6
+		// Token: 0x0600BB6D RID: 47981 RVA: 0x00454A52 File Offset: 0x00452C52
 		public bool IsRoadside()
 		{
 			return this.townshipData.Category == TownshipData.eCategory.Roadside;
 		}
 
-		// Token: 0x0600BA5A RID: 47706 RVA: 0x004510B6 File Offset: 0x0044F2B6
+		// Token: 0x0600BB6E RID: 47982 RVA: 0x00454A62 File Offset: 0x00452C62
 		public bool IsRural()
 		{
 			return this.townshipData.Category == TownshipData.eCategory.Rural;
 		}
 
-		// Token: 0x0600BA5B RID: 47707 RVA: 0x004510C6 File Offset: 0x0044F2C6
+		// Token: 0x0600BB6F RID: 47983 RVA: 0x00454A72 File Offset: 0x00452C72
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool IsWilderness()
 		{
 			return this.townshipData.Category == TownshipData.eCategory.Wilderness;
 		}
 
-		// Token: 0x0600BA5C RID: 47708 RVA: 0x004510D6 File Offset: 0x0044F2D6
+		// Token: 0x0600BB70 RID: 47984 RVA: 0x00454A82 File Offset: 0x00452C82
 		public void SortGatewaysClockwise()
 		{
 			this.Gateways.Sort(delegate(StreetTile _t1, StreetTile _t2)
@@ -73,7 +73,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600BA5D RID: 47709 RVA: 0x004510F0 File Offset: 0x0044F2F0
+		// Token: 0x0600BB71 RID: 47985 RVA: 0x00454A9C File Offset: 0x00452C9C
 		public void CleanupStreets()
 		{
 			if (this.Streets == null || this.Streets.Count == 0)
@@ -97,7 +97,7 @@ namespace WorldGenerationEngineFinal
 			this.BufferArea = new Rect(this.Area.xMin - 150f, this.Area.yMin - 150f, this.Area.width + 300f, this.Area.height + 300f);
 		}
 
-		// Token: 0x0600BA5E RID: 47710 RVA: 0x0045125C File Offset: 0x0044F45C
+		// Token: 0x0600BB72 RID: 47986 RVA: 0x00454C08 File Offset: 0x00452E08
 		public void SpawnPrefabs()
 		{
 			foreach (StreetTile streetTile in this.Streets.Values)
@@ -114,7 +114,7 @@ namespace WorldGenerationEngineFinal
 			this.Prefabs.Clear();
 		}
 
-		// Token: 0x0600BA5F RID: 47711 RVA: 0x004512D0 File Offset: 0x0044F4D0
+		// Token: 0x0600BB73 RID: 47987 RVA: 0x00454C7C File Offset: 0x00452E7C
 		public StreetTile CalcCenterStreetTile()
 		{
 			if (this.centerMostTile != null)
@@ -167,13 +167,13 @@ namespace WorldGenerationEngineFinal
 			return streetTile2;
 		}
 
-		// Token: 0x0600BA60 RID: 47712 RVA: 0x0045149C File Offset: 0x0044F69C
+		// Token: 0x0600BB74 RID: 47988 RVA: 0x00454E48 File Offset: 0x00453048
 		public void AddToUsedPOIList(string name)
 		{
 			this.worldBuilder.PrefabManager.AddUsedPrefab(name);
 		}
 
-		// Token: 0x0600BA61 RID: 47713 RVA: 0x004514B0 File Offset: 0x0044F6B0
+		// Token: 0x0600BB75 RID: 47989 RVA: 0x00454E5C File Offset: 0x0045305C
 		public List<Vector2i> GetUnusedTownExits(int _gatewayUnusedMax = 4)
 		{
 			this.list.Clear();
@@ -206,14 +206,14 @@ namespace WorldGenerationEngineFinal
 			return this.list;
 		}
 
-		// Token: 0x0600BA62 RID: 47714 RVA: 0x004515FC File Offset: 0x0044F7FC
+		// Token: 0x0600BB76 RID: 47990 RVA: 0x00454FA8 File Offset: 0x004531A8
 		public void AddPrefab(PrefabDataInstance pdi)
 		{
 			this.Prefabs.Add(pdi);
 			this.worldBuilder.PrefabManager.AddUsedPrefabWorld(this.ID, pdi);
 		}
 
-		// Token: 0x0600BA63 RID: 47715 RVA: 0x00451624 File Offset: 0x0044F824
+		// Token: 0x0600BB77 RID: 47991 RVA: 0x00454FD0 File Offset: 0x004531D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool[] GetNeighborExits(StreetTile current)
 		{
@@ -237,7 +237,7 @@ namespace WorldGenerationEngineFinal
 			return array;
 		}
 
-		// Token: 0x0600BA64 RID: 47716 RVA: 0x00451720 File Offset: 0x0044F920
+		// Token: 0x0600BB78 RID: 47992 RVA: 0x004550CC File Offset: 0x004532CC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int GetNeighborCount(Vector2i current)
 		{
@@ -253,70 +253,70 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600BA65 RID: 47717 RVA: 0x0045177C File Offset: 0x0044F97C
+		// Token: 0x0600BB79 RID: 47993 RVA: 0x00455128 File Offset: 0x00453328
 		public override string ToString()
 		{
 			return string.Format("Township {0}, {1}, {2}", this.townshipData.Name, this.townshipData.Category, this.ID);
 		}
 
-		// Token: 0x04008B03 RID: 35587
+		// Token: 0x04008BEC RID: 35820
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int BUFFER_DISTANCE = 300;
 
-		// Token: 0x04008B04 RID: 35588
+		// Token: 0x04008BED RID: 35821
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008B05 RID: 35589
+		// Token: 0x04008BEE RID: 35822
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly TownshipData townshipData;
 
-		// Token: 0x04008B06 RID: 35590
+		// Token: 0x04008BEF RID: 35823
 		public int ID;
 
-		// Token: 0x04008B07 RID: 35591
+		// Token: 0x04008BF0 RID: 35824
 		public BiomeType BiomeType;
 
-		// Token: 0x04008B08 RID: 35592
+		// Token: 0x04008BF1 RID: 35825
 		public Rect Area;
 
-		// Token: 0x04008B09 RID: 35593
+		// Token: 0x04008BF2 RID: 35826
 		public Rect BufferArea;
 
-		// Token: 0x04008B0A RID: 35594
+		// Token: 0x04008BF3 RID: 35827
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile commercialCap;
 
-		// Token: 0x04008B0B RID: 35595
+		// Token: 0x04008BF4 RID: 35828
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile ruralCap;
 
-		// Token: 0x04008B0C RID: 35596
+		// Token: 0x04008BF5 RID: 35829
 		public Vector2i GridCenter;
 
-		// Token: 0x04008B0D RID: 35597
+		// Token: 0x04008BF6 RID: 35830
 		public int Height;
 
-		// Token: 0x04008B0E RID: 35598
+		// Token: 0x04008BF7 RID: 35831
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile centerMostTile;
 
-		// Token: 0x04008B0F RID: 35599
+		// Token: 0x04008BF8 RID: 35832
 		public Dictionary<Vector2i, StreetTile> Streets = new Dictionary<Vector2i, StreetTile>();
 
-		// Token: 0x04008B10 RID: 35600
+		// Token: 0x04008BF9 RID: 35833
 		public List<PrefabDataInstance> Prefabs = new List<PrefabDataInstance>();
 
-		// Token: 0x04008B11 RID: 35601
+		// Token: 0x04008BFA RID: 35834
 		public List<StreetTile> Gateways = new List<StreetTile>();
 
-		// Token: 0x04008B12 RID: 35602
+		// Token: 0x04008BFB RID: 35835
 		public Dictionary<Township, int> TownshipConnectionCounts = new Dictionary<Township, int>();
 
-		// Token: 0x04008B13 RID: 35603
+		// Token: 0x04008BFC RID: 35836
 		public GameRandom rand;
 
-		// Token: 0x04008B14 RID: 35604
+		// Token: 0x04008BFD RID: 35837
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Vector2i> list = new List<Vector2i>();
 	}

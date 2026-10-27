@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F5 RID: 2037
+// Token: 0x020007FF RID: 2047
 [Preserve]
 public class NetPackageEventPrefab : NetPackage
 {
-	// Token: 0x17000660 RID: 1632
-	// (get) Token: 0x06003C0D RID: 15373 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000666 RID: 1638
+	// (get) Token: 0x06003C30 RID: 15408 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEventPrefab : NetPackage
 		}
 	}
 
-	// Token: 0x06003C0E RID: 15374 RVA: 0x001812F1 File Offset: 0x0017F4F1
+	// Token: 0x06003C31 RID: 15409 RVA: 0x001823F5 File Offset: 0x001805F5
 	public NetPackageEventPrefab Setup(NetPackageEventPrefab.Operation _operation, PrefabInstance _pi)
 	{
 		this.operation = _operation;
@@ -23,14 +23,14 @@ public class NetPackageEventPrefab : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C0F RID: 15375 RVA: 0x00181307 File Offset: 0x0017F507
+	// Token: 0x06003C32 RID: 15410 RVA: 0x0018240B File Offset: 0x0018060B
 	public override void read(PooledBinaryReader _br)
 	{
 		this.operation = (NetPackageEventPrefab.Operation)_br.ReadByte();
 		this.serializablePi = new PrefabInstance.Serializable(_br);
 	}
 
-	// Token: 0x06003C10 RID: 15376 RVA: 0x00181321 File Offset: 0x0017F521
+	// Token: 0x06003C33 RID: 15411 RVA: 0x00182425 File Offset: 0x00180625
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -38,7 +38,7 @@ public class NetPackageEventPrefab : NetPackage
 		this.serializablePi.Write(_bw);
 	}
 
-	// Token: 0x06003C11 RID: 15377 RVA: 0x00181344 File Offset: 0x0017F544
+	// Token: 0x06003C34 RID: 15412 RVA: 0x00182448 File Offset: 0x00180648
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -65,20 +65,20 @@ public class NetPackageEventPrefab : NetPackage
 		}
 	}
 
-	// Token: 0x040030C5 RID: 12485
+	// Token: 0x040030E5 RID: 12517
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEventPrefab.Operation operation;
 
-	// Token: 0x040030C6 RID: 12486
+	// Token: 0x040030E6 RID: 12518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance.Serializable serializablePi;
 
-	// Token: 0x020007F6 RID: 2038
+	// Token: 0x02000800 RID: 2048
 	public enum Operation
 	{
-		// Token: 0x040030C8 RID: 12488
+		// Token: 0x040030E8 RID: 12520
 		Add,
-		// Token: 0x040030C9 RID: 12489
+		// Token: 0x040030E9 RID: 12521
 		Remove
 	}
 }

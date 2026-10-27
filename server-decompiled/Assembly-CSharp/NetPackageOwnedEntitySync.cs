@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000816 RID: 2070
+// Token: 0x02000820 RID: 2080
 [Preserve]
 public class NetPackageOwnedEntitySync : NetPackage
 {
-	// Token: 0x06003CC4 RID: 15556 RVA: 0x0018426E File Offset: 0x0018246E
+	// Token: 0x06003CE7 RID: 15591 RVA: 0x00185372 File Offset: 0x00183572
 	public NetPackageOwnedEntitySync Setup(int _ownerId, int _entityId, int _entityClassId, NetPackageOwnedEntitySync.SyncType _syncType)
 	{
 		this.ownerId = _ownerId;
@@ -15,7 +15,7 @@ public class NetPackageOwnedEntitySync : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CC5 RID: 15557 RVA: 0x0018428E File Offset: 0x0018248E
+	// Token: 0x06003CE8 RID: 15592 RVA: 0x00185392 File Offset: 0x00183592
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.ownerId = _reader.ReadInt32();
@@ -24,7 +24,7 @@ public class NetPackageOwnedEntitySync : NetPackage
 		this.syncType = (NetPackageOwnedEntitySync.SyncType)_reader.ReadByte();
 	}
 
-	// Token: 0x06003CC6 RID: 15558 RVA: 0x001842C0 File Offset: 0x001824C0
+	// Token: 0x06003CE9 RID: 15593 RVA: 0x001853C4 File Offset: 0x001835C4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -34,7 +34,7 @@ public class NetPackageOwnedEntitySync : NetPackage
 		_writer.Write((byte)this.syncType);
 	}
 
-	// Token: 0x06003CC7 RID: 15559 RVA: 0x001842FC File Offset: 0x001824FC
+	// Token: 0x06003CEA RID: 15594 RVA: 0x00185400 File Offset: 0x00183600
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -60,8 +60,8 @@ public class NetPackageOwnedEntitySync : NetPackage
 		}
 	}
 
-	// Token: 0x1700067A RID: 1658
-	// (get) Token: 0x06003CC8 RID: 15560 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000680 RID: 1664
+	// (get) Token: 0x06003CEB RID: 15595 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -70,24 +70,24 @@ public class NetPackageOwnedEntitySync : NetPackage
 		}
 	}
 
-	// Token: 0x04003163 RID: 12643
+	// Token: 0x04003183 RID: 12675
 	public int ownerId;
 
-	// Token: 0x04003164 RID: 12644
+	// Token: 0x04003184 RID: 12676
 	public int entityId;
 
-	// Token: 0x04003165 RID: 12645
+	// Token: 0x04003185 RID: 12677
 	public int entityClassId;
 
-	// Token: 0x04003166 RID: 12646
+	// Token: 0x04003186 RID: 12678
 	public NetPackageOwnedEntitySync.SyncType syncType;
 
-	// Token: 0x02000817 RID: 2071
+	// Token: 0x02000821 RID: 2081
 	public enum SyncType : byte
 	{
-		// Token: 0x04003168 RID: 12648
+		// Token: 0x04003188 RID: 12680
 		Remove,
-		// Token: 0x04003169 RID: 12649
+		// Token: 0x04003189 RID: 12681
 		Add
 	}
 }

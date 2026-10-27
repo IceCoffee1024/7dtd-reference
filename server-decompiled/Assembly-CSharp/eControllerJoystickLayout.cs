@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000568 RID: 1384
+// Token: 0x0200056C RID: 1388
 public enum eControllerJoystickLayout
 {
-	// Token: 0x040022C3 RID: 8899
+	// Token: 0x040022DA RID: 8922
 	Standard,
-	// Token: 0x040022C4 RID: 8900
+	// Token: 0x040022DB RID: 8923
 	Southpaw,
-	// Token: 0x040022C5 RID: 8901
+	// Token: 0x040022DC RID: 8924
 	Legacy,
-	// Token: 0x040022C6 RID: 8902
+	// Token: 0x040022DD RID: 8925
 	LegacySouthpaw
 }

@@ -4,17 +4,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200196F RID: 6511
+	// Token: 0x020019A0 RID: 6560
 	[Preserve]
 	public class RequirementSandboxBool : BaseRequirement
 	{
-		// Token: 0x0600C8AD RID: 51373 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C9C1 RID: 51649 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C8AE RID: 51374 RVA: 0x004961EB File Offset: 0x004943EB
+		// Token: 0x0600C9C2 RID: 51650 RVA: 0x00499BDF File Offset: 0x00497DDF
 		public override bool CanPerform(Entity target)
 		{
 			if (SandboxOptionManager.GetBool(this.Option))
@@ -24,14 +24,14 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C8AF RID: 51375 RVA: 0x0049620A File Offset: 0x0049440A
+		// Token: 0x0600C9C3 RID: 51651 RVA: 0x00499BFE File Offset: 0x00497DFE
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<global::SandboxOptions.SandboxOptions>(RequirementSandboxBool.PropSandboxOption, ref this.Option);
 		}
 
-		// Token: 0x0600C8B0 RID: 51376 RVA: 0x00496224 File Offset: 0x00494424
+		// Token: 0x0600C9C4 RID: 51652 RVA: 0x00499C18 File Offset: 0x00497E18
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -42,11 +42,11 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040096D6 RID: 38614
+		// Token: 0x040097BF RID: 38847
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public global::SandboxOptions.SandboxOptions Option = global::SandboxOptions.SandboxOptions.Max;
 
-		// Token: 0x040096D7 RID: 38615
+		// Token: 0x040097C0 RID: 38848
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSandboxOption = "option";
 	}

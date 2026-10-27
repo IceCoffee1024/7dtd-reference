@@ -2,29 +2,29 @@
 
 namespace Twitch.PubSub
 {
-	// Token: 0x020018B1 RID: 6321
+	// Token: 0x020018E2 RID: 6370
 	public class PubSubListenMessage : BasePubSubMessage
 	{
-		// Token: 0x0600C2F5 RID: 49909 RVA: 0x0047D9A4 File Offset: 0x0047BBA4
+		// Token: 0x0600C409 RID: 50185 RVA: 0x00481350 File Offset: 0x0047F550
 		public PubSubListenMessage()
 		{
 			base.type = "LISTEN";
 		}
 
-		// Token: 0x04009343 RID: 37699
+		// Token: 0x0400942C RID: 37932
 		public PubSubListenMessage.PubSubListenData data;
 
-		// Token: 0x020018B2 RID: 6322
+		// Token: 0x020018E3 RID: 6371
 		public class PubSubListenData
 		{
-			// Token: 0x17001869 RID: 6249
-			// (get) Token: 0x0600C2F6 RID: 49910 RVA: 0x0047D9B7 File Offset: 0x0047BBB7
-			// (set) Token: 0x0600C2F7 RID: 49911 RVA: 0x0047D9BF File Offset: 0x0047BBBF
+			// Token: 0x170018B1 RID: 6321
+			// (get) Token: 0x0600C40A RID: 50186 RVA: 0x00481363 File Offset: 0x0047F563
+			// (set) Token: 0x0600C40B RID: 50187 RVA: 0x0048136B File Offset: 0x0047F56B
 			public string[] topics { get; set; }
 
-			// Token: 0x1700186A RID: 6250
-			// (get) Token: 0x0600C2F8 RID: 49912 RVA: 0x0047D9C8 File Offset: 0x0047BBC8
-			// (set) Token: 0x0600C2F9 RID: 49913 RVA: 0x0047D9D0 File Offset: 0x0047BBD0
+			// Token: 0x170018B2 RID: 6322
+			// (get) Token: 0x0600C40C RID: 50188 RVA: 0x00481374 File Offset: 0x0047F574
+			// (set) Token: 0x0600C40D RID: 50189 RVA: 0x0048137C File Offset: 0x0047F57C
 			public string auth_token { get; set; }
 		}
 	}

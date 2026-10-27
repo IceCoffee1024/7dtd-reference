@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CD4 RID: 7380
+	// Token: 0x02001D05 RID: 7429
 	[Preserve]
 	[UserIdentifierFactory(EPlatformIdentifier.Steam)]
 	public class UserIdentifierFactory : AbsUserIdentifierFactory
 	{
-		// Token: 0x0600DAEC RID: 56044 RVA: 0x004E5948 File Offset: 0x004E3B48
+		// Token: 0x0600DC00 RID: 56320 RVA: 0x004E94E8 File Offset: 0x004E76E8
 		public override PlatformUserIdentifierAbs FromId(string _userId)
 		{
 			return new UserIdentifierSteam(_userId);

@@ -7,19 +7,19 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockMotionSensor : BlockPowered
 {
-	// Token: 0x06000845 RID: 2117 RVA: 0x0003ABC4 File Offset: 0x00038DC4
+	// Token: 0x06000845 RID: 2117 RVA: 0x0003AB84 File Offset: 0x00038D84
 	public BlockMotionSensor()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000846 RID: 2118 RVA: 0x0003AC1C File Offset: 0x00038E1C
+	// Token: 0x06000846 RID: 2118 RVA: 0x0003ABDC File Offset: 0x00038DDC
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x06000847 RID: 2119 RVA: 0x0003AC24 File Offset: 0x00038E24
+	// Token: 0x06000847 RID: 2119 RVA: 0x0003ABE4 File Offset: 0x00038DE4
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -32,7 +32,7 @@ public class BlockMotionSensor : BlockPowered
 		}
 	}
 
-	// Token: 0x06000848 RID: 2120 RVA: 0x0003AC78 File Offset: 0x00038E78
+	// Token: 0x06000848 RID: 2120 RVA: 0x0003AC38 File Offset: 0x00038E38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bChangeState = false)
 	{
@@ -108,34 +108,34 @@ public class BlockMotionSensor : BlockPowered
 		return false;
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x0003AE94 File Offset: 0x00039094
+	// Token: 0x0600084A RID: 2122 RVA: 0x0003AE54 File Offset: 0x00039054
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
 		this.updateState(_world, _blockPos, _blockValue, false);
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x0003AEAA File Offset: 0x000390AA
+	// Token: 0x0600084B RID: 2123 RVA: 0x0003AE6A File Offset: 0x0003906A
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 		this.updateState(_world, _blockPos, _newBlockValue, false);
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x0003AEC5 File Offset: 0x000390C5
+	// Token: 0x0600084C RID: 2124 RVA: 0x0003AE85 File Offset: 0x00039085
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		this.updateState(_world, _blockPos, _blockValue, false);
 		return true;
 	}
 
-	// Token: 0x0600084D RID: 2125 RVA: 0x0003AED3 File Offset: 0x000390D3
+	// Token: 0x0600084D RID: 2125 RVA: 0x0003AE93 File Offset: 0x00039093
 	public static bool IsSwitchOn(byte _metadata)
 	{
 		return (_metadata & 2) > 0;
 	}
 
-	// Token: 0x0600084E RID: 2126 RVA: 0x0003AEDB File Offset: 0x000390DB
+	// Token: 0x0600084E RID: 2126 RVA: 0x0003AE9B File Offset: 0x0003909B
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)
@@ -144,7 +144,7 @@ public class BlockMotionSensor : BlockPowered
 		};
 	}
 
-	// Token: 0x0600084F RID: 2127 RVA: 0x0003AEEC File Offset: 0x000390EC
+	// Token: 0x0600084F RID: 2127 RVA: 0x0003AEAC File Offset: 0x000390AC
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -168,7 +168,7 @@ public class BlockMotionSensor : BlockPowered
 		}
 	}
 
-	// Token: 0x06000850 RID: 2128 RVA: 0x0003AF70 File Offset: 0x00039170
+	// Token: 0x06000850 RID: 2128 RVA: 0x0003AF30 File Offset: 0x00039130
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false))
@@ -186,7 +186,7 @@ public class BlockMotionSensor : BlockPowered
 		return "";
 	}
 
-	// Token: 0x06000851 RID: 2129 RVA: 0x0003B000 File Offset: 0x00039200
+	// Token: 0x06000851 RID: 2129 RVA: 0x0003AFC0 File Offset: 0x000391C0
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -220,7 +220,7 @@ public class BlockMotionSensor : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000853 RID: 2131 RVA: 0x0003B098 File Offset: 0x00039298
+	// Token: 0x06000853 RID: 2131 RVA: 0x0003B058 File Offset: 0x00039258
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);

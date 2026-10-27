@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000423 RID: 1059
+// Token: 0x02000425 RID: 1061
 [Preserve]
 public class AIScoutHordeSpawner
 {
-	// Token: 0x06002097 RID: 8343 RVA: 0x000C4C3F File Offset: 0x000C2E3F
+	// Token: 0x0600209C RID: 8348 RVA: 0x000C4FEB File Offset: 0x000C31EB
 	public AIScoutHordeSpawner(EntitySpawner _spawner, Vector3 _startPos, Vector3 _endPos, bool _isBloodMoon)
 	{
 		this.spawner = _spawner;
@@ -16,7 +16,7 @@ public class AIScoutHordeSpawner
 		this.isBloodMoon = _isBloodMoon;
 	}
 
-	// Token: 0x06002098 RID: 8344 RVA: 0x000C4C7A File Offset: 0x000C2E7A
+	// Token: 0x0600209D RID: 8349 RVA: 0x000C5026 File Offset: 0x000C3226
 	public bool Update(World world, float dt)
 	{
 		if (world.GetPlayers().Count == 0)
@@ -31,7 +31,7 @@ public class AIScoutHordeSpawner
 		return false;
 	}
 
-	// Token: 0x06002099 RID: 8345 RVA: 0x000C4CAC File Offset: 0x000C2EAC
+	// Token: 0x0600209E RID: 8350 RVA: 0x000C5058 File Offset: 0x000C3258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SpawnUpdate(World world)
 	{
@@ -73,7 +73,7 @@ public class AIScoutHordeSpawner
 		return this.spawner.CurrentWave > 0;
 	}
 
-	// Token: 0x0600209A RID: 8346 RVA: 0x000C4E38 File Offset: 0x000C3038
+	// Token: 0x0600209F RID: 8351 RVA: 0x000C51E4 File Offset: 0x000C33E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateHorde(World world, float deltaTime)
 	{
@@ -181,7 +181,7 @@ public class AIScoutHordeSpawner
 		}
 	}
 
-	// Token: 0x0600209B RID: 8347 RVA: 0x000C50C4 File Offset: 0x000C32C4
+	// Token: 0x060020A0 RID: 8352 RVA: 0x000C5470 File Offset: 0x000C3670
 	public void Cleanup()
 	{
 		for (int i = 0; i < this.hordeList.Count; i++)
@@ -193,7 +193,7 @@ public class AIScoutHordeSpawner
 		this.hordeList.Clear();
 	}
 
-	// Token: 0x0600209C RID: 8348 RVA: 0x000C5118 File Offset: 0x000C3318
+	// Token: 0x060020A1 RID: 8353 RVA: 0x000C54C4 File Offset: 0x000C36C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool spawnHordeNear(World world, AIScoutHordeSpawner.ZombieCommand command, Vector3 target)
 	{
@@ -230,7 +230,7 @@ public class AIScoutHordeSpawner
 		return command.Horde.canSpawnMore || command.Horde.isSpawning;
 	}
 
-	// Token: 0x0600209D RID: 8349 RVA: 0x000C522C File Offset: 0x000C342C
+	// Token: 0x060020A2 RID: 8354 RVA: 0x000C55D8 File Offset: 0x000C37D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 CalcRandomPos(AIDirector director, Vector3 target, float radius)
 	{
@@ -238,75 +238,75 @@ public class AIScoutHordeSpawner
 		return target + new Vector3(vector.x, 0f, vector.y);
 	}
 
-	// Token: 0x04001648 RID: 5704
+	// Token: 0x04001658 RID: 5720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntitySpawner spawner;
 
-	// Token: 0x04001649 RID: 5705
+	// Token: 0x04001659 RID: 5721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 startPos;
 
-	// Token: 0x0400164A RID: 5706
+	// Token: 0x0400165A RID: 5722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 endPos;
 
-	// Token: 0x0400164B RID: 5707
+	// Token: 0x0400165B RID: 5723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBloodMoon;
 
-	// Token: 0x0400164C RID: 5708
+	// Token: 0x0400165C RID: 5724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> spawnedList = new List<Entity>();
 
-	// Token: 0x0400164D RID: 5709
+	// Token: 0x0400165D RID: 5725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIScoutHordeSpawner.ZombieCommand> hordeList = new List<AIScoutHordeSpawner.ZombieCommand>();
 
-	// Token: 0x02000424 RID: 1060
+	// Token: 0x02000426 RID: 1062
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ZombieCommand
 	{
-		// Token: 0x0400164E RID: 5710
+		// Token: 0x0400165E RID: 5726
 		public EntityEnemy Zombie;
 
-		// Token: 0x0400164F RID: 5711
+		// Token: 0x0400165F RID: 5727
 		public ulong WorldExpiryTime;
 
-		// Token: 0x04001650 RID: 5712
+		// Token: 0x04001660 RID: 5728
 		public Vector3 TargetPos;
 
-		// Token: 0x04001651 RID: 5713
+		// Token: 0x04001661 RID: 5729
 		public bool Wandering;
 
-		// Token: 0x04001652 RID: 5714
+		// Token: 0x04001662 RID: 5730
 		public bool Attacking;
 
-		// Token: 0x04001653 RID: 5715
+		// Token: 0x04001663 RID: 5731
 		public float AttackDelay;
 
-		// Token: 0x04001654 RID: 5716
+		// Token: 0x04001664 RID: 5732
 		public AIScoutHordeSpawner.IHorde Horde;
 	}
 
-	// Token: 0x02000425 RID: 1061
+	// Token: 0x02000427 RID: 1063
 	public interface IHorde
 	{
-		// Token: 0x0600209F RID: 8351
+		// Token: 0x060020A4 RID: 8356
 		void SpawnMore(int size);
 
-		// Token: 0x060020A0 RID: 8352
+		// Token: 0x060020A5 RID: 8357
 		void SetSpawnPos(Vector3 pos);
 
-		// Token: 0x060020A1 RID: 8353
+		// Token: 0x060020A6 RID: 8358
 		void Destroy();
 
 		// Token: 0x170003CC RID: 972
-		// (get) Token: 0x060020A2 RID: 8354
+		// (get) Token: 0x060020A7 RID: 8359
 		bool canSpawnMore { get; }
 
 		// Token: 0x170003CD RID: 973
-		// (get) Token: 0x060020A3 RID: 8355
+		// (get) Token: 0x060020A8 RID: 8360
 		bool isSpawning { get; }
 	}
 }

@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x02001148 RID: 4424
+// Token: 0x02001158 RID: 4440
 public class XUiM_PlayerEquipment : XUiModel
 {
 	// Token: 0x140000E3 RID: 227
-	// (add) Token: 0x06008B89 RID: 35721 RVA: 0x00353E00 File Offset: 0x00352000
-	// (remove) Token: 0x06008B8A RID: 35722 RVA: 0x00353E34 File Offset: 0x00352034
+	// (add) Token: 0x06008BDD RID: 35805 RVA: 0x00355EB0 File Offset: 0x003540B0
+	// (remove) Token: 0x06008BDE RID: 35806 RVA: 0x00355EE4 File Offset: 0x003540E4
 	public static event XUiEvent_RefreshEquipment HandleRefreshEquipment;
 
 	// Token: 0x140000E4 RID: 228
-	// (add) Token: 0x06008B8B RID: 35723 RVA: 0x00353E68 File Offset: 0x00352068
-	// (remove) Token: 0x06008B8C RID: 35724 RVA: 0x00353E9C File Offset: 0x0035209C
+	// (add) Token: 0x06008BDF RID: 35807 RVA: 0x00355F18 File Offset: 0x00354118
+	// (remove) Token: 0x06008BE0 RID: 35808 RVA: 0x00355F4C File Offset: 0x0035414C
 	public static event XUiEvent_EquipmentSlotChanged SlotChanged;
 
-	// Token: 0x1700104B RID: 4171
-	// (get) Token: 0x06008B8D RID: 35725 RVA: 0x00353ECF File Offset: 0x003520CF
+	// Token: 0x17001056 RID: 4182
+	// (get) Token: 0x06008BE1 RID: 35809 RVA: 0x00355F7F File Offset: 0x0035417F
 	public Equipment Equipment
 	{
 		get
@@ -23,7 +23,7 @@ public class XUiM_PlayerEquipment : XUiModel
 		}
 	}
 
-	// Token: 0x06008B8E RID: 35726 RVA: 0x00353ED7 File Offset: 0x003520D7
+	// Token: 0x06008BE2 RID: 35810 RVA: 0x00355F87 File Offset: 0x00354187
 	public XUiM_PlayerEquipment(XUi _xui, EntityPlayerLocal _player)
 	{
 		if (!_player)
@@ -34,7 +34,7 @@ public class XUiM_PlayerEquipment : XUiModel
 		this.equipment = _player.equipment;
 	}
 
-	// Token: 0x06008B8F RID: 35727 RVA: 0x00353EFC File Offset: 0x003520FC
+	// Token: 0x06008BE3 RID: 35811 RVA: 0x00355FAC File Offset: 0x003541AC
 	public ItemStack EquipItem(ItemStack _stack)
 	{
 		ItemClassArmor itemClassArmor = _stack.itemValue.ItemClass as ItemClassArmor;
@@ -78,7 +78,7 @@ public class XUiM_PlayerEquipment : XUiModel
 		return stackFromSlot;
 	}
 
-	// Token: 0x06008B90 RID: 35728 RVA: 0x00353FD4 File Offset: 0x003521D4
+	// Token: 0x06008BE4 RID: 35812 RVA: 0x00356084 File Offset: 0x00354284
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool IsWearing(ItemValue _itemValue)
 	{
@@ -91,13 +91,13 @@ public class XUiM_PlayerEquipment : XUiModel
 		return equipSlot != EquipmentSlots.Count && this.GetStackFromSlot(equipSlot).itemValue.type == _itemValue.type;
 	}
 
-	// Token: 0x06008B91 RID: 35729 RVA: 0x00354019 File Offset: 0x00352219
+	// Token: 0x06008BE5 RID: 35813 RVA: 0x003560C9 File Offset: 0x003542C9
 	public bool IsEquipmentTypeWorn(EquipmentSlots _slot)
 	{
 		return _slot != EquipmentSlots.Count && !this.GetStackFromSlot(_slot).itemValue.IsEmpty();
 	}
 
-	// Token: 0x06008B92 RID: 35730 RVA: 0x00354036 File Offset: 0x00352236
+	// Token: 0x06008BE6 RID: 35814 RVA: 0x003560E6 File Offset: 0x003542E6
 	public void RefreshEquipment()
 	{
 		this.equipment.FireEventsForSetSlots();
@@ -109,7 +109,7 @@ public class XUiM_PlayerEquipment : XUiModel
 		this.equipment.FireEventsForChangedSlots();
 	}
 
-	// Token: 0x06008B93 RID: 35731 RVA: 0x00354060 File Offset: 0x00352260
+	// Token: 0x06008BE7 RID: 35815 RVA: 0x00356110 File Offset: 0x00354310
 	public ItemStack GetStackFromSlot(EquipmentSlots _slot)
 	{
 		ItemStack empty = ItemStack.Empty;
@@ -123,7 +123,7 @@ public class XUiM_PlayerEquipment : XUiModel
 		return empty;
 	}
 
-	// Token: 0x06008B94 RID: 35732 RVA: 0x00354094 File Offset: 0x00352294
+	// Token: 0x06008BE8 RID: 35816 RVA: 0x00356144 File Offset: 0x00354344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_EquipmentStack GetEquipmentStack(EquipmentSlots _slot)
 	{
@@ -139,18 +139,18 @@ public class XUiM_PlayerEquipment : XUiModel
 		return xuiC_EquipmentStackGrid.GetSlot(_slot);
 	}
 
-	// Token: 0x04006757 RID: 26455
+	// Token: 0x04006797 RID: 26519
 	public bool IsOpen;
 
-	// Token: 0x0400675A RID: 26458
+	// Token: 0x0400679A RID: 26522
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUi xui;
 
-	// Token: 0x0400675B RID: 26459
+	// Token: 0x0400679B RID: 26523
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Equipment equipment;
 
-	// Token: 0x0400675C RID: 26460
+	// Token: 0x0400679C RID: 26524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_EquipmentStackGrid equipmentGrid;
 }

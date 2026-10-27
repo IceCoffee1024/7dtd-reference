@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F89 RID: 3977
+// Token: 0x02000F99 RID: 3993
 [Preserve]
 public class XUiC_Location : XUiController
 {
-	// Token: 0x06007D1D RID: 32029 RVA: 0x002E0AD8 File Offset: 0x002DECD8
+	// Token: 0x06007D6C RID: 32108 RVA: 0x002E23C8 File Offset: 0x002E05C8
 	public override void Init()
 	{
 		base.Init();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007D1E RID: 32030 RVA: 0x002F6D88 File Offset: 0x002F4F88
+	// Token: 0x06007D6D RID: 32109 RVA: 0x002F8A10 File Offset: 0x002F6C10
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -97,14 +97,14 @@ public class XUiC_Location : XUiController
 		}
 	}
 
-	// Token: 0x06007D1F RID: 32031 RVA: 0x002F7040 File Offset: 0x002F5240
+	// Token: 0x06007D6E RID: 32110 RVA: 0x002F8CC8 File Offset: 0x002F6EC8
 	public override void OnClose()
 	{
 		base.OnClose();
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007D20 RID: 32032 RVA: 0x002F7050 File Offset: 0x002F5250
+	// Token: 0x06007D6F RID: 32111 RVA: 0x002F8CD8 File Offset: 0x002F6ED8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -341,7 +341,7 @@ public class XUiC_Location : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007D21 RID: 32033 RVA: 0x002F774C File Offset: 0x002F594C
+	// Token: 0x06007D70 RID: 32112 RVA: 0x002F93D4 File Offset: 0x002F75D4
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -364,81 +364,81 @@ public class XUiC_Location : XUiController
 		return flag;
 	}
 
-	// Token: 0x04005CC1 RID: 23745
+	// Token: 0x04005CFB RID: 23803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab lastPrefab;
 
-	// Token: 0x04005CC2 RID: 23746
+	// Token: 0x04005CFC RID: 23804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance lastPrefabInstance;
 
-	// Token: 0x04005CC3 RID: 23747
+	// Token: 0x04005CFD RID: 23805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition lastBiome;
 
-	// Token: 0x04005CC4 RID: 23748
+	// Token: 0x04005CFE RID: 23806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal LocalPlayer;
 
-	// Token: 0x04005CC5 RID: 23749
+	// Token: 0x04005CFF RID: 23807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabDiff;
 
-	// Token: 0x04005CC6 RID: 23750
+	// Token: 0x04005D00 RID: 23808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomeDiff;
 
-	// Token: 0x04005CC7 RID: 23751
+	// Token: 0x04005D01 RID: 23809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showBiomeHalf;
 
-	// Token: 0x04005CC8 RID: 23752
+	// Token: 0x04005D02 RID: 23810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color difficultyActiveColor = Color.red;
 
-	// Token: 0x04005CC9 RID: 23753
+	// Token: 0x04005D03 RID: 23811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color biomeActiveColor = new Color(1f, 0.5f, 0f);
 
-	// Token: 0x04005CCA RID: 23754
+	// Token: 0x04005D04 RID: 23812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color inactiveColor = Color.grey;
 
-	// Token: 0x04005CCB RID: 23755
+	// Token: 0x04005D05 RID: 23813
 	public static XUiC_Location.ShowLocationInfoTypes ShowLocation = XUiC_Location.ShowLocationInfoTypes.Yes;
 
-	// Token: 0x04005CCC RID: 23756
+	// Token: 0x04005D06 RID: 23814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> partTag = FastTags<TagGroup.Poi>.Parse("part");
 
-	// Token: 0x04005CCD RID: 23757
+	// Token: 0x04005D07 RID: 23815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> streetTileTag = FastTags<TagGroup.Poi>.Parse("streettile");
 
-	// Token: 0x04005CCE RID: 23758
+	// Token: 0x04005D08 RID: 23816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> navOnlyTileTag = FastTags<TagGroup.Poi>.Parse("navonly");
 
-	// Token: 0x04005CCF RID: 23759
+	// Token: 0x04005D09 RID: 23817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> hideUITag = FastTags<TagGroup.Poi>.Parse("hideui");
 
-	// Token: 0x04005CD0 RID: 23760
+	// Token: 0x04005D0A RID: 23818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor activeColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005CD1 RID: 23761
+	// Token: 0x04005D0B RID: 23819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor inactiveColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x02000F8A RID: 3978
+	// Token: 0x02000F9A RID: 3994
 	public enum ShowLocationInfoTypes
 	{
-		// Token: 0x04005CD3 RID: 23763
+		// Token: 0x04005D0D RID: 23821
 		No,
-		// Token: 0x04005CD4 RID: 23764
+		// Token: 0x04005D0E RID: 23822
 		Yes,
-		// Token: 0x04005CD5 RID: 23765
+		// Token: 0x04005D0F RID: 23823
 		NameOnly
 	}
 }

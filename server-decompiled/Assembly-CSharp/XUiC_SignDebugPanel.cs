@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001039 RID: 4153
+// Token: 0x02001049 RID: 4169
 [Preserve]
 public class XUiC_SignDebugPanel : XUiController
 {
-	// Token: 0x060082E7 RID: 33511 RVA: 0x0031D344 File Offset: 0x0031B544
+	// Token: 0x06008339 RID: 33593 RVA: 0x0031F048 File Offset: 0x0031D248
 	public override void Init()
 	{
 		base.Init();
@@ -20,13 +20,13 @@ public class XUiC_SignDebugPanel : XUiController
 		this.lblMaxUVDepth = (XUiV_Label)base.GetChildById("lblMaxUVDepth").GetChildById("value").ViewComponent;
 	}
 
-	// Token: 0x060082E8 RID: 33512 RVA: 0x0031D4A4 File Offset: 0x0031B6A4
+	// Token: 0x0600833A RID: 33594 RVA: 0x0031F1A8 File Offset: 0x0031D3A8
 	public void Clear()
 	{
 		this.SetAll("-");
 	}
 
-	// Token: 0x060082E9 RID: 33513 RVA: 0x0031D4B4 File Offset: 0x0031B6B4
+	// Token: 0x0600833B RID: 33595 RVA: 0x0031F1B8 File Offset: 0x0031D3B8
 	public void Populate(in LayerComplexityInfo layerComplexityInfo)
 	{
 		XUiV_Label xuiV_Label = this.lblGroupDepth;
@@ -58,7 +58,7 @@ public class XUiC_SignDebugPanel : XUiController
 		xuiV_Label9.Text = num.ToString();
 	}
 
-	// Token: 0x060082EA RID: 33514 RVA: 0x0031D5A4 File Offset: 0x0031B7A4
+	// Token: 0x0600833C RID: 33596 RVA: 0x0031F2A8 File Offset: 0x0031D4A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAll(string value)
 	{
@@ -73,39 +73,39 @@ public class XUiC_SignDebugPanel : XUiController
 		this.lblMaxUVDepth.Text = value;
 	}
 
-	// Token: 0x0400611E RID: 24862
+	// Token: 0x0400615C RID: 24924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblGroupDepth;
 
-	// Token: 0x0400611F RID: 24863
+	// Token: 0x0400615D RID: 24925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblComplexity;
 
-	// Token: 0x04006120 RID: 24864
+	// Token: 0x0400615E RID: 24926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblDescCount;
 
-	// Token: 0x04006121 RID: 24865
+	// Token: 0x0400615F RID: 24927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblWarpCount;
 
-	// Token: 0x04006122 RID: 24866
+	// Token: 0x04006160 RID: 24928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblDrawCount;
 
-	// Token: 0x04006123 RID: 24867
+	// Token: 0x04006161 RID: 24929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblBgnCompDepth;
 
-	// Token: 0x04006124 RID: 24868
+	// Token: 0x04006162 RID: 24930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblMaxCompDepth;
 
-	// Token: 0x04006125 RID: 24869
+	// Token: 0x04006163 RID: 24931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblEndCompDepth;
 
-	// Token: 0x04006126 RID: 24870
+	// Token: 0x04006164 RID: 24932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblMaxUVDepth;
 }

@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeWater : BlockShapeCube
 {
-	// Token: 0x06000D42 RID: 3394 RVA: 0x00056FF2 File Offset: 0x000551F2
+	// Token: 0x06000D42 RID: 3394 RVA: 0x00056F92 File Offset: 0x00055192
 	public BlockShapeWater()
 	{
 		this.IsSolidCube = false;
@@ -14,7 +14,7 @@ public class BlockShapeWater : BlockShapeCube
 		this.LightOpacity = 0;
 	}
 
-	// Token: 0x06000D43 RID: 3395 RVA: 0x0005700F File Offset: 0x0005520F
+	// Token: 0x06000D43 RID: 3395 RVA: 0x00056FAF File Offset: 0x000551AF
 	public override void renderFace(Vector3[] _vertices, LightingAround _lightingAround, long _textureFull, VoxelMesh[] _meshes, Vector2 UVdata, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		_meshes[1].AddBasicQuad(_vertices, Color.white, UVdata, true, false);
@@ -32,7 +32,7 @@ public class BlockShapeWater : BlockShapeCube
 		return false;
 	}
 
-	// Token: 0x06000D46 RID: 3398 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
+	// Token: 0x06000D46 RID: 3398 RVA: 0x0003D372 File Offset: 0x0003B572
 	public override float GetStepHeight(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return 0f;

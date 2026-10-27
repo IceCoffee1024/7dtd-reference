@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020008B9 RID: 2233
+// Token: 0x020008C3 RID: 2243
 public class TraderManager
 {
-	// Token: 0x0600403A RID: 16442 RVA: 0x001935B0 File Offset: 0x001917B0
+	// Token: 0x0600405D RID: 16477 RVA: 0x00194658 File Offset: 0x00192858
 	public TraderManager(WorldBase _world)
 	{
 		this.world = _world;
 		this.Random = GameRandomManager.Instance.CreateGameRandom((int)DateTime.Now.Ticks);
 	}
 
-	// Token: 0x0600403B RID: 16443 RVA: 0x001935E8 File Offset: 0x001917E8
+	// Token: 0x0600405E RID: 16478 RVA: 0x00194690 File Offset: 0x00192890
 	public bool TraderInventoryRequested(TraderData trader, int _entityIdThatOpenedIt)
 	{
 		TraderInfo traderInfo = TraderInfo.traderInfoList[trader.TraderID];
@@ -44,7 +44,7 @@ public class TraderManager
 		return true;
 	}
 
-	// Token: 0x0600403C RID: 16444 RVA: 0x001936B0 File Offset: 0x001918B0
+	// Token: 0x0600405F RID: 16479 RVA: 0x00194758 File Offset: 0x00192958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleFullReset(TraderData trader, TraderInfo info)
 	{
@@ -85,19 +85,19 @@ public class TraderManager
 		}
 	}
 
-	// Token: 0x0400344D RID: 13389
+	// Token: 0x0400346D RID: 13421
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBase world;
 
-	// Token: 0x0400344E RID: 13390
+	// Token: 0x0400346E RID: 13422
 	public GameRandom Random;
 
-	// Token: 0x0400344F RID: 13391
+	// Token: 0x0400346F RID: 13423
 	public static float[] QuestTierMod;
 
-	// Token: 0x04003450 RID: 13392
+	// Token: 0x04003470 RID: 13424
 	public static Dictionary<string, TraderStageTemplateGroup> TraderStageTemplates = new Dictionary<string, TraderStageTemplateGroup>();
 
-	// Token: 0x04003451 RID: 13393
+	// Token: 0x04003471 RID: 13425
 	public static bool VendingEnabled = true;
 }

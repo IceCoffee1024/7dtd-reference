@@ -2,13 +2,13 @@
 
 namespace Twitch
 {
-	// Token: 0x02001880 RID: 6272
+	// Token: 0x020018B1 RID: 6321
 	public class TwitchRandomActionGroup
 	{
-		// Token: 0x040091DB RID: 37339
+		// Token: 0x040092C4 RID: 37572
 		public string Name = "";
 
-		// Token: 0x040091DC RID: 37340
+		// Token: 0x040092C5 RID: 37573
 		public int RandomCount = 1;
 	}
 }

@@ -2,11 +2,11 @@
 using System.Runtime.CompilerServices;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DCE RID: 3534
+// Token: 0x02000DD9 RID: 3545
 [Preserve]
 public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 {
-	// Token: 0x06006BB0 RID: 27568 RVA: 0x002A4858 File Offset: 0x002A2A58
+	// Token: 0x06006BD5 RID: 27605 RVA: 0x002A5D80 File Offset: 0x002A3F80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initUpscalerModeOptions()
 	{
@@ -36,7 +36,7 @@ public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 		this.optionUpscaler.IsChangedDelegate = () => this.comboUpscaler.SelectedIndex != XUiC_OptionsVideoSimplified.<initUpscalerModeOptions>g__GamePrefUpscalerModeIndex|3_4();
 	}
 
-	// Token: 0x06006BB1 RID: 27569 RVA: 0x002A48D4 File Offset: 0x002A2AD4
+	// Token: 0x06006BD6 RID: 27606 RVA: 0x002A5DFC File Offset: 0x002A3FFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initQualityPresetBasedOptions()
 	{
@@ -83,11 +83,11 @@ public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 	}
 
 	// Token: 0x14000097 RID: 151
-	// (add) Token: 0x06006BB2 RID: 27570 RVA: 0x002A4938 File Offset: 0x002A2B38
-	// (remove) Token: 0x06006BB3 RID: 27571 RVA: 0x002A496C File Offset: 0x002A2B6C
+	// (add) Token: 0x06006BD7 RID: 27607 RVA: 0x002A5E60 File Offset: 0x002A4060
+	// (remove) Token: 0x06006BD8 RID: 27608 RVA: 0x002A5E94 File Offset: 0x002A4094
 	public static event Action OnSettingsChanged;
 
-	// Token: 0x06006BB4 RID: 27572 RVA: 0x002A499F File Offset: 0x002A2B9F
+	// Token: 0x06006BD9 RID: 27609 RVA: 0x002A5EC7 File Offset: 0x002A40C7
 	public override void Init()
 	{
 		base.Init();
@@ -96,21 +96,21 @@ public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 		this.initQualityPresetBasedOptions();
 	}
 
-	// Token: 0x06006BB5 RID: 27573 RVA: 0x002A49C3 File Offset: 0x002A2BC3
+	// Token: 0x06006BDA RID: 27610 RVA: 0x002A5EEB File Offset: 0x002A40EB
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.updateCustomModeVisibility();
 	}
 
-	// Token: 0x06006BB6 RID: 27574 RVA: 0x002A49D1 File Offset: 0x002A2BD1
+	// Token: 0x06006BDB RID: 27611 RVA: 0x002A5EF9 File Offset: 0x002A40F9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCustomModeVisibility()
 	{
 		this.comboQualityPreset.MaxIndex = Math.Max(this.comboQualityPreset.SelectedIndex, 1);
 	}
 
-	// Token: 0x06006BB7 RID: 27575 RVA: 0x002A49EF File Offset: 0x002A2BEF
+	// Token: 0x06006BDC RID: 27612 RVA: 0x002A5F17 File Offset: 0x002A4117
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void afterChangesSaved()
 	{
@@ -126,7 +126,7 @@ public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 		onSettingsChanged();
 	}
 
-	// Token: 0x06006BBE RID: 27582 RVA: 0x002A4AC0 File Offset: 0x002A2CC0
+	// Token: 0x06006BE3 RID: 27619 RVA: 0x002A5FE8 File Offset: 0x002A41E8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static int <initUpscalerModeOptions>g__GamePrefUpscalerModeIndex|3_4()
@@ -151,7 +151,7 @@ public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 		return num;
 	}
 
-	// Token: 0x06006BBF RID: 27583 RVA: 0x002A4AF0 File Offset: 0x002A2CF0
+	// Token: 0x06006BE4 RID: 27620 RVA: 0x002A6018 File Offset: 0x002A4218
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int <initUpscalerModeOptions>g__SelectionToUpscalerMode|3_5()
@@ -176,46 +176,46 @@ public class XUiC_OptionsVideoSimplified : XUiC_OptionsVideoBase
 		return num;
 	}
 
-	// Token: 0x0400527C RID: 21116
+	// Token: 0x040052A1 RID: 21153
 	[XuiBindComponent("OptionConsoleUpscaler", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionUpscaler;
 
-	// Token: 0x0400527D RID: 21117
+	// Token: 0x040052A2 RID: 21154
 	[XuiBindComponent("ConsoleUpscaler", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboUpscaler;
 
-	// Token: 0x0400527E RID: 21118
+	// Token: 0x040052A3 RID: 21155
 	[XuiBindComponent("OptionQualityPreset", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefIntIndex optionQualityPreset;
 
-	// Token: 0x0400527F RID: 21119
+	// Token: 0x040052A4 RID: 21156
 	[XuiBindComponent("QualityPreset", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboQualityPreset;
 
-	// Token: 0x04005280 RID: 21120
+	// Token: 0x040052A5 RID: 21157
 	public static string ID = "";
 
-	// Token: 0x02000DCF RID: 3535
+	// Token: 0x02000DDA RID: 3546
 	public enum UpscalerMode
 	{
-		// Token: 0x04005283 RID: 21123
+		// Token: 0x040052A8 RID: 21160
 		FSR3,
-		// Token: 0x04005284 RID: 21124
+		// Token: 0x040052A9 RID: 21161
 		Scale
 	}
 
-	// Token: 0x02000DD0 RID: 3536
+	// Token: 0x02000DDB RID: 3547
 	public enum GraphicsMode
 	{
-		// Token: 0x04005286 RID: 21126
+		// Token: 0x040052AB RID: 21163
 		ConsolePerformance,
-		// Token: 0x04005287 RID: 21127
+		// Token: 0x040052AC RID: 21164
 		ConsoleQuality,
-		// Token: 0x04005288 RID: 21128
+		// Token: 0x040052AD RID: 21165
 		ConsoleCustom
 	}
 }

@@ -7,13 +7,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSwitch : BlockPowered
 {
-	// Token: 0x06000974 RID: 2420 RVA: 0x00041838 File Offset: 0x0003FA38
+	// Token: 0x06000974 RID: 2420 RVA: 0x000417F8 File Offset: 0x0003F9F8
 	public BlockSwitch()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000975 RID: 2421 RVA: 0x00041890 File Offset: 0x0003FA90
+	// Token: 0x06000975 RID: 2421 RVA: 0x00041850 File Offset: 0x0003FA50
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		PlayerActionsLocal playerInput = ((EntityPlayerLocal)_entityFocusing).playerInput;
@@ -25,7 +25,7 @@ public class BlockSwitch : BlockPowered
 		return string.Format(Localization.Get("useSwitchLightOn", false, null), text);
 	}
 
-	// Token: 0x06000976 RID: 2422 RVA: 0x00041904 File Offset: 0x0003FB04
+	// Token: 0x06000976 RID: 2422 RVA: 0x000418C4 File Offset: 0x0003FAC4
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "light"))
@@ -48,7 +48,7 @@ public class BlockSwitch : BlockPowered
 		}
 	}
 
-	// Token: 0x06000977 RID: 2423 RVA: 0x00041960 File Offset: 0x0003FB60
+	// Token: 0x06000977 RID: 2423 RVA: 0x00041920 File Offset: 0x0003FB20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bChangeState = false)
 	{
@@ -114,14 +114,14 @@ public class BlockSwitch : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000978 RID: 2424 RVA: 0x00041B6E File Offset: 0x0003FD6E
+	// Token: 0x06000978 RID: 2424 RVA: 0x00041B2E File Offset: 0x0003FD2E
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.updateState(_world, _blockPos, _blockValue, false);
 	}
 
-	// Token: 0x06000979 RID: 2425 RVA: 0x00041B88 File Offset: 0x0003FD88
+	// Token: 0x06000979 RID: 2425 RVA: 0x00041B48 File Offset: 0x0003FD48
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -136,7 +136,7 @@ public class BlockSwitch : BlockPowered
 		return true;
 	}
 
-	// Token: 0x0600097B RID: 2427 RVA: 0x00041BD8 File Offset: 0x0003FDD8
+	// Token: 0x0600097B RID: 2427 RVA: 0x00041B98 File Offset: 0x0003FD98
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -145,7 +145,7 @@ public class BlockSwitch : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x0600097C RID: 2428 RVA: 0x00041C34 File Offset: 0x0003FE34
+	// Token: 0x0600097C RID: 2428 RVA: 0x00041BF4 File Offset: 0x0003FDF4
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		_blockValue.meta = (byte)(((int)_blockValue.meta & -3) | (isOn ? 2 : 0));
@@ -155,19 +155,19 @@ public class BlockSwitch : BlockPowered
 		return true;
 	}
 
-	// Token: 0x0600097D RID: 2429 RVA: 0x00041C90 File Offset: 0x0003FE90
+	// Token: 0x0600097D RID: 2429 RVA: 0x00041C50 File Offset: 0x0003FE50
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk);
 	}
 
-	// Token: 0x0600097E RID: 2430 RVA: 0x0003AED3 File Offset: 0x000390D3
+	// Token: 0x0600097E RID: 2430 RVA: 0x0003AE93 File Offset: 0x00039093
 	public static bool IsSwitchOn(byte _metadata)
 	{
 		return (_metadata & 2) > 0;
 	}
 
-	// Token: 0x0600097F RID: 2431 RVA: 0x00041C98 File Offset: 0x0003FE98
+	// Token: 0x0600097F RID: 2431 RVA: 0x00041C58 File Offset: 0x0003FE58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateAnimState(BlockEntityData _ebcd, bool _bOpen, BlockValue _blockValue)
 	{
@@ -182,7 +182,7 @@ public class BlockSwitch : BlockPowered
 		}
 	}
 
-	// Token: 0x06000980 RID: 2432 RVA: 0x00041CEC File Offset: 0x0003FEEC
+	// Token: 0x06000980 RID: 2432 RVA: 0x00041CAC File Offset: 0x0003FEAC
 	public override void ForceAnimationState(BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		Animator[] componentsInChildren;

@@ -4,11 +4,11 @@ using Platform;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B9 RID: 697
+// Token: 0x020002BB RID: 699
 [Preserve]
 public class ConsoleCmdTwitchAdminCommand : ConsoleCmdAbstract
 {
-	// Token: 0x060013FD RID: 5117 RVA: 0x00079E3E File Offset: 0x0007803E
+	// Token: 0x06001401 RID: 5121 RVA: 0x0007A00E File Offset: 0x0007820E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdTwitchAdminCommand : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000221 RID: 545
-	// (get) Token: 0x060013FE RID: 5118 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001402 RID: 5122 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdTwitchAdminCommand : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000222 RID: 546
-	// (get) Token: 0x060013FF RID: 5119 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x06001403 RID: 5123 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -36,7 +36,7 @@ public class ConsoleCmdTwitchAdminCommand : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000223 RID: 547
-	// (get) Token: 0x06001400 RID: 5120 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x06001404 RID: 5124 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -45,7 +45,7 @@ public class ConsoleCmdTwitchAdminCommand : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001401 RID: 5121 RVA: 0x00079E50 File Offset: 0x00078050
+	// Token: 0x06001405 RID: 5125 RVA: 0x0007A020 File Offset: 0x00078220
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)
@@ -148,14 +148,14 @@ public class ConsoleCmdTwitchAdminCommand : ConsoleCmdAbstract
 		TwitchManager.Current.ViewerData.Cleanup();
 	}
 
-	// Token: 0x06001402 RID: 5122 RVA: 0x0007A0E0 File Offset: 0x000782E0
+	// Token: 0x06001406 RID: 5126 RVA: 0x0007A2B0 File Offset: 0x000784B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Twitch Admin Commands";
 	}
 
-	// Token: 0x06001403 RID: 5123 RVA: 0x0007A0E7 File Offset: 0x000782E7
+	// Token: 0x06001407 RID: 5127 RVA: 0x0007A2B7 File Offset: 0x000784B7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{

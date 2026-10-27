@@ -4,20 +4,20 @@ using System.Runtime.CompilerServices;
 
 namespace Platform
 {
-	// Token: 0x02001B99 RID: 7065
+	// Token: 0x02001BCA RID: 7114
 	public interface IJoinSessionGameInviteListener
 	{
-		// Token: 0x0600D379 RID: 54137
+		// Token: 0x0600D48D RID: 54413
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D37A RID: 54138
+		// Token: 0x0600D48E RID: 54414
 		[return: TupleElementNames(new string[] { "invite", "password" })]
 		ValueTuple<string, string> TakePendingInvite();
 
-		// Token: 0x0600D37B RID: 54139
+		// Token: 0x0600D48F RID: 54415
 		IEnumerator ConnectToInvite(string _invite, string _password = null, Action<bool> _onFinished = null);
 
-		// Token: 0x0600D37C RID: 54140
+		// Token: 0x0600D490 RID: 54416
 		string GetListenerIdentifier();
 	}
 }

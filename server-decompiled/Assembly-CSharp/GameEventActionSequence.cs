@@ -4,11 +4,11 @@ using GameEvent.SequenceActions;
 using GameEvent.SequenceRequirements;
 using UnityEngine;
 
-// Token: 0x0200053C RID: 1340
+// Token: 0x02000540 RID: 1344
 public class GameEventActionSequence
 {
 	// Token: 0x170004A6 RID: 1190
-	// (get) Token: 0x06002BF0 RID: 11248 RVA: 0x00116323 File Offset: 0x00114523
+	// (get) Token: 0x06002BF8 RID: 11256 RVA: 0x001168AF File Offset: 0x00114AAF
 	public GameEventVariables EventVariables
 	{
 		get
@@ -21,7 +21,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BF1 RID: 11249 RVA: 0x00116340 File Offset: 0x00114540
+	// Token: 0x06002BF9 RID: 11257 RVA: 0x001168CC File Offset: 0x00114ACC
 	public bool HasTarget()
 	{
 		if (this.TargetType == GameEventActionSequence.TargetTypes.Entity)
@@ -36,7 +36,7 @@ public class GameEventActionSequence
 	}
 
 	// Token: 0x170004A7 RID: 1191
-	// (get) Token: 0x06002BF2 RID: 11250 RVA: 0x001163BB File Offset: 0x001145BB
+	// (get) Token: 0x06002BFA RID: 11258 RVA: 0x00116947 File Offset: 0x00114B47
 	public bool DeadCheck
 	{
 		get
@@ -45,7 +45,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BF3 RID: 11251 RVA: 0x001163D8 File Offset: 0x001145D8
+	// Token: 0x06002BFB RID: 11259 RVA: 0x00116964 File Offset: 0x00114B64
 	public void SetupTarget()
 	{
 		if (this.TargetType == GameEventActionSequence.TargetTypes.POI)
@@ -90,13 +90,13 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BF4 RID: 11252 RVA: 0x0011651E File Offset: 0x0011471E
+	// Token: 0x06002BFC RID: 11260 RVA: 0x00116AAA File Offset: 0x00114CAA
 	public void StartSequence(GameEventManager manager)
 	{
 		this.StartTime = Time.time;
 	}
 
-	// Token: 0x06002BF5 RID: 11253 RVA: 0x0011652C File Offset: 0x0011472C
+	// Token: 0x06002BFD RID: 11261 RVA: 0x00116AB8 File Offset: 0x00114CB8
 	public void Init()
 	{
 		List<int> list = new List<int>();
@@ -120,7 +120,7 @@ public class GameEventActionSequence
 		this.IsComplete = false;
 	}
 
-	// Token: 0x06002BF6 RID: 11254 RVA: 0x001165D4 File Offset: 0x001147D4
+	// Token: 0x06002BFE RID: 11262 RVA: 0x00116B60 File Offset: 0x00114D60
 	public bool CanPerform(Entity player)
 	{
 		for (int i = 0; i < this.Requirements.Count; i++)
@@ -140,7 +140,7 @@ public class GameEventActionSequence
 		return true;
 	}
 
-	// Token: 0x06002BF7 RID: 11255 RVA: 0x0011663C File Offset: 0x0011483C
+	// Token: 0x06002BFF RID: 11263 RVA: 0x00116BC8 File Offset: 0x00114DC8
 	public void HandleVariablesForProperties(DynamicProperties properties)
 	{
 		if (properties == null)
@@ -156,7 +156,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BF8 RID: 11256 RVA: 0x001166C4 File Offset: 0x001148C4
+	// Token: 0x06002C00 RID: 11264 RVA: 0x00116C50 File Offset: 0x00114E50
 	public void ParseProperties(DynamicProperties properties)
 	{
 		this.Properties = properties;
@@ -180,7 +180,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BF9 RID: 11257 RVA: 0x001167AC File Offset: 0x001149AC
+	// Token: 0x06002C01 RID: 11265 RVA: 0x00116D38 File Offset: 0x00114F38
 	public void Update()
 	{
 		bool flag = false;
@@ -266,7 +266,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BFA RID: 11258 RVA: 0x00116AF4 File Offset: 0x00114CF4
+	// Token: 0x06002C02 RID: 11266 RVA: 0x00117080 File Offset: 0x00115280
 	public void HandleClientPerform(EntityPlayer player, string key)
 	{
 		BaseAction baseAction = BaseAction.FindKey(key);
@@ -276,7 +276,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002BFB RID: 11259 RVA: 0x00116B14 File Offset: 0x00114D14
+	// Token: 0x06002C03 RID: 11267 RVA: 0x001170A0 File Offset: 0x001152A0
 	public void AddEntitiesToGroup(string groupName, List<Entity> entityList, bool twitchNegative)
 	{
 		for (int i = entityList.Count - 1; i >= 0; i--)
@@ -307,7 +307,7 @@ public class GameEventActionSequence
 		this.EntityGroups.Add(groupName, entityList);
 	}
 
-	// Token: 0x06002BFC RID: 11260 RVA: 0x00116BA4 File Offset: 0x00114DA4
+	// Token: 0x06002C04 RID: 11268 RVA: 0x00117130 File Offset: 0x00115330
 	public void AddEntityToGroup(string groupName, Entity entity)
 	{
 		if (this.ActionType == GameEventActionSequence.ActionTypes.TwitchAction && entity is EntityPlayer && (entity as EntityPlayer).TwitchActionsEnabled != EntityPlayer.TwitchActionsStates.Enabled)
@@ -325,7 +325,7 @@ public class GameEventActionSequence
 		this.EntityGroups[groupName].Add(entity);
 	}
 
-	// Token: 0x06002BFD RID: 11261 RVA: 0x00116C14 File Offset: 0x00114E14
+	// Token: 0x06002C05 RID: 11269 RVA: 0x001171A0 File Offset: 0x001153A0
 	public List<Entity> GetEntityGroup(string groupName)
 	{
 		if (this.EntityGroups == null || !this.EntityGroups.ContainsKey(groupName))
@@ -335,7 +335,7 @@ public class GameEventActionSequence
 		return this.EntityGroups[groupName];
 	}
 
-	// Token: 0x06002BFE RID: 11262 RVA: 0x00116C3C File Offset: 0x00114E3C
+	// Token: 0x06002C06 RID: 11270 RVA: 0x001171C8 File Offset: 0x001153C8
 	public int GetEntityGroupLiveCount(string groupName)
 	{
 		if (this.EntityGroups == null || !this.EntityGroups.ContainsKey(groupName))
@@ -355,7 +355,7 @@ public class GameEventActionSequence
 		return num;
 	}
 
-	// Token: 0x06002BFF RID: 11263 RVA: 0x00116C9E File Offset: 0x00114E9E
+	// Token: 0x06002C07 RID: 11271 RVA: 0x0011722A File Offset: 0x0011542A
 	public void ClearEntityGroup(string groupName)
 	{
 		if (this.EntityGroups == null || !this.EntityGroups.ContainsKey(groupName))
@@ -365,7 +365,7 @@ public class GameEventActionSequence
 		this.EntityGroups[groupName].Clear();
 	}
 
-	// Token: 0x06002C00 RID: 11264 RVA: 0x00116CC8 File Offset: 0x00114EC8
+	// Token: 0x06002C08 RID: 11272 RVA: 0x00117254 File Offset: 0x00115454
 	public GameEventActionSequence Clone()
 	{
 		GameEventActionSequence gameEventActionSequence = new GameEventActionSequence();
@@ -388,7 +388,7 @@ public class GameEventActionSequence
 		return gameEventActionSequence;
 	}
 
-	// Token: 0x06002C01 RID: 11265 RVA: 0x00116D90 File Offset: 0x00114F90
+	// Token: 0x06002C09 RID: 11273 RVA: 0x0011731C File Offset: 0x0011551C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public DynamicProperties AssignValuesFrom(GameEventActionSequence oldSeq)
 	{
@@ -418,7 +418,7 @@ public class GameEventActionSequence
 		return dynamicProperties;
 	}
 
-	// Token: 0x06002C02 RID: 11266 RVA: 0x00116E84 File Offset: 0x00115084
+	// Token: 0x06002C0A RID: 11274 RVA: 0x00117410 File Offset: 0x00115610
 	public void HandleTemplateInit()
 	{
 		for (int i = 0; i < this.Actions.Count; i++)
@@ -433,7 +433,7 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x06002C03 RID: 11267 RVA: 0x00116F1C File Offset: 0x0011511C
+	// Token: 0x06002C0B RID: 11275 RVA: 0x001174A8 File Offset: 0x001156A8
 	public void SetRefundNeeded()
 	{
 		if (this.ActionType == GameEventActionSequence.ActionTypes.TwitchAction)
@@ -450,152 +450,152 @@ public class GameEventActionSequence
 		}
 	}
 
-	// Token: 0x0400218F RID: 8591
+	// Token: 0x040021A6 RID: 8614
 	public string Name;
 
-	// Token: 0x04002190 RID: 8592
+	// Token: 0x040021A7 RID: 8615
 	public int PhaseMax = 1;
 
-	// Token: 0x04002191 RID: 8593
+	// Token: 0x040021A8 RID: 8616
 	public int CurrentPhase;
 
-	// Token: 0x04002192 RID: 8594
+	// Token: 0x040021A9 RID: 8617
 	public string ExtraData = "";
 
-	// Token: 0x04002193 RID: 8595
+	// Token: 0x040021AA RID: 8618
 	public string Tag = "";
 
-	// Token: 0x04002194 RID: 8596
+	// Token: 0x040021AB RID: 8619
 	public int ReservedSpawnCount;
 
-	// Token: 0x04002195 RID: 8597
+	// Token: 0x040021AC RID: 8620
 	public GameEventActionSequence.ActionTypes ActionType;
 
-	// Token: 0x04002196 RID: 8598
+	// Token: 0x040021AD RID: 8621
 	public bool AllowUserTrigger = true;
 
-	// Token: 0x04002197 RID: 8599
+	// Token: 0x040021AE RID: 8622
 	public bool AllowWhileDead;
 
-	// Token: 0x04002198 RID: 8600
+	// Token: 0x040021AF RID: 8623
 	public bool RefundInactivity = true;
 
-	// Token: 0x04002199 RID: 8601
+	// Token: 0x040021B0 RID: 8624
 	public bool CrateShare;
 
-	// Token: 0x0400219A RID: 8602
+	// Token: 0x040021B1 RID: 8625
 	public bool SingleInstance;
 
-	// Token: 0x0400219B RID: 8603
+	// Token: 0x040021B2 RID: 8626
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropAllowUserTrigger = "allow_user_trigger";
 
-	// Token: 0x0400219C RID: 8604
+	// Token: 0x040021B3 RID: 8627
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropActionType = "action_type";
 
-	// Token: 0x0400219D RID: 8605
+	// Token: 0x040021B4 RID: 8628
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropAllowWhileDead = "allow_while_dead";
 
-	// Token: 0x0400219E RID: 8606
+	// Token: 0x040021B5 RID: 8629
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropTargetType = "target_type";
 
-	// Token: 0x0400219F RID: 8607
+	// Token: 0x040021B6 RID: 8630
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropRefundInactivity = "refund_inactivity";
 
-	// Token: 0x040021A0 RID: 8608
+	// Token: 0x040021B7 RID: 8631
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCategory = "category";
 
-	// Token: 0x040021A1 RID: 8609
+	// Token: 0x040021B8 RID: 8632
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropSingleInstance = "single_instance";
 
-	// Token: 0x040021A2 RID: 8610
+	// Token: 0x040021B9 RID: 8633
 	public Dictionary<string, List<Entity>> EntityGroups;
 
-	// Token: 0x040021A3 RID: 8611
+	// Token: 0x040021BA RID: 8634
 	public string[] CategoryNames;
 
-	// Token: 0x040021A4 RID: 8612
+	// Token: 0x040021BB RID: 8635
 	public List<BaseRequirement> Requirements = new List<BaseRequirement>();
 
-	// Token: 0x040021A5 RID: 8613
+	// Token: 0x040021BC RID: 8636
 	public List<BaseAction> Actions = new List<BaseAction>();
 
-	// Token: 0x040021A6 RID: 8614
+	// Token: 0x040021BD RID: 8637
 	public EntityPlayer Requester;
 
-	// Token: 0x040021A7 RID: 8615
+	// Token: 0x040021BE RID: 8638
 	public Entity Target;
 
-	// Token: 0x040021A8 RID: 8616
+	// Token: 0x040021BF RID: 8639
 	public Vector3 TargetPosition;
 
-	// Token: 0x040021A9 RID: 8617
+	// Token: 0x040021C0 RID: 8640
 	public Vector3i POIPosition;
 
-	// Token: 0x040021AA RID: 8618
+	// Token: 0x040021C1 RID: 8641
 	public GameEventActionSequence.TargetTypes TargetType;
 
-	// Token: 0x040021AB RID: 8619
+	// Token: 0x040021C2 RID: 8642
 	public PrefabInstance POIInstance;
 
-	// Token: 0x040021AC RID: 8620
+	// Token: 0x040021C3 RID: 8643
 	public BlockValue blockValue;
 
-	// Token: 0x040021AD RID: 8621
+	// Token: 0x040021C4 RID: 8644
 	public int CurrentBossGroupID = -1;
 
-	// Token: 0x040021AE RID: 8622
+	// Token: 0x040021C5 RID: 8645
 	public bool IsComplete;
 
-	// Token: 0x040021AF RID: 8623
+	// Token: 0x040021C6 RID: 8646
 	public bool AllowRefunds = true;
 
-	// Token: 0x040021B0 RID: 8624
+	// Token: 0x040021C7 RID: 8647
 	public bool TwitchActivated;
 
-	// Token: 0x040021B1 RID: 8625
+	// Token: 0x040021C8 RID: 8648
 	public Dictionary<string, string> Variables = new Dictionary<string, string>();
 
-	// Token: 0x040021B2 RID: 8626
+	// Token: 0x040021C9 RID: 8649
 	public GameEventVariables eventVariables;
 
-	// Token: 0x040021B3 RID: 8627
+	// Token: 0x040021CA RID: 8650
 	public DynamicProperties Properties;
 
-	// Token: 0x040021B4 RID: 8628
+	// Token: 0x040021CB RID: 8651
 	public float StartTime = -1f;
 
-	// Token: 0x040021B5 RID: 8629
+	// Token: 0x040021CC RID: 8652
 	public bool HasDespawn;
 
-	// Token: 0x040021B6 RID: 8630
+	// Token: 0x040021CD RID: 8653
 	public GameEventActionSequence OwnerSequence;
 
-	// Token: 0x0200053D RID: 1341
+	// Token: 0x02000541 RID: 1345
 	public enum ActionTypes
 	{
-		// Token: 0x040021B8 RID: 8632
+		// Token: 0x040021CF RID: 8655
 		TwitchAction,
-		// Token: 0x040021B9 RID: 8633
+		// Token: 0x040021D0 RID: 8656
 		TwitchVote,
-		// Token: 0x040021BA RID: 8634
+		// Token: 0x040021D1 RID: 8657
 		Game
 	}
 
-	// Token: 0x0200053E RID: 1342
+	// Token: 0x02000542 RID: 1346
 	public enum TargetTypes
 	{
-		// Token: 0x040021BC RID: 8636
+		// Token: 0x040021D3 RID: 8659
 		Entity,
-		// Token: 0x040021BD RID: 8637
+		// Token: 0x040021D4 RID: 8660
 		POI,
-		// Token: 0x040021BE RID: 8638
+		// Token: 0x040021D5 RID: 8661
 		Block
 	}
 }

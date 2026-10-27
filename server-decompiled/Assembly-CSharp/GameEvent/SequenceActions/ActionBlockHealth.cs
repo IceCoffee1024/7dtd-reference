@@ -4,18 +4,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A0F RID: 6671
+	// Token: 0x02001A40 RID: 6720
 	[Preserve]
 	public class ActionBlockHealth : ActionBaseBlockAction
 	{
-		// Token: 0x0600CB9D RID: 52125 RVA: 0x004A6B42 File Offset: 0x004A4D42
+		// Token: 0x0600CCB1 RID: 52401 RVA: 0x004AA63E File Offset: 0x004A883E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool NeedsDamage()
 		{
 			return this.healthState == ActionBlockHealth.HealthStates.Remove || this.healthState == ActionBlockHealth.HealthStates.RemoveNoBreak;
 		}
 
-		// Token: 0x0600CB9E RID: 52126 RVA: 0x004A6B58 File Offset: 0x004A4D58
+		// Token: 0x0600CCB2 RID: 52402 RVA: 0x004AA654 File Offset: 0x004A8854
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -79,7 +79,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600CB9F RID: 52127 RVA: 0x004A6CA8 File Offset: 0x004A4EA8
+		// Token: 0x0600CCB3 RID: 52403 RVA: 0x004AA7A4 File Offset: 0x004A89A4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -87,7 +87,7 @@ namespace GameEvent.SequenceActions
 			this.Properties.ParseInt(ActionBlockHealth.PropHealthAmount, ref this.amount);
 		}
 
-		// Token: 0x0600CBA0 RID: 52128 RVA: 0x004A6CDD File Offset: 0x004A4EDD
+		// Token: 0x0600CCB4 RID: 52404 RVA: 0x004AA7D9 File Offset: 0x004A89D9
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -98,35 +98,35 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009A58 RID: 39512
+		// Token: 0x04009B41 RID: 39745
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBlockHealth.HealthStates healthState = ActionBlockHealth.HealthStates.Full;
 
-		// Token: 0x04009A59 RID: 39513
+		// Token: 0x04009B42 RID: 39746
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int amount;
 
-		// Token: 0x04009A5A RID: 39514
+		// Token: 0x04009B43 RID: 39747
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropHealthState = "health_state";
 
-		// Token: 0x04009A5B RID: 39515
+		// Token: 0x04009B44 RID: 39748
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropHealthAmount = "health_amount";
 
-		// Token: 0x02001A10 RID: 6672
+		// Token: 0x02001A41 RID: 6721
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum HealthStates
 		{
-			// Token: 0x04009A5D RID: 39517
+			// Token: 0x04009B46 RID: 39750
 			OneHealth,
-			// Token: 0x04009A5E RID: 39518
+			// Token: 0x04009B47 RID: 39751
 			Half,
-			// Token: 0x04009A5F RID: 39519
+			// Token: 0x04009B48 RID: 39752
 			Full,
-			// Token: 0x04009A60 RID: 39520
+			// Token: 0x04009B49 RID: 39753
 			Remove,
-			// Token: 0x04009A61 RID: 39521
+			// Token: 0x04009B4A RID: 39754
 			RemoveNoBreak
 		}
 	}

@@ -3,10 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020003C1 RID: 961
+// Token: 0x020003C3 RID: 963
 public static class MeshCalculations
 {
-	// Token: 0x06001CB9 RID: 7353 RVA: 0x000ACA74 File Offset: 0x000AAC74
+	// Token: 0x06001CBD RID: 7357 RVA: 0x000ACC84 File Offset: 0x000AAE84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<MeshCalculations.VertexEntry> GetCacheBySize(int capacity)
 	{
@@ -26,7 +26,7 @@ public static class MeshCalculations
 		return list;
 	}
 
-	// Token: 0x06001CBA RID: 7354 RVA: 0x000ACAC4 File Offset: 0x000AACC4
+	// Token: 0x06001CBE RID: 7358 RVA: 0x000ACCD4 File Offset: 0x000AAED4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AddToCacheBySize(List<MeshCalculations.VertexEntry> list)
 	{
@@ -45,7 +45,7 @@ public static class MeshCalculations
 		concurrentQueue.Enqueue(list);
 	}
 
-	// Token: 0x06001CBB RID: 7355 RVA: 0x000ACB40 File Offset: 0x000AAD40
+	// Token: 0x06001CBF RID: 7359 RVA: 0x000ACD50 File Offset: 0x000AAF50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<MeshCalculations.VertexEntry> GetVertexEntryList()
 	{
@@ -57,7 +57,7 @@ public static class MeshCalculations
 		return list;
 	}
 
-	// Token: 0x06001CBC RID: 7356 RVA: 0x000ACB64 File Offset: 0x000AAD64
+	// Token: 0x06001CC0 RID: 7360 RVA: 0x000ACD74 File Offset: 0x000AAF74
 	public static void CalculateMeshTangents(ArrayListMP<Vector3> _vertices, ArrayListMP<int> _indices, ArrayListMP<Vector3> _normals, ArrayListMP<Vector2> _uvs, ArrayListMP<Vector4> _tangents, bool _bIgnoreUvs = false)
 	{
 		object @lock = MeshCalculations._lock;
@@ -190,7 +190,7 @@ public static class MeshCalculations
 		}
 	}
 
-	// Token: 0x06001CBD RID: 7357 RVA: 0x000ACFF0 File Offset: 0x000AB1F0
+	// Token: 0x06001CC1 RID: 7361 RVA: 0x000AD200 File Offset: 0x000AB400
 	public static void CalculateMeshTangents(List<Vector3> _vertices, List<int> _indices, List<Vector3> _normals, List<Vector2> _uvs, List<Vector4> _tangents, bool _bIgnoreUvs = false)
 	{
 		object @lock = MeshCalculations._lock;
@@ -323,7 +323,7 @@ public static class MeshCalculations
 		}
 	}
 
-	// Token: 0x06001CBE RID: 7358 RVA: 0x000AD484 File Offset: 0x000AB684
+	// Token: 0x06001CC2 RID: 7362 RVA: 0x000AD694 File Offset: 0x000AB894
 	public static List<Vector4> CalculateMeshTangents(Vector3[] _vertices, int[] _indices, Vector3[] _normals, Vector2[] _uvs, bool _bIgnoreUvs = false)
 	{
 		object @lock = MeshCalculations._lock;
@@ -458,7 +458,7 @@ public static class MeshCalculations
 		return list2;
 	}
 
-	// Token: 0x06001CBF RID: 7359 RVA: 0x000AD8FC File Offset: 0x000ABAFC
+	// Token: 0x06001CC3 RID: 7363 RVA: 0x000ADB0C File Offset: 0x000ABD0C
 	public static void RecalculateNormals(ArrayListMP<Vector3> _vertices, ArrayListMP<int> _indices, ArrayListMP<Vector3> normals, float angle = 60f)
 	{
 		object @lock = MeshCalculations._lock;
@@ -551,7 +551,7 @@ public static class MeshCalculations
 		}
 	}
 
-	// Token: 0x06001CC0 RID: 7360 RVA: 0x000ADCEC File Offset: 0x000ABEEC
+	// Token: 0x06001CC4 RID: 7364 RVA: 0x000ADEFC File Offset: 0x000AC0FC
 	public static List<Vector3> RecalculateNormals(Vector3[] _vertices, int[] _indices, float angle = 60f)
 	{
 		object @lock = MeshCalculations._lock;
@@ -646,27 +646,27 @@ public static class MeshCalculations
 		return list5;
 	}
 
-	// Token: 0x040012AF RID: 4783
+	// Token: 0x040012BF RID: 4799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static object _lock = new object();
 
-	// Token: 0x040012B0 RID: 4784
+	// Token: 0x040012C0 RID: 4800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<MeshCalculations.VertexKey, List<MeshCalculations.VertexEntry>> dictionary;
 
-	// Token: 0x040012B1 RID: 4785
+	// Token: 0x040012C1 RID: 4801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConcurrentQueue<List<MeshCalculations.VertexEntry>> VertexEntries = new ConcurrentQueue<List<MeshCalculations.VertexEntry>>();
 
-	// Token: 0x040012B2 RID: 4786
+	// Token: 0x040012C2 RID: 4802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConcurrentDictionary<int, ConcurrentQueue<List<MeshCalculations.VertexEntry>>> Cache = new ConcurrentDictionary<int, ConcurrentQueue<List<MeshCalculations.VertexEntry>>>();
 
-	// Token: 0x020003C2 RID: 962
+	// Token: 0x020003C4 RID: 964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct VertexKey
 	{
-		// Token: 0x06001CC2 RID: 7362 RVA: 0x000AE0E0 File Offset: 0x000AC2E0
+		// Token: 0x06001CC6 RID: 7366 RVA: 0x000AE2F0 File Offset: 0x000AC4F0
 		public VertexKey(Vector3 position)
 		{
 			this._x = (long)Mathf.Round(position.x * 100000f);
@@ -674,14 +674,14 @@ public static class MeshCalculations
 			this._z = (long)Mathf.Round(position.z * 100000f);
 		}
 
-		// Token: 0x06001CC3 RID: 7363 RVA: 0x000AE138 File Offset: 0x000AC338
+		// Token: 0x06001CC7 RID: 7367 RVA: 0x000AE348 File Offset: 0x000AC548
 		public override bool Equals(object obj)
 		{
 			MeshCalculations.VertexKey vertexKey = (MeshCalculations.VertexKey)obj;
 			return this._x == vertexKey._x && this._y == vertexKey._y && this._z == vertexKey._z;
 		}
 
-		// Token: 0x06001CC4 RID: 7364 RVA: 0x000AE178 File Offset: 0x000AC378
+		// Token: 0x06001CC8 RID: 7368 RVA: 0x000AE388 File Offset: 0x000AC588
 		public override int GetHashCode()
 		{
 			long num = (long)((ulong)(-2128831035));
@@ -693,36 +693,36 @@ public static class MeshCalculations
 			return (num * 16777619L).GetHashCode();
 		}
 
-		// Token: 0x040012B3 RID: 4787
+		// Token: 0x040012C3 RID: 4803
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly long _x;
 
-		// Token: 0x040012B4 RID: 4788
+		// Token: 0x040012C4 RID: 4804
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly long _y;
 
-		// Token: 0x040012B5 RID: 4789
+		// Token: 0x040012C5 RID: 4805
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly long _z;
 
-		// Token: 0x040012B6 RID: 4790
+		// Token: 0x040012C6 RID: 4806
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int Tolerance = 100000;
 
-		// Token: 0x040012B7 RID: 4791
+		// Token: 0x040012C7 RID: 4807
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const long FNV32Init = 2166136261L;
 
-		// Token: 0x040012B8 RID: 4792
+		// Token: 0x040012C8 RID: 4808
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const long FNV32Prime = 16777619L;
 	}
 
-	// Token: 0x020003C3 RID: 963
+	// Token: 0x020003C5 RID: 965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct VertexEntry
 	{
-		// Token: 0x06001CC5 RID: 7365 RVA: 0x000AE1C9 File Offset: 0x000AC3C9
+		// Token: 0x06001CC9 RID: 7369 RVA: 0x000AE3D9 File Offset: 0x000AC5D9
 		public VertexEntry(int meshIndex, int triIndex, int vertIndex)
 		{
 			this.MeshIndex = meshIndex;
@@ -730,13 +730,13 @@ public static class MeshCalculations
 			this.VertexIndex = vertIndex;
 		}
 
-		// Token: 0x040012B9 RID: 4793
+		// Token: 0x040012C9 RID: 4809
 		public int MeshIndex;
 
-		// Token: 0x040012BA RID: 4794
+		// Token: 0x040012CA RID: 4810
 		public int TriangleIndex;
 
-		// Token: 0x040012BB RID: 4795
+		// Token: 0x040012CB RID: 4811
 		public int VertexIndex;
 	}
 }

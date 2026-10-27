@@ -4,10 +4,10 @@ using Unity.XGamingRuntime;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C27 RID: 7207
+	// Token: 0x02001C58 RID: 7256
 	public class FriendsListXbl
 	{
-		// Token: 0x0600D62F RID: 54831 RVA: 0x004D045F File Offset: 0x004CE65F
+		// Token: 0x0600D743 RID: 55107 RVA: 0x004D3F87 File Offset: 0x004D2187
 		public FriendsListXbl(SocialManagerXbl socialManager)
 		{
 			this.socialManager = socialManager;
@@ -18,7 +18,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D630 RID: 54832 RVA: 0x004D049C File Offset: 0x004CE69C
+		// Token: 0x0600D744 RID: 55108 RVA: 0x004D3FC4 File Offset: 0x004D21C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnFriendsListChanged(ulong[] friends)
 		{
@@ -42,7 +42,7 @@ namespace Platform.XBL
 			XblXuidMapper.ResolveUserIdentifiers(this.friendXuids);
 		}
 
-		// Token: 0x0600D631 RID: 54833 RVA: 0x004D0517 File Offset: 0x004CE717
+		// Token: 0x0600D745 RID: 55109 RVA: 0x004D403F File Offset: 0x004D223F
 		public bool IsFriend(ulong xuid)
 		{
 			if (this.friendsUserGroup == null)
@@ -58,19 +58,19 @@ namespace Platform.XBL
 			return this.friendXuids.Contains(xuid);
 		}
 
-		// Token: 0x0400A2A6 RID: 41638
+		// Token: 0x0400A38F RID: 41871
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SocialManagerXbl socialManager;
 
-		// Token: 0x0400A2A7 RID: 41639
+		// Token: 0x0400A390 RID: 41872
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XblSocialManagerUserGroupHandle friendsUserGroup;
 
-		// Token: 0x0400A2A8 RID: 41640
+		// Token: 0x0400A391 RID: 41873
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<ulong> friendXuids;
 
-		// Token: 0x0400A2A9 RID: 41641
+		// Token: 0x0400A392 RID: 41874
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<ulong> friendsXuidsTemp;
 	}

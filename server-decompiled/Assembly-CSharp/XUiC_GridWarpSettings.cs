@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001059 RID: 4185
+// Token: 0x02001069 RID: 4201
 [Preserve]
 public class XUiC_GridWarpSettings : XUiC_SignWarpSettings
 {
-	// Token: 0x17000F94 RID: 3988
-	// (get) Token: 0x06008494 RID: 33940 RVA: 0x00329C5B File Offset: 0x00327E5B
+	// Token: 0x17000F9F RID: 3999
+	// (get) Token: 0x060084E6 RID: 34022 RVA: 0x0032B95F File Offset: 0x00329B5F
 	public override SignData.SignWarp CurrentWarp
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,7 +17,7 @@ public class XUiC_GridWarpSettings : XUiC_SignWarpSettings
 		}
 	}
 
-	// Token: 0x06008495 RID: 33941 RVA: 0x00329C64 File Offset: 0x00327E64
+	// Token: 0x060084E7 RID: 34023 RVA: 0x0032B968 File Offset: 0x00329B68
 	public override void Init()
 	{
 		base.Init();
@@ -68,14 +68,14 @@ public class XUiC_GridWarpSettings : XUiC_SignWarpSettings
 		base.SetDefaultValue("cbxShift", gridWarp.shift);
 	}
 
-	// Token: 0x06008496 RID: 33942 RVA: 0x00329EB0 File Offset: 0x003280B0
+	// Token: 0x060084E8 RID: 34024 RVA: 0x0032BBB4 File Offset: 0x00329DB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnModeChanged()
 	{
 		this.OnValueChangedGeneric("Changed Grid Mode");
 	}
 
-	// Token: 0x06008497 RID: 33943 RVA: 0x00329EC0 File Offset: 0x003280C0
+	// Token: 0x060084E9 RID: 34025 RVA: 0x0032BBC4 File Offset: 0x00329DC4
 	public override void SetWarp(SignData.SignWarp warp)
 	{
 		this.currentWarp = warp as SignData.GridWarp;
@@ -101,7 +101,7 @@ public class XUiC_GridWarpSettings : XUiC_SignWarpSettings
 		this.UpdateConditionalVisibility();
 	}
 
-	// Token: 0x06008498 RID: 33944 RVA: 0x0032A020 File Offset: 0x00328220
+	// Token: 0x060084EA RID: 34026 RVA: 0x0032BD24 File Offset: 0x00329F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -129,7 +129,7 @@ public class XUiC_GridWarpSettings : XUiC_SignWarpSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x06008499 RID: 33945 RVA: 0x0032A0FC File Offset: 0x003282FC
+	// Token: 0x060084EB RID: 34027 RVA: 0x0032BE00 File Offset: 0x0032A000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateConditionalVisibility()
 	{
@@ -138,43 +138,43 @@ public class XUiC_GridWarpSettings : XUiC_SignWarpSettings
 		this.cbxShiftRow.ViewComponent.IsVisible = flag;
 	}
 
-	// Token: 0x04006266 RID: 25190
+	// Token: 0x040062A4 RID: 25252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.GridWarp currentWarp;
 
-	// Token: 0x04006267 RID: 25191
+	// Token: 0x040062A5 RID: 25253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxMode;
 
-	// Token: 0x04006268 RID: 25192
+	// Token: 0x040062A6 RID: 25254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetX;
 
-	// Token: 0x04006269 RID: 25193
+	// Token: 0x040062A7 RID: 25255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetY;
 
-	// Token: 0x0400626A RID: 25194
+	// Token: 0x040062A8 RID: 25256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxRotation;
 
-	// Token: 0x0400626B RID: 25195
+	// Token: 0x040062A9 RID: 25257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxScale;
 
-	// Token: 0x0400626C RID: 25196
+	// Token: 0x040062AA RID: 25258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController cbxAspectRow;
 
-	// Token: 0x0400626D RID: 25197
+	// Token: 0x040062AB RID: 25259
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxAspect;
 
-	// Token: 0x0400626E RID: 25198
+	// Token: 0x040062AC RID: 25260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController cbxShiftRow;
 
-	// Token: 0x0400626F RID: 25199
+	// Token: 0x040062AD RID: 25261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxShift;
 }

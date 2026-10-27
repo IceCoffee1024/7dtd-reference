@@ -4,13 +4,13 @@ using Challenges;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EE6 RID: 3814
+// Token: 0x02000EF1 RID: 3825
 [Preserve]
 public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 {
-	// Token: 0x17000E23 RID: 3619
-	// (get) Token: 0x06007720 RID: 30496 RVA: 0x002CEB3B File Offset: 0x002CCD3B
-	// (set) Token: 0x06007721 RID: 30497 RVA: 0x002CEB43 File Offset: 0x002CCD43
+	// Token: 0x17000E27 RID: 3623
+	// (get) Token: 0x06007746 RID: 30534 RVA: 0x002D0093 File Offset: 0x002CE293
+	// (set) Token: 0x06007747 RID: 30535 RVA: 0x002D009B File Offset: 0x002CE29B
 	public Challenge CurrentChallengeEntry
 	{
 		get
@@ -25,7 +25,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007722 RID: 30498 RVA: 0x002CEB70 File Offset: 0x002CCD70
+	// Token: 0x06007748 RID: 30536 RVA: 0x002D00C8 File Offset: 0x002CE2C8
 	public override void Init()
 	{
 		base.Init();
@@ -41,7 +41,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06007723 RID: 30499 RVA: 0x002CEC14 File Offset: 0x002CCE14
+	// Token: 0x06007749 RID: 30537 RVA: 0x002D016C File Offset: 0x002CE36C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GotoButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -67,7 +67,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007724 RID: 30500 RVA: 0x0029F176 File Offset: 0x0029D376
+	// Token: 0x0600774A RID: 30538 RVA: 0x002A069E File Offset: 0x0029E89E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
@@ -75,7 +75,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007725 RID: 30501 RVA: 0x002CECA8 File Offset: 0x002CCEA8
+	// Token: 0x0600774B RID: 30539 RVA: 0x002D0200 File Offset: 0x002CE400
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -101,7 +101,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007726 RID: 30502 RVA: 0x002CED70 File Offset: 0x002CCF70
+	// Token: 0x0600774C RID: 30540 RVA: 0x002D02C8 File Offset: 0x002CE4C8
 	public void TrackCurrentChallenege()
 	{
 		if (this.currentChallenge != null && this.currentChallenge.IsActive)
@@ -119,7 +119,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007727 RID: 30503 RVA: 0x002CEDF8 File Offset: 0x002CCFF8
+	// Token: 0x0600774D RID: 30541 RVA: 0x002D0350 File Offset: 0x002CE550
 	public void CompleteCurrentChallenege()
 	{
 		if (this.currentChallenge != null && this.currentChallenge.ReadyToComplete)
@@ -136,21 +136,21 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007728 RID: 30504 RVA: 0x002CEE8B File Offset: 0x002CD08B
+	// Token: 0x0600774E RID: 30542 RVA: 0x002D03E3 File Offset: 0x002CE5E3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnTrack_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.TrackCurrentChallenege();
 	}
 
-	// Token: 0x06007729 RID: 30505 RVA: 0x002CEE93 File Offset: 0x002CD093
+	// Token: 0x0600774F RID: 30543 RVA: 0x002D03EB File Offset: 0x002CE5EB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnComplete_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.CompleteCurrentChallenege();
 	}
 
-	// Token: 0x0600772A RID: 30506 RVA: 0x002CEE9B File Offset: 0x002CD09B
+	// Token: 0x06007750 RID: 30544 RVA: 0x002D03F3 File Offset: 0x002CE5F3
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -158,21 +158,21 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		QuestEventManager.Current.ChallengeComplete += this.Current_ChallengeComplete;
 	}
 
-	// Token: 0x0600772B RID: 30507 RVA: 0x0008B53B File Offset: 0x0008973B
+	// Token: 0x06007751 RID: 30545 RVA: 0x0008B76F File Offset: 0x0008996F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_ChallengeComplete(ChallengeClass challenge, bool isRedeemed)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600772C RID: 30508 RVA: 0x002CEECE File Offset: 0x002CD0CE
+	// Token: 0x06007752 RID: 30546 RVA: 0x002D0426 File Offset: 0x002CE626
 	public override void OnClose()
 	{
 		base.OnClose();
 		QuestEventManager.Current.ChallengeComplete -= this.Current_ChallengeComplete;
 	}
 
-	// Token: 0x0600772D RID: 30509 RVA: 0x002CEEEC File Offset: 0x002CD0EC
+	// Token: 0x06007753 RID: 30547 RVA: 0x002D0444 File Offset: 0x002CE644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -665,7 +665,7 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600772E RID: 30510 RVA: 0x002CFAE7 File Offset: 0x002CDCE7
+	// Token: 0x06007754 RID: 30548 RVA: 0x002D103F File Offset: 0x002CF23F
 	public void SetChallenge(XUiC_ChallengeEntry challengeEntry)
 	{
 		this.entry = challengeEntry;
@@ -677,14 +677,14 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		this.CurrentChallengeEntry = null;
 	}
 
-	// Token: 0x0600772F RID: 30511 RVA: 0x002CFB11 File Offset: 0x002CDD11
+	// Token: 0x06007755 RID: 30549 RVA: 0x002D1069 File Offset: 0x002CF269
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void OnLastInputStyleChanged(PlayerInputManager.InputStyle _style)
 	{
 		this.RefreshButtonLabels(_style);
 	}
 
-	// Token: 0x06007730 RID: 30512 RVA: 0x002CFB1C File Offset: 0x002CDD1C
+	// Token: 0x06007756 RID: 30550 RVA: 0x002D1074 File Offset: 0x002CF274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshButtonLabels(PlayerInputManager.InputStyle _style)
 	{
@@ -698,35 +698,35 @@ public class XUiC_ChallengeEntryDescriptionWindow : XUiController
 		(this.btnComplete.GetChildById("btnLabel").ViewComponent as XUiV_Label).Text = string.Format(Localization.Get("journalComplete", false, null), LocalPlayerUI.primaryUI.playerInput.GUIActions.Inspect.GetBindingString(true, PlatformManager.NativePlatform.Input.CurrentControllerInputStyle, XUiUtils.EmptyBindingStyle.LocalizedNone, XUiUtils.DisplayStyle.Plain, false, null));
 	}
 
-	// Token: 0x04005830 RID: 22576
+	// Token: 0x04005855 RID: 22613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ChallengeEntry entry;
 
-	// Token: 0x04005831 RID: 22577
+	// Token: 0x04005856 RID: 22614
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Challenge currentChallenge;
 
-	// Token: 0x04005832 RID: 22578
+	// Token: 0x04005857 RID: 22615
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChallengeClass challengeClass;
 
-	// Token: 0x04005833 RID: 22579
+	// Token: 0x04005858 RID: 22616
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnTrack;
 
-	// Token: 0x04005834 RID: 22580
+	// Token: 0x04005859 RID: 22617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnComplete;
 
-	// Token: 0x04005835 RID: 22581
+	// Token: 0x0400585A RID: 22618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController gotoButton;
 
-	// Token: 0x04005836 RID: 22582
+	// Token: 0x0400585B RID: 22619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string DayTimeFormatString = Localization.Get("xuiDay", false, null) + " {0}, {1:00}:{2:00}";
 
-	// Token: 0x04005837 RID: 22583
+	// Token: 0x0400585C RID: 22620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ulong> daytimeFormatter = new CachedStringFormatter<ulong>((ulong _worldTime) => ValueDisplayFormatters.WorldTime(_worldTime, XUiC_ChallengeEntryDescriptionWindow.DayTimeFormatString));
 }

@@ -5,19 +5,19 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x02001386 RID: 4998
+// Token: 0x02001398 RID: 5016
 public class ScreenEffects : MonoBehaviour
 {
-	// Token: 0x170012D6 RID: 4822
-	// (get) Token: 0x06009D22 RID: 40226 RVA: 0x003B605B File Offset: 0x003B425B
-	// (set) Token: 0x06009D23 RID: 40227 RVA: 0x003B6062 File Offset: 0x003B4262
+	// Token: 0x170012E2 RID: 4834
+	// (get) Token: 0x06009D7A RID: 40314 RVA: 0x003B845F File Offset: 0x003B665F
+	// (set) Token: 0x06009D7B RID: 40315 RVA: 0x003B8466 File Offset: 0x003B6666
 	public static ScreenEffects Instance
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06009D24 RID: 40228 RVA: 0x003B606A File Offset: 0x003B426A
+	// Token: 0x06009D7C RID: 40316 RVA: 0x003B846E File Offset: 0x003B666E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -25,14 +25,14 @@ public class ScreenEffects : MonoBehaviour
 		this.cameraRef = base.GetComponent<Camera>();
 	}
 
-	// Token: 0x06009D25 RID: 40229 RVA: 0x003B607E File Offset: 0x003B427E
+	// Token: 0x06009D7D RID: 40317 RVA: 0x003B8482 File Offset: 0x003B6682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		this.prevViewProjMatrix = GL.GetGPUProjectionMatrix(this.cameraRef.nonJitteredProjectionMatrix, false) * this.cameraRef.worldToCameraMatrix;
 	}
 
-	// Token: 0x06009D26 RID: 40230 RVA: 0x003B60A8 File Offset: 0x003B42A8
+	// Token: 0x06009D7E RID: 40318 RVA: 0x003B84AC File Offset: 0x003B66AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -60,7 +60,7 @@ public class ScreenEffects : MonoBehaviour
 		this.particles = new NativeArray<ParticleSystem.Particle>(64, Allocator.Persistent, NativeArrayOptions.ClearMemory);
 	}
 
-	// Token: 0x06009D27 RID: 40231 RVA: 0x003B6148 File Offset: 0x003B4348
+	// Token: 0x06009D7F RID: 40319 RVA: 0x003B854C File Offset: 0x003B674C
 	public void ResetEffects()
 	{
 		Material[] array = Resources.LoadAll<Material>("ScreenEffects/");
@@ -83,14 +83,14 @@ public class ScreenEffects : MonoBehaviour
 		this.SortEffects();
 	}
 
-	// Token: 0x06009D28 RID: 40232 RVA: 0x003B61DA File Offset: 0x003B43DA
+	// Token: 0x06009D80 RID: 40320 RVA: 0x003B85DE File Offset: 0x003B67DE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortEffects()
 	{
 		this.loadedEffects = this.loadedEffects.OrderBy<ScreenEffects.ScreenEffect, int>((ScreenEffects.ScreenEffect se) => se.Material.renderQueue).ToList<ScreenEffects.ScreenEffect>();
 	}
 
-	// Token: 0x06009D29 RID: 40233 RVA: 0x003B6214 File Offset: 0x003B4414
+	// Token: 0x06009D81 RID: 40321 RVA: 0x003B8618 File Offset: 0x003B6818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -105,7 +105,7 @@ public class ScreenEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D2A RID: 40234 RVA: 0x003B626C File Offset: 0x003B446C
+	// Token: 0x06009D82 RID: 40322 RVA: 0x003B8670 File Offset: 0x003B6870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRender()
 	{
@@ -116,7 +116,7 @@ public class ScreenEffects : MonoBehaviour
 		this.prevViewProjMatrix = matrix4x;
 	}
 
-	// Token: 0x06009D2B RID: 40235 RVA: 0x003B62D0 File Offset: 0x003B44D0
+	// Token: 0x06009D83 RID: 40323 RVA: 0x003B86D4 File Offset: 0x003B68D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -189,7 +189,7 @@ public class ScreenEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D2C RID: 40236 RVA: 0x003B64D0 File Offset: 0x003B46D0
+	// Token: 0x06009D84 RID: 40324 RVA: 0x003B88D4 File Offset: 0x003B6AD4
 	public void SetScreenEffect(string _name, float _intensity = 1f, float _fadeTime = 4f)
 	{
 		ScreenEffects.ScreenEffect screenEffect = this.Find(_name, this.activeEffects);
@@ -240,7 +240,7 @@ public class ScreenEffects : MonoBehaviour
 		screenEffect.FadeTime = _fadeTime;
 	}
 
-	// Token: 0x06009D2D RID: 40237 RVA: 0x003B662C File Offset: 0x003B482C
+	// Token: 0x06009D85 RID: 40325 RVA: 0x003B8A30 File Offset: 0x003B6C30
 	public void DisableScreenEffects()
 	{
 		for (int i = 0; i < this.activeEffects.Count; i++)
@@ -249,13 +249,13 @@ public class ScreenEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D2E RID: 40238 RVA: 0x003B6666 File Offset: 0x003B4866
+	// Token: 0x06009D86 RID: 40326 RVA: 0x003B8A6A File Offset: 0x003B6C6A
 	public void DisableScreenEffect(string _name)
 	{
 		this.SetScreenEffect(_name, 0f, 0f);
 	}
 
-	// Token: 0x06009D2F RID: 40239 RVA: 0x003B667C File Offset: 0x003B487C
+	// Token: 0x06009D87 RID: 40327 RVA: 0x003B8A80 File Offset: 0x003B6C80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ScreenEffects.ScreenEffect Find(string _name, List<ScreenEffects.ScreenEffect> _list)
 	{
@@ -270,66 +270,66 @@ public class ScreenEffects : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x040076BF RID: 30399
+	// Token: 0x04007700 RID: 30464
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cDefaultFadeTime = 4f;
 
-	// Token: 0x040076C0 RID: 30400
+	// Token: 0x04007701 RID: 30465
 	public List<ScreenEffects.ScreenEffect> loadedEffects = new List<ScreenEffects.ScreenEffect>();
 
-	// Token: 0x040076C1 RID: 30401
+	// Token: 0x04007702 RID: 30466
 	public List<ScreenEffects.ScreenEffect> activeEffects = new List<ScreenEffects.ScreenEffect>();
 
-	// Token: 0x040076C3 RID: 30403
+	// Token: 0x04007704 RID: 30468
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<ParticleSystem> particleSystems = new List<ParticleSystem>();
 
-	// Token: 0x040076C4 RID: 30404
+	// Token: 0x04007705 RID: 30469
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NativeArray<ParticleSystem.Particle> particles;
 
-	// Token: 0x040076C5 RID: 30405
+	// Token: 0x04007706 RID: 30470
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Matrix4x4 prevViewProjMatrix;
 
-	// Token: 0x040076C6 RID: 30406
+	// Token: 0x04007707 RID: 30471
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera cameraRef;
 
-	// Token: 0x02001387 RID: 4999
+	// Token: 0x02001399 RID: 5017
 	public class ScreenEffect : PostProcessEffectSubRenderer
 	{
-		// Token: 0x06009D31 RID: 40241 RVA: 0x003B66DF File Offset: 0x003B48DF
+		// Token: 0x06009D89 RID: 40329 RVA: 0x003B8AE3 File Offset: 0x003B6CE3
 		public override void Render(PostProcessRenderContext context)
 		{
 			this.Material.SetFloat("Intensity", Mathf.Clamp01(this.Intensity));
 			context.command.Blit(context.source, context.destination, this.Material);
 		}
 
-		// Token: 0x040076C7 RID: 30407
+		// Token: 0x04007708 RID: 30472
 		public string Name;
 
-		// Token: 0x040076C8 RID: 30408
+		// Token: 0x04007709 RID: 30473
 		public Material Material;
 
-		// Token: 0x040076C9 RID: 30409
+		// Token: 0x0400770A RID: 30474
 		public float Intensity;
 
-		// Token: 0x040076CA RID: 30410
+		// Token: 0x0400770B RID: 30475
 		public float TargetIntensity;
 
-		// Token: 0x040076CB RID: 30411
+		// Token: 0x0400770C RID: 30476
 		public float FadeTime;
 
-		// Token: 0x040076CC RID: 30412
+		// Token: 0x0400770D RID: 30477
 		public GameObject particlePrefab;
 
-		// Token: 0x040076CD RID: 30413
+		// Token: 0x0400770E RID: 30478
 		public ParticleSystem[] particleSystems;
 	}
 }

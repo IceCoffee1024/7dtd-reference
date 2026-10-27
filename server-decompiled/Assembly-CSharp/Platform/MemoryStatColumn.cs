@@ -2,16 +2,16 @@
 
 namespace Platform
 {
-	// Token: 0x02001BAB RID: 7083
+	// Token: 0x02001BDC RID: 7132
 	public enum MemoryStatColumn
 	{
-		// Token: 0x0400A189 RID: 41353
+		// Token: 0x0400A272 RID: 41586
 		Current,
-		// Token: 0x0400A18A RID: 41354
+		// Token: 0x0400A273 RID: 41587
 		Peak,
-		// Token: 0x0400A18B RID: 41355
+		// Token: 0x0400A274 RID: 41588
 		Min,
-		// Token: 0x0400A18C RID: 41356
+		// Token: 0x0400A275 RID: 41589
 		Limit
 	}
 }

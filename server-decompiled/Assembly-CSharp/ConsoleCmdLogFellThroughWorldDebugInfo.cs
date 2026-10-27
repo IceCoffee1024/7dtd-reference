@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200023D RID: 573
+// Token: 0x0200023F RID: 575
 [Preserve]
 public class ConsoleCmdLogFellThroughWorldDebugInfo : ConsoleCmdAbstract
 {
-	// Token: 0x0600111D RID: 4381 RVA: 0x0006CCA4 File Offset: 0x0006AEA4
+	// Token: 0x06001121 RID: 4385 RVA: 0x0006CE74 File Offset: 0x0006B074
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "ftw", "fellthroughworld" };
 	}
 
-	// Token: 0x0600111E RID: 4382 RVA: 0x0006CCBC File Offset: 0x0006AEBC
+	// Token: 0x06001122 RID: 4386 RVA: 0x0006CE8C File Offset: 0x0006B08C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -21,7 +21,7 @@ public class ConsoleCmdLogFellThroughWorldDebugInfo : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001A7 RID: 423
-	// (get) Token: 0x0600111F RID: 4383 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001123 RID: 4387 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -30,7 +30,7 @@ public class ConsoleCmdLogFellThroughWorldDebugInfo : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001120 RID: 4384 RVA: 0x0006CCC3 File Offset: 0x0006AEC3
+	// Token: 0x06001124 RID: 4388 RVA: 0x0006CE93 File Offset: 0x0006B093
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GameManager.Instance.World.GetPrimaryPlayer().LogFellThroughWorldDebugInfo();

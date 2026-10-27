@@ -4,10 +4,10 @@ using InControl;
 using Platform;
 using UnityEngine;
 
-// Token: 0x0200055C RID: 1372
+// Token: 0x02000560 RID: 1376
 public static class InputUtils
 {
-	// Token: 0x06002C97 RID: 11415 RVA: 0x0011B6CC File Offset: 0x001198CC
+	// Token: 0x06002C9F RID: 11423 RVA: 0x0011BC58 File Offset: 0x00119E58
 	public static void EnableAllPlayerActions(bool _enable)
 	{
 		if (ActionSetManager.DebugLevel != ActionSetManager.EDebugLevel.Off)
@@ -61,7 +61,7 @@ public static class InputUtils
 	}
 
 	// Token: 0x170004B0 RID: 1200
-	// (get) Token: 0x06002C98 RID: 11416 RVA: 0x0011B860 File Offset: 0x00119A60
+	// (get) Token: 0x06002CA0 RID: 11424 RVA: 0x0011BDEC File Offset: 0x00119FEC
 	public static bool IsMac
 	{
 		get
@@ -76,7 +76,7 @@ public static class InputUtils
 	}
 
 	// Token: 0x170004B1 RID: 1201
-	// (get) Token: 0x06002C99 RID: 11417 RVA: 0x0011B89D File Offset: 0x00119A9D
+	// (get) Token: 0x06002CA1 RID: 11425 RVA: 0x0011BE29 File Offset: 0x0011A029
 	public static bool ControlKeyPressed
 	{
 		get
@@ -90,7 +90,7 @@ public static class InputUtils
 	}
 
 	// Token: 0x170004B2 RID: 1202
-	// (get) Token: 0x06002C9A RID: 11418 RVA: 0x0011B8D7 File Offset: 0x00119AD7
+	// (get) Token: 0x06002CA2 RID: 11426 RVA: 0x0011BE63 File Offset: 0x0011A063
 	public static bool ShiftKeyPressed
 	{
 		get
@@ -100,7 +100,7 @@ public static class InputUtils
 	}
 
 	// Token: 0x170004B3 RID: 1203
-	// (get) Token: 0x06002C9B RID: 11419 RVA: 0x0011B8F1 File Offset: 0x00119AF1
+	// (get) Token: 0x06002CA3 RID: 11427 RVA: 0x0011BE7D File Offset: 0x0011A07D
 	public static bool AltKeyPressed
 	{
 		get
@@ -109,11 +109,11 @@ public static class InputUtils
 		}
 	}
 
-	// Token: 0x04002253 RID: 8787
+	// Token: 0x0400226A RID: 8810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<PlayerActionSet, bool> previousState = new Dictionary<PlayerActionSet, bool>();
 
-	// Token: 0x04002254 RID: 8788
+	// Token: 0x0400226B RID: 8811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool? isMac;
 }

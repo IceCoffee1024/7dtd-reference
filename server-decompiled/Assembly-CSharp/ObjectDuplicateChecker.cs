@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-// Token: 0x02001472 RID: 5234
+// Token: 0x02001484 RID: 5252
 public class ObjectDuplicateChecker<T> where T : class, IEquatable<T>
 {
-	// Token: 0x0600A3F8 RID: 41976 RVA: 0x003D5A14 File Offset: 0x003D3C14
+	// Token: 0x0600A450 RID: 42064 RVA: 0x003D7E18 File Offset: 0x003D6018
 	public void AddValue(T value)
 	{
 		int i = 0;
@@ -34,7 +34,7 @@ public class ObjectDuplicateChecker<T> where T : class, IEquatable<T>
 		});
 	}
 
-	// Token: 0x0600A3F9 RID: 41977 RVA: 0x003D5AD0 File Offset: 0x003D3CD0
+	// Token: 0x0600A451 RID: 42065 RVA: 0x003D7ED4 File Offset: 0x003D60D4
 	public string GenerateReport()
 	{
 		int num = 0;
@@ -53,21 +53,21 @@ public class ObjectDuplicateChecker<T> where T : class, IEquatable<T>
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x04007AF1 RID: 31473
+	// Token: 0x04007B32 RID: 31538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ObjectDuplicateChecker<T>.ObjectInfo> Objects = new List<ObjectDuplicateChecker<T>.ObjectInfo>();
 
-	// Token: 0x02001473 RID: 5235
+	// Token: 0x02001485 RID: 5253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ObjectInfo
 	{
-		// Token: 0x04007AF2 RID: 31474
+		// Token: 0x04007B33 RID: 31539
 		public T Value;
 
-		// Token: 0x04007AF3 RID: 31475
+		// Token: 0x04007B34 RID: 31540
 		public int DupeCount;
 
-		// Token: 0x04007AF4 RID: 31476
+		// Token: 0x04007B35 RID: 31541
 		public int SharedCount;
 	}
 }

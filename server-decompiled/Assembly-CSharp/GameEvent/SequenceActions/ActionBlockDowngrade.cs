@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A0C RID: 6668
+	// Token: 0x02001A3D RID: 6717
 	[Preserve]
 	public class ActionBlockDowngrade : ActionBaseBlockAction
 	{
-		// Token: 0x0600CB92 RID: 52114 RVA: 0x004A6978 File Offset: 0x004A4B78
+		// Token: 0x0600CCA6 RID: 52390 RVA: 0x004AA474 File Offset: 0x004A8674
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600CB93 RID: 52115 RVA: 0x004A69FC File Offset: 0x004A4BFC
+		// Token: 0x0600CCA7 RID: 52391 RVA: 0x004AA4F8 File Offset: 0x004A86F8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

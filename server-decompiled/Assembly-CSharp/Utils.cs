@@ -13,11 +13,11 @@ using Platform;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x0200150D RID: 5389
+// Token: 0x0200151F RID: 5407
 public static class Utils
 {
-	// Token: 0x170013F4 RID: 5108
-	// (get) Token: 0x0600A8A3 RID: 43171 RVA: 0x003EC360 File Offset: 0x003EA560
+	// Token: 0x17001400 RID: 5120
+	// (get) Token: 0x0600A8FB RID: 43259 RVA: 0x003EE764 File Offset: 0x003EC964
 	public static CultureInfo StandardCulture
 	{
 		get
@@ -26,7 +26,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8A4 RID: 43172 RVA: 0x003EC368 File Offset: 0x003EA568
+	// Token: 0x0600A8FC RID: 43260 RVA: 0x003EE76C File Offset: 0x003EC96C
 	public static void InitStatic()
 	{
 		Utils.ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -57,7 +57,7 @@ public static class Utils
 		Utils.MemsetDelegate = (Action<IntPtr, byte, int>)dynamicMethod.CreateDelegate(typeof(Action<IntPtr, byte, int>));
 	}
 
-	// Token: 0x0600A8A5 RID: 43173 RVA: 0x003EC4DC File Offset: 0x003EA6DC
+	// Token: 0x0600A8FD RID: 43261 RVA: 0x003EE8E0 File Offset: 0x003ECAE0
 	public static string GetChildPath(this Transform t, Transform child)
 	{
 		string text = child.name;
@@ -74,7 +74,7 @@ public static class Utils
 		return text;
 	}
 
-	// Token: 0x0600A8A6 RID: 43174 RVA: 0x003EC54C File Offset: 0x003EA74C
+	// Token: 0x0600A8FE RID: 43262 RVA: 0x003EE950 File Offset: 0x003ECB50
 	public static void SetTagsRecursively(Transform t, string tag)
 	{
 		t.gameObject.tag = tag;
@@ -84,7 +84,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8A7 RID: 43175 RVA: 0x003EC588 File Offset: 0x003EA788
+	// Token: 0x0600A8FF RID: 43263 RVA: 0x003EE98C File Offset: 0x003ECB8C
 	public static void SetTagsIfNoneRecursively(Transform t, string tag)
 	{
 		if (t.gameObject.CompareTag("Untagged"))
@@ -97,7 +97,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8A8 RID: 43176 RVA: 0x003EC5D4 File Offset: 0x003EA7D4
+	// Token: 0x0600A900 RID: 43264 RVA: 0x003EE9D8 File Offset: 0x003ECBD8
 	public static void SetTagsIfMatchRecursively(Transform t, string matchTag, string tag)
 	{
 		if (t.gameObject.CompareTag(matchTag))
@@ -110,7 +110,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8A9 RID: 43177 RVA: 0x003EC61C File Offset: 0x003EA81C
+	// Token: 0x0600A901 RID: 43265 RVA: 0x003EEA20 File Offset: 0x003ECC20
 	public static void DestroyWithTagRecursively(Transform t, string tag)
 	{
 		for (int i = t.childCount - 1; i >= 0; i--)
@@ -123,7 +123,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8AA RID: 43178 RVA: 0x003EC664 File Offset: 0x003EA864
+	// Token: 0x0600A902 RID: 43266 RVA: 0x003EEA68 File Offset: 0x003ECC68
 	public static void SetLayerRecursively(GameObject go, int newLayer)
 	{
 		go.GetComponentsInChildren<Transform>(true, Utils.setLayerRecursivelyList);
@@ -153,7 +153,7 @@ public static class Utils
 		Utils.setLayerRecursivelyList.Clear();
 	}
 
-	// Token: 0x0600A8AB RID: 43179 RVA: 0x003EC6FC File Offset: 0x003EA8FC
+	// Token: 0x0600A903 RID: 43267 RVA: 0x003EEB00 File Offset: 0x003ECD00
 	public static void SetLayerRecursively(GameObject go, int newLayer, string[] excludeTags)
 	{
 		go.GetComponentsInChildren<Transform>(true, Utils.setLayerRecursivelyList);
@@ -183,7 +183,7 @@ public static class Utils
 		Utils.setLayerRecursivelyList.Clear();
 	}
 
-	// Token: 0x0600A8AC RID: 43180 RVA: 0x003EC798 File Offset: 0x003EA998
+	// Token: 0x0600A904 RID: 43268 RVA: 0x003EEB9C File Offset: 0x003ECD9C
 	public static void SetLayerWithExclusionList(GameObject go, int layer, string[] excludeTags)
 	{
 		if (excludeTags != null)
@@ -199,7 +199,7 @@ public static class Utils
 		go.layer = layer;
 	}
 
-	// Token: 0x0600A8AD RID: 43181 RVA: 0x003EC7D0 File Offset: 0x003EA9D0
+	// Token: 0x0600A905 RID: 43269 RVA: 0x003EEBD4 File Offset: 0x003ECDD4
 	public static void SetColliderLayerRecursively(GameObject go, int newLayer)
 	{
 		go.GetComponentsInChildren<Collider>(true, Utils.setColliderLayerRecursivelyList);
@@ -209,7 +209,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8AE RID: 43182 RVA: 0x003EC818 File Offset: 0x003EAA18
+	// Token: 0x0600A906 RID: 43270 RVA: 0x003EEC1C File Offset: 0x003ECE1C
 	public static void MoveTaggedToLayer(GameObject go, string tag, int newLayer)
 	{
 		go.GetComponentsInChildren<Transform>(true, Utils.setLayerRecursivelyList);
@@ -225,7 +225,7 @@ public static class Utils
 		Utils.setLayerRecursivelyList.Clear();
 	}
 
-	// Token: 0x0600A8AF RID: 43183 RVA: 0x003EC874 File Offset: 0x003EAA74
+	// Token: 0x0600A907 RID: 43271 RVA: 0x003EEC78 File Offset: 0x003ECE78
 	public static void DrawBlockBounds(BoundsInt _bounds, Color _color, float _duration)
 	{
 		Bounds bounds = default(Bounds);
@@ -234,7 +234,7 @@ public static class Utils
 		Utils.DrawBounds(bounds, _color, _duration);
 	}
 
-	// Token: 0x0600A8B0 RID: 43184 RVA: 0x003EC8F0 File Offset: 0x003EAAF0
+	// Token: 0x0600A908 RID: 43272 RVA: 0x003EECF4 File Offset: 0x003ECEF4
 	public static void DrawBounds(Bounds _bounds, Color _color, float _duration)
 	{
 		Vector3 center = _bounds.center;
@@ -261,7 +261,7 @@ public static class Utils
 		global::UnityEngine.Debug.DrawLine(vector3, vector7, _color, _duration);
 	}
 
-	// Token: 0x0600A8B1 RID: 43185 RVA: 0x003ECAFC File Offset: 0x003EACFC
+	// Token: 0x0600A909 RID: 43273 RVA: 0x003EEF00 File Offset: 0x003ED100
 	public static void DrawAxisLines(Vector3 centerPos, float radius, Color color, float duration)
 	{
 		Vector3 vector = centerPos;
@@ -281,14 +281,14 @@ public static class Utils
 		global::UnityEngine.Debug.DrawLine(vector, vector2, color, duration);
 	}
 
-	// Token: 0x0600A8B2 RID: 43186 RVA: 0x003ECBA4 File Offset: 0x003EADA4
+	// Token: 0x0600A90A RID: 43274 RVA: 0x003EEFA8 File Offset: 0x003ED1A8
 	public static void DrawBoxLines(Vector3 minPos, Vector3 maxPos, Color color, float duration)
 	{
 		Utils.DrawBoxLinesHorizontal(minPos, maxPos, color, duration);
 		Utils.DrawBoxLinesVerticle(minPos, maxPos, color, duration);
 	}
 
-	// Token: 0x0600A8B3 RID: 43187 RVA: 0x003ECBB8 File Offset: 0x003EADB8
+	// Token: 0x0600A90B RID: 43275 RVA: 0x003EEFBC File Offset: 0x003ED1BC
 	public static void DrawBoxLinesHorizontal(Vector3 minPos, Vector3 maxPos, Color color, float duration)
 	{
 		Vector3 vector = new Vector3(maxPos.x, minPos.y, maxPos.z);
@@ -297,7 +297,7 @@ public static class Utils
 		Utils.DrawRectLinesHorzontal(vector2, maxPos, color, duration);
 	}
 
-	// Token: 0x0600A8B4 RID: 43188 RVA: 0x003ECC08 File Offset: 0x003EAE08
+	// Token: 0x0600A90C RID: 43276 RVA: 0x003EF00C File Offset: 0x003ED20C
 	public static void DrawBoxLinesVerticle(Vector3 minPos, Vector3 maxPos, Color color, float duration)
 	{
 		Vector3 vector = new Vector3(0f, maxPos.y - minPos.y);
@@ -307,7 +307,7 @@ public static class Utils
 		global::UnityEngine.Debug.DrawRay(new Vector3(maxPos.x, minPos.y, minPos.z), vector, color, duration);
 	}
 
-	// Token: 0x0600A8B5 RID: 43189 RVA: 0x003ECC84 File Offset: 0x003EAE84
+	// Token: 0x0600A90D RID: 43277 RVA: 0x003EF088 File Offset: 0x003ED288
 	public static void DrawCubeLines(Vector3 minPos, float size, Color color, float duration)
 	{
 		Vector3 vector = minPos;
@@ -317,7 +317,7 @@ public static class Utils
 		Utils.DrawBoxLines(minPos, vector, color, duration);
 	}
 
-	// Token: 0x0600A8B6 RID: 43190 RVA: 0x003ECCC0 File Offset: 0x003EAEC0
+	// Token: 0x0600A90E RID: 43278 RVA: 0x003EF0C4 File Offset: 0x003ED2C4
 	public static void DrawCubeLinesCenter(Vector3 centerPos, float radius, Color color, float duration)
 	{
 		Vector3 vector = centerPos;
@@ -331,7 +331,7 @@ public static class Utils
 		Utils.DrawBoxLines(vector, vector2, color, duration);
 	}
 
-	// Token: 0x0600A8B7 RID: 43191 RVA: 0x003ECD24 File Offset: 0x003EAF24
+	// Token: 0x0600A90F RID: 43279 RVA: 0x003EF128 File Offset: 0x003ED328
 	public static void DrawRectLinesHorzontal(Vector3 minPos, Vector3 maxPos, Color color, float duration)
 	{
 		Vector3 vector = new Vector3(maxPos.x, minPos.y, minPos.z);
@@ -342,7 +342,7 @@ public static class Utils
 		global::UnityEngine.Debug.DrawLine(vector, minPos, color, duration);
 	}
 
-	// Token: 0x0600A8B8 RID: 43192 RVA: 0x003ECD87 File Offset: 0x003EAF87
+	// Token: 0x0600A910 RID: 43280 RVA: 0x003EF18B File Offset: 0x003ED38B
 	public static void DrawCylinderLinesHorzontal(Vector3 centerPos, float radius, float height, Color startColor, Color endColor, int segments, float duration)
 	{
 		Utils.DrawCircleLinesHorzontal(centerPos, radius, startColor, endColor, segments, duration);
@@ -350,7 +350,7 @@ public static class Utils
 		Utils.DrawCircleLinesHorzontal(centerPos, radius, startColor, endColor, segments, duration);
 	}
 
-	// Token: 0x0600A8B9 RID: 43193 RVA: 0x003ECDB4 File Offset: 0x003EAFB4
+	// Token: 0x0600A911 RID: 43281 RVA: 0x003EF1B8 File Offset: 0x003ED3B8
 	public static void DrawCircleLinesHorzontal(Vector3 centerPos, float radius, Color startColor, Color endColor, int segments, float duration)
 	{
 		if (segments < 3)
@@ -380,7 +380,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8BA RID: 43194 RVA: 0x003ECEAC File Offset: 0x003EB0AC
+	// Token: 0x0600A912 RID: 43282 RVA: 0x003EF2B0 File Offset: 0x003ED4B0
 	public static void DrawLine(Vector3 startPos, Vector3 endPos, Color startColor, Color endColor, int segments, float duration = 0f)
 	{
 		if (segments <= 1)
@@ -400,13 +400,13 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8BB RID: 43195 RVA: 0x003ECF20 File Offset: 0x003EB120
+	// Token: 0x0600A913 RID: 43283 RVA: 0x003EF324 File Offset: 0x003ED524
 	public static void DrawRay(Vector3 startPos, Vector3 dir, Color startColor, Color endColor, int segments, float duration = 0f)
 	{
 		Utils.DrawLine(startPos, startPos + dir, startColor, endColor, segments, duration);
 	}
 
-	// Token: 0x0600A8BC RID: 43196 RVA: 0x003ECF38 File Offset: 0x003EB138
+	// Token: 0x0600A914 RID: 43284 RVA: 0x003EF33C File Offset: 0x003ED53C
 	public static void DrawOutline(Rect position, string text, GUIStyle style, Color outColor, Color inColor)
 	{
 		style.normal.textColor = outColor;
@@ -428,7 +428,7 @@ public static class Utils
 		GUI.Label(position, text, style);
 	}
 
-	// Token: 0x0600A8BD RID: 43197 RVA: 0x003ED000 File Offset: 0x003EB200
+	// Token: 0x0600A915 RID: 43285 RVA: 0x003EF404 File Offset: 0x003ED604
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int FastAbsInt(int _x)
 	{
@@ -443,7 +443,7 @@ public static class Utils
 		return -_x;
 	}
 
-	// Token: 0x0600A8BE RID: 43198 RVA: 0x003ED018 File Offset: 0x003EB218
+	// Token: 0x0600A916 RID: 43286 RVA: 0x003EF41C File Offset: 0x003ED61C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastAbs(float _x)
 	{
@@ -454,7 +454,7 @@ public static class Utils
 		return _x;
 	}
 
-	// Token: 0x0600A8BF RID: 43199 RVA: 0x003ED026 File Offset: 0x003EB226
+	// Token: 0x0600A917 RID: 43287 RVA: 0x003EF42A File Offset: 0x003ED62A
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int Fastfloor(float x)
 	{
@@ -465,7 +465,7 @@ public static class Utils
 		return (int)x;
 	}
 
-	// Token: 0x0600A8C0 RID: 43200 RVA: 0x003ED03B File Offset: 0x003EB23B
+	// Token: 0x0600A918 RID: 43288 RVA: 0x003EF43F File Offset: 0x003ED63F
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int Fastfloor(double x)
 	{
@@ -476,7 +476,7 @@ public static class Utils
 		return (int)x;
 	}
 
-	// Token: 0x0600A8C1 RID: 43201 RVA: 0x003ED058 File Offset: 0x003EB258
+	// Token: 0x0600A919 RID: 43289 RVA: 0x003EF45C File Offset: 0x003ED65C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int FastMax(int v1, int v2)
 	{
@@ -487,7 +487,7 @@ public static class Utils
 		return v1;
 	}
 
-	// Token: 0x0600A8C2 RID: 43202 RVA: 0x003ED058 File Offset: 0x003EB258
+	// Token: 0x0600A91A RID: 43290 RVA: 0x003EF45C File Offset: 0x003ED65C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastMax(float v1, float v2)
 	{
@@ -498,7 +498,7 @@ public static class Utils
 		return v1;
 	}
 
-	// Token: 0x0600A8C3 RID: 43203 RVA: 0x003ED058 File Offset: 0x003EB258
+	// Token: 0x0600A91B RID: 43291 RVA: 0x003EF45C File Offset: 0x003ED65C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static byte FastMax(byte v1, byte v2)
 	{
@@ -509,7 +509,7 @@ public static class Utils
 		return v1;
 	}
 
-	// Token: 0x0600A8C4 RID: 43204 RVA: 0x003ED061 File Offset: 0x003EB261
+	// Token: 0x0600A91C RID: 43292 RVA: 0x003EF465 File Offset: 0x003ED665
 	public static float FastMax(float v1, float v2, float v3, float v4)
 	{
 		if (v1 >= v2 && v1 >= v3 && v1 >= v4)
@@ -527,7 +527,7 @@ public static class Utils
 		return v4;
 	}
 
-	// Token: 0x0600A8C5 RID: 43205 RVA: 0x003ED08E File Offset: 0x003EB28E
+	// Token: 0x0600A91D RID: 43293 RVA: 0x003EF492 File Offset: 0x003ED692
 	public static int FastMax(int v1, int v2, int v3, int v4)
 	{
 		if (v1 >= v2 && v1 >= v3 && v1 >= v4)
@@ -545,7 +545,7 @@ public static class Utils
 		return v4;
 	}
 
-	// Token: 0x0600A8C6 RID: 43206 RVA: 0x003ED0BB File Offset: 0x003EB2BB
+	// Token: 0x0600A91E RID: 43294 RVA: 0x003EF4BF File Offset: 0x003ED6BF
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastMin(float v1, float v2)
 	{
@@ -556,7 +556,7 @@ public static class Utils
 		return v1;
 	}
 
-	// Token: 0x0600A8C7 RID: 43207 RVA: 0x003ED0BB File Offset: 0x003EB2BB
+	// Token: 0x0600A91F RID: 43295 RVA: 0x003EF4BF File Offset: 0x003ED6BF
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int FastMin(int v1, int v2)
 	{
@@ -567,7 +567,7 @@ public static class Utils
 		return v1;
 	}
 
-	// Token: 0x0600A8C8 RID: 43208 RVA: 0x003ED0C4 File Offset: 0x003EB2C4
+	// Token: 0x0600A920 RID: 43296 RVA: 0x003EF4C8 File Offset: 0x003ED6C8
 	public static int FastMin(int v1, int v2, int v3, int v4)
 	{
 		if (v1 <= v2 && v1 <= v3 && v1 <= v4)
@@ -585,7 +585,7 @@ public static class Utils
 		return v4;
 	}
 
-	// Token: 0x0600A8C9 RID: 43209 RVA: 0x003ED0F1 File Offset: 0x003EB2F1
+	// Token: 0x0600A921 RID: 43297 RVA: 0x003EF4F5 File Offset: 0x003ED6F5
 	public static float FastMin(float v1, float v2, float v3, float v4)
 	{
 		if (v1 <= v2 && v1 <= v3 && v1 <= v4)
@@ -603,7 +603,7 @@ public static class Utils
 		return v4;
 	}
 
-	// Token: 0x0600A8CA RID: 43210 RVA: 0x003ED11E File Offset: 0x003EB31E
+	// Token: 0x0600A922 RID: 43298 RVA: 0x003EF522 File Offset: 0x003ED722
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastClamp(float _v, float _min, float _max)
 	{
@@ -618,7 +618,7 @@ public static class Utils
 		return _v;
 	}
 
-	// Token: 0x0600A8CB RID: 43211 RVA: 0x003ED12D File Offset: 0x003EB32D
+	// Token: 0x0600A923 RID: 43299 RVA: 0x003EF531 File Offset: 0x003ED731
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int FastClamp(int _v, int _min, int _max)
 	{
@@ -633,7 +633,7 @@ public static class Utils
 		return _v;
 	}
 
-	// Token: 0x0600A8CC RID: 43212 RVA: 0x003ED13C File Offset: 0x003EB33C
+	// Token: 0x0600A924 RID: 43300 RVA: 0x003EF540 File Offset: 0x003ED740
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastClamp01(float _v)
 	{
@@ -648,7 +648,7 @@ public static class Utils
 		return _v;
 	}
 
-	// Token: 0x0600A8CD RID: 43213 RVA: 0x003ED15B File Offset: 0x003EB35B
+	// Token: 0x0600A925 RID: 43301 RVA: 0x003EF55F File Offset: 0x003ED75F
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static double FastClamp01(double _v)
 	{
@@ -663,21 +663,21 @@ public static class Utils
 		return _v;
 	}
 
-	// Token: 0x0600A8CE RID: 43214 RVA: 0x003ED18A File Offset: 0x003EB38A
+	// Token: 0x0600A926 RID: 43302 RVA: 0x003EF58E File Offset: 0x003ED78E
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastLerp(float a, float b, float t)
 	{
 		return a + (b - a) * Utils.FastClamp01(t);
 	}
 
-	// Token: 0x0600A8CF RID: 43215 RVA: 0x003D2F5C File Offset: 0x003D115C
+	// Token: 0x0600A927 RID: 43303 RVA: 0x003D5360 File Offset: 0x003D3560
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastLerpUnclamped(float a, float b, float t)
 	{
 		return a + (b - a) * t;
 	}
 
-	// Token: 0x0600A8D0 RID: 43216 RVA: 0x003ED198 File Offset: 0x003EB398
+	// Token: 0x0600A928 RID: 43304 RVA: 0x003EF59C File Offset: 0x003ED79C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float FastMoveTowards(float current, float target, float maxDelta)
 	{
@@ -688,14 +688,14 @@ public static class Utils
 		return current + Mathf.Sign(target - current) * maxDelta;
 	}
 
-	// Token: 0x0600A8D1 RID: 43217 RVA: 0x003ED1B3 File Offset: 0x003EB3B3
+	// Token: 0x0600A929 RID: 43305 RVA: 0x003EF5B7 File Offset: 0x003ED7B7
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int FastRoundToInt(float f)
 	{
 		return (int)Math.Round((double)f);
 	}
 
-	// Token: 0x0600A8D2 RID: 43218 RVA: 0x003ED1BD File Offset: 0x003EB3BD
+	// Token: 0x0600A92A RID: 43306 RVA: 0x003EF5C1 File Offset: 0x003ED7C1
 	public static int FastRoundToIntAndMod(float _f, int _mod)
 	{
 		if (_mod == 0)
@@ -709,7 +709,7 @@ public static class Utils
 		return (int)(_f + 0.5f) % _mod;
 	}
 
-	// Token: 0x0600A8D3 RID: 43219 RVA: 0x003ED1E8 File Offset: 0x003EB3E8
+	// Token: 0x0600A92B RID: 43307 RVA: 0x003EF5EC File Offset: 0x003ED7EC
 	public static Texture2D LoadRawStampFile(string _filepath)
 	{
 		Texture2D texture2D2;
@@ -736,7 +736,7 @@ public static class Utils
 		return texture2D2;
 	}
 
-	// Token: 0x0600A8D4 RID: 43220 RVA: 0x003ED2D4 File Offset: 0x003EB4D4
+	// Token: 0x0600A92C RID: 43308 RVA: 0x003EF6D8 File Offset: 0x003ED8D8
 	public static Color[] LoadRawStampFileArray(string _filepath)
 	{
 		Color[] array3;
@@ -765,7 +765,7 @@ public static class Utils
 		return array3;
 	}
 
-	// Token: 0x0600A8D5 RID: 43221 RVA: 0x003ED3EC File Offset: 0x003EB5EC
+	// Token: 0x0600A92D RID: 43309 RVA: 0x003EF7F0 File Offset: 0x003ED9F0
 	public static void SaveRawStampFile(string _filepath, Texture2D _image)
 	{
 		using (Stream stream = SdFile.Open(_filepath, FileMode.CreateNew))
@@ -784,7 +784,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8D6 RID: 43222 RVA: 0x003ED4AC File Offset: 0x003EB6AC
+	// Token: 0x0600A92E RID: 43310 RVA: 0x003EF8B0 File Offset: 0x003EDAB0
 	public static void SaveRawStampFile(string _filepath, Color[] _image)
 	{
 		using (Stream stream = SdFile.Open(_filepath, FileMode.CreateNew))
@@ -802,14 +802,14 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8D7 RID: 43223 RVA: 0x003ED564 File Offset: 0x003EB764
+	// Token: 0x0600A92F RID: 43311 RVA: 0x003EF968 File Offset: 0x003EDB68
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Repeat(float _value, float _length)
 	{
 		return Utils.FastClamp(_value - (float)Utils.Fastfloor(_value / _length) * _length, 0f, _length);
 	}
 
-	// Token: 0x0600A8D8 RID: 43224 RVA: 0x003ED580 File Offset: 0x003EB780
+	// Token: 0x0600A930 RID: 43312 RVA: 0x003EF984 File Offset: 0x003EDB84
 	public static float DeltaAngle(float _angle1, float _angle2)
 	{
 		float num = Utils.Repeat(_angle2 - _angle1, 360f);
@@ -820,7 +820,7 @@ public static class Utils
 		return num;
 	}
 
-	// Token: 0x0600A8D9 RID: 43225 RVA: 0x003ED5AC File Offset: 0x003EB7AC
+	// Token: 0x0600A931 RID: 43313 RVA: 0x003EF9B0 File Offset: 0x003EDBB0
 	public static float GetAngleBetween(Vector3 _dir1, Vector3 _dir2)
 	{
 		float num = Mathf.Atan2(_dir1.z, _dir1.x) * 57.29578f;
@@ -837,7 +837,7 @@ public static class Utils
 		return num3;
 	}
 
-	// Token: 0x0600A8DA RID: 43226 RVA: 0x003ED60C File Offset: 0x003EB80C
+	// Token: 0x0600A932 RID: 43314 RVA: 0x003EFA10 File Offset: 0x003EDC10
 	public static int Get4HitDirectionAsInt(Vector3 _direction, Vector3 _myLook)
 	{
 		float angleBetween = Utils.GetAngleBetween(_direction, _myLook);
@@ -856,7 +856,7 @@ public static class Utils
 		return 0;
 	}
 
-	// Token: 0x0600A8DB RID: 43227 RVA: 0x003ED658 File Offset: 0x003EB858
+	// Token: 0x0600A933 RID: 43315 RVA: 0x003EFA5C File Offset: 0x003EDC5C
 	public static int Get6HitDirectionAsInt(Vector3 _direction, Vector3 _myLook)
 	{
 		float angleBetween = Utils.GetAngleBetween(_direction, _myLook);
@@ -883,7 +883,7 @@ public static class Utils
 		return 0;
 	}
 
-	// Token: 0x0600A8DC RID: 43228 RVA: 0x003ED6C8 File Offset: 0x003EB8C8
+	// Token: 0x0600A934 RID: 43316 RVA: 0x003EFACC File Offset: 0x003EDCCC
 	public static Utils.EnumHitDirection GetHitDirection4Sides(Vector3 fwd, Vector3 targetDir, Vector3 up)
 	{
 		targetDir = targetDir.normalized;
@@ -907,7 +907,7 @@ public static class Utils
 		return Utils.EnumHitDirection.Back;
 	}
 
-	// Token: 0x0600A8DD RID: 43229 RVA: 0x003ED788 File Offset: 0x003EB988
+	// Token: 0x0600A935 RID: 43317 RVA: 0x003EFB8C File Offset: 0x003EDD8C
 	public static Quaternion BlockFaceToRotation(BlockFace _blockFace)
 	{
 		switch (_blockFace)
@@ -929,7 +929,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8DE RID: 43230 RVA: 0x003ED810 File Offset: 0x003EBA10
+	// Token: 0x0600A936 RID: 43318 RVA: 0x003EFC14 File Offset: 0x003EDE14
 	public static Vector3 BlockFaceToVector(BlockFace _face)
 	{
 		switch (_face)
@@ -951,7 +951,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8DF RID: 43231 RVA: 0x003ED8C0 File Offset: 0x003EBAC0
+	// Token: 0x0600A937 RID: 43319 RVA: 0x003EFCC4 File Offset: 0x003EDEC4
 	public static void MoveInBlockFaceDirection(Vector3[] _vertices, BlockFace _face, float d)
 	{
 		Vector3 zero = Vector3.zero;
@@ -982,7 +982,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8E0 RID: 43232 RVA: 0x003ED994 File Offset: 0x003EBB94
+	// Token: 0x0600A938 RID: 43320 RVA: 0x003EFD98 File Offset: 0x003EDF98
 	public static string EncryptOrDecrypt(string text, string key)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -993,25 +993,25 @@ public static class Utils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A8E1 RID: 43233 RVA: 0x003ED9DC File Offset: 0x003EBBDC
+	// Token: 0x0600A939 RID: 43321 RVA: 0x003EFDE0 File Offset: 0x003EDFE0
 	public static string Crypt(string text)
 	{
 		return Utils.EncryptOrDecrypt(text, "X");
 	}
 
-	// Token: 0x0600A8E2 RID: 43234 RVA: 0x003ED9E9 File Offset: 0x003EBBE9
+	// Token: 0x0600A93A RID: 43322 RVA: 0x003EFDED File Offset: 0x003EDFED
 	public static string UnCryptFromBase64(char[] text)
 	{
 		return Utils.Crypt(Utils.FromBase64(text));
 	}
 
-	// Token: 0x0600A8E3 RID: 43235 RVA: 0x003ED9F6 File Offset: 0x003EBBF6
+	// Token: 0x0600A93B RID: 43323 RVA: 0x003EFDFA File Offset: 0x003EDFFA
 	public static string ToBase64(string _str)
 	{
 		return Convert.ToBase64String(Encoding.UTF8.GetBytes(_str));
 	}
 
-	// Token: 0x0600A8E4 RID: 43236 RVA: 0x003EDA08 File Offset: 0x003EBC08
+	// Token: 0x0600A93C RID: 43324 RVA: 0x003EFE0C File Offset: 0x003EE00C
 	public static string FromBase64(string _encodedStr)
 	{
 		string text;
@@ -1029,7 +1029,7 @@ public static class Utils
 		return text;
 	}
 
-	// Token: 0x0600A8E5 RID: 43237 RVA: 0x003EDA54 File Offset: 0x003EBC54
+	// Token: 0x0600A93D RID: 43325 RVA: 0x003EFE58 File Offset: 0x003EE058
 	public static string FromBase64(char[] _bytes)
 	{
 		string text;
@@ -1047,7 +1047,7 @@ public static class Utils
 		return text;
 	}
 
-	// Token: 0x0600A8E6 RID: 43238 RVA: 0x003EDAA4 File Offset: 0x003EBCA4
+	// Token: 0x0600A93E RID: 43326 RVA: 0x003EFEA8 File Offset: 0x003EE0A8
 	public static string HashString(string password)
 	{
 		if (password.Length == 0)
@@ -1057,13 +1057,13 @@ public static class Utils
 		return password.GetHashCode().ToString();
 	}
 
-	// Token: 0x0600A8E7 RID: 43239 RVA: 0x003EDAC9 File Offset: 0x003EBCC9
+	// Token: 0x0600A93F RID: 43327 RVA: 0x003EFECD File Offset: 0x003EE0CD
 	public static string ColorToHex(Color32 color)
 	{
 		return color.r.ToString("X2") + color.g.ToString("X2") + color.b.ToString("X2");
 	}
 
-	// Token: 0x0600A8E8 RID: 43240 RVA: 0x003EDB04 File Offset: 0x003EBD04
+	// Token: 0x0600A940 RID: 43328 RVA: 0x003EFF08 File Offset: 0x003EE108
 	public static Color Saturate(Color _c)
 	{
 		if (_c.r < 0f)
@@ -1093,25 +1093,25 @@ public static class Utils
 		return _c;
 	}
 
-	// Token: 0x0600A8E9 RID: 43241 RVA: 0x003EDBA8 File Offset: 0x003EBDA8
+	// Token: 0x0600A941 RID: 43329 RVA: 0x003EFFAC File Offset: 0x003EE1AC
 	public static ushort ToColor5(Color col)
 	{
 		return (ushort)(((int)(col.r * 31f + 0.5f) << 10) | ((int)(col.g * 31f + 0.5f) << 5) | (int)(col.b * 31f + 0.5f));
 	}
 
-	// Token: 0x0600A8EA RID: 43242 RVA: 0x003EDBF6 File Offset: 0x003EBDF6
+	// Token: 0x0600A942 RID: 43330 RVA: 0x003EFFFA File Offset: 0x003EE1FA
 	public static Color FromColor5(ushort col)
 	{
 		return new Color((float)((col >> 10) & 31) / 31f, (float)((col >> 5) & 31) / 31f, (float)(col & 31) / 31f);
 	}
 
-	// Token: 0x0600A8EB RID: 43243 RVA: 0x003EDC24 File Offset: 0x003EBE24
+	// Token: 0x0600A943 RID: 43331 RVA: 0x003F0028 File Offset: 0x003EE228
 	public static Color32 FromColor5To32(ushort col)
 	{
 		return new Color32((byte)((float)((col >> 10) & 31) / 31f * 255f), (byte)((float)((col >> 5) & 31) / 31f * 255f), (byte)((float)(col & 31) / 31f * 255f), byte.MaxValue);
 	}
 
-	// Token: 0x0600A8EC RID: 43244 RVA: 0x003EDC78 File Offset: 0x003EBE78
+	// Token: 0x0600A944 RID: 43332 RVA: 0x003F007C File Offset: 0x003EE27C
 	public static GameRandom RandomFromSeedOnPos(int x, int y, int seed)
 	{
 		GameRandom gameRandom = GameRandomManager.Instance.CreateGameRandom(seed);
@@ -1122,14 +1122,14 @@ public static class Utils
 		return gameRandom;
 	}
 
-	// Token: 0x0600A8ED RID: 43245 RVA: 0x003EDCCC File Offset: 0x003EBECC
+	// Token: 0x0600A945 RID: 43333 RVA: 0x003F00D0 File Offset: 0x003EE2D0
 	public static GameRandom RandomFromSeedOnPos(int _x, int _y, int _z, int _seed)
 	{
 		int num = _seed + _x + (_z << 14) + (_y << 24);
 		return GameRandomManager.Instance.CreateGameRandom(num);
 	}
 
-	// Token: 0x0600A8EE RID: 43246 RVA: 0x003EDCF4 File Offset: 0x003EBEF4
+	// Token: 0x0600A946 RID: 43334 RVA: 0x003F00F8 File Offset: 0x003EE2F8
 	public static string DescribeTimeSince(DateTime _newer, DateTime _older)
 	{
 		TimeSpan timeSpan = _newer - _older;
@@ -1166,19 +1166,19 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8EF RID: 43247 RVA: 0x003EDDE1 File Offset: 0x003EBFE1
+	// Token: 0x0600A947 RID: 43335 RVA: 0x003F01E5 File Offset: 0x003EE3E5
 	public static float ToCelsius(float fromFahrenheit)
 	{
 		return (fromFahrenheit - 32f) * 0.5555556f;
 	}
 
-	// Token: 0x0600A8F0 RID: 43248 RVA: 0x003EDDF0 File Offset: 0x003EBFF0
+	// Token: 0x0600A948 RID: 43336 RVA: 0x003F01F4 File Offset: 0x003EE3F4
 	public static float ToRelativeCelsius(float fromFahrenheit)
 	{
 		return fromFahrenheit * 0.5555556f;
 	}
 
-	// Token: 0x0600A8F1 RID: 43249 RVA: 0x003EDDFC File Offset: 0x003EBFFC
+	// Token: 0x0600A949 RID: 43337 RVA: 0x003F0200 File Offset: 0x003EE400
 	public static string EscapeBbCodes(string _input, bool _removeInstead = false, bool _allowUrls = false)
 	{
 		if (string.IsNullOrEmpty(_input))
@@ -1216,7 +1216,7 @@ public static class Utils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A8F2 RID: 43250 RVA: 0x003EDEC0 File Offset: 0x003EC0C0
+	// Token: 0x0600A94A RID: 43338 RVA: 0x003F02C4 File Offset: 0x003EE4C4
 	public static ValueTuple<int, int, bool> FindNextBbCode(string _input, int _startIndex, bool _allowUrls = false)
 	{
 		int i = _startIndex;
@@ -1409,7 +1409,7 @@ public static class Utils
 		return new ValueTuple<int, int, bool>(-1, 0, false);
 	}
 
-	// Token: 0x0600A8F3 RID: 43251 RVA: 0x003EE2CC File Offset: 0x003EC4CC
+	// Token: 0x0600A94B RID: 43339 RVA: 0x003F06D0 File Offset: 0x003EE8D0
 	public static string GetVisibileTextWithBbCodes(string _input)
 	{
 		int i = 0;
@@ -1438,7 +1438,7 @@ public static class Utils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A8F4 RID: 43252 RVA: 0x003EE38B File Offset: 0x003EC58B
+	// Token: 0x0600A94C RID: 43340 RVA: 0x003F078F File Offset: 0x003EE98F
 	public static string CreateGameMessage(string _senderName, string _message)
 	{
 		if (string.IsNullOrEmpty(_senderName))
@@ -1448,7 +1448,7 @@ public static class Utils
 		return _senderName + ": " + _message;
 	}
 
-	// Token: 0x0600A8F5 RID: 43253 RVA: 0x003EE3A4 File Offset: 0x003EC5A4
+	// Token: 0x0600A94D RID: 43341 RVA: 0x003F07A8 File Offset: 0x003EE9A8
 	public static string GetCancellationMessage()
 	{
 		if (PlatformManager.NativePlatform.Input.CurrentInputStyle == PlayerInputManager.InputStyle.Keyboard)
@@ -1458,7 +1458,7 @@ public static class Utils
 		return string.Format(Localization.Get("msgConnectingToServerCancelTemplate", false, null), LocalPlayerUI.primaryUI.playerInput.PermanentActions.Cancel.GetBindingString(true, PlatformManager.NativePlatform.Input.CurrentControllerInputStyle, XUiUtils.EmptyBindingStyle.LocalizedNone, XUiUtils.DisplayStyle.Plain, false, null));
 	}
 
-	// Token: 0x0600A8F6 RID: 43254 RVA: 0x003EE410 File Offset: 0x003EC610
+	// Token: 0x0600A94E RID: 43342 RVA: 0x003F0814 File Offset: 0x003EEA14
 	public static void Fill<T>(this T[] array, T value)
 	{
 		int num = array.Length;
@@ -1468,7 +1468,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8F7 RID: 43255 RVA: 0x003EE438 File Offset: 0x003EC638
+	// Token: 0x0600A94F RID: 43343 RVA: 0x003F083C File Offset: 0x003EEA3C
 	public static void Memset(byte[] array, byte what, int length)
 	{
 		GCHandle gchandle = GCHandle.Alloc(array, GCHandleType.Pinned);
@@ -1476,7 +1476,7 @@ public static class Utils
 		gchandle.Free();
 	}
 
-	// Token: 0x0600A8F8 RID: 43256 RVA: 0x003EE468 File Offset: 0x003EC668
+	// Token: 0x0600A950 RID: 43344 RVA: 0x003F086C File Offset: 0x003EEA6C
 	public static void CalculateMeshTangents(List<Vector3> _vertices, List<int> _indices, List<Vector3> _normals, List<Vector2> _uvs, List<Vector4> _tangents, Mesh mesh, bool _bIgnoreUvs = false)
 	{
 		int count = _vertices.Count;
@@ -1598,7 +1598,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8F9 RID: 43257 RVA: 0x003EE8AC File Offset: 0x003ECAAC
+	// Token: 0x0600A951 RID: 43345 RVA: 0x003F0CB0 File Offset: 0x003EEEB0
 	public static void CalculateMeshTangents(ArrayListMP<Vector3> _vertices, ArrayListMP<int> _indices, ArrayListMP<Vector3> _normals, ArrayListMP<Vector2> _uvs, ArrayListMP<Vector4> _tangents, Mesh _mesh, bool _bIgnoreUvs = false)
 	{
 		int count = _vertices.Count;
@@ -1720,7 +1720,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8FA RID: 43258 RVA: 0x003EECF0 File Offset: 0x003ECEF0
+	// Token: 0x0600A952 RID: 43346 RVA: 0x003F10F4 File Offset: 0x003EF2F4
 	public static void CalculateMeshTangents(VoxelMesh _vm, bool _bIgnoreUvs = false)
 	{
 		int count = _vm.m_Vertices.Count;
@@ -1838,7 +1838,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8FB RID: 43259 RVA: 0x003EF174 File Offset: 0x003ED374
+	// Token: 0x0600A953 RID: 43347 RVA: 0x003F1578 File Offset: 0x003EF778
 	public unsafe static void CalculateMeshTangents(ReadOnlySpan<Vector3> _vertices, ReadOnlySpan<int> _indices, ReadOnlySpan<Vector3> _normals, ReadOnlySpan<Vector2> _uvs, Span<Vector4> _tangents, bool _bIgnoreUvs = false)
 	{
 		int length = _vertices.Length;
@@ -1935,7 +1935,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A8FC RID: 43260 RVA: 0x003EF5F8 File Offset: 0x003ED7F8
+	// Token: 0x0600A954 RID: 43348 RVA: 0x003F19FC File Offset: 0x003EFBFC
 	public static int WrapInt(int value, int min, int max)
 	{
 		int num = max - min;
@@ -1950,7 +1950,7 @@ public static class Utils
 		return value;
 	}
 
-	// Token: 0x0600A8FD RID: 43261 RVA: 0x003EF620 File Offset: 0x003ED820
+	// Token: 0x0600A955 RID: 43349 RVA: 0x003F1A24 File Offset: 0x003EFC24
 	public static int WrapIndex(int index, int arraySize)
 	{
 		while (index < 0)
@@ -1964,7 +1964,7 @@ public static class Utils
 		return index;
 	}
 
-	// Token: 0x0600A8FE RID: 43262 RVA: 0x003EF63C File Offset: 0x003ED83C
+	// Token: 0x0600A956 RID: 43350 RVA: 0x003F1A40 File Offset: 0x003EFC40
 	public static float WrapFloat(float value, float min, float max)
 	{
 		float num = max - min;
@@ -1979,7 +1979,7 @@ public static class Utils
 		return value;
 	}
 
-	// Token: 0x0600A8FF RID: 43263 RVA: 0x003EF664 File Offset: 0x003ED864
+	// Token: 0x0600A957 RID: 43351 RVA: 0x003F1A68 File Offset: 0x003EFC68
 	public static void CleanupMaterialsOfRenderers<T>(T renderers) where T : IList<Renderer>
 	{
 		for (int i = 0; i < renderers.Count; i++)
@@ -1990,13 +1990,13 @@ public static class Utils
 		Utils.tempMats.Clear();
 	}
 
-	// Token: 0x0600A900 RID: 43264 RVA: 0x003EF6B5 File Offset: 0x003ED8B5
+	// Token: 0x0600A958 RID: 43352 RVA: 0x003F1AB9 File Offset: 0x003EFCB9
 	public static void CleanupMaterialsOfRenderer(Renderer renderer)
 	{
 		Utils.CleanupMaterials<Material[]>(renderer.sharedMaterials);
 	}
 
-	// Token: 0x0600A901 RID: 43265 RVA: 0x003EF6C4 File Offset: 0x003ED8C4
+	// Token: 0x0600A959 RID: 43353 RVA: 0x003F1AC8 File Offset: 0x003EFCC8
 	public static void CleanupMaterials<T>(T mats) where T : IList<Material>
 	{
 		for (int i = 0; i < mats.Count; i++)
@@ -2009,13 +2009,13 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A902 RID: 43266 RVA: 0x003EF70F File Offset: 0x003ED90F
+	// Token: 0x0600A95A RID: 43354 RVA: 0x003F1B13 File Offset: 0x003EFD13
 	public static void MarkMaterialAsSafeForManualCleanup(Material mat)
 	{
 		mat.name += " (Instance)";
 	}
 
-	// Token: 0x0600A903 RID: 43267 RVA: 0x003EF728 File Offset: 0x003ED928
+	// Token: 0x0600A95B RID: 43355 RVA: 0x003F1B2C File Offset: 0x003EFD2C
 	public static void RestartGame(Utils.ERestartAntiCheatMode _antiCheatMode = Utils.ERestartAntiCheatMode.KeepAntiCheatMode)
 	{
 		Regex regex = new Regex("^(.*)(output_log_client__)(\\d{4}-\\d{2}-\\d{2}__\\d{2}-\\d{2}-\\d{2})(\\.txt)$");
@@ -2141,25 +2141,25 @@ public static class Utils
 		Application.Quit();
 	}
 
-	// Token: 0x0600A904 RID: 43268 RVA: 0x003EFA5C File Offset: 0x003EDC5C
+	// Token: 0x0600A95C RID: 43356 RVA: 0x003F1E60 File Offset: 0x003F0060
 	public unsafe static void GetBytes(int _value, byte[] _target, int _targetOffset = 0)
 	{
 		Utils.GetBytes((byte*)(&_value), 4, _target, _targetOffset);
 	}
 
-	// Token: 0x0600A905 RID: 43269 RVA: 0x003EFA5C File Offset: 0x003EDC5C
+	// Token: 0x0600A95D RID: 43357 RVA: 0x003F1E60 File Offset: 0x003F0060
 	public unsafe static void GetBytes(uint _value, byte[] _target, int _targetOffset = 0)
 	{
 		Utils.GetBytes((byte*)(&_value), 4, _target, _targetOffset);
 	}
 
-	// Token: 0x0600A906 RID: 43270 RVA: 0x003EFA69 File Offset: 0x003EDC69
+	// Token: 0x0600A95E RID: 43358 RVA: 0x003F1E6D File Offset: 0x003F006D
 	public unsafe static void GetBytes(long _value, byte[] _target, int _targetOffset = 0)
 	{
 		Utils.GetBytes((byte*)(&_value), 8, _target, _targetOffset);
 	}
 
-	// Token: 0x0600A907 RID: 43271 RVA: 0x003EFA78 File Offset: 0x003EDC78
+	// Token: 0x0600A95F RID: 43359 RVA: 0x003F1E7C File Offset: 0x003F007C
 	public unsafe static void GetBytes(byte* _ptr, int _count, byte[] _target, int _targetOffset = 0)
 	{
 		for (int i = 0; i < _count; i++)
@@ -2168,7 +2168,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A908 RID: 43272 RVA: 0x003EFA9C File Offset: 0x003EDC9C
+	// Token: 0x0600A960 RID: 43360 RVA: 0x003F1EA0 File Offset: 0x003F00A0
 	public static string MaskIp(string _input)
 	{
 		if (string.IsNullOrEmpty(_input))
@@ -2193,7 +2193,7 @@ public static class Utils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A909 RID: 43273 RVA: 0x003EFB04 File Offset: 0x003EDD04
+	// Token: 0x0600A961 RID: 43361 RVA: 0x003F1F08 File Offset: 0x003F0108
 	public static void ForceMaterialsInstance(GameObject go)
 	{
 		Renderer[] componentsInChildren = go.GetComponentsInChildren<Renderer>();
@@ -2203,7 +2203,7 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x0600A90A RID: 43274 RVA: 0x003EFB30 File Offset: 0x003EDD30
+	// Token: 0x0600A962 RID: 43362 RVA: 0x003F1F34 File Offset: 0x003F0134
 	public static bool IsValidWebUrl(ref string _input)
 	{
 		if (string.IsNullOrEmpty(_input))
@@ -2222,7 +2222,7 @@ public static class Utils
 		return true;
 	}
 
-	// Token: 0x0600A90B RID: 43275 RVA: 0x003EFB85 File Offset: 0x003EDD85
+	// Token: 0x0600A963 RID: 43363 RVA: 0x003F1F89 File Offset: 0x003F0189
 	public static bool OpenSystemBrowser(string _url)
 	{
 		if (!Utils.IsValidWebUrl(ref _url))
@@ -2233,7 +2233,7 @@ public static class Utils
 		return true;
 	}
 
-	// Token: 0x0600A90C RID: 43276 RVA: 0x003EFB9C File Offset: 0x003EDD9C
+	// Token: 0x0600A964 RID: 43364 RVA: 0x003F1FA0 File Offset: 0x003F01A0
 	public static bool ArrayEquals(byte[] _a, byte[] _b)
 	{
 		if (_a == _b)
@@ -2258,7 +2258,7 @@ public static class Utils
 		return true;
 	}
 
-	// Token: 0x0600A90D RID: 43277 RVA: 0x003EFBDC File Offset: 0x003EDDDC
+	// Token: 0x0600A965 RID: 43365 RVA: 0x003F1FE0 File Offset: 0x003F01E0
 	public static bool ArrayEquals(int[] _a, int[] _b)
 	{
 		if (_a == _b)
@@ -2283,7 +2283,7 @@ public static class Utils
 		return true;
 	}
 
-	// Token: 0x0600A90E RID: 43278 RVA: 0x003EFC1C File Offset: 0x003EDE1C
+	// Token: 0x0600A966 RID: 43366 RVA: 0x003F2020 File Offset: 0x003F0220
 	public static string GenerateGuid()
 	{
 		byte[] array = Guid.NewGuid().ToByteArray();
@@ -2295,8 +2295,8 @@ public static class Utils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x170013F5 RID: 5109
-	// (get) Token: 0x0600A90F RID: 43279 RVA: 0x003EFC6C File Offset: 0x003EDE6C
+	// Token: 0x17001401 RID: 5121
+	// (get) Token: 0x0600A967 RID: 43367 RVA: 0x003F2070 File Offset: 0x003F0270
 	public static uint CurrentUnixTime
 	{
 		get
@@ -2305,82 +2305,82 @@ public static class Utils
 		}
 	}
 
-	// Token: 0x04007D3B RID: 32059
+	// Token: 0x04007D7C RID: 32124
 	public static string[] ExcludeLayerZoom = new string[] { "VisibleOnZoom" };
 
-	// Token: 0x04007D3C RID: 32060
+	// Token: 0x04007D7D RID: 32125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static CultureInfo ci;
 
-	// Token: 0x04007D3D RID: 32061
+	// Token: 0x04007D7E RID: 32126
 	public static readonly Regex hexAlphaMatcher = new Regex("[0-9a-fA-F]{2}");
 
-	// Token: 0x04007D3E RID: 32062
+	// Token: 0x04007D7F RID: 32127
 	public static readonly Regex hexRgbMatcher = new Regex("[0-9a-fA-F]{6}");
 
-	// Token: 0x04007D3F RID: 32063
+	// Token: 0x04007D80 RID: 32128
 	public static readonly Regex hexRgbaMatcher = new Regex("[0-9a-fA-F]{8}");
 
-	// Token: 0x04007D40 RID: 32064
+	// Token: 0x04007D81 RID: 32129
 	public static readonly Regex nestedEscapePattern = new Regex("(\\[+\\/c\\](?:\\/c\\])*)");
 
-	// Token: 0x04007D41 RID: 32065
+	// Token: 0x04007D82 RID: 32130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Transform> setLayerRecursivelyList = new List<Transform>();
 
-	// Token: 0x04007D42 RID: 32066
+	// Token: 0x04007D83 RID: 32131
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Collider> setColliderLayerRecursivelyList = new List<Collider>();
 
-	// Token: 0x04007D43 RID: 32067
+	// Token: 0x04007D84 RID: 32132
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Action<IntPtr, byte, int> MemsetDelegate;
 
-	// Token: 0x04007D44 RID: 32068
+	// Token: 0x04007D85 RID: 32133
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3[] tan1Temp = new Vector3[786432];
 
-	// Token: 0x04007D45 RID: 32069
+	// Token: 0x04007D86 RID: 32134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3[] tan2Temp = new Vector3[786432];
 
-	// Token: 0x04007D46 RID: 32070
+	// Token: 0x04007D87 RID: 32135
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Vector3> tempNormals = new List<Vector3>();
 
-	// Token: 0x04007D47 RID: 32071
+	// Token: 0x04007D88 RID: 32136
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Material> tempMats = new List<Material>();
 
-	// Token: 0x04007D48 RID: 32072
+	// Token: 0x04007D89 RID: 32137
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] ipSeparatorChars = new char[] { '.', ':' };
 
-	// Token: 0x0200150E RID: 5390
+	// Token: 0x02001520 RID: 5408
 	public enum EnumHitDirection : byte
 	{
-		// Token: 0x04007D4A RID: 32074
+		// Token: 0x04007D8B RID: 32139
 		Front,
-		// Token: 0x04007D4B RID: 32075
+		// Token: 0x04007D8C RID: 32140
 		Back,
-		// Token: 0x04007D4C RID: 32076
+		// Token: 0x04007D8D RID: 32141
 		Left,
-		// Token: 0x04007D4D RID: 32077
+		// Token: 0x04007D8E RID: 32142
 		Right,
-		// Token: 0x04007D4E RID: 32078
+		// Token: 0x04007D8F RID: 32143
 		Explosion,
-		// Token: 0x04007D4F RID: 32079
+		// Token: 0x04007D90 RID: 32144
 		None
 	}
 
-	// Token: 0x0200150F RID: 5391
+	// Token: 0x02001521 RID: 5409
 	public enum ERestartAntiCheatMode
 	{
-		// Token: 0x04007D51 RID: 32081
+		// Token: 0x04007D92 RID: 32146
 		KeepAntiCheatMode,
-		// Token: 0x04007D52 RID: 32082
+		// Token: 0x04007D93 RID: 32147
 		ForceOff,
-		// Token: 0x04007D53 RID: 32083
+		// Token: 0x04007D94 RID: 32148
 		ForceOn
 	}
 }

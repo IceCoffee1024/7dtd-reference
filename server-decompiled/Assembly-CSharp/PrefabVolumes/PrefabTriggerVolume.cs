@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018ED RID: 6381
+	// Token: 0x0200191E RID: 6430
 	[Preserve]
 	public class PrefabTriggerVolume : PrefabVolumeAbs<PrefabTriggerVolume>
 	{
-		// Token: 0x170018B3 RID: 6323
-		// (get) Token: 0x0600C4E6 RID: 50406 RVA: 0x00080804 File Offset: 0x0007EA04
+		// Token: 0x170018FB RID: 6395
+		// (get) Token: 0x0600C5FA RID: 50682 RVA: 0x000809D4 File Offset: 0x0007EBD4
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -18,8 +18,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170018B4 RID: 6324
-		// (get) Token: 0x0600C4E7 RID: 50407 RVA: 0x0048801E File Offset: 0x0048621E
+		// Token: 0x170018FC RID: 6396
+		// (get) Token: 0x0600C5FB RID: 50683 RVA: 0x0048B9CA File Offset: 0x00489BCA
 		public override int SerializedSize
 		{
 			get
@@ -28,14 +28,14 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C4E8 RID: 50408 RVA: 0x0048802E File Offset: 0x0048622E
+		// Token: 0x0600C5FC RID: 50684 RVA: 0x0048B9DA File Offset: 0x00489BDA
 		public override void Reset()
 		{
 			base.Reset();
 			this.TriggersIndices.Clear();
 		}
 
-		// Token: 0x0600C4E9 RID: 50409 RVA: 0x00488044 File Offset: 0x00486244
+		// Token: 0x0600C5FD RID: 50685 RVA: 0x0048B9F0 File Offset: 0x00489BF0
 		public override void Read(PooledBinaryReader _br)
 		{
 			base.Read(_br);
@@ -47,7 +47,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C4EA RID: 50410 RVA: 0x00488088 File Offset: 0x00486288
+		// Token: 0x0600C5FE RID: 50686 RVA: 0x0048BA34 File Offset: 0x00489C34
 		public override void Write(PooledBinaryWriter _bw)
 		{
 			base.Write(_bw);
@@ -58,7 +58,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C4EB RID: 50411 RVA: 0x004880D6 File Offset: 0x004862D6
+		// Token: 0x0600C5FF RID: 50687 RVA: 0x0048BA82 File Offset: 0x00489C82
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void CopyValues(PrefabVolumeAbs<PrefabTriggerVolume> _target, bool _nonBasicOnly = false)
 		{
@@ -69,7 +69,7 @@ namespace PrefabVolumes
 			((PrefabTriggerVolume)_target).TriggersIndices.AddRange(this.TriggersIndices);
 		}
 
-		// Token: 0x0600C4EC RID: 50412 RVA: 0x004880F9 File Offset: 0x004862F9
+		// Token: 0x0600C600 RID: 50688 RVA: 0x0048BAA5 File Offset: 0x00489CA5
 		public void SetTriggersFlag(byte _index)
 		{
 			if (!this.TriggersIndices.Contains(_index))
@@ -78,25 +78,25 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C4ED RID: 50413 RVA: 0x00488115 File Offset: 0x00486315
+		// Token: 0x0600C601 RID: 50689 RVA: 0x0048BAC1 File Offset: 0x00489CC1
 		public void RemoveTriggersFlag(byte _index)
 		{
 			this.TriggersIndices.Remove(_index);
 		}
 
-		// Token: 0x0600C4EE RID: 50414 RVA: 0x00488124 File Offset: 0x00486324
+		// Token: 0x0600C602 RID: 50690 RVA: 0x0048BAD0 File Offset: 0x00489CD0
 		public void RemoveAllTriggersFlags()
 		{
 			this.TriggersIndices.Clear();
 		}
 
-		// Token: 0x0600C4EF RID: 50415 RVA: 0x00488131 File Offset: 0x00486331
+		// Token: 0x0600C603 RID: 50691 RVA: 0x0048BADD File Offset: 0x00489CDD
 		public bool HasTriggers(byte _index)
 		{
 			return this.TriggersIndices.Contains(_index);
 		}
 
-		// Token: 0x0600C4F0 RID: 50416 RVA: 0x00488140 File Offset: 0x00486340
+		// Token: 0x0600C604 RID: 50692 RVA: 0x0048BAEC File Offset: 0x00489CEC
 		public void ToggleTriggersFlag(byte layer)
 		{
 			int num = this.TriggersIndices.IndexOf(layer);
@@ -108,13 +108,13 @@ namespace PrefabVolumes
 			this.TriggersIndices.Add(layer);
 		}
 
-		// Token: 0x0600C4F1 RID: 50417 RVA: 0x00488177 File Offset: 0x00486377
+		// Token: 0x0600C605 RID: 50693 RVA: 0x0048BB23 File Offset: 0x00489D23
 		public bool HasAnyTriggers()
 		{
 			return this.TriggersIndices.Count > 0;
 		}
 
-		// Token: 0x040094C6 RID: 38086
+		// Token: 0x040095AF RID: 38319
 		public readonly List<byte> TriggersIndices = new List<byte>();
 	}
 }

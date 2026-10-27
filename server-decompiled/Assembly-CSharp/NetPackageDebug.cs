@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C6 RID: 1990
+// Token: 0x020007CE RID: 1998
 [Preserve]
 public class NetPackageDebug : NetPackage
 {
-	// Token: 0x06003B22 RID: 15138 RVA: 0x0017DFAA File Offset: 0x0017C1AA
+	// Token: 0x06003B39 RID: 15161 RVA: 0x0017EF42 File Offset: 0x0017D142
 	public NetPackageDebug Setup(NetPackageDebug.Type _type, int _entityId = -1, byte[] _data = null)
 	{
 		this.type = _type;
@@ -14,7 +14,7 @@ public class NetPackageDebug : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B23 RID: 15139 RVA: 0x0017DFC4 File Offset: 0x0017C1C4
+	// Token: 0x06003B3A RID: 15162 RVA: 0x0017EF5C File Offset: 0x0017D15C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.type = (NetPackageDebug.Type)_reader.ReadInt16();
@@ -26,7 +26,7 @@ public class NetPackageDebug : NetPackage
 		}
 	}
 
-	// Token: 0x06003B24 RID: 15140 RVA: 0x0017E004 File Offset: 0x0017C204
+	// Token: 0x06003B3B RID: 15163 RVA: 0x0017EF9C File Offset: 0x0017D19C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -41,7 +41,7 @@ public class NetPackageDebug : NetPackage
 		_writer.Write(this.data);
 	}
 
-	// Token: 0x06003B25 RID: 15141 RVA: 0x0017E064 File Offset: 0x0017C264
+	// Token: 0x06003B3C RID: 15164 RVA: 0x0017EFFC File Offset: 0x0017D1FC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		switch (this.type)
@@ -66,8 +66,8 @@ public class NetPackageDebug : NetPackage
 		}
 	}
 
-	// Token: 0x17000644 RID: 1604
-	// (get) Token: 0x06003B26 RID: 15142 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000648 RID: 1608
+	// (get) Token: 0x06003B3D RID: 15165 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -76,30 +76,30 @@ public class NetPackageDebug : NetPackage
 		}
 	}
 
-	// Token: 0x0400302C RID: 12332
+	// Token: 0x04003048 RID: 12360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageDebug.Type type;
 
-	// Token: 0x0400302D RID: 12333
+	// Token: 0x04003049 RID: 12361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400302E RID: 12334
+	// Token: 0x0400304A RID: 12362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 
-	// Token: 0x020007C7 RID: 1991
+	// Token: 0x020007CF RID: 1999
 	public enum Type
 	{
-		// Token: 0x04003030 RID: 12336
+		// Token: 0x0400304C RID: 12364
 		AILatency,
-		// Token: 0x04003031 RID: 12337
+		// Token: 0x0400304D RID: 12365
 		AILatencyClientOff,
-		// Token: 0x04003032 RID: 12338
+		// Token: 0x0400304E RID: 12366
 		AINameInfo,
-		// Token: 0x04003033 RID: 12339
+		// Token: 0x0400304F RID: 12367
 		AINameInfoClientOff,
-		// Token: 0x04003034 RID: 12340
+		// Token: 0x04003050 RID: 12368
 		AINameInfoServerToggle
 	}
 }

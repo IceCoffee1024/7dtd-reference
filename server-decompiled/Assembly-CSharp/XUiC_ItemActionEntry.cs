@@ -5,13 +5,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D82 RID: 3458
+// Token: 0x02000D8D RID: 3469
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_ItemActionEntry : XUiController
 {
-	// Token: 0x17000B35 RID: 2869
-	// (get) Token: 0x0600685E RID: 26718 RVA: 0x00296D76 File Offset: 0x00294F76
-	// (set) Token: 0x0600685F RID: 26719 RVA: 0x00296D80 File Offset: 0x00294F80
+	// Token: 0x17000B3B RID: 2875
+	// (get) Token: 0x06006883 RID: 26755 RVA: 0x0029829E File Offset: 0x0029649E
+	// (set) Token: 0x06006884 RID: 26756 RVA: 0x002982A8 File Offset: 0x002964A8
 	public BaseItemActionEntry ItemActionEntry
 	{
 		get
@@ -59,8 +59,8 @@ public class XUiC_ItemActionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000B36 RID: 2870
-	// (get) Token: 0x06006860 RID: 26720 RVA: 0x00296EB8 File Offset: 0x002950B8
+	// Token: 0x17000B3C RID: 2876
+	// (get) Token: 0x06006885 RID: 26757 RVA: 0x002983E0 File Offset: 0x002965E0
 	public XUiController Background
 	{
 		get
@@ -69,8 +69,8 @@ public class XUiC_ItemActionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000B37 RID: 2871
-	// (get) Token: 0x06006861 RID: 26721 RVA: 0x00296EC5 File Offset: 0x002950C5
+	// Token: 0x17000B3D RID: 2877
+	// (get) Token: 0x06006886 RID: 26758 RVA: 0x002983ED File Offset: 0x002965ED
 	public XUiV_GamepadIcon GamepadIcon
 	{
 		get
@@ -79,7 +79,7 @@ public class XUiC_ItemActionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06006862 RID: 26722 RVA: 0x00296ED0 File Offset: 0x002950D0
+	// Token: 0x06006887 RID: 26759 RVA: 0x002983F8 File Offset: 0x002965F8
 	public override void Init()
 	{
 		base.Init();
@@ -94,7 +94,7 @@ public class XUiC_ItemActionEntry : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06006863 RID: 26723 RVA: 0x00296FB0 File Offset: 0x002951B0
+	// Token: 0x06006888 RID: 26760 RVA: 0x002984D8 File Offset: 0x002966D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void OnHover(XUiController _sender, bool _isOver)
 	{
@@ -119,7 +119,7 @@ public class XUiC_ItemActionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06006864 RID: 26724 RVA: 0x00297030 File Offset: 0x00295230
+	// Token: 0x06006889 RID: 26761 RVA: 0x00298558 File Offset: 0x00296758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressAction(XUiController _sender, int _mouseButton)
 	{
@@ -142,7 +142,7 @@ public class XUiC_ItemActionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06006865 RID: 26725 RVA: 0x002970DC File Offset: 0x002952DC
+	// Token: 0x0600688A RID: 26762 RVA: 0x00298604 File Offset: 0x00296804
 	public override void Update(float _dt)
 	{
 		if (this.isOver && !this.background.UiTransformIsHovered)
@@ -166,7 +166,7 @@ public class XUiC_ItemActionEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06006866 RID: 26726 RVA: 0x0029718C File Offset: 0x0029538C
+	// Token: 0x0600688B RID: 26763 RVA: 0x002986B4 File Offset: 0x002968B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
@@ -174,7 +174,7 @@ public class XUiC_ItemActionEntry : XUiController
 		this.UpdateBindingsVisibility();
 	}
 
-	// Token: 0x06006867 RID: 26727 RVA: 0x0029719C File Offset: 0x0029539C
+	// Token: 0x0600688C RID: 26764 RVA: 0x002986C4 File Offset: 0x002968C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -206,13 +206,13 @@ public class XUiC_ItemActionEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06006868 RID: 26728 RVA: 0x0029729A File Offset: 0x0029549A
+	// Token: 0x0600688D RID: 26765 RVA: 0x002987C2 File Offset: 0x002969C2
 	public void StartTimedAction(float time)
 	{
 		GameManager.Instance.gameObject.AddComponent<XUiC_ItemActionEntry.TimedAction>().InitiateTimer(this.itemActionEntry, time);
 	}
 
-	// Token: 0x06006869 RID: 26729 RVA: 0x002972B8 File Offset: 0x002954B8
+	// Token: 0x0600688E RID: 26766 RVA: 0x002987E0 File Offset: 0x002969E0
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -242,7 +242,7 @@ public class XUiC_ItemActionEntry : XUiController
 		return flag;
 	}
 
-	// Token: 0x0600686A RID: 26730 RVA: 0x00297338 File Offset: 0x00295538
+	// Token: 0x0600688F RID: 26767 RVA: 0x00298860 File Offset: 0x00296A60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateBindingsVisibility()
 	{
@@ -252,71 +252,71 @@ public class XUiC_ItemActionEntry : XUiController
 		this.keyboardButton.IsVisible = flag && flag2;
 	}
 
-	// Token: 0x0600686B RID: 26731 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x06006890 RID: 26768 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	public void MarkDirty()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x04005069 RID: 20585
+	// Token: 0x0400508E RID: 20622
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BaseItemActionEntry itemActionEntry;
 
-	// Token: 0x0400506A RID: 20586
+	// Token: 0x0400508F RID: 20623
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Label lblName;
 
-	// Token: 0x0400506B RID: 20587
+	// Token: 0x04005090 RID: 20624
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Sprite icoIcon;
 
-	// Token: 0x0400506C RID: 20588
+	// Token: 0x04005091 RID: 20625
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Sprite background;
 
-	// Token: 0x0400506D RID: 20589
+	// Token: 0x04005092 RID: 20626
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_GamepadIcon gamepadIcon;
 
-	// Token: 0x0400506E RID: 20590
+	// Token: 0x04005093 RID: 20627
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Label keyboardButton;
 
-	// Token: 0x0400506F RID: 20591
+	// Token: 0x04005094 RID: 20628
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 defaultBackgroundColor = Color.gray;
 
-	// Token: 0x04005070 RID: 20592
+	// Token: 0x04005095 RID: 20629
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 disabledFontColor = Color.gray;
 
-	// Token: 0x04005071 RID: 20593
+	// Token: 0x04005096 RID: 20630
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 defaultFontColor = Color.white;
 
-	// Token: 0x04005072 RID: 20594
+	// Token: 0x04005097 RID: 20631
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isOver;
 
-	// Token: 0x04005073 RID: 20595
+	// Token: 0x04005098 RID: 20632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor statuscolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005074 RID: 20596
+	// Token: 0x04005099 RID: 20633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasPressed;
 
-	// Token: 0x02000D83 RID: 3459
+	// Token: 0x02000D8E RID: 3470
 	public class TimedAction : MonoBehaviour
 	{
-		// Token: 0x0600686D RID: 26733 RVA: 0x002973DA File Offset: 0x002955DA
+		// Token: 0x06006892 RID: 26770 RVA: 0x00298902 File Offset: 0x00296B02
 		public void InitiateTimer(BaseItemActionEntry itemActionEntry, float _amount)
 		{
 			this.itemActionEntry = itemActionEntry;
 			this.waitTime = Time.realtimeSinceStartup + _amount;
 		}
 
-		// Token: 0x0600686E RID: 26734 RVA: 0x002973F0 File Offset: 0x002955F0
+		// Token: 0x06006893 RID: 26771 RVA: 0x00298918 File Offset: 0x00296B18
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -328,12 +328,12 @@ public class XUiC_ItemActionEntry : XUiController
 			}
 		}
 
-		// Token: 0x04005075 RID: 20597
+		// Token: 0x0400509A RID: 20634
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public BaseItemActionEntry itemActionEntry;
 
-		// Token: 0x04005076 RID: 20598
+		// Token: 0x0400509B RID: 20635
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public float waitTime;

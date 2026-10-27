@@ -4,11 +4,11 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F0E RID: 3854
+// Token: 0x02000F19 RID: 3865
 [Preserve]
 public class XUiC_CompassWindow : XUiController
 {
-	// Token: 0x0600785C RID: 30812 RVA: 0x002D994C File Offset: 0x002D7B4C
+	// Token: 0x06007882 RID: 30850 RVA: 0x002DAEA4 File Offset: 0x002D90A4
 	public override void Init()
 	{
 		base.Init();
@@ -34,7 +34,7 @@ public class XUiC_CompassWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600785D RID: 30813 RVA: 0x002D9A18 File Offset: 0x002D7C18
+	// Token: 0x06007883 RID: 30851 RVA: 0x002DAF70 File Offset: 0x002D9170
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -87,7 +87,7 @@ public class XUiC_CompassWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600785E RID: 30814 RVA: 0x002D9C3C File Offset: 0x002D7E3C
+	// Token: 0x06007884 RID: 30852 RVA: 0x002DB194 File Offset: 0x002D9394
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -321,7 +321,7 @@ public class XUiC_CompassWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600785F RID: 30815 RVA: 0x002DA264 File Offset: 0x002D8464
+	// Token: 0x06007885 RID: 30853 RVA: 0x002DB7BC File Offset: 0x002D99BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetTemperatureColor(float _temp)
 	{
@@ -345,7 +345,7 @@ public class XUiC_CompassWindow : XUiController
 		return text;
 	}
 
-	// Token: 0x06007860 RID: 30816 RVA: 0x002DA2C0 File Offset: 0x002D84C0
+	// Token: 0x06007886 RID: 30854 RVA: 0x002DB818 File Offset: 0x002D9A18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMarkers(EntityPlayerLocal localPlayer, ref int waypointSpriteIndex, List<MapObject> _mapObjectList)
 	{
@@ -493,7 +493,7 @@ public class XUiC_CompassWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007861 RID: 30817 RVA: 0x002DA9AC File Offset: 0x002D8BAC
+	// Token: 0x06007887 RID: 30855 RVA: 0x002DBF04 File Offset: 0x002DA104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateNavObjects(EntityPlayerLocal localPlayer, ref int waypointSpriteIndex)
 	{
@@ -634,39 +634,39 @@ public class XUiC_CompassWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007862 RID: 30818 RVA: 0x002DAFF2 File Offset: 0x002D91F2
+	// Token: 0x06007888 RID: 30856 RVA: 0x002DC54A File Offset: 0x002DA74A
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.playerUI.windowManager.Close("windowpaging");
 	}
 
-	// Token: 0x04005943 RID: 22851
+	// Token: 0x04005968 RID: 22888
 	public static string ID = "";
 
-	// Token: 0x04005944 RID: 22852
+	// Token: 0x04005969 RID: 22889
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x04005945 RID: 22853
+	// Token: 0x0400596A RID: 22890
 	public List<UISprite> waypointSpriteList = new List<UISprite>();
 
-	// Token: 0x04005946 RID: 22854
+	// Token: 0x0400596B RID: 22891
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ulong> daytimeFormatter = new CachedStringFormatter<ulong>((ulong _worldTime) => ValueDisplayFormatters.WorldTime(_worldTime, Localization.Get("xuiDayTimeLong", false, null)));
 
-	// Token: 0x04005947 RID: 22855
+	// Token: 0x0400596C RID: 22892
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt dayFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005948 RID: 22856
+	// Token: 0x0400596D RID: 22893
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> timeFormatter = new CachedStringFormatter<int, int>((int _hour, int _min) => string.Format("{0:00}:{1:00}", _hour, _min));
 
-	// Token: 0x04005949 RID: 22857
+	// Token: 0x0400596E RID: 22894
 	public static bool ShowCompass = true;
 
-	// Token: 0x0400594A RID: 22858
+	// Token: 0x0400596F RID: 22895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showSleeperVolumes;
 }

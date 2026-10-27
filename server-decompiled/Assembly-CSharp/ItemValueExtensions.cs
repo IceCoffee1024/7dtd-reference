@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000583 RID: 1411
+// Token: 0x0200058A RID: 1418
 public static class ItemValueExtensions
 {
-	// Token: 0x06002E84 RID: 11908 RVA: 0x00126870 File Offset: 0x00124A70
+	// Token: 0x06002E92 RID: 11922 RVA: 0x00127464 File Offset: 0x00125664
 	public static ItemValue[] CloneItemValueArray(this ItemValue[] _items)
 	{
 		if (_items == null)
@@ -21,7 +21,7 @@ public static class ItemValueExtensions
 		return array;
 	}
 
-	// Token: 0x06002E85 RID: 11909 RVA: 0x001268AC File Offset: 0x00124AAC
+	// Token: 0x06002E93 RID: 11923 RVA: 0x001274A0 File Offset: 0x001256A0
 	public static void ClearItemValueArray(this ItemValue[] _items)
 	{
 		if (_items == null)

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-// Token: 0x0200089E RID: 2206
+// Token: 0x020008A8 RID: 2216
 public class ServerInfoCache
 {
-	// Token: 0x170006C7 RID: 1735
-	// (get) Token: 0x06003F99 RID: 16281 RVA: 0x00190780 File Offset: 0x0018E980
+	// Token: 0x170006CD RID: 1741
+	// (get) Token: 0x06003FBC RID: 16316 RVA: 0x00191828 File Offset: 0x0018FA28
 	public static ServerInfoCache Instance
 	{
 		get
@@ -20,14 +20,14 @@ public class ServerInfoCache
 		}
 	}
 
-	// Token: 0x06003F9A RID: 16282 RVA: 0x00190798 File Offset: 0x0018E998
+	// Token: 0x06003FBD RID: 16317 RVA: 0x00191840 File Offset: 0x0018FA40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int serverInfoToPersistentKey(GameServerInfo _gsi)
 	{
 		return (_gsi.GetValue(GameInfoString.IP) + _gsi.GetValue(GameInfoInt.Port).ToString()).GetHashCode();
 	}
 
-	// Token: 0x06003F9B RID: 16283 RVA: 0x001907C8 File Offset: 0x0018E9C8
+	// Token: 0x06003FBE RID: 16318 RVA: 0x00191870 File Offset: 0x0018FA70
 	public void SavePassword(GameServerInfo _gsi, string _password)
 	{
 		Dictionary<int, string> passwordCacheList = this.GetPasswordCacheList();
@@ -36,7 +36,7 @@ public class ServerInfoCache
 		GamePrefs.Set(EnumGamePrefs.ServerPasswordCache, this.DictToString<int, string>(passwordCacheList));
 	}
 
-	// Token: 0x06003F9C RID: 16284 RVA: 0x001907FC File Offset: 0x0018E9FC
+	// Token: 0x06003FBF RID: 16319 RVA: 0x001918A4 File Offset: 0x0018FAA4
 	public string GetPassword(GameServerInfo _gsi)
 	{
 		Dictionary<int, string> passwordCacheList = this.GetPasswordCacheList();
@@ -49,7 +49,7 @@ public class ServerInfoCache
 		return text;
 	}
 
-	// Token: 0x06003F9D RID: 16285 RVA: 0x00190828 File Offset: 0x0018EA28
+	// Token: 0x06003FC0 RID: 16320 RVA: 0x001918D0 File Offset: 0x0018FAD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, string> GetPasswordCacheList()
 	{
@@ -66,7 +66,7 @@ public class ServerInfoCache
 		return dictionary;
 	}
 
-	// Token: 0x06003F9E RID: 16286 RVA: 0x00190898 File Offset: 0x0018EA98
+	// Token: 0x06003FC1 RID: 16321 RVA: 0x00191940 File Offset: 0x0018FB40
 	public void AddHistory(GameServerInfo _info)
 	{
 		try
@@ -90,7 +90,7 @@ public class ServerInfoCache
 		}
 	}
 
-	// Token: 0x06003F9F RID: 16287 RVA: 0x00190934 File Offset: 0x0018EB34
+	// Token: 0x06003FC2 RID: 16322 RVA: 0x001919DC File Offset: 0x0018FBDC
 	public uint IsHistory(GameServerInfo _info)
 	{
 		uint num;
@@ -118,7 +118,7 @@ public class ServerInfoCache
 		return num;
 	}
 
-	// Token: 0x06003FA0 RID: 16288 RVA: 0x001909C4 File Offset: 0x0018EBC4
+	// Token: 0x06003FC3 RID: 16323 RVA: 0x00191A6C File Offset: 0x0018FC6C
 	public void ToggleFavorite(GameServerInfo _info)
 	{
 		try
@@ -146,7 +146,7 @@ public class ServerInfoCache
 		}
 	}
 
-	// Token: 0x06003FA1 RID: 16289 RVA: 0x00190A94 File Offset: 0x0018EC94
+	// Token: 0x06003FC4 RID: 16324 RVA: 0x00191B3C File Offset: 0x0018FD3C
 	public bool IsFavorite(GameServerInfo _info)
 	{
 		bool flag;
@@ -174,14 +174,14 @@ public class ServerInfoCache
 		return flag;
 	}
 
-	// Token: 0x06003FA2 RID: 16290 RVA: 0x00190B24 File Offset: 0x0018ED24
+	// Token: 0x06003FC5 RID: 16325 RVA: 0x00191BCC File Offset: 0x0018FDCC
 	public Dictionary<ServerInfoCache.FavoritesHistoryKey, ServerInfoCache.FavoritesHistoryValue>.Enumerator GetFavoriteServersEnumerator()
 	{
 		this.getFavHistoryCacheList();
 		return this.favoritesHistoryCache.GetEnumerator();
 	}
 
-	// Token: 0x06003FA3 RID: 16291 RVA: 0x00190B38 File Offset: 0x0018ED38
+	// Token: 0x06003FC6 RID: 16326 RVA: 0x00191BE0 File Offset: 0x0018FDE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ServerInfoCache.FavoritesHistoryKey getKeyFromInfo(GameServerInfo _info)
 	{
@@ -194,7 +194,7 @@ public class ServerInfoCache
 		return new ServerInfoCache.FavoritesHistoryKey(value, value2);
 	}
 
-	// Token: 0x06003FA4 RID: 16292 RVA: 0x00190B74 File Offset: 0x0018ED74
+	// Token: 0x06003FC7 RID: 16327 RVA: 0x00191C1C File Offset: 0x0018FE1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void getFavHistoryCacheList()
 	{
@@ -213,28 +213,28 @@ public class ServerInfoCache
 		}
 	}
 
-	// Token: 0x06003FA5 RID: 16293 RVA: 0x00190BE8 File Offset: 0x0018EDE8
+	// Token: 0x06003FC8 RID: 16328 RVA: 0x00191C90 File Offset: 0x0018FE90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void saveFavHistoryCacheList()
 	{
 		GamePrefs.Set(EnumGamePrefs.ServerHistoryCache, this.DictToString<ServerInfoCache.FavoritesHistoryKey, ServerInfoCache.FavoritesHistoryValue>(this.favoritesHistoryCache));
 	}
 
-	// Token: 0x06003FA6 RID: 16294 RVA: 0x00190C00 File Offset: 0x0018EE00
+	// Token: 0x06003FC9 RID: 16329 RVA: 0x00191CA8 File Offset: 0x0018FEA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string escapeString(string _input)
 	{
 		return _input.Replace(ServerInfoCache.elementSeparatorString, ServerInfoCache.elementSeparatorEscaped).Replace(ServerInfoCache.fieldSeparatorString, ServerInfoCache.fieldSeparatorEscaped);
 	}
 
-	// Token: 0x06003FA7 RID: 16295 RVA: 0x00190C21 File Offset: 0x0018EE21
+	// Token: 0x06003FCA RID: 16330 RVA: 0x00191CC9 File Offset: 0x0018FEC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string unescapeString(string _input)
 	{
 		return _input.Replace(ServerInfoCache.elementSeparatorEscaped, ServerInfoCache.elementSeparatorString).Replace(ServerInfoCache.fieldSeparatorEscaped, ServerInfoCache.fieldSeparatorString);
 	}
 
-	// Token: 0x06003FA8 RID: 16296 RVA: 0x00190C44 File Offset: 0x0018EE44
+	// Token: 0x06003FCB RID: 16331 RVA: 0x00191CEC File Offset: 0x0018FEEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string DictToString<TKey, TValue>(Dictionary<TKey, TValue> _dictionary)
 	{
@@ -256,7 +256,7 @@ public class ServerInfoCache
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06003FA9 RID: 16297 RVA: 0x00190CF8 File Offset: 0x0018EEF8
+	// Token: 0x06003FCC RID: 16332 RVA: 0x00191DA0 File Offset: 0x0018FFA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<TKey, TValue> StringToDict<TKey, TValue>(string _input, Func<string, TKey> _keyParser, Func<string, TValue> _valueParser)
 	{
@@ -292,7 +292,7 @@ public class ServerInfoCache
 		return dictionary;
 	}
 
-	// Token: 0x06003FAA RID: 16298 RVA: 0x00190DE4 File Offset: 0x0018EFE4
+	// Token: 0x06003FCD RID: 16333 RVA: 0x00191E8C File Offset: 0x0019008C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findNextSeparator(string _input, char _separator, int _startInclusive)
 	{
@@ -308,42 +308,42 @@ public class ServerInfoCache
 		return num;
 	}
 
-	// Token: 0x04003395 RID: 13205
+	// Token: 0x040033B5 RID: 13237
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ServerInfoCache instance;
 
-	// Token: 0x04003396 RID: 13206
+	// Token: 0x040033B6 RID: 13238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<ServerInfoCache.FavoritesHistoryKey, ServerInfoCache.FavoritesHistoryValue> favoritesHistoryCache;
 
-	// Token: 0x04003397 RID: 13207
+	// Token: 0x040033B7 RID: 13239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char elementSeparator = ';';
 
-	// Token: 0x04003398 RID: 13208
+	// Token: 0x040033B8 RID: 13240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char fieldSeparator = ':';
 
-	// Token: 0x04003399 RID: 13209
+	// Token: 0x040033B9 RID: 13241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string elementSeparatorString = ';'.ToString();
 
-	// Token: 0x0400339A RID: 13210
+	// Token: 0x040033BA RID: 13242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string fieldSeparatorString = ':'.ToString();
 
-	// Token: 0x0400339B RID: 13211
+	// Token: 0x040033BB RID: 13243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string elementSeparatorEscaped = new string(';', 2);
 
-	// Token: 0x0400339C RID: 13212
+	// Token: 0x040033BC RID: 13244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string fieldSeparatorEscaped = new string(':', 2);
 
-	// Token: 0x0200089F RID: 2207
+	// Token: 0x020008A9 RID: 2217
 	public class FavoritesHistoryKey : IEquatable<ServerInfoCache.FavoritesHistoryKey>
 	{
-		// Token: 0x06003FAD RID: 16301 RVA: 0x00190E78 File Offset: 0x0018F078
+		// Token: 0x06003FD0 RID: 16336 RVA: 0x00191F20 File Offset: 0x00190120
 		public FavoritesHistoryKey(string _address, int _port)
 		{
 			if (string.IsNullOrEmpty(_address))
@@ -358,13 +358,13 @@ public class ServerInfoCache
 			this.Port = _port;
 		}
 
-		// Token: 0x06003FAE RID: 16302 RVA: 0x00190ED8 File Offset: 0x0018F0D8
+		// Token: 0x06003FD1 RID: 16337 RVA: 0x00191F80 File Offset: 0x00190180
 		public override string ToString()
 		{
 			return string.Format("{0}${1}", this.Address, this.Port);
 		}
 
-		// Token: 0x06003FAF RID: 16303 RVA: 0x00190EF8 File Offset: 0x0018F0F8
+		// Token: 0x06003FD2 RID: 16338 RVA: 0x00191FA0 File Offset: 0x001901A0
 		public static ServerInfoCache.FavoritesHistoryKey FromString(string _input)
 		{
 			int num = _input.IndexOf('$');
@@ -373,48 +373,48 @@ public class ServerInfoCache
 			return new ServerInfoCache.FavoritesHistoryKey(text, num2);
 		}
 
-		// Token: 0x06003FB0 RID: 16304 RVA: 0x00190F2B File Offset: 0x0018F12B
+		// Token: 0x06003FD3 RID: 16339 RVA: 0x00191FD3 File Offset: 0x001901D3
 		public bool Equals(ServerInfoCache.FavoritesHistoryKey _other)
 		{
 			return _other != null && (this == _other || (string.Equals(this.Address, _other.Address, StringComparison.OrdinalIgnoreCase) && this.Port == _other.Port));
 		}
 
-		// Token: 0x06003FB1 RID: 16305 RVA: 0x00190F5C File Offset: 0x0018F15C
+		// Token: 0x06003FD4 RID: 16340 RVA: 0x00192004 File Offset: 0x00190204
 		public override bool Equals(object _obj)
 		{
 			return _obj != null && (this == _obj || (_obj.GetType() == base.GetType() && this.Equals((ServerInfoCache.FavoritesHistoryKey)_obj)));
 		}
 
-		// Token: 0x06003FB2 RID: 16306 RVA: 0x00190F8A File Offset: 0x0018F18A
+		// Token: 0x06003FD5 RID: 16341 RVA: 0x00192032 File Offset: 0x00190232
 		public override int GetHashCode()
 		{
 			return (StringComparer.OrdinalIgnoreCase.GetHashCode(this.Address) * 397) ^ this.Port;
 		}
 
-		// Token: 0x0400339D RID: 13213
+		// Token: 0x040033BD RID: 13245
 		public readonly string Address;
 
-		// Token: 0x0400339E RID: 13214
+		// Token: 0x040033BE RID: 13246
 		public readonly int Port;
 	}
 
-	// Token: 0x020008A0 RID: 2208
+	// Token: 0x020008AA RID: 2218
 	public class FavoritesHistoryValue
 	{
-		// Token: 0x06003FB3 RID: 16307 RVA: 0x00190FA9 File Offset: 0x0018F1A9
+		// Token: 0x06003FD6 RID: 16342 RVA: 0x00192051 File Offset: 0x00190251
 		public FavoritesHistoryValue(uint _lastPlayedTime, bool _isFavorite)
 		{
 			this.LastPlayedTime = _lastPlayedTime;
 			this.IsFavorite = _isFavorite;
 		}
 
-		// Token: 0x06003FB4 RID: 16308 RVA: 0x00190FBF File Offset: 0x0018F1BF
+		// Token: 0x06003FD7 RID: 16343 RVA: 0x00192067 File Offset: 0x00190267
 		public override string ToString()
 		{
 			return string.Format("{0}${1}", this.LastPlayedTime, this.IsFavorite);
 		}
 
-		// Token: 0x06003FB5 RID: 16309 RVA: 0x00190FE4 File Offset: 0x0018F1E4
+		// Token: 0x06003FD8 RID: 16344 RVA: 0x0019208C File Offset: 0x0019028C
 		public static ServerInfoCache.FavoritesHistoryValue FromString(string _input)
 		{
 			int num = _input.IndexOf('$');
@@ -425,10 +425,10 @@ public class ServerInfoCache
 			return new ServerInfoCache.FavoritesHistoryValue(num2, flag);
 		}
 
-		// Token: 0x0400339F RID: 13215
+		// Token: 0x040033BF RID: 13247
 		public uint LastPlayedTime;
 
-		// Token: 0x040033A0 RID: 13216
+		// Token: 0x040033C0 RID: 13248
 		public bool IsFavorite;
 	}
 }

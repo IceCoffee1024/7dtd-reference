@@ -6,29 +6,29 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.XBL.Save.MasterFileTable.Latest
 {
-	// Token: 0x02001CA8 RID: 7336
+	// Token: 0x02001CD9 RID: 7385
 	public sealed class Node : IDisposable, IMigratable
 	{
-		// Token: 0x17001B71 RID: 7025
-		// (get) Token: 0x0600D984 RID: 55684 RVA: 0x004DFA5B File Offset: 0x004DDC5B
-		// (set) Token: 0x0600D985 RID: 55685 RVA: 0x004DFA63 File Offset: 0x004DDC63
+		// Token: 0x17001BB9 RID: 7097
+		// (get) Token: 0x0600DA98 RID: 55960 RVA: 0x004E35AB File Offset: 0x004E17AB
+		// (set) Token: 0x0600DA99 RID: 55961 RVA: 0x004E35B3 File Offset: 0x004E17B3
 		public ushort Version
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = 6;
 
-		// Token: 0x17001B72 RID: 7026
-		// (get) Token: 0x0600D986 RID: 55686 RVA: 0x004DFA6C File Offset: 0x004DDC6C
-		// (set) Token: 0x0600D987 RID: 55687 RVA: 0x004DFA74 File Offset: 0x004DDC74
+		// Token: 0x17001BBA RID: 7098
+		// (get) Token: 0x0600DA9A RID: 55962 RVA: 0x004E35BC File Offset: 0x004E17BC
+		// (set) Token: 0x0600DA9B RID: 55963 RVA: 0x004E35C4 File Offset: 0x004E17C4
 		public string Name
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B73 RID: 7027
-		// (get) Token: 0x0600D988 RID: 55688 RVA: 0x004DFA7D File Offset: 0x004DDC7D
+		// Token: 0x17001BBB RID: 7099
+		// (get) Token: 0x0600DA9C RID: 55964 RVA: 0x004E35CD File Offset: 0x004E17CD
 		public IReadOnlyList<BlobRef> BlobRefs
 		{
 			get
@@ -37,17 +37,17 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x17001B74 RID: 7028
-		// (get) Token: 0x0600D989 RID: 55689 RVA: 0x004DFA85 File Offset: 0x004DDC85
-		// (set) Token: 0x0600D98A RID: 55690 RVA: 0x004DFA8D File Offset: 0x004DDC8D
+		// Token: 0x17001BBC RID: 7100
+		// (get) Token: 0x0600DA9D RID: 55965 RVA: 0x004E35D5 File Offset: 0x004E17D5
+		// (set) Token: 0x0600DA9E RID: 55966 RVA: 0x004E35DD File Offset: 0x004E17DD
 		public byte[] FutureData
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = Array.Empty<byte>();
 
-		// Token: 0x17001B75 RID: 7029
-		// (get) Token: 0x0600D98B RID: 55691 RVA: 0x004DFA96 File Offset: 0x004DDC96
+		// Token: 0x17001BBD RID: 7101
+		// (get) Token: 0x0600DA9F RID: 55967 RVA: 0x004E35E6 File Offset: 0x004E17E6
 		public IReadOnlyDictionary<string, Node> Children
 		{
 			get
@@ -56,7 +56,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D98C RID: 55692 RVA: 0x004DFAA0 File Offset: 0x004DDCA0
+		// Token: 0x0600DAA0 RID: 55968 RVA: 0x004E35F0 File Offset: 0x004E17F0
 		public Node()
 		{
 			this.Name = string.Empty;
@@ -70,7 +70,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			this.Parent = null;
 		}
 
-		// Token: 0x0600D98D RID: 55693 RVA: 0x004DFB28 File Offset: 0x004DDD28
+		// Token: 0x0600DAA1 RID: 55969 RVA: 0x004E3678 File Offset: 0x004E1878
 		public void SetBlobRefs(BlobRef[] blobRefs)
 		{
 			object @lock = this.m_lock;
@@ -80,7 +80,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D98E RID: 55694 RVA: 0x004DFB6C File Offset: 0x004DDD6C
+		// Token: 0x0600DAA2 RID: 55970 RVA: 0x004E36BC File Offset: 0x004E18BC
 		public override string ToString()
 		{
 			object @lock = this.m_lock;
@@ -107,7 +107,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return text;
 		}
 
-		// Token: 0x0600D98F RID: 55695 RVA: 0x004DFC50 File Offset: 0x004DDE50
+		// Token: 0x0600DAA3 RID: 55971 RVA: 0x004E37A0 File Offset: 0x004E19A0
 		public void Write(PooledBinaryWriter writer)
 		{
 			object @lock = this.m_lock;
@@ -145,7 +145,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D990 RID: 55696 RVA: 0x004DFDE0 File Offset: 0x004DDFE0
+		// Token: 0x0600DAA4 RID: 55972 RVA: 0x004E3930 File Offset: 0x004E1B30
 		public void Read(PooledBinaryReader reader)
 		{
 			object @lock = this.m_lock;
@@ -185,7 +185,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D991 RID: 55697 RVA: 0x004DFF7C File Offset: 0x004DE17C
+		// Token: 0x0600DAA5 RID: 55973 RVA: 0x004E3ACC File Offset: 0x004E1CCC
 		public void Dispose()
 		{
 			object @lock = this.m_lock;
@@ -202,19 +202,19 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D992 RID: 55698 RVA: 0x004E001C File Offset: 0x004DE21C
+		// Token: 0x0600DAA6 RID: 55974 RVA: 0x004E3B6C File Offset: 0x004E1D6C
 		public bool IsDirectory()
 		{
 			return this.Attributes.HasFlag(NodeAttributes.Directory);
 		}
 
-		// Token: 0x0600D993 RID: 55699 RVA: 0x004E0034 File Offset: 0x004DE234
+		// Token: 0x0600DAA7 RID: 55975 RVA: 0x004E3B84 File Offset: 0x004E1D84
 		public bool IsFile()
 		{
 			return !this.IsDirectory();
 		}
 
-		// Token: 0x0600D994 RID: 55700 RVA: 0x004E0040 File Offset: 0x004DE240
+		// Token: 0x0600DAA8 RID: 55976 RVA: 0x004E3B90 File Offset: 0x004E1D90
 		public Node GetChildNode(StringSpan name)
 		{
 			object @lock = this.m_lock;
@@ -234,14 +234,14 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return node2;
 		}
 
-		// Token: 0x0600D995 RID: 55701 RVA: 0x004E0094 File Offset: 0x004DE294
+		// Token: 0x0600DAA9 RID: 55977 RVA: 0x004E3BE4 File Offset: 0x004E1DE4
 		public Node GetOrCreateChildNode(StringSpan name, bool createDirectory)
 		{
 			bool flag;
 			return this.GetOrCreateChildNode(name, createDirectory, out flag);
 		}
 
-		// Token: 0x0600D996 RID: 55702 RVA: 0x004E00AC File Offset: 0x004DE2AC
+		// Token: 0x0600DAAA RID: 55978 RVA: 0x004E3BFC File Offset: 0x004E1DFC
 		public Node GetOrCreateChildNode(StringSpan name, bool createDirectory, out bool wasCreated)
 		{
 			object @lock = this.m_lock;
@@ -276,7 +276,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return node2;
 		}
 
-		// Token: 0x0600D997 RID: 55703 RVA: 0x004E016C File Offset: 0x004DE36C
+		// Token: 0x0600DAAB RID: 55979 RVA: 0x004E3CBC File Offset: 0x004E1EBC
 		public Node DeleteChildNode(StringSpan name)
 		{
 			object @lock = this.m_lock;
@@ -297,7 +297,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return node2;
 		}
 
-		// Token: 0x0600D998 RID: 55704 RVA: 0x004E01D8 File Offset: 0x004DE3D8
+		// Token: 0x0600DAAC RID: 55980 RVA: 0x004E3D28 File Offset: 0x004E1F28
 		public IEnumerable<Node> Enumerate(bool includeSelf, bool recursive)
 		{
 			List<Node> list = new List<Node>();
@@ -332,13 +332,13 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return list;
 		}
 
-		// Token: 0x0600D999 RID: 55705 RVA: 0x004E0274 File Offset: 0x004DE474
+		// Token: 0x0600DAAD RID: 55981 RVA: 0x004E3DC4 File Offset: 0x004E1FC4
 		public void MoveChild(Node child)
 		{
 			this.MoveChild(child, child.Name);
 		}
 
-		// Token: 0x0600D99A RID: 55706 RVA: 0x004E0288 File Offset: 0x004DE488
+		// Token: 0x0600DAAE RID: 55982 RVA: 0x004E3DD8 File Offset: 0x004E1FD8
 		public void MoveChild(Node child, StringSpan newName)
 		{
 			object @lock = this.m_lock;
@@ -364,7 +364,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D99C RID: 55708 RVA: 0x004E0350 File Offset: 0x004DE550
+		// Token: 0x0600DAB0 RID: 55984 RVA: 0x004E3EA0 File Offset: 0x004E20A0
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <Enumerate>g__AddNodeChildrenToStack|38_0(Stack<Node> stack, Node currentNode)
@@ -379,7 +379,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D99D RID: 55709 RVA: 0x004E03D0 File Offset: 0x004DE5D0
+		// Token: 0x0600DAB1 RID: 55985 RVA: 0x004E3F20 File Offset: 0x004E2120
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <MoveChild>g__MoveChildInternal|40_0(Node oldParent, Node newParent, Node child, StringSpan newName)
@@ -409,37 +409,37 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			newParent.LastWriteTimeUtc = utcNow;
 		}
 
-		// Token: 0x0400A50C RID: 42252
+		// Token: 0x0400A5F5 RID: 42485
 		public const ushort VERSION = 6;
 
-		// Token: 0x0400A50D RID: 42253
+		// Token: 0x0400A5F6 RID: 42486
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly DateTime DefaultLastWriteTime = new DateTime(0L, DateTimeKind.Utc);
 
-		// Token: 0x0400A510 RID: 42256
+		// Token: 0x0400A5F9 RID: 42489
 		public DateTime LastWriteTimeUtc;
 
-		// Token: 0x0400A511 RID: 42257
+		// Token: 0x0400A5FA RID: 42490
 		public NodeAttributes Attributes;
 
-		// Token: 0x0400A512 RID: 42258
+		// Token: 0x0400A5FB RID: 42491
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BlobRef[] m_blobRefs;
 
-		// Token: 0x0400A513 RID: 42259
+		// Token: 0x0400A5FC RID: 42492
 		public DateTime CreationTimeUtc;
 
-		// Token: 0x0400A515 RID: 42261
+		// Token: 0x0400A5FE RID: 42494
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StringSpanDictionary<Node> m_children;
 
-		// Token: 0x0400A516 RID: 42262
+		// Token: 0x0400A5FF RID: 42495
 		public readonly object m_blobLock;
 
-		// Token: 0x0400A517 RID: 42263
+		// Token: 0x0400A600 RID: 42496
 		public readonly object m_lock;
 
-		// Token: 0x0400A518 RID: 42264
+		// Token: 0x0400A601 RID: 42497
 		public Node Parent;
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C48 RID: 3144
+// Token: 0x02000C53 RID: 3155
 public class ThreadProcessingPool
 {
-	// Token: 0x170009D4 RID: 2516
-	// (get) Token: 0x06005F54 RID: 24404 RVA: 0x0025DCC4 File Offset: 0x0025BEC4
+	// Token: 0x170009DA RID: 2522
+	// (get) Token: 0x06005F79 RID: 24441 RVA: 0x0025F1EC File Offset: 0x0025D3EC
 	public int Count
 	{
 		get
@@ -20,7 +20,7 @@ public class ThreadProcessingPool
 		}
 	}
 
-	// Token: 0x06005F55 RID: 24405 RVA: 0x0025DD0C File Offset: 0x0025BF0C
+	// Token: 0x06005F7A RID: 24442 RVA: 0x0025F234 File Offset: 0x0025D434
 	public ThreadProcessingPool(int initialCapacity, int initialCount)
 	{
 		this._poolLock = new object();
@@ -31,7 +31,7 @@ public class ThreadProcessingPool
 		}
 	}
 
-	// Token: 0x06005F56 RID: 24406 RVA: 0x0025DD54 File Offset: 0x0025BF54
+	// Token: 0x06005F7B RID: 24443 RVA: 0x0025F27C File Offset: 0x0025D47C
 	public ThreadProcessing GetObject(List<ThreadInfoParam> _JobList)
 	{
 		object poolLock = this._poolLock;
@@ -53,7 +53,7 @@ public class ThreadProcessingPool
 		return threadProcessing;
 	}
 
-	// Token: 0x06005F57 RID: 24407 RVA: 0x0025DDE0 File Offset: 0x0025BFE0
+	// Token: 0x06005F7C RID: 24444 RVA: 0x0025F308 File Offset: 0x0025D508
 	public void ReturnObject(ThreadProcessing item)
 	{
 		if (item == null)
@@ -71,11 +71,11 @@ public class ThreadProcessingPool
 		}
 	}
 
-	// Token: 0x04004AEE RID: 19182
+	// Token: 0x04004B13 RID: 19219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ThreadProcessing> pool;
 
-	// Token: 0x04004AEF RID: 19183
+	// Token: 0x04004B14 RID: 19220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object _poolLock;
 }

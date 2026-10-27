@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020002EC RID: 748
+// Token: 0x020002EE RID: 750
 public class Dialog
 {
 	// Token: 0x17000258 RID: 600
-	// (get) Token: 0x06001563 RID: 5475 RVA: 0x00080A07 File Offset: 0x0007EC07
-	// (set) Token: 0x06001564 RID: 5476 RVA: 0x00080A23 File Offset: 0x0007EC23
+	// (get) Token: 0x06001567 RID: 5479 RVA: 0x00080C2C File Offset: 0x0007EE2C
+	// (set) Token: 0x06001568 RID: 5480 RVA: 0x00080C48 File Offset: 0x0007EE48
 	public DialogStatement CurrentStatement
 	{
 		get
@@ -28,13 +28,13 @@ public class Dialog
 		}
 	}
 
-	// Token: 0x06001565 RID: 5477 RVA: 0x00080A44 File Offset: 0x0007EC44
+	// Token: 0x06001569 RID: 5481 RVA: 0x00080C68 File Offset: 0x0007EE68
 	public Dialog(string newID)
 	{
 		this.ID = newID;
 	}
 
-	// Token: 0x06001566 RID: 5478 RVA: 0x00080AB8 File Offset: 0x0007ECB8
+	// Token: 0x0600156A RID: 5482 RVA: 0x00080CDC File Offset: 0x0007EEDC
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public DialogStatement GetStatement(string currentStatementID)
 	{
@@ -56,7 +56,7 @@ public class Dialog
 		return null;
 	}
 
-	// Token: 0x06001567 RID: 5479 RVA: 0x00080B2C File Offset: 0x0007ED2C
+	// Token: 0x0600156B RID: 5483 RVA: 0x00080D50 File Offset: 0x0007EF50
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public DialogResponse GetResponse(string currentResponseID)
 	{
@@ -74,7 +74,7 @@ public class Dialog
 		return null;
 	}
 
-	// Token: 0x06001568 RID: 5480 RVA: 0x00080B8C File Offset: 0x0007ED8C
+	// Token: 0x0600156C RID: 5484 RVA: 0x00080DB0 File Offset: 0x0007EFB0
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public DialogStatement GetFirstStatment(EntityPlayer player)
 	{
@@ -106,14 +106,14 @@ public class Dialog
 		return null;
 	}
 
-	// Token: 0x06001569 RID: 5481 RVA: 0x00080C5C File Offset: 0x0007EE5C
+	// Token: 0x0600156D RID: 5485 RVA: 0x00080E80 File Offset: 0x0007F080
 	public void RestartDialog(EntityPlayer player)
 	{
 		this.CurrentStatement = this.GetFirstStatment(player);
 		this.ChildDialog = null;
 	}
 
-	// Token: 0x0600156A RID: 5482 RVA: 0x00080C74 File Offset: 0x0007EE74
+	// Token: 0x0600156E RID: 5486 RVA: 0x00080E98 File Offset: 0x0007F098
 	public void SelectResponse(DialogResponse response, EntityPlayer player)
 	{
 		if (this.ChildDialog != null)
@@ -140,53 +140,53 @@ public class Dialog
 		this.CurrentStatement = this.GetStatement(response.NextStatementID);
 	}
 
-	// Token: 0x0600156B RID: 5483 RVA: 0x00080D38 File Offset: 0x0007EF38
+	// Token: 0x0600156F RID: 5487 RVA: 0x00080F5C File Offset: 0x0007F15C
 	public static void Cleanup()
 	{
 		Dialog.DialogList.Clear();
 	}
 
-	// Token: 0x0600156C RID: 5484 RVA: 0x00080D44 File Offset: 0x0007EF44
+	// Token: 0x06001570 RID: 5488 RVA: 0x00080F68 File Offset: 0x0007F168
 	public static void ReloadDialogs()
 	{
 		Dialog.Cleanup();
 		WorldStaticData.Reset("dialogs");
 	}
 
-	// Token: 0x04000E57 RID: 3671
+	// Token: 0x04000E67 RID: 3687
 	public static Dictionary<string, Dialog> DialogList = new Dictionary<string, Dialog>();
 
-	// Token: 0x04000E58 RID: 3672
+	// Token: 0x04000E68 RID: 3688
 	public string ID = "";
 
-	// Token: 0x04000E59 RID: 3673
+	// Token: 0x04000E69 RID: 3689
 	public string StartStatementID = "";
 
-	// Token: 0x04000E5A RID: 3674
+	// Token: 0x04000E6A RID: 3690
 	public string StartResponseID = "";
 
-	// Token: 0x04000E5B RID: 3675
+	// Token: 0x04000E6B RID: 3691
 	public List<DialogPhase> Phases = new List<DialogPhase>();
 
-	// Token: 0x04000E5C RID: 3676
+	// Token: 0x04000E6C RID: 3692
 	public List<DialogStatement> Statements = new List<DialogStatement>();
 
-	// Token: 0x04000E5D RID: 3677
+	// Token: 0x04000E6D RID: 3693
 	public List<DialogResponse> Responses = new List<DialogResponse>();
 
-	// Token: 0x04000E5E RID: 3678
+	// Token: 0x04000E6E RID: 3694
 	public EntityNPC CurrentOwner;
 
-	// Token: 0x04000E5F RID: 3679
+	// Token: 0x04000E6F RID: 3695
 	public Dialog ChildDialog;
 
-	// Token: 0x04000E60 RID: 3680
+	// Token: 0x04000E70 RID: 3696
 	public List<QuestEntry> QuestEntryList = new List<QuestEntry>();
 
-	// Token: 0x04000E61 RID: 3681
+	// Token: 0x04000E71 RID: 3697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DialogStatement currentStatement;
 
-	// Token: 0x04000E62 RID: 3682
+	// Token: 0x04000E72 RID: 3698
 	public string currentReturnStatement = "";
 }

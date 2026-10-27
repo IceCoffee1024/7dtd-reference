@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000910 RID: 2320
+// Token: 0x0200091A RID: 2330
 public class PowerConsumerToggle : PowerConsumer
 {
-	// Token: 0x17000732 RID: 1842
-	// (get) Token: 0x06004292 RID: 17042 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000738 RID: 1848
+	// (get) Token: 0x060042B5 RID: 17077 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -14,9 +14,9 @@ public class PowerConsumerToggle : PowerConsumer
 		}
 	}
 
-	// Token: 0x17000733 RID: 1843
-	// (get) Token: 0x06004293 RID: 17043 RVA: 0x001A26D3 File Offset: 0x001A08D3
-	// (set) Token: 0x06004294 RID: 17044 RVA: 0x001A26DB File Offset: 0x001A08DB
+	// Token: 0x17000739 RID: 1849
+	// (get) Token: 0x060042B6 RID: 17078 RVA: 0x001A377B File Offset: 0x001A197B
+	// (set) Token: 0x060042B7 RID: 17079 RVA: 0x001A3783 File Offset: 0x001A1983
 	public bool IsToggled
 	{
 		get
@@ -30,7 +30,7 @@ public class PowerConsumerToggle : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004295 RID: 17045 RVA: 0x001A26EC File Offset: 0x001A08EC
+	// Token: 0x060042B8 RID: 17080 RVA: 0x001A3794 File Offset: 0x001A1994
 	public override void HandlePowerUpdate(bool isOn)
 	{
 		bool flag = this.isPowered && isOn && this.isToggled;
@@ -52,7 +52,7 @@ public class PowerConsumerToggle : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004296 RID: 17046 RVA: 0x001A2774 File Offset: 0x001A0974
+	// Token: 0x060042B9 RID: 17081 RVA: 0x001A381C File Offset: 0x001A1A1C
 	public override void HandlePowerReceived(ref ushort power)
 	{
 		ushort num = (ushort)Mathf.Min((int)this.RequiredPower, (int)power);
@@ -84,21 +84,21 @@ public class PowerConsumerToggle : PowerConsumer
 		}
 	}
 
-	// Token: 0x06004297 RID: 17047 RVA: 0x001A2807 File Offset: 0x001A0A07
+	// Token: 0x060042BA RID: 17082 RVA: 0x001A38AF File Offset: 0x001A1AAF
 	public override void read(PooledBinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
 		this.isToggled = _br.ReadBoolean();
 	}
 
-	// Token: 0x06004298 RID: 17048 RVA: 0x001A281D File Offset: 0x001A0A1D
+	// Token: 0x060042BB RID: 17083 RVA: 0x001A38C5 File Offset: 0x001A1AC5
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.isToggled);
 	}
 
-	// Token: 0x0400361B RID: 13851
+	// Token: 0x0400363B RID: 13883
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isToggled = true;
 }

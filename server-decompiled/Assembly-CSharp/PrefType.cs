@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000A08 RID: 2568
+// Token: 0x02000A12 RID: 2578
 public enum PrefType
 {
-	// Token: 0x04003BF2 RID: 15346
+	// Token: 0x04003C13 RID: 15379
 	Float,
-	// Token: 0x04003BF3 RID: 15347
+	// Token: 0x04003C14 RID: 15380
 	Int,
-	// Token: 0x04003BF4 RID: 15348
+	// Token: 0x04003C15 RID: 15381
 	String
 }

@@ -1,45 +1,45 @@
 ﻿using System;
 
-// Token: 0x02000BAE RID: 2990
+// Token: 0x02000BB9 RID: 3001
 [Flags]
 public enum ChunkProtectionLevel
 {
-	// Token: 0x040045CC RID: 17868
+	// Token: 0x040045F1 RID: 17905
 	None = 0,
-	// Token: 0x040045CD RID: 17869
+	// Token: 0x040045F2 RID: 17906
 	NearOfflinePlayer = 1,
-	// Token: 0x040045CE RID: 17870
+	// Token: 0x040045F3 RID: 17907
 	NearBedroll = 2,
-	// Token: 0x040045CF RID: 17871
+	// Token: 0x040045F4 RID: 17908
 	NearSupplyCrate = 4,
-	// Token: 0x040045D0 RID: 17872
+	// Token: 0x040045F5 RID: 17909
 	NearQuestObjective = 8,
-	// Token: 0x040045D1 RID: 17873
+	// Token: 0x040045F6 RID: 17910
 	NearDroppedBackpack = 16,
-	// Token: 0x040045D2 RID: 17874
+	// Token: 0x040045F7 RID: 17911
 	NearVehicle = 32,
-	// Token: 0x040045D3 RID: 17875
+	// Token: 0x040045F8 RID: 17912
 	NearLandClaim = 64,
-	// Token: 0x040045D4 RID: 17876
+	// Token: 0x040045F9 RID: 17913
 	OfflinePlayer = 128,
-	// Token: 0x040045D5 RID: 17877
+	// Token: 0x040045FA RID: 17914
 	Bedroll = 256,
-	// Token: 0x040045D6 RID: 17878
+	// Token: 0x040045FB RID: 17915
 	SupplyCrate = 512,
-	// Token: 0x040045D7 RID: 17879
+	// Token: 0x040045FC RID: 17916
 	QuestObjective = 1024,
-	// Token: 0x040045D8 RID: 17880
+	// Token: 0x040045FD RID: 17917
 	DroppedBackpack = 2048,
-	// Token: 0x040045D9 RID: 17881
+	// Token: 0x040045FE RID: 17918
 	Trader = 4096,
-	// Token: 0x040045DA RID: 17882
+	// Token: 0x040045FF RID: 17919
 	Drone = 8192,
-	// Token: 0x040045DB RID: 17883
+	// Token: 0x04004600 RID: 17920
 	Vehicle = 16384,
-	// Token: 0x040045DC RID: 17884
+	// Token: 0x04004601 RID: 17921
 	LandClaim = 32768,
-	// Token: 0x040045DD RID: 17885
+	// Token: 0x04004602 RID: 17922
 	CurrentlySynced = 65536,
-	// Token: 0x040045DE RID: 17886
+	// Token: 0x04004603 RID: 17923
 	All = -1
 }

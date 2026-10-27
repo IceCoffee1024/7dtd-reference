@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015FC RID: 5628
+// Token: 0x0200160E RID: 5646
 public class vp_SurfaceIdentifier : MonoBehaviour
 {
-	// Token: 0x040082D0 RID: 33488
+	// Token: 0x04008311 RID: 33553
 	public int SurfaceID;
 }

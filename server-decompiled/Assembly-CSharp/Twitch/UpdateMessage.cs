@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001819 RID: 6169
+	// Token: 0x0200184A RID: 6218
 	public class UpdateMessage
 	{
-		// Token: 0x0600BF27 RID: 48935 RVA: 0x004679A4 File Offset: 0x00465BA4
+		// Token: 0x0600C03B RID: 49211 RVA: 0x0046B350 File Offset: 0x00469550
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string DifficultyValueLocalized()
 		{
@@ -14,7 +14,7 @@ namespace Twitch
 			return Localization.Get(string.Format("goDifficulty{0}", num) + ((num == 2) ? "_nodefault" : ""), false, null);
 		}
 
-		// Token: 0x0600BF28 RID: 48936 RVA: 0x004679E8 File Offset: 0x00465BE8
+		// Token: 0x0600C03C RID: 49212 RVA: 0x0046B394 File Offset: 0x00469594
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool IsGameModded()
 		{
@@ -22,7 +22,7 @@ namespace Twitch
 			return gameServerInfo != null && gameServerInfo.GetValue(GameInfoBool.ModdedConfig);
 		}
 
-		// Token: 0x0600BF29 RID: 48937 RVA: 0x00467A28 File Offset: 0x00465C28
+		// Token: 0x0600C03D RID: 49213 RVA: 0x0046B3D4 File Offset: 0x004695D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string ModdedValueLocalized()
 		{
@@ -38,7 +38,7 @@ namespace Twitch
 			return Localization.Get("xuiComboYesNoOn", false, null);
 		}
 
-		// Token: 0x0600BF2A RID: 48938 RVA: 0x00467A84 File Offset: 0x00465C84
+		// Token: 0x0600C03E RID: 49214 RVA: 0x0046B430 File Offset: 0x00469630
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetLocalizedPPRateValue()
 		{
@@ -61,7 +61,7 @@ namespace Twitch
 			return Localization.Get("xuiTwitchPointGenerationStandard", false, null);
 		}
 
-		// Token: 0x0600BF2B RID: 48939 RVA: 0x00467B2C File Offset: 0x00465D2C
+		// Token: 0x0600C03F RID: 49215 RVA: 0x0046B4D8 File Offset: 0x004696D8
 		public UpdateMessage()
 		{
 			TwitchLeaderboardStats.StatEntry topKillerViewer = TwitchManager.LeaderboardStats.TopKillerViewer;
@@ -82,85 +82,85 @@ namespace Twitch
 			base..ctor();
 		}
 
-		// Token: 0x04008EF2 RID: 36594
+		// Token: 0x04008FDB RID: 36827
 		public string updateSignature;
 
-		// Token: 0x04008EF3 RID: 36595
+		// Token: 0x04008FDC RID: 36828
 		public string status;
 
-		// Token: 0x04008EF4 RID: 36596
+		// Token: 0x04008FDD RID: 36829
 		public int[] actionCooldowns;
 
-		// Token: 0x04008EF5 RID: 36597
+		// Token: 0x04008FDE RID: 36830
 		public Dictionary<string, int> bitBalances;
 
-		// Token: 0x04008EF6 RID: 36598
+		// Token: 0x04008FDF RID: 36831
 		public Dictionary<string, bool> hasChatted;
 
-		// Token: 0x04008EF7 RID: 36599
+		// Token: 0x04008FE0 RID: 36832
 		public string ActionPresetKey = TwitchManager.Current.CurrentActionPreset.Name;
 
-		// Token: 0x04008EF8 RID: 36600
+		// Token: 0x04008FE1 RID: 36833
 		public string VotePresetKey = TwitchManager.Current.CurrentVotePreset.Name;
 
-		// Token: 0x04008EF9 RID: 36601
+		// Token: 0x04008FE2 RID: 36834
 		public string EventPresetKey = TwitchManager.Current.CurrentEventPreset.Name;
 
-		// Token: 0x04008EFA RID: 36602
+		// Token: 0x04008FE3 RID: 36835
 		public int Difficulty = GameStats.GetInt(EnumGameStats.GameDifficulty) + 1;
 
-		// Token: 0x04008EFB RID: 36603
+		// Token: 0x04008FE4 RID: 36836
 		public int DayMinutes = GamePrefs.GetInt(EnumGamePrefs.DayNightLength);
 
-		// Token: 0x04008EFC RID: 36604
+		// Token: 0x04008FE5 RID: 36837
 		public int PPRate = (int)TwitchManager.Current.ViewerData.PointRate;
 
-		// Token: 0x04008EFD RID: 36605
+		// Token: 0x04008FE6 RID: 36838
 		public bool IsModded = UpdateMessage.IsGameModded();
 
-		// Token: 0x04008EFE RID: 36606
+		// Token: 0x04008FE7 RID: 36839
 		public int GoodRewardTime = TwitchManager.LeaderboardStats.GoodRewardTime;
 
-		// Token: 0x04008EFF RID: 36607
+		// Token: 0x04008FE8 RID: 36840
 		public string ActionPresetValue = TwitchManager.Current.CurrentActionPreset.Title;
 
-		// Token: 0x04008F00 RID: 36608
+		// Token: 0x04008FE9 RID: 36841
 		public string VotePresetValue = TwitchManager.Current.CurrentVotePreset.Title;
 
-		// Token: 0x04008F01 RID: 36609
+		// Token: 0x04008FEA RID: 36842
 		public string EventPresetValue = TwitchManager.Current.CurrentEventPreset.Title;
 
-		// Token: 0x04008F02 RID: 36610
+		// Token: 0x04008FEB RID: 36843
 		public string TopKillerValue;
 
-		// Token: 0x04008F03 RID: 36611
+		// Token: 0x04008FEC RID: 36844
 		public string TopGoodValue;
 
-		// Token: 0x04008F04 RID: 36612
+		// Token: 0x04008FED RID: 36845
 		public string TopBadValue;
 
-		// Token: 0x04008F05 RID: 36613
+		// Token: 0x04008FEE RID: 36846
 		public string BestHelperValue;
 
-		// Token: 0x04008F06 RID: 36614
+		// Token: 0x04008FEF RID: 36847
 		public string TotalGoodActionsValue;
 
-		// Token: 0x04008F07 RID: 36615
+		// Token: 0x04008FF0 RID: 36848
 		public string TotalBadActionsValue;
 
-		// Token: 0x04008F08 RID: 36616
+		// Token: 0x04008FF1 RID: 36849
 		public string LargestPimpPotValue;
 
-		// Token: 0x04008F09 RID: 36617
+		// Token: 0x04008FF2 RID: 36850
 		public string DifficultyValue;
 
-		// Token: 0x04008F0A RID: 36618
+		// Token: 0x04008FF3 RID: 36851
 		public string DayCycleValue;
 
-		// Token: 0x04008F0B RID: 36619
+		// Token: 0x04008FF4 RID: 36852
 		public string PPRateValue;
 
-		// Token: 0x04008F0C RID: 36620
+		// Token: 0x04008FF5 RID: 36853
 		public string ModdedValue;
 	}
 }

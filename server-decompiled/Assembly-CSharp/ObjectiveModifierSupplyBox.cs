@@ -2,25 +2,25 @@
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000982 RID: 2434
+// Token: 0x0200098C RID: 2444
 [Preserve]
 public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 {
-	// Token: 0x060046A0 RID: 18080 RVA: 0x001BF8D6 File Offset: 0x001BDAD6
+	// Token: 0x060046C3 RID: 18115 RVA: 0x001C095A File Offset: 0x001BEB5A
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.ContainerOpened += this.Current_ContainerOpened;
 		QuestEventManager.Current.ContainerClosed += this.Current_ContainerClosed;
 	}
 
-	// Token: 0x060046A1 RID: 18081 RVA: 0x001BF904 File Offset: 0x001BDB04
+	// Token: 0x060046C4 RID: 18116 RVA: 0x001C0988 File Offset: 0x001BEB88
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.ContainerOpened -= this.Current_ContainerOpened;
 		QuestEventManager.Current.ContainerClosed -= this.Current_ContainerClosed;
 	}
 
-	// Token: 0x060046A2 RID: 18082 RVA: 0x001BF934 File Offset: 0x001BDB34
+	// Token: 0x060046C5 RID: 18117 RVA: 0x001C09B8 File Offset: 0x001BEBB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_ContainerOpened(Vector3i containerLocation, TEFeatureStorage tileEntity, bool firstTimeTouched)
 	{
@@ -39,7 +39,7 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046A3 RID: 18083 RVA: 0x001BF9A8 File Offset: 0x001BDBA8
+	// Token: 0x060046C6 RID: 18118 RVA: 0x001C0A2C File Offset: 0x001BEC2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_ContainerClosed(Vector3i containerLocation, TEFeatureStorage tileEntity)
 	{
@@ -50,7 +50,7 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046A4 RID: 18084 RVA: 0x001BF9E8 File Offset: 0x001BDBE8
+	// Token: 0x060046C7 RID: 18119 RVA: 0x001C0A6C File Offset: 0x001BEC6C
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -72,7 +72,7 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046A5 RID: 18085 RVA: 0x001BFAA4 File Offset: 0x001BDCA4
+	// Token: 0x060046C8 RID: 18120 RVA: 0x001C0B28 File Offset: 0x001BED28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetupExpectedItem()
 	{
@@ -91,7 +91,7 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		this.expectedItem.Meta = base.OwnerObjective.OwnerQuest.QuestCode;
 	}
 
-	// Token: 0x060046A6 RID: 18086 RVA: 0x001BFB4C File Offset: 0x001BDD4C
+	// Token: 0x060046C9 RID: 18121 RVA: 0x001C0BD0 File Offset: 0x001BEDD0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void RemoveFetchItems()
 	{
@@ -115,7 +115,7 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		}
 	}
 
-	// Token: 0x060046A7 RID: 18087 RVA: 0x001BFBE8 File Offset: 0x001BDDE8
+	// Token: 0x060046CA RID: 18122 RVA: 0x001C0C6C File Offset: 0x001BEE6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int GetItemCount()
 	{
@@ -124,7 +124,7 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		return playerInventory.Backpack.GetItemCount(this.expectedItem, -1, base.OwnerObjective.OwnerQuest.QuestCode, true) + playerInventory.Toolbelt.GetItemCount(this.expectedItem, false, -1, base.OwnerObjective.OwnerQuest.QuestCode, true);
 	}
 
-	// Token: 0x060046A8 RID: 18088 RVA: 0x001BFC7D File Offset: 0x001BDE7D
+	// Token: 0x060046CB RID: 18123 RVA: 0x001C0D01 File Offset: 0x001BEF01
 	public override BaseObjectiveModifier Clone()
 	{
 		return new ObjectiveModifierSupplyBox
@@ -136,43 +136,43 @@ public class ObjectiveModifierSupplyBox : BaseObjectiveModifier
 		};
 	}
 
-	// Token: 0x040038FC RID: 14588
+	// Token: 0x0400391C RID: 14620
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x040038FD RID: 14589
+	// Token: 0x0400391D RID: 14621
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x040038FE RID: 14590
+	// Token: 0x0400391E RID: 14622
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int currentCount;
 
-	// Token: 0x040038FF RID: 14591
+	// Token: 0x0400391F RID: 14623
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int itemCount;
 
-	// Token: 0x04003900 RID: 14592
+	// Token: 0x04003920 RID: 14624
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string defaultContainer = "";
 
-	// Token: 0x04003901 RID: 14593
+	// Token: 0x04003921 RID: 14625
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string expectedItemClassID = "questItem";
 
-	// Token: 0x04003902 RID: 14594
+	// Token: 0x04003922 RID: 14626
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string expectedQuestItemID = "";
 
-	// Token: 0x04003903 RID: 14595
+	// Token: 0x04003923 RID: 14627
 	public static string PropExpectedItemClassID = "item_class";
 
-	// Token: 0x04003904 RID: 14596
+	// Token: 0x04003924 RID: 14628
 	public static string PropQuestItemID = "quest_item_ID";
 
-	// Token: 0x04003905 RID: 14597
+	// Token: 0x04003925 RID: 14629
 	public static string PropItemCount = "item_count";
 
-	// Token: 0x04003906 RID: 14598
+	// Token: 0x04003926 RID: 14630
 	public static string PropDefaultContainer = "container";
 }

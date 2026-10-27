@@ -5,25 +5,25 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000269 RID: 617
+// Token: 0x0200026B RID: 619
 [Preserve]
 public class ConsoleCmdPrefab : ConsoleCmdAbstract
 {
-	// Token: 0x06001235 RID: 4661 RVA: 0x00071FCB File Offset: 0x000701CB
+	// Token: 0x06001239 RID: 4665 RVA: 0x0007219B File Offset: 0x0007039B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "prefab" };
 	}
 
-	// Token: 0x06001236 RID: 4662 RVA: 0x00071FDB File Offset: 0x000701DB
+	// Token: 0x0600123A RID: 4666 RVA: 0x000721AB File Offset: 0x000703AB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Prefab commands";
 	}
 
-	// Token: 0x06001237 RID: 4663 RVA: 0x00071FE4 File Offset: 0x000701E4
+	// Token: 0x0600123B RID: 4667 RVA: 0x000721B4 File Offset: 0x000703B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -35,7 +35,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		}).Unindent(true);
 	}
 
-	// Token: 0x06001238 RID: 4664 RVA: 0x00072110 File Offset: 0x00070310
+	// Token: 0x0600123C RID: 4668 RVA: 0x000722E0 File Offset: 0x000704E0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!GameManager.Instance.IsEditMode())
@@ -305,7 +305,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001239 RID: 4665 RVA: 0x000727C4 File Offset: 0x000709C4
+	// Token: 0x0600123D RID: 4669 RVA: 0x00072994 File Offset: 0x00070B94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void getPrefabStats(PathAbstractions.AbstractedLocation _path, Prefab _prefab)
 	{
@@ -326,7 +326,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		}));
 	}
 
-	// Token: 0x0600123A RID: 4666 RVA: 0x0007289C File Offset: 0x00070A9C
+	// Token: 0x0600123E RID: 4670 RVA: 0x00072A6C File Offset: 0x00070C6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void thumbnailBulk()
 	{
@@ -348,7 +348,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		ThreadManager.StartCoroutine(this.thumbnailWaitForAllChunksBuilt(abstractedLocation, 0f));
 	}
 
-	// Token: 0x0600123B RID: 4667 RVA: 0x0007295C File Offset: 0x00070B5C
+	// Token: 0x0600123F RID: 4671 RVA: 0x00072B2C File Offset: 0x00070D2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator thumbnailWaitForAllChunksBuilt(PathAbstractions.AbstractedLocation _location, float _delay = 0f)
 	{
@@ -382,7 +382,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x0600123C RID: 4668 RVA: 0x0007297C File Offset: 0x00070B7C
+	// Token: 0x06001240 RID: 4672 RVA: 0x00072B4C File Offset: 0x00070D4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void mergeBulk()
 	{
@@ -403,7 +403,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600123D RID: 4669 RVA: 0x00072A1C File Offset: 0x00070C1C
+	// Token: 0x06001241 RID: 4673 RVA: 0x00072BEC File Offset: 0x00070DEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void convertBulk()
 	{
@@ -436,7 +436,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		PrefabHelpers.convert(new Action(this.convertBulk));
 	}
 
-	// Token: 0x0600123E RID: 4670 RVA: 0x00072AF8 File Offset: 0x00070CF8
+	// Token: 0x06001242 RID: 4674 RVA: 0x00072CC8 File Offset: 0x00070EC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void convertBulkInsideOutside()
 	{
@@ -459,7 +459,7 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		PrefabHelpers.convertInsideOutside(new Action(this.convertBulkInsideOutside));
 	}
 
-	// Token: 0x0600123F RID: 4671 RVA: 0x00072B90 File Offset: 0x00070D90
+	// Token: 0x06001243 RID: 4675 RVA: 0x00072D60 File Offset: 0x00070F60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void restore()
 	{
@@ -473,31 +473,31 @@ public class ConsoleCmdPrefab : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000D1D RID: 3357
+	// Token: 0x04000D1E RID: 3358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly MicroStopwatch processedSW = new MicroStopwatch();
 
-	// Token: 0x04000D1E RID: 3358
+	// Token: 0x04000D1F RID: 3359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int processedCount;
 
-	// Token: 0x04000D1F RID: 3359
+	// Token: 0x04000D20 RID: 3360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int stopCount;
 
-	// Token: 0x04000D20 RID: 3360
+	// Token: 0x04000D21 RID: 3361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<PathAbstractions.AbstractedLocation> prefabsToConvert = new List<PathAbstractions.AbstractedLocation>();
 
-	// Token: 0x04000D21 RID: 3361
+	// Token: 0x04000D22 RID: 3362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<PathAbstractions.AbstractedLocation> prefabsToMerge = new List<PathAbstractions.AbstractedLocation>();
 
-	// Token: 0x04000D22 RID: 3362
+	// Token: 0x04000D23 RID: 3363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<PathAbstractions.AbstractedLocation> prefabsToThumbnail = new List<PathAbstractions.AbstractedLocation>();
 
-	// Token: 0x04000D23 RID: 3363
+	// Token: 0x04000D24 RID: 3364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string PrefabStatsFilename = GameIO.GetDeviceLocalUserGameDataDir() + "/_prefabstats.csv";
 }

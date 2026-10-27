@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D2 RID: 6610
+	// Token: 0x02001A03 RID: 6659
 	[Preserve]
 	public class ActionRemoveVehicles : ActionRemoveEntities
 	{
-		// Token: 0x0600CA6F RID: 51823 RVA: 0x004A1138 File Offset: 0x0049F338
+		// Token: 0x0600CB83 RID: 52099 RVA: 0x004A4C38 File Offset: 0x004A2E38
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRemoveData(GameEventManager gm, Entity ent)
 		{
@@ -170,7 +170,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CA70 RID: 51824 RVA: 0x004A1601 File Offset: 0x0049F801
+		// Token: 0x0600CB84 RID: 52100 RVA: 0x004A5101 File Offset: 0x004A3301
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -179,7 +179,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionRemoveVehicles.ReturnVehicleTypes>(ActionRemoveVehicles.PropIncludeVehicle, ref this.includeVehicle);
 		}
 
-		// Token: 0x0600CA71 RID: 51825 RVA: 0x004A163D File Offset: 0x0049F83D
+		// Token: 0x0600CB85 RID: 52101 RVA: 0x004A513D File Offset: 0x004A333D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -192,36 +192,36 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009918 RID: 39192
+		// Token: 0x04009A01 RID: 39425
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool returnItems = true;
 
-		// Token: 0x04009919 RID: 39193
+		// Token: 0x04009A02 RID: 39426
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool returnFuel;
 
-		// Token: 0x0400991A RID: 39194
+		// Token: 0x04009A03 RID: 39427
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionRemoveVehicles.ReturnVehicleTypes includeVehicle;
 
-		// Token: 0x0400991B RID: 39195
+		// Token: 0x04009A04 RID: 39428
 		public static string PropReturnItems = "return_items";
 
-		// Token: 0x0400991C RID: 39196
+		// Token: 0x04009A05 RID: 39429
 		public static string PropReturnFuel = "return_fuel";
 
-		// Token: 0x0400991D RID: 39197
+		// Token: 0x04009A06 RID: 39430
 		public static string PropIncludeVehicle = "return_vehicle_type";
 
-		// Token: 0x020019D3 RID: 6611
+		// Token: 0x02001A04 RID: 6660
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ReturnVehicleTypes
 		{
-			// Token: 0x0400991F RID: 39199
+			// Token: 0x04009A08 RID: 39432
 			None,
-			// Token: 0x04009920 RID: 39200
+			// Token: 0x04009A09 RID: 39433
 			Vehicle,
-			// Token: 0x04009921 RID: 39201
+			// Token: 0x04009A0A RID: 39434
 			Parts
 		}
 	}

@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012AD RID: 4781
+// Token: 0x020012BF RID: 4799
 public interface INGuiButtonOnIsHeld
 {
-	// Token: 0x0600979F RID: 38815
+	// Token: 0x060097F7 RID: 38903
 	void NGuiButtonOnIsHeld(Transform _t);
 }

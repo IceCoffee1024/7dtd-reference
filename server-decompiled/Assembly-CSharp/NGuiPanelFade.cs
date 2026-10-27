@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012B3 RID: 4787
+// Token: 0x020012C5 RID: 4805
 public class NGuiPanelFade : MonoBehaviour
 {
-	// Token: 0x060097BA RID: 38842 RVA: 0x003918A4 File Offset: 0x0038FAA4
+	// Token: 0x06009812 RID: 38930 RVA: 0x00393CAC File Offset: 0x00391EAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -16,13 +16,13 @@ public class NGuiPanelFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097BB RID: 38843 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009813 RID: 38931 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
 	}
 
-	// Token: 0x060097BC RID: 38844 RVA: 0x003918FD File Offset: 0x0038FAFD
+	// Token: 0x06009814 RID: 38932 RVA: 0x00393D05 File Offset: 0x00391F05
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnEnable()
 	{
@@ -30,14 +30,14 @@ public class NGuiPanelFade : MonoBehaviour
 		this.init();
 	}
 
-	// Token: 0x060097BD RID: 38845 RVA: 0x0039190C File Offset: 0x0038FB0C
+	// Token: 0x06009815 RID: 38933 RVA: 0x00393D14 File Offset: 0x00391F14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDisable()
 	{
 		this.reset();
 	}
 
-	// Token: 0x060097BE RID: 38846 RVA: 0x00391914 File Offset: 0x0038FB14
+	// Token: 0x06009816 RID: 38934 RVA: 0x00393D1C File Offset: 0x00391F1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void reset()
 	{
@@ -49,7 +49,7 @@ public class NGuiPanelFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097BF RID: 38847 RVA: 0x00391960 File Offset: 0x0038FB60
+	// Token: 0x06009817 RID: 38935 RVA: 0x00393D68 File Offset: 0x00391F68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void init()
 	{
@@ -75,7 +75,7 @@ public class NGuiPanelFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097C0 RID: 38848 RVA: 0x00391A14 File Offset: 0x0038FC14
+	// Token: 0x06009818 RID: 38936 RVA: 0x00393E1C File Offset: 0x0039201C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -110,40 +110,40 @@ public class NGuiPanelFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060097C1 RID: 38849 RVA: 0x00391B1C File Offset: 0x0038FD1C
+	// Token: 0x06009819 RID: 38937 RVA: 0x00393F24 File Offset: 0x00392124
 	public void StartFadeOut()
 	{
 		this.bFadeOut = true;
 		this.mStart = Time.time;
 	}
 
-	// Token: 0x04007196 RID: 29078
+	// Token: 0x040071D7 RID: 29143
 	public float duration = 0.3f;
 
-	// Token: 0x04007197 RID: 29079
+	// Token: 0x040071D8 RID: 29144
 	public bool bFadeInWhenEnabled = true;
 
-	// Token: 0x04007198 RID: 29080
+	// Token: 0x040071D9 RID: 29145
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float mStart;
 
-	// Token: 0x04007199 RID: 29081
+	// Token: 0x040071DA RID: 29146
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UIWidget[] mWidgets;
 
-	// Token: 0x0400719A RID: 29082
+	// Token: 0x040071DB RID: 29147
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float[] alpha;
 
-	// Token: 0x0400719B RID: 29083
+	// Token: 0x040071DC RID: 29148
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bFadeIn;
 
-	// Token: 0x0400719C RID: 29084
+	// Token: 0x040071DD RID: 29149
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bFadeOut;

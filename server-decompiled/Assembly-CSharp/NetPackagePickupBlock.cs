@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000820 RID: 2080
+// Token: 0x0200082A RID: 2090
 [Preserve]
 public class NetPackagePickupBlock : NetPackage
 {
-	// Token: 0x06003CEC RID: 15596 RVA: 0x0018517A File Offset: 0x0018337A
+	// Token: 0x06003D0F RID: 15631 RVA: 0x0018627E File Offset: 0x0018447E
 	public NetPackagePickupBlock Setup(Vector3i _blockPos, BlockValue _blockValue, int _playerId, PersistentPlayerData _persistentPlayerData)
 	{
 		this.blockPos = _blockPos;
@@ -15,7 +15,7 @@ public class NetPackagePickupBlock : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CED RID: 15597 RVA: 0x001851A6 File Offset: 0x001833A6
+	// Token: 0x06003D10 RID: 15632 RVA: 0x001862AA File Offset: 0x001844AA
 	public override void read(PooledBinaryReader _br)
 	{
 		this.blockPos = StreamUtils.ReadVector3i(_br);
@@ -24,7 +24,7 @@ public class NetPackagePickupBlock : NetPackage
 		this.persistentPlayerId = PlatformUserIdentifierAbs.FromStream(_br, false, false);
 	}
 
-	// Token: 0x06003CEE RID: 15598 RVA: 0x001851DF File Offset: 0x001833DF
+	// Token: 0x06003D11 RID: 15633 RVA: 0x001862E3 File Offset: 0x001844E3
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -34,7 +34,7 @@ public class NetPackagePickupBlock : NetPackage
 		this.persistentPlayerId.ToStream(_bw, false);
 	}
 
-	// Token: 0x06003CEF RID: 15599 RVA: 0x00185220 File Offset: 0x00183420
+	// Token: 0x06003D12 RID: 15634 RVA: 0x00186324 File Offset: 0x00184524
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -57,19 +57,19 @@ public class NetPackagePickupBlock : NetPackage
 		_world.GetGameManager().PickupBlockClient(this.blockPos, this.blockValue, this.playerId);
 	}
 
-	// Token: 0x04003199 RID: 12697
+	// Token: 0x040031B9 RID: 12729
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x0400319A RID: 12698
+	// Token: 0x040031BA RID: 12730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue blockValue;
 
-	// Token: 0x0400319B RID: 12699
+	// Token: 0x040031BB RID: 12731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerId;
 
-	// Token: 0x0400319C RID: 12700
+	// Token: 0x040031BC RID: 12732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs persistentPlayerId;
 }

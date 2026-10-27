@@ -10,12 +10,12 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using XMLData.Item;
 
-// Token: 0x020005EF RID: 1519
+// Token: 0x020005F6 RID: 1526
 [Preserve]
 public class ItemClass : ItemData
 {
 	// Token: 0x1700053C RID: 1340
-	// (get) Token: 0x06003185 RID: 12677 RVA: 0x001408B8 File Offset: 0x0013EAB8
+	// (get) Token: 0x06003193 RID: 12691 RVA: 0x001414AC File Offset: 0x0013F6AC
 	public string[] Attachments
 	{
 		get
@@ -25,7 +25,7 @@ public class ItemClass : ItemData
 	}
 
 	// Token: 0x1700053D RID: 1341
-	// (get) Token: 0x06003186 RID: 12678 RVA: 0x001408C0 File Offset: 0x0013EAC0
+	// (get) Token: 0x06003194 RID: 12692 RVA: 0x001414B4 File Offset: 0x0013F6B4
 	public int MaxCount
 	{
 		get
@@ -39,7 +39,7 @@ public class ItemClass : ItemData
 	}
 
 	// Token: 0x1700053E RID: 1342
-	// (get) Token: 0x06003187 RID: 12679 RVA: 0x00140916 File Offset: 0x0013EB16
+	// (get) Token: 0x06003195 RID: 12693 RVA: 0x0014150A File Offset: 0x0013F70A
 	public bool HasQuality
 	{
 		get
@@ -49,7 +49,7 @@ public class ItemClass : ItemData
 	}
 
 	// Token: 0x1700053F RID: 1343
-	// (get) Token: 0x06003188 RID: 12680 RVA: 0x0014092D File Offset: 0x0013EB2D
+	// (get) Token: 0x06003196 RID: 12694 RVA: 0x00141521 File Offset: 0x0013F721
 	public virtual bool IsLimitedItem
 	{
 		get
@@ -58,7 +58,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x06003189 RID: 12681 RVA: 0x00140938 File Offset: 0x0013EB38
+	// Token: 0x06003197 RID: 12695 RVA: 0x0014152C File Offset: 0x0013F72C
 	public virtual bool CanMoveToLocation(XUiC_ItemStack.StackLocationTypes locationType, int slotNumber)
 	{
 		bool flag = true;
@@ -85,14 +85,14 @@ public class ItemClass : ItemData
 		return flag2 && flag;
 	}
 
-	// Token: 0x0600318A RID: 12682 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06003198 RID: 12696 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool CanMoveToSlot(XUiC_ItemStack.StackLocationTypes locationType, int slot)
 	{
 		return true;
 	}
 
 	// Token: 0x17000540 RID: 1344
-	// (get) Token: 0x0600318B RID: 12683 RVA: 0x001409A8 File Offset: 0x0013EBA8
+	// (get) Token: 0x06003199 RID: 12697 RVA: 0x0014159C File Offset: 0x0013F79C
 	public RecipeUnlockData[] UnlockedBy
 	{
 		get
@@ -120,7 +120,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x0600318C RID: 12684 RVA: 0x00140A38 File Offset: 0x0013EC38
+	// Token: 0x0600319A RID: 12698 RVA: 0x0014162C File Offset: 0x0013F82C
 	public ItemClass()
 	{
 		this.bCanHold = true;
@@ -135,7 +135,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x0600318D RID: 12685 RVA: 0x00140C75 File Offset: 0x0013EE75
+	// Token: 0x0600319B RID: 12699 RVA: 0x00141869 File Offset: 0x0013FA69
 	public void SetId(int _id)
 	{
 		this.pId = _id;
@@ -145,7 +145,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x0600318E RID: 12686 RVA: 0x00140C98 File Offset: 0x0013EE98
+	// Token: 0x0600319C RID: 12700 RVA: 0x0014188C File Offset: 0x0013FA8C
 	public virtual void Init()
 	{
 		string itemName = this.GetItemName();
@@ -503,7 +503,7 @@ public class ItemClass : ItemData
 		this.CalculateTechType();
 	}
 
-	// Token: 0x0600318F RID: 12687 RVA: 0x00141D20 File Offset: 0x0013FF20
+	// Token: 0x0600319D RID: 12701 RVA: 0x00142914 File Offset: 0x00140B14
 	public void LateInit()
 	{
 		if (this.HasQuality)
@@ -512,7 +512,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x06003190 RID: 12688 RVA: 0x00141D38 File Offset: 0x0013FF38
+	// Token: 0x0600319E RID: 12702 RVA: 0x0014292C File Offset: 0x00140B2C
 	public static void InitStatic()
 	{
 		ItemClass.list = new ItemClass[ItemClass.MAX_ITEMS];
@@ -523,7 +523,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x06003191 RID: 12689 RVA: 0x00141D84 File Offset: 0x0013FF84
+	// Token: 0x0600319F RID: 12703 RVA: 0x00142978 File Offset: 0x00140B78
 	public static void LateInitAll()
 	{
 		for (int i = 0; i < ItemClass.MAX_ITEMS; i++)
@@ -535,7 +535,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x06003192 RID: 12690 RVA: 0x00141DB6 File Offset: 0x0013FFB6
+	// Token: 0x060031A0 RID: 12704 RVA: 0x001429AA File Offset: 0x00140BAA
 	public static void Cleanup()
 	{
 		ItemClass.list = null;
@@ -545,7 +545,7 @@ public class ItemClass : ItemData
 		ItemClass.itemActionNames = null;
 	}
 
-	// Token: 0x06003193 RID: 12691 RVA: 0x00141DE2 File Offset: 0x0013FFE2
+	// Token: 0x060031A1 RID: 12705 RVA: 0x001429D6 File Offset: 0x00140BD6
 	public virtual int GetInitialMetadata(ItemValue _itemValue)
 	{
 		if (this.Actions[0] == null)
@@ -555,7 +555,7 @@ public class ItemClass : ItemData
 		return this.Actions[0].GetInitialMeta(_itemValue);
 	}
 
-	// Token: 0x06003194 RID: 12692 RVA: 0x00141DFE File Offset: 0x0013FFFE
+	// Token: 0x060031A2 RID: 12706 RVA: 0x001429F2 File Offset: 0x00140BF2
 	public static ItemClass GetForId(int _id)
 	{
 		if (ItemClass.list == null || (ulong)_id >= (ulong)((long)ItemClass.list.Length))
@@ -565,7 +565,7 @@ public class ItemClass : ItemData
 		return ItemClass.list[_id];
 	}
 
-	// Token: 0x06003195 RID: 12693 RVA: 0x00141E1C File Offset: 0x0014001C
+	// Token: 0x060031A3 RID: 12707 RVA: 0x00142A10 File Offset: 0x00140C10
 	public static ItemValue GetItem(string _itemName, bool _caseInsensitive = false)
 	{
 		ItemClass itemClass = ItemClass.GetItemClass(_itemName, _caseInsensitive);
@@ -576,7 +576,7 @@ public class ItemClass : ItemData
 		return ItemValue.None;
 	}
 
-	// Token: 0x06003196 RID: 12694 RVA: 0x00141E48 File Offset: 0x00140048
+	// Token: 0x060031A4 RID: 12708 RVA: 0x00142A3C File Offset: 0x00140C3C
 	public static ItemValue CreateItemValue(string _itemName, int _quality, bool _caseInsensitive = false)
 	{
 		ItemClass itemClass = ItemClass.GetItemClass(_itemName, _caseInsensitive);
@@ -587,7 +587,7 @@ public class ItemClass : ItemData
 		return ItemValue.None;
 	}
 
-	// Token: 0x06003197 RID: 12695 RVA: 0x00141E7C File Offset: 0x0014007C
+	// Token: 0x060031A5 RID: 12709 RVA: 0x00142A70 File Offset: 0x00140C70
 	public static ItemClass GetItemClass(string _itemName, bool _caseInsensitive = false)
 	{
 		ItemClass itemClass;
@@ -602,7 +602,7 @@ public class ItemClass : ItemData
 		return itemClass;
 	}
 
-	// Token: 0x06003198 RID: 12696 RVA: 0x00141EAC File Offset: 0x001400AC
+	// Token: 0x060031A6 RID: 12710 RVA: 0x00142AA0 File Offset: 0x00140CA0
 	public static void GetItemsAndBlocks(List<ItemClass> _targetList, int _idStart = -1, int _idEndExcl = -1, ItemClass.FilterItem[] _filterExprs = null, string _nameFilter = null, bool _bShowUserHidden = false, EnumCreativeMode _currentCreativeMode = EnumCreativeMode.Player, bool _showFavorites = false, bool _sortBySortOrder = false, XUi _xui = null)
 	{
 		_targetList.Clear();
@@ -699,7 +699,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x06003199 RID: 12697 RVA: 0x00142060 File Offset: 0x00140260
+	// Token: 0x060031A7 RID: 12711 RVA: 0x00142C54 File Offset: 0x00140E54
 	public static void CreateItemStacks(IEnumerable<ItemClass> _itemClassList, List<ItemStack> _targetList, string _nameFilter = null)
 	{
 		_targetList.Clear();
@@ -727,19 +727,19 @@ public class ItemClass : ItemData
 		GameRandomManager.Instance.FreeGameRandom(gameRandom);
 	}
 
-	// Token: 0x0600319A RID: 12698 RVA: 0x0014216C File Offset: 0x0014036C
+	// Token: 0x060031A8 RID: 12712 RVA: 0x00142D60 File Offset: 0x00140F60
 	public virtual bool IsHUDDisabled(ItemInventoryData _data)
 	{
 		return (this.Actions[0] != null && this.Actions[0].IsHUDDisabled((_data != null) ? _data.actionData[0] : null)) || (this.Actions[1] != null && this.Actions[1].IsHUDDisabled((_data != null) ? _data.actionData[1] : null));
 	}
 
-	// Token: 0x0600319B RID: 12699 RVA: 0x001421D4 File Offset: 0x001403D4
+	// Token: 0x060031A9 RID: 12713 RVA: 0x00142DC8 File Offset: 0x00140FC8
 	public virtual bool IsLightSource()
 	{
 		return this.LightSource != null;
 	}
 
-	// Token: 0x0600319C RID: 12700 RVA: 0x001421E4 File Offset: 0x001403E4
+	// Token: 0x060031AA RID: 12714 RVA: 0x00142DD8 File Offset: 0x00140FD8
 	public virtual InstanceHandle<GameObject> CloneModel(ItemValue _itemValue, Transform _parent, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		AssetHandle<GameObject> modelHandle = this.GetModelHandle(_purpose, _itemValue);
@@ -757,7 +757,7 @@ public class ItemClass : ItemData
 		return instanceHandle;
 	}
 
-	// Token: 0x0600319D RID: 12701 RVA: 0x00142244 File Offset: 0x00140444
+	// Token: 0x060031AB RID: 12715 RVA: 0x00142E38 File Offset: 0x00141038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AssetHandle<GameObject> GetModelHandle(BlockShape.MeshPurpose _purpose, ItemValue _itemValue)
 	{
@@ -774,7 +774,7 @@ public class ItemClass : ItemData
 		return null;
 	}
 
-	// Token: 0x0600319E RID: 12702 RVA: 0x0014229C File Offset: 0x0014049C
+	// Token: 0x060031AC RID: 12716 RVA: 0x00142E90 File Offset: 0x00141090
 	public GameObject CreateModelInstance(ItemValue _itemValue, Transform _parent, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(DataLoader.LoadAsset<GameObject>(this.GetMeshfilePath(_purpose, _itemValue), false));
@@ -785,7 +785,7 @@ public class ItemClass : ItemData
 		return gameObject;
 	}
 
-	// Token: 0x0600319F RID: 12703 RVA: 0x001422CC File Offset: 0x001404CC
+	// Token: 0x060031AD RID: 12717 RVA: 0x00142EC0 File Offset: 0x001410C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetMeshfilePath(BlockShape.MeshPurpose _purpose, ItemValue _itemValue)
 	{
@@ -809,7 +809,7 @@ public class ItemClass : ItemData
 		return null;
 	}
 
-	// Token: 0x060031A0 RID: 12704 RVA: 0x00142328 File Offset: 0x00140528
+	// Token: 0x060031AE RID: 12718 RVA: 0x00142F1C File Offset: 0x0014111C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool InitializeModel(GameObject _instance, ItemValue _itemValue, Transform _parent, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
@@ -854,37 +854,37 @@ public class ItemClass : ItemData
 		return false;
 	}
 
-	// Token: 0x060031A1 RID: 12705 RVA: 0x00142444 File Offset: 0x00140644
+	// Token: 0x060031AF RID: 12719 RVA: 0x00143038 File Offset: 0x00141238
 	public void setLocalizedItemName(string _localizedName)
 	{
 		this.localizedName = _localizedName;
 	}
 
-	// Token: 0x060031A2 RID: 12706 RVA: 0x0014244D File Offset: 0x0014064D
+	// Token: 0x060031B0 RID: 12720 RVA: 0x00143041 File Offset: 0x00141241
 	public virtual string GetLocalizedItemName()
 	{
 		return this.localizedName;
 	}
 
-	// Token: 0x060031A3 RID: 12707 RVA: 0x00142455 File Offset: 0x00140655
+	// Token: 0x060031B1 RID: 12721 RVA: 0x00143049 File Offset: 0x00141249
 	public void SetName(string _name)
 	{
 		this.pName = _name;
 	}
 
-	// Token: 0x060031A4 RID: 12708 RVA: 0x0014245E File Offset: 0x0014065E
+	// Token: 0x060031B2 RID: 12722 RVA: 0x00143052 File Offset: 0x00141252
 	public virtual string GetItemName()
 	{
 		return base.Name;
 	}
 
-	// Token: 0x060031A5 RID: 12709 RVA: 0x00142466 File Offset: 0x00140666
+	// Token: 0x060031B3 RID: 12723 RVA: 0x0014305A File Offset: 0x0014125A
 	public virtual string GetItemDescriptionKey()
 	{
 		return this.DescriptionKey;
 	}
 
-	// Token: 0x060031A6 RID: 12710 RVA: 0x0014246E File Offset: 0x0014066E
+	// Token: 0x060031B4 RID: 12724 RVA: 0x00143062 File Offset: 0x00141262
 	public virtual string GetIconName()
 	{
 		if (this.CustomIcon != null && this.CustomIcon.Value.Length > 0)
@@ -894,7 +894,7 @@ public class ItemClass : ItemData
 		return base.Name;
 	}
 
-	// Token: 0x060031A7 RID: 12711 RVA: 0x001424A4 File Offset: 0x001406A4
+	// Token: 0x060031B5 RID: 12725 RVA: 0x00143098 File Offset: 0x00141298
 	public virtual Color GetIconTint(ItemValue _instance = null)
 	{
 		if (_instance != null)
@@ -909,72 +909,72 @@ public class ItemClass : ItemData
 		return this.CustomIconTint;
 	}
 
-	// Token: 0x060031A8 RID: 12712 RVA: 0x001424DD File Offset: 0x001406DD
+	// Token: 0x060031B6 RID: 12726 RVA: 0x001430D1 File Offset: 0x001412D1
 	public virtual bool IsGun()
 	{
 		return this.Actions[0] is ItemActionAttack;
 	}
 
-	// Token: 0x060031A9 RID: 12713 RVA: 0x001424EF File Offset: 0x001406EF
+	// Token: 0x060031B7 RID: 12727 RVA: 0x001430E3 File Offset: 0x001412E3
 	public virtual bool IsDynamicMelee()
 	{
 		return this.Actions[0] is ItemActionDynamic;
 	}
 
-	// Token: 0x060031AA RID: 12714 RVA: 0x00142501 File Offset: 0x00140701
+	// Token: 0x060031B8 RID: 12728 RVA: 0x001430F5 File Offset: 0x001412F5
 	public virtual bool CanStack()
 	{
 		return this.Stacknumber.Value > 1;
 	}
 
-	// Token: 0x060031AB RID: 12715 RVA: 0x00142511 File Offset: 0x00140711
+	// Token: 0x060031B9 RID: 12729 RVA: 0x00143105 File Offset: 0x00141305
 	public void SetCanHold(bool _b)
 	{
 		this.bCanHold = _b;
 	}
 
-	// Token: 0x060031AC RID: 12716 RVA: 0x0014251A File Offset: 0x0014071A
+	// Token: 0x060031BA RID: 12730 RVA: 0x0014310E File Offset: 0x0014130E
 	public virtual bool CanHold()
 	{
 		return this.bCanHold;
 	}
 
-	// Token: 0x060031AD RID: 12717 RVA: 0x00142522 File Offset: 0x00140722
+	// Token: 0x060031BB RID: 12731 RVA: 0x00143116 File Offset: 0x00141316
 	public void SetCanDrop(bool _b)
 	{
 		this.bCanDrop = _b;
 	}
 
-	// Token: 0x060031AE RID: 12718 RVA: 0x0014252B File Offset: 0x0014072B
+	// Token: 0x060031BC RID: 12732 RVA: 0x0014311F File Offset: 0x0014131F
 	public virtual bool CanDrop(ItemValue _iv = null)
 	{
 		return this.bCanDrop;
 	}
 
-	// Token: 0x060031AF RID: 12719 RVA: 0x00142533 File Offset: 0x00140733
+	// Token: 0x060031BD RID: 12733 RVA: 0x00143127 File Offset: 0x00141327
 	public virtual bool RestrictedMove(ItemValue _iv = null)
 	{
 		return this.bRestrictedMove;
 	}
 
-	// Token: 0x060031B0 RID: 12720 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031BE RID: 12734 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Deactivate(ItemValue _iv)
 	{
 	}
 
-	// Token: 0x060031B1 RID: 12721 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060031BF RID: 12735 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool KeepOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x060031B2 RID: 12722 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060031C0 RID: 12736 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool CanPlaceInContainer()
 	{
 		return true;
 	}
 
-	// Token: 0x060031B3 RID: 12723 RVA: 0x0014253C File Offset: 0x0014073C
+	// Token: 0x060031C1 RID: 12737 RVA: 0x00143130 File Offset: 0x00141330
 	public virtual string CanInteract(ItemInventoryData _data)
 	{
 		ItemAction itemAction = this.Actions[2];
@@ -985,14 +985,14 @@ public class ItemClass : ItemData
 		return itemAction.CanInteract(_data.actionData[2]);
 	}
 
-	// Token: 0x060031B4 RID: 12724 RVA: 0x00142569 File Offset: 0x00140769
+	// Token: 0x060031C2 RID: 12738 RVA: 0x0014315D File Offset: 0x0014135D
 	public void Interact(ItemInventoryData _data)
 	{
 		this.ExecuteAction(2, _data, false, null);
 		this.ExecuteAction(2, _data, true, null);
 	}
 
-	// Token: 0x060031B5 RID: 12725 RVA: 0x00142580 File Offset: 0x00140780
+	// Token: 0x060031C3 RID: 12739 RVA: 0x00143174 File Offset: 0x00141374
 	public bool CanExecuteAction(int actionIdx, EntityAlive holdingEntity, ItemValue itemValue)
 	{
 		if (this.Actions[actionIdx] == null || this.Actions[actionIdx].ExecutionRequirements == null)
@@ -1003,7 +1003,7 @@ public class ItemClass : ItemData
 		return this.Actions[actionIdx].ExecutionRequirements.IsValid(holdingEntity.MinEventContext);
 	}
 
-	// Token: 0x060031B6 RID: 12726 RVA: 0x001425CC File Offset: 0x001407CC
+	// Token: 0x060031C4 RID: 12740 RVA: 0x001431C0 File Offset: 0x001413C0
 	public virtual void ExecuteAction(int _actionIdx, ItemInventoryData _data, bool _bReleased, PlayerActionsLocal _playerActions)
 	{
 		ItemAction curAction = this.Actions[_actionIdx];
@@ -1134,7 +1134,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031B7 RID: 12727 RVA: 0x00142B20 File Offset: 0x00140D20
+	// Token: 0x060031C5 RID: 12741 RVA: 0x00143714 File Offset: 0x00141914
 	public virtual bool IsActionRunning(ItemInventoryData _data)
 	{
 		for (int i = 0; i < 3; i++)
@@ -1148,17 +1148,17 @@ public class ItemClass : ItemData
 		return false;
 	}
 
-	// Token: 0x060031B8 RID: 12728 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031C6 RID: 12742 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnHoldingItemActivated(ItemInventoryData _data)
 	{
 	}
 
-	// Token: 0x060031B9 RID: 12729 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031C7 RID: 12743 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnPlacedAsCatalyst(ItemInventoryData _data)
 	{
 	}
 
-	// Token: 0x060031BA RID: 12730 RVA: 0x00142B5C File Offset: 0x00140D5C
+	// Token: 0x060031C8 RID: 12744 RVA: 0x00143750 File Offset: 0x00141950
 	public virtual void StartHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		for (int i = 0; i < 3; i++)
@@ -1175,7 +1175,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031BB RID: 12731 RVA: 0x00142BB0 File Offset: 0x00140DB0
+	// Token: 0x060031C9 RID: 12745 RVA: 0x001437A4 File Offset: 0x001419A4
 	public virtual void CleanupHoldingActions(ItemInventoryData _data)
 	{
 		if (_data == null)
@@ -1192,7 +1192,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031BC RID: 12732 RVA: 0x00142BEC File Offset: 0x00140DEC
+	// Token: 0x060031CA RID: 12746 RVA: 0x001437E0 File Offset: 0x001419E0
 	public virtual void OnHoldingUpdate(ItemInventoryData _data)
 	{
 		EntityAlive holdingEntity = _data.holdingEntity;
@@ -1222,12 +1222,12 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031BD RID: 12733 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031CB RID: 12747 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnHoldingReset(ItemInventoryData _data)
 	{
 	}
 
-	// Token: 0x060031BE RID: 12734 RVA: 0x00142D14 File Offset: 0x00140F14
+	// Token: 0x060031CC RID: 12748 RVA: 0x00143908 File Offset: 0x00141B08
 	public void StopHoldingAudio(ItemInventoryData _data)
 	{
 		if (this.Properties.GetValue(ItemClass.PropSoundIdle) != null && _data.holdingEntitySoundID == 0)
@@ -1237,7 +1237,7 @@ public class ItemClass : ItemData
 		_data.holdingEntitySoundID = -2;
 	}
 
-	// Token: 0x060031BF RID: 12735 RVA: 0x00142D64 File Offset: 0x00140F64
+	// Token: 0x060031CD RID: 12749 RVA: 0x00143958 File Offset: 0x00141B58
 	public virtual void StopHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		this.StopHoldingAudio(_data);
@@ -1255,29 +1255,29 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031C0 RID: 12736 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031CE RID: 12750 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnMeshCreated(ItemWorldData _data)
 	{
 	}
 
-	// Token: 0x060031C1 RID: 12737 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031CF RID: 12751 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnDroppedUpdate(ItemWorldData _data)
 	{
 	}
 
-	// Token: 0x060031C2 RID: 12738 RVA: 0x0004E4F3 File Offset: 0x0004C6F3
+	// Token: 0x060031D0 RID: 12752 RVA: 0x0004E4B3 File Offset: 0x0004C6B3
 	public virtual BlockValue OnConvertToBlockValue(ItemValue _itemValue, BlockValue _blueprintBlockValue)
 	{
 		return _blueprintBlockValue;
 	}
 
-	// Token: 0x060031C3 RID: 12739 RVA: 0x00142DD5 File Offset: 0x00140FD5
+	// Token: 0x060031D1 RID: 12753 RVA: 0x001439C9 File Offset: 0x00141BC9
 	public virtual ItemWorldData CreateWorldData(IGameManager _gm, EntityItem _entityItem, ItemValue _itemValue, int _belongsEntityId)
 	{
 		return new ItemWorldData(_gm, _itemValue, _entityItem, _belongsEntityId);
 	}
 
-	// Token: 0x060031C4 RID: 12740 RVA: 0x00142DE4 File Offset: 0x00140FE4
+	// Token: 0x060031D2 RID: 12754 RVA: 0x001439D8 File Offset: 0x00141BD8
 	public virtual void OnHUD(ItemInventoryData _data, int _x, int _y)
 	{
 		if (this.Actions[0] != null)
@@ -1290,7 +1290,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031C5 RID: 12741 RVA: 0x00142E3C File Offset: 0x0014103C
+	// Token: 0x060031D3 RID: 12755 RVA: 0x00143A30 File Offset: 0x00141C30
 	public virtual void OnScreenOverlay(ItemInventoryData _data)
 	{
 		if (this.Actions[0] != null)
@@ -1303,7 +1303,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031C6 RID: 12742 RVA: 0x00142E90 File Offset: 0x00141090
+	// Token: 0x060031D4 RID: 12756 RVA: 0x00143A84 File Offset: 0x00141C84
 	public virtual RenderCubeType GetFocusType(ItemInventoryData _data)
 	{
 		if (!this.CanHold())
@@ -1327,7 +1327,7 @@ public class ItemClass : ItemData
 		return renderCubeType;
 	}
 
-	// Token: 0x060031C7 RID: 12743 RVA: 0x00142F06 File Offset: 0x00141106
+	// Token: 0x060031D5 RID: 12757 RVA: 0x00143AFA File Offset: 0x00141CFA
 	public virtual float GetFocusRange()
 	{
 		if (this.Actions[0] != null && this.Actions[0] is ItemActionAttack)
@@ -1337,7 +1337,7 @@ public class ItemClass : ItemData
 		return 0f;
 	}
 
-	// Token: 0x060031C8 RID: 12744 RVA: 0x00142F3C File Offset: 0x0014113C
+	// Token: 0x060031D6 RID: 12758 RVA: 0x00143B30 File Offset: 0x00141D30
 	public virtual bool IsFocusBlockInside()
 	{
 		bool flag = false;
@@ -1353,7 +1353,7 @@ public class ItemClass : ItemData
 		return flag2 && flag;
 	}
 
-	// Token: 0x060031C9 RID: 12745 RVA: 0x00142F80 File Offset: 0x00141180
+	// Token: 0x060031D7 RID: 12759 RVA: 0x00143B74 File Offset: 0x00141D74
 	public virtual bool ConsumeScrollWheel(ItemInventoryData _data, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		bool flag = false;
@@ -1368,7 +1368,7 @@ public class ItemClass : ItemData
 		return flag;
 	}
 
-	// Token: 0x060031CA RID: 12746 RVA: 0x00142FE0 File Offset: 0x001411E0
+	// Token: 0x060031D8 RID: 12760 RVA: 0x00143BD4 File Offset: 0x00141DD4
 	public virtual bool ConsumeCameraFunction(ItemInventoryData _data)
 	{
 		bool flag = false;
@@ -1383,36 +1383,36 @@ public class ItemClass : ItemData
 		return flag;
 	}
 
-	// Token: 0x060031CB RID: 12747 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031D9 RID: 12761 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void CheckKeys(ItemInventoryData _data, WorldRayHitInfo _hitInfo)
 	{
 	}
 
-	// Token: 0x060031CC RID: 12748 RVA: 0x0014303B File Offset: 0x0014123B
+	// Token: 0x060031DA RID: 12762 RVA: 0x00143C2F File Offset: 0x00141E2F
 	public virtual float GetLifetimeOnDrop()
 	{
 		return 60f;
 	}
 
-	// Token: 0x060031CD RID: 12749 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x060031DB RID: 12763 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public virtual Block GetBlock()
 	{
 		return null;
 	}
 
-	// Token: 0x060031CE RID: 12750 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060031DC RID: 12764 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsBlock()
 	{
 		return false;
 	}
 
-	// Token: 0x060031CF RID: 12751 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060031DD RID: 12765 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsProp()
 	{
 		return false;
 	}
 
-	// Token: 0x060031D0 RID: 12752 RVA: 0x00143044 File Offset: 0x00141244
+	// Token: 0x060031DE RID: 12766 RVA: 0x00143C38 File Offset: 0x00141E38
 	public virtual ItemClass.EnumCrosshairType GetCrosshairType(ItemInventoryData _holdingData)
 	{
 		ItemClass.EnumCrosshairType enumCrosshairType = ItemClass.EnumCrosshairType.Plus;
@@ -1438,7 +1438,7 @@ public class ItemClass : ItemData
 		return enumCrosshairType3;
 	}
 
-	// Token: 0x060031D1 RID: 12753 RVA: 0x001430E4 File Offset: 0x001412E4
+	// Token: 0x060031DF RID: 12767 RVA: 0x00143CD8 File Offset: 0x00141ED8
 	public virtual void GetIronSights(ItemInventoryData _invData, out float _fov)
 	{
 		if (this.Actions[0] != null)
@@ -1460,7 +1460,7 @@ public class ItemClass : ItemData
 		_fov = (float)_invData.holdingEntity.GetCameraFOV();
 	}
 
-	// Token: 0x060031D2 RID: 12754 RVA: 0x0014315C File Offset: 0x0014135C
+	// Token: 0x060031E0 RID: 12768 RVA: 0x00143D50 File Offset: 0x00141F50
 	public virtual EnumCameraShake GetCameraShakeType(ItemInventoryData _invData)
 	{
 		EnumCameraShake enumCameraShake = EnumCameraShake.None;
@@ -1480,7 +1480,7 @@ public class ItemClass : ItemData
 		return enumCameraShake2;
 	}
 
-	// Token: 0x060031D3 RID: 12755 RVA: 0x001431BC File Offset: 0x001413BC
+	// Token: 0x060031E1 RID: 12769 RVA: 0x00143DB0 File Offset: 0x00141FB0
 	public virtual TriggerEffectManager.ControllerTriggerEffect GetControllerTriggerEffectPull()
 	{
 		if (this.Actions[0] != null)
@@ -1494,7 +1494,7 @@ public class ItemClass : ItemData
 		return TriggerEffectManager.NoneEffect;
 	}
 
-	// Token: 0x060031D4 RID: 12756 RVA: 0x001431F3 File Offset: 0x001413F3
+	// Token: 0x060031E2 RID: 12770 RVA: 0x00143DE7 File Offset: 0x00141FE7
 	public virtual TriggerEffectManager.ControllerTriggerEffect GetControllerTriggerEffectShoot()
 	{
 		if (this.Actions[0] != null)
@@ -1508,48 +1508,48 @@ public class ItemClass : ItemData
 		return TriggerEffectManager.NoneEffect;
 	}
 
-	// Token: 0x060031D5 RID: 12757 RVA: 0x0014322A File Offset: 0x0014142A
+	// Token: 0x060031E3 RID: 12771 RVA: 0x00143E1E File Offset: 0x0014201E
 	public virtual bool IsActivated(ItemValue _value)
 	{
 		return _value.Activated;
 	}
 
-	// Token: 0x060031D6 RID: 12758 RVA: 0x00143232 File Offset: 0x00141432
+	// Token: 0x060031E4 RID: 12772 RVA: 0x00143E26 File Offset: 0x00142026
 	public virtual void SetActivated(ref ItemValue _value, bool _activated)
 	{
 		_value.Activated = _activated;
 	}
 
-	// Token: 0x060031D7 RID: 12759 RVA: 0x0014323C File Offset: 0x0014143C
+	// Token: 0x060031E5 RID: 12773 RVA: 0x00143E30 File Offset: 0x00142030
 	public virtual Vector3 GetDroppedCorrectionRotation()
 	{
 		return new Vector3(-90f, 0f, 0f);
 	}
 
-	// Token: 0x060031D8 RID: 12760 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x060031E6 RID: 12774 RVA: 0x0004E452 File Offset: 0x0004C652
 	public virtual Vector3 GetCorrectionRotation()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x060031D9 RID: 12761 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x060031E7 RID: 12775 RVA: 0x0004E452 File Offset: 0x0004C652
 	public virtual Vector3 GetCorrectionPosition()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x060031DA RID: 12762 RVA: 0x0004E492 File Offset: 0x0004C692
+	// Token: 0x060031E8 RID: 12776 RVA: 0x0004E452 File Offset: 0x0004C652
 	public virtual Vector3 GetCorrectionScale()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x060031DB RID: 12763 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060031E9 RID: 12777 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnDamagedByExplosion(ItemWorldData _data)
 	{
 	}
 
-	// Token: 0x060031DC RID: 12764 RVA: 0x00143254 File Offset: 0x00141454
+	// Token: 0x060031EA RID: 12778 RVA: 0x00143E48 File Offset: 0x00142048
 	public static int GetFuelValue(ItemValue _itemValue)
 	{
 		ItemClass itemClass = ItemClass.list[_itemValue.type];
@@ -1568,7 +1568,7 @@ public class ItemClass : ItemData
 		return itemClass.FuelValue.Value;
 	}
 
-	// Token: 0x060031DD RID: 12765 RVA: 0x001432A2 File Offset: 0x001414A2
+	// Token: 0x060031EB RID: 12779 RVA: 0x00143E96 File Offset: 0x00142096
 	public int GetWeight()
 	{
 		if (this.IsBlock())
@@ -1582,7 +1582,7 @@ public class ItemClass : ItemData
 		return 0;
 	}
 
-	// Token: 0x060031DE RID: 12766 RVA: 0x001432CD File Offset: 0x001414CD
+	// Token: 0x060031EC RID: 12780 RVA: 0x00143EC1 File Offset: 0x001420C1
 	public string GetImageEffect()
 	{
 		if (base.ImageEffectOnActive != null)
@@ -1592,13 +1592,13 @@ public class ItemClass : ItemData
 		return "";
 	}
 
-	// Token: 0x060031DF RID: 12767 RVA: 0x001432EE File Offset: 0x001414EE
+	// Token: 0x060031ED RID: 12781 RVA: 0x00143EE2 File Offset: 0x001420E2
 	public bool GetActive()
 	{
 		return base.Active != null && base.Active.Value;
 	}
 
-	// Token: 0x060031E0 RID: 12768 RVA: 0x00143305 File Offset: 0x00141505
+	// Token: 0x060031EE RID: 12782 RVA: 0x00143EF9 File Offset: 0x001420F9
 	public string GetSoundOnActive()
 	{
 		if (base.PlaySoundOnActive != null)
@@ -1608,7 +1608,7 @@ public class ItemClass : ItemData
 		return "";
 	}
 
-	// Token: 0x060031E1 RID: 12769 RVA: 0x00143326 File Offset: 0x00141526
+	// Token: 0x060031EF RID: 12783 RVA: 0x00143F1A File Offset: 0x0014211A
 	public void SetWeight(int _w)
 	{
 		if (this.IsBlock())
@@ -1619,25 +1619,25 @@ public class ItemClass : ItemData
 		base.Weight = new DataItem<int>(_w);
 	}
 
-	// Token: 0x060031E2 RID: 12770 RVA: 0x0014334E File Offset: 0x0014154E
+	// Token: 0x060031F0 RID: 12784 RVA: 0x00143F42 File Offset: 0x00142142
 	public void SetImageEffect(string _str)
 	{
 		base.ImageEffectOnActive = new DataItem<string>(_str);
 	}
 
-	// Token: 0x060031E3 RID: 12771 RVA: 0x0014335C File Offset: 0x0014155C
+	// Token: 0x060031F1 RID: 12785 RVA: 0x00143F50 File Offset: 0x00142150
 	public void SetActive(bool _bOn)
 	{
 		base.Active = new DataItem<bool>(_bOn);
 	}
 
-	// Token: 0x060031E4 RID: 12772 RVA: 0x0014336A File Offset: 0x0014156A
+	// Token: 0x060031F2 RID: 12786 RVA: 0x00143F5E File Offset: 0x0014215E
 	public void SetSoundOnActive(string _str)
 	{
 		base.PlaySoundOnActive = new DataItem<string>(_str);
 	}
 
-	// Token: 0x060031E5 RID: 12773 RVA: 0x00143378 File Offset: 0x00141578
+	// Token: 0x060031F3 RID: 12787 RVA: 0x00143F6C File Offset: 0x0014216C
 	public int AutoCalcWeight(Dictionary<string, List<Recipe>> _recipesByName)
 	{
 		Block block = (this.IsBlock() ? this.GetBlock() : null);
@@ -1715,19 +1715,19 @@ public class ItemClass : ItemData
 		return num;
 	}
 
-	// Token: 0x060031E6 RID: 12774 RVA: 0x0014359B File Offset: 0x0014179B
+	// Token: 0x060031F4 RID: 12788 RVA: 0x0014418F File Offset: 0x0014238F
 	public virtual bool HasAnyTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.ItemTags.Test_AnySet(_tags);
 	}
 
-	// Token: 0x060031E7 RID: 12775 RVA: 0x001435A9 File Offset: 0x001417A9
+	// Token: 0x060031F5 RID: 12789 RVA: 0x0014419D File Offset: 0x0014239D
 	public virtual bool HasAllTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.ItemTags.Test_AllSet(_tags);
 	}
 
-	// Token: 0x060031E8 RID: 12776 RVA: 0x001435B8 File Offset: 0x001417B8
+	// Token: 0x060031F6 RID: 12790 RVA: 0x001441AC File Offset: 0x001423AC
 	public static ItemClass GetItemWithTag(FastTags<TagGroup.Global> _tags)
 	{
 		if (ItemClass.list != null)
@@ -1743,7 +1743,7 @@ public class ItemClass : ItemData
 		return null;
 	}
 
-	// Token: 0x060031E9 RID: 12777 RVA: 0x00143600 File Offset: 0x00141800
+	// Token: 0x060031F7 RID: 12791 RVA: 0x001441F4 File Offset: 0x001423F4
 	public static List<ItemClass> GetItemsWithTag(FastTags<TagGroup.Global> _tags)
 	{
 		List<ItemClass> list = new List<ItemClass>();
@@ -1760,13 +1760,13 @@ public class ItemClass : ItemData
 		return list;
 	}
 
-	// Token: 0x060031EA RID: 12778 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060031F8 RID: 12792 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool CanCollect(ItemValue _iv)
 	{
 		return true;
 	}
 
-	// Token: 0x060031EB RID: 12779 RVA: 0x00143654 File Offset: 0x00141854
+	// Token: 0x060031F9 RID: 12793 RVA: 0x00144248 File Offset: 0x00142448
 	public float AutoCalcEcoVal(Dictionary<string, List<Recipe>> _recipesByName, List<string> _recipeCalcStack)
 	{
 		string itemName = this.GetItemName();
@@ -1828,7 +1828,7 @@ public class ItemClass : ItemData
 		return num2;
 	}
 
-	// Token: 0x060031EC RID: 12780 RVA: 0x001437E4 File Offset: 0x001419E4
+	// Token: 0x060031FA RID: 12794 RVA: 0x001443D8 File Offset: 0x001425D8
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _eventParms)
 	{
 		if (this.Effects != null)
@@ -1838,7 +1838,7 @@ public class ItemClass : ItemData
 	}
 
 	// Token: 0x17000541 RID: 1345
-	// (get) Token: 0x060031ED RID: 12781 RVA: 0x001437FB File Offset: 0x001419FB
+	// (get) Token: 0x060031FB RID: 12795 RVA: 0x001443EF File Offset: 0x001425EF
 	public bool IsEatDistraction
 	{
 		get
@@ -1848,7 +1848,7 @@ public class ItemClass : ItemData
 	}
 
 	// Token: 0x17000542 RID: 1346
-	// (get) Token: 0x060031EE RID: 12782 RVA: 0x0014380D File Offset: 0x00141A0D
+	// (get) Token: 0x060031FC RID: 12796 RVA: 0x00144401 File Offset: 0x00142601
 	public bool IsRequireContactDistraction
 	{
 		get
@@ -1857,13 +1857,13 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031EF RID: 12783 RVA: 0x0014381F File Offset: 0x00141A1F
+	// Token: 0x060031FD RID: 12797 RVA: 0x00144413 File Offset: 0x00142613
 	public bool HasTrigger(MinEventTypes _eventType)
 	{
 		return this.Effects != null && this.Effects.HasTrigger(_eventType);
 	}
 
-	// Token: 0x060031F0 RID: 12784 RVA: 0x00143838 File Offset: 0x00141A38
+	// Token: 0x060031FE RID: 12798 RVA: 0x0014442C File Offset: 0x0014262C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignIdsFromXml()
 	{
@@ -1877,7 +1877,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031F1 RID: 12785 RVA: 0x001438B4 File Offset: 0x00141AB4
+	// Token: 0x060031FF RID: 12799 RVA: 0x001444A8 File Offset: 0x001426A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignIdsLinear()
 	{
@@ -1888,7 +1888,7 @@ public class ItemClass : ItemData
 		ItemClass.assignLeftOverItems(array, list);
 	}
 
-	// Token: 0x060031F2 RID: 12786 RVA: 0x001438F6 File Offset: 0x00141AF6
+	// Token: 0x06003200 RID: 12800 RVA: 0x001444EA File Offset: 0x001426EA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignId(ItemClass _b, int _id, bool[] _usedIds)
 	{
@@ -1900,7 +1900,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031F3 RID: 12787 RVA: 0x00143910 File Offset: 0x00141B10
+	// Token: 0x06003201 RID: 12801 RVA: 0x00144504 File Offset: 0x00142704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignLeftOverItems(bool[] _usedIds, List<ItemClass> _unassignedItems)
 	{
@@ -1934,7 +1934,7 @@ public class ItemClass : ItemData
 		});
 	}
 
-	// Token: 0x060031F4 RID: 12788 RVA: 0x00143A24 File Offset: 0x00141C24
+	// Token: 0x06003202 RID: 12802 RVA: 0x00144618 File Offset: 0x00142818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignIdsFromMapping()
 	{
@@ -1959,7 +1959,7 @@ public class ItemClass : ItemData
 		ItemClass.assignLeftOverItems(array, list);
 	}
 
-	// Token: 0x060031F5 RID: 12789 RVA: 0x00143AD8 File Offset: 0x00141CD8
+	// Token: 0x06003203 RID: 12803 RVA: 0x001446CC File Offset: 0x001428CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void createFullMappingForClients()
 	{
@@ -1971,7 +1971,7 @@ public class ItemClass : ItemData
 		ItemClass.fullMappingDataForClients = nameIdMapping.SaveToArray();
 	}
 
-	// Token: 0x060031F6 RID: 12790 RVA: 0x00143B54 File Offset: 0x00141D54
+	// Token: 0x06003204 RID: 12804 RVA: 0x00144748 File Offset: 0x00142948
 	public static void AssignIds()
 	{
 		if (ItemClass.nameIdMapping != null)
@@ -1988,7 +1988,7 @@ public class ItemClass : ItemData
 	}
 
 	// Token: 0x17000543 RID: 1347
-	// (get) Token: 0x060031F7 RID: 12791 RVA: 0x00143B82 File Offset: 0x00141D82
+	// (get) Token: 0x06003205 RID: 12805 RVA: 0x00144776 File Offset: 0x00142976
 	public static ItemClass MissingItem
 	{
 		get
@@ -1997,7 +1997,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031F8 RID: 12792 RVA: 0x00143B90 File Offset: 0x00141D90
+	// Token: 0x06003206 RID: 12806 RVA: 0x00144784 File Offset: 0x00142984
 	public void GSStatsParseXml(XElement _element)
 	{
 		foreach (XElement xelement in _element.Elements("stats"))
@@ -2050,7 +2050,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031F9 RID: 12793 RVA: 0x00143DD0 File Offset: 0x00141FD0
+	// Token: 0x06003207 RID: 12807 RVA: 0x001449C4 File Offset: 0x00142BC4
 	public void AddGSStats(ItemValue _iv, int _stage, GameRandom _rand)
 	{
 		if (this.Stats != null)
@@ -2086,7 +2086,7 @@ public class ItemClass : ItemData
 		}
 	}
 
-	// Token: 0x060031FA RID: 12794 RVA: 0x00143EE0 File Offset: 0x001420E0
+	// Token: 0x06003208 RID: 12808 RVA: 0x00144AD4 File Offset: 0x00142CD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass.GSStat FindGSStat(List<ItemClass.GSStat> _list, int _quality, int _gameStage, GameRandom _rand)
 	{
@@ -2131,7 +2131,7 @@ public class ItemClass : ItemData
 		return gsstat;
 	}
 
-	// Token: 0x060031FB RID: 12795 RVA: 0x00143FA8 File Offset: 0x001421A8
+	// Token: 0x06003209 RID: 12809 RVA: 0x00144B9C File Offset: 0x00142D9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalculateTechType()
 	{
@@ -2159,7 +2159,7 @@ public class ItemClass : ItemData
 		this.ItemTechType = ItemClass.ItemTechTypes.None;
 	}
 
-	// Token: 0x060031FC RID: 12796 RVA: 0x00144034 File Offset: 0x00142234
+	// Token: 0x0600320A RID: 12810 RVA: 0x00144C28 File Offset: 0x00142E28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass GetPreviousTechItem()
 	{
@@ -2183,7 +2183,7 @@ public class ItemClass : ItemData
 		return this.previousTechItems[0];
 	}
 
-	// Token: 0x060031FD RID: 12797 RVA: 0x001440E4 File Offset: 0x001422E4
+	// Token: 0x0600320B RID: 12811 RVA: 0x00144CD8 File Offset: 0x00142ED8
 	public static ItemClass HandleSandboxTechType(ItemClass itemClass)
 	{
 		if (itemClass.ItemTechType > ItemClass.MaxTechType)
@@ -2198,744 +2198,744 @@ public class ItemClass : ItemData
 		return itemClass;
 	}
 
-	// Token: 0x060031FE RID: 12798 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600320C RID: 12812 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool CanEquip()
 	{
 		return false;
 	}
 
-	// Token: 0x0400263A RID: 9786
+	// Token: 0x04002655 RID: 9813
 	public static readonly FastTags<TagGroup.Global> EatDistractionTag = FastTags<TagGroup.Global>.GetTag("eat");
 
-	// Token: 0x0400263B RID: 9787
+	// Token: 0x04002656 RID: 9814
 	public static readonly FastTags<TagGroup.Global> RequiresContactDistractionTag = FastTags<TagGroup.Global>.GetTag("requires_contact");
 
-	// Token: 0x0400263C RID: 9788
+	// Token: 0x04002657 RID: 9815
 	public static string PropSoundIdle = "SoundIdle";
 
-	// Token: 0x0400263D RID: 9789
+	// Token: 0x04002658 RID: 9816
 	public static string PropSoundDestroy = "SoundDestroy";
 
-	// Token: 0x0400263E RID: 9790
+	// Token: 0x04002659 RID: 9817
 	public static string PropSoundJammed = "SoundJammed";
 
-	// Token: 0x0400263F RID: 9791
+	// Token: 0x0400265A RID: 9818
 	public static string PropSoundHolster = "SoundHolster";
 
-	// Token: 0x04002640 RID: 9792
+	// Token: 0x0400265B RID: 9819
 	public static string PropSoundUnholster = "SoundUnholster";
 
-	// Token: 0x04002641 RID: 9793
+	// Token: 0x0400265C RID: 9820
 	public static string PropSoundStick = "SoundStick";
 
-	// Token: 0x04002642 RID: 9794
+	// Token: 0x0400265D RID: 9821
 	public static string PropSoundTick = "SoundTick";
 
-	// Token: 0x04002643 RID: 9795
+	// Token: 0x0400265E RID: 9822
 	public static string PropSoundPickup = "SoundPickup";
 
-	// Token: 0x04002644 RID: 9796
+	// Token: 0x0400265F RID: 9823
 	public static string PropSoundPlace = "SoundPlace";
 
-	// Token: 0x04002645 RID: 9797
+	// Token: 0x04002660 RID: 9824
 	public static string PropSoundImpactHit = "SoundImpactHit";
 
-	// Token: 0x04002646 RID: 9798
+	// Token: 0x04002661 RID: 9825
 	public static string PropSoundImpactGraze = "SoundImpactGraze";
 
-	// Token: 0x04002647 RID: 9799
+	// Token: 0x04002662 RID: 9826
 	public static string PropHasReloadAnim = "HasReloadAnim";
 
-	// Token: 0x04002648 RID: 9800
+	// Token: 0x04002663 RID: 9827
 	public static string PropFuelValue = "FuelValue";
 
-	// Token: 0x04002649 RID: 9801
+	// Token: 0x04002664 RID: 9828
 	public static string PropWeight = "Weight";
 
-	// Token: 0x0400264A RID: 9802
+	// Token: 0x04002665 RID: 9829
 	public static string PropMoldTarget = "MoldTarget";
 
-	// Token: 0x0400264B RID: 9803
+	// Token: 0x04002666 RID: 9830
 	public static string PropSmell = "Smell";
 
-	// Token: 0x0400264C RID: 9804
+	// Token: 0x04002667 RID: 9831
 	public static string PropLightSource = "LightSource";
 
-	// Token: 0x0400264D RID: 9805
+	// Token: 0x04002668 RID: 9832
 	public static string PropLightValue = "LightValue";
 
-	// Token: 0x0400264E RID: 9806
+	// Token: 0x04002669 RID: 9833
 	public static string PropMatEmission = "MatEmission";
 
-	// Token: 0x0400264F RID: 9807
+	// Token: 0x0400266A RID: 9834
 	public static string PropActivateObject = "ActivateObject";
 
-	// Token: 0x04002650 RID: 9808
+	// Token: 0x0400266B RID: 9835
 	public static string PropThrowableDecoy = "ThrowableDecoy";
 
-	// Token: 0x04002651 RID: 9809
+	// Token: 0x0400266C RID: 9836
 	public static string PropGroupName = "Group";
 
-	// Token: 0x04002652 RID: 9810
+	// Token: 0x0400266D RID: 9837
 	public static string PropCritChance = "CritChance";
 
-	// Token: 0x04002653 RID: 9811
+	// Token: 0x0400266E RID: 9838
 	public static string PropCustomIcon = "CustomIcon";
 
-	// Token: 0x04002654 RID: 9812
+	// Token: 0x0400266F RID: 9839
 	public static string PropCustomIconTint = "CustomIconTint";
 
-	// Token: 0x04002655 RID: 9813
+	// Token: 0x04002670 RID: 9840
 	public static string PropPartType = "PartType";
 
-	// Token: 0x04002656 RID: 9814
+	// Token: 0x04002671 RID: 9841
 	public static string PropImageEffectOnActive = "ImageEffectOnActive";
 
-	// Token: 0x04002657 RID: 9815
+	// Token: 0x04002672 RID: 9842
 	public static string PropPlaySoundOnActive = "PlaySoundOnActive";
 
-	// Token: 0x04002658 RID: 9816
+	// Token: 0x04002673 RID: 9843
 	public static string PropActive = "Active";
 
-	// Token: 0x04002659 RID: 9817
+	// Token: 0x04002674 RID: 9844
 	public static string PropAlwaysActive = "AlwaysActive";
 
-	// Token: 0x0400265A RID: 9818
+	// Token: 0x04002675 RID: 9845
 	public static string PropHoldingItemHidden = "HoldingItemHidden";
 
-	// Token: 0x0400265B RID: 9819
+	// Token: 0x04002676 RID: 9846
 	public static string PropVehicleSlotType = "VehicleSlotType";
 
-	// Token: 0x0400265C RID: 9820
+	// Token: 0x04002677 RID: 9847
 	public static string PropGetQualityFromWeapon = "GetQualityFromWeapon";
 
-	// Token: 0x0400265D RID: 9821
+	// Token: 0x04002678 RID: 9848
 	public static string PropAttributes = "Attributes";
 
-	// Token: 0x0400265E RID: 9822
+	// Token: 0x04002679 RID: 9849
 	public static string PropCraftExpValue = "CraftingIngredientExp";
 
-	// Token: 0x0400265F RID: 9823
+	// Token: 0x0400267A RID: 9850
 	public static string PropCraftTimeValue = "CraftingIngredientTime";
 
-	// Token: 0x04002660 RID: 9824
+	// Token: 0x0400267B RID: 9851
 	public static string PropLootExpValue = "LootExpValue";
 
-	// Token: 0x04002661 RID: 9825
+	// Token: 0x0400267C RID: 9852
 	public static string PropEconomicValue = "EconomicValue";
 
-	// Token: 0x04002662 RID: 9826
+	// Token: 0x0400267D RID: 9853
 	public static string PropEconomicSellScale = "EconomicSellScale";
 
-	// Token: 0x04002663 RID: 9827
+	// Token: 0x0400267E RID: 9854
 	public static string PropEconomicBundleSize = "EconomicBundleSize";
 
-	// Token: 0x04002664 RID: 9828
+	// Token: 0x0400267F RID: 9855
 	public static string PropSellableToTrader = "SellableToTrader";
 
-	// Token: 0x04002665 RID: 9829
+	// Token: 0x04002680 RID: 9856
 	public static string PropCraftingSkillExp = "CraftingSkillExp";
 
-	// Token: 0x04002666 RID: 9830
+	// Token: 0x04002681 RID: 9857
 	public static string PropActionSkillExp = "ActionSkillExp";
 
-	// Token: 0x04002667 RID: 9831
+	// Token: 0x04002682 RID: 9858
 	public static string PropInsulation = "Insulation";
 
-	// Token: 0x04002668 RID: 9832
+	// Token: 0x04002683 RID: 9859
 	public static string PropWaterproof = "Waterproof";
 
-	// Token: 0x04002669 RID: 9833
+	// Token: 0x04002684 RID: 9860
 	public static string PropEncumbrance = "Encumbrance";
 
-	// Token: 0x0400266A RID: 9834
+	// Token: 0x04002685 RID: 9861
 	public static string PropDescriptionKey = "DescriptionKey";
 
-	// Token: 0x0400266B RID: 9835
+	// Token: 0x04002686 RID: 9862
 	public static string PropResourceUnit = "ResourceUnit";
 
-	// Token: 0x0400266C RID: 9836
+	// Token: 0x04002687 RID: 9863
 	public static string PropReplaceResourceUnit = "ReplaceResourceUnit";
 
-	// Token: 0x0400266D RID: 9837
+	// Token: 0x04002688 RID: 9864
 	public static string PropMeltTimePerUnit = "MeltTimePerUnit";
 
-	// Token: 0x0400266E RID: 9838
+	// Token: 0x04002689 RID: 9865
 	public static string PropActionSkillGroup = "ActionSkillGroup";
 
-	// Token: 0x0400266F RID: 9839
+	// Token: 0x0400268A RID: 9866
 	public static string PropCraftingSkillGroup = "CraftingSkillGroup";
 
-	// Token: 0x04002670 RID: 9840
+	// Token: 0x0400268B RID: 9867
 	public static string PropCrosshairOnAim = "CrosshairOnAim";
 
-	// Token: 0x04002671 RID: 9841
+	// Token: 0x0400268C RID: 9868
 	public static string PropCrosshairUpAfterShot = "CrosshairUpAfterShot";
 
-	// Token: 0x04002672 RID: 9842
+	// Token: 0x0400268D RID: 9869
 	public static string PropUsableUnderwater = "UsableUnderwater";
 
-	// Token: 0x04002673 RID: 9843
+	// Token: 0x0400268E RID: 9870
 	public static string PropRepairExpMultiplier = "RepairExpMultiplier";
 
-	// Token: 0x04002674 RID: 9844
+	// Token: 0x0400268F RID: 9871
 	public static string PropTags = "Tags";
 
-	// Token: 0x04002675 RID: 9845
+	// Token: 0x04002690 RID: 9872
 	public static string PropShowQuality = "ShowQuality";
 
-	// Token: 0x04002676 RID: 9846
+	// Token: 0x04002691 RID: 9873
 	public static string PropQualityMin = "QualityMin";
 
-	// Token: 0x04002677 RID: 9847
+	// Token: 0x04002692 RID: 9874
 	public static string PropSoundSightIn = "Sound_Sight_In";
 
-	// Token: 0x04002678 RID: 9848
+	// Token: 0x04002693 RID: 9875
 	public static string PropSoundSightOut = "Sound_Sight_Out";
 
-	// Token: 0x04002679 RID: 9849
+	// Token: 0x04002694 RID: 9876
 	public static string PropIgnoreKeystoneSound = "IgnoreKeystoneSound";
 
-	// Token: 0x0400267A RID: 9850
+	// Token: 0x04002695 RID: 9877
 	public static string PropCreativeMode = "CreativeMode";
 
-	// Token: 0x0400267B RID: 9851
+	// Token: 0x04002696 RID: 9878
 	public static string PropCreativeSort1 = "SortOrder1";
 
-	// Token: 0x0400267C RID: 9852
+	// Token: 0x04002697 RID: 9879
 	public static string PropCreativeSort2 = "SortOrder2";
 
-	// Token: 0x0400267D RID: 9853
+	// Token: 0x04002698 RID: 9880
 	public static string PropDistractionTags = "DistractionTags";
 
-	// Token: 0x0400267E RID: 9854
+	// Token: 0x04002699 RID: 9881
 	public static string PropIsSticky = "IsSticky";
 
-	// Token: 0x0400267F RID: 9855
+	// Token: 0x0400269A RID: 9882
 	public static string PropDisplayType = "DisplayType";
 
-	// Token: 0x04002680 RID: 9856
+	// Token: 0x0400269B RID: 9883
 	public static string PropItemTypeIcon = "ItemTypeIcon";
 
-	// Token: 0x04002681 RID: 9857
+	// Token: 0x0400269C RID: 9884
 	public static string PropAltItemTypeIcon = "AltItemTypeIcon";
 
-	// Token: 0x04002682 RID: 9858
+	// Token: 0x0400269D RID: 9885
 	public static string PropAltItemTypeIconColor = "AltItemTypeIconColor";
 
-	// Token: 0x04002683 RID: 9859
+	// Token: 0x0400269E RID: 9886
 	public static string PropUnlockedBy = "UnlockedBy";
 
-	// Token: 0x04002684 RID: 9860
+	// Token: 0x0400269F RID: 9887
 	public static string PropUnlocks = "Unlocks";
 
-	// Token: 0x04002685 RID: 9861
+	// Token: 0x040026A0 RID: 9888
 	public static string PropNoScrapping = "NoScrapping";
 
-	// Token: 0x04002686 RID: 9862
+	// Token: 0x040026A1 RID: 9889
 	public static string PropScrapTimeOverride = "ScrapTimeOverride";
 
-	// Token: 0x04002687 RID: 9863
+	// Token: 0x040026A2 RID: 9890
 	public static string PropNavObject = "NavObject";
 
-	// Token: 0x04002688 RID: 9864
+	// Token: 0x040026A3 RID: 9891
 	public static string PropQuestItem = "IsQuestItem";
 
-	// Token: 0x04002689 RID: 9865
+	// Token: 0x040026A4 RID: 9892
 	public static string PropTrackerIndexName = "TrackerIndexName";
 
-	// Token: 0x0400268A RID: 9866
+	// Token: 0x040026A5 RID: 9893
 	public static string PropTrackerNavObject = "TrackerNavObject";
 
-	// Token: 0x0400268B RID: 9867
+	// Token: 0x040026A6 RID: 9894
 	public static string PropTraderStageTemplate = "TraderStageTemplate";
 
-	// Token: 0x0400268C RID: 9868
+	// Token: 0x040026A7 RID: 9895
 	public static string PropMaxModsAllowed = "MaxModsAllowed";
 
-	// Token: 0x0400268D RID: 9869
+	// Token: 0x040026A8 RID: 9896
 	public static string PropRestrictedMove = "RestrictedMove";
 
-	// Token: 0x0400268E RID: 9870
+	// Token: 0x040026A9 RID: 9897
 	public static string PropPreviousItemType = "PreviousTechItem";
 
-	// Token: 0x0400268F RID: 9871
+	// Token: 0x040026AA RID: 9898
 	public static int MAX_ITEMS = Block.MAX_BLOCKS + 16384;
 
-	// Token: 0x04002690 RID: 9872
+	// Token: 0x040026AB RID: 9899
 	public static NameIdMapping nameIdMapping;
 
-	// Token: 0x04002691 RID: 9873
+	// Token: 0x040026AC RID: 9900
 	public static byte[] fullMappingDataForClients;
 
-	// Token: 0x04002692 RID: 9874
+	// Token: 0x040026AD RID: 9901
 	public static ItemClass[] list;
 
-	// Token: 0x04002693 RID: 9875
+	// Token: 0x040026AE RID: 9902
 	public static string[] itemActionNames;
 
-	// Token: 0x04002694 RID: 9876
+	// Token: 0x040026AF RID: 9903
 	public const int cMaxActionNames = 5;
 
-	// Token: 0x04002695 RID: 9877
+	// Token: 0x040026B0 RID: 9904
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static Dictionary<string, ItemClass> nameToItem = new Dictionary<string, ItemClass>();
 
-	// Token: 0x04002696 RID: 9878
+	// Token: 0x040026B1 RID: 9905
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static Dictionary<string, ItemClass> nameToItemCaseInsensitive = new CaseInsensitiveStringDictionary<ItemClass>();
 
-	// Token: 0x04002697 RID: 9879
+	// Token: 0x040026B2 RID: 9906
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static List<string> itemNames = new List<string>();
 
-	// Token: 0x04002698 RID: 9880
+	// Token: 0x040026B3 RID: 9907
 	public static readonly ReadOnlyCollection<string> ItemNames = new ReadOnlyCollection<string>(ItemClass.itemNames);
 
-	// Token: 0x04002699 RID: 9881
+	// Token: 0x040026B4 RID: 9908
 	public DynamicProperties Properties;
 
-	// Token: 0x0400269A RID: 9882
+	// Token: 0x040026B5 RID: 9909
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName;
 
-	// Token: 0x0400269B RID: 9883
+	// Token: 0x040026B6 RID: 9910
 	public float Smell;
 
-	// Token: 0x0400269C RID: 9884
+	// Token: 0x040026B7 RID: 9911
 	public string MeshFile;
 
-	// Token: 0x0400269D RID: 9885
+	// Token: 0x040026B8 RID: 9912
 	public string DropMeshFile;
 
-	// Token: 0x0400269E RID: 9886
+	// Token: 0x040026B9 RID: 9913
 	public string HandMeshFile;
 
-	// Token: 0x0400269F RID: 9887
+	// Token: 0x040026BA RID: 9914
 	public string StickyMaterial;
 
-	// Token: 0x040026A0 RID: 9888
+	// Token: 0x040026BB RID: 9915
 	public float StickyOffset = 0.15f;
 
-	// Token: 0x040026A1 RID: 9889
+	// Token: 0x040026BC RID: 9916
 	public int StickyColliderUp = -1;
 
-	// Token: 0x040026A2 RID: 9890
+	// Token: 0x040026BD RID: 9917
 	public float StickyColliderRadius = 0.2f;
 
-	// Token: 0x040026A3 RID: 9891
+	// Token: 0x040026BE RID: 9918
 	public float StickyColliderLength = -1f;
 
-	// Token: 0x040026A4 RID: 9892
+	// Token: 0x040026BF RID: 9919
 	public bool IsSticky;
 
-	// Token: 0x040026A5 RID: 9893
+	// Token: 0x040026C0 RID: 9920
 	public const int cActionUpdateCount = 3;
 
-	// Token: 0x040026A6 RID: 9894
+	// Token: 0x040026C1 RID: 9921
 	public ItemAction[] Actions;
 
-	// Token: 0x040026A7 RID: 9895
+	// Token: 0x040026C2 RID: 9922
 	public MaterialBlock MadeOfMaterial;
 
-	// Token: 0x040026A8 RID: 9896
+	// Token: 0x040026C3 RID: 9923
 	public DataItem<int> HoldType = new DataItem<int>(0);
 
-	// Token: 0x040026A9 RID: 9897
+	// Token: 0x040026C4 RID: 9924
 	public DataItem<int> Stacknumber = new DataItem<int>(500);
 
-	// Token: 0x040026AA RID: 9898
+	// Token: 0x040026C5 RID: 9925
 	public DataItem<int> MaxUseTimes = new DataItem<int>(0);
 
-	// Token: 0x040026AB RID: 9899
+	// Token: 0x040026C6 RID: 9926
 	public DataItem<bool> MaxUseTimesBreaksAfter = new DataItem<bool>(false);
 
-	// Token: 0x040026AC RID: 9900
+	// Token: 0x040026C7 RID: 9927
 	public ItemClass MoldTarget;
 
-	// Token: 0x040026AD RID: 9901
+	// Token: 0x040026C8 RID: 9928
 	public DataItem<string> LightSource;
 
-	// Token: 0x040026AE RID: 9902
+	// Token: 0x040026C9 RID: 9929
 	public DataItem<string> ActivateObject;
 
-	// Token: 0x040026AF RID: 9903
+	// Token: 0x040026CA RID: 9930
 	public DataItem<bool> ThrowableDecoy;
 
-	// Token: 0x040026B0 RID: 9904
+	// Token: 0x040026CB RID: 9931
 	public ItemData.DataItemArrayRepairTools RepairTools;
 
-	// Token: 0x040026B1 RID: 9905
+	// Token: 0x040026CC RID: 9932
 	public DataItem<int> RepairAmount;
 
-	// Token: 0x040026B2 RID: 9906
+	// Token: 0x040026CD RID: 9933
 	public DataItem<float> RepairTime;
 
-	// Token: 0x040026B3 RID: 9907
+	// Token: 0x040026CE RID: 9934
 	public DataItem<float> CritChance;
 
-	// Token: 0x040026B4 RID: 9908
+	// Token: 0x040026CF RID: 9935
 	public string[] Groups = new string[] { "Decor/Miscellaneous" };
 
-	// Token: 0x040026B5 RID: 9909
+	// Token: 0x040026D0 RID: 9936
 	public DataItem<string> CustomIcon;
 
-	// Token: 0x040026B6 RID: 9910
+	// Token: 0x040026D1 RID: 9937
 	public Color CustomIconTint;
 
-	// Token: 0x040026B7 RID: 9911
+	// Token: 0x040026D2 RID: 9938
 	public DataItem<bool> UserHidden = new DataItem<bool>(false);
 
-	// Token: 0x040026B8 RID: 9912
+	// Token: 0x040026D3 RID: 9939
 	public string VehicleSlotType;
 
-	// Token: 0x040026B9 RID: 9913
+	// Token: 0x040026D4 RID: 9940
 	public bool GetQualityFromWeapon;
 
-	// Token: 0x040026BA RID: 9914
+	// Token: 0x040026D5 RID: 9941
 	public string DescriptionKey;
 
-	// Token: 0x040026BB RID: 9915
+	// Token: 0x040026D6 RID: 9942
 	public bool IsResourceUnit;
 
-	// Token: 0x040026BC RID: 9916
+	// Token: 0x040026D7 RID: 9943
 	public string ReplaceResourceUnit = "";
 
-	// Token: 0x040026BD RID: 9917
+	// Token: 0x040026D8 RID: 9944
 	public float MeltTimePerUnit;
 
-	// Token: 0x040026BE RID: 9918
+	// Token: 0x040026D9 RID: 9945
 	public string ActionSkillGroup = "";
 
-	// Token: 0x040026BF RID: 9919
+	// Token: 0x040026DA RID: 9946
 	public string CraftingSkillGroup = "";
 
-	// Token: 0x040026C0 RID: 9920
+	// Token: 0x040026DB RID: 9947
 	public bool UsableUnderwater = true;
 
-	// Token: 0x040026C1 RID: 9921
+	// Token: 0x040026DC RID: 9948
 	public float lightValue;
 
-	// Token: 0x040026C2 RID: 9922
+	// Token: 0x040026DD RID: 9949
 	public string soundSightIn = "";
 
-	// Token: 0x040026C3 RID: 9923
+	// Token: 0x040026DE RID: 9950
 	public string soundSightOut = "";
 
-	// Token: 0x040026C4 RID: 9924
+	// Token: 0x040026DF RID: 9951
 	public bool ignoreKeystoneSound;
 
-	// Token: 0x040026C5 RID: 9925
+	// Token: 0x040026E0 RID: 9952
 	public bool HoldingItemHidden;
 
-	// Token: 0x040026C6 RID: 9926
+	// Token: 0x040026E1 RID: 9953
 	public List<int> PartParentId;
 
-	// Token: 0x040026C7 RID: 9927
+	// Token: 0x040026E2 RID: 9954
 	public PreviewData Preview;
 
-	// Token: 0x040026C8 RID: 9928
+	// Token: 0x040026E3 RID: 9955
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bCanHold;
 
-	// Token: 0x040026C9 RID: 9929
+	// Token: 0x040026E4 RID: 9956
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bCanDrop;
 
-	// Token: 0x040026CA RID: 9930
+	// Token: 0x040026E5 RID: 9957
 	public bool HasSubItems;
 
-	// Token: 0x040026CB RID: 9931
+	// Token: 0x040026E6 RID: 9958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] attachments;
 
-	// Token: 0x040026CC RID: 9932
+	// Token: 0x040026E7 RID: 9959
 	public static float MaxStackSizeModifier = 1f;
 
-	// Token: 0x040026CD RID: 9933
+	// Token: 0x040026E8 RID: 9960
 	public bool bCraftingTool;
 
-	// Token: 0x040026CE RID: 9934
+	// Token: 0x040026E9 RID: 9961
 	public float CraftComponentExp = 3f;
 
-	// Token: 0x040026CF RID: 9935
+	// Token: 0x040026EA RID: 9962
 	public float CraftComponentTime = 1f;
 
-	// Token: 0x040026D0 RID: 9936
+	// Token: 0x040026EB RID: 9963
 	public float LootExp = 1f;
 
-	// Token: 0x040026D1 RID: 9937
+	// Token: 0x040026EC RID: 9964
 	public float EconomicValue;
 
-	// Token: 0x040026D2 RID: 9938
+	// Token: 0x040026ED RID: 9965
 	public float EconomicSellScale = 1f;
 
-	// Token: 0x040026D3 RID: 9939
+	// Token: 0x040026EE RID: 9966
 	public int EconomicBundleSize = 1;
 
-	// Token: 0x040026D4 RID: 9940
+	// Token: 0x040026EF RID: 9967
 	public bool SellableToTrader = true;
 
-	// Token: 0x040026D5 RID: 9941
+	// Token: 0x040026F0 RID: 9968
 	public string TraderStageTemplate;
 
-	// Token: 0x040026D6 RID: 9942
+	// Token: 0x040026F1 RID: 9969
 	public int MaxModsAllowed = 1;
 
-	// Token: 0x040026D7 RID: 9943
+	// Token: 0x040026F2 RID: 9970
 	public int CraftingSkillExp = 10;
 
-	// Token: 0x040026D8 RID: 9944
+	// Token: 0x040026F3 RID: 9971
 	public int ActionSkillExp = 10;
 
-	// Token: 0x040026D9 RID: 9945
+	// Token: 0x040026F4 RID: 9972
 	public float RepairExpMultiplier = 10f;
 
-	// Token: 0x040026DA RID: 9946
+	// Token: 0x040026F5 RID: 9973
 	public float Insulation;
 
-	// Token: 0x040026DB RID: 9947
+	// Token: 0x040026F6 RID: 9974
 	public float WaterProof;
 
-	// Token: 0x040026DC RID: 9948
+	// Token: 0x040026F7 RID: 9975
 	public float Encumbrance;
 
-	// Token: 0x040026DD RID: 9949
+	// Token: 0x040026F8 RID: 9976
 	public string SoundUnholster = "generic_unholster";
 
-	// Token: 0x040026DE RID: 9950
+	// Token: 0x040026F9 RID: 9977
 	public string SoundHolster = "generic_holster";
 
-	// Token: 0x040026DF RID: 9951
+	// Token: 0x040026FA RID: 9978
 	public string SoundStick;
 
-	// Token: 0x040026E0 RID: 9952
+	// Token: 0x040026FB RID: 9979
 	public string SoundTick;
 
-	// Token: 0x040026E1 RID: 9953
+	// Token: 0x040026FC RID: 9980
 	public float SoundTickDelay = 1f;
 
-	// Token: 0x040026E2 RID: 9954
+	// Token: 0x040026FD RID: 9981
 	public string SoundPickup = "craft_take_item";
 
-	// Token: 0x040026E3 RID: 9955
+	// Token: 0x040026FE RID: 9982
 	public string SoundPlace = "craft_place_item";
 
-	// Token: 0x040026E4 RID: 9956
+	// Token: 0x040026FF RID: 9983
 	public string SoundImpactHit;
 
-	// Token: 0x040026E5 RID: 9957
+	// Token: 0x04002700 RID: 9984
 	public string SoundImpactGraze;
 
-	// Token: 0x040026E6 RID: 9958
+	// Token: 0x04002701 RID: 9985
 	public bool HasReloadAnim = true;
 
-	// Token: 0x040026E7 RID: 9959
+	// Token: 0x04002702 RID: 9986
 	public bool bShowCrosshairOnAiming;
 
-	// Token: 0x040026E8 RID: 9960
+	// Token: 0x04002703 RID: 9987
 	public bool bCrosshairUpAfterShot;
 
-	// Token: 0x040026E9 RID: 9961
+	// Token: 0x04002704 RID: 9988
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bRestrictedMove;
 
-	// Token: 0x040026EA RID: 9962
+	// Token: 0x04002705 RID: 9989
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<XUiC_ItemStack.StackLocationTypes> restrictedTo = new List<XUiC_ItemStack.StackLocationTypes>();
 
-	// Token: 0x040026EB RID: 9963
+	// Token: 0x04002706 RID: 9990
 	public ItemClass.ItemTechTypes ItemTechType;
 
-	// Token: 0x040026EC RID: 9964
+	// Token: 0x04002707 RID: 9991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string previousTechTypeName = "";
 
-	// Token: 0x040026ED RID: 9965
+	// Token: 0x04002708 RID: 9992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass[] previousTechItems;
 
-	// Token: 0x040026EE RID: 9966
+	// Token: 0x04002709 RID: 9993
 	public static ItemClass.ItemTechTypes MaxTechType = ItemClass.ItemTechTypes.T3;
 
-	// Token: 0x040026EF RID: 9967
+	// Token: 0x0400270A RID: 9994
 	public bool IsLimited;
 
-	// Token: 0x040026F0 RID: 9968
+	// Token: 0x0400270B RID: 9995
 	public EnumCreativeMode CreativeMode;
 
-	// Token: 0x040026F1 RID: 9969
+	// Token: 0x0400270C RID: 9996
 	public string SortOrder;
 
-	// Token: 0x040026F2 RID: 9970
+	// Token: 0x0400270D RID: 9997
 	public FastTags<TagGroup.Global> ItemTags;
 
-	// Token: 0x040026F3 RID: 9971
+	// Token: 0x0400270E RID: 9998
 	public MinEffectController Effects;
 
-	// Token: 0x040026F4 RID: 9972
+	// Token: 0x0400270F RID: 9999
 	public FastTags<TagGroup.Global> DistractionTags;
 
-	// Token: 0x040026F5 RID: 9973
+	// Token: 0x04002710 RID: 10000
 	public SDCSUtils.SlotData SDCSData;
 
-	// Token: 0x040026F6 RID: 9974
+	// Token: 0x04002711 RID: 10001
 	public string DisplayType;
 
-	// Token: 0x040026F7 RID: 9975
+	// Token: 0x04002712 RID: 10002
 	public string ItemTypeIcon = "";
 
-	// Token: 0x040026F8 RID: 9976
+	// Token: 0x04002713 RID: 10003
 	public string AltItemTypeIcon;
 
-	// Token: 0x040026F9 RID: 9977
+	// Token: 0x04002714 RID: 10004
 	public Color AltItemTypeIconColor;
 
-	// Token: 0x040026FA RID: 9978
+	// Token: 0x04002715 RID: 10005
 	public bool ShowQualityBar;
 
-	// Token: 0x040026FB RID: 9979
+	// Token: 0x04002716 RID: 10006
 	public byte QualityMin;
 
-	// Token: 0x040026FC RID: 9980
+	// Token: 0x04002717 RID: 10007
 	public bool NoScrapping;
 
-	// Token: 0x040026FD RID: 9981
+	// Token: 0x04002718 RID: 10008
 	public float ScrapTimeOverride;
 
-	// Token: 0x040026FE RID: 9982
+	// Token: 0x04002719 RID: 10009
 	public string Unlocks = "";
 
-	// Token: 0x040026FF RID: 9983
+	// Token: 0x0400271A RID: 10010
 	public string NavObject = "";
 
-	// Token: 0x04002700 RID: 9984
+	// Token: 0x0400271B RID: 10011
 	public bool IsQuestItem;
 
-	// Token: 0x04002701 RID: 9985
+	// Token: 0x0400271C RID: 10012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> stopBleed = FastTags<TagGroup.Global>.Parse("stopsBleeding");
 
-	// Token: 0x04002702 RID: 9986
+	// Token: 0x0400271D RID: 10013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> T0Tag = FastTags<TagGroup.Global>.Parse("T0");
 
-	// Token: 0x04002703 RID: 9987
+	// Token: 0x0400271E RID: 10014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> T1Tag = FastTags<TagGroup.Global>.Parse("T1");
 
-	// Token: 0x04002704 RID: 9988
+	// Token: 0x0400271F RID: 10015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> T2Tag = FastTags<TagGroup.Global>.Parse("T2");
 
-	// Token: 0x04002705 RID: 9989
+	// Token: 0x04002720 RID: 10016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> T3Tag = FastTags<TagGroup.Global>.Parse("T3");
 
-	// Token: 0x04002706 RID: 9990
+	// Token: 0x04002721 RID: 10017
 	public string TrackerIndexName;
 
-	// Token: 0x04002707 RID: 9991
+	// Token: 0x04002722 RID: 10018
 	public string TrackerNavObject;
 
-	// Token: 0x04002708 RID: 9992
+	// Token: 0x04002723 RID: 10019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RecipeUnlockData[] unlockedBy;
 
-	// Token: 0x04002709 RID: 9993
+	// Token: 0x04002724 RID: 10020
 	public float TraderQualityMaxMod;
 
-	// Token: 0x0400270A RID: 9994
+	// Token: 0x04002725 RID: 10021
 	public float TraderQualityMinMod;
 
-	// Token: 0x0400270B RID: 9995
+	// Token: 0x04002726 RID: 10022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cFilterQualityPrefix = "#";
 
-	// Token: 0x0400270C RID: 9996
+	// Token: 0x04002727 RID: 10023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] ActionProfilerNames = new string[] { "action0", "action1", "action2" };
 
-	// Token: 0x0400270D RID: 9997
+	// Token: 0x04002728 RID: 10024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, int> fixedItemIds = new Dictionary<string, int>();
 
-	// Token: 0x0400270E RID: 9998
+	// Token: 0x04002729 RID: 10025
 	public const float cGSStatScale = 0.005f;
 
-	// Token: 0x0400270F RID: 9999
+	// Token: 0x0400272A RID: 10026
 	public const float cGSStatMax = 163.83499f;
 
-	// Token: 0x04002710 RID: 10000
+	// Token: 0x0400272B RID: 10027
 	public Dictionary<PassiveEffects, List<ItemClass.GSStat>> Stats;
 
-	// Token: 0x04002711 RID: 10001
+	// Token: 0x0400272C RID: 10028
 	public static int MaxQualityTier;
 
-	// Token: 0x020005F0 RID: 1520
+	// Token: 0x020005F7 RID: 1527
 	public enum EnumCrosshairType
 	{
-		// Token: 0x04002713 RID: 10003
+		// Token: 0x0400272E RID: 10030
 		None,
-		// Token: 0x04002714 RID: 10004
+		// Token: 0x0400272F RID: 10031
 		Plus,
-		// Token: 0x04002715 RID: 10005
+		// Token: 0x04002730 RID: 10032
 		Crosshair,
-		// Token: 0x04002716 RID: 10006
+		// Token: 0x04002731 RID: 10033
 		CrosshairOnAiming,
-		// Token: 0x04002717 RID: 10007
+		// Token: 0x04002732 RID: 10034
 		Damage,
-		// Token: 0x04002718 RID: 10008
+		// Token: 0x04002733 RID: 10035
 		Upgrade,
-		// Token: 0x04002719 RID: 10009
+		// Token: 0x04002734 RID: 10036
 		Repair,
-		// Token: 0x0400271A RID: 10010
+		// Token: 0x04002735 RID: 10037
 		PowerSource,
-		// Token: 0x0400271B RID: 10011
+		// Token: 0x04002736 RID: 10038
 		Heal,
-		// Token: 0x0400271C RID: 10012
+		// Token: 0x04002737 RID: 10039
 		PowerItem,
-		// Token: 0x0400271D RID: 10013
+		// Token: 0x04002738 RID: 10040
 		Blocked,
-		// Token: 0x0400271E RID: 10014
+		// Token: 0x04002739 RID: 10041
 		Dot
 	}
 
-	// Token: 0x020005F1 RID: 1521
+	// Token: 0x020005F8 RID: 1528
 	public enum ItemTechTypes
 	{
-		// Token: 0x04002720 RID: 10016
+		// Token: 0x0400273B RID: 10043
 		None,
-		// Token: 0x04002721 RID: 10017
+		// Token: 0x0400273C RID: 10044
 		T0,
-		// Token: 0x04002722 RID: 10018
+		// Token: 0x0400273D RID: 10045
 		T1,
-		// Token: 0x04002723 RID: 10019
+		// Token: 0x0400273E RID: 10046
 		T2,
-		// Token: 0x04002724 RID: 10020
+		// Token: 0x0400273F RID: 10047
 		T3
 	}
 
-	// Token: 0x020005F2 RID: 1522
-	// (Invoke) Token: 0x06003201 RID: 12801
+	// Token: 0x020005F9 RID: 1529
+	// (Invoke) Token: 0x0600320F RID: 12815
 	public delegate bool FilterItem(ItemClass _class, Block _block);
 
-	// Token: 0x020005F3 RID: 1523
+	// Token: 0x020005FA RID: 1530
 	public struct GSStat
 	{
-		// Token: 0x04002725 RID: 10021
+		// Token: 0x04002740 RID: 10048
 		public short quality;
 
-		// Token: 0x04002726 RID: 10022
+		// Token: 0x04002741 RID: 10049
 		public short gameStage;
 
-		// Token: 0x04002727 RID: 10023
+		// Token: 0x04002742 RID: 10050
 		public float chance;
 
-		// Token: 0x04002728 RID: 10024
+		// Token: 0x04002743 RID: 10051
 		public short min;
 
-		// Token: 0x04002729 RID: 10025
+		// Token: 0x04002744 RID: 10052
 		public short max;
 	}
 }

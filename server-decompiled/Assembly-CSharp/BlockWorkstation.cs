@@ -6,13 +6,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockWorkstation : BlockParticle
 {
-	// Token: 0x06000A44 RID: 2628 RVA: 0x000447EC File Offset: 0x000429EC
+	// Token: 0x06000A44 RID: 2628 RVA: 0x000447AC File Offset: 0x000429AC
 	public BlockWorkstation()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000A45 RID: 2629 RVA: 0x00044860 File Offset: 0x00042A60
+	// Token: 0x06000A45 RID: 2629 RVA: 0x00044820 File Offset: 0x00042A20
 	public override void Init()
 	{
 		base.Init();
@@ -25,7 +25,7 @@ public class BlockWorkstation : BlockParticle
 		CraftingManager.AddWorkstationData(this.WorkstationData);
 	}
 
-	// Token: 0x06000A46 RID: 2630 RVA: 0x000448E4 File Offset: 0x00042AE4
+	// Token: 0x06000A46 RID: 2630 RVA: 0x000448A4 File Offset: 0x00042AA4
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -39,14 +39,14 @@ public class BlockWorkstation : BlockParticle
 		});
 	}
 
-	// Token: 0x06000A47 RID: 2631 RVA: 0x00044922 File Offset: 0x00042B22
+	// Token: 0x06000A47 RID: 2631 RVA: 0x000448E2 File Offset: 0x00042AE2
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
 		_chunk.RemoveTileEntityAt<TileEntityWorkstation>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x06000A48 RID: 2632 RVA: 0x00044944 File Offset: 0x00042B44
+	// Token: 0x06000A48 RID: 2632 RVA: 0x00044904 File Offset: 0x00042B04
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -57,7 +57,7 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x06000A49 RID: 2633 RVA: 0x00044978 File Offset: 0x00042B78
+	// Token: 0x06000A49 RID: 2633 RVA: 0x00044938 File Offset: 0x00042B38
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		TileEntityWorkstation tileEntityWorkstation = (TileEntityWorkstation)_world.GetTileEntity(_blockPos);
@@ -70,7 +70,7 @@ public class BlockWorkstation : BlockParticle
 		return true;
 	}
 
-	// Token: 0x06000A4A RID: 2634 RVA: 0x000449AC File Offset: 0x00042BAC
+	// Token: 0x06000A4A RID: 2634 RVA: 0x0004496C File Offset: 0x00042B6C
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -83,7 +83,7 @@ public class BlockWorkstation : BlockParticle
 		return 0;
 	}
 
-	// Token: 0x06000A4C RID: 2636 RVA: 0x000449C8 File Offset: 0x00042BC8
+	// Token: 0x06000A4C RID: 2636 RVA: 0x00044988 File Offset: 0x00042B88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -107,19 +107,19 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x06000A4D RID: 2637 RVA: 0x00044A4F File Offset: 0x00042C4F
+	// Token: 0x06000A4D RID: 2637 RVA: 0x00044A0F File Offset: 0x00042C0F
 	public static bool IsLit(BlockValue _blockValue)
 	{
 		return _blockValue.meta > 0;
 	}
 
-	// Token: 0x06000A4E RID: 2638 RVA: 0x00044A5B File Offset: 0x00042C5B
+	// Token: 0x06000A4E RID: 2638 RVA: 0x00044A1B File Offset: 0x00042C1B
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return _blockValue.Block.GetLocalizedBlockName() + "\n" + Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x06000A4F RID: 2639 RVA: 0x00044A80 File Offset: 0x00042C80
+	// Token: 0x06000A4F RID: 2639 RVA: 0x00044A40 File Offset: 0x00042C40
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "open")
@@ -171,7 +171,7 @@ public class BlockWorkstation : BlockParticle
 		return true;
 	}
 
-	// Token: 0x06000A51 RID: 2641 RVA: 0x00044BB0 File Offset: 0x00042DB0
+	// Token: 0x06000A51 RID: 2641 RVA: 0x00044B70 File Offset: 0x00042D70
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -186,7 +186,7 @@ public class BlockWorkstation : BlockParticle
 		return this.cmds;
 	}
 
-	// Token: 0x06000A52 RID: 2642 RVA: 0x00044C40 File Offset: 0x00042E40
+	// Token: 0x06000A52 RID: 2642 RVA: 0x00044C00 File Offset: 0x00042E00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool takeItemWithTimerCanTake(Vector3i _blockPos, EntityAlive _player)
 	{
@@ -198,14 +198,14 @@ public class BlockWorkstation : BlockParticle
 		return false;
 	}
 
-	// Token: 0x06000A53 RID: 2643 RVA: 0x00044C95 File Offset: 0x00042E95
+	// Token: 0x06000A53 RID: 2643 RVA: 0x00044C55 File Offset: 0x00042E55
 	public override void OnBlockEntityTransformBeforeActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformBeforeActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.UpdateVisible(_world, _blockPos);
 	}
 
-	// Token: 0x06000A54 RID: 2644 RVA: 0x00044CAC File Offset: 0x00042EAC
+	// Token: 0x06000A54 RID: 2644 RVA: 0x00044C6C File Offset: 0x00042E6C
 	public void UpdateVisible(WorldBase _world, Vector3i _blockPos)
 	{
 		TileEntityWorkstation tileEntityWorkstation = _world.GetTileEntity(_blockPos) as TileEntityWorkstation;
@@ -215,7 +215,7 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x06000A55 RID: 2645 RVA: 0x00044CD0 File Offset: 0x00042ED0
+	// Token: 0x06000A55 RID: 2645 RVA: 0x00044C90 File Offset: 0x00042E90
 	public void UpdateVisible(TileEntityWorkstation _te)
 	{
 		BlockEntityData blockEntity = _te.GetChunk().GetBlockEntity(_te.ToWorldPos());

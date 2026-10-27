@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001184 RID: 4484
+// Token: 0x02001194 RID: 4500
 public class XUiV_Window : XUiView
 {
-	// Token: 0x1700114E RID: 4430
-	// (get) Token: 0x06008F2A RID: 36650 RVA: 0x000200DA File Offset: 0x0001E2DA
+	// Token: 0x17001159 RID: 4441
+	// (get) Token: 0x06008F7E RID: 36734 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override UIRect UiRect
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -15,9 +15,9 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x1700114F RID: 4431
-	// (get) Token: 0x06008F2B RID: 36651 RVA: 0x0035EA1B File Offset: 0x0035CC1B
-	// (set) Token: 0x06008F2C RID: 36652 RVA: 0x0035EA23 File Offset: 0x0035CC23
+	// Token: 0x1700115A RID: 4442
+	// (get) Token: 0x06008F7F RID: 36735 RVA: 0x00360B0B File Offset: 0x0035ED0B
+	// (set) Token: 0x06008F80 RID: 36736 RVA: 0x00360B13 File Offset: 0x0035ED13
 	[XuiXmlAttribute("anchor", false)]
 	public string Anchor
 	{
@@ -34,9 +34,9 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x17001150 RID: 4432
-	// (get) Token: 0x06008F2D RID: 36653 RVA: 0x0035EA32 File Offset: 0x0035CC32
-	// (set) Token: 0x06008F2E RID: 36654 RVA: 0x0035EA3A File Offset: 0x0035CC3A
+	// Token: 0x1700115B RID: 4443
+	// (get) Token: 0x06008F81 RID: 36737 RVA: 0x00360B22 File Offset: 0x0035ED22
+	// (set) Token: 0x06008F82 RID: 36738 RVA: 0x00360B2A File Offset: 0x0035ED2A
 	[XuiXmlAttribute("cursor_area", false)]
 	public bool IsCursorArea
 	{
@@ -44,9 +44,9 @@ public class XUiV_Window : XUiView
 		set;
 	}
 
-	// Token: 0x17001151 RID: 4433
-	// (get) Token: 0x06008F2F RID: 36655 RVA: 0x0035EA43 File Offset: 0x0035CC43
-	// (set) Token: 0x06008F30 RID: 36656 RVA: 0x0035EA4B File Offset: 0x0035CC4B
+	// Token: 0x1700115C RID: 4444
+	// (get) Token: 0x06008F83 RID: 36739 RVA: 0x00360B33 File Offset: 0x0035ED33
+	// (set) Token: 0x06008F84 RID: 36740 RVA: 0x00360B3B File Offset: 0x0035ED3B
 	[XuiXmlAttribute("lock_navigation", false)]
 	public bool LockNavigation
 	{
@@ -54,17 +54,17 @@ public class XUiV_Window : XUiView
 		set;
 	}
 
-	// Token: 0x17001152 RID: 4434
-	// (get) Token: 0x06008F31 RID: 36657 RVA: 0x0035EA54 File Offset: 0x0035CC54
-	// (set) Token: 0x06008F32 RID: 36658 RVA: 0x0035EA5C File Offset: 0x0035CC5C
+	// Token: 0x1700115D RID: 4445
+	// (get) Token: 0x06008F85 RID: 36741 RVA: 0x00360B44 File Offset: 0x0035ED44
+	// (set) Token: 0x06008F86 RID: 36742 RVA: 0x00360B4C File Offset: 0x0035ED4C
 	public bool IsOpen
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17001153 RID: 4435
-	// (get) Token: 0x06008F33 RID: 36659 RVA: 0x0035EA65 File Offset: 0x0035CC65
+	// Token: 0x1700115E RID: 4446
+	// (get) Token: 0x06008F87 RID: 36743 RVA: 0x00360B55 File Offset: 0x0035ED55
 	public bool IsInStackPanel
 	{
 		get
@@ -73,8 +73,8 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x17001154 RID: 4436
-	// (get) Token: 0x06008F34 RID: 36660 RVA: 0x0035EA70 File Offset: 0x0035CC70
+	// Token: 0x1700115F RID: 4447
+	// (get) Token: 0x06008F88 RID: 36744 RVA: 0x00360B60 File Offset: 0x0035ED60
 	public override Vector3[] WorldCorners
 	{
 		get
@@ -83,21 +83,21 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x06008F35 RID: 36661 RVA: 0x0035EA7D File Offset: 0x0035CC7D
+	// Token: 0x06008F89 RID: 36745 RVA: 0x00360B6D File Offset: 0x0035ED6D
 	public XUiV_Window(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 		this.xui.AddWindow(this);
 	}
 
-	// Token: 0x06008F36 RID: 36662 RVA: 0x0035C200 File Offset: 0x0035A400
+	// Token: 0x06008F8A RID: 36746 RVA: 0x0035E2D0 File Offset: 0x0035C4D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
 		_go.AddComponent<UIPanel>();
 	}
 
-	// Token: 0x06008F37 RID: 36663 RVA: 0x0035EAB0 File Offset: 0x0035CCB0
+	// Token: 0x06008F8B RID: 36747 RVA: 0x00360BA0 File Offset: 0x0035EDA0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -105,7 +105,7 @@ public class XUiV_Window : XUiView
 		this.panel = this.uiTransform.gameObject.GetComponent<UIPanel>();
 	}
 
-	// Token: 0x06008F38 RID: 36664 RVA: 0x0035EAD0 File Offset: 0x0035CCD0
+	// Token: 0x06008F8C RID: 36748 RVA: 0x00360BC0 File Offset: 0x0035EDC0
 	public override void InitView()
 	{
 		base.InitView();
@@ -115,7 +115,7 @@ public class XUiV_Window : XUiView
 		this.panel.alpha = 0f;
 	}
 
-	// Token: 0x06008F39 RID: 36665 RVA: 0x0035EB23 File Offset: 0x0035CD23
+	// Token: 0x06008F8D RID: 36749 RVA: 0x00360C13 File Offset: 0x0035EE13
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -126,7 +126,7 @@ public class XUiV_Window : XUiView
 		this.xui.RemoveWindow(this);
 	}
 
-	// Token: 0x06008F3A RID: 36666 RVA: 0x0035EB58 File Offset: 0x0035CD58
+	// Token: 0x06008F8E RID: 36750 RVA: 0x00360C48 File Offset: 0x0035EE48
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void setRootNode()
 	{
@@ -155,8 +155,8 @@ public class XUiV_Window : XUiView
 		this.uiTransform.localEulerAngles = new Vector3(0f, 0f, this.rotation);
 	}
 
-	// Token: 0x17001155 RID: 4437
-	// (get) Token: 0x06008F3B RID: 36667 RVA: 0x0035EC6A File Offset: 0x0035CE6A
+	// Token: 0x17001160 RID: 4448
+	// (get) Token: 0x06008F8F RID: 36751 RVA: 0x00360D5A File Offset: 0x0035EF5A
 	public float PanelAlpha
 	{
 		get
@@ -165,9 +165,9 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x17001156 RID: 4438
-	// (get) Token: 0x06008F3C RID: 36668 RVA: 0x0035EC77 File Offset: 0x0035CE77
-	// (set) Token: 0x06008F3D RID: 36669 RVA: 0x0035EC7F File Offset: 0x0035CE7F
+	// Token: 0x17001161 RID: 4449
+	// (get) Token: 0x06008F90 RID: 36752 RVA: 0x00360D67 File Offset: 0x0035EF67
+	// (set) Token: 0x06008F91 RID: 36753 RVA: 0x00360D6F File Offset: 0x0035EF6F
 	[XuiXmlAttribute("fade_window", false)]
 	public bool Fade
 	{
@@ -182,9 +182,9 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x17001157 RID: 4439
-	// (get) Token: 0x06008F3E RID: 36670 RVA: 0x0035EC8E File Offset: 0x0035CE8E
-	// (set) Token: 0x06008F3F RID: 36671 RVA: 0x0035EC96 File Offset: 0x0035CE96
+	// Token: 0x17001162 RID: 4450
+	// (get) Token: 0x06008F92 RID: 36754 RVA: 0x00360D7E File Offset: 0x0035EF7E
+	// (set) Token: 0x06008F93 RID: 36755 RVA: 0x00360D86 File Offset: 0x0035EF86
 	[XuiXmlAttribute("fade_time", false)]
 	public float FadeInTime
 	{
@@ -199,9 +199,9 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x17001158 RID: 4440
-	// (get) Token: 0x06008F40 RID: 36672 RVA: 0x0035ECA5 File Offset: 0x0035CEA5
-	// (set) Token: 0x06008F41 RID: 36673 RVA: 0x0035ECAD File Offset: 0x0035CEAD
+	// Token: 0x17001163 RID: 4451
+	// (get) Token: 0x06008F94 RID: 36756 RVA: 0x00360D95 File Offset: 0x0035EF95
+	// (set) Token: 0x06008F95 RID: 36757 RVA: 0x00360D9D File Offset: 0x0035EF9D
 	[XuiXmlAttribute("fade_delay", false)]
 	public float DelayToFadeTime
 	{
@@ -216,7 +216,7 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x06008F42 RID: 36674 RVA: 0x0035ECBC File Offset: 0x0035CEBC
+	// Token: 0x06008F96 RID: 36758 RVA: 0x00360DAC File Offset: 0x0035EFAC
 	public override void Update(float _dt)
 	{
 		if ((double)Time.timeScale < 0.01 || !this.fade)
@@ -243,7 +243,7 @@ public class XUiV_Window : XUiView
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008F43 RID: 36675 RVA: 0x0035EDBA File Offset: 0x0035CFBA
+	// Token: 0x06008F97 RID: 36759 RVA: 0x00360EAA File Offset: 0x0035F0AA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -252,7 +252,7 @@ public class XUiV_Window : XUiView
 		this.panel.SetDirty();
 	}
 
-	// Token: 0x06008F44 RID: 36676 RVA: 0x0035EDD4 File Offset: 0x0035CFD4
+	// Token: 0x06008F98 RID: 36760 RVA: 0x00360EC4 File Offset: 0x0035F0C4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -279,7 +279,7 @@ public class XUiV_Window : XUiView
 		this.IsOpen = true;
 	}
 
-	// Token: 0x06008F45 RID: 36677 RVA: 0x0035EE90 File Offset: 0x0035D090
+	// Token: 0x06008F99 RID: 36761 RVA: 0x00360F80 File Offset: 0x0035F180
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyNavigationChanges()
 	{
@@ -292,7 +292,7 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x06008F46 RID: 36678 RVA: 0x0035EEE0 File Offset: 0x0035D0E0
+	// Token: 0x06008F9A RID: 36762 RVA: 0x00360FD0 File Offset: 0x0035F1D0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -311,7 +311,7 @@ public class XUiV_Window : XUiView
 		this.previousNavigationLockView = null;
 	}
 
-	// Token: 0x06008F47 RID: 36679 RVA: 0x0035EF84 File Offset: 0x0035D184
+	// Token: 0x06008F9B RID: 36763 RVA: 0x00361074 File Offset: 0x0035F274
 	public void ForceVisible(float _alpha = -1f)
 	{
 		this.delayTimer = this.delayToFadeTime + 1f;
@@ -323,7 +323,7 @@ public class XUiV_Window : XUiView
 		this.panel.alpha = this.targetAlpha;
 	}
 
-	// Token: 0x06008F48 RID: 36680 RVA: 0x0035EFD5 File Offset: 0x0035D1D5
+	// Token: 0x06008F9C RID: 36764 RVA: 0x003610C5 File Offset: 0x0035F2C5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateVisibility(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
 	{
@@ -339,7 +339,7 @@ public class XUiV_Window : XUiView
 		this.xui.RemoveWindowFromSoftCursorBounds(this);
 	}
 
-	// Token: 0x06008F49 RID: 36681 RVA: 0x0035EFFC File Offset: 0x0035D1FC
+	// Token: 0x06008F9D RID: 36765 RVA: 0x003610EC File Offset: 0x0035F2EC
 	[XuiXmlAttribute("panel", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributePanel(string _value)
@@ -363,55 +363,55 @@ public class XUiV_Window : XUiView
 		}
 	}
 
-	// Token: 0x040068DE RID: 26846
+	// Token: 0x0400691E RID: 26910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string anchor;
 
-	// Token: 0x040068DF RID: 26847
+	// Token: 0x0400691F RID: 26911
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIPanel panel;
 
-	// Token: 0x040068E1 RID: 26849
+	// Token: 0x04006921 RID: 26913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView previousNavigationTarget;
 
-	// Token: 0x040068E2 RID: 26850
+	// Token: 0x04006922 RID: 26914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView previousNavigationLockView;
 
-	// Token: 0x040068E4 RID: 26852
+	// Token: 0x04006924 RID: 26916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 oldTransformPosition;
 
-	// Token: 0x040068E6 RID: 26854
+	// Token: 0x04006926 RID: 26918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUi.StackPanel stackPanel;
 
-	// Token: 0x040068E7 RID: 26855
+	// Token: 0x04006927 RID: 26919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float targetAlpha;
 
-	// Token: 0x040068E8 RID: 26856
+	// Token: 0x04006928 RID: 26920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool fade = true;
 
-	// Token: 0x040068E9 RID: 26857
+	// Token: 0x04006929 RID: 26921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int frameClosed;
 
-	// Token: 0x040068EA RID: 26858
+	// Token: 0x0400692A RID: 26922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fadeInTime = 0.05f;
 
-	// Token: 0x040068EB RID: 26859
+	// Token: 0x0400692B RID: 26923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fadeTimer;
 
-	// Token: 0x040068EC RID: 26860
+	// Token: 0x0400692C RID: 26924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float delayToFadeTime = 0.1f;
 
-	// Token: 0x040068ED RID: 26861
+	// Token: 0x0400692D RID: 26925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float delayTimer;
 }

@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000AE7 RID: 2791
+// Token: 0x02000AF2 RID: 2802
 public class ProgressionValue
 {
-	// Token: 0x06005318 RID: 21272 RVA: 0x001FE258 File Offset: 0x001FC458
+	// Token: 0x0600533D RID: 21309 RVA: 0x001FF7DC File Offset: 0x001FD9DC
 	public float GetCalculatedLevel(EntityAlive _ea)
 	{
 		if (this.calculatedFrame == Time.frameCount)
@@ -46,19 +46,19 @@ public class ProgressionValue
 		return num;
 	}
 
-	// Token: 0x06005319 RID: 21273 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600533E RID: 21310 RVA: 0x0000640C File Offset: 0x0000460C
 	public ProgressionValue()
 	{
 	}
 
-	// Token: 0x0600531A RID: 21274 RVA: 0x001FE30F File Offset: 0x001FC50F
+	// Token: 0x0600533F RID: 21311 RVA: 0x001FF893 File Offset: 0x001FDA93
 	public ProgressionValue(string _name)
 	{
 		this.name = _name;
 	}
 
-	// Token: 0x17000922 RID: 2338
-	// (get) Token: 0x0600531B RID: 21275 RVA: 0x001FE31E File Offset: 0x001FC51E
+	// Token: 0x17000928 RID: 2344
+	// (get) Token: 0x06005340 RID: 21312 RVA: 0x001FF8A2 File Offset: 0x001FDAA2
 	public string Name
 	{
 		get
@@ -67,8 +67,8 @@ public class ProgressionValue
 		}
 	}
 
-	// Token: 0x17000923 RID: 2339
-	// (get) Token: 0x0600531C RID: 21276 RVA: 0x001FE328 File Offset: 0x001FC528
+	// Token: 0x17000929 RID: 2345
+	// (get) Token: 0x06005341 RID: 21313 RVA: 0x001FF8AC File Offset: 0x001FDAAC
 	public ProgressionClass ProgressionClass
 	{
 		get
@@ -81,9 +81,9 @@ public class ProgressionValue
 		}
 	}
 
-	// Token: 0x17000924 RID: 2340
-	// (get) Token: 0x0600531D RID: 21277 RVA: 0x001FE374 File Offset: 0x001FC574
-	// (set) Token: 0x0600531E RID: 21278 RVA: 0x001FE39E File Offset: 0x001FC59E
+	// Token: 0x1700092A RID: 2346
+	// (get) Token: 0x06005342 RID: 21314 RVA: 0x001FF8F8 File Offset: 0x001FDAF8
+	// (set) Token: 0x06005343 RID: 21315 RVA: 0x001FF922 File Offset: 0x001FDB22
 	public int CostForNextLevel
 	{
 		get
@@ -103,9 +103,9 @@ public class ProgressionValue
 		}
 	}
 
-	// Token: 0x17000925 RID: 2341
-	// (get) Token: 0x0600531F RID: 21279 RVA: 0x001FE3B8 File Offset: 0x001FC5B8
-	// (set) Token: 0x06005320 RID: 21280 RVA: 0x001FE3EB File Offset: 0x001FC5EB
+	// Token: 0x1700092B RID: 2347
+	// (get) Token: 0x06005344 RID: 21316 RVA: 0x001FF93C File Offset: 0x001FDB3C
+	// (set) Token: 0x06005345 RID: 21317 RVA: 0x001FF96F File Offset: 0x001FDB6F
 	public int Level
 	{
 		get
@@ -138,26 +138,26 @@ public class ProgressionValue
 		}
 	}
 
-	// Token: 0x06005321 RID: 21281 RVA: 0x001FE42A File Offset: 0x001FC62A
+	// Token: 0x06005346 RID: 21318 RVA: 0x001FF9AE File Offset: 0x001FDBAE
 	public int CalculatedLevel(EntityAlive _ea)
 	{
 		return (int)this.GetCalculatedLevel(_ea);
 	}
 
-	// Token: 0x06005322 RID: 21282 RVA: 0x001FE434 File Offset: 0x001FC634
+	// Token: 0x06005347 RID: 21319 RVA: 0x001FF9B8 File Offset: 0x001FDBB8
 	public int CalculatedMaxLevel(EntityAlive _ea)
 	{
 		return ProgressionClass.GetCalculatedMaxLevel(_ea, this);
 	}
 
-	// Token: 0x06005323 RID: 21283 RVA: 0x001FE43D File Offset: 0x001FC63D
+	// Token: 0x06005348 RID: 21320 RVA: 0x001FF9C1 File Offset: 0x001FDBC1
 	public bool IsLocked(EntityAlive _ea)
 	{
 		return ProgressionClass.GetCalculatedMaxLevel(_ea, this) == 0;
 	}
 
-	// Token: 0x17000926 RID: 2342
-	// (get) Token: 0x06005324 RID: 21284 RVA: 0x001FE449 File Offset: 0x001FC649
+	// Token: 0x1700092C RID: 2348
+	// (get) Token: 0x06005349 RID: 21321 RVA: 0x001FF9CD File Offset: 0x001FDBCD
 	public float PercToNextLevel
 	{
 		get
@@ -166,19 +166,19 @@ public class ProgressionValue
 		}
 	}
 
-	// Token: 0x06005325 RID: 21285 RVA: 0x001FE46D File Offset: 0x001FC66D
+	// Token: 0x0600534A RID: 21322 RVA: 0x001FF9F1 File Offset: 0x001FDBF1
 	public void ClearProgressionClassLink()
 	{
 		this.cachedProgressionClass = null;
 	}
 
-	// Token: 0x06005326 RID: 21286 RVA: 0x001FE476 File Offset: 0x001FC676
+	// Token: 0x0600534B RID: 21323 RVA: 0x001FF9FA File Offset: 0x001FDBFA
 	public bool CanPurchase(EntityAlive _ea, int _level)
 	{
 		return _level <= this.ProgressionClass.MaxLevel;
 	}
 
-	// Token: 0x06005327 RID: 21287 RVA: 0x001FE489 File Offset: 0x001FC689
+	// Token: 0x0600534C RID: 21324 RVA: 0x001FFA0D File Offset: 0x001FDC0D
 	public void CopyFrom(ProgressionValue _pv)
 	{
 		this.name = _pv.name;
@@ -186,7 +186,7 @@ public class ProgressionValue
 		this.costForNextLevel = _pv.costForNextLevel;
 	}
 
-	// Token: 0x06005328 RID: 21288 RVA: 0x001FE4AF File Offset: 0x001FC6AF
+	// Token: 0x0600534D RID: 21325 RVA: 0x001FFA33 File Offset: 0x001FDC33
 	public void Read(BinaryReader _reader)
 	{
 		_reader.ReadByte();
@@ -195,7 +195,7 @@ public class ProgressionValue
 		this.costForNextLevel = _reader.ReadInt32();
 	}
 
-	// Token: 0x06005329 RID: 21289 RVA: 0x001FE4DC File Offset: 0x001FC6DC
+	// Token: 0x0600534E RID: 21326 RVA: 0x001FFA60 File Offset: 0x001FDC60
 	public void Write(BinaryWriter _writer, bool _IsNetwork)
 	{
 		_writer.Write(1);
@@ -204,31 +204,31 @@ public class ProgressionValue
 		_writer.Write(this.costForNextLevel);
 	}
 
-	// Token: 0x040040F4 RID: 16628
+	// Token: 0x04004119 RID: 16665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte Version = 1;
 
-	// Token: 0x040040F5 RID: 16629
+	// Token: 0x0400411A RID: 16666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x040040F6 RID: 16630
+	// Token: 0x0400411B RID: 16667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int level;
 
-	// Token: 0x040040F7 RID: 16631
+	// Token: 0x0400411C RID: 16668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int costForNextLevel;
 
-	// Token: 0x040040F8 RID: 16632
+	// Token: 0x0400411D RID: 16669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int calculatedFrame;
 
-	// Token: 0x040040F9 RID: 16633
+	// Token: 0x0400411E RID: 16670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float calculatedLevel;
 
-	// Token: 0x040040FA RID: 16634
+	// Token: 0x0400411F RID: 16671
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionClass cachedProgressionClass;
 }

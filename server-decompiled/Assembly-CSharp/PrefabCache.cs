@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200093E RID: 2366
+// Token: 0x02000948 RID: 2376
 public class PrefabCache
 {
-	// Token: 0x060044CF RID: 17615 RVA: 0x001B315C File Offset: 0x001B135C
+	// Token: 0x060044F2 RID: 17650 RVA: 0x001B41E0 File Offset: 0x001B23E0
 	public Prefab GetPrefabRotated(string _name, int _rotation, bool _applyMapping = true, bool _fixChildblocks = true, bool _allowMissingBlocks = false, bool _skipBlockData = false)
 	{
 		_rotation &= 3;
@@ -44,7 +44,7 @@ public class PrefabCache
 		return prefab2;
 	}
 
-	// Token: 0x060044D0 RID: 17616 RVA: 0x001B3208 File Offset: 0x001B1408
+	// Token: 0x060044F3 RID: 17651 RVA: 0x001B428C File Offset: 0x001B248C
 	public Prefab GetPrefab(string _name, bool _applyMapping = true, bool _fixChildblocks = true, bool _allowMissingBlocks = false, bool _skipBlockData = false)
 	{
 		Dictionary<string, Prefab> dictionary = this.prefabCache;
@@ -72,7 +72,7 @@ public class PrefabCache
 		return prefab;
 	}
 
-	// Token: 0x060044D1 RID: 17617 RVA: 0x001B3288 File Offset: 0x001B1488
+	// Token: 0x060044F4 RID: 17652 RVA: 0x001B430C File Offset: 0x001B250C
 	public void Clear()
 	{
 		Dictionary<string, Prefab> dictionary = this.prefabCache;
@@ -98,7 +98,7 @@ public class PrefabCache
 		}
 	}
 
-	// Token: 0x060044D2 RID: 17618 RVA: 0x001B3380 File Offset: 0x001B1580
+	// Token: 0x060044F5 RID: 17653 RVA: 0x001B4404 File Offset: 0x001B2604
 	public void CalculateStats(out int basePrefabCount, out int rotatedPrefabsCount, out int basePrefabBytes, out int rotatedPrefabBytes)
 	{
 		Dictionary<string, Prefab> dictionary = this.prefabCache;
@@ -127,11 +127,11 @@ public class PrefabCache
 		}
 	}
 
-	// Token: 0x040037A4 RID: 14244
+	// Token: 0x040037C4 RID: 14276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, Prefab> prefabCache = new Dictionary<string, Prefab>();
 
-	// Token: 0x040037A5 RID: 14245
+	// Token: 0x040037C5 RID: 14277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, Prefab[]> prefabCacheRotations = new Dictionary<string, Prefab[]>();
 }

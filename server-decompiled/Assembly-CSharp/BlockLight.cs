@@ -17,13 +17,13 @@ public class BlockLight : Block
 		}
 	}
 
-	// Token: 0x060007D7 RID: 2007 RVA: 0x00037860 File Offset: 0x00035A60
+	// Token: 0x060007D7 RID: 2007 RVA: 0x00037820 File Offset: 0x00035A20
 	public BlockLight()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x060007D8 RID: 2008 RVA: 0x000378D4 File Offset: 0x00035AD4
+	// Token: 0x060007D8 RID: 2008 RVA: 0x00037894 File Offset: 0x00035A94
 	public override void Init()
 	{
 		base.Init();
@@ -38,7 +38,7 @@ public class BlockLight : Block
 		base.Properties.ParseBool("IgnoreLightsOff", ref this.ignoreLightsOff);
 	}
 
-	// Token: 0x060007D9 RID: 2009 RVA: 0x0003647C File Offset: 0x0003467C
+	// Token: 0x060007D9 RID: 2009 RVA: 0x0003643C File Offset: 0x0003463C
 	public override byte GetLightValue(BlockValue _blockValue)
 	{
 		if ((_blockValue.meta & 2) == 0)
@@ -48,7 +48,7 @@ public class BlockLight : Block
 		return base.GetLightValue(_blockValue);
 	}
 
-	// Token: 0x060007DA RID: 2010 RVA: 0x00037968 File Offset: 0x00035B68
+	// Token: 0x060007DA RID: 2010 RVA: 0x00037928 File Offset: 0x00035B28
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -64,7 +64,7 @@ public class BlockLight : Block
 		return string.Format(Localization.Get("useSwitchLightOn", false, null), text);
 	}
 
-	// Token: 0x060007DB RID: 2011 RVA: 0x000379E8 File Offset: 0x00035BE8
+	// Token: 0x060007DB RID: 2011 RVA: 0x000379A8 File Offset: 0x00035BA8
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "light"))
@@ -93,7 +93,7 @@ public class BlockLight : Block
 		return false;
 	}
 
-	// Token: 0x060007DC RID: 2012 RVA: 0x00037A78 File Offset: 0x00035C78
+	// Token: 0x060007DC RID: 2012 RVA: 0x00037A38 File Offset: 0x00035C38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateLightState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bSwitchLight = false, bool _enableState = true)
 	{
@@ -183,33 +183,33 @@ public class BlockLight : Block
 		return true;
 	}
 
-	// Token: 0x060007DD RID: 2013 RVA: 0x00037D3F File Offset: 0x00035F3F
+	// Token: 0x060007DD RID: 2013 RVA: 0x00037CFF File Offset: 0x00035EFF
 	public bool IsLightOn(BlockValue _blockValue)
 	{
 		return (_blockValue.meta & 2) > 0;
 	}
 
-	// Token: 0x060007DE RID: 2014 RVA: 0x00037D4D File Offset: 0x00035F4D
+	// Token: 0x060007DE RID: 2014 RVA: 0x00037D0D File Offset: 0x00035F0D
 	public bool OriginalLightState(BlockValue _blockValue)
 	{
 		return !this.ignoreLightsOff && (_blockValue.meta & 1) > 0;
 	}
 
-	// Token: 0x060007DF RID: 2015 RVA: 0x00037D65 File Offset: 0x00035F65
+	// Token: 0x060007DF RID: 2015 RVA: 0x00037D25 File Offset: 0x00035F25
 	public BlockValue SetLightState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn)
 	{
 		_blockValue.meta = (byte)(((int)_blockValue.meta & -3) | (isOn ? 2 : 0));
 		return _blockValue;
 	}
 
-	// Token: 0x060007E0 RID: 2016 RVA: 0x00037D83 File Offset: 0x00035F83
+	// Token: 0x060007E0 RID: 2016 RVA: 0x00037D43 File Offset: 0x00035F43
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 		this.updateLightState(_world, _blockPos, _newBlockValue, false, true);
 	}
 
-	// Token: 0x060007E1 RID: 2017 RVA: 0x00037D9F File Offset: 0x00035F9F
+	// Token: 0x060007E1 RID: 2017 RVA: 0x00037D5F File Offset: 0x00035F5F
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -222,7 +222,7 @@ public class BlockLight : Block
 		return true;
 	}
 
-	// Token: 0x060007E3 RID: 2019 RVA: 0x00037DB8 File Offset: 0x00035FB8
+	// Token: 0x060007E3 RID: 2019 RVA: 0x00037D78 File Offset: 0x00035F78
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = false;
@@ -253,7 +253,7 @@ public class BlockLight : Block
 		return this.cmds;
 	}
 
-	// Token: 0x060007E4 RID: 2020 RVA: 0x00037EB4 File Offset: 0x000360B4
+	// Token: 0x060007E4 RID: 2020 RVA: 0x00037E74 File Offset: 0x00036074
 	public TileEntityLight CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityLight(chunk);
@@ -265,7 +265,7 @@ public class BlockLight : Block
 		return true;
 	}
 
-	// Token: 0x060007E6 RID: 2022 RVA: 0x00037EBC File Offset: 0x000360BC
+	// Token: 0x060007E6 RID: 2022 RVA: 0x00037E7C File Offset: 0x0003607C
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -284,7 +284,7 @@ public class BlockLight : Block
 		}
 	}
 
-	// Token: 0x060007E7 RID: 2023 RVA: 0x00037F28 File Offset: 0x00036128
+	// Token: 0x060007E7 RID: 2023 RVA: 0x00037EE8 File Offset: 0x000360E8
 	public override void OnBlockReset(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (_blockValue.ischild)
@@ -302,7 +302,7 @@ public class BlockLight : Block
 		}
 	}
 
-	// Token: 0x060007E8 RID: 2024 RVA: 0x00037F87 File Offset: 0x00036187
+	// Token: 0x060007E8 RID: 2024 RVA: 0x00037F47 File Offset: 0x00036147
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);

@@ -1,24 +1,24 @@
 ﻿using System;
 
-// Token: 0x020003AD RID: 941
+// Token: 0x020003AF RID: 943
 public enum ExportMeshResult
 {
-	// Token: 0x0400122E RID: 4654
+	// Token: 0x0400123E RID: 4670
 	Failed,
-	// Token: 0x0400122F RID: 4655
+	// Token: 0x0400123F RID: 4671
 	Missing,
-	// Token: 0x04001230 RID: 4656
+	// Token: 0x04001240 RID: 4672
 	Success,
-	// Token: 0x04001231 RID: 4657
+	// Token: 0x04001241 RID: 4673
 	SuccessNoLoad,
-	// Token: 0x04001232 RID: 4658
+	// Token: 0x04001242 RID: 4674
 	PreviewSuccess,
-	// Token: 0x04001233 RID: 4659
+	// Token: 0x04001243 RID: 4675
 	PreviewDelay,
-	// Token: 0x04001234 RID: 4660
+	// Token: 0x04001244 RID: 4676
 	PreviewMissing,
-	// Token: 0x04001235 RID: 4661
+	// Token: 0x04001245 RID: 4677
 	Delay,
-	// Token: 0x04001236 RID: 4662
+	// Token: 0x04001246 RID: 4678
 	ChunkMissing
 }

@@ -2,32 +2,32 @@
 
 namespace MusicUtils.Enums
 {
-	// Token: 0x02001A48 RID: 6728
+	// Token: 0x02001A79 RID: 6777
 	public enum SectionType : byte
 	{
-		// Token: 0x04009B32 RID: 39730
+		// Token: 0x04009C1B RID: 39963
 		None,
-		// Token: 0x04009B33 RID: 39731
+		// Token: 0x04009C1C RID: 39964
 		HomeDay,
-		// Token: 0x04009B34 RID: 39732
+		// Token: 0x04009C1D RID: 39965
 		HomeNight,
-		// Token: 0x04009B35 RID: 39733
+		// Token: 0x04009C1E RID: 39966
 		Exploration,
-		// Token: 0x04009B36 RID: 39734
+		// Token: 0x04009C1F RID: 39967
 		Suspense,
-		// Token: 0x04009B37 RID: 39735
+		// Token: 0x04009C20 RID: 39968
 		Combat,
-		// Token: 0x04009B38 RID: 39736
+		// Token: 0x04009C21 RID: 39969
 		TraderBob,
-		// Token: 0x04009B39 RID: 39737
+		// Token: 0x04009C22 RID: 39970
 		TraderJen,
-		// Token: 0x04009B3A RID: 39738
+		// Token: 0x04009C23 RID: 39971
 		TraderJoel,
-		// Token: 0x04009B3B RID: 39739
+		// Token: 0x04009C24 RID: 39972
 		TraderHugh,
-		// Token: 0x04009B3C RID: 39740
+		// Token: 0x04009C25 RID: 39973
 		TraderRekt,
-		// Token: 0x04009B3D RID: 39741
+		// Token: 0x04009C26 RID: 39974
 		Bloodmoon
 	}
 }

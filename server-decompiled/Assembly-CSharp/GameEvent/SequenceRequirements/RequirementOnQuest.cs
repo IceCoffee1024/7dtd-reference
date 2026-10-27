@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200196C RID: 6508
+	// Token: 0x0200199D RID: 6557
 	[Preserve]
 	public class RequirementOnQuest : BaseRequirement
 	{
-		// Token: 0x0600C89A RID: 51354 RVA: 0x00495F54 File Offset: 0x00494154
+		// Token: 0x0600C9AE RID: 51630 RVA: 0x00499948 File Offset: 0x00497B48
 		public override bool CanPerform(Entity target)
 		{
 			bool flag = false;
@@ -34,14 +34,14 @@ namespace GameEvent.SequenceRequirements
 			return !flag;
 		}
 
-		// Token: 0x0600C89B RID: 51355 RVA: 0x00495FC3 File Offset: 0x004941C3
+		// Token: 0x0600C9AF RID: 51631 RVA: 0x004999B7 File Offset: 0x00497BB7
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(RequirementOnQuest.PropQuest, ref this.QuestID);
 		}
 
-		// Token: 0x0600C89C RID: 51356 RVA: 0x00495FDD File Offset: 0x004941DD
+		// Token: 0x0600C9B0 RID: 51632 RVA: 0x004999D1 File Offset: 0x00497BD1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -52,11 +52,11 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040096CA RID: 38602
+		// Token: 0x040097B3 RID: 38835
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string QuestID = "";
 
-		// Token: 0x040096CB RID: 38603
+		// Token: 0x040097B4 RID: 38836
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropQuest = "quest";
 	}

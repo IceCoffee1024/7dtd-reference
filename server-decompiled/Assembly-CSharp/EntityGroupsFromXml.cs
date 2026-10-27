@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x02000D16 RID: 3350
+// Token: 0x02000D21 RID: 3361
 public class EntityGroupsFromXml
 {
-	// Token: 0x060065DB RID: 26075 RVA: 0x00281688 File Offset: 0x0027F888
+	// Token: 0x06006600 RID: 26112 RVA: 0x00282BB0 File Offset: 0x00280DB0
 	public static IEnumerator LoadEntityGroups(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -29,7 +29,7 @@ public class EntityGroupsFromXml
 		yield break;
 	}
 
-	// Token: 0x060065DC RID: 26076 RVA: 0x00281698 File Offset: 0x0027F898
+	// Token: 0x06006601 RID: 26113 RVA: 0x00282BC0 File Offset: 0x00280DC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseGroup(XElement _elementGroup, ref int _count)
 	{
@@ -66,7 +66,7 @@ public class EntityGroupsFromXml
 		}
 	}
 
-	// Token: 0x060065DD RID: 26077 RVA: 0x002817B8 File Offset: 0x0027F9B8
+	// Token: 0x06006602 RID: 26114 RVA: 0x00282CE0 File Offset: 0x00280EE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseTextBasedList(string _nodeText, List<SEntityClassAndProb> _targetList, ref float _totalProb, ref int _count)
 	{
@@ -108,7 +108,7 @@ public class EntityGroupsFromXml
 		}
 	}
 
-	// Token: 0x060065DE RID: 26078 RVA: 0x0028186C File Offset: 0x0027FA6C
+	// Token: 0x06006603 RID: 26115 RVA: 0x00282D94 File Offset: 0x00280F94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseElementBased(XElement _entityElement, string _groupName, List<SEntityClassAndProb> _targetList, ref float _totalProb, ref int _count)
 	{
@@ -130,7 +130,7 @@ public class EntityGroupsFromXml
 		EntityGroupsFromXml.addEntity(text, num, _targetList, ref _totalProb, ref _count);
 	}
 
-	// Token: 0x060065DF RID: 26079 RVA: 0x0028191C File Offset: 0x0027FB1C
+	// Token: 0x06006604 RID: 26116 RVA: 0x00282E44 File Offset: 0x00281044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void addEntity(string _entityName, float _prob, List<SEntityClassAndProb> _targetList, ref float _totalProb, ref int _count)
 	{

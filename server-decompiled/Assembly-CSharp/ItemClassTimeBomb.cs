@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000601 RID: 1537
+// Token: 0x02000608 RID: 1544
 [Preserve]
 public class ItemClassTimeBomb : ItemClass
 {
-	// Token: 0x06003257 RID: 12887 RVA: 0x00145D58 File Offset: 0x00143F58
+	// Token: 0x06003265 RID: 12901 RVA: 0x0014694C File Offset: 0x00144B4C
 	public override void Init()
 	{
 		base.Init();
@@ -25,7 +25,7 @@ public class ItemClassTimeBomb : ItemClass
 		this.explodeAfterTicks = (int)(num * 20f);
 	}
 
-	// Token: 0x06003258 RID: 12888 RVA: 0x00145E29 File Offset: 0x00144029
+	// Token: 0x06003266 RID: 12902 RVA: 0x00146A1D File Offset: 0x00144C1D
 	public override void StartHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		base.StartHolding(_data, _modelTransform);
@@ -33,7 +33,7 @@ public class ItemClassTimeBomb : ItemClass
 		this.activateHolding(_data.itemValue, 0, _modelTransform);
 	}
 
-	// Token: 0x06003259 RID: 12889 RVA: 0x00145E48 File Offset: 0x00144048
+	// Token: 0x06003267 RID: 12903 RVA: 0x00146A3C File Offset: 0x00144C3C
 	public override void OnHoldingItemActivated(ItemInventoryData _data)
 	{
 		ItemValue itemValue = _data.itemValue;
@@ -64,7 +64,7 @@ public class ItemClassTimeBomb : ItemClass
 		}
 	}
 
-	// Token: 0x0600325A RID: 12890 RVA: 0x00145F20 File Offset: 0x00144120
+	// Token: 0x06003268 RID: 12904 RVA: 0x00146B14 File Offset: 0x00144D14
 	public override void OnHoldingUpdate(ItemInventoryData _data)
 	{
 		base.OnHoldingUpdate(_data);
@@ -92,7 +92,7 @@ public class ItemClassTimeBomb : ItemClass
 		}
 	}
 
-	// Token: 0x0600325B RID: 12891 RVA: 0x00146028 File Offset: 0x00144228
+	// Token: 0x06003269 RID: 12905 RVA: 0x00146C1C File Offset: 0x00144E1C
 	public override void OnHoldingReset(ItemInventoryData _data)
 	{
 		_data.itemValue.Meta = 0;
@@ -107,7 +107,7 @@ public class ItemClassTimeBomb : ItemClass
 		}
 	}
 
-	// Token: 0x0600325C RID: 12892 RVA: 0x001460A8 File Offset: 0x001442A8
+	// Token: 0x0600326A RID: 12906 RVA: 0x00146C9C File Offset: 0x00144E9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void activateHolding(ItemValue iv, int ticks, Transform _t)
 	{
@@ -126,7 +126,7 @@ public class ItemClassTimeBomb : ItemClass
 		}
 	}
 
-	// Token: 0x0600325D RID: 12893 RVA: 0x001460EC File Offset: 0x001442EC
+	// Token: 0x0600326B RID: 12907 RVA: 0x00146CE0 File Offset: 0x00144EE0
 	public override void OnMeshCreated(ItemWorldData _data)
 	{
 		EntityItem entityItem = _data.entityItem;
@@ -134,19 +134,19 @@ public class ItemClassTimeBomb : ItemClass
 		this.setActivationTransformsActive(entityItem.GetModelTransform(), itemValue.Meta != 0);
 	}
 
-	// Token: 0x0600325E RID: 12894 RVA: 0x00146121 File Offset: 0x00144321
+	// Token: 0x0600326C RID: 12908 RVA: 0x00146D15 File Offset: 0x00144F15
 	public override bool CanDrop(ItemValue _iv = null)
 	{
 		return this.bCanDrop && (_iv == null || _iv.Meta == 0);
 	}
 
-	// Token: 0x0600325F RID: 12895 RVA: 0x0014613B File Offset: 0x0014433B
+	// Token: 0x0600326D RID: 12909 RVA: 0x00146D2F File Offset: 0x00144F2F
 	public override void Deactivate(ItemValue _iv)
 	{
 		_iv.Meta = 0;
 	}
 
-	// Token: 0x06003260 RID: 12896 RVA: 0x00146144 File Offset: 0x00144344
+	// Token: 0x0600326E RID: 12910 RVA: 0x00146D38 File Offset: 0x00144F38
 	public override void OnDroppedUpdate(ItemWorldData _data)
 	{
 		EntityItem entityItem = _data.entityItem;
@@ -208,19 +208,19 @@ public class ItemClassTimeBomb : ItemClass
 		}
 	}
 
-	// Token: 0x06003261 RID: 12897 RVA: 0x0014635C File Offset: 0x0014455C
+	// Token: 0x0600326F RID: 12911 RVA: 0x00146F50 File Offset: 0x00145150
 	public override void OnDamagedByExplosion(ItemWorldData _data)
 	{
 		_data.gameManager.ExplosionServer(_data.entityItem.GetPosition(), World.worldToBlockPos(_data.entityItem.GetPosition()), Quaternion.identity, this.explosion, _data.belongsEntityId, _data.entityItem.rand.RandomRange(0.1f, 0.3f), false, _data.entityItem.itemStack.itemValue.Clone());
 	}
 
-	// Token: 0x06003262 RID: 12898 RVA: 0x001463D0 File Offset: 0x001445D0
+	// Token: 0x06003270 RID: 12912 RVA: 0x00146FC4 File Offset: 0x001451C4
 	public override bool CanCollect(ItemValue _iv)
 	{
 		return _iv.Meta == 0;
 	}
 
-	// Token: 0x06003263 RID: 12899 RVA: 0x001463DC File Offset: 0x001445DC
+	// Token: 0x06003271 RID: 12913 RVA: 0x00146FD0 File Offset: 0x001451D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setActivationTransformsActive(Transform item, bool isActive)
 	{
@@ -248,38 +248,38 @@ public class ItemClassTimeBomb : ItemClass
 		}
 	}
 
-	// Token: 0x04002794 RID: 10132
+	// Token: 0x040027AF RID: 10159
 	public bool bExplodeOnHitGround;
 
-	// Token: 0x04002795 RID: 10133
+	// Token: 0x040027B0 RID: 10160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPrimed = -1;
 
-	// Token: 0x04002796 RID: 10134
+	// Token: 0x040027B1 RID: 10161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ExplosionData explosion;
 
-	// Token: 0x04002797 RID: 10135
+	// Token: 0x040027B2 RID: 10162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool dropStarts;
 
-	// Token: 0x04002798 RID: 10136
+	// Token: 0x040027B3 RID: 10163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool mustPrime;
 
-	// Token: 0x04002799 RID: 10137
+	// Token: 0x040027B4 RID: 10164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int explodeAfterTicks;
 
-	// Token: 0x0400279A RID: 10138
+	// Token: 0x040027B5 RID: 10165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tickSoundDelay;
 
-	// Token: 0x0400279B RID: 10139
+	// Token: 0x040027B6 RID: 10166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] activationTransformToHide;
 
-	// Token: 0x0400279C RID: 10140
+	// Token: 0x040027B7 RID: 10167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string activationEmissive;
 }

@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-// Token: 0x02001301 RID: 4865
+// Token: 0x02001313 RID: 4883
 public static class ThreadManager
 {
 	// Token: 0x140000FE RID: 254
-	// (add) Token: 0x060099FE RID: 39422 RVA: 0x003A6E18 File Offset: 0x003A5018
-	// (remove) Token: 0x060099FF RID: 39423 RVA: 0x003A6E4C File Offset: 0x003A504C
+	// (add) Token: 0x06009A56 RID: 39510 RVA: 0x003A921C File Offset: 0x003A741C
+	// (remove) Token: 0x06009A57 RID: 39511 RVA: 0x003A9250 File Offset: 0x003A7450
 	public static event Action UpdateEv;
 
 	// Token: 0x140000FF RID: 255
-	// (add) Token: 0x06009A00 RID: 39424 RVA: 0x003A6E80 File Offset: 0x003A5080
-	// (remove) Token: 0x06009A01 RID: 39425 RVA: 0x003A6EB4 File Offset: 0x003A50B4
+	// (add) Token: 0x06009A58 RID: 39512 RVA: 0x003A9284 File Offset: 0x003A7484
+	// (remove) Token: 0x06009A59 RID: 39513 RVA: 0x003A92B8 File Offset: 0x003A74B8
 	public static event Action LateUpdateEv;
 
-	// Token: 0x06009A02 RID: 39426 RVA: 0x003A6EE7 File Offset: 0x003A50E7
+	// Token: 0x06009A5A RID: 39514 RVA: 0x003A92EB File Offset: 0x003A74EB
 	public static void ReleaseTaskInfo(ThreadManager.TaskInfo _info)
 	{
 		if (((_info != null) ? _info.evStopped : null) != null)
@@ -30,8 +30,8 @@ public static class ThreadManager
 		}
 	}
 
-	// Token: 0x1700126F RID: 4719
-	// (get) Token: 0x06009A03 RID: 39427 RVA: 0x003A6F09 File Offset: 0x003A5109
+	// Token: 0x1700127B RID: 4731
+	// (get) Token: 0x06009A5B RID: 39515 RVA: 0x003A930D File Offset: 0x003A750D
 	public static TaskFactory MainThreadFactory
 	{
 		get
@@ -40,7 +40,7 @@ public static class ThreadManager
 		}
 	}
 
-	// Token: 0x06009A04 RID: 39428 RVA: 0x003A6F18 File Offset: 0x003A5118
+	// Token: 0x06009A5C RID: 39516 RVA: 0x003A931C File Offset: 0x003A751C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ThreadManager.ThreadInfo startThread(string _name, ThreadManager.ThreadFunctionDelegate _threadDelegate, ThreadManager.ThreadFunctionDelegate _threadInit, ThreadManager.ThreadFunctionLoopDelegate _threadLoop, ThreadManager.ThreadFunctionEndDelegate _threadEnd, object _parameter, ThreadManager.ExitCallbackThread _exitCallback, bool _useRealThread = false, bool _isSilent = false)
 	{
@@ -84,19 +84,19 @@ public static class ThreadManager
 		return threadInfo;
 	}
 
-	// Token: 0x06009A05 RID: 39429 RVA: 0x003A7018 File Offset: 0x003A5218
+	// Token: 0x06009A5D RID: 39517 RVA: 0x003A941C File Offset: 0x003A761C
 	public static ThreadManager.ThreadInfo StartThread(string _name, ThreadManager.ThreadFunctionDelegate _threadDelegate, object _parameter = null, ThreadManager.ExitCallbackThread _exitCallback = null, bool _useRealThread = false, bool _isSilent = false)
 	{
 		return ThreadManager.startThread(_name, _threadDelegate, null, null, null, _parameter, _exitCallback, _useRealThread, _isSilent);
 	}
 
-	// Token: 0x06009A06 RID: 39430 RVA: 0x003A7038 File Offset: 0x003A5238
+	// Token: 0x06009A5E RID: 39518 RVA: 0x003A943C File Offset: 0x003A763C
 	public static ThreadManager.ThreadInfo StartThread(string _name, ThreadManager.ThreadFunctionDelegate _threadInit, ThreadManager.ThreadFunctionLoopDelegate _threadLoop, ThreadManager.ThreadFunctionEndDelegate _threadEnd, object _parameter = null, ThreadManager.ExitCallbackThread _exitCallback = null, bool _useRealThread = false, bool _isSilent = false)
 	{
 		return ThreadManager.startThread(_name, null, _threadInit, _threadLoop, _threadEnd, _parameter, _exitCallback, _useRealThread, _isSilent);
 	}
 
-	// Token: 0x06009A07 RID: 39431 RVA: 0x003A7058 File Offset: 0x003A5258
+	// Token: 0x06009A5F RID: 39519 RVA: 0x003A945C File Offset: 0x003A765C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void myThreadInvoke(object _threadInfo)
 	{
@@ -172,7 +172,7 @@ public static class ThreadManager
 		Profiler.EndThreadProfiling();
 	}
 
-	// Token: 0x06009A08 RID: 39432 RVA: 0x003A71F4 File Offset: 0x003A53F4
+	// Token: 0x06009A60 RID: 39520 RVA: 0x003A95F8 File Offset: 0x003A77F8
 	public static ThreadManager.TaskInfo AddSingleTask(ThreadManager.TaskFunctionDelegate _taskDelegate, object _parameter = null, ThreadManager.ExitCallbackTask _exitCallback = null, bool _endEvent = true)
 	{
 		ThreadManager.TaskInfo taskInfo = new ThreadManager.TaskInfo(_endEvent);
@@ -184,7 +184,7 @@ public static class ThreadManager
 		return taskInfo;
 	}
 
-	// Token: 0x06009A09 RID: 39433 RVA: 0x003A723C File Offset: 0x003A543C
+	// Token: 0x06009A61 RID: 39521 RVA: 0x003A9640 File Offset: 0x003A7840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void myQueuedTaskInvoke(object _taskInfo)
 	{
@@ -224,7 +224,7 @@ public static class ThreadManager
 		Profiler.EndThreadProfiling();
 	}
 
-	// Token: 0x06009A0A RID: 39434 RVA: 0x003A7328 File Offset: 0x003A5528
+	// Token: 0x06009A62 RID: 39522 RVA: 0x003A972C File Offset: 0x003A792C
 	public static void AddSingleTaskMainThread(string _name, ThreadManager.MainThreadTaskFunctionDelegate _func, object _parameter = null)
 	{
 		ThreadManager.MainThreadTaskInfo mainThreadTaskInfo = default(ThreadManager.MainThreadTaskInfo);
@@ -238,7 +238,7 @@ public static class ThreadManager
 		}
 	}
 
-	// Token: 0x06009A0B RID: 39435 RVA: 0x003A738C File Offset: 0x003A558C
+	// Token: 0x06009A63 RID: 39523 RVA: 0x003A9790 File Offset: 0x003A7990
 	public static void AddSingleTaskMainThread(string _name, Action _func)
 	{
 		ThreadManager.AddSingleTaskMainThread(_name, delegate(object _)
@@ -247,13 +247,13 @@ public static class ThreadManager
 		}, null);
 	}
 
-	// Token: 0x06009A0C RID: 39436 RVA: 0x003A73B9 File Offset: 0x003A55B9
+	// Token: 0x06009A64 RID: 39524 RVA: 0x003A97BD File Offset: 0x003A79BD
 	public static void RunTaskAfterFrames(Action _func, int _inFrames = 1)
 	{
 		ThreadManager.StartCoroutine(ThreadManager.runAfterFrames(_func, _inFrames));
 	}
 
-	// Token: 0x06009A0D RID: 39437 RVA: 0x003A73C8 File Offset: 0x003A55C8
+	// Token: 0x06009A65 RID: 39525 RVA: 0x003A97CC File Offset: 0x003A79CC
 	public static void UpdateMainThreadTasks()
 	{
 		Action updateEv = ThreadManager.UpdateEv;
@@ -297,7 +297,7 @@ public static class ThreadManager
 		ThreadManager.mainThreadTasksCopy.Clear();
 	}
 
-	// Token: 0x06009A0E RID: 39438 RVA: 0x003A74AC File Offset: 0x003A56AC
+	// Token: 0x06009A66 RID: 39526 RVA: 0x003A98B0 File Offset: 0x003A7AB0
 	public static void LateUpdate()
 	{
 		Action lateUpdateEv = ThreadManager.LateUpdateEv;
@@ -308,7 +308,7 @@ public static class ThreadManager
 		lateUpdateEv();
 	}
 
-	// Token: 0x06009A0F RID: 39439 RVA: 0x003A74C0 File Offset: 0x003A56C0
+	// Token: 0x06009A67 RID: 39527 RVA: 0x003A98C4 File Offset: 0x003A7AC4
 	public static void Shutdown()
 	{
 		Log.Out("Terminating threads");
@@ -338,13 +338,13 @@ public static class ThreadManager
 		goto IL_0044;
 	}
 
-	// Token: 0x06009A10 RID: 39440 RVA: 0x003A7578 File Offset: 0x003A5778
+	// Token: 0x06009A68 RID: 39528 RVA: 0x003A997C File Offset: 0x003A7B7C
 	public static void SetMonoBehaviour(MonoBehaviour _monoBehaviour)
 	{
 		ThreadManager.monoBehaviour = _monoBehaviour;
 	}
 
-	// Token: 0x06009A11 RID: 39441 RVA: 0x003A7580 File Offset: 0x003A5780
+	// Token: 0x06009A69 RID: 39529 RVA: 0x003A9984 File Offset: 0x003A7B84
 	public static Coroutine StartCoroutine(IEnumerator _e)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -362,7 +362,7 @@ public static class ThreadManager
 		return null;
 	}
 
-	// Token: 0x06009A12 RID: 39442 RVA: 0x003A75D9 File Offset: 0x003A57D9
+	// Token: 0x06009A6A RID: 39530 RVA: 0x003A99DD File Offset: 0x003A7BDD
 	public static void StopCoroutine(IEnumerator _e)
 	{
 		if (ThreadManager.monoBehaviour == null)
@@ -372,7 +372,7 @@ public static class ThreadManager
 		ThreadManager.monoBehaviour.StopCoroutine(_e);
 	}
 
-	// Token: 0x06009A13 RID: 39443 RVA: 0x003A75F4 File Offset: 0x003A57F4
+	// Token: 0x06009A6B RID: 39531 RVA: 0x003A99F8 File Offset: 0x003A7BF8
 	public static void StopCoroutine(Coroutine _coroutine)
 	{
 		if (ThreadManager.monoBehaviour == null)
@@ -382,7 +382,7 @@ public static class ThreadManager
 		ThreadManager.monoBehaviour.StopCoroutine(_coroutine);
 	}
 
-	// Token: 0x06009A14 RID: 39444 RVA: 0x003A760F File Offset: 0x003A580F
+	// Token: 0x06009A6C RID: 39532 RVA: 0x003A9A13 File Offset: 0x003A7C13
 	public static void StopCoroutine(string _methodName)
 	{
 		if (ThreadManager.monoBehaviour == null)
@@ -392,7 +392,7 @@ public static class ThreadManager
 		ThreadManager.monoBehaviour.StopCoroutine(_methodName);
 	}
 
-	// Token: 0x06009A15 RID: 39445 RVA: 0x003A762C File Offset: 0x003A582C
+	// Token: 0x06009A6D RID: 39533 RVA: 0x003A9A30 File Offset: 0x003A7C30
 	public static void RunCoroutine(IEnumerator _e, Action _iterCallback)
 	{
 		while (_e.MoveNext())
@@ -410,8 +410,8 @@ public static class ThreadManager
 		}
 	}
 
-	// Token: 0x17001270 RID: 4720
-	// (get) Token: 0x06009A16 RID: 39446 RVA: 0x003A7661 File Offset: 0x003A5861
+	// Token: 0x1700127C RID: 4732
+	// (get) Token: 0x06009A6E RID: 39534 RVA: 0x003A9A65 File Offset: 0x003A7C65
 	public static bool IsInSyncCoroutine
 	{
 		get
@@ -420,7 +420,7 @@ public static class ThreadManager
 		}
 	}
 
-	// Token: 0x06009A17 RID: 39447 RVA: 0x003A766C File Offset: 0x003A586C
+	// Token: 0x06009A6F RID: 39535 RVA: 0x003A9A70 File Offset: 0x003A7C70
 	public static void RunCoroutineSync(IEnumerator _func)
 	{
 		ThreadManager.syncCoroutineNestingLevel++;
@@ -442,7 +442,7 @@ public static class ThreadManager
 		}
 	}
 
-	// Token: 0x06009A18 RID: 39448 RVA: 0x003A76C4 File Offset: 0x003A58C4
+	// Token: 0x06009A70 RID: 39536 RVA: 0x003A9AC8 File Offset: 0x003A7CC8
 	public static IEnumerator CoroutineWrapperWithExceptionCallback(IEnumerator _enumerator, Action<Exception> _exceptionHandler)
 	{
 		Stack<IEnumerator> stack = new Stack<IEnumerator>();
@@ -478,27 +478,27 @@ public static class ThreadManager
 		yield break;
 	}
 
-	// Token: 0x06009A19 RID: 39449 RVA: 0x003A76DA File Offset: 0x003A58DA
+	// Token: 0x06009A71 RID: 39537 RVA: 0x003A9ADE File Offset: 0x003A7CDE
 	public static void SetMainThreadRef(Thread _mainThreadRef)
 	{
 		ThreadManager.MainThreadRef = _mainThreadRef;
 		ThreadManager.MainThreadId = _mainThreadRef.ManagedThreadId;
 	}
 
-	// Token: 0x06009A1A RID: 39450 RVA: 0x003A76ED File Offset: 0x003A58ED
+	// Token: 0x06009A72 RID: 39538 RVA: 0x003A9AF1 File Offset: 0x003A7CF1
 	public static bool IsMainThread()
 	{
 		return Thread.CurrentThread.ManagedThreadId == ThreadManager.MainThreadId;
 	}
 
-	// Token: 0x06009A1B RID: 39451 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009A73 RID: 39539 RVA: 0x000027FC File Offset: 0x000009FC
 	[Conditional("DEBUG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugLog(string _messagePart1, string _messagePart2 = null)
 	{
 	}
 
-	// Token: 0x06009A1C RID: 39452 RVA: 0x003A7700 File Offset: 0x003A5900
+	// Token: 0x06009A74 RID: 39540 RVA: 0x003A9B04 File Offset: 0x003A7D04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator runAfterFrames(Action _func, int _inFrames)
 	{
@@ -515,80 +515,80 @@ public static class ThreadManager
 		yield break;
 	}
 
-	// Token: 0x04007408 RID: 29704
+	// Token: 0x04007449 RID: 29769
 	public const int cEndTime = -1;
 
-	// Token: 0x04007409 RID: 29705
+	// Token: 0x0400744A RID: 29770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int threadTerminationTimeout = 30;
 
-	// Token: 0x0400740A RID: 29706
+	// Token: 0x0400744B RID: 29771
 	public static Thread MainThreadRef;
 
-	// Token: 0x0400740B RID: 29707
+	// Token: 0x0400744C RID: 29772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int MainThreadId;
 
-	// Token: 0x0400740C RID: 29708
+	// Token: 0x0400744D RID: 29773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ManualTaskScheduler MainThreadScheduler = new ManualTaskScheduler();
 
-	// Token: 0x0400740F RID: 29711
+	// Token: 0x04007450 RID: 29776
 	public static Dictionary<string, ThreadManager.ThreadInfo> ActiveThreads = new Dictionary<string, ThreadManager.ThreadInfo>();
 
-	// Token: 0x04007410 RID: 29712
+	// Token: 0x04007451 RID: 29777
 	public static int QueuedCount;
 
-	// Token: 0x04007411 RID: 29713
+	// Token: 0x04007452 RID: 29778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object lockObjectQueuedCounter = new object();
 
-	// Token: 0x04007412 RID: 29714
+	// Token: 0x04007453 RID: 29779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object lockObjectMainThreadTasks = new object();
 
-	// Token: 0x04007413 RID: 29715
+	// Token: 0x04007454 RID: 29780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<ThreadManager.MainThreadTaskInfo> mainThreadTasks = new List<ThreadManager.MainThreadTaskInfo>(150);
 
-	// Token: 0x04007414 RID: 29716
+	// Token: 0x04007455 RID: 29781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<ThreadManager.MainThreadTaskInfo> mainThreadTasksCopy = new List<ThreadManager.MainThreadTaskInfo>(150);
 
-	// Token: 0x04007415 RID: 29717
+	// Token: 0x04007456 RID: 29782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MonoBehaviour monoBehaviour;
 
-	// Token: 0x04007416 RID: 29718
+	// Token: 0x04007457 RID: 29783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WaitCallback queuedTaskDelegate = new WaitCallback(ThreadManager.myQueuedTaskInvoke);
 
-	// Token: 0x04007417 RID: 29719
+	// Token: 0x04007458 RID: 29784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int syncCoroutineNestingLevel;
 
-	// Token: 0x02001302 RID: 4866
+	// Token: 0x02001314 RID: 4884
 	public class ThreadInfo
 	{
-		// Token: 0x06009A1D RID: 39453 RVA: 0x003A7716 File Offset: 0x003A5916
+		// Token: 0x06009A75 RID: 39541 RVA: 0x003A9B1A File Offset: 0x003A7D1A
 		public void RequestTermination()
 		{
 			this.evRunning.Set();
 		}
 
-		// Token: 0x06009A1E RID: 39454 RVA: 0x003A7724 File Offset: 0x003A5924
+		// Token: 0x06009A76 RID: 39542 RVA: 0x003A9B28 File Offset: 0x003A7D28
 		public bool TerminationRequested()
 		{
 			return this.evRunning.WaitOne(0);
 		}
 
-		// Token: 0x06009A1F RID: 39455 RVA: 0x003A7732 File Offset: 0x003A5932
+		// Token: 0x06009A77 RID: 39543 RVA: 0x003A9B36 File Offset: 0x003A7D36
 		public bool HasTerminated()
 		{
 			return this.evStopped.WaitOne(0);
 		}
 
-		// Token: 0x06009A20 RID: 39456 RVA: 0x003A7740 File Offset: 0x003A5940
+		// Token: 0x06009A78 RID: 39544 RVA: 0x003A9B44 File Offset: 0x003A7D44
 		public void WaitForEnd(int timeout = 30)
 		{
 			this.RequestTermination();
@@ -612,47 +612,47 @@ public static class ThreadManager
 			}
 		}
 
-		// Token: 0x04007418 RID: 29720
+		// Token: 0x04007459 RID: 29785
 		public object parameter;
 
-		// Token: 0x04007419 RID: 29721
+		// Token: 0x0400745A RID: 29786
 		public ThreadManager.ThreadFunctionDelegate threadDelegate;
 
-		// Token: 0x0400741A RID: 29722
+		// Token: 0x0400745B RID: 29787
 		public ThreadManager.ThreadFunctionDelegate threadInit;
 
-		// Token: 0x0400741B RID: 29723
+		// Token: 0x0400745C RID: 29788
 		public ThreadManager.ThreadFunctionLoopDelegate threadLoop;
 
-		// Token: 0x0400741C RID: 29724
+		// Token: 0x0400745D RID: 29789
 		public ThreadManager.ThreadFunctionEndDelegate threadEnd;
 
-		// Token: 0x0400741D RID: 29725
+		// Token: 0x0400745E RID: 29790
 		public string name;
 
-		// Token: 0x0400741E RID: 29726
+		// Token: 0x0400745F RID: 29791
 		public Thread thread;
 
-		// Token: 0x0400741F RID: 29727
+		// Token: 0x04007460 RID: 29792
 		public bool isSilent;
 
-		// Token: 0x04007420 RID: 29728
+		// Token: 0x04007461 RID: 29793
 		public readonly ManualResetEvent evRunning = new ManualResetEvent(false);
 
-		// Token: 0x04007421 RID: 29729
+		// Token: 0x04007462 RID: 29794
 		public readonly ManualResetEvent evStopped = new ManualResetEvent(false);
 
-		// Token: 0x04007422 RID: 29730
+		// Token: 0x04007463 RID: 29795
 		public ThreadManager.ExitCallbackThread exitCallback;
 
-		// Token: 0x04007423 RID: 29731
+		// Token: 0x04007464 RID: 29796
 		public object threadData;
 	}
 
-	// Token: 0x02001303 RID: 4867
+	// Token: 0x02001315 RID: 4885
 	public class TaskInfo
 	{
-		// Token: 0x06009A22 RID: 39458 RVA: 0x003A77DA File Offset: 0x003A59DA
+		// Token: 0x06009A7A RID: 39546 RVA: 0x003A9BDE File Offset: 0x003A7DDE
 		public TaskInfo(bool _endEvent = true)
 		{
 			if (_endEvent)
@@ -661,66 +661,66 @@ public static class ThreadManager
 			}
 		}
 
-		// Token: 0x06009A23 RID: 39459 RVA: 0x003A77F1 File Offset: 0x003A59F1
+		// Token: 0x06009A7B RID: 39547 RVA: 0x003A9BF5 File Offset: 0x003A7DF5
 		public void WaitForEnd()
 		{
 			this.evStopped.WaitOne();
 		}
 
-		// Token: 0x04007424 RID: 29732
+		// Token: 0x04007465 RID: 29797
 		public string name;
 
-		// Token: 0x04007425 RID: 29733
+		// Token: 0x04007466 RID: 29798
 		public ThreadManager.TaskFunctionDelegate taskDelegate;
 
-		// Token: 0x04007426 RID: 29734
+		// Token: 0x04007467 RID: 29799
 		public object parameter;
 
-		// Token: 0x04007427 RID: 29735
+		// Token: 0x04007468 RID: 29800
 		public ThreadManager.ExitCallbackTask exitCallback;
 
-		// Token: 0x04007428 RID: 29736
+		// Token: 0x04007469 RID: 29801
 		public ManualResetEvent evStopped;
 	}
 
-	// Token: 0x02001304 RID: 4868
+	// Token: 0x02001316 RID: 4886
 	public struct MainThreadTaskInfo
 	{
-		// Token: 0x04007429 RID: 29737
+		// Token: 0x0400746A RID: 29802
 		public string name;
 
-		// Token: 0x0400742A RID: 29738
+		// Token: 0x0400746B RID: 29803
 		public ThreadManager.MainThreadTaskFunctionDelegate taskDelegate;
 
-		// Token: 0x0400742B RID: 29739
+		// Token: 0x0400746C RID: 29804
 		public object parameter;
 	}
 
-	// Token: 0x02001305 RID: 4869
-	// (Invoke) Token: 0x06009A25 RID: 39461
+	// Token: 0x02001317 RID: 4887
+	// (Invoke) Token: 0x06009A7D RID: 39549
 	public delegate int ThreadFunctionLoopDelegate(ThreadManager.ThreadInfo _threadInfo);
 
-	// Token: 0x02001306 RID: 4870
-	// (Invoke) Token: 0x06009A29 RID: 39465
+	// Token: 0x02001318 RID: 4888
+	// (Invoke) Token: 0x06009A81 RID: 39553
 	public delegate void ThreadFunctionEndDelegate(ThreadManager.ThreadInfo _threadInfo, bool _exitForException);
 
-	// Token: 0x02001307 RID: 4871
-	// (Invoke) Token: 0x06009A2D RID: 39469
+	// Token: 0x02001319 RID: 4889
+	// (Invoke) Token: 0x06009A85 RID: 39557
 	public delegate void ThreadFunctionDelegate(ThreadManager.ThreadInfo _threadInfo);
 
-	// Token: 0x02001308 RID: 4872
-	// (Invoke) Token: 0x06009A31 RID: 39473
+	// Token: 0x0200131A RID: 4890
+	// (Invoke) Token: 0x06009A89 RID: 39561
 	public delegate void TaskFunctionDelegate(ThreadManager.TaskInfo _taskInfo);
 
-	// Token: 0x02001309 RID: 4873
-	// (Invoke) Token: 0x06009A35 RID: 39477
+	// Token: 0x0200131B RID: 4891
+	// (Invoke) Token: 0x06009A8D RID: 39565
 	public delegate void MainThreadTaskFunctionDelegate(object _parameter);
 
-	// Token: 0x0200130A RID: 4874
-	// (Invoke) Token: 0x06009A39 RID: 39481
+	// Token: 0x0200131C RID: 4892
+	// (Invoke) Token: 0x06009A91 RID: 39569
 	public delegate void ExitCallbackThread(ThreadManager.ThreadInfo _ti, Exception _e);
 
-	// Token: 0x0200130B RID: 4875
-	// (Invoke) Token: 0x06009A3D RID: 39485
+	// Token: 0x0200131D RID: 4893
+	// (Invoke) Token: 0x06009A95 RID: 39573
 	public delegate void ExitCallbackTask(ThreadManager.TaskInfo _ti, Exception _e);
 }

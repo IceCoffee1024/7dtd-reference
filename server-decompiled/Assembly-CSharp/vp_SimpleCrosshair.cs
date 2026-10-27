@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200163B RID: 5691
+// Token: 0x0200164D RID: 5709
 public class vp_SimpleCrosshair : MonoBehaviour
 {
-	// Token: 0x0600B291 RID: 45713 RVA: 0x0042A1E3 File Offset: 0x004283E3
+	// Token: 0x0600B2E9 RID: 45801 RVA: 0x0042C5E7 File Offset: 0x0042A7E7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.m_Player = global::UnityEngine.Object.FindAnyObjectByType<vp_FPPlayerEventHandler>();
 	}
 
-	// Token: 0x0600B292 RID: 45714 RVA: 0x0042A1F0 File Offset: 0x004283F0
+	// Token: 0x0600B2EA RID: 45802 RVA: 0x0042C5F4 File Offset: 0x0042A7F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -21,7 +21,7 @@ public class vp_SimpleCrosshair : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B293 RID: 45715 RVA: 0x0042A20C File Offset: 0x0042840C
+	// Token: 0x0600B2EB RID: 45803 RVA: 0x0042C610 File Offset: 0x0042A810
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -31,7 +31,7 @@ public class vp_SimpleCrosshair : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B294 RID: 45716 RVA: 0x0042A228 File Offset: 0x00428428
+	// Token: 0x0600B2EC RID: 45804 RVA: 0x0042C62C File Offset: 0x0042A82C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{
@@ -52,9 +52,9 @@ public class vp_SimpleCrosshair : MonoBehaviour
 		GUI.color = Color.white;
 	}
 
-	// Token: 0x17001520 RID: 5408
-	// (get) Token: 0x0600B295 RID: 45717 RVA: 0x0042A31F File Offset: 0x0042851F
-	// (set) Token: 0x0600B296 RID: 45718 RVA: 0x0042A327 File Offset: 0x00428527
+	// Token: 0x1700152C RID: 5420
+	// (get) Token: 0x0600B2ED RID: 45805 RVA: 0x0042C723 File Offset: 0x0042A923
+	// (set) Token: 0x0600B2EE RID: 45806 RVA: 0x0042C72B File Offset: 0x0042A92B
 	public virtual Texture OnValue_Crosshair
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -69,16 +69,16 @@ public class vp_SimpleCrosshair : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04008616 RID: 34326
+	// Token: 0x04008657 RID: 34391
 	public Texture m_ImageCrosshair;
 
-	// Token: 0x04008617 RID: 34327
+	// Token: 0x04008658 RID: 34392
 	public bool HideOnFirstPersonZoom = true;
 
-	// Token: 0x04008618 RID: 34328
+	// Token: 0x04008659 RID: 34393
 	public bool HideOnDeath = true;
 
-	// Token: 0x04008619 RID: 34329
+	// Token: 0x0400865A RID: 34394
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;

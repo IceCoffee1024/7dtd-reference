@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000F16 RID: 3862
+// Token: 0x02000F25 RID: 3877
 public class OnCountChangedEventArgs : EventArgs
 {
-	// Token: 0x17000E3C RID: 3644
-	// (get) Token: 0x060078AC RID: 30892 RVA: 0x002DBB3B File Offset: 0x002D9D3B
-	// (set) Token: 0x060078AD RID: 30893 RVA: 0x002DBB43 File Offset: 0x002D9D43
+	// Token: 0x17000E46 RID: 3654
+	// (get) Token: 0x060078EF RID: 30959 RVA: 0x002DD42B File Offset: 0x002DB62B
+	// (set) Token: 0x060078F0 RID: 30960 RVA: 0x002DD433 File Offset: 0x002DB633
 	public int Count { get; set; }
 }

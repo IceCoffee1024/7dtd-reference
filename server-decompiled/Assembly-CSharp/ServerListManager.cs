@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020008A7 RID: 2215
+// Token: 0x020008B1 RID: 2225
 public class ServerListManager
 {
-	// Token: 0x170006CB RID: 1739
-	// (get) Token: 0x06003FCC RID: 16332 RVA: 0x00191B14 File Offset: 0x0018FD14
+	// Token: 0x170006D1 RID: 1745
+	// (get) Token: 0x06003FEF RID: 16367 RVA: 0x00192BBC File Offset: 0x00190DBC
 	public static ServerListManager Instance
 	{
 		get
@@ -21,25 +21,25 @@ public class ServerListManager
 		}
 	}
 
-	// Token: 0x170006CC RID: 1740
-	// (get) Token: 0x06003FCD RID: 16333 RVA: 0x00191B2A File Offset: 0x0018FD2A
-	// (set) Token: 0x06003FCE RID: 16334 RVA: 0x00191B32 File Offset: 0x0018FD32
+	// Token: 0x170006D2 RID: 1746
+	// (get) Token: 0x06003FF0 RID: 16368 RVA: 0x00192BD2 File Offset: 0x00190DD2
+	// (set) Token: 0x06003FF1 RID: 16369 RVA: 0x00192BDA File Offset: 0x00190DDA
 	public bool IsRefreshing
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006CD RID: 1741
-	// (get) Token: 0x06003FCF RID: 16335 RVA: 0x00191B3B File Offset: 0x0018FD3B
-	// (set) Token: 0x06003FD0 RID: 16336 RVA: 0x00191B43 File Offset: 0x0018FD43
+	// Token: 0x170006D3 RID: 1747
+	// (get) Token: 0x06003FF2 RID: 16370 RVA: 0x00192BE3 File Offset: 0x00190DE3
+	// (set) Token: 0x06003FF3 RID: 16371 RVA: 0x00192BEB File Offset: 0x00190DEB
 	public bool IsPrefilteredSearch
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06003FD1 RID: 16337 RVA: 0x00191B4C File Offset: 0x0018FD4C
+	// Token: 0x06003FF4 RID: 16372 RVA: 0x00192BF4 File Offset: 0x00190DF4
 	public void StartSearch(List<IServerListInterface.ServerFilter> _activeFilters)
 	{
 		this.IsRefreshing = true;
@@ -49,7 +49,7 @@ public class ServerListManager
 		}
 	}
 
-	// Token: 0x06003FD2 RID: 16338 RVA: 0x00191BA4 File Offset: 0x0018FDA4
+	// Token: 0x06003FF5 RID: 16373 RVA: 0x00192C4C File Offset: 0x00190E4C
 	public void StopSearch()
 	{
 		this.IsRefreshing = false;
@@ -59,7 +59,7 @@ public class ServerListManager
 		}
 	}
 
-	// Token: 0x06003FD3 RID: 16339 RVA: 0x00191BFC File Offset: 0x0018FDFC
+	// Token: 0x06003FF6 RID: 16374 RVA: 0x00192CA4 File Offset: 0x00190EA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ServerListManager()
 	{
@@ -89,7 +89,7 @@ public class ServerListManager
 		}
 	}
 
-	// Token: 0x06003FD4 RID: 16340 RVA: 0x00191C9C File Offset: 0x0018FE9C
+	// Token: 0x06003FF7 RID: 16375 RVA: 0x00192D44 File Offset: 0x00190F44
 	public void RegisterAdditionalServerList(IServerListInterface _serverList)
 	{
 		this.serverLists.Add(_serverList);
@@ -99,7 +99,7 @@ public class ServerListManager
 		}
 	}
 
-	// Token: 0x06003FD5 RID: 16341 RVA: 0x00191CBC File Offset: 0x0018FEBC
+	// Token: 0x06003FF8 RID: 16376 RVA: 0x00192D64 File Offset: 0x00190F64
 	public void Disconnect()
 	{
 		foreach (IServerListInterface serverListInterface in this.serverLists)
@@ -109,7 +109,7 @@ public class ServerListManager
 		this.IsRefreshing = false;
 	}
 
-	// Token: 0x06003FD6 RID: 16342 RVA: 0x00191D14 File Offset: 0x0018FF14
+	// Token: 0x06003FF9 RID: 16377 RVA: 0x00192DBC File Offset: 0x00190FBC
 	public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _errorCallback)
 	{
 		foreach (IServerListInterface serverListInterface in this.serverLists)
@@ -118,11 +118,11 @@ public class ServerListManager
 		}
 	}
 
-	// Token: 0x040033C5 RID: 13253
+	// Token: 0x040033E5 RID: 13285
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ServerListManager instance;
 
-	// Token: 0x040033C8 RID: 13256
+	// Token: 0x040033E8 RID: 13288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<IServerListInterface> serverLists = new List<IServerListInterface>();
 }

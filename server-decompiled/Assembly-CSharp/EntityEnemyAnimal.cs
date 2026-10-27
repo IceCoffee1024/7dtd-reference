@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004B1 RID: 1201
+// Token: 0x020004B3 RID: 1203
 [Preserve]
 public class EntityEnemyAnimal : EntityEnemy
 {
-	// Token: 0x060025A5 RID: 9637 RVA: 0x000E5994 File Offset: 0x000E3B94
+	// Token: 0x060025AC RID: 9644 RVA: 0x000E5DA4 File Offset: 0x000E3FA4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -17,34 +17,34 @@ public class EntityEnemyAnimal : EntityEnemy
 		}
 	}
 
-	// Token: 0x060025A6 RID: 9638 RVA: 0x000D9ABB File Offset: 0x000D7CBB
+	// Token: 0x060025AD RID: 9645 RVA: 0x000D9E3F File Offset: 0x000D803F
 	public override Color GetMapIconColor()
 	{
 		return new Color(1f, 0.8235294f, 0.34117648f);
 	}
 
-	// Token: 0x060025A7 RID: 9639 RVA: 0x000D9AD1 File Offset: 0x000D7CD1
+	// Token: 0x060025AE RID: 9646 RVA: 0x000D9E55 File Offset: 0x000D8055
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float getNextStepSoundDistance()
 	{
 		return 0.8f;
 	}
 
-	// Token: 0x060025A8 RID: 9640 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060025AF RID: 9647 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isGameMessageOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x060025A9 RID: 9641 RVA: 0x000E59BC File Offset: 0x000E3BBC
+	// Token: 0x060025B0 RID: 9648 RVA: 0x000E5DCC File Offset: 0x000E3FCC
 	public override bool CanDamageEntity(int _sourceEntityId)
 	{
 		Entity entity = this.world.GetEntity(_sourceEntityId);
 		return !entity || entity.entityClass != this.entityClass;
 	}
 
-	// Token: 0x060025AA RID: 9642 RVA: 0x000E59F0 File Offset: 0x000E3BF0
+	// Token: 0x060025B1 RID: 9649 RVA: 0x000E5E00 File Offset: 0x000E4000
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTasks()
 	{
@@ -64,7 +64,7 @@ public class EntityEnemyAnimal : EntityEnemy
 		base.updateTasks();
 	}
 
-	// Token: 0x04001BFB RID: 7163
+	// Token: 0x04001C0B RID: 7179
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Animator animator;

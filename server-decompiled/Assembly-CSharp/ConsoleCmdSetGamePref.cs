@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000287 RID: 647
+// Token: 0x02000289 RID: 649
 [Preserve]
 public class ConsoleCmdSetGamePref : ConsoleCmdAbstract
 {
-	// Token: 0x060012E2 RID: 4834 RVA: 0x00075463 File Offset: 0x00073663
+	// Token: 0x060012E6 RID: 4838 RVA: 0x00075633 File Offset: 0x00073833
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdSetGamePref : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001F3 RID: 499
-	// (get) Token: 0x060012E3 RID: 4835 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060012E7 RID: 4839 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,7 +23,7 @@ public class ConsoleCmdSetGamePref : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012E4 RID: 4836 RVA: 0x0007547C File Offset: 0x0007367C
+	// Token: 0x060012E8 RID: 4840 RVA: 0x0007564C File Offset: 0x0007384C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 2)
@@ -55,7 +55,7 @@ public class ConsoleCmdSetGamePref : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(enumGamePrefs.ToStringCached<EnumGamePrefs>() + " set to " + ((obj != null) ? obj.ToString() : null));
 	}
 
-	// Token: 0x060012E5 RID: 4837 RVA: 0x0007554C File Offset: 0x0007374C
+	// Token: 0x060012E9 RID: 4841 RVA: 0x0007571C File Offset: 0x0007391C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

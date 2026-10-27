@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000845 RID: 2117
+// Token: 0x0200084F RID: 2127
 [Preserve]
 public class NetPackageSetAttackTarget : NetPackageEntityTargeted
 {
-	// Token: 0x06003DB2 RID: 15794 RVA: 0x00188B7E File Offset: 0x00186D7E
+	// Token: 0x06003DD5 RID: 15829 RVA: 0x00189C82 File Offset: 0x00187E82
 	public NetPackageSetAttackTarget Setup(int entityId, int targetId)
 	{
 		base.Setup(entityId);
@@ -13,21 +13,21 @@ public class NetPackageSetAttackTarget : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003DB3 RID: 15795 RVA: 0x00188B8F File Offset: 0x00186D8F
+	// Token: 0x06003DD6 RID: 15830 RVA: 0x00189C93 File Offset: 0x00187E93
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.m_targetId = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003DB4 RID: 15796 RVA: 0x00188BA4 File Offset: 0x00186DA4
+	// Token: 0x06003DD7 RID: 15831 RVA: 0x00189CA8 File Offset: 0x00187EA8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.m_targetId);
 	}
 
-	// Token: 0x06003DB5 RID: 15797 RVA: 0x00188BBC File Offset: 0x00186DBC
+	// Token: 0x06003DD8 RID: 15832 RVA: 0x00189CC0 File Offset: 0x00187EC0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -43,7 +43,7 @@ public class NetPackageSetAttackTarget : NetPackageEntityTargeted
 		entityAlive.SetAttackTargetClient(entityAlive2);
 	}
 
-	// Token: 0x04003240 RID: 12864
+	// Token: 0x04003260 RID: 12896
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_targetId;
 }

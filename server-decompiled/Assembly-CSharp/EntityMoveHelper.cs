@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using GamePath;
 using UnityEngine;
 
-// Token: 0x0200050E RID: 1294
+// Token: 0x02000510 RID: 1296
 public class EntityMoveHelper
 {
-	// Token: 0x06002A1F RID: 10783 RVA: 0x001086BC File Offset: 0x001068BC
+	// Token: 0x06002A26 RID: 10790 RVA: 0x00108C10 File Offset: 0x00106E10
 	public EntityMoveHelper(EntityAlive _entity)
 	{
 		this.entity = _entity;
@@ -14,7 +14,7 @@ public class EntityMoveHelper
 		this.moveToPos = _entity.position;
 	}
 
-	// Token: 0x06002A20 RID: 10784 RVA: 0x00108710 File Offset: 0x00106910
+	// Token: 0x06002A27 RID: 10791 RVA: 0x00108C64 File Offset: 0x00106E64
 	public void SetMoveTo(Vector3 _pos, bool _canBreakBlocks)
 	{
 		this.moveToPos = _pos;
@@ -28,7 +28,7 @@ public class EntityMoveHelper
 		this.ResetStuckCheck();
 	}
 
-	// Token: 0x06002A21 RID: 10785 RVA: 0x00108768 File Offset: 0x00106968
+	// Token: 0x06002A28 RID: 10792 RVA: 0x00108CBC File Offset: 0x00106EBC
 	public void SetMoveTo(Vector3 _pos, bool _canBreakBlocks, float _speed)
 	{
 		this.moveToPos = _pos;
@@ -42,7 +42,7 @@ public class EntityMoveHelper
 		this.ResetStuckCheck();
 	}
 
-	// Token: 0x06002A22 RID: 10786 RVA: 0x001087B4 File Offset: 0x001069B4
+	// Token: 0x06002A29 RID: 10793 RVA: 0x00108D08 File Offset: 0x00106F08
 	public void SetMoveTo(PathEntity path, float _speed, bool _canBreakBlocks)
 	{
 		PathPoint currentPoint = path.CurrentPoint;
@@ -80,14 +80,14 @@ public class EntityMoveHelper
 		this.IsActive = true;
 	}
 
-	// Token: 0x06002A23 RID: 10787 RVA: 0x00108886 File Offset: 0x00106A86
+	// Token: 0x06002A2A RID: 10794 RVA: 0x00108DDA File Offset: 0x00106FDA
 	public void Stop()
 	{
 		this.StopMove();
 		this.entity.getNavigator().clearPath();
 	}
 
-	// Token: 0x06002A24 RID: 10788 RVA: 0x001088A0 File Offset: 0x00106AA0
+	// Token: 0x06002A2B RID: 10795 RVA: 0x00108DF4 File Offset: 0x00106FF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StopMove()
 	{
@@ -102,14 +102,14 @@ public class EntityMoveHelper
 		this.BlockedEntity = null;
 	}
 
-	// Token: 0x06002A25 RID: 10789 RVA: 0x00108908 File Offset: 0x00106B08
+	// Token: 0x06002A2C RID: 10796 RVA: 0x00108E5C File Offset: 0x0010705C
 	public void SetFocusPos(Vector3 _pos)
 	{
 		this.focusPos = _pos;
 		this.focusTicks = 5;
 	}
 
-	// Token: 0x06002A26 RID: 10790 RVA: 0x00108918 File Offset: 0x00106B18
+	// Token: 0x06002A2D RID: 10797 RVA: 0x00108E6C File Offset: 0x0010706C
 	public void UpdateMoveHelper()
 	{
 		this.destroyRefreshTicks--;
@@ -561,7 +561,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A27 RID: 10791 RVA: 0x0010971C File Offset: 0x0010791C
+	// Token: 0x06002A2E RID: 10798 RVA: 0x00109C70 File Offset: 0x00107E70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckForDoorAndOpen()
 	{
@@ -595,7 +595,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A28 RID: 10792 RVA: 0x001097E4 File Offset: 0x001079E4
+	// Token: 0x06002A2F RID: 10799 RVA: 0x00109D38 File Offset: 0x00107F38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckJumpBlocked(Vector3 position, float moveToDistXZSq)
 	{
@@ -620,7 +620,7 @@ public class EntityMoveHelper
 		return flag;
 	}
 
-	// Token: 0x06002A29 RID: 10793 RVA: 0x001098E8 File Offset: 0x00107AE8
+	// Token: 0x06002A30 RID: 10800 RVA: 0x00109E3C File Offset: 0x0010803C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckWorldBlocked()
 	{
@@ -702,7 +702,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A2A RID: 10794 RVA: 0x00109C5C File Offset: 0x00107E5C
+	// Token: 0x06002A31 RID: 10801 RVA: 0x0010A1B0 File Offset: 0x001083B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelectBestHit()
 	{
@@ -715,7 +715,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A2B RID: 10795 RVA: 0x00109CD0 File Offset: 0x00107ED0
+	// Token: 0x06002A32 RID: 10802 RVA: 0x0010A224 File Offset: 0x00108424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckBlocked(Vector3 pos, Vector3 endPos, int baseY, bool checkSlope, WorldRayHitInfo hitInfo)
 	{
@@ -773,7 +773,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A2C RID: 10796 RVA: 0x00109F24 File Offset: 0x00108124
+	// Token: 0x06002A33 RID: 10803 RVA: 0x0010A478 File Offset: 0x00108678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckBlockedUp(Vector3 pos)
 	{
@@ -801,7 +801,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A2D RID: 10797 RVA: 0x0010A018 File Offset: 0x00108218
+	// Token: 0x06002A34 RID: 10804 RVA: 0x0010A56C File Offset: 0x0010876C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckAreaBlocked()
 	{
@@ -838,7 +838,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A2E RID: 10798 RVA: 0x0010A158 File Offset: 0x00108358
+	// Token: 0x06002A35 RID: 10805 RVA: 0x0010A6AC File Offset: 0x001088AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalcObstacleSideStep()
 	{
@@ -890,7 +890,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A2F RID: 10799 RVA: 0x0010A308 File Offset: 0x00108508
+	// Token: 0x06002A36 RID: 10806 RVA: 0x0010A85C File Offset: 0x00108A5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalcObstacleSideStepArc(Vector3 startPos, float angleRad, float dirMin, float dirMax, float dirStep)
 	{
@@ -921,7 +921,7 @@ public class EntityMoveHelper
 		return 0f;
 	}
 
-	// Token: 0x06002A30 RID: 10800 RVA: 0x0010A3F0 File Offset: 0x001085F0
+	// Token: 0x06002A37 RID: 10807 RVA: 0x0010A944 File Offset: 0x00108B44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckEntityBlocked(Vector3 pos, Vector3 endPos)
 	{
@@ -952,7 +952,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A31 RID: 10801 RVA: 0x0010A4E4 File Offset: 0x001086E4
+	// Token: 0x06002A38 RID: 10808 RVA: 0x0010AA38 File Offset: 0x00108C38
 	public void StartJump(bool calcYaw, float distance = 0f, float heightDiff = 0f)
 	{
 		if (!this.entity.Jumping && (this.entity.onGround || this.entity.IsInElevator()) && !this.entity.Electrocuted)
@@ -974,7 +974,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A32 RID: 10802 RVA: 0x0010A5C4 File Offset: 0x001087C4
+	// Token: 0x06002A39 RID: 10809 RVA: 0x0010AB18 File Offset: 0x00108D18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartSwimStroke()
 	{
@@ -989,7 +989,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A33 RID: 10803 RVA: 0x0010A670 File Offset: 0x00108870
+	// Token: 0x06002A3A RID: 10810 RVA: 0x0010ABC4 File Offset: 0x00108DC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Push(EntityAlive blockerEntity)
 	{
@@ -1001,7 +1001,7 @@ public class EntityMoveHelper
 		blockerEntity.DoRagdoll(in this.damageResponse);
 	}
 
-	// Token: 0x06002A34 RID: 10804 RVA: 0x0010A6FC File Offset: 0x001088FC
+	// Token: 0x06002A3B RID: 10811 RVA: 0x0010AC50 File Offset: 0x00108E50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AttackPush(EntityAlive blockerEntity)
 	{
@@ -1018,7 +1018,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A35 RID: 10805 RVA: 0x0010A78C File Offset: 0x0010898C
+	// Token: 0x06002A3C RID: 10812 RVA: 0x0010ACE0 File Offset: 0x00108EE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldRayHitInfo GetAttackHitInfo(out float damageMpy)
 	{
@@ -1041,7 +1041,7 @@ public class EntityMoveHelper
 		return null;
 	}
 
-	// Token: 0x06002A36 RID: 10806 RVA: 0x0010A838 File Offset: 0x00108A38
+	// Token: 0x06002A3D RID: 10813 RVA: 0x0010AD8C File Offset: 0x00108F8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DigStart(int forTicks)
 	{
@@ -1066,7 +1066,7 @@ public class EntityMoveHelper
 		this.isDigging = true;
 	}
 
-	// Token: 0x06002A37 RID: 10807 RVA: 0x0010A8D8 File Offset: 0x00108AD8
+	// Token: 0x06002A3E RID: 10814 RVA: 0x0010AE2C File Offset: 0x0010902C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DigUpdate()
 	{
@@ -1150,7 +1150,7 @@ public class EntityMoveHelper
 		this.digForwardCount = 0f;
 	}
 
-	// Token: 0x06002A38 RID: 10808 RVA: 0x0010ABF6 File Offset: 0x00108DF6
+	// Token: 0x06002A3F RID: 10815 RVA: 0x0010B14A File Offset: 0x0010934A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DigStop()
 	{
@@ -1161,7 +1161,7 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A39 RID: 10809 RVA: 0x0010AC24 File Offset: 0x00108E24
+	// Token: 0x06002A40 RID: 10816 RVA: 0x0010B178 File Offset: 0x00109378
 	public float CalcBlockedDistanceSq()
 	{
 		Vector3 pos = this.HitInfo.hit.pos;
@@ -1171,7 +1171,7 @@ public class EntityMoveHelper
 		return num * num + num2 * num2;
 	}
 
-	// Token: 0x06002A3A RID: 10810 RVA: 0x0010AC6F File Offset: 0x00108E6F
+	// Token: 0x06002A41 RID: 10817 RVA: 0x0010B1C3 File Offset: 0x001093C3
 	public void ClearBlocked()
 	{
 		this.BlockedFlags = 0;
@@ -1179,13 +1179,13 @@ public class EntityMoveHelper
 		this.BlockedTime = 0f;
 	}
 
-	// Token: 0x06002A3B RID: 10811 RVA: 0x0010AC8A File Offset: 0x00108E8A
+	// Token: 0x06002A42 RID: 10818 RVA: 0x0010B1DE File Offset: 0x001093DE
 	public void ClearTempMove()
 	{
 		this.isTempMove = false;
 	}
 
-	// Token: 0x06002A3C RID: 10812 RVA: 0x0010AC93 File Offset: 0x00108E93
+	// Token: 0x06002A43 RID: 10819 RVA: 0x0010B1E7 File Offset: 0x001093E7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetStuckCheck()
 	{
@@ -1200,7 +1200,7 @@ public class EntityMoveHelper
 		this.moveToDistance = this.CalcMoveDist();
 	}
 
-	// Token: 0x06002A3D RID: 10813 RVA: 0x0010ACD0 File Offset: 0x00108ED0
+	// Token: 0x06002A44 RID: 10820 RVA: 0x0010B224 File Offset: 0x00109424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalcMoveDist()
 	{
@@ -1211,7 +1211,7 @@ public class EntityMoveHelper
 		return Mathf.Sqrt(num * num + num3 * num3 + num2 * num2);
 	}
 
-	// Token: 0x06002A3E RID: 10814 RVA: 0x0010AD30 File Offset: 0x00108F30
+	// Token: 0x06002A45 RID: 10821 RVA: 0x0010B284 File Offset: 0x00109484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalcTempMoveDist()
 	{
@@ -1222,7 +1222,7 @@ public class EntityMoveHelper
 		return Mathf.Sqrt(num * num + num3 * num3 + num2 * num2);
 	}
 
-	// Token: 0x06002A3F RID: 10815 RVA: 0x0010AD90 File Offset: 0x00108F90
+	// Token: 0x06002A46 RID: 10822 RVA: 0x0010B2E4 File Offset: 0x001094E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 CalcBlockCenterXZ(Vector3 pos)
 	{
@@ -1231,7 +1231,7 @@ public class EntityMoveHelper
 		return pos;
 	}
 
-	// Token: 0x06002A40 RID: 10816 RVA: 0x0010ADC8 File Offset: 0x00108FC8
+	// Token: 0x06002A47 RID: 10823 RVA: 0x0010B31C File Offset: 0x0010951C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 CalcBlockCenter(Vector3 pos)
 	{
@@ -1241,7 +1241,7 @@ public class EntityMoveHelper
 		return pos;
 	}
 
-	// Token: 0x06002A41 RID: 10817 RVA: 0x0010AE24 File Offset: 0x00109024
+	// Token: 0x06002A48 RID: 10824 RVA: 0x0010B378 File Offset: 0x00109578
 	public void CalcIfUnreachablePos()
 	{
 		this.IsUnreachableSideJump = false;
@@ -1282,13 +1282,13 @@ public class EntityMoveHelper
 		}
 	}
 
-	// Token: 0x06002A42 RID: 10818 RVA: 0x0010AF34 File Offset: 0x00109134
+	// Token: 0x06002A49 RID: 10825 RVA: 0x0010B488 File Offset: 0x00109688
 	public bool IsMoveToAbove()
 	{
 		return this.moveToPos.y - this.entity.position.y > 1.9f;
 	}
 
-	// Token: 0x06002A43 RID: 10819 RVA: 0x0010AF5C File Offset: 0x0010915C
+	// Token: 0x06002A4A RID: 10826 RVA: 0x0010B4B0 File Offset: 0x001096B0
 	public bool FindExistingDestroyPos(ref Vector3 destroyPos)
 	{
 		if (this.GetExistingDestroyPos(ref destroyPos))
@@ -1314,7 +1314,7 @@ public class EntityMoveHelper
 		return false;
 	}
 
-	// Token: 0x06002A44 RID: 10820 RVA: 0x0010B010 File Offset: 0x00109210
+	// Token: 0x06002A4B RID: 10827 RVA: 0x0010B564 File Offset: 0x00109764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool GetExistingDestroyPos(ref Vector3 destroyPos)
 	{
@@ -1334,7 +1334,7 @@ public class EntityMoveHelper
 		return false;
 	}
 
-	// Token: 0x06002A45 RID: 10821 RVA: 0x0010B0A4 File Offset: 0x001092A4
+	// Token: 0x06002A4C RID: 10828 RVA: 0x0010B5F8 File Offset: 0x001097F8
 	public bool FindDestroyPos(ref Vector3 destroyPos, int destroyRadius, bool isLookFar)
 	{
 		this.destroyPosition.y = 0f;
@@ -1347,7 +1347,7 @@ public class EntityMoveHelper
 		return false;
 	}
 
-	// Token: 0x06002A46 RID: 10822 RVA: 0x0010B0DC File Offset: 0x001092DC
+	// Token: 0x06002A4D RID: 10829 RVA: 0x0010B630 File Offset: 0x00109830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SearchForDestroyPos(ref Vector3 destroyPos, int destroyRadius, bool isLookFar)
 	{
@@ -1469,7 +1469,7 @@ public class EntityMoveHelper
 		return true;
 	}
 
-	// Token: 0x06002A47 RID: 10823 RVA: 0x0010B3E8 File Offset: 0x001095E8
+	// Token: 0x06002A4E RID: 10830 RVA: 0x0010B93C File Offset: 0x00109B3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsABlockSideOpen(Vector3i _checkPos, ref IChunk _chunk)
 	{
@@ -1492,271 +1492,271 @@ public class EntityMoveHelper
 		return false;
 	}
 
-	// Token: 0x04001FFE RID: 8190
+	// Token: 0x0400200E RID: 8206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDoneXZDistSq = 0.0009f;
 
-	// Token: 0x04001FFF RID: 8191
+	// Token: 0x0400200F RID: 8207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCheckBlockedDist = 0.35f;
 
-	// Token: 0x04002000 RID: 8192
+	// Token: 0x04002010 RID: 8208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCheckBlockedRadius = 0.125f;
 
-	// Token: 0x04002001 RID: 8193
+	// Token: 0x04002011 RID: 8209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCheckSidestepDist = 0.35f;
 
-	// Token: 0x04002002 RID: 8194
+	// Token: 0x04002012 RID: 8210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCheckSidestepRadius = 0.1f;
 
-	// Token: 0x04002003 RID: 8195
+	// Token: 0x04002013 RID: 8211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTempMoveDist = 0.4f;
 
-	// Token: 0x04002004 RID: 8196
+	// Token: 0x04002014 RID: 8212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cYawNextDist = 1.5f;
 
-	// Token: 0x04002005 RID: 8197
+	// Token: 0x04002015 RID: 8213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMoveDirectDist = 0.65f;
 
-	// Token: 0x04002006 RID: 8198
+	// Token: 0x04002016 RID: 8214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMoveSlowDist = 0.6f;
 
-	// Token: 0x04002007 RID: 8199
+	// Token: 0x04002017 RID: 8215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDigXZDistSq = 0.010000001f;
 
-	// Token: 0x04002008 RID: 8200
+	// Token: 0x04002018 RID: 8216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDigDiagonalXZDistSq = 2.25f;
 
-	// Token: 0x04002009 RID: 8201
+	// Token: 0x04002019 RID: 8217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDigAngleCos = 0.86f;
 
-	// Token: 0x0400200A RID: 8202
+	// Token: 0x0400201A RID: 8218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cJumpUpXZDistSq = 0.16000001f;
 
-	// Token: 0x0400200B RID: 8203
+	// Token: 0x0400201B RID: 8219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cLadderXZDistSq = 0.10890001f;
 
-	// Token: 0x0400200C RID: 8204
+	// Token: 0x0400201C RID: 8220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cUnreachJumpMin = 1.2f;
 
-	// Token: 0x0400200D RID: 8205
+	// Token: 0x0400201D RID: 8221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCollisionMask = 1082195968;
 
-	// Token: 0x0400200E RID: 8206
+	// Token: 0x0400201E RID: 8222
 	public bool IsActive;
 
-	// Token: 0x0400200F RID: 8207
+	// Token: 0x0400201F RID: 8223
 	public bool CanBreakBlocks;
 
-	// Token: 0x04002010 RID: 8208
+	// Token: 0x04002020 RID: 8224
 	public bool CanOpenDoors;
 
-	// Token: 0x04002011 RID: 8209
+	// Token: 0x04002021 RID: 8225
 	public Vector3 JumpToPos;
 
-	// Token: 0x04002012 RID: 8210
+	// Token: 0x04002022 RID: 8226
 	public EntityAlive BlockedEntity;
 
-	// Token: 0x04002013 RID: 8211
+	// Token: 0x04002023 RID: 8227
 	public int BlockedFlags;
 
-	// Token: 0x04002014 RID: 8212
+	// Token: 0x04002024 RID: 8228
 	public int BlockedFlagsAfterCrouch;
 
-	// Token: 0x04002015 RID: 8213
+	// Token: 0x04002025 RID: 8229
 	public float BlockedTime;
 
-	// Token: 0x04002016 RID: 8214
+	// Token: 0x04002026 RID: 8230
 	public WorldRayHitInfo HitInfo = new WorldRayHitInfo();
 
-	// Token: 0x04002017 RID: 8215
+	// Token: 0x04002027 RID: 8231
 	public WorldRayHitInfo HitInfo2 = new WorldRayHitInfo();
 
-	// Token: 0x04002018 RID: 8216
+	// Token: 0x04002028 RID: 8232
 	public float DamageScale;
 
-	// Token: 0x04002019 RID: 8217
+	// Token: 0x04002029 RID: 8233
 	public bool IsUnreachableAbove;
 
-	// Token: 0x0400201A RID: 8218
+	// Token: 0x0400202A RID: 8234
 	public bool IsUnreachableSide;
 
-	// Token: 0x0400201B RID: 8219
+	// Token: 0x0400202B RID: 8235
 	public bool IsUnreachableSideJump;
 
-	// Token: 0x0400201C RID: 8220
+	// Token: 0x0400202C RID: 8236
 	public Vector3 UnreachablePos;
 
-	// Token: 0x0400201D RID: 8221
+	// Token: 0x0400202D RID: 8237
 	public float SideStepAngle;
 
-	// Token: 0x0400201E RID: 8222
+	// Token: 0x0400202E RID: 8238
 	public float UnreachablePercent;
 
-	// Token: 0x0400201F RID: 8223
+	// Token: 0x0400202F RID: 8239
 	public bool IsDestroyAreaTryUnreachable;
 
-	// Token: 0x04002020 RID: 8224
-	public bool IsDestroyArea;
-
-	// Token: 0x04002021 RID: 8225
-	[PublicizedFrom(EAccessModifier.Private)]
-	public DamageResponse damageResponse = DamageResponse.New(false);
-
-	// Token: 0x04002022 RID: 8226
-	[PublicizedFrom(EAccessModifier.Private)]
-	public EntityAlive entity;
-
-	// Token: 0x04002023 RID: 8227
-	[PublicizedFrom(EAccessModifier.Private)]
-	public GameRandom random;
-
-	// Token: 0x04002024 RID: 8228
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 moveToPos;
-
-	// Token: 0x04002025 RID: 8229
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float moveToDistance;
-
-	// Token: 0x04002026 RID: 8230
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int moveToTicks;
-
-	// Token: 0x04002027 RID: 8231
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int moveToFailCnt;
-
-	// Token: 0x04002028 RID: 8232
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float moveToDir;
-
-	// Token: 0x04002029 RID: 8233
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 focusPos;
-
-	// Token: 0x0400202A RID: 8234
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int focusTicks;
-
-	// Token: 0x0400202B RID: 8235
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int obstacleCheckTickDelay;
-
-	// Token: 0x0400202C RID: 8236
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool hasNextPos;
-
-	// Token: 0x0400202D RID: 8237
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 nextMoveToPos;
-
-	// Token: 0x0400202E RID: 8238
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 tempMoveToPos;
-
-	// Token: 0x0400202F RID: 8239
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isTempMove;
-
 	// Token: 0x04002030 RID: 8240
-	[PublicizedFrom(EAccessModifier.Private)]
-	public float blockedDistSq;
+	public bool IsDestroyArea;
 
 	// Token: 0x04002031 RID: 8241
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float blockedEntityDistSq;
+	public DamageResponse damageResponse = DamageResponse.New(false);
 
 	// Token: 0x04002032 RID: 8242
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isDigging;
+	public EntityAlive entity;
 
 	// Token: 0x04002033 RID: 8243
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float moveSpeed;
+	public GameRandom random;
 
 	// Token: 0x04002034 RID: 8244
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int expiryTicks;
+	public Vector3 moveToPos;
 
 	// Token: 0x04002035 RID: 8245
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isClimb;
+	public float moveToDistance;
 
 	// Token: 0x04002036 RID: 8246
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float jumpYaw;
+	public int moveToTicks;
 
 	// Token: 0x04002037 RID: 8247
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int swimStrokeDelayTicks;
+	public int moveToFailCnt;
 
 	// Token: 0x04002038 RID: 8248
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float ccRadius;
+	public float moveToDir;
 
 	// Token: 0x04002039 RID: 8249
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float ccHeight;
+	public Vector3 focusPos;
 
 	// Token: 0x0400203A RID: 8250
-	public static bool AllowZombieDigging = true;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int focusTicks;
 
 	// Token: 0x0400203B RID: 8251
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static float[] checkEdgeXs = new float[] { 0f, -0.25f, 0.25f };
+	public int obstacleCheckTickDelay;
 
 	// Token: 0x0400203C RID: 8252
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cDigMovedDist = 0.5f;
+	public bool hasNextPos;
 
 	// Token: 0x0400203D RID: 8253
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 digStartPos;
+	public Vector3 nextMoveToPos;
 
 	// Token: 0x0400203E RID: 8254
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float digForTicks;
+	public Vector3 tempMoveToPos;
 
 	// Token: 0x0400203F RID: 8255
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float digTicks;
+	public bool isTempMove;
 
 	// Token: 0x04002040 RID: 8256
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float digActionTicks;
+	public float blockedDistSq;
 
 	// Token: 0x04002041 RID: 8257
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool digAttacked;
+	public float blockedEntityDistSq;
 
 	// Token: 0x04002042 RID: 8258
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float digForwardCount;
+	public bool isDigging;
 
 	// Token: 0x04002043 RID: 8259
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cDestroyRefreshAfter = 25;
+	public float moveSpeed;
 
 	// Token: 0x04002044 RID: 8260
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cDestroyOtherAIDist = 20f;
+	public int expiryTicks;
 
 	// Token: 0x04002045 RID: 8261
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isClimb;
+
+	// Token: 0x04002046 RID: 8262
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float jumpYaw;
+
+	// Token: 0x04002047 RID: 8263
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int swimStrokeDelayTicks;
+
+	// Token: 0x04002048 RID: 8264
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float ccRadius;
+
+	// Token: 0x04002049 RID: 8265
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float ccHeight;
+
+	// Token: 0x0400204A RID: 8266
+	public static bool AllowZombieDigging = true;
+
+	// Token: 0x0400204B RID: 8267
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static float[] checkEdgeXs = new float[] { 0f, -0.25f, 0.25f };
+
+	// Token: 0x0400204C RID: 8268
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cDigMovedDist = 0.5f;
+
+	// Token: 0x0400204D RID: 8269
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector3 digStartPos;
+
+	// Token: 0x0400204E RID: 8270
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float digForTicks;
+
+	// Token: 0x0400204F RID: 8271
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float digTicks;
+
+	// Token: 0x04002050 RID: 8272
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float digActionTicks;
+
+	// Token: 0x04002051 RID: 8273
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool digAttacked;
+
+	// Token: 0x04002052 RID: 8274
+	[PublicizedFrom(EAccessModifier.Private)]
+	public float digForwardCount;
+
+	// Token: 0x04002053 RID: 8275
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cDestroyRefreshAfter = 25;
+
+	// Token: 0x04002054 RID: 8276
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cDestroyOtherAIDist = 20f;
+
+	// Token: 0x04002055 RID: 8277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EntityMoveHelper.DestroyData[] destroyData = new EntityMoveHelper.DestroyData[]
 	{
@@ -1769,27 +1769,27 @@ public class EntityMoveHelper
 		new EntityMoveHelper.DestroyData(1, -1, -1, 0)
 	};
 
-	// Token: 0x04002046 RID: 8262
+	// Token: 0x04002056 RID: 8278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int destroyRefreshTicks;
 
-	// Token: 0x04002047 RID: 8263
+	// Token: 0x04002057 RID: 8279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 destroyPosition;
 
-	// Token: 0x04002048 RID: 8264
+	// Token: 0x04002058 RID: 8280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Entity> entityTempList = new List<Entity>();
 
-	// Token: 0x04002049 RID: 8265
+	// Token: 0x04002059 RID: 8281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] blockOpenOffsets = new int[] { -1, 0, 1, 0, 0, 1, 0, -1 };
 
-	// Token: 0x0200050F RID: 1295
+	// Token: 0x02000511 RID: 1297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct DestroyData
 	{
-		// Token: 0x06002A49 RID: 10825 RVA: 0x0010B561 File Offset: 0x00109761
+		// Token: 0x06002A50 RID: 10832 RVA: 0x0010BAB5 File Offset: 0x00109CB5
 		public DestroyData(int _offsetX, int _offsetZ, int _stepX, int _stepZ)
 		{
 			this.offsetX = _offsetX;
@@ -1798,16 +1798,16 @@ public class EntityMoveHelper
 			this.stepZ = _stepZ;
 		}
 
-		// Token: 0x0400204A RID: 8266
+		// Token: 0x0400205A RID: 8282
 		public int offsetX;
 
-		// Token: 0x0400204B RID: 8267
+		// Token: 0x0400205B RID: 8283
 		public int offsetZ;
 
-		// Token: 0x0400204C RID: 8268
+		// Token: 0x0400205C RID: 8284
 		public int stepX;
 
-		// Token: 0x0400204D RID: 8269
+		// Token: 0x0400205D RID: 8285
 		public int stepZ;
 	}
 }

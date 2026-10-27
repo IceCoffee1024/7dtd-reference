@@ -2,11 +2,11 @@
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x020003C5 RID: 965
+// Token: 0x020003C7 RID: 967
 [Preserve]
 public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObject
 {
-	// Token: 0x06001CCC RID: 7372 RVA: 0x000AE338 File Offset: 0x000AC538
+	// Token: 0x06001CD0 RID: 7376 RVA: 0x000AE548 File Offset: 0x000AC748
 	public void Setup(DynamicMeshItem item, byte[] byteArray)
 	{
 		this.Item = item;
@@ -18,14 +18,14 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		this.PresumedLength = ((item2 != null) ? item2.PackageLength : 0);
 	}
 
-	// Token: 0x06001CCD RID: 7373 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06001CD1 RID: 7377 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool Prechecks()
 	{
 		return true;
 	}
 
 	// Token: 0x17000361 RID: 865
-	// (get) Token: 0x06001CCE RID: 7374 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001CD2 RID: 7378 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool FlushQueue
 	{
 		get
@@ -34,7 +34,7 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		}
 	}
 
-	// Token: 0x06001CCF RID: 7375 RVA: 0x000AE39C File Offset: 0x000AC59C
+	// Token: 0x06001CD3 RID: 7379 RVA: 0x000AE5AC File Offset: 0x000AC7AC
 	public override void read(PooledBinaryReader reader)
 	{
 		this.X = reader.ReadInt32();
@@ -96,7 +96,7 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		}
 	}
 
-	// Token: 0x06001CD0 RID: 7376 RVA: 0x000AE54C File Offset: 0x000AC74C
+	// Token: 0x06001CD4 RID: 7380 RVA: 0x000AE75C File Offset: 0x000AC95C
 	public override void write(PooledBinaryWriter writer)
 	{
 		base.write(writer);
@@ -163,7 +163,7 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 	}
 
 	// Token: 0x17000362 RID: 866
-	// (get) Token: 0x06001CD1 RID: 7377 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x06001CD5 RID: 7381 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -172,7 +172,7 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		}
 	}
 
-	// Token: 0x06001CD2 RID: 7378 RVA: 0x000AE77C File Offset: 0x000AC97C
+	// Token: 0x06001CD6 RID: 7382 RVA: 0x000AE98C File Offset: 0x000ACB8C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!DynamicMeshManager.CONTENT_ENABLED)
@@ -192,7 +192,7 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(package, false);
 	}
 
-	// Token: 0x06001CD3 RID: 7379 RVA: 0x000AE7CF File Offset: 0x000AC9CF
+	// Token: 0x06001CD7 RID: 7383 RVA: 0x000AE9DF File Offset: 0x000ACBDF
 	public void Reset()
 	{
 		DynamicMeshServer.SyncRelease(this.Item);
@@ -202,14 +202,14 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		this.PresumedLength = 0;
 	}
 
-	// Token: 0x06001CD4 RID: 7380 RVA: 0x000AE7F8 File Offset: 0x000AC9F8
+	// Token: 0x06001CD8 RID: 7384 RVA: 0x000AEA08 File Offset: 0x000ACC08
 	public void Cleanup()
 	{
 		this.Reset();
 	}
 
 	// Token: 0x17000363 RID: 867
-	// (get) Token: 0x06001CD5 RID: 7381 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001CD9 RID: 7385 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int Channel
 	{
 		get
@@ -219,7 +219,7 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 	}
 
 	// Token: 0x17000364 RID: 868
-	// (get) Token: 0x06001CD6 RID: 7382 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001CDA RID: 7386 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool Compress
 	{
 		get
@@ -228,45 +228,45 @@ public class NetPackageDynamicMesh : DynamicMeshServerData, IMemoryPoolableObjec
 		}
 	}
 
-	// Token: 0x040012C8 RID: 4808
+	// Token: 0x040012D8 RID: 4824
 	public static byte[] DelayedMessageBytes = new byte[1];
 
-	// Token: 0x040012C9 RID: 4809
+	// Token: 0x040012D9 RID: 4825
 	public static int MaxMessageSize = 2097152;
 
-	// Token: 0x040012CA RID: 4810
+	// Token: 0x040012DA RID: 4826
 	public static int MaxLength = 0;
 
-	// Token: 0x040012CB RID: 4811
+	// Token: 0x040012DB RID: 4827
 	public static int LastLength;
 
-	// Token: 0x040012CC RID: 4812
+	// Token: 0x040012DC RID: 4828
 	public static int LastZ;
 
-	// Token: 0x040012CD RID: 4813
+	// Token: 0x040012DD RID: 4829
 	public static int LastX;
 
-	// Token: 0x040012CE RID: 4814
+	// Token: 0x040012DE RID: 4830
 	public static int Count = 0;
 
-	// Token: 0x040012CF RID: 4815
+	// Token: 0x040012DF RID: 4831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicMeshItem Item;
 
-	// Token: 0x040012D0 RID: 4816
+	// Token: 0x040012E0 RID: 4832
 	public int Attempts;
 
-	// Token: 0x040012D1 RID: 4817
+	// Token: 0x040012E1 RID: 4833
 	public int PresumedLength;
 
-	// Token: 0x040012D2 RID: 4818
+	// Token: 0x040012E2 RID: 4834
 	public int UpdateTime;
 
-	// Token: 0x040012D3 RID: 4819
+	// Token: 0x040012E3 RID: 4835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] bytes;
 
-	// Token: 0x040012D4 RID: 4820
+	// Token: 0x040012E4 RID: 4836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsValidUpdate;
 }

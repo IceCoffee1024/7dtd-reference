@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000644 RID: 1604
+// Token: 0x0200064B RID: 1611
 public interface IMeshGenerator
 {
-	// Token: 0x0600343C RID: 13372
+	// Token: 0x0600344A RID: 13386
 	bool IsLayerEmpty(int _layerIdx);
 
-	// Token: 0x0600343D RID: 13373
+	// Token: 0x0600344B RID: 13387
 	bool IsLayerEmpty(int _startLayerIdx, int _endLayerIdx);
 }

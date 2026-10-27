@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200070A RID: 1802
+// Token: 0x02000712 RID: 1810
 [Preserve]
 public class MinEventActionSetHeldItemJammed : MinEventActionBase
 {
-	// Token: 0x06003724 RID: 14116 RVA: 0x0016AC68 File Offset: 0x00168E68
+	// Token: 0x0600373B RID: 14139 RVA: 0x0016BC00 File Offset: 0x00169E00
 	public override void Execute(MinEventParams _params)
 	{
 		ItemValue itemValue = _params.ItemValue;

@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000949 RID: 2377
+// Token: 0x02000953 RID: 2387
 public static class PrefabHelpers
 {
-	// Token: 0x06004526 RID: 17702 RVA: 0x001B64AA File Offset: 0x001B46AA
+	// Token: 0x06004549 RID: 17737 RVA: 0x001B752E File Offset: 0x001B572E
 	public static Coroutine IteratePrefabs(bool _ignoreExcludeImposterCheck = false, Action<Prefab> _onPrefabLoaded = null, Action<PathAbstractions.AbstractedLocation, Prefab> _onChunksBuilt = null, Func<PathAbstractions.AbstractedLocation, bool> _prefabPathFilter = null, Func<Prefab, bool> _prefabContentFilter = null, Action _cleanupAction = null)
 	{
 		return ThreadManager.StartCoroutine(PrefabHelpers.runBulk(_ignoreExcludeImposterCheck, _onPrefabLoaded, _onChunksBuilt, _prefabPathFilter, _prefabContentFilter, _cleanupAction));
 	}
 
-	// Token: 0x06004527 RID: 17703 RVA: 0x001B64BE File Offset: 0x001B46BE
+	// Token: 0x0600454A RID: 17738 RVA: 0x001B7542 File Offset: 0x001B5742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator runBulk(bool _ignoreExcludeImposterCheck, Action<Prefab> _onPrefabLoaded, Action<PathAbstractions.AbstractedLocation, Prefab> _onChunksBuilt, Func<PathAbstractions.AbstractedLocation, bool> _prefabPathFilter, Func<Prefab, bool> _prefabContentFilter, Action _cleanupAction)
 	{
@@ -43,7 +43,7 @@ public static class PrefabHelpers
 		yield break;
 	}
 
-	// Token: 0x06004528 RID: 17704 RVA: 0x001B64F2 File Offset: 0x001B46F2
+	// Token: 0x0600454B RID: 17739 RVA: 0x001B7576 File Offset: 0x001B5776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator processPrefab(Action<Prefab> _onPrefabLoaded, Action<PathAbstractions.AbstractedLocation, Prefab> _onChunksBuilt, Prefab _prefab, PathAbstractions.AbstractedLocation _path)
 	{
@@ -77,21 +77,21 @@ public static class PrefabHelpers
 		yield break;
 	}
 
-	// Token: 0x06004529 RID: 17705 RVA: 0x001B6516 File Offset: 0x001B4716
+	// Token: 0x0600454C RID: 17740 RVA: 0x001B759A File Offset: 0x001B579A
 	public static void Cleanup()
 	{
 		PrefabHelpers.cInnerBlockBVReplace = BlockValue.Air;
 		BlockShapeNew.bImposterGenerationActive = false;
 	}
 
-	// Token: 0x0600452A RID: 17706 RVA: 0x001B6528 File Offset: 0x001B4728
+	// Token: 0x0600454D RID: 17741 RVA: 0x001B75AC File Offset: 0x001B57AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Init()
 	{
 		PrefabHelpers.cInnerBlockBVReplace = Block.GetBlockValue(PrefabHelpers.cInnerBlockReplace, false);
 	}
 
-	// Token: 0x0600452B RID: 17707 RVA: 0x001B653A File Offset: 0x001B473A
+	// Token: 0x0600454E RID: 17742 RVA: 0x001B75BE File Offset: 0x001B57BE
 	public static void convert(Action _callbackOnDone = null)
 	{
 		PrefabEditModeManager.Instance.ImposterSignData = PrefabHelpers.CollectImposterSignData();
@@ -99,7 +99,7 @@ public static class PrefabHelpers
 		ThreadManager.StartCoroutine(PrefabHelpers.convertWaitForAllChunksBuilt(_callbackOnDone));
 	}
 
-	// Token: 0x0600452C RID: 17708 RVA: 0x001B6560 File Offset: 0x001B4760
+	// Token: 0x0600454F RID: 17743 RVA: 0x001B75E4 File Offset: 0x001B57E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<ImposterCanvas> CollectImposterSignData()
 	{
@@ -160,7 +160,7 @@ public static class PrefabHelpers
 		return list;
 	}
 
-	// Token: 0x0600452D RID: 17709 RVA: 0x001B67B0 File Offset: 0x001B49B0
+	// Token: 0x06004550 RID: 17744 RVA: 0x001B7834 File Offset: 0x001B5A34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator convertWaitForAllChunksBuilt(Action _callbackOnDone)
 	{
@@ -210,13 +210,13 @@ public static class PrefabHelpers
 		yield break;
 	}
 
-	// Token: 0x0600452E RID: 17710 RVA: 0x001B67BF File Offset: 0x001B49BF
+	// Token: 0x06004551 RID: 17745 RVA: 0x001B7843 File Offset: 0x001B5A43
 	public static void convertInsideOutside(Action _callbackOnDone = null)
 	{
 		ThreadManager.StartCoroutine(PrefabHelpers.convertInsideOutsideWaitForAllChunksBuilt(_callbackOnDone));
 	}
 
-	// Token: 0x0600452F RID: 17711 RVA: 0x001B67CD File Offset: 0x001B49CD
+	// Token: 0x06004552 RID: 17746 RVA: 0x001B7851 File Offset: 0x001B5A51
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator convertInsideOutsideWaitForAllChunksBuilt(Action _callbackOnDone)
 	{
@@ -247,7 +247,7 @@ public static class PrefabHelpers
 		yield break;
 	}
 
-	// Token: 0x06004530 RID: 17712 RVA: 0x001B67DC File Offset: 0x001B49DC
+	// Token: 0x06004553 RID: 17747 RVA: 0x001B7860 File Offset: 0x001B5A60
 	public static void SimplifyPrefab(bool _bOnlySimplify1 = false)
 	{
 		Prefab voxelPrefab = PrefabEditModeManager.Instance.VoxelPrefab;
@@ -351,7 +351,7 @@ public static class PrefabHelpers
 		PrefabHelpers.rebuildMesh();
 	}
 
-	// Token: 0x06004531 RID: 17713 RVA: 0x001B6C20 File Offset: 0x001B4E20
+	// Token: 0x06004554 RID: 17748 RVA: 0x001B7CA4 File Offset: 0x001B5EA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void simplifyPrefab1()
 	{
@@ -393,7 +393,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004532 RID: 17714 RVA: 0x001B6DD4 File Offset: 0x001B4FD4
+	// Token: 0x06004555 RID: 17749 RVA: 0x001B7E58 File Offset: 0x001B6058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void simplifyPrefab2()
 	{
@@ -412,7 +412,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004533 RID: 17715 RVA: 0x001B6E54 File Offset: 0x001B5054
+	// Token: 0x06004556 RID: 17750 RVA: 0x001B7ED8 File Offset: 0x001B60D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void insideOutsidePrefab()
 	{
@@ -490,7 +490,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004534 RID: 17716 RVA: 0x001B7128 File Offset: 0x001B5328
+	// Token: 0x06004557 RID: 17751 RVA: 0x001B81AC File Offset: 0x001B63AC
 	public static void mergePrefab(bool _bRebuildMesh = true)
 	{
 		ChunkCluster chunkCache = GameManager.Instance.World.ChunkCache;
@@ -562,7 +562,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004535 RID: 17717 RVA: 0x001B7500 File Offset: 0x001B5700
+	// Token: 0x06004558 RID: 17752 RVA: 0x001B8584 File Offset: 0x001B6784
 	public static void cull()
 	{
 		PrefabHelpers.Init();
@@ -612,7 +612,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004536 RID: 17718 RVA: 0x001B77E4 File Offset: 0x001B59E4
+	// Token: 0x06004559 RID: 17753 RVA: 0x001B8868 File Offset: 0x001B6A68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void rebuildMesh()
 	{
@@ -623,7 +623,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004537 RID: 17719 RVA: 0x001B784C File Offset: 0x001B5A4C
+	// Token: 0x0600455A RID: 17754 RVA: 0x001B88D0 File Offset: 0x001B6AD0
 	public static void export()
 	{
 		using (Stream stream = SdFile.Create(PrefabEditModeManager.Instance.VoxelPrefab.location.FullPathNoExtension + ".mesh"))
@@ -636,7 +636,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x06004538 RID: 17720 RVA: 0x001B78DC File Offset: 0x001B5ADC
+	// Token: 0x0600455B RID: 17755 RVA: 0x001B8960 File Offset: 0x001B6B60
 	public static bool combine(bool _bCombineSliced)
 	{
 		if (PrefabEditModeManager.Instance.VoxelPrefab == null)
@@ -749,7 +749,7 @@ public static class PrefabHelpers
 		return true;
 	}
 
-	// Token: 0x06004539 RID: 17721 RVA: 0x001B7C5C File Offset: 0x001B5E5C
+	// Token: 0x0600455C RID: 17756 RVA: 0x001B8CE0 File Offset: 0x001B6EE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject combine_createSubGameObject(string _goName, Mesh _mesh, Vector3 _goPosition)
 	{
@@ -826,7 +826,7 @@ public static class PrefabHelpers
 		return gameObject;
 	}
 
-	// Token: 0x0600453A RID: 17722 RVA: 0x001B7EEC File Offset: 0x001B60EC
+	// Token: 0x0600455D RID: 17757 RVA: 0x001B8F70 File Offset: 0x001B7170
 	public static void DensityChange(int _densityMatch, int _densitySet)
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch();
@@ -869,7 +869,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x0600453B RID: 17723 RVA: 0x001B8108 File Offset: 0x001B6308
+	// Token: 0x0600455E RID: 17758 RVA: 0x001B918C File Offset: 0x001B738C
 	public static void SmoothPOI(int _passes, bool _land)
 	{
 		ChunkCluster chunkCache = GameManager.Instance.World.ChunkCache;
@@ -909,7 +909,7 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x0600453C RID: 17724 RVA: 0x001B8280 File Offset: 0x001B6480
+	// Token: 0x0600455F RID: 17759 RVA: 0x001B9304 File Offset: 0x001B7504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void smoothChunk(List<BlockChangeInfo> _listBci, Chunk _chunk, ChunkCluster _regionCache, bool _bLand)
 	{
@@ -1035,31 +1035,31 @@ public static class PrefabHelpers
 		}
 	}
 
-	// Token: 0x040037DD RID: 14301
+	// Token: 0x040037FD RID: 14333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string cInnerBlockReplace = "imposterBlock";
 
-	// Token: 0x040037DE RID: 14302
+	// Token: 0x040037FE RID: 14334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BlockValue cInnerBlockBVReplace;
 
-	// Token: 0x040037DF RID: 14303
+	// Token: 0x040037FF RID: 14335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i dim;
 
-	// Token: 0x040037E0 RID: 14304
+	// Token: 0x04003800 RID: 14336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EnumInsideOutside[] eInsideOutside;
 
-	// Token: 0x040037E1 RID: 14305
+	// Token: 0x04003801 RID: 14337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BlockValue[] blockIds;
 
-	// Token: 0x040037E2 RID: 14306
+	// Token: 0x04003802 RID: 14338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] textureIdxOverride;
 
-	// Token: 0x040037E3 RID: 14307
+	// Token: 0x04003803 RID: 14339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool[] bTouched;
 }

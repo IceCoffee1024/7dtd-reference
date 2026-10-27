@@ -2,59 +2,59 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000C35 RID: 3125
+// Token: 0x02000C40 RID: 3136
 public static class EnumDecoAllowedExtensions
 {
-	// Token: 0x06005ED2 RID: 24274 RVA: 0x00252509 File Offset: 0x00250709
+	// Token: 0x06005EF7 RID: 24311 RVA: 0x00253A31 File Offset: 0x00251C31
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static EnumDecoAllowedSlope GetSlope(this EnumDecoAllowed decoAllowed)
 	{
 		return (EnumDecoAllowedSlope)((decoAllowed & (EnumDecoAllowed.SlopeLo | EnumDecoAllowed.SlopeHi)) / EnumDecoAllowed.SlopeLo);
 	}
 
-	// Token: 0x06005ED3 RID: 24275 RVA: 0x00252511 File Offset: 0x00250711
+	// Token: 0x06005EF8 RID: 24312 RVA: 0x00253A39 File Offset: 0x00251C39
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static EnumDecoAllowed WithSlope(this EnumDecoAllowed decoAllowed, EnumDecoAllowedSlope slope)
 	{
 		return (EnumDecoAllowed)(((int)decoAllowed & -4) | (int)slope);
 	}
 
-	// Token: 0x06005ED4 RID: 24276 RVA: 0x0025251A File Offset: 0x0025071A
+	// Token: 0x06005EF9 RID: 24313 RVA: 0x00253A42 File Offset: 0x00251C42
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static EnumDecoAllowedSize GetSize(this EnumDecoAllowed decoAllowed)
 	{
 		return (EnumDecoAllowedSize)((decoAllowed & (EnumDecoAllowed.SizeLo | EnumDecoAllowed.SizeHi)) / EnumDecoAllowed.SizeLo);
 	}
 
-	// Token: 0x06005ED5 RID: 24277 RVA: 0x00252523 File Offset: 0x00250723
+	// Token: 0x06005EFA RID: 24314 RVA: 0x00253A4B File Offset: 0x00251C4B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static EnumDecoAllowed WithSize(this EnumDecoAllowed decoAllowed, EnumDecoAllowedSize size)
 	{
 		return (EnumDecoAllowed)(((int)decoAllowed & -13) | (int)(size * (EnumDecoAllowedSize)4));
 	}
 
-	// Token: 0x06005ED6 RID: 24278 RVA: 0x0025252E File Offset: 0x0025072E
+	// Token: 0x06005EFB RID: 24315 RVA: 0x00253A56 File Offset: 0x00251C56
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool AllowBigDeco(this EnumDecoAllowed decoAllowed)
 	{
 		return decoAllowed.GetSize() == EnumDecoAllowedSize.Any;
 	}
 
-	// Token: 0x06005ED7 RID: 24279 RVA: 0x00252539 File Offset: 0x00250739
+	// Token: 0x06005EFC RID: 24316 RVA: 0x00253A61 File Offset: 0x00251C61
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool AllowSmallDeco(this EnumDecoAllowed decoAllowed)
 	{
 		return decoAllowed.GetSize() < EnumDecoAllowedSize.None;
 	}
 
-	// Token: 0x06005ED8 RID: 24280 RVA: 0x00252544 File Offset: 0x00250744
+	// Token: 0x06005EFD RID: 24317 RVA: 0x00253A6C File Offset: 0x00251C6C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool GetStreetOnly(this EnumDecoAllowed decoAllowed)
 	{
 		return (decoAllowed & EnumDecoAllowed.StreetOnly) == EnumDecoAllowed.StreetOnly;
 	}
 
-	// Token: 0x06005ED9 RID: 24281 RVA: 0x0025254E File Offset: 0x0025074E
+	// Token: 0x06005EFE RID: 24318 RVA: 0x00253A76 File Offset: 0x00251C76
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static EnumDecoAllowed WithStreetOnly(this EnumDecoAllowed decoAllowed, bool streetOnly)
 	{
@@ -65,27 +65,27 @@ public static class EnumDecoAllowedExtensions
 		return (EnumDecoAllowed)((int)decoAllowed & -17);
 	}
 
-	// Token: 0x06005EDA RID: 24282 RVA: 0x0025255E File Offset: 0x0025075E
+	// Token: 0x06005EFF RID: 24319 RVA: 0x00253A86 File Offset: 0x00251C86
 	public static bool IsNothing(this EnumDecoAllowed decoAllowed)
 	{
 		return decoAllowed.GetSlope().IsNothing() || decoAllowed.GetSize().IsNothing();
 	}
 
-	// Token: 0x06005EDB RID: 24283 RVA: 0x0025257A File Offset: 0x0025077A
+	// Token: 0x06005F00 RID: 24320 RVA: 0x00253AA2 File Offset: 0x00251CA2
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsNothing(this EnumDecoAllowedSlope decoSlope)
 	{
 		return decoSlope >= EnumDecoAllowedSlope.Steep;
 	}
 
-	// Token: 0x06005EDC RID: 24284 RVA: 0x0025257A File Offset: 0x0025077A
+	// Token: 0x06005F01 RID: 24321 RVA: 0x00253AA2 File Offset: 0x00251CA2
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsNothing(this EnumDecoAllowedSize decoSize)
 	{
 		return decoSize >= EnumDecoAllowedSize.None;
 	}
 
-	// Token: 0x06005EDD RID: 24285 RVA: 0x00252584 File Offset: 0x00250784
+	// Token: 0x06005F02 RID: 24322 RVA: 0x00253AAC File Offset: 0x00251CAC
 	public static string ToStringFriendlyCached(this EnumDecoAllowed decoAllowed)
 	{
 		string text;
@@ -98,7 +98,7 @@ public static class EnumDecoAllowedExtensions
 		return text2;
 	}
 
-	// Token: 0x06005EDE RID: 24286 RVA: 0x002525B8 File Offset: 0x002507B8
+	// Token: 0x06005F03 RID: 24323 RVA: 0x00253AE0 File Offset: 0x00251CE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string ToStringInternal(EnumDecoAllowed decoAllowed)
 	{
@@ -132,7 +132,7 @@ public static class EnumDecoAllowedExtensions
 		return "Unknown";
 	}
 
-	// Token: 0x040049EA RID: 18922
+	// Token: 0x04004A0F RID: 18959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly EnumDictionary<EnumDecoAllowed, string> s_toStringCache = new EnumDictionary<EnumDecoAllowed, string>();
 }

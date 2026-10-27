@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001553 RID: 5459
+// Token: 0x02001565 RID: 5477
 public class AttachmentTestSceneTools : MonoBehaviour
 {
-	// Token: 0x0600AB06 RID: 43782 RVA: 0x003FCF6C File Offset: 0x003FB16C
+	// Token: 0x0600AB5E RID: 43870 RVA: 0x003FF370 File Offset: 0x003FD570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -30,7 +30,7 @@ public class AttachmentTestSceneTools : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB07 RID: 43783 RVA: 0x003FD050 File Offset: 0x003FB250
+	// Token: 0x0600AB5F RID: 43871 RVA: 0x003FF454 File Offset: 0x003FD654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -44,71 +44,71 @@ public class AttachmentTestSceneTools : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007F00 RID: 32512
+	// Token: 0x04007F41 RID: 32577
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Animator animator;
 
-	// Token: 0x04007F01 RID: 32513
+	// Token: 0x04007F42 RID: 32578
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int layerIndex;
 
-	// Token: 0x04007F02 RID: 32514
+	// Token: 0x04007F43 RID: 32579
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int maxLayers;
 
-	// Token: 0x04007F03 RID: 32515
+	// Token: 0x04007F44 RID: 32580
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float turnRate = 600f;
 
-	// Token: 0x04007F04 RID: 32516
+	// Token: 0x04007F45 RID: 32581
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int totalModels;
 
-	// Token: 0x04007F05 RID: 32517
+	// Token: 0x04007F46 RID: 32582
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int totalBodyParts;
 
-	// Token: 0x04007F06 RID: 32518
+	// Token: 0x04007F47 RID: 32583
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int randomMaterial;
 
-	// Token: 0x04007F07 RID: 32519
+	// Token: 0x04007F48 RID: 32584
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetLayerWeight;
 
-	// Token: 0x04007F08 RID: 32520
+	// Token: 0x04007F49 RID: 32585
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float endLayerWeight;
 
-	// Token: 0x04007F09 RID: 32521
+	// Token: 0x04007F4A RID: 32586
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentModel;
 
-	// Token: 0x04007F0A RID: 32522
+	// Token: 0x04007F4B RID: 32587
 	public AnimationClip anim;
 
-	// Token: 0x04007F0B RID: 32523
+	// Token: 0x04007F4C RID: 32588
 	public GameObject attachPoint;
 
-	// Token: 0x04007F0C RID: 32524
+	// Token: 0x04007F4D RID: 32589
 	public GameObject prefabAttachment;
 
-	// Token: 0x04007F0D RID: 32525
+	// Token: 0x04007F4E RID: 32590
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject attached;
 
-	// Token: 0x04007F0E RID: 32526
+	// Token: 0x04007F4F RID: 32591
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Renderer meshRenderer;

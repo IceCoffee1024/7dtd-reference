@@ -4,12 +4,12 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020015A9 RID: 5545
+// Token: 0x020015BB RID: 5563
 [Preserve]
 public class vp_PoolManager : MonoBehaviour
 {
-	// Token: 0x17001430 RID: 5168
-	// (get) Token: 0x0600AD19 RID: 44313 RVA: 0x00407CEC File Offset: 0x00405EEC
+	// Token: 0x1700143C RID: 5180
+	// (get) Token: 0x0600AD71 RID: 44401 RVA: 0x0040A0F0 File Offset: 0x004082F0
 	[Preserve]
 	public static vp_PoolManager Instance
 	{
@@ -19,7 +19,7 @@ public class vp_PoolManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD1A RID: 44314 RVA: 0x00407CF3 File Offset: 0x00405EF3
+	// Token: 0x0600AD72 RID: 44402 RVA: 0x0040A0F7 File Offset: 0x004082F7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -27,7 +27,7 @@ public class vp_PoolManager : MonoBehaviour
 		this.m_Transform = base.transform;
 	}
 
-	// Token: 0x0600AD1B RID: 44315 RVA: 0x00407D08 File Offset: 0x00405F08
+	// Token: 0x0600AD73 RID: 44403 RVA: 0x0040A10C File Offset: 0x0040830C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -37,7 +37,7 @@ public class vp_PoolManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD1C RID: 44316 RVA: 0x00407D70 File Offset: 0x00405F70
+	// Token: 0x0600AD74 RID: 44404 RVA: 0x0040A174 File Offset: 0x00408374
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -45,7 +45,7 @@ public class vp_PoolManager : MonoBehaviour
 		vp_GlobalEvent<global::UnityEngine.Object, float>.Register("vp_PoolManager Destroy", new vp_GlobalCallback<global::UnityEngine.Object, float>(this.DestroyInternal));
 	}
 
-	// Token: 0x0600AD1D RID: 44317 RVA: 0x00407DA0 File Offset: 0x00405FA0
+	// Token: 0x0600AD75 RID: 44405 RVA: 0x0040A1A4 File Offset: 0x004083A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -53,7 +53,7 @@ public class vp_PoolManager : MonoBehaviour
 		vp_GlobalEvent<global::UnityEngine.Object, float>.Unregister("vp_PoolManager Destroy", new vp_GlobalCallback<global::UnityEngine.Object, float>(this.DestroyInternal));
 	}
 
-	// Token: 0x0600AD1E RID: 44318 RVA: 0x00407DD0 File Offset: 0x00405FD0
+	// Token: 0x0600AD76 RID: 44406 RVA: 0x0040A1D4 File Offset: 0x004083D4
 	public virtual void AddObjects(global::UnityEngine.Object obj, Vector3 position, Quaternion rotation, int amount = 1)
 	{
 		if (obj == null)
@@ -75,7 +75,7 @@ public class vp_PoolManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD1F RID: 44319 RVA: 0x00407E7C File Offset: 0x0040607C
+	// Token: 0x0600AD77 RID: 44407 RVA: 0x0040A280 File Offset: 0x00408480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual global::UnityEngine.Object InstantiateInternal(global::UnityEngine.Object original, Vector3 position, Quaternion rotation)
 	{
@@ -131,7 +131,7 @@ public class vp_PoolManager : MonoBehaviour
 		return this.InstantiateInternal(original, position, rotation);
 	}
 
-	// Token: 0x0600AD20 RID: 44320 RVA: 0x00407FFC File Offset: 0x004061FC
+	// Token: 0x0600AD78 RID: 44408 RVA: 0x0040A400 File Offset: 0x00408600
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DestroyInternal(global::UnityEngine.Object obj, float t)
 	{
@@ -172,50 +172,50 @@ public class vp_PoolManager : MonoBehaviour
 		list.Add(gameObject);
 	}
 
-	// Token: 0x04008016 RID: 32790
+	// Token: 0x04008057 RID: 32855
 	public int MaxAmount = 25;
 
-	// Token: 0x04008017 RID: 32791
+	// Token: 0x04008058 RID: 32856
 	public bool PoolOnDestroy = true;
 
-	// Token: 0x04008018 RID: 32792
+	// Token: 0x04008059 RID: 32857
 	public List<GameObject> IgnoredPrefabs = new List<GameObject>();
 
-	// Token: 0x04008019 RID: 32793
+	// Token: 0x0400805A RID: 32858
 	public List<vp_PoolManager.vp_CustomPooledObject> CustomPrefabs = new List<vp_PoolManager.vp_CustomPooledObject>();
 
-	// Token: 0x0400801A RID: 32794
+	// Token: 0x0400805B RID: 32859
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x0400801B RID: 32795
+	// Token: 0x0400805C RID: 32860
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<string, List<global::UnityEngine.Object>> m_AvailableObjects = new Dictionary<string, List<global::UnityEngine.Object>>();
 
-	// Token: 0x0400801C RID: 32796
+	// Token: 0x0400805D RID: 32861
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<string, List<global::UnityEngine.Object>> m_UsedObjects = new Dictionary<string, List<global::UnityEngine.Object>>();
 
-	// Token: 0x0400801D RID: 32797
+	// Token: 0x0400805E RID: 32862
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static vp_PoolManager m_Instance;
 
-	// Token: 0x020015AA RID: 5546
+	// Token: 0x020015BC RID: 5564
 	[Serializable]
 	public class vp_CustomPooledObject
 	{
-		// Token: 0x0400801E RID: 32798
+		// Token: 0x0400805F RID: 32863
 		public GameObject Prefab;
 
-		// Token: 0x0400801F RID: 32799
+		// Token: 0x04008060 RID: 32864
 		public int Buffer = 15;
 
-		// Token: 0x04008020 RID: 32800
+		// Token: 0x04008061 RID: 32865
 		public int MaxAmount = 25;
 	}
 }

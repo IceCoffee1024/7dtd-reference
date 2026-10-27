@@ -5,10 +5,10 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C49 RID: 7241
+	// Token: 0x02001C7A RID: 7290
 	public class PrivilegeState
 	{
-		// Token: 0x0600D722 RID: 55074 RVA: 0x004D3C29 File Offset: 0x004D1E29
+		// Token: 0x0600D836 RID: 55350 RVA: 0x004D7751 File Offset: 0x004D5951
 		public PrivilegeState(XUserHandle userHandle, XUserPrivilege privilege)
 		{
 			this.m_userHandle = userHandle;
@@ -17,8 +17,8 @@ namespace Platform.XBL
 			this.m_denyReason = (XUserPrivilegeDenyReason)4294967295U;
 		}
 
-		// Token: 0x17001B2F RID: 6959
-		// (get) Token: 0x0600D723 RID: 55075 RVA: 0x004D3C4D File Offset: 0x004D1E4D
+		// Token: 0x17001B77 RID: 7031
+		// (get) Token: 0x0600D837 RID: 55351 RVA: 0x004D7775 File Offset: 0x004D5975
 		public bool Has
 		{
 			get
@@ -27,8 +27,8 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x17001B30 RID: 6960
-		// (get) Token: 0x0600D724 RID: 55076 RVA: 0x004D3C55 File Offset: 0x004D1E55
+		// Token: 0x17001B78 RID: 7032
+		// (get) Token: 0x0600D838 RID: 55352 RVA: 0x004D777D File Offset: 0x004D597D
 		public XUserPrivilegeDenyReason DenyReason
 		{
 			get
@@ -37,7 +37,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D725 RID: 55077 RVA: 0x004D3C60 File Offset: 0x004D1E60
+		// Token: 0x0600D839 RID: 55353 RVA: 0x004D7788 File Offset: 0x004D5988
 		public void ResolveSilent()
 		{
 			int num = SDK.XUserCheckPrivilege(this.m_userHandle, XUserPrivilegeOptions.None, this.m_privilege, out this.m_has, out this.m_denyReason);
@@ -50,7 +50,7 @@ namespace Platform.XBL
 			this.m_denyReason = (XUserPrivilegeDenyReason)4294967295U;
 		}
 
-		// Token: 0x0600D726 RID: 55078 RVA: 0x004D3CEC File Offset: 0x004D1EEC
+		// Token: 0x0600D83A RID: 55354 RVA: 0x004D7814 File Offset: 0x004D5A14
 		public IEnumerator ResolveWithPrompt(CoroutineCancellationToken _cancellationToken = null)
 		{
 			this.ResolveSilent();
@@ -88,19 +88,19 @@ namespace Platform.XBL
 			yield break;
 		}
 
-		// Token: 0x0400A34C RID: 41804
+		// Token: 0x0400A435 RID: 42037
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUserHandle m_userHandle;
 
-		// Token: 0x0400A34D RID: 41805
+		// Token: 0x0400A436 RID: 42038
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUserPrivilege m_privilege;
 
-		// Token: 0x0400A34E RID: 41806
+		// Token: 0x0400A437 RID: 42039
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_has;
 
-		// Token: 0x0400A34F RID: 41807
+		// Token: 0x0400A438 RID: 42040
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUserPrivilegeDenyReason m_denyReason;
 	}

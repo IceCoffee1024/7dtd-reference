@@ -6,12 +6,12 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeBillboardCross : BlockShapeBillboardAbstract
 {
-	// Token: 0x06000CA0 RID: 3232 RVA: 0x0004EB2C File Offset: 0x0004CD2C
+	// Token: 0x06000CA0 RID: 3232 RVA: 0x0004EAEC File Offset: 0x0004CCEC
 	public BlockShapeBillboardCross()
 	{
 	}
 
-	// Token: 0x06000CA1 RID: 3233 RVA: 0x0004EB4C File Offset: 0x0004CD4C
+	// Token: 0x06000CA1 RID: 3233 RVA: 0x0004EB0C File Offset: 0x0004CD0C
 	public BlockShapeBillboardCross(float _scaleAdd)
 	{
 		this.s = _scaleAdd;
@@ -19,7 +19,7 @@ public class BlockShapeBillboardCross : BlockShapeBillboardAbstract
 		this.yPosSubtract += _scaleAdd;
 	}
 
-	// Token: 0x06000CA2 RID: 3234 RVA: 0x0004EB98 File Offset: 0x0004CD98
+	// Token: 0x06000CA2 RID: 3234 RVA: 0x0004EB58 File Offset: 0x0004CD58
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;

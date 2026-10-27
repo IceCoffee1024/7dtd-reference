@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02001516 RID: 5398
+// Token: 0x02001528 RID: 5416
 public struct Vector3i : IEquatable<Vector3i>
 {
-	// Token: 0x170013FA RID: 5114
+	// Token: 0x17001406 RID: 5126
 	public int this[int _index]
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,7 +43,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		}
 	}
 
-	// Token: 0x0600A972 RID: 43378 RVA: 0x003F101F File Offset: 0x003EF21F
+	// Token: 0x0600A9CA RID: 43466 RVA: 0x003F3423 File Offset: 0x003F1623
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector3i(int _x, int _y, int _z)
 	{
@@ -52,7 +52,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		this.z = _z;
 	}
 
-	// Token: 0x0600A973 RID: 43379 RVA: 0x003F1036 File Offset: 0x003EF236
+	// Token: 0x0600A9CB RID: 43467 RVA: 0x003F343A File Offset: 0x003F163A
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector3i(Vector3 _v)
 	{
@@ -61,7 +61,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		this.z = (int)_v.z;
 	}
 
-	// Token: 0x0600A974 RID: 43380 RVA: 0x003F105F File Offset: 0x003EF25F
+	// Token: 0x0600A9CC RID: 43468 RVA: 0x003F3463 File Offset: 0x003F1663
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector3i(Vector3Int _v)
 	{
@@ -70,7 +70,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		this.z = _v.z;
 	}
 
-	// Token: 0x0600A975 RID: 43381 RVA: 0x003F1088 File Offset: 0x003EF288
+	// Token: 0x0600A9CD RID: 43469 RVA: 0x003F348C File Offset: 0x003F168C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector3i(float _x, float _y, float _z)
 	{
@@ -79,7 +79,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		this.z = (int)_z;
 	}
 
-	// Token: 0x0600A976 RID: 43382 RVA: 0x003F10A2 File Offset: 0x003EF2A2
+	// Token: 0x0600A9CE RID: 43470 RVA: 0x003F34A6 File Offset: 0x003F16A6
 	public void FloorToInt(Vector3 _v)
 	{
 		this.x = Utils.Fastfloor(_v.x);
@@ -87,7 +87,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		this.z = Utils.Fastfloor(_v.z);
 	}
 
-	// Token: 0x0600A977 RID: 43383 RVA: 0x003F10D7 File Offset: 0x003EF2D7
+	// Token: 0x0600A9CF RID: 43471 RVA: 0x003F34DB File Offset: 0x003F16DB
 	public void RoundToInt(Vector3 _v)
 	{
 		this.x = Mathf.RoundToInt(_v.x);
@@ -95,14 +95,14 @@ public struct Vector3i : IEquatable<Vector3i>
 		this.z = Mathf.RoundToInt(_v.z);
 	}
 
-	// Token: 0x0600A978 RID: 43384 RVA: 0x003F110C File Offset: 0x003EF30C
+	// Token: 0x0600A9D0 RID: 43472 RVA: 0x003F3510 File Offset: 0x003F1710
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Equals(int _x, int _y, int _z)
 	{
 		return this.x == _x && this.y == _y && this.z == _z;
 	}
 
-	// Token: 0x0600A979 RID: 43385 RVA: 0x003F112C File Offset: 0x003EF32C
+	// Token: 0x0600A9D1 RID: 43473 RVA: 0x003F3530 File Offset: 0x003F1730
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override bool Equals(object obj)
 	{
@@ -110,138 +110,138 @@ public struct Vector3i : IEquatable<Vector3i>
 		return this.Equals(vector3i);
 	}
 
-	// Token: 0x0600A97A RID: 43386 RVA: 0x003F1147 File Offset: 0x003EF347
+	// Token: 0x0600A9D2 RID: 43474 RVA: 0x003F354B File Offset: 0x003F174B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Equals(Vector3i other)
 	{
 		return other.x == this.x && other.y == this.y && other.z == this.z;
 	}
 
-	// Token: 0x0600A97B RID: 43387 RVA: 0x003F1175 File Offset: 0x003EF375
+	// Token: 0x0600A9D3 RID: 43475 RVA: 0x003F3579 File Offset: 0x003F1779
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool operator ==(Vector3i one, Vector3i other)
 	{
 		return one.x == other.x && one.y == other.y && one.z == other.z;
 	}
 
-	// Token: 0x0600A97C RID: 43388 RVA: 0x003F11A3 File Offset: 0x003EF3A3
+	// Token: 0x0600A9D4 RID: 43476 RVA: 0x003F35A7 File Offset: 0x003F17A7
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override int GetHashCode()
 	{
 		return this.x * 8976890 + this.y * 981131 + this.z;
 	}
 
-	// Token: 0x0600A97D RID: 43389 RVA: 0x003F11C5 File Offset: 0x003EF3C5
+	// Token: 0x0600A9D5 RID: 43477 RVA: 0x003F35C9 File Offset: 0x003F17C9
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool operator !=(Vector3i one, Vector3i other)
 	{
 		return !(one == other);
 	}
 
-	// Token: 0x0600A97E RID: 43390 RVA: 0x003F11D1 File Offset: 0x003EF3D1
+	// Token: 0x0600A9D6 RID: 43478 RVA: 0x003F35D5 File Offset: 0x003F17D5
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator -(Vector3i one, Vector3i other)
 	{
 		return new Vector3i(one.x - other.x, one.y - other.y, one.z - other.z);
 	}
 
-	// Token: 0x0600A97F RID: 43391 RVA: 0x003F11FF File Offset: 0x003EF3FF
+	// Token: 0x0600A9D7 RID: 43479 RVA: 0x003F3603 File Offset: 0x003F1803
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator +(Vector3i one, Vector3i other)
 	{
 		return new Vector3i(one.x + other.x, one.y + other.y, one.z + other.z);
 	}
 
-	// Token: 0x0600A980 RID: 43392 RVA: 0x003F122D File Offset: 0x003EF42D
+	// Token: 0x0600A9D8 RID: 43480 RVA: 0x003F3631 File Offset: 0x003F1831
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator *(Vector3i a, float d)
 	{
 		return new Vector3i((float)a.x * d, (float)a.y * d, (float)a.z * d);
 	}
 
-	// Token: 0x0600A981 RID: 43393 RVA: 0x003F124F File Offset: 0x003EF44F
+	// Token: 0x0600A9D9 RID: 43481 RVA: 0x003F3653 File Offset: 0x003F1853
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator *(float d, Vector3i a)
 	{
 		return new Vector3i((float)a.x * d, (float)a.y * d, (float)a.z * d);
 	}
 
-	// Token: 0x0600A982 RID: 43394 RVA: 0x003F1271 File Offset: 0x003EF471
+	// Token: 0x0600A9DA RID: 43482 RVA: 0x003F3675 File Offset: 0x003F1875
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator *(Vector3i a, int i)
 	{
 		return new Vector3i(a.x * i, a.y * i, a.z * i);
 	}
 
-	// Token: 0x0600A983 RID: 43395 RVA: 0x003F1290 File Offset: 0x003EF490
+	// Token: 0x0600A9DB RID: 43483 RVA: 0x003F3694 File Offset: 0x003F1894
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator *(int i, Vector3i a)
 	{
 		return new Vector3i(a.x * i, a.y * i, a.z * i);
 	}
 
-	// Token: 0x0600A984 RID: 43396 RVA: 0x003F12AF File Offset: 0x003EF4AF
+	// Token: 0x0600A9DC RID: 43484 RVA: 0x003F36B3 File Offset: 0x003F18B3
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator /(Vector3i a, int i)
 	{
 		return new Vector3i(a.x / i, a.y / i, a.z / i);
 	}
 
-	// Token: 0x0600A985 RID: 43397 RVA: 0x003F12CE File Offset: 0x003EF4CE
+	// Token: 0x0600A9DD RID: 43485 RVA: 0x003F36D2 File Offset: 0x003F18D2
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator &(Vector3i a, int i)
 	{
 		return new Vector3i(a.x & i, a.y & i, a.z & i);
 	}
 
-	// Token: 0x0600A986 RID: 43398 RVA: 0x003F12ED File Offset: 0x003EF4ED
+	// Token: 0x0600A9DE RID: 43486 RVA: 0x003F36F1 File Offset: 0x003F18F1
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i operator &(int i, Vector3i a)
 	{
 		return new Vector3i(a.x & i, a.y & i, a.z & i);
 	}
 
-	// Token: 0x0600A987 RID: 43399 RVA: 0x003F130C File Offset: 0x003EF50C
+	// Token: 0x0600A9DF RID: 43487 RVA: 0x003F3710 File Offset: 0x003F1910
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int Volume()
 	{
 		return this.x * this.y * this.z;
 	}
 
-	// Token: 0x0600A988 RID: 43400 RVA: 0x003F1322 File Offset: 0x003EF522
+	// Token: 0x0600A9E0 RID: 43488 RVA: 0x003F3726 File Offset: 0x003F1926
 	public override string ToString()
 	{
 		return string.Format("{0}, {1}, {2}", this.x, this.y, this.z);
 	}
 
-	// Token: 0x0600A989 RID: 43401 RVA: 0x003F134F File Offset: 0x003EF54F
+	// Token: 0x0600A9E1 RID: 43489 RVA: 0x003F3753 File Offset: 0x003F1953
 	public string ToStringNoBlanks()
 	{
 		return string.Format("{0},{1},{2}", this.x, this.y, this.z);
 	}
 
-	// Token: 0x0600A98A RID: 43402 RVA: 0x003F137C File Offset: 0x003EF57C
+	// Token: 0x0600A9E2 RID: 43490 RVA: 0x003F3780 File Offset: 0x003F1980
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public readonly Vector3 ToVector3()
 	{
 		return new Vector3((float)this.x, (float)this.y, (float)this.z);
 	}
 
-	// Token: 0x0600A98B RID: 43403 RVA: 0x003F1398 File Offset: 0x003EF598
+	// Token: 0x0600A9E3 RID: 43491 RVA: 0x003F379C File Offset: 0x003F199C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public readonly Vector3 ToVector3Center()
 	{
 		return new Vector3((float)this.x + 0.5f, (float)this.y + 0.5f, (float)this.z + 0.5f);
 	}
 
-	// Token: 0x0600A98C RID: 43404 RVA: 0x00240894 File Offset: 0x0023EA94
+	// Token: 0x0600A9E4 RID: 43492 RVA: 0x00241DE0 File Offset: 0x0023FFE0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public readonly Vector3 ToVector3CenterXZ()
 	{
 		return new Vector3((float)this.x + 0.5f, (float)this.y, (float)this.z + 0.5f);
 	}
 
-	// Token: 0x0600A98D RID: 43405 RVA: 0x003F13C8 File Offset: 0x003EF5C8
+	// Token: 0x0600A9E5 RID: 43493 RVA: 0x003F37CC File Offset: 0x003F19CC
 	public static Vector3i Parse(string _s)
 	{
 		string[] array = _s.Split(',', StringSplitOptions.None);
@@ -252,35 +252,35 @@ public struct Vector3i : IEquatable<Vector3i>
 		return new Vector3i(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
 	}
 
-	// Token: 0x0600A98E RID: 43406 RVA: 0x003F1408 File Offset: 0x003EF608
+	// Token: 0x0600A9E6 RID: 43494 RVA: 0x003F380C File Offset: 0x003F1A0C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i Cross(Vector3i _a, Vector3i _b)
 	{
 		return new Vector3i(_a.y * _b.z - _a.z * _b.y, _a.z * _b.x - _a.x * _b.z, _a.x * _b.y - _a.y * _b.x);
 	}
 
-	// Token: 0x0600A98F RID: 43407 RVA: 0x003F146B File Offset: 0x003EF66B
+	// Token: 0x0600A9E7 RID: 43495 RVA: 0x003F386F File Offset: 0x003F1A6F
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i FromVector3Rounded(Vector3 _v)
 	{
 		return new Vector3i(Mathf.RoundToInt(_v.x), Mathf.RoundToInt(_v.y), Mathf.RoundToInt(_v.z));
 	}
 
-	// Token: 0x0600A990 RID: 43408 RVA: 0x003F1493 File Offset: 0x003EF693
+	// Token: 0x0600A9E8 RID: 43496 RVA: 0x003F3897 File Offset: 0x003F1A97
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i Min(Vector3i v1, Vector3i v2)
 	{
 		return new Vector3i(Math.Min(v1.x, v2.x), Math.Min(v1.y, v2.y), Math.Min(v1.z, v2.z));
 	}
 
-	// Token: 0x0600A991 RID: 43409 RVA: 0x003F14CD File Offset: 0x003EF6CD
+	// Token: 0x0600A9E9 RID: 43497 RVA: 0x003F38D1 File Offset: 0x003F1AD1
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i Max(Vector3i v1, Vector3i v2)
 	{
 		return new Vector3i(Math.Max(v1.x, v2.x), Math.Max(v1.y, v2.y), Math.Max(v1.z, v2.z));
 	}
 
-	// Token: 0x0600A992 RID: 43410 RVA: 0x003F1508 File Offset: 0x003EF708
+	// Token: 0x0600A9EA RID: 43498 RVA: 0x003F390C File Offset: 0x003F1B0C
 	public static void SortBoundingBoxEdges(ref Vector3i _minEdge, ref Vector3i _maxEdge)
 	{
 		Vector3i vector3i = _minEdge;
@@ -289,8 +289,8 @@ public struct Vector3i : IEquatable<Vector3i>
 		_maxEdge = new Vector3i(Math.Max(vector3i.x, vector3i2.x), Math.Max(vector3i.y, vector3i2.y), Math.Max(vector3i.z, vector3i2.z));
 	}
 
-	// Token: 0x170013FB RID: 5115
-	// (get) Token: 0x0600A993 RID: 43411 RVA: 0x003F159F File Offset: 0x003EF79F
+	// Token: 0x17001407 RID: 5127
+	// (get) Token: 0x0600A9EB RID: 43499 RVA: 0x003F39A3 File Offset: 0x003F1BA3
 	public bool IsValid
 	{
 		get
@@ -299,7 +299,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		}
 	}
 
-	// Token: 0x0600A994 RID: 43412 RVA: 0x003F15B4 File Offset: 0x003EF7B4
+	// Token: 0x0600A9EC RID: 43500 RVA: 0x003F39B8 File Offset: 0x003F1BB8
 	public static Vector3i Floor(Vector3 _v)
 	{
 		Vector3i vector3i;
@@ -309,61 +309,61 @@ public struct Vector3i : IEquatable<Vector3i>
 		return vector3i;
 	}
 
-	// Token: 0x0600A995 RID: 43413 RVA: 0x003F15F8 File Offset: 0x003EF7F8
+	// Token: 0x0600A9ED RID: 43501 RVA: 0x003F39FC File Offset: 0x003F1BFC
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static implicit operator Vector3(Vector3i _v3i)
 	{
 		return _v3i.ToVector3();
 	}
 
-	// Token: 0x0600A996 RID: 43414 RVA: 0x003F1601 File Offset: 0x003EF801
+	// Token: 0x0600A9EE RID: 43502 RVA: 0x003F3A05 File Offset: 0x003F1C05
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static implicit operator Vector3Int(Vector3i _v3i)
 	{
 		return new Vector3Int(_v3i.x, _v3i.y, _v3i.z);
 	}
 
-	// Token: 0x0600A997 RID: 43415 RVA: 0x003F161A File Offset: 0x003EF81A
+	// Token: 0x0600A9EF RID: 43503 RVA: 0x003F3A1E File Offset: 0x003F1C1E
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static implicit operator Vector3i(Vector3Int _v3i)
 	{
 		return new Vector3i(_v3i.x, _v3i.y, _v3i.z);
 	}
 
-	// Token: 0x04007D6E RID: 32110
+	// Token: 0x04007DAF RID: 32175
 	public static readonly Vector3i invalid = new Vector3i(int.MinValue, int.MinValue, int.MinValue);
 
-	// Token: 0x04007D6F RID: 32111
+	// Token: 0x04007DB0 RID: 32176
 	public static readonly Vector3i up = new Vector3i(0, 1, 0);
 
-	// Token: 0x04007D70 RID: 32112
+	// Token: 0x04007DB1 RID: 32177
 	public static readonly Vector3i down = new Vector3i(0, -1, 0);
 
-	// Token: 0x04007D71 RID: 32113
+	// Token: 0x04007DB2 RID: 32178
 	public static readonly Vector3i zero = new Vector3i(0, 0, 0);
 
-	// Token: 0x04007D72 RID: 32114
+	// Token: 0x04007DB3 RID: 32179
 	public static readonly Vector3i left = new Vector3i(-1, 0, 0);
 
-	// Token: 0x04007D73 RID: 32115
+	// Token: 0x04007DB4 RID: 32180
 	public static readonly Vector3i right = new Vector3i(1, 0, 0);
 
-	// Token: 0x04007D74 RID: 32116
+	// Token: 0x04007DB5 RID: 32181
 	public static readonly Vector3i forward = new Vector3i(0, 0, 1);
 
-	// Token: 0x04007D75 RID: 32117
+	// Token: 0x04007DB6 RID: 32182
 	public static readonly Vector3i back = new Vector3i(0, 0, -1);
 
-	// Token: 0x04007D76 RID: 32118
+	// Token: 0x04007DB7 RID: 32183
 	public static readonly Vector3i one = new Vector3i(1, 1, 1);
 
-	// Token: 0x04007D77 RID: 32119
+	// Token: 0x04007DB8 RID: 32184
 	public static readonly Vector3i min = new Vector3i(int.MinValue, int.MinValue, int.MinValue);
 
-	// Token: 0x04007D78 RID: 32120
+	// Token: 0x04007DB9 RID: 32185
 	public static readonly Vector3i max = new Vector3i(int.MaxValue, int.MaxValue, int.MaxValue);
 
-	// Token: 0x04007D79 RID: 32121
+	// Token: 0x04007DBA RID: 32186
 	public static readonly Vector3i[] MIDDLE_AND_ADJACENT_DIRECTIONS = new Vector3i[]
 	{
 		Vector3i.zero,
@@ -375,7 +375,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		new Vector3i(0, 0, -1)
 	};
 
-	// Token: 0x04007D7A RID: 32122
+	// Token: 0x04007DBB RID: 32187
 	public static readonly Vector3i[] AllDirections = new Vector3i[]
 	{
 		Vector3i.right,
@@ -386,7 +386,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		Vector3i.back
 	};
 
-	// Token: 0x04007D7B RID: 32123
+	// Token: 0x04007DBC RID: 32188
 	public static readonly Vector3i[] AllDirectionsShuffled = new Vector3i[]
 	{
 		Vector3i.right,
@@ -397,7 +397,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		Vector3i.back
 	};
 
-	// Token: 0x04007D7C RID: 32124
+	// Token: 0x04007DBD RID: 32189
 	public static readonly Vector3i[] MIDDLE_AND_HORIZONTAL_DIRECTIONS = new Vector3i[]
 	{
 		Vector3i.zero,
@@ -407,7 +407,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		new Vector3i(0, 0, -1)
 	};
 
-	// Token: 0x04007D7D RID: 32125
+	// Token: 0x04007DBE RID: 32190
 	public static readonly Vector3i[] HORIZONTAL_DIRECTIONS = new Vector3i[]
 	{
 		new Vector3i(1, 0, 0),
@@ -416,7 +416,7 @@ public struct Vector3i : IEquatable<Vector3i>
 		new Vector3i(0, 0, -1)
 	};
 
-	// Token: 0x04007D7E RID: 32126
+	// Token: 0x04007DBF RID: 32191
 	public static readonly Vector3i[] MIDDLE_AND_HORIZONTAL_DIRECTIONS_DIAGONAL = new Vector3i[]
 	{
 		Vector3i.zero,
@@ -430,12 +430,12 @@ public struct Vector3i : IEquatable<Vector3i>
 		new Vector3i(1, 0, 1)
 	};
 
-	// Token: 0x04007D7F RID: 32127
+	// Token: 0x04007DC0 RID: 32192
 	public int x;
 
-	// Token: 0x04007D80 RID: 32128
+	// Token: 0x04007DC1 RID: 32193
 	public int y;
 
-	// Token: 0x04007D81 RID: 32129
+	// Token: 0x04007DC2 RID: 32194
 	public int z;
 }

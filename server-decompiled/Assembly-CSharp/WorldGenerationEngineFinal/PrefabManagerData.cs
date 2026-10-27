@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001746 RID: 5958
+	// Token: 0x02001777 RID: 6007
 	public class PrefabManagerData
 	{
-		// Token: 0x0600B96F RID: 47471 RVA: 0x00449698 File Offset: 0x00447898
+		// Token: 0x0600BA83 RID: 47747 RVA: 0x0044D044 File Offset: 0x0044B244
 		public void LoadPrefabs()
 		{
 			if (this.AllPrefabDatas.Count != 0)
@@ -44,7 +44,7 @@ namespace WorldGenerationEngineFinal
 			});
 		}
 
-		// Token: 0x0600B970 RID: 47472 RVA: 0x004497EC File Offset: 0x004479EC
+		// Token: 0x0600BA84 RID: 47748 RVA: 0x0044D198 File Offset: 0x0044B398
 		public void ShufflePrefabData(int _seed)
 		{
 			this.prefabDataList.Clear();
@@ -52,14 +52,14 @@ namespace WorldGenerationEngineFinal
 			this.prefabDataList.Shuffle<PrefabData>(_seed);
 		}
 
-		// Token: 0x0600B971 RID: 47473 RVA: 0x00449816 File Offset: 0x00447A16
+		// Token: 0x0600BA85 RID: 47749 RVA: 0x0044D1C2 File Offset: 0x0044B3C2
 		public void Cleanup()
 		{
 			this.AllPrefabDatas.Clear();
 			this.prefabDataList.Clear();
 		}
 
-		// Token: 0x0600B972 RID: 47474 RVA: 0x00449830 File Offset: 0x00447A30
+		// Token: 0x0600BA86 RID: 47750 RVA: 0x0044D1DC File Offset: 0x0044B3DC
 		public Prefab GetPreviewPrefabWithAnyTags(FastTags<TagGroup.Poi> _tags, int _townshipId, Vector2i size = default(Vector2i), bool useAnySizeSmaller = false)
 		{
 			Vector2i minSize = (useAnySizeSmaller ? Vector2i.zero : size);
@@ -75,25 +75,25 @@ namespace WorldGenerationEngineFinal
 			return prefab;
 		}
 
-		// Token: 0x04008A52 RID: 35410
+		// Token: 0x04008B3B RID: 35643
 		public readonly Dictionary<string, PrefabData> AllPrefabDatas = new Dictionary<string, PrefabData>();
 
-		// Token: 0x04008A53 RID: 35411
+		// Token: 0x04008B3C RID: 35644
 		public readonly List<PrefabData> prefabDataList = new List<PrefabData>();
 
-		// Token: 0x04008A54 RID: 35412
+		// Token: 0x04008B3D RID: 35645
 		public readonly FastTags<TagGroup.Poi> PartsAndTilesTags = FastTags<TagGroup.Poi>.Parse("streettile,part");
 
-		// Token: 0x04008A55 RID: 35413
+		// Token: 0x04008B3E RID: 35646
 		public readonly FastTags<TagGroup.Poi> WildernessTags = FastTags<TagGroup.Poi>.Parse("wilderness");
 
-		// Token: 0x04008A56 RID: 35414
+		// Token: 0x04008B3F RID: 35647
 		public readonly FastTags<TagGroup.Poi> TraderTags = FastTags<TagGroup.Poi>.Parse("trader");
 
-		// Token: 0x04008A57 RID: 35415
+		// Token: 0x04008B40 RID: 35648
 		public readonly FastTags<TagGroup.Poi> HasTags = FastTags<TagGroup.Poi>.Parse("has");
 
-		// Token: 0x04008A58 RID: 35416
+		// Token: 0x04008B41 RID: 35649
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int previewSeed;
 	}

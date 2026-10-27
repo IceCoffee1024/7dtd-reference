@@ -2,14 +2,14 @@
 
 namespace Platform
 {
-	// Token: 0x02001BE3 RID: 7139
+	// Token: 0x02001C14 RID: 7188
 	public enum EUserAccountState
 	{
-		// Token: 0x0400A1E2 RID: 41442
+		// Token: 0x0400A2CB RID: 41675
 		ReturningUser,
-		// Token: 0x0400A1E3 RID: 41443
+		// Token: 0x0400A2CC RID: 41676
 		NewUser,
-		// Token: 0x0400A1E4 RID: 41444
+		// Token: 0x0400A2CD RID: 41677
 		Unknown
 	}
 }

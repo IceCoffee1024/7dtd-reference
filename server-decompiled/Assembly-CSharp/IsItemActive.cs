@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200067E RID: 1662
+// Token: 0x02000685 RID: 1669
 [Preserve]
 public class IsItemActive : TargetedCompareRequirementBase
 {
-	// Token: 0x06003542 RID: 13634 RVA: 0x001601D0 File Offset: 0x0015E3D0
+	// Token: 0x06003550 RID: 13648 RVA: 0x00160DC4 File Offset: 0x0015EFC4
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

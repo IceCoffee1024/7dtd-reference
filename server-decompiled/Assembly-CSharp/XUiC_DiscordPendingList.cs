@@ -4,11 +4,11 @@ using Discord.Sdk;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000353 RID: 851
+// Token: 0x02000355 RID: 853
 [Preserve]
 public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.PendingEntry>
 {
-	// Token: 0x06001891 RID: 6289 RVA: 0x0008B748 File Offset: 0x00089948
+	// Token: 0x06001895 RID: 6293 RVA: 0x0008B97C File Offset: 0x00089B7C
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 		DiscordManager.Instance.ActivityInviteReceived += this.discordActivityInviteReceived;
 	}
 
-	// Token: 0x06001892 RID: 6290 RVA: 0x0008B7A0 File Offset: 0x000899A0
+	// Token: 0x06001896 RID: 6294 RVA: 0x0008B9D4 File Offset: 0x00089BD4
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -26,7 +26,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 		DiscordManager.Instance.ActivityInviteReceived -= this.discordActivityInviteReceived;
 	}
 
-	// Token: 0x06001893 RID: 6291 RVA: 0x0008B7F5 File Offset: 0x000899F5
+	// Token: 0x06001897 RID: 6295 RVA: 0x0008BA29 File Offset: 0x00089C29
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordStatusChanged(DiscordManager.EDiscordStatus _status)
 	{
@@ -36,21 +36,21 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 		}
 	}
 
-	// Token: 0x06001894 RID: 6292 RVA: 0x0008B801 File Offset: 0x00089A01
+	// Token: 0x06001898 RID: 6296 RVA: 0x0008BA35 File Offset: 0x00089C35
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordActivityInviteReceived(DiscordManager.DiscordUser _user, bool _cleared, ActivityActionTypes _type)
 	{
 		this.UpdateList();
 	}
 
-	// Token: 0x06001895 RID: 6293 RVA: 0x0008B801 File Offset: 0x00089A01
+	// Token: 0x06001899 RID: 6297 RVA: 0x0008BA35 File Offset: 0x00089C35
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordRelationshipChanged(DiscordManager.DiscordUser _user)
 	{
 		this.UpdateList();
 	}
 
-	// Token: 0x06001896 RID: 6294 RVA: 0x0008B80C File Offset: 0x00089A0C
+	// Token: 0x0600189A RID: 6298 RVA: 0x0008BA40 File Offset: 0x00089C40
 	public void UpdateList()
 	{
 		int page = base.Page;
@@ -58,7 +58,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 		base.Page = page;
 	}
 
-	// Token: 0x06001897 RID: 6295 RVA: 0x0008B830 File Offset: 0x00089A30
+	// Token: 0x0600189B RID: 6299 RVA: 0x0008BA64 File Offset: 0x00089C64
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -84,14 +84,14 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06001898 RID: 6296 RVA: 0x0008B91C File Offset: 0x00089B1C
+	// Token: 0x0600189C RID: 6300 RVA: 0x0008BB50 File Offset: 0x00089D50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06001899 RID: 6297 RVA: 0x0008B926 File Offset: 0x00089B26
+	// Token: 0x0600189D RID: 6301 RVA: 0x0008BB5A File Offset: 0x00089D5A
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -101,22 +101,22 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 		}
 	}
 
-	// Token: 0x04000FB4 RID: 4020
+	// Token: 0x04000FC4 RID: 4036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<DiscordManager.DiscordUser> users = new HashSet<DiscordManager.DiscordUser>();
 
-	// Token: 0x02000354 RID: 852
+	// Token: 0x02000356 RID: 854
 	[Preserve]
 	public class PendingEntry : XUiListEntry<XUiC_DiscordPendingList.PendingEntry>
 	{
-		// Token: 0x0600189B RID: 6299 RVA: 0x0008B955 File Offset: 0x00089B55
+		// Token: 0x0600189F RID: 6303 RVA: 0x0008BB89 File Offset: 0x00089D89
 		public PendingEntry(DiscordManager.DiscordUser _discordUser, XUiC_DiscordPendingList.PendingEntry.EEntryType _type)
 		{
 			this.User = _discordUser;
 			this.EntryType = _type;
 		}
 
-		// Token: 0x0600189C RID: 6300 RVA: 0x0008B96C File Offset: 0x00089B6C
+		// Token: 0x060018A0 RID: 6304 RVA: 0x0008BBA0 File Offset: 0x00089DA0
 		public override int CompareTo(XUiC_DiscordPendingList.PendingEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -131,7 +131,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 			return string.Compare(this.User.DisplayName, _otherEntry.User.DisplayName, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x0600189D RID: 6301 RVA: 0x0008B9BC File Offset: 0x00089BBC
+		// Token: 0x060018A1 RID: 6305 RVA: 0x0008BBF0 File Offset: 0x00089DF0
 		public override bool MatchesSearch(string _searchString)
 		{
 			if (string.IsNullOrEmpty(_searchString))
@@ -142,32 +142,32 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 			return user != null && user.DisplayName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04000FB5 RID: 4021
+		// Token: 0x04000FC5 RID: 4037
 		public readonly XUiC_DiscordPendingList.PendingEntry.EEntryType EntryType;
 
-		// Token: 0x04000FB6 RID: 4022
+		// Token: 0x04000FC6 RID: 4038
 		public readonly DiscordManager.DiscordUser User;
 
-		// Token: 0x02000355 RID: 853
+		// Token: 0x02000357 RID: 855
 		public enum EEntryType
 		{
-			// Token: 0x04000FB8 RID: 4024
+			// Token: 0x04000FC8 RID: 4040
 			JoinRequest,
-			// Token: 0x04000FB9 RID: 4025
+			// Token: 0x04000FC9 RID: 4041
 			Invite,
-			// Token: 0x04000FBA RID: 4026
+			// Token: 0x04000FCA RID: 4042
 			FriendRequestGame,
-			// Token: 0x04000FBB RID: 4027
+			// Token: 0x04000FCB RID: 4043
 			FriendRequestDiscord
 		}
 	}
 
-	// Token: 0x02000356 RID: 854
+	// Token: 0x02000358 RID: 856
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class DiscordPendingListEntryController : XUiC_List<XUiC_DiscordPendingList.PendingEntry>.XUiC_ListEntry
 	{
-		// Token: 0x0600189E RID: 6302 RVA: 0x0008B9E0 File Offset: 0x00089BE0
+		// Token: 0x060018A2 RID: 6306 RVA: 0x0008BC14 File Offset: 0x00089E14
 		public override void Init()
 		{
 			base.Init();
@@ -229,7 +229,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 			}
 		}
 
-		// Token: 0x0600189F RID: 6303 RVA: 0x0008BA88 File Offset: 0x00089C88
+		// Token: 0x060018A3 RID: 6307 RVA: 0x0008BCBC File Offset: 0x00089EBC
 		public override void SetEntry(XUiC_DiscordPendingList.PendingEntry _data)
 		{
 			base.SetEntry(_data);
@@ -251,7 +251,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 			xuiV_TextureBased.Texture = texture;
 		}
 
-		// Token: 0x060018A0 RID: 6304 RVA: 0x0008BABD File Offset: 0x00089CBD
+		// Token: 0x060018A4 RID: 6308 RVA: 0x0008BCF1 File Offset: 0x00089EF1
 		[XuiXmlBinding("displayname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDisplayName()
@@ -270,7 +270,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 			return text ?? "";
 		}
 
-		// Token: 0x060018A1 RID: 6305 RVA: 0x0008BAE6 File Offset: 0x00089CE6
+		// Token: 0x060018A5 RID: 6309 RVA: 0x0008BD1A File Offset: 0x00089F1A
 		[XuiXmlBinding("entry_type")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_DiscordPendingList.PendingEntry.EEntryType bindingEntryType()
@@ -283,7 +283,7 @@ public class XUiC_DiscordPendingList : XUiC_List<XUiC_DiscordPendingList.Pending
 			return entryData.EntryType;
 		}
 
-		// Token: 0x04000FBC RID: 4028
+		// Token: 0x04000FCC RID: 4044
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiV_Texture avatarTexture;
 	}

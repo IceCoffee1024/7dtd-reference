@@ -9,19 +9,19 @@ using UnityEngine;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D49 RID: 7497
+	// Token: 0x02001D7A RID: 7546
 	public class User : UserBase
 	{
-		// Token: 0x17001C2C RID: 7212
-		// (get) Token: 0x0600DE41 RID: 56897 RVA: 0x004F4EE2 File Offset: 0x004F30E2
-		// (set) Token: 0x0600DE40 RID: 56896 RVA: 0x004F4ED9 File Offset: 0x004F30D9
+		// Token: 0x17001C74 RID: 7284
+		// (get) Token: 0x0600DF55 RID: 57173 RVA: 0x004F8A82 File Offset: 0x004F6C82
+		// (set) Token: 0x0600DF54 RID: 57172 RVA: 0x004F8A79 File Offset: 0x004F6C79
 		public PlatformUserIdentifierAbs NativePlatformUserId
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600DE42 RID: 56898 RVA: 0x004F4EEC File Offset: 0x004F30EC
+		// Token: 0x0600DF56 RID: 57174 RVA: 0x004F8A8C File Offset: 0x004F6C8C
 		public override void Init(IPlatform _owner)
 		{
 			base.Init(_owner);
@@ -49,7 +49,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE43 RID: 56899 RVA: 0x004F4F7E File Offset: 0x004F317E
+		// Token: 0x0600DF57 RID: 57175 RVA: 0x004F8B1E File Offset: 0x004F6D1E
 		public override void Destroy()
 		{
 			base.Destroy();
@@ -60,7 +60,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE44 RID: 56900 RVA: 0x004F4FAC File Offset: 0x004F31AC
+		// Token: 0x0600DF58 RID: 57176 RVA: 0x004F8B4C File Offset: 0x004F6D4C
 		public override void Login(LoginUserCallback _delegate)
 		{
 			if (base.UserStatus == EUserStatus.LoggedIn)
@@ -88,7 +88,7 @@ namespace Platform.EOS
 			});
 		}
 
-		// Token: 0x0600DE45 RID: 56901 RVA: 0x004F5008 File Offset: 0x004F3208
+		// Token: 0x0600DF59 RID: 57177 RVA: 0x004F8BA8 File Offset: 0x004F6DA8
 		public override void PlayOffline(LoginUserCallback _delegate)
 		{
 			base.UserStatus = EUserStatus.NotAttempted;
@@ -122,14 +122,14 @@ namespace Platform.EOS
 			_delegate(this.Owner, EApiStatusReason.NotLoggedOn, null);
 		}
 
-		// Token: 0x0600DE46 RID: 56902 RVA: 0x004F50C7 File Offset: 0x004F32C7
+		// Token: 0x0600DF5A RID: 57178 RVA: 0x004F8C67 File Offset: 0x004F6E67
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void startLogin(LoginUserCallback _delegate, bool _refreshing = false)
 		{
 			this.fetchTicket(_delegate, _refreshing);
 		}
 
-		// Token: 0x0600DE47 RID: 56903 RVA: 0x004F50D4 File Offset: 0x004F32D4
+		// Token: 0x0600DF5B RID: 57179 RVA: 0x004F8C74 File Offset: 0x004F6E74
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void fetchTicket(LoginUserCallback _delegate, bool _refreshing = false)
 		{
@@ -151,7 +151,7 @@ namespace Platform.EOS
 			});
 		}
 
-		// Token: 0x0600DE48 RID: 56904 RVA: 0x004F5118 File Offset: 0x004F3318
+		// Token: 0x0600DF5C RID: 57180 RVA: 0x004F8CB8 File Offset: 0x004F6EB8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void connectCreateUser(ContinuanceToken _continuanceToken, LoginUserCallback _callback)
 		{
@@ -203,7 +203,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE49 RID: 56905 RVA: 0x004F51B0 File Offset: 0x004F33B0
+		// Token: 0x0600DF5D RID: 57181 RVA: 0x004F8D50 File Offset: 0x004F6F50
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void syncExternalAccountInfo(ProductUserId _puid, LoginUserCallback _callback)
 		{
@@ -275,7 +275,7 @@ namespace Platform.EOS
 			this.eosLoggedIn(_puid, _callback);
 		}
 
-		// Token: 0x0600DE4A RID: 56906 RVA: 0x004F5211 File Offset: 0x004F3411
+		// Token: 0x0600DF5E RID: 57182 RVA: 0x004F8DB1 File Offset: 0x004F6FB1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void eosLoggedIn(ProductUserId _puid, LoginUserCallback _callback)
 		{
@@ -283,7 +283,7 @@ namespace Platform.EOS
 			this.getNativePlatformUserIdentifier(_callback);
 		}
 
-		// Token: 0x0600DE4B RID: 56907 RVA: 0x004F5224 File Offset: 0x004F3424
+		// Token: 0x0600DF5F RID: 57183 RVA: 0x004F8DC4 File Offset: 0x004F6FC4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getNativePlatformUserIdentifier(LoginUserCallback _callback)
 		{
@@ -349,7 +349,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE4C RID: 56908 RVA: 0x004F52FC File Offset: 0x004F34FC
+		// Token: 0x0600DF60 RID: 57184 RVA: 0x004F8E9C File Offset: 0x004F709C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void eosLoginDone(LoginUserCallback _callback)
 		{
@@ -357,8 +357,8 @@ namespace Platform.EOS
 			this.saveUserMapping();
 		}
 
-		// Token: 0x17001C2D RID: 7213
-		// (get) Token: 0x0600DE4D RID: 56909 RVA: 0x004F530B File Offset: 0x004F350B
+		// Token: 0x17001C75 RID: 7285
+		// (get) Token: 0x0600DF61 RID: 57185 RVA: 0x004F8EAB File Offset: 0x004F70AB
 		public override EUserPerms Permissions
 		{
 			get
@@ -371,7 +371,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE4E RID: 56910 RVA: 0x004F531C File Offset: 0x004F351C
+		// Token: 0x0600DF62 RID: 57186 RVA: 0x004F8EBC File Offset: 0x004F70BC
 		public override string GetPermissionDenyReason(EUserPerms _perms)
 		{
 			EUserPerms euserPerms = ~this.Permissions & _perms;
@@ -382,7 +382,7 @@ namespace Platform.EOS
 			return null;
 		}
 
-		// Token: 0x0600DE4F RID: 56911 RVA: 0x004F534E File Offset: 0x004F354E
+		// Token: 0x0600DF63 RID: 57187 RVA: 0x004F8EEE File Offset: 0x004F70EE
 		public override IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 		{
 			Log.Out(string.Format("[EOS] {0}({1}: [{2}], {3}: {4})", new object[] { "ResolvePermissions", "_perms", _perms, "_canPrompt", _canPrompt }));
@@ -443,7 +443,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DE50 RID: 56912 RVA: 0x004F5374 File Offset: 0x004F3574
+		// Token: 0x0600DF64 RID: 57188 RVA: 0x004F8F14 File Offset: 0x004F7114
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnApplicationStateChanged(ApplicationState _newState)
 		{
@@ -462,7 +462,7 @@ namespace Platform.EOS
 			this.OnResume();
 		}
 
-		// Token: 0x0600DE51 RID: 56913 RVA: 0x004F53B5 File Offset: 0x004F35B5
+		// Token: 0x0600DF65 RID: 57189 RVA: 0x004F8F55 File Offset: 0x004F7155
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnSuspend()
 		{
@@ -470,7 +470,7 @@ namespace Platform.EOS
 			Log.Out(string.Format("[EOS] User.OnSuspend() shouldRefreshLoginOnResume: {0}", this.shouldRefreshLoginOnResume));
 		}
 
-		// Token: 0x0600DE52 RID: 56914 RVA: 0x004F53EB File Offset: 0x004F35EB
+		// Token: 0x0600DF66 RID: 57190 RVA: 0x004F8F8B File Offset: 0x004F718B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnResume()
 		{
@@ -481,7 +481,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DE53 RID: 56915 RVA: 0x004F541B File Offset: 0x004F361B
+		// Token: 0x0600DF67 RID: 57191 RVA: 0x004F8FBB File Offset: 0x004F71BB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator OnResumeRefreshLoginCoroutine()
 		{
@@ -567,7 +567,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DE54 RID: 56916 RVA: 0x004F542A File Offset: 0x004F362A
+		// Token: 0x0600DF68 RID: 57192 RVA: 0x004F8FCA File Offset: 0x004F71CA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator refreshLoginCoroutine()
 		{
@@ -584,7 +584,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DE55 RID: 56917 RVA: 0x004F543C File Offset: 0x004F363C
+		// Token: 0x0600DF69 RID: 57193 RVA: 0x004F8FDC File Offset: 0x004F71DC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<PlatformUserIdentifierAbs, UserIdentifierEos> loadUserMappings()
 		{
@@ -637,7 +637,7 @@ namespace Platform.EOS
 			return dictionary;
 		}
 
-		// Token: 0x0600DE56 RID: 56918 RVA: 0x004F5568 File Offset: 0x004F3768
+		// Token: 0x0600DF6A RID: 57194 RVA: 0x004F9108 File Offset: 0x004F7308
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void saveUserMapping()
 		{
@@ -652,7 +652,7 @@ namespace Platform.EOS
 			SdPlayerPrefs.Save();
 		}
 
-		// Token: 0x0600DE59 RID: 56921 RVA: 0x004F56A4 File Offset: 0x004F38A4
+		// Token: 0x0600DF6D RID: 57197 RVA: 0x004F9244 File Offset: 0x004F7444
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool <OnResumeRefreshLoginCoroutine>g__ShouldExitCoroutine|30_0(bool _attemptedLogin, ref User.<>c__DisplayClass30_0 A_2)
@@ -683,35 +683,35 @@ namespace Platform.EOS
 			return false;
 		}
 
-		// Token: 0x0400A7B3 RID: 42931
+		// Token: 0x0400A89C RID: 43164
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string EosMappingsPrefName = "EosMappings";
 
-		// Token: 0x0400A7B4 RID: 42932
+		// Token: 0x0400A89D RID: 43165
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IApplicationStateController nativeApplicationStateController;
 
-		// Token: 0x0400A7B5 RID: 42933
+		// Token: 0x0400A89E RID: 43166
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ExternalCredentialType externalCredentialType;
 
-		// Token: 0x0400A7B7 RID: 42935
+		// Token: 0x0400A8A0 RID: 43168
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool playerHasSanctions;
 
-		// Token: 0x0400A7B8 RID: 42936
+		// Token: 0x0400A8A1 RID: 43169
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string reasonForPermissions;
 
-		// Token: 0x0400A7B9 RID: 42937
+		// Token: 0x0400A8A2 RID: 43170
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool wasSuspended;
 
-		// Token: 0x0400A7BA RID: 42938
+		// Token: 0x0400A8A3 RID: 43171
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int resumeCount;
 
-		// Token: 0x0400A7BB RID: 42939
+		// Token: 0x0400A8A4 RID: 43172
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shouldRefreshLoginOnResume;
 	}

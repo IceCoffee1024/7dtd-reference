@@ -9,10 +9,10 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x020017F2 RID: 6130
+	// Token: 0x02001823 RID: 6179
 	public class ExtensionCommandPoller
 	{
-		// Token: 0x0600BE6B RID: 48747 RVA: 0x004645B0 File Offset: 0x004627B0
+		// Token: 0x0600BF7F RID: 49023 RVA: 0x00467F5C File Offset: 0x0046615C
 		public void Init()
 		{
 			this.commandQueue = new Queue<ExtensionAction>();
@@ -22,14 +22,14 @@ namespace Twitch
 			GameManager.Instance.StartCoroutine(this.CreateQueue());
 		}
 
-		// Token: 0x0600BE6C RID: 48748 RVA: 0x00464604 File Offset: 0x00462804
+		// Token: 0x0600BF80 RID: 49024 RVA: 0x00467FB0 File Offset: 0x004661B0
 		public void Cleanup()
 		{
 			this.commandQueue.Clear();
 			this.commandQueue = null;
 		}
 
-		// Token: 0x0600BE6D RID: 48749 RVA: 0x00464618 File Offset: 0x00462818
+		// Token: 0x0600BF81 RID: 49025 RVA: 0x00467FC4 File Offset: 0x004661C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isInCooldown()
 		{
@@ -44,14 +44,14 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0600BE6E RID: 48750 RVA: 0x00464659 File Offset: 0x00462859
+		// Token: 0x0600BF82 RID: 49026 RVA: 0x00468005 File Offset: 0x00466205
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool cooldownUpdateable()
 		{
 			return (TwitchManager.Current.CooldownType == TwitchManager.CooldownTypes.Startup || TwitchManager.Current.CooldownType == TwitchManager.CooldownTypes.Time) && Time.realtimeSinceStartup - this.lastPollTime > 30f;
 		}
 
-		// Token: 0x0600BE6F RID: 48751 RVA: 0x0046468C File Offset: 0x0046288C
+		// Token: 0x0600BF83 RID: 49027 RVA: 0x00468038 File Offset: 0x00466238
 		public void Update()
 		{
 			if (this.queueExists && TwitchManager.Current.AllowActions && Time.realtimeSinceStartup - this.lastPollTime > 3f && !this.isInCooldown() && TwitchManager.Current.Authentication.oauth != "")
@@ -61,7 +61,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BE70 RID: 48752 RVA: 0x004646FF File Offset: 0x004628FF
+		// Token: 0x0600BF84 RID: 49028 RVA: 0x004680AB File Offset: 0x004662AB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator PollQueue()
 		{
@@ -146,7 +146,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE71 RID: 48753 RVA: 0x0046470E File Offset: 0x0046290E
+		// Token: 0x0600BF85 RID: 49029 RVA: 0x004680BA File Offset: 0x004662BA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator CreateQueue()
 		{
@@ -175,14 +175,14 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE72 RID: 48754 RVA: 0x0046471D File Offset: 0x0046291D
+		// Token: 0x0600BF86 RID: 49030 RVA: 0x004680C9 File Offset: 0x004662C9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DeleteTransactionFromTable(List<string> transactions)
 		{
 			GameManager.Instance.StartCoroutine(this.DeleteTransactionFromTableCoroutine(transactions));
 		}
 
-		// Token: 0x0600BE73 RID: 48755 RVA: 0x00464731 File Offset: 0x00462931
+		// Token: 0x0600BF87 RID: 49031 RVA: 0x004680DD File Offset: 0x004662DD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator DeleteTransactionFromTableCoroutine(List<string> transactions)
 		{
@@ -206,39 +206,39 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE74 RID: 48756 RVA: 0x00464740 File Offset: 0x00462940
+		// Token: 0x0600BF88 RID: 49032 RVA: 0x004680EC File Offset: 0x004662EC
 		public bool HasCommand()
 		{
 			return this.commandQueue.Count > 0;
 		}
 
-		// Token: 0x0600BE75 RID: 48757 RVA: 0x00464750 File Offset: 0x00462950
+		// Token: 0x0600BF89 RID: 49033 RVA: 0x004680FC File Offset: 0x004662FC
 		public ExtensionAction GetCommand()
 		{
 			return this.commandQueue.Dequeue();
 		}
 
-		// Token: 0x04008E38 RID: 36408
+		// Token: 0x04008F21 RID: 36641
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const long BIT_ACTION_TIMEOUT_MS = 30000L;
 
-		// Token: 0x04008E39 RID: 36409
+		// Token: 0x04008F22 RID: 36642
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<ExtensionAction> commandQueue;
 
-		// Token: 0x04008E3A RID: 36410
+		// Token: 0x04008F23 RID: 36643
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<string> transactionHistory;
 
-		// Token: 0x04008E3B RID: 36411
+		// Token: 0x04008F24 RID: 36644
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string login;
 
-		// Token: 0x04008E3C RID: 36412
+		// Token: 0x04008F25 RID: 36645
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastPollTime;
 
-		// Token: 0x04008E3D RID: 36413
+		// Token: 0x04008F26 RID: 36646
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool queueExists;
 	}

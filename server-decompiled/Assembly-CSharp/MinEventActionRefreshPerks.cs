@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000712 RID: 1810
+// Token: 0x0200071A RID: 1818
 [Preserve]
 public class MinEventActionRefreshPerks : MinEventActionBase
 {
-	// Token: 0x0600373F RID: 14143 RVA: 0x0016B9A1 File Offset: 0x00169BA1
+	// Token: 0x06003756 RID: 14166 RVA: 0x0016C939 File Offset: 0x0016AB39
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self.Progression == null)
@@ -16,7 +16,7 @@ public class MinEventActionRefreshPerks : MinEventActionBase
 		_params.Self.Progression.RefreshPerks(this.attribute);
 	}
 
-	// Token: 0x06003740 RID: 14144 RVA: 0x0016B9C8 File Offset: 0x00169BC8
+	// Token: 0x06003757 RID: 14167 RVA: 0x0016C960 File Offset: 0x0016AB60
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -28,7 +28,7 @@ public class MinEventActionRefreshPerks : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002C76 RID: 11382
+	// Token: 0x04002C92 RID: 11410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string attribute = "";
 }

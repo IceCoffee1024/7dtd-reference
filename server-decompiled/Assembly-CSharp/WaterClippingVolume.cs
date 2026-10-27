@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001518 RID: 5400
+// Token: 0x0200152A RID: 5418
 public class WaterClippingVolume
 {
-	// Token: 0x0600A99E RID: 43422 RVA: 0x003F1DB0 File Offset: 0x003EFFB0
+	// Token: 0x0600A9F6 RID: 43510 RVA: 0x003F41B4 File Offset: 0x003F23B4
 	public void Prepare(Plane waterClipPlane)
 	{
 		this.waterClipPlane = waterClipPlane;
 		this.isSliced = WaterClippingUtils.GetCubePlaneIntersectionEdgeLoop(waterClipPlane, ref this.intersectionPoints, out this.count);
 	}
 
-	// Token: 0x0600A99F RID: 43423 RVA: 0x003F1DD4 File Offset: 0x003EFFD4
+	// Token: 0x0600A9F7 RID: 43511 RVA: 0x003F41D8 File Offset: 0x003F23D8
 	public void ApplyClipping(ref Vector3 vertLocalPos)
 	{
 		if (!this.isSliced)
@@ -29,19 +29,19 @@ public class WaterClippingVolume
 		}
 	}
 
-	// Token: 0x04007D89 RID: 32137
+	// Token: 0x04007DCA RID: 32202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Plane waterClipPlane;
 
-	// Token: 0x04007D8A RID: 32138
+	// Token: 0x04007DCB RID: 32203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] intersectionPoints = new Vector3[6];
 
-	// Token: 0x04007D8B RID: 32139
+	// Token: 0x04007DCC RID: 32204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count = -1;
 
-	// Token: 0x04007D8C RID: 32140
+	// Token: 0x04007DCD RID: 32205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSliced;
 }

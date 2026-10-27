@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001938 RID: 6456
+	// Token: 0x02001969 RID: 6505
 	[Preserve]
 	public class ChallengeObjectiveScrap : BaseChallengeObjective
 	{
-		// Token: 0x17001922 RID: 6434
-		// (get) Token: 0x0600C75F RID: 51039 RVA: 0x000FA9BE File Offset: 0x000F8BBE
+		// Token: 0x1700196A RID: 6506
+		// (get) Token: 0x0600C873 RID: 51315 RVA: 0x000FAEF6 File Offset: 0x000F90F6
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001923 RID: 6435
-		// (get) Token: 0x0600C760 RID: 51040 RVA: 0x00491FE8 File Offset: 0x004901E8
+		// Token: 0x1700196B RID: 6507
+		// (get) Token: 0x0600C874 RID: 51316 RVA: 0x004959DC File Offset: 0x00493BDC
 		public override string DescriptionText
 		{
 			get
@@ -29,20 +29,20 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C761 RID: 51041 RVA: 0x00492033 File Offset: 0x00490233
+		// Token: 0x0600C875 RID: 51317 RVA: 0x00495A27 File Offset: 0x00493C27
 		public override void Init()
 		{
 			this.expectedItem = ItemClass.GetItem(this.itemClassID, false);
 			this.expectedItemClass = ItemClass.GetItemClass(this.itemClassID, false);
 		}
 
-		// Token: 0x0600C762 RID: 51042 RVA: 0x00492059 File Offset: 0x00490259
+		// Token: 0x0600C876 RID: 51318 RVA: 0x00495A4D File Offset: 0x00493C4D
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.ScrapItem += this.Current_ScrapItem;
 		}
 
-		// Token: 0x0600C763 RID: 51043 RVA: 0x00492074 File Offset: 0x00490274
+		// Token: 0x0600C877 RID: 51319 RVA: 0x00495A68 File Offset: 0x00493C68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_ScrapItem(ItemStack stack)
 		{
@@ -57,13 +57,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C764 RID: 51044 RVA: 0x004920C5 File Offset: 0x004902C5
+		// Token: 0x0600C878 RID: 51320 RVA: 0x00495AB9 File Offset: 0x00493CB9
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.ScrapItem -= this.Current_ScrapItem;
 		}
 
-		// Token: 0x0600C765 RID: 51045 RVA: 0x004920DD File Offset: 0x004902DD
+		// Token: 0x0600C879 RID: 51321 RVA: 0x00495AD1 File Offset: 0x00493CD1
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -73,7 +73,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C766 RID: 51046 RVA: 0x0049210E File Offset: 0x0049030E
+		// Token: 0x0600C87A RID: 51322 RVA: 0x00495B02 File Offset: 0x00493D02
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveScrap
@@ -84,15 +84,15 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009630 RID: 38448
+		// Token: 0x04009719 RID: 38681
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemValue expectedItem = ItemValue.None;
 
-		// Token: 0x04009631 RID: 38449
+		// Token: 0x0400971A RID: 38682
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemClass expectedItemClass;
 
-		// Token: 0x04009632 RID: 38450
+		// Token: 0x0400971B RID: 38683
 		public string itemClassID = "";
 	}
 }

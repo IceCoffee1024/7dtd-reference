@@ -5,13 +5,13 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FC0 RID: 4032
+// Token: 0x02000FD0 RID: 4048
 [Preserve]
 public class XUiC_PopupToolTip : XUiController
 {
-	// Token: 0x17000EF6 RID: 3830
-	// (get) Token: 0x06007EE8 RID: 32488 RVA: 0x0030517D File Offset: 0x0030337D
-	// (set) Token: 0x06007EE7 RID: 32487 RVA: 0x0030516D File Offset: 0x0030336D
+	// Token: 0x17000F01 RID: 3841
+	// (get) Token: 0x06007F37 RID: 32567 RVA: 0x00306C99 File Offset: 0x00304E99
+	// (set) Token: 0x06007F36 RID: 32566 RVA: 0x00306C89 File Offset: 0x00304E89
 	public float TextAlphaCurrent
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -27,8 +27,8 @@ public class XUiC_PopupToolTip : XUiController
 		}
 	}
 
-	// Token: 0x17000EF7 RID: 3831
-	// (set) Token: 0x06007EE9 RID: 32489 RVA: 0x00305185 File Offset: 0x00303385
+	// Token: 0x17000F02 RID: 3842
+	// (set) Token: 0x06007F38 RID: 32568 RVA: 0x00306CA1 File Offset: 0x00304EA1
 	public string TooltipText
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -39,7 +39,7 @@ public class XUiC_PopupToolTip : XUiController
 		}
 	}
 
-	// Token: 0x06007EEA RID: 32490 RVA: 0x00305195 File Offset: 0x00303395
+	// Token: 0x06007F39 RID: 32569 RVA: 0x00306CB1 File Offset: 0x00304EB1
 	public override void Init()
 	{
 		base.Init();
@@ -47,14 +47,14 @@ public class XUiC_PopupToolTip : XUiController
 		this.toolbelt = this.xui.GetChildByType<XUiC_Toolbelt>();
 	}
 
-	// Token: 0x06007EEB RID: 32491 RVA: 0x0029936D File Offset: 0x0029756D
+	// Token: 0x06007F3A RID: 32570 RVA: 0x0029A895 File Offset: 0x00298A95
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007EEC RID: 32492 RVA: 0x003051C0 File Offset: 0x003033C0
+	// Token: 0x06007F3B RID: 32571 RVA: 0x00306CDC File Offset: 0x00304EDC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -80,7 +80,7 @@ public class XUiC_PopupToolTip : XUiController
 		}
 	}
 
-	// Token: 0x06007EED RID: 32493 RVA: 0x003052A4 File Offset: 0x003034A4
+	// Token: 0x06007F3C RID: 32572 RVA: 0x00306DC0 File Offset: 0x00304FC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -102,7 +102,7 @@ public class XUiC_PopupToolTip : XUiController
 		return true;
 	}
 
-	// Token: 0x06007EEE RID: 32494 RVA: 0x00305335 File Offset: 0x00303535
+	// Token: 0x06007F3D RID: 32573 RVA: 0x00306E51 File Offset: 0x00305051
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "yoffset_second_row")
@@ -113,7 +113,7 @@ public class XUiC_PopupToolTip : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x06007EEF RID: 32495 RVA: 0x0030535D File Offset: 0x0030355D
+	// Token: 0x06007F3E RID: 32574 RVA: 0x00306E79 File Offset: 0x00305079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearTooltipsInternal()
 	{
@@ -122,7 +122,7 @@ public class XUiC_PopupToolTip : XUiController
 		this.textAlphaTarget = 0f;
 	}
 
-	// Token: 0x06007EF0 RID: 32496 RVA: 0x00305380 File Offset: 0x00303580
+	// Token: 0x06007F3F RID: 32575 RVA: 0x00306E9C File Offset: 0x0030509C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QueueTooltipInternal(string _text, string[] _args, string _alertSound, ToolTipEvent _eventHandler, bool _showImmediately, bool _pinTooltip, float _timeout)
 	{
@@ -158,7 +158,7 @@ public class XUiC_PopupToolTip : XUiController
 		}
 	}
 
-	// Token: 0x06007EF1 RID: 32497 RVA: 0x00305424 File Offset: 0x00303624
+	// Token: 0x06007F40 RID: 32576 RVA: 0x00306F40 File Offset: 0x00305140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemovePinnedTooltipInternal(string _key)
 	{
@@ -172,7 +172,7 @@ public class XUiC_PopupToolTip : XUiController
 		}
 	}
 
-	// Token: 0x06007EF2 RID: 32498 RVA: 0x00305490 File Offset: 0x00303690
+	// Token: 0x06007F41 RID: 32577 RVA: 0x00306FAC File Offset: 0x003051AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DisplayTooltipText()
 	{
@@ -246,7 +246,7 @@ public class XUiC_PopupToolTip : XUiController
 		this.countdownTooltip.ResetAndRestart();
 	}
 
-	// Token: 0x06007EF3 RID: 32499 RVA: 0x003055FB File Offset: 0x003037FB
+	// Token: 0x06007F42 RID: 32578 RVA: 0x00307117 File Offset: 0x00305317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetToolTipPauseInternal(bool _isPaused)
 	{
@@ -259,7 +259,7 @@ public class XUiC_PopupToolTip : XUiController
 		this.TextAlphaCurrent = this.textAlphaTarget;
 	}
 
-	// Token: 0x06007EF4 RID: 32500 RVA: 0x0030561F File Offset: 0x0030381F
+	// Token: 0x06007F43 RID: 32579 RVA: 0x0030713B File Offset: 0x0030533B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearCurrentTooltipInternal()
 	{
@@ -268,7 +268,7 @@ public class XUiC_PopupToolTip : XUiController
 		this.textAlphaTarget = 0f;
 	}
 
-	// Token: 0x06007EF5 RID: 32501 RVA: 0x00305642 File Offset: 0x00303842
+	// Token: 0x06007F44 RID: 32580 RVA: 0x0030715E File Offset: 0x0030535E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_PopupToolTip GetInstance(XUi _xui)
 	{
@@ -285,7 +285,7 @@ public class XUiC_PopupToolTip : XUiController
 		return controller.GetChildByType<XUiC_PopupToolTip>();
 	}
 
-	// Token: 0x06007EF6 RID: 32502 RVA: 0x00305674 File Offset: 0x00303874
+	// Token: 0x06007F45 RID: 32581 RVA: 0x00307190 File Offset: 0x00305390
 	public static void ClearTooltips(XUi _xui)
 	{
 		XUiC_PopupToolTip instance = XUiC_PopupToolTip.GetInstance(_xui);
@@ -296,7 +296,7 @@ public class XUiC_PopupToolTip : XUiController
 		instance.ClearTooltipsInternal();
 	}
 
-	// Token: 0x06007EF7 RID: 32503 RVA: 0x00305686 File Offset: 0x00303886
+	// Token: 0x06007F46 RID: 32582 RVA: 0x003071A2 File Offset: 0x003053A2
 	public static void QueueTooltip(XUi _xui, string _text, string[] _args, string _alertSound, ToolTipEvent _eventHandler, bool _showImmediately, bool _pinTooltip, float _timeout = 0f)
 	{
 		XUiC_PopupToolTip instance = XUiC_PopupToolTip.GetInstance(_xui);
@@ -307,7 +307,7 @@ public class XUiC_PopupToolTip : XUiController
 		instance.QueueTooltipInternal(_text, _args, _alertSound, _eventHandler, _showImmediately, _pinTooltip, _timeout);
 	}
 
-	// Token: 0x06007EF8 RID: 32504 RVA: 0x003056A3 File Offset: 0x003038A3
+	// Token: 0x06007F47 RID: 32583 RVA: 0x003071BF File Offset: 0x003053BF
 	public static void SetToolTipPause(XUi _xui, bool _isPaused)
 	{
 		XUiC_PopupToolTip instance = XUiC_PopupToolTip.GetInstance(_xui);
@@ -318,7 +318,7 @@ public class XUiC_PopupToolTip : XUiController
 		instance.SetToolTipPauseInternal(_isPaused);
 	}
 
-	// Token: 0x06007EF9 RID: 32505 RVA: 0x003056B6 File Offset: 0x003038B6
+	// Token: 0x06007F48 RID: 32584 RVA: 0x003071D2 File Offset: 0x003053D2
 	public static void ClearCurrentTooltip(XUi _xui)
 	{
 		XUiC_PopupToolTip instance = XUiC_PopupToolTip.GetInstance(_xui);
@@ -329,7 +329,7 @@ public class XUiC_PopupToolTip : XUiController
 		instance.ClearCurrentTooltipInternal();
 	}
 
-	// Token: 0x06007EFA RID: 32506 RVA: 0x003056C8 File Offset: 0x003038C8
+	// Token: 0x06007F49 RID: 32585 RVA: 0x003071E4 File Offset: 0x003053E4
 	public static void RemovePinnedTooltip(XUi _xui, string _key)
 	{
 		XUiC_PopupToolTip instance = XUiC_PopupToolTip.GetInstance(_xui);
@@ -340,59 +340,59 @@ public class XUiC_PopupToolTip : XUiController
 		instance.RemovePinnedTooltipInternal(_key);
 	}
 
-	// Token: 0x04005E41 RID: 24129
+	// Token: 0x04005E7C RID: 24188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string ID = "";
 
-	// Token: 0x04005E42 RID: 24130
+	// Token: 0x04005E7D RID: 24189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int yOffsetSecondRow = 75;
 
-	// Token: 0x04005E43 RID: 24131
+	// Token: 0x04005E7E RID: 24190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Toolbelt toolbelt;
 
-	// Token: 0x04005E44 RID: 24132
+	// Token: 0x04005E7F RID: 24191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tooltipText = string.Empty;
 
-	// Token: 0x04005E45 RID: 24133
+	// Token: 0x04005E80 RID: 24192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float textAlphaTarget;
 
-	// Token: 0x04005E46 RID: 24134
+	// Token: 0x04005E81 RID: 24193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float textAlphaCurrent;
 
-	// Token: 0x04005E47 RID: 24135
+	// Token: 0x04005E82 RID: 24194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CountdownTimer countdownTooltip = new CountdownTimer(5f, true);
 
-	// Token: 0x04005E48 RID: 24136
+	// Token: 0x04005E83 RID: 24195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pauseToolTips;
 
-	// Token: 0x04005E49 RID: 24137
+	// Token: 0x04005E84 RID: 24196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Queue<XUiC_PopupToolTip.Tooltip> tooltipQueue = new Queue<XUiC_PopupToolTip.Tooltip>();
 
-	// Token: 0x04005E4A RID: 24138
+	// Token: 0x04005E85 RID: 24197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PopupToolTip.Tooltip immediateTip;
 
-	// Token: 0x04005E4B RID: 24139
+	// Token: 0x04005E86 RID: 24198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt textalphaFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005E4C RID: 24140
+	// Token: 0x04005E87 RID: 24199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt yoffsetFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x02000FC1 RID: 4033
+	// Token: 0x02000FD1 RID: 4049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Tooltip : IEquatable<XUiC_PopupToolTip.Tooltip>
 	{
-		// Token: 0x06007EFD RID: 32509 RVA: 0x00305740 File Offset: 0x00303940
+		// Token: 0x06007F4C RID: 32588 RVA: 0x0030725C File Offset: 0x0030545C
 		public Tooltip(string _key, string _text, string _alertSoundName, ToolTipEvent _event, float _timeout = 0f, bool _pinned = false)
 		{
 			this.Key = _key;
@@ -404,19 +404,19 @@ public class XUiC_PopupToolTip : XUiController
 			this.CreationTime = Time.time;
 		}
 
-		// Token: 0x06007EFE RID: 32510 RVA: 0x00305796 File Offset: 0x00303996
+		// Token: 0x06007F4D RID: 32589 RVA: 0x003072B2 File Offset: 0x003054B2
 		public bool Equals(XUiC_PopupToolTip.Tooltip _other)
 		{
 			return _other != null && (this == _other || this.Text == _other.Text);
 		}
 
-		// Token: 0x06007EFF RID: 32511 RVA: 0x003057B4 File Offset: 0x003039B4
+		// Token: 0x06007F4E RID: 32590 RVA: 0x003072D0 File Offset: 0x003054D0
 		public override bool Equals(object _obj)
 		{
 			return _obj != null && (this == _obj || (!(_obj.GetType() != base.GetType()) && this.Equals((XUiC_PopupToolTip.Tooltip)_obj)));
 		}
 
-		// Token: 0x06007F00 RID: 32512 RVA: 0x003057E2 File Offset: 0x003039E2
+		// Token: 0x06007F4F RID: 32591 RVA: 0x003072FE File Offset: 0x003054FE
 		public override int GetHashCode()
 		{
 			if (this.Text == null)
@@ -426,28 +426,28 @@ public class XUiC_PopupToolTip : XUiController
 			return this.Text.GetHashCode();
 		}
 
-		// Token: 0x04005E4D RID: 24141
+		// Token: 0x04005E88 RID: 24200
 		public readonly string Key;
 
-		// Token: 0x04005E4E RID: 24142
+		// Token: 0x04005E89 RID: 24201
 		public readonly string Text;
 
-		// Token: 0x04005E4F RID: 24143
+		// Token: 0x04005E8A RID: 24202
 		public readonly string AlertSoundName;
 
-		// Token: 0x04005E50 RID: 24144
+		// Token: 0x04005E8B RID: 24203
 		public readonly ToolTipEvent Event;
 
-		// Token: 0x04005E51 RID: 24145
+		// Token: 0x04005E8C RID: 24204
 		public readonly float Timeout = -1f;
 
-		// Token: 0x04005E52 RID: 24146
+		// Token: 0x04005E8D RID: 24205
 		public readonly bool Pinned;
 
-		// Token: 0x04005E53 RID: 24147
+		// Token: 0x04005E8E RID: 24206
 		public bool RemoveOnDequeue;
 
-		// Token: 0x04005E54 RID: 24148
+		// Token: 0x04005E8F RID: 24207
 		public readonly float CreationTime;
 	}
 }

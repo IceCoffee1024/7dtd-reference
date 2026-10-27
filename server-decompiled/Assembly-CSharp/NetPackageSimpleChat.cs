@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000854 RID: 2132
+// Token: 0x0200085E RID: 2142
 [Preserve]
 public class NetPackageSimpleChat : NetPackage
 {
-	// Token: 0x06003DFC RID: 15868 RVA: 0x00189F39 File Offset: 0x00188139
+	// Token: 0x06003E1F RID: 15903 RVA: 0x0018AFE1 File Offset: 0x001891E1
 	public NetPackageSimpleChat Setup(string _msg)
 	{
 		this.msg = (string.IsNullOrEmpty(_msg) ? string.Empty : _msg);
 		return this;
 	}
 
-	// Token: 0x06003DFD RID: 15869 RVA: 0x00189F52 File Offset: 0x00188152
+	// Token: 0x06003E20 RID: 15904 RVA: 0x0018AFFA File Offset: 0x001891FA
 	public NetPackageSimpleChat Setup(string _msg, List<int> _recipientEntityIds)
 	{
 		this.msg = (string.IsNullOrEmpty(_msg) ? string.Empty : _msg);
@@ -21,7 +21,7 @@ public class NetPackageSimpleChat : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DFE RID: 15870 RVA: 0x00189F74 File Offset: 0x00188174
+	// Token: 0x06003E21 RID: 15905 RVA: 0x0018B01C File Offset: 0x0018921C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.msg = _br.ReadString();
@@ -36,7 +36,7 @@ public class NetPackageSimpleChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003DFF RID: 15871 RVA: 0x00189FC0 File Offset: 0x001881C0
+	// Token: 0x06003E22 RID: 15906 RVA: 0x0018B068 File Offset: 0x00189268
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -51,7 +51,7 @@ public class NetPackageSimpleChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003E00 RID: 15872 RVA: 0x0018A03C File Offset: 0x0018823C
+	// Token: 0x06003E23 RID: 15907 RVA: 0x0018B0E4 File Offset: 0x001892E4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -101,11 +101,11 @@ public class NetPackageSimpleChat : NetPackage
 		}
 	}
 
-	// Token: 0x0400326D RID: 12909
+	// Token: 0x0400328D RID: 12941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> recipientEntityIds;
 
-	// Token: 0x0400326E RID: 12910
+	// Token: 0x0400328E RID: 12942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string msg;
 }

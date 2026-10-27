@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EA3 RID: 3747
+// Token: 0x02000EAE RID: 3758
 [Preserve]
 public class XUiC_SimpleButton : XUiController
 {
 	// Token: 0x140000B4 RID: 180
-	// (add) Token: 0x0600741D RID: 29725 RVA: 0x002C2824 File Offset: 0x002C0A24
-	// (remove) Token: 0x0600741E RID: 29726 RVA: 0x002C285C File Offset: 0x002C0A5C
+	// (add) Token: 0x06007442 RID: 29762 RVA: 0x002C3D90 File Offset: 0x002C1F90
+	// (remove) Token: 0x06007443 RID: 29763 RVA: 0x002C3DC8 File Offset: 0x002C1FC8
 	public event XUiEvent_OnPressEventHandler OnPressed;
 
 	// Token: 0x140000B5 RID: 181
-	// (add) Token: 0x0600741F RID: 29727 RVA: 0x002C2894 File Offset: 0x002C0A94
-	// (remove) Token: 0x06007420 RID: 29728 RVA: 0x002C28CC File Offset: 0x002C0ACC
+	// (add) Token: 0x06007444 RID: 29764 RVA: 0x002C3E00 File Offset: 0x002C2000
+	// (remove) Token: 0x06007445 RID: 29765 RVA: 0x002C3E38 File Offset: 0x002C2038
 	public new event XUiEvent_OnHoverEventHandler OnHovered;
 
-	// Token: 0x17000DA9 RID: 3497
-	// (get) Token: 0x06007421 RID: 29729 RVA: 0x002C2901 File Offset: 0x002C0B01
-	// (set) Token: 0x06007422 RID: 29730 RVA: 0x002C2914 File Offset: 0x002C0B14
+	// Token: 0x17000DAF RID: 3503
+	// (get) Token: 0x06007446 RID: 29766 RVA: 0x002C3E6D File Offset: 0x002C206D
+	// (set) Token: 0x06007447 RID: 29767 RVA: 0x002C3E80 File Offset: 0x002C2080
 	public string Text
 	{
 		get
@@ -38,9 +38,9 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DAA RID: 3498
-	// (get) Token: 0x06007423 RID: 29731 RVA: 0x002C292A File Offset: 0x002C0B2A
-	// (set) Token: 0x06007424 RID: 29732 RVA: 0x002C2937 File Offset: 0x002C0B37
+	// Token: 0x17000DB0 RID: 3504
+	// (get) Token: 0x06007448 RID: 29768 RVA: 0x002C3E96 File Offset: 0x002C2096
+	// (set) Token: 0x06007449 RID: 29769 RVA: 0x002C3EA3 File Offset: 0x002C20A3
 	public string Tooltip
 	{
 		get
@@ -56,9 +56,9 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DAB RID: 3499
-	// (get) Token: 0x06007425 RID: 29733 RVA: 0x002C2958 File Offset: 0x002C0B58
-	// (set) Token: 0x06007426 RID: 29734 RVA: 0x002C2965 File Offset: 0x002C0B65
+	// Token: 0x17000DB1 RID: 3505
+	// (get) Token: 0x0600744A RID: 29770 RVA: 0x002C3EC4 File Offset: 0x002C20C4
+	// (set) Token: 0x0600744B RID: 29771 RVA: 0x002C3ED1 File Offset: 0x002C20D1
 	public string DisabledToolTip
 	{
 		get
@@ -74,8 +74,8 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DAC RID: 3500
-	// (get) Token: 0x06007427 RID: 29735 RVA: 0x002C2986 File Offset: 0x002C0B86
+	// Token: 0x17000DB2 RID: 3506
+	// (get) Token: 0x0600744C RID: 29772 RVA: 0x002C3EF2 File Offset: 0x002C20F2
 	public XUiV_Button Button
 	{
 		get
@@ -84,9 +84,9 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DAD RID: 3501
-	// (get) Token: 0x06007428 RID: 29736 RVA: 0x002C298E File Offset: 0x002C0B8E
-	// (set) Token: 0x06007429 RID: 29737 RVA: 0x002C2998 File Offset: 0x002C0B98
+	// Token: 0x17000DB3 RID: 3507
+	// (get) Token: 0x0600744D RID: 29773 RVA: 0x002C3EFA File Offset: 0x002C20FA
+	// (set) Token: 0x0600744E RID: 29774 RVA: 0x002C3F04 File Offset: 0x002C2104
 	[XuiXmlAttribute("button_enabled", false)]
 	[XuiXmlBinding("enabled")]
 	public bool Enabled
@@ -110,8 +110,8 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DAE RID: 3502
-	// (get) Token: 0x0600742A RID: 29738 RVA: 0x002C29E7 File Offset: 0x002C0BE7
+	// Token: 0x17000DB4 RID: 3508
+	// (get) Token: 0x0600744F RID: 29775 RVA: 0x002C3F53 File Offset: 0x002C2153
 	[XuiXmlBinding("selected")]
 	public bool ButtonSelected
 	{
@@ -122,8 +122,8 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DAF RID: 3503
-	// (get) Token: 0x0600742B RID: 29739 RVA: 0x002C29FA File Offset: 0x002C0BFA
+	// Token: 0x17000DB5 RID: 3509
+	// (get) Token: 0x06007450 RID: 29776 RVA: 0x002C3F66 File Offset: 0x002C2166
 	[XuiXmlBinding("hovered")]
 	public bool ButtonHovered
 	{
@@ -133,7 +133,7 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x0600742C RID: 29740 RVA: 0x002C2A0C File Offset: 0x002C0C0C
+	// Token: 0x06007451 RID: 29777 RVA: 0x002C3F78 File Offset: 0x002C2178
 	public override void Init()
 	{
 		base.Init();
@@ -163,7 +163,7 @@ public class XUiC_SimpleButton : XUiController
 		this.button.Controller.OnHover += this.Btn_OnHover;
 	}
 
-	// Token: 0x0600742D RID: 29741 RVA: 0x002C2ADD File Offset: 0x002C0CDD
+	// Token: 0x06007452 RID: 29778 RVA: 0x002C4049 File Offset: 0x002C2249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Btn_OnHover(XUiController _sender, bool _isOver)
 	{
@@ -177,7 +177,7 @@ public class XUiC_SimpleButton : XUiController
 		onHovered(this, _isOver);
 	}
 
-	// Token: 0x0600742E RID: 29742 RVA: 0x002C2AFF File Offset: 0x002C0CFF
+	// Token: 0x06007453 RID: 29779 RVA: 0x002C406B File Offset: 0x002C226B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Btn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -193,7 +193,7 @@ public class XUiC_SimpleButton : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600742F RID: 29743 RVA: 0x0008A9BD File Offset: 0x00088BBD
+	// Token: 0x06007454 RID: 29780 RVA: 0x0008ABF1 File Offset: 0x00088DF1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -204,23 +204,23 @@ public class XUiC_SimpleButton : XUiController
 		}
 	}
 
-	// Token: 0x040056B2 RID: 22194
+	// Token: 0x040056D7 RID: 22231
 	[XuiBindComponent("btnLabel", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label label;
 
-	// Token: 0x040056B3 RID: 22195
+	// Token: 0x040056D8 RID: 22232
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button button;
 
-	// Token: 0x040056B4 RID: 22196
+	// Token: 0x040056D9 RID: 22233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isEnabled = true;
 
-	// Token: 0x040056B5 RID: 22197
+	// Token: 0x040056DA RID: 22234
 	public string Tag;
 
-	// Token: 0x040056B6 RID: 22198
+	// Token: 0x040056DB RID: 22235
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 }

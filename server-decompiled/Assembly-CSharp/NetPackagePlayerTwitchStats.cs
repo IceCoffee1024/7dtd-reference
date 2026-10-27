@@ -2,11 +2,11 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x02000832 RID: 2098
+// Token: 0x0200083C RID: 2108
 [Preserve]
 public class NetPackagePlayerTwitchStats : NetPackageEntityTargeted
 {
-	// Token: 0x06003D51 RID: 15697 RVA: 0x001863C4 File Offset: 0x001845C4
+	// Token: 0x06003D74 RID: 15732 RVA: 0x001874C8 File Offset: 0x001856C8
 	public NetPackagePlayerTwitchStats Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -22,7 +22,7 @@ public class NetPackagePlayerTwitchStats : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003D52 RID: 15698 RVA: 0x0018642C File Offset: 0x0018462C
+	// Token: 0x06003D75 RID: 15733 RVA: 0x00187530 File Offset: 0x00185730
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -33,7 +33,7 @@ public class NetPackagePlayerTwitchStats : NetPackageEntityTargeted
 		this.twitchActionsEnabled = (EntityPlayer.TwitchActionsStates)_reader.ReadByte();
 	}
 
-	// Token: 0x06003D53 RID: 15699 RVA: 0x0018647C File Offset: 0x0018467C
+	// Token: 0x06003D76 RID: 15734 RVA: 0x00187580 File Offset: 0x00185780
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -44,7 +44,7 @@ public class NetPackagePlayerTwitchStats : NetPackageEntityTargeted
 		_writer.Write((byte)this.twitchActionsEnabled);
 	}
 
-	// Token: 0x06003D54 RID: 15700 RVA: 0x001864D0 File Offset: 0x001846D0
+	// Token: 0x06003D77 RID: 15735 RVA: 0x001875D4 File Offset: 0x001857D4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -66,23 +66,23 @@ public class NetPackagePlayerTwitchStats : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x040031C5 RID: 12741
+	// Token: 0x040031E5 RID: 12773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool twitchEnabled;
 
-	// Token: 0x040031C6 RID: 12742
+	// Token: 0x040031E6 RID: 12774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool twitchSafe;
 
-	// Token: 0x040031C7 RID: 12743
+	// Token: 0x040031E7 RID: 12775
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchVoteLockTypes twitchVoteLock;
 
-	// Token: 0x040031C8 RID: 12744
+	// Token: 0x040031E8 RID: 12776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool twitchVisionDisabled;
 
-	// Token: 0x040031C9 RID: 12745
+	// Token: 0x040031E9 RID: 12777
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer.TwitchActionsStates twitchActionsEnabled;
 }

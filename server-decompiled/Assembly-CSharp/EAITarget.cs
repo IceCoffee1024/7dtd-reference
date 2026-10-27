@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200045B RID: 1115
+// Token: 0x0200045D RID: 1117
 [Preserve]
 public abstract class EAITarget : EAIBase
 {
-	// Token: 0x060021DA RID: 8666 RVA: 0x000CD354 File Offset: 0x000CB554
+	// Token: 0x060021DF RID: 8671 RVA: 0x000CD700 File Offset: 0x000CB900
 	public void Init(EntityAlive _theEntity, float _maxXZDistance, bool _bNeedToSee)
 	{
 		base.Init(_theEntity);
@@ -14,13 +14,13 @@ public abstract class EAITarget : EAIBase
 		this.bNeedToSee = _bNeedToSee;
 	}
 
-	// Token: 0x060021DB RID: 8667 RVA: 0x000CD372 File Offset: 0x000CB572
+	// Token: 0x060021E0 RID: 8672 RVA: 0x000CD71E File Offset: 0x000CB91E
 	public override void Start()
 	{
 		this.seeCounter = 0;
 	}
 
-	// Token: 0x060021DC RID: 8668 RVA: 0x000CD37C File Offset: 0x000CB57C
+	// Token: 0x060021E1 RID: 8673 RVA: 0x000CD728 File Offset: 0x000CB928
 	public override bool Continue()
 	{
 		EntityAlive attackTarget = this.theEntity.GetAttackTarget();
@@ -55,13 +55,13 @@ public abstract class EAITarget : EAIBase
 		return true;
 	}
 
-	// Token: 0x060021DD RID: 8669 RVA: 0x000CD40C File Offset: 0x000CB60C
+	// Token: 0x060021E2 RID: 8674 RVA: 0x000CD7B8 File Offset: 0x000CB9B8
 	public override void Reset()
 	{
 		this.theEntity.SetAttackTarget(null, 0);
 	}
 
-	// Token: 0x060021DE RID: 8670 RVA: 0x000CD41C File Offset: 0x000CB61C
+	// Token: 0x060021E3 RID: 8675 RVA: 0x000CD7C8 File Offset: 0x000CB9C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool check(EntityAlive _e)
 	{
@@ -94,21 +94,21 @@ public abstract class EAITarget : EAIBase
 		return !(entityPlayer != null) || this.theEntity.CanSeeStealth(this.manager.GetSeeDistance(entityPlayer), entityPlayer.Stealth.lightLevel);
 	}
 
-	// Token: 0x060021DF RID: 8671 RVA: 0x000C6A45 File Offset: 0x000C4C45
+	// Token: 0x060021E4 RID: 8676 RVA: 0x000C6DF1 File Offset: 0x000C4FF1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EAITarget()
 	{
 	}
 
-	// Token: 0x04001768 RID: 5992
+	// Token: 0x04001778 RID: 6008
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float maxXZDistance;
 
-	// Token: 0x04001769 RID: 5993
+	// Token: 0x04001779 RID: 6009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bNeedToSee;
 
-	// Token: 0x0400176A RID: 5994
+	// Token: 0x0400177A RID: 6010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int seeCounter;
 }

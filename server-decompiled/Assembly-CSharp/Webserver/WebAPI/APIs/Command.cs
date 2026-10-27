@@ -6,11 +6,11 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs
 {
-	// Token: 0x02001AFE RID: 6910
+	// Token: 0x02001B2F RID: 6959
 	[Preserve]
 	public class Command : AbsRestApi
 	{
-		// Token: 0x0600D029 RID: 53289 RVA: 0x004B8DD8 File Offset: 0x004B6FD8
+		// Token: 0x0600D13D RID: 53565 RVA: 0x004BC8D4 File Offset: 0x004BAAD4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -50,7 +50,7 @@ namespace Webserver.WebAPI.APIs
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600D02A RID: 53290 RVA: 0x004B8EB4 File Offset: 0x004B70B4
+		// Token: 0x0600D13E RID: 53566 RVA: 0x004BC9B0 File Offset: 0x004BABB0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeCommandJson(ref JsonWriter _writer, IConsoleCommand _command, int _userPermissionLevel)
 		{
@@ -84,7 +84,7 @@ namespace Webserver.WebAPI.APIs
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D02B RID: 53291 RVA: 0x004B8F98 File Offset: 0x004B7198
+		// Token: 0x0600D13F RID: 53567 RVA: 0x004BCA94 File Offset: 0x004BAC94
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestPost(RequestContext _context, IDictionary<string, object> _jsonInput, byte[] _jsonInputData)
 		{
@@ -127,45 +127,45 @@ namespace Webserver.WebAPI.APIs
 			SingletonMonoBehaviour<SdtdConsole>.Instance.ExecuteAsync(text, webCommandResult);
 		}
 
-		// Token: 0x0600D02C RID: 53292 RVA: 0x00061642 File Offset: 0x0005F842
+		// Token: 0x0600D140 RID: 53568 RVA: 0x00061906 File Offset: 0x0005FB06
 		public override int DefaultPermissionLevel()
 		{
 			return 1000;
 		}
 
-		// Token: 0x0600D02D RID: 53293 RVA: 0x004B90A8 File Offset: 0x004B72A8
+		// Token: 0x0600D141 RID: 53569 RVA: 0x004BCBA4 File Offset: 0x004BADA4
 		public override int[] DefaultMethodPermissionLevels()
 		{
 			return new int[] { -2147483647, 2000, int.MinValue, -2147483647, -2147483647 };
 		}
 
-		// Token: 0x0600D02E RID: 53294 RVA: 0x004B3AA8 File Offset: 0x004B1CA8
+		// Token: 0x0600D142 RID: 53570 RVA: 0x004B75A4 File Offset: 0x004B57A4
 		public Command()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009D9D RID: 40349
+		// Token: 0x04009E86 RID: 40582
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonCommandsKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("commands");
 
-		// Token: 0x04009D9E RID: 40350
+		// Token: 0x04009E87 RID: 40583
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOverloadsKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("overloads");
 
-		// Token: 0x04009D9F RID: 40351
+		// Token: 0x04009E88 RID: 40584
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonCommandKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("command");
 
-		// Token: 0x04009DA0 RID: 40352
+		// Token: 0x04009E89 RID: 40585
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonDescriptionKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("description");
 
-		// Token: 0x04009DA1 RID: 40353
+		// Token: 0x04009E8A RID: 40586
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonHelpKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("help");
 
-		// Token: 0x04009DA2 RID: 40354
+		// Token: 0x04009E8B RID: 40587
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonAllowedKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("allowed");
 	}

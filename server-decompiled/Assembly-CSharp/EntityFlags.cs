@@ -1,27 +1,27 @@
 ﻿using System;
 
-// Token: 0x02000490 RID: 1168
+// Token: 0x02000492 RID: 1170
 [Flags]
 public enum EntityFlags : uint
 {
-	// Token: 0x0400199A RID: 6554
+	// Token: 0x040019AA RID: 6570
 	None = 0U,
-	// Token: 0x0400199B RID: 6555
+	// Token: 0x040019AB RID: 6571
 	Player = 1U,
-	// Token: 0x0400199C RID: 6556
+	// Token: 0x040019AC RID: 6572
 	Zombie = 2U,
-	// Token: 0x0400199D RID: 6557
+	// Token: 0x040019AD RID: 6573
 	Animal = 4U,
-	// Token: 0x0400199E RID: 6558
+	// Token: 0x040019AE RID: 6574
 	Bandit = 8U,
-	// Token: 0x0400199F RID: 6559
+	// Token: 0x040019AF RID: 6575
 	Edible = 16U,
-	// Token: 0x040019A0 RID: 6560
+	// Token: 0x040019B0 RID: 6576
 	Timid = 32U,
-	// Token: 0x040019A1 RID: 6561
+	// Token: 0x040019B1 RID: 6577
 	All = 4294967295U,
-	// Token: 0x040019A2 RID: 6562
+	// Token: 0x040019B2 RID: 6578
 	AIHearing = 14U,
-	// Token: 0x040019A3 RID: 6563
+	// Token: 0x040019B3 RID: 6579
 	AISmelling = 6U
 }

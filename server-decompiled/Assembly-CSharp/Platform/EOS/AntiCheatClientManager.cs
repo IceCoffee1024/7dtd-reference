@@ -6,10 +6,10 @@ using Epic.OnlineServices.AntiCheatClient;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D0C RID: 7436
+	// Token: 0x02001D3D RID: 7485
 	public class AntiCheatClientManager : IAntiCheatClient, IAntiCheatEncryption, IEncryptionModule
 	{
-		// Token: 0x0600DCB1 RID: 56497 RVA: 0x004E9A64 File Offset: 0x004E7C64
+		// Token: 0x0600DDC5 RID: 56773 RVA: 0x004ED604 File Offset: 0x004EB804
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -17,7 +17,7 @@ namespace Platform.EOS
 			this.antiCheatActive = !AntiCheatCommon.NoEacCmdLine;
 		}
 
-		// Token: 0x0600DCB2 RID: 56498 RVA: 0x004E9A98 File Offset: 0x004E7C98
+		// Token: 0x0600DDC6 RID: 56774 RVA: 0x004ED638 File Offset: 0x004EB838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void apiInitialized()
 		{
@@ -43,7 +43,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCB3 RID: 56499 RVA: 0x004E9B94 File Offset: 0x004E7D94
+		// Token: 0x0600DDC7 RID: 56775 RVA: 0x004ED734 File Offset: 0x004EB934
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void handleClientIntegrityViolated(ref OnClientIntegrityViolatedCallbackInfo data)
 		{
@@ -53,7 +53,7 @@ namespace Platform.EOS
 			this.antiCheatActive = false;
 		}
 
-		// Token: 0x0600DCB4 RID: 56500 RVA: 0x004E9BD0 File Offset: 0x004E7DD0
+		// Token: 0x0600DDC8 RID: 56776 RVA: 0x004ED770 File Offset: 0x004EB970
 		public bool GetUnhandledViolationMessage(out string _message)
 		{
 			if (this.eacViolation && !this.eacViolationHandled)
@@ -66,13 +66,13 @@ namespace Platform.EOS
 			return false;
 		}
 
-		// Token: 0x0600DCB5 RID: 56501 RVA: 0x004E9C00 File Offset: 0x004E7E00
+		// Token: 0x0600DDC9 RID: 56777 RVA: 0x004ED7A0 File Offset: 0x004EB9A0
 		public bool ClientAntiCheatEnabled()
 		{
 			return this.antiCheatActive && !this.eacViolation;
 		}
 
-		// Token: 0x0600DCB6 RID: 56502 RVA: 0x004E9C18 File Offset: 0x004E7E18
+		// Token: 0x0600DDCA RID: 56778 RVA: 0x004ED7B8 File Offset: 0x004EB9B8
 		public void WaitForRemoteAuth(Action onRemoteAuthSkippedOrComplete)
 		{
 			if (!Submission.Enabled && this.clientMode == AntiCheatClientManager.AntiCheatClientMode.Unknown)
@@ -124,7 +124,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCB7 RID: 56503 RVA: 0x004E9CB4 File Offset: 0x004E7EB4
+		// Token: 0x0600DDCB RID: 56779 RVA: 0x004ED854 File Offset: 0x004EBA54
 		public void ConnectToServer([TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _hostUserAndToken, Action _onNoAntiCheatOrConnectionComplete, Action<string> _onConnectionFailed)
 		{
 			if (!this.ClientAntiCheatEnabled())
@@ -181,7 +181,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DCB8 RID: 56504 RVA: 0x004E9D78 File Offset: 0x004E7F78
+		// Token: 0x0600DDCC RID: 56780 RVA: 0x004ED918 File Offset: 0x004EBB18
 		public void HandleMessageFromServer(byte[] _data)
 		{
 			if (!this.antiCheatActive)
@@ -203,7 +203,7 @@ namespace Platform.EOS
 			this.peerToPeerClient.HandleMessageFromPeer(_data);
 		}
 
-		// Token: 0x0600DCB9 RID: 56505 RVA: 0x004E9DCC File Offset: 0x004E7FCC
+		// Token: 0x0600DDCD RID: 56781 RVA: 0x004ED96C File Offset: 0x004EBB6C
 		public void DisconnectFromServer()
 		{
 			if (!this.ClientAntiCheatEnabled())
@@ -234,18 +234,18 @@ namespace Platform.EOS
 			this.connectedToServer = false;
 		}
 
-		// Token: 0x0600DCBA RID: 56506 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DDCE RID: 56782 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}
 
-		// Token: 0x0600DCBB RID: 56507 RVA: 0x004E9E30 File Offset: 0x004E8030
+		// Token: 0x0600DDCF RID: 56783 RVA: 0x004ED9D0 File Offset: 0x004EBBD0
 		public bool EncryptionAvailable()
 		{
 			return this.clientMode == AntiCheatClientManager.AntiCheatClientMode.ClientServer;
 		}
 
-		// Token: 0x0600DCBC RID: 56508 RVA: 0x004E9E3B File Offset: 0x004E803B
+		// Token: 0x0600DDD0 RID: 56784 RVA: 0x004ED9DB File Offset: 0x004EBBDB
 		public bool EncryptStream(ClientInfo _cInfo, MemoryStream _stream)
 		{
 			if (this.clientMode != AntiCheatClientManager.AntiCheatClientMode.ClientServer)
@@ -256,7 +256,7 @@ namespace Platform.EOS
 			return this.clientServerClient.EncryptStream(_cInfo, _stream);
 		}
 
-		// Token: 0x0600DCBD RID: 56509 RVA: 0x004E9E5E File Offset: 0x004E805E
+		// Token: 0x0600DDD1 RID: 56785 RVA: 0x004ED9FE File Offset: 0x004EBBFE
 		public bool DecryptStream(ClientInfo _cInfo, MemoryStream _stream)
 		{
 			if (this.clientMode != AntiCheatClientManager.AntiCheatClientMode.ClientServer)
@@ -267,55 +267,55 @@ namespace Platform.EOS
 			return this.clientServerClient.DecryptStream(_cInfo, _stream);
 		}
 
-		// Token: 0x0400A686 RID: 42630
+		// Token: 0x0400A76F RID: 42863
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A687 RID: 42631
+		// Token: 0x0400A770 RID: 42864
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatClientInterface antiCheatInterface;
 
-		// Token: 0x0400A688 RID: 42632
+		// Token: 0x0400A771 RID: 42865
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool antiCheatActive;
 
-		// Token: 0x0400A689 RID: 42633
+		// Token: 0x0400A772 RID: 42866
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool eacViolation;
 
-		// Token: 0x0400A68A RID: 42634
+		// Token: 0x0400A773 RID: 42867
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool eacViolationHandled;
 
-		// Token: 0x0400A68B RID: 42635
+		// Token: 0x0400A774 RID: 42868
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool connectedToServer;
 
-		// Token: 0x0400A68C RID: 42636
+		// Token: 0x0400A775 RID: 42869
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Utf8String eacViolationMessage;
 
-		// Token: 0x0400A68D RID: 42637
+		// Token: 0x0400A776 RID: 42870
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatClientManager.AntiCheatClientMode clientMode = AntiCheatClientManager.AntiCheatClientMode.Unknown;
 
-		// Token: 0x0400A68E RID: 42638
+		// Token: 0x0400A777 RID: 42871
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatClientCS clientServerClient;
 
-		// Token: 0x0400A68F RID: 42639
+		// Token: 0x0400A778 RID: 42872
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatClientP2P peerToPeerClient;
 
-		// Token: 0x02001D0D RID: 7437
+		// Token: 0x02001D3E RID: 7486
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum AntiCheatClientMode
 		{
-			// Token: 0x0400A691 RID: 42641
+			// Token: 0x0400A77A RID: 42874
 			ClientServer,
-			// Token: 0x0400A692 RID: 42642
+			// Token: 0x0400A77B RID: 42875
 			PeerToPeer,
-			// Token: 0x0400A693 RID: 42643
+			// Token: 0x0400A77C RID: 42876
 			Unknown
 		}
 	}

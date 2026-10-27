@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000B57 RID: 2903
+// Token: 0x02000B62 RID: 2914
 public interface IChunkProviderIndicator
 {
-	// Token: 0x0600578C RID: 22412
+	// Token: 0x060057B1 RID: 22449
 	long GetNextChunkToProvide();
 }

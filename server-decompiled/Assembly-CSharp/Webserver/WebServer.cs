@@ -3,17 +3,17 @@ using Webserver.UrlHandlers;
 
 namespace Webserver
 {
-	// Token: 0x02001AF5 RID: 6901
+	// Token: 0x02001B26 RID: 6950
 	public static class WebServer
 	{
-		// Token: 0x0600CFE8 RID: 53224 RVA: 0x004B7A3C File Offset: 0x004B5C3C
+		// Token: 0x0600D0FC RID: 53500 RVA: 0x004BB538 File Offset: 0x004B9738
 		public static void Init()
 		{
 			ModEvents.GameStartDone.RegisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SGameStartDoneData>(WebServer.GameStartDone));
 			ModEvents.WorldShuttingDown.RegisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SWorldShuttingDownData>(WebServer.WorldShuttingDown));
 		}
 
-		// Token: 0x0600CFE9 RID: 53225 RVA: 0x004B7A6A File Offset: 0x004B5C6A
+		// Token: 0x0600D0FD RID: 53501 RVA: 0x004BB566 File Offset: 0x004B9766
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void GameStartDone(ref ModEvents.SGameStartDoneData _data)
 		{
@@ -29,7 +29,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CFEA RID: 53226 RVA: 0x004B7A9F File Offset: 0x004B5C9F
+		// Token: 0x0600D0FE RID: 53502 RVA: 0x004BB59B File Offset: 0x004B979B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void WorldShuttingDown(ref ModEvents.SWorldShuttingDownData _data)
 		{
@@ -41,7 +41,7 @@ namespace Webserver
 			web.Disconnect();
 		}
 
-		// Token: 0x04009D57 RID: 40279
+		// Token: 0x04009E40 RID: 40512
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Web webInstance;
 	}

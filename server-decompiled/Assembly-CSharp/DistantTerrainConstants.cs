@@ -1,23 +1,23 @@
 ﻿using System;
 
-// Token: 0x02000C44 RID: 3140
+// Token: 0x02000C4F RID: 3151
 public class DistantTerrainConstants
 {
-	// Token: 0x04004AC5 RID: 19141
+	// Token: 0x04004AEA RID: 19178
 	public const int cLayerDistantTerrain = 28;
 
-	// Token: 0x04004AC6 RID: 19142
+	// Token: 0x04004AEB RID: 19179
 	public const float TerrainXZScale = 0.00390625f;
 
-	// Token: 0x04004AC7 RID: 19143
+	// Token: 0x04004AEC RID: 19180
 	public static float SeaLevel = 58f;
 
-	// Token: 0x04004AC8 RID: 19144
+	// Token: 0x04004AED RID: 19181
 	public const int WaterBlockId = 840;
 
-	// Token: 0x04004AC9 RID: 19145
+	// Token: 0x04004AEE RID: 19182
 	public static byte MeshIndexTerrain = 0;
 
-	// Token: 0x04004ACA RID: 19146
+	// Token: 0x04004AEF RID: 19183
 	public static byte MeshIndexWater = 1;
 }

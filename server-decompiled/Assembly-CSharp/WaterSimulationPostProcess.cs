@@ -4,11 +4,11 @@ using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 
-// Token: 0x02000CE1 RID: 3297
+// Token: 0x02000CEC RID: 3308
 [BurstCompile(CompileSynchronously = true)]
 public struct WaterSimulationPostProcess : IJob
 {
-	// Token: 0x060064C2 RID: 25794 RVA: 0x0027A2C8 File Offset: 0x002784C8
+	// Token: 0x060064E7 RID: 25831 RVA: 0x0027B7F0 File Offset: 0x002799F0
 	public void Execute()
 	{
 		for (int i = 0; i < this.nonFlowingChunks.Length; i++)
@@ -32,15 +32,15 @@ public struct WaterSimulationPostProcess : IJob
 		}
 	}
 
-	// Token: 0x04004E98 RID: 20120
+	// Token: 0x04004EBD RID: 20157
 	public NativeArray<ChunkKey> processingChunks;
 
-	// Token: 0x04004E99 RID: 20121
+	// Token: 0x04004EBE RID: 20158
 	public NativeList<ChunkKey> nonFlowingChunks;
 
-	// Token: 0x04004E9A RID: 20122
+	// Token: 0x04004EBF RID: 20159
 	public UnsafeParallelHashSet<ChunkKey> activeChunks;
 
-	// Token: 0x04004E9B RID: 20123
+	// Token: 0x04004EC0 RID: 20160
 	public UnsafeParallelHashMap<ChunkKey, WaterDataHandle> waterDataHandles;
 }

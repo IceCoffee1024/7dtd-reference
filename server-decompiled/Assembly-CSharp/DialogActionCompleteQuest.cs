@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002E9 RID: 745
+// Token: 0x020002EB RID: 747
 [Preserve]
 public class DialogActionCompleteQuest : BaseDialogAction
 {
 	// Token: 0x17000255 RID: 597
-	// (get) Token: 0x0600155A RID: 5466 RVA: 0x000470B6 File Offset: 0x000452B6
+	// (get) Token: 0x0600155E RID: 5470 RVA: 0x00047076 File Offset: 0x00045276
 	public override BaseDialogAction.ActionTypes ActionType
 	{
 		get
@@ -15,7 +15,7 @@ public class DialogActionCompleteQuest : BaseDialogAction
 		}
 	}
 
-	// Token: 0x0600155B RID: 5467 RVA: 0x00080780 File Offset: 0x0007E980
+	// Token: 0x0600155F RID: 5471 RVA: 0x00080950 File Offset: 0x0007EB50
 	public override void PerformAction(EntityPlayer player)
 	{
 		if (base.ID != "")

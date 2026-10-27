@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x020003A0 RID: 928
+// Token: 0x020003A2 RID: 930
 public static class DynamicMeshServer
 {
-	// Token: 0x06001B9A RID: 7066 RVA: 0x000A4064 File Offset: 0x000A2264
+	// Token: 0x06001B9E RID: 7070 RVA: 0x000A4274 File Offset: 0x000A2474
 	public static void OnClientConnect(ClientInfo info)
 	{
 		DynamicMeshServer.GetData(info.entityId);
@@ -17,7 +17,7 @@ public static class DynamicMeshServer
 		}
 	}
 
-	// Token: 0x06001B9B RID: 7067 RVA: 0x000A40B8 File Offset: 0x000A22B8
+	// Token: 0x06001B9F RID: 7071 RVA: 0x000A42C8 File Offset: 0x000A24C8
 	public static void OnClientDisconnect(ClientInfo info)
 	{
 		int entityId = info.entityId;
@@ -32,7 +32,7 @@ public static class DynamicMeshServer
 		}
 	}
 
-	// Token: 0x06001B9C RID: 7068 RVA: 0x000A4130 File Offset: 0x000A2330
+	// Token: 0x06001BA0 RID: 7072 RVA: 0x000A4340 File Offset: 0x000A2540
 	public static void CleanUp()
 	{
 		DynamicMeshServer.ClientData.Clear();
@@ -48,7 +48,7 @@ public static class DynamicMeshServer
 		DynamicMeshServer.ActiveSyncs.Clear();
 	}
 
-	// Token: 0x06001B9D RID: 7069 RVA: 0x000A4178 File Offset: 0x000A2378
+	// Token: 0x06001BA1 RID: 7073 RVA: 0x000A4388 File Offset: 0x000A2588
 	public static void SendToAllClients(DynamicMeshItem item, bool isDelete)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.ClientCount() == 0)
@@ -59,7 +59,7 @@ public static class DynamicMeshServer
 		DynamicMeshServer.SyncRequests.Enqueue(dynamicMeshSyncRequest);
 	}
 
-	// Token: 0x06001B9E RID: 7070 RVA: 0x000A41A5 File Offset: 0x000A23A5
+	// Token: 0x06001BA2 RID: 7074 RVA: 0x000A43B5 File Offset: 0x000A25B5
 	public static void SyncRelease(DynamicMeshItem item)
 	{
 		if (item == null)
@@ -69,7 +69,7 @@ public static class DynamicMeshServer
 		DynamicMeshServer.SyncReleaseQueue.Enqueue(item);
 	}
 
-	// Token: 0x06001B9F RID: 7071 RVA: 0x000A41B8 File Offset: 0x000A23B8
+	// Token: 0x06001BA3 RID: 7075 RVA: 0x000A43C8 File Offset: 0x000A25C8
 	public static void Update()
 	{
 		for (;;)
@@ -211,7 +211,7 @@ public static class DynamicMeshServer
 		}
 	}
 
-	// Token: 0x06001BA0 RID: 7072 RVA: 0x000A478C File Offset: 0x000A298C
+	// Token: 0x06001BA4 RID: 7076 RVA: 0x000A499C File Offset: 0x000A2B9C
 	public static void ChunkRequested(long key, bool isFinal, ClientInfo client)
 	{
 		DynamicMeshClientConnection data = DynamicMeshServer.GetData(client.entityId);
@@ -222,7 +222,7 @@ public static class DynamicMeshServer
 		}
 	}
 
-	// Token: 0x06001BA1 RID: 7073 RVA: 0x000A47C0 File Offset: 0x000A29C0
+	// Token: 0x06001BA5 RID: 7077 RVA: 0x000A49D0 File Offset: 0x000A2BD0
 	public static DynamicMeshClientConnection GetData(int entityId)
 	{
 		DynamicMeshClientConnection dynamicMeshClientConnection;
@@ -234,19 +234,19 @@ public static class DynamicMeshServer
 		return dynamicMeshClientConnection;
 	}
 
-	// Token: 0x06001BA2 RID: 7074 RVA: 0x000A47F0 File Offset: 0x000A29F0
+	// Token: 0x06001BA6 RID: 7078 RVA: 0x000A4A00 File Offset: 0x000A2C00
 	public static DynamicMeshClientConnection GetData(NetPackage package)
 	{
 		return DynamicMeshServer.GetData(package.Sender.entityId);
 	}
 
-	// Token: 0x06001BA3 RID: 7075 RVA: 0x000A4802 File Offset: 0x000A2A02
+	// Token: 0x06001BA7 RID: 7079 RVA: 0x000A4A12 File Offset: 0x000A2C12
 	public static void ClientMessageRecieved(NetPackageDynamicClientArrive package)
 	{
 		DynamicMeshServer.GetData(package).UpdateItemsToSend(package);
 	}
 
-	// Token: 0x06001BA4 RID: 7076 RVA: 0x000A4810 File Offset: 0x000A2A10
+	// Token: 0x06001BA8 RID: 7080 RVA: 0x000A4A20 File Offset: 0x000A2C20
 	public static void ProcessDelayedPackages()
 	{
 		if (DynamicMeshManager.DoLog)
@@ -259,44 +259,44 @@ public static class DynamicMeshServer
 		}
 	}
 
-	// Token: 0x06001BA5 RID: 7077 RVA: 0x000A4890 File Offset: 0x000A2A90
+	// Token: 0x06001BA9 RID: 7081 RVA: 0x000A4AA0 File Offset: 0x000A2CA0
 	public static void ClientReadyForNextMesh(NetPackageDynamicMesh package)
 	{
 		DynamicMeshServer.GetData(package).SendMessage = true;
 	}
 
-	// Token: 0x040011C6 RID: 4550
+	// Token: 0x040011D6 RID: 4566
 	public static Dictionary<int, DynamicMeshClientConnection> ClientData = new Dictionary<int, DynamicMeshClientConnection>();
 
-	// Token: 0x040011C7 RID: 4551
+	// Token: 0x040011D7 RID: 4567
 	public static List<NetPackageDynamicClientArrive> DelayedClientChecks = new List<NetPackageDynamicClientArrive>();
 
-	// Token: 0x040011C8 RID: 4552
+	// Token: 0x040011D8 RID: 4568
 	public static bool AutoSend = false;
 
-	// Token: 0x040011C9 RID: 4553
+	// Token: 0x040011D9 RID: 4569
 	public static DynamicMeshServerType ConnectionType = DynamicMeshServerType.Mesh;
 
-	// Token: 0x040011CA RID: 4554
+	// Token: 0x040011DA RID: 4570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float debugTime = 0f;
 
-	// Token: 0x040011CB RID: 4555
+	// Token: 0x040011DB RID: 4571
 	public static bool ResendPackages = true;
 
-	// Token: 0x040011CC RID: 4556
+	// Token: 0x040011DC RID: 4572
 	public static bool ShowSender = true;
 
-	// Token: 0x040011CD RID: 4557
+	// Token: 0x040011DD RID: 4573
 	public static ConcurrentQueue<DynamicMeshSyncRequest> SyncRequests = new ConcurrentQueue<DynamicMeshSyncRequest>();
 
-	// Token: 0x040011CE RID: 4558
+	// Token: 0x040011DE RID: 4574
 	public static List<DynamicMeshSyncRequest> ActiveSyncs = new List<DynamicMeshSyncRequest>();
 
-	// Token: 0x040011CF RID: 4559
+	// Token: 0x040011DF RID: 4575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConcurrentQueue<DynamicMeshItem> SyncReleaseQueue = new ConcurrentQueue<DynamicMeshItem>();
 
-	// Token: 0x040011D0 RID: 4560
+	// Token: 0x040011E0 RID: 4576
 	public static int MaxActiveSyncs = 10;
 }

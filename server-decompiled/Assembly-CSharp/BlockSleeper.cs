@@ -7,14 +7,14 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSleeper : Block
 {
-	// Token: 0x06000936 RID: 2358 RVA: 0x0004027C File Offset: 0x0003E47C
+	// Token: 0x06000936 RID: 2358 RVA: 0x0004023C File Offset: 0x0003E43C
 	public BlockSleeper()
 	{
 		this.IsSleeperBlock = true;
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000937 RID: 2359 RVA: 0x000402C4 File Offset: 0x0003E4C4
+	// Token: 0x06000937 RID: 2359 RVA: 0x00040284 File Offset: 0x0003E484
 	public override void Init()
 	{
 		base.Init();
@@ -46,13 +46,13 @@ public class BlockSleeper : Block
 		base.Properties.ParseEnum<BlockSleeper.eMode>(BlockSleeper.PropSpawnMode, ref this.spawnMode);
 	}
 
-	// Token: 0x06000938 RID: 2360 RVA: 0x000403B4 File Offset: 0x0003E5B4
+	// Token: 0x06000938 RID: 2360 RVA: 0x00040374 File Offset: 0x0003E574
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		return _world.IsEditor() || base.CanPlaceBlockAt(_world, _blockPos, _blockValue, _bOmitCollideCheck);
 	}
 
-	// Token: 0x06000939 RID: 2361 RVA: 0x000403CC File Offset: 0x0003E5CC
+	// Token: 0x06000939 RID: 2361 RVA: 0x0004038C File Offset: 0x0003E58C
 	public float GetSleeperRotation(BlockValue _blockValue)
 	{
 		byte rotation = _blockValue.rotation;
@@ -82,7 +82,7 @@ public class BlockSleeper : Block
 		}
 	}
 
-	// Token: 0x0600093A RID: 2362 RVA: 0x0004043F File Offset: 0x0003E63F
+	// Token: 0x0600093A RID: 2362 RVA: 0x000403FF File Offset: 0x0003E5FF
 	public bool ExcludesWalkType(int _walkType)
 	{
 		return this.excludedWalkTypes != null && this.excludedWalkTypes.Contains(_walkType);

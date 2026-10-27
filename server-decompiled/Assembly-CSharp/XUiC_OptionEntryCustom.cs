@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DA4 RID: 3492
+// Token: 0x02000DAF RID: 3503
 [Preserve]
 public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 {
-	// Token: 0x17000B69 RID: 2921
-	// (get) Token: 0x060069B7 RID: 27063 RVA: 0x0029C5BA File Offset: 0x0029A7BA
+	// Token: 0x17000B6F RID: 2927
+	// (get) Token: 0x060069DC RID: 27100 RVA: 0x0029DAE2 File Offset: 0x0029BCE2
 	public override bool IsChanged
 	{
 		get
@@ -16,8 +16,8 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		}
 	}
 
-	// Token: 0x17000B6A RID: 2922
-	// (get) Token: 0x060069B8 RID: 27064 RVA: 0x0029C5CD File Offset: 0x0029A7CD
+	// Token: 0x17000B70 RID: 2928
+	// (get) Token: 0x060069DD RID: 27101 RVA: 0x0029DAF5 File Offset: 0x0029BCF5
 	public override bool IsDefault
 	{
 		get
@@ -27,7 +27,7 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		}
 	}
 
-	// Token: 0x060069B9 RID: 27065 RVA: 0x0029C5E0 File Offset: 0x0029A7E0
+	// Token: 0x060069DE RID: 27102 RVA: 0x0029DB08 File Offset: 0x0029BD08
 	[XuiBindEvent("OnValueChangedGeneric", "comboGeneric")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnComboValueChanged(XUiController _sender)
@@ -35,7 +35,7 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		this.SelectionChanged();
 	}
 
-	// Token: 0x060069BA RID: 27066 RVA: 0x0029C5E8 File Offset: 0x0029A7E8
+	// Token: 0x060069DF RID: 27103 RVA: 0x0029DB10 File Offset: 0x0029BD10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void initCurrentValue()
 	{
@@ -48,7 +48,7 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		XUiC_OptionEntryAbs.DebugLog("GOT CURRENT CUSTOMVALUE FOR ");
 	}
 
-	// Token: 0x060069BB RID: 27067 RVA: 0x0029C638 File Offset: 0x0029A838
+	// Token: 0x060069E0 RID: 27104 RVA: 0x0029DB60 File Offset: 0x0029BD60
 	public override void DiscardCurrentChange()
 	{
 		Action discardChanges = this.DiscardChanges;
@@ -67,7 +67,7 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		XUiC_OptionEntryAbs.DebugLog("DISCARDED CUSTOMVALUE FOR ");
 	}
 
-	// Token: 0x060069BC RID: 27068 RVA: 0x0029C670 File Offset: 0x0029A870
+	// Token: 0x060069E1 RID: 27105 RVA: 0x0029DB98 File Offset: 0x0029BD98
 	public override void ApplySelection()
 	{
 		if (this.ApplyChanges == null)
@@ -80,7 +80,7 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060069BD RID: 27069 RVA: 0x0029C6C8 File Offset: 0x0029A8C8
+	// Token: 0x060069E2 RID: 27106 RVA: 0x0029DBF0 File Offset: 0x0029BDF0
 	public override void ResetToDefault()
 	{
 		if (!base.ApplyDefaults)
@@ -105,7 +105,7 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		base.invokeValueChanged();
 	}
 
-	// Token: 0x060069BE RID: 27070 RVA: 0x0029C741 File Offset: 0x0029A941
+	// Token: 0x060069E3 RID: 27107 RVA: 0x0029DC69 File Offset: 0x0029BE69
 	public void SelectionChanged()
 	{
 		if (base.ApplyImmediately)
@@ -119,25 +119,25 @@ public class XUiC_OptionEntryCustom : XUiC_OptionEntryAbs
 		base.invokeValueChanged();
 	}
 
-	// Token: 0x04005154 RID: 20820
+	// Token: 0x04005179 RID: 20857
 	public Func<bool> IsChangedDelegate;
 
-	// Token: 0x04005155 RID: 20821
+	// Token: 0x0400517A RID: 20858
 	public Func<bool> IsDefaultDelegate;
 
-	// Token: 0x04005156 RID: 20822
+	// Token: 0x0400517B RID: 20859
 	public Action GetSettingValue;
 
-	// Token: 0x04005157 RID: 20823
+	// Token: 0x0400517C RID: 20860
 	public Action DiscardChanges;
 
-	// Token: 0x04005158 RID: 20824
+	// Token: 0x0400517D RID: 20861
 	public XUiC_OptionEntryCustom.ApplyChangesDelegate ApplyChanges;
 
-	// Token: 0x04005159 RID: 20825
+	// Token: 0x0400517E RID: 20862
 	public Action ResetDefaults;
 
-	// Token: 0x02000DA5 RID: 3493
-	// (Invoke) Token: 0x060069C1 RID: 27073
+	// Token: 0x02000DB0 RID: 3504
+	// (Invoke) Token: 0x060069E6 RID: 27110
 	public delegate void ApplyChangesDelegate(bool _isImmediateApply);
 }

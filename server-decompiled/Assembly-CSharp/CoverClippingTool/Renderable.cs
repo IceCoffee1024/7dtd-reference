@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace CoverClippingTool
 {
-	// Token: 0x02001690 RID: 5776
+	// Token: 0x020016A2 RID: 5794
 	public struct Renderable
 	{
-		// Token: 0x04008777 RID: 34679
+		// Token: 0x040087B8 RID: 34744
 		public bool DestroyMesh;
 
-		// Token: 0x04008778 RID: 34680
+		// Token: 0x040087B9 RID: 34745
 		public Mesh RenderMesh;
 
-		// Token: 0x04008779 RID: 34681
+		// Token: 0x040087BA RID: 34746
 		public Matrix4x4 LocalToWorldMatrix;
 	}
 }

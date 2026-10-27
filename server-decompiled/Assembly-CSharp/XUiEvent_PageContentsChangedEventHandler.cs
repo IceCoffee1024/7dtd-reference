@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000E9A RID: 3738
-// (Invoke) Token: 0x0600738B RID: 29579
+// Token: 0x02000EA5 RID: 3749
+// (Invoke) Token: 0x060073B0 RID: 29616
 public delegate void XUiEvent_PageContentsChangedEventHandler<T>(XUiC_List<T> _list) where T : XUiListEntry<T>;

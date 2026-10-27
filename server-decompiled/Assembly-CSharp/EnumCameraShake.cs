@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020011A4 RID: 4516
+// Token: 0x020011B4 RID: 4532
 public enum EnumCameraShake
 {
-	// Token: 0x040069BA RID: 27066
+	// Token: 0x040069FA RID: 27130
 	None,
-	// Token: 0x040069BB RID: 27067
+	// Token: 0x040069FB RID: 27131
 	Tiny,
-	// Token: 0x040069BC RID: 27068
+	// Token: 0x040069FC RID: 27132
 	Small,
-	// Token: 0x040069BD RID: 27069
+	// Token: 0x040069FD RID: 27133
 	Big
 }

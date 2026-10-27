@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E77 RID: 3703
+// Token: 0x02000E82 RID: 3714
 [Preserve]
 public class XUiC_WorldSelectionPopup : XUiController
 {
-	// Token: 0x17000D08 RID: 3336
-	// (get) Token: 0x0600719C RID: 29084 RVA: 0x002BC6E0 File Offset: 0x002BA8E0
-	// (set) Token: 0x0600719D RID: 29085 RVA: 0x002BC6E8 File Offset: 0x002BA8E8
+	// Token: 0x17000D0E RID: 3342
+	// (get) Token: 0x060071C1 RID: 29121 RVA: 0x002BDC4C File Offset: 0x002BBE4C
+	// (set) Token: 0x060071C2 RID: 29122 RVA: 0x002BDC54 File Offset: 0x002BBE54
 	[XuiXmlBinding("msgTitle")]
 	public string MsgTitle
 	{
@@ -17,7 +17,7 @@ public class XUiC_WorldSelectionPopup : XUiController
 		set;
 	} = string.Empty;
 
-	// Token: 0x0600719E RID: 29086 RVA: 0x002BC6F1 File Offset: 0x002BA8F1
+	// Token: 0x060071C3 RID: 29123 RVA: 0x002BDC5D File Offset: 0x002BBE5D
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCancelButtonPressed(XUiController _sender, int _mouseButton)
@@ -25,7 +25,7 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.cancel();
 	}
 
-	// Token: 0x0600719F RID: 29087 RVA: 0x002BC6F9 File Offset: 0x002BA8F9
+	// Token: 0x060071C4 RID: 29124 RVA: 0x002BDC65 File Offset: 0x002BBE65
 	[XuiBindEvent("OnPress", "btnConfirm")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnConfirmButtonPressed(XUiController _sender, int _mouseButton)
@@ -33,8 +33,8 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.confirm();
 	}
 
-	// Token: 0x17000D09 RID: 3337
-	// (get) Token: 0x060071A0 RID: 29088 RVA: 0x002BC701 File Offset: 0x002BA901
+	// Token: 0x17000D0F RID: 3343
+	// (get) Token: 0x060071C5 RID: 29125 RVA: 0x002BDC6D File Offset: 0x002BBE6D
 	[XuiXmlBinding("isWorldSelected")]
 	public bool IsWorldSelected
 	{
@@ -46,7 +46,7 @@ public class XUiC_WorldSelectionPopup : XUiController
 		}
 	}
 
-	// Token: 0x060071A1 RID: 29089 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x060071C6 RID: 29126 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[XuiBindEvent("SelectionChanged", "worldList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldList_SelectionChanged(XUiC_List<XUiC_WorldSelectionList.Entry> _list, XUiC_WorldSelectionList.Entry _previousEntry, XUiC_WorldSelectionList.Entry _newEntry)
@@ -54,14 +54,14 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060071A2 RID: 29090 RVA: 0x002BC714 File Offset: 0x002BA914
+	// Token: 0x060071C7 RID: 29127 RVA: 0x002BDC80 File Offset: 0x002BBE80
 	public override void Init()
 	{
 		base.Init();
 		XUiC_WorldSelectionPopup.id = this.windowGroup.Id;
 	}
 
-	// Token: 0x060071A3 RID: 29091 RVA: 0x002BC72C File Offset: 0x002BA92C
+	// Token: 0x060071C8 RID: 29128 RVA: 0x002BDC98 File Offset: 0x002BBE98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void open(string _titleCaptionKey, string _worldName, Action _onCancel, Action<PathAbstractions.AbstractedLocation> _onConfirm)
 	{
@@ -80,13 +80,13 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.xui.playerUI.windowManager.Open(this.windowGroup, false);
 	}
 
-	// Token: 0x060071A4 RID: 29092 RVA: 0x002BC7A2 File Offset: 0x002BA9A2
+	// Token: 0x060071C9 RID: 29129 RVA: 0x002BDD0E File Offset: 0x002BBF0E
 	public static void Open(XUi _xui, string _titleCaptionKey, string _worldName, Action _onCancel, Action<PathAbstractions.AbstractedLocation> _onConfirm)
 	{
 		((XUiC_WorldSelectionPopup)_xui.FindWindowGroupByName(XUiC_WorldSelectionPopup.id)).open(_titleCaptionKey, _worldName, _onCancel, _onConfirm);
 	}
 
-	// Token: 0x060071A5 RID: 29093 RVA: 0x002BC7C0 File Offset: 0x002BA9C0
+	// Token: 0x060071CA RID: 29130 RVA: 0x002BDD2C File Offset: 0x002BBF2C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -109,7 +109,7 @@ public class XUiC_WorldSelectionPopup : XUiController
 		}
 	}
 
-	// Token: 0x060071A6 RID: 29094 RVA: 0x002BC855 File Offset: 0x002BAA55
+	// Token: 0x060071CB RID: 29131 RVA: 0x002BDDC1 File Offset: 0x002BBFC1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cancel()
 	{
@@ -121,7 +121,7 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x060071A7 RID: 29095 RVA: 0x002BC884 File Offset: 0x002BAA84
+	// Token: 0x060071CC RID: 29132 RVA: 0x002BDDF0 File Offset: 0x002BBFF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void confirm()
 	{
@@ -137,7 +137,7 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x060071A8 RID: 29096 RVA: 0x002BC8DC File Offset: 0x002BAADC
+	// Token: 0x060071CD RID: 29133 RVA: 0x002BDE48 File Offset: 0x002BC048
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -145,29 +145,29 @@ public class XUiC_WorldSelectionPopup : XUiController
 		this.onConfirm = null;
 	}
 
-	// Token: 0x040055D6 RID: 21974
+	// Token: 0x040055FB RID: 22011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string id;
 
-	// Token: 0x040055D8 RID: 21976
+	// Token: 0x040055FD RID: 22013
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x040055D9 RID: 21977
+	// Token: 0x040055FE RID: 22014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onCancel;
 
-	// Token: 0x040055DA RID: 21978
+	// Token: 0x040055FF RID: 22015
 	[XuiBindComponent("btnConfirm", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnConfirm;
 
-	// Token: 0x040055DB RID: 21979
+	// Token: 0x04005600 RID: 22016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<PathAbstractions.AbstractedLocation> onConfirm;
 
-	// Token: 0x040055DC RID: 21980
+	// Token: 0x04005601 RID: 22017
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldSelectionList worldList;

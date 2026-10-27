@@ -3,10 +3,10 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AA1 RID: 6817
+	// Token: 0x02001AD2 RID: 6866
 	public interface ILayerable
 	{
-		// Token: 0x0600CE3D RID: 52797
+		// Token: 0x0600CF51 RID: 53073
 		void SetLayer(LayerType _layer);
 	}
 }

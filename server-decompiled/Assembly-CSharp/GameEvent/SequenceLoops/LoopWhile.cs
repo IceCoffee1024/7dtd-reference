@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceLoops
 {
-	// Token: 0x02001978 RID: 6520
+	// Token: 0x020019A9 RID: 6569
 	[Preserve]
 	public class LoopWhile : BaseLoop
 	{
-		// Token: 0x1700193D RID: 6461
-		// (get) Token: 0x0600C8E7 RID: 51431 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001985 RID: 6533
+		// (get) Token: 0x0600C9FB RID: 51707 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override bool UseRequirements
 		{
 			get
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceLoops
 			}
 		}
 
-		// Token: 0x0600C8E8 RID: 51432 RVA: 0x00496B3C File Offset: 0x00494D3C
+		// Token: 0x0600C9FC RID: 51708 RVA: 0x0049A530 File Offset: 0x00498730
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (!this.runLoop)
@@ -41,7 +41,7 @@ namespace GameEvent.SequenceLoops
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C8E9 RID: 51433 RVA: 0x00496BA8 File Offset: 0x00494DA8
+		// Token: 0x0600C9FD RID: 51709 RVA: 0x0049A59C File Offset: 0x0049879C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckCondition()
 		{
@@ -75,14 +75,14 @@ namespace GameEvent.SequenceLoops
 			return true;
 		}
 
-		// Token: 0x0600C8EA RID: 51434 RVA: 0x00496C48 File Offset: 0x00494E48
+		// Token: 0x0600C9FE RID: 51710 RVA: 0x0049A63C File Offset: 0x0049883C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<LoopWhile.ConditionTypes>(LoopWhile.PropConditionType, ref this.ConditionType);
 		}
 
-		// Token: 0x0600C8EB RID: 51435 RVA: 0x00496C62 File Offset: 0x00494E62
+		// Token: 0x0600C9FF RID: 51711 RVA: 0x0049A656 File Offset: 0x00498856
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -92,23 +92,23 @@ namespace GameEvent.SequenceLoops
 			};
 		}
 
-		// Token: 0x040096F7 RID: 38647
+		// Token: 0x040097E0 RID: 38880
 		public LoopWhile.ConditionTypes ConditionType = LoopWhile.ConditionTypes.All;
 
-		// Token: 0x040096F8 RID: 38648
+		// Token: 0x040097E1 RID: 38881
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropConditionType = "condition_type";
 
-		// Token: 0x040096F9 RID: 38649
+		// Token: 0x040097E2 RID: 38882
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool runLoop;
 
-		// Token: 0x02001979 RID: 6521
+		// Token: 0x020019AA RID: 6570
 		public enum ConditionTypes
 		{
-			// Token: 0x040096FB RID: 38651
+			// Token: 0x040097E4 RID: 38884
 			Any,
-			// Token: 0x040096FC RID: 38652
+			// Token: 0x040097E5 RID: 38885
 			All
 		}
 	}

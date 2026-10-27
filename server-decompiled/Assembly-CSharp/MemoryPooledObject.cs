@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001463 RID: 5219
+// Token: 0x02001475 RID: 5237
 public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 {
-	// Token: 0x0600A39A RID: 41882 RVA: 0x003D350A File Offset: 0x003D170A
+	// Token: 0x0600A3F2 RID: 41970 RVA: 0x003D590E File Offset: 0x003D3B0E
 	public MemoryPooledObject(int _maxCapacity)
 	{
 		this.pool = new List<T>(_maxCapacity);
 		this.maxCapacity = _maxCapacity;
 	}
 
-	// Token: 0x0600A39B RID: 41883 RVA: 0x003D3525 File Offset: 0x003D1725
+	// Token: 0x0600A3F3 RID: 41971 RVA: 0x003D5929 File Offset: 0x003D3B29
 	public void SetCapacity(int _maxCapacity)
 	{
 		this.pool.Capacity = _maxCapacity;
 		this.maxCapacity = _maxCapacity;
 	}
 
-	// Token: 0x0600A39C RID: 41884 RVA: 0x003D353C File Offset: 0x003D173C
+	// Token: 0x0600A3F4 RID: 41972 RVA: 0x003D5940 File Offset: 0x003D3B40
 	public T AllocSync(bool _bReset)
 	{
 		List<T> list = this.pool;
@@ -30,7 +30,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		return t;
 	}
 
-	// Token: 0x0600A39D RID: 41885 RVA: 0x003D3580 File Offset: 0x003D1780
+	// Token: 0x0600A3F5 RID: 41973 RVA: 0x003D5984 File Offset: 0x003D3B84
 	public T Alloc(bool _bReset)
 	{
 		T t;
@@ -51,7 +51,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		return t;
 	}
 
-	// Token: 0x0600A39E RID: 41886 RVA: 0x003D35E8 File Offset: 0x003D17E8
+	// Token: 0x0600A3F6 RID: 41974 RVA: 0x003D59EC File Offset: 0x003D3BEC
 	public void FreeSync(IList<T> _array)
 	{
 		List<T> list = this.pool;
@@ -69,7 +69,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		}
 	}
 
-	// Token: 0x0600A39F RID: 41887 RVA: 0x003D365C File Offset: 0x003D185C
+	// Token: 0x0600A3F7 RID: 41975 RVA: 0x003D5A60 File Offset: 0x003D3C60
 	public void FreeSync(Queue<T> _queue)
 	{
 		List<T> list = this.pool;
@@ -82,7 +82,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		}
 	}
 
-	// Token: 0x0600A3A0 RID: 41888 RVA: 0x003D36B0 File Offset: 0x003D18B0
+	// Token: 0x0600A3F8 RID: 41976 RVA: 0x003D5AB4 File Offset: 0x003D3CB4
 	public void FreeSync(T _t)
 	{
 		List<T> list = this.pool;
@@ -92,7 +92,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		}
 	}
 
-	// Token: 0x0600A3A1 RID: 41889 RVA: 0x003D36F4 File Offset: 0x003D18F4
+	// Token: 0x0600A3F9 RID: 41977 RVA: 0x003D5AF8 File Offset: 0x003D3CF8
 	public void Free(T[] _array)
 	{
 		for (int i = 0; i < _array.Length; i++)
@@ -106,7 +106,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		}
 	}
 
-	// Token: 0x0600A3A2 RID: 41890 RVA: 0x003D3738 File Offset: 0x003D1938
+	// Token: 0x0600A3FA RID: 41978 RVA: 0x003D5B3C File Offset: 0x003D3D3C
 	public void Free(List<T> _list)
 	{
 		for (int i = 0; i < _list.Count; i++)
@@ -120,7 +120,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		_list.Clear();
 	}
 
-	// Token: 0x0600A3A3 RID: 41891 RVA: 0x003D3774 File Offset: 0x003D1974
+	// Token: 0x0600A3FB RID: 41979 RVA: 0x003D5B78 File Offset: 0x003D3D78
 	public void Cleanup()
 	{
 		List<T> list = this.pool;
@@ -139,7 +139,7 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		}
 	}
 
-	// Token: 0x0600A3A4 RID: 41892 RVA: 0x003D37F4 File Offset: 0x003D19F4
+	// Token: 0x0600A3FC RID: 41980 RVA: 0x003D5BF8 File Offset: 0x003D3DF8
 	public void Free(T _t)
 	{
 		if (this.poolSize >= this.pool.Count && this.poolSize < this.maxCapacity)
@@ -161,21 +161,21 @@ public class MemoryPooledObject<T> where T : IMemoryPoolableObject, new()
 		_t.Cleanup();
 	}
 
-	// Token: 0x0600A3A5 RID: 41893 RVA: 0x003D3890 File Offset: 0x003D1A90
+	// Token: 0x0600A3FD RID: 41981 RVA: 0x003D5C94 File Offset: 0x003D3E94
 	public int GetPoolSize()
 	{
 		return this.poolSize;
 	}
 
-	// Token: 0x04007AA3 RID: 31395
+	// Token: 0x04007AE4 RID: 31460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T> pool;
 
-	// Token: 0x04007AA4 RID: 31396
+	// Token: 0x04007AE5 RID: 31461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int poolSize;
 
-	// Token: 0x04007AA5 RID: 31397
+	// Token: 0x04007AE6 RID: 31462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxCapacity;
 }

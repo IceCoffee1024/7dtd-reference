@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{DD4E94CE-C473-4FA8-A607-54649C4C87DB}</ProjectGuid>
+    <ProjectGuid>{A5BAC4D5-1B96-4E46-9051-E9727E2E9E3D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LogLibrary</RootNamespace>
     <AssemblyName>LogLibrary</AssemblyName>
@@ -21,7 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnityEngine.CoreModule\UnityEngine.CoreModule.csproj">
-      <Project>{DD4E94CE-C473-4FA8-A607-54649C4C87DC}</Project>
+      <Project>{A5BAC4D5-1B96-4E46-9051-E9727E2E9E3E}</Project>
       <Name>UnityEngine.CoreModule</Name>
     </ProjectReference>
   </ItemGroup>

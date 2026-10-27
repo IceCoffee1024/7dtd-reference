@@ -2,10 +2,10 @@
 
 namespace MusicUtils
 {
-	// Token: 0x02001A41 RID: 6721
+	// Token: 0x02001A72 RID: 6770
 	public class LogarithmicCurve : LinearCurve
 	{
-		// Token: 0x0600CC6A RID: 52330 RVA: 0x004A9F54 File Offset: 0x004A8154
+		// Token: 0x0600CD7E RID: 52606 RVA: 0x004ADA50 File Offset: 0x004ABC50
 		public LogarithmicCurve(double _base, double _scale, float _start, float _end, float _startX, float _endX)
 			: base((float)Math.Pow(_base, (double)_start / _scale), (float)Math.Pow(_base, (double)_end / _scale), _startX, _endX)
 		{
@@ -20,21 +20,21 @@ namespace MusicUtils
 			this.max = _start;
 		}
 
-		// Token: 0x0600CC6B RID: 52331 RVA: 0x004A9FBD File Offset: 0x004A81BD
+		// Token: 0x0600CD7F RID: 52607 RVA: 0x004ADAB9 File Offset: 0x004ABCB9
 		public override float GetMixerValue(float _param)
 		{
 			return Utils.FastClamp((float)Math.Log((double)Math.Max(base.GetLine(_param), 0f), this.b), this.min, this.max);
 		}
 
-		// Token: 0x04009B15 RID: 39701
+		// Token: 0x04009BFE RID: 39934
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly double b;
 
-		// Token: 0x04009B16 RID: 39702
+		// Token: 0x04009BFF RID: 39935
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly float min;
 
-		// Token: 0x04009B17 RID: 39703
+		// Token: 0x04009C00 RID: 39936
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly float max;
 	}

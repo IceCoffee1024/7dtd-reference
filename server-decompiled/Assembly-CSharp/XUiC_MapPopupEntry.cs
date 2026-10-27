@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F99 RID: 3993
+// Token: 0x02000FA9 RID: 4009
 [Preserve]
 public class XUiC_MapPopupEntry : XUiController
 {
-	// Token: 0x06007DC0 RID: 32192 RVA: 0x002FCF6C File Offset: 0x002FB16C
+	// Token: 0x06007E0F RID: 32271 RVA: 0x002FEA88 File Offset: 0x002FCC88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{

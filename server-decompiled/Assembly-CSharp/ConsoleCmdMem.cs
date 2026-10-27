@@ -5,11 +5,11 @@ using SystemInformation;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000247 RID: 583
+// Token: 0x02000249 RID: 585
 [Preserve]
 public class ConsoleCmdMem : ConsoleCmdAbstract
 {
-	// Token: 0x0600115D RID: 4445 RVA: 0x0006E3DB File Offset: 0x0006C5DB
+	// Token: 0x06001161 RID: 4449 RVA: 0x0006E5AB File Offset: 0x0006C7AB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -17,7 +17,7 @@ public class ConsoleCmdMem : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001B0 RID: 432
-	// (get) Token: 0x0600115E RID: 4446 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001162 RID: 4450 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -26,21 +26,21 @@ public class ConsoleCmdMem : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600115F RID: 4447 RVA: 0x0006E3EB File Offset: 0x0006C5EB
+	// Token: 0x06001163 RID: 4451 RVA: 0x0006E5BB File Offset: 0x0006C7BB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Prints memory information and unloads resources or changes garbage collector";
 	}
 
-	// Token: 0x06001160 RID: 4448 RVA: 0x0006E3F2 File Offset: 0x0006C5F2
+	// Token: 0x06001164 RID: 4452 RVA: 0x0006E5C2 File Offset: 0x0006C7C2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Commands:\nclean - cleanup memory pools\npools - list memory pools\ngc - show GC info\ngc alloc <value> - allocate k value of temp memory\ngc perm <value> - allocate k value of permanent memory\ngc clearperm - clear permanent allocations list\ngc c - run collection\ngc enable <value> - enable GC (0 or 1)\ngc inc <value> - run incremental collect for value ms\ngc inctime <value> - set incremental collect time in ms\nobj [mode] - list object pool (active or all)\nobjs - shrink object pool\nlog [interval] - start/stop logging of performance data to a file";
 	}
 
-	// Token: 0x06001161 RID: 4449 RVA: 0x0006E3FC File Offset: 0x0006C5FC
+	// Token: 0x06001165 RID: 4453 RVA: 0x0006E5CC File Offset: 0x0006C7CC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count >= 1 && _params[0] == "gc")
@@ -224,7 +224,7 @@ public class ConsoleCmdMem : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001162 RID: 4450 RVA: 0x0006E9BC File Offset: 0x0006CBBC
+	// Token: 0x06001166 RID: 4454 RVA: 0x0006EB8C File Offset: 0x0006CD8C
 	public static string GetStats(bool _bDoGc, GameManager _gm)
 	{
 		ConsoleCmdMem.FillStats(_bDoGc, _gm);
@@ -261,7 +261,7 @@ public class ConsoleCmdMem : ConsoleCmdAbstract
 		});
 	}
 
-	// Token: 0x06001163 RID: 4451 RVA: 0x0006EB04 File Offset: 0x0006CD04
+	// Token: 0x06001167 RID: 4455 RVA: 0x0006ECD4 File Offset: 0x0006CED4
 	public static void FillStats(bool _bDoGc, GameManager _gm)
 	{
 		World world = _gm.World;
@@ -280,7 +280,7 @@ public class ConsoleCmdMem : ConsoleCmdAbstract
 		ConsoleCmdMem.Stats[11] = ((float)GetRSS.GetCurrentRSS() / 1024f / 1024f).ToCultureInvariantString("0.0");
 	}
 
-	// Token: 0x06001164 RID: 4452 RVA: 0x0006EC6D File Offset: 0x0006CE6D
+	// Token: 0x06001168 RID: 4456 RVA: 0x0006EE3D File Offset: 0x0006D03D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator logCoroutine(string _filename, float _interval)
 	{
@@ -305,14 +305,14 @@ public class ConsoleCmdMem : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x04000CD9 RID: 3289
+	// Token: 0x04000CDA RID: 3290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<byte[]> permanentAllocs = new List<byte[]>();
 
-	// Token: 0x04000CDA RID: 3290
+	// Token: 0x04000CDB RID: 3291
 	public static string[] Stats = new string[12];
 
-	// Token: 0x04000CDB RID: 3291
+	// Token: 0x04000CDC RID: 3292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool loggingEnabed;
 }

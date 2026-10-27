@@ -3,13 +3,13 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200109B RID: 4251
+// Token: 0x020010AB RID: 4267
 [Preserve]
 public class XUiC_ToolTip : XUiController
 {
-	// Token: 0x17000FE0 RID: 4064
-	// (get) Token: 0x060086D8 RID: 34520 RVA: 0x00338009 File Offset: 0x00336209
-	// (set) Token: 0x060086D9 RID: 34521 RVA: 0x00338014 File Offset: 0x00336214
+	// Token: 0x17000FEB RID: 4075
+	// (get) Token: 0x0600872B RID: 34603 RVA: 0x0033A08D File Offset: 0x0033828D
+	// (set) Token: 0x0600872C RID: 34604 RVA: 0x0033A098 File Offset: 0x00338298
 	public string ToolTip
 	{
 		get
@@ -45,7 +45,7 @@ public class XUiC_ToolTip : XUiController
 		}
 	}
 
-	// Token: 0x060086DA RID: 34522 RVA: 0x003380D2 File Offset: 0x003362D2
+	// Token: 0x0600872D RID: 34605 RVA: 0x0033A156 File Offset: 0x00338356
 	public override void Init()
 	{
 		base.Init();
@@ -53,14 +53,14 @@ public class XUiC_ToolTip : XUiController
 		this.border = (XUiV_Sprite)base.GetChildById("sprBackgroundBorder").ViewComponent;
 	}
 
-	// Token: 0x060086DB RID: 34523 RVA: 0x00338101 File Offset: 0x00336301
+	// Token: 0x0600872E RID: 34606 RVA: 0x0033A185 File Offset: 0x00338385
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.ToolTipWindow = null;
 	}
 
-	// Token: 0x060086DC RID: 34524 RVA: 0x00338118 File Offset: 0x00336318
+	// Token: 0x0600872F RID: 34607 RVA: 0x0033A19C File Offset: 0x0033839C
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -83,7 +83,7 @@ public class XUiC_ToolTip : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x060086DD RID: 34525 RVA: 0x0033821C File Offset: 0x0033641C
+	// Token: 0x06008730 RID: 34608 RVA: 0x0033A2A0 File Offset: 0x003384A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -105,7 +105,7 @@ public class XUiC_ToolTip : XUiController
 		return true;
 	}
 
-	// Token: 0x060086DE RID: 34526 RVA: 0x003382B8 File Offset: 0x003364B8
+	// Token: 0x06008731 RID: 34609 RVA: 0x0033A33C File Offset: 0x0033853C
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "show_delay")
@@ -121,29 +121,29 @@ public class XUiC_ToolTip : XUiController
 		return true;
 	}
 
-	// Token: 0x04006437 RID: 25655
+	// Token: 0x04006476 RID: 25718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite border;
 
-	// Token: 0x04006438 RID: 25656
+	// Token: 0x04006477 RID: 25719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tooltip = "";
 
-	// Token: 0x04006439 RID: 25657
+	// Token: 0x04006478 RID: 25720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tooltipOld = "";
 
-	// Token: 0x0400643A RID: 25658
+	// Token: 0x04006479 RID: 25721
 	public float ShowDelaySec = 0.3f;
 
-	// Token: 0x0400643B RID: 25659
+	// Token: 0x0400647A RID: 25722
 	public Vector2i PositionOffset = new Vector2i(0, -36);
 
-	// Token: 0x0400643C RID: 25660
+	// Token: 0x0400647B RID: 25723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float showDelay;
 
-	// Token: 0x0400643D RID: 25661
+	// Token: 0x0400647C RID: 25724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool show;
 }

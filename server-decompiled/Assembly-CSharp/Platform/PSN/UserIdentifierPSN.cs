@@ -3,14 +3,14 @@ using UnityEngine.Scripting;
 
 namespace Platform.PSN
 {
-	// Token: 0x02001CEC RID: 7404
+	// Token: 0x02001D1D RID: 7453
 	[Preserve]
 	[DoNotTouchSerializableFlags]
 	[Serializable]
 	public class UserIdentifierPSN : PlatformUserIdentifierAbs
 	{
-		// Token: 0x17001BC4 RID: 7108
-		// (get) Token: 0x0600DBAF RID: 56239 RVA: 0x000809CD File Offset: 0x0007EBCD
+		// Token: 0x17001C0C RID: 7180
+		// (get) Token: 0x0600DCC3 RID: 56515 RVA: 0x00080BF2 File Offset: 0x0007EDF2
 		public override EPlatformIdentifier PlatformIdentifier
 		{
 			get
@@ -19,28 +19,28 @@ namespace Platform.PSN
 			}
 		}
 
-		// Token: 0x17001BC5 RID: 7109
-		// (get) Token: 0x0600DBB0 RID: 56240 RVA: 0x004E767B File Offset: 0x004E587B
+		// Token: 0x17001C0D RID: 7181
+		// (get) Token: 0x0600DCC4 RID: 56516 RVA: 0x004EB21B File Offset: 0x004E941B
 		public override string PlatformIdentifierString { get; } = PlatformManager.PlatformStringFromEnum(EPlatformIdentifier.PSN);
 
-		// Token: 0x17001BC6 RID: 7110
-		// (get) Token: 0x0600DBB1 RID: 56241 RVA: 0x004E7683 File Offset: 0x004E5883
+		// Token: 0x17001C0E RID: 7182
+		// (get) Token: 0x0600DCC5 RID: 56517 RVA: 0x004EB223 File Offset: 0x004E9423
 		public override string ReadablePlatformUserIdentifier { get; }
 
-		// Token: 0x17001BC7 RID: 7111
-		// (get) Token: 0x0600DBB2 RID: 56242 RVA: 0x004E768B File Offset: 0x004E588B
+		// Token: 0x17001C0F RID: 7183
+		// (get) Token: 0x0600DCC6 RID: 56518 RVA: 0x004EB22B File Offset: 0x004E942B
 		public override string CombinedString { get; }
 
-		// Token: 0x17001BC8 RID: 7112
-		// (get) Token: 0x0600DBB3 RID: 56243 RVA: 0x004E7693 File Offset: 0x004E5893
-		// (set) Token: 0x0600DBB4 RID: 56244 RVA: 0x004E769B File Offset: 0x004E589B
+		// Token: 0x17001C10 RID: 7184
+		// (get) Token: 0x0600DCC7 RID: 56519 RVA: 0x004EB233 File Offset: 0x004E9433
+		// (set) Token: 0x0600DCC8 RID: 56520 RVA: 0x004EB23B File Offset: 0x004E943B
 		public ulong AccountId
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600DBB5 RID: 56245 RVA: 0x004E76A4 File Offset: 0x004E58A4
+		// Token: 0x0600DCC9 RID: 56521 RVA: 0x004EB244 File Offset: 0x004E9444
 		public UserIdentifierPSN(ulong _accountId)
 		{
 			this.AccountId = _accountId;
@@ -48,19 +48,19 @@ namespace Platform.PSN
 			this.CombinedString = this.PlatformIdentifierString + "_" + this.ReadablePlatformUserIdentifier;
 		}
 
-		// Token: 0x0600DBB6 RID: 56246 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600DCCA RID: 56522 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool DecodeTicket(string _ticket)
 		{
 			return true;
 		}
 
-		// Token: 0x0600DBB7 RID: 56247 RVA: 0x004E76FA File Offset: 0x004E58FA
+		// Token: 0x0600DCCB RID: 56523 RVA: 0x004EB29A File Offset: 0x004E949A
 		public override bool Equals(PlatformUserIdentifierAbs _other)
 		{
 			return _other != null && (this == _other || (_other is UserIdentifierPSN && this.AccountId == (_other as UserIdentifierPSN).AccountId));
 		}
 
-		// Token: 0x0600DBB8 RID: 56248 RVA: 0x004E7724 File Offset: 0x004E5924
+		// Token: 0x0600DCCC RID: 56524 RVA: 0x004EB2C4 File Offset: 0x004E94C4
 		public override int GetHashCode()
 		{
 			return this.AccountId.GetHashCode();

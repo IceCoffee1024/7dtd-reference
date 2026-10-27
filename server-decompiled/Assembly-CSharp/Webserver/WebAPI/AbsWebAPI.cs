@@ -3,17 +3,17 @@ using Webserver.Permissions;
 
 namespace Webserver.WebAPI
 {
-	// Token: 0x02001AF8 RID: 6904
+	// Token: 0x02001B29 RID: 6953
 	public abstract class AbsWebAPI
 	{
-		// Token: 0x0600D004 RID: 53252 RVA: 0x004B8169 File Offset: 0x004B6369
+		// Token: 0x0600D118 RID: 53528 RVA: 0x004BBC65 File Offset: 0x004B9E65
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbsWebAPI(string _name = null)
 			: this(null, _name)
 		{
 		}
 
-		// Token: 0x0600D005 RID: 53253 RVA: 0x004B8174 File Offset: 0x004B6374
+		// Token: 0x0600D119 RID: 53529 RVA: 0x004BBC70 File Offset: 0x004B9E70
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbsWebAPI(Web _parentWeb, string _name = null)
 		{
@@ -23,36 +23,36 @@ namespace Webserver.WebAPI
 			this.RegisterPermissions();
 		}
 
-		// Token: 0x0600D006 RID: 53254 RVA: 0x004B81C0 File Offset: 0x004B63C0
+		// Token: 0x0600D11A RID: 53530 RVA: 0x004BBCBC File Offset: 0x004B9EBC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void RegisterPermissions()
 		{
 			AdminWebModules.Instance.AddKnownModule(new AdminWebModules.WebModule(this.CachedApiModuleName, this.DefaultPermissionLevel(), true));
 		}
 
-		// Token: 0x0600D007 RID: 53255
+		// Token: 0x0600D11B RID: 53531
 		public abstract void HandleRequest(RequestContext _context);
 
-		// Token: 0x0600D008 RID: 53256 RVA: 0x004B81DE File Offset: 0x004B63DE
+		// Token: 0x0600D11C RID: 53532 RVA: 0x004BBCDA File Offset: 0x004B9EDA
 		public virtual bool Authorized(RequestContext _context)
 		{
 			return AdminWebModules.Instance.GetModule(this.CachedApiModuleName).LevelGlobal >= _context.PermissionLevel;
 		}
 
-		// Token: 0x0600D009 RID: 53257 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600D11D RID: 53533 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual int DefaultPermissionLevel()
 		{
 			return 0;
 		}
 
-		// Token: 0x04009D68 RID: 40296
+		// Token: 0x04009E51 RID: 40529
 		public readonly string Name;
 
-		// Token: 0x04009D69 RID: 40297
+		// Token: 0x04009E52 RID: 40530
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly Web ParentWeb;
 
-		// Token: 0x04009D6A RID: 40298
+		// Token: 0x04009E53 RID: 40531
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly string CachedApiModuleName;
 	}

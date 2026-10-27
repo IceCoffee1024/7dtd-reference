@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200155D RID: 5469
+// Token: 0x0200156F RID: 5487
 [Preserve]
 [Serializable]
 public class vp_State
 {
-	// Token: 0x0600AB79 RID: 43897 RVA: 0x00400A1F File Offset: 0x003FEC1F
+	// Token: 0x0600ABD1 RID: 43985 RVA: 0x00402E23 File Offset: 0x00401023
 	public vp_State(string typeName, string name = "Untitled", string path = null, TextAsset asset = null)
 	{
 		this.TypeName = typeName;
@@ -16,9 +16,9 @@ public class vp_State
 		this.TextAsset = asset;
 	}
 
-	// Token: 0x1700141D RID: 5149
-	// (get) Token: 0x0600AB7A RID: 43898 RVA: 0x00400A3D File Offset: 0x003FEC3D
-	// (set) Token: 0x0600AB7B RID: 43899 RVA: 0x00400A45 File Offset: 0x003FEC45
+	// Token: 0x17001429 RID: 5161
+	// (get) Token: 0x0600ABD2 RID: 43986 RVA: 0x00402E41 File Offset: 0x00401041
+	// (set) Token: 0x0600ABD3 RID: 43987 RVA: 0x00402E49 File Offset: 0x00401049
 	public bool Enabled
 	{
 		get
@@ -41,8 +41,8 @@ public class vp_State
 		}
 	}
 
-	// Token: 0x1700141E RID: 5150
-	// (get) Token: 0x0600AB7C RID: 43900 RVA: 0x00400A78 File Offset: 0x003FEC78
+	// Token: 0x1700142A RID: 5162
+	// (get) Token: 0x0600ABD4 RID: 43988 RVA: 0x00402E7C File Offset: 0x0040107C
 	public bool Blocked
 	{
 		get
@@ -51,8 +51,8 @@ public class vp_State
 		}
 	}
 
-	// Token: 0x1700141F RID: 5151
-	// (get) Token: 0x0600AB7D RID: 43901 RVA: 0x00400A88 File Offset: 0x003FEC88
+	// Token: 0x1700142B RID: 5163
+	// (get) Token: 0x0600ABD5 RID: 43989 RVA: 0x00402E8C File Offset: 0x0040108C
 	public int BlockCount
 	{
 		get
@@ -61,8 +61,8 @@ public class vp_State
 		}
 	}
 
-	// Token: 0x17001420 RID: 5152
-	// (get) Token: 0x0600AB7E RID: 43902 RVA: 0x00400A95 File Offset: 0x003FEC95
+	// Token: 0x1700142C RID: 5164
+	// (get) Token: 0x0600ABD6 RID: 43990 RVA: 0x00402E99 File Offset: 0x00401099
 	public List<vp_State> CurrentlyBlockedBy
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -76,7 +76,7 @@ public class vp_State
 		}
 	}
 
-	// Token: 0x0600AB7F RID: 43903 RVA: 0x00400AB0 File Offset: 0x003FECB0
+	// Token: 0x0600ABD7 RID: 43991 RVA: 0x00402EB4 File Offset: 0x004010B4
 	public void AddBlocker(vp_State blocker)
 	{
 		if (!this.CurrentlyBlockedBy.Contains(blocker))
@@ -85,7 +85,7 @@ public class vp_State
 		}
 	}
 
-	// Token: 0x0600AB80 RID: 43904 RVA: 0x00400ACC File Offset: 0x003FECCC
+	// Token: 0x0600ABD8 RID: 43992 RVA: 0x00402ED0 File Offset: 0x004010D0
 	public void RemoveBlocker(vp_State blocker)
 	{
 		if (this.CurrentlyBlockedBy.Contains(blocker))
@@ -94,30 +94,30 @@ public class vp_State
 		}
 	}
 
-	// Token: 0x04007F62 RID: 32610
+	// Token: 0x04007FA3 RID: 32675
 	public vp_StateManager StateManager;
 
-	// Token: 0x04007F63 RID: 32611
+	// Token: 0x04007FA4 RID: 32676
 	public string TypeName;
 
-	// Token: 0x04007F64 RID: 32612
+	// Token: 0x04007FA5 RID: 32677
 	public string Name;
 
-	// Token: 0x04007F65 RID: 32613
+	// Token: 0x04007FA6 RID: 32678
 	public TextAsset TextAsset;
 
-	// Token: 0x04007F66 RID: 32614
+	// Token: 0x04007FA7 RID: 32679
 	public vp_ComponentPreset Preset;
 
-	// Token: 0x04007F67 RID: 32615
+	// Token: 0x04007FA8 RID: 32680
 	public List<int> StatesToBlock;
 
-	// Token: 0x04007F68 RID: 32616
+	// Token: 0x04007FA9 RID: 32681
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Enabled;
 
-	// Token: 0x04007F69 RID: 32617
+	// Token: 0x04007FAA RID: 32682
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<vp_State> m_CurrentlyBlockedBy;

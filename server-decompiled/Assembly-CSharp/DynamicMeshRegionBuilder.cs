@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 
-// Token: 0x0200039C RID: 924
+// Token: 0x0200039E RID: 926
 public class DynamicMeshRegionBuilder
 {
 	// Token: 0x1700033D RID: 829
-	// (get) Token: 0x06001B7B RID: 7035 RVA: 0x000A32B7 File Offset: 0x000A14B7
+	// (get) Token: 0x06001B7F RID: 7039 RVA: 0x000A34C7 File Offset: 0x000A16C7
 	public static World world
 	{
 		get
@@ -14,7 +14,7 @@ public class DynamicMeshRegionBuilder
 		}
 	}
 
-	// Token: 0x06001B7C RID: 7036 RVA: 0x000A32C3 File Offset: 0x000A14C3
+	// Token: 0x06001B80 RID: 7040 RVA: 0x000A34D3 File Offset: 0x000A16D3
 	public bool AddNewItem(DynamicMeshRegion region)
 	{
 		if (this.Status != DynamicMeshBuilderStatus.Ready)
@@ -27,7 +27,7 @@ public class DynamicMeshRegionBuilder
 		return true;
 	}
 
-	// Token: 0x06001B7D RID: 7037 RVA: 0x000A3300 File Offset: 0x000A1500
+	// Token: 0x06001B81 RID: 7041 RVA: 0x000A3510 File Offset: 0x000A1710
 	public void RequestStop(bool forceStop = false)
 	{
 		this.StopRequested = true;
@@ -48,7 +48,7 @@ public class DynamicMeshRegionBuilder
 		}
 	}
 
-	// Token: 0x06001B7E RID: 7038 RVA: 0x000A3344 File Offset: 0x000A1544
+	// Token: 0x06001B82 RID: 7042 RVA: 0x000A3554 File Offset: 0x000A1754
 	public void StartThread()
 	{
 		this.thread = new Thread(delegate
@@ -91,22 +91,22 @@ public class DynamicMeshRegionBuilder
 		this.thread.Start();
 	}
 
-	// Token: 0x040011AA RID: 4522
+	// Token: 0x040011BA RID: 4538
 	public string Error;
 
-	// Token: 0x040011AB RID: 4523
+	// Token: 0x040011BB RID: 4539
 	public bool StopRequested;
 
-	// Token: 0x040011AC RID: 4524
+	// Token: 0x040011BC RID: 4540
 	public DynamicMeshBuilderStatus Status;
 
-	// Token: 0x040011AD RID: 4525
+	// Token: 0x040011BD RID: 4541
 	public ExportMeshResult Result = ExportMeshResult.Missing;
 
-	// Token: 0x040011AE RID: 4526
+	// Token: 0x040011BE RID: 4542
 	public DynamicMeshRegion Region;
 
-	// Token: 0x040011AF RID: 4527
+	// Token: 0x040011BF RID: 4543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Thread thread;
 }

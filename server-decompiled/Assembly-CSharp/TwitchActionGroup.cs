@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using Twitch;
 
-// Token: 0x020010AD RID: 4269
+// Token: 0x020010BD RID: 4285
 public class TwitchActionGroup
 {
-	// Token: 0x040064DF RID: 25823
+	// Token: 0x0400651E RID: 25886
 	public string groupName;
 
-	// Token: 0x040064E0 RID: 25824
+	// Token: 0x0400651F RID: 25887
 	public string displayName;
 
-	// Token: 0x040064E1 RID: 25825
+	// Token: 0x04006520 RID: 25888
 	public int index;
 
-	// Token: 0x040064E2 RID: 25826
+	// Token: 0x04006521 RID: 25889
 	public List<TwitchAction> ActionList;
 }

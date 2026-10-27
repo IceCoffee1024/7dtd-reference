@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-// Token: 0x020013BE RID: 5054
+// Token: 0x020013D0 RID: 5072
 public class BenchmarkObject
 {
-	// Token: 0x06009F1B RID: 40731 RVA: 0x003C167C File Offset: 0x003BF87C
+	// Token: 0x06009F73 RID: 40819 RVA: 0x003C3A80 File Offset: 0x003C1C80
 	[Conditional("PROFILEx")]
 	public static void StartTimer(string _benchmarkName, object _watchObject)
 	{
@@ -20,7 +20,7 @@ public class BenchmarkObject
 		benchmarkContainer.startTick = DateTime.Now.Ticks;
 	}
 
-	// Token: 0x06009F1C RID: 40732 RVA: 0x003C16DC File Offset: 0x003BF8DC
+	// Token: 0x06009F74 RID: 40820 RVA: 0x003C3AE0 File Offset: 0x003C1CE0
 	[Conditional("PROFILEx")]
 	public static void SwitchObject(object _old, object _new)
 	{
@@ -40,7 +40,7 @@ public class BenchmarkObject
 		}
 	}
 
-	// Token: 0x06009F1D RID: 40733 RVA: 0x003C1754 File Offset: 0x003BF954
+	// Token: 0x06009F75 RID: 40821 RVA: 0x003C3B58 File Offset: 0x003C1D58
 	[Conditional("PROFILEx")]
 	public static void UpdateName(object _watchObject, string _nameAppend)
 	{
@@ -62,7 +62,7 @@ public class BenchmarkObject
 		Log.Out("UPDATENAME: Object not found: " + _nameAppend);
 	}
 
-	// Token: 0x06009F1E RID: 40734 RVA: 0x003C17D0 File Offset: 0x003BF9D0
+	// Token: 0x06009F76 RID: 40822 RVA: 0x003C3BD4 File Offset: 0x003C1DD4
 	[Conditional("PROFILEx")]
 	public static void StopTimer(object _watchObject)
 	{
@@ -81,7 +81,7 @@ public class BenchmarkObject
 		}
 	}
 
-	// Token: 0x06009F1F RID: 40735 RVA: 0x003C1844 File Offset: 0x003BFA44
+	// Token: 0x06009F77 RID: 40823 RVA: 0x003C3C48 File Offset: 0x003C1E48
 	[Conditional("PROFILEx")]
 	public static void PrintAll()
 	{
@@ -114,16 +114,16 @@ public class BenchmarkObject
 		}
 	}
 
-	// Token: 0x04007893 RID: 30867
+	// Token: 0x040078D4 RID: 30932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<object, BenchmarkObject.BenchmarkContainer> benchmarks = new Dictionary<object, BenchmarkObject.BenchmarkContainer>();
 
-	// Token: 0x020013BF RID: 5055
+	// Token: 0x020013D1 RID: 5073
 	public class BenchmarkContainer
 	{
-		// Token: 0x17001305 RID: 4869
-		// (get) Token: 0x06009F22 RID: 40738 RVA: 0x003C19FC File Offset: 0x003BFBFC
-		// (set) Token: 0x06009F23 RID: 40739 RVA: 0x003C1A04 File Offset: 0x003BFC04
+		// Token: 0x17001311 RID: 4881
+		// (get) Token: 0x06009F7A RID: 40826 RVA: 0x003C3E00 File Offset: 0x003C2000
+		// (set) Token: 0x06009F7B RID: 40827 RVA: 0x003C3E08 File Offset: 0x003C2008
 		public string name
 		{
 			get
@@ -136,8 +136,8 @@ public class BenchmarkObject
 			}
 		}
 
-		// Token: 0x17001306 RID: 4870
-		// (get) Token: 0x06009F24 RID: 40740 RVA: 0x003C1A0D File Offset: 0x003BFC0D
+		// Token: 0x17001312 RID: 4882
+		// (get) Token: 0x06009F7C RID: 40828 RVA: 0x003C3E11 File Offset: 0x003C2011
 		public long ticks
 		{
 			get
@@ -146,20 +146,20 @@ public class BenchmarkObject
 			}
 		}
 
-		// Token: 0x06009F25 RID: 40741 RVA: 0x003C1A1C File Offset: 0x003BFC1C
+		// Token: 0x06009F7D RID: 40829 RVA: 0x003C3E20 File Offset: 0x003C2020
 		public BenchmarkContainer(string _name)
 		{
 			this.pName = _name;
 		}
 
-		// Token: 0x04007894 RID: 30868
+		// Token: 0x040078D5 RID: 30933
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string pName;
 
-		// Token: 0x04007895 RID: 30869
+		// Token: 0x040078D6 RID: 30934
 		public long startTick;
 
-		// Token: 0x04007896 RID: 30870
+		// Token: 0x040078D7 RID: 30935
 		public long endTick;
 	}
 }

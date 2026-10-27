@@ -2,11 +2,11 @@
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x02000824 RID: 2084
+// Token: 0x0200082E RID: 2094
 [Preserve]
 public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 {
-	// Token: 0x06003D04 RID: 15620 RVA: 0x00185460 File Offset: 0x00183660
+	// Token: 0x06003D27 RID: 15655 RVA: 0x00186564 File Offset: 0x00184764
 	public NetPackagePlayerEquipment Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -17,21 +17,21 @@ public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003D05 RID: 15621 RVA: 0x001854A3 File Offset: 0x001836A3
+	// Token: 0x06003D28 RID: 15656 RVA: 0x001865A7 File Offset: 0x001847A7
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.equipmentData = StreamUtils.ReadBlob(_reader);
 	}
 
-	// Token: 0x06003D06 RID: 15622 RVA: 0x001854B8 File Offset: 0x001836B8
+	// Token: 0x06003D29 RID: 15657 RVA: 0x001865BC File Offset: 0x001847BC
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		StreamUtils.WriteBlob(_writer, this.equipmentData);
 	}
 
-	// Token: 0x06003D07 RID: 15623 RVA: 0x001854D0 File Offset: 0x001836D0
+	// Token: 0x06003D2A RID: 15658 RVA: 0x001865D4 File Offset: 0x001847D4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -58,6 +58,6 @@ public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x040031A0 RID: 12704
+	// Token: 0x040031C0 RID: 12736
 	public MemoryStream equipmentData;
 }

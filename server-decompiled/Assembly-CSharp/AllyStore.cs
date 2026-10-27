@@ -4,16 +4,16 @@ using System.Xml;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020008EC RID: 2284
+// Token: 0x020008F6 RID: 2294
 [Preserve]
 public class AllyStore
 {
 	// Token: 0x1400004C RID: 76
-	// (add) Token: 0x060041AF RID: 16815 RVA: 0x0019CF10 File Offset: 0x0019B110
-	// (remove) Token: 0x060041B0 RID: 16816 RVA: 0x0019CF48 File Offset: 0x0019B148
+	// (add) Token: 0x060041D2 RID: 16850 RVA: 0x0019DFB8 File Offset: 0x0019C1B8
+	// (remove) Token: 0x060041D3 RID: 16851 RVA: 0x0019DFF0 File Offset: 0x0019C1F0
 	public event AllyStore.AllyChangeEvent OnAllyChangeEvent;
 
-	// Token: 0x060041B1 RID: 16817 RVA: 0x0019CF80 File Offset: 0x0019B180
+	// Token: 0x060041D4 RID: 16852 RVA: 0x0019E028 File Offset: 0x0019C228
 	public void AllyUpdateRequest(PlatformUserIdentifierAbs _target, bool _addAlly)
 	{
 		PlatformUserIdentifierAbs internalLocalUserIdentifier = PlatformManager.InternalLocalUserIdentifier;
@@ -29,7 +29,7 @@ public class AllyStore
 		this.ProcessAllyRequest(internalLocalUserIdentifier, _target, _addAlly);
 	}
 
-	// Token: 0x060041B2 RID: 16818 RVA: 0x0019CFC8 File Offset: 0x0019B1C8
+	// Token: 0x060041D5 RID: 16853 RVA: 0x0019E070 File Offset: 0x0019C270
 	public void ProcessAllyRequest(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target, bool _addAlly)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -48,7 +48,7 @@ public class AllyStore
 		this.AllyUpdateResponse(_source, _target, allyStatus, allyEvent, allyEvent2);
 	}
 
-	// Token: 0x060041B3 RID: 16819 RVA: 0x0019D034 File Offset: 0x0019B234
+	// Token: 0x060041D6 RID: 16854 RVA: 0x0019E0DC File Offset: 0x0019C2DC
 	public void ApplyTransition(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target, bool _addAlly)
 	{
 		if (_source == null || _target == null)
@@ -62,7 +62,7 @@ public class AllyStore
 		this.SetStatus(_source, _target, allyStatus);
 	}
 
-	// Token: 0x060041B4 RID: 16820 RVA: 0x0019D068 File Offset: 0x0019B268
+	// Token: 0x060041D7 RID: 16855 RVA: 0x0019E110 File Offset: 0x0019C310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ComputeTransition(AllyStore.AllyStatus _oldStatus, bool addAlly, out AllyStore.AllyStatus _newStatus, out AllyStore.AllyEvent _eventSource, out AllyStore.AllyEvent _eventTarget)
 	{
@@ -117,7 +117,7 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041B5 RID: 16821 RVA: 0x0019D0DC File Offset: 0x0019B2DC
+	// Token: 0x060041D8 RID: 16856 RVA: 0x0019E184 File Offset: 0x0019C384
 	public void AllyUpdateResponse(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target, AllyStore.AllyStatus _newStatus, AllyStore.AllyEvent _allyEventSource, AllyStore.AllyEvent _allyEventTarget)
 	{
 		this.SetStatus(_source, _target, _newStatus);
@@ -134,13 +134,13 @@ public class AllyStore
 		onAllyChangeEvent2(_target, _source, _allyEventTarget);
 	}
 
-	// Token: 0x060041B6 RID: 16822 RVA: 0x0019D110 File Offset: 0x0019B310
+	// Token: 0x060041D9 RID: 16857 RVA: 0x0019E1B8 File Offset: 0x0019C3B8
 	public bool IsAlly(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target)
 	{
 		return this.GetStatus(_source, _target) == AllyStore.AllyStatus.Allies;
 	}
 
-	// Token: 0x060041B7 RID: 16823 RVA: 0x0019D11D File Offset: 0x0019B31D
+	// Token: 0x060041DA RID: 16858 RVA: 0x0019E1C5 File Offset: 0x0019C3C5
 	public IEnumerable<PlatformUserIdentifierAbs> EnumerateAllies(PlatformUserIdentifierAbs _id)
 	{
 		Dictionary<PlatformUserIdentifierAbs, AllyStore.AllyStatus> dictionary;
@@ -160,7 +160,7 @@ public class AllyStore
 		yield break;
 	}
 
-	// Token: 0x060041B8 RID: 16824 RVA: 0x0019D134 File Offset: 0x0019B334
+	// Token: 0x060041DB RID: 16859 RVA: 0x0019E1DC File Offset: 0x0019C3DC
 	public bool HasAllies(PlatformUserIdentifierAbs _id)
 	{
 		Dictionary<PlatformUserIdentifierAbs, AllyStore.AllyStatus> dictionary;
@@ -178,7 +178,7 @@ public class AllyStore
 		return false;
 	}
 
-	// Token: 0x060041B9 RID: 16825 RVA: 0x0019D1A4 File Offset: 0x0019B3A4
+	// Token: 0x060041DC RID: 16860 RVA: 0x0019E24C File Offset: 0x0019C44C
 	public AllyStore.AllyStatus GetStatus(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target)
 	{
 		if (_source == null || _target == null)
@@ -198,7 +198,7 @@ public class AllyStore
 		return allyStatus;
 	}
 
-	// Token: 0x060041BA RID: 16826 RVA: 0x0019D1DC File Offset: 0x0019B3DC
+	// Token: 0x060041DD RID: 16861 RVA: 0x0019E284 File Offset: 0x0019C484
 	public void SetStatus(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target, AllyStore.AllyStatus _status)
 	{
 		if (_source == null || _target == null)
@@ -237,7 +237,7 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041BB RID: 16827 RVA: 0x0019D2BC File Offset: 0x0019B4BC
+	// Token: 0x060041DE RID: 16862 RVA: 0x0019E364 File Offset: 0x0019C564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearStatus(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target)
 	{
@@ -253,13 +253,13 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041BC RID: 16828 RVA: 0x0019D2F9 File Offset: 0x0019B4F9
+	// Token: 0x060041DF RID: 16863 RVA: 0x0019E3A1 File Offset: 0x0019C5A1
 	public void ClearAll()
 	{
 		this.relationships.Clear();
 	}
 
-	// Token: 0x060041BD RID: 16829 RVA: 0x0019D308 File Offset: 0x0019B508
+	// Token: 0x060041E0 RID: 16864 RVA: 0x0019E3B0 File Offset: 0x0019C5B0
 	public void CopyFrom(AllyStore _other)
 	{
 		this.relationships.Clear();
@@ -276,7 +276,7 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041BE RID: 16830 RVA: 0x0019D3BC File Offset: 0x0019B5BC
+	// Token: 0x060041E1 RID: 16865 RVA: 0x0019E464 File Offset: 0x0019C664
 	public void ReadXml(XmlElement _alliesElement, int _readVersion)
 	{
 		if (_readVersion == 0)
@@ -305,7 +305,7 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041BF RID: 16831 RVA: 0x0019D498 File Offset: 0x0019B698
+	// Token: 0x060041E2 RID: 16866 RVA: 0x0019E540 File Offset: 0x0019C740
 	public void WriteXml(XmlElement _root)
 	{
 		bool flag = false;
@@ -347,7 +347,7 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041C0 RID: 16832 RVA: 0x0019D620 File Offset: 0x0019B820
+	// Token: 0x060041E3 RID: 16867 RVA: 0x0019E6C8 File Offset: 0x0019C8C8
 	public void Read(PooledBinaryReader _br)
 	{
 		this.relationships.Clear();
@@ -361,7 +361,7 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x060041C1 RID: 16833 RVA: 0x0019D670 File Offset: 0x0019B870
+	// Token: 0x060041E4 RID: 16868 RVA: 0x0019E718 File Offset: 0x0019C918
 	public void Write(PooledBinaryWriter _bw)
 	{
 		int num = 0;
@@ -388,51 +388,51 @@ public class AllyStore
 		}
 	}
 
-	// Token: 0x04003588 RID: 13704
+	// Token: 0x040035A8 RID: 13736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<PlatformUserIdentifierAbs, Dictionary<PlatformUserIdentifierAbs, AllyStore.AllyStatus>> relationships = new Dictionary<PlatformUserIdentifierAbs, Dictionary<PlatformUserIdentifierAbs, AllyStore.AllyStatus>>();
 
-	// Token: 0x020008ED RID: 2285
+	// Token: 0x020008F7 RID: 2295
 	public enum AllyStatus : byte
 	{
-		// Token: 0x0400358A RID: 13706
+		// Token: 0x040035AA RID: 13738
 		NotAllied,
-		// Token: 0x0400358B RID: 13707
+		// Token: 0x040035AB RID: 13739
 		Allies,
-		// Token: 0x0400358C RID: 13708
+		// Token: 0x040035AC RID: 13740
 		OutgoingInvite,
-		// Token: 0x0400358D RID: 13709
+		// Token: 0x040035AD RID: 13741
 		IncomingInvite
 	}
 
-	// Token: 0x020008EE RID: 2286
+	// Token: 0x020008F8 RID: 2296
 	public enum AllyEvent : byte
 	{
-		// Token: 0x0400358F RID: 13711
+		// Token: 0x040035AF RID: 13743
 		None,
-		// Token: 0x04003590 RID: 13712
+		// Token: 0x040035B0 RID: 13744
 		OutgoingSent,
-		// Token: 0x04003591 RID: 13713
+		// Token: 0x040035B1 RID: 13745
 		OutgoingCanceled,
-		// Token: 0x04003592 RID: 13714
+		// Token: 0x040035B2 RID: 13746
 		IncomingAccepted,
-		// Token: 0x04003593 RID: 13715
+		// Token: 0x040035B3 RID: 13747
 		IncomingDeclined,
-		// Token: 0x04003594 RID: 13716
+		// Token: 0x040035B4 RID: 13748
 		AllyRemoved,
-		// Token: 0x04003595 RID: 13717
+		// Token: 0x040035B5 RID: 13749
 		OutgoingAccepted,
-		// Token: 0x04003596 RID: 13718
+		// Token: 0x040035B6 RID: 13750
 		OutgoingDeclined,
-		// Token: 0x04003597 RID: 13719
+		// Token: 0x040035B7 RID: 13751
 		IncomingReceived,
-		// Token: 0x04003598 RID: 13720
+		// Token: 0x040035B8 RID: 13752
 		IncomingCanceled,
-		// Token: 0x04003599 RID: 13721
+		// Token: 0x040035B9 RID: 13753
 		RemovedByAlly
 	}
 
-	// Token: 0x020008EF RID: 2287
-	// (Invoke) Token: 0x060041C4 RID: 16836
+	// Token: 0x020008F9 RID: 2297
+	// (Invoke) Token: 0x060041E7 RID: 16871
 	public delegate void AllyChangeEvent(PlatformUserIdentifierAbs _source, PlatformUserIdentifierAbs _target, AllyStore.AllyEvent _allyEventSource);
 }

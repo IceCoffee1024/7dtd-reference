@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockSpikes : BlockDamage
 {
-	// Token: 0x0600095B RID: 2395 RVA: 0x00040FA0 File Offset: 0x0003F1A0
+	// Token: 0x0600095B RID: 2395 RVA: 0x00040F60 File Offset: 0x0003F160
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class BlockSpikes : BlockDamage
 		}
 	}
 
-	// Token: 0x0600095C RID: 2396 RVA: 0x00040FF0 File Offset: 0x0003F1F0
+	// Token: 0x0600095C RID: 2396 RVA: 0x00040FB0 File Offset: 0x0003F1B0
 	public override void GetCollisionAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedY, List<Bounds> _result)
 	{
 		base.GetCollisionAABB(_blockValue, _x, _y, _z, _distortedY, _result);
@@ -36,19 +36,19 @@ public class BlockSpikes : BlockDamage
 		return true;
 	}
 
-	// Token: 0x0600095E RID: 2398 RVA: 0x00041064 File Offset: 0x0003F264
+	// Token: 0x0600095E RID: 2398 RVA: 0x00041024 File Offset: 0x0003F224
 	public override float GetStepHeight(IBlockAccess world, Vector3i blockPos, BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return 1f;
 	}
 
-	// Token: 0x0600095F RID: 2399 RVA: 0x0004106C File Offset: 0x0003F26C
+	// Token: 0x0600095F RID: 2399 RVA: 0x0004102C File Offset: 0x0003F22C
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		return base.CanPlaceBlockAt(_world, _blockPos, _blockValue, _bOmitCollideCheck) && _world.GetBlock(_blockPos - Vector3i.up).Block.shape.IsSolidCube;
 	}
 
-	// Token: 0x06000960 RID: 2400 RVA: 0x000410AC File Offset: 0x0003F2AC
+	// Token: 0x06000960 RID: 2400 RVA: 0x0004106C File Offset: 0x0003F26C
 	public override bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _targetEntity)
 	{
 		if (!base.OnEntityCollidedWithBlock(_world, _blockPos, _blockValue, _targetEntity))

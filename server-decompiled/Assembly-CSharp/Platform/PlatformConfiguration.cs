@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001C01 RID: 7169
+	// Token: 0x02001C32 RID: 7218
 	public class PlatformConfiguration
 	{
-		// Token: 0x17001ADE RID: 6878
-		// (get) Token: 0x0600D556 RID: 54614 RVA: 0x004CCED9 File Offset: 0x004CB0D9
-		// (set) Token: 0x0600D557 RID: 54615 RVA: 0x004CCF01 File Offset: 0x004CB101
+		// Token: 0x17001B26 RID: 6950
+		// (get) Token: 0x0600D66A RID: 54890 RVA: 0x004D0A01 File Offset: 0x004CEC01
+		// (set) Token: 0x0600D66B RID: 54891 RVA: 0x004D0A29 File Offset: 0x004CEC29
 		public EPlatformIdentifier NativePlatform
 		{
 			get
@@ -28,9 +28,9 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x17001ADF RID: 6879
-		// (get) Token: 0x0600D558 RID: 54616 RVA: 0x004CCF0A File Offset: 0x004CB10A
-		// (set) Token: 0x0600D559 RID: 54617 RVA: 0x004CCF32 File Offset: 0x004CB132
+		// Token: 0x17001B27 RID: 6951
+		// (get) Token: 0x0600D66C RID: 54892 RVA: 0x004D0A32 File Offset: 0x004CEC32
+		// (set) Token: 0x0600D66D RID: 54893 RVA: 0x004D0A5A File Offset: 0x004CEC5A
 		public EPlatformIdentifier CrossPlatform
 		{
 			get
@@ -48,7 +48,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D55A RID: 54618 RVA: 0x004CCF3C File Offset: 0x004CB13C
+		// Token: 0x0600D66E RID: 54894 RVA: 0x004D0A64 File Offset: 0x004CEC64
 		public bool ParsePlatform(string _platformGroup, string _value)
 		{
 			if (string.IsNullOrEmpty(_platformGroup))
@@ -116,7 +116,7 @@ namespace Platform
 			return true;
 		}
 
-		// Token: 0x0600D55B RID: 54619 RVA: 0x004CD07C File Offset: 0x004CB27C
+		// Token: 0x0600D66F RID: 54895 RVA: 0x004D0BA4 File Offset: 0x004CEDA4
 		public string WriteString()
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -134,7 +134,7 @@ namespace Platform
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600D55C RID: 54620 RVA: 0x004CD13C File Offset: 0x004CB33C
+		// Token: 0x0600D670 RID: 54896 RVA: 0x004D0C64 File Offset: 0x004CEE64
 		public void WriteFile(string _configFilename = null)
 		{
 			if (_configFilename == null)
@@ -145,7 +145,7 @@ namespace Platform
 			File.WriteAllText(_configFilename, text);
 		}
 
-		// Token: 0x0600D55D RID: 54621 RVA: 0x004CD16C File Offset: 0x004CB36C
+		// Token: 0x0600D671 RID: 54897 RVA: 0x004D0C94 File Offset: 0x004CEE94
 		public static bool ReadString(ref PlatformConfiguration _result, string _config)
 		{
 			if (_result == null)
@@ -159,7 +159,7 @@ namespace Platform
 			return true;
 		}
 
-		// Token: 0x0600D55E RID: 54622 RVA: 0x004CD1B0 File Offset: 0x004CB3B0
+		// Token: 0x0600D672 RID: 54898 RVA: 0x004D0CD8 File Offset: 0x004CEED8
 		public static bool ReadFile(ref PlatformConfiguration _result, string _configFilename = null)
 		{
 			if (_result == null)
@@ -181,7 +181,7 @@ namespace Platform
 			return true;
 		}
 
-		// Token: 0x0600D55F RID: 54623 RVA: 0x004CD214 File Offset: 0x004CB414
+		// Token: 0x0600D673 RID: 54899 RVA: 0x004D0D3C File Offset: 0x004CEF3C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void Parse(ref PlatformConfiguration _result, TextReader _stream)
 		{
@@ -195,23 +195,23 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0400A219 RID: 41497
+		// Token: 0x0400A302 RID: 41730
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const EPlatformIdentifier defaultNativePlatform = EPlatformIdentifier.Local;
 
-		// Token: 0x0400A21A RID: 41498
+		// Token: 0x0400A303 RID: 41731
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const EPlatformIdentifier defaultCrossPlatform = EPlatformIdentifier.None;
 
-		// Token: 0x0400A21B RID: 41499
+		// Token: 0x0400A304 RID: 41732
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EPlatformIdentifier nativePlatform = EPlatformIdentifier.Count;
 
-		// Token: 0x0400A21C RID: 41500
+		// Token: 0x0400A305 RID: 41733
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EPlatformIdentifier crossPlatform = EPlatformIdentifier.Count;
 
-		// Token: 0x0400A21D RID: 41501
+		// Token: 0x0400A306 RID: 41734
 		public readonly List<EPlatformIdentifier> ServerPlatforms = new List<EPlatformIdentifier>();
 	}
 }

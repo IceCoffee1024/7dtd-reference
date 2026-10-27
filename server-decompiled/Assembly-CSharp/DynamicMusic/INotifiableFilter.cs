@@ -2,7 +2,7 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AA6 RID: 6822
+	// Token: 0x02001AD7 RID: 6871
 	public interface INotifiableFilter<T> : INotifiable, IFilter<T>
 	{
 	}

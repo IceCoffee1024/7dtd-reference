@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FBD RID: 4029
+// Token: 0x02000FCD RID: 4045
 [Preserve]
 public class XUiC_PoiTeleportMenu : XUiController
 {
-	// Token: 0x06007ED5 RID: 32469 RVA: 0x00304F8C File Offset: 0x0030318C
+	// Token: 0x06007F24 RID: 32548 RVA: 0x00306AA8 File Offset: 0x00304CA8
 	public override void Init()
 	{
 		base.Init();
@@ -22,21 +22,21 @@ public class XUiC_PoiTeleportMenu : XUiController
 		this.cbxFilterTier.OnValueChanged += this.CbxFilterTier_OnValueChanged;
 	}
 
-	// Token: 0x06007ED6 RID: 32470 RVA: 0x00305056 File Offset: 0x00303256
+	// Token: 0x06007F25 RID: 32549 RVA: 0x00306B72 File Offset: 0x00304D72
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxFilterTier_OnValueChanged(XUiController _sender, long _oldValue, long _newValue)
 	{
 		this.list.FilterTier = (int)_newValue;
 	}
 
-	// Token: 0x06007ED7 RID: 32471 RVA: 0x00305065 File Offset: 0x00303265
+	// Token: 0x06007F26 RID: 32550 RVA: 0x00306B81 File Offset: 0x00304D81
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FilterSmall_Changed(XUiC_ToggleButton _sender, bool _newvalue)
 	{
 		this.list.FilterSmallPois = _newvalue;
 	}
 
-	// Token: 0x06007ED8 RID: 32472 RVA: 0x00305073 File Offset: 0x00303273
+	// Token: 0x06007F27 RID: 32551 RVA: 0x00306B8F File Offset: 0x00304D8F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onListEntryClicked(XUiC_List<XUiC_PoiList.PoiListEntry> _list, XUiC_PoiList.PoiListEntry _entry)
 	{
@@ -46,28 +46,28 @@ public class XUiC_PoiTeleportMenu : XUiController
 		}
 	}
 
-	// Token: 0x06007ED9 RID: 32473 RVA: 0x0030507F File Offset: 0x0030327F
+	// Token: 0x06007F28 RID: 32552 RVA: 0x00306B9B File Offset: 0x00304D9B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EntryPressed(XUiC_PoiList.PoiListEntry _key)
 	{
 		this.xui.playerUI.entityPlayer.Teleport(_key.prefabInstance.boundingBoxPosition.ToVector3(), 45f);
 	}
 
-	// Token: 0x06007EDA RID: 32474 RVA: 0x003050AB File Offset: 0x003032AB
+	// Token: 0x06007F29 RID: 32553 RVA: 0x00306BC7 File Offset: 0x00304DC7
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.cbxFilterTier.Max = (long)this.list.MaxTier;
 	}
 
-	// Token: 0x04005E3C RID: 24124
+	// Token: 0x04005E77 RID: 24183
 	public static string ID = "";
 
-	// Token: 0x04005E3D RID: 24125
+	// Token: 0x04005E78 RID: 24184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PoiList list;
 
-	// Token: 0x04005E3E RID: 24126
+	// Token: 0x04005E79 RID: 24185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxFilterTier;
 }

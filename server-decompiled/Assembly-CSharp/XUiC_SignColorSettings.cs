@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200104E RID: 4174
+// Token: 0x0200105E RID: 4190
 [Preserve]
 public class XUiC_SignColorSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x06008439 RID: 33849 RVA: 0x00327DC0 File Offset: 0x00325FC0
+	// Token: 0x0600848B RID: 33931 RVA: 0x00329AC4 File Offset: 0x00327CC4
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_SignColorSettings : XUiC_SignLayerSettings
 		};
 	}
 
-	// Token: 0x0600843A RID: 33850 RVA: 0x00327E34 File Offset: 0x00326034
+	// Token: 0x0600848C RID: 33932 RVA: 0x00329B38 File Offset: 0x00327D38
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer;
@@ -38,7 +38,7 @@ public class XUiC_SignColorSettings : XUiC_SignLayerSettings
 		xuiC_ComboBoxList.SelectedIndex = (int)((signLayer2 != null) ? signLayer2.renderSettings.mode : SignData.SignRenderSettings.Mode.ColorOnly);
 	}
 
-	// Token: 0x0600843B RID: 33851 RVA: 0x00327E91 File Offset: 0x00326091
+	// Token: 0x0600848D RID: 33933 RVA: 0x00329B95 File Offset: 0x00327D95
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnColorChangedHandler(Color color)
 	{
@@ -56,7 +56,7 @@ public class XUiC_SignColorSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0600843C RID: 33852 RVA: 0x00327ECC File Offset: 0x003260CC
+	// Token: 0x0600848E RID: 33934 RVA: 0x00329BD0 File Offset: 0x00327DD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -74,18 +74,18 @@ public class XUiC_SignColorSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0400622C RID: 25132
+	// Token: 0x0400626A RID: 25194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_AdvancedColorPicker colorPicker;
 
-	// Token: 0x0400622D RID: 25133
+	// Token: 0x0400626B RID: 25195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxMaskMode;
 
-	// Token: 0x0400622E RID: 25134
+	// Token: 0x0400626C RID: 25196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer currentLayer;
 
-	// Token: 0x0400622F RID: 25135
+	// Token: 0x0400626D RID: 25197
 	public Action OnMaskModeChanged;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020005ED RID: 1517
+// Token: 0x020005F4 RID: 1524
 public class AnimationGunjointOffsetData
 {
-	// Token: 0x06003181 RID: 12673 RVA: 0x0014085C File Offset: 0x0013EA5C
+	// Token: 0x0600318F RID: 12687 RVA: 0x00141450 File Offset: 0x0013F650
 	public static void InitStatic()
 	{
 		AnimationGunjointOffsetData.AnimationGunjointOffset = new AnimationGunjointOffsetData.AnimationGunjointOffsets[100];
@@ -14,29 +14,29 @@ public class AnimationGunjointOffsetData
 		}
 	}
 
-	// Token: 0x06003182 RID: 12674 RVA: 0x001408A1 File Offset: 0x0013EAA1
+	// Token: 0x06003190 RID: 12688 RVA: 0x00141495 File Offset: 0x0013F695
 	public static void Cleanup()
 	{
 		AnimationGunjointOffsetData.InitStatic();
 	}
 
-	// Token: 0x04002637 RID: 9783
+	// Token: 0x04002652 RID: 9810
 	public static AnimationGunjointOffsetData.AnimationGunjointOffsets[] AnimationGunjointOffset;
 
-	// Token: 0x020005EE RID: 1518
+	// Token: 0x020005F5 RID: 1525
 	public struct AnimationGunjointOffsets
 	{
-		// Token: 0x06003184 RID: 12676 RVA: 0x001408A8 File Offset: 0x0013EAA8
+		// Token: 0x06003192 RID: 12690 RVA: 0x0014149C File Offset: 0x0013F69C
 		public AnimationGunjointOffsets(Vector3 _position, Vector3 _rotation)
 		{
 			this.position = _position;
 			this.rotation = _rotation;
 		}
 
-		// Token: 0x04002638 RID: 9784
+		// Token: 0x04002653 RID: 9811
 		public Vector3 position;
 
-		// Token: 0x04002639 RID: 9785
+		// Token: 0x04002654 RID: 9812
 		public Vector3 rotation;
 	}
 }

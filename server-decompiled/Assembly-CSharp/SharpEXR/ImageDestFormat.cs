@@ -2,44 +2,44 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016FE RID: 5886
+	// Token: 0x0200171D RID: 5917
 	public enum ImageDestFormat
 	{
-		// Token: 0x0400894F RID: 35151
+		// Token: 0x04008A02 RID: 35330
 		RGB8,
-		// Token: 0x04008950 RID: 35152
+		// Token: 0x04008A03 RID: 35331
 		RGBA8,
-		// Token: 0x04008951 RID: 35153
+		// Token: 0x04008A04 RID: 35332
 		PremultipliedRGBA8,
-		// Token: 0x04008952 RID: 35154
+		// Token: 0x04008A05 RID: 35333
 		RGB16,
-		// Token: 0x04008953 RID: 35155
+		// Token: 0x04008A06 RID: 35334
 		RGBA16,
-		// Token: 0x04008954 RID: 35156
+		// Token: 0x04008A07 RID: 35335
 		PremultipliedRGBA16,
-		// Token: 0x04008955 RID: 35157
+		// Token: 0x04008A08 RID: 35336
 		RGB32,
-		// Token: 0x04008956 RID: 35158
+		// Token: 0x04008A09 RID: 35337
 		RGBA32,
-		// Token: 0x04008957 RID: 35159
+		// Token: 0x04008A0A RID: 35338
 		PremultipliedRGBA32,
-		// Token: 0x04008958 RID: 35160
+		// Token: 0x04008A0B RID: 35339
 		BGR8,
-		// Token: 0x04008959 RID: 35161
+		// Token: 0x04008A0C RID: 35340
 		BGRA8,
-		// Token: 0x0400895A RID: 35162
+		// Token: 0x04008A0D RID: 35341
 		PremultipliedBGRA8,
-		// Token: 0x0400895B RID: 35163
+		// Token: 0x04008A0E RID: 35342
 		BGR16,
-		// Token: 0x0400895C RID: 35164
+		// Token: 0x04008A0F RID: 35343
 		BGRA16,
-		// Token: 0x0400895D RID: 35165
+		// Token: 0x04008A10 RID: 35344
 		PremultipliedBGRA16,
-		// Token: 0x0400895E RID: 35166
+		// Token: 0x04008A11 RID: 35345
 		BGR32,
-		// Token: 0x0400895F RID: 35167
+		// Token: 0x04008A12 RID: 35346
 		BGRA32,
-		// Token: 0x04008960 RID: 35168
+		// Token: 0x04008A13 RID: 35347
 		PremultipliedBGRA32
 	}
 }

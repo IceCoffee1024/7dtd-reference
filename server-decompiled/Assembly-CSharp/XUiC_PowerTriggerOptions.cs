@@ -5,13 +5,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FCC RID: 4044
+// Token: 0x02000FDC RID: 4060
 [Preserve]
 public class XUiC_PowerTriggerOptions : XUiController
 {
-	// Token: 0x17000F07 RID: 3847
-	// (get) Token: 0x06007F72 RID: 32626 RVA: 0x00307F4C File Offset: 0x0030614C
-	// (set) Token: 0x06007F73 RID: 32627 RVA: 0x00307F54 File Offset: 0x00306154
+	// Token: 0x17000F12 RID: 3858
+	// (get) Token: 0x06007FC1 RID: 32705 RVA: 0x00309A68 File Offset: 0x00307C68
+	// (set) Token: 0x06007FC2 RID: 32706 RVA: 0x00309A70 File Offset: 0x00307C70
 	public TileEntityPoweredTrigger TileEntity
 	{
 		get
@@ -24,16 +24,16 @@ public class XUiC_PowerTriggerOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000F08 RID: 3848
-	// (get) Token: 0x06007F74 RID: 32628 RVA: 0x00307F5D File Offset: 0x0030615D
-	// (set) Token: 0x06007F75 RID: 32629 RVA: 0x00307F65 File Offset: 0x00306165
+	// Token: 0x17000F13 RID: 3859
+	// (get) Token: 0x06007FC3 RID: 32707 RVA: 0x00309A79 File Offset: 0x00307C79
+	// (set) Token: 0x06007FC4 RID: 32708 RVA: 0x00309A81 File Offset: 0x00307C81
 	public XUiC_PowerTriggerWindowGroup Owner
 	{
 		get; [PublicizedFrom(EAccessModifier.Internal)]
 		set;
 	}
 
-	// Token: 0x06007F76 RID: 32630 RVA: 0x00307F70 File Offset: 0x00306170
+	// Token: 0x06007FC5 RID: 32709 RVA: 0x00309A8C File Offset: 0x00307C8C
 	public override void Init()
 	{
 		base.Init();
@@ -99,7 +99,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.btnTargetAllies.ViewComponent.NavDownTarget = (this.btnTargetSelf.ViewComponent.NavDownTarget = (this.btnTargetStrangers.ViewComponent.NavDownTarget = (this.btnTargetZombies.ViewComponent.NavDownTarget = this.optionSelector1.ViewComponent)));
 	}
 
-	// Token: 0x06007F77 RID: 32631 RVA: 0x003083E4 File Offset: 0x003065E4
+	// Token: 0x06007FC6 RID: 32710 RVA: 0x00309F00 File Offset: 0x00308100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetSelf_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -113,7 +113,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.TileEntity.TargetType &= -2;
 	}
 
-	// Token: 0x06007F78 RID: 32632 RVA: 0x00308440 File Offset: 0x00306640
+	// Token: 0x06007FC7 RID: 32711 RVA: 0x00309F5C File Offset: 0x0030815C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetAllies_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -127,7 +127,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.TileEntity.TargetType &= -3;
 	}
 
-	// Token: 0x06007F79 RID: 32633 RVA: 0x0030849C File Offset: 0x0030669C
+	// Token: 0x06007FC8 RID: 32712 RVA: 0x00309FB8 File Offset: 0x003081B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetStrangers_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -141,7 +141,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.TileEntity.TargetType &= -5;
 	}
 
-	// Token: 0x06007F7A RID: 32634 RVA: 0x003084F8 File Offset: 0x003066F8
+	// Token: 0x06007FC9 RID: 32713 RVA: 0x0030A014 File Offset: 0x00308214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetZombies_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -155,14 +155,14 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.TileEntity.TargetType &= -9;
 	}
 
-	// Token: 0x06007F7B RID: 32635 RVA: 0x00308553 File Offset: 0x00306753
+	// Token: 0x06007FCA RID: 32714 RVA: 0x0030A06F File Offset: 0x0030826F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnOn_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.TileEntity.ResetTrigger();
 	}
 
-	// Token: 0x06007F7C RID: 32636 RVA: 0x00308560 File Offset: 0x00306760
+	// Token: 0x06007FCB RID: 32715 RVA: 0x0030A07C File Offset: 0x0030827C
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -180,7 +180,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007F7D RID: 32637 RVA: 0x003085D4 File Offset: 0x003067D4
+	// Token: 0x06007FCC RID: 32716 RVA: 0x0030A0F0 File Offset: 0x003082F0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -192,7 +192,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts, 0f);
 	}
 
-	// Token: 0x06007F7E RID: 32638 RVA: 0x00308638 File Offset: 0x00306838
+	// Token: 0x06007FCD RID: 32717 RVA: 0x0030A154 File Offset: 0x00308354
 	public override void OnClose()
 	{
 		GameManager instance = GameManager.Instance;
@@ -207,7 +207,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x06007F7F RID: 32639 RVA: 0x00308698 File Offset: 0x00306898
+	// Token: 0x06007FCE RID: 32718 RVA: 0x0030A1B4 File Offset: 0x003083B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupSliders()
 	{
@@ -312,7 +312,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		}
 	}
 
-	// Token: 0x06007F80 RID: 32640 RVA: 0x00308B3B File Offset: 0x00306D3B
+	// Token: 0x06007FCF RID: 32719 RVA: 0x0030A657 File Offset: 0x00308857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OptionSelector1_OnSelectionChanged(XUiController _sender, int newSelectedIndex)
 	{
@@ -320,7 +320,7 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.TileEntity.ResetTrigger();
 	}
 
-	// Token: 0x06007F81 RID: 32641 RVA: 0x00308B55 File Offset: 0x00306D55
+	// Token: 0x06007FD0 RID: 32720 RVA: 0x0030A671 File Offset: 0x00308871
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OptionSelector2_OnSelectionChanged(XUiController _sender, int newSelectedIndex)
 	{
@@ -328,91 +328,91 @@ public class XUiC_PowerTriggerOptions : XUiController
 		this.TileEntity.ResetTrigger();
 	}
 
-	// Token: 0x04005EA8 RID: 24232
+	// Token: 0x04005EE3 RID: 24291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowIcon;
 
-	// Token: 0x04005EA9 RID: 24233
+	// Token: 0x04005EE4 RID: 24292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnOn;
 
-	// Token: 0x04005EAA RID: 24234
+	// Token: 0x04005EE5 RID: 24293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnOn_Background;
 
-	// Token: 0x04005EAB RID: 24235
+	// Token: 0x04005EE6 RID: 24294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblOnOff;
 
-	// Token: 0x04005EAC RID: 24236
+	// Token: 0x04005EE7 RID: 24295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprOnOff;
 
-	// Token: 0x04005EAD RID: 24237
+	// Token: 0x04005EE8 RID: 24296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController pnlTargeting;
 
-	// Token: 0x04005EAE RID: 24238
+	// Token: 0x04005EE9 RID: 24297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string startTimeText;
 
-	// Token: 0x04005EAF RID: 24239
+	// Token: 0x04005EEA RID: 24298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string endTimeText;
 
-	// Token: 0x04005EB0 RID: 24240
+	// Token: 0x04005EEB RID: 24299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 onColor = new Color32(250, byte.MaxValue, 163, byte.MaxValue);
 
-	// Token: 0x04005EB1 RID: 24241
+	// Token: 0x04005EEC RID: 24300
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 offColor = Color.white;
 
-	// Token: 0x04005EB2 RID: 24242
+	// Token: 0x04005EED RID: 24301
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetSelf;
 
-	// Token: 0x04005EB3 RID: 24243
+	// Token: 0x04005EEE RID: 24302
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetAllies;
 
-	// Token: 0x04005EB4 RID: 24244
+	// Token: 0x04005EEF RID: 24303
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetStrangers;
 
-	// Token: 0x04005EB5 RID: 24245
+	// Token: 0x04005EF0 RID: 24304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetZombies;
 
-	// Token: 0x04005EB6 RID: 24246
+	// Token: 0x04005EF1 RID: 24305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPoweredTrigger tileEntity;
 
-	// Token: 0x04005EB8 RID: 24248
+	// Token: 0x04005EF3 RID: 24307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastOn;
 
-	// Token: 0x04005EB9 RID: 24249
+	// Token: 0x04005EF4 RID: 24308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsSelector optionSelector1;
 
-	// Token: 0x04005EBA RID: 24250
+	// Token: 0x04005EF5 RID: 24309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsSelector optionSelector2;
 
-	// Token: 0x04005EBB RID: 24251
+	// Token: 0x04005EF6 RID: 24310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsSelector optionSelector3;
 
-	// Token: 0x04005EBC RID: 24252
+	// Token: 0x04005EF7 RID: 24311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> delayStrings = new List<string>();
 
-	// Token: 0x04005EBD RID: 24253
+	// Token: 0x04005EF8 RID: 24312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> durationStrings = new List<string>();
 
-	// Token: 0x04005EBE RID: 24254
+	// Token: 0x04005EF9 RID: 24313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

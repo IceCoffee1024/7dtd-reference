@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CB9 RID: 3257
+// Token: 0x02000CC4 RID: 3268
 [Preserve]
 public class VehiclePart
 {
-	// Token: 0x060063A8 RID: 25512 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060063CD RID: 25549 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void InitPrefabConnections()
 	{
 	}
 
-	// Token: 0x060063A9 RID: 25513 RVA: 0x002753A8 File Offset: 0x002735A8
+	// Token: 0x060063CE RID: 25550 RVA: 0x002768D0 File Offset: 0x00274AD0
 	public void InitIKTarget(AvatarIKGoal ikGoal, Transform parentT)
 	{
 		string text = IKController.IKNames[(int)ikGoal];
@@ -48,7 +48,7 @@ public class VehiclePart
 		this.ikTargets.Add(target);
 	}
 
-	// Token: 0x060063AA RID: 25514 RVA: 0x0027548B File Offset: 0x0027368B
+	// Token: 0x060063CF RID: 25551 RVA: 0x002769B3 File Offset: 0x00274BB3
 	public virtual void SetProperties(DynamicProperties _properties)
 	{
 		if (_properties == null)
@@ -58,7 +58,7 @@ public class VehiclePart
 		this.properties = _properties;
 	}
 
-	// Token: 0x060063AB RID: 25515 RVA: 0x002754A1 File Offset: 0x002736A1
+	// Token: 0x060063D0 RID: 25552 RVA: 0x002769C9 File Offset: 0x00274BC9
 	public string GetProperty(string _key)
 	{
 		if (this.properties == null)
@@ -69,7 +69,7 @@ public class VehiclePart
 		return this.properties.GetString(_key);
 	}
 
-	// Token: 0x060063AC RID: 25516 RVA: 0x002754C8 File Offset: 0x002736C8
+	// Token: 0x060063D1 RID: 25553 RVA: 0x002769F0 File Offset: 0x00274BF0
 	public virtual void SetMods()
 	{
 		this.modInstalled = false;
@@ -101,25 +101,25 @@ public class VehiclePart
 		}
 	}
 
-	// Token: 0x060063AD RID: 25517 RVA: 0x00275594 File Offset: 0x00273794
+	// Token: 0x060063D2 RID: 25554 RVA: 0x00276ABC File Offset: 0x00274CBC
 	public void SetVehicle(Vehicle _v)
 	{
 		this.vehicle = _v;
 	}
 
-	// Token: 0x060063AE RID: 25518 RVA: 0x0027559D File Offset: 0x0027379D
+	// Token: 0x060063D3 RID: 25555 RVA: 0x00276AC5 File Offset: 0x00274CC5
 	public void SetTag(string _tag)
 	{
 		this.tag = _tag;
 	}
 
-	// Token: 0x060063AF RID: 25519 RVA: 0x002755A6 File Offset: 0x002737A6
+	// Token: 0x060063D4 RID: 25556 RVA: 0x00276ACE File Offset: 0x00274CCE
 	public Transform GetTransform()
 	{
 		return this.GetTransform("transform");
 	}
 
-	// Token: 0x060063B0 RID: 25520 RVA: 0x002755B4 File Offset: 0x002737B4
+	// Token: 0x060063D5 RID: 25557 RVA: 0x00276ADC File Offset: 0x00274CDC
 	public Transform GetTransform(string _property)
 	{
 		Transform meshTransform = this.vehicle.GetMeshTransform();
@@ -134,7 +134,7 @@ public class VehiclePart
 		return null;
 	}
 
-	// Token: 0x060063B1 RID: 25521 RVA: 0x002755F0 File Offset: 0x002737F0
+	// Token: 0x060063D6 RID: 25558 RVA: 0x00276B18 File Offset: 0x00274D18
 	public void SetTransformActive(string _property, bool _active)
 	{
 		Transform transform = this.vehicle.GetMeshTransform();
@@ -154,7 +154,7 @@ public class VehiclePart
 		}
 	}
 
-	// Token: 0x060063B2 RID: 25522 RVA: 0x00275654 File Offset: 0x00273854
+	// Token: 0x060063D7 RID: 25559 RVA: 0x00276B7C File Offset: 0x00274D7C
 	public void SetPhysicsTransformActive(string _property, bool _active)
 	{
 		Transform transform = this.vehicle.entity.PhysicsTransform;
@@ -174,25 +174,25 @@ public class VehiclePart
 		}
 	}
 
-	// Token: 0x060063B3 RID: 25523 RVA: 0x002756BC File Offset: 0x002738BC
+	// Token: 0x060063D8 RID: 25560 RVA: 0x00276BE4 File Offset: 0x00274DE4
 	public virtual bool IsBroken()
 	{
 		return this.vehicle.GetHealth() <= 0;
 	}
 
-	// Token: 0x060063B4 RID: 25524 RVA: 0x002756CF File Offset: 0x002738CF
+	// Token: 0x060063D9 RID: 25561 RVA: 0x00276BF7 File Offset: 0x00274DF7
 	public float GetHealthPercentage()
 	{
 		return this.vehicle.GetHealthPercent();
 	}
 
-	// Token: 0x060063B5 RID: 25525 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060063DA RID: 25562 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool IsRequired()
 	{
 		return false;
 	}
 
-	// Token: 0x060063B6 RID: 25526 RVA: 0x002756DC File Offset: 0x002738DC
+	// Token: 0x060063DB RID: 25563 RVA: 0x00276C04 File Offset: 0x00274E04
 	public void SetColors(Color _color)
 	{
 		Transform transform = this.GetTransform("paint");
@@ -222,56 +222,56 @@ public class VehiclePart
 		}
 	}
 
-	// Token: 0x060063B7 RID: 25527 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060063DC RID: 25564 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Update(float _dt)
 	{
 	}
 
-	// Token: 0x060063B8 RID: 25528 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060063DD RID: 25565 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void HandleEvent(Vehicle.Event _event, float _arg)
 	{
 	}
 
-	// Token: 0x060063B9 RID: 25529 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060063DE RID: 25566 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void HandleEvent(VehiclePart.Event _event, VehiclePart _fromPart, float arg)
 	{
 	}
 
-	// Token: 0x04004DC2 RID: 19906
+	// Token: 0x04004DE7 RID: 19943
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DynamicProperties properties;
 
-	// Token: 0x04004DC3 RID: 19907
+	// Token: 0x04004DE8 RID: 19944
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vehicle vehicle;
 
-	// Token: 0x04004DC4 RID: 19908
+	// Token: 0x04004DE9 RID: 19945
 	public string tag;
 
-	// Token: 0x04004DC5 RID: 19909
+	// Token: 0x04004DEA RID: 19946
 	public bool modInstalled;
 
-	// Token: 0x04004DC6 RID: 19910
+	// Token: 0x04004DEB RID: 19947
 	public List<IKController.Target> ikTargets;
 
-	// Token: 0x04004DC7 RID: 19911
+	// Token: 0x04004DEC RID: 19948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Renderer> renderers = new List<Renderer>();
 
-	// Token: 0x04004DC8 RID: 19912
+	// Token: 0x04004DED RID: 19949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Material> materials = new List<Material>();
 
-	// Token: 0x02000CBA RID: 3258
+	// Token: 0x02000CC5 RID: 3269
 	public enum Event
 	{
-		// Token: 0x04004DCA RID: 19914
+		// Token: 0x04004DEF RID: 19951
 		Broken,
-		// Token: 0x04004DCB RID: 19915
+		// Token: 0x04004DF0 RID: 19952
 		LightsOn,
-		// Token: 0x04004DCC RID: 19916
+		// Token: 0x04004DF1 RID: 19953
 		FuelEmpty,
-		// Token: 0x04004DCD RID: 19917
+		// Token: 0x04004DF2 RID: 19954
 		FuelRemove
 	}
 }

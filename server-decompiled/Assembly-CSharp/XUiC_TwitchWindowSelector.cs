@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x020010BE RID: 4286
+// Token: 0x020010CE RID: 4302
 [Preserve]
 public class XUiC_TwitchWindowSelector : XUiController
 {
-	// Token: 0x17001014 RID: 4116
-	// (get) Token: 0x0600886B RID: 34923 RVA: 0x00343D76 File Offset: 0x00341F76
-	// (set) Token: 0x0600886C RID: 34924 RVA: 0x00343D7E File Offset: 0x00341F7E
+	// Token: 0x1700101F RID: 4127
+	// (get) Token: 0x060088BE RID: 35006 RVA: 0x00345DFA File Offset: 0x00343FFA
+	// (set) Token: 0x060088BF RID: 35007 RVA: 0x00345E02 File Offset: 0x00344002
 	public new XUiV_Button Selected
 	{
 		get
@@ -31,8 +31,8 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x17001015 RID: 4117
-	// (get) Token: 0x0600886D RID: 34925 RVA: 0x00343DB5 File Offset: 0x00341FB5
+	// Token: 0x17001020 RID: 4128
+	// (get) Token: 0x060088C0 RID: 35008 RVA: 0x00345E39 File Offset: 0x00344039
 	public string SelectedName
 	{
 		get
@@ -45,7 +45,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x0600886E RID: 34926 RVA: 0x00343DD0 File Offset: 0x00341FD0
+	// Token: 0x060088C1 RID: 35009 RVA: 0x00345E54 File Offset: 0x00344054
 	public override void Init()
 	{
 		base.Init();
@@ -68,7 +68,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		this.SetSelected("actions");
 	}
 
-	// Token: 0x0600886F RID: 34927 RVA: 0x00343E86 File Offset: 0x00342086
+	// Token: 0x060088C2 RID: 35010 RVA: 0x00345F0A File Offset: 0x0034410A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnPress(XUiController _sender, int _mouseButton)
 	{
@@ -76,21 +76,21 @@ public class XUiC_TwitchWindowSelector : XUiController
 		this.OpenSelectedWindow();
 	}
 
-	// Token: 0x06008870 RID: 34928 RVA: 0x00343E9F File Offset: 0x0034209F
+	// Token: 0x060088C3 RID: 35011 RVA: 0x00345F23 File Offset: 0x00344123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleSelectedChange()
 	{
 		this.updateWindowTitle();
 	}
 
-	// Token: 0x06008871 RID: 34929 RVA: 0x00343EA7 File Offset: 0x003420A7
+	// Token: 0x060088C4 RID: 35012 RVA: 0x00345F2B File Offset: 0x0034412B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateWindowTitle()
 	{
 		this.lblWindowName.Text = ((this.selected != null) ? Localization.Get("TwitchInfo_" + this.Selected.ID, false, null) : "");
 	}
 
-	// Token: 0x06008872 RID: 34930 RVA: 0x00343EE0 File Offset: 0x003420E0
+	// Token: 0x060088C5 RID: 35013 RVA: 0x00345F64 File Offset: 0x00344164
 	public void OpenSelectedWindow()
 	{
 		if (this.Selected != null)
@@ -126,7 +126,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x06008873 RID: 34931 RVA: 0x00343FFC File Offset: 0x003421FC
+	// Token: 0x060088C6 RID: 35014 RVA: 0x00346080 File Offset: 0x00344280
 	public void SetSelected(string name)
 	{
 		XUiController childById = base.GetChildById(name.ToLower());
@@ -137,7 +137,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x06008874 RID: 34932 RVA: 0x0034405B File Offset: 0x0034225B
+	// Token: 0x060088C7 RID: 35015 RVA: 0x003460DF File Offset: 0x003442DF
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -147,7 +147,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008875 RID: 34933 RVA: 0x00344094 File Offset: 0x00342294
+	// Token: 0x060088C8 RID: 35016 RVA: 0x00346118 File Offset: 0x00344318
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -159,7 +159,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x06008876 RID: 34934 RVA: 0x003440E8 File Offset: 0x003422E8
+	// Token: 0x060088C9 RID: 35017 RVA: 0x0034616C File Offset: 0x0034436C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openSelectorAndWindow(string _selectedPage)
 	{
@@ -187,7 +187,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x06008877 RID: 34935 RVA: 0x003441F1 File Offset: 0x003423F1
+	// Token: 0x060088CA RID: 35018 RVA: 0x00346275 File Offset: 0x00344475
 	public static void OpenSelectorAndWindow(EntityPlayerLocal _localPlayer, string _selectedPage, bool _extras = false)
 	{
 		if (_localPlayer.IsDead())
@@ -198,7 +198,7 @@ public class XUiC_TwitchWindowSelector : XUiController
 		LocalPlayerUI.GetUIForPlayer(_localPlayer).xui.FindWindowGroupByName("twitchWindowpaging").GetChildByType<XUiC_TwitchWindowSelector>().openSelectorAndWindow(_selectedPage);
 	}
 
-	// Token: 0x06008878 RID: 34936 RVA: 0x00344224 File Offset: 0x00342424
+	// Token: 0x060088CB RID: 35019 RVA: 0x003462A8 File Offset: 0x003444A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleCategory(int _dir)
 	{
@@ -217,13 +217,13 @@ public class XUiC_TwitchWindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x06008879 RID: 34937 RVA: 0x003442A4 File Offset: 0x003424A4
+	// Token: 0x060088CC RID: 35020 RVA: 0x00346328 File Offset: 0x00344528
 	public static void ToggleCategory(EntityPlayerLocal _localPlayer, int _dir)
 	{
 		LocalPlayerUI.GetUIForPlayer(_localPlayer).xui.FindWindowGroupByName("twitchWindowpaging").GetChildByType<XUiC_TwitchWindowSelector>().toggleCategory(_dir);
 	}
 
-	// Token: 0x0600887A RID: 34938 RVA: 0x003442C8 File Offset: 0x003424C8
+	// Token: 0x060088CD RID: 35021 RVA: 0x0034634C File Offset: 0x0034454C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -242,29 +242,29 @@ public class XUiC_TwitchWindowSelector : XUiController
 		this.OverrideClose = false;
 	}
 
-	// Token: 0x040065B2 RID: 26034
+	// Token: 0x040065F1 RID: 26097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblWindowName;
 
-	// Token: 0x040065B3 RID: 26035
+	// Token: 0x040065F2 RID: 26098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button selected;
 
-	// Token: 0x040065B4 RID: 26036
+	// Token: 0x040065F3 RID: 26099
 	public static string ID = "";
 
-	// Token: 0x040065B5 RID: 26037
+	// Token: 0x040065F4 RID: 26100
 	public bool OverrideClose;
 
-	// Token: 0x040065B6 RID: 26038
+	// Token: 0x040065F5 RID: 26101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> categories = new List<string>();
 
-	// Token: 0x040065B7 RID: 26039
+	// Token: 0x040065F6 RID: 26102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentCategoryIndex;
 
-	// Token: 0x040065B8 RID: 26040
+	// Token: 0x040065F7 RID: 26103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool extras = false;
 }

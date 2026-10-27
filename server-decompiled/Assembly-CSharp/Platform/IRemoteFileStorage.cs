@@ -2,44 +2,44 @@
 
 namespace Platform
 {
-	// Token: 0x02001BC5 RID: 7109
+	// Token: 0x02001BF6 RID: 7158
 	public interface IRemoteFileStorage
 	{
-		// Token: 0x0600D474 RID: 54388
+		// Token: 0x0600D588 RID: 54664
 		void Init(IPlatform _owner);
 
-		// Token: 0x17001ABC RID: 6844
-		// (get) Token: 0x0600D475 RID: 54389
+		// Token: 0x17001B04 RID: 6916
+		// (get) Token: 0x0600D589 RID: 54665
 		bool IsReady { get; }
 
-		// Token: 0x17001ABD RID: 6845
-		// (get) Token: 0x0600D476 RID: 54390
+		// Token: 0x17001B05 RID: 6917
+		// (get) Token: 0x0600D58A RID: 54666
 		bool Unavailable { get; }
 
-		// Token: 0x0600D477 RID: 54391
+		// Token: 0x0600D58B RID: 54667
 		void GetFile(string _filename, IRemoteFileStorage.FileDownloadCompleteCallback _callback);
 
-		// Token: 0x0600D478 RID: 54392
+		// Token: 0x0600D58C RID: 54668
 		void GetCachedFile(string _filename, IRemoteFileStorage.FileDownloadCompleteCallback _callback);
 
-		// Token: 0x0600D479 RID: 54393
+		// Token: 0x0600D58D RID: 54669
 		bool CancelGetFile(string _filename, string reason);
 
-		// Token: 0x02001BC6 RID: 7110
+		// Token: 0x02001BF7 RID: 7159
 		public enum EFileDownloadResult
 		{
-			// Token: 0x0400A1A6 RID: 41382
+			// Token: 0x0400A28F RID: 41615
 			Ok,
-			// Token: 0x0400A1A7 RID: 41383
+			// Token: 0x0400A290 RID: 41616
 			EmptyFilename,
-			// Token: 0x0400A1A8 RID: 41384
+			// Token: 0x0400A291 RID: 41617
 			FileNotFound,
-			// Token: 0x0400A1A9 RID: 41385
+			// Token: 0x0400A292 RID: 41618
 			Other
 		}
 
-		// Token: 0x02001BC7 RID: 7111
-		// (Invoke) Token: 0x0600D47B RID: 54395
+		// Token: 0x02001BF8 RID: 7160
+		// (Invoke) Token: 0x0600D58F RID: 54671
 		public delegate void FileDownloadCompleteCallback(IRemoteFileStorage.EFileDownloadResult _result, string _errorName, byte[] _data);
 	}
 }

@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001411 RID: 5137
+// Token: 0x02001423 RID: 5155
 [Serializable]
 public class CachedMeshData
 {
-	// Token: 0x0600A101 RID: 41217 RVA: 0x003C8E44 File Offset: 0x003C7044
+	// Token: 0x0600A159 RID: 41305 RVA: 0x003CB248 File Offset: 0x003C9448
 	public bool ApproximatelyEquals(CachedMeshData other)
 	{
 		return this.name.Equals(other.name) && Mathf.Abs(this.vertexCount - other.vertexCount) < 10 && Mathf.Abs(this.triCount - other.triCount) < 10;
 	}
 
-	// Token: 0x0400798B RID: 31115
+	// Token: 0x040079CC RID: 31180
 	public string name;
 
-	// Token: 0x0400798C RID: 31116
+	// Token: 0x040079CD RID: 31181
 	public int vertexCount;
 
-	// Token: 0x0400798D RID: 31117
+	// Token: 0x040079CE RID: 31182
 	public int triCount;
 }

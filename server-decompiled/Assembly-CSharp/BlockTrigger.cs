@@ -6,8 +6,8 @@ using UnityEngine;
 public class BlockTrigger
 {
 	// Token: 0x17000104 RID: 260
-	// (get) Token: 0x06000DE5 RID: 3557 RVA: 0x0005BF68 File Offset: 0x0005A168
-	// (set) Token: 0x06000DE6 RID: 3558 RVA: 0x0005BF70 File Offset: 0x0005A170
+	// (get) Token: 0x06000DE5 RID: 3557 RVA: 0x0005BF08 File Offset: 0x0005A108
+	// (set) Token: 0x06000DE6 RID: 3558 RVA: 0x0005BF10 File Offset: 0x0005A110
 	public Chunk Chunk
 	{
 		get
@@ -26,14 +26,14 @@ public class BlockTrigger
 		}
 	}
 
-	// Token: 0x06000DE7 RID: 3559 RVA: 0x0005BFA2 File Offset: 0x0005A1A2
+	// Token: 0x06000DE7 RID: 3559 RVA: 0x0005BF42 File Offset: 0x0005A142
 	public BlockTrigger(Chunk chunkNew)
 	{
 		this.Chunk = chunkNew;
 	}
 
 	// Token: 0x17000105 RID: 261
-	// (get) Token: 0x06000DE8 RID: 3560 RVA: 0x0005BFD2 File Offset: 0x0005A1D2
+	// (get) Token: 0x06000DE8 RID: 3560 RVA: 0x0005BF72 File Offset: 0x0005A172
 	public BlockValue BlockValue
 	{
 		get
@@ -42,7 +42,7 @@ public class BlockTrigger
 		}
 	}
 
-	// Token: 0x06000DE9 RID: 3561 RVA: 0x0005BFE8 File Offset: 0x0005A1E8
+	// Token: 0x06000DE9 RID: 3561 RVA: 0x0005BF88 File Offset: 0x0005A188
 	public void Refresh(FastTags<TagGroup.Global> questTag)
 	{
 		this.chunk = (Chunk)GameManager.Instance.World.GetChunkSync(this.chunkKey);
@@ -73,7 +73,7 @@ public class BlockTrigger
 		blockValue.Block.OnTriggerRefresh(this, blockValue, questTag);
 	}
 
-	// Token: 0x06000DEA RID: 3562 RVA: 0x0005C090 File Offset: 0x0005A290
+	// Token: 0x06000DEA RID: 3562 RVA: 0x0005C030 File Offset: 0x0005A230
 	public void Read(PooledBinaryReader _br)
 	{
 		this.currentVersion = _br.ReadUInt16();
@@ -113,7 +113,7 @@ public class BlockTrigger
 		}
 	}
 
-	// Token: 0x06000DEB RID: 3563 RVA: 0x0005C18C File Offset: 0x0005A38C
+	// Token: 0x06000DEB RID: 3563 RVA: 0x0005C12C File Offset: 0x0005A32C
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(5);
@@ -138,7 +138,7 @@ public class BlockTrigger
 		_bw.Write(this.Unlock);
 	}
 
-	// Token: 0x06000DEC RID: 3564 RVA: 0x0005C280 File Offset: 0x0005A480
+	// Token: 0x06000DEC RID: 3564 RVA: 0x0005C220 File Offset: 0x0005A420
 	public BlockTrigger Clone()
 	{
 		BlockTrigger blockTrigger = new BlockTrigger(this.Chunk);
@@ -164,7 +164,7 @@ public class BlockTrigger
 		return blockTrigger;
 	}
 
-	// Token: 0x06000DED RID: 3565 RVA: 0x0005C374 File Offset: 0x0005A574
+	// Token: 0x06000DED RID: 3565 RVA: 0x0005C314 File Offset: 0x0005A514
 	public void CopyFrom(BlockTrigger _other)
 	{
 		this.LocalChunkPos = _other.LocalChunkPos;
@@ -188,7 +188,7 @@ public class BlockTrigger
 		_other.Unlock = this.Unlock;
 	}
 
-	// Token: 0x06000DEE RID: 3566 RVA: 0x0005C459 File Offset: 0x0005A659
+	// Token: 0x06000DEE RID: 3566 RVA: 0x0005C3F9 File Offset: 0x0005A5F9
 	public void SetTriggersFlag(byte index)
 	{
 		if (!this.TriggersIndices.Contains(index))
@@ -197,25 +197,25 @@ public class BlockTrigger
 		}
 	}
 
-	// Token: 0x06000DEF RID: 3567 RVA: 0x0005C475 File Offset: 0x0005A675
+	// Token: 0x06000DEF RID: 3567 RVA: 0x0005C415 File Offset: 0x0005A615
 	public void RemoveTriggersFlag(byte index)
 	{
 		this.TriggersIndices.Remove(index);
 	}
 
-	// Token: 0x06000DF0 RID: 3568 RVA: 0x0005C484 File Offset: 0x0005A684
+	// Token: 0x06000DF0 RID: 3568 RVA: 0x0005C424 File Offset: 0x0005A624
 	public void RemoveAllTriggersFlags()
 	{
 		this.TriggersIndices.Clear();
 	}
 
-	// Token: 0x06000DF1 RID: 3569 RVA: 0x0005C491 File Offset: 0x0005A691
+	// Token: 0x06000DF1 RID: 3569 RVA: 0x0005C431 File Offset: 0x0005A631
 	public bool HasTriggers(byte index)
 	{
 		return this.TriggersIndices.Contains(index);
 	}
 
-	// Token: 0x06000DF2 RID: 3570 RVA: 0x0005C4A0 File Offset: 0x0005A6A0
+	// Token: 0x06000DF2 RID: 3570 RVA: 0x0005C440 File Offset: 0x0005A640
 	public void ToggleTriggersFlag(byte layer)
 	{
 		int num = this.TriggersIndices.IndexOf(layer);
@@ -227,13 +227,13 @@ public class BlockTrigger
 		this.TriggersIndices.Add(layer);
 	}
 
-	// Token: 0x06000DF3 RID: 3571 RVA: 0x0005C4D7 File Offset: 0x0005A6D7
+	// Token: 0x06000DF3 RID: 3571 RVA: 0x0005C477 File Offset: 0x0005A677
 	public bool HasAnyTriggers()
 	{
 		return this.TriggersIndices.Count > 0;
 	}
 
-	// Token: 0x06000DF4 RID: 3572 RVA: 0x0005C4E7 File Offset: 0x0005A6E7
+	// Token: 0x06000DF4 RID: 3572 RVA: 0x0005C487 File Offset: 0x0005A687
 	public void SetTriggeredByFlag(byte index)
 	{
 		if (!this.TriggeredByIndices.Contains(index))
@@ -242,19 +242,19 @@ public class BlockTrigger
 		}
 	}
 
-	// Token: 0x06000DF5 RID: 3573 RVA: 0x0005C503 File Offset: 0x0005A703
+	// Token: 0x06000DF5 RID: 3573 RVA: 0x0005C4A3 File Offset: 0x0005A6A3
 	public void RemoveTriggeredByFlag(byte index)
 	{
 		this.TriggeredByIndices.Remove(index);
 	}
 
-	// Token: 0x06000DF6 RID: 3574 RVA: 0x0005C512 File Offset: 0x0005A712
+	// Token: 0x06000DF6 RID: 3574 RVA: 0x0005C4B2 File Offset: 0x0005A6B2
 	public bool HasTriggeredBy(byte index)
 	{
 		return this.TriggeredByIndices.Contains(index);
 	}
 
-	// Token: 0x06000DF7 RID: 3575 RVA: 0x0005C520 File Offset: 0x0005A720
+	// Token: 0x06000DF7 RID: 3575 RVA: 0x0005C4C0 File Offset: 0x0005A6C0
 	public void ToggleTriggeredByFlag(byte layer)
 	{
 		int num = this.TriggeredByIndices.IndexOf(layer);
@@ -266,13 +266,13 @@ public class BlockTrigger
 		this.TriggeredByIndices.Add(layer);
 	}
 
-	// Token: 0x06000DF8 RID: 3576 RVA: 0x0005C557 File Offset: 0x0005A757
+	// Token: 0x06000DF8 RID: 3576 RVA: 0x0005C4F7 File Offset: 0x0005A6F7
 	public bool HasAnyTriggeredBy()
 	{
 		return this.TriggeredByIndices.Count > 0;
 	}
 
-	// Token: 0x06000DF9 RID: 3577 RVA: 0x0005C567 File Offset: 0x0005A767
+	// Token: 0x06000DF9 RID: 3577 RVA: 0x0005C507 File Offset: 0x0005A707
 	public void SetTriggeredValueFlag(byte index)
 	{
 		if (this.TriggeredValues.Contains(index))
@@ -283,7 +283,7 @@ public class BlockTrigger
 		this.TriggeredValues.Add(index);
 	}
 
-	// Token: 0x06000DFA RID: 3578 RVA: 0x0005C594 File Offset: 0x0005A794
+	// Token: 0x06000DFA RID: 3578 RVA: 0x0005C534 File Offset: 0x0005A734
 	public bool CheckIsTriggered()
 	{
 		if (this.UseOrForMultipleTriggers)
@@ -315,7 +315,7 @@ public class BlockTrigger
 		return true;
 	}
 
-	// Token: 0x06000DFB RID: 3579 RVA: 0x0005C650 File Offset: 0x0005A850
+	// Token: 0x06000DFB RID: 3579 RVA: 0x0005C5F0 File Offset: 0x0005A7F0
 	public string TriggerDisplay()
 	{
 		if (this.TriggeredByIndices.Count != 0 && this.TriggersIndices.Count == 0)
@@ -329,7 +329,7 @@ public class BlockTrigger
 		return string.Format("[FF0000]{0}[-] | [0000FF]{1}[-]", string.Join<byte>(",", this.TriggersIndices), string.Join<byte>(",", this.TriggeredByIndices));
 	}
 
-	// Token: 0x06000DFC RID: 3580 RVA: 0x0005C704 File Offset: 0x0005A904
+	// Token: 0x06000DFC RID: 3580 RVA: 0x0005C6A4 File Offset: 0x0005A8A4
 	public Vector3i ToWorldPos()
 	{
 		if (this.Chunk != null)
@@ -339,7 +339,7 @@ public class BlockTrigger
 		return Vector3i.zero;
 	}
 
-	// Token: 0x06000DFD RID: 3581 RVA: 0x0005C75C File Offset: 0x0005A95C
+	// Token: 0x06000DFD RID: 3581 RVA: 0x0005C6FC File Offset: 0x0005A8FC
 	public void TriggerUpdated(List<BlockChangeInfo> _blockChanges)
 	{
 		BlockValue block = this.Chunk.GetBlock(this.LocalChunkPos);
@@ -351,7 +351,7 @@ public class BlockTrigger
 		block.Block.OnTriggerChanged(this, this.Chunk, this.ToWorldPos(), block);
 	}
 
-	// Token: 0x06000DFE RID: 3582 RVA: 0x0005C7B4 File Offset: 0x0005A9B4
+	// Token: 0x06000DFE RID: 3582 RVA: 0x0005C754 File Offset: 0x0005A954
 	public void OnTriggered(EntityPlayer _player, World _world, int index, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy = null)
 	{
 		this.SetTriggeredValueFlag((byte)index);

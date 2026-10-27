@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A1F RID: 6687
+	// Token: 0x02001A50 RID: 6736
 	[Preserve]
 	public class ActionPOIReset : BaseAction
 	{
-		// Token: 0x0600CBE6 RID: 52198 RVA: 0x004A846E File Offset: 0x004A666E
+		// Token: 0x0600CCFA RID: 52474 RVA: 0x004ABF6A File Offset: 0x004AA16A
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this._state == ActionPOIReset.State.Start)
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			return this._retVal;
 		}
 
-		// Token: 0x0600CBE7 RID: 52199 RVA: 0x004A849D File Offset: 0x004A669D
+		// Token: 0x0600CCFB RID: 52475 RVA: 0x004ABF99 File Offset: 0x004AA199
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator onPerformAction()
 		{
@@ -44,7 +44,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600CBE8 RID: 52200 RVA: 0x004A84AC File Offset: 0x004A66AC
+		// Token: 0x0600CCFC RID: 52476 RVA: 0x004ABFA8 File Offset: 0x004AA1A8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator UpdateBlocks(List<BlockChangeInfo> blockChanges)
 		{
@@ -53,35 +53,35 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600CBE9 RID: 52201 RVA: 0x004A84BB File Offset: 0x004A66BB
+		// Token: 0x0600CCFD RID: 52477 RVA: 0x004ABFB7 File Offset: 0x004AA1B7
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
 			return new ActionPOIReset();
 		}
 
-		// Token: 0x0600CBEA RID: 52202 RVA: 0x004A84C2 File Offset: 0x004A66C2
+		// Token: 0x0600CCFE RID: 52478 RVA: 0x004ABFBE File Offset: 0x004AA1BE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
 			this._state = ActionPOIReset.State.Start;
 		}
 
-		// Token: 0x04009A93 RID: 39571
+		// Token: 0x04009B7C RID: 39804
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BaseAction.ActionCompleteStates _retVal;
 
-		// Token: 0x04009A94 RID: 39572
+		// Token: 0x04009B7D RID: 39805
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ActionPOIReset.State _state;
 
-		// Token: 0x02001A20 RID: 6688
+		// Token: 0x02001A51 RID: 6737
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum State
 		{
-			// Token: 0x04009A96 RID: 39574
+			// Token: 0x04009B7F RID: 39807
 			Start,
-			// Token: 0x04009A97 RID: 39575
+			// Token: 0x04009B80 RID: 39808
 			Wait
 		}
 	}

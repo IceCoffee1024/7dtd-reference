@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000A1B RID: 2587
+// Token: 0x02000A25 RID: 2597
 public enum SaveDataLimitType
 {
-	// Token: 0x04003C20 RID: 15392
+	// Token: 0x04003C41 RID: 15425
 	Unlimited,
-	// Token: 0x04003C21 RID: 15393
+	// Token: 0x04003C42 RID: 15426
 	Short,
-	// Token: 0x04003C22 RID: 15394
+	// Token: 0x04003C43 RID: 15427
 	Medium,
-	// Token: 0x04003C23 RID: 15395
+	// Token: 0x04003C44 RID: 15428
 	Long,
-	// Token: 0x04003C24 RID: 15396
+	// Token: 0x04003C45 RID: 15429
 	VeryLong
 }

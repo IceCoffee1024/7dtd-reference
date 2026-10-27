@@ -6,10 +6,10 @@ using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x02000B36 RID: 2870
+// Token: 0x02000B41 RID: 2881
 public class ChunkManager : IChunkProviderIndicator
 {
-	// Token: 0x0600564F RID: 22095 RVA: 0x002127F8 File Offset: 0x002109F8
+	// Token: 0x06005674 RID: 22132 RVA: 0x00213D74 File Offset: 0x00211F74
 	public void Init(World _world)
 	{
 		this.m_World = _world;
@@ -35,7 +35,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.BakeInit();
 	}
 
-	// Token: 0x06005650 RID: 22096 RVA: 0x002128E8 File Offset: 0x00210AE8
+	// Token: 0x06005675 RID: 22133 RVA: 0x00213E64 File Offset: 0x00212064
 	public void Cleanup()
 	{
 		this.threadInfoRegenerating.WaitForEnd(30);
@@ -54,7 +54,7 @@ public class ChunkManager : IChunkProviderIndicator
 		ChunkManager.chunkGenerationTimestamps.Clear();
 	}
 
-	// Token: 0x06005651 RID: 22097 RVA: 0x0021297C File Offset: 0x00210B7C
+	// Token: 0x06005676 RID: 22134 RVA: 0x00213EF8 File Offset: 0x002120F8
 	public void FreePools()
 	{
 		for (int i = 0; i < this.m_FreeChunkGameObjects.Count; i++)
@@ -66,7 +66,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.m_FreeChunkGameObjects.Clear();
 	}
 
-	// Token: 0x06005652 RID: 22098 RVA: 0x002129C6 File Offset: 0x00210BC6
+	// Token: 0x06005677 RID: 22135 RVA: 0x00213F42 File Offset: 0x00212142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -76,7 +76,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005653 RID: 22099 RVA: 0x002129DC File Offset: 0x00210BDC
+	// Token: 0x06005678 RID: 22136 RVA: 0x00213F58 File Offset: 0x00212158
 	public void OriginChanged(Vector3 _offset)
 	{
 		for (int i = 0; i < this.m_UsedChunkGameObjects.Count; i++)
@@ -89,7 +89,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005654 RID: 22100 RVA: 0x00212A30 File Offset: 0x00210C30
+	// Token: 0x06005679 RID: 22137 RVA: 0x00213FAC File Offset: 0x002121AC
 	public ChunkManager.ChunkObserver AddChunkObserver(Vector3 _initialPosition, bool _bBuildVisualMeshAround, int _viewDim, int _entityIdToSendChunksTo)
 	{
 		ChunkManager.ChunkObserver chunkObserver = new ChunkManager.ChunkObserver(_initialPosition, _bBuildVisualMeshAround, _viewDim, _entityIdToSendChunksTo);
@@ -98,7 +98,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return chunkObserver;
 	}
 
-	// Token: 0x06005655 RID: 22101 RVA: 0x00212A5C File Offset: 0x00210C5C
+	// Token: 0x0600567A RID: 22138 RVA: 0x00213FD8 File Offset: 0x002121D8
 	public void RemoveChunkObserver(ChunkManager.ChunkObserver _chunkObserver)
 	{
 		for (int i = 0; i < this.m_ObservedEntities.Count; i++)
@@ -112,7 +112,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005656 RID: 22102 RVA: 0x00212AAC File Offset: 0x00210CAC
+	// Token: 0x0600567B RID: 22139 RVA: 0x00214028 File Offset: 0x00212228
 	public void SendChunksToClients()
 	{
 		ChunkCluster chunkCache = this.m_World.ChunkCache;
@@ -184,7 +184,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005657 RID: 22103 RVA: 0x00212D30 File Offset: 0x00210F30
+	// Token: 0x0600567C RID: 22140 RVA: 0x002142AC File Offset: 0x002124AC
 	public void ResendChunksToClients(HashSetLong _chunks)
 	{
 		List<EntityPlayerLocal> localPlayers = this.m_World.GetLocalPlayers();
@@ -211,7 +211,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005658 RID: 22104 RVA: 0x00212DB4 File Offset: 0x00210FB4
+	// Token: 0x0600567D RID: 22141 RVA: 0x00214330 File Offset: 0x00212530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk FindNextChunkToCopy()
 	{
@@ -294,7 +294,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return chunkSync;
 	}
 
-	// Token: 0x06005659 RID: 22105 RVA: 0x00212F68 File Offset: 0x00211168
+	// Token: 0x0600567E RID: 22142 RVA: 0x002144E4 File Offset: 0x002126E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void freeChunkGameObjects()
 	{
@@ -325,7 +325,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x0600565A RID: 22106 RVA: 0x0021303C File Offset: 0x0021123C
+	// Token: 0x0600567F RID: 22143 RVA: 0x002145B8 File Offset: 0x002127B8
 	public void ResetChunksToCopyInOneFrame()
 	{
 		this.ChunksToCopyInOneFrame.Clear();
@@ -333,7 +333,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.chunksToCopyInOneFramePass = 0;
 	}
 
-	// Token: 0x0600565B RID: 22107 RVA: 0x00213058 File Offset: 0x00211258
+	// Token: 0x06005680 RID: 22144 RVA: 0x002145D4 File Offset: 0x002127D4
 	public bool CopyChunksToUnity()
 	{
 		bool flag;
@@ -345,7 +345,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return flag;
 	}
 
-	// Token: 0x0600565C RID: 22108 RVA: 0x00213084 File Offset: 0x00211284
+	// Token: 0x06005681 RID: 22145 RVA: 0x00214600 File Offset: 0x00212800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool doCopyChunksToUnity()
 	{
@@ -455,7 +455,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return this.isContinueCopying;
 	}
 
-	// Token: 0x0600565D RID: 22109 RVA: 0x00213354 File Offset: 0x00211554
+	// Token: 0x06005682 RID: 22146 RVA: 0x002148D0 File Offset: 0x00212AD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void task_Lighting(ThreadManager.TaskInfo _taskInfo)
 	{
@@ -582,7 +582,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.bLightingDone = true;
 	}
 
-	// Token: 0x0600565E RID: 22110 RVA: 0x00213628 File Offset: 0x00211828
+	// Token: 0x06005683 RID: 22147 RVA: 0x00214BA4 File Offset: 0x00212DA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lockLightingInProgress(Chunk[] chunks)
 	{
@@ -605,7 +605,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return true;
 	}
 
-	// Token: 0x0600565F RID: 22111 RVA: 0x00213684 File Offset: 0x00211884
+	// Token: 0x06005684 RID: 22148 RVA: 0x00214C00 File Offset: 0x00212E00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int thread_Calc(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -619,7 +619,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return -1;
 	}
 
-	// Token: 0x06005660 RID: 22112 RVA: 0x002136AC File Offset: 0x002118AC
+	// Token: 0x06005685 RID: 22149 RVA: 0x00214C28 File Offset: 0x00212E28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void task_CalcChunkPositions(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -721,14 +721,14 @@ public class ChunkManager : IChunkProviderIndicator
 		this.bCalcPositionsDone = true;
 	}
 
-	// Token: 0x06005661 RID: 22113 RVA: 0x00213ADC File Offset: 0x00211CDC
+	// Token: 0x06005686 RID: 22150 RVA: 0x00215058 File Offset: 0x00213258
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void thread_RegeneratingInit(ThreadManager.ThreadInfo _threadInfo)
 	{
 		_threadInfo.threadData = new ChunkManager.ThreadRegeneratingData();
 	}
 
-	// Token: 0x06005662 RID: 22114 RVA: 0x00213AEC File Offset: 0x00211CEC
+	// Token: 0x06005687 RID: 22151 RVA: 0x00215068 File Offset: 0x00213268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int thread_Regenerating(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -791,7 +791,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return 5;
 	}
 
-	// Token: 0x06005663 RID: 22115 RVA: 0x00213D34 File Offset: 0x00211F34
+	// Token: 0x06005688 RID: 22152 RVA: 0x002152B0 File Offset: 0x002134B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk RegenerateNextChunk(List<long> _chunkPositions, bool _isOnlyColliders)
 	{
@@ -870,14 +870,14 @@ public class ChunkManager : IChunkProviderIndicator
 		return null;
 	}
 
-	// Token: 0x06005664 RID: 22116 RVA: 0x00213F4C File Offset: 0x0021214C
+	// Token: 0x06005689 RID: 22153 RVA: 0x002154C8 File Offset: 0x002136C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAnyChunkEntities(Chunk[] chunks)
 	{
 		return chunks[0].hasEntities || chunks[1].hasEntities || chunks[2].hasEntities || chunks[3].hasEntities || chunks[4].hasEntities || chunks[5].hasEntities || chunks[6].hasEntities || chunks[7].hasEntities;
 	}
 
-	// Token: 0x06005665 RID: 22117 RVA: 0x00213FCC File Offset: 0x002121CC
+	// Token: 0x0600568A RID: 22154 RVA: 0x00215548 File Offset: 0x00213748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lockGenerateInProgress(Chunk[] chunks)
 	{
@@ -900,7 +900,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return true;
 	}
 
-	// Token: 0x06005666 RID: 22118 RVA: 0x00214028 File Offset: 0x00212228
+	// Token: 0x0600568B RID: 22155 RVA: 0x002155A4 File Offset: 0x002137A4
 	public void ReloadAllChunks()
 	{
 		this.m_ViewingChunkPositions.Clear();
@@ -918,19 +918,19 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005667 RID: 22119 RVA: 0x002140A5 File Offset: 0x002122A5
+	// Token: 0x0600568C RID: 22156 RVA: 0x00215621 File Offset: 0x00213821
 	public ArraySegment<long> GetActiveChunkSet()
 	{
 		return new ArraySegment<long>(this.activeChunkSetArr, 0, this.m_AllChunkPositions.list.Count);
 	}
 
-	// Token: 0x06005668 RID: 22120 RVA: 0x002140C3 File Offset: 0x002122C3
+	// Token: 0x0600568D RID: 22157 RVA: 0x0021563F File Offset: 0x0021383F
 	public bool IsForceUpdate()
 	{
 		return this.isInternalForceUpdate || this.isChunkClusterChanged;
 	}
 
-	// Token: 0x06005669 RID: 22121 RVA: 0x002140D8 File Offset: 0x002122D8
+	// Token: 0x0600568E RID: 22158 RVA: 0x00215654 File Offset: 0x00213854
 	public void DetermineChunksToLoad()
 	{
 		int num = this.removeChunksToUnload(8);
@@ -1023,7 +1023,7 @@ public class ChunkManager : IChunkProviderIndicator
 							bool flag5 = false;
 							foreach (long num4 in chunkKeysCopySync)
 							{
-								if (!this.m_AllChunkPositions.Contains(num4) && !DynamicMeshThread.ChunksToProcess.Contains(num4) && !DynamicMeshThread.ChunksToLoad.Contains(num4))
+								if (!this.m_AllChunkPositions.Contains(num4))
 								{
 									Chunk chunkSync = chunkCache.GetChunkSync(num4);
 									chunkSync.InProgressUnloading = true;
@@ -1051,7 +1051,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.calcThreadWaitHandle.Set();
 	}
 
-	// Token: 0x0600566A RID: 22122 RVA: 0x00214670 File Offset: 0x00212870
+	// Token: 0x0600568F RID: 22159 RVA: 0x00215BD0 File Offset: 0x00213DD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int removeChunksToUnload(int _maxCGOsToUnload = 2147483647)
 	{
@@ -1102,7 +1102,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return num2;
 	}
 
-	// Token: 0x0600566B RID: 22123 RVA: 0x00214764 File Offset: 0x00212964
+	// Token: 0x06005690 RID: 22160 RVA: 0x00215CC4 File Offset: 0x00213EC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateChunkKeysToUnloadSnapshot()
 	{
@@ -1115,13 +1115,13 @@ public class ChunkManager : IChunkProviderIndicator
 		this.chunkKeysToUnloadSnapshot = array;
 	}
 
-	// Token: 0x0600566C RID: 22124 RVA: 0x002147C1 File Offset: 0x002129C1
+	// Token: 0x06005691 RID: 22161 RVA: 0x00215D21 File Offset: 0x00213F21
 	public ReadOnlySpan<long> GetChunkKeysToUnloadSnapshot()
 	{
 		return this.chunkKeysToUnloadSnapshot;
 	}
 
-	// Token: 0x0600566D RID: 22125 RVA: 0x002147D0 File Offset: 0x002129D0
+	// Token: 0x06005692 RID: 22162 RVA: 0x00215D30 File Offset: 0x00213F30
 	public long GetNextChunkToProvide()
 	{
 		ChunkCluster chunkCache = this.m_World.ChunkCache;
@@ -1165,7 +1165,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return long.MaxValue;
 	}
 
-	// Token: 0x0600566E RID: 22126 RVA: 0x002148F4 File Offset: 0x00212AF4
+	// Token: 0x06005693 RID: 22163 RVA: 0x00215E54 File Offset: 0x00214054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk checkChunkNeedsCopying(long key)
 	{
@@ -1203,13 +1203,13 @@ public class ChunkManager : IChunkProviderIndicator
 		return null;
 	}
 
-	// Token: 0x0600566F RID: 22127 RVA: 0x002149E0 File Offset: 0x00212BE0
+	// Token: 0x06005694 RID: 22164 RVA: 0x00215F40 File Offset: 0x00214140
 	public ICollection GetCurrDisplayedChunkGameObjects()
 	{
 		return this.tempDisplayedCGOs;
 	}
 
-	// Token: 0x06005670 RID: 22128 RVA: 0x002149E8 File Offset: 0x00212BE8
+	// Token: 0x06005695 RID: 22165 RVA: 0x00215F48 File Offset: 0x00214148
 	public IList<ChunkGameObject> GetDisplayedChunkGameObjects()
 	{
 		this.tempDisplayedCGOs.Clear();
@@ -1221,7 +1221,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return this.tempDisplayedCGOs;
 	}
 
-	// Token: 0x06005671 RID: 22129 RVA: 0x00214A30 File Offset: 0x00212C30
+	// Token: 0x06005696 RID: 22166 RVA: 0x00215F90 File Offset: 0x00214190
 	public int GetDisplayedChunkGameObjectsCount()
 	{
 		ChunkCluster chunkCache = this.m_World.ChunkCache;
@@ -1239,19 +1239,19 @@ public class ChunkManager : IChunkProviderIndicator
 		return num2.GetValueOrDefault();
 	}
 
-	// Token: 0x06005672 RID: 22130 RVA: 0x00214A7D File Offset: 0x00212C7D
+	// Token: 0x06005697 RID: 22167 RVA: 0x00215FDD File Offset: 0x002141DD
 	public List<ChunkGameObject> GetFreeChunkGameObjects()
 	{
 		return this.m_FreeChunkGameObjects;
 	}
 
-	// Token: 0x06005673 RID: 22131 RVA: 0x00214A85 File Offset: 0x00212C85
+	// Token: 0x06005698 RID: 22168 RVA: 0x00215FE5 File Offset: 0x002141E5
 	public List<ChunkGameObject> GetUsedChunkGameObjects()
 	{
 		return this.m_UsedChunkGameObjects;
 	}
 
-	// Token: 0x06005674 RID: 22132 RVA: 0x00214A90 File Offset: 0x00212C90
+	// Token: 0x06005699 RID: 22169 RVA: 0x00215FF0 File Offset: 0x002141F0
 	public void RemoveChunk(long _chunkKey)
 	{
 		ChunkCluster chunkCache = this.m_World.ChunkCache;
@@ -1276,7 +1276,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005675 RID: 22133 RVA: 0x00214B44 File Offset: 0x00212D44
+	// Token: 0x0600569A RID: 22170 RVA: 0x002160A4 File Offset: 0x002142A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void recalcFreeChunkGameObjects(int _maxToUnload = 2147483647, bool _bIgnoreFixedSizeFlag = false)
 	{
@@ -1303,7 +1303,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005676 RID: 22134 RVA: 0x00214C28 File Offset: 0x00212E28
+	// Token: 0x0600569B RID: 22171 RVA: 0x00216188 File Offset: 0x00214388
 	public void FreeChunkGameObject(ChunkCluster _cc, Chunk _chunk)
 	{
 		long key = _chunk.Key;
@@ -1319,10 +1319,9 @@ public class ChunkManager : IChunkProviderIndicator
 		this.FreeChunkGameObject(_cc, key);
 	}
 
-	// Token: 0x06005677 RID: 22135 RVA: 0x00214C68 File Offset: 0x00212E68
+	// Token: 0x0600569C RID: 22172 RVA: 0x002161C8 File Offset: 0x002143C8
 	public void FreeChunkGameObject(ChunkCluster _cc, long _key)
 	{
-		DynamicMeshThread.RemoveChunkGameObject(_key);
 		ChunkGameObject chunkGameObject = _cc.RemoveDisplayedChunkGameObject(_key);
 		chunkGameObject.gameObject.SetActive(false);
 		_cc.OnChunkDisplayed(_key, false);
@@ -1336,7 +1335,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.m_FreeChunkGameObjects.Add(chunkGameObject);
 	}
 
-	// Token: 0x06005678 RID: 22136 RVA: 0x00214CE4 File Offset: 0x00212EE4
+	// Token: 0x0600569D RID: 22173 RVA: 0x00216240 File Offset: 0x00214440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkGameObject GetNextFreeChunkGameObject()
 	{
@@ -1354,7 +1353,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return chunkGameObject;
 	}
 
-	// Token: 0x06005679 RID: 22137 RVA: 0x00214D50 File Offset: 0x00212F50
+	// Token: 0x0600569E RID: 22174 RVA: 0x002162AC File Offset: 0x002144AC
 	public void ClearChunksForAllObservers(ChunkCluster _cc)
 	{
 		for (int i = 0; i < this.m_ObservedEntities.Count; i++)
@@ -1364,7 +1363,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x0600567A RID: 22138 RVA: 0x00214D88 File Offset: 0x00212F88
+	// Token: 0x0600569F RID: 22175 RVA: 0x002162E4 File Offset: 0x002144E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearChunksForObserver(ChunkManager.ChunkObserver _chunkObserver, ChunkCluster cc)
 	{
@@ -1381,7 +1380,7 @@ public class ChunkManager : IChunkProviderIndicator
 		_chunkObserver.chunksToRemove.ExceptWithHashSetLong(chunkKeysCopySync);
 	}
 
-	// Token: 0x0600567B RID: 22139 RVA: 0x00214E20 File Offset: 0x00213020
+	// Token: 0x060056A0 RID: 22176 RVA: 0x0021637C File Offset: 0x0021457C
 	public void DebugOnGUI(float middleX, float middleY, int size)
 	{
 		for (int i = 0; i < this.m_ObservedEntities.Count; i++)
@@ -1396,7 +1395,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x0600567C RID: 22140 RVA: 0x00214ECC File Offset: 0x002130CC
+	// Token: 0x060056A1 RID: 22177 RVA: 0x00216428 File Offset: 0x00214628
 	public void RemoveAllChunksOnAllClients()
 	{
 		HashSetLong chunkKeysCopySync = this.m_World.ChunkCache.GetChunkKeysCopySync();
@@ -1428,7 +1427,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.isChunkClusterChanged = true;
 	}
 
-	// Token: 0x0600567D RID: 22141 RVA: 0x00214FF8 File Offset: 0x002131F8
+	// Token: 0x060056A2 RID: 22178 RVA: 0x00216554 File Offset: 0x00214754
 	public void RemoveAllChunks()
 	{
 		ChunkCluster chunkCache = this.m_World.ChunkCache;
@@ -1444,19 +1443,19 @@ public class ChunkManager : IChunkProviderIndicator
 		chunkCache.Clear();
 	}
 
-	// Token: 0x0600567E RID: 22142 RVA: 0x0021507C File Offset: 0x0021327C
+	// Token: 0x060056A3 RID: 22179 RVA: 0x002165D8 File Offset: 0x002147D8
 	public void ForceUpdate()
 	{
 		this.isInternalForceUpdate = true;
 	}
 
-	// Token: 0x0600567F RID: 22143 RVA: 0x00215085 File Offset: 0x00213285
+	// Token: 0x060056A4 RID: 22180 RVA: 0x002165E1 File Offset: 0x002147E1
 	public void AddGroundAlignBlock(BlockEntityData _data)
 	{
 		this.groundAlignBlockLists[this.groundAlignIndex].Add(_data);
 	}
 
-	// Token: 0x06005680 RID: 22144 RVA: 0x0021509C File Offset: 0x0021329C
+	// Token: 0x060056A5 RID: 22181 RVA: 0x002165F8 File Offset: 0x002147F8
 	public void GroundAlignFrameUpdate()
 	{
 		this.groundAlignIndex = (this.groundAlignIndex + 1) & 1;
@@ -1473,7 +1472,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005681 RID: 22145 RVA: 0x002150FD File Offset: 0x002132FD
+	// Token: 0x060056A6 RID: 22182 RVA: 0x00216659 File Offset: 0x00214859
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GroundAlignCleanup()
 	{
@@ -1481,7 +1480,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.groundAlignBlockLists[1].Clear();
 	}
 
-	// Token: 0x06005682 RID: 22146 RVA: 0x0021511C File Offset: 0x0021331C
+	// Token: 0x060056A7 RID: 22183 RVA: 0x00216678 File Offset: 0x00214878
 	public void BakeInit()
 	{
 		this.bakeThreadInfo = ThreadManager.StartThread("ChunkMeshBake", null, new ThreadManager.ThreadFunctionLoopDelegate(this.BakeThread), null, null, null, true, false);
@@ -1489,7 +1488,7 @@ public class ChunkManager : IChunkProviderIndicator
 		GameManager.Instance.StartCoroutine(this.bakeCoroutine);
 	}
 
-	// Token: 0x06005683 RID: 22147 RVA: 0x00215168 File Offset: 0x00213368
+	// Token: 0x060056A8 RID: 22184 RVA: 0x002166C4 File Offset: 0x002148C4
 	public void BakeCleanup()
 	{
 		this.bakeThreadInfo.RequestTermination();
@@ -1500,7 +1499,7 @@ public class ChunkManager : IChunkProviderIndicator
 		GameManager.Instance.StopCoroutine(this.bakeCoroutine);
 	}
 
-	// Token: 0x06005684 RID: 22148 RVA: 0x002151BC File Offset: 0x002133BC
+	// Token: 0x060056A9 RID: 22185 RVA: 0x00216718 File Offset: 0x00214918
 	public void BakeDestroyCancel(MeshCollider _meshCollider)
 	{
 		List<ChunkManager.BakeCollider> list = this.bakes;
@@ -1528,7 +1527,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x06005685 RID: 22149 RVA: 0x00215270 File Offset: 0x00213470
+	// Token: 0x060056AA RID: 22186 RVA: 0x002167CC File Offset: 0x002149CC
 	public Mesh BakeCancelAndGetMesh(MeshCollider _meshCollider)
 	{
 		List<ChunkManager.BakeCollider> list = this.bakes;
@@ -1566,7 +1565,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return mesh2;
 	}
 
-	// Token: 0x06005686 RID: 22150 RVA: 0x00215358 File Offset: 0x00213558
+	// Token: 0x060056AB RID: 22187 RVA: 0x002168B4 File Offset: 0x00214AB4
 	public void BakeAdd(Mesh _mesh, MeshCollider _meshCollider)
 	{
 		ChunkManager.BakeCollider bakeCollider = new ChunkManager.BakeCollider();
@@ -1581,7 +1580,7 @@ public class ChunkManager : IChunkProviderIndicator
 		this.bakeEvent.Set();
 	}
 
-	// Token: 0x06005687 RID: 22151 RVA: 0x002153CC File Offset: 0x002135CC
+	// Token: 0x060056AC RID: 22188 RVA: 0x00216928 File Offset: 0x00214B28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int BakeThread(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -1617,7 +1616,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return 0;
 	}
 
-	// Token: 0x06005688 RID: 22152 RVA: 0x00215480 File Offset: 0x00213680
+	// Token: 0x060056AD RID: 22189 RVA: 0x002169DC File Offset: 0x00214BDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator BakeEndOfFrame()
 	{
@@ -1630,7 +1629,7 @@ public class ChunkManager : IChunkProviderIndicator
 		yield break;
 	}
 
-	// Token: 0x06005689 RID: 22153 RVA: 0x00215490 File Offset: 0x00213690
+	// Token: 0x060056AE RID: 22190 RVA: 0x002169EC File Offset: 0x00214BEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BakeMeshAssign()
 	{
@@ -1662,7 +1661,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x0600568A RID: 22154 RVA: 0x00215560 File Offset: 0x00213760
+	// Token: 0x060056AF RID: 22191 RVA: 0x00216ABC File Offset: 0x00214CBC
 	public int SetBlockEntitiesVisible(bool _on, string _name)
 	{
 		ChunkCluster chunkCache = this.m_World.ChunkCache;
@@ -1683,14 +1682,14 @@ public class ChunkManager : IChunkProviderIndicator
 		return num;
 	}
 
-	// Token: 0x0600568B RID: 22155 RVA: 0x002155C7 File Offset: 0x002137C7
+	// Token: 0x060056B0 RID: 22192 RVA: 0x00216B23 File Offset: 0x00214D23
 	public static void LogChunk(string format, params object[] args)
 	{
 		format = string.Format("{0} {1}", GameManager.frameCount, format);
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x0600568C RID: 22156 RVA: 0x002155E8 File Offset: 0x002137E8
+	// Token: 0x060056B1 RID: 22193 RVA: 0x00216B44 File Offset: 0x00214D44
 	[Conditional("DEBUG_CHUNK")]
 	public static void TimerStart(string _name)
 	{
@@ -1707,7 +1706,7 @@ public class ChunkManager : IChunkProviderIndicator
 		microStopwatch.Restart();
 	}
 
-	// Token: 0x0600568D RID: 22157 RVA: 0x0021564C File Offset: 0x0021384C
+	// Token: 0x060056B2 RID: 22194 RVA: 0x00216BA8 File Offset: 0x00214DA8
 	[Conditional("DEBUG_CHUNK")]
 	public static void TimerLog(string _name, string _format = "", params object[] _args)
 	{
@@ -1731,7 +1730,7 @@ public class ChunkManager : IChunkProviderIndicator
 		}
 	}
 
-	// Token: 0x0600568E RID: 22158 RVA: 0x002156F4 File Offset: 0x002138F4
+	// Token: 0x060056B3 RID: 22195 RVA: 0x00216C50 File Offset: 0x00214E50
 	public static double SecondsSinceChunkSelectedForGeneration(long chunkKey)
 	{
 		DateTime dateTime;
@@ -1742,7 +1741,7 @@ public class ChunkManager : IChunkProviderIndicator
 		return -1.0;
 	}
 
-	// Token: 0x0600568F RID: 22159 RVA: 0x00215730 File Offset: 0x00213930
+	// Token: 0x060056B4 RID: 22196 RVA: 0x00216C8C File Offset: 0x00214E8C
 	public void LogCurrentGenerationState()
 	{
 		int poolSize = MemoryPools.poolVML.GetPoolSize();
@@ -1780,259 +1779,259 @@ public class ChunkManager : IChunkProviderIndicator
 		Log.Out("[FELLTHROUGHWORLD] ChunkManager mesh calculation thread is running.");
 	}
 
-	// Token: 0x040042E3 RID: 17123
+	// Token: 0x04004308 RID: 17160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cReloadPosY = -1;
 
-	// Token: 0x040042E4 RID: 17124
+	// Token: 0x04004309 RID: 17161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxChunksSupported = 100000;
 
-	// Token: 0x040042E5 RID: 17125
+	// Token: 0x0400430A RID: 17162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxChunksAroundPlayers = 15;
 
-	// Token: 0x040042E6 RID: 17126
+	// Token: 0x0400430B RID: 17163
 	public static bool GenerateCollidersOnlyAroundEntites = true;
 
-	// Token: 0x040042E7 RID: 17127
+	// Token: 0x0400430C RID: 17164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World m_World;
 
-	// Token: 0x040042E8 RID: 17128
+	// Token: 0x0400430D RID: 17165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object lockObject = new object();
 
-	// Token: 0x040042E9 RID: 17129
+	// Token: 0x0400430E RID: 17166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunksToCopyIdx;
 
-	// Token: 0x040042EA RID: 17130
+	// Token: 0x0400430F RID: 17167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArraySegment<long> m_ChunksToCopy;
 
-	// Token: 0x040042EB RID: 17131
+	// Token: 0x04004310 RID: 17168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long[] chunksToCopyArr = new long[100000];
 
-	// Token: 0x040042EC RID: 17132
+	// Token: 0x04004311 RID: 17169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArraySegment<long> m_ChunksToFree;
 
-	// Token: 0x040042ED RID: 17133
+	// Token: 0x04004312 RID: 17170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long[] chunksToFreeArr = new long[100000];
 
-	// Token: 0x040042EE RID: 17134
+	// Token: 0x04004313 RID: 17171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunksToLightIdx;
 
-	// Token: 0x040042EF RID: 17135
+	// Token: 0x04004314 RID: 17172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArraySegment<long> m_ChunksToLight;
 
-	// Token: 0x040042F0 RID: 17136
+	// Token: 0x04004315 RID: 17173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long[] chunksToLightArr = new long[100000];
 
-	// Token: 0x040042F1 RID: 17137
+	// Token: 0x04004316 RID: 17174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long[] allChunkPositionsCopy = new long[100000];
 
-	// Token: 0x040042F2 RID: 17138
+	// Token: 0x04004317 RID: 17175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BucketHashSetList m_ViewingChunkPositions = new BucketHashSetList(15);
 
-	// Token: 0x040042F3 RID: 17139
+	// Token: 0x04004318 RID: 17176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BucketHashSetList m_AllChunkPositions = new BucketHashSetList(15);
 
-	// Token: 0x040042F4 RID: 17140
+	// Token: 0x04004319 RID: 17177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BucketHashSetList m_CollisionChunkPositions = new BucketHashSetList(15);
 
-	// Token: 0x040042F5 RID: 17141
+	// Token: 0x0400431A RID: 17178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long[] activeChunkSetArr = new long[100000];
 
-	// Token: 0x040042F6 RID: 17142
+	// Token: 0x0400431B RID: 17179
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ChunkGameObject> m_FreeChunkGameObjects = new List<ChunkGameObject>();
 
-	// Token: 0x040042F7 RID: 17143
+	// Token: 0x0400431C RID: 17180
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ChunkGameObject> m_UsedChunkGameObjects = new List<ChunkGameObject>();
 
-	// Token: 0x040042F8 RID: 17144
-	public List<ChunkManager.ChunkObserver> m_ObservedEntities = new List<ChunkManager.ChunkObserver>();
-
-	// Token: 0x040042F9 RID: 17145
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ThreadManager.ThreadInfo threadInfoRegenerating;
-
-	// Token: 0x040042FA RID: 17146
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ThreadManager.ThreadInfo threadInfoCalc;
-
-	// Token: 0x040042FB RID: 17147
-	[PublicizedFrom(EAccessModifier.Private)]
-	public HashSetList<Chunk> chunksToUnload = new HashSetList<Chunk>();
-
-	// Token: 0x040042FC RID: 17148
-	[PublicizedFrom(EAccessModifier.Private)]
-	public volatile long[] chunkKeysToUnloadSnapshot = Array.Empty<long>();
-
-	// Token: 0x040042FD RID: 17149
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<Vector2i>[] rectanglesAroundPlayers;
-
-	// Token: 0x040042FE RID: 17150
-	[PublicizedFrom(EAccessModifier.Private)]
-	public readonly List<NetPackage> sendToClientPackages = new List<NetPackage>();
-
-	// Token: 0x040042FF RID: 17151
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static ConcurrentDictionary<long, DateTime> chunkGenerationTimestamps = new ConcurrentDictionary<long, DateTime>();
-
-	// Token: 0x04004300 RID: 17152
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static DateTime lastVmlExhaustionLog = DateTime.MinValue;
-
-	// Token: 0x04004301 RID: 17153
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static TimeSpan vmlExhaustionLogInterval = TimeSpan.FromSeconds(30.0);
-
-	// Token: 0x04004302 RID: 17154
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static TimeSpan MaxVmlLogInterval = TimeSpan.FromMinutes(10.0);
-
-	// Token: 0x04004303 RID: 17155
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static DateTime vmlExhaustionStartTime = DateTime.MinValue;
-
-	// Token: 0x04004304 RID: 17156
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const double MinLogThresholdSeconds = 1.0;
-
-	// Token: 0x04004305 RID: 17157
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Chunk currentCopiedChunk;
-
-	// Token: 0x04004306 RID: 17158
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ChunkGameObject currentCopiedChunkGameObject;
-
-	// Token: 0x04004307 RID: 17159
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isContinueCopying;
-
-	// Token: 0x04004308 RID: 17160
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int currentCopiedChunkLayer;
-
-	// Token: 0x04004309 RID: 17161
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isInternalForceUpdate;
-
-	// Token: 0x0400430A RID: 17162
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isChunkClusterChanged;
-
-	// Token: 0x0400430B RID: 17163
-	[PublicizedFrom(EAccessModifier.Private)]
-	public AutoResetEvent calcThreadWaitHandle = new AutoResetEvent(false);
-
-	// Token: 0x0400430C RID: 17164
-	public static int MaxQueuedMeshLayers = 1000;
-
-	// Token: 0x0400430D RID: 17165
-	public Action<Chunk> OnChunkInitialized;
-
-	// Token: 0x0400430E RID: 17166
-	public Action<Chunk> OnChunkRegenerated;
-
-	// Token: 0x0400430F RID: 17167
-	public Action<Chunk> OnChunkCopiedToUnity;
-
-	// Token: 0x04004310 RID: 17168
-	public Action<Chunk> OnChunkStabilityCalculationEnabled;
-
-	// Token: 0x04004311 RID: 17169
-	public List<Chunk> ChunksToCopyInOneFrame = new List<Chunk>();
-
-	// Token: 0x04004312 RID: 17170
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int chunksToCopyInOneFrameIndex;
-
-	// Token: 0x04004313 RID: 17171
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int chunksToCopyInOneFramePass;
-
-	// Token: 0x04004314 RID: 17172
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Chunk[] neighborsLightingThread = new Chunk[8];
-
-	// Token: 0x04004315 RID: 17173
-	[PublicizedFrom(EAccessModifier.Private)]
-	public volatile bool bLightingDone = true;
-
-	// Token: 0x04004316 RID: 17174
-	[PublicizedFrom(EAccessModifier.Private)]
-	public volatile bool bCalcPositionsDone = true;
-
-	// Token: 0x04004317 RID: 17175
-	[PublicizedFrom(EAccessModifier.Private)]
-	public volatile bool isViewingOrCollisionPositionsChanged_threadCalc;
-
-	// Token: 0x04004318 RID: 17176
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> viewingChunkPositionsCopy = new List<long>();
-
-	// Token: 0x04004319 RID: 17177
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> collisionChunkPositionsCopy = new List<long>();
-
-	// Token: 0x0400431A RID: 17178
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> lightingChunkPositionsCopy = new List<long>();
-
-	// Token: 0x0400431B RID: 17179
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> chunksToCopyTemp = new List<long>();
-
-	// Token: 0x0400431C RID: 17180
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> chunksToFreeTemp = new List<long>();
-
 	// Token: 0x0400431D RID: 17181
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> chunksToLightTemp = new List<long>();
+	public List<ChunkManager.ChunkObserver> m_ObservedEntities = new List<ChunkManager.ChunkObserver>();
 
 	// Token: 0x0400431E RID: 17182
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Chunk[] neighborsGenerationThread2 = new Chunk[8];
+	public ThreadManager.ThreadInfo threadInfoRegenerating;
 
 	// Token: 0x0400431F RID: 17183
 	[PublicizedFrom(EAccessModifier.Private)]
-	public volatile bool isViewingOrCollisionPositionsChanged_threadReg = true;
+	public ThreadManager.ThreadInfo threadInfoCalc;
 
 	// Token: 0x04004320 RID: 17184
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Chunk[] regenerateNextChunkNeighbors = new Chunk[8];
+	public HashSetList<Chunk> chunksToUnload = new HashSetList<Chunk>();
 
 	// Token: 0x04004321 RID: 17185
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cMaxCGOsToUnloadPerFrame = 8;
+	public volatile long[] chunkKeysToUnloadSnapshot = Array.Empty<long>();
 
 	// Token: 0x04004322 RID: 17186
 	[PublicizedFrom(EAccessModifier.Private)]
-	public List<ChunkGameObject> tempDisplayedCGOs = new List<ChunkGameObject>();
+	public List<Vector2i>[] rectanglesAroundPlayers;
 
 	// Token: 0x04004323 RID: 17187
 	[PublicizedFrom(EAccessModifier.Private)]
-	public List<long> cgoToRemove = new List<long>();
+	public readonly List<NetPackage> sendToClientPackages = new List<NetPackage>();
 
 	// Token: 0x04004324 RID: 17188
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static ConcurrentDictionary<long, DateTime> chunkGenerationTimestamps = new ConcurrentDictionary<long, DateTime>();
+
+	// Token: 0x04004325 RID: 17189
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static DateTime lastVmlExhaustionLog = DateTime.MinValue;
+
+	// Token: 0x04004326 RID: 17190
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static TimeSpan vmlExhaustionLogInterval = TimeSpan.FromSeconds(30.0);
+
+	// Token: 0x04004327 RID: 17191
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static TimeSpan MaxVmlLogInterval = TimeSpan.FromMinutes(10.0);
+
+	// Token: 0x04004328 RID: 17192
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static DateTime vmlExhaustionStartTime = DateTime.MinValue;
+
+	// Token: 0x04004329 RID: 17193
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const double MinLogThresholdSeconds = 1.0;
+
+	// Token: 0x0400432A RID: 17194
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Chunk currentCopiedChunk;
+
+	// Token: 0x0400432B RID: 17195
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ChunkGameObject currentCopiedChunkGameObject;
+
+	// Token: 0x0400432C RID: 17196
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isContinueCopying;
+
+	// Token: 0x0400432D RID: 17197
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int currentCopiedChunkLayer;
+
+	// Token: 0x0400432E RID: 17198
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isInternalForceUpdate;
+
+	// Token: 0x0400432F RID: 17199
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isChunkClusterChanged;
+
+	// Token: 0x04004330 RID: 17200
+	[PublicizedFrom(EAccessModifier.Private)]
+	public AutoResetEvent calcThreadWaitHandle = new AutoResetEvent(false);
+
+	// Token: 0x04004331 RID: 17201
+	public static int MaxQueuedMeshLayers = 1000;
+
+	// Token: 0x04004332 RID: 17202
+	public Action<Chunk> OnChunkInitialized;
+
+	// Token: 0x04004333 RID: 17203
+	public Action<Chunk> OnChunkRegenerated;
+
+	// Token: 0x04004334 RID: 17204
+	public Action<Chunk> OnChunkCopiedToUnity;
+
+	// Token: 0x04004335 RID: 17205
+	public Action<Chunk> OnChunkStabilityCalculationEnabled;
+
+	// Token: 0x04004336 RID: 17206
+	public List<Chunk> ChunksToCopyInOneFrame = new List<Chunk>();
+
+	// Token: 0x04004337 RID: 17207
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int chunksToCopyInOneFrameIndex;
+
+	// Token: 0x04004338 RID: 17208
+	[PublicizedFrom(EAccessModifier.Private)]
+	public int chunksToCopyInOneFramePass;
+
+	// Token: 0x04004339 RID: 17209
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Chunk[] neighborsLightingThread = new Chunk[8];
+
+	// Token: 0x0400433A RID: 17210
+	[PublicizedFrom(EAccessModifier.Private)]
+	public volatile bool bLightingDone = true;
+
+	// Token: 0x0400433B RID: 17211
+	[PublicizedFrom(EAccessModifier.Private)]
+	public volatile bool bCalcPositionsDone = true;
+
+	// Token: 0x0400433C RID: 17212
+	[PublicizedFrom(EAccessModifier.Private)]
+	public volatile bool isViewingOrCollisionPositionsChanged_threadCalc;
+
+	// Token: 0x0400433D RID: 17213
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> viewingChunkPositionsCopy = new List<long>();
+
+	// Token: 0x0400433E RID: 17214
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> collisionChunkPositionsCopy = new List<long>();
+
+	// Token: 0x0400433F RID: 17215
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> lightingChunkPositionsCopy = new List<long>();
+
+	// Token: 0x04004340 RID: 17216
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> chunksToCopyTemp = new List<long>();
+
+	// Token: 0x04004341 RID: 17217
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> chunksToFreeTemp = new List<long>();
+
+	// Token: 0x04004342 RID: 17218
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> chunksToLightTemp = new List<long>();
+
+	// Token: 0x04004343 RID: 17219
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Chunk[] neighborsGenerationThread2 = new Chunk[8];
+
+	// Token: 0x04004344 RID: 17220
+	[PublicizedFrom(EAccessModifier.Private)]
+	public volatile bool isViewingOrCollisionPositionsChanged_threadReg = true;
+
+	// Token: 0x04004345 RID: 17221
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Chunk[] regenerateNextChunkNeighbors = new Chunk[8];
+
+	// Token: 0x04004346 RID: 17222
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cMaxCGOsToUnloadPerFrame = 8;
+
+	// Token: 0x04004347 RID: 17223
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<ChunkGameObject> tempDisplayedCGOs = new List<ChunkGameObject>();
+
+	// Token: 0x04004348 RID: 17224
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<long> cgoToRemove = new List<long>();
+
+	// Token: 0x04004349 RID: 17225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockEntityData>[] groundAlignBlockLists = new List<BlockEntityData>[]
 	{
@@ -2040,42 +2039,42 @@ public class ChunkManager : IChunkProviderIndicator
 		new List<BlockEntityData>()
 	};
 
-	// Token: 0x04004325 RID: 17189
+	// Token: 0x0400434A RID: 17226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int groundAlignIndex;
 
-	// Token: 0x04004326 RID: 17190
+	// Token: 0x0400434B RID: 17227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo bakeThreadInfo;
 
-	// Token: 0x04004327 RID: 17191
+	// Token: 0x0400434C RID: 17228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AutoResetEvent bakeEvent = new AutoResetEvent(false);
 
-	// Token: 0x04004328 RID: 17192
+	// Token: 0x0400434D RID: 17229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator bakeCoroutine;
 
-	// Token: 0x04004329 RID: 17193
+	// Token: 0x0400434E RID: 17230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ChunkManager.BakeCollider> bakes = new List<ChunkManager.BakeCollider>();
 
-	// Token: 0x0400432A RID: 17194
+	// Token: 0x0400434F RID: 17231
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bakeIndex;
 
-	// Token: 0x0400432B RID: 17195
+	// Token: 0x04004350 RID: 17232
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile ChunkManager.BakeCollider bakeCurrent;
 
-	// Token: 0x0400432C RID: 17196
+	// Token: 0x04004351 RID: 17233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, MicroStopwatch> debugTimers = new Dictionary<string, MicroStopwatch>();
 
-	// Token: 0x02000B37 RID: 2871
+	// Token: 0x02000B42 RID: 2882
 	public class ChunkObserver
 	{
-		// Token: 0x06005692 RID: 22162 RVA: 0x00215A50 File Offset: 0x00213C50
+		// Token: 0x060056B7 RID: 22199 RVA: 0x00216FAC File Offset: 0x002151AC
 		public ChunkObserver(Vector3 _initialPosition, bool _bBuildVisualMeshAround, int _viewDim, int _entityIdToSendChunksTo)
 		{
 			this.id = ++ChunkManager.ChunkObserver.idCnt;
@@ -2091,80 +2090,80 @@ public class ChunkManager : IChunkProviderIndicator
 			this.chunksAround = new BucketHashSetList(_viewDim + 2);
 		}
 
-		// Token: 0x06005693 RID: 22163 RVA: 0x00215AE6 File Offset: 0x00213CE6
+		// Token: 0x060056B8 RID: 22200 RVA: 0x00217042 File Offset: 0x00215242
 		public void SetPosition(Vector3 _position)
 		{
 			this.position = _position;
 		}
 
-		// Token: 0x0400432D RID: 17197
+		// Token: 0x04004352 RID: 17234
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int idCnt;
 
-		// Token: 0x0400432E RID: 17198
+		// Token: 0x04004353 RID: 17235
 		public int id;
 
-		// Token: 0x0400432F RID: 17199
+		// Token: 0x04004354 RID: 17236
 		public Vector3 position;
 
-		// Token: 0x04004330 RID: 17200
+		// Token: 0x04004355 RID: 17237
 		public Vector3i curChunkPos;
 
-		// Token: 0x04004331 RID: 17201
+		// Token: 0x04004356 RID: 17238
 		public bool bBuildVisualMeshAround;
 
-		// Token: 0x04004332 RID: 17202
+		// Token: 0x04004357 RID: 17239
 		public int viewDim;
 
-		// Token: 0x04004333 RID: 17203
+		// Token: 0x04004358 RID: 17240
 		public HashSetLong chunksLoaded;
 
-		// Token: 0x04004334 RID: 17204
+		// Token: 0x04004359 RID: 17241
 		public BucketHashSetList chunksToLoad;
 
-		// Token: 0x04004335 RID: 17205
+		// Token: 0x0400435A RID: 17242
 		public List<long> chunksToReload;
 
-		// Token: 0x04004336 RID: 17206
+		// Token: 0x0400435B RID: 17243
 		public HashSetLong chunksToRemove;
 
-		// Token: 0x04004337 RID: 17207
+		// Token: 0x0400435C RID: 17244
 		public BucketHashSetList chunksAround;
 
-		// Token: 0x04004338 RID: 17208
+		// Token: 0x0400435D RID: 17245
 		public int entityIdToSendChunksTo;
 
-		// Token: 0x04004339 RID: 17209
+		// Token: 0x0400435E RID: 17246
 		public IMapChunkDatabase mapDatabase;
 	}
 
-	// Token: 0x02000B38 RID: 2872
+	// Token: 0x02000B43 RID: 2883
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ThreadRegeneratingData
 	{
-		// Token: 0x0400433A RID: 17210
+		// Token: 0x0400435F RID: 17247
 		public List<long> viewingChunkPositionsCopy = new List<long>();
 
-		// Token: 0x0400433B RID: 17211
+		// Token: 0x04004360 RID: 17248
 		public List<long> collisionChunkPositionsCopy = new List<long>();
 	}
 
-	// Token: 0x02000B39 RID: 2873
+	// Token: 0x02000B44 RID: 2884
 	public class BakeCollider
 	{
-		// Token: 0x0400433C RID: 17212
+		// Token: 0x04004361 RID: 17249
 		public Mesh mesh;
 
-		// Token: 0x0400433D RID: 17213
+		// Token: 0x04004362 RID: 17250
 		public int id;
 
-		// Token: 0x0400433E RID: 17214
+		// Token: 0x04004363 RID: 17251
 		public MeshCollider meshCollider;
 
-		// Token: 0x0400433F RID: 17215
+		// Token: 0x04004364 RID: 17252
 		public bool isBaked;
 
-		// Token: 0x04004340 RID: 17216
+		// Token: 0x04004365 RID: 17253
 		public bool isCancelledDestroy;
 	}
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 // Token: 0x020001CD RID: 461
 public class TriggerVolume
 {
-	// Token: 0x06000E2D RID: 3629 RVA: 0x0005DA9B File Offset: 0x0005BC9B
+	// Token: 0x06000E2D RID: 3629 RVA: 0x0005DA3B File Offset: 0x0005BC3B
 	public static TriggerVolume Create(PrefabTriggerVolume psv, Vector3i _boxMin, Vector3i _boxMax)
 	{
 		TriggerVolume triggerVolume = new TriggerVolume();
@@ -17,7 +17,7 @@ public class TriggerVolume
 		return triggerVolume;
 	}
 
-	// Token: 0x06000E2E RID: 3630 RVA: 0x0005DAC4 File Offset: 0x0005BCC4
+	// Token: 0x06000E2E RID: 3630 RVA: 0x0005DA64 File Offset: 0x0005BC64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMinMax(Vector3i _boxMin, Vector3i _boxMax)
 	{
@@ -27,7 +27,7 @@ public class TriggerVolume
 	}
 
 	// Token: 0x1700010A RID: 266
-	// (get) Token: 0x06000E2F RID: 3631 RVA: 0x0005DB08 File Offset: 0x0005BD08
+	// (get) Token: 0x06000E2F RID: 3631 RVA: 0x0005DAA8 File Offset: 0x0005BCA8
 	public PrefabInstance PrefabInstance
 	{
 		get
@@ -36,7 +36,7 @@ public class TriggerVolume
 		}
 	}
 
-	// Token: 0x06000E30 RID: 3632 RVA: 0x0005DB10 File Offset: 0x0005BD10
+	// Token: 0x06000E30 RID: 3632 RVA: 0x0005DAB0 File Offset: 0x0005BCB0
 	public bool AddToPrefabInstance()
 	{
 		this.prefabInstance = GameManager.Instance.World.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator().FindVolumeOwner(PrefabVolumeAbs.EVolumeType.Trigger, this.BoxMin, this.BoxMax);
@@ -48,19 +48,19 @@ public class TriggerVolume
 		return false;
 	}
 
-	// Token: 0x06000E31 RID: 3633 RVA: 0x0005DB65 File Offset: 0x0005BD65
+	// Token: 0x06000E31 RID: 3633 RVA: 0x0005DB05 File Offset: 0x0005BD05
 	public void Reset()
 	{
 		this.isTriggered = false;
 	}
 
-	// Token: 0x06000E32 RID: 3634 RVA: 0x0005DB6E File Offset: 0x0005BD6E
+	// Token: 0x06000E32 RID: 3634 RVA: 0x0005DB0E File Offset: 0x0005BD0E
 	public bool HasAnyTriggers()
 	{
 		return this.TriggersIndices.Count > 0;
 	}
 
-	// Token: 0x06000E33 RID: 3635 RVA: 0x0005DB80 File Offset: 0x0005BD80
+	// Token: 0x06000E33 RID: 3635 RVA: 0x0005DB20 File Offset: 0x0005BD20
 	public void CheckTouching(World _world, EntityPlayer _player)
 	{
 		if (this.isTriggered)
@@ -75,13 +75,13 @@ public class TriggerVolume
 		}
 	}
 
-	// Token: 0x06000E34 RID: 3636 RVA: 0x0005DC2D File Offset: 0x0005BE2D
+	// Token: 0x06000E34 RID: 3636 RVA: 0x0005DBCD File Offset: 0x0005BDCD
 	public bool Intersects(Bounds bounds)
 	{
 		return BoundsUtils.Intersects(bounds, this.BoxMin, this.BoxMax);
 	}
 
-	// Token: 0x06000E35 RID: 3637 RVA: 0x0005DC4B File Offset: 0x0005BE4B
+	// Token: 0x06000E35 RID: 3637 RVA: 0x0005DBEB File Offset: 0x0005BDEB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Touch(World _world, EntityPlayer _player)
 	{
@@ -89,7 +89,7 @@ public class TriggerVolume
 		_world.triggerManager.TriggerBlocks(_player, this.prefabInstance, this);
 	}
 
-	// Token: 0x06000E36 RID: 3638 RVA: 0x0005DC68 File Offset: 0x0005BE68
+	// Token: 0x06000E36 RID: 3638 RVA: 0x0005DC08 File Offset: 0x0005BE08
 	public static TriggerVolume Read(BinaryReader _br)
 	{
 		TriggerVolume triggerVolume = new TriggerVolume();
@@ -108,7 +108,7 @@ public class TriggerVolume
 		return triggerVolume;
 	}
 
-	// Token: 0x06000E37 RID: 3639 RVA: 0x0005DCF8 File Offset: 0x0005BEF8
+	// Token: 0x06000E37 RID: 3639 RVA: 0x0005DC98 File Offset: 0x0005BE98
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(2);
@@ -126,7 +126,7 @@ public class TriggerVolume
 		_bw.Write(this.isTriggered);
 	}
 
-	// Token: 0x06000E38 RID: 3640 RVA: 0x0005DDB8 File Offset: 0x0005BFB8
+	// Token: 0x06000E38 RID: 3640 RVA: 0x0005DD58 File Offset: 0x0005BF58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawVolume()
 	{
@@ -144,7 +144,7 @@ public class TriggerVolume
 		Debug.DrawLine(new Vector3(vector2.x, vector2.y, vector.z), new Vector3(vector2.x, vector2.y, vector2.z), Color.cyan, 1f);
 	}
 
-	// Token: 0x06000E39 RID: 3641 RVA: 0x0005DFB4 File Offset: 0x0005C1B4
+	// Token: 0x06000E39 RID: 3641 RVA: 0x0005DF54 File Offset: 0x0005C154
 	public void DrawDebugLines(float _duration)
 	{
 		string text = string.Format("TriggerVolume{0},{1}", this.BoxMin, this.BoxMax);

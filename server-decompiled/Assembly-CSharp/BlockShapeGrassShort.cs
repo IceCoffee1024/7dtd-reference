@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeGrassShort : BlockShapeGrass
 {
-	// Token: 0x06000CCF RID: 3279 RVA: 0x00050B30 File Offset: 0x0004ED30
+	// Token: 0x06000CCF RID: 3279 RVA: 0x00050AF0 File Offset: 0x0004ECF0
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		Vector3 vector;

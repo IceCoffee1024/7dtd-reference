@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Xml.Linq;
 
-// Token: 0x02000D51 RID: 3409
+// Token: 0x02000D5C RID: 3420
 public class VideoFromXML
 {
-	// Token: 0x06006746 RID: 26438 RVA: 0x00290C70 File Offset: 0x0028EE70
+	// Token: 0x0600676B RID: 26475 RVA: 0x00292198 File Offset: 0x00290398
 	public static IEnumerator CreateVideos(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -15,7 +15,7 @@ public class VideoFromXML
 		yield break;
 	}
 
-	// Token: 0x06006747 RID: 26439 RVA: 0x00290C80 File Offset: 0x0028EE80
+	// Token: 0x0600676C RID: 26476 RVA: 0x002921A8 File Offset: 0x002903A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Parse(XElement root)
 	{

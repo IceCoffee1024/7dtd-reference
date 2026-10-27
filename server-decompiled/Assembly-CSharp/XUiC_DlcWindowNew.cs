@@ -2,11 +2,11 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E13 RID: 3603
+// Token: 0x02000E1E RID: 3614
 [Preserve]
 public class XUiC_DlcWindowNew : XUiController
 {
-	// Token: 0x06006DDD RID: 28125 RVA: 0x002ADD92 File Offset: 0x002ABF92
+	// Token: 0x06006E02 RID: 28162 RVA: 0x002AF2FE File Offset: 0x002AD4FE
 	public override void Init()
 	{
 		base.Init();
@@ -14,7 +14,7 @@ public class XUiC_DlcWindowNew : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06006DDE RID: 28126 RVA: 0x002ADDB0 File Offset: 0x002ABFB0
+	// Token: 0x06006E03 RID: 28163 RVA: 0x002AF31C File Offset: 0x002AD51C
 	[XuiBindEvent("ListEntryClicked", "dlcList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void entryClicked(XUiC_List<XUiC_DlcList.DlcEntry> _list, XUiC_DlcList.DlcEntry _entry)
@@ -25,7 +25,7 @@ public class XUiC_DlcWindowNew : XUiController
 		});
 	}
 
-	// Token: 0x06006DDF RID: 28127 RVA: 0x002ADDCE File Offset: 0x002ABFCE
+	// Token: 0x06006E04 RID: 28164 RVA: 0x002AF33A File Offset: 0x002AD53A
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -33,7 +33,7 @@ public class XUiC_DlcWindowNew : XUiController
 		this.updatePagingButtonIcons(PlatformManager.NativePlatform.Input.CurrentInputStyle);
 	}
 
-	// Token: 0x06006DE0 RID: 28128 RVA: 0x002ADC70 File Offset: 0x002ABE70
+	// Token: 0x06006E05 RID: 28165 RVA: 0x002AF1DC File Offset: 0x002AD3DC
 	[XuiBindEvent("OnPress", "btnBack")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBack_OnPressed(XUiController _sender, int _mouseButton)
@@ -41,7 +41,7 @@ public class XUiC_DlcWindowNew : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, true);
 	}
 
-	// Token: 0x06006DE1 RID: 28129 RVA: 0x002ADDFC File Offset: 0x002ABFFC
+	// Token: 0x06006E06 RID: 28166 RVA: 0x002AF368 File Offset: 0x002AD568
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -67,14 +67,14 @@ public class XUiC_DlcWindowNew : XUiController
 		}
 	}
 
-	// Token: 0x06006DE2 RID: 28130 RVA: 0x002ADEB3 File Offset: 0x002AC0B3
+	// Token: 0x06006E07 RID: 28167 RVA: 0x002AF41F File Offset: 0x002AD61F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
 		this.updatePagingButtonIcons(_newStyle);
 	}
 
-	// Token: 0x06006DE3 RID: 28131 RVA: 0x002ADEBC File Offset: 0x002AC0BC
+	// Token: 0x06006E08 RID: 28168 RVA: 0x002AF428 File Offset: 0x002AD628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePagingButtonIcons(PlayerInputManager.InputStyle _inputStyle)
 	{
@@ -82,15 +82,15 @@ public class XUiC_DlcWindowNew : XUiController
 		base.GetChildById("LB_Icon").ViewComponent.IsVisible = (base.GetChildById("RB_Icon").ViewComponent.IsVisible = flag);
 	}
 
-	// Token: 0x040053DD RID: 21469
+	// Token: 0x04005402 RID: 21506
 	public static string ID = "";
 
-	// Token: 0x040053DE RID: 21470
+	// Token: 0x04005403 RID: 21507
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;
 
-	// Token: 0x040053DF RID: 21471
+	// Token: 0x04005404 RID: 21508
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DlcList dlcList;

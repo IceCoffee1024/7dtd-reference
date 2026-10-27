@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000623 RID: 1571
+// Token: 0x0200062A RID: 1578
 public class LootManager
 {
-	// Token: 0x06003347 RID: 13127 RVA: 0x0014C9F2 File Offset: 0x0014ABF2
+	// Token: 0x06003355 RID: 13141 RVA: 0x0014D5E6 File Offset: 0x0014B7E6
 	public LootManager(WorldBase _world)
 	{
 		this.world = _world;
 		this.Random = _world.GetGameRandom();
 	}
 
-	// Token: 0x06003348 RID: 13128 RVA: 0x0014CA10 File Offset: 0x0014AC10
+	// Token: 0x06003356 RID: 13142 RVA: 0x0014D604 File Offset: 0x0014B804
 	public void LootContainerOpened(TEFeatureStorage _tileEntity, int _entityIdThatOpenedIt, FastTags<TagGroup.Global> _containerTags)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -61,7 +61,7 @@ public class LootManager
 		entityPlayer.FireEvent(MinEventTypes.onSelfLootContainer, true);
 	}
 
-	// Token: 0x06003349 RID: 13129 RVA: 0x0014CB7C File Offset: 0x0014AD7C
+	// Token: 0x06003357 RID: 13143 RVA: 0x0014D770 File Offset: 0x0014B970
 	public void LootBagOpened(Bag _bag, Entity _bagOwner, int _entityIdThatOpenedIt)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -111,16 +111,16 @@ public class LootManager
 		entityPlayer.FireEvent(MinEventTypes.onSelfLootContainer, true);
 	}
 
-	// Token: 0x040028B7 RID: 10423
+	// Token: 0x040028D2 RID: 10450
 	public GameRandom Random;
 
-	// Token: 0x040028B8 RID: 10424
+	// Token: 0x040028D3 RID: 10451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBase world;
 
-	// Token: 0x040028B9 RID: 10425
+	// Token: 0x040028D4 RID: 10452
 	public static float[] POITierMod;
 
-	// Token: 0x040028BA RID: 10426
+	// Token: 0x040028D5 RID: 10453
 	public static float[] POITierBonus;
 }

@@ -4,27 +4,27 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018FA RID: 6394
+	// Token: 0x0200192B RID: 6443
 	[Preserve]
 	public class FloodFillNode : RaycastNode
 	{
-		// Token: 0x0600C54C RID: 50508 RVA: 0x00488EEF File Offset: 0x004870EF
+		// Token: 0x0600C660 RID: 50784 RVA: 0x0048C89B File Offset: 0x0048AA9B
 		public FloodFillNode(Vector3 pos, float scale = 1f, int depth = 0)
 			: base(pos, scale, depth)
 		{
 			this.score = new FloodFillNodeScore();
 		}
 
-		// Token: 0x0600C54D RID: 50509 RVA: 0x00488F05 File Offset: 0x00487105
+		// Token: 0x0600C661 RID: 50785 RVA: 0x0048C8B1 File Offset: 0x0048AAB1
 		public FloodFillNode(Vector3 min, Vector3 max, float scale = 1f, int depth = 0)
 			: base(min, max, scale, depth)
 		{
 			this.score = new FloodFillNodeScore();
 		}
 
-		// Token: 0x170018DB RID: 6363
-		// (get) Token: 0x0600C54E RID: 50510 RVA: 0x00488F1D File Offset: 0x0048711D
-		// (set) Token: 0x0600C54F RID: 50511 RVA: 0x00488F2A File Offset: 0x0048712A
+		// Token: 0x17001923 RID: 6435
+		// (get) Token: 0x0600C662 RID: 50786 RVA: 0x0048C8C9 File Offset: 0x0048AAC9
+		// (set) Token: 0x0600C663 RID: 50787 RVA: 0x0048C8D6 File Offset: 0x0048AAD6
 		public float G
 		{
 			get
@@ -37,9 +37,9 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018DC RID: 6364
-		// (get) Token: 0x0600C550 RID: 50512 RVA: 0x00488F38 File Offset: 0x00487138
-		// (set) Token: 0x0600C551 RID: 50513 RVA: 0x00488F45 File Offset: 0x00487145
+		// Token: 0x17001924 RID: 6436
+		// (get) Token: 0x0600C664 RID: 50788 RVA: 0x0048C8E4 File Offset: 0x0048AAE4
+		// (set) Token: 0x0600C665 RID: 50789 RVA: 0x0048C8F1 File Offset: 0x0048AAF1
 		public float Heuristic
 		{
 			get
@@ -52,8 +52,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018DD RID: 6365
-		// (get) Token: 0x0600C552 RID: 50514 RVA: 0x00488F53 File Offset: 0x00487153
+		// Token: 0x17001925 RID: 6437
+		// (get) Token: 0x0600C666 RID: 50790 RVA: 0x0048C8FF File Offset: 0x0048AAFF
 		public float F
 		{
 			get
@@ -62,7 +62,7 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x04009501 RID: 38145
+		// Token: 0x040095EA RID: 38378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FloodFillNodeScore score;
 	}

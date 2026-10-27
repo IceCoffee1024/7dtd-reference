@@ -2,26 +2,26 @@
 
 namespace SDF
 {
-	// Token: 0x020016C8 RID: 5832
+	// Token: 0x020016E7 RID: 5863
 	public enum SdfTagType
 	{
-		// Token: 0x04008886 RID: 34950
+		// Token: 0x04008939 RID: 35129
 		Unknown = -1,
-		// Token: 0x04008887 RID: 34951
+		// Token: 0x0400893A RID: 35130
 		End,
-		// Token: 0x04008888 RID: 34952
+		// Token: 0x0400893B RID: 35131
 		Int,
-		// Token: 0x04008889 RID: 34953
+		// Token: 0x0400893C RID: 35132
 		String,
-		// Token: 0x0400888A RID: 34954
+		// Token: 0x0400893D RID: 35133
 		Bool,
-		// Token: 0x0400888B RID: 34955
+		// Token: 0x0400893E RID: 35134
 		ByteArray,
-		// Token: 0x0400888C RID: 34956
+		// Token: 0x0400893F RID: 35135
 		Compound,
-		// Token: 0x0400888D RID: 34957
+		// Token: 0x04008940 RID: 35136
 		Float,
-		// Token: 0x0400888E RID: 34958
+		// Token: 0x04008941 RID: 35137
 		Binary
 	}
 }

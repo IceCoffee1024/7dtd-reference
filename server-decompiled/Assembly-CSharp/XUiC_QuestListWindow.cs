@@ -5,11 +5,11 @@ using UniLinq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FEF RID: 4079
+// Token: 0x02000FFF RID: 4095
 [Preserve]
 public class XUiC_QuestListWindow : XUiController
 {
-	// Token: 0x06008055 RID: 32853 RVA: 0x0030C3D0 File Offset: 0x0030A5D0
+	// Token: 0x060080A4 RID: 32932 RVA: 0x0030DEEC File Offset: 0x0030C0EC
 	public override void Init()
 	{
 		base.Init();
@@ -32,7 +32,7 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008056 RID: 32854 RVA: 0x0030C544 File Offset: 0x0030A744
+	// Token: 0x060080A5 RID: 32933 RVA: 0x0030E060 File Offset: 0x0030C260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void questShareBtn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -42,7 +42,7 @@ public class XUiC_QuestListWindow : XUiController
 		PartyQuests.ShareQuestWithParty(quest, entityPlayer, true);
 	}
 
-	// Token: 0x06008057 RID: 32855 RVA: 0x0030C580 File Offset: 0x0030A780
+	// Token: 0x060080A6 RID: 32934 RVA: 0x0030E09C File Offset: 0x0030C29C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showOnMapBtn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -59,7 +59,7 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008058 RID: 32856 RVA: 0x0030C620 File Offset: 0x0030A820
+	// Token: 0x060080A7 RID: 32935 RVA: 0x0030E13C File Offset: 0x0030C33C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void trackBtn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -76,7 +76,7 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008059 RID: 32857 RVA: 0x0030C6AE File Offset: 0x0030A8AE
+	// Token: 0x060080A8 RID: 32936 RVA: 0x0030E1CA File Offset: 0x0030C3CA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -84,7 +84,7 @@ public class XUiC_QuestListWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600805A RID: 32858 RVA: 0x0030C6C0 File Offset: 0x0030A8C0
+	// Token: 0x060080A9 RID: 32937 RVA: 0x0030E1DC File Offset: 0x0030C3DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void questRemoveBtn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -95,7 +95,7 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600805B RID: 32859 RVA: 0x0030C710 File Offset: 0x0030A910
+	// Token: 0x060080AA RID: 32938 RVA: 0x0030E22C File Offset: 0x0030C42C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -111,7 +111,7 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600805C RID: 32860 RVA: 0x0030C7F0 File Offset: 0x0030A9F0
+	// Token: 0x060080AB RID: 32939 RVA: 0x0030E30C File Offset: 0x0030C50C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -121,7 +121,7 @@ public class XUiC_QuestListWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600805D RID: 32861 RVA: 0x0030C84E File Offset: 0x0030AA4E
+	// Token: 0x060080AC RID: 32940 RVA: 0x0030E36A File Offset: 0x0030C56A
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -129,7 +129,7 @@ public class XUiC_QuestListWindow : XUiController
 		this.player.QuestRemoved -= this.QuestJournal_QuestRemoved;
 	}
 
-	// Token: 0x0600805E RID: 32862 RVA: 0x0030C884 File Offset: 0x0030AA84
+	// Token: 0x060080AD RID: 32941 RVA: 0x0030E3A0 File Offset: 0x0030C5A0
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "visible_quest_count")
@@ -140,14 +140,14 @@ public class XUiC_QuestListWindow : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x0600805F RID: 32863 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x060080AE RID: 32942 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestJournal_QuestAccepted(Quest q)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008060 RID: 32864 RVA: 0x0030C8B1 File Offset: 0x0030AAB1
+	// Token: 0x060080AF RID: 32943 RVA: 0x0030E3CD File Offset: 0x0030C5CD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestJournal_QuestRemoved(Quest q)
 	{
@@ -158,7 +158,7 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008061 RID: 32865 RVA: 0x0030C8E0 File Offset: 0x0030AAE0
+	// Token: 0x060080B0 RID: 32944 RVA: 0x0030E3FC File Offset: 0x0030C5FC
 	public void ShowTrackButton(bool _show)
 	{
 		this.trackBtn.IsVisible = _show;
@@ -179,75 +179,75 @@ public class XUiC_QuestListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008062 RID: 32866 RVA: 0x0030C9FA File Offset: 0x0030ABFA
+	// Token: 0x060080B1 RID: 32945 RVA: 0x0030E516 File Offset: 0x0030C716
 	public void ShowShareQuest(bool _show)
 	{
 		this.questShareBtn.IsVisible = _show && !PartyQuests.AutoShare;
 	}
 
-	// Token: 0x06008063 RID: 32867 RVA: 0x0030CA15 File Offset: 0x0030AC15
+	// Token: 0x060080B2 RID: 32946 RVA: 0x0030E531 File Offset: 0x0030C731
 	public void ShowRemoveQuest(bool _show)
 	{
 		this.questRemoveBtn.IsVisible = _show;
 	}
 
-	// Token: 0x04005F23 RID: 24355
+	// Token: 0x04005F5E RID: 24414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x04005F24 RID: 24356
+	// Token: 0x04005F5F RID: 24415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestListWindow.SearchTypes searchType;
 
-	// Token: 0x04005F25 RID: 24357
+	// Token: 0x04005F60 RID: 24416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestList questList;
 
-	// Token: 0x04005F26 RID: 24358
+	// Token: 0x04005F61 RID: 24417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button trackBtn;
 
-	// Token: 0x04005F27 RID: 24359
+	// Token: 0x04005F62 RID: 24418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button questRemoveBtn;
 
-	// Token: 0x04005F28 RID: 24360
+	// Token: 0x04005F63 RID: 24419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button showOnMapBtn;
 
-	// Token: 0x04005F29 RID: 24361
+	// Token: 0x04005F64 RID: 24420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button questShareBtn;
 
-	// Token: 0x04005F2A RID: 24362
+	// Token: 0x04005F65 RID: 24421
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x04005F2B RID: 24363
+	// Token: 0x04005F66 RID: 24422
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Quest> currentItems;
 
-	// Token: 0x04005F2C RID: 24364
+	// Token: 0x04005F67 RID: 24423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filterText = "";
 
-	// Token: 0x04005F2D RID: 24365
+	// Token: 0x04005F68 RID: 24424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int buttonSpacing;
 
-	// Token: 0x04005F2E RID: 24366
+	// Token: 0x04005F69 RID: 24425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showingTrackButton = true;
 
-	// Token: 0x02000FF0 RID: 4080
+	// Token: 0x02001000 RID: 4096
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum SearchTypes
 	{
-		// Token: 0x04005F30 RID: 24368
+		// Token: 0x04005F6B RID: 24427
 		All,
-		// Token: 0x04005F31 RID: 24369
+		// Token: 0x04005F6C RID: 24428
 		Active,
-		// Token: 0x04005F32 RID: 24370
+		// Token: 0x04005F6D RID: 24429
 		Completed
 	}
 }

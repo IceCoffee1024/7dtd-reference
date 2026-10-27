@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020006A7 RID: 1703
+// Token: 0x020006AE RID: 1710
 public class BurstRoundCount : TargetedCompareRequirementBase
 {
-	// Token: 0x060035C2 RID: 13762 RVA: 0x00161EFC File Offset: 0x001600FC
+	// Token: 0x060035D0 RID: 13776 RVA: 0x00162AF0 File Offset: 0x00160CF0
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -27,7 +27,7 @@ public class BurstRoundCount : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)itemActionRanged.GetBurstCount(this.target.inventory.holdingItemData.actionData[0]), this.operation, this.value);
 	}
 
-	// Token: 0x060035C3 RID: 13763 RVA: 0x00161EBE File Offset: 0x001600BE
+	// Token: 0x060035D1 RID: 13777 RVA: 0x00162AB2 File Offset: 0x00160CB2
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Rounds in Magazine: {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));

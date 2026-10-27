@@ -6,20 +6,20 @@ using UnityEngine;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001AC2 RID: 6850
+	// Token: 0x02001AF3 RID: 6899
 	public class LayerStreamer
 	{
-		// Token: 0x170019ED RID: 6637
-		// (get) Token: 0x0600CEBA RID: 52922 RVA: 0x004AFB29 File Offset: 0x004ADD29
-		// (set) Token: 0x0600CEBB RID: 52923 RVA: 0x004AFB31 File Offset: 0x004ADD31
+		// Token: 0x17001A35 RID: 6709
+		// (get) Token: 0x0600CFCE RID: 53198 RVA: 0x004B3625 File Offset: 0x004B1825
+		// (set) Token: 0x0600CFCF RID: 53199 RVA: 0x004B362D File Offset: 0x004B182D
 		public bool HasReachedLastHyperbar
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019EE RID: 6638
-		// (get) Token: 0x0600CEBC RID: 52924 RVA: 0x004AFB3A File Offset: 0x004ADD3A
+		// Token: 0x17001A36 RID: 6710
+		// (get) Token: 0x0600CFD0 RID: 53200 RVA: 0x004B3636 File Offset: 0x004B1836
 		public bool IsPlaying
 		{
 			get
@@ -28,13 +28,13 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEBD RID: 52925 RVA: 0x004AFB56 File Offset: 0x004ADD56
+		// Token: 0x0600CFD1 RID: 53201 RVA: 0x004B3652 File Offset: 0x004B1852
 		public static LayerStreamer Create(Layer _layer, LayerConfig _layerConfig, ThreatLevelStreamer _parent = null)
 		{
 			return new LayerStreamer(_layer, _layerConfig, _parent);
 		}
 
-		// Token: 0x0600CEBE RID: 52926 RVA: 0x004AFB60 File Offset: 0x004ADD60
+		// Token: 0x0600CFD2 RID: 53202 RVA: 0x004B365C File Offset: 0x004B185C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LayerStreamer(Layer _layer, LayerConfig _layerConfig, ThreatLevelStreamer _parent)
 		{
@@ -50,7 +50,7 @@ namespace DynamicMusic.Legacy
 			this.instrumentID.OnLoadFinished += this.OnClipSetLoad;
 		}
 
-		// Token: 0x0600CEBF RID: 52927 RVA: 0x004AFBC4 File Offset: 0x004ADDC4
+		// Token: 0x0600CFD3 RID: 53203 RVA: 0x004B36C0 File Offset: 0x004B18C0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClipSetLoad()
 		{
@@ -60,7 +60,7 @@ namespace DynamicMusic.Legacy
 			this.InitFinished = true;
 		}
 
-		// Token: 0x0600CEC0 RID: 52928 RVA: 0x004AFC54 File Offset: 0x004ADE54
+		// Token: 0x0600CFD4 RID: 53204 RVA: 0x004B3750 File Offset: 0x004B1950
 		public void Cleanup()
 		{
 			if (this.Src)
@@ -71,14 +71,14 @@ namespace DynamicMusic.Legacy
 			this.instrumentID.Unload();
 		}
 
-		// Token: 0x0600CEC1 RID: 52929 RVA: 0x004AFCA0 File Offset: 0x004ADEA0
+		// Token: 0x0600CFD5 RID: 53205 RVA: 0x004B379C File Offset: 0x004B199C
 		public void Play(double _time)
 		{
 			this.Src.PlayScheduled(_time);
 			this.Src.loop = true;
 		}
 
-		// Token: 0x0600CEC2 RID: 52930 RVA: 0x004AFCBA File Offset: 0x004ADEBA
+		// Token: 0x0600CFD6 RID: 53206 RVA: 0x004B37B6 File Offset: 0x004B19B6
 		public void Pause()
 		{
 			if (this.Src && this.Src.isPlaying)
@@ -87,7 +87,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEC3 RID: 52931 RVA: 0x004AFCE1 File Offset: 0x004ADEE1
+		// Token: 0x0600CFD7 RID: 53207 RVA: 0x004B37DD File Offset: 0x004B19DD
 		public void UnPause()
 		{
 			if (this.Src)
@@ -96,7 +96,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEC4 RID: 52932 RVA: 0x004AFCFB File Offset: 0x004ADEFB
+		// Token: 0x0600CFD8 RID: 53208 RVA: 0x004B37F7 File Offset: 0x004B19F7
 		public void Stop()
 		{
 			if (this.Src && this.Src.isPlaying)
@@ -105,7 +105,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEC5 RID: 52933 RVA: 0x004AFD24 File Offset: 0x004ADF24
+		// Token: 0x0600CFD9 RID: 53209 RVA: 0x004B3820 File Offset: 0x004B1A20
 		public void Tick()
 		{
 			if (this.HasReachedLastHyperbar && this.Src && this.Src.loop)
@@ -115,7 +115,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CEC6 RID: 52934 RVA: 0x004AFD7C File Offset: 0x004ADF7C
+		// Token: 0x0600CFDA RID: 53210 RVA: 0x004B3878 File Offset: 0x004B1A78
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void FillStream(float[] data)
 		{
@@ -151,38 +151,38 @@ namespace DynamicMusic.Legacy
 			Log.Warning("FillStream was called while it was still running.");
 		}
 
-		// Token: 0x04009C6C RID: 40044
+		// Token: 0x04009D55 RID: 40277
 		public bool InitFinished;
 
-		// Token: 0x04009C6E RID: 40046
+		// Token: 0x04009D57 RID: 40279
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int parentId;
 
-		// Token: 0x04009C6F RID: 40047
+		// Token: 0x04009D58 RID: 40280
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly InstrumentID instrumentID;
 
-		// Token: 0x04009C70 RID: 40048
+		// Token: 0x04009D59 RID: 40281
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LayerConfig LayerConfig;
 
-		// Token: 0x04009C71 RID: 40049
+		// Token: 0x04009D5A RID: 40282
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AudioSource Src;
 
-		// Token: 0x04009C72 RID: 40050
+		// Token: 0x04009D5B RID: 40283
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int hyperbar;
 
-		// Token: 0x04009C73 RID: 40051
+		// Token: 0x04009D5C RID: 40284
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int cursor;
 
-		// Token: 0x04009C74 RID: 40052
+		// Token: 0x04009D5D RID: 40285
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float[] currentClipData;
 
-		// Token: 0x04009C75 RID: 40053
+		// Token: 0x04009D5E RID: 40286
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool InFillStream;
 	}

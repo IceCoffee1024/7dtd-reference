@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FC3 RID: 4035
+// Token: 0x02000FD3 RID: 4051
 [Preserve]
 public class XUiC_PoweredGenericWindowGroup : XUiController
 {
-	// Token: 0x17000EF9 RID: 3833
-	// (get) Token: 0x06007F09 RID: 32521 RVA: 0x00305B0F File Offset: 0x00303D0F
-	// (set) Token: 0x06007F0A RID: 32522 RVA: 0x00305B17 File Offset: 0x00303D17
+	// Token: 0x17000F04 RID: 3844
+	// (get) Token: 0x06007F58 RID: 32600 RVA: 0x0030762B File Offset: 0x0030582B
+	// (set) Token: 0x06007F59 RID: 32601 RVA: 0x00307633 File Offset: 0x00305833
 	public TileEntityPowered TileEntity
 	{
 		get
@@ -21,13 +21,13 @@ public class XUiC_PoweredGenericWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F0B RID: 32523 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007F5A RID: 32602 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void setupWindowTileEntities()
 	{
 	}
 
-	// Token: 0x06007F0C RID: 32524 RVA: 0x00305B28 File Offset: 0x00303D28
+	// Token: 0x06007F5B RID: 32603 RVA: 0x00307644 File Offset: 0x00305844
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -55,14 +55,14 @@ public class XUiC_PoweredGenericWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F0D RID: 32525 RVA: 0x0029936D File Offset: 0x0029756D
+	// Token: 0x06007F5C RID: 32604 RVA: 0x0029A895 File Offset: 0x00298A95
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007F0E RID: 32526 RVA: 0x00305C06 File Offset: 0x00303E06
+	// Token: 0x06007F5D RID: 32605 RVA: 0x00307722 File Offset: 0x00305922
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -75,15 +75,15 @@ public class XUiC_PoweredGenericWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x04005E5C RID: 24156
+	// Token: 0x04005E97 RID: 24215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public TileEntityPowered tileEntity;
 
-	// Token: 0x04005E5D RID: 24157
+	// Token: 0x04005E98 RID: 24216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005E5E RID: 24158
+	// Token: 0x04005E99 RID: 24217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

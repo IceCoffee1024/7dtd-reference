@@ -3,11 +3,11 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000498 RID: 1176
+// Token: 0x0200049A RID: 1178
 [Preserve]
 public abstract class EntityContainerAbs : EntityItem
 {
-	// Token: 0x06002436 RID: 9270 RVA: 0x000DD2D4 File Offset: 0x000DB4D4
+	// Token: 0x0600243C RID: 9276 RVA: 0x000DD658 File Offset: 0x000DB858
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -17,7 +17,7 @@ public abstract class EntityContainerAbs : EntityItem
 		this.timeStayAfterDeath = (int)(num * 20f);
 	}
 
-	// Token: 0x06002437 RID: 9271 RVA: 0x000DD31C File Offset: 0x000DB51C
+	// Token: 0x0600243D RID: 9277 RVA: 0x000DD6A0 File Offset: 0x000DB8A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -32,7 +32,7 @@ public abstract class EntityContainerAbs : EntityItem
 		this.SetDead();
 	}
 
-	// Token: 0x06002438 RID: 9272 RVA: 0x000DD38C File Offset: 0x000DB58C
+	// Token: 0x0600243E RID: 9278 RVA: 0x000DD710 File Offset: 0x000DB910
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -58,19 +58,19 @@ public abstract class EntityContainerAbs : EntityItem
 		}
 	}
 
-	// Token: 0x06002439 RID: 9273 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600243F RID: 9279 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updatePosition()
 	{
 	}
 
-	// Token: 0x0600243A RID: 9274 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002440 RID: 9280 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateMarkers()
 	{
 	}
 
-	// Token: 0x0600243B RID: 9275 RVA: 0x000DD454 File Offset: 0x000DB654
+	// Token: 0x06002441 RID: 9281 RVA: 0x000DD7D8 File Offset: 0x000DB9D8
 	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
 	{
 		if (base.CommandIs(_commandName, "search"))
@@ -80,7 +80,7 @@ public abstract class EntityContainerAbs : EntityItem
 		return base.AllowActivationCommand(_commandName, _playerFocusing);
 	}
 
-	// Token: 0x0600243C RID: 9276 RVA: 0x000DD476 File Offset: 0x000DB676
+	// Token: 0x06002442 RID: 9282 RVA: 0x000DD7FA File Offset: 0x000DB9FA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void removeBackpack(string reason)
 	{
@@ -90,25 +90,25 @@ public abstract class EntityContainerAbs : EntityItem
 		this.MarkToUnload();
 	}
 
-	// Token: 0x0600243D RID: 9277 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002443 RID: 9283 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onBackpackRemoved(string reason)
 	{
 	}
 
-	// Token: 0x0600243E RID: 9278 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002444 RID: 9284 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createMesh()
 	{
 	}
 
-	// Token: 0x0600243F RID: 9279 RVA: 0x000DD498 File Offset: 0x000DB698
+	// Token: 0x06002445 RID: 9285 RVA: 0x000DD81C File Offset: 0x000DBA1C
 	public override bool IsMarkedForUnload()
 	{
 		return base.IsMarkedForUnload() && this.bRemoved;
 	}
 
-	// Token: 0x06002440 RID: 9280 RVA: 0x000DD4AA File Offset: 0x000DB6AA
+	// Token: 0x06002446 RID: 9286 RVA: 0x000DD82E File Offset: 0x000DBA2E
 	public override void OnUnlockedServer(int _unlockingPlayerId, ushort _channel)
 	{
 		if (this.bag.IsEmpty())
@@ -117,28 +117,28 @@ public abstract class EntityContainerAbs : EntityItem
 		}
 	}
 
-	// Token: 0x06002441 RID: 9281 RVA: 0x000DD4BF File Offset: 0x000DB6BF
+	// Token: 0x06002447 RID: 9287 RVA: 0x000DD843 File Offset: 0x000DBA43
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityContainerAbs()
 	{
 	}
 
-	// Token: 0x04001ADD RID: 6877
+	// Token: 0x04001AED RID: 6893
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int deathUpdateTime;
 
-	// Token: 0x04001ADE RID: 6878
+	// Token: 0x04001AEE RID: 6894
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int timeStayAfterDeath;
 
-	// Token: 0x04001ADF RID: 6879
+	// Token: 0x04001AEF RID: 6895
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bRemoved;
 
-	// Token: 0x04001AE0 RID: 6880
+	// Token: 0x04001AF0 RID: 6896
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public ProfilerMarker pmEntityType;

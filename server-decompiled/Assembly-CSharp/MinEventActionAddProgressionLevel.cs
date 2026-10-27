@@ -1,32 +1,36 @@
 ﻿using System;
 using System.Globalization;
 using System.Xml.Linq;
+using BhvrAnalyticsServices.Interfaces;
 using SandboxOptions;
+using Services;
+using Services.Analytics;
+using Services.Analytics.Events;
 using UnityEngine.Scripting;
 
-// Token: 0x020006EE RID: 1774
+// Token: 0x020006F6 RID: 1782
 [Preserve]
 public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 {
-	// Token: 0x1700058B RID: 1419
-	// (get) Token: 0x060036C2 RID: 14018 RVA: 0x00168CC7 File Offset: 0x00166EC7
-	// (set) Token: 0x060036C3 RID: 14019 RVA: 0x00168CCF File Offset: 0x00166ECF
+	// Token: 0x1700058F RID: 1423
+	// (get) Token: 0x060036D9 RID: 14041 RVA: 0x00169BAF File Offset: 0x00167DAF
+	// (set) Token: 0x060036DA RID: 14042 RVA: 0x00169BB7 File Offset: 0x00167DB7
 	public string progressionName
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700058C RID: 1420
-	// (get) Token: 0x060036C4 RID: 14020 RVA: 0x00168CD8 File Offset: 0x00166ED8
-	// (set) Token: 0x060036C5 RID: 14021 RVA: 0x00168CE0 File Offset: 0x00166EE0
+	// Token: 0x17000590 RID: 1424
+	// (get) Token: 0x060036DB RID: 14043 RVA: 0x00169BC0 File Offset: 0x00167DC0
+	// (set) Token: 0x060036DC RID: 14044 RVA: 0x00169BC8 File Offset: 0x00167DC8
 	public int level
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060036C6 RID: 14022 RVA: 0x00168CEC File Offset: 0x00166EEC
+	// Token: 0x060036DD RID: 14045 RVA: 0x00169BD4 File Offset: 0x00167DD4
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -66,6 +70,23 @@ public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 								progressionValue.ProgressionClass.HandleCheckCrafting(entityPlayerLocal, level, progressionValue.Level);
 							}
 						}
+						if (!Helper.IsEditingOrPlaytesting())
+						{
+							PlayerCraftingSkillEventData playerCraftingSkillEventData = new PlayerCraftingSkillEventData
+							{
+								ServerId = Helper.GetServerId(),
+								SaveId = Helper.GetSaveId(),
+								TransactionTimestamp = DateTime.UtcNow.ToString("O"),
+								ElapsedTime = (int)(entityPlayerLocal.totalTimePlayed * 60f),
+								PlayerLevel = entityPlayerLocal.Progression.Level,
+								InGameDays = GameUtils.WorldTimeToDays(GameManager.Instance.World.worldTime),
+								CraftingSkill = progressionValue.Name,
+								SourceType = "Magazine",
+								SkillLevelBefore = level,
+								SkillLevelAfter = progressionValue.Level
+							};
+							ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(playerCraftingSkillEventData);
+						}
 					}
 					this.targets[i].Progression.bProgressionStatsChanged = !this.targets[i].isEntityRemote;
 					this.targets[i].bPlayerStatsChanged |= !this.targets[i].isEntityRemote;
@@ -74,13 +95,13 @@ public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036C7 RID: 14023 RVA: 0x00168E93 File Offset: 0x00167093
+	// Token: 0x060036DE RID: 14046 RVA: 0x00169E3F File Offset: 0x0016803F
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && this.progressionName != null && this.level >= -1;
 	}
 
-	// Token: 0x060036C8 RID: 14024 RVA: 0x00168EB8 File Offset: 0x001670B8
+	// Token: 0x060036DF RID: 14047 RVA: 0x00169E64 File Offset: 0x00168064
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -109,7 +130,7 @@ public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C03 RID: 11267
+	// Token: 0x04002C1F RID: 11295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showMessage = true;
 }

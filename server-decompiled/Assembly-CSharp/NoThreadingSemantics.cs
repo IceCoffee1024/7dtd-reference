@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000BDB RID: 3035
+// Token: 0x02000BE6 RID: 3046
 public class NoThreadingSemantics : IThreadingSemantics
 {
-	// Token: 0x06005B1E RID: 23326 RVA: 0x002333F0 File Offset: 0x002315F0
+	// Token: 0x06005B43 RID: 23363 RVA: 0x0023494C File Offset: 0x00232B4C
 	public void Synchronize(AtomicActionDelegate _delegate)
 	{
 		_delegate();
 	}
 
-	// Token: 0x06005B1F RID: 23327 RVA: 0x002333F8 File Offset: 0x002315F8
+	// Token: 0x06005B44 RID: 23364 RVA: 0x00234954 File Offset: 0x00232B54
 	public T Synchronize<T>(Func<T> _delegate)
 	{
 		return _delegate();
 	}
 
-	// Token: 0x06005B20 RID: 23328 RVA: 0x00233400 File Offset: 0x00231600
+	// Token: 0x06005B45 RID: 23365 RVA: 0x0023495C File Offset: 0x00232B5C
 	public int InterlockedAdd(ref int _number, int _add)
 	{
 		_number += _add;

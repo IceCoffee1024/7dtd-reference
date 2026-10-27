@@ -3,10 +3,10 @@ using Platform.Shared;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C6A RID: 7274
+	// Token: 0x02001C9B RID: 7323
 	public class Utils : Platform.Shared.Utils
 	{
-		// Token: 0x0600D7C3 RID: 55235 RVA: 0x004D64C6 File Offset: 0x004D46C6
+		// Token: 0x0600D8D7 RID: 55511 RVA: 0x004DA016 File Offset: 0x004D8216
 		public override string GetCrossplayPlayerIcon(EPlayGroup _playGroup, bool _fetchGenericIcons, EPlatformIdentifier _nativePlatform = EPlatformIdentifier.None)
 		{
 			switch (_playGroup)

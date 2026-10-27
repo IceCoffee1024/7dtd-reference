@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECE RID: 3790
+// Token: 0x02000ED9 RID: 3801
 [Preserve]
 public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 {
-	// Token: 0x17000DFD RID: 3581
-	// (get) Token: 0x060075E7 RID: 30183 RVA: 0x002C760E File Offset: 0x002C580E
-	// (set) Token: 0x060075E8 RID: 30184 RVA: 0x002C7616 File Offset: 0x002C5816
+	// Token: 0x17000E03 RID: 3587
+	// (get) Token: 0x0600760C RID: 30220 RVA: 0x002C8B7A File Offset: 0x002C6D7A
+	// (set) Token: 0x0600760D RID: 30221 RVA: 0x002C8B82 File Offset: 0x002C6D82
 	public int Page
 	{
 		get
@@ -31,9 +31,9 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x17000DFE RID: 3582
-	// (get) Token: 0x060075E9 RID: 30185 RVA: 0x002C7645 File Offset: 0x002C5845
-	// (set) Token: 0x060075EA RID: 30186 RVA: 0x002C764D File Offset: 0x002C584D
+	// Token: 0x17000E04 RID: 3588
+	// (get) Token: 0x0600760E RID: 30222 RVA: 0x002C8BB1 File Offset: 0x002C6DB1
+	// (set) Token: 0x0600760F RID: 30223 RVA: 0x002C8BB9 File Offset: 0x002C6DB9
 	public XUiC_ActiveBuffEntry SelectedEntry
 	{
 		get
@@ -54,7 +54,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060075EB RID: 30187 RVA: 0x002C7680 File Offset: 0x002C5880
+	// Token: 0x06007610 RID: 30224 RVA: 0x002C8BEC File Offset: 0x002C6DEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetFirstEntry()
 	{
@@ -63,7 +63,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		childByType.SetBuff(this.SelectedEntry);
 	}
 
-	// Token: 0x060075EC RID: 30188 RVA: 0x002C76D0 File Offset: 0x002C58D0
+	// Token: 0x06007611 RID: 30225 RVA: 0x002C8C3C File Offset: 0x002C6E3C
 	public override void Init()
 	{
 		base.Init();
@@ -88,7 +88,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060075ED RID: 30189 RVA: 0x002C7780 File Offset: 0x002C5980
+	// Token: 0x06007612 RID: 30226 RVA: 0x002C8CEC File Offset: 0x002C6EEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressBuff(XUiController _sender, int _mouseButton)
 	{
@@ -99,7 +99,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060075EE RID: 30190 RVA: 0x002C77A0 File Offset: 0x002C59A0
+	// Token: 0x06007613 RID: 30227 RVA: 0x002C8D0C File Offset: 0x002C6F0C
 	public override void Update(float _dt)
 	{
 		EntityUINotification selectedNotification = this.xui.BuffPopoutList.SelectedNotification;
@@ -167,7 +167,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060075EF RID: 30191 RVA: 0x002C795C File Offset: 0x002C5B5C
+	// Token: 0x06007614 RID: 30228 RVA: 0x002C8EC8 File Offset: 0x002C70C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetNotificationIndex(EntityUINotification notification)
 	{
@@ -188,7 +188,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		return -1;
 	}
 
-	// Token: 0x060075F0 RID: 30192 RVA: 0x002C79D8 File Offset: 0x002C5BD8
+	// Token: 0x06007615 RID: 30229 RVA: 0x002C8F44 File Offset: 0x002C7144
 	public void EntityUINotificationAdded(EntityUINotification _notification)
 	{
 		if (_notification.Buff == null)
@@ -207,7 +207,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060075F1 RID: 30193 RVA: 0x002C7A1C File Offset: 0x002C5C1C
+	// Token: 0x06007616 RID: 30230 RVA: 0x002C8F88 File Offset: 0x002C7188
 	public void EntityUINotificationRemoved(EntityUINotification _notification)
 	{
 		if (_notification.Buff == null)
@@ -223,7 +223,7 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060075F2 RID: 30194 RVA: 0x002C7A74 File Offset: 0x002C5C74
+	// Token: 0x06007617 RID: 30231 RVA: 0x002C8FE0 File Offset: 0x002C71E0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -241,44 +241,44 @@ public class XUiC_ActiveBuffList : XUiController, IEntityUINotificationChanged
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060075F3 RID: 30195 RVA: 0x002C7AF3 File Offset: 0x002C5CF3
+	// Token: 0x06007618 RID: 30232 RVA: 0x002C905F File Offset: 0x002C725F
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.playerUI.entityPlayer.PlayerStats.RemoveUINotificationChangedDelegate(this);
 	}
 
-	// Token: 0x0400576D RID: 22381
+	// Token: 0x04005792 RID: 22418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_ActiveBuffEntry> entryList = new List<XUiC_ActiveBuffEntry>();
 
-	// Token: 0x0400576E RID: 22382
+	// Token: 0x04005793 RID: 22419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityUINotification> buffNotificationList = new List<EntityUINotification>();
 
-	// Token: 0x0400576F RID: 22383
+	// Token: 0x04005794 RID: 22420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ActiveBuffEntry selectedEntry;
 
-	// Token: 0x04005770 RID: 22384
+	// Token: 0x04005795 RID: 22421
 	public bool setFirstEntry;
 
-	// Token: 0x04005771 RID: 22385
+	// Token: 0x04005796 RID: 22422
 	public XUiC_Paging pager;
 
-	// Token: 0x04005772 RID: 22386
+	// Token: 0x04005797 RID: 22423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action handlePageDownAction;
 
-	// Token: 0x04005773 RID: 22387
+	// Token: 0x04005798 RID: 22424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action handlePageUpAction;
 
-	// Token: 0x04005774 RID: 22388
+	// Token: 0x04005799 RID: 22425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04005775 RID: 22389
+	// Token: 0x0400579A RID: 22426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000831 RID: 2097
+// Token: 0x0200083B RID: 2107
 [Preserve]
 public class NetPackagePlayerStats : NetPackageEntityTargeted
 {
-	// Token: 0x06003D4B RID: 15691 RVA: 0x00186258 File Offset: 0x00184458
+	// Token: 0x06003D6E RID: 15726 RVA: 0x0018735C File Offset: 0x0018555C
 	public NetPackagePlayerStats Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -13,27 +13,27 @@ public class NetPackagePlayerStats : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003D4C RID: 15692 RVA: 0x00186274 File Offset: 0x00184474
+	// Token: 0x06003D6F RID: 15727 RVA: 0x00187378 File Offset: 0x00185578
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackagePlayerStats()
 	{
 	}
 
-	// Token: 0x06003D4D RID: 15693 RVA: 0x0018629C File Offset: 0x0018449C
+	// Token: 0x06003D70 RID: 15728 RVA: 0x001873A0 File Offset: 0x001855A0
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.entityNetworkStats.read(_reader);
 	}
 
-	// Token: 0x06003D4E RID: 15694 RVA: 0x001862B1 File Offset: 0x001844B1
+	// Token: 0x06003D71 RID: 15729 RVA: 0x001873B5 File Offset: 0x001855B5
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.entityNetworkStats.write(_writer);
 	}
 
-	// Token: 0x06003D4F RID: 15695 RVA: 0x001862C8 File Offset: 0x001844C8
+	// Token: 0x06003D72 RID: 15730 RVA: 0x001873CC File Offset: 0x001855CC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -62,7 +62,7 @@ public class NetPackagePlayerStats : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x040031C4 RID: 12740
+	// Token: 0x040031E4 RID: 12772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive.EntityNetworkStats entityNetworkStats = new EntityAlive.EntityNetworkStats();
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020005FE RID: 1534
+// Token: 0x02000605 RID: 1541
 [Preserve]
 public class ItemClassModifier : ItemClass
 {
-	// Token: 0x06003247 RID: 12871 RVA: 0x001459FC File Offset: 0x00143BFC
+	// Token: 0x06003255 RID: 12885 RVA: 0x001465F0 File Offset: 0x001447F0
 	public static ItemClassModifier GetItemModWithAnyTags(FastTags<TagGroup.Global> tags, FastTags<TagGroup.Global> installedModTypes, GameRandom random)
 	{
 		for (int i = 0; i < ItemClass.list.Length; i++)
@@ -26,19 +26,19 @@ public class ItemClassModifier : ItemClass
 		return itemClassModifier2;
 	}
 
-	// Token: 0x06003248 RID: 12872 RVA: 0x00145A9C File Offset: 0x00143C9C
+	// Token: 0x06003256 RID: 12886 RVA: 0x00146690 File Offset: 0x00144890
 	public override bool HasAnyTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.ModifierTags.Test_AnySet(_tags);
 	}
 
-	// Token: 0x06003249 RID: 12873 RVA: 0x00145AAA File Offset: 0x00143CAA
+	// Token: 0x06003257 RID: 12887 RVA: 0x0014669E File Offset: 0x0014489E
 	public override bool HasAllTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.ModifierTags.Test_AllSet(_tags);
 	}
 
-	// Token: 0x0600324A RID: 12874 RVA: 0x00145AB8 File Offset: 0x00143CB8
+	// Token: 0x06003258 RID: 12888 RVA: 0x001466AC File Offset: 0x001448AC
 	public static ItemClassModifier GetCosmeticItemMod(FastTags<TagGroup.Global> itemTags, FastTags<TagGroup.Global> installedModTypes, GameRandom random)
 	{
 		bool isEmpty = installedModTypes.IsEmpty;
@@ -59,7 +59,7 @@ public class ItemClassModifier : ItemClass
 		return itemClassModifier2;
 	}
 
-	// Token: 0x0600324B RID: 12875 RVA: 0x00145B80 File Offset: 0x00143D80
+	// Token: 0x06003259 RID: 12889 RVA: 0x00146774 File Offset: 0x00144974
 	public static ItemClassModifier GetDesiredItemModWithAnyTags(FastTags<TagGroup.Global> tags, FastTags<TagGroup.Global> installedModTypes, FastTags<TagGroup.Global> desiredModTypes, GameRandom random)
 	{
 		bool isEmpty = installedModTypes.IsEmpty;
@@ -81,7 +81,7 @@ public class ItemClassModifier : ItemClass
 		return itemClassModifier2;
 	}
 
-	// Token: 0x0600324C RID: 12876 RVA: 0x00145C40 File Offset: 0x00143E40
+	// Token: 0x0600325A RID: 12890 RVA: 0x00146834 File Offset: 0x00144A34
 	public bool GetPropertyOverride(string _propertyName, string _itemName, ref string _value)
 	{
 		if (this.PropertyOverrides.ContainsKey(_itemName) && this.PropertyOverrides[_itemName].Values.ContainsKey(_propertyName))
@@ -97,43 +97,43 @@ public class ItemClassModifier : ItemClass
 		return false;
 	}
 
-	// Token: 0x04002786 RID: 10118
+	// Token: 0x040027A1 RID: 10145
 	public static ItemClassModifier[] modList = new ItemClassModifier[1000];
 
-	// Token: 0x04002787 RID: 10119
+	// Token: 0x040027A2 RID: 10146
 	public FastTags<TagGroup.Global> InstallableTags;
 
-	// Token: 0x04002788 RID: 10120
+	// Token: 0x040027A3 RID: 10147
 	public FastTags<TagGroup.Global> DisallowedTags;
 
-	// Token: 0x04002789 RID: 10121
+	// Token: 0x040027A4 RID: 10148
 	public FastTags<TagGroup.Global> ModifierTags;
 
-	// Token: 0x0400278A RID: 10122
+	// Token: 0x040027A5 RID: 10149
 	public ItemClassModifier.ModifierTypes Type;
 
-	// Token: 0x0400278B RID: 10123
+	// Token: 0x040027A6 RID: 10150
 	public Dictionary<string, DynamicProperties> PropertyOverrides;
 
-	// Token: 0x0400278C RID: 10124
+	// Token: 0x040027A7 RID: 10151
 	public float CosmeticInstallChance;
 
-	// Token: 0x0400278D RID: 10125
+	// Token: 0x040027A8 RID: 10152
 	public static FastTags<TagGroup.Global> CosmeticModTypes = FastTags<TagGroup.Global>.Parse("dye,nametag,charm");
 
-	// Token: 0x0400278E RID: 10126
+	// Token: 0x040027A9 RID: 10153
 	public static FastTags<TagGroup.Global> CosmeticItemTags = FastTags<TagGroup.Global>.Parse("canHaveCosmetic");
 
-	// Token: 0x0400278F RID: 10127
+	// Token: 0x040027AA RID: 10154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<int> modIds = new List<int>();
 
-	// Token: 0x020005FF RID: 1535
+	// Token: 0x02000606 RID: 1542
 	public enum ModifierTypes
 	{
-		// Token: 0x04002791 RID: 10129
+		// Token: 0x040027AC RID: 10156
 		Mod,
-		// Token: 0x04002792 RID: 10130
+		// Token: 0x040027AD RID: 10157
 		Attachment
 	}
 }

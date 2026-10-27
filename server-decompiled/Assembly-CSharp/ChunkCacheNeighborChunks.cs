@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000B25 RID: 2853
+// Token: 0x02000B30 RID: 2864
 public class ChunkCacheNeighborChunks
 {
-	// Token: 0x060055A9 RID: 21929 RVA: 0x0020E530 File Offset: 0x0020C730
+	// Token: 0x060055CE RID: 21966 RVA: 0x0020FAAC File Offset: 0x0020DCAC
 	public ChunkCacheNeighborChunks(IChunkAccess _chunkAccess)
 	{
 		IChunk[,] array = new Chunk[3, 3];
@@ -12,7 +12,7 @@ public class ChunkCacheNeighborChunks
 		this.chunkAccess = _chunkAccess;
 	}
 
-	// Token: 0x060055AA RID: 21930 RVA: 0x0020E55C File Offset: 0x0020C75C
+	// Token: 0x060055CF RID: 21967 RVA: 0x0020FAD8 File Offset: 0x0020DCD8
 	public void Init(IChunk _chunk, IChunk[] _chunkArr)
 	{
 		this[0, 0] = _chunk;
@@ -26,13 +26,13 @@ public class ChunkCacheNeighborChunks
 		this[1, 1] = _chunkArr[4];
 	}
 
-	// Token: 0x060055AB RID: 21931 RVA: 0x0020E5CA File Offset: 0x0020C7CA
+	// Token: 0x060055D0 RID: 21968 RVA: 0x0020FB46 File Offset: 0x0020DD46
 	public void Clear()
 	{
 		Array.Clear(this.chunks, 0, this.chunks.GetLength(0) * this.chunks.GetLength(1));
 	}
 
-	// Token: 0x17000948 RID: 2376
+	// Token: 0x1700094E RID: 2382
 	public IChunk this[int x, int y]
 	{
 		get
@@ -45,11 +45,11 @@ public class ChunkCacheNeighborChunks
 		}
 	}
 
-	// Token: 0x0400428F RID: 17039
+	// Token: 0x040042B4 RID: 17076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunk[,] chunks;
 
-	// Token: 0x04004290 RID: 17040
+	// Token: 0x040042B5 RID: 17077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunkAccess chunkAccess;
 }

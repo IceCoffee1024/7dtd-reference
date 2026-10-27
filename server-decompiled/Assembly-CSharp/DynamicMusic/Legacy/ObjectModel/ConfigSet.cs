@@ -4,10 +4,10 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic.Legacy.ObjectModel
 {
-	// Token: 0x02001ACE RID: 6862
+	// Token: 0x02001AFF RID: 6911
 	public class ConfigSet : EnumDictionary<ThreatLevelLegacyType, ThreatLevelConfig>
 	{
-		// Token: 0x0600CF1E RID: 53022 RVA: 0x004B1337 File Offset: 0x004AF537
+		// Token: 0x0600D032 RID: 53298 RVA: 0x004B4E33 File Offset: 0x004B3033
 		public static void Cleanup()
 		{
 			if (ConfigSet.AllConfigSets != null)
@@ -16,7 +16,7 @@ namespace DynamicMusic.Legacy.ObjectModel
 			}
 		}
 
-		// Token: 0x04009CBA RID: 40122
+		// Token: 0x04009DA3 RID: 40355
 		public static Dictionary<int, ConfigSet> AllConfigSets = new Dictionary<int, ConfigSet>();
 	}
 }

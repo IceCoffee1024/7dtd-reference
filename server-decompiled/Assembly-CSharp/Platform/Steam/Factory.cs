@@ -6,12 +6,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CB9 RID: 7353
+	// Token: 0x02001CEA RID: 7402
 	[Preserve]
 	[PlatformFactory(EPlatformIdentifier.Steam)]
 	public class Factory : AbsPlatform
 	{
-		// Token: 0x0600DA00 RID: 55808 RVA: 0x004E1910 File Offset: 0x004DFB10
+		// Token: 0x0600DB14 RID: 56084 RVA: 0x004E54B0 File Offset: 0x004E36B0
 		public override void CreateInstances()
 		{
 			base.Api = new Api();
@@ -58,8 +58,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001B85 RID: 7045
-		// (get) Token: 0x0600DA01 RID: 55809 RVA: 0x004E1A88 File Offset: 0x004DFC88
+		// Token: 0x17001BCD RID: 7117
+		// (get) Token: 0x0600DB15 RID: 56085 RVA: 0x004E5628 File Offset: 0x004E3828
 		public override string NetworkProtocolName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -69,14 +69,14 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600DA02 RID: 55810 RVA: 0x004E1A8F File Offset: 0x004DFC8F
+		// Token: 0x0600DB16 RID: 56086 RVA: 0x004E562F File Offset: 0x004E382F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IPlatformNetworkServer instantiateNetworkServer(ProtocolManager _protocolManager)
 		{
 			return new NetworkServerSteam(this, _protocolManager);
 		}
 
-		// Token: 0x0600DA03 RID: 55811 RVA: 0x004E1A98 File Offset: 0x004DFC98
+		// Token: 0x0600DB17 RID: 56087 RVA: 0x004E5638 File Offset: 0x004E3838
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IPlatformNetworkClient instantiateNetworkClient(ProtocolManager _protocolManager)
 		{

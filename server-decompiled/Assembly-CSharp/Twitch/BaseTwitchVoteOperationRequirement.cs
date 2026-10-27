@@ -2,16 +2,16 @@
 
 namespace Twitch
 {
-	// Token: 0x0200189E RID: 6302
+	// Token: 0x020018CF RID: 6351
 	public class BaseTwitchVoteOperationRequirement : BaseTwitchVoteRequirement
 	{
-		// Token: 0x0600C296 RID: 49814 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C3AA RID: 50090 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C297 RID: 49815 RVA: 0x0047D504 File Offset: 0x0047B704
+		// Token: 0x0600C3AB RID: 50091 RVA: 0x00480EB0 File Offset: 0x0047F0B0
 		public override bool CanPerform(EntityPlayer player)
 		{
 			float num = this.LeftSide(player);
@@ -47,76 +47,76 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C298 RID: 49816 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
+		// Token: 0x0600C3AC RID: 50092 RVA: 0x0003D372 File Offset: 0x0003B572
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual float LeftSide(EntityPlayer player)
 		{
 			return 0f;
 		}
 
-		// Token: 0x0600C299 RID: 49817 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
+		// Token: 0x0600C3AD RID: 50093 RVA: 0x0003D372 File Offset: 0x0003B572
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual float RightSide(EntityPlayer player)
 		{
 			return 0f;
 		}
 
-		// Token: 0x0600C29A RID: 49818 RVA: 0x0047D5A2 File Offset: 0x0047B7A2
+		// Token: 0x0600C3AE RID: 50094 RVA: 0x00480F4E File Offset: 0x0047F14E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<BaseTwitchVoteOperationRequirement.OperationTypes>(BaseTwitchVoteOperationRequirement.PropOperation, ref this.operation);
 		}
 
-		// Token: 0x04009308 RID: 37640
+		// Token: 0x040093F1 RID: 37873
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseTwitchVoteOperationRequirement.OperationTypes operation;
 
-		// Token: 0x04009309 RID: 37641
+		// Token: 0x040093F2 RID: 37874
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 
-		// Token: 0x0200189F RID: 6303
+		// Token: 0x020018D0 RID: 6352
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum OperationTypes
 		{
-			// Token: 0x0400930B RID: 37643
+			// Token: 0x040093F4 RID: 37876
 			None,
-			// Token: 0x0400930C RID: 37644
+			// Token: 0x040093F5 RID: 37877
 			Equals,
-			// Token: 0x0400930D RID: 37645
+			// Token: 0x040093F6 RID: 37878
 			EQ,
-			// Token: 0x0400930E RID: 37646
+			// Token: 0x040093F7 RID: 37879
 			E,
-			// Token: 0x0400930F RID: 37647
+			// Token: 0x040093F8 RID: 37880
 			NotEquals,
-			// Token: 0x04009310 RID: 37648
+			// Token: 0x040093F9 RID: 37881
 			NEQ,
-			// Token: 0x04009311 RID: 37649
+			// Token: 0x040093FA RID: 37882
 			NE,
-			// Token: 0x04009312 RID: 37650
+			// Token: 0x040093FB RID: 37883
 			Less,
-			// Token: 0x04009313 RID: 37651
+			// Token: 0x040093FC RID: 37884
 			LessThan,
-			// Token: 0x04009314 RID: 37652
+			// Token: 0x040093FD RID: 37885
 			LT,
-			// Token: 0x04009315 RID: 37653
+			// Token: 0x040093FE RID: 37886
 			Greater,
-			// Token: 0x04009316 RID: 37654
+			// Token: 0x040093FF RID: 37887
 			GreaterThan,
-			// Token: 0x04009317 RID: 37655
+			// Token: 0x04009400 RID: 37888
 			GT,
-			// Token: 0x04009318 RID: 37656
+			// Token: 0x04009401 RID: 37889
 			LessOrEqual,
-			// Token: 0x04009319 RID: 37657
+			// Token: 0x04009402 RID: 37890
 			LessThanOrEqualTo,
-			// Token: 0x0400931A RID: 37658
+			// Token: 0x04009403 RID: 37891
 			LTE,
-			// Token: 0x0400931B RID: 37659
+			// Token: 0x04009404 RID: 37892
 			GreaterOrEqual,
-			// Token: 0x0400931C RID: 37660
+			// Token: 0x04009405 RID: 37893
 			GreaterThanOrEqualTo,
-			// Token: 0x0400931D RID: 37661
+			// Token: 0x04009406 RID: 37894
 			GTE
 		}
 	}

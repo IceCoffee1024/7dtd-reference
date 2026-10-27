@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x02001914 RID: 6420
+	// Token: 0x02001945 RID: 6469
 	public class PathPoint
 	{
-		// Token: 0x0600C5EE RID: 50670 RVA: 0x0048C044 File Offset: 0x0048A244
+		// Token: 0x0600C702 RID: 50946 RVA: 0x0048F9F0 File Offset: 0x0048DBF0
 		public static PathPoint Allocate(Vector3 _pos)
 		{
 			DynamicObjectPool<PathPoint> s_pool = MemoryPools.s_pool;
@@ -24,7 +24,7 @@ namespace GamePath
 			return pathPoint2;
 		}
 
-		// Token: 0x0600C5EF RID: 50671 RVA: 0x0048C0D8 File Offset: 0x0048A2D8
+		// Token: 0x0600C703 RID: 50947 RVA: 0x0048FA84 File Offset: 0x0048DC84
 		public static void CompactPool()
 		{
 			DynamicObjectPool<PathPoint> s_pool = MemoryPools.s_pool;
@@ -34,7 +34,7 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x0600C5F0 RID: 50672 RVA: 0x0048C11C File Offset: 0x0048A31C
+		// Token: 0x0600C704 RID: 50948 RVA: 0x0048FAC8 File Offset: 0x0048DCC8
 		public void Release()
 		{
 			DynamicObjectPool<PathPoint> s_pool = MemoryPools.s_pool;
@@ -44,32 +44,32 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x0600C5F1 RID: 50673 RVA: 0x0048C160 File Offset: 0x0048A360
+		// Token: 0x0600C705 RID: 50949 RVA: 0x0048FB0C File Offset: 0x0048DD0C
 		public static int makeHash(int _x, int _y, int _z)
 		{
 			return (_y & 255) | ((_x & 32767) << 8) | ((_z & 32767) << 24) | ((_x >= 0) ? 0 : int.MinValue) | ((_z >= 0) ? 0 : 32768);
 		}
 
-		// Token: 0x0600C5F2 RID: 50674 RVA: 0x0048C198 File Offset: 0x0048A398
+		// Token: 0x0600C706 RID: 50950 RVA: 0x0048FB44 File Offset: 0x0048DD44
 		public override bool Equals(object _obj)
 		{
 			PathPoint pathPoint = _obj as PathPoint;
 			return pathPoint != null && this.hash == pathPoint.hash && this.IsSamePos(pathPoint);
 		}
 
-		// Token: 0x0600C5F3 RID: 50675 RVA: 0x0048C1C8 File Offset: 0x0048A3C8
+		// Token: 0x0600C707 RID: 50951 RVA: 0x0048FB74 File Offset: 0x0048DD74
 		public bool IsSamePos(PathPoint _p)
 		{
 			return _p.x == this.x && _p.y == this.y && _p.z == this.z;
 		}
 
-		// Token: 0x0600C5F4 RID: 50676 RVA: 0x0048C1F6 File Offset: 0x0048A3F6
+		// Token: 0x0600C708 RID: 50952 RVA: 0x0048FBA2 File Offset: 0x0048DDA2
 		public override int GetHashCode()
 		{
 			return this.hash;
 		}
 
-		// Token: 0x0600C5F5 RID: 50677 RVA: 0x0048C200 File Offset: 0x0048A400
+		// Token: 0x0600C709 RID: 50953 RVA: 0x0048FBAC File Offset: 0x0048DDAC
 		public float GetDistanceSq(int _x, int _y, int _z)
 		{
 			int num = this.x - _x;
@@ -78,25 +78,25 @@ namespace GamePath
 			return (float)(num * num + num2 * num2 + num3 * num3);
 		}
 
-		// Token: 0x0600C5F6 RID: 50678 RVA: 0x0048C232 File Offset: 0x0048A432
+		// Token: 0x0600C70A RID: 50954 RVA: 0x0048FBDE File Offset: 0x0048DDDE
 		public Vector3 AdjustedPositionForEntity(Entity entity)
 		{
 			return this.projectedLocation;
 		}
 
-		// Token: 0x0600C5F7 RID: 50679 RVA: 0x0048C232 File Offset: 0x0048A432
+		// Token: 0x0600C70B RID: 50955 RVA: 0x0048FBDE File Offset: 0x0048DDDE
 		public Vector3 ProjectToGround(Entity entity)
 		{
 			return this.projectedLocation;
 		}
 
-		// Token: 0x0600C5F8 RID: 50680 RVA: 0x0048C23A File Offset: 0x0048A43A
+		// Token: 0x0600C70C RID: 50956 RVA: 0x0048FBE6 File Offset: 0x0048DDE6
 		public Vector3i GetBlockPos()
 		{
 			return World.worldToBlockPos(this.projectedLocation);
 		}
 
-		// Token: 0x0600C5F9 RID: 50681 RVA: 0x0048C248 File Offset: 0x0048A448
+		// Token: 0x0600C70D RID: 50957 RVA: 0x0048FBF4 File Offset: 0x0048DDF4
 		public string toString()
 		{
 			return string.Concat(new string[]
@@ -109,22 +109,22 @@ namespace GamePath
 			});
 		}
 
-		// Token: 0x04009553 RID: 38227
+		// Token: 0x0400963C RID: 38460
 		public Vector3 projectedLocation;
 
-		// Token: 0x04009554 RID: 38228
+		// Token: 0x0400963D RID: 38461
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int x;
 
-		// Token: 0x04009555 RID: 38229
+		// Token: 0x0400963E RID: 38462
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int y;
 
-		// Token: 0x04009556 RID: 38230
+		// Token: 0x0400963F RID: 38463
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int z;
 
-		// Token: 0x04009557 RID: 38231
+		// Token: 0x04009640 RID: 38464
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int hash;
 	}

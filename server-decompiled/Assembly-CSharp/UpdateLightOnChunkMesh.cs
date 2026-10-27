@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001318 RID: 4888
+// Token: 0x0200132A RID: 4906
 public class UpdateLightOnChunkMesh : MonoBehaviour
 {
-	// Token: 0x06009A74 RID: 39540 RVA: 0x003A8451 File Offset: 0x003A6651
+	// Token: 0x06009ACC RID: 39628 RVA: 0x003AA855 File Offset: 0x003A8A55
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -16,7 +16,7 @@ public class UpdateLightOnChunkMesh : MonoBehaviour
 		this.Reset();
 	}
 
-	// Token: 0x06009A75 RID: 39541 RVA: 0x003A8468 File Offset: 0x003A6668
+	// Token: 0x06009ACD RID: 39629 RVA: 0x003AA86C File Offset: 0x003A8A6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -27,13 +27,13 @@ public class UpdateLightOnChunkMesh : MonoBehaviour
 		this.checkLight();
 	}
 
-	// Token: 0x06009A76 RID: 39542 RVA: 0x003A8478 File Offset: 0x003A6678
+	// Token: 0x06009ACE RID: 39630 RVA: 0x003AA87C File Offset: 0x003A8A7C
 	public void SetChunkMesh(VoxelMesh _chunkMesh)
 	{
 		this.chunkMesh = _chunkMesh;
 	}
 
-	// Token: 0x06009A77 RID: 39543 RVA: 0x003A8484 File Offset: 0x003A6684
+	// Token: 0x06009ACF RID: 39631 RVA: 0x003AA888 File Offset: 0x003A8A88
 	public void Reset()
 	{
 		this.chunkMesh = null;
@@ -41,7 +41,7 @@ public class UpdateLightOnChunkMesh : MonoBehaviour
 		this.lastSunLight = (this.lastBlockLight = byte.MaxValue);
 	}
 
-	// Token: 0x06009A78 RID: 39544 RVA: 0x003A84B7 File Offset: 0x003A66B7
+	// Token: 0x06009AD0 RID: 39632 RVA: 0x003AA8BB File Offset: 0x003A8ABB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -57,7 +57,7 @@ public class UpdateLightOnChunkMesh : MonoBehaviour
 		this.checkLight();
 	}
 
-	// Token: 0x06009A79 RID: 39545 RVA: 0x003A84E8 File Offset: 0x003A66E8
+	// Token: 0x06009AD1 RID: 39633 RVA: 0x003AA8EC File Offset: 0x003A8AEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkLight()
 	{
@@ -107,42 +107,42 @@ public class UpdateLightOnChunkMesh : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400745C RID: 29788
+	// Token: 0x0400749D RID: 29853
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTimeLightBrightnessChecked;
 
-	// Token: 0x0400745D RID: 29789
+	// Token: 0x0400749E RID: 29854
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float cTimeBrightnessUpdate = 0.5f;
 
-	// Token: 0x0400745E RID: 29790
+	// Token: 0x0400749F RID: 29855
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public byte lastSunLight;
 
-	// Token: 0x0400745F RID: 29791
+	// Token: 0x040074A0 RID: 29856
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public byte lastBlockLight;
 
-	// Token: 0x04007460 RID: 29792
+	// Token: 0x040074A1 RID: 29857
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color lastSunMoonLight;
 
-	// Token: 0x04007461 RID: 29793
+	// Token: 0x040074A2 RID: 29858
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshFilter meshFilter;
 
-	// Token: 0x04007462 RID: 29794
+	// Token: 0x040074A3 RID: 29859
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshRenderer meshRenderer;
 
-	// Token: 0x04007463 RID: 29795
+	// Token: 0x040074A4 RID: 29860
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public VoxelMesh chunkMesh;

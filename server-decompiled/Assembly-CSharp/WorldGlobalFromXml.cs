@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Xml.Linq;
 
-// Token: 0x02000D54 RID: 3412
+// Token: 0x02000D5F RID: 3423
 public class WorldGlobalFromXml
 {
-	// Token: 0x06006751 RID: 26449 RVA: 0x0029101C File Offset: 0x0028F21C
+	// Token: 0x06006776 RID: 26486 RVA: 0x00292544 File Offset: 0x00290744
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -26,7 +26,7 @@ public class WorldGlobalFromXml
 		yield break;
 	}
 
-	// Token: 0x06006752 RID: 26450 RVA: 0x0029102B File Offset: 0x0028F22B
+	// Token: 0x06006777 RID: 26487 RVA: 0x00292553 File Offset: 0x00290753
 	public static void Reload(XmlFile xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(WorldGlobalFromXml.Load(xmlFile));

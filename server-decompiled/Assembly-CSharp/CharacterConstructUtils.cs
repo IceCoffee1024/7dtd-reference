@@ -935,9 +935,9 @@ public static class CharacterConstructUtils
 			return partName;
 		}
 		string text = string.Empty;
-		if (GearVariantMatrixSO.Instance != null)
+		if (GearFitMatrixSO.Instance != null)
 		{
-			text = GearVariantMatrixSO.Instance.GetVariantOrEmpty(CharacterConstructUtils.archetype.Sex, partName, sourceGearPath, targetBodyPath);
+			text = GearFitMatrixSO.Instance.GetVariantOrEmpty(CharacterConstructUtils.archetype.Sex, partName, sourceGearPath, targetBodyPath);
 		}
 		else
 		{

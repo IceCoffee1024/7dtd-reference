@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200139F RID: 5023
+// Token: 0x020013B1 RID: 5041
 public class ApplyExplosionForce : MonoBehaviour
 {
-	// Token: 0x06009E34 RID: 40500 RVA: 0x003BD6F4 File Offset: 0x003BB8F4
+	// Token: 0x06009E8C RID: 40588 RVA: 0x003BFAF8 File Offset: 0x003BDCF8
 	public static void Explode(Vector3 explosionPos, float power, float radius)
 	{
 		explosionPos -= Origin.position;
@@ -25,17 +25,17 @@ public class ApplyExplosionForce : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007817 RID: 30743
+	// Token: 0x04007858 RID: 30808
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cUpwards = 3f;
 
-	// Token: 0x04007818 RID: 30744
+	// Token: 0x04007859 RID: 30809
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMaxColliders = 1024;
 
-	// Token: 0x04007819 RID: 30745
+	// Token: 0x0400785A RID: 30810
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Collider[] colliderList = new Collider[1024];

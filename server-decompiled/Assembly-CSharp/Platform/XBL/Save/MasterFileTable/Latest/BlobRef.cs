@@ -5,21 +5,21 @@ using System.Threading;
 
 namespace Platform.XBL.Save.MasterFileTable.Latest
 {
-	// Token: 0x02001CA6 RID: 7334
+	// Token: 0x02001CD7 RID: 7383
 	public sealed class BlobRef : IEquatable<BlobRef>, IMigratable
 	{
-		// Token: 0x17001B6B RID: 7019
-		// (get) Token: 0x0600D968 RID: 55656 RVA: 0x004DF3F7 File Offset: 0x004DD5F7
-		// (set) Token: 0x0600D969 RID: 55657 RVA: 0x004DF3FF File Offset: 0x004DD5FF
+		// Token: 0x17001BB3 RID: 7091
+		// (get) Token: 0x0600DA7C RID: 55932 RVA: 0x004E2F47 File Offset: 0x004E1147
+		// (set) Token: 0x0600DA7D RID: 55933 RVA: 0x004E2F4F File Offset: 0x004E114F
 		public ushort Version
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = 6;
 
-		// Token: 0x17001B6C RID: 7020
-		// (get) Token: 0x0600D96A RID: 55658 RVA: 0x004DF408 File Offset: 0x004DD608
-		// (set) Token: 0x0600D96B RID: 55659 RVA: 0x004DF410 File Offset: 0x004DD610
+		// Token: 0x17001BB4 RID: 7092
+		// (get) Token: 0x0600DA7E RID: 55934 RVA: 0x004E2F58 File Offset: 0x004E1158
+		// (set) Token: 0x0600DA7F RID: 55935 RVA: 0x004E2F60 File Offset: 0x004E1160
 		public ReadOnlyMemory<byte> Hash
 		{
 			get
@@ -36,16 +36,16 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x17001B6D RID: 7021
-		// (get) Token: 0x0600D96C RID: 55660 RVA: 0x004DF43B File Offset: 0x004DD63B
-		// (set) Token: 0x0600D96D RID: 55661 RVA: 0x004DF443 File Offset: 0x004DD643
+		// Token: 0x17001BB5 RID: 7093
+		// (get) Token: 0x0600DA80 RID: 55936 RVA: 0x004E2F8B File Offset: 0x004E118B
+		// (set) Token: 0x0600DA81 RID: 55937 RVA: 0x004E2F93 File Offset: 0x004E1193
 		public byte[] FutureData
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = Array.Empty<byte>();
 
-		// Token: 0x0600D96E RID: 55662 RVA: 0x004DF44C File Offset: 0x004DD64C
+		// Token: 0x0600DA82 RID: 55938 RVA: 0x004E2F9C File Offset: 0x004E119C
 		public void Write(PooledBinaryWriter writer)
 		{
 			writer.Write(this.Version);
@@ -83,7 +83,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			writer.BaseStream.Position = position3;
 		}
 
-		// Token: 0x0600D96F RID: 55663 RVA: 0x004DF594 File Offset: 0x004DD794
+		// Token: 0x0600DA83 RID: 55939 RVA: 0x004E30E4 File Offset: 0x004E12E4
 		public void Read(PooledBinaryReader reader)
 		{
 			if (this.Version != 6 || this.Id != 0UL || this.Length != 0U || !this.m_hash.Span.SequenceEqual<byte>(BlobRef.s_emptyHash) || this.FutureData.Length != 0)
@@ -111,7 +111,7 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			}
 		}
 
-		// Token: 0x0600D970 RID: 55664 RVA: 0x004DF6C0 File Offset: 0x004DD8C0
+		// Token: 0x0600DA84 RID: 55940 RVA: 0x004E3210 File Offset: 0x004E1410
 		public override string ToString()
 		{
 			return string.Concat(new string[]
@@ -126,13 +126,13 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			});
 		}
 
-		// Token: 0x0600D971 RID: 55665 RVA: 0x004DF723 File Offset: 0x004DD923
+		// Token: 0x0600DA85 RID: 55941 RVA: 0x004E3273 File Offset: 0x004E1473
 		public static HashAlgorithm GetHashAlgorithm()
 		{
 			return BlobRef.s_md5.Value;
 		}
 
-		// Token: 0x0600D972 RID: 55666 RVA: 0x004DF730 File Offset: 0x004DD930
+		// Token: 0x0600DA86 RID: 55942 RVA: 0x004E3280 File Offset: 0x004E1480
 		public static ReadOnlyMemory<byte> CalculateHash(RefCountedBuffer buffer)
 		{
 			HashAlgorithm hashAlgorithm = BlobRef.GetHashAlgorithm();
@@ -149,13 +149,13 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return array;
 		}
 
-		// Token: 0x0600D973 RID: 55667 RVA: 0x004DF790 File Offset: 0x004DD990
+		// Token: 0x0600DA87 RID: 55943 RVA: 0x004E32E0 File Offset: 0x004E14E0
 		public bool Equals(BlobRef other)
 		{
 			return other != null && (this == other || (this.Id == other.Id && this.Length == other.Length && (this.Hash.Equals(other.Hash) || this.Hash.Span.SequenceEqual<byte>(other.Hash.Span))));
 		}
 
-		// Token: 0x0600D974 RID: 55668 RVA: 0x004DF800 File Offset: 0x004DDA00
+		// Token: 0x0600DA88 RID: 55944 RVA: 0x004E3350 File Offset: 0x004E1550
 		public override bool Equals(object obj)
 		{
 			if (this != obj)
@@ -166,48 +166,48 @@ namespace Platform.XBL.Save.MasterFileTable.Latest
 			return true;
 		}
 
-		// Token: 0x0600D975 RID: 55669 RVA: 0x004DF828 File Offset: 0x004DDA28
+		// Token: 0x0600DA89 RID: 55945 RVA: 0x004E3378 File Offset: 0x004E1578
 		public override int GetHashCode()
 		{
 			return HashCode.Combine<ulong, uint, int>(this.Id, this.Length, SpanUtils.GetHashCode<byte>(this.Hash.Span));
 		}
 
-		// Token: 0x0600D976 RID: 55670 RVA: 0x001DCBE8 File Offset: 0x001DADE8
+		// Token: 0x0600DA8A RID: 55946 RVA: 0x001DDCD0 File Offset: 0x001DBED0
 		public static bool operator ==(BlobRef left, BlobRef right)
 		{
 			return object.Equals(left, right);
 		}
 
-		// Token: 0x0600D977 RID: 55671 RVA: 0x001DCBF1 File Offset: 0x001DADF1
+		// Token: 0x0600DA8B RID: 55947 RVA: 0x001DDCD9 File Offset: 0x001DBED9
 		public static bool operator !=(BlobRef left, BlobRef right)
 		{
 			return !object.Equals(left, right);
 		}
 
-		// Token: 0x0400A4FE RID: 42238
+		// Token: 0x0400A5E7 RID: 42471
 		public const ushort VERSION = 6;
 
-		// Token: 0x0400A4FF RID: 42239
+		// Token: 0x0400A5E8 RID: 42472
 		public const int HashSizeBytes = 16;
 
-		// Token: 0x0400A500 RID: 42240
+		// Token: 0x0400A5E9 RID: 42473
 		public const int SizeBytes = 28;
 
-		// Token: 0x0400A501 RID: 42241
+		// Token: 0x0400A5EA RID: 42474
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ThreadLocal<MD5> s_md5 = new ThreadLocal<MD5>(new Func<MD5>(MD5.Create));
 
-		// Token: 0x0400A502 RID: 42242
+		// Token: 0x0400A5EB RID: 42475
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] s_emptyHash = new byte[16];
 
-		// Token: 0x0400A504 RID: 42244
+		// Token: 0x0400A5ED RID: 42477
 		public ulong Id;
 
-		// Token: 0x0400A505 RID: 42245
+		// Token: 0x0400A5EE RID: 42478
 		public uint Length;
 
-		// Token: 0x0400A506 RID: 42246
+		// Token: 0x0400A5EF RID: 42479
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ReadOnlyMemory<byte> m_hash = BlobRef.s_emptyHash;
 	}

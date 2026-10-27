@@ -4,66 +4,66 @@ using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x020015B5 RID: 5557
+// Token: 0x020015C7 RID: 5575
 public static class vp_Utility
 {
-	// Token: 0x0600AD73 RID: 44403 RVA: 0x00408FBD File Offset: 0x004071BD
+	// Token: 0x0600ADCB RID: 44491 RVA: 0x0040B3C1 File Offset: 0x004095C1
 	[Obsolete("Please use 'vp_MathUtility.NaNSafeFloat' instead.")]
 	public static float NaNSafeFloat(float value, float prevValue = 0f)
 	{
 		return vp_MathUtility.NaNSafeFloat(value, prevValue);
 	}
 
-	// Token: 0x0600AD74 RID: 44404 RVA: 0x00408FC6 File Offset: 0x004071C6
+	// Token: 0x0600ADCC RID: 44492 RVA: 0x0040B3CA File Offset: 0x004095CA
 	[Obsolete("Please use 'vp_MathUtility.NaNSafeVector2' instead.")]
 	public static Vector2 NaNSafeVector2(Vector2 vector, Vector2 prevVector = default(Vector2))
 	{
 		return vp_MathUtility.NaNSafeVector2(vector, prevVector);
 	}
 
-	// Token: 0x0600AD75 RID: 44405 RVA: 0x00408FCF File Offset: 0x004071CF
+	// Token: 0x0600ADCD RID: 44493 RVA: 0x0040B3D3 File Offset: 0x004095D3
 	[Obsolete("Please use 'vp_MathUtility.NaNSafeVector3' instead.")]
 	public static Vector3 NaNSafeVector3(Vector3 vector, Vector3 prevVector = default(Vector3))
 	{
 		return vp_MathUtility.NaNSafeVector3(vector, prevVector);
 	}
 
-	// Token: 0x0600AD76 RID: 44406 RVA: 0x00408FD8 File Offset: 0x004071D8
+	// Token: 0x0600ADCE RID: 44494 RVA: 0x0040B3DC File Offset: 0x004095DC
 	[Obsolete("Please use 'vp_MathUtility.NaNSafeQuaternion' instead.")]
 	public static Quaternion NaNSafeQuaternion(Quaternion quaternion, Quaternion prevQuaternion = default(Quaternion))
 	{
 		return vp_MathUtility.NaNSafeQuaternion(quaternion, prevQuaternion);
 	}
 
-	// Token: 0x0600AD77 RID: 44407 RVA: 0x00408FE1 File Offset: 0x004071E1
+	// Token: 0x0600ADCF RID: 44495 RVA: 0x0040B3E5 File Offset: 0x004095E5
 	[Obsolete("Please use 'vp_MathUtility.SnapToZero' instead.")]
 	public static Vector3 SnapToZero(Vector3 value, float epsilon = 0.0001f)
 	{
 		return vp_MathUtility.SnapToZero(value, epsilon);
 	}
 
-	// Token: 0x0600AD78 RID: 44408 RVA: 0x00408FEA File Offset: 0x004071EA
+	// Token: 0x0600ADD0 RID: 44496 RVA: 0x0040B3EE File Offset: 0x004095EE
 	[Obsolete("Please use 'vp_MathUtility.SnapToZero' instead.")]
 	public static float SnapToZero(float value, float epsilon = 0.0001f)
 	{
 		return vp_MathUtility.SnapToZero(value, epsilon);
 	}
 
-	// Token: 0x0600AD79 RID: 44409 RVA: 0x00408FF3 File Offset: 0x004071F3
+	// Token: 0x0600ADD1 RID: 44497 RVA: 0x0040B3F7 File Offset: 0x004095F7
 	[Obsolete("Please use 'vp_MathUtility.ReduceDecimals' instead.")]
 	public static float ReduceDecimals(float value, float factor = 1000f)
 	{
 		return vp_MathUtility.ReduceDecimals(value, factor);
 	}
 
-	// Token: 0x0600AD7A RID: 44410 RVA: 0x00408FFC File Offset: 0x004071FC
+	// Token: 0x0600ADD2 RID: 44498 RVA: 0x0040B400 File Offset: 0x00409600
 	[Obsolete("Please use 'vp_3DUtility.HorizontalVector' instead.")]
 	public static Vector3 HorizontalVector(Vector3 value)
 	{
 		return vp_3DUtility.HorizontalVector(value);
 	}
 
-	// Token: 0x0600AD7B RID: 44411 RVA: 0x00409004 File Offset: 0x00407204
+	// Token: 0x0600ADD3 RID: 44499 RVA: 0x0040B408 File Offset: 0x00409608
 	public static string GetErrorLocation(int level = 1, bool showOnlyLast = false)
 	{
 		StackTrace stackTrace = new StackTrace();
@@ -97,7 +97,7 @@ public static class vp_Utility
 		return text;
 	}
 
-	// Token: 0x0600AD7C RID: 44412 RVA: 0x004090DC File Offset: 0x004072DC
+	// Token: 0x0600ADD4 RID: 44500 RVA: 0x0040B4E0 File Offset: 0x004096E0
 	public static string GetTypeAlias(Type type)
 	{
 		string text = "";
@@ -108,21 +108,21 @@ public static class vp_Utility
 		return text;
 	}
 
-	// Token: 0x0600AD7D RID: 44413 RVA: 0x00409106 File Offset: 0x00407306
+	// Token: 0x0600ADD5 RID: 44501 RVA: 0x0040B50A File Offset: 0x0040970A
 	public static void Activate(GameObject obj, bool activate = true)
 	{
 		obj.SetActive(activate);
 	}
 
-	// Token: 0x0600AD7E RID: 44414 RVA: 0x0040910F File Offset: 0x0040730F
+	// Token: 0x0600ADD6 RID: 44502 RVA: 0x0040B513 File Offset: 0x00409713
 	public static bool IsActive(GameObject obj)
 	{
 		return obj.activeSelf;
 	}
 
-	// Token: 0x17001449 RID: 5193
-	// (get) Token: 0x0600AD7F RID: 44415 RVA: 0x00409117 File Offset: 0x00407317
-	// (set) Token: 0x0600AD80 RID: 44416 RVA: 0x00409121 File Offset: 0x00407321
+	// Token: 0x17001455 RID: 5205
+	// (get) Token: 0x0600ADD7 RID: 44503 RVA: 0x0040B51B File Offset: 0x0040971B
+	// (set) Token: 0x0600ADD8 RID: 44504 RVA: 0x0040B525 File Offset: 0x00409725
 	public static bool LockCursor
 	{
 		get
@@ -136,7 +136,7 @@ public static class vp_Utility
 		}
 	}
 
-	// Token: 0x0600AD81 RID: 44417 RVA: 0x0040913C File Offset: 0x0040733C
+	// Token: 0x0600ADD9 RID: 44505 RVA: 0x0040B540 File Offset: 0x00409740
 	public static void RandomizeList<T>(this List<T> list)
 	{
 		int count = list.Count;
@@ -149,7 +149,7 @@ public static class vp_Utility
 		}
 	}
 
-	// Token: 0x0600AD82 RID: 44418 RVA: 0x00409182 File Offset: 0x00407382
+	// Token: 0x0600ADDA RID: 44506 RVA: 0x0040B586 File Offset: 0x00409786
 	public static T RandomObject<T>(this List<T> list)
 	{
 		List<T> list2 = new List<T>();
@@ -158,19 +158,19 @@ public static class vp_Utility
 		return list2.FirstOrDefault<T>();
 	}
 
-	// Token: 0x0600AD83 RID: 44419 RVA: 0x0040919B File Offset: 0x0040739B
+	// Token: 0x0600ADDB RID: 44507 RVA: 0x0040B59F File Offset: 0x0040979F
 	public static List<T> ChildComponentsToList<T>(this Transform t) where T : Component
 	{
 		return t.GetComponentsInChildren<T>().ToList<T>();
 	}
 
-	// Token: 0x0600AD84 RID: 44420 RVA: 0x004091A8 File Offset: 0x004073A8
+	// Token: 0x0600ADDC RID: 44508 RVA: 0x0040B5AC File Offset: 0x004097AC
 	public static bool IsDescendant(Transform descendant, Transform potentialAncestor)
 	{
 		return !(descendant == null) && !(potentialAncestor == null) && !(descendant.parent == descendant) && (descendant.parent == potentialAncestor || vp_Utility.IsDescendant(descendant.parent, potentialAncestor));
 	}
 
-	// Token: 0x0600AD85 RID: 44421 RVA: 0x004091F7 File Offset: 0x004073F7
+	// Token: 0x0600ADDD RID: 44509 RVA: 0x0040B5FB File Offset: 0x004097FB
 	public static Component GetParent(Component target)
 	{
 		if (target == null)
@@ -184,7 +184,7 @@ public static class vp_Utility
 		return target.transform.parent;
 	}
 
-	// Token: 0x0600AD86 RID: 44422 RVA: 0x00409224 File Offset: 0x00407424
+	// Token: 0x0600ADDE RID: 44510 RVA: 0x0040B628 File Offset: 0x00409828
 	public static Transform GetTransformByNameInChildren(Transform trans, string name, bool includeInactive = false, bool subString = false)
 	{
 		name = name.ToLower();
@@ -211,7 +211,7 @@ public static class vp_Utility
 		return null;
 	}
 
-	// Token: 0x0600AD87 RID: 44423 RVA: 0x004092E8 File Offset: 0x004074E8
+	// Token: 0x0600ADDF RID: 44511 RVA: 0x0040B6EC File Offset: 0x004098EC
 	public static Transform GetTransformByNameInAncestors(Transform trans, string name, bool includeInactive = false, bool subString = false)
 	{
 		if (trans.parent == null)
@@ -238,13 +238,13 @@ public static class vp_Utility
 		return null;
 	}
 
-	// Token: 0x0600AD88 RID: 44424 RVA: 0x00409389 File Offset: 0x00407589
+	// Token: 0x0600ADE0 RID: 44512 RVA: 0x0040B78D File Offset: 0x0040998D
 	public static global::UnityEngine.Object Instantiate(global::UnityEngine.Object original)
 	{
 		return vp_Utility.Instantiate(original, Vector3.zero, Quaternion.identity);
 	}
 
-	// Token: 0x0600AD89 RID: 44425 RVA: 0x0040939B File Offset: 0x0040759B
+	// Token: 0x0600ADE1 RID: 44513 RVA: 0x0040B79F File Offset: 0x0040999F
 	public static global::UnityEngine.Object Instantiate(global::UnityEngine.Object original, Vector3 position, Quaternion rotation)
 	{
 		if (vp_PoolManager.Instance == null || !vp_PoolManager.Instance.enabled)
@@ -254,13 +254,13 @@ public static class vp_Utility
 		return vp_GlobalEventReturn<global::UnityEngine.Object, Vector3, Quaternion, global::UnityEngine.Object>.Send("vp_PoolManager Instantiate", original, position, rotation);
 	}
 
-	// Token: 0x0600AD8A RID: 44426 RVA: 0x004093CC File Offset: 0x004075CC
+	// Token: 0x0600ADE2 RID: 44514 RVA: 0x0040B7D0 File Offset: 0x004099D0
 	public static void Destroy(global::UnityEngine.Object obj)
 	{
 		vp_Utility.Destroy(obj, 0f);
 	}
 
-	// Token: 0x0600AD8B RID: 44427 RVA: 0x004093D9 File Offset: 0x004075D9
+	// Token: 0x0600ADE3 RID: 44515 RVA: 0x0040B7DD File Offset: 0x004099DD
 	public static void Destroy(global::UnityEngine.Object obj, float t)
 	{
 		if (vp_PoolManager.Instance == null || !vp_PoolManager.Instance.enabled)
@@ -271,8 +271,8 @@ public static class vp_Utility
 		vp_GlobalEvent<global::UnityEngine.Object, float>.Send("vp_PoolManager Destroy", obj, t);
 	}
 
-	// Token: 0x1700144A RID: 5194
-	// (get) Token: 0x0600AD8C RID: 44428 RVA: 0x00409408 File Offset: 0x00407608
+	// Token: 0x17001456 RID: 5206
+	// (get) Token: 0x0600ADE4 RID: 44516 RVA: 0x0040B80C File Offset: 0x00409A0C
 	public static int UniqueID
 	{
 		get
@@ -296,33 +296,33 @@ public static class vp_Utility
 		}
 	}
 
-	// Token: 0x0600AD8D RID: 44429 RVA: 0x0040945D File Offset: 0x0040765D
+	// Token: 0x0600ADE5 RID: 44517 RVA: 0x0040B861 File Offset: 0x00409A61
 	public static void ClearUniqueIDs()
 	{
 		vp_Utility.m_UniqueIDs.Clear();
 	}
 
-	// Token: 0x0600AD8E RID: 44430 RVA: 0x00409469 File Offset: 0x00407669
+	// Token: 0x0600ADE6 RID: 44518 RVA: 0x0040B86D File Offset: 0x00409A6D
 	public static int PositionToID(Vector3 position)
 	{
 		return (int)Mathf.Abs(position.x * 10000f + position.y * 1000f + position.z * 100f);
 	}
 
-	// Token: 0x0600AD8F RID: 44431 RVA: 0x00409497 File Offset: 0x00407697
+	// Token: 0x0600ADE7 RID: 44519 RVA: 0x0040B89B File Offset: 0x00409A9B
 	[Obsolete("Please use 'vp_AudioUtility.PlayRandomSound' instead.")]
 	public static void PlayRandomSound(AudioSource audioSource, List<AudioClip> sounds, Vector2 pitchRange)
 	{
 		vp_AudioUtility.PlayRandomSound(audioSource, sounds, pitchRange);
 	}
 
-	// Token: 0x0600AD90 RID: 44432 RVA: 0x004094A1 File Offset: 0x004076A1
+	// Token: 0x0600ADE8 RID: 44520 RVA: 0x0040B8A5 File Offset: 0x00409AA5
 	[Obsolete("Please use 'vp_AudioUtility.PlayRandomSound' instead.")]
 	public static void PlayRandomSound(AudioSource audioSource, List<AudioClip> sounds)
 	{
 		vp_AudioUtility.PlayRandomSound(audioSource, sounds);
 	}
 
-	// Token: 0x04008045 RID: 32837
+	// Token: 0x04008086 RID: 32902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<Type, string> m_TypeAliases = new Dictionary<Type, string>
 	{
@@ -404,7 +404,7 @@ public static class vp_Utility
 		}
 	};
 
-	// Token: 0x04008046 RID: 32838
+	// Token: 0x04008087 RID: 32903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, int> m_UniqueIDs = new Dictionary<int, int>();
 }

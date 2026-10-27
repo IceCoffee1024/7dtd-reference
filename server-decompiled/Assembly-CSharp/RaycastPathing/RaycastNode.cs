@@ -5,26 +5,26 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018F4 RID: 6388
+	// Token: 0x02001925 RID: 6437
 	[Preserve]
 	public class RaycastNode
 	{
-		// Token: 0x0600C524 RID: 50468 RVA: 0x00488A13 File Offset: 0x00486C13
+		// Token: 0x0600C638 RID: 50744 RVA: 0x0048C3BF File Offset: 0x0048A5BF
 		public RaycastNode(Vector3 pos, float scale = 1f, int depth = 0)
 		{
 			this.info = new RaycastNodeInfo(pos, scale, depth);
 			this.hierarchy = new RaycastNodeHierarcy();
 		}
 
-		// Token: 0x0600C525 RID: 50469 RVA: 0x00488A34 File Offset: 0x00486C34
+		// Token: 0x0600C639 RID: 50745 RVA: 0x0048C3E0 File Offset: 0x0048A5E0
 		public RaycastNode(Vector3 min, Vector3 max, float scale = 1f, int depth = 0)
 		{
 			this.info = new RaycastNodeInfo(min, max, scale, depth);
 			this.hierarchy = new RaycastNodeHierarcy();
 		}
 
-		// Token: 0x170018CD RID: 6349
-		// (get) Token: 0x0600C526 RID: 50470 RVA: 0x00488A57 File Offset: 0x00486C57
+		// Token: 0x17001915 RID: 6421
+		// (get) Token: 0x0600C63A RID: 50746 RVA: 0x0048C403 File Offset: 0x0048A603
 		public Vector3 Position
 		{
 			get
@@ -33,8 +33,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018CE RID: 6350
-		// (get) Token: 0x0600C527 RID: 50471 RVA: 0x00488A64 File Offset: 0x00486C64
+		// Token: 0x17001916 RID: 6422
+		// (get) Token: 0x0600C63B RID: 50747 RVA: 0x0048C410 File Offset: 0x0048A610
 		public Vector3 Center
 		{
 			get
@@ -43,8 +43,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018CF RID: 6351
-		// (get) Token: 0x0600C528 RID: 50472 RVA: 0x00488A71 File Offset: 0x00486C71
+		// Token: 0x17001917 RID: 6423
+		// (get) Token: 0x0600C63C RID: 50748 RVA: 0x0048C41D File Offset: 0x0048A61D
 		public Vector3i BlockPos
 		{
 			get
@@ -53,8 +53,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D0 RID: 6352
-		// (get) Token: 0x0600C529 RID: 50473 RVA: 0x00488A7E File Offset: 0x00486C7E
+		// Token: 0x17001918 RID: 6424
+		// (get) Token: 0x0600C63D RID: 50749 RVA: 0x0048C42A File Offset: 0x0048A62A
 		public float Scale
 		{
 			get
@@ -63,8 +63,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D1 RID: 6353
-		// (get) Token: 0x0600C52A RID: 50474 RVA: 0x00488A8B File Offset: 0x00486C8B
+		// Token: 0x17001919 RID: 6425
+		// (get) Token: 0x0600C63E RID: 50750 RVA: 0x0048C437 File Offset: 0x0048A637
 		public int Depth
 		{
 			get
@@ -73,8 +73,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D2 RID: 6354
-		// (get) Token: 0x0600C52B RID: 50475 RVA: 0x00488A98 File Offset: 0x00486C98
+		// Token: 0x1700191A RID: 6426
+		// (get) Token: 0x0600C63F RID: 50751 RVA: 0x0048C444 File Offset: 0x0048A644
 		public Vector3 Min
 		{
 			get
@@ -83,8 +83,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D3 RID: 6355
-		// (get) Token: 0x0600C52C RID: 50476 RVA: 0x00488AA5 File Offset: 0x00486CA5
+		// Token: 0x1700191B RID: 6427
+		// (get) Token: 0x0600C640 RID: 50752 RVA: 0x0048C451 File Offset: 0x0048A651
 		public Vector3 Max
 		{
 			get
@@ -93,8 +93,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D4 RID: 6356
-		// (get) Token: 0x0600C52D RID: 50477 RVA: 0x00488AB2 File Offset: 0x00486CB2
+		// Token: 0x1700191C RID: 6428
+		// (get) Token: 0x0600C641 RID: 50753 RVA: 0x0048C45E File Offset: 0x0048A65E
 		public RaycastNode Parent
 		{
 			get
@@ -103,8 +103,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D5 RID: 6357
-		// (get) Token: 0x0600C52E RID: 50478 RVA: 0x00488ABF File Offset: 0x00486CBF
+		// Token: 0x1700191D RID: 6429
+		// (get) Token: 0x0600C642 RID: 50754 RVA: 0x0048C46B File Offset: 0x0048A66B
 		public List<RaycastNode> Neighbors
 		{
 			get
@@ -113,32 +113,32 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C52F RID: 50479 RVA: 0x00488ACC File Offset: 0x00486CCC
+		// Token: 0x0600C643 RID: 50755 RVA: 0x0048C478 File Offset: 0x0048A678
 		public void SetParent(RaycastNode node)
 		{
 			this.hierarchy.parent = node;
 		}
 
-		// Token: 0x0600C530 RID: 50480 RVA: 0x00488ADA File Offset: 0x00486CDA
+		// Token: 0x0600C644 RID: 50756 RVA: 0x0048C486 File Offset: 0x0048A686
 		public void AddNeighbor(RaycastNode node)
 		{
 			this.hierarchy.neighbors.Add(node);
 		}
 
-		// Token: 0x0600C531 RID: 50481 RVA: 0x00488AED File Offset: 0x00486CED
+		// Token: 0x0600C645 RID: 50757 RVA: 0x0048C499 File Offset: 0x0048A699
 		public RaycastNode GetNeighbor(Vector3 pos)
 		{
 			return this.hierarchy.GetNeighbor(pos);
 		}
 
-		// Token: 0x0600C532 RID: 50482 RVA: 0x00488AFB File Offset: 0x00486CFB
+		// Token: 0x0600C646 RID: 50758 RVA: 0x0048C4A7 File Offset: 0x0048A6A7
 		public void AddChild(RaycastNode node)
 		{
 			this.hierarchy.AddChild(node);
 		}
 
-		// Token: 0x170018D6 RID: 6358
-		// (get) Token: 0x0600C533 RID: 50483 RVA: 0x00488B09 File Offset: 0x00486D09
+		// Token: 0x1700191E RID: 6430
+		// (get) Token: 0x0600C647 RID: 50759 RVA: 0x0048C4B5 File Offset: 0x0048A6B5
 		public List<RaycastNode> Children
 		{
 			get
@@ -147,8 +147,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D7 RID: 6359
-		// (get) Token: 0x0600C534 RID: 50484 RVA: 0x00488B16 File Offset: 0x00486D16
+		// Token: 0x1700191F RID: 6431
+		// (get) Token: 0x0600C648 RID: 50760 RVA: 0x0048C4C2 File Offset: 0x0048A6C2
 		public List<RaycastNode> ChildAirBlocks
 		{
 			get
@@ -157,8 +157,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D8 RID: 6360
-		// (get) Token: 0x0600C535 RID: 50485 RVA: 0x00488B23 File Offset: 0x00486D23
+		// Token: 0x17001920 RID: 6432
+		// (get) Token: 0x0600C649 RID: 50761 RVA: 0x0048C4CF File Offset: 0x0048A6CF
 		public List<RaycastNode> ChildSolidBlocks
 		{
 			get
@@ -167,8 +167,8 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x170018D9 RID: 6361
-		// (get) Token: 0x0600C536 RID: 50486 RVA: 0x00488B30 File Offset: 0x00486D30
+		// Token: 0x17001921 RID: 6433
+		// (get) Token: 0x0600C64A RID: 50762 RVA: 0x0048C4DC File Offset: 0x0048A6DC
 		public RaycastNode Waypoint
 		{
 			get
@@ -177,14 +177,14 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C537 RID: 50487 RVA: 0x00488B3D File Offset: 0x00486D3D
+		// Token: 0x0600C64B RID: 50763 RVA: 0x0048C4E9 File Offset: 0x0048A6E9
 		public void SetWaypoint(RaycastNode node)
 		{
 			this.hierarchy.SetWayPoint(node);
 		}
 
-		// Token: 0x170018DA RID: 6362
-		// (get) Token: 0x0600C538 RID: 50488 RVA: 0x00488B4B File Offset: 0x00486D4B
+		// Token: 0x17001922 RID: 6434
+		// (get) Token: 0x0600C64C RID: 50764 RVA: 0x0048C4F7 File Offset: 0x0048A6F7
 		public bool FlowToWaypoint
 		{
 			get
@@ -193,26 +193,26 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x0600C539 RID: 50489 RVA: 0x00488B58 File Offset: 0x00486D58
+		// Token: 0x0600C64D RID: 50765 RVA: 0x0048C504 File Offset: 0x0048A704
 		public void SetType(cPathNodeType _nodeType)
 		{
 			this.nodeType = _nodeType;
 		}
 
-		// Token: 0x0600C53A RID: 50490 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C64E RID: 50766 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void DebugDraw()
 		{
 		}
 
-		// Token: 0x040094EC RID: 38124
+		// Token: 0x040095D5 RID: 38357
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RaycastNodeInfo info;
 
-		// Token: 0x040094ED RID: 38125
+		// Token: 0x040095D6 RID: 38358
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RaycastNodeHierarcy hierarchy;
 
-		// Token: 0x040094EE RID: 38126
+		// Token: 0x040095D7 RID: 38359
 		public cPathNodeType nodeType;
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200107F RID: 4223
+// Token: 0x0200108F RID: 4239
 [Preserve]
 public class XUiC_SpawnBlockEditor : XUiController
 {
-	// Token: 0x06008605 RID: 34309 RVA: 0x0033410C File Offset: 0x0033230C
+	// Token: 0x06008658 RID: 34392 RVA: 0x00336190 File Offset: 0x00334390
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_SpawnBlockEditor : XUiController
 		}
 	}
 
-	// Token: 0x06008606 RID: 34310 RVA: 0x00334188 File Offset: 0x00332388
+	// Token: 0x06008659 RID: 34393 RVA: 0x0033620C File Offset: 0x0033440C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOk_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -41,7 +41,7 @@ public class XUiC_SpawnBlockEditor : XUiController
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06008607 RID: 34311 RVA: 0x00334204 File Offset: 0x00332404
+	// Token: 0x0600865A RID: 34394 RVA: 0x00336288 File Offset: 0x00334488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setBlock(Vector3i _blockPos, BlockValue _blockValue, BlockSpawnEntity _block)
 	{
@@ -63,7 +63,7 @@ public class XUiC_SpawnBlockEditor : XUiController
 		}
 	}
 
-	// Token: 0x06008608 RID: 34312 RVA: 0x00334281 File Offset: 0x00332481
+	// Token: 0x0600865B RID: 34395 RVA: 0x00336305 File Offset: 0x00334505
 	public static void Open(LocalPlayerUI _playerUi, Vector3i _blockPos, BlockValue _blockValue, BlockSpawnEntity _block)
 	{
 		XUiC_SpawnBlockEditor childByType = _playerUi.xui.FindWindowGroupByName(XUiC_SpawnBlockEditor.ID).GetChildByType<XUiC_SpawnBlockEditor>();
@@ -71,14 +71,14 @@ public class XUiC_SpawnBlockEditor : XUiController
 		childByType.setBlock(_blockPos, _blockValue, _block);
 	}
 
-	// Token: 0x040063B3 RID: 25523
+	// Token: 0x040063F2 RID: 25586
 	public static string ID = "";
 
-	// Token: 0x040063B4 RID: 25524
+	// Token: 0x040063F3 RID: 25587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_StringList list;
 
-	// Token: 0x040063B5 RID: 25525
+	// Token: 0x040063F4 RID: 25588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 }

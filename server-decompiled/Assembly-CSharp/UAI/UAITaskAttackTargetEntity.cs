@@ -4,18 +4,18 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017AA RID: 6058
+	// Token: 0x020017DB RID: 6107
 	[Preserve]
 	public class UAITaskAttackTargetEntity : UAITaskBase
 	{
-		// Token: 0x0600BBB7 RID: 48055 RVA: 0x0045AA7F File Offset: 0x00458C7F
+		// Token: 0x0600BCCB RID: 48331 RVA: 0x0045E42B File Offset: 0x0045C62B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void initializeParameters()
 		{
 			base.initializeParameters();
 		}
 
-		// Token: 0x0600BBB8 RID: 48056 RVA: 0x0045AC34 File Offset: 0x00458E34
+		// Token: 0x0600BCCC RID: 48332 RVA: 0x0045E5E0 File Offset: 0x0045C7E0
 		public override void Start(Context _context)
 		{
 			base.Start(_context);
@@ -33,7 +33,7 @@ namespace UAI
 			this.Stop(_context);
 		}
 
-		// Token: 0x0600BBB9 RID: 48057 RVA: 0x0045ACEC File Offset: 0x00458EEC
+		// Token: 0x0600BCCD RID: 48333 RVA: 0x0045E698 File Offset: 0x0045C898
 		public override void Update(Context _context)
 		{
 			base.Update(_context);
@@ -64,7 +64,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x04008C80 RID: 35968
+		// Token: 0x04008D69 RID: 36201
 		public int attackTimeout;
 	}
 }

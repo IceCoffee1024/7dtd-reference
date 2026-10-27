@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000457 RID: 1111
+// Token: 0x02000459 RID: 1113
 [Preserve]
 public class EAISetNearestCorpseAsTarget : EAITarget
 {
-	// Token: 0x060021C2 RID: 8642 RVA: 0x000CC574 File Offset: 0x000CA774
+	// Token: 0x060021C7 RID: 8647 RVA: 0x000CC920 File Offset: 0x000CAB20
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity, 50f, true);
@@ -16,7 +16,7 @@ public class EAISetNearestCorpseAsTarget : EAITarget
 		this.sorter = new EAISetNearestEntityAsTargetSorter(_theEntity);
 	}
 
-	// Token: 0x060021C3 RID: 8643 RVA: 0x000CC5A8 File Offset: 0x000CA7A8
+	// Token: 0x060021C8 RID: 8648 RVA: 0x000CC954 File Offset: 0x000CAB54
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -28,7 +28,7 @@ public class EAISetNearestCorpseAsTarget : EAITarget
 		base.GetData(data, "maxDistance2d", ref this.maxXZDistance);
 	}
 
-	// Token: 0x060021C4 RID: 8644 RVA: 0x000CC5EC File Offset: 0x000CA7EC
+	// Token: 0x060021C9 RID: 8649 RVA: 0x000CC998 File Offset: 0x000CAB98
 	public override bool CanExecute()
 	{
 		if (this.theEntity.HasInvestigatePosition)
@@ -66,39 +66,39 @@ public class EAISetNearestCorpseAsTarget : EAITarget
 		return this.targetEntity != null;
 	}
 
-	// Token: 0x060021C5 RID: 8645 RVA: 0x000CC729 File Offset: 0x000CA929
+	// Token: 0x060021CA RID: 8650 RVA: 0x000CCAD5 File Offset: 0x000CACD5
 	public override void Start()
 	{
 		base.Start();
 		this.theEntity.SetAttackTarget(this.targetEntity, 600);
 	}
 
-	// Token: 0x060021C6 RID: 8646 RVA: 0x000CC747 File Offset: 0x000CA947
+	// Token: 0x060021CB RID: 8651 RVA: 0x000CCAF3 File Offset: 0x000CACF3
 	public override bool Continue()
 	{
 		return this.targetEntity && this.targetEntity.IsDead() && !(this.targetEntity != this.theEntity.GetAttackTarget());
 	}
 
-	// Token: 0x04001751 RID: 5969
+	// Token: 0x04001761 RID: 5985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive targetEntity;
 
-	// Token: 0x04001752 RID: 5970
+	// Token: 0x04001762 RID: 5986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityFlags targetFlags;
 
-	// Token: 0x04001753 RID: 5971
+	// Token: 0x04001763 RID: 5987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int rndTimeout;
 
-	// Token: 0x04001754 RID: 5972
+	// Token: 0x04001764 RID: 5988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAISetNearestEntityAsTargetSorter sorter;
 
-	// Token: 0x04001755 RID: 5973
+	// Token: 0x04001765 RID: 5989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Entity> entityList = new List<Entity>();
 
-	// Token: 0x04001756 RID: 5974
+	// Token: 0x04001766 RID: 5990
 	public static bool ZombiesEatAnimalCorpses = true;
 }

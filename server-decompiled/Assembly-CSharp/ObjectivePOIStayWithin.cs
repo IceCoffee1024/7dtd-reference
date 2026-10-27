@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020009A5 RID: 2469
+// Token: 0x020009AF RID: 2479
 [Preserve]
 public class ObjectivePOIStayWithin : BaseObjective
 {
-	// Token: 0x170007CA RID: 1994
-	// (get) Token: 0x06004841 RID: 18497 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007D0 RID: 2000
+	// (get) Token: 0x06004864 RID: 18532 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -18,8 +18,8 @@ public class ObjectivePOIStayWithin : BaseObjective
 		}
 	}
 
-	// Token: 0x170007CB RID: 1995
-	// (get) Token: 0x06004842 RID: 18498 RVA: 0x001C1750 File Offset: 0x001BF950
+	// Token: 0x170007D1 RID: 2001
+	// (get) Token: 0x06004865 RID: 18533 RVA: 0x001C27D4 File Offset: 0x001C09D4
 	public override bool UpdateUI
 	{
 		get
@@ -28,8 +28,8 @@ public class ObjectivePOIStayWithin : BaseObjective
 		}
 	}
 
-	// Token: 0x170007CC RID: 1996
-	// (get) Token: 0x06004843 RID: 18499 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x170007D2 RID: 2002
+	// (get) Token: 0x06004866 RID: 18534 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool useUpdateLoop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -39,8 +39,8 @@ public class ObjectivePOIStayWithin : BaseObjective
 		}
 	}
 
-	// Token: 0x170007CD RID: 1997
-	// (get) Token: 0x06004844 RID: 18500 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007D3 RID: 2003
+	// (get) Token: 0x06004867 RID: 18535 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ShowInQuestLog
 	{
 		get
@@ -49,25 +49,25 @@ public class ObjectivePOIStayWithin : BaseObjective
 		}
 	}
 
-	// Token: 0x06004845 RID: 18501 RVA: 0x001C5F49 File Offset: 0x001C4149
+	// Token: 0x06004868 RID: 18536 RVA: 0x001C6FF5 File Offset: 0x001C51F5
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveStayWithin_keyword", false, null);
 	}
 
-	// Token: 0x06004846 RID: 18502 RVA: 0x001C5F5D File Offset: 0x001C415D
+	// Token: 0x06004869 RID: 18537 RVA: 0x001C7009 File Offset: 0x001C5209
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format("{0}", this.keyword);
 	}
 
-	// Token: 0x06004847 RID: 18503 RVA: 0x001C5F75 File Offset: 0x001C4175
+	// Token: 0x0600486A RID: 18538 RVA: 0x001C7021 File Offset: 0x001C5221
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.AddObjectiveToBeUpdated(this);
 	}
 
-	// Token: 0x06004848 RID: 18504 RVA: 0x001C5F84 File Offset: 0x001C4184
+	// Token: 0x0600486B RID: 18539 RVA: 0x001C7030 File Offset: 0x001C5230
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.RemoveObjectiveToBeUpdated(this);
@@ -81,7 +81,7 @@ public class ObjectivePOIStayWithin : BaseObjective
 		}
 	}
 
-	// Token: 0x06004849 RID: 18505 RVA: 0x001C5FDD File Offset: 0x001C41DD
+	// Token: 0x0600486C RID: 18540 RVA: 0x001C7089 File Offset: 0x001C5289
 	public override void Refresh()
 	{
 		this.SetupDisplay();
@@ -92,17 +92,17 @@ public class ObjectivePOIStayWithin : BaseObjective
 		base.Complete = base.OwnerQuest.CurrentState != Quest.QuestState.Failed;
 	}
 
-	// Token: 0x0600484A RID: 18506 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600486D RID: 18541 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Read(PooledBinaryReader _br)
 	{
 	}
 
-	// Token: 0x0600484B RID: 18507 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600486E RID: 18542 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Write(PooledBinaryWriter _bw)
 	{
 	}
 
-	// Token: 0x0600484C RID: 18508 RVA: 0x001C6014 File Offset: 0x001C4214
+	// Token: 0x0600486F RID: 18543 RVA: 0x001C70C0 File Offset: 0x001C52C0
 	public override BaseObjective Clone()
 	{
 		ObjectivePOIStayWithin objectivePOIStayWithin = new ObjectivePOIStayWithin();
@@ -110,7 +110,7 @@ public class ObjectivePOIStayWithin : BaseObjective
 		return objectivePOIStayWithin;
 	}
 
-	// Token: 0x0600484D RID: 18509 RVA: 0x001C602F File Offset: 0x001C422F
+	// Token: 0x06004870 RID: 18544 RVA: 0x001C70DB File Offset: 0x001C52DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -121,7 +121,7 @@ public class ObjectivePOIStayWithin : BaseObjective
 		objectivePOIStayWithin.offset = this.offset;
 	}
 
-	// Token: 0x0600484E RID: 18510 RVA: 0x001C6061 File Offset: 0x001C4261
+	// Token: 0x06004871 RID: 18545 RVA: 0x001C710D File Offset: 0x001C530D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public GameObject CreateBoundsViewer()
 	{
@@ -134,7 +134,7 @@ public class ObjectivePOIStayWithin : BaseObjective
 		return gameObject;
 	}
 
-	// Token: 0x0600484F RID: 18511 RVA: 0x001C6098 File Offset: 0x001C4298
+	// Token: 0x06004872 RID: 18546 RVA: 0x001C7144 File Offset: 0x001C5344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 GetPosition()
 	{
@@ -164,14 +164,14 @@ public class ObjectivePOIStayWithin : BaseObjective
 		return Vector3.zero;
 	}
 
-	// Token: 0x06004850 RID: 18512 RVA: 0x001C6278 File Offset: 0x001C4478
+	// Token: 0x06004873 RID: 18547 RVA: 0x001C7324 File Offset: 0x001C5524
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_NeedSetup()
 	{
 		this.GetPosition() != Vector3.zero;
 	}
 
-	// Token: 0x06004851 RID: 18513 RVA: 0x001C628C File Offset: 0x001C448C
+	// Token: 0x06004874 RID: 18548 RVA: 0x001C7338 File Offset: 0x001C5538
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_Update()
 	{
@@ -198,7 +198,7 @@ public class ObjectivePOIStayWithin : BaseObjective
 		base.ObjectiveState = BaseObjective.ObjectiveStates.Warning;
 	}
 
-	// Token: 0x06004852 RID: 18514 RVA: 0x001C631F File Offset: 0x001C451F
+	// Token: 0x06004875 RID: 18549 RVA: 0x001C73CB File Offset: 0x001C55CB
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -208,7 +208,7 @@ public class ObjectivePOIStayWithin : BaseObjective
 		}
 	}
 
-	// Token: 0x06004853 RID: 18515 RVA: 0x001C6359 File Offset: 0x001C4559
+	// Token: 0x06004876 RID: 18550 RVA: 0x001C7405 File Offset: 0x001C5605
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
 	{
@@ -216,34 +216,34 @@ public class ObjectivePOIStayWithin : BaseObjective
 		parameters.Add("radius", this.offset);
 	}
 
-	// Token: 0x040039C6 RID: 14790
+	// Token: 0x040039E6 RID: 14822
 	public static string PropRadius = "radius";
 
-	// Token: 0x040039C7 RID: 14791
+	// Token: 0x040039E7 RID: 14823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x040039C8 RID: 14792
+	// Token: 0x040039E8 RID: 14824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool positionSet;
 
-	// Token: 0x040039C9 RID: 14793
+	// Token: 0x040039E9 RID: 14825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Rect outerRect;
 
-	// Token: 0x040039CA RID: 14794
+	// Token: 0x040039EA RID: 14826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Rect innerRect;
 
-	// Token: 0x040039CB RID: 14795
+	// Token: 0x040039EB RID: 14827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float offset;
 
-	// Token: 0x040039CC RID: 14796
+	// Token: 0x040039EC RID: 14828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject prefabBounds;
 
-	// Token: 0x040039CD RID: 14797
+	// Token: 0x040039ED RID: 14829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goBounds;
 }

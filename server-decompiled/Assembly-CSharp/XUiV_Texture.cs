@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Token: 0x0200117B RID: 4475
+// Token: 0x0200118B RID: 4491
 public class XUiV_Texture : XUiV_TextureBased
 {
-	// Token: 0x17001134 RID: 4404
-	// (set) Token: 0x06008EBB RID: 36539 RVA: 0x0035D96E File Offset: 0x0035BB6E
+	// Token: 0x1700113F RID: 4415
+	// (set) Token: 0x06008F0F RID: 36623 RVA: 0x0035FA5E File Offset: 0x0035DC5E
 	public override Texture Texture
 	{
 		set
@@ -25,9 +25,9 @@ public class XUiV_Texture : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001135 RID: 4405
-	// (get) Token: 0x06008EBC RID: 36540 RVA: 0x0035D9A3 File Offset: 0x0035BBA3
-	// (set) Token: 0x06008EBD RID: 36541 RVA: 0x0035D9AB File Offset: 0x0035BBAB
+	// Token: 0x17001140 RID: 4416
+	// (get) Token: 0x06008F10 RID: 36624 RVA: 0x0035FA93 File Offset: 0x0035DC93
+	// (set) Token: 0x06008F11 RID: 36625 RVA: 0x0035FA9B File Offset: 0x0035DC9B
 	[XuiXmlAttribute("textures", false)]
 	public string[] TextureUris
 	{
@@ -49,9 +49,9 @@ public class XUiV_Texture : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001136 RID: 4406
-	// (get) Token: 0x06008EBE RID: 36542 RVA: 0x0035D9DB File Offset: 0x0035BBDB
-	// (set) Token: 0x06008EBF RID: 36543 RVA: 0x0035D9E5 File Offset: 0x0035BBE5
+	// Token: 0x17001141 RID: 4417
+	// (get) Token: 0x06008F12 RID: 36626 RVA: 0x0035FACB File Offset: 0x0035DCCB
+	// (set) Token: 0x06008F13 RID: 36627 RVA: 0x0035FAD5 File Offset: 0x0035DCD5
 	[XuiXmlAttribute("texture", false)]
 	public string Path
 	{
@@ -74,9 +74,9 @@ public class XUiV_Texture : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001137 RID: 4407
-	// (get) Token: 0x06008EC0 RID: 36544 RVA: 0x0035DA23 File Offset: 0x0035BC23
-	// (set) Token: 0x06008EC1 RID: 36545 RVA: 0x0035DA2B File Offset: 0x0035BC2B
+	// Token: 0x17001142 RID: 4418
+	// (get) Token: 0x06008F14 RID: 36628 RVA: 0x0035FB13 File Offset: 0x0035DD13
+	// (set) Token: 0x06008F15 RID: 36629 RVA: 0x0035FB1B File Offset: 0x0035DD1B
 	[XuiXmlAttribute("autounload", false)]
 	public bool AutoUnload
 	{
@@ -94,13 +94,13 @@ public class XUiV_Texture : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x06008EC2 RID: 36546 RVA: 0x0035DA3E File Offset: 0x0035BC3E
+	// Token: 0x06008F16 RID: 36630 RVA: 0x0035FB2E File Offset: 0x0035DD2E
 	public XUiV_Texture(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008EC3 RID: 36547 RVA: 0x0035DA54 File Offset: 0x0035BC54
+	// Token: 0x06008F17 RID: 36631 RVA: 0x0035FB44 File Offset: 0x0035DD44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadTexture(int _index = 0)
 	{
@@ -146,7 +146,7 @@ public class XUiV_Texture : XUiV_TextureBased
 		base.SetDirty();
 	}
 
-	// Token: 0x06008EC4 RID: 36548 RVA: 0x0035DB88 File Offset: 0x0035BD88
+	// Token: 0x06008F18 RID: 36632 RVA: 0x0035FC78 File Offset: 0x0035DE78
 	public override void UnloadTexture()
 	{
 		Texture texture = this.Texture;
@@ -164,7 +164,7 @@ public class XUiV_Texture : XUiV_TextureBased
 		global::UnityEngine.Object.DestroyImmediate(texture);
 	}
 
-	// Token: 0x06008EC6 RID: 36550 RVA: 0x0035DBD8 File Offset: 0x0035BDD8
+	// Token: 0x06008F1A RID: 36634 RVA: 0x0035FCC8 File Offset: 0x0035DEC8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <loadTexture>g__FetchWwwTexture|15_0(int _currentIndex, string _fetchUri)
@@ -175,7 +175,7 @@ public class XUiV_Texture : XUiV_TextureBased
 		ThreadManager.StartCoroutine(this.<loadTexture>g__WaitForWwwData|15_1(_currentIndex, texture, _fetchUri));
 	}
 
-	// Token: 0x06008EC7 RID: 36551 RVA: 0x0035DC23 File Offset: 0x0035BE23
+	// Token: 0x06008F1B RID: 36635 RVA: 0x0035FD13 File Offset: 0x0035DF13
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator <loadTexture>g__WaitForWwwData|15_1(int _currentIndex, UnityWebRequest _www, string _fetchUri)
@@ -209,15 +209,15 @@ public class XUiV_Texture : XUiV_TextureBased
 		yield break;
 	}
 
-	// Token: 0x040068B6 RID: 26806
+	// Token: 0x040068F6 RID: 26870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] textureUris = Array.Empty<string>();
 
-	// Token: 0x040068B7 RID: 26807
+	// Token: 0x040068F7 RID: 26871
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool autoUnload;
 
-	// Token: 0x040068B8 RID: 26808
+	// Token: 0x040068F8 RID: 26872
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isExternalTexture;
 }

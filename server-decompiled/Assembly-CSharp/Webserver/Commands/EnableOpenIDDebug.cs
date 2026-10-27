@@ -4,25 +4,25 @@ using UnityEngine.Scripting;
 
 namespace Webserver.Commands
 {
-	// Token: 0x02001B38 RID: 6968
+	// Token: 0x02001B69 RID: 7017
 	[Preserve]
 	public class EnableOpenIDDebug : ConsoleCmdAbstract
 	{
-		// Token: 0x0600D15F RID: 53599 RVA: 0x004BFDE7 File Offset: 0x004BDFE7
+		// Token: 0x0600D273 RID: 53875 RVA: 0x004C390F File Offset: 0x004C1B0F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getDescription()
 		{
 			return "enable/disable OpenID debugging";
 		}
 
-		// Token: 0x0600D160 RID: 53600 RVA: 0x004BFDEE File Offset: 0x004BDFEE
+		// Token: 0x0600D274 RID: 53876 RVA: 0x004C3916 File Offset: 0x004C1B16
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string[] getCommands()
 		{
 			return new string[] { "openiddebug" };
 		}
 
-		// Token: 0x0600D161 RID: 53601 RVA: 0x004BFE00 File Offset: 0x004BE000
+		// Token: 0x0600D275 RID: 53877 RVA: 0x004C3928 File Offset: 0x004C1B28
 		public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 		{
 			if (_params.Count != 1)

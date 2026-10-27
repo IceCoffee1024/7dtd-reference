@@ -9,11 +9,11 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x020017ED RID: 6125
+	// Token: 0x0200181E RID: 6174
 	public class TwitchEntitlementManager : IEntitlementValidator
 	{
-		// Token: 0x17001794 RID: 6036
-		// (get) Token: 0x0600BE49 RID: 48713 RVA: 0x00463ED8 File Offset: 0x004620D8
+		// Token: 0x170017DC RID: 6108
+		// (get) Token: 0x0600BF5D RID: 48989 RVA: 0x00467884 File Offset: 0x00465A84
 		public string PlatformID
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -23,7 +23,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BE4A RID: 48714 RVA: 0x00463EFA File Offset: 0x004620FA
+		// Token: 0x0600BF5E RID: 48990 RVA: 0x004678A6 File Offset: 0x00465AA6
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -34,7 +34,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BE4B RID: 48715 RVA: 0x00463F28 File Offset: 0x00462128
+		// Token: 0x0600BF5F RID: 48991 RVA: 0x004678D4 File Offset: 0x00465AD4
 		public void Init()
 		{
 			TwitchDropAvailabilityManager.Instance.Updated -= this.OnDropsUpdated;
@@ -43,7 +43,7 @@ namespace Twitch
 			TwitchDropAvailabilityManager.Instance.UpdateAll(true);
 		}
 
-		// Token: 0x0600BE4C RID: 48716 RVA: 0x00463F7C File Offset: 0x0046217C
+		// Token: 0x0600BF60 RID: 48992 RVA: 0x00467928 File Offset: 0x00465B28
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDropsUpdated(TwitchDropAvailabilityManager mgr)
 		{
@@ -60,14 +60,14 @@ namespace Twitch
 			this.FetchEntitlements();
 		}
 
-		// Token: 0x0600BE4D RID: 48717 RVA: 0x00464014 File Offset: 0x00462214
+		// Token: 0x0600BF61 RID: 48993 RVA: 0x004679C0 File Offset: 0x00465BC0
 		public void FetchEntitlements()
 		{
 			this.isFetching = true;
 			ThreadManager.StartCoroutine(this.FetchEntitlementsCo());
 		}
 
-		// Token: 0x0600BE4E RID: 48718 RVA: 0x00464029 File Offset: 0x00462229
+		// Token: 0x0600BF62 RID: 48994 RVA: 0x004679D5 File Offset: 0x00465BD5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator FetchEntitlementsCo()
 		{
@@ -100,13 +100,13 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE4F RID: 48719 RVA: 0x00464038 File Offset: 0x00462238
+		// Token: 0x0600BF63 RID: 48995 RVA: 0x004679E4 File Offset: 0x00465BE4
 		public void FulfillEntitlements(Action onSuccess = null)
 		{
 			GameManager.Instance.StartCoroutine(this.FulfillEntitlementsCo(onSuccess));
 		}
 
-		// Token: 0x0600BE50 RID: 48720 RVA: 0x0046404C File Offset: 0x0046224C
+		// Token: 0x0600BF64 RID: 48996 RVA: 0x004679F8 File Offset: 0x00465BF8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator FulfillEntitlementsCo(Action onSuccess)
 		{
@@ -171,7 +171,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE51 RID: 48721 RVA: 0x00464062 File Offset: 0x00462262
+		// Token: 0x0600BF65 RID: 48997 RVA: 0x00467A0E File Offset: 0x00465C0E
 		public void SerializeEntitlements()
 		{
 			JsonConvert.SerializeObject(new EntitlementListWrapper
@@ -180,62 +180,62 @@ namespace Twitch
 			}, Formatting.Indented);
 		}
 
-		// Token: 0x0600BE52 RID: 48722 RVA: 0x0046407B File Offset: 0x0046227B
+		// Token: 0x0600BF66 RID: 48998 RVA: 0x00467A27 File Offset: 0x00465C27
 		public bool IsAvailableOnPlatform(EntitlementSetEnum _set)
 		{
 			return TwitchEntitlementManager.EntitlementSetToTwitchMap.ContainsKey(_set);
 		}
 
-		// Token: 0x0600BE53 RID: 48723 RVA: 0x00464088 File Offset: 0x00462288
+		// Token: 0x0600BF67 RID: 48999 RVA: 0x00467A34 File Offset: 0x00465C34
 		public bool HasEntitlement(EntitlementSetEnum _set)
 		{
 			string id;
 			return TwitchEntitlementManager.EntitlementSetToTwitchMap.TryGetValue(_set, out id) && TwitchEntitlementManager.entitlements.Exists((Entitlement e) => e.benefit_id == id);
 		}
 
-		// Token: 0x0600BE54 RID: 48724 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600BF68 RID: 49000 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsEntitlementPurchasable(EntitlementSetEnum _set)
 		{
 			return false;
 		}
 
-		// Token: 0x0600BE55 RID: 48725 RVA: 0x004640C6 File Offset: 0x004622C6
+		// Token: 0x0600BF69 RID: 49001 RVA: 0x00467A72 File Offset: 0x00465C72
 		public string GetEntitlementSetId(EntitlementSetEnum _entitlementSet)
 		{
 			return TwitchEntitlementManager.EntitlementSetToTwitchMap.GetValueOrDefault(_entitlementSet);
 		}
 
-		// Token: 0x0600BE56 RID: 48726 RVA: 0x004640D4 File Offset: 0x004622D4
+		// Token: 0x0600BF6A RID: 49002 RVA: 0x00467A80 File Offset: 0x00465C80
 		public DateTime? GetAcquiredDate(EntitlementSetEnum _entitlementSet)
 		{
 			return null;
 		}
 
-		// Token: 0x0600BE57 RID: 48727 RVA: 0x004640EA File Offset: 0x004622EA
+		// Token: 0x0600BF6B RID: 49003 RVA: 0x00467A96 File Offset: 0x00465C96
 		public bool IsFetchingEntitlements()
 		{
 			return this.isFetching;
 		}
 
-		// Token: 0x0600BE58 RID: 48728 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600BF6C RID: 49004 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool OpenStore(EntitlementSetEnum _set, Action<EntitlementSetEnum> _onDlcPurchased)
 		{
 			return false;
 		}
 
-		// Token: 0x04008E25 RID: 36389
+		// Token: 0x04008F0E RID: 36622
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string FETCH_URL = "https://xjjvn6hovg33dqetux65clszte0vhysi.lambda-url.us-east-2.on.aws/?platform_id=";
 
-		// Token: 0x04008E26 RID: 36390
+		// Token: 0x04008F0F RID: 36623
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string FULFILLMENT_URL = "https://ev2dltb7u2pdtwuaphayq5icdy0nmtsx.lambda-url.us-east-2.on.aws/?platform_id=";
 
-		// Token: 0x04008E27 RID: 36391
+		// Token: 0x04008F10 RID: 36624
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EnumDictionary<EntitlementSetEnum, string> EntitlementSetToTwitchMap = new EnumDictionary<EntitlementSetEnum, string>();
 
-		// Token: 0x04008E28 RID: 36392
+		// Token: 0x04008F11 RID: 36625
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EnumDictionary<EPlatformIdentifier, string> platformIdentifierToPrefix = new EnumDictionary<EPlatformIdentifier, string>
 		{
@@ -253,19 +253,19 @@ namespace Twitch
 			}
 		};
 
-		// Token: 0x04008E29 RID: 36393
+		// Token: 0x04008F12 RID: 36626
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly List<Entitlement> entitlements = new List<Entitlement>();
 
-		// Token: 0x04008E2A RID: 36394
+		// Token: 0x04008F13 RID: 36627
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x04008E2B RID: 36395
+		// Token: 0x04008F14 RID: 36628
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isFetching;
 
-		// Token: 0x04008E2C RID: 36396
+		// Token: 0x04008F15 RID: 36629
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string prefix;
 	}

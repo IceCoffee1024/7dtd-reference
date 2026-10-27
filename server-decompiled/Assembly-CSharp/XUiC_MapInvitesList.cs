@@ -5,13 +5,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F94 RID: 3988
+// Token: 0x02000FA4 RID: 4004
 [Preserve]
 public class XUiC_MapInvitesList : XUiController
 {
-	// Token: 0x17000ED7 RID: 3799
-	// (get) Token: 0x06007DA5 RID: 32165 RVA: 0x002FC580 File Offset: 0x002FA780
-	// (set) Token: 0x06007DA6 RID: 32166 RVA: 0x002FC588 File Offset: 0x002FA788
+	// Token: 0x17000EE2 RID: 3810
+	// (get) Token: 0x06007DF4 RID: 32244 RVA: 0x002FE09C File Offset: 0x002FC29C
+	// (set) Token: 0x06007DF5 RID: 32245 RVA: 0x002FE0A4 File Offset: 0x002FC2A4
 	public Waypoint SelectedInvite
 	{
 		get
@@ -24,7 +24,7 @@ public class XUiC_MapInvitesList : XUiController
 		}
 	}
 
-	// Token: 0x06007DA7 RID: 32167 RVA: 0x002FC594 File Offset: 0x002FA794
+	// Token: 0x06007DF6 RID: 32246 RVA: 0x002FE0B0 File Offset: 0x002FC2B0
 	public override void Init()
 	{
 		base.Init();
@@ -39,14 +39,14 @@ public class XUiC_MapInvitesList : XUiController
 		this.list = (XUiV_Grid)base.GetChildById("invitesList").ViewComponent;
 	}
 
-	// Token: 0x06007DA8 RID: 32168 RVA: 0x002FC68A File Offset: 0x002FA88A
+	// Token: 0x06007DF7 RID: 32247 RVA: 0x002FE1A6 File Offset: 0x002FC3A6
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.UpdateInvitesList();
 	}
 
-	// Token: 0x06007DA9 RID: 32169 RVA: 0x002FC698 File Offset: 0x002FA898
+	// Token: 0x06007DF8 RID: 32248 RVA: 0x002FE1B4 File Offset: 0x002FC3B4
 	public void UpdateInvitesList()
 	{
 		EntityPlayer entityPlayer = this.xui.playerUI.entityPlayer;
@@ -98,7 +98,7 @@ public class XUiC_MapInvitesList : XUiController
 		}
 	}
 
-	// Token: 0x06007DAA RID: 32170 RVA: 0x002FC8C4 File Offset: 0x002FAAC4
+	// Token: 0x06007DF9 RID: 32249 RVA: 0x002FE3E0 File Offset: 0x002FC5E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInviteAddToWaypoints(XUiController _sender, int _mouseButton)
 	{
@@ -126,7 +126,7 @@ public class XUiC_MapInvitesList : XUiController
 		}
 	}
 
-	// Token: 0x06007DAB RID: 32171 RVA: 0x002FC9EE File Offset: 0x002FABEE
+	// Token: 0x06007DFA RID: 32250 RVA: 0x002FE50A File Offset: 0x002FC70A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInviteShowOnMapPressed(XUiController _sender, int _mouseButton)
 	{
@@ -136,7 +136,7 @@ public class XUiC_MapInvitesList : XUiController
 		}
 	}
 
-	// Token: 0x06007DAC RID: 32172 RVA: 0x002FCA28 File Offset: 0x002FAC28
+	// Token: 0x06007DFB RID: 32251 RVA: 0x002FE544 File Offset: 0x002FC744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInviteRemovePressed(XUiController _sender, int _mouseButton)
 	{
@@ -154,7 +154,7 @@ public class XUiC_MapInvitesList : XUiController
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x06007DAD RID: 32173 RVA: 0x002FCAA8 File Offset: 0x002FACA8
+	// Token: 0x06007DFC RID: 32252 RVA: 0x002FE5C4 File Offset: 0x002FC7C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onReportWaypointPressed(XUiController _sender, int _mouseButton)
 	{
@@ -177,30 +177,30 @@ public class XUiC_MapInvitesList : XUiController
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x04005D40 RID: 23872
+	// Token: 0x04005D7B RID: 23931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Waypoint selectedInvite;
 
-	// Token: 0x04005D41 RID: 23873
+	// Token: 0x04005D7C RID: 23932
 	public XUiC_MapInvitesListEntry SelectedInviteEntry;
 
-	// Token: 0x04005D42 RID: 23874
+	// Token: 0x04005D7D RID: 23933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Grid list;
 
-	// Token: 0x04005D43 RID: 23875
+	// Token: 0x04005D7E RID: 23934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController waypointSetBtn;
 
-	// Token: 0x04005D44 RID: 23876
+	// Token: 0x04005D7F RID: 23935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController waypointShowOnMapBtn;
 
-	// Token: 0x04005D45 RID: 23877
+	// Token: 0x04005D80 RID: 23936
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController waypointRemoveBtn;
 
-	// Token: 0x04005D46 RID: 23878
+	// Token: 0x04005D81 RID: 23937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController waypointReportBtn;
 }

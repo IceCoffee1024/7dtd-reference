@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000C16 RID: 3094
+// Token: 0x02000C21 RID: 3105
 public class WorldBlockTicker
 {
-	// Token: 0x06005DDF RID: 24031 RVA: 0x0024A388 File Offset: 0x00248588
+	// Token: 0x06005E04 RID: 24068 RVA: 0x0024B8B0 File Offset: 0x00249AB0
 	public WorldBlockTicker(World _world)
 	{
 		this.world = _world;
 	}
 
-	// Token: 0x06005DE0 RID: 24032 RVA: 0x0024A3E0 File Offset: 0x002485E0
+	// Token: 0x06005E05 RID: 24069 RVA: 0x0024B908 File Offset: 0x00249B08
 	public void Cleanup()
 	{
 		object obj = this.lockObject;
@@ -24,7 +24,7 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE1 RID: 24033 RVA: 0x0024A43C File Offset: 0x0024863C
+	// Token: 0x06005E06 RID: 24070 RVA: 0x0024B964 File Offset: 0x00249B64
 	public void Tick(ArraySegment<long> _activeChunks, EntityPlayer _thePlayer, GameRandom _rnd)
 	{
 		if (!GameManager.bTickingActive)
@@ -41,7 +41,7 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE2 RID: 24034 RVA: 0x0024A470 File Offset: 0x00248670
+	// Token: 0x06005E07 RID: 24071 RVA: 0x0024B998 File Offset: 0x00249B98
 	public void AddScheduledBlockUpdate(Vector3i _pos, int _blockId, ulong _ticks)
 	{
 		if (_blockId == 0)
@@ -60,7 +60,7 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE3 RID: 24035 RVA: 0x0024A4E4 File Offset: 0x002486E4
+	// Token: 0x06005E08 RID: 24072 RVA: 0x0024BA0C File Offset: 0x00249C0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void add(WorldBlockTickerEntry _wbte)
 	{
@@ -75,7 +75,7 @@ public class WorldBlockTicker
 		hashSet.Add(_wbte);
 	}
 
-	// Token: 0x06005DE4 RID: 24036 RVA: 0x0024A548 File Offset: 0x00248748
+	// Token: 0x06005E09 RID: 24073 RVA: 0x0024BA70 File Offset: 0x00249C70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void execute(WorldBlockTickerEntry _wbte, GameRandom _rnd, ulong _ticksIfLoaded)
 	{
@@ -86,7 +86,7 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE5 RID: 24037 RVA: 0x0024A594 File Offset: 0x00248794
+	// Token: 0x06005E0A RID: 24074 RVA: 0x0024BABC File Offset: 0x00249CBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool tickScheduled(GameRandom _rnd)
 	{
@@ -145,7 +145,7 @@ public class WorldBlockTicker
 		return this.scheduledTicksSorted.Count != 0;
 	}
 
-	// Token: 0x06005DE6 RID: 24038 RVA: 0x0024A764 File Offset: 0x00248964
+	// Token: 0x06005E0B RID: 24075 RVA: 0x0024BC8C File Offset: 0x00249E8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void tickRandom(ArraySegment<long> _activeChunkSet, GameRandom _rnd)
 	{
@@ -175,7 +175,7 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE7 RID: 24039 RVA: 0x0024A870 File Offset: 0x00248A70
+	// Token: 0x06005E0C RID: 24076 RVA: 0x0024BD98 File Offset: 0x00249F98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void tickChunkRandom(Chunk chunk, GameRandom _rnd)
 	{
@@ -209,7 +209,7 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE8 RID: 24040 RVA: 0x0024A990 File Offset: 0x00248B90
+	// Token: 0x06005E0D RID: 24077 RVA: 0x0024BEB8 File Offset: 0x0024A0B8
 	public void OnChunkAdded(WorldBase _world, Chunk _c, GameRandom _rnd)
 	{
 		ChunkCustomData chunkCustomData;
@@ -245,19 +245,19 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x06005DE9 RID: 24041 RVA: 0x0024AAB8 File Offset: 0x00248CB8
+	// Token: 0x06005E0E RID: 24078 RVA: 0x0024BFE0 File Offset: 0x0024A1E0
 	public void OnChunkRemoved(Chunk _c)
 	{
 		this.addScheduleInformationToChunk(_c, true);
 	}
 
-	// Token: 0x06005DEA RID: 24042 RVA: 0x0024AAC2 File Offset: 0x00248CC2
+	// Token: 0x06005E0F RID: 24079 RVA: 0x0024BFEA File Offset: 0x0024A1EA
 	public void OnChunkBeforeSave(Chunk _c)
 	{
 		this.addScheduleInformationToChunk(_c, false);
 	}
 
-	// Token: 0x06005DEB RID: 24043 RVA: 0x0024AACC File Offset: 0x00248CCC
+	// Token: 0x06005E10 RID: 24080 RVA: 0x0024BFF4 File Offset: 0x0024A1F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addScheduleInformationToChunk(Chunk _c, bool _bChunkIsRemoved)
 	{
@@ -306,7 +306,7 @@ public class WorldBlockTicker
 		_c.isModified = true;
 	}
 
-	// Token: 0x06005DEC RID: 24044 RVA: 0x0024AC68 File Offset: 0x00248E68
+	// Token: 0x06005E11 RID: 24081 RVA: 0x0024C190 File Offset: 0x0024A390
 	public int GetCount()
 	{
 		object obj = this.lockObject;
@@ -318,7 +318,7 @@ public class WorldBlockTicker
 		return count;
 	}
 
-	// Token: 0x06005DED RID: 24045 RVA: 0x0024ACB0 File Offset: 0x00248EB0
+	// Token: 0x06005E12 RID: 24082 RVA: 0x0024C1D8 File Offset: 0x0024A3D8
 	public void InvalidateScheduledBlockUpdate(Vector3i _pos, int _blockID)
 	{
 		if (_blockID == 0)
@@ -328,7 +328,7 @@ public class WorldBlockTicker
 		this.remove(_pos, _blockID);
 	}
 
-	// Token: 0x06005DEE RID: 24046 RVA: 0x0024ACC0 File Offset: 0x00248EC0
+	// Token: 0x06005E13 RID: 24083 RVA: 0x0024C1E8 File Offset: 0x0024A3E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void remove(Vector3i _pos, int _blockID)
 	{
@@ -355,43 +355,43 @@ public class WorldBlockTicker
 		}
 	}
 
-	// Token: 0x040048DA RID: 18650
+	// Token: 0x040048FF RID: 18687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object lockObject = new object();
 
-	// Token: 0x040048DB RID: 18651
+	// Token: 0x04004900 RID: 18688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SortedList scheduledTicksSorted = new SortedList(new WorldBlockTicker.EntryComparer());
 
-	// Token: 0x040048DC RID: 18652
+	// Token: 0x04004901 RID: 18689
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, WorldBlockTickerEntry> scheduledTicksDict = new Dictionary<int, WorldBlockTickerEntry>();
 
-	// Token: 0x040048DD RID: 18653
+	// Token: 0x04004902 RID: 18690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DictionarySave<long, HashSet<WorldBlockTickerEntry>> chunkToScheduledTicks = new DictionarySave<long, HashSet<WorldBlockTickerEntry>>();
 
-	// Token: 0x040048DE RID: 18654
+	// Token: 0x04004903 RID: 18691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly World world;
 
-	// Token: 0x040048DF RID: 18655
+	// Token: 0x04004904 RID: 18692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int randomTickIndex;
 
-	// Token: 0x040048E0 RID: 18656
+	// Token: 0x04004905 RID: 18693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int randomTickCountPerFrame;
 
-	// Token: 0x040048E1 RID: 18657
+	// Token: 0x04004906 RID: 18694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<long> randomTickChunkKeys = new List<long>();
 
-	// Token: 0x02000C17 RID: 3095
+	// Token: 0x02000C22 RID: 3106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class EntryComparer : IComparer
 	{
-		// Token: 0x06005DEF RID: 24047 RVA: 0x0024AD74 File Offset: 0x00248F74
+		// Token: 0x06005E14 RID: 24084 RVA: 0x0024C29C File Offset: 0x0024A49C
 		public int Compare(object _o1, object _o2)
 		{
 			WorldBlockTickerEntry worldBlockTickerEntry = (WorldBlockTickerEntry)_o1;

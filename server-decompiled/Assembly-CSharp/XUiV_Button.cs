@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200116A RID: 4458
+// Token: 0x0200117A RID: 4474
 public class XUiV_Button : XUiV_ImageBased
 {
-	// Token: 0x06008D53 RID: 36179 RVA: 0x0035A418 File Offset: 0x00358618
+	// Token: 0x06008DA7 RID: 36263 RVA: 0x0035C4C4 File Offset: 0x0035A6C4
 	public XUiV_Button(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 		base.UseSelectionBox = false;
 	}
 
-	// Token: 0x170010BC RID: 4284
-	// (get) Token: 0x06008D54 RID: 36180 RVA: 0x0035A4C3 File Offset: 0x003586C3
-	// (set) Token: 0x06008D55 RID: 36181 RVA: 0x0035A4CB File Offset: 0x003586CB
+	// Token: 0x170010C7 RID: 4295
+	// (get) Token: 0x06008DA8 RID: 36264 RVA: 0x0035C56F File Offset: 0x0035A76F
+	// (set) Token: 0x06008DA9 RID: 36265 RVA: 0x0035C577 File Offset: 0x0035A777
 	[XuiXmlAttribute("atlas", false)]
 	public string UIAtlas
 	{
@@ -28,9 +28,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010BD RID: 4285
-	// (get) Token: 0x06008D56 RID: 36182 RVA: 0x0035A4DA File Offset: 0x003586DA
-	// (set) Token: 0x06008D57 RID: 36183 RVA: 0x0035A4E2 File Offset: 0x003586E2
+	// Token: 0x170010C8 RID: 4296
+	// (get) Token: 0x06008DAA RID: 36266 RVA: 0x0035C586 File Offset: 0x0035A786
+	// (set) Token: 0x06008DAB RID: 36267 RVA: 0x0035C58E File Offset: 0x0035A78E
 	public string DefaultSpriteName
 	{
 		get
@@ -45,9 +45,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010BE RID: 4286
-	// (get) Token: 0x06008D58 RID: 36184 RVA: 0x0035A4F7 File Offset: 0x003586F7
-	// (set) Token: 0x06008D59 RID: 36185 RVA: 0x0035A4FF File Offset: 0x003586FF
+	// Token: 0x170010C9 RID: 4297
+	// (get) Token: 0x06008DAC RID: 36268 RVA: 0x0035C5A3 File Offset: 0x0035A7A3
+	// (set) Token: 0x06008DAD RID: 36269 RVA: 0x0035C5AB File Offset: 0x0035A7AB
 	public Color DefaultSpriteColor
 	{
 		get
@@ -62,9 +62,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010BF RID: 4287
-	// (get) Token: 0x06008D5A RID: 36186 RVA: 0x0035A514 File Offset: 0x00358714
-	// (set) Token: 0x06008D5B RID: 36187 RVA: 0x0035A535 File Offset: 0x00358735
+	// Token: 0x170010CA RID: 4298
+	// (get) Token: 0x06008DAE RID: 36270 RVA: 0x0035C5C0 File Offset: 0x0035A7C0
+	// (set) Token: 0x06008DAF RID: 36271 RVA: 0x0035C5E1 File Offset: 0x0035A7E1
 	[XuiXmlAttribute("hoversprite", false)]
 	public string HoverSpriteName
 	{
@@ -84,9 +84,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C0 RID: 4288
-	// (get) Token: 0x06008D5C RID: 36188 RVA: 0x0035A54A File Offset: 0x0035874A
-	// (set) Token: 0x06008D5D RID: 36189 RVA: 0x0035A552 File Offset: 0x00358752
+	// Token: 0x170010CB RID: 4299
+	// (get) Token: 0x06008DB0 RID: 36272 RVA: 0x0035C5F6 File Offset: 0x0035A7F6
+	// (set) Token: 0x06008DB1 RID: 36273 RVA: 0x0035C5FE File Offset: 0x0035A7FE
 	[XuiXmlAttribute("hovercolor", false)]
 	public Color HoverSpriteColor
 	{
@@ -102,9 +102,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C1 RID: 4289
-	// (get) Token: 0x06008D5E RID: 36190 RVA: 0x0035A567 File Offset: 0x00358767
-	// (set) Token: 0x06008D5F RID: 36191 RVA: 0x0035A588 File Offset: 0x00358788
+	// Token: 0x170010CC RID: 4300
+	// (get) Token: 0x06008DB2 RID: 36274 RVA: 0x0035C613 File Offset: 0x0035A813
+	// (set) Token: 0x06008DB3 RID: 36275 RVA: 0x0035C634 File Offset: 0x0035A834
 	[XuiXmlAttribute("selectedsprite", false)]
 	public string SelectedSpriteName
 	{
@@ -124,9 +124,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C2 RID: 4290
-	// (get) Token: 0x06008D60 RID: 36192 RVA: 0x0035A59D File Offset: 0x0035879D
-	// (set) Token: 0x06008D61 RID: 36193 RVA: 0x0035A5A5 File Offset: 0x003587A5
+	// Token: 0x170010CD RID: 4301
+	// (get) Token: 0x06008DB4 RID: 36276 RVA: 0x0035C649 File Offset: 0x0035A849
+	// (set) Token: 0x06008DB5 RID: 36277 RVA: 0x0035C651 File Offset: 0x0035A851
 	[XuiXmlAttribute("selectedcolor", false)]
 	public Color SelectedSpriteColor
 	{
@@ -142,9 +142,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C3 RID: 4291
-	// (get) Token: 0x06008D62 RID: 36194 RVA: 0x0035A5BA File Offset: 0x003587BA
-	// (set) Token: 0x06008D63 RID: 36195 RVA: 0x0035A5DB File Offset: 0x003587DB
+	// Token: 0x170010CE RID: 4302
+	// (get) Token: 0x06008DB6 RID: 36278 RVA: 0x0035C666 File Offset: 0x0035A866
+	// (set) Token: 0x06008DB7 RID: 36279 RVA: 0x0035C687 File Offset: 0x0035A887
 	[XuiXmlAttribute("disabledsprite", false)]
 	public string DisabledSpriteName
 	{
@@ -164,9 +164,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C4 RID: 4292
-	// (get) Token: 0x06008D64 RID: 36196 RVA: 0x0035A5F0 File Offset: 0x003587F0
-	// (set) Token: 0x06008D65 RID: 36197 RVA: 0x0035A5F8 File Offset: 0x003587F8
+	// Token: 0x170010CF RID: 4303
+	// (get) Token: 0x06008DB8 RID: 36280 RVA: 0x0035C69C File Offset: 0x0035A89C
+	// (set) Token: 0x06008DB9 RID: 36281 RVA: 0x0035C6A4 File Offset: 0x0035A8A4
 	[XuiXmlAttribute("disabledcolor", false)]
 	public Color DisabledSpriteColor
 	{
@@ -182,9 +182,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C5 RID: 4293
-	// (get) Token: 0x06008D66 RID: 36198 RVA: 0x0035A60D File Offset: 0x0035880D
-	// (set) Token: 0x06008D67 RID: 36199 RVA: 0x0035A615 File Offset: 0x00358815
+	// Token: 0x170010D0 RID: 4304
+	// (get) Token: 0x06008DBA RID: 36282 RVA: 0x0035C6B9 File Offset: 0x0035A8B9
+	// (set) Token: 0x06008DBB RID: 36283 RVA: 0x0035C6C1 File Offset: 0x0035A8C1
 	[XuiXmlAttribute("manualcolors", false)]
 	public bool ManualColors
 	{
@@ -204,9 +204,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C6 RID: 4294
-	// (get) Token: 0x06008D68 RID: 36200 RVA: 0x0035A634 File Offset: 0x00358834
-	// (set) Token: 0x06008D69 RID: 36201 RVA: 0x0035A63C File Offset: 0x0035883C
+	// Token: 0x170010D1 RID: 4305
+	// (get) Token: 0x06008DBC RID: 36284 RVA: 0x0035C6E0 File Offset: 0x0035A8E0
+	// (set) Token: 0x06008DBD RID: 36285 RVA: 0x0035C6E8 File Offset: 0x0035A8E8
 	public Color CurrentColor
 	{
 		get
@@ -221,9 +221,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C7 RID: 4295
-	// (get) Token: 0x06008D6A RID: 36202 RVA: 0x0035A652 File Offset: 0x00358852
-	// (set) Token: 0x06008D6B RID: 36203 RVA: 0x0035A65A File Offset: 0x0035885A
+	// Token: 0x170010D2 RID: 4306
+	// (get) Token: 0x06008DBE RID: 36286 RVA: 0x0035C6FE File Offset: 0x0035A8FE
+	// (set) Token: 0x06008DBF RID: 36287 RVA: 0x0035C706 File Offset: 0x0035A906
 	public string CurrentSpriteName
 	{
 		get
@@ -242,9 +242,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C8 RID: 4296
-	// (get) Token: 0x06008D6C RID: 36204 RVA: 0x0035A67F File Offset: 0x0035887F
-	// (set) Token: 0x06008D6D RID: 36205 RVA: 0x0035A687 File Offset: 0x00358887
+	// Token: 0x170010D3 RID: 4307
+	// (get) Token: 0x06008DC0 RID: 36288 RVA: 0x0035C72B File Offset: 0x0035A92B
+	// (set) Token: 0x06008DC1 RID: 36289 RVA: 0x0035C733 File Offset: 0x0035A933
 	[XuiXmlAttribute("selected", false)]
 	public bool Selected
 	{
@@ -264,9 +264,9 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C9 RID: 4297
-	// (get) Token: 0x06008D6E RID: 36206 RVA: 0x0035A6A6 File Offset: 0x003588A6
-	// (set) Token: 0x06008D6F RID: 36207 RVA: 0x0035A6AE File Offset: 0x003588AE
+	// Token: 0x170010D4 RID: 4308
+	// (get) Token: 0x06008DC2 RID: 36290 RVA: 0x0035C752 File Offset: 0x0035A952
+	// (set) Token: 0x06008DC3 RID: 36291 RVA: 0x0035C75A File Offset: 0x0035A95A
 	[XuiXmlAttribute("hoverscale", false)]
 	public float HoverScale
 	{
@@ -281,8 +281,8 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010CA RID: 4298
-	// (set) Token: 0x06008D70 RID: 36208 RVA: 0x0035A6C0 File Offset: 0x003588C0
+	// Token: 0x170010D5 RID: 4309
+	// (set) Token: 0x06008DC4 RID: 36292 RVA: 0x0035C76C File Offset: 0x0035A96C
 	public override bool Enabled
 	{
 		set
@@ -308,7 +308,7 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x06008D71 RID: 36209 RVA: 0x0035A708 File Offset: 0x00358908
+	// Token: 0x06008DC5 RID: 36293 RVA: 0x0035C7B4 File Offset: 0x0035A9B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCurrentSprite()
 	{
@@ -337,7 +337,7 @@ public class XUiV_Button : XUiV_ImageBased
 		this.CurrentSpriteName = (this.isOver ? this.HoverSpriteName : this.DefaultSpriteName);
 	}
 
-	// Token: 0x06008D72 RID: 36210 RVA: 0x0035A7A7 File Offset: 0x003589A7
+	// Token: 0x06008DC6 RID: 36294 RVA: 0x0035C853 File Offset: 0x0035AA53
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
@@ -345,7 +345,7 @@ public class XUiV_Button : XUiV_ImageBased
 		_go.AddComponent<TweenScale>().enabled = false;
 	}
 
-	// Token: 0x06008D73 RID: 36211 RVA: 0x0035A7BC File Offset: 0x003589BC
+	// Token: 0x06008DC7 RID: 36295 RVA: 0x0035C868 File Offset: 0x0035AA68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -354,7 +354,7 @@ public class XUiV_Button : XUiV_ImageBased
 		this.tweenScale = this.uiTransform.GetComponent<TweenScale>();
 	}
 
-	// Token: 0x06008D74 RID: 36212 RVA: 0x0035A7FA File Offset: 0x003589FA
+	// Token: 0x06008DC8 RID: 36296 RVA: 0x0035C8A6 File Offset: 0x0035AAA6
 	public override void InitView()
 	{
 		base.EventOnPress = true;
@@ -364,7 +364,7 @@ public class XUiV_Button : XUiV_ImageBased
 		this.Enabled = true;
 	}
 
-	// Token: 0x06008D75 RID: 36213 RVA: 0x0035A81D File Offset: 0x00358A1D
+	// Token: 0x06008DC9 RID: 36297 RVA: 0x0035C8C9 File Offset: 0x0035AAC9
 	public override void Update(float _dt)
 	{
 		if (this.isOver && !base.UiTransformIsHovered)
@@ -374,7 +374,7 @@ public class XUiV_Button : XUiV_ImageBased
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008D76 RID: 36214 RVA: 0x0035A840 File Offset: 0x00358A40
+	// Token: 0x06008DCA RID: 36298 RVA: 0x0035C8EC File Offset: 0x0035AAEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -393,7 +393,7 @@ public class XUiV_Button : XUiV_ImageBased
 		base.updateData();
 	}
 
-	// Token: 0x06008D77 RID: 36215 RVA: 0x0035A919 File Offset: 0x00358B19
+	// Token: 0x06008DCB RID: 36299 RVA: 0x0035C9C5 File Offset: 0x0035ABC5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHover(bool _isOver)
 	{
@@ -405,7 +405,7 @@ public class XUiV_Button : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x06008D78 RID: 36216 RVA: 0x0035A94E File Offset: 0x00358B4E
+	// Token: 0x06008DCC RID: 36300 RVA: 0x0035C9FA File Offset: 0x0035ABFA
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -413,7 +413,7 @@ public class XUiV_Button : XUiV_ImageBased
 		this.uiTransform.localScale = Vector3.one;
 	}
 
-	// Token: 0x06008D79 RID: 36217 RVA: 0x0035A96C File Offset: 0x00358B6C
+	// Token: 0x06008DCD RID: 36301 RVA: 0x0035CA18 File Offset: 0x0035AC18
 	[XuiXmlAttribute("sprite", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSprite(string _value)
@@ -422,7 +422,7 @@ public class XUiV_Button : XUiV_ImageBased
 		this.CurrentSpriteName = _value;
 	}
 
-	// Token: 0x06008D7A RID: 36218 RVA: 0x0035A97C File Offset: 0x00358B7C
+	// Token: 0x06008DCE RID: 36302 RVA: 0x0035CA28 File Offset: 0x0035AC28
 	[XuiXmlAttribute("defaultcolor", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSprite(Color _value)
@@ -431,79 +431,79 @@ public class XUiV_Button : XUiV_ImageBased
 		this.CurrentColor = this.defaultSpriteColor;
 	}
 
-	// Token: 0x04006826 RID: 26662
+	// Token: 0x04006866 RID: 26726
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string uiAtlas = string.Empty;
 
-	// Token: 0x04006827 RID: 26663
+	// Token: 0x04006867 RID: 26727
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UISprite sprite;
 
-	// Token: 0x04006828 RID: 26664
+	// Token: 0x04006868 RID: 26728
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string defaultSpriteName = string.Empty;
 
-	// Token: 0x04006829 RID: 26665
+	// Token: 0x04006869 RID: 26729
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string hoverSpriteName = string.Empty;
 
-	// Token: 0x0400682A RID: 26666
+	// Token: 0x0400686A RID: 26730
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string selectedSpriteName = string.Empty;
 
-	// Token: 0x0400682B RID: 26667
+	// Token: 0x0400686B RID: 26731
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string disabledSpriteName = string.Empty;
 
-	// Token: 0x0400682C RID: 26668
+	// Token: 0x0400686C RID: 26732
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color defaultSpriteColor = Color.white;
 
-	// Token: 0x0400682D RID: 26669
+	// Token: 0x0400686D RID: 26733
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color hoverSpriteColor = Color.white;
 
-	// Token: 0x0400682E RID: 26670
+	// Token: 0x0400686E RID: 26734
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color selectedSpriteColor = Color.white;
 
-	// Token: 0x0400682F RID: 26671
+	// Token: 0x0400686F RID: 26735
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color disabledSpriteColor = Color.white;
 
-	// Token: 0x04006830 RID: 26672
+	// Token: 0x04006870 RID: 26736
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool manualColors;
 
-	// Token: 0x04006831 RID: 26673
+	// Token: 0x04006871 RID: 26737
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color currentColor = Color.white;
 
-	// Token: 0x04006832 RID: 26674
+	// Token: 0x04006872 RID: 26738
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string currentSpriteName = string.Empty;
 
-	// Token: 0x04006833 RID: 26675
+	// Token: 0x04006873 RID: 26739
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool selected;
 
-	// Token: 0x04006834 RID: 26676
+	// Token: 0x04006874 RID: 26740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastVisible;
 
-	// Token: 0x04006835 RID: 26677
+	// Token: 0x04006875 RID: 26741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool colorDirty;
 
-	// Token: 0x04006836 RID: 26678
+	// Token: 0x04006876 RID: 26742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float hoverScale = 1f;
 
-	// Token: 0x04006837 RID: 26679
+	// Token: 0x04006877 RID: 26743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float hoverDuration = 0.25f;
 
-	// Token: 0x04006838 RID: 26680
+	// Token: 0x04006878 RID: 26744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TweenScale tweenScale;
 }

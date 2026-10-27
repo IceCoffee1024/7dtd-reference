@@ -2,26 +2,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using BhvrAnalyticsServices.Interfaces;
 using DynamicMusic;
 using DynamicMusic.Factories;
 using InControl;
 using Platform;
 using SandboxOptions;
+using Services;
+using Services.Analytics;
+using Services.Analytics.Events;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Scripting;
 
-// Token: 0x020004D1 RID: 1233
+// Token: 0x020004D3 RID: 1235
 [global::UnityEngine.Scripting.Preserve]
 public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 {
 	// Token: 0x14000026 RID: 38
-	// (add) Token: 0x0600273F RID: 10047 RVA: 0x000EF65C File Offset: 0x000ED85C
-	// (remove) Token: 0x06002740 RID: 10048 RVA: 0x000EF694 File Offset: 0x000ED894
+	// (add) Token: 0x06002746 RID: 10054 RVA: 0x000EFA80 File Offset: 0x000EDC80
+	// (remove) Token: 0x06002747 RID: 10055 RVA: 0x000EFAB8 File Offset: 0x000EDCB8
 	public event Action InventoryChangedEvent;
 
 	// Token: 0x1700045B RID: 1115
-	// (get) Token: 0x06002741 RID: 10049 RVA: 0x000EF6C9 File Offset: 0x000ED8C9
+	// (get) Token: 0x06002748 RID: 10056 RVA: 0x000EFAED File Offset: 0x000EDCED
 	public PlayerActionsLocal playerInput
 	{
 		get
@@ -31,7 +35,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700045C RID: 1116
-	// (get) Token: 0x06002742 RID: 10050 RVA: 0x000EF6DA File Offset: 0x000ED8DA
+	// (get) Token: 0x06002749 RID: 10057 RVA: 0x000EFAFE File Offset: 0x000EDCFE
 	public static bool PermaDegrationOn
 	{
 		get
@@ -41,7 +45,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700045D RID: 1117
-	// (get) Token: 0x06002743 RID: 10051 RVA: 0x000EF6FA File Offset: 0x000ED8FA
+	// (get) Token: 0x0600274A RID: 10058 RVA: 0x000EFB1E File Offset: 0x000EDD1E
 	public Vector3 LookPoint
 	{
 		get
@@ -50,7 +54,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002744 RID: 10052 RVA: 0x000EF708 File Offset: 0x000ED908
+	// Token: 0x0600274B RID: 10059 RVA: 0x000EFB2C File Offset: 0x000EDD2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkedGetFPController()
 	{
@@ -81,7 +85,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700045E RID: 1118
-	// (get) Token: 0x06002745 RID: 10053 RVA: 0x000EF819 File Offset: 0x000EDA19
+	// (get) Token: 0x0600274C RID: 10060 RVA: 0x000EFC3D File Offset: 0x000EDE3D
 	public vp_FPController vp_FPController
 	{
 		get
@@ -92,7 +96,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700045F RID: 1119
-	// (get) Token: 0x06002746 RID: 10054 RVA: 0x000EF827 File Offset: 0x000EDA27
+	// (get) Token: 0x0600274D RID: 10061 RVA: 0x000EFC4B File Offset: 0x000EDE4B
 	public vp_FPCamera vp_FPCamera
 	{
 		get
@@ -103,7 +107,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000460 RID: 1120
-	// (get) Token: 0x06002747 RID: 10055 RVA: 0x000EF835 File Offset: 0x000EDA35
+	// (get) Token: 0x0600274E RID: 10062 RVA: 0x000EFC59 File Offset: 0x000EDE59
 	public vp_FPWeapon vp_FPWeapon
 	{
 		get
@@ -114,7 +118,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000461 RID: 1121
-	// (get) Token: 0x06002748 RID: 10056 RVA: 0x000EF843 File Offset: 0x000EDA43
+	// (get) Token: 0x0600274F RID: 10063 RVA: 0x000EFC67 File Offset: 0x000EDE67
 	public vp_PlayerEventHandler vp_PlayerEventHandler
 	{
 		get
@@ -124,7 +128,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002749 RID: 10057 RVA: 0x000EF854 File Offset: 0x000EDA54
+	// Token: 0x06002750 RID: 10064 RVA: 0x000EFC78 File Offset: 0x000EDE78
 	public void ShowHoldingItemLayer(bool show)
 	{
 		if (this.playerCamera)
@@ -139,13 +143,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x14000027 RID: 39
-	// (add) Token: 0x0600274A RID: 10058 RVA: 0x000EF8A0 File Offset: 0x000EDAA0
-	// (remove) Token: 0x0600274B RID: 10059 RVA: 0x000EF8D8 File Offset: 0x000EDAD8
+	// (add) Token: 0x06002751 RID: 10065 RVA: 0x000EFCC4 File Offset: 0x000EDEC4
+	// (remove) Token: 0x06002752 RID: 10066 RVA: 0x000EFCFC File Offset: 0x000EDEFC
 	public event Action DragAndDropItemChanged;
 
 	// Token: 0x17000462 RID: 1122
-	// (get) Token: 0x0600274C RID: 10060 RVA: 0x000EF90D File Offset: 0x000EDB0D
-	// (set) Token: 0x0600274D RID: 10061 RVA: 0x000EF915 File Offset: 0x000EDB15
+	// (get) Token: 0x06002753 RID: 10067 RVA: 0x000EFD31 File Offset: 0x000EDF31
+	// (set) Token: 0x06002754 RID: 10068 RVA: 0x000EFD39 File Offset: 0x000EDF39
 	public ItemStack DragAndDropItem
 	{
 		get
@@ -160,7 +164,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000463 RID: 1123
-	// (get) Token: 0x0600274E RID: 10062 RVA: 0x000EF929 File Offset: 0x000EDB29
+	// (get) Token: 0x06002755 RID: 10069 RVA: 0x000EFD4D File Offset: 0x000EDF4D
 	public PlayerMoveController MoveController
 	{
 		get
@@ -170,7 +174,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000464 RID: 1124
-	// (get) Token: 0x0600274F RID: 10063 RVA: 0x000EF931 File Offset: 0x000EDB31
+	// (get) Token: 0x06002756 RID: 10070 RVA: 0x000EFD55 File Offset: 0x000EDF55
 	public LocalPlayerUI PlayerUI
 	{
 		get
@@ -179,21 +183,21 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002750 RID: 10064 RVA: 0x000EF939 File Offset: 0x000EDB39
+	// Token: 0x06002757 RID: 10071 RVA: 0x000EFD5D File Offset: 0x000EDF5D
 	public void MakeAttached(bool bAttached)
 	{
 		this.isLadderAttached = bAttached;
 	}
 
-	// Token: 0x06002751 RID: 10065 RVA: 0x000EF942 File Offset: 0x000EDB42
+	// Token: 0x06002758 RID: 10072 RVA: 0x000EFD66 File Offset: 0x000EDF66
 	public bool IsOnLadder()
 	{
 		return this.isLadderAttached;
 	}
 
 	// Token: 0x17000465 RID: 1125
-	// (get) Token: 0x06002752 RID: 10066 RVA: 0x000EF94A File Offset: 0x000EDB4A
-	// (set) Token: 0x06002753 RID: 10067 RVA: 0x000EF952 File Offset: 0x000EDB52
+	// (get) Token: 0x06002759 RID: 10073 RVA: 0x000EFD6E File Offset: 0x000EDF6E
+	// (set) Token: 0x0600275A RID: 10074 RVA: 0x000EFD76 File Offset: 0x000EDF76
 	public bool InAir
 	{
 		get
@@ -211,8 +215,8 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000466 RID: 1126
-	// (get) Token: 0x06002754 RID: 10068 RVA: 0x000EF97A File Offset: 0x000EDB7A
-	// (set) Token: 0x06002755 RID: 10069 RVA: 0x000EF982 File Offset: 0x000EDB82
+	// (get) Token: 0x0600275B RID: 10075 RVA: 0x000EFD9E File Offset: 0x000EDF9E
+	// (set) Token: 0x0600275C RID: 10076 RVA: 0x000EFDA6 File Offset: 0x000EDFA6
 	public bool CameraRelativeMovement
 	{
 		get
@@ -229,7 +233,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002756 RID: 10070 RVA: 0x000EF9AA File Offset: 0x000EDBAA
+	// Token: 0x0600275D RID: 10077 RVA: 0x000EFDCE File Offset: 0x000EDFCE
 	public void StartTPCameraLockTimer()
 	{
 		if (this.bFirstPersonView)
@@ -246,7 +250,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.tpCameraLockTimerActive = true;
 	}
 
-	// Token: 0x06002757 RID: 10071 RVA: 0x000EF9E4 File Offset: 0x000EDBE4
+	// Token: 0x0600275E RID: 10078 RVA: 0x000EFE08 File Offset: 0x000EE008
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -300,8 +304,8 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000467 RID: 1127
-	// (get) Token: 0x06002758 RID: 10072 RVA: 0x000EFC69 File Offset: 0x000EDE69
-	// (set) Token: 0x06002759 RID: 10073 RVA: 0x000EFC71 File Offset: 0x000EDE71
+	// (get) Token: 0x0600275F RID: 10079 RVA: 0x000F008D File Offset: 0x000EE28D
+	// (set) Token: 0x06002760 RID: 10080 RVA: 0x000F0095 File Offset: 0x000EE295
 	public virtual Vector2 OnValue_InputMoveVector
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -317,8 +321,8 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000468 RID: 1128
-	// (get) Token: 0x0600275A RID: 10074 RVA: 0x000EFC8B File Offset: 0x000EDE8B
-	// (set) Token: 0x0600275B RID: 10075 RVA: 0x000EFC93 File Offset: 0x000EDE93
+	// (get) Token: 0x06002761 RID: 10081 RVA: 0x000F00AF File Offset: 0x000EE2AF
+	// (set) Token: 0x06002762 RID: 10082 RVA: 0x000F00B7 File Offset: 0x000EE2B7
 	public virtual Vector2 OnValue_InputSmoothLook
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -334,7 +338,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x17000469 RID: 1129
-	// (get) Token: 0x0600275C RID: 10076 RVA: 0x000EFC8B File Offset: 0x000EDE8B
+	// (get) Token: 0x06002763 RID: 10083 RVA: 0x000F00AF File Offset: 0x000EE2AF
 	public virtual Vector2 OnValue_InputRawLook
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -345,7 +349,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700046A RID: 1130
-	// (get) Token: 0x0600275D RID: 10077 RVA: 0x000D5B79 File Offset: 0x000D3D79
+	// (get) Token: 0x06002764 RID: 10084 RVA: 0x000D5EFD File Offset: 0x000D40FD
 	public virtual Vector3 OnValue_CameraLookDirection
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -355,7 +359,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600275E RID: 10078 RVA: 0x000EFC9C File Offset: 0x000EDE9C
+	// Token: 0x06002765 RID: 10085 RVA: 0x000F00C0 File Offset: 0x000EE2C0
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
@@ -394,7 +398,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.CameraRelativeMovement = true;
 	}
 
-	// Token: 0x0600275F RID: 10079 RVA: 0x000EFE0D File Offset: 0x000EE00D
+	// Token: 0x06002766 RID: 10086 RVA: 0x000F0231 File Offset: 0x000EE431
 	public void OnGamePrefChanged(EnumGamePrefs _enum)
 	{
 		if (_enum == EnumGamePrefs.OptionsGfxCameraDistance3P)
@@ -403,7 +407,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002760 RID: 10080 RVA: 0x000EFE24 File Offset: 0x000EE024
+	// Token: 0x06002767 RID: 10087 RVA: 0x000F0248 File Offset: 0x000EE448
 	public bool NACommand(List<string> args)
 	{
 		if (args == null)
@@ -459,21 +463,21 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return false;
 	}
 
-	// Token: 0x06002761 RID: 10081 RVA: 0x000EFF17 File Offset: 0x000EE117
+	// Token: 0x06002768 RID: 10088 RVA: 0x000F033B File Offset: 0x000EE53B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerEquippedSlots _GetNASlots()
 	{
 		return base.transform.GetComponent<PlayerEquippedSlots>();
 	}
 
-	// Token: 0x06002762 RID: 10082 RVA: 0x000EFF24 File Offset: 0x000EE124
+	// Token: 0x06002769 RID: 10089 RVA: 0x000F0348 File Offset: 0x000EE548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform _GetNAOutfit()
 	{
 		return base.transform.Find("Graphics/Model/base");
 	}
 
-	// Token: 0x06002763 RID: 10083 RVA: 0x000EFF38 File Offset: 0x000EE138
+	// Token: 0x0600276A RID: 10090 RVA: 0x000F035C File Offset: 0x000EE55C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NAHelp()
 	{
@@ -488,7 +492,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		Log.Warning("na unequip {partname}    Unequip a part.");
 	}
 
-	// Token: 0x06002764 RID: 10084 RVA: 0x000EFFA0 File Offset: 0x000EE1A0
+	// Token: 0x0600276B RID: 10091 RVA: 0x000F03C4 File Offset: 0x000EE5C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool NAInit()
 	{
@@ -525,7 +529,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return true;
 	}
 
-	// Token: 0x06002765 RID: 10085 RVA: 0x000F00A0 File Offset: 0x000EE2A0
+	// Token: 0x0600276C RID: 10092 RVA: 0x000F04C4 File Offset: 0x000EE6C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool NAListParts()
 	{
@@ -538,7 +542,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return true;
 	}
 
-	// Token: 0x06002766 RID: 10086 RVA: 0x000F00C8 File Offset: 0x000EE2C8
+	// Token: 0x0600276D RID: 10093 RVA: 0x000F04EC File Offset: 0x000EE6EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool NAListEquipment()
 	{
@@ -551,7 +555,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return true;
 	}
 
-	// Token: 0x06002767 RID: 10087 RVA: 0x000F00F0 File Offset: 0x000EE2F0
+	// Token: 0x0600276E RID: 10094 RVA: 0x000F0514 File Offset: 0x000EE714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool NAEquip(string partName)
 	{
@@ -560,7 +564,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return !(playerEquippedSlots == null) && playerEquippedSlots.Equip(partName);
 	}
 
-	// Token: 0x06002768 RID: 10088 RVA: 0x000F012C File Offset: 0x000EE32C
+	// Token: 0x0600276F RID: 10095 RVA: 0x000F0550 File Offset: 0x000EE750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool NAUnEquip(string partName)
 	{
@@ -569,7 +573,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return !(playerEquippedSlots == null) && playerEquippedSlots.UnEquip(partName);
 	}
 
-	// Token: 0x06002769 RID: 10089 RVA: 0x000F0168 File Offset: 0x000EE368
+	// Token: 0x06002770 RID: 10096 RVA: 0x000F058C File Offset: 0x000EE78C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool NARotateX(string value)
 	{
@@ -582,7 +586,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return true;
 	}
 
-	// Token: 0x0600276A RID: 10090 RVA: 0x000F01A4 File Offset: 0x000EE3A4
+	// Token: 0x06002771 RID: 10097 RVA: 0x000F05C8 File Offset: 0x000EE7C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _IsEquipped(string partName)
 	{
@@ -590,7 +594,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return !(playerEquippedSlots == null) && playerEquippedSlots.IsEquipped(partName);
 	}
 
-	// Token: 0x0600276B RID: 10091 RVA: 0x000F01CC File Offset: 0x000EE3CC
+	// Token: 0x06002772 RID: 10098 RVA: 0x000F05F0 File Offset: 0x000EE7F0
 	public override void PostInit()
 	{
 		base.PostInit();
@@ -600,7 +604,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.DragAndDropItemChanged += this.callInventoryChanged;
 	}
 
-	// Token: 0x0600276C RID: 10092 RVA: 0x000F0236 File Offset: 0x000EE436
+	// Token: 0x06002773 RID: 10099 RVA: 0x000F065A File Offset: 0x000EE85A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void callInventoryChanged()
 	{
@@ -610,13 +614,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600276D RID: 10093 RVA: 0x000F024B File Offset: 0x000EE44B
+	// Token: 0x06002774 RID: 10100 RVA: 0x000F066F File Offset: 0x000EE86F
 	public override void OnAddedToWorld()
 	{
 		base.OnAddedToWorld();
 	}
 
-	// Token: 0x0600276E RID: 10094 RVA: 0x000F0254 File Offset: 0x000EE454
+	// Token: 0x06002775 RID: 10101 RVA: 0x000F0678 File Offset: 0x000EE878
 	public override void OnEntityUnload()
 	{
 		base.OnEntityUnload();
@@ -651,13 +655,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.moveController = null;
 	}
 
-	// Token: 0x0600276F RID: 10095 RVA: 0x000F0335 File Offset: 0x000EE535
+	// Token: 0x06002776 RID: 10102 RVA: 0x000F0759 File Offset: 0x000EE959
 	public bool IsMoveStateStill()
 	{
 		return this.moveState == EntityPlayerLocal.MoveState.Idle || this.moveState == EntityPlayerLocal.MoveState.Crouch || (this.moveState == EntityPlayerLocal.MoveState.Swim && !this.IsSwimmingMoving());
 	}
 
-	// Token: 0x06002770 RID: 10096 RVA: 0x000F0360 File Offset: 0x000EE560
+	// Token: 0x06002777 RID: 10103 RVA: 0x000F0784 File Offset: 0x000EE984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMoveStateToDefault()
 	{
@@ -699,7 +703,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002771 RID: 10097 RVA: 0x000F0464 File Offset: 0x000EE664
+	// Token: 0x06002778 RID: 10104 RVA: 0x000F0888 File Offset: 0x000EEA88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMoveState(EntityPlayerLocal.MoveState _state, bool _isOverride = false)
 	{
@@ -895,7 +899,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.moveStateHoldBow = flag;
 	}
 
-	// Token: 0x06002772 RID: 10098 RVA: 0x000F0BF8 File Offset: 0x000EEDF8
+	// Token: 0x06002779 RID: 10105 RVA: 0x000F101C File Offset: 0x000EF21C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMoveStateWeapon()
 	{
@@ -909,7 +913,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002773 RID: 10099 RVA: 0x000F0C88 File Offset: 0x000EEE88
+	// Token: 0x0600277A RID: 10106 RVA: 0x000F10AC File Offset: 0x000EF2AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMoveStateWeaponDamping(float _stiffness, float _damping)
 	{
@@ -926,14 +930,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002774 RID: 10100 RVA: 0x000F0D03 File Offset: 0x000EEF03
+	// Token: 0x0600277B RID: 10107 RVA: 0x000F1127 File Offset: 0x000EF327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsMoveStateCrouch()
 	{
 		return this.moveState == EntityPlayerLocal.MoveState.Crouch || this.moveState == EntityPlayerLocal.MoveState.CrouchWalk || this.moveState == EntityPlayerLocal.MoveState.CrouchRun;
 	}
 
-	// Token: 0x06002775 RID: 10101 RVA: 0x000F0D24 File Offset: 0x000EEF24
+	// Token: 0x0600277C RID: 10108 RVA: 0x000F1148 File Offset: 0x000EF348
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CalcIfSwimming()
 	{
@@ -949,7 +953,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return inWaterPercent >= 0.6f;
 	}
 
-	// Token: 0x06002776 RID: 10102 RVA: 0x000F0D74 File Offset: 0x000EEF74
+	// Token: 0x0600277D RID: 10109 RVA: 0x000F1198 File Offset: 0x000EF398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SwimModeTick()
 	{
@@ -1012,14 +1016,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002777 RID: 10103 RVA: 0x000F0F49 File Offset: 0x000EF149
+	// Token: 0x0600277E RID: 10110 RVA: 0x000F136D File Offset: 0x000EF56D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsSwimmingMoving()
 	{
 		return this.swimMode > 0;
 	}
 
-	// Token: 0x06002778 RID: 10104 RVA: 0x000F0F54 File Offset: 0x000EF154
+	// Token: 0x0600277F RID: 10111 RVA: 0x000F1378 File Offset: 0x000EF578
 	public void SwimModeUpdateThrottle()
 	{
 		float timeScale = Time.timeScale;
@@ -1099,7 +1103,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.m_vp_FPController.m_MotorThrottle = vp_MathUtility.SnapToZero(this.m_vp_FPController.m_MotorThrottle, 2E-05f);
 	}
 
-	// Token: 0x06002779 RID: 10105 RVA: 0x000F1268 File Offset: 0x000EF468
+	// Token: 0x06002780 RID: 10112 RVA: 0x000F168C File Offset: 0x000EF88C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SwimModeStop()
 	{
@@ -1117,13 +1121,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600277A RID: 10106 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002781 RID: 10113 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void StartJumpSwimMotion()
 	{
 	}
 
-	// Token: 0x0600277B RID: 10107 RVA: 0x000F12FB File Offset: 0x000EF4FB
+	// Token: 0x06002782 RID: 10114 RVA: 0x000F171F File Offset: 0x000EF91F
 	public override void PhysicsPush(Vector3 forceVec, Vector3 forceWorldPos, bool affectLocalPlayerController = false)
 	{
 		if (this.IsGodMode.Value)
@@ -1138,7 +1142,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		base.PhysicsPush(forceVec, forceWorldPos, affectLocalPlayerController);
 	}
 
-	// Token: 0x0600277C RID: 10108 RVA: 0x000F1334 File Offset: 0x000EF534
+	// Token: 0x06002783 RID: 10115 RVA: 0x000F1758 File Offset: 0x000EF958
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void onSpawnStateChanged()
 	{
@@ -1153,7 +1157,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600277D RID: 10109 RVA: 0x000F13B4 File Offset: 0x000EF5B4
+	// Token: 0x06002784 RID: 10116 RVA: 0x000F17D8 File Offset: 0x000EF9D8
 	public override void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 		vp_FPController vp_FPController = this.vp_FPController;
@@ -1313,7 +1317,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600277E RID: 10110 RVA: 0x000F1838 File Offset: 0x000EFA38
+	// Token: 0x06002785 RID: 10117 RVA: 0x000F1C5C File Offset: 0x000EFE5C
 	public void SetCameraAttachedToPlayer(bool _b, bool _lockCamera)
 	{
 		if (_b)
@@ -1329,13 +1333,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.vp_FPCamera.Locked3rdPerson = _lockCamera;
 	}
 
-	// Token: 0x0600277F RID: 10111 RVA: 0x000F18AB File Offset: 0x000EFAAB
+	// Token: 0x06002786 RID: 10118 RVA: 0x000F1CCF File Offset: 0x000EFECF
 	public bool IsCameraAttachedToPlayerOrScope()
 	{
 		return this.cameraTransform.parent != null;
 	}
 
-	// Token: 0x06002780 RID: 10112 RVA: 0x000F18C0 File Offset: 0x000EFAC0
+	// Token: 0x06002787 RID: 10119 RVA: 0x000F1CE4 File Offset: 0x000EFEE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckNonSolidVertical(Vector3i blockPos, int maxY, int verticalSpace)
 	{
@@ -1361,7 +1365,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return false;
 	}
 
-	// Token: 0x06002781 RID: 10113 RVA: 0x000F1964 File Offset: 0x000EFB64
+	// Token: 0x06002788 RID: 10120 RVA: 0x000F1D88 File Offset: 0x000EFF88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTransform()
 	{
@@ -1401,7 +1405,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		base.updateTransform();
 	}
 
-	// Token: 0x06002782 RID: 10114 RVA: 0x000F1B24 File Offset: 0x000EFD24
+	// Token: 0x06002789 RID: 10121 RVA: 0x000F1F48 File Offset: 0x000F0148
 	public override void SetRotation(Vector3 _rot)
 	{
 		base.SetRotation(_rot);
@@ -1415,7 +1419,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002783 RID: 10115 RVA: 0x000F1B88 File Offset: 0x000EFD88
+	// Token: 0x0600278A RID: 10122 RVA: 0x000F1FAC File Offset: 0x000F01AC
 	public override void OnUpdatePosition(float _partialTicks)
 	{
 		if (GameManager.bPlayRecordedSession && this.Spawned)
@@ -1484,7 +1488,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002784 RID: 10116 RVA: 0x000F1D80 File Offset: 0x000EFF80
+	// Token: 0x0600278B RID: 10123 RVA: 0x000F21A4 File Offset: 0x000F03A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateDistanceTravelledAchievement(float distanceTravelled)
 	{
@@ -1501,7 +1505,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002785 RID: 10117 RVA: 0x000F1DE4 File Offset: 0x000EFFE4
+	// Token: 0x0600278C RID: 10124 RVA: 0x000F2208 File Offset: 0x000F0408
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateSpeedForwardAndStrafe(Vector3 _dist, float _partialTicks)
 	{
@@ -1530,7 +1534,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.SetMovementState();
 	}
 
-	// Token: 0x06002786 RID: 10118 RVA: 0x000F1EEC File Offset: 0x000F00EC
+	// Token: 0x0600278D RID: 10125 RVA: 0x000F2310 File Offset: 0x000F0510
 	public override void OnUpdateEntity()
 	{
 		if (this.DropTimeDelay > 0f)
@@ -1603,7 +1607,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.WeatherStatusTick();
 	}
 
-	// Token: 0x06002787 RID: 10119 RVA: 0x000F20EC File Offset: 0x000F02EC
+	// Token: 0x0600278E RID: 10126 RVA: 0x000F2510 File Offset: 0x000F0710
 	public override void OnUpdateLive()
 	{
 		if (this.IsSpawned())
@@ -1848,7 +1852,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002788 RID: 10120 RVA: 0x000F2AD8 File Offset: 0x000F0CD8
+	// Token: 0x0600278F RID: 10127 RVA: 0x000F2EFC File Offset: 0x000F10FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BlockRadiusEffectsTick()
 	{
@@ -1879,7 +1883,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002789 RID: 10121 RVA: 0x000F2BB4 File Offset: 0x000F0DB4
+	// Token: 0x06002790 RID: 10128 RVA: 0x000F2FD8 File Offset: 0x000F11D8
 	public void BlockRadiusEffectsApply(Block _block, Vector3 _pos)
 	{
 		if (_pos.y > this.position.y)
@@ -1897,7 +1901,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600278A RID: 10122 RVA: 0x000F2C54 File Offset: 0x000F0E54
+	// Token: 0x06002791 RID: 10129 RVA: 0x000F3078 File Offset: 0x000F1278
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleLootStageMaxCheck()
 	{
@@ -1927,7 +1931,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600278B RID: 10123 RVA: 0x000F2D10 File Offset: 0x000F0F10
+	// Token: 0x06002792 RID: 10130 RVA: 0x000F3134 File Offset: 0x000F1334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canEntityMove()
 	{
@@ -1943,7 +1947,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return flag;
 	}
 
-	// Token: 0x0600278C RID: 10124 RVA: 0x000F2D9C File Offset: 0x000F0F9C
+	// Token: 0x06002793 RID: 10131 RVA: 0x000F31C0 File Offset: 0x000F13C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldPushOutOfBlock(int _x, int _y, int _z, bool pushOutOfTerrain)
 	{
@@ -1963,7 +1967,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return false;
 	}
 
-	// Token: 0x0600278D RID: 10125 RVA: 0x000F2E1C File Offset: 0x000F101C
+	// Token: 0x06002794 RID: 10132 RVA: 0x000F3240 File Offset: 0x000F1440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pushOutOfBlocks(float _x, float _y, float _z)
 	{
@@ -2026,13 +2030,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return flag;
 	}
 
-	// Token: 0x0600278E RID: 10126 RVA: 0x000F2FCF File Offset: 0x000F11CF
+	// Token: 0x06002795 RID: 10133 RVA: 0x000F33F3 File Offset: 0x000F15F3
 	public override void Move(Vector3 _direction, bool _isDirAbsolute, float _velocity, float _maxVelocity)
 	{
 		base.Move(_direction, _isDirAbsolute, _velocity, _maxVelocity);
 	}
 
-	// Token: 0x0600278F RID: 10127 RVA: 0x000F2FDC File Offset: 0x000F11DC
+	// Token: 0x06002796 RID: 10134 RVA: 0x000F3400 File Offset: 0x000F1600
 	public override void SetAlive()
 	{
 		base.SetAlive();
@@ -2050,7 +2054,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.bPlayerEquipmentChanged = true;
 	}
 
-	// Token: 0x06002790 RID: 10128 RVA: 0x000F3058 File Offset: 0x000F1258
+	// Token: 0x06002797 RID: 10135 RVA: 0x000F347C File Offset: 0x000F167C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public new void LateUpdate()
 	{
@@ -2092,7 +2096,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700046B RID: 1131
-	// (get) Token: 0x06002791 RID: 10129 RVA: 0x000F3199 File Offset: 0x000F1399
+	// (get) Token: 0x06002798 RID: 10136 RVA: 0x000F35BD File Offset: 0x000F17BD
 	public bool TPCameraCheckPassed
 	{
 		get
@@ -2101,7 +2105,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002792 RID: 10130 RVA: 0x000F31A4 File Offset: 0x000F13A4
+	// Token: 0x06002799 RID: 10137 RVA: 0x000F35C8 File Offset: 0x000F17C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldBoundsUpdate()
 	{
@@ -2127,7 +2131,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002793 RID: 10131 RVA: 0x000F3334 File Offset: 0x000F1534
+	// Token: 0x0600279A RID: 10138 RVA: 0x000F3758 File Offset: 0x000F1958
 	public void UnderwaterCameraFrameUpdate()
 	{
 		bool flag = this.UnderwaterCameraCheck();
@@ -2167,7 +2171,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002794 RID: 10132 RVA: 0x000F3488 File Offset: 0x000F1688
+	// Token: 0x0600279B RID: 10139 RVA: 0x000F38AC File Offset: 0x000F1AAC
 	public bool UnderwaterCameraCheck()
 	{
 		Vector3 vector = this.cameraTransform.position + Origin.position;
@@ -2182,7 +2186,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return this.UnderwaterCameraCheckPos(vector);
 	}
 
-	// Token: 0x06002795 RID: 10133 RVA: 0x000F3508 File Offset: 0x000F1708
+	// Token: 0x0600279C RID: 10140 RVA: 0x000F392C File Offset: 0x000F1B2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UnderwaterCameraCheckPos(Vector3 pos)
 	{
@@ -2191,13 +2195,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return waterPercent > 0f && (float)vector3i.y + waterPercent - pos.y > 0f;
 	}
 
-	// Token: 0x06002796 RID: 10134 RVA: 0x000F354A File Offset: 0x000F174A
+	// Token: 0x0600279D RID: 10141 RVA: 0x000F396E File Offset: 0x000F1B6E
 	public override bool IsHeadUnderwater()
 	{
 		return this.inWaterPercent >= 0.791f;
 	}
 
-	// Token: 0x06002797 RID: 10135 RVA: 0x000F355C File Offset: 0x000F175C
+	// Token: 0x0600279E RID: 10142 RVA: 0x000F3980 File Offset: 0x000F1B80
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHeadUnderwaterStateChanged(bool _bUnderwater)
 	{
@@ -2221,26 +2225,26 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.lastTimeUnderwater = Time.time;
 	}
 
-	// Token: 0x06002798 RID: 10136 RVA: 0x000F35FF File Offset: 0x000F17FF
+	// Token: 0x0600279F RID: 10143 RVA: 0x000F3A23 File Offset: 0x000F1C23
 	public override void SetDead()
 	{
 		base.SetDead();
 		this.lastHitDirection = Utils.EnumHitDirection.None;
 	}
 
-	// Token: 0x06002799 RID: 10137 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060027A0 RID: 10144 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CameraDOFInit()
 	{
 	}
 
-	// Token: 0x0600279A RID: 10138 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060027A1 RID: 10145 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CameraDOFFrameUpdate()
 	{
 	}
 
-	// Token: 0x0600279B RID: 10139 RVA: 0x000F3610 File Offset: 0x000F1810
+	// Token: 0x060027A2 RID: 10146 RVA: 0x000F3A34 File Offset: 0x000F1C34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal.HolsterState getCurrentHolsterState()
 	{
@@ -2274,7 +2278,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return holsterState;
 	}
 
-	// Token: 0x0600279C RID: 10140 RVA: 0x000F36E0 File Offset: 0x000F18E0
+	// Token: 0x060027A3 RID: 10147 RVA: 0x000F3B04 File Offset: 0x000F1D04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -2481,13 +2485,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600279D RID: 10141 RVA: 0x000F3F24 File Offset: 0x000F2124
+	// Token: 0x060027A4 RID: 10148 RVA: 0x000F4348 File Offset: 0x000F2548
 	public void AddSharedQuestEntry(NetPackageSharedQuest.SharedQuestData sqd)
 	{
 		this.sharedQuestsToProcess.Add(sqd);
 	}
 
-	// Token: 0x0600279E RID: 10142 RVA: 0x000F3F34 File Offset: 0x000F2134
+	// Token: 0x060027A5 RID: 10149 RVA: 0x000F4358 File Offset: 0x000F2558
 	public void HandleHordeEvent(AIDirector.HordeEvent msg)
 	{
 		string text = null;
@@ -2509,7 +2513,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600279F RID: 10143 RVA: 0x000F3F94 File Offset: 0x000F2194
+	// Token: 0x060027A6 RID: 10150 RVA: 0x000F43B8 File Offset: 0x000F25B8
 	public override void OnFired()
 	{
 		base.OnFired();
@@ -2549,20 +2553,20 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		movementInput4.rotation.y = movementInput4.rotation.y + this.rand.RandomRange(vector.x, vector.y);
 	}
 
-	// Token: 0x060027A0 RID: 10144 RVA: 0x000F4239 File Offset: 0x000F2439
+	// Token: 0x060027A7 RID: 10151 RVA: 0x000F465D File Offset: 0x000F285D
 	public int GetCrosshairOpenArea()
 	{
 		return (int)this.crossHairOpenArea;
 	}
 
-	// Token: 0x060027A1 RID: 10145 RVA: 0x000F4244 File Offset: 0x000F2444
+	// Token: 0x060027A8 RID: 10152 RVA: 0x000F4668 File Offset: 0x000F2868
 	public Vector2 GetCrosshairPosition2D()
 	{
 		Vector3 vector = this.finalCamera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f, 0f));
 		return new Vector2(vector.x, vector.y);
 	}
 
-	// Token: 0x060027A2 RID: 10146 RVA: 0x000F4284 File Offset: 0x000F2484
+	// Token: 0x060027A9 RID: 10153 RVA: 0x000F46A8 File Offset: 0x000F28A8
 	public Vector3 GetCrosshairPosition3D(float _z, float _attributeOffset2D, Vector3 _altStartPosition)
 	{
 		if (!this.playerCamera.enabled || this.movementInput.bCameraChange)
@@ -2585,7 +2589,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return vector;
 	}
 
-	// Token: 0x060027A3 RID: 10147 RVA: 0x000F4389 File Offset: 0x000F2589
+	// Token: 0x060027AA RID: 10154 RVA: 0x000F47AD File Offset: 0x000F29AD
 	public override void OnHoldingItemChanged()
 	{
 		if (!this.IsDead())
@@ -2594,7 +2598,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027A4 RID: 10148 RVA: 0x000F43A0 File Offset: 0x000F25A0
+	// Token: 0x060027AB RID: 10155 RVA: 0x000F47C4 File Offset: 0x000F29C4
 	public override void SetModelLayer(int _layerId, bool force = false, string[] excludeTags = null)
 	{
 		if (this.emodel == null)
@@ -2623,7 +2627,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027A5 RID: 10149 RVA: 0x000F4460 File Offset: 0x000F2660
+	// Token: 0x060027AC RID: 10156 RVA: 0x000F4884 File Offset: 0x000F2A84
 	public virtual void MoveByInput()
 	{
 		bool isCrouching = base.IsCrouching;
@@ -2798,7 +2802,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.movementInput.Clear();
 	}
 
-	// Token: 0x060027A6 RID: 10150 RVA: 0x000F4AAC File Offset: 0x000F2CAC
+	// Token: 0x060027AD RID: 10157 RVA: 0x000F4ED0 File Offset: 0x000F30D0
 	public void SwitchFirstPersonViewFromInput()
 	{
 		if (this.vp_FPCamera != null && this.vp_FPCamera.Locked3rdPerson)
@@ -2829,9 +2833,27 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 			}
 		}
 		this.bPreferFirstPerson = this.bFirstPersonView;
+		if (!Helper.IsEditingOrPlaytesting())
+		{
+			PrefabInstance poiatPosition = GameManager.Instance.World.GetPOIAtPosition(this.position, new FastTags<TagGroup.Poi>?(FastTags<TagGroup.Poi>.none), null);
+			CameraToggleEventData cameraToggleEventData = new CameraToggleEventData
+			{
+				ServerId = Helper.GetServerId(),
+				SaveId = Helper.GetSaveID(),
+				ElapsedTime = (uint)(this.totalTimePlayed * 60f),
+				PlayerLocation = base.GetBlockPosition().ToString(),
+				BiomeId = this.biomeStandingOn.m_Id.ToString(),
+				BiomeName = this.biomeStandingOn.m_sBiomeName,
+				PoiId = ((poiatPosition != null) ? poiatPosition.id.ToString() : null),
+				PoiName = ((poiatPosition != null) ? poiatPosition.name : null),
+				CameraChangeTimestamp = DateTime.UtcNow.ToString("O"),
+				CameraType = (this.bFirstPersonView ? "first_person" : "third_person")
+			};
+			ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(cameraToggleEventData);
+		}
 	}
 
-	// Token: 0x060027A7 RID: 10151 RVA: 0x000F4B64 File Offset: 0x000F2D64
+	// Token: 0x060027AE RID: 10158 RVA: 0x000F509C File Offset: 0x000F329C
 	public void SwitchToPreferredCameraMode(bool _lerpPosition)
 	{
 		int @int = GameStats.GetInt(EnumGameStats.CameraRestrictionMode);
@@ -2843,12 +2865,11 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.SetFirstPersonView(@int == 1, _lerpPosition);
 	}
 
-	// Token: 0x060027A8 RID: 10152 RVA: 0x000F4BA4 File Offset: 0x000F2DA4
+	// Token: 0x060027AF RID: 10159 RVA: 0x000F50DC File Offset: 0x000F32DC
 	public void SetFirstPersonView(bool _bFirstPersonView, bool _bLerpPosition)
 	{
 		this.bFirstPersonView = _bFirstPersonView;
 		base.SetCVar(".IsFPV", (float)(_bFirstPersonView ? 1 : 0));
-		this.FireEvent(MinEventTypes.onSelfChangedView, true);
 		if (this.bFirstPersonView)
 		{
 			this.SetCameraAttachedToPlayer(true, false);
@@ -2864,9 +2885,10 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.UpdateCameraFOV(_bLerpPosition);
 		this.refreshHolsterState();
 		this.characterMatrixOverride.enabled = !this.bFirstPersonView;
+		this.FireEvent(MinEventTypes.onSelfChangedView, true);
 	}
 
-	// Token: 0x060027A9 RID: 10153 RVA: 0x000F4C44 File Offset: 0x000F2E44
+	// Token: 0x060027B0 RID: 10160 RVA: 0x000F517C File Offset: 0x000F337C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void switchModelView(EnumEntityModelView modelView)
 	{
@@ -2880,7 +2902,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.emodel.avatarController.SetSwim(base.IsSwimming());
 	}
 
-	// Token: 0x060027AA RID: 10154 RVA: 0x000F4CBC File Offset: 0x000F2EBC
+	// Token: 0x060027B1 RID: 10161 RVA: 0x000F51F4 File Offset: 0x000F33F4
 	public override void BeforePlayerRespawn(RespawnType _type)
 	{
 		base.BeforePlayerRespawn(_type);
@@ -2904,7 +2926,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027AB RID: 10155 RVA: 0x000F4D10 File Offset: 0x000F2F10
+	// Token: 0x060027B2 RID: 10162 RVA: 0x000F5248 File Offset: 0x000F3448
 	public override void AfterPlayerRespawn(RespawnType _type)
 	{
 		if (_type == RespawnType.Teleport)
@@ -3004,7 +3026,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027AC RID: 10156 RVA: 0x000F4FB0 File Offset: 0x000F31B0
+	// Token: 0x060027B3 RID: 10163 RVA: 0x000F54E8 File Offset: 0x000F36E8
 	public void SetupStartingItems()
 	{
 		for (int i = 0; i < this.itemsOnEnterGame.Count; i++)
@@ -3016,7 +3038,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.inventory.SetHoldingItemIdx(0);
 	}
 
-	// Token: 0x060027AD RID: 10157 RVA: 0x000F5024 File Offset: 0x000F3224
+	// Token: 0x060027B4 RID: 10164 RVA: 0x000F555C File Offset: 0x000F375C
 	public void AdjustItemsForSandboxOptions()
 	{
 		this.dragAndDropItem.AdjustForSandboxOptions();
@@ -3034,7 +3056,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		});
 	}
 
-	// Token: 0x060027AE RID: 10158 RVA: 0x000F50BC File Offset: 0x000F32BC
+	// Token: 0x060027B5 RID: 10165 RVA: 0x000F55F4 File Offset: 0x000F37F4
 	public override Vector3 GetCameraLook(float _t)
 	{
 		if (!this.bFirstPersonView)
@@ -3044,7 +3066,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return base.GetCameraLook(_t);
 	}
 
-	// Token: 0x060027AF RID: 10159 RVA: 0x000F50EC File Offset: 0x000F32EC
+	// Token: 0x060027B6 RID: 10166 RVA: 0x000F5624 File Offset: 0x000F3824
 	public override Ray GetLookRay()
 	{
 		Ray ray = this.playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
@@ -3067,7 +3089,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return ray;
 	}
 
-	// Token: 0x060027B0 RID: 10160 RVA: 0x000F5254 File Offset: 0x000F3454
+	// Token: 0x060027B7 RID: 10167 RVA: 0x000F578C File Offset: 0x000F398C
 	public override Ray GetMeleeRay()
 	{
 		if (this.bFirstPersonView)
@@ -3087,7 +3109,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return ray;
 	}
 
-	// Token: 0x060027B1 RID: 10161 RVA: 0x000F52EC File Offset: 0x000F34EC
+	// Token: 0x060027B8 RID: 10168 RVA: 0x000F5824 File Offset: 0x000F3A24
 	public override Vector3 GetLookVector()
 	{
 		if (this.playerCamera.enabled)
@@ -3097,7 +3119,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return base.GetLookVector();
 	}
 
-	// Token: 0x060027B2 RID: 10162 RVA: 0x000F530D File Offset: 0x000F350D
+	// Token: 0x060027B9 RID: 10169 RVA: 0x000F5845 File Offset: 0x000F3A45
 	public override Vector3 GetLookVector(Vector3 _altLookVector)
 	{
 		if (!this.playerCamera.enabled)
@@ -3107,12 +3129,12 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return this.GetLookVector();
 	}
 
-	// Token: 0x060027B3 RID: 10163 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060027BA RID: 10170 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void CheckPos()
 	{
 	}
 
-	// Token: 0x060027B4 RID: 10164 RVA: 0x000F5324 File Offset: 0x000F3524
+	// Token: 0x060027BB RID: 10171 RVA: 0x000F585C File Offset: 0x000F3A5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startDeathCamera()
 	{
@@ -3129,7 +3151,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.ScreenEffectManager.SetScreenEffect("FadeToBlack", 1f, (float)base.GetTimeStayAfterDeath() * 0.05f);
 	}
 
-	// Token: 0x060027B5 RID: 10165 RVA: 0x000F53DE File Offset: 0x000F35DE
+	// Token: 0x060027BC RID: 10172 RVA: 0x000F5916 File Offset: 0x000F3B16
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartSelfCamera()
 	{
@@ -3137,7 +3159,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.m_vp_FPCamera.enabled = false;
 	}
 
-	// Token: 0x060027B6 RID: 10166 RVA: 0x000F5408 File Offset: 0x000F3608
+	// Token: 0x060027BD RID: 10173 RVA: 0x000F5940 File Offset: 0x000F3B40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelfCameraFrameUpdate()
 	{
@@ -3176,7 +3198,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.cameraTransform.rotation = Quaternion.Slerp(this.cameraTransform.rotation, quaternion, 0.1f);
 	}
 
-	// Token: 0x060027B7 RID: 10167 RVA: 0x000F5599 File Offset: 0x000F3799
+	// Token: 0x060027BE RID: 10174 RVA: 0x000F5AD1 File Offset: 0x000F3CD1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearScreenEffects()
 	{
@@ -3186,7 +3208,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 	}
 
 	// Token: 0x1700046C RID: 1132
-	// (get) Token: 0x060027B8 RID: 10168 RVA: 0x000F55CB File Offset: 0x000F37CB
+	// (get) Token: 0x060027BF RID: 10175 RVA: 0x000F5B03 File Offset: 0x000F3D03
 	public bool CancellingInventoryActions
 	{
 		get
@@ -3195,7 +3217,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027B9 RID: 10169 RVA: 0x000F55D4 File Offset: 0x000F37D4
+	// Token: 0x060027C0 RID: 10176 RVA: 0x000F5B0C File Offset: 0x000F3D0C
 	public void ForceCancelReload()
 	{
 		if (this.inventory.holdingItemData.actionData != null)
@@ -3215,7 +3237,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027BA RID: 10170 RVA: 0x000F5664 File Offset: 0x000F3864
+	// Token: 0x060027C1 RID: 10177 RVA: 0x000F5B9C File Offset: 0x000F3D9C
 	public void CancelInventoryActionsNow(bool holsterWeapon)
 	{
 		if (this.inventory.holdingItem.Actions != null && this.inventory.holdingItem.Actions.Length != 0 && this.inventory.holdingItemData.actionData != null && this.inventory.holdingItemData.actionData.Count > 0)
@@ -3235,7 +3257,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.ForceCancelReload();
 	}
 
-	// Token: 0x060027BB RID: 10171 RVA: 0x000F57B1 File Offset: 0x000F39B1
+	// Token: 0x060027C2 RID: 10178 RVA: 0x000F5CE9 File Offset: 0x000F3EE9
 	public IEnumerator CancelInventoryActions(Action cancelCallback, bool holsterWeapon)
 	{
 		this.cancellingInventoryActions = true;
@@ -3271,7 +3293,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		yield break;
 	}
 
-	// Token: 0x060027BC RID: 10172 RVA: 0x000F57D0 File Offset: 0x000F39D0
+	// Token: 0x060027C3 RID: 10179 RVA: 0x000F5D08 File Offset: 0x000F3F08
 	public bool IsReloading()
 	{
 		if (this.inventory.holdingItemData.actionData != null)
@@ -3289,7 +3311,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return false;
 	}
 
-	// Token: 0x060027BD RID: 10173 RVA: 0x000F584C File Offset: 0x000F3A4C
+	// Token: 0x060027C4 RID: 10180 RVA: 0x000F5D84 File Offset: 0x000F3F84
 	public override void OnEntityDeath()
 	{
 		GameManager.Instance.TriggerSendOfLocalPlayerDataFile(0f);
@@ -3307,7 +3329,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.startDeathCamera();
 	}
 
-	// Token: 0x060027BE RID: 10174 RVA: 0x000F5910 File Offset: 0x000F3B10
+	// Token: 0x060027C5 RID: 10181 RVA: 0x000F5E48 File Offset: 0x000F4048
 	public override void OnDeathUpdate()
 	{
 		base.OnDeathUpdate();
@@ -3329,7 +3351,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027BF RID: 10175 RVA: 0x000F5998 File Offset: 0x000F3B98
+	// Token: 0x060027C6 RID: 10182 RVA: 0x000F5ED0 File Offset: 0x000F40D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FrameUpdateCamera()
 	{
@@ -3436,7 +3458,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027C0 RID: 10176 RVA: 0x000F5CD0 File Offset: 0x000F3ED0
+	// Token: 0x060027C7 RID: 10183 RVA: 0x000F6208 File Offset: 0x000F4408
 	public void RefreshDrivingCameraPositions()
 	{
 		if (this.AttachedToEntity != null)
@@ -3449,7 +3471,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027C1 RID: 10177 RVA: 0x000F5D10 File Offset: 0x000F3F10
+	// Token: 0x060027C8 RID: 10184 RVA: 0x000F6248 File Offset: 0x000F4448
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateCameraFOV(bool _bLerpPosition)
 	{
@@ -3487,7 +3509,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027C2 RID: 10178 RVA: 0x000F5DE0 File Offset: 0x000F3FE0
+	// Token: 0x060027C9 RID: 10185 RVA: 0x000F6318 File Offset: 0x000F4518
 	public bool TryUpdateCameraDistanceMultiplier(float amount)
 	{
 		if (amount == 0f)
@@ -3535,7 +3557,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027C3 RID: 10179 RVA: 0x000F5EE8 File Offset: 0x000F40E8
+	// Token: 0x060027CA RID: 10186 RVA: 0x000F6420 File Offset: 0x000F4620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ThirdPersonLineOfSightCheck()
 	{
@@ -3556,14 +3578,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027C4 RID: 10180 RVA: 0x000F6010 File Offset: 0x000F4210
+	// Token: 0x060027CB RID: 10187 RVA: 0x000F6548 File Offset: 0x000F4748
 	public bool IsCameraFacingCharacter()
 	{
 		return !this.bFirstPersonView && Vector3.Dot(base.transform.forward, this.cameraTransform.forward) < 0f;
 	}
 
 	// Token: 0x1700046D RID: 1133
-	// (get) Token: 0x060027C5 RID: 10181 RVA: 0x000F6040 File Offset: 0x000F4240
+	// (get) Token: 0x060027CC RID: 10188 RVA: 0x000F6578 File Offset: 0x000F4778
 	public virtual bool isAimingScoped
 	{
 		get
@@ -3577,7 +3599,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027C6 RID: 10182 RVA: 0x000F608E File Offset: 0x000F428E
+	// Token: 0x060027CD RID: 10189 RVA: 0x000F65C6 File Offset: 0x000F47C6
 	public override int GetCameraFOV()
 	{
 		if (!this.bFirstPersonView)
@@ -3587,7 +3609,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return GamePrefs.GetInt(EnumGamePrefs.OptionsGfxFOV);
 	}
 
-	// Token: 0x060027C7 RID: 10183 RVA: 0x000F60AC File Offset: 0x000F42AC
+	// Token: 0x060027CE RID: 10190 RVA: 0x000F65E4 File Offset: 0x000F47E4
 	public override void PhysicsResume(Vector3 pos, float rotY)
 	{
 		Transform transform = this.cameraTransform;
@@ -3597,7 +3619,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		transform.SetPositionAndRotation(position, rotation);
 	}
 
-	// Token: 0x060027C8 RID: 10184 RVA: 0x000F60DC File Offset: 0x000F42DC
+	// Token: 0x060027CF RID: 10191 RVA: 0x000F6614 File Offset: 0x000F4814
 	public override void OnRagdoll(bool isActive)
 	{
 		base.OnRagdoll(isActive);
@@ -3620,7 +3642,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.SwitchToPreferredCameraMode(true);
 	}
 
-	// Token: 0x060027C9 RID: 10185 RVA: 0x000F61B2 File Offset: 0x000F43B2
+	// Token: 0x060027D0 RID: 10192 RVA: 0x000F66EA File Offset: 0x000F48EA
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale = 1f)
 	{
 		_strength = base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
@@ -3631,7 +3653,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return _strength;
 	}
 
-	// Token: 0x060027CA RID: 10186 RVA: 0x000F61EB File Offset: 0x000F43EB
+	// Token: 0x060027D1 RID: 10193 RVA: 0x000F6723 File Offset: 0x000F4923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator shakeCamera(Vector3 _direction, float time, float strength, float speed = 1f)
 	{
@@ -3643,7 +3665,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		yield break;
 	}
 
-	// Token: 0x060027CB RID: 10187 RVA: 0x000F6218 File Offset: 0x000F4418
+	// Token: 0x060027D2 RID: 10194 RVA: 0x000F6750 File Offset: 0x000F4950
 	public override void Kill(DamageResponse _dmResponse)
 	{
 		if (!this.IsDead())
@@ -3657,7 +3679,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027CC RID: 10188 RVA: 0x000F6284 File Offset: 0x000F4484
+	// Token: 0x060027D3 RID: 10195 RVA: 0x000F67BC File Offset: 0x000F49BC
 	public override void SetPosition(Vector3 _pos, bool _bUpdatePhysics = true)
 	{
 		base.SetPosition(_pos, _bUpdatePhysics);
@@ -3678,7 +3700,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		Manager.CameraChanged();
 	}
 
-	// Token: 0x060027CD RID: 10189 RVA: 0x000F62FC File Offset: 0x000F44FC
+	// Token: 0x060027D4 RID: 10196 RVA: 0x000F6834 File Offset: 0x000F4A34
 	public override void Respawn(RespawnType _reason)
 	{
 		Log.Out("Respawning: " + _reason.ToStringCached<RespawnType>());
@@ -3707,7 +3729,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.isFallDeath = false;
 	}
 
-	// Token: 0x060027CE RID: 10190 RVA: 0x000F63E0 File Offset: 0x000F45E0
+	// Token: 0x060027D5 RID: 10197 RVA: 0x000F6918 File Offset: 0x000F4B18
 	public void TeleportToPosition(Vector3 _pos, bool _onlyIfNotFlying = false, Vector3? _viewDirection = null)
 	{
 		if (!_onlyIfNotFlying || !this.IsFlyMode.Value)
@@ -3722,7 +3744,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027CF RID: 10191 RVA: 0x000F6455 File Offset: 0x000F4655
+	// Token: 0x060027D6 RID: 10198 RVA: 0x000F698D File Offset: 0x000F4B8D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setVerticalPosition(Vector3 _pos, Vector3? _viewDirection)
 	{
@@ -3746,7 +3768,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		yield break;
 	}
 
-	// Token: 0x060027D0 RID: 10192 RVA: 0x000F6472 File Offset: 0x000F4672
+	// Token: 0x060027D7 RID: 10199 RVA: 0x000F69AA File Offset: 0x000F4BAA
 	public void SetControllable(bool _b)
 	{
 		if (_b && this.bIntroAnimActive)
@@ -3756,69 +3778,69 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		base.transform.GetComponent<PlayerMoveController>().SetControllableOverride(_b);
 	}
 
-	// Token: 0x060027D1 RID: 10193 RVA: 0x000F6491 File Offset: 0x000F4691
+	// Token: 0x060027D8 RID: 10200 RVA: 0x000F69C9 File Offset: 0x000F4BC9
 	public void NotifySneakDamage(float multiplier)
 	{
 		this.sneakDamageText = string.Format(Localization.Get("sneakDamageBonus", false, null), multiplier.ToCultureInvariantString("f1")).ToUpper();
 		this.sneakDamageBlendTimer.FadeIn();
 	}
 
-	// Token: 0x060027D2 RID: 10194 RVA: 0x000F64C5 File Offset: 0x000F46C5
+	// Token: 0x060027D9 RID: 10201 RVA: 0x000F69FD File Offset: 0x000F4BFD
 	public void NotifyDamageMultiplier(float multiplier)
 	{
 		this.sneakDamageText = string.Format(Localization.Get("stunnedDamageBonus", false, null), multiplier.ToCultureInvariantString("f1")).ToUpper();
 		this.sneakDamageBlendTimer.FadeIn();
 	}
 
-	// Token: 0x060027D3 RID: 10195 RVA: 0x000F64F9 File Offset: 0x000F46F9
+	// Token: 0x060027DA RID: 10202 RVA: 0x000F6A31 File Offset: 0x000F4C31
 	public override void EnableCamera(bool _b)
 	{
 		this.playerCamera.enabled = _b;
 	}
 
-	// Token: 0x060027D4 RID: 10196 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060027DB RID: 10203 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsAttackValid()
 	{
 		return true;
 	}
 
-	// Token: 0x060027D5 RID: 10197 RVA: 0x000F6508 File Offset: 0x000F4708
+	// Token: 0x060027DC RID: 10204 RVA: 0x000F6A40 File Offset: 0x000F4C40
 	public override bool IsAimingGunPossible()
 	{
 		return (this.inventory.holdingItem.Actions[0] == null || this.inventory.holdingItem.Actions[0].IsAimingGunPossible(this.inventory.holdingItemData.actionData[0])) && (this.inventory.holdingItem.Actions[1] == null || this.inventory.holdingItem.Actions[1].IsAimingGunPossible(this.inventory.holdingItemData.actionData[1]));
 	}
 
-	// Token: 0x060027D6 RID: 10198 RVA: 0x000BD7E7 File Offset: 0x000BB9E7
+	// Token: 0x060027DD RID: 10205 RVA: 0x000BDB93 File Offset: 0x000BBD93
 	public override bool IsDrawMapIcon()
 	{
 		return this.IsSpawned();
 	}
 
-	// Token: 0x060027D7 RID: 10199 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x060027DE RID: 10206 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsMapIconBlinking()
 	{
 		return true;
 	}
 
-	// Token: 0x060027D8 RID: 10200 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060027DF RID: 10207 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanMapIconBeSelected()
 	{
 		return false;
 	}
 
-	// Token: 0x060027D9 RID: 10201 RVA: 0x000BD7EF File Offset: 0x000BB9EF
+	// Token: 0x060027E0 RID: 10208 RVA: 0x000BDB9B File Offset: 0x000BBD9B
 	public override Color GetMapIconColor()
 	{
 		return Color.white;
 	}
 
-	// Token: 0x060027DA RID: 10202 RVA: 0x000F659D File Offset: 0x000F479D
+	// Token: 0x060027E1 RID: 10209 RVA: 0x000F6AD5 File Offset: 0x000F4CD5
 	public override int GetLayerForMapIcon()
 	{
 		return 20;
 	}
 
-	// Token: 0x060027DB RID: 10203 RVA: 0x000F65A4 File Offset: 0x000F47A4
+	// Token: 0x060027E2 RID: 10210 RVA: 0x000F6ADC File Offset: 0x000F4CDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool BreakLeg(float chance)
 	{
@@ -3834,48 +3856,48 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return false;
 	}
 
-	// Token: 0x060027DC RID: 10204 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060027E3 RID: 10211 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool FractureLeg(float chance)
 	{
 		return false;
 	}
 
-	// Token: 0x060027DD RID: 10205 RVA: 0x000F6606 File Offset: 0x000F4806
+	// Token: 0x060027E4 RID: 10212 RVA: 0x000F6B3E File Offset: 0x000F4D3E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SprainLeg(float chance)
 	{
 		return this.rand.RandomFloat <= chance && this.Buffs.AddBuff("injurySprainedLeg", -1, true, false, -1f) == EntityBuffs.BuffStatus.Added;
 	}
 
-	// Token: 0x060027DE RID: 10206 RVA: 0x000F6633 File Offset: 0x000F4833
+	// Token: 0x060027E5 RID: 10213 RVA: 0x000F6B6B File Offset: 0x000F4D6B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasBrokenLeg()
 	{
 		return this.Buffs.HasBuff("injuryBrokenLeg");
 	}
 
-	// Token: 0x060027DF RID: 10207 RVA: 0x000F6633 File Offset: 0x000F4833
+	// Token: 0x060027E6 RID: 10214 RVA: 0x000F6B6B File Offset: 0x000F4D6B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasFracturedLeg()
 	{
 		return this.Buffs.HasBuff("injuryBrokenLeg");
 	}
 
-	// Token: 0x060027E0 RID: 10208 RVA: 0x000F6645 File Offset: 0x000F4845
+	// Token: 0x060027E7 RID: 10215 RVA: 0x000F6B7D File Offset: 0x000F4D7D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasSprainedLeg()
 	{
 		return this.Buffs.HasBuff("injurySprainedLeg");
 	}
 
-	// Token: 0x060027E1 RID: 10209 RVA: 0x000F6657 File Offset: 0x000F4857
+	// Token: 0x060027E8 RID: 10216 RVA: 0x000F6B8F File Offset: 0x000F4D8F
 	public override float GetSpeedModifier()
 	{
 		return base.GetSpeedModifier() * (this.IsGodMode.Value ? this.GodModeSpeedModifier : 1f);
 	}
 
-	// Token: 0x060027E2 RID: 10210 RVA: 0x000F667C File Offset: 0x000F487C
+	// Token: 0x060027E9 RID: 10217 RVA: 0x000F6BB4 File Offset: 0x000F4DB4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FallImpact(float speed)
 	{
@@ -3920,7 +3942,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027E3 RID: 10211 RVA: 0x000F67B5 File Offset: 0x000F49B5
+	// Token: 0x060027EA RID: 10218 RVA: 0x000F6CED File Offset: 0x000F4EED
 	public override void BuffAdded(BuffValue _buff)
 	{
 		if (_buff.BuffClass.NameTag.Test_Bit(EntityAlive.FallingBuffTagBit) && this.fallHealth > 0 && this.Health <= 0)
@@ -3929,7 +3951,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027E4 RID: 10212 RVA: 0x000F67E8 File Offset: 0x000F49E8
+	// Token: 0x060027EB RID: 10219 RVA: 0x000F6D20 File Offset: 0x000F4F20
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -3940,7 +3962,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027E5 RID: 10213 RVA: 0x000F683E File Offset: 0x000F4A3E
+	// Token: 0x060027EC RID: 10220 RVA: 0x000F6D76 File Offset: 0x000F4F76
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void dropItemOnDeath()
 	{
@@ -3949,13 +3971,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.dropBackpack(true);
 	}
 
-	// Token: 0x060027E6 RID: 10214 RVA: 0x000F6853 File Offset: 0x000F4A53
+	// Token: 0x060027ED RID: 10221 RVA: 0x000F6D8B File Offset: 0x000F4F8B
 	public void dropItemOnQuit()
 	{
 		this.dropBackpack(false);
 	}
 
-	// Token: 0x060027E7 RID: 10215 RVA: 0x000F685C File Offset: 0x000F4A5C
+	// Token: 0x060027EE RID: 10222 RVA: 0x000F6D94 File Offset: 0x000F4F94
 	public override void SetDroppedBackpackPositions(List<Vector3i> _positions)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -3997,7 +4019,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027E8 RID: 10216 RVA: 0x000F699C File Offset: 0x000F4B9C
+	// Token: 0x060027EF RID: 10223 RVA: 0x000F6ED4 File Offset: 0x000F50D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void removeItemsOnDeath()
 	{
@@ -4076,7 +4098,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027E9 RID: 10217 RVA: 0x000F6B98 File Offset: 0x000F4D98
+	// Token: 0x060027F0 RID: 10224 RVA: 0x000F70D0 File Offset: 0x000F52D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void degradeItemsOnDeath()
 	{
@@ -4174,7 +4196,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027EA RID: 10218 RVA: 0x000F6E5C File Offset: 0x000F505C
+	// Token: 0x060027F1 RID: 10225 RVA: 0x000F7394 File Offset: 0x000F5594
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void dropBackpack(bool _isDying)
 	{
@@ -4296,7 +4318,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027EB RID: 10219 RVA: 0x000F71F8 File Offset: 0x000F53F8
+	// Token: 0x060027F2 RID: 10226 RVA: 0x000F7730 File Offset: 0x000F5930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRemoveRandomItems(Bag bag)
 	{
@@ -4310,7 +4332,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027EC RID: 10220 RVA: 0x000F7260 File Offset: 0x000F5460
+	// Token: 0x060027F3 RID: 10227 RVA: 0x000F7798 File Offset: 0x000F5998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRemoveRandomItems(Inventory inventory)
 	{
@@ -4324,7 +4346,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027ED RID: 10221 RVA: 0x000F72C4 File Offset: 0x000F54C4
+	// Token: 0x060027F4 RID: 10228 RVA: 0x000F77FC File Offset: 0x000F59FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRemoveRandomItems(Equipment equipment)
 	{
@@ -4338,14 +4360,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027EE RID: 10222 RVA: 0x000F7325 File Offset: 0x000F5525
+	// Token: 0x060027F5 RID: 10229 RVA: 0x000F785D File Offset: 0x000F5A5D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ShouldRemoveEquipmentOnDeath(EntityPlayerLocal.DropOption dropOption)
 	{
 		return dropOption == EntityPlayerLocal.DropOption.All || dropOption == EntityPlayerLocal.DropOption.Equipment || dropOption == EntityPlayerLocal.DropOption.DeleteAll;
 	}
 
-	// Token: 0x060027EF RID: 10223 RVA: 0x000F7338 File Offset: 0x000F5538
+	// Token: 0x060027F6 RID: 10230 RVA: 0x000F7870 File Offset: 0x000F5A70
 	public override int AttachToEntity(Entity _other, int slot = -1)
 	{
 		if (_other.IsAttached(this))
@@ -4381,7 +4403,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return slot;
 	}
 
-	// Token: 0x060027F0 RID: 10224 RVA: 0x000F7430 File Offset: 0x000F5630
+	// Token: 0x060027F7 RID: 10231 RVA: 0x000F7968 File Offset: 0x000F5B68
 	public override void Detach()
 	{
 		this.SwitchToPreferredCameraMode(true);
@@ -4404,7 +4426,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		vp_FPController.AddForce(vector);
 	}
 
-	// Token: 0x060027F1 RID: 10225 RVA: 0x000F74D3 File Offset: 0x000F56D3
+	// Token: 0x060027F8 RID: 10232 RVA: 0x000F7A0B File Offset: 0x000F5C0B
 	public override void ProcessDamageResponseLocal(DamageResponse _dmResponse)
 	{
 		base.ProcessDamageResponseLocal(_dmResponse);
@@ -4414,13 +4436,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027F2 RID: 10226 RVA: 0x000F74FA File Offset: 0x000F56FA
+	// Token: 0x060027F9 RID: 10233 RVA: 0x000F7A32 File Offset: 0x000F5C32
 	public override bool CanUpdateEntity()
 	{
 		return this.IsFlyMode.Value || base.CanUpdateEntity();
 	}
 
-	// Token: 0x060027F3 RID: 10227 RVA: 0x000F7514 File Offset: 0x000F5714
+	// Token: 0x060027FA RID: 10234 RVA: 0x000F7A4C File Offset: 0x000F5C4C
 	public override void OnHUD()
 	{
 		if (Event.current.type != EventType.Repaint)
@@ -4467,14 +4489,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.guiDrawCrosshair(inGameHUD, flag);
 	}
 
-	// Token: 0x060027F4 RID: 10228 RVA: 0x000F7755 File Offset: 0x000F5955
+	// Token: 0x060027FB RID: 10235 RVA: 0x000F7C8D File Offset: 0x000F5E8D
 	public void ForceBloodSplatter()
 	{
 		this.healthLostThisRound = true;
 		this.lastHitDirection = Utils.EnumHitDirection.Front;
 	}
 
-	// Token: 0x060027F5 RID: 10229 RVA: 0x000F7768 File Offset: 0x000F5968
+	// Token: 0x060027FC RID: 10236 RVA: 0x000F7CA0 File Offset: 0x000F5EA0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void guiDrawOverlayTextures(NGuiWdwInGameHUD _guiInGame, bool bModalWindowOpen)
 	{
@@ -4548,14 +4570,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027F6 RID: 10230 RVA: 0x00041064 File Offset: 0x0003F264
+	// Token: 0x060027FD RID: 10237 RVA: 0x00041024 File Offset: 0x0003F224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CrosshairAlpha(NGuiWdwInGameHUD _guiInGame)
 	{
 		return 1f;
 	}
 
-	// Token: 0x060027F7 RID: 10231 RVA: 0x000F7BC0 File Offset: 0x000F5DC0
+	// Token: 0x060027FE RID: 10238 RVA: 0x000F80F8 File Offset: 0x000F62F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void guiDrawCrosshair(NGuiWdwInGameHUD _guiInGame, bool bModalWindowOpen)
 	{
@@ -4731,7 +4753,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027F8 RID: 10232 RVA: 0x000F8408 File Offset: 0x000F6608
+	// Token: 0x060027FF RID: 10239 RVA: 0x000F8940 File Offset: 0x000F6B40
 	public static void DrawDynamicCrosshair(float centerX, float centerY, float openAreaX, float openAreaY, float length, float thicknessMultiplier, float crosshairOpacity, Color crosshairColor)
 	{
 		NGuiWdwInGameHUD inGameHUD = LocalPlayerUI.primaryUI.nguiWindowManager.InGameHUD;
@@ -4759,7 +4781,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		GUI.color = color;
 	}
 
-	// Token: 0x060027F9 RID: 10233 RVA: 0x000F85D4 File Offset: 0x000F67D4
+	// Token: 0x06002800 RID: 10240 RVA: 0x000F8B0C File Offset: 0x000F6D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShelterFrameUpdate()
 	{
@@ -4833,7 +4855,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027FA RID: 10234 RVA: 0x000F87E4 File Offset: 0x000F69E4
+	// Token: 0x06002801 RID: 10241 RVA: 0x000F8D1C File Offset: 0x000F6F1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShelterCheckSkyUp()
 	{
@@ -4854,7 +4876,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027FB RID: 10235 RVA: 0x000F8888 File Offset: 0x000F6A88
+	// Token: 0x06002802 RID: 10242 RVA: 0x000F8DC0 File Offset: 0x000F6FC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShelterCheckSkyDiagonal()
 	{
@@ -4876,7 +4898,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027FC RID: 10236 RVA: 0x000F8928 File Offset: 0x000F6B28
+	// Token: 0x06002803 RID: 10243 RVA: 0x000F8E60 File Offset: 0x000F7060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShelterCheckSides()
 	{
@@ -4916,7 +4938,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027FD RID: 10237 RVA: 0x000F8AA0 File Offset: 0x000F6CA0
+	// Token: 0x06002804 RID: 10244 RVA: 0x000F8FD8 File Offset: 0x000F71D8
 	public void WeatherStatusFrameUpdate()
 	{
 		bool flag = this.AreaMessage != null && this.stormAlertBiomeStandingOn == this.biomeStandingOn;
@@ -4982,7 +5004,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027FE RID: 10238 RVA: 0x000F8C24 File Offset: 0x000F6E24
+	// Token: 0x06002805 RID: 10245 RVA: 0x000F915C File Offset: 0x000F735C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WeatherStatusTick()
 	{
@@ -5022,7 +5044,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x060027FF RID: 10239 RVA: 0x000F8CF0 File Offset: 0x000F6EF0
+	// Token: 0x06002806 RID: 10246 RVA: 0x000F9228 File Offset: 0x000F7428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WeatherBuffUpdate()
 	{
@@ -5043,7 +5065,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002800 RID: 10240 RVA: 0x000F8D6B File Offset: 0x000F6F6B
+	// Token: 0x06002807 RID: 10247 RVA: 0x000F92A3 File Offset: 0x000F74A3
 	public void OnWeatherGodModeChanged(bool _oldValue, bool _newValue)
 	{
 		if (!_newValue)
@@ -5052,7 +5074,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002801 RID: 10241 RVA: 0x000F8D78 File Offset: 0x000F6F78
+	// Token: 0x06002808 RID: 10248 RVA: 0x000F92B0 File Offset: 0x000F74B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void onNewBiomeEntered(BiomeDefinition _biome)
 	{
@@ -5085,7 +5107,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.biomeStandingOn = _biome;
 	}
 
-	// Token: 0x06002802 RID: 10242 RVA: 0x000F8E63 File Offset: 0x000F7063
+	// Token: 0x06002809 RID: 10249 RVA: 0x000F939B File Offset: 0x000F759B
 	public void ResetBiomeWeatherOnDeath()
 	{
 		this.onNewBiomeEntered(null);
@@ -5095,7 +5117,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.weatherGroup = null;
 	}
 
-	// Token: 0x06002803 RID: 10243 RVA: 0x000F8E88 File Offset: 0x000F7088
+	// Token: 0x0600280A RID: 10250 RVA: 0x000F93C0 File Offset: 0x000F75C0
 	public override float GetWetnessRate()
 	{
 		float num = Mathf.Pow(this.inWaterPercent, 2f);
@@ -5107,7 +5129,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return num;
 	}
 
-	// Token: 0x06002804 RID: 10244 RVA: 0x000F8ED0 File Offset: 0x000F70D0
+	// Token: 0x0600280B RID: 10251 RVA: 0x000F9408 File Offset: 0x000F7608
 	public SpawnPosition GetSpawnPoint()
 	{
 		if (this.SpawnPoints == null || this.SpawnPoints.Count == 0)
@@ -5117,13 +5139,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return new SpawnPosition(this.SpawnPoints[0].ToVector3() + new Vector3(0.5f, 0f, 0.5f), 0f);
 	}
 
-	// Token: 0x06002805 RID: 10245 RVA: 0x000F8F2F File Offset: 0x000F712F
+	// Token: 0x0600280C RID: 10252 RVA: 0x000F9467 File Offset: 0x000F7667
 	public override void AddUIHarvestingItem(ItemStack itemStack, bool _bAddOnlyIfNotExisting = false)
 	{
 		this.playerUI.xui.CollectedItemList.AddItemStack(itemStack, _bAddOnlyIfNotExisting);
 	}
 
-	// Token: 0x06002806 RID: 10246 RVA: 0x000F8F48 File Offset: 0x000F7148
+	// Token: 0x0600280D RID: 10253 RVA: 0x000F9480 File Offset: 0x000F7680
 	public override Vector3 GetDropPosition()
 	{
 		Vector3 vector = base.GetDropPosition();
@@ -5136,14 +5158,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return vector;
 	}
 
-	// Token: 0x06002807 RID: 10247 RVA: 0x000F8FC0 File Offset: 0x000F71C0
+	// Token: 0x0600280E RID: 10254 RVA: 0x000F94F8 File Offset: 0x000F76F8
 	public bool CheckSpawnPointStillThere()
 	{
 		SpawnPosition spawnPoint = this.GetSpawnPoint();
 		return spawnPoint.IsUndef() || this.world.GetChunkFromWorldPos(spawnPoint.ToBlockPos()) == null || this.world.GetBlock(spawnPoint.ToBlockPos()).Block is BlockSleepingBag;
 	}
 
-	// Token: 0x06002808 RID: 10248 RVA: 0x000F9019 File Offset: 0x000F7219
+	// Token: 0x0600280F RID: 10255 RVA: 0x000F9551 File Offset: 0x000F7751
 	public void RemoveSpawnPoints(bool showTooltip = true)
 	{
 		this.SpawnPoints.Clear();
@@ -5154,20 +5176,20 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.selectedSpawnPointKey = -1L;
 	}
 
-	// Token: 0x06002809 RID: 10249 RVA: 0x000F904A File Offset: 0x000F724A
+	// Token: 0x06002810 RID: 10256 RVA: 0x000F9582 File Offset: 0x000F7782
 	public void EmptyBackpackAndToolbelt()
 	{
 		this.EmptyBackpack();
 		this.EmptyToolbelt(-1, -1);
 	}
 
-	// Token: 0x0600280A RID: 10250 RVA: 0x000F905A File Offset: 0x000F725A
+	// Token: 0x06002811 RID: 10257 RVA: 0x000F9592 File Offset: 0x000F7792
 	public void EmptyBackpack()
 	{
 		this.bag.Clear();
 	}
 
-	// Token: 0x0600280B RID: 10251 RVA: 0x000F9068 File Offset: 0x000F7268
+	// Token: 0x06002812 RID: 10258 RVA: 0x000F95A0 File Offset: 0x000F77A0
 	public void EmptyToolbelt(int start = -1, int end = -1)
 	{
 		if (start < 0)
@@ -5184,7 +5206,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600280C RID: 10252 RVA: 0x000F90AC File Offset: 0x000F72AC
+	// Token: 0x06002813 RID: 10259 RVA: 0x000F95E4 File Offset: 0x000F77E4
 	public void EmptyEquipment(bool keepOnDeathItems)
 	{
 		for (int i = 0; i < 13; i++)
@@ -5197,7 +5219,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600280D RID: 10253 RVA: 0x000F90FC File Offset: 0x000F72FC
+	// Token: 0x06002814 RID: 10260 RVA: 0x000F9634 File Offset: 0x000F7834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleMapObjects(bool usePersistantBackpackPositions)
 	{
@@ -5217,7 +5239,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600280E RID: 10254 RVA: 0x000F9188 File Offset: 0x000F7388
+	// Token: 0x06002815 RID: 10261 RVA: 0x000F96C0 File Offset: 0x000F78C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void AnalyticsSendDeath(DamageResponse _dmResponse)
 	{
@@ -5258,7 +5280,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		GameSparksCollector.IncrementCounter(GameSparksCollector.GSDataKey.PlayerDeathCauses, text, 1, true, GameSparksCollector.GSDataCollection.SessionUpdates);
 	}
 
-	// Token: 0x0600280F RID: 10255 RVA: 0x000F9250 File Offset: 0x000F7450
+	// Token: 0x06002816 RID: 10262 RVA: 0x000F9788 File Offset: 0x000F7988
 	public EntityPlayerLocal.AutoMove EnableAutoMove(bool _enable)
 	{
 		if (!_enable)
@@ -5272,7 +5294,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return this.autoMove;
 	}
 
-	// Token: 0x06002810 RID: 10256 RVA: 0x000F9270 File Offset: 0x000F7470
+	// Token: 0x06002817 RID: 10263 RVA: 0x000F97A8 File Offset: 0x000F79A8
 	public void TryCancelChargedAction()
 	{
 		ItemAction itemAction = this.inventory.holdingItem.Actions[0];
@@ -5283,7 +5305,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002811 RID: 10257 RVA: 0x000F92D8 File Offset: 0x000F74D8
+	// Token: 0x06002818 RID: 10264 RVA: 0x000F9810 File Offset: 0x000F7A10
 	public bool TryAddRecoveryPosition(Vector3i _position)
 	{
 		if (this.recoveryPositions.Contains(_position))
@@ -5311,7 +5333,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return true;
 	}
 
-	// Token: 0x06002812 RID: 10258 RVA: 0x000F93B4 File Offset: 0x000F75B4
+	// Token: 0x06002819 RID: 10265 RVA: 0x000F98EC File Offset: 0x000F7AEC
 	public void GiveExp(CraftCompleteData data)
 	{
 		int num = (int)this.Buffs.GetCustomVar("_craftCount_" + data.RecipeName);
@@ -5323,14 +5345,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		XUiC_RecipeStack.HandleCraftXPGained();
 	}
 
-	// Token: 0x06002813 RID: 10259 RVA: 0x000F944A File Offset: 0x000F764A
+	// Token: 0x0600281A RID: 10266 RVA: 0x000F9982 File Offset: 0x000F7B82
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{
 		this.renderManager.OnGUI();
 	}
 
-	// Token: 0x06002814 RID: 10260 RVA: 0x000F9457 File Offset: 0x000F7657
+	// Token: 0x0600281B RID: 10267 RVA: 0x000F998F File Offset: 0x000F7B8F
 	public override void PlayStepSound(float _volume)
 	{
 		if (!this.bFirstPersonView)
@@ -5339,7 +5361,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002815 RID: 10261 RVA: 0x000F9468 File Offset: 0x000F7668
+	// Token: 0x0600281C RID: 10268 RVA: 0x000F99A0 File Offset: 0x000F7BA0
 	public void HolsterWeapon(bool holster)
 	{
 		EntityPlayerLocal.HolsterState holsterState = (holster ? EntityPlayerLocal.HolsterState.Holstered : EntityPlayerLocal.HolsterState.Unholstered);
@@ -5349,14 +5371,14 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002816 RID: 10262 RVA: 0x000F948D File Offset: 0x000F768D
+	// Token: 0x0600281D RID: 10269 RVA: 0x000F99C5 File Offset: 0x000F7BC5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refreshHolsterState()
 	{
 		this.desiredHolsterState = EntityPlayerLocal.HolsterState.Undefined;
 	}
 
-	// Token: 0x06002817 RID: 10263 RVA: 0x000F9498 File Offset: 0x000F7698
+	// Token: 0x0600281E RID: 10270 RVA: 0x000F99D0 File Offset: 0x000F7BD0
 	public eTPCameraCheckResult CharacterCameraAngleValid()
 	{
 		if (this.bFirstPersonView || this.vp_FPCamera.Locked3rdPerson)
@@ -5375,7 +5397,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return eTPCameraCheckResult.Pass;
 	}
 
-	// Token: 0x06002818 RID: 10264 RVA: 0x000F9510 File Offset: 0x000F7710
+	// Token: 0x0600281F RID: 10271 RVA: 0x000F9A48 File Offset: 0x000F7C48
 	public void UpdateRespawn()
 	{
 		float num = Time.realtimeSinceStartup - this.RespawnTeleportDuration;
@@ -5397,7 +5419,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002819 RID: 10265 RVA: 0x000F9598 File Offset: 0x000F7798
+	// Token: 0x06002820 RID: 10272 RVA: 0x000F9AD0 File Offset: 0x000F7CD0
 	public void OnTeleportRespawnCompleted()
 	{
 		if (!this.RespawnTeleportTimeoutLogged || this.ftwOutcomeReported)
@@ -5410,7 +5432,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.ftwOutcomeWatchActive = true;
 	}
 
-	// Token: 0x0600281A RID: 10266 RVA: 0x000F9610 File Offset: 0x000F7810
+	// Token: 0x06002821 RID: 10273 RVA: 0x000F9B48 File Offset: 0x000F7D48
 	public void UpdateRespawnOutcomeWatch()
 	{
 		if (!this.ftwOutcomeWatchActive || this.ftwOutcomeReported)
@@ -5431,7 +5453,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600281B RID: 10267 RVA: 0x000F96A4 File Offset: 0x000F78A4
+	// Token: 0x06002822 RID: 10274 RVA: 0x000F9BDC File Offset: 0x000F7DDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReportFellThroughOutcome(string outcome, float respawnSeconds)
 	{
@@ -5464,7 +5486,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600281C RID: 10268 RVA: 0x000F97B4 File Offset: 0x000F79B4
+	// Token: 0x06002823 RID: 10275 RVA: 0x000F9CEC File Offset: 0x000F7EEC
 	public void LogFellThroughWorldDebugInfo()
 	{
 		Vector3i vector3i = World.worldToBlockPos(this.position);
@@ -5529,7 +5551,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.moveController.LogCurrentRespawnState();
 	}
 
-	// Token: 0x0600281D RID: 10269 RVA: 0x000F99B4 File Offset: 0x000F7BB4
+	// Token: 0x06002824 RID: 10276 RVA: 0x000F9EEC File Offset: 0x000F80EC
 	public void ClearMovementInputs()
 	{
 		this.movementInput.moveForward = 0f;
@@ -5539,7 +5561,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		this.vp_FPController.Player.InputSmoothLook.Set(Vector2.zero);
 	}
 
-	// Token: 0x0600281E RID: 10270 RVA: 0x000F9A30 File Offset: 0x000F7C30
+	// Token: 0x06002825 RID: 10277 RVA: 0x000F9F68 File Offset: 0x000F8168
 	public void RequestToSpawnEntityServer(EntityCreationData ecd, Action<Entity> callback, bool blocksCollect)
 	{
 		Guid guid = Guid.NewGuid();
@@ -5553,7 +5575,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		GameManager.Instance.RequestToSpawnEntityServer(ecd);
 	}
 
-	// Token: 0x0600281F RID: 10271 RVA: 0x000F9A8C File Offset: 0x000F7C8C
+	// Token: 0x06002826 RID: 10278 RVA: 0x000F9FC4 File Offset: 0x000F81C4
 	public void HandleRequestedEntitySpawn(Guid guid, Entity entity)
 	{
 		EntityPlayerLocal.SpawnRequest spawnRequest;
@@ -5564,7 +5586,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06002820 RID: 10272 RVA: 0x000F9AC4 File Offset: 0x000F7CC4
+	// Token: 0x06002827 RID: 10279 RVA: 0x000F9FFC File Offset: 0x000F81FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool grabDisabled()
 	{
@@ -5581,851 +5603,851 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		return false;
 	}
 
-	// Token: 0x04001D22 RID: 7458
+	// Token: 0x04001D32 RID: 7474
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cHolsterLayerIndex = 1;
 
-	// Token: 0x04001D23 RID: 7459
+	// Token: 0x04001D33 RID: 7475
 	public UnityEvent<bool> MountEvent = new UnityEvent<bool>();
 
-	// Token: 0x04001D25 RID: 7461
+	// Token: 0x04001D35 RID: 7477
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float prevStaminaValue;
 
-	// Token: 0x04001D26 RID: 7462
+	// Token: 0x04001D36 RID: 7478
 	public float weaponCrossHairAlpha = 0.8f;
 
-	// Token: 0x04001D27 RID: 7463
+	// Token: 0x04001D37 RID: 7479
 	public const float cCameraTPVBaseDistance = 0.94f;
 
-	// Token: 0x04001D28 RID: 7464
+	// Token: 0x04001D38 RID: 7480
 	public const float cCameraTPVOffsetMin = -0.2f;
 
-	// Token: 0x04001D29 RID: 7465
+	// Token: 0x04001D39 RID: 7481
 	public const float cCameraTPVOffsetMax = 3f;
 
-	// Token: 0x04001D2A RID: 7466
+	// Token: 0x04001D3A RID: 7482
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform cameraContainerTransform;
 
-	// Token: 0x04001D2B RID: 7467
+	// Token: 0x04001D3B RID: 7483
 	public Transform cameraTransform;
 
-	// Token: 0x04001D2C RID: 7468
+	// Token: 0x04001D3C RID: 7484
 	public Camera playerCamera;
 
-	// Token: 0x04001D2D RID: 7469
+	// Token: 0x04001D3D RID: 7485
 	public Camera finalCamera;
 
-	// Token: 0x04001D2E RID: 7470
+	// Token: 0x04001D3E RID: 7486
 	public bool IsUnderwaterCamera;
 
-	// Token: 0x04001D2F RID: 7471
-	public GameRenderManager renderManager;
-
-	// Token: 0x04001D30 RID: 7472
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public vp_FPController m_vp_FPController;
-
-	// Token: 0x04001D31 RID: 7473
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public vp_FPCamera m_vp_FPCamera;
-
-	// Token: 0x04001D32 RID: 7474
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public vp_FPWeapon m_vp_FPWeapon;
-
-	// Token: 0x04001D33 RID: 7475
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public vp_PlayerEventHandler m_vp_FPPlayerEventHandler;
-
-	// Token: 0x04001D34 RID: 7476
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool m_checked_vp_FPController;
-
-	// Token: 0x04001D35 RID: 7477
-	public WorldRayHitInfo HitInfo = new WorldRayHitInfo();
-
-	// Token: 0x04001D36 RID: 7478
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float SPRINT_GRACE_PERIOD = 0.2f;
-
-	// Token: 0x04001D37 RID: 7479
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float timeInSprintGrace;
-
-	// Token: 0x04001D38 RID: 7480
-	public float RespawnTeleportDuration;
-
-	// Token: 0x04001D39 RID: 7481
-	public const float RespawnTeleportTimeout = 5f;
-
-	// Token: 0x04001D3A RID: 7482
-	public bool RespawnTeleportTimeoutLogged;
-
-	// Token: 0x04001D3B RID: 7483
-	public const float RespawnStuckTimeout = 20f;
-
-	// Token: 0x04001D3C RID: 7484
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float ftwPostSpawnWatchSeconds = 3f;
-
-	// Token: 0x04001D3D RID: 7485
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float ftwFallBelowSurface = 3f;
-
-	// Token: 0x04001D3E RID: 7486
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool ftwOutcomeReported;
-
 	// Token: 0x04001D3F RID: 7487
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool ftwOutcomeWatchActive;
+	public GameRenderManager renderManager;
 
 	// Token: 0x04001D40 RID: 7488
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ftwOutcomeWatchElapsed;
+	public vp_FPController m_vp_FPController;
 
 	// Token: 0x04001D41 RID: 7489
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ftwRespawnSeconds;
+	public vp_FPCamera m_vp_FPCamera;
 
 	// Token: 0x04001D42 RID: 7490
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int ftwSurfaceY;
+	public vp_FPWeapon m_vp_FPWeapon;
 
 	// Token: 0x04001D43 RID: 7491
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float VIBRATION_LOW = 0.25f;
+	public vp_PlayerEventHandler m_vp_FPPlayerEventHandler;
 
 	// Token: 0x04001D44 RID: 7492
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float VIBRATION_MEDIUM = 0.35f;
+	public bool m_checked_vp_FPController;
 
 	// Token: 0x04001D45 RID: 7493
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float VIBRATION_HIGH = 0.5f;
+	public WorldRayHitInfo HitInfo = new WorldRayHitInfo();
 
 	// Token: 0x04001D46 RID: 7494
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float VIBRATION_DURATION = 0.25f;
+	public const float SPRINT_GRACE_PERIOD = 0.2f;
 
 	// Token: 0x04001D47 RID: 7495
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float oldHealth;
+	public float timeInSprintGrace;
 
 	// Token: 0x04001D48 RID: 7496
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float vibrationTimeout = float.MaxValue;
+	public float RespawnTeleportDuration;
 
 	// Token: 0x04001D49 RID: 7497
-	public static EntityPlayerLocal.DropOption DropOnDeathOption;
+	public const float RespawnTeleportTimeout = 5f;
 
 	// Token: 0x04001D4A RID: 7498
-	public static EntityPlayerLocal.DropOption DropOnQuitOption;
+	public bool RespawnTeleportTimeoutLogged;
 
 	// Token: 0x04001D4B RID: 7499
-	public static int LostItemOnDeathMin = 0;
+	public const float RespawnStuckTimeout = 20f;
 
 	// Token: 0x04001D4C RID: 7500
-	public static int LostItemOnDeathMax = 0;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float ftwPostSpawnWatchSeconds = 3f;
 
 	// Token: 0x04001D4D RID: 7501
-	public static EntityPlayerLocal.DegradeOnDeathTypes DegradeOnDeathType = EntityPlayerLocal.DegradeOnDeathTypes.None;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float ftwFallBelowSurface = 3f;
 
 	// Token: 0x04001D4E RID: 7502
-	public static float DegradeAmountOnDeath = 0.1f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool ftwOutcomeReported;
 
 	// Token: 0x04001D4F RID: 7503
-	public static float InfectionChance = 1f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool ftwOutcomeWatchActive;
 
 	// Token: 0x04001D50 RID: 7504
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityPlayerLocal.HolsterState desiredHolsterState = EntityPlayerLocal.HolsterState.Undefined;
+	public float ftwOutcomeWatchElapsed;
 
 	// Token: 0x04001D51 RID: 7505
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityPlayerLocal.HolsterState lastHolsterState = EntityPlayerLocal.HolsterState.Unholstered;
+	public float ftwRespawnSeconds;
 
 	// Token: 0x04001D52 RID: 7506
-	public bool flipCameraSide;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int ftwSurfaceY;
 
 	// Token: 0x04001D53 RID: 7507
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cMaxLineOfSightCheckRange = 1f;
+	public const float VIBRATION_LOW = 0.25f;
 
 	// Token: 0x04001D54 RID: 7508
-	public bool LineOfSightObstructed;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float VIBRATION_MEDIUM = 0.35f;
 
 	// Token: 0x04001D55 RID: 7509
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 lineOfSightObstructionPoint;
+	public const float VIBRATION_HIGH = 0.5f;
 
 	// Token: 0x04001D56 RID: 7510
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Ray lineOfSightRay;
+	public const float VIBRATION_DURATION = 0.25f;
 
 	// Token: 0x04001D57 RID: 7511
-	public static bool StormWarning = true;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float oldHealth;
 
 	// Token: 0x04001D58 RID: 7512
-	public PersistentPlayerData persistentPlayerData;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float vibrationTimeout = float.MaxValue;
 
 	// Token: 0x04001D59 RID: 7513
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float lastTimeJetpackDecreased;
+	public static EntityPlayerLocal.DropOption DropOnDeathOption;
 
 	// Token: 0x04001D5A RID: 7514
-	public bool bFirstPersonView = true;
+	public static EntityPlayerLocal.DropOption DropOnQuitOption;
 
 	// Token: 0x04001D5B RID: 7515
-	public bool bPreferFirstPerson = true;
+	public static int LostItemOnDeathMin = 0;
 
 	// Token: 0x04001D5C RID: 7516
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float crossHairOpenArea;
+	public static int LostItemOnDeathMax = 0;
 
 	// Token: 0x04001D5D RID: 7517
-	public MovementInput movementInput = new MovementInput();
+	public static EntityPlayerLocal.DegradeOnDeathTypes DegradeOnDeathType = EntityPlayerLocal.DegradeOnDeathTypes.None;
 
 	// Token: 0x04001D5E RID: 7518
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool inputWasJump;
+	public static float DegradeAmountOnDeath = 0.1f;
 
 	// Token: 0x04001D5F RID: 7519
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool inputWasDown;
+	public static float InfectionChance = 1f;
 
 	// Token: 0x04001D60 RID: 7520
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool jumpTrigger;
+	public EntityPlayerLocal.HolsterState desiredHolsterState = EntityPlayerLocal.HolsterState.Undefined;
 
 	// Token: 0x04001D61 RID: 7521
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bSwitchCameraBackAfterRespawn;
+	public EntityPlayerLocal.HolsterState lastHolsterState = EntityPlayerLocal.HolsterState.Unholstered;
 
 	// Token: 0x04001D62 RID: 7522
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool bSwitchTo3rdPersonAfterAiming;
+	public bool flipCameraSide;
 
 	// Token: 0x04001D63 RID: 7523
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public Vector3 selfCameraPos;
+	public const float cMaxLineOfSightCheckRange = 1f;
 
 	// Token: 0x04001D64 RID: 7524
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 selfCameraSeekPos;
+	public bool LineOfSightObstructed;
 
 	// Token: 0x04001D65 RID: 7525
-	public bool bExhausted;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 lineOfSightObstructionPoint;
 
 	// Token: 0x04001D66 RID: 7526
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool isExhaustedSoundAllowed = true;
+	public Ray lineOfSightRay;
 
 	// Token: 0x04001D67 RID: 7527
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ItemStack dragAndDropItem;
+	public static bool StormWarning = true;
 
 	// Token: 0x04001D68 RID: 7528
-	[PublicizedFrom(EAccessModifier.Private)]
+	public PersistentPlayerData persistentPlayerData;
+
+	// Token: 0x04001D69 RID: 7529
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool isReloadCancelling;
+	public float lastTimeJetpackDecreased;
 
 	// Token: 0x04001D6A RID: 7530
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isLadderAttached;
+	public bool bFirstPersonView = true;
 
 	// Token: 0x04001D6B RID: 7531
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool canLadderAirAttach = true;
+	public bool bPreferFirstPerson = true;
 
 	// Token: 0x04001D6C RID: 7532
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool wasJumping;
+	public float crossHairOpenArea;
 
 	// Token: 0x04001D6D RID: 7533
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool wasJumpTrigger;
+	public MovementInput movementInput = new MovementInput();
 
 	// Token: 0x04001D6E RID: 7534
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool wasLadderAttachedJump;
+	public bool inputWasJump;
 
 	// Token: 0x04001D6F RID: 7535
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int swimMode = -1;
+	public bool inputWasDown;
 
 	// Token: 0x04001D70 RID: 7536
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int swimExhaustedTicks;
+	public bool jumpTrigger;
 
 	// Token: 0x04001D71 RID: 7537
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool swimClimbing;
+	public bool bSwitchCameraBackAfterRespawn;
 
 	// Token: 0x04001D72 RID: 7538
-	public bool bLerpCameraFlag;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bSwitchTo3rdPersonAfterAiming;
 
 	// Token: 0x04001D73 RID: 7539
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lerpCameraLerpValue;
+	public Vector3 selfCameraPos;
 
 	// Token: 0x04001D74 RID: 7540
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lerpCameraStartFOV;
+	public Vector3 selfCameraSeekPos;
 
 	// Token: 0x04001D75 RID: 7541
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float lerpCameraEndFOV;
+	public bool bExhausted;
 
 	// Token: 0x04001D76 RID: 7542
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lerpCameraFastFOV;
+	public bool isExhaustedSoundAllowed = true;
 
 	// Token: 0x04001D77 RID: 7543
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lastOverrideFOV = -1f;
+	public ItemStack dragAndDropItem;
 
 	// Token: 0x04001D78 RID: 7544
-	public float OverrideFOV = -1f;
-
-	// Token: 0x04001D79 RID: 7545
-	public Vector3 OverrideLookAt = Vector3.zero;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isReloadCancelling;
 
 	// Token: 0x04001D7A RID: 7546
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float biomeVolume;
+	public bool isLadderAttached;
 
 	// Token: 0x04001D7B RID: 7547
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AudioSource audioSourceBiomeActive;
+	public bool canLadderAirAttach = true;
 
 	// Token: 0x04001D7C RID: 7548
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AudioSource audioSourceBiomeFadeOut;
+	public bool wasJumping;
 
 	// Token: 0x04001D7D RID: 7549
-	public BlendCycleTimer sneakDamageBlendTimer = new BlendCycleTimer(0.5f, 2f, 0.5f);
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool wasJumpTrigger;
 
 	// Token: 0x04001D7E RID: 7550
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string sneakDamageText = "";
+	public bool wasLadderAttachedJump;
 
 	// Token: 0x04001D7F RID: 7551
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string dropInventoryBlock;
+	public int swimMode = -1;
 
 	// Token: 0x04001D80 RID: 7552
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int runTicks;
+	public int swimExhaustedTicks;
 
 	// Token: 0x04001D81 RID: 7553
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int sprintLoopSoundPlayId = -1;
+	public bool swimClimbing;
 
 	// Token: 0x04001D82 RID: 7554
-	public DynamicMusicManager DynamicMusicManager;
+	public bool bLerpCameraFlag;
 
 	// Token: 0x04001D83 RID: 7555
-	public IThreatLevel ThreatLevel;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lerpCameraLerpValue;
 
 	// Token: 0x04001D84 RID: 7556
-	public float LastTargetEventTime;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lerpCameraStartFOV;
 
 	// Token: 0x04001D85 RID: 7557
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Material overlayMaterial;
+	public float lerpCameraEndFOV;
 
 	// Token: 0x04001D86 RID: 7558
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public byte[] overlayAlternating = new byte[4];
+	public float lerpCameraFastFOV;
 
 	// Token: 0x04001D87 RID: 7559
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float[] overlayDirectionTime = new float[8];
+	public float lastOverrideFOV = -1f;
 
 	// Token: 0x04001D88 RID: 7560
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector2[] overlayBloodDropsPositions = new Vector2[24];
+	public float OverrideFOV = -1f;
 
 	// Token: 0x04001D89 RID: 7561
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Transform uwEffectRefract;
+	public Vector3 OverrideLookAt = Vector3.zero;
 
 	// Token: 0x04001D8A RID: 7562
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Transform uwEffectDebris;
+	public float biomeVolume;
 
 	// Token: 0x04001D8B RID: 7563
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Transform uwEffectDroplets;
+	public AudioSource audioSourceBiomeActive;
 
 	// Token: 0x04001D8C RID: 7564
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Transform uwEffectWaterFade;
+	public AudioSource audioSourceBiomeFadeOut;
 
 	// Token: 0x04001D8D RID: 7565
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Transform uwEffectHaze;
+	public BlendCycleTimer sneakDamageBlendTimer = new BlendCycleTimer(0.5f, 2f, 0.5f);
 
 	// Token: 0x04001D8E RID: 7566
-	public bool bIntroAnimActive;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string sneakDamageText = "";
 
 	// Token: 0x04001D8F RID: 7567
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public LocalPlayerUI playerUI;
+	public string dropInventoryBlock;
 
 	// Token: 0x04001D90 RID: 7568
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public GUIWindowManager windowManager;
+	public int runTicks;
 
 	// Token: 0x04001D91 RID: 7569
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public NGUIWindowManager nguiWindowManager;
+	public int sprintLoopSoundPlayId = -1;
 
 	// Token: 0x04001D92 RID: 7570
-	public string AreaMessage;
+	public DynamicMusicManager DynamicMusicManager;
 
 	// Token: 0x04001D93 RID: 7571
-	public float AreaMessageAlpha;
+	public IThreatLevel ThreatLevel;
 
 	// Token: 0x04001D94 RID: 7572
-	public ScreenEffects ScreenEffectManager;
+	public float LastTargetEventTime;
 
 	// Token: 0x04001D95 RID: 7573
-	public float GodModeSpeedModifier = 1f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Material overlayMaterial;
 
 	// Token: 0x04001D96 RID: 7574
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public PlayerMoveController moveController;
+	public byte[] overlayAlternating = new byte[4];
 
 	// Token: 0x04001D97 RID: 7575
-	public bool isStunned;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float[] overlayDirectionTime = new float[8];
 
 	// Token: 0x04001D98 RID: 7576
-	public bool isDeafened;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2[] overlayBloodDropsPositions = new Vector2[24];
 
 	// Token: 0x04001D99 RID: 7577
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int oldLayer = -1;
+	public Transform uwEffectRefract;
 
 	// Token: 0x04001D9A RID: 7578
-	public Rect ZombieCompassBounds;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Transform uwEffectDebris;
 
 	// Token: 0x04001D9B RID: 7579
-	public float DropTimeDelay;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Transform uwEffectDroplets;
 
 	// Token: 0x04001D9C RID: 7580
-	public float InteractTimeDelay;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Transform uwEffectWaterFade;
 
 	// Token: 0x04001D9D RID: 7581
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float recoveryPointTimer;
+	public Transform uwEffectHaze;
 
 	// Token: 0x04001D9E RID: 7582
-	public List<Vector3i> recoveryPositions = new List<Vector3i>();
+	public bool bIntroAnimActive;
 
 	// Token: 0x04001D9F RID: 7583
-	public bool DebugDismembermentChance;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public LocalPlayerUI playerUI;
 
 	// Token: 0x04001DA0 RID: 7584
-	public bool BloodMoonParticipation;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public GUIWindowManager windowManager;
 
 	// Token: 0x04001DA1 RID: 7585
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool inAir;
+	public NGUIWindowManager nguiWindowManager;
 
 	// Token: 0x04001DA2 RID: 7586
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool _cameraRelativeMovement;
+	public string AreaMessage;
 
 	// Token: 0x04001DA3 RID: 7587
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cAimingCameraResetTime = 2f;
+	public float AreaMessageAlpha;
 
 	// Token: 0x04001DA4 RID: 7588
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool tpCameraLockTimerActive;
+	public ScreenEffects ScreenEffectManager;
 
 	// Token: 0x04001DA5 RID: 7589
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float tpCameraLockStartTime;
+	public float GodModeSpeedModifier = 1f;
 
 	// Token: 0x04001DA6 RID: 7590
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cMinOvereadObstructionTime = 0.5f;
+	public PlayerMoveController moveController;
 
 	// Token: 0x04001DA7 RID: 7591
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float camOverheadDistance = 1f;
+	public bool isStunned;
 
 	// Token: 0x04001DA8 RID: 7592
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float overheadObstructionTime;
+	public bool isDeafened;
 
 	// Token: 0x04001DA9 RID: 7593
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cMinCameraDistanceMultiplier = 1f;
+	public int oldLayer = -1;
 
 	// Token: 0x04001DAA RID: 7594
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cMaxCameraDistanceMultiplier = 3f;
+	public Rect ZombieCompassBounds;
 
 	// Token: 0x04001DAB RID: 7595
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float cameraDistanceMulti = 1f;
+	public float DropTimeDelay;
 
 	// Token: 0x04001DAC RID: 7596
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public CharacterMatrixOverride characterMatrixOverride;
+	public float InteractTimeDelay;
 
 	// Token: 0x04001DAD RID: 7597
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector2 m_MoveVector;
+	public float recoveryPointTimer;
 
 	// Token: 0x04001DAE RID: 7598
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector2 m_SmoothLook;
+	public List<Vector3i> recoveryPositions = new List<Vector3i>();
 
 	// Token: 0x04001DAF RID: 7599
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public EntityPlayerLocal.MoveState moveState;
+	public bool DebugDismembermentChance;
 
 	// Token: 0x04001DB0 RID: 7600
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool moveStateAiming;
+	public bool BloodMoonParticipation;
 
 	// Token: 0x04001DB1 RID: 7601
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool moveStateHoldBow;
+	public bool inAir;
 
 	// Token: 0x04001DB2 RID: 7602
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimDragBase = 0.01f;
+	public bool _cameraRelativeMovement;
 
 	// Token: 0x04001DB3 RID: 7603
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimDragScale = 5.4f;
+	public const float cAimingCameraResetTime = 2f;
 
 	// Token: 0x04001DB4 RID: 7604
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimDragPow = 2f;
+	public bool tpCameraLockTimerActive;
 
 	// Token: 0x04001DB5 RID: 7605
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAccelExhausted = 0.00025f;
+	public float tpCameraLockStartTime;
 
 	// Token: 0x04001DB6 RID: 7606
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAccel = 0.00032f;
+	public const float cMinOvereadObstructionTime = 0.5f;
 
 	// Token: 0x04001DB7 RID: 7607
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAccelRun = 0.0024f;
+	public float camOverheadDistance = 1f;
 
 	// Token: 0x04001DB8 RID: 7608
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAccelUp = 0.00052f;
+	public float overheadObstructionTime;
 
 	// Token: 0x04001DB9 RID: 7609
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAccelUpGrounded = 0.05f;
+	public const float cMinCameraDistanceMultiplier = 1f;
 
 	// Token: 0x04001DBA RID: 7610
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAccelDown = -0.00038f;
+	public const float cMaxCameraDistanceMultiplier = 3f;
 
 	// Token: 0x04001DBB RID: 7611
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float achievementDistanceAccu;
+	public float cameraDistanceMulti = 1f;
 
 	// Token: 0x04001DBC RID: 7612
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lastWaypointUpdateTime;
+	public CharacterMatrixOverride characterMatrixOverride;
 
 	// Token: 0x04001DBD RID: 7613
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cWaypointUpdateTime = 30f;
+	public Vector2 m_MoveVector;
 
 	// Token: 0x04001DBE RID: 7614
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float updateBedrollPositionChecks;
+	public Vector2 m_SmoothLook;
 
 	// Token: 0x04001DBF RID: 7615
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float updateRadiationChecks;
+	public EntityPlayerLocal.MoveState moveState;
 
 	// Token: 0x04001DC0 RID: 7616
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int blockRadiusEffectsIndex;
+	public bool moveStateAiming;
 
 	// Token: 0x04001DC1 RID: 7617
-	public bool LootAtMax;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool moveStateHoldBow;
 
 	// Token: 0x04001DC2 RID: 7618
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int lastLootStage = -1;
+	public const float cSwimDragBase = 0.01f;
 
 	// Token: 0x04001DC3 RID: 7619
-	public eTPCameraCheckResult TPCameraCheckResult;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cSwimDragScale = 5.4f;
 
 	// Token: 0x04001DC4 RID: 7620
-	public float InWorldPercent;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cSwimDragPow = 2f;
 
 	// Token: 0x04001DC5 RID: 7621
-	public float InWorldLookPercent;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cSwimAccelExhausted = 0.00025f;
 
 	// Token: 0x04001DC6 RID: 7622
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lastTimeUnderwater;
+	public const float cSwimAccel = 0.00032f;
 
 	// Token: 0x04001DC7 RID: 7623
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool wasSpawned;
+	public const float cSwimAccelRun = 0.0024f;
 
 	// Token: 0x04001DC8 RID: 7624
-	public float spawnEffectPow = 4.19f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cSwimAccelUp = 0.00052f;
 
 	// Token: 0x04001DC9 RID: 7625
-	public static float spawnInEffectSpeed = 3f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cSwimAccelUpGrounded = 0.05f;
 
 	// Token: 0x04001DCA RID: 7626
-	public bool bPlayingSpawnIn;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cSwimAccelDown = -0.00038f;
 
 	// Token: 0x04001DCB RID: 7627
-	public float spawnInTime;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float achievementDistanceAccu;
 
 	// Token: 0x04001DCC RID: 7628
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float spawnInIntensity;
+	public float lastWaypointUpdateTime;
 
 	// Token: 0x04001DCD RID: 7629
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float deathTime;
+	public const float cWaypointUpdateTime = 30f;
 
 	// Token: 0x04001DCE RID: 7630
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Predicate<ItemStack> dropStackCondition = (ItemStack s) => s != null && !s.IsEmpty() && !s.itemValue.ItemClassOrMissing.KeepOnDeath();
+	public float updateBedrollPositionChecks;
 
 	// Token: 0x04001DCF RID: 7631
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Predicate<ItemValue> dropValueCondition = (ItemValue v) => v != null && !v.IsEmpty() && !v.ItemClassOrMissing.KeepOnDeath();
+	public float updateRadiationChecks;
 
 	// Token: 0x04001DD0 RID: 7632
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cDyingEffectSpeed = 600f;
+	public int blockRadiusEffectsIndex;
 
 	// Token: 0x04001DD1 RID: 7633
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cDyingEffectStartHealth = 70f;
+	public bool LootAtMax;
 
 	// Token: 0x04001DD2 RID: 7634
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cDyingEffectHealthThreshold = 3f;
+	public int lastLootStage = -1;
 
 	// Token: 0x04001DD3 RID: 7635
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float dyingEffectHitTime;
+	public eTPCameraCheckResult TPCameraCheckResult;
 
 	// Token: 0x04001DD4 RID: 7636
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float dyingEffectCur;
+	public float InWorldPercent;
 
 	// Token: 0x04001DD5 RID: 7637
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float dyingEffectLast;
+	public float InWorldLookPercent;
 
 	// Token: 0x04001DD6 RID: 7638
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float dyingEffectHealthLast;
+	public float lastTimeUnderwater;
 
 	// Token: 0x04001DD7 RID: 7639
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int fallHealth;
+	public bool wasSpawned;
 
 	// Token: 0x04001DD8 RID: 7640
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isFallDeath;
+	public float spawnEffectPow = 4.19f;
 
 	// Token: 0x04001DD9 RID: 7641
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public List<NetPackageSharedQuest.SharedQuestData> sharedQuestsToProcess = new List<NetPackageSharedQuest.SharedQuestData>();
+	public static float spawnInEffectSpeed = 3f;
 
 	// Token: 0x04001DDA RID: 7642
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static List<Collider> setLayerRecursivelyList = new List<Collider>();
+	public bool bPlayingSpawnIn;
 
 	// Token: 0x04001DDB RID: 7643
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool cancellingInventoryActions;
+	public float spawnInTime;
 
 	// Token: 0x04001DDC RID: 7644
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lastCameraDistanceAmount;
+	public float spawnInIntensity;
 
 	// Token: 0x04001DDD RID: 7645
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public NavObject backpackNavObject;
+	public float deathTime;
 
 	// Token: 0x04001DDE RID: 7646
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public List<NavObject> backpackNavObjects;
+	public Predicate<ItemStack> dropStackCondition = (ItemStack s) => s != null && !s.IsEmpty() && !s.itemValue.ItemClassOrMissing.KeepOnDeath();
 
 	// Token: 0x04001DDF RID: 7647
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public List<Vector3i> backpackPositionsFromThread = new List<Vector3i>();
+	public Predicate<ItemValue> dropValueCondition = (ItemValue v) => v != null && !v.IsEmpty() && !v.ItemClassOrMissing.KeepOnDeath();
 
 	// Token: 0x04001DE0 RID: 7648
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public List<EntityPlayerLocal.LocationSlotInfo> DestroyLocationSlotList;
+	public const float cDyingEffectSpeed = 600f;
 
 	// Token: 0x04001DE1 RID: 7649
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public GameObject[] screenBloodEffect;
+	public const float cDyingEffectStartHealth = 70f;
 
 	// Token: 0x04001DE2 RID: 7650
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Material[] screenBloodMtrl;
+	public const float cDyingEffectHealthThreshold = 3f;
 
 	// Token: 0x04001DE3 RID: 7651
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool healthLostThisRound;
+	public float dyingEffectHitTime;
 
 	// Token: 0x04001DE4 RID: 7652
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float dyingEffectCur;
+
+	// Token: 0x04001DE5 RID: 7653
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float dyingEffectLast;
+
+	// Token: 0x04001DE6 RID: 7654
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float dyingEffectHealthLast;
+
+	// Token: 0x04001DE7 RID: 7655
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int fallHealth;
+
+	// Token: 0x04001DE8 RID: 7656
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isFallDeath;
+
+	// Token: 0x04001DE9 RID: 7657
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<NetPackageSharedQuest.SharedQuestData> sharedQuestsToProcess = new List<NetPackageSharedQuest.SharedQuestData>();
+
+	// Token: 0x04001DEA RID: 7658
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static List<Collider> setLayerRecursivelyList = new List<Collider>();
+
+	// Token: 0x04001DEB RID: 7659
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool cancellingInventoryActions;
+
+	// Token: 0x04001DEC RID: 7660
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lastCameraDistanceAmount;
+
+	// Token: 0x04001DED RID: 7661
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public NavObject backpackNavObject;
+
+	// Token: 0x04001DEE RID: 7662
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<NavObject> backpackNavObjects;
+
+	// Token: 0x04001DEF RID: 7663
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<Vector3i> backpackPositionsFromThread = new List<Vector3i>();
+
+	// Token: 0x04001DF0 RID: 7664
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<EntityPlayerLocal.LocationSlotInfo> DestroyLocationSlotList;
+
+	// Token: 0x04001DF1 RID: 7665
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public GameObject[] screenBloodEffect;
+
+	// Token: 0x04001DF2 RID: 7666
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Material[] screenBloodMtrl;
+
+	// Token: 0x04001DF3 RID: 7667
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool healthLostThisRound;
+
+	// Token: 0x04001DF4 RID: 7668
 	public static List<Color> crosshairColors = new List<Color>
 	{
 		new Color(1f, 1f, 1f, 1f),
@@ -6439,234 +6461,234 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 		new Color(1f, 0.6f, 0.9f, 1f)
 	};
 
-	// Token: 0x04001DE5 RID: 7653
+	// Token: 0x04001DF5 RID: 7669
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCrosshairScreenHeightFactor = 0.059f;
 
-	// Token: 0x04001DE6 RID: 7654
+	// Token: 0x04001DF6 RID: 7670
 	public float shelterPercent;
 
-	// Token: 0x04001DE7 RID: 7655
-	public float shelterAbovePercent;
-
-	// Token: 0x04001DE8 RID: 7656
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool shelterIsUpdating;
-
-	// Token: 0x04001DE9 RID: 7657
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int shelterSideCount;
-
-	// Token: 0x04001DEA RID: 7658
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 shelterStartPos;
-
-	// Token: 0x04001DEB RID: 7659
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 shelterPos;
-
-	// Token: 0x04001DEC RID: 7660
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 shelterPosOffset;
-
-	// Token: 0x04001DED RID: 7661
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float shelterDir;
-
-	// Token: 0x04001DEE RID: 7662
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float shelterRadius;
-
-	// Token: 0x04001DEF RID: 7663
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cShelterSideStep = 0.13f;
-
-	// Token: 0x04001DF0 RID: 7664
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cShelterUpDistance = 253f;
-
-	// Token: 0x04001DF1 RID: 7665
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const int cShelterAngles = 8;
-
-	// Token: 0x04001DF2 RID: 7666
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cShelterAngleStep = 45f;
-
-	// Token: 0x04001DF3 RID: 7667
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cShelterRadiusStep = 1f;
-
-	// Token: 0x04001DF4 RID: 7668
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cShelterRadiusMax = 3f;
-
-	// Token: 0x04001DF5 RID: 7669
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const int cShelterMask = 1073807360;
-
-	// Token: 0x04001DF6 RID: 7670
-	public bool isPlayerInStorm;
-
 	// Token: 0x04001DF7 RID: 7671
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public BiomeDefinition stormAlertBiomeStandingOn;
+	public float shelterAbovePercent;
 
 	// Token: 0x04001DF8 RID: 7672
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float stormRemainingSeconds;
+	public bool shelterIsUpdating;
 
 	// Token: 0x04001DF9 RID: 7673
-	public bool isIndoorsCurrent = true;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int shelterSideCount;
 
 	// Token: 0x04001DFA RID: 7674
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public BiomeDefinition.WeatherGroup weatherGroup;
+	public Vector3 shelterStartPos;
 
 	// Token: 0x04001DFB RID: 7675
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string weatherBuff;
+	public Vector3 shelterPos;
 
 	// Token: 0x04001DFC RID: 7676
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityPlayerLocal.AutoMove autoMove;
+	public Vector3 shelterPosOffset;
 
 	// Token: 0x04001DFD RID: 7677
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
+	public float shelterDir;
+
+	// Token: 0x04001DFE RID: 7678
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float shelterRadius;
+
+	// Token: 0x04001DFF RID: 7679
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cShelterSideStep = 0.13f;
+
+	// Token: 0x04001E00 RID: 7680
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cShelterUpDistance = 253f;
+
+	// Token: 0x04001E01 RID: 7681
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const int cShelterAngles = 8;
+
+	// Token: 0x04001E02 RID: 7682
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cShelterAngleStep = 45f;
+
+	// Token: 0x04001E03 RID: 7683
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cShelterRadiusStep = 1f;
+
+	// Token: 0x04001E04 RID: 7684
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cShelterRadiusMax = 3f;
+
+	// Token: 0x04001E05 RID: 7685
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const int cShelterMask = 1073807360;
+
+	// Token: 0x04001E06 RID: 7686
+	public bool isPlayerInStorm;
+
+	// Token: 0x04001E07 RID: 7687
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public BiomeDefinition stormAlertBiomeStandingOn;
+
+	// Token: 0x04001E08 RID: 7688
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float stormRemainingSeconds;
+
+	// Token: 0x04001E09 RID: 7689
+	public bool isIndoorsCurrent = true;
+
+	// Token: 0x04001E0A RID: 7690
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public BiomeDefinition.WeatherGroup weatherGroup;
+
+	// Token: 0x04001E0B RID: 7691
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string weatherBuff;
+
+	// Token: 0x04001E0C RID: 7692
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public EntityPlayerLocal.AutoMove autoMove;
+
+	// Token: 0x04001E0D RID: 7693
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
 	public Dictionary<Guid, EntityPlayerLocal.SpawnRequest> spawnRequests = new Dictionary<Guid, EntityPlayerLocal.SpawnRequest>();
 
-	// Token: 0x020004D2 RID: 1234
+	// Token: 0x020004D4 RID: 1236
 	public enum DegradeOnDeathTypes
 	{
-		// Token: 0x04001DFF RID: 7679
-		None,
-		// Token: 0x04001E00 RID: 7680
-		Durability,
-		// Token: 0x04001E01 RID: 7681
-		MaxDurability,
-		// Token: 0x04001E02 RID: 7682
-		Both
-	}
-
-	// Token: 0x020004D3 RID: 1235
-	[PublicizedFrom(EAccessModifier.Private)]
-	public enum HolsterState
-	{
-		// Token: 0x04001E04 RID: 7684
-		Holstered,
-		// Token: 0x04001E05 RID: 7685
-		Unholstered,
-		// Token: 0x04001E06 RID: 7686
-		Undefined
-	}
-
-	// Token: 0x020004D4 RID: 1236
-	[PublicizedFrom(EAccessModifier.Private)]
-	public enum MoveState
-	{
-		// Token: 0x04001E08 RID: 7688
-		None,
-		// Token: 0x04001E09 RID: 7689
-		Off,
-		// Token: 0x04001E0A RID: 7690
-		Attached,
-		// Token: 0x04001E0B RID: 7691
-		Idle,
-		// Token: 0x04001E0C RID: 7692
-		Walk,
-		// Token: 0x04001E0D RID: 7693
-		Run,
-		// Token: 0x04001E0E RID: 7694
-		Swim,
 		// Token: 0x04001E0F RID: 7695
-		Crouch,
+		None,
 		// Token: 0x04001E10 RID: 7696
-		CrouchWalk,
+		Durability,
 		// Token: 0x04001E11 RID: 7697
-		CrouchRun,
+		MaxDurability,
 		// Token: 0x04001E12 RID: 7698
-		Jump
+		Both
 	}
 
 	// Token: 0x020004D5 RID: 1237
 	[PublicizedFrom(EAccessModifier.Private)]
+	public enum HolsterState
+	{
+		// Token: 0x04001E14 RID: 7700
+		Holstered,
+		// Token: 0x04001E15 RID: 7701
+		Unholstered,
+		// Token: 0x04001E16 RID: 7702
+		Undefined
+	}
+
+	// Token: 0x020004D6 RID: 1238
+	[PublicizedFrom(EAccessModifier.Private)]
+	public enum MoveState
+	{
+		// Token: 0x04001E18 RID: 7704
+		None,
+		// Token: 0x04001E19 RID: 7705
+		Off,
+		// Token: 0x04001E1A RID: 7706
+		Attached,
+		// Token: 0x04001E1B RID: 7707
+		Idle,
+		// Token: 0x04001E1C RID: 7708
+		Walk,
+		// Token: 0x04001E1D RID: 7709
+		Run,
+		// Token: 0x04001E1E RID: 7710
+		Swim,
+		// Token: 0x04001E1F RID: 7711
+		Crouch,
+		// Token: 0x04001E20 RID: 7712
+		CrouchWalk,
+		// Token: 0x04001E21 RID: 7713
+		CrouchRun,
+		// Token: 0x04001E22 RID: 7714
+		Jump
+	}
+
+	// Token: 0x020004D7 RID: 1239
+	[PublicizedFrom(EAccessModifier.Private)]
 	public struct LocationSlotInfo
 	{
-		// Token: 0x06002823 RID: 10275 RVA: 0x000F9E36 File Offset: 0x000F8036
+		// Token: 0x0600282A RID: 10282 RVA: 0x000FA36E File Offset: 0x000F856E
 		public LocationSlotInfo(EntityPlayerLocal.LocationSlotInfo.LocationTypes location, int slot)
 		{
 			this.Location = location;
 			this.Slot = slot;
 		}
 
-		// Token: 0x04001E13 RID: 7699
+		// Token: 0x04001E23 RID: 7715
 		public EntityPlayerLocal.LocationSlotInfo.LocationTypes Location;
 
-		// Token: 0x04001E14 RID: 7700
+		// Token: 0x04001E24 RID: 7716
 		public int Slot;
 
-		// Token: 0x020004D6 RID: 1238
+		// Token: 0x020004D8 RID: 1240
 		public enum LocationTypes
 		{
-			// Token: 0x04001E16 RID: 7702
+			// Token: 0x04001E26 RID: 7718
 			Backpack,
-			// Token: 0x04001E17 RID: 7703
+			// Token: 0x04001E27 RID: 7719
 			Toolbelt,
-			// Token: 0x04001E18 RID: 7704
+			// Token: 0x04001E28 RID: 7720
 			Equipment
 		}
 	}
 
-	// Token: 0x020004D7 RID: 1239
+	// Token: 0x020004D9 RID: 1241
 	public enum DropOption
 	{
-		// Token: 0x04001E1A RID: 7706
+		// Token: 0x04001E2A RID: 7722
 		None,
-		// Token: 0x04001E1B RID: 7707
+		// Token: 0x04001E2B RID: 7723
 		All,
-		// Token: 0x04001E1C RID: 7708
+		// Token: 0x04001E2C RID: 7724
 		Toolbelt,
-		// Token: 0x04001E1D RID: 7709
+		// Token: 0x04001E2D RID: 7725
 		Backpack,
-		// Token: 0x04001E1E RID: 7710
+		// Token: 0x04001E2E RID: 7726
 		Equipment,
-		// Token: 0x04001E1F RID: 7711
+		// Token: 0x04001E2F RID: 7727
 		ToolbeltBackpack,
-		// Token: 0x04001E20 RID: 7712
+		// Token: 0x04001E30 RID: 7728
 		DeleteAll
 	}
 
-	// Token: 0x020004D8 RID: 1240
+	// Token: 0x020004DA RID: 1242
 	public class AutoMove
 	{
-		// Token: 0x06002824 RID: 10276 RVA: 0x000F9E46 File Offset: 0x000F8046
+		// Token: 0x0600282B RID: 10283 RVA: 0x000FA37E File Offset: 0x000F857E
 		public AutoMove(Entity _entity)
 		{
 			this.entity = _entity;
 		}
 
-		// Token: 0x06002825 RID: 10277 RVA: 0x000F9E58 File Offset: 0x000F8058
+		// Token: 0x0600282C RID: 10284 RVA: 0x000FA390 File Offset: 0x000F8590
 		public void StartLine(float _duration, int _loopCount, Vector3 _endPos, Action _onMoveComplete = null)
 		{
 			this.mode = EntityPlayerLocal.AutoMove.Mode.Line;
@@ -6683,7 +6705,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 			this.onMoveComplete = _onMoveComplete;
 		}
 
-		// Token: 0x06002826 RID: 10278 RVA: 0x000F9EC0 File Offset: 0x000F80C0
+		// Token: 0x0600282D RID: 10285 RVA: 0x000FA3F8 File Offset: 0x000F85F8
 		public void StartOrbit(float _duration, int _loopCount, Vector3 _orbitPos, bool _lookForward = false, bool _isFlipped = false, Action _onMoveComplete = null)
 		{
 			this.mode = EntityPlayerLocal.AutoMove.Mode.Orbit;
@@ -6702,7 +6724,7 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 			this.onMoveComplete = _onMoveComplete;
 		}
 
-		// Token: 0x06002827 RID: 10279 RVA: 0x000F9F38 File Offset: 0x000F8138
+		// Token: 0x0600282E RID: 10286 RVA: 0x000FA470 File Offset: 0x000F8670
 		public void StartRelative(float velX, float velZ, float rotVel)
 		{
 			this.mode = EntityPlayerLocal.AutoMove.Mode.Relative;
@@ -6712,13 +6734,13 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 			this.rotYVel = rotVel;
 		}
 
-		// Token: 0x06002828 RID: 10280 RVA: 0x000F9F76 File Offset: 0x000F8176
+		// Token: 0x0600282F RID: 10287 RVA: 0x000FA4AE File Offset: 0x000F86AE
 		public void SetLookAt(Vector3 _pos)
 		{
 			this.lookAtPos = _pos;
 		}
 
-		// Token: 0x06002829 RID: 10281 RVA: 0x000F9F80 File Offset: 0x000F8180
+		// Token: 0x06002830 RID: 10288 RVA: 0x000FA4B8 File Offset: 0x000F86B8
 		public void Update()
 		{
 			if (this.mode == EntityPlayerLocal.AutoMove.Mode.Off)
@@ -6812,96 +6834,96 @@ public class EntityPlayerLocal : EntityPlayer, IGamePrefsChangedListener
 			}
 		}
 
-		// Token: 0x04001E21 RID: 7713
+		// Token: 0x04001E31 RID: 7729
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Entity entity;
 
-		// Token: 0x04001E22 RID: 7714
+		// Token: 0x04001E32 RID: 7730
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal.AutoMove.Mode mode;
 
-		// Token: 0x04001E23 RID: 7715
+		// Token: 0x04001E33 RID: 7731
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 startPos;
 
-		// Token: 0x04001E24 RID: 7716
+		// Token: 0x04001E34 RID: 7732
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 targetPos;
 
-		// Token: 0x04001E25 RID: 7717
+		// Token: 0x04001E35 RID: 7733
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float curTime;
 
-		// Token: 0x04001E26 RID: 7718
+		// Token: 0x04001E36 RID: 7734
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float endTime;
 
-		// Token: 0x04001E27 RID: 7719
+		// Token: 0x04001E37 RID: 7735
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int loopCount;
 
-		// Token: 0x04001E28 RID: 7720
+		// Token: 0x04001E38 RID: 7736
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isPingPong;
 
-		// Token: 0x04001E29 RID: 7721
+		// Token: 0x04001E39 RID: 7737
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isFlipped;
 
-		// Token: 0x04001E2A RID: 7722
+		// Token: 0x04001E3A RID: 7738
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool orbitLookForward;
 
-		// Token: 0x04001E2B RID: 7723
+		// Token: 0x04001E3B RID: 7739
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 vel;
 
-		// Token: 0x04001E2C RID: 7724
+		// Token: 0x04001E3C RID: 7740
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float rotY;
 
-		// Token: 0x04001E2D RID: 7725
+		// Token: 0x04001E3D RID: 7741
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float rotYVel;
 
-		// Token: 0x04001E2E RID: 7726
+		// Token: 0x04001E3E RID: 7742
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 lookAtPos;
 
-		// Token: 0x04001E2F RID: 7727
+		// Token: 0x04001E3F RID: 7743
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onMoveComplete;
 
-		// Token: 0x020004D9 RID: 1241
+		// Token: 0x020004DB RID: 1243
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum Mode
 		{
-			// Token: 0x04001E31 RID: 7729
+			// Token: 0x04001E41 RID: 7745
 			Off,
-			// Token: 0x04001E32 RID: 7730
+			// Token: 0x04001E42 RID: 7746
 			Line,
-			// Token: 0x04001E33 RID: 7731
+			// Token: 0x04001E43 RID: 7747
 			Orbit,
-			// Token: 0x04001E34 RID: 7732
+			// Token: 0x04001E44 RID: 7748
 			Relative
 		}
 	}
 
-	// Token: 0x020004DA RID: 1242
+	// Token: 0x020004DC RID: 1244
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class SpawnRequest
 	{
-		// Token: 0x0600282A RID: 10282 RVA: 0x000FA2AC File Offset: 0x000F84AC
+		// Token: 0x06002831 RID: 10289 RVA: 0x000FA7E4 File Offset: 0x000F89E4
 		public SpawnRequest(Action<Entity> _callback, bool _blocksCollect)
 		{
 			this.callback = _callback;
 			this.blocksCollect = _blocksCollect;
 		}
 
-		// Token: 0x04001E35 RID: 7733
+		// Token: 0x04001E45 RID: 7749
 		public Action<Entity> callback;
 
-		// Token: 0x04001E36 RID: 7734
+		// Token: 0x04001E46 RID: 7750
 		public bool blocksCollect;
 	}
 }

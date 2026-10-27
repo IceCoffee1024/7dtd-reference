@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class MaterialBlock
 {
 	// Token: 0x170000EF RID: 239
-	// (get) Token: 0x06000C23 RID: 3107 RVA: 0x0004C526 File Offset: 0x0004A726
-	// (set) Token: 0x06000C24 RID: 3108 RVA: 0x0004C52E File Offset: 0x0004A72E
+	// (get) Token: 0x06000C23 RID: 3107 RVA: 0x0004C4E6 File Offset: 0x0004A6E6
+	// (set) Token: 0x06000C24 RID: 3108 RVA: 0x0004C4EE File Offset: 0x0004A6EE
 	public float ExplosionResistance
 	{
 		get
@@ -19,19 +19,19 @@ public class MaterialBlock
 		}
 	}
 
-	// Token: 0x06000C26 RID: 3110 RVA: 0x0004C552 File Offset: 0x0004A752
+	// Token: 0x06000C26 RID: 3110 RVA: 0x0004C512 File Offset: 0x0004A712
 	public static void Cleanup()
 	{
 		MaterialBlock.materials = new Dictionary<string, MaterialBlock>();
 	}
 
-	// Token: 0x06000C27 RID: 3111 RVA: 0x0004C560 File Offset: 0x0004A760
+	// Token: 0x06000C27 RID: 3111 RVA: 0x0004C520 File Offset: 0x0004A720
 	public MaterialBlock()
 	{
 		this.Properties = new DynamicProperties();
 	}
 
-	// Token: 0x06000C28 RID: 3112 RVA: 0x0004C5CA File Offset: 0x0004A7CA
+	// Token: 0x06000C28 RID: 3112 RVA: 0x0004C58A File Offset: 0x0004A78A
 	public MaterialBlock(string _id)
 		: this()
 	{
@@ -41,7 +41,7 @@ public class MaterialBlock
 		MaterialBlock.materials[_id] = this;
 	}
 
-	// Token: 0x06000C29 RID: 3113 RVA: 0x0004C5F3 File Offset: 0x0004A7F3
+	// Token: 0x06000C29 RID: 3113 RVA: 0x0004C5B3 File Offset: 0x0004A7B3
 	public static MaterialBlock fromString(string _name)
 	{
 		if (!MaterialBlock.materials.ContainsKey(_name))
@@ -51,13 +51,13 @@ public class MaterialBlock
 		return MaterialBlock.materials[_name];
 	}
 
-	// Token: 0x06000C2A RID: 3114 RVA: 0x0004C60F File Offset: 0x0004A80F
+	// Token: 0x06000C2A RID: 3114 RVA: 0x0004C5CF File Offset: 0x0004A7CF
 	public string GetLocalizedMaterialName()
 	{
 		return Localization.Get("material" + this.id, false, null);
 	}
 
-	// Token: 0x06000C2B RID: 3115 RVA: 0x0004C628 File Offset: 0x0004A828
+	// Token: 0x06000C2B RID: 3115 RVA: 0x0004C5E8 File Offset: 0x0004A7E8
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool CheckDamageIgnore(FastTags<TagGroup.Global> _tags, EntityAlive _entity)
 	{

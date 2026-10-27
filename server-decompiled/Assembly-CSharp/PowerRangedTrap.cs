@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000915 RID: 2325
+// Token: 0x0200091F RID: 2335
 public class PowerRangedTrap : PowerConsumer
 {
-	// Token: 0x1700073D RID: 1853
-	// (get) Token: 0x060042D2 RID: 17106 RVA: 0x000814D1 File Offset: 0x0007F6D1
+	// Token: 0x17000743 RID: 1859
+	// (get) Token: 0x060042F5 RID: 17141 RVA: 0x000816F5 File Offset: 0x0007F8F5
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -13,7 +13,7 @@ public class PowerRangedTrap : PowerConsumer
 		}
 	}
 
-	// Token: 0x060042D3 RID: 17107 RVA: 0x001A3780 File Offset: 0x001A1980
+	// Token: 0x060042F6 RID: 17142 RVA: 0x001A4828 File Offset: 0x001A2A28
 	public PowerRangedTrap()
 	{
 		this.Stacks = new ItemStack[3];
@@ -23,9 +23,9 @@ public class PowerRangedTrap : PowerConsumer
 		}
 	}
 
-	// Token: 0x1700073E RID: 1854
-	// (get) Token: 0x060042D4 RID: 17108 RVA: 0x001A37C7 File Offset: 0x001A19C7
-	// (set) Token: 0x060042D5 RID: 17109 RVA: 0x001A37CF File Offset: 0x001A19CF
+	// Token: 0x17000744 RID: 1860
+	// (get) Token: 0x060042F7 RID: 17143 RVA: 0x001A486F File Offset: 0x001A2A6F
+	// (set) Token: 0x060042F8 RID: 17144 RVA: 0x001A4877 File Offset: 0x001A2A77
 	public bool IsLocked
 	{
 		get
@@ -41,7 +41,7 @@ public class PowerRangedTrap : PowerConsumer
 		}
 	}
 
-	// Token: 0x060042D6 RID: 17110 RVA: 0x001A37E4 File Offset: 0x001A19E4
+	// Token: 0x060042F9 RID: 17145 RVA: 0x001A488C File Offset: 0x001A2A8C
 	public bool TryStackItem(ItemStack itemStack)
 	{
 		int num = 0;
@@ -67,7 +67,7 @@ public class PowerRangedTrap : PowerConsumer
 		return false;
 	}
 
-	// Token: 0x060042D7 RID: 17111 RVA: 0x001A3898 File Offset: 0x001A1A98
+	// Token: 0x060042FA RID: 17146 RVA: 0x001A4940 File Offset: 0x001A2B40
 	public bool AddItem(ItemStack _itemStack)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation, -1))
@@ -88,13 +88,13 @@ public class PowerRangedTrap : PowerConsumer
 		return false;
 	}
 
-	// Token: 0x060042D8 RID: 17112 RVA: 0x001A38E7 File Offset: 0x001A1AE7
+	// Token: 0x060042FB RID: 17147 RVA: 0x001A498F File Offset: 0x001A2B8F
 	public void SetSlots(ItemStack[] _stacks)
 	{
 		this.Stacks = _stacks;
 	}
 
-	// Token: 0x060042D9 RID: 17113 RVA: 0x001A38F0 File Offset: 0x001A1AF0
+	// Token: 0x060042FC RID: 17148 RVA: 0x001A4998 File Offset: 0x001A2B98
 	public override void read(PooledBinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
@@ -103,7 +103,7 @@ public class PowerRangedTrap : PowerConsumer
 		this.TargetType = (PowerRangedTrap.TargetTypes)_br.ReadInt32();
 	}
 
-	// Token: 0x060042DA RID: 17114 RVA: 0x001A391E File Offset: 0x001A1B1E
+	// Token: 0x060042FD RID: 17149 RVA: 0x001A49C6 File Offset: 0x001A2BC6
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -112,29 +112,29 @@ public class PowerRangedTrap : PowerConsumer
 		_bw.Write((int)this.TargetType);
 	}
 
-	// Token: 0x04003643 RID: 13891
+	// Token: 0x04003663 RID: 13923
 	public ItemStack[] Stacks;
 
-	// Token: 0x04003644 RID: 13892
+	// Token: 0x04003664 RID: 13924
 	public PowerRangedTrap.TargetTypes TargetType = PowerRangedTrap.TargetTypes.Strangers | PowerRangedTrap.TargetTypes.Zombies;
 
-	// Token: 0x04003645 RID: 13893
+	// Token: 0x04003665 RID: 13925
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isLocked;
 
-	// Token: 0x02000916 RID: 2326
+	// Token: 0x02000920 RID: 2336
 	[Flags]
 	public enum TargetTypes
 	{
-		// Token: 0x04003647 RID: 13895
+		// Token: 0x04003667 RID: 13927
 		None = 0,
-		// Token: 0x04003648 RID: 13896
+		// Token: 0x04003668 RID: 13928
 		Self = 1,
-		// Token: 0x04003649 RID: 13897
+		// Token: 0x04003669 RID: 13929
 		Allies = 2,
-		// Token: 0x0400364A RID: 13898
+		// Token: 0x0400366A RID: 13930
 		Strangers = 4,
-		// Token: 0x0400364B RID: 13899
+		// Token: 0x0400366B RID: 13931
 		Zombies = 8
 	}
 }

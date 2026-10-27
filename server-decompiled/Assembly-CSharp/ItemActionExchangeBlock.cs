@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B0 RID: 1456
+// Token: 0x020005B7 RID: 1463
 [Preserve]
 public class ItemActionExchangeBlock : ItemAction
 {
-	// Token: 0x06002FD3 RID: 12243 RVA: 0x00130CF4 File Offset: 0x0012EEF4
+	// Token: 0x06002FE1 RID: 12257 RVA: 0x001318E8 File Offset: 0x0012FAE8
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -28,7 +28,7 @@ public class ItemActionExchangeBlock : ItemAction
 		this.targetBlock = ItemClass.GetItem(text, false).ToBlockValue(false);
 	}
 
-	// Token: 0x06002FD4 RID: 12244 RVA: 0x00130DB4 File Offset: 0x0012EFB4
+	// Token: 0x06002FE2 RID: 12258 RVA: 0x001319A8 File Offset: 0x0012FBA8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (_bReleased)
@@ -61,11 +61,11 @@ public class ItemActionExchangeBlock : ItemAction
 		}
 	}
 
-	// Token: 0x040024DA RID: 9434
+	// Token: 0x040024F5 RID: 9461
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue sourceblock;
 
-	// Token: 0x040024DB RID: 9435
+	// Token: 0x040024F6 RID: 9462
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue targetBlock;
 }

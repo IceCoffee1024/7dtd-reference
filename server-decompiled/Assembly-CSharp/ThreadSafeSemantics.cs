@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Threading;
 
-// Token: 0x02000BDA RID: 3034
+// Token: 0x02000BE5 RID: 3045
 public class ThreadSafeSemantics : IThreadingSemantics
 {
-	// Token: 0x06005B19 RID: 23321 RVA: 0x0023333F File Offset: 0x0023153F
+	// Token: 0x06005B3E RID: 23358 RVA: 0x0023489B File Offset: 0x00232A9B
 	public ThreadSafeSemantics()
 	{
 		this.monitor = this;
 	}
 
-	// Token: 0x06005B1A RID: 23322 RVA: 0x0023334E File Offset: 0x0023154E
+	// Token: 0x06005B3F RID: 23359 RVA: 0x002348AA File Offset: 0x00232AAA
 	public ThreadSafeSemantics(object _monitor)
 	{
 		this.monitor = _monitor;
 	}
 
-	// Token: 0x06005B1B RID: 23323 RVA: 0x00233360 File Offset: 0x00231560
+	// Token: 0x06005B40 RID: 23360 RVA: 0x002348BC File Offset: 0x00232ABC
 	public void Synchronize(AtomicActionDelegate _delegate)
 	{
 		object obj = this.monitor;
@@ -26,13 +26,13 @@ public class ThreadSafeSemantics : IThreadingSemantics
 		}
 	}
 
-	// Token: 0x06005B1C RID: 23324 RVA: 0x002333A0 File Offset: 0x002315A0
+	// Token: 0x06005B41 RID: 23361 RVA: 0x002348FC File Offset: 0x00232AFC
 	public int InterlockedAdd(ref int _number, int _add)
 	{
 		return Interlocked.Add(ref _number, _add);
 	}
 
-	// Token: 0x06005B1D RID: 23325 RVA: 0x002333AC File Offset: 0x002315AC
+	// Token: 0x06005B42 RID: 23362 RVA: 0x00234908 File Offset: 0x00232B08
 	public T Synchronize<T>(Func<T> _delegate)
 	{
 		object obj = this.monitor;
@@ -44,7 +44,7 @@ public class ThreadSafeSemantics : IThreadingSemantics
 		return t;
 	}
 
-	// Token: 0x040046EF RID: 18159
+	// Token: 0x04004714 RID: 18196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object monitor;
 }

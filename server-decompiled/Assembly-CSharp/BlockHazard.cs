@@ -18,7 +18,7 @@ public class BlockHazard : BlockParticle
 		}
 	}
 
-	// Token: 0x060007A5 RID: 1957 RVA: 0x000362EC File Offset: 0x000344EC
+	// Token: 0x060007A5 RID: 1957 RVA: 0x000362AC File Offset: 0x000344AC
 	public override void Init()
 	{
 		base.Init();
@@ -58,7 +58,7 @@ public class BlockHazard : BlockParticle
 		base.Properties.ParseString(BlockHazard.PropStopSound, ref this.StopSound);
 	}
 
-	// Token: 0x060007A6 RID: 1958 RVA: 0x0003647C File Offset: 0x0003467C
+	// Token: 0x060007A6 RID: 1958 RVA: 0x0003643C File Offset: 0x0003463C
 	public override byte GetLightValue(BlockValue _blockValue)
 	{
 		if ((_blockValue.meta & 2) == 0)
@@ -68,7 +68,7 @@ public class BlockHazard : BlockParticle
 		return base.GetLightValue(_blockValue);
 	}
 
-	// Token: 0x060007A7 RID: 1959 RVA: 0x00036494 File Offset: 0x00034694
+	// Token: 0x060007A7 RID: 1959 RVA: 0x00036454 File Offset: 0x00034654
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -84,7 +84,7 @@ public class BlockHazard : BlockParticle
 		return string.Format(Localization.Get("useSwitchLightOn", false, null), text);
 	}
 
-	// Token: 0x060007A8 RID: 1960 RVA: 0x00036514 File Offset: 0x00034714
+	// Token: 0x060007A8 RID: 1960 RVA: 0x000364D4 File Offset: 0x000346D4
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "light"))
@@ -101,7 +101,7 @@ public class BlockHazard : BlockParticle
 		return false;
 	}
 
-	// Token: 0x060007A9 RID: 1961 RVA: 0x00036568 File Offset: 0x00034768
+	// Token: 0x060007A9 RID: 1961 RVA: 0x00036528 File Offset: 0x00034728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool toggleHazardStateForEditor(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -113,7 +113,7 @@ public class BlockHazard : BlockParticle
 		return true;
 	}
 
-	// Token: 0x060007AA RID: 1962 RVA: 0x000365CC File Offset: 0x000347CC
+	// Token: 0x060007AA RID: 1962 RVA: 0x0003658C File Offset: 0x0003478C
 	public bool IsHazardOn(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -125,7 +125,7 @@ public class BlockHazard : BlockParticle
 		return (_blockValue.meta & 2) > 0;
 	}
 
-	// Token: 0x060007AB RID: 1963 RVA: 0x00036618 File Offset: 0x00034818
+	// Token: 0x060007AB RID: 1963 RVA: 0x000365D8 File Offset: 0x000347D8
 	public bool OriginalHazardState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -137,14 +137,14 @@ public class BlockHazard : BlockParticle
 		return (_blockValue.meta & 1) > 0;
 	}
 
-	// Token: 0x060007AC RID: 1964 RVA: 0x00036662 File Offset: 0x00034862
+	// Token: 0x060007AC RID: 1964 RVA: 0x00036622 File Offset: 0x00034822
 	public BlockValue SetHazardState(BlockValue _blockValue, bool isOn)
 	{
 		_blockValue.meta = (byte)(((int)_blockValue.meta & -3) | (isOn ? 2 : 0));
 		return _blockValue;
 	}
 
-	// Token: 0x060007AD RID: 1965 RVA: 0x00036680 File Offset: 0x00034880
+	// Token: 0x060007AD RID: 1965 RVA: 0x00036640 File Offset: 0x00034840
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (_newBlockValue.ischild)
@@ -158,7 +158,7 @@ public class BlockHazard : BlockParticle
 		this.checkParticles(_world, _blockPos, _newBlockValue);
 	}
 
-	// Token: 0x060007AE RID: 1966 RVA: 0x000366D0 File Offset: 0x000348D0
+	// Token: 0x060007AE RID: 1966 RVA: 0x00036690 File Offset: 0x00034890
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateHazardState(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -227,7 +227,7 @@ public class BlockHazard : BlockParticle
 		return true;
 	}
 
-	// Token: 0x060007AF RID: 1967 RVA: 0x0003688C File Offset: 0x00034A8C
+	// Token: 0x060007AF RID: 1967 RVA: 0x0003684C File Offset: 0x00034A4C
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		if (_blockValue.ischild)
@@ -245,7 +245,7 @@ public class BlockHazard : BlockParticle
 		return true;
 	}
 
-	// Token: 0x060007B1 RID: 1969 RVA: 0x000368B8 File Offset: 0x00034AB8
+	// Token: 0x060007B1 RID: 1969 RVA: 0x00036878 File Offset: 0x00034A78
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = _world.IsEditor();
@@ -253,7 +253,7 @@ public class BlockHazard : BlockParticle
 		return this.cmds;
 	}
 
-	// Token: 0x060007B2 RID: 1970 RVA: 0x00036908 File Offset: 0x00034B08
+	// Token: 0x060007B2 RID: 1970 RVA: 0x000368C8 File Offset: 0x00034AC8
 	public override void OnBlockReset(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (_blockValue.ischild)
@@ -272,7 +272,7 @@ public class BlockHazard : BlockParticle
 		}
 	}
 
-	// Token: 0x060007B3 RID: 1971 RVA: 0x00036960 File Offset: 0x00034B60
+	// Token: 0x060007B3 RID: 1971 RVA: 0x00036920 File Offset: 0x00034B20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -292,7 +292,7 @@ public class BlockHazard : BlockParticle
 		}
 	}
 
-	// Token: 0x060007B4 RID: 1972 RVA: 0x000369D8 File Offset: 0x00034BD8
+	// Token: 0x060007B4 RID: 1972 RVA: 0x00036998 File Offset: 0x00034B98
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);
@@ -309,7 +309,7 @@ public class BlockHazard : BlockParticle
 		_blockChanges.Add(new BlockChangeInfo(_blockPos, _blockValue));
 	}
 
-	// Token: 0x060007B5 RID: 1973 RVA: 0x00036A74 File Offset: 0x00034C74
+	// Token: 0x060007B5 RID: 1973 RVA: 0x00036A34 File Offset: 0x00034C34
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (this.IsHazardOn(_world, _bvRef, _blockValue) && _damagePoints > 0 && this.buffActions != null && this.buffActions.Count > 0)

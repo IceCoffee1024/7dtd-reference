@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x02000C84 RID: 3204
+// Token: 0x02000C8F RID: 3215
 public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 {
-	// Token: 0x17000A06 RID: 2566
-	// (get) Token: 0x0600617C RID: 24956 RVA: 0x0026AE9C File Offset: 0x0026909C
+	// Token: 0x17000A0C RID: 2572
+	// (get) Token: 0x060061A1 RID: 24993 RVA: 0x0026C3C4 File Offset: 0x0026A5C4
 	public ItemClass[] AmmoItems
 	{
 		get
@@ -35,15 +35,15 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x0600617D RID: 24957 RVA: 0x0026AF14 File Offset: 0x00269114
+	// Token: 0x060061A2 RID: 24994 RVA: 0x0026C43C File Offset: 0x0026A63C
 	public TileEntityPoweredRangedTrap(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x17000A07 RID: 2567
-	// (get) Token: 0x0600617E RID: 24958 RVA: 0x0026AF36 File Offset: 0x00269136
-	// (set) Token: 0x0600617F RID: 24959 RVA: 0x0026AF4D File Offset: 0x0026914D
+	// Token: 0x17000A0D RID: 2573
+	// (get) Token: 0x060061A3 RID: 24995 RVA: 0x0026C45E File Offset: 0x0026A65E
+	// (set) Token: 0x060061A4 RID: 24996 RVA: 0x0026C475 File Offset: 0x0026A675
 	public int OwnerEntityID
 	{
 		get
@@ -61,19 +61,19 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006180 RID: 24960 RVA: 0x0026AF56 File Offset: 0x00269156
+	// Token: 0x060061A5 RID: 24997 RVA: 0x0026C47E File Offset: 0x0026A67E
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(this.ownerID);
 	}
 
-	// Token: 0x06006181 RID: 24961 RVA: 0x0026AF69 File Offset: 0x00269169
+	// Token: 0x060061A6 RID: 24998 RVA: 0x0026C491 File Offset: 0x0026A691
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return this.ownerID;
 	}
 
-	// Token: 0x06006182 RID: 24962 RVA: 0x0026AF71 File Offset: 0x00269171
+	// Token: 0x060061A7 RID: 24999 RVA: 0x0026C499 File Offset: 0x0026A699
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.ownerID = _userIdentifier;
@@ -81,19 +81,19 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		this.setModified();
 	}
 
-	// Token: 0x06006183 RID: 24963 RVA: 0x0026AF86 File Offset: 0x00269186
+	// Token: 0x060061A8 RID: 25000 RVA: 0x0026C4AE File Offset: 0x0026A6AE
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetSendSlots()
 	{
 		this.ClientData.SendSlots = true;
 	}
 
-	// Token: 0x06006184 RID: 24964 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060061A9 RID: 25001 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnSetLocalChunkPosition()
 	{
 	}
 
-	// Token: 0x06006185 RID: 24965 RVA: 0x0026AF94 File Offset: 0x00269194
+	// Token: 0x060061AA RID: 25002 RVA: 0x0026C4BC File Offset: 0x0026A6BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetOwnerEntityID()
 	{
@@ -111,7 +111,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		this.ownerEntityID = -1;
 	}
 
-	// Token: 0x06006186 RID: 24966 RVA: 0x0026AFE4 File Offset: 0x002691E4
+	// Token: 0x060061AB RID: 25003 RVA: 0x0026C50C File Offset: 0x0026A70C
 	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -165,7 +165,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006187 RID: 24967 RVA: 0x0026B130 File Offset: 0x00269330
+	// Token: 0x060061AC RID: 25004 RVA: 0x0026C658 File Offset: 0x0026A858
 	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -200,9 +200,9 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A08 RID: 2568
-	// (get) Token: 0x06006188 RID: 24968 RVA: 0x0026B204 File Offset: 0x00269404
-	// (set) Token: 0x06006189 RID: 24969 RVA: 0x0026B22E File Offset: 0x0026942E
+	// Token: 0x17000A0E RID: 2574
+	// (get) Token: 0x060061AD RID: 25005 RVA: 0x0026C72C File Offset: 0x0026A92C
+	// (set) Token: 0x060061AE RID: 25006 RVA: 0x0026C756 File Offset: 0x0026A956
 	public bool IsLocked
 	{
 		get
@@ -225,9 +225,9 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A09 RID: 2569
-	// (get) Token: 0x0600618A RID: 24970 RVA: 0x0026B260 File Offset: 0x00269460
-	// (set) Token: 0x0600618B RID: 24971 RVA: 0x0026B28A File Offset: 0x0026948A
+	// Token: 0x17000A0F RID: 2575
+	// (get) Token: 0x060061AF RID: 25007 RVA: 0x0026C788 File Offset: 0x0026A988
+	// (set) Token: 0x060061B0 RID: 25008 RVA: 0x0026C7B2 File Offset: 0x0026A9B2
 	public ItemStack[] ItemSlots
 	{
 		get
@@ -250,9 +250,9 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A0A RID: 2570
-	// (get) Token: 0x0600618C RID: 24972 RVA: 0x0026B2BC File Offset: 0x002694BC
-	// (set) Token: 0x0600618D RID: 24973 RVA: 0x0026B2E6 File Offset: 0x002694E6
+	// Token: 0x17000A10 RID: 2576
+	// (get) Token: 0x060061B1 RID: 25009 RVA: 0x0026C7E4 File Offset: 0x0026A9E4
+	// (set) Token: 0x060061B2 RID: 25010 RVA: 0x0026C80E File Offset: 0x0026AA0E
 	public int TargetType
 	{
 		get
@@ -274,8 +274,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A0B RID: 2571
-	// (get) Token: 0x0600618E RID: 24974 RVA: 0x0026B312 File Offset: 0x00269512
+	// Token: 0x17000A11 RID: 2577
+	// (get) Token: 0x060061B3 RID: 25011 RVA: 0x0026C83A File Offset: 0x0026AA3A
 	public bool TargetSelf
 	{
 		get
@@ -284,8 +284,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A0C RID: 2572
-	// (get) Token: 0x0600618F RID: 24975 RVA: 0x0026B31F File Offset: 0x0026951F
+	// Token: 0x17000A12 RID: 2578
+	// (get) Token: 0x060061B4 RID: 25012 RVA: 0x0026C847 File Offset: 0x0026AA47
 	public bool TargetAllies
 	{
 		get
@@ -294,8 +294,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A0D RID: 2573
-	// (get) Token: 0x06006190 RID: 24976 RVA: 0x0026B32C File Offset: 0x0026952C
+	// Token: 0x17000A13 RID: 2579
+	// (get) Token: 0x060061B5 RID: 25013 RVA: 0x0026C854 File Offset: 0x0026AA54
 	public bool TargetStrangers
 	{
 		get
@@ -304,8 +304,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x17000A0E RID: 2574
-	// (get) Token: 0x06006191 RID: 24977 RVA: 0x0026B339 File Offset: 0x00269539
+	// Token: 0x17000A14 RID: 2580
+	// (get) Token: 0x060061B6 RID: 25014 RVA: 0x0026C861 File Offset: 0x0026AA61
 	public bool TargetZombies
 	{
 		get
@@ -314,7 +314,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006192 RID: 24978 RVA: 0x0026B348 File Offset: 0x00269548
+	// Token: 0x060061B7 RID: 25015 RVA: 0x0026C870 File Offset: 0x0026AA70
 	public bool TryStackItem(ItemStack itemStack)
 	{
 		if (this.IsLocked)
@@ -351,7 +351,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return false;
 	}
 
-	// Token: 0x06006193 RID: 24979 RVA: 0x0026B464 File Offset: 0x00269664
+	// Token: 0x060061B8 RID: 25016 RVA: 0x0026C98C File Offset: 0x0026AB8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetValuesFromBlock(ushort blockID)
 	{
@@ -372,13 +372,13 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		this.ShowTargeting = true;
 	}
 
-	// Token: 0x06006194 RID: 24980 RVA: 0x0026B51D File Offset: 0x0026971D
+	// Token: 0x060061B9 RID: 25017 RVA: 0x0026CA45 File Offset: 0x0026AC45
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.PowerRangeTrap;
 	}
 
-	// Token: 0x06006195 RID: 24981 RVA: 0x0026B524 File Offset: 0x00269724
+	// Token: 0x060061BA RID: 25018 RVA: 0x0026CA4C File Offset: 0x0026AC4C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool DecrementAmmo(out ItemClass _ammoItem)
 	{
@@ -402,7 +402,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return false;
 	}
 
-	// Token: 0x06006196 RID: 24982 RVA: 0x0026B5A8 File Offset: 0x002697A8
+	// Token: 0x060061BB RID: 25019 RVA: 0x0026CAD0 File Offset: 0x0026ACD0
 	public ItemClass CurrentAmmoItem()
 	{
 		foreach (ItemStack itemStack in this.ItemSlots)
@@ -415,7 +415,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return null;
 	}
 
-	// Token: 0x06006197 RID: 24983 RVA: 0x0026B5E4 File Offset: 0x002697E4
+	// Token: 0x060061BC RID: 25020 RVA: 0x0026CB0C File Offset: 0x0026AD0C
 	public bool AddItem(ItemStack _itemStack)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation, -1))
@@ -437,7 +437,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return false;
 	}
 
-	// Token: 0x06006198 RID: 24984 RVA: 0x0026B64C File Offset: 0x0026984C
+	// Token: 0x060061BD RID: 25021 RVA: 0x0026CB74 File Offset: 0x0026AD74
 	public override void ClientUpdate()
 	{
 		if (Time.time > this.updateTime)
@@ -459,7 +459,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006199 RID: 24985 RVA: 0x0026B6DC File Offset: 0x002698DC
+	// Token: 0x060061BE RID: 25022 RVA: 0x0026CC04 File Offset: 0x0026AE04
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -475,7 +475,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		GameManager.Instance.DropContentInLootContainerServer(-1, "DroppedLootContainer", vector, list.ToArray(), true, null);
 	}
 
-	// Token: 0x0600619A RID: 24986 RVA: 0x0026B748 File Offset: 0x00269948
+	// Token: 0x060061BF RID: 25023 RVA: 0x0026CC70 File Offset: 0x0026AE70
 	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
@@ -489,32 +489,32 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return true;
 	}
 
-	// Token: 0x04004C6B RID: 19563
+	// Token: 0x04004C90 RID: 19600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C6C RID: 19564
+	// Token: 0x04004C91 RID: 19601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass[] ammoItems;
 
-	// Token: 0x04004C6D RID: 19565
+	// Token: 0x04004C92 RID: 19602
 	public readonly TileEntityPoweredRangedTrap.ClientAmmoData ClientData = new TileEntityPoweredRangedTrap.ClientAmmoData();
 
-	// Token: 0x04004C6E RID: 19566
+	// Token: 0x04004C93 RID: 19603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs ownerID;
 
-	// Token: 0x04004C6F RID: 19567
+	// Token: 0x04004C94 RID: 19604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ownerEntityID = -1;
 
-	// Token: 0x04004C70 RID: 19568
+	// Token: 0x04004C95 RID: 19605
 	public bool ShowTargeting = true;
 
-	// Token: 0x02000C85 RID: 3205
+	// Token: 0x02000C90 RID: 3216
 	public class ClientAmmoData
 	{
-		// Token: 0x0600619B RID: 24987 RVA: 0x0026B7C0 File Offset: 0x002699C0
+		// Token: 0x060061C0 RID: 25024 RVA: 0x0026CCE8 File Offset: 0x0026AEE8
 		public ClientAmmoData()
 		{
 			for (int i = 0; i < this.ItemSlots.Length; i++)
@@ -523,16 +523,16 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 			}
 		}
 
-		// Token: 0x04004C71 RID: 19569
+		// Token: 0x04004C96 RID: 19606
 		public bool IsLocked;
 
-		// Token: 0x04004C72 RID: 19570
+		// Token: 0x04004C97 RID: 19607
 		public bool SendSlots;
 
-		// Token: 0x04004C73 RID: 19571
+		// Token: 0x04004C98 RID: 19608
 		public ItemStack[] ItemSlots = new ItemStack[3];
 
-		// Token: 0x04004C74 RID: 19572
+		// Token: 0x04004C99 RID: 19609
 		public int TargetType = 12;
 	}
 }

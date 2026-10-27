@@ -2,12 +2,12 @@
 
 namespace SharpEXR
 {
-	// Token: 0x02001705 RID: 5893
+	// Token: 0x02001724 RID: 5924
 	public enum RoundingMode
 	{
-		// Token: 0x04008979 RID: 35193
+		// Token: 0x04008A2C RID: 35372
 		Down,
-		// Token: 0x0400897A RID: 35194
+		// Token: 0x04008A2D RID: 35373
 		Up
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020010E3 RID: 4323
-// (Invoke) Token: 0x06008975 RID: 35189
+// Token: 0x020010F3 RID: 4339
+// (Invoke) Token: 0x060089C8 RID: 35272
 public delegate void XuiEvent_WorkstationItemsChanged();

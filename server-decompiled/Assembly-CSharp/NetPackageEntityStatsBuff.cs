@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020001D3 RID: 467
+// Token: 0x020001D5 RID: 469
 [Preserve]
 public class NetPackageEntityStatsBuff : NetPackage
 {
 	// Token: 0x1700010D RID: 269
-	// (get) Token: 0x06000E6D RID: 3693 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x06000E71 RID: 3697 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityStatsBuff : NetPackage
 		}
 	}
 
-	// Token: 0x06000E6E RID: 3694 RVA: 0x0005F534 File Offset: 0x0005D734
+	// Token: 0x06000E72 RID: 3698 RVA: 0x0005F7F8 File Offset: 0x0005D9F8
 	public NetPackageEntityStatsBuff Setup(EntityAlive entity, byte[] _data = null)
 	{
 		this.m_entityId = entity.entityId;
@@ -36,14 +36,14 @@ public class NetPackageEntityStatsBuff : NetPackage
 		return this;
 	}
 
-	// Token: 0x06000E6F RID: 3695 RVA: 0x0005F5C4 File Offset: 0x0005D7C4
+	// Token: 0x06000E73 RID: 3699 RVA: 0x0005F888 File Offset: 0x0005DA88
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.m_entityId = _reader.ReadInt32();
 		this.data = _reader.ReadBytes(_reader.ReadInt32());
 	}
 
-	// Token: 0x06000E70 RID: 3696 RVA: 0x0005F5E4 File Offset: 0x0005D7E4
+	// Token: 0x06000E74 RID: 3700 RVA: 0x0005F8A8 File Offset: 0x0005DAA8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -52,7 +52,7 @@ public class NetPackageEntityStatsBuff : NetPackage
 		_writer.Write(this.data);
 	}
 
-	// Token: 0x06000E71 RID: 3697 RVA: 0x0005F614 File Offset: 0x0005D814
+	// Token: 0x06000E75 RID: 3701 RVA: 0x0005F8D8 File Offset: 0x0005DAD8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -82,11 +82,11 @@ public class NetPackageEntityStatsBuff : NetPackage
 		}
 	}
 
-	// Token: 0x04000C4F RID: 3151
+	// Token: 0x04000C51 RID: 3153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_entityId;
 
-	// Token: 0x04000C50 RID: 3152
+	// Token: 0x04000C52 RID: 3154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

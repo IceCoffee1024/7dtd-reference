@@ -1,166 +1,166 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001143 RID: 4419
+// Token: 0x02001153 RID: 4435
 public class XUiM_Player : XUiModel
 {
-	// Token: 0x06008B44 RID: 35652 RVA: 0x00352E89 File Offset: 0x00351089
+	// Token: 0x06008B98 RID: 35736 RVA: 0x00354F39 File Offset: 0x00353139
 	public static int GetLevel(EntityPlayer _player)
 	{
 		return _player.Progression.GetLevel();
 	}
 
-	// Token: 0x06008B45 RID: 35653 RVA: 0x00352E96 File Offset: 0x00351096
+	// Token: 0x06008B99 RID: 35737 RVA: 0x00354F46 File Offset: 0x00353146
 	public static float GetLevelPercent(EntityPlayer _player)
 	{
 		return _player.Progression.GetLevelProgressPercentage();
 	}
 
-	// Token: 0x06008B46 RID: 35654 RVA: 0x00352EA3 File Offset: 0x003510A3
+	// Token: 0x06008B9A RID: 35738 RVA: 0x00354F53 File Offset: 0x00353153
 	public static int GetXPToNextLevel(EntityPlayer _player)
 	{
 		return _player.Progression.ExpToNextLevel;
 	}
 
-	// Token: 0x06008B47 RID: 35655 RVA: 0x00352EB0 File Offset: 0x003510B0
+	// Token: 0x06008B9B RID: 35739 RVA: 0x00354F60 File Offset: 0x00353160
 	public static float GetFood(EntityPlayer _player)
 	{
 		return _player.Stats.Food.Value;
 	}
 
-	// Token: 0x06008B48 RID: 35656 RVA: 0x00352EC2 File Offset: 0x003510C2
+	// Token: 0x06008B9C RID: 35740 RVA: 0x00354F72 File Offset: 0x00353172
 	public static float GetModifiedCurrentFood(EntityPlayer _player)
 	{
 		return _player.Stats.Food.Value + _player.Buffs.GetCustomVar("$foodAmount");
 	}
 
-	// Token: 0x06008B49 RID: 35657 RVA: 0x00352EE5 File Offset: 0x003510E5
+	// Token: 0x06008B9D RID: 35741 RVA: 0x00354F95 File Offset: 0x00353195
 	public static float GetFoodPercent(EntityPlayer _player)
 	{
 		return 1f - _player.Stats.Food.Value / _player.Stats.Food.ModifiedMax;
 	}
 
-	// Token: 0x06008B4A RID: 35658 RVA: 0x00352F0E File Offset: 0x0035110E
+	// Token: 0x06008B9E RID: 35742 RVA: 0x00354FBE File Offset: 0x003531BE
 	public static int GetFoodMax(EntityPlayer _player)
 	{
 		return (int)_player.Stats.Food.Max;
 	}
 
-	// Token: 0x06008B4B RID: 35659 RVA: 0x00352F21 File Offset: 0x00351121
+	// Token: 0x06008B9F RID: 35743 RVA: 0x00354FD1 File Offset: 0x003531D1
 	public static float GetWater(EntityPlayer _player)
 	{
 		return _player.Stats.Water.Value;
 	}
 
-	// Token: 0x06008B4C RID: 35660 RVA: 0x00352F33 File Offset: 0x00351133
+	// Token: 0x06008BA0 RID: 35744 RVA: 0x00354FE3 File Offset: 0x003531E3
 	public static float GetModifiedCurrentWater(EntityPlayer _player)
 	{
 		return _player.Stats.Water.Value + _player.Buffs.GetCustomVar("$waterAmount");
 	}
 
-	// Token: 0x06008B4D RID: 35661 RVA: 0x00352F56 File Offset: 0x00351156
+	// Token: 0x06008BA1 RID: 35745 RVA: 0x00355006 File Offset: 0x00353206
 	public static float GetWaterPercent(EntityPlayer _player)
 	{
 		return _player.Stats.Water.ValuePercentUI * 100f;
 	}
 
-	// Token: 0x06008B4E RID: 35662 RVA: 0x00352F6E File Offset: 0x0035116E
+	// Token: 0x06008BA2 RID: 35746 RVA: 0x0035501E File Offset: 0x0035321E
 	public static int GetWaterMax(EntityPlayer _player)
 	{
 		return (int)_player.Stats.Water.Max;
 	}
 
-	// Token: 0x06008B4F RID: 35663 RVA: 0x00352F81 File Offset: 0x00351181
+	// Token: 0x06008BA3 RID: 35747 RVA: 0x00355031 File Offset: 0x00353231
 	public static string GetCoreTemp(EntityPlayer _player)
 	{
 		return ValueDisplayFormatters.Temperature(_player.Buffs.GetCustomVar("_coretemp"), -1);
 	}
 
-	// Token: 0x06008B50 RID: 35664 RVA: 0x00352F99 File Offset: 0x00351199
+	// Token: 0x06008BA4 RID: 35748 RVA: 0x00355049 File Offset: 0x00353249
 	public static string GetOutsideTemp(EntityPlayer _player)
 	{
 		return ValueDisplayFormatters.Temperature(_player.Buffs.GetCustomVar("_outsidetemp"), -1);
 	}
 
-	// Token: 0x06008B51 RID: 35665 RVA: 0x00352FB1 File Offset: 0x003511B1
+	// Token: 0x06008BA5 RID: 35749 RVA: 0x00355061 File Offset: 0x00353261
 	public static int GetZombieKills(EntityPlayer _player)
 	{
 		return _player.KilledZombies;
 	}
 
-	// Token: 0x06008B52 RID: 35666 RVA: 0x00352FB9 File Offset: 0x003511B9
+	// Token: 0x06008BA6 RID: 35750 RVA: 0x00355069 File Offset: 0x00353269
 	public static int GetPlayerKills(EntityPlayer _player)
 	{
 		return _player.KilledPlayers;
 	}
 
-	// Token: 0x06008B53 RID: 35667 RVA: 0x00352FC1 File Offset: 0x003511C1
+	// Token: 0x06008BA7 RID: 35751 RVA: 0x00355071 File Offset: 0x00353271
 	public static int GetDeaths(EntityPlayer _player)
 	{
 		return _player.Died;
 	}
 
-	// Token: 0x06008B54 RID: 35668 RVA: 0x00352FC9 File Offset: 0x003511C9
+	// Token: 0x06008BA8 RID: 35752 RVA: 0x00355079 File Offset: 0x00353279
 	public static string GetKMTraveled(EntityPlayer _player)
 	{
 		return (_player.distanceWalked / 1000f).ToCultureInvariantString("0.00") + " KM";
 	}
 
-	// Token: 0x06008B55 RID: 35669 RVA: 0x00352FEB File Offset: 0x003511EB
+	// Token: 0x06008BA9 RID: 35753 RVA: 0x0035509B File Offset: 0x0035329B
 	public static int GetItemsCrafted(EntityPlayer _player)
 	{
 		return (int)_player.totalItemsCrafted;
 	}
 
-	// Token: 0x06008B56 RID: 35670 RVA: 0x00352FF3 File Offset: 0x003511F3
+	// Token: 0x06008BAA RID: 35754 RVA: 0x003550A3 File Offset: 0x003532A3
 	public static string GetLongestLife(EntityPlayer _player)
 	{
 		return XUiM_PlayerBuffs.GetTimeString((float)((int)_player.longestLife) * 60f);
 	}
 
-	// Token: 0x06008B57 RID: 35671 RVA: 0x00353008 File Offset: 0x00351208
+	// Token: 0x06008BAB RID: 35755 RVA: 0x003550B8 File Offset: 0x003532B8
 	public static string GetCurrentLife(EntityPlayer _player)
 	{
 		return XUiM_PlayerBuffs.GetTimeString((float)((int)_player.currentLife) * 60f);
 	}
 
-	// Token: 0x06008B58 RID: 35672 RVA: 0x0035301D File Offset: 0x0035121D
+	// Token: 0x06008BAC RID: 35756 RVA: 0x003550CD File Offset: 0x003532CD
 	public static float GetHealth(EntityPlayer _player)
 	{
 		return _player.Stats.Health.Value;
 	}
 
-	// Token: 0x06008B59 RID: 35673 RVA: 0x0035302F File Offset: 0x0035122F
+	// Token: 0x06008BAD RID: 35757 RVA: 0x003550DF File Offset: 0x003532DF
 	public static float GetStamina(EntityPlayer _player)
 	{
 		return _player.Stats.Stamina.Value;
 	}
 
-	// Token: 0x06008B5A RID: 35674 RVA: 0x00353041 File Offset: 0x00351241
+	// Token: 0x06008BAE RID: 35758 RVA: 0x003550F1 File Offset: 0x003532F1
 	public static float GetMaxHealth(EntityPlayer _player)
 	{
 		return _player.Stats.Health.Max;
 	}
 
-	// Token: 0x06008B5B RID: 35675 RVA: 0x00353053 File Offset: 0x00351253
+	// Token: 0x06008BAF RID: 35759 RVA: 0x00355103 File Offset: 0x00353303
 	public static float GetMaxStamina(EntityPlayer _player)
 	{
 		return _player.Stats.Stamina.Max;
 	}
 
-	// Token: 0x06008B5C RID: 35676 RVA: 0x00353065 File Offset: 0x00351265
+	// Token: 0x06008BB0 RID: 35760 RVA: 0x00355115 File Offset: 0x00353315
 	public static bool GetHasFullHealth(EntityPlayer _player)
 	{
 		return Mathf.Approximately(_player.Stats.Health.Max, _player.Stats.Health.Value);
 	}
 
-	// Token: 0x06008B5D RID: 35677 RVA: 0x0035308C File Offset: 0x0035128C
+	// Token: 0x06008BB1 RID: 35761 RVA: 0x0035513C File Offset: 0x0035333C
 	public static EntityPlayer GetPlayer()
 	{
 		return GameManager.Instance.World.GetPrimaryPlayer();
 	}
 
-	// Token: 0x06008B5E RID: 35678 RVA: 0x0035309D File Offset: 0x0035129D
+	// Token: 0x06008BB2 RID: 35762 RVA: 0x0035514D File Offset: 0x0035334D
 	public static EntityPlayer GetPlayer(int _id)
 	{
 		if (GameManager.Instance != null && GameManager.Instance.World != null)
@@ -170,13 +170,13 @@ public class XUiM_Player : XUiModel
 		return null;
 	}
 
-	// Token: 0x06008B5F RID: 35679 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008BB3 RID: 35763 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void CalcDisplayProtectionValues()
 	{
 	}
 
-	// Token: 0x06008B60 RID: 35680 RVA: 0x003530D0 File Offset: 0x003512D0
+	// Token: 0x06008BB4 RID: 35764 RVA: 0x00355180 File Offset: 0x00353380
 	public static string GetStatValue(PassiveEffects _effect, EntityPlayer _player, DisplayInfoEntry _entry, FastTags<TagGroup.Global> _overrideMovementTag)
 	{
 		FastTags<TagGroup.Global> fastTags = _player.generalTags;

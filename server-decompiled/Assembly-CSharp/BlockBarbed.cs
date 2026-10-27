@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockBarbed : BlockDamage
 {
-	// Token: 0x06000743 RID: 1859 RVA: 0x000341F4 File Offset: 0x000323F4
+	// Token: 0x06000743 RID: 1859 RVA: 0x000341B4 File Offset: 0x000323B4
 	public override bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _targetEntity)
 	{
 		if (!base.OnEntityCollidedWithBlock(_world, _blockPos, _blockValue, _targetEntity))

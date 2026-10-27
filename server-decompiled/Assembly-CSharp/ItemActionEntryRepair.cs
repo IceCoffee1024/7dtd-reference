@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using XMLData.Item;
 
-// Token: 0x02000D6F RID: 3439
+// Token: 0x02000D7A RID: 3450
 [Preserve]
 public class ItemActionEntryRepair : BaseItemActionEntry
 {
-	// Token: 0x0600681B RID: 26651 RVA: 0x002942B4 File Offset: 0x002924B4
+	// Token: 0x06006840 RID: 26688 RVA: 0x002957DC File Offset: 0x002939DC
 	public ItemActionEntryRepair(XUiController _controller)
 		: base(_controller, "lblContextActionRepair", "ui_game_symbol_wrench", BaseItemActionEntry.GamepadShortCut.DPadLeft, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -16,7 +16,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		_controller.xui.PlayerInventory.OnToolbeltItemsChanged += this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x0600681C RID: 26652 RVA: 0x00294315 File Offset: 0x00292515
+	// Token: 0x06006841 RID: 26689 RVA: 0x0029583D File Offset: 0x00293A3D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
@@ -29,7 +29,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		parentItem.MarkDirty();
 	}
 
-	// Token: 0x0600681D RID: 26653 RVA: 0x00294315 File Offset: 0x00292515
+	// Token: 0x06006842 RID: 26690 RVA: 0x0029583D File Offset: 0x00293A3D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
@@ -42,7 +42,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		parentItem.MarkDirty();
 	}
 
-	// Token: 0x0600681E RID: 26654 RVA: 0x00294330 File Offset: 0x00292530
+	// Token: 0x06006843 RID: 26691 RVA: 0x00295858 File Offset: 0x00293A58
 	public override void OnDisabledActivate()
 	{
 		switch (this.state)
@@ -110,7 +110,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0600681F RID: 26655 RVA: 0x00294520 File Offset: 0x00292720
+	// Token: 0x06006844 RID: 26692 RVA: 0x00295A48 File Offset: 0x00293C48
 	public override void RefreshEnabled()
 	{
 		base.RefreshEnabled();
@@ -191,7 +191,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006820 RID: 26656 RVA: 0x002946FC File Offset: 0x002928FC
+	// Token: 0x06006845 RID: 26693 RVA: 0x00295C24 File Offset: 0x00293E24
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;
@@ -260,7 +260,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		playerInventory.RemoveItems(recipe.ingredients, 1, null);
 	}
 
-	// Token: 0x06006821 RID: 26657 RVA: 0x00294984 File Offset: 0x00292B84
+	// Token: 0x06006846 RID: 26694 RVA: 0x00295EAC File Offset: 0x002940AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ItemActionEntryRepair_TimeIntervalElapsedEvent(float _timeLeft, XUiC_ItemStack _uiItemStack)
 	{
@@ -275,7 +275,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		_uiItemStack.UnlockStack();
 	}
 
-	// Token: 0x06006822 RID: 26658 RVA: 0x002949F0 File Offset: 0x00292BF0
+	// Token: 0x06006847 RID: 26695 RVA: 0x00295F18 File Offset: 0x00294118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void warnQueueFull()
 	{
@@ -288,30 +288,30 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x06006823 RID: 26659 RVA: 0x00294A54 File Offset: 0x00292C54
+	// Token: 0x06006848 RID: 26696 RVA: 0x00295F7C File Offset: 0x0029417C
 	public override void DisableEvents()
 	{
 		base.ItemController.xui.PlayerInventory.OnBackpackItemsChanged -= this.PlayerInventory_OnBackpackItemsChanged;
 		base.ItemController.xui.PlayerInventory.OnToolbeltItemsChanged -= this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x04005035 RID: 20533
+	// Token: 0x0400505A RID: 20570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntryRepair.StateTypes state;
 
-	// Token: 0x02000D70 RID: 3440
+	// Token: 0x02000D7B RID: 3451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04005037 RID: 20535
+		// Token: 0x0400505C RID: 20572
 		Normal,
-		// Token: 0x04005038 RID: 20536
+		// Token: 0x0400505D RID: 20573
 		RecipeLocked,
-		// Token: 0x04005039 RID: 20537
+		// Token: 0x0400505E RID: 20574
 		NotEnoughMaterials,
-		// Token: 0x0400503A RID: 20538
+		// Token: 0x0400505F RID: 20575
 		NoLongerRepairable,
-		// Token: 0x0400503B RID: 20539
+		// Token: 0x04005060 RID: 20576
 		DurabilityWouldBeReduced
 	}
 }

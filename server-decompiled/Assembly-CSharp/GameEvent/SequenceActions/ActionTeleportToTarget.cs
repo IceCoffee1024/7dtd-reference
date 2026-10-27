@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019FC RID: 6652
+	// Token: 0x02001A2D RID: 6701
 	[Preserve]
 	public class ActionTeleportToTarget : ActionBaseTeleport
 	{
-		// Token: 0x0600CB33 RID: 52019 RVA: 0x004A4EFC File Offset: 0x004A30FC
+		// Token: 0x0600CC47 RID: 52295 RVA: 0x004A89F8 File Offset: 0x004A6BF8
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.targetGroup != "")
@@ -29,7 +29,7 @@ namespace GameEvent.SequenceActions
 			return this.HandleTeleportToTarget(base.Owner.Target);
 		}
 
-		// Token: 0x0600CB34 RID: 52020 RVA: 0x004A4F68 File Offset: 0x004A3168
+		// Token: 0x0600CC48 RID: 52296 RVA: 0x004A8A64 File Offset: 0x004A6C64
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BaseAction.ActionCompleteStates HandleTeleportToTarget(Entity target)
 		{
@@ -55,7 +55,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600CB35 RID: 52021 RVA: 0x004A4FF8 File Offset: 0x004A31F8
+		// Token: 0x0600CC49 RID: 52297 RVA: 0x004A8AF4 File Offset: 0x004A6CF4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -68,7 +68,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionTeleportToTarget.PropTeleportToGroup, ref this.teleportToGroup);
 		}
 
-		// Token: 0x0600CB36 RID: 52022 RVA: 0x004A5084 File Offset: 0x004A3284
+		// Token: 0x0600CC4A RID: 52298 RVA: 0x004A8B80 File Offset: 0x004A6D80
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -85,65 +85,65 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099E2 RID: 39394
+		// Token: 0x04009ACB RID: 39627
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float minDistance = 8f;
 
-		// Token: 0x040099E3 RID: 39395
+		// Token: 0x04009ACC RID: 39628
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 12f;
 
-		// Token: 0x040099E4 RID: 39396
+		// Token: 0x04009ACD RID: 39629
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool safeSpawn;
 
-		// Token: 0x040099E5 RID: 39397
+		// Token: 0x04009ACE RID: 39630
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool airSpawn;
 
-		// Token: 0x040099E6 RID: 39398
+		// Token: 0x04009ACF RID: 39631
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float yOffset;
 
-		// Token: 0x040099E7 RID: 39399
+		// Token: 0x04009AD0 RID: 39632
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string teleportToGroup = "";
 
-		// Token: 0x040099E8 RID: 39400
+		// Token: 0x04009AD1 RID: 39633
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionTeleportToTarget.TargetTypes targetType;
 
-		// Token: 0x040099E9 RID: 39401
+		// Token: 0x04009AD2 RID: 39634
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinDistance = "min_distance";
 
-		// Token: 0x040099EA RID: 39402
+		// Token: 0x04009AD3 RID: 39635
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x040099EB RID: 39403
+		// Token: 0x04009AD4 RID: 39636
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnInSafe = "safe_spawn";
 
-		// Token: 0x040099EC RID: 39404
+		// Token: 0x04009AD5 RID: 39637
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnInAir = "air_spawn";
 
-		// Token: 0x040099ED RID: 39405
+		// Token: 0x04009AD6 RID: 39638
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropYOffset = "yoffset";
 
-		// Token: 0x040099EE RID: 39406
+		// Token: 0x04009AD7 RID: 39639
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTeleportToGroup = "teleport_to_group";
 
-		// Token: 0x020019FD RID: 6653
+		// Token: 0x02001A2E RID: 6702
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum TargetTypes
 		{
-			// Token: 0x040099F0 RID: 39408
+			// Token: 0x04009AD9 RID: 39641
 			Target,
-			// Token: 0x040099F1 RID: 39409
+			// Token: 0x04009ADA RID: 39642
 			TargetGroup_Random
 		}
 	}

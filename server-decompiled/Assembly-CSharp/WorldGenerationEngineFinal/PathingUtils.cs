@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001730 RID: 5936
+	// Token: 0x02001761 RID: 5985
 	[BurstCompile(CompileSynchronously = true)]
 	public class PathingUtils
 	{
-		// Token: 0x0600B8F8 RID: 47352 RVA: 0x00447A0D File Offset: 0x00445C0D
+		// Token: 0x0600BA0C RID: 47628 RVA: 0x0044B3B9 File Offset: 0x004495B9
 		public PathingUtils(WorldBuilder _worldBuilder)
 		{
 			PathingUtils.worldBuilder = _worldBuilder;
 			this.data.nodePool = new PathNodePool(100000);
 		}
 
-		// Token: 0x0600B8F9 RID: 47353 RVA: 0x00447A48 File Offset: 0x00445C48
+		// Token: 0x0600BA0D RID: 47629 RVA: 0x0044B3F4 File Offset: 0x004495F4
 		public int GetPathCost(Vector2i start, Vector2i end, bool isCountryRoad = false)
 		{
 			this.InitPathData();
@@ -36,7 +36,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B8FA RID: 47354 RVA: 0x00447AC4 File Offset: 0x00445CC4
+		// Token: 0x0600BA0E RID: 47630 RVA: 0x0044B470 File Offset: 0x00449670
 		public NativeList<Vector2i> GetPath(Vector2i _start, Vector2i _end, bool _isCountryRoad, bool _isRiver = false)
 		{
 			this.InitPathData();
@@ -57,7 +57,7 @@ namespace WorldGenerationEngineFinal
 			return this.pathTemp;
 		}
 
-		// Token: 0x0600B8FB RID: 47355 RVA: 0x00447B70 File Offset: 0x00445D70
+		// Token: 0x0600BA0F RID: 47631 RVA: 0x0044B51C File Offset: 0x0044971C
 		public Vector2i GetPathPoint(Vector2i _start, ref NativeList<Vector2> _endPath, bool _isCountryRoad, bool _isRiver, out int _cost)
 		{
 			this.InitPathData();
@@ -90,14 +90,14 @@ namespace WorldGenerationEngineFinal
 			return vector2i;
 		}
 
-		// Token: 0x0600B8FC RID: 47356 RVA: 0x00447C4A File Offset: 0x00445E4A
+		// Token: 0x0600BA10 RID: 47632 RVA: 0x0044B5F6 File Offset: 0x004497F6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InitPathData()
 		{
 			this.data.WorldSize = PathingUtils.worldBuilder.WorldSize;
 		}
 
-		// Token: 0x0600B8FD RID: 47357 RVA: 0x00447C64 File Offset: 0x00445E64
+		// Token: 0x0600BA11 RID: 47633 RVA: 0x0044B610 File Offset: 0x00449810
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConvertPathToTemp(ref NativeList<Vector2> _path)
 		{
@@ -111,7 +111,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B8FE RID: 47358 RVA: 0x00447CE0 File Offset: 0x00445EE0
+		// Token: 0x0600BA12 RID: 47634 RVA: 0x0044B68C File Offset: 0x0044988C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe static void ClosedListInit(ref PathingUtils.Data data)
 		{
@@ -130,15 +130,15 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B8FF RID: 47359 RVA: 0x00447D6A File Offset: 0x00445F6A
+		// Token: 0x0600BA13 RID: 47635 RVA: 0x0044B716 File Offset: 0x00449916
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int FindDetailedPath(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in Vector2i endPos, bool _isCountryRoad, bool _isRiver)
 		{
-			return PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.Invoke(ref wd, ref data, in startPos, in endPos, _isCountryRoad, _isRiver);
+			return PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.Invoke(ref wd, ref data, in startPos, in endPos, _isCountryRoad, _isRiver);
 		}
 
-		// Token: 0x0600B900 RID: 47360 RVA: 0x00447D7C File Offset: 0x00445F7C
+		// Token: 0x0600BA14 RID: 47636 RVA: 0x0044B728 File Offset: 0x00449928
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float DiagonalDist(Vector2i v1, Vector2i v2)
@@ -148,44 +148,44 @@ namespace WorldGenerationEngineFinal
 			return num + num2 + -0.585786f * Utils.FastMin(num, num2);
 		}
 
-		// Token: 0x0600B901 RID: 47361 RVA: 0x00447DC2 File Offset: 0x00445FC2
+		// Token: 0x0600BA15 RID: 47637 RVA: 0x0044B76E File Offset: 0x0044996E
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int FindDetailedPath(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in NativeList<Vector2i> _endPath, bool _isCountryRoad, bool _isRiver)
 		{
-			return PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.Invoke(ref wd, ref data, in startPos, in _endPath, _isCountryRoad, _isRiver);
+			return PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.Invoke(ref wd, ref data, in startPos, in _endPath, _isCountryRoad, _isRiver);
 		}
 
-		// Token: 0x0600B902 RID: 47362 RVA: 0x00447DD1 File Offset: 0x00445FD1
+		// Token: 0x0600BA16 RID: 47638 RVA: 0x0044B77D File Offset: 0x0044997D
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void CalcPathBounds(in NativeList<Vector2i> _path, out Vector2i _min, out Vector2i _max)
 		{
-			PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.Invoke(in _path, out _min, out _max);
+			PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.Invoke(in _path, out _min, out _max);
 		}
 
-		// Token: 0x0600B903 RID: 47363 RVA: 0x00447DDB File Offset: 0x00445FDB
+		// Token: 0x0600BA17 RID: 47639 RVA: 0x0044B787 File Offset: 0x00449987
 		[BurstCompile(CompileSynchronously = true)]
 		public static float FindClosestPathPoint(in NativeList<Vector2> _path, in Vector2 _startPos, out Vector2 _destPoint, int _step = 1)
 		{
-			return PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.Invoke(in _path, in _startPos, out _destPoint, _step);
+			return PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.Invoke(in _path, in _startPos, out _destPoint, _step);
 		}
 
-		// Token: 0x0600B904 RID: 47364 RVA: 0x00447DE6 File Offset: 0x00445FE6
+		// Token: 0x0600BA18 RID: 47640 RVA: 0x0044B792 File Offset: 0x00449992
 		[BurstCompile(CompileSynchronously = true)]
 		public static float FindClosestPathPoint(in NativeList<Vector2i> _path, in Vector2i _startPos, out Vector2i _destPoint)
 		{
-			return PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.Invoke(in _path, in _startPos, out _destPoint);
+			return PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.Invoke(in _path, in _startPos, out _destPoint);
 		}
 
-		// Token: 0x0600B905 RID: 47365 RVA: 0x00447DF0 File Offset: 0x00445FF0
+		// Token: 0x0600BA19 RID: 47641 RVA: 0x0044B79C File Offset: 0x0044999C
 		[BurstCompile(CompileSynchronously = true)]
 		public static bool IsPointOnPath(in NativeList<Vector2i> _path, in Vector2i _point)
 		{
-			return PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.Invoke(in _path, in _point);
+			return PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.Invoke(in _path, in _point);
 		}
 
-		// Token: 0x0600B906 RID: 47366 RVA: 0x00447DFC File Offset: 0x00445FFC
+		// Token: 0x0600BA1A RID: 47642 RVA: 0x0044B7A8 File Offset: 0x004499A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool IsBlocked(ref WorldBuilder.Data wd, int pathX, int pathY, bool isRiver = false)
 		{
@@ -193,21 +193,21 @@ namespace WorldGenerationEngineFinal
 			return !wd.InWorldBounds(vector2i.x, vector2i.y) || wd.GetStreetTileDataWorld(vector2i.x, vector2i.y).IsCity || (!isRiver && PathingUtils.IsWater(ref wd, pathX, pathY));
 		}
 
-		// Token: 0x0600B907 RID: 47367 RVA: 0x00447E52 File Offset: 0x00446052
+		// Token: 0x0600BA1B RID: 47643 RVA: 0x0044B7FE File Offset: 0x004499FE
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool InBounds(ref WorldBuilder.Data wd, Vector2i pos)
 		{
 			return PathingUtils.InBounds(ref wd, pos.x, pos.y);
 		}
 
-		// Token: 0x0600B908 RID: 47368 RVA: 0x00447E68 File Offset: 0x00446068
+		// Token: 0x0600BA1C RID: 47644 RVA: 0x0044B814 File Offset: 0x00449A14
 		public static bool InBounds(ref WorldBuilder.Data wd, int pathX, int pathY)
 		{
 			Vector2i vector2i = PathingUtils.pathPositionToWorldCenter(pathX, pathY);
 			return (ulong)vector2i.x < (ulong)((long)wd.WorldSize) && (ulong)vector2i.y < (ulong)((long)wd.WorldSize);
 		}
 
-		// Token: 0x0600B909 RID: 47369 RVA: 0x00447EA0 File Offset: 0x004460A0
+		// Token: 0x0600BA1D RID: 47645 RVA: 0x0044B84C File Offset: 0x00449A4C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool IsWater(ref WorldBuilder.Data wd, int pathX, int pathY)
 		{
@@ -228,7 +228,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B90A RID: 47370 RVA: 0x00447F0E File Offset: 0x0044610E
+		// Token: 0x0600BA1E RID: 47646 RVA: 0x0044B8BA File Offset: 0x00449ABA
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float GetHeight(ref WorldBuilder.Data wd, Vector2i pos)
@@ -236,7 +236,7 @@ namespace WorldGenerationEngineFinal
 			return PathingUtils.GetHeight(ref wd, pos.x, pos.y);
 		}
 
-		// Token: 0x0600B90B RID: 47371 RVA: 0x00447F22 File Offset: 0x00446122
+		// Token: 0x0600BA1F RID: 47647 RVA: 0x0044B8CE File Offset: 0x00449ACE
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float GetHeight(ref WorldBuilder.Data wd, int pathX, int pathY)
@@ -244,19 +244,19 @@ namespace WorldGenerationEngineFinal
 			return wd.GetHeight(PathingUtils.pathPositionToWorldCenter(pathX, pathY));
 		}
 
-		// Token: 0x0600B90C RID: 47372 RVA: 0x00447F31 File Offset: 0x00446131
+		// Token: 0x0600BA20 RID: 47648 RVA: 0x0044B8DD File Offset: 0x00449ADD
 		public BiomeType GetBiome(Vector2i pos)
 		{
 			return this.GetBiome(pos.x, pos.y);
 		}
 
-		// Token: 0x0600B90D RID: 47373 RVA: 0x00447F45 File Offset: 0x00446145
+		// Token: 0x0600BA21 RID: 47649 RVA: 0x0044B8F1 File Offset: 0x00449AF1
 		public BiomeType GetBiome(int pathX, int pathY)
 		{
 			return PathingUtils.worldBuilder.GetBiome(PathingUtils.pathPositionToWorldCenter(pathX, pathY));
 		}
 
-		// Token: 0x0600B90E RID: 47374 RVA: 0x00447F58 File Offset: 0x00446158
+		// Token: 0x0600BA22 RID: 47650 RVA: 0x0044B904 File Offset: 0x00449B04
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Vector2i pathPositionToWorldCenter(int pathX, int pathY)
@@ -267,7 +267,7 @@ namespace WorldGenerationEngineFinal
 			return vector2i;
 		}
 
-		// Token: 0x0600B90F RID: 47375 RVA: 0x00447F80 File Offset: 0x00446180
+		// Token: 0x0600BA23 RID: 47651 RVA: 0x0044B92C File Offset: 0x00449B2C
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Vector2i pathPositionToWorldMin(int pathX, int pathY)
@@ -278,7 +278,7 @@ namespace WorldGenerationEngineFinal
 			return vector2i;
 		}
 
-		// Token: 0x0600B910 RID: 47376 RVA: 0x00447FA4 File Offset: 0x004461A4
+		// Token: 0x0600BA24 RID: 47652 RVA: 0x0044B950 File Offset: 0x00449B50
 		public void AddMoveLimitArea(Rect r)
 		{
 			int num = (int)r.xMin;
@@ -297,7 +297,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B911 RID: 47377 RVA: 0x00447FFC File Offset: 0x004461FC
+		// Token: 0x0600BA25 RID: 47653 RVA: 0x0044B9A8 File Offset: 0x00449BA8
 		public void RemoveFullyBlockedArea(Rect r)
 		{
 			int num = (int)r.xMin;
@@ -313,7 +313,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B912 RID: 47378 RVA: 0x0044804C File Offset: 0x0044624C
+		// Token: 0x0600BA26 RID: 47654 RVA: 0x0044B9F8 File Offset: 0x00449BF8
 		public void AddFullyBlockedArea(Rect r)
 		{
 			int num = (int)(r.xMin + 0.5f);
@@ -329,19 +329,19 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B913 RID: 47379 RVA: 0x004480A8 File Offset: 0x004462A8
+		// Token: 0x0600BA27 RID: 47655 RVA: 0x0044BA54 File Offset: 0x00449C54
 		public void SetPathBlocked(Vector2i pos, bool isBlocked)
 		{
 			this.SetPathBlocked(pos.x, pos.y, isBlocked);
 		}
 
-		// Token: 0x0600B914 RID: 47380 RVA: 0x004480BD File Offset: 0x004462BD
+		// Token: 0x0600BA28 RID: 47656 RVA: 0x0044BA69 File Offset: 0x00449C69
 		public void SetPathBlocked(int x, int y, bool isBlocked)
 		{
 			this.SetPathBlocked(x, y, isBlocked ? sbyte.MinValue : 0);
 		}
 
-		// Token: 0x0600B915 RID: 47381 RVA: 0x004480D0 File Offset: 0x004462D0
+		// Token: 0x0600BA29 RID: 47657 RVA: 0x0044BA7C File Offset: 0x00449C7C
 		public void SetPathBlocked(int x, int y, sbyte costMult)
 		{
 			if (!this.data.pathingGrid.IsCreated)
@@ -355,7 +355,7 @@ namespace WorldGenerationEngineFinal
 			this.data.pathingGrid[x + y * this.data.pathingGridSize] = costMult;
 		}
 
-		// Token: 0x0600B916 RID: 47382 RVA: 0x00448136 File Offset: 0x00446336
+		// Token: 0x0600BA2A RID: 47658 RVA: 0x0044BAE2 File Offset: 0x00449CE2
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool IsPathBlocked(ref PathingUtils.Data data, int x, int y)
@@ -363,21 +363,21 @@ namespace WorldGenerationEngineFinal
 			return (ulong)x >= (ulong)((long)data.pathingGridSize) || (ulong)y >= (ulong)((long)data.pathingGridSize) || data.pathingGrid[x + y * data.pathingGridSize] == sbyte.MinValue;
 		}
 
-		// Token: 0x0600B917 RID: 47383 RVA: 0x0044816C File Offset: 0x0044636C
+		// Token: 0x0600BA2B RID: 47659 RVA: 0x0044BB18 File Offset: 0x00449D18
 		public bool IsPointOnHighwayWorld(int x, int y)
 		{
 			int num = x / 10 + y / 10 * PathingUtils.worldBuilder.data.PathTileGridWidth;
 			return PathingUtils.worldBuilder.data.PathTileGrid[num].TileState == PathTile.PathTileStates.Highway;
 		}
 
-		// Token: 0x0600B918 RID: 47384 RVA: 0x004481B0 File Offset: 0x004463B0
+		// Token: 0x0600BA2C RID: 47660 RVA: 0x0044BB5C File Offset: 0x00449D5C
 		public void SetupPathingGrid()
 		{
 			this.data.pathingGridSize = PathingUtils.worldBuilder.WorldSize / 10;
 			this.data.pathingGrid = new NativeArray<sbyte>(this.data.pathingGridSize * this.data.pathingGridSize, Allocator.Persistent, NativeArrayOptions.ClearMemory);
 		}
 
-		// Token: 0x0600B919 RID: 47385 RVA: 0x00448200 File Offset: 0x00446400
+		// Token: 0x0600BA2D RID: 47661 RVA: 0x0044BBAC File Offset: 0x00449DAC
 		public void Cleanup()
 		{
 			this.data.pathingGrid.Dispose();
@@ -388,7 +388,7 @@ namespace WorldGenerationEngineFinal
 			this.pathTemp.Dispose();
 		}
 
-		// Token: 0x0600B91B RID: 47387 RVA: 0x004482F8 File Offset: 0x004464F8
+		// Token: 0x0600BA2F RID: 47663 RVA: 0x0044BCA4 File Offset: 0x00449EA4
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -546,7 +546,7 @@ namespace WorldGenerationEngineFinal
 			return -1;
 		}
 
-		// Token: 0x0600B91C RID: 47388 RVA: 0x00448878 File Offset: 0x00446A78
+		// Token: 0x0600BA30 RID: 47664 RVA: 0x0044C224 File Offset: 0x0044A424
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -641,7 +641,7 @@ namespace WorldGenerationEngineFinal
 			return -1;
 		}
 
-		// Token: 0x0600B91D RID: 47389 RVA: 0x00448C24 File Offset: 0x00446E24
+		// Token: 0x0600BA31 RID: 47665 RVA: 0x0044C5D0 File Offset: 0x0044A7D0
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -659,7 +659,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B91E RID: 47390 RVA: 0x00448CE8 File Offset: 0x00446EE8
+		// Token: 0x0600BA32 RID: 47666 RVA: 0x0044C694 File Offset: 0x0044A894
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -682,7 +682,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B91F RID: 47391 RVA: 0x00448D54 File Offset: 0x00446F54
+		// Token: 0x0600BA33 RID: 47667 RVA: 0x0044C700 File Offset: 0x0044A900
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -703,7 +703,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B920 RID: 47392 RVA: 0x00448DD4 File Offset: 0x00446FD4
+		// Token: 0x0600BA34 RID: 47668 RVA: 0x0044C780 File Offset: 0x0044A980
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -720,32 +720,32 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x04008A16 RID: 35350
+		// Token: 0x04008AFF RID: 35583
 		public const int PATHING_GRID_TILE_SIZE = 10;
 
-		// Token: 0x04008A17 RID: 35351
+		// Token: 0x04008B00 RID: 35584
 		public const int stepSize = 10;
 
-		// Token: 0x04008A18 RID: 35352
+		// Token: 0x04008B01 RID: 35585
 		public static readonly Vector2i stepHalf = new Vector2i(5, 5);
 
-		// Token: 0x04008A19 RID: 35353
+		// Token: 0x04008B02 RID: 35586
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cRoadCountryMaxStepH = 12f;
 
-		// Token: 0x04008A1A RID: 35354
+		// Token: 0x04008B03 RID: 35587
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cRoadHighwayMaxStepH = 11f;
 
-		// Token: 0x04008A1B RID: 35355
+		// Token: 0x04008B04 RID: 35588
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cHeightCostScale = 0.2f;
 
-		// Token: 0x04008A1C RID: 35356
+		// Token: 0x04008B05 RID: 35589
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cNeighborsCount = 8;
 
-		// Token: 0x04008A1D RID: 35357
+		// Token: 0x04008B06 RID: 35590
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Vector2i[] neighborOffset8Ways = new Vector2i[]
 		{
@@ -759,53 +759,53 @@ namespace WorldGenerationEngineFinal
 			new Vector2i(-1, 1)
 		};
 
-		// Token: 0x04008A1E RID: 35358
+		// Token: 0x04008B07 RID: 35591
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static WorldBuilder worldBuilder;
 
-		// Token: 0x04008A1F RID: 35359
+		// Token: 0x04008B08 RID: 35592
 		[PublicizedFrom(EAccessModifier.Private)]
 		public NativeList<Vector2i> pathTemp = new NativeList<Vector2i>(200, Allocator.Persistent);
 
-		// Token: 0x04008A20 RID: 35360
+		// Token: 0x04008B09 RID: 35593
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PathingUtils.Data data;
 
-		// Token: 0x02001731 RID: 5937
+		// Token: 0x02001762 RID: 5986
 		public struct Data
 		{
-			// Token: 0x04008A21 RID: 35361
+			// Token: 0x04008B0A RID: 35594
 			public int WorldSize;
 
-			// Token: 0x04008A22 RID: 35362
+			// Token: 0x04008B0B RID: 35595
 			public NativeArray<sbyte> pathingGrid;
 
-			// Token: 0x04008A23 RID: 35363
+			// Token: 0x04008B0C RID: 35596
 			public int pathingGridSize;
 
-			// Token: 0x04008A24 RID: 35364
+			// Token: 0x04008B0D RID: 35597
 			public PathNodePool nodePool;
 
-			// Token: 0x04008A25 RID: 35365
+			// Token: 0x04008B0E RID: 35598
 			public PathingUtils.MinHeapBinned minHeapBinned;
 
-			// Token: 0x04008A26 RID: 35366
+			// Token: 0x04008B0F RID: 35599
 			public NativeArray<byte> closedList;
 
-			// Token: 0x04008A27 RID: 35367
+			// Token: 0x04008B10 RID: 35600
 			public int closedListWidth;
 
-			// Token: 0x04008A28 RID: 35368
+			// Token: 0x04008B11 RID: 35601
 			public int closedListMinY;
 
-			// Token: 0x04008A29 RID: 35369
+			// Token: 0x04008B12 RID: 35602
 			public int closedListMaxY;
 		}
 
-		// Token: 0x02001732 RID: 5938
+		// Token: 0x02001763 RID: 5987
 		public struct MinHeapBinned
 		{
-			// Token: 0x0600B921 RID: 47393 RVA: 0x00448E48 File Offset: 0x00447048
+			// Token: 0x0600BA35 RID: 47669 RVA: 0x0044C7F4 File Offset: 0x0044A9F4
 			public void Init()
 			{
 				if (!this.nodeBins.IsCreated)
@@ -817,7 +817,7 @@ namespace WorldGenerationEngineFinal
 				this.Reset();
 			}
 
-			// Token: 0x0600B922 RID: 47394 RVA: 0x00448E84 File Offset: 0x00447084
+			// Token: 0x0600BA36 RID: 47670 RVA: 0x0044C830 File Offset: 0x0044AA30
 			public unsafe void Reset()
 			{
 				if (this.lowBin <= this.highBin)
@@ -830,7 +830,7 @@ namespace WorldGenerationEngineFinal
 				this.highBin = 0;
 			}
 
-			// Token: 0x0600B923 RID: 47395 RVA: 0x00448EEC File Offset: 0x004470EC
+			// Token: 0x0600BA37 RID: 47671 RVA: 0x0044C898 File Offset: 0x0044AA98
 			public int ExtractFirst(ref PathingUtils.Data data)
 			{
 				if (this.lowBin <= this.highBin)
@@ -859,7 +859,7 @@ namespace WorldGenerationEngineFinal
 				return -1;
 			}
 
-			// Token: 0x0600B924 RID: 47396 RVA: 0x00448F9C File Offset: 0x0044719C
+			// Token: 0x0600BA38 RID: 47672 RVA: 0x0044C948 File Offset: 0x0044AB48
 			public void Add(ref PathingUtils.Data data, int _nodeIndex)
 			{
 				ref PathNode ptr = ref data.nodePool.Node(_nodeIndex);
@@ -905,104 +905,104 @@ namespace WorldGenerationEngineFinal
 				ptr3.listNext = _nodeIndex;
 			}
 
-			// Token: 0x0600B925 RID: 47397 RVA: 0x00449096 File Offset: 0x00447296
+			// Token: 0x0600BA39 RID: 47673 RVA: 0x0044CA42 File Offset: 0x0044AC42
 			public void Cleanup()
 			{
 				this.nodeBins.Dispose();
 			}
 
-			// Token: 0x04008A2A RID: 35370
+			// Token: 0x04008B13 RID: 35603
 			[PublicizedFrom(EAccessModifier.Private)]
 			public const int cBins = 32768;
 
-			// Token: 0x04008A2B RID: 35371
+			// Token: 0x04008B14 RID: 35604
 			[PublicizedFrom(EAccessModifier.Private)]
 			public const float cScale = 0.07f;
 
-			// Token: 0x04008A2C RID: 35372
+			// Token: 0x04008B15 RID: 35605
 			[PublicizedFrom(EAccessModifier.Private)]
 			public NativeArray<int> nodeBins;
 
-			// Token: 0x04008A2D RID: 35373
+			// Token: 0x04008B16 RID: 35606
 			[PublicizedFrom(EAccessModifier.Private)]
 			public int lowBin;
 
-			// Token: 0x04008A2E RID: 35374
+			// Token: 0x04008B17 RID: 35607
 			[PublicizedFrom(EAccessModifier.Private)]
 			public int highBin;
 		}
 
-		// Token: 0x02001733 RID: 5939
+		// Token: 0x02001764 RID: 5988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum PathNodeType
 		{
-			// Token: 0x04008A30 RID: 35376
+			// Token: 0x04008B19 RID: 35609
 			Free,
-			// Token: 0x04008A31 RID: 35377
+			// Token: 0x04008B1A RID: 35610
 			Road,
-			// Token: 0x04008A32 RID: 35378
+			// Token: 0x04008B1B RID: 35611
 			Prefab,
-			// Token: 0x04008A33 RID: 35379
+			// Token: 0x04008B1C RID: 35612
 			CityLimits = 4,
-			// Token: 0x04008A34 RID: 35380
+			// Token: 0x04008B1D RID: 35613
 			Blocked = 8
 		}
 
-		// Token: 0x02001734 RID: 5940
-		// (Invoke) Token: 0x0600B927 RID: 47399
+		// Token: 0x02001765 RID: 5989
+		// (Invoke) Token: 0x0600BA3B RID: 47675
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate int FindDetailedPath_0000B8F4$PostfixBurstDelegate(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in Vector2i endPos, bool _isCountryRoad, bool _isRiver);
+		public delegate int FindDetailedPath_0000BA08$PostfixBurstDelegate(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in Vector2i endPos, bool _isCountryRoad, bool _isRiver);
 
-		// Token: 0x02001735 RID: 5941
+		// Token: 0x02001766 RID: 5990
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class FindDetailedPath_0000B8F4$BurstDirectCall
+		public static class FindDetailedPath_0000BA08$BurstDirectCall
 		{
-			// Token: 0x0600B92A RID: 47402 RVA: 0x004490A3 File Offset: 0x004472A3
+			// Token: 0x0600BA3E RID: 47678 RVA: 0x0044CA4F File Offset: 0x0044AC4F
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.Pointer == 0)
+				if (PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.Pointer == 0)
 				{
-					PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindDetailedPath$BurstManaged(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref Vector2i, bool, bool)).MethodHandle, typeof(PathingUtils.FindDetailedPath_0000B8F4$PostfixBurstDelegate).TypeHandle);
+					PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindDetailedPath$BurstManaged(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref Vector2i, bool, bool)).MethodHandle, typeof(PathingUtils.FindDetailedPath_0000BA08$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.Pointer;
+				A_0 = PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B92B RID: 47403 RVA: 0x004490D0 File Offset: 0x004472D0
+			// Token: 0x0600BA3F RID: 47679 RVA: 0x0044CA7C File Offset: 0x0044AC7C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B92C RID: 47404 RVA: 0x004490E8 File Offset: 0x004472E8
+			// Token: 0x0600BA40 RID: 47680 RVA: 0x0044CA94 File Offset: 0x0044AC94
 			public static void Constructor()
 			{
-				PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindDetailedPath(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref Vector2i, bool, bool)).MethodHandle);
+				PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindDetailedPath(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref Vector2i, bool, bool)).MethodHandle);
 			}
 
-			// Token: 0x0600B92D RID: 47405 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BA41 RID: 47681 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B92E RID: 47406 RVA: 0x004490F9 File Offset: 0x004472F9
+			// Token: 0x0600BA42 RID: 47682 RVA: 0x0044CAA5 File Offset: 0x0044ACA5
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static FindDetailedPath_0000B8F4$BurstDirectCall()
+			static FindDetailedPath_0000BA08$BurstDirectCall()
 			{
-				PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.Constructor();
+				PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B92F RID: 47407 RVA: 0x00449100 File Offset: 0x00447300
+			// Token: 0x0600BA43 RID: 47683 RVA: 0x0044CAAC File Offset: 0x0044ACAC
 			public static int Invoke(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in Vector2i endPos, bool _isCountryRoad, bool _isRiver)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = PathingUtils.FindDetailedPath_0000B8F4$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = PathingUtils.FindDetailedPath_0000BA08$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						return calli(System.Int32(WorldGenerationEngineFinal.WorldBuilder/Data&,WorldGenerationEngineFinal.PathingUtils/Data&,Vector2i&,Vector2i&,System.Boolean,System.Boolean), ref wd, ref data, ref startPos, ref endPos, _isCountryRoad, _isRiver, functionPointer);
@@ -1011,70 +1011,70 @@ namespace WorldGenerationEngineFinal
 				return PathingUtils.FindDetailedPath$BurstManaged(ref wd, ref data, in startPos, in endPos, _isCountryRoad, _isRiver);
 			}
 
-			// Token: 0x04008A35 RID: 35381
+			// Token: 0x04008B1E RID: 35614
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008A36 RID: 35382
+			// Token: 0x04008B1F RID: 35615
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x02001736 RID: 5942
-		// (Invoke) Token: 0x0600B931 RID: 47409
+		// Token: 0x02001767 RID: 5991
+		// (Invoke) Token: 0x0600BA45 RID: 47685
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate int FindDetailedPath_0000B8F6$PostfixBurstDelegate(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in NativeList<Vector2i> _endPath, bool _isCountryRoad, bool _isRiver);
+		public delegate int FindDetailedPath_0000BA0A$PostfixBurstDelegate(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in NativeList<Vector2i> _endPath, bool _isCountryRoad, bool _isRiver);
 
-		// Token: 0x02001737 RID: 5943
+		// Token: 0x02001768 RID: 5992
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class FindDetailedPath_0000B8F6$BurstDirectCall
+		public static class FindDetailedPath_0000BA0A$BurstDirectCall
 		{
-			// Token: 0x0600B934 RID: 47412 RVA: 0x0044913F File Offset: 0x0044733F
+			// Token: 0x0600BA48 RID: 47688 RVA: 0x0044CAEB File Offset: 0x0044ACEB
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.Pointer == 0)
+				if (PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.Pointer == 0)
 				{
-					PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindDetailedPath$BurstManaged(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref NativeList<Vector2i>, bool, bool)).MethodHandle, typeof(PathingUtils.FindDetailedPath_0000B8F6$PostfixBurstDelegate).TypeHandle);
+					PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindDetailedPath$BurstManaged(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref NativeList<Vector2i>, bool, bool)).MethodHandle, typeof(PathingUtils.FindDetailedPath_0000BA0A$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.Pointer;
+				A_0 = PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B935 RID: 47413 RVA: 0x0044916C File Offset: 0x0044736C
+			// Token: 0x0600BA49 RID: 47689 RVA: 0x0044CB18 File Offset: 0x0044AD18
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B936 RID: 47414 RVA: 0x00449184 File Offset: 0x00447384
+			// Token: 0x0600BA4A RID: 47690 RVA: 0x0044CB30 File Offset: 0x0044AD30
 			public static void Constructor()
 			{
-				PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindDetailedPath(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref NativeList<Vector2i>, bool, bool)).MethodHandle);
+				PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindDetailedPath(ref WorldBuilder.Data, ref PathingUtils.Data, ref Vector2i, ref NativeList<Vector2i>, bool, bool)).MethodHandle);
 			}
 
-			// Token: 0x0600B937 RID: 47415 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BA4B RID: 47691 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B938 RID: 47416 RVA: 0x00449195 File Offset: 0x00447395
+			// Token: 0x0600BA4C RID: 47692 RVA: 0x0044CB41 File Offset: 0x0044AD41
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static FindDetailedPath_0000B8F6$BurstDirectCall()
+			static FindDetailedPath_0000BA0A$BurstDirectCall()
 			{
-				PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.Constructor();
+				PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B939 RID: 47417 RVA: 0x0044919C File Offset: 0x0044739C
+			// Token: 0x0600BA4D RID: 47693 RVA: 0x0044CB48 File Offset: 0x0044AD48
 			public static int Invoke(ref WorldBuilder.Data wd, ref PathingUtils.Data data, in Vector2i startPos, in NativeList<Vector2i> _endPath, bool _isCountryRoad, bool _isRiver)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = PathingUtils.FindDetailedPath_0000B8F6$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = PathingUtils.FindDetailedPath_0000BA0A$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						return calli(System.Int32(WorldGenerationEngineFinal.WorldBuilder/Data&,WorldGenerationEngineFinal.PathingUtils/Data&,Vector2i&,Unity.Collections.NativeList`1<Vector2i>&,System.Boolean,System.Boolean), ref wd, ref data, ref startPos, ref _endPath, _isCountryRoad, _isRiver, functionPointer);
@@ -1083,70 +1083,70 @@ namespace WorldGenerationEngineFinal
 				return PathingUtils.FindDetailedPath$BurstManaged(ref wd, ref data, in startPos, in _endPath, _isCountryRoad, _isRiver);
 			}
 
-			// Token: 0x04008A37 RID: 35383
+			// Token: 0x04008B20 RID: 35616
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008A38 RID: 35384
+			// Token: 0x04008B21 RID: 35617
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x02001738 RID: 5944
-		// (Invoke) Token: 0x0600B93B RID: 47419
+		// Token: 0x02001769 RID: 5993
+		// (Invoke) Token: 0x0600BA4F RID: 47695
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void CalcPathBounds_0000B8F7$PostfixBurstDelegate(in NativeList<Vector2i> _path, out Vector2i _min, out Vector2i _max);
+		public delegate void CalcPathBounds_0000BA0B$PostfixBurstDelegate(in NativeList<Vector2i> _path, out Vector2i _min, out Vector2i _max);
 
-		// Token: 0x02001739 RID: 5945
+		// Token: 0x0200176A RID: 5994
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class CalcPathBounds_0000B8F7$BurstDirectCall
+		public static class CalcPathBounds_0000BA0B$BurstDirectCall
 		{
-			// Token: 0x0600B93E RID: 47422 RVA: 0x004491DB File Offset: 0x004473DB
+			// Token: 0x0600BA52 RID: 47698 RVA: 0x0044CB87 File Offset: 0x0044AD87
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.Pointer == 0)
+				if (PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.Pointer == 0)
 				{
-					PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.CalcPathBounds$BurstManaged(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle, typeof(PathingUtils.CalcPathBounds_0000B8F7$PostfixBurstDelegate).TypeHandle);
+					PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.CalcPathBounds$BurstManaged(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle, typeof(PathingUtils.CalcPathBounds_0000BA0B$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.Pointer;
+				A_0 = PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B93F RID: 47423 RVA: 0x00449208 File Offset: 0x00447408
+			// Token: 0x0600BA53 RID: 47699 RVA: 0x0044CBB4 File Offset: 0x0044ADB4
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B940 RID: 47424 RVA: 0x00449220 File Offset: 0x00447420
+			// Token: 0x0600BA54 RID: 47700 RVA: 0x0044CBCC File Offset: 0x0044ADCC
 			public static void Constructor()
 			{
-				PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.CalcPathBounds(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle);
+				PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.CalcPathBounds(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle);
 			}
 
-			// Token: 0x0600B941 RID: 47425 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BA55 RID: 47701 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B942 RID: 47426 RVA: 0x00449231 File Offset: 0x00447431
+			// Token: 0x0600BA56 RID: 47702 RVA: 0x0044CBDD File Offset: 0x0044ADDD
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static CalcPathBounds_0000B8F7$BurstDirectCall()
+			static CalcPathBounds_0000BA0B$BurstDirectCall()
 			{
-				PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.Constructor();
+				PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B943 RID: 47427 RVA: 0x00449238 File Offset: 0x00447438
+			// Token: 0x0600BA57 RID: 47703 RVA: 0x0044CBE4 File Offset: 0x0044ADE4
 			public static void Invoke(in NativeList<Vector2i> _path, out Vector2i _min, out Vector2i _max)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = PathingUtils.CalcPathBounds_0000B8F7$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = PathingUtils.CalcPathBounds_0000BA0B$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(Unity.Collections.NativeList`1<Vector2i>&,Vector2i&,Vector2i&), ref _path, ref _min, ref _max, functionPointer);
@@ -1156,70 +1156,70 @@ namespace WorldGenerationEngineFinal
 				PathingUtils.CalcPathBounds$BurstManaged(in _path, out _min, out _max);
 			}
 
-			// Token: 0x04008A39 RID: 35385
+			// Token: 0x04008B22 RID: 35618
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008A3A RID: 35386
+			// Token: 0x04008B23 RID: 35619
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x0200173A RID: 5946
-		// (Invoke) Token: 0x0600B945 RID: 47429
+		// Token: 0x0200176B RID: 5995
+		// (Invoke) Token: 0x0600BA59 RID: 47705
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate float FindClosestPathPoint_0000B8F8$PostfixBurstDelegate(in NativeList<Vector2> _path, in Vector2 _startPos, out Vector2 _destPoint, int _step = 1);
+		public delegate float FindClosestPathPoint_0000BA0C$PostfixBurstDelegate(in NativeList<Vector2> _path, in Vector2 _startPos, out Vector2 _destPoint, int _step = 1);
 
-		// Token: 0x0200173B RID: 5947
+		// Token: 0x0200176C RID: 5996
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class FindClosestPathPoint_0000B8F8$BurstDirectCall
+		public static class FindClosestPathPoint_0000BA0C$BurstDirectCall
 		{
-			// Token: 0x0600B948 RID: 47432 RVA: 0x0044926D File Offset: 0x0044746D
+			// Token: 0x0600BA5C RID: 47708 RVA: 0x0044CC19 File Offset: 0x0044AE19
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.Pointer == 0)
+				if (PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.Pointer == 0)
 				{
-					PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindClosestPathPoint$BurstManaged(ref NativeList<Vector2>, ref Vector2, ref Vector2, int)).MethodHandle, typeof(PathingUtils.FindClosestPathPoint_0000B8F8$PostfixBurstDelegate).TypeHandle);
+					PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindClosestPathPoint$BurstManaged(ref NativeList<Vector2>, ref Vector2, ref Vector2, int)).MethodHandle, typeof(PathingUtils.FindClosestPathPoint_0000BA0C$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.Pointer;
+				A_0 = PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B949 RID: 47433 RVA: 0x0044929C File Offset: 0x0044749C
+			// Token: 0x0600BA5D RID: 47709 RVA: 0x0044CC48 File Offset: 0x0044AE48
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B94A RID: 47434 RVA: 0x004492B4 File Offset: 0x004474B4
+			// Token: 0x0600BA5E RID: 47710 RVA: 0x0044CC60 File Offset: 0x0044AE60
 			public static void Constructor()
 			{
-				PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindClosestPathPoint(ref NativeList<Vector2>, ref Vector2, ref Vector2, int)).MethodHandle);
+				PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindClosestPathPoint(ref NativeList<Vector2>, ref Vector2, ref Vector2, int)).MethodHandle);
 			}
 
-			// Token: 0x0600B94B RID: 47435 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BA5F RID: 47711 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B94C RID: 47436 RVA: 0x004492C5 File Offset: 0x004474C5
+			// Token: 0x0600BA60 RID: 47712 RVA: 0x0044CC71 File Offset: 0x0044AE71
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static FindClosestPathPoint_0000B8F8$BurstDirectCall()
+			static FindClosestPathPoint_0000BA0C$BurstDirectCall()
 			{
-				PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.Constructor();
+				PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B94D RID: 47437 RVA: 0x004492CC File Offset: 0x004474CC
+			// Token: 0x0600BA61 RID: 47713 RVA: 0x0044CC78 File Offset: 0x0044AE78
 			public static float Invoke(in NativeList<Vector2> _path, in Vector2 _startPos, out Vector2 _destPoint, int _step = 1)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = PathingUtils.FindClosestPathPoint_0000B8F8$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = PathingUtils.FindClosestPathPoint_0000BA0C$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						return calli(System.Single(Unity.Collections.NativeList`1<UnityEngine.Vector2>&,UnityEngine.Vector2&,UnityEngine.Vector2&,System.Int32), ref _path, ref _startPos, ref _destPoint, _step, functionPointer);
@@ -1228,70 +1228,70 @@ namespace WorldGenerationEngineFinal
 				return PathingUtils.FindClosestPathPoint$BurstManaged(in _path, in _startPos, out _destPoint, _step);
 			}
 
-			// Token: 0x04008A3B RID: 35387
+			// Token: 0x04008B24 RID: 35620
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008A3C RID: 35388
+			// Token: 0x04008B25 RID: 35621
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x0200173C RID: 5948
-		// (Invoke) Token: 0x0600B94F RID: 47439
+		// Token: 0x0200176D RID: 5997
+		// (Invoke) Token: 0x0600BA63 RID: 47715
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate float FindClosestPathPoint_0000B8F9$PostfixBurstDelegate(in NativeList<Vector2i> _path, in Vector2i _startPos, out Vector2i _destPoint);
+		public delegate float FindClosestPathPoint_0000BA0D$PostfixBurstDelegate(in NativeList<Vector2i> _path, in Vector2i _startPos, out Vector2i _destPoint);
 
-		// Token: 0x0200173D RID: 5949
+		// Token: 0x0200176E RID: 5998
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class FindClosestPathPoint_0000B8F9$BurstDirectCall
+		public static class FindClosestPathPoint_0000BA0D$BurstDirectCall
 		{
-			// Token: 0x0600B952 RID: 47442 RVA: 0x00449303 File Offset: 0x00447503
+			// Token: 0x0600BA66 RID: 47718 RVA: 0x0044CCAF File Offset: 0x0044AEAF
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.Pointer == 0)
+				if (PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.Pointer == 0)
 				{
-					PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindClosestPathPoint$BurstManaged(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle, typeof(PathingUtils.FindClosestPathPoint_0000B8F9$PostfixBurstDelegate).TypeHandle);
+					PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.FindClosestPathPoint$BurstManaged(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle, typeof(PathingUtils.FindClosestPathPoint_0000BA0D$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.Pointer;
+				A_0 = PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B953 RID: 47443 RVA: 0x00449330 File Offset: 0x00447530
+			// Token: 0x0600BA67 RID: 47719 RVA: 0x0044CCDC File Offset: 0x0044AEDC
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B954 RID: 47444 RVA: 0x00449348 File Offset: 0x00447548
+			// Token: 0x0600BA68 RID: 47720 RVA: 0x0044CCF4 File Offset: 0x0044AEF4
 			public static void Constructor()
 			{
-				PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindClosestPathPoint(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle);
+				PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.FindClosestPathPoint(ref NativeList<Vector2i>, ref Vector2i, ref Vector2i)).MethodHandle);
 			}
 
-			// Token: 0x0600B955 RID: 47445 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BA69 RID: 47721 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B956 RID: 47446 RVA: 0x00449359 File Offset: 0x00447559
+			// Token: 0x0600BA6A RID: 47722 RVA: 0x0044CD05 File Offset: 0x0044AF05
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static FindClosestPathPoint_0000B8F9$BurstDirectCall()
+			static FindClosestPathPoint_0000BA0D$BurstDirectCall()
 			{
-				PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.Constructor();
+				PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B957 RID: 47447 RVA: 0x00449360 File Offset: 0x00447560
+			// Token: 0x0600BA6B RID: 47723 RVA: 0x0044CD0C File Offset: 0x0044AF0C
 			public static float Invoke(in NativeList<Vector2i> _path, in Vector2i _startPos, out Vector2i _destPoint)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = PathingUtils.FindClosestPathPoint_0000B8F9$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = PathingUtils.FindClosestPathPoint_0000BA0D$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						return calli(System.Single(Unity.Collections.NativeList`1<Vector2i>&,Vector2i&,Vector2i&), ref _path, ref _startPos, ref _destPoint, functionPointer);
@@ -1300,70 +1300,70 @@ namespace WorldGenerationEngineFinal
 				return PathingUtils.FindClosestPathPoint$BurstManaged(in _path, in _startPos, out _destPoint);
 			}
 
-			// Token: 0x04008A3D RID: 35389
+			// Token: 0x04008B26 RID: 35622
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008A3E RID: 35390
+			// Token: 0x04008B27 RID: 35623
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}
 
-		// Token: 0x0200173E RID: 5950
-		// (Invoke) Token: 0x0600B959 RID: 47449
+		// Token: 0x0200176F RID: 5999
+		// (Invoke) Token: 0x0600BA6D RID: 47725
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate bool IsPointOnPath_0000B8FA$PostfixBurstDelegate(in NativeList<Vector2i> _path, in Vector2i _point);
+		public delegate bool IsPointOnPath_0000BA0E$PostfixBurstDelegate(in NativeList<Vector2i> _path, in Vector2i _point);
 
-		// Token: 0x0200173F RID: 5951
+		// Token: 0x02001770 RID: 6000
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class IsPointOnPath_0000B8FA$BurstDirectCall
+		public static class IsPointOnPath_0000BA0E$BurstDirectCall
 		{
-			// Token: 0x0600B95C RID: 47452 RVA: 0x00449395 File Offset: 0x00447595
+			// Token: 0x0600BA70 RID: 47728 RVA: 0x0044CD41 File Offset: 0x0044AF41
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.Pointer == 0)
+				if (PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.Pointer == 0)
 				{
-					PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.IsPointOnPath$BurstManaged(ref NativeList<Vector2i>, ref Vector2i)).MethodHandle, typeof(PathingUtils.IsPointOnPath_0000B8FA$PostfixBurstDelegate).TypeHandle);
+					PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.DeferredCompilation, methodof(PathingUtils.IsPointOnPath$BurstManaged(ref NativeList<Vector2i>, ref Vector2i)).MethodHandle, typeof(PathingUtils.IsPointOnPath_0000BA0E$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.Pointer;
+				A_0 = PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B95D RID: 47453 RVA: 0x004493C4 File Offset: 0x004475C4
+			// Token: 0x0600BA71 RID: 47729 RVA: 0x0044CD70 File Offset: 0x0044AF70
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B95E RID: 47454 RVA: 0x004493DC File Offset: 0x004475DC
+			// Token: 0x0600BA72 RID: 47730 RVA: 0x0044CD88 File Offset: 0x0044AF88
 			public static void Constructor()
 			{
-				PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.IsPointOnPath(ref NativeList<Vector2i>, ref Vector2i)).MethodHandle);
+				PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(PathingUtils.IsPointOnPath(ref NativeList<Vector2i>, ref Vector2i)).MethodHandle);
 			}
 
-			// Token: 0x0600B95F RID: 47455 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600BA73 RID: 47731 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B960 RID: 47456 RVA: 0x004493ED File Offset: 0x004475ED
+			// Token: 0x0600BA74 RID: 47732 RVA: 0x0044CD99 File Offset: 0x0044AF99
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static IsPointOnPath_0000B8FA$BurstDirectCall()
+			static IsPointOnPath_0000BA0E$BurstDirectCall()
 			{
-				PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.Constructor();
+				PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B961 RID: 47457 RVA: 0x004493F4 File Offset: 0x004475F4
+			// Token: 0x0600BA75 RID: 47733 RVA: 0x0044CDA0 File Offset: 0x0044AFA0
 			public static bool Invoke(in NativeList<Vector2i> _path, in Vector2i _point)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = PathingUtils.IsPointOnPath_0000B8FA$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = PathingUtils.IsPointOnPath_0000BA0E$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						return calli(System.Boolean(Unity.Collections.NativeList`1<Vector2i>&,Vector2i&), ref _path, ref _point, functionPointer);
@@ -1372,11 +1372,11 @@ namespace WorldGenerationEngineFinal
 				return PathingUtils.IsPointOnPath$BurstManaged(in _path, in _point);
 			}
 
-			// Token: 0x04008A3F RID: 35391
+			// Token: 0x04008B28 RID: 35624
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x04008A40 RID: 35392
+			// Token: 0x04008B29 RID: 35625
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}

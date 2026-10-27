@@ -4,19 +4,19 @@ using System.Runtime.CompilerServices;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018D8 RID: 6360
+	// Token: 0x02001909 RID: 6409
 	public abstract class PrefabVolumeListAbs<TVolumeList, TVolume> : PrefabVolumeListAbs where TVolumeList : PrefabVolumeListAbs<TVolumeList, TVolume> where TVolume : PrefabVolumeAbs<TVolume>, new()
 	{
-		// Token: 0x17001896 RID: 6294
-		// (get) Token: 0x0600C44A RID: 50250
+		// Token: 0x170018DE RID: 6366
+		// (get) Token: 0x0600C55E RID: 50526
 		public abstract SelectionCategory SelectionCategory
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x17001897 RID: 6295
-		// (get) Token: 0x0600C44B RID: 50251 RVA: 0x0048533C File Offset: 0x0048353C
+		// Token: 0x170018DF RID: 6367
+		// (get) Token: 0x0600C55F RID: 50527 RVA: 0x00488CE8 File Offset: 0x00486EE8
 		public override bool AnyUsedEntry
 		{
 			get
@@ -29,8 +29,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001898 RID: 6296
-		// (get) Token: 0x0600C44C RID: 50252 RVA: 0x00485389 File Offset: 0x00483589
+		// Token: 0x170018E0 RID: 6368
+		// (get) Token: 0x0600C560 RID: 50528 RVA: 0x00488D35 File Offset: 0x00486F35
 		public override int Count
 		{
 			get
@@ -39,7 +39,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001899 RID: 6297
+		// Token: 0x170018E1 RID: 6369
 		public TVolume this[int _index]
 		{
 			get
@@ -48,20 +48,20 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C44E RID: 50254 RVA: 0x004853A4 File Offset: 0x004835A4
+		// Token: 0x0600C562 RID: 50530 RVA: 0x00488D50 File Offset: 0x00486F50
 		public override PrefabVolumeAbs Get(int _index)
 		{
 			return this[_index];
 		}
 
-		// Token: 0x0600C44F RID: 50255 RVA: 0x004853B2 File Offset: 0x004835B2
+		// Token: 0x0600C563 RID: 50531 RVA: 0x00488D5E File Offset: 0x00486F5E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PrefabVolumeListAbs(Prefab _owner)
 		{
 			this.Owner = _owner;
 		}
 
-		// Token: 0x0600C450 RID: 50256 RVA: 0x004853CC File Offset: 0x004835CC
+		// Token: 0x0600C564 RID: 50532 RVA: 0x00488D78 File Offset: 0x00486F78
 		public override void CopyFrom(PrefabVolumeListAbs _other)
 		{
 			TVolumeList tvolumeList = _other as TVolumeList;
@@ -83,7 +83,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C451 RID: 50257 RVA: 0x00485478 File Offset: 0x00483678
+		// Token: 0x0600C565 RID: 50533 RVA: 0x00488E24 File Offset: 0x00487024
 		public override void SendAllVolumesToClient(ClientInfo _clientInfo, int _prefabInstanceId)
 		{
 			for (int i = 0; i < this.List.Count; i++)
@@ -92,7 +92,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C452 RID: 50258 RVA: 0x004854C0 File Offset: 0x004836C0
+		// Token: 0x0600C566 RID: 50534 RVA: 0x00488E6C File Offset: 0x0048706C
 		public override void Move(Vector3i _moveDistance)
 		{
 			foreach (TVolume tvolume in this.List)
@@ -101,7 +101,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C453 RID: 50259 RVA: 0x00485518 File Offset: 0x00483718
+		// Token: 0x0600C567 RID: 50535 RVA: 0x00488EC4 File Offset: 0x004870C4
 		public override void RotateY(bool _bLeft, Vector3i _prefabSize)
 		{
 			foreach (TVolume tvolume in this.List)
@@ -110,7 +110,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C454 RID: 50260 RVA: 0x00485570 File Offset: 0x00483770
+		// Token: 0x0600C568 RID: 50536 RVA: 0x00488F1C File Offset: 0x0048711C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		[return: TupleElementNames(new string[] { "volume", "index", "name" })]
 		public ValueTuple<TVolume, int, string> PrepareNewEntry(string _prefabInstanceName, Vector3i _startPos, Vector3i _size)
@@ -137,13 +137,13 @@ namespace PrefabVolumes
 			return new ValueTuple<TVolume, int, string>(tvolume, num, string.Format("{0}_{1}", _prefabInstanceName, num));
 		}
 
-		// Token: 0x0600C455 RID: 50261 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x0600C569 RID: 50537 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool CanCreateVolume(string _prefabInstanceName, Vector3i _bbPos, Vector3i _startPos, Vector3i _size)
 		{
 			return true;
 		}
 
-		// Token: 0x0600C456 RID: 50262 RVA: 0x0048561C File Offset: 0x0048381C
+		// Token: 0x0600C56A RID: 50538 RVA: 0x00488FC8 File Offset: 0x004871C8
 		[return: TupleElementNames(new string[] { "volumeIndex", "volume", "box" })]
 		public override ValueTuple<int, PrefabVolumeAbs, SelectionBox> AddNewVolume(string _prefabInstanceName, Vector3i _bbPos, Vector3i _startPos, Vector3i _size)
 		{
@@ -156,7 +156,7 @@ namespace PrefabVolumes
 			return new ValueTuple<int, PrefabVolumeAbs, SelectionBox>(item2, item, selectionBox);
 		}
 
-		// Token: 0x0600C457 RID: 50263 RVA: 0x00485670 File Offset: 0x00483870
+		// Token: 0x0600C56B RID: 50539 RVA: 0x0048901C File Offset: 0x0048721C
 		[return: TupleElementNames(new string[] { "volumeIndex", "volume", "box" })]
 		public override ValueTuple<int, PrefabVolumeAbs, SelectionBox> CloneVolume(string _prefabInstanceName, Vector3i _bbPos, int _existingIndex, Vector3i _offset)
 		{
@@ -170,7 +170,7 @@ namespace PrefabVolumes
 			return new ValueTuple<int, PrefabVolumeAbs, SelectionBox>(item, item2, item3);
 		}
 
-		// Token: 0x0600C458 RID: 50264 RVA: 0x004856D8 File Offset: 0x004838D8
+		// Token: 0x0600C56C RID: 50540 RVA: 0x00489084 File Offset: 0x00487284
 		public override void SetVolume(PrefabInstance _prefabInstance, int _index, PrefabVolumeAbs _volumeSettings)
 		{
 			TVolume tvolume = _volumeSettings as TVolume;
@@ -181,7 +181,7 @@ namespace PrefabVolumes
 			this.SetVolume(_prefabInstance, _index, tvolume);
 		}
 
-		// Token: 0x0600C459 RID: 50265 RVA: 0x00485734 File Offset: 0x00483934
+		// Token: 0x0600C56D RID: 50541 RVA: 0x004890E0 File Offset: 0x004872E0
 		public virtual void SetVolume(PrefabInstance _prefabInstance, int _index, TVolume _volumeSettings)
 		{
 			while (_index >= this.List.Count)
@@ -211,7 +211,7 @@ namespace PrefabVolumes
 			selectionBox2.UserData = _volumeSettings;
 		}
 
-		// Token: 0x0600C45A RID: 50266 RVA: 0x0048582B File Offset: 0x00483A2B
+		// Token: 0x0600C56E RID: 50542 RVA: 0x004891D7 File Offset: 0x004873D7
 		public virtual SelectionBox AddSelectionBox(TVolume _volume, string _name, Vector3i _pos)
 		{
 			SelectionBox selectionBox = this.SelectionCategory.AddBox(_name, _pos, _volume.size, false, false);
@@ -219,7 +219,7 @@ namespace PrefabVolumes
 			return selectionBox;
 		}
 
-		// Token: 0x0600C45B RID: 50267 RVA: 0x00485854 File Offset: 0x00483A54
+		// Token: 0x0600C56F RID: 50543 RVA: 0x00489200 File Offset: 0x00487400
 		public override void CreateSelectionBoxes(PrefabInstance _prefabInstance)
 		{
 			for (int i = 0; i < this.List.Count; i++)
@@ -229,7 +229,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C45C RID: 50268 RVA: 0x004858BC File Offset: 0x00483ABC
+		// Token: 0x0600C570 RID: 50544 RVA: 0x00489268 File Offset: 0x00487468
 		public override void ApplyVolumesToSelectionBoxes(PrefabInstance _prefabInstance)
 		{
 			for (int i = 0; i < this.List.Count; i++)
@@ -246,7 +246,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C45D RID: 50269 RVA: 0x0048594C File Offset: 0x00483B4C
+		// Token: 0x0600C571 RID: 50545 RVA: 0x004892F8 File Offset: 0x004874F8
 		public override void RemoveSelectionBoxes(PrefabInstance _prefabInstance)
 		{
 			for (int i = 0; i < this.List.Count; i++)
@@ -258,7 +258,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C45E RID: 50270 RVA: 0x004859AC File Offset: 0x00483BAC
+		// Token: 0x0600C572 RID: 50546 RVA: 0x00489358 File Offset: 0x00487558
 		public override void RemoveVolumes(PrefabInstance _prefabInstance)
 		{
 			for (int i = 0; i < this.List.Count; i++)
@@ -269,27 +269,27 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C45F RID: 50271 RVA: 0x0010087D File Offset: 0x000FEA7D
+		// Token: 0x0600C573 RID: 50547 RVA: 0x00100DD1 File Offset: 0x000FEFD1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual int FindWorldVolume(World _world, Vector3i _min, Vector3i _max)
 		{
 			return -1;
 		}
 
-		// Token: 0x0600C460 RID: 50272 RVA: 0x0010087D File Offset: 0x000FEA7D
+		// Token: 0x0600C574 RID: 50548 RVA: 0x00100DD1 File Offset: 0x000FEFD1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual int CreateWorldVolume(int _prefabVolumeIndex, TVolume _prefabVolume, Vector3i _offset, Vector3i _volumeMin, Vector3i _volumeMax, World _world, Vector3i _volumeWorldMin, Vector3i _volumeWorldMax)
 		{
 			return -1;
 		}
 
-		// Token: 0x0600C461 RID: 50273 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C575 RID: 50549 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void AddWorldVolume(Chunk _chunk, int _volumeIndex)
 		{
 		}
 
-		// Token: 0x0600C462 RID: 50274 RVA: 0x004859F0 File Offset: 0x00483BF0
+		// Token: 0x0600C576 RID: 50550 RVA: 0x0048939C File Offset: 0x0048759C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void CopyVolumesIntoWorldCommon(World _world, Chunk _chunk, Vector3i _offset, Vector3i _padding)
 		{
@@ -350,16 +350,16 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C463 RID: 50275 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C577 RID: 50551 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void CopyVolumesIntoWorld(World _world, Chunk _chunk, Vector3i _offset)
 		{
 		}
 
-		// Token: 0x04009496 RID: 38038
+		// Token: 0x0400957F RID: 38271
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly Prefab Owner;
 
-		// Token: 0x04009497 RID: 38039
+		// Token: 0x04009580 RID: 38272
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly List<TVolume> List = new List<TVolume>();
 	}

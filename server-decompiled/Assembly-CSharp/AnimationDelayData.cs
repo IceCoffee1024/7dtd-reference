@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020005EB RID: 1515
+// Token: 0x020005F2 RID: 1522
 [Preserve]
 public class AnimationDelayData
 {
-	// Token: 0x0600317D RID: 12669 RVA: 0x001407D4 File Offset: 0x0013E9D4
+	// Token: 0x0600318B RID: 12683 RVA: 0x001413C8 File Offset: 0x0013F5C8
 	public static void InitStatic()
 	{
 		AnimationDelayData.AnimationDelay = new AnimationDelayData.AnimationDelays[100];
@@ -15,19 +15,19 @@ public class AnimationDelayData
 		}
 	}
 
-	// Token: 0x0600317E RID: 12670 RVA: 0x00140825 File Offset: 0x0013EA25
+	// Token: 0x0600318C RID: 12684 RVA: 0x00141419 File Offset: 0x0013F619
 	public static void Cleanup()
 	{
 		AnimationDelayData.InitStatic();
 	}
 
-	// Token: 0x04002630 RID: 9776
+	// Token: 0x0400264B RID: 9803
 	public static AnimationDelayData.AnimationDelays[] AnimationDelay;
 
-	// Token: 0x020005EC RID: 1516
+	// Token: 0x020005F3 RID: 1523
 	public struct AnimationDelays
 	{
-		// Token: 0x06003180 RID: 12672 RVA: 0x0014082C File Offset: 0x0013EA2C
+		// Token: 0x0600318E RID: 12686 RVA: 0x00141420 File Offset: 0x0013F620
 		public AnimationDelays(int _carry, float _rayCast, float _rayCastMoving, float _holster, float _unholster, bool _twoHanded)
 		{
 			this.Carry = _carry;
@@ -38,22 +38,22 @@ public class AnimationDelayData
 			this.TwoHanded = _twoHanded;
 		}
 
-		// Token: 0x04002631 RID: 9777
+		// Token: 0x0400264C RID: 9804
 		public int Carry;
 
-		// Token: 0x04002632 RID: 9778
+		// Token: 0x0400264D RID: 9805
 		public float RayCast;
 
-		// Token: 0x04002633 RID: 9779
+		// Token: 0x0400264E RID: 9806
 		public float RayCastMoving;
 
-		// Token: 0x04002634 RID: 9780
+		// Token: 0x0400264F RID: 9807
 		public float Holster;
 
-		// Token: 0x04002635 RID: 9781
+		// Token: 0x04002650 RID: 9808
 		public float Unholster;
 
-		// Token: 0x04002636 RID: 9782
+		// Token: 0x04002651 RID: 9809
 		public bool TwoHanded;
 	}
 }

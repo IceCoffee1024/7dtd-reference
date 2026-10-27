@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200086D RID: 2157
+// Token: 0x02000877 RID: 2167
 [Preserve]
 public class NetPackageWaypoint : NetPackage
 {
-	// Token: 0x06003E84 RID: 16004 RVA: 0x0018BEC0 File Offset: 0x0018A0C0
+	// Token: 0x06003EA7 RID: 16039 RVA: 0x0018CF68 File Offset: 0x0018B168
 	public NetPackageWaypoint Setup(Waypoint _waypoint, EnumWaypointInviteMode _inviteMode, int _inviterEntityId)
 	{
 		this.waypoint = _waypoint;
@@ -15,7 +15,7 @@ public class NetPackageWaypoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E85 RID: 16005 RVA: 0x0018BEE4 File Offset: 0x0018A0E4
+	// Token: 0x06003EA8 RID: 16040 RVA: 0x0018CF8C File Offset: 0x0018B18C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.waypoint = new Waypoint();
@@ -24,7 +24,7 @@ public class NetPackageWaypoint : NetPackage
 		this.inviterEntityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003E86 RID: 16006 RVA: 0x0018BF16 File Offset: 0x0018A116
+	// Token: 0x06003EA9 RID: 16041 RVA: 0x0018CFBE File Offset: 0x0018B1BE
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -33,7 +33,7 @@ public class NetPackageWaypoint : NetPackage
 		_bw.Write(this.inviterEntityId);
 	}
 
-	// Token: 0x06003E87 RID: 16007 RVA: 0x0018BF44 File Offset: 0x0018A144
+	// Token: 0x06003EAA RID: 16042 RVA: 0x0018CFEC File Offset: 0x0018B1EC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidEntityIdForSender(this.inviterEntityId, false))
@@ -48,15 +48,15 @@ public class NetPackageWaypoint : NetPackage
 		GameManager.Instance.WaypointInviteClient(this.waypoint, this.inviteMode, this.inviterEntityId, null);
 	}
 
-	// Token: 0x040032B5 RID: 12981
+	// Token: 0x040032D5 RID: 13013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Waypoint waypoint;
 
-	// Token: 0x040032B6 RID: 12982
+	// Token: 0x040032D6 RID: 13014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumWaypointInviteMode inviteMode;
 
-	// Token: 0x040032B7 RID: 12983
+	// Token: 0x040032D7 RID: 13015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inviterEntityId;
 }

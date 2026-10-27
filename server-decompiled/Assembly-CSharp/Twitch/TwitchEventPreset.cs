@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Twitch
 {
-	// Token: 0x02001864 RID: 6244
+	// Token: 0x02001895 RID: 6293
 	public class TwitchEventPreset
 	{
-		// Token: 0x17001816 RID: 6166
-		// (get) Token: 0x0600C091 RID: 49297 RVA: 0x0046DC20 File Offset: 0x0046BE20
+		// Token: 0x1700185E RID: 6238
+		// (get) Token: 0x0600C1A5 RID: 49573 RVA: 0x004715CC File Offset: 0x0046F7CC
 		public bool HasCustomEvents
 		{
 			get
@@ -18,8 +18,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001817 RID: 6167
-		// (get) Token: 0x0600C092 RID: 49298 RVA: 0x0046DC9F File Offset: 0x0046BE9F
+		// Token: 0x1700185F RID: 6239
+		// (get) Token: 0x0600C1A6 RID: 49574 RVA: 0x0047164B File Offset: 0x0046F84B
 		public bool HasBitEvents
 		{
 			get
@@ -28,8 +28,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001818 RID: 6168
-		// (get) Token: 0x0600C093 RID: 49299 RVA: 0x0046DCAF File Offset: 0x0046BEAF
+		// Token: 0x17001860 RID: 6240
+		// (get) Token: 0x0600C1A7 RID: 49575 RVA: 0x0047165B File Offset: 0x0046F85B
 		public bool HasSubEvents
 		{
 			get
@@ -38,8 +38,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001819 RID: 6169
-		// (get) Token: 0x0600C094 RID: 49300 RVA: 0x0046DCBF File Offset: 0x0046BEBF
+		// Token: 0x17001861 RID: 6241
+		// (get) Token: 0x0600C1A8 RID: 49576 RVA: 0x0047166B File Offset: 0x0046F86B
 		public bool HasGiftSubEvents
 		{
 			get
@@ -48,8 +48,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700181A RID: 6170
-		// (get) Token: 0x0600C095 RID: 49301 RVA: 0x0046DCCF File Offset: 0x0046BECF
+		// Token: 0x17001862 RID: 6242
+		// (get) Token: 0x0600C1A9 RID: 49577 RVA: 0x0047167B File Offset: 0x0046F87B
 		public bool HasRaidEvents
 		{
 			get
@@ -58,8 +58,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700181B RID: 6171
-		// (get) Token: 0x0600C096 RID: 49302 RVA: 0x0046DCDF File Offset: 0x0046BEDF
+		// Token: 0x17001863 RID: 6243
+		// (get) Token: 0x0600C1AA RID: 49578 RVA: 0x0047168B File Offset: 0x0046F88B
 		public bool HasCharityEvents
 		{
 			get
@@ -68,8 +68,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700181C RID: 6172
-		// (get) Token: 0x0600C097 RID: 49303 RVA: 0x0046DCEF File Offset: 0x0046BEEF
+		// Token: 0x17001864 RID: 6244
+		// (get) Token: 0x0600C1AB RID: 49579 RVA: 0x0047169B File Offset: 0x0046F89B
 		public bool HasChannelPointEvents
 		{
 			get
@@ -78,8 +78,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700181D RID: 6173
-		// (get) Token: 0x0600C098 RID: 49304 RVA: 0x0046DCFF File Offset: 0x0046BEFF
+		// Token: 0x17001865 RID: 6245
+		// (get) Token: 0x0600C1AC RID: 49580 RVA: 0x004716AB File Offset: 0x0046F8AB
 		public bool HasHypeTrainEvents
 		{
 			get
@@ -88,8 +88,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700181E RID: 6174
-		// (get) Token: 0x0600C099 RID: 49305 RVA: 0x0046DD0F File Offset: 0x0046BF0F
+		// Token: 0x17001866 RID: 6246
+		// (get) Token: 0x0600C1AD RID: 49581 RVA: 0x004716BB File Offset: 0x0046F8BB
 		public bool HasCreatorGoalEvents
 		{
 			get
@@ -98,55 +98,55 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C09A RID: 49306 RVA: 0x0046DD1F File Offset: 0x0046BF1F
+		// Token: 0x0600C1AE RID: 49582 RVA: 0x004716CB File Offset: 0x0046F8CB
 		public void AddBitEvent(TwitchEventEntry entry)
 		{
 			this.BitEvents.Add(entry);
 		}
 
-		// Token: 0x0600C09B RID: 49307 RVA: 0x0046DD2D File Offset: 0x0046BF2D
+		// Token: 0x0600C1AF RID: 49583 RVA: 0x004716D9 File Offset: 0x0046F8D9
 		public void AddSubEvent(TwitchSubEventEntry entry)
 		{
 			this.SubEvents.Add(entry);
 		}
 
-		// Token: 0x0600C09C RID: 49308 RVA: 0x0046DD3B File Offset: 0x0046BF3B
+		// Token: 0x0600C1B0 RID: 49584 RVA: 0x004716E7 File Offset: 0x0046F8E7
 		public void AddGiftSubEvent(TwitchSubEventEntry entry)
 		{
 			this.GiftSubEvents.Add(entry);
 		}
 
-		// Token: 0x0600C09D RID: 49309 RVA: 0x0046DD49 File Offset: 0x0046BF49
+		// Token: 0x0600C1B1 RID: 49585 RVA: 0x004716F5 File Offset: 0x0046F8F5
 		public void AddRaidEvent(TwitchEventEntry entry)
 		{
 			this.RaidEvents.Add(entry);
 		}
 
-		// Token: 0x0600C09E RID: 49310 RVA: 0x0046DD57 File Offset: 0x0046BF57
+		// Token: 0x0600C1B2 RID: 49586 RVA: 0x00471703 File Offset: 0x0046F903
 		public void AddCharityEvent(TwitchEventEntry entry)
 		{
 			this.CharityEvents.Add(entry);
 		}
 
-		// Token: 0x0600C09F RID: 49311 RVA: 0x0046DD65 File Offset: 0x0046BF65
+		// Token: 0x0600C1B3 RID: 49587 RVA: 0x00471711 File Offset: 0x0046F911
 		public void AddChannelPointEvent(TwitchChannelPointEventEntry entry)
 		{
 			this.ChannelPointEvents.Add(entry);
 		}
 
-		// Token: 0x0600C0A0 RID: 49312 RVA: 0x0046DD73 File Offset: 0x0046BF73
+		// Token: 0x0600C1B4 RID: 49588 RVA: 0x0047171F File Offset: 0x0046F91F
 		public void AddHypeTrainEvent(TwitchHypeTrainEventEntry entry)
 		{
 			this.HypeTrainEvents.Add(entry);
 		}
 
-		// Token: 0x0600C0A1 RID: 49313 RVA: 0x0046DD81 File Offset: 0x0046BF81
+		// Token: 0x0600C1B5 RID: 49589 RVA: 0x0047172D File Offset: 0x0046F92D
 		public void AddCreatorGoalEvent(TwitchCreatorGoalEventEntry entry)
 		{
 			this.CreatorGoalEvents.Add(entry);
 		}
 
-		// Token: 0x0600C0A2 RID: 49314 RVA: 0x0046DD90 File Offset: 0x0046BF90
+		// Token: 0x0600C1B6 RID: 49590 RVA: 0x0047173C File Offset: 0x0046F93C
 		public TwitchSubEventEntry HandleSubEvent(int months, TwitchSubEventEntry.SubTierTypes tier)
 		{
 			for (int i = 0; i < this.SubEvents.Count; i++)
@@ -159,7 +159,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A3 RID: 49315 RVA: 0x0046DDDC File Offset: 0x0046BFDC
+		// Token: 0x0600C1B7 RID: 49591 RVA: 0x00471788 File Offset: 0x0046F988
 		public TwitchSubEventEntry HandleGiftSubEvent(int giftCounts, TwitchSubEventEntry.SubTierTypes tier)
 		{
 			for (int i = 0; i < this.GiftSubEvents.Count; i++)
@@ -172,7 +172,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A4 RID: 49316 RVA: 0x0046DE28 File Offset: 0x0046C028
+		// Token: 0x0600C1B8 RID: 49592 RVA: 0x004717D4 File Offset: 0x0046F9D4
 		public TwitchEventEntry HandleBitRedeem(int bitAmount)
 		{
 			for (int i = 0; i < this.BitEvents.Count; i++)
@@ -185,7 +185,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A5 RID: 49317 RVA: 0x0046DE74 File Offset: 0x0046C074
+		// Token: 0x0600C1B9 RID: 49593 RVA: 0x00471820 File Offset: 0x0046FA20
 		public TwitchChannelPointEventEntry HandleChannelPointsRedeem(string title)
 		{
 			for (int i = 0; i < this.ChannelPointEvents.Count; i++)
@@ -198,7 +198,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A6 RID: 49318 RVA: 0x0046DEC0 File Offset: 0x0046C0C0
+		// Token: 0x0600C1BA RID: 49594 RVA: 0x0047186C File Offset: 0x0046FA6C
 		public TwitchEventEntry HandleRaid(int viewerAmount)
 		{
 			for (int i = 0; i < this.RaidEvents.Count; i++)
@@ -211,7 +211,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A7 RID: 49319 RVA: 0x0046DF0C File Offset: 0x0046C10C
+		// Token: 0x0600C1BB RID: 49595 RVA: 0x004718B8 File Offset: 0x0046FAB8
 		public TwitchEventEntry HandleCharityRedeem(int charityAmount)
 		{
 			for (int i = 0; i < this.CharityEvents.Count; i++)
@@ -224,7 +224,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A8 RID: 49320 RVA: 0x0046DF58 File Offset: 0x0046C158
+		// Token: 0x0600C1BC RID: 49596 RVA: 0x00471904 File Offset: 0x0046FB04
 		public TwitchEventEntry HandleHypeTrainRedeem(int hypeTrainLevel)
 		{
 			for (int i = 0; i < this.HypeTrainEvents.Count; i++)
@@ -237,7 +237,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0A9 RID: 49321 RVA: 0x0046DFA4 File Offset: 0x0046C1A4
+		// Token: 0x0600C1BD RID: 49597 RVA: 0x00471950 File Offset: 0x0046FB50
 		public TwitchCreatorGoalEventEntry HandleCreatorGoalEvent(string goalType)
 		{
 			for (int i = 0; i < this.HypeTrainEvents.Count; i++)
@@ -250,7 +250,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600C0AA RID: 49322 RVA: 0x0046DFEC File Offset: 0x0046C1EC
+		// Token: 0x0600C1BE RID: 49598 RVA: 0x00471998 File Offset: 0x0046FB98
 		public void AddChannelPointRedemptions()
 		{
 			if (TwitchManager.Current.Authentication != null)
@@ -281,7 +281,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C0AB RID: 49323 RVA: 0x0046E0B8 File Offset: 0x0046C2B8
+		// Token: 0x0600C1BF RID: 49599 RVA: 0x00471A64 File Offset: 0x0046FC64
 		public void RemoveChannelPointRedemptions(TwitchEventPreset newPreset = null)
 		{
 			for (int i = 0; i < this.ChannelPointEvents.Count; i++)
@@ -301,54 +301,54 @@ namespace Twitch
 			this.ChannelPointsSetup = false;
 		}
 
-		// Token: 0x0400907D RID: 36989
+		// Token: 0x04009166 RID: 37222
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchEventEntry> BitEvents = new List<TwitchEventEntry>();
 
-		// Token: 0x0400907E RID: 36990
+		// Token: 0x04009167 RID: 37223
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchSubEventEntry> SubEvents = new List<TwitchSubEventEntry>();
 
-		// Token: 0x0400907F RID: 36991
+		// Token: 0x04009168 RID: 37224
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchSubEventEntry> GiftSubEvents = new List<TwitchSubEventEntry>();
 
-		// Token: 0x04009080 RID: 36992
+		// Token: 0x04009169 RID: 37225
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchEventEntry> RaidEvents = new List<TwitchEventEntry>();
 
-		// Token: 0x04009081 RID: 36993
+		// Token: 0x0400916A RID: 37226
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchEventEntry> CharityEvents = new List<TwitchEventEntry>();
 
-		// Token: 0x04009082 RID: 36994
+		// Token: 0x0400916B RID: 37227
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchChannelPointEventEntry> ChannelPointEvents = new List<TwitchChannelPointEventEntry>();
 
-		// Token: 0x04009083 RID: 36995
+		// Token: 0x0400916C RID: 37228
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchHypeTrainEventEntry> HypeTrainEvents = new List<TwitchHypeTrainEventEntry>();
 
-		// Token: 0x04009084 RID: 36996
+		// Token: 0x0400916D RID: 37229
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchCreatorGoalEventEntry> CreatorGoalEvents = new List<TwitchCreatorGoalEventEntry>();
 
-		// Token: 0x04009085 RID: 36997
+		// Token: 0x0400916E RID: 37230
 		public string Name;
 
-		// Token: 0x04009086 RID: 36998
+		// Token: 0x0400916F RID: 37231
 		public bool IsDefault;
 
-		// Token: 0x04009087 RID: 36999
+		// Token: 0x04009170 RID: 37232
 		public bool IsEmpty;
 
-		// Token: 0x04009088 RID: 37000
+		// Token: 0x04009171 RID: 37233
 		public bool ChannelPointsSetup;
 
-		// Token: 0x04009089 RID: 37001
+		// Token: 0x04009172 RID: 37234
 		public string Title;
 
-		// Token: 0x0400908A RID: 37002
+		// Token: 0x04009173 RID: 37235
 		public string Description;
 	}
 }

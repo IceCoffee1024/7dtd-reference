@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x0200143D RID: 5181
+// Token: 0x0200144F RID: 5199
 public struct HsvColor
 {
-	// Token: 0x1700133B RID: 4923
-	// (get) Token: 0x0600A279 RID: 41593 RVA: 0x003D039C File Offset: 0x003CE59C
-	// (set) Token: 0x0600A27A RID: 41594 RVA: 0x003D03AB File Offset: 0x003CE5AB
+	// Token: 0x17001347 RID: 4935
+	// (get) Token: 0x0600A2D1 RID: 41681 RVA: 0x003D27A0 File Offset: 0x003D09A0
+	// (set) Token: 0x0600A2D2 RID: 41682 RVA: 0x003D27AF File Offset: 0x003D09AF
 	public float normalizedH
 	{
 		get
@@ -18,9 +18,9 @@ public struct HsvColor
 		}
 	}
 
-	// Token: 0x1700133C RID: 4924
-	// (get) Token: 0x0600A27B RID: 41595 RVA: 0x003D03BF File Offset: 0x003CE5BF
-	// (set) Token: 0x0600A27C RID: 41596 RVA: 0x003D03C8 File Offset: 0x003CE5C8
+	// Token: 0x17001348 RID: 4936
+	// (get) Token: 0x0600A2D3 RID: 41683 RVA: 0x003D27C3 File Offset: 0x003D09C3
+	// (set) Token: 0x0600A2D4 RID: 41684 RVA: 0x003D27CC File Offset: 0x003D09CC
 	public float normalizedS
 	{
 		get
@@ -33,9 +33,9 @@ public struct HsvColor
 		}
 	}
 
-	// Token: 0x1700133D RID: 4925
-	// (get) Token: 0x0600A27D RID: 41597 RVA: 0x003D03D2 File Offset: 0x003CE5D2
-	// (set) Token: 0x0600A27E RID: 41598 RVA: 0x003D03DB File Offset: 0x003CE5DB
+	// Token: 0x17001349 RID: 4937
+	// (get) Token: 0x0600A2D5 RID: 41685 RVA: 0x003D27D6 File Offset: 0x003D09D6
+	// (set) Token: 0x0600A2D6 RID: 41686 RVA: 0x003D27DF File Offset: 0x003D09DF
 	public float normalizedV
 	{
 		get
@@ -48,7 +48,7 @@ public struct HsvColor
 		}
 	}
 
-	// Token: 0x0600A27F RID: 41599 RVA: 0x003D03E5 File Offset: 0x003CE5E5
+	// Token: 0x0600A2D7 RID: 41687 RVA: 0x003D27E9 File Offset: 0x003D09E9
 	public HsvColor(double h, double s, double v)
 	{
 		this.H = h;
@@ -56,7 +56,7 @@ public struct HsvColor
 		this.V = v;
 	}
 
-	// Token: 0x0600A280 RID: 41600 RVA: 0x003D03FC File Offset: 0x003CE5FC
+	// Token: 0x0600A2D8 RID: 41688 RVA: 0x003D2800 File Offset: 0x003D0A00
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -71,12 +71,12 @@ public struct HsvColor
 		});
 	}
 
-	// Token: 0x04007A27 RID: 31271
+	// Token: 0x04007A68 RID: 31336
 	public double H;
 
-	// Token: 0x04007A28 RID: 31272
+	// Token: 0x04007A69 RID: 31337
 	public double S;
 
-	// Token: 0x04007A29 RID: 31273
+	// Token: 0x04007A6A RID: 31338
 	public double V;
 }

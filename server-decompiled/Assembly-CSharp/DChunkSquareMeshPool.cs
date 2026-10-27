@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C38 RID: 3128
+// Token: 0x02000C43 RID: 3139
 public class DChunkSquareMeshPool
 {
-	// Token: 0x170009CF RID: 2511
-	// (get) Token: 0x06005EE9 RID: 24297 RVA: 0x00252B48 File Offset: 0x00250D48
+	// Token: 0x170009D5 RID: 2517
+	// (get) Token: 0x06005F0E RID: 24334 RVA: 0x00254070 File Offset: 0x00252270
 	public int Count
 	{
 		get
@@ -25,7 +25,7 @@ public class DChunkSquareMeshPool
 		}
 	}
 
-	// Token: 0x06005EEA RID: 24298 RVA: 0x00252BAC File Offset: 0x00250DAC
+	// Token: 0x06005F0F RID: 24335 RVA: 0x002540D4 File Offset: 0x002522D4
 	public DChunkSquareMeshPool(int initialCapacity, int NbLODLevel)
 	{
 		this._poolLock = new object();
@@ -36,7 +36,7 @@ public class DChunkSquareMeshPool
 		}
 	}
 
-	// Token: 0x06005EEB RID: 24299 RVA: 0x00252BF0 File Offset: 0x00250DF0
+	// Token: 0x06005F10 RID: 24336 RVA: 0x00254118 File Offset: 0x00252318
 	public DChunkSquareMesh GetObject(DistantChunkMap DCMap, int LODLevel)
 	{
 		object poolLock = this._poolLock;
@@ -58,7 +58,7 @@ public class DChunkSquareMeshPool
 		return dchunkSquareMesh;
 	}
 
-	// Token: 0x06005EEC RID: 24300 RVA: 0x00252C68 File Offset: 0x00250E68
+	// Token: 0x06005F11 RID: 24337 RVA: 0x00254190 File Offset: 0x00252390
 	public void ReturnObject(DChunkSquareMesh item, int LODLevel)
 	{
 		if (item == null)
@@ -76,11 +76,11 @@ public class DChunkSquareMeshPool
 		}
 	}
 
-	// Token: 0x040049FF RID: 18943
+	// Token: 0x04004A24 RID: 18980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<DChunkSquareMesh>[] pool;
 
-	// Token: 0x04004A00 RID: 18944
+	// Token: 0x04004A25 RID: 18981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object _poolLock;
 }

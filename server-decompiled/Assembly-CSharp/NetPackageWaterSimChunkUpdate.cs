@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200086C RID: 2156
+// Token: 0x02000876 RID: 2166
 [Preserve]
 public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 {
-	// Token: 0x170006A2 RID: 1698
-	// (get) Token: 0x06003E78 RID: 15992 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x170006A8 RID: 1704
+	// (get) Token: 0x06003E9B RID: 16027 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,13 +15,13 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06003E79 RID: 15993 RVA: 0x0018BB7A File Offset: 0x00189D7A
+	// Token: 0x06003E9C RID: 16028 RVA: 0x0018CC22 File Offset: 0x0018AE22
 	public static int GetPoolSize()
 	{
 		return 200;
 	}
 
-	// Token: 0x06003E7A RID: 15994 RVA: 0x0018BB84 File Offset: 0x00189D84
+	// Token: 0x06003E9D RID: 16029 RVA: 0x0018CC2C File Offset: 0x0018AE2C
 	public void SetupForSend(Chunk chunk)
 	{
 		this.ms = MemoryPools.poolMemoryStream.AllocSync(true);
@@ -34,7 +34,7 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		this.sendWriter.Write(0);
 	}
 
-	// Token: 0x06003E7B RID: 15995 RVA: 0x0018BC10 File Offset: 0x00189E10
+	// Token: 0x06003E9E RID: 16030 RVA: 0x0018CCB8 File Offset: 0x0018AEB8
 	public void AddChange(ushort _voxelIndex, WaterValue _newValue)
 	{
 		this.sendWriter.Write(_voxelIndex);
@@ -42,7 +42,7 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		this.numVoxelUpdates++;
 	}
 
-	// Token: 0x06003E7C RID: 15996 RVA: 0x0018BC3C File Offset: 0x00189E3C
+	// Token: 0x06003E9F RID: 16031 RVA: 0x0018CCE4 File Offset: 0x0018AEE4
 	public void FinalizeSend()
 	{
 		this.ms.Position = this.lengthStreamPos;
@@ -57,7 +57,7 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		this.ms = null;
 	}
 
-	// Token: 0x06003E7D RID: 15997 RVA: 0x0018BCE8 File Offset: 0x00189EE8
+	// Token: 0x06003EA0 RID: 16032 RVA: 0x0018CD90 File Offset: 0x0018AF90
 	public override void read(PooledBinaryReader _br)
 	{
 		this.ms = MemoryPools.poolMemoryStream.AllocSync(true);
@@ -66,7 +66,7 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		StreamUtils.StreamCopy(_br.BaseStream, this.ms, num, null, true);
 	}
 
-	// Token: 0x06003E7E RID: 15998 RVA: 0x0018BD2E File Offset: 0x00189F2E
+	// Token: 0x06003EA1 RID: 16033 RVA: 0x0018CDD6 File Offset: 0x0018AFD6
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -74,7 +74,7 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		_bw.Write(this.sendBytes, 0, this.sendLength);
 	}
 
-	// Token: 0x06003E7F RID: 15999 RVA: 0x0018BD58 File Offset: 0x00189F58
+	// Token: 0x06003EA2 RID: 16034 RVA: 0x0018CE00 File Offset: 0x0018B000
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(true))
@@ -98,13 +98,13 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06003E80 RID: 16000 RVA: 0x0018BE2C File Offset: 0x0018A02C
+	// Token: 0x06003EA3 RID: 16035 RVA: 0x0018CED4 File Offset: 0x0018B0D4
 	public int GetPackageLength()
 	{
 		return this.sendLength + 4;
 	}
 
-	// Token: 0x06003E81 RID: 16001 RVA: 0x0018BE38 File Offset: 0x0018A038
+	// Token: 0x06003EA4 RID: 16036 RVA: 0x0018CEE0 File Offset: 0x0018B0E0
 	public void Reset()
 	{
 		if (this.sendWriter != null)
@@ -127,33 +127,33 @@ public class NetPackageWaterSimChunkUpdate : NetPackage, IMemoryPoolableObject
 		this.sendLength = 0;
 	}
 
-	// Token: 0x06003E82 RID: 16002 RVA: 0x0018BEB8 File Offset: 0x0018A0B8
+	// Token: 0x06003EA5 RID: 16037 RVA: 0x0018CF60 File Offset: 0x0018B160
 	public void Cleanup()
 	{
 		this.Reset();
 	}
 
-	// Token: 0x040032AF RID: 12975
+	// Token: 0x040032CF RID: 13007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream ms;
 
-	// Token: 0x040032B0 RID: 12976
+	// Token: 0x040032D0 RID: 13008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryWriter sendWriter;
 
-	// Token: 0x040032B1 RID: 12977
+	// Token: 0x040032D1 RID: 13009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long lengthStreamPos;
 
-	// Token: 0x040032B2 RID: 12978
+	// Token: 0x040032D2 RID: 13010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numVoxelUpdates;
 
-	// Token: 0x040032B3 RID: 12979
+	// Token: 0x040032D3 RID: 13011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] sendBytes;
 
-	// Token: 0x040032B4 RID: 12980
+	// Token: 0x040032D4 RID: 13012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sendLength;
 }

@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001934 RID: 6452
+	// Token: 0x02001965 RID: 6501
 	[Preserve]
 	public class ChallengeObjectiveKillByTag : BaseChallengeObjective
 	{
-		// Token: 0x1700191A RID: 6426
-		// (get) Token: 0x0600C73C RID: 51004 RVA: 0x0026ADCB File Offset: 0x00268FCB
+		// Token: 0x17001962 RID: 6498
+		// (get) Token: 0x0600C850 RID: 51280 RVA: 0x0026C2F3 File Offset: 0x0026A4F3
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700191B RID: 6427
-		// (get) Token: 0x0600C73D RID: 51005 RVA: 0x00491830 File Offset: 0x0048FA30
+		// Token: 0x17001963 RID: 6499
+		// (get) Token: 0x0600C851 RID: 51281 RVA: 0x00495224 File Offset: 0x00493424
 		public override string DescriptionText
 		{
 			get
@@ -32,13 +32,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C73E RID: 51006 RVA: 0x004918AD File Offset: 0x0048FAAD
+		// Token: 0x0600C852 RID: 51282 RVA: 0x004952A1 File Offset: 0x004934A1
 		public override void Init()
 		{
 			this.entityTags = FastTags<TagGroup.Global>.Parse(this.entityTag);
 		}
 
-		// Token: 0x0600C73F RID: 51007 RVA: 0x004918C0 File Offset: 0x0048FAC0
+		// Token: 0x0600C853 RID: 51283 RVA: 0x004952B4 File Offset: 0x004934B4
 		public override void HandleAddHooks()
 		{
 			if (!EntityFactory.EnemySpawnMode && this.isEnemy)
@@ -60,13 +60,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C740 RID: 51008 RVA: 0x0049194F File Offset: 0x0048FB4F
+		// Token: 0x0600C854 RID: 51284 RVA: 0x00495343 File Offset: 0x00493543
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.EntityKill -= this.Current_EntityKill;
 		}
 
-		// Token: 0x0600C741 RID: 51009 RVA: 0x00491968 File Offset: 0x0048FB68
+		// Token: 0x0600C855 RID: 51285 RVA: 0x0049535C File Offset: 0x0049355C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_EntityKill(EntityAlive killedBy, EntityAlive killedEntity)
 		{
@@ -102,7 +102,7 @@ namespace Challenges
 			this.CheckObjectiveComplete(true);
 		}
 
-		// Token: 0x0600C742 RID: 51010 RVA: 0x00491A20 File Offset: 0x0048FC20
+		// Token: 0x0600C856 RID: 51286 RVA: 0x00495414 File Offset: 0x00493614
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -133,7 +133,7 @@ namespace Challenges
 			e.ParseAttribute("is_enemy", ref this.isEnemy);
 		}
 
-		// Token: 0x0600C743 RID: 51011 RVA: 0x00491B5C File Offset: 0x0048FD5C
+		// Token: 0x0600C857 RID: 51287 RVA: 0x00495550 File Offset: 0x00493750
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveKillByTag
@@ -149,31 +149,31 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009623 RID: 38435
+		// Token: 0x0400970C RID: 38668
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string entityTag = "";
 
-		// Token: 0x04009624 RID: 38436
+		// Token: 0x0400970D RID: 38669
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> entityTags;
 
-		// Token: 0x04009625 RID: 38437
+		// Token: 0x0400970E RID: 38670
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string targetName = "";
 
-		// Token: 0x04009626 RID: 38438
+		// Token: 0x0400970F RID: 38671
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int isTwitchSpawn = -1;
 
-		// Token: 0x04009627 RID: 38439
+		// Token: 0x04009710 RID: 38672
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> killerHasBuffTag;
 
-		// Token: 0x04009628 RID: 38440
+		// Token: 0x04009711 RID: 38673
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> killedHasBuffTag;
 
-		// Token: 0x04009629 RID: 38441
+		// Token: 0x04009712 RID: 38674
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isEnemy = true;
 	}

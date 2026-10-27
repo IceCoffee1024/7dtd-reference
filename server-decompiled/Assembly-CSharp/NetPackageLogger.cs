@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020007A1 RID: 1953
+// Token: 0x020007A9 RID: 1961
 public static class NetPackageLogger
 {
-	// Token: 0x06003A4D RID: 14925 RVA: 0x0017B40C File Offset: 0x0017960C
+	// Token: 0x06003A64 RID: 14948 RVA: 0x0017C3A4 File Offset: 0x0017A5A4
 	public static void Init()
 	{
 		if (NetPackageLogger.logFilePathPrefix != null)
@@ -22,7 +22,7 @@ public static class NetPackageLogger
 		NetPackageLogger.logEnabled = GameUtils.GetLaunchArgument("debugpackages") != null;
 	}
 
-	// Token: 0x06003A4E RID: 14926 RVA: 0x0017B46C File Offset: 0x0017966C
+	// Token: 0x06003A65 RID: 14949 RVA: 0x0017C404 File Offset: 0x0017A604
 	public static void BeginLog(bool _asServer)
 	{
 		if (!NetPackageLogger.logEnabled)
@@ -38,7 +38,7 @@ public static class NetPackageLogger
 		NetPackageLogger.logFileStream.WriteLine("Time,Dir,Src/Tgt,PackageType,Chn,Len,Encrypted,Compressed,Pkg# in Msg,Pkgs in Msg");
 	}
 
-	// Token: 0x06003A4F RID: 14927 RVA: 0x0017B4E0 File Offset: 0x001796E0
+	// Token: 0x06003A66 RID: 14950 RVA: 0x0017C478 File Offset: 0x0017A678
 	public static void LogPackage(bool _dirIsOut, ClientInfo _clientInfo, NetPackage _packageType, int _channel, int _length, bool _encrypted, bool _compressed, int _pkgNumInMsg, int _pkgsInMsg)
 	{
 		if (NetPackageLogger.logFileStream == null)
@@ -65,7 +65,7 @@ public static class NetPackageLogger
 		}
 	}
 
-	// Token: 0x06003A50 RID: 14928 RVA: 0x0017B5C0 File Offset: 0x001797C0
+	// Token: 0x06003A67 RID: 14951 RVA: 0x0017C558 File Offset: 0x0017A758
 	public static void EndLog()
 	{
 		if (NetPackageLogger.logFileStream == null)
@@ -80,19 +80,19 @@ public static class NetPackageLogger
 		NetPackageLogger.logFileStream = null;
 	}
 
-	// Token: 0x04002FA0 RID: 12192
+	// Token: 0x04002FBC RID: 12220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int opened;
 
-	// Token: 0x04002FA1 RID: 12193
+	// Token: 0x04002FBD RID: 12221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static StreamWriter logFileStream;
 
-	// Token: 0x04002FA2 RID: 12194
+	// Token: 0x04002FBE RID: 12222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool logEnabled;
 
-	// Token: 0x04002FA3 RID: 12195
+	// Token: 0x04002FBF RID: 12223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string logFilePathPrefix;
 }

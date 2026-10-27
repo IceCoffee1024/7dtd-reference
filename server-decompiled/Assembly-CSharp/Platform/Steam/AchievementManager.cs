@@ -4,10 +4,10 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CAD RID: 7341
+	// Token: 0x02001CDE RID: 7390
 	public class AchievementManager : IAchievementManager
 	{
-		// Token: 0x0600D9A8 RID: 55720 RVA: 0x004E04E0 File Offset: 0x004DE6E0
+		// Token: 0x0600DABC RID: 55996 RVA: 0x004E4030 File Offset: 0x004E2230
 		public AchievementManager()
 		{
 			this.m_UserStatsReceived = Callback<UserStatsReceived_t>.Create(new Callback<UserStatsReceived_t>.DispatchDelegate(this.UserStatsReceived_Callback));
@@ -15,7 +15,7 @@ namespace Platform.Steam
 			this.m_UserAchievementStored_t = Callback<UserAchievementStored_t>.Create(new Callback<UserAchievementStored_t>.DispatchDelegate(this.UserAchievementStored_Callback));
 		}
 
-		// Token: 0x0600D9A9 RID: 55721 RVA: 0x004E054E File Offset: 0x004DE74E
+		// Token: 0x0600DABD RID: 55997 RVA: 0x004E409E File Offset: 0x004E229E
 		public void Init(IPlatform _owner)
 		{
 			_owner.User.UserLoggedIn += delegate(IPlatform _sender)
@@ -24,7 +24,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D9AA RID: 55722 RVA: 0x004E057C File Offset: 0x004DE77C
+		// Token: 0x0600DABE RID: 55998 RVA: 0x004E40CC File Offset: 0x004E22CC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UserStatsReceived_Callback(UserStatsReceived_t _result)
 		{
@@ -81,28 +81,28 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9AB RID: 55723 RVA: 0x004E06B4 File Offset: 0x004DE8B4
+		// Token: 0x0600DABF RID: 55999 RVA: 0x004E4204 File Offset: 0x004E2404
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UserStatsStored_Callback(UserStatsStored_t _result)
 		{
 			Log.Out("AchievementManager.UserStatsStored_Callback, result={0}", new object[] { _result.m_eResult.ToStringCached<EResult>() });
 		}
 
-		// Token: 0x0600D9AC RID: 55724 RVA: 0x004E06D4 File Offset: 0x004DE8D4
+		// Token: 0x0600DAC0 RID: 56000 RVA: 0x004E4224 File Offset: 0x004E2424
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UserAchievementStored_Callback(UserAchievementStored_t _result)
 		{
 			Log.Out("AchievementManager.UserAchievementStored_Callback, name={0}, cur={1}, max={2}", new object[] { _result.m_rgchAchievementName, _result.m_nCurProgress, _result.m_nMaxProgress });
 		}
 
-		// Token: 0x0600D9AD RID: 55725 RVA: 0x004E070C File Offset: 0x004DE90C
+		// Token: 0x0600DAC1 RID: 56001 RVA: 0x004E425C File Offset: 0x004E245C
 		public void ShowAchievementsUi()
 		{
 			Log.Out("AchievementManager.ShowAchievementsUI");
 			SteamFriends.ActivateGameOverlay("Achievements");
 		}
 
-		// Token: 0x0600D9AE RID: 55726 RVA: 0x004E0724 File Offset: 0x004DE924
+		// Token: 0x0600DAC2 RID: 56002 RVA: 0x004E4274 File Offset: 0x004E2474
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SendAchievementEvent(EnumAchievementManagerAchievement _achievement)
 		{
@@ -120,7 +120,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9AF RID: 55727 RVA: 0x004E0790 File Offset: 0x004DE990
+		// Token: 0x0600DAC3 RID: 56003 RVA: 0x004E42E0 File Offset: 0x004E24E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetAchievementStatValueFloat(EnumAchievementDataStat _stat, float _value)
 		{
@@ -133,7 +133,7 @@ namespace Platform.Steam
 			SteamUserStats.SetStat(statCacheEntry.name, _value);
 		}
 
-		// Token: 0x0600D9B0 RID: 55728 RVA: 0x004E07E0 File Offset: 0x004DE9E0
+		// Token: 0x0600DAC4 RID: 56004 RVA: 0x004E4330 File Offset: 0x004E2530
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetAchievementStatValueInt(EnumAchievementDataStat _stat, int _value)
 		{
@@ -146,7 +146,7 @@ namespace Platform.Steam
 			SteamUserStats.SetStat(statCacheEntry.name, _value);
 		}
 
-		// Token: 0x0600D9B1 RID: 55729 RVA: 0x004E0830 File Offset: 0x004DEA30
+		// Token: 0x0600DAC5 RID: 56005 RVA: 0x004E4380 File Offset: 0x004E2580
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float GetAchievementStatValueFloat(EnumAchievementDataStat _stat)
 		{
@@ -158,7 +158,7 @@ namespace Platform.Steam
 			return 0f;
 		}
 
-		// Token: 0x0600D9B2 RID: 55730 RVA: 0x004E0864 File Offset: 0x004DEA64
+		// Token: 0x0600DAC6 RID: 56006 RVA: 0x004E43B4 File Offset: 0x004E25B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int GetAchievementStatValueInt(EnumAchievementDataStat _stat)
 		{
@@ -170,7 +170,7 @@ namespace Platform.Steam
 			return 0;
 		}
 
-		// Token: 0x0600D9B3 RID: 55731 RVA: 0x004E0894 File Offset: 0x004DEA94
+		// Token: 0x0600DAC7 RID: 56007 RVA: 0x004E43E4 File Offset: 0x004E25E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsAchievementLocked(EnumAchievementManagerAchievement _achievement)
 		{
@@ -178,7 +178,7 @@ namespace Platform.Steam
 			return this.steamAchievementsCache.TryGetValue(_achievement, out achievementCacheEntry) && achievementCacheEntry.locked;
 		}
 
-		// Token: 0x0600D9B4 RID: 55732 RVA: 0x004E08BC File Offset: 0x004DEABC
+		// Token: 0x0600DAC8 RID: 56008 RVA: 0x004E440C File Offset: 0x004E260C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateAchievement(EnumAchievementDataStat _stat, float _newValue)
 		{
@@ -193,7 +193,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9B5 RID: 55733 RVA: 0x004E0914 File Offset: 0x004DEB14
+		// Token: 0x0600DAC9 RID: 56009 RVA: 0x004E4464 File Offset: 0x004E2664
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateAchievement(EnumAchievementDataStat _stat, int _newValue)
 		{
@@ -208,13 +208,13 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9B6 RID: 55734 RVA: 0x004E096C File Offset: 0x004DEB6C
+		// Token: 0x0600DACA RID: 56010 RVA: 0x004E44BC File Offset: 0x004E26BC
 		public bool IsAchievementStatSupported(EnumAchievementDataStat _stat)
 		{
 			return _stat != EnumAchievementDataStat.HighestGamestage;
 		}
 
-		// Token: 0x0600D9B7 RID: 55735 RVA: 0x004E0988 File Offset: 0x004DEB88
+		// Token: 0x0600DACB RID: 56011 RVA: 0x004E44D8 File Offset: 0x004E26D8
 		public void SetAchievementStat(EnumAchievementDataStat _stat, int _value)
 		{
 			if (!_stat.IsSupported())
@@ -261,7 +261,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9B8 RID: 55736 RVA: 0x004E0A30 File Offset: 0x004DEC30
+		// Token: 0x0600DACC RID: 56012 RVA: 0x004E4580 File Offset: 0x004E2780
 		public void SetAchievementStat(EnumAchievementDataStat _stat, float _value)
 		{
 			if (!_stat.IsSupported())
@@ -308,13 +308,13 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9B9 RID: 55737 RVA: 0x004E0AD6 File Offset: 0x004DECD6
+		// Token: 0x0600DACD RID: 56013 RVA: 0x004E4626 File Offset: 0x004E2826
 		public void ResetStats(bool _andAchievements)
 		{
 			SteamUserStats.ResetAllStats(_andAchievements);
 		}
 
-		// Token: 0x0600D9BA RID: 55738 RVA: 0x004E0AE0 File Offset: 0x004DECE0
+		// Token: 0x0600DACE RID: 56014 RVA: 0x004E4630 File Offset: 0x004E2830
 		public void UnlockAllAchievements()
 		{
 			for (int i = 0; i < 19; i++)
@@ -337,37 +337,37 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D9BB RID: 55739 RVA: 0x004E0B5B File Offset: 0x004DED5B
+		// Token: 0x0600DACF RID: 56015 RVA: 0x004E46AB File Offset: 0x004E28AB
 		public void Destroy()
 		{
 			Log.Out("AchievementManager.Cleanup");
 		}
 
-		// Token: 0x0400A51D RID: 42269
+		// Token: 0x0400A606 RID: 42502
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<UserStatsReceived_t> m_UserStatsReceived;
 
-		// Token: 0x0400A51E RID: 42270
+		// Token: 0x0400A607 RID: 42503
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<UserStatsStored_t> m_UserStatsStored;
 
-		// Token: 0x0400A51F RID: 42271
+		// Token: 0x0400A608 RID: 42504
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<UserAchievementStored_t> m_UserAchievementStored_t;
 
-		// Token: 0x0400A520 RID: 42272
+		// Token: 0x0400A609 RID: 42505
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EnumAchievementDataStat, AchievementManager.StatCacheEntry> steamStatsCache = new EnumDictionary<EnumAchievementDataStat, AchievementManager.StatCacheEntry>();
 
-		// Token: 0x0400A521 RID: 42273
+		// Token: 0x0400A60A RID: 42506
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EnumAchievementManagerAchievement, AchievementManager.AchievementCacheEntry> steamAchievementsCache = new EnumDictionary<EnumAchievementManagerAchievement, AchievementManager.AchievementCacheEntry>();
 
-		// Token: 0x02001CAE RID: 7342
+		// Token: 0x02001CDF RID: 7391
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly struct StatCacheEntry
 		{
-			// Token: 0x0600D9BC RID: 55740 RVA: 0x004E0B67 File Offset: 0x004DED67
+			// Token: 0x0600DAD0 RID: 56016 RVA: 0x004E46B7 File Offset: 0x004E28B7
 			public StatCacheEntry(string _name, int _iValue, float _fValue)
 			{
 				this.name = _name;
@@ -375,31 +375,31 @@ namespace Platform.Steam
 				this.fValue = _fValue;
 			}
 
-			// Token: 0x0400A522 RID: 42274
+			// Token: 0x0400A60B RID: 42507
 			public readonly string name;
 
-			// Token: 0x0400A523 RID: 42275
+			// Token: 0x0400A60C RID: 42508
 			public readonly int iValue;
 
-			// Token: 0x0400A524 RID: 42276
+			// Token: 0x0400A60D RID: 42509
 			public readonly float fValue;
 		}
 
-		// Token: 0x02001CAF RID: 7343
+		// Token: 0x02001CE0 RID: 7392
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly struct AchievementCacheEntry
 		{
-			// Token: 0x0600D9BD RID: 55741 RVA: 0x004E0B7E File Offset: 0x004DED7E
+			// Token: 0x0600DAD1 RID: 56017 RVA: 0x004E46CE File Offset: 0x004E28CE
 			public AchievementCacheEntry(string _name, bool _locked)
 			{
 				this.name = _name;
 				this.locked = _locked;
 			}
 
-			// Token: 0x0400A525 RID: 42277
+			// Token: 0x0400A60E RID: 42510
 			public readonly string name;
 
-			// Token: 0x0400A526 RID: 42278
+			// Token: 0x0400A60F RID: 42511
 			public readonly bool locked;
 		}
 	}

@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockTorch : BlockParticle
 {
-	// Token: 0x06000999 RID: 2457 RVA: 0x00042208 File Offset: 0x00040408
+	// Token: 0x06000999 RID: 2457 RVA: 0x000421C8 File Offset: 0x000403C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 getParticleOffset(BlockValue _blockValue)
 	{
@@ -27,7 +27,7 @@ public class BlockTorch : BlockParticle
 		}
 	}
 
-	// Token: 0x0600099A RID: 2458 RVA: 0x000422A8 File Offset: 0x000404A8
+	// Token: 0x0600099A RID: 2458 RVA: 0x00042268 File Offset: 0x00040468
 	public override ItemStack OnBlockPickedUp(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, int _entityId)
 	{
 		ItemStack itemStack = new ItemStack((this.PickedUpItemValue == null) ? _blockValue.ToItemValue() : ItemClass.GetItem(this.PickedUpItemValue, false), 1);

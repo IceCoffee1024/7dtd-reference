@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-// Token: 0x020006BF RID: 1727
+// Token: 0x020006C6 RID: 1734
 public class MinEffectController
 {
-	// Token: 0x06003617 RID: 13847 RVA: 0x00163A3C File Offset: 0x00161C3C
+	// Token: 0x06003625 RID: 13861 RVA: 0x00164630 File Offset: 0x00162830
 	public bool IsOwnerTiered()
 	{
 		byte b = 0;
@@ -21,7 +21,7 @@ public class MinEffectController
 		return false;
 	}
 
-	// Token: 0x06003618 RID: 13848 RVA: 0x00163A78 File Offset: 0x00161C78
+	// Token: 0x06003626 RID: 13862 RVA: 0x0016466C File Offset: 0x0016286C
 	public void ModifyValue(EntityAlive _self, PassiveEffects _effect, ref float _base_value, ref float _perc_value, float _level = 0f, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>), int multiplier = 1)
 	{
 		if (!this.PassivesIndex.Contains(_effect))
@@ -48,7 +48,7 @@ public class MinEffectController
 		}
 	}
 
-	// Token: 0x06003619 RID: 13849 RVA: 0x00163B04 File Offset: 0x00161D04
+	// Token: 0x06003627 RID: 13863 RVA: 0x001646F8 File Offset: 0x001628F8
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSources, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, EntityAlive _self, PassiveEffects _effect, ref float _base_value, ref float _perc_value, float _level = 0f, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>), int multiplier = 1)
 	{
 		if (!this.PassivesIndex.Contains(_effect))
@@ -63,7 +63,7 @@ public class MinEffectController
 		}
 	}
 
-	// Token: 0x0600361A RID: 13850 RVA: 0x00163B64 File Offset: 0x00161D64
+	// Token: 0x06003628 RID: 13864 RVA: 0x00164758 File Offset: 0x00162958
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _eventParms)
 	{
 		_eventParms.ParentType = this.ParentType;
@@ -75,7 +75,7 @@ public class MinEffectController
 		}
 	}
 
-	// Token: 0x0600361B RID: 13851 RVA: 0x00163BA8 File Offset: 0x00161DA8
+	// Token: 0x06003629 RID: 13865 RVA: 0x0016479C File Offset: 0x0016299C
 	public bool HasEvents()
 	{
 		byte b = 0;
@@ -90,7 +90,7 @@ public class MinEffectController
 		return false;
 	}
 
-	// Token: 0x0600361C RID: 13852 RVA: 0x00163BE4 File Offset: 0x00161DE4
+	// Token: 0x0600362A RID: 13866 RVA: 0x001647D8 File Offset: 0x001629D8
 	public bool HasTrigger(MinEventTypes _eventType)
 	{
 		byte b = 0;
@@ -105,7 +105,7 @@ public class MinEffectController
 		return false;
 	}
 
-	// Token: 0x0600361D RID: 13853 RVA: 0x00163C20 File Offset: 0x00161E20
+	// Token: 0x0600362B RID: 13867 RVA: 0x00164814 File Offset: 0x00162A14
 	public void AddEffectGroup(MinEffectGroup item, int _order = 0, bool _extends = false)
 	{
 		if (this.EffectGroups == null)
@@ -145,7 +145,7 @@ public class MinEffectController
 		this.PassivesIndex.UnionWith(item.PassivesIndices);
 	}
 
-	// Token: 0x0600361E RID: 13854 RVA: 0x00163D50 File Offset: 0x00161F50
+	// Token: 0x0600362C RID: 13868 RVA: 0x00164944 File Offset: 0x00162B44
 	public static MinEffectController ParseXml(XElement _element, XElement _elementToExtend = null, MinEffectController.SourceParentType _type = MinEffectController.SourceParentType.None, object _parentPointer = null)
 	{
 		bool flag = false;
@@ -194,36 +194,36 @@ public class MinEffectController
 		return minEffectController;
 	}
 
-	// Token: 0x04002B69 RID: 11113
+	// Token: 0x04002B84 RID: 11140
 	public List<MinEffectGroup> EffectGroups;
 
-	// Token: 0x04002B6A RID: 11114
+	// Token: 0x04002B85 RID: 11141
 	public HashSet<PassiveEffects> PassivesIndex;
 
-	// Token: 0x04002B6B RID: 11115
+	// Token: 0x04002B86 RID: 11142
 	public MinEffectController.SourceParentType ParentType;
 
-	// Token: 0x04002B6C RID: 11116
+	// Token: 0x04002B87 RID: 11143
 	public object ParentPointer = -1;
 
-	// Token: 0x020006C0 RID: 1728
+	// Token: 0x020006C7 RID: 1735
 	public enum SourceParentType
 	{
-		// Token: 0x04002B6E RID: 11118
+		// Token: 0x04002B89 RID: 11145
 		None,
-		// Token: 0x04002B6F RID: 11119
+		// Token: 0x04002B8A RID: 11146
 		ItemClass,
-		// Token: 0x04002B70 RID: 11120
+		// Token: 0x04002B8B RID: 11147
 		ItemModifierClass,
-		// Token: 0x04002B71 RID: 11121
+		// Token: 0x04002B8C RID: 11148
 		EntityClass,
-		// Token: 0x04002B72 RID: 11122
+		// Token: 0x04002B8D RID: 11149
 		ProgressionClass,
-		// Token: 0x04002B73 RID: 11123
+		// Token: 0x04002B8E RID: 11150
 		BuffClass,
-		// Token: 0x04002B74 RID: 11124
+		// Token: 0x04002B8F RID: 11151
 		ChallengeClass,
-		// Token: 0x04002B75 RID: 11125
+		// Token: 0x04002B90 RID: 11152
 		ChallengeGroup
 	}
 }

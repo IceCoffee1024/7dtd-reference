@@ -17,10 +17,10 @@ using Unity.XGamingRuntime;
 
 namespace Platform.XBL.Save
 {
-	// Token: 0x02001C72 RID: 7282
+	// Token: 0x02001CA3 RID: 7331
 	public sealed class SaveContainer : IDisposable
 	{
-		// Token: 0x0600D7E2 RID: 55266 RVA: 0x004D6FB5 File Offset: 0x004D51B5
+		// Token: 0x0600D8F6 RID: 55542 RVA: 0x004DAB05 File Offset: 0x004D8D05
 		[Conditional("DEBUG_SAVE_DATA_MANAGER")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogTrace(string text)
@@ -28,28 +28,28 @@ namespace Platform.XBL.Save
 			Log.Out("[XBL: SaveContainer] " + text);
 		}
 
-		// Token: 0x0600D7E3 RID: 55267 RVA: 0x004D6FB5 File Offset: 0x004D51B5
+		// Token: 0x0600D8F7 RID: 55543 RVA: 0x004DAB05 File Offset: 0x004D8D05
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogInfo(string text)
 		{
 			Log.Out("[XBL: SaveContainer] " + text);
 		}
 
-		// Token: 0x0600D7E4 RID: 55268 RVA: 0x004D6FC7 File Offset: 0x004D51C7
+		// Token: 0x0600D8F8 RID: 55544 RVA: 0x004DAB17 File Offset: 0x004D8D17
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogWarning(string text)
 		{
 			Log.Warning("[XBL: SaveContainer] " + text);
 		}
 
-		// Token: 0x0600D7E5 RID: 55269 RVA: 0x004D6FD9 File Offset: 0x004D51D9
+		// Token: 0x0600D8F9 RID: 55545 RVA: 0x004DAB29 File Offset: 0x004D8D29
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogError(string text)
 		{
 			Log.Error("[XBL: SaveContainer] " + text);
 		}
 
-		// Token: 0x0600D7E6 RID: 55270 RVA: 0x004D6FEC File Offset: 0x004D51EC
+		// Token: 0x0600D8FA RID: 55546 RVA: 0x004DAB3C File Offset: 0x004D8D3C
 		public SaveContainer(ISaveStorageContainer saveStorageContainer, SizeTracker sizeTracker)
 		{
 			bool flag = false;
@@ -208,7 +208,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7E7 RID: 55271 RVA: 0x004D7694 File Offset: 0x004D5894
+		// Token: 0x0600D8FB RID: 55547 RVA: 0x004DB1E4 File Offset: 0x004D93E4
 		public void Dispose()
 		{
 			CancellationTokenSource blobCacheQueueCancellationTokenSource = this.m_blobCacheQueueCancellationTokenSource;
@@ -269,14 +269,14 @@ namespace Platform.XBL.Save
 			this.m_saveStorageContainer = null;
 		}
 
-		// Token: 0x0600D7E8 RID: 55272 RVA: 0x004D77D4 File Offset: 0x004D59D4
+		// Token: 0x0600D8FC RID: 55548 RVA: 0x004DB324 File Offset: 0x004D9524
 		public bool FileExists(StringSpan relativePath)
 		{
 			Node node = this.GetNode(relativePath);
 			return node != null && node.IsFile();
 		}
 
-		// Token: 0x0600D7E9 RID: 55273 RVA: 0x004D77F4 File Offset: 0x004D59F4
+		// Token: 0x0600D8FD RID: 55549 RVA: 0x004DB344 File Offset: 0x004D9544
 		public void FileRead(StringSpan relativePath, Stream outputStream)
 		{
 			Node node = this.GetNode(relativePath);
@@ -355,7 +355,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7EA RID: 55274 RVA: 0x004D7AA4 File Offset: 0x004D5CA4
+		// Token: 0x0600D8FE RID: 55550 RVA: 0x004DB5F4 File Offset: 0x004D97F4
 		public void FileWrite(StringSpan relativePath, Stream inputStream)
 		{
 			bool flag;
@@ -471,7 +471,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7EB RID: 55275 RVA: 0x004D7E60 File Offset: 0x004D6060
+		// Token: 0x0600D8FF RID: 55551 RVA: 0x004DB9B0 File Offset: 0x004D9BB0
 		public void FileDelete(StringSpan relativePath)
 		{
 			Node node = this.GetNode(relativePath);
@@ -500,7 +500,7 @@ namespace Platform.XBL.Save
 			node.Dispose();
 		}
 
-		// Token: 0x0600D7EC RID: 55276 RVA: 0x004D7F64 File Offset: 0x004D6164
+		// Token: 0x0600D900 RID: 55552 RVA: 0x004DBAB4 File Offset: 0x004D9CB4
 		public long FileLength(StringSpan relativePath)
 		{
 			Node node = this.GetNode(relativePath);
@@ -521,7 +521,7 @@ namespace Platform.XBL.Save
 			return num;
 		}
 
-		// Token: 0x0600D7ED RID: 55277 RVA: 0x004D8020 File Offset: 0x004D6220
+		// Token: 0x0600D901 RID: 55553 RVA: 0x004DBB70 File Offset: 0x004D9D70
 		public void FileMove(StringSpan sourceRelativePath, StringSpan destRelativePath)
 		{
 			Node node = this.GetNode(sourceRelativePath);
@@ -559,14 +559,14 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7EE RID: 55278 RVA: 0x004D817C File Offset: 0x004D637C
+		// Token: 0x0600D902 RID: 55554 RVA: 0x004DBCCC File Offset: 0x004D9ECC
 		public bool DirectoryExists(StringSpan relativePath)
 		{
 			Node node = this.GetNode(relativePath);
 			return node != null && node.IsDirectory();
 		}
 
-		// Token: 0x0600D7EF RID: 55279 RVA: 0x004D819C File Offset: 0x004D639C
+		// Token: 0x0600D903 RID: 55555 RVA: 0x004DBCEC File Offset: 0x004D9EEC
 		public void DirectoryCreate(StringSpan relativePath)
 		{
 			bool flag;
@@ -581,7 +581,7 @@ namespace Platform.XBL.Save
 			this.WriteMFT();
 		}
 
-		// Token: 0x0600D7F0 RID: 55280 RVA: 0x004D81E8 File Offset: 0x004D63E8
+		// Token: 0x0600D904 RID: 55556 RVA: 0x004DBD38 File Offset: 0x004D9F38
 		public void DirectoryDelete(StringSpan relativePath, bool recursive)
 		{
 			Node node = this.GetNode(relativePath);
@@ -622,7 +622,7 @@ namespace Platform.XBL.Save
 			node.Dispose();
 		}
 
-		// Token: 0x0600D7F1 RID: 55281 RVA: 0x004D837C File Offset: 0x004D657C
+		// Token: 0x0600D905 RID: 55557 RVA: 0x004DBECC File Offset: 0x004DA0CC
 		public IEnumerable<string> DirectoryEnumerate(string relativePath, string searchPattern, bool recursive, bool includeDirectories, bool includeFiles)
 		{
 			return from x in this.DirectoryEnumerate(relativePath, searchPattern, recursive)
@@ -630,7 +630,7 @@ namespace Platform.XBL.Save
 				select x.RelativePath;
 		}
 
-		// Token: 0x0600D7F2 RID: 55282 RVA: 0x004D83E0 File Offset: 0x004D65E0
+		// Token: 0x0600D906 RID: 55558 RVA: 0x004DBF30 File Offset: 0x004DA130
 		public IEnumerable<PathEnumerationInfo> DirectoryEnumerate(string relativePath, string searchPattern, bool recursive)
 		{
 			Node baseNode;
@@ -666,7 +666,7 @@ namespace Platform.XBL.Save
 				select new PathEnumerationInfo(baseRelativePath + SaveContainer.<DirectoryEnumerate>g__GetRelativePathFromNode|33_1(n, baseNode), n.IsDirectory(), n.IsFile());
 		}
 
-		// Token: 0x0600D7F3 RID: 55283 RVA: 0x004D8523 File Offset: 0x004D6723
+		// Token: 0x0600D907 RID: 55559 RVA: 0x004DC073 File Offset: 0x004DA273
 		public void SetCreationTimeUtc(StringSpan relativePath, DateTime lastWriteTimeUtc)
 		{
 			Node node = this.GetNode(relativePath);
@@ -678,7 +678,7 @@ namespace Platform.XBL.Save
 			this.WriteMFT();
 		}
 
-		// Token: 0x0600D7F4 RID: 55284 RVA: 0x004D855C File Offset: 0x004D675C
+		// Token: 0x0600D908 RID: 55560 RVA: 0x004DC0AC File Offset: 0x004DA2AC
 		public DateTime GetCreationTimeUtc(StringSpan relativePath)
 		{
 			Node node = this.GetNode(relativePath);
@@ -689,7 +689,7 @@ namespace Platform.XBL.Save
 			return node.CreationTimeUtc;
 		}
 
-		// Token: 0x0600D7F5 RID: 55285 RVA: 0x004D8582 File Offset: 0x004D6782
+		// Token: 0x0600D909 RID: 55561 RVA: 0x004DC0D2 File Offset: 0x004DA2D2
 		public void SetLastWriteTimeUtc(StringSpan relativePath, DateTime lastWriteTimeUtc)
 		{
 			Node node = this.GetNode(relativePath);
@@ -701,7 +701,7 @@ namespace Platform.XBL.Save
 			this.WriteMFT();
 		}
 
-		// Token: 0x0600D7F6 RID: 55286 RVA: 0x004D85BC File Offset: 0x004D67BC
+		// Token: 0x0600D90A RID: 55562 RVA: 0x004DC10C File Offset: 0x004DA30C
 		public DateTime GetLastWriteTimeUtc(StringSpan relativePath)
 		{
 			Node node = this.GetNode(relativePath);
@@ -712,7 +712,7 @@ namespace Platform.XBL.Save
 			return node.LastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D7F7 RID: 55287 RVA: 0x004D85E4 File Offset: 0x004D67E4
+		// Token: 0x0600D90B RID: 55563 RVA: 0x004DC134 File Offset: 0x004DA334
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Node GetNode(StringSpan relativePath)
 		{
@@ -731,7 +731,7 @@ namespace Platform.XBL.Save
 			return node;
 		}
 
-		// Token: 0x0600D7F8 RID: 55288 RVA: 0x004D863C File Offset: 0x004D683C
+		// Token: 0x0600D90C RID: 55564 RVA: 0x004DC18C File Offset: 0x004DA38C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Node GetNodeParent(StringSpan relativePath)
 		{
@@ -756,7 +756,7 @@ namespace Platform.XBL.Save
 			return node;
 		}
 
-		// Token: 0x0600D7F9 RID: 55289 RVA: 0x004D8688 File Offset: 0x004D6888
+		// Token: 0x0600D90D RID: 55565 RVA: 0x004DC1D8 File Offset: 0x004DA3D8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Node GetOrCreateNode(StringSpan relativePath, bool createDirectory, bool createParents, out bool wasCreated)
 		{
@@ -818,7 +818,7 @@ namespace Platform.XBL.Save
 			return node;
 		}
 
-		// Token: 0x0600D7FA RID: 55290 RVA: 0x004D87F8 File Offset: 0x004D69F8
+		// Token: 0x0600D90E RID: 55566 RVA: 0x004DC348 File Offset: 0x004DA548
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XGameSaveBlobInfo GetBlobInfoCached(ulong blobId)
 		{
@@ -850,7 +850,7 @@ namespace Platform.XBL.Save
 			throw new IOException("Expected to find a blob with the name '" + text + "'");
 		}
 
-		// Token: 0x0600D7FB RID: 55291 RVA: 0x004D88D4 File Offset: 0x004D6AD4
+		// Token: 0x0600D90F RID: 55567 RVA: 0x004DC424 File Offset: 0x004DA624
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetBlob(ulong blobId, RefCountedBuffer blobData)
 		{
@@ -877,7 +877,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7FC RID: 55292 RVA: 0x004D8988 File Offset: 0x004D6B88
+		// Token: 0x0600D910 RID: 55568 RVA: 0x004DC4D8 File Offset: 0x004DA6D8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DeleteBlob(string blobName)
 		{
@@ -913,7 +913,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7FD RID: 55293 RVA: 0x004D8A5C File Offset: 0x004D6C5C
+		// Token: 0x0600D911 RID: 55569 RVA: 0x004DC5AC File Offset: 0x004DA7AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void WriteMFT()
 		{
@@ -935,7 +935,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7FE RID: 55294 RVA: 0x004D8B2C File Offset: 0x004D6D2C
+		// Token: 0x0600D912 RID: 55570 RVA: 0x004DC67C File Offset: 0x004DA87C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ReadMFT(RefCountedBuffer buffer)
 		{
@@ -945,7 +945,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D7FF RID: 55295 RVA: 0x004D8B84 File Offset: 0x004D6D84
+		// Token: 0x0600D913 RID: 55571 RVA: 0x004DC6D4 File Offset: 0x004DA8D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong GenerateNewId()
 		{
@@ -966,20 +966,20 @@ namespace Platform.XBL.Save
 			return num2;
 		}
 
-		// Token: 0x0600D800 RID: 55296 RVA: 0x004D8BF8 File Offset: 0x004D6DF8
+		// Token: 0x0600D914 RID: 55572 RVA: 0x004DC748 File Offset: 0x004DA948
 		public static string IdToString(ulong id)
 		{
 			return FormattableString.Invariant(FormattableStringFactory.Create("{0:x16}", new object[] { id }));
 		}
 
-		// Token: 0x0600D801 RID: 55297 RVA: 0x004D8C18 File Offset: 0x004D6E18
+		// Token: 0x0600D915 RID: 55573 RVA: 0x004DC768 File Offset: 0x004DA968
 		public static bool TryConvertToId(string input, out ulong id)
 		{
 			id = 0UL;
 			return input.Length == 16 && input.Equals(input.ToLowerInvariant(), StringComparison.InvariantCulture) && ulong.TryParse(input, NumberStyles.HexNumber, NumberFormatInfo.InvariantInfo, out id);
 		}
 
-		// Token: 0x0600D802 RID: 55298 RVA: 0x004D8C4C File Offset: 0x004D6E4C
+		// Token: 0x0600D916 RID: 55574 RVA: 0x004DC79C File Offset: 0x004DA99C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public async Task BlobCacheQueueTask(CancellationToken cancellationToken)
 		{
@@ -1030,7 +1030,7 @@ namespace Platform.XBL.Save
 			}
 		}
 
-		// Token: 0x0600D806 RID: 55302 RVA: 0x004D8CD0 File Offset: 0x004D6ED0
+		// Token: 0x0600D91A RID: 55578 RVA: 0x004DC820 File Offset: 0x004DAA20
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static string <DirectoryEnumerate>g__GetRelativePathFromNode|33_1(Node currentNode, Node baseNode)
@@ -1044,70 +1044,70 @@ namespace Platform.XBL.Save
 			return string.Join<string>('/', list.Select<Node, string>((Node n) => n.Name).Reverse<string>());
 		}
 
-		// Token: 0x0400A41C RID: 42012
+		// Token: 0x0400A505 RID: 42245
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxBlobSize = 16777216;
 
-		// Token: 0x0400A41D RID: 42013
+		// Token: 0x0400A506 RID: 42246
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxNodeBlobSize = 16777216;
 
-		// Token: 0x0400A41E RID: 42014
+		// Token: 0x0400A507 RID: 42247
 		public const ulong RootNodeId = 18364758544493064720UL;
 
-		// Token: 0x0400A41F RID: 42015
+		// Token: 0x0400A508 RID: 42248
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxBlobCacheReadSize = 1048576;
 
-		// Token: 0x0400A420 RID: 42016
+		// Token: 0x0400A509 RID: 42249
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan BlobCacheInactivityThreshold = TimeSpan.FromSeconds(1.0);
 
-		// Token: 0x0400A421 RID: 42017
+		// Token: 0x0400A50A RID: 42250
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SizeTracker m_sizeTracker;
 
-		// Token: 0x0400A422 RID: 42018
+		// Token: 0x0400A50B RID: 42251
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ISaveStorageContainer m_saveStorageContainer;
 
-		// Token: 0x0400A423 RID: 42019
+		// Token: 0x0400A50C RID: 42252
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ContainerData m_containerData;
 
-		// Token: 0x0400A424 RID: 42020
+		// Token: 0x0400A50D RID: 42253
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_mftLock = new object();
 
-		// Token: 0x0400A425 RID: 42021
+		// Token: 0x0400A50E RID: 42254
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PooledExpandableMemoryStream m_mftMemoryStream;
 
-		// Token: 0x0400A426 RID: 42022
+		// Token: 0x0400A50F RID: 42255
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PooledBinaryWriter m_mftBinaryWriter;
 
-		// Token: 0x0400A427 RID: 42023
+		// Token: 0x0400A510 RID: 42256
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<ulong, XGameSaveBlobInfo> m_blobIdToInfo = new Dictionary<ulong, XGameSaveBlobInfo>();
 
-		// Token: 0x0400A428 RID: 42024
+		// Token: 0x0400A511 RID: 42257
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_blobCacheLock = new object();
 
-		// Token: 0x0400A429 RID: 42025
+		// Token: 0x0400A512 RID: 42258
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BlobCache m_blobCache;
 
-		// Token: 0x0400A42A RID: 42026
+		// Token: 0x0400A513 RID: 42259
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LinkedDictionary<ulong, uint> m_blobCacheQueue;
 
-		// Token: 0x0400A42B RID: 42027
+		// Token: 0x0400A514 RID: 42260
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CancellationTokenSource m_blobCacheQueueCancellationTokenSource;
 
-		// Token: 0x0400A42C RID: 42028
+		// Token: 0x0400A515 RID: 42261
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Task m_blobCacheQueueTask;
 	}

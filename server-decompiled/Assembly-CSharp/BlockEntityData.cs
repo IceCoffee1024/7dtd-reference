@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020003DF RID: 991
+// Token: 0x020003E1 RID: 993
 [Preserve]
 public class BlockEntityData
 {
-	// Token: 0x06001DED RID: 7661 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06001DF1 RID: 7665 RVA: 0x0000640C File Offset: 0x0000460C
 	public BlockEntityData()
 	{
 	}
 
-	// Token: 0x06001DEE RID: 7662 RVA: 0x000B6278 File Offset: 0x000B4478
+	// Token: 0x06001DF2 RID: 7666 RVA: 0x000B6488 File Offset: 0x000B4688
 	public BlockEntityData(BlockValue _blockValue, Vector3i _pos)
 	{
 		this.pos = _pos;
 		this.blockValue = _blockValue;
 	}
 
-	// Token: 0x06001DEF RID: 7663 RVA: 0x000B6290 File Offset: 0x000B4490
+	// Token: 0x06001DF3 RID: 7667 RVA: 0x000B64A0 File Offset: 0x000B46A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void getRenderers()
 	{
@@ -38,13 +38,13 @@ public class BlockEntityData
 		this.transform.GetComponentsInChildren<Renderer>(true, this.renderers);
 	}
 
-	// Token: 0x06001DF0 RID: 7664 RVA: 0x000B62E2 File Offset: 0x000B44E2
+	// Token: 0x06001DF4 RID: 7668 RVA: 0x000B64F2 File Offset: 0x000B46F2
 	public List<Renderer> GetRenderers()
 	{
 		return this.renderers;
 	}
 
-	// Token: 0x06001DF1 RID: 7665 RVA: 0x000B62EA File Offset: 0x000B44EA
+	// Token: 0x06001DF5 RID: 7669 RVA: 0x000B64FA File Offset: 0x000B46FA
 	public void Cleanup()
 	{
 		if (this.renderers != null)
@@ -53,7 +53,7 @@ public class BlockEntityData
 		}
 	}
 
-	// Token: 0x06001DF2 RID: 7666 RVA: 0x000B6300 File Offset: 0x000B4500
+	// Token: 0x06001DF6 RID: 7670 RVA: 0x000B6510 File Offset: 0x000B4710
 	public void SetMaterialColor(string name, Color value)
 	{
 		this.getRenderers();
@@ -76,7 +76,7 @@ public class BlockEntityData
 		}
 	}
 
-	// Token: 0x06001DF3 RID: 7667 RVA: 0x000B638C File Offset: 0x000B458C
+	// Token: 0x06001DF7 RID: 7671 RVA: 0x000B659C File Offset: 0x000B479C
 	public void SetMaterialValue(string name, float value)
 	{
 		this.getRenderers();
@@ -99,7 +99,7 @@ public class BlockEntityData
 		}
 	}
 
-	// Token: 0x06001DF4 RID: 7668 RVA: 0x000B6418 File Offset: 0x000B4618
+	// Token: 0x06001DF8 RID: 7672 RVA: 0x000B6628 File Offset: 0x000B4828
 	public void SetMaterialColor(Color color)
 	{
 		this.getRenderers();
@@ -114,12 +114,12 @@ public class BlockEntityData
 		}
 	}
 
-	// Token: 0x06001DF5 RID: 7669 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DF9 RID: 7673 RVA: 0x000027FC File Offset: 0x000009FC
 	public void UpdateTemperature()
 	{
 	}
 
-	// Token: 0x06001DF6 RID: 7670 RVA: 0x000B6494 File Offset: 0x000B4694
+	// Token: 0x06001DFA RID: 7674 RVA: 0x000B66A4 File Offset: 0x000B48A4
 	public override string ToString()
 	{
 		string text = "EntityBlockCreationData ";
@@ -127,29 +127,29 @@ public class BlockEntityData
 		return text + blockValue.ToString();
 	}
 
-	// Token: 0x040013F8 RID: 5112
+	// Token: 0x04001408 RID: 5128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MaterialPropertyBlock matPropBlock;
 
-	// Token: 0x040013F9 RID: 5113
+	// Token: 0x04001409 RID: 5129
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Renderer> renderers;
 
-	// Token: 0x040013FA RID: 5114
+	// Token: 0x0400140A RID: 5130
 	public BlockValue blockValue;
 
-	// Token: 0x040013FB RID: 5115
+	// Token: 0x0400140B RID: 5131
 	public Vector3i pos;
 
-	// Token: 0x040013FC RID: 5116
+	// Token: 0x0400140C RID: 5132
 	public Transform transform;
 
-	// Token: 0x040013FD RID: 5117
+	// Token: 0x0400140D RID: 5133
 	public bool bHasTransform;
 
-	// Token: 0x040013FE RID: 5118
+	// Token: 0x0400140E RID: 5134
 	public bool bRenderingOn;
 
-	// Token: 0x040013FF RID: 5119
+	// Token: 0x0400140F RID: 5135
 	public bool bNeedsTemperature;
 }

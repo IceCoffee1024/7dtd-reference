@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000806 RID: 2054
+// Token: 0x02000810 RID: 2064
 [Preserve]
 public class NetPackageLobbyJoin : NetPackage
 {
-	// Token: 0x1700066C RID: 1644
-	// (get) Token: 0x06003C67 RID: 15463 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000672 RID: 1650
+	// (get) Token: 0x06003C8A RID: 15498 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,27 +16,27 @@ public class NetPackageLobbyJoin : NetPackage
 		}
 	}
 
-	// Token: 0x06003C68 RID: 15464 RVA: 0x00182B2E File Offset: 0x00180D2E
+	// Token: 0x06003C8B RID: 15499 RVA: 0x00183C32 File Offset: 0x00181E32
 	public NetPackageLobbyJoin Setup(PlatformLobbyId lobbyId)
 	{
 		this.serverLobbyId = lobbyId;
 		return this;
 	}
 
-	// Token: 0x06003C69 RID: 15465 RVA: 0x00182B38 File Offset: 0x00180D38
+	// Token: 0x06003C8C RID: 15500 RVA: 0x00183C3C File Offset: 0x00181E3C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.serverLobbyId = PlatformLobbyId.Read(_br);
 	}
 
-	// Token: 0x06003C6A RID: 15466 RVA: 0x00182B46 File Offset: 0x00180D46
+	// Token: 0x06003C8D RID: 15501 RVA: 0x00183C4A File Offset: 0x00181E4A
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		this.serverLobbyId.Write(_bw);
 	}
 
-	// Token: 0x06003C6B RID: 15467 RVA: 0x00182B5C File Offset: 0x00180D5C
+	// Token: 0x06003C8E RID: 15502 RVA: 0x00183C60 File Offset: 0x00181E60
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		ILobbyHost lobbyHost = PlatformManager.NativePlatform.LobbyHost;
@@ -65,7 +65,7 @@ public class NetPackageLobbyJoin : NetPackage
 		});
 	}
 
-	// Token: 0x0400311D RID: 12573
+	// Token: 0x0400313D RID: 12605
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformLobbyId serverLobbyId;
 }

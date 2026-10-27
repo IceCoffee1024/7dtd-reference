@@ -9,8 +9,8 @@ using UnityEngine.Scripting;
 public class TileEntityComposite : TileEntity
 {
 	// Token: 0x170000E7 RID: 231
-	// (get) Token: 0x06000BCD RID: 3021 RVA: 0x0004ABEB File Offset: 0x00048DEB
-	// (set) Token: 0x06000BCE RID: 3022 RVA: 0x0004ABF3 File Offset: 0x00048DF3
+	// (get) Token: 0x06000BCD RID: 3021 RVA: 0x0004ABAB File Offset: 0x00048DAB
+	// (set) Token: 0x06000BCE RID: 3022 RVA: 0x0004ABB3 File Offset: 0x00048DB3
 	public IFeatureTriggerCapability.ETriggerRole TriggerRole
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -18,8 +18,8 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000E8 RID: 232
-	// (get) Token: 0x06000BCF RID: 3023 RVA: 0x0004ABFC File Offset: 0x00048DFC
-	// (set) Token: 0x06000BD0 RID: 3024 RVA: 0x0004AC04 File Offset: 0x00048E04
+	// (get) Token: 0x06000BCF RID: 3023 RVA: 0x0004ABBC File Offset: 0x00048DBC
+	// (set) Token: 0x06000BD0 RID: 3024 RVA: 0x0004ABC4 File Offset: 0x00048DC4
 	public bool OverridesPhysicalChecks
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -27,7 +27,7 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000E9 RID: 233
-	// (get) Token: 0x06000BD1 RID: 3025 RVA: 0x0004AC0D File Offset: 0x00048E0D
+	// (get) Token: 0x06000BD1 RID: 3025 RVA: 0x0004ABCD File Offset: 0x00048DCD
 	public TileEntityCompositeData TeData
 	{
 		get
@@ -37,7 +37,7 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000EA RID: 234
-	// (get) Token: 0x06000BD2 RID: 3026 RVA: 0x0004AC15 File Offset: 0x00048E15
+	// (get) Token: 0x06000BD2 RID: 3026 RVA: 0x0004ABD5 File Offset: 0x00048DD5
 	public bool PlayerPlaced
 	{
 		get
@@ -47,7 +47,7 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000EB RID: 235
-	// (get) Token: 0x06000BD3 RID: 3027 RVA: 0x0004AC20 File Offset: 0x00048E20
+	// (get) Token: 0x06000BD3 RID: 3027 RVA: 0x0004ABE0 File Offset: 0x00048DE0
 	public bool LocalPlayerIsOwner
 	{
 		get
@@ -57,27 +57,27 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000EC RID: 236
-	// (get) Token: 0x06000BD4 RID: 3028 RVA: 0x0004AC3C File Offset: 0x00048E3C
-	// (set) Token: 0x06000BD5 RID: 3029 RVA: 0x0004AC44 File Offset: 0x00048E44
+	// (get) Token: 0x06000BD4 RID: 3028 RVA: 0x0004ABFC File Offset: 0x00048DFC
+	// (set) Token: 0x06000BD5 RID: 3029 RVA: 0x0004AC04 File Offset: 0x00048E04
 	public PlatformUserIdentifierAbs Owner
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06000BD6 RID: 3030 RVA: 0x0004AC4D File Offset: 0x00048E4D
+	// Token: 0x06000BD6 RID: 3030 RVA: 0x0004AC0D File Offset: 0x00048E0D
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Composite;
 	}
 
-	// Token: 0x06000BD7 RID: 3031 RVA: 0x0004AC51 File Offset: 0x00048E51
+	// Token: 0x06000BD7 RID: 3031 RVA: 0x0004AC11 File Offset: 0x00048E11
 	public TileEntityComposite(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x06000BD8 RID: 3032 RVA: 0x0004AC5A File Offset: 0x00048E5A
+	// Token: 0x06000BD8 RID: 3032 RVA: 0x0004AC1A File Offset: 0x00048E1A
 	public TileEntityComposite(Chunk _chunk, BlockValue _blockValue)
 		: base(_chunk)
 	{
@@ -85,7 +85,7 @@ public class TileEntityComposite : TileEntity
 		TileEntityLegacyUtils.MigrateLegacyMetadata(this, _blockValue);
 	}
 
-	// Token: 0x06000BD9 RID: 3033 RVA: 0x0004AC7C File Offset: 0x00048E7C
+	// Token: 0x06000BD9 RID: 3033 RVA: 0x0004AC3C File Offset: 0x00048E3C
 	public TileEntityComposite(Chunk _chunk, BlockCompositeTileEntity _block, TileEntityLegacyUtils.LegacyState _state)
 		: base(_chunk)
 	{
@@ -95,14 +95,14 @@ public class TileEntityComposite : TileEntity
 		this.InitModulesFromBlock(_block);
 	}
 
-	// Token: 0x06000BDA RID: 3034 RVA: 0x0004ACB0 File Offset: 0x00048EB0
+	// Token: 0x06000BDA RID: 3034 RVA: 0x0004AC70 File Offset: 0x00048E70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityComposite(TileEntityComposite _original)
 		: base(null)
 	{
 	}
 
-	// Token: 0x06000BDB RID: 3035 RVA: 0x0004ACBC File Offset: 0x00048EBC
+	// Token: 0x06000BDB RID: 3035 RVA: 0x0004AC7C File Offset: 0x00048E7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitModulesFromBlock(BlockCompositeTileEntity _block)
 	{
@@ -127,7 +127,7 @@ public class TileEntityComposite : TileEntity
 		this.PrecomputeCapabilities();
 	}
 
-	// Token: 0x06000BDC RID: 3036 RVA: 0x0004ADBC File Offset: 0x00048FBC
+	// Token: 0x06000BDC RID: 3036 RVA: 0x0004AD7C File Offset: 0x00048F7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrecomputeCapabilities()
 	{
@@ -144,7 +144,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BDD RID: 3037 RVA: 0x0004AE1F File Offset: 0x0004901F
+	// Token: 0x06000BDD RID: 3037 RVA: 0x0004ADDF File Offset: 0x00048FDF
 	public override TileEntity Clone()
 	{
 		TileEntityComposite tileEntityComposite = new TileEntityComposite(this);
@@ -152,7 +152,7 @@ public class TileEntityComposite : TileEntity
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06000BDE RID: 3038 RVA: 0x0004AE30 File Offset: 0x00049030
+	// Token: 0x06000BDE RID: 3038 RVA: 0x0004ADF0 File Offset: 0x00048FF0
 	public override void CopyFrom(TileEntity _other)
 	{
 		TileEntityComposite tileEntityComposite = _other as TileEntityComposite;
@@ -171,7 +171,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BDF RID: 3039 RVA: 0x0004AEA0 File Offset: 0x000490A0
+	// Token: 0x06000BDF RID: 3039 RVA: 0x0004AE60 File Offset: 0x00049060
 	public override void UpdateTick(World _world)
 	{
 		base.UpdateTick(_world);
@@ -182,7 +182,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE0 RID: 3040 RVA: 0x0004AED4 File Offset: 0x000490D4
+	// Token: 0x06000BE0 RID: 3040 RVA: 0x0004AE94 File Offset: 0x00049094
 	public void SetBlockEntityData(BlockEntityData _blockEntityData)
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -192,7 +192,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE1 RID: 3041 RVA: 0x0004AF00 File Offset: 0x00049100
+	// Token: 0x06000BE1 RID: 3041 RVA: 0x0004AEC0 File Offset: 0x000490C0
 	public override void OnRemove(World _world)
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -203,7 +203,7 @@ public class TileEntityComposite : TileEntity
 		base.OnRemove(_world);
 	}
 
-	// Token: 0x06000BE2 RID: 3042 RVA: 0x0004AF34 File Offset: 0x00049134
+	// Token: 0x06000BE2 RID: 3042 RVA: 0x0004AEF4 File Offset: 0x000490F4
 	public override void OnLoad()
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -214,7 +214,7 @@ public class TileEntityComposite : TileEntity
 		base.OnLoad();
 	}
 
-	// Token: 0x06000BE3 RID: 3043 RVA: 0x0004AF64 File Offset: 0x00049164
+	// Token: 0x06000BE3 RID: 3043 RVA: 0x0004AF24 File Offset: 0x00049124
 	public override void OnUnload(World _world)
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -225,7 +225,7 @@ public class TileEntityComposite : TileEntity
 		base.OnUnload(_world);
 	}
 
-	// Token: 0x06000BE4 RID: 3044 RVA: 0x0004AF98 File Offset: 0x00049198
+	// Token: 0x06000BE4 RID: 3044 RVA: 0x0004AF58 File Offset: 0x00049158
 	public override void OnDestroy()
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -236,7 +236,7 @@ public class TileEntityComposite : TileEntity
 		base.OnDestroy();
 	}
 
-	// Token: 0x06000BE5 RID: 3045 RVA: 0x0004AFC8 File Offset: 0x000491C8
+	// Token: 0x06000BE5 RID: 3045 RVA: 0x0004AF88 File Offset: 0x00049188
 	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		if (this.TriggerRole == IFeatureTriggerCapability.ETriggerRole.None || this.TriggerRole == IFeatureTriggerCapability.ETriggerRole.Source)
@@ -253,7 +253,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE6 RID: 3046 RVA: 0x0004B018 File Offset: 0x00049218
+	// Token: 0x06000BE6 RID: 3046 RVA: 0x0004AFD8 File Offset: 0x000491D8
 	public IEnumerable<IFeaturePhysicalCapabilities> GetOverridesPhysicalChecksModules()
 	{
 		if (!this.OverridesPhysicalChecks)
@@ -273,7 +273,7 @@ public class TileEntityComposite : TileEntity
 		yield break;
 	}
 
-	// Token: 0x06000BE7 RID: 3047 RVA: 0x0004B028 File Offset: 0x00049228
+	// Token: 0x06000BE7 RID: 3047 RVA: 0x0004AFE8 File Offset: 0x000491E8
 	public override void UpgradeDowngradeFrom(TileEntity _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -290,7 +290,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE8 RID: 3048 RVA: 0x0004B074 File Offset: 0x00049274
+	// Token: 0x06000BE8 RID: 3048 RVA: 0x0004B034 File Offset: 0x00049234
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -301,7 +301,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE9 RID: 3049 RVA: 0x0004B0AC File Offset: 0x000492AC
+	// Token: 0x06000BE9 RID: 3049 RVA: 0x0004B06C File Offset: 0x0004926C
 	public override void Reset(FastTags<TagGroup.Global> _questTags)
 	{
 		base.Reset(_questTags);
@@ -312,20 +312,20 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BEA RID: 3050 RVA: 0x0004B0DE File Offset: 0x000492DE
+	// Token: 0x06000BEA RID: 3050 RVA: 0x0004B09E File Offset: 0x0004929E
 	public override bool IsActive(World world)
 	{
 		return base.IsActive(world);
 	}
 
-	// Token: 0x06000BEB RID: 3051 RVA: 0x0004B0E7 File Offset: 0x000492E7
+	// Token: 0x06000BEB RID: 3051 RVA: 0x0004B0A7 File Offset: 0x000492A7
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.Owner = _userIdentifier;
 		base.SetModified();
 	}
 
-	// Token: 0x06000BEC RID: 3052 RVA: 0x0004B0F8 File Offset: 0x000492F8
+	// Token: 0x06000BEC RID: 3052 RVA: 0x0004B0B8 File Offset: 0x000492B8
 	public string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		ITileEntityFeature[] array = this.modulesCustomOrder;
@@ -340,7 +340,7 @@ public class TileEntityComposite : TileEntity
 		return null;
 	}
 
-	// Token: 0x06000BED RID: 3053 RVA: 0x0004B134 File Offset: 0x00049334
+	// Token: 0x06000BED RID: 3053 RVA: 0x0004B0F4 File Offset: 0x000492F4
 	public BlockActivationCommand[] InitBlockActivationCommands()
 	{
 		List<ValueTuple<BlockActivationCommand, int>> commands = new List<ValueTuple<BlockActivationCommand, int>>();
@@ -413,7 +413,7 @@ public class TileEntityComposite : TileEntity
 		return array2;
 	}
 
-	// Token: 0x06000BEE RID: 3054 RVA: 0x0004B288 File Offset: 0x00049488
+	// Token: 0x06000BEE RID: 3054 RVA: 0x0004B248 File Offset: 0x00049448
 	public bool UpdateBlockActivationCommands(BlockActivationCommand[] _commands, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		int frameCount = Time.frameCount;
@@ -456,7 +456,7 @@ public class TileEntityComposite : TileEntity
 		return this.lastUpdateHadEnabledCommands;
 	}
 
-	// Token: 0x06000BEF RID: 3055 RVA: 0x0004B3B8 File Offset: 0x000495B8
+	// Token: 0x06000BEF RID: 3055 RVA: 0x0004B378 File Offset: 0x00049578
 	public void OnBlockAdded(Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _owner)
 	{
 		this.Owner = _owner;
@@ -466,7 +466,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BF0 RID: 3056 RVA: 0x0004B3F0 File Offset: 0x000495F0
+	// Token: 0x06000BF0 RID: 3056 RVA: 0x0004B3B0 File Offset: 0x000495B0
 	public void OnBlockValueChanged(Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		for (int i = 0; i < this.modulesInternalOrder.Length; i++)
@@ -475,7 +475,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BF1 RID: 3057 RVA: 0x0004B420 File Offset: 0x00049620
+	// Token: 0x06000BF1 RID: 3057 RVA: 0x0004B3E0 File Offset: 0x000495E0
 	public void OnBlockReset(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		for (int i = 0; i < this.modulesInternalOrder.Length; i++)
@@ -484,7 +484,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BF2 RID: 3058 RVA: 0x0004B450 File Offset: 0x00049650
+	// Token: 0x06000BF2 RID: 3058 RVA: 0x0004B410 File Offset: 0x00049610
 	public void OnBlockStartsToFall(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		for (int i = 0; i < this.modulesInternalOrder.Length; i++)
@@ -493,7 +493,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BF3 RID: 3059 RVA: 0x0004B480 File Offset: 0x00049680
+	// Token: 0x06000BF3 RID: 3059 RVA: 0x0004B440 File Offset: 0x00049640
 	public Block.DestroyedResult OnBlockDestroyedBy(Vector3i _blockPos, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		Block.DestroyedResult destroyedResult = Block.DestroyedResult.None;
@@ -508,7 +508,7 @@ public class TileEntityComposite : TileEntity
 		return destroyedResult;
 	}
 
-	// Token: 0x06000BF4 RID: 3060 RVA: 0x0004B4BC File Offset: 0x000496BC
+	// Token: 0x06000BF4 RID: 3060 RVA: 0x0004B47C File Offset: 0x0004967C
 	public Block.DestroyedResult OnBlockDestroyedByExplosion(Vector3i _blockPos, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		Block.DestroyedResult destroyedResult = Block.DestroyedResult.None;
@@ -523,7 +523,7 @@ public class TileEntityComposite : TileEntity
 		return destroyedResult;
 	}
 
-	// Token: 0x06000BF5 RID: 3061 RVA: 0x0004B4F8 File Offset: 0x000496F8
+	// Token: 0x06000BF5 RID: 3061 RVA: 0x0004B4B8 File Offset: 0x000496B8
 	public bool OnBlockActivated(BlockActivationCommand[] _commands, string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		ReadOnlyMemory<char> readOnlyMemory;
@@ -546,7 +546,7 @@ public class TileEntityComposite : TileEntity
 		return feature != null && feature.OnBlockActivated(readOnlyMemory2.Span, _world, _blockPos, _blockValue, _player);
 	}
 
-	// Token: 0x06000BF6 RID: 3062 RVA: 0x0004B59C File Offset: 0x0004979C
+	// Token: 0x06000BF6 RID: 3062 RVA: 0x0004B55C File Offset: 0x0004975C
 	public ITileEntityFeature GetFeature(ReadOnlyMemory<char> _featureName)
 	{
 		int featureIndex = this.teData.GetFeatureIndex(_featureName);
@@ -557,7 +557,7 @@ public class TileEntityComposite : TileEntity
 		return this.modulesInternalOrder[featureIndex];
 	}
 
-	// Token: 0x06000BF7 RID: 3063 RVA: 0x0004B5C4 File Offset: 0x000497C4
+	// Token: 0x06000BF7 RID: 3063 RVA: 0x0004B584 File Offset: 0x00049784
 	public T GetFeature<T>() where T : class
 	{
 		int featureIndex = this.teData.GetFeatureIndex<T>();
@@ -568,7 +568,7 @@ public class TileEntityComposite : TileEntity
 		return (T)((object)this.modulesInternalOrder[featureIndex]);
 	}
 
-	// Token: 0x06000BF8 RID: 3064 RVA: 0x0004B5F8 File Offset: 0x000497F8
+	// Token: 0x06000BF8 RID: 3064 RVA: 0x0004B5B8 File Offset: 0x000497B8
 	public static bool SplitFullCommandName(string _fullCommandName, out ReadOnlyMemory<char> _moduleName, out ReadOnlyMemory<char> _commandName)
 	{
 		int num = _fullCommandName.IndexOf(':');
@@ -583,7 +583,7 @@ public class TileEntityComposite : TileEntity
 		return true;
 	}
 
-	// Token: 0x06000BF9 RID: 3065 RVA: 0x0004B640 File Offset: 0x00049840
+	// Token: 0x06000BF9 RID: 3065 RVA: 0x0004B600 File Offset: 0x00049800
 	public override string ToString()
 	{
 		return string.Format(string.Concat(new string[]
@@ -597,13 +597,13 @@ public class TileEntityComposite : TileEntity
 		}), Array.Empty<object>());
 	}
 
-	// Token: 0x06000BFA RID: 3066 RVA: 0x0004B6B2 File Offset: 0x000498B2
+	// Token: 0x06000BFA RID: 3066 RVA: 0x0004B672 File Offset: 0x00049872
 	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		this.read(_br, _eStreamMode, null);
 	}
 
-	// Token: 0x06000BFB RID: 3067 RVA: 0x0004B6C0 File Offset: 0x000498C0
+	// Token: 0x06000BFB RID: 3067 RVA: 0x0004B680 File Offset: 0x00049880
 	public void read(PooledBinaryReader _br, StreamModeRead _eStreamMode, int[] _blockIdMapping)
 	{
 		base.read(_br, _eStreamMode);
@@ -776,7 +776,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BFC RID: 3068 RVA: 0x0004BBF8 File Offset: 0x00049DF8
+	// Token: 0x06000BFC RID: 3068 RVA: 0x0004BBB8 File Offset: 0x00049DB8
 	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);

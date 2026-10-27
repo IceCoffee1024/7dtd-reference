@@ -6,11 +6,11 @@ using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D3C RID: 3388
+// Token: 0x02000D47 RID: 3399
 public static class ShapesFromXml
 {
-	// Token: 0x17000AE7 RID: 2791
-	// (get) Token: 0x060066B4 RID: 26292 RVA: 0x0028ADF0 File Offset: 0x00288FF0
+	// Token: 0x17000AED RID: 2797
+	// (get) Token: 0x060066D9 RID: 26329 RVA: 0x0028C318 File Offset: 0x0028A518
 	public static ShapesFromXml.EDebugLevel DebugLevel
 	{
 		get
@@ -19,7 +19,7 @@ public static class ShapesFromXml
 		}
 	}
 
-	// Token: 0x060066B5 RID: 26293 RVA: 0x0028ADF8 File Offset: 0x00288FF8
+	// Token: 0x060066DA RID: 26330 RVA: 0x0028C320 File Offset: 0x0028A520
 	[PublicizedFrom(EAccessModifier.Private)]
 	static ShapesFromXml()
 	{
@@ -42,7 +42,7 @@ public static class ShapesFromXml
 		}
 	}
 
-	// Token: 0x060066B6 RID: 26294 RVA: 0x0028AE8F File Offset: 0x0028908F
+	// Token: 0x060066DB RID: 26331 RVA: 0x0028C3B7 File Offset: 0x0028A5B7
 	public static IEnumerator LoadShapes(XmlFile _xmlFile)
 	{
 		ShapesFromXml.shapes = new CaseInsensitiveStringDictionary<XElement>();
@@ -72,14 +72,14 @@ public static class ShapesFromXml
 		yield break;
 	}
 
-	// Token: 0x060066B7 RID: 26295 RVA: 0x0028AE9E File Offset: 0x0028909E
+	// Token: 0x060066DC RID: 26332 RVA: 0x0028C3C6 File Offset: 0x0028A5C6
 	public static void Cleanup()
 	{
 		ShapesFromXml.shapes.Clear();
 		ShapesFromXml.shapes = null;
 	}
 
-	// Token: 0x060066B8 RID: 26296 RVA: 0x0028AEB0 File Offset: 0x002890B0
+	// Token: 0x060066DD RID: 26333 RVA: 0x0028C3D8 File Offset: 0x0028A5D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCategories(XElement _parentElement)
 	{
@@ -92,7 +92,7 @@ public static class ShapesFromXml
 		}
 	}
 
-	// Token: 0x060066B9 RID: 26297 RVA: 0x0028AF38 File Offset: 0x00289138
+	// Token: 0x060066DE RID: 26334 RVA: 0x0028C460 File Offset: 0x0028A660
 	public static IEnumerator CreateShapeVariants(bool _bEditMode, XElement _elementBlock)
 	{
 		string blockBaseName = _elementBlock.GetAttribute(XNames.name);
@@ -140,7 +140,7 @@ public static class ShapesFromXml
 		yield break;
 	}
 
-	// Token: 0x060066BA RID: 26298 RVA: 0x0028AF50 File Offset: 0x00289150
+	// Token: 0x060066DF RID: 26335 RVA: 0x0028C478 File Offset: 0x0028A678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateMaterialHelper(bool _bEditMode, string _blockBaseName, List<string> _shapeNames, bool _hideHelperInCreative)
 	{
@@ -165,7 +165,7 @@ public static class ShapesFromXml
 		BlocksFromXml.InitBlock(block);
 	}
 
-	// Token: 0x060066BB RID: 26299 RVA: 0x0028B058 File Offset: 0x00289258
+	// Token: 0x060066E0 RID: 26336 RVA: 0x0028C580 File Offset: 0x0028A780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateShapeMaterialCombination(bool _bEditMode, XElement _elementBlock, string _blockBaseName, KeyValuePair<string, XElement> _shapeKvp)
 	{
@@ -234,7 +234,7 @@ public static class ShapesFromXml
 		BlocksFromXml.InitBlock(block);
 	}
 
-	// Token: 0x060066BC RID: 26300 RVA: 0x0028B254 File Offset: 0x00289454
+	// Token: 0x060066E1 RID: 26337 RVA: 0x0028C77C File Offset: 0x0028A97C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetMaxDamage(DynamicProperties _properties, string _blockBaseName, string _shapeName)
 	{
@@ -266,7 +266,7 @@ public static class ShapesFromXml
 		_properties.SetValue(Block.PropResourceScale, num.ToCultureInvariantString());
 	}
 
-	// Token: 0x060066BD RID: 26301 RVA: 0x0028B368 File Offset: 0x00289568
+	// Token: 0x060066E2 RID: 26338 RVA: 0x0028C890 File Offset: 0x0028AA90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FixCustomIcon(DynamicProperties _properties, string _blockBaseName, string _shapeName)
 	{
@@ -283,7 +283,7 @@ public static class ShapesFromXml
 		_properties.SetValue(Block.PropCustomIcon, "shape" + @string);
 	}
 
-	// Token: 0x060066BE RID: 26302 RVA: 0x0028B3E4 File Offset: 0x002895E4
+	// Token: 0x060066E3 RID: 26339 RVA: 0x0028C90C File Offset: 0x0028AB0C
 	public static void SetProperty(XElement _element, string _propertyName, XName _attribName, string _value)
 	{
 		XElement xelement = (from e in _element.Elements(XNames.property)
@@ -297,7 +297,7 @@ public static class ShapesFromXml
 		xelement.SetAttributeValue(_attribName, _value);
 	}
 
-	// Token: 0x060066BF RID: 26303 RVA: 0x0028B450 File Offset: 0x00289650
+	// Token: 0x060066E4 RID: 26340 RVA: 0x0028C978 File Offset: 0x0028AB78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ScaleProperty(DynamicProperties _properties, string _className, string _propertyName, float _scale)
 	{
@@ -316,7 +316,7 @@ public static class ShapesFromXml
 		}
 	}
 
-	// Token: 0x060066C0 RID: 26304 RVA: 0x0028B494 File Offset: 0x00289694
+	// Token: 0x060066E5 RID: 26341 RVA: 0x0028C9BC File Offset: 0x0028ABBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FixImposterExchangeId(DynamicProperties _properties, string _blockBaseName, string _shapeName, int channel)
 	{
@@ -335,7 +335,7 @@ public static class ShapesFromXml
 		_properties.SetParam1(imposterExchange, id.ToString());
 	}
 
-	// Token: 0x060066C1 RID: 26305 RVA: 0x0028B548 File Offset: 0x00289748
+	// Token: 0x060066E6 RID: 26342 RVA: 0x0028CA70 File Offset: 0x0028AC70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FixTextureId(DynamicProperties _properties, string _blockBaseName, string _shapeName, int channel)
 	{
@@ -364,7 +364,7 @@ public static class ShapesFromXml
 		_properties.SetValue(texture, text);
 	}
 
-	// Token: 0x060066C2 RID: 26306 RVA: 0x0028B626 File Offset: 0x00289826
+	// Token: 0x060066E7 RID: 26343 RVA: 0x0028CB4E File Offset: 0x0028AD4E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string AppendShapeName(string _innerText, string _blockBaseName, string _shapeName)
 	{
@@ -379,35 +379,35 @@ public static class ShapesFromXml
 		return _innerText;
 	}
 
-	// Token: 0x060066C3 RID: 26307 RVA: 0x0028B656 File Offset: 0x00289856
+	// Token: 0x060066E8 RID: 26344 RVA: 0x0028CB7E File Offset: 0x0028AD7E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PrependBlockBaseName(string _innerText, string _blockBaseName)
 	{
 		return _blockBaseName + ":" + _innerText;
 	}
 
-	// Token: 0x04004F91 RID: 20369
+	// Token: 0x04004FB6 RID: 20406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ShapesFromXml.EDebugLevel debug = ShapesFromXml.EDebugLevel.Off;
 
-	// Token: 0x04004F92 RID: 20370
+	// Token: 0x04004FB7 RID: 20407
 	public static readonly ShapesFromXml.TextureLabels[] TextureLabelsByChannel = new ShapesFromXml.TextureLabels[1];
 
-	// Token: 0x04004F93 RID: 20371
+	// Token: 0x04004FB8 RID: 20408
 	public static readonly string VariantHelperName = "VariantHelper";
 
-	// Token: 0x04004F94 RID: 20372
+	// Token: 0x04004FB9 RID: 20409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, XElement> shapes;
 
-	// Token: 0x04004F95 RID: 20373
+	// Token: 0x04004FBA RID: 20410
 	public static readonly Dictionary<string, ShapesFromXml.ShapeCategory> shapeCategories = new CaseInsensitiveStringDictionary<ShapesFromXml.ShapeCategory>();
 
-	// Token: 0x02000D3D RID: 3389
+	// Token: 0x02000D48 RID: 3400
 	public class ShapeCategory : IComparable<ShapesFromXml.ShapeCategory>, IEquatable<ShapesFromXml.ShapeCategory>, IComparable
 	{
-		// Token: 0x17000AE8 RID: 2792
-		// (get) Token: 0x060066C4 RID: 26308 RVA: 0x0028B664 File Offset: 0x00289864
+		// Token: 0x17000AEE RID: 2798
+		// (get) Token: 0x060066E9 RID: 26345 RVA: 0x0028CB8C File Offset: 0x0028AD8C
 		public string LocalizedName
 		{
 			get
@@ -416,7 +416,7 @@ public static class ShapesFromXml
 			}
 		}
 
-		// Token: 0x060066C5 RID: 26309 RVA: 0x0028B673 File Offset: 0x00289873
+		// Token: 0x060066EA RID: 26346 RVA: 0x0028CB9B File Offset: 0x0028AD9B
 		public ShapeCategory(string _name, string _icon, int _order)
 		{
 			this.Name = _name;
@@ -425,25 +425,25 @@ public static class ShapesFromXml
 			this.localizationName = "shapeCategory" + this.Name;
 		}
 
-		// Token: 0x060066C6 RID: 26310 RVA: 0x0028B6A8 File Offset: 0x002898A8
+		// Token: 0x060066EB RID: 26347 RVA: 0x0028CBD0 File Offset: 0x0028ADD0
 		public bool Equals(ShapesFromXml.ShapeCategory _other)
 		{
 			return _other != null && (this == _other || (this.Name == _other.Name && this.Icon == _other.Icon && this.Order == _other.Order));
 		}
 
-		// Token: 0x060066C7 RID: 26311 RVA: 0x0028B6F6 File Offset: 0x002898F6
+		// Token: 0x060066EC RID: 26348 RVA: 0x0028CC1E File Offset: 0x0028AE1E
 		public override bool Equals(object _obj)
 		{
 			return _obj != null && (this == _obj || (!(_obj.GetType() != base.GetType()) && this.Equals((ShapesFromXml.ShapeCategory)_obj)));
 		}
 
-		// Token: 0x060066C8 RID: 26312 RVA: 0x0028B724 File Offset: 0x00289924
+		// Token: 0x060066ED RID: 26349 RVA: 0x0028CC4C File Offset: 0x0028AE4C
 		public override int GetHashCode()
 		{
 			return (((((this.Name != null) ? this.Name.GetHashCode() : 0) * 397) ^ ((this.Icon != null) ? this.Icon.GetHashCode() : 0)) * 397) ^ this.Order;
 		}
 
-		// Token: 0x060066C9 RID: 26313 RVA: 0x0028B774 File Offset: 0x00289974
+		// Token: 0x060066EE RID: 26350 RVA: 0x0028CC9C File Offset: 0x0028AE9C
 		public int CompareTo(ShapesFromXml.ShapeCategory _other)
 		{
 			if (this == _other)
@@ -457,7 +457,7 @@ public static class ShapesFromXml
 			return this.Order.CompareTo(_other.Order);
 		}
 
-		// Token: 0x060066CA RID: 26314 RVA: 0x0028B7A0 File Offset: 0x002899A0
+		// Token: 0x060066EF RID: 26351 RVA: 0x0028CCC8 File Offset: 0x0028AEC8
 		public int CompareTo(object _obj)
 		{
 			if (_obj == null)
@@ -476,35 +476,35 @@ public static class ShapesFromXml
 			return this.CompareTo(shapeCategory);
 		}
 
-		// Token: 0x04004F96 RID: 20374
+		// Token: 0x04004FBB RID: 20411
 		public readonly string Name;
 
-		// Token: 0x04004F97 RID: 20375
+		// Token: 0x04004FBC RID: 20412
 		public readonly string Icon;
 
-		// Token: 0x04004F98 RID: 20376
+		// Token: 0x04004FBD RID: 20413
 		public readonly int Order;
 
-		// Token: 0x04004F99 RID: 20377
+		// Token: 0x04004FBE RID: 20414
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string localizationName;
 	}
 
-	// Token: 0x02000D3E RID: 3390
+	// Token: 0x02000D49 RID: 3401
 	public enum EDebugLevel
 	{
-		// Token: 0x04004F9B RID: 20379
+		// Token: 0x04004FC0 RID: 20416
 		Off,
-		// Token: 0x04004F9C RID: 20380
+		// Token: 0x04004FC1 RID: 20417
 		Normal,
-		// Token: 0x04004F9D RID: 20381
+		// Token: 0x04004FC2 RID: 20418
 		Verbose
 	}
 
-	// Token: 0x02000D3F RID: 3391
+	// Token: 0x02000D4A RID: 3402
 	public struct TextureLabels
 	{
-		// Token: 0x060066CB RID: 26315 RVA: 0x0028B7D4 File Offset: 0x002899D4
+		// Token: 0x060066F0 RID: 26352 RVA: 0x0028CCFC File Offset: 0x0028AEFC
 		public TextureLabels(string suffix)
 		{
 			this.Texture = "Texture" + suffix;
@@ -513,16 +513,16 @@ public static class ShapesFromXml
 			this.UseGlobalUV = "UseGlobalUV" + suffix;
 		}
 
-		// Token: 0x04004F9E RID: 20382
+		// Token: 0x04004FC3 RID: 20419
 		public readonly string Texture;
 
-		// Token: 0x04004F9F RID: 20383
+		// Token: 0x04004FC4 RID: 20420
 		public readonly string ImposterExchange;
 
-		// Token: 0x04004FA0 RID: 20384
+		// Token: 0x04004FC5 RID: 20421
 		public readonly string ShapeAltTexture;
 
-		// Token: 0x04004FA1 RID: 20385
+		// Token: 0x04004FC6 RID: 20422
 		public readonly string UseGlobalUV;
 	}
 }

@@ -2,21 +2,21 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001098 RID: 4248
+// Token: 0x020010A8 RID: 4264
 [Preserve]
 public class XUiC_Toolbelt : XUiC_ItemStackGrid
 {
-	// Token: 0x17000FDE RID: 4062
-	// (get) Token: 0x060086B6 RID: 34486 RVA: 0x00337226 File Offset: 0x00335426
-	// (set) Token: 0x060086B7 RID: 34487 RVA: 0x0033722E File Offset: 0x0033542E
+	// Token: 0x17000FE9 RID: 4073
+	// (get) Token: 0x06008709 RID: 34569 RVA: 0x003392AA File Offset: 0x003374AA
+	// (set) Token: 0x0600870A RID: 34570 RVA: 0x003392B2 File Offset: 0x003374B2
 	public int CurrentPage
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000FDF RID: 4063
-	// (get) Token: 0x060086B8 RID: 34488 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000FEA RID: 4074
+	// (get) Token: 0x0600870B RID: 34571 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -26,7 +26,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060086B9 RID: 34489 RVA: 0x00337238 File Offset: 0x00335438
+	// Token: 0x0600870C RID: 34572 RVA: 0x003392BC File Offset: 0x003374BC
 	public override void Init()
 	{
 		base.Init();
@@ -43,7 +43,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060086BA RID: 34490 RVA: 0x003372A0 File Offset: 0x003354A0
+	// Token: 0x0600870D RID: 34573 RVA: 0x00339324 File Offset: 0x00337524
 	public override ItemStack[] GetSlots()
 	{
 		ItemStack[] toolbeltItemStacks = this.xui.PlayerInventory.GetToolbeltItemStacks();
@@ -58,7 +58,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return array;
 	}
 
-	// Token: 0x060086BB RID: 34491 RVA: 0x00337310 File Offset: 0x00335510
+	// Token: 0x0600870E RID: 34574 RVA: 0x00339394 File Offset: 0x00337594
 	public override void Update(float _dt)
 	{
 		if (!XUi.IsGameRunning())
@@ -122,7 +122,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		base.Update(_dt);
 	}
 
-	// Token: 0x060086BC RID: 34492 RVA: 0x00337478 File Offset: 0x00335678
+	// Token: 0x0600870F RID: 34575 RVA: 0x003394FC File Offset: 0x003376FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -137,7 +137,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		this.xui.PlayerInventory.SetToolbeltItemStacks(toolbeltItemStacks);
 	}
 
-	// Token: 0x060086BD RID: 34493 RVA: 0x003374D0 File Offset: 0x003356D0
+	// Token: 0x06008710 RID: 34576 RVA: 0x00339554 File Offset: 0x00337754
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] stackList)
 	{
@@ -153,7 +153,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060086BE RID: 34494 RVA: 0x00337520 File Offset: 0x00335720
+	// Token: 0x06008711 RID: 34577 RVA: 0x003395A4 File Offset: 0x003377A4
 	public bool AddItemToCurrentPage(ItemStack itemStack)
 	{
 		XUiC_ItemStack[] itemControllers = this.itemControllers;
@@ -162,7 +162,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return num > 0 && this.xui.PlayerInventory.Toolbelt.AddItem(itemStack, this.CurrentPage * num, num, out num2);
 	}
 
-	// Token: 0x060086BF RID: 34495 RVA: 0x00337564 File Offset: 0x00335764
+	// Token: 0x06008712 RID: 34578 RVA: 0x003395E8 File Offset: 0x003377E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryAbsoluteToView(int absIdx, out int viewIdx)
 	{
@@ -176,7 +176,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return viewIdx >= 0 && viewIdx < this.itemControllers.Length;
 	}
 
-	// Token: 0x060086C0 RID: 34496 RVA: 0x003375B0 File Offset: 0x003357B0
+	// Token: 0x06008713 RID: 34579 RVA: 0x00339634 File Offset: 0x00337834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryViewToAbsolute(int viewIdx, int page, out int absIdx)
 	{
@@ -190,7 +190,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return absIdx >= 0;
 	}
 
-	// Token: 0x060086C1 RID: 34497 RVA: 0x003375F4 File Offset: 0x003357F4
+	// Token: 0x06008714 RID: 34580 RVA: 0x00339678 File Offset: 0x00337878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateQuickSwap()
 	{
@@ -202,7 +202,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060086C2 RID: 34498 RVA: 0x00337648 File Offset: 0x00335848
+	// Token: 0x06008715 RID: 34581 RVA: 0x003396CC File Offset: 0x003378CC
 	public void GoToPage(int newPage, bool persistFocus = false)
 	{
 		if (newPage == this.CurrentPage || newPage < 0 || newPage >= ToolbeltConfig.CurrentConfig.PageCount)
@@ -231,21 +231,21 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060086C3 RID: 34499 RVA: 0x0033770D File Offset: 0x0033590D
+	// Token: 0x06008716 RID: 34582 RVA: 0x00339791 File Offset: 0x00337991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnToolbeltPrev_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.PrevPage();
 	}
 
-	// Token: 0x060086C4 RID: 34500 RVA: 0x00337715 File Offset: 0x00335915
+	// Token: 0x06008717 RID: 34583 RVA: 0x00339799 File Offset: 0x00337999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnToolbeltNext_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.NextPage();
 	}
 
-	// Token: 0x060086C5 RID: 34501 RVA: 0x00337720 File Offset: 0x00335920
+	// Token: 0x06008718 RID: 34584 RVA: 0x003397A4 File Offset: 0x003379A4
 	public void PrevPage()
 	{
 		if (ToolbeltConfig.CurrentConfig.PageCount <= 0)
@@ -256,7 +256,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		this.GoToPage(num, true);
 	}
 
-	// Token: 0x060086C6 RID: 34502 RVA: 0x00337764 File Offset: 0x00335964
+	// Token: 0x06008719 RID: 34585 RVA: 0x003397E8 File Offset: 0x003379E8
 	public void NextPage()
 	{
 		if (ToolbeltConfig.CurrentConfig.PageCount <= 0)
@@ -267,7 +267,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		this.GoToPage(num, true);
 	}
 
-	// Token: 0x060086C7 RID: 34503 RVA: 0x0033779C File Offset: 0x0033599C
+	// Token: 0x0600871A RID: 34586 RVA: 0x00339820 File Offset: 0x00337A20
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -282,7 +282,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		this.xui.playerUI.windowManager.Open(this.xui.DragAndDropWindow.WindowGroup, false);
 	}
 
-	// Token: 0x060086C8 RID: 34504 RVA: 0x002C8616 File Offset: 0x002C6816
+	// Token: 0x0600871B RID: 34587 RVA: 0x002C9B82 File Offset: 0x002C7D82
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
@@ -290,7 +290,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060086C9 RID: 34505 RVA: 0x00337830 File Offset: 0x00335A30
+	// Token: 0x0600871C RID: 34588 RVA: 0x003398B4 File Offset: 0x00337AB4
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -305,7 +305,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060086CA RID: 34506 RVA: 0x003378AC File Offset: 0x00335AAC
+	// Token: 0x0600871D RID: 34589 RVA: 0x00339930 File Offset: 0x00337B30
 	public int ResolveShortcutSlot(int key, bool shiftPressed)
 	{
 		if (key < 0)
@@ -320,7 +320,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return num + this.CurrentPage * ToolbeltConfig.CurrentConfig.BarsPerPage * ToolbeltConfig.CurrentConfig.SlotsPerBar;
 	}
 
-	// Token: 0x060086CB RID: 34507 RVA: 0x00337900 File Offset: 0x00335B00
+	// Token: 0x0600871E RID: 34590 RVA: 0x00339984 File Offset: 0x00337B84
 	public int WrapFocusWithinPage(int currentFocus, int direction)
 	{
 		XUiC_ItemStack[] itemControllers = this.itemControllers;
@@ -343,7 +343,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return num4;
 	}
 
-	// Token: 0x060086CC RID: 34508 RVA: 0x00337948 File Offset: 0x00335B48
+	// Token: 0x0600871F RID: 34591 RVA: 0x003399CC File Offset: 0x00337BCC
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool TryGetSlotControl(int slotIdx, out XUiC_ItemStack itemStack)
 	{
@@ -357,7 +357,7 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return false;
 	}
 
-	// Token: 0x060086CD RID: 34509 RVA: 0x00337970 File Offset: 0x00335B70
+	// Token: 0x06008720 RID: 34592 RVA: 0x003399F4 File Offset: 0x00337BF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -384,22 +384,22 @@ public class XUiC_Toolbelt : XUiC_ItemStackGrid
 		return true;
 	}
 
-	// Token: 0x04006423 RID: 25635
+	// Token: 0x04006462 RID: 25698
 	public static string ID = "";
 
-	// Token: 0x04006424 RID: 25636
+	// Token: 0x04006463 RID: 25699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentHoldingIndex;
 
-	// Token: 0x04006425 RID: 25637
+	// Token: 0x04006464 RID: 25700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastActionSlot;
 
-	// Token: 0x04006426 RID: 25638
+	// Token: 0x04006465 RID: 25701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastActionRunning;
 
-	// Token: 0x04006427 RID: 25639
+	// Token: 0x04006466 RID: 25702
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float updateTime;
 }

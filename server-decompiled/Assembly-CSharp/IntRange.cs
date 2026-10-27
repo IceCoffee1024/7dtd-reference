@@ -1,34 +1,34 @@
 ﻿using System;
 
-// Token: 0x020014D6 RID: 5334
+// Token: 0x020014E8 RID: 5352
 public readonly struct IntRange
 {
-	// Token: 0x0600A728 RID: 42792 RVA: 0x003E4588 File Offset: 0x003E2788
+	// Token: 0x0600A780 RID: 42880 RVA: 0x003E698C File Offset: 0x003E4B8C
 	public IntRange(int _min, int _max)
 	{
 		this.min = _min;
 		this.max = _max;
 	}
 
-	// Token: 0x0600A729 RID: 42793 RVA: 0x003E4598 File Offset: 0x003E2798
+	// Token: 0x0600A781 RID: 42881 RVA: 0x003E699C File Offset: 0x003E4B9C
 	public bool IsSet()
 	{
 		return this.min != 0 || this.max != 0;
 	}
 
-	// Token: 0x0600A72A RID: 42794 RVA: 0x003E45AD File Offset: 0x003E27AD
+	// Token: 0x0600A782 RID: 42882 RVA: 0x003E69B1 File Offset: 0x003E4BB1
 	public int Random(GameRandom _rnd)
 	{
 		return _rnd.RandomRange(this.min, this.max);
 	}
 
-	// Token: 0x0600A72B RID: 42795 RVA: 0x003E45C1 File Offset: 0x003E27C1
+	// Token: 0x0600A783 RID: 42883 RVA: 0x003E69C5 File Offset: 0x003E4BC5
 	public int RandomInclusive(GameRandom _rnd)
 	{
 		return _rnd.RandomRange(this.min, this.max + 1);
 	}
 
-	// Token: 0x0600A72C RID: 42796 RVA: 0x003E45D8 File Offset: 0x003E27D8
+	// Token: 0x0600A784 RID: 42884 RVA: 0x003E69DC File Offset: 0x003E4BDC
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -41,9 +41,9 @@ public readonly struct IntRange
 		});
 	}
 
-	// Token: 0x04007C3D RID: 31805
+	// Token: 0x04007C7E RID: 31870
 	public readonly int min;
 
-	// Token: 0x04007C3E RID: 31806
+	// Token: 0x04007C7F RID: 31871
 	public readonly int max;
 }

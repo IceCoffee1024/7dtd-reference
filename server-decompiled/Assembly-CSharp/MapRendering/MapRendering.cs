@@ -4,10 +4,10 @@ using Webserver.UrlHandlers;
 
 namespace MapRendering
 {
-	// Token: 0x02001ADD RID: 6877
+	// Token: 0x02001B0E RID: 6926
 	public static class MapRendering
 	{
-		// Token: 0x0600CF83 RID: 53123 RVA: 0x004B33F4 File Offset: 0x004B15F4
+		// Token: 0x0600D097 RID: 53399 RVA: 0x004B6EF0 File Offset: 0x004B50F0
 		public static void Init()
 		{
 			ModEvents.GameStartDone.RegisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SGameStartDoneData>(MapRendering.GameStartDone));
@@ -24,7 +24,7 @@ namespace MapRendering
 			};
 		}
 
-		// Token: 0x0600CF84 RID: 53124 RVA: 0x004B3467 File Offset: 0x004B1667
+		// Token: 0x0600D098 RID: 53400 RVA: 0x004B6F63 File Offset: 0x004B5163
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void GameStartDone(ref ModEvents.SGameStartDoneData _data)
 		{
@@ -35,21 +35,21 @@ namespace MapRendering
 			MapRenderer instance = MapRenderer.Instance;
 		}
 
-		// Token: 0x0600CF85 RID: 53125 RVA: 0x004B3477 File Offset: 0x004B1677
+		// Token: 0x0600D099 RID: 53401 RVA: 0x004B6F73 File Offset: 0x004B5173
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void GameShutdown(ref ModEvents.SGameShutdownData _data)
 		{
 			MapRenderer.Shutdown();
 		}
 
-		// Token: 0x0600CF86 RID: 53126 RVA: 0x004B347E File Offset: 0x004B167E
+		// Token: 0x0600D09A RID: 53402 RVA: 0x004B6F7A File Offset: 0x004B517A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void CalcChunkColorsDone(ref ModEvents.SCalcChunkColorsDoneData _data)
 		{
 			MapRenderer.RenderSingleChunk(_data.Chunk);
 		}
 
-		// Token: 0x04009CF2 RID: 40178
+		// Token: 0x04009DDB RID: 40411
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string mapTilesBaseUrl = "/map/";
 	}

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020013A5 RID: 5029
+// Token: 0x020013B7 RID: 5047
 public class AssetBundleManager
 {
-	// Token: 0x170012E5 RID: 4837
-	// (get) Token: 0x06009E58 RID: 40536 RVA: 0x003BDEAE File Offset: 0x003BC0AE
+	// Token: 0x170012F1 RID: 4849
+	// (get) Token: 0x06009EB0 RID: 40624 RVA: 0x003C02B2 File Offset: 0x003BE4B2
 	public static AssetBundleManager Instance
 	{
 		get
@@ -21,13 +21,13 @@ public class AssetBundleManager
 		}
 	}
 
-	// Token: 0x06009E59 RID: 40537 RVA: 0x003BDEC4 File Offset: 0x003BC0C4
+	// Token: 0x06009EB1 RID: 40625 RVA: 0x003C02C8 File Offset: 0x003BE4C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AssetBundleManager()
 	{
 	}
 
-	// Token: 0x06009E5A RID: 40538 RVA: 0x003BDED8 File Offset: 0x003BC0D8
+	// Token: 0x06009EB2 RID: 40626 RVA: 0x003C02DC File Offset: 0x003BE4DC
 	public void LoadAssetBundle(string _name, bool _forceBundle = false)
 	{
 		string text;
@@ -82,19 +82,19 @@ public class AssetBundleManager
 		}
 	}
 
-	// Token: 0x06009E5B RID: 40539 RVA: 0x003BE028 File Offset: 0x003BC228
+	// Token: 0x06009EB3 RID: 40627 RVA: 0x003C042C File Offset: 0x003BE62C
 	public T Get<T>(string _bundleName, string _objName, bool _forceBundle = false) where T : global::UnityEngine.Object
 	{
 		return this._get<T>(_bundleName, _objName, _forceBundle, false);
 	}
 
-	// Token: 0x06009E5C RID: 40540 RVA: 0x003BE034 File Offset: 0x003BC234
+	// Token: 0x06009EB4 RID: 40628 RVA: 0x003C0438 File Offset: 0x003BE638
 	public T Get<T>(DataLoader.DataPathIdentifier _dpi, bool _useRelativePath, bool _forceBundle = false) where T : global::UnityEngine.Object
 	{
 		return this._get<T>(_dpi.BundlePath, _dpi.AssetName, _forceBundle, _useRelativePath);
 	}
 
-	// Token: 0x06009E5D RID: 40541 RVA: 0x003BE04C File Offset: 0x003BC24C
+	// Token: 0x06009EB5 RID: 40629 RVA: 0x003C0450 File Offset: 0x003BE650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T _get<T>(string _bundleName, string _objName, bool _forceBundle = false, bool _useRelativePath = false) where T : global::UnityEngine.Object
 	{
@@ -115,7 +115,7 @@ public class AssetBundleManager
 		return assetBundleRef.assetBundle.LoadAsset<T>(_objName);
 	}
 
-	// Token: 0x06009E5E RID: 40542 RVA: 0x003BE0B8 File Offset: 0x003BC2B8
+	// Token: 0x06009EB6 RID: 40630 RVA: 0x003C04BC File Offset: 0x003BE6BC
 	public AssetBundleManager.AssetBundleRequestTFP GetAsync<T>(string _bundleName, string _objName, bool _forceBundle = false) where T : global::UnityEngine.Object
 	{
 		string text = _bundleName + 1.ToString();
@@ -131,7 +131,7 @@ public class AssetBundleManager
 		return new AssetBundleManager.AssetBundleRequestTFP(assetBundleRef.assetBundle.LoadAssetAsync<T>(GameIO.RemoveFileExtension(_objName)));
 	}
 
-	// Token: 0x06009E5F RID: 40543 RVA: 0x003BE11C File Offset: 0x003BC31C
+	// Token: 0x06009EB7 RID: 40631 RVA: 0x003C0520 File Offset: 0x003BE720
 	public bool Contains(string _bundleName, string _objName, bool _forceBundle = false)
 	{
 		string text = _bundleName + 1.ToString();
@@ -147,7 +147,7 @@ public class AssetBundleManager
 		return assetBundleRef.assetBundle.Contains(GameIO.RemoveFileExtension(_objName));
 	}
 
-	// Token: 0x06009E60 RID: 40544 RVA: 0x003BE17C File Offset: 0x003BC37C
+	// Token: 0x06009EB8 RID: 40632 RVA: 0x003C0580 File Offset: 0x003BE780
 	public T[] GetAllObjects<T>(string _bundleName, string _subpath = null, bool _forceBundle = false) where T : global::UnityEngine.Object
 	{
 		string text = _bundleName + 1.ToString();
@@ -159,7 +159,7 @@ public class AssetBundleManager
 		return assetBundleRef.assetBundle.LoadAllAssets<T>();
 	}
 
-	// Token: 0x06009E61 RID: 40545 RVA: 0x003BE1B8 File Offset: 0x003BC3B8
+	// Token: 0x06009EB9 RID: 40633 RVA: 0x003C05BC File Offset: 0x003BE7BC
 	public AssetBundleManager.AssetBundleMassRequestTFP GetAllObjectsAsync<T>(string _bundleName, string _subpath = null, bool _forceBundle = false) where T : global::UnityEngine.Object
 	{
 		string text = _bundleName + 1.ToString();
@@ -171,7 +171,7 @@ public class AssetBundleManager
 		return new AssetBundleManager.AssetBundleMassRequestTFP(assetBundleRef.assetBundle.LoadAllAssetsAsync<T>());
 	}
 
-	// Token: 0x06009E62 RID: 40546 RVA: 0x003BE1F8 File Offset: 0x003BC3F8
+	// Token: 0x06009EBA RID: 40634 RVA: 0x003C05FC File Offset: 0x003BE7FC
 	public string[] GetAllAssetNames(string _bundleName, bool _forceBundle = false)
 	{
 		string text = _bundleName + 1.ToString();
@@ -183,7 +183,7 @@ public class AssetBundleManager
 		return assetBundleRef.assetBundle.GetAllAssetNames();
 	}
 
-	// Token: 0x06009E63 RID: 40547 RVA: 0x003BE234 File Offset: 0x003BC434
+	// Token: 0x06009EBB RID: 40635 RVA: 0x003C0638 File Offset: 0x003BE838
 	public void Unload(string _name, bool _forceBundle = false)
 	{
 		string text = _name + 1.ToString();
@@ -196,7 +196,7 @@ public class AssetBundleManager
 		}
 	}
 
-	// Token: 0x06009E64 RID: 40548 RVA: 0x003BE284 File Offset: 0x003BC484
+	// Token: 0x06009EBC RID: 40636 RVA: 0x003C0688 File Offset: 0x003BE888
 	public void UnloadAll(bool _forceBundle = false)
 	{
 		foreach (string text in this.dictAssetBundleRefs.Keys)
@@ -207,23 +207,23 @@ public class AssetBundleManager
 		this.dictAssetBundleRefs.Clear();
 	}
 
-	// Token: 0x04007837 RID: 30775
+	// Token: 0x04007878 RID: 30840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static AssetBundleManager instance;
 
-	// Token: 0x04007838 RID: 30776
+	// Token: 0x04007879 RID: 30841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int version = 1;
 
-	// Token: 0x04007839 RID: 30777
+	// Token: 0x0400787A RID: 30842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, AssetBundleManager.AssetBundleRef> dictAssetBundleRefs = new CaseInsensitiveStringDictionary<AssetBundleManager.AssetBundleRef>();
 
-	// Token: 0x020013A6 RID: 5030
+	// Token: 0x020013B8 RID: 5048
 	public class AssetBundleRequestTFP : CustomYieldInstruction
 	{
-		// Token: 0x170012E6 RID: 4838
-		// (get) Token: 0x06009E65 RID: 40549 RVA: 0x003BE30C File Offset: 0x003BC50C
+		// Token: 0x170012F2 RID: 4850
+		// (get) Token: 0x06009EBD RID: 40637 RVA: 0x003C0710 File Offset: 0x003BE910
 		public global::UnityEngine.Object Asset
 		{
 			get
@@ -236,8 +236,8 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x170012E7 RID: 4839
-		// (get) Token: 0x06009E66 RID: 40550 RVA: 0x003BE328 File Offset: 0x003BC528
+		// Token: 0x170012F3 RID: 4851
+		// (get) Token: 0x06009EBE RID: 40638 RVA: 0x003C072C File Offset: 0x003BE92C
 		public bool IsDone
 		{
 			get
@@ -246,8 +246,8 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x170012E8 RID: 4840
-		// (get) Token: 0x06009E67 RID: 40551 RVA: 0x003BE33F File Offset: 0x003BC53F
+		// Token: 0x170012F4 RID: 4852
+		// (get) Token: 0x06009EBF RID: 40639 RVA: 0x003C0743 File Offset: 0x003BE943
 		public override bool keepWaiting
 		{
 			get
@@ -256,8 +256,8 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x170012E9 RID: 4841
-		// (get) Token: 0x06009E68 RID: 40552 RVA: 0x003BE359 File Offset: 0x003BC559
+		// Token: 0x170012F5 RID: 4853
+		// (get) Token: 0x06009EC0 RID: 40640 RVA: 0x003C075D File Offset: 0x003BE95D
 		public bool IsBundleLoad
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -267,32 +267,32 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x06009E69 RID: 40553 RVA: 0x003BE364 File Offset: 0x003BC564
+		// Token: 0x06009EC1 RID: 40641 RVA: 0x003C0768 File Offset: 0x003BE968
 		public AssetBundleRequestTFP(global::UnityEngine.Object _asset)
 		{
 			this.asset = _asset;
 		}
 
-		// Token: 0x06009E6A RID: 40554 RVA: 0x003BE373 File Offset: 0x003BC573
+		// Token: 0x06009EC2 RID: 40642 RVA: 0x003C0777 File Offset: 0x003BE977
 		public AssetBundleRequestTFP(AssetBundleRequest _request)
 		{
 			this.request = _request;
 		}
 
-		// Token: 0x0400783A RID: 30778
+		// Token: 0x0400787B RID: 30843
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly global::UnityEngine.Object asset;
 
-		// Token: 0x0400783B RID: 30779
+		// Token: 0x0400787C RID: 30844
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AssetBundleRequest request;
 	}
 
-	// Token: 0x020013A7 RID: 5031
+	// Token: 0x020013B9 RID: 5049
 	public class AssetBundleMassRequestTFP : CustomYieldInstruction
 	{
-		// Token: 0x170012EA RID: 4842
-		// (get) Token: 0x06009E6B RID: 40555 RVA: 0x003BE382 File Offset: 0x003BC582
+		// Token: 0x170012F6 RID: 4854
+		// (get) Token: 0x06009EC3 RID: 40643 RVA: 0x003C0786 File Offset: 0x003BE986
 		public global::UnityEngine.Object[] Assets
 		{
 			get
@@ -305,8 +305,8 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x170012EB RID: 4843
-		// (get) Token: 0x06009E6C RID: 40556 RVA: 0x003BE39E File Offset: 0x003BC59E
+		// Token: 0x170012F7 RID: 4855
+		// (get) Token: 0x06009EC4 RID: 40644 RVA: 0x003C07A2 File Offset: 0x003BE9A2
 		public bool IsDone
 		{
 			get
@@ -315,8 +315,8 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x170012EC RID: 4844
-		// (get) Token: 0x06009E6D RID: 40557 RVA: 0x003BE3B5 File Offset: 0x003BC5B5
+		// Token: 0x170012F8 RID: 4856
+		// (get) Token: 0x06009EC5 RID: 40645 RVA: 0x003C07B9 File Offset: 0x003BE9B9
 		public override bool keepWaiting
 		{
 			get
@@ -325,8 +325,8 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x170012ED RID: 4845
-		// (get) Token: 0x06009E6E RID: 40558 RVA: 0x003BE3CF File Offset: 0x003BC5CF
+		// Token: 0x170012F9 RID: 4857
+		// (get) Token: 0x06009EC6 RID: 40646 RVA: 0x003C07D3 File Offset: 0x003BE9D3
 		public bool IsBundleLoad
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -336,45 +336,45 @@ public class AssetBundleManager
 			}
 		}
 
-		// Token: 0x06009E6F RID: 40559 RVA: 0x003BE3DA File Offset: 0x003BC5DA
+		// Token: 0x06009EC7 RID: 40647 RVA: 0x003C07DE File Offset: 0x003BE9DE
 		public AssetBundleMassRequestTFP(List<global::UnityEngine.Object> _assets)
 		{
 			this.assets = _assets.ToArray();
 		}
 
-		// Token: 0x06009E70 RID: 40560 RVA: 0x003BE3EE File Offset: 0x003BC5EE
+		// Token: 0x06009EC8 RID: 40648 RVA: 0x003C07F2 File Offset: 0x003BE9F2
 		public AssetBundleMassRequestTFP(AssetBundleRequest _request)
 		{
 			this.request = _request;
 		}
 
-		// Token: 0x0400783C RID: 30780
+		// Token: 0x0400787D RID: 30845
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly global::UnityEngine.Object[] assets;
 
-		// Token: 0x0400783D RID: 30781
+		// Token: 0x0400787E RID: 30846
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AssetBundleRequest request;
 	}
 
-	// Token: 0x020013A8 RID: 5032
+	// Token: 0x020013BA RID: 5050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class AssetBundleRef
 	{
-		// Token: 0x06009E71 RID: 40561 RVA: 0x003BE3FD File Offset: 0x003BC5FD
+		// Token: 0x06009EC9 RID: 40649 RVA: 0x003C0801 File Offset: 0x003BEA01
 		public AssetBundleRef(string _url, int _version)
 		{
 			this.url = _url;
 			this.version = _version;
 		}
 
-		// Token: 0x0400783E RID: 30782
+		// Token: 0x0400787F RID: 30847
 		public AssetBundle assetBundle;
 
-		// Token: 0x0400783F RID: 30783
+		// Token: 0x04007880 RID: 30848
 		public int version;
 
-		// Token: 0x04007840 RID: 30784
+		// Token: 0x04007881 RID: 30849
 		public string url;
 	}
 }

@@ -5,20 +5,20 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockPressurePlate : BlockPowered
 {
-	// Token: 0x060008F2 RID: 2290 RVA: 0x0003EA10 File Offset: 0x0003CC10
+	// Token: 0x060008F2 RID: 2290 RVA: 0x0003E9D0 File Offset: 0x0003CBD0
 	public BlockPressurePlate()
 	{
 		this.HasTileEntity = true;
 		this.IsCheckCollideWithEntity = true;
 	}
 
-	// Token: 0x060008F3 RID: 2291 RVA: 0x0003AC1C File Offset: 0x00038E1C
+	// Token: 0x060008F3 RID: 2291 RVA: 0x0003ABDC File Offset: 0x00038DDC
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x060008F4 RID: 2292 RVA: 0x0003EA70 File Offset: 0x0003CC70
+	// Token: 0x060008F4 RID: 2292 RVA: 0x0003EA30 File Offset: 0x0003CC30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bChangeState = false)
 	{
@@ -44,7 +44,7 @@ public class BlockPressurePlate : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008F5 RID: 2293 RVA: 0x0003EAF0 File Offset: 0x0003CCF0
+	// Token: 0x060008F5 RID: 2293 RVA: 0x0003EAB0 File Offset: 0x0003CCB0
 	public override bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _targetEntity)
 	{
 		if (!(_targetEntity is EntityAlive))
@@ -71,7 +71,7 @@ public class BlockPressurePlate : BlockPowered
 		return false;
 	}
 
-	// Token: 0x060008F7 RID: 2295 RVA: 0x0003EB62 File Offset: 0x0003CD62
+	// Token: 0x060008F7 RID: 2295 RVA: 0x0003EB22 File Offset: 0x0003CD22
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -88,13 +88,13 @@ public class BlockPressurePlate : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008F9 RID: 2297 RVA: 0x0003AED3 File Offset: 0x000390D3
+	// Token: 0x060008F9 RID: 2297 RVA: 0x0003AE93 File Offset: 0x00039093
 	public static bool IsSwitchOn(byte _metadata)
 	{
 		return (_metadata & 2) > 0;
 	}
 
-	// Token: 0x060008FA RID: 2298 RVA: 0x0003EB87 File Offset: 0x0003CD87
+	// Token: 0x060008FA RID: 2298 RVA: 0x0003EB47 File Offset: 0x0003CD47
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)
@@ -103,7 +103,7 @@ public class BlockPressurePlate : BlockPowered
 		};
 	}
 
-	// Token: 0x060008FB RID: 2299 RVA: 0x0003EB98 File Offset: 0x0003CD98
+	// Token: 0x060008FB RID: 2299 RVA: 0x0003EB58 File Offset: 0x0003CD58
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -120,7 +120,7 @@ public class BlockPressurePlate : BlockPowered
 		}
 	}
 
-	// Token: 0x060008FC RID: 2300 RVA: 0x0003EBEC File Offset: 0x0003CDEC
+	// Token: 0x060008FC RID: 2300 RVA: 0x0003EBAC File Offset: 0x0003CDAC
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false))
@@ -138,7 +138,7 @@ public class BlockPressurePlate : BlockPowered
 		return "";
 	}
 
-	// Token: 0x060008FD RID: 2301 RVA: 0x0003EC7C File Offset: 0x0003CE7C
+	// Token: 0x060008FD RID: 2301 RVA: 0x0003EC3C File Offset: 0x0003CE3C
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -172,7 +172,7 @@ public class BlockPressurePlate : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008FF RID: 2303 RVA: 0x0003ED14 File Offset: 0x0003CF14
+	// Token: 0x060008FF RID: 2303 RVA: 0x0003ECD4 File Offset: 0x0003CED4
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);

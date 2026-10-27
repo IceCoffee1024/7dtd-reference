@@ -4,25 +4,25 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002BF RID: 703
+// Token: 0x020002C1 RID: 705
 [Preserve]
 public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 {
-	// Token: 0x06001427 RID: 5159 RVA: 0x0007A3FA File Offset: 0x000785FA
+	// Token: 0x0600142B RID: 5163 RVA: 0x0007A5CA File Offset: 0x000787CA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Visit an given area of the map. Optionally run the density check on each visited chunk.";
 	}
 
-	// Token: 0x06001428 RID: 5160 RVA: 0x0007A401 File Offset: 0x00078601
+	// Token: 0x0600142C RID: 5164 RVA: 0x0007A5D1 File Offset: 0x000787D1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
-		return "\n\t\t\t|Usage:\n\t\t\t|  1. visitmap <x1> <z1> <x2> <z2> [check]\n\t\t\t|  2. visitmap full [check]\n\t\t\t|  3. visitmap stop\n\t\t\t|1. Start visiting the map in the rectangle specified with the two edges defined by\n\t\t\t|   coordinate pairs x1/z1 and x2/z2. If the parameter \"check\" is added each visited\n\t\t\t|   chunk will be checked for density issues.\n\t\t\t|2. Start visiting the full map. If the parameter \"check\" is added each visited\n\t\t\t|   chunk will be checked for density issues.\n\t\t\t|3. Stop the current visitmap run.\n\t\t\t".Unindent(true);
+		return "\r\n\t\t\t|Usage:\r\n\t\t\t|  1. visitmap <x1> <z1> <x2> <z2> [check]\r\n\t\t\t|  2. visitmap full [check]\r\n\t\t\t|  3. visitmap stop\r\n\t\t\t|1. Start visiting the map in the rectangle specified with the two edges defined by\r\n\t\t\t|   coordinate pairs x1/z1 and x2/z2. If the parameter \"check\" is added each visited\r\n\t\t\t|   chunk will be checked for density issues.\r\n\t\t\t|2. Start visiting the full map. If the parameter \"check\" is added each visited\r\n\t\t\t|   chunk will be checked for density issues.\r\n\t\t\t|3. Stop the current visitmap run.\r\n\t\t\t".Unindent(true);
 	}
 
-	// Token: 0x06001429 RID: 5161 RVA: 0x0007A40E File Offset: 0x0007860E
+	// Token: 0x0600142D RID: 5165 RVA: 0x0007A5DE File Offset: 0x000787DE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -30,7 +30,7 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000230 RID: 560
-	// (get) Token: 0x0600142A RID: 5162 RVA: 0x0007A41E File Offset: 0x0007861E
+	// (get) Token: 0x0600142E RID: 5166 RVA: 0x0007A5EE File Offset: 0x000787EE
 	public bool IsRunning
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -40,7 +40,7 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600142B RID: 5163 RVA: 0x0007A438 File Offset: 0x00078638
+	// Token: 0x0600142F RID: 5167 RVA: 0x0007A608 File Offset: 0x00078808
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 1 && _params.Count != 2 && _params.Count != 4 && _params.Count != 5)
@@ -114,7 +114,7 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600142C RID: 5164 RVA: 0x0007A60C File Offset: 0x0007880C
+	// Token: 0x06001430 RID: 5168 RVA: 0x0007A7DC File Offset: 0x000789DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void visit(Vector3i _start, Vector3i _end, bool _checkDensities)
 	{
@@ -136,7 +136,7 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Started visiting the map between {0} and {1}", this.mapVisitor.WorldPosStart, this.mapVisitor.WorldPosEnd));
 	}
 
-	// Token: 0x0600142D RID: 5165 RVA: 0x0007A6F4 File Offset: 0x000788F4
+	// Token: 0x06001431 RID: 5169 RVA: 0x0007A8C4 File Offset: 0x00078AC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stop()
 	{
@@ -151,14 +151,14 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("VisitMap stopped.");
 	}
 
-	// Token: 0x0600142E RID: 5166 RVA: 0x0007A741 File Offset: 0x00078941
+	// Token: 0x06001432 RID: 5170 RVA: 0x0007A911 File Offset: 0x00078B11
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckDensities(Chunk _chunk, int _done, int _total, float _elapsed)
 	{
 		this.densityMismatches.AddRange(_chunk.CheckDensities(false));
 	}
 
-	// Token: 0x0600142F RID: 5167 RVA: 0x0007A758 File Offset: 0x00078958
+	// Token: 0x06001433 RID: 5171 RVA: 0x0007A928 File Offset: 0x00078B28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogChunk(Chunk _chunk, int _done, int _total, float _elapsed)
 	{
@@ -176,14 +176,14 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		});
 	}
 
-	// Token: 0x06001430 RID: 5168 RVA: 0x0007A7C2 File Offset: 0x000789C2
+	// Token: 0x06001434 RID: 5172 RVA: 0x0007A992 File Offset: 0x00078B92
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderMinimap(Chunk _chunk, int _done, int _total, float _elapsed)
 	{
 		_chunk.GetMapColors();
 	}
 
-	// Token: 0x06001431 RID: 5169 RVA: 0x0007A7CC File Offset: 0x000789CC
+	// Token: 0x06001435 RID: 5173 RVA: 0x0007A99C File Offset: 0x00078B9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDone(int _chunks, float _duration)
 	{
@@ -197,7 +197,7 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		this.mapVisitor = null;
 	}
 
-	// Token: 0x06001432 RID: 5170 RVA: 0x0007A820 File Offset: 0x00078A20
+	// Token: 0x06001436 RID: 5174 RVA: 0x0007A9F0 File Offset: 0x00078BF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writeDensityMismatchFile()
 	{
@@ -235,11 +235,11 @@ public class ConsoleCmdVisitMap : ConsoleCmdAbstract
 		this.densityMismatches = null;
 	}
 
-	// Token: 0x04000D96 RID: 3478
+	// Token: 0x04000D97 RID: 3479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MapVisitor mapVisitor;
 
-	// Token: 0x04000D97 RID: 3479
+	// Token: 0x04000D98 RID: 3480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Chunk.DensityMismatchInformation> densityMismatches;
 }

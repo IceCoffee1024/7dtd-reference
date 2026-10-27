@@ -3,42 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000994 RID: 2452
+// Token: 0x0200099E RID: 2462
 [Preserve]
 public class ObjectiveClosestPOIGoto : ObjectiveGoto
 {
-	// Token: 0x0600475E RID: 18270 RVA: 0x001C1C1F File Offset: 0x001BFE1F
+	// Token: 0x06004781 RID: 18305 RVA: 0x001C2CA3 File Offset: 0x001C0EA3
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveRallyPointHeadTo", false, null);
 	}
 
-	// Token: 0x0600475F RID: 18271 RVA: 0x001C1C33 File Offset: 0x001BFE33
+	// Token: 0x06004782 RID: 18306 RVA: 0x001C2CB7 File Offset: 0x001C0EB7
 	public override void SetupDisplay()
 	{
 		base.Description = this.keyword;
 	}
 
-	// Token: 0x06004760 RID: 18272 RVA: 0x001C1C41 File Offset: 0x001BFE41
+	// Token: 0x06004783 RID: 18307 RVA: 0x001C2CC5 File Offset: 0x001C0EC5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetupIcon()
 	{
 		this.icon = "ui_game_symbol_quest";
 	}
 
-	// Token: 0x06004761 RID: 18273 RVA: 0x001C1C4E File Offset: 0x001BFE4E
+	// Token: 0x06004784 RID: 18308 RVA: 0x001C2CD2 File Offset: 0x001C0ED2
 	public override bool SetupPosition(EntityNPC ownerNPC = null, EntityPlayer player = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = 1)
 	{
 		return this.GetPosition(ownerNPC, player, usedPOILocations, -1) != Vector3.zero;
 	}
 
-	// Token: 0x06004762 RID: 18274 RVA: 0x001C1C64 File Offset: 0x001BFE64
+	// Token: 0x06004785 RID: 18309 RVA: 0x001C2CE8 File Offset: 0x001C0EE8
 	public override void SetPosition(Vector3 position, Vector3 size)
 	{
 		base.FinalizePoint(position, size);
 	}
 
-	// Token: 0x06004763 RID: 18275 RVA: 0x001C1C70 File Offset: 0x001BFE70
+	// Token: 0x06004786 RID: 18310 RVA: 0x001C2CF4 File Offset: 0x001C0EF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 GetPosition(EntityNPC ownerNPC = null, EntityPlayer entityPlayer = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
 	{
@@ -90,7 +90,7 @@ public class ObjectiveClosestPOIGoto : ObjectiveGoto
 		return Vector3.zero;
 	}
 
-	// Token: 0x06004764 RID: 18276 RVA: 0x001C1F43 File Offset: 0x001C0143
+	// Token: 0x06004787 RID: 18311 RVA: 0x001C2FC7 File Offset: 0x001C11C7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_WaitingForServer()
 	{
@@ -100,7 +100,7 @@ public class ObjectiveClosestPOIGoto : ObjectiveGoto
 		}
 	}
 
-	// Token: 0x06004765 RID: 18277 RVA: 0x001C1F54 File Offset: 0x001C0154
+	// Token: 0x06004788 RID: 18312 RVA: 0x001C2FD8 File Offset: 0x001C11D8
 	public override BaseObjective Clone()
 	{
 		ObjectiveClosestPOIGoto objectiveClosestPOIGoto = new ObjectiveClosestPOIGoto();

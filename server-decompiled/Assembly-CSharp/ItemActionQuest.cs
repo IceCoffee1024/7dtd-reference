@@ -3,17 +3,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005C2 RID: 1474
+// Token: 0x020005C9 RID: 1481
 [Preserve]
 public class ItemActionQuest : ItemAction
 {
-	// Token: 0x0600302B RID: 12331 RVA: 0x0013409B File Offset: 0x0013229B
+	// Token: 0x06003039 RID: 12345 RVA: 0x00134C8F File Offset: 0x00132E8F
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionQuest.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x0600302C RID: 12332 RVA: 0x001340A4 File Offset: 0x001322A4
+	// Token: 0x0600303A RID: 12346 RVA: 0x00134C98 File Offset: 0x00132E98
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -41,14 +41,14 @@ public class ItemActionQuest : ItemAction
 		this.Description = _props.Values["Description"];
 	}
 
-	// Token: 0x0600302D RID: 12333 RVA: 0x00134156 File Offset: 0x00132356
+	// Token: 0x0600303B RID: 12347 RVA: 0x00134D4A File Offset: 0x00132F4A
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionQuest.MyInventoryData)_data).bQuestAccept = false;
 	}
 
-	// Token: 0x0600302E RID: 12334 RVA: 0x0013416C File Offset: 0x0013236C
+	// Token: 0x0600303C RID: 12348 RVA: 0x00134D60 File Offset: 0x00132F60
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -86,7 +86,7 @@ public class ItemActionQuest : ItemAction
 		}
 	}
 
-	// Token: 0x0600302F RID: 12335 RVA: 0x001342C0 File Offset: 0x001324C0
+	// Token: 0x0600303D RID: 12349 RVA: 0x00134EB4 File Offset: 0x001330B4
 	public override bool ExecuteInstantAction(EntityAlive ent, ItemStack stack, bool isHeldItem, XUiC_ItemStack stackController)
 	{
 		if (this.soundStart != null)
@@ -122,14 +122,14 @@ public class ItemActionQuest : ItemAction
 		return true;
 	}
 
-	// Token: 0x06003030 RID: 12336 RVA: 0x001343B0 File Offset: 0x001325B0
+	// Token: 0x0600303E RID: 12350 RVA: 0x00134FA4 File Offset: 0x001331A4
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionQuest.MyInventoryData myInventoryData = (ItemActionQuest.MyInventoryData)_actionData;
 		return myInventoryData.bQuestAccept && Time.time - myInventoryData.lastUseTime < 2f * AnimationDelayData.AnimationDelay[myInventoryData.invData.item.HoldType.Value].RayCast;
 	}
 
-	// Token: 0x06003031 RID: 12337 RVA: 0x00134408 File Offset: 0x00132608
+	// Token: 0x0600303F RID: 12351 RVA: 0x00134FFC File Offset: 0x001331FC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionQuest.MyInventoryData myInventoryData = (ItemActionQuest.MyInventoryData)_actionData;
@@ -171,26 +171,26 @@ public class ItemActionQuest : ItemAction
 		}
 	}
 
-	// Token: 0x04002511 RID: 9489
+	// Token: 0x0400252C RID: 9516
 	public string QuestGiven;
 
-	// Token: 0x04002512 RID: 9490
+	// Token: 0x0400252D RID: 9517
 	public new string Title;
 
-	// Token: 0x04002513 RID: 9491
+	// Token: 0x0400252E RID: 9518
 	public new string Description;
 
-	// Token: 0x020005C3 RID: 1475
+	// Token: 0x020005CA RID: 1482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06003033 RID: 12339 RVA: 0x0012B224 File Offset: 0x00129424
+		// Token: 0x06003041 RID: 12353 RVA: 0x0012BE18 File Offset: 0x0012A018
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x04002514 RID: 9492
+		// Token: 0x0400252F RID: 9519
 		public bool bQuestAccept;
 	}
 }

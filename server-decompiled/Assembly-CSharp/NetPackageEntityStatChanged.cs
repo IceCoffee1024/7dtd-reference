@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020001D1 RID: 465
+// Token: 0x020001D3 RID: 467
 [Preserve]
 public class NetPackageEntityStatChanged : NetPackageEntityTargeted
 {
-	// Token: 0x06000E67 RID: 3687 RVA: 0x0005F2CC File Offset: 0x0005D4CC
+	// Token: 0x06000E6B RID: 3691 RVA: 0x0005F590 File Offset: 0x0005D790
 	public NetPackageEntityStatChanged Setup(EntityAlive entity, int instigatorId, NetPackageEntityStatChanged.EnumStat Estat)
 	{
 		base.Setup(entity.entityId);
@@ -18,7 +18,7 @@ public class NetPackageEntityStatChanged : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06000E68 RID: 3688 RVA: 0x0005F320 File Offset: 0x0005D520
+	// Token: 0x06000E6C RID: 3692 RVA: 0x0005F5E4 File Offset: 0x0005D7E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Stat GetStat(EntityAlive entity, NetPackageEntityStatChanged.EnumStat stat)
 	{
@@ -47,7 +47,7 @@ public class NetPackageEntityStatChanged : NetPackageEntityTargeted
 		return entity.Stats.Health;
 	}
 
-	// Token: 0x06000E69 RID: 3689 RVA: 0x0005F380 File Offset: 0x0005D580
+	// Token: 0x06000E6D RID: 3693 RVA: 0x0005F644 File Offset: 0x0005D844
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -58,7 +58,7 @@ public class NetPackageEntityStatChanged : NetPackageEntityTargeted
 		this.m_maxModifier = _reader.ReadSingle();
 	}
 
-	// Token: 0x06000E6A RID: 3690 RVA: 0x0005F3D0 File Offset: 0x0005D5D0
+	// Token: 0x06000E6E RID: 3694 RVA: 0x0005F694 File Offset: 0x0005D894
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -69,7 +69,7 @@ public class NetPackageEntityStatChanged : NetPackageEntityTargeted
 		_writer.Write(this.m_maxModifier);
 	}
 
-	// Token: 0x06000E6B RID: 3691 RVA: 0x0005F424 File Offset: 0x0005D624
+	// Token: 0x06000E6F RID: 3695 RVA: 0x0005F6E8 File Offset: 0x0005D8E8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -104,46 +104,46 @@ public class NetPackageEntityStatChanged : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x04000C40 RID: 3136
+	// Token: 0x04000C42 RID: 3138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_instigatorId;
 
-	// Token: 0x04000C41 RID: 3137
+	// Token: 0x04000C43 RID: 3139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEntityStatChanged.EnumStat m_enumStat;
 
-	// Token: 0x04000C42 RID: 3138
+	// Token: 0x04000C44 RID: 3140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_value;
 
-	// Token: 0x04000C43 RID: 3139
+	// Token: 0x04000C45 RID: 3141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_max;
 
-	// Token: 0x04000C44 RID: 3140
+	// Token: 0x04000C46 RID: 3142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_maxModifier;
 
-	// Token: 0x020001D2 RID: 466
+	// Token: 0x020001D4 RID: 468
 	public enum EnumStat
 	{
-		// Token: 0x04000C46 RID: 3142
-		Health,
-		// Token: 0x04000C47 RID: 3143
-		Stamina,
 		// Token: 0x04000C48 RID: 3144
-		Sickness,
+		Health,
 		// Token: 0x04000C49 RID: 3145
-		Gassiness,
+		Stamina,
 		// Token: 0x04000C4A RID: 3146
-		SpeedModifier,
+		Sickness,
 		// Token: 0x04000C4B RID: 3147
-		Wellness,
+		Gassiness,
 		// Token: 0x04000C4C RID: 3148
-		CoreTempOLD,
+		SpeedModifier,
 		// Token: 0x04000C4D RID: 3149
-		Food,
+		Wellness,
 		// Token: 0x04000C4E RID: 3150
+		CoreTempOLD,
+		// Token: 0x04000C4F RID: 3151
+		Food,
+		// Token: 0x04000C50 RID: 3152
 		Water
 	}
 }

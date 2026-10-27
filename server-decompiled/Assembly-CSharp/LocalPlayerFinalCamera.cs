@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000617 RID: 1559
+// Token: 0x0200061E RID: 1566
 public class LocalPlayerFinalCamera : MonoBehaviour
 {
-	// Token: 0x060032F1 RID: 13041 RVA: 0x00149DE7 File Offset: 0x00147FE7
+	// Token: 0x060032FF RID: 13055 RVA: 0x0014A9DB File Offset: 0x00148BDB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreCull()
 	{
 		this.entityPlayerLocal.finalCamera.fieldOfView = this.entityPlayerLocal.playerCamera.fieldOfView;
 	}
 
-	// Token: 0x060032F2 RID: 13042 RVA: 0x00149E09 File Offset: 0x00148009
+	// Token: 0x06003300 RID: 13056 RVA: 0x0014A9FD File Offset: 0x00148BFD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRender()
 	{
 		this.entityPlayerLocal.renderManager.DynamicResolutionRender();
 	}
 
-	// Token: 0x0400282F RID: 10287
+	// Token: 0x0400284A RID: 10314
 	public EntityPlayerLocal entityPlayerLocal;
 }

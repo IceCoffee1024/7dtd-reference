@@ -5,10 +5,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-// Token: 0x02000A45 RID: 2629
+// Token: 0x02000A4F RID: 2639
 public sealed class SaveDataPrefsFile : ISaveDataPrefs
 {
-	// Token: 0x06004EEF RID: 20207 RVA: 0x001E2218 File Offset: 0x001E0418
+	// Token: 0x06004F13 RID: 20243 RVA: 0x001E3300 File Offset: 0x001E1500
 	public SaveDataPrefsFile(string filePath)
 	{
 		foreach (PrefType prefType in EnumUtils.Values<PrefType>())
@@ -23,7 +23,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		this.Load();
 	}
 
-	// Token: 0x06004EF0 RID: 20208 RVA: 0x001E22B0 File Offset: 0x001E04B0
+	// Token: 0x06004F14 RID: 20244 RVA: 0x001E3398 File Offset: 0x001E1598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void Escape(TextWriter writer, ReadOnlySpan<char> raw, bool ignoreSeparator)
 	{
@@ -60,7 +60,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EF1 RID: 20209 RVA: 0x001E2354 File Offset: 0x001E0554
+	// Token: 0x06004F15 RID: 20245 RVA: 0x001E343C File Offset: 0x001E163C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void Unescape(StringBuilder builder, ReadOnlySpan<char> escaped)
 	{
@@ -98,7 +98,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EF2 RID: 20210 RVA: 0x001E23F4 File Offset: 0x001E05F4
+	// Token: 0x06004F16 RID: 20246 RVA: 0x001E34DC File Offset: 0x001E16DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static int IndexOfFirstUnescapedSeparator(ReadOnlySpan<char> search)
 	{
@@ -125,7 +125,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		return -1;
 	}
 
-	// Token: 0x06004EF3 RID: 20211 RVA: 0x001E2444 File Offset: 0x001E0644
+	// Token: 0x06004F17 RID: 20247 RVA: 0x001E352C File Offset: 0x001E172C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveInternal()
 	{
@@ -178,7 +178,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EF4 RID: 20212 RVA: 0x001E2608 File Offset: 0x001E0808
+	// Token: 0x06004F18 RID: 20248 RVA: 0x001E36F0 File Offset: 0x001E18F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadInternal()
 	{
@@ -249,7 +249,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EF5 RID: 20213 RVA: 0x001E2818 File Offset: 0x001E0A18
+	// Token: 0x06004F19 RID: 20249 RVA: 0x001E3900 File Offset: 0x001E1B00
 	public float GetFloat(string key, float defaultValue)
 	{
 		object storageLock = this.m_storageLock;
@@ -263,7 +263,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		return num;
 	}
 
-	// Token: 0x06004EF6 RID: 20214 RVA: 0x001E2874 File Offset: 0x001E0A74
+	// Token: 0x06004F1A RID: 20250 RVA: 0x001E395C File Offset: 0x001E1B5C
 	public void SetFloat(string key, float value)
 	{
 		object storageLock = this.m_storageLock;
@@ -288,7 +288,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EF7 RID: 20215 RVA: 0x001E28FC File Offset: 0x001E0AFC
+	// Token: 0x06004F1B RID: 20251 RVA: 0x001E39E4 File Offset: 0x001E1BE4
 	public int GetInt(string key, int defaultValue)
 	{
 		object storageLock = this.m_storageLock;
@@ -302,7 +302,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		return num;
 	}
 
-	// Token: 0x06004EF8 RID: 20216 RVA: 0x001E2958 File Offset: 0x001E0B58
+	// Token: 0x06004F1C RID: 20252 RVA: 0x001E3A40 File Offset: 0x001E1C40
 	public void SetInt(string key, int value)
 	{
 		object storageLock = this.m_storageLock;
@@ -327,7 +327,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EF9 RID: 20217 RVA: 0x001E29E0 File Offset: 0x001E0BE0
+	// Token: 0x06004F1D RID: 20253 RVA: 0x001E3AC8 File Offset: 0x001E1CC8
 	public string GetString(string key, string defaultValue)
 	{
 		object storageLock = this.m_storageLock;
@@ -341,7 +341,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		return text;
 	}
 
-	// Token: 0x06004EFA RID: 20218 RVA: 0x001E2A3C File Offset: 0x001E0C3C
+	// Token: 0x06004F1E RID: 20254 RVA: 0x001E3B24 File Offset: 0x001E1D24
 	public void SetString(string key, string value)
 	{
 		object storageLock = this.m_storageLock;
@@ -366,7 +366,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EFB RID: 20219 RVA: 0x001E2AC8 File Offset: 0x001E0CC8
+	// Token: 0x06004F1F RID: 20255 RVA: 0x001E3BB0 File Offset: 0x001E1DB0
 	public bool HasKey(string key)
 	{
 		object storageLock = this.m_storageLock;
@@ -378,7 +378,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		return flag2;
 	}
 
-	// Token: 0x06004EFC RID: 20220 RVA: 0x001E2B10 File Offset: 0x001E0D10
+	// Token: 0x06004F20 RID: 20256 RVA: 0x001E3BF8 File Offset: 0x001E1DF8
 	public void DeleteKey(string key)
 	{
 		object storageLock = this.m_storageLock;
@@ -388,7 +388,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EFD RID: 20221 RVA: 0x001E2B58 File Offset: 0x001E0D58
+	// Token: 0x06004F21 RID: 20257 RVA: 0x001E3C40 File Offset: 0x001E1E40
 	public void DeleteAll()
 	{
 		object storageLock = this.m_storageLock;
@@ -398,20 +398,20 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004EFE RID: 20222 RVA: 0x001E2BA0 File Offset: 0x001E0DA0
+	// Token: 0x06004F22 RID: 20258 RVA: 0x001E3C88 File Offset: 0x001E1E88
 	public void Save()
 	{
 		this.SaveInternal();
 	}
 
-	// Token: 0x06004EFF RID: 20223 RVA: 0x001E2BA8 File Offset: 0x001E0DA8
+	// Token: 0x06004F23 RID: 20259 RVA: 0x001E3C90 File Offset: 0x001E1E90
 	public void Load()
 	{
 		this.LoadInternal();
 	}
 
-	// Token: 0x17000895 RID: 2197
-	// (get) Token: 0x06004F00 RID: 20224 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x1700089B RID: 2203
+	// (get) Token: 0x06004F24 RID: 20260 RVA: 0x00020119 File Offset: 0x0001E319
 	public bool CanLoad
 	{
 		get
@@ -420,7 +420,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x04003D06 RID: 15622
+	// Token: 0x04003D27 RID: 15655
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<char, char> EscapeMapping = new Dictionary<char, char>
 	{
@@ -431,11 +431,11 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		{ '\\', '\\' }
 	};
 
-	// Token: 0x04003D07 RID: 15623
+	// Token: 0x04003D28 RID: 15656
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<char, char> UnescapeMapping = SaveDataPrefsFile.EscapeMapping.ToDictionary<KeyValuePair<char, char>, char, char>((KeyValuePair<char, char> pair) => pair.Value, (KeyValuePair<char, char> pair) => pair.Key);
 
-	// Token: 0x04003D08 RID: 15624
+	// Token: 0x04003D29 RID: 15657
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<PrefType, char> PrefTypeMapping = new Dictionary<PrefType, char>
 	{
@@ -453,62 +453,62 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 		}
 	};
 
-	// Token: 0x04003D09 RID: 15625
+	// Token: 0x04003D2A RID: 15658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<char, PrefType> PrefTypeUnmapping = SaveDataPrefsFile.PrefTypeMapping.ToDictionary<KeyValuePair<PrefType, char>, char, PrefType>((KeyValuePair<PrefType, char> kv) => kv.Value, (KeyValuePair<PrefType, char> kv) => kv.Key);
 
-	// Token: 0x04003D0A RID: 15626
+	// Token: 0x04003D2B RID: 15659
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char KeyValueSeparator = '=';
 
-	// Token: 0x04003D0B RID: 15627
+	// Token: 0x04003D2C RID: 15660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char EscapePrefix = '\\';
 
-	// Token: 0x04003D0C RID: 15628
+	// Token: 0x04003D2D RID: 15661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char PrefTypeSeparator = ':';
 
-	// Token: 0x04003D0D RID: 15629
+	// Token: 0x04003D2E RID: 15662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string m_storageFilePath;
 
-	// Token: 0x04003D0E RID: 15630
+	// Token: 0x04003D2F RID: 15663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, SaveDataPrefsFile.Pref> m_storage;
 
-	// Token: 0x04003D0F RID: 15631
+	// Token: 0x04003D30 RID: 15664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object m_storageLock = new object();
 
-	// Token: 0x04003D10 RID: 15632
+	// Token: 0x04003D31 RID: 15665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_dirty;
 
-	// Token: 0x02000A46 RID: 2630
+	// Token: 0x02000A50 RID: 2640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Pref
 	{
-		// Token: 0x06004F02 RID: 20226 RVA: 0x001E2C7B File Offset: 0x001E0E7B
+		// Token: 0x06004F26 RID: 20262 RVA: 0x001E3D63 File Offset: 0x001E1F63
 		public Pref(float value)
 		{
 			this.Set(value);
 		}
 
-		// Token: 0x06004F03 RID: 20227 RVA: 0x001E2C8A File Offset: 0x001E0E8A
+		// Token: 0x06004F27 RID: 20263 RVA: 0x001E3D72 File Offset: 0x001E1F72
 		public Pref(int value)
 		{
 			this.Set(value);
 		}
 
-		// Token: 0x06004F04 RID: 20228 RVA: 0x001E2C99 File Offset: 0x001E0E99
+		// Token: 0x06004F28 RID: 20264 RVA: 0x001E3D81 File Offset: 0x001E1F81
 		public Pref(string value)
 		{
 			this.Set(value);
 		}
 
-		// Token: 0x17000896 RID: 2198
-		// (get) Token: 0x06004F05 RID: 20229 RVA: 0x001E2CA8 File Offset: 0x001E0EA8
+		// Token: 0x1700089C RID: 2204
+		// (get) Token: 0x06004F29 RID: 20265 RVA: 0x001E3D90 File Offset: 0x001E1F90
 		public PrefType Type
 		{
 			get
@@ -517,7 +517,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			}
 		}
 
-		// Token: 0x06004F06 RID: 20230 RVA: 0x001E2CB0 File Offset: 0x001E0EB0
+		// Token: 0x06004F2A RID: 20266 RVA: 0x001E3D98 File Offset: 0x001E1F98
 		public bool TryGet(out float value)
 		{
 			if (this.m_type != PrefType.Float)
@@ -529,7 +529,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			return true;
 		}
 
-		// Token: 0x06004F07 RID: 20231 RVA: 0x001E2CD1 File Offset: 0x001E0ED1
+		// Token: 0x06004F2B RID: 20267 RVA: 0x001E3DB9 File Offset: 0x001E1FB9
 		public bool TryGet(out int value)
 		{
 			if (this.m_type != PrefType.Int)
@@ -541,7 +541,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			return true;
 		}
 
-		// Token: 0x06004F08 RID: 20232 RVA: 0x001E2CEF File Offset: 0x001E0EEF
+		// Token: 0x06004F2C RID: 20268 RVA: 0x001E3DD7 File Offset: 0x001E1FD7
 		public bool TryGet(out string value)
 		{
 			if (this.m_type != PrefType.String)
@@ -553,7 +553,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			return true;
 		}
 
-		// Token: 0x06004F09 RID: 20233 RVA: 0x001E2D0D File Offset: 0x001E0F0D
+		// Token: 0x06004F2D RID: 20269 RVA: 0x001E3DF5 File Offset: 0x001E1FF5
 		public void Set(float value)
 		{
 			this.m_type = PrefType.Float;
@@ -561,7 +561,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			this.m_refs.String = null;
 		}
 
-		// Token: 0x06004F0A RID: 20234 RVA: 0x001E2D2E File Offset: 0x001E0F2E
+		// Token: 0x06004F2E RID: 20270 RVA: 0x001E3E16 File Offset: 0x001E2016
 		public void Set(int value)
 		{
 			this.m_type = PrefType.Int;
@@ -569,7 +569,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			this.m_refs.String = null;
 		}
 
-		// Token: 0x06004F0B RID: 20235 RVA: 0x001E2D4F File Offset: 0x001E0F4F
+		// Token: 0x06004F2F RID: 20271 RVA: 0x001E3E37 File Offset: 0x001E2037
 		public void Set(string value)
 		{
 			this.m_type = PrefType.String;
@@ -577,7 +577,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			this.m_values.Int = 0;
 		}
 
-		// Token: 0x06004F0C RID: 20236 RVA: 0x001E2D70 File Offset: 0x001E0F70
+		// Token: 0x06004F30 RID: 20272 RVA: 0x001E3E58 File Offset: 0x001E2058
 		public bool TryToString(out string stringRepresentation)
 		{
 			char c;
@@ -605,7 +605,7 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			}
 		}
 
-		// Token: 0x06004F0D RID: 20237 RVA: 0x001E2E70 File Offset: 0x001E1070
+		// Token: 0x06004F31 RID: 20273 RVA: 0x001E3F58 File Offset: 0x001E2158
 		public unsafe static bool TryParse(ReadOnlySpan<char> stringRepresentation, out SaveDataPrefsFile.Pref pref)
 		{
 			if (stringRepresentation.Length < 2 || *stringRepresentation[1] != 58)
@@ -655,38 +655,38 @@ public sealed class SaveDataPrefsFile : ISaveDataPrefs
 			}
 		}
 
-		// Token: 0x04003D11 RID: 15633
+		// Token: 0x04003D32 RID: 15666
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PrefType m_type;
 
-		// Token: 0x04003D12 RID: 15634
+		// Token: 0x04003D33 RID: 15667
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveDataPrefsFile.Pref.PrefValues m_values;
 
-		// Token: 0x04003D13 RID: 15635
+		// Token: 0x04003D34 RID: 15668
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveDataPrefsFile.Pref.PrefRefs m_refs;
 
-		// Token: 0x02000A47 RID: 2631
+		// Token: 0x02000A51 RID: 2641
 		[PublicizedFrom(EAccessModifier.Private)]
 		[StructLayout(LayoutKind.Explicit)]
 		public struct PrefValues
 		{
-			// Token: 0x04003D14 RID: 15636
+			// Token: 0x04003D35 RID: 15669
 			[FieldOffset(0)]
 			public float Float;
 
-			// Token: 0x04003D15 RID: 15637
+			// Token: 0x04003D36 RID: 15670
 			[FieldOffset(0)]
 			public int Int;
 		}
 
-		// Token: 0x02000A48 RID: 2632
+		// Token: 0x02000A52 RID: 2642
 		[PublicizedFrom(EAccessModifier.Private)]
 		[StructLayout(LayoutKind.Explicit)]
 		public struct PrefRefs
 		{
-			// Token: 0x04003D16 RID: 15638
+			// Token: 0x04003D37 RID: 15671
 			[FieldOffset(0)]
 			public string String;
 		}

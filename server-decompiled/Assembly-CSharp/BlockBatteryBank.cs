@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockBatteryBank : BlockPowerSource
 {
-	// Token: 0x060008EF RID: 2287 RVA: 0x0003E9D3 File Offset: 0x0003CBD3
+	// Token: 0x060008EF RID: 2287 RVA: 0x0003E993 File Offset: 0x0003CB93
 	public override TileEntityPowerSource CreateTileEntity(Chunk chunk)
 	{
 		if (this.slotItem == null)
@@ -19,7 +19,7 @@ public class BlockBatteryBank : BlockPowerSource
 		};
 	}
 
-	// Token: 0x060008F0 RID: 2288 RVA: 0x0003EA08 File Offset: 0x0003CC08
+	// Token: 0x060008F0 RID: 2288 RVA: 0x0003E9C8 File Offset: 0x0003CBC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string GetPowerSourceIcon()
 	{

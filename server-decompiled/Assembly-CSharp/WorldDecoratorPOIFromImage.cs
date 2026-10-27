@@ -5,10 +5,10 @@ using System.Xml;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000C64 RID: 3172
+// Token: 0x02000C6F RID: 3183
 public class WorldDecoratorPOIFromImage : IWorldDecorator
 {
-	// Token: 0x06006021 RID: 24609 RVA: 0x00262EE0 File Offset: 0x002610E0
+	// Token: 0x06006046 RID: 24646 RVA: 0x00264408 File Offset: 0x00262608
 	public WorldDecoratorPOIFromImage(string _levelName, string _worldPath, DynamicPrefabDecorator _prefabDecorator, int _worldX, int _worldZ, Texture2D _splat3Tex = null, bool _bChangeWaterDensity = true, int _worldScale = 1, HeightMap _heightMap = null, Texture2D _splat4Tex = null)
 	{
 		this.m_PrefabDecorator = _prefabDecorator;
@@ -22,7 +22,7 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		this.splat4Tex = _splat4Tex;
 	}
 
-	// Token: 0x06006022 RID: 24610 RVA: 0x00262F39 File Offset: 0x00261139
+	// Token: 0x06006047 RID: 24647 RVA: 0x00264461 File Offset: 0x00262661
 	public IEnumerator InitData()
 	{
 		MicroStopwatch msw = new MicroStopwatch(true);
@@ -196,14 +196,14 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		yield break;
 	}
 
-	// Token: 0x06006023 RID: 24611 RVA: 0x00262F48 File Offset: 0x00261148
+	// Token: 0x06006048 RID: 24648 RVA: 0x00264470 File Offset: 0x00262670
 	public void GetWaterChunks16x16(out int _water16x16ChunksW, out byte[] _water16x16Chunks)
 	{
 		_water16x16ChunksW = this.water16x16ChunksW;
 		_water16x16Chunks = this.water16x16Chunks;
 	}
 
-	// Token: 0x06006024 RID: 24612 RVA: 0x00262F5C File Offset: 0x0026115C
+	// Token: 0x06006049 RID: 24649 RVA: 0x00264484 File Offset: 0x00262684
 	public static List<WaterInfo> LoadWaterInfo(string _filename)
 	{
 		if (!SdFile.Exists(_filename))
@@ -255,7 +255,7 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		return list;
 	}
 
-	// Token: 0x06006025 RID: 24613 RVA: 0x00263114 File Offset: 0x00261314
+	// Token: 0x0600604A RID: 24650 RVA: 0x0026463C File Offset: 0x0026283C
 	public void DecorateChunkOverlapping(World _world, Chunk _chunk, Chunk _c10, Chunk _c01, Chunk _c11, int seed)
 	{
 		if (this.m_Poi == null)
@@ -393,55 +393,55 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		GameRandomManager.Instance.FreeGameRandom(gameRandom);
 	}
 
-	// Token: 0x04004B7E RID: 19326
+	// Token: 0x04004BA3 RID: 19363
 	public WorldGridCompressedData<byte> m_Poi;
 
-	// Token: 0x04004B7F RID: 19327
+	// Token: 0x04004BA4 RID: 19364
 	public int worldScale;
 
-	// Token: 0x04004B80 RID: 19328
+	// Token: 0x04004BA5 RID: 19365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldSizeX;
 
-	// Token: 0x04004B81 RID: 19329
+	// Token: 0x04004BA6 RID: 19366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldSizeZ;
 
-	// Token: 0x04004B82 RID: 19330
+	// Token: 0x04004BA7 RID: 19367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HeightMap heightMap;
 
-	// Token: 0x04004B83 RID: 19331
+	// Token: 0x04004BA8 RID: 19368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicPrefabDecorator m_PrefabDecorator;
 
-	// Token: 0x04004B84 RID: 19332
+	// Token: 0x04004BA9 RID: 19369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bChangeWaterDensity;
 
-	// Token: 0x04004B85 RID: 19333
+	// Token: 0x04004BAA RID: 19370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string worldPath;
 
-	// Token: 0x04004B86 RID: 19334
+	// Token: 0x04004BAB RID: 19371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D splat3Tex;
 
-	// Token: 0x04004B87 RID: 19335
+	// Token: 0x04004BAC RID: 19372
 	public int splat3Width;
 
-	// Token: 0x04004B88 RID: 19336
+	// Token: 0x04004BAD RID: 19373
 	public int splat3Height;
 
-	// Token: 0x04004B89 RID: 19337
+	// Token: 0x04004BAE RID: 19374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D splat4Tex;
 
-	// Token: 0x04004B8A RID: 19338
+	// Token: 0x04004BAF RID: 19375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] water16x16Chunks;
 
-	// Token: 0x04004B8B RID: 19339
+	// Token: 0x04004BB0 RID: 19376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int water16x16ChunksW;
 }

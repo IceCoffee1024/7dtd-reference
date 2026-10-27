@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000EB1 RID: 3761
-// (Invoke) Token: 0x06007490 RID: 29840
+// Token: 0x02000EBC RID: 3772
+// (Invoke) Token: 0x060074B5 RID: 29877
 public delegate void XUiEvent_InputOnErrorEventHandler(XUiController _sender, string _message);

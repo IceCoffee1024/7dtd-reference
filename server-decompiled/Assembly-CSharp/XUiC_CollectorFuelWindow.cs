@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F07 RID: 3847
+// Token: 0x02000F12 RID: 3858
 [Preserve]
 public class XUiC_CollectorFuelWindow : XUiController
 {
-	// Token: 0x06007821 RID: 30753 RVA: 0x002D78EF File Offset: 0x002D5AEF
+	// Token: 0x06007847 RID: 30791 RVA: 0x002D8E47 File Offset: 0x002D7047
 	public override void Init()
 	{
 		base.Init();
@@ -16,14 +16,14 @@ public class XUiC_CollectorFuelWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007822 RID: 30754 RVA: 0x002D7917 File Offset: 0x002D5B17
+	// Token: 0x06007848 RID: 30792 RVA: 0x002D8E6F File Offset: 0x002D706F
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007823 RID: 30755 RVA: 0x002D7925 File Offset: 0x002D5B25
+	// Token: 0x06007849 RID: 30793 RVA: 0x002D8E7D File Offset: 0x002D707D
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -35,7 +35,7 @@ public class XUiC_CollectorFuelWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007824 RID: 30756 RVA: 0x002D7958 File Offset: 0x002D5B58
+	// Token: 0x0600784A RID: 30794 RVA: 0x002D8EB0 File Offset: 0x002D70B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -47,7 +47,7 @@ public class XUiC_CollectorFuelWindow : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04005914 RID: 22804
+	// Token: 0x04005939 RID: 22841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CollectorFuelGrid fuelGrid;
 }

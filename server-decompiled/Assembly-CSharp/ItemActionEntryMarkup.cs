@@ -3,11 +3,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D6C RID: 3436
+// Token: 0x02000D77 RID: 3447
 [Preserve]
 public class ItemActionEntryMarkup : BaseItemActionEntry
 {
-	// Token: 0x06006812 RID: 26642 RVA: 0x002939E0 File Offset: 0x00291BE0
+	// Token: 0x06006837 RID: 26679 RVA: 0x00294F08 File Offset: 0x00293108
 	public ItemActionEntryMarkup(XUiController _controller)
 		: base(_controller, "OVERRIDDEN BELOW", "ui_game_symbol_add", BaseItemActionEntry.GamepadShortCut.DPadRight, "", "ui/ui_denied")
 	{
@@ -24,7 +24,7 @@ public class ItemActionEntryMarkup : BaseItemActionEntry
 		this.isOwner = false;
 	}
 
-	// Token: 0x06006813 RID: 26643 RVA: 0x00293A84 File Offset: 0x00291C84
+	// Token: 0x06006838 RID: 26680 RVA: 0x00294FAC File Offset: 0x002931AC
 	public override void OnActivated()
 	{
 		XUiC_TraderItemEntry xuiC_TraderItemEntry = (XUiC_TraderItemEntry)base.ItemController;
@@ -36,7 +36,7 @@ public class ItemActionEntryMarkup : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_tab", -1, 0f, false, false);
 	}
 
-	// Token: 0x04005032 RID: 20530
+	// Token: 0x04005057 RID: 20567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isOwner;
 }

@@ -6,10 +6,10 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x0200181A RID: 6170
+	// Token: 0x0200184B RID: 6219
 	public class ExtensionStateManager
 	{
-		// Token: 0x0600BF2C RID: 48940 RVA: 0x00467D24 File Offset: 0x00465F24
+		// Token: 0x0600C040 RID: 49216 RVA: 0x0046B6D0 File Offset: 0x004698D0
 		public void Init()
 		{
 			this.userId = TwitchManager.Current.Authentication.userID;
@@ -20,7 +20,7 @@ namespace Twitch
 			this.epm = new ExtensionPubSubManager();
 		}
 
-		// Token: 0x0600BF2D RID: 48941 RVA: 0x00467D94 File Offset: 0x00465F94
+		// Token: 0x0600C041 RID: 49217 RVA: 0x0046B740 File Offset: 0x00469940
 		public void OnPartyChanged()
 		{
 			ExtensionConfigManager extensionConfigManager = this.ecm;
@@ -31,7 +31,7 @@ namespace Twitch
 			extensionConfigManager.OnPartyChanged();
 		}
 
-		// Token: 0x0600BF2E RID: 48942 RVA: 0x00467DA6 File Offset: 0x00465FA6
+		// Token: 0x0600C042 RID: 49218 RVA: 0x0046B752 File Offset: 0x00469952
 		public void PushUserBalance(ValueTuple<string, int> userBalance)
 		{
 			ExtensionPubSubManager extensionPubSubManager = this.epm;
@@ -42,7 +42,7 @@ namespace Twitch
 			extensionPubSubManager.PushUserBalance(userBalance);
 		}
 
-		// Token: 0x0600BF2F RID: 48943 RVA: 0x00467DB9 File Offset: 0x00465FB9
+		// Token: 0x0600C043 RID: 49219 RVA: 0x0046B765 File Offset: 0x00469965
 		public void PushViewerChatState(string id, bool hasChatted)
 		{
 			ExtensionPubSubManager extensionPubSubManager = this.epm;
@@ -53,13 +53,13 @@ namespace Twitch
 			extensionPubSubManager.PushViewerChatState(id, hasChatted);
 		}
 
-		// Token: 0x0600BF30 RID: 48944 RVA: 0x00467DCD File Offset: 0x00465FCD
+		// Token: 0x0600C044 RID: 49220 RVA: 0x0046B779 File Offset: 0x00469979
 		public bool CanUseBitCommands()
 		{
 			return this.ecm.CanUseBitCommands();
 		}
 
-		// Token: 0x0600BF31 RID: 48945 RVA: 0x00467DDC File Offset: 0x00465FDC
+		// Token: 0x0600C045 RID: 49221 RVA: 0x0046B788 File Offset: 0x00469988
 		public void Update()
 		{
 			if (DateTimeOffset.UtcNow.ToUnixTimeSeconds() > this.jwtRefreshTime && !this.gettingJWT)
@@ -74,13 +74,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF32 RID: 48946 RVA: 0x00467E79 File Offset: 0x00466079
+		// Token: 0x0600C046 RID: 49222 RVA: 0x0046B825 File Offset: 0x00469A25
 		public void RetrieveJWT()
 		{
 			GameManager.Instance.StartCoroutine(this.GetJWT(TwitchManager.Current.Authentication.oauth.Substring(6)));
 		}
 
-		// Token: 0x0600BF33 RID: 48947 RVA: 0x00467EA1 File Offset: 0x004660A1
+		// Token: 0x0600C047 RID: 49223 RVA: 0x0046B84D File Offset: 0x00469A4D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator GetJWT(string token)
 		{
@@ -130,7 +130,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BF34 RID: 48948 RVA: 0x00467EB7 File Offset: 0x004660B7
+		// Token: 0x0600C048 RID: 49224 RVA: 0x0046B863 File Offset: 0x00469A63
 		public void Cleanup()
 		{
 			this.ecm.Cleanup();
@@ -138,31 +138,31 @@ namespace Twitch
 			this.epm = null;
 		}
 
-		// Token: 0x04008F0D RID: 36621
+		// Token: 0x04008FF6 RID: 36854
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string userId;
 
-		// Token: 0x04008F0E RID: 36622
+		// Token: 0x04008FF7 RID: 36855
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastUpdate = Time.realtimeSinceStartup;
 
-		// Token: 0x04008F0F RID: 36623
+		// Token: 0x04008FF8 RID: 36856
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ExtensionConfigManager ecm;
 
-		// Token: 0x04008F10 RID: 36624
+		// Token: 0x04008FF9 RID: 36857
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ExtensionPubSubManager epm;
 
-		// Token: 0x04008F11 RID: 36625
+		// Token: 0x04008FFA RID: 36858
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string jwt = string.Empty;
 
-		// Token: 0x04008F12 RID: 36626
+		// Token: 0x04008FFB RID: 36859
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long jwtRefreshTime;
 
-		// Token: 0x04008F13 RID: 36627
+		// Token: 0x04008FFC RID: 36860
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool gettingJWT;
 	}

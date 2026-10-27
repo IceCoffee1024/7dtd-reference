@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000210 RID: 528
+// Token: 0x02000212 RID: 530
 [Preserve]
 public class ConsoleCmdDismemberment : ConsoleCmdAbstract
 {
 	// Token: 0x17000167 RID: 359
-	// (get) Token: 0x06000FFF RID: 4095 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06001003 RID: 4099 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,21 +16,21 @@ public class ConsoleCmdDismemberment : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001000 RID: 4096 RVA: 0x000668DB File Offset: 0x00064ADB
+	// Token: 0x06001004 RID: 4100 RVA: 0x00066AAB File Offset: 0x00064CAB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testDismemberment", "tds" };
 	}
 
-	// Token: 0x06001001 RID: 4097 RVA: 0x000668F3 File Offset: 0x00064AF3
+	// Token: 0x06001005 RID: 4101 RVA: 0x00066AC3 File Offset: 0x00064CC3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Dismemberment testing toggle.";
 	}
 
-	// Token: 0x06001002 RID: 4098 RVA: 0x000668FC File Offset: 0x00064AFC
+	// Token: 0x06001006 RID: 4102 RVA: 0x00066ACC File Offset: 0x00064CCC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0 && _params[0].ContainsCaseInsensitive("debuglog"))

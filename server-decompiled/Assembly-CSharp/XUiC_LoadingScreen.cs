@@ -7,11 +7,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E1D RID: 3613
+// Token: 0x02000E28 RID: 3624
 [Preserve]
 public class XUiC_LoadingScreen : XUiController
 {
-	// Token: 0x06006E44 RID: 28228 RVA: 0x002AF70E File Offset: 0x002AD90E
+	// Token: 0x06006E69 RID: 28265 RVA: 0x002B0C7A File Offset: 0x002AEE7A
 	[XuiXmlAttribute("browse_sound", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attribBrowseSound(string _value)
@@ -22,8 +22,8 @@ public class XUiC_LoadingScreen : XUiController
 		});
 	}
 
-	// Token: 0x17000C5B RID: 3163
-	// (get) Token: 0x06006E45 RID: 28229 RVA: 0x002AF728 File Offset: 0x002AD928
+	// Token: 0x17000C61 RID: 3169
+	// (get) Token: 0x06006E6A RID: 28266 RVA: 0x002B0C94 File Offset: 0x002AEE94
 	[XuiXmlBinding("background_texture")]
 	public string CurrentBackground
 	{
@@ -34,8 +34,8 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x17000C5C RID: 3164
-	// (get) Token: 0x06006E46 RID: 28230 RVA: 0x002AF730 File Offset: 0x002AD930
+	// Token: 0x17000C62 RID: 3170
+	// (get) Token: 0x06006E6B RID: 28267 RVA: 0x002B0C9C File Offset: 0x002AEE9C
 	[XuiXmlBinding("show_tips")]
 	public bool ShowTips
 	{
@@ -46,8 +46,8 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x17000C5D RID: 3165
-	// (get) Token: 0x06006E47 RID: 28231 RVA: 0x002AF738 File Offset: 0x002AD938
+	// Token: 0x17000C63 RID: 3171
+	// (get) Token: 0x06006E6C RID: 28268 RVA: 0x002B0CA4 File Offset: 0x002AEEA4
 	[XuiXmlBinding("count")]
 	public int TipCount
 	{
@@ -58,8 +58,8 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x17000C5E RID: 3166
-	// (get) Token: 0x06006E48 RID: 28232 RVA: 0x002AF744 File Offset: 0x002AD944
+	// Token: 0x17000C64 RID: 3172
+	// (get) Token: 0x06006E6D RID: 28269 RVA: 0x002B0CB0 File Offset: 0x002AEEB0
 	[XuiXmlBinding("index")]
 	public int TipIndex
 	{
@@ -70,8 +70,8 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x17000C5F RID: 3167
-	// (get) Token: 0x06006E49 RID: 28233 RVA: 0x002AF74E File Offset: 0x002AD94E
+	// Token: 0x17000C65 RID: 3173
+	// (get) Token: 0x06006E6E RID: 28270 RVA: 0x002B0CBA File Offset: 0x002AEEBA
 	[XuiXmlBinding("title")]
 	public string TipTitle
 	{
@@ -86,8 +86,8 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x17000C60 RID: 3168
-	// (get) Token: 0x06006E4A RID: 28234 RVA: 0x002AF780 File Offset: 0x002AD980
+	// Token: 0x17000C66 RID: 3174
+	// (get) Token: 0x06006E6F RID: 28271 RVA: 0x002B0CEC File Offset: 0x002AEEEC
 	[XuiXmlBinding("text")]
 	public string TipText
 	{
@@ -102,7 +102,7 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x06006E4B RID: 28235 RVA: 0x002AF7A8 File Offset: 0x002AD9A8
+	// Token: 0x06006E70 RID: 28272 RVA: 0x002B0D14 File Offset: 0x002AEF14
 	public override void Init()
 	{
 		base.Init();
@@ -126,7 +126,7 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x06006E4C RID: 28236 RVA: 0x002AF820 File Offset: 0x002ADA20
+	// Token: 0x06006E71 RID: 28273 RVA: 0x002B0D8C File Offset: 0x002AEF8C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -148,7 +148,7 @@ public class XUiC_LoadingScreen : XUiController
 		}
 	}
 
-	// Token: 0x06006E4D RID: 28237 RVA: 0x002AF8C0 File Offset: 0x002ADAC0
+	// Token: 0x06006E72 RID: 28274 RVA: 0x002B0E2C File Offset: 0x002AF02C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cycle(int _increment)
 	{
@@ -172,7 +172,7 @@ public class XUiC_LoadingScreen : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006E4E RID: 28238 RVA: 0x002AF948 File Offset: 0x002ADB48
+	// Token: 0x06006E73 RID: 28275 RVA: 0x002B0EB4 File Offset: 0x002AF0B4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -192,7 +192,7 @@ public class XUiC_LoadingScreen : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006E4F RID: 28239 RVA: 0x002AF9FD File Offset: 0x002ADBFD
+	// Token: 0x06006E74 RID: 28276 RVA: 0x002B0F69 File Offset: 0x002AF169
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -205,7 +205,7 @@ public class XUiC_LoadingScreen : XUiController
 		this.xui.playerUI.CursorController.SetCursorHidden(false);
 	}
 
-	// Token: 0x06006E50 RID: 28240 RVA: 0x002AFA3C File Offset: 0x002ADC3C
+	// Token: 0x06006E75 RID: 28277 RVA: 0x002B0FA8 File Offset: 0x002AF1A8
 	public void SetTipsVisible(bool _visible)
 	{
 		if (this.showTips == _visible)
@@ -216,7 +216,7 @@ public class XUiC_LoadingScreen : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006E51 RID: 28241 RVA: 0x002AFA56 File Offset: 0x002ADC56
+	// Token: 0x06006E76 RID: 28278 RVA: 0x002B0FC2 File Offset: 0x002AF1C2
 	public static IEnumerator LoadXml(XmlFile _xmlFile)
 	{
 		XContainer root = _xmlFile.XmlDoc.Root;
@@ -266,34 +266,34 @@ public class XUiC_LoadingScreen : XUiController
 		yield break;
 	}
 
-	// Token: 0x04005417 RID: 21527
+	// Token: 0x0400543C RID: 21564
 	public static string ID = "";
 
-	// Token: 0x04005418 RID: 21528
+	// Token: 0x0400543D RID: 21565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentTipIndex = -1;
 
-	// Token: 0x04005419 RID: 21529
+	// Token: 0x0400543E RID: 21566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string currentBackground = "";
 
-	// Token: 0x0400541A RID: 21530
+	// Token: 0x0400543F RID: 21567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showTips = true;
 
-	// Token: 0x0400541B RID: 21531
+	// Token: 0x04005440 RID: 21568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip browseSound;
 
-	// Token: 0x0400541C RID: 21532
+	// Token: 0x04005441 RID: 21569
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture backgroundTextureView;
 
-	// Token: 0x0400541D RID: 21533
+	// Token: 0x04005442 RID: 21570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<string> backgrounds = new List<string>();
 
-	// Token: 0x0400541E RID: 21534
+	// Token: 0x04005443 RID: 21571
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<string> tips = new List<string>();
 }

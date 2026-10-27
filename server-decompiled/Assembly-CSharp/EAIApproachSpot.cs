@@ -3,11 +3,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000431 RID: 1073
+// Token: 0x02000433 RID: 1075
 [Preserve]
 public class EAIApproachSpot : EAIBase
 {
-	// Token: 0x060020D7 RID: 8407 RVA: 0x000C58E7 File Offset: 0x000C3AE7
+	// Token: 0x060020DC RID: 8412 RVA: 0x000C5C93 File Offset: 0x000C3E93
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -15,7 +15,7 @@ public class EAIApproachSpot : EAIBase
 		this.executeDelay = 0.1f;
 	}
 
-	// Token: 0x060020D8 RID: 8408 RVA: 0x000C6DA8 File Offset: 0x000C4FA8
+	// Token: 0x060020DD RID: 8413 RVA: 0x000C7154 File Offset: 0x000C5354
 	public override bool CanExecute()
 	{
 		if (!this.theEntity.HasInvestigatePosition)
@@ -31,14 +31,14 @@ public class EAIApproachSpot : EAIBase
 		return true;
 	}
 
-	// Token: 0x060020D9 RID: 8409 RVA: 0x000C6E01 File Offset: 0x000C5001
+	// Token: 0x060020DE RID: 8414 RVA: 0x000C71AD File Offset: 0x000C53AD
 	public override void Start()
 	{
 		this.hadPath = false;
 		this.updatePath();
 	}
 
-	// Token: 0x060020DA RID: 8410 RVA: 0x000C6E10 File Offset: 0x000C5010
+	// Token: 0x060020DF RID: 8415 RVA: 0x000C71BC File Offset: 0x000C53BC
 	public override bool Continue()
 	{
 		PathEntity path = this.theEntity.navigator.getPath();
@@ -68,7 +68,7 @@ public class EAIApproachSpot : EAIBase
 		return true;
 	}
 
-	// Token: 0x060020DB RID: 8411 RVA: 0x000C6ECC File Offset: 0x000C50CC
+	// Token: 0x060020E0 RID: 8416 RVA: 0x000C7278 File Offset: 0x000C5478
 	public override void Update()
 	{
 		if (this.theEntity.navigator.getPath() != null)
@@ -87,7 +87,7 @@ public class EAIApproachSpot : EAIBase
 		}
 	}
 
-	// Token: 0x060020DC RID: 8412 RVA: 0x000C6F40 File Offset: 0x000C5140
+	// Token: 0x060020E1 RID: 8417 RVA: 0x000C72EC File Offset: 0x000C54EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePath()
 	{
@@ -103,7 +103,7 @@ public class EAIApproachSpot : EAIBase
 		this.theEntity.FindPath(this.seekPos, this.theEntity.GetMoveSpeedAggro(), true, this);
 	}
 
-	// Token: 0x060020DD RID: 8413 RVA: 0x000C6FC0 File Offset: 0x000C51C0
+	// Token: 0x060020E2 RID: 8418 RVA: 0x000C736C File Offset: 0x000C556C
 	public override void Reset()
 	{
 		this.theEntity.moveHelper.Stop();
@@ -112,45 +112,45 @@ public class EAIApproachSpot : EAIBase
 		this.manager.interestDistance = 2f;
 	}
 
-	// Token: 0x060020DE RID: 8414 RVA: 0x000C701C File Offset: 0x000C521C
+	// Token: 0x060020E3 RID: 8419 RVA: 0x000C73C8 File Offset: 0x000C55C8
 	public override string ToString()
 	{
 		return string.Format("{0}, {1} dist{2}", base.ToString(), this.theEntity.navigator.noPathAndNotPlanningOne() ? "(-path)" : (this.theEntity.navigator.noPath() ? "(!path)" : ""), (this.theEntity.position - this.seekPos).magnitude.ToCultureInvariantString());
 	}
 
-	// Token: 0x04001688 RID: 5768
+	// Token: 0x04001698 RID: 5784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cInvestigateChangeDist = 2f;
 
-	// Token: 0x04001689 RID: 5769
+	// Token: 0x04001699 RID: 5785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCloseDist = 2f;
 
-	// Token: 0x0400168A RID: 5770
+	// Token: 0x0400169A RID: 5786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cLookTimeMin = 5f;
 
-	// Token: 0x0400168B RID: 5771
+	// Token: 0x0400169B RID: 5787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cLookTimeMax = 8f;
 
-	// Token: 0x0400168C RID: 5772
+	// Token: 0x0400169C RID: 5788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 investigatePos;
 
-	// Token: 0x0400168D RID: 5773
+	// Token: 0x0400169D RID: 5789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 seekPos;
 
-	// Token: 0x0400168E RID: 5774
+	// Token: 0x0400169E RID: 5790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hadPath;
 
-	// Token: 0x0400168F RID: 5775
+	// Token: 0x0400169F RID: 5791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int investigateTicks;
 
-	// Token: 0x04001690 RID: 5776
+	// Token: 0x040016A0 RID: 5792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pathRecalculateTicks;
 }

@@ -3,55 +3,55 @@ using UnityEngine;
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D8D RID: 7565
+	// Token: 0x02001DBE RID: 7614
 	[RequireComponent(typeof(Rigidbody))]
 	public class PhysicsMover : MonoBehaviour
 	{
-		// Token: 0x17001C5F RID: 7263
-		// (get) Token: 0x0600DFA1 RID: 57249 RVA: 0x004FD914 File Offset: 0x004FBB14
-		// (set) Token: 0x0600DFA2 RID: 57250 RVA: 0x004FD91C File Offset: 0x004FBB1C
+		// Token: 0x17001CA7 RID: 7335
+		// (get) Token: 0x0600E0B5 RID: 57525 RVA: 0x005014B4 File Offset: 0x004FF6B4
+		// (set) Token: 0x0600E0B6 RID: 57526 RVA: 0x005014BC File Offset: 0x004FF6BC
 		public int IndexInCharacterSystem { get; set; }
 
-		// Token: 0x17001C60 RID: 7264
-		// (get) Token: 0x0600DFA3 RID: 57251 RVA: 0x004FD925 File Offset: 0x004FBB25
-		// (set) Token: 0x0600DFA4 RID: 57252 RVA: 0x004FD92D File Offset: 0x004FBB2D
+		// Token: 0x17001CA8 RID: 7336
+		// (get) Token: 0x0600E0B7 RID: 57527 RVA: 0x005014C5 File Offset: 0x004FF6C5
+		// (set) Token: 0x0600E0B8 RID: 57528 RVA: 0x005014CD File Offset: 0x004FF6CD
 		public Vector3 InitialTickPosition { get; set; }
 
-		// Token: 0x17001C61 RID: 7265
-		// (get) Token: 0x0600DFA5 RID: 57253 RVA: 0x004FD936 File Offset: 0x004FBB36
-		// (set) Token: 0x0600DFA6 RID: 57254 RVA: 0x004FD93E File Offset: 0x004FBB3E
+		// Token: 0x17001CA9 RID: 7337
+		// (get) Token: 0x0600E0B9 RID: 57529 RVA: 0x005014D6 File Offset: 0x004FF6D6
+		// (set) Token: 0x0600E0BA RID: 57530 RVA: 0x005014DE File Offset: 0x004FF6DE
 		public Quaternion InitialTickRotation { get; set; }
 
-		// Token: 0x17001C62 RID: 7266
-		// (get) Token: 0x0600DFA7 RID: 57255 RVA: 0x004FD947 File Offset: 0x004FBB47
-		// (set) Token: 0x0600DFA8 RID: 57256 RVA: 0x004FD94F File Offset: 0x004FBB4F
+		// Token: 0x17001CAA RID: 7338
+		// (get) Token: 0x0600E0BB RID: 57531 RVA: 0x005014E7 File Offset: 0x004FF6E7
+		// (set) Token: 0x0600E0BC RID: 57532 RVA: 0x005014EF File Offset: 0x004FF6EF
 		public Transform Transform
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001C63 RID: 7267
-		// (get) Token: 0x0600DFA9 RID: 57257 RVA: 0x004FD958 File Offset: 0x004FBB58
-		// (set) Token: 0x0600DFAA RID: 57258 RVA: 0x004FD960 File Offset: 0x004FBB60
+		// Token: 0x17001CAB RID: 7339
+		// (get) Token: 0x0600E0BD RID: 57533 RVA: 0x005014F8 File Offset: 0x004FF6F8
+		// (set) Token: 0x0600E0BE RID: 57534 RVA: 0x00501500 File Offset: 0x004FF700
 		public Vector3 InitialSimulationPosition
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001C64 RID: 7268
-		// (get) Token: 0x0600DFAB RID: 57259 RVA: 0x004FD969 File Offset: 0x004FBB69
-		// (set) Token: 0x0600DFAC RID: 57260 RVA: 0x004FD971 File Offset: 0x004FBB71
+		// Token: 0x17001CAC RID: 7340
+		// (get) Token: 0x0600E0BF RID: 57535 RVA: 0x00501509 File Offset: 0x004FF709
+		// (set) Token: 0x0600E0C0 RID: 57536 RVA: 0x00501511 File Offset: 0x004FF711
 		public Quaternion InitialSimulationRotation
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001C65 RID: 7269
-		// (get) Token: 0x0600DFAD RID: 57261 RVA: 0x004FD97A File Offset: 0x004FBB7A
-		// (set) Token: 0x0600DFAE RID: 57262 RVA: 0x004FD982 File Offset: 0x004FBB82
+		// Token: 0x17001CAD RID: 7341
+		// (get) Token: 0x0600E0C1 RID: 57537 RVA: 0x0050151A File Offset: 0x004FF71A
+		// (set) Token: 0x0600E0C2 RID: 57538 RVA: 0x00501522 File Offset: 0x004FF722
 		public Vector3 TransientPosition
 		{
 			get
@@ -65,9 +65,9 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x17001C66 RID: 7270
-		// (get) Token: 0x0600DFAF RID: 57263 RVA: 0x004FD98B File Offset: 0x004FBB8B
-		// (set) Token: 0x0600DFB0 RID: 57264 RVA: 0x004FD993 File Offset: 0x004FBB93
+		// Token: 0x17001CAE RID: 7342
+		// (get) Token: 0x0600E0C3 RID: 57539 RVA: 0x0050152B File Offset: 0x004FF72B
+		// (set) Token: 0x0600E0C4 RID: 57540 RVA: 0x00501533 File Offset: 0x004FF733
 		public Quaternion TransientRotation
 		{
 			get
@@ -81,21 +81,21 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0600DFB1 RID: 57265 RVA: 0x004FD99C File Offset: 0x004FBB9C
+		// Token: 0x0600E0C5 RID: 57541 RVA: 0x0050153C File Offset: 0x004FF73C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Reset()
 		{
 			this.ValidateData();
 		}
 
-		// Token: 0x0600DFB2 RID: 57266 RVA: 0x004FD99C File Offset: 0x004FBB9C
+		// Token: 0x0600E0C6 RID: 57542 RVA: 0x0050153C File Offset: 0x004FF73C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnValidate()
 		{
 			this.ValidateData();
 		}
 
-		// Token: 0x0600DFB3 RID: 57267 RVA: 0x004FD9A4 File Offset: 0x004FBBA4
+		// Token: 0x0600E0C7 RID: 57543 RVA: 0x00501544 File Offset: 0x004FF744
 		public void ValidateData()
 		{
 			this.Rigidbody = base.gameObject.GetComponent<Rigidbody>();
@@ -111,7 +111,7 @@ namespace KinematicCharacterController
 			this.Rigidbody.interpolation = RigidbodyInterpolation.None;
 		}
 
-		// Token: 0x0600DFB4 RID: 57268 RVA: 0x004FDA4E File Offset: 0x004FBC4E
+		// Token: 0x0600E0C8 RID: 57544 RVA: 0x005015EE File Offset: 0x004FF7EE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnEnable()
 		{
@@ -119,14 +119,14 @@ namespace KinematicCharacterController
 			KinematicCharacterSystem.RegisterPhysicsMover(this);
 		}
 
-		// Token: 0x0600DFB5 RID: 57269 RVA: 0x004FDA5B File Offset: 0x004FBC5B
+		// Token: 0x0600E0C9 RID: 57545 RVA: 0x005015FB File Offset: 0x004FF7FB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisable()
 		{
 			KinematicCharacterSystem.UnregisterPhysicsMover(this);
 		}
 
-		// Token: 0x0600DFB6 RID: 57270 RVA: 0x004FDA64 File Offset: 0x004FBC64
+		// Token: 0x0600E0CA RID: 57546 RVA: 0x00501604 File Offset: 0x004FF804
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Awake()
 		{
@@ -138,7 +138,7 @@ namespace KinematicCharacterController
 			this.InitialSimulationRotation = this.Rigidbody.rotation;
 		}
 
-		// Token: 0x0600DFB7 RID: 57271 RVA: 0x004FDAC7 File Offset: 0x004FBCC7
+		// Token: 0x0600E0CB RID: 57547 RVA: 0x00501667 File Offset: 0x004FF867
 		public void SetPosition(Vector3 position)
 		{
 			this.Transform.position = position;
@@ -147,7 +147,7 @@ namespace KinematicCharacterController
 			this.TransientPosition = position;
 		}
 
-		// Token: 0x0600DFB8 RID: 57272 RVA: 0x004FDAEF File Offset: 0x004FBCEF
+		// Token: 0x0600E0CC RID: 57548 RVA: 0x0050168F File Offset: 0x004FF88F
 		public void SetRotation(Quaternion rotation)
 		{
 			this.Transform.rotation = rotation;
@@ -156,7 +156,7 @@ namespace KinematicCharacterController
 			this.TransientRotation = rotation;
 		}
 
-		// Token: 0x0600DFB9 RID: 57273 RVA: 0x004FDB18 File Offset: 0x004FBD18
+		// Token: 0x0600E0CD RID: 57549 RVA: 0x005016B8 File Offset: 0x004FF8B8
 		public void SetPositionAndRotation(Vector3 position, Quaternion rotation)
 		{
 			this.Transform.SetPositionAndRotation(position, rotation);
@@ -168,7 +168,7 @@ namespace KinematicCharacterController
 			this.TransientRotation = rotation;
 		}
 
-		// Token: 0x0600DFBA RID: 57274 RVA: 0x004FDB68 File Offset: 0x004FBD68
+		// Token: 0x0600E0CE RID: 57550 RVA: 0x00501708 File Offset: 0x004FF908
 		public void VelocityUpdate(float deltaTime)
 		{
 			this.InitialSimulationPosition = this.TransientPosition;
@@ -182,20 +182,20 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0400A963 RID: 43363
+		// Token: 0x0400AA4C RID: 43596
 		[ReadOnly]
 		public Rigidbody Rigidbody;
 
-		// Token: 0x0400A964 RID: 43364
+		// Token: 0x0400AA4D RID: 43597
 		[NonSerialized]
 		public IMoverController MoverController;
 
-		// Token: 0x0400A96B RID: 43371
+		// Token: 0x0400AA54 RID: 43604
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Vector3 _internalTransientPosition;
 
-		// Token: 0x0400A96C RID: 43372
+		// Token: 0x0400AA55 RID: 43605
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Quaternion _internalTransientRotation;

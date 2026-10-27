@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000830 RID: 2096
+// Token: 0x0200083A RID: 2106
 [Preserve]
 public class NetPackagePlayerSpawnedInWorld : NetPackage
 {
-	// Token: 0x06003D45 RID: 15685 RVA: 0x0018614E File Offset: 0x0018434E
+	// Token: 0x06003D68 RID: 15720 RVA: 0x00187252 File Offset: 0x00185452
 	public NetPackagePlayerSpawnedInWorld Setup(RespawnType _respawnReason, Vector3i _position, int _entityId)
 	{
 		this.respawnReason = _respawnReason;
@@ -14,8 +14,8 @@ public class NetPackagePlayerSpawnedInWorld : NetPackage
 		return this;
 	}
 
-	// Token: 0x1700068D RID: 1677
-	// (get) Token: 0x06003D46 RID: 15686 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000693 RID: 1683
+	// (get) Token: 0x06003D69 RID: 15721 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -24,7 +24,7 @@ public class NetPackagePlayerSpawnedInWorld : NetPackage
 		}
 	}
 
-	// Token: 0x06003D47 RID: 15687 RVA: 0x00186166 File Offset: 0x00184366
+	// Token: 0x06003D6A RID: 15722 RVA: 0x0018726A File Offset: 0x0018546A
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.respawnReason = (RespawnType)_reader.ReadInt32();
@@ -32,7 +32,7 @@ public class NetPackagePlayerSpawnedInWorld : NetPackage
 		this.entityId = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003D48 RID: 15688 RVA: 0x0018618D File Offset: 0x0018438D
+	// Token: 0x06003D6B RID: 15723 RVA: 0x00187291 File Offset: 0x00185491
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -41,7 +41,7 @@ public class NetPackagePlayerSpawnedInWorld : NetPackage
 		_writer.Write(this.entityId);
 	}
 
-	// Token: 0x06003D49 RID: 15689 RVA: 0x001861BC File Offset: 0x001843BC
+	// Token: 0x06003D6C RID: 15724 RVA: 0x001872C0 File Offset: 0x001854C0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -59,15 +59,15 @@ public class NetPackagePlayerSpawnedInWorld : NetPackage
 		}
 	}
 
-	// Token: 0x040031C1 RID: 12737
+	// Token: 0x040031E1 RID: 12769
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RespawnType respawnReason;
 
-	// Token: 0x040031C2 RID: 12738
+	// Token: 0x040031E2 RID: 12770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i position;
 
-	// Token: 0x040031C3 RID: 12739
+	// Token: 0x040031E3 RID: 12771
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 }

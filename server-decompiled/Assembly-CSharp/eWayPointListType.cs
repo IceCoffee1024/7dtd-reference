@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020007F3 RID: 2035
+// Token: 0x020007FD RID: 2045
 public enum eWayPointListType
 {
-	// Token: 0x040030C1 RID: 12481
+	// Token: 0x040030E1 RID: 12513
 	Vehicle,
-	// Token: 0x040030C2 RID: 12482
+	// Token: 0x040030E2 RID: 12514
 	Drone
 }

@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FCD RID: 4045
+// Token: 0x02000FDD RID: 4061
 [Preserve]
 public class XUiC_PowerTriggerWindowGroup : XUiController
 {
-	// Token: 0x06007F83 RID: 32643 RVA: 0x00308BC8 File Offset: 0x00306DC8
+	// Token: 0x06007FD2 RID: 32722 RVA: 0x0030A6E4 File Offset: 0x003088E4
 	public override void Init()
 	{
 		base.Init();
@@ -29,9 +29,9 @@ public class XUiC_PowerTriggerWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x17000F09 RID: 3849
-	// (get) Token: 0x06007F84 RID: 32644 RVA: 0x00308C29 File Offset: 0x00306E29
-	// (set) Token: 0x06007F85 RID: 32645 RVA: 0x00308C31 File Offset: 0x00306E31
+	// Token: 0x17000F14 RID: 3860
+	// (get) Token: 0x06007FD3 RID: 32723 RVA: 0x0030A745 File Offset: 0x00308945
+	// (set) Token: 0x06007FD4 RID: 32724 RVA: 0x0030A74D File Offset: 0x0030894D
 	public TileEntityPoweredTrigger TileEntity
 	{
 		get
@@ -46,7 +46,7 @@ public class XUiC_PowerTriggerWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F86 RID: 32646 RVA: 0x00308C5C File Offset: 0x00306E5C
+	// Token: 0x06007FD5 RID: 32725 RVA: 0x0030A778 File Offset: 0x00308978
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -74,7 +74,7 @@ public class XUiC_PowerTriggerWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F87 RID: 32647 RVA: 0x00308D3C File Offset: 0x00306F3C
+	// Token: 0x06007FD6 RID: 32726 RVA: 0x0030A858 File Offset: 0x00308A58
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -88,7 +88,7 @@ public class XUiC_PowerTriggerWindowGroup : XUiController
 		this.TileEntity.Destroyed += this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007F88 RID: 32648 RVA: 0x00308DC8 File Offset: 0x00306FC8
+	// Token: 0x06007FD7 RID: 32727 RVA: 0x0030A8E4 File Offset: 0x00308AE4
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -102,7 +102,7 @@ public class XUiC_PowerTriggerWindowGroup : XUiController
 		this.TileEntity.Destroyed -= this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007F89 RID: 32649 RVA: 0x00308E3C File Offset: 0x0030703C
+	// Token: 0x06007FD8 RID: 32728 RVA: 0x0030A958 File Offset: 0x00308B58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_Destroyed(ITileEntity te)
 	{
@@ -121,30 +121,30 @@ public class XUiC_PowerTriggerWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x04005EBF RID: 24255
+	// Token: 0x04005EFA RID: 24314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeader;
 
-	// Token: 0x04005EC0 RID: 24256
+	// Token: 0x04005EFB RID: 24315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PowerTriggerOptions triggerWindow;
 
-	// Token: 0x04005EC1 RID: 24257
+	// Token: 0x04005EFC RID: 24316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CameraWindow cameraWindow;
 
-	// Token: 0x04005EC2 RID: 24258
+	// Token: 0x04005EFD RID: 24317
 	public static string ID = "powertrigger";
 
-	// Token: 0x04005EC3 RID: 24259
+	// Token: 0x04005EFE RID: 24318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005EC4 RID: 24260
+	// Token: 0x04005EFF RID: 24319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 
-	// Token: 0x04005EC5 RID: 24261
+	// Token: 0x04005F00 RID: 24320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPoweredTrigger tileEntity;
 }

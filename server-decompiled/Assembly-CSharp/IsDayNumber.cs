@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A0 RID: 1696
+// Token: 0x020006A7 RID: 1703
 [Preserve]
 public class IsDayNumber : TargetedCompareRequirementBase
 {
-	// Token: 0x060035B0 RID: 13744 RVA: 0x00161AA8 File Offset: 0x0015FCA8
+	// Token: 0x060035BE RID: 13758 RVA: 0x0016269C File Offset: 0x0016089C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

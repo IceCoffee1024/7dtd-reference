@@ -5,11 +5,11 @@ using System.IO;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000A5B RID: 2651
+// Token: 0x02000A65 RID: 2661
 public static class SDCSDataUtils
 {
-	// Token: 0x170008AF RID: 2223
-	// (get) Token: 0x06004FBF RID: 20415 RVA: 0x001E59AE File Offset: 0x001E3BAE
+	// Token: 0x170008B5 RID: 2229
+	// (get) Token: 0x06004FE3 RID: 20451 RVA: 0x001E6A96 File Offset: 0x001E4C96
 	public static string baseHairColorLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -19,13 +19,13 @@ public static class SDCSDataUtils
 		}
 	}
 
-	// Token: 0x06004FC0 RID: 20416 RVA: 0x001E59B5 File Offset: 0x001E3BB5
+	// Token: 0x06004FE4 RID: 20452 RVA: 0x001E6A9D File Offset: 0x001E4C9D
 	public static void SetupData()
 	{
 		SDCSDataUtils.Load();
 	}
 
-	// Token: 0x06004FC1 RID: 20417 RVA: 0x001E59BC File Offset: 0x001E3BBC
+	// Token: 0x06004FE5 RID: 20453 RVA: 0x001E6AA4 File Offset: 0x001E4CA4
 	public static List<string> GetRaceList(bool isMale)
 	{
 		List<string> list = new List<string>();
@@ -40,7 +40,7 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FC2 RID: 20418 RVA: 0x001E5A50 File Offset: 0x001E3C50
+	// Token: 0x06004FE6 RID: 20454 RVA: 0x001E6B38 File Offset: 0x001E4D38
 	public static List<string> GetVariantList(bool isMale, string raceName)
 	{
 		List<string> list = new List<string>();
@@ -57,7 +57,7 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FC3 RID: 20419 RVA: 0x001E5AFC File Offset: 0x001E3CFC
+	// Token: 0x06004FE7 RID: 20455 RVA: 0x001E6BE4 File Offset: 0x001E4DE4
 	public static List<string> GetHairNames(bool isMale, SDCSDataUtils.HairTypes hairType)
 	{
 		List<string> list = new List<string>();
@@ -88,13 +88,13 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FC4 RID: 20420 RVA: 0x001E5BA4 File Offset: 0x001E3DA4
+	// Token: 0x06004FE8 RID: 20456 RVA: 0x001E6C8C File Offset: 0x001E4E8C
 	public static List<string> GetEyeColorNames()
 	{
 		return SDCSDataUtils.EyeColorList;
 	}
 
-	// Token: 0x06004FC5 RID: 20421 RVA: 0x001E5BAC File Offset: 0x001E3DAC
+	// Token: 0x06004FE9 RID: 20457 RVA: 0x001E6C94 File Offset: 0x001E4E94
 	public static List<SDCSDataUtils.HairColorData> GetHairColorNames()
 	{
 		List<SDCSDataUtils.HairColorData> list = new List<SDCSDataUtils.HairColorData>();
@@ -105,7 +105,7 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FC6 RID: 20422 RVA: 0x001E5C0C File Offset: 0x001E3E0C
+	// Token: 0x06004FEA RID: 20458 RVA: 0x001E6CF4 File Offset: 0x001E4EF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetupDataFromResources()
 	{
@@ -118,7 +118,7 @@ public static class SDCSDataUtils
 		SDCSDataUtils.LoadHairColorFromResources(SDCSDataUtils.HairColorDictionary);
 	}
 
-	// Token: 0x06004FC7 RID: 20423 RVA: 0x001E5C5E File Offset: 0x001E3E5E
+	// Token: 0x06004FEB RID: 20459 RVA: 0x001E6D46 File Offset: 0x001E4F46
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadRaceDataFromResources()
 	{
@@ -127,7 +127,7 @@ public static class SDCSDataUtils
 		SDCSDataUtils.ParseRaceVariantFromResources(false);
 	}
 
-	// Token: 0x06004FC8 RID: 20424 RVA: 0x001E5C78 File Offset: 0x001E3E78
+	// Token: 0x06004FEC RID: 20460 RVA: 0x001E6D60 File Offset: 0x001E4F60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseRaceVariantFromResources(bool isMale)
 	{
@@ -146,7 +146,7 @@ public static class SDCSDataUtils
 		}
 	}
 
-	// Token: 0x06004FC9 RID: 20425 RVA: 0x001E5D48 File Offset: 0x001E3F48
+	// Token: 0x06004FED RID: 20461 RVA: 0x001E6E30 File Offset: 0x001E5030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadHairTypeFromResources(Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData> dict, SDCSDataUtils.HairTypes hairType)
 	{
@@ -171,7 +171,7 @@ public static class SDCSDataUtils
 		}
 	}
 
-	// Token: 0x06004FCA RID: 20426 RVA: 0x001E5DF4 File Offset: 0x001E3FF4
+	// Token: 0x06004FEE RID: 20462 RVA: 0x001E6EDC File Offset: 0x001E50DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadHairColorFromResources(Dictionary<string, SDCSDataUtils.HairColorData> dict)
 	{
@@ -191,7 +191,7 @@ public static class SDCSDataUtils
 		}
 	}
 
-	// Token: 0x06004FCB RID: 20427 RVA: 0x001E5E70 File Offset: 0x001E4070
+	// Token: 0x06004FEF RID: 20463 RVA: 0x001E6F58 File Offset: 0x001E5158
 	public static List<string> GetHairNamesFromResources(bool isMale, SDCSDataUtils.HairTypes hairType)
 	{
 		List<string> list = new List<string>();
@@ -208,7 +208,7 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FCC RID: 20428 RVA: 0x001E5F08 File Offset: 0x001E4108
+	// Token: 0x06004FF0 RID: 20464 RVA: 0x001E6FF0 File Offset: 0x001E51F0
 	public static List<string> GetEyeColorNamesFromResources()
 	{
 		List<string> list = new List<string>();
@@ -222,7 +222,7 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FCD RID: 20429 RVA: 0x001E5F78 File Offset: 0x001E4178
+	// Token: 0x06004FF1 RID: 20465 RVA: 0x001E7060 File Offset: 0x001E5260
 	public static List<string> GetHairColorNamesFromResources()
 	{
 		List<string> list = new List<string>();
@@ -236,7 +236,7 @@ public static class SDCSDataUtils
 		return list;
 	}
 
-	// Token: 0x06004FCE RID: 20430 RVA: 0x001E5FF0 File Offset: 0x001E41F0
+	// Token: 0x06004FF2 RID: 20466 RVA: 0x001E70D8 File Offset: 0x001E52D8
 	public static void Save()
 	{
 		SDCSDataUtils.SetupDataFromResources();
@@ -288,7 +288,7 @@ public static class SDCSDataUtils
 		streamWriter.Close();
 	}
 
-	// Token: 0x06004FCF RID: 20431 RVA: 0x001E6350 File Offset: 0x001E4550
+	// Token: 0x06004FF3 RID: 20467 RVA: 0x001E7438 File Offset: 0x001E5638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Load()
 	{
@@ -381,7 +381,7 @@ public static class SDCSDataUtils
 		}
 	}
 
-	// Token: 0x06004FD0 RID: 20432 RVA: 0x001E6708 File Offset: 0x001E4908
+	// Token: 0x06004FF4 RID: 20468 RVA: 0x001E77F0 File Offset: 0x001E59F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SDCSDataUtils.HairData ParseHair(XElement element)
 	{
@@ -402,84 +402,84 @@ public static class SDCSDataUtils
 		};
 	}
 
-	// Token: 0x04003D89 RID: 15753
+	// Token: 0x04003DAA RID: 15786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<SDCSDataUtils.GenderKey, List<int>> VariantData = new Dictionary<SDCSDataUtils.GenderKey, List<int>>();
 
-	// Token: 0x04003D8A RID: 15754
+	// Token: 0x04003DAB RID: 15787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData> HairDictionary = new Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData>();
 
-	// Token: 0x04003D8B RID: 15755
+	// Token: 0x04003DAC RID: 15788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData> MustacheDictionary = new Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData>();
 
-	// Token: 0x04003D8C RID: 15756
+	// Token: 0x04003DAD RID: 15789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData> ChopsDictionary = new Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData>();
 
-	// Token: 0x04003D8D RID: 15757
+	// Token: 0x04003DAE RID: 15790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData> BeardDictionary = new Dictionary<SDCSDataUtils.GenderKey, SDCSDataUtils.HairData>();
 
-	// Token: 0x04003D8E RID: 15758
+	// Token: 0x04003DAF RID: 15791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<string> EyeColorList = new List<string>();
 
-	// Token: 0x04003D8F RID: 15759
+	// Token: 0x04003DB0 RID: 15792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, SDCSDataUtils.HairColorData> HairColorDictionary = new Dictionary<string, SDCSDataUtils.HairColorData>();
 
-	// Token: 0x02000A5C RID: 2652
+	// Token: 0x02000A66 RID: 2662
 	public struct HairColorData
 	{
-		// Token: 0x04003D90 RID: 15760
+		// Token: 0x04003DB1 RID: 15793
 		public int Index;
 
-		// Token: 0x04003D91 RID: 15761
+		// Token: 0x04003DB2 RID: 15794
 		public string Name;
 
-		// Token: 0x04003D92 RID: 15762
+		// Token: 0x04003DB3 RID: 15795
 		public string PrefabName;
 	}
 
-	// Token: 0x02000A5D RID: 2653
+	// Token: 0x02000A67 RID: 2663
 	public struct HairData
 	{
-		// Token: 0x04003D93 RID: 15763
+		// Token: 0x04003DB4 RID: 15796
 		public string Name;
 
-		// Token: 0x04003D94 RID: 15764
+		// Token: 0x04003DB5 RID: 15797
 		public bool IsMale;
 	}
 
-	// Token: 0x02000A5E RID: 2654
+	// Token: 0x02000A68 RID: 2664
 	public struct GenderKey
 	{
-		// Token: 0x06004FD2 RID: 20434 RVA: 0x001E67D7 File Offset: 0x001E49D7
+		// Token: 0x06004FF6 RID: 20470 RVA: 0x001E78BF File Offset: 0x001E5ABF
 		public GenderKey(string name, bool isMale)
 		{
 			this.Name = name;
 			this.IsMale = isMale;
 		}
 
-		// Token: 0x04003D95 RID: 15765
+		// Token: 0x04003DB6 RID: 15798
 		public string Name;
 
-		// Token: 0x04003D96 RID: 15766
+		// Token: 0x04003DB7 RID: 15799
 		public bool IsMale;
 	}
 
-	// Token: 0x02000A5F RID: 2655
+	// Token: 0x02000A69 RID: 2665
 	public enum HairTypes
 	{
-		// Token: 0x04003D98 RID: 15768
+		// Token: 0x04003DB9 RID: 15801
 		Hair,
-		// Token: 0x04003D99 RID: 15769
+		// Token: 0x04003DBA RID: 15802
 		Mustache,
-		// Token: 0x04003D9A RID: 15770
+		// Token: 0x04003DBB RID: 15803
 		Chops,
-		// Token: 0x04003D9B RID: 15771
+		// Token: 0x04003DBC RID: 15804
 		Beard
 	}
 }

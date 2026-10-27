@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000794 RID: 1940
+// Token: 0x0200079C RID: 1948
 public interface IHasWorldAddress
 {
-	// Token: 0x060039F7 RID: 14839
+	// Token: 0x06003A0E RID: 14862
 	WorldAddress GetAddress();
 }

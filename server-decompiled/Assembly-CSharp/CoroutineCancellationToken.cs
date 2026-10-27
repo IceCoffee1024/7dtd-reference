@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02001310 RID: 4880
+// Token: 0x02001322 RID: 4898
 public class CoroutineCancellationToken
 {
-	// Token: 0x06009A50 RID: 39504 RVA: 0x003A7998 File Offset: 0x003A5B98
+	// Token: 0x06009AA8 RID: 39592 RVA: 0x003A9D9C File Offset: 0x003A7F9C
 	public void Cancel()
 	{
 		this.cancelled = true;
 	}
 
-	// Token: 0x06009A51 RID: 39505 RVA: 0x003A79A1 File Offset: 0x003A5BA1
+	// Token: 0x06009AA9 RID: 39593 RVA: 0x003A9DA5 File Offset: 0x003A7FA5
 	public bool IsCancelled()
 	{
 		return this.cancelled;
 	}
 
-	// Token: 0x04007438 RID: 29752
+	// Token: 0x04007479 RID: 29817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cancelled;
 }

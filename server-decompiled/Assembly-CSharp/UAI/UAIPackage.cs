@@ -4,29 +4,29 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x020017B7 RID: 6071
+	// Token: 0x020017E8 RID: 6120
 	[Preserve]
 	public class UAIPackage
 	{
-		// Token: 0x17001744 RID: 5956
-		// (get) Token: 0x0600BBEE RID: 48110 RVA: 0x0045B8B7 File Offset: 0x00459AB7
-		// (set) Token: 0x0600BBEF RID: 48111 RVA: 0x0045B8BF File Offset: 0x00459ABF
+		// Token: 0x1700178C RID: 6028
+		// (get) Token: 0x0600BD02 RID: 48386 RVA: 0x0045F263 File Offset: 0x0045D463
+		// (set) Token: 0x0600BD03 RID: 48387 RVA: 0x0045F26B File Offset: 0x0045D46B
 		public string Name
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001745 RID: 5957
-		// (get) Token: 0x0600BBF0 RID: 48112 RVA: 0x0045B8C8 File Offset: 0x00459AC8
-		// (set) Token: 0x0600BBF1 RID: 48113 RVA: 0x0045B8D0 File Offset: 0x00459AD0
+		// Token: 0x1700178D RID: 6029
+		// (get) Token: 0x0600BD04 RID: 48388 RVA: 0x0045F274 File Offset: 0x0045D474
+		// (set) Token: 0x0600BD05 RID: 48389 RVA: 0x0045F27C File Offset: 0x0045D47C
 		public float Weight
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600BBF2 RID: 48114 RVA: 0x0045B8D9 File Offset: 0x00459AD9
+		// Token: 0x0600BD06 RID: 48390 RVA: 0x0045F285 File Offset: 0x0045D485
 		public UAIPackage(string _name = "", float _weight = 1f)
 		{
 			this.Name = _name;
@@ -34,7 +34,7 @@ namespace UAI
 			this.actionList = new List<UAIAction>();
 		}
 
-		// Token: 0x0600BBF3 RID: 48115 RVA: 0x0045B8FC File Offset: 0x00459AFC
+		// Token: 0x0600BD07 RID: 48391 RVA: 0x0045F2A8 File Offset: 0x0045D4A8
 		public float DecideAction(Context _context, out UAIAction _chosenAction, out object _chosenTarget)
 		{
 			float num = 0f;
@@ -72,19 +72,19 @@ namespace UAI
 			return num;
 		}
 
-		// Token: 0x0600BBF4 RID: 48116 RVA: 0x0045BA38 File Offset: 0x00459C38
+		// Token: 0x0600BD08 RID: 48392 RVA: 0x0045F3E4 File Offset: 0x0045D5E4
 		public List<UAIAction> GetActions()
 		{
 			return this.actionList;
 		}
 
-		// Token: 0x0600BBF5 RID: 48117 RVA: 0x0045BA40 File Offset: 0x00459C40
+		// Token: 0x0600BD09 RID: 48393 RVA: 0x0045F3EC File Offset: 0x0045D5EC
 		public void AddAction(UAIAction _action)
 		{
 			this.actionList.Add(_action);
 		}
 
-		// Token: 0x04008CA6 RID: 36006
+		// Token: 0x04008D8F RID: 36239
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<UAIAction> actionList;
 	}

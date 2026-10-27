@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using Unity.Profiling;
 using UnityEngine;
 
-// Token: 0x02001393 RID: 5011
+// Token: 0x020013A5 RID: 5029
 public class SpeedTreeWindHistoryBufferManager
 {
-	// Token: 0x06009DAC RID: 40364 RVA: 0x003B97EF File Offset: 0x003B79EF
+	// Token: 0x06009E04 RID: 40452 RVA: 0x003BBBF3 File Offset: 0x003B9DF3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SpeedTreeWindHistoryBufferManager()
 	{
 	}
 
-	// Token: 0x170012DC RID: 4828
-	// (get) Token: 0x06009DAD RID: 40365 RVA: 0x003B982E File Offset: 0x003B7A2E
+	// Token: 0x170012E8 RID: 4840
+	// (get) Token: 0x06009E05 RID: 40453 RVA: 0x003BBC32 File Offset: 0x003B9E32
 	public static SpeedTreeWindHistoryBufferManager Instance
 	{
 		get
@@ -26,7 +26,7 @@ public class SpeedTreeWindHistoryBufferManager
 		}
 	}
 
-	// Token: 0x06009DAE RID: 40366 RVA: 0x003B9848 File Offset: 0x003B7A48
+	// Token: 0x06009E06 RID: 40454 RVA: 0x003BBC4C File Offset: 0x003B9E4C
 	public bool TryRegisterActiveRenderer(Renderer renderer)
 	{
 		bool flag;
@@ -91,7 +91,7 @@ public class SpeedTreeWindHistoryBufferManager
 		return flag;
 	}
 
-	// Token: 0x06009DAF RID: 40367 RVA: 0x003B9A78 File Offset: 0x003B7C78
+	// Token: 0x06009E07 RID: 40455 RVA: 0x003BBE7C File Offset: 0x003BA07C
 	public void DeregisterActiveRenderer(Renderer renderer)
 	{
 		using (SpeedTreeWindHistoryBufferManager.s_ManagerTotal.Auto())
@@ -107,7 +107,7 @@ public class SpeedTreeWindHistoryBufferManager
 		}
 	}
 
-	// Token: 0x06009DB0 RID: 40368 RVA: 0x003B9AF4 File Offset: 0x003B7CF4
+	// Token: 0x06009E08 RID: 40456 RVA: 0x003BBEF8 File Offset: 0x003BA0F8
 	public void Update()
 	{
 		using (SpeedTreeWindHistoryBufferManager.s_ManagerTotal.Auto())
@@ -122,218 +122,218 @@ public class SpeedTreeWindHistoryBufferManager
 		}
 	}
 
-	// Token: 0x0400774D RID: 30541
+	// Token: 0x0400778E RID: 30606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_GetMatProps = new ProfilerMarker("SpeedTreeWindPropertyBuffer.GetMatProps");
 
-	// Token: 0x0400774E RID: 30542
+	// Token: 0x0400778F RID: 30607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_SetMatProps = new ProfilerMarker("SpeedTreeWindPropertyBuffer.SetMatProps");
 
-	// Token: 0x0400774F RID: 30543
+	// Token: 0x04007790 RID: 30608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_CheckVis = new ProfilerMarker("SpeedTreeWindPropertyBuffer.CheckVis");
 
-	// Token: 0x04007750 RID: 30544
+	// Token: 0x04007791 RID: 30609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ManagerUpdate = new ProfilerMarker("SpeedTreeWindPropertyBuffer.ManagerUpdate");
 
-	// Token: 0x04007751 RID: 30545
+	// Token: 0x04007792 RID: 30610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ManagerRegistrations = new ProfilerMarker("SpeedTreeWindPropertyBuffer.ManagerRegistrations");
 
-	// Token: 0x04007752 RID: 30546
+	// Token: 0x04007793 RID: 30611
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ManagerDeregistrations = new ProfilerMarker("SpeedTreeWindPropertyBuffer.ManagerDeregistrations");
 
-	// Token: 0x04007753 RID: 30547
+	// Token: 0x04007794 RID: 30612
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ManagerGetFirstRenderer = new ProfilerMarker("SpeedTreeWindPropertyBuffer.ManagerGetFirstRenderer");
 
-	// Token: 0x04007754 RID: 30548
+	// Token: 0x04007795 RID: 30613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ManagerTotal = new ProfilerMarker("SpeedTreeWindPropertyBuffer.ManagerTotal");
 
-	// Token: 0x04007755 RID: 30549
+	// Token: 0x04007796 RID: 30614
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindVector = Shader.PropertyToID("_ST_WindVector");
 
-	// Token: 0x04007756 RID: 30550
+	// Token: 0x04007797 RID: 30615
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindGlobal = Shader.PropertyToID("_ST_WindGlobal");
 
-	// Token: 0x04007757 RID: 30551
+	// Token: 0x04007798 RID: 30616
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindBranch = Shader.PropertyToID("_ST_WindBranch");
 
-	// Token: 0x04007758 RID: 30552
+	// Token: 0x04007799 RID: 30617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindBranchTwitch = Shader.PropertyToID("_ST_WindBranchTwitch");
 
-	// Token: 0x04007759 RID: 30553
+	// Token: 0x0400779A RID: 30618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindBranchWhip = Shader.PropertyToID("_ST_WindBranchWhip");
 
-	// Token: 0x0400775A RID: 30554
+	// Token: 0x0400779B RID: 30619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindBranchAnchor = Shader.PropertyToID("_ST_WindBranchAnchor");
 
-	// Token: 0x0400775B RID: 30555
+	// Token: 0x0400779C RID: 30620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindBranchAdherences = Shader.PropertyToID("_ST_WindBranchAdherences");
 
-	// Token: 0x0400775C RID: 30556
+	// Token: 0x0400779D RID: 30621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindTurbulences = Shader.PropertyToID("_ST_WindTurbulences");
 
-	// Token: 0x0400775D RID: 30557
+	// Token: 0x0400779E RID: 30622
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindLeaf1Ripple = Shader.PropertyToID("_ST_WindLeaf1Ripple");
 
-	// Token: 0x0400775E RID: 30558
+	// Token: 0x0400779F RID: 30623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindLeaf1Tumble = Shader.PropertyToID("_ST_WindLeaf1Tumble");
 
-	// Token: 0x0400775F RID: 30559
+	// Token: 0x040077A0 RID: 30624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindLeaf1Twitch = Shader.PropertyToID("_ST_WindLeaf1Twitch");
 
-	// Token: 0x04007760 RID: 30560
+	// Token: 0x040077A1 RID: 30625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindLeaf2Ripple = Shader.PropertyToID("_ST_WindLeaf2Ripple");
 
-	// Token: 0x04007761 RID: 30561
+	// Token: 0x040077A2 RID: 30626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindLeaf2Tumble = Shader.PropertyToID("_ST_WindLeaf2Tumble");
 
-	// Token: 0x04007762 RID: 30562
+	// Token: 0x040077A3 RID: 30627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindLeaf2Twitch = Shader.PropertyToID("_ST_WindLeaf2Twitch");
 
-	// Token: 0x04007763 RID: 30563
+	// Token: 0x040077A4 RID: 30628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindFrondRipple = Shader.PropertyToID("_ST_WindFrondRipple");
 
-	// Token: 0x04007764 RID: 30564
+	// Token: 0x040077A5 RID: 30629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_WindAnimation = Shader.PropertyToID("_ST_WindAnimation");
 
-	// Token: 0x04007765 RID: 30565
+	// Token: 0x040077A6 RID: 30630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindVector = Shader.PropertyToID("_ST_PF_WindVector");
 
-	// Token: 0x04007766 RID: 30566
+	// Token: 0x040077A7 RID: 30631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindGlobal = Shader.PropertyToID("_ST_PF_WindGlobal");
 
-	// Token: 0x04007767 RID: 30567
+	// Token: 0x040077A8 RID: 30632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindBranch = Shader.PropertyToID("_ST_PF_WindBranch");
 
-	// Token: 0x04007768 RID: 30568
+	// Token: 0x040077A9 RID: 30633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindBranchTwitch = Shader.PropertyToID("_ST_PF_WindBranchTwitch");
 
-	// Token: 0x04007769 RID: 30569
+	// Token: 0x040077AA RID: 30634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindBranchWhip = Shader.PropertyToID("_ST_PF_WindBranchWhip");
 
-	// Token: 0x0400776A RID: 30570
+	// Token: 0x040077AB RID: 30635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindBranchAnchor = Shader.PropertyToID("_ST_PF_WindBranchAnchor");
 
-	// Token: 0x0400776B RID: 30571
+	// Token: 0x040077AC RID: 30636
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindBranchAdherences = Shader.PropertyToID("_ST_PF_WindBranchAdherences");
 
-	// Token: 0x0400776C RID: 30572
+	// Token: 0x040077AD RID: 30637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindTurbulences = Shader.PropertyToID("_ST_PF_WindTurbulences");
 
-	// Token: 0x0400776D RID: 30573
+	// Token: 0x040077AE RID: 30638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindLeaf1Ripple = Shader.PropertyToID("_ST_PF_WindLeaf1Ripple");
 
-	// Token: 0x0400776E RID: 30574
+	// Token: 0x040077AF RID: 30639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindLeaf1Tumble = Shader.PropertyToID("_ST_PF_WindLeaf1Tumble");
 
-	// Token: 0x0400776F RID: 30575
+	// Token: 0x040077B0 RID: 30640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindLeaf1Twitch = Shader.PropertyToID("_ST_PF_WindLeaf1Twitch");
 
-	// Token: 0x04007770 RID: 30576
+	// Token: 0x040077B1 RID: 30641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindLeaf2Ripple = Shader.PropertyToID("_ST_PF_WindLeaf2Ripple");
 
-	// Token: 0x04007771 RID: 30577
+	// Token: 0x040077B2 RID: 30642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindLeaf2Tumble = Shader.PropertyToID("_ST_PF_WindLeaf2Tumble");
 
-	// Token: 0x04007772 RID: 30578
+	// Token: 0x040077B3 RID: 30643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindLeaf2Twitch = Shader.PropertyToID("_ST_PF_WindLeaf2Twitch");
 
-	// Token: 0x04007773 RID: 30579
+	// Token: 0x040077B4 RID: 30644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindFrondRipple = Shader.PropertyToID("_ST_PF_WindFrondRipple");
 
-	// Token: 0x04007774 RID: 30580
+	// Token: 0x040077B5 RID: 30645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int _ST_PF_WindAnimation = Shader.PropertyToID("_ST_PF_WindAnimation");
 
-	// Token: 0x04007775 RID: 30581
+	// Token: 0x040077B6 RID: 30646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SpeedTreeWindHistoryBufferManager m_Instance;
 
-	// Token: 0x04007776 RID: 30582
+	// Token: 0x040077B7 RID: 30647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Renderer, SpeedTreeWindHistoryBufferManager.SharedMaterialGroup> rendererToGroupMap = new Dictionary<Renderer, SpeedTreeWindHistoryBufferManager.SharedMaterialGroup>();
 
-	// Token: 0x04007777 RID: 30583
+	// Token: 0x040077B8 RID: 30648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Material, SpeedTreeWindHistoryBufferManager.SharedMaterialGroup> materialToGroupMap = new Dictionary<Material, SpeedTreeWindHistoryBufferManager.SharedMaterialGroup>();
 
-	// Token: 0x04007778 RID: 30584
+	// Token: 0x040077B9 RID: 30649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Material> tempMaterialsList = new List<Material>();
 
-	// Token: 0x04007779 RID: 30585
+	// Token: 0x040077BA RID: 30650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Material> newMaterialsSet = new HashSet<Material>();
 
-	// Token: 0x0400777A RID: 30586
+	// Token: 0x040077BB RID: 30651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<SpeedTreeWindHistoryBufferManager.SharedMaterialGroup> sharedMaterialGroups = new HashSet<SpeedTreeWindHistoryBufferManager.SharedMaterialGroup>();
 
-	// Token: 0x02001394 RID: 5012
+	// Token: 0x020013A6 RID: 5030
 	public class SharedMaterialGroup
 	{
-		// Token: 0x06009DB2 RID: 40370 RVA: 0x003B9DF9 File Offset: 0x003B7FF9
+		// Token: 0x06009E0A RID: 40458 RVA: 0x003BC1FD File Offset: 0x003BA3FD
 		public SharedMaterialGroup()
 		{
 			this.previousProperties = new MaterialPropertyBlock();
 		}
 
-		// Token: 0x06009DB3 RID: 40371 RVA: 0x003B9E22 File Offset: 0x003B8022
+		// Token: 0x06009E0B RID: 40459 RVA: 0x003BC226 File Offset: 0x003BA426
 		public void MergeMaterials(HashSet<Material> newMaterialsSet)
 		{
 			this.sharedMaterials.UnionWith(newMaterialsSet);
 		}
 
-		// Token: 0x06009DB4 RID: 40372 RVA: 0x003B9E30 File Offset: 0x003B8030
+		// Token: 0x06009E0C RID: 40460 RVA: 0x003BC234 File Offset: 0x003BA434
 		public void RegisterActiveRenderer(Renderer renderer)
 		{
 			this.activeRenderers.Add(renderer);
 		}
 
-		// Token: 0x06009DB5 RID: 40373 RVA: 0x003B9E3F File Offset: 0x003B803F
+		// Token: 0x06009E0D RID: 40461 RVA: 0x003BC243 File Offset: 0x003BA443
 		public void DeregisterActiveRenderer(Renderer renderer)
 		{
 			this.activeRenderers.Remove(renderer);
 		}
 
-		// Token: 0x06009DB6 RID: 40374 RVA: 0x003B9E50 File Offset: 0x003B8050
+		// Token: 0x06009E0E RID: 40462 RVA: 0x003BC254 File Offset: 0x003BA454
 		public void Update()
 		{
 			using (SpeedTreeWindHistoryBufferManager.s_CheckVis.Auto())
@@ -383,15 +383,15 @@ public class SpeedTreeWindHistoryBufferManager
 			}
 		}
 
-		// Token: 0x0400777B RID: 30587
+		// Token: 0x040077BC RID: 30652
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<Renderer> activeRenderers = new HashSet<Renderer>();
 
-		// Token: 0x0400777C RID: 30588
+		// Token: 0x040077BD RID: 30653
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<Material> sharedMaterials = new HashSet<Material>();
 
-		// Token: 0x0400777D RID: 30589
+		// Token: 0x040077BE RID: 30654
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MaterialPropertyBlock previousProperties;
 	}

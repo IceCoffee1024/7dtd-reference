@@ -4,17 +4,17 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005D3 RID: 1491
+// Token: 0x020005DA RID: 1498
 [Preserve]
 public class ItemActionSpawnTurret : ItemAction
 {
-	// Token: 0x060030BA RID: 12474 RVA: 0x0013968A File Offset: 0x0013788A
+	// Token: 0x060030C8 RID: 12488 RVA: 0x0013A27E File Offset: 0x0013847E
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionSpawnTurret.ItemActionDataSpawnTurret(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x060030BB RID: 12475 RVA: 0x00139694 File Offset: 0x00137894
+	// Token: 0x060030C9 RID: 12489 RVA: 0x0013A288 File Offset: 0x00138488
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -47,7 +47,7 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x060030BC RID: 12476 RVA: 0x00139804 File Offset: 0x00137A04
+	// Token: 0x060030CA RID: 12490 RVA: 0x0013A3F8 File Offset: 0x001385F8
 	public override void StartHolding(ItemActionData _actionData)
 	{
 		ItemActionSpawnTurret.ItemActionDataSpawnTurret itemActionDataSpawnTurret = (ItemActionSpawnTurret.ItemActionDataSpawnTurret)_actionData;
@@ -66,7 +66,7 @@ public class ItemActionSpawnTurret : ItemAction
 		this.updatePreview(itemActionDataSpawnTurret);
 	}
 
-	// Token: 0x060030BD RID: 12477 RVA: 0x00139888 File Offset: 0x00137A88
+	// Token: 0x060030CB RID: 12491 RVA: 0x0013A47C File Offset: 0x0013867C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupPreview(ItemActionSpawnTurret.ItemActionDataSpawnTurret data)
 	{
@@ -83,7 +83,7 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x060030BE RID: 12478 RVA: 0x00139930 File Offset: 0x00137B30
+	// Token: 0x060030CC RID: 12492 RVA: 0x0013A524 File Offset: 0x00138724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePreview(ItemActionSpawnTurret.ItemActionDataSpawnTurret data)
 	{
@@ -105,7 +105,7 @@ public class ItemActionSpawnTurret : ItemAction
 		data.TurretPreviewT.gameObject.SetActive(data.Placing);
 	}
 
-	// Token: 0x060030BF RID: 12479 RVA: 0x00139A78 File Offset: 0x00137C78
+	// Token: 0x060030CD RID: 12493 RVA: 0x0013A66C File Offset: 0x0013886C
 	public override void CancelAction(ItemActionData _actionData)
 	{
 		ItemActionSpawnTurret.ItemActionDataSpawnTurret itemActionDataSpawnTurret = (ItemActionSpawnTurret.ItemActionDataSpawnTurret)_actionData;
@@ -115,7 +115,7 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x060030C0 RID: 12480 RVA: 0x00139ABC File Offset: 0x00137CBC
+	// Token: 0x060030CE RID: 12494 RVA: 0x0013A6B0 File Offset: 0x001388B0
 	public override void StopHolding(ItemActionData _actionData)
 	{
 		base.StopHolding(_actionData);
@@ -126,7 +126,7 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x060030C1 RID: 12481 RVA: 0x00139B08 File Offset: 0x00137D08
+	// Token: 0x060030CF RID: 12495 RVA: 0x0013A6FC File Offset: 0x001388FC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionSpawnTurret.ItemActionDataSpawnTurret itemActionDataSpawnTurret = (ItemActionSpawnTurret.ItemActionDataSpawnTurret)_actionData;
@@ -140,7 +140,7 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x060030C2 RID: 12482 RVA: 0x00139B88 File Offset: 0x00137D88
+	// Token: 0x060030D0 RID: 12496 RVA: 0x0013A77C File Offset: 0x0013897C
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionSpawnTurret.ItemActionDataSpawnTurret itemActionDataSpawnTurret = (ItemActionSpawnTurret.ItemActionDataSpawnTurret)_actionData;
@@ -264,13 +264,13 @@ public class ItemActionSpawnTurret : ItemAction
 		GameManager.ShowTooltip(GameManager.Instance.World.GetPrimaryPlayer(), "uiCannotAddTurret", false, false, 0f);
 	}
 
-	// Token: 0x060030C3 RID: 12483 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060030D1 RID: 12497 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowConcurrentActions()
 	{
 		return false;
 	}
 
-	// Token: 0x060030C4 RID: 12484 RVA: 0x00139FF0 File Offset: 0x001381F0
+	// Token: 0x060030D2 RID: 12498 RVA: 0x0013ABE4 File Offset: 0x00138DE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CalcSpawnPosition(ItemActionSpawnTurret.ItemActionDataSpawnTurret _actionData, ref Vector3 position)
 	{
@@ -300,7 +300,7 @@ public class ItemActionSpawnTurret : ItemAction
 		return true;
 	}
 
-	// Token: 0x060030C5 RID: 12485 RVA: 0x0013A10C File Offset: 0x0013830C
+	// Token: 0x060030D3 RID: 12499 RVA: 0x0013AD00 File Offset: 0x00138F00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckForSpace(Vector3 localPos, Vector3 dirN, float length, Vector3 axis1N, float axis1Length, Vector3 axis2N, float axis2Length)
 	{
@@ -324,14 +324,14 @@ public class ItemActionSpawnTurret : ItemAction
 		return true;
 	}
 
-	// Token: 0x060030C6 RID: 12486 RVA: 0x0013A1C4 File Offset: 0x001383C4
+	// Token: 0x060030D4 RID: 12500 RVA: 0x0013ADB8 File Offset: 0x00138FB8
 	public void ClearPreview(ItemActionData _data)
 	{
 		ItemActionSpawnTurret.ItemActionDataSpawnTurret itemActionDataSpawnTurret = _data as ItemActionSpawnTurret.ItemActionDataSpawnTurret;
 		this.ClearPreview(itemActionDataSpawnTurret);
 	}
 
-	// Token: 0x060030C7 RID: 12487 RVA: 0x0013A1DF File Offset: 0x001383DF
+	// Token: 0x060030D5 RID: 12501 RVA: 0x0013ADD3 File Offset: 0x00138FD3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearPreview(ItemActionSpawnTurret.ItemActionDataSpawnTurret _actionData)
 	{
@@ -341,7 +341,7 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x060030C8 RID: 12488 RVA: 0x0013A200 File Offset: 0x00138400
+	// Token: 0x060030D6 RID: 12502 RVA: 0x0013ADF4 File Offset: 0x00138FF4
 	public override void Cleanup(ItemActionData _data)
 	{
 		base.Cleanup(_data);
@@ -352,55 +352,55 @@ public class ItemActionSpawnTurret : ItemAction
 		}
 	}
 
-	// Token: 0x040025A2 RID: 9634
+	// Token: 0x040025BD RID: 9661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cColliderMask = 28901376;
 
-	// Token: 0x040025A3 RID: 9635
+	// Token: 0x040025BE RID: 9662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string entityToSpawn;
 
-	// Token: 0x040025A4 RID: 9636
+	// Token: 0x040025BF RID: 9663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityClassId = -1;
 
-	// Token: 0x040025A5 RID: 9637
+	// Token: 0x040025C0 RID: 9664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 turretSize;
 
-	// Token: 0x040025A6 RID: 9638
+	// Token: 0x040025C1 RID: 9665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 previewSize;
 
-	// Token: 0x040025A7 RID: 9639
+	// Token: 0x040025C2 RID: 9666
 	public bool canPlaceInAir;
 
-	// Token: 0x020005D4 RID: 1492
+	// Token: 0x020005DB RID: 1499
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class ItemActionDataSpawnTurret : ItemActionAttackData
 	{
-		// Token: 0x060030C9 RID: 12489 RVA: 0x0012B224 File Offset: 0x00129424
+		// Token: 0x060030D7 RID: 12503 RVA: 0x0012BE18 File Offset: 0x0012A018
 		public ItemActionDataSpawnTurret(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040025A8 RID: 9640
+		// Token: 0x040025C3 RID: 9667
 		public Transform TurretPreviewT;
 
-		// Token: 0x040025A9 RID: 9641
+		// Token: 0x040025C4 RID: 9668
 		public Renderer[] PreviewRenderers;
 
-		// Token: 0x040025AA RID: 9642
+		// Token: 0x040025C5 RID: 9669
 		public bool ValidPosition;
 
-		// Token: 0x040025AB RID: 9643
+		// Token: 0x040025C6 RID: 9670
 		public Vector3 Position;
 
-		// Token: 0x040025AC RID: 9644
+		// Token: 0x040025C7 RID: 9671
 		public bool Placing;
 
-		// Token: 0x040025AD RID: 9645
+		// Token: 0x040025C8 RID: 9672
 		public bool CanPlaceInAir;
 	}
 }

@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockShapeBillboardAbstract : BlockShape
 {
-	// Token: 0x06000C99 RID: 3225 RVA: 0x0004E613 File Offset: 0x0004C813
+	// Token: 0x06000C99 RID: 3225 RVA: 0x0004E5D3 File Offset: 0x0004C7D3
 	public BlockShapeBillboardAbstract()
 	{
 		this.IsSolidCube = false;

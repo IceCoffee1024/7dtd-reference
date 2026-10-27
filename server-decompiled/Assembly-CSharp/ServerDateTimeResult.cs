@@ -1,36 +1,36 @@
 ﻿using System;
 
-// Token: 0x0200089D RID: 2205
+// Token: 0x020008A7 RID: 2215
 public struct ServerDateTimeResult
 {
-	// Token: 0x170006C4 RID: 1732
-	// (get) Token: 0x06003F92 RID: 16274 RVA: 0x00190736 File Offset: 0x0018E936
-	// (set) Token: 0x06003F93 RID: 16275 RVA: 0x0019073E File Offset: 0x0018E93E
+	// Token: 0x170006CA RID: 1738
+	// (get) Token: 0x06003FB5 RID: 16309 RVA: 0x001917DE File Offset: 0x0018F9DE
+	// (set) Token: 0x06003FB6 RID: 16310 RVA: 0x001917E6 File Offset: 0x0018F9E6
 	public bool RequestComplete
 	{
 		readonly get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006C5 RID: 1733
-	// (get) Token: 0x06003F94 RID: 16276 RVA: 0x00190747 File Offset: 0x0018E947
-	// (set) Token: 0x06003F95 RID: 16277 RVA: 0x0019074F File Offset: 0x0018E94F
+	// Token: 0x170006CB RID: 1739
+	// (get) Token: 0x06003FB7 RID: 16311 RVA: 0x001917EF File Offset: 0x0018F9EF
+	// (set) Token: 0x06003FB8 RID: 16312 RVA: 0x001917F7 File Offset: 0x0018F9F7
 	public bool HasError
 	{
 		readonly get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006C6 RID: 1734
-	// (get) Token: 0x06003F96 RID: 16278 RVA: 0x00190758 File Offset: 0x0018E958
-	// (set) Token: 0x06003F97 RID: 16279 RVA: 0x00190760 File Offset: 0x0018E960
+	// Token: 0x170006CC RID: 1740
+	// (get) Token: 0x06003FB9 RID: 16313 RVA: 0x00191800 File Offset: 0x0018FA00
+	// (set) Token: 0x06003FBA RID: 16314 RVA: 0x00191808 File Offset: 0x0018FA08
 	public int SecondsOffset
 	{
 		readonly get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06003F98 RID: 16280 RVA: 0x00190769 File Offset: 0x0018E969
+	// Token: 0x06003FBB RID: 16315 RVA: 0x00191811 File Offset: 0x0018FA11
 	public ServerDateTimeResult(bool _requestComplete, bool _hasError, int _secondsOffset)
 	{
 		this.RequestComplete = _requestComplete;

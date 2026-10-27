@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02000E62 RID: 3682
+// Token: 0x02000E6D RID: 3693
 public static class WorldPreviewTerrain
 {
-	// Token: 0x060070DE RID: 28894 RVA: 0x002B956E File Offset: 0x002B776E
+	// Token: 0x06007103 RID: 28931 RVA: 0x002BAADA File Offset: 0x002B8CDA
 	public static void Init(WorldBuilder _worldBuilder, Transform _parentTransform)
 	{
 		WorldPreviewTerrain.worldBuilder = _worldBuilder;
@@ -15,7 +15,7 @@ public static class WorldPreviewTerrain
 		WorldPreviewTerrain.terrainPreviewMaterial = Resources.Load("Materials/TerrainPreview", typeof(Material)) as Material;
 	}
 
-	// Token: 0x060070DF RID: 28895 RVA: 0x002B959A File Offset: 0x002B779A
+	// Token: 0x06007104 RID: 28932 RVA: 0x002BAB06 File Offset: 0x002B8D06
 	public static void SetTexture(Texture2D _texture)
 	{
 		if (WorldPreviewTerrain.terrainPreviewMaterial)
@@ -24,7 +24,7 @@ public static class WorldPreviewTerrain
 		}
 	}
 
-	// Token: 0x060070E0 RID: 28896 RVA: 0x002B95B4 File Offset: 0x002B77B4
+	// Token: 0x06007105 RID: 28933 RVA: 0x002BAB20 File Offset: 0x002B8D20
 	public static void GenerateTerrain()
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -86,7 +86,7 @@ public static class WorldPreviewTerrain
 		Log.Warning("GenerateTerrain in {0}", new object[] { (float)microStopwatch.ElapsedMilliseconds * 0.001f });
 	}
 
-	// Token: 0x060070E1 RID: 28897 RVA: 0x002B975C File Offset: 0x002B795C
+	// Token: 0x06007106 RID: 28934 RVA: 0x002BACC8 File Offset: 0x002B8EC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void destroyTerrain()
 	{
@@ -115,7 +115,7 @@ public static class WorldPreviewTerrain
 		WorldPreviewTerrain.objects = null;
 	}
 
-	// Token: 0x060070E2 RID: 28898 RVA: 0x002B97FD File Offset: 0x002B79FD
+	// Token: 0x06007107 RID: 28935 RVA: 0x002BAD69 File Offset: 0x002B8F69
 	public static void Cleanup()
 	{
 		WorldPreviewTerrain.destroyTerrain();
@@ -128,7 +128,7 @@ public static class WorldPreviewTerrain
 		GCUtils.UnloadAndCollectStart();
 	}
 
-	// Token: 0x060070E3 RID: 28899 RVA: 0x002B9828 File Offset: 0x002B7A28
+	// Token: 0x06007108 RID: 28936 RVA: 0x002BAD94 File Offset: 0x002B8F94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void createMesh(GameObject _obj, Vector2i _terrainSectorIndex, int _metersPerDetailUnit)
 	{
@@ -186,7 +186,7 @@ public static class WorldPreviewTerrain
 		WorldPreviewTerrain.uvs.Clear();
 	}
 
-	// Token: 0x060070E4 RID: 28900 RVA: 0x002B9A3C File Offset: 0x002B7C3C
+	// Token: 0x06007109 RID: 28937 RVA: 0x002BAFA8 File Offset: 0x002B91A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void updateMesh(GameObject _obj, Vector2i _terrainSectorIndex, int _metersPerDetailUnit)
 	{
@@ -208,35 +208,35 @@ public static class WorldPreviewTerrain
 		sharedMesh.RecalculateNormals();
 	}
 
-	// Token: 0x04005568 RID: 21864
+	// Token: 0x0400558D RID: 21901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int TerrainSectorSize = 512;
 
-	// Token: 0x04005569 RID: 21865
+	// Token: 0x0400558E RID: 21902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WorldBuilder worldBuilder;
 
-	// Token: 0x0400556A RID: 21866
+	// Token: 0x0400558F RID: 21903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform parentTransform;
 
-	// Token: 0x0400556B RID: 21867
+	// Token: 0x04005590 RID: 21904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Material terrainPreviewMaterial;
 
-	// Token: 0x0400556C RID: 21868
+	// Token: 0x04005591 RID: 21905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject[] objects;
 
-	// Token: 0x0400556D RID: 21869
+	// Token: 0x04005592 RID: 21906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Vector3> vertices = new List<Vector3>();
 
-	// Token: 0x0400556E RID: 21870
+	// Token: 0x04005593 RID: 21907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<int> triangles = new List<int>();
 
-	// Token: 0x0400556F RID: 21871
+	// Token: 0x04005594 RID: 21908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Vector2> uvs = new List<Vector2>();
 }

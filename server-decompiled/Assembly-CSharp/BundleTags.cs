@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020011A3 RID: 4515
+// Token: 0x020011B3 RID: 4531
 public static class BundleTags
 {
-	// Token: 0x17001183 RID: 4483
-	// (get) Token: 0x06009054 RID: 36948 RVA: 0x00364F04 File Offset: 0x00363104
+	// Token: 0x1700118E RID: 4494
+	// (get) Token: 0x060090A8 RID: 37032 RVA: 0x00366FF4 File Offset: 0x003651F4
 	public static string Tag
 	{
 		get
@@ -17,6 +17,6 @@ public static class BundleTags
 		}
 	}
 
-	// Token: 0x040069B8 RID: 27064
+	// Token: 0x040069F8 RID: 27128
 	public const string TagHalfRes = "_halfres";
 }

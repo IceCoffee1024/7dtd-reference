@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001412 RID: 5138
+// Token: 0x02001424 RID: 5156
 public class EntityMeshCache : MonoBehaviour
 {
-	// Token: 0x0600A103 RID: 41219 RVA: 0x003C8E92 File Offset: 0x003C7092
+	// Token: 0x0600A15B RID: 41307 RVA: 0x003CB296 File Offset: 0x003C9496
 	public void InitData(List<CachedMeshData> collection)
 	{
 		this.collection = new List<CachedMeshData>(collection);
 	}
 
-	// Token: 0x0600A104 RID: 41220 RVA: 0x003C8EA0 File Offset: 0x003C70A0
+	// Token: 0x0600A15C RID: 41308 RVA: 0x003CB2A4 File Offset: 0x003C94A4
 	public bool TryGetMeshData(string name, out CachedMeshData data)
 	{
 		name = name.Replace(" Instance", "");
@@ -32,7 +32,7 @@ public class EntityMeshCache : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600A105 RID: 41221 RVA: 0x003C8F40 File Offset: 0x003C7140
+	// Token: 0x0600A15D RID: 41309 RVA: 0x003CB344 File Offset: 0x003C9544
 	public bool EqualsCollection(List<CachedMeshData> otherCollection)
 	{
 		if (otherCollection.Count != this.collection.Count)
@@ -49,7 +49,7 @@ public class EntityMeshCache : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0400798E RID: 31118
+	// Token: 0x040079CF RID: 31183
 	[Header("This collection is filled on import. Do not edit manually")]
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]

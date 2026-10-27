@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Webserver
 {
-	// Token: 0x02001AED RID: 6893
+	// Token: 0x02001B1E RID: 6942
 	public static class UserRegistrationTokens
 	{
-		// Token: 0x0600CFC1 RID: 53185 RVA: 0x004B6BD4 File Offset: 0x004B4DD4
+		// Token: 0x0600D0D5 RID: 53461 RVA: 0x004BA6D0 File Offset: 0x004B88D0
 		public static bool TryValidate(string _token, out UserRegistrationTokens.RegistrationData _data)
 		{
 			return UserRegistrationTokens.activeTokens.TryGetValue(_token, out _data) && _data.ExpiryTime > DateTime.Now;
 		}
 
-		// Token: 0x0600CFC2 RID: 53186 RVA: 0x004B6BF8 File Offset: 0x004B4DF8
+		// Token: 0x0600D0D6 RID: 53462 RVA: 0x004BA6F4 File Offset: 0x004B88F4
 		public static string CreateToken(string _playerName, PlatformUserIdentifierAbs _platformUserId, PlatformUserIdentifierAbs _crossPlatformUserId)
 		{
 			string text = Utils.GenerateGuid();
@@ -31,18 +31,18 @@ namespace Webserver
 			return text;
 		}
 
-		// Token: 0x04009D23 RID: 40227
+		// Token: 0x04009E0C RID: 40460
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float tokenExpirationMinutes = 3f;
 
-		// Token: 0x04009D24 RID: 40228
+		// Token: 0x04009E0D RID: 40461
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<string, UserRegistrationTokens.RegistrationData> activeTokens = new Dictionary<string, UserRegistrationTokens.RegistrationData>();
 
-		// Token: 0x02001AEE RID: 6894
+		// Token: 0x02001B1F RID: 6943
 		public class RegistrationData
 		{
-			// Token: 0x0600CFC4 RID: 53188 RVA: 0x004B6C6C File Offset: 0x004B4E6C
+			// Token: 0x0600D0D8 RID: 53464 RVA: 0x004BA768 File Offset: 0x004B8968
 			public RegistrationData(string _playerName, PlatformUserIdentifierAbs _platformUserId, PlatformUserIdentifierAbs _crossPlatformUserId)
 			{
 				this.PlayerName = _playerName;
@@ -51,16 +51,16 @@ namespace Webserver
 				this.CrossPlatformUserId = _crossPlatformUserId;
 			}
 
-			// Token: 0x04009D25 RID: 40229
+			// Token: 0x04009E0E RID: 40462
 			public readonly string PlayerName;
 
-			// Token: 0x04009D26 RID: 40230
+			// Token: 0x04009E0F RID: 40463
 			public readonly DateTime ExpiryTime;
 
-			// Token: 0x04009D27 RID: 40231
+			// Token: 0x04009E10 RID: 40464
 			public readonly PlatformUserIdentifierAbs PlatformUserId;
 
-			// Token: 0x04009D28 RID: 40232
+			// Token: 0x04009E11 RID: 40465
 			public readonly PlatformUserIdentifierAbs CrossPlatformUserId;
 		}
 	}

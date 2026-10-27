@@ -2,12 +2,12 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081D RID: 2077
+// Token: 0x02000827 RID: 2087
 [Preserve]
 public class NetPackagePartyData : NetPackage
 {
-	// Token: 0x1700067E RID: 1662
-	// (get) Token: 0x06003CE0 RID: 15584 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000684 RID: 1668
+	// (get) Token: 0x06003D03 RID: 15619 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackagePartyData : NetPackage
 		}
 	}
 
-	// Token: 0x06003CE1 RID: 15585 RVA: 0x00184AD4 File Offset: 0x00182CD4
+	// Token: 0x06003D04 RID: 15620 RVA: 0x00185BD8 File Offset: 0x00183DD8
 	public NetPackagePartyData Setup(Party _party, int _changedEntityID, NetPackagePartyData.PartyActions _partyAction, bool _disbandParty = false)
 	{
 		this.PartyID = _party.PartyID;
@@ -29,7 +29,7 @@ public class NetPackagePartyData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CE2 RID: 15586 RVA: 0x00184B28 File Offset: 0x00182D28
+	// Token: 0x06003D05 RID: 15621 RVA: 0x00185C2C File Offset: 0x00183E2C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.PartyID = _br.ReadInt32();
@@ -46,7 +46,7 @@ public class NetPackagePartyData : NetPackage
 		this.disbandParty = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003CE3 RID: 15587 RVA: 0x00184BAC File Offset: 0x00182DAC
+	// Token: 0x06003D06 RID: 15622 RVA: 0x00185CB0 File Offset: 0x00183EB0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -63,7 +63,7 @@ public class NetPackagePartyData : NetPackage
 		_bw.Write(this.disbandParty);
 	}
 
-	// Token: 0x06003CE4 RID: 15588 RVA: 0x00184C44 File Offset: 0x00182E44
+	// Token: 0x06003D07 RID: 15623 RVA: 0x00185D48 File Offset: 0x00183F48
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -168,52 +168,52 @@ public class NetPackagePartyData : NetPackage
 		}
 	}
 
-	// Token: 0x04003185 RID: 12677
+	// Token: 0x040031A5 RID: 12709
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int PartyID;
 
-	// Token: 0x04003186 RID: 12678
+	// Token: 0x040031A6 RID: 12710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int LeaderIndex;
 
-	// Token: 0x04003187 RID: 12679
+	// Token: 0x040031A7 RID: 12711
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string VoiceLobbyId;
 
-	// Token: 0x04003188 RID: 12680
+	// Token: 0x040031A8 RID: 12712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] partyMembers;
 
-	// Token: 0x04003189 RID: 12681
+	// Token: 0x040031A9 RID: 12713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int changedEntityID = -1;
 
-	// Token: 0x0400318A RID: 12682
+	// Token: 0x040031AA RID: 12714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackagePartyData.PartyActions partyAction;
 
-	// Token: 0x0400318B RID: 12683
+	// Token: 0x040031AB RID: 12715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool disbandParty;
 
-	// Token: 0x0200081E RID: 2078
+	// Token: 0x02000828 RID: 2088
 	public enum PartyActions
 	{
-		// Token: 0x0400318D RID: 12685
+		// Token: 0x040031AD RID: 12717
 		SendInvite,
-		// Token: 0x0400318E RID: 12686
+		// Token: 0x040031AE RID: 12718
 		AcceptInvite,
-		// Token: 0x0400318F RID: 12687
+		// Token: 0x040031AF RID: 12719
 		ChangeLead,
-		// Token: 0x04003190 RID: 12688
+		// Token: 0x040031B0 RID: 12720
 		LeaveParty,
-		// Token: 0x04003191 RID: 12689
+		// Token: 0x040031B1 RID: 12721
 		KickFromParty,
-		// Token: 0x04003192 RID: 12690
+		// Token: 0x040031B2 RID: 12722
 		Disconnected,
-		// Token: 0x04003193 RID: 12691
+		// Token: 0x040031B3 RID: 12723
 		AutoJoin,
-		// Token: 0x04003194 RID: 12692
+		// Token: 0x040031B4 RID: 12724
 		SetVoiceLobby
 	}
 }

@@ -2,11 +2,11 @@
 
 namespace UniLinq
 {
-	// Token: 0x020017B8 RID: 6072
+	// Token: 0x020017E9 RID: 6121
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static class Check
 	{
-		// Token: 0x0600BBF6 RID: 48118 RVA: 0x0045BA4E File Offset: 0x00459C4E
+		// Token: 0x0600BD0A RID: 48394 RVA: 0x0045F3FA File Offset: 0x0045D5FA
 		public static void Source(object source)
 		{
 			if (source == null)
@@ -15,7 +15,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBF7 RID: 48119 RVA: 0x0045BA5E File Offset: 0x00459C5E
+		// Token: 0x0600BD0B RID: 48395 RVA: 0x0045F40A File Offset: 0x0045D60A
 		public static void Source1AndSource2(object source1, object source2)
 		{
 			if (source1 == null)
@@ -28,7 +28,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBF8 RID: 48120 RVA: 0x0045BA7C File Offset: 0x00459C7C
+		// Token: 0x0600BD0C RID: 48396 RVA: 0x0045F428 File Offset: 0x0045D628
 		public static void SourceAndFuncAndSelector(object source, object func, object selector)
 		{
 			if (source == null)
@@ -45,7 +45,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBF9 RID: 48121 RVA: 0x0045BAA8 File Offset: 0x00459CA8
+		// Token: 0x0600BD0D RID: 48397 RVA: 0x0045F454 File Offset: 0x0045D654
 		public static void SourceAndFunc(object source, object func)
 		{
 			if (source == null)
@@ -58,7 +58,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBFA RID: 48122 RVA: 0x0045BAC6 File Offset: 0x00459CC6
+		// Token: 0x0600BD0E RID: 48398 RVA: 0x0045F472 File Offset: 0x0045D672
 		public static void SourceAndSelector(object source, object selector)
 		{
 			if (source == null)
@@ -71,7 +71,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBFB RID: 48123 RVA: 0x0045BAE4 File Offset: 0x00459CE4
+		// Token: 0x0600BD0F RID: 48399 RVA: 0x0045F490 File Offset: 0x0045D690
 		public static void SourceAndPredicate(object source, object predicate)
 		{
 			if (source == null)
@@ -84,7 +84,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBFC RID: 48124 RVA: 0x0045BB02 File Offset: 0x00459D02
+		// Token: 0x0600BD10 RID: 48400 RVA: 0x0045F4AE File Offset: 0x0045D6AE
 		public static void FirstAndSecond(object first, object second)
 		{
 			if (first == null)
@@ -97,7 +97,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBFD RID: 48125 RVA: 0x0045BB20 File Offset: 0x00459D20
+		// Token: 0x0600BD11 RID: 48401 RVA: 0x0045F4CC File Offset: 0x0045D6CC
 		public static void SourceAndKeySelector(object source, object keySelector)
 		{
 			if (source == null)
@@ -110,7 +110,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBFE RID: 48126 RVA: 0x0045BB3E File Offset: 0x00459D3E
+		// Token: 0x0600BD12 RID: 48402 RVA: 0x0045F4EA File Offset: 0x0045D6EA
 		public static void SourceAndKeyElementSelectors(object source, object keySelector, object elementSelector)
 		{
 			if (source == null)
@@ -127,7 +127,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BBFF RID: 48127 RVA: 0x0045BB6A File Offset: 0x00459D6A
+		// Token: 0x0600BD13 RID: 48403 RVA: 0x0045F516 File Offset: 0x0045D716
 		public static void SourceAndKeyResultSelectors(object source, object keySelector, object resultSelector)
 		{
 			if (source == null)
@@ -144,7 +144,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BC00 RID: 48128 RVA: 0x0045BB96 File Offset: 0x00459D96
+		// Token: 0x0600BD14 RID: 48404 RVA: 0x0045F542 File Offset: 0x0045D742
 		public static void SourceAndCollectionSelectorAndResultSelector(object source, object collectionSelector, object resultSelector)
 		{
 			if (source == null)
@@ -161,7 +161,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BC01 RID: 48129 RVA: 0x0045BBC2 File Offset: 0x00459DC2
+		// Token: 0x0600BD15 RID: 48405 RVA: 0x0045F56E File Offset: 0x0045D76E
 		public static void SourceAndCollectionSelectors(object source, object collectionSelector, object selector)
 		{
 			if (source == null)
@@ -178,7 +178,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BC02 RID: 48130 RVA: 0x0045BBF0 File Offset: 0x00459DF0
+		// Token: 0x0600BD16 RID: 48406 RVA: 0x0045F59C File Offset: 0x0045D79C
 		public static void JoinSelectors(object outer, object inner, object outerKeySelector, object innerKeySelector, object resultSelector)
 		{
 			if (outer == null)
@@ -203,7 +203,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BC03 RID: 48131 RVA: 0x0045BC44 File Offset: 0x00459E44
+		// Token: 0x0600BD17 RID: 48407 RVA: 0x0045F5F0 File Offset: 0x0045D7F0
 		public static void GroupBySelectors(object source, object keySelector, object elementSelector, object resultSelector)
 		{
 			if (source == null)

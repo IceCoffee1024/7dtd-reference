@@ -5,10 +5,10 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.ServerState
 {
-	// Token: 0x02001B07 RID: 6919
+	// Token: 0x02001B38 RID: 6968
 	public abstract class KeyValueListAbs : AbsRestApi
 	{
-		// Token: 0x0600D049 RID: 53321 RVA: 0x004B9F94 File Offset: 0x004B8194
+		// Token: 0x0600D15D RID: 53597 RVA: 0x004BDA90 File Offset: 0x004BBC90
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public KeyValueListAbs(string _listName)
 			: base(null)
@@ -16,7 +16,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			this.buildSampler = CustomSampler.Create("JSON_" + _listName + "_BuildSampler", false);
 		}
 
-		// Token: 0x0600D04A RID: 53322 RVA: 0x004B9FBC File Offset: 0x004B81BC
+		// Token: 0x0600D15E RID: 53598 RVA: 0x004BDAB8 File Offset: 0x004BBCB8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -35,7 +35,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600D04B RID: 53323 RVA: 0x004BA025 File Offset: 0x004B8225
+		// Token: 0x0600D15F RID: 53599 RVA: 0x004BDB21 File Offset: 0x004BBD21
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeKeyType(ref JsonWriter _writer, ref bool _first, string _key, string _type)
 		{
@@ -50,7 +50,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteString(_type);
 		}
 
-		// Token: 0x0600D04C RID: 53324 RVA: 0x004BA059 File Offset: 0x004B8259
+		// Token: 0x0600D160 RID: 53600 RVA: 0x004BDB55 File Offset: 0x004BBD55
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeInt(ref JsonWriter _writer, ref bool _first, string _key, int _value)
 		{
@@ -59,7 +59,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteInt32(_value);
 		}
 
-		// Token: 0x0600D04D RID: 53325 RVA: 0x004BA07C File Offset: 0x004B827C
+		// Token: 0x0600D161 RID: 53601 RVA: 0x004BDB78 File Offset: 0x004BBD78
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, int _value)
 		{
@@ -67,7 +67,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D04E RID: 53326 RVA: 0x004BA08F File Offset: 0x004B828F
+		// Token: 0x0600D162 RID: 53602 RVA: 0x004BDB8B File Offset: 0x004BBD8B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, int _value, int? _default)
 		{
@@ -84,7 +84,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D04F RID: 53327 RVA: 0x004BA0CB File Offset: 0x004B82CB
+		// Token: 0x0600D163 RID: 53603 RVA: 0x004BDBC7 File Offset: 0x004BBDC7
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeFloat(ref JsonWriter _writer, ref bool _first, string _key, float _value)
 		{
@@ -93,7 +93,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteSingle(_value);
 		}
 
-		// Token: 0x0600D050 RID: 53328 RVA: 0x004BA0EE File Offset: 0x004B82EE
+		// Token: 0x0600D164 RID: 53604 RVA: 0x004BDBEA File Offset: 0x004BBDEA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, float _value)
 		{
@@ -101,7 +101,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D051 RID: 53329 RVA: 0x004BA101 File Offset: 0x004B8301
+		// Token: 0x0600D165 RID: 53605 RVA: 0x004BDBFD File Offset: 0x004BBDFD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, float _value, float? _default)
 		{
@@ -118,7 +118,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D052 RID: 53330 RVA: 0x004BA13D File Offset: 0x004B833D
+		// Token: 0x0600D166 RID: 53606 RVA: 0x004BDC39 File Offset: 0x004BBE39
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeBool(ref JsonWriter _writer, ref bool _first, string _key, bool _value)
 		{
@@ -127,7 +127,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteBoolean(_value);
 		}
 
-		// Token: 0x0600D053 RID: 53331 RVA: 0x004BA160 File Offset: 0x004B8360
+		// Token: 0x0600D167 RID: 53607 RVA: 0x004BDC5C File Offset: 0x004BBE5C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, bool _value)
 		{
@@ -135,7 +135,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D054 RID: 53332 RVA: 0x004BA173 File Offset: 0x004B8373
+		// Token: 0x0600D168 RID: 53608 RVA: 0x004BDC6F File Offset: 0x004BBE6F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, bool _value, bool? _default)
 		{
@@ -152,7 +152,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D055 RID: 53333 RVA: 0x004BA1AF File Offset: 0x004B83AF
+		// Token: 0x0600D169 RID: 53609 RVA: 0x004BDCAB File Offset: 0x004BBEAB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeString(ref JsonWriter _writer, ref bool _first, string _key, string _value)
 		{
@@ -161,7 +161,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteString(_value);
 		}
 
-		// Token: 0x0600D056 RID: 53334 RVA: 0x004BA1D2 File Offset: 0x004B83D2
+		// Token: 0x0600D16A RID: 53610 RVA: 0x004BDCCE File Offset: 0x004BBECE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, string _value)
 		{
@@ -169,7 +169,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D057 RID: 53335 RVA: 0x004BA1E5 File Offset: 0x004B83E5
+		// Token: 0x0600D16B RID: 53611 RVA: 0x004BDCE1 File Offset: 0x004BBEE1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void addItem(ref JsonWriter _writer, ref bool _first, string _key, string _value, string _default)
 		{
@@ -179,31 +179,31 @@ namespace Webserver.WebAPI.APIs.ServerState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600D058 RID: 53336
+		// Token: 0x0600D16C RID: 53612
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void iterateList(ref JsonWriter _writer, ref bool _first);
 
-		// Token: 0x04009DD0 RID: 40400
+		// Token: 0x04009EB9 RID: 40633
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler buildSampler;
 
-		// Token: 0x04009DD1 RID: 40401
+		// Token: 0x04009EBA RID: 40634
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] keyName = JsonWriter.GetEncodedPropertyNameWithBeginObject("name");
 
-		// Token: 0x04009DD2 RID: 40402
+		// Token: 0x04009EBB RID: 40635
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] keyType = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("type");
 
-		// Token: 0x04009DD3 RID: 40403
+		// Token: 0x04009EBC RID: 40636
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] keyValue = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("value");
 
-		// Token: 0x04009DD4 RID: 40404
+		// Token: 0x04009EBD RID: 40637
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] keyDefault = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("default");
 
-		// Token: 0x04009DD5 RID: 40405
+		// Token: 0x04009EBE RID: 40638
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int largestBuffer;
 	}

@@ -6,11 +6,11 @@ using PrefabVolumes;
 using UnityEngine;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02001379 RID: 4985
+// Token: 0x0200138B RID: 5003
 public static class POIMarkerToolManager
 {
-	// Token: 0x170012CE RID: 4814
-	// (get) Token: 0x06009CD9 RID: 40153 RVA: 0x003B42D0 File Offset: 0x003B24D0
+	// Token: 0x170012DA RID: 4826
+	// (get) Token: 0x06009D31 RID: 40241 RVA: 0x003B66D4 File Offset: 0x003B48D4
 	public static PrefabManagerData PrefabManagerData
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -31,8 +31,8 @@ public static class POIMarkerToolManager
 		}
 	}
 
-	// Token: 0x170012CF RID: 4815
-	// (get) Token: 0x06009CDA RID: 40154 RVA: 0x003B432E File Offset: 0x003B252E
+	// Token: 0x170012DB RID: 4827
+	// (get) Token: 0x06009D32 RID: 40242 RVA: 0x003B6732 File Offset: 0x003B4932
 	public static Dictionary<string, PrefabData> AllPrefabData
 	{
 		get
@@ -45,7 +45,7 @@ public static class POIMarkerToolManager
 		}
 	}
 
-	// Token: 0x06009CDB RID: 40155 RVA: 0x003B434B File Offset: 0x003B254B
+	// Token: 0x06009D33 RID: 40243 RVA: 0x003B674F File Offset: 0x003B494F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator loadPrefabDatas()
 	{
@@ -71,7 +71,7 @@ public static class POIMarkerToolManager
 		yield break;
 	}
 
-	// Token: 0x06009CDC RID: 40156 RVA: 0x003B4353 File Offset: 0x003B2553
+	// Token: 0x06009D34 RID: 40244 RVA: 0x003B6757 File Offset: 0x003B4957
 	public static void CleanUp()
 	{
 		POIMarkerToolManager.allPrefabData.Clear();
@@ -85,7 +85,7 @@ public static class POIMarkerToolManager
 		POIMarkerToolManager.lastSelectedBoxInGroup.Clear();
 	}
 
-	// Token: 0x06009CDD RID: 40157 RVA: 0x003B438C File Offset: 0x003B258C
+	// Token: 0x06009D35 RID: 40245 RVA: 0x003B6790 File Offset: 0x003B4990
 	public static void RegisterPoiMarker(SelectionBox _selBox)
 	{
 		if (_selBox == null)
@@ -121,13 +121,13 @@ public static class POIMarkerToolManager
 		}
 	}
 
-	// Token: 0x06009CDE RID: 40158 RVA: 0x003B4430 File Offset: 0x003B2630
+	// Token: 0x06009D36 RID: 40246 RVA: 0x003B6834 File Offset: 0x003B4A34
 	public static void UnRegisterPoiMarker(SelectionBox _selBox)
 	{
 		POIMarkerToolManager.registeredPoiMarkers.Remove(_selBox);
 	}
 
-	// Token: 0x06009CDF RID: 40159 RVA: 0x003B4440 File Offset: 0x003B2640
+	// Token: 0x06009D37 RID: 40247 RVA: 0x003B6844 File Offset: 0x003B4A44
 	public static void SelectionChanged(SelectionBox _selBox)
 	{
 		if (_selBox)
@@ -141,7 +141,7 @@ public static class POIMarkerToolManager
 		POIMarkerToolManager.UpdateAllColors();
 	}
 
-	// Token: 0x06009CE0 RID: 40160 RVA: 0x003B4480 File Offset: 0x003B2680
+	// Token: 0x06009D38 RID: 40248 RVA: 0x003B6884 File Offset: 0x003B4A84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool isFirstMarkerInGroup(Marker _currentMarker)
 	{
@@ -157,7 +157,7 @@ public static class POIMarkerToolManager
 		return false;
 	}
 
-	// Token: 0x06009CE1 RID: 40161 RVA: 0x003B44F8 File Offset: 0x003B26F8
+	// Token: 0x06009D39 RID: 40249 RVA: 0x003B68FC File Offset: 0x003B4AFC
 	public static void UpdateAllColors()
 	{
 		SelectionBox selection = SelectionBoxManager.Instance.Selection;
@@ -206,7 +206,7 @@ public static class POIMarkerToolManager
 		}
 	}
 
-	// Token: 0x06009CE2 RID: 40162 RVA: 0x003B4688 File Offset: 0x003B2888
+	// Token: 0x06009D3A RID: 40250 RVA: 0x003B6A8C File Offset: 0x003B4C8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator createPartSpawnPreview(Marker _currentMarker, SelectionBox _selBox, bool _makeVisible)
 	{
@@ -220,7 +220,7 @@ public static class POIMarkerToolManager
 		yield break;
 	}
 
-	// Token: 0x06009CE3 RID: 40163 RVA: 0x003B46A8 File Offset: 0x003B28A8
+	// Token: 0x06009D3B RID: 40251 RVA: 0x003B6AAC File Offset: 0x003B4CAC
 	public static void DisplayPrefabPreviewForMarker(SelectionBox _selBox)
 	{
 		Marker marker = _selBox.UserData as Marker;
@@ -246,7 +246,7 @@ public static class POIMarkerToolManager
 		GameManager.Instance.StartCoroutine(previewPrefabWithAnyTags.ToTransform(true, true, true, false, POIMarkerToolManager.createPreviewTransform(_selBox), previewPrefabWithAnyTags.PrefabName, new Vector3(-((float)previewPrefabWithAnyTags.size.x / 2f), (float)previewPrefabWithAnyTags.yOffset + 0.15f, -((float)previewPrefabWithAnyTags.size.z / 2f)), 0));
 	}
 
-	// Token: 0x06009CE4 RID: 40164 RVA: 0x003B47D8 File Offset: 0x003B29D8
+	// Token: 0x06009D3C RID: 40252 RVA: 0x003B6BDC File Offset: 0x003B4DDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getCurrentPreviewName(SelectionBox _selBox)
 	{
@@ -262,7 +262,7 @@ public static class POIMarkerToolManager
 		return previewTransform.GetChild(0).name;
 	}
 
-	// Token: 0x06009CE5 RID: 40165 RVA: 0x003B4810 File Offset: 0x003B2A10
+	// Token: 0x06009D3D RID: 40253 RVA: 0x003B6C14 File Offset: 0x003B4E14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void makePreviewVisible(SelectionBox _selBox, bool _visible)
 	{
@@ -273,7 +273,7 @@ public static class POIMarkerToolManager
 		}
 	}
 
-	// Token: 0x06009CE6 RID: 40166 RVA: 0x003B4839 File Offset: 0x003B2A39
+	// Token: 0x06009D3E RID: 40254 RVA: 0x003B6C3D File Offset: 0x003B4E3D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform createPreviewTransform(SelectionBox _selBox)
 	{
@@ -283,7 +283,7 @@ public static class POIMarkerToolManager
 		return transform;
 	}
 
-	// Token: 0x06009CE7 RID: 40167 RVA: 0x003B4864 File Offset: 0x003B2A64
+	// Token: 0x06009D3F RID: 40255 RVA: 0x003B6C68 File Offset: 0x003B4E68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void destroyPreview(SelectionBox _selBox)
 	{
@@ -294,40 +294,40 @@ public static class POIMarkerToolManager
 		}
 	}
 
-	// Token: 0x06009CE8 RID: 40168 RVA: 0x003B488C File Offset: 0x003B2A8C
+	// Token: 0x06009D40 RID: 40256 RVA: 0x003B6C90 File Offset: 0x003B4E90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform getPreviewTransform(SelectionBox _selBox)
 	{
 		return _selBox.transform.Find("PrefabPreview");
 	}
 
-	// Token: 0x06009CE9 RID: 40169 RVA: 0x003B489E File Offset: 0x003B2A9E
+	// Token: 0x06009D41 RID: 40257 RVA: 0x003B6CA2 File Offset: 0x003B4EA2
 	public static ReadOnlyCollection<SelectionBox> GetRegisteredBoxes()
 	{
 		return POIMarkerToolManager.registeredPoiMarkersReadOnly;
 	}
 
-	// Token: 0x04007672 RID: 30322
+	// Token: 0x040076B3 RID: 30387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PrefabPreviewTransformName = "PrefabPreview";
 
-	// Token: 0x04007673 RID: 30323
+	// Token: 0x040076B4 RID: 30388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PrefabManagerData prefabManagerData;
 
-	// Token: 0x04007674 RID: 30324
+	// Token: 0x040076B5 RID: 30389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, PrefabData> allPrefabData = new CaseInsensitiveStringDictionary<PrefabData>();
 
-	// Token: 0x04007675 RID: 30325
+	// Token: 0x040076B6 RID: 30390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<SelectionBox> registeredPoiMarkers = new List<SelectionBox>();
 
-	// Token: 0x04007676 RID: 30326
+	// Token: 0x040076B7 RID: 30391
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ReadOnlyCollection<SelectionBox> registeredPoiMarkersReadOnly = POIMarkerToolManager.registeredPoiMarkers.AsReadOnly();
 
-	// Token: 0x04007677 RID: 30327
+	// Token: 0x040076B8 RID: 30392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, string> lastSelectedBoxInGroup = new Dictionary<string, string>();
 }

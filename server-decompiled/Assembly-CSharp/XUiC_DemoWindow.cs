@@ -2,38 +2,38 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F2A RID: 3882
+// Token: 0x02000F39 RID: 3897
 [Preserve]
 public class XUiC_DemoWindow : XUiController
 {
-	// Token: 0x06007946 RID: 31046 RVA: 0x002DF209 File Offset: 0x002DD409
+	// Token: 0x06007989 RID: 31113 RVA: 0x002E0AF9 File Offset: 0x002DECF9
 	public override void Init()
 	{
 		base.Init();
 		XUiC_DemoWindow.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06007947 RID: 31047 RVA: 0x002A0EBB File Offset: 0x0029F0BB
+	// Token: 0x0600798A RID: 31114 RVA: 0x002A23E3 File Offset: 0x002A05E3
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		GameManager.Instance.Pause(true);
 	}
 
-	// Token: 0x06007948 RID: 31048 RVA: 0x002A0ECE File Offset: 0x0029F0CE
+	// Token: 0x0600798B RID: 31115 RVA: 0x002A23F6 File Offset: 0x002A05F6
 	public override void OnClose()
 	{
 		base.OnClose();
 		GameManager.Instance.Pause(false);
 	}
 
-	// Token: 0x06007949 RID: 31049 RVA: 0x002D5E2F File Offset: 0x002D402F
+	// Token: 0x0600798C RID: 31116 RVA: 0x002D7387 File Offset: 0x002D5587
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600794A RID: 31050 RVA: 0x002DF224 File Offset: 0x002DD424
+	// Token: 0x0600798D RID: 31117 RVA: 0x002E0B14 File Offset: 0x002DED14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -50,6 +50,6 @@ public class XUiC_DemoWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x040059EE RID: 23022
+	// Token: 0x04005A21 RID: 23073
 	public static string ID = "";
 }

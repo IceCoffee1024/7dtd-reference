@@ -1,22 +1,22 @@
 ﻿using System;
 
-// Token: 0x02000662 RID: 1634
+// Token: 0x02000669 RID: 1641
 public enum CVarOperation
 {
-	// Token: 0x04002AE6 RID: 10982
+	// Token: 0x04002B01 RID: 11009
 	set,
-	// Token: 0x04002AE7 RID: 10983
+	// Token: 0x04002B02 RID: 11010
 	setvalue,
-	// Token: 0x04002AE8 RID: 10984
+	// Token: 0x04002B03 RID: 11011
 	add,
-	// Token: 0x04002AE9 RID: 10985
+	// Token: 0x04002B04 RID: 11012
 	subtract,
-	// Token: 0x04002AEA RID: 10986
+	// Token: 0x04002B05 RID: 11013
 	multiply,
-	// Token: 0x04002AEB RID: 10987
+	// Token: 0x04002B06 RID: 11014
 	divide,
-	// Token: 0x04002AEC RID: 10988
+	// Token: 0x04002B07 RID: 11015
 	percentadd,
-	// Token: 0x04002AED RID: 10989
+	// Token: 0x04002B08 RID: 11016
 	percentsubtract
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x02000C4C RID: 3148
+// Token: 0x02000C57 RID: 3159
 public class DistantTerrainQuadTree
 {
-	// Token: 0x06005F64 RID: 24420 RVA: 0x0025E0EC File Offset: 0x0025C2EC
+	// Token: 0x06005F89 RID: 24457 RVA: 0x0025F614 File Offset: 0x0025D814
 	public DistantTerrainQuadTree(int AreaXSize, int AreaYSize, int ElementXSize, int ElementYSize)
 	{
 		this.AreaSize = new int[] { AreaXSize, AreaYSize };
@@ -21,13 +21,13 @@ public class DistantTerrainQuadTree
 		this.Root = new object[4];
 	}
 
-	// Token: 0x06005F65 RID: 24421 RVA: 0x0025E1E5 File Offset: 0x0025C3E5
+	// Token: 0x06005F8A RID: 24458 RVA: 0x0025F70D File Offset: 0x0025D90D
 	public void AddChunk(int PosX, int PosY, byte[] Data)
 	{
 		this.AddElement(PosX * this.ElementSize[0] + this.AreaSize[0] / 2, PosY * this.ElementSize[1] + this.AreaSize[1] / 2, Data);
 	}
 
-	// Token: 0x06005F66 RID: 24422 RVA: 0x0025E218 File Offset: 0x0025C418
+	// Token: 0x06005F8B RID: 24459 RVA: 0x0025F740 File Offset: 0x0025D940
 	public void AddElement(int PosX, int PosY, byte[] Data)
 	{
 		int num = this.ExtendedElementSizeX;
@@ -79,7 +79,7 @@ public class DistantTerrainQuadTree
 		((QTDataElement)this.CurNode[num5]).Data = Data;
 	}
 
-	// Token: 0x06005F67 RID: 24423 RVA: 0x0025E348 File Offset: 0x0025C548
+	// Token: 0x06005F8C RID: 24460 RVA: 0x0025F870 File Offset: 0x0025DA70
 	public QTDataElement GetElement(uint PosX, uint PosY)
 	{
 		int num = this.ExtendedElementSizeX;
@@ -127,7 +127,7 @@ public class DistantTerrainQuadTree
 		return (QTDataElement)this.CurNode[num5];
 	}
 
-	// Token: 0x06005F68 RID: 24424 RVA: 0x0025E420 File Offset: 0x0025C620
+	// Token: 0x06005F8D RID: 24461 RVA: 0x0025F948 File Offset: 0x0025DB48
 	public List<QTDataElement> GetAllElementFromLevelId(uint PosX, uint PosY, int LevelIdFromLeaf)
 	{
 		object nodeFromLevelId = this.GetNodeFromLevelId(PosX, PosY, LevelIdFromLeaf);
@@ -174,7 +174,7 @@ public class DistantTerrainQuadTree
 		return list;
 	}
 
-	// Token: 0x06005F69 RID: 24425 RVA: 0x0025E540 File Offset: 0x0025C740
+	// Token: 0x06005F8E RID: 24462 RVA: 0x0025FA68 File Offset: 0x0025DC68
 	public object GetNodeFromLevelId(uint PosX, uint PosY, int LevelIdFromLeaf)
 	{
 		int num = this.ExtendedElementSizeX;
@@ -208,7 +208,7 @@ public class DistantTerrainQuadTree
 		return obj;
 	}
 
-	// Token: 0x06005F6A RID: 24426 RVA: 0x0025E5E4 File Offset: 0x0025C7E4
+	// Token: 0x06005F8F RID: 24463 RVA: 0x0025FB0C File Offset: 0x0025DD0C
 	public byte[] GetAllElementFromLevelId(uint PosX, uint PosY)
 	{
 		PosX <<= 32 - this.NbPosBit;
@@ -228,7 +228,7 @@ public class DistantTerrainQuadTree
 		return (byte[])this.CurNode[(int)(((PosX & 2147483648U) >> 31) + ((PosY & 2147483648U) >> 30))];
 	}
 
-	// Token: 0x06005F6B RID: 24427 RVA: 0x0025E690 File Offset: 0x0025C890
+	// Token: 0x06005F90 RID: 24464 RVA: 0x0025FBB8 File Offset: 0x0025DDB8
 	public List<QTDataElement> SetRandomData(byte DefaultHeight, int NbChunk)
 	{
 		int num = 50;
@@ -271,7 +271,7 @@ public class DistantTerrainQuadTree
 		return list;
 	}
 
-	// Token: 0x06005F6C RID: 24428 RVA: 0x0025E8B8 File Offset: 0x0025CAB8
+	// Token: 0x06005F91 RID: 24465 RVA: 0x0025FDE0 File Offset: 0x0025DFE0
 	public void CreateFile(List<QTDataElement> NewData, string DirName, string FileName)
 	{
 		for (int i = 0; i < NewData.Count; i++)
@@ -281,7 +281,7 @@ public class DistantTerrainQuadTree
 		this.DataBase.Save(DirName, FileName);
 	}
 
-	// Token: 0x06005F6D RID: 24429 RVA: 0x0025E908 File Offset: 0x0025CB08
+	// Token: 0x06005F92 RID: 24466 RVA: 0x0025FE30 File Offset: 0x0025E030
 	public void SetQuadtreeFromDatabase(string DirName, string FileName)
 	{
 		this.DataBase = new ExtensionChunkDatabase(4660, this.AreaSize[0], this.AreaSize[1], this.ElementSize[0]);
@@ -296,46 +296,46 @@ public class DistantTerrainQuadTree
 		}
 	}
 
-	// Token: 0x04004AFB RID: 19195
+	// Token: 0x04004B20 RID: 19232
 	public object[] Root;
 
-	// Token: 0x04004AFC RID: 19196
+	// Token: 0x04004B21 RID: 19233
 	public int[] AreaSize;
 
-	// Token: 0x04004AFD RID: 19197
+	// Token: 0x04004B22 RID: 19234
 	public int[] ElementSize;
 
-	// Token: 0x04004AFE RID: 19198
+	// Token: 0x04004B23 RID: 19235
 	public int ExtendedElementSizeX;
 
-	// Token: 0x04004AFF RID: 19199
+	// Token: 0x04004B24 RID: 19236
 	public int ExtendedElementSizeY;
 
-	// Token: 0x04004B00 RID: 19200
+	// Token: 0x04004B25 RID: 19237
 	public int DataSize;
 
-	// Token: 0x04004B01 RID: 19201
+	// Token: 0x04004B26 RID: 19238
 	public int NbTreeLevel;
 
-	// Token: 0x04004B02 RID: 19202
+	// Token: 0x04004B27 RID: 19239
 	public int NbPosBit;
 
-	// Token: 0x04004B03 RID: 19203
+	// Token: 0x04004B28 RID: 19240
 	public int NbTreeElement;
 
-	// Token: 0x04004B04 RID: 19204
+	// Token: 0x04004B29 RID: 19241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object[] CurNode;
 
-	// Token: 0x04004B05 RID: 19205
+	// Token: 0x04004B2A RID: 19242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<object[]> ObjList;
 
-	// Token: 0x04004B06 RID: 19206
+	// Token: 0x04004B2B RID: 19243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DatabaseWithFixedDS<long, byte[]> DataBase;
 
-	// Token: 0x04004B07 RID: 19207
+	// Token: 0x04004B2C RID: 19244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> NodeSeqList = new List<int>();
 }

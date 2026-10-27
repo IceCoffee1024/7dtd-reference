@@ -3,14 +3,14 @@ using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-// Token: 0x0200163D RID: 5693
+// Token: 0x0200164F RID: 5711
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]
 [PublicizedFrom(EAccessModifier.Internal)]
 public class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 {
-	// Token: 0x0600B2AC RID: 45740 RVA: 0x0042B110 File Offset: 0x00429310
+	// Token: 0x0600B304 RID: 45828 RVA: 0x0042D514 File Offset: 0x0042B714
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static UnitySourceGeneratedAssemblyMonoScriptTypes_v1.MonoScriptData Get()
@@ -1017,7 +1017,7 @@ public class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 			80, 108, 97, 116, 102, 111, 114, 109, 92, 83,
 			99, 114, 105, 112, 116, 115, 92, 76, 111, 99,
 			97, 108, 92, 85, 115, 101, 114, 46, 99, 115,
-			0, 0, 0, 1, 0, 0, 0, 55, 92, "Not showing all elements because this array is too big (226221 elements)"
+			0, 0, 0, 1, 0, 0, 0, 55, 92, "Not showing all elements because this array is too big (227393 elements)"
 		};
 		monoScriptData.TypesData = new byte[]
 		{
@@ -2020,31 +2020,31 @@ public class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 			116, 101, 97, 109, 79, 119, 110, 101, 114, 65,
 			117, 116, 104, 111, 114, 105, 122, 101, 114, 0,
 			0, 0, 0, 24, 80, 108, 97, 116, 102, 111,
-			114, 109, 46, 83, 116, 101, 97, 109, 124, "Not showing all elements because this array is too big (151956 elements)"
+			114, 109, 46, 83, 116, 101, 97, 109, 124, "Not showing all elements because this array is too big (153060 elements)"
 		};
-		monoScriptData.TotalFiles = 3365;
-		monoScriptData.TotalTypes = 5076;
+		monoScriptData.TotalFiles = 3382;
+		monoScriptData.TotalTypes = 5103;
 		monoScriptData.IsEditorOnly = false;
 		return monoScriptData;
 	}
 
-	// Token: 0x0200163E RID: 5694
+	// Token: 0x02001650 RID: 5712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct MonoScriptData
 	{
-		// Token: 0x0400863F RID: 34367
+		// Token: 0x04008680 RID: 34432
 		public byte[] FilePathsData;
 
-		// Token: 0x04008640 RID: 34368
+		// Token: 0x04008681 RID: 34433
 		public byte[] TypesData;
 
-		// Token: 0x04008641 RID: 34369
+		// Token: 0x04008682 RID: 34434
 		public int TotalTypes;
 
-		// Token: 0x04008642 RID: 34370
+		// Token: 0x04008683 RID: 34435
 		public int TotalFiles;
 
-		// Token: 0x04008643 RID: 34371
+		// Token: 0x04008684 RID: 34436
 		public bool IsEditorOnly;
 	}
 }

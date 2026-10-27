@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000846 RID: 2118
+// Token: 0x02000850 RID: 2128
 [Preserve]
 public class NetPackageSetBlock : NetPackage
 {
-	// Token: 0x06003DB7 RID: 15799 RVA: 0x00188C02 File Offset: 0x00186E02
+	// Token: 0x06003DDA RID: 15834 RVA: 0x00189D06 File Offset: 0x00187F06
 	public NetPackageSetBlock Setup(PersistentPlayerData _persistentPlayerData, List<BlockChangeInfo> _blockChanges, int _localPlayerThatChanged)
 	{
 		this.persistentPlayerId = ((_persistentPlayerData != null) ? _persistentPlayerData.PrimaryId : null);
@@ -15,7 +15,7 @@ public class NetPackageSetBlock : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DB8 RID: 15800 RVA: 0x00188C28 File Offset: 0x00186E28
+	// Token: 0x06003DDB RID: 15835 RVA: 0x00189D2C File Offset: 0x00187F2C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.persistentPlayerId = PlatformUserIdentifierAbs.FromStream(_br, false, false);
@@ -30,7 +30,7 @@ public class NetPackageSetBlock : NetPackage
 		this.localPlayerThatChanged = _br.ReadInt32();
 	}
 
-	// Token: 0x06003DB9 RID: 15801 RVA: 0x00188C88 File Offset: 0x00186E88
+	// Token: 0x06003DDC RID: 15836 RVA: 0x00189D8C File Offset: 0x00187F8C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -44,7 +44,7 @@ public class NetPackageSetBlock : NetPackage
 		_bw.Write(this.localPlayerThatChanged);
 	}
 
-	// Token: 0x06003DBA RID: 15802 RVA: 0x00188CE8 File Offset: 0x00186EE8
+	// Token: 0x06003DDD RID: 15837 RVA: 0x00189DEC File Offset: 0x00187FEC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidUserIdForSender(this.persistentPlayerId))
@@ -63,25 +63,18 @@ public class NetPackageSetBlock : NetPackage
 		{
 			return;
 		}
-		if (DynamicMeshManager.CONTENT_ENABLED)
-		{
-			foreach (BlockChangeInfo blockChangeInfo in this.blockChanges)
-			{
-				DynamicMeshManager.ChunkChanged(blockChangeInfo.blockValueRef, -1, blockChangeInfo.blockValue.type);
-			}
-		}
 		_callbacks.ChangeBlocks(this.persistentPlayerId, this.blockChanges);
 	}
 
-	// Token: 0x04003241 RID: 12865
+	// Token: 0x04003261 RID: 12897
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockChangeInfo> blockChanges;
 
-	// Token: 0x04003242 RID: 12866
+	// Token: 0x04003262 RID: 12898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs persistentPlayerId;
 
-	// Token: 0x04003243 RID: 12867
+	// Token: 0x04003263 RID: 12899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int localPlayerThatChanged;
 }

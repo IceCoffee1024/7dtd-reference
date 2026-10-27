@@ -2,22 +2,22 @@
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x0200151A RID: 5402
+// Token: 0x0200152C RID: 5420
 public class XmlPatchException : Exception
 {
-	// Token: 0x0600A9A8 RID: 43432 RVA: 0x003F2058 File Offset: 0x003F0258
+	// Token: 0x0600AA00 RID: 43520 RVA: 0x003F445C File Offset: 0x003F265C
 	public XmlPatchException(XElement _patchElement, string _patchMethodName, string _message)
 		: this(XmlPatchException.buildMessage(_patchElement, _patchMethodName, _message))
 	{
 	}
 
-	// Token: 0x0600A9A9 RID: 43433 RVA: 0x003F2068 File Offset: 0x003F0268
+	// Token: 0x0600AA01 RID: 43521 RVA: 0x003F446C File Offset: 0x003F266C
 	public XmlPatchException(XElement _patchElement, string _patchMethodName, string _message, Exception _innerException)
 		: this(XmlPatchException.buildMessage(_patchElement, _patchMethodName, _message), _innerException)
 	{
 	}
 
-	// Token: 0x0600A9AA RID: 43434 RVA: 0x003F207C File Offset: 0x003F027C
+	// Token: 0x0600AA02 RID: 43522 RVA: 0x003F4480 File Offset: 0x003F2680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string buildMessage(XElement _patchElement, string _patchMethodName, string _message)
 	{
@@ -31,14 +31,14 @@ public class XmlPatchException : Exception
 		});
 	}
 
-	// Token: 0x0600A9AB RID: 43435 RVA: 0x003C5DC3 File Offset: 0x003C3FC3
+	// Token: 0x0600AA03 RID: 43523 RVA: 0x003C81C7 File Offset: 0x003C63C7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XmlPatchException(string _message)
 		: base(_message)
 	{
 	}
 
-	// Token: 0x0600A9AC RID: 43436 RVA: 0x003C5DCC File Offset: 0x003C3FCC
+	// Token: 0x0600AA04 RID: 43524 RVA: 0x003C81D0 File Offset: 0x003C63D0
 	public XmlPatchException(string _message, Exception _innerException)
 		: base(_message, _innerException)
 	{

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001230 RID: 4656
+// Token: 0x02001242 RID: 4674
 public class AssetMappings
 {
-	// Token: 0x170011DC RID: 4572
-	// (get) Token: 0x06009481 RID: 38017 RVA: 0x00383C0C File Offset: 0x00381E0C
+	// Token: 0x170011E7 RID: 4583
+	// (get) Token: 0x060094D8 RID: 38104 RVA: 0x00386008 File Offset: 0x00384208
 	public int Count
 	{
 		get
@@ -15,7 +15,7 @@ public class AssetMappings
 		}
 	}
 
-	// Token: 0x06009482 RID: 38018 RVA: 0x00383C19 File Offset: 0x00381E19
+	// Token: 0x060094D9 RID: 38105 RVA: 0x00386015 File Offset: 0x00384215
 	public void Add(string name, string address)
 	{
 		this.list.Add(new AssetMappings.AssetAddress
@@ -25,7 +25,7 @@ public class AssetMappings
 		});
 	}
 
-	// Token: 0x06009483 RID: 38019 RVA: 0x00383C3C File Offset: 0x00381E3C
+	// Token: 0x060094DA RID: 38106 RVA: 0x00386038 File Offset: 0x00384238
 	public Dictionary<string, string> ToDictionary()
 	{
 		Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -36,19 +36,19 @@ public class AssetMappings
 		return dictionary;
 	}
 
-	// Token: 0x04006F4B RID: 28491
+	// Token: 0x04006F8C RID: 28556
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AssetMappings.AssetAddress> list = new List<AssetMappings.AssetAddress>();
 
-	// Token: 0x02001231 RID: 4657
+	// Token: 0x02001243 RID: 4675
 	[Serializable]
 	public class AssetAddress
 	{
-		// Token: 0x04006F4C RID: 28492
+		// Token: 0x04006F8D RID: 28557
 		public string name;
 
-		// Token: 0x04006F4D RID: 28493
+		// Token: 0x04006F8E RID: 28558
 		public string address;
 	}
 }

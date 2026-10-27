@@ -2,10 +2,10 @@
 
 namespace SandboxOptions
 {
-	// Token: 0x020018CB RID: 6347
+	// Token: 0x020018FC RID: 6396
 	public class SandboxOptionValueSetBool : SandboxOptionValueSet
 	{
-		// Token: 0x0600C3EC RID: 50156 RVA: 0x00484758 File Offset: 0x00482958
+		// Token: 0x0600C500 RID: 50432 RVA: 0x00488104 File Offset: 0x00486304
 		public override bool GetValue(int index, out object val)
 		{
 			bool flag;
@@ -14,7 +14,7 @@ namespace SandboxOptions
 			return boolValue;
 		}
 
-		// Token: 0x0600C3ED RID: 50157 RVA: 0x00484776 File Offset: 0x00482976
+		// Token: 0x0600C501 RID: 50433 RVA: 0x00488122 File Offset: 0x00486322
 		public override bool GetBoolValue(int index, out bool val)
 		{
 			if (index >= 0 && index < this.BoolValues.Length)
@@ -26,13 +26,13 @@ namespace SandboxOptions
 			return false;
 		}
 
-		// Token: 0x0600C3EE RID: 50158 RVA: 0x00484797 File Offset: 0x00482997
+		// Token: 0x0600C502 RID: 50434 RVA: 0x00488143 File Offset: 0x00486343
 		public override bool GetBoolValue(int index)
 		{
 			return this.BoolValues[index];
 		}
 
-		// Token: 0x0600C3EF RID: 50159 RVA: 0x004847A4 File Offset: 0x004829A4
+		// Token: 0x0600C503 RID: 50435 RVA: 0x00488150 File Offset: 0x00486350
 		public override int GetBoolIndex(bool val)
 		{
 			for (int i = 0; i < this.BoolValues.Length; i++)
@@ -45,19 +45,19 @@ namespace SandboxOptions
 			return -1;
 		}
 
-		// Token: 0x0600C3F0 RID: 50160 RVA: 0x004847D2 File Offset: 0x004829D2
+		// Token: 0x0600C504 RID: 50436 RVA: 0x0048817E File Offset: 0x0048637E
 		public override bool IsValidIndex(int index)
 		{
 			return index >= 0 && index < this.BoolValues.Length;
 		}
 
-		// Token: 0x0600C3F1 RID: 50161 RVA: 0x004847E5 File Offset: 0x004829E5
+		// Token: 0x0600C505 RID: 50437 RVA: 0x00488191 File Offset: 0x00486391
 		public override int GetValueCount()
 		{
 			return this.BoolValues.Length;
 		}
 
-		// Token: 0x0600C3F2 RID: 50162 RVA: 0x004847EF File Offset: 0x004829EF
+		// Token: 0x0600C506 RID: 50438 RVA: 0x0048819B File Offset: 0x0048639B
 		public override string GetDisplayAtIndex(int index, string languageName = null)
 		{
 			if (index < 0 || index >= this.DisplayValues.Length)
@@ -67,13 +67,13 @@ namespace SandboxOptions
 			return Localization.Get(this.DisplayValues[index], false, languageName);
 		}
 
-		// Token: 0x0600C3F3 RID: 50163 RVA: 0x00484815 File Offset: 0x00482A15
+		// Token: 0x0600C507 RID: 50439 RVA: 0x004881C1 File Offset: 0x004863C1
 		public override string GetValueListString()
 		{
 			return string.Join<bool>(", ", this.BoolValues);
 		}
 
-		// Token: 0x04009474 RID: 38004
+		// Token: 0x0400955D RID: 38237
 		public bool[] BoolValues;
 	}
 }

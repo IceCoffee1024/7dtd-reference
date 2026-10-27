@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockBladeTrap : BlockPoweredTrap
 {
-	// Token: 0x060008C9 RID: 2249 RVA: 0x0003DC34 File Offset: 0x0003BE34
+	// Token: 0x060008C9 RID: 2249 RVA: 0x0003DBF4 File Offset: 0x0003BDF4
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		}
 	}
 
-	// Token: 0x060008CA RID: 2250 RVA: 0x0003DCE0 File Offset: 0x0003BEE0
+	// Token: 0x060008CA RID: 2250 RVA: 0x0003DCA0 File Offset: 0x0003BEA0
 	public override bool ActivateTrap(BlockEntityData blockEntity, bool isOn)
 	{
 		SpinningBladeTrapController component = blockEntity.transform.gameObject.GetComponent<SpinningBladeTrapController>();
@@ -39,7 +39,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		return true;
 	}
 
-	// Token: 0x060008CB RID: 2251 RVA: 0x0003DD54 File Offset: 0x0003BF54
+	// Token: 0x060008CB RID: 2251 RVA: 0x0003DD14 File Offset: 0x0003BF14
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		ChunkCluster chunkCache = _world.ChunkCache;
@@ -62,7 +62,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x060008CC RID: 2252 RVA: 0x0003DDE8 File Offset: 0x0003BFE8
+	// Token: 0x060008CC RID: 2252 RVA: 0x0003DDA8 File Offset: 0x0003BFA8
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		Manager.BroadcastStop(_blockPos.ToVector3(), this.runningSound);
@@ -71,7 +71,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x060008CD RID: 2253 RVA: 0x0003DE38 File Offset: 0x0003C038
+	// Token: 0x060008CD RID: 2253 RVA: 0x0003DDF8 File Offset: 0x0003BFF8
 	public override void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		Manager.Stop(_blockPos.ToVector3(), this.runningSound);

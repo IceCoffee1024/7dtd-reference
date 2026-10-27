@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace AssetManagement
 {
-	// Token: 0x02001B54 RID: 6996
+	// Token: 0x02001B85 RID: 7045
 	public class AssetHandle<T> where T : global::UnityEngine.Object
 	{
-		// Token: 0x17001A3C RID: 6716
-		// (get) Token: 0x0600D1FB RID: 53755 RVA: 0x004C53A4 File Offset: 0x004C35A4
+		// Token: 0x17001A84 RID: 6788
+		// (get) Token: 0x0600D30F RID: 54031 RVA: 0x004C8ECC File Offset: 0x004C70CC
 		public T Asset
 		{
 			get
@@ -21,20 +21,20 @@ namespace AssetManagement
 			}
 		}
 
-		// Token: 0x0600D1FC RID: 53756 RVA: 0x004C53CA File Offset: 0x004C35CA
+		// Token: 0x0600D310 RID: 54032 RVA: 0x004C8EF2 File Offset: 0x004C70F2
 		public bool IsValid()
 		{
 			return this.loadHandle != null;
 		}
 
-		// Token: 0x0600D1FD RID: 53757 RVA: 0x004C53D5 File Offset: 0x004C35D5
+		// Token: 0x0600D311 RID: 54033 RVA: 0x004C8EFD File Offset: 0x004C70FD
 		public bool IsComplete()
 		{
 			LoadManager.AssetRequestTask<T> assetRequestTask = this.loadHandle;
 			return assetRequestTask == null || assetRequestTask.IsDone;
 		}
 
-		// Token: 0x0600D1FE RID: 53758 RVA: 0x004C53E8 File Offset: 0x004C35E8
+		// Token: 0x0600D312 RID: 54034 RVA: 0x004C8F10 File Offset: 0x004C7110
 		public AssetHandle(AssetManager manager, string uri, LoadManager.AssetRequestTask<T> loadHandle)
 		{
 			this.manager = manager;
@@ -42,7 +42,7 @@ namespace AssetManagement
 			this.loadHandle = loadHandle;
 		}
 
-		// Token: 0x0600D1FF RID: 53759 RVA: 0x004C5405 File Offset: 0x004C3605
+		// Token: 0x0600D313 RID: 54035 RVA: 0x004C8F2D File Offset: 0x004C712D
 		public void WaitForComplete()
 		{
 			if (!this.IsValid())
@@ -52,7 +52,7 @@ namespace AssetManagement
 			this.loadHandle.WaitForComplete();
 		}
 
-		// Token: 0x0600D200 RID: 53760 RVA: 0x004C541C File Offset: 0x004C361C
+		// Token: 0x0600D314 RID: 54036 RVA: 0x004C8F44 File Offset: 0x004C7144
 		public InstanceHandle<T> CreateInstance()
 		{
 			if (!this.IsValid())
@@ -66,7 +66,7 @@ namespace AssetManagement
 			return this.manager.TrackInstance<T>(this.Uri, global::UnityEngine.Object.Instantiate<T>(this.Asset));
 		}
 
-		// Token: 0x0600D201 RID: 53761 RVA: 0x004C5490 File Offset: 0x004C3690
+		// Token: 0x0600D315 RID: 54037 RVA: 0x004C8FB8 File Offset: 0x004C71B8
 		public void Release()
 		{
 			if (this.loadHandle == null)
@@ -79,14 +79,14 @@ namespace AssetManagement
 			this.loadHandle = null;
 		}
 
-		// Token: 0x04009FB0 RID: 40880
+		// Token: 0x0400A099 RID: 41113
 		public readonly string Uri;
 
-		// Token: 0x04009FB1 RID: 40881
+		// Token: 0x0400A09A RID: 41114
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AssetManager manager;
 
-		// Token: 0x04009FB2 RID: 40882
+		// Token: 0x0400A09B RID: 41115
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LoadManager.AssetRequestTask<T> loadHandle;
 	}

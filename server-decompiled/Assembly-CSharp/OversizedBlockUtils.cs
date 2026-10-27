@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001555 RID: 5461
+// Token: 0x02001567 RID: 5479
 public static class OversizedBlockUtils
 {
-	// Token: 0x0600AB0C RID: 43788 RVA: 0x003FD288 File Offset: 0x003FB488
+	// Token: 0x0600AB64 RID: 43876 RVA: 0x003FF68C File Offset: 0x003FD88C
 	public static Bounds GetLocalStabilityBounds(Bounds localBounds, Quaternion rotation)
 	{
 		Vector3 vector = Quaternion.Inverse(rotation) * Vector3.down;
@@ -32,7 +32,7 @@ public static class OversizedBlockUtils
 		return bounds;
 	}
 
-	// Token: 0x0600AB0D RID: 43789 RVA: 0x003FD36C File Offset: 0x003FB56C
+	// Token: 0x0600AB65 RID: 43877 RVA: 0x003FF770 File Offset: 0x003FD970
 	public unsafe static void GetWorldAlignedBoundsExtents(Vector3i position, Quaternion rotation, Bounds localBounds, out Vector3i min, out Vector3i max)
 	{
 		Span<Vector3> span2;
@@ -56,7 +56,7 @@ public static class OversizedBlockUtils
 		}
 	}
 
-	// Token: 0x0600AB0E RID: 43790 RVA: 0x003FD4A0 File Offset: 0x003FB6A0
+	// Token: 0x0600AB66 RID: 43878 RVA: 0x003FF8A4 File Offset: 0x003FDAA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void GetWorldCorners(ref Span<Vector3> corners, Vector3i position, Quaternion rotation, Bounds localBounds)
 	{
@@ -68,20 +68,20 @@ public static class OversizedBlockUtils
 		}
 	}
 
-	// Token: 0x0600AB0F RID: 43791 RVA: 0x003FD54C File Offset: 0x003FB74C
+	// Token: 0x0600AB67 RID: 43879 RVA: 0x003FF950 File Offset: 0x003FDB50
 	public static Matrix4x4 GetBlockWorldToLocalMatrix(Vector3i position, Quaternion rotation)
 	{
 		return Matrix4x4.TRS(position + new Vector3(0.5f, 0.5f, 0.5f), rotation, Vector3.one).inverse;
 	}
 
-	// Token: 0x0600AB10 RID: 43792 RVA: 0x003FD58C File Offset: 0x003FB78C
+	// Token: 0x0600AB68 RID: 43880 RVA: 0x003FF990 File Offset: 0x003FDB90
 	public static bool IsBlockCenterWithinBounds(Vector3i blockPosition, Bounds localBounds, Matrix4x4 worldToLocalMatrix)
 	{
 		Vector3 vector = worldToLocalMatrix.MultiplyPoint3x4(blockPosition + new Vector3(0.5f, 0.5f, 0.5f));
 		return localBounds.Contains(vector);
 	}
 
-	// Token: 0x0600AB11 RID: 43793 RVA: 0x003FD5C8 File Offset: 0x003FB7C8
+	// Token: 0x0600AB69 RID: 43881 RVA: 0x003FF9CC File Offset: 0x003FDBCC
 	public static IEnumerable<Vector3i> EnumerateOverlappingCells(Vector3i blockPos, Bounds localBounds, byte rotation, Bounds clipBounds)
 	{
 		Vector3 vector = BlockShapeNew.GetRotationStatic((int)rotation) * Vector3.right;

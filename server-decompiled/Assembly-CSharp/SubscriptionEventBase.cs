@@ -1,30 +1,30 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-// Token: 0x02000C9E RID: 3230
+// Token: 0x02000CA9 RID: 3241
 public class SubscriptionEventBase
 {
-	// Token: 0x17000A51 RID: 2641
-	// (get) Token: 0x060062B8 RID: 25272 RVA: 0x00270B19 File Offset: 0x0026ED19
-	// (set) Token: 0x060062B9 RID: 25273 RVA: 0x00270B21 File Offset: 0x0026ED21
+	// Token: 0x17000A57 RID: 2647
+	// (get) Token: 0x060062DD RID: 25309 RVA: 0x00272041 File Offset: 0x00270241
+	// (set) Token: 0x060062DE RID: 25310 RVA: 0x00272049 File Offset: 0x00270249
 	[JsonProperty("user_id")]
 	public string UserId { get; set; } = "";
 
-	// Token: 0x17000A52 RID: 2642
-	// (get) Token: 0x060062BA RID: 25274 RVA: 0x00270B2A File Offset: 0x0026ED2A
-	// (set) Token: 0x060062BB RID: 25275 RVA: 0x00270B32 File Offset: 0x0026ED32
+	// Token: 0x17000A58 RID: 2648
+	// (get) Token: 0x060062DF RID: 25311 RVA: 0x00272052 File Offset: 0x00270252
+	// (set) Token: 0x060062E0 RID: 25312 RVA: 0x0027205A File Offset: 0x0027025A
 	[JsonProperty("user_login")]
 	public string UserLogin { get; set; } = "";
 
-	// Token: 0x17000A53 RID: 2643
-	// (get) Token: 0x060062BC RID: 25276 RVA: 0x00270B3B File Offset: 0x0026ED3B
-	// (set) Token: 0x060062BD RID: 25277 RVA: 0x00270B43 File Offset: 0x0026ED43
+	// Token: 0x17000A59 RID: 2649
+	// (get) Token: 0x060062E1 RID: 25313 RVA: 0x00272063 File Offset: 0x00270263
+	// (set) Token: 0x060062E2 RID: 25314 RVA: 0x0027206B File Offset: 0x0027026B
 	[JsonProperty("user_name")]
 	public string UserName { get; set; } = "";
 
-	// Token: 0x17000A54 RID: 2644
-	// (get) Token: 0x060062BE RID: 25278 RVA: 0x00270B4C File Offset: 0x0026ED4C
-	// (set) Token: 0x060062BF RID: 25279 RVA: 0x00270B54 File Offset: 0x0026ED54
+	// Token: 0x17000A5A RID: 2650
+	// (get) Token: 0x060062E3 RID: 25315 RVA: 0x00272074 File Offset: 0x00270274
+	// (set) Token: 0x060062E4 RID: 25316 RVA: 0x0027207C File Offset: 0x0027027C
 	[JsonProperty("tier")]
 	public string Tier { get; set; } = "";
 }

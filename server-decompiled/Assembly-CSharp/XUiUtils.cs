@@ -5,10 +5,10 @@ using InControl;
 using Platform;
 using UnityEngine;
 
-// Token: 0x0200119A RID: 4506
+// Token: 0x020011AA RID: 4522
 public static class XUiUtils
 {
-	// Token: 0x0600903A RID: 36922 RVA: 0x00364330 File Offset: 0x00362530
+	// Token: 0x0600908E RID: 37006 RVA: 0x00366420 File Offset: 0x00364620
 	public static string GetBindingXuiMarkupString(this PlayerAction _action, XUiUtils.EmptyBindingStyle _emptyStyle = XUiUtils.EmptyBindingStyle.EmptyString, XUiUtils.DisplayStyle _displayStyle = XUiUtils.DisplayStyle.Plain, string _customDisplayStyle = null)
 	{
 		if (_action == null)
@@ -25,7 +25,7 @@ public static class XUiUtils
 		return string.Concat(new string[] { "[action:", name, ":", name2, text, text2, "]" });
 	}
 
-	// Token: 0x0600903B RID: 36923 RVA: 0x003643E8 File Offset: 0x003625E8
+	// Token: 0x0600908F RID: 37007 RVA: 0x003664D8 File Offset: 0x003646D8
 	public static bool ParseActionsMarkup(XUi _xui, string _input, out string _parsed, string _defaultCustomFormat = null, XUiUtils.ForceLabelInputStyle _forceInputStyle = XUiUtils.ForceLabelInputStyle.Off)
 	{
 		bool flag = false;
@@ -152,7 +152,7 @@ public static class XUiUtils
 		goto IL_0337;
 	}
 
-	// Token: 0x0600903C RID: 36924 RVA: 0x00364741 File Offset: 0x00362941
+	// Token: 0x06009090 RID: 37008 RVA: 0x00366831 File Offset: 0x00364A31
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PlayerInputManager.InputStyle GetInputStyleFromForcedStyle(XUiUtils.ForceLabelInputStyle _forceStyle)
 	{
@@ -167,7 +167,7 @@ public static class XUiUtils
 		return PlatformManager.NativePlatform.Input.CurrentControllerInputStyle;
 	}
 
-	// Token: 0x0600903D RID: 36925 RVA: 0x00364770 File Offset: 0x00362970
+	// Token: 0x06009091 RID: 37009 RVA: 0x00366860 File Offset: 0x00364A60
 	public static string GetXuiHierarchy(XUiController _current)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -175,7 +175,7 @@ public static class XUiUtils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600903E RID: 36926 RVA: 0x00364790 File Offset: 0x00362990
+	// Token: 0x06009092 RID: 37010 RVA: 0x00366880 File Offset: 0x00364A80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void getXuiHierarchyRec(XUiController _current, StringBuilder _sb)
 	{
@@ -207,13 +207,13 @@ public static class XUiUtils
 		_sb.Append(")");
 	}
 
-	// Token: 0x0600903F RID: 36927 RVA: 0x00364840 File Offset: 0x00362A40
+	// Token: 0x06009093 RID: 37011 RVA: 0x00366930 File Offset: 0x00364B30
 	public static string ToXuiColorString(this Color32 _color)
 	{
 		return string.Format("{0},{1},{2},{3}", new object[] { _color.r, _color.g, _color.b, _color.a });
 	}
 
-	// Token: 0x06009040 RID: 36928 RVA: 0x00364898 File Offset: 0x00362A98
+	// Token: 0x06009094 RID: 37012 RVA: 0x00366988 File Offset: 0x00364B88
 	public static XUiView FindHierarchyClosestView(XUiController _startController, string _name)
 	{
 		XUiController controller = _startController.WindowGroup.Controller;
@@ -237,7 +237,7 @@ public static class XUiUtils
 		return null;
 	}
 
-	// Token: 0x06009041 RID: 36929 RVA: 0x003648D8 File Offset: 0x00362AD8
+	// Token: 0x06009095 RID: 37013 RVA: 0x003669C8 File Offset: 0x00364BC8
 	public static bool HotkeysAllowedFor(XUiView _view, bool _ignoreViewLock = false)
 	{
 		XUi xui = _view.xui;
@@ -246,7 +246,7 @@ public static class XUiUtils
 		return _view.IsVisible && !GUIWindowConsole.IsOpen() && windowManager.IsKeyShortcutsAllowed() && (_ignoreViewLock || cursorController.IsWithinNavigationLockView(_view)) && !XUiC_FullScreenCollider.IsBlocked(_view);
 	}
 
-	// Token: 0x06009042 RID: 36930 RVA: 0x00364938 File Offset: 0x00362B38
+	// Token: 0x06009096 RID: 37014 RVA: 0x00366A28 File Offset: 0x00364C28
 	public static void ApplyFillPaddedSprite(UISprite _uiSprite, string _origSpriteName)
 	{
 		INGUIAtlas atlas = _uiSprite.atlas;
@@ -257,7 +257,7 @@ public static class XUiUtils
 		XUiUtils.modifyAtlas(_uiSprite, atlas, _origSpriteName);
 	}
 
-	// Token: 0x06009043 RID: 36931 RVA: 0x00364958 File Offset: 0x00362B58
+	// Token: 0x06009097 RID: 37015 RVA: 0x00366A48 File Offset: 0x00364C48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void modifyAtlas(UISprite _uiSprite, INGUIAtlas _atlas, string _origSpriteName)
 	{
@@ -290,7 +290,7 @@ public static class XUiUtils
 		_uiSprite.spriteName = filledSpriteName;
 	}
 
-	// Token: 0x06009044 RID: 36932 RVA: 0x00364A58 File Offset: 0x00362C58
+	// Token: 0x06009098 RID: 37016 RVA: 0x00366B48 File Offset: 0x00364D48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setAtlasSpriteList(INGUIAtlas _atlas, List<UISpriteData> _list)
 	{
@@ -310,40 +310,40 @@ public static class XUiUtils
 		throw new Exception();
 	}
 
-	// Token: 0x0200119B RID: 4507
+	// Token: 0x020011AB RID: 4523
 	public enum EmptyBindingStyle
 	{
-		// Token: 0x0400698B RID: 27019
+		// Token: 0x040069CB RID: 27083
 		EmptyString,
-		// Token: 0x0400698C RID: 27020
+		// Token: 0x040069CC RID: 27084
 		NullString,
-		// Token: 0x0400698D RID: 27021
+		// Token: 0x040069CD RID: 27085
 		LocalizedUnbound,
-		// Token: 0x0400698E RID: 27022
+		// Token: 0x040069CE RID: 27086
 		LocalizedNone
 	}
 
-	// Token: 0x0200119C RID: 4508
+	// Token: 0x020011AC RID: 4524
 	public enum DisplayStyle
 	{
-		// Token: 0x04006990 RID: 27024
+		// Token: 0x040069D0 RID: 27088
 		Plain,
-		// Token: 0x04006991 RID: 27025
+		// Token: 0x040069D1 RID: 27089
 		KeyboardWithAngleBrackets,
-		// Token: 0x04006992 RID: 27026
+		// Token: 0x040069D2 RID: 27090
 		KeyboardWithParentheses,
-		// Token: 0x04006993 RID: 27027
+		// Token: 0x040069D3 RID: 27091
 		KeyboardWithBrackets
 	}
 
-	// Token: 0x0200119D RID: 4509
+	// Token: 0x020011AD RID: 4525
 	public enum ForceLabelInputStyle
 	{
-		// Token: 0x04006995 RID: 27029
+		// Token: 0x040069D5 RID: 27093
 		Off,
-		// Token: 0x04006996 RID: 27030
+		// Token: 0x040069D6 RID: 27094
 		Keyboard,
-		// Token: 0x04006997 RID: 27031
+		// Token: 0x040069D7 RID: 27095
 		Controller
 	}
 }

@@ -17,7 +17,7 @@ public class BlockGameEvent : Block
 		}
 	}
 
-	// Token: 0x06000795 RID: 1941 RVA: 0x00035C40 File Offset: 0x00033E40
+	// Token: 0x06000795 RID: 1941 RVA: 0x00035C00 File Offset: 0x00033E00
 	public override void Init()
 	{
 		base.Init();
@@ -30,7 +30,7 @@ public class BlockGameEvent : Block
 		base.Properties.ParseFloat(BlockGameEvent.PropActivateTime, ref this.activateTime);
 	}
 
-	// Token: 0x06000796 RID: 1942 RVA: 0x00035CF0 File Offset: 0x00033EF0
+	// Token: 0x06000796 RID: 1942 RVA: 0x00035CB0 File Offset: 0x00033EB0
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (this.onActivateEvent == "" && !_world.IsEditor())
@@ -43,7 +43,7 @@ public class BlockGameEvent : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x06000797 RID: 1943 RVA: 0x00035D74 File Offset: 0x00033F74
+	// Token: 0x06000797 RID: 1943 RVA: 0x00035D34 File Offset: 0x00033F34
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -54,7 +54,7 @@ public class BlockGameEvent : Block
 		}
 	}
 
-	// Token: 0x06000798 RID: 1944 RVA: 0x00035DEC File Offset: 0x00033FEC
+	// Token: 0x06000798 RID: 1944 RVA: 0x00035DAC File Offset: 0x00033FAC
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "activate")
@@ -89,7 +89,7 @@ public class BlockGameEvent : Block
 		return true;
 	}
 
-	// Token: 0x06000799 RID: 1945 RVA: 0x00035F14 File Offset: 0x00034114
+	// Token: 0x06000799 RID: 1945 RVA: 0x00035ED4 File Offset: 0x000340D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_Event(TimerEventData timerData)
 	{
@@ -105,7 +105,7 @@ public class BlockGameEvent : Block
 		return true;
 	}
 
-	// Token: 0x0600079B RID: 1947 RVA: 0x00035F6C File Offset: 0x0003416C
+	// Token: 0x0600079B RID: 1947 RVA: 0x00035F2C File Offset: 0x0003412C
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = !_world.IsEditor() && this.onActivateEvent != "";
@@ -113,7 +113,7 @@ public class BlockGameEvent : Block
 		return this.cmds;
 	}
 
-	// Token: 0x0600079C RID: 1948 RVA: 0x00035FD0 File Offset: 0x000341D0
+	// Token: 0x0600079C RID: 1948 RVA: 0x00035F90 File Offset: 0x00034190
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (this.onDamageEvent != "")
@@ -150,7 +150,7 @@ public class BlockGameEvent : Block
 		return num;
 	}
 
-	// Token: 0x0600079D RID: 1949 RVA: 0x000360FC File Offset: 0x000342FC
+	// Token: 0x0600079D RID: 1949 RVA: 0x000360BC File Offset: 0x000342BC
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);

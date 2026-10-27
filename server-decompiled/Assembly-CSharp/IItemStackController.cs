@@ -1,46 +1,46 @@
 ﻿using System;
 
-// Token: 0x02000D60 RID: 3424
+// Token: 0x02000D6B RID: 3435
 public interface IItemStackController
 {
-	// Token: 0x17000B20 RID: 2848
-	// (get) Token: 0x060067D2 RID: 26578
-	// (set) Token: 0x060067D3 RID: 26579
+	// Token: 0x17000B26 RID: 2854
+	// (get) Token: 0x060067F7 RID: 26615
+	// (set) Token: 0x060067F8 RID: 26616
 	ItemStack ItemStack { get; set; }
 
-	// Token: 0x17000B21 RID: 2849
-	// (get) Token: 0x060067D4 RID: 26580
-	// (set) Token: 0x060067D5 RID: 26581
+	// Token: 0x17000B27 RID: 2855
+	// (get) Token: 0x060067F9 RID: 26617
+	// (set) Token: 0x060067FA RID: 26618
 	bool IsSelected { get; set; }
 
-	// Token: 0x17000B22 RID: 2850
-	// (get) Token: 0x060067D6 RID: 26582
+	// Token: 0x17000B28 RID: 2856
+	// (get) Token: 0x060067FB RID: 26619
 	int SlotNumber { get; }
 
-	// Token: 0x17000B23 RID: 2851
-	// (get) Token: 0x060067D7 RID: 26583
+	// Token: 0x17000B29 RID: 2857
+	// (get) Token: 0x060067FC RID: 26620
 	XUiC_ItemStack.StackLocationTypes StackLocation { get; }
 
-	// Token: 0x17000B24 RID: 2852
-	// (get) Token: 0x060067D8 RID: 26584
-	// (set) Token: 0x060067D9 RID: 26585
+	// Token: 0x17000B2A RID: 2858
+	// (get) Token: 0x060067FD RID: 26621
+	// (set) Token: 0x060067FE RID: 26622
 	XUiC_ItemInfoWindow InfoWindow { get; set; }
 
-	// Token: 0x17000B25 RID: 2853
-	// (get) Token: 0x060067DA RID: 26586
+	// Token: 0x17000B2B RID: 2859
+	// (get) Token: 0x060067FF RID: 26623
 	XUiWindowGroup WindowGroup { get; }
 
-	// Token: 0x17000B26 RID: 2854
-	// (get) Token: 0x060067DB RID: 26587
+	// Token: 0x17000B2C RID: 2860
+	// (get) Token: 0x06006800 RID: 26624
 	XUi xui { get; }
 
-	// Token: 0x17000B27 RID: 2855
-	// (get) Token: 0x060067DC RID: 26588
+	// Token: 0x17000B2D RID: 2861
+	// (get) Token: 0x06006801 RID: 26625
 	XUiController Controller { get; }
 
-	// Token: 0x060067DD RID: 26589
+	// Token: 0x06006802 RID: 26626
 	void ForceRefreshItemStack();
 
-	// Token: 0x060067DE RID: 26590
+	// Token: 0x06006803 RID: 26627
 	void HandleMoveToPreferredLocation();
 }

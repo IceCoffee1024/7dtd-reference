@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004BC RID: 1212
+// Token: 0x020004BE RID: 1214
 [Preserve]
 public class EntityHuman : EntityEnemy
 {
 	// Token: 0x1700043A RID: 1082
-	// (get) Token: 0x0600261E RID: 9758 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06002625 RID: 9765 RVA: 0x00020119 File Offset: 0x0001E319
 	public override Entity.EnumPositionUpdateMovementType positionUpdateMovementType
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -19,14 +19,14 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x0600261F RID: 9759 RVA: 0x000E9610 File Offset: 0x000E7810
+	// Token: 0x06002626 RID: 9766 RVA: 0x000E9A20 File Offset: 0x000E7C20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
 		base.Awake();
 	}
 
-	// Token: 0x06002620 RID: 9760 RVA: 0x000E9618 File Offset: 0x000E7818
+	// Token: 0x06002627 RID: 9767 RVA: 0x000E9A28 File Offset: 0x000E7C28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitCommon()
 	{
@@ -37,7 +37,7 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x06002621 RID: 9761 RVA: 0x000E9630 File Offset: 0x000E7830
+	// Token: 0x06002628 RID: 9768 RVA: 0x000E9A40 File Offset: 0x000E7C40
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -48,7 +48,7 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x06002622 RID: 9762 RVA: 0x000E969C File Offset: 0x000E789C
+	// Token: 0x06002629 RID: 9769 RVA: 0x000E9AAC File Offset: 0x000E7CAC
 	public override void OnAddedToWorld()
 	{
 		base.OnAddedToWorld();
@@ -82,13 +82,13 @@ public class EntityHuman : EntityEnemy
 		this.SetupHandItem();
 	}
 
-	// Token: 0x06002623 RID: 9763 RVA: 0x000E9797 File Offset: 0x000E7997
+	// Token: 0x0600262A RID: 9770 RVA: 0x000E9BA7 File Offset: 0x000E7DA7
 	public virtual void SetupHandItem()
 	{
 		this.ShowHoldingItem(false);
 	}
 
-	// Token: 0x06002624 RID: 9764 RVA: 0x000E97A0 File Offset: 0x000E79A0
+	// Token: 0x0600262B RID: 9771 RVA: 0x000E9BB0 File Offset: 0x000E7DB0
 	public override void OnUpdateLive()
 	{
 		base.OnUpdateLive();
@@ -151,13 +151,13 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x06002625 RID: 9765 RVA: 0x000E9969 File Offset: 0x000E7B69
+	// Token: 0x0600262C RID: 9772 RVA: 0x000E9D79 File Offset: 0x000E7F79
 	public bool IsStormEffected()
 	{
 		return base.GetSpawnerSource() == EnumSpawnerSource.Biome && this.biomeStandingOn != null && this.biomeStandingOn.m_BiomeType != BiomeDefinition.BiomeType.PineForest && WeatherManager.Instance.IsStorming(this.biomeStandingOn.m_BiomeType);
 	}
 
-	// Token: 0x06002626 RID: 9766 RVA: 0x000E99A4 File Offset: 0x000E7BA4
+	// Token: 0x0600262D RID: 9773 RVA: 0x000E9DB4 File Offset: 0x000E7FB4
 	public override Ray GetLookRay()
 	{
 		Ray ray;
@@ -176,7 +176,7 @@ public class EntityHuman : EntityEnemy
 		return ray;
 	}
 
-	// Token: 0x06002627 RID: 9767 RVA: 0x000E9A1B File Offset: 0x000E7C1B
+	// Token: 0x0600262E RID: 9774 RVA: 0x000E9E2B File Offset: 0x000E802B
 	public override Vector3 GetLookVector()
 	{
 		if (this.lookAtPosition.Equals(Vector3.zero))
@@ -187,7 +187,7 @@ public class EntityHuman : EntityEnemy
 	}
 
 	// Token: 0x1700043B RID: 1083
-	// (get) Token: 0x06002628 RID: 9768 RVA: 0x000E9A48 File Offset: 0x000E7C48
+	// (get) Token: 0x0600262F RID: 9775 RVA: 0x000E9E58 File Offset: 0x000E8058
 	public override bool IsRunning
 	{
 		get
@@ -209,7 +209,7 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x06002629 RID: 9769 RVA: 0x000E9A90 File Offset: 0x000E7C90
+	// Token: 0x06002630 RID: 9776 RVA: 0x000E9EA0 File Offset: 0x000E80A0
 	public override float GetMoveSpeed()
 	{
 		if (this.IsBloodMoon)
@@ -235,7 +235,7 @@ public class EntityHuman : EntityEnemy
 		return EffectManager.GetValue(PassiveEffects.CrouchSpeed, null, this.moveSpeed, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x0600262A RID: 9770 RVA: 0x000E9B64 File Offset: 0x000E7D64
+	// Token: 0x06002631 RID: 9777 RVA: 0x000E9F74 File Offset: 0x000E8174
 	public override float GetMoveSpeedAggro()
 	{
 		EnumGamePrefs enumGamePrefs = EnumGamePrefs.ZombieMove;
@@ -283,7 +283,7 @@ public class EntityHuman : EntityEnemy
 		return EffectManager.GetValue(PassiveEffects.RunSpeed, null, num2, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x0600262B RID: 9771 RVA: 0x000E9CA8 File Offset: 0x000E7EA8
+	// Token: 0x06002632 RID: 9778 RVA: 0x000EA0B8 File Offset: 0x000E82B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MoveSpeedPatternTick()
 	{
@@ -304,7 +304,7 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x0600262C RID: 9772 RVA: 0x000E9D35 File Offset: 0x000E7F35
+	// Token: 0x06002633 RID: 9779 RVA: 0x000EA145 File Offset: 0x000E8345
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float getNextStepSoundDistance()
 	{
@@ -315,13 +315,13 @@ public class EntityHuman : EntityEnemy
 		return 1.5f;
 	}
 
-	// Token: 0x0600262D RID: 9773 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002634 RID: 9780 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateStepSound(float _distX, float _distZ, float _rotYDelta)
 	{
 	}
 
-	// Token: 0x0600262E RID: 9774 RVA: 0x000E9D4C File Offset: 0x000E7F4C
+	// Token: 0x06002635 RID: 9781 RVA: 0x000EA15C File Offset: 0x000E835C
 	public override void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 		if (this.walkType == 21 && this.Jumping)
@@ -359,7 +359,7 @@ public class EntityHuman : EntityEnemy
 		base.MoveEntityHeaded(_direction, _isDirAbsolute);
 	}
 
-	// Token: 0x0600262F RID: 9775 RVA: 0x000E9E88 File Offset: 0x000E8088
+	// Token: 0x06002636 RID: 9782 RVA: 0x000EA298 File Offset: 0x000E8498
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateJump()
 	{
@@ -385,7 +385,7 @@ public class EntityHuman : EntityEnemy
 		this.accumulatedRootMotion.y = 0f;
 	}
 
-	// Token: 0x06002630 RID: 9776 RVA: 0x000E9F21 File Offset: 0x000E8121
+	// Token: 0x06002637 RID: 9783 RVA: 0x000EA331 File Offset: 0x000E8531
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void EndJump()
 	{
@@ -393,7 +393,7 @@ public class EntityHuman : EntityEnemy
 		this.IsRotateToGroundFlat = false;
 	}
 
-	// Token: 0x06002631 RID: 9777 RVA: 0x000E9F30 File Offset: 0x000E8130
+	// Token: 0x06002638 RID: 9784 RVA: 0x000EA340 File Offset: 0x000E8540
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool ExecuteFallBehavior(EntityAlive.FallBehavior behavior, float _distance, Vector3 _fallMotion)
 	{
@@ -435,7 +435,7 @@ public class EntityHuman : EntityEnemy
 		return true;
 	}
 
-	// Token: 0x06002632 RID: 9778 RVA: 0x000EA07C File Offset: 0x000E827C
+	// Token: 0x06002639 RID: 9785 RVA: 0x000EA48C File Offset: 0x000E868C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool ExecuteDestroyBlockBehavior(EntityAlive.DestroyBlockBehavior behavior, ItemActionAttack.AttackHitInfo attackHitInfo)
 	{
@@ -469,7 +469,7 @@ public class EntityHuman : EntityEnemy
 		return true;
 	}
 
-	// Token: 0x06002633 RID: 9779 RVA: 0x000EA1C4 File Offset: 0x000E83C4
+	// Token: 0x0600263A RID: 9786 RVA: 0x000EA5D4 File Offset: 0x000E87D4
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale)
 	{
 		if (_damageSource.GetDamageType() == EnumDamageTypes.Falling && this.rand.RandomFloat >= 0.25f)
@@ -484,14 +484,14 @@ public class EntityHuman : EntityEnemy
 		return base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
 	}
 
-	// Token: 0x06002634 RID: 9780 RVA: 0x000EA211 File Offset: 0x000E8411
+	// Token: 0x0600263B RID: 9787 RVA: 0x000EA621 File Offset: 0x000E8821
 	public static void SetupRageChance(float chance, int index)
 	{
 		EntityHuman.rageChance = chance;
 		EntityHuman.superRageChance = EntityHuman.superRageChances[index];
 	}
 
-	// Token: 0x06002635 RID: 9781 RVA: 0x000EA228 File Offset: 0x000E8428
+	// Token: 0x0600263C RID: 9788 RVA: 0x000EA638 File Offset: 0x000E8838
 	public override void ProcessDamageResponseLocal(DamageResponse _dmResponse)
 	{
 		base.ProcessDamageResponseLocal(_dmResponse);
@@ -516,7 +516,7 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x06002636 RID: 9782 RVA: 0x000EA2ED File Offset: 0x000E84ED
+	// Token: 0x0600263D RID: 9789 RVA: 0x000EA6FD File Offset: 0x000E88FD
 	public bool StartRage(float speedPercent, float time)
 	{
 		if (speedPercent >= this.moveSpeedRagePer)
@@ -528,20 +528,20 @@ public class EntityHuman : EntityEnemy
 		return false;
 	}
 
-	// Token: 0x06002637 RID: 9783 RVA: 0x000EA309 File Offset: 0x000E8509
+	// Token: 0x0600263E RID: 9790 RVA: 0x000EA719 File Offset: 0x000E8919
 	public void StopRage()
 	{
 		this.moveSpeedRagePer = 0f;
 		this.moveSpeedScaleTime = 0f;
 	}
 
-	// Token: 0x06002638 RID: 9784 RVA: 0x000EA321 File Offset: 0x000E8521
+	// Token: 0x0600263F RID: 9791 RVA: 0x000EA731 File Offset: 0x000E8931
 	public override void OnEntityDeath()
 	{
 		base.OnEntityDeath();
 	}
 
-	// Token: 0x06002639 RID: 9785 RVA: 0x000EA32C File Offset: 0x000E852C
+	// Token: 0x06002640 RID: 9792 RVA: 0x000EA73C File Offset: 0x000E893C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void AnalyticsSendDeath(DamageResponse _dmResponse)
 	{
@@ -566,7 +566,7 @@ public class EntityHuman : EntityEnemy
 		GameSparksCollector.IncrementCounter(GameSparksCollector.GSDataKey.ZombiesKilledBy, text, 1, true, GameSparksCollector.GSDataCollection.SessionUpdates);
 	}
 
-	// Token: 0x0600263A RID: 9786 RVA: 0x000EA37C File Offset: 0x000E857C
+	// Token: 0x06002641 RID: 9793 RVA: 0x000EA78C File Offset: 0x000E898C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void TurnIntoCrawler()
 	{
@@ -581,7 +581,7 @@ public class EntityHuman : EntityEnemy
 		this.bCanClimbLadders = false;
 	}
 
-	// Token: 0x0600263B RID: 9787 RVA: 0x000EA3FA File Offset: 0x000E85FA
+	// Token: 0x06002642 RID: 9794 RVA: 0x000EA80A File Offset: 0x000E8A0A
 	public override void BuffAdded(BuffValue _buff)
 	{
 		if (_buff.BuffClass.DamageType == EnumDamageTypes.Electrical)
@@ -590,75 +590,75 @@ public class EntityHuman : EntityEnemy
 		}
 	}
 
-	// Token: 0x04001C66 RID: 7270
+	// Token: 0x04001C76 RID: 7286
 	public ulong timeToDie;
 
-	// Token: 0x04001C67 RID: 7271
+	// Token: 0x04001C77 RID: 7287
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float moveSpeedRagePer;
 
-	// Token: 0x04001C68 RID: 7272
+	// Token: 0x04001C78 RID: 7288
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float moveSpeedScaleTime;
 
-	// Token: 0x04001C69 RID: 7273
+	// Token: 0x04001C79 RID: 7289
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fallTime;
 
-	// Token: 0x04001C6A RID: 7274
+	// Token: 0x04001C7A RID: 7290
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fallThresholdTime;
 
-	// Token: 0x04001C6B RID: 7275
+	// Token: 0x04001C7B RID: 7291
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float[] moveSpeeds = new float[] { 0f, 0.35f, 0.7f, 1f, 1.35f };
 
-	// Token: 0x04001C6C RID: 7276
+	// Token: 0x04001C7C RID: 7292
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float[] moveRageSpeeds = new float[] { 0.75f, 0.8f, 0.9f, 1.15f, 1.7f };
 
-	// Token: 0x04001C6D RID: 7277
+	// Token: 0x04001C7D RID: 7293
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float[] moveSuperRageSpeeds = new float[] { 0.88f, 0.92f, 1f, 1.2f, 1.7f };
 
-	// Token: 0x04001C6E RID: 7278
+	// Token: 0x04001C7E RID: 7294
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int moveSpeedPatternIndex;
 
-	// Token: 0x04001C6F RID: 7279
+	// Token: 0x04001C7F RID: 7295
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float moveSpeedPatternScale = 1f;
 
-	// Token: 0x04001C70 RID: 7280
+	// Token: 0x04001C80 RID: 7296
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float moveSpeedPatternDelay;
 
-	// Token: 0x04001C71 RID: 7281
+	// Token: 0x04001C81 RID: 7297
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<float> moveSpeedPattern;
 
-	// Token: 0x04001C72 RID: 7282
+	// Token: 0x04001C82 RID: 7298
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float[] superRageChances = new float[] { 0f, 0.01f, 0.03f, 0.05f, 0.08f, 0.15f, 0.18f, 0.2f, 0.25f, 0.3f };
 
-	// Token: 0x04001C73 RID: 7283
+	// Token: 0x04001C83 RID: 7299
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float rageChance;
 
-	// Token: 0x04001C74 RID: 7284
+	// Token: 0x04001C84 RID: 7300
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float superRageChance;

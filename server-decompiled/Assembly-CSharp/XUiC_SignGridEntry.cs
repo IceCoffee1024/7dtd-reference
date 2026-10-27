@@ -3,12 +3,12 @@ using InControl;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001047 RID: 4167
+// Token: 0x02001057 RID: 4183
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_SignGridEntry : XUiC_SelectableEntry
 {
-	// Token: 0x17000F81 RID: 3969
-	// (get) Token: 0x060083E3 RID: 33763 RVA: 0x00325DBC File Offset: 0x00323FBC
+	// Token: 0x17000F8C RID: 3980
+	// (get) Token: 0x06008435 RID: 33845 RVA: 0x00327AC0 File Offset: 0x00325CC0
 	public virtual Color32 BackgroundColor
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -18,8 +18,8 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000F82 RID: 3970
-	// (get) Token: 0x060083E4 RID: 33764 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000F8D RID: 3981
+	// (get) Token: 0x06008436 RID: 33846 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool IsSelectable
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -29,13 +29,13 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060083E5 RID: 33765 RVA: 0x00325DC3 File Offset: 0x00323FC3
+	// Token: 0x06008437 RID: 33847 RVA: 0x00327AC7 File Offset: 0x00325CC7
 	public XUiC_SignGridEntry()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060083E6 RID: 33766 RVA: 0x00325DF1 File Offset: 0x00323FF1
+	// Token: 0x06008438 RID: 33848 RVA: 0x00327AF5 File Offset: 0x00325CF5
 	public override void Init()
 	{
 		base.Init();
@@ -43,7 +43,7 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		this.background = base.GetChildById("background").ViewComponent as XUiV_Sprite;
 	}
 
-	// Token: 0x060083E7 RID: 33767 RVA: 0x00325E30 File Offset: 0x00324030
+	// Token: 0x06008439 RID: 33849 RVA: 0x00327B34 File Offset: 0x00325D34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
@@ -62,7 +62,7 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		onBecameSelected(this);
 	}
 
-	// Token: 0x060083E8 RID: 33768 RVA: 0x00325E88 File Offset: 0x00324088
+	// Token: 0x0600843A RID: 33850 RVA: 0x00327B8C File Offset: 0x00325D8C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -113,14 +113,14 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060083E9 RID: 33769 RVA: 0x00325FC2 File Offset: 0x003241C2
+	// Token: 0x0600843B RID: 33851 RVA: 0x00327CC6 File Offset: 0x00325EC6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleClick()
 	{
 		base.IsSelected = true;
 	}
 
-	// Token: 0x060083EA RID: 33770 RVA: 0x00325FCC File Offset: 0x003241CC
+	// Token: 0x0600843C RID: 33852 RVA: 0x00327CD0 File Offset: 0x00325ED0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -139,7 +139,7 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x060083EB RID: 33771 RVA: 0x00326020 File Offset: 0x00324220
+	// Token: 0x0600843D RID: 33853 RVA: 0x00327D24 File Offset: 0x00325F24
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -169,28 +169,28 @@ public class XUiC_SignGridEntry : XUiC_SelectableEntry
 		return flag;
 	}
 
-	// Token: 0x040061EF RID: 25071
+	// Token: 0x0400622D RID: 25133
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 
-	// Token: 0x040061F0 RID: 25072
+	// Token: 0x0400622E RID: 25134
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 selectColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x040061F1 RID: 25073
+	// Token: 0x0400622F RID: 25135
 	public static Color32 backgroundColor = new Color32(96, 96, 96, byte.MaxValue);
 
-	// Token: 0x040061F2 RID: 25074
+	// Token: 0x04006230 RID: 25136
 	public static Color32 highlightColor = new Color32(222, 206, 163, byte.MaxValue);
 
-	// Token: 0x040061F3 RID: 25075
+	// Token: 0x04006231 RID: 25137
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite highlightOverlay;
 
-	// Token: 0x040061F4 RID: 25076
+	// Token: 0x04006232 RID: 25138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x040061F5 RID: 25077
+	// Token: 0x04006233 RID: 25139
 	public Action<XUiC_SignGridEntry> OnBecameSelected;
 }

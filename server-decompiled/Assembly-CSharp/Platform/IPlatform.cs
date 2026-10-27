@@ -3,183 +3,183 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001BA5 RID: 7077
+	// Token: 0x02001BD6 RID: 7126
 	public interface IPlatform
 	{
-		// Token: 0x17001A8E RID: 6798
-		// (get) Token: 0x0600D3B3 RID: 54195
-		// (set) Token: 0x0600D3B4 RID: 54196
+		// Token: 0x17001AD6 RID: 6870
+		// (get) Token: 0x0600D4C7 RID: 54471
+		// (set) Token: 0x0600D4C8 RID: 54472
 		bool AsServerOnly { get; set; }
 
-		// Token: 0x17001A8F RID: 6799
-		// (get) Token: 0x0600D3B5 RID: 54197
-		// (set) Token: 0x0600D3B6 RID: 54198
+		// Token: 0x17001AD7 RID: 6871
+		// (get) Token: 0x0600D4C9 RID: 54473
+		// (set) Token: 0x0600D4CA RID: 54474
 		bool IsCrossplatform { get; set; }
 
-		// Token: 0x17001A90 RID: 6800
-		// (get) Token: 0x0600D3B7 RID: 54199
+		// Token: 0x17001AD8 RID: 6872
+		// (get) Token: 0x0600D4CB RID: 54475
 		EPlatformIdentifier PlatformIdentifier { get; }
 
-		// Token: 0x17001A91 RID: 6801
-		// (get) Token: 0x0600D3B8 RID: 54200
+		// Token: 0x17001AD9 RID: 6873
+		// (get) Token: 0x0600D4CC RID: 54476
 		string PlatformDisplayName { get; }
 
-		// Token: 0x0600D3B9 RID: 54201
+		// Token: 0x0600D4CD RID: 54477
 		void CreateInstances();
 
-		// Token: 0x0600D3BA RID: 54202
+		// Token: 0x0600D4CE RID: 54478
 		void Init();
 
-		// Token: 0x0600D3BB RID: 54203
+		// Token: 0x0600D4CF RID: 54479
 		bool HasNetworkingEnabled(IList<string> _disabledProtocolNames);
 
-		// Token: 0x0600D3BC RID: 54204
+		// Token: 0x0600D4D0 RID: 54480
 		INetworkServer GetNetworkingServer(ProtocolManager _protocolManager);
 
-		// Token: 0x0600D3BD RID: 54205
+		// Token: 0x0600D4D1 RID: 54481
 		INetworkClient GetNetworkingClient(ProtocolManager _protocolManager);
 
-		// Token: 0x0600D3BE RID: 54206
+		// Token: 0x0600D4D2 RID: 54482
 		void UserAdded(PlatformUserIdentifierAbs _id, bool _isPrimary);
 
-		// Token: 0x0600D3BF RID: 54207
+		// Token: 0x0600D4D3 RID: 54483
 		string[] GetArgumentsForRelaunch();
 
-		// Token: 0x0600D3C0 RID: 54208
+		// Token: 0x0600D4D4 RID: 54484
 		void Update();
 
-		// Token: 0x0600D3C1 RID: 54209
+		// Token: 0x0600D4D5 RID: 54485
 		void LateUpdate();
 
-		// Token: 0x0600D3C2 RID: 54210
+		// Token: 0x0600D4D6 RID: 54486
 		void Destroy();
 
-		// Token: 0x17001A92 RID: 6802
-		// (get) Token: 0x0600D3C3 RID: 54211
+		// Token: 0x17001ADA RID: 6874
+		// (get) Token: 0x0600D4D7 RID: 54487
 		IPlatformApi Api { get; }
 
-		// Token: 0x17001A93 RID: 6803
-		// (get) Token: 0x0600D3C4 RID: 54212
+		// Token: 0x17001ADB RID: 6875
+		// (get) Token: 0x0600D4D8 RID: 54488
 		IUserClient User { get; }
 
-		// Token: 0x17001A94 RID: 6804
-		// (get) Token: 0x0600D3C5 RID: 54213
+		// Token: 0x17001ADC RID: 6876
+		// (get) Token: 0x0600D4D9 RID: 54489
 		IUserClient UserServer { get; }
 
-		// Token: 0x17001A95 RID: 6805
-		// (get) Token: 0x0600D3C6 RID: 54214
+		// Token: 0x17001ADD RID: 6877
+		// (get) Token: 0x0600D4DA RID: 54490
 		IAuthenticationClient AuthenticationClient { get; }
 
-		// Token: 0x17001A96 RID: 6806
-		// (get) Token: 0x0600D3C7 RID: 54215
+		// Token: 0x17001ADE RID: 6878
+		// (get) Token: 0x0600D4DB RID: 54491
 		IAuthenticationServer AuthenticationServer { get; }
 
-		// Token: 0x17001A97 RID: 6807
-		// (get) Token: 0x0600D3C8 RID: 54216
+		// Token: 0x17001ADF RID: 6879
+		// (get) Token: 0x0600D4DC RID: 54492
 		IList<IServerListInterface> ServerListInterfaces { get; }
 
-		// Token: 0x17001A98 RID: 6808
-		// (get) Token: 0x0600D3C9 RID: 54217
+		// Token: 0x17001AE0 RID: 6880
+		// (get) Token: 0x0600D4DD RID: 54493
 		IServerListInterface ServerLookupInterface { get; }
 
-		// Token: 0x17001A99 RID: 6809
-		// (get) Token: 0x0600D3CA RID: 54218
+		// Token: 0x17001AE1 RID: 6881
+		// (get) Token: 0x0600D4DE RID: 54494
 		IMasterServerAnnouncer ServerListAnnouncer { get; }
 
-		// Token: 0x17001A9A RID: 6810
-		// (get) Token: 0x0600D3CB RID: 54219
+		// Token: 0x17001AE2 RID: 6882
+		// (get) Token: 0x0600D4DF RID: 54495
 		IList<IJoinSessionGameInviteListener> InviteListeners { get; }
 
-		// Token: 0x17001A9B RID: 6811
-		// (get) Token: 0x0600D3CC RID: 54220
+		// Token: 0x17001AE3 RID: 6883
+		// (get) Token: 0x0600D4E0 RID: 54496
 		IMultiplayerInvitationDialog MultiplayerInvitationDialog { get; }
 
-		// Token: 0x17001A9C RID: 6812
-		// (get) Token: 0x0600D3CD RID: 54221
+		// Token: 0x17001AE4 RID: 6884
+		// (get) Token: 0x0600D4E1 RID: 54497
 		ILobbyHost LobbyHost { get; }
 
-		// Token: 0x17001A9D RID: 6813
-		// (get) Token: 0x0600D3CE RID: 54222
+		// Token: 0x17001AE5 RID: 6885
+		// (get) Token: 0x0600D4E2 RID: 54498
 		IPlayerInteractionsRecorder PlayerInteractionsRecorder { get; }
 
-		// Token: 0x17001A9E RID: 6814
-		// (get) Token: 0x0600D3CF RID: 54223
+		// Token: 0x17001AE6 RID: 6886
+		// (get) Token: 0x0600D4E3 RID: 54499
 		IGameplayNotifier GameplayNotifier { get; }
 
-		// Token: 0x17001A9F RID: 6815
-		// (get) Token: 0x0600D3D0 RID: 54224
+		// Token: 0x17001AE7 RID: 6887
+		// (get) Token: 0x0600D4E4 RID: 54500
 		IPartyVoice PartyVoice { get; }
 
-		// Token: 0x17001AA0 RID: 6816
-		// (get) Token: 0x0600D3D1 RID: 54225
+		// Token: 0x17001AE8 RID: 6888
+		// (get) Token: 0x0600D4E5 RID: 54501
 		IUtils Utils { get; }
 
-		// Token: 0x17001AA1 RID: 6817
-		// (get) Token: 0x0600D3D2 RID: 54226
+		// Token: 0x17001AE9 RID: 6889
+		// (get) Token: 0x0600D4E6 RID: 54502
 		IPlatformMemory Memory { get; }
 
-		// Token: 0x17001AA2 RID: 6818
-		// (get) Token: 0x0600D3D3 RID: 54227
+		// Token: 0x17001AEA RID: 6890
+		// (get) Token: 0x0600D4E7 RID: 54503
 		IAntiCheatClient AntiCheatClient { get; }
 
-		// Token: 0x17001AA3 RID: 6819
-		// (get) Token: 0x0600D3D4 RID: 54228
+		// Token: 0x17001AEB RID: 6891
+		// (get) Token: 0x0600D4E8 RID: 54504
 		IAntiCheatServer AntiCheatServer { get; }
 
-		// Token: 0x17001AA4 RID: 6820
-		// (get) Token: 0x0600D3D5 RID: 54229
+		// Token: 0x17001AEC RID: 6892
+		// (get) Token: 0x0600D4E9 RID: 54505
 		IUserIdentifierMappingService IdMappingService { get; }
 
-		// Token: 0x17001AA5 RID: 6821
-		// (get) Token: 0x0600D3D6 RID: 54230
+		// Token: 0x17001AED RID: 6893
+		// (get) Token: 0x0600D4EA RID: 54506
 		IUserDetailsService UserDetailsService { get; }
 
-		// Token: 0x17001AA6 RID: 6822
-		// (get) Token: 0x0600D3D7 RID: 54231
+		// Token: 0x17001AEE RID: 6894
+		// (get) Token: 0x0600D4EB RID: 54507
 		IPlayerReporting PlayerReporting { get; }
 
-		// Token: 0x17001AA7 RID: 6823
-		// (get) Token: 0x0600D3D8 RID: 54232
+		// Token: 0x17001AEF RID: 6895
+		// (get) Token: 0x0600D4EC RID: 54508
 		ITextCensor TextCensor { get; }
 
-		// Token: 0x17001AA8 RID: 6824
-		// (get) Token: 0x0600D3D9 RID: 54233
+		// Token: 0x17001AF0 RID: 6896
+		// (get) Token: 0x0600D4ED RID: 54509
 		IRemoteFileStorage RemoteFileStorage { get; }
 
-		// Token: 0x17001AA9 RID: 6825
-		// (get) Token: 0x0600D3DA RID: 54234
+		// Token: 0x17001AF1 RID: 6897
+		// (get) Token: 0x0600D4EE RID: 54510
 		IRemotePlayerFileStorage RemotePlayerFileStorage { get; }
 
-		// Token: 0x17001AAA RID: 6826
-		// (get) Token: 0x0600D3DB RID: 54235
+		// Token: 0x17001AF2 RID: 6898
+		// (get) Token: 0x0600D4EF RID: 54511
 		IList<IEntitlementValidator> EntitlementValidators { get; }
 
-		// Token: 0x17001AAB RID: 6827
-		// (get) Token: 0x0600D3DC RID: 54236
+		// Token: 0x17001AF3 RID: 6899
+		// (get) Token: 0x0600D4F0 RID: 54512
 		PlayerInputManager Input { get; }
 
-		// Token: 0x17001AAC RID: 6828
-		// (get) Token: 0x0600D3DD RID: 54237
+		// Token: 0x17001AF4 RID: 6900
+		// (get) Token: 0x0600D4F1 RID: 54513
 		IVirtualKeyboard VirtualKeyboard { get; }
 
-		// Token: 0x17001AAD RID: 6829
-		// (get) Token: 0x0600D3DE RID: 54238
+		// Token: 0x17001AF5 RID: 6901
+		// (get) Token: 0x0600D4F2 RID: 54514
 		IPlatformSaveGameProvider SaveGameProvider { get; }
 
-		// Token: 0x17001AAE RID: 6830
-		// (get) Token: 0x0600D3DF RID: 54239
+		// Token: 0x17001AF6 RID: 6902
+		// (get) Token: 0x0600D4F3 RID: 54515
 		IUserDataRoaming UserDataRoaming { get; }
 
-		// Token: 0x17001AAF RID: 6831
-		// (get) Token: 0x0600D3E0 RID: 54240
+		// Token: 0x17001AF7 RID: 6903
+		// (get) Token: 0x0600D4F4 RID: 54516
 		IAchievementManager AchievementManager { get; }
 
-		// Token: 0x17001AB0 RID: 6832
-		// (get) Token: 0x0600D3E1 RID: 54241
+		// Token: 0x17001AF8 RID: 6904
+		// (get) Token: 0x0600D4F5 RID: 54517
 		IRichPresence RichPresence { get; }
 
-		// Token: 0x17001AB1 RID: 6833
-		// (get) Token: 0x0600D3E2 RID: 54242
+		// Token: 0x17001AF9 RID: 6905
+		// (get) Token: 0x0600D4F6 RID: 54518
 		IApplicationStateController ApplicationState { get; }
 	}
 }

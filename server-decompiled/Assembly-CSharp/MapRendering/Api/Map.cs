@@ -7,11 +7,11 @@ using Webserver.WebAPI;
 
 namespace MapRendering.Api
 {
-	// Token: 0x02001AE3 RID: 6883
+	// Token: 0x02001B14 RID: 6932
 	[Preserve]
 	public class Map : AbsRestApi
 	{
-		// Token: 0x0600CF9C RID: 53148 RVA: 0x004B39BC File Offset: 0x004B1BBC
+		// Token: 0x0600D0B0 RID: 53424 RVA: 0x004B74B8 File Offset: 0x004B56B8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -27,7 +27,7 @@ namespace MapRendering.Api
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.NotImplemented, null, "INVALID_ID", null);
 		}
 
-		// Token: 0x0600CF9D RID: 53149 RVA: 0x004B3A10 File Offset: 0x004B1C10
+		// Token: 0x0600D0B1 RID: 53425 RVA: 0x004B750C File Offset: 0x004B570C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeConfig(ref JsonWriter writer)
 		{
@@ -46,31 +46,31 @@ namespace MapRendering.Api
 			writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CF9E RID: 53150 RVA: 0x004B3A95 File Offset: 0x004B1C95
+		// Token: 0x0600D0B2 RID: 53426 RVA: 0x004B7591 File Offset: 0x004B5791
 		public override int[] DefaultMethodPermissionLevels()
 		{
 			return new int[] { -2147483647, 2000, int.MinValue, int.MinValue, int.MinValue };
 		}
 
-		// Token: 0x0600CF9F RID: 53151 RVA: 0x004B3AA8 File Offset: 0x004B1CA8
+		// Token: 0x0600D0B3 RID: 53427 RVA: 0x004B75A4 File Offset: 0x004B57A4
 		public Map()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009CF9 RID: 40185
+		// Token: 0x04009DE2 RID: 40418
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyEnabled = JsonWriter.GetEncodedPropertyNameWithBeginObject("enabled");
 
-		// Token: 0x04009CFA RID: 40186
+		// Token: 0x04009DE3 RID: 40419
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyMapBlockSize = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("mapBlockSize");
 
-		// Token: 0x04009CFB RID: 40187
+		// Token: 0x04009DE4 RID: 40420
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyMaxZoom = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("maxZoom");
 
-		// Token: 0x04009CFC RID: 40188
+		// Token: 0x04009DE5 RID: 40421
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyMapSize = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("mapSize");
 	}

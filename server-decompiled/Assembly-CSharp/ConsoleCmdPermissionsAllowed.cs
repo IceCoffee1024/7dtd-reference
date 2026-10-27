@@ -7,12 +7,12 @@ using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000259 RID: 601
+// Token: 0x0200025B RID: 603
 [Preserve]
 public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 {
 	// Token: 0x170001C9 RID: 457
-	// (get) Token: 0x060011CA RID: 4554 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060011CE RID: 4558 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -22,7 +22,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001CA RID: 458
-	// (get) Token: 0x060011CB RID: 4555 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060011CF RID: 4559 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -31,21 +31,21 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011CC RID: 4556 RVA: 0x0006FC8B File Offset: 0x0006DE8B
+	// Token: 0x060011D0 RID: 4560 RVA: 0x0006FE5B File Offset: 0x0006E05B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "permissionsallowed", "pallowed", "pa" };
 	}
 
-	// Token: 0x060011CD RID: 4557 RVA: 0x0006FCAB File Offset: 0x0006DEAB
+	// Token: 0x060011D1 RID: 4561 RVA: 0x0006FE7B File Offset: 0x0006E07B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Apply a mask to permissions for testing purposes (respects the existing conditions though).";
 	}
 
-	// Token: 0x060011CE RID: 4558 RVA: 0x0006FCB4 File Offset: 0x0006DEB4
+	// Token: 0x060011D2 RID: 4562 RVA: 0x0006FE84 File Offset: 0x0006E084
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -59,7 +59,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		});
 	}
 
-	// Token: 0x060011CF RID: 4559 RVA: 0x0006FD20 File Offset: 0x0006DF20
+	// Token: 0x060011D3 RID: 4563 RVA: 0x0006FEF0 File Offset: 0x0006E0F0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		string[] array = _params.ToArray();
@@ -173,7 +173,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		Log.Warning(this.GetHelp());
 	}
 
-	// Token: 0x060011D0 RID: 4560 RVA: 0x0006FEC8 File Offset: 0x0006E0C8
+	// Token: 0x060011D4 RID: 4564 RVA: 0x00070098 File Offset: 0x0006E298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ExecuteInfo(ReadOnlySpan<string> parameters)
 	{
@@ -200,21 +200,21 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x060011D1 RID: 4561 RVA: 0x0006FFE0 File Offset: 0x0006E1E0
+	// Token: 0x060011D5 RID: 4565 RVA: 0x000701B0 File Offset: 0x0006E3B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EUserPerms MaskModifierGrant(EUserPerms previous, EUserPerms input)
 	{
 		return previous | input;
 	}
 
-	// Token: 0x060011D2 RID: 4562 RVA: 0x0006FFE5 File Offset: 0x0006E1E5
+	// Token: 0x060011D6 RID: 4566 RVA: 0x000701B5 File Offset: 0x0006E3B5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EUserPerms MaskModifierRevoke(EUserPerms previous, EUserPerms input)
 	{
 		return previous & ~input;
 	}
 
-	// Token: 0x060011D3 RID: 4563 RVA: 0x0006FFEB File Offset: 0x0006E1EB
+	// Token: 0x060011D7 RID: 4567 RVA: 0x000701BB File Offset: 0x0006E3BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConsoleCmdPermissionsAllowed.ExecuteSubCommand CreateExecuteMaskModifier(ConsoleCmdPermissionsAllowed.MaskModifier modifier)
 	{
@@ -223,7 +223,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		return new ConsoleCmdPermissionsAllowed.ExecuteSubCommand(CS$<>8__locals1.<CreateExecuteMaskModifier>g__ExecuteMaskModifier|0);
 	}
 
-	// Token: 0x060011D4 RID: 4564 RVA: 0x00070004 File Offset: 0x0006E204
+	// Token: 0x060011D8 RID: 4568 RVA: 0x000701D4 File Offset: 0x0006E3D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe bool ExecuteResolve(ReadOnlySpan<string> parameters)
 	{
@@ -246,7 +246,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x060011D5 RID: 4565 RVA: 0x0007005E File Offset: 0x0006E25E
+	// Token: 0x060011D9 RID: 4569 RVA: 0x0007022E File Offset: 0x0006E42E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator ResolveCoroutine(EUserPerms permissionsToResolve, bool shouldPrompt)
 	{
@@ -270,7 +270,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x060011D6 RID: 4566 RVA: 0x0007007C File Offset: 0x0006E27C
+	// Token: 0x060011DA RID: 4570 RVA: 0x0007024C File Offset: 0x0006E44C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryParseBoolean(string input, out bool result)
 	{
@@ -369,7 +369,7 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		return false;
 	}
 
-	// Token: 0x060011D7 RID: 4567 RVA: 0x000701A0 File Offset: 0x0006E3A0
+	// Token: 0x060011DB RID: 4571 RVA: 0x00070370 File Offset: 0x0006E570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryParsePermission(string input, out EUserPerms result)
 	{
@@ -402,25 +402,25 @@ public class ConsoleCmdPermissionsAllowed : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x04000CF3 RID: 3315
+	// Token: 0x04000CF4 RID: 3316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_resolveCoroutineRunning;
 
-	// Token: 0x04000CF4 RID: 3316
+	// Token: 0x04000CF5 RID: 3317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ConsoleCmdPermissionsAllowed.ExecuteSubCommand ExecuteGrant = ConsoleCmdPermissionsAllowed.CreateExecuteMaskModifier(new ConsoleCmdPermissionsAllowed.MaskModifier(ConsoleCmdPermissionsAllowed.MaskModifierGrant));
 
-	// Token: 0x04000CF5 RID: 3317
+	// Token: 0x04000CF6 RID: 3318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ConsoleCmdPermissionsAllowed.ExecuteSubCommand ExecuteRevoke = ConsoleCmdPermissionsAllowed.CreateExecuteMaskModifier(new ConsoleCmdPermissionsAllowed.MaskModifier(ConsoleCmdPermissionsAllowed.MaskModifierRevoke));
 
-	// Token: 0x0200025A RID: 602
-	// (Invoke) Token: 0x060011DB RID: 4571
+	// Token: 0x0200025C RID: 604
+	// (Invoke) Token: 0x060011DF RID: 4575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate bool ExecuteSubCommand(ReadOnlySpan<string> parameters);
 
-	// Token: 0x0200025B RID: 603
-	// (Invoke) Token: 0x060011DF RID: 4575
+	// Token: 0x0200025D RID: 605
+	// (Invoke) Token: 0x060011E3 RID: 4579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate EUserPerms MaskModifier(EUserPerms previous, EUserPerms input);
 }

@@ -5,10 +5,10 @@ using System.Text.RegularExpressions;
 using NCalc;
 using Unity.Profiling;
 
-// Token: 0x020010F6 RID: 4342
+// Token: 0x02001106 RID: 4358
 public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 {
-	// Token: 0x060089E5 RID: 35301 RVA: 0x0034B6F0 File Offset: 0x003498F0
+	// Token: 0x06008A39 RID: 35385 RVA: 0x0034D7A0 File Offset: 0x0034B9A0
 	public static bool IsFullNcalcBinding(string _input)
 	{
 		if (!BindingInfoNcalc.fullBinding.IsMatch(_input))
@@ -34,7 +34,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		return num <= 0;
 	}
 
-	// Token: 0x060089E6 RID: 35302 RVA: 0x0034B750 File Offset: 0x00349950
+	// Token: 0x06008A3A RID: 35386 RVA: 0x0034D800 File Offset: 0x0034BA00
 	public BindingInfoNcalc(IXUiElement _targetViewOrTween, string _attribute, string _sourceString)
 	{
 		this.targetViewOrTween = _targetViewOrTween;
@@ -150,7 +150,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		}
 	}
 
-	// Token: 0x060089E7 RID: 35303 RVA: 0x0034BAFC File Offset: 0x00349CFC
+	// Token: 0x06008A3B RID: 35387 RVA: 0x0034DBAC File Offset: 0x0034BDAC
 	public void RefreshValue()
 	{
 		if ((this.singleIdentifierBinding && this.variables.Count == 0) || (this.expression == null && !this.singleIdentifierBinding))
@@ -237,7 +237,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		}
 	}
 
-	// Token: 0x060089E8 RID: 35304 RVA: 0x0034BDE0 File Offset: 0x00349FE0
+	// Token: 0x06008A3C RID: 35388 RVA: 0x0034DE90 File Offset: 0x0034C090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object evaluateExpression()
 	{
@@ -263,7 +263,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		return obj;
 	}
 
-	// Token: 0x060089E9 RID: 35305 RVA: 0x0034BE5C File Offset: 0x0034A05C
+	// Token: 0x06008A3D RID: 35389 RVA: 0x0034DF0C File Offset: 0x0034C10C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void nCalcEvaluateParameter(string _name, ParameterArgs _args)
 	{
@@ -274,14 +274,14 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		}
 	}
 
-	// Token: 0x060089EA RID: 35306 RVA: 0x0034BE7B File Offset: 0x0034A07B
+	// Token: 0x06008A3E RID: 35390 RVA: 0x0034DF2B File Offset: 0x0034C12B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void nCalcEvaluateFunction(string _name, FunctionArgs _args, bool _ignoreCase)
 	{
 		BindingNcalcFunctions.EvaluateFunc(this, _name, _args);
 	}
 
-	// Token: 0x060089EB RID: 35307 RVA: 0x0034BE88 File Offset: 0x0034A088
+	// Token: 0x06008A3F RID: 35391 RVA: 0x0034DF38 File Offset: 0x0034C138
 	public bool FindParameter(string _name, out object _value)
 	{
 		if (this.expressionParamDict.TryGetValue(_name, out _value))
@@ -326,15 +326,15 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		return false;
 	}
 
-	// Token: 0x060089EC RID: 35308 RVA: 0x0034BF83 File Offset: 0x0034A183
+	// Token: 0x06008A40 RID: 35392 RVA: 0x0034E033 File Offset: 0x0034C233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string xuiHierarchy()
 	{
 		return this.targetViewOrTween.GetXuiHierarchy();
 	}
 
-	// Token: 0x17001028 RID: 4136
-	// (get) Token: 0x060089ED RID: 35309 RVA: 0x0034BF90 File Offset: 0x0034A190
+	// Token: 0x17001033 RID: 4147
+	// (get) Token: 0x06008A41 RID: 35393 RVA: 0x0034E040 File Offset: 0x0034C240
 	public string SourceText
 	{
 		get
@@ -343,8 +343,8 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		}
 	}
 
-	// Token: 0x17001029 RID: 4137
-	// (get) Token: 0x060089EE RID: 35310 RVA: 0x0034BF98 File Offset: 0x0034A198
+	// Token: 0x17001034 RID: 4148
+	// (get) Token: 0x06008A42 RID: 35394 RVA: 0x0034E048 File Offset: 0x0034C248
 	public IXUiElement TargetElement
 	{
 		get
@@ -353,24 +353,24 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		}
 	}
 
-	// Token: 0x1700102A RID: 4138
-	// (get) Token: 0x060089EF RID: 35311 RVA: 0x0034BFA0 File Offset: 0x0034A1A0
+	// Token: 0x17001035 RID: 4149
+	// (get) Token: 0x06008A43 RID: 35395 RVA: 0x0034E050 File Offset: 0x0034C250
 	public bool IsInitializing { get; }
 
-	// Token: 0x060089F0 RID: 35312 RVA: 0x0034BFA8 File Offset: 0x0034A1A8
+	// Token: 0x06008A44 RID: 35396 RVA: 0x0034E058 File Offset: 0x0034C258
 	public void SetIndeterministic()
 	{
 		this.usesIndeterministicFunctions = true;
 	}
 
-	// Token: 0x060089F1 RID: 35313 RVA: 0x0034BFB1 File Offset: 0x0034A1B1
+	// Token: 0x06008A45 RID: 35397 RVA: 0x0034E061 File Offset: 0x0034C261
 	public bool RegisterVariable(BindingInfoNcalc.VariableStateAbs _var)
 	{
 		this.variables.Add(_var);
 		return true;
 	}
 
-	// Token: 0x060089F3 RID: 35315 RVA: 0x0034BFEC File Offset: 0x0034A1EC
+	// Token: 0x06008A47 RID: 35399 RVA: 0x0034E09C File Offset: 0x0034C29C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <.ctor>g__BindToController|16_0()
@@ -389,107 +389,107 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 		}
 	}
 
-	// Token: 0x040066AD RID: 26285
+	// Token: 0x040066ED RID: 26349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IXUiElement targetViewOrTween;
 
-	// Token: 0x040066AE RID: 26286
+	// Token: 0x040066EE RID: 26350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string attributeName;
 
-	// Token: 0x040066AF RID: 26287
+	// Token: 0x040066EF RID: 26351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string sourceString;
 
-	// Token: 0x040066B0 RID: 26288
+	// Token: 0x040066F0 RID: 26352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IXUiElement targetParsingElement;
 
-	// Token: 0x040066B1 RID: 26289
+	// Token: 0x040066F1 RID: 26353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XuiParsingDelegate targetParsingDelegate;
 
-	// Token: 0x040066B2 RID: 26290
+	// Token: 0x040066F2 RID: 26354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<BindingInfoNcalc.VariableStateAbs> variables = new List<BindingInfoNcalc.VariableStateAbs>();
 
-	// Token: 0x040066B3 RID: 26291
+	// Token: 0x040066F3 RID: 26355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, object> expressionParamDict = new Dictionary<string, object>(StringComparer.Ordinal);
 
-	// Token: 0x040066B4 RID: 26292
+	// Token: 0x040066F4 RID: 26356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Expression expression;
 
-	// Token: 0x040066B5 RID: 26293
+	// Token: 0x040066F5 RID: 26357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool singleIdentifierBinding;
 
-	// Token: 0x040066B6 RID: 26294
+	// Token: 0x040066F6 RID: 26358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool usesIndeterministicFunctions;
 
-	// Token: 0x040066B7 RID: 26295
+	// Token: 0x040066F7 RID: 26359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int boundToControllers;
 
-	// Token: 0x040066B8 RID: 26296
+	// Token: 0x040066F8 RID: 26360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object currentValue;
 
-	// Token: 0x040066B9 RID: 26297
+	// Token: 0x040066F9 RID: 26361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex fullBinding = new Regex("^\\{%.*\\}$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
-	// Token: 0x040066BA RID: 26298
+	// Token: 0x040066FA RID: 26362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex singleIdentifierExpression = new Regex("^\\s*([a-zA-Z]\\w*)\\s*$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
-	// Token: 0x040066BB RID: 26299
+	// Token: 0x040066FB RID: 26363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmCtor = new ProfilerMarker("BindingInfoNcalc.ctor");
 
-	// Token: 0x040066BC RID: 26300
+	// Token: 0x040066FC RID: 26364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshValueComplete = new ProfilerMarker("BindingInfoNcalc.RefreshValue");
 
-	// Token: 0x040066BD RID: 26301
+	// Token: 0x040066FD RID: 26365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshValueCompleteSourceText;
 
-	// Token: 0x040066BE RID: 26302
+	// Token: 0x040066FE RID: 26366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshBindings = new ProfilerMarker("Refresh Bindings");
 
-	// Token: 0x040066BF RID: 26303
+	// Token: 0x040066FF RID: 26367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmNcalcEval = new ProfilerMarker("NCalc.Evaluate");
 
-	// Token: 0x040066C0 RID: 26304
+	// Token: 0x04006700 RID: 26368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmApplyAttribute = new ProfilerMarker("Apply Attribute");
 
-	// Token: 0x020010F7 RID: 4343
+	// Token: 0x02001107 RID: 4359
 	public abstract class VariableStateAbs
 	{
-		// Token: 0x1700102B RID: 4139
-		// (get) Token: 0x060089F4 RID: 35316
+		// Token: 0x17001036 RID: 4150
+		// (get) Token: 0x06008A48 RID: 35400
 		public abstract object CurrentValue { get; }
 
-		// Token: 0x060089F5 RID: 35317
+		// Token: 0x06008A49 RID: 35401
 		public abstract bool RefreshValue();
 
-		// Token: 0x060089F6 RID: 35318 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x06008A4A RID: 35402 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public VariableStateAbs()
 		{
 		}
 	}
 
-	// Token: 0x020010F8 RID: 4344
+	// Token: 0x02001108 RID: 4360
 	public abstract class VariableStateBinding : BindingInfoNcalc.VariableStateAbs
 	{
-		// Token: 0x060089F7 RID: 35319 RVA: 0x0034C046 File Offset: 0x0034A246
+		// Token: 0x06008A4B RID: 35403 RVA: 0x0034E0F6 File Offset: 0x0034C2F6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public VariableStateBinding(string _name, XUiController _controller, Dictionary<string, object> _expressionParamDict)
 		{
@@ -498,23 +498,23 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			this.ExpressionParamDict = _expressionParamDict;
 		}
 
-		// Token: 0x040066C2 RID: 26306
+		// Token: 0x04006702 RID: 26370
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly XUiController Controller;
 
-		// Token: 0x040066C3 RID: 26307
+		// Token: 0x04006703 RID: 26371
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly string BindingName;
 
-		// Token: 0x040066C4 RID: 26308
+		// Token: 0x04006704 RID: 26372
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly Dictionary<string, object> ExpressionParamDict;
 	}
 
-	// Token: 0x020010F9 RID: 4345
+	// Token: 0x02001109 RID: 4361
 	public class VariableStateParamBinding : BindingInfoNcalc.VariableStateBinding
 	{
-		// Token: 0x060089F8 RID: 35320 RVA: 0x0034C063 File Offset: 0x0034A263
+		// Token: 0x06008A4C RID: 35404 RVA: 0x0034E113 File Offset: 0x0034C313
 		public VariableStateParamBinding(string _name, XUiController _controller, object _initialValue, XuiBindingDelegate _bindingDelegate, Dictionary<string, object> _expressionParamDict)
 			: base(_name, _controller, _expressionParamDict)
 		{
@@ -523,7 +523,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			this.ExpressionParamDict[this.BindingName] = _initialValue;
 		}
 
-		// Token: 0x060089F9 RID: 35321 RVA: 0x0034C090 File Offset: 0x0034A290
+		// Token: 0x06008A4D RID: 35405 RVA: 0x0034E140 File Offset: 0x0034C340
 		public override bool RefreshValue()
 		{
 			object obj = this.bindingDelegate(this.Controller);
@@ -549,14 +549,14 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			return true;
 		}
 
-		// Token: 0x060089FA RID: 35322 RVA: 0x0034C130 File Offset: 0x0034A330
+		// Token: 0x06008A4E RID: 35406 RVA: 0x0034E1E0 File Offset: 0x0034C3E0
 		public override string ToString()
 		{
 			return string.Format("ParamBinding: {0}='{1}'", this.BindingName, this.currentValue);
 		}
 
-		// Token: 0x1700102C RID: 4140
-		// (get) Token: 0x060089FB RID: 35323 RVA: 0x0034C148 File Offset: 0x0034A348
+		// Token: 0x17001037 RID: 4151
+		// (get) Token: 0x06008A4F RID: 35407 RVA: 0x0034E1F8 File Offset: 0x0034C3F8
 		public override object CurrentValue
 		{
 			get
@@ -565,19 +565,19 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066C5 RID: 26309
+		// Token: 0x04006705 RID: 26373
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XuiBindingDelegate bindingDelegate;
 
-		// Token: 0x040066C6 RID: 26310
+		// Token: 0x04006706 RID: 26374
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object currentValue;
 	}
 
-	// Token: 0x020010FA RID: 4346
+	// Token: 0x0200110A RID: 4362
 	public class VariableStateLegacyBinding : BindingInfoNcalc.VariableStateBinding
 	{
-		// Token: 0x060089FC RID: 35324 RVA: 0x0034C150 File Offset: 0x0034A350
+		// Token: 0x06008A50 RID: 35408 RVA: 0x0034E200 File Offset: 0x0034C400
 		public VariableStateLegacyBinding(string _name, XUiController _controller, string _initialValue, Dictionary<string, object> _expressionParamDict)
 			: base(_name, _controller, _expressionParamDict)
 		{
@@ -585,7 +585,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			this.ExpressionParamDict[this.BindingName] = _initialValue;
 		}
 
-		// Token: 0x060089FD RID: 35325 RVA: 0x0034C178 File Offset: 0x0034A378
+		// Token: 0x06008A51 RID: 35409 RVA: 0x0034E228 File Offset: 0x0034C428
 		public override bool RefreshValue()
 		{
 			string text = "";
@@ -610,14 +610,14 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			return true;
 		}
 
-		// Token: 0x060089FE RID: 35326 RVA: 0x0034C20C File Offset: 0x0034A40C
+		// Token: 0x06008A52 RID: 35410 RVA: 0x0034E2BC File Offset: 0x0034C4BC
 		public override string ToString()
 		{
 			return string.Concat(new string[] { "LegacyBinding: ", this.BindingName, "='", this.currentValue, "'" });
 		}
 
-		// Token: 0x1700102D RID: 4141
-		// (get) Token: 0x060089FF RID: 35327 RVA: 0x0034C243 File Offset: 0x0034A443
+		// Token: 0x17001038 RID: 4152
+		// (get) Token: 0x06008A53 RID: 35411 RVA: 0x0034E2F3 File Offset: 0x0034C4F3
 		public override object CurrentValue
 		{
 			get
@@ -626,22 +626,22 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066C7 RID: 26311
+		// Token: 0x04006707 RID: 26375
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string currentValue;
 	}
 
-	// Token: 0x020010FB RID: 4347
+	// Token: 0x0200110B RID: 4363
 	public class VariableStateCVar : BindingInfoNcalc.VariableStateAbs
 	{
-		// Token: 0x06008A00 RID: 35328 RVA: 0x0034C24B File Offset: 0x0034A44B
+		// Token: 0x06008A54 RID: 35412 RVA: 0x0034E2FB File Offset: 0x0034C4FB
 		public VariableStateCVar(string _name)
 		{
 			this.cVarName = _name;
 			this.currentValue = 0f;
 		}
 
-		// Token: 0x06008A01 RID: 35329 RVA: 0x0034C268 File Offset: 0x0034A468
+		// Token: 0x06008A55 RID: 35413 RVA: 0x0034E318 File Offset: 0x0034C518
 		public override bool RefreshValue()
 		{
 			GameManager instance = GameManager.Instance;
@@ -664,14 +664,14 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			return true;
 		}
 
-		// Token: 0x06008A02 RID: 35330 RVA: 0x0034C2CA File Offset: 0x0034A4CA
+		// Token: 0x06008A56 RID: 35414 RVA: 0x0034E37A File Offset: 0x0034C57A
 		public override string ToString()
 		{
 			return string.Format("cVar: {0}={1}", this.cVarName, this.currentValue);
 		}
 
-		// Token: 0x1700102E RID: 4142
-		// (get) Token: 0x06008A03 RID: 35331 RVA: 0x0034C2E7 File Offset: 0x0034A4E7
+		// Token: 0x17001039 RID: 4153
+		// (get) Token: 0x06008A57 RID: 35415 RVA: 0x0034E397 File Offset: 0x0034C597
 		public override object CurrentValue
 		{
 			get
@@ -680,39 +680,39 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066C8 RID: 26312
+		// Token: 0x04006708 RID: 26376
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string cVarName;
 
-		// Token: 0x040066C9 RID: 26313
+		// Token: 0x04006709 RID: 26377
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float currentValue;
 	}
 
-	// Token: 0x020010FC RID: 4348
+	// Token: 0x0200110C RID: 4364
 	public abstract class VariableStateSimpleLookupAbs : BindingInfoNcalc.VariableStateAbs
 	{
-		// Token: 0x06008A04 RID: 35332
+		// Token: 0x06008A58 RID: 35416
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract object getCurrentValue();
 
-		// Token: 0x1700102F RID: 4143
-		// (get) Token: 0x06008A05 RID: 35333
+		// Token: 0x1700103A RID: 4154
+		// (get) Token: 0x06008A59 RID: 35417
 		public abstract string VarType
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x17001030 RID: 4144
-		// (get) Token: 0x06008A06 RID: 35334
+		// Token: 0x1700103B RID: 4155
+		// (get) Token: 0x06008A5A RID: 35418
 		public abstract string VarName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x06008A07 RID: 35335 RVA: 0x0034C2F4 File Offset: 0x0034A4F4
+		// Token: 0x06008A5B RID: 35419 RVA: 0x0034E3A4 File Offset: 0x0034C5A4
 		public override bool RefreshValue()
 		{
 			object obj = this.getCurrentValue();
@@ -729,14 +729,14 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			return true;
 		}
 
-		// Token: 0x06008A08 RID: 35336 RVA: 0x0034C35F File Offset: 0x0034A55F
+		// Token: 0x06008A5C RID: 35420 RVA: 0x0034E40F File Offset: 0x0034C60F
 		public override string ToString()
 		{
 			return string.Format("{0}: {1}={2}", this.VarType, this.VarName, this.currentValue);
 		}
 
-		// Token: 0x17001031 RID: 4145
-		// (get) Token: 0x06008A09 RID: 35337 RVA: 0x0034C37D File Offset: 0x0034A57D
+		// Token: 0x1700103C RID: 4156
+		// (get) Token: 0x06008A5D RID: 35421 RVA: 0x0034E42D File Offset: 0x0034C62D
 		public override object CurrentValue
 		{
 			get
@@ -745,36 +745,36 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x06008A0A RID: 35338 RVA: 0x0034C385 File Offset: 0x0034A585
+		// Token: 0x06008A5E RID: 35422 RVA: 0x0034E435 File Offset: 0x0034C635
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public VariableStateSimpleLookupAbs()
 		{
 		}
 
-		// Token: 0x040066CA RID: 26314
+		// Token: 0x0400670A RID: 26378
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public object currentValue;
 	}
 
-	// Token: 0x020010FD RID: 4349
+	// Token: 0x0200110D RID: 4365
 	public class VariableStateGamePref : BindingInfoNcalc.VariableStateSimpleLookupAbs
 	{
-		// Token: 0x06008A0B RID: 35339 RVA: 0x0034C38D File Offset: 0x0034A58D
+		// Token: 0x06008A5F RID: 35423 RVA: 0x0034E43D File Offset: 0x0034C63D
 		public VariableStateGamePref(EnumGamePrefs _pref)
 		{
 			this.pref = _pref;
 			this.currentValue = this.getCurrentValue();
 		}
 
-		// Token: 0x06008A0C RID: 35340 RVA: 0x0034C3A8 File Offset: 0x0034A5A8
+		// Token: 0x06008A60 RID: 35424 RVA: 0x0034E458 File Offset: 0x0034C658
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object getCurrentValue()
 		{
 			return GamePrefs.GetObject(this.pref);
 		}
 
-		// Token: 0x17001032 RID: 4146
-		// (get) Token: 0x06008A0D RID: 35341 RVA: 0x0034C3B5 File Offset: 0x0034A5B5
+		// Token: 0x1700103D RID: 4157
+		// (get) Token: 0x06008A61 RID: 35425 RVA: 0x0034E465 File Offset: 0x0034C665
 		public override string VarType
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -784,8 +784,8 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x17001033 RID: 4147
-		// (get) Token: 0x06008A0E RID: 35342 RVA: 0x0034C3BC File Offset: 0x0034A5BC
+		// Token: 0x1700103E RID: 4158
+		// (get) Token: 0x06008A62 RID: 35426 RVA: 0x0034E46C File Offset: 0x0034C66C
 		public override string VarName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -795,30 +795,30 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066CB RID: 26315
+		// Token: 0x0400670B RID: 26379
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EnumGamePrefs pref;
 	}
 
-	// Token: 0x020010FE RID: 4350
+	// Token: 0x0200110E RID: 4366
 	public class VariableStateGameStat : BindingInfoNcalc.VariableStateSimpleLookupAbs
 	{
-		// Token: 0x06008A0F RID: 35343 RVA: 0x0034C3C9 File Offset: 0x0034A5C9
+		// Token: 0x06008A63 RID: 35427 RVA: 0x0034E479 File Offset: 0x0034C679
 		public VariableStateGameStat(EnumGameStats _stat)
 		{
 			this.stat = _stat;
 			this.currentValue = this.getCurrentValue();
 		}
 
-		// Token: 0x06008A10 RID: 35344 RVA: 0x0034C3E4 File Offset: 0x0034A5E4
+		// Token: 0x06008A64 RID: 35428 RVA: 0x0034E494 File Offset: 0x0034C694
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object getCurrentValue()
 		{
 			return GameStats.GetObject(this.stat);
 		}
 
-		// Token: 0x17001034 RID: 4148
-		// (get) Token: 0x06008A11 RID: 35345 RVA: 0x0034C3F1 File Offset: 0x0034A5F1
+		// Token: 0x1700103F RID: 4159
+		// (get) Token: 0x06008A65 RID: 35429 RVA: 0x0034E4A1 File Offset: 0x0034C6A1
 		public override string VarType
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -828,8 +828,8 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x17001035 RID: 4149
-		// (get) Token: 0x06008A12 RID: 35346 RVA: 0x0034C3F8 File Offset: 0x0034A5F8
+		// Token: 0x17001040 RID: 4160
+		// (get) Token: 0x06008A66 RID: 35430 RVA: 0x0034E4A8 File Offset: 0x0034C6A8
 		public override string VarName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -839,30 +839,30 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066CC RID: 26316
+		// Token: 0x0400670C RID: 26380
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EnumGameStats stat;
 	}
 
-	// Token: 0x020010FF RID: 4351
+	// Token: 0x0200110F RID: 4367
 	public class VariableStateGameInfoInt : BindingInfoNcalc.VariableStateSimpleLookupAbs
 	{
-		// Token: 0x06008A13 RID: 35347 RVA: 0x0034C405 File Offset: 0x0034A605
+		// Token: 0x06008A67 RID: 35431 RVA: 0x0034E4B5 File Offset: 0x0034C6B5
 		public VariableStateGameInfoInt(GameInfoInt _name)
 		{
 			this.name = _name;
 			this.currentValue = this.getCurrentValue();
 		}
 
-		// Token: 0x06008A14 RID: 35348 RVA: 0x0034C420 File Offset: 0x0034A620
+		// Token: 0x06008A68 RID: 35432 RVA: 0x0034E4D0 File Offset: 0x0034C6D0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object getCurrentValue()
 		{
 			return (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo : SingletonMonoBehaviour<ConnectionManager>.Instance.LastGameServerInfo).GetValue(this.name);
 		}
 
-		// Token: 0x17001036 RID: 4150
-		// (get) Token: 0x06008A15 RID: 35349 RVA: 0x0034C454 File Offset: 0x0034A654
+		// Token: 0x17001041 RID: 4161
+		// (get) Token: 0x06008A69 RID: 35433 RVA: 0x0034E504 File Offset: 0x0034C704
 		public override string VarType
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -872,8 +872,8 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x17001037 RID: 4151
-		// (get) Token: 0x06008A16 RID: 35350 RVA: 0x0034C45B File Offset: 0x0034A65B
+		// Token: 0x17001042 RID: 4162
+		// (get) Token: 0x06008A6A RID: 35434 RVA: 0x0034E50B File Offset: 0x0034C70B
 		public override string VarName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -883,30 +883,30 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066CD RID: 26317
+		// Token: 0x0400670D RID: 26381
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly GameInfoInt name;
 	}
 
-	// Token: 0x02001100 RID: 4352
+	// Token: 0x02001110 RID: 4368
 	public class VariableStateGameInfoBool : BindingInfoNcalc.VariableStateSimpleLookupAbs
 	{
-		// Token: 0x06008A17 RID: 35351 RVA: 0x0034C468 File Offset: 0x0034A668
+		// Token: 0x06008A6B RID: 35435 RVA: 0x0034E518 File Offset: 0x0034C718
 		public VariableStateGameInfoBool(GameInfoBool _name)
 		{
 			this.name = _name;
 			this.currentValue = this.getCurrentValue();
 		}
 
-		// Token: 0x06008A18 RID: 35352 RVA: 0x0034C483 File Offset: 0x0034A683
+		// Token: 0x06008A6C RID: 35436 RVA: 0x0034E533 File Offset: 0x0034C733
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object getCurrentValue()
 		{
 			return (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo : SingletonMonoBehaviour<ConnectionManager>.Instance.LastGameServerInfo).GetValue(this.name);
 		}
 
-		// Token: 0x17001038 RID: 4152
-		// (get) Token: 0x06008A19 RID: 35353 RVA: 0x0034C4B7 File Offset: 0x0034A6B7
+		// Token: 0x17001043 RID: 4163
+		// (get) Token: 0x06008A6D RID: 35437 RVA: 0x0034E567 File Offset: 0x0034C767
 		public override string VarType
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -916,8 +916,8 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x17001039 RID: 4153
-		// (get) Token: 0x06008A1A RID: 35354 RVA: 0x0034C4BE File Offset: 0x0034A6BE
+		// Token: 0x17001044 RID: 4164
+		// (get) Token: 0x06008A6E RID: 35438 RVA: 0x0034E56E File Offset: 0x0034C76E
 		public override string VarName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -927,30 +927,30 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066CE RID: 26318
+		// Token: 0x0400670E RID: 26382
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly GameInfoBool name;
 	}
 
-	// Token: 0x02001101 RID: 4353
+	// Token: 0x02001111 RID: 4369
 	public class VariableStateGameInfoString : BindingInfoNcalc.VariableStateSimpleLookupAbs
 	{
-		// Token: 0x06008A1B RID: 35355 RVA: 0x0034C4CB File Offset: 0x0034A6CB
+		// Token: 0x06008A6F RID: 35439 RVA: 0x0034E57B File Offset: 0x0034C77B
 		public VariableStateGameInfoString(GameInfoString _name)
 		{
 			this.name = _name;
 			this.currentValue = this.getCurrentValue();
 		}
 
-		// Token: 0x06008A1C RID: 35356 RVA: 0x0034C4E6 File Offset: 0x0034A6E6
+		// Token: 0x06008A70 RID: 35440 RVA: 0x0034E596 File Offset: 0x0034C796
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object getCurrentValue()
 		{
 			return (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo : SingletonMonoBehaviour<ConnectionManager>.Instance.LastGameServerInfo).GetValue(this.name);
 		}
 
-		// Token: 0x1700103A RID: 4154
-		// (get) Token: 0x06008A1D RID: 35357 RVA: 0x0034C515 File Offset: 0x0034A715
+		// Token: 0x17001045 RID: 4165
+		// (get) Token: 0x06008A71 RID: 35441 RVA: 0x0034E5C5 File Offset: 0x0034C7C5
 		public override string VarType
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -960,8 +960,8 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x1700103B RID: 4155
-		// (get) Token: 0x06008A1E RID: 35358 RVA: 0x0034C51C File Offset: 0x0034A71C
+		// Token: 0x17001046 RID: 4166
+		// (get) Token: 0x06008A72 RID: 35442 RVA: 0x0034E5CC File Offset: 0x0034C7CC
 		public override string VarName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -971,7 +971,7 @@ public class BindingInfoNcalc : IBindingInstance, IBindingNcalc
 			}
 		}
 
-		// Token: 0x040066CF RID: 26319
+		// Token: 0x0400670F RID: 26383
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly GameInfoString name;
 	}

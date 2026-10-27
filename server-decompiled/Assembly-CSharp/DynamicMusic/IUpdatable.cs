@@ -2,10 +2,10 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001AB4 RID: 6836
+	// Token: 0x02001AE5 RID: 6885
 	public interface IUpdatable
 	{
-		// Token: 0x0600CE5F RID: 52831
+		// Token: 0x0600CF73 RID: 53107
 		void Update();
 	}
 }

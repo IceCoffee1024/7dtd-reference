@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200087D RID: 2173
+// Token: 0x02000887 RID: 2183
 [Preserve]
 public class NetPackageWorldInitInfo : NetPackage
 {
-	// Token: 0x170006B7 RID: 1719
-	// (get) Token: 0x06003EE0 RID: 16096 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x170006BD RID: 1725
+	// (get) Token: 0x06003F03 RID: 16131 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003EE1 RID: 16097 RVA: 0x0018DDB4 File Offset: 0x0018BFB4
+	// Token: 0x06003F04 RID: 16132 RVA: 0x0018EE5C File Offset: 0x0018D05C
 	public NetPackageWorldInitInfo Setup(List<PrefabInstance.Serializable> _eventPrefabs, List<ValueTuple<int, WallVolume>> _wallVolumes)
 	{
 		this.eventPrefabs = _eventPrefabs;
@@ -29,7 +29,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003EE2 RID: 16098 RVA: 0x0018DE3C File Offset: 0x0018C03C
+	// Token: 0x06003F05 RID: 16133 RVA: 0x0018EEE4 File Offset: 0x0018D0E4
 	public override void read(PooledBinaryReader _br)
 	{
 		if (this.eventPrefabs == null)
@@ -54,7 +54,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003EE3 RID: 16099 RVA: 0x0018DED8 File Offset: 0x0018C0D8
+	// Token: 0x06003F06 RID: 16134 RVA: 0x0018EF80 File Offset: 0x0018D180
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -73,7 +73,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003EE4 RID: 16100 RVA: 0x0018DFA8 File Offset: 0x0018C1A8
+	// Token: 0x06003F07 RID: 16135 RVA: 0x0018F050 File Offset: 0x0018D250
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -100,15 +100,15 @@ public class NetPackageWorldInitInfo : NetPackage
 		_callbacks.worldInitInfoReceived = true;
 	}
 
-	// Token: 0x04003324 RID: 13092
+	// Token: 0x04003344 RID: 13124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance.Serializable> eventPrefabs;
 
-	// Token: 0x04003325 RID: 13093
+	// Token: 0x04003345 RID: 13125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ValueTuple<int, WallVolume>> wallVolumes;
 
-	// Token: 0x04003326 RID: 13094
+	// Token: 0x04003346 RID: 13126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dataLength;
 }

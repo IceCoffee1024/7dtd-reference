@@ -3,12 +3,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E1F RID: 3615
+// Token: 0x02000E2A RID: 3626
 [Preserve]
 public class XUiC_LoginBase : XUiController
 {
-	// Token: 0x17000C63 RID: 3171
-	// (get) Token: 0x06006E5D RID: 28253 RVA: 0x002AFCA4 File Offset: 0x002ADEA4
+	// Token: 0x17000C69 RID: 3177
+	// (get) Token: 0x06006E82 RID: 28290 RVA: 0x002B1210 File Offset: 0x002AF410
 	public virtual string MsgTitleKey
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -18,8 +18,8 @@ public class XUiC_LoginBase : XUiController
 		}
 	}
 
-	// Token: 0x17000C64 RID: 3172
-	// (get) Token: 0x06006E5E RID: 28254 RVA: 0x002AFCAB File Offset: 0x002ADEAB
+	// Token: 0x17000C6A RID: 3178
+	// (get) Token: 0x06006E83 RID: 28291 RVA: 0x002B1217 File Offset: 0x002AF417
 	[XuiXmlBinding("title")]
 	public string MsgTitle
 	{
@@ -34,8 +34,8 @@ public class XUiC_LoginBase : XUiController
 		}
 	}
 
-	// Token: 0x17000C65 RID: 3173
-	// (get) Token: 0x06006E5F RID: 28255 RVA: 0x002AFCD8 File Offset: 0x002ADED8
+	// Token: 0x17000C6B RID: 3179
+	// (get) Token: 0x06006E84 RID: 28292 RVA: 0x002B1244 File Offset: 0x002AF444
 	[XuiXmlBinding("caption")]
 	public string MsgCaption
 	{
@@ -50,8 +50,8 @@ public class XUiC_LoginBase : XUiController
 		}
 	}
 
-	// Token: 0x17000C66 RID: 3174
-	// (get) Token: 0x06006E60 RID: 28256 RVA: 0x002AFD04 File Offset: 0x002ADF04
+	// Token: 0x17000C6C RID: 3180
+	// (get) Token: 0x06006E85 RID: 28293 RVA: 0x002B1270 File Offset: 0x002AF470
 	[XuiXmlBinding("reason")]
 	public string MsgReason
 	{
@@ -66,14 +66,14 @@ public class XUiC_LoginBase : XUiController
 		}
 	}
 
-	// Token: 0x06006E61 RID: 28257 RVA: 0x002AFD51 File Offset: 0x002ADF51
+	// Token: 0x06006E86 RID: 28294 RVA: 0x002B12BD File Offset: 0x002AF4BD
 	public override void Init()
 	{
 		base.Init();
 		XUiC_LoginBase.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006E62 RID: 28258 RVA: 0x002AFD6C File Offset: 0x002ADF6C
+	// Token: 0x06006E87 RID: 28295 RVA: 0x002B12D8 File Offset: 0x002AF4D8
 	[XuiBindEvent("OnPress", "btnRetry")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRetry_OnPressed(XUiController _sender, int _mouseButton)
@@ -91,7 +91,7 @@ public class XUiC_LoginBase : XUiController
 		PlatformManager.MultiPlatform.User.Login(new LoginUserCallback(this.updateState));
 	}
 
-	// Token: 0x06006E63 RID: 28259 RVA: 0x002AFE10 File Offset: 0x002AE010
+	// Token: 0x06006E88 RID: 28296 RVA: 0x002B137C File Offset: 0x002AF57C
 	[XuiBindEvent("OnPress", "btnOffline")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOffline_OnPressed(XUiController _sender, int _mouseButton)
@@ -108,7 +108,7 @@ public class XUiC_LoginBase : XUiController
 		PlatformManager.MultiPlatform.User.PlayOffline(new LoginUserCallback(this.updateState));
 	}
 
-	// Token: 0x06006E64 RID: 28260 RVA: 0x0007E9FB File Offset: 0x0007CBFB
+	// Token: 0x06006E89 RID: 28297 RVA: 0x0007EBCB File Offset: 0x0007CDCB
 	[XuiBindEvent("OnPress", "btnExit")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnExit_OnPressed(XUiController _sender, int _mouseButton)
@@ -116,7 +116,7 @@ public class XUiC_LoginBase : XUiController
 		Application.Quit();
 	}
 
-	// Token: 0x06006E65 RID: 28261 RVA: 0x002AFE88 File Offset: 0x002AE088
+	// Token: 0x06006E8A RID: 28298 RVA: 0x002B13F4 File Offset: 0x002AF5F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateState(IPlatform _platform, EApiStatusReason _statusReason, string _statusReasonAdditionalText)
 	{
@@ -144,7 +144,7 @@ public class XUiC_LoginBase : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006E66 RID: 28262 RVA: 0x002AFF7D File Offset: 0x002AE17D
+	// Token: 0x06006E8B RID: 28299 RVA: 0x002B14E9 File Offset: 0x002AF6E9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Open(XUi _xuiInstance, IPlatform _platform, EApiStatusReason _statusReason, string _statusReasonAdditionalText, Action _onLoginComplete)
 	{
@@ -153,7 +153,7 @@ public class XUiC_LoginBase : XUiController
 		childByType.updateState(_platform, _statusReason, _statusReasonAdditionalText);
 	}
 
-	// Token: 0x06006E67 RID: 28263 RVA: 0x002AFFA0 File Offset: 0x002AE1A0
+	// Token: 0x06006E8C RID: 28300 RVA: 0x002B150C File Offset: 0x002AF70C
 	public static void Login(XUi _xuiInstance, Action _onLoginComplete)
 	{
 		_xuiInstance.playerUI.nguiWindowManager.SetLabelText(EnumNGUIWindow.Loading, Localization.Get("xuiSteamLoginProgressSignIn", false, null) + "...", false);
@@ -173,42 +173,42 @@ public class XUiC_LoginBase : XUiController
 		});
 	}
 
-	// Token: 0x04005422 RID: 21538
+	// Token: 0x04005447 RID: 21575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string ID = "";
 
-	// Token: 0x04005423 RID: 21539
+	// Token: 0x04005448 RID: 21576
 	[XuiBindComponent("btnRetry", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnRetry;
 
-	// Token: 0x04005424 RID: 21540
+	// Token: 0x04005449 RID: 21577
 	[XuiBindComponent("btnOffline", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnOffline;
 
-	// Token: 0x04005425 RID: 21541
+	// Token: 0x0400544A RID: 21578
 	[XuiBindComponent("btnExit", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnExit;
 
-	// Token: 0x04005426 RID: 21542
+	// Token: 0x0400544B RID: 21579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IPlatform offendingPlatform;
 
-	// Token: 0x04005427 RID: 21543
+	// Token: 0x0400544C RID: 21580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EApiStatusReason statusReason;
 
-	// Token: 0x04005428 RID: 21544
+	// Token: 0x0400544D RID: 21581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statusReasonAdditionalText;
 
-	// Token: 0x04005429 RID: 21545
+	// Token: 0x0400544E RID: 21582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wantOffline;
 
-	// Token: 0x0400542A RID: 21546
+	// Token: 0x0400544F RID: 21583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onLoginComplete;
 }

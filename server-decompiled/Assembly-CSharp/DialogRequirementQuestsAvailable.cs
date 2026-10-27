@@ -2,12 +2,12 @@
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x020002FB RID: 763
+// Token: 0x020002FD RID: 765
 [Preserve]
 public class DialogRequirementQuestsAvailable : BaseDialogRequirement
 {
 	// Token: 0x1700026B RID: 619
-	// (get) Token: 0x060015AE RID: 5550 RVA: 0x0002F260 File Offset: 0x0002D460
+	// (get) Token: 0x060015B2 RID: 5554 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -16,13 +16,13 @@ public class DialogRequirementQuestsAvailable : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x060015AF RID: 5551 RVA: 0x0003223F File Offset: 0x0003043F
+	// Token: 0x060015B3 RID: 5555 RVA: 0x000321FF File Offset: 0x000303FF
 	public override string GetRequiredDescription(EntityPlayer player)
 	{
 		return "";
 	}
 
-	// Token: 0x060015B0 RID: 5552 RVA: 0x0008158C File Offset: 0x0007F78C
+	// Token: 0x060015B4 RID: 5556 RVA: 0x000817B0 File Offset: 0x0007F9B0
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(GameManager.Instance.World.GetPrimaryPlayer());
@@ -47,7 +47,7 @@ public class DialogRequirementQuestsAvailable : BaseDialogRequirement
 		return flag;
 	}
 
-	// Token: 0x04000E8F RID: 3727
+	// Token: 0x04000E9F RID: 3743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> introtag = FastTags<TagGroup.Global>.Parse("introquest");
 }

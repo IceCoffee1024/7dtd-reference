@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C7F RID: 3199
+// Token: 0x02000C8A RID: 3210
 public class TileEntityLight : TileEntity
 {
-	// Token: 0x06006127 RID: 24871 RVA: 0x002698EC File Offset: 0x00267AEC
+	// Token: 0x0600614C RID: 24908 RVA: 0x0026AE14 File Offset: 0x00269014
 	public TileEntityLight(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x06006128 RID: 24872 RVA: 0x00269949 File Offset: 0x00267B49
+	// Token: 0x0600614D RID: 24909 RVA: 0x0026AE71 File Offset: 0x00269071
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Light;
 	}
 
-	// Token: 0x06006129 RID: 24873 RVA: 0x00269950 File Offset: 0x00267B50
+	// Token: 0x0600614E RID: 24910 RVA: 0x0026AE78 File Offset: 0x00269078
 	public override TileEntity Clone()
 	{
 		return new TileEntityLight(this.chunk)
@@ -34,7 +34,7 @@ public class TileEntityLight : TileEntity
 		};
 	}
 
-	// Token: 0x0600612A RID: 24874 RVA: 0x002699E0 File Offset: 0x00267BE0
+	// Token: 0x0600614F RID: 24911 RVA: 0x0026AF08 File Offset: 0x00269108
 	public override void CopyFrom(TileEntity _other)
 	{
 		TileEntityLight tileEntityLight = (TileEntityLight)_other;
@@ -50,7 +50,7 @@ public class TileEntityLight : TileEntity
 		this.Delay = tileEntityLight.Delay;
 	}
 
-	// Token: 0x0600612B RID: 24875 RVA: 0x00269A6C File Offset: 0x00267C6C
+	// Token: 0x06006150 RID: 24912 RVA: 0x0026AF94 File Offset: 0x00269194
 	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -90,7 +90,7 @@ public class TileEntityLight : TileEntity
 		}
 	}
 
-	// Token: 0x0600612C RID: 24876 RVA: 0x00269B20 File Offset: 0x00267D20
+	// Token: 0x06006151 RID: 24913 RVA: 0x0026B048 File Offset: 0x00269248
 	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -109,34 +109,34 @@ public class TileEntityLight : TileEntity
 		_bw.Write(this.Delay);
 	}
 
-	// Token: 0x04004C49 RID: 19529
+	// Token: 0x04004C6E RID: 19566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C4A RID: 19530
+	// Token: 0x04004C6F RID: 19567
 	public LightType LightType = LightType.Point;
 
-	// Token: 0x04004C4B RID: 19531
+	// Token: 0x04004C70 RID: 19568
 	public LightShadows LightShadows;
 
-	// Token: 0x04004C4C RID: 19532
+	// Token: 0x04004C71 RID: 19569
 	public float LightIntensity = 1f;
 
-	// Token: 0x04004C4D RID: 19533
+	// Token: 0x04004C72 RID: 19570
 	public float LightRange = 10f;
 
-	// Token: 0x04004C4E RID: 19534
+	// Token: 0x04004C73 RID: 19571
 	public float LightAngle = 45f;
 
-	// Token: 0x04004C4F RID: 19535
+	// Token: 0x04004C74 RID: 19572
 	public Color LightColor = Color.white;
 
-	// Token: 0x04004C50 RID: 19536
+	// Token: 0x04004C75 RID: 19573
 	public LightStateType LightState;
 
-	// Token: 0x04004C51 RID: 19537
+	// Token: 0x04004C76 RID: 19574
 	public float Rate = 1f;
 
-	// Token: 0x04004C52 RID: 19538
+	// Token: 0x04004C77 RID: 19575
 	public float Delay = 1f;
 }

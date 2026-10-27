@@ -3,11 +3,11 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A68 RID: 6760
+	// Token: 0x02001A99 RID: 6809
 	public class LayerState : ICountable
 	{
-		// Token: 0x1700198B RID: 6539
-		// (get) Token: 0x0600CD22 RID: 52514 RVA: 0x00020119 File Offset: 0x0001E319
+		// Token: 0x170019D3 RID: 6611
+		// (get) Token: 0x0600CE36 RID: 52790 RVA: 0x00020119 File Offset: 0x0001E319
 		public int Count
 		{
 			get
@@ -16,13 +16,13 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CD23 RID: 52515 RVA: 0x004ABF0B File Offset: 0x004AA10B
+		// Token: 0x0600CE37 RID: 52791 RVA: 0x004AFA07 File Offset: 0x004ADC07
 		public LayerState(Func<float, LayerStateType> _getFunc)
 		{
 			this.Get = _getFunc;
 		}
 
-		// Token: 0x04009BB5 RID: 39861
+		// Token: 0x04009C9E RID: 40094
 		public readonly Func<float, LayerStateType> Get;
 	}
 }

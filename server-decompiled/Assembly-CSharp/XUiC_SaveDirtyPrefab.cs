@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001029 RID: 4137
+// Token: 0x02001039 RID: 4153
 [Preserve]
 public class XUiC_SaveDirtyPrefab : XUiController
 {
-	// Token: 0x0600826C RID: 33388 RVA: 0x0031ABF8 File Offset: 0x00318DF8
+	// Token: 0x060082BE RID: 33470 RVA: 0x0031C8FC File Offset: 0x0031AAFC
 	public override void Init()
 	{
 		base.Init();
@@ -19,7 +19,7 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		this.txtSaveName.OnChangeHandler += this.TxtSaveNameOnOnChangeHandler;
 	}
 
-	// Token: 0x0600826D RID: 33389 RVA: 0x0031ACAC File Offset: 0x00318EAC
+	// Token: 0x060082BF RID: 33471 RVA: 0x0031C9B0 File Offset: 0x0031ABB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtSaveNameOnOnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -36,28 +36,28 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600826E RID: 33390 RVA: 0x0031AD1F File Offset: 0x00318F1F
+	// Token: 0x060082C0 RID: 33472 RVA: 0x0031CA23 File Offset: 0x0031AC23
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.CloseWith(XUiC_SaveDirtyPrefab.ESelectedAction.Save);
 	}
 
-	// Token: 0x0600826F RID: 33391 RVA: 0x0031AD28 File Offset: 0x00318F28
+	// Token: 0x060082C1 RID: 33473 RVA: 0x0031CA2C File Offset: 0x0031AC2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.CloseWith(XUiC_SaveDirtyPrefab.ESelectedAction.Cancel);
 	}
 
-	// Token: 0x06008270 RID: 33392 RVA: 0x0031AD31 File Offset: 0x00318F31
+	// Token: 0x060082C2 RID: 33474 RVA: 0x0031CA35 File Offset: 0x0031AC35
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDontSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.CloseWith(XUiC_SaveDirtyPrefab.ESelectedAction.DontSave);
 	}
 
-	// Token: 0x06008271 RID: 33393 RVA: 0x0031AD3C File Offset: 0x00318F3C
+	// Token: 0x060082C3 RID: 33475 RVA: 0x0031CA40 File Offset: 0x0031AC40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CloseWith(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -82,7 +82,7 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		ThreadManager.StartCoroutine(this.delayCallback(_action));
 	}
 
-	// Token: 0x06008272 RID: 33394 RVA: 0x0031AE17 File Offset: 0x00319017
+	// Token: 0x060082C4 RID: 33476 RVA: 0x0031CB1B File Offset: 0x0031AD1B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator delayCallback(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -95,7 +95,7 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		yield break;
 	}
 
-	// Token: 0x06008273 RID: 33395 RVA: 0x0031AE2D File Offset: 0x0031902D
+	// Token: 0x060082C5 RID: 33477 RVA: 0x0031CB31 File Offset: 0x0031AD31
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -104,7 +104,7 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008274 RID: 33396 RVA: 0x0008A9BD File Offset: 0x00088BBD
+	// Token: 0x060082C6 RID: 33478 RVA: 0x0008ABF1 File Offset: 0x00088DF1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -115,7 +115,7 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		}
 	}
 
-	// Token: 0x06008275 RID: 33397 RVA: 0x0031AE5C File Offset: 0x0031905C
+	// Token: 0x060082C7 RID: 33479 RVA: 0x0031CB60 File Offset: 0x0031AD60
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -148,7 +148,7 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		return true;
 	}
 
-	// Token: 0x06008276 RID: 33398 RVA: 0x0031AF1C File Offset: 0x0031911C
+	// Token: 0x060082C8 RID: 33480 RVA: 0x0031CC20 File Offset: 0x0031AE20
 	public static void Show(XUi _xui, Action<XUiC_SaveDirtyPrefab.ESelectedAction> _onCloseAction, XUiC_SaveDirtyPrefab.EMode _mode = XUiC_SaveDirtyPrefab.EMode.AskSaveIfDirty)
 	{
 		PathAbstractions.AbstractedLocation loadedPrefab = PrefabEditModeManager.Instance.LoadedPrefab;
@@ -193,46 +193,46 @@ public class XUiC_SaveDirtyPrefab : XUiController
 		_xui.playerUI.windowManager.Open(XUiC_SaveDirtyPrefab.ID, true, true);
 	}
 
-	// Token: 0x040060B0 RID: 24752
+	// Token: 0x040060EE RID: 24814
 	public static string ID = "";
 
-	// Token: 0x040060B1 RID: 24753
+	// Token: 0x040060EF RID: 24815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSaveName;
 
-	// Token: 0x040060B2 RID: 24754
+	// Token: 0x040060F0 RID: 24816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool nameRequired;
 
-	// Token: 0x040060B3 RID: 24755
+	// Token: 0x040060F1 RID: 24817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool nameInvalid;
 
-	// Token: 0x040060B4 RID: 24756
+	// Token: 0x040060F2 RID: 24818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool nameExists;
 
-	// Token: 0x040060B5 RID: 24757
+	// Token: 0x040060F3 RID: 24819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<XUiC_SaveDirtyPrefab.ESelectedAction> onCloseAction;
 
-	// Token: 0x0200102A RID: 4138
+	// Token: 0x0200103A RID: 4154
 	public enum EMode
 	{
-		// Token: 0x040060B7 RID: 24759
+		// Token: 0x040060F5 RID: 24821
 		AskSaveIfDirty,
-		// Token: 0x040060B8 RID: 24760
+		// Token: 0x040060F6 RID: 24822
 		ForceSave
 	}
 
-	// Token: 0x0200102B RID: 4139
+	// Token: 0x0200103B RID: 4155
 	public enum ESelectedAction
 	{
-		// Token: 0x040060BA RID: 24762
+		// Token: 0x040060F8 RID: 24824
 		Save,
-		// Token: 0x040060BB RID: 24763
+		// Token: 0x040060F9 RID: 24825
 		Cancel,
-		// Token: 0x040060BC RID: 24764
+		// Token: 0x040060FA RID: 24826
 		DontSave
 	}
 }

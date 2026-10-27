@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006B1 RID: 1713
+// Token: 0x020006B8 RID: 1720
 [Preserve]
 public class WornItems : TargetedCompareRequirementBase
 {
-	// Token: 0x060035E3 RID: 13795 RVA: 0x00162608 File Offset: 0x00160808
+	// Token: 0x060035F1 RID: 13809 RVA: 0x001631FC File Offset: 0x001613FC
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -27,13 +27,13 @@ public class WornItems : TargetedCompareRequirementBase
 		return this.invert != RequirementBase.compareValues((float)num, this.operation, this.value);
 	}
 
-	// Token: 0x060035E4 RID: 13796 RVA: 0x0016268E File Offset: 0x0016088E
+	// Token: 0x060035F2 RID: 13810 RVA: 0x00163282 File Offset: 0x00161482
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("WornItems: {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x060035E5 RID: 13797 RVA: 0x001626CC File Offset: 0x001608CC
+	// Token: 0x060035F3 RID: 13811 RVA: 0x001632C0 File Offset: 0x001614C0
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -45,7 +45,7 @@ public class WornItems : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B5A RID: 11098
+	// Token: 0x04002B75 RID: 11125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> equipmentTags;
 }

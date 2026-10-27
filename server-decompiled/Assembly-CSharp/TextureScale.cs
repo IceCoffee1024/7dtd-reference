@@ -2,22 +2,22 @@
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x020014EA RID: 5354
+// Token: 0x020014FC RID: 5372
 public class TextureScale
 {
-	// Token: 0x0600A7C0 RID: 42944 RVA: 0x003E70F6 File Offset: 0x003E52F6
+	// Token: 0x0600A818 RID: 43032 RVA: 0x003E94FA File Offset: 0x003E76FA
 	public static void Point(Texture2D tex, int newWidth, int newHeight)
 	{
 		TextureScale.ThreadedScale(tex, newWidth, newHeight, false);
 	}
 
-	// Token: 0x0600A7C1 RID: 42945 RVA: 0x003E7101 File Offset: 0x003E5301
+	// Token: 0x0600A819 RID: 43033 RVA: 0x003E9505 File Offset: 0x003E7705
 	public static void Bilinear(Texture2D tex, int newWidth, int newHeight)
 	{
 		TextureScale.ThreadedScale(tex, newWidth, newHeight, true);
 	}
 
-	// Token: 0x0600A7C2 RID: 42946 RVA: 0x003E710C File Offset: 0x003E530C
+	// Token: 0x0600A81A RID: 43034 RVA: 0x003E9510 File Offset: 0x003E7710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ThreadedScale(Texture2D tex, int newWidth, int newHeight, bool useBilinear)
 	{
@@ -95,7 +95,7 @@ public class TextureScale
 		tex.Apply();
 	}
 
-	// Token: 0x0600A7C3 RID: 42947 RVA: 0x003E72CC File Offset: 0x003E54CC
+	// Token: 0x0600A81B RID: 43035 RVA: 0x003E96D0 File Offset: 0x003E78D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void BilinearScale(object obj)
 	{
@@ -118,7 +118,7 @@ public class TextureScale
 		TextureScale.mutex.ReleaseMutex();
 	}
 
-	// Token: 0x0600A7C4 RID: 42948 RVA: 0x003E73F0 File Offset: 0x003E55F0
+	// Token: 0x0600A81C RID: 43036 RVA: 0x003E97F4 File Offset: 0x003E79F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PointScale(object obj)
 	{
@@ -137,59 +137,59 @@ public class TextureScale
 		TextureScale.mutex.ReleaseMutex();
 	}
 
-	// Token: 0x0600A7C5 RID: 42949 RVA: 0x003E748C File Offset: 0x003E568C
+	// Token: 0x0600A81D RID: 43037 RVA: 0x003E9890 File Offset: 0x003E7A90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color ColorLerpUnclamped(Color c1, Color c2, float value)
 	{
 		return new Color(c1.r + (c2.r - c1.r) * value, c1.g + (c2.g - c1.g) * value, c1.b + (c2.b - c1.b) * value, c1.a + (c2.a - c1.a) * value);
 	}
 
-	// Token: 0x04007C8E RID: 31886
+	// Token: 0x04007CCF RID: 31951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color[] texColors;
 
-	// Token: 0x04007C8F RID: 31887
+	// Token: 0x04007CD0 RID: 31952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color[] newColors;
 
-	// Token: 0x04007C90 RID: 31888
+	// Token: 0x04007CD1 RID: 31953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int w;
 
-	// Token: 0x04007C91 RID: 31889
+	// Token: 0x04007CD2 RID: 31954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float ratioX;
 
-	// Token: 0x04007C92 RID: 31890
+	// Token: 0x04007CD3 RID: 31955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float ratioY;
 
-	// Token: 0x04007C93 RID: 31891
+	// Token: 0x04007CD4 RID: 31956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int w2;
 
-	// Token: 0x04007C94 RID: 31892
+	// Token: 0x04007CD5 RID: 31957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int finishCount;
 
-	// Token: 0x04007C95 RID: 31893
+	// Token: 0x04007CD6 RID: 31958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mutex mutex;
 
-	// Token: 0x020014EB RID: 5355
+	// Token: 0x020014FD RID: 5373
 	public class ThreadData
 	{
-		// Token: 0x0600A7C7 RID: 42951 RVA: 0x003E74F6 File Offset: 0x003E56F6
+		// Token: 0x0600A81F RID: 43039 RVA: 0x003E98FA File Offset: 0x003E7AFA
 		public ThreadData(int s, int e)
 		{
 			this.start = s;
 			this.end = e;
 		}
 
-		// Token: 0x04007C96 RID: 31894
+		// Token: 0x04007CD7 RID: 31959
 		public int start;
 
-		// Token: 0x04007C97 RID: 31895
+		// Token: 0x04007CD8 RID: 31960
 		public int end;
 	}
 }

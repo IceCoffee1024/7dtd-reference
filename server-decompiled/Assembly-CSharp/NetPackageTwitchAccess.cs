@@ -3,37 +3,37 @@ using Audio;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x02000860 RID: 2144
+// Token: 0x0200086A RID: 2154
 [Preserve]
 public class NetPackageTwitchAccess : NetPackage
 {
-	// Token: 0x06003E3A RID: 15930 RVA: 0x0012AC85 File Offset: 0x00128E85
+	// Token: 0x06003E5D RID: 15965 RVA: 0x0012B879 File Offset: 0x00129A79
 	public NetPackageTwitchAccess Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003E3B RID: 15931 RVA: 0x0018AF71 File Offset: 0x00189171
+	// Token: 0x06003E5E RID: 15966 RVA: 0x0018C019 File Offset: 0x0018A219
 	public NetPackageTwitchAccess Setup(bool _hasAccess)
 	{
 		this.hasAccess = _hasAccess;
 		return this;
 	}
 
-	// Token: 0x06003E3C RID: 15932 RVA: 0x0018AF7B File Offset: 0x0018917B
+	// Token: 0x06003E5F RID: 15967 RVA: 0x0018C023 File Offset: 0x0018A223
 	public override void read(PooledBinaryReader _br)
 	{
 		this.hasAccess = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003E3D RID: 15933 RVA: 0x0018AF89 File Offset: 0x00189189
+	// Token: 0x06003E60 RID: 15968 RVA: 0x0018C031 File Offset: 0x0018A231
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.hasAccess);
 	}
 
-	// Token: 0x06003E3E RID: 15934 RVA: 0x0018AFA0 File Offset: 0x001891A0
+	// Token: 0x06003E61 RID: 15969 RVA: 0x0018C048 File Offset: 0x0018A248
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -56,7 +56,7 @@ public class NetPackageTwitchAccess : NetPackage
 		TwitchManager.Current.DeniedPermission();
 	}
 
-	// Token: 0x04003291 RID: 12945
+	// Token: 0x040032B1 RID: 12977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAccess;
 }

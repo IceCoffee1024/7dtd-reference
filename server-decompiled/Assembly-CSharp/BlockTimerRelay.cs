@@ -5,13 +5,13 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockTimerRelay : BlockPowered
 {
-	// Token: 0x0600098C RID: 2444 RVA: 0x00041ED0 File Offset: 0x000400D0
+	// Token: 0x0600098C RID: 2444 RVA: 0x00041E90 File Offset: 0x00040090
 	public BlockTimerRelay()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600098D RID: 2445 RVA: 0x00041F28 File Offset: 0x00040128
+	// Token: 0x0600098D RID: 2445 RVA: 0x00041EE8 File Offset: 0x000400E8
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -32,7 +32,7 @@ public class BlockTimerRelay : BlockPowered
 		});
 	}
 
-	// Token: 0x0600098E RID: 2446 RVA: 0x00041F94 File Offset: 0x00040194
+	// Token: 0x0600098E RID: 2446 RVA: 0x00041F54 File Offset: 0x00040154
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.GetTileEntity(_blockPos) is TileEntityPoweredTrigger;
@@ -46,7 +46,7 @@ public class BlockTimerRelay : BlockPowered
 		return "";
 	}
 
-	// Token: 0x0600098F RID: 2447 RVA: 0x0004200C File Offset: 0x0004020C
+	// Token: 0x0600098F RID: 2447 RVA: 0x00041FCC File Offset: 0x000401CC
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -80,7 +80,7 @@ public class BlockTimerRelay : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000991 RID: 2449 RVA: 0x000420A4 File Offset: 0x000402A4
+	// Token: 0x06000991 RID: 2449 RVA: 0x00042064 File Offset: 0x00040264
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);
@@ -90,7 +90,7 @@ public class BlockTimerRelay : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x06000992 RID: 2450 RVA: 0x00042114 File Offset: 0x00040314
+	// Token: 0x06000992 RID: 2450 RVA: 0x000420D4 File Offset: 0x000402D4
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)

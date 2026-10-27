@@ -5,10 +5,10 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x0200129E RID: 4766
+// Token: 0x020012B0 RID: 4784
 public static class DynamicUIAtlasTools
 {
-	// Token: 0x0600974F RID: 38735 RVA: 0x0038FE30 File Offset: 0x0038E030
+	// Token: 0x060097A7 RID: 38823 RVA: 0x00392238 File Offset: 0x00390438
 	public static void Prebake(int _elementWidth, int _elementHeight, int _paddingSize, Dictionary<string, Texture2D> _textures, string _outputfile)
 	{
 		Stopwatch stopwatch = new Stopwatch();
@@ -60,7 +60,7 @@ public static class DynamicUIAtlasTools
 		}));
 	}
 
-	// Token: 0x06009750 RID: 38736 RVA: 0x003900A4 File Offset: 0x0038E2A4
+	// Token: 0x060097A8 RID: 38824 RVA: 0x003924AC File Offset: 0x003906AC
 	public static void AddSprites(int _elementWidth, int _elementHeight, int _paddingSize, Dictionary<string, Texture2D> _textures, ref Texture2D _tex, List<UISpriteData> _spriteList)
 	{
 		int count = _spriteList.Count;
@@ -158,7 +158,7 @@ public static class DynamicUIAtlasTools
 		}
 	}
 
-	// Token: 0x06009751 RID: 38737 RVA: 0x00390488 File Offset: 0x0038E688
+	// Token: 0x060097A9 RID: 38825 RVA: 0x00392890 File Offset: 0x00390A90
 	public static int GetMaxElementsWithSize(int _atlasWidthMax, int _atlasHeightMax, int _elementWidth, int _elementHeight, int _paddingSize)
 	{
 		int num = _atlasWidthMax / (_elementWidth + _paddingSize);
@@ -166,7 +166,7 @@ public static class DynamicUIAtlasTools
 		return num * num2;
 	}
 
-	// Token: 0x06009752 RID: 38738 RVA: 0x003904A4 File Offset: 0x0038E6A4
+	// Token: 0x060097AA RID: 38826 RVA: 0x003928AC File Offset: 0x00390AAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2i findMinimumAtlasSize(int _elementWidth, int _elementHeight, int _paddingSize, int _elementCount, Vector2i _startSize)
 	{
@@ -191,7 +191,7 @@ public static class DynamicUIAtlasTools
 		return vector2i;
 	}
 
-	// Token: 0x06009753 RID: 38739 RVA: 0x00390514 File Offset: 0x0038E714
+	// Token: 0x060097AB RID: 38827 RVA: 0x0039291C File Offset: 0x00390B1C
 	public static bool ReadPrebakedAtlasDescriptor(string _resourceName, out List<UISpriteData> _sprites, out int _elementWidth, out int _elementHeight, out int _paddingSize)
 	{
 		DataLoader.DataPathIdentifier dataPathIdentifier = DataLoader.ParseDataPathIdentifier(_resourceName + ".txt");
@@ -272,7 +272,7 @@ public static class DynamicUIAtlasTools
 		return true;
 	}
 
-	// Token: 0x06009754 RID: 38740 RVA: 0x0039078C File Offset: 0x0038E98C
+	// Token: 0x060097AC RID: 38828 RVA: 0x00392B94 File Offset: 0x00390D94
 	public static bool ReadPrebakedAtlasTexture(string _resourceName, out Texture2D _tex)
 	{
 		_tex = DataLoader.LoadAsset<Texture2D>(_resourceName + ".png", false);
@@ -284,7 +284,7 @@ public static class DynamicUIAtlasTools
 		return true;
 	}
 
-	// Token: 0x06009755 RID: 38741 RVA: 0x003907C2 File Offset: 0x0038E9C2
+	// Token: 0x060097AD RID: 38829 RVA: 0x00392BCA File Offset: 0x00390DCA
 	public static void UnloadTex(string _resourceName, Texture2D _tex)
 	{
 		DataLoader.UnloadAsset(_resourceName, _tex);

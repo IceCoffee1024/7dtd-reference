@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x0200057E RID: 1406
+// Token: 0x02000585 RID: 1413
 public interface IItemStackGridHolder : IHasWorldAddress
 {
-	// Token: 0x06002DE5 RID: 11749
+	// Token: 0x06002DF1 RID: 11761
 	byte GetItemStackGridKey(ItemStackGrid _grid);
 
-	// Token: 0x06002DE6 RID: 11750
+	// Token: 0x06002DF2 RID: 11762
 	ItemStackGrid GetItemStackGrid(byte _key);
 }

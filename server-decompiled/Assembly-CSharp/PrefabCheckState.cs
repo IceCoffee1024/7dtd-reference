@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000390 RID: 912
+// Token: 0x02000392 RID: 914
 public enum PrefabCheckState
 {
-	// Token: 0x0400116B RID: 4459
+	// Token: 0x0400117B RID: 4475
 	Waiting,
-	// Token: 0x0400116C RID: 4460
+	// Token: 0x0400117C RID: 4476
 	Ready,
-	// Token: 0x0400116D RID: 4461
+	// Token: 0x0400117D RID: 4477
 	WaitingForCompleteCheck,
-	// Token: 0x0400116E RID: 4462
+	// Token: 0x0400117E RID: 4478
 	Run,
-	// Token: 0x0400116F RID: 4463
+	// Token: 0x0400117F RID: 4479
 	Warming
 }

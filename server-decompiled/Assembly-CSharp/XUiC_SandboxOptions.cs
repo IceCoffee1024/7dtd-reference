@@ -4,12 +4,12 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E48 RID: 3656
+// Token: 0x02000E53 RID: 3667
 [Preserve]
 public class XUiC_SandboxOptions : XUiController
 {
-	// Token: 0x17000CB6 RID: 3254
-	// (get) Token: 0x06006FDD RID: 28637 RVA: 0x002B566E File Offset: 0x002B386E
+	// Token: 0x17000CBC RID: 3260
+	// (get) Token: 0x06007002 RID: 28674 RVA: 0x002B6BDA File Offset: 0x002B4DDA
 	[XuiXmlBinding("gamename")]
 	public string GameName
 	{
@@ -25,8 +25,8 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000CB7 RID: 3255
-	// (get) Token: 0x06006FDE RID: 28638 RVA: 0x002B569A File Offset: 0x002B389A
+	// Token: 0x17000CBD RID: 3261
+	// (get) Token: 0x06007003 RID: 28675 RVA: 0x002B6C06 File Offset: 0x002B4E06
 	[XuiXmlBinding("worldname")]
 	public string WorldName
 	{
@@ -38,8 +38,8 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000CB8 RID: 3256
-	// (get) Token: 0x06006FDF RID: 28639 RVA: 0x002B56B7 File Offset: 0x002B38B7
+	// Token: 0x17000CBE RID: 3262
+	// (get) Token: 0x06007004 RID: 28676 RVA: 0x002B6C23 File Offset: 0x002B4E23
 	[XuiXmlBinding("is_custom")]
 	public bool CurrentIsCustom
 	{
@@ -50,8 +50,8 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000CB9 RID: 3257
-	// (get) Token: 0x06006FE0 RID: 28640 RVA: 0x002B56C4 File Offset: 0x002B38C4
+	// Token: 0x17000CBF RID: 3263
+	// (get) Token: 0x06007005 RID: 28677 RVA: 0x002B6C30 File Offset: 0x002B4E30
 	[XuiXmlBinding("is_userpreset")]
 	public bool CurrentIsUserPreset
 	{
@@ -62,8 +62,8 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000CBA RID: 3258
-	// (get) Token: 0x06006FE1 RID: 28641 RVA: 0x002B56D4 File Offset: 0x002B38D4
+	// Token: 0x17000CC0 RID: 3264
+	// (get) Token: 0x06007006 RID: 28678 RVA: 0x002B6C40 File Offset: 0x002B4E40
 	[XuiXmlBinding("has_changes")]
 	public bool HasChanges
 	{
@@ -84,8 +84,8 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000CBB RID: 3259
-	// (get) Token: 0x06006FE2 RID: 28642 RVA: 0x002B573C File Offset: 0x002B393C
+	// Token: 0x17000CC1 RID: 3265
+	// (get) Token: 0x06007007 RID: 28679 RVA: 0x002B6CA8 File Offset: 0x002B4EA8
 	[XuiXmlBinding("sandboxcode")]
 	public string SandBoxCode
 	{
@@ -100,14 +100,14 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x06006FE3 RID: 28643 RVA: 0x002B5761 File Offset: 0x002B3961
+	// Token: 0x06007008 RID: 28680 RVA: 0x002B6CCD File Offset: 0x002B4ECD
 	public override void Init()
 	{
 		base.Init();
 		this.setupOptions();
 	}
 
-	// Token: 0x06006FE4 RID: 28644 RVA: 0x002B576F File Offset: 0x002B396F
+	// Token: 0x06007009 RID: 28681 RVA: 0x002B6CDB File Offset: 0x002B4EDB
 	[XuiBindEvent("OnTabChanged", "tabSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TabSelector_OnTabChanged(int _tabIndex, XUiC_TabSelectorTab _tab)
@@ -115,7 +115,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.resetTabHeaders();
 	}
 
-	// Token: 0x06006FE5 RID: 28645 RVA: 0x002B5777 File Offset: 0x002B3977
+	// Token: 0x0600700A RID: 28682 RVA: 0x002B6CE3 File Offset: 0x002B4EE3
 	[XuiBindEvent("OnPress", "btnCopyCode")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCopyCode_OnPressed(XUiController _sender, int _mouseButton)
@@ -124,7 +124,7 @@ public class XUiC_SandboxOptions : XUiController
 		GUIUtility.systemCopyBuffer = this.currentPreset.SandboxCode;
 	}
 
-	// Token: 0x06006FE6 RID: 28646 RVA: 0x002B578F File Offset: 0x002B398F
+	// Token: 0x0600700B RID: 28683 RVA: 0x002B6CFB File Offset: 0x002B4EFB
 	[XuiBindEvent("OnPress", "btnPasteCode")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnPasteCode_OnPressed(XUiController _sender, int _mouseButton)
@@ -137,7 +137,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FE7 RID: 28647 RVA: 0x002B57C2 File Offset: 0x002B39C2
+	// Token: 0x0600700C RID: 28684 RVA: 0x002B6D2E File Offset: 0x002B4F2E
 	[XuiBindEvent("OnPress", "btnCopy")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCopy_OnPressed(XUiController _sender, int _mouseButton)
@@ -146,7 +146,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FE8 RID: 28648 RVA: 0x002B57D1 File Offset: 0x002B39D1
+	// Token: 0x0600700D RID: 28685 RVA: 0x002B6D3D File Offset: 0x002B4F3D
 	[XuiBindEvent("OnPress", "btnCreatePreset")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCreatePreset_OnPressed(XUiController _sender, int _mouseButton)
@@ -157,7 +157,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FE9 RID: 28649 RVA: 0x002B5808 File Offset: 0x002B3A08
+	// Token: 0x0600700E RID: 28686 RVA: 0x002B6D74 File Offset: 0x002B4F74
 	[XuiBindEvent("OnPress", "btnSavePreset")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
@@ -186,7 +186,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FEA RID: 28650 RVA: 0x002B58CC File Offset: 0x002B3ACC
+	// Token: 0x0600700F RID: 28687 RVA: 0x002B6E38 File Offset: 0x002B5038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyPresetSettings()
 	{
@@ -194,7 +194,7 @@ public class XUiC_SandboxOptions : XUiController
 		GamePrefs.Set(EnumGamePrefs.SandboxCode, this.currentPreset.IsCustomPreset ? this.currentPreset.SandboxCode : "");
 	}
 
-	// Token: 0x06006FEB RID: 28651 RVA: 0x002B590C File Offset: 0x002B3B0C
+	// Token: 0x06007010 RID: 28688 RVA: 0x002B6E78 File Offset: 0x002B5078
 	[XuiBindEvent("OnPress", "btnDelete")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDelete_OnPressed(XUiController _sender, int _mouseButton)
@@ -213,7 +213,7 @@ public class XUiC_SandboxOptions : XUiController
 		}, false, false, -1, -1);
 	}
 
-	// Token: 0x06006FEC RID: 28652 RVA: 0x002B5964 File Offset: 0x002B3B64
+	// Token: 0x06007011 RID: 28689 RVA: 0x002B6ED0 File Offset: 0x002B50D0
 	[XuiBindEvent("OnPress", "btnDefaults")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDefaults_OnOnPressed(XUiController _sender, int _mouseButton)
@@ -232,7 +232,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FED RID: 28653 RVA: 0x00089715 File Offset: 0x00087915
+	// Token: 0x06007012 RID: 28690 RVA: 0x00089949 File Offset: 0x00087B49
 	[XuiBindEvent("OnPress", "btnBack")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBack_OnPressed(XUiController _sender, int _mouseButton)
@@ -240,7 +240,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06006FEE RID: 28654 RVA: 0x002B59F0 File Offset: 0x002B3BF0
+	// Token: 0x06007013 RID: 28691 RVA: 0x002B6F5C File Offset: 0x002B515C
 	[XuiBindEvent("SandboxPresetSelectionChanged", "presetSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Presets_OnValueChanged(SandboxPresetInfo _oldValue, SandboxPresetInfo _newValue)
@@ -258,7 +258,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FEF RID: 28655 RVA: 0x002B5A58 File Offset: 0x002B3C58
+	// Token: 0x06007014 RID: 28692 RVA: 0x002B6FC4 File Offset: 0x002B51C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SandboxOptionEntry_OnChangeHandler(XUiC_SandBoxOptionEntry _entry, global::SandboxOptions.SandboxOptions _option)
 	{
@@ -273,7 +273,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.resetTabHeaders();
 	}
 
-	// Token: 0x06006FF0 RID: 28656 RVA: 0x002B5AA6 File Offset: 0x002B3CA6
+	// Token: 0x06007015 RID: 28693 RVA: 0x002B7012 File Offset: 0x002B5212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void duplicateCurrentSettingsToCustomPreset()
 	{
@@ -282,7 +282,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.presetSelector.SelectPresetByName("Custom", null, false);
 	}
 
-	// Token: 0x06006FF1 RID: 28657 RVA: 0x002B5AD4 File Offset: 0x002B3CD4
+	// Token: 0x06007016 RID: 28694 RVA: 0x002B7040 File Offset: 0x002B5240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCode()
 	{
@@ -295,7 +295,7 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x06006FF2 RID: 28658 RVA: 0x002B5B24 File Offset: 0x002B3D24
+	// Token: 0x06007017 RID: 28695 RVA: 0x002B7090 File Offset: 0x002B5290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupOptions()
 	{
@@ -377,7 +377,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.resetTabHeaders();
 	}
 
-	// Token: 0x06006FF3 RID: 28659 RVA: 0x002B5D60 File Offset: 0x002B3F60
+	// Token: 0x06007018 RID: 28696 RVA: 0x002B72CC File Offset: 0x002B54CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyEntryChanges(bool _forceChange)
 	{
@@ -387,7 +387,7 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x06006FF4 RID: 28660 RVA: 0x002B5DB8 File Offset: 0x002B3FB8
+	// Token: 0x06007019 RID: 28697 RVA: 0x002B7324 File Offset: 0x002B5524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setEntriesDirty()
 	{
@@ -397,7 +397,7 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x06006FF5 RID: 28661 RVA: 0x002B5E10 File Offset: 0x002B4010
+	// Token: 0x0600701A RID: 28698 RVA: 0x002B737C File Offset: 0x002B557C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateOptionsToPreset(SandboxOptionPreset _preset)
 	{
@@ -419,7 +419,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FF6 RID: 28662 RVA: 0x002B5F60 File Offset: 0x002B4160
+	// Token: 0x0600701B RID: 28699 RVA: 0x002B74CC File Offset: 0x002B56CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetTabHeaders()
 	{
@@ -429,7 +429,7 @@ public class XUiC_SandboxOptions : XUiController
 		}
 	}
 
-	// Token: 0x06006FF7 RID: 28663 RVA: 0x002B5FB8 File Offset: 0x002B41B8
+	// Token: 0x0600701C RID: 28700 RVA: 0x002B7524 File Offset: 0x002B5724
 	public override void OnOpen()
 	{
 		this.windowGroup.isEscClosable = false;
@@ -440,7 +440,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.tabSelector.SelectedTabIndex = 0;
 	}
 
-	// Token: 0x06006FF8 RID: 28664 RVA: 0x002B6002 File Offset: 0x002B4202
+	// Token: 0x0600701D RID: 28701 RVA: 0x002B756E File Offset: 0x002B576E
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -452,7 +452,7 @@ public class XUiC_SandboxOptions : XUiController
 		this.onClose = null;
 	}
 
-	// Token: 0x06006FF9 RID: 28665 RVA: 0x002B6024 File Offset: 0x002B4224
+	// Token: 0x0600701E RID: 28702 RVA: 0x002B7590 File Offset: 0x002B5790
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -474,7 +474,7 @@ public class XUiC_SandboxOptions : XUiController
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06006FFA RID: 28666 RVA: 0x002B60B0 File Offset: 0x002B42B0
+	// Token: 0x0600701F RID: 28703 RVA: 0x002B761C File Offset: 0x002B581C
 	public static void Open(XUi _xui, Action _onClose)
 	{
 		XUiC_SandboxOptions childByType = _xui.GetChildByType<XUiC_SandboxOptions>();
@@ -482,86 +482,86 @@ public class XUiC_SandboxOptions : XUiController
 		_xui.playerUI.windowManager.Open(childByType.windowGroup, false);
 	}
 
-	// Token: 0x040054D4 RID: 21716
+	// Token: 0x040054F9 RID: 21753
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TabSelector tabSelector;
 
-	// Token: 0x040054D5 RID: 21717
+	// Token: 0x040054FA RID: 21754
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TabSelectorTab[] tabs;
 
-	// Token: 0x040054D6 RID: 21718
+	// Token: 0x040054FB RID: 21755
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SandboxPresetSelector presetSelector;
 
-	// Token: 0x040054D7 RID: 21719
+	// Token: 0x040054FC RID: 21756
 	[XuiBindComponent("btnSave", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnSavePreset;
 
-	// Token: 0x040054D8 RID: 21720
+	// Token: 0x040054FD RID: 21757
 	[XuiBindComponent("btnCopyCode", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCopyCode;
 
-	// Token: 0x040054D9 RID: 21721
+	// Token: 0x040054FE RID: 21758
 	[XuiBindComponent("btnCopy", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCopy;
 
-	// Token: 0x040054DA RID: 21722
+	// Token: 0x040054FF RID: 21759
 	[XuiBindComponent("btnCreatePreset", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCreatePreset;
 
-	// Token: 0x040054DB RID: 21723
+	// Token: 0x04005500 RID: 21760
 	[XuiBindComponent("btnDelete", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDelete;
 
-	// Token: 0x040054DC RID: 21724
+	// Token: 0x04005501 RID: 21761
 	[XuiBindComponent("btnPasteCode", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnPasteCode;
 
-	// Token: 0x040054DD RID: 21725
+	// Token: 0x04005502 RID: 21762
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;
 
-	// Token: 0x040054DE RID: 21726
+	// Token: 0x04005503 RID: 21763
 	[XuiBindComponent("btnDefaults", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDefaults;
 
-	// Token: 0x040054DF RID: 21727
+	// Token: 0x04005504 RID: 21764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<global::SandboxOptions.SandboxOptions, XUiC_SandBoxOptionEntry> sandboxOptionDict = new Dictionary<global::SandboxOptions.SandboxOptions, XUiC_SandBoxOptionEntry>();
 
-	// Token: 0x040054E0 RID: 21728
+	// Token: 0x04005505 RID: 21765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SandboxOptionManager sandboxManager = SandboxOptionManager.Current;
 
-	// Token: 0x040054E1 RID: 21729
+	// Token: 0x04005506 RID: 21766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, XUiC_SandboxOptions.TabChangeHelper> tabHelpers = new Dictionary<string, XUiC_SandboxOptions.TabChangeHelper>();
 
-	// Token: 0x040054E2 RID: 21730
+	// Token: 0x04005507 RID: 21767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SandboxPresetInfo currentPreset;
 
-	// Token: 0x040054E3 RID: 21731
+	// Token: 0x04005508 RID: 21768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onClose;
 
-	// Token: 0x02000E49 RID: 3657
+	// Token: 0x02000E54 RID: 3668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class TabChangeHelper
 	{
-		// Token: 0x06006FFF RID: 28671 RVA: 0x002B61CD File Offset: 0x002B43CD
+		// Token: 0x06007024 RID: 28708 RVA: 0x002B7739 File Offset: 0x002B5939
 		public TabChangeHelper(XUiC_TabSelectorTab _tab, XUiC_SandBoxOptionEntry[] _tabOptions, string _localizationKey)
 		{
 			this.tab = _tab;
@@ -569,7 +569,7 @@ public class XUiC_SandboxOptions : XUiController
 			this.localizationKey = _localizationKey;
 		}
 
-		// Token: 0x06007000 RID: 28672 RVA: 0x002B61EC File Offset: 0x002B43EC
+		// Token: 0x06007025 RID: 28709 RVA: 0x002B7758 File Offset: 0x002B5958
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasAnyNonDefault()
 		{
@@ -583,7 +583,7 @@ public class XUiC_SandboxOptions : XUiController
 			return false;
 		}
 
-		// Token: 0x06007001 RID: 28673 RVA: 0x002B6220 File Offset: 0x002B4420
+		// Token: 0x06007026 RID: 28710 RVA: 0x002B778C File Offset: 0x002B598C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasAnyUnsavedChange()
 		{
@@ -597,22 +597,22 @@ public class XUiC_SandboxOptions : XUiController
 			return false;
 		}
 
-		// Token: 0x06007002 RID: 28674 RVA: 0x002B6254 File Offset: 0x002B4454
+		// Token: 0x06007027 RID: 28711 RVA: 0x002B77C0 File Offset: 0x002B59C0
 		public void UpdateTab()
 		{
 			this.tab.TabHighlight = this.hasAnyNonDefault();
 			this.tab.TabHeaderText = Localization.Get(this.localizationKey, false, null) + (this.hasAnyUnsavedChange() ? "[FF]" : "[00]") + "*[FF]";
 		}
 
-		// Token: 0x040054E4 RID: 21732
+		// Token: 0x04005509 RID: 21769
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_TabSelectorTab tab;
 
-		// Token: 0x040054E5 RID: 21733
+		// Token: 0x0400550A RID: 21770
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_SandBoxOptionEntry[] tabOptions;
 
-		// Token: 0x040054E6 RID: 21734
+		// Token: 0x0400550B RID: 21771
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string localizationKey;
 	}

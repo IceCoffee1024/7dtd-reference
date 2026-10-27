@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D4 RID: 1748
+// Token: 0x020006DC RID: 1756
 [Preserve]
 public class MinEventActionAddOrRemoveBuff : MinEventActionAddBuff
 {
-	// Token: 0x06003665 RID: 13925 RVA: 0x001666C9 File Offset: 0x001648C9
+	// Token: 0x06003676 RID: 13942 RVA: 0x0016747A File Offset: 0x0016567A
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		this.isAdd = base.CanExecute(_eventType, _params);
 		return true;
 	}
 
-	// Token: 0x06003666 RID: 13926 RVA: 0x001666DA File Offset: 0x001648DA
+	// Token: 0x06003677 RID: 13943 RVA: 0x0016748B File Offset: 0x0016568B
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.isAdd)
@@ -23,7 +23,7 @@ public class MinEventActionAddOrRemoveBuff : MinEventActionAddBuff
 		base.Remove(_params);
 	}
 
-	// Token: 0x04002BAE RID: 11182
+	// Token: 0x04002BCA RID: 11210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAdd;
 }

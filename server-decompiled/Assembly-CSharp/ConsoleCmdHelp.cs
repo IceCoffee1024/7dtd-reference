@@ -4,11 +4,11 @@ using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200022A RID: 554
+// Token: 0x0200022C RID: 556
 [Preserve]
 public class ConsoleCmdHelp : ConsoleCmdAbstract
 {
-	// Token: 0x060010AF RID: 4271 RVA: 0x0006A3AF File Offset: 0x000685AF
+	// Token: 0x060010B3 RID: 4275 RVA: 0x0006A57F File Offset: 0x0006877F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000196 RID: 406
-	// (get) Token: 0x060010B0 RID: 4272 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x060010B4 RID: 4276 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000197 RID: 407
-	// (get) Token: 0x060010B1 RID: 4273 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x060010B5 RID: 4277 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -36,7 +36,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000198 RID: 408
-	// (get) Token: 0x060010B2 RID: 4274 RVA: 0x00060387 File Offset: 0x0005E587
+	// (get) Token: 0x060010B6 RID: 4278 RVA: 0x0006064B File Offset: 0x0005E84B
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -45,21 +45,21 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010B3 RID: 4275 RVA: 0x0006A3BF File Offset: 0x000685BF
+	// Token: 0x060010B7 RID: 4279 RVA: 0x0006A58F File Offset: 0x0006878F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Help on console and specific commands";
 	}
 
-	// Token: 0x060010B4 RID: 4276 RVA: 0x0006A3C6 File Offset: 0x000685C6
+	// Token: 0x060010B8 RID: 4280 RVA: 0x0006A596 File Offset: 0x00068796
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "\r\n\t\t\t|Usage:\r\n\t\t\t|  1. help\r\n\t\t\t|  2. help * <searchstring>\r\n\t\t\t|  3. help <command name>\r\n\t\t\t|  4. help output\r\n\t\t\t|  5. help outputdetailed\r\n\t\t\t|1. Show general help and list all available commands\r\n\t\t\t|2. List commands where either the name or the description contains the given text\r\n\t\t\t|3. Show help for the given command\r\n\t\t\t|4. Write command list to log file\r\n\t\t\t|5. Write command list with help texts to log file\r\n\t\t\t".Unindent(true);
 	}
 
-	// Token: 0x060010B5 RID: 4277 RVA: 0x0006A3D4 File Offset: 0x000685D4
+	// Token: 0x060010B9 RID: 4281 RVA: 0x0006A5A4 File Offset: 0x000687A4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		ConsoleCmdHelp.sb.Clear();
@@ -95,7 +95,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010B6 RID: 4278 RVA: 0x0006A51C File Offset: 0x0006871C
+	// Token: 0x060010BA RID: 4282 RVA: 0x0006A6EC File Offset: 0x000688EC
 	public static void ValidateNoCommandOverlap()
 	{
 		IList<IConsoleCommand> commands = SingletonMonoBehaviour<SdtdConsole>.Instance.GetCommands();
@@ -111,7 +111,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010B7 RID: 4279 RVA: 0x0006A58C File Offset: 0x0006878C
+	// Token: 0x060010BB RID: 4283 RVA: 0x0006A75C File Offset: 0x0006895C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void BuildStringCommandDescriptions()
 	{
@@ -141,7 +141,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010B8 RID: 4280 RVA: 0x0006A6D8 File Offset: 0x000688D8
+	// Token: 0x060010BC RID: 4284 RVA: 0x0006A8A8 File Offset: 0x00068AA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void BuildStringHelpText(string key)
 	{
@@ -177,7 +177,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		ConsoleCmdHelp.sb.AppendLine("No command or topic found by \"" + key + "\"");
 	}
 
-	// Token: 0x060010B9 RID: 4281 RVA: 0x0006A7D1 File Offset: 0x000689D1
+	// Token: 0x060010BD RID: 4285 RVA: 0x0006A9A1 File Offset: 0x00068BA1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OutputHelp(List<string> _params)
 	{
@@ -187,7 +187,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		ConsoleCmdHelp.sb.Clear();
 	}
 
-	// Token: 0x060010BA RID: 4282 RVA: 0x0006A800 File Offset: 0x00068A00
+	// Token: 0x060010BE RID: 4286 RVA: 0x0006A9D0 File Offset: 0x00068BD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OutputDetailedHelp(List<string> _params)
 	{
@@ -208,7 +208,7 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		ConsoleCmdHelp.sb.Clear();
 	}
 
-	// Token: 0x060010BB RID: 4283 RVA: 0x0006A8F8 File Offset: 0x00068AF8
+	// Token: 0x060010BF RID: 4287 RVA: 0x0006AAC8 File Offset: 0x00068CC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SearchHelp(List<string> _params)
 	{
@@ -251,11 +251,11 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		ConsoleCmdHelp.sb.Clear();
 	}
 
-	// Token: 0x04000CBE RID: 3262
+	// Token: 0x04000CBF RID: 3263
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static StringBuilder sb = new StringBuilder();
 
-	// Token: 0x04000CBF RID: 3263
+	// Token: 0x04000CC0 RID: 3264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, ConsoleCmdHelp.HelpTopic> helpTopics = new Dictionary<string, ConsoleCmdHelp.HelpTopic>
 	{
@@ -277,11 +277,11 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 		}
 	};
 
-	// Token: 0x0200022B RID: 555
+	// Token: 0x0200022D RID: 557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct HelpTopic
 	{
-		// Token: 0x060010BE RID: 4286 RVA: 0x0006AB19 File Offset: 0x00068D19
+		// Token: 0x060010C2 RID: 4290 RVA: 0x0006ACE9 File Offset: 0x00068EE9
 		public HelpTopic(string _desc, Action<List<string>> _action, string _actionCompleteText)
 		{
 			this.Description = _desc;
@@ -289,13 +289,13 @@ public class ConsoleCmdHelp : ConsoleCmdAbstract
 			this.ActionCompleteText = _actionCompleteText;
 		}
 
-		// Token: 0x04000CC0 RID: 3264
+		// Token: 0x04000CC1 RID: 3265
 		public string Description;
 
-		// Token: 0x04000CC1 RID: 3265
+		// Token: 0x04000CC2 RID: 3266
 		public Action<List<string>> Action;
 
-		// Token: 0x04000CC2 RID: 3266
+		// Token: 0x04000CC3 RID: 3267
 		public string ActionCompleteText;
 	}
 }

@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000BD7 RID: 3031
+// Token: 0x02000BE2 RID: 3042
 [Preserve]
 public class TextureAtlasTerrain : TextureAtlasBlocks
 {
-	// Token: 0x06005B0F RID: 23311 RVA: 0x00233088 File Offset: 0x00231288
+	// Token: 0x06005B34 RID: 23348 RVA: 0x002345E4 File Offset: 0x002327E4
 	public TextureAtlasTerrain()
 	{
 		this.bDestroyTextures = false;
 	}
 
-	// Token: 0x06005B10 RID: 23312 RVA: 0x00233098 File Offset: 0x00231298
+	// Token: 0x06005B35 RID: 23349 RVA: 0x002345F4 File Offset: 0x002327F4
 	public override bool LoadTextureAtlas(int _idx, MeshDescriptionCollection _tac, bool _bLoadTextures)
 	{
 		if (base.LoadTextureAtlas(_idx, _tac, _bLoadTextures))
@@ -64,7 +64,7 @@ public class TextureAtlasTerrain : TextureAtlasBlocks
 		return true;
 	}
 
-	// Token: 0x06005B11 RID: 23313 RVA: 0x0023329C File Offset: 0x0023149C
+	// Token: 0x06005B36 RID: 23350 RVA: 0x002347F8 File Offset: 0x002329F8
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -91,12 +91,12 @@ public class TextureAtlasTerrain : TextureAtlasBlocks
 		}
 	}
 
-	// Token: 0x040046EC RID: 18156
+	// Token: 0x04004711 RID: 18193
 	public Texture2D[] diffuse;
 
-	// Token: 0x040046ED RID: 18157
+	// Token: 0x04004712 RID: 18194
 	public Texture2D[] normal;
 
-	// Token: 0x040046EE RID: 18158
+	// Token: 0x04004713 RID: 18195
 	public Texture2D[] specular;
 }

@@ -2,17 +2,17 @@
 
 namespace Platform
 {
-	// Token: 0x02001BE8 RID: 7144
+	// Token: 0x02001C19 RID: 7193
 	public abstract class UserDataRoamingAbs : IUserDataRoaming
 	{
-		// Token: 0x0600D4EE RID: 54510 RVA: 0x004CC3A7 File Offset: 0x004CA5A7
+		// Token: 0x0600D602 RID: 54786 RVA: 0x004CFECF File Offset: 0x004CE0CF
 		public void Init(IPlatform platform)
 		{
 			this.platform = platform;
 		}
 
-		// Token: 0x17001ACF RID: 6863
-		// (get) Token: 0x0600D4EF RID: 54511 RVA: 0x004CC3B0 File Offset: 0x004CA5B0
+		// Token: 0x17001B17 RID: 6935
+		// (get) Token: 0x0600D603 RID: 54787 RVA: 0x004CFED8 File Offset: 0x004CE0D8
 		public bool IsSupported
 		{
 			get
@@ -21,12 +21,12 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x17001AD0 RID: 6864
-		// (get) Token: 0x0600D4F0 RID: 54512
+		// Token: 0x17001B18 RID: 6936
+		// (get) Token: 0x0600D604 RID: 54788
 		public abstract SaveRoamingMode SaveRoamingMode { get; }
 
-		// Token: 0x17001AD1 RID: 6865
-		// (get) Token: 0x0600D4F1 RID: 54513 RVA: 0x004CC3C0 File Offset: 0x004CA5C0
+		// Token: 0x17001B19 RID: 6937
+		// (get) Token: 0x0600D605 RID: 54789 RVA: 0x004CFEE8 File Offset: 0x004CE0E8
 		public bool SaveRoamingEnabled
 		{
 			get
@@ -35,8 +35,8 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x17001AD2 RID: 6866
-		// (get) Token: 0x0600D4F2 RID: 54514 RVA: 0x004CC3E0 File Offset: 0x004CA5E0
+		// Token: 0x17001B1A RID: 6938
+		// (get) Token: 0x0600D606 RID: 54790 RVA: 0x004CFF08 File Offset: 0x004CE108
 		public bool IsRoamingOptional
 		{
 			get
@@ -45,18 +45,18 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x17001AD3 RID: 6867
-		// (get) Token: 0x0600D4F3 RID: 54515
+		// Token: 0x17001B1B RID: 6939
+		// (get) Token: 0x0600D607 RID: 54791
 		public abstract UserDataStorageType DefaultSaveStorage { get; }
 
-		// Token: 0x0600D4F4 RID: 54516 RVA: 0x004CC3EB File Offset: 0x004CA5EB
+		// Token: 0x0600D608 RID: 54792 RVA: 0x004CFF13 File Offset: 0x004CE113
 		public void ValidateRoamingMode()
 		{
 			this.ValidateStoragePref(EnumGamePrefs.GameSaveStorageType);
 			this.ValidateStoragePref(EnumGamePrefs.UserWorldStorageType);
 		}
 
-		// Token: 0x0600D4F5 RID: 54517 RVA: 0x004CC404 File Offset: 0x004CA604
+		// Token: 0x0600D609 RID: 54793 RVA: 0x004CFF2C File Offset: 0x004CE12C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ValidateStoragePref(EnumGamePrefs pref)
 		{
@@ -87,13 +87,13 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D4F6 RID: 54518 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600D60A RID: 54794 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public UserDataRoamingAbs()
 		{
 		}
 
-		// Token: 0x0400A1EC RID: 41452
+		// Token: 0x0400A2D5 RID: 41685
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IPlatform platform;
 	}

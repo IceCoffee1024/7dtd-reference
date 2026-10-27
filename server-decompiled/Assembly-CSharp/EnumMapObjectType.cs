@@ -1,42 +1,42 @@
 ﻿using System;
 
-// Token: 0x0200062D RID: 1581
+// Token: 0x02000634 RID: 1588
 public enum EnumMapObjectType
 {
-	// Token: 0x040028DD RID: 10461
+	// Token: 0x040028F8 RID: 10488
 	Entity,
-	// Token: 0x040028DE RID: 10462
+	// Token: 0x040028F9 RID: 10489
 	SleepingBag,
-	// Token: 0x040028DF RID: 10463
+	// Token: 0x040028FA RID: 10490
 	StartPoint,
-	// Token: 0x040028E0 RID: 10464
+	// Token: 0x040028FB RID: 10491
 	Backpack,
-	// Token: 0x040028E1 RID: 10465
+	// Token: 0x040028FC RID: 10492
 	Prefab,
-	// Token: 0x040028E2 RID: 10466
+	// Token: 0x040028FD RID: 10493
 	EntitySpawner,
-	// Token: 0x040028E3 RID: 10467
+	// Token: 0x040028FE RID: 10494
 	MapMarker,
-	// Token: 0x040028E4 RID: 10468
+	// Token: 0x040028FF RID: 10495
 	MapQuickMarker,
-	// Token: 0x040028E5 RID: 10469
+	// Token: 0x04002900 RID: 10496
 	TreasureChest,
-	// Token: 0x040028E6 RID: 10470
+	// Token: 0x04002901 RID: 10497
 	Quest,
-	// Token: 0x040028E7 RID: 10471
+	// Token: 0x04002902 RID: 10498
 	FetchItem,
-	// Token: 0x040028E8 RID: 10472
+	// Token: 0x04002903 RID: 10499
 	HiddenCache,
-	// Token: 0x040028E9 RID: 10473
+	// Token: 0x04002904 RID: 10500
 	SleeperVolume,
-	// Token: 0x040028EA RID: 10474
+	// Token: 0x04002905 RID: 10501
 	SupplyDrop,
-	// Token: 0x040028EB RID: 10475
+	// Token: 0x04002906 RID: 10502
 	VendingMachine,
-	// Token: 0x040028EC RID: 10476
+	// Token: 0x04002907 RID: 10503
 	LandClaim,
-	// Token: 0x040028ED RID: 10477
+	// Token: 0x04002908 RID: 10504
 	RestorePower,
-	// Token: 0x040028EE RID: 10478
+	// Token: 0x04002909 RID: 10505
 	Last
 }

@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E6 RID: 1766
+// Token: 0x020006EE RID: 1774
 [Preserve]
 public class MinEventActionRemovePrefabFromEntity : MinEventActionTargetedBase
 {
-	// Token: 0x0600369B RID: 13979 RVA: 0x00167FFC File Offset: 0x001661FC
+	// Token: 0x060036B2 RID: 14002 RVA: 0x00168DE4 File Offset: 0x00166FE4
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -35,13 +35,13 @@ public class MinEventActionRemovePrefabFromEntity : MinEventActionTargetedBase
 		global::UnityEngine.Object.Destroy(transform2.gameObject);
 	}
 
-	// Token: 0x0600369C RID: 13980 RVA: 0x00168093 File Offset: 0x00166293
+	// Token: 0x060036B3 RID: 14003 RVA: 0x00168E7B File Offset: 0x0016707B
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && this.prefabName != null;
 	}
 
-	// Token: 0x0600369D RID: 13981 RVA: 0x001680B8 File Offset: 0x001662B8
+	// Token: 0x060036B4 RID: 14004 RVA: 0x00168EA0 File Offset: 0x001670A0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -66,11 +66,11 @@ public class MinEventActionRemovePrefabFromEntity : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BE5 RID: 11237
+	// Token: 0x04002C01 RID: 11265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string prefabName;
 
-	// Token: 0x04002BE6 RID: 11238
+	// Token: 0x04002C02 RID: 11266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parent_transform_path;
 }

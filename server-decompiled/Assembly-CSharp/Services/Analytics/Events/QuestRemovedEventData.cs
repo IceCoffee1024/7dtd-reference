@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x020016B8 RID: 5816
+	// Token: 0x020016D2 RID: 5842
 	[EventTitle("QuestRemoved")]
 	public class QuestRemovedEventData : BaseEventData
 	{
-		// Token: 0x1700168F RID: 5775
-		// (get) Token: 0x0600B65C RID: 46684 RVA: 0x0043BF86 File Offset: 0x0043A186
+		// Token: 0x170016D2 RID: 5842
+		// (get) Token: 0x0600B725 RID: 46885 RVA: 0x0043E7AE File Offset: 0x0043C9AE
 		public override string EventType
 		{
 			get
@@ -19,76 +19,76 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x17001690 RID: 5776
-		// (get) Token: 0x0600B65D RID: 46685 RVA: 0x0043BF8D File Offset: 0x0043A18D
-		// (set) Token: 0x0600B65E RID: 46686 RVA: 0x0043BF95 File Offset: 0x0043A195
+		// Token: 0x170016D3 RID: 5843
+		// (get) Token: 0x0600B726 RID: 46886 RVA: 0x0043E7B5 File Offset: 0x0043C9B5
+		// (set) Token: 0x0600B727 RID: 46887 RVA: 0x0043E7BD File Offset: 0x0043C9BD
 		[JsonProperty(PropertyName = "server_id")]
 		[Description("Server identity")]
 		public string ServerId { get; set; }
 
-		// Token: 0x17001691 RID: 5777
-		// (get) Token: 0x0600B65F RID: 46687 RVA: 0x0043BF9E File Offset: 0x0043A19E
-		// (set) Token: 0x0600B660 RID: 46688 RVA: 0x0043BFA6 File Offset: 0x0043A1A6
+		// Token: 0x170016D4 RID: 5844
+		// (get) Token: 0x0600B728 RID: 46888 RVA: 0x0043E7C6 File Offset: 0x0043C9C6
+		// (set) Token: 0x0600B729 RID: 46889 RVA: 0x0043E7CE File Offset: 0x0043C9CE
 		[JsonProperty(PropertyName = "save_id")]
 		[Description("Save/world identity")]
 		public string SaveId { get; set; }
 
-		// Token: 0x17001692 RID: 5778
-		// (get) Token: 0x0600B661 RID: 46689 RVA: 0x0043BFAF File Offset: 0x0043A1AF
-		// (set) Token: 0x0600B662 RID: 46690 RVA: 0x0043BFB7 File Offset: 0x0043A1B7
+		// Token: 0x170016D5 RID: 5845
+		// (get) Token: 0x0600B72A RID: 46890 RVA: 0x0043E7D7 File Offset: 0x0043C9D7
+		// (set) Token: 0x0600B72B RID: 46891 RVA: 0x0043E7DF File Offset: 0x0043C9DF
 		[JsonProperty(PropertyName = "quest_removed_ts")]
 		[DateTimeFormat]
 		public string QuestRemovedTimestamp { get; set; }
 
-		// Token: 0x17001693 RID: 5779
-		// (get) Token: 0x0600B663 RID: 46691 RVA: 0x0043BFC0 File Offset: 0x0043A1C0
-		// (set) Token: 0x0600B664 RID: 46692 RVA: 0x0043BFC8 File Offset: 0x0043A1C8
+		// Token: 0x170016D6 RID: 5846
+		// (get) Token: 0x0600B72C RID: 46892 RVA: 0x0043E7E8 File Offset: 0x0043C9E8
+		// (set) Token: 0x0600B72D RID: 46893 RVA: 0x0043E7F0 File Offset: 0x0043C9F0
 		[JsonProperty(PropertyName = "remove_reason")]
 		public string RemoveReason { get; set; }
 
-		// Token: 0x17001694 RID: 5780
-		// (get) Token: 0x0600B665 RID: 46693 RVA: 0x0043BFD1 File Offset: 0x0043A1D1
-		// (set) Token: 0x0600B666 RID: 46694 RVA: 0x0043BFD9 File Offset: 0x0043A1D9
+		// Token: 0x170016D7 RID: 5847
+		// (get) Token: 0x0600B72E RID: 46894 RVA: 0x0043E7F9 File Offset: 0x0043C9F9
+		// (set) Token: 0x0600B72F RID: 46895 RVA: 0x0043E801 File Offset: 0x0043CA01
 		[JsonProperty(PropertyName = "quest_instance_id")]
 		[Description("Primary join key — unique per accepted instance; identical across quest_started → quest_progression → quest_reward.")]
 		public string QuestInstanceId { get; set; }
 
-		// Token: 0x17001695 RID: 5781
-		// (get) Token: 0x0600B667 RID: 46695 RVA: 0x0043BFE2 File Offset: 0x0043A1E2
-		// (set) Token: 0x0600B668 RID: 46696 RVA: 0x0043BFEA File Offset: 0x0043A1EA
+		// Token: 0x170016D8 RID: 5848
+		// (get) Token: 0x0600B730 RID: 46896 RVA: 0x0043E80A File Offset: 0x0043CA0A
+		// (set) Token: 0x0600B731 RID: 46897 RVA: 0x0043E812 File Offset: 0x0043CA12
 		[JsonProperty(PropertyName = "quest_id")]
 		public string QuestId { get; set; }
 
-		// Token: 0x17001696 RID: 5782
-		// (get) Token: 0x0600B669 RID: 46697 RVA: 0x0043BFF3 File Offset: 0x0043A1F3
-		// (set) Token: 0x0600B66A RID: 46698 RVA: 0x0043BFFB File Offset: 0x0043A1FB
+		// Token: 0x170016D9 RID: 5849
+		// (get) Token: 0x0600B732 RID: 46898 RVA: 0x0043E81B File Offset: 0x0043CA1B
+		// (set) Token: 0x0600B733 RID: 46899 RVA: 0x0043E823 File Offset: 0x0043CA23
 		[JsonProperty(PropertyName = "quest_name")]
 		[Description("English localization of the quest name.")]
 		public string QuestName { get; set; }
 
-		// Token: 0x17001697 RID: 5783
-		// (get) Token: 0x0600B66B RID: 46699 RVA: 0x0043C004 File Offset: 0x0043A204
-		// (set) Token: 0x0600B66C RID: 46700 RVA: 0x0043C00C File Offset: 0x0043A20C
+		// Token: 0x170016DA RID: 5850
+		// (get) Token: 0x0600B734 RID: 46900 RVA: 0x0043E82C File Offset: 0x0043CA2C
+		// (set) Token: 0x0600B735 RID: 46901 RVA: 0x0043E834 File Offset: 0x0043CA34
 		[JsonProperty(PropertyName = "quest_group")]
 		public string QuestGroup { get; set; }
 
-		// Token: 0x17001698 RID: 5784
-		// (get) Token: 0x0600B66D RID: 46701 RVA: 0x0043C015 File Offset: 0x0043A215
-		// (set) Token: 0x0600B66E RID: 46702 RVA: 0x0043C01D File Offset: 0x0043A21D
+		// Token: 0x170016DB RID: 5851
+		// (get) Token: 0x0600B736 RID: 46902 RVA: 0x0043E83D File Offset: 0x0043CA3D
+		// (set) Token: 0x0600B737 RID: 46903 RVA: 0x0043E845 File Offset: 0x0043CA45
 		[JsonProperty(PropertyName = "quest_category")]
 		[Description("The category of the quest.")]
 		public string QuestCategory { get; set; }
 
-		// Token: 0x17001699 RID: 5785
-		// (get) Token: 0x0600B66F RID: 46703 RVA: 0x0043C026 File Offset: 0x0043A226
-		// (set) Token: 0x0600B670 RID: 46704 RVA: 0x0043C02E File Offset: 0x0043A22E
+		// Token: 0x170016DC RID: 5852
+		// (get) Token: 0x0600B738 RID: 46904 RVA: 0x0043E84E File Offset: 0x0043CA4E
+		// (set) Token: 0x0600B739 RID: 46905 RVA: 0x0043E856 File Offset: 0x0043CA56
 		[JsonProperty(PropertyName = "quest_tier")]
 		[Description("Quest difficulty tier.")]
 		public int? QuestTier { get; set; }
 
-		// Token: 0x1700169A RID: 5786
-		// (get) Token: 0x0600B671 RID: 46705 RVA: 0x0043C037 File Offset: 0x0043A237
-		// (set) Token: 0x0600B672 RID: 46706 RVA: 0x0043C03F File Offset: 0x0043A23F
+		// Token: 0x170016DD RID: 5853
+		// (get) Token: 0x0600B73A RID: 46906 RVA: 0x0043E85F File Offset: 0x0043CA5F
+		// (set) Token: 0x0600B73B RID: 46907 RVA: 0x0043E867 File Offset: 0x0043CA67
 		[JsonProperty(PropertyName = "quest_owner_provider_id")]
 		[KrakenIdTransform("$.quest_owner_provider_id")]
 		[Description("data_provider_user_id of the player who acquired the quest")]

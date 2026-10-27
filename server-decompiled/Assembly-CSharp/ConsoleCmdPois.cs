@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000266 RID: 614
+// Token: 0x02000268 RID: 616
 [Preserve]
 public class ConsoleCmdPois : ConsoleCmdAbstract
 {
-	// Token: 0x06001222 RID: 4642 RVA: 0x00071B18 File Offset: 0x0006FD18
+	// Token: 0x06001226 RID: 4646 RVA: 0x00071CE8 File Offset: 0x0006FEE8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "pois" };
 	}
 
-	// Token: 0x06001223 RID: 4643 RVA: 0x00071B28 File Offset: 0x0006FD28
+	// Token: 0x06001227 RID: 4647 RVA: 0x00071CF8 File Offset: 0x0006FEF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Switches distant POIs on/off";
 	}
 
-	// Token: 0x06001224 RID: 4644 RVA: 0x00071B2F File Offset: 0x0006FD2F
+	// Token: 0x06001228 RID: 4648 RVA: 0x00071CFF File Offset: 0x0006FEFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Use on or off or only the command to toggle";
 	}
 
-	// Token: 0x06001225 RID: 4645 RVA: 0x00071B38 File Offset: 0x0006FD38
+	// Token: 0x06001229 RID: 4649 RVA: 0x00071D08 File Offset: 0x0006FF08
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GameObject gameObject = GameObject.Find("/PrefabsLOD");
@@ -75,7 +75,7 @@ public class ConsoleCmdPois : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("POIs set to " + (ConsoleCmdPois.parentGO.activeSelf ? "on" : "off"));
 	}
 
-	// Token: 0x04000D1B RID: 3355
+	// Token: 0x04000D1C RID: 3356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject parentGO;
 }

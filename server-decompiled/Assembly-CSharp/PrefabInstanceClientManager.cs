@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using PrefabVolumes;
 
-// Token: 0x02000957 RID: 2391
+// Token: 0x02000961 RID: 2401
 public class PrefabInstanceClientManager
 {
-	// Token: 0x17000785 RID: 1925
-	// (get) Token: 0x060045A3 RID: 17827 RVA: 0x001BACFC File Offset: 0x001B8EFC
+	// Token: 0x1700078B RID: 1931
+	// (get) Token: 0x060045C6 RID: 17862 RVA: 0x001BBD80 File Offset: 0x001B9F80
 	public static PrefabInstanceClientManager Instance
 	{
 		get
@@ -20,7 +20,7 @@ public class PrefabInstanceClientManager
 		}
 	}
 
-	// Token: 0x060045A4 RID: 17828 RVA: 0x001BAD14 File Offset: 0x001B8F14
+	// Token: 0x060045C7 RID: 17863 RVA: 0x001BBD98 File Offset: 0x001B9F98
 	public void Cleanup()
 	{
 		this.clientPrefabs.Clear();
@@ -35,7 +35,7 @@ public class PrefabInstanceClientManager
 		GameManager.Instance.OnClientSpawned -= this.sendAllPrefabs;
 	}
 
-	// Token: 0x060045A5 RID: 17829 RVA: 0x001BAD9C File Offset: 0x001B8F9C
+	// Token: 0x060045C8 RID: 17864 RVA: 0x001BBE20 File Offset: 0x001BA020
 	public void StartAsServer()
 	{
 		DynamicPrefabDecorator dynamicPrefabDecorator = GameManager.Instance.GetDynamicPrefabDecorator();
@@ -46,13 +46,13 @@ public class PrefabInstanceClientManager
 		GameManager.Instance.OnClientSpawned += this.sendAllPrefabs;
 	}
 
-	// Token: 0x060045A6 RID: 17830 RVA: 0x001BAE14 File Offset: 0x001B9014
+	// Token: 0x060045C9 RID: 17865 RVA: 0x001BBE98 File Offset: 0x001BA098
 	public void StartAsClient()
 	{
 		this.clientPrefabs.Clear();
 	}
 
-	// Token: 0x060045A7 RID: 17831 RVA: 0x001BAE24 File Offset: 0x001B9024
+	// Token: 0x060045CA RID: 17866 RVA: 0x001BBEA8 File Offset: 0x001BA0A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sendAllPrefabs(ClientInfo _toClient)
 	{
@@ -71,14 +71,14 @@ public class PrefabInstanceClientManager
 		}
 	}
 
-	// Token: 0x060045A8 RID: 17832 RVA: 0x001BAEF4 File Offset: 0x001B90F4
+	// Token: 0x060045CB RID: 17867 RVA: 0x001BBF78 File Offset: 0x001BA178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void prefabLoadedServer(PrefabInstance _prefabInstance)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEditorPrefabInstance>().Setup(NetPackageEditorPrefabInstance.EChangeType.Added, _prefabInstance), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060045A9 RID: 17833 RVA: 0x001BAF2C File Offset: 0x001B912C
+	// Token: 0x060045CC RID: 17868 RVA: 0x001BBFB0 File Offset: 0x001BA1B0
 	public void PrefabLoadedClient(int _prefabInstanceId, Vector3i _boundingBoxPosition, Vector3i _boundingBoxSize, string _prefabInstanceName, Vector3i _prefabSize, string _prefabFilename, int _prefabLocalRotation, int _yOffset)
 	{
 		PathAbstractions.AbstractedLocation location = PathAbstractions.PrefabsSearchPaths.GetLocation(_prefabFilename, null, null);
@@ -102,14 +102,14 @@ public class PrefabInstanceClientManager
 		}
 	}
 
-	// Token: 0x060045AA RID: 17834 RVA: 0x001BAFD0 File Offset: 0x001B91D0
+	// Token: 0x060045CD RID: 17869 RVA: 0x001BC054 File Offset: 0x001BA254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void prefabChangedServer(PrefabInstance _prefabInstance)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEditorPrefabInstance>().Setup(NetPackageEditorPrefabInstance.EChangeType.Changed, _prefabInstance), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060045AB RID: 17835 RVA: 0x001BB008 File Offset: 0x001B9208
+	// Token: 0x060045CE RID: 17870 RVA: 0x001BC08C File Offset: 0x001BA28C
 	public void PrefabChangedClient(int _prefabInstanceId, Vector3i _boundingBoxPosition, Vector3i _boundingBoxSize, string _prefabInstanceName, Vector3i _prefabSize, string _prefabFilename, int _prefabLocalRotation, int _yOffset)
 	{
 		PrefabInstance prefabInstance = this.GetPrefabInstance(_prefabInstanceId);
@@ -133,14 +133,14 @@ public class PrefabInstanceClientManager
 		}
 	}
 
-	// Token: 0x060045AC RID: 17836 RVA: 0x001BB0C0 File Offset: 0x001B92C0
+	// Token: 0x060045CF RID: 17871 RVA: 0x001BC144 File Offset: 0x001BA344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void prefabRemovedServer(PrefabInstance _prefabInstance)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEditorPrefabInstance>().Setup(NetPackageEditorPrefabInstance.EChangeType.Removed, _prefabInstance), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060045AD RID: 17837 RVA: 0x001BB0F8 File Offset: 0x001B92F8
+	// Token: 0x060045D0 RID: 17872 RVA: 0x001BC17C File Offset: 0x001BA37C
 	public void PrefabRemovedClient(int _prefabInstanceId)
 	{
 		for (int i = 0; i < this.clientPrefabs.Count; i++)
@@ -162,7 +162,7 @@ public class PrefabInstanceClientManager
 		}
 	}
 
-	// Token: 0x060045AE RID: 17838 RVA: 0x001BB188 File Offset: 0x001B9388
+	// Token: 0x060045D1 RID: 17873 RVA: 0x001BC20C File Offset: 0x001BA40C
 	public PrefabInstance GetPrefabInstance(int _prefabId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -183,15 +183,15 @@ public class PrefabInstanceClientManager
 		return GameManager.Instance.GetDynamicPrefabDecorator().GetPrefab(_prefabId);
 	}
 
-	// Token: 0x04003842 RID: 14402
+	// Token: 0x04003862 RID: 14434
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PrefabInstanceClientManager instance;
 
-	// Token: 0x04003843 RID: 14403
+	// Token: 0x04003863 RID: 14435
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PrefabInstance> clientPrefabs = new List<PrefabInstance>();
 
-	// Token: 0x04003844 RID: 14404
+	// Token: 0x04003864 RID: 14436
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PrefabInstance> dynamicPrefabBuffer = new List<PrefabInstance>();
 }

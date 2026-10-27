@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D94 RID: 3476
+// Token: 0x02000D9F RID: 3487
 [Preserve]
 public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEntry>
 {
-	// Token: 0x17000B46 RID: 2886
-	// (get) Token: 0x060068FF RID: 26879 RVA: 0x0029A277 File Offset: 0x00298477
-	// (set) Token: 0x06006900 RID: 26880 RVA: 0x0029A27F File Offset: 0x0029847F
+	// Token: 0x17000B4C RID: 2892
+	// (get) Token: 0x06006924 RID: 26916 RVA: 0x0029B79F File Offset: 0x0029999F
+	// (set) Token: 0x06006925 RID: 26917 RVA: 0x0029B7A7 File Offset: 0x002999A7
 	[XuiXmlAttribute("matching_version_color", false)]
 	public string MatchingVersionColor
 	{
@@ -18,9 +18,9 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		set;
 	}
 
-	// Token: 0x17000B47 RID: 2887
-	// (get) Token: 0x06006901 RID: 26881 RVA: 0x0029A288 File Offset: 0x00298488
-	// (set) Token: 0x06006902 RID: 26882 RVA: 0x0029A290 File Offset: 0x00298490
+	// Token: 0x17000B4D RID: 2893
+	// (get) Token: 0x06006926 RID: 26918 RVA: 0x0029B7B0 File Offset: 0x002999B0
+	// (set) Token: 0x06006927 RID: 26919 RVA: 0x0029B7B8 File Offset: 0x002999B8
 	[XuiXmlAttribute("compatible_version_color", false)]
 	public string CompatibleVersionColor
 	{
@@ -30,9 +30,9 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		set;
 	}
 
-	// Token: 0x17000B48 RID: 2888
-	// (get) Token: 0x06006903 RID: 26883 RVA: 0x0029A299 File Offset: 0x00298499
-	// (set) Token: 0x06006904 RID: 26884 RVA: 0x0029A2A1 File Offset: 0x002984A1
+	// Token: 0x17000B4E RID: 2894
+	// (get) Token: 0x06006928 RID: 26920 RVA: 0x0029B7C1 File Offset: 0x002999C1
+	// (set) Token: 0x06006929 RID: 26921 RVA: 0x0029B7C9 File Offset: 0x002999C9
 	[XuiXmlAttribute("incompatible_version_color", false)]
 	public string IncompatibleVersionColor
 	{
@@ -42,12 +42,12 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		set;
 	}
 
-	// Token: 0x06006905 RID: 26885 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600692A RID: 26922 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RebuildList(bool _resetFilter = false)
 	{
 	}
 
-	// Token: 0x06006906 RID: 26886 RVA: 0x0029A2AC File Offset: 0x002984AC
+	// Token: 0x0600692B RID: 26923 RVA: 0x0029B7D4 File Offset: 0x002999D4
 	public void RebuildList(IReadOnlyCollection<SaveInfoProvider.SaveEntryInfo> _saveEntryInfos, bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -59,14 +59,14 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06006907 RID: 26887 RVA: 0x0029A330 File Offset: 0x00298530
+	// Token: 0x0600692C RID: 26924 RVA: 0x0029B858 File Offset: 0x00299A58
 	public void ClearList()
 	{
 		this.allEntries.Clear();
 		this.RebuildList(true);
 	}
 
-	// Token: 0x06006908 RID: 26888 RVA: 0x0029A344 File Offset: 0x00298544
+	// Token: 0x0600692D RID: 26925 RVA: 0x0029B86C File Offset: 0x00299A6C
 	public bool SelectByName(string _name)
 	{
 		if (!string.IsNullOrEmpty(_name))
@@ -83,7 +83,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		return false;
 	}
 
-	// Token: 0x06006909 RID: 26889 RVA: 0x0029A393 File Offset: 0x00298593
+	// Token: 0x0600692E RID: 26926 RVA: 0x0029B8BB File Offset: 0x00299ABB
 	public void SetWorldFilter(string _worldKey)
 	{
 		this.worldFilter = _worldKey;
@@ -92,7 +92,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		this.RefreshView(false, true);
 	}
 
-	// Token: 0x0600690A RID: 26890 RVA: 0x0029A3BC File Offset: 0x002985BC
+	// Token: 0x0600692F RID: 26927 RVA: 0x0029B8E4 File Offset: 0x00299AE4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void FilterResults(string _textMatch)
 	{
@@ -111,7 +111,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		}
 	}
 
-	// Token: 0x0600690B RID: 26891 RVA: 0x0029A41D File Offset: 0x0029861D
+	// Token: 0x06006930 RID: 26928 RVA: 0x0029B945 File Offset: 0x00299B45
 	public IEnumerable<XUiC_DMSavegamesList.ListEntry> GetSavesInWorld(string _worldKey)
 	{
 		if (string.IsNullOrEmpty(_worldKey))
@@ -130,15 +130,15 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 		yield break;
 	}
 
-	// Token: 0x040050EC RID: 20716
+	// Token: 0x04005111 RID: 20753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string worldFilter;
 
-	// Token: 0x02000D95 RID: 3477
+	// Token: 0x02000DA0 RID: 3488
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_DMSavegamesList.ListEntry>
 	{
-		// Token: 0x0600690D RID: 26893 RVA: 0x0029A43C File Offset: 0x0029863C
+		// Token: 0x06006932 RID: 26930 RVA: 0x0029B964 File Offset: 0x00299B64
 		public ListEntry(SaveInfoProvider.SaveEntryInfo _saveEntryInfo, string _matchingColor = "255,255,255", string _compatibleColor = "255,255,255", string _incompatibleColor = "255,255,255")
 		{
 			this.SaveEntryInfo = _saveEntryInfo;
@@ -155,7 +155,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			this.IncompatibleColor = _incompatibleColor;
 		}
 
-		// Token: 0x0600690E RID: 26894 RVA: 0x0029A4D1 File Offset: 0x002986D1
+		// Token: 0x06006933 RID: 26931 RVA: 0x0029B9F9 File Offset: 0x00299BF9
 		public override int CompareTo(XUiC_DMSavegamesList.ListEntry _otherEntry)
 		{
 			if (_otherEntry != null)
@@ -165,52 +165,52 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return 1;
 		}
 
-		// Token: 0x0600690F RID: 26895 RVA: 0x0029A4E9 File Offset: 0x002986E9
+		// Token: 0x06006934 RID: 26932 RVA: 0x0029BA11 File Offset: 0x00299C11
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.SaveName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x040050ED RID: 20717
+		// Token: 0x04005112 RID: 20754
 		public readonly string SaveName;
 
-		// Token: 0x040050EE RID: 20718
+		// Token: 0x04005113 RID: 20755
 		public readonly string DisplayName;
 
-		// Token: 0x040050EF RID: 20719
+		// Token: 0x04005114 RID: 20756
 		public readonly string WorldKey;
 
-		// Token: 0x040050F0 RID: 20720
+		// Token: 0x04005115 RID: 20757
 		public readonly string SaveDirectory;
 
-		// Token: 0x040050F1 RID: 20721
+		// Token: 0x04005116 RID: 20758
 		public readonly DateTime LastSaved;
 
-		// Token: 0x040050F2 RID: 20722
+		// Token: 0x04005117 RID: 20759
 		public readonly VersionInformation Version;
 
-		// Token: 0x040050F3 RID: 20723
+		// Token: 0x04005118 RID: 20760
 		public readonly VersionInformation.EVersionComparisonResult VersionComparison;
 
-		// Token: 0x040050F4 RID: 20724
+		// Token: 0x04005119 RID: 20761
 		public readonly SaveInfoProvider.SaveEntryInfo SaveEntryInfo;
 
-		// Token: 0x040050F5 RID: 20725
+		// Token: 0x0400511A RID: 20762
 		public readonly string MatchingColor;
 
-		// Token: 0x040050F6 RID: 20726
+		// Token: 0x0400511B RID: 20763
 		public readonly string CompatibleColor;
 
-		// Token: 0x040050F7 RID: 20727
+		// Token: 0x0400511C RID: 20764
 		public readonly string IncompatibleColor;
 	}
 
-	// Token: 0x02000D96 RID: 3478
+	// Token: 0x02000DA1 RID: 3489
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_DMSavegamesList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06006910 RID: 26896 RVA: 0x0029A4F7 File Offset: 0x002986F7
+		// Token: 0x06006935 RID: 26933 RVA: 0x0029BA1F File Offset: 0x00299C1F
 		[XuiXmlBinding("savename")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingSaveName()
@@ -219,7 +219,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return ((entryData != null) ? entryData.DisplayName : null) ?? "";
 		}
 
-		// Token: 0x06006911 RID: 26897 RVA: 0x0029A514 File Offset: 0x00298714
+		// Token: 0x06006936 RID: 26934 RVA: 0x0029BA3C File Offset: 0x00299C3C
 		[XuiXmlBinding("worldname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingWorldName()
@@ -228,7 +228,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return ((entryData != null) ? entryData.WorldKey : null) ?? "";
 		}
 
-		// Token: 0x06006912 RID: 26898 RVA: 0x0029A534 File Offset: 0x00298734
+		// Token: 0x06006937 RID: 26935 RVA: 0x0029BA5C File Offset: 0x00299C5C
 		[XuiXmlBinding("version")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersion()
@@ -245,7 +245,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return this.entryData.Version.LongStringNoBuild;
 		}
 
-		// Token: 0x06006913 RID: 26899 RVA: 0x0029A58C File Offset: 0x0029878C
+		// Token: 0x06006938 RID: 26936 RVA: 0x0029BAB4 File Offset: 0x00299CB4
 		[XuiXmlBinding("versiontooltip")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersionTooltip()
@@ -276,7 +276,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return text;
 		}
 
-		// Token: 0x06006914 RID: 26900 RVA: 0x0029A608 File Offset: 0x00298808
+		// Token: 0x06006939 RID: 26937 RVA: 0x0029BB30 File Offset: 0x00299D30
 		[XuiXmlBinding("lastplayed")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLastPlayed()
@@ -285,7 +285,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return ((entryData != null) ? entryData.LastSaved.ToString("yyyy-MM-dd HH:mm") : null) ?? "";
 		}
 
-		// Token: 0x06006915 RID: 26901 RVA: 0x0029A640 File Offset: 0x00298840
+		// Token: 0x0600693A RID: 26938 RVA: 0x0029BB68 File Offset: 0x00299D68
 		[XuiXmlBinding("lastplayedinfo")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLastPlayedInfo()
@@ -302,7 +302,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return string.Format("[ffffff88]{0} {1}[-]", num, Localization.Get("xuiDmDaysAgo", false, null));
 		}
 
-		// Token: 0x06006916 RID: 26902 RVA: 0x0029A6CC File Offset: 0x002988CC
+		// Token: 0x0600693B RID: 26939 RVA: 0x0029BBF4 File Offset: 0x00299DF4
 		[XuiXmlBinding("savesize")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingSaveSize()
@@ -322,7 +322,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			});
 		}
 
-		// Token: 0x06006917 RID: 26903 RVA: 0x0029A74F File Offset: 0x0029894F
+		// Token: 0x0600693C RID: 26940 RVA: 0x0029BC77 File Offset: 0x00299E77
 		[XuiXmlBinding("nameColor")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingNameColor()
@@ -334,7 +334,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return "0,0,0,0";
 		}
 
-		// Token: 0x06006918 RID: 26904 RVA: 0x0029A74F File Offset: 0x0029894F
+		// Token: 0x0600693D RID: 26941 RVA: 0x0029BC77 File Offset: 0x00299E77
 		[XuiXmlBinding("saveSizeColor")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingSaveSizeColor()
@@ -346,7 +346,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return "0,0,0,0";
 		}
 
-		// Token: 0x06006919 RID: 26905 RVA: 0x0029A764 File Offset: 0x00298964
+		// Token: 0x0600693E RID: 26942 RVA: 0x0029BC8C File Offset: 0x00299E8C
 		[XuiXmlBinding("versioncolor")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersionColor()
@@ -377,7 +377,7 @@ public class XUiC_DMSavegamesList : XUiC_DMBaseList<XUiC_DMSavegamesList.ListEnt
 			return text;
 		}
 
-		// Token: 0x0600691A RID: 26906 RVA: 0x0029A7E8 File Offset: 0x002989E8
+		// Token: 0x0600693F RID: 26943 RVA: 0x0029BD10 File Offset: 0x00299F10
 		[XuiXmlBinding("entrycolor")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingEntryColor()

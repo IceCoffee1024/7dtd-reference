@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020001BC RID: 444
 public class BlockTools
 {
-	// Token: 0x06000D48 RID: 3400 RVA: 0x00057024 File Offset: 0x00055224
+	// Token: 0x06000D48 RID: 3400 RVA: 0x00056FC4 File Offset: 0x000551C4
 	public static void PlaceTerrain(WorldBase _world, Vector3i _targetPos, BlockTools.Brush _brush, List<BlockChangeInfo> _blockChanges)
 	{
 		BlockValue block = _world.GetBlock(_targetPos);
@@ -53,7 +53,7 @@ public class BlockTools
 		}
 	}
 
-	// Token: 0x06000D49 RID: 3401 RVA: 0x00057198 File Offset: 0x00055398
+	// Token: 0x06000D49 RID: 3401 RVA: 0x00057138 File Offset: 0x00055338
 	public static void PaintTerrain(WorldBase _world, Vector3i _targetPos, BlockTools.Brush _brush, List<BlockChangeInfo> _blockChanges, BlockValue _paintBlock)
 	{
 		_world.GetBlock(_targetPos);
@@ -70,7 +70,7 @@ public class BlockTools
 		}
 	}
 
-	// Token: 0x06000D4A RID: 3402 RVA: 0x0005722C File Offset: 0x0005542C
+	// Token: 0x06000D4A RID: 3402 RVA: 0x000571CC File Offset: 0x000553CC
 	public static void RemoveTerrain(WorldBase _world, Vector3i _targetPos, BlockTools.Brush _brush, List<BlockChangeInfo> _blockChanges)
 	{
 		BlockValue block = _world.GetBlock(_targetPos);
@@ -106,7 +106,7 @@ public class BlockTools
 		}
 	}
 
-	// Token: 0x06000D4B RID: 3403 RVA: 0x0005735C File Offset: 0x0005555C
+	// Token: 0x06000D4B RID: 3403 RVA: 0x000572FC File Offset: 0x000554FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool HasValidNeighbor(Vector3i _pos, sbyte _denThreshold, WorldBase _world)
 	{
@@ -117,7 +117,7 @@ public class BlockTools
 		return _denThreshold >= 0 && (_world.GetDensity(_pos.x - 1, _pos.y, _pos.z) >= _denThreshold || _world.GetDensity(_pos.x + 1, _pos.y, _pos.z) >= _denThreshold || _world.GetDensity(_pos.x, _pos.y - 1, _pos.z) >= _denThreshold || _world.GetDensity(_pos.x, _pos.y + 1, _pos.z) >= _denThreshold || _world.GetDensity(_pos.x, _pos.y, _pos.z - 1) >= _denThreshold || _world.GetDensity(_pos.x, _pos.y, _pos.z + 1) >= _denThreshold);
 	}
 
-	// Token: 0x06000D4C RID: 3404 RVA: 0x000574F0 File Offset: 0x000556F0
+	// Token: 0x06000D4C RID: 3404 RVA: 0x00057490 File Offset: 0x00055690
 	public static void CubeRPC(GameManager _gm, Vector3i pos1, Vector3i pos2, BlockValue _blockValue, sbyte _density, int _Fillmode, TextureFullArray _textureFull)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -159,7 +159,7 @@ public class BlockTools
 		_gm.SetBlocksRPC(list, null);
 	}
 
-	// Token: 0x06000D4D RID: 3405 RVA: 0x000576FC File Offset: 0x000558FC
+	// Token: 0x06000D4D RID: 3405 RVA: 0x0005769C File Offset: 0x0005589C
 	public static void CubeWaterRPC(GameManager _gm, Vector3i _pos1, Vector3i _pos2, WaterValue _waterValue)
 	{
 		NetPackageWaterSet package = NetPackageManager.GetPackage<NetPackageWaterSet>();
@@ -198,7 +198,7 @@ public class BlockTools
 		_gm.SetWaterRPC(package);
 	}
 
-	// Token: 0x06000D4E RID: 3406 RVA: 0x000577B8 File Offset: 0x000559B8
+	// Token: 0x06000D4E RID: 3406 RVA: 0x00057758 File Offset: 0x00055958
 	public static void CubeDensityRPC(GameManager _gm, Vector3i pos1, Vector3i pos2, sbyte _density)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -237,7 +237,7 @@ public class BlockTools
 		_gm.SetBlocksRPC(list, null);
 	}
 
-	// Token: 0x06000D4F RID: 3407 RVA: 0x0005787C File Offset: 0x00055A7C
+	// Token: 0x06000D4F RID: 3407 RVA: 0x0005781C File Offset: 0x00055A1C
 	public static void CubeRandomRPC(GameManager _gm, Vector3i pos1, Vector3i pos2, BlockValue _blockValue, float _rnd, EBlockRotationClasses? _randomRotation = null)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -283,7 +283,7 @@ public class BlockTools
 		_gm.SetBlocksRPC(list, null);
 	}
 
-	// Token: 0x06000D50 RID: 3408 RVA: 0x00057988 File Offset: 0x00055B88
+	// Token: 0x06000D50 RID: 3408 RVA: 0x00057928 File Offset: 0x00055B28
 	public static byte GetMaxBlockRotations(EBlockRotationClasses _rotations)
 	{
 		byte b = 28;
@@ -302,7 +302,7 @@ public class BlockTools
 		return b;
 	}
 
-	// Token: 0x06000D51 RID: 3409 RVA: 0x000579B0 File Offset: 0x00055BB0
+	// Token: 0x06000D51 RID: 3409 RVA: 0x00057950 File Offset: 0x00055B50
 	public static byte GetRandomBlockRotation(EBlockRotationClasses _rotations, GameRandom _rnd = null)
 	{
 		if (_rnd == null)
@@ -325,7 +325,7 @@ public class BlockTools
 		return (byte)num;
 	}
 
-	// Token: 0x06000D52 RID: 3410 RVA: 0x00057A08 File Offset: 0x00055C08
+	// Token: 0x06000D52 RID: 3410 RVA: 0x000579A8 File Offset: 0x00055BA8
 	public static Prefab CopyIntoStorage(GameManager _gm, Vector3i pos1, Vector3i pos2)
 	{
 		Prefab prefab = new Prefab(new Vector3i(Math.Abs(pos1.x - pos2.x) + 1, Math.Abs(pos1.y - pos2.y) + 1, Math.Abs(pos1.z - pos2.z) + 1));
@@ -371,7 +371,7 @@ public class BlockTools
 		return prefab;
 	}
 
-	// Token: 0x06000D53 RID: 3411 RVA: 0x00057BBC File Offset: 0x00055DBC
+	// Token: 0x06000D53 RID: 3411 RVA: 0x00057B5C File Offset: 0x00055D5C
 	public static void ClearRPC(World _world, Vector3i _pos, int _xd, int _yd, int _zd, bool _bClearLight)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -396,7 +396,7 @@ public class BlockTools
 		_world.SetBlocksRPC(list);
 	}
 
-	// Token: 0x06000D54 RID: 3412 RVA: 0x00057C7C File Offset: 0x00055E7C
+	// Token: 0x06000D54 RID: 3412 RVA: 0x00057C1C File Offset: 0x00055E1C
 	public static bool IsCubeBorderEmpty(World _world, Vector3i _pos, Vector3i _size)
 	{
 		for (int i = 0; i <= _size.x; i++)
@@ -429,8 +429,8 @@ public class BlockTools
 	public class Brush
 	{
 		// Token: 0x170000F6 RID: 246
-		// (get) Token: 0x06000D56 RID: 3414 RVA: 0x00057D46 File Offset: 0x00055F46
-		// (set) Token: 0x06000D57 RID: 3415 RVA: 0x00057D4E File Offset: 0x00055F4E
+		// (get) Token: 0x06000D56 RID: 3414 RVA: 0x00057CE6 File Offset: 0x00055EE6
+		// (set) Token: 0x06000D57 RID: 3415 RVA: 0x00057CEE File Offset: 0x00055EEE
 		public int Size
 		{
 			get
@@ -445,7 +445,7 @@ public class BlockTools
 		}
 
 		// Token: 0x170000F7 RID: 247
-		// (get) Token: 0x06000D58 RID: 3416 RVA: 0x00057D5E File Offset: 0x00055F5E
+		// (get) Token: 0x06000D58 RID: 3416 RVA: 0x00057CFE File Offset: 0x00055EFE
 		public int SizeHalf
 		{
 			get
@@ -455,8 +455,8 @@ public class BlockTools
 		}
 
 		// Token: 0x170000F8 RID: 248
-		// (get) Token: 0x06000D59 RID: 3417 RVA: 0x00057D68 File Offset: 0x00055F68
-		// (set) Token: 0x06000D5A RID: 3418 RVA: 0x00057D70 File Offset: 0x00055F70
+		// (get) Token: 0x06000D59 RID: 3417 RVA: 0x00057D08 File Offset: 0x00055F08
+		// (set) Token: 0x06000D5A RID: 3418 RVA: 0x00057D10 File Offset: 0x00055F10
 		public int Strength
 		{
 			get
@@ -471,8 +471,8 @@ public class BlockTools
 		}
 
 		// Token: 0x170000F9 RID: 249
-		// (get) Token: 0x06000D5B RID: 3419 RVA: 0x00057D80 File Offset: 0x00055F80
-		// (set) Token: 0x06000D5C RID: 3420 RVA: 0x00057D88 File Offset: 0x00055F88
+		// (get) Token: 0x06000D5B RID: 3419 RVA: 0x00057D20 File Offset: 0x00055F20
+		// (set) Token: 0x06000D5C RID: 3420 RVA: 0x00057D28 File Offset: 0x00055F28
 		public int Falloff
 		{
 			get
@@ -487,8 +487,8 @@ public class BlockTools
 		}
 
 		// Token: 0x170000FA RID: 250
-		// (get) Token: 0x06000D5D RID: 3421 RVA: 0x00057D98 File Offset: 0x00055F98
-		// (set) Token: 0x06000D5E RID: 3422 RVA: 0x00057DA0 File Offset: 0x00055FA0
+		// (get) Token: 0x06000D5D RID: 3421 RVA: 0x00057D38 File Offset: 0x00055F38
+		// (set) Token: 0x06000D5E RID: 3422 RVA: 0x00057D40 File Offset: 0x00055F40
 		public BlockTools.Brush.BrushShape Shape
 		{
 			get
@@ -502,7 +502,7 @@ public class BlockTools
 			}
 		}
 
-		// Token: 0x06000D5F RID: 3423 RVA: 0x00057DB0 File Offset: 0x00055FB0
+		// Token: 0x06000D5F RID: 3423 RVA: 0x00057D50 File Offset: 0x00055F50
 		public Brush(BlockTools.Brush.BrushShape _shape, int _size, int _falloff, int _strength)
 		{
 			this.shape = _shape;
@@ -512,7 +512,7 @@ public class BlockTools
 			this.bRecalcNeeded = true;
 		}
 
-		// Token: 0x06000D60 RID: 3424 RVA: 0x00057DEC File Offset: 0x00055FEC
+		// Token: 0x06000D60 RID: 3424 RVA: 0x00057D8C File Offset: 0x00055F8C
 		public Vector3i[] GetCubesInBrush()
 		{
 			if (this.bRecalcNeeded)
@@ -534,7 +534,7 @@ public class BlockTools
 			return this.positions;
 		}
 
-		// Token: 0x06000D61 RID: 3425 RVA: 0x00057E3C File Offset: 0x0005603C
+		// Token: 0x06000D61 RID: 3425 RVA: 0x00057DDC File Offset: 0x00055FDC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CalcCubesInSphere()
 		{
@@ -557,7 +557,7 @@ public class BlockTools
 			this.positions = list.ToArray();
 		}
 
-		// Token: 0x06000D62 RID: 3426 RVA: 0x00057EC8 File Offset: 0x000560C8
+		// Token: 0x06000D62 RID: 3426 RVA: 0x00057E68 File Offset: 0x00056068
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CalcCubesInCube()
 		{

@@ -4,17 +4,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004E2 RID: 1250
+// Token: 0x020004E4 RID: 1252
 [Preserve]
 public class EntityTrader : EntityNPC, ITrader
 {
 	// Token: 0x17000475 RID: 1141
-	// (get) Token: 0x0600286F RID: 10351 RVA: 0x000FB0B1 File Offset: 0x000F92B1
-	// (set) Token: 0x06002870 RID: 10352 RVA: 0x000FB0B9 File Offset: 0x000F92B9
+	// (get) Token: 0x06002876 RID: 10358 RVA: 0x000FB5E9 File Offset: 0x000F97E9
+	// (set) Token: 0x06002877 RID: 10359 RVA: 0x000FB5F1 File Offset: 0x000F97F1
 	public TraderData TraderData { get; set; }
 
 	// Token: 0x17000476 RID: 1142
-	// (get) Token: 0x06002871 RID: 10353 RVA: 0x000FB0C2 File Offset: 0x000F92C2
+	// (get) Token: 0x06002878 RID: 10360 RVA: 0x000FB5FA File Offset: 0x000F97FA
 	public int PreferredDistanceIndex
 	{
 		get
@@ -24,7 +24,7 @@ public class EntityTrader : EntityNPC, ITrader
 	}
 
 	// Token: 0x17000477 RID: 1143
-	// (get) Token: 0x06002872 RID: 10354 RVA: 0x000FB0CA File Offset: 0x000F92CA
+	// (get) Token: 0x06002879 RID: 10361 RVA: 0x000FB602 File Offset: 0x000F9802
 	public TraderInfo TraderInfo
 	{
 		get
@@ -38,7 +38,7 @@ public class EntityTrader : EntityNPC, ITrader
 	}
 
 	// Token: 0x17000478 RID: 1144
-	// (get) Token: 0x06002873 RID: 10355 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x0600287A RID: 10362 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsValidAimAssistSnapTarget
 	{
 		get
@@ -47,7 +47,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x06002874 RID: 10356 RVA: 0x000FB0E1 File Offset: 0x000F92E1
+	// Token: 0x0600287B RID: 10363 RVA: 0x000FB619 File Offset: 0x000F9819
 	public override void InitLocation(Vector3 _pos, Vector3 _rot)
 	{
 		_pos.y = Mathf.Floor(_pos.y);
@@ -55,7 +55,7 @@ public class EntityTrader : EntityNPC, ITrader
 		this.PhysicsTransform.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06002875 RID: 10357 RVA: 0x000FB110 File Offset: 0x000F9310
+	// Token: 0x0600287C RID: 10364 RVA: 0x000FB648 File Offset: 0x000F9848
 	public override void PostInit()
 	{
 		base.PostInit();
@@ -73,7 +73,7 @@ public class EntityTrader : EntityNPC, ITrader
 		this.emodel.avatarController.SetArchetypeStance(base.NPCInfo.CurrentStance);
 	}
 
-	// Token: 0x06002876 RID: 10358 RVA: 0x000FB1A0 File Offset: 0x000F93A0
+	// Token: 0x0600287D RID: 10365 RVA: 0x000FB6D8 File Offset: 0x000F98D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetupStartingItems()
 	{
@@ -93,7 +93,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x06002877 RID: 10359 RVA: 0x000FB224 File Offset: 0x000F9424
+	// Token: 0x0600287E RID: 10366 RVA: 0x000FB75C File Offset: 0x000F995C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitLocalActivationCommands(Action<EntityActivationCommand> _addCallback)
 	{
@@ -102,14 +102,14 @@ public class EntityTrader : EntityNPC, ITrader
 		_addCallback(new EntityActivationCommand("remove", "x", null, null));
 	}
 
-	// Token: 0x06002878 RID: 10360 RVA: 0x000FB276 File Offset: 0x000F9476
+	// Token: 0x0600287F RID: 10367 RVA: 0x000FB7AE File Offset: 0x000F99AE
 	public void SetupActiveQuestsForPlayer(EntityPlayer player, int overrideFactionPoints = -1)
 	{
 		this.activeQuests = this.PopulateActiveQuests(player, -1, overrideFactionPoints);
 		QuestEventManager.Current.SetupQuestList(this, player.entityId, this.activeQuests);
 	}
 
-	// Token: 0x06002879 RID: 10361 RVA: 0x000FB2A0 File Offset: 0x000F94A0
+	// Token: 0x06002880 RID: 10368 RVA: 0x000FB7D8 File Offset: 0x000F99D8
 	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
 	{
 		if (this.IsDead() || base.NPCInfo == null)
@@ -127,7 +127,7 @@ public class EntityTrader : EntityNPC, ITrader
 		return base.AllowActivationCommand(_commandName, _playerFocusing);
 	}
 
-	// Token: 0x0600287A RID: 10362 RVA: 0x000FB308 File Offset: 0x000F9508
+	// Token: 0x06002881 RID: 10369 RVA: 0x000FB840 File Offset: 0x000F9A40
 	public override string GetActivationText()
 	{
 		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -135,7 +135,7 @@ public class EntityTrader : EntityNPC, ITrader
 		return string.Format(Localization.Get("npcTooltipTalk", false, null), text, this.LocalizedEntityName);
 	}
 
-	// Token: 0x0600287B RID: 10363 RVA: 0x000FB370 File Offset: 0x000F9570
+	// Token: 0x06002882 RID: 10370 RVA: 0x000FB8A8 File Offset: 0x000F9AA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEntityActivated(EntityActivationCommand _command, EntityPlayerLocal _playerFocusing)
 	{
@@ -151,18 +151,18 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x0600287C RID: 10364 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002883 RID: 10371 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 	}
 
-	// Token: 0x0600287D RID: 10365 RVA: 0x000FB407 File Offset: 0x000F9607
+	// Token: 0x06002884 RID: 10372 RVA: 0x000FB93F File Offset: 0x000F9B3F
 	public string GetNextTimeMessage()
 	{
 		return string.Format(Localization.Get("ttNoInteractTrader", false, null), GameUtils.WorldTimeToHourMinutesString(this.TraderInfo.GetOpenTime()));
 	}
 
-	// Token: 0x0600287E RID: 10366 RVA: 0x000FB42C File Offset: 0x000F962C
+	// Token: 0x06002885 RID: 10373 RVA: 0x000FB964 File Offset: 0x000F9B64
 	public override void OnUpdateLive()
 	{
 		base.OnUpdateLive();
@@ -299,7 +299,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x0600287F RID: 10367 RVA: 0x000FB7D4 File Offset: 0x000F99D4
+	// Token: 0x06002886 RID: 10374 RVA: 0x000FBD0C File Offset: 0x000F9F0C
 	public void PopulateQuestList()
 	{
 		if (base.NPCInfo == null || base.NPCInfo.Quests == null)
@@ -331,7 +331,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x06002880 RID: 10368 RVA: 0x000FB8E4 File Offset: 0x000F9AE4
+	// Token: 0x06002887 RID: 10375 RVA: 0x000FBE1C File Offset: 0x000FA01C
 	public bool UpdateLocations(int tier, List<Vector2> pois)
 	{
 		int num = 0;
@@ -343,7 +343,7 @@ public class EntityTrader : EntityNPC, ITrader
 		return pois.Count >= num;
 	}
 
-	// Token: 0x06002881 RID: 10369 RVA: 0x000FB930 File Offset: 0x000F9B30
+	// Token: 0x06002888 RID: 10376 RVA: 0x000FBE68 File Offset: 0x000FA068
 	public void SetActiveQuests(EntityPlayer player, NetPackageNPCQuestList.QuestPacketEntry[] questList)
 	{
 		if (this.activeQuests == null)
@@ -362,12 +362,13 @@ public class EntityTrader : EntityNPC, ITrader
 				quest.SetPositionData(Quest.PositionDataTypes.QuestGiver, this.position);
 				quest.SetPositionData(Quest.PositionDataTypes.TraderPosition, questList[i].TraderPos);
 				quest.DataVariables.Add("POIName", Localization.Get(questList[i].POIName, false, null));
+				quest.DataVariables.Add("POINameKey", questList[i].POIName);
 				this.activeQuests.Add(quest);
 			}
 		}
 	}
 
-	// Token: 0x06002882 RID: 10370 RVA: 0x000FBA18 File Offset: 0x000F9C18
+	// Token: 0x06002889 RID: 10377 RVA: 0x000FBF6C File Offset: 0x000FA16C
 	public void ClearActiveQuests(int playerID)
 	{
 		try
@@ -385,7 +386,7 @@ public class EntityTrader : EntityNPC, ITrader
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageNPCQuestList>().Setup(this.entityId, playerID), false);
 	}
 
-	// Token: 0x06002883 RID: 10371 RVA: 0x000FBA7C File Offset: 0x000F9C7C
+	// Token: 0x0600288A RID: 10378 RVA: 0x000FBFD0 File Offset: 0x000FA1D0
 	public List<Quest> PopulateActiveQuests(EntityPlayer player, int currentTier = -1, int questFactionPoints = -1)
 	{
 		if (this.questDictionary.Count == 0)
@@ -566,13 +567,13 @@ public class EntityTrader : EntityNPC, ITrader
 		return list;
 	}
 
-	// Token: 0x06002884 RID: 10372 RVA: 0x000FC0BA File Offset: 0x000FA2BA
+	// Token: 0x0600288B RID: 10379 RVA: 0x000FC60E File Offset: 0x000FA80E
 	public int GetQuestFactionPoints(EntityPlayer player)
 	{
 		return player.QuestJournal.GlobalFactionPoints;
 	}
 
-	// Token: 0x06002885 RID: 10373 RVA: 0x000FC0C7 File Offset: 0x000FA2C7
+	// Token: 0x0600288C RID: 10380 RVA: 0x000FC61B File Offset: 0x000FA81B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEntityTargeted(EntityAlive target)
 	{
@@ -583,7 +584,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x06002886 RID: 10374 RVA: 0x000FC0FC File Offset: 0x000FA2FC
+	// Token: 0x0600288D RID: 10381 RVA: 0x000FC650 File Offset: 0x000FA850
 	public override void ProcessDamageResponseLocal(DamageResponse _dmResponse)
 	{
 		if (base.NPCInfo != null && base.NPCInfo.TraderID > 0)
@@ -594,13 +595,13 @@ public class EntityTrader : EntityNPC, ITrader
 		base.ProcessDamageResponseLocal(_dmResponse);
 	}
 
-	// Token: 0x06002887 RID: 10375 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600288E RID: 10382 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanDamageEntity(int _sourceEntityId)
 	{
 		return false;
 	}
 
-	// Token: 0x06002888 RID: 10376 RVA: 0x000FC151 File Offset: 0x000FA351
+	// Token: 0x0600288F RID: 10383 RVA: 0x000FC6A5 File Offset: 0x000FA8A5
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float _impulseScale)
 	{
 		if (base.NPCInfo != null && base.NPCInfo.TraderID > 0)
@@ -610,7 +611,7 @@ public class EntityTrader : EntityNPC, ITrader
 		return base.DamageEntity(_damageSource, _strength, _criticalHit, _impulseScale);
 	}
 
-	// Token: 0x06002889 RID: 10377 RVA: 0x000FC176 File Offset: 0x000FA376
+	// Token: 0x06002890 RID: 10384 RVA: 0x000FC6CA File Offset: 0x000FA8CA
 	public override void AwardKill(EntityAlive killer)
 	{
 		if (base.NPCInfo != null && base.NPCInfo.TraderID > 0)
@@ -620,7 +621,7 @@ public class EntityTrader : EntityNPC, ITrader
 		base.AwardKill(killer);
 	}
 
-	// Token: 0x0600288A RID: 10378 RVA: 0x000FC196 File Offset: 0x000FA396
+	// Token: 0x06002891 RID: 10385 RVA: 0x000FC6EA File Offset: 0x000FA8EA
 	public override Vector3 GetLookVector()
 	{
 		if (this.lookAtPosition.Equals(Vector3.zero))
@@ -630,19 +631,19 @@ public class EntityTrader : EntityNPC, ITrader
 		return Vector3.Normalize(this.lookAtPosition - this.getHeadPosition());
 	}
 
-	// Token: 0x0600288B RID: 10379 RVA: 0x000FC1C7 File Offset: 0x000FA3C7
+	// Token: 0x06002892 RID: 10386 RVA: 0x000FC71B File Offset: 0x000FA91B
 	public override Ray GetLookRay()
 	{
 		return new Ray(this.position + new Vector3(0f, this.GetEyeHeight() * this.eyeHeightHackMod, 0f), this.GetLookVector());
 	}
 
-	// Token: 0x0600288C RID: 10380 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002893 RID: 10387 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateSpeedForwardAndStrafe(Vector3 _dist, float _partialTicks)
 	{
 	}
 
-	// Token: 0x0600288D RID: 10381 RVA: 0x000FC1FC File Offset: 0x000FA3FC
+	// Token: 0x06002894 RID: 10388 RVA: 0x000FC750 File Offset: 0x000FA950
 	public override void PlayVoiceSetEntry(string name, EntityPlayer player, bool ignoreTime = true, bool showReactionAnim = true)
 	{
 		if (!TraderInfo.TraderDialog)
@@ -682,7 +683,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x0600288E RID: 10382 RVA: 0x000FC30C File Offset: 0x000FA50C
+	// Token: 0x06002895 RID: 10389 RVA: 0x000FC860 File Offset: 0x000FAA60
 	public void PlayAnimReaction(EntityTrader.AnimReaction reaction)
 	{
 		AvatarController avatarController = this.emodel.avatarController;
@@ -692,7 +693,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x0600288F RID: 10383 RVA: 0x000FC334 File Offset: 0x000FA534
+	// Token: 0x06002896 RID: 10390 RVA: 0x000FC888 File Offset: 0x000FAA88
 	public void SendAnimReaction(int reaction)
 	{
 		List<AnimParamData> list = new List<AnimParamData>();
@@ -701,7 +702,7 @@ public class EntityTrader : EntityNPC, ITrader
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityAnimationData>().Setup(this.entityId, list), false, -1, -1, this.entityId, null, 192, false);
 	}
 
-	// Token: 0x06002890 RID: 10384 RVA: 0x000FC39E File Offset: 0x000FA59E
+	// Token: 0x06002897 RID: 10391 RVA: 0x000FC8F2 File Offset: 0x000FAAF2
 	public override bool IsSharedLock(ushort _channel)
 	{
 		if (_channel == 0)
@@ -715,13 +716,13 @@ public class EntityTrader : EntityNPC, ITrader
 		return false;
 	}
 
-	// Token: 0x06002891 RID: 10385 RVA: 0x000FC3C7 File Offset: 0x000FA5C7
+	// Token: 0x06002898 RID: 10392 RVA: 0x000FC91B File Offset: 0x000FAB1B
 	public override bool OnLockRequestServer(int _lockingPlayerID, PooledBinaryReader _brLocalContext, ushort _channel)
 	{
 		return !this.IsDead() && (this.traderArea == null || !this.traderArea.IsClosed || GameUtils.IsPlaytesting());
 	}
 
-	// Token: 0x06002892 RID: 10386 RVA: 0x000FC3F0 File Offset: 0x000FA5F0
+	// Token: 0x06002899 RID: 10393 RVA: 0x000FC944 File Offset: 0x000FAB44
 	public override void OnLockResponseServer(int _lockingPlayerID, PooledBinaryWriter _bwServerContext, ushort _channel)
 	{
 		if (_channel == 0)
@@ -743,7 +744,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x06002893 RID: 10387 RVA: 0x000FC47F File Offset: 0x000FA67F
+	// Token: 0x0600289A RID: 10394 RVA: 0x000FC9D3 File Offset: 0x000FABD3
 	public override void OnUnlockedServer(int _unlockingPlayerId, ushort _channel)
 	{
 		if (_channel == 1)
@@ -752,7 +753,7 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x06002894 RID: 10388 RVA: 0x000FC494 File Offset: 0x000FA694
+	// Token: 0x0600289B RID: 10395 RVA: 0x000FC9E8 File Offset: 0x000FABE8
 	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		if (_success && this.IsDead())
@@ -822,13 +823,13 @@ public class EntityTrader : EntityNPC, ITrader
 		return true;
 	}
 
-	// Token: 0x06002895 RID: 10389 RVA: 0x000FC6C8 File Offset: 0x000FA8C8
+	// Token: 0x0600289C RID: 10396 RVA: 0x000FCC1C File Offset: 0x000FAE1C
 	public void SetNextTraderWindow(EntityTrader.TraderWindowState _nextState)
 	{
 		this.nextWindow = _nextState;
 	}
 
-	// Token: 0x06002896 RID: 10390 RVA: 0x000FC6D4 File Offset: 0x000FA8D4
+	// Token: 0x0600289D RID: 10397 RVA: 0x000FCC28 File Offset: 0x000FAE28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TransitionToNextWindow()
 	{
@@ -866,128 +867,128 @@ public class EntityTrader : EntityNPC, ITrader
 		}
 	}
 
-	// Token: 0x04001E5E RID: 7774
+	// Token: 0x04001E6E RID: 7790
 	public float eyeHeightHackMod = 1f;
 
-	// Token: 0x04001E5F RID: 7775
+	// Token: 0x04001E6F RID: 7791
 	public bool ShowWornEquipment;
 
-	// Token: 0x04001E61 RID: 7777
+	// Token: 0x04001E71 RID: 7793
 	public TraderArea traderArea;
 
-	// Token: 0x04001E62 RID: 7778
-	public Dictionary<EntityPlayer, float> GreetingDictionary = new Dictionary<EntityPlayer, float>();
-
-	// Token: 0x04001E63 RID: 7779
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool firstTime = true;
-
-	// Token: 0x04001E64 RID: 7780
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float updateTime;
-
-	// Token: 0x04001E65 RID: 7781
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool warningPlayed;
-
-	// Token: 0x04001E66 RID: 7782
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static float traderTalkDelayTime = 90f;
-
-	// Token: 0x04001E67 RID: 7783
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const string CommandTalk = "talk";
-
-	// Token: 0x04001E68 RID: 7784
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const string CommandTrade = "trade";
-
-	// Token: 0x04001E69 RID: 7785
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const string CommandRemove = "remove";
-
-	// Token: 0x04001E6A RID: 7786
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int preferredDistanceIndex;
-
-	// Token: 0x04001E6B RID: 7787
-	public List<QuestEntry> specialQuestList;
-
-	// Token: 0x04001E6C RID: 7788
-	public Dictionary<int, List<QuestEntry>> questDictionary = new Dictionary<int, List<QuestEntry>>();
-
-	// Token: 0x04001E6D RID: 7789
-	public List<Quest> activeQuests;
-
-	// Token: 0x04001E6E RID: 7790
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public List<Vector2> usedPOILocations = new List<Vector2>();
-
-	// Token: 0x04001E6F RID: 7791
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public List<string> uniqueKeysUsed = new List<string>();
-
-	// Token: 0x04001E70 RID: 7792
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public readonly int[] distanceIndices = new int[] { 0, 0, 0, 1, 2, 2, 2 };
-
-	// Token: 0x04001E71 RID: 7793
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float lastVoiceTime;
-
 	// Token: 0x04001E72 RID: 7794
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string transientLockCommand;
+	public Dictionary<EntityPlayer, float> GreetingDictionary = new Dictionary<EntityPlayer, float>();
 
 	// Token: 0x04001E73 RID: 7795
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
+	public bool firstTime = true;
+
+	// Token: 0x04001E74 RID: 7796
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float updateTime;
+
+	// Token: 0x04001E75 RID: 7797
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool warningPlayed;
+
+	// Token: 0x04001E76 RID: 7798
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static float traderTalkDelayTime = 90f;
+
+	// Token: 0x04001E77 RID: 7799
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const string CommandTalk = "talk";
+
+	// Token: 0x04001E78 RID: 7800
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const string CommandTrade = "trade";
+
+	// Token: 0x04001E79 RID: 7801
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const string CommandRemove = "remove";
+
+	// Token: 0x04001E7A RID: 7802
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int preferredDistanceIndex;
+
+	// Token: 0x04001E7B RID: 7803
+	public List<QuestEntry> specialQuestList;
+
+	// Token: 0x04001E7C RID: 7804
+	public Dictionary<int, List<QuestEntry>> questDictionary = new Dictionary<int, List<QuestEntry>>();
+
+	// Token: 0x04001E7D RID: 7805
+	public List<Quest> activeQuests;
+
+	// Token: 0x04001E7E RID: 7806
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<Vector2> usedPOILocations = new List<Vector2>();
+
+	// Token: 0x04001E7F RID: 7807
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<string> uniqueKeysUsed = new List<string>();
+
+	// Token: 0x04001E80 RID: 7808
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public readonly int[] distanceIndices = new int[] { 0, 0, 0, 1, 2, 2, 2 };
+
+	// Token: 0x04001E81 RID: 7809
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lastVoiceTime;
+
+	// Token: 0x04001E82 RID: 7810
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string transientLockCommand;
+
+	// Token: 0x04001E83 RID: 7811
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
 	public EntityTrader.TraderWindowState nextWindow = EntityTrader.TraderWindowState.Close;
 
-	// Token: 0x020004E3 RID: 1251
+	// Token: 0x020004E5 RID: 1253
 	public enum AnimReaction
 	{
-		// Token: 0x04001E75 RID: 7797
+		// Token: 0x04001E85 RID: 7813
 		Happy,
-		// Token: 0x04001E76 RID: 7798
+		// Token: 0x04001E86 RID: 7814
 		Neutral,
-		// Token: 0x04001E77 RID: 7799
+		// Token: 0x04001E87 RID: 7815
 		Angry
 	}
 
-	// Token: 0x020004E4 RID: 1252
+	// Token: 0x020004E6 RID: 1254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum LockChannel
 	{
-		// Token: 0x04001E79 RID: 7801
+		// Token: 0x04001E89 RID: 7817
 		Interaction,
-		// Token: 0x04001E7A RID: 7802
+		// Token: 0x04001E8A RID: 7818
 		Trade
 	}
 
-	// Token: 0x020004E5 RID: 1253
+	// Token: 0x020004E7 RID: 1255
 	public enum TraderWindowState
 	{
-		// Token: 0x04001E7C RID: 7804
+		// Token: 0x04001E8C RID: 7820
 		Dialog,
-		// Token: 0x04001E7D RID: 7805
+		// Token: 0x04001E8D RID: 7821
 		Trade,
-		// Token: 0x04001E7E RID: 7806
+		// Token: 0x04001E8E RID: 7822
 		QuestComplete,
-		// Token: 0x04001E7F RID: 7807
+		// Token: 0x04001E8F RID: 7823
 		Close
 	}
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FAC RID: 4012
+// Token: 0x02000FBC RID: 4028
 [Preserve]
 public class XUiC_OnScreenIcons : XUiController
 {
-	// Token: 0x06007E43 RID: 32323 RVA: 0x002FFFEE File Offset: 0x002FE1EE
+	// Token: 0x06007E92 RID: 32402 RVA: 0x00301B0A File Offset: 0x002FFD0A
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class XUiC_OnScreenIcons : XUiController
 		this.xui.OnScreenIconsWindow = this;
 	}
 
-	// Token: 0x06007E44 RID: 32324 RVA: 0x0030002E File Offset: 0x002FE22E
+	// Token: 0x06007E93 RID: 32403 RVA: 0x00301B4A File Offset: 0x002FFD4A
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -25,7 +25,7 @@ public class XUiC_OnScreenIcons : XUiController
 		this.xui.OnScreenIconsWindow = null;
 	}
 
-	// Token: 0x06007E45 RID: 32325 RVA: 0x00300058 File Offset: 0x002FE258
+	// Token: 0x06007E94 RID: 32404 RVA: 0x00301B74 File Offset: 0x002FFD74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Instance_OnNavObjectRemoved(NavObject newNavObject)
 	{
@@ -35,7 +35,7 @@ public class XUiC_OnScreenIcons : XUiController
 		}
 	}
 
-	// Token: 0x06007E46 RID: 32326 RVA: 0x00300069 File Offset: 0x002FE269
+	// Token: 0x06007E95 RID: 32405 RVA: 0x00301B85 File Offset: 0x002FFD85
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Instance_OnNavObjectAdded(NavObject newNavObject)
 	{
@@ -45,7 +45,7 @@ public class XUiC_OnScreenIcons : XUiController
 		}
 	}
 
-	// Token: 0x06007E47 RID: 32327 RVA: 0x0030007C File Offset: 0x002FE27C
+	// Token: 0x06007E96 RID: 32406 RVA: 0x00301B98 File Offset: 0x002FFD98
 	public override void Update(float _dt)
 	{
 		if (this.screenIconList.Count == 0 || !XUiC_OnScreenIcons.ShowIcons)
@@ -71,20 +71,20 @@ public class XUiC_OnScreenIcons : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007E48 RID: 32328 RVA: 0x0030017B File Offset: 0x002FE37B
+	// Token: 0x06007E97 RID: 32407 RVA: 0x00301C97 File Offset: 0x002FFE97
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.Camera = this.xui.playerUI.entityPlayer.playerCamera;
 	}
 
-	// Token: 0x06007E49 RID: 32329 RVA: 0x002D0191 File Offset: 0x002CE391
+	// Token: 0x06007E98 RID: 32408 RVA: 0x002D16E9 File Offset: 0x002CF8E9
 	public override void OnClose()
 	{
 		base.OnClose();
 	}
 
-	// Token: 0x06007E4A RID: 32330 RVA: 0x003001A0 File Offset: 0x002FE3A0
+	// Token: 0x06007E99 RID: 32409 RVA: 0x00301CBC File Offset: 0x002FFEBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RegisterIcon(NavObject newNavObject)
 	{
@@ -105,7 +105,7 @@ public class XUiC_OnScreenIcons : XUiController
 		onScreenIcon.Init();
 	}
 
-	// Token: 0x06007E4B RID: 32331 RVA: 0x003001FC File Offset: 0x002FE3FC
+	// Token: 0x06007E9A RID: 32410 RVA: 0x00301D18 File Offset: 0x002FFF18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OnScreenIcons.OnScreenIcon CreateIcon()
 	{
@@ -129,7 +129,7 @@ public class XUiC_OnScreenIcons : XUiController
 		return onScreenIcon;
 	}
 
-	// Token: 0x06007E4C RID: 32332 RVA: 0x0030027C File Offset: 0x002FE47C
+	// Token: 0x06007E9B RID: 32411 RVA: 0x00301D98 File Offset: 0x002FFF98
 	public void UnRegisterIcon(NavObject navObject)
 	{
 		if (!XUiC_OnScreenIcons.ShowIcons)
@@ -155,28 +155,28 @@ public class XUiC_OnScreenIcons : XUiController
 		}
 	}
 
-	// Token: 0x04005DAD RID: 23981
+	// Token: 0x04005DE8 RID: 24040
 	public List<XUiC_OnScreenIcons.OnScreenIcon> screenIconList = new List<XUiC_OnScreenIcons.OnScreenIcon>();
 
-	// Token: 0x04005DAE RID: 23982
+	// Token: 0x04005DE9 RID: 24041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_OnScreenIcons.OnScreenIcon> disabledIcons = new List<XUiC_OnScreenIcons.OnScreenIcon>();
 
-	// Token: 0x04005DAF RID: 23983
+	// Token: 0x04005DEA RID: 24042
 	public Camera Camera;
 
-	// Token: 0x04005DB0 RID: 23984
+	// Token: 0x04005DEB RID: 24043
 	public static bool ShowIcons = true;
 
-	// Token: 0x02000FAD RID: 4013
+	// Token: 0x02000FBD RID: 4029
 	public class OnScreenIcon
 	{
-		// Token: 0x06007E4F RID: 32335 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06007E9E RID: 32414 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init()
 		{
 		}
 
-		// Token: 0x06007E50 RID: 32336 RVA: 0x0030032C File Offset: 0x002FE52C
+		// Token: 0x06007E9F RID: 32415 RVA: 0x00301E48 File Offset: 0x00300048
 		public void Update(Vector3 offset, Vector3 playerPosition, Vector3 cameraForward, XUi xui, ref int depth)
 		{
 			if (!this.NavObject.IsValid())
@@ -371,7 +371,7 @@ public class XUiC_OnScreenIcons : XUiController
 			}
 		}
 
-		// Token: 0x06007E51 RID: 32337 RVA: 0x00300A2C File Offset: 0x002FEC2C
+		// Token: 0x06007EA0 RID: 32416 RVA: 0x00302548 File Offset: 0x00300748
 		public void CreateObjects()
 		{
 			if (this.Sprite)
@@ -415,7 +415,7 @@ public class XUiC_OnScreenIcons : XUiController
 			uilabel.transform.localPosition = new Vector2(0f, -(this.ScreenSettings.SpriteSize * 0.5f + 8f));
 		}
 
-		// Token: 0x06007E52 RID: 32338 RVA: 0x00300C03 File Offset: 0x002FEE03
+		// Token: 0x06007EA1 RID: 32417 RVA: 0x0030271F File Offset: 0x0030091F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HideObjects()
 		{
@@ -425,7 +425,7 @@ public class XUiC_OnScreenIcons : XUiController
 			}
 		}
 
-		// Token: 0x06007E53 RID: 32339 RVA: 0x00300C24 File Offset: 0x002FEE24
+		// Token: 0x06007EA2 RID: 32418 RVA: 0x00302740 File Offset: 0x00300940
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupFillSprite()
 		{
@@ -444,7 +444,7 @@ public class XUiC_OnScreenIcons : XUiController
 			uisprite.depth = 300;
 		}
 
-		// Token: 0x06007E54 RID: 32340 RVA: 0x00300CC4 File Offset: 0x002FEEC4
+		// Token: 0x06007EA3 RID: 32419 RVA: 0x003027E0 File Offset: 0x003009E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupSubSprite()
 		{
@@ -464,7 +464,7 @@ public class XUiC_OnScreenIcons : XUiController
 			uisprite.depth = 300;
 		}
 
-		// Token: 0x06007E55 RID: 32341 RVA: 0x00300D75 File Offset: 0x002FEF75
+		// Token: 0x06007EA4 RID: 32420 RVA: 0x00302891 File Offset: 0x00300A91
 		public void RemoveFillSprite()
 		{
 			if (this.FillSprite != null)
@@ -474,7 +474,7 @@ public class XUiC_OnScreenIcons : XUiController
 			}
 		}
 
-		// Token: 0x06007E56 RID: 32342 RVA: 0x00300D9C File Offset: 0x002FEF9C
+		// Token: 0x06007EA5 RID: 32421 RVA: 0x003028B8 File Offset: 0x00300AB8
 		public void RemoveSubSprite()
 		{
 			if (this.SubSprite != null)
@@ -484,7 +484,7 @@ public class XUiC_OnScreenIcons : XUiController
 			}
 		}
 
-		// Token: 0x06007E57 RID: 32343 RVA: 0x00300DC4 File Offset: 0x002FEFC4
+		// Token: 0x06007EA6 RID: 32422 RVA: 0x003028E0 File Offset: 0x00300AE0
 		public int UpdateDepth(int depth)
 		{
 			this.Sprite.depth = depth;
@@ -500,31 +500,31 @@ public class XUiC_OnScreenIcons : XUiController
 			return depth;
 		}
 
-		// Token: 0x04005DB1 RID: 23985
+		// Token: 0x04005DEC RID: 24044
 		public XUiC_OnScreenIcons Owner;
 
-		// Token: 0x04005DB2 RID: 23986
+		// Token: 0x04005DED RID: 24045
 		public NavObject NavObject;
 
-		// Token: 0x04005DB3 RID: 23987
+		// Token: 0x04005DEE RID: 24046
 		public Transform Transform;
 
-		// Token: 0x04005DB4 RID: 23988
+		// Token: 0x04005DEF RID: 24047
 		public UISprite Sprite;
 
-		// Token: 0x04005DB5 RID: 23989
+		// Token: 0x04005DF0 RID: 24048
 		public UISprite FillSprite;
 
-		// Token: 0x04005DB6 RID: 23990
+		// Token: 0x04005DF1 RID: 24049
 		public UISprite SubSprite;
 
-		// Token: 0x04005DB7 RID: 23991
+		// Token: 0x04005DF2 RID: 24050
 		public UILabel Label;
 
-		// Token: 0x04005DB8 RID: 23992
+		// Token: 0x04005DF3 RID: 24051
 		public bool ReadyForUnload;
 
-		// Token: 0x04005DB9 RID: 23993
+		// Token: 0x04005DF4 RID: 24052
 		public NavObjectScreenSettings ScreenSettings;
 	}
 }

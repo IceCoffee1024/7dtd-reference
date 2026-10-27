@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020008F3 RID: 2291
+// Token: 0x020008FD RID: 2301
 [Preserve]
 public class NetPackagePersistentPlayerPositions : NetPackage
 {
-	// Token: 0x17000710 RID: 1808
-	// (get) Token: 0x060041DC RID: 16860 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x17000716 RID: 1814
+	// (get) Token: 0x060041FF RID: 16895 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,8 +16,8 @@ public class NetPackagePersistentPlayerPositions : NetPackage
 		}
 	}
 
-	// Token: 0x17000711 RID: 1809
-	// (get) Token: 0x060041DD RID: 16861 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x17000717 RID: 1815
+	// (get) Token: 0x06004200 RID: 16896 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool FlushQueue
 	{
 		get
@@ -26,7 +26,7 @@ public class NetPackagePersistentPlayerPositions : NetPackage
 		}
 	}
 
-	// Token: 0x060041DE RID: 16862 RVA: 0x0019DB2C File Offset: 0x0019BD2C
+	// Token: 0x06004201 RID: 16897 RVA: 0x0019EBD4 File Offset: 0x0019CDD4
 	public NetPackagePersistentPlayerPositions Setup(PersistentPlayerList _ppl)
 	{
 		foreach (KeyValuePair<PlatformUserIdentifierAbs, PersistentPlayerData> keyValuePair in _ppl.Players)
@@ -45,7 +45,7 @@ public class NetPackagePersistentPlayerPositions : NetPackage
 		return this;
 	}
 
-	// Token: 0x060041DF RID: 16863 RVA: 0x0019DBA8 File Offset: 0x0019BDA8
+	// Token: 0x06004202 RID: 16898 RVA: 0x0019EC50 File Offset: 0x0019CE50
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = _reader.ReadInt32();
@@ -57,7 +57,7 @@ public class NetPackagePersistentPlayerPositions : NetPackage
 		}
 	}
 
-	// Token: 0x060041E0 RID: 16864 RVA: 0x0019DBE8 File Offset: 0x0019BDE8
+	// Token: 0x06004203 RID: 16899 RVA: 0x0019EC90 File Offset: 0x0019CE90
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -74,7 +74,7 @@ public class NetPackagePersistentPlayerPositions : NetPackage
 		}
 	}
 
-	// Token: 0x060041E1 RID: 16865 RVA: 0x0019DC6C File Offset: 0x0019BE6C
+	// Token: 0x06004204 RID: 16900 RVA: 0x0019ED14 File Offset: 0x0019CF14
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		PersistentPlayerList persistentPlayers = _callbacks.persistentPlayers;
@@ -98,7 +98,7 @@ public class NetPackagePersistentPlayerPositions : NetPackage
 		XUiC_SpawnNearFriendsList.Instance.UpdatePlayers();
 	}
 
-	// Token: 0x040035A9 RID: 13737
+	// Token: 0x040035C9 RID: 13769
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<PlatformUserIdentifierAbs, Vector3i> positions = new Dictionary<PlatformUserIdentifierAbs, Vector3i>();
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000868 RID: 2152
+// Token: 0x02000872 RID: 2162
 [Preserve]
 public class NetPackageWallVolume : NetPackage
 {
-	// Token: 0x06003E5F RID: 15967 RVA: 0x0018B874 File Offset: 0x00189A74
+	// Token: 0x06003E82 RID: 16002 RVA: 0x0018C91C File Offset: 0x0018AB1C
 	public NetPackageWallVolume Setup(int _id, WallVolume _wallVolume)
 	{
 		this.id = _id;
@@ -13,8 +13,8 @@ public class NetPackageWallVolume : NetPackage
 		return this;
 	}
 
-	// Token: 0x1700069F RID: 1695
-	// (get) Token: 0x06003E60 RID: 15968 RVA: 0x0002F260 File Offset: 0x0002D460
+	// Token: 0x170006A5 RID: 1701
+	// (get) Token: 0x06003E83 RID: 16003 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -23,14 +23,14 @@ public class NetPackageWallVolume : NetPackage
 		}
 	}
 
-	// Token: 0x06003E61 RID: 15969 RVA: 0x0018B885 File Offset: 0x00189A85
+	// Token: 0x06003E84 RID: 16004 RVA: 0x0018C92D File Offset: 0x0018AB2D
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.id = _reader.ReadInt32();
 		this.wallVolume = WallVolume.Read(_reader);
 	}
 
-	// Token: 0x06003E62 RID: 15970 RVA: 0x0018B89F File Offset: 0x00189A9F
+	// Token: 0x06003E85 RID: 16005 RVA: 0x0018C947 File Offset: 0x0018AB47
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -38,7 +38,7 @@ public class NetPackageWallVolume : NetPackage
 		this.wallVolume.Write(_writer);
 	}
 
-	// Token: 0x06003E63 RID: 15971 RVA: 0x0018B8C0 File Offset: 0x00189AC0
+	// Token: 0x06003E86 RID: 16006 RVA: 0x0018C968 File Offset: 0x0018AB68
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null || !_callbacks.worldInitInfoReceived)
@@ -51,11 +51,11 @@ public class NetPackageWallVolume : NetPackage
 		}
 	}
 
-	// Token: 0x040032A8 RID: 12968
+	// Token: 0x040032C8 RID: 13000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x040032A9 RID: 12969
+	// Token: 0x040032C9 RID: 13001
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WallVolume wallVolume;
 }

@@ -2,18 +2,18 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010B8 RID: 4280
+// Token: 0x020010C8 RID: 4296
 [Preserve]
 public class XUiC_TwitchVoteEntry : XUiController
 {
-	// Token: 0x1700100C RID: 4108
-	// (get) Token: 0x06008827 RID: 34855 RVA: 0x00341952 File Offset: 0x0033FB52
-	// (set) Token: 0x06008828 RID: 34856 RVA: 0x0034195A File Offset: 0x0033FB5A
+	// Token: 0x17001017 RID: 4119
+	// (get) Token: 0x0600887A RID: 34938 RVA: 0x003439D6 File Offset: 0x00341BD6
+	// (set) Token: 0x0600887B RID: 34939 RVA: 0x003439DE File Offset: 0x00341BDE
 	public XUiC_TwitchWindow Owner { get; set; }
 
-	// Token: 0x1700100D RID: 4109
-	// (get) Token: 0x06008829 RID: 34857 RVA: 0x00341963 File Offset: 0x0033FB63
-	// (set) Token: 0x0600882A RID: 34858 RVA: 0x0034196B File Offset: 0x0033FB6B
+	// Token: 0x17001018 RID: 4120
+	// (get) Token: 0x0600887C RID: 34940 RVA: 0x003439E7 File Offset: 0x00341BE7
+	// (set) Token: 0x0600887D RID: 34941 RVA: 0x003439EF File Offset: 0x00341BEF
 	public TwitchVoteEntry Vote
 	{
 		get
@@ -27,7 +27,7 @@ public class XUiC_TwitchVoteEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600882B RID: 34859 RVA: 0x0034197C File Offset: 0x0033FB7C
+	// Token: 0x0600887E RID: 34942 RVA: 0x00343A00 File Offset: 0x00341C00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -257,7 +257,7 @@ public class XUiC_TwitchVoteEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600882C RID: 34860 RVA: 0x00341DBC File Offset: 0x0033FFBC
+	// Token: 0x0600887F RID: 34943 RVA: 0x00343E40 File Offset: 0x00342040
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "positive_color")
@@ -293,14 +293,14 @@ public class XUiC_TwitchVoteEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0600882D RID: 34861 RVA: 0x0008B53B File Offset: 0x0008973B
+	// Token: 0x06008880 RID: 34944 RVA: 0x0008B76F File Offset: 0x0008996F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600882E RID: 34862 RVA: 0x00341E58 File Offset: 0x00340058
+	// Token: 0x06008881 RID: 34945 RVA: 0x00343EDC File Offset: 0x003420DC
 	public override void Update(float _dt)
 	{
 		if (this.Vote != null && this.Vote.UIDirty)
@@ -316,42 +316,42 @@ public class XUiC_TwitchVoteEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04006571 RID: 25969
+	// Token: 0x040065B0 RID: 26032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchVoteEntry vote;
 
-	// Token: 0x04006572 RID: 25970
+	// Token: 0x040065B1 RID: 26033
 	public bool isWinner;
 
-	// Token: 0x04006573 RID: 25971
+	// Token: 0x040065B2 RID: 26034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string positiveColor = "0,0,255";
 
-	// Token: 0x04006574 RID: 25972
+	// Token: 0x040065B3 RID: 26035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string negativeColor = "255,0,0";
 
-	// Token: 0x04006575 RID: 25973
+	// Token: 0x040065B4 RID: 26036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textBadColor = "255,175,175";
 
-	// Token: 0x04006576 RID: 25974
+	// Token: 0x040065B5 RID: 26037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textGoodColor = "175,175,255";
 
-	// Token: 0x04006577 RID: 25975
+	// Token: 0x040065B6 RID: 26038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string selectedTextColor = "222,206,163";
 
-	// Token: 0x04006578 RID: 25976
+	// Token: 0x040065B7 RID: 26039
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string disabledColor = "80,80,80";
 
-	// Token: 0x0400657A RID: 25978
+	// Token: 0x040065B9 RID: 26041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isReady;
 
-	// Token: 0x0400657B RID: 25979
+	// Token: 0x040065BA RID: 26042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> voteCountFormatterInt = new CachedStringFormatter<int>((int _i) => _i.ToString() + "%");
 }

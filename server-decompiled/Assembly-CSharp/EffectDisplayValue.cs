@@ -3,10 +3,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x020006C3 RID: 1731
+// Token: 0x020006CA RID: 1738
 public class EffectDisplayValue
 {
-	// Token: 0x0600362D RID: 13869 RVA: 0x001642CB File Offset: 0x001624CB
+	// Token: 0x0600363B RID: 13883 RVA: 0x00164EBF File Offset: 0x001630BF
 	public EffectDisplayValue(string _name, float[] _value, float[] _levels, RequirementGroup _requirements)
 	{
 		this.Name = _name;
@@ -15,27 +15,27 @@ public class EffectDisplayValue
 		this.Requirements = _requirements;
 	}
 
-	// Token: 0x0600362E RID: 13870 RVA: 0x001642F0 File Offset: 0x001624F0
+	// Token: 0x0600363C RID: 13884 RVA: 0x00164EE4 File Offset: 0x001630E4
 	public bool IsValid(MinEventParams _params)
 	{
 		return this.canRun(_params);
 	}
 
-	// Token: 0x0600362F RID: 13871 RVA: 0x001642F9 File Offset: 0x001624F9
+	// Token: 0x0600363D RID: 13885 RVA: 0x00164EED File Offset: 0x001630ED
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canRun(MinEventParams _params)
 	{
 		return this.Requirements == null || this.Requirements.IsValid(_params);
 	}
 
-	// Token: 0x06003630 RID: 13872 RVA: 0x00164311 File Offset: 0x00162511
+	// Token: 0x0600363E RID: 13886 RVA: 0x00164F05 File Offset: 0x00163105
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool InLevelRange(float _level, float _min, float _max)
 	{
 		return _level >= _min && _level <= _max;
 	}
 
-	// Token: 0x06003631 RID: 13873 RVA: 0x00164320 File Offset: 0x00162520
+	// Token: 0x0600363F RID: 13887 RVA: 0x00164F14 File Offset: 0x00163114
 	public float GetValue(int _level)
 	{
 		if (this.Levels != null)
@@ -89,7 +89,7 @@ public class EffectDisplayValue
 		return 0f;
 	}
 
-	// Token: 0x06003632 RID: 13874 RVA: 0x001644F8 File Offset: 0x001626F8
+	// Token: 0x06003640 RID: 13888 RVA: 0x001650EC File Offset: 0x001632EC
 	public static EffectDisplayValue ParseDisplayValue(XElement _element)
 	{
 		if (!_element.HasAttribute("name") || !_element.HasAttribute("value"))
@@ -140,18 +140,18 @@ public class EffectDisplayValue
 		return new EffectDisplayValue(_element.GetAttribute("name"), array, array3, requirementGroup);
 	}
 
-	// Token: 0x04002B7E RID: 11134
+	// Token: 0x04002B99 RID: 11161
 	public string Name;
 
-	// Token: 0x04002B7F RID: 11135
+	// Token: 0x04002B9A RID: 11162
 	public float[] Values;
 
-	// Token: 0x04002B80 RID: 11136
+	// Token: 0x04002B9B RID: 11163
 	public float[] Levels;
 
-	// Token: 0x04002B81 RID: 11137
+	// Token: 0x04002B9C RID: 11164
 	public RequirementGroup Requirements;
 
-	// Token: 0x04002B82 RID: 11138
+	// Token: 0x04002B9D RID: 11165
 	public bool OrCompare;
 }

@@ -7,27 +7,27 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A70 RID: 6768
+	// Token: 0x02001AA1 RID: 6817
 	[Preserve]
 	public class SingleClip : Content
 	{
-		// Token: 0x17001990 RID: 6544
-		// (get) Token: 0x0600CD43 RID: 52547 RVA: 0x004AC474 File Offset: 0x004AA674
-		// (set) Token: 0x0600CD44 RID: 52548 RVA: 0x004AC47C File Offset: 0x004AA67C
+		// Token: 0x170019D8 RID: 6616
+		// (get) Token: 0x0600CE57 RID: 52823 RVA: 0x004AFF70 File Offset: 0x004AE170
+		// (set) Token: 0x0600CE58 RID: 52824 RVA: 0x004AFF78 File Offset: 0x004AE178
 		public AudioClip Clip
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CD45 RID: 52549 RVA: 0x004AC485 File Offset: 0x004AA685
+		// Token: 0x0600CE59 RID: 52825 RVA: 0x004AFF81 File Offset: 0x004AE181
 		public override void Unload()
 		{
 			this.Clip.UnloadAudioData();
 			this.IsLoaded = false;
 		}
 
-		// Token: 0x0600CD46 RID: 52550 RVA: 0x004AC49A File Offset: 0x004AA69A
+		// Token: 0x0600CE5A RID: 52826 RVA: 0x004AFF96 File Offset: 0x004AE196
 		public override IEnumerator Load()
 		{
 			if (!this.IsLoaded)
@@ -42,7 +42,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CD47 RID: 52551 RVA: 0x004AC4A9 File Offset: 0x004AA6A9
+		// Token: 0x0600CE5B RID: 52827 RVA: 0x004AFFA5 File Offset: 0x004AE1A5
 		public override void ParseFromXml(XElement _xmlNode)
 		{
 			base.ParseFromXml(_xmlNode);
@@ -50,7 +50,7 @@ namespace DynamicMusic
 			this.path = _xmlNode.GetAttribute("path");
 		}
 
-		// Token: 0x04009BC0 RID: 39872
+		// Token: 0x04009CA9 RID: 40105
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string path;
 	}

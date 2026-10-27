@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x0200040E RID: 1038
+// Token: 0x02000410 RID: 1040
 public enum EnumAIDirectorChunkEvent
 {
-	// Token: 0x040015C5 RID: 5573
+	// Token: 0x040015D5 RID: 5589
 	Campfire,
-	// Token: 0x040015C6 RID: 5574
+	// Token: 0x040015D6 RID: 5590
 	Forge,
-	// Token: 0x040015C7 RID: 5575
+	// Token: 0x040015D7 RID: 5591
 	KillAnimal,
-	// Token: 0x040015C8 RID: 5576
+	// Token: 0x040015D8 RID: 5592
 	Sound,
-	// Token: 0x040015C9 RID: 5577
+	// Token: 0x040015D9 RID: 5593
 	Smell,
-	// Token: 0x040015CA RID: 5578
+	// Token: 0x040015DA RID: 5594
 	Carcass,
-	// Token: 0x040015CB RID: 5579
+	// Token: 0x040015DB RID: 5595
 	Torch
 }

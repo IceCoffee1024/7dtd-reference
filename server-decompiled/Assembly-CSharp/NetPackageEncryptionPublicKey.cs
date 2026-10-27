@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007AA RID: 1962
+// Token: 0x020007B2 RID: 1970
 [Preserve]
 public class NetPackageEncryptionPublicKey : NetPackage
 {
-	// Token: 0x17000629 RID: 1577
-	// (get) Token: 0x06003A84 RID: 14980 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x1700062D RID: 1581
+	// (get) Token: 0x06003A9B RID: 15003 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEncryptionPublicKey : NetPackage
 		}
 	}
 
-	// Token: 0x06003A85 RID: 14981 RVA: 0x0017BF3F File Offset: 0x0017A13F
+	// Token: 0x06003A9C RID: 15004 RVA: 0x0017CED7 File Offset: 0x0017B0D7
 	public NetPackageEncryptionPublicKey Setup(string keyParamsXml, byte[] hash, byte[] signedHash)
 	{
 		this.ExchangePublicKeyParamsXml = keyParamsXml;
@@ -24,7 +24,7 @@ public class NetPackageEncryptionPublicKey : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A86 RID: 14982 RVA: 0x0017BF58 File Offset: 0x0017A158
+	// Token: 0x06003A9D RID: 15005 RVA: 0x0017CEF0 File Offset: 0x0017B0F0
 	public override void read(PooledBinaryReader _br)
 	{
 		this.ExchangePublicKeyParamsXml = _br.ReadString();
@@ -34,7 +34,7 @@ public class NetPackageEncryptionPublicKey : NetPackage
 		_br.Read(this.SignedHash, 0, this.SignedHash.Length);
 	}
 
-	// Token: 0x06003A87 RID: 14983 RVA: 0x0017BFC0 File Offset: 0x0017A1C0
+	// Token: 0x06003A9E RID: 15006 RVA: 0x0017CF58 File Offset: 0x0017B158
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -45,21 +45,21 @@ public class NetPackageEncryptionPublicKey : NetPackage
 		_bw.Write(this.SignedHash);
 	}
 
-	// Token: 0x06003A88 RID: 14984 RVA: 0x0017C014 File Offset: 0x0017A214
+	// Token: 0x06003A9F RID: 15007 RVA: 0x0017CFAC File Offset: 0x0017B1AC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.AntiCheatEncryptionAuthServer.SendSharedKey(base.Sender, this.ExchangePublicKeyParamsXml, this.Hash, this.SignedHash);
 	}
 
-	// Token: 0x04002FC1 RID: 12225
+	// Token: 0x04002FDD RID: 12253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string ExchangePublicKeyParamsXml;
 
-	// Token: 0x04002FC2 RID: 12226
+	// Token: 0x04002FDE RID: 12254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] Hash;
 
-	// Token: 0x04002FC3 RID: 12227
+	// Token: 0x04002FDF RID: 12255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] SignedHash;
 }

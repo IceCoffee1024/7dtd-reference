@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x020006FE RID: 1790
+// Token: 0x02000706 RID: 1798
 [Preserve]
 public class MinEventActionAltSounds : MinEventActionTargetedBase
 {
-	// Token: 0x060036FC RID: 14076 RVA: 0x00169C0C File Offset: 0x00167E0C
+	// Token: 0x06003713 RID: 14099 RVA: 0x0016ABA4 File Offset: 0x00168DA4
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -29,7 +29,7 @@ public class MinEventActionAltSounds : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036FD RID: 14077 RVA: 0x00169C9C File Offset: 0x00167E9C
+	// Token: 0x06003714 RID: 14100 RVA: 0x0016AC34 File Offset: 0x00168E34
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -40,7 +40,7 @@ public class MinEventActionAltSounds : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C22 RID: 11298
+	// Token: 0x04002C3E RID: 11326
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool enabled;
 }

@@ -7,11 +7,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Token: 0x02001235 RID: 4661
+// Token: 0x02001247 RID: 4679
 public class GUIWindowConsole : GUIWindowUGUI
 {
-	// Token: 0x170011DD RID: 4573
-	// (get) Token: 0x06009497 RID: 38039 RVA: 0x00383E0B File Offset: 0x0038200B
+	// Token: 0x170011E8 RID: 4584
+	// (get) Token: 0x060094EE RID: 38126 RVA: 0x00386207 File Offset: 0x00384407
 	public override string UIPrefabPath
 	{
 		get
@@ -20,7 +20,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x06009498 RID: 38040 RVA: 0x00383E14 File Offset: 0x00382014
+	// Token: 0x060094EF RID: 38127 RVA: 0x00386210 File Offset: 0x00384410
 	public GUIWindowConsole()
 		: base("GUIWindowConsole")
 	{
@@ -51,7 +51,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		PlatformManager.NativePlatform.Input.OnLastInputStyleChanged += this.Input_OnLastInputStyleChanged;
 	}
 
-	// Token: 0x06009499 RID: 38041 RVA: 0x00383FC5 File Offset: 0x003821C5
+	// Token: 0x060094F0 RID: 38128 RVA: 0x003863C1 File Offset: 0x003845C1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Input_OnLastInputStyleChanged(PlayerInputManager.InputStyle _inputStyle)
 	{
@@ -64,7 +64,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		this.components.RefreshButtonPrompts();
 	}
 
-	// Token: 0x0600949A RID: 38042 RVA: 0x00383FFC File Offset: 0x003821FC
+	// Token: 0x060094F1 RID: 38129 RVA: 0x003863F8 File Offset: 0x003845F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Text AllocText()
 	{
@@ -79,7 +79,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		return gameObject.GetComponent<Text>();
 	}
 
-	// Token: 0x0600949B RID: 38043 RVA: 0x0038404D File Offset: 0x0038224D
+	// Token: 0x060094F2 RID: 38130 RVA: 0x00386449 File Offset: 0x00384649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FreeText(Text _text)
 	{
@@ -87,7 +87,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		this.linePool.Push(_text);
 	}
 
-	// Token: 0x0600949C RID: 38044 RVA: 0x00384068 File Offset: 0x00382268
+	// Token: 0x060094F3 RID: 38131 RVA: 0x00386464 File Offset: 0x00384664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddDisplayedLine(GUIWindowConsole.ConsoleLine _line)
 	{
@@ -116,7 +116,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x0600949D RID: 38045 RVA: 0x00384148 File Offset: 0x00382348
+	// Token: 0x060094F4 RID: 38132 RVA: 0x00386544 File Offset: 0x00384744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearDisplayedLines()
 	{
@@ -127,14 +127,14 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x0600949E RID: 38046 RVA: 0x0038416D File Offset: 0x0038236D
+	// Token: 0x060094F5 RID: 38133 RVA: 0x00386569 File Offset: 0x00384769
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void shutdown()
 	{
 		Log.LogCallbacks -= this.LogCallback;
 	}
 
-	// Token: 0x0600949F RID: 38047 RVA: 0x00384180 File Offset: 0x00382380
+	// Token: 0x060094F6 RID: 38134 RVA: 0x0038657C File Offset: 0x0038477C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogCallback(string _msg, string _trace, LogType _type)
 	{
@@ -150,7 +150,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		this.internalAddLine(new GUIWindowConsole.ConsoleLine(_msg, _trace, _type));
 	}
 
-	// Token: 0x060094A0 RID: 38048 RVA: 0x003841BC File Offset: 0x003823BC
+	// Token: 0x060094F7 RID: 38135 RVA: 0x003865B8 File Offset: 0x003847B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openConsole(string _logString)
 	{
@@ -169,7 +169,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		this.windowManager.Open(this, false);
 	}
 
-	// Token: 0x060094A1 RID: 38049 RVA: 0x003841F0 File Offset: 0x003823F0
+	// Token: 0x060094F8 RID: 38136 RVA: 0x003865EC File Offset: 0x003847EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addLines(List<string> _lines)
 	{
@@ -179,14 +179,14 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094A2 RID: 38050 RVA: 0x0038421B File Offset: 0x0038241B
+	// Token: 0x060094F9 RID: 38137 RVA: 0x00386617 File Offset: 0x00384817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addLine(string _line)
 	{
 		this.internalAddLine(new GUIWindowConsole.ConsoleLine(_line, string.Empty, LogType.Log));
 	}
 
-	// Token: 0x060094A3 RID: 38051 RVA: 0x00384230 File Offset: 0x00382430
+	// Token: 0x060094FA RID: 38138 RVA: 0x0038662C File Offset: 0x0038482C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void internalAddLine(GUIWindowConsole.ConsoleLine consoleLine)
 	{
@@ -201,7 +201,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094A4 RID: 38052 RVA: 0x00384298 File Offset: 0x00382498
+	// Token: 0x060094FB RID: 38139 RVA: 0x00386694 File Offset: 0x00384894
 	public override void Update()
 	{
 		base.Update();
@@ -296,7 +296,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094A5 RID: 38053 RVA: 0x003845CC File Offset: 0x003827CC
+	// Token: 0x060094FC RID: 38140 RVA: 0x003869C8 File Offset: 0x00384BC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalculateNormalizedPageSize()
 	{
@@ -309,7 +309,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		return 1f;
 	}
 
-	// Token: 0x060094A6 RID: 38054 RVA: 0x00384624 File Offset: 0x00382824
+	// Token: 0x060094FD RID: 38141 RVA: 0x00386A20 File Offset: 0x00384C20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTextReceived(bool _success, string _text)
 	{
@@ -319,7 +319,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094A7 RID: 38055 RVA: 0x00384635 File Offset: 0x00382835
+	// Token: 0x060094FE RID: 38142 RVA: 0x00386A31 File Offset: 0x00384C31
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeLater()
 	{
@@ -328,7 +328,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		yield break;
 	}
 
-	// Token: 0x060094A8 RID: 38056 RVA: 0x00384644 File Offset: 0x00382844
+	// Token: 0x060094FF RID: 38143 RVA: 0x00386A40 File Offset: 0x00384C40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CloseConsole()
 	{
@@ -336,7 +336,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		this.commandField.text = string.Empty;
 	}
 
-	// Token: 0x060094A9 RID: 38057 RVA: 0x00384664 File Offset: 0x00382864
+	// Token: 0x06009500 RID: 38144 RVA: 0x00386A60 File Offset: 0x00384C60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EnterCommand(string _command)
 	{
@@ -377,7 +377,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094AA RID: 38058 RVA: 0x00384788 File Offset: 0x00382988
+	// Token: 0x06009501 RID: 38145 RVA: 0x00386B84 File Offset: 0x00384D84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PreviousCommand()
 	{
@@ -394,7 +394,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094AB RID: 38059 RVA: 0x003847F8 File Offset: 0x003829F8
+	// Token: 0x06009502 RID: 38146 RVA: 0x00386BF4 File Offset: 0x00384DF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NextCommand()
 	{
@@ -419,13 +419,13 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094AC RID: 38060 RVA: 0x00384898 File Offset: 0x00382A98
+	// Token: 0x06009503 RID: 38147 RVA: 0x00386C94 File Offset: 0x00384E94
 	public void Clear()
 	{
 		this.ClearDisplayedLines();
 	}
 
-	// Token: 0x060094AD RID: 38061 RVA: 0x003848A0 File Offset: 0x00382AA0
+	// Token: 0x06009504 RID: 38148 RVA: 0x00386C9C File Offset: 0x00384E9C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -447,7 +447,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		}
 	}
 
-	// Token: 0x060094AE RID: 38062 RVA: 0x00384924 File Offset: 0x00382B24
+	// Token: 0x06009505 RID: 38149 RVA: 0x00386D20 File Offset: 0x00384F20
 	public override void OnClose()
 	{
 		this.scrollRect.verticalNormalizedPosition = 0f;
@@ -460,7 +460,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		this.isInputActive = false;
 	}
 
-	// Token: 0x060094AF RID: 38063 RVA: 0x00384977 File Offset: 0x00382B77
+	// Token: 0x06009506 RID: 38150 RVA: 0x00386D73 File Offset: 0x00384F73
 	public static GUIWindowConsole GetNewInstance()
 	{
 		GUIWindowConsole guiwindowConsole;
@@ -471,25 +471,25 @@ public class GUIWindowConsole : GUIWindowUGUI
 		return guiwindowConsole;
 	}
 
-	// Token: 0x060094B0 RID: 38064 RVA: 0x0038498D File Offset: 0x00382B8D
+	// Token: 0x06009507 RID: 38151 RVA: 0x00386D89 File Offset: 0x00384F89
 	public static void Open()
 	{
 		LocalPlayerUI.primaryUI.windowManager.Open(GUIWindowConsole.instance, false);
 	}
 
-	// Token: 0x060094B1 RID: 38065 RVA: 0x003849A4 File Offset: 0x00382BA4
+	// Token: 0x06009508 RID: 38152 RVA: 0x00386DA0 File Offset: 0x00384FA0
 	public static void Close()
 	{
 		LocalPlayerUI.primaryUI.windowManager.Close(GUIWindowConsole.instance, false);
 	}
 
-	// Token: 0x060094B2 RID: 38066 RVA: 0x003849BB File Offset: 0x00382BBB
+	// Token: 0x06009509 RID: 38153 RVA: 0x00386DB7 File Offset: 0x00384FB7
 	public static bool IsOpen()
 	{
 		return LocalPlayerUI.primaryUI.windowManager.IsWindowOpen(GUIWindowConsole.instance);
 	}
 
-	// Token: 0x060094B3 RID: 38067 RVA: 0x003849D1 File Offset: 0x00382BD1
+	// Token: 0x0600950A RID: 38154 RVA: 0x00386DCD File Offset: 0x00384FCD
 	public static void AddLines(List<string> _lines)
 	{
 		GUIWindowConsole guiwindowConsole = GUIWindowConsole.instance;
@@ -500,7 +500,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 		guiwindowConsole.addLines(_lines);
 	}
 
-	// Token: 0x060094B4 RID: 38068 RVA: 0x003849E3 File Offset: 0x00382BE3
+	// Token: 0x0600950B RID: 38155 RVA: 0x00386DDF File Offset: 0x00384FDF
 	public static void Shutdown()
 	{
 		GUIWindowConsole guiwindowConsole = GUIWindowConsole.instance;
@@ -511,75 +511,75 @@ public class GUIWindowConsole : GUIWindowUGUI
 		GUIWindowConsole.instance = null;
 	}
 
-	// Token: 0x04006F5D RID: 28509
+	// Token: 0x04006F9E RID: 28574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GUIWindowConsole instance;
 
-	// Token: 0x04006F5E RID: 28510
+	// Token: 0x04006F9F RID: 28575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool scrolledToBottom = true;
 
-	// Token: 0x04006F5F RID: 28511
+	// Token: 0x04006FA0 RID: 28576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<GUIWindowConsole.ConsoleLine> linesToAdd = new Queue<GUIWindowConsole.ConsoleLine>(301);
 
-	// Token: 0x04006F60 RID: 28512
+	// Token: 0x04006FA1 RID: 28577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Text> displayedLines = new Queue<Text>();
 
-	// Token: 0x04006F61 RID: 28513
+	// Token: 0x04006FA2 RID: 28578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int maxConsoleLines = 300;
 
-	// Token: 0x04006F62 RID: 28514
+	// Token: 0x04006FA3 RID: 28579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stack<Text> linePool = new Stack<Text>();
 
-	// Token: 0x04006F63 RID: 28515
+	// Token: 0x04006FA4 RID: 28580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> lastCommands = new List<string>();
 
-	// Token: 0x04006F64 RID: 28516
+	// Token: 0x04006FA5 RID: 28581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastCommandsIdx;
 
-	// Token: 0x04006F65 RID: 28517
+	// Token: 0x04006FA6 RID: 28582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFirstTime;
 
-	// Token: 0x04006F66 RID: 28518
+	// Token: 0x04006FA7 RID: 28583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bUpdateCursor;
 
-	// Token: 0x04006F67 RID: 28519
+	// Token: 0x04006FA8 RID: 28584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bShouldReopenGebugMenu;
 
-	// Token: 0x04006F68 RID: 28520
+	// Token: 0x04006FA9 RID: 28585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GUIWindowConsoleComponents components;
 
-	// Token: 0x04006F69 RID: 28521
+	// Token: 0x04006FAA RID: 28586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ScrollRect scrollRect;
 
-	// Token: 0x04006F6A RID: 28522
+	// Token: 0x04006FAB RID: 28587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform contentRect;
 
-	// Token: 0x04006F6B RID: 28523
+	// Token: 0x04006FAC RID: 28588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public InputField commandField;
 
-	// Token: 0x04006F6C RID: 28524
+	// Token: 0x04006FAD RID: 28589
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] lineSeparators = new string[] { "\r\n", "\r", "\n" };
 
-	// Token: 0x02001236 RID: 4662
+	// Token: 0x02001248 RID: 4680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct ConsoleLine
 	{
-		// Token: 0x060094B6 RID: 38070 RVA: 0x00384A20 File Offset: 0x00382C20
+		// Token: 0x0600950D RID: 38157 RVA: 0x00386E1C File Offset: 0x0038501C
 		public ConsoleLine(string _text, string _stackTrace, LogType _type)
 		{
 			this.text = _text;
@@ -587,7 +587,7 @@ public class GUIWindowConsole : GUIWindowUGUI
 			this.type = _type;
 		}
 
-		// Token: 0x060094B7 RID: 38071 RVA: 0x00384A38 File Offset: 0x00382C38
+		// Token: 0x0600950E RID: 38158 RVA: 0x00386E34 File Offset: 0x00385034
 		public Color GetLogColor()
 		{
 			switch (this.type)
@@ -605,13 +605,13 @@ public class GUIWindowConsole : GUIWindowUGUI
 			}
 		}
 
-		// Token: 0x04006F6D RID: 28525
+		// Token: 0x04006FAE RID: 28590
 		public string text;
 
-		// Token: 0x04006F6E RID: 28526
+		// Token: 0x04006FAF RID: 28591
 		public LogType type;
 
-		// Token: 0x04006F6F RID: 28527
+		// Token: 0x04006FB0 RID: 28592
 		public string stackTrace;
 	}
 }

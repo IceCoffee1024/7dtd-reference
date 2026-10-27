@@ -4,13 +4,13 @@ using Challenges;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001004 RID: 4100
+// Token: 0x02001014 RID: 4116
 [Preserve]
 public class XUiC_QuestTrackerObjectiveList : XUiController
 {
-	// Token: 0x17000F31 RID: 3889
-	// (get) Token: 0x060080FB RID: 33019 RVA: 0x003103BF File Offset: 0x0030E5BF
-	// (set) Token: 0x060080FC RID: 33020 RVA: 0x003103C7 File Offset: 0x0030E5C7
+	// Token: 0x17000F3C RID: 3900
+	// (get) Token: 0x0600814A RID: 33098 RVA: 0x00311EDB File Offset: 0x003100DB
+	// (set) Token: 0x0600814B RID: 33099 RVA: 0x00311EE3 File Offset: 0x003100E3
 	public Quest Quest
 	{
 		get
@@ -24,9 +24,9 @@ public class XUiC_QuestTrackerObjectiveList : XUiController
 		}
 	}
 
-	// Token: 0x17000F32 RID: 3890
-	// (get) Token: 0x060080FD RID: 33021 RVA: 0x003103D7 File Offset: 0x0030E5D7
-	// (set) Token: 0x060080FE RID: 33022 RVA: 0x003103E0 File Offset: 0x0030E5E0
+	// Token: 0x17000F3D RID: 3901
+	// (get) Token: 0x0600814C RID: 33100 RVA: 0x00311EF3 File Offset: 0x003100F3
+	// (set) Token: 0x0600814D RID: 33101 RVA: 0x00311EFC File Offset: 0x003100FC
 	public Challenge Challenge
 	{
 		get
@@ -48,14 +48,14 @@ public class XUiC_QuestTrackerObjectiveList : XUiController
 		}
 	}
 
-	// Token: 0x060080FF RID: 33023 RVA: 0x0008A995 File Offset: 0x00088B95
+	// Token: 0x0600814E RID: 33102 RVA: 0x0008ABC9 File Offset: 0x00088DC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CurrentChallenge_OnChallengeStateChanged(Challenge challenge)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008100 RID: 33024 RVA: 0x0031043C File Offset: 0x0030E63C
+	// Token: 0x0600814F RID: 33103 RVA: 0x00311F58 File Offset: 0x00310158
 	public override void Init()
 	{
 		base.Init();
@@ -70,7 +70,7 @@ public class XUiC_QuestTrackerObjectiveList : XUiController
 		}
 	}
 
-	// Token: 0x06008101 RID: 33025 RVA: 0x0031047C File Offset: 0x0030E67C
+	// Token: 0x06008150 RID: 33104 RVA: 0x00311F98 File Offset: 0x00310198
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -171,7 +171,7 @@ public class XUiC_QuestTrackerObjectiveList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008102 RID: 33026 RVA: 0x003106C4 File Offset: 0x0030E8C4
+	// Token: 0x06008151 RID: 33105 RVA: 0x003121E0 File Offset: 0x003103E0
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "complete_icon")
@@ -201,45 +201,45 @@ public class XUiC_QuestTrackerObjectiveList : XUiController
 		return true;
 	}
 
-	// Token: 0x04005FB1 RID: 24497
+	// Token: 0x04005FEC RID: 24556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest quest;
 
-	// Token: 0x04005FB2 RID: 24498
+	// Token: 0x04005FED RID: 24557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Challenge challenge;
 
-	// Token: 0x04005FB3 RID: 24499
+	// Token: 0x04005FEE RID: 24558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiController> objectiveEntries = new List<XUiController>();
 
-	// Token: 0x04005FB4 RID: 24500
+	// Token: 0x04005FEF RID: 24559
 	public string completeIconName = "";
 
-	// Token: 0x04005FB5 RID: 24501
+	// Token: 0x04005FF0 RID: 24560
 	public string incompleteIconName = "";
 
-	// Token: 0x04005FB6 RID: 24502
+	// Token: 0x04005FF1 RID: 24561
 	public string completeHexColor = "FF00FF00";
 
-	// Token: 0x04005FB7 RID: 24503
+	// Token: 0x04005FF2 RID: 24562
 	public string incompleteHexColor = "FFB400";
 
-	// Token: 0x04005FB8 RID: 24504
+	// Token: 0x04005FF3 RID: 24563
 	public string warningHexColor = "FFFF00FF";
 
-	// Token: 0x04005FB9 RID: 24505
+	// Token: 0x04005FF4 RID: 24564
 	public string inactiveHexColor = "888888FF";
 
-	// Token: 0x04005FBA RID: 24506
+	// Token: 0x04005FF5 RID: 24565
 	public string activeHexColor = "FFFFFFFF";
 
-	// Token: 0x04005FBB RID: 24507
+	// Token: 0x04005FF6 RID: 24566
 	public string completeColor = "0,255,0,255";
 
-	// Token: 0x04005FBC RID: 24508
+	// Token: 0x04005FF7 RID: 24567
 	public string incompleteColor = "255, 180, 0, 255";
 
-	// Token: 0x04005FBD RID: 24509
+	// Token: 0x04005FF8 RID: 24568
 	public string warningColor = "255,255,0,255";
 }

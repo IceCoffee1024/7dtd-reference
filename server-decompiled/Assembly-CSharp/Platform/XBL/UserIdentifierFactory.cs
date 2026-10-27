@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C43 RID: 7235
+	// Token: 0x02001C74 RID: 7284
 	[Preserve]
 	[UserIdentifierFactory(EPlatformIdentifier.XBL)]
 	public class UserIdentifierFactory : AbsUserIdentifierFactory
 	{
-		// Token: 0x0600D705 RID: 55045 RVA: 0x004D37E0 File Offset: 0x004D19E0
+		// Token: 0x0600D819 RID: 55321 RVA: 0x004D7308 File Offset: 0x004D5508
 		public override PlatformUserIdentifierAbs FromId(string _userId)
 		{
 			return new UserIdentifierXbl(_userId);

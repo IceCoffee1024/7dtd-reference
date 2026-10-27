@@ -1,19 +1,19 @@
 ﻿using System;
 
-// Token: 0x02000FBF RID: 4031
+// Token: 0x02000FCF RID: 4047
 public class ToolTipEvent
 {
-	// Token: 0x17000EF5 RID: 3829
-	// (get) Token: 0x06007EE1 RID: 32481 RVA: 0x003050D6 File Offset: 0x003032D6
-	// (set) Token: 0x06007EE2 RID: 32482 RVA: 0x003050DE File Offset: 0x003032DE
+	// Token: 0x17000F00 RID: 3840
+	// (get) Token: 0x06007F30 RID: 32560 RVA: 0x00306BF2 File Offset: 0x00304DF2
+	// (set) Token: 0x06007F31 RID: 32561 RVA: 0x00306BFA File Offset: 0x00304DFA
 	public object Parameter { get; set; }
 
 	// Token: 0x140000D6 RID: 214
-	// (add) Token: 0x06007EE3 RID: 32483 RVA: 0x003050E8 File Offset: 0x003032E8
-	// (remove) Token: 0x06007EE4 RID: 32484 RVA: 0x00305120 File Offset: 0x00303320
+	// (add) Token: 0x06007F32 RID: 32562 RVA: 0x00306C04 File Offset: 0x00304E04
+	// (remove) Token: 0x06007F33 RID: 32563 RVA: 0x00306C3C File Offset: 0x00304E3C
 	public event ToolTipEventHandler EventHandler;
 
-	// Token: 0x06007EE5 RID: 32485 RVA: 0x00305155 File Offset: 0x00303355
+	// Token: 0x06007F34 RID: 32564 RVA: 0x00306C71 File Offset: 0x00304E71
 	public void HandleEvent()
 	{
 		ToolTipEventHandler eventHandler = this.EventHandler;

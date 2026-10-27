@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000224 RID: 548
+// Token: 0x02000226 RID: 550
 [Preserve]
 public class ConsoleCmdGive : ConsoleCmdAbstract
 {
-	// Token: 0x06001089 RID: 4233 RVA: 0x00069638 File Offset: 0x00067838
+	// Token: 0x0600108D RID: 4237 RVA: 0x00069808 File Offset: 0x00067A08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "give an item to a player (entity id or name)";
 	}
 
-	// Token: 0x0600108A RID: 4234 RVA: 0x0006963F File Offset: 0x0006783F
+	// Token: 0x0600108E RID: 4238 RVA: 0x0006980F File Offset: 0x00067A0F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Give an item to a player by dropping it in front of that player\nUsage:\n   give <name / entity id> <item name> <amount>\n   give <name / entity id> <item name> <amount> <quality>\nEither pass the full name of a player or his entity id (given by e.g. \"lpi\").\nItem name has to be the exact name of an item as listed by \"listitems\".\nAmount is the number of instances of this item to drop (as a single stack).\nQuality is the quality of the dropped items for items that have a quality.";
 	}
 
-	// Token: 0x0600108B RID: 4235 RVA: 0x00069646 File Offset: 0x00067846
+	// Token: 0x0600108F RID: 4239 RVA: 0x00069816 File Offset: 0x00067A16
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -32,7 +32,7 @@ public class ConsoleCmdGive : ConsoleCmdAbstract
 		};
 	}
 
-	// Token: 0x0600108C RID: 4236 RVA: 0x00069660 File Offset: 0x00067860
+	// Token: 0x06001090 RID: 4240 RVA: 0x00069830 File Offset: 0x00067A30
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 3 && _params.Count != 4)

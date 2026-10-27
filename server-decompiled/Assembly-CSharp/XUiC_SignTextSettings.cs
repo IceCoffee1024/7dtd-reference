@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200104B RID: 4171
+// Token: 0x0200105B RID: 4187
 [Preserve]
 public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x06008419 RID: 33817 RVA: 0x00326D94 File Offset: 0x00324F94
+	// Token: 0x0600846B RID: 33899 RVA: 0x00328A98 File Offset: 0x00326C98
 	public override void Init()
 	{
 		base.Init();
@@ -41,7 +41,7 @@ public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 		this.PopulateFontList();
 	}
 
-	// Token: 0x0600841A RID: 33818 RVA: 0x00326F58 File Offset: 0x00325158
+	// Token: 0x0600846C RID: 33900 RVA: 0x00328C5C File Offset: 0x00326E5C
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer as SignData.TextSignLayer;
@@ -73,7 +73,7 @@ public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 		this.cbxDilate.Value = (double)this.currentLayer.dilate;
 	}
 
-	// Token: 0x0600841B RID: 33819 RVA: 0x00327100 File Offset: 0x00325300
+	// Token: 0x0600846D RID: 33901 RVA: 0x00328E04 File Offset: 0x00327004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -98,7 +98,7 @@ public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0600841C RID: 33820 RVA: 0x00327198 File Offset: 0x00325398
+	// Token: 0x0600846E RID: 33902 RVA: 0x00328E9C File Offset: 0x0032709C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtText_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -124,7 +124,7 @@ public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0600841D RID: 33821 RVA: 0x003271E8 File Offset: 0x003253E8
+	// Token: 0x0600846F RID: 33903 RVA: 0x00328EEC File Offset: 0x003270EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxFont_OnValueChanged(XUiController _sender, string _oldValue, string _newValue)
 	{
@@ -147,7 +147,7 @@ public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0600841E RID: 33822 RVA: 0x00327260 File Offset: 0x00325460
+	// Token: 0x06008470 RID: 33904 RVA: 0x00328F64 File Offset: 0x00327164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PopulateFontList()
 	{
@@ -160,35 +160,35 @@ public class XUiC_SignTextSettings : XUiC_SignLayerSettings
 		this.cbxFont.MaxIndex = this.cbxFont.Elements.Count - 2;
 	}
 
-	// Token: 0x0400620F RID: 25103
+	// Token: 0x0400624D RID: 25165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string UnknownFontString = Localization.Get("lblSignFontUnknown", false, null);
 
-	// Token: 0x04006210 RID: 25104
+	// Token: 0x0400624E RID: 25166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtText;
 
-	// Token: 0x04006211 RID: 25105
+	// Token: 0x0400624F RID: 25167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxFont;
 
-	// Token: 0x04006212 RID: 25106
+	// Token: 0x04006250 RID: 25168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDirection;
 
-	// Token: 0x04006213 RID: 25107
+	// Token: 0x04006251 RID: 25169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSpacing;
 
-	// Token: 0x04006214 RID: 25108
+	// Token: 0x04006252 RID: 25170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSoftness;
 
-	// Token: 0x04006215 RID: 25109
+	// Token: 0x04006253 RID: 25171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDilate;
 
-	// Token: 0x04006216 RID: 25110
+	// Token: 0x04006254 RID: 25172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.TextSignLayer currentLayer;
 }

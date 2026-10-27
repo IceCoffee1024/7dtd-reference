@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001968 RID: 6504
+	// Token: 0x02001999 RID: 6553
 	[Preserve]
 	public class RequirementIsTwitchActive : BaseRequirement
 	{
-		// Token: 0x0600C88E RID: 51342 RVA: 0x00495CA8 File Offset: 0x00493EA8
+		// Token: 0x0600C9A2 RID: 51618 RVA: 0x0049969C File Offset: 0x0049789C
 		public override bool CanPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceRequirements
 			return !entityPlayer.TwitchEnabled;
 		}
 
-		// Token: 0x0600C88F RID: 51343 RVA: 0x00495CD9 File Offset: 0x00493ED9
+		// Token: 0x0600C9A3 RID: 51619 RVA: 0x004996CD File Offset: 0x004978CD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

@@ -4,25 +4,25 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E9 RID: 489
+// Token: 0x020001EB RID: 491
 [Preserve]
 public class ConsoleCmdAutomation : ConsoleCmdAbstract
 {
-	// Token: 0x06000EF6 RID: 3830 RVA: 0x0006161C File Offset: 0x0005F81C
+	// Token: 0x06000EFA RID: 3834 RVA: 0x000618E0 File Offset: 0x0005FAE0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "automation", "auto" };
 	}
 
-	// Token: 0x06000EF7 RID: 3831 RVA: 0x00061634 File Offset: 0x0005F834
+	// Token: 0x06000EFB RID: 3835 RVA: 0x000618F8 File Offset: 0x0005FAF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Automation Script Runner";
 	}
 
-	// Token: 0x06000EF8 RID: 3832 RVA: 0x0006163B File Offset: 0x0005F83B
+	// Token: 0x06000EFC RID: 3836 RVA: 0x000618FF File Offset: 0x0005FAFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -30,7 +30,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000133 RID: 307
-	// (get) Token: 0x06000EF9 RID: 3833 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06000EFD RID: 3837 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000134 RID: 308
-	// (get) Token: 0x06000EFA RID: 3834 RVA: 0x00020119 File Offset: 0x0001E319
+	// (get) Token: 0x06000EFE RID: 3838 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -50,7 +50,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000135 RID: 309
-	// (get) Token: 0x06000EFB RID: 3835 RVA: 0x00061642 File Offset: 0x0005F842
+	// (get) Token: 0x06000EFF RID: 3839 RVA: 0x00061906 File Offset: 0x0005FB06
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -59,7 +59,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000EFC RID: 3836 RVA: 0x0006164C File Offset: 0x0005F84C
+	// Token: 0x06000F00 RID: 3840 RVA: 0x00061910 File Offset: 0x0005FB10
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -153,7 +153,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unknown sub-command '" + _params[0] + "'. See 'help auto'.");
 	}
 
-	// Token: 0x06000EFD RID: 3837 RVA: 0x000617F7 File Offset: 0x0005F9F7
+	// Token: 0x06000F01 RID: 3841 RVA: 0x00061ABB File Offset: 0x0005FCBB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdNew(List<string> p)
 	{
@@ -165,14 +165,14 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("New empty script created.");
 	}
 
-	// Token: 0x06000EFE RID: 3838 RVA: 0x00061820 File Offset: 0x0005FA20
+	// Token: 0x06000F02 RID: 3842 RVA: 0x00061AE4 File Offset: 0x0005FCE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdShow()
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(AutomationRunner.Instance.CurrentScript.Describe());
 	}
 
-	// Token: 0x06000EFF RID: 3839 RVA: 0x0006183C File Offset: 0x0005FA3C
+	// Token: 0x06000F03 RID: 3843 RVA: 0x00061B00 File Offset: 0x0005FD00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdRemove(List<string> p)
 	{
@@ -197,7 +197,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Removed step: " + text);
 	}
 
-	// Token: 0x06000F00 RID: 3840 RVA: 0x000618EC File Offset: 0x0005FAEC
+	// Token: 0x06000F04 RID: 3844 RVA: 0x00061BB0 File Offset: 0x0005FDB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdSave(List<string> p)
 	{
@@ -210,7 +210,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Script saved as '" + p[1] + "'.");
 	}
 
-	// Token: 0x06000F01 RID: 3841 RVA: 0x00061948 File Offset: 0x0005FB48
+	// Token: 0x06000F05 RID: 3845 RVA: 0x00061C0C File Offset: 0x0005FE0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdLoad(List<string> p)
 	{
@@ -237,7 +237,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(automationScript.Describe());
 	}
 
-	// Token: 0x06000F02 RID: 3842 RVA: 0x000619D8 File Offset: 0x0005FBD8
+	// Token: 0x06000F06 RID: 3846 RVA: 0x00061C9C File Offset: 0x0005FE9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdList()
 	{
@@ -250,7 +250,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Saved scripts:\n" + string.Join("\n", list.ConvertAll<string>((string n) => "  " + n)));
 	}
 
-	// Token: 0x06000F03 RID: 3843 RVA: 0x00061A48 File Offset: 0x0005FC48
+	// Token: 0x06000F07 RID: 3847 RVA: 0x00061D0C File Offset: 0x0005FF0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdAdd(List<string> p)
 	{
@@ -618,7 +618,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Added: " + automationStep.Describe(currentScript.steps.Count - 1));
 	}
 
-	// Token: 0x06000F04 RID: 3844 RVA: 0x000623F5 File Offset: 0x000605F5
+	// Token: 0x06000F08 RID: 3848 RVA: 0x000626B9 File Offset: 0x000608B9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdRun(List<string> p)
 	{
@@ -630,14 +630,14 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		AutomationRunner.Instance.StartRuns();
 	}
 
-	// Token: 0x06000F05 RID: 3845 RVA: 0x0006241D File Offset: 0x0006061D
+	// Token: 0x06000F09 RID: 3849 RVA: 0x000626E1 File Offset: 0x000608E1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdAbort()
 	{
 		AutomationRunner.Instance.Abort();
 	}
 
-	// Token: 0x06000F06 RID: 3846 RVA: 0x00062429 File Offset: 0x00060629
+	// Token: 0x06000F0A RID: 3850 RVA: 0x000626ED File Offset: 0x000608ED
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool RequireWorld()
 	{
@@ -649,7 +649,7 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		return false;
 	}
 
-	// Token: 0x06000F07 RID: 3847 RVA: 0x00062449 File Offset: 0x00060649
+	// Token: 0x06000F0B RID: 3851 RVA: 0x0006270D File Offset: 0x0006090D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool RequireNotRunning()
 	{
@@ -661,35 +661,35 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		return false;
 	}
 
-	// Token: 0x06000F08 RID: 3848 RVA: 0x00062469 File Offset: 0x00060669
+	// Token: 0x06000F0C RID: 3852 RVA: 0x0006272D File Offset: 0x0006092D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float DefaultLegDuration(Vector3 a, Vector3 b)
 	{
 		return Mathf.Max(0.25f, Vector3.Distance(a, b) / 10f);
 	}
 
-	// Token: 0x06000F09 RID: 3849 RVA: 0x000144B6 File Offset: 0x000126B6
+	// Token: 0x06000F0D RID: 3853 RVA: 0x000144B6 File Offset: 0x000126B6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string Fmt(Vector3 v)
 	{
 		return string.Format("({0:F1}, {1:F1}, {2:F1})", v.x, v.y, v.z);
 	}
 
-	// Token: 0x06000F0A RID: 3850 RVA: 0x00062482 File Offset: 0x00060682
+	// Token: 0x06000F0E RID: 3854 RVA: 0x00062746 File Offset: 0x00060946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 PlayerPos()
 	{
 		return GameManager.Instance.World.GetPrimaryPlayer().position;
 	}
 
-	// Token: 0x06000F0B RID: 3851 RVA: 0x00062498 File Offset: 0x00060698
+	// Token: 0x06000F0F RID: 3855 RVA: 0x0006275C File Offset: 0x0006095C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 PlayerForward()
 	{
 		return GameManager.Instance.World.GetPrimaryPlayer().transform.forward;
 	}
 
-	// Token: 0x06000F0C RID: 3852 RVA: 0x000624B4 File Offset: 0x000606B4
+	// Token: 0x06000F10 RID: 3856 RVA: 0x00062778 File Offset: 0x00060978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryParseVec3(List<string> p, int startIndex, out Vector3 v)
 	{
@@ -697,11 +697,11 @@ public class ConsoleCmdAutomation : ConsoleCmdAbstract
 		return p.Count >= startIndex + 3 && (float.TryParse(p[startIndex], out v.x) && float.TryParse(p[startIndex + 1], out v.y)) && float.TryParse(p[startIndex + 2], out v.z);
 	}
 
-	// Token: 0x04000C82 RID: 3202
+	// Token: 0x04000C84 RID: 3204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float DefaultFlyMetersPerSec = 10f;
 
-	// Token: 0x04000C83 RID: 3203
+	// Token: 0x04000C85 RID: 3205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3? _pendingStartPoint;
 }

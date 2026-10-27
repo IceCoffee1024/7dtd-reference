@@ -4,12 +4,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D8A RID: 3466
+// Token: 0x02000D95 RID: 3477
 [Preserve]
 public class XUiC_DataManagementBar : XUiController
 {
-	// Token: 0x17000B41 RID: 2881
-	// (get) Token: 0x060068C2 RID: 26818 RVA: 0x002992B2 File Offset: 0x002974B2
+	// Token: 0x17000B47 RID: 2887
+	// (get) Token: 0x060068E7 RID: 26855 RVA: 0x0029A7DA File Offset: 0x002989DA
 	[XuiXmlBinding("isroamingoptional")]
 	public bool IsRoamingOptional
 	{
@@ -20,8 +20,8 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x17000B42 RID: 2882
-	// (get) Token: 0x060068C3 RID: 26819 RVA: 0x002992C4 File Offset: 0x002974C4
+	// Token: 0x17000B48 RID: 2888
+	// (get) Token: 0x060068E8 RID: 26856 RVA: 0x0029A7EC File Offset: 0x002989EC
 	[XuiXmlBinding("warningtext")]
 	public string WarningText
 	{
@@ -38,7 +38,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068C4 RID: 26820 RVA: 0x00299318 File Offset: 0x00297518
+	// Token: 0x060068E9 RID: 26857 RVA: 0x0029A840 File Offset: 0x00298A40
 	public override void Init()
 	{
 		base.Init();
@@ -47,14 +47,14 @@ public class XUiC_DataManagementBar : XUiController
 		this.fullHeight = this.background.Size.y;
 	}
 
-	// Token: 0x060068C5 RID: 26821 RVA: 0x0029936D File Offset: 0x0029756D
+	// Token: 0x060068EA RID: 26858 RVA: 0x0029A895 File Offset: 0x00298A95
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060068C6 RID: 26822 RVA: 0x0029937C File Offset: 0x0029757C
+	// Token: 0x060068EB RID: 26859 RVA: 0x0029A8A4 File Offset: 0x00298AA4
 	public void SetDisplayMode(XUiC_DataManagementBar.DisplayMode _displayMode)
 	{
 		if (this.displayMode == _displayMode)
@@ -65,19 +65,19 @@ public class XUiC_DataManagementBar : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060068C7 RID: 26823 RVA: 0x00299396 File Offset: 0x00297596
+	// Token: 0x060068EC RID: 26860 RVA: 0x0029A8BE File Offset: 0x00298ABE
 	public void SetSelectedByteRegion(XUiC_DataManagementBar.BarRegion _primaryRegion)
 	{
 		this.SetSelectedByteRegion(_primaryRegion, XUiC_DataManagementBar.BarRegion.None, XUiC_DataManagementBar.BarRegion.None);
 	}
 
-	// Token: 0x060068C8 RID: 26824 RVA: 0x002993A9 File Offset: 0x002975A9
+	// Token: 0x060068ED RID: 26861 RVA: 0x0029A8D1 File Offset: 0x00298AD1
 	public void SetSelectedByteRegion(XUiC_DataManagementBar.BarRegion _primaryRegion, XUiC_DataManagementBar.BarRegion _secondaryRegion)
 	{
 		this.SetSelectedByteRegion(_primaryRegion, _secondaryRegion, XUiC_DataManagementBar.BarRegion.None);
 	}
 
-	// Token: 0x060068C9 RID: 26825 RVA: 0x002993B8 File Offset: 0x002975B8
+	// Token: 0x060068EE RID: 26862 RVA: 0x0029A8E0 File Offset: 0x00298AE0
 	public void SetSelectedByteRegion(XUiC_DataManagementBar.BarRegion _primaryRegion, XUiC_DataManagementBar.BarRegion _secondaryRegion, XUiC_DataManagementBar.BarRegion _tertiaryRegion)
 	{
 		if (!this.primaryByteRegion.Equals(_primaryRegion))
@@ -97,7 +97,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068CA RID: 26826 RVA: 0x00299419 File Offset: 0x00297619
+	// Token: 0x060068EF RID: 26863 RVA: 0x0029A941 File Offset: 0x00298B41
 	public void SetHoveredByteRegion(XUiC_DataManagementBar.BarRegion _region)
 	{
 		if (!this.hoveredByteRegion.Equals(_region))
@@ -107,7 +107,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068CB RID: 26827 RVA: 0x00299437 File Offset: 0x00297637
+	// Token: 0x060068F0 RID: 26864 RVA: 0x0029A95F File Offset: 0x00298B5F
 	public void SetArchivePreviewRegion(XUiC_DataManagementBar.BarRegion _region)
 	{
 		if (!this.archivePreviewByteRegion.Equals(_region))
@@ -117,7 +117,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068CC RID: 26828 RVA: 0x00299455 File Offset: 0x00297655
+	// Token: 0x060068F1 RID: 26865 RVA: 0x0029A97D File Offset: 0x00298B7D
 	public void SetSelectionDepth(XUiC_DataManagementBar.SelectionDepth _selectionDepth)
 	{
 		if (this.focusedSelectionDepth != _selectionDepth)
@@ -127,7 +127,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068CD RID: 26829 RVA: 0x0029946E File Offset: 0x0029766E
+	// Token: 0x060068F2 RID: 26866 RVA: 0x0029A996 File Offset: 0x00298B96
 	public void SetDeleteHovered(bool _hovered)
 	{
 		if (this.deleteHovered != _hovered)
@@ -137,7 +137,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068CE RID: 26830 RVA: 0x00299487 File Offset: 0x00297687
+	// Token: 0x060068F3 RID: 26867 RVA: 0x0029A9AF File Offset: 0x00298BAF
 	public void SetDeleteWindowDisplayed(bool _displayed)
 	{
 		if (this.deleteWindowDisplayed != _displayed)
@@ -147,7 +147,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068CF RID: 26831 RVA: 0x002994A0 File Offset: 0x002976A0
+	// Token: 0x060068F4 RID: 26868 RVA: 0x0029A9C8 File Offset: 0x00298BC8
 	public void SetUsedBytes(long _usedBytes)
 	{
 		if (this.usedBytes == _usedBytes)
@@ -158,7 +158,7 @@ public class XUiC_DataManagementBar : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060068D0 RID: 26832 RVA: 0x002994BA File Offset: 0x002976BA
+	// Token: 0x060068F5 RID: 26869 RVA: 0x0029A9E2 File Offset: 0x00298BE2
 	public void SetAllowanceBytes(long _allowanceBytes)
 	{
 		if (this.allowanceBytes == _allowanceBytes)
@@ -170,7 +170,7 @@ public class XUiC_DataManagementBar : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060068D1 RID: 26833 RVA: 0x002994F4 File Offset: 0x002976F4
+	// Token: 0x060068F6 RID: 26870 RVA: 0x0029AA1C File Offset: 0x00298C1C
 	public void SetPendingBytes(long _pendingBytes)
 	{
 		if (this.pendingBytes == _pendingBytes)
@@ -181,13 +181,13 @@ public class XUiC_DataManagementBar : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060068D2 RID: 26834 RVA: 0x0029950E File Offset: 0x0029770E
+	// Token: 0x060068F7 RID: 26871 RVA: 0x0029AA36 File Offset: 0x00298C36
 	public long GetPendingBytes()
 	{
 		return this.pendingBytes;
 	}
 
-	// Token: 0x060068D3 RID: 26835 RVA: 0x00299516 File Offset: 0x00297716
+	// Token: 0x060068F8 RID: 26872 RVA: 0x0029AA3E File Offset: 0x00298C3E
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -197,7 +197,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068D4 RID: 26836 RVA: 0x00299530 File Offset: 0x00297730
+	// Token: 0x060068F9 RID: 26873 RVA: 0x0029AA58 File Offset: 0x00298C58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refresh()
 	{
@@ -224,7 +224,7 @@ public class XUiC_DataManagementBar : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x060068D5 RID: 26837 RVA: 0x002995E0 File Offset: 0x002977E0
+	// Token: 0x060068FA RID: 26874 RVA: 0x0029AB08 File Offset: 0x00298D08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refreshPreviewMode()
 	{
@@ -275,7 +275,7 @@ public class XUiC_DataManagementBar : XUiController
 		}
 	}
 
-	// Token: 0x060068D6 RID: 26838 RVA: 0x00299748 File Offset: 0x00297948
+	// Token: 0x060068FB RID: 26875 RVA: 0x0029AC70 File Offset: 0x00298E70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refreshSelectionMode()
 	{
@@ -294,7 +294,7 @@ public class XUiC_DataManagementBar : XUiController
 		this.<refreshSelectionMode>g__UpdateRegion|55_1(this.tertiaryByteRegion, this.barSelectedTertiaryFill, this.barSelectedTertiaryOutline, XUiC_DataManagementBar.SelectionDepth.Tertiary, ref CS$<>8__locals1);
 	}
 
-	// Token: 0x060068D9 RID: 26841 RVA: 0x002998AA File Offset: 0x00297AAA
+	// Token: 0x060068FE RID: 26878 RVA: 0x0029ADD2 File Offset: 0x00298FD2
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <refreshSelectionMode>g__GetPixelValues|55_0(XUiC_DataManagementBar.BarRegion _byteRegion, int _maxPosition, out int _position, out int _width, ref XUiC_DataManagementBar.<>c__DisplayClass55_0 A_5)
@@ -303,7 +303,7 @@ public class XUiC_DataManagementBar : XUiController
 		_width = Mathf.Max(Mathf.CeilToInt(this.bytesToPixels * (float)_byteRegion.Size), 8);
 	}
 
-	// Token: 0x060068DA RID: 26842 RVA: 0x002998E8 File Offset: 0x00297AE8
+	// Token: 0x060068FF RID: 26879 RVA: 0x0029AE10 File Offset: 0x00299010
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <refreshSelectionMode>g__UpdateRegion|55_1(XUiC_DataManagementBar.BarRegion _byteRegion, XUiV_Sprite _fillSprite, XUiV_Sprite _outlineSprite, XUiC_DataManagementBar.SelectionDepth _depth, ref XUiC_DataManagementBar.<>c__DisplayClass55_0 A_5)
@@ -368,152 +368,152 @@ public class XUiC_DataManagementBar : XUiController
 		A_5.maxPosition = num3 + num4;
 	}
 
-	// Token: 0x040050AE RID: 20654
+	// Token: 0x040050D3 RID: 20691
 	[XuiBindComponent("background", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite background;
 
-	// Token: 0x040050AF RID: 20655
+	// Token: 0x040050D4 RID: 20692
 	[XuiBindComponent("bar_used", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barUsed;
 
-	// Token: 0x040050B0 RID: 20656
+	// Token: 0x040050D5 RID: 20693
 	[XuiBindComponent("bar_required", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barRequired;
 
-	// Token: 0x040050B1 RID: 20657
+	// Token: 0x040050D6 RID: 20694
 	[XuiBindComponent("bar_pending", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barPending;
 
-	// Token: 0x040050B2 RID: 20658
+	// Token: 0x040050D7 RID: 20695
 	[XuiBindComponent("bar_selected_primary_fill", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barSelectedPrimaryFill;
 
-	// Token: 0x040050B3 RID: 20659
+	// Token: 0x040050D8 RID: 20696
 	[XuiBindComponent("bar_selected_secondary_fill", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barSelectedSecondaryFill;
 
-	// Token: 0x040050B4 RID: 20660
+	// Token: 0x040050D9 RID: 20697
 	[XuiBindComponent("bar_selected_tertiary_fill", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barSelectedTertiaryFill;
 
-	// Token: 0x040050B5 RID: 20661
+	// Token: 0x040050DA RID: 20698
 	[XuiBindComponent("bar_selected_primary_outline", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barSelectedPrimaryOutline;
 
-	// Token: 0x040050B6 RID: 20662
+	// Token: 0x040050DB RID: 20699
 	[XuiBindComponent("bar_selected_secondary_outline", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barSelectedSecondaryOutline;
 
-	// Token: 0x040050B7 RID: 20663
+	// Token: 0x040050DC RID: 20700
 	[XuiBindComponent("bar_selected_tertiary_outline", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barSelectedTertiaryOutline;
 
-	// Token: 0x040050B8 RID: 20664
+	// Token: 0x040050DD RID: 20701
 	[XuiBindComponent("bar_hovered_outline", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite barHoveredOutline;
 
-	// Token: 0x040050B9 RID: 20665
+	// Token: 0x040050DE RID: 20702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.DisplayMode displayMode;
 
-	// Token: 0x040050BA RID: 20666
+	// Token: 0x040050DF RID: 20703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long usedBytes;
 
-	// Token: 0x040050BB RID: 20667
+	// Token: 0x040050E0 RID: 20704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long pendingBytes;
 
-	// Token: 0x040050BC RID: 20668
+	// Token: 0x040050E1 RID: 20705
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long allowanceBytes;
 
-	// Token: 0x040050BD RID: 20669
+	// Token: 0x040050E2 RID: 20706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.BarRegion primaryByteRegion = XUiC_DataManagementBar.BarRegion.None;
 
-	// Token: 0x040050BE RID: 20670
+	// Token: 0x040050E3 RID: 20707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.BarRegion secondaryByteRegion = XUiC_DataManagementBar.BarRegion.None;
 
-	// Token: 0x040050BF RID: 20671
+	// Token: 0x040050E4 RID: 20708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.BarRegion tertiaryByteRegion = XUiC_DataManagementBar.BarRegion.None;
 
-	// Token: 0x040050C0 RID: 20672
+	// Token: 0x040050E5 RID: 20709
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.BarRegion hoveredByteRegion = XUiC_DataManagementBar.BarRegion.None;
 
-	// Token: 0x040050C1 RID: 20673
+	// Token: 0x040050E6 RID: 20710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.BarRegion archivePreviewByteRegion = XUiC_DataManagementBar.BarRegion.None;
 
-	// Token: 0x040050C2 RID: 20674
+	// Token: 0x040050E7 RID: 20711
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DataManagementBar.SelectionDepth focusedSelectionDepth;
 
-	// Token: 0x040050C3 RID: 20675
+	// Token: 0x040050E8 RID: 20712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool deleteHovered;
 
-	// Token: 0x040050C4 RID: 20676
+	// Token: 0x040050E9 RID: 20713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool deleteWindowDisplayed;
 
-	// Token: 0x040050C5 RID: 20677
+	// Token: 0x040050EA RID: 20714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fullWidth;
 
-	// Token: 0x040050C6 RID: 20678
+	// Token: 0x040050EB RID: 20715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fullHeight;
 
-	// Token: 0x040050C7 RID: 20679
+	// Token: 0x040050EC RID: 20716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float bytesToPixels;
 
-	// Token: 0x040050C8 RID: 20680
+	// Token: 0x040050ED RID: 20717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color32 selectionOutlineColor = new Color32(250, byte.MaxValue, 163, 193);
 
-	// Token: 0x040050C9 RID: 20681
+	// Token: 0x040050EE RID: 20718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color32 selectionOutlineColorFade = new Color32(250, byte.MaxValue, 163, 86);
 
-	// Token: 0x040050CA RID: 20682
+	// Token: 0x040050EF RID: 20719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color32 selectionOutlineColorDelete = new Color32(234, 67, 53, byte.MaxValue);
 
-	// Token: 0x040050CB RID: 20683
+	// Token: 0x040050F0 RID: 20720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 selectionFillColor;
 
-	// Token: 0x02000D8B RID: 3467
+	// Token: 0x02000D96 RID: 3478
 	public enum SelectionDepth
 	{
-		// Token: 0x040050CD RID: 20685
+		// Token: 0x040050F2 RID: 20722
 		Primary,
-		// Token: 0x040050CE RID: 20686
+		// Token: 0x040050F3 RID: 20723
 		Secondary,
-		// Token: 0x040050CF RID: 20687
+		// Token: 0x040050F4 RID: 20724
 		Tertiary
 	}
 
-	// Token: 0x02000D8C RID: 3468
+	// Token: 0x02000D97 RID: 3479
 	public readonly struct BarRegion : IEquatable<XUiC_DataManagementBar.BarRegion>
 	{
-		// Token: 0x060068DB RID: 26843 RVA: 0x00299B13 File Offset: 0x00297D13
+		// Token: 0x06006900 RID: 26880 RVA: 0x0029B03B File Offset: 0x0029923B
 		public BarRegion(long _offset, long _size)
 		{
 			this.Start = _offset;
@@ -521,31 +521,31 @@ public class XUiC_DataManagementBar : XUiController
 			this.End = this.Start + this.Size;
 		}
 
-		// Token: 0x060068DC RID: 26844 RVA: 0x00299B36 File Offset: 0x00297D36
+		// Token: 0x06006901 RID: 26881 RVA: 0x0029B05E File Offset: 0x0029925E
 		public bool Equals(XUiC_DataManagementBar.BarRegion _other)
 		{
 			return this.Start == _other.Start && this.Size == _other.Size;
 		}
 
-		// Token: 0x040050D0 RID: 20688
+		// Token: 0x040050F5 RID: 20725
 		public readonly long Start;
 
-		// Token: 0x040050D1 RID: 20689
+		// Token: 0x040050F6 RID: 20726
 		public readonly long Size;
 
-		// Token: 0x040050D2 RID: 20690
+		// Token: 0x040050F7 RID: 20727
 		public readonly long End;
 
-		// Token: 0x040050D3 RID: 20691
+		// Token: 0x040050F8 RID: 20728
 		public static readonly XUiC_DataManagementBar.BarRegion None = new XUiC_DataManagementBar.BarRegion(0L, 0L);
 	}
 
-	// Token: 0x02000D8D RID: 3469
+	// Token: 0x02000D98 RID: 3480
 	public enum DisplayMode
 	{
-		// Token: 0x040050D5 RID: 20693
+		// Token: 0x040050FA RID: 20730
 		Selection,
-		// Token: 0x040050D6 RID: 20694
+		// Token: 0x040050FB RID: 20731
 		Preview
 	}
 }

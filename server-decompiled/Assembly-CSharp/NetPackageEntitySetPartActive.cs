@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EA RID: 2026
+// Token: 0x020007F4 RID: 2036
 [Preserve]
 public class NetPackageEntitySetPartActive : NetPackage
 {
-	// Token: 0x06003BD9 RID: 15321 RVA: 0x001807B4 File Offset: 0x0017E9B4
+	// Token: 0x06003BFC RID: 15356 RVA: 0x001818B8 File Offset: 0x0017FAB8
 	public NetPackageEntitySetPartActive Setup(Entity entity, string partName, bool active)
 	{
 		this.id = entity.entityId;
@@ -14,7 +14,7 @@ public class NetPackageEntitySetPartActive : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BDA RID: 15322 RVA: 0x001807D1 File Offset: 0x0017E9D1
+	// Token: 0x06003BFD RID: 15357 RVA: 0x001818D5 File Offset: 0x0017FAD5
 	public override void read(PooledBinaryReader _br)
 	{
 		this.id = _br.ReadInt32();
@@ -22,7 +22,7 @@ public class NetPackageEntitySetPartActive : NetPackage
 		this.partName = _br.ReadString();
 	}
 
-	// Token: 0x06003BDB RID: 15323 RVA: 0x001807F7 File Offset: 0x0017E9F7
+	// Token: 0x06003BFE RID: 15358 RVA: 0x001818FB File Offset: 0x0017FAFB
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -31,7 +31,7 @@ public class NetPackageEntitySetPartActive : NetPackage
 		_bw.Write(this.partName ?? "");
 	}
 
-	// Token: 0x06003BDC RID: 15324 RVA: 0x00180830 File Offset: 0x0017EA30
+	// Token: 0x06003BFF RID: 15359 RVA: 0x00181934 File Offset: 0x0017FB34
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -52,15 +52,15 @@ public class NetPackageEntitySetPartActive : NetPackage
 		entity.SetTransformActive(this.partName, this.active);
 	}
 
-	// Token: 0x040030AA RID: 12458
+	// Token: 0x040030CA RID: 12490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x040030AB RID: 12459
+	// Token: 0x040030CB RID: 12491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool active;
 
-	// Token: 0x040030AC RID: 12460
+	// Token: 0x040030CC RID: 12492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string partName;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x0200068B RID: 1675
+// Token: 0x02000692 RID: 1682
 public class EntityHasStanceTag : TargetedCompareRequirementBase
 {
-	// Token: 0x0600356C RID: 13676 RVA: 0x00160BD8 File Offset: 0x0015EDD8
+	// Token: 0x0600357A RID: 13690 RVA: 0x001617CC File Offset: 0x0015F9CC
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -29,7 +29,7 @@ public class EntityHasStanceTag : TargetedCompareRequirementBase
 		}
 	}
 
-	// Token: 0x0600356D RID: 13677 RVA: 0x00160C6C File Offset: 0x0015EE6C
+	// Token: 0x0600357B RID: 13691 RVA: 0x00161860 File Offset: 0x0015FA60
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -50,11 +50,11 @@ public class EntityHasStanceTag : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B3F RID: 11071
+	// Token: 0x04002B5A RID: 11098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tagsToCompare;
 
-	// Token: 0x04002B40 RID: 11072
+	// Token: 0x04002B5B RID: 11099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAllTags;
 }

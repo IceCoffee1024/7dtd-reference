@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D86 RID: 7558
+	// Token: 0x02001DB7 RID: 7607
 	public struct CharacterGroundingReport
 	{
-		// Token: 0x0600DF49 RID: 57161 RVA: 0x004FA7C8 File Offset: 0x004F89C8
+		// Token: 0x0600E05D RID: 57437 RVA: 0x004FE368 File Offset: 0x004FC568
 		public void CopyFrom(CharacterTransientGroundingReport transientGroundingReport)
 		{
 			this.FoundAnyGround = transientGroundingReport.FoundAnyGround;
@@ -19,28 +19,28 @@ namespace KinematicCharacterController
 			this.GroundPoint = Vector3.zero;
 		}
 
-		// Token: 0x0400A8DA RID: 43226
+		// Token: 0x0400A9C3 RID: 43459
 		public bool FoundAnyGround;
 
-		// Token: 0x0400A8DB RID: 43227
+		// Token: 0x0400A9C4 RID: 43460
 		public bool IsStableOnGround;
 
-		// Token: 0x0400A8DC RID: 43228
+		// Token: 0x0400A9C5 RID: 43461
 		public bool SnappingPrevented;
 
-		// Token: 0x0400A8DD RID: 43229
+		// Token: 0x0400A9C6 RID: 43462
 		public Vector3 GroundNormal;
 
-		// Token: 0x0400A8DE RID: 43230
+		// Token: 0x0400A9C7 RID: 43463
 		public Vector3 InnerGroundNormal;
 
-		// Token: 0x0400A8DF RID: 43231
+		// Token: 0x0400A9C8 RID: 43464
 		public Vector3 OuterGroundNormal;
 
-		// Token: 0x0400A8E0 RID: 43232
+		// Token: 0x0400A9C9 RID: 43465
 		public Collider GroundCollider;
 
-		// Token: 0x0400A8E1 RID: 43233
+		// Token: 0x0400A9CA RID: 43466
 		public Vector3 GroundPoint;
 	}
 }

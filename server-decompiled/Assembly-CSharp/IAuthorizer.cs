@@ -1,44 +1,44 @@
 ﻿using System;
 using Platform;
 
-// Token: 0x02000780 RID: 1920
+// Token: 0x02000788 RID: 1928
 public interface IAuthorizer
 {
-	// Token: 0x170005D8 RID: 1496
-	// (get) Token: 0x06003971 RID: 14705
+	// Token: 0x170005DC RID: 1500
+	// (get) Token: 0x06003988 RID: 14728
 	int Order { get; }
 
-	// Token: 0x170005D9 RID: 1497
-	// (get) Token: 0x06003972 RID: 14706
+	// Token: 0x170005DD RID: 1501
+	// (get) Token: 0x06003989 RID: 14729
 	string AuthorizerName { get; }
 
-	// Token: 0x170005DA RID: 1498
-	// (get) Token: 0x06003973 RID: 14707
+	// Token: 0x170005DE RID: 1502
+	// (get) Token: 0x0600398A RID: 14730
 	string StateLocalizationKey { get; }
 
-	// Token: 0x170005DB RID: 1499
-	// (get) Token: 0x06003974 RID: 14708
+	// Token: 0x170005DF RID: 1503
+	// (get) Token: 0x0600398B RID: 14731
 	EPlatformIdentifier PlatformRestriction { get; }
 
-	// Token: 0x170005DC RID: 1500
-	// (get) Token: 0x06003975 RID: 14709
+	// Token: 0x170005E0 RID: 1504
+	// (get) Token: 0x0600398C RID: 14732
 	bool AuthorizerActive { get; }
 
-	// Token: 0x06003976 RID: 14710
+	// Token: 0x0600398D RID: 14733
 	void Init(IAuthorizationResponses _authResponsesHandler);
 
-	// Token: 0x06003977 RID: 14711
+	// Token: 0x0600398E RID: 14734
 	void Cleanup();
 
-	// Token: 0x06003978 RID: 14712
+	// Token: 0x0600398F RID: 14735
 	void ServerStart();
 
-	// Token: 0x06003979 RID: 14713
+	// Token: 0x06003990 RID: 14736
 	void ServerStop();
 
-	// Token: 0x0600397A RID: 14714
+	// Token: 0x06003991 RID: 14737
 	ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo);
 
-	// Token: 0x0600397B RID: 14715
+	// Token: 0x06003992 RID: 14738
 	void Disconnect(ClientInfo _clientInfo);
 }

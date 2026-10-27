@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D34 RID: 3380
+// Token: 0x02000D3F RID: 3391
 public class QualityInfoFromXml : MonoBehaviour
 {
-	// Token: 0x06006683 RID: 26243 RVA: 0x00288DF8 File Offset: 0x00286FF8
+	// Token: 0x060066A8 RID: 26280 RVA: 0x0028A320 File Offset: 0x00288520
 	public static IEnumerator CreateQualityInfo(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

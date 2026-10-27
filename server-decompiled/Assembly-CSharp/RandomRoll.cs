@@ -5,11 +5,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000668 RID: 1640
+// Token: 0x0200066F RID: 1647
 [Preserve]
 public class RandomRoll : TargetedCompareRequirementBase
 {
-	// Token: 0x06003515 RID: 13589 RVA: 0x0015F564 File Offset: 0x0015D764
+	// Token: 0x06003523 RID: 13603 RVA: 0x00160158 File Offset: 0x0015E358
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -37,7 +37,7 @@ public class RandomRoll : TargetedCompareRequirementBase
 		return this.invert != RequirementBase.compareValues(Utils.FastLerp(this.minMax.x, this.minMax.y, randomFloat), this.operation, this.value);
 	}
 
-	// Token: 0x06003516 RID: 13590 RVA: 0x0015F650 File Offset: 0x0015D850
+	// Token: 0x06003524 RID: 13604 RVA: 0x00160244 File Offset: 0x0015E444
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("roll[{0}-{1}] {2} {3}", new object[]
@@ -49,7 +49,7 @@ public class RandomRoll : TargetedCompareRequirementBase
 		}));
 	}
 
-	// Token: 0x06003517 RID: 13591 RVA: 0x0015F6B8 File Offset: 0x0015D8B8
+	// Token: 0x06003525 RID: 13605 RVA: 0x001602AC File Offset: 0x0015E4AC
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -75,31 +75,31 @@ public class RandomRoll : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B0E RID: 11022
+	// Token: 0x04002B29 RID: 11049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 minMax;
 
-	// Token: 0x04002B0F RID: 11023
+	// Token: 0x04002B2A RID: 11050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RandomRoll.SeedType seedType;
 
-	// Token: 0x04002B10 RID: 11024
+	// Token: 0x04002B2B RID: 11051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int seedAdditive;
 
-	// Token: 0x04002B11 RID: 11025
+	// Token: 0x04002B2C RID: 11052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameRandom rand;
 
-	// Token: 0x02000669 RID: 1641
+	// Token: 0x02000670 RID: 1648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum SeedType
 	{
-		// Token: 0x04002B13 RID: 11027
+		// Token: 0x04002B2E RID: 11054
 		Item,
-		// Token: 0x04002B14 RID: 11028
+		// Token: 0x04002B2F RID: 11055
 		Player,
-		// Token: 0x04002B15 RID: 11029
+		// Token: 0x04002B30 RID: 11056
 		Random
 	}
 }

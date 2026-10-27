@@ -2,14 +2,14 @@
 
 namespace SharpEXR
 {
-	// Token: 0x02001701 RID: 5889
+	// Token: 0x02001720 RID: 5920
 	public enum LineOrder
 	{
-		// Token: 0x0400896B RID: 35179
+		// Token: 0x04008A1E RID: 35358
 		IncreasingY,
-		// Token: 0x0400896C RID: 35180
+		// Token: 0x04008A1F RID: 35359
 		DecreasingY,
-		// Token: 0x0400896D RID: 35181
+		// Token: 0x04008A20 RID: 35360
 		RandomY
 	}
 }

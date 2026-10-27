@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using BhvrAnalyticsServices.Interfaces;
+using Services;
+using Services.Analytics;
+using Services.Analytics.Events;
 using UnityEngine;
 
 // Token: 0x020001D0 RID: 464
 public class PlayerEntityStats : EntityStats
 {
-	// Token: 0x06000E4F RID: 3663 RVA: 0x0005E517 File Offset: 0x0005C717
+	// Token: 0x06000E4F RID: 3663 RVA: 0x0005E4B7 File Offset: 0x0005C6B7
 	public PlayerEntityStats()
 	{
 		this.Stamina = new Stat();
@@ -13,14 +18,14 @@ public class PlayerEntityStats : EntityStats
 		this.Food = new Stat();
 	}
 
-	// Token: 0x06000E50 RID: 3664 RVA: 0x0005E54B File Offset: 0x0005C74B
+	// Token: 0x06000E50 RID: 3664 RVA: 0x0005E4EB File Offset: 0x0005C6EB
 	public PlayerEntityStats(EntityPlayer _ea)
 		: base(_ea)
 	{
 		this.localPlayer = _ea as EntityPlayerLocal;
 	}
 
-	// Token: 0x06000E51 RID: 3665 RVA: 0x0005E56C File Offset: 0x0005C76C
+	// Token: 0x06000E51 RID: 3665 RVA: 0x0005E50C File Offset: 0x0005C70C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Init()
 	{
@@ -57,7 +62,7 @@ public class PlayerEntityStats : EntityStats
 		this.m_notifications = new List<EntityUINotification>();
 	}
 
-	// Token: 0x06000E52 RID: 3666 RVA: 0x0005E6F4 File Offset: 0x0005C8F4
+	// Token: 0x06000E52 RID: 3666 RVA: 0x0005E694 File Offset: 0x0005C894
 	public override void CopyFrom(EntityStats _stats)
 	{
 		PlayerEntityStats playerEntityStats = (PlayerEntityStats)_stats;
@@ -68,7 +73,7 @@ public class PlayerEntityStats : EntityStats
 		this.CoreTemp = playerEntityStats.CoreTemp;
 	}
 
-	// Token: 0x06000E53 RID: 3667 RVA: 0x0005E758 File Offset: 0x0005C958
+	// Token: 0x06000E53 RID: 3667 RVA: 0x0005E6F8 File Offset: 0x0005C8F8
 	public override EntityStats SimpleClone()
 	{
 		PlayerEntityStats playerEntityStats = new PlayerEntityStats();
@@ -80,7 +85,7 @@ public class PlayerEntityStats : EntityStats
 		return playerEntityStats;
 	}
 
-	// Token: 0x06000E54 RID: 3668 RVA: 0x0005E7BA File Offset: 0x0005C9BA
+	// Token: 0x06000E54 RID: 3668 RVA: 0x0005E75A File Offset: 0x0005C95A
 	public void AddUINotificationChangedDelegate(IEntityUINotificationChanged _uiChangedDelegate)
 	{
 		if (!this.notificationChangedDelegates.Contains(_uiChangedDelegate))
@@ -89,13 +94,13 @@ public class PlayerEntityStats : EntityStats
 		}
 	}
 
-	// Token: 0x06000E55 RID: 3669 RVA: 0x0005E7D6 File Offset: 0x0005C9D6
+	// Token: 0x06000E55 RID: 3669 RVA: 0x0005E776 File Offset: 0x0005C976
 	public void RemoveUINotificationChangedDelegate(IEntityUINotificationChanged _uiChangedDelegate)
 	{
 		this.notificationChangedDelegates.Remove(_uiChangedDelegate);
 	}
 
-	// Token: 0x06000E56 RID: 3670 RVA: 0x0005E7E5 File Offset: 0x0005C9E5
+	// Token: 0x06000E56 RID: 3670 RVA: 0x0005E785 File Offset: 0x0005C985
 	public void AddBuffChangedDelegate(IEntityBuffsChanged _buffChangedDelegate)
 	{
 		if (!this.buffChangedDelegates.Contains(_buffChangedDelegate))
@@ -104,21 +109,21 @@ public class PlayerEntityStats : EntityStats
 		}
 	}
 
-	// Token: 0x06000E57 RID: 3671 RVA: 0x0005E801 File Offset: 0x0005CA01
+	// Token: 0x06000E57 RID: 3671 RVA: 0x0005E7A1 File Offset: 0x0005C9A1
 	public void RemoveBuffChangedDelegate(IEntityBuffsChanged _buffChangedDelegate)
 	{
 		this.buffChangedDelegates.Remove(_buffChangedDelegate);
 	}
 
-	// Token: 0x06000E58 RID: 3672 RVA: 0x0005E810 File Offset: 0x0005CA10
+	// Token: 0x06000E58 RID: 3672 RVA: 0x0005E7B0 File Offset: 0x0005C9B0
 	public override void EntityBuffAdded(BuffValue _buff)
 	{
 		for (int i = 0; i < this.buffChangedDelegates.Count; i++)
 		{
 			this.buffChangedDelegates[i].EntityBuffAdded(_buff);
 		}
-		BuffClass buffClass = _buff.BuffClass;
-		if (!buffClass.Hidden && buffClass.Icon != null)
+		BuffClass buffClass2 = _buff.BuffClass;
+		if (!buffClass2.Hidden && buffClass2.Icon != null)
 		{
 			BuffEntityUINotification buffEntityUINotification = new BuffEntityUINotification(this.m_entity, _buff);
 			this.m_notifications.Add(buffEntityUINotification);
@@ -127,9 +132,36 @@ public class PlayerEntityStats : EntityStats
 				this.notificationChangedDelegates[j].EntityUINotificationAdded(buffEntityUINotification);
 			}
 		}
+		EntityPlayerLocal entityPlayerLocal = this.m_entity as EntityPlayerLocal;
+		if (entityPlayerLocal != null && !Helper.IsEditingOrPlaytesting())
+		{
+			BuffClass buffClass = _buff.BuffClass;
+			IEnumerable<PlayerStateEventData.ActiveConditionData> enumerable = entityPlayerLocal.Buffs.ActiveBuffs.Select<BuffValue, PlayerStateEventData.ActiveConditionData>((BuffValue buff) => new PlayerStateEventData.ActiveConditionData
+			{
+				ConditionName = buff.BuffName,
+				MaxDuration = buffClass.DurationMax,
+				CurrentDuration = buff.DurationInSeconds,
+				DamageType = buffClass.DamageType.ToString(),
+				StackType = buffClass.StackType.ToString(),
+				UpdateRate = buffClass.UpdateRateTicks
+			});
+			PlayerStateEventData playerStateEventData = new PlayerStateEventData
+			{
+				ServerId = Helper.GetServerId(),
+				SaveId = Helper.GetSaveID(),
+				StateTimestamp = DateTime.UtcNow.ToString("O"),
+				ElapsedTime = (int)(entityPlayerLocal.totalTimePlayed * 60f),
+				TriggerReason = PlayerStateEventData.triggerReasons.ConditionAquired.ToString(),
+				TriggerSource = buffClass.DamageType.ToString(),
+				ConditionsAdded = _buff.BuffName,
+				ConditionsRemoved = null,
+				ActiveConditions = enumerable
+			};
+			ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(playerStateEventData);
+		}
 	}
 
-	// Token: 0x06000E59 RID: 3673 RVA: 0x0005E8A0 File Offset: 0x0005CAA0
+	// Token: 0x06000E59 RID: 3673 RVA: 0x0005E940 File Offset: 0x0005CB40
 	public override void EntityBuffRemoved(BuffValue _buff)
 	{
 		for (int i = 0; i < this.buffChangedDelegates.Count; i++)
@@ -153,10 +185,37 @@ public class PlayerEntityStats : EntityStats
 				j++;
 			}
 		}
+		EntityPlayerLocal entityPlayerLocal = this.m_entity as EntityPlayerLocal;
+		if (entityPlayerLocal != null && !Helper.IsEditingOrPlaytesting())
+		{
+			BuffClass buffClass = _buff.BuffClass;
+			IEnumerable<PlayerStateEventData.ActiveConditionData> enumerable = entityPlayerLocal.Buffs.ActiveBuffs.Select<BuffValue, PlayerStateEventData.ActiveConditionData>((BuffValue buff) => new PlayerStateEventData.ActiveConditionData
+			{
+				ConditionName = buff.BuffName,
+				MaxDuration = buffClass.DurationMax,
+				CurrentDuration = buff.DurationInSeconds,
+				DamageType = buffClass.DamageType.ToString(),
+				StackType = buffClass.StackType.ToString(),
+				UpdateRate = buffClass.UpdateRateTicks
+			});
+			PlayerStateEventData playerStateEventData = new PlayerStateEventData
+			{
+				ServerId = Helper.GetServerId(),
+				SaveId = Helper.GetSaveID(),
+				StateTimestamp = DateTime.UtcNow.ToString("O"),
+				ElapsedTime = (int)(entityPlayerLocal.totalTimePlayed * 60f),
+				TriggerReason = PlayerStateEventData.triggerReasons.ConditionRemoved.ToString(),
+				TriggerSource = buffClass.DamageType.ToString(),
+				ConditionsAdded = null,
+				ConditionsRemoved = _buff.BuffName,
+				ActiveConditions = enumerable
+			};
+			ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(playerStateEventData);
+		}
 	}
 
 	// Token: 0x1700010C RID: 268
-	// (get) Token: 0x06000E5A RID: 3674 RVA: 0x0005E937 File Offset: 0x0005CB37
+	// (get) Token: 0x06000E5A RID: 3674 RVA: 0x0005EAD9 File Offset: 0x0005CCD9
 	public List<EntityUINotification> Notifications
 	{
 		get
@@ -165,7 +224,7 @@ public class PlayerEntityStats : EntityStats
 		}
 	}
 
-	// Token: 0x06000E5B RID: 3675 RVA: 0x0005E940 File Offset: 0x0005CB40
+	// Token: 0x06000E5B RID: 3675 RVA: 0x0005EAE4 File Offset: 0x0005CCE4
 	public override void TickWait(ulong worldTime)
 	{
 		float num = 0.5f;
@@ -226,7 +285,7 @@ public class PlayerEntityStats : EntityStats
 		}
 	}
 
-	// Token: 0x06000E5C RID: 3676 RVA: 0x0005EAB8 File Offset: 0x0005CCB8
+	// Token: 0x06000E5C RID: 3676 RVA: 0x0005EC5C File Offset: 0x0005CE5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateWeatherStats(float dt, ulong worldTime, bool godMode)
 	{
@@ -250,7 +309,7 @@ public class PlayerEntityStats : EntityStats
 		}
 	}
 
-	// Token: 0x06000E5D RID: 3677 RVA: 0x0005EBCC File Offset: 0x0005CDCC
+	// Token: 0x06000E5D RID: 3677 RVA: 0x0005ED70 File Offset: 0x0005CF70
 	public void UpdatePlayerFoodOT(float dt)
 	{
 		this.Food.RegenerationAmount += EffectManager.GetValue(PassiveEffects.FoodChangeOT, null, 0f, this.m_entity, null, this.m_entity.CurrentMovementTag, true, true, true, true, true, 1, true, false) * dt;
@@ -263,7 +322,7 @@ public class PlayerEntityStats : EntityStats
 		this.Food.RegenerationAmount = 0f;
 	}
 
-	// Token: 0x06000E5E RID: 3678 RVA: 0x0005EC90 File Offset: 0x0005CE90
+	// Token: 0x06000E5E RID: 3678 RVA: 0x0005EE34 File Offset: 0x0005D034
 	public void UpdatePlayerWaterOT(float dt)
 	{
 		this.Water.RegenerationAmount += EffectManager.GetValue(PassiveEffects.WaterChangeOT, null, 0f, this.m_entity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) * dt;
@@ -276,7 +335,7 @@ public class PlayerEntityStats : EntityStats
 		this.Water.RegenerationAmount = 0f;
 	}
 
-	// Token: 0x06000E5F RID: 3679 RVA: 0x0005ED58 File Offset: 0x0005CF58
+	// Token: 0x06000E5F RID: 3679 RVA: 0x0005EEFC File Offset: 0x0005D0FC
 	public void UpdatePlayerHealthOT(float dt)
 	{
 		float num = EffectManager.GetValue(PassiveEffects.HealthChangeOT, null, 0f, this.m_entity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
@@ -320,7 +379,7 @@ public class PlayerEntityStats : EntityStats
 		this.Health.Tick(dt);
 	}
 
-	// Token: 0x06000E60 RID: 3680 RVA: 0x0005EF48 File Offset: 0x0005D148
+	// Token: 0x06000E60 RID: 3680 RVA: 0x0005F0EC File Offset: 0x0005D2EC
 	public void UpdatePlayerStaminaOT(float _dt)
 	{
 		float value = EffectManager.GetValue(PassiveEffects.StaminaChangeOT, null, 0f, this.m_entity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
@@ -352,13 +411,13 @@ public class PlayerEntityStats : EntityStats
 		this.Stamina.Tick(_dt);
 	}
 
-	// Token: 0x06000E61 RID: 3681 RVA: 0x0005F0B1 File Offset: 0x0005D2B1
+	// Token: 0x06000E61 RID: 3681 RVA: 0x0005F255 File Offset: 0x0005D455
 	public float GetOutsideTemperature()
 	{
 		return 70f;
 	}
 
-	// Token: 0x06000E62 RID: 3682 RVA: 0x0005F0B8 File Offset: 0x0005D2B8
+	// Token: 0x06000E62 RID: 3682 RVA: 0x0005F25C File Offset: 0x0005D45C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float CalcShadeFromSunPercent()
 	{
@@ -375,7 +434,7 @@ public class PlayerEntityStats : EntityStats
 		return 0f;
 	}
 
-	// Token: 0x06000E63 RID: 3683 RVA: 0x0005F134 File Offset: 0x0005D334
+	// Token: 0x06000E63 RID: 3683 RVA: 0x0005F2D8 File Offset: 0x0005D4D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetWaterPercent()
 	{
@@ -398,7 +457,7 @@ public class PlayerEntityStats : EntityStats
 		return num;
 	}
 
-	// Token: 0x06000E64 RID: 3684 RVA: 0x0005F190 File Offset: 0x0005D390
+	// Token: 0x06000E64 RID: 3684 RVA: 0x0005F334 File Offset: 0x0005D534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void SendStatChangePacket(NetPackageEntityStatChanged.EnumStat enumStat)
 	{
@@ -411,7 +470,7 @@ public class PlayerEntityStats : EntityStats
 		this.m_entity.world.entityDistributer.SendPacketToTrackedPlayersAndTrackedEntity(this.m_entity.entityId, -1, netPackageEntityStatChanged, enumStat > NetPackageEntityStatChanged.EnumStat.Health);
 	}
 
-	// Token: 0x06000E65 RID: 3685 RVA: 0x0005F200 File Offset: 0x0005D400
+	// Token: 0x06000E65 RID: 3685 RVA: 0x0005F3A4 File Offset: 0x0005D5A4
 	public override void Read(PooledBinaryReader stream)
 	{
 		int num = stream.ReadInt32();
@@ -429,7 +488,7 @@ public class PlayerEntityStats : EntityStats
 		}
 	}
 
-	// Token: 0x06000E66 RID: 3686 RVA: 0x0005F274 File Offset: 0x0005D474
+	// Token: 0x06000E66 RID: 3686 RVA: 0x0005F418 File Offset: 0x0005D618
 	public override void Write(PooledBinaryWriter stream)
 	{
 		stream.Write(11);

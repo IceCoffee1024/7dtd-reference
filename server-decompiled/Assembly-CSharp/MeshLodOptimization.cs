@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200136D RID: 4973
+// Token: 0x0200137F RID: 4991
 public static class MeshLodOptimization
 {
-	// Token: 0x06009CB7 RID: 40119 RVA: 0x003B3778 File Offset: 0x003B1978
+	// Token: 0x06009D0F RID: 40207 RVA: 0x003B5B7C File Offset: 0x003B3D7C
 	public static void Apply(ref Transform prefab)
 	{
 		if (prefab.GetComponentInChildren<Tree>())
@@ -29,7 +29,7 @@ public static class MeshLodOptimization
 		MeshLodOptimization.processed.Add(instanceID);
 	}
 
-	// Token: 0x06009CB8 RID: 40120 RVA: 0x003B37E4 File Offset: 0x003B19E4
+	// Token: 0x06009D10 RID: 40208 RVA: 0x003B5BE8 File Offset: 0x003B3DE8
 	public static void RemoveLod1(Transform prefab)
 	{
 		MeshLodOptimization.lodGroupBuffer.Clear();
@@ -72,22 +72,22 @@ public static class MeshLodOptimization
 		}
 	}
 
-	// Token: 0x04007644 RID: 30276
+	// Token: 0x04007685 RID: 30341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MeshLodOptimization.EditorCloneCache editorCache;
 
-	// Token: 0x04007645 RID: 30277
+	// Token: 0x04007686 RID: 30342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<int> processed = new HashSet<int>();
 
-	// Token: 0x04007646 RID: 30278
+	// Token: 0x04007687 RID: 30343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<LODGroup> lodGroupBuffer = new List<LODGroup>();
 
-	// Token: 0x0200136E RID: 4974
+	// Token: 0x02001380 RID: 4992
 	public class EditorCloneCache
 	{
-		// Token: 0x06009CBA RID: 40122 RVA: 0x003B391C File Offset: 0x003B1B1C
+		// Token: 0x06009D12 RID: 40210 RVA: 0x003B5D20 File Offset: 0x003B3F20
 		public EditorCloneCache()
 		{
 			this.cloneParent = new GameObject("LodCullingCache");
@@ -102,7 +102,7 @@ public static class MeshLodOptimization
 			};
 		}
 
-		// Token: 0x06009CBB RID: 40123 RVA: 0x003B396C File Offset: 0x003B1B6C
+		// Token: 0x06009D13 RID: 40211 RVA: 0x003B5D70 File Offset: 0x003B3F70
 		public Transform CacheClone(int id, Transform prefab)
 		{
 			Transform transform;
@@ -117,11 +117,11 @@ public static class MeshLodOptimization
 			return transform;
 		}
 
-		// Token: 0x04007647 RID: 30279
+		// Token: 0x04007688 RID: 30344
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameObject cloneParent;
 
-		// Token: 0x04007648 RID: 30280
+		// Token: 0x04007689 RID: 30345
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<int, Transform> clones = new Dictionary<int, Transform>();
 	}

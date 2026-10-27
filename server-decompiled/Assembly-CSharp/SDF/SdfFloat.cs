@@ -3,10 +3,10 @@ using System.IO;
 
 namespace SDF
 {
-	// Token: 0x020016C0 RID: 5824
+	// Token: 0x020016DF RID: 5855
 	public class SdfFloat : SdfTag
 	{
-		// Token: 0x0600B6BE RID: 46782 RVA: 0x0043CD00 File Offset: 0x0043AF00
+		// Token: 0x0600B792 RID: 46994 RVA: 0x0043F7A4 File Offset: 0x0043D9A4
 		public SdfFloat(string _name, float _value)
 		{
 			base.TagType = SdfTagType.Float;
@@ -14,7 +14,7 @@ namespace SDF
 			base.Value = _value;
 		}
 
-		// Token: 0x0600B6BF RID: 46783 RVA: 0x0043CD22 File Offset: 0x0043AF22
+		// Token: 0x0600B793 RID: 46995 RVA: 0x0043F7C6 File Offset: 0x0043D9C6
 		public override void WritePayload(BinaryWriter bw)
 		{
 			bw.Write((float)base.Value);

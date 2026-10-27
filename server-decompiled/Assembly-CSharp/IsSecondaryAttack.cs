@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A5 RID: 1701
+// Token: 0x020006AC RID: 1708
 [Preserve]
 public class IsSecondaryAttack : TargetedCompareRequirementBase
 {
-	// Token: 0x060035BD RID: 13757 RVA: 0x00161D6C File Offset: 0x0015FF6C
+	// Token: 0x060035CB RID: 13771 RVA: 0x00162960 File Offset: 0x00160B60
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

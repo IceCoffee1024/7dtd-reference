@@ -8,7 +8,7 @@ using UnityEngine.Scripting;
 public class BlockMine : Block
 {
 	// Token: 0x17000095 RID: 149
-	// (get) Token: 0x06000829 RID: 2089 RVA: 0x0003A338 File Offset: 0x00038538
+	// (get) Token: 0x06000829 RID: 2089 RVA: 0x0003A2F8 File Offset: 0x000384F8
 	public ExplosionData Explosion
 	{
 		get
@@ -17,7 +17,7 @@ public class BlockMine : Block
 		}
 	}
 
-	// Token: 0x0600082A RID: 2090 RVA: 0x0003A340 File Offset: 0x00038540
+	// Token: 0x0600082A RID: 2090 RVA: 0x0003A300 File Offset: 0x00038500
 	public override void Init()
 	{
 		base.Init();
@@ -34,7 +34,7 @@ public class BlockMine : Block
 		base.Properties.ParseBool(BlockMine.PropNoImmunity, ref this.NoImmunity);
 	}
 
-	// Token: 0x0600082B RID: 2091 RVA: 0x0003A3FC File Offset: 0x000385FC
+	// Token: 0x0600082B RID: 2091 RVA: 0x0003A3BC File Offset: 0x000385BC
 	public override void OnEntityWalking(WorldBase _world, int _x, int _y, int _z, BlockValue _blockValue, Entity entity)
 	{
 		if (this.NoImmunity || EffectManager.GetValue(PassiveEffects.LandMineImmunity, null, 0f, entity as EntityAlive, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) == 0f)
@@ -57,7 +57,7 @@ public class BlockMine : Block
 		}
 	}
 
-	// Token: 0x0600082C RID: 2092 RVA: 0x0003A524 File Offset: 0x00038724
+	// Token: 0x0600082C RID: 2092 RVA: 0x0003A4E4 File Offset: 0x000386E4
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (_damagePoints >= 0)
@@ -75,7 +75,7 @@ public class BlockMine : Block
 		return _blockValue.damage;
 	}
 
-	// Token: 0x0600082D RID: 2093 RVA: 0x0003A592 File Offset: 0x00038792
+	// Token: 0x0600082D RID: 2093 RVA: 0x0003A552 File Offset: 0x00038752
 	public override Block.DestroyedResult OnBlockDestroyedByExplosion(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _playerIdx)
 	{
 		if (_world.GetGameRandom().RandomFloat < 0.33f)
@@ -86,7 +86,7 @@ public class BlockMine : Block
 		return Block.DestroyedResult.Keep;
 	}
 
-	// Token: 0x0600082E RID: 2094 RVA: 0x0003A5B4 File Offset: 0x000387B4
+	// Token: 0x0600082E RID: 2094 RVA: 0x0003A574 File Offset: 0x00038774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void explode(WorldBase _world, BlockValueRef _bvRef, int _entityId)
 	{
@@ -100,14 +100,14 @@ public class BlockMine : Block
 		return false;
 	}
 
-	// Token: 0x06000830 RID: 2096 RVA: 0x0003A5EF File Offset: 0x000387EF
+	// Token: 0x06000830 RID: 2096 RVA: 0x0003A5AF File Offset: 0x000387AF
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		this.explode(_world, _blockPos, -1);
 		return true;
 	}
 
-	// Token: 0x06000831 RID: 2097 RVA: 0x0003A600 File Offset: 0x00038800
+	// Token: 0x06000831 RID: 2097 RVA: 0x0003A5C0 File Offset: 0x000387C0
 	public void TriggerMine(Entity _entity, WorldBase _world, Vector3i _blockPos, bool useTrigger)
 	{
 		if (useTrigger)

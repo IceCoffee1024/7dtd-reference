@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000976 RID: 2422
+// Token: 0x02000980 RID: 2432
 [Preserve]
 public class QuestActionTrackQuest : BaseQuestAction
 {
-	// Token: 0x06004662 RID: 18018 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004685 RID: 18053 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetupAction()
 	{
 	}
 
-	// Token: 0x06004663 RID: 18019 RVA: 0x001BF22D File Offset: 0x001BD42D
+	// Token: 0x06004686 RID: 18054 RVA: 0x001C02B1 File Offset: 0x001BE4B1
 	public override void PerformAction(Quest ownerQuest)
 	{
 		ownerQuest.Tracked = true;
 		ownerQuest.OwnerJournal.RefreshTracked();
 	}
 
-	// Token: 0x06004664 RID: 18020 RVA: 0x001BF244 File Offset: 0x001BD444
+	// Token: 0x06004687 RID: 18055 RVA: 0x001C02C8 File Offset: 0x001BE4C8
 	public override BaseQuestAction Clone()
 	{
 		QuestActionTrackQuest questActionTrackQuest = new QuestActionTrackQuest();

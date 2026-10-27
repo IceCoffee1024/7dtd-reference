@@ -2,7 +2,7 @@
 
 namespace Platform.XBL.Save.Storage
 {
-	// Token: 0x02001C7E RID: 7294
-	// (Invoke) Token: 0x0600D839 RID: 55353
+	// Token: 0x02001CAF RID: 7343
+	// (Invoke) Token: 0x0600D94D RID: 55629
 	public delegate void OnGameSaveProviderStatusChanged(ESaveGameProviderStatus status);
 }

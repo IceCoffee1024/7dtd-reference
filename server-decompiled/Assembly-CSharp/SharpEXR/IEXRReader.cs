@@ -2,45 +2,45 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016F7 RID: 5879
+	// Token: 0x02001716 RID: 5910
 	public interface IEXRReader : IDisposable
 	{
-		// Token: 0x0600B7BB RID: 47035
+		// Token: 0x0600B88F RID: 47247
 		byte ReadByte();
 
-		// Token: 0x0600B7BC RID: 47036
+		// Token: 0x0600B890 RID: 47248
 		int ReadInt32();
 
-		// Token: 0x0600B7BD RID: 47037
+		// Token: 0x0600B891 RID: 47249
 		uint ReadUInt32();
 
-		// Token: 0x0600B7BE RID: 47038
+		// Token: 0x0600B892 RID: 47250
 		Half ReadHalf();
 
-		// Token: 0x0600B7BF RID: 47039
+		// Token: 0x0600B893 RID: 47251
 		float ReadSingle();
 
-		// Token: 0x0600B7C0 RID: 47040
+		// Token: 0x0600B894 RID: 47252
 		double ReadDouble();
 
-		// Token: 0x0600B7C1 RID: 47041
+		// Token: 0x0600B895 RID: 47253
 		string ReadNullTerminatedString(int maxLength);
 
-		// Token: 0x0600B7C2 RID: 47042
+		// Token: 0x0600B896 RID: 47254
 		string ReadString(int length);
 
-		// Token: 0x0600B7C3 RID: 47043
+		// Token: 0x0600B897 RID: 47255
 		string ReadString();
 
-		// Token: 0x0600B7C4 RID: 47044
+		// Token: 0x0600B898 RID: 47256
 		byte[] ReadBytes(int count);
 
-		// Token: 0x0600B7C5 RID: 47045
+		// Token: 0x0600B899 RID: 47257
 		void CopyBytes(byte[] dest, int offset, int count);
 
-		// Token: 0x170016ED RID: 5869
-		// (get) Token: 0x0600B7C6 RID: 47046
-		// (set) Token: 0x0600B7C7 RID: 47047
+		// Token: 0x17001734 RID: 5940
+		// (get) Token: 0x0600B89A RID: 47258
+		// (set) Token: 0x0600B89B RID: 47259
 		int Position { get; set; }
 	}
 }

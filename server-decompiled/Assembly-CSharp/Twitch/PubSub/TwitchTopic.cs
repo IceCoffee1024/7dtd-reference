@@ -2,21 +2,21 @@
 
 namespace Twitch.PubSub
 {
-	// Token: 0x020018BC RID: 6332
+	// Token: 0x020018ED RID: 6381
 	public class TwitchTopic
 	{
-		// Token: 0x0600C339 RID: 49977 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600C44D RID: 50253 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TwitchTopic()
 		{
 		}
 
-		// Token: 0x17001877 RID: 6263
-		// (get) Token: 0x0600C33A RID: 49978 RVA: 0x0047EA8A File Offset: 0x0047CC8A
-		// (set) Token: 0x0600C33B RID: 49979 RVA: 0x0047EA92 File Offset: 0x0047CC92
+		// Token: 0x170018BF RID: 6335
+		// (get) Token: 0x0600C44E RID: 50254 RVA: 0x00482436 File Offset: 0x00480636
+		// (set) Token: 0x0600C44F RID: 50255 RVA: 0x0048243E File Offset: 0x0048063E
 		public string TopicString { get; set; }
 
-		// Token: 0x0600C33C RID: 49980 RVA: 0x0047EA9B File Offset: 0x0047CC9B
+		// Token: 0x0600C450 RID: 50256 RVA: 0x00482447 File Offset: 0x00480647
 		public static TwitchTopic ChannelPoints(string channelId)
 		{
 			return new TwitchTopic
@@ -25,7 +25,7 @@ namespace Twitch.PubSub
 			};
 		}
 
-		// Token: 0x0600C33D RID: 49981 RVA: 0x0047EAB3 File Offset: 0x0047CCB3
+		// Token: 0x0600C451 RID: 50257 RVA: 0x0048245F File Offset: 0x0048065F
 		public static TwitchTopic Bits(string channelId)
 		{
 			return new TwitchTopic
@@ -34,7 +34,7 @@ namespace Twitch.PubSub
 			};
 		}
 
-		// Token: 0x0600C33E RID: 49982 RVA: 0x0047EACB File Offset: 0x0047CCCB
+		// Token: 0x0600C452 RID: 50258 RVA: 0x00482477 File Offset: 0x00480677
 		public static TwitchTopic Subscription(string channelId)
 		{
 			return new TwitchTopic
@@ -43,7 +43,7 @@ namespace Twitch.PubSub
 			};
 		}
 
-		// Token: 0x0600C33F RID: 49983 RVA: 0x0047EAE3 File Offset: 0x0047CCE3
+		// Token: 0x0600C453 RID: 50259 RVA: 0x0048248F File Offset: 0x0048068F
 		public static TwitchTopic HypeTrain(string channelId)
 		{
 			return new TwitchTopic
@@ -52,7 +52,7 @@ namespace Twitch.PubSub
 			};
 		}
 
-		// Token: 0x0600C340 RID: 49984 RVA: 0x0047EAFB File Offset: 0x0047CCFB
+		// Token: 0x0600C454 RID: 50260 RVA: 0x004824A7 File Offset: 0x004806A7
 		public static TwitchTopic CreatorGoal(string channelId)
 		{
 			return new TwitchTopic

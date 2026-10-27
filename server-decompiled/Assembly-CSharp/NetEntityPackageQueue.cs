@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000799 RID: 1945
+// Token: 0x020007A1 RID: 1953
 public class NetEntityPackageQueue
 {
-	// Token: 0x06003A1F RID: 14879 RVA: 0x0017A313 File Offset: 0x00178513
+	// Token: 0x06003A36 RID: 14902 RVA: 0x0017B2AB File Offset: 0x001794AB
 	public NetEntityPackageQueue(World world)
 	{
 		this.world = world;
 	}
 
-	// Token: 0x06003A20 RID: 14880 RVA: 0x0017A32F File Offset: 0x0017852F
+	// Token: 0x06003A37 RID: 14903 RVA: 0x0017B2C7 File Offset: 0x001794C7
 	public bool HasPackagesForEntity(int entityId)
 	{
 		return this.entityPackageQueues.ContainsKey(entityId);
 	}
 
-	// Token: 0x06003A21 RID: 14881 RVA: 0x0017A340 File Offset: 0x00178540
+	// Token: 0x06003A38 RID: 14904 RVA: 0x0017B2D8 File Offset: 0x001794D8
 	public void EnqueueNetPackageForEntity(int entityId, NetPackage netPackage)
 	{
 		Queue<NetPackage> queue;
@@ -28,7 +28,7 @@ public class NetEntityPackageQueue
 		queue.Enqueue(netPackage);
 	}
 
-	// Token: 0x06003A22 RID: 14882 RVA: 0x0017A37C File Offset: 0x0017857C
+	// Token: 0x06003A39 RID: 14905 RVA: 0x0017B314 File Offset: 0x00179514
 	public void ProcessPackagesForEntity(int entityId)
 	{
 		Queue<NetPackage> queue;
@@ -44,7 +44,7 @@ public class NetEntityPackageQueue
 		}
 	}
 
-	// Token: 0x06003A23 RID: 14883 RVA: 0x0017A3C0 File Offset: 0x001785C0
+	// Token: 0x06003A3A RID: 14906 RVA: 0x0017B358 File Offset: 0x00179558
 	public void Cleanup()
 	{
 		foreach (Queue<NetPackage> queue in this.entityPackageQueues.Values)
@@ -58,11 +58,11 @@ public class NetEntityPackageQueue
 		this.entityPackageQueues.Clear();
 	}
 
-	// Token: 0x04002F7B RID: 12155
+	// Token: 0x04002F97 RID: 12183
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly World world;
 
-	// Token: 0x04002F7C RID: 12156
+	// Token: 0x04002F98 RID: 12184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, Queue<NetPackage>> entityPackageQueues = new Dictionary<int, Queue<NetPackage>>(64);
 }

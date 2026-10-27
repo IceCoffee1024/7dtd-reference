@@ -2,14 +2,14 @@
 
 namespace Platform
 {
-	// Token: 0x02001C1D RID: 7197
+	// Token: 0x02001C4E RID: 7246
 	public enum EUserBlockState
 	{
-		// Token: 0x0400A284 RID: 41604
+		// Token: 0x0400A36D RID: 41837
 		NotBlocked,
-		// Token: 0x0400A285 RID: 41605
+		// Token: 0x0400A36E RID: 41838
 		InGame,
-		// Token: 0x0400A286 RID: 41606
+		// Token: 0x0400A36F RID: 41839
 		ByPlatform
 	}
 }

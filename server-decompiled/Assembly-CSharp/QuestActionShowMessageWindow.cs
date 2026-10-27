@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000970 RID: 2416
+// Token: 0x0200097A RID: 2426
 [Preserve]
 public class QuestActionShowMessageWindow : BaseQuestAction
 {
-	// Token: 0x0600463B RID: 17979 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600465E RID: 18014 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetupAction()
 	{
 	}
 
-	// Token: 0x0600463C RID: 17980 RVA: 0x001BE819 File Offset: 0x001BCA19
+	// Token: 0x0600465F RID: 18015 RVA: 0x001BF89D File Offset: 0x001BDA9D
 	public override void PerformAction(Quest ownerQuest)
 	{
 		XUiC_MessageBoxWindowGroup.ShowOk(LocalPlayerUI.GetUIForPrimaryPlayer().xui, Localization.Get(this.title, false, null), Localization.Get(this.message, false, null), "ui_game_symbol_pen", null, true, true, false);
 	}
 
-	// Token: 0x0600463D RID: 17981 RVA: 0x001BE850 File Offset: 0x001BCA50
+	// Token: 0x06004660 RID: 18016 RVA: 0x001BF8D4 File Offset: 0x001BDAD4
 	public override BaseQuestAction Clone()
 	{
 		QuestActionShowMessageWindow questActionShowMessageWindow = new QuestActionShowMessageWindow();
@@ -26,7 +26,7 @@ public class QuestActionShowMessageWindow : BaseQuestAction
 		return questActionShowMessageWindow;
 	}
 
-	// Token: 0x0600463E RID: 17982 RVA: 0x001BE883 File Offset: 0x001BCA83
+	// Token: 0x06004661 RID: 18017 RVA: 0x001BF907 File Offset: 0x001BDB07
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -34,19 +34,19 @@ public class QuestActionShowMessageWindow : BaseQuestAction
 		properties.ParseString(QuestActionShowMessageWindow.PropTitle, ref this.title);
 	}
 
-	// Token: 0x040038CC RID: 14540
+	// Token: 0x040038EC RID: 14572
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropMessage = "message";
 
-	// Token: 0x040038CD RID: 14541
+	// Token: 0x040038ED RID: 14573
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropTitle = "title";
 
-	// Token: 0x040038CE RID: 14542
+	// Token: 0x040038EE RID: 14574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message = "";
 
-	// Token: 0x040038CF RID: 14543
+	// Token: 0x040038EF RID: 14575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string title = "";
 }

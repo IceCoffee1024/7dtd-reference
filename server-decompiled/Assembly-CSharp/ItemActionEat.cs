@@ -5,17 +5,17 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005AE RID: 1454
+// Token: 0x020005B5 RID: 1461
 [Preserve]
 public class ItemActionEat : ItemAction
 {
-	// Token: 0x06002FC3 RID: 12227 RVA: 0x00130377 File Offset: 0x0012E577
+	// Token: 0x06002FD1 RID: 12241 RVA: 0x00130F6B File Offset: 0x0012F16B
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionEat.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FC4 RID: 12228 RVA: 0x00130380 File Offset: 0x0012E580
+	// Token: 0x06002FD2 RID: 12242 RVA: 0x00130F74 File Offset: 0x0012F174
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -78,7 +78,7 @@ public class ItemActionEat : ItemAction
 		}
 	}
 
-	// Token: 0x06002FC5 RID: 12229 RVA: 0x00130531 File Offset: 0x0012E731
+	// Token: 0x06002FD3 RID: 12243 RVA: 0x00131125 File Offset: 0x0012F325
 	public override string CanInteract(ItemActionData _actionData)
 	{
 		if (!_actionData.invData.holdingEntity.isHeadUnderwater && this.IsValidConditions(_actionData))
@@ -88,14 +88,14 @@ public class ItemActionEat : ItemAction
 		return null;
 	}
 
-	// Token: 0x06002FC6 RID: 12230 RVA: 0x00130558 File Offset: 0x0012E758
+	// Token: 0x06002FD4 RID: 12244 RVA: 0x0013114C File Offset: 0x0012F34C
 	public bool NeedPrompt(ItemActionData _actionData)
 	{
 		ItemActionEat.MyInventoryData myInventoryData = (ItemActionEat.MyInventoryData)_actionData;
 		return this.UsePrompt && !myInventoryData.bPromptChecked;
 	}
 
-	// Token: 0x06002FC7 RID: 12231 RVA: 0x00130580 File Offset: 0x0012E780
+	// Token: 0x06002FD5 RID: 12245 RVA: 0x00131174 File Offset: 0x0012F374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsValidConditions(ItemActionData _actionData)
 	{
@@ -133,7 +133,7 @@ public class ItemActionEat : ItemAction
 		return true;
 	}
 
-	// Token: 0x06002FC8 RID: 12232 RVA: 0x0013069C File Offset: 0x0012E89C
+	// Token: 0x06002FD6 RID: 12246 RVA: 0x00131290 File Offset: 0x0012F490
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -178,7 +178,7 @@ public class ItemActionEat : ItemAction
 		this.ExecuteInstantAction(holdingEntity, _actionData.invData.itemStack, true, null);
 	}
 
-	// Token: 0x06002FC9 RID: 12233 RVA: 0x001307DC File Offset: 0x0012E9DC
+	// Token: 0x06002FD7 RID: 12247 RVA: 0x001313D0 File Offset: 0x0012F5D0
 	public override bool ExecuteInstantAction(EntityAlive ent, ItemStack stack, bool isHeldItem, XUiC_ItemStack stackController)
 	{
 		ent.MinEventContext.ItemValue = stack.itemValue;
@@ -235,7 +235,7 @@ public class ItemActionEat : ItemAction
 		return true;
 	}
 
-	// Token: 0x06002FCA RID: 12234 RVA: 0x001309F4 File Offset: 0x0012EBF4
+	// Token: 0x06002FD8 RID: 12248 RVA: 0x001315E8 File Offset: 0x0012F7E8
 	public float PercentDone(ItemActionData _actionData)
 	{
 		float num = 0f;
@@ -247,20 +247,20 @@ public class ItemActionEat : ItemAction
 		return num;
 	}
 
-	// Token: 0x06002FCB RID: 12235 RVA: 0x00130A4C File Offset: 0x0012EC4C
+	// Token: 0x06002FD9 RID: 12249 RVA: 0x00131640 File Offset: 0x0012F840
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionEat.MyInventoryData myInventoryData = (ItemActionEat.MyInventoryData)_actionData;
 		return (myInventoryData.bEatingStarted && (!myInventoryData.bEatingFinished || Time.time - myInventoryData.lastUseTime < 2f * AnimationDelayData.AnimationDelay[myInventoryData.invData.item.HoldType.Value].RayCast)) || (!this.UseAnimation && Time.time - myInventoryData.lastUseTime < this.Delay);
 	}
 
-	// Token: 0x06002FCC RID: 12236 RVA: 0x00020119 File Offset: 0x0001E319
+	// Token: 0x06002FDA RID: 12250 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsEndDelayed()
 	{
 		return true;
 	}
 
-	// Token: 0x06002FCD RID: 12237 RVA: 0x00130ACC File Offset: 0x0012ECCC
+	// Token: 0x06002FDB RID: 12251 RVA: 0x001316C0 File Offset: 0x0012F8C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void consume(ItemActionData _actionData)
 	{
@@ -299,7 +299,7 @@ public class ItemActionEat : ItemAction
 		}
 	}
 
-	// Token: 0x06002FCE RID: 12238 RVA: 0x00130CA8 File Offset: 0x0012EEA8
+	// Token: 0x06002FDC RID: 12252 RVA: 0x0013189C File Offset: 0x0012FA9C
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionEat.MyInventoryData myInventoryData = (ItemActionEat.MyInventoryData)_actionData;
@@ -309,64 +309,64 @@ public class ItemActionEat : ItemAction
 		}
 	}
 
-	// Token: 0x06002FCF RID: 12239 RVA: 0x00130CD6 File Offset: 0x0012EED6
+	// Token: 0x06002FDD RID: 12253 RVA: 0x001318CA File Offset: 0x0012FACA
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionEat.MyInventoryData)_data).bEatingStarted = false;
 	}
 
-	// Token: 0x06002FD0 RID: 12240 RVA: 0x00130CEB File Offset: 0x0012EEEB
+	// Token: 0x06002FDE RID: 12254 RVA: 0x001318DF File Offset: 0x0012FADF
 	public void Completed(ItemActionData _actionData)
 	{
 		this.consume(_actionData);
 	}
 
-	// Token: 0x040024CE RID: 9422
+	// Token: 0x040024E9 RID: 9449
 	public new string CreateItem;
 
-	// Token: 0x040024CF RID: 9423
+	// Token: 0x040024EA RID: 9450
 	public int CreateItemCount;
 
-	// Token: 0x040024D0 RID: 9424
+	// Token: 0x040024EB RID: 9451
 	public new bool Consume;
 
-	// Token: 0x040024D1 RID: 9425
+	// Token: 0x040024EC RID: 9452
 	public HashSet<int> ConditionBlockTypes;
 
-	// Token: 0x040024D2 RID: 9426
+	// Token: 0x040024ED RID: 9453
 	public bool UsePrompt;
 
-	// Token: 0x040024D3 RID: 9427
+	// Token: 0x040024EE RID: 9454
 	public bool UseJarRefund;
 
-	// Token: 0x040024D4 RID: 9428
+	// Token: 0x040024EF RID: 9455
 	public string PromptDescription;
 
-	// Token: 0x040024D5 RID: 9429
+	// Token: 0x040024F0 RID: 9456
 	public string PromptTitle;
 
-	// Token: 0x040024D6 RID: 9430
+	// Token: 0x040024F1 RID: 9457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float smellUse;
 
-	// Token: 0x020005AF RID: 1455
+	// Token: 0x020005B6 RID: 1462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06002FD2 RID: 12242 RVA: 0x0012B224 File Offset: 0x00129424
+		// Token: 0x06002FE0 RID: 12256 RVA: 0x0012BE18 File Offset: 0x0012A018
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040024D7 RID: 9431
+		// Token: 0x040024F2 RID: 9458
 		public bool bEatingStarted;
 
-		// Token: 0x040024D8 RID: 9432
+		// Token: 0x040024F3 RID: 9459
 		public bool bPromptChecked;
 
-		// Token: 0x040024D9 RID: 9433
+		// Token: 0x040024F4 RID: 9460
 		public bool bEatingFinished;
 	}
 }

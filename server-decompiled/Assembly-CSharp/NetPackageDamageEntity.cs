@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C5 RID: 1989
+// Token: 0x020007CD RID: 1997
 [Preserve]
 public class NetPackageDamageEntity : NetPackage
 {
-	// Token: 0x06003B1D RID: 15133 RVA: 0x0017D770 File Offset: 0x0017B970
+	// Token: 0x06003B34 RID: 15156 RVA: 0x0017E708 File Offset: 0x0017C908
 	public NetPackageDamageEntity Setup(int _targetEntityId, DamageResponse _dmResponse)
 	{
 		this.entityId = _targetEntityId;
@@ -53,7 +53,7 @@ public class NetPackageDamageEntity : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B1E RID: 15134 RVA: 0x0017D9E0 File Offset: 0x0017BBE0
+	// Token: 0x06003B35 RID: 15157 RVA: 0x0017E978 File Offset: 0x0017CB78
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -91,7 +91,7 @@ public class NetPackageDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003B1F RID: 15135 RVA: 0x0017DB84 File Offset: 0x0017BD84
+	// Token: 0x06003B36 RID: 15158 RVA: 0x0017EB1C File Offset: 0x0017CD1C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -130,7 +130,7 @@ public class NetPackageDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003B20 RID: 15136 RVA: 0x0017DD3C File Offset: 0x0017BF3C
+	// Token: 0x06003B37 RID: 15159 RVA: 0x0017ECD4 File Offset: 0x0017CED4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -190,143 +190,143 @@ public class NetPackageDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x04003009 RID: 12297
+	// Token: 0x04003025 RID: 12325
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400300A RID: 12298
+	// Token: 0x04003026 RID: 12326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsCanHitSpecialBodyParts = 1;
 
-	// Token: 0x0400300B RID: 12299
+	// Token: 0x04003027 RID: 12327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsCrippleLegs = 2;
 
-	// Token: 0x0400300C RID: 12300
+	// Token: 0x04003028 RID: 12328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsCritical = 4;
 
-	// Token: 0x0400300D RID: 12301
+	// Token: 0x04003029 RID: 12329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsDismember = 8;
 
-	// Token: 0x0400300E RID: 12302
+	// Token: 0x0400302A RID: 12330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsFatal = 16;
 
-	// Token: 0x0400300F RID: 12303
+	// Token: 0x0400302B RID: 12331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsFromBuff = 32;
 
-	// Token: 0x04003010 RID: 12304
+	// Token: 0x0400302C RID: 12332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsIgnoreConsecutiveDamages = 64;
 
-	// Token: 0x04003011 RID: 12305
+	// Token: 0x0400302D RID: 12333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsIgnorePartyShare = 128;
 
-	// Token: 0x04003012 RID: 12306
+	// Token: 0x0400302E RID: 12334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsPainHit = 256;
 
-	// Token: 0x04003013 RID: 12307
+	// Token: 0x0400302F RID: 12335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsTurnIntoCrawler = 512;
 
-	// Token: 0x04003014 RID: 12308
+	// Token: 0x04003030 RID: 12336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFlagsTrapKillXP = 1024;
 
-	// Token: 0x04003015 RID: 12309
+	// Token: 0x04003031 RID: 12337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint flags;
 
-	// Token: 0x04003016 RID: 12310
+	// Token: 0x04003032 RID: 12338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int attackerEntityId;
 
-	// Token: 0x04003017 RID: 12311
+	// Token: 0x04003033 RID: 12339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumDamageSource damageSrc;
 
-	// Token: 0x04003018 RID: 12312
+	// Token: 0x04003034 RID: 12340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumDamageTypes damageTyp;
 
-	// Token: 0x04003019 RID: 12313
+	// Token: 0x04003035 RID: 12341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort strength;
 
-	// Token: 0x0400301A RID: 12314
+	// Token: 0x04003036 RID: 12342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hitDirection;
 
-	// Token: 0x0400301B RID: 12315
+	// Token: 0x04003037 RID: 12343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short hitBodyPart;
 
-	// Token: 0x0400301C RID: 12316
+	// Token: 0x04003038 RID: 12344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int movementState;
 
-	// Token: 0x0400301D RID: 12317
+	// Token: 0x04003039 RID: 12345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 dirV;
 
-	// Token: 0x0400301E RID: 12318
+	// Token: 0x0400303A RID: 12346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x0400301F RID: 12319
+	// Token: 0x0400303B RID: 12347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hitTransformName;
 
-	// Token: 0x04003020 RID: 12320
+	// Token: 0x0400303C RID: 12348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 hitTransformPosition;
 
-	// Token: 0x04003021 RID: 12321
+	// Token: 0x0400303D RID: 12349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 uvHit;
 
-	// Token: 0x04003022 RID: 12322
+	// Token: 0x0400303E RID: 12350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float damageMultiplier;
 
-	// Token: 0x04003023 RID: 12323
+	// Token: 0x0400303F RID: 12351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float random;
 
-	// Token: 0x04003024 RID: 12324
+	// Token: 0x04003040 RID: 12352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte bonusDamageType;
 
-	// Token: 0x04003025 RID: 12325
+	// Token: 0x04003041 RID: 12353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte StunType;
 
-	// Token: 0x04003026 RID: 12326
+	// Token: 0x04003042 RID: 12354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float StunDuration;
 
-	// Token: 0x04003027 RID: 12327
+	// Token: 0x04003043 RID: 12355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EquipmentSlots ArmorSlot;
 
-	// Token: 0x04003028 RID: 12328
+	// Token: 0x04003044 RID: 12356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EquipmentSlotGroups ArmorSlotGroup;
 
-	// Token: 0x04003029 RID: 12329
+	// Token: 0x04003045 RID: 12357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ArmorDamage;
 
-	// Token: 0x0400302A RID: 12330
+	// Token: 0x04003046 RID: 12358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue attackingItem;
 
-	// Token: 0x0400302B RID: 12331
+	// Token: 0x04003047 RID: 12359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float KillXPScale;
 }

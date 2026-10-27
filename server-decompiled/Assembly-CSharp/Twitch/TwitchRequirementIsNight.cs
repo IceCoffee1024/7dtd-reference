@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x02001888 RID: 6280
+	// Token: 0x020018B9 RID: 6329
 	[Preserve]
 	public class TwitchRequirementIsNight : BaseTwitchRequirement
 	{
-		// Token: 0x0600C1FA RID: 49658 RVA: 0x00478E2A File Offset: 0x0047702A
+		// Token: 0x0600C30E RID: 49934 RVA: 0x0047C7D6 File Offset: 0x0047A9D6
 		public override bool CanPerform(Entity entity)
 		{
 			if (!this.Invert)

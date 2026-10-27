@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001051 RID: 4177
+// Token: 0x02001061 RID: 4193
 [Preserve]
 public abstract class XUiC_SignWarpSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x17000F8C RID: 3980
-	// (get) Token: 0x0600844F RID: 33871
+	// Token: 0x17000F97 RID: 3991
+	// (get) Token: 0x060084A1 RID: 33953
 	public abstract SignData.SignWarp CurrentWarp
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x06008450 RID: 33872 RVA: 0x00328672 File Offset: 0x00326872
+	// Token: 0x060084A2 RID: 33954 RVA: 0x0032A376 File Offset: 0x00328576
 	public override void Init()
 	{
 		base.Init();
@@ -21,7 +21,7 @@ public abstract class XUiC_SignWarpSettings : XUiC_SignLayerSettings
 		this.btnRemove.OnPressed += this.BtnRemove_OnPressed;
 	}
 
-	// Token: 0x06008451 RID: 33873 RVA: 0x003286A8 File Offset: 0x003268A8
+	// Token: 0x060084A3 RID: 33955 RVA: 0x0032A3AC File Offset: 0x003285AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRemove_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -60,29 +60,29 @@ public abstract class XUiC_SignWarpSettings : XUiC_SignLayerSettings
 		onWarpRemoved();
 	}
 
-	// Token: 0x06008452 RID: 33874
+	// Token: 0x060084A4 RID: 33956
 	public abstract void SetWarp(SignData.SignWarp warp);
 
-	// Token: 0x06008453 RID: 33875 RVA: 0x0032876F File Offset: 0x0032696F
+	// Token: 0x060084A5 RID: 33957 RVA: 0x0032A473 File Offset: 0x00328673
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer;
 	}
 
-	// Token: 0x06008454 RID: 33876 RVA: 0x00326D30 File Offset: 0x00324F30
+	// Token: 0x060084A6 RID: 33958 RVA: 0x00328A34 File Offset: 0x00326C34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_SignWarpSettings()
 	{
 	}
 
-	// Token: 0x04006240 RID: 25152
+	// Token: 0x0400627E RID: 25214
 	public Action OnWarpRemoved;
 
-	// Token: 0x04006241 RID: 25153
+	// Token: 0x0400627F RID: 25215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public SignData.SignLayer currentLayer;
 
-	// Token: 0x04006242 RID: 25154
+	// Token: 0x04006280 RID: 25216
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_SimpleButton btnRemove;
 }

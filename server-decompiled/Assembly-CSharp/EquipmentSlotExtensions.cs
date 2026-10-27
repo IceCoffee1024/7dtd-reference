@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020005FA RID: 1530
+// Token: 0x02000601 RID: 1537
 public static class EquipmentSlotExtensions
 {
-	// Token: 0x0600320D RID: 12813 RVA: 0x001446FC File Offset: 0x001428FC
+	// Token: 0x0600321B RID: 12827 RVA: 0x001452F0 File Offset: 0x001434F0
 	public static EquipmentSlotType SlotType(this EquipmentSlots slot)
 	{
 		EquipmentSlotType equipmentSlotType;

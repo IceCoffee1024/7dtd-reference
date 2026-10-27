@@ -3,11 +3,11 @@ using System.Collections;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F55 RID: 3925
+// Token: 0x02000F64 RID: 3940
 [Preserve]
 public class XUiC_InGameMenuWindow : XUiController
 {
-	// Token: 0x06007ABF RID: 31423 RVA: 0x002E8030 File Offset: 0x002E6230
+	// Token: 0x06007B02 RID: 31490 RVA: 0x002E992C File Offset: 0x002E7B2C
 	public override void Init()
 	{
 		base.Init();
@@ -39,7 +39,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007AC0 RID: 31424 RVA: 0x002E823A File Offset: 0x002E643A
+	// Token: 0x06007B03 RID: 31491 RVA: 0x002E9B36 File Offset: 0x002E7D36
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnInvite_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -52,7 +52,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		multiplayerInvitationDialog.ShowInviteDialog();
 	}
 
-	// Token: 0x06007AC1 RID: 31425 RVA: 0x002E826C File Offset: 0x002E646C
+	// Token: 0x06007B04 RID: 31492 RVA: 0x002E9B68 File Offset: 0x002E7D68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOptions_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -61,7 +61,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		LocalPlayerUI.primaryUI.windowManager.Open(XUiC_OptionsMenuNew.ParentSelector.WindowGroup, false);
 	}
 
-	// Token: 0x06007AC2 RID: 31426 RVA: 0x002E82AB File Offset: 0x002E64AB
+	// Token: 0x06007B05 RID: 31493 RVA: 0x002E9BA7 File Offset: 0x002E7DA7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StnSandboxSettings_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -69,7 +69,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		this.xui.playerUI.windowManager.Open("sandboxOptions", true);
 	}
 
-	// Token: 0x06007AC3 RID: 31427 RVA: 0x002E82E4 File Offset: 0x002E64E4
+	// Token: 0x06007B06 RID: 31494 RVA: 0x002E9BE0 File Offset: 0x002E7DE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnHelp_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -77,7 +77,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_PrefabEditorHelp.ID, true);
 	}
 
-	// Token: 0x06007AC4 RID: 31428 RVA: 0x002E8320 File Offset: 0x002E6520
+	// Token: 0x06007B07 RID: 31495 RVA: 0x002E9C1C File Offset: 0x002E7E1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -91,14 +91,14 @@ public class XUiC_InGameMenuWindow : XUiController
 		GameManager.ShowTooltip(GameManager.Instance.World.GetLocalPlayers()[0], Localization.Get("xuiWorldEditorSaved", false, null), false, false, 0f);
 	}
 
-	// Token: 0x06007AC5 RID: 31429 RVA: 0x002A0CBC File Offset: 0x0029EEBC
+	// Token: 0x06007B08 RID: 31496 RVA: 0x002A21E4 File Offset: 0x002A03E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void savePrefab(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
 		this.xui.playerUI.windowManager.Open(this.windowGroup, true);
 	}
 
-	// Token: 0x06007AC6 RID: 31430 RVA: 0x002E8393 File Offset: 0x002E6593
+	// Token: 0x06007B09 RID: 31497 RVA: 0x002E9C8F File Offset: 0x002E7E8F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnExit_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -110,7 +110,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		this.exitGame(XUiC_SaveDirtyPrefab.ESelectedAction.DontSave);
 	}
 
-	// Token: 0x06007AC7 RID: 31431 RVA: 0x002E83D0 File Offset: 0x002E65D0
+	// Token: 0x06007B0A RID: 31498 RVA: 0x002E9CCC File Offset: 0x002E7ECC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void exitGame(XUiC_SaveDirtyPrefab.ESelectedAction _action)
 	{
@@ -128,7 +128,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		GameManager.Instance.Disconnect();
 	}
 
-	// Token: 0x06007AC8 RID: 31432 RVA: 0x002E8427 File Offset: 0x002E6627
+	// Token: 0x06007B0B RID: 31499 RVA: 0x002E9D23 File Offset: 0x002E7F23
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator DisconnectAfterDisplayingExitingGameMessage()
 	{
@@ -137,7 +137,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06007AC9 RID: 31433 RVA: 0x002E842F File Offset: 0x002E662F
+	// Token: 0x06007B0C RID: 31500 RVA: 0x002E9D2B File Offset: 0x002E7F2B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnExportPrefab_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -145,7 +145,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		XUiC_ExportPrefab.Open(this.xui);
 	}
 
-	// Token: 0x06007ACA RID: 31434 RVA: 0x002E8458 File Offset: 0x002E6658
+	// Token: 0x06007B0D RID: 31501 RVA: 0x002E9D54 File Offset: 0x002E7F54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnTpPoi_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -153,7 +153,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_PoiTeleportMenu.ID, true);
 	}
 
-	// Token: 0x06007ACB RID: 31435 RVA: 0x002E8491 File Offset: 0x002E6691
+	// Token: 0x06007B0E RID: 31502 RVA: 0x002E9D8D File Offset: 0x002E7F8D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOpenConsole_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -161,7 +161,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06007ACC RID: 31436 RVA: 0x002E84B4 File Offset: 0x002E66B4
+	// Token: 0x06007B0F RID: 31503 RVA: 0x002E9DB0 File Offset: 0x002E7FB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBugReport_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -169,7 +169,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		XUiC_BugReportWindow.Open();
 	}
 
-	// Token: 0x06007ACD RID: 31437 RVA: 0x002E84D8 File Offset: 0x002E66D8
+	// Token: 0x06007B10 RID: 31504 RVA: 0x002E9DD4 File Offset: 0x002E7FD4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -212,7 +212,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007ACE RID: 31438 RVA: 0x002E86DC File Offset: 0x002E68DC
+	// Token: 0x06007B11 RID: 31505 RVA: 0x002E9FD8 File Offset: 0x002E81D8
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -228,7 +228,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007ACF RID: 31439 RVA: 0x002E8748 File Offset: 0x002E6948
+	// Token: 0x06007B12 RID: 31506 RVA: 0x002EA044 File Offset: 0x002E8244
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -240,7 +240,7 @@ public class XUiC_InGameMenuWindow : XUiController
 		this.btnExportPrefab.Enabled = BlockToolSelection.Instance.SelectionActive;
 	}
 
-	// Token: 0x06007AD0 RID: 31440 RVA: 0x002E8798 File Offset: 0x002E6998
+	// Token: 0x06007B13 RID: 31507 RVA: 0x002EA094 File Offset: 0x002E8294
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -262,58 +262,58 @@ public class XUiC_InGameMenuWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x04005B24 RID: 23332
+	// Token: 0x04005B57 RID: 23383
 	public static string ID = "";
 
-	// Token: 0x04005B25 RID: 23333
+	// Token: 0x04005B58 RID: 23384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnInvite;
 
-	// Token: 0x04005B26 RID: 23334
+	// Token: 0x04005B59 RID: 23385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnOptions;
 
-	// Token: 0x04005B27 RID: 23335
+	// Token: 0x04005B5A RID: 23386
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSandboxSettings;
 
-	// Token: 0x04005B28 RID: 23336
+	// Token: 0x04005B5B RID: 23387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnHelp;
 
-	// Token: 0x04005B29 RID: 23337
+	// Token: 0x04005B5C RID: 23388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSave;
 
-	// Token: 0x04005B2A RID: 23338
+	// Token: 0x04005B5D RID: 23389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnExit;
 
-	// Token: 0x04005B2B RID: 23339
+	// Token: 0x04005B5E RID: 23390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnExportPrefab;
 
-	// Token: 0x04005B2C RID: 23340
+	// Token: 0x04005B5F RID: 23391
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnTpPoi;
 
-	// Token: 0x04005B2D RID: 23341
+	// Token: 0x04005B60 RID: 23392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnOpenConsole;
 
-	// Token: 0x04005B2E RID: 23342
+	// Token: 0x04005B61 RID: 23393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnBugReport;
 
-	// Token: 0x04005B2F RID: 23343
+	// Token: 0x04005B62 RID: 23394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool continueGamePause;
 
-	// Token: 0x04005B30 RID: 23344
+	// Token: 0x04005B63 RID: 23395
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string ServerInfoWindowGroupName = "serverinfowindow";
 
-	// Token: 0x04005B31 RID: 23345
+	// Token: 0x04005B64 RID: 23396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string serverInfoWindowGroup;
 }

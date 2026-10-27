@@ -2,16 +2,16 @@
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018E8 RID: 6376
+	// Token: 0x02001919 RID: 6425
 	public abstract class PrefabVolumeAbs<T> : PrefabVolumeAbs where T : PrefabVolumeAbs<T>, new()
 	{
-		// Token: 0x0600C4CA RID: 50378 RVA: 0x00487C0D File Offset: 0x00485E0D
+		// Token: 0x0600C5DE RID: 50654 RVA: 0x0048B5B9 File Offset: 0x004897B9
 		public override PrefabVolumeAbs Clone()
 		{
 			return this.CloneGeneric();
 		}
 
-		// Token: 0x0600C4CB RID: 50379 RVA: 0x00487C1C File Offset: 0x00485E1C
+		// Token: 0x0600C5DF RID: 50655 RVA: 0x0048B5C8 File Offset: 0x004897C8
 		public virtual T CloneGeneric()
 		{
 			T t = new T();
@@ -19,7 +19,7 @@ namespace PrefabVolumes
 			return t;
 		}
 
-		// Token: 0x0600C4CC RID: 50380 RVA: 0x00487C40 File Offset: 0x00485E40
+		// Token: 0x0600C5E0 RID: 50656 RVA: 0x0048B5EC File Offset: 0x004897EC
 		public override void CopyValues(PrefabVolumeAbs _target, bool _nonBasicOnly = false)
 		{
 			T t = _target as T;
@@ -30,7 +30,7 @@ namespace PrefabVolumes
 			this.CopyValues(t, _nonBasicOnly);
 		}
 
-		// Token: 0x0600C4CD RID: 50381 RVA: 0x00487C9E File Offset: 0x00485E9E
+		// Token: 0x0600C5E1 RID: 50657 RVA: 0x0048B64A File Offset: 0x0048984A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void CopyValues(PrefabVolumeAbs<T> _target, bool _nonBasicOnly = false)
 		{
@@ -39,7 +39,7 @@ namespace PrefabVolumes
 			_target.size = this.size;
 		}
 
-		// Token: 0x0600C4CE RID: 50382 RVA: 0x00487CC4 File Offset: 0x00485EC4
+		// Token: 0x0600C5E2 RID: 50658 RVA: 0x0048B670 File Offset: 0x00489870
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PrefabVolumeAbs()
 		{

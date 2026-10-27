@@ -2,10 +2,10 @@
 
 namespace XMLData.Exceptions
 {
-	// Token: 0x0200167A RID: 5754
+	// Token: 0x0200168C RID: 5772
 	public class IncorrectAttributeOccurrenceException : XmlParserException
 	{
-		// Token: 0x0600B47B RID: 46203 RVA: 0x00437D9D File Offset: 0x00435F9D
+		// Token: 0x0600B4D3 RID: 46291 RVA: 0x0043A1A1 File Offset: 0x004383A1
 		public IncorrectAttributeOccurrenceException(string _msg, int _line)
 			: base(_msg, _line)
 		{

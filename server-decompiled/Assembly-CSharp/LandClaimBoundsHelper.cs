@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200054D RID: 1357
+// Token: 0x02000551 RID: 1361
 public static class LandClaimBoundsHelper
 {
-	// Token: 0x06002C4E RID: 11342 RVA: 0x001197A0 File Offset: 0x001179A0
+	// Token: 0x06002C56 RID: 11350 RVA: 0x00119D2C File Offset: 0x00117F2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LandClaimBoundsHelper.BoundsHelperEntry GetEntryFromList(Vector3 _worldPos)
 	{
@@ -19,7 +19,7 @@ public static class LandClaimBoundsHelper
 		return null;
 	}
 
-	// Token: 0x06002C4F RID: 11343 RVA: 0x001197E8 File Offset: 0x001179E8
+	// Token: 0x06002C57 RID: 11351 RVA: 0x00119D74 File Offset: 0x00117F74
 	public static void RemoveBoundsHelper(Vector3 _worldPos)
 	{
 		Transform transform = null;
@@ -40,7 +40,7 @@ public static class LandClaimBoundsHelper
 		}
 	}
 
-	// Token: 0x06002C50 RID: 11344 RVA: 0x0011987C File Offset: 0x00117A7C
+	// Token: 0x06002C58 RID: 11352 RVA: 0x00119E08 File Offset: 0x00118008
 	public static Transform GetBoundsHelper(Vector3 _worldPos)
 	{
 		if (LandClaimBoundsHelper.goRoot == null)
@@ -91,7 +91,7 @@ public static class LandClaimBoundsHelper
 		return transform;
 	}
 
-	// Token: 0x06002C51 RID: 11345 RVA: 0x00119A30 File Offset: 0x00117C30
+	// Token: 0x06002C59 RID: 11353 RVA: 0x00119FBC File Offset: 0x001181BC
 	public static void InitHelpers()
 	{
 		if (LandClaimBoundsHelper.goRoot == null)
@@ -103,7 +103,7 @@ public static class LandClaimBoundsHelper
 		}
 	}
 
-	// Token: 0x06002C52 RID: 11346 RVA: 0x00119AA0 File Offset: 0x00117CA0
+	// Token: 0x06002C5A RID: 11354 RVA: 0x0011A02C File Offset: 0x0011822C
 	public static void CleanupHelpers()
 	{
 		for (int i = 0; i < LandClaimBoundsHelper.list.Count; i++)
@@ -114,25 +114,25 @@ public static class LandClaimBoundsHelper
 		LandClaimBoundsHelper.list.Clear();
 	}
 
-	// Token: 0x0400221F RID: 8735
+	// Token: 0x04002236 RID: 8758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string landClaimBoundaryMaterialPath = "Materials/LandClaimBoundary";
 
-	// Token: 0x04002220 RID: 8736
+	// Token: 0x04002237 RID: 8759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform goRoot;
 
-	// Token: 0x04002221 RID: 8737
+	// Token: 0x04002238 RID: 8760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform goPool;
 
-	// Token: 0x04002222 RID: 8738
+	// Token: 0x04002239 RID: 8761
 	public static List<LandClaimBoundsHelper.BoundsHelperEntry> list = new List<LandClaimBoundsHelper.BoundsHelperEntry>();
 
-	// Token: 0x0200054E RID: 1358
+	// Token: 0x02000552 RID: 1362
 	public class BoundsHelperEntry
 	{
-		// Token: 0x06002C54 RID: 11348 RVA: 0x00119AFD File Offset: 0x00117CFD
+		// Token: 0x06002C5C RID: 11356 RVA: 0x0011A089 File Offset: 0x00118289
 		public BoundsHelperEntry(Vector3 _position, Transform _helper)
 		{
 			this.Position = _position;
@@ -140,23 +140,23 @@ public static class LandClaimBoundsHelper
 			Origin.OriginChanged = (Action<Vector3>)Delegate.Combine(Origin.OriginChanged, new Action<Vector3>(this.OnOriginChanged));
 		}
 
-		// Token: 0x06002C55 RID: 11349 RVA: 0x00119B33 File Offset: 0x00117D33
+		// Token: 0x06002C5D RID: 11357 RVA: 0x0011A0BF File Offset: 0x001182BF
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnOriginChanged(Vector3 _newOrigin)
 		{
 			this.Helper.localPosition = this.Position - Origin.position + new Vector3(0.5f, 0.5f, 0.5f);
 		}
 
-		// Token: 0x06002C56 RID: 11350 RVA: 0x00119B69 File Offset: 0x00117D69
+		// Token: 0x06002C5E RID: 11358 RVA: 0x0011A0F5 File Offset: 0x001182F5
 		public void Remove()
 		{
 			Origin.OriginChanged = (Action<Vector3>)Delegate.Remove(Origin.OriginChanged, new Action<Vector3>(this.OnOriginChanged));
 		}
 
-		// Token: 0x04002223 RID: 8739
+		// Token: 0x0400223A RID: 8762
 		public Vector3 Position;
 
-		// Token: 0x04002224 RID: 8740
+		// Token: 0x0400223B RID: 8763
 		public Transform Helper;
 	}
 }

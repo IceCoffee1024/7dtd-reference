@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class BlockCactus : BlockDamage
 {
-	// Token: 0x06000745 RID: 1861 RVA: 0x0003426F File Offset: 0x0003246F
+	// Token: 0x06000745 RID: 1861 RVA: 0x0003422F File Offset: 0x0003242F
 	public override void Init()
 	{
 		base.Init();
@@ -15,7 +15,7 @@ public class BlockCactus : BlockDamage
 		this.CanDecorateOnSlopes = false;
 	}
 
-	// Token: 0x06000746 RID: 1862 RVA: 0x00034288 File Offset: 0x00032488
+	// Token: 0x06000746 RID: 1862 RVA: 0x00034248 File Offset: 0x00032448
 	public override void GetCollisionAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedY, List<Bounds> _result)
 	{
 		base.GetCollisionAABB(_blockValue, _x, _y, _z, _distortedY, _result);
