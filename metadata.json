@@ -6,5 +6,8 @@
   "extractedAt": "2026-10-27",
   "status": "reference-only",
   "referenceCommit": "see Git tag v3.4.0-b6",
-  "archive": null
+  "archive": {
+    "asset": "7dtd-reference-v3.4.0-b6.zip",
+    "sha256": "895ccce23f0436fc7dc1e16c3bf72d7a75540fdfb75c45deacb44c188780be2d"
+  }
 }
